@@ -59,12 +59,12 @@
     </build>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>acme.guess-game</groupId>-->
-<!--            <artifactId>guess-game-web</artifactId>-->
-<!--            <version>${project.version}</version>-->
-<!--            <scope>runtime</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>acme.guess-game</groupId>
+            <artifactId>guess-game-web</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
 
         <!-- Spring -->
         <dependency>
