@@ -30,7 +30,7 @@
     </modules>
 
     <build>
-        <finalName>twitter-emulation</finalName>
+        <finalName>guess-game</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
