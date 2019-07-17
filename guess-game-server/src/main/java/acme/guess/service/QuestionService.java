@@ -1,12 +1,12 @@
-package acme.guess.dao;
+package acme.guess.service;
 
 import acme.guess.domain.QuestionSet;
 
 import java.util.List;
 
 /**
- * Question DAO.
+ * Question service.
  */
-public interface QuestionDao {
+public interface QuestionService {
     List<QuestionSet> getQuestionSets();
 }
