@@ -2,6 +2,7 @@ package acme.guess.service;
 
 import acme.guess.dao.QuestionDao;
 import acme.guess.domain.QuestionSet;
+import acme.guess.util.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,12 @@ public class QuestionServiceImpl implements QuestionService {
         questionSets.sort(Comparator.comparing(QuestionSet::getName));
 
         return questionSets;
+    }
+
+    @Override
+    public List<Integer> getQuantities() {
+        List<QuestionSet> questionSets = questionDao.getQuestionSets();
+
+        return CommonUtils.getQuantities(questionSets.size());
     }
 }

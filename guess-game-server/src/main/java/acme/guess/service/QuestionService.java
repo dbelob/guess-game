@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface QuestionService {
     List<QuestionSet> getQuestionSets();
+
+    List<Integer> getQuantities();
 }

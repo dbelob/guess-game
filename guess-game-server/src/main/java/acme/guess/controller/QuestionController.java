@@ -31,4 +31,10 @@ public class QuestionController {
 
         return QuestionSetDto.convertToDto(questionSets);
     }
+
+    @GetMapping("/quantities")
+    @ResponseBody
+    public List<Integer> getQuantities() {
+        return questionService.getQuantities();
+    }
 }

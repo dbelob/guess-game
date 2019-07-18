@@ -12,10 +12,12 @@ import java.util.List;
  */
 @Repository
 public class QuestionDaoImpl implements QuestionDao {
+    private static String QUESTIONS_DIRECTORY = "questions";
+
     private final List<QuestionSet> questionSets;
 
     public QuestionDaoImpl() throws IOException {
-        this.questionSets = YamlUtils.readQuestionSets();
+        this.questionSets = YamlUtils.readQuestionSets(QUESTIONS_DIRECTORY);
     }
 
     @Override

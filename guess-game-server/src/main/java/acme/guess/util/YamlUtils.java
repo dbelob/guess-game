@@ -18,17 +18,16 @@ import java.util.stream.Collectors;
  * YAML utility methods.
  */
 public class YamlUtils {
-    private static String QUESTIONS_DIRECTORY = "questions";
-
     /**
      * Reads question sets from resource files.
      *
+     * @param directoryName directory name
      * @return question sets
      * @throws IOException if an I/O error occurs
      */
-    public static List<QuestionSet> readQuestionSets() throws IOException {
+    public static List<QuestionSet> readQuestionSets(String directoryName) throws IOException {
         ClassLoader classLoader = YamlUtils.class.getClassLoader();
-        File questionDirectory = new File(Objects.requireNonNull(classLoader.getResource(QUESTIONS_DIRECTORY)).getFile());
+        File questionDirectory = new File(Objects.requireNonNull(classLoader.getResource(directoryName)).getFile());
         Path questionPath = questionDirectory.toPath();
 
         List<Path> paths = Files.list(questionPath)
