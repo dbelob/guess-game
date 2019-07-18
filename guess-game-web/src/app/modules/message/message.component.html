@@ -1,0 +1,5 @@
+<div class="alert alert-info text-center"
+     *ngIf="isVisible()"
+     [class.alert-danger]="lastMessage.error">
+  {{lastMessage.text}}
+</div>

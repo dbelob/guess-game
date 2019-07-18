@@ -12,6 +12,9 @@ import { GuessPictureComponent } from "./modules/guess/guess-picture.component";
 import { GuessWordComponent } from "./modules/guess/guess-word.component";
 import { UnknownModule } from "./modules/unknown/unknown.module";
 import { NotFoundComponent } from "./modules/unknown/not-found.component";
+import { QuestionService } from "./shared/services/question.service";
+import { MessageModule } from "./modules/message/message.module";
+import { HttpClientModule } from "@angular/common/http";
 
 const routes: Routes = [
   {path: 'start', component: StartComponent},
@@ -29,12 +32,14 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
+    HttpClientModule,
     GuessModule,
+    MessageModule,
     ResultModule,
     StartModule,
     UnknownModule
   ],
-  providers: [],
+  providers: [QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
