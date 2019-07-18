@@ -1,6 +1,7 @@
 package acme.guess.service;
 
 import acme.guess.dao.QuestionDao;
+import acme.guess.dao.exception.QuestionSetNotExistsException;
 import acme.guess.domain.QuestionSet;
 import acme.guess.util.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,9 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<Integer> getQuantities() {
-        List<QuestionSet> questionSets = questionDao.getQuestionSets();
+    public List<Integer> getQuantities(long questionSetId) throws QuestionSetNotExistsException {
+        QuestionSet questionSet = questionDao.getQuestionSetById(questionSetId);
 
-        return CommonUtils.getQuantities(questionSets.size());
+        return CommonUtils.getQuantities(questionSet.getQuestions().size());
     }
 }

@@ -1,5 +1,6 @@
 package acme.guess.service;
 
+import acme.guess.dao.exception.QuestionSetNotExistsException;
 import acme.guess.domain.QuestionSet;
 
 import java.util.List;
@@ -10,5 +11,5 @@ import java.util.List;
 public interface QuestionService {
     List<QuestionSet> getQuestionSets();
 
-    List<Integer> getQuantities();
+    List<Integer> getQuantities(long questionSetId) throws QuestionSetNotExistsException;
 }

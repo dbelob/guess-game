@@ -1,5 +1,6 @@
 package acme.guess.controller;
 
+import acme.guess.dao.exception.QuestionSetNotExistsException;
 import acme.guess.domain.QuestionSet;
 import acme.guess.dto.QuestionSetDto;
 import acme.guess.service.QuestionService;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -34,7 +36,7 @@ public class QuestionController {
 
     @GetMapping("/quantities")
     @ResponseBody
-    public List<Integer> getQuantities() {
-        return questionService.getQuantities();
+    public List<Integer> getQuantities(@RequestParam long questionSetId) throws QuestionSetNotExistsException {
+        return questionService.getQuantities(questionSetId);
     }
 }

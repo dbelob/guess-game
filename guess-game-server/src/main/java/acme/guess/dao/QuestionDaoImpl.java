@@ -1,11 +1,13 @@
 package acme.guess.dao;
 
+import acme.guess.dao.exception.QuestionSetNotExistsException;
 import acme.guess.domain.QuestionSet;
 import acme.guess.util.YamlUtils;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Question DAO implementation.
@@ -23,5 +25,18 @@ public class QuestionDaoImpl implements QuestionDao {
     @Override
     public List<QuestionSet> getQuestionSets() {
         return questionSets;
+    }
+
+    @Override
+    public QuestionSet getQuestionSetById(long id) throws QuestionSetNotExistsException {
+        Optional<QuestionSet> optional = questionSets.stream()
+                .filter(q -> q.getId() == id)
+                .findFirst();
+
+        if (optional.isPresent()) {
+            return optional.get();
+        } else {
+            throw new QuestionSetNotExistsException();
+        }
     }
 }
