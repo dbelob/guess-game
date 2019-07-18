@@ -5,9 +5,8 @@
     <div class="form-group row">
       <label for="set" class="col-sm-2 col-form-label">Set:</label>
       <div class="col-sm-10">
-        <select class="form-control" id="set" size="10" (change)="onQuestionSetChange($event.target.value)">
-          <option *ngFor="let questionSet of questionSets; let first = first"
-                  [value]="questionSet.id" [selected]="first">
+        <select class="form-control" id="set" size="10" [(ngModel)]="selectedQuestionSet" (ngModelChange)="onChange($event)" name="set">
+          <option *ngFor="let questionSet of questionSets" [ngValue]="questionSet">
             {{questionSet.name}}
           </option>
         </select>
@@ -16,9 +15,10 @@
     <div class="form-group row">
       <label for="quantity" class="col-sm-2 col-form-label">Quantity:</label>
       <div class="col-sm-10">
-        <select class="form-control" id="quantity" size="5">
-          <option>Item 1</option>
-          <option>Item 2</option>
+        <select class="form-control" id="quantity" size="5" [(ngModel)]="selectedQuantity" name="quantity">
+          <option *ngFor="let quantity of quantities" [ngValue]="quantity">
+            {{quantity}}
+          </option>
         </select>
       </div>
     </div>
@@ -26,14 +26,14 @@
       <label for="type" class="col-sm-2 col-form-label">Type:</label>
       <div class="col-sm-10">
         <div class="form-check" id="type">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessPictureRadio" value="option1" checked>
-          <label class="form-check-label" for="guessPictureRadio">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessPicture" value="picture" [(ngModel)]="selectedType">
+          <label class="form-check-label" for="guessPicture">
             Guess picture by words
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessWordRadio" value="option2">
-          <label class="form-check-label" for="guessWordRadio">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessWord" value="word" [(ngModel)]="selectedType">
+          <label class="form-check-label" for="guessWord">
             Guess word by pictures
           </label>
         </div>
