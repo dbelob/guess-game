@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { catchError } from "rxjs/operators";
+import { Observable } from "rxjs";
 import { MessageService } from "../../modules/message/message.service";
 import { StartParameters } from "../models/start-parameters.model";
+import { State } from "../models/state.model";
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +23,14 @@ export class StateService {
           throw response;
         })
       );
+  }
+
+  getState(): Observable<State> {
+    return this.http.get<State>(`${this.baseUrl}/state`).pipe(
+      catchError((response: Response) => {
+        this.messageService.reportMessage(response);
+        throw response;
+      })
+    );
   }
 }

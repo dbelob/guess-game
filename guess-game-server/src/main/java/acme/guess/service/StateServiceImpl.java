@@ -26,4 +26,9 @@ public class StateServiceImpl implements StateService {
                 State.GUESS_NAME_STATE :
                 State.GUESS_PICTURE_STATE);
     }
+
+    @Override
+    public State getState() {
+        return stateDao.getState();
+    }
 }

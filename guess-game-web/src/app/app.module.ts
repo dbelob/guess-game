@@ -16,12 +16,13 @@ import { QuestionService } from "./shared/services/question.service";
 import { MessageModule } from "./modules/message/message.module";
 import { HttpClientModule } from "@angular/common/http";
 import { StateService } from "./shared/services/state.service";
+import { StateGuard } from "./shared/guards/state.guard";
 
 const routes: Routes = [
-  {path: 'start', component: StartComponent},
-  {path: 'guess/name', component: GuessNameComponent},
-  {path: 'guess/picture', component: GuessPictureComponent},
-  {path: 'result', component: ResultComponent},
+  {path: 'start', component: StartComponent, canActivate: [StateGuard]},
+  {path: 'guess/name', component: GuessNameComponent, canActivate: [StateGuard]},
+  {path: 'guess/picture', component: GuessPictureComponent, canActivate: [StateGuard]},
+  {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: '', pathMatch: 'full', redirectTo: 'start'},
   {path: "**", component: NotFoundComponent}
 ];
@@ -40,7 +41,7 @@ const routes: Routes = [
     StartModule,
     UnknownModule
   ],
-  providers: [QuestionService, StateService],
+  providers: [QuestionService, StateService, StateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
