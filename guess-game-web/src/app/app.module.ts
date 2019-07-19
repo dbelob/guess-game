@@ -15,6 +15,7 @@ import { NotFoundComponent } from "./modules/unknown/not-found.component";
 import { QuestionService } from "./shared/services/question.service";
 import { MessageModule } from "./modules/message/message.module";
 import { HttpClientModule } from "@angular/common/http";
+import { StateService } from "./shared/services/state.service";
 
 const routes: Routes = [
   {path: 'start', component: StartComponent},
@@ -39,7 +40,7 @@ const routes: Routes = [
     StartModule,
     UnknownModule
   ],
-  providers: [QuestionService],
+  providers: [QuestionService, StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

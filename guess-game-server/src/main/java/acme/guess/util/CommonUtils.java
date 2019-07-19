@@ -16,8 +16,8 @@ public class CommonUtils {
 
         List<Integer> result = new ArrayList<>();
 
-        // Add 10, 20, 50
-        for (int i : Arrays.asList(10, 20, 50)) {
+        // Add 5, 10, 20, 50
+        for (int i : Arrays.asList(5, 10, 20, 50)) {
             if (i <= count) {
                 result.add(i);
             }

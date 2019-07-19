@@ -12,7 +12,10 @@ public class QuestionSetDto {
     private long id;
     private String name;
 
-    public QuestionSetDto(long id, String name) {
+    public QuestionSetDto() {
+    }
+
+    private QuestionSetDto(long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -21,8 +24,16 @@ public class QuestionSetDto {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public static List<QuestionSetDto> convertToDto(List<QuestionSet> questionSets) {

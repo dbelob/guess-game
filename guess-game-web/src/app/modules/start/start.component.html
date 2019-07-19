@@ -5,7 +5,7 @@
     <div class="form-group row">
       <label for="set" class="col-sm-2 col-form-label">Set:</label>
       <div class="col-sm-10">
-        <select class="form-control" id="set" size="10" [(ngModel)]="selectedQuestionSet" (ngModelChange)="onChange($event)" name="set">
+        <select class="form-control" id="set" size="15" [(ngModel)]="selectedQuestionSet" (ngModelChange)="onChange($event)" name="set">
           <option *ngFor="let questionSet of questionSets" [ngValue]="questionSet">
             {{questionSet.name}}
           </option>
@@ -15,7 +15,7 @@
     <div class="form-group row">
       <label for="quantity" class="col-sm-2 col-form-label">Quantity:</label>
       <div class="col-sm-10">
-        <select class="form-control" id="quantity" size="5" [(ngModel)]="selectedQuantity" name="quantity">
+        <select class="form-control" id="quantity" size="10" [(ngModel)]="selectedQuantity" name="quantity">
           <option *ngFor="let quantity of quantities" [ngValue]="quantity">
             {{quantity}}
           </option>
@@ -26,13 +26,13 @@
       <label for="type" class="col-sm-2 col-form-label">Type:</label>
       <div class="col-sm-10">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessName" value="guessName" [(ngModel)]="selectedType">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessName" value="guessName" [(ngModel)]="selectedGuessType">
           <label class="form-check-label" for="guessName">
             Guess name by picture
           </label>
         </div>
         <div class="form-check" id="type">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessPicture" value="guessPicture" [(ngModel)]="selectedType">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessPicture" value="guessPicture" [(ngModel)]="selectedGuessType">
           <label class="form-check-label" for="guessPicture">
             Guess picture by name
           </label>

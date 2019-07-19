@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from "@angular/router";
 import { QuestionSet } from "../../shared/models/question-set.model";
 import { QuestionService } from "../../shared/services/question.service";
+import { StateService } from "../../shared/services/state.service";
+import { StartParameters } from "../../shared/models/start-parameters.model";
 
 @Component({
   selector: 'app-start',
@@ -11,9 +14,9 @@ export class StartComponent {
   private quantities: number[] = [];
   private selectedQuestionSet: QuestionSet;
   private selectedQuantity: number;
-  private selectedType: string = 'guessName';
+  private selectedGuessType: string = 'guessName';
 
-  constructor(private questionService: QuestionService) {
+  constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
     questionService.getQuestionSets().subscribe(data => {
       this.questionSets = data;
 
@@ -41,6 +44,14 @@ export class StartComponent {
   start() {
     console.log('selectedQuestionSet: ' + JSON.stringify(this.selectedQuestionSet) +
       '; selectedQuantity: ' + JSON.stringify(this.selectedQuantity) +
-      '; selectedType: ' + JSON.stringify(this.selectedType));
+      '; selectedGuessType: ' + JSON.stringify(this.selectedGuessType));
+
+    this.stateService.setStartParameters(
+      new StartParameters(
+        this.selectedQuestionSet.id,
+        this.selectedQuantity,
+        this.selectedGuessType)).subscribe(data => {
+      this.router.navigateByUrl('/guess/name');
+    });
   }
 }
