@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GuessWordComponent } from "./guess-word.component";
+import { GuessNameComponent } from "./guess-name.component";
 import { GuessPictureComponent } from "./guess-picture.component";
 
 @NgModule({
   declarations: [
     GuessPictureComponent,
-    GuessWordComponent
+    GuessNameComponent
   ],
   imports: [
     CommonModule

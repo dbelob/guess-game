@@ -11,7 +11,7 @@ export class StartComponent {
   private quantities: number[] = [];
   private selectedQuestionSet: QuestionSet;
   private selectedQuantity: number;
-  private selectedType: string = 'picture';
+  private selectedType: string = 'guessName';
 
   constructor(private questionService: QuestionService) {
     questionService.getQuestionSets().subscribe(data => {

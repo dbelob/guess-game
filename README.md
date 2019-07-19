@@ -1,6 +1,6 @@
 # Guess Game
 
-Guess the picture by words, the word by pictures
+Guess name by picture or picture by name 
 
 ## Requirements
 
