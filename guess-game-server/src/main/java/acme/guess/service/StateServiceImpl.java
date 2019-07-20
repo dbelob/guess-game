@@ -1,5 +1,6 @@
 package acme.guess.service;
 
+import acme.guess.dao.AnswerDao;
 import acme.guess.dao.QuestionDao;
 import acme.guess.dao.StateDao;
 import acme.guess.dao.exception.QuestionSetNotExistsException;
@@ -18,11 +19,13 @@ import java.util.List;
 public class StateServiceImpl implements StateService {
     private StateDao stateDao;
     private QuestionDao questionDao;
+    private AnswerDao answerDao;
 
     @Autowired
-    public StateServiceImpl(StateDao stateDao, QuestionDao questionDao) {
+    public StateServiceImpl(StateDao stateDao, QuestionDao questionDao, AnswerDao answerDao) {
         this.stateDao = stateDao;
         this.questionDao = questionDao;
+        this.answerDao = answerDao;
     }
 
     @Override
@@ -32,6 +35,7 @@ public class StateServiceImpl implements StateService {
         QuestionAnswersSet questionAnswersSet = createQuestionAnswersSet(startParameters);
         stateDao.setQuestionAnswersSet(questionAnswersSet);
 
+        answerDao.clearAnswerSets();
         stateDao.setState(GuessType.GUESS_NAME_TYPE.equals(startParameters.getGuessType()) ?
                 State.GUESS_NAME_STATE :
                 State.GUESS_PICTURE_STATE);
@@ -40,6 +44,23 @@ public class StateServiceImpl implements StateService {
     @Override
     public State getState() {
         return stateDao.getState();
+    }
+
+    @Override
+    public QuestionAnswersSet getQuestionAnswersSet() {
+        return stateDao.getQuestionAnswersSet();
+    }
+
+    @Override
+    public QuestionAnswers getQuestionAnswers() {
+        QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet();
+        List<AnswerSet> answerSets = answerDao.getAnswerSets();
+
+        if (answerSets.size() < questionAnswersSet.getQuestionAnswersList().size()) {
+            return questionAnswersSet.getQuestionAnswersList().get(answerSets.size());
+        } else {
+            return null;
+        }
     }
 
     private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
@@ -65,7 +86,7 @@ public class StateServiceImpl implements StateService {
             // Select 3 first elements, add current, shuffle
             List<Question> answers = shuffledQuestionsWithoutCurrentQuestion.subList(
                     0,
-                    Math.min(3, shuffledQuestionsWithoutCurrentQuestion.size()));
+                    Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, shuffledQuestionsWithoutCurrentQuestion.size()));
             answers.add(question);
             Collections.shuffle(answers);
 

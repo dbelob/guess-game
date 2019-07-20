@@ -1,15 +1,16 @@
 package acme.guess.domain;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
  * Question and answers set.
  */
 public class QuestionAnswersSet {
+    public static final int QUESTION_ANSWERS_LIST_SIZE = 4;
+
     private String name;
     private String directoryName;
-    private List<QuestionAnswers> questionAnswersList = Collections.emptyList();
+    private List<QuestionAnswers> questionAnswersList;
 
     public QuestionAnswersSet(String name, String directoryName, List<QuestionAnswers> questionAnswersList) {
         this.name = name;

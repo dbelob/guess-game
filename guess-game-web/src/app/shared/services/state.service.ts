@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { MessageService } from "../../modules/message/message.service";
 import { StartParameters } from "../models/start-parameters.model";
 import { State } from "../models/state.model";
+import { PictureNames } from "../models/picture-names.model";
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,15 @@ export class StateService {
 
   getState(): Observable<State> {
     return this.http.get<State>(`${this.baseUrl}/state`).pipe(
+      catchError((response: Response) => {
+        this.messageService.reportMessage(response);
+        throw response;
+      })
+    );
+  }
+
+  getPictureNames(): Observable<PictureNames> {
+    return this.http.get<PictureNames>(`${this.baseUrl}/picture-names`).pipe(
       catchError((response: Response) => {
         this.messageService.reportMessage(response);
         throw response;

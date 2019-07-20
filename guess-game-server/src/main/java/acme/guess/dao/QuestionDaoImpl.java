@@ -14,12 +14,12 @@ import java.util.Optional;
  */
 @Repository
 public class QuestionDaoImpl implements QuestionDao {
-    private static String QUESTIONS_DIRECTORY = "questions";
+    private static String QUESTIONS_DIRECTORY_NAME = "questions";
 
     private final List<QuestionSet> questionSets;
 
     public QuestionDaoImpl() throws IOException {
-        this.questionSets = YamlUtils.readQuestionSets(QUESTIONS_DIRECTORY);
+        this.questionSets = YamlUtils.readQuestionSets(QUESTIONS_DIRECTORY_NAME);
     }
 
     @Override
