@@ -1,11 +1,13 @@
 package acme.guess.domain;
 
+import java.util.Collections;
 import java.util.List;
 
 public class QuestionSet {
     private long id;
     private String name;
-    private List<Question> questions;
+    private String directoryName;
+    private List<Question> questions = Collections.emptyList();
 
     public long getId() {
         return id;
@@ -21,6 +23,14 @@ public class QuestionSet {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDirectoryName() {
+        return directoryName;
+    }
+
+    public void setDirectoryName(String directoryName) {
+        this.directoryName = directoryName;
     }
 
     public List<Question> getQuestions() {

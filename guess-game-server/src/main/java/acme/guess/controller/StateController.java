@@ -1,5 +1,6 @@
 package acme.guess.controller;
 
+import acme.guess.dao.exception.QuestionSetNotExistsException;
 import acme.guess.domain.State;
 import acme.guess.dto.StartParametersDto;
 import acme.guess.service.StateService;
@@ -23,7 +24,7 @@ public class StateController {
 
     @PostMapping("/parameters")
     @ResponseStatus(HttpStatus.OK)
-    public void setStartParameters(@RequestBody StartParametersDto startParameters) {
+    public void setStartParameters(@RequestBody StartParametersDto startParameters) throws QuestionSetNotExistsException {
         stateService.setStartParameters(StartParametersDto.convertFromDto(startParameters));
     }
 

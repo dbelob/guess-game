@@ -1,11 +1,15 @@
 package acme.guess.service;
 
+import acme.guess.dao.QuestionDao;
 import acme.guess.dao.StateDao;
-import acme.guess.domain.GuessType;
-import acme.guess.domain.StartParameters;
-import acme.guess.domain.State;
+import acme.guess.dao.exception.QuestionSetNotExistsException;
+import acme.guess.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * State service implementation.
@@ -13,15 +17,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class StateServiceImpl implements StateService {
     private StateDao stateDao;
+    private QuestionDao questionDao;
 
     @Autowired
-    public StateServiceImpl(StateDao stateDao) {
+    public StateServiceImpl(StateDao stateDao, QuestionDao questionDao) {
         this.stateDao = stateDao;
+        this.questionDao = questionDao;
     }
 
     @Override
-    public void setStartParameters(StartParameters startParameters) {
+    public void setStartParameters(StartParameters startParameters) throws QuestionSetNotExistsException {
         stateDao.setStartParameters(startParameters);
+
+        QuestionAnswersSet questionAnswersSet = createQuestionAnswersSet(startParameters);
+        stateDao.setQuestionAnswersSet(questionAnswersSet);
+
         stateDao.setState(GuessType.GUESS_NAME_TYPE.equals(startParameters.getGuessType()) ?
                 State.GUESS_NAME_STATE :
                 State.GUESS_PICTURE_STATE);
@@ -30,5 +40,38 @@ public class StateServiceImpl implements StateService {
     @Override
     public State getState() {
         return stateDao.getState();
+    }
+
+    private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
+        // Find question set by id
+        QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetId());
+
+        // Shuffle questions
+        List<Question> shuffledQuestions = new ArrayList<>(questionSet.getQuestions());
+        Collections.shuffle(shuffledQuestions);
+
+        // Select first "quantity" elements
+        List<Question> selectedShuffledQuestions = shuffledQuestions.subList(
+                0,
+                Math.min(startParameters.getQuantity(), shuffledQuestions.size()));
+
+        // Create question/answers list
+        List<QuestionAnswers> questionAnswersList = new ArrayList<>();
+        for (Question question : selectedShuffledQuestions) {
+            List<Question> shuffledQuestionsWithoutCurrentQuestion = new ArrayList<>(shuffledQuestions);
+            shuffledQuestionsWithoutCurrentQuestion.remove(question);
+            Collections.shuffle(shuffledQuestionsWithoutCurrentQuestion);
+
+            // Select 3 first elements, add current, shuffle
+            List<Question> answers = shuffledQuestionsWithoutCurrentQuestion.subList(
+                    0,
+                    Math.min(3, shuffledQuestionsWithoutCurrentQuestion.size()));
+            answers.add(question);
+            Collections.shuffle(answers);
+
+            questionAnswersList.add(new QuestionAnswers(question, answers));
+        }
+
+        return new QuestionAnswersSet(questionSet.getName(), questionSet.getDirectoryName(), questionAnswersList);
     }
 }

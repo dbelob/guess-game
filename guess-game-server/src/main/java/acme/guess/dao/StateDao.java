@@ -1,5 +1,6 @@
 package acme.guess.dao;
 
+import acme.guess.domain.QuestionAnswersSet;
 import acme.guess.domain.StartParameters;
 import acme.guess.domain.State;
 
@@ -14,4 +15,8 @@ public interface StateDao {
     StartParameters getStartParameters();
 
     void setStartParameters(StartParameters startParameters);
+
+    QuestionAnswersSet getQuestionAnswersSet();
+
+    void setQuestionAnswersSet(QuestionAnswersSet questionAnswersSet);
 }

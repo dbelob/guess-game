@@ -1,5 +1,6 @@
 package acme.guess.dao;
 
+import acme.guess.domain.QuestionAnswersSet;
 import acme.guess.domain.StartParameters;
 import acme.guess.domain.State;
 import org.springframework.stereotype.Repository;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
 public class StateDaoImpl implements StateDao {
     private State state = State.START_STATE;
     private StartParameters startParameters;
+    private QuestionAnswersSet questionAnswersSet;
 
     @Override
     public State getState() {
@@ -30,5 +32,15 @@ public class StateDaoImpl implements StateDao {
     @Override
     public void setStartParameters(StartParameters startParameters) {
         this.startParameters = startParameters;
+    }
+
+    @Override
+    public QuestionAnswersSet getQuestionAnswersSet() {
+        return questionAnswersSet;
+    }
+
+    @Override
+    public void setQuestionAnswersSet(QuestionAnswersSet questionAnswersSet) {
+        this.questionAnswersSet = questionAnswersSet;
     }
 }
