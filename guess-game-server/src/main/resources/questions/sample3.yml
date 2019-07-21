@@ -1,6 +1,7 @@
 name: "Question Set 3"
 directoryName: samples
 questions:
+  - {name: "Picture 15", fileName: picture15.jpg}
   - {name: "Picture 16", fileName: picture16.jpg}
   - {name: "Picture 17", fileName: picture17.jpg}
   - {name: "Picture 18", fileName: picture18.jpg}
@@ -27,14 +28,3 @@ questions:
   - {name: "Picture 39", fileName: picture39.jpg}
   - {name: "Picture 40", fileName: picture40.jpg}
   - {name: "Picture 41", fileName: picture41.jpg}
-  - {name: "Picture 42", fileName: picture42.jpg}
-  - {name: "Picture 43", fileName: picture43.jpg}
-  - {name: "Picture 44", fileName: picture44.jpg}
-  - {name: "Picture 45", fileName: picture45.jpg}
-  - {name: "Picture 46", fileName: picture46.jpg}
-  - {name: "Picture 47", fileName: picture47.jpg}
-  - {name: "Picture 48", fileName: picture48.jpg}
-  - {name: "Picture 49", fileName: picture49.jpg}
-  - {name: "Picture 50", fileName: picture50.jpg}
-  - {name: "Picture 51", fileName: picture51.jpg}
-  - {name: "Picture 52", fileName: picture52.jpg}

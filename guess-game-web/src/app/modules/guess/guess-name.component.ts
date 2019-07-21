@@ -7,6 +7,7 @@ import { PictureNames } from "../../shared/models/picture-names.model";
   templateUrl: './guess-name.component.html'
 })
 export class GuessNameComponent {
+  private imageDirectory: string = 'assets/images';
   private pictureNames: PictureNames = new PictureNames();
   private title: string;
 

@@ -4,14 +4,12 @@
   <app-message></app-message>
 
   <div class="text-center">
-    <img src="{{pictureNames.fileName}}" alt="" height="300pt" width="300pt" class="img-thumbnail mt-4 mb-4">
+    <img src="{{imageDirectory}}/{{pictureNames.fileName}}" alt="" height="400pt" width="400pt" class="img-thumbnail mt-5 mb-5">
   </div>
   <div class="text-center">
-    <button type="submit" class="btn btn-primary m-2" (click)="answer()">{{pictureNames.name0}}</button>
-    <button type="submit" class="btn btn-primary m-2" (click)="answer()">{{pictureNames.name1}}</button>
-  </div>
-  <div class="text-center">
-    <button type="submit" class="btn btn-primary m-2" (click)="answer()">{{pictureNames.name2}}</button>
-    <button type="submit" class="btn btn-primary m-2" (click)="answer()">{{pictureNames.name3}}</button>
+    <button type="submit" class="btn btn-primary m-1" (click)="answer()">{{pictureNames.name0}}</button>
+    <button type="submit" class="btn btn-primary m-1" (click)="answer()">{{pictureNames.name1}}</button>
+    <button type="submit" class="btn btn-primary m-1" (click)="answer()">{{pictureNames.name2}}</button>
+    <button type="submit" class="btn btn-primary m-1" (click)="answer()">{{pictureNames.name3}}</button>
   </div>
 </div>

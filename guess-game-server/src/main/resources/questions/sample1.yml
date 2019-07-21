@@ -1,13 +1,13 @@
 name: "Question Set 1"
 directoryName: samples
 questions:
-  - {name: "Picture 1", fileName: picture1.jpg}
-  - {name: "Picture 2", fileName: picture2.jpg}
-  - {name: "Picture 3", fileName: picture3.jpg}
-  - {name: "Picture 4", fileName: picture4.jpg}
-  - {name: "Picture 5", fileName: picture5.jpg}
-  - {name: "Picture 6", fileName: picture6.jpg}
-  - {name: "Picture 7", fileName: picture7.jpg}
-  - {name: "Picture 8", fileName: picture8.jpg}
-  - {name: "Picture 9", fileName: picture9.jpg}
-  - {name: "Picture 10", fileName: picture10.jpg}
+  - {name: "Picture 0", fileName: picture00.jpg}
+  - {name: "Picture 1", fileName: picture01.jpg}
+  - {name: "Picture 2", fileName: picture02.jpg}
+  - {name: "Picture 3", fileName: picture03.jpg}
+  - {name: "Picture 4", fileName: picture04.jpg}
+  - {name: "Picture 5", fileName: picture05.jpg}
+  - {name: "Picture 6", fileName: picture06.jpg}
+  - {name: "Picture 7", fileName: picture07.jpg}
+  - {name: "Picture 8", fileName: picture08.jpg}
+  - {name: "Picture 9", fileName: picture09.jpg}
