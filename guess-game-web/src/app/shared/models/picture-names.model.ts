@@ -1,7 +1,7 @@
 export class PictureNames {
   constructor(
     public questionSetName?: string,
-    public currentNumber?: number,
+    public currentIndex?: number,
     public totalNumber?: number,
     public fileName?: string,
     public id0?: number,

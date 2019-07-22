@@ -61,7 +61,7 @@ public class StateController {
 
             return PictureNamesDto.convertToDto(
                     questionAnswersSet.getName(),
-                    currentQuestionIndex + 1,
+                    currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getDirectoryName(),
                     questionAnswers,

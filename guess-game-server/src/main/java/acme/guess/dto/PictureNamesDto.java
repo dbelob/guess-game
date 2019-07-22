@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class PictureNamesDto {
     private String questionSetName;
-    private int currentNumber;
+    private int currentIndex;
     private int totalNumber;
 
     private String fileName;
@@ -27,12 +27,12 @@ public class PictureNamesDto {
     private boolean invalid2;
     private boolean invalid3;
 
-    public PictureNamesDto(String questionSetName, int currentNumber, int totalNumber, String fileName,
+    public PictureNamesDto(String questionSetName, int currentIndex, int totalNumber, String fileName,
                            long id0, long id1, long id2, long id3,
                            String name0, String name1, String name2, String name3,
                            boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3) {
         this.questionSetName = questionSetName;
-        this.currentNumber = currentNumber;
+        this.currentIndex = currentIndex;
         this.totalNumber = totalNumber;
         this.fileName = fileName;
         this.id0 = id0;
@@ -53,8 +53,8 @@ public class PictureNamesDto {
         return questionSetName;
     }
 
-    public int getCurrentNumber() {
-        return currentNumber;
+    public int getCurrentIndex() {
+        return currentIndex;
     }
 
     public int getTotalNumber() {

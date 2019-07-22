@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { StateService } from "../../shared/services/state.service";
+import { Router } from "@angular/router";
 import { PictureNames } from "../../shared/models/picture-names.model";
 import { State } from "../../shared/models/state.model";
-import { Router } from "@angular/router";
+import { StateService } from "../../shared/services/state.service";
+import { AnswerService } from "../../shared/services/answer.service";
 
 @Component({
   selector: 'app-guess-name',
@@ -14,7 +15,7 @@ export class GuessNameComponent {
   private title: string;
   private imageSource: string;
 
-  constructor(private stateService: StateService, private router: Router) {
+  constructor(private stateService: StateService, private answerService: AnswerService, private router: Router) {
     this.loadQuestion();
   }
 
@@ -22,7 +23,7 @@ export class GuessNameComponent {
     this.stateService.getPictureNames().subscribe(data => {
         if (data) {
           this.pictureNames = data;
-          this.title = `${this.pictureNames.questionSetName} (${this.pictureNames.currentNumber}/${this.pictureNames.totalNumber})`;
+          this.title = `${this.pictureNames.questionSetName} (${this.pictureNames.currentIndex + 1}/${this.pictureNames.totalNumber})`;
           this.imageSource = `${this.imageDirectory}/${this.pictureNames.fileName}`;
         } else {
           this.result();
@@ -32,8 +33,10 @@ export class GuessNameComponent {
   }
 
   answer(id: number) {
-    //TODO: implement
-    console.log("answer(" + this.pictureNames.currentNumber + ', ' + id + ')');
+    this.answerService.addAnswer(this.pictureNames.currentIndex, id).subscribe(data => {
+        this.loadQuestion();
+      }
+    );
   }
 
   result() {

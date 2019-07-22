@@ -12,9 +12,10 @@ import { GuessNameComponent } from "./modules/guess/guess-name.component";
 import { GuessPictureComponent } from "./modules/guess/guess-picture.component";
 import { UnknownModule } from "./modules/unknown/unknown.module";
 import { NotFoundComponent } from "./modules/unknown/not-found.component";
-import { QuestionService } from "./shared/services/question.service";
 import { MessageModule } from "./modules/message/message.module";
 import { HttpClientModule } from "@angular/common/http";
+import { AnswerService } from "./shared/services/answer.service";
+import { QuestionService } from "./shared/services/question.service";
 import { StateService } from "./shared/services/state.service";
 import { StateGuard } from "./shared/guards/state.guard";
 
@@ -41,7 +42,7 @@ const routes: Routes = [
     StartModule,
     UnknownModule
   ],
-  providers: [QuestionService, StateService, StateGuard],
+  providers: [AnswerService, QuestionService, StateService, StateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
