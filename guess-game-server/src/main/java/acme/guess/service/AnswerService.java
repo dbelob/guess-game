@@ -1,19 +1,14 @@
 package acme.guess.service;
 
-import acme.guess.domain.AnswerSet;
-
-import java.util.List;
 import java.util.Set;
 
 /**
  * Answer service.
  */
 public interface AnswerService {
-    List<AnswerSet> getAnswerSets();
-
-    void addAnswerSet(AnswerSet answerSet);
+    void setAnswer(int questionIndex, long answerId);
 
     int getCurrentQuestionIndex();
 
-    Set<Long> getInvalidAnswerIds(int index);
+    Set<Long> getInvalidAnswerIds(int questionIndex);
 }

@@ -34,7 +34,7 @@ export class GuessNameComponent {
   }
 
   answer(id: number) {
-    this.answerService.addAnswer(this.pictureNames.currentIndex, id)
+    this.answerService.setAnswer(this.pictureNames.currentIndex, id)
       .subscribe(data => {
           this.loadQuestion();
         }
