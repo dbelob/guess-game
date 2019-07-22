@@ -2,6 +2,8 @@ package acme.guess.dto;
 
 import acme.guess.domain.QuestionAnswers;
 
+import java.util.Set;
+
 /**
  * Picture, names DTO.
  */
@@ -20,8 +22,15 @@ public class PictureNamesDto {
     private String name1;
     private String name2;
     private String name3;
+    private boolean invalid0;
+    private boolean invalid1;
+    private boolean invalid2;
+    private boolean invalid3;
 
-    public PictureNamesDto(String questionSetName, int currentNumber, int totalNumber, String fileName, long id0, long id1, long id2, long id3, String name0, String name1, String name2, String name3) {
+    public PictureNamesDto(String questionSetName, int currentNumber, int totalNumber, String fileName,
+                           long id0, long id1, long id2, long id3,
+                           String name0, String name1, String name2, String name3,
+                           boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3) {
         this.questionSetName = questionSetName;
         this.currentNumber = currentNumber;
         this.totalNumber = totalNumber;
@@ -34,6 +43,10 @@ public class PictureNamesDto {
         this.name1 = name1;
         this.name2 = name2;
         this.name3 = name3;
+        this.invalid0 = invalid0;
+        this.invalid1 = invalid1;
+        this.invalid2 = invalid2;
+        this.invalid3 = invalid3;
     }
 
     public String getQuestionSetName() {
@@ -84,13 +97,34 @@ public class PictureNamesDto {
         return name3;
     }
 
-    public static PictureNamesDto convertToDto(String questionSetName, int currentNumber, int totalNumber, String directoryName, QuestionAnswers questionAnswers) {
+    public boolean isInvalid0() {
+        return invalid0;
+    }
+
+    public boolean isInvalid1() {
+        return invalid1;
+    }
+
+    public boolean isInvalid2() {
+        return invalid2;
+    }
+
+    public boolean isInvalid3() {
+        return invalid3;
+    }
+
+    public static PictureNamesDto convertToDto(String questionSetName, int currentNumber, int totalNumber, String directoryName,
+                                               QuestionAnswers questionAnswers, Set<Long> invalidAnswerIds) {
 
         return new PictureNamesDto(questionSetName, currentNumber, totalNumber,
                 String.format("%s/%s", directoryName, questionAnswers.getQuestion().getFileName()),
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
                 questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
                 questionAnswers.getAnswers().get(0).getName(), questionAnswers.getAnswers().get(1).getName(),
-                questionAnswers.getAnswers().get(2).getName(), questionAnswers.getAnswers().get(3).getName());
+                questionAnswers.getAnswers().get(2).getName(), questionAnswers.getAnswers().get(3).getName(),
+                invalidAnswerIds.contains(questionAnswers.getAnswers().get(0).getId()),
+                invalidAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
+                invalidAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
+                invalidAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()));
     }
 }

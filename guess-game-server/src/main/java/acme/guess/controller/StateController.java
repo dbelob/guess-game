@@ -1,7 +1,6 @@
 package acme.guess.controller;
 
 import acme.guess.dao.exception.QuestionSetNotExistsException;
-import acme.guess.domain.AnswerSet;
 import acme.guess.domain.QuestionAnswers;
 import acme.guess.domain.QuestionAnswersSet;
 import acme.guess.domain.State;
@@ -15,7 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * State controller.
@@ -53,17 +52,20 @@ public class StateController {
     @GetMapping("/picture-names")
     @ResponseBody
     public PictureNamesDto getPictureNames() {
+        int currentQuestionIndex = answerService.getCurrentQuestionIndex();
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet();
-        List<AnswerSet> answerSets = answerService.getAnswerSets();
-        QuestionAnswers questionAnswers = stateService.getQuestionAnswers();
+        Set<Long> invalidAnswerIds = answerService.getInvalidAnswerIds(currentQuestionIndex);
 
-        if ((questionAnswersSet != null) && (answerSets != null) && (questionAnswers != null)) {
+        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
+            QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
+
             return PictureNamesDto.convertToDto(
                     questionAnswersSet.getName(),
-                    answerSets.size() + 1,
+                    currentQuestionIndex + 1,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getDirectoryName(),
-                    questionAnswers);
+                    questionAnswers,
+                    invalidAnswerIds);
         } else {
             return null;
         }
@@ -72,8 +74,6 @@ public class StateController {
     @GetMapping("/name-pictures")
     @ResponseBody
     public NamePicturesDto getNamePictures() {
-        QuestionAnswers questionAnswers = stateService.getQuestionAnswers();
-
         //TODO: implement
         return null;
     }

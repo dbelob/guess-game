@@ -5,7 +5,9 @@ import acme.guess.domain.AnswerSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Answer service implementation.
@@ -27,5 +29,35 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public void addAnswerSet(AnswerSet answerSet) {
         answerDao.addAnswerSet(answerSet);
+    }
+
+    @Override
+    public int getCurrentQuestionIndex() {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets();
+
+        if (answerSets.size() <= 0) {
+            return 0;
+        } else {
+            AnswerSet lastAnswerSet = answerSets.get(answerSets.size() - 1);
+
+            if (lastAnswerSet.isSuccess() || lastAnswerSet.getAnswers().contains(lastAnswerSet.getQuestionId())) {
+                // Next question
+                return answerSets.size();
+            } else {
+                // Same question
+                return answerSets.size() - 1;
+            }
+        }
+    }
+
+    @Override
+    public Set<Long> getInvalidAnswerIds(int index) {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets();
+
+        if (index < answerSets.size()) {
+            return answerSets.get(index).getAnswers();
+        } else {
+            return Collections.emptySet();
+        }
     }
 }

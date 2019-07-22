@@ -17,6 +17,4 @@ public interface StateService {
     void setState(State state);
 
     QuestionAnswersSet getQuestionAnswersSet();
-
-    QuestionAnswers getQuestionAnswers();
 }

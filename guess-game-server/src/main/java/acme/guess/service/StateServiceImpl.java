@@ -56,18 +56,6 @@ public class StateServiceImpl implements StateService {
         return stateDao.getQuestionAnswersSet();
     }
 
-    @Override
-    public QuestionAnswers getQuestionAnswers() {
-        QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet();
-        List<AnswerSet> answerSets = answerDao.getAnswerSets();
-
-        if (answerSets.size() < questionAnswersSet.getQuestionAnswersList().size()) {
-            return questionAnswersSet.getQuestionAnswersList().get(answerSets.size());
-        } else {
-            return null;
-        }
-    }
-
     private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
         // Find question set by id
         QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetId());

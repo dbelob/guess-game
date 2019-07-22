@@ -4,12 +4,16 @@
   <app-message></app-message>
 
   <div class="text-center">
-    <img src="{{imageDirectory}}/{{pictureNames.fileName}}" alt="" height="400pt" width="400pt" class="img-thumbnail mt-5 mb-5">
+    <img src="{{imageSource}}" alt="" height="400pt" width="400pt" class="img-thumbnail mt-5 mb-5">
   </div>
   <div class="text-center">
-    <button type="submit" class="btn btn-primary m-1" (click)="answer()">{{pictureNames.name0}}</button>
-    <button type="submit" class="btn btn-primary m-1" (click)="answer()">{{pictureNames.name1}}</button>
-    <button type="submit" class="btn btn-primary m-1" (click)="answer()">{{pictureNames.name2}}</button>
-    <button type="submit" class="btn btn-primary m-1" (click)="answer()">{{pictureNames.name3}}</button>
+    <button type="submit" class="btn btn-primary m-1" [class.btn-danger]="pictureNames.invalid0" [disabled]="pictureNames.invalid0"
+            (click)="answer(pictureNames.id0)">{{pictureNames.name0}}</button>
+    <button type="submit" class="btn btn-primary m-1" [class.btn-danger]="pictureNames.invalid1" [disabled]="pictureNames.invalid1"
+            (click)="answer(pictureNames.id1)">{{pictureNames.name1}}</button>
+    <button type="submit" class="btn btn-primary m-1" [class.btn-danger]="pictureNames.invalid2" [disabled]="pictureNames.invalid2"
+            (click)="answer(pictureNames.id2)">{{pictureNames.name2}}</button>
+    <button type="submit" class="btn btn-primary m-1" [class.btn-danger]="pictureNames.invalid3" [disabled]="pictureNames.invalid3"
+            (click)="answer(pictureNames.id3)">{{pictureNames.name3}}</button>
   </div>
 </div>

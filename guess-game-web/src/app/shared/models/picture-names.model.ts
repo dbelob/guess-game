@@ -11,7 +11,11 @@ export class PictureNames {
     public name0?: string,
     public name1?: string,
     public name2?: string,
-    public name3?: string
+    public name3?: string,
+    public invalid0?: boolean,
+    public invalid1?: boolean,
+    public invalid2?: boolean,
+    public invalid3?: boolean
   ) {
   }
 }
