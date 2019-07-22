@@ -1,5 +1,47 @@
 <div class="container-dialog p-2">
-  <h3 class="bg-info p-1 text-white text-center">Result</h3>
+  <h3 class="bg-info p-1 text-white text-center">Game over</h3>
 
-  <app-message></app-message>
+  <form role="form">
+    <app-message></app-message>
+
+    <div class="mt-4 mb-4">
+      <div class="form-row">
+        <div class="col-4 right-align">
+          <label class="col-form-label">Correct answers:</label>
+        </div>
+        <div class="col-4 center-align">
+          <label class="col-form-label">{{result.correctAnswers}}</label>
+        </div>
+        <div class="col-2 center-align">
+          <label class="col-form-label">{{result.correctPercents | percent:'1.2-2'}}</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-4 right-align">
+          <label class="col-form-label">Wrong answers:</label>
+        </div>
+        <div class="col-4 center-align">
+          <label class="col-form-label">{{result.wrongAnswers}}</label>
+        </div>
+        <div class="col-2 center-align">
+          <label class="col-form-label">{{result.wrongPercents| percent:'1.2-2'}}</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-4 right-align">
+          <label class="col-form-label">Skipped answers:</label>
+        </div>
+        <div class="col-4 center-align">
+          <label class="col-form-label">{{result.skippedAnswers}}</label>
+        </div>
+        <div class="col-2 center-align">
+          <label class="col-form-label">{{result.skippedPercents| percent:'1.2-2'}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary m-1" (click)="restart()">Restart</button>
+    </div>
+
+  </form>
 </div>

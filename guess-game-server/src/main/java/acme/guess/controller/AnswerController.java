@@ -1,13 +1,11 @@
 package acme.guess.controller;
 
+import acme.guess.domain.Result;
 import acme.guess.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Answer controller.
@@ -26,5 +24,11 @@ public class AnswerController {
     @ResponseStatus(HttpStatus.OK)
     public void addAnswer(@RequestParam int questionIndex, @RequestParam long answerId) {
         answerService.setAnswer(questionIndex, answerId);
+    }
+
+    @GetMapping("/result")
+    @ResponseBody
+    public Result getResult() {
+        return answerService.getResult();
     }
 }

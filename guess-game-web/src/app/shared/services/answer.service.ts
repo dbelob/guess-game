@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { MessageService } from "../../modules/message/message.service";
 import { Observable } from "rxjs";
 import { catchError } from "rxjs/operators";
+import { Result } from "../models/result.model";
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,15 @@ export class AnswerService {
           throw response;
         })
       );
+  }
 
+  getResult(): Observable<Result> {
+    return this.http.get<Result>(`${this.baseUrl}/result`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
   }
 }

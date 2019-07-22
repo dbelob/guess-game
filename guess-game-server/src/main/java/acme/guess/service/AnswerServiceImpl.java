@@ -5,6 +5,7 @@ import acme.guess.dao.StateDao;
 import acme.guess.domain.AnswerSet;
 import acme.guess.domain.QuestionAnswers;
 import acme.guess.domain.QuestionAnswersSet;
+import acme.guess.domain.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -75,5 +76,24 @@ public class AnswerServiceImpl implements AnswerService {
         } else {
             return Collections.emptySet();
         }
+    }
+
+    @Override
+    public Result getResult() {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets();
+        long correctAnswers = answerSets.stream()
+                .filter(AnswerSet::isSuccess)
+                .count();
+        long wrongAnswers = answerSets.stream()
+                .filter(a -> !a.isSuccess())
+                .count();
+        QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet();
+        long totalQuestions = questionAnswersSet.getQuestionAnswersList().size();
+        long skippedAnswers = totalQuestions - (correctAnswers + wrongAnswers);
+
+        return new Result(correctAnswers, wrongAnswers, skippedAnswers,
+                (float) correctAnswers / totalQuestions,
+                (float) wrongAnswers / totalQuestions,
+                (float) skippedAnswers / totalQuestions);
     }
 }

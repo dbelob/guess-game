@@ -1,5 +1,7 @@
 package acme.guess.service;
 
+import acme.guess.domain.Result;
+
 import java.util.Set;
 
 /**
@@ -11,4 +13,6 @@ public interface AnswerService {
     int getCurrentQuestionIndex();
 
     Set<Long> getInvalidAnswerIds(int questionIndex);
+
+    Result getResult();
 }
