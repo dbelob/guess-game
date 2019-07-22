@@ -16,7 +16,7 @@ export class StateService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  setStartParameters(startParameters: StartParameters) {
+  setStartParameters(startParameters: StartParameters): Observable<string> {
     return this.http.post<string>(`${this.baseUrl}/parameters`, startParameters)
       .pipe(
         catchError((response: Response) => {
@@ -33,6 +33,16 @@ export class StateService {
         throw response;
       })
     );
+  }
+
+  setState(state: State): Observable<string> {
+    return this.http.put<string>(`${this.baseUrl}/state`, state)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
   }
 
   getPictureNames(): Observable<PictureNames> {

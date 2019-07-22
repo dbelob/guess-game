@@ -14,6 +14,8 @@ public interface StateService {
 
     State getState();
 
+    void setState(State state);
+
     QuestionAnswersSet getQuestionAnswersSet();
 
     QuestionAnswers getQuestionAnswers();

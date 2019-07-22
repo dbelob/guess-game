@@ -8,7 +8,7 @@ import { State } from "../models/state.model";
 
 @Injectable()
 export class StateGuard implements CanActivate {
-  constructor(public stateService: StateService, private messageService: MessageService, public router: Router) {
+  constructor(public stateService: StateService, private messageService: MessageService, private router: Router) {
   }
 
   canActivate(routeSnapshot: ActivatedRouteSnapshot, stateSnapshot: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

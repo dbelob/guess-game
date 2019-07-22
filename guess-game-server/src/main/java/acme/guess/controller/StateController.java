@@ -44,6 +44,12 @@ public class StateController {
         return stateService.getState();
     }
 
+    @PutMapping("/state")
+    @ResponseStatus(HttpStatus.OK)
+    public void setState(@RequestBody String state) {
+        stateService.setState(State.valueOf(state));
+    }
+
     @GetMapping("/picture-names")
     @ResponseBody
     public PictureNamesDto getPictureNames() {

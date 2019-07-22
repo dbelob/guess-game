@@ -47,6 +47,11 @@ public class StateServiceImpl implements StateService {
     }
 
     @Override
+    public void setState(State state) {
+        stateDao.setState(state);
+    }
+
+    @Override
     public QuestionAnswersSet getQuestionAnswersSet() {
         return stateDao.getQuestionAnswersSet();
     }
