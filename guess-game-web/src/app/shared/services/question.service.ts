@@ -15,22 +15,24 @@ export class QuestionService {
   }
 
   getQuestionSets(): Observable<QuestionSet[]> {
-    return this.http.get<QuestionSet[]>(`${this.baseUrl}/sets`).pipe(
-      catchError((response: Response) => {
-        this.messageService.reportMessage(response);
-        throw response;
-      })
-    );
+    return this.http.get<QuestionSet[]>(`${this.baseUrl}/sets`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
   }
 
   getQuantities(id: number): Observable<number[]> {
     let params = new HttpParams().set('questionSetId', id.toString());
 
-    return this.http.get<number[]>(`${this.baseUrl}/quantities`, {params: params}).pipe(
-      catchError((response: Response) => {
-        this.messageService.reportMessage(response);
-        throw response;
-      })
-    );
+    return this.http.get<number[]>(`${this.baseUrl}/quantities`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
   }
 }

@@ -27,12 +27,13 @@ export class StateService {
   }
 
   getState(): Observable<State> {
-    return this.http.get<State>(`${this.baseUrl}/state`).pipe(
-      catchError((response: Response) => {
-        this.messageService.reportMessage(response);
-        throw response;
-      })
-    );
+    return this.http.get<State>(`${this.baseUrl}/state`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
   }
 
   setState(state: State): Observable<string> {
@@ -46,11 +47,12 @@ export class StateService {
   }
 
   getPictureNames(): Observable<PictureNames> {
-    return this.http.get<PictureNames>(`${this.baseUrl}/picture-names`).pipe(
-      catchError((response: Response) => {
-        this.messageService.reportMessage(response);
-        throw response;
-      })
-    );
+    return this.http.get<PictureNames>(`${this.baseUrl}/picture-names`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
   }
 }

@@ -20,29 +20,32 @@ export class GuessNameComponent {
   }
 
   loadQuestion() {
-    this.stateService.getPictureNames().subscribe(data => {
-        if (data) {
-          this.pictureNames = data;
-          this.title = `${this.pictureNames.questionSetName} (${this.pictureNames.currentIndex + 1}/${this.pictureNames.totalNumber})`;
-          this.imageSource = `${this.imageDirectory}/${this.pictureNames.fileName}`;
-        } else {
-          this.result();
+    this.stateService.getPictureNames()
+      .subscribe(data => {
+          if (data) {
+            this.pictureNames = data;
+            this.title = `${this.pictureNames.questionSetName} (${this.pictureNames.currentIndex + 1}/${this.pictureNames.totalNumber})`;
+            this.imageSource = `${this.imageDirectory}/${this.pictureNames.fileName}`;
+          } else {
+            this.result();
+          }
         }
-      }
-    );
+      );
   }
 
   answer(id: number) {
-    this.answerService.addAnswer(this.pictureNames.currentIndex, id).subscribe(data => {
-        this.loadQuestion();
-      }
-    );
+    this.answerService.addAnswer(this.pictureNames.currentIndex, id)
+      .subscribe(data => {
+          this.loadQuestion();
+        }
+      );
   }
 
   result() {
-    this.stateService.setState(State.ResultState).subscribe(date => {
-        this.router.navigateByUrl('/result');
-      }
-    );
+    this.stateService.setState(State.ResultState)
+      .subscribe(date => {
+          this.router.navigateByUrl('/result');
+        }
+      );
   }
 }

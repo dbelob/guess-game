@@ -17,14 +17,15 @@ export class StartComponent {
   private selectedGuessType: string = 'guessName';
 
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
-    questionService.getQuestionSets().subscribe(data => {
-      this.questionSets = data;
+    questionService.getQuestionSets()
+      .subscribe(data => {
+        this.questionSets = data;
 
-      if (this.questionSets.length > 0) {
-        this.selectedQuestionSet = this.questionSets[0];
-        this.loadQuantities(this.selectedQuestionSet.id);
-      }
-    });
+        if (this.questionSets.length > 0) {
+          this.selectedQuestionSet = this.questionSets[0];
+          this.loadQuantities(this.selectedQuestionSet.id);
+        }
+      });
   }
 
   onChange(questionSet: QuestionSet) {
@@ -32,13 +33,14 @@ export class StartComponent {
   }
 
   loadQuantities(id: number) {
-    this.questionService.getQuantities(id).subscribe(data => {
-      this.quantities = data;
+    this.questionService.getQuantities(id)
+      .subscribe(data => {
+        this.quantities = data;
 
-      if (this.quantities.length > 0) {
-        this.selectedQuantity = this.quantities[this.quantities.length - 1];
-      }
-    });
+        if (this.quantities.length > 0) {
+          this.selectedQuantity = this.quantities[this.quantities.length - 1];
+        }
+      });
   }
 
   start() {
@@ -50,8 +52,9 @@ export class StartComponent {
       new StartParameters(
         this.selectedQuestionSet.id,
         this.selectedQuantity,
-        this.selectedGuessType)).subscribe(data => {
-      this.router.navigateByUrl('/guess/name');
-    });
+        this.selectedGuessType))
+      .subscribe(data => {
+        this.router.navigateByUrl('/guess/name');
+      });
   }
 }

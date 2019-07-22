@@ -12,42 +12,43 @@ export class StateGuard implements CanActivate {
   }
 
   canActivate(routeSnapshot: ActivatedRouteSnapshot, stateSnapshot: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.stateService.getState().pipe(
-      map(state => {
-          const actualUrl: string = stateSnapshot.url;
-          let expectedUrl: string;
+    return this.stateService.getState()
+      .pipe(
+        map(state => {
+            const actualUrl: string = stateSnapshot.url;
+            let expectedUrl: string;
 
-          switch (state) {
-            case State.StartState: {
-              expectedUrl = '/start';
-              break;
+            switch (state) {
+              case State.StartState: {
+                expectedUrl = '/start';
+                break;
+              }
+              case State.GuessNameState: {
+                expectedUrl = '/guess/name';
+                break;
+              }
+              case State.GuessPictureState: {
+                expectedUrl = '/guess/picture';
+                break;
+              }
+              case State.ResultState: {
+                expectedUrl = '/result';
+                break;
+              }
             }
-            case State.GuessNameState: {
-              expectedUrl = '/guess/name';
-              break;
-            }
-            case State.GuessPictureState: {
-              expectedUrl = '/guess/picture';
-              break;
-            }
-            case State.ResultState: {
-              expectedUrl = '/result';
-              break;
+
+            if (actualUrl === expectedUrl) {
+              return true;
+            } else {
+              this.router.navigateByUrl(expectedUrl);
             }
           }
-
-          if (actualUrl === expectedUrl) {
-            return true;
-          } else {
-            this.router.navigateByUrl(expectedUrl);
+        ),
+        catchError(response => {
+            this.messageService.reportMessage(response);
+            return of(false)
           }
-        }
-      ),
-      catchError(response => {
-          this.messageService.reportMessage(response);
-          return of(false)
-        }
-      )
-    );
+        )
+      );
   }
 }
