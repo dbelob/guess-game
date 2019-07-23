@@ -1,39 +1,39 @@
 <div class="container-dialog p-2">
-  <h3 class="bg-info p-1 text-white text-center">Game over</h3>
+  <h1 class="bg-info p-1 text-white text-center">Game over</h1>
 
   <app-message></app-message>
 
-  <div class="mt-4 mb-4">
+  <div class="mt-5 mb-5">
     <div class="form-row">
-      <div class="col-4 right-align">
+      <div class="col-4 right-align large-size">
         <label class="col-form-label">Correct answers:</label>
       </div>
-      <div class="col-4 center-align">
+      <div class="col-4 center-align large-size">
         <label class="col-form-label">{{result.correctAnswers}}</label>
       </div>
-      <div class="col-2 center-align">
+      <div class="col-2 center-align large-size">
         <label class="col-form-label">{{result.correctPercents | percent:'1.2-2'}}</label>
       </div>
     </div>
     <div class="form-row">
-      <div class="col-4 right-align">
+      <div class="col-4 right-align large-size">
         <label class="col-form-label">Wrong answers:</label>
       </div>
-      <div class="col-4 center-align">
+      <div class="col-4 center-align large-size">
         <label class="col-form-label">{{result.wrongAnswers}}</label>
       </div>
-      <div class="col-2 center-align">
+      <div class="col-2 center-align large-size">
         <label class="col-form-label">{{result.wrongPercents| percent:'1.2-2'}}</label>
       </div>
     </div>
     <div class="form-row">
-      <div class="col-4 right-align">
+      <div class="col-4 right-align large-size">
         <label class="col-form-label">Skipped answers:</label>
       </div>
-      <div class="col-4 center-align">
+      <div class="col-4 center-align large-size">
         <label class="col-form-label">{{result.skippedAnswers}}</label>
       </div>
-      <div class="col-2 center-align">
+      <div class="col-2 center-align large-size">
         <label class="col-form-label">{{result.skippedPercents| percent:'1.2-2'}}</label>
       </div>
     </div>

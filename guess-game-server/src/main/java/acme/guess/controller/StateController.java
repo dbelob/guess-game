@@ -74,7 +74,22 @@ public class StateController {
     @GetMapping("/name-pictures")
     @ResponseBody
     public NamePicturesDto getNamePictures() {
-        //TODO: implement
-        return null;
+        int currentQuestionIndex = answerService.getCurrentQuestionIndex();
+        QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet();
+        Set<Long> invalidAnswerIds = answerService.getInvalidAnswerIds(currentQuestionIndex);
+
+        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
+            QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
+
+            return NamePicturesDto.convertToDto(
+                    questionAnswersSet.getName(),
+                    currentQuestionIndex,
+                    questionAnswersSet.getQuestionAnswersList().size(),
+                    questionAnswersSet.getDirectoryName(),
+                    questionAnswers,
+                    invalidAnswerIds);
+        } else {
+            return null;
+        }
     }
 }

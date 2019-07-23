@@ -1,5 +1,21 @@
-<div class="container-dialog p-2">
-  <h3 class="bg-info p-1 text-white text-center">Guess picture by name</h3>
+<div class="container p-2">
+  <h1 class="bg-info p-1 text-white text-center">{{title}}</h1>
 
   <app-message></app-message>
+
+  <h1 class="text-center mt-5 mb-5">{{namePictures.name}}</h1>
+  <div class="text-center">
+    <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
+           [class.btn-danger]="namePictures.invalid0" [disabled]="namePictures.invalid0"
+           (click)="answer(namePictures.id0)" src="{{imageSource0}}">
+    <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
+           [class.btn-danger]="namePictures.invalid1" [disabled]="namePictures.invalid1"
+           (click)="answer(namePictures.id1)" src="{{imageSource1}}">
+    <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
+           [class.btn-danger]="namePictures.invalid2" [disabled]="namePictures.invalid2"
+           (click)="answer(namePictures.id2)" src="{{imageSource2}}">
+    <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
+           [class.btn-danger]="namePictures.invalid3" [disabled]="namePictures.invalid3"
+           (click)="answer(namePictures.id3)" src="{{imageSource3}}">
+  </div>
 </div>
