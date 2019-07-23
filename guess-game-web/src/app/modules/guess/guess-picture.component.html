@@ -3,7 +3,7 @@
 
   <app-message></app-message>
 
-  <h1 class="text-center mt-5 mb-5">{{namePictures.name}}</h1>
+  <p class="h3 text-center mt-5 mb-5">{{namePictures.name}}</p>
   <div class="text-center">
     <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
            [class.btn-danger]="namePictures.invalid0" [disabled]="namePictures.invalid0"
@@ -17,5 +17,8 @@
     <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
            [class.btn-danger]="namePictures.invalid3" [disabled]="namePictures.invalid3"
            (click)="answer(namePictures.id3)" src="{{imageSource3}}">
+  </div>
+  <div class="text-right">
+    <button class="btn btn-link text-muted" (click)="result()"><small>Cancel</small></button>
   </div>
 </div>

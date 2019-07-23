@@ -28,4 +28,8 @@ export class ResultComponent {
         }
       );
   }
+
+  isSkippedVisible() {
+    return this.result.skippedAnswers > 0;
+  }
 }
