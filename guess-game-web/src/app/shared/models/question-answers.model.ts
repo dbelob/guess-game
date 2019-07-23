@@ -3,6 +3,7 @@ export abstract class QuestionAnswers {
     public questionSetName?: string,
     public currentIndex?: number,
     public totalNumber?: number,
+    public logoFileName?: string,
     public id0?: number,
     public id1?: number,
     public id2?: number,

@@ -15,11 +15,11 @@ public class PictureNamesDto extends QuestionAnswersDto {
     private String name2;
     private String name3;
 
-    public PictureNamesDto(String questionSetName, int currentIndex, int totalNumber, String fileName,
+    public PictureNamesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName, String fileName,
                            long id0, long id1, long id2, long id3,
                            String name0, String name1, String name2, String name3,
                            boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3) {
-        super(questionSetName, currentIndex, totalNumber, id0, id1, id2, id3, invalid0, invalid1, invalid2, invalid3);
+        super(questionSetName, currentIndex, totalNumber, logoFileName, id0, id1, id2, id3, invalid0, invalid1, invalid2, invalid3);
 
         this.fileName = fileName;
         this.name0 = name0;
@@ -49,8 +49,9 @@ public class PictureNamesDto extends QuestionAnswersDto {
     }
 
     public static PictureNamesDto convertToDto(String questionSetName, int currentNumber, int totalNumber, String directoryName,
-                                               QuestionAnswers questionAnswers, Set<Long> invalidAnswerIds) {
+                                               String logoFileName, QuestionAnswers questionAnswers, Set<Long> invalidAnswerIds) {
         return new PictureNamesDto(questionSetName, currentNumber, totalNumber,
+                (logoFileName != null) ? String.format("%s/%s", directoryName, logoFileName) : null,
                 String.format("%s/%s", directoryName, questionAnswers.getQuestion().getFileName()),
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
                 questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),

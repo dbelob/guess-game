@@ -13,6 +13,7 @@ export class GuessPictureComponent {
   private imageDirectory: string = 'assets/images';
   private namePictures: NamePictures = new NamePictures();
   private title: string;
+  private logoImageSource: string;
   private imageSource0: string;
   private imageSource1: string;
   private imageSource2: string;
@@ -32,6 +33,10 @@ export class GuessPictureComponent {
             this.imageSource1 = `${this.imageDirectory}/${this.namePictures.fileName1}`;
             this.imageSource2 = `${this.imageDirectory}/${this.namePictures.fileName2}`;
             this.imageSource3 = `${this.imageDirectory}/${this.namePictures.fileName3}`;
+
+            if (this.namePictures.logoFileName) {
+              this.logoImageSource = `${this.imageDirectory}/${this.namePictures.logoFileName}`;
+            }
           } else {
             this.result();
           }

@@ -86,6 +86,6 @@ public class StateServiceImpl implements StateService {
             questionAnswersList.add(new QuestionAnswers(question, answers));
         }
 
-        return new QuestionAnswersSet(questionSet.getName(), questionSet.getDirectoryName(), questionAnswersList);
+        return new QuestionAnswersSet(questionSet.getName(), questionSet.getDirectoryName(), questionSet.getLogoFileName(), questionAnswersList);
     }
 }

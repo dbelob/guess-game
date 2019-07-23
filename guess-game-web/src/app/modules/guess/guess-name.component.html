@@ -3,7 +3,8 @@
 
   <app-message></app-message>
 
-  <div class="text-center mt-5 mb-5">
+  <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" height="50pt" width="50pt">
+  <div class="text-center mb-5" [class.mt-5]="!logoImageSource">
     <img src="{{imageSource}}" alt="" height="400pt" width="400pt" class="img-thumbnail">
   </div>
   <div class="text-center">

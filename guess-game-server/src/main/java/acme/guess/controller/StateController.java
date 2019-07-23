@@ -64,6 +64,7 @@ public class StateController {
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getDirectoryName(),
+                    questionAnswersSet.getLogoFileName(),
                     questionAnswers,
                     invalidAnswerIds);
         } else {
@@ -86,6 +87,7 @@ public class StateController {
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getDirectoryName(),
+                    questionAnswersSet.getLogoFileName(),
                     questionAnswers,
                     invalidAnswerIds);
         } else {

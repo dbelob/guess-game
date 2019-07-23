@@ -7,6 +7,7 @@ public class QuestionSet {
     private long id;
     private String name;
     private String directoryName;
+    private String logoFileName;
     private List<Question> questions = Collections.emptyList();
 
     public long getId() {
@@ -31,6 +32,14 @@ public class QuestionSet {
 
     public void setDirectoryName(String directoryName) {
         this.directoryName = directoryName;
+    }
+
+    public String getLogoFileName() {
+        return logoFileName;
+    }
+
+    public void setLogoFileName(String logoFileName) {
+        this.logoFileName = logoFileName;
     }
 
     public List<Question> getQuestions() {

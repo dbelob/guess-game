@@ -7,6 +7,7 @@ public abstract class QuestionAnswersDto {
     private String questionSetName;
     private int currentIndex;
     private int totalNumber;
+    private String logoFileName;
 
     private long id0;
     private long id1;
@@ -18,12 +19,13 @@ public abstract class QuestionAnswersDto {
     private boolean invalid2;
     private boolean invalid3;
 
-    public QuestionAnswersDto(String questionSetName, int currentIndex, int totalNumber,
+    public QuestionAnswersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                               long id0, long id1, long id2, long id3,
                               boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3) {
         this.questionSetName = questionSetName;
         this.currentIndex = currentIndex;
         this.totalNumber = totalNumber;
+        this.logoFileName = logoFileName;
         this.id0 = id0;
         this.id1 = id1;
         this.id2 = id2;
@@ -44,6 +46,10 @@ public abstract class QuestionAnswersDto {
 
     public int getTotalNumber() {
         return totalNumber;
+    }
+
+    public String getLogoFileName() {
+        return logoFileName;
     }
 
     public long getId0() {

@@ -13,6 +13,7 @@ export class GuessNameComponent {
   private imageDirectory: string = 'assets/images';
   private pictureNames: PictureNames = new PictureNames();
   private title: string;
+  private logoImageSource: string;
   private imageSource: string;
 
   constructor(private stateService: StateService, private answerService: AnswerService, private router: Router) {
@@ -26,6 +27,10 @@ export class GuessNameComponent {
             this.pictureNames = data;
             this.title = `${this.pictureNames.questionSetName} (${this.pictureNames.currentIndex + 1}/${this.pictureNames.totalNumber})`;
             this.imageSource = `${this.imageDirectory}/${this.pictureNames.fileName}`;
+
+            if (this.pictureNames.logoFileName) {
+              this.logoImageSource = `${this.imageDirectory}/${this.pictureNames.logoFileName}`;
+            }
           } else {
             this.result();
           }
