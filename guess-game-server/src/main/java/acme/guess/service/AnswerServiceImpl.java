@@ -85,7 +85,7 @@ public class AnswerServiceImpl implements AnswerService {
                 .filter(AnswerSet::isSuccess)
                 .count();
         long wrongAnswers = answerSets.stream()
-                .filter(a -> !a.isSuccess())
+                .filter(a -> (!a.isSuccess() && a.getAnswers().contains(a.getQuestionId())))
                 .count();
         QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet();
         long totalQuestions = questionAnswersSet.getQuestionAnswersList().size();
