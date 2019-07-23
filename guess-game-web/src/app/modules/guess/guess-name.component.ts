@@ -48,4 +48,8 @@ export class GuessNameComponent {
         }
       );
   }
+
+  cancel() {
+    this.router.navigateByUrl('/cancel');
+  }
 }

@@ -54,4 +54,8 @@ export class GuessPictureComponent {
         }
       );
   }
+
+  cancel() {
+    this.router.navigateByUrl('/cancel');
+  }
 }
