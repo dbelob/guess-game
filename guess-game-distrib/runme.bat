@@ -10,4 +10,4 @@ set /p JRE=Java folder can't be found. Please, enter your JRE folder:
 :start
 echo Application JRE: %JRE%
 
-start /b "title" "%JRE%\bin\javaw" -jar ${app.finalName}.war
+"%JRE%\bin\java" -jar ${app.finalName}.war
