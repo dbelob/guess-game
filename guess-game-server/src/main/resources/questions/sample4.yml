@@ -1,0 +1,8 @@
+name: "Question Set 4"
+directoryName: samples
+questions:
+  - {fileName: picture00-high.jpg, name: "Picture 0"}
+  - {fileName: picture01-high.jpg, name: "Picture 1"}
+  - {fileName: picture02-high.jpg, name: "Picture 2"}
+  - {fileName: picture03-high.jpg, name: "Picture 3"}
+  - {fileName: picture04-high.jpg, name: "Picture 4"}
