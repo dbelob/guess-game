@@ -75,6 +75,8 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public Result getResult() {
         List<AnswerSet> answerSets = answerDao.getAnswerSets();
+        StartParameters startParameters = stateDao.getStartParameters();
+
         long correctAnswers = answerSets.stream()
                 .filter(AnswerSet::isSuccess)
                 .count();
@@ -88,7 +90,9 @@ public class AnswerServiceImpl implements AnswerService {
         return new Result(correctAnswers, wrongAnswers, skippedAnswers,
                 (float) correctAnswers / totalQuestions,
                 (float) wrongAnswers / totalQuestions,
-                (float) skippedAnswers / totalQuestions);
+                (float) skippedAnswers / totalQuestions,
+                startParameters.getGuessType(),
+                questionAnswersSet.getDirectoryName());
     }
 
     @Override
@@ -99,13 +103,20 @@ public class AnswerServiceImpl implements AnswerService {
 
         for (int i = 0; i < answerSets.size(); i++) {
             AnswerSet answerSet = answerSets.get(i);
-            long wrongAnswers = answerSet.getAnswers().size();
 
-            if (answerSet.getAnswers().contains(answerSet.getQuestionId())) {
-                wrongAnswers--;
+            if (!answerSet.isSuccess()) {
+                long wrongAnswers = answerSet.getAnswers().size();
+
+                if (answerSet.getAnswers().contains(answerSet.getQuestionId())) {
+                    wrongAnswers--;
+                }
+
+                if (wrongAnswers > 0) {
+                    errorDetailsList.add(new ErrorDetails(
+                            questionAnswersList.get(i).getQuestion(),
+                            wrongAnswers));
+                }
             }
-
-            errorDetailsList.add(new ErrorDetails(questionAnswersList.get(i).getQuestion(), wrongAnswers));
         }
 
         return errorDetailsList;

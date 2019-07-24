@@ -31,16 +31,16 @@ public class ErrorDetailsDto {
         return wrongAnswers;
     }
 
-    public static ErrorDetailsDto convertToDto(ErrorDetails errorDetails) {
+    private static ErrorDetailsDto convertToDto(ErrorDetails errorDetails, String directoryName) {
         return new ErrorDetailsDto(
-                errorDetails.getQuestion().getFileName(),
+                String.format("%s/%s", directoryName, errorDetails.getQuestion().getFileName()),
                 errorDetails.getQuestion().getName(),
                 errorDetails.getWrongAnswers());
     }
 
-    public static List<ErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList) {
+    public static List<ErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, String directoryName) {
         return errorDetailsList.stream()
-                .map(ErrorDetailsDto::convertToDto)
+                .map(e -> convertToDto(e, directoryName))
                 .collect(Collectors.toList());
     }
 }

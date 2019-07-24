@@ -1,9 +1,9 @@
 <div class="container-dialog p-2">
-  <h1 class="bg-info p-1 text-white text-center">Title</h1>
+  <h1 class="bg-info p-1 text-white text-center">Game over</h1>
 
   <app-message></app-message>
 
-  <div class="mt-5 mb-5">
+  <div class="mt-4 mb-4">
     <div class="form-row h5">
       <div class="col-4 text-right">
         <label class="col-form-label">Correct answers:</label>
@@ -41,34 +41,38 @@
   <div class="text-center">
     <button type="submit" class="btn btn-primary m-1" (click)="restart()">Restart</button>
   </div>
-  <table class="table mt-5">
-    <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Question</th>
-      <th scope="col">Answer</th>
-      <th scope="col">Errors</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-    </tbody>
-  </table>
+  <div *ngIf="result.errorDetailsList.length > 0" class="mt-5">
+    <h5 class="p-1 text-center">Wrong answers</h5>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col" class="text-center">#</th>
+        <th scope="col" class="text-center">Question</th>
+        <th scope="col" class="text-center">Answer</th>
+        <th scope="col" class="text-center">Errors</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let errorDetails of result.errorDetailsList; let i = index">
+        <th scope="row" class="text-center">{{i + 1}}</th>
+        <td>
+          <div *ngIf="isQuestionPicture" class="text-center">
+            <img src="{{imageDirectory}}/{{errorDetails.fileName}}"
+                 alt="" height="200pt" width="200pt" class="img-thumbnail">
+          </div>
+          <span *ngIf="!isQuestionPicture">{{errorDetails.name}}</span>
+        </td>
+        <td>
+          <div *ngIf="!isQuestionPicture" class="text-center">
+          <img src="{{imageDirectory}}/{{errorDetails.fileName}}"
+               alt="" height="200pt" width="200pt" class="img-thumbnail">
+          </div>
+          <span *ngIf="isQuestionPicture">{{errorDetails.name}}</span>
+        </td>
+        <td class="text-center">{{errorDetails.wrongAnswers}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

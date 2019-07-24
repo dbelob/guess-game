@@ -5,6 +5,7 @@ import { AnswerService } from "../../shared/services/answer.service";
 import { StateService } from "../../shared/services/state.service";
 import { State } from "../../shared/models/state.model";
 import { Router } from "@angular/router";
+import { GuessType } from "../../shared/models/guess-type.model";
 
 @Component({
   selector: 'app-result',
@@ -12,12 +13,15 @@ import { Router } from "@angular/router";
 })
 export class ResultComponent {
   private baseUrl = 'api/answer';
+  private imageDirectory: string = 'assets/images';
   private result = new Result();
+  private isQuestionPicture = true;
 
   constructor(private answerService: AnswerService, private stateService: StateService, private router: Router, private messageService: MessageService) {
     answerService.getResult()
       .subscribe(data => {
         this.result = data;
+        this.isQuestionPicture = GuessType.GuessNameType === this.result.guessType;
       })
   }
 

@@ -10,15 +10,20 @@ public class Result {
     private float correctPercents;
     private float wrongPercents;
     private float skippedPercents;
+    private GuessType guessType;
+    private String directoryName;
 
     public Result(long correctAnswers, long wrongAnswers, long skippedAnswers,
-                  float correctPercents, float wrongPercents, float skippedPercents) {
+                  float correctPercents, float wrongPercents, float skippedPercents,
+                  GuessType guessType, String directoryName) {
         this.correctAnswers = correctAnswers;
         this.wrongAnswers = wrongAnswers;
         this.skippedAnswers = skippedAnswers;
         this.correctPercents = correctPercents;
         this.wrongPercents = wrongPercents;
         this.skippedPercents = skippedPercents;
+        this.guessType = guessType;
+        this.directoryName = directoryName;
     }
 
     public long getCorrectAnswers() {
@@ -43,5 +48,13 @@ public class Result {
 
     public float getSkippedPercents() {
         return skippedPercents;
+    }
+
+    public GuessType getGuessType() {
+        return guessType;
+    }
+
+    public String getDirectoryName() {
+        return directoryName;
     }
 }

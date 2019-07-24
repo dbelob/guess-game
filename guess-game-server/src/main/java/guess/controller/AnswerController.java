@@ -2,7 +2,7 @@ package guess.controller;
 
 import guess.domain.ErrorDetails;
 import guess.domain.Result;
-import guess.dto.ErrorDetailsDto;
+import guess.dto.ResultDto;
 import guess.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,15 +32,10 @@ public class AnswerController {
 
     @GetMapping("/result")
     @ResponseBody
-    public Result getResult() {
-        return answerService.getResult();
-    }
-
-    @GetMapping("/errors")
-    @ResponseBody
-    public List<ErrorDetailsDto> getErrors() {
+    public ResultDto getResult() {
+        Result result = answerService.getResult();
         List<ErrorDetails> errorDetailsList = answerService.getErrorDetailsList();
 
-        return ErrorDetailsDto.convertToDto(errorDetailsList);
+        return ResultDto.convertToDto(result, errorDetailsList);
     }
 }
