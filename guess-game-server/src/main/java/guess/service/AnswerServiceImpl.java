@@ -2,17 +2,11 @@ package guess.service;
 
 import guess.dao.AnswerDao;
 import guess.dao.StateDao;
-import guess.domain.AnswerSet;
-import guess.domain.QuestionAnswers;
-import guess.domain.QuestionAnswersSet;
-import guess.domain.Result;
+import guess.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Answer service implementation.
@@ -95,5 +89,25 @@ public class AnswerServiceImpl implements AnswerService {
                 (float) correctAnswers / totalQuestions,
                 (float) wrongAnswers / totalQuestions,
                 (float) skippedAnswers / totalQuestions);
+    }
+
+    @Override
+    public List<ErrorDetails> getErrorDetailsList() {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets();
+        List<QuestionAnswers> questionAnswersList = stateDao.getQuestionAnswersSet().getQuestionAnswersList();
+        List<ErrorDetails> errorDetailsList = new ArrayList<>();
+
+        for (int i = 0; i < answerSets.size(); i++) {
+            AnswerSet answerSet = answerSets.get(i);
+            long wrongAnswers = answerSet.getAnswers().size();
+
+            if (answerSet.getAnswers().contains(answerSet.getQuestionId())) {
+                wrongAnswers--;
+            }
+
+            errorDetailsList.add(new ErrorDetails(questionAnswersList.get(i).getQuestion(), wrongAnswers));
+        }
+
+        return errorDetailsList;
     }
 }

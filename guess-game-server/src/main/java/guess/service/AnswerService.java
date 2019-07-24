@@ -1,7 +1,9 @@
 package guess.service;
 
+import guess.domain.ErrorDetails;
 import guess.domain.Result;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,4 +17,6 @@ public interface AnswerService {
     Set<Long> getInvalidAnswerIds(int questionIndex);
 
     Result getResult();
+
+    List<ErrorDetails> getErrorDetailsList();
 }
