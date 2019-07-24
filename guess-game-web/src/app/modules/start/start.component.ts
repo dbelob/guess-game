@@ -44,10 +44,6 @@ export class StartComponent {
   }
 
   start() {
-    console.log('selectedQuestionSet: ' + JSON.stringify(this.selectedQuestionSet) +
-      '; selectedQuantity: ' + JSON.stringify(this.selectedQuantity) +
-      '; selectedGuessType: ' + JSON.stringify(this.selectedGuessType));
-
     this.stateService.setStartParameters(
       new StartParameters(
         this.selectedQuestionSet.id,
