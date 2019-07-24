@@ -32,7 +32,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
-                    <mainClass>acme.guess.App</mainClass>
+                    <mainClass>guess.App</mainClass>
                 </configuration>
                 <executions>
                     <execution>
