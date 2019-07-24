@@ -1,0 +1,4 @@
+Guess Game
+
+Version 1.0.0 - July 24, 2019
+* First release.
