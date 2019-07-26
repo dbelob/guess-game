@@ -1,16 +1,16 @@
 package guess.domain;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Answer set.
  */
 public class AnswerSet {
     private long questionId;
-    private Set<Long> answers;
+    private List<Long> answers;
     private boolean isSuccess;
 
-    public AnswerSet(long questionId, Set<Long> answers, boolean isSuccess) {
+    public AnswerSet(long questionId, List<Long> answers, boolean isSuccess) {
         this.questionId = questionId;
         this.answers = answers;
         this.isSuccess = isSuccess;
@@ -20,7 +20,7 @@ public class AnswerSet {
         return questionId;
     }
 
-    public Set<Long> getAnswers() {
+    public List<Long> getAnswers() {
         return answers;
     }
 

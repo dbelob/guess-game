@@ -73,6 +73,9 @@ public class ResultDto {
                 result.getWrongPercents(),
                 result.getSkippedPercents(),
                 result.getGuessType(),
-                ErrorDetailsDto.convertToDto(errorDetailsList, result.getDirectoryName()));
+                ErrorDetailsDto.convertToDto(
+                        errorDetailsList,
+                        result.getDirectoryName(),
+                        result.getGuessType()));
     }
 }

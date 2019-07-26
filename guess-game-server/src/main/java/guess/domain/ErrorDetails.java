@@ -1,13 +1,15 @@
 package guess.domain;
 
+import java.util.List;
+
 /**
  * Error details.
  */
 public class ErrorDetails {
     private Question question;
-    private long wrongAnswers;
+    private List<Question> wrongAnswers;
 
-    public ErrorDetails(Question question, long wrongAnswers) {
+    public ErrorDetails(Question question, List<Question> wrongAnswers) {
         this.question = question;
         this.wrongAnswers = wrongAnswers;
     }
@@ -16,7 +18,7 @@ public class ErrorDetails {
         return question;
     }
 
-    public long getWrongAnswers() {
+    public List<Question> getWrongAnswers() {
         return wrongAnswers;
     }
 }

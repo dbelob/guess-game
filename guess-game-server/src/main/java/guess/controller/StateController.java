@@ -14,7 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * State controller.
@@ -54,7 +54,7 @@ public class StateController {
     public PictureNamesDto getPictureNames() {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex();
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet();
-        Set<Long> invalidAnswerIds = answerService.getInvalidAnswerIds(currentQuestionIndex);
+        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
@@ -66,7 +66,7 @@ public class StateController {
                     questionAnswersSet.getDirectoryName(),
                     questionAnswersSet.getLogoFileName(),
                     questionAnswers,
-                    invalidAnswerIds);
+                    wrongAnswerIds);
         } else {
             return null;
         }
@@ -77,7 +77,7 @@ public class StateController {
     public NamePicturesDto getNamePictures() {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex();
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet();
-        Set<Long> invalidAnswerIds = answerService.getInvalidAnswerIds(currentQuestionIndex);
+        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
@@ -89,7 +89,7 @@ public class StateController {
                     questionAnswersSet.getDirectoryName(),
                     questionAnswersSet.getLogoFileName(),
                     questionAnswers,
-                    invalidAnswerIds);
+                    wrongAnswerIds);
         } else {
             return null;
         }

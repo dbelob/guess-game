@@ -6,7 +6,10 @@ import guess.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Answer service implementation.
@@ -32,7 +35,7 @@ public class AnswerServiceImpl implements AnswerService {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet();
             List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
             QuestionAnswers questionAnswers = questionAnswersList.get(questionIndex);
-            Set<Long> answers = new HashSet<>(Collections.singletonList(answerId));
+            List<Long> answers = new ArrayList<>(Collections.singletonList(answerId));
             AnswerSet answerSet = new AnswerSet(
                     questionAnswers.getQuestion().getId(),
                     answers,
@@ -62,13 +65,13 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public Set<Long> getInvalidAnswerIds(int questionIndex) {
+    public List<Long> getWrongAnswerIds(int questionIndex) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets();
 
         if (questionIndex < answerSets.size()) {
             return answerSets.get(questionIndex).getAnswers();
         } else {
-            return Collections.emptySet();
+            return Collections.emptyList();
         }
     }
 
@@ -105,13 +108,19 @@ public class AnswerServiceImpl implements AnswerService {
             AnswerSet answerSet = answerSets.get(i);
 
             if (!answerSet.isSuccess()) {
-                long wrongAnswers = answerSet.getAnswers().size();
+                List<Long> wrongAnswersIds = new ArrayList<>(answerSet.getAnswers());
+                wrongAnswersIds.remove(answerSet.getQuestionId());
 
-                if (answerSet.getAnswers().contains(answerSet.getQuestionId())) {
-                    wrongAnswers--;
+                List<Question> wrongAnswers = new ArrayList<>();
+                for (long wrongAnswersId : wrongAnswersIds) {
+                    Optional<Question> optionalWrongAnswer = questionAnswersList.get(i).getAnswers().stream()
+                            .filter(q -> q.getId() == wrongAnswersId)
+                            .findFirst();
+
+                    optionalWrongAnswer.ifPresent(wrongAnswers::add);
                 }
 
-                if (wrongAnswers > 0) {
+                if (!wrongAnswers.isEmpty()) {
                     errorDetailsList.add(new ErrorDetails(
                             questionAnswersList.get(i).getQuestion(),
                             wrongAnswers));

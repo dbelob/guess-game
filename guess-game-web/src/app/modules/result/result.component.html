@@ -50,7 +50,7 @@
         <th scope="col" class="text-center">#</th>
         <th scope="col" class="text-center">Question</th>
         <th scope="col" class="text-center">Correct answer</th>
-        <th scope="col" class="text-center">Errors</th>
+        <th scope="col" class="text-center">Answers</th>
       </tr>
       </thead>
       <tbody>
@@ -65,12 +65,24 @@
         </td>
         <td>
           <div *ngIf="!isQuestionPicture" class="text-center">
-          <img src="{{imageDirectory}}/{{errorDetails.fileName}}"
-               alt="" height="200pt" width="200pt" class="img-thumbnail">
+            <img src="{{imageDirectory}}/{{errorDetails.fileName}}"
+                 alt="" height="200pt" width="200pt" class="img-thumbnail">
           </div>
           <span *ngIf="isQuestionPicture">{{errorDetails.name}}</span>
         </td>
-        <td class="text-center">{{errorDetails.wrongAnswers}}</td>
+        <td>
+          <div *ngIf="!isQuestionPicture">
+            <p *ngFor="let wrongAnswer of errorDetails.wrongAnswers">
+              {{wrongAnswer}}
+            </p>
+          </div>
+          <div *ngIf="isQuestionPicture" class="text-center">
+            <p *ngFor="let wrongAnswer of errorDetails.wrongAnswers">
+              <img src="{{imageDirectory}}/{{wrongAnswer}}"
+                   alt="" height="200pt" width="200pt" class="img-thumbnail">
+            </p>
+          </div>
+        </td>
       </tr>
       </tbody>
     </table>

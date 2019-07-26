@@ -14,7 +14,7 @@ public interface AnswerService {
 
     int getCurrentQuestionIndex();
 
-    Set<Long> getInvalidAnswerIds(int questionIndex);
+    List<Long> getWrongAnswerIds(int questionIndex);
 
     Result getResult();
 
