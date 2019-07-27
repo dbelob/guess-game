@@ -34,7 +34,7 @@ public class ErrorDetailsDto {
 
     private static ErrorDetailsDto convertToDto(ErrorDetails errorDetails, String directoryName, GuessType guessType) {
         List<String> wrongAnswers = errorDetails.getWrongAnswers().stream()
-                .map(q -> (GuessType.GUESS_PICTURE_TYPE.equals(guessType)) ?
+                .map(q -> (GuessType.GUESS_NAME_TYPE.equals(guessType)) ?
                         q.getName() :
                         String.format("%s/%s", directoryName, q.getFileName()))
                 .collect(Collectors.toList());

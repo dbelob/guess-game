@@ -71,15 +71,15 @@
           <span *ngIf="isQuestionPicture">{{errorDetails.name}}</span>
         </td>
         <td>
-          <div *ngIf="!isQuestionPicture">
-            <p *ngFor="let wrongAnswer of errorDetails.wrongAnswers">
-              {{wrongAnswer}}
-            </p>
-          </div>
-          <div *ngIf="isQuestionPicture" class="text-center">
+          <div *ngIf="!isQuestionPicture" class="text-center">
             <p *ngFor="let wrongAnswer of errorDetails.wrongAnswers">
               <img src="{{imageDirectory}}/{{wrongAnswer}}"
                    alt="" height="200pt" width="200pt" class="img-thumbnail">
+            </p>
+          </div>
+          <div *ngIf="isQuestionPicture">
+            <p *ngFor="let wrongAnswer of errorDetails.wrongAnswers">
+              {{wrongAnswer}}
             </p>
           </div>
         </td>
