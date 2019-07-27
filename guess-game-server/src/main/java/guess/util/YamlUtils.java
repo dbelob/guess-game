@@ -1,5 +1,6 @@
 package guess.util;
 
+import guess.domain.Question;
 import guess.domain.QuestionSet;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -8,7 +9,9 @@ import org.yaml.snakeyaml.constructor.Constructor;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * YAML utility methods.
@@ -35,11 +38,27 @@ public class YamlUtils {
             QuestionSet questionSet = questionSets.get(i);
             questionSet.setId(i);
 
+            questionSet.setQuestions(removeDuplicatesByFileName(questionSet.getQuestions()));
+
             for (int j = 0; j < questionSet.getQuestions().size(); j++) {
                 questionSet.getQuestions().get(j).setId(j);
             }
         }
 
         return questionSets;
+    }
+
+    private static List<Question> removeDuplicatesByFileName(List<Question> questions) {
+        List<Question> result = new ArrayList<>();
+        Set<String> fileNames = new HashSet<>();
+
+        for (Question question : questions) {
+            if (!fileNames.contains(question.getFileName())) {
+                result.add(question);
+                fileNames.add(question.getFileName());
+            }
+        }
+
+        return result;
     }
 }
