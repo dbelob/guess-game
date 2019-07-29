@@ -59,14 +59,14 @@
         <td>
           <div *ngIf="isQuestionPicture" class="text-center">
             <img src="{{imageDirectory}}/{{errorDetails.fileName}}"
-                 alt="" height="200pt" width="200pt" class="img-thumbnail">
+                 alt="" class="img-thumbnail img-guess-result">
           </div>
           <span *ngIf="!isQuestionPicture">{{errorDetails.name}}</span>
         </td>
         <td>
           <div *ngIf="!isQuestionPicture" class="text-center">
             <img src="{{imageDirectory}}/{{errorDetails.fileName}}"
-                 alt="" height="200pt" width="200pt" class="img-thumbnail">
+                 alt="" class="img-thumbnail img-guess-result">
           </div>
           <span *ngIf="isQuestionPicture">{{errorDetails.name}}</span>
         </td>
@@ -74,7 +74,7 @@
           <div *ngIf="!isQuestionPicture" class="text-center">
             <p *ngFor="let wrongAnswer of errorDetails.wrongAnswers">
               <img src="{{imageDirectory}}/{{wrongAnswer}}"
-                   alt="" height="200pt" width="200pt" class="img-thumbnail">
+                   alt="" class="img-thumbnail img-guess-result">
             </p>
           </div>
           <div *ngIf="isQuestionPicture">

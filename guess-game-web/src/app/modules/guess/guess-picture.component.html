@@ -3,19 +3,19 @@
 
   <app-message></app-message>
 
-  <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" height="75pt" width="75pt">
+  <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
   <p class="h2 text-center mb-5" [class.mt-5]="!logoImageSource">{{namePictures.name}}</p>
   <div class="text-center">
-    <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
+    <input type="image" alt="" class="img-thumbnail m-1 img-guess-picture"
            [class.btn-danger]="namePictures.invalid0" [disabled]="namePictures.invalid0"
            (click)="answer(namePictures.id0)" src="{{imageSource0}}">
-    <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
+    <input type="image" alt="" class="img-thumbnail m-1 img-guess-picture"
            [class.btn-danger]="namePictures.invalid1" [disabled]="namePictures.invalid1"
            (click)="answer(namePictures.id1)" src="{{imageSource1}}">
-    <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
+    <input type="image" alt="" class="img-thumbnail m-1 img-guess-picture"
            [class.btn-danger]="namePictures.invalid2" [disabled]="namePictures.invalid2"
            (click)="answer(namePictures.id2)" src="{{imageSource2}}">
-    <input type="image" alt="" height="250pt" width="250pt" class="img-thumbnail m-1"
+    <input type="image" alt="" class="img-thumbnail m-1 img-guess-picture"
            [class.btn-danger]="namePictures.invalid3" [disabled]="namePictures.invalid3"
            (click)="answer(namePictures.id3)" src="{{imageSource3}}">
   </div>

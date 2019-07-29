@@ -9,6 +9,26 @@
   margin-left: auto;
 }
 
+.img-guess-logo {
+  width: 100px;
+  height: auto;
+}
+
+.img-guess-name {
+  width: 400px;
+  height: auto;
+}
+
+.img-guess-picture {
+  width: 250px;
+  height: auto;
+}
+
+.img-guess-result {
+  width: 200px;
+  height: auto;
+}
+
 @media (min-width: 576px) {
   .container-dialog {
     max-width: 540px;
