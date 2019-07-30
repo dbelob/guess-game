@@ -44,7 +44,7 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
-    public List<Question> getQuestionByIds(Long[] ids) throws QuestionSetNotExistsException {
+    public List<Question> getQuestionByIds(List<Long> ids) throws QuestionSetNotExistsException {
         List<Question> questions = new ArrayList<>();
 
         for (Long id : ids) {

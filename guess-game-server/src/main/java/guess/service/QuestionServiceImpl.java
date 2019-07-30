@@ -32,7 +32,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<Integer> getQuantities(Long[] questionSetIds) throws QuestionSetNotExistsException {
+    public List<Integer> getQuantities(List<Long> questionSetIds) throws QuestionSetNotExistsException {
         List<Question> uniqueQuestions = questionDao.getQuestionByIds(questionSetIds);
 
         return QuestionUtils.getQuantities(uniqueQuestions.size());

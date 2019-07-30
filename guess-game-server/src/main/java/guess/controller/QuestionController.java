@@ -36,7 +36,7 @@ public class QuestionController {
 
     @GetMapping("/quantities")
     @ResponseBody
-    public List<Integer> getQuantities(@RequestParam Long[] questionSetIds) throws QuestionSetNotExistsException {
+    public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds) throws QuestionSetNotExistsException {
         return questionService.getQuantities(questionSetIds);
     }
 }

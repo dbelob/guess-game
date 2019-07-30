@@ -90,14 +90,14 @@ public class StateServiceImpl implements StateService {
         String directoryName;
         String logoFileName;
 
-        if (startParameters.getQuestionSetIds().length == 1) {
-            QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetIds()[0]);
+        if (startParameters.getQuestionSetIds().size() == 1) {
+            QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetIds().get(0));
             name = questionSet.getName();
             directoryName = questionSet.getDirectoryName();
             logoFileName = questionSet.getLogoFileName();
         } else {
-            name = String.format("%d sets", startParameters.getQuestionSetIds().length);
-            directoryName = questionDao.getQuestionSetById(startParameters.getQuestionSetIds()[0]).getDirectoryName();  //TODO: change
+            name = String.format("%d sets", startParameters.getQuestionSetIds().size());
+            directoryName = questionDao.getQuestionSetById(startParameters.getQuestionSetIds().get(0)).getDirectoryName();  //TODO: change
             logoFileName = null;
         }
 

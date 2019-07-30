@@ -3,30 +3,32 @@ package guess.dto;
 import guess.domain.GuessType;
 import guess.domain.StartParameters;
 
+import java.util.List;
+
 /**
  * Start parameters DTO
  */
 public class StartParametersDto {
     private static final String GUESS_NAME = "guessName";
 
-    private Long[] questionSetIds;
+    private List<Long> questionSetIds;
     private int quantity;
     private String guessType;
 
     public StartParametersDto() {
     }
 
-    private StartParametersDto(Long[] questionSetIds, int quantity, String guessType) {
+    private StartParametersDto(List<Long> questionSetIds, int quantity, String guessType) {
         this.questionSetIds = questionSetIds;
         this.quantity = quantity;
         this.guessType = guessType;
     }
 
-    public Long[] getQuestionSetIds() {
+    public List<Long> getQuestionSetIds() {
         return questionSetIds;
     }
 
-    public void setQuestionSetIds(Long[] questionSetIds) {
+    public void setQuestionSetIds(List<Long> questionSetIds) {
         this.questionSetIds = questionSetIds;
     }
 
