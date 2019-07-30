@@ -12,7 +12,7 @@ import { StartParameters } from "../../shared/models/start-parameters.model";
 export class StartComponent {
   private questionSets: QuestionSet[] = [];
   private quantities: number[] = [];
-  private selectedQuestionSet: QuestionSet;
+  private selectedQuestionSets: QuestionSet[];
   private selectedQuantity: number;
   private selectedGuessType: string = 'guessName';
 
@@ -22,18 +22,18 @@ export class StartComponent {
         this.questionSets = data;
 
         if (this.questionSets.length > 0) {
-          this.selectedQuestionSet = this.questionSets[0];
-          this.loadQuantities(this.selectedQuestionSet.id);
+          this.selectedQuestionSets = [this.questionSets[0]];
+          this.loadQuantities(this.selectedQuestionSets);
         }
       });
   }
 
-  onChange(questionSet: QuestionSet) {
-    this.loadQuantities(questionSet.id);
+  onChange(questionSets: QuestionSet[]) {
+    this.loadQuantities(questionSets);
   }
 
-  loadQuantities(id: number) {
-    this.questionService.getQuantities(id)
+  loadQuantities(questionSets: QuestionSet[]) {
+    this.questionService.getQuantities(questionSets.map(s => s.id))
       .subscribe(data => {
         this.quantities = data;
 
@@ -46,7 +46,7 @@ export class StartComponent {
   start() {
     this.stateService.setStartParameters(
       new StartParameters(
-        this.selectedQuestionSet.id,
+        this.selectedQuestionSets.map(s => s.id),
         this.selectedQuantity,
         this.selectedGuessType))
       .subscribe(data => {

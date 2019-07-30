@@ -9,25 +9,25 @@ import guess.domain.StartParameters;
 public class StartParametersDto {
     private static final String GUESS_NAME = "guessName";
 
-    private long questionSetId;
+    private Long[] questionSetIds;
     private int quantity;
     private String guessType;
 
     public StartParametersDto() {
     }
 
-    private StartParametersDto(long questionSetId, int quantity, String guessType) {
-        this.questionSetId = questionSetId;
+    private StartParametersDto(Long[] questionSetIds, int quantity, String guessType) {
+        this.questionSetIds = questionSetIds;
         this.quantity = quantity;
         this.guessType = guessType;
     }
 
-    public long getQuestionSetId() {
-        return questionSetId;
+    public Long[] getQuestionSetIds() {
+        return questionSetIds;
     }
 
-    public void setQuestionSetId(long questionSetId) {
-        this.questionSetId = questionSetId;
+    public void setQuestionSetIds(Long[] questionSetIds) {
+        this.questionSetIds = questionSetIds;
     }
 
     public int getQuantity() {
@@ -48,7 +48,7 @@ public class StartParametersDto {
 
     public static StartParameters convertFromDto(StartParametersDto dto) {
         return new StartParameters(
-                dto.getQuestionSetId(),
+                dto.getQuestionSetIds(),
                 dto.getQuantity(),
                 GUESS_NAME.equals(dto.getGuessType()) ? GuessType.GUESS_NAME_TYPE : GuessType.GUESS_PICTURE_TYPE);
     }

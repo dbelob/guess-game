@@ -1,14 +1,27 @@
 package guess.util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import guess.domain.Question;
+
+import java.util.*;
 
 /**
- * Common utility methods.
+ * Question utility methods.
  */
-public class CommonUtils {
+public class QuestionUtils {
+    public static List<Question> removeDuplicatesByFileName(List<Question> questions) {
+        List<Question> result = new ArrayList<>();
+        Set<String> fileNames = new HashSet<>();
+
+        for (Question question : questions) {
+            if (!fileNames.contains(question.getFileName())) {
+                result.add(question);
+                fileNames.add(question.getFileName());
+            }
+        }
+
+        return result;
+    }
+
     public static List<Integer> getQuantities(int count) {
         if (count <= 0) {
             return Collections.emptyList();

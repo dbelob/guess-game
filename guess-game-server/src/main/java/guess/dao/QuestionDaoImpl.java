@@ -1,11 +1,14 @@
 package guess.dao;
 
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.domain.Question;
 import guess.domain.QuestionSet;
+import guess.util.QuestionUtils;
 import guess.util.YamlUtils;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,5 +41,17 @@ public class QuestionDaoImpl implements QuestionDao {
         } else {
             throw new QuestionSetNotExistsException();
         }
+    }
+
+    @Override
+    public List<Question> getQuestionByIds(Long[] ids) throws QuestionSetNotExistsException {
+        List<Question> questions = new ArrayList<>();
+
+        for (Long id : ids) {
+            QuestionSet questionSet = getQuestionSetById(id);
+            questions.addAll(questionSet.getQuestions());
+        }
+
+        return QuestionUtils.removeDuplicatesByFileName(questions);
     }
 }

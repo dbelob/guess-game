@@ -28,3 +28,7 @@ questions:
   - {fileName: picture39.jpg, name: "Picture 39"}
   - {fileName: picture40.jpg, name: "Picture 40"}
   - {fileName: picture41.jpg, name: "Picture 41"}
+  - {fileName: picture00.jpg, name: "Picture 0"}
+  - {fileName: picture01.jpg, name: "Picture 1"}
+  - {fileName: picture02.jpg, name: "Picture 2"}
+  - {fileName: picture03.jpg, name: "Picture 3"}

@@ -24,8 +24,8 @@ export class QuestionService {
       );
   }
 
-  getQuantities(id: number): Observable<number[]> {
-    let params = new HttpParams().set('questionSetId', id.toString());
+  getQuantities(questionSetIds: number[]): Observable<number[]> {
+    let params = new HttpParams().set('questionSetIds', questionSetIds.toString());
 
     return this.http.get<number[]>(`${this.baseUrl}/quantities`, {params: params})
       .pipe(

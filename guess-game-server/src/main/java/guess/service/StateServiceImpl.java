@@ -57,11 +57,11 @@ public class StateServiceImpl implements StateService {
     }
 
     private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
-        // Find question set by id
-        QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetId());
+        // Find unique questions by ids
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds());
 
         // Shuffle questions
-        List<Question> shuffledQuestions = new ArrayList<>(questionSet.getQuestions());
+        List<Question> shuffledQuestions = new ArrayList<>(uniqueQuestions);
         Collections.shuffle(shuffledQuestions);
 
         // Select first "quantity" elements
@@ -86,6 +86,21 @@ public class StateServiceImpl implements StateService {
             questionAnswersList.add(new QuestionAnswers(question, answers));
         }
 
-        return new QuestionAnswersSet(questionSet.getName(), questionSet.getDirectoryName(), questionSet.getLogoFileName(), questionAnswersList);
+        String name;
+        String directoryName;
+        String logoFileName;
+
+        if (startParameters.getQuestionSetIds().length == 1) {
+            QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetIds()[0]);
+            name = questionSet.getName();
+            directoryName = questionSet.getDirectoryName();
+            logoFileName = questionSet.getLogoFileName();
+        } else {
+            name = String.format("%d sets", startParameters.getQuestionSetIds().length);
+            directoryName = questionDao.getQuestionSetById(startParameters.getQuestionSetIds()[0]).getDirectoryName();  //TODO: change
+            logoFileName = null;
+        }
+
+        return new QuestionAnswersSet(name, directoryName, logoFileName, questionAnswersList);
     }
 }

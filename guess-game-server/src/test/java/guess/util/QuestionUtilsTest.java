@@ -13,7 +13,7 @@ import java.util.List;
 import static junit.framework.TestCase.assertEquals;
 
 @RunWith(Parameterized.class)
-public class CommonUtilsTest {
+public class QuestionUtilsTest {
     @Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
@@ -43,13 +43,13 @@ public class CommonUtilsTest {
     private int count;
     private List<Integer> expected;
 
-    public CommonUtilsTest(int count, List<Integer> expected) {
+    public QuestionUtilsTest(int count, List<Integer> expected) {
         this.count = count;
         this.expected = expected;
     }
 
     @Test
     public void getQuantities() {
-        assertEquals(expected, CommonUtils.getQuantities(count));
+        assertEquals(expected, QuestionUtils.getQuantities(count));
     }
 }

@@ -4,18 +4,18 @@ package guess.domain;
  * Start parameters.
  */
 public class StartParameters {
-    private long questionSetId;
+    private Long[] questionSetIds;
     private int quantity;
     private GuessType guessType;
 
-    public StartParameters(long questionSetId, int quantity, GuessType guessType) {
-        this.questionSetId = questionSetId;
+    public StartParameters(Long[] questionSetIds, int quantity, GuessType guessType) {
+        this.questionSetIds = questionSetIds;
         this.quantity = quantity;
         this.guessType = guessType;
     }
 
-    public long getQuestionSetId() {
-        return questionSetId;
+    public Long[] getQuestionSetIds() {
+        return questionSetIds;
     }
 
     public int getQuantity() {

@@ -2,8 +2,9 @@ package guess.service;
 
 import guess.dao.QuestionDao;
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.domain.Question;
 import guess.domain.QuestionSet;
-import guess.util.CommonUtils;
+import guess.util.QuestionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,9 +32,9 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<Integer> getQuantities(long questionSetId) throws QuestionSetNotExistsException {
-        QuestionSet questionSet = questionDao.getQuestionSetById(questionSetId);
+    public List<Integer> getQuantities(Long[] questionSetIds) throws QuestionSetNotExistsException {
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(questionSetIds);
 
-        return CommonUtils.getQuantities(questionSet.getQuestions().size());
+        return QuestionUtils.getQuantities(uniqueQuestions.size());
     }
 }
