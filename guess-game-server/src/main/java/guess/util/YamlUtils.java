@@ -31,6 +31,7 @@ public class YamlUtils {
             questionSets.add(yaml.load(resource.getInputStream()));
         }
 
+        long questionId = 0;
         for (int i = 0; i < questionSets.size(); i++) {
             QuestionSet questionSet = questionSets.get(i);
             questionSet.setId(i);
@@ -38,7 +39,7 @@ public class YamlUtils {
             questionSet.setQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getQuestions()));
 
             for (int j = 0; j < questionSet.getQuestions().size(); j++) {
-                questionSet.getQuestions().get(j).setId(j);
+                questionSet.getQuestions().get(j).setId(questionId++);
             }
         }
 
