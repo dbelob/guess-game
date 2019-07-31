@@ -75,7 +75,6 @@ public class ResultDto {
                 result.getGuessType(),
                 ErrorDetailsDto.convertToDto(
                         errorDetailsList,
-                        result.getDirectoryName(),
                         result.getGuessType()));
     }
 }

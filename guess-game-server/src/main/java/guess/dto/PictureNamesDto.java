@@ -48,11 +48,10 @@ public class PictureNamesDto extends QuestionAnswersDto {
         return name3;
     }
 
-    public static PictureNamesDto convertToDto(String questionSetName, int currentNumber, int totalNumber, String directoryName,
-                                               String logoFileName, QuestionAnswers questionAnswers, List<Long> wrongAnswerIds) {
-        return new PictureNamesDto(questionSetName, currentNumber, totalNumber,
-                (logoFileName != null) ? String.format("%s/%s", directoryName, logoFileName) : null,
-                String.format("%s/%s", directoryName, questionAnswers.getQuestion().getFileName()),
+    public static PictureNamesDto convertToDto(String questionSetName, int currentNumber, int totalNumber, String logoFileName,
+                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds) {
+        return new PictureNamesDto(questionSetName, currentNumber, totalNumber, logoFileName,
+                questionAnswers.getQuestion().getFileName(),
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
                 questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
                 questionAnswers.getAnswers().get(0).getName(), questionAnswers.getAnswers().get(1).getName(),

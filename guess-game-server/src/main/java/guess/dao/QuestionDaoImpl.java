@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Question DAO implementation.
@@ -44,12 +45,18 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
-    public List<Question> getQuestionByIds(List<Long> ids) throws QuestionSetNotExistsException {
+    public List<Question> getQuestionByIds(List<Long> questionSetIds) throws QuestionSetNotExistsException {
         List<Question> questions = new ArrayList<>();
 
-        for (Long id : ids) {
-            QuestionSet questionSet = getQuestionSetById(id);
-            questions.addAll(questionSet.getQuestions());
+        for (Long questionSetId : questionSetIds) {
+            QuestionSet questionSet = getQuestionSetById(questionSetId);
+            List<Question> questionsWithFullFileName = questionSet.getQuestions().stream()
+                    .map(q -> new Question(
+                            q.getId(),
+                            String.format("%s/%s", questionSet.getDirectoryName(), q.getFileName()),
+                            q.getName()))
+                    .collect(Collectors.toList());
+            questions.addAll(questionsWithFullFileName);
         }
 
         return QuestionUtils.removeDuplicatesByFileName(questions);

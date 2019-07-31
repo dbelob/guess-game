@@ -32,22 +32,20 @@ public class ErrorDetailsDto {
         return wrongAnswers;
     }
 
-    private static ErrorDetailsDto convertToDto(ErrorDetails errorDetails, String directoryName, GuessType guessType) {
+    private static ErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType) {
         List<String> wrongAnswers = errorDetails.getWrongAnswers().stream()
-                .map(q -> (GuessType.GUESS_NAME_TYPE.equals(guessType)) ?
-                        q.getName() :
-                        String.format("%s/%s", directoryName, q.getFileName()))
+                .map(q -> (GuessType.GUESS_NAME_TYPE.equals(guessType)) ? q.getName() : q.getFileName())
                 .collect(Collectors.toList());
 
         return new ErrorDetailsDto(
-                String.format("%s/%s", directoryName, errorDetails.getQuestion().getFileName()),
+                errorDetails.getQuestion().getFileName(),
                 errorDetails.getQuestion().getName(),
                 wrongAnswers);
     }
 
-    public static List<ErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, String directoryName, GuessType guessType) {
+    public static List<ErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessType guessType) {
         return errorDetailsList.stream()
-                .map(e -> convertToDto(e, directoryName, guessType))
+                .map(e -> convertToDto(e, guessType))
                 .collect(Collectors.toList());
     }
 }

@@ -87,20 +87,19 @@ public class StateServiceImpl implements StateService {
         }
 
         String name;
-        String directoryName;
         String logoFileName;
 
         if (startParameters.getQuestionSetIds().size() == 1) {
             QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetIds().get(0));
             name = questionSet.getName();
-            directoryName = questionSet.getDirectoryName();
-            logoFileName = questionSet.getLogoFileName();
+            logoFileName = (questionSet.getLogoFileName() != null) ?
+                    String.format("%s/%s", questionSet.getDirectoryName(), questionSet.getLogoFileName()) :
+                    null;
         } else {
-            name = String.format("%d sets", startParameters.getQuestionSetIds().size());
-            directoryName = questionDao.getQuestionSetById(startParameters.getQuestionSetIds().get(0)).getDirectoryName();  //TODO: change
+            name = String.format("%d selected sets", startParameters.getQuestionSetIds().size());
             logoFileName = null;
         }
 
-        return new QuestionAnswersSet(name, directoryName, logoFileName, questionAnswersList);
+        return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 }

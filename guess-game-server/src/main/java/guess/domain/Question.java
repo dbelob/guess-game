@@ -5,6 +5,15 @@ public class Question {
     private String fileName;
     private String name;
 
+    public Question() {
+    }
+
+    public Question(long id, String fileName, String name) {
+        this.id = id;
+        this.fileName = fileName;
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }

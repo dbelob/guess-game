@@ -14,5 +14,5 @@ public interface QuestionDao {
 
     QuestionSet getQuestionSetById(long id) throws QuestionSetNotExistsException;
 
-    List<Question> getQuestionByIds(List<Long> ids) throws QuestionSetNotExistsException;
+    List<Question> getQuestionByIds(List<Long> questionSetIds) throws QuestionSetNotExistsException;
 }

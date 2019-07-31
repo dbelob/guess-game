@@ -48,17 +48,16 @@ public class NamePicturesDto extends QuestionAnswersDto {
         return fileName3;
     }
 
-    public static NamePicturesDto convertToDto(String questionSetName, int currentNumber, int totalNumber, String directoryName,
-                                               String logoFileName, QuestionAnswers questionAnswers, List<Long> wrongAnswerIds) {
-        return new NamePicturesDto(questionSetName, currentNumber, totalNumber,
-                (logoFileName != null) ? String.format("%s/%s", directoryName, logoFileName) : null,
+    public static NamePicturesDto convertToDto(String questionSetName, int currentNumber, int totalNumber, String logoFileName,
+                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds) {
+        return new NamePicturesDto(questionSetName, currentNumber, totalNumber, logoFileName,
                 questionAnswers.getQuestion().getName(),
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
                 questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
-                String.format("%s/%s", directoryName, questionAnswers.getAnswers().get(0).getFileName()),
-                String.format("%s/%s", directoryName, questionAnswers.getAnswers().get(1).getFileName()),
-                String.format("%s/%s", directoryName, questionAnswers.getAnswers().get(2).getFileName()),
-                String.format("%s/%s", directoryName, questionAnswers.getAnswers().get(3).getFileName()),
+                questionAnswers.getAnswers().get(0).getFileName(),
+                questionAnswers.getAnswers().get(1).getFileName(),
+                questionAnswers.getAnswers().get(2).getFileName(),
+                questionAnswers.getAnswers().get(3).getFileName(),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(0).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),

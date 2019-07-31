@@ -9,13 +9,11 @@ public class QuestionAnswersSet {
     public static final int QUESTION_ANSWERS_LIST_SIZE = 4;
 
     private String name;
-    private String directoryName;
     private String logoFileName;
     private List<QuestionAnswers> questionAnswersList;
 
-    public QuestionAnswersSet(String name, String directoryName, String logoFileName, List<QuestionAnswers> questionAnswersList) {
+    public QuestionAnswersSet(String name, String logoFileName, List<QuestionAnswers> questionAnswersList) {
         this.name = name;
-        this.directoryName = directoryName;
         this.logoFileName = logoFileName;
         this.questionAnswersList = questionAnswersList;
     }
@@ -28,16 +26,8 @@ public class QuestionAnswersSet {
         this.name = name;
     }
 
-    public String getDirectoryName() {
-        return directoryName;
-    }
-
     public String getLogoFileName() {
         return logoFileName;
-    }
-
-    public void setDirectoryName(String directoryName) {
-        this.directoryName = directoryName;
     }
 
     public List<QuestionAnswers> getQuestionAnswersList() {

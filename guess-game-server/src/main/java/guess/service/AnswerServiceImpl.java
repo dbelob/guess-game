@@ -94,8 +94,7 @@ public class AnswerServiceImpl implements AnswerService {
                 (float) correctAnswers / totalQuestions,
                 (float) wrongAnswers / totalQuestions,
                 (float) skippedAnswers / totalQuestions,
-                startParameters.getGuessType(),
-                questionAnswersSet.getDirectoryName());
+                startParameters.getGuessType());
     }
 
     @Override
