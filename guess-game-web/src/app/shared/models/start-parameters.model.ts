@@ -8,4 +8,3 @@ export class StartParameters {
   ) {
   }
 }
-

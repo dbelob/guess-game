@@ -1,5 +1,5 @@
 name: "Question Set 2"
-directoryName: samples
+directoryName: samples2
 questions:
   - {fileName: picture10.jpg, name: "Picture 10"}
   - {fileName: picture11.jpg, name: "Picture 11"}
