@@ -89,11 +89,12 @@ public class AnswerServiceImpl implements AnswerService {
         QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet();
         long totalQuestions = questionAnswersSet.getQuestionAnswersList().size();
         long skippedAnswers = totalQuestions - (correctAnswers + wrongAnswers);
+        float correctPercents = (totalQuestions != 0) ? (float) correctAnswers / totalQuestions : 0;
+        float wrongPercents = (totalQuestions != 0) ? (float) wrongAnswers / totalQuestions : 0;
+        float skippedPercents = (totalQuestions != 0) ? (float) skippedAnswers / totalQuestions : 0;
 
         return new Result(correctAnswers, wrongAnswers, skippedAnswers,
-                (float) correctAnswers / totalQuestions,
-                (float) wrongAnswers / totalQuestions,
-                (float) skippedAnswers / totalQuestions,
+                correctPercents, wrongPercents, skippedPercents,
                 startParameters.getGuessType());
     }
 
