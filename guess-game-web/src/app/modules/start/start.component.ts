@@ -53,4 +53,8 @@ export class StartComponent {
         this.router.navigateByUrl('/guess/name');
       });
   }
+
+  isDisabled(): boolean {
+    return this.selectedQuestionSets.length <= 0;
+  }
 }
