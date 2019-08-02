@@ -2,25 +2,6 @@
 
 Guess name by picture or picture by name 
 
-## Requirements
-
-* [JDK 8+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* [Apache Maven 3.5.0+](https://maven.apache.org/download.cgi)
-
-## Compilation
-
-1. From the command line with *Maven* (in the root directory):
-
-    `mvn clean package -Dmaven.test.skip=true`
-    
-1. Change directory:
-
-    `cd guess-game-distrib/target`
-
-1. Find distribution file:
-
-    `guess-game-<version>.zip`
-
 ## Running
 
 1. Install *Java SE 8* or higher (*JRE* or *JDK*) 
@@ -41,3 +22,21 @@ Guess name by picture or picture by name
 1. Access the running web application at:
 
     http://localhost:8080
+
+## Compilation
+
+1. Install [Java SE 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JDK*) 
+
+1. Install [Apache Maven 3.5.0](https://maven.apache.org/download.cgi) or higher 
+
+1. From the command line with *Maven* (in the root directory):
+
+    `mvn clean package -Dmaven.test.skip=true`
+    
+1. Change directory:
+
+    `cd guess-game-distrib/target`
+
+1. Find distribution file:
+
+    `guess-game-<version>.zip`
