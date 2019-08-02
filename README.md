@@ -31,7 +31,7 @@ Guess name by picture or picture by name
 
 1. From the command line with *Maven* (in the root directory):
 
-    `mvn clean package -Dmaven.test.skip=true`
+    `mvn clean package -DskipTests`
     
 1. Change directory:
 
