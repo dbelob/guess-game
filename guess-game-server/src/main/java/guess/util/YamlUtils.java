@@ -27,6 +27,7 @@ public class YamlUtils {
         Yaml yaml = new Yaml(new Constructor(QuestionSet.class));
         List<QuestionSet> questionSets = new ArrayList<>();
 
+        // Read question sets from YAML files
         for (Resource resource : resources) {
             questionSets.add(yaml.load(resource.getInputStream()));
         }
@@ -36,8 +37,10 @@ public class YamlUtils {
             QuestionSet questionSet = questionSets.get(i);
             questionSet.setId(i);
 
+            // Remove duplicates by filename
             questionSet.setQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getQuestions()));
 
+            // Set unique id
             for (int j = 0; j < questionSet.getQuestions().size(); j++) {
                 questionSet.getQuestions().get(j).setId(questionId++);
             }
