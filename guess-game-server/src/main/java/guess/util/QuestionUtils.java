@@ -12,10 +12,12 @@ public class QuestionUtils {
         List<Question> result = new ArrayList<>();
         Set<String> fileNames = new HashSet<>();
 
-        for (Question question : questions) {
-            if (!fileNames.contains(question.getFileName())) {
-                result.add(question);
-                fileNames.add(question.getFileName());
+        if (questions != null) {
+            for (Question question : questions) {
+                if (!fileNames.contains(question.getFileName())) {
+                    result.add(question);
+                    fileNames.add(question.getFileName());
+                }
             }
         }
 
