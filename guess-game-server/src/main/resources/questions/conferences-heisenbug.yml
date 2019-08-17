@@ -1,0 +1,19 @@
+name: "JUG Ru Group conferences - Heisenbug"
+directoryName: speakers
+logoFileName: logo-heisenbug.jpg
+questions:
+  - {fileName: dymov-yury.jpg, name: "Yury Dymov"}
+  - {fileName: fischer-oliver-b.jpg, name: "Oliver B. Fischer"}
+  - {fileName: ford-neal.jpg, name: "Neal Ford"}
+  - {fileName: holmes-jim.jpg, name: "Jim Holmes"}
+  - {fileName: ingrassellino-jessica.jpg, name: "Jessica Ingrassellino"}
+  - {fileName: kolpakova-elena.jpg, name: "Elena Kolpakova"}
+  - {fileName: lavrenjuk-alexey.jpg, name: "Alexey Lavrenjuk"}
+  - {fileName: li-ang.jpg, name: "Ang Li"}
+  - {fileName: lyrchikov-igor.jpg, name: "Igor Lyrchikov"}
+  - {fileName: ponomarev-ivan.jpg, name: "Ivan Ponomarev"}
+  - {fileName: shishkin-artem.jpg, name: "Artem Shishkin"}
+  - {fileName: smirnov-vyacheslav.jpg, name: "Vyacheslav Smirnov"}
+  - {fileName: tolkachev-kirill.jpg, name: "Kirill Tolkachev"}
+  - {fileName: vanlightly-jack.jpg, name: "Jack Vanlightly"}
+  - {fileName: yamschikov-ivan.jpg, name: "Ivan Yamschikov"}

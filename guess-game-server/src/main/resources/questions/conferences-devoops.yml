@@ -1,0 +1,37 @@
+name: "JUG Ru Group conferences - DevOops"
+directoryName: speakers
+logoFileName: logo-devoops.jpg
+questions:
+  - {fileName: anastasiev-oleg.jpg, name: "Oleg Anastasiev"}
+  - {fileName: babenko-anton.jpg, name: "Anton Babenko"}
+  - {fileName: berdnikov-sergey.jpg, name: "Sergey Berdnikov"}
+  - {fileName: box-craig.jpg, name: "Craig Box"}
+  - {fileName: borodin-vladimir.jpg, name: "Vladimir Borodin"}
+  - {fileName: cole-adrian.jpg, name: "Adrian Cole"}
+  - {fileName: dehtyarev-evgeny.jpg, name: "Evgeny Dehtyarev"}
+  - {fileName: ermakov-andrey.jpg, name: "Andrey Ermakov"}
+  - {fileName: gamov-viktor.jpg, name: "Viktor Gamov"}
+  - {fileName: glushkov-nikolay.jpg, name: "Nikolay Glushkov"}
+  - {fileName: filatov-andrey.jpg, name: "Andrey Filatov"}
+  - {fileName: habarov-vitaly.jpg, name: "Vitaly Habarov"}
+  - {fileName: igolnik-leonid.jpg, name: "Leonid Igolnik"}
+  - {fileName: kalichkin-artem.jpg, name: "Artem Kalichkin"}
+  - {fileName: kirpichnikov-alexey.jpg, name: "Alexey Kirpichnikov"}
+  - {fileName: nekrasova-oksana.jpg, name: "Oksana Nekrasova"}
+  - {fileName: ponomarev-ivan.jpg, name: "Ivan Ponomarev"}
+  - {fileName: prohorchik-alena.jpg, name: "Alena Prohorchik"}
+  - {fileName: quinn-corey.jpg, name: "Corey Quinn"}
+  - {fileName: rice-liz.jpg, name: "Liz Rice"}
+  - {fileName: rymkus-anton.jpg, name: "Anton Rymkus"}
+  - {fileName: ryzhikov-nikolay.jpg, name: "Nikolay Ryzhikov"}
+  - {fileName: sadogursky-baruch.jpg, name: "Baruch Sadogursky"}
+  - {fileName: serkin-ruslan.jpg, name: "Ruslan Serkin"}
+  - {fileName: sharapov-sergey.jpg, name: "Sergey Sharapov"}
+  - {fileName: simko-radek.jpg, name: "Radek Simko"}
+  - {fileName: stack-paul.jpg, name: "Paul Stack"}
+  - {fileName: titov-alexander2.jpg, name: "Alexander Titov (Express 42)"}
+  - {fileName: tolkachev-kirill.jpg, name: "Kirill Tolkachev"}
+  - {fileName: tsang-ray.jpg, name: "Ray Tsang"}
+  - {fileName: vargo-seth.jpg, name: "Seth Vargo"}
+  - {fileName: weiss-anton.jpg, name: "Anton Weiss"}
+  - {fileName: willis-john.jpg, name: "John Willis"}

@@ -1,0 +1,44 @@
+name: "Meetups - jug.msk.ru"
+directoryName: speakers
+logoFileName: logo-jugmsk.jpg
+questions:
+  - {fileName: arhipov-anton.jpg, name: "Anton Arhipov"}
+  - {fileName: belokrylov-alexander.jpg, name: "Alexander Belokrylov"}
+  - {fileName: borisov-evgeny.jpg, name: "Evgeny Borisov"}
+  - {fileName: breslav-andrey.jpg, name: "Andrey Breslav"}
+  - {fileName: bugayenko-yegor.jpg, name: "Yegor Bugayenko"}
+  - {fileName: cheremin-ruslan.jpg, name: "Ruslan Cheremin"}
+  - {fileName: chuyko-dmitry.jpg, name: "Dmitry Chuyko"}
+  - {fileName: dokuka-oleh.jpg, name: "Oleh Dokuka"}
+  - {fileName: ershov-andrey.jpg, name: "Andrey Ershov"}
+  - {fileName: fedorov-alexey.jpg, name: "Alexey Fedorov"}
+  - {fileName: finkelstein-pavel.jpg, name: "Pavel Finkelstein"}
+  - {fileName: gamov-viktor.jpg, name: "Viktor Gamov"}
+  - {fileName: gorelikov-maxim.jpg, name: "Maxim Gorelikov"}
+  - {fileName: gramin-maxim.jpg, name: "Maxim Gramin"}
+  - {fileName: krivopustov-konstantin.jpg, name: "Konstantin Krivopustov"}
+  - {fileName: krylov-ivan.jpg, name: "Ivan Krylov"}
+  - {fileName: kuksenko-sergey.jpg, name: "Sergey Kuksenko"}
+  - {fileName: lipsky-nikita.jpg, name: "Nikita Lipsky"}
+  - {fileName: mehmandarov-rustam.jpg, name: "Rustam Mehmandarov"}
+  - {fileName: mironenko-alexander.jpg, name: "Alexander Mironenko"}
+  - {fileName: nenashev-oleg.jpg, name: "Oleg Nenashev"}
+  - {fileName: nutter-charles.jpg, name: "Charles Nutter"}
+  - {fileName: panasjuk-artem.jpg, name: "Artem Panasjuk"}
+  - {fileName: pangin-andrey.jpg, name: "Andrey Pangin"}
+  - {fileName: ponomarev-ivan.jpg, name: "Ivan Ponomarev"}
+  - {fileName: potashnikov-nikolay.jpg, name: "Nikolay Potashnikov"}
+  - {fileName: ragozin-alexey.jpg, name: "Alexey Ragozin"}
+  - {fileName: sadogursky-baruch.jpg, name: "Baruch Sadogursky"}
+  - {fileName: salnikov-tarnovsky-nikita.jpg, name: "Nikita Salnikov-Tarnovsky"}
+  - {fileName: shelajev-oleg.jpg, name: "Oleg Shelajev"}
+  - {fileName: shipilev-alexey.jpg, name: "Alexey Shipilev"}
+  - {fileName: sitnikov-vladimir.jpg, name: "Vladimir Sitnikov"}
+  - {fileName: smirnov-gleb.jpg, name: "Gleb Smirnov"}
+  - {fileName: smirnov-viktor.jpg, name: "Viktor Smirnov",}
+  - {fileName: stukalov-alexey.jpg, name: "Alexey Stukalov"}
+  - {fileName: tarasov-alexander.jpg, name: "Alexander Tarasov"}
+  - {fileName: tolkachev-kirill.jpg, name: "Kirill Tolkachev"}
+  - {fileName: uglyansky-ivan.jpg, name: "Ivan Uglyansky"}
+  - {fileName: zhemerov-dmitry.jpg, name: "Dmitry Zhemerov"}
+  - {fileName: zinoviev-alexey.jpg, name: "Alexey Zinoviev"}

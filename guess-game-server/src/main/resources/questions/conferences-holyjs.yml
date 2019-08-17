@@ -1,0 +1,6 @@
+name: "JUG Ru Group conferences - HolyJS"
+directoryName: speakers
+logoFileName: logo-holyjs.jpg
+questions:
+  - {fileName: mishunov-denis.jpg, name: "Denis Mishunov"}
+  - {fileName: shelajev-oleg.jpg, name: "Oleg Shelajev"}

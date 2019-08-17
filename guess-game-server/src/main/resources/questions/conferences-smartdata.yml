@@ -1,0 +1,21 @@
+name: "JUG Ru Group conferences - SmartData"
+directoryName: speakers
+logoFileName: logo-smartdata.jpg
+questions:
+  - {fileName: boyarov-andrey.jpg, name: "Andrey Boyarov"}
+  - {fileName: bugaychenko-dmitry.jpg, name: "Dmitry Bugaychenko"}
+  - {fileName: dorogush-anna-veronica.jpg, name: "Anna Veronica Dorogush"}
+  - {fileName: drokin-ivan.jpg, name: "Ivan Drokin"}
+  - {fileName: hudobahshov-vitaly.jpg, name: "Vitaly Hudobahshov"}
+  - {fileName: grigoriev-artem.jpg, name: "Artem Grigoriev"}
+  - {fileName: kamalov-mihail.jpg, name: "Mihail Kamalov"}
+  - {fileName: krasheninnikov-alexander.jpg, name: "Alexander Krasheninnikov"}
+  - {fileName: marinov-artem.jpg, name: "Artem Marinov"}
+  - {fileName: natekin-alexey.jpg, name: "Alexey Natekin"}
+  - {fileName: nikolenko-sergey.jpg, name: "Sergey Nikolenko"}
+  - {fileName: potapov-alexey.jpg, name: "Alexey Potapov"}
+  - {fileName: serbul-alexander.jpg, name: "Alexander Serbul"}
+  - {fileName: shminke-boris.jpg, name: "Boris Shminke"}
+  - {fileName: sibiryakov-alexander.jpg, name: "Alexander Sibiryakov"}
+  - {fileName: krasilschik-vladimir.jpg, name: "Vladimir Krasilschik"}
+  - {fileName: yamschikov-ivan.jpg, name: "Ivan Yamschikov"}

@@ -1,0 +1,12 @@
+name: "JUG Ru Group conferences - SPTDC"
+directoryName: speakers
+questions:
+  - {fileName: abraham-ittai.jpg, name: "Ittai Abraham"}
+  - {fileName: brown-trevor.jpg, name: "Trevor Brown"}
+  - {fileName: gafni-eli.jpg, name: "Eli Gafni"}
+  - {fileName: hendler-danny.jpg, name: "Danny Hendler"}
+  - {fileName: herlihy-maurice.jpg, name: "Maurice Herlihy"}
+  - {fileName: kuznetsov-petr.jpg, name: "Petr Kuznetsov"}
+  - {fileName: lamport-leslie.jpg, name: "Leslie Lamport"}
+  - {fileName: mostefaoui-achour.jpg, name: "Achour Mostefaoui"}
+  - {fileName: scott-michael.jpg, name: "Michael Scott"}

@@ -1,0 +1,32 @@
+name: "JUG Ru Group conferences - C++ Russia"
+directoryName: speakers
+logoFileName: logo-cpprussia.jpg
+questions:
+  - {fileName: arutyunyan-ruslan.jpg, name: "Ruslan Arutyunyan"}
+  - {fileName: bogdanov-ilya.jpg, name: "Ilya Bogdanov"}
+  - {fileName: сukiс-ivan.jpg, name: "Ivan Čukić"}
+  - {fileName: josuttis-nicolai.jpg, name: "Nicolai Josuttis"}
+  - {fileName: davydov-andrey.jpg, name: "Andrey Davydov"}
+  - {fileName: doumler-timur.jpg, name: "Timur Doumler"}
+  - {fileName: dunchev-anton.jpg, name: "Anton Dunchev"}
+  - {fileName: fathiev-oleg.jpg, name: "Oleg Fathiev"}
+  - {fileName: fedorov-sergey.jpg, name: "Sergey Fedorov"}
+  - {fileName: granin-alexander.jpg, name: "Alexander Granin"}
+  - {fileName: grimm-rainer.jpg, name: "Rainer Grimm"}
+  - {fileName: karpov-andrey.jpg, name: "Andrey Karpov (PVS-Studio)"}
+  - {fileName: kirilov-viktor.jpg, name: "Viktor Kirilov"}
+  - {fileName: malov-alexey.jpg, name: "Alexey Malov"}
+  - {fileName: matrosov-mihail.jpg, name: "Mihail Matrosov"}
+  - {fileName: milovidov-alexey.jpg, name: "Alexey Milovidov"}
+  - {fileName: nash-phil.jpg, name: "Phil Nash"}
+  - {fileName: novikov-pavel.jpg, name: "Pavel Novikov"}
+  - {fileName: poluhin-anton.jpg, name: "Anton Poluhin"}
+  - {fileName: puente-juan-pedro-bolivar.jpg, name: "Juan Pedro Bolívar Puente"}
+  - {fileName: sadovnikov-sergey.jpg, name: "Sergey Sadovnikov"}
+  - {fileName: schmidt-alexander.jpg, name: "Alexander Schmidt"}
+  - {fileName: sogo-javier-garcia.jpg, name: "Javier García Sogo"}
+  - {fileName: tihonov-kirill.jpg, name: "Kirill Tihonov"}
+  - {fileName: titov-alexander.jpg, name: "Alexander Titov (Intel)"}
+  - {fileName: romeo-vittorio.jpg, name: "Vittorio Romeo"}
+  - {fileName: voronkov-alexander.jpg, name: "Alexander Voronkov"}
+  - {fileName: ziegler-valentin.jpg, name: "Valentin Ziegler"}
