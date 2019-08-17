@@ -1,8 +1,0 @@
-name: "Question Set 2"
-directoryName: samples2
-questions:
-  - {fileName: picture10.jpg, name: "Picture 10"}
-  - {fileName: picture11.jpg, name: "Picture 11"}
-  - {fileName: picture12.jpg, name: "Picture 12"}
-  - {fileName: picture13.jpg, name: "Picture 13"}
-  - {fileName: picture14.jpg, name: "Picture 14"}
