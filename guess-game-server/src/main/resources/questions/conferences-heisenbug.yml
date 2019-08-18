@@ -2,18 +2,62 @@ name: "JUG Ru Group conferences - Heisenbug"
 directoryName: speakers
 logoFileName: logo-heisenbug.jpg
 questions:
+  - {fileName: abdulina-liliya.jpg, name: "Liliya Abdulina"}
+  - {fileName: andelkovic-alexander.jpg, name: "Alexander Andelkovic"}
+  - {fileName: barantsev-alexey.jpg, name: "Alexey Barantsev"}
+  - {fileName: bateeva-ekaterina.jpg, name: "Ekaterina Bateeva"}
+  - {fileName: bulavin-anton.jpg, name: "Anton Bulavin"}
+  - {fileName: chernysheva-anna.jpg, name: "Anna Chernysheva"}
+  - {fileName: cochran-timothy.jpg, name: "Timothy Cochran"}
+  - {fileName: dokuchaev-sergey.jpg, name: "Sergey Dokuchaev"}
   - {fileName: dymov-yury.jpg, name: "Yury Dymov"}
   - {fileName: fischer-oliver-b.jpg, name: "Oliver B. Fischer"}
+  - {fileName: glazkov-andrey.jpg, name: "Andrey Glazkov"}
+  - {fileName: eroshenko-artem.jpg, name: "Artem Eroshenko"}
   - {fileName: ford-neal.jpg, name: "Neal Ford"}
+  - {fileName: fridman-vitaly.jpg, name: "Vitaly Fridman"}
+  - {fileName: frolov-vyacheslav.jpg, name: "Vyacheslav Frolov"}
+  - {fileName: haramati-nisan.jpg, name: "Nisan Haramati"}
+  - {fileName: hisametdinova-antonina.jpg, name: "Antonina Hisametdinova"}
   - {fileName: holmes-jim.jpg, name: "Jim Holmes"}
+  - {fileName: honin-vladimir.jpg, name: "Vladimir Honin"}
   - {fileName: ingrassellino-jessica.jpg, name: "Jessica Ingrassellino"}
+  - {fileName: karpov-andrey.jpg, name: "Andrey Karpov (PVS-Studio)"}
   - {fileName: kolpakova-elena.jpg, name: "Elena Kolpakova"}
+  - {fileName: kokoreva-alisa.jpg, name: "Alisa Kokoreva"}
+  - {fileName: koronevich-viktor.jpg, name: "Viktor Koronevich"}
+  - {fileName: korovin-anatoly.jpg, name: "Anatoly Korovin"}
+  - {fileName: kubowicz-piotr.jpg, name: "Piotr Kubowicz"}
+  - {fileName: lambert-shelley.jpg, name: "Shelley Lambert"}
   - {fileName: lavrenjuk-alexey.jpg, name: "Alexey Lavrenjuk"}
+  - {fileName: lewis-rhian.jpg, name: "Rhian Lewis"}
   - {fileName: li-ang.jpg, name: "Ang Li"}
+  - {fileName: lushnikov-andrey.jpg, name: "Andrey Lushnikov"}
   - {fileName: lyrchikov-igor.jpg, name: "Igor Lyrchikov"}
+  - {fileName: markelov-andrey.jpg, name: "Andrey Markelov"}
+  - {fileName: merkushev-kirill.jpg, name: "Kirill Merkushev"}
+  - {fileName: miheeva-ekaterina.jpg, name: "Ekaterina Miheeva"}
+  - {fileName: mzhachih-lyudmila.jpg, name: "Lyudmila Mzhachih"}
+  - {fileName: petuhov-valentin-wylsacom.jpg, name: "Valentin Wylsacom Petuhov"}
+  - {fileName: philipp-ingo.jpg, name: "Ingo Philipp"}
+  - {fileName: plaskovsky-anatoly.jpg, name: "Anatoly Plaskovsky"}
   - {fileName: ponomarev-ivan.jpg, name: "Ivan Ponomarev"}
+  - {fileName: pushtaev-vadim.jpg, name: "Vadim Pushtaev"}
+  - {fileName: race-amber.jpg, name: "Amber Race"}
+  - {fileName: ru-bingsheng.jpg, name: "Bingsheng Ru"}
+  - {fileName: rudenko-leonid.jpg, name: "Leonid Rudenko"}
+  - {fileName: rumak-ivan.jpg, name: "Ivan Rumak"}
+  - {fileName: rybin-denis.jpg, name: "Denis Rybin"}
+  - {fileName: sadogursky-baruch.jpg, name: "Baruch Sadogursky"}
+  - {fileName: sharova-elena.jpg, name: "Elena Sharova"}
   - {fileName: shishkin-artem.jpg, name: "Artem Shishkin"}
+  - {fileName: sillars-doug.jpg, name: "Doug Sillars"}
   - {fileName: smirnov-vyacheslav.jpg, name: "Vyacheslav Smirnov"}
+  - {fileName: sobolev-nikita.jpg, name: "Nikita Sobolev"}
+  - {fileName: solodov-vladimir.jpg, name: "Vladimir Solodov"}
+  - {fileName: todorov-alexander.jpg, name: "Alexander Todorov"}
+  - {fileName: usmansky-anton.jpg, name: "Anton Usmansky"}
   - {fileName: tolkachev-kirill.jpg, name: "Kirill Tolkachev"}
+  - {fileName: vanchuk-vasily.jpg, name: "Vasily Vanchuk"}
   - {fileName: vanlightly-jack.jpg, name: "Jack Vanlightly"}
   - {fileName: yamschikov-ivan.jpg, name: "Ivan Yamschikov"}
