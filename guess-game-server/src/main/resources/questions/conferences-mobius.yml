@@ -2,3 +2,7 @@ name: "JUG Ru Group conferences - Mobius"
 directoryName: speakers
 logoFileName: logo-mobius.jpg
 questions:
+  - {fileName: breslav-andrey.jpg, name: "Andrey Breslav"}
+  - {fileName: fridman-vitaly.jpg, name: "Vitaly Fridman"}
+  - {fileName: levin-yonatan.jpg, name: "Yonatan Levin"}
+  - {fileName: nekludov-denis.jpg, name: "Denis Nekludov"}
