@@ -12,7 +12,7 @@ import { StartParameters } from "../../shared/models/start-parameters.model";
 export class StartComponent {
   private questionSets: QuestionSet[] = [];
   private quantities: number[] = [];
-  private selectedQuestionSets: QuestionSet[];
+  private selectedQuestionSets: QuestionSet[] = [];
   private selectedQuantity: number;
   private selectedGuessType: string = 'guessName';
 
@@ -55,6 +55,6 @@ export class StartComponent {
   }
 
   isDisabled(): boolean {
-    return this.selectedQuestionSets.length <= 0;
+    return this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0);
   }
 }

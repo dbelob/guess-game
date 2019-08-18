@@ -36,4 +36,8 @@ export class ResultComponent {
   isSkippedVisible() {
     return this.result.skippedAnswers > 0;
   }
+
+  isErrorDetailsListVisible() {
+    return this.result.errorDetailsList && (this.result.errorDetailsList.length > 0);
+  }
 }
