@@ -5,15 +5,17 @@ import guess.domain.QuestionAnswersSet;
 import guess.domain.StartParameters;
 import guess.domain.State;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * State service.
  */
 public interface StateService {
-    void setStartParameters(StartParameters startParameters) throws QuestionSetNotExistsException;
+    void setStartParameters(StartParameters startParameters, HttpSession httpSession) throws QuestionSetNotExistsException;
 
-    State getState();
+    State getState(HttpSession httpSession);
 
-    void setState(State state);
+    void setState(State state, HttpSession httpSession);
 
-    QuestionAnswersSet getQuestionAnswersSet();
+    QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession);
 }

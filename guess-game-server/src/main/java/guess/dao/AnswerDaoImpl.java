@@ -1,9 +1,10 @@
 package guess.dao;
 
 import guess.domain.AnswerSet;
+import guess.util.HttpSessionUtils;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -11,20 +12,18 @@ import java.util.List;
  */
 @Repository
 public class AnswerDaoImpl implements AnswerDao {
-    private List<AnswerSet> answerSets = new ArrayList<>();
-
     @Override
-    public List<AnswerSet> getAnswerSets() {
-        return answerSets;
+    public List<AnswerSet> getAnswerSets(HttpSession httpSession) {
+        return HttpSessionUtils.getAnswerSets(httpSession);
     }
 
     @Override
-    public void clearAnswerSets() {
-        answerSets.clear();
+    public void clearAnswerSets(HttpSession httpSession) {
+        HttpSessionUtils.clearAnswerSets(httpSession);
     }
 
     @Override
-    public void addAnswerSet(AnswerSet answerSet) {
-        answerSets.add(answerSet);
+    public void addAnswerSet(AnswerSet answerSet, HttpSession httpSession) {
+        HttpSessionUtils.addAnswerSet(answerSet, httpSession);
     }
 }

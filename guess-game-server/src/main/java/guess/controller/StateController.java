@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -33,28 +34,28 @@ public class StateController {
 
     @PostMapping("/parameters")
     @ResponseStatus(HttpStatus.OK)
-    public void setStartParameters(@RequestBody StartParametersDto startParameters) throws QuestionSetNotExistsException {
-        stateService.setStartParameters(StartParametersDto.convertFromDto(startParameters));
+    public void setStartParameters(@RequestBody StartParametersDto startParameters, HttpSession httpSession) throws QuestionSetNotExistsException {
+        stateService.setStartParameters(StartParametersDto.convertFromDto(startParameters), httpSession);
     }
 
     @GetMapping("/state")
     @ResponseBody
-    public State getState() {
-        return stateService.getState();
+    public State getState(HttpSession httpSession) {
+        return stateService.getState(httpSession);
     }
 
     @PutMapping("/state")
     @ResponseStatus(HttpStatus.OK)
-    public void setState(@RequestBody String state) {
-        stateService.setState(State.valueOf(state));
+    public void setState(@RequestBody String state, HttpSession httpSession) {
+        stateService.setState(State.valueOf(state), httpSession);
     }
 
     @GetMapping("/picture-names")
     @ResponseBody
-    public PictureNamesDto getPictureNames() {
-        int currentQuestionIndex = answerService.getCurrentQuestionIndex();
-        QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet();
-        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex);
+    public PictureNamesDto getPictureNames(HttpSession httpSession) {
+        int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
+        QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
+        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
@@ -73,10 +74,10 @@ public class StateController {
 
     @GetMapping("/name-pictures")
     @ResponseBody
-    public NamePicturesDto getNamePictures() {
-        int currentQuestionIndex = answerService.getCurrentQuestionIndex();
-        QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet();
-        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex);
+    public NamePicturesDto getNamePictures(HttpSession httpSession) {
+        int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
+        QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
+        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);

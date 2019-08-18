@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -26,15 +27,15 @@ public class AnswerController {
 
     @PostMapping("/answers")
     @ResponseStatus(HttpStatus.OK)
-    public void addAnswer(@RequestParam int questionIndex, @RequestParam long answerId) {
-        answerService.setAnswer(questionIndex, answerId);
+    public void addAnswer(@RequestParam int questionIndex, @RequestParam long answerId, HttpSession httpSession) {
+        answerService.setAnswer(questionIndex, answerId, httpSession);
     }
 
     @GetMapping("/result")
     @ResponseBody
-    public ResultDto getResult() {
-        Result result = answerService.getResult();
-        List<ErrorDetails> errorDetailsList = answerService.getErrorDetailsList();
+    public ResultDto getResult(HttpSession httpSession) {
+        Result result = answerService.getResult(httpSession);
+        List<ErrorDetails> errorDetailsList = answerService.getErrorDetailsList(httpSession);
 
         return ResultDto.convertToDto(result, errorDetailsList);
     }

@@ -4,19 +4,21 @@ import guess.domain.QuestionAnswersSet;
 import guess.domain.StartParameters;
 import guess.domain.State;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * State DAO.
  */
 public interface StateDao {
-    State getState();
+    State getState(HttpSession httpSession);
 
-    void setState(State state);
+    void setState(State state, HttpSession httpSession);
 
-    StartParameters getStartParameters();
+    StartParameters getStartParameters(HttpSession httpSession);
 
-    void setStartParameters(StartParameters startParameters);
+    void setStartParameters(StartParameters startParameters, HttpSession httpSession);
 
-    QuestionAnswersSet getQuestionAnswersSet();
+    QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession);
 
-    void setQuestionAnswersSet(QuestionAnswersSet questionAnswersSet);
+    void setQuestionAnswersSet(QuestionAnswersSet questionAnswersSet, HttpSession httpSession);
 }
