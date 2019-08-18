@@ -2,7 +2,7 @@
 
 ![Screenshot](/images/screenshot.png)
 
-Guess name by picture or picture by name
+Guess name by picture or picture by name.
 
 ## Running
 

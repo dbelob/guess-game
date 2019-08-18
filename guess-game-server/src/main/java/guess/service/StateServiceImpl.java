@@ -8,6 +8,7 @@ import guess.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,34 +30,35 @@ public class StateServiceImpl implements StateService {
     }
 
     @Override
-    public void setStartParameters(StartParameters startParameters) throws QuestionSetNotExistsException {
-        stateDao.setStartParameters(startParameters);
+    public void setStartParameters(StartParameters startParameters, HttpSession httpSession) throws QuestionSetNotExistsException {
+        stateDao.setStartParameters(startParameters, httpSession);
 
         QuestionAnswersSet questionAnswersSet = createQuestionAnswersSet(startParameters);
-        stateDao.setQuestionAnswersSet(questionAnswersSet);
+        stateDao.setQuestionAnswersSet(questionAnswersSet, httpSession);
 
-        answerDao.clearAnswerSets();
+        answerDao.clearAnswerSets(httpSession);
         stateDao.setState(
                 questionAnswersSet.getQuestionAnswersList().isEmpty() ?
                         State.RESULT_STATE :
                         (GuessType.GUESS_NAME_TYPE.equals(startParameters.getGuessType()) ?
                                 State.GUESS_NAME_STATE :
-                                State.GUESS_PICTURE_STATE));
+                                State.GUESS_PICTURE_STATE),
+                httpSession);
     }
 
     @Override
-    public State getState() {
-        return stateDao.getState();
+    public State getState(HttpSession httpSession) {
+        return stateDao.getState(httpSession);
     }
 
     @Override
-    public void setState(State state) {
-        stateDao.setState(state);
+    public void setState(State state, HttpSession httpSession) {
+        stateDao.setState(state, httpSession);
     }
 
     @Override
-    public QuestionAnswersSet getQuestionAnswersSet() {
-        return stateDao.getQuestionAnswersSet();
+    public QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession) {
+        return stateDao.getQuestionAnswersSet(httpSession);
     }
 
     private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {

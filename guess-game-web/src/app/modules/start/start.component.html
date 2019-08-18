@@ -1,5 +1,5 @@
 <div class="container-dialog p-2">
-  <h1 class="bg-info p-1 text-white text-center">Select questions</h1>
+  <h2 class="bg-info p-1 text-white text-center">Select questions</h2>
 
   <form role="form">
     <app-message></app-message>
@@ -18,7 +18,7 @@
     <div class="form-group row">
       <label for="quantity" class="col-sm-2 col-form-label">Quantity:</label>
       <div class="col-sm-10">
-        <select class="form-control" id="quantity" size="10" [(ngModel)]="selectedQuantity" name="quantity">
+        <select class="form-control" id="quantity" size="11" [(ngModel)]="selectedQuantity" name="quantity">
           <option *ngFor="let quantity of quantities" [ngValue]="quantity">
             {{quantity}}
           </option>

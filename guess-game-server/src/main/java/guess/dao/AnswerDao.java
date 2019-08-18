@@ -2,15 +2,16 @@ package guess.dao;
 
 import guess.domain.AnswerSet;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
  * Answer DAO.
  */
 public interface AnswerDao {
-    List<AnswerSet> getAnswerSets();
+    List<AnswerSet> getAnswerSets(HttpSession httpSession);
 
-    void clearAnswerSets();
+    void clearAnswerSets(HttpSession httpSession);
 
-    void addAnswerSet(AnswerSet answerSet);
+    void addAnswerSet(AnswerSet answerSet, HttpSession httpSession);
 }

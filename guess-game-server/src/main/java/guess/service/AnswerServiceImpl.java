@@ -6,6 +6,7 @@ import guess.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -26,13 +27,13 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public void setAnswer(int questionIndex, long answerId) {
-        List<AnswerSet> answerSets = answerDao.getAnswerSets();
+    public void setAnswer(int questionIndex, long answerId, HttpSession httpSession) {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
             answerSets.get(questionIndex).getAnswers().add(answerId);
         } else {
-            QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet();
+            QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
             List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
             QuestionAnswers questionAnswers = questionAnswersList.get(questionIndex);
             List<Long> answers = new ArrayList<>(Collections.singletonList(answerId));
@@ -41,13 +42,13 @@ public class AnswerServiceImpl implements AnswerService {
                     answers,
                     (questionAnswers.getQuestion().getId() == answerId));
 
-            answerDao.addAnswerSet(answerSet);
+            answerDao.addAnswerSet(answerSet, httpSession);
         }
     }
 
     @Override
-    public int getCurrentQuestionIndex() {
-        List<AnswerSet> answerSets = answerDao.getAnswerSets();
+    public int getCurrentQuestionIndex(HttpSession httpSession) {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (answerSets.size() <= 0) {
             return 0;
@@ -65,8 +66,8 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public List<Long> getWrongAnswerIds(int questionIndex) {
-        List<AnswerSet> answerSets = answerDao.getAnswerSets();
+    public List<Long> getWrongAnswerIds(int questionIndex, HttpSession httpSession) {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
             return answerSets.get(questionIndex).getAnswers();
@@ -76,9 +77,9 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public Result getResult() {
-        List<AnswerSet> answerSets = answerDao.getAnswerSets();
-        StartParameters startParameters = stateDao.getStartParameters();
+    public Result getResult(HttpSession httpSession) {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
+        StartParameters startParameters = stateDao.getStartParameters(httpSession);
 
         long correctAnswers = answerSets.stream()
                 .filter(AnswerSet::isSuccess)
@@ -86,7 +87,7 @@ public class AnswerServiceImpl implements AnswerService {
         long wrongAnswers = answerSets.stream()
                 .filter(a -> !a.isSuccess())
                 .count();
-        QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet();
+        QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
         long totalQuestions = questionAnswersSet.getQuestionAnswersList().size();
         long skippedAnswers = totalQuestions - (correctAnswers + wrongAnswers);
         float correctPercents = (totalQuestions != 0) ? (float) correctAnswers / totalQuestions : 0;
@@ -99,9 +100,9 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public List<ErrorDetails> getErrorDetailsList() {
-        List<AnswerSet> answerSets = answerDao.getAnswerSets();
-        List<QuestionAnswers> questionAnswersList = stateDao.getQuestionAnswersSet().getQuestionAnswersList();
+    public List<ErrorDetails> getErrorDetailsList(HttpSession httpSession) {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
+        List<QuestionAnswers> questionAnswersList = stateDao.getQuestionAnswersSet(httpSession).getQuestionAnswersList();
         List<ErrorDetails> errorDetailsList = new ArrayList<>();
 
         for (int i = 0; i < answerSets.size(); i++) {

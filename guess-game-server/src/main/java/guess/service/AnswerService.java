@@ -3,20 +3,20 @@ package guess.service;
 import guess.domain.ErrorDetails;
 import guess.domain.Result;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Answer service.
  */
 public interface AnswerService {
-    void setAnswer(int questionIndex, long answerId);
+    void setAnswer(int questionIndex, long answerId, HttpSession httpSession);
 
-    int getCurrentQuestionIndex();
+    int getCurrentQuestionIndex(HttpSession httpSession);
 
-    List<Long> getWrongAnswerIds(int questionIndex);
+    List<Long> getWrongAnswerIds(int questionIndex, HttpSession httpSession);
 
-    Result getResult();
+    Result getResult(HttpSession httpSession);
 
-    List<ErrorDetails> getErrorDetailsList();
+    List<ErrorDetails> getErrorDetailsList(HttpSession httpSession);
 }

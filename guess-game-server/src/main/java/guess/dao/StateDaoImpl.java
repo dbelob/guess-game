@@ -3,44 +3,43 @@ package guess.dao;
 import guess.domain.QuestionAnswersSet;
 import guess.domain.StartParameters;
 import guess.domain.State;
+import guess.util.HttpSessionUtils;
 import org.springframework.stereotype.Repository;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * State DAO implementation.
  */
 @Repository
 public class StateDaoImpl implements StateDao {
-    private State state = State.START_STATE;
-    private StartParameters startParameters;
-    private QuestionAnswersSet questionAnswersSet;
-
     @Override
-    public State getState() {
-        return state;
+    public State getState(HttpSession httpSession) {
+        return HttpSessionUtils.getState(httpSession);
     }
 
     @Override
-    public void setState(State state) {
-        this.state = state;
+    public void setState(State state, HttpSession httpSession) {
+        HttpSessionUtils.setState(state, httpSession);
     }
 
     @Override
-    public StartParameters getStartParameters() {
-        return startParameters;
+    public StartParameters getStartParameters(HttpSession httpSession) {
+        return HttpSessionUtils.getStartParameters(httpSession);
     }
 
     @Override
-    public void setStartParameters(StartParameters startParameters) {
-        this.startParameters = startParameters;
+    public void setStartParameters(StartParameters startParameters, HttpSession httpSession) {
+        HttpSessionUtils.setStartParameters(startParameters, httpSession);
     }
 
     @Override
-    public QuestionAnswersSet getQuestionAnswersSet() {
-        return questionAnswersSet;
+    public QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession) {
+        return HttpSessionUtils.getQuestionAnswersSet(httpSession);
     }
 
     @Override
-    public void setQuestionAnswersSet(QuestionAnswersSet questionAnswersSet) {
-        this.questionAnswersSet = questionAnswersSet;
+    public void setQuestionAnswersSet(QuestionAnswersSet questionAnswersSet, HttpSession httpSession) {
+        HttpSessionUtils.setQuestionAnswersSet(questionAnswersSet, httpSession);
     }
 }
