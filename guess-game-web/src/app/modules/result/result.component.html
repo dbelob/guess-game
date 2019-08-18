@@ -41,7 +41,7 @@
   <div class="text-center">
     <button type="submit" class="btn btn-primary m-1" (click)="restart()">Restart</button>
   </div>
-  <div *ngIf="result.errorDetailsList.length > 0" class="mt-5">
+  <div *ngIf="isErrorDetailsListVisible()" class="mt-5">
     <h5 class="p-1 text-center">Wrong answers</h5>
 
     <table class="table">
