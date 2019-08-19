@@ -4,20 +4,26 @@ logoFileName: logo-heisenbug.jpg
 questions:
   - {fileName: abalov-nikolay.jpg, name: "Nikolay Abalov"}
   - {fileName: abdulina-liliya.jpg, name: "Liliya Abdulina"}
+  - {fileName: alimenkov-nikolay.jpg, name: "Nikolay Alimenkov"}
+  - {fileName: alenkov-vyacheslav.jpg, name: "Vyacheslav Alenkov"}
   - {fileName: andelkovic-alexander.jpg, name: "Alexander Andelkovic"}
   - {fileName: alekseev-dmitry.jpg, name: "Dmitry Alekseev"}
+  - {fileName: atlygina-yulia.jpg, name: "Yulia Atlygina"}
   - {fileName: bakshi-kapil.jpg, name: "Kapil Bakshi"}
   - {fileName: balagurov-igor.jpg, name: "Igor Balagurov"}
   - {fileName: barantsev-alexey.jpg, name: "Alexey Barantsev"}
   - {fileName: bashkirtsev-stanislav.jpg, name: "Stanislav Bashkirtsev"}
   - {fileName: bateeva-ekaterina.jpg, name: "Ekaterina Bateeva"}
-  - {fileName: bulavin-anton.jpg, name: "Anton Bulavin"}
   - {fileName: bolton-michael.jpg, name: "Michael Bolton"}
+  - {fileName: brekelov-vsevolod.jpg, name: "Vsevolod Brekelov"}
+  - {fileName: bulavin-anton.jpg, name: "Anton Bulavin"}
+  - {fileName: buzdin-dmitry.jpg, name: "Dmitry Buzdin"}
   - {fileName: cheremin-ruslan.jpg, name: "Ruslan Cheremin"}
   - {fileName: chernysheva-anna.jpg, name: "Anna Chernysheva"}
   - {fileName: cochran-timothy.jpg, name: "Timothy Cochran"}
   - {fileName: dokuchaev-sergey.jpg, name: "Sergey Dokuchaev"}
   - {fileName: dymov-yury.jpg, name: "Yury Dymov"}
+  - {fileName: egorov-sergey.jpg, name: "Sergey Egorov"}
   - {fileName: fischer-oliver-b.jpg, name: "Oliver B. Fischer"}
   - {fileName: fridman-vitaly.jpg, name: "Vitaly Fridman"}
   - {fileName: glazkov-andrey.jpg, name: "Andrey Glazkov"}
@@ -31,15 +37,20 @@ questions:
   - {fileName: hisametdinova-antonina.jpg, name: "Antonina Hisametdinova"}
   - {fileName: holmes-jim.jpg, name: "Jim Holmes"}
   - {fileName: honin-vladimir.jpg, name: "Vladimir Honin"}
+  - {fileName: hozya-alexander.jpg, name: "Alexander Hozya"}
   - {fileName: ingrassellino-jessica.jpg, name: "Jessica Ingrassellino"}
   - {fileName: kalinin-yury.jpg, name: "Yury Kalinin"}
+  - {fileName: kalnacs-andrejs.jpg, name: "Andrejs Kalnacs"}
   - {fileName: karpov-andrey.jpg, name: "Andrey Karpov (PVS-Studio)"}
   - {fileName: kazantsev-maxim.jpg, name: "Maxim Kazantsev"}
   - {fileName: kolpakova-elena.jpg, name: "Elena Kolpakova"}
   - {fileName: kokoreva-alisa.jpg, name: "Alisa Kokoreva"}
   - {fileName: koronevich-viktor.jpg, name: "Viktor Koronevich"}
+  - {fileName: korobitsyn-ilya.jpg, name: "Ilya Korobitsyn"}
   - {fileName: korovin-anatoly.jpg, name: "Anatoly Korovin"}
+  - {fileName: kozlov-nikolay.jpg, name: "Nikolay Kozlov"}
   - {fileName: kubowicz-piotr.jpg, name: "Piotr Kubowicz"}
+  - {fileName: kuleshov-andrey.jpg, name: "Andrey Kuleshov"}
   - {fileName: lambert-shelley.jpg, name: "Shelley Lambert"}
   - {fileName: lavrenjuk-alexey.jpg, name: "Alexey Lavrenjuk"}
   - {fileName: leonov-andrey.jpg, name: "Andrey Leonov"}
@@ -48,6 +59,7 @@ questions:
   - {fileName: lopez-ivan.jpg, name: "Iván López"}
   - {fileName: lushnikov-andrey.jpg, name: "Andrey Lushnikov"}
   - {fileName: lyrchikov-igor.jpg, name: "Igor Lyrchikov"}
+  - {fileName: makarov-nikita.jpg, name: "Nikita Makarov"}
   - {fileName: manoharan-niranjani.jpg, name: "Niranjani Manoharan"}
   - {fileName: markelov-andrey.jpg, name: "Andrey Markelov"}
   - {fileName: martjushov-alexander.jpg, name: "Alexander Martjushov"}
@@ -55,14 +67,18 @@ questions:
   - {fileName: merkushev-kirill.jpg, name: "Kirill Merkushev"}
   - {fileName: miheeva-ekaterina.jpg, name: "Ekaterina Miheeva"}
   - {fileName: mzhachih-lyudmila.jpg, name: "Lyudmila Mzhachih"}
+  - {fileName: nenashev-oleg.jpg, name: "Oleg Nenashev"}
   - {fileName: nichegovsky-evgeny.jpg, name: "Evgeny Nichegovsky"}
   - {fileName: nikitin-artem.jpg, name: "Artem Nikitin"}
   - {fileName: osipov-ivan.jpg, name: "Ivan Osipov"}
+  - {fileName: page-alan.jpg, name: "Alan Page"}
   - {fileName: palotas-michael.jpg, name: "Michael Palotas"}
   - {fileName: petuhov-valentin-wylsacom.jpg, name: "Valentin Wylsacom Petuhov"}
   - {fileName: philipp-ingo.jpg, name: "Ingo Philipp"}
   - {fileName: plaskovsky-anatoly.jpg, name: "Anatoly Plaskovsky"}
   - {fileName: pletnev-alexey.jpg, name: "Alexey Pletnev"}
+  - {fileName: poborchy-roman.jpg, name: "Roman Poborchy"}
+  - {fileName: podtserkovsky-mihail.jpg, name: "Mihail Podtserkovsky"}
   - {fileName: ponomarev-ivan.jpg, name: "Ivan Ponomarev"}
   - {fileName: pushtaev-vadim.jpg, name: "Vadim Pushtaev"}
   - {fileName: race-amber.jpg, name: "Amber Race"}
@@ -74,20 +90,27 @@ questions:
   - {fileName: sadogursky-baruch.jpg, name: "Baruch Sadogursky"}
   - {fileName: satarin-andrey.jpg, name: "Andrey Satarin"}
   - {fileName: semenjuk-anastasiya.jpg, name: "Anastasiya Semenjuk"}
+  - {fileName: senin-pavel.jpg, name: "Pavel Senin"}
   - {fileName: sharova-elena.jpg, name: "Elena Sharova"}
   - {fileName: shishkin-artem.jpg, name: "Artem Shishkin"}
+  - {fileName: shukov-alexander.jpg, name: "Alexander Shukov"}
   - {fileName: shumakov-evgeny.jpg, name: "Evgeny Shumakov"}
   - {fileName: sillars-doug.jpg, name: "Doug Sillars"}
+  - {fileName: sitnikov-vladimir.jpg, name: "Vladimir Sitnikov"}
   - {fileName: smirnov-vyacheslav.jpg, name: "Vyacheslav Smirnov"}
   - {fileName: sobolev-nikita.jpg, name: "Nikita Sobolev"}
   - {fileName: solodov-vladimir.jpg, name: "Vladimir Solodov"}
+  - {fileName: solntsev-andrey.jpg, name: "Andrey Solntsev"}
   - {fileName: stein-christian.jpg, name: "Christian Stein"}
   - {fileName: stewart-simon.jpg, name: "Simon Stewart"}
   - {fileName: todorov-alexander.jpg, name: "Alexander Todorov"}
+  - {fileName: torubarov-timur.jpg, name: "Timur Torubarov"}
   - {fileName: tuchs-dmitry.jpg, name: "Dmitry Tuchs"}
   - {fileName: usmansky-anton.jpg, name: "Anton Usmansky"}
   - {fileName: tolkachev-kirill.jpg, name: "Kirill Tolkachev"}
   - {fileName: vanchuk-vasily.jpg, name: "Vasily Vanchuk"}
+  - {fileName: varma-rajdeep.jpg, name: "Rajdeep Varma"}
   - {fileName: vanlightly-jack.jpg, name: "Jack Vanlightly"}
+  - {fileName: vinogradov-alexey.jpg, name: "Alexey Vinogradov"}
   - {fileName: yamschikov-ivan.jpg, name: "Ivan Yamschikov"}
   - {fileName: yastrebov-viktor.jpg, name: "Viktor Yastrebov"}
