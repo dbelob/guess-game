@@ -4,6 +4,7 @@ logoFileName: logo-heisenbug.jpg
 questions:
   - {fileName: abalov-nikolay.jpg, name: "Nikolay Abalov"}
   - {fileName: abdulina-liliya.jpg, name: "Liliya Abdulina"}
+  - {fileName: aegerter-ilari-henrik.jpg, name: "Ilari Henrik Aegerter"}
   - {fileName: 0123.jpg, name: "Nikolay Alimenkov"}
   - {fileName: alenkov-vyacheslav.jpg, name: "Vyacheslav Alenkov"}
   - {fileName: andelkovic-alexander.jpg, name: "Alexander Andelkovic"}
@@ -18,9 +19,12 @@ questions:
   - {fileName: brekelov-vsevolod.jpg, name: "Vsevolod Brekelov"}
   - {fileName: bulavin-anton.jpg, name: "Anton Bulavin"}
   - {fileName: buzdin-dmitry.jpg, name: "Dmitry Buzdin"}
+  - {fileName: cannegieter-jan-jaap.jpg, name: "Jan Jaap Cannegieter"}
+  - {fileName: cuellar-dan.jpg, name: "Dan Cuellar"}
   - {fileName: 0004.jpg, name: "Ruslan Cheremin"}
   - {fileName: chernysheva-anna.jpg, name: "Anna Chernysheva"}
   - {fileName: cochran-timothy.jpg, name: "Timothy Cochran"}
+  - {fileName: criscione-claudio.jpg, name: "Claudio Criscione"}
   - {fileName: dokuchaev-sergey.jpg, name: "Sergey Dokuchaev"}
   - {fileName: dymov-yury.jpg, name: "Yury Dymov"}
   - {fileName: egorov-sergey.jpg, name: "Sergey Egorov"}
@@ -37,6 +41,7 @@ questions:
   - {fileName: holmes-jim.jpg, name: "Jim Holmes"}
   - {fileName: honin-vladimir.jpg, name: "Vladimir Honin"}
   - {fileName: hozya-alexander.jpg, name: "Alexander Hozya"}
+  - {fileName: hrol-igor.jpg, name: "Igor Hrol"}
   - {fileName: ingrassellino-jessica.jpg, name: "Jessica Ingrassellino"}
   - {fileName: kalinin-yury.jpg, name: "Yury Kalinin"}
   - {fileName: kalnacs-andrejs.jpg, name: "Andrejs Kalnacs"}
@@ -44,9 +49,10 @@ questions:
   - {fileName: 0064.jpg, name: "Maxim Kazantsev"}
   - {fileName: kolpakova-elena.jpg, name: "Elena Kolpakova"}
   - {fileName: kokoreva-alisa.jpg, name: "Alisa Kokoreva"}
-  - {fileName: koronevich-viktor.jpg, name: "Viktor Koronevich"}
   - {fileName: korobitsyn-ilya.jpg, name: "Ilya Korobitsyn"}
+  - {fileName: koronevich-viktor.jpg, name: "Viktor Koronevich"}
   - {fileName: korovin-anatoly.jpg, name: "Anatoly Korovin"}
+  - {fileName: kovaleva-yulia.jpg, name: "Yulia Kovaleva"}
   - {fileName: kozlov-nikolay.jpg, name: "Nikolay Kozlov"}
   - {fileName: kubowicz-piotr.jpg, name: "Piotr Kubowicz"}
   - {fileName: kuleshov-andrey.jpg, name: "Andrey Kuleshov"}
@@ -58,6 +64,7 @@ questions:
   - {fileName: lopez-ivan.jpg, name: "Iván López"}
   - {fileName: lushnikov-andrey.jpg, name: "Andrey Lushnikov"}
   - {fileName: lyrchikov-igor.jpg, name: "Igor Lyrchikov"}
+  - {fileName: mahov-alexey.jpg, name: "Alexey Mahov"}
   - {fileName: makarov-nikita.jpg, name: "Nikita Makarov"}
   - {fileName: manoharan-niranjani.jpg, name: "Niranjani Manoharan"}
   - {fileName: 0289.jpg, name: "Andrey Markelov"}
@@ -73,7 +80,9 @@ questions:
   - {fileName: page-alan.jpg, name: "Alan Page"}
   - {fileName: palotas-michael.jpg, name: "Michael Palotas"}
   - {fileName: petuhov-valentin-wylsacom.jpg, name: "Valentin Wylsacom Petuhov"}
+  - {fileName: pchelintseva-irina.jpg, name: "Irina Pchelintseva"}
   - {fileName: philipp-ingo.jpg, name: "Ingo Philipp"}
+  - {fileName: 0129.jpg, name: "Marc Philipp"}
   - {fileName: plaskovsky-anatoly.jpg, name: "Anatoly Plaskovsky"}
   - {fileName: pletnev-alexey.jpg, name: "Alexey Pletnev"}
   - {fileName: poborchy-roman.jpg, name: "Roman Poborchy"}
