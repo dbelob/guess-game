@@ -2,7 +2,36 @@ name: "Conferences - HolyJS"
 directoryName: speakers
 logoFileName: logo-holyjs.jpg
 questions:
+  - {fileName: bridgewater-ruben.jpg, name: "Ruben Bridgewater"}
+  - {fileName: castillo-alex.jpg, name: "Alex Castillo"}
+  - {fileName: chertorogov-pavel.jpg, name: "Pavel Chertorogov"}
+  - {fileName: da-costa-lucas.jpg, name: "Lucas da Costa"}
   - {fileName: dahl-ryan.jpg, name: "Ryan Dahl"}
+  - {fileName: dmytrenko-nadiia.jpg, name: "Nadiia Dmytrenko"}
+  - {fileName: gafarov-nazim.jpg, name: "Nazim Gafarov"}
+  - {fileName: haritonov-dmitry.jpg, name: "Dmitry Haritonov"}
+  - {fileName: kabirov-ilyas.jpg, name: "Ilyas Kabirov"}
+  - {fileName: khourshid-david.jpg, name: "David Khourshid"}
+  - {fileName: klimov-ilya.jpg, name: "Ilya Klimov"}
+  - {fileName: kobzar-artem.jpg, name: "Artem Kobzar"}
+  - {fileName: korotkova-natalia.jpg, name: "Natalia Korotkova"}
+  - {fileName: kozyatinsky-alexey.jpg, name: "Alexey Kozyatinsky"}
+  - {fileName: kriger-sergey.jpg, name: "Sergey Kriger"}
+  - {fileName: kurilov-stas.jpg, name: "Stas Kurilov"}
+  - {fileName: lushnikov-andrey.jpg, name: "Andrey Lushnikov"}
+  - {fileName: malyshev-pavel.jpg, name: "Pavel Malyshev (Mustlab)"}
+  - {fileName: matvienko-nikolay.jpg, name: "Nikolay Matvienko"}
+  - {fileName: mironovich-marina.jpg, name: "Marina Mironovich"}
   - {fileName: 0261.jpg, name: "Denis Mishunov"}
+  - {fileName: morote-eduardo-san-martin.jpg, name: "Eduardo San Martin Morote"}
+  - {fileName: mutafov-vladimir.jpg, name: "Vladimir Mutafov"}
+  - {fileName: palma-mauricio.jpg, name: "Mauricio Palma"}
+  - {fileName: pilguk-arkady.jpg, name: "Arkady Pilguk"}
+  - {fileName: sharma-ujjwal.jpg, name: "Ujjwal Sharma"}
   - {fileName: 0023.jpg, name: "Oleg Shelajev"}
+  - {fileName: sitnik-andrey.jpg, name: "Andrey Sitnik"}
+  - {fileName: slobodin-vitaly.jpg, name: "Vitaly Slobodin"}
+  - {fileName: splitt-martin.jpg, name: "Martin Splitt"}
+  - {fileName: syed-basarat-ali.jpg, name: "Basarat Ali Syed"}
+  - {fileName: vlaeva-stanimira.jpg, name: "Stanimira Vlaeva"}
   - {fileName: weststrate-michel.jpg, name: "Michel Weststrate"}
