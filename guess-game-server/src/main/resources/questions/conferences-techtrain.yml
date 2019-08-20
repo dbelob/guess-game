@@ -5,11 +5,11 @@ questions:
   - {fileName: abdulmanov-sergey.jpg, name: "Sergey Abdulmanov"}
   - {fileName: akulovich-alexey.jpg, name: "Alexey Akulovich"}
   - {fileName: anastasiev-oleg.jpg, name: "Oleg Anastasiev"}
-  - {fileName: arhipov-anton.jpg, name: "Anton Arhipov"}
+  - {fileName: 0000.jpg, name: "Anton Arhipov"}
   - {fileName: bartunov-oleg.jpg, name: "Oleg Bartunov"}
   - {fileName: bondarev-anton.jpg, name: "Anton Bondarev"}
-  - {fileName: borisov-evgeny.jpg, name: "Evgeny Borisov"}
-  - {fileName: breslav-andrey.jpg, name: "Andrey Breslav"}
+  - {fileName: 0001.jpg, name: "Evgeny Borisov"}
+  - {fileName: 0002.jpg, name: "Andrey Breslav"}
   - {fileName: druzhinin-mihail.jpg, name: "Mihail Druzhinin"}
   - {fileName: elizarov-roman.jpg, name: "Roman Elizarov"}
   - {fileName: ershov-vasily.jpg, name: "Vasily Ershov"}
