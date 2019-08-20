@@ -4,7 +4,7 @@ logoFileName: logo-heisenbug.jpg
 questions:
   - {fileName: abalov-nikolay.jpg, name: "Nikolay Abalov"}
   - {fileName: abdulina-liliya.jpg, name: "Liliya Abdulina"}
-  - {fileName: alimenkov-nikolay.jpg, name: "Nikolay Alimenkov"}
+  - {fileName: 0123.jpg, name: "Nikolay Alimenkov"}
   - {fileName: alenkov-vyacheslav.jpg, name: "Vyacheslav Alenkov"}
   - {fileName: andelkovic-alexander.jpg, name: "Alexander Andelkovic"}
   - {fileName: alekseev-dmitry.jpg, name: "Dmitry Alekseev"}
@@ -42,7 +42,7 @@ questions:
   - {fileName: kalinin-yury.jpg, name: "Yury Kalinin"}
   - {fileName: kalnacs-andrejs.jpg, name: "Andrejs Kalnacs"}
   - {fileName: karpov-andrey.jpg, name: "Andrey Karpov (PVS-Studio)"}
-  - {fileName: kazantsev-maxim.jpg, name: "Maxim Kazantsev"}
+  - {fileName: 0064.jpg, name: "Maxim Kazantsev"}
   - {fileName: kolpakova-elena.jpg, name: "Elena Kolpakova"}
   - {fileName: kokoreva-alisa.jpg, name: "Alisa Kokoreva"}
   - {fileName: koronevich-viktor.jpg, name: "Viktor Koronevich"}
@@ -70,7 +70,7 @@ questions:
   - {fileName: 0038.jpg, name: "Oleg Nenashev"}
   - {fileName: nichegovsky-evgeny.jpg, name: "Evgeny Nichegovsky"}
   - {fileName: nikitin-artem.jpg, name: "Artem Nikitin"}
-  - {fileName: osipov-ivan.jpg, name: "Ivan Osipov"}
+  - {fileName: 0101.jpg, name: "Ivan Osipov"}
   - {fileName: page-alan.jpg, name: "Alan Page"}
   - {fileName: palotas-michael.jpg, name: "Michael Palotas"}
   - {fileName: petuhov-valentin-wylsacom.jpg, name: "Valentin Wylsacom Petuhov"}

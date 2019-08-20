@@ -2,7 +2,7 @@ name: "Conferences - JBreak"
 directoryName: speakers
 logoFileName: logo-jbreak.jpg
 questions:
-  - {fileName: anastasiev-oleg.jpg, name: "Oleg Anastasiev"}
+  - {fileName: 0124.jpg, name: "Oleg Anastasiev"}
   - {fileName: andreev-igor.jpg, name: "Igor Andreev"}
   - {fileName: andreenko-sergey.jpg, name: "Sergey Andreenko"}
   - {fileName: artemiev-roman.jpg, name: "Roman Artemiev"}
@@ -10,10 +10,10 @@ questions:
   - {fileName: bogoslovskih-andrey.jpg, name: "Andrey Bogoslovskih"}
   - {fileName: 0003.jpg, name: "Yegor Bugayenko"}
   - {fileName: bugaychenko-dmitry.jpg, name: "Dmitry Bugaychenko"}
-  - {fileName: chiruhin-oleg.jpg, name: "Oleg Chiruhin"}
+  - {fileName: 0110.jpg, name: "Oleg Chiruhin"}
   - {fileName: chayko-vitaly.jpg, name: "Vitaly Chayko"}
   - {fileName: 0005.jpg, name: "Dmitry Chuyko"}
-  - {fileName: daschner-sebastian.jpg, name: "Sebastian Daschner"}
+  - {fileName: 0074.jpg, name: "Sebastian Daschner"}
   - {fileName: drozhzhin-dmitry.jpg, name: "Dmitry Drozhzhin"}
   - {fileName: 0006.jpg, name: "Andrey Ershov"}
   - {fileName: fedorov-yegor.jpg, name: "Yegor Fedorov"}
@@ -25,20 +25,20 @@ questions:
   - {fileName: kakunin-alexey.jpg, name: "Alexey Kakunin"}
   - {fileName: kopylov-alexey.jpg, name: "Alexey Kopylov"}
   - {fileName: kordas-michal.jpg, name: "Michal Kordas"}
-  - {fileName: koval-nikita.jpg, name: "Nikita Koval"}
+  - {fileName: 0058.jpg, name: "Nikita Koval"}
   - {fileName: krasilschik-vladimir.jpg, name: "Vladimir Krasilschik"}
   - {fileName: krenn-philipp.jpg, name: "Philipp Krenn"}
   - {fileName: 0012.jpg, name: "Ivan Krylov"}
   - {fileName: kuragin-alexey.jpg, name: "Alexey Kuragin"}
-  - {fileName: lenok-anton.jpg, name: "Anton Lenok"}
+  - {fileName: 0108.jpg, name: "Anton Lenok"}
   - {fileName: 0014.jpg, name: "Nikita Lipsky"}
   - {fileName: matorin-alexander.jpg, name: "Alexander Matorin"}
   - {fileName: mckee-hugh.jpg, name: "Hugh McKee"}
   - {fileName: nasyrova-maria.jpg, name: "Maria Nasyrova"}
   - {fileName: 0016.jpg, name: "Charles Nutter"}
-  - {fileName: plizga-vladimir.jpg, name: "Vladimir Plizga"}
+  - {fileName: 0086.jpg, name: "Vladimir Plizga"}
   - {fileName: 0021.jpg, name: "Alexey Ragozin"}
-  - {fileName: ritter-simon.jpg, name: "Simon Ritter"}
+  - {fileName: 0069.jpg, name: "Simon Ritter"}
   - {fileName: ruzhentsev-mihail.jpg, name: "Mihail Ruzhentsev"}
   - {fileName: 0024.jpg, name: "Alexey Shipilev"}
   - {fileName: simonis-volker.jpg, name: "Volker Simonis"}
@@ -50,7 +50,7 @@ questions:
   - {fileName: tkachev-dmitry.jpg, name: "Dmitry Tkachev"}
   - {fileName: 0028.jpg, name: "Kirill Tolkachev"}
   - {fileName: tyazhev-igor.jpg, name: "Igor Tyazhev"}
-  - {fileName: valeev-tagir.jpg, name: "Tagir Valeev"}
+  - {fileName: 0049.jpg, name: "Tagir Valeev"}
   - {fileName: yantsen-stanislav.jpg, name: "Stanislav Yantsen"}
   - {fileName: zelinsky-maxim.jpg, name: "Maxim Zelinsky"}
   - {fileName: zhdanov-yakov.jpg, name: "Yakov Zhdanov"}

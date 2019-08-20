@@ -2,7 +2,7 @@ name: "Meetups - JUG.ru"
 directoryName: speakers
 logoFileName: logo-jugru.jpg
 questions:
-  - {fileName: alexandrov-dmitry.jpg, name: "Dmitry Alexandrov"}
+  - {fileName: 0050.jpg, name: "Dmitry Alexandrov"}
   - {fileName: ananyev-artem.jpg, name: "Artem Ananyev"}
   - {fileName: antipin-roman.jpg, name: "Roman Antipin"}
   - {fileName: 0000.jpg, name: "Anton Arhipov"}
@@ -14,13 +14,13 @@ questions:
   - {fileName: 0004.jpg, name: "Ruslan Cheremin"}
   - {fileName: cherepanov-dmitry.jpg, name: "Dmitry Cherepanov"}
   - {fileName: chin-stephen.jpg, name: "Stephen Chin"}
-  - {fileName: chiruhin-oleg.jpg, name: "Oleg Chiruhin"}
+  - {fileName: 0110.jpg, name: "Oleg Chiruhin"}
   - {fileName: 0005.jpg, name: "Dmitry Chuyko"}
   - {fileName: click-cliff.jpg, name: "Cliff Click"}
   - {fileName: curran-patrick.jpg, name: "Patrick Curran"}
   - {fileName: dudarev-mihail.jpg, name: "Mihail Dudarev"}
   - {fileName: ekblad-sami.jpg, name: "Sami Ekblad"}
-  - {fileName: elizarov-roman.jpg, name: "Roman Elizarov"}
+  - {fileName: 0106.jpg, name: "Roman Elizarov"}
   - {fileName: 0006.jpg, name: "Andrey Ershov"}
   - {fileName: fatin-pavel.jpg, name: "Pavel Fatin"}
   - {fileName: 0007.jpg, name: "Alexey Fedorov"}
@@ -28,13 +28,13 @@ questions:
   - {fileName: frankel-nicolas.jpg, name: "Nicolas Fränkel"}
   - {fileName: 0010.jpg, name: "Maxim Gorelikov"}
   - {fileName: grinev-sergey.jpg, name: "Sergey Grinev"}
-  - {fileName: hawkins-douglas.jpg, name: "Douglas Hawkins"}
+  - {fileName: 0100.jpg, name: "Douglas Hawkins"}
   - {fileName: herlihy-maurice.jpg, name: "Maurice Herlihy"}
-  - {fileName: hernandez-alvaro.jpg, name: "Alvaro Hernandez"}
+  - {fileName: 0132.jpg, name: "Alvaro Hernandez"}
   - {fileName: hludnev-mihail.jpg, name: "Mihail Hludnev"}
   - {fileName: ilin-alexander.jpg, name: "Alexander Ilin"}
   - {fileName: ivanov-vladimir.jpg, name: "Vladimir Ivanov"}
-  - {fileName: keks-anton.jpg, name: "Anton Keks"}
+  - {fileName: 0068.jpg, name: "Anton Keks"}
   - {fileName: kinash-ivan.jpg, name: "Ivan Kinash"}
   - {fileName: klensky-kirill.jpg, name: "Kirill Klensky"}
   - {fileName: kozorez-dmitry.jpg, name: "Dmitry Kozorez"}
@@ -64,7 +64,7 @@ questions:
   - {fileName: 0026.jpg, name: "Gleb Smirnov"}
   - {fileName: solntsev-andrey.jpg, name: "Andrey Solntsev"}
   - {fileName: 0039.jpg, name: "Alexey Stukalov"}
-  - {fileName: subramaniam-venkat.jpg, name: "Venkat Subramaniam"}
+  - {fileName: 0040.jpg, name: "Venkat Subramaniam"}
   - {fileName: 0036.jpg, name: "Alexander Tarasov"}
   - {fileName: tene-gil.jpg, name: "Gil Tene"}
   - {fileName: tobol-alexander.jpg, name: "Alexander Tobol"}
