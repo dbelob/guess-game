@@ -24,15 +24,14 @@ questions:
   - {fileName: dokuchaev-sergey.jpg, name: "Sergey Dokuchaev"}
   - {fileName: dymov-yury.jpg, name: "Yury Dymov"}
   - {fileName: egorov-sergey.jpg, name: "Sergey Egorov"}
+  - {fileName: eroshenko-artem.jpg, name: "Artem Eroshenko"}
   - {fileName: fischer-oliver-b.jpg, name: "Oliver B. Fischer"}
-  - {fileName: fridman-vitaly.jpg, name: "Vitaly Fridman"}
+  - {fileName: ford-neal.jpg, name: "Neal Ford"}
+  - {fileName: 0260.jpg, name: "Vitaly Fridman"}
+  - {fileName: frolov-vyacheslav.jpg, name: "Vyacheslav Frolov"}
   - {fileName: glazkov-andrey.jpg, name: "Andrey Glazkov"}
   - {fileName: gogineni-sathish.jpg, name: "Sathish Gogineni"}
-  - {fileName: grinev-sergey.jpg, name: "Sergey Grinev"}
-  - {fileName: eroshenko-artem.jpg, name: "Artem Eroshenko"}
-  - {fileName: ford-neal.jpg, name: "Neal Ford"}
-  - {fileName: fridman-vitaly.jpg, name: "Vitaly Fridman"}
-  - {fileName: frolov-vyacheslav.jpg, name: "Vyacheslav Frolov"}
+  - {fileName: 0255.jpg, name: "Sergey Grinev"}
   - {fileName: haramati-nisan.jpg, name: "Nisan Haramati"}
   - {fileName: hisametdinova-antonina.jpg, name: "Antonina Hisametdinova"}
   - {fileName: holmes-jim.jpg, name: "Jim Holmes"}
@@ -61,7 +60,7 @@ questions:
   - {fileName: lyrchikov-igor.jpg, name: "Igor Lyrchikov"}
   - {fileName: makarov-nikita.jpg, name: "Nikita Makarov"}
   - {fileName: manoharan-niranjani.jpg, name: "Niranjani Manoharan"}
-  - {fileName: markelov-andrey.jpg, name: "Andrey Markelov"}
+  - {fileName: 0289.jpg, name: "Andrey Markelov"}
   - {fileName: martjushov-alexander.jpg, name: "Alexander Martjushov"}
   - {fileName: megorskaya-olga.jpg, name: "Olga Megorskaya"}
   - {fileName: merkushev-kirill.jpg, name: "Kirill Merkushev"}
@@ -100,7 +99,7 @@ questions:
   - {fileName: smirnov-vyacheslav.jpg, name: "Vyacheslav Smirnov"}
   - {fileName: sobolev-nikita.jpg, name: "Nikita Sobolev"}
   - {fileName: solodov-vladimir.jpg, name: "Vladimir Solodov"}
-  - {fileName: solntsev-andrey.jpg, name: "Andrey Solntsev"}
+  - {fileName: 0237.jpg, name: "Andrey Solntsev"}
   - {fileName: stein-christian.jpg, name: "Christian Stein"}
   - {fileName: stewart-simon.jpg, name: "Simon Stewart"}
   - {fileName: todorov-alexander.jpg, name: "Alexander Todorov"}
@@ -112,5 +111,5 @@ questions:
   - {fileName: varma-rajdeep.jpg, name: "Rajdeep Varma"}
   - {fileName: vanlightly-jack.jpg, name: "Jack Vanlightly"}
   - {fileName: vinogradov-alexey.jpg, name: "Alexey Vinogradov"}
-  - {fileName: yamschikov-ivan.jpg, name: "Ivan Yamschikov"}
+  - {fileName: 0262.jpg, name: "Ivan Yamschikov"}
   - {fileName: yastrebov-viktor.jpg, name: "Viktor Yastrebov"}

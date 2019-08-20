@@ -2,7 +2,7 @@ name: "Conferences - DotNext"
 directoryName: speakers
 logoFileName: logo-dotnext.jpg
 questions:
-  - {fileName: abdulmanov-sergey.jpg, name: "Sergey Abdulmanov"}
+  - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}
   - {fileName: abilov-vagif.jpg, name: "Vagif Abilov"}
   - {fileName: ageev-roman.jpg, name: "Roman Ageev"}
   - {fileName: akinshin-andrey.jpg, name: "Andrey Akinshin"}
@@ -70,7 +70,7 @@ questions:
   - {fileName: kochetkov-vladimir.jpg, name: "Vladimir Kochetkov"}
   - {fileName: kokosa-konrad.jpg, name: "Konrad Kokosa"}
   - {fileName: korolev-alexander.jpg, name: "Alexander Korolev"}
-  - {fileName: koshelev-grigory.jpg, name: "Grigory Koshelev"}
+  - {fileName: 0220.jpg, name: "Grigory Koshelev"}
   - {fileName: koshelev-vladimir.jpg, name: "Vladimir Koshelev"}
   - {fileName: koshkin-evgeny.jpg, name: "Evgeny Koshkin"}
   - {fileName: kovaleva-yulia.jpg, name: "Yulia Kovaleva"}
@@ -91,11 +91,11 @@ questions:
   - {fileName: mutel-alexandre.jpg, name: "Alexandre Mutel"}
   - {fileName: namestnikov-nikita.jpg, name: "Nikita Namestnikov"}
   - {fileName: nasarre-christophe.jpg, name: "Christophe Nasarre"}
-  - {fileName: nesteruk-dmitry.jpg, name: "Dmitry Nesteruk"}
-  - {fileName: nevolin-roman.jpg, name: "Roman Nevolin"}
+  - {fileName: 0282.jpg, name: "Dmitry Nesteruk"}
+  - {fileName: 0295.jpg, name: "Roman Nevolin"}
   - {fileName: nikitin-alexander.jpg, name: "Alexander Nikitin"}
   - {fileName: onikiychuk-anton.jpg, name: "Anton Onikiychuk"}
-  - {fileName: ozerov-vladimir.jpg, name: "Vladimir Ozerov"}
+  - {fileName: 0136.jpg, name: "Vladimir Ozerov"}
   - {fileName: peshkov-evgeny.jpg, name: "Evgeny Peshkov"}
   - {fileName: petrov-valery.jpg, name: "Valery Petrov"}
   - {fileName: polevoy-georgy.jpg, name: "Georgy Polevoy"}
@@ -105,8 +105,8 @@ questions:
   - {fileName: stiller-eran.jpg, name: "Eran Stiller"}
   - {fileName: richter-jeffrey.jpg, name: "Jeffrey Richter"}
   - {fileName: sadomov-alexey.jpg, name: "Alexey Sadomov"}
-  - {fileName: samarin-mihail.jpg, name: "Mihail Samarin"}
-  - {fileName: savvateev-alexey.jpg, name: "Alexey Savvateev"}
+  - {fileName: 0267.jpg, name: "Mihail Samarin"}
+  - {fileName: 0139.jpg, name: "Alexey Savvateev"}
   - {fileName: schegrikovich-sergey.jpg, name: "Sergey Schegrikovich"}
   - {fileName: scherbakov-mihail.jpg, name: "Mihail Scherbakov"}
   - {fileName: shilkov-mihail.jpg, name: "Mihail Shilkov"}
@@ -140,5 +140,5 @@ questions:
   - {fileName: yosifovich-pavel.jpg, name: "Pavel Yosifovich"}
   - {fileName: zhirov-evgeny.jpg, name: "Evgeny Zhirov"}
   - {fileName: w-filip.jpg, name: "Filip W"}
-  - {fileName: zdebsky-romuald.jpg, name: "Romuald Zdebsky"}
+  - {fileName: 0274.jpg, name: "Romuald Zdebsky"}
   - {fileName: zikmund-karel.jpg, name: "Karel Zikmund"}

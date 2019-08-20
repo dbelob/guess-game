@@ -3,73 +3,73 @@ directoryName: speakers
 logoFileName: logo-jugru.jpg
 questions:
   - {fileName: 0050.jpg, name: "Dmitry Alexandrov"}
-  - {fileName: ananyev-artem.jpg, name: "Artem Ananyev"}
-  - {fileName: antipin-roman.jpg, name: "Roman Antipin"}
+  - {fileName: 0247.jpg, name: "Artem Ananyev"}
+  - {fileName: 0210.jpg, name: "Roman Antipin"}
   - {fileName: 0000.jpg, name: "Anton Arhipov"}
   - {fileName: 0032.jpg, name: "Alexander Belokrylov"}
-  - {fileName: belyaev-andrey.jpg, name: "Andrey Belyaev"}
+  - {fileName: 0234.jpg, name: "Andrey Belyaev"}
   - {fileName: 0001.jpg, name: "Evgeny Borisov"}
   - {fileName: 0002.jpg, name: "Andrey Breslav"}
-  - {fileName: chashnikov-nikolay.jpg, name: "Nikolay Chashnikov"}
+  - {fileName: 0213.jpg, name: "Nikolay Chashnikov"}
   - {fileName: 0004.jpg, name: "Ruslan Cheremin"}
-  - {fileName: cherepanov-dmitry.jpg, name: "Dmitry Cherepanov"}
-  - {fileName: chin-stephen.jpg, name: "Stephen Chin"}
+  - {fileName: 0254.jpg, name: "Dmitry Cherepanov"}
+  - {fileName: 0253.jpg, name: "Stephen Chin"}
   - {fileName: 0110.jpg, name: "Oleg Chiruhin"}
   - {fileName: 0005.jpg, name: "Dmitry Chuyko"}
-  - {fileName: click-cliff.jpg, name: "Cliff Click"}
-  - {fileName: curran-patrick.jpg, name: "Patrick Curran"}
-  - {fileName: dudarev-mihail.jpg, name: "Mihail Dudarev"}
-  - {fileName: ekblad-sami.jpg, name: "Sami Ekblad"}
+  - {fileName: 0233.jpg, name: "Cliff Click"}
+  - {fileName: 0232.jpg, name: "Patrick Curran"}
+  - {fileName: 0176.jpg, name: "Mihail Dudarev"}
+  - {fileName: 0251.jpg, name: "Sami Ekblad"}
   - {fileName: 0106.jpg, name: "Roman Elizarov"}
   - {fileName: 0006.jpg, name: "Andrey Ershov"}
-  - {fileName: fatin-pavel.jpg, name: "Pavel Fatin"}
+  - {fileName: 0249.jpg, name: "Pavel Fatin"}
   - {fileName: 0007.jpg, name: "Alexey Fedorov"}
   - {fileName: 0008.jpg, name: "Pavel Finkelstein"}
-  - {fileName: frankel-nicolas.jpg, name: "Nicolas Fränkel"}
+  - {fileName: 0242.jpg, name: "Nicolas Fränkel"}
   - {fileName: 0010.jpg, name: "Maxim Gorelikov"}
-  - {fileName: grinev-sergey.jpg, name: "Sergey Grinev"}
+  - {fileName: 0255.jpg, name: "Sergey Grinev"}
   - {fileName: 0100.jpg, name: "Douglas Hawkins"}
-  - {fileName: herlihy-maurice.jpg, name: "Maurice Herlihy"}
+  - {fileName: 0236.jpg, name: "Maurice Herlihy"}
   - {fileName: 0132.jpg, name: "Alvaro Hernandez"}
-  - {fileName: hludnev-mihail.jpg, name: "Mihail Hludnev"}
-  - {fileName: ilin-alexander.jpg, name: "Alexander Ilin"}
-  - {fileName: ivanov-vladimir.jpg, name: "Vladimir Ivanov"}
+  - {fileName: 0208.jpg, name: "Mihail Hludnev"}
+  - {fileName: 0241.jpg, name: "Alexander Ilin"}
+  - {fileName: 0144.jpg, name: "Vladimir Ivanov"}
   - {fileName: 0068.jpg, name: "Anton Keks"}
-  - {fileName: kinash-ivan.jpg, name: "Ivan Kinash"}
-  - {fileName: klensky-kirill.jpg, name: "Kirill Klensky"}
-  - {fileName: kozorez-dmitry.jpg, name: "Dmitry Kozorez"}
-  - {fileName: krasilschik-vladimir.jpg, name: "Vladimir Krasilschik"}
-  - {fileName: kudryavtsev-petr.jpg, name: "Petr Kudryavtsev"}
+  - {fileName: 0239.jpg, name: "Ivan Kinash"}
+  - {fileName: 0238.jpg, name: "Kirill Klensky"}
+  - {fileName: 0245.jpg, name: "Dmitry Kozorez"}
+  - {fileName: 0158.jpg, name: "Vladimir Krasilschik"}
+  - {fileName: 0240.jpg, name: "Petr Kudryavtsev"}
   - {fileName: 0013.jpg, name: "Sergey Kuksenko"}
-  - {fileName: lagergren-marcus.jpg, name: "Marcus Lagergren"}
-  - {fileName: lipinski-pawel.jpg, name: "Pawel Lipinski"}
+  - {fileName: 0243.jpg, name: "Marcus Lagergren"}
+  - {fileName: 0203.jpg, name: "Pawel Lipinski"}
   - {fileName: 0014.jpg, name: "Nikita Lipsky"}
   - {fileName: 0034.jpg, name: "Alexander Mironenko"}
-  - {fileName: naydanov-dmitry.jpg, name: "Dmitry Naydanov"}
+  - {fileName: 0250.jpg, name: "Dmitry Naydanov"}
   - {fileName: 0038.jpg, name: "Oleg Nenashev"}
   - {fileName: 0018.jpg, name: "Andrey Pangin"}
-  - {fileName: pavlov-pavel.jpg, name: "Pavel Pavlov"}
-  - {fileName: pilipenko-artur.jpg, name: "Artur Pilipenko"}
-  - {fileName: pliss-oleg.jpg, name: "Oleg Pliss"}
-  - {fileName: podhalyuzin-alexander.jpg, name: "Alexander Podhalyuzin"}
-  - {fileName: priyma-lev.jpg, name: "Lev Priyma"}
+  - {fileName: 0209.jpg, name: "Pavel Pavlov"}
+  - {fileName: 0235.jpg, name: "Artur Pilipenko"}
+  - {fileName: 0246.jpg, name: "Oleg Pliss"}
+  - {fileName: 0187.jpg, name: "Alexander Podhalyuzin"}
+  - {fileName: 0244.jpg, name: "Lev Priyma"}
   - {fileName: 0021.jpg, name: "Alexey Ragozin"}
-  - {fileName: saab-georges.jpg, name: "Georges Saab"}
+  - {fileName: 0248.jpg, name: "Georges Saab"}
   - {fileName: 0035.jpg, name: "Baruch Sadogursky"}
   - {fileName: 0023.jpg, name: "Oleg Shelajev"}
   - {fileName: 0024.jpg, name: "Alexey Shipilev"}
-  - {fileName: shlyannikov-alexander.jpg, name: "Alexander Shlyannikov"}
-  - {fileName: simonis-volker.jpg, name: "Volker Simonis"}
-  - {fileName: sirotkin-yakov.jpg, name: "Yakov Sirotkin"}
+  - {fileName: 0252.jpg, name: "Alexander Shlyannikov"}
+  - {fileName: 0146.jpg, name: "Volker Simonis"}
+  - {fileName: 0185.jpg, name: "Yakov Sirotkin"}
   - {fileName: 0026.jpg, name: "Gleb Smirnov"}
-  - {fileName: solntsev-andrey.jpg, name: "Andrey Solntsev"}
+  - {fileName: 0237.jpg, name: "Andrey Solntsev"}
   - {fileName: 0039.jpg, name: "Alexey Stukalov"}
   - {fileName: 0040.jpg, name: "Venkat Subramaniam"}
   - {fileName: 0036.jpg, name: "Alexander Tarasov"}
-  - {fileName: tene-gil.jpg, name: "Gil Tene"}
-  - {fileName: tobol-alexander.jpg, name: "Alexander Tobol"}
+  - {fileName: 0147.jpg, name: "Gil Tene"}
+  - {fileName: 0206.jpg, name: "Alexander Tobol"}
   - {fileName: 0028.jpg, name: "Kirill Tolkachev"}
-  - {fileName: voskresensky-vladimir.jpg, name: "Vladimir Voskresensky"}
-  - {fileName: zavalishin-dmitry.jpg, name: "Dmitry Zavalishin"}
-  - {fileName: zhdanov-yakov.jpg, name: "Yakov Zhdanov"}
+  - {fileName: 0224.jpg, name: "Vladimir Voskresensky"}
+  - {fileName: 0256.jpg, name: "Dmitry Zavalishin"}
+  - {fileName: 0170.jpg, name: "Yakov Zhdanov"}
   - {fileName: 0030.jpg, name: "Dmitry Zhemerov"}

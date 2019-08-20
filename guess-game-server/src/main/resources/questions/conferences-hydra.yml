@@ -2,11 +2,11 @@ name: "Conferences - Hydra"
 directoryName: speakers
 logoFileName: logo-hydra.jpg
 questions:
-  - {fileName: bugaychenko-dmitry.jpg, name: "Dmitry Bugaychenko"}
+  - {fileName: 0301.jpg, name: "Dmitry Bugaychenko"}
   - {fileName: checherinda-semyon.jpg, name: "Semyon Checherinda"}
-  - {fileName: click-cliff.jpg, name: "Cliff Click"}
+  - {fileName: 0233.jpg, name: "Cliff Click"}
   - {fileName: 0106.jpg, name: "Roman Elizarov"}
-  - {fileName: herlihy-maurice.jpg, name: "Maurice Herlihy"}
+  - {fileName: 0236.jpg, name: "Maurice Herlihy"}
   - {fileName: howard-heidi.jpg, name: "Heidi Howard"}
   - {fileName: kleppmann-martin.jpg, name: "Martin Kleppmann"}
   - {fileName: kuznecov-vladislav.jpg, name: "Vladislav Kuznecov"}

@@ -2,52 +2,52 @@ name: "Conferences - TechTrain"
 directoryName: speakers
 logoFileName: logo-techtrain.jpg
 questions:
-  - {fileName: abdulmanov-sergey.jpg, name: "Sergey Abdulmanov"}
-  - {fileName: akulovich-alexey.jpg, name: "Alexey Akulovich"}
+  - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}
+  - {fileName: 0288.jpg, name: "Alexey Akulovich"}
   - {fileName: 0124.jpg, name: "Oleg Anastasiev"}
   - {fileName: 0000.jpg, name: "Anton Arhipov"}
-  - {fileName: bartunov-oleg.jpg, name: "Oleg Bartunov"}
-  - {fileName: bondarev-anton.jpg, name: "Anton Bondarev"}
+  - {fileName: 0259.jpg, name: "Oleg Bartunov"}
+  - {fileName: 0283.jpg, name: "Anton Bondarev"}
   - {fileName: 0001.jpg, name: "Evgeny Borisov"}
   - {fileName: 0002.jpg, name: "Andrey Breslav"}
-  - {fileName: druzhinin-mihail.jpg, name: "Mihail Druzhinin"}
+  - {fileName: 0268.jpg, name: "Mihail Druzhinin"}
   - {fileName: 0106.jpg, name: "Roman Elizarov"}
-  - {fileName: ershov-vasily.jpg, name: "Vasily Ershov"}
-  - {fileName: fridman-vitaly.jpg, name: "Vitaly Fridman"}
-  - {fileName: goldstein-konstantin.jpg, name: "Konstantin Goldstein"}
-  - {fileName: gordeev-roman.jpg, name: "Roman Gordeev"}
-  - {fileName: guba-andrey.jpg, name: "Andrey Guba"}
-  - {fileName: horoshavin-alexander.jpg, name: "Alexander Horoshavin"}
-  - {fileName: hudobahshov-vitaly.jpg, name: "Vitaly Hudobahshov"}
-  - {fileName: iovlev-roman.jpg, name: "Roman Iovlev"}
+  - {fileName: 0271.jpg, name: "Vasily Ershov"}
+  - {fileName: 0260.jpg, name: "Vitaly Fridman"}
+  - {fileName: 0265.jpg, name: "Konstantin Goldstein"}
+  - {fileName: 0284.jpg, name: "Roman Gordeev"}
+  - {fileName: 0273.jpg, name: "Andrey Guba"}
+  - {fileName: 0292.jpg, name: "Alexander Horoshavin"}
+  - {fileName: 0159.jpg, name: "Vitaly Hudobahshov"}
+  - {fileName: 0286.jpg, name: "Roman Iovlev"}
   - {fileName: kalichkin-artem.jpg, name: "Artem Kalichkin"}
-  - {fileName: keks-filipp.jpg, name: "Filipp Keks"}
-  - {fileName: klimov-ilya.jpg, name: "Ilya Klimov"}
-  - {fileName: kovshenin-gennady.jpg, name: "Gennady Kovshenin"}
-  - {fileName: malyshev-pavel.jpg, name: "Pavel Malyshev"}
-  - {fileName: markelov-andrey.jpg, name: "Andrey Markelov"}
-  - {fileName: mishunov-denis.jpg, name: "Denis Mishunov"}
-  - {fileName: nazarov-dmitry.jpg, name: "Dmitry Nazarov"}
-  - {fileName: nesteruk-dmitry.jpg, name: "Dmitry Nesteruk"}
-  - {fileName: nevolin-roman.jpg, name: "Roman Nevolin"}
-  - {fileName: polunina-irina.jpg, name: "Irina Polunina"}
-  - {fileName: puchkov-dmitry.jpg, name: "Dmitry Puchkov"}
-  - {fileName: prudnikov-roman.jpg, name: "Roman Prudnikov"}
+  - {fileName: 0272.jpg, name: "Filipp Keks"}
+  - {fileName: 0264.jpg, name: "Ilya Klimov"}
+  - {fileName: 0294.jpg, name: "Gennady Kovshenin"}
+  - {fileName: 0266.jpg, name: "Pavel Malyshev"}
+  - {fileName: 0289.jpg, name: "Andrey Markelov"}
+  - {fileName: 0261.jpg, name: "Denis Mishunov"}
+  - {fileName: 0277.jpg, name: "Dmitry Nazarov"}
+  - {fileName: 0282.jpg, name: "Dmitry Nesteruk"}
+  - {fileName: 0295.jpg, name: "Roman Nevolin"}
+  - {fileName: 0275.jpg, name: "Irina Polunina"}
+  - {fileName: 0257.jpg, name: "Dmitry Puchkov"}
+  - {fileName: 0278.jpg, name: "Roman Prudnikov"}
   - {fileName: rybin-denis.jpg, name: "Denis Rybin"}
-  - {fileName: rybov-sergey.jpg, name: "Sergey Rybov"}
-  - {fileName: samarin-mihail.jpg, name: "Mihail Samarin"}
-  - {fileName: schipanova-tatyana.jpg, name: "Tatyana Schipanova"}
-  - {fileName: semenchenko-anton.jpg, name: "Anton Semenchenko"}
-  - {fileName: sergeev-kirill.jpg, name: "Kirill Sergeev"}
-  - {fileName: soroka-roman.jpg, name: "Roman Soroka"}
+  - {fileName: 0296.jpg, name: "Sergey Rybov"}
+  - {fileName: 0267.jpg, name: "Mihail Samarin"}
+  - {fileName: 0287.jpg, name: "Tatyana Schipanova"}
+  - {fileName: 0279.jpg, name: "Anton Semenchenko"}
+  - {fileName: 0293.jpg, name: "Kirill Sergeev"}
+  - {fileName: 0276.jpg, name: "Roman Soroka"}
   - {fileName: soshnikov-dmitry.jpg, name: "Dmitry Soshnikov"}
-  - {fileName: udovichenko-roman.jpg, name: "Roman Udovichenko"}
-  - {fileName: vasilov-artur.jpg, name: "Artur Vasilov"}
-  - {fileName: yakin-dmitry.jpg, name: "Dmitry Yakin"}
-  - {fileName: yamschikov-ivan.jpg, name: "Ivan Yamschikov"}
-  - {fileName: zaharov-maxim.jpg, name: "Maxim Zaharov"}
-  - {fileName: zakonov-andrey.jpg, name: "Andrey Zakonov"}
-  - {fileName: zavalishin-dmitry.jpg, name: "Dmitry Zavalishin"}
-  - {fileName: zdebsky-romuald.jpg, name: "Romuald Zdebsky"}
-  - {fileName: zhukov-alexey.jpg, name: "Alexey Zhukov"}
-  - {fileName: zubovich-vadim.jpg, name: "Vadim Zubovich"}
+  - {fileName: 0270.jpg, name: "Roman Udovichenko"}
+  - {fileName: 0291.jpg, name: "Artur Vasilov"}
+  - {fileName: 0280.jpg, name: "Dmitry Yakin"}
+  - {fileName: 0262.jpg, name: "Ivan Yamschikov"}
+  - {fileName: 0281.jpg, name: "Maxim Zaharov"}
+  - {fileName: 0263.jpg, name: "Andrey Zakonov"}
+  - {fileName: 0256.jpg, name: "Dmitry Zavalishin"}
+  - {fileName: 0274.jpg, name: "Romuald Zdebsky"}
+  - {fileName: 0290.jpg, name: "Alexey Zhukov"}
+  - {fileName: 0285.jpg, name: "Vadim Zubovich"}

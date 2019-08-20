@@ -3,21 +3,21 @@ directoryName: speakers
 logoFileName: logo-jugnsk.jpg
 questions:
   - {fileName: 0050.jpg, name: "Dmitry Alexandrov"}
-  - {fileName: dimitrjuk-pavel.jpg, name: "Pavel Dimitrjuk"}
-  - {fileName: gorbachev-evgeny.jpg, name: "Evgeny Gorbachev"}
-  - {fileName: ignatenko-alexey.jpg, name: "Alexey Ignatenko"}
-  - {fileName: karmakulov-kirill.jpg, name: "Kirill Karmakulov"}
-  - {fileName: koshelev-grigory.jpg, name: "Grigory Koshelev"}
-  - {fileName: kozlov-evgeny.jpg, name: "Evgeny Kozlov"}
+  - {fileName: 0223.jpg, name: "Pavel Dimitrjuk"}
+  - {fileName: 0231.jpg, name: "Evgeny Gorbachev"}
+  - {fileName: 0228.jpg, name: "Alexey Ignatenko"}
+  - {fileName: 0269.jpg, name: "Kirill Karmakulov"}
+  - {fileName: 0220.jpg, name: "Grigory Koshelev"}
+  - {fileName: 0219.jpg, name: "Evgeny Kozlov"}
   - {fileName: 0014.jpg, name: "Nikita Lipsky"}
-  - {fileName: maksimenko-dmitry.jpg, name: "Dmitry Maksimenko"}
-  - {fileName: matveev-ilya.jpg, name: "Ilya Matveev"}
+  - {fileName: 0226.jpg, name: "Dmitry Maksimenko"}
+  - {fileName: 0221.jpg, name: "Ilya Matveev"}
   - {fileName: 0053.jpg, name: "Sergey Melnikov"}
-  - {fileName: opheim-mads.jpg, name: "Mads Opheim"}
-  - {fileName: pyshkin-dmitry.jpg, name: "Dmitry Pyshkin"}
-  - {fileName: rygalov-dmitry.jpg, name: "Dmitry Rygalov"}
-  - {fileName: teterev-alexey.jpg, name: "Alexey Teterev"}
+  - {fileName: 0229.jpg, name: "Mads Opheim"}
+  - {fileName: 0230.jpg, name: "Dmitry Pyshkin"}
+  - {fileName: 0222.jpg, name: "Dmitry Rygalov"}
+  - {fileName: 0227.jpg, name: "Alexey Teterev"}
   - {fileName: 0029.jpg, name: "Ivan Uglyansky"}
   - {fileName: 0049.jpg, name: "Tagir Valeev"}
-  - {fileName: voskresensky-vladimir.jpg, name: "Vladimir Voskresensky"}
-  - {fileName: zotov-alexey.jpg, name: "Alexey Zotov"}
+  - {fileName: 0224.jpg, name: "Vladimir Voskresensky"}
+  - {fileName: 0225.jpg, name: "Alexey Zotov"}

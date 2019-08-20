@@ -3,6 +3,6 @@ directoryName: speakers
 logoFileName: logo-holyjs.jpg
 questions:
   - {fileName: dahl-ryan.jpg, name: "Ryan Dahl"}
-  - {fileName: mishunov-denis.jpg, name: "Denis Mishunov"}
+  - {fileName: 0261.jpg, name: "Denis Mishunov"}
   - {fileName: 0023.jpg, name: "Oleg Shelajev"}
   - {fileName: weststrate-michel.jpg, name: "Michel Weststrate"}
