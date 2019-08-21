@@ -2,20 +2,20 @@ name: "Conferences - SmartData"
 directoryName: speakers
 logoFileName: logo-smartdata.jpg
 questions:
-  - {fileName: boyarov-andrey.jpg, name: "Andrey Boyarov"}
+  - {fileName: 0323.jpg, name: "Andrey Boyarov"}
   - {fileName: 0301.jpg, name: "Dmitry Bugaychenko"}
-  - {fileName: dorogush-anna-veronica.jpg, name: "Anna Veronica Dorogush"}
-  - {fileName: drokin-ivan.jpg, name: "Ivan Drokin"}
+  - {fileName: 0326.jpg, name: "Anna Veronica Dorogush"}
+  - {fileName: 0325.jpg, name: "Ivan Drokin"}
   - {fileName: 0159.jpg, name: "Vitaly Hudobahshov"}
-  - {fileName: grigoriev-artem.jpg, name: "Artem Grigoriev"}
-  - {fileName: kamalov-mihail.jpg, name: "Mihail Kamalov"}
-  - {fileName: krasheninnikov-alexander.jpg, name: "Alexander Krasheninnikov"}
-  - {fileName: marinov-artem.jpg, name: "Artem Marinov"}
-  - {fileName: natekin-alexey.jpg, name: "Alexey Natekin"}
-  - {fileName: nikolenko-sergey.jpg, name: "Sergey Nikolenko"}
-  - {fileName: potapov-alexey.jpg, name: "Alexey Potapov"}
-  - {fileName: serbul-alexander.jpg, name: "Alexander Serbul"}
-  - {fileName: shminke-boris.jpg, name: "Boris Shminke"}
-  - {fileName: sibiryakov-alexander.jpg, name: "Alexander Sibiryakov"}
+  - {fileName: 0319.jpg, name: "Artem Grigoriev"}
+  - {fileName: 0317.jpg, name: "Mihail Kamalov"}
+  - {fileName: 0327.jpg, name: "Alexander Krasheninnikov"}
+  - {fileName: 0324.jpg, name: "Artem Marinov"}
+  - {fileName: 0328.jpg, name: "Alexey Natekin"}
+  - {fileName: 0320.jpg, name: "Sergey Nikolenko"}
+  - {fileName: 0318.jpg, name: "Alexey Potapov"}
+  - {fileName: 0321.jpg, name: "Alexander Serbul"}
+  - {fileName: 0322.jpg, name: "Boris Shminke"}
+  - {fileName: 0329.jpg, name: "Alexander Sibiryakov"}
   - {fileName: 0158.jpg, name: "Vladimir Krasilschik"}
   - {fileName: 0262.jpg, name: "Ivan Yamschikov"}
