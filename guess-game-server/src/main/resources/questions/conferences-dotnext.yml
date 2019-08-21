@@ -4,30 +4,30 @@ logoFileName: logo-dotnext.jpg
 questions:
   - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}
   - {fileName: 0498.jpg, name: "Vagif Abilov"}
-  - {fileName: ageev-roman.jpg, name: "Roman Ageev"}
+  - {fileName: 0518.jpg, name: "Roman Ageev"}
   - {fileName: 0471.jpg, name: "Andrey Akinshin"}
   - {fileName: 0446.jpg, name: "Andrei Alexandrescu"}
-  - {fileName: almaev-vladimir.jpg, name: "Vladimir Almaev"}
+  - {fileName: 0523.jpg, name: "Vladimir Almaev"}
   - {fileName: 0413.jpg, name: "Maxim Arshinov"}
   - {fileName: 0486.jpg, name: "Mete Atamel"}
-  - {fileName: avsenin-pavel.jpg, name: "Pavel Avsenin"}
+  - {fileName: 0515.jpg, name: "Pavel Avsenin"}
   - {fileName: 0437.jpg, name: "Chris Bacon"}
   - {fileName: 0455.jpg, name: "Maarten Balliauw"}
-  - {fileName: baum-vitaly.jpg, name: "Vitaly Baum"}
+  - {fileName: 0502.jpg, name: "Vitaly Baum"}
   - {fileName: 0407.jpg, name: "Dylan Beattie"}
-  - {fileName: belov-roman.jpg, name: "Roman Belov"}
+  - {fileName: 0511.jpg, name: "Roman Belov"}
   - {fileName: 0488.jpg, name: "Damir Beylhanov"}
   - {fileName: 0431.jpg, name: "Egor Bogatov"}
   - {fileName: 0003.jpg, name: "Yegor Bugayenko"}
   - {fileName: 0445.jpg, name: "Sergey Bykov"}
   - {fileName: 0420.jpg, name: "Wesley Cabus"}
   - {fileName: 0492.jpg, name: "Marco Cecconi"}
-  - {fileName: chasovskih-andrey.jpg, name: "Andrey Chasovskih"}
+  - {fileName: 0525.jpg, name: "Andrey Chasovskih"}
   - {fileName: 0491.jpg, name: "Igor Chevdar"}
-  - {fileName: chistyakov-vlad.jpg, name: "Vlad Chistyakov"}
+  - {fileName: 0530.jpg, name: "Vlad Chistyakov"}
   - {fileName: 0449.jpg, name: "Ian Cooper"}
   - {fileName: 0435.jpg, name: "Ivan Dashkevich"}
-  - {fileName: de-beijer-maurice.jpg, name: "Maurice de Beijer"}
+  - {fileName: 0503.jpg, name: "Maurice de Beijer"}
   - {fileName: 0412.jpg, name: "Stan Drapkin"}
   - {fileName: 0452.jpg, name: "Tamir Dresher"}
   - {fileName: 0426.jpg, name: "Andrey Dyatlov"}
@@ -41,25 +41,25 @@ questions:
   - {fileName: 0497.jpg, name: "Gael Fraiteur"}
   - {fileName: 0422.jpg, name: "Roberto Freato"}
   - {fileName: 0403.jpg, name: "Jon Galloway"}
-  - {fileName: garavsky-dmitry.jpg, name: "Dmitry Garavsky"}
+  - {fileName: 0505.jpg, name: "Dmitry Garavsky"}
   - {fileName: 0414.jpg, name: "Alfonso García-Caro"}
   - {fileName: 0451.jpg, name: "Elizaveta Golenok"}
   - {fileName: 0470.jpg, name: "Dina Goldshtein"}
   - {fileName: 0111.jpg, name: "Sasha Goldshtein"}
-  - {fileName: gordienkov-andrey.jpg, name: "Andrey Gordienkov"}
+  - {fileName: 0521.jpg, name: "Andrey Gordienkov"}
   - {fileName: 0439.jpg, name: "Alexey Gorshkolep"}
   - {fileName: 0417.jpg, name: "Kevin Gosse"}
   - {fileName: 0433.jpg, name: "Egor Grishechko"}
-  - {fileName: guev-timur.jpg, name: "Timur Guev"}
+  - {fileName: 0519.jpg, name: "Timur Guev"}
   - {fileName: 0474.jpg, name: "Roland Guijt"}
   - {fileName: 0480.jpg, name: "Nikolay Gusev"}
   - {fileName: 0421.jpg, name: "Konstantin Gustov"}
-  - {fileName: hariri-hadi.jpg, name: "Hadi Hariri"}
+  - {fileName: 0508.jpg, name: "Hadi Hariri"}
   - {fileName: 0482.jpg, name: "Tomas Herceg"}
   - {fileName: 0448.jpg, name: "Christian Horsdal"}
   - {fileName: 0453.jpg, name: "Rolf Huisman"}
   - {fileName: 0460.jpg, name: "Alexander Ivanov (Arcadia)"}
-  - {fileName: ivanov-alexander2.jpg, name: "Alexander Ivanov (EPAM Systems)"}
+  - {fileName: 0513.jpg, name: "Alexander Ivanov (EPAM Systems)"}
   - {fileName: 0478.jpg, name: "Denis Ivanov"}
   - {fileName: 0465.jpg, name: "Dmitry Ivanov"}
   - {fileName: 0344.jpg, name: "Andrey Karpov (PVS-Studio)"}
@@ -69,32 +69,32 @@ questions:
   - {fileName: 0410.jpg, name: "Matthias Koch"}
   - {fileName: 0475.jpg, name: "Vladimir Kochetkov"}
   - {fileName: 0416.jpg, name: "Konrad Kokosa"}
-  - {fileName: korolev-alexander.jpg, name: "Alexander Korolev"}
+  - {fileName: 0516.jpg, name: "Alexander Korolev"}
   - {fileName: 0220.jpg, name: "Grigory Koshelev"}
-  - {fileName: koshelev-vladimir.jpg, name: "Vladimir Koshelev"}
-  - {fileName: koshkin-evgeny.jpg, name: "Evgeny Koshkin"}
+  - {fileName: 0504.jpg, name: "Vladimir Koshelev"}
+  - {fileName: 0531.jpg, name: "Evgeny Koshkin"}
   - {fileName: 0462.jpg, name: "Yulia Kovaleva"}
   - {fileName: 0442.jpg, name: "Alexander Kugushev"}
   - {fileName: 0473.jpg, name: "Anatoly Kulakov"}
   - {fileName: 0484.jpg, name: "Igor Labutin"}
   - {fileName: 0423.jpg, name: "Alexander Laptev"}
-  - {fileName: levchenko-kirill.jpg, name: "Kirill Levchenko"}
+  - {fileName: 0514.jpg, name: "Kirill Levchenko"}
   - {fileName: 0493.jpg, name: "Jesse Liberty"}
   - {fileName: 0447.jpg, name: "Jeremy Likness"}
   - {fileName: 0450.jpg, name: "Federico Lois"}
   - {fileName: 0441.jpg, name: "Igor Lukanin"}
-  - {fileName: manushin-igor.jpg, name: "Igor Manushin"}
+  - {fileName: 0522.jpg, name: "Igor Manushin"}
   - {fileName: 0443.jpg, name: "Alexey Merson"}
-  - {fileName: mihalev-sergey.jpg, name: "Sergey Mihalev"}
+  - {fileName: 0526.jpg, name: "Sergey Mihalev"}
   - {fileName: 0454.jpg, name: "Vyacheslav Mihaylov"}
   - {fileName: 0467.jpg, name: "Dmitry Moiseev"}
   - {fileName: 0429.jpg, name: "Alexandre Mutel"}
-  - {fileName: namestnikov-nikita.jpg, name: "Nikita Namestnikov"}
+  - {fileName: 0512.jpg, name: "Nikita Namestnikov"}
   - {fileName: 0405.jpg, name: "Christophe Nasarre"}
   - {fileName: 0282.jpg, name: "Dmitry Nesteruk"}
   - {fileName: 0295.jpg, name: "Roman Nevolin"}
-  - {fileName: nikitin-alexander.jpg, name: "Alexander Nikitin"}
-  - {fileName: onikiychuk-anton.jpg, name: "Anton Onikiychuk"}
+  - {fileName: 0509.jpg, name: "Alexander Nikitin"}
+  - {fileName: 0527.jpg, name: "Anton Onikiychuk"}
   - {fileName: 0136.jpg, name: "Vladimir Ozerov"}
   - {fileName: 0466.jpg, name: "Evgeny Peshkov"}
   - {fileName: 0477.jpg, name: "Valery Petrov"}
@@ -104,31 +104,31 @@ questions:
   - {fileName: 0409.jpg, name: "Raffaele Rialdi"}
   - {fileName: 0457.jpg, name: "Eran Stiller"}
   - {fileName: 0427.jpg, name: "Jeffrey Richter"}
-  - {fileName: sadomov-alexey.jpg, name: "Alexey Sadomov"}
+  - {fileName: 0528.jpg, name: "Alexey Sadomov"}
   - {fileName: 0267.jpg, name: "Mihail Samarin"}
   - {fileName: 0139.jpg, name: "Alexey Savvateev"}
   - {fileName: 0464.jpg, name: "Sergey Schegrikovich"}
   - {fileName: 0415.jpg, name: "Mihail Scherbakov"}
   - {fileName: 0424.jpg, name: "Mihail Shilkov"}
-  - {fileName: shkredov-sergey.jpg, name: "Sergey Shkredov"}
-  - {fileName: shvedov-alexander.jpg, name: "Alexander Shvedov"}
+  - {fileName: 0506.jpg, name: "Sergey Shkredov"}
+  - {fileName: 0510.jpg, name: "Alexander Shvedov"}
   - {fileName: 0469.jpg, name: "Mark Seemann"}
-  - {fileName: sidristy-stanislav.jpg, name: "Stanislav Sidristy"}
+  - {fileName: 0520.jpg, name: "Stanislav Sidristy"}
   - {fileName: 0495.jpg, name: "Karlen Simonyan"}
   - {fileName: 0485.jpg, name: "Adam Sitnik"}
   - {fileName: 0481.jpg, name: "Jon Skeet"}
-  - {fileName: skrygan-kirill.jpg, name: "Kirill Skrygan"}
+  - {fileName: 0501.jpg, name: "Kirill Skrygan"}
   - {fileName: 0472.jpg, name: "Dmitry Soshnikov"}
-  - {fileName: sychev-igor.jpg, name: "Igor Sychev"}
+  - {fileName: 0524.jpg, name: "Igor Sychev"}
   - {fileName: 0440.jpg, name: "Oleg Tarasov"}
-  - {fileName: terehov-andrey.jpg, name: "Andrey Terehov"}
+  - {fileName: 0507.jpg, name: "Andrey Terehov"}
   - {fileName: 0408.jpg, name: "Alex Thissen"}
   - {fileName: 0458.jpg, name: "Sergey Tihon"}
   - {fileName: 0444.jpg, name: "Anton Tretyakov"}
-  - {fileName: tsisyk-yulia.jpg, name: "Yulia Tsisyk"}
+  - {fileName: 0517.jpg, name: "Yulia Tsisyk"}
   - {fileName: 0500.jpg, name: "Denis Tsvettsih"}
   - {fileName: 0463.jpg, name: "Nikita Tsukanov"}
-  - {fileName: tsytovich-pavel.jpg, name: "Pavel Tsytovich"}
+  - {fileName: 0529.jpg, name: "Pavel Tsytovich"}
   - {fileName: 0411.jpg, name: "Edwin van Wijk"}
   - {fileName: 0499.jpg, name: "Sergey Vasilyev"}
   - {fileName: 0490.jpg, name: "Alexey Vereschagin"}
