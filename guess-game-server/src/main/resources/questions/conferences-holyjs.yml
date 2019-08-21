@@ -4,20 +4,25 @@ logoFileName: logo-holyjs.jpg
 questions:
   - {fileName: 0707.jpg, name: "Vladimir Anufrienko"}
   - {fileName: 0712.jpg, name: "Sebastien Chopin Atinux"}
+  - {fileName: 0729.jpg, name: "Emil Bay"}
   - {fileName: 0709.jpg, name: "Dmitry Bezhetskov"}
   - {fileName: 0708.jpg, name: "Alexey Bogachuk"}
+  - {fileName: 0735.jpg, name: "Mihail Bashurov"}
   - {fileName: 0672.jpg, name: "Ruben Bridgewater"}
   - {fileName: 0677.jpg, name: "Alex Castillo"}
   - {fileName: 0679.jpg, name: "Kirill Cherkashin"}
   - {fileName: 0660.jpg, name: "Pavel Chertorogov"}
   - {fileName: 0659.jpg, name: "Lucas da Costa"}
+  - {fileName: 0721.jpg, name: "Douglas Crockford"}
   - {fileName: 0552.jpg, name: "Ryan Dahl"}
+  - {fileName: 0732.jpg, name: "Vladimir Dashukevich"}
   - {fileName: 0657.jpg, name: "Nadiia Dmytrenko"}
   - {fileName: 0685.jpg, name: "Roman Dvornov"}
   - {fileName: 0704.jpg, name: "Imad Elyafi"}
   - {fileName: 0260.jpg, name: "Vitaly Fridman"}
   - {fileName: 0671.jpg, name: "Nazim Gafarov"}
   - {fileName: 0702.jpg, name: "Lyza Danger Gardner"}
+  - {fileName: 0730.jpg, name: "Minko Gechev"}
   - {fileName: 0690.jpg, name: "Sebastian Golasch"}
   - {fileName: 0697.jpg, name: "Viktor Grischenko"}
   - {fileName: 0701.jpg, name: "Evgeny Gusev"}
@@ -38,18 +43,23 @@ questions:
   - {fileName: 0662.jpg, name: "Stas Kurilov"}
   - {fileName: 0681.jpg, name: "Ari Lerner"}
   - {fileName: 0687.jpg, name: "Marko Letic"}
+  - {fileName: 0734.jpg, name: "Anton Lobov"}
   - {fileName: 0713.jpg, name: "Taylor Lovett"}
   - {fileName: 0567.jpg, name: "Andrey Lushnikov"}
+  - {fileName: 0725.jpg, name: "Mathias Buus Madsen"}
   - {fileName: 0710.jpg, name: "Dmitry Mahnev"}
   - {fileName: 0686.jpg, name: "Egor Malkevich"}
   - {fileName: 0661.jpg, name: "Pavel Malyshev (Mustlab)"}
   - {fileName: 0663.jpg, name: "Nikolay Matvienko"}
+  - {fileName: 0727.jpg, name: "Azat Mardan"}
+  - {fileName: 0723.jpg, name: "Andrey Melihov"}
   - {fileName: 0664.jpg, name: "Marina Mironovich"}
   - {fileName: 0261.jpg, name: "Denis Mishunov"}
   - {fileName: 0658.jpg, name: "Eduardo San Martin Morote"}
   - {fileName: 0673.jpg, name: "Vladimir Mutafov"}
   - {fileName: 0684.jpg, name: "Kamil Myśliwiec"}
   - {fileName: 0700.jpg, name: "Andrey Nagih"}
+  - {fileName: 0736.jpg, name: "Alexey Ohrimenko"}
   - {fileName: 0674.jpg, name: "Mauricio Palma"}
   - {fileName: 0692.jpg, name: "Dmitry Patsura"}
   - {fileName: 0694.jpg, name: "Bartosz Pietrucha"}
@@ -63,6 +73,7 @@ questions:
   - {fileName: 0699.jpg, name: "Vsevolod Rodionov"}
   - {fileName: 0379.jpg, name: "Nikolay Ryzhikov"}
   - {fileName: 0682.jpg, name: "Maxim Salnikov"}
+  - {fileName: 0724.jpg, name: "Gerard Sans"}
   - {fileName: 0680.jpg, name: "Princiya Sequeira"}
   - {fileName: 0666.jpg, name: "Ujjwal Sharma"}
   - {fileName: 0696.jpg, name: "Vyacheslav Shebanov"}
@@ -72,11 +83,16 @@ questions:
   - {fileName: 0665.jpg, name: "Vitaly Slobodin"}
   - {fileName: 0654.jpg, name: "Martin Splitt"}
   - {fileName: 0706.jpg, name: "Andrey Starovoyt"}
+  - {fileName: 0726.jpg, name: "Slobodan Stojanovic"}
   - {fileName: 0668.jpg, name: "Basarat Ali Syed"}
+  - {fileName: 0728.jpg, name: "Alexey Taktarov"}
   - {fileName: 0714.jpg, name: "Ilya Taratuhin"}
+  - {fileName: 0731.jpg, name: "Mihail Udalov"}
+  - {fileName: 0722.jpg, name: "Lea Verou"}
   - {fileName: 0650.jpg, name: "Stanimira Vlaeva"}
   - {fileName: 0698.jpg, name: "Viktor Vershansky"}
   - {fileName: 0693.jpg, name: "Theodore Vorillas"}
   - {fileName: 0683.jpg, name: "Thomas Watson"}
   - {fileName: 0587.jpg, name: "Michel Weststrate"}
   - {fileName: 0703.jpg, name: "Maxim Yuzva"}
+  - {fileName: 0733.jpg, name: "Alexey Zolotyh"}
