@@ -28,6 +28,7 @@ questions:
   - {fileName: 0702.jpg, name: "Lyza Danger Gardner"}
   - {fileName: 0730.jpg, name: "Minko Gechev"}
   - {fileName: 0690.jpg, name: "Sebastian Golasch"}
+  - {fileName: 0755.jpg, name: "Nikolaus Graf"}
   - {fileName: 0749.jpg, name: "Vladimir Grinenko"}
   - {fileName: 0697.jpg, name: "Viktor Grischenko"}
   - {fileName: 0701.jpg, name: "Evgeny Gusev"}
@@ -40,9 +41,11 @@ questions:
   - {fileName: 0720.jpg, name: "Alexey Kalmakov"}
   - {fileName: 0717.jpg, name: "Dmitry Karlovsky"}
   - {fileName: 0651.jpg, name: "David Khourshid"}
+  - {fileName: 0757.jpg, name: "Martin Kleppe"}
   - {fileName: 0656.jpg, name: "Ilya Klimov"}
   - {fileName: 0670.jpg, name: "Artem Kobzar"}
   - {fileName: 0719.jpg, name: "Denis Kolodin"}
+  - {fileName: 0759.jpg, name: "Pavel Kondratenko"}
   - {fileName: 0652.jpg, name: "Natalia Korotkova"}
   - {fileName: 0689.jpg, name: "Alexander Korotaev"}
   - {fileName: 0655.jpg, name: "Alexey Kozyatinsky"}
@@ -71,6 +74,7 @@ questions:
   - {fileName: 0700.jpg, name: "Andrey Nagih"}
   - {fileName: 0752.jpg, name: "Alexey Nosov"}
   - {fileName: 0736.jpg, name: "Alexey Ohrimenko"}
+  - {fileName: 0754.jpg, name: "Andrey Okonechnikov"}
   - {fileName: 0674.jpg, name: "Mauricio Palma"}
   - {fileName: 0692.jpg, name: "Dmitry Patsura"}
   - {fileName: 0694.jpg, name: "Bartosz Pietrucha"}
@@ -79,8 +83,10 @@ questions:
   - {fileName: 0715.jpg, name: "Evgeny Pozdnyakov"}
   - {fileName: 0705.jpg, name: "Nikita Prokopov"}
   - {fileName: 0718.jpg, name: "Andrey Prokopjuk"}
+  - {fileName: 0756.jpg, name: "Evgeny Phenichny"}
   - {fileName: 0711.jpg, name: "Denis Radin"}
   - {fileName: 0695.jpg, name: "Erik Rasmussen"}
+  - {fileName: 0753.jpg, name: "Axel Rauschmayer"}
   - {fileName: 0699.jpg, name: "Vsevolod Rodionov"}
   - {fileName: 0379.jpg, name: "Nikolay Ryzhikov"}
   - {fileName: 0682.jpg, name: "Maxim Salnikov"}
@@ -89,14 +95,18 @@ questions:
   - {fileName: 0666.jpg, name: "Ujjwal Sharma"}
   - {fileName: 0696.jpg, name: "Vyacheslav Shebanov"}
   - {fileName: 0023.jpg, name: "Oleg Shelajev"}
+  - {fileName: 0762.jpg, name: "Irina Shestak"}
   - {fileName: 0744.jpg, name: "Dmitry Shuranov"}
   - {fileName: 0688.jpg, name: "Isa Silveira"}
   - {fileName: 0653.jpg, name: "Andrey Sitnik"}
+  - {fileName: 0760.jpg, name: "Vyacheslav Slinko"}
   - {fileName: 0665.jpg, name: "Vitaly Slobodin"}
+  - {fileName: 0761.jpg, name: "Tereza Sokol"}
   - {fileName: 0743.jpg, name: "Valery Sorokobatko"}
   - {fileName: 0654.jpg, name: "Martin Splitt"}
   - {fileName: 0738.jpg, name: "Patrick Stapfer"}
   - {fileName: 0706.jpg, name: "Andrey Starovoyt"}
+  - {fileName: 0758.jpg, name: "Max Stoiber"}
   - {fileName: 0726.jpg, name: "Slobodan Stojanovic"}
   - {fileName: 0668.jpg, name: "Basarat Ali Syed"}
   - {fileName: 0728.jpg, name: "Alexey Taktarov"}
