@@ -3,6 +3,14 @@ directoryName: speakers
 logoFileName: logo-mobius.jpg
 questions:
   - {fileName: 0002.jpg, name: "Andrey Breslav"}
+  - {fileName: 0778.jpg, name: "Eliza Camber"}
+  - {fileName: 0776.jpg, name: "Hannes Dorfmann"}
+  - {fileName: 0780.jpg, name: "Andy Dyer"}
+  - {fileName: 0777.jpg, name: "John Fox"}
   - {fileName: 0260.jpg, name: "Vitaly Fridman"}
+  - {fileName: 0782.jpg, name: "Stepan Goncharov"}
+  - {fileName: 0775.jpg, name: "Corey Latislaw"}
   - {fileName: 0565.jpg, name: "Yonatan Levin"}
+  - {fileName: 0779.jpg, name: "Evgeny Matsjuk"}
   - {fileName: 0571.jpg, name: "Denis Nekludov"}
+  - {fileName: 0781.jpg, name: "Evgeny Rtischev"}
