@@ -2,15 +2,34 @@ name: "Conferences - Mobius"
 directoryName: speakers
 logoFileName: logo-mobius.jpg
 questions:
+  - {fileName: 0790.jpg, name: "Vladislav Alekseev"}
+  - {fileName: 0791.jpg, name: "Filip Babić"}
   - {fileName: 0002.jpg, name: "Andrey Breslav"}
   - {fileName: 0778.jpg, name: "Eliza Camber"}
+  - {fileName: 0787.jpg, name: "Anton Davydov"}
   - {fileName: 0776.jpg, name: "Hannes Dorfmann"}
   - {fileName: 0780.jpg, name: "Andy Dyer"}
+  - {fileName: 0799.jpg, name: "Mihail Emelyanov"}
   - {fileName: 0777.jpg, name: "John Fox"}
   - {fileName: 0260.jpg, name: "Vitaly Fridman"}
+  - {fileName: 0786.jpg, name: "Maurice Gavin"}
   - {fileName: 0782.jpg, name: "Stepan Goncharov"}
+  - {fileName: 0796.jpg, name: "Dmitry Ivanov (ING)"}
+  - {fileName: 0797.jpg, name: "Alexander Krasikov"}
   - {fileName: 0775.jpg, name: "Corey Latislaw"}
   - {fileName: 0565.jpg, name: "Yonatan Levin"}
   - {fileName: 0779.jpg, name: "Evgeny Matsjuk"}
+  - {fileName: 0792.jpg, name: "Yury Medvedev"}
+  - {fileName: 0221.jpg, name: "Ilya Matveev"}
+  - {fileName: 0789.jpg, name: "Dmitry Movchan"}
   - {fileName: 0571.jpg, name: "Denis Nekludov"}
+  - {fileName: 0784.jpg, name: "Kirill Rozov"}
   - {fileName: 0781.jpg, name: "Evgeny Rtischev"}
+  - {fileName: 0798.jpg, name: "Libranner Santos"}
+  - {fileName: 0785.jpg, name: "Dmitry Sidorenko"}
+  - {fileName: 0795.jpg, name: "Alexander Shalamov"}
+  - {fileName: 0800.jpg, name: "Alexander Sorokin"}
+  - {fileName: 0793.jpg, name: "Pavel Strelchenko"}
+  - {fileName: 0788.jpg, name: "Vyacheslav Tarasov"}
+  - {fileName: 0794.jpg, name: "Kostiantyn Tarasenko"}
+  - {fileName: 0783.jpg, name: "Konstantin Tshovrebov"}
