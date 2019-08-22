@@ -10,6 +10,7 @@ questions:
   - {fileName: 0000.jpg, name: "Anton Arhipov"}
   - {fileName: 0944.jpg, name: "Stanislav Badov"}
   - {fileName: 0921.jpg, name: "Grigory Bakunov"}
+  - {fileName: 0952.jpg, name: "Alexander Barmin"}
   - {fileName: 0259.jpg, name: "Oleg Bartunov"}
   - {fileName: 0283.jpg, name: "Anton Bondarev"}
   - {fileName: 0001.jpg, name: "Evgeny Borisov"}
@@ -37,6 +38,7 @@ questions:
   - {fileName: 0159.jpg, name: "Vitaly Hudobahshov"}
   - {fileName: 0286.jpg, name: "Roman Iovlev"}
   - {fileName: 0382.jpg, name: "Artem Kalichkin"}
+  - {fileName: 0951.jpg, name: "Alexander Kalmuk"}
   - {fileName: 0930.jpg, name: "Anastasiya Kazakova"}
   - {fileName: 0272.jpg, name: "Filipp Keks"}
   - {fileName: 0264.jpg, name: "Ilya Klimov"}
@@ -68,6 +70,8 @@ questions:
   - {fileName: 0287.jpg, name: "Tatyana Schipanova"}
   - {fileName: 0279.jpg, name: "Anton Semenchenko"}
   - {fileName: 0293.jpg, name: "Kirill Sergeev"}
+  - {fileName: 0953.jpg, name: "Mark Shevchenko"}
+  - {fileName: 0665.jpg, name: "Vitaly Slobodin"}
   - {fileName: 0276.jpg, name: "Roman Soroka"}
   - {fileName: 0472.jpg, name: "Dmitry Soshnikov"}
   - {fileName: 0920.jpg, name: "Richard Stallman"}
@@ -85,7 +89,9 @@ questions:
   - {fileName: 0281.jpg, name: "Maxim Zaharov"}
   - {fileName: 0263.jpg, name: "Andrey Zakonov"}
   - {fileName: 0256.jpg, name: "Dmitry Zavalishin"}
+  - {fileName: 0950.jpg, name: "Andrey Zaytsev (DotNetRu)"}
   - {fileName: 0934.jpg, name: "Artem Zaytsev"}
   - {fileName: 0274.jpg, name: "Romuald Zdebsky"}
   - {fileName: 0290.jpg, name: "Alexey Zhukov"}
   - {fileName: 0285.jpg, name: "Vadim Zubovich"}
+  - {fileName: 0949.jpg, name: "Egor Zuev"}
