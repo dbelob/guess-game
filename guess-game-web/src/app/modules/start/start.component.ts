@@ -10,11 +10,11 @@ import { StartParameters } from "../../shared/models/start-parameters.model";
   templateUrl: './start.component.html'
 })
 export class StartComponent {
-  private questionSets: QuestionSet[] = [];
-  private quantities: number[] = [];
-  private selectedQuestionSets: QuestionSet[] = [];
-  private selectedQuantity: number;
-  private selectedGuessType: string = 'guessName';
+  public questionSets: QuestionSet[] = [];
+  public quantities: number[] = [];
+  public selectedQuestionSets: QuestionSet[] = [];
+  public selectedQuantity: number;
+  public selectedGuessType: string = 'guessName';
 
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
     questionService.getQuestionSets()

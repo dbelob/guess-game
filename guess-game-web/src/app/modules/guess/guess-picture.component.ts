@@ -11,13 +11,13 @@ import { State } from "../../shared/models/state.model";
 })
 export class GuessPictureComponent {
   private imageDirectory: string = 'assets/images';
-  private namePictures: NamePictures = new NamePictures();
-  private title: string;
-  private logoImageSource: string;
-  private imageSource0: string;
-  private imageSource1: string;
-  private imageSource2: string;
-  private imageSource3: string;
+  public namePictures: NamePictures = new NamePictures();
+  public title: string;
+  public logoImageSource: string;
+  public imageSource0: string;
+  public imageSource1: string;
+  public imageSource2: string;
+  public imageSource3: string;
 
   constructor(private stateService: StateService, private answerService: AnswerService, private router: Router) {
     this.loadQuestion();
