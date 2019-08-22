@@ -1,21 +1,21 @@
-name: "JUG Ru Group conferences - Hydra"
+name: "Conferences - Hydra"
 directoryName: speakers
 logoFileName: logo-hydra.jpg
 questions:
-  - {fileName: bugaychenko-dmitry.jpg, name: "Dmitry Bugaychenko"}
-  - {fileName: checherinda-semyon.jpg, name: "Semyon Checherinda"}
-  - {fileName: click-cliff.jpg, name: "Cliff Click"}
-  - {fileName: elizarov-roman.jpg, name: "Roman Elizarov"}
-  - {fileName: herlihy-maurice.jpg, name: "Maurice Herlihy"}
-  - {fileName: howard-heidi.jpg, name: "Heidi Howard"}
-  - {fileName: kleppmann-martin.jpg, name: "Martin Kleppmann"}
-  - {fileName: kuznecov-vladislav.jpg, name: "Vladislav Kuznecov"}
-  - {fileName: koval-nikita.jpg, name: "Nikita Koval"}
-  - {fileName: lahav-ori.jpg, name: "Ori Lahav"}
-  - {fileName: lamport-leslie.jpg, name: "Leslie Lamport"}
-  - {fileName: petrov-alex.jpg, name: "Alex Petrov"}
-  - {fileName: scott-michael.jpg, name: "Michael Scott"}
-  - {fileName: ramalhete-pedro.jpg, name: "Pedro Ramalhete"}
-  - {fileName: rystsov-denis.jpg, name: "Denis Rystsov"}
-  - {fileName: vyukov-dmitry.jpg, name: "Dmitry Vyukov"}
-  - {fileName: zinoviev-alexey.jpg, name: "Alexey Zinoviev"}
+  - {fileName: 0301.jpg, name: "Dmitry Bugaychenko"}
+  - {fileName: 0395.jpg, name: "Semyon Checherinda"}
+  - {fileName: 0233.jpg, name: "Cliff Click"}
+  - {fileName: 0106.jpg, name: "Roman Elizarov"}
+  - {fileName: 0236.jpg, name: "Maurice Herlihy"}
+  - {fileName: 0389.jpg, name: "Heidi Howard"}
+  - {fileName: 0388.jpg, name: "Martin Kleppmann"}
+  - {fileName: 0394.jpg, name: "Vladislav Kuznecov"}
+  - {fileName: 0058.jpg, name: "Nikita Koval"}
+  - {fileName: 0390.jpg, name: "Ori Lahav"}
+  - {fileName: 0386.jpg, name: "Leslie Lamport"}
+  - {fileName: 0393.jpg, name: "Alex Petrov"}
+  - {fileName: 0387.jpg, name: "Michael Scott"}
+  - {fileName: 0392.jpg, name: "Pedro Ramalhete"}
+  - {fileName: 0391.jpg, name: "Denis Rystsov"}
+  - {fileName: 0396.jpg, name: "Dmitry Vyukov"}
+  - {fileName: 0031.jpg, name: "Alexey Zinoviev"}

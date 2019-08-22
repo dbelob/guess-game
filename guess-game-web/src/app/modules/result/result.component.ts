@@ -12,9 +12,8 @@ import { GuessType } from "../../shared/models/guess-type.model";
   templateUrl: './result.component.html'
 })
 export class ResultComponent {
-  private baseUrl = 'api/answer';
   private imageDirectory: string = 'assets/images';
-  private result = new Result();
+  public result = new Result();
   private isQuestionPicture = true;
 
   constructor(private answerService: AnswerService, private stateService: StateService, private router: Router, private messageService: MessageService) {

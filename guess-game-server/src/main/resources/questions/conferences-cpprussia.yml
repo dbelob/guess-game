@@ -1,32 +1,32 @@
-name: "JUG Ru Group conferences - C++ Russia"
+name: "Conferences - C++ Russia"
 directoryName: speakers
 logoFileName: logo-cpprussia.jpg
 questions:
-  - {fileName: arutyunyan-ruslan.jpg, name: "Ruslan Arutyunyan"}
-  - {fileName: bogdanov-ilya.jpg, name: "Ilya Bogdanov"}
-  - {fileName: сukiс-ivan.jpg, name: "Ivan Čukić"}
-  - {fileName: josuttis-nicolai.jpg, name: "Nicolai Josuttis"}
-  - {fileName: davydov-andrey.jpg, name: "Andrey Davydov"}
-  - {fileName: doumler-timur.jpg, name: "Timur Doumler"}
-  - {fileName: dunchev-anton.jpg, name: "Anton Dunchev"}
-  - {fileName: fathiev-oleg.jpg, name: "Oleg Fathiev"}
-  - {fileName: fedorov-sergey.jpg, name: "Sergey Fedorov"}
-  - {fileName: granin-alexander.jpg, name: "Alexander Granin"}
-  - {fileName: grimm-rainer.jpg, name: "Rainer Grimm"}
-  - {fileName: karpov-andrey.jpg, name: "Andrey Karpov (PVS-Studio)"}
-  - {fileName: kirilov-viktor.jpg, name: "Viktor Kirilov"}
-  - {fileName: malov-alexey.jpg, name: "Alexey Malov"}
-  - {fileName: matrosov-mihail.jpg, name: "Mihail Matrosov"}
-  - {fileName: milovidov-alexey.jpg, name: "Alexey Milovidov"}
-  - {fileName: nash-phil.jpg, name: "Phil Nash"}
-  - {fileName: novikov-pavel.jpg, name: "Pavel Novikov"}
-  - {fileName: poluhin-anton.jpg, name: "Anton Poluhin"}
-  - {fileName: puente-juan-pedro-bolivar.jpg, name: "Juan Pedro Bolívar Puente"}
-  - {fileName: sadovnikov-sergey.jpg, name: "Sergey Sadovnikov"}
-  - {fileName: schmidt-alexander.jpg, name: "Alexander Schmidt"}
-  - {fileName: sogo-javier-garcia.jpg, name: "Javier García Sogo"}
-  - {fileName: tihonov-kirill.jpg, name: "Kirill Tihonov"}
-  - {fileName: titov-alexander.jpg, name: "Alexander Titov (Intel)"}
-  - {fileName: romeo-vittorio.jpg, name: "Vittorio Romeo"}
-  - {fileName: voronkov-alexander.jpg, name: "Alexander Voronkov"}
-  - {fileName: ziegler-valentin.jpg, name: "Valentin Ziegler"}
+  - {fileName: 0353.jpg, name: "Ruslan Arutyunyan"}
+  - {fileName: 0352.jpg, name: "Ilya Bogdanov"}
+  - {fileName: 0336.jpg, name: "Ivan Čukić"}
+  - {fileName: 0330.jpg, name: "Nicolai Josuttis"}
+  - {fileName: 0346.jpg, name: "Andrey Davydov"}
+  - {fileName: 0340.jpg, name: "Timur Doumler"}
+  - {fileName: 0349.jpg, name: "Anton Dunchev"}
+  - {fileName: 0348.jpg, name: "Oleg Fathiev"}
+  - {fileName: 0350.jpg, name: "Sergey Fedorov"}
+  - {fileName: 0337.jpg, name: "Alexander Granin"}
+  - {fileName: 0339.jpg, name: "Rainer Grimm"}
+  - {fileName: 0344.jpg, name: "Andrey Karpov (PVS-Studio)"}
+  - {fileName: 0338.jpg, name: "Viktor Kirilov"}
+  - {fileName: 0343.jpg, name: "Alexey Malov"}
+  - {fileName: 0333.jpg, name: "Mihail Matrosov"}
+  - {fileName: 0331.jpg, name: "Alexey Milovidov"}
+  - {fileName: 0334.jpg, name: "Phil Nash"}
+  - {fileName: 0351.jpg, name: "Pavel Novikov"}
+  - {fileName: 0332.jpg, name: "Anton Poluhin"}
+  - {fileName: 0342.jpg, name: "Juan Pedro Bolívar Puente"}
+  - {fileName: 0345.jpg, name: "Sergey Sadovnikov"}
+  - {fileName: 0354.jpg, name: "Alexander Schmidt"}
+  - {fileName: 0355.jpg, name: "Javier García Sogo"}
+  - {fileName: 0347.jpg, name: "Kirill Tihonov"}
+  - {fileName: 0356.jpg, name: "Alexander Titov (Intel)"}
+  - {fileName: 0341.jpg, name: "Vittorio Romeo"}
+  - {fileName: 0357.jpg, name: "Alexander Voronkov"}
+  - {fileName: 0335.jpg, name: "Valentin Ziegler"}

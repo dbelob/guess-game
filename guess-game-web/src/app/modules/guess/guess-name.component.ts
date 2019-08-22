@@ -11,10 +11,10 @@ import { AnswerService } from "../../shared/services/answer.service";
 })
 export class GuessNameComponent {
   private imageDirectory: string = 'assets/images';
-  private pictureNames: PictureNames = new PictureNames();
-  private title: string;
-  private logoImageSource: string;
-  private imageSource: string;
+  public pictureNames: PictureNames = new PictureNames();
+  public title: string;
+  public logoImageSource: string;
+  public imageSource: string;
 
   constructor(private stateService: StateService, private answerService: AnswerService, private router: Router) {
     this.loadQuestion();
