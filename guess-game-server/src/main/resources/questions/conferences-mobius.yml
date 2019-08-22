@@ -14,6 +14,7 @@ questions:
   - {fileName: 0826.jpg, name: "Ilya Bogin"}
   - {fileName: 0845.jpg, name: "Kirill Borisov"}
   - {fileName: 0002.jpg, name: "Andrey Breslav"}
+  - {fileName: 0864.jpg, name: "Alexey Buzdin"}
   - {fileName: 0778.jpg, name: "Eliza Camber"}
   - {fileName: 0830.jpg, name: "Fernando Cejas"}
   - {fileName: 0814.jpg, name: "Evgeny Chormonov"}
@@ -43,12 +44,16 @@ questions:
   - {fileName: 0823.jpg, name: "Alexander Korshak"}
   - {fileName: 0797.jpg, name: "Alexander Krasikov"}
   - {fileName: 0827.jpg, name: "Felix Krause"}
+  - {fileName: 0865.jpg, name: "Marcin Krzyżanowski"}
+  - {fileName: 0862.jpg, name: "Dmitry Kurkin"}
   - {fileName: 0844.jpg, name: "Viktor Lapin"}
   - {fileName: 0775.jpg, name: "Corey Latislaw"}
   - {fileName: 0565.jpg, name: "Yonatan Levin"}
+  - {fileName: 0855.jpg, name: "Jing Li"}
   - {fileName: 0804.jpg, name: "Nikolay Lihogrud"}
   - {fileName: 0836.jpg, name: "Artem Logutov"}
   - {fileName: 0832.jpg, name: "Ewa Ludwiczak"}
+  - {fileName: 0857.jpg, name: "Enrique López Mañas"}
   - {fileName: 0779.jpg, name: "Evgeny Matsjuk"}
   - {fileName: 0792.jpg, name: "Yury Medvedev"}
   - {fileName: 0221.jpg, name: "Ilya Matveev"}
@@ -57,12 +62,15 @@ questions:
   - {fileName: 0834.jpg, name: "Martin Mitrevski"}
   - {fileName: 0789.jpg, name: "Dmitry Movchan"}
   - {fileName: 0571.jpg, name: "Denis Nekludov"}
+  - {fileName: 0866.jpg, name: "Gleb Novik"}
+  - {fileName: 0863.jpg, name: "Ivan Ponomarev (Akvelon)"}
   - {fileName: 0829.jpg, name: "Kirill Popov"}
   - {fileName: 0803.jpg, name: "Danny Preussler"}
   - {fileName: 0784.jpg, name: "Kirill Rozov"}
   - {fileName: 0781.jpg, name: "Evgeny Rtischev"}
   - {fileName: 0806.jpg, name: "Sergey Ryabov"}
   - {fileName: 0798.jpg, name: "Libranner Santos"}
+  - {fileName: 0858.jpg, name: "Evgeny Saturov"}
   - {fileName: 0825.jpg, name: "Igor Savelyev"}
   - {fileName: 0807.jpg, name: "Alexey Savin"}
   - {fileName: 0785.jpg, name: "Dmitry Sidorenko"}
@@ -71,6 +79,7 @@ questions:
   - {fileName: 0824.jpg, name: "Svyatoslav Shcherbina"}
   - {fileName: 0816.jpg, name: "Anton Shchukin"}
   - {fileName: 0839.jpg, name: "Alexey Shpirko"}
+  - {fileName: 0860.jpg, name: "Maxim Sokolov"}
   - {fileName: 0800.jpg, name: "Alexander Sorokin"}
   - {fileName: 0808.jpg, name: "Nishant Srivastava"}
   - {fileName: 0793.jpg, name: "Pavel Strelchenko"}
@@ -89,7 +98,10 @@ questions:
   - {fileName: 0851.jpg, name: "Ivan Vavilov"}
   - {fileName: 0847.jpg, name: "Ivan Vazhnov"}
   - {fileName: 0854.jpg, name: "Konstantin Volkov"}
+  - {fileName: 0859.jpg, name: "Andrey Volodin"}
+  - {fileName: 0861.jpg, name: "Konstantin Yakushev"}
   - {fileName: 0853.jpg, name: "Roman Yatsyna"}
   - {fileName: 0848.jpg, name: "Konstantin Yurichev"}
+  - {fileName: 0856.jpg, name: "Lisa Wray"}
   - {fileName: 0645.jpg, name: "Artem Zinnatullin"}
   - {fileName: 0846.jpg, name: "Kirill Zuev"}
