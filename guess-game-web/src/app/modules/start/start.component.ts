@@ -7,7 +7,8 @@ import { StartParameters } from "../../shared/models/start-parameters.model";
 
 @Component({
   selector: 'app-start',
-  templateUrl: './start.component.html'
+  templateUrl: './start.component.html',
+  styleUrls: ['./start.component.css']
 })
 export class StartComponent {
   public questionSets: QuestionSet[] = [];

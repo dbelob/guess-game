@@ -1,0 +1,34 @@
+.game-header {
+  width: 100%;
+  height: 370px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background: rgba(0,0,0,.3) url(https://techtrain.ru/assets/images/overlay-pattern.png) 50%;
+  position: relative;
+}
+
+.game-header-title {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+}
+
+.game-header-button {
+  padding: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  background-color: #ff5e29;
+  transition: background-color .5s ease-out,border .5s ease-out;
+  margin-top: 10px;
+}
+
+.game-header-button:hover {
+  background-color: #1d2436;
+}
+
+@media (min-width: 992px) {
+
+}

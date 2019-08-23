@@ -19,6 +19,8 @@ import { QuestionService } from "./shared/services/question.service";
 import { StateService } from "./shared/services/state.service";
 import { StateGuard } from "./shared/guards/state.guard";
 import { CancelGameComponent } from "./modules/guess/cancel-game.component";
+import { CommonInfoModule } from './modules/common-info/common-info.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {path: 'start', component: StartComponent, canActivate: [StateGuard]},
@@ -39,10 +41,12 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     GuessModule,
+    CommonInfoModule,
     MessageModule,
     ResultModule,
     StartModule,
-    UnknownModule
+    UnknownModule,
+    BrowserAnimationsModule,
   ],
   providers: [AnswerService, QuestionService, StateService, StateGuard],
   bootstrap: [AppComponent]

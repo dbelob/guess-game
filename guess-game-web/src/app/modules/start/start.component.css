@@ -1,0 +1,10 @@
+.start-form {
+  margin-top: 30px;
+  padding: 0 40px;
+}
+
+@media (max-width: 1199px) {
+  .start-form {
+    padding: 0 25px;
+  }
+}

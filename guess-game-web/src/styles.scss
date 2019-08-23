@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  font-family: 'Ubuntu',Helvetica,Arial,sans-serif;
+}
 
 .container-dialog {
   width: 100%;
@@ -93,7 +98,7 @@
 
 @media (min-width: 1200px) {
   .container-dialog {
-    max-width: 720px;
+    max-width: 600px;
   }
   .img-guess-logo {
     width: 100px;
