@@ -4,6 +4,7 @@ logoFileName: logo-jugnsk.jpg
 questions:
   - {fileName: 0050.jpg, name: "Dmitry Alexandrov"}
   - {fileName: 0223.jpg, name: "Pavel Dimitrjuk"}
+  - {fileName: 0033.jpg, name: "Oleh Dokuka"}
   - {fileName: 0231.jpg, name: "Evgeny Gorbachev"}
   - {fileName: 0228.jpg, name: "Alexey Ignatenko"}
   - {fileName: 0269.jpg, name: "Kirill Karmakulov"}
