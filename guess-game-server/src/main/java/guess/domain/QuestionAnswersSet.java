@@ -8,9 +8,9 @@ import java.util.List;
 public class QuestionAnswersSet {
     public static final int QUESTION_ANSWERS_LIST_SIZE = 4;
 
-    private String name;
-    private String logoFileName;
-    private List<QuestionAnswers> questionAnswersList;
+    final private List<QuestionAnswers> questionAnswersList;
+    final private String name;
+    final private String logoFileName;
 
     public QuestionAnswersSet(String name, String logoFileName, List<QuestionAnswers> questionAnswersList) {
         this.name = name;
@@ -22,10 +22,6 @@ public class QuestionAnswersSet {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getLogoFileName() {
         return logoFileName;
     }
@@ -34,7 +30,4 @@ public class QuestionAnswersSet {
         return questionAnswersList;
     }
 
-    public void setQuestionAnswersList(List<QuestionAnswers> questionAnswersList) {
-        this.questionAnswersList = questionAnswersList;
-    }
 }

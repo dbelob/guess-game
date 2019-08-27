@@ -80,6 +80,7 @@ public class AnswerServiceImpl implements AnswerService {
     public Result getResult(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
         StartParameters startParameters = stateDao.getStartParameters(httpSession);
+        GuessType guessType = (startParameters != null) ? startParameters.getGuessType() : GuessType.GUESS_NAME_TYPE;
 
         long correctAnswers = answerSets.stream()
                 .filter(AnswerSet::isSuccess)
@@ -88,7 +89,7 @@ public class AnswerServiceImpl implements AnswerService {
                 .filter(a -> !a.isSuccess())
                 .count();
         QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
-        long totalQuestions = questionAnswersSet.getQuestionAnswersList().size();
+        long totalQuestions = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList().size() : 0;
         long skippedAnswers = totalQuestions - (correctAnswers + wrongAnswers);
         float correctPercents = (totalQuestions != 0) ? (float) correctAnswers / totalQuestions : 0;
         float wrongPercents = (totalQuestions != 0) ? (float) wrongAnswers / totalQuestions : 0;
@@ -96,7 +97,7 @@ public class AnswerServiceImpl implements AnswerService {
 
         return new Result(correctAnswers, wrongAnswers, skippedAnswers,
                 correctPercents, wrongPercents, skippedPercents,
-                startParameters.getGuessType());
+                guessType);
     }
 
     @Override
