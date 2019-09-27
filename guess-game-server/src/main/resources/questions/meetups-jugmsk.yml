@@ -4,6 +4,7 @@ logoFileName: logo-jugmsk.jpg
 questions:
   - {fileName: 0000.jpg, name: "Anton Arhipov"}
   - {fileName: 0032.jpg, name: "Alexander Belokrylov"}
+  - {fileName: 0234.jpg, name: "Andrey Belyaev"}
   - {fileName: 0001.jpg, name: "Evgeny Borisov"}
   - {fileName: 0002.jpg, name: "Andrey Breslav"}
   - {fileName: 0003.jpg, name: "Yegor Bugayenko"}
