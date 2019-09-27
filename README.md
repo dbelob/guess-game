@@ -25,6 +25,14 @@ Guess name by picture or picture by name.
 
     http://localhost:8080
 
+## Download
+
+1. Open [Releases](https://github.com/dbelob/guess-game/releases) page
+
+1. Choose latest version
+
+1. Download `guess-game-<version>.zip` file
+
 ## Compilation
 
 1. Install [Java SE 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JDK*) 
