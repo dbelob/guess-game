@@ -2,3 +2,6 @@ Guess Game
 
 Version 1.0.0 - August 27, 2019
 * First release.
+
+Version 1.0.1 - September 30, 2019
+* Fix NullPointerException error
