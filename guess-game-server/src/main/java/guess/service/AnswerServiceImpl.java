@@ -103,7 +103,8 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public List<ErrorDetails> getErrorDetailsList(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
-        List<QuestionAnswers> questionAnswersList = stateDao.getQuestionAnswersSet(httpSession).getQuestionAnswersList();
+        QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
+        List<QuestionAnswers> questionAnswersList = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList() : Collections.emptyList();
         List<ErrorDetails> errorDetailsList = new ArrayList<>();
 
         for (int i = 0; i < answerSets.size(); i++) {
