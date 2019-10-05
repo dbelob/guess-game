@@ -9,6 +9,7 @@ questions:
   - {fileName: 0123.jpg, name: "Nikolay Alimenkov"}
   - {fileName: 0150.jpg, name: "Andres Almiray"}
   - {fileName: 0124.jpg, name: "Oleg Anastasiev"}
+  - {fileName: 0960.jpg, name: "Alexey Andreev"}
   - {fileName: 0210.jpg, name: "Roman Antipin"}
   - {fileName: 0000.jpg, name: "Anton Arhipov"}
   - {fileName: 0078.jpg, name: "Yury Artamonov"}
@@ -18,6 +19,7 @@ questions:
   - {fileName: 0032.jpg, name: "Alexander Belokrylov"}
   - {fileName: 0155.jpg, name: "Jean-Philippe Bempel"}
   - {fileName: 0048.jpg, name: "Sébastien Blanc"}
+  - {fileName: 0961.jpg, name: "Simone Bordet"}
   - {fileName: 0130.jpg, name: "Alexander Borisov (Google)"}
   - {fileName: 0001.jpg, name: "Evgeny Borisov"}
   - {fileName: 0002.jpg, name: "Andrey Breslav"}
@@ -25,7 +27,10 @@ questions:
   - {fileName: 0301.jpg, name: "Dmitry Bugaychenko"}
   - {fileName: 0207.jpg, name: "Mihail Bykov"}
   - {fileName: 0213.jpg, name: "Nikolay Chashnikov"}
+  - {fileName: 0253.jpg, name: "Stephen Chin"}
   - {fileName: 0110.jpg, name: "Oleg Chiruhin"}
+  - {fileName: 0233.jpg, name: "Cliff Click"}
+  - {fileName: 0965.jpg, name: "Roberto Cortez"}
   - {fileName: 0051.jpg, name: "Denis Cutic"}
   - {fileName: 0074.jpg, name: "Sebastian Daschner"}
   - {fileName: 0152.jpg, name: "Philipp Delgyado"}
@@ -34,6 +39,7 @@ questions:
   - {fileName: 0033.jpg, name: "Oleh Dokuka"}
   - {fileName: 0193.jpg, name: "Nikita Dzhigurda"}
   - {fileName: 0176.jpg, name: "Mihail Dudarev"}
+  - {fileName: 0622.jpg, name: "Sergey Egorov"}
   - {fileName: 0192.jpg, name: "Markus Eisele"}
   - {fileName: 0106.jpg, name: "Roman Elizarov"}
   - {fileName: 0190.jpg, name: "Christoph Engelbert"}
@@ -41,14 +47,19 @@ questions:
   - {fileName: 0055.jpg, name: "Derek Ferguson"}
   - {fileName: 0116.jpg, name: "Axel Fontaine"}
   - {fileName: 0008.jpg, name: "Pavel Finkelstein"}
+  - {fileName: 0963.jpg, name: "Remi Forax"}
   - {fileName: 0242.jpg, name: "Nicolas Fränkel"}
+  - {fileName: 0958.jpg, name: "Juan Fumero"}
   - {fileName: 0009.jpg, name: "Viktor Gamov"}
   - {fileName: 0010.jpg, name: "Maxim Gorelikov"}
   - {fileName: 0079.jpg, name: "Rene Groeschke"}
   - {fileName: 0054.jpg, name: "Gerrit Grunwald"}
+  - {fileName: 0954.jpg, name: "Mark Heckler"}
+  - {fileName: 0955.jpg, name: "Dan Heidinga"}
   - {fileName: 0132.jpg, name: "Alvaro Hernandez"}
   - {fileName: 0042.jpg, name: "Marcus Hirt"}
   - {fileName: 0208.jpg, name: "Mihail Hludnev"}
+  - {fileName: 0093.jpg, name: "Juergen Hoeller"}
   - {fileName: 0061.jpg, name: "Marc Hoffmann"}
   - {fileName: 0113.jpg, name: "Cay Horstmann"}
   - {fileName: 0133.jpg, name: "Alexander Hristoforov"}
@@ -63,20 +74,24 @@ questions:
   - {fileName: 0211.jpg, name: "Sergey Klimenkov"}
   - {fileName: 0044.jpg, name: "Konstantin Knizhnik"}
   - {fileName: 0056.jpg, name: "Pavel Kondratjuk"}
+  - {fileName: 0964.jpg, name: "Dmitry Konstantinov"}
   - {fileName: 0058.jpg, name: "Nikita Koval"}
   - {fileName: 0220.jpg, name: "Grigory Koshelev"}
   - {fileName: 0158.jpg, name: "Vladimir Krasilschik"}
   - {fileName: 0012.jpg, name: "Ivan Krylov"}
   - {fileName: 0097.jpg, name: "Alexey Kudryavtsev"}
   - {fileName: 0013.jpg, name: "Sergey Kuksenko"}
+  - {fileName: 0966.jpg, name: "Jacek Kunicki"}
   - {fileName: 0067.jpg, name: "Andrey Kurpatov"}
   - {fileName: 0243.jpg, name: "Marcus Lagergren"}
   - {fileName: 0191.jpg, name: "Peter Lawrey"}
   - {fileName: 0194.jpg, name: "Dmitry Lazarenko"}
+  - {fileName: 0105.jpg, name: "Sanhong Li"}
   - {fileName: 0125.jpg, name: "Anastasia Lieva"}
   - {fileName: 0203.jpg, name: "Pawel Lipinski"}
   - {fileName: 0182.jpg, name: "Vyacheslav Lapin"}
   - {fileName: 0062.jpg, name: "Anton Lapitsky"}
+  - {fileName: 0967.jpg, name: "Trustin Lee"}
   - {fileName: 0014.jpg, name: "Nikita Lipsky"}
   - {fileName: 0063.jpg, name: "Josh Long"}
   - {fileName: 0107.jpg, name: "Sander Mak"}
@@ -87,7 +102,9 @@ questions:
   - {fileName: 0053.jpg, name: "Sergey Melnikov"}
   - {fileName: 0120.jpg, name: "Ruslan Mikhalev"}
   - {fileName: 0034.jpg, name: "Alexander Mironenko"}
+  - {fileName: 0959.jpg, name: "Gunnar Morling"}
   - {fileName: 0197.jpg, name: "Maurice Naftalin"}
+  - {fileName: 0038.jpg, name: "Oleg Nenashev"}
   - {fileName: 0183.jpg, name: "Ted Neward"}
   - {fileName: 0066.jpg, name: "Oleg Nizhnikov"}
   - {fileName: 0065.jpg, name: "Benjamin Nothdurft"}
@@ -103,11 +120,13 @@ questions:
   - {fileName: 0209.jpg, name: "Pavel Pavlov"}
   - {fileName: 0156.jpg, name: "David Pilato"}
   - {fileName: 0201.jpg, name: "Kirk Pepperdine"}
-  - {fileName: 0235.jpg, name: "Artur Pilipenko"}
   - {fileName: 0129.jpg, name: "Marc Philipp"}
+  - {fileName: 0235.jpg, name: "Artur Pilipenko"}
+  - {fileName: 0962.jpg, name: "Dmitry Pisklov"}
   - {fileName: 0086.jpg, name: "Vladimir Plizga"}
   - {fileName: 0145.jpg, name: "Viktor Polischuk"}
   - {fileName: 0021.jpg, name: "Alexey Ragozin"}
+  - {fileName: 0069.jpg, name: "Simon Ritter"}
   - {fileName: 0128.jpg, name: "Nikolay Rychkov"}
   - {fileName: 0379.jpg, name: "Nikolay Ryzhikov"}
   - {fileName: 0035.jpg, name: "Baruch Sadogursky"}
@@ -116,6 +135,7 @@ questions:
   - {fileName: 0057.jpg, name: "Robert Scholte"}
   - {fileName: 0115.jpg, name: "Chris Seaton"}
   - {fileName: 0151.jpg, name: "Ilya Sergeev"}
+  - {fileName: 0956.jpg, name: "Dalia Abo Sheasha"}
   - {fileName: 0023.jpg, name: "Oleg Shelajev"}
   - {fileName: 0196.jpg, name: "Alexey Shevchuk"}
   - {fileName: 0024.jpg, name: "Alexey Shipilev"}
@@ -127,6 +147,7 @@ questions:
   - {fileName: 0052.jpg, name: "Jaroslav Smirnov"}
   - {fileName: 0237.jpg, name: "Andrey Solntsev"}
   - {fileName: 0040.jpg, name: "Venkat Subramaniam"}
+  - {fileName: 0957.jpg, name: "Burr Sutter"}
   - {fileName: 0162.jpg, name: "Maxim Syachin"}
   - {fileName: 0036.jpg, name: "Alexander Tarasov"}
   - {fileName: 0147.jpg, name: "Gil Tene"}
@@ -146,6 +167,7 @@ questions:
   - {fileName: 0045.jpg, name: "Harald Wendel"}
   - {fileName: 0122.jpg, name: "Mark West"}
   - {fileName: 0088.jpg, name: "Rafael Winterhalter"}
+  - {fileName: 0075.jpg, name: "Thomas Wuerthinger"}
   - {fileName: 0170.jpg, name: "Yakov Zhdanov"}
   - {fileName: 0030.jpg, name: "Dmitry Zhemerov"}
   - {fileName: 0031.jpg, name: "Alexey Zinoviev"}
