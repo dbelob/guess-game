@@ -1,0 +1,6 @@
+speakers:
+  - {id: 63, fileName: 0063.jpg, name: "Josh Long"}
+  - {id: 93, fileName: 0093.jpg, name: "Juergen Hoeller"}
+  - {id: 113, fileName: 0113.jpg, name: "Cay Horstmann"}
+  - {id: 136, fileName: 0136.jpg, name: "Vladimir Ozerov"}
+  - {id: 253, fileName: 0253.jpg, name: "Stephen Chin"}

@@ -1,0 +1,17 @@
+eventTypes:
+  - {id: 0, name: "Conferences - C++ Russia", directoryName: speakers, logoFileName: logo-cpprussia.jpg}
+  - {id: 1, name: "Conferences - DevOops", directoryName: speakers, logoFileName: logo-devoops.jpg}
+  - {id: 2, name: "Conferences - DotNext", directoryName: speakers, logoFileName: logo-dotnext.jpg}
+  - {id: 3, name: "Conferences - Heisenbug", directoryName: speakers, logoFileName: logo-heisenbug.jpg}
+  - {id: 4, name: "Conferences - HolyJS", directoryName: speakers, logoFileName: logo-holyjs.jpg}
+  - {id: 5, name: "Conferences - Hydra", directoryName: speakers, logoFileName: logo-hydra.jpg}
+  - {id: 6, name: "Conferences - JBreak", directoryName: speakers, logoFileName: logo-jbreak.jpg}
+  - {id: 7, name: "Conferences - Joker", directoryName: speakers, logoFileName: logo-jokerconf.jpg}
+  - {id: 8, name: "Conferences - JPoint", directoryName: speakers, logoFileName: logo-jpoint.jpg}
+  - {id: 9, name: "Conferences - Mobius", directoryName: speakers, logoFileName: logo-mobius.jpg}
+  - {id: 10, name: "Conferences - SmartData", directoryName: speakers, logoFileName: logo-smartdata.jpg}
+  - {id: 11, name: "Conferences - SPTDC", directoryName: speakers}
+  - {id: 12, name: "Conferences - TechTrain", directoryName: speakers, logoFileName: logo-techtrain.jpg}
+  - {id: 13, name: "Meetups - JUG.MSK", directoryName: speakers, logoFileName: logo-jugmsk.jpg}
+  - {id: 14, name: "Meetups - JUGNsk", directoryName: speakers, logoFileName: logo-jugnsk.jpg}
+  - {id: 15, name: "Meetups - JUG.ru", directoryName: speakers, logoFileName: logo-jugru.jpg}

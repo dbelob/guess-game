@@ -1,0 +1,7 @@
+talks:
+  - {id: 0, name: "Reactive Spring revisited", speakerIds: [63, 93]}
+  - {id: 1, name: "How does multithreading in Hazelcast work", speakerIds: [136]}
+  - {id: 2, name: "Spring Framework 5.2: Core container revisited", speakerIds: [93]}
+  - {id: 3, name: "Feature evolution in Java 13 and beyond", speakerIds: [113]}
+  - {id: 4, name: "Bootiful testing", speakerIds: [63]}
+  - {id: 5, name: "Decrypting tech hype for the busy coder", speakerIds: [253]}
