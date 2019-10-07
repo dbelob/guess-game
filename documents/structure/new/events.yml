@@ -1,7 +1,9 @@
 events:
   - eventTypeId: 7
     startDate: 2019-10-25
-    endDate: 2019-10-26,
-    city: "Saint Petersburg",
-    place: Expoforum,
+    endDate: 2019-10-26
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: "Санкт-Петербург"}
+    place: Expoforum
     talkIds: [0, 1, 2, 3, 4, 5]
