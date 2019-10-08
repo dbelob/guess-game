@@ -1,0 +1,22 @@
+speakers:
+  - id: 63
+    fileName: 0063.jpg
+    name:
+      - {language: en, text: "Josh Long"}
+  - id: 93
+    fileName: 0093.jpg
+    name:
+      - {language: en, text: "Juergen Hoeller"}
+  - id: 113
+    fileName: 0113.jpg
+    name:
+      - {language: en, text: "Cay Horstmann"}
+  - id: 136
+    fileName: 0136.jpg
+    name:
+      - {language: en, text: "Vladimir Ozerov"}
+      - {language: ru, text: "Владимир Озеров"}
+  - id: 253
+    fileName: 0253.jpg
+    name:
+      - {language: en, text: "Stephen Chin"}
