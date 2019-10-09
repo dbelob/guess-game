@@ -1,4 +1,5 @@
 talks:
+  # Joker 2019
   - id: 0
     name:
       - {language: en, text: "Reactive Spring revisited"}
@@ -10,17 +11,87 @@ talks:
     speakerIds: [136]
   - id: 2
     name:
-      - {language: en, text: "Spring Framework 5.2: Core container revisited"}
-    speakerIds: [93]
+      - {language: en, text: "Maximizing performance with GraalVM"}
+    speakerIds: [75]
   - id: 3
     name:
-      - {language: en, text: "Feature evolution in Java 13 and beyond"}
-    speakerIds: [113]
+      - {language: en, text: "Not dead yet — Java on desktop"}
+    speakerIds: [54]
   - id: 4
+    name:
+      - {language: en, text: "Keeping up with Java: Look at all these new features!"}
+    speakerIds: [69]
+  - id: 5
+    name:
+      - {language: en, text: "Tuning performance of your reactive app"}
+      - {language: ru, text: "Улучшаем производительность реактивного сервиса"}
+    speakerIds: [33]
+  - id: 6
+    name:
+      - {language: en, text: "Java scaled to zero"}
+    speakerIds: [957]
+  - id: 7
+    name:
+      - {language: en, text: "The Sea of Nodes and the HotSpot JIT"}
+    speakerIds: [233]
+  - id: 8
     name:
       - {language: en, text: "Bootiful testing"}
     speakerIds: [63]
-  - id: 5
+  - id: 9
+    name:
+      - {language: en, text: "Striving towards more productive development workflows"}
+    speakerIds: [74]
+  - id: 10
+    name:
+      - {language: en, text: "IntelliJ IDEA Plugin DevKit Crash Course"}
+      - {language: ru, text: "Краш-курс по IntelliJ IDEA Plugin DevKit"}
+    speakerIds: [78]
+  - id: 11
+    name:
+      - {language: en, text: "GraalVM and MicroProfile: A polyglot microservices solution"}
+    speakerIds: [965]
+  - id: 12
+    name:
+      - {language: en, text: "Testing concurrent algorithms with Lincheck"}
+      - {language: ru, text: "Тестирование многопоточных алгоритмов с помощью Lincheck"}
+    speakerIds: [58]
+  - id: 13
+    name:
+      - {language: en, text: "Spring Security for N00bz: A quick introduction for the terminally insecure"}
+    speakerIds: [954]
+  - id: 14
+    name:
+      - {language: en, text: "Migrating beyond Java 8"}
+    speakerIds: [956]
+  - id: 15
+    name:
+      - {language: en, text: "TeaVM: Difficulties of compilation from Java to JavaScript"}
+      - {language: ru, text: "TeaVM: Трудности перевода из Java в JavaScript"}
+    speakerIds: [960]
+  - id: 16
+    name:
+      - {language: en, text: "Spring Framework 5.2: Core container revisited"}
+    speakerIds: [93]
+  - id: 17
+    name:
+      - {language: en, text: "Feature evolution in Java 13 and beyond"}
+    speakerIds: [113]
+  - id: 18
+    name:
+      - {language: en, text: "Cassandra — stories from the life of performance engineer"}
+      - {language: ru, text: "Cassandra — истории из жизни performance-инженера"}
+    speakerIds: [964]
+  - id: 19
+    name:
+      - {language: en, text: "A race of two compilers: GraalVM JIT versus HotSpot JIT C2. Which one offers better runtime performance?"}
+    speakerIds: [126]
+  - id: 20
+    name:
+      - {language: en, text: "DevOps for developers (or maybe against them?!)"}
+      - {language: ru, text: "DevOps для разработчиков (или против них?!)"}
+    speakerIds: [35]
+  - id: 21
     name:
       - {language: en, text: "Decrypting tech hype for the busy coder"}
     speakerIds: [253]

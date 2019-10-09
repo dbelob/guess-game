@@ -1,8 +1,41 @@
 speakers:
+  - id: 33
+    fileName: 0033.jpg
+    name: "Oleh Dokuka"
+  - id: 35
+    fileName: 0035.jpg
+    name:
+      - {language: en, text: "Baruch Sadogursky"}
+      - {language: ru, text: "Барух Садогурский"}
+  - id: 54
+    fileName: 0054.jpg
+    name:
+      - {language: en, text: "Gerrit Grunwald"}
+  - id: 58
+    fileName: 0058.jpg
+    name:
+      - {language: en, text: "Nikita Koval"}
+      - {language: ru, text: "Никита Коваль"}
   - id: 63
     fileName: 0063.jpg
     name:
       - {language: en, text: "Josh Long"}
+  - id: 69
+    fileName: 0069.jpg
+    name:
+      - {language: en, text: "Simon Ritter"}
+  - id: 74
+    fileName: 0074.jpg
+    name: "Sebastian Daschner"
+  - id: 75
+    fileName: 0075.jpg
+    name:
+      - {language: en, text: "Thomas Wuerthinger"}
+  - id: 78
+    fileName: 0078.jpg
+    name:
+      - {language: en, text: "Yury Artamonov"}
+      - {language: ru, text: "Юрий Артамонов"}
   - id: 93
     fileName: 0093.jpg
     name:
@@ -11,12 +44,45 @@ speakers:
     fileName: 0113.jpg
     name:
       - {language: en, text: "Cay Horstmann"}
+  - id: 126
+    fileName: 0126.jpg
+    name:
+      - {language: en, text: "Ionut Balosin"}
   - id: 136
     fileName: 0136.jpg
     name:
       - {language: en, text: "Vladimir Ozerov"}
       - {language: ru, text: "Владимир Озеров"}
+  - id: 233
+    fileName: 0233.jpg
+    name:
+      - {language: en, text: "Cliff Click"}
   - id: 253
     fileName: 0253.jpg
     name:
       - {language: en, text: "Stephen Chin"}
+  - id: 954
+    fileName: 0954.jpg
+    name:
+      - {language: en, text: "Mark Heckler"}
+  - id: 956
+    fileName: 0956.jpg
+    name: "Dalia Abo Sheasha"
+  - id: 957
+    fileName: 0957.jpg
+    name:
+      - {language: en, text: "Burr Sutter"}
+  - id: 960
+    fileName: 0960.jpg
+    name:
+      - {language: en, text: "Alexey Andreev"}
+      - {language: ru, text: "Алексей Андреев"}
+  - id: 964
+    fileName: 0964.jpg
+    name:
+      - {language: en, text: "Dmitry Konstantinov"}
+      - {language: ru, text: "Дмитрий Константинов"}
+  - id: 965
+    fileName: 0965.jpg
+    name:
+      - {language: en, text: "Roberto Cortez"}
