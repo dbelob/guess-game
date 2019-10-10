@@ -1,6 +1,7 @@
 package guess.dto;
 
 import guess.domain.QuestionAnswers;
+import guess.domain.SpeakerQuestion;
 
 import java.util.List;
 
@@ -51,13 +52,13 @@ public class NamePicturesDto extends QuestionAnswersDto {
     public static NamePicturesDto convertToDto(String questionSetName, int currentNumber, int totalNumber, String logoFileName,
                                                QuestionAnswers questionAnswers, List<Long> wrongAnswerIds) {
         return new NamePicturesDto(questionSetName, currentNumber, totalNumber, logoFileName,
-                questionAnswers.getQuestion().getName(),
+                ((SpeakerQuestion) questionAnswers.getQuestion()).getName(),
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
                 questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
-                questionAnswers.getAnswers().get(0).getFileName(),
-                questionAnswers.getAnswers().get(1).getFileName(),
-                questionAnswers.getAnswers().get(2).getFileName(),
-                questionAnswers.getAnswers().get(3).getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getFileName(),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(0).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),

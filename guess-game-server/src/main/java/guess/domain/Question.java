@@ -5,16 +5,12 @@ package guess.domain;
  */
 public class Question {
     private long id;
-    private String fileName;
-    private String name;
 
     public Question() {
     }
 
-    public Question(long id, String fileName, String name) {
+    public Question(long id) {
         this.id = id;
-        this.fileName = fileName;
-        this.name = name;
     }
 
     public long getId() {
@@ -23,22 +19,6 @@ public class Question {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
