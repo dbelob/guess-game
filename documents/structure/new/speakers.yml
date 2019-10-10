@@ -1,4 +1,24 @@
 speakers:
+  - id: 1
+    fileName: 0001.jpg
+    name:
+      - {language: en, text: "Evgeny Borisov"}
+      - {language: ru, text: "Евгений Борисов"}
+  - id: 13
+    fileName: 0013.jpg
+    name:
+      - {language: en, text: "Sergey Kuksenko"}
+      - {language: ru, text: "Сергей Куксенко"}
+  - id: 22
+    fileName: 0022.jpg
+    name:
+      - {language: en, text: "Nikita Salnikov-Tarnovsky"}
+      - {language: ru, text: "Никита Сальников-Тарновский"}
+  - id: 28
+    fileName: 0028.jpg
+    name:
+      - {language: en, text: "Kirill Tolkachev"}
+      - {language: ru, text: "Кирилл Толкачёв"}
   - id: 33
     fileName: 0033.jpg
     name: "Oleh Dokuka"
@@ -7,6 +27,16 @@ speakers:
     name:
       - {language: en, text: "Baruch Sadogursky"}
       - {language: ru, text: "Барух Садогурский"}
+  - id: 38
+    fileName: 0038.jpg
+    name:
+      - {language: en, text: "Oleg Nenashev"}
+      - {language: ru, text: "Олег Ненашев"}
+  - id: 49
+    fileName: 0049.jpg
+    name:
+      - {language: en, text: "Tagir Valeev"}
+      - {language: ru, text: "Тагир Валеев"}
   - id: 54
     fileName: 0054.jpg
     name:
@@ -40,10 +70,19 @@ speakers:
     fileName: 0093.jpg
     name:
       - {language: en, text: "Juergen Hoeller"}
+  - id: 105
+    fileName: 0105.jpg
+    name:
+      - {language: en, text: "Sanhong Li"}
   - id: 113
     fileName: 0113.jpg
     name:
       - {language: en, text: "Cay Horstmann"}
+  - id: 124
+    fileName: 0124.jpg
+    name:
+      - {language: en, text: "Oleg Anastasiev"}
+      - {language: ru, text: "Олег Анастасьев"}
   - id: 126
     fileName: 0126.jpg
     name:
@@ -61,10 +100,19 @@ speakers:
     fileName: 0253.jpg
     name:
       - {language: en, text: "Stephen Chin"}
+  - id: 622
+    fileName: 0622.jpg
+    name:
+      - {language: en, text: "Sergey Egorov"}
+      - {language: ru, text: "Сергей Егоров"}
   - id: 954
     fileName: 0954.jpg
     name:
       - {language: en, text: "Mark Heckler"}
+  - id: 955
+    fileName: 0955.jpg
+    name:
+      - {language: en, text: "Dan Heidinga"}
   - id: 956
     fileName: 0956.jpg
     name: "Dalia Abo Sheasha"
@@ -72,11 +120,32 @@ speakers:
     fileName: 0957.jpg
     name:
       - {language: en, text: "Burr Sutter"}
+  - id: 958
+    fileName: 0958.jpg
+    name:
+      - {language: en, text: "Juan Fumero"}
+  - id: 959
+    fileName: 0959.jpg
+    name:
+      - {language: en, text: "Gunnar Morling"}
   - id: 960
     fileName: 0960.jpg
     name:
       - {language: en, text: "Alexey Andreev"}
       - {language: ru, text: "Алексей Андреев"}
+  - id: 961
+    fileName: 0961.jpg
+    name:
+      - {language: en, text: "Simone Bordet"}
+  - id: 962
+    fileName: 0962.jpg
+    name:
+      - {language: en, text: "Dmitry Pisklov"}
+      - {language: ru, text: "Дмитрий Писклов"}
+  - id: 963
+    fileName: 0963.jpg
+    name:
+      - {language: en, text: "Remi Forax"}
   - id: 964
     fileName: 0964.jpg
     name:
@@ -86,3 +155,11 @@ speakers:
     fileName: 0965.jpg
     name:
       - {language: en, text: "Roberto Cortez"}
+  - id: 966
+    fileName: 0966.jpg
+    name:
+      - {language: en, text: "Jacek Kunicki"}
+  - id: 967
+    fileName: 0967.jpg
+    name:
+      - {language: en, text: "Trustin Lee"}

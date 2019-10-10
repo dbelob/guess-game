@@ -93,5 +93,77 @@ talks:
     speakerIds: [35]
   - id: 21
     name:
+      - {language: en, text: "Reactive, or not reactive: That is the question"}
+      - {language: ru, text: "Reactive или не reactive: Вот в чем вопрос"}
+    speakerIds: [1, 28]
+  - id: 22
+    name:
+      - {language: en, text: "Microservices: Single digit microseconds latency — friends and foes"}
+      - {language: ru, text: "Микросервисы, отвечающие за несколько микросекунд — друзья и враги"}
+    speakerIds: [962]
+  - id: 23
+    name:
+      - {language: en, text: "Practical change data streaming use cases with Apache Kafka and Debezium"}
+    speakerIds: [959]
+  - id: 24
+    name:
+      - {language: en, text: "The sinuous path toward Valhalla"}
+    speakerIds: [963]
+  - id: 25
+    name:
+      - {language: en, text: "Java 9-14: Small Optimizations"}
+      - {language: ru, text: "Java 9-14: Маленькие оптимизации"}
+    speakerIds: [49]
+  - id: 26
+    name:
+      - {language: en, text: "Application streaming is not only a code, but 3-4 years of support in production"}
+      - {language: ru, text: "Потоковое приложение — это не только код, но и 3-4 года поддержки в проде"}
+    speakerIds: [22]
+  - id: 27
+    name:
+      - {language: en, text: "Armeria: A microservice framework well-suited everywhere"}
+    speakerIds: [967]
+  - id: 28
+    name:
+      - {language: en, text: "TornadoVM: A virtual machine for exploiting high performance heterogeneous hardware of Java programs"}
+    speakerIds: [958]
+  - id: 29
+    name:
+      - {language: en, text: "Efficient and reliable microservices"}
+      - {language: ru, text: "Эффективные надежные микросервисы"}
+    speakerIds: [124]
+  - id: 30
+    name:
+      - {language: en, text: "Condy? NestMates? Constable? Understanding JDK 11 & 12's JVM features"}
+    speakerIds: [955]
+  - id: 31
+    name:
+      - {language: en, text: "Testcontainers: Year later"}
+      - {language: ru, text: "Testcontainers: Год спустя"}
+    speakerIds: [622]
+  - id: 32
+    name:
+      - {language: en, text: "ScalaTest: You're asserting it wrong"}
+    speakerIds: [966]
+  - id: 33
+    name:
+      - {language: en, text: "Does Java need \"inline\" types? What project Valhalla can bring to Java from a narrow view of performance engineer"}
+      - {language: ru, text: "Нужны ли в Java «инлайн»-типы? Узкий взгляд инженера по производительности на проект Valhalla"}
+    speakerIds: [13]
+  - id: 34
+    name:
+      - {language: en, text: "Concurrent Garbage collectors: ZGC & Shenandoah"}
+    speakerIds: [961]
+  - id: 35
+    name:
+      - {language: en, text: "Java 11 support in Jenkins. Our war story"}
+      - {language: ru, text: "War Story: Как мы внедряли поддержку Java 11 в Jenkins"}
+    speakerIds: [38]
+  - id: 36
+    name:
+      - {language: en, text: "Glimpse into Alibaba Dragonwell: Towards a Java runtime for cloud computing"}
+    speakerIds: [105]
+  - id: 37
+    name:
       - {language: en, text: "Decrypting tech hype for the busy coder"}
     speakerIds: [253]
