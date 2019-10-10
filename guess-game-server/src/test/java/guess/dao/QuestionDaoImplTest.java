@@ -2,6 +2,7 @@ package guess.dao;
 
 import guess.domain.Question;
 import guess.domain.QuestionSet;
+import guess.domain.SpeakerQuestion;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -19,7 +20,7 @@ public class QuestionDaoImplTest {
 
         // All question sets
         for (QuestionSet questionSet : questionSets) {
-            List<Question> questions = questionSet.getQuestions();
+            List<SpeakerQuestion> questions = questionSet.getSpeakerQuestions();
 
             // All questions
             for (Question question : questions) {

@@ -1,7 +1,7 @@
 name: "Conferences - HolyJS"
 directoryName: speakers
 logoFileName: logo-holyjs.jpg
-questions:
+speakerQuestions:
   - {fileName: 0751.jpg, name: "Igor Alekseenko"}
   - {fileName: 0707.jpg, name: "Vladimir Anufrienko"}
   - {fileName: 0712.jpg, name: "Sebastien Chopin Atinux"}

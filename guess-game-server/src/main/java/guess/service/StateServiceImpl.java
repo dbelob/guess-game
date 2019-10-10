@@ -63,7 +63,7 @@ public class StateServiceImpl implements StateService {
 
     private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
         // Find unique questions by ids
-        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds());
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds(), startParameters.getGuessType());
 
         // Fill question and answers list
         List<QuestionAnswers> questionAnswersList = new ArrayList<>();

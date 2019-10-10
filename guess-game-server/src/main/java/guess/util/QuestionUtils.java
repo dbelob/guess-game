@@ -1,6 +1,6 @@
 package guess.util;
 
-import guess.domain.Question;
+import guess.domain.SpeakerQuestion;
 
 import java.util.*;
 
@@ -8,15 +8,15 @@ import java.util.*;
  * Question utility methods.
  */
 public class QuestionUtils {
-    public static List<Question> removeDuplicatesByFileName(List<Question> questions) {
-        List<Question> result = new ArrayList<>();
+    public static List<SpeakerQuestion> removeDuplicatesByFileName(List<SpeakerQuestion> speakerQuestions) {
+        List<SpeakerQuestion> result = new ArrayList<>();
         Set<String> fileNames = new HashSet<>();
 
-        if (questions != null) {
-            for (Question question : questions) {
-                if (!fileNames.contains(question.getFileName())) {
-                    result.add(question);
-                    fileNames.add(question.getFileName());
+        if (speakerQuestions != null) {
+            for (SpeakerQuestion speakerQuestion : speakerQuestions) {
+                if (!fileNames.contains(speakerQuestion.getFileName())) {
+                    result.add(speakerQuestion);
+                    fileNames.add(speakerQuestion.getFileName());
                 }
             }
         }

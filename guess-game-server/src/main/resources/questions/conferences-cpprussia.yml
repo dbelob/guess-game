@@ -1,7 +1,7 @@
 name: "Conferences - C++ Russia"
 directoryName: speakers
 logoFileName: logo-cpprussia.jpg
-questions:
+speakerQuestions:
   - {fileName: 0353.jpg, name: "Ruslan Arutyunyan"}
   - {fileName: 0352.jpg, name: "Ilya Bogdanov"}
   - {fileName: 0336.jpg, name: "Ivan Čukić"}

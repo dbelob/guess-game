@@ -1,7 +1,7 @@
 name: "Meetups - JUGNsk"
 directoryName: speakers
 logoFileName: logo-jugnsk.jpg
-questions:
+speakerQuestions:
   - {fileName: 0050.jpg, name: "Dmitry Alexandrov"}
   - {fileName: 0223.jpg, name: "Pavel Dimitrjuk"}
   - {fileName: 0033.jpg, name: "Oleh Dokuka"}

@@ -1,7 +1,7 @@
 name: "Conferences - DevOops"
 directoryName: speakers
 logoFileName: logo-devoops.jpg
-questions:
+speakerQuestions:
   - {fileName: 0124.jpg, name: "Oleg Anastasiev"}
   - {fileName: 0368.jpg, name: "Anton Babenko"}
   - {fileName: 0383.jpg, name: "Sergey Berdnikov"}

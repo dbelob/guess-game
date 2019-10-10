@@ -8,7 +8,8 @@ public class QuestionSet {
     private String name;
     private String directoryName;
     private String logoFileName;
-    private List<Question> questions = Collections.emptyList();
+    private List<SpeakerQuestion> speakerQuestions = Collections.emptyList();
+    private List<TalkQuestion> talkQuestions = Collections.emptyList();
 
     public long getId() {
         return id;
@@ -42,11 +43,19 @@ public class QuestionSet {
         this.logoFileName = logoFileName;
     }
 
-    public List<Question> getQuestions() {
-        return questions;
+    public List<SpeakerQuestion> getSpeakerQuestions() {
+        return speakerQuestions;
     }
 
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
+    public void setSpeakerQuestions(List<SpeakerQuestion> speakerQuestions) {
+        this.speakerQuestions = speakerQuestions;
+    }
+
+    public List<TalkQuestion> getTalkQuestions() {
+        return talkQuestions;
+    }
+
+    public void setTalkQuestions(List<TalkQuestion> talkQuestions) {
+        this.talkQuestions = talkQuestions;
     }
 }

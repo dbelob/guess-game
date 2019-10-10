@@ -1,5 +1,8 @@
 package guess.domain;
 
+/**
+ * Question.
+ */
 public class Question {
     private long id;
     private String fileName;

@@ -1,7 +1,7 @@
 name: "Conferences - Hydra"
 directoryName: speakers
 logoFileName: logo-hydra.jpg
-questions:
+speakerQuestions:
   - {fileName: 0301.jpg, name: "Dmitry Bugaychenko"}
   - {fileName: 0395.jpg, name: "Semyon Checherinda"}
   - {fileName: 0233.jpg, name: "Cliff Click"}

@@ -1,6 +1,7 @@
 package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.domain.GuessType;
 import guess.domain.QuestionSet;
 import guess.dto.QuestionSetDto;
 import guess.service.QuestionService;
@@ -37,6 +38,9 @@ public class QuestionController {
     @GetMapping("/quantities")
     @ResponseBody
     public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds) throws QuestionSetNotExistsException {
-        return questionService.getQuantities(questionSetIds);
+        //TODO: change to parameter
+        GuessType guessType = GuessType.GUESS_NAME_TYPE;
+
+        return questionService.getQuantities(questionSetIds, guessType);
     }
 }

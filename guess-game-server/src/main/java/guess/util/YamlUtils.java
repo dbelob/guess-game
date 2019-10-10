@@ -38,11 +38,11 @@ public class YamlUtils {
             questionSet.setId(i);
 
             // Remove duplicates by filename
-            questionSet.setQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getQuestions()));
+            questionSet.setSpeakerQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getSpeakerQuestions()));
 
             // Set unique id
-            for (int j = 0; j < questionSet.getQuestions().size(); j++) {
-                questionSet.getQuestions().get(j).setId(questionId++);
+            for (int j = 0; j < questionSet.getSpeakerQuestions().size(); j++) {
+                questionSet.getSpeakerQuestions().get(j).setId(questionId++);
             }
         }
 

@@ -1,7 +1,7 @@
 name: "Conferences - Heisenbug"
 directoryName: speakers
 logoFileName: logo-heisenbug.jpg
-questions:
+speakerQuestions:
   - {fileName: 0598.jpg, name: "Nikolay Abalov"}
   - {fileName: 0545.jpg, name: "Liliya Abdulina"}
   - {fileName: 0638.jpg, name: "Ilari Henrik Aegerter"}

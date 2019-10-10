@@ -1,7 +1,7 @@
 name: "Conferences - JPoint"
 directoryName: speakers
 logoFileName: logo-jpoint.jpg
-questions:
+speakerQuestions:
   - {fileName: 0217.jpg, name: "Alexey Abashev"}
   - {fileName: 0200.jpg, name: "Ilya Agoshkov"}
   - {fileName: 0095.jpg, name: "Tobi Ajila"}
