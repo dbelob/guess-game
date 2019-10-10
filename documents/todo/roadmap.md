@@ -17,3 +17,7 @@
    * his/her talks;
    * his/her conferences and meetups;
    * etc.
+1. DevOps:
+   * CI
+   * autodeploy to jugspeakers.online
+   * etc.
