@@ -4,6 +4,11 @@ speakers:
     name:
       - {language: en, text: "Evgeny Borisov"}
       - {language: ru, text: "Евгений Борисов"}
+  - id: 3
+    fileName: 0003.jpg
+    name:
+      - {language: en, text: "Yegor Bugayenko"}
+      - {language: ru, text: "Егор Бугаенко"}
   - id: 13
     fileName: 0013.jpg
     name:
@@ -21,7 +26,9 @@ speakers:
       - {language: ru, text: "Кирилл Толкачёв"}
   - id: 33
     fileName: 0033.jpg
-    name: "Oleh Dokuka"
+    name:
+      - {language: en, text: "Oleh Dokuka"}
+      - {language: ru, text: "Олег Докука"}
   - id: 35
     fileName: 0035.jpg
     name:
@@ -50,13 +57,23 @@ speakers:
     fileName: 0063.jpg
     name:
       - {language: en, text: "Josh Long"}
+  - id: 68
+    fileName: 0068.jpg
+    name:
+      - {language: en, text: "Anton Keks"}
+      - {language: ru, text: "Антон Кекс"}
   - id: 69
     fileName: 0069.jpg
     name:
       - {language: en, text: "Simon Ritter"}
+  - id: 70
+    fileName: 0070.jpg
+  - name:
+      - {language: en, text: "Charlie Gracie"}
   - id: 74
     fileName: 0074.jpg
-    name: "Sebastian Daschner"
+    name:
+      - {language: en, text: "Sebastian Daschner"}
   - id: 75
     fileName: 0075.jpg
     name:
@@ -115,7 +132,8 @@ speakers:
       - {language: en, text: "Dan Heidinga"}
   - id: 956
     fileName: 0956.jpg
-    name: "Dalia Abo Sheasha"
+    name:
+      - {language: en, text: "Dalia Abo Sheasha"}
   - id: 957
     fileName: 0957.jpg
     name:

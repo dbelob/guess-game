@@ -167,3 +167,21 @@ talks:
     name:
       - {language: en, text: "Decrypting tech hype for the busy coder"}
     speakerIds: [253]
+  - id: 100
+    name:
+      - {language: en, text: "The world needs full-stack craftsmen"}
+    speakerIds: [68]
+  - id: 101
+    name:
+      - {language: en, text: "Software testing pitfalls"}
+      - {language: ru, text: "Просчеты тестирования"}
+    speakerIds: [3]
+  - id: 102
+    name:
+      - {language: en, text: "JDK 12: Pitfalls for the unwary"}
+    speakerIds: [69]
+  - id: 103
+    name:
+      - {language: en, text: "Create your own interpreter with a JIT in 1 hour"}
+    speakerIds: [70]
+
