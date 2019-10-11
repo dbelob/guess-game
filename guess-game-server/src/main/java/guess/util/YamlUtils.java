@@ -2,6 +2,7 @@ package guess.util;
 
 import guess.domain.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
+import guess.domain.question.TalkQuestion;
 import guess.domain.source.*;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -10,7 +11,6 @@ import org.yaml.snakeyaml.constructor.Constructor;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -51,12 +51,13 @@ public class YamlUtils {
         linkEventsToEventTypes(eventTypes.getEventTypes(), events.getEvents());
         linkTalksToEvents(talks.getTalks(), events.getEvents());
 
+        // Create question sets
         List<QuestionSet> questionSets = new ArrayList<>();
         for (EventType eventType : eventTypes.getEventTypes()) {
-            String name = getEnglishName(eventType.getName());
-
-            // Fill speaker questions
+            // Fill speaker and talk questions
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
+            List<TalkQuestion> talkQuestions = new ArrayList<>();
+
             for (Event event : eventType.getEvents()) {
                 for (Talk talk : event.getTalks()) {
                     for (Speaker speaker : talk.getSpeakers()) {
@@ -65,42 +66,46 @@ public class YamlUtils {
                                 speaker.getFileName(),
                                 getEnglishName(speaker.getName())));
                     }
+
+                    talkQuestions.add(new TalkQuestion(
+                            talk.getId(),
+                            talk.getSpeakers().get(0),
+                            talk));
                 }
             }
 
             questionSets.add(new QuestionSet(
                     eventType.getId(),
-                    name,
+                    getEnglishName(eventType.getName()),
                     eventType.getDirectoryName(),
                     eventType.getLogoFileName(),
-                    speakerQuestions,
-                    Collections.emptyList()     //TODO: implement
-            ));
+                    QuestionUtils.removeDuplicatesByFileName(speakerQuestions),
+                    QuestionUtils.removeDuplicatesById(talkQuestions)));
         }
 
 //        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 //        Resource[] resources = resolver.getResources(String.format("classpath:%s/*.yml", questionsDirectoryName));
 //        Yaml yaml = new Yaml(new Constructor(QuestionSet.class));
 //        List<QuestionSet> questionSets = new ArrayList<>();
-
-        // Read question sets from YAML files
+//
+//         Read question sets from YAML files
 //        for (Resource resource : resources) {
 //            questionSets.add(yaml.load(resource.getInputStream()));
 //        }
-
+//
 //        long questionId = 0;
-        for (int i = 0; i < questionSets.size(); i++) {
-            QuestionSet questionSet = questionSets.get(i);
+//        for (int i = 0; i < questionSets.size(); i++) {
+//            QuestionSet questionSet = questionSets.get(i);
 //            questionSet.setId(i);
-
-            // Remove duplicates by filename
-            questionSet.setSpeakerQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getSpeakerQuestions()));
-
-            // Set unique id
+//
+//             Remove duplicates by filename
+//            questionSet.setSpeakerQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getSpeakerQuestions()));
+//
+//             Set unique id
 //            for (int j = 0; j < questionSet.getSpeakerQuestions().size(); j++) {
 //                questionSet.getSpeakerQuestions().get(j).setId(questionId++);
 //            }
-        }
+//        }
 
         return questionSets;
     }

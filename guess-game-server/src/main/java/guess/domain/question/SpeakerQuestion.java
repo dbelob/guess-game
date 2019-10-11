@@ -7,9 +7,6 @@ public class SpeakerQuestion extends Question {
     private String fileName;
     private String name;
 
-    public SpeakerQuestion() {
-    }
-
     public SpeakerQuestion(long id, String fileName, String name) {
         super(id);
 
