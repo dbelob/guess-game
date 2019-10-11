@@ -2,9 +2,9 @@ package guess.dao;
 
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
-import guess.domain.Question;
+import guess.domain.question.Question;
 import guess.domain.QuestionSet;
-import guess.domain.SpeakerQuestion;
+import guess.domain.question.SpeakerQuestion;
 import guess.util.QuestionUtils;
 import guess.util.YamlUtils;
 import org.springframework.stereotype.Repository;

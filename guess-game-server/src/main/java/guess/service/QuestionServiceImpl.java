@@ -3,7 +3,7 @@ package guess.service;
 import guess.dao.QuestionDao;
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
-import guess.domain.Question;
+import guess.domain.question.Question;
 import guess.domain.QuestionSet;
 import guess.util.QuestionUtils;
 import org.springframework.beans.factory.annotation.Autowired;

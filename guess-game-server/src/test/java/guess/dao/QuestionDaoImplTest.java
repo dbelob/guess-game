@@ -1,7 +1,7 @@
 package guess.dao;
 
 import guess.domain.QuestionSet;
-import guess.domain.SpeakerQuestion;
+import guess.domain.question.SpeakerQuestion;
 import org.junit.Assert;
 import org.junit.Test;
 

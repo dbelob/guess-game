@@ -1,6 +1,6 @@
 package guess.util;
 
-import guess.domain.SpeakerQuestion;
+import guess.domain.question.SpeakerQuestion;
 
 import java.util.*;
 

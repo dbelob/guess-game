@@ -3,7 +3,7 @@ package guess.dto;
 import guess.domain.AnswerPair;
 import guess.domain.ErrorDetails;
 import guess.domain.GuessType;
-import guess.domain.SpeakerQuestion;
+import guess.domain.question.SpeakerQuestion;
 
 import java.util.List;
 import java.util.stream.Collectors;

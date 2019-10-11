@@ -1,5 +1,8 @@
 package guess.domain;
 
+import guess.domain.question.SpeakerQuestion;
+import guess.domain.question.TalkQuestion;
+
 import java.util.Collections;
 import java.util.List;
 

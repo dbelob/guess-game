@@ -3,6 +3,7 @@ package guess.service;
 import guess.dao.AnswerDao;
 import guess.dao.StateDao;
 import guess.domain.*;
+import guess.domain.question.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

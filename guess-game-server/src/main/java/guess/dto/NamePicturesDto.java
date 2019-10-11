@@ -1,7 +1,7 @@
 package guess.dto;
 
 import guess.domain.QuestionAnswers;
-import guess.domain.SpeakerQuestion;
+import guess.domain.question.SpeakerQuestion;
 
 import java.util.List;
 

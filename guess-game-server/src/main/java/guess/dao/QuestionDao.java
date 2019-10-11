@@ -2,7 +2,7 @@ package guess.dao;
 
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
-import guess.domain.Question;
+import guess.domain.question.Question;
 import guess.domain.QuestionSet;
 
 import java.util.List;
