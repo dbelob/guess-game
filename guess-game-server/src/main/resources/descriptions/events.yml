@@ -2,7 +2,6 @@ events:
   - eventTypeId: 8
     name:
       - {language: en, text: "JPoint 2019"}
-      - {language: ru, text: "JPoint 2019"}
     startDate: 2019-04-05
     endDate: 2019-04-06
     city:
@@ -15,7 +14,6 @@ events:
   - eventTypeId: 7
     name:
       - {language: en, text: "Joker 2019"}
-      - {language: ru, text: "Joker 2019"}
     startDate: 2019-10-25
     endDate: 2019-10-26
     city:

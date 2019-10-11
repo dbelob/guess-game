@@ -2,8 +2,8 @@ package guess.dao;
 
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
-import guess.domain.question.Question;
 import guess.domain.QuestionSet;
+import guess.domain.question.Question;
 import guess.domain.question.SpeakerQuestion;
 import guess.util.QuestionUtils;
 import guess.util.YamlUtils;
@@ -21,11 +21,12 @@ import java.util.stream.Collectors;
 @Repository
 public class QuestionDaoImpl implements QuestionDao {
     private static String QUESTIONS_DIRECTORY_NAME = "questions";
+    private static String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
 
     private final List<QuestionSet> questionSets;
 
     public QuestionDaoImpl() throws IOException {
-        this.questionSets = YamlUtils.readQuestionSets(QUESTIONS_DIRECTORY_NAME);
+        this.questionSets = YamlUtils.readQuestionSets(QUESTIONS_DIRECTORY_NAME, DESCRIPTIONS_DIRECTORY_NAME);
     }
 
     @Override

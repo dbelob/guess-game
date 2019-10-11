@@ -68,7 +68,7 @@ speakers:
       - {language: en, text: "Simon Ritter"}
   - id: 70
     fileName: 0070.jpg
-  - name:
+    name:
       - {language: en, text: "Charlie Gracie"}
   - id: 74
     fileName: 0074.jpg

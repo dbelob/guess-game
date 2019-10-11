@@ -14,6 +14,18 @@ public class QuestionSet {
     private List<SpeakerQuestion> speakerQuestions = Collections.emptyList();
     private List<TalkQuestion> talkQuestions = Collections.emptyList();
 
+    public QuestionSet() {
+    }
+
+    public QuestionSet(long id, String name, String directoryName, String logoFileName, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions) {
+        this.id = id;
+        this.name = name;
+        this.directoryName = directoryName;
+        this.logoFileName = logoFileName;
+        this.speakerQuestions = speakerQuestions;
+        this.talkQuestions = talkQuestions;
+    }
+
     public long getId() {
         return id;
     }
