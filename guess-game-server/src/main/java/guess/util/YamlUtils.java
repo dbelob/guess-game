@@ -83,6 +83,7 @@ public class YamlUtils {
                     QuestionUtils.removeDuplicatesById(talkQuestions)));
         }
 
+        //TODO: delete
 //        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 //        Resource[] resources = resolver.getResources(String.format("classpath:%s/*.yml", questionsDirectoryName));
 //        Yaml yaml = new Yaml(new Constructor(QuestionSet.class));

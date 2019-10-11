@@ -5,6 +5,7 @@ import guess.domain.GuessType;
 import guess.domain.QuestionSet;
 import guess.domain.question.Question;
 import guess.domain.question.SpeakerQuestion;
+import guess.domain.question.TalkQuestion;
 import guess.util.QuestionUtils;
 import guess.util.YamlUtils;
 import org.springframework.stereotype.Repository;
@@ -69,8 +70,13 @@ public class QuestionDaoImpl implements QuestionDao {
             questions = new ArrayList<>(QuestionUtils.removeDuplicatesByFileName(speakerQuestions));
         } else if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
             // Guess talk by speaker or speaker by talk
-            //TODO: implement
-            questions = new ArrayList<>();
+            List<TalkQuestion> talkQuestions = new ArrayList<>();
+
+            for (Long questionSetId : questionSetIds) {
+                talkQuestions.addAll(getQuestionSetById(questionSetId).getTalkQuestions());
+            }
+
+            questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(talkQuestions));
         } else {
             questions = new ArrayList<>();
         }
