@@ -1,5 +1,5 @@
 events:
-  - eventTypeId: 8
+  - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2019"}
     startDate: 2019-04-05
@@ -11,7 +11,7 @@ events:
       - {language: en, text: "WTC Congress Center"}
       - {language: ru, text: "Конгресс-центр ЦМТ"}
     talkIds: [100, 101, 102, 103]
-  - eventTypeId: 7
+  - eventTypeId: 8
     name:
       - {language: en, text: "Joker 2019"}
     startDate: 2019-10-25

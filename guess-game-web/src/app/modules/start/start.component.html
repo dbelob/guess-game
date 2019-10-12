@@ -8,7 +8,7 @@
       <label for="set" class="col-sm-2 col-form-label">Set:</label>
       <div class="col-sm-10">
         <select multiple class="form-control" id="set" size="16" [(ngModel)]="selectedQuestionSets"
-                (ngModelChange)="onChange($event)" name="set">
+                (ngModelChange)="onSetChange($event)" name="set">
           <option *ngFor="let questionSet of questionSets" [ngValue]="questionSet">
             {{questionSet.name}}
           </option>
@@ -19,29 +19,29 @@
       <label for="type" class="col-sm-2 col-form-label">Type:</label>
       <div class="col-sm-10">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessName" value="guessName"
-                 [(ngModel)]="selectedGuessType">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessName" value="{{guessType.GuessNameType}}"
+                 [(ngModel)]="selectedGuessType" (ngModelChange)="onTypeChange($event)">
           <label class="form-check-label" for="guessName">
             Guess name by picture
           </label>
         </div>
         <div class="form-check" id="type">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessPicture" value="guessPicture"
-                 [(ngModel)]="selectedGuessType">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessPicture" value="{{guessType.GuessPictureType}}"
+                 [(ngModel)]="selectedGuessType" (ngModelChange)="onTypeChange($event)">
           <label class="form-check-label" for="guessPicture">
             Guess picture by name
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessTalk" value="guessTalk"
-                 [(ngModel)]="selectedGuessType">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessTalk" value="{{guessType.GuessTalkType}}"
+                 [(ngModel)]="selectedGuessType" (ngModelChange)="onTypeChange($event)">
           <label class="form-check-label" for="guessTalk">
             Guess talk by speaker
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessSpeaker" value="guessSpeaker"
-                 [(ngModel)]="selectedGuessType">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessSpeaker" value="{{guessType.GuessSpeakerType}}"
+                 [(ngModel)]="selectedGuessType" (ngModelChange)="onTypeChange($event)">
           <label class="form-check-label" for="guessSpeaker">
             Guess speaker by talk
           </label>

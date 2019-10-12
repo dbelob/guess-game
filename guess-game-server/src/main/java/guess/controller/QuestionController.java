@@ -37,10 +37,7 @@ public class QuestionController {
 
     @GetMapping("/quantities")
     @ResponseBody
-    public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds) throws QuestionSetNotExistsException {
-        //TODO: change to parameter
-        GuessType guessType = GuessType.GUESS_NAME_TYPE;
-
-        return questionService.getQuantities(questionSetIds, guessType);
+    public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds, @RequestParam String guessType) throws QuestionSetNotExistsException {
+        return questionService.getQuantities(questionSetIds, GuessType.valueOf(guessType));
     }
 }

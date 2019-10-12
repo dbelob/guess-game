@@ -43,16 +43,16 @@ eventTypes:
     logoFileName: logo-jbreak.jpg
   - id: 7
     name:
-      - {language: en, text: "Conferences — Joker"}
-      - {language: ru, text: "Конференции — Joker"}
-    directoryName: speakers
-    logoFileName: logo-jokerconf.jpg
-  - id: 8
-    name:
       - {language: en, text: "Conferences — JPoint"}
       - {language: ru, text: "Конференции — JPoint"}
     directoryName: speakers
     logoFileName: logo-jpoint.jpg
+  - id: 8
+    name:
+      - {language: en, text: "Conferences — Joker"}
+      - {language: ru, text: "Конференции — Joker"}
+    directoryName: speakers
+    logoFileName: logo-jokerconf.jpg
   - id: 9
     name:
       - {language: en, text: "Conferences — Mobius"}
@@ -61,15 +61,15 @@ eventTypes:
     logoFileName: logo-mobius.jpg
   - id: 10
     name:
+      - {language: en, text: "Conferences — SPTDC"}
+      - {language: ru, text: "Конференции — SPTDC"}
+    directoryName: speakers
+  - id: 11
+    name:
       - {language: en, text: "Conferences — SmartData"}
       - {language: ru, text: "Конференции — SmartData"}
     directoryName: speakers
     logoFileName: logo-smartdata.jpg
-  - id: 11
-    name:
-      - {language: en, text: "Conferences — SPTDC"}
-      - {language: ru, text: "Конференции — SPTDC"}
-    directoryName: speakers
   - id: 12
     name:
       - {language: en, text: "Conferences — TechTrain"}
@@ -82,15 +82,15 @@ eventTypes:
       - {language: ru, text: "Встречи — JUG.MSK"}
     directoryName: speakers
     logoFileName: logo-jugmsk.jpg
-  - id: 14
-    name:
-      - {language: en, text: "Meetups — JUGNsk"}
-      - {language: ru, text: "Встречи — JUGNsk"}
-    directoryName: speakers
-    logoFileName: logo-jugnsk.jpg
-  - id: 15
+  - id: 16
     name:
       - {language: en, text: "Meetups — JUG.ru"}
       - {language: ru, text: "Встречи — JUG.ru"}
     directoryName: speakers
     logoFileName: logo-jugru.jpg
+  - id: 17
+    name:
+      - {language: en, text: "Meetups — JUGNsk"}
+      - {language: ru, text: "Встречи — JUGNsk"}
+    directoryName: speakers
+    logoFileName: logo-jugnsk.jpg

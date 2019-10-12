@@ -15,7 +15,9 @@ export class AnswerService {
   }
 
   setAnswer(questionIndex: number, answerId: number): Observable<string> {
-    let params = new HttpParams().set('questionIndex', questionIndex.toString()).set('answerId', answerId.toString());
+    let params = new HttpParams()
+      .set('questionIndex', questionIndex.toString())
+      .set('answerId', answerId.toString());
 
     return this.http.post<string>(`${this.baseUrl}/answers`, {}, {params: params})
       .pipe(
