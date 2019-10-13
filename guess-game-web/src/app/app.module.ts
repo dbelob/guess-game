@@ -19,11 +19,15 @@ import { QuestionService } from "./shared/services/question.service";
 import { StateService } from "./shared/services/state.service";
 import { StateGuard } from "./shared/guards/state.guard";
 import { CancelGameComponent } from "./modules/guess/cancel-game.component";
+import { GuessTalkComponent } from "./modules/guess/guess-talk.component";
+import { GuessSpeakerComponent } from "./modules/guess/guess-speaker.component";
 
 const routes: Routes = [
   {path: 'start', component: StartComponent, canActivate: [StateGuard]},
   {path: 'guess/name', component: GuessNameComponent, canActivate: [StateGuard]},
   {path: 'guess/picture', component: GuessPictureComponent, canActivate: [StateGuard]},
+  {path: 'guess/talk', component: GuessTalkComponent, canActivate: [StateGuard]},
+  {path: 'guess/speaker', component: GuessSpeakerComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
   {path: '', pathMatch: 'full', redirectTo: 'start'},

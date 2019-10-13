@@ -6,6 +6,7 @@ import guess.domain.QuestionAnswersSet;
 import guess.domain.State;
 import guess.dto.NamePicturesDto;
 import guess.dto.PictureNamesDto;
+import guess.dto.SpeakerTalksDto;
 import guess.dto.StartParametersDto;
 import guess.service.AnswerService;
 import guess.service.StateService;
@@ -89,6 +90,21 @@ public class StateController {
                     questionAnswersSet.getLogoFileName(),
                     questionAnswers,
                     wrongAnswerIds);
+        } else {
+            return null;
+        }
+    }
+
+    @GetMapping("/speaker-talks")
+    @ResponseBody
+    public SpeakerTalksDto getSpeakerTalks(HttpSession httpSession) {
+        int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
+        QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
+        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
+
+        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
+            //TODO: implement
+            return null;
         } else {
             return null;
         }

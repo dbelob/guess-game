@@ -43,7 +43,11 @@ public class StateServiceImpl implements StateService {
                         State.RESULT_STATE :
                         (GuessType.GUESS_NAME_TYPE.equals(startParameters.getGuessType()) ?
                                 State.GUESS_NAME_STATE :
-                                State.GUESS_PICTURE_STATE),
+                                (GuessType.GUESS_PICTURE_TYPE.equals(startParameters.getGuessType()) ?
+                                        State.GUESS_PICTURE_STATE :
+                                        (GuessType.GUESS_TALK_TYPE.equals(startParameters.getGuessType()) ?
+                                                State.GUESS_TALK_STATE :
+                                                State.GUESS_SPEAKER_STATE))),
                 httpSession);
     }
 
