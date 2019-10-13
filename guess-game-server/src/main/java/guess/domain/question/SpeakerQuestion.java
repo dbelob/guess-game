@@ -29,4 +29,15 @@ public class SpeakerQuestion extends Question {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public boolean isSame(Question question) {
+        return (question.getId() == getId());
+    }
+
+    @Override
+    public Question transform() {
+        // Dont't change question
+        return this;
+    }
 }

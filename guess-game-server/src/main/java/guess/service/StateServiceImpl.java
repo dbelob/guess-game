@@ -80,18 +80,24 @@ public class StateServiceImpl implements StateService {
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                List<Question> shuffledQuestionsWithoutCurrentQuestion = new ArrayList<>(shuffledQuestions);
-                shuffledQuestionsWithoutCurrentQuestion.remove(question);
-                Collections.shuffle(shuffledQuestionsWithoutCurrentQuestion);
+                List<Question> shuffledQuestionsWithoutCurrentAndSameQuestions = new ArrayList<>(shuffledQuestions);
 
-                // Select 3 first elements, add current, shuffle
-                List<Question> answers = shuffledQuestionsWithoutCurrentQuestion.subList(
+                // Remove current and same questions
+                shuffledQuestionsWithoutCurrentAndSameQuestions.remove(question);
+                shuffledQuestionsWithoutCurrentAndSameQuestions.removeIf(q -> q.isSame(question));
+
+                Collections.shuffle(shuffledQuestionsWithoutCurrentAndSameQuestions);
+
+                Question transformedQuestion = question.transform();
+
+                // Select (QUESTION_ANSWERS_LIST_SIZE - 1) first elements, add current, shuffle
+                List<Question> answers = shuffledQuestionsWithoutCurrentAndSameQuestions.subList(
                         0,
-                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, shuffledQuestionsWithoutCurrentQuestion.size()));
-                answers.add(question);
+                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, shuffledQuestionsWithoutCurrentAndSameQuestions.size()));
+                answers.add(transformedQuestion);
                 Collections.shuffle(answers);
 
-                questionAnswersList.add(new QuestionAnswers(question, answers));
+                questionAnswersList.add(new QuestionAnswers(transformedQuestion, answers));
             }
         }
 

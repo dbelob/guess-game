@@ -68,7 +68,6 @@ public class YamlUtils {
                     }
 
                     talkQuestions.add(new TalkQuestion(
-                            talk.getId(),
                             talk.getSpeakers().get(0),
                             talk));
                 }

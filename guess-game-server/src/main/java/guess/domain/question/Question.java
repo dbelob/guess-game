@@ -3,7 +3,7 @@ package guess.domain.question;
 /**
  * Question.
  */
-public class Question {
+public abstract class Question {
     private long id;
 
     public Question() {
@@ -35,4 +35,8 @@ public class Question {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
+
+    public abstract boolean isSame(Question question);
+
+    public abstract Question transform();
 }
