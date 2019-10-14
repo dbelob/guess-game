@@ -17,9 +17,6 @@ import java.util.List;
  * YAML utility methods.
  */
 public class YamlUtils {
-    private static final String ENGLISH_LANGUAGE = "en";
-    private static final LocaleItem DEFAULT_LOCALE_ITEM = new LocaleItem(ENGLISH_LANGUAGE, "");
-
     /**
      * Reads question sets from resource files.
      *
@@ -64,7 +61,7 @@ public class YamlUtils {
                         speakerQuestions.add(new SpeakerQuestion(
                                 speaker.getId(),
                                 speaker.getFileName(),
-                                getEnglishName(speaker.getName())));
+                                LocalizationUtils.getEnglishName(speaker.getName())));
                     }
 
                     talkQuestions.add(new TalkQuestion(
@@ -75,7 +72,7 @@ public class YamlUtils {
 
             questionSets.add(new QuestionSet(
                     eventType.getId(),
-                    getEnglishName(eventType.getName()),
+                    LocalizationUtils.getEnglishName(eventType.getName()),
                     eventType.getDirectoryName(),
                     eventType.getLogoFileName(),
                     QuestionUtils.removeDuplicatesByFileName(speakerQuestions),
@@ -108,18 +105,6 @@ public class YamlUtils {
 //        }
 
         return questionSets;
-    }
-
-    /**
-     * Gets english name.
-     *
-     * @param localeItems locale items
-     * @return english name
-     */
-    private static String getEnglishName(List<LocaleItem> localeItems) {
-        return localeItems.stream()
-                .filter(et -> et.getLanguage().equals(ENGLISH_LANGUAGE))
-                .findFirst().orElse(DEFAULT_LOCALE_ITEM).getText();
     }
 
     /**
