@@ -1,11 +1,11 @@
 ---
-dist: bionic
+dist: xenial
 
 sudo: required
 
 language: java
 
-jdk: openjdk11
+jdk: openjdk8
 
 addons:
   chrome: stable
