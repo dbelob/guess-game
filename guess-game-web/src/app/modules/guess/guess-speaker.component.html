@@ -1,1 +1,37 @@
-<p>guess-speaker works!</p>
+<div class="container p-2">
+  <h2 class="bg-info p-1 text-white text-center">{{title}}</h2>
+
+  <app-message></app-message>
+
+  <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
+  <p class="h2 text-center mb-5" [class.mt-5]="!logoImageSource">{{talkSpeakers.talkName}}</p>
+  <div class="text-center">
+    <figure class="figure m-1">
+      <input type="image" alt="" class="img-thumbnail img-guess-speaker"
+             [class.btn-danger]="talkSpeakers.invalid0" [disabled]="talkSpeakers.invalid0"
+             (click)="answer(talkSpeakers.id0)" src="{{imageSource0}}">
+      <figcaption class="figure-caption text-center">{{talkSpeakers.speakerName0}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="" class="img-thumbnail img-guess-speaker"
+             [class.btn-danger]="talkSpeakers.invalid1" [disabled]="talkSpeakers.invalid1"
+             (click)="answer(talkSpeakers.id1)" src="{{imageSource1}}">
+      <figcaption class="figure-caption text-center">{{talkSpeakers.speakerName1}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="" class="img-thumbnail img-guess-speaker"
+             [class.btn-danger]="talkSpeakers.invalid2" [disabled]="talkSpeakers.invalid2"
+             (click)="answer(talkSpeakers.id2)" src="{{imageSource2}}">
+      <figcaption class="figure-caption text-center">{{talkSpeakers.speakerName2}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="" class="img-thumbnail img-guess-speaker"
+             [class.btn-danger]="talkSpeakers.invalid3" [disabled]="talkSpeakers.invalid3"
+             (click)="answer(talkSpeakers.id3)" src="{{imageSource3}}">
+      <figcaption class="figure-caption text-center">{{talkSpeakers.speakerName3}}</figcaption>
+    </figure>
+  </div>
+  <div class="text-right mt-1">
+    <button class="btn btn-link text-muted" (click)="cancel()"><small>Cancel</small></button>
+  </div>
+</div>
