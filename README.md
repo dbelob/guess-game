@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/inponomarev/guess-game.svg?branch=master)](https://travis-ci.org/inponomarev/guess-game)
+[![Build Status](https://travis-ci.org/jugrugroup/guess-game.svg?branch=master)](https://travis-ci.org/jugrugroup/guess-game)
 
 # Guess Game
 
