@@ -2,7 +2,7 @@ package guess.controller;
 
 import guess.domain.ErrorDetails;
 import guess.domain.Result;
-import guess.dto.ResultDto;
+import guess.dto.result.ResultDto;
 import guess.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

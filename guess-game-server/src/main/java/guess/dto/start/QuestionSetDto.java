@@ -1,4 +1,4 @@
-package guess.dto;
+package guess.dto.start;
 
 import guess.domain.QuestionSet;
 

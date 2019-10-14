@@ -1,4 +1,4 @@
-package guess.dto;
+package guess.dto.guess;
 
 /**
  * Question, answers DTO.

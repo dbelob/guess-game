@@ -1,4 +1,4 @@
-package guess.dto;
+package guess.dto.guess;
 
 import guess.domain.QuestionAnswers;
 import guess.domain.question.TalkQuestion;

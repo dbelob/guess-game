@@ -1,4 +1,4 @@
-package guess.dto;
+package guess.dto.result;
 
 import guess.domain.ErrorDetails;
 import guess.domain.GuessType;
