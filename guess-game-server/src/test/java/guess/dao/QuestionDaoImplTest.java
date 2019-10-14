@@ -23,7 +23,7 @@ public class QuestionDaoImplTest {
 
             // All questions
             for (SpeakerQuestion speakerQuestion : speakerQuestions) {
-                Path path = Paths.get(String.format("../guess-game-web/src/assets/images/%s/%s", questionSet.getDirectoryName(), speakerQuestion.getFileName()));
+                Path path = Paths.get(String.format("../guess-game-web/src/assets/images/speakers/%s", speakerQuestion.getFileName()));
 
                 Assert.assertTrue(String.format("Image file %s does not exist", path.toString()), Files.exists(path) && Files.isRegularFile(path));
             }

@@ -9,7 +9,6 @@ import java.util.List;
 public class EventType {
     private long id;
     private List<LocaleItem> name;
-    private String directoryName;
     private String logoFileName;
     private List<Event> events = new ArrayList<>();
 
@@ -27,14 +26,6 @@ public class EventType {
 
     public void setName(List<LocaleItem> name) {
         this.name = name;
-    }
-
-    public String getDirectoryName() {
-        return directoryName;
-    }
-
-    public void setDirectoryName(String directoryName) {
-        this.directoryName = directoryName;
     }
 
     public String getLogoFileName() {

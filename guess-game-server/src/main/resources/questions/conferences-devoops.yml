@@ -1,5 +1,4 @@
 name: "Conferences - DevOops"
-directoryName: speakers
 logoFileName: logo-devoops.jpg
 speakerQuestions:
   - {fileName: 0124.jpg, name: "Oleg Anastasiev"}

@@ -1,5 +1,4 @@
 name: "Conferences - TechTrain"
-directoryName: speakers
 logoFileName: logo-techtrain.jpg
 speakerQuestions:
   - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}

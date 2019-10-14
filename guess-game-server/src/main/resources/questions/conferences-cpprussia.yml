@@ -1,5 +1,4 @@
 name: "Conferences - C++ Russia"
-directoryName: speakers
 logoFileName: logo-cpprussia.jpg
 speakerQuestions:
   - {fileName: 0353.jpg, name: "Ruslan Arutyunyan"}

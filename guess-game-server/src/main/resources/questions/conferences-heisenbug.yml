@@ -1,5 +1,4 @@
 name: "Conferences - Heisenbug"
-directoryName: speakers
 logoFileName: logo-heisenbug.jpg
 speakerQuestions:
   - {fileName: 0598.jpg, name: "Nikolay Abalov"}

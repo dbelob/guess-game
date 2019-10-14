@@ -1,5 +1,4 @@
 name: "Conferences - JBreak"
-directoryName: speakers
 logoFileName: logo-jbreak.jpg
 speakerQuestions:
   - {fileName: 0124.jpg, name: "Oleg Anastasiev"}

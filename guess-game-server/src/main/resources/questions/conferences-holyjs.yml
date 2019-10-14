@@ -1,5 +1,4 @@
 name: "Conferences - HolyJS"
-directoryName: speakers
 logoFileName: logo-holyjs.jpg
 speakerQuestions:
   - {fileName: 0751.jpg, name: "Igor Alekseenko"}

@@ -1,5 +1,4 @@
 name: "Conferences - JPoint"
-directoryName: speakers
 logoFileName: logo-jpoint.jpg
 speakerQuestions:
   - {fileName: 0217.jpg, name: "Alexey Abashev"}

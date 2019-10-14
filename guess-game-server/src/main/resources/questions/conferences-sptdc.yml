@@ -1,5 +1,4 @@
 name: "Conferences - SPTDC"
-directoryName: speakers
 speakerQuestions:
   - {fileName: 0397.jpg, name: "Ittai Abraham"}
   - {fileName: 0401.jpg, name: "Trevor Brown"}

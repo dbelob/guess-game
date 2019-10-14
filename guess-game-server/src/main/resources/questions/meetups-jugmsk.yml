@@ -1,5 +1,4 @@
 name: "Meetups - JUG.MSK"
-directoryName: speakers
 logoFileName: logo-jugmsk.jpg
 speakerQuestions:
   - {fileName: 0000.jpg, name: "Anton Arhipov"}

@@ -1,5 +1,4 @@
 name: "Conferences - Joker"
-directoryName: speakers
 logoFileName: logo-jokerconf.jpg
 questions:
   - {fileName: 0154.jpg, name: "Sam Aaron"}

@@ -73,7 +73,6 @@ public class YamlUtils {
             questionSets.add(new QuestionSet(
                     eventType.getId(),
                     LocalizationUtils.getEnglishName(eventType.getName()),
-                    eventType.getDirectoryName(),
                     eventType.getLogoFileName(),
                     QuestionUtils.removeDuplicatesByFileName(speakerQuestions),
                     QuestionUtils.removeDuplicatesById(talkQuestions)));

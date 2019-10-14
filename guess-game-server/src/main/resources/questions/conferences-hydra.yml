@@ -1,5 +1,4 @@
 name: "Conferences - Hydra"
-directoryName: speakers
 logoFileName: logo-hydra.jpg
 speakerQuestions:
   - {fileName: 0301.jpg, name: "Dmitry Bugaychenko"}

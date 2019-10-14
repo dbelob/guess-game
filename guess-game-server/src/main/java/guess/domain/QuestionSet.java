@@ -9,7 +9,6 @@ import java.util.List;
 public class QuestionSet {
     private long id;
     private String name;
-    private String directoryName;
     private String logoFileName;
     private List<SpeakerQuestion> speakerQuestions = Collections.emptyList();
     private List<TalkQuestion> talkQuestions = Collections.emptyList();
@@ -17,10 +16,9 @@ public class QuestionSet {
     public QuestionSet() {
     }
 
-    public QuestionSet(long id, String name, String directoryName, String logoFileName, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions) {
+    public QuestionSet(long id, String name, String logoFileName, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions) {
         this.id = id;
         this.name = name;
-        this.directoryName = directoryName;
         this.logoFileName = logoFileName;
         this.speakerQuestions = speakerQuestions;
         this.talkQuestions = talkQuestions;
@@ -40,14 +38,6 @@ public class QuestionSet {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDirectoryName() {
-        return directoryName;
-    }
-
-    public void setDirectoryName(String directoryName) {
-        this.directoryName = directoryName;
     }
 
     public String getLogoFileName() {

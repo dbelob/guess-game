@@ -1,5 +1,4 @@
 name: "Conferences - DotNext"
-directoryName: speakers
 logoFileName: logo-dotnext.jpg
 speakerQuestions:
   - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}

@@ -1,5 +1,4 @@
 name: "Conferences - SmartData"
-directoryName: speakers
 logoFileName: logo-smartdata.jpg
 speakerQuestions:
   - {fileName: 0323.jpg, name: "Andrey Boyarov"}

@@ -1,5 +1,4 @@
 name: "Conferences - Mobius"
-directoryName: speakers
 logoFileName: logo-mobius.jpg
 speakerQuestions:
   - {fileName: 0790.jpg, name: "Vladislav Alekseev"}
