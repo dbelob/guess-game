@@ -11,6 +11,8 @@ import { State } from "../../shared/models/state.model";
 })
 export class GuessTalkComponent {
   private imageDirectory: string = 'assets/images';
+  private eventsImageDirectory: string = `${this.imageDirectory}/events`;
+  private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
   public speakerTalks: SpeakerTalks = new SpeakerTalks();
   public title: string;
   public logoImageSource: string;
@@ -26,10 +28,10 @@ export class GuessTalkComponent {
           if (data) {
             this.speakerTalks = data;
             this.title = `${this.speakerTalks.questionSetName} (${this.speakerTalks.currentIndex + 1}/${this.speakerTalks.totalNumber})`;
-            this.imageSource = `${this.imageDirectory}/${this.speakerTalks.speakerFileName}`;
+            this.imageSource = `${this.speakersImageDirectory}/${this.speakerTalks.speakerFileName}`;
 
             if (this.speakerTalks.logoFileName) {
-              this.logoImageSource = `${this.imageDirectory}/${this.speakerTalks.logoFileName}`;
+              this.logoImageSource = `${this.eventsImageDirectory}/${this.speakerTalks.logoFileName}`;
             }
           } else {
             this.result();

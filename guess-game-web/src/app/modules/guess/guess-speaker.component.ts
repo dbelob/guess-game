@@ -11,6 +11,8 @@ import { State } from "../../shared/models/state.model";
 })
 export class GuessSpeakerComponent {
   private imageDirectory: string = 'assets/images';
+  private eventsImageDirectory: string = `${this.imageDirectory}/events`;
+  private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
   public talkSpeakers: TalkSpeakers = new TalkSpeakers();
   public title: string;
   public logoImageSource: string;
@@ -29,13 +31,13 @@ export class GuessSpeakerComponent {
           if (data) {
             this.talkSpeakers = data;
             this.title = `${this.talkSpeakers.questionSetName} (${this.talkSpeakers.currentIndex + 1}/${this.talkSpeakers.totalNumber})`;
-            this.imageSource0 = `${this.imageDirectory}/${this.talkSpeakers.speakerFileName0}`;
-            this.imageSource1 = `${this.imageDirectory}/${this.talkSpeakers.speakerFileName1}`;
-            this.imageSource2 = `${this.imageDirectory}/${this.talkSpeakers.speakerFileName2}`;
-            this.imageSource3 = `${this.imageDirectory}/${this.talkSpeakers.speakerFileName3}`;
+            this.imageSource0 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerFileName0}`;
+            this.imageSource1 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerFileName1}`;
+            this.imageSource2 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerFileName2}`;
+            this.imageSource3 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerFileName3}`;
 
             if (this.talkSpeakers.logoFileName) {
-              this.logoImageSource = `${this.imageDirectory}/${this.talkSpeakers.logoFileName}`;
+              this.logoImageSource = `${this.eventsImageDirectory}/${this.talkSpeakers.logoFileName}`;
             }
           } else {
             this.result();

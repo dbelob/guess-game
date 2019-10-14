@@ -112,9 +112,7 @@ public class StateServiceImpl implements StateService {
         if (startParameters.getQuestionSetIds().size() == 1) {
             QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetIds().get(0));
             name = questionSet.getName();
-            logoFileName = (questionSet.getLogoFileName() != null) ?
-                    String.format("%s/%s", questionSet.getDirectoryName(), questionSet.getLogoFileName()) :
-                    null;
+            logoFileName = questionSet.getLogoFileName();
         } else {
             name = String.format("%d selected sets", startParameters.getQuestionSetIds().size());
             logoFileName = null;

@@ -11,6 +11,8 @@ import { State } from "../../shared/models/state.model";
 })
 export class GuessPictureComponent {
   private imageDirectory: string = 'assets/images';
+  private eventsImageDirectory: string = `${this.imageDirectory}/events`;
+  private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
   public namePictures: NamePictures = new NamePictures();
   public title: string;
   public logoImageSource: string;
@@ -29,13 +31,13 @@ export class GuessPictureComponent {
           if (data) {
             this.namePictures = data;
             this.title = `${this.namePictures.questionSetName} (${this.namePictures.currentIndex + 1}/${this.namePictures.totalNumber})`;
-            this.imageSource0 = `${this.imageDirectory}/${this.namePictures.fileName0}`;
-            this.imageSource1 = `${this.imageDirectory}/${this.namePictures.fileName1}`;
-            this.imageSource2 = `${this.imageDirectory}/${this.namePictures.fileName2}`;
-            this.imageSource3 = `${this.imageDirectory}/${this.namePictures.fileName3}`;
+            this.imageSource0 = `${this.speakersImageDirectory}/${this.namePictures.fileName0}`;
+            this.imageSource1 = `${this.speakersImageDirectory}/${this.namePictures.fileName1}`;
+            this.imageSource2 = `${this.speakersImageDirectory}/${this.namePictures.fileName2}`;
+            this.imageSource3 = `${this.speakersImageDirectory}/${this.namePictures.fileName3}`;
 
             if (this.namePictures.logoFileName) {
-              this.logoImageSource = `${this.imageDirectory}/${this.namePictures.logoFileName}`;
+              this.logoImageSource = `${this.eventsImageDirectory}/${this.namePictures.logoFileName}`;
             }
           } else {
             this.result();

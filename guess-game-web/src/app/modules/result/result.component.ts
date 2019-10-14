@@ -12,7 +12,7 @@ import { GuessType } from "../../shared/models/guess-type.model";
   templateUrl: './result.component.html'
 })
 export class ResultComponent {
-  private imageDirectory: string = 'assets/images';
+  private speakersImageDirectory: string = 'assets/images/speakers';
   public result = new Result();
   private isQuestionPicture = true;
 

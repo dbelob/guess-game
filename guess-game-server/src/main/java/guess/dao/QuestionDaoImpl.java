@@ -6,8 +6,6 @@ import guess.domain.QuestionSet;
 import guess.domain.question.Question;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
-import guess.domain.source.Speaker;
-import guess.domain.source.Talk;
 import guess.util.QuestionUtils;
 import guess.util.YamlUtils;
 import org.springframework.stereotype.Repository;
@@ -63,7 +61,7 @@ public class QuestionDaoImpl implements QuestionDao {
                 List<SpeakerQuestion> questionsWithFullFileName = questionSet.getSpeakerQuestions().stream()
                         .map(q -> new SpeakerQuestion(
                                 q.getId(),
-                                String.format("%s/%s", questionSet.getDirectoryName(), q.getFileName()),
+                                q.getFileName(),
                                 q.getName()))
                         .collect(Collectors.toList());
                 speakerQuestions.addAll(questionsWithFullFileName);
@@ -75,24 +73,7 @@ public class QuestionDaoImpl implements QuestionDao {
             List<TalkQuestion> talkQuestions = new ArrayList<>();
 
             for (Long questionSetId : questionSetIds) {
-                QuestionSet questionSet = getQuestionSetById(questionSetId);
-                for (TalkQuestion talkQuestion : questionSet.getTalkQuestions()) {
-                    Speaker speakerWithFullFileName = createSpeakerWithFullFileName(talkQuestion.getSpeaker(), questionSet.getDirectoryName());
-                    Talk talk = talkQuestion.getTalk();
-
-                    List<Speaker> speakersWithFullFileName = talk.getSpeakers().stream()
-                            .map(s -> createSpeakerWithFullFileName(s, questionSet.getDirectoryName()))
-                            .collect(Collectors.toList());
-                    Talk talkWithFullFileName = new Talk(
-                            talk.getId(),
-                            talk.getName(),
-                            talk.getSpeakerIds(),
-                            speakersWithFullFileName);
-
-                    talkQuestions.add(new TalkQuestion(
-                            speakerWithFullFileName,
-                            talkWithFullFileName));
-                }
+                talkQuestions.addAll(getQuestionSetById(questionSetId).getTalkQuestions());
             }
 
             questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(talkQuestions));
@@ -101,12 +82,5 @@ public class QuestionDaoImpl implements QuestionDao {
         }
 
         return questions;
-    }
-
-    private Speaker createSpeakerWithFullFileName(Speaker speaker, String directoryName) {
-        return new Speaker(
-                speaker.getId(),
-                String.format("%s/%s", directoryName, speaker.getFileName()),
-                speaker.getName());
     }
 }

@@ -13,16 +13,6 @@ public class Talk {
     private List<Long> speakerIds;
     private List<Speaker> speakers = new ArrayList<>();
 
-    public Talk() {
-    }
-
-    public Talk(long id, List<LocaleItem> name, List<Long> speakerIds, List<Speaker> speakers) {
-        this.id = id;
-        this.name = name;
-        this.speakerIds = speakerIds;
-        this.speakers = speakers;
-    }
-
     public long getId() {
         return id;
     }
