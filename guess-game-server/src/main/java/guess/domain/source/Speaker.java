@@ -10,6 +10,15 @@ public class Speaker {
     private String fileName;
     private List<LocaleItem> name;
 
+    public Speaker() {
+    }
+
+    public Speaker(long id, String fileName, List<LocaleItem> name) {
+        this.id = id;
+        this.fileName = fileName;
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }
