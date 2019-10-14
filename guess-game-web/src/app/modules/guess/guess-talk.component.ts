@@ -26,7 +26,11 @@ export class GuessTalkComponent {
           if (data) {
             this.speakerTalks = data;
             this.title = `${this.speakerTalks.questionSetName} (${this.speakerTalks.currentIndex + 1}/${this.speakerTalks.totalNumber})`;
-            //TODO: implement
+            this.imageSource = `${this.imageDirectory}/${this.speakerTalks.speakerFileName}`;
+
+            if (this.speakerTalks.logoFileName) {
+              this.logoImageSource = `${this.imageDirectory}/${this.speakerTalks.logoFileName}`;
+            }
           } else {
             this.result();
           }

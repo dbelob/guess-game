@@ -29,7 +29,14 @@ export class GuessSpeakerComponent {
           if (data) {
             this.talkSpeakers = data;
             this.title = `${this.talkSpeakers.questionSetName} (${this.talkSpeakers.currentIndex + 1}/${this.talkSpeakers.totalNumber})`;
-            //TODO: implement
+            this.imageSource0 = `${this.imageDirectory}/${this.talkSpeakers.speakerFileName0}`;
+            this.imageSource1 = `${this.imageDirectory}/${this.talkSpeakers.speakerFileName1}`;
+            this.imageSource2 = `${this.imageDirectory}/${this.talkSpeakers.speakerFileName2}`;
+            this.imageSource3 = `${this.imageDirectory}/${this.talkSpeakers.speakerFileName3}`;
+
+            if (this.talkSpeakers.logoFileName) {
+              this.logoImageSource = `${this.imageDirectory}/${this.talkSpeakers.logoFileName}`;
+            }
           } else {
             this.result();
           }

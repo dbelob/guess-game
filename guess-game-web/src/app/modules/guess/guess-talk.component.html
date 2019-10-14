@@ -3,6 +3,15 @@
 
   <app-message></app-message>
 
-  <p>guess-talk works!</p>
-
+  <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
+  <div class="text-center mb-5" [class.mt-5]="!logoImageSource">
+    <figure class="figure">
+      <img src="{{imageSource}}" alt="" class="img-thumbnail img-guess-talk">
+      <figcaption class="figure-caption text-center">{{speakerTalks.speakerName}}</figcaption>
+    </figure>
+  </div>
+  <!-- TODO: implement -->
+  <div class="text-right mt-1">
+    <button class="btn btn-link text-muted" (click)="cancel()"><small>Cancel</small></button>
+  </div>
 </div>
