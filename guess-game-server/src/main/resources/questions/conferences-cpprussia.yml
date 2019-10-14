@@ -1,5 +1,5 @@
 name: "Conferences - C++ Russia"
-logoFileName: logo-cpprussia.jpg
+logoFileName: cpprussia.jpg
 speakerQuestions:
   - {fileName: 0353.jpg, name: "Ruslan Arutyunyan"}
   - {fileName: 0352.jpg, name: "Ilya Bogdanov"}

@@ -1,5 +1,5 @@
 name: "Conferences - DotNext"
-logoFileName: logo-dotnext.jpg
+logoFileName: dotnext.jpg
 speakerQuestions:
   - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}
   - {fileName: 0498.jpg, name: "Vagif Abilov"}

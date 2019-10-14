@@ -1,5 +1,5 @@
 name: "Meetups - JUG.ru"
-logoFileName: logo-jugru.jpg
+logoFileName: jugru.jpg
 speakerQuestions:
   - {fileName: 0050.jpg, name: "Dmitry Alexandrov"}
   - {fileName: 0247.jpg, name: "Artem Ananyev"}

@@ -1,5 +1,5 @@
 name: "Conferences - JPoint"
-logoFileName: logo-jpoint.jpg
+logoFileName: jpoint.jpg
 speakerQuestions:
   - {fileName: 0217.jpg, name: "Alexey Abashev"}
   - {fileName: 0200.jpg, name: "Ilya Agoshkov"}

@@ -1,5 +1,5 @@
 name: "Conferences - DevOops"
-logoFileName: logo-devoops.jpg
+logoFileName: devoops.jpg
 speakerQuestions:
   - {fileName: 0124.jpg, name: "Oleg Anastasiev"}
   - {fileName: 0368.jpg, name: "Anton Babenko"}

@@ -1,5 +1,5 @@
 name: "Conferences - JBreak"
-logoFileName: logo-jbreak.jpg
+logoFileName: jbreak.jpg
 speakerQuestions:
   - {fileName: 0124.jpg, name: "Oleg Anastasiev"}
   - {fileName: 0300.jpg, name: "Igor Andreev"}

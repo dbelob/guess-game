@@ -1,5 +1,5 @@
 name: "Conferences - SmartData"
-logoFileName: logo-smartdata.jpg
+logoFileName: smartdata.jpg
 speakerQuestions:
   - {fileName: 0323.jpg, name: "Andrey Boyarov"}
   - {fileName: 0301.jpg, name: "Dmitry Bugaychenko"}

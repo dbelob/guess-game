@@ -1,5 +1,5 @@
 name: "Meetups - JUGNsk"
-logoFileName: logo-jugnsk.jpg
+logoFileName: jugnsk.jpg
 speakerQuestions:
   - {fileName: 0050.jpg, name: "Dmitry Alexandrov"}
   - {fileName: 0223.jpg, name: "Pavel Dimitrjuk"}

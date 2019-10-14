@@ -1,5 +1,5 @@
 name: "Conferences - Joker"
-logoFileName: logo-jokerconf.jpg
+logoFileName: jokerconf.jpg
 questions:
   - {fileName: 0154.jpg, name: "Sam Aaron"}
   - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}

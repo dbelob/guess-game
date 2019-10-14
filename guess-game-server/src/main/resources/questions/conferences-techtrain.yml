@@ -1,5 +1,5 @@
 name: "Conferences - TechTrain"
-logoFileName: logo-techtrain.jpg
+logoFileName: techtrain.jpg
 speakerQuestions:
   - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}
   - {fileName: 0288.jpg, name: "Alexey Akulovich"}

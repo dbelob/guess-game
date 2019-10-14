@@ -1,5 +1,5 @@
 name: "Conferences - HolyJS"
-logoFileName: logo-holyjs.jpg
+logoFileName: holyjs.jpg
 speakerQuestions:
   - {fileName: 0751.jpg, name: "Igor Alekseenko"}
   - {fileName: 0707.jpg, name: "Vladimir Anufrienko"}
