@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jugrugroup/guess-game.svg?branch=master)](https://travis-ci.org/jugrugroup/guess-game)
+
 # Guess Game
 
 ![Screenshot](/images/screenshot.png)
