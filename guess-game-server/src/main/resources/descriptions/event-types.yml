@@ -68,12 +68,12 @@ eventTypes:
       - {language: en, text: "Meetups — JUG.MSK"}
       - {language: ru, text: "Встречи — JUG.MSK"}
     logoFileName: jugmsk.jpg
-  - id: 16
+  - id: 14
     name:
       - {language: en, text: "Meetups — JUG.ru"}
       - {language: ru, text: "Встречи — JUG.ru"}
     logoFileName: jugru.jpg
-  - id: 17
+  - id: 15
     name:
       - {language: en, text: "Meetups — JUGNsk"}
       - {language: ru, text: "Встречи — JUGNsk"}

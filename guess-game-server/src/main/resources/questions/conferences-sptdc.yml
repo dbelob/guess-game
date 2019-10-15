@@ -1,3 +1,4 @@
+id: 10
 name: "Conferences - SPTDC"
 speakerQuestions:
   - {fileName: 0397.jpg, name: "Ittai Abraham"}

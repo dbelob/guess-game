@@ -79,29 +79,49 @@ public class YamlUtils {
         }
 
         //TODO: delete
-//        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-//        Resource[] resources = resolver.getResources(String.format("classpath:%s/*.yml", questionsDirectoryName));
-//        Yaml yaml = new Yaml(new Constructor(QuestionSet.class));
-//        List<QuestionSet> questionSets = new ArrayList<>();
-//
-//         Read question sets from YAML files
-//        for (Resource resource : resources) {
-//            questionSets.add(yaml.load(resource.getInputStream()));
-//        }
-//
-//        long questionId = 0;
-//        for (int i = 0; i < questionSets.size(); i++) {
-//            QuestionSet questionSet = questionSets.get(i);
+        replaceSpeakerQuestions(questionSets, questionsDirectoryName);
+
+        return questionSets;
+    }
+
+    //TODO: delete
+    private static void replaceSpeakerQuestions(List<QuestionSet> questionSets, String questionsDirectoryName) throws IOException {
+        List<QuestionSet> speakerQuestionSets = readSpeakerQuestionSets(questionsDirectoryName);
+
+        for (QuestionSet questionSet : questionSets) {
+            for (QuestionSet speakerQuestionSet : speakerQuestionSets) {
+                if (questionSet.getId() == speakerQuestionSet.getId()) {
+                    questionSet.setSpeakerQuestions(speakerQuestionSet.getSpeakerQuestions());
+                }
+            }
+        }
+    }
+
+    //TODO: delete
+    private static List<QuestionSet> readSpeakerQuestionSets(String questionsDirectoryName) throws IOException {
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        Resource[] resources = resolver.getResources(String.format("classpath:%s/*.yml", questionsDirectoryName));
+        Yaml yaml = new Yaml(new Constructor(QuestionSet.class));
+        List<QuestionSet> questionSets = new ArrayList<>();
+
+        // Read question sets from YAML files
+        for (Resource resource : resources) {
+            questionSets.add(yaml.load(resource.getInputStream()));
+        }
+
+        long questionId = 0;
+        for (int i = 0; i < questionSets.size(); i++) {
+            QuestionSet questionSet = questionSets.get(i);
 //            questionSet.setId(i);
-//
-//             Remove duplicates by filename
-//            questionSet.setSpeakerQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getSpeakerQuestions()));
-//
-//             Set unique id
-//            for (int j = 0; j < questionSet.getSpeakerQuestions().size(); j++) {
-//                questionSet.getSpeakerQuestions().get(j).setId(questionId++);
-//            }
-//        }
+
+            // Remove duplicates by filename
+            questionSet.setSpeakerQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getSpeakerQuestions()));
+
+            // Set unique id
+            for (int j = 0; j < questionSet.getSpeakerQuestions().size(); j++) {
+                questionSet.getSpeakerQuestions().get(j).setId(questionId++);
+            }
+        }
 
         return questionSets;
     }
