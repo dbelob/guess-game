@@ -56,7 +56,7 @@
       <!-- Speaker error details -->
       <tbody *ngIf="isSpeakerErrorDetailsListVisible()">
       <tr *ngFor="let speakerErrorDetails of result.speakerErrorDetailsList; let i = index">
-        <th scope="row" class="text-center">{{i + 1}}</th>
+        <td scope="row" class="text-center">{{i + 1}}</td>
         <td>
           <div *ngIf="isQuestionPicture" class="text-center">
             <img src="{{speakersImageDirectory}}/{{speakerErrorDetails.fileName}}"
@@ -89,7 +89,7 @@
       <!-- Talk error details -->
       <tbody *ngIf="isTalkErrorDetailsListVisible()">
       <tr *ngFor="let talkErrorDetails of result.talkErrorDetailsList; let i = index">
-        <th scope="row" class="text-center">{{i + 1}}</th>
+        <td scope="row" class="text-center">{{i + 1}}</td>
         <td>
           <div *ngIf="isQuestionPicture" class="text-center">
             <figure class="figure">
