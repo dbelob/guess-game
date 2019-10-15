@@ -4,6 +4,7 @@ import guess.domain.ErrorDetails;
 import guess.domain.GuessType;
 import guess.domain.Result;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -77,13 +78,13 @@ public class ResultDto {
                         SpeakerErrorDetailsDto.convertToDto(
                                 errorDetailsList,
                                 result.getGuessType()) :
-                        null;
+                        Collections.emptyList();
         List<TalkErrorDetailsDto> talkErrorDetailsList =
                 (GuessType.GUESS_TALK_TYPE.equals(result.getGuessType()) || GuessType.GUESS_SPEAKER_TYPE.equals(result.getGuessType())) ?
                         TalkErrorDetailsDto.convertToDto(
                                 errorDetailsList,
                                 result.getGuessType()) :
-                        null;
+                        Collections.emptyList();
 
         return new ResultDto(
                 result.getCorrectAnswers(),
