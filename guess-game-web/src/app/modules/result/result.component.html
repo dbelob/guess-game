@@ -53,33 +53,73 @@
         <th scope="col" class="text-center">Your answers</th>
       </tr>
       </thead>
-      <tbody>
-      <tr *ngFor="let errorDetails of result.errorDetailsList; let i = index">
+      <!-- Speaker error details -->
+      <tbody *ngIf="isSpeakerErrorDetailsListVisible()">
+      <tr *ngFor="let speakerErrorDetails of result.speakerErrorDetailsList; let i = index">
         <th scope="row" class="text-center">{{i + 1}}</th>
         <td>
           <div *ngIf="isQuestionPicture" class="text-center">
-            <img src="{{speakersImageDirectory}}/{{errorDetails.fileName}}"
+            <img src="{{speakersImageDirectory}}/{{speakerErrorDetails.fileName}}"
                  alt="" class="img-thumbnail img-guess-result">
           </div>
-          <span *ngIf="!isQuestionPicture">{{errorDetails.name}}</span>
+          <span *ngIf="!isQuestionPicture">{{speakerErrorDetails.name}}</span>
         </td>
         <td>
           <div *ngIf="!isQuestionPicture" class="text-center">
-            <img src="{{speakersImageDirectory}}/{{errorDetails.fileName}}"
+            <img src="{{speakersImageDirectory}}/{{speakerErrorDetails.fileName}}"
                  alt="" class="img-thumbnail img-guess-result">
           </div>
-          <span *ngIf="isQuestionPicture">{{errorDetails.name}}</span>
+          <span *ngIf="isQuestionPicture">{{speakerErrorDetails.name}}</span>
         </td>
         <td>
           <div *ngIf="!isQuestionPicture" class="text-center">
-            <p *ngFor="let wrongAnswer of errorDetails.wrongAnswers">
+            <p *ngFor="let wrongAnswer of speakerErrorDetails.wrongAnswers">
               <img src="{{speakersImageDirectory}}/{{wrongAnswer}}"
                    alt="" class="img-thumbnail img-guess-result">
             </p>
           </div>
           <div *ngIf="isQuestionPicture">
-            <p *ngFor="let wrongAnswer of errorDetails.wrongAnswers">
+            <p *ngFor="let wrongAnswer of speakerErrorDetails.wrongAnswers">
               {{wrongAnswer}}
+            </p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+      <!-- Talk error details -->
+      <tbody *ngIf="isTalkErrorDetailsListVisible()">
+      <tr *ngFor="let talkErrorDetails of result.talkErrorDetailsList; let i = index">
+        <th scope="row" class="text-center">{{i + 1}}</th>
+        <td>
+          <div *ngIf="isQuestionPicture" class="text-center">
+            <figure class="figure">
+              <img src="{{speakersImageDirectory}}/{{talkErrorDetails.speakerFileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
+              <figcaption class="figure-caption text-center">{{talkErrorDetails.speakerName}}</figcaption>
+            </figure>
+          </div>
+          <span *ngIf="!isQuestionPicture">{{talkErrorDetails.talkName}}</span>
+        </td>
+        <td>
+          <div *ngIf="!isQuestionPicture" class="text-center">
+            <figure class="figure">
+              <img src="{{speakersImageDirectory}}/{{talkErrorDetails.speakerFileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
+              <figcaption class="figure-caption text-center">{{talkErrorDetails.speakerName}}</figcaption>
+            </figure>
+          </div>
+          <span *ngIf="isQuestionPicture">{{talkErrorDetails.talkName}}</span>
+        </td>
+        <td>
+          <div *ngIf="!isQuestionPicture" class="text-center">
+            <p *ngFor="let wrongAnswer of talkErrorDetails.wrongAnswers">
+              <figure class="figure">
+                <img src="{{speakersImageDirectory}}/{{wrongAnswer.fileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
+                <figcaption class="figure-caption text-center">{{wrongAnswer.name}}</figcaption>
+              </figure>
+            </p>
+          </div>
+          <div *ngIf="isQuestionPicture">
+            <p *ngFor="let wrongAnswer of talkErrorDetails.wrongAnswers">
+              {{wrongAnswer.name}}
             </p>
           </div>
         </td>

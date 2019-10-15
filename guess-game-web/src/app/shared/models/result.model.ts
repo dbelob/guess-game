@@ -1,5 +1,6 @@
 import { GuessType } from "./guess-type.model";
-import { ErrorDetails } from "./error-details.model";
+import { SpeakerErrorDetails } from "./speaker-error-details.model";
+import { TalkErrorDetails } from "./talk-error-details.model";
 
 export class Result {
   constructor(
@@ -10,7 +11,8 @@ export class Result {
     public wrongPercents?: number,
     public skippedPercents?: number,
     public guessType?: GuessType,
-    public errorDetailsList?: ErrorDetails[]
+    public speakerErrorDetailsList?: SpeakerErrorDetails[],
+    public talkErrorDetailsList?: TalkErrorDetails[]
   ) {
   }
 }

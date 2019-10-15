@@ -17,11 +17,13 @@ public class ResultDto {
     private float wrongPercents;
     private float skippedPercents;
     private GuessType guessType;
-    private List<ErrorDetailsDto> errorDetailsList;
+    private List<SpeakerErrorDetailsDto> speakerErrorDetailsList;
+    private List<TalkErrorDetailsDto> talkErrorDetailsList;
 
-    public ResultDto(long correctAnswers, long wrongAnswers, long skippedAnswers,
-                     float correctPercents, float wrongPercents, float skippedPercents,
-                     GuessType guessType, List<ErrorDetailsDto> errorDetailsList) {
+    private ResultDto(long correctAnswers, long wrongAnswers, long skippedAnswers,
+                      float correctPercents, float wrongPercents, float skippedPercents,
+                      GuessType guessType, List<SpeakerErrorDetailsDto> errorDetailsList,
+                      List<TalkErrorDetailsDto> talkErrorDetailsList) {
         this.correctAnswers = correctAnswers;
         this.wrongAnswers = wrongAnswers;
         this.skippedAnswers = skippedAnswers;
@@ -29,7 +31,8 @@ public class ResultDto {
         this.wrongPercents = wrongPercents;
         this.skippedPercents = skippedPercents;
         this.guessType = guessType;
-        this.errorDetailsList = errorDetailsList;
+        this.speakerErrorDetailsList = errorDetailsList;
+        this.talkErrorDetailsList = talkErrorDetailsList;
     }
 
     public long getCorrectAnswers() {
@@ -60,11 +63,28 @@ public class ResultDto {
         return guessType;
     }
 
-    public List<ErrorDetailsDto> getErrorDetailsList() {
-        return errorDetailsList;
+    public List<SpeakerErrorDetailsDto> getSpeakerErrorDetailsList() {
+        return speakerErrorDetailsList;
+    }
+
+    public List<TalkErrorDetailsDto> getTalkErrorDetailsList() {
+        return talkErrorDetailsList;
     }
 
     public static ResultDto convertToDto(Result result, List<ErrorDetails> errorDetailsList) {
+        List<SpeakerErrorDetailsDto> speakerErrorDetailsList =
+                (GuessType.GUESS_NAME_TYPE.equals(result.getGuessType()) || GuessType.GUESS_PICTURE_TYPE.equals(result.getGuessType())) ?
+                        SpeakerErrorDetailsDto.convertToDto(
+                                errorDetailsList,
+                                result.getGuessType()) :
+                        null;
+        List<TalkErrorDetailsDto> talkErrorDetailsList =
+                (GuessType.GUESS_TALK_TYPE.equals(result.getGuessType()) || GuessType.GUESS_SPEAKER_TYPE.equals(result.getGuessType())) ?
+                        TalkErrorDetailsDto.convertToDto(
+                                errorDetailsList,
+                                result.getGuessType()) :
+                        null;
+
         return new ResultDto(
                 result.getCorrectAnswers(),
                 result.getWrongAnswers(),
@@ -73,8 +93,7 @@ public class ResultDto {
                 result.getWrongPercents(),
                 result.getSkippedPercents(),
                 result.getGuessType(),
-                ErrorDetailsDto.convertToDto(
-                        errorDetailsList,
-                        result.getGuessType()));
+                speakerErrorDetailsList,
+                talkErrorDetailsList);
     }
 }

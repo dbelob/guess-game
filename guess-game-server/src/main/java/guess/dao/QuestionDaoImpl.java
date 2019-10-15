@@ -78,7 +78,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(talkQuestions));
         } else {
-            questions = new ArrayList<>();
+            throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
         }
 
         return questions;
