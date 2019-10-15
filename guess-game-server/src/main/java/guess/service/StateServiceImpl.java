@@ -5,6 +5,7 @@ import guess.dao.QuestionDao;
 import guess.dao.StateDao;
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.*;
+import guess.domain.question.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +43,11 @@ public class StateServiceImpl implements StateService {
                         State.RESULT_STATE :
                         (GuessType.GUESS_NAME_TYPE.equals(startParameters.getGuessType()) ?
                                 State.GUESS_NAME_STATE :
-                                State.GUESS_PICTURE_STATE),
+                                (GuessType.GUESS_PICTURE_TYPE.equals(startParameters.getGuessType()) ?
+                                        State.GUESS_PICTURE_STATE :
+                                        (GuessType.GUESS_TALK_TYPE.equals(startParameters.getGuessType()) ?
+                                                State.GUESS_TALK_STATE :
+                                                State.GUESS_SPEAKER_STATE))),
                 httpSession);
     }
 
@@ -63,7 +68,7 @@ public class StateServiceImpl implements StateService {
 
     private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
         // Find unique questions by ids
-        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds());
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds(), startParameters.getGuessType());
 
         // Fill question and answers list
         List<QuestionAnswers> questionAnswersList = new ArrayList<>();
@@ -79,18 +84,24 @@ public class StateServiceImpl implements StateService {
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                List<Question> shuffledQuestionsWithoutCurrentQuestion = new ArrayList<>(shuffledQuestions);
-                shuffledQuestionsWithoutCurrentQuestion.remove(question);
-                Collections.shuffle(shuffledQuestionsWithoutCurrentQuestion);
+                List<Question> shuffledQuestionsWithoutCurrentAndSameQuestions = new ArrayList<>(shuffledQuestions);
 
-                // Select 3 first elements, add current, shuffle
-                List<Question> answers = shuffledQuestionsWithoutCurrentQuestion.subList(
+                // Remove current and same questions
+                shuffledQuestionsWithoutCurrentAndSameQuestions.remove(question);
+                shuffledQuestionsWithoutCurrentAndSameQuestions.removeIf(q -> q.isSame(question));
+
+                Collections.shuffle(shuffledQuestionsWithoutCurrentAndSameQuestions);
+
+                Question transformedQuestion = question.transform();
+
+                // Select (QUESTION_ANSWERS_LIST_SIZE - 1) first elements, add current, shuffle
+                List<Question> answers = shuffledQuestionsWithoutCurrentAndSameQuestions.subList(
                         0,
-                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, shuffledQuestionsWithoutCurrentQuestion.size()));
-                answers.add(question);
+                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, shuffledQuestionsWithoutCurrentAndSameQuestions.size()));
+                answers.add(transformedQuestion);
                 Collections.shuffle(answers);
 
-                questionAnswersList.add(new QuestionAnswers(question, answers));
+                questionAnswersList.add(new QuestionAnswers(transformedQuestion, answers));
             }
         }
 
@@ -101,9 +112,7 @@ public class StateServiceImpl implements StateService {
         if (startParameters.getQuestionSetIds().size() == 1) {
             QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetIds().get(0));
             name = questionSet.getName();
-            logoFileName = (questionSet.getLogoFileName() != null) ?
-                    String.format("%s/%s", questionSet.getDirectoryName(), questionSet.getLogoFileName()) :
-                    null;
+            logoFileName = questionSet.getLogoFileName();
         } else {
             name = String.format("%d selected sets", startParameters.getQuestionSetIds().size());
             logoFileName = null;

@@ -1,14 +1,28 @@
 package guess.domain;
 
+import guess.domain.question.SpeakerQuestion;
+import guess.domain.question.TalkQuestion;
+
 import java.util.Collections;
 import java.util.List;
 
 public class QuestionSet {
     private long id;
     private String name;
-    private String directoryName;
     private String logoFileName;
-    private List<Question> questions = Collections.emptyList();
+    private List<SpeakerQuestion> speakerQuestions = Collections.emptyList();
+    private List<TalkQuestion> talkQuestions = Collections.emptyList();
+
+    public QuestionSet() {
+    }
+
+    public QuestionSet(long id, String name, String logoFileName, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions) {
+        this.id = id;
+        this.name = name;
+        this.logoFileName = logoFileName;
+        this.speakerQuestions = speakerQuestions;
+        this.talkQuestions = talkQuestions;
+    }
 
     public long getId() {
         return id;
@@ -26,14 +40,6 @@ public class QuestionSet {
         this.name = name;
     }
 
-    public String getDirectoryName() {
-        return directoryName;
-    }
-
-    public void setDirectoryName(String directoryName) {
-        this.directoryName = directoryName;
-    }
-
     public String getLogoFileName() {
         return logoFileName;
     }
@@ -42,11 +48,19 @@ public class QuestionSet {
         this.logoFileName = logoFileName;
     }
 
-    public List<Question> getQuestions() {
-        return questions;
+    public List<SpeakerQuestion> getSpeakerQuestions() {
+        return speakerQuestions;
     }
 
-    public void setQuestions(List<Question> questions) {
-        this.questions = questions;
+    public void setSpeakerQuestions(List<SpeakerQuestion> speakerQuestions) {
+        this.speakerQuestions = speakerQuestions;
+    }
+
+    public List<TalkQuestion> getTalkQuestions() {
+        return talkQuestions;
+    }
+
+    public void setTalkQuestions(List<TalkQuestion> talkQuestions) {
+        this.talkQuestions = talkQuestions;
     }
 }

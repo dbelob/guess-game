@@ -4,6 +4,7 @@ import { QuestionSet } from "../../shared/models/question-set.model";
 import { QuestionService } from "../../shared/services/question.service";
 import { StateService } from "../../shared/services/state.service";
 import { StartParameters } from "../../shared/models/start-parameters.model";
+import { GuessType } from "../../shared/models/guess-type.model";
 
 @Component({
   selector: 'app-start',
@@ -14,7 +15,8 @@ export class StartComponent {
   public quantities: number[] = [];
   public selectedQuestionSets: QuestionSet[] = [];
   public selectedQuantity: number;
-  public selectedGuessType: string = 'guessName';
+  public selectedGuessType: GuessType = GuessType.GuessNameType;
+  public guessType = GuessType;
 
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
     questionService.getQuestionSets()
@@ -23,17 +25,21 @@ export class StartComponent {
 
         if (this.questionSets.length > 0) {
           this.selectedQuestionSets = [this.questionSets[0]];
-          this.loadQuantities(this.selectedQuestionSets);
+          this.loadQuantities(this.selectedQuestionSets, this.selectedGuessType);
         }
       });
   }
 
-  onChange(questionSets: QuestionSet[]) {
-    this.loadQuantities(questionSets);
+  onSetChange(questionSets: QuestionSet[]) {
+    this.loadQuantities(questionSets, this.selectedGuessType);
   }
 
-  loadQuantities(questionSets: QuestionSet[]) {
-    this.questionService.getQuantities(questionSets.map(s => s.id))
+  onTypeChange(guessType: string) {
+    this.loadQuantities(this.selectedQuestionSets, guessType);
+  }
+
+  loadQuantities(questionSets: QuestionSet[], guessType: string) {
+    this.questionService.getQuantities(questionSets.map(s => s.id), guessType)
       .subscribe(data => {
         this.quantities = data;
 

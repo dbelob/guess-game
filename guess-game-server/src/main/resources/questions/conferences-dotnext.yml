@@ -1,7 +1,7 @@
+id: 2
 name: "Conferences - DotNext"
-directoryName: speakers
-logoFileName: logo-dotnext.jpg
-questions:
+logoFileName: dotnext.jpg
+speakerQuestions:
   - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}
   - {fileName: 0498.jpg, name: "Vagif Abilov"}
   - {fileName: 0518.jpg, name: "Roman Ageev"}

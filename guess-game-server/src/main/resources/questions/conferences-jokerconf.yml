@@ -1,7 +1,7 @@
+id: 8
 name: "Conferences - Joker"
-directoryName: speakers
-logoFileName: logo-jokerconf.jpg
-questions:
+logoFileName: jokerconf.jpg
+speakerQuestions:
   - {fileName: 0154.jpg, name: "Sam Aaron"}
   - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}
   - {fileName: 0118.jpg, name: "Andrus Adamchik"}

@@ -1,6 +1,6 @@
+id: 10
 name: "Conferences - SPTDC"
-directoryName: speakers
-questions:
+speakerQuestions:
   - {fileName: 0397.jpg, name: "Ittai Abraham"}
   - {fileName: 0401.jpg, name: "Trevor Brown"}
   - {fileName: 0399.jpg, name: "Eli Gafni"}

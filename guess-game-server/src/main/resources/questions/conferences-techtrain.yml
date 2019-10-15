@@ -1,7 +1,7 @@
+id: 12
 name: "Conferences - TechTrain"
-directoryName: speakers
-logoFileName: logo-techtrain.jpg
-questions:
+logoFileName: techtrain.jpg
+speakerQuestions:
   - {fileName: 0258.jpg, name: "Sergey Abdulmanov"}
   - {fileName: 0288.jpg, name: "Alexey Akulovich"}
   - {fileName: 0936.jpg, name: "Denis Alexandrov"}

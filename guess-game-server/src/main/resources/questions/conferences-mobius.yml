@@ -1,7 +1,7 @@
+id: 9
 name: "Conferences - Mobius"
-directoryName: speakers
-logoFileName: logo-mobius.jpg
-questions:
+logoFileName: mobius.jpg
+speakerQuestions:
   - {fileName: 0790.jpg, name: "Vladislav Alekseev"}
   - {fileName: 0835.jpg, name: "Ivan Alyakskin"}
   - {fileName: 0820.jpg, name: "Evgeny Antropov"}

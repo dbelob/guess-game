@@ -1,7 +1,7 @@
+id: 7
 name: "Conferences - JPoint"
-directoryName: speakers
-logoFileName: logo-jpoint.jpg
-questions:
+logoFileName: jpoint.jpg
+speakerQuestions:
   - {fileName: 0217.jpg, name: "Alexey Abashev"}
   - {fileName: 0200.jpg, name: "Ilya Agoshkov"}
   - {fileName: 0095.jpg, name: "Tobi Ajila"}
@@ -102,7 +102,7 @@ questions:
   - {fileName: 0086.jpg, name: "Vladimir Plizga"}
   - {fileName: 0187.jpg, name: "Alexander Podhalyuzin"}
   - {fileName: 0145.jpg, name: "Viktor Polischuk"}
-  - {fileName: 0019.jpg, name: "Ivan Ponomarev (КУРС)"}
+  - {fileName: 0019.jpg, name: "Ivan Ponomarev (KURS)"}
   - {fileName: 0021.jpg, name: "Alexey Ragozin"}
   - {fileName: 0073.jpg, name: "Victor Rentea"}
   - {fileName: 0069.jpg, name: "Simon Ritter"}

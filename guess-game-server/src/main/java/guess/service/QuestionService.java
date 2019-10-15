@@ -1,6 +1,7 @@
 package guess.service;
 
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.domain.GuessType;
 import guess.domain.QuestionSet;
 
 import java.util.List;
@@ -11,5 +12,5 @@ import java.util.List;
 public interface QuestionService {
     List<QuestionSet> getQuestionSets();
 
-    List<Integer> getQuantities(List<Long> questionSetIds) throws QuestionSetNotExistsException;
+    List<Integer> getQuantities(List<Long> questionSetIds, GuessType guessType) throws QuestionSetNotExistsException;
 }

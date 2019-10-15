@@ -7,7 +7,6 @@
      <void property="text">
       <string>id: long
 name: String
-directoryName: String
 logoFileName: String
 questions: List&lt;Question&gt;</string>
      </void>
@@ -81,7 +80,6 @@ name: String</string>
      <void property="text">
       <string>id: long
 name: String
-directoryName: String
 logoFileName: String</string>
      </void>
     </void>
@@ -136,19 +134,19 @@ talks: List&lt;Talk&gt;</string>
      <string>x</string>
      <void method="set">
       <object idref="Point2D$Double3"/>
-      <double>793.0</double>
+      <double>792.0</double>
      </void>
     </void>
     <void class="java.awt.geom.Point2D$Double" method="getField">
      <string>y</string>
      <void method="set">
       <object idref="Point2D$Double3"/>
-      <double>27.0</double>
+      <double>16.0</double>
      </void>
     </void>
     <void method="setLocation">
-     <double>793.0</double>
-     <double>27.0</double>
+     <double>792.0</double>
+     <double>16.0</double>
     </void>
    </object>
   </void>

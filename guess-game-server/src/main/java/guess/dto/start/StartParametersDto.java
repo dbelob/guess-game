@@ -1,4 +1,4 @@
-package guess.dto;
+package guess.dto.start;
 
 import guess.domain.GuessType;
 import guess.domain.StartParameters;
@@ -9,8 +9,6 @@ import java.util.List;
  * Start parameters DTO
  */
 public class StartParametersDto {
-    private static final String GUESS_NAME = "guessName";
-
     private List<Long> questionSetIds;
     private int quantity;
     private String guessType;
@@ -52,6 +50,6 @@ public class StartParametersDto {
         return new StartParameters(
                 dto.getQuestionSetIds(),
                 dto.getQuantity(),
-                GUESS_NAME.equals(dto.getGuessType()) ? GuessType.GUESS_NAME_TYPE : GuessType.GUESS_PICTURE_TYPE);
+                GuessType.valueOf(dto.getGuessType()));
     }
 }

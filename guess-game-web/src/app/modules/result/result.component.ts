@@ -12,7 +12,7 @@ import { GuessType } from "../../shared/models/guess-type.model";
   templateUrl: './result.component.html'
 })
 export class ResultComponent {
-  private imageDirectory: string = 'assets/images';
+  private speakersImageDirectory: string = 'assets/images/speakers';
   public result = new Result();
   private isQuestionPicture = true;
 
@@ -20,7 +20,7 @@ export class ResultComponent {
     answerService.getResult()
       .subscribe(data => {
         this.result = data;
-        this.isQuestionPicture = GuessType.GuessNameType === this.result.guessType;
+        this.isQuestionPicture = (GuessType.GuessNameType === this.result.guessType) || (GuessType.GuessTalkType === this.result.guessType);
       })
   }
 
@@ -36,7 +36,15 @@ export class ResultComponent {
     return this.result.skippedAnswers > 0;
   }
 
+  isSpeakerErrorDetailsListVisible() {
+    return this.result.speakerErrorDetailsList && (this.result.speakerErrorDetailsList.length > 0);
+  }
+
+  isTalkErrorDetailsListVisible() {
+    return this.result.talkErrorDetailsList && (this.result.talkErrorDetailsList.length > 0);
+  }
+
   isErrorDetailsListVisible() {
-    return this.result.errorDetailsList && (this.result.errorDetailsList.length > 0);
+    return this.isSpeakerErrorDetailsListVisible() || this.isTalkErrorDetailsListVisible();
   }
 }

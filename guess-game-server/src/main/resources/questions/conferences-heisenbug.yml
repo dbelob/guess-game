@@ -1,7 +1,7 @@
+id: 3
 name: "Conferences - Heisenbug"
-directoryName: speakers
-logoFileName: logo-heisenbug.jpg
-questions:
+logoFileName: heisenbug.jpg
+speakerQuestions:
   - {fileName: 0598.jpg, name: "Nikolay Abalov"}
   - {fileName: 0545.jpg, name: "Liliya Abdulina"}
   - {fileName: 0638.jpg, name: "Ilari Henrik Aegerter"}
@@ -95,7 +95,7 @@ questions:
   - {fileName: 0612.jpg, name: "Alexey Pletnev"}
   - {fileName: 0619.jpg, name: "Roman Poborchy"}
   - {fileName: 0629.jpg, name: "Mihail Podtserkovsky"}
-  - {fileName: 0019.jpg, name: "Ivan Ponomarev (КУРС)"}
+  - {fileName: 0019.jpg, name: "Ivan Ponomarev (KURS)"}
   - {fileName: 0575.jpg, name: "Vadim Pushtaev"}
   - {fileName: 0576.jpg, name: "Amber Race"}
   - {fileName: 0021.jpg, name: "Alexey Ragozin"}

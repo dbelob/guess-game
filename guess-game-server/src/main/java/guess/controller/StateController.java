@@ -4,9 +4,8 @@ import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.QuestionAnswers;
 import guess.domain.QuestionAnswersSet;
 import guess.domain.State;
-import guess.dto.NamePicturesDto;
-import guess.dto.PictureNamesDto;
-import guess.dto.StartParametersDto;
+import guess.dto.guess.*;
+import guess.dto.start.StartParametersDto;
 import guess.service.AnswerService;
 import guess.service.StateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,9 +49,7 @@ public class StateController {
         stateService.setState(State.valueOf(state), httpSession);
     }
 
-    @GetMapping("/picture-names")
-    @ResponseBody
-    public PictureNamesDto getPictureNames(HttpSession httpSession) {
+    private <T> T getDto(HttpSession httpSession, DtoFunction<T> dtoFunction) {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
         List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
@@ -60,7 +57,7 @@ public class StateController {
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
 
-            return PictureNamesDto.convertToDto(
+            return dtoFunction.apply(
                     questionAnswersSet.getName(),
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
@@ -72,25 +69,27 @@ public class StateController {
         }
     }
 
+    @GetMapping("/picture-names")
+    @ResponseBody
+    public PictureNamesDto getPictureNames(HttpSession httpSession) {
+        return getDto(httpSession, PictureNamesDto::convertToDto);
+    }
+
     @GetMapping("/name-pictures")
     @ResponseBody
     public NamePicturesDto getNamePictures(HttpSession httpSession) {
-        int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
-        QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
-        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
+        return getDto(httpSession, NamePicturesDto::convertToDto);
+    }
 
-        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
-            QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
+    @GetMapping("/speaker-talks")
+    @ResponseBody
+    public SpeakerTalksDto getSpeakerTalks(HttpSession httpSession) {
+        return getDto(httpSession, SpeakerTalksDto::convertToDto);
+    }
 
-            return NamePicturesDto.convertToDto(
-                    questionAnswersSet.getName(),
-                    currentQuestionIndex,
-                    questionAnswersSet.getQuestionAnswersList().size(),
-                    questionAnswersSet.getLogoFileName(),
-                    questionAnswers,
-                    wrongAnswerIds);
-        } else {
-            return null;
-        }
+    @GetMapping("/talk-speakers")
+    @ResponseBody
+    public TalkSpeakersDto getTalkSpeakers(HttpSession httpSession) {
+        return getDto(httpSession, TalkSpeakersDto::convertToDto);
     }
 }

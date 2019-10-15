@@ -1,0 +1,357 @@
+talks:
+  # Joker 2019
+  - id: 0
+    name:
+      - {language: en, text: "Reactive Spring revisited"}
+    speakerIds: [63, 93]
+  - id: 1
+    name:
+      - {language: en, text: "How does multithreading in Hazelcast work"}
+      - {language: ru, text: "Как устроена многопоточность в Hazelcast"}
+    speakerIds: [136]
+  - id: 2
+    name:
+      - {language: en, text: "Maximizing performance with GraalVM"}
+    speakerIds: [75]
+  - id: 3
+    name:
+      - {language: en, text: "Not dead yet — Java on desktop"}
+    speakerIds: [54]
+  - id: 4
+    name:
+      - {language: en, text: "Keeping up with Java: Look at all these new features!"}
+    speakerIds: [69]
+  - id: 5
+    name:
+      - {language: en, text: "Tuning performance of your reactive app"}
+      - {language: ru, text: "Улучшаем производительность реактивного сервиса"}
+    speakerIds: [33]
+  - id: 6
+    name:
+      - {language: en, text: "Java scaled to zero"}
+    speakerIds: [957]
+  - id: 7
+    name:
+      - {language: en, text: "The Sea of Nodes and the HotSpot JIT"}
+    speakerIds: [233]
+  - id: 8
+    name:
+      - {language: en, text: "Bootiful testing"}
+    speakerIds: [63]
+  - id: 9
+    name:
+      - {language: en, text: "Striving towards more productive development workflows"}
+    speakerIds: [74]
+  - id: 10
+    name:
+      - {language: en, text: "IntelliJ IDEA Plugin DevKit Crash Course"}
+      - {language: ru, text: "Краш-курс по IntelliJ IDEA Plugin DevKit"}
+    speakerIds: [78]
+  - id: 11
+    name:
+      - {language: en, text: "GraalVM and MicroProfile: A polyglot microservices solution"}
+    speakerIds: [965]
+  - id: 12
+    name:
+      - {language: en, text: "Testing concurrent algorithms with Lincheck"}
+      - {language: ru, text: "Тестирование многопоточных алгоритмов с помощью Lincheck"}
+    speakerIds: [58]
+  - id: 13
+    name:
+      - {language: en, text: "Spring Security for N00bz: A quick introduction for the terminally insecure"}
+    speakerIds: [954]
+  - id: 14
+    name:
+      - {language: en, text: "Migrating beyond Java 8"}
+    speakerIds: [956]
+  - id: 15
+    name:
+      - {language: en, text: "TeaVM: Difficulties of compilation from Java to JavaScript"}
+      - {language: ru, text: "TeaVM: Трудности перевода из Java в JavaScript"}
+    speakerIds: [960]
+  - id: 16
+    name:
+      - {language: en, text: "Spring Framework 5.2: Core container revisited"}
+    speakerIds: [93]
+  - id: 17
+    name:
+      - {language: en, text: "Feature evolution in Java 13 and beyond"}
+    speakerIds: [113]
+  - id: 18
+    name:
+      - {language: en, text: "Cassandra — stories from the life of performance engineer"}
+      - {language: ru, text: "Cassandra — истории из жизни performance-инженера"}
+    speakerIds: [964]
+  - id: 19
+    name:
+      - {language: en, text: "A race of two compilers: GraalVM JIT versus HotSpot JIT C2. Which one offers better runtime performance?"}
+    speakerIds: [126]
+  - id: 20
+    name:
+      - {language: en, text: "DevOps for developers (or maybe against them?!)"}
+      - {language: ru, text: "DevOps для разработчиков (или против них?!)"}
+    speakerIds: [35]
+  - id: 21
+    name:
+      - {language: en, text: "Reactive, or not reactive: That is the question"}
+      - {language: ru, text: "Reactive или не reactive: Вот в чем вопрос"}
+    speakerIds: [1, 28]
+  - id: 22
+    name:
+      - {language: en, text: "Microservices: Single digit microseconds latency — friends and foes"}
+      - {language: ru, text: "Микросервисы, отвечающие за несколько микросекунд — друзья и враги"}
+    speakerIds: [962]
+  - id: 23
+    name:
+      - {language: en, text: "Practical change data streaming use cases with Apache Kafka and Debezium"}
+    speakerIds: [959]
+  - id: 24
+    name:
+      - {language: en, text: "The sinuous path toward Valhalla"}
+    speakerIds: [963]
+  - id: 25
+    name:
+      - {language: en, text: "Java 9-14: Small Optimizations"}
+      - {language: ru, text: "Java 9-14: Маленькие оптимизации"}
+    speakerIds: [49]
+  - id: 26
+    name:
+      - {language: en, text: "Application streaming is not only a code, but 3-4 years of support in production"}
+      - {language: ru, text: "Потоковое приложение — это не только код, но и 3-4 года поддержки в проде"}
+    speakerIds: [22]
+  - id: 27
+    name:
+      - {language: en, text: "Armeria: A microservice framework well-suited everywhere"}
+    speakerIds: [967]
+  - id: 28
+    name:
+      - {language: en, text: "TornadoVM: A virtual machine for exploiting high performance heterogeneous hardware of Java programs"}
+    speakerIds: [958]
+  - id: 29
+    name:
+      - {language: en, text: "Efficient and reliable microservices"}
+      - {language: ru, text: "Эффективные надежные микросервисы"}
+    speakerIds: [124]
+  - id: 30
+    name:
+      - {language: en, text: "Condy? NestMates? Constable? Understanding JDK 11 & 12's JVM features"}
+    speakerIds: [955]
+  - id: 31
+    name:
+      - {language: en, text: "Testcontainers: Year later"}
+      - {language: ru, text: "Testcontainers: Год спустя"}
+    speakerIds: [622]
+  - id: 32
+    name:
+      - {language: en, text: "ScalaTest: You're asserting it wrong"}
+    speakerIds: [966]
+  - id: 33
+    name:
+      - {language: en, text: "Does Java need \"inline\" types? What project Valhalla can bring to Java from a narrow view of performance engineer"}
+      - {language: ru, text: "Нужны ли в Java «инлайн»-типы? Узкий взгляд инженера по производительности на проект Valhalla"}
+    speakerIds: [13]
+  - id: 34
+    name:
+      - {language: en, text: "Concurrent Garbage collectors: ZGC & Shenandoah"}
+    speakerIds: [961]
+  - id: 35
+    name:
+      - {language: en, text: "Java 11 support in Jenkins. Our war story"}
+      - {language: ru, text: "War Story: Как мы внедряли поддержку Java 11 в Jenkins"}
+    speakerIds: [38]
+  - id: 36
+    name:
+      - {language: en, text: "Glimpse into Alibaba Dragonwell: Towards a Java runtime for cloud computing"}
+    speakerIds: [105]
+  - id: 37
+    name:
+      - {language: en, text: "Decrypting tech hype for the busy coder"}
+    speakerIds: [253]
+  - id: 100
+    name:
+      - {language: en, text: "The world needs full-stack craftsmen"}
+    speakerIds: [68]
+  - id: 101
+    name:
+      - {language: en, text: "Software testing pitfalls"}
+      - {language: ru, text: "Просчеты тестирования"}
+    speakerIds: [3]
+  - id: 102
+    name:
+      - {language: en, text: "JDK 12: Pitfalls for the unwary"}
+    speakerIds: [69]
+  - id: 103
+    name:
+      - {language: en, text: "Create your own interpreter with a JIT in 1 hour"}
+    speakerIds: [70]
+  - id: 104
+    name:
+      - {language: en, text: "RSocket — future reactive application protocol"}
+      - {language: ru, text: "Протокол RSocket — будущее реактивных приложений"}
+    speakerIds: [33]
+  - id: 105
+    name:
+      - {language: en, text: "Reactive programming: lessons learned"}
+    speakerIds: [71]
+  - id: 106
+    name:
+      - {language: en, text: "Pushing a big project forward: the Jenkins story"}
+    speakerIds: [72]
+  - id: 107
+    name:
+      - {language: en, text: "The Proxy fairy and the magic of Spring"}
+    speakerIds: [73]
+  - id: 108
+    name:
+      - {language: en, text: "Don't put all your eggs in one container"}
+      - {language: ru, text: "Не клади все яйца в один контейнер"}
+    speakerIds: [5]
+  - id: 109
+    name:
+      - {language: en, text: "Bulletproof Java Enterprise applications for the hard production life"}
+    speakerIds: [74]
+  - id: 110
+    name:
+      - {language: en, text: "A tale of how we did channel algorithm in Kotlin Coroutines"}
+      - {language: ru, text: "Сказ о том, как мы алгоритм каналов в Kotlin Coroutines делали"}
+    speakerIds: [58]
+  - id: 111
+    name:
+      - {language: en, text: "Maximizing performance with GraalVM (talk + workshop)"}
+    speakerIds: [75]
+  - id: 112
+    name:
+      - {language: en, text: "Performance aspects of Axon-based CQRS/ES systems"}
+    speakerIds: [76]
+  - id: 113
+    name:
+      - {language: en, text: "Spring comes ahead of time, or Unbearable lightness of AOT compilation of the Spring Boot applications"}
+      - {language: ru, text: "Нас Spring Boot, а мы крепчаем: невыносимая легкость AOT-компиляции Spring-приложений"}
+    speakerIds: [14]
+  - id: 114
+    name:
+      - {language: en, text: "Lost in transaction? Strategies to manage consistency in distributed systems"}
+    speakerIds: [77]
+  - id: 115
+    name:
+      - {language: en, text: "Don't be Homer Simpson to your Reactor!"}
+      - {language: ru, text: "Не будь Гомером Симпсоном для своего Reactor-а!"}
+    speakerIds: [622]
+  - id: 116
+    name:
+      - {language: en, text: "Anatomy and physiology of Vaadin Flow"}
+      - {language: ru, text: "Анатомия и физиология Vaadin Flow"}
+    speakerIds: [78]
+  - id: 117
+    name:
+      - {language: en, text: "Improve Java build performance with Gradle 5"}
+    speakerIds: [79]
+  - id: 118
+    name:
+      - {language: en, text: "Java microservices: from Netflix OSS to Kubernetes"}
+    speakerIds: [80]
+  - id: 119
+    name:
+      - {language: en, text: "Java 11 reactive HTTP Client"}
+    speakerIds: [81]
+  - id: 120
+    name:
+      - {language: en, text: "Playing God: Has science crossed a line?"}
+      - {language: ru, text: "Игра в Бога. Перешла ли наука границу"}
+    speakerIds: [82]
+  - id: 121
+    name:
+      - {language: en, text: "JVM TI: how to create a \"plugin\" for a virtual machine"}
+      - {language: ru, text: "JVM TI: как сделать «плагин» для виртуальной машины"}
+    speakerIds: [18]
+  - id: 122
+    name:
+      - {language: en, text: "Local variable type inference: Friend or foe?"}
+    speakerIds: [69]
+  - id: 123
+    name:
+      - {language: en, text: "Cloud native, service-meshed Java Enterprise with Istio"}
+    speakerIds: [74]
+  - id: 124
+    name:
+      - {language: en, text: "Kotlin: how do usual constructions work"}
+      - {language: ru, text: "Kotlin: как работают привычные конструкции"}
+    speakerIds: [8]
+  - id: 125
+    name:
+      - {language: en, text: "Metacompilation, partial evaluation, the Futamura projections, and how GraalVM will save the world"}
+      - {language: ru, text: "Суперкомпиляция, partial evaluation, проекции Футамуры и как GraalVM спасет мир"}
+    speakerIds: [23]
+  - id: 126
+    name:
+      - {language: en, text: "Decomposing Java applications"}
+    speakerIds: [83]
+  - id: 127
+    name:
+      - {language: en, text: "Kotlin/Native: why make a native language in 2019? What is beyond JVM?"}
+      - {language: ru, text: "Kotlin/Native: зачем нужен еще один компилируемый язык в XXI веке?"}
+    speakerIds: [84]
+  - id: 128
+    name:
+      - {language: en, text: "Kafka Streams API: Moving beyond Hello World"}
+      - {language: ru, text: "Kafka Streams API: шаг за рамки Hello World"}
+    speakerIds: [19]
+  - id: 129
+    name:
+      - {language: en, text: "Atomic refactoring in IntelliJ IDEA: Bending IDE to our will"}
+      - {language: ru, text: "Атомарный рефакторинг в IntelliJ IDEA: прогибаем IDE под себя"}
+    speakerIds: [49]
+  - id: 130
+    name:
+      - {language: en, text: "When it all went to Kafka"}
+      - {language: ru, text: "Когда всё пошло по Кафке"}
+    speakerIds: [220]
+  - id: 131
+    name:
+      - {language: en, text: "Fast & functional"}
+    speakerIds: [85]
+  - id: 132
+    name:
+      - {language: en, text: "Let's make some 0xCAFEBABE — test-driven bytecode engineering"}
+    speakerIds: [61, 47]
+  - id: 133
+    name:
+      - {language: en, text: "Moving Spring Boot microservices from Java 8 to Java 11: what can possibly go wrong?"}
+      - {language: ru, text: "Перевод Spring Boot-микросервисов с Java 8 на 11: что может пойти не так?"}
+    speakerIds: [86]
+  - id: 134
+    name:
+      - {language: en, text: "Do it yourself: Collections"}
+    speakerIds: [87]
+  - id: 135
+    name:
+      - {language: en, text: "Java is slow: CodeCache edition"}
+      - {language: ru, text: "Java тормозит: CodeCache edition"}
+    speakerIds: [25]
+  - id: 136
+    name:
+      - {language: en, text: "The definite guide to Java agents"}
+    speakerIds: [88]
+  - id: 137
+    name:
+      - {language: en, text: "How to unravel the tangle: Analyzing and debugging apps in IntelliJ IDEA"}
+      - {language: ru, text: "Как распутать клубок ниток: анализ и отладка приложений в IntelliJ IDEA"}
+    speakerIds: [0]
+  - id: 138
+    name:
+      - {language: en, text: "Efficient file-based IO for Java developers"}
+      - {language: ru, text: "Эффективная работа с файлами для Java-разработчиков"}
+    speakerIds: [89]
+  - id: 139
+    name:
+      - {language: en, text: "Seamless web services development with Mu"}
+      - {language: ru, text: "Гибкий веб-сервис API с Mu"}
+    speakerIds: [90]
+  - id: 140
+    name:
+      - {language: en, text: "What do I do with 1000s cores. Lessons learnt building an agent-based modelling system"}
+    speakerIds: [91]
+  - id: 141
+    name:
+      - {language: en, text: "Making sense out of serverless computing"}
+    speakerIds: [92]

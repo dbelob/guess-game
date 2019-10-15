@@ -1,5 +1,7 @@
 package guess.domain;
 
+import guess.domain.question.Question;
+
 import java.util.List;
 
 /**

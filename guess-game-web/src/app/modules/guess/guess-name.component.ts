@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 import { PictureNames } from "../../shared/models/picture-names.model";
-import { State } from "../../shared/models/state.model";
 import { StateService } from "../../shared/services/state.service";
 import { AnswerService } from "../../shared/services/answer.service";
+import { State } from "../../shared/models/state.model";
 
 @Component({
   selector: 'app-guess-name',
@@ -11,6 +11,8 @@ import { AnswerService } from "../../shared/services/answer.service";
 })
 export class GuessNameComponent {
   private imageDirectory: string = 'assets/images';
+  private eventsImageDirectory: string = `${this.imageDirectory}/events`;
+  private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
   public pictureNames: PictureNames = new PictureNames();
   public title: string;
   public logoImageSource: string;
@@ -26,10 +28,10 @@ export class GuessNameComponent {
           if (data) {
             this.pictureNames = data;
             this.title = `${this.pictureNames.questionSetName} (${this.pictureNames.currentIndex + 1}/${this.pictureNames.totalNumber})`;
-            this.imageSource = `${this.imageDirectory}/${this.pictureNames.fileName}`;
+            this.imageSource = `${this.speakersImageDirectory}/${this.pictureNames.fileName}`;
 
             if (this.pictureNames.logoFileName) {
-              this.logoImageSource = `${this.imageDirectory}/${this.pictureNames.logoFileName}`;
+              this.logoImageSource = `${this.eventsImageDirectory}/${this.pictureNames.logoFileName}`;
             }
           } else {
             this.result();

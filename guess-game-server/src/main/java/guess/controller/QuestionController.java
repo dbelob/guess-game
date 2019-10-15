@@ -1,8 +1,9 @@
 package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.domain.GuessType;
 import guess.domain.QuestionSet;
-import guess.dto.QuestionSetDto;
+import guess.dto.start.QuestionSetDto;
 import guess.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,7 +37,7 @@ public class QuestionController {
 
     @GetMapping("/quantities")
     @ResponseBody
-    public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds) throws QuestionSetNotExistsException {
-        return questionService.getQuantities(questionSetIds);
+    public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds, @RequestParam String guessType) throws QuestionSetNotExistsException {
+        return questionService.getQuantities(questionSetIds, GuessType.valueOf(guessType));
     }
 }

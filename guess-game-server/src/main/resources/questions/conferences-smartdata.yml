@@ -1,7 +1,7 @@
+id: 11
 name: "Conferences - SmartData"
-directoryName: speakers
-logoFileName: logo-smartdata.jpg
-questions:
+logoFileName: smartdata.jpg
+speakerQuestions:
   - {fileName: 0323.jpg, name: "Andrey Boyarov"}
   - {fileName: 0301.jpg, name: "Dmitry Bugaychenko"}
   - {fileName: 0326.jpg, name: "Anna Veronica Dorogush"}

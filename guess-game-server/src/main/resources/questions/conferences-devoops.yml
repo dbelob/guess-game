@@ -1,7 +1,7 @@
+id: 1
 name: "Conferences - DevOops"
-directoryName: speakers
-logoFileName: logo-devoops.jpg
-questions:
+logoFileName: devoops.jpg
+speakerQuestions:
   - {fileName: 0124.jpg, name: "Oleg Anastasiev"}
   - {fileName: 0368.jpg, name: "Anton Babenko"}
   - {fileName: 0383.jpg, name: "Sergey Berdnikov"}
@@ -18,7 +18,7 @@ questions:
   - {fileName: 0382.jpg, name: "Artem Kalichkin"}
   - {fileName: 0369.jpg, name: "Alexey Kirpichnikov"}
   - {fileName: 0370.jpg, name: "Oksana Nekrasova"}
-  - {fileName: 0019.jpg, name: "Ivan Ponomarev (КУРС)"}
+  - {fileName: 0019.jpg, name: "Ivan Ponomarev (KURS)"}
   - {fileName: 0361.jpg, name: "Alena Prohorchik"}
   - {fileName: 0374.jpg, name: "Corey Quinn"}
   - {fileName: 0359.jpg, name: "Liz Rice"}

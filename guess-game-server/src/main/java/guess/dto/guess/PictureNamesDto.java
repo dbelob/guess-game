@@ -1,6 +1,7 @@
-package guess.dto;
+package guess.dto.guess;
 
 import guess.domain.QuestionAnswers;
+import guess.domain.question.SpeakerQuestion;
 
 import java.util.List;
 
@@ -15,10 +16,10 @@ public class PictureNamesDto extends QuestionAnswersDto {
     private String name2;
     private String name3;
 
-    public PictureNamesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName, String fileName,
+    public PictureNamesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                            long id0, long id1, long id2, long id3,
-                           String name0, String name1, String name2, String name3,
-                           boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3) {
+                           boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3,
+                           String fileName, String name0, String name1, String name2, String name3) {
         super(questionSetName, currentIndex, totalNumber, logoFileName, id0, id1, id2, id3, invalid0, invalid1, invalid2, invalid3);
 
         this.fileName = fileName;
@@ -48,17 +49,19 @@ public class PictureNamesDto extends QuestionAnswersDto {
         return name3;
     }
 
-    public static PictureNamesDto convertToDto(String questionSetName, int currentNumber, int totalNumber, String logoFileName,
+    public static PictureNamesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                                                QuestionAnswers questionAnswers, List<Long> wrongAnswerIds) {
-        return new PictureNamesDto(questionSetName, currentNumber, totalNumber, logoFileName,
-                questionAnswers.getQuestion().getFileName(),
+        return new PictureNamesDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
                 questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
-                questionAnswers.getAnswers().get(0).getName(), questionAnswers.getAnswers().get(1).getName(),
-                questionAnswers.getAnswers().get(2).getName(), questionAnswers.getAnswers().get(3).getName(),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(0).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()));
+                wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
+                ((SpeakerQuestion) questionAnswers.getQuestion()).getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getName());
     }
 }

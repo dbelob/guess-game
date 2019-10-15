@@ -3,94 +3,78 @@ eventTypes:
     name:
       - {language: en, text: "Conferences — C++ Russia"}
       - {language: ru, text: "Конференции — C++ Russia"}
-    directoryName: speakers
-    logoFileName: logo-cpprussia.jpg
+    logoFileName: cpprussia.jpg
   - id: 1
     name:
       - {language: en, text: "Conferences — DevOops"}
       - {language: ru, text: "Конференции — DevOops"}
-    directoryName: speakers
-    logoFileName: logo-devoops.jpg
+    logoFileName: devoops.jpg
   - id: 2
     name:
       - {language: en, text: "Conferences — DotNext"}
       - {language: ru, text: "Конференции — DotNext"}
-    directoryName: speakers
-    logoFileName: logo-dotnext.jpg
+    logoFileName: dotnext.jpg
   - id: 3
     name:
       - {language: en, text: "Conferences — Heisenbug"}
       - {language: ru, text: "Конференции — Heisenbug"}
-    directoryName: speakers
-    logoFileName: logo-heisenbug.jpg
+    logoFileName: heisenbug.jpg
   - id: 4
     name:
       - {language: en, text: "Conferences — HolyJS"}
       - {language: ru, text: "Конференции — HolyJS"}
-    directoryName: speakers
-    logoFileName: logo-holyjs.jpg
+    logoFileName: holyjs.jpg
   - id: 5
     name:
       - {language: en, text: "Conferences — Hydra"}
       - {language: ru, text: "Конференции — Hydra"}
-    directoryName: speakers
-    logoFileName: logo-hydra.jpg
+    logoFileName: hydra.jpg
   - id: 6
     name:
       - {language: en, text: "Conferences — JBreak"}
       - {language: ru, text: "Конференции — JBreak"}
-    directoryName: speakers
-    logoFileName: logo-jbreak.jpg
+    logoFileName: jbreak.jpg
   - id: 7
-    name:
-      - {language: en, text: "Conferences — Joker"}
-      - {language: ru, text: "Конференции — Joker"}
-    directoryName: speakers
-    logoFileName: logo-jokerconf.jpg
-  - id: 8
     name:
       - {language: en, text: "Conferences — JPoint"}
       - {language: ru, text: "Конференции — JPoint"}
-    directoryName: speakers
-    logoFileName: logo-jpoint.jpg
+    logoFileName: jpoint.jpg
+  - id: 8
+    name:
+      - {language: en, text: "Conferences — Joker"}
+      - {language: ru, text: "Конференции — Joker"}
+    logoFileName: jokerconf.jpg
   - id: 9
     name:
       - {language: en, text: "Conferences — Mobius"}
       - {language: ru, text: "Конференции — Mobius"}
-    directoryName: speakers
-    logoFileName: logo-mobius.jpg
+    logoFileName: mobius.jpg
   - id: 10
-    name:
-      - {language: en, text: "Conferences — SmartData"}
-      - {language: ru, text: "Конференции — SmartData"}
-    directoryName: speakers
-    logoFileName: logo-smartdata.jpg
-  - id: 11
     name:
       - {language: en, text: "Conferences — SPTDC"}
       - {language: ru, text: "Конференции — SPTDC"}
-    directoryName: speakers
+  - id: 11
+    name:
+      - {language: en, text: "Conferences — SmartData"}
+      - {language: ru, text: "Конференции — SmartData"}
+    logoFileName: smartdata.jpg
   - id: 12
     name:
       - {language: en, text: "Conferences — TechTrain"}
       - {language: ru, text: "Конференции — TechTrain"}
-    directoryName: speakers
-    logoFileName: logo-techtrain.jpg
+    logoFileName: techtrain.jpg
   - id: 13
     name:
       - {language: en, text: "Meetups — JUG.MSK"}
       - {language: ru, text: "Встречи — JUG.MSK"}
-    directoryName: speakers
-    logoFileName: logo-jugmsk.jpg
+    logoFileName: jugmsk.jpg
   - id: 14
-    name:
-      - {language: en, text: "Meetups — JUGNsk"}
-      - {language: ru, text: "Встречи — JUGNsk"}
-    directoryName: speakers
-    logoFileName: logo-jugnsk.jpg
-  - id: 15
     name:
       - {language: en, text: "Meetups — JUG.ru"}
       - {language: ru, text: "Встречи — JUG.ru"}
-    directoryName: speakers
-    logoFileName: logo-jugru.jpg
+    logoFileName: jugru.jpg
+  - id: 15
+    name:
+      - {language: en, text: "Meetups — JUGNsk"}
+      - {language: ru, text: "Встречи — JUGNsk"}
+    logoFileName: jugnsk.jpg
