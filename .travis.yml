@@ -16,3 +16,10 @@ cache:
 
 script:
   - mvn clean package 
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: bash deploy.sh
+  on:
+    branch: master
