@@ -9,6 +9,7 @@ events:
     place:
       - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
       - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
+    talkIds: []
   # DevOops
   - eventTypeId: 1
     name:
@@ -22,6 +23,7 @@ events:
     place:
       - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
       - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
+    talkIds: []
   # DotNext
   - eventTypeId: 2
     name:
@@ -35,6 +37,7 @@ events:
     place:
       - {language: en, text: "WTC Congress Center"}
       - {language: ru, text: "Конгресс-центр ЦМТ"}
+    talkIds: []
   # Heisenbug
   - eventTypeId: 3
     name:
@@ -48,6 +51,7 @@ events:
     place:
       - {language: en, text: "Renaissance Moscow Monarch Centre"}
       - {language: ru, text: "Ренессанс Москва Монарх Центр"}
+    talkIds: []
   # HolyJS
   - eventTypeId: 4
     name:
@@ -61,6 +65,7 @@ events:
     place:
       - {language: en, text: "WTC Congress Center"}
       - {language: ru, text: "Конгресс-центр ЦМТ"}
+    talkIds: []
   # JPoint
   - eventTypeId: 7
     name:
@@ -100,3 +105,4 @@ events:
     place:
       - {language: en, text: "Renaissance Moscow Monarch Centre"}
       - {language: ru, text: "Ренессанс Москва Монарх Центр"}
+    talkIds: []
