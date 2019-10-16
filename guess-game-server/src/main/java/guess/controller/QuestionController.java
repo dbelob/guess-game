@@ -35,6 +35,13 @@ public class QuestionController {
         return QuestionSetDto.convertToDto(questionSets);
     }
 
+    @GetMapping("/default-set-id")
+    @ResponseBody
+    public Long getDefaultQuestionSetId() {
+        //TODO: implement
+        return 0L;
+    }
+
     @GetMapping("/quantities")
     @ResponseBody
     public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds, @RequestParam String guessType) throws QuestionSetNotExistsException {

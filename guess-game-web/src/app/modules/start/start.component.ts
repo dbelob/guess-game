@@ -24,8 +24,16 @@ export class StartComponent {
         this.questionSets = data;
 
         if (this.questionSets.length > 0) {
-          this.selectedQuestionSets = [this.questionSets[0]];
-          this.loadQuantities(this.selectedQuestionSets, this.selectedGuessType);
+          questionService.getDefaultQuestionSetId()
+            .subscribe(data => {
+              let defaultQuestionSetId = data;
+              if ((defaultQuestionSetId < 0) || (defaultQuestionSetId >= this.questionSets.length)) {
+                defaultQuestionSetId = 0;
+              }
+
+              this.selectedQuestionSets = [this.questionSets[defaultQuestionSetId]];
+              this.loadQuantities(this.selectedQuestionSets, this.selectedGuessType);
+            });
         }
       });
   }
