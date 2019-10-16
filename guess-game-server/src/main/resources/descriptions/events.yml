@@ -6,6 +6,9 @@ events:
       - {language: ru, text: "C++ Russia 2019 СПб"}
     startDate: 2019-10-31
     endDate: 2019-11-01
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: "Санкт-Петербург"}
     place:
       - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
       - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
