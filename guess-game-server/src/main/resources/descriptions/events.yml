@@ -106,3 +106,36 @@ events:
       - {language: en, text: "Renaissance Moscow Monarch Centre"}
       - {language: ru, text: "Ренессанс Москва Монарх Центр"}
     talkIds: []
+  # JUG.MSK
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK"}
+    city:
+      - {language: en, text: "Moscow"}
+      - {language: ru, text: "Москва"}
+    place:
+      - {language: en, text: "KROK"}
+      - {language: ru, text: "КРОК"}
+    talkIds: []
+  # JUG.ru
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: "Санкт-Петербург"}
+    place:
+      - {language: en, text: "Oracle"}
+      - {language: ru, text: "Oracle"}
+    talkIds: []
+  # JUGNsk
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk"}
+    city:
+      - {language: en, text: "Novosibirsk"}
+      - {language: ru, text: "Новосибирск"}
+    place:
+      - {language: en, text: "KROK"}
+      - {language: ru, text: "Boiling Point"}
+    talkIds: []
