@@ -4,7 +4,7 @@
   <app-message></app-message>
 
   <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
-  <p class="h2 text-center mb-5" [class.mt-5]="!logoImageSource">{{talkSpeakers.talkName}}</p>
+  <p class="h2 text-center mb-5" [class.mt-3]="logoImageSource" [class.mt-5]="!logoImageSource">{{talkSpeakers.talkName}}</p>
   <div class="text-center">
     <figure class="figure m-1">
       <input type="image" alt="" class="img-thumbnail img-guess-speaker"
