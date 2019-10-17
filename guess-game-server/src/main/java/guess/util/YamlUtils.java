@@ -42,6 +42,7 @@ class LocalDateYamlConstructor extends Constructor {
  * YAML utility methods.
  */
 public class YamlUtils {
+
     /**
      * Reads question sets from resource files.
      *
@@ -64,14 +65,20 @@ public class YamlUtils {
 
         // Read descriptions from YAML files
         Speakers speakers = yamlSpeakers.load(speakersResource.getInputStream());
+        Map<Long, Speaker> speakerMap = listToMap(speakers.getSpeakers(), Speaker::getId);
+
         Talks talks = yamlTalks.load(talksResource.getInputStream());
+        Map<Long, Talk> talkMap = listToMap(talks.getTalks(), Talk::getId);
+
         EventTypes eventTypes = yamlEventTypes.load(eventTypesResource.getInputStream());
+        Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
+
         Events events = yamlEvents.load(eventsResource.getInputStream());
 
         // Link entities
-        linkSpeakersToTalks(speakers.getSpeakers(), talks.getTalks());
-        linkEventsToEventTypes(eventTypes.getEventTypes(), events.getEvents());
-        linkTalksToEvents(talks.getTalks(), events.getEvents());
+        linkSpeakersToTalks(speakerMap, talks.getTalks());
+        linkEventsToEventTypes(eventTypeMap, events.getEvents());
+        linkTalksToEvents(talkMap, events.getEvents());
 
         // Create question sets
         List<QuestionSet> questionSets = new ArrayList<>();
@@ -182,16 +189,15 @@ public class YamlUtils {
      * @param speakers speakers
      * @param talks    talks
      */
-    private static void linkSpeakersToTalks(List<Speaker> speakers, List<Talk> talks) {
+    private static void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks) {
         for (Talk talk : talks) {
             // For any speakerId
             for (Long speakerId : talk.getSpeakerIds()) {
                 // Find speaker by id
-                for (Speaker speaker : speakers) {
-                    if (speakerId == speaker.getId()) {
-                        talk.getSpeakers().add(speaker);
-                    }
-                }
+                Speaker speaker = speakers.get(speakerId);
+                Objects.requireNonNull(speaker,
+                        () -> String.format("Speaker id %d not found", speakerId));
+                talk.getSpeakers().add(speaker);
             }
         }
     }
@@ -202,15 +208,14 @@ public class YamlUtils {
      * @param eventTypes event types
      * @param events     events
      */
-    private static void linkEventsToEventTypes(List<EventType> eventTypes, List<Event> events) {
+    private static void linkEventsToEventTypes(Map<Long, EventType> eventTypes, List<Event> events) {
         for (Event event : events) {
             // Find event type by id
-            for (EventType eventType : eventTypes) {
-                if (event.getEventTypeId() == eventType.getId()) {
-                    eventType.getEvents().add(event);
-                    event.setEventType(eventType);
-                }
-            }
+            EventType eventType = eventTypes.get(event.getEventTypeId());
+            Objects.requireNonNull(eventType,
+                    () -> String.format("EventType id %d not found", eventType));
+            eventType.getEvents().add(event);
+            event.setEventType(eventType);
         }
     }
 
@@ -220,17 +225,34 @@ public class YamlUtils {
      * @param talks  talks
      * @param events events
      */
-    private static void linkTalksToEvents(List<Talk> talks, List<Event> events) {
+    private static void linkTalksToEvents(Map<Long, Talk> talks, List<Event> events) {
         for (Event event : events) {
             // For any talkId
             for (Long talkId : event.getTalkIds()) {
                 // Find talk by id
-                for (Talk talk : talks) {
-                    if (talkId == talk.getId()) {
-                        event.getTalks().add(talk);
-                    }
-                }
+                Talk talk = talks.get(talkId);
+                Objects.requireNonNull(talk,
+                        () -> String.format("Talk id %d not found", talkId));
+                event.getTalks().add(talk);
             }
         }
+    }
+
+    /**
+     * Converts list of entities into map, throwing the IllegalStateException in case duplicate entities are found
+     *
+     * @param list         Input list
+     * @param keyExtractor Map key extractor for given entity class
+     * @param <K>          Map key type
+     * @param <T>          Entity (map value) type
+     * @return Map of entities, or IllegalStateException if duplicate entities are found
+     */
+    private static <K, T> Map<K, T> listToMap(List<T> list, Function<? super T, ? extends K> keyExtractor) {
+        Map<K, T> map =
+                list.stream().collect(Collectors.toMap(keyExtractor, s -> s));
+        if (map.size() != list.size()) {
+            throw new IllegalStateException("Entities with duplicate ids found");
+        }
+        return map;
     }
 }

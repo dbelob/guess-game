@@ -18,7 +18,7 @@ public class Event {
     private List<LocaleItem> place;
 
     private List<Long> talkIds;
-    private List<Talk> talks = new ArrayList<>();
+    private final List<Talk> talks = new ArrayList<>();
 
     public long getEventTypeId() {
         return eventTypeId;
@@ -88,7 +88,4 @@ public class Event {
         return talks;
     }
 
-    public void setTalks(List<Talk> talks) {
-        this.talks = talks;
-    }
 }

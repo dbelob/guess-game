@@ -53,6 +53,7 @@ eventTypes:
     name:
       - {language: en, text: "Conferences — SPTDC"}
       - {language: ru, text: "Конференции — SPTDC"}
+    logoFileName: sptdc.jpg
   - id: 11
     name:
       - {language: en, text: "Conferences — SmartData"}
