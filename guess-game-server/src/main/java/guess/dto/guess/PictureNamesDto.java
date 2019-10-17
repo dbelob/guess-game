@@ -10,12 +10,12 @@ import java.util.List;
  * Picture, names DTO.
  */
 public class PictureNamesDto extends QuestionAnswersDto {
-    private String fileName;
+    private final String fileName;
 
-    private String name0;
-    private String name1;
-    private String name2;
-    private String name3;
+    private final String name0;
+    private final String name1;
+    private final String name2;
+    private final String name3;
 
     public PictureNamesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                            long id0, long id1, long id2, long id3,

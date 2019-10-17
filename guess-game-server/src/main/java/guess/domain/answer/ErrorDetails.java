@@ -8,8 +8,8 @@ import java.util.List;
  * Error details.
  */
 public class ErrorDetails {
-    private Question question;
-    private List<Question> wrongAnswers;
+    private final Question question;
+    private final List<Question> wrongAnswers;
 
     public ErrorDetails(Question question, List<Question> wrongAnswers) {
         this.question = question;

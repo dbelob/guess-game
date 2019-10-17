@@ -6,9 +6,9 @@ import java.util.List;
  * Answer set.
  */
 public class AnswerSet {
-    private long questionId;
-    private List<Long> answers;
-    private boolean isSuccess;
+    private final long questionId;
+    private final List<Long> answers;
+    private final boolean isSuccess;
 
     public AnswerSet(long questionId, List<Long> answers, boolean isSuccess) {
         this.questionId = questionId;

@@ -10,13 +10,13 @@ import java.util.List;
  * Speaker, talks DTO.
  */
 public class SpeakerTalksDto extends QuestionAnswersDto {
-    private String speakerFileName;
-    private String speakerName;
+    private final String speakerFileName;
+    private final String speakerName;
 
-    private String talkName0;
-    private String talkName1;
-    private String talkName2;
-    private String talkName3;
+    private final String talkName0;
+    private final String talkName1;
+    private final String talkName2;
+    private final String talkName3;
 
     public SpeakerTalksDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                            long id0, long id1, long id2, long id3,

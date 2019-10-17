@@ -1,15 +1,13 @@
 package guess.domain.question;
 
-import guess.domain.question.Question;
-
 import java.util.List;
 
 /**
  * Question and answers.
  */
 public class QuestionAnswers {
-    private Question question;
-    private List<Question> answers;
+    private final Question question;
+    private final List<Question> answers;
 
     public QuestionAnswers(Question question, List<Question> answers) {
         this.question = question;
@@ -20,15 +18,8 @@ public class QuestionAnswers {
         return question;
     }
 
-    public void setQuestion(Question question) {
-        this.question = question;
-    }
-
     public List<Question> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(List<Question> answers) {
-        this.answers = answers;
-    }
 }
