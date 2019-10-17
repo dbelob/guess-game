@@ -87,5 +87,4 @@ public class Event {
     public List<Talk> getTalks() {
         return talks;
     }
-
 }

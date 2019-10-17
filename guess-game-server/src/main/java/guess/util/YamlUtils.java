@@ -16,6 +16,10 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Constructor with LocalDate support.
@@ -133,10 +137,12 @@ public class YamlUtils {
 
         // Read descriptions from YAML files
         EventTypes eventTypes = yamlEventTypes.load(eventTypesResource.getInputStream());
+        Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
+
         Events events = yamlEvents.load(eventsResource.getInputStream());
 
         // Link entities
-        linkEventsToEventTypes(eventTypes.getEventTypes(), events.getEvents());
+        linkEventsToEventTypes(eventTypeMap, events.getEvents());
 
         return events.getEvents();
     }
