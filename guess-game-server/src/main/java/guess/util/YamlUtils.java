@@ -94,10 +94,7 @@ public class YamlUtils {
             for (Event event : eventType.getEvents()) {
                 for (Talk talk : event.getTalks()) {
                     for (Speaker speaker : talk.getSpeakers()) {
-                        speakerQuestions.add(new SpeakerQuestion(
-                                speaker.getId(),
-                                speaker.getFileName(),
-                                LocalizationUtils.getEnglishName(speaker.getName())));
+                        speakerQuestions.add(new SpeakerQuestion(speaker));
                     }
 
                     talkQuestions.add(new TalkQuestion(

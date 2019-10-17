@@ -6,9 +6,6 @@ package guess.domain.question;
 public abstract class Question {
     private long id;
 
-    public Question() {
-    }
-
     public Question(long id) {
         this.id = id;
     }

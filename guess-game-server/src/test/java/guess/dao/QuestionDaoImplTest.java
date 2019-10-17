@@ -24,7 +24,7 @@ public class QuestionDaoImplTest {
             assertTrue(speakerQuestions.size() > 0);
             // All questions
             for (SpeakerQuestion speakerQuestion : speakerQuestions) {
-                assertFileExistence("speakers/" + speakerQuestion.getFileName());
+                assertFileExistence("speakers/" + speakerQuestion.getSpeaker().getFileName());
             }
             assertFileExistence("events/" + questionSet.getLogoFileName());
         }

@@ -15,9 +15,9 @@ public class QuestionUtils {
 
         if (speakerQuestions != null) {
             for (SpeakerQuestion speakerQuestion : speakerQuestions) {
-                if (!fileNames.contains(speakerQuestion.getFileName())) {
+                if (!fileNames.contains(speakerQuestion.getSpeaker().getFileName())) {
                     result.add(speakerQuestion);
-                    fileNames.add(speakerQuestion.getFileName());
+                    fileNames.add(speakerQuestion.getSpeaker().getFileName());
                 }
             }
         }

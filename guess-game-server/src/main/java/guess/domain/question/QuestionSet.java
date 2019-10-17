@@ -13,9 +13,6 @@ public class QuestionSet {
     private List<SpeakerQuestion> speakerQuestions = Collections.emptyList();
     private List<TalkQuestion> talkQuestions = Collections.emptyList();
 
-    public QuestionSet() {
-    }
-
     public QuestionSet(long id, String name, String logoFileName, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions) {
         this.id = id;
         this.name = name;

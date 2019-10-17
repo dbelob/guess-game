@@ -2,8 +2,8 @@ package guess.dao;
 
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
-import guess.domain.question.QuestionSet;
 import guess.domain.question.Question;
+import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.Event;
@@ -74,14 +74,7 @@ public class QuestionDaoImpl implements QuestionDao {
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
 
             for (Long questionSetId : questionSetIds) {
-                QuestionSet questionSet = getQuestionSetById(questionSetId);
-                List<SpeakerQuestion> questionsWithFullFileName = questionSet.getSpeakerQuestions().stream()
-                        .map(q -> new SpeakerQuestion(
-                                q.getId(),
-                                q.getFileName(),
-                                q.getName()))
-                        .collect(Collectors.toList());
-                speakerQuestions.addAll(questionsWithFullFileName);
+                speakerQuestions.addAll(getQuestionSetById(questionSetId).getSpeakerQuestions());
             }
 
             questions = new ArrayList<>(QuestionUtils.removeDuplicatesByFileName(speakerQuestions));

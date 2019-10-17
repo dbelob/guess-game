@@ -2,6 +2,7 @@ package guess.dto.guess;
 
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.SpeakerQuestion;
+import guess.util.LocalizationUtils;
 
 import java.util.List;
 
@@ -58,10 +59,10 @@ public class NamePicturesDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
-                ((SpeakerQuestion) questionAnswers.getQuestion()).getName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getFileName());
+                LocalizationUtils.getEnglishName(((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getName()),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getFileName());
     }
 }
