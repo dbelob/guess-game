@@ -24,6 +24,16 @@ export class QuestionService {
       );
   }
 
+  getDefaultQuestionSetId(): Observable<number> {
+    return this.http.get<number>(`${this.baseUrl}/default-set-id`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
   getQuantities(questionSetIds: number[], guessType: string): Observable<number[]> {
     let params = new HttpParams()
       .set('questionSetIds', questionSetIds.toString())

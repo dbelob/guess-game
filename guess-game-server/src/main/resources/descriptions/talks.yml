@@ -167,6 +167,7 @@ talks:
     name:
       - {language: en, text: "Decrypting tech hype for the busy coder"}
     speakerIds: [253]
+    # JPoint 2019
   - id: 100
     name:
       - {language: en, text: "The world needs full-stack craftsmen"}

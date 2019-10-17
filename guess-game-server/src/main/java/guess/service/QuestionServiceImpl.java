@@ -3,12 +3,13 @@ package guess.service;
 import guess.dao.QuestionDao;
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
-import guess.domain.question.Question;
 import guess.domain.QuestionSet;
+import guess.domain.question.Question;
 import guess.util.QuestionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 
@@ -30,6 +31,11 @@ public class QuestionServiceImpl implements QuestionService {
         questionSets.sort(Comparator.comparing(QuestionSet::getName));
 
         return questionSets;
+    }
+
+    @Override
+    public Long getDefaultQuestionSetId(LocalDate date) {
+        return questionDao.getDefaultQuestionSetId(date);
     }
 
     @Override

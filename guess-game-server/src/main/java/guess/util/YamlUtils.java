@@ -8,14 +8,39 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
+import org.yaml.snakeyaml.nodes.Node;
+import org.yaml.snakeyaml.nodes.NodeId;
+import org.yaml.snakeyaml.nodes.ScalarNode;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+/**
+ * Constructor with LocalDate support.
+ */
+class LocalDateYamlConstructor extends Constructor {
+    LocalDateYamlConstructor(Class<? extends Object> theRoot) {
+        super(theRoot);
+
+        this.yamlClassConstructors.put(NodeId.scalar, new LocalDateConstructor());
+    }
+
+    private class LocalDateConstructor extends ConstructScalar {
+        public Object construct(Node node) {
+            if (node.getType().equals(LocalDate.class)) {
+                return LocalDate.parse(((ScalarNode) node).getValue());
+            } else {
+                return super.construct(node);
+            }
+        }
+    }
+}
 
 /**
  * YAML utility methods.
@@ -40,7 +65,7 @@ public class YamlUtils {
         Yaml yamlSpeakers = new Yaml(new Constructor(Speakers.class));
         Yaml yamlTalks = new Yaml(new Constructor(Talks.class));
         Yaml yamlEventTypes = new Yaml(new Constructor(EventTypes.class));
-        Yaml yamlEvents = new Yaml(new Constructor(Events.class));
+        Yaml yamlEvents = new Yaml(new LocalDateYamlConstructor(Events.class));
 
         // Read descriptions from YAML files
         Speakers speakers = yamlSpeakers.load(speakersResource.getInputStream());
@@ -90,51 +115,36 @@ public class YamlUtils {
         }
 
         //TODO: delete
-        replaceSpeakerQuestions(questionSets, questionsDirectoryName);
+        Unsafe.replaceSpeakerQuestions(questionSets, questionsDirectoryName);
 
         return questionSets;
     }
 
-    //TODO: delete
-    private static void replaceSpeakerQuestions(List<QuestionSet> questionSets, String questionsDirectoryName) throws IOException {
-        List<QuestionSet> speakerQuestionSets = readSpeakerQuestionSets(questionsDirectoryName);
-
-        for (QuestionSet questionSet : questionSets) {
-            for (QuestionSet speakerQuestionSet : speakerQuestionSets) {
-                if (questionSet.getId() == speakerQuestionSet.getId()) {
-                    questionSet.setSpeakerQuestions(speakerQuestionSet.getSpeakerQuestions());
-                }
-            }
-        }
-    }
-
-    //TODO: delete
-    private static List<QuestionSet> readSpeakerQuestionSets(String questionsDirectoryName) throws IOException {
+    /**
+     * Reads events from resource files.
+     *
+     * @param descriptionsDirectoryName descriptions directory name
+     * @return events
+     * @throws IOException if an I/O error occurs
+     */
+    public static List<Event> readEvents(String descriptionsDirectoryName) throws IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource[] resources = resolver.getResources(String.format("classpath:%s/*.yml", questionsDirectoryName));
-        Yaml yaml = new Yaml(new Constructor(QuestionSet.class));
-        List<QuestionSet> questionSets = new ArrayList<>();
+        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", descriptionsDirectoryName));
+        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", descriptionsDirectoryName));
 
-        // Read question sets from YAML files
-        for (Resource resource : resources) {
-            questionSets.add(yaml.load(resource.getInputStream()));
-        }
+        Yaml yamlEventTypes = new Yaml(new Constructor(EventTypes.class));
+        Yaml yamlEvents = new Yaml(new LocalDateYamlConstructor(Events.class));
 
-        long questionId = 0;
-        for (int i = 0; i < questionSets.size(); i++) {
-            QuestionSet questionSet = questionSets.get(i);
-//            questionSet.setId(i);
+        // Read descriptions from YAML files
+        EventTypes eventTypes = yamlEventTypes.load(eventTypesResource.getInputStream());
+        Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
 
-            // Remove duplicates by filename
-            questionSet.setSpeakerQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getSpeakerQuestions()));
+        Events events = yamlEvents.load(eventsResource.getInputStream());
 
-            // Set unique id
-            for (int j = 0; j < questionSet.getSpeakerQuestions().size(); j++) {
-                questionSet.getSpeakerQuestions().get(j).setId(questionId++);
-            }
-        }
+        // Link entities
+        linkEventsToEventTypes(eventTypeMap, events.getEvents());
 
-        return questionSets;
+        return events.getEvents();
     }
 
     /**
@@ -167,8 +177,9 @@ public class YamlUtils {
             // Find event type by id
             EventType eventType = eventTypes.get(event.getEventTypeId());
             Objects.requireNonNull(eventType,
-                    () -> String.format("EventType id %d not found", eventType));
+                    () -> String.format("EventType id %d not found", event.getEventTypeId()));
             eventType.getEvents().add(event);
+            event.setEventType(eventType);
         }
     }
 
@@ -192,7 +203,7 @@ public class YamlUtils {
     }
 
     /**
-     * Converts list of entities into map, throwing the IllegalStateException in case duplicate entities are found
+     * Converts list of entities into map, throwing the IllegalStateException in case duplicate entities are found.
      *
      * @param list         Input list
      * @param keyExtractor Map key extractor for given entity class
@@ -208,5 +219,4 @@ public class YamlUtils {
         }
         return map;
     }
-
 }

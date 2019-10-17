@@ -1,4 +1,75 @@
 events:
+  # C++ Russia
+  - eventTypeId: 0
+    name:
+      - {language: en, text: "C++ Russia 2019 SPb"}
+      - {language: ru, text: "C++ Russia 2019 СПб"}
+    startDate: 2019-10-31
+    endDate: 2019-11-01
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: "Санкт-Петербург"}
+    place:
+      - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
+      - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
+    talkIds: []
+  # DevOops
+  - eventTypeId: 1
+    name:
+      - {language: en, text: "DevOops 2019 SPb"}
+      - {language: ru, text: "DevOops 2019 СПб"}
+    startDate: 2019-10-29
+    endDate: 2019-10-30
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: "Санкт-Петербург"}
+    place:
+      - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
+      - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
+    talkIds: []
+  # DotNext
+  - eventTypeId: 2
+    name:
+      - {language: en, text: "DotNext 2019 Msk"}
+      - {language: ru, text: "DotNext 2019 Мск"}
+    startDate: 2019-11-06
+    endDate: 2019-11-07
+    city:
+      - {language: en, text: "Moscow"}
+      - {language: ru, text: "Москва"}
+    place:
+      - {language: en, text: "WTC Congress Center"}
+      - {language: ru, text: "Конгресс-центр ЦМТ"}
+    talkIds: []
+  # Heisenbug
+  - eventTypeId: 3
+    name:
+      - {language: en, text: "Heisenbug 2019 Msk"}
+      - {language: ru, text: "Heisenbug 2019 Мск"}
+    startDate: 2019-12-05
+    endDate: 2019-12-06
+    city:
+      - {language: en, text: "Moscow"}
+      - {language: ru, text: "Москва"}
+    place:
+      - {language: en, text: "Renaissance Moscow Monarch Centre"}
+      - {language: ru, text: "Ренессанс Москва Монарх Центр"}
+    talkIds: []
+  # HolyJS
+  - eventTypeId: 4
+    name:
+      - {language: en, text: "HolyJS 2019 Msk"}
+      - {language: ru, text: "HolyJS 2019 Мск"}
+    startDate: 2019-11-08
+    endDate: 2019-11-09
+    city:
+      - {language: en, text: "Moscow"}
+      - {language: ru, text: "Москва"}
+    place:
+      - {language: en, text: "WTC Congress Center"}
+      - {language: ru, text: "Конгресс-центр ЦМТ"}
+    talkIds: []
+  # JPoint
   - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2019"}
@@ -11,6 +82,7 @@ events:
       - {language: en, text: "WTC Congress Center"}
       - {language: ru, text: "Конгресс-центр ЦМТ"}
     talkIds: [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 21, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141]
+  # Joker
   - eventTypeId: 8
     name:
       - {language: en, text: "Joker 2019"}
@@ -23,3 +95,50 @@ events:
       - {language: en, text: "Expoforum"}
       - {language: ru, text: "Экспофорум"}
     talkIds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]
+  # Mobius
+  - eventTypeId: 9
+    name:
+      - {language: en, text: "Mobius 2019 Msk"}
+      - {language: ru, text: "Mobius 2019 Мск"}
+    startDate: 2019-12-07
+    endDate: 2019-12-08
+    city:
+      - {language: en, text: "Moscow"}
+      - {language: ru, text: "Москва"}
+    place:
+      - {language: en, text: "Renaissance Moscow Monarch Centre"}
+      - {language: ru, text: "Ренессанс Москва Монарх Центр"}
+    talkIds: []
+  # JUG.MSK
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK"}
+    city:
+      - {language: en, text: "Moscow"}
+      - {language: ru, text: "Москва"}
+    place:
+      - {language: en, text: "KROK"}
+      - {language: ru, text: "КРОК"}
+    talkIds: []
+  # JUG.ru
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: "Санкт-Петербург"}
+    place:
+      - {language: en, text: "Oracle"}
+      - {language: ru, text: "Oracle"}
+    talkIds: []
+  # JUGNsk
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk"}
+    city:
+      - {language: en, text: "Novosibirsk"}
+      - {language: ru, text: "Новосибирск"}
+    place:
+      - {language: en, text: "KROK"}
+      - {language: ru, text: "Boiling Point"}
+    talkIds: []

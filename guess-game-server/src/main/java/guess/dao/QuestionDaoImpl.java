@@ -6,12 +6,15 @@ import guess.domain.QuestionSet;
 import guess.domain.question.Question;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
+import guess.domain.source.Event;
 import guess.util.QuestionUtils;
 import guess.util.YamlUtils;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -25,14 +28,28 @@ public class QuestionDaoImpl implements QuestionDao {
     private static String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
 
     private final List<QuestionSet> questionSets;
+    private final List<Event> events;
 
     public QuestionDaoImpl() throws IOException {
         this.questionSets = YamlUtils.readQuestionSets(QUESTIONS_DIRECTORY_NAME, DESCRIPTIONS_DIRECTORY_NAME);
+        this.events = YamlUtils.readEvents(DESCRIPTIONS_DIRECTORY_NAME).stream()
+                .filter(e -> (e.getStartDate() != null) && (e.getEndDate() != null) && !e.getStartDate().isAfter(e.getEndDate()))
+                .sorted(Comparator.comparing(Event::getStartDate))
+                .collect(Collectors.toList());
     }
 
     @Override
     public List<QuestionSet> getQuestionSets() {
         return questionSets;
+    }
+
+    @Override
+    public Long getDefaultQuestionSetId(LocalDate date) {
+        return events.stream()
+                .filter(e -> !date.isAfter(e.getEndDate()))
+                .findFirst()
+                .map(e -> e.getEventType().getId())
+                .orElse(0L);
     }
 
     @Override
