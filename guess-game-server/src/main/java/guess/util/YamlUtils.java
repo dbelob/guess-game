@@ -8,10 +8,35 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
+import org.yaml.snakeyaml.nodes.Node;
+import org.yaml.snakeyaml.nodes.NodeId;
+import org.yaml.snakeyaml.nodes.ScalarNode;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Constructor with LocalDate support.
+ */
+class LocalDateYamlConstructor extends Constructor {
+    LocalDateYamlConstructor(Class<? extends Object> theRoot) {
+        super(theRoot);
+
+        this.yamlClassConstructors.put(NodeId.scalar, new LocalDateConstructor());
+    }
+
+    private class LocalDateConstructor extends ConstructScalar {
+        public Object construct(Node node) {
+            if (node.getType().equals(LocalDate.class)) {
+                return LocalDate.parse(((ScalarNode) node).getValue());
+            } else {
+                return super.construct(node);
+            }
+        }
+    }
+}
 
 /**
  * YAML utility methods.
@@ -35,7 +60,7 @@ public class YamlUtils {
         Yaml yamlSpeakers = new Yaml(new Constructor(Speakers.class));
         Yaml yamlTalks = new Yaml(new Constructor(Talks.class));
         Yaml yamlEventTypes = new Yaml(new Constructor(EventTypes.class));
-        Yaml yamlEvents = new Yaml(new Constructor(Events.class));
+        Yaml yamlEvents = new Yaml(new LocalDateYamlConstructor(Events.class));
 
         // Read descriptions from YAML files
         Speakers speakers = yamlSpeakers.load(speakersResource.getInputStream());
@@ -82,6 +107,31 @@ public class YamlUtils {
         replaceSpeakerQuestions(questionSets, questionsDirectoryName);
 
         return questionSets;
+    }
+
+    /**
+     * Reads events from resource files.
+     *
+     * @param descriptionsDirectoryName descriptions directory name
+     * @return events
+     * @throws IOException if an I/O error occurs
+     */
+    public static List<Event> readEvents(String descriptionsDirectoryName) throws IOException {
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", descriptionsDirectoryName));
+        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", descriptionsDirectoryName));
+
+        Yaml yamlEventTypes = new Yaml(new Constructor(EventTypes.class));
+        Yaml yamlEvents = new Yaml(new LocalDateYamlConstructor(Events.class));
+
+        // Read descriptions from YAML files
+        EventTypes eventTypes = yamlEventTypes.load(eventTypesResource.getInputStream());
+        Events events = yamlEvents.load(eventsResource.getInputStream());
+
+        // Link entities
+        linkEventsToEventTypes(eventTypes.getEventTypes(), events.getEvents());
+
+        return events.getEvents();
     }
 
     //TODO: delete
@@ -158,6 +208,7 @@ public class YamlUtils {
             for (EventType eventType : eventTypes) {
                 if (event.getEventTypeId() == eventType.getId()) {
                     eventType.getEvents().add(event);
+                    event.setEventType(eventType);
                 }
             }
         }

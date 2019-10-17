@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -38,8 +39,7 @@ public class QuestionController {
     @GetMapping("/default-set-id")
     @ResponseBody
     public Long getDefaultQuestionSetId() {
-        //TODO: implement
-        return 0L;
+        return questionService.getDefaultQuestionSetId(LocalDate.now());
     }
 
     @GetMapping("/quantities")

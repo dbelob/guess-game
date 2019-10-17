@@ -1,7 +1,7 @@
 package guess.domain.source;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -9,9 +9,11 @@ import java.util.List;
  */
 public class Event {
     private long eventTypeId;
+    private EventType eventType;
+
     private List<LocaleItem> name;
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private List<LocaleItem> city;
     private List<LocaleItem> place;
 
@@ -26,6 +28,14 @@ public class Event {
         this.eventTypeId = eventTypeId;
     }
 
+    public EventType getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(EventType eventType) {
+        this.eventType = eventType;
+    }
+
     public List<LocaleItem> getName() {
         return name;
     }
@@ -34,19 +44,19 @@ public class Event {
         this.name = name;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
