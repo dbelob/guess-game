@@ -115,7 +115,7 @@ public class YamlUtils {
         }
 
         //TODO: delete
-        replaceSpeakerQuestions(questionSets, questionsDirectoryName);
+        Unsafe.replaceSpeakerQuestions(questionSets, questionsDirectoryName);
 
         return questionSets;
     }
@@ -145,48 +145,6 @@ public class YamlUtils {
         linkEventsToEventTypes(eventTypeMap, events.getEvents());
 
         return events.getEvents();
-    }
-
-    //TODO: delete
-    private static void replaceSpeakerQuestions(List<QuestionSet> questionSets, String questionsDirectoryName) throws IOException {
-        List<QuestionSet> speakerQuestionSets = readSpeakerQuestionSets(questionsDirectoryName);
-
-        for (QuestionSet questionSet : questionSets) {
-            for (QuestionSet speakerQuestionSet : speakerQuestionSets) {
-                if (questionSet.getId() == speakerQuestionSet.getId()) {
-                    questionSet.setSpeakerQuestions(speakerQuestionSet.getSpeakerQuestions());
-                }
-            }
-        }
-    }
-
-    //TODO: delete
-    private static List<QuestionSet> readSpeakerQuestionSets(String questionsDirectoryName) throws IOException {
-        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource[] resources = resolver.getResources(String.format("classpath:%s/*.yml", questionsDirectoryName));
-        Yaml yaml = new Yaml(new Constructor(QuestionSet.class));
-        List<QuestionSet> questionSets = new ArrayList<>();
-
-        // Read question sets from YAML files
-        for (Resource resource : resources) {
-            questionSets.add(yaml.load(resource.getInputStream()));
-        }
-
-        long questionId = 0;
-        for (int i = 0; i < questionSets.size(); i++) {
-            QuestionSet questionSet = questionSets.get(i);
-//            questionSet.setId(i);
-
-            // Remove duplicates by filename
-            questionSet.setSpeakerQuestions(QuestionUtils.removeDuplicatesByFileName(questionSet.getSpeakerQuestions()));
-
-            // Set unique id
-            for (int j = 0; j < questionSet.getSpeakerQuestions().size(); j++) {
-                questionSet.getSpeakerQuestions().get(j).setId(questionId++);
-            }
-        }
-
-        return questionSets;
     }
 
     /**
@@ -219,7 +177,7 @@ public class YamlUtils {
             // Find event type by id
             EventType eventType = eventTypes.get(event.getEventTypeId());
             Objects.requireNonNull(eventType,
-                    () -> String.format("EventType id %d not found", eventType));
+                    () -> String.format("EventType id %d not found", event.getEventTypeId()));
             eventType.getEvents().add(event);
             event.setEventType(eventType);
         }
@@ -245,7 +203,7 @@ public class YamlUtils {
     }
 
     /**
-     * Converts list of entities into map, throwing the IllegalStateException in case duplicate entities are found
+     * Converts list of entities into map, throwing the IllegalStateException in case duplicate entities are found.
      *
      * @param list         Input list
      * @param keyExtractor Map key extractor for given entity class
