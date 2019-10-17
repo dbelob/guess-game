@@ -1,4 +1,4 @@
-package guess.domain;
+package guess.domain.answer;
 
 public class ErrorPair {
     private String name;

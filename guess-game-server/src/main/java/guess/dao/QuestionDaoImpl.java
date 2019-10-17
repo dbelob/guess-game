@@ -2,7 +2,7 @@ package guess.dao;
 
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
-import guess.domain.QuestionSet;
+import guess.domain.question.QuestionSet;
 import guess.domain.question.Question;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;

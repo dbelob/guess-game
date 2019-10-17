@@ -1,4 +1,4 @@
-package guess.domain;
+package guess.domain.question;
 
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;

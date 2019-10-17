@@ -1,8 +1,8 @@
 package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.QuestionAnswers;
-import guess.domain.QuestionAnswersSet;
+import guess.domain.question.QuestionAnswers;
+import guess.domain.question.QuestionAnswersSet;
 import guess.domain.State;
 import guess.dto.guess.*;
 import guess.dto.start.StartParametersDto;

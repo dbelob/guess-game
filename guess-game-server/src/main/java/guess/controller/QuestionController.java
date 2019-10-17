@@ -2,7 +2,7 @@ package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
-import guess.domain.QuestionSet;
+import guess.domain.question.QuestionSet;
 import guess.dto.start.QuestionSetDto;
 import guess.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;

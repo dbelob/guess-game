@@ -1,6 +1,6 @@
 package guess.dao;
 
-import guess.domain.AnswerSet;
+import guess.domain.answer.AnswerSet;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;

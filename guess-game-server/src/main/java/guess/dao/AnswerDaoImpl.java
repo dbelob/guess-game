@@ -1,6 +1,6 @@
 package guess.dao;
 
-import guess.domain.AnswerSet;
+import guess.domain.answer.AnswerSet;
 import guess.util.HttpSessionUtils;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
 package guess.dto.result;
 
-import guess.domain.ErrorDetails;
-import guess.domain.ErrorPair;
+import guess.domain.answer.ErrorDetails;
+import guess.domain.answer.ErrorPair;
 import guess.domain.GuessType;
 import guess.domain.question.TalkQuestion;
 import guess.util.LocalizationUtils;

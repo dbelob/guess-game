@@ -1,6 +1,6 @@
 package guess.util;
 
-import guess.domain.QuestionSet;
+import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.*;

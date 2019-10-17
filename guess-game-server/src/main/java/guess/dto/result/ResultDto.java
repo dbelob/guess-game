@@ -1,8 +1,8 @@
 package guess.dto.result;
 
-import guess.domain.ErrorDetails;
+import guess.domain.answer.ErrorDetails;
 import guess.domain.GuessType;
-import guess.domain.Result;
+import guess.domain.answer.Result;
 
 import java.util.Collections;
 import java.util.List;

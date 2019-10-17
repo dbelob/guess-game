@@ -1,6 +1,6 @@
 package guess.util;
 
-import guess.domain.QuestionSet;
+import guess.domain.question.QuestionSet;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.yaml.snakeyaml.Yaml;

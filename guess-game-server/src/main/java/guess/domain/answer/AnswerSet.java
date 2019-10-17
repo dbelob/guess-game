@@ -1,4 +1,4 @@
-package guess.domain;
+package guess.domain.answer;
 
 import java.util.List;
 

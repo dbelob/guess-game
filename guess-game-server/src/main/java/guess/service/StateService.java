@@ -1,7 +1,7 @@
 package guess.service;
 
 import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.QuestionAnswersSet;
+import guess.domain.question.QuestionAnswersSet;
 import guess.domain.StartParameters;
 import guess.domain.State;
 

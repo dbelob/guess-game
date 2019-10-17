@@ -6,6 +6,9 @@ import guess.dao.StateDao;
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.*;
 import guess.domain.question.Question;
+import guess.domain.question.QuestionAnswers;
+import guess.domain.question.QuestionAnswersSet;
+import guess.domain.question.QuestionSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
