@@ -1,7 +1,7 @@
 package guess.util;
 
-import guess.domain.AnswerSet;
-import guess.domain.QuestionAnswersSet;
+import guess.domain.answer.AnswerSet;
+import guess.domain.question.QuestionAnswersSet;
 import guess.domain.StartParameters;
 import guess.domain.State;
 

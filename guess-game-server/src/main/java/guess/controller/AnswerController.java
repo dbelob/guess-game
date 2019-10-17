@@ -1,7 +1,7 @@
 package guess.controller;
 
-import guess.domain.ErrorDetails;
-import guess.domain.Result;
+import guess.domain.answer.ErrorDetails;
+import guess.domain.answer.Result;
 import guess.dto.result.ResultDto;
 import guess.service.AnswerService;
 import org.springframework.beans.factory.annotation.Autowired;

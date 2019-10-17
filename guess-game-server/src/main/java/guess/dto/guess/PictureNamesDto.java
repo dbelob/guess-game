@@ -1,7 +1,8 @@
 package guess.dto.guess;
 
-import guess.domain.QuestionAnswers;
+import guess.domain.question.QuestionAnswers;
 import guess.domain.question.SpeakerQuestion;
+import guess.util.LocalizationUtils;
 
 import java.util.List;
 
@@ -9,12 +10,12 @@ import java.util.List;
  * Picture, names DTO.
  */
 public class PictureNamesDto extends QuestionAnswersDto {
-    private String fileName;
+    private final String fileName;
 
-    private String name0;
-    private String name1;
-    private String name2;
-    private String name3;
+    private final String name0;
+    private final String name1;
+    private final String name2;
+    private final String name3;
 
     public PictureNamesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                            long id0, long id1, long id2, long id3,
@@ -58,10 +59,10 @@ public class PictureNamesDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
-                ((SpeakerQuestion) questionAnswers.getQuestion()).getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getName());
+                ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getFileName(),
+                LocalizationUtils.getEnglishName(((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getName()),
+                LocalizationUtils.getEnglishName(((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getName()),
+                LocalizationUtils.getEnglishName(((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getName()),
+                LocalizationUtils.getEnglishName(((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getName()));
     }
 }

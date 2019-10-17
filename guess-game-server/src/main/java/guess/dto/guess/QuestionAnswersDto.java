@@ -4,20 +4,20 @@ package guess.dto.guess;
  * Question, answers DTO.
  */
 public abstract class QuestionAnswersDto {
-    private String questionSetName;
-    private int currentIndex;
-    private int totalNumber;
-    private String logoFileName;
+    private final String questionSetName;
+    private final int currentIndex;
+    private final int totalNumber;
+    private final String logoFileName;
 
-    private long id0;
-    private long id1;
-    private long id2;
-    private long id3;
+    private final long id0;
+    private final long id1;
+    private final long id2;
+    private final long id3;
 
-    private boolean invalid0;
-    private boolean invalid1;
-    private boolean invalid2;
-    private boolean invalid3;
+    private final boolean invalid0;
+    private final boolean invalid1;
+    private final boolean invalid2;
+    private final boolean invalid3;
 
     public QuestionAnswersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                               long id0, long id1, long id2, long id3,

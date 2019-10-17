@@ -1,7 +1,8 @@
 package guess.dto.guess;
 
-import guess.domain.QuestionAnswers;
+import guess.domain.question.QuestionAnswers;
 import guess.domain.question.SpeakerQuestion;
+import guess.util.LocalizationUtils;
 
 import java.util.List;
 
@@ -9,12 +10,12 @@ import java.util.List;
  * Name, pictures DTO.
  */
 public class NamePicturesDto extends QuestionAnswersDto {
-    private String name;
+    private final String name;
 
-    private String fileName0;
-    private String fileName1;
-    private String fileName2;
-    private String fileName3;
+    private final String fileName0;
+    private final String fileName1;
+    private final String fileName2;
+    private final String fileName3;
 
     public NamePicturesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                            long id0, long id1, long id2, long id3,
@@ -58,10 +59,10 @@ public class NamePicturesDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
-                ((SpeakerQuestion) questionAnswers.getQuestion()).getName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getFileName());
+                LocalizationUtils.getEnglishName(((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getName()),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getFileName(),
+                ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getFileName());
     }
 }

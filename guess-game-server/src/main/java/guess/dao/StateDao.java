@@ -1,6 +1,6 @@
 package guess.dao;
 
-import guess.domain.QuestionAnswersSet;
+import guess.domain.question.QuestionAnswersSet;
 import guess.domain.StartParameters;
 import guess.domain.State;
 

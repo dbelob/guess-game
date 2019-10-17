@@ -1,16 +1,18 @@
-package guess.domain;
+package guess.domain.answer;
+
+import guess.domain.GuessType;
 
 /**
  * Result.
  */
 public class Result {
-    private long correctAnswers;
-    private long wrongAnswers;
-    private long skippedAnswers;
-    private float correctPercents;
-    private float wrongPercents;
-    private float skippedPercents;
-    private GuessType guessType;
+    private final long correctAnswers;
+    private final long wrongAnswers;
+    private final long skippedAnswers;
+    private final float correctPercents;
+    private final float wrongPercents;
+    private final float skippedPercents;
+    private final GuessType guessType;
 
     public Result(long correctAnswers, long wrongAnswers, long skippedAnswers,
                   float correctPercents, float wrongPercents, float skippedPercents,

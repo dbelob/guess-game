@@ -1,6 +1,6 @@
 package guess.dto.start;
 
-import guess.domain.QuestionSet;
+import guess.domain.question.QuestionSet;
 
 import java.util.List;
 import java.util.stream.Collectors;

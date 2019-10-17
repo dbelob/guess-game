@@ -1,8 +1,8 @@
-package guess.domain;
+package guess.domain.answer;
 
 public class ErrorPair {
-    private String name;
-    private String fileName;
+    private final String name;
+    private final String fileName;
 
     public ErrorPair(String name, String fileName) {
         this.name = name;

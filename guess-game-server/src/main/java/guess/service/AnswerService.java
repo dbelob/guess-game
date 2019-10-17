@@ -1,7 +1,7 @@
 package guess.service;
 
-import guess.domain.ErrorDetails;
-import guess.domain.Result;
+import guess.domain.answer.ErrorDetails;
+import guess.domain.answer.Result;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;

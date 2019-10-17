@@ -8,7 +8,7 @@ import java.util.List;
  * Localization utility methods.
  */
 public class LocalizationUtils {
-    private static final String ENGLISH_LANGUAGE = "en";
+    public static final String ENGLISH_LANGUAGE = "en";
     private static final LocaleItem DEFAULT_LOCALE_ITEM = new LocaleItem(ENGLISH_LANGUAGE, "");
 
     /**

@@ -1,6 +1,6 @@
 package guess.util;
 
-import guess.domain.QuestionSet;
+import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.*;
@@ -94,10 +94,7 @@ public class YamlUtils {
             for (Event event : eventType.getEvents()) {
                 for (Talk talk : event.getTalks()) {
                     for (Speaker speaker : talk.getSpeakers()) {
-                        speakerQuestions.add(new SpeakerQuestion(
-                                speaker.getId(),
-                                speaker.getFileName(),
-                                LocalizationUtils.getEnglishName(speaker.getName())));
+                        speakerQuestions.add(new SpeakerQuestion(speaker));
                     }
 
                     talkQuestions.add(new TalkQuestion(

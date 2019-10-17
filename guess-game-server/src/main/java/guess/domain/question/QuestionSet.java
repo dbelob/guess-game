@@ -1,20 +1,13 @@
-package guess.domain;
+package guess.domain.question;
 
-import guess.domain.question.SpeakerQuestion;
-import guess.domain.question.TalkQuestion;
-
-import java.util.Collections;
 import java.util.List;
 
 public class QuestionSet {
     private long id;
     private String name;
     private String logoFileName;
-    private List<SpeakerQuestion> speakerQuestions = Collections.emptyList();
-    private List<TalkQuestion> talkQuestions = Collections.emptyList();
-
-    public QuestionSet() {
-    }
+    private List<SpeakerQuestion> speakerQuestions;
+    private List<TalkQuestion> talkQuestions;
 
     public QuestionSet(long id, String name, String logoFileName, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions) {
         this.id = id;
@@ -60,7 +53,4 @@ public class QuestionSet {
         return talkQuestions;
     }
 
-    public void setTalkQuestions(List<TalkQuestion> talkQuestions) {
-        this.talkQuestions = talkQuestions;
-    }
 }
