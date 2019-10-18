@@ -42,4 +42,13 @@ public class Speaker {
     public void setName(List<LocaleItem> name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Speaker{" +
+                "id=" + id +
+                ", fileName='" + fileName + '\'' +
+                ", name=" + name +
+                '}';
+    }
 }
