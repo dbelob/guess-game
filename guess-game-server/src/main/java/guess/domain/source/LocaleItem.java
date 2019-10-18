@@ -30,4 +30,12 @@ public class LocaleItem {
     public void setText(String text) {
         this.text = text;
     }
+
+    @Override
+    public String toString() {
+        return "LocaleItem{" +
+                "language='" + language + '\'' +
+                ", text='" + text + '\'' +
+                '}';
+    }
 }

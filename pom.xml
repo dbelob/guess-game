@@ -23,6 +23,8 @@
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <war.plugin.version>3.2.3</war.plugin.version>
 
+        <logback.version>1.2.3</logback.version>
+        <sl4j.version>1.7.28</sl4j.version>
         <snakeyaml.version>1.25</snakeyaml.version>
         <spring.boot.version>2.1.9.RELEASE</spring.boot.version>
         <springfox.swagger>2.9.2</springfox.swagger>
@@ -78,4 +80,20 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Logging -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${sl4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
