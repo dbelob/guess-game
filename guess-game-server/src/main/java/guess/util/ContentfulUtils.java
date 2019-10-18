@@ -1,9 +1,6 @@
 package guess.util;
 
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.LocaleItem;
-import guess.domain.source.Speaker;
+import guess.domain.source.*;
 import guess.domain.source.contentful.Locale;
 import guess.domain.source.contentful.*;
 import org.slf4j.Logger;
@@ -52,9 +49,8 @@ public class ContentfulUtils {
     private static final String MAIN_SPACE_ID = "2jxgmeypnru5";
     private static final String MAIN_ACCESS_TOKEN = "08f9e9e80ee347bd9f6017bf76f0a290c2ff0c28000946f7079f94a78974f090";
 
-    private static String RUSSIAN_LOCALE = "ru-RU";
     private static Map<String, String> LOCALE_CODE_MAP = new HashMap<String, String>() {{
-        put(RUSSIAN_LOCALE, LocalizationUtils.RUSSIAN_LANGUAGE);
+        put("ru-RU", LocalizationUtils.RUSSIAN_LANGUAGE);
     }};
 
     private static final RestTemplate restTemplate;
@@ -162,12 +158,19 @@ public class ContentfulUtils {
                 .collect(Collectors.toList());
     }
 
-    public static List<Speaker> getSpeakers(String spaceId, String accessToken, String locale, String speakerFieldName) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=people&select=fields.name,fields.nameEn&{speakerFieldName}=trur
+    /**
+     * Gets speakers.
+     *
+     * @param spaceId          space identifier
+     * @param accessToken      access token
+     * @param speakerFieldName speaker flag field name
+     * @return speakers
+     */
+    public static List<Speaker> getSpeakers(String spaceId, String accessToken, String speakerFieldName) {
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select=fields.name,fields.nameEn&{speakerFieldName}=true
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
-                .queryParam("locale", locale)
                 .queryParam("content_type", "people")
                 .queryParam("select", "fields.name,fields.nameEn")
                 .queryParam(speakerFieldName, "true");  // only speakers
@@ -194,6 +197,43 @@ public class ContentfulUtils {
     }
 
     /**
+     * Gets talks.
+     *
+     * @param spaceId     space identifier
+     * @param accessToken access token
+     * @return talks
+     */
+    public static List<Talk> getTalks(String spaceId, String accessToken) {
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select=fields.name,fields.nameEn
+        UriComponentsBuilder builder = UriComponentsBuilder
+                .fromUriString(BASE_URL)
+                .queryParam("access_token", accessToken)
+                .queryParam("content_type", "talks")
+                .queryParam("select", "fields.name,fields.nameEn");
+        URI uri = builder
+                .buildAndExpand(spaceId, "entries")
+                .encode()
+                .toUri();
+
+        ContentfulTalkResponse response = restTemplate.getForObject(uri, ContentfulTalkResponse.class);
+
+
+        return Objects.requireNonNull(response)
+                .getItems().stream()
+                .map(t -> new Talk(
+                        0L,
+                        Arrays.asList(
+                                new LocaleItem(
+                                        LocalizationUtils.ENGLISH_LANGUAGE,
+                                        t.getFields().getNameEn()),
+                                new LocaleItem(
+                                        LocalizationUtils.RUSSIAN_LANGUAGE,
+                                        t.getFields().getName())),
+                        new ArrayList<>()))
+                .collect(Collectors.toList());
+    }
+
+    /**
      * Transforms locale code.
      *
      * @param locale source locale code
@@ -215,11 +255,14 @@ public class ContentfulUtils {
             log.info("Events: {}", events);
         }
 
-        //TODO: combine event types, events (en, ru)
+        //TODO: combine event types (en, ru), events (en, ru)
 
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
-            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, RUSSIAN_LOCALE, conferenceSpaceInfo.speakerFieldName);
+            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName);
             log.info("Speakers: {}", speakers);
+
+            List<Talk> talks = getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken);
+            log.info("Talks: {}", talks);
         }
 
         // TODO: combine speakers, talk for all conferences
