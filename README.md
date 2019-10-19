@@ -8,6 +8,12 @@ Guess name by picture or picture by name.
 
 ## Running
 
+### Online
+
+https://jugspeakers.online
+
+### Offline
+
 1. Install [Java SE 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JRE* or *JDK*) 
 
 1. Extract files from ZIP, for example:
