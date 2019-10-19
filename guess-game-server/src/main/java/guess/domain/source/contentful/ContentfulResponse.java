@@ -2,7 +2,7 @@ package guess.domain.source.contentful;
 
 import java.util.List;
 
-public class Response<T> {
+public class ContentfulResponse<T> {
     private Long total;
     private Long skip;
     private Long limit;

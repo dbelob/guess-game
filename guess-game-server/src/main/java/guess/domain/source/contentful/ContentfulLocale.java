@@ -1,6 +1,6 @@
 package guess.domain.source.contentful;
 
-public class Locale {
+public class ContentfulLocale {
     private String code;
 
     public String getCode() {

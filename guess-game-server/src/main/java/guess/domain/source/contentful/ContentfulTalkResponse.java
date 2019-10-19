@@ -1,4 +1,4 @@
 package guess.domain.source.contentful;
 
-public class ContentfulTalkResponse extends Response<ContentfulTalk> {
+public class ContentfulTalkResponse extends ContentfulResponse<ContentfulTalk> {
 }

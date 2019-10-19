@@ -1,7 +1,7 @@
 package guess.util;
 
 import guess.domain.source.*;
-import guess.domain.source.contentful.Locale;
+import guess.domain.source.contentful.ContentfulLocale;
 import guess.domain.source.contentful.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -80,11 +80,11 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
 
-        LocaleResponse response = restTemplate.getForObject(uri, LocaleResponse.class);
+        ContentfulLocaleResponse response = restTemplate.getForObject(uri, ContentfulLocaleResponse.class);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .map(Locale::getCode)
+                .map(ContentfulLocale::getCode)
                 .collect(Collectors.toList());
     }
 
