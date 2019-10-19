@@ -13,4 +13,4 @@ Guess name by picture or picture by name.
 
 4. Ctrl-C in console to cancel
 
-WWW: https://github.com/dbelob/guess-game
+WWW: https://github.com/JugruGroup/guess-game
