@@ -1,4 +1,4 @@
-package guess.domain.source.contentful;
+package guess.domain.source.contentful.eventtype;
 
 public class ContentfulEventType {
     private ContentfulEventTypeFields fields;

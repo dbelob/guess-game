@@ -1,4 +1,4 @@
-package guess.domain.source.contentful;
+package guess.domain.source.contentful.talk;
 
 public class ContentfulTalkFields {
     private String name;

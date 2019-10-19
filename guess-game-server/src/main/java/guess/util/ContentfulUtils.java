@@ -1,8 +1,12 @@
 package guess.util;
 
 import guess.domain.source.*;
-import guess.domain.source.contentful.ContentfulLocale;
-import guess.domain.source.contentful.*;
+import guess.domain.source.contentful.event.ContentfulEventResponse;
+import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
+import guess.domain.source.contentful.locale.ContentfulLocale;
+import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
+import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
+import guess.domain.source.contentful.talk.ContentfulTalkResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.converter.HttpMessageConverter;

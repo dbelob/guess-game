@@ -1,4 +1,4 @@
-package guess.domain.source.contentful;
+package guess.domain.source.contentful.event;
 
 public class ContentfulEventFields {
     private String conferenceName;
