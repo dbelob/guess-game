@@ -3,21 +3,41 @@ name: "Conferences - DevOops"
 logoFileName: devoops.jpg
 speakerQuestions:
   - {fileName: 0124.jpg, name: "Oleg Anastasiev"}
+  - {fileName: 0000.jpg, name: "Anton Arhipov"}
+  - {fileName: 0486.jpg, name: "Mete Atamel"}
   - {fileName: 0368.jpg, name: "Anton Babenko"}
+  - {fileName: 0971.jpg, name: "Nikhil Barthwal"}
   - {fileName: 0383.jpg, name: "Sergey Berdnikov"}
   - {fileName: 0378.jpg, name: "Craig Box"}
   - {fileName: 0366.jpg, name: "Vladimir Borodin"}
+  - {fileName: 0973.jpg, name: "Fedor Chemashkin"}
   - {fileName: 0375.jpg, name: "Adrian Cole"}
+  - {fileName: 0970.jpg, name: "Jessica Deen"}
+  - {fileName: 0074.jpg, name: "Sebastian Daschner"}
   - {fileName: 0372.jpg, name: "Evgeny Dehtyarev"}
   - {fileName: 0365.jpg, name: "Andrey Ermakov"}
   - {fileName: 0009.jpg, name: "Viktor Gamov"}
-  - {fileName: 0380.jpg, name: "Nikolay Glushkov"}
+  - {fileName: 0380.jpg, name: "Ivan Glushkov"}
+  - {fileName: 0975.jpg, name: "Dmitry Gubenko"}
+  - {fileName: 0976.jpg, name: "Sergey Fedorov (Netflix)"}
   - {fileName: 0385.jpg, name: "Andrey Filatov"}
   - {fileName: 0384.jpg, name: "Vitaly Habarov"}
+  - {fileName: 0508.jpg, name: "Hadi Hariri"}
   - {fileName: 0367.jpg, name: "Leonid Igolnik"}
+  - {fileName: 0972.jpg, name: "Nikolay Ihalaynen"}
+  - {fileName: 0852.jpg, name: "Vladimir Ivanov (EPAM)"}
   - {fileName: 0382.jpg, name: "Artem Kalichkin"}
   - {fileName: 0369.jpg, name: "Alexey Kirpichnikov"}
+  - {fileName: 0974.jpg, name: "Fedor Korotkov"}
+  - {fileName: 0220.jpg, name: "Grigory Koshelev"}
+  - {fileName: 0143.jpg, name: "Philipp Krenn"}
+  - {fileName: 0978.jpg, name: "Igor Kurochkin"}
+  - {fileName: 0979.jpg, name: "Sergey Kurson"}
+  - {fileName: 0968.jpg, name: "Timothy Lister"}
+  - {fileName: 0977.jpg, name: "Alexander Lukyanchenko"}
   - {fileName: 0370.jpg, name: "Oksana Nekrasova"}
+  - {fileName: 0038.jpg, name: "Oleg Nenashev"}
+  - {fileName: 0982.jpg, name: "Konstantin Nifanin"}
   - {fileName: 0019.jpg, name: "Ivan Ponomarev (KURS)"}
   - {fileName: 0361.jpg, name: "Alena Prohorchik"}
   - {fileName: 0374.jpg, name: "Corey Quinn"}
@@ -26,12 +46,18 @@ speakerQuestions:
   - {fileName: 0379.jpg, name: "Nikolay Ryzhikov"}
   - {fileName: 0035.jpg, name: "Baruch Sadogursky"}
   - {fileName: 0371.jpg, name: "Ruslan Serkin"}
+  - {fileName: 0969.jpg, name: "Roman Shaposhnik"}
   - {fileName: 0376.jpg, name: "Sergey Sharapov"}
   - {fileName: 0381.jpg, name: "Radek Simko"}
+  - {fileName: 0582.jpg, name: "Nikita Sobolev"}
   - {fileName: 0363.jpg, name: "Paul Stack"}
+  - {fileName: 0980.jpg, name: "Dmitry Stolyarov"}
+  - {fileName: 0957.jpg, name: "Burr Sutter"}
+  - {fileName: 0408.jpg, name: "Alex Thissen"}
   - {fileName: 0364.jpg, name: "Alexander Titov (Express 42)"}
   - {fileName: 0028.jpg, name: "Kirill Tolkachev"}
   - {fileName: 0377.jpg, name: "Ray Tsang"}
   - {fileName: 0360.jpg, name: "Seth Vargo"}
+  - {fileName: 0981.jpg, name: "Erik Veld"}
   - {fileName: 0362.jpg, name: "Anton Weiss"}
   - {fileName: 0358.jpg, name: "John Willis"}

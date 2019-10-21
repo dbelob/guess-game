@@ -356,3 +356,141 @@ talks:
     name:
       - {language: en, text: "Making sense out of serverless computing"}
     speakerIds: [92]
+  - id: 142
+    name:
+      - {language: en, text: "Characters, community, and culture: Important factors for prosperity"}
+    speakerIds: [968]
+  - id: 143
+    name:
+      - {language: en, text: "Serverless containers with Knative and Cloud Run"}
+    speakerIds: [486]
+  - id: 144
+    name:
+      - {language: en, text: "Scale your auditing events"}
+    speakerIds: [143]
+  - id: 145
+    name:
+      - {language: en, text: "Terraform vs Helm: Battle for infrastructure"}
+      - {language: ru, text: "Terraform vs Helm: Битва за инфраструктуру"}
+    speakerIds: [975]
+  - id: 146
+    name:
+      - {language: en, text: "Do it in code (not YAML)! Unlock power of Kotlin DSL for Kubernetes"}
+      - {language: ru, text: "Do it in code (not YAML)! Unlock power of Kotlin DSL for Kubernetes"}
+    speakerIds: [9, 974]
+  - id: 147
+    name:
+      - {language: en, text: "The unbearable lightness of scaling pods in Kubernetes"}
+      - {language: ru, text: "Невыносимая легкость масштабирования подов в Kubernetes"}
+    speakerIds: [380]
+  - id: 148
+    name:
+      - {language: en, text: "Delivering progressively with Jenkins X"}
+    speakerIds: [74]
+  - id: 149
+    name:
+      - {language: en, text: "Pipelines & pods: DevOps with Kubernetes"}
+    speakerIds: [957]
+  - id: 150
+    name:
+      - {language: en, text: "How to deal with Kafka so it won't get Kafkaesque"}
+      - {language: ru, text: "Как готовить Кафку, чтобы не пригорало"}
+    speakerIds: [220]
+  - id: 151
+    name:
+      - {language: en, text: "10 years of on-call. What have we learned?"}
+      - {language: ru, text: "10 лет on-call. Чему мы научились?"}
+    speakerIds: [980]
+  - id: 152
+    name:
+      - {language: en, text: "DevOps patterns and antipatterns for continuous software updates"}
+      - {language: ru, text: "Паттерны и антипаттерны непрерывных обновлений в практике DevOps"}
+    speakerIds: [35]
+  - id: 153
+    name:
+      - {language: en, text: "Flagging your features — a DevOps approach to continuous release"}
+    speakerIds: [408]
+  - id: 154
+    name:
+      - {language: en, text: "Ansible: Tractor mode. We create a roles that will travel everywhere!"}
+      - {language: ru, text: "Ansible: Тракторный режим. Создаём роли, которые проедут везде!"}
+    speakerIds: [982]
+  - id: 155
+    name:
+      - {language: en, text: "Removing the barriers"}
+    speakerIds: [508]
+  - id: 156
+    name:
+      - {language: en, text: "CDK and infrastructure as a code"}
+    speakerIds: [979]
+  - id: 157
+    name:
+      - {language: en, text: "How to draw DevOps?"}
+      - {language: ru, text: "Как нарисовать DevOps?"}
+    speakerIds: [978]
+  - id: 158
+    name:
+      - {language: en, text: "How to steer MySQL steam boat"}
+      - {language: ru, text: "Как рулить пароходом MySQL"}
+    speakerIds: [972]
+  - id: 159
+    name:
+      - {language: en, text: "WTF do we need a service mesh?"}
+      - {language: ru, text: "Зачем нам сервисное сито?"}
+    speakerIds: [362]
+  - id: 160
+    name:
+      - {language: en, text: "Implementing microservices architecture as Cloud Run application"}
+    speakerIds: [971]
+  - id: 161
+    name:
+      - {language: en, text: "Automating everything with Github Actions"}
+      - {language: ru, text: "Автоматизируем все с Github Actions"}
+    speakerIds: [582]
+  - id: 162
+    name:
+      - {language: en, text: "From zero to DevOps superhero: The container edition"}
+    speakerIds: [970]
+  - id: 163
+    name:
+      - {language: en, text: "Service mesh for building multicluster systems"}
+      - {language: ru, text: "Service mesh для построения мультикластерной системы"}
+    speakerIds: [977]
+  - id: 164
+    name:
+      - {language: en, text: "The final story about operators"}
+      - {language: ru, text: "Заключительный рассказ про операторы"}
+    speakerIds: [973]
+  - id: 165
+    name:
+      - {language: en, text: "Making the Internet faster. And sleeping well at night"}
+      - {language: ru, text: "Ускоряем Интернет-запросы, и спим спокойно"}
+    speakerIds: [976]
+  - id: 166
+    name:
+      - {language: en, text: "Under the hood of serverless Jenkins: Jenkinsfile Runner"}
+    speakerIds: [38]
+  - id: 167
+    name:
+      - {language: en, text: "Mobile app development: DevOps or not DevOps"}
+      - {language: ru, text: "Мобильная разработка: DevOps или не DevOps"}
+    speakerIds: [852]
+  - id: 168
+    name:
+      - {language: en, text: "The curse of infrastructure team"}
+      - {language: ru, text: "Проклятие инфраструктурной команды"}
+    speakerIds: [369]
+  - id: 169
+    name:
+      - {language: en, text: "Adapting your infrastructure to go multi-*"}
+    speakerIds: [981]
+  - id: 170
+    name:
+      - {language: en, text: "CI of big projects in JetBrains"}
+      - {language: ru, text: "CI больших проектов в JetBrains"}
+    speakerIds: [0]
+  - id: 171
+    name:
+      - {language: en, text: "Why IT industry is entering its darkest era yet, how DevOps is to blame and why Das Kapital can help"}
+      - {language: ru, text: "Почему IT-индустрия переживает темные времена, как в этом виноват DevOps, и почему «Капитал» может помочь"}
+    speakerIds: [969]
