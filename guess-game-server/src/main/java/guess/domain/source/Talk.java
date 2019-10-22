@@ -13,6 +13,15 @@ public class Talk {
     private List<Long> speakerIds;
     private List<Speaker> speakers = new ArrayList<>();
 
+    public Talk() {
+    }
+
+    public Talk(long id, List<LocaleItem> name, List<Speaker> speakers) {
+        this.id = id;
+        this.name = name;
+        this.speakers = speakers;
+    }
+
     public long getId() {
         return id;
     }
@@ -43,5 +52,14 @@ public class Talk {
 
     public void setSpeakers(List<Speaker> speakers) {
         this.speakers = speakers;
+    }
+
+    @Override
+    public String toString() {
+        return "Talk{" +
+                "id=" + id +
+                ", name=" + name +
+                ", speakers=" + speakers +
+                '}';
     }
 }

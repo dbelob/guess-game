@@ -12,6 +12,16 @@ public class EventType {
     private String logoFileName;
     private List<Event> events = new ArrayList<>();
 
+    public EventType() {
+    }
+
+    public EventType(long id, List<LocaleItem> name, String logoFileName, List<Event> events) {
+        this.id = id;
+        this.name = name;
+        this.logoFileName = logoFileName;
+        this.events = events;
+    }
+
     public long getId() {
         return id;
     }
@@ -42,5 +52,15 @@ public class EventType {
 
     public void setEvents(List<Event> events) {
         this.events = events;
+    }
+
+    @Override
+    public String toString() {
+        return "EventType{" +
+                "id=" + id +
+                ", name=" + name +
+                ", logoFileName='" + logoFileName + '\'' +
+                ", events=" + events +
+                '}';
     }
 }

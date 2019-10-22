@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class LocalizationUtils {
     public static final String ENGLISH_LANGUAGE = "en";
+    public static final String RUSSIAN_LANGUAGE = "ru";
     private static final LocaleItem DEFAULT_LOCALE_ITEM = new LocaleItem(ENGLISH_LANGUAGE, "");
 
     /**

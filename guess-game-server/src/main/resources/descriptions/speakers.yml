@@ -24,6 +24,11 @@ speakers:
     name:
       - {language: en, text: "Pavel Finkelshteyn"}
       - {language: ru, text: "Павел Финкельштейн"}
+  - id: 9
+    fileName: 0009.jpg
+    name:
+      - {language: en, text: "Viktor Gamov"}
+      - {language: ru, text: "Виктор Гамов"}
   - id: 13
     fileName: 0013.jpg
     name:
@@ -240,6 +245,10 @@ speakers:
     name:
       - {language: en, text: "Vladimir Ozerov"}
       - {language: ru, text: "Владимир Озеров"}
+  - id: 143
+    fileName: 0143.jpg
+    name:
+      - {language: en, text: "Philipp Krenn"}
   - id: 220
     fileName: 0220.jpg
     name:
@@ -253,11 +262,48 @@ speakers:
     fileName: 0253.jpg
     name:
       - {language: en, text: "Stephen Chin"}
+  - id: 362
+    fileName: 0362.jpg
+    name:
+      - {language: en, text: "Anton Weiss"}
+      - {language: ru, text: "Антон Вайс"}
+  - id: 369
+    fileName: 0369.jpg
+    name:
+      - {language: en, text: "Alexey Kirpichnikov"}
+      - {language: ru, text: "Алексей Кирпичников"}
+  - id: 380
+    fileName: 0380.jpg
+    name:
+      - {language: en, text: "Ivan Glushkov"}
+      - {language: ru, text: "Иван Глушков"}
+  - id: 408
+    fileName: 0408.jpg
+    name:
+      - {language: en, text: "Alex Thissen"}
+  - id: 486
+    fileName: 0486.jpg
+    name:
+      - {language: en, text: "Mete Atamel"}
+  - id: 508
+    fileName: 0508.jpg
+    name:
+      - {language: en, text: "Hadi Hariri"}
+  - id: 582
+    fileName: 0582.jpg
+    name:
+      - {language: en, text: "Nikita Sobolev"}
+      - {language: ru, text: "Никита Соболев"}
   - id: 622
     fileName: 0622.jpg
     name:
       - {language: en, text: "Sergey Egorov"}
       - {language: ru, text: "Сергей Егоров"}
+  - id: 852
+    fileName: 0852.jpg
+    name:
+      - {language: en, text: "Vladimir Ivanov (EPAM)"}
+      - {language: ru, text: "Владимир Иванов (EPAM)"}
   - id: 954
     fileName: 0954.jpg
     name:
@@ -317,3 +363,74 @@ speakers:
     fileName: 0967.jpg
     name:
       - {language: en, text: "Trustin Lee"}
+  - id: 968
+    fileName: 0968.jpg
+    name:
+      - {language: en, text: "Timothy Lister"}
+  - id: 969
+    fileName: 0969.jpg
+    name:
+      - {language: en, text: "Roman Shaposhnik"}
+      - {language: ru, text: "Роман Шапошник"}
+  - id: 970
+    fileName: 0970.jpg
+    name:
+      - {language: en, text: "Jessica Deen"}
+  - id: 971
+    fileName: 0971.jpg
+    name:
+      - {language: en, text: "Nikhil Barthwal"}
+  - id: 972
+    fileName: 0972.jpg
+    name:
+      - {language: en, text: "Nikolay Ihalaynen"}
+      - {language: ru, text: "Николай Ихалайнен"}
+  - id: 973
+    fileName: 0973.jpg
+    name:
+      - {language: en, text: "Fedor Chemashkin"}
+      - {language: ru, text: "Федор Чемашкин"}
+  - id: 974
+    fileName: 0974.jpg
+    name:
+      - {language: en, text: "Fedor Korotkov"}
+      - {language: ru, text: "Федор Коротков"}
+  - id: 975
+    fileName: 0975.jpg
+    name:
+      - {language: en, text: "Dmitry Gubenko"}
+      - {language: ru, text: "Дмитрий Губенко"}
+  - id: 976
+    fileName: 0976.jpg
+    name:
+      - {language: en, text: "Sergey Fedorov (Netflix)"}
+      - {language: ru, text: "Сергей Фёдоров (Netflix)"}
+  - id: 977
+    fileName: 0977.jpg
+    name:
+      - {language: en, text: "Alexander Lukyanchenko"}
+      - {language: ru, text: "Александр Лукьянченко"}
+  - id: 978
+    fileName: 0978.jpg
+    name:
+      - {language: en, text: "Igor Kurochkin"}
+      - {language: ru, text: "Игорь Курочкин"}
+  - id: 979
+    fileName: 0979.jpg
+    name:
+      - {language: en, text: "Sergey Kurson"}
+      - {language: ru, text: "Сергей Курсон"}
+  - id: 980
+    fileName: 0980.jpg
+    name:
+      - {language: en, text: "Dmitry Stolyarov"}
+      - {language: ru, text: "Дмитрий Столяров"}
+  - id: 981
+    fileName: 0981.jpg
+    name:
+      - {language: en, text: "Erik Veld"}
+  - id: 982
+    fileName: 0982.jpg
+    name:
+      - {language: en, text: "Konstantin Nifanin"}
+      - {language: ru, text: "Константин Нифанин"}

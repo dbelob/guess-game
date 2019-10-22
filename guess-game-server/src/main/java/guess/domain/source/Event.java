@@ -18,7 +18,20 @@ public class Event {
     private List<LocaleItem> place;
 
     private List<Long> talkIds;
-    private final List<Talk> talks = new ArrayList<>();
+    private List<Talk> talks = new ArrayList<>();
+
+    public Event() {
+    }
+
+    public Event(EventType eventType, List<LocaleItem> name, LocalDate startDate, LocalDate endDate, List<LocaleItem> city, List<LocaleItem> place, List<Talk> talks) {
+        this.eventType = eventType;
+        this.name = name;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.city = city;
+        this.place = place;
+        this.talks = talks;
+    }
 
     public long getEventTypeId() {
         return eventTypeId;
@@ -86,5 +99,18 @@ public class Event {
 
     public List<Talk> getTalks() {
         return talks;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "eventType=" + eventType +
+                ", name=" + name +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", city=" + city +
+                ", place=" + place +
+                ", talks=" + talks +
+                '}';
     }
 }
