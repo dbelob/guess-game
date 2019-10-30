@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/jugrugroup/guess-game.svg?branch=master)](https://travis-ci.org/jugrugroup/guess-game)
-[![Dependabot Status](https://badgen.net/dependabot/jugrugroup/guess-game)](https://dependabot.com)
+[![Dependabot Status](https://badgen.net/dependabot/JugruGroup/guess-game)](https://dependabot.com)
 
 # Guess Game
 
