@@ -2,13 +2,16 @@ package guess.service;
 
 import guess.dao.AnswerDao;
 import guess.dao.StateDao;
-import guess.domain.*;
+import guess.domain.GuessType;
+import guess.domain.StartParameters;
 import guess.domain.answer.AnswerSet;
-import guess.domain.question.Question;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.Result;
+import guess.domain.question.Question;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +26,8 @@ import java.util.Optional;
  */
 @Service
 public class AnswerServiceImpl implements AnswerService {
+    private static final Logger log = LoggerFactory.getLogger(AnswerServiceImpl.class);
+
     private AnswerDao answerDao;
     private StateDao stateDao;
 
@@ -40,15 +45,20 @@ public class AnswerServiceImpl implements AnswerService {
             answerSets.get(questionIndex).getAnswers().add(answerId);
         } else {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
-            List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
-            QuestionAnswers questionAnswers = questionAnswersList.get(questionIndex);
-            List<Long> answers = new ArrayList<>(Collections.singletonList(answerId));
-            AnswerSet answerSet = new AnswerSet(
-                    questionAnswers.getQuestion().getId(),
-                    answers,
-                    (questionAnswers.getQuestion().getId() == answerId));
 
-            answerDao.addAnswerSet(answerSet, httpSession);
+            if (questionAnswersSet != null) {
+                List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
+                QuestionAnswers questionAnswers = questionAnswersList.get(questionIndex);
+                List<Long> answers = new ArrayList<>(Collections.singletonList(answerId));
+                AnswerSet answerSet = new AnswerSet(
+                        questionAnswers.getQuestion().getId(),
+                        answers,
+                        (questionAnswers.getQuestion().getId() == answerId));
+
+                answerDao.addAnswerSet(answerSet, httpSession);
+            } else {
+                log.warn("Question/answers set not found, questionIndex: {}, answerId: {}", questionIndex, answerId);
+            }
         }
     }
 
