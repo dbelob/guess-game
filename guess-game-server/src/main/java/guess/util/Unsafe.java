@@ -2,6 +2,7 @@ package guess.util;
 
 import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
+import guess.domain.source.LocaleItem;
 import guess.domain.source.Speaker;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -58,11 +59,18 @@ class Unsafe {
         for (UnsafeQuestionSet unsafeQuestionSet : unsafeQuestionSets) {
             List<SpeakerQuestion> speakerQuestions = unsafeQuestionSet.getSpeakerQuestions().stream()
                     .map(q -> {
-                                Speaker speaker = speakerMap.get(q.getFileName());
-                                Objects.requireNonNull(speaker,
-                                        () -> String.format("Speaker filename %s not found", q.getFileName()));
+                                //TODO: uncomment
+//                                Speaker speaker = speakerMap.get(q.getFileName());
+//                                Objects.requireNonNull(speaker,
+//                                        () -> String.format("Speaker filename %s not found", q.getFileName()));
+//
+//                                return new SpeakerQuestion(speaker);
 
-                                return new SpeakerQuestion(speaker);
+                                //TODO: delete
+                                return new SpeakerQuestion(new Speaker(
+                                        q.getId(),
+                                        q.getFileName(),
+                                        Collections.singletonList(new LocaleItem(LocalizationUtils.ENGLISH_LANGUAGE, q.getName()))));
                             }
                     )
                     .collect(Collectors.toList());
