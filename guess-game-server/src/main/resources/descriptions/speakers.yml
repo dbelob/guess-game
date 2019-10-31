@@ -262,6 +262,135 @@ speakers:
     fileName: 0253.jpg
     name:
       - {language: en, text: "Stephen Chin"}
+  - id: 330
+    fileName: 0330.jpg
+    name:
+      - {language: en, text: "Nicolai Josuttis"}
+  - id: 331
+    fileName: 0331.jpg
+    name:
+      - {language: en, text: "Alexey Milovidov"}
+      - {language: ru, text: "Алексей Миловидов"}
+  - id: 332
+    fileName: 0332.jpg
+    name:
+      - {language: en, text: "Anton Poluhin"}
+      - {language: ru, text: "Антон Полухин"}
+  - id: 333
+    fileName: 0333.jpg
+    name:
+      - {language: en, text: "Mihail Matrosov"}
+      - {language: ru, text: "Михаил Матросов"}
+  - id: 334
+    fileName: 0334.jpg
+    name:
+      - {language: en, text: "Phil Nash"}
+  - id: 335
+    fileName: 0335.jpg
+    name:
+      - {language: en, text: "Valentin Ziegler"}
+  - id: 336
+    fileName: 0336.jpg
+    name:
+      - {language: en, text: "Ivan Čukić"}
+  - id: 337
+    fileName: 0337.jpg
+    name:
+      - {language: en, text: "Alexander Granin"}
+      - {language: ru, text: "Александр Гранин"}
+  - id: 338
+    fileName: 0338.jpg
+    name:
+      - {language: en, text: "Viktor Kirilov"}
+  - id: 339
+    fileName: 0339.jpg
+    name:
+      - {language: en, text: "Rainer Grimm"}
+  - id: 340
+    fileName: 0340.jpg
+    name:
+      - {language: en, text: "Timur Doumler"}
+  - id: 341
+    fileName: 0341.jpg
+    name:
+      - {language: en, text: "Vittorio Romeo"}
+  - id: 342
+    fileName: 0342.jpg
+    name:
+      - {language: en, text: "Juan Pedro Bolívar Puente"}
+  - id: 343
+    fileName: 0343.jpg
+    name:
+      - {language: en, text: "Alexey Malov"}
+      - {language: ru, text: "Алексей Малов"}
+  - id: 344
+    fileName: 0344.jpg
+    name:
+      - {language: en, text: "Andrey Karpov (PVS-Studio)"}
+      - {language: ru, text: "Андрей Карпов (PVS-Studio)"}
+  - id: 345
+    fileName: 0345.jpg
+    name:
+      - {language: en, text: "Sergey Sadovnikov"}
+      - {language: ru, text: "Сергей Садовников"}
+  - id: 346
+    fileName: 0346.jpg
+    name:
+      - {language: en, text: "Andrey Davydov"}
+      - {language: ru, text: "Андрей Давыдов"}
+  - id: 347
+    fileName: 0347.jpg
+    name:
+      - {language: en, text: "Kirill Tihonov"}
+      - {language: ru, text: "Кирилл Тихонов"}
+  - id: 348
+    fileName: 0348.jpg
+    name:
+      - {language: en, text: "Oleg Fathiev"}
+      - {language: ru, text: "Олег Фатхиев"}
+  - id: 349
+    fileName: 0349.jpg
+    name:
+      - {language: en, text: "Anton Dunchev"}
+      - {language: ru, text: "Антон Дунчев"}
+  - id: 350
+    fileName: 0350.jpg
+    name:
+      - {language: en, text: "Sergey Fedorov (Yandex.Taxi)"}
+      - {language: ru, text: "Сергей Федоров (Yandex.Taxi)"}
+  - id: 351
+    fileName: 0351.jpg
+    name:
+      - {language: en, text: "Pavel Novikov"}
+      - {language: ru, text: "Павел Новиков"}
+  - id: 352
+    fileName: 0352.jpg
+    name:
+      - {language: en, text: "Ilya Bogdanov"}
+      - {language: ru, text: "Илья Богданов"}
+  - id: 353
+    fileName: 0353.jpg
+    name:
+      - {language: en, text: "Ruslan Arutyunyan"}
+      - {language: ru, text: "Руслан Арутюнян"}
+  - id: 354
+    fileName: 0354.jpg
+    name:
+      - {language: en, text: "Alexander Schmidt"}
+      - {language: ru, text: "Александр Шмидт"}
+  - id: 355
+    fileName: 0355.jpg
+    name:
+      - {language: en, text: "Javier García Sogo"}
+  - id: 356
+    fileName: 0356.jpg
+    name:
+      - {language: en, text: "Alexander Titov (Intel)"}
+  - id: 357
+    fileName: 0357.jpg
+    name:
+      - {language: en, text: "Alexander Voronkov"}
+      - {language: ru, text: "Александр Воронков"}
   - id: 362
     fileName: 0362.jpg
     name:
