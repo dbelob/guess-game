@@ -112,7 +112,7 @@ public class YamlUtils {
         }
 
         //TODO: delete
-        Unsafe.replaceSpeakerQuestions(questionSets, questionsDirectoryName);
+        Unsafe.replaceSpeakerQuestions(questionSets, questionsDirectoryName, speakers.getSpeakers());
 
         return questionSets;
     }
@@ -208,7 +208,7 @@ public class YamlUtils {
      * @param <T>          Entity (map value) type
      * @return Map of entities, or IllegalStateException if duplicate entities are found
      */
-    private static <K, T> Map<K, T> listToMap(List<T> list, Function<? super T, ? extends K> keyExtractor) {
+    public static <K, T> Map<K, T> listToMap(List<T> list, Function<? super T, ? extends K> keyExtractor) {
         Map<K, T> map =
                 list.stream().collect(Collectors.toMap(keyExtractor, s -> s));
         if (map.size() != list.size()) {

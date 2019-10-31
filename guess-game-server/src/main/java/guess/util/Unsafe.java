@@ -2,7 +2,6 @@ package guess.util;
 
 import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
-import guess.domain.source.LocaleItem;
 import guess.domain.source.Speaker;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -10,9 +9,7 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -28,19 +25,24 @@ import java.util.stream.Collectors;
  */
 //TODO: delete
 class Unsafe {
-    static void replaceSpeakerQuestions(List<QuestionSet> questionSets, String questionsDirectoryName) throws IOException {
-        List<QuestionSet> speakerQuestionSets = readSpeakerQuestionSets(questionsDirectoryName);
+    static void replaceSpeakerQuestions(List<QuestionSet> questionSets, String questionsDirectoryName,
+                                        List<Speaker> speakers) throws IOException {
+        Map<String, Speaker> speakerMap = YamlUtils.listToMap(speakers, Speaker::getFileName);
+        List<QuestionSet> speakerQuestionSets = readSpeakerQuestionSets(questionsDirectoryName, speakerMap);
+        Map<Long, QuestionSet> speakerQuestionSetMap = YamlUtils.listToMap(speakerQuestionSets, QuestionSet::getId);
 
         for (QuestionSet questionSet : questionSets) {
-            for (QuestionSet speakerQuestionSet : speakerQuestionSets) {
-                if (questionSet.getId() == speakerQuestionSet.getId()) {
-                    questionSet.setSpeakerQuestions(speakerQuestionSet.getSpeakerQuestions());
-                }
-            }
+            // Find speaker question set by id
+            QuestionSet speakerQuestionSet = speakerQuestionSetMap.get(questionSet.getId());
+            Objects.requireNonNull(speakerQuestionSet,
+                    () -> String.format("Speaker question set id %d not found", questionSet.getId()));
+
+            questionSet.setSpeakerQuestions(speakerQuestionSet.getSpeakerQuestions());
         }
     }
 
-    private static List<QuestionSet> readSpeakerQuestionSets(String questionsDirectoryName) throws IOException {
+    private static List<QuestionSet> readSpeakerQuestionSets(String questionsDirectoryName,
+                                                             Map<String, Speaker> speakerMap) throws IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource[] resources = resolver.getResources(String.format("classpath:%s/*.yml", questionsDirectoryName));
         Yaml yaml = new Yaml(new Constructor(UnsafeQuestionSet.class));
@@ -55,10 +57,14 @@ class Unsafe {
         long questionId = 0;
         for (UnsafeQuestionSet unsafeQuestionSet : unsafeQuestionSets) {
             List<SpeakerQuestion> speakerQuestions = unsafeQuestionSet.getSpeakerQuestions().stream()
-                    .map(q -> new SpeakerQuestion(new Speaker(
-                            q.getId(),
-                            q.getFileName(),
-                            Collections.singletonList(new LocaleItem(LocalizationUtils.ENGLISH_LANGUAGE, q.getName())))))
+                    .map(q -> {
+                                Speaker speaker = speakerMap.get(q.getFileName());
+                                Objects.requireNonNull(speaker,
+                                        () -> String.format("Speaker filename %s not found", q.getFileName()));
+
+                                return new SpeakerQuestion(speaker);
+                            }
+                    )
                     .collect(Collectors.toList());
 
             // Remove duplicates by filename
