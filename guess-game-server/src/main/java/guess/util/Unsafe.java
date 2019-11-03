@@ -62,7 +62,7 @@ class Unsafe {
                                 //TODO: uncomment
 //                                Speaker speaker = speakerMap.get(q.getFileName());
 //                                Objects.requireNonNull(speaker,
-//                                        () -> String.format("Speaker filename %s not found", q.getFileName()));
+//                                        () -> String.format("Speaker filename %s (name '%s') not found", q.getFileName(), q.getName()));
 //
 //                                return new SpeakerQuestion(speaker);
 

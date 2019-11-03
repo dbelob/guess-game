@@ -391,21 +391,137 @@ speakers:
     name:
       - {language: en, text: "Alexander Voronkov"}
       - {language: ru, text: "Александр Воронков"}
+  - id: 358
+    fileName: 0358.jpg
+    name:
+      - {language: en, text: "John Willis"}
+  - id: 359
+    fileName: 0359.jpg
+    name:
+      - {language: en, text: "Liz Rice"}
+  - id: 360
+    fileName: 0360.jpg
+    name:
+      - {language: en, text: "Seth Vargo"}
+  - id: 361
+    fileName: 0361.jpg
+    name:
+      - {language: en, text: "Alena Prokharchyk"}
+      - {language: ru, text: "Алёна Прохорчик"}
   - id: 362
     fileName: 0362.jpg
     name:
       - {language: en, text: "Anton Weiss"}
       - {language: ru, text: "Антон Вайс"}
+  - id: 363
+    fileName: 0363.jpg
+    name:
+      - {language: en, text: "Paul Stack"}
+  - id: 364
+    fileName: 0364.jpg
+    name:
+      - {language: en, text: "Alexander Titov (Express 42)"}
+      - {language: ru, text: "Александр Титов (Express 42)"}
+  - id: 365
+    fileName: 0365.jpg
+    name:
+      - {language: en, text: "Andrey Ermakov"}
+      - {language: ru, text: "Андрей Ермаков"}
+  - id: 366
+    fileName: 0366.jpg
+    name:
+      - {language: en, text: "Vladimir Borodin"}
+      - {language: ru, text: "Владимир Бородин"}
+  - id: 367
+    fileName: 0367.jpg
+    name:
+      - {language: en, text: "Leonid Igolnik"}
+      - {language: ru, text: "Леонид Игольник"}
+  - id: 368
+    fileName: 0368.jpg
+    name:
+      - {language: en, text: "Anton Babenko"}
+      - {language: ru, text: "Антон Бабенко"}
   - id: 369
     fileName: 0369.jpg
     name:
       - {language: en, text: "Alexey Kirpichnikov"}
       - {language: ru, text: "Алексей Кирпичников"}
+  - id: 370
+    fileName: 0370.jpg
+    name:
+      - {language: en, text: "Oksana Nekrasova"}
+      - {language: ru, text: "Оксана Некрасова"}
+  - id: 371
+    fileName: 0371.jpg
+    name:
+      - {language: en, text: "Ruslan Serkin"}
+      - {language: ru, text: "Руслан Серкин"}
+  - id: 372
+    fileName: 0372.jpg
+    name:
+      - {language: en, text: "Evgeny Dekhtyarev"}
+      - {language: ru, text: "Евгений Дехтярёв"}
+  - id: 373
+    fileName: 0373.jpg
+    name:
+      - {language: en, text: "Anton Rymkus"}
+      - {language: ru, text: "Антон Рымкус"}
+  - id: 374
+    fileName: 0374.jpg
+    name:
+      - {language: en, text: "Corey Quinn"}
+  - id: 375
+    fileName: 0375.jpg
+    name:
+      - {language: en, text: "Adrian Cole"}
+  - id: 376
+    fileName: 0376.jpg
+    name:
+      - {language: en, text: "Sergey Sharapov"}
+      - {language: ru, text: "Сергей Шарапов"}
+  - id: 377
+    fileName: 0377.jpg
+    name:
+      - {language: en, text: "Ray Tsang"}
+  - id: 378
+    fileName: 0378.jpg
+    name:
+      - {language: en, text: "Craig Box"}
+  - id: 379
+    fileName: 0379.jpg
+    name:
+      - {language: en, text: "Nikolay Ryzhikov"}
+      - {language: ru, text: "Николай Рыжиков"}
   - id: 380
     fileName: 0380.jpg
     name:
       - {language: en, text: "Ivan Glushkov"}
       - {language: ru, text: "Иван Глушков"}
+  - id: 381
+    fileName: 0381.jpg
+    name:
+      - {language: en, text: "Radek Simko"}
+  - id: 382
+    fileName: 0382.jpg
+    name:
+      - {language: en, text: "Artem Kalichkin"}
+      - {language: ru, text: "Артем Каличкин"}
+  - id: 383
+    fileName: 0383.jpg
+    name:
+      - {language: en, text: "Sergey Berdnikov"}
+      - {language: ru, text: "Сергей Бердников"}
+  - id: 384
+    fileName: 0384.jpg
+    name:
+      - {language: en, text: "Vitaly Khabarov"}
+      - {language: ru, text: "Виталий Хабаров"}
+  - id: 385
+    fileName: 0385.jpg
+    name:
+      - {language: en, text: "Andrey Filatov"}
+      - {language: ru, text: "Андрей Филатов"}
   - id: 408
     fileName: 0408.jpg
     name:
