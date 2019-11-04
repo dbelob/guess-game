@@ -227,6 +227,10 @@ speakers:
     fileName: 0105.jpg
     name:
       - {language: en, text: "Sanhong Li"}
+  - id: 111
+    fileName: 0111.jpg
+    name:
+      - {language: en, text: "Sasha Goldshtein"}
   - id: 113
     fileName: 0113.jpg
     name:
@@ -262,6 +266,11 @@ speakers:
     fileName: 0253.jpg
     name:
       - {language: en, text: "Stephen Chin"}
+  - id: 258
+    fileName: 0258.jpg
+    name:
+      - {language: en, text: "Sergey Abdulmanov"}
+      - {language: ru, text: "Сергей Абдульманов"}
   - id: 330
     fileName: 0330.jpg
     name:
@@ -386,6 +395,7 @@ speakers:
     fileName: 0356.jpg
     name:
       - {language: en, text: "Alexander Titov (Intel)"}
+      - {language: ru, text: "Александр Титов (Intel)"}
   - id: 357
     fileName: 0357.jpg
     name:
@@ -522,18 +532,238 @@ speakers:
     name:
       - {language: en, text: "Andrey Filatov"}
       - {language: ru, text: "Андрей Филатов"}
+  - id: 403
+    fileName: 0403.jpg
+    name:
+      - {language: en, text: "Jon Galloway"}
+  - id: 404
+    fileName: 0404.jpg
+    name:
+      - {language: en, text: "Dino Esposito"}
+  - id: 407
+    fileName: 0407.jpg
+    name:
+      - {language: en, text: "Dylan Beattie"}
   - id: 408
     fileName: 0408.jpg
     name:
       - {language: en, text: "Alex Thissen"}
+  - id: 412
+    fileName: 0412.jpg
+    name:
+      - {language: en, text: "Stan Drapkin"}
+  - id: 413
+    fileName: 0413.jpg
+    name:
+      - {language: en, text: "Maxim Arshinov"}
+      - {language: ru, text: "Максим Аршинов"}
+  - id: 414
+    fileName: 0414.jpg
+    name:
+      - {language: en, text: "Alfonso García-Caro"}
+  - id: 417
+    fileName: 0417.jpg
+    name:
+      - {language: en, text: "Kevin Gosse"}
+  - id: 418
+    fileName: 0418.jpg
+    name:
+      - {language: en, text: "Sean Farmar"}
+  - id: 420
+    fileName: 0420.jpg
+    name:
+      - {language: en, text: "Wesley Cabus"}
+  - id: 421
+    fileName: 0421.jpg
+    name:
+      - {language: en, text: "Konstantin Gustov"}
+      - {language: ru, text: "Константин Густов"}
+  - id: 422
+    fileName: 0422.jpg
+    name:
+      - {language: en, text: "Roberto Freato"}
+  - id: 426
+    fileName: 0426.jpg
+    name:
+      - {language: en, text: "Andrey Dyatlov"}
+      - {language: ru, text: "Андрей Дятлов"}
+  - id: 428
+    fileName: 0428.jpg
+    name:
+      - {language: en, text: "Steffen Forkmann"}
+  - id: 431
+    fileName: 0431.jpg
+    name:
+      - {language: en, text: "Egor Bogatov"}
+      - {language: ru, text: "Егор Богатов"}
+  - id: 433
+    fileName: 0433.jpg
+    name:
+      - {language: en, text: "Egor Grishechko"}
+      - {language: ru, text: "Егор Гришечко"}
+  - id: 435
+    fileName: 0435.jpg
+    name:
+      - {language: en, text: "Ivan Dashkevich"}
+      - {language: ru, text: "Иван Дашкевич"}
+  - id: 437
+    fileName: 0437.jpg
+    name:
+      - {language: en, text: "Chris Bacon"}
+  - id: 439
+    fileName: 0439.jpg
+    name:
+      - {language: en, text: "Alexey Gorshkolep"}
+      - {language: ru, text: "Алексей Горшколеп"}
+  - id: 445
+    fileName: 0445.jpg
+    name:
+      - {language: en, text: "Sergey Bykov"}
+      - {language: ru, text: "Сергей Быков"}
+  - id: 449
+    fileName: 0449.jpg
+    name:
+      - {language: en, text: "Ian Cooper"}
+  - id: 451
+    fileName: 0451.jpg
+    name:
+      - {language: en, text: "Elizaveta Golenok"}
+      - {language: ru, text: "Елизавета Голенок"}
+  - id: 455
+    fileName: 0455.jpg
+    name:
+      - {language: en, text: "Maarten Balliauw"}
+  - id: 446
+    fileName: 0446.jpg
+    name:
+      - {language: en, text: "Andrei Alexandrescu"}
+  - id: 452
+    fileName: 0452.jpg
+    name:
+      - {language: en, text: "Tamir Dresher"}
+  - id: 459
+    fileName: 0459.jpg
+    name:
+      - {language: en, text: "Vitaly Egorov"}
+      - {language: ru, text: "Виталий Егоров"}
+  - id: 470
+    fileName: 0470.jpg
+    name:
+      - {language: en, text: "Dina Goldshtein"}
+  - id: 471
+    fileName: 0471.jpg
+    name:
+      - {language: en, text: "Andrey Akinshin"}
+      - {language: ru, text: "Андрей Акиньшин"}
+  - id: 474
+    fileName: 0474.jpg
+    name:
+      - {language: en, text: "Roland Guijt"}
+  - id: 479
+    fileName: 0479.jpg
+    name:
+      - {language: en, text: "Vitaly Ezepchuk"}
+      - {language: ru, text: "Виталий Езепчук"}
+  - id: 480
+    fileName: 0480.jpg
+    name:
+      - {language: en, text: "Nikolay Gusev"}
+      - {language: ru, text: "Николай Гусев"}
   - id: 486
     fileName: 0486.jpg
     name:
       - {language: en, text: "Mete Atamel"}
+  - id: 488
+    fileName: 0488.jpg
+    name:
+      - {language: en, text: "Damir Beylhanov"}
+      - {language: ru, text: "Дамир Бейльханов"}
+  - id: 489
+    fileName: 0489.jpg
+    name:
+      - {language: en, text: "Mihail Filippov"}
+      - {language: ru, text: "Михаил Филиппов"}
+  - id: 491
+    fileName: 0491.jpg
+    name:
+      - {language: en, text: "Igor Chevdar"}
+      - {language: ru, text: "Игорь Чевдарь"}
+  - id: 492
+    fileName: 0492.jpg
+    name:
+      - {language: en, text: "Marco Cecconi"}
+  - id: 494
+    fileName: 0494.jpg
+    name:
+      - {language: en, text: "Ilya Fofanov"}
+      - {language: ru, text: "Илья Фофанов"}
+  - id: 497
+    fileName: 0497.jpg
+    name:
+      - {language: en, text: "Gael Fraiteur"}
+  - id: 498
+    fileName: 0498.jpg
+    name:
+      - {language: en, text: "Vagif Abilov"}
+      - {language: ru, text: "Вагиф Абилов"}
+  - id: 502
+    fileName: 0502.jpg
+    name:
+      - {language: en, text: "Vitaly Baum"}
+      - {language: ru, text: "Виталий Баум"}
+  - id: 503
+    fileName: 0503.jpg
+    name:
+      - {language: en, text: "Maurice de Beijer"}
+  - id: 505
+    fileName: 0505.jpg
+    name:
+      - {language: en, text: "Dmitry Garavsky"}
+      - {language: ru, text: "Дмитрий Гаравский"}
   - id: 508
     fileName: 0508.jpg
     name:
       - {language: en, text: "Hadi Hariri"}
+  - id: 511
+    fileName: 0511.jpg
+    name:
+      - {language: en, text: "Roman Belov"}
+      - {language: ru, text: "Роман Белов"}
+  - id: 515
+    fileName: 0515.jpg
+    name:
+      - {language: en, text: "Pavel Avsenin"}
+      - {language: ru, text: "Павел Авсенин"}
+  - id: 518
+    fileName: 0518.jpg
+    name:
+      - {language: en, text: "Roman Ageev"}
+      - {language: ru, text: "Роман Агеев"}
+  - id: 519
+    fileName: 0519.jpg
+    name:
+      - {language: en, text: "Timur Guev"}
+      - {language: ru, text: "Тимур Гуев"}
+  - id: 521
+    fileName: 0521.jpg
+    name:
+      - {language: en, text: "Andrey Gordienkov"}
+      - {language: ru, text: "Андрей Гордиенков"}
+  - id: 523
+    fileName: 0523.jpg
+    name:
+      - {language: en, text: "Vladimir Almaev"}
+      - {language: ru, text: "Владимир Алмаев"}
+  - id: 525
+    fileName: 0525.jpg
+    name:
+      - {language: en, text: "Andrey Chasovskih"}
+      - {language: ru, text: "Андрей Часовских"}
+  - id: 530
+    fileName: 0530.jpg
+    name:
+      - {language: en, text: "Vlad Chistyakov"}
+      - {language: ru, text: "Влад Чистяков"}
   - id: 582
     fileName: 0582.jpg
     name:
