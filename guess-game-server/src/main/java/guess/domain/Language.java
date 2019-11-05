@@ -16,14 +16,4 @@ public enum Language {
     public String getCode() {
         return code;
     }
-
-    public static Language getLanguageByCode(String code) {
-        for (Language language : values()) {
-            if (language.getCode().equals(code)) {
-                return language;
-            }
-        }
-
-        return null;
-    }
 }

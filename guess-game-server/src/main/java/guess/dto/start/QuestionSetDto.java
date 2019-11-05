@@ -1,6 +1,7 @@
 package guess.dto.start;
 
 import guess.domain.question.QuestionSet;
+import guess.util.LocalizationUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,7 +39,7 @@ public class QuestionSetDto {
 
     public static List<QuestionSetDto> convertToDto(List<QuestionSet> questionSets) {
         return questionSets.stream()
-                .map(a -> new QuestionSetDto(a.getId(), a.getName()))
+                .map(a -> new QuestionSetDto(a.getId(), LocalizationUtils.getEnglishName(a.getName())))
                 .collect(Collectors.toList());
     }
 }

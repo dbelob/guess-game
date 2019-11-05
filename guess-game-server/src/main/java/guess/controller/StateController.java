@@ -1,13 +1,14 @@
 package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.domain.State;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
-import guess.domain.State;
 import guess.dto.guess.*;
 import guess.dto.start.StartParametersDto;
 import guess.service.AnswerService;
 import guess.service.StateService;
+import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -58,7 +59,7 @@ public class StateController {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
 
             return dtoFunction.apply(
-                    questionAnswersSet.getName(),
+                    LocalizationUtils.getEnglishName(questionAnswersSet.getName()),
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),

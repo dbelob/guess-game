@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.Objects;
 
 /**
  * Locale controller.
@@ -25,17 +24,13 @@ public class LocaleController {
 
     @GetMapping("/language")
     @ResponseBody
-    public String getLanguage(HttpSession httpSession) {
-        return localeService.getLanguage(httpSession).getCode();
+    public Language getLanguage(HttpSession httpSession) {
+        return localeService.getLanguage(httpSession);
     }
 
     @PutMapping("/language")
     @ResponseStatus(HttpStatus.OK)
-    public void setLanguage(@RequestBody String languageCode, HttpSession httpSession) {
-        Language language = Language.getLanguageByCode(languageCode);
-
-        Objects.requireNonNull(language,
-                () -> String.format("Language code %s not found", languageCode));
-        localeService.setLanguage(language, httpSession);
+    public void setLanguage(@RequestBody String language, HttpSession httpSession) {
+        localeService.setLanguage(Language.valueOf(language), httpSession);
     }
 }

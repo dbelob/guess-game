@@ -1,5 +1,6 @@
 package guess.util;
 
+import guess.domain.Language;
 import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.LocaleItem;
@@ -85,7 +86,7 @@ class Unsafe {
 
             questionSets.add(new QuestionSet(
                     unsafeQuestionSet.getId(),
-                    unsafeQuestionSet.getName(),
+                    Collections.singletonList(new LocaleItem(Language.ENGLISH.getCode(), unsafeQuestionSet.getName())),
                     unsafeQuestionSet.getLogoFileName(),
                     QuestionUtils.removeDuplicatesByFileName(speakerQuestions),
                     Collections.emptyList()));
