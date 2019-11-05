@@ -7,6 +7,7 @@ import guess.domain.question.QuestionAnswersSet;
 import guess.dto.guess.*;
 import guess.dto.start.StartParametersDto;
 import guess.service.AnswerService;
+import guess.service.LocaleService;
 import guess.service.StateService;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +26,13 @@ import java.util.List;
 public class StateController {
     private StateService stateService;
     private AnswerService answerService;
+    private LocaleService localeService;
 
     @Autowired
-    public StateController(StateService stateService, AnswerService answerService) {
+    public StateController(StateService stateService, AnswerService answerService, LocaleService localeService) {
         this.stateService = stateService;
         this.answerService = answerService;
+        this.localeService = localeService;
     }
 
     @PostMapping("/parameters")
@@ -59,7 +62,7 @@ public class StateController {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
 
             return dtoFunction.apply(
-                    LocalizationUtils.getEnglishName(questionAnswersSet.getName()),
+                    LocalizationUtils.getName(questionAnswersSet.getName(), localeService.getLanguage(httpSession)),
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),
