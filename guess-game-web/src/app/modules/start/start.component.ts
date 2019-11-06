@@ -5,6 +5,7 @@ import { QuestionService } from "../../shared/services/question.service";
 import { StateService } from "../../shared/services/state.service";
 import { StartParameters } from "../../shared/models/start-parameters.model";
 import { GuessType } from "../../shared/models/guess-type.model";
+import { Language } from "../../shared/models/language.model";
 
 @Component({
   selector: 'app-start',
@@ -17,6 +18,8 @@ export class StartComponent {
   public selectedQuantity: number;
   public selectedGuessType: GuessType = GuessType.GuessNameType;
   public guessType = GuessType;
+  public selectedLanguage: Language = Language.English;
+  public language = Language;
 
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
     questionService.getQuestionSets()
@@ -44,6 +47,10 @@ export class StartComponent {
 
   onTypeChange(guessType: string) {
     this.loadQuantities(this.selectedQuestionSets, guessType);
+  }
+
+  onLanguageChange(language: string) {
+    console.log('selected language: ' + language);
   }
 
   loadQuantities(questionSets: QuestionSet[], guessType: string) {
