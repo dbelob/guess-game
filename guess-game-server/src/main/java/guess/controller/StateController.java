@@ -1,6 +1,7 @@
 package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.domain.Language;
 import guess.domain.State;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
@@ -60,14 +61,16 @@ public class StateController {
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
+            Language language = localeService.getLanguage(httpSession);
 
             return dtoFunction.apply(
-                    LocalizationUtils.getName(questionAnswersSet.getName(), localeService.getLanguage(httpSession)),
+                    LocalizationUtils.getName(questionAnswersSet.getName(), language),
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),
                     questionAnswers,
-                    wrongAnswerIds);
+                    wrongAnswerIds,
+                    language);
         } else {
             return null;
         }

@@ -1,9 +1,11 @@
 package guess.controller;
 
+import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.Result;
 import guess.dto.result.ResultDto;
 import guess.service.AnswerService;
+import guess.service.LocaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -19,10 +21,12 @@ import java.util.List;
 @RequestMapping("/api/answer")
 public class AnswerController {
     private AnswerService answerService;
+    private LocaleService localeService;
 
     @Autowired
-    public AnswerController(AnswerService answerService) {
+    public AnswerController(AnswerService answerService, LocaleService localeService) {
         this.answerService = answerService;
+        this.localeService = localeService;
     }
 
     @PostMapping("/answers")
@@ -36,7 +40,8 @@ public class AnswerController {
     public ResultDto getResult(HttpSession httpSession) {
         Result result = answerService.getResult(httpSession);
         List<ErrorDetails> errorDetailsList = answerService.getErrorDetailsList(httpSession);
+        Language language = localeService.getLanguage(httpSession);
 
-        return ResultDto.convertToDto(result, errorDetailsList);
+        return ResultDto.convertToDto(result, errorDetailsList, language);
     }
 }

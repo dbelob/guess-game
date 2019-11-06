@@ -71,7 +71,7 @@ class Unsafe {
                                 return new SpeakerQuestion(new Speaker(
                                         q.getId(),
                                         q.getFileName(),
-                                        Collections.singletonList(new LocaleItem(LocalizationUtils.ENGLISH_LANGUAGE, q.getName()))));
+                                        Collections.singletonList(new LocaleItem(Language.ENGLISH.getCode(), q.getName()))));
                             }
                     )
                     .collect(Collectors.toList());

@@ -1,5 +1,6 @@
 package guess.util;
 
+import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
@@ -54,7 +55,7 @@ public class ContentfulUtils {
     private static final String MAIN_ACCESS_TOKEN = "08f9e9e80ee347bd9f6017bf76f0a290c2ff0c28000946f7079f94a78974f090";
 
     private static Map<String, String> LOCALE_CODE_MAP = new HashMap<String, String>() {{
-        put("ru-RU", LocalizationUtils.RUSSIAN_LANGUAGE);
+        put("ru-RU", Language.RUSSIAN.getCode());
     }};
 
     private static final RestTemplate restTemplate;
@@ -192,10 +193,10 @@ public class ContentfulUtils {
                         null,
                         Arrays.asList(
                                 new LocaleItem(
-                                        LocalizationUtils.ENGLISH_LANGUAGE,
+                                        Language.ENGLISH.getCode(),
                                         s.getFields().getNameEn()),
                                 new LocaleItem(
-                                        LocalizationUtils.RUSSIAN_LANGUAGE,
+                                        Language.RUSSIAN.getCode(),
                                         s.getFields().getName()))))
                 .collect(Collectors.toList());
     }
@@ -228,10 +229,10 @@ public class ContentfulUtils {
                         0L,
                         Arrays.asList(
                                 new LocaleItem(
-                                        LocalizationUtils.ENGLISH_LANGUAGE,
+                                        Language.ENGLISH.getCode(),
                                         t.getFields().getNameEn()),
                                 new LocaleItem(
-                                        LocalizationUtils.RUSSIAN_LANGUAGE,
+                                        Language.RUSSIAN.getCode(),
                                         t.getFields().getName())),
                         new ArrayList<>()))
                 .collect(Collectors.toList());
