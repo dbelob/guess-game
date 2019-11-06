@@ -75,7 +75,15 @@ export class StartComponent {
       });
   }
 
-  isDisabled(): boolean {
+  isStartDisabled(): boolean {
     return this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0);
+  }
+
+  isEnChecked(): boolean {
+    return this.selectedLanguage === Language.English;
+  }
+
+  isRuChecked(): boolean {
+    return this.selectedLanguage === Language.Russian;
   }
 }

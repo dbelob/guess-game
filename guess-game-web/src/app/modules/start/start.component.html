@@ -1,15 +1,15 @@
 <div class="container-dialog p-2">
   <h2 class="bg-info p-1 text-white text-center">Select questions</h2>
 
-  <div class="text-right mt-1 mb-1">
+  <div class="text-right mt-2 mb-2">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-      <label class="btn btn-secondary btn-sm active">
+      <label class="btn btn-light btn-sm" [class.active]="isEnChecked()">
         <input type="radio" name="options" id="en" value="{{language.English}}"
-               [(ngModel)]="selectedLanguage" (ngModelChange)="onLanguageChange($event)" autocomplete="off" checked> EN
+               [(ngModel)]="selectedLanguage" (ngModelChange)="onLanguageChange($event)" autocomplete="off" [checked]="isEnChecked()"> EN
       </label>
-      <label class="btn btn-secondary btn-sm">
+      <label class="btn btn-light btn-sm" [class.active]="isRuChecked()">
         <input type="radio" name="options" id="ru" value="{{language.Russian}}"
-               [(ngModel)]="selectedLanguage" (ngModelChange)="onLanguageChange($event)" autocomplete="off"> RU
+               [(ngModel)]="selectedLanguage" (ngModelChange)="onLanguageChange($event)" autocomplete="off" [checked]="isRuChecked()"> RU
       </label>
     </div>
   </div>
@@ -64,7 +64,7 @@
     <div class="form-group row">
       <label for="quantity" class="col-sm-2">Quantity:</label>
       <div class="col-sm-10">
-        <select class="form-control" id="quantity" size="14" [(ngModel)]="selectedQuantity" name="quantity">
+        <select class="form-control" id="quantity" size="8" [(ngModel)]="selectedQuantity" name="quantity">
           <option *ngFor="let quantity of quantities" [ngValue]="quantity">
             {{quantity}}
           </option>
@@ -73,7 +73,7 @@
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary m-1" (click)="start()"
-              [class.btn-secondary]="isDisabled()" [disabled]="isDisabled()">
+              [class.btn-secondary]="isStartDisabled()" [disabled]="isStartDisabled()">
         Start
       </button>
     </div>
