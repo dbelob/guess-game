@@ -13,6 +13,7 @@ import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
 import guess.domain.question.QuestionSet;
 import guess.domain.source.LocaleItem;
+import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -122,10 +123,15 @@ public class StateServiceImpl implements StateService {
             name = questionSet.getName();
             logoFileName = questionSet.getLogoFileName();
         } else {
-            //TODO: remove to resource file
+            final String SELECTED_SETS = "selectedSets";
+
             name = Arrays.asList(
-                    new LocaleItem(Language.ENGLISH.getCode(), String.format("%d selected sets", startParameters.getQuestionSetIds().size())),
-                    new LocaleItem(Language.RUSSIAN.getCode(), String.format("%d выбранных наборов", startParameters.getQuestionSetIds().size())));
+                    new LocaleItem(Language.ENGLISH.getCode(), String.format(
+                            LocalizationUtils.getLocaleString(SELECTED_SETS, Language.ENGLISH),
+                            startParameters.getQuestionSetIds().size())),
+                    new LocaleItem(Language.RUSSIAN.getCode(), String.format(
+                            LocalizationUtils.getLocaleString(SELECTED_SETS, Language.RUSSIAN),
+                            startParameters.getQuestionSetIds().size())));
             logoFileName = null;
         }
 

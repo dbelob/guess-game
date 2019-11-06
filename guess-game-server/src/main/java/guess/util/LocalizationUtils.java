@@ -4,12 +4,16 @@ import guess.domain.Language;
 import guess.domain.source.LocaleItem;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 /**
  * Localization utility methods.
  */
 public class LocalizationUtils {
+    private static final String BUNDLE_NAME = "LocaleStrings";
+
     /**
      * Gets name for language.
      *
@@ -49,5 +53,18 @@ public class LocalizationUtils {
      */
     public static String getName(List<LocaleItem> localeItems, Language language) {
         return getName(localeItems, language, Language.ENGLISH);
+    }
+
+    /**
+     * Gets locale string.
+     *
+     * @param key      key
+     * @param language language
+     * @return locale string
+     */
+    public static String getLocaleString(String key, Language language) {
+        ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(language.getCode()));
+
+        return bundle.getString(key);
     }
 }
