@@ -6,6 +6,7 @@ import { GuessPictureComponent } from "./guess-picture.component";
 import { GuessTalkComponent } from "./guess-talk.component";
 import { GuessSpeakerComponent } from "./guess-speaker.component";
 import { CancelGameComponent } from "./cancel-game.component";
+import { GeneralModule } from "../general/general.module";
 import { MessageModule } from "../message/message.module";
 
 @NgModule({
@@ -19,6 +20,7 @@ import { MessageModule } from "../message/message.module";
   imports: [
     CommonModule,
     RouterModule,
+    GeneralModule,
     MessageModule
   ]
 })

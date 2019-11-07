@@ -3,7 +3,13 @@
 
   <app-message></app-message>
 
-  <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
+  <div class="row">
+    <div class="col-sm">
+      <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
+    </div>
+    <app-language-switcher (onReload)="loadQuestion()" class="col-sm"></app-language-switcher>
+  </div>
+
   <div class="text-center mb-1" [class.mt-5]="!logoImageSource">
     <figure class="figure">
       <img src="{{imageSource}}" alt="" class="figure-img img-thumbnail img-guess-talk">
