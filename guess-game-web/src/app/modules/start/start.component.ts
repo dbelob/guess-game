@@ -19,12 +19,16 @@ export class StartComponent {
   public guessType = GuessType;
 
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
-    questionService.getQuestionSets()
+    this.loadQuestionSets();
+  }
+
+  loadQuestionSets() {
+    this.questionService.getQuestionSets()
       .subscribe(data => {
         this.questionSets = data;
 
         if (this.questionSets.length > 0) {
-          questionService.getDefaultQuestionSetId()
+          this.questionService.getDefaultQuestionSetId()
             .subscribe(data => {
               let defaultQuestionSetId = data;
               if ((defaultQuestionSetId < 0) || (defaultQuestionSetId >= this.questionSets.length)) {
