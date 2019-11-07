@@ -3,7 +3,9 @@
 
   <app-message></app-message>
 
-  <div class="alert text-center h5">
+  <app-language-switcher (onReload)="reload()"></app-language-switcher>
+
+  <div class="alert text-center h5 mb-4">
     Are you sure to cancel game?
   </div>
   <div class="text-center">

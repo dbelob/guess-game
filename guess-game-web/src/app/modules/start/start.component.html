@@ -1,11 +1,11 @@
 <div class="container-dialog p-2">
   <h2 class="bg-info p-1 text-white text-center">Select questions</h2>
 
+  <app-message></app-message>
+
   <app-language-switcher (onReload)="loadQuestionSets()"></app-language-switcher>
 
   <form role="form">
-    <app-message></app-message>
-
     <div class="form-group row">
       <label for="set" class="col-sm-2">Set:</label>
       <div class="col-sm-10">

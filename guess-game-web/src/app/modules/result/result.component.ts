@@ -17,7 +17,11 @@ export class ResultComponent {
   private isQuestionPicture = true;
 
   constructor(private answerService: AnswerService, private stateService: StateService, private router: Router, private messageService: MessageService) {
-    answerService.getResult()
+    this.loadResult();
+  }
+
+  loadResult() {
+    this.answerService.getResult()
       .subscribe(data => {
         this.result = data;
         this.isQuestionPicture = (GuessType.GuessNameType === this.result.guessType) || (GuessType.GuessTalkType === this.result.guessType);

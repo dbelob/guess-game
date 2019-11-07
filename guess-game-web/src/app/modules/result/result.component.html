@@ -3,7 +3,9 @@
 
   <app-message></app-message>
 
-  <div class="mt-4 mb-4">
+  <app-language-switcher (onReload)="loadResult()"></app-language-switcher>
+
+  <div class="mt-2 mb-4">
     <div class="form-row h5">
       <div class="col-4 text-right">
         <label class="col-form-label">Correct answers:</label>
