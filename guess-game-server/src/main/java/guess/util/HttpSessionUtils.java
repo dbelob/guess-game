@@ -110,7 +110,7 @@ public class HttpSessionUtils {
         if (languageObject instanceof Language) {
             return (Language) languageObject;
         } else {
-            return null;
+            return Language.ENGLISH;
         }
     }
 }

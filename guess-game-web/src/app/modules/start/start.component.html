@@ -1,18 +1,7 @@
 <div class="container-dialog p-2">
   <h2 class="bg-info p-1 text-white text-center">Select questions</h2>
 
-  <div class="text-right mt-2 mb-2">
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-      <label class="btn btn-light btn-sm" [class.active]="isEnChecked()">
-        <input type="radio" name="options" id="en" value="{{language.English}}"
-               [(ngModel)]="selectedLanguage" (ngModelChange)="onLanguageChange($event)" autocomplete="off" [checked]="isEnChecked()"> EN
-      </label>
-      <label class="btn btn-light btn-sm" [class.active]="isRuChecked()">
-        <input type="radio" name="options" id="ru" value="{{language.Russian}}"
-               [(ngModel)]="selectedLanguage" (ngModelChange)="onLanguageChange($event)" autocomplete="off" [checked]="isRuChecked()"> RU
-      </label>
-    </div>
-  </div>
+  <app-language-switcher></app-language-switcher>
 
   <form role="form">
     <app-message></app-message>
