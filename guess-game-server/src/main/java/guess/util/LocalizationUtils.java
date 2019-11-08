@@ -15,6 +15,23 @@ public class LocalizationUtils {
     private static final String BUNDLE_NAME = "LocaleStrings";
 
     /**
+     * Gets name for language (internal implementation).
+     *
+     * @param localeItems locale items
+     * @param language    language
+     * @return name
+     */
+    private static Optional<LocaleItem> getNameInternal(List<LocaleItem> localeItems, Language language) {
+        if (language != null) {
+            return localeItems.stream()
+                    .filter(et -> et.getLanguage().equals(language.getCode()))
+                    .findFirst();
+        } else {
+            return Optional.empty();
+        }
+    }
+
+    /**
      * Gets name for language.
      *
      * @param localeItems     locale items
@@ -24,24 +41,21 @@ public class LocalizationUtils {
      */
     public static String getName(List<LocaleItem> localeItems, Language language, Language defaultLanguage) {
         Language finalLanguage = (language != null) ? language : defaultLanguage;
-
-        Optional<LocaleItem> currentLanguageOptional = localeItems.stream()
-                .filter(et -> et.getLanguage().equals(finalLanguage.getCode()))
-                .findFirst();
+        Optional<LocaleItem> currentLanguageOptional = getNameInternal(localeItems, finalLanguage);
 
         if (currentLanguageOptional.isPresent()) {
             return currentLanguageOptional.get().getText();
-        } else {
-            Optional<LocaleItem> defaultLanguageOptional = localeItems.stream()
-                    .filter(et -> et.getLanguage().equals(defaultLanguage.getCode()))
-                    .findFirst();
+        }
+
+        if (finalLanguage != defaultLanguage) {
+            Optional<LocaleItem> defaultLanguageOptional = getNameInternal(localeItems, defaultLanguage);
 
             if (defaultLanguageOptional.isPresent()) {
                 return defaultLanguageOptional.get().getText();
-            } else {
-                return "";
             }
         }
+
+        return "";
     }
 
     /**
