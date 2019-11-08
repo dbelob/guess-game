@@ -57,6 +57,8 @@ export class StartComponent {
 
         if (this.quantities.length > 0) {
           this.selectedQuantity = this.quantities[this.quantities.length - 1];
+        } else {
+          this.selectedQuantity = 0;
         }
       });
   }
@@ -73,6 +75,6 @@ export class StartComponent {
   }
 
   isStartDisabled(): boolean {
-    return this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0);
+    return (this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0)) || (this.selectedQuantity == 0);
   }
 }
