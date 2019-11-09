@@ -233,6 +233,11 @@ speakers:
     fileName: 0093.jpg
     name:
       - {language: en, text: "Juergen Hoeller"}
+  - id: 101
+    fileName: 0101.jpg
+    name:
+      - {language: en, text: "Ivan Osipov"}
+      - {language: ru, text: "Иван Осипов"}
   - id: 105
     fileName: 0105.jpg
     name:
@@ -259,6 +264,10 @@ speakers:
     fileName: 0126.jpg
     name:
       - {language: en, text: "Ionut Balosin"}
+  - id: 129
+    fileName: 0129.jpg
+    name:
+      - {language: en, text: "Marc Philipp"}
   - id: 136
     fileName: 0136.jpg
     name:
@@ -325,6 +334,11 @@ speakers:
     name:
       - {language: en, text: "Roman Iovlev"}
       - {language: ru, text: "Роман Иовлев"}
+  - id: 289
+    fileName: 0289.jpg
+    name:
+      - {language: en, text: "Andrey Markelov"}
+      - {language: ru, text: "Андрей Маркелов"}
   - id: 295
     fileName: 0295.jpg
     name:
@@ -1196,6 +1210,11 @@ speakers:
     fileName: 0533.jpg
     name:
       - {language: en, text: "Jim Holmes"}
+  - id: 534
+    fileName: 0534.jpg
+    name:
+      - {language: en, text: "Alexey Lavrenuke"}
+      - {language: ru, text: "Алексей Лавренюк"}
   - id: 535
     fileName: 0535.jpg
     name:
@@ -1205,11 +1224,20 @@ speakers:
     fileName: 0536.jpg
     name:
       - {language: en, text: "Jessica Ingrassellino"}
+  - id: 537
+    fileName: 0537.jpg
+    name:
+      - {language: en, text: "Ang Li"}
   - id: 538
     fileName: 0538.jpg
     name:
       - {language: en, text: "Yury Dymov"}
       - {language: ru, text: "Юрий Дымов"}
+  - id: 539
+    fileName: 0539.jpg
+    name:
+      - {language: en, text: "Igor Lyrchikov"}
+      - {language: ru, text: "Игорь Лырчиков"}
   - id: 543
     fileName: 0543.jpg
     name:
@@ -1291,6 +1319,56 @@ speakers:
     name:
       - {language: en, text: "Viktor Koronevich"}
       - {language: ru, text: "Виктор Короневич"}
+  - id: 562
+    fileName: 0562.jpg
+    name:
+      - {language: en, text: "Anatoliy Korovin"}
+      - {language: ru, text: "Анатолий Коровин"}
+  - id: 563
+    fileName: 0563.jpg
+    name:
+      - {language: en, text: "Piotr Kubowicz"}
+  - id: 564
+    fileName: 0564.jpg
+    name:
+      - {language: en, text: "Shelley Lambert"}
+  - id: 566
+    fileName: 0566.jpg
+    name:
+      - {language: en, text: "Rhian Lewis"}
+  - id: 567
+    fileName: 0567.jpg
+    name:
+      - {language: en, text: "Andrey Lushnikov"}
+  - id: 568
+    fileName: 0568.jpg
+    name:
+      - {language: en, text: "Kirill Merkushev"}
+      - {language: ru, text: "Кирилл Меркушев"}
+  - id: 569
+    fileName: 0569.jpg
+    name:
+      - {language: en, text: "Ekaterina Mikheeva"}
+      - {language: ru, text: "Екатерина Михеева"}
+  - id: 570
+    fileName: 0570.jpg
+    name:
+      - {language: en, text: "Liudmila Mzhachikh"}
+      - {language: ru, text: "Людмила Мжачих"}
+  - id: 572
+    fileName: 0572.jpg
+    name:
+      - {language: en, text: "Valentin \"Wylsacom\" Petukhov"}
+      - {language: ru, text: "Валентин Wylsacom Петухов"}
+  - id: 573
+    fileName: 0573.jpg
+    name:
+      - {language: en, text: "Ingo Philipp"}
+  - id: 574
+    fileName: 0574.jpg
+    name:
+      - {language: en, text: "Anatoly Plaskovsky"}
+      - {language: ru, text: "Анатолий Пласковский"}
   - id: 582
     fileName: 0582.jpg
     name:
@@ -1300,6 +1378,15 @@ speakers:
     fileName: 0590.jpg
     name:
       - {language: en, text: "Michael Bolton"}
+  - id: 592
+    fileName: 0592.jpg
+    name:
+      - {language: en, text: "Olga Megorskaya"}
+      - {language: ru, text: "Ольга Мегорская"}
+  - id: 593
+    fileName: 0593.jpg
+    name:
+      - {language: en, text: "Niranjani Manoharan"}
   - id: 596
     fileName: 0596.jpg
     name:
@@ -1309,6 +1396,24 @@ speakers:
     name:
       - {language: en, text: "Nikolay Abalov"}
       - {language: ru, text: "Николай Абалов"}
+  - id: 599
+    fileName: 0599.jpg
+    name:
+      - {language: en, text: "Michael Palotas"}
+  - id: 600
+    fileName: 0600.jpg
+    name:
+      - {language: en, text: "Iván López"}
+  - id: 601
+    fileName: 0601.jpg
+    name:
+      - {language: en, text: "Alexander Martjushov"}
+      - {language: ru, text: "Александр Мартюшев"}
+  - id: 602
+    fileName: 0602.jpg
+    name:
+      - {language: en, text: "Artem Nikitin"}
+      - {language: ru, text: "Артем Никитин"}
   - id: 604
     fileName: 0604.jpg
     name:
@@ -1318,6 +1423,11 @@ speakers:
     name:
       - {language: en, text: "Stanislav Bashkirtsev"}
       - {language: ru, text: "Станислав Башкирцев"}
+  - id: 606
+    fileName: 0606.jpg
+    name:
+      - {language: en, text: "Eugene Nichegovskiy"}
+      - {language: ru, text: "Евгений Ничеговский"}
   - id: 607
     fileName: 0607.jpg
     name:
@@ -1333,6 +1443,25 @@ speakers:
     name:
       - {language: en, text: "Yuri Kalinin"}
       - {language: ru, text: "Юрий Калинин"}
+  - id: 612
+    fileName: 0612.jpg
+    name:
+      - {language: en, text: "Alexey Pletnev"}
+      - {language: ru, text: "Алексей Плетнёв"}
+  - id: 613
+    fileName: 0613.jpg
+    name:
+      - {language: en, text: "Andrey Leonov"}
+      - {language: ru, text: "Андрей Леонов"}
+  - id: 615
+    fileName: 0615.jpg
+    name:
+      - {language: en, text: "Alan Page"}
+  - id: 617
+    fileName: 0617.jpg
+    name:
+      - {language: en, text: "Nikita Makarov"}
+      - {language: ru, text: "Никита Макаров"}
   - id: 618
     fileName: 0618.jpg
     name:
@@ -1357,6 +1486,16 @@ speakers:
     name:
       - {language: en, text: "Julia Atlygina"}
       - {language: ru, text: "Юлия Атлыгина"}
+  - id: 626
+    fileName: 0626.jpg
+    name:
+      - {language: en, text: "Nikolay Kozlov"}
+      - {language: ru, text: "Николай Козлов"}
+  - id: 627
+    fileName: 0627.jpg
+    name:
+      - {language: en, text: "Andrey Kuleshov"}
+      - {language: ru, text: "Андрей Кулешов"}
   - id: 628
     fileName: 0628.jpg
     name:
@@ -1393,6 +1532,16 @@ speakers:
     fileName: 0638.jpg
     name:
       - {language: en, text: "Ilari Henrik Aegerter"}
+  - id: 639
+    fileName: 0639.jpg
+    name:
+      - {language: en, text: "Irina Pchelintseva"}
+      - {language: ru, text: "Ирина Пчелинцева"}
+  - id: 640
+    fileName: 0640.jpg
+    name:
+      - {language: en, text: "Alexey Mahov"}
+      - {language: ru, text: "Алексей Махов"}
   - id: 641
     fileName: 0641.jpg
     name:
@@ -1411,6 +1560,11 @@ speakers:
     name:
       - {language: en, text: "Alexander Bayandin"}
       - {language: ru, text: "Александр Баяндин"}
+  - id: 646
+    fileName: 0646.jpg
+    name:
+      - {language: en, text: "Dmitry Krasilnikov"}
+      - {language: ru, text: "Дмитрий Красильников"}
   - id: 647
     fileName: 0647.jpg
     name:
