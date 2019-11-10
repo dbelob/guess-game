@@ -50,34 +50,33 @@ public class YamlUtils {
     /**
      * Reads question sets from resource files.
      *
-     * @param questionsDirectoryName    questions directory name
      * @param descriptionsDirectoryName descriptions directory name
      * @return question sets
      * @throws IOException if an I/O error occurs
      */
-    public static List<QuestionSet> readQuestionSets(String questionsDirectoryName, String descriptionsDirectoryName) throws IOException {
+    public static List<QuestionSet> readQuestionSets(String descriptionsDirectoryName) throws IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", descriptionsDirectoryName));
         Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", descriptionsDirectoryName));
         Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", descriptionsDirectoryName));
         Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", descriptionsDirectoryName));
 
-        Yaml yamlSpeakers = new Yaml(new Constructor(Speakers.class));
-        Yaml yamlTalks = new Yaml(new Constructor(Talks.class));
-        Yaml yamlEventTypes = new Yaml(new Constructor(EventTypes.class));
-        Yaml yamlEvents = new Yaml(new LocalDateYamlConstructor(Events.class));
+        Yaml speakersYaml = new Yaml(new Constructor(Speakers.class));
+        Yaml talksYaml = new Yaml(new Constructor(Talks.class));
+        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
+        Yaml eventsYaml = new Yaml(new LocalDateYamlConstructor(Events.class));
 
         // Read descriptions from YAML files
-        Speakers speakers = yamlSpeakers.load(speakersResource.getInputStream());
+        Speakers speakers = speakersYaml.load(speakersResource.getInputStream());
         Map<Long, Speaker> speakerMap = listToMap(speakers.getSpeakers(), Speaker::getId);
 
-        Talks talks = yamlTalks.load(talksResource.getInputStream());
+        Talks talks = talksYaml.load(talksResource.getInputStream());
         Map<Long, Talk> talkMap = listToMap(talks.getTalks(), Talk::getId);
 
-        EventTypes eventTypes = yamlEventTypes.load(eventTypesResource.getInputStream());
+        EventTypes eventTypes = eventTypesYaml.load(eventTypesResource.getInputStream());
         Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
 
-        Events events = yamlEvents.load(eventsResource.getInputStream());
+        Events events = eventsYaml.load(eventsResource.getInputStream());
 
         // Link entities
         linkSpeakersToTalks(speakerMap, talks.getTalks());
@@ -112,7 +111,7 @@ public class YamlUtils {
         }
 
         //TODO: delete
-        Unsafe.replaceSpeakerQuestions(questionSets, questionsDirectoryName, speakers.getSpeakers());
+        Unsafe.replaceSpeakerQuestions(questionSets, speakers.getSpeakers());
 
         return questionSets;
     }
@@ -129,14 +128,14 @@ public class YamlUtils {
         Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", descriptionsDirectoryName));
         Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", descriptionsDirectoryName));
 
-        Yaml yamlEventTypes = new Yaml(new Constructor(EventTypes.class));
-        Yaml yamlEvents = new Yaml(new LocalDateYamlConstructor(Events.class));
+        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
+        Yaml eventsYaml = new Yaml(new LocalDateYamlConstructor(Events.class));
 
         // Read descriptions from YAML files
-        EventTypes eventTypes = yamlEventTypes.load(eventTypesResource.getInputStream());
+        EventTypes eventTypes = eventTypesYaml.load(eventTypesResource.getInputStream());
         Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
 
-        Events events = yamlEvents.load(eventsResource.getInputStream());
+        Events events = eventsYaml.load(eventsResource.getInputStream());
 
         // Link entities
         linkEventsToEventTypes(eventTypeMap, events.getEvents());

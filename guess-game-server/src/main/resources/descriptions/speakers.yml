@@ -9,6 +9,11 @@ speakers:
     name:
       - {language: en, text: "Evgeny Borisov"}
       - {language: ru, text: "Евгений Борисов"}
+  - id: 2
+    fileName: 0002.jpg
+    name:
+      - {language: en, text: "Andrey Breslav"}
+      - {language: ru, text: "Андрей Бреслав"}
   - id: 3
     fileName: 0003.jpg
     name:
@@ -24,6 +29,11 @@ speakers:
     name:
       - {language: en, text: "Dmitry Chuyko"}
       - {language: ru, text: "Дмитрий Чуйко"}
+  - id: 6
+    fileName: 0006.jpg
+    name:
+      - {language: en, text: "Andrey Ershov"}
+      - {language: ru, text: "Андрей Ершов"}
   - id: 8
     fileName: 0008.jpg
     name:
@@ -34,6 +44,11 @@ speakers:
     name:
       - {language: en, text: "Viktor Gamov"}
       - {language: ru, text: "Виктор Гамов"}
+  - id: 10
+    fileName: 0010.jpg
+    name:
+      - {language: en, text: "Maxim Gorelikov"}
+      - {language: ru, text: "Максим Гореликов"}
   - id: 13
     fileName: 0013.jpg
     name:
@@ -44,6 +59,15 @@ speakers:
     name:
       - {language: en, text: "Nikita Lipsky"}
       - {language: ru, text: "Никита Липский"}
+  - id: 15
+    fileName: 0015.jpg
+    name:
+      - {language: en, text: "Rustam Mehmandarov"}
+      - {language: ru, text: "Рустам Мехмандаров"}
+  - id: 16
+    fileName: 0016.jpg
+    name:
+      - {language: en, text: "Charles Nutter"}
   - id: 18
     fileName: 0018.jpg
     name:
