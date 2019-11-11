@@ -2433,6 +2433,11 @@ speakers:
     fileName: 0674.jpg
     name:
       - {language: en, text: "Mauricio Palma"}
+  - id: 675
+    fileName: 0675.jpg
+    name:
+      - {language: en, text: "Arkadiy Pilguk"}
+      - {language: ru, text: "Аркадий Пильгук"}
   - id: 676
     fileName: 0676.jpg
     name:
@@ -2531,6 +2536,11 @@ speakers:
     name:
       - {language: en, text: "Victor Grishchenko"}
       - {language: ru, text: "Виктор Грищенко"}
+  - id: 698
+    fileName: 0698.jpg
+    name:
+      - {language: en, text: "Victor Vershanskij"}
+      - {language: ru, text: "Виктор Вершанский"}
   - id: 699
     fileName: 0699.jpg
     name:
@@ -2550,6 +2560,11 @@ speakers:
     fileName: 0702.jpg
     name:
       - {language: en, text: "Lyza Danger Gardner"}
+  - id: 703
+    fileName: 0703.jpg
+    name:
+      - {language: en, text: "Maksim Yuzva"}
+      - {language: ru, text: "Максим Юзва"}
   - id: 704
     fileName: 0704.jpg
     name:
@@ -2607,11 +2622,21 @@ speakers:
     name:
       - {language: en, text: "Evgeny Pozdnyakov"}
       - {language: ru, text: "Евгений Поздняков"}
+  - id: 716
+    fileName: 0716.jpg
+    name:
+      - {language: en, text: "Mikhail Poluboyarinov"}
+      - {language: ru, text: "Михаил Полубояринов"}
   - id: 717
     fileName: 0717.jpg
     name:
       - {language: en, text: "Dmitry Karlovsky"}
       - {language: ru, text: "Дмитрий Карловский"}
+  - id: 718
+    fileName: 0718.jpg
+    name:
+      - {language: en, text: "Andrey Prokopyuk"}
+      - {language: ru, text: "Андрей Прокопюк"}
   - id: 719
     fileName: 0719.jpg
     name:
@@ -2664,11 +2689,21 @@ speakers:
     fileName: 0730.jpg
     name:
       - {language: en, text: "Minko Gechev"}
+  - id: 731
+    fileName: 0731.jpg
+    name:
+      - {language: en, text: "Mikhail Udalov"}
+      - {language: ru, text: "Михаил Удалов"}
   - id: 732
     fileName: 0732.jpg
     name:
       - {language: en, text: "Vladimir Dashukevich"}
       - {language: ru, text: "Владимир Дашукевич"}
+  - id: 733
+    fileName: 0733.jpg
+    name:
+      - {language: en, text: "Alexey Zolotykh"}
+      - {language: ru, text: "Алексей Золотых"}
   - id: 734
     fileName: 0734.jpg
     name:
@@ -2679,6 +2714,11 @@ speakers:
     name:
       - {language: en, text: "Michael Bashurov"}
       - {language: ru, text: "Михаил Башуров"}
+  - id: 736
+    fileName: 0736.jpg
+    name:
+      - {language: en, text: "Alexey Okhrimenko"}
+      - {language: ru, text: "Алексей Охрименко"}
   - id: 737
     fileName: 0737.jpg
     name:
@@ -2704,6 +2744,11 @@ speakers:
     name:
       - {language: en, text: "Timofey Chaptykov"}
       - {language: ru, text: "Тимофей Чаптыков"}
+  - id: 743
+    fileName: 0743.jpg
+    name:
+      - {language: en, text: "Valerii Sorokobatko"}
+      - {language: ru, text: "Валерий Сорокобатько"}
   - id: 744
     fileName: 0744.jpg
     name:
@@ -2744,14 +2789,29 @@ speakers:
     name:
       - {language: en, text: "Igor Alekseenko"}
       - {language: ru, text: "Игорь Алексеенко"}
+  - id: 752
+    fileName: 0752.jpg
+    name:
+      - {language: en, text: "Alexey Nosov"}
+      - {language: ru, text: "Алексей Носов"}
   - id: 753
     fileName: 0753.jpg
     name:
       - {language: en, text: "Axel Rauschmayer"}
+  - id: 754
+    fileName: 0754.jpg
+    name:
+      - {language: en, text: "Andrey Okonetchnikov"}
+      - {language: ru, text: "Андрей Оконечников"}
   - id: 755
     fileName: 0755.jpg
     name:
       - {language: en, text: "Nikolaus Graf"}
+  - id: 756
+    fileName: 0756.jpg
+    name:
+      - {language: en, text: "Eugene Pshenichnyy"}
+      - {language: ru, text: "Евгений Пшеничный"}
   - id: 757
     fileName: 0757.jpg
     name:
@@ -2765,10 +2825,20 @@ speakers:
     name:
       - {language: en, text: "Pavel Kondratenko"}
       - {language: ru, text: "Павел Кондратенко"}
+  - id: 760
+    fileName: 0760.jpg
+    name:
+      - {language: en, text: "Viacheslav Slinko"}
+      - {language: ru, text: "Вячеслав Слинько"}
   - id: 761
     fileName: 0761.jpg
     name:
       - {language: en, text: "Tereza Sokol"}
+  - id: 762
+    fileName: 0762.jpg
+    name:
+      - {language: en, text: "Irina Shestak"}
+      - {language: ru, text: "Ирина Шестак"}
   - id: 763
     fileName: 0763.jpg
     name:
@@ -2789,11 +2859,46 @@ speakers:
     name:
       - {language: en, text: "Stanislav Gumenyuk"}
       - {language: ru, text: "Станислав Гуменюк"}
+  - id: 767
+    fileName: 0767.jpg
+    name:
+      - {language: en, text: "Mikhail Novikov"}
+      - {language: ru, text: "Михаил Новиков"}
+  - id: 768
+    fileName: 0768.jpg
+    name:
+      - {language: en, text: "Viktor Rusakovich"}
+      - {language: ru, text: "Виктор Русакович"}
+  - id: 769
+    fileName: 0769.jpg
+    name:
+      - {language: en, text: "Alexey Simonenko"}
+      - {language: ru, text: "Алексей Симоненко"}
+  - id: 770
+    fileName: 0770.jpg
+    name:
+      - {language: en, text: "Kirill Sukhomlin"}
+      - {language: ru, text: "Кирилл Сухомлин"}
   - id: 771
     fileName: 0771.jpg
     name:
       - {language: en, text: "Vasilika Klimova"}
       - {language: ru, text: "Василика Климова"}
+  - id: 772
+    fileName: 0772.jpg
+    name:
+      - {language: en, text: "Igor Zotov"}
+      - {language: ru, text: "Игорь Зотов"}
+  - id: 773
+    fileName: 0773.jpg
+    name:
+      - {language: en, text: "Tatyana Ryzhenkova"}
+      - {language: ru, text: "Татьяна Рыженкова"}
+  - id: 774
+    fileName: 0774.jpg
+    name:
+      - {language: en, text: "Sergey Zvyagin"}
+      - {language: ru, text: "Сергей Звягин"}
   - id: 776
     fileName: 0776.jpg
     name:
