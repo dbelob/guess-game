@@ -78,6 +78,11 @@ speakers:
     name:
       - {language: en, text: "Ivan Ponomarev (KURS)"}
       - {language: ru, text: "Иван Пономарёв (КУРС)"}
+  - id: 21
+    fileName: 0021.jpg
+    name:
+      - {language: en, text: "Alexey Ragozin"}
+      - {language: ru, text: "Алексей Рагозин"}
   - id: 22
     fileName: 0022.jpg
     name:
@@ -593,6 +598,11 @@ speakers:
     fileName: 0236.jpg
     name:
       - {language: en, text: "Maurice Herlihy"}
+  - id: 237
+    fileName: 0237.jpg
+    name:
+      - {language: en, text: "Andrey Solntsev"}
+      - {language: ru, text: "Андрей Солнцев"}
   - id: 253
     fileName: 0253.jpg
     name:
@@ -1970,6 +1980,11 @@ speakers:
     name:
       - {language: en, text: "Ivan Rumak"}
       - {language: ru, text: "Иван Румак"}
+  - id: 580
+    fileName: 0580.jpg
+    name:
+      - {language: en, text: "Elena Sharova"}
+      - {language: ru, text: "Елена Шарова"}
   - id: 581
     fileName: 0581.jpg
     name:
@@ -1993,6 +2008,11 @@ speakers:
     name:
       - {language: en, text: "Anton Usmansky"}
       - {language: ru, text: "Антон Усманский"}
+  - id: 586
+    fileName: 0586.jpg
+    name:
+      - {language: en, text: "Vasiliy Vanchuk"}
+      - {language: ru, text: "Василий Ванчук"}
   - id: 587
     fileName: 0587.jpg
     name:
@@ -2005,6 +2025,10 @@ speakers:
     fileName: 0590.jpg
     name:
       - {language: en, text: "Michael Bolton"}
+  - id: 591
+    fileName: 0591.jpg
+    name:
+      - {language: en, text: "Simon Stewart"}
   - id: 592
     fileName: 0592.jpg
     name:
@@ -2014,10 +2038,24 @@ speakers:
     fileName: 0593.jpg
     name:
       - {language: en, text: "Niranjani Manoharan"}
+  - id: 594
+    fileName: 0594.jpg
+    name:
+      - {language: en, text: "Anastasiya Semenjuk"}
+      - {language: ru, text: "Анастасия Семенюк"}
+  - id: 595
+    fileName: 0595.jpg
+    name:
+      - {language: en, text: "Christian Stein"}
   - id: 596
     fileName: 0596.jpg
     name:
       - {language: en, text: "Sathish Gogineni"}
+  - id: 597
+    fileName: 0597.jpg
+    name:
+      - {language: en, text: "Andrey Satarin"}
+      - {language: ru, text: "Андрей Сатарин"}
   - id: 598
     fileName: 0598.jpg
     name:
@@ -2041,6 +2079,11 @@ speakers:
     name:
       - {language: en, text: "Artem Nikitin"}
       - {language: ru, text: "Артем Никитин"}
+  - id: 603
+    fileName: 0603.jpg
+    name:
+      - {language: en, text: "Alexey Rodionov"}
+      - {language: ru, text: "Алексей Родионов"}
   - id: 604
     fileName: 0604.jpg
     name:
@@ -2065,6 +2108,16 @@ speakers:
     name:
       - {language: en, text: "Dmitry Alekseev"}
       - {language: ru, text: "Дмитрий Алексеев"}
+  - id: 609
+    fileName: 0609.jpg
+    name:
+      - {language: en, text: "Dmitry Tuchs"}
+      - {language: ru, text: "Дмитрий Тучс"}
+  - id: 610
+    fileName: 0610.jpg
+    name:
+      - {language: en, text: "Viktor Yastrebov"}
+      - {language: ru, text: "Виктор Ястребов"}
   - id: 611
     fileName: 0611.jpg
     name:
@@ -2080,10 +2133,20 @@ speakers:
     name:
       - {language: en, text: "Andrey Leonov"}
       - {language: ru, text: "Андрей Леонов"}
+  - id: 614
+    fileName: 0614.jpg
+    name:
+      - {language: en, text: "Evheny Shumakov"}
+      - {language: ru, text: "Евгений Шумаков"}
   - id: 615
     fileName: 0615.jpg
     name:
       - {language: en, text: "Alan Page"}
+  - id: 616
+    fileName: 0616.jpg
+    name:
+      - {language: en, text: "Alexei Vinogradov"}
+      - {language: ru, text: "Алексей Виноградов"}
   - id: 617
     fileName: 0617.jpg
     name:
@@ -2117,6 +2180,11 @@ speakers:
     fileName: 0623.jpg
     name:
       - {language: en, text: "Andrejs Kalnacs"}
+  - id: 624
+    fileName: 0624.jpg
+    name:
+      - {language: en, text: "Alexander Shukov"}
+      - {language: ru, text: "Александр Шуков"}
   - id: 625
     fileName: 0625.jpg
     name:
@@ -2137,6 +2205,21 @@ speakers:
     name:
       - {language: en, text: "Vyacheslav Alenkov"}
       - {language: ru, text: "Вячеслав Аленьков"}
+  - id: 629
+    fileName: 0629.jpg
+    name:
+      - {language: en, text: "Michael Podtserkovskiy"}
+      - {language: ru, text: "Михаил Подцерковский"}
+  - id: 630
+    fileName: 0630.jpg
+    name:
+      - {language: en, text: "Timur Torubarov"}
+      - {language: ru, text: "Тимур Торубаров"}
+  - id: 631
+    fileName: 0631.jpg
+    name:
+      - {language: en, text: "Pavel Senin"}
+      - {language: ru, text: "Павел Сенин"}
   - id: 632
     fileName: 0632.jpg
     name:
@@ -2211,6 +2294,16 @@ speakers:
     name:
       - {language: en, text: "Orhan Guseynov"}
       - {language: ru, text: "Орхан Гусейнов"}
+  - id: 648
+    fileName: 0648.jpg
+    name:
+      - {language: en, text: "Andrey Smirnov"}
+      - {language: ru, text: "Андрей Смирнов"}
+  - id: 649
+    fileName: 0649.jpg
+    name:
+      - {language: en, text: "Ivan Surovtsev"}
+      - {language: ru, text: "Иван Суровцев"}
   - id: 650
     fileName: 0650.jpg
     name:
