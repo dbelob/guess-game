@@ -565,6 +565,11 @@ speakers:
     name:
       - {language: en, text: "Yakov Zhdanov"}
       - {language: ru, text: "Яков Жданов"}
+  - id: 182
+    fileName: 0182.jpg
+    name:
+      - {language: en, text: "Vyacheslav Lapin"}
+      - {language: ru, text: "Вячеслав Лапин"}
   - id: 206
     fileName: 0206.jpg
     name:
@@ -631,6 +636,11 @@ speakers:
     fileName: 0260.jpg
     name:
       - {language: en, text: "Vitaly Fridman"}
+  - id: 261
+    fileName: 0261.jpg
+    name:
+      - {language: en, text: "Denys Mishunov"}
+      - {language: ru, text: "Денис Мишунов"}
   - id: 262
     fileName: 0262.jpg
     name:
@@ -646,6 +656,11 @@ speakers:
     name:
       - {language: en, text: "Michael Samarin"}
       - {language: ru, text: "Михаил Самарин"}
+  - id: 268
+    fileName: 0268.jpg
+    name:
+      - {language: en, text: "Mikhail Druzhinin"}
+      - {language: ru, text: "Михаил Дружинин"}
   - id: 270
     fileName: 0270.jpg
     name:
@@ -2312,6 +2327,11 @@ speakers:
     fileName: 0651.jpg
     name:
       - {language: en, text: "David Khourshid"}
+  - id: 652
+    fileName: 0652.jpg
+    name:
+      - {language: en, text: "Nataliya Karatkova"}
+      - {language: ru, text: "Наталия Короткова"}
   - id: 653
     fileName: 0653.jpg
     name:
@@ -2326,6 +2346,11 @@ speakers:
     name:
       - {language: en, text: "Alexey Kozyatinsky"}
       - {language: ru, text: "Алексей Козятинский"}
+  - id: 656
+    fileName: 0656.jpg
+    name:
+      - {language: en, text: "Illya Klymov"}
+      - {language: ru, text: "Илья Климов"}
   - id: 657
     fileName: 0657.jpg
     name:
@@ -2343,6 +2368,11 @@ speakers:
     name:
       - {language: en, text: "Pavel Chertorogov"}
       - {language: ru, text: "Павел Черторогов"}
+  - id: 661
+    fileName: 0661.jpg
+    name:
+      - {language: en, text: "Pavel Malyshev (Mustlab)"}
+      - {language: ru, text: "Павел Малышев (Mustlab)"}
   - id: 662
     fileName: 0662.jpg
     name:
@@ -2367,6 +2397,11 @@ speakers:
     fileName: 0666.jpg
     name:
       - {language: en, text: "Ujjwal Sharma"}
+  - id: 667
+    fileName: 0667.jpg
+    name:
+      - {language: en, text: "Sergey Kriger"}
+      - {language: ru, text: "Сергей Кригер"}
   - id: 668
     fileName: 0668.jpg
     name:
@@ -2398,6 +2433,11 @@ speakers:
     fileName: 0674.jpg
     name:
       - {language: en, text: "Mauricio Palma"}
+  - id: 676
+    fileName: 0676.jpg
+    name:
+      - {language: en, text: "Dmitry Kharitonov"}
+      - {language: ru, text: "Дмитрий Харитонов"}
   - id: 677
     fileName: 0677.jpg
     name:
@@ -2486,11 +2526,26 @@ speakers:
     name:
       - {language: en, text: "Vyacheslav Shebanov"}
       - {language: ru, text: "Вячеслав Шебанов"}
+  - id: 697
+    fileName: 0697.jpg
+    name:
+      - {language: en, text: "Victor Grishchenko"}
+      - {language: ru, text: "Виктор Грищенко"}
   - id: 699
     fileName: 0699.jpg
     name:
       - {language: en, text: "Vsevolod Rodionov"}
       - {language: ru, text: "Всеволод Родионов"}
+  - id: 700
+    fileName: 0700.jpg
+    name:
+      - {language: en, text: "Andrey Nagikh"}
+      - {language: ru, text: "Андрей Нагих"}
+  - id: 701
+    fileName: 0701.jpg
+    name:
+      - {language: en, text: "Evgeny (Kot) Gusev"}
+      - {language: ru, text: "Евгений (Кот) Гусев"}
   - id: 702
     fileName: 0702.jpg
     name:
@@ -2519,6 +2574,16 @@ speakers:
     name:
       - {language: en, text: "Alexey Bogachuk"}
       - {language: ru, text: "Алексей Богачук"}
+  - id: 709
+    fileName: 0709.jpg
+    name:
+      - {language: en, text: "Dmitry Bezhetskov"}
+      - {language: ru, text: "Дмитрий Бежецков"}
+  - id: 710
+    fileName: 0710.jpg
+    name:
+      - {language: en, text: "Dmitry Makhnev"}
+      - {language: ru, text: "Дмитрий Махнёв"}
   - id: 711
     fileName: 0711.jpg
     name:
@@ -2565,6 +2630,11 @@ speakers:
     fileName: 0722.jpg
     name:
       - {language: en, text: "Lea Verou"}
+  - id: 723
+    fileName: 0723.jpg
+    name:
+      - {language: en, text: "Andrey Melikhov"}
+      - {language: ru, text: "Андрей Мелихов"}
   - id: 724
     fileName: 0724.jpg
     name:
@@ -2594,11 +2664,21 @@ speakers:
     fileName: 0730.jpg
     name:
       - {language: en, text: "Minko Gechev"}
+  - id: 732
+    fileName: 0732.jpg
+    name:
+      - {language: en, text: "Vladimir Dashukevich"}
+      - {language: ru, text: "Владимир Дашукевич"}
   - id: 734
     fileName: 0734.jpg
     name:
       - {language: en, text: "Anton Lobov"}
       - {language: ru, text: "Антон Лобов"}
+  - id: 735
+    fileName: 0735.jpg
+    name:
+      - {language: en, text: "Michael Bashurov"}
+      - {language: ru, text: "Михаил Башуров"}
   - id: 737
     fileName: 0737.jpg
     name:
@@ -2654,6 +2734,16 @@ speakers:
     name:
       - {language: en, text: "Vladimir Grinenko"}
       - {language: ru, text: "Владимир Гриненко"}
+  - id: 750
+    fileName: 0750.jpg
+    name:
+      - {language: en, text: "George Bukhanov"}
+      - {language: ru, text: "Георгий Буханов"}
+  - id: 751
+    fileName: 0751.jpg
+    name:
+      - {language: en, text: "Igor Alekseenko"}
+      - {language: ru, text: "Игорь Алексеенко"}
   - id: 753
     fileName: 0753.jpg
     name:
@@ -2679,6 +2769,31 @@ speakers:
     fileName: 0761.jpg
     name:
       - {language: en, text: "Tereza Sokol"}
+  - id: 763
+    fileName: 0763.jpg
+    name:
+      - {language: en, text: "Vyacheslav Egorov"}
+      - {language: ru, text: "Вячеслав Егоров"}
+  - id: 764
+    fileName: 0764.jpg
+    name:
+      - {language: en, text: "Anastasiya Goryacheva"}
+      - {language: ru, text: "Анастасия Горячева"}
+  - id: 765
+    fileName: 0765.jpg
+    name:
+      - {language: en, text: "Dmitriy Loktev"}
+      - {language: ru, text: "Дмитрий Локтев"}
+  - id: 766
+    fileName: 0766.jpg
+    name:
+      - {language: en, text: "Stanislav Gumenyuk"}
+      - {language: ru, text: "Станислав Гуменюк"}
+  - id: 771
+    fileName: 0771.jpg
+    name:
+      - {language: en, text: "Vasilika Klimova"}
+      - {language: ru, text: "Василика Климова"}
   - id: 776
     fileName: 0776.jpg
     name:
