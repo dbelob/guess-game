@@ -183,6 +183,11 @@ speakers:
     name:
       - {language: en, text: "Tagir Valeev"}
       - {language: ru, text: "Тагир Валеев"}
+  - id: 50
+    fileName: 0050.jpg
+    name:
+      - {language: en, text: "Dmitry Aleksandrov"}
+      - {language: ru, text: "Дмитрий Александров"}
   - id: 51
     fileName: 0051.jpg
     name:
@@ -449,6 +454,11 @@ speakers:
     name:
       - {language: en, text: "Andrus Adamchik"}
       - {language: ru, text: "Андрусь Адамчик"}
+  - id: 119
+    fileName: 0119.jpg
+    name:
+      - {language: en, text: "Alexey Dobrynin"}
+      - {language: ru, text: "Алексей Добрынин"}
   - id: 120
     fileName: 0120.jpg
     name:
@@ -490,6 +500,11 @@ speakers:
     fileName: 0129.jpg
     name:
       - {language: en, text: "Marc Philipp"}
+  - id: 130
+    fileName: 0130.jpg
+    name:
+      - {language: en, text: "Alexander Borisov (Google)"}
+      - {language: ru, text: "Александр Борисов (Google)"}
   - id: 131
     fileName: 0131.jpg
     name:
@@ -563,10 +578,19 @@ speakers:
     name:
       - {language: en, text: "Ilya Sergeev"}
       - {language: ru, text: "Илья Сергеев"}
+  - id: 152
+    fileName: 0152.jpg
+    name:
+      - {language: en, text: "Philipp Delgyado"}
+      - {language: ru, text: "Филипп Дельгядо"}
   - id: 154
     fileName: 0154.jpg
     name:
       - {language: en, text: "Sam Aaron"}
+  - id: 155
+    fileName: 0155.jpg
+    name:
+      - {language: en, text: "Jean-Philippe Bempel"}
   - id: 156
     fileName: 0156.jpg
     name:
@@ -625,11 +649,41 @@ speakers:
     name:
       - {language: en, text: "Vyacheslav Lapin"}
       - {language: ru, text: "Вячеслав Лапин"}
+  - id: 193
+    fileName: 0193.jpg
+    name:
+      - {language: en, text: "Nikita Dzhigurda"}
+      - {language: ru, text: "Никита Джигурда"}
+  - id: 202
+    fileName: 0202.jpg
+    name:
+      - {language: en, text: "Alexander Belocerkovsky"}
+      - {language: ru, text: "Александр Белоцерковский"}
+  - id: 205
+    fileName: 0205.jpg
+    name:
+      - {language: en, text: "Kuzma Deretuk"}
+      - {language: ru, text: "Кузьма Деретюк"}
   - id: 206
     fileName: 0206.jpg
     name:
       - {language: en, text: "Alexander Tobol"}
       - {language: ru, text: "Александр Тоболь"}
+  - id: 207
+    fileName: 0207.jpg
+    name:
+      - {language: en, text: "Mihail Bykov"}
+      - {language: ru, text: "Михаил Быков"}
+  - id: 210
+    fileName: 0210.jpg
+    name:
+      - {language: en, text: "Roman Antipin"}
+      - {language: ru, text: "Роман Антипин"}
+  - id: 213
+    fileName: 0213.jpg
+    name:
+      - {language: en, text: "Nikolay Chashnikov"}
+      - {language: ru, text: "Николай Чашников"}
   - id: 220
     fileName: 0220.jpg
     name:
