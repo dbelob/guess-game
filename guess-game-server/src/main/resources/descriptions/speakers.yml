@@ -34,6 +34,11 @@ speakers:
     name:
       - {language: en, text: "Andrey Ershov"}
       - {language: ru, text: "Андрей Ершов"}
+  - id: 7
+    fileName: 0007.jpg
+    name:
+      - {language: en, text: "Alexey Fedorov"}
+      - {language: ru, text: "Алексей Фёдоров"}
   - id: 8
     fileName: 0008.jpg
     name:
@@ -78,6 +83,11 @@ speakers:
     fileName: 0016.jpg
     name:
       - {language: en, text: "Charles Nutter"}
+  - id: 17
+    fileName: 0017.jpg
+    name:
+      - {language: en, text: "Artem Panasjuk"}
+      - {language: ru, text: "Артём Панасюк"}
   - id: 18
     fileName: 0018.jpg
     name:
@@ -88,6 +98,11 @@ speakers:
     name:
       - {language: en, text: "Ivan Ponomarev (KURS)"}
       - {language: ru, text: "Иван Пономарёв (КУРС)"}
+  - id: 20
+    fileName: 0020.jpg
+    name:
+      - {language: en, text: "Nikolay Potashnikov"}
+      - {language: ru, text: "Николай Поташников"}
   - id: 21
     fileName: 0021.jpg
     name:
@@ -118,6 +133,11 @@ speakers:
     name:
       - {language: en, text: "Gleb Smirnov"}
       - {language: ru, text: "Глеб Смирнов"}
+  - id: 27
+    fileName: 0027.jpg
+    name:
+      - {language: en, text: "Viktor Smirnov"}
+      - {language: ru, text: "Виктор Смирнов"}
   - id: 28
     fileName: 0028.jpg
     name:
@@ -163,11 +183,21 @@ speakers:
     name:
       - {language: en, text: "Alexander Tarasov"}
       - {language: ru, text: "Александр Тарасов"}
+  - id: 37
+    fileName: 0037.jpg
+    name:
+      - {language: en, text: "Maxim Gramin"}
+      - {language: ru, text: "Максим Грамин"}
   - id: 38
     fileName: 0038.jpg
     name:
       - {language: en, text: "Oleg Nenashev"}
       - {language: ru, text: "Олег Ненашев"}
+  - id: 39
+    fileName: 0039.jpg
+    name:
+      - {language: en, text: "Alexey Stukalov"}
+      - {language: ru, text: "Алексей Стукалов"}
   - id: 40
     fileName: 0040.jpg
     name:
