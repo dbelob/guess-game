@@ -1281,6 +1281,11 @@ speakers:
     name:
       - {language: en, text: "Igor Tyazhev"}
       - {language: ru, text: "Игорь Тяжев"}
+  - id: 317
+    fileName: 0317.jpg
+    name:
+      - {language: en, text: "Mikhail Kamalov"}
+      - {language: ru, text: "Михаил Камалов"}
   - id: 318
     fileName: 0318.jpg
     name:
@@ -1321,6 +1326,11 @@ speakers:
     name:
       - {language: en, text: "Ivan Drokin"}
       - {language: ru, text: "Иван Дрокин"}
+  - id: 326
+    fileName: 0326.jpg
+    name:
+      - {language: en, text: "Anna Veronika Dorogush"}
+      - {language: ru, text: "Анна Вероника Дорогуш"}
   - id: 327
     fileName: 0327.jpg
     name:
