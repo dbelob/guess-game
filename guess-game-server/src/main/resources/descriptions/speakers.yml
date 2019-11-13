@@ -1020,6 +1020,11 @@ speakers:
     name:
       - {language: en, text: "Anton Chernousov"}
       - {language: ru, text: "Антон Черноусов"}
+  - id: 219
+    fileName: 0219.jpg
+    name:
+      - {language: en, text: "Evgeny Kozlov"}
+      - {language: ru, text: "Евгений Козлов"}
   - id: 220
     fileName: 0220.jpg
     name:
@@ -1030,6 +1035,55 @@ speakers:
     name:
       - {language: en, text: "Ilya Matveev"}
       - {language: ru, text: "Илья Матвеев"}
+  - id: 222
+    fileName: 0222.jpg
+    name:
+      - {language: en, text: "Dmitry Rygalov"}
+      - {language: ru, text: "Дмитрий Рыгалов"}
+  - id: 223
+    fileName: 0223.jpg
+    name:
+      - {language: en, text: "Pavel Dimitrjuk"}
+      - {language: ru, text: "Павел Димитрюк"}
+  - id: 224
+    fileName: 0224.jpg
+    name:
+      - {language: en, text: "Vladimir Voskresensky"}
+      - {language: ru, text: "Владимир Воскресенский"}
+  - id: 225
+    fileName: 0225.jpg
+    name:
+      - {language: en, text: "Alexey Zotov"}
+      - {language: ru, text: "Алексей Зотов"}
+  - id: 226
+    fileName: 0226.jpg
+    name:
+      - {language: en, text: "Dmitry Maksimenko"}
+      - {language: ru, text: "Дмитрий Максименко"}
+  - id: 227
+    fileName: 0227.jpg
+    name:
+      - {language: en, text: "Alexey Teterev"}
+      - {language: ru, text: "Алексей Тетерев"}
+  - id: 228
+    fileName: 0228.jpg
+    name:
+      - {language: en, text: "Alexey Ignatenko"}
+      - {language: ru, text: "Алексей Игнатенко"}
+  - id: 229
+    fileName: 0229.jpg
+    name:
+      - {language: en, text: "Mads Opheim"}
+  - id: 230
+    fileName: 0230.jpg
+    name:
+      - {language: en, text: "Dmitry Pyshkin"}
+      - {language: ru, text: "Дмитрий Пышкин"}
+  - id: 231
+    fileName: 0231.jpg
+    name:
+      - {language: en, text: "Evgeny Gorbachev"}
+      - {language: ru, text: "Евгений Горбачёв"}
   - id: 233
     fileName: 0233.jpg
     name:
@@ -1144,6 +1198,11 @@ speakers:
     name:
       - {language: en, text: "Mikhail Druzhinin"}
       - {language: ru, text: "Михаил Дружинин"}
+  - id: 269
+    fileName: 0269.jpg
+    name:
+      - {language: en, text: "Kirill Karmakulov"}
+      - {language: ru, text: "Кирилл Кармакулов"}
   - id: 270
     fileName: 0270.jpg
     name:
