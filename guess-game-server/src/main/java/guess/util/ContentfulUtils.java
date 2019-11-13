@@ -267,7 +267,7 @@ public class ContentfulUtils {
 
                 if ((englishName != null) && !englishName.isEmpty() &&
                         (russianName != null) && !russianName.isEmpty()) {
-                    result.put(englishName, speaker);
+                    result.put(englishName.trim(), speaker);
                 }
             }
         }
