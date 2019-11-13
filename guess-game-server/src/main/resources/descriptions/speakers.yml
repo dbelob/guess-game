@@ -3572,6 +3572,11 @@ speakers:
     name:
       - {language: en, text: "Alexandr Guzenko"}
       - {language: ru, text: "Александр Гузенко"}
+  - id: 813
+    fileName: 0813.jpg
+    name:
+      - {language: en, text: "Fedor Tsymbal"}
+      - {language: ru, text: "Фёдор Цымбал"}
   - id: 814
     fileName: 0814.jpg
     name:
@@ -3759,6 +3764,11 @@ speakers:
     name:
       - {language: en, text: "Vladimir Ivanov (EPAM)"}
       - {language: ru, text: "Владимир Иванов (EPAM)"}
+  - id: 853
+    fileName: 0853.jpg
+    name:
+      - {language: en, text: "Roman Yatsina"}
+      - {language: ru, text: "Роман Яцына"}
   - id: 854
     fileName: 0854.jpg
     name:
@@ -3820,6 +3830,11 @@ speakers:
     name:
       - {language: en, text: "Gleb Novik"}
       - {language: ru, text: "Глеб Новик"}
+  - id: 867
+    fileName: 0867.jpg
+    name:
+      - {language: en, text: "Alexander Zimin"}
+      - {language: ru, text: "Александр Зимин"}
   - id: 868
     fileName: 0868.jpg
     name:
@@ -3901,6 +3916,11 @@ speakers:
     name:
       - {language: en, text: "Stanislav Tsyganov"}
       - {language: ru, text: "Станислав Цыганов"}
+  - id: 885
+    fileName: 0885.jpg
+    name:
+      - {language: en, text: "Igor Vasilenko"}
+      - {language: ru, text: "Игорь Василенко"}
   - id: 886
     fileName: 0886.jpg
     name:
@@ -3916,6 +3936,11 @@ speakers:
     name:
       - {language: en, text: "Matvey Malkov"}
       - {language: ru, text: "Матвей Мальков"}
+  - id: 889
+    fileName: 0889.jpg
+    name:
+      - {language: en, text: "Yan Zhulanov"}
+      - {language: ru, text: "Ян Жуланов"}
   - id: 890
     fileName: 0890.jpg
     name:
@@ -4030,6 +4055,11 @@ speakers:
     name:
       - {language: en, text: "Alexey Nikitin"}
       - {language: ru, text: "Алексей Никитин"}
+  - id: 913
+    fileName: 0913.jpg
+    name:
+      - {language: en, text: "Alexey Ushakov"}
+      - {language: ru, text: "Алексей Ушаков"}
   - id: 914
     fileName: 0914.jpg
     name:
