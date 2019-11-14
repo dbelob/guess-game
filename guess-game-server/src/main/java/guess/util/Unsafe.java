@@ -62,33 +62,17 @@ class Unsafe {
             unsafeQuestionSets.add(yaml.load(resource.getInputStream()));
         }
 
-        long questionId = 0;
         for (UnsafeQuestionSet unsafeQuestionSet : unsafeQuestionSets) {
             List<SpeakerQuestion> speakerQuestions = unsafeQuestionSet.getSpeakerQuestions().stream()
                     .map(q -> {
-                                //TODO: uncomment
-//                                Speaker speaker = speakerMap.get(q.getFileName());
-//                                Objects.requireNonNull(speaker,
-//                                        () -> String.format("Speaker filename %s (name '%s') not found", q.getFileName(), q.getName()));
-//
-//                                return new SpeakerQuestion(speaker);
+                                Speaker speaker = speakerMap.get(q.getFileName());
+                                Objects.requireNonNull(speaker,
+                                        () -> String.format("Speaker filename %s (name '%s') not found", q.getFileName(), q.getName()));
 
-                                //TODO: delete
-                                return new SpeakerQuestion(new Speaker(
-                                        q.getId(),
-                                        q.getFileName(),
-                                        Collections.singletonList(new LocaleItem(Language.ENGLISH.getCode(), q.getName()))));
+                                return new SpeakerQuestion(speaker);
                             }
                     )
                     .collect(Collectors.toList());
-
-            // Remove duplicates by filename
-            speakerQuestions = QuestionUtils.removeDuplicatesByFileName(speakerQuestions);
-
-            // Set unique id
-            for (SpeakerQuestion speakerQuestion : speakerQuestions) {
-                speakerQuestion.setId(questionId++);
-            }
 
             questionSets.add(new QuestionSet(
                     unsafeQuestionSet.getId(),
