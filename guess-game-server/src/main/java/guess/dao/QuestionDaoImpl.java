@@ -76,7 +76,7 @@ public class QuestionDaoImpl implements QuestionDao {
                 speakerQuestions.addAll(getQuestionSetById(questionSetId).getSpeakerQuestions());
             }
 
-            questions = new ArrayList<>(QuestionUtils.removeDuplicatesByFileName(speakerQuestions));
+            questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
         } else if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
             // Guess talk by speaker or speaker by talk
             List<TalkQuestion> talkQuestions = new ArrayList<>();

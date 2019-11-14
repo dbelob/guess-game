@@ -1,7 +1,6 @@
 package guess.util;
 
-import guess.domain.question.SpeakerQuestion;
-import guess.domain.question.TalkQuestion;
+import guess.domain.question.Question;
 
 import java.util.*;
 
@@ -9,31 +8,15 @@ import java.util.*;
  * Question utility methods.
  */
 public class QuestionUtils {
-    public static List<SpeakerQuestion> removeDuplicatesByFileName(List<SpeakerQuestion> speakerQuestions) {
-        List<SpeakerQuestion> result = new ArrayList<>();
-        Set<String> fileNames = new HashSet<>();
-
-        if (speakerQuestions != null) {
-            for (SpeakerQuestion speakerQuestion : speakerQuestions) {
-                if (!fileNames.contains(speakerQuestion.getSpeaker().getFileName())) {
-                    result.add(speakerQuestion);
-                    fileNames.add(speakerQuestion.getSpeaker().getFileName());
-                }
-            }
-        }
-
-        return result;
-    }
-
-    public static List<TalkQuestion> removeDuplicatesById(List<TalkQuestion> talkQuestions) {
-        List<TalkQuestion> result = new ArrayList<>();
+    public static <T extends Question> List<T> removeDuplicatesById(List<T> questions) {
+        List<T> result = new ArrayList<>();
         Set<Long> ids = new HashSet<>();
 
-        if (talkQuestions != null) {
-            for (TalkQuestion talkQuestion : talkQuestions) {
-                if (!ids.contains(talkQuestion.getId())) {
-                    result.add(talkQuestion);
-                    ids.add(talkQuestion.getId());
+        if (questions != null) {
+            for (T question : questions) {
+                if (!ids.contains(question.getId())) {
+                    result.add(question);
+                    ids.add(question.getId());
                 }
             }
         }

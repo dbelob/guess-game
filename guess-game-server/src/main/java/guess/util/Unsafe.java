@@ -78,7 +78,7 @@ class Unsafe {
                     unsafeQuestionSet.getId(),
                     Collections.singletonList(new LocaleItem(Language.ENGLISH.getCode(), unsafeQuestionSet.getName())),
                     unsafeQuestionSet.getLogoFileName(),
-                    QuestionUtils.removeDuplicatesByFileName(speakerQuestions),
+                    QuestionUtils.removeDuplicatesById(speakerQuestions),
                     Collections.emptyList()));
         }
 

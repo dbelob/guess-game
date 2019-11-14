@@ -106,7 +106,7 @@ public class YamlUtils {
                     eventType.getId(),
                     eventType.getName(),
                     eventType.getLogoFileName(),
-                    QuestionUtils.removeDuplicatesByFileName(speakerQuestions),
+                    QuestionUtils.removeDuplicatesById(speakerQuestions),
                     QuestionUtils.removeDuplicatesById(talkQuestions)));
         }
 
