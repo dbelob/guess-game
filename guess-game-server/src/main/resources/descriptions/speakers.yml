@@ -1084,6 +1084,10 @@ speakers:
     name:
       - {language: en, text: "Evgeny Gorbachev"}
       - {language: ru, text: "Евгений Горбачёв"}
+  - id: 232
+    fileName: 0232.jpg
+    name:
+      - {language: en, text: "Patrick Curran"}
   - id: 233
     fileName: 0233.jpg
     name:
@@ -1107,11 +1111,21 @@ speakers:
     name:
       - {language: en, text: "Andrey Solntsev"}
       - {language: ru, text: "Андрей Солнцев"}
+  - id: 238
+    fileName: 0238.jpg
+    name:
+      - {language: en, text: "Kirill Klensky"}
+      - {language: ru, text: "Кирилл Кленский"}
   - id: 239
     fileName: 0239.jpg
     name:
       - {language: en, text: "Ivan Kinash"}
       - {language: ru, text: "Иван Кинаш"}
+  - id: 240
+    fileName: 0240.jpg
+    name:
+      - {language: en, text: "Petr Kudryavtsev"}
+      - {language: ru, text: "Петр Кудрявцев"}
   - id: 241
     fileName: 0241.jpg
     name:
@@ -1125,10 +1139,58 @@ speakers:
     fileName: 0243.jpg
     name:
       - {language: en, text: "Marcus Lagergren"}
+  - id: 244
+    fileName: 0244.jpg
+    name:
+      - {language: en, text: "Lev Priyma"}
+      - {language: ru, text: "Лев Прийма"}
+  - id: 245
+    fileName: 0245.jpg
+    name:
+      - {language: en, text: "Dmitry Kozorez"}
+      - {language: ru, text: "Дмитрий Козорез"}
+  - id: 246
+    fileName: 0246.jpg
+    name:
+      - {language: en, text: "Oleg Pliss"}
+      - {language: ru, text: " Олег Плисс"}
+  - id: 247
+    fileName: 0247.jpg
+    name:
+      - {language: en, text: "Artem Ananyev"}
+      - {language: ru, text: "Артём Ананьев"}
+  - id: 248
+    fileName: 0248.jpg
+    name:
+      - {language: en, text: "Georges Saab"}
+  - id: 249
+    fileName: 0249.jpg
+    name:
+      - {language: en, text: "Pavel Fatin"}
+      - {language: ru, text: "Павел Фатин"}
+  - id: 250
+    fileName: 0250.jpg
+    name:
+      - {language: en, text: "Dmitry Naydanov"}
+      - {language: ru, text: "Дмитрий Найданов"}
+  - id: 251
+    fileName: 0251.jpg
+    name:
+      - {language: en, text: "Sami Ekblad"}
+  - id: 252
+    fileName: 0252.jpg
+    name:
+      - {language: en, text: "Alexander Shlyannikov"}
+      - {language: ru, text: "Александр Шлянников"}
   - id: 253
     fileName: 0253.jpg
     name:
       - {language: en, text: "Stephen Chin"}
+  - id: 254
+    fileName: 0254.jpg
+    name:
+      - {language: en, text: "Dmitry Cherepanov"}
+      - {language: ru, text: "Дмитрий Черепанов"}
   - id: 255
     fileName: 0255.jpg
     name:
