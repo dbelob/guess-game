@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~9.0.0-next.8",
     "@angular/platform-browser-dynamic": "~9.0.0-next.8",
     "@angular/router": "~9.0.0-next.8",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.3",

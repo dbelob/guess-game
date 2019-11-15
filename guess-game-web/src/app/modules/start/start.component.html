@@ -7,7 +7,7 @@
 
   <form role="form">
     <div class="form-group row">
-      <label for="set" class="col-sm-2">Set:</label>
+      <label for="set" class="col-sm-2">{{'START.SET' | translate}}</label>
       <div class="col-sm-10">
         <select multiple class="form-control" id="set" size="16" [(ngModel)]="selectedQuestionSets"
                 (ngModelChange)="onSetChange($event)" name="set">
