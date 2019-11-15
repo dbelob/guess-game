@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
-import { TranslateService } from "@ngx-translate/core";
 import { QuestionSet } from "../../shared/models/question-set.model";
 import { QuestionService } from "../../shared/services/question.service";
 import { StateService } from "../../shared/services/state.service";
@@ -19,13 +18,8 @@ export class StartComponent {
   public selectedGuessType: GuessType = GuessType.GuessNameType;
   public guessType = GuessType;
 
-  constructor(private questionService: QuestionService, private stateService: StateService, private router: Router,
-              public translateService: TranslateService) {
+  constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
     this.loadQuestionSets();
-
-    this.translateService.addLangs(['en', 'ru']);
-    this.translateService.setDefaultLang('en');
-    this.translateService.use('en');
   }
 
   loadQuestionSets() {

@@ -1,9 +1,22 @@
 {
-  "HOME": {
-    "TITLE": "Bonjour Angular avec ngx-translate !",
-    "SELECT": "Changer la langue"
+  "common": {
+    "cancelLinkText": "Прервать"
   },
-  "START": {
-    "SET": "Набор:"
+  "start": {
+    "title": "Выберите вопросы",
+    "setLabel": "Набор:",
+    "typeLabel": "Тип:",
+    "quantityLabel": "Количество:",
+    "guessNameLabel": "Угадать имя по фотографии",
+    "guessPictureLabel": "Угадать фотографию по имени",
+    "guessTalkLabel": "Угадать доклад по спикеру",
+    "guessSpeakerLabel": "Угадать спикера по докладу",
+    "startButtonText": "Начать"
+  },
+  "cancel": {
+    "title": "Прервать игру",
+    "text": "Вы уверены, что хотите прервать игру?",
+    "yesButtonText": "Да",
+    "noButtonText": "Нет"
   }
 }

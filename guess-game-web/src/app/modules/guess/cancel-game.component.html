@@ -1,15 +1,15 @@
 <div class="container-dialog p-2">
-  <h2 class="bg-danger p-1 text-white text-center">Cancel game</h2>
+  <h2 class="bg-danger p-1 text-white text-center">{{'cancel.title' | translate}}</h2>
 
   <app-message></app-message>
 
   <app-language-switcher (onReload)="reload()"></app-language-switcher>
 
   <div class="alert text-center h5 mb-4">
-    Are you sure to cancel game?
+    {{'cancel.text' | translate}}
   </div>
   <div class="text-center">
-    <button class="btn btn-danger m-1" (click)="cancel()">Yes</button>
-    <button class="btn btn-secondary m-1" routerLink="/">No</button>
+    <button class="btn btn-danger m-1" (click)="cancel()">{{'cancel.yesButtonText' | translate}}</button>
+    <button class="btn btn-secondary m-1" routerLink="/">{{'cancel.noButtonText' | translate}}</button>
   </div>
 </div>

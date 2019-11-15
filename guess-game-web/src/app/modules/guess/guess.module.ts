@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from "@angular/router";
+import { TranslateModule } from "@ngx-translate/core";
 import { GuessNameComponent } from "./guess-name.component";
 import { GuessPictureComponent } from "./guess-picture.component";
 import { GuessTalkComponent } from "./guess-talk.component";
@@ -20,6 +21,7 @@ import { MessageModule } from "../message/message.module";
   imports: [
     CommonModule,
     RouterModule,
+    TranslateModule,
     GeneralModule,
     MessageModule
   ]

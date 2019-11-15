@@ -1,9 +1,22 @@
 {
-  "HOME": {
-    "TITLE": "Hello Angular with ngx-translate!",
-    "SELECT": "Change language"
+  "common": {
+    "cancelLinkText": "Cancel"
   },
-  "START": {
-    "SET": "Set:"
+  "start": {
+    "title": "Select questions",
+    "setLabel": "Set:",
+    "typeLabel": "Type:",
+    "quantityLabel": "Quantity:",
+    "guessNameLabel": "Guess name by picture",
+    "guessPictureLabel": "Guess picture by name",
+    "guessTalkLabel": "Guess talk by speaker",
+    "guessSpeakerLabel": "Guess speaker by talk",
+    "startButtonText": "Start"
+  },
+  "cancel": {
+    "title": "Cancel game",
+    "text": "Are you sure to cancel game?",
+    "yesButtonText": "Yes",
+    "noButtonText": "No"
   }
 }

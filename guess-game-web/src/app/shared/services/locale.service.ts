@@ -4,6 +4,7 @@ import { MessageService } from "../../modules/message/message.service";
 import { Observable } from "rxjs";
 import { catchError } from "rxjs/operators";
 import { Language } from "../models/language.model";
+import { TranslateService } from "@ngx-translate/core";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,16 @@ import { Language } from "../models/language.model";
 export class LocaleService {
   private baseUrl = 'api/locale';
 
-  constructor(private http: HttpClient, private messageService: MessageService) {
+  constructor(private http: HttpClient, private messageService: MessageService,
+              public translateService: TranslateService) {
+
+    this.translateService.addLangs(['en', 'ru']);
+    this.translateService.setDefaultLang('en');
+
+    this.getLanguage()
+      .subscribe(data => {
+        this.changeTranslateLanguage(data);
+      });
   }
 
   getLanguage(): Observable<Language> {
@@ -25,6 +35,8 @@ export class LocaleService {
   }
 
   setLanguage(language: Language): Observable<string> {
+    this.changeTranslateLanguage(language);
+
     return this.http.put<string>(`${this.baseUrl}/language`, language)
       .pipe(
         catchError((response: Response) => {
@@ -32,5 +44,9 @@ export class LocaleService {
           throw response;
         })
       );
+  }
+
+  changeTranslateLanguage(language: Language) {
+    this.translateService.use(language === Language.Russian ? 'ru' : 'en');
   }
 }
