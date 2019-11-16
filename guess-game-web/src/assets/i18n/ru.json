@@ -13,10 +13,28 @@
     "guessSpeakerLabel": "Угадать спикера по докладу",
     "startButtonText": "Начать"
   },
+  "result":{
+    "title": "Игра окончена",
+    "correctAnswersLabel": "Правильные ответы:",
+    "wrongAnswersLabel": "Неправильные ответы:",
+    "skippedAnswersLabel": "Пропущенные ответы:",
+    "restartButtonText": "Повторить",
+    "table": {
+      "title": "Неправильные ответы",
+      "questionColumn": "Вопрос",
+      "correctAnswerColumn": "Правильный ответ",
+      "yourAnswersColumn": "Ваши ответы"
+    }
+  },
   "cancel": {
     "title": "Прервать игру",
     "text": "Вы уверены, что хотите прервать игру?",
     "yesButtonText": "Да",
     "noButtonText": "Нет"
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "text": "Перейти на",
+    "existingPageLinkText": "существующую страницу"
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from "@ngx-translate/core";
 import { MessageService } from "../message/message.service";
 import { Result } from "../../shared/models/result.model";
 import { AnswerService } from "../../shared/services/answer.service";
@@ -16,7 +17,8 @@ export class ResultComponent {
   public result = new Result();
   private isQuestionPicture = true;
 
-  constructor(private answerService: AnswerService, private stateService: StateService, private router: Router, private messageService: MessageService) {
+  constructor(private answerService: AnswerService, private stateService: StateService, private router: Router,
+              private messageService: MessageService, public translateService: TranslateService) {
     this.loadResult();
   }
 
