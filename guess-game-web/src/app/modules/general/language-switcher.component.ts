@@ -21,7 +21,7 @@ export class LanguageSwitcherComponent {
 
   onLanguageChange(language: Language) {
     this.localeService.setLanguage(language)
-      .subscribe(date => {
+      .subscribe(data => {
           this.onReload.emit();
         }
       );

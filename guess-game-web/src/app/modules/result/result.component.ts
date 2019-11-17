@@ -32,7 +32,7 @@ export class ResultComponent {
 
   restart() {
     this.stateService.setState(State.StartState)
-      .subscribe(date => {
+      .subscribe(data => {
           this.router.navigateByUrl('/start');
         }
       );
