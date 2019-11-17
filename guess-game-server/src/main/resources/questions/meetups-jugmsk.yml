@@ -4,6 +4,7 @@ logoFileName: jugmsk.jpg
 speakerQuestions:
   - {fileName: 0050.jpg, name: "Dmitry Alexandrov"}
   - {fileName: 0000.jpg, name: "Anton Arhipov"}
+  - {fileName: 0078.jpg, name: "Yury Artamonov"}
   - {fileName: 0032.jpg, name: "Alexander Belokrylov"}
   - {fileName: 0234.jpg, name: "Andrey Belyaev"}
   - {fileName: 0001.jpg, name: "Evgeny Borisov"}
@@ -27,6 +28,7 @@ speakerQuestions:
   - {fileName: 0034.jpg, name: "Alexander Mironenko"}
   - {fileName: 0038.jpg, name: "Oleg Nenashev"}
   - {fileName: 0016.jpg, name: "Charles Nutter"}
+  - {fileName: 0101.jpg, name: "Ivan Osipov"}
   - {fileName: 0017.jpg, name: "Artem Panasjuk"}
   - {fileName: 0018.jpg, name: "Andrey Pangin"}
   - {fileName: 0019.jpg, name: "Ivan Ponomarev (KURS)"}
