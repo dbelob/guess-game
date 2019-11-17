@@ -12,7 +12,7 @@ export class CancelGameComponent {
   }
 
   reload() {
-    //TODO: implement
+    // Nothing
   }
 
   cancel() {

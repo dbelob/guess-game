@@ -9,6 +9,6 @@ export class NotFoundComponent {
   }
 
   reload() {
-    //TODO: implement
+    // Nothing
   }
 }
