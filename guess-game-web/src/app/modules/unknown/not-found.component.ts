@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 export class NotFoundComponent {
   constructor() {
   }
+
+  reload() {
+    // Nothing
+  }
 }

@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 
 import { AppComponent } from './app.component';
 import { StartModule } from "./modules/start/start.module";
@@ -13,7 +18,6 @@ import { GuessPictureComponent } from "./modules/guess/guess-picture.component";
 import { UnknownModule } from "./modules/unknown/unknown.module";
 import { NotFoundComponent } from "./modules/unknown/not-found.component";
 import { MessageModule } from "./modules/message/message.module";
-import { HttpClientModule } from "@angular/common/http";
 import { AnswerService } from "./shared/services/answer.service";
 import { QuestionService } from "./shared/services/question.service";
 import { StateService } from "./shared/services/state.service";
@@ -34,6 +38,13 @@ const routes: Routes = [
   {path: "**", component: NotFoundComponent}
 ];
 
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
+
+registerLocaleData(localeRu, 'ru');
+
 @NgModule({
   declarations: [
     AppComponent
@@ -42,6 +53,13 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     GuessModule,
     MessageModule,
     ResultModule,

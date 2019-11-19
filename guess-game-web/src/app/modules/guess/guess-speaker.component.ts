@@ -56,7 +56,7 @@ export class GuessSpeakerComponent {
 
   result() {
     this.stateService.setState(State.ResultState)
-      .subscribe(date => {
+      .subscribe(data => {
           this.router.navigateByUrl('/result');
         }
       );

@@ -1,13 +1,16 @@
 package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.domain.Language;
+import guess.domain.State;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
-import guess.domain.State;
 import guess.dto.guess.*;
 import guess.dto.start.StartParametersDto;
 import guess.service.AnswerService;
+import guess.service.LocaleService;
 import guess.service.StateService;
+import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -24,11 +27,13 @@ import java.util.List;
 public class StateController {
     private StateService stateService;
     private AnswerService answerService;
+    private LocaleService localeService;
 
     @Autowired
-    public StateController(StateService stateService, AnswerService answerService) {
+    public StateController(StateService stateService, AnswerService answerService, LocaleService localeService) {
         this.stateService = stateService;
         this.answerService = answerService;
+        this.localeService = localeService;
     }
 
     @PostMapping("/parameters")
@@ -56,14 +61,16 @@ public class StateController {
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
+            Language language = localeService.getLanguage(httpSession);
 
             return dtoFunction.apply(
-                    questionAnswersSet.getName(),
+                    LocalizationUtils.getName(questionAnswersSet.getName(), language),
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),
                     questionAnswers,
-                    wrongAnswerIds);
+                    wrongAnswerIds,
+                    language);
         } else {
             return null;
         }

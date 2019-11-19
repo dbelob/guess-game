@@ -3,8 +3,14 @@
 
   <app-message></app-message>
 
-  <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
-  <div class="text-center mb-1" [class.mt-5]="!logoImageSource">
+  <div class="row">
+    <div class="col-sm">
+      <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
+    </div>
+    <app-language-switcher (onReload)="loadQuestion()" class="col-sm"></app-language-switcher>
+  </div>
+
+  <div class="text-center mb-1">
     <figure class="figure">
       <img src="{{imageSource}}" alt="" class="figure-img img-thumbnail img-guess-talk">
       <figcaption class="figure-caption text-center">{{speakerTalks.speakerName}}</figcaption>
@@ -21,6 +27,6 @@
             (click)="answer(speakerTalks.id3)">{{speakerTalks.talkName3}}</button>
   </div>
   <div class="text-right mt-1">
-    <button class="btn btn-link text-muted" (click)="cancel()"><small>Cancel</small></button>
+    <button class="btn btn-link text-muted" (click)="cancel()"><small>{{'common.cancelLinkText' | translate}}</small></button>
   </div>
 </div>

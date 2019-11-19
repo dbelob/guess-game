@@ -24,14 +24,13 @@ import java.util.stream.Collectors;
  */
 @Repository
 public class QuestionDaoImpl implements QuestionDao {
-    private static String QUESTIONS_DIRECTORY_NAME = "questions";
     private static String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
 
     private final List<QuestionSet> questionSets;
     private final List<Event> events;
 
     public QuestionDaoImpl() throws IOException {
-        this.questionSets = YamlUtils.readQuestionSets(QUESTIONS_DIRECTORY_NAME, DESCRIPTIONS_DIRECTORY_NAME);
+        this.questionSets = YamlUtils.readQuestionSets(DESCRIPTIONS_DIRECTORY_NAME);
         this.events = YamlUtils.readEvents(DESCRIPTIONS_DIRECTORY_NAME).stream()
                 .filter(e -> (e.getStartDate() != null) && (e.getEndDate() != null) && !e.getStartDate().isAfter(e.getEndDate()))
                 .sorted(Comparator.comparing(Event::getStartDate))
@@ -77,7 +76,7 @@ public class QuestionDaoImpl implements QuestionDao {
                 speakerQuestions.addAll(getQuestionSetById(questionSetId).getSpeakerQuestions());
             }
 
-            questions = new ArrayList<>(QuestionUtils.removeDuplicatesByFileName(speakerQuestions));
+            questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
         } else if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
             // Guess talk by speaker or speaker by talk
             List<TalkQuestion> talkQuestions = new ArrayList<>();

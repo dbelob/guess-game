@@ -1,11 +1,13 @@
 <div class="container-dialog p-2">
-  <h2 class="bg-info p-1 text-white text-center">Select questions</h2>
+  <h2 class="bg-info p-1 text-white text-center">{{'start.title' | translate}}</h2>
+
+  <app-message></app-message>
+
+  <app-language-switcher (onReload)="loadQuestionSets()"></app-language-switcher>
 
   <form role="form">
-    <app-message></app-message>
-
     <div class="form-group row">
-      <label for="set" class="col-sm-2">Set:</label>
+      <label for="set" class="col-sm-2">{{'start.setLabel' | translate}}</label>
       <div class="col-sm-10">
         <select multiple class="form-control" id="set" size="16" [(ngModel)]="selectedQuestionSets"
                 (ngModelChange)="onSetChange($event)" name="set">
@@ -16,42 +18,42 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="type" class="col-sm-2">Type:</label>
+      <label for="type" class="col-sm-2">{{'start.typeLabel' | translate}}</label>
       <div class="col-sm-10">
         <div class="form-check">
           <input class="form-check-input" type="radio" name="typeRadios" id="guessName" value="{{guessType.GuessNameType}}"
                  [(ngModel)]="selectedGuessType" (ngModelChange)="onTypeChange($event)">
           <label class="form-check-label" for="guessName">
-            Guess name by picture
+            {{'start.guessNameLabel' | translate}}
           </label>
         </div>
         <div class="form-check" id="type">
           <input class="form-check-input" type="radio" name="typeRadios" id="guessPicture" value="{{guessType.GuessPictureType}}"
                  [(ngModel)]="selectedGuessType" (ngModelChange)="onTypeChange($event)">
           <label class="form-check-label" for="guessPicture">
-            Guess picture by name
+            {{'start.guessPictureLabel' | translate}}
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="typeRadios" id="guessTalk" value="{{guessType.GuessTalkType}}"
                  [(ngModel)]="selectedGuessType" (ngModelChange)="onTypeChange($event)">
           <label class="form-check-label" for="guessTalk">
-            Guess talk by speaker
+            {{'start.guessTalkLabel' | translate}}
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="typeRadios" id="guessSpeaker" value="{{guessType.GuessSpeakerType}}"
                  [(ngModel)]="selectedGuessType" (ngModelChange)="onTypeChange($event)">
           <label class="form-check-label" for="guessSpeaker">
-            Guess speaker by talk
+            {{'start.guessSpeakerLabel' | translate}}
           </label>
         </div>
       </div>
     </div>
     <div class="form-group row">
-      <label for="quantity" class="col-sm-2">Quantity:</label>
+      <label for="quantity" class="col-sm-2">{{'start.quantityLabel' | translate}}</label>
       <div class="col-sm-10">
-        <select class="form-control" id="quantity" size="14" [(ngModel)]="selectedQuantity" name="quantity">
+        <select class="form-control" id="quantity" size="8" [(ngModel)]="selectedQuantity" name="quantity">
           <option *ngFor="let quantity of quantities" [ngValue]="quantity">
             {{quantity}}
           </option>
@@ -60,8 +62,8 @@
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary m-1" (click)="start()"
-              [class.btn-secondary]="isDisabled()" [disabled]="isDisabled()">
-        Start
+              [class.btn-secondary]="isStartDisabled()" [disabled]="isStartDisabled()">
+        {{'start.startButtonText' | translate}}
       </button>
     </div>
   </form>

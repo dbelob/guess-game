@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StartComponent } from "./start.component";
 import { FormsModule } from "@angular/forms";
+import { TranslateModule } from "@ngx-translate/core";
+import { StartComponent } from "./start.component";
+import { GeneralModule } from "../general/general.module";
 import { MessageModule } from "../message/message.module";
 
 @NgModule({
@@ -10,7 +12,9 @@ import { MessageModule } from "../message/message.module";
   ],
   imports: [
     CommonModule,
+    TranslateModule,
     FormsModule,
+    GeneralModule,
     MessageModule
   ]
 })

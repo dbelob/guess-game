@@ -19,12 +19,16 @@ export class StartComponent {
   public guessType = GuessType;
 
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
-    questionService.getQuestionSets()
+    this.loadQuestionSets();
+  }
+
+  loadQuestionSets() {
+    this.questionService.getQuestionSets()
       .subscribe(data => {
         this.questionSets = data;
 
         if (this.questionSets.length > 0) {
-          questionService.getDefaultQuestionSetId()
+          this.questionService.getDefaultQuestionSetId()
             .subscribe(data => {
               let defaultQuestionSetId = data;
               if ((defaultQuestionSetId < 0) || (defaultQuestionSetId >= this.questionSets.length)) {
@@ -53,6 +57,8 @@ export class StartComponent {
 
         if (this.quantities.length > 0) {
           this.selectedQuantity = this.quantities[this.quantities.length - 1];
+        } else {
+          this.selectedQuantity = 0;
         }
       });
   }
@@ -68,7 +74,7 @@ export class StartComponent {
       });
   }
 
-  isDisabled(): boolean {
-    return this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0);
+  isStartDisabled(): boolean {
+    return (this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0)) || (this.selectedQuantity == 0);
   }
 }

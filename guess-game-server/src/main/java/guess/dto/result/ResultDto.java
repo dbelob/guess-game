@@ -1,7 +1,8 @@
 package guess.dto.result;
 
-import guess.domain.answer.ErrorDetails;
 import guess.domain.GuessType;
+import guess.domain.Language;
+import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.Result;
 
 import java.util.Collections;
@@ -72,18 +73,20 @@ public class ResultDto {
         return talkErrorDetailsList;
     }
 
-    public static ResultDto convertToDto(Result result, List<ErrorDetails> errorDetailsList) {
+    public static ResultDto convertToDto(Result result, List<ErrorDetails> errorDetailsList, Language language) {
         List<SpeakerErrorDetailsDto> speakerErrorDetailsList =
                 (GuessType.GUESS_NAME_TYPE.equals(result.getGuessType()) || GuessType.GUESS_PICTURE_TYPE.equals(result.getGuessType())) ?
                         SpeakerErrorDetailsDto.convertToDto(
                                 errorDetailsList,
-                                result.getGuessType()) :
+                                result.getGuessType(),
+                                language) :
                         Collections.emptyList();
         List<TalkErrorDetailsDto> talkErrorDetailsList =
                 (GuessType.GUESS_TALK_TYPE.equals(result.getGuessType()) || GuessType.GUESS_SPEAKER_TYPE.equals(result.getGuessType())) ?
                         TalkErrorDetailsDto.convertToDto(
                                 errorDetailsList,
-                                result.getGuessType()) :
+                                result.getGuessType(),
+                                language) :
                         Collections.emptyList();
 
         return new ResultDto(

@@ -1,8 +1,9 @@
 package guess.dto.result;
 
+import guess.domain.GuessType;
+import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.ErrorPair;
-import guess.domain.GuessType;
 import guess.domain.question.TalkQuestion;
 import guess.util.LocalizationUtils;
 
@@ -41,31 +42,31 @@ public class TalkErrorDetailsDto {
         return wrongAnswers;
     }
 
-    private static TalkErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType) {
+    private static TalkErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType, Language language) {
         if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
             List<ErrorPair> wrongAnswers = errorDetails.getWrongAnswers().stream()
                     .map(q -> (GuessType.GUESS_TALK_TYPE.equals(guessType)) ?
                             new ErrorPair(
-                                    LocalizationUtils.getEnglishName(((TalkQuestion) q).getTalk().getName()),
+                                    LocalizationUtils.getName(((TalkQuestion) q).getTalk().getName(), language),
                                     null) :
                             new ErrorPair(
-                                    LocalizationUtils.getEnglishName(((TalkQuestion) q).getSpeaker().getName()),
+                                    LocalizationUtils.getName(((TalkQuestion) q).getSpeaker().getName(), language),
                                     ((TalkQuestion) q).getSpeaker().getFileName()))
                     .collect(Collectors.toList());
 
             return new TalkErrorDetailsDto(
                     ((TalkQuestion) errorDetails.getQuestion()).getSpeaker().getFileName(),
-                    LocalizationUtils.getEnglishName(((TalkQuestion) errorDetails.getQuestion()).getSpeaker().getName()),
-                    LocalizationUtils.getEnglishName(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName()),
+                    LocalizationUtils.getName(((TalkQuestion) errorDetails.getQuestion()).getSpeaker().getName(), language),
+                    LocalizationUtils.getName(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName(), language),
                     wrongAnswers);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
         }
     }
 
-    public static List<TalkErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessType guessType) {
+    public static List<TalkErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessType guessType, Language language) {
         return errorDetailsList.stream()
-                .map(e -> convertToDto(e, guessType))
+                .map(e -> convertToDto(e, guessType, language))
                 .collect(Collectors.toList());
     }
 }

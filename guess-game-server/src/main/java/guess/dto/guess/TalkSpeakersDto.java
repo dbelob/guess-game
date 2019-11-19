@@ -1,5 +1,6 @@
 package guess.dto.guess;
 
+import guess.domain.Language;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.TalkQuestion;
 import guess.util.LocalizationUtils;
@@ -77,7 +78,7 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
     }
 
     public static TalkSpeakersDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds) {
+                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
         return new TalkSpeakersDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
                 questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
@@ -85,14 +86,14 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
-                LocalizationUtils.getEnglishName(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName()),
+                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language),
                 ((TalkQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getFileName(),
-                LocalizationUtils.getEnglishName(((TalkQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getName()),
+                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getName(), language),
                 ((TalkQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getFileName(),
-                LocalizationUtils.getEnglishName(((TalkQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getName()),
+                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getName(), language),
                 ((TalkQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getFileName(),
-                LocalizationUtils.getEnglishName(((TalkQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getName()),
+                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getName(), language),
                 ((TalkQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getFileName(),
-                LocalizationUtils.getEnglishName(((TalkQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getName()));
+                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getName(), language));
     }
 }

@@ -1,5 +1,6 @@
 package guess.util;
 
+import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
@@ -54,7 +55,7 @@ public class ContentfulUtils {
     private static final String MAIN_ACCESS_TOKEN = "08f9e9e80ee347bd9f6017bf76f0a290c2ff0c28000946f7079f94a78974f090";
 
     private static Map<String, String> LOCALE_CODE_MAP = new HashMap<String, String>() {{
-        put("ru-RU", LocalizationUtils.RUSSIAN_LANGUAGE);
+        put("ru-RU", Language.RUSSIAN.getCode());
     }};
 
     private static final RestTemplate restTemplate;
@@ -171,13 +172,14 @@ public class ContentfulUtils {
      * @return speakers
      */
     public static List<Speaker> getSpeakers(String spaceId, String accessToken, String speakerFieldName) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select=fields.name,fields.nameEn&{speakerFieldName}=true
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select=fields.name,fields.nameEn&{speakerFieldName}=true&limit=1000
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "people")
                 .queryParam("select", "fields.name,fields.nameEn")
-                .queryParam(speakerFieldName, "true");  // only speakers
+                .queryParam(speakerFieldName, "true")   // only speakers
+                .queryParam("limit", 1000);
         URI uri = builder
                 .buildAndExpand(spaceId, "entries")
                 .encode()
@@ -192,10 +194,10 @@ public class ContentfulUtils {
                         null,
                         Arrays.asList(
                                 new LocaleItem(
-                                        LocalizationUtils.ENGLISH_LANGUAGE,
+                                        Language.ENGLISH.getCode(),
                                         s.getFields().getNameEn()),
                                 new LocaleItem(
-                                        LocalizationUtils.RUSSIAN_LANGUAGE,
+                                        Language.RUSSIAN.getCode(),
                                         s.getFields().getName()))))
                 .collect(Collectors.toList());
     }
@@ -208,12 +210,13 @@ public class ContentfulUtils {
      * @return talks
      */
     public static List<Talk> getTalks(String spaceId, String accessToken) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select=fields.name,fields.nameEn
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select=fields.name,fields.nameEn&limit=1000
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "talks")
-                .queryParam("select", "fields.name,fields.nameEn");
+                .queryParam("select", "fields.name,fields.nameEn")
+                .queryParam("limit", 1000);
         URI uri = builder
                 .buildAndExpand(spaceId, "entries")
                 .encode()
@@ -228,10 +231,10 @@ public class ContentfulUtils {
                         0L,
                         Arrays.asList(
                                 new LocaleItem(
-                                        LocalizationUtils.ENGLISH_LANGUAGE,
+                                        Language.ENGLISH.getCode(),
                                         t.getFields().getNameEn()),
                                 new LocaleItem(
-                                        LocalizationUtils.RUSSIAN_LANGUAGE,
+                                        Language.RUSSIAN.getCode(),
                                         t.getFields().getName())),
                         new ArrayList<>()))
                 .collect(Collectors.toList());
@@ -245,6 +248,31 @@ public class ContentfulUtils {
      */
     private static String transformLocale(String locale) {
         return LOCALE_CODE_MAP.getOrDefault(locale, locale);
+    }
+
+    /**
+     * Gets name, speaker map.
+     *
+     * @return name, speaker map
+     */
+    public static Map<String, Speaker> getNameSpeakerMap() {
+        Map<String, Speaker> result = new HashMap<>();
+
+        for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
+            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName);
+
+            for (Speaker speaker : speakers) {
+                String englishName = LocalizationUtils.getName(speaker.getName(), Language.ENGLISH);
+                String russianName = LocalizationUtils.getName(speaker.getName(), Language.RUSSIAN);
+
+                if ((englishName != null) && !englishName.isEmpty() &&
+                        (russianName != null) && !russianName.isEmpty()) {
+                    result.put(englishName.trim(), speaker);
+                }
+            }
+        }
+
+        return result;
     }
 
     public static void main(String[] args) {

@@ -50,7 +50,7 @@ export class GuessNameComponent {
 
   result() {
     this.stateService.setState(State.ResultState)
-      .subscribe(date => {
+      .subscribe(data => {
           this.router.navigateByUrl('/result');
         }
       );

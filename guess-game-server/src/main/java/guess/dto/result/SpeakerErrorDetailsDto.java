@@ -1,6 +1,7 @@
 package guess.dto.result;
 
 import guess.domain.GuessType;
+import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.question.SpeakerQuestion;
 import guess.util.LocalizationUtils;
@@ -34,26 +35,26 @@ public class SpeakerErrorDetailsDto {
         return wrongAnswers;
     }
 
-    private static SpeakerErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType) {
+    private static SpeakerErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType, Language language) {
         if (GuessType.GUESS_NAME_TYPE.equals(guessType) || GuessType.GUESS_PICTURE_TYPE.equals(guessType)) {
             List<String> wrongAnswers = errorDetails.getWrongAnswers().stream()
                     .map(q -> (GuessType.GUESS_NAME_TYPE.equals(guessType)) ?
-                            LocalizationUtils.getEnglishName(((SpeakerQuestion) q).getSpeaker().getName()) :
+                            LocalizationUtils.getName(((SpeakerQuestion) q).getSpeaker().getName(), language) :
                             ((SpeakerQuestion) q).getSpeaker().getFileName())
                     .collect(Collectors.toList());
 
             return new SpeakerErrorDetailsDto(
                     ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker().getFileName(),
-                    LocalizationUtils.getEnglishName(((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker().getName()),
+                    LocalizationUtils.getName(((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker().getName(), language),
                     wrongAnswers);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
         }
     }
 
-    public static List<SpeakerErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessType guessType) {
+    public static List<SpeakerErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessType guessType, Language language) {
         return errorDetailsList.stream()
-                .map(e -> convertToDto(e, guessType))
+                .map(e -> convertToDto(e, guessType, language))
                 .collect(Collectors.toList());
     }
 }

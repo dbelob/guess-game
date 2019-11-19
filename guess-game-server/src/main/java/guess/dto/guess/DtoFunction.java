@@ -1,5 +1,6 @@
 package guess.dto.guess;
 
+import guess.domain.Language;
 import guess.domain.question.QuestionAnswers;
 
 import java.util.List;
@@ -10,5 +11,5 @@ import java.util.List;
 @FunctionalInterface
 public interface DtoFunction<T> {
     T apply(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-            QuestionAnswers questionAnswers, List<Long> wrongAnswerIds);
+            QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language);
 }

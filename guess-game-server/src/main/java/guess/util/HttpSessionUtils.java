@@ -1,9 +1,10 @@
 package guess.util;
 
-import guess.domain.answer.AnswerSet;
-import guess.domain.question.QuestionAnswersSet;
+import guess.domain.Language;
 import guess.domain.StartParameters;
 import guess.domain.State;
+import guess.domain.answer.AnswerSet;
+import guess.domain.question.QuestionAnswersSet;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class HttpSessionUtils {
     private static final String START_PARAMETERS_ATTRIBUTE_NAME = "startParameters";
     private static final String QUESTION_ANSWERS_SET_ATTRIBUTE_NAME = "questionAnswersSet";
     private static final String ANSWER_SETS_ATTRIBUTE_NAME = "answerSets";
+    private static final String LANGUAGE_ATTRIBUTE_NAME = "language";
 
     public static State getState(HttpSession httpSession) {
         Object stateObject = httpSession.getAttribute(STATE_ATTRIBUTE_NAME);
@@ -95,6 +97,20 @@ public class HttpSessionUtils {
 
             answerSets.add(answerSet);
             httpSession.setAttribute(ANSWER_SETS_ATTRIBUTE_NAME, answerSets);
+        }
+    }
+
+    public static void setLanguage(Language language, HttpSession httpSession) {
+        httpSession.setAttribute(LANGUAGE_ATTRIBUTE_NAME, language);
+    }
+
+    public static Language getLanguage(HttpSession httpSession) {
+        Object languageObject = httpSession.getAttribute(LANGUAGE_ATTRIBUTE_NAME);
+
+        if (languageObject instanceof Language) {
+            return (Language) languageObject;
+        } else {
+            return Language.ENGLISH;
         }
     }
 }

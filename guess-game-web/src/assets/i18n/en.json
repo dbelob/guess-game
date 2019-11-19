@@ -1,0 +1,40 @@
+{
+  "common": {
+    "cancelLinkText": "Cancel"
+  },
+  "start": {
+    "title": "Select questions",
+    "setLabel": "Set:",
+    "typeLabel": "Type:",
+    "quantityLabel": "Quantity:",
+    "guessNameLabel": "Guess name by picture",
+    "guessPictureLabel": "Guess picture by name",
+    "guessTalkLabel": "Guess talk by speaker",
+    "guessSpeakerLabel": "Guess speaker by talk",
+    "startButtonText": "Start"
+  },
+  "result":{
+    "title": "Game over",
+    "correctAnswersLabel": "Correct answers:",
+    "wrongAnswersLabel": "Wrong answers:",
+    "skippedAnswersLabel": "Skipped answers:",
+    "restartButtonText": "Restart",
+    "table": {
+      "title": "Wrong answers",
+      "questionColumn": "Question",
+      "correctAnswerColumn": "Correct answer",
+      "yourAnswersColumn": "Your answers"
+    }
+  },
+  "cancel": {
+    "title": "Cancel game",
+    "text": "Are you sure to cancel game?",
+    "yesButtonText": "Yes",
+    "noButtonText": "No"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "Go to",
+    "existingPageLinkText": "existing page"
+  }
+}

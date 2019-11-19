@@ -4,16 +4,22 @@ import guess.dao.AnswerDao;
 import guess.dao.QuestionDao;
 import guess.dao.StateDao;
 import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.*;
+import guess.domain.GuessType;
+import guess.domain.Language;
+import guess.domain.StartParameters;
+import guess.domain.State;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
 import guess.domain.question.QuestionSet;
+import guess.domain.source.LocaleItem;
+import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -108,7 +114,7 @@ public class StateServiceImpl implements StateService {
             }
         }
 
-        String name;
+        List<LocaleItem> name;
         String logoFileName;
 
         // Set name and logo filename
@@ -117,7 +123,15 @@ public class StateServiceImpl implements StateService {
             name = questionSet.getName();
             logoFileName = questionSet.getLogoFileName();
         } else {
-            name = String.format("%d selected sets", startParameters.getQuestionSetIds().size());
+            final String SELECTED_SETS = "selectedSets";
+
+            name = Arrays.asList(
+                    new LocaleItem(Language.ENGLISH.getCode(), String.format(
+                            LocalizationUtils.getLocaleString(SELECTED_SETS, Language.ENGLISH),
+                            startParameters.getQuestionSetIds().size())),
+                    new LocaleItem(Language.RUSSIAN.getCode(), String.format(
+                            LocalizationUtils.getLocaleString(SELECTED_SETS, Language.RUSSIAN),
+                            startParameters.getQuestionSetIds().size())));
             logoFileName = null;
         }
 

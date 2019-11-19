@@ -11,9 +11,13 @@ export class CancelGameComponent {
   constructor(private stateService: StateService, private router: Router) {
   }
 
+  reload() {
+    // Nothing
+  }
+
   cancel() {
     this.stateService.setState(State.ResultState)
-      .subscribe(date => {
+      .subscribe(data => {
           this.router.navigateByUrl('/result');
         }
       );

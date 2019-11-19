@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from "@ngx-translate/core";
 import { MessageService } from "../message/message.service";
 import { Result } from "../../shared/models/result.model";
 import { AnswerService } from "../../shared/services/answer.service";
@@ -16,8 +17,13 @@ export class ResultComponent {
   public result = new Result();
   private isQuestionPicture = true;
 
-  constructor(private answerService: AnswerService, private stateService: StateService, private router: Router, private messageService: MessageService) {
-    answerService.getResult()
+  constructor(private answerService: AnswerService, private stateService: StateService, private router: Router,
+              private messageService: MessageService, public translateService: TranslateService) {
+    this.loadResult();
+  }
+
+  loadResult() {
+    this.answerService.getResult()
       .subscribe(data => {
         this.result = data;
         this.isQuestionPicture = (GuessType.GuessNameType === this.result.guessType) || (GuessType.GuessTalkType === this.result.guessType);
@@ -26,7 +32,7 @@ export class ResultComponent {
 
   restart() {
     this.stateService.setState(State.StartState)
-      .subscribe(date => {
+      .subscribe(data => {
           this.router.navigateByUrl('/start');
         }
       );

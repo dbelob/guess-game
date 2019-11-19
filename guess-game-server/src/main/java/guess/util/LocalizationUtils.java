@@ -1,26 +1,84 @@
 package guess.util;
 
+import guess.domain.Language;
 import guess.domain.source.LocaleItem;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.ResourceBundle;
 
 /**
  * Localization utility methods.
  */
 public class LocalizationUtils {
-    public static final String ENGLISH_LANGUAGE = "en";
-    public static final String RUSSIAN_LANGUAGE = "ru";
-    private static final LocaleItem DEFAULT_LOCALE_ITEM = new LocaleItem(ENGLISH_LANGUAGE, "");
+    private static final String BUNDLE_NAME = "LocaleStrings";
 
     /**
-     * Gets english name.
+     * Gets name for language (internal implementation).
      *
      * @param localeItems locale items
-     * @return english name
+     * @param language    language
+     * @return name
      */
-    public static String getEnglishName(List<LocaleItem> localeItems) {
-        return localeItems.stream()
-                .filter(et -> et.getLanguage().equals(ENGLISH_LANGUAGE))
-                .findFirst().orElse(DEFAULT_LOCALE_ITEM).getText();
+    private static Optional<LocaleItem> getNameInternal(List<LocaleItem> localeItems, Language language) {
+        if (language != null) {
+            return localeItems.stream()
+                    .filter(et -> et.getLanguage().equals(language.getCode()))
+                    .findFirst();
+        } else {
+            return Optional.empty();
+        }
+    }
+
+    /**
+     * Gets name for language.
+     *
+     * @param localeItems     locale items
+     * @param language        language
+     * @param defaultLanguage default language
+     * @return name
+     */
+    public static String getName(List<LocaleItem> localeItems, Language language, Language defaultLanguage) {
+        Language finalLanguage = (language != null) ? language : defaultLanguage;
+        Optional<LocaleItem> currentLanguageOptional = getNameInternal(localeItems, finalLanguage);
+
+        if (currentLanguageOptional.isPresent()) {
+            return currentLanguageOptional.get().getText();
+        }
+
+        if (finalLanguage != defaultLanguage) {
+            Optional<LocaleItem> defaultLanguageOptional = getNameInternal(localeItems, defaultLanguage);
+
+            if (defaultLanguageOptional.isPresent()) {
+                return defaultLanguageOptional.get().getText();
+            }
+        }
+
+        return "";
+    }
+
+    /**
+     * Gets name for language.
+     *
+     * @param localeItems locale items
+     * @param language    language
+     * @return name
+     */
+    public static String getName(List<LocaleItem> localeItems, Language language) {
+        return getName(localeItems, language, Language.ENGLISH);
+    }
+
+    /**
+     * Gets locale string.
+     *
+     * @param key      key
+     * @param language language
+     * @return locale string
+     */
+    public static String getLocaleString(String key, Language language) {
+        ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(language.getCode()));
+
+        return bundle.getString(key);
     }
 }
