@@ -1220,6 +1220,7 @@ speakers:
     fileName: 0260.jpg
     name:
       - {language: en, text: "Vitaly Fridman"}
+      - {language: ru, text: "Виталий Фридман"}
   - id: 261
     fileName: 0261.jpg
     name:
