@@ -50,3 +50,7 @@ Guess name by picture or picture by name.
 1. Find distribution file:
 
     `guess-game-<version>.zip`
+
+## Further development
+
+For the next versions of the application see [JugruGroup/guess-game](https://github.com/JugruGroup/guess-game) repository.
