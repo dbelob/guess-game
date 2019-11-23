@@ -1,5 +1,5 @@
 <div class="container p-2">
-  <h2 class="bg-info p-1 text-white text-center">{{title}}</h2>
+  <h3 class="bg-info p-1 text-white text-center">{{title}}</h3>
 
   <app-message></app-message>
 
@@ -10,7 +10,7 @@
     <app-language-switcher (onReload)="loadQuestion()" class="col-sm"></app-language-switcher>
   </div>
 
-  <p class="h2 text-center mt-3 mb-5">{{namePictures.name}}</p>
+  <p class="h3 text-center mt-3 mb-5">{{namePictures.name}}</p>
   <div class="text-center">
     <input type="image" alt="" class="img-thumbnail m-1 img-guess-picture"
            [class.btn-danger]="namePictures.invalid0" [disabled]="namePictures.invalid0"

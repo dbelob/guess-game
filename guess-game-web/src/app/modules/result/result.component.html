@@ -1,12 +1,12 @@
 <div class="container-dialog p-2">
-  <h2 class="bg-info p-1 text-white text-center">{{'result.title' | translate}}</h2>
+  <h3 class="bg-info p-1 text-white text-center">{{'result.title' | translate}}</h3>
 
   <app-message></app-message>
 
   <app-language-switcher (onReload)="loadResult()"></app-language-switcher>
 
   <div class="mt-2 mb-4">
-    <div class="form-row h5">
+    <div class="form-row h6">
       <div class="col-4 text-right">
         <label class="col-form-label">{{'result.correctAnswersLabel' | translate}}</label>
       </div>
@@ -17,7 +17,7 @@
         <label class="col-form-label">{{result.correctPercents | percent:'1.2-2':translateService.currentLang}}</label>
       </div>
     </div>
-    <div class="form-row h5">
+    <div class="form-row h6">
       <div class="col-4 text-right">
         <label class="col-form-label">{{'result.wrongAnswersLabel' | translate}}</label>
       </div>
@@ -28,7 +28,7 @@
         <label class="col-form-label">{{result.wrongPercents| percent:'1.2-2':translateService.currentLang}}</label>
       </div>
     </div>
-    <div *ngIf="isSkippedVisible()" class="form-row h5">
+    <div *ngIf="isSkippedVisible()" class="form-row h6">
       <div class="col-4 text-right">
         <label class="col-form-label">{{'result.skippedAnswersLabel' | translate}}</label>
       </div>
