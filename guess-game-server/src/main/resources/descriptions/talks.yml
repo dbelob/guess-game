@@ -494,3 +494,138 @@ talks:
       - {language: en, text: "Why IT industry is entering its darkest era yet, how DevOps is to blame and why Das Kapital can help"}
       - {language: ru, text: "Почему IT-индустрия переживает темные времена, как в этом виноват DevOps, и почему «Капитал» может помочь"}
     speakerIds: [969]
+  - id: 172
+    name:
+      - {language: en, text: "Better code: Relationships"}
+    speakerIds: [983]
+  - id: 173
+    name:
+      - {language: en, text: "A state of сompile time regular expressions"}
+    speakerIds: [989]
+  - id: 174
+    name:
+      - {language: en, text: "The C++ rvalue lifetime disaster"}
+    speakerIds: [990]
+  - id: 175
+    name:
+      - {language: en, text: "Automate it"}
+      - {language: ru, text: "Автоматизируй это"}
+    speakerIds: [347]
+  - id: 176
+    name:
+      - {language: en, text: "C++ exceptions through the prism of compiler optimizations"}
+      - {language: ru, text: "Исключения C++ через призму компиляторных оптимизаций"}
+    speakerIds: [996]
+  - id: 177
+    name:
+      - {language: en, text: "Teaching geometry to C++"}
+    speakerIds: [1000]
+  - id: 178
+    name:
+      - {language: en, text: "How we switched to vcpkg"}
+      - {language: ru, text: "Как мы начали использовать vcpkg"}
+    speakerIds: [999]
+  - id: 179
+    name:
+      - {language: en, text: "Comfort class apartments for actors and handlers"}
+      - {language: ru, text: "Жилье комфорт-класса для акторов и хендлеров"}
+    speakerIds: [987]
+  - id: 180
+    name:
+      - {language: en, text: "Type punning in modern C++"}
+    speakerIds: [340]
+  - id: 181
+    name:
+      - {language: en, text: "BareMetal C++"}
+    speakerIds: [994]
+  - id: 182
+    name:
+      - {language: en, text: "Generators, coroutines and other brain-unrolling sweetness"}
+    speakerIds: [1001]
+  - id: 183
+    name:
+      - {language: en, text: "Using slab allocators in high performance network applications"}
+      - {language: ru, text: "Применение slab-аллокаторов в высоконагруженных сетевых приложениях"}
+    speakerIds: [991]
+  - id: 184
+    name:
+      - {language: en, text: "С++ Enterprise Edition — message brokers"}
+      - {language: ru, text: "С++ Enterprise Edition — брокеры сообщений"}
+    speakerIds: [1002]
+  - id: 185
+    name:
+      - {language: en, text: "C++ tricks from Yandex.Taxi"}
+      - {language: ru, text: "C++ трюки из Такси"}
+    speakerIds: [332]
+  - id: 186
+    name:
+      - {language: en, text: "Squaring the circle: value-oriented design in an object-oriented system"}
+    speakerIds: [342]
+  - id: 187
+    name:
+      - {language: en, text: "Premature optimization is evil! All hail premature optimization!"}
+      - {language: ru, text: "Преждевременная оптимизация — зло! Да здравствует преждевременная оптимизация!"}
+    speakerIds: [344]
+  - id: 188
+    name:
+      - {language: en, text: "A unifying abstraction for async in C++"}
+    speakerIds: [986]
+  - id: 189
+    name:
+      - {language: en, text: "The C++20 synchronization library"}
+    speakerIds: [985]
+  - id: 190
+    name:
+      - {language: en, text: "Insights into the C++ standard library"}
+      - {language: ru, text: "Под капотом стандартной библиотеки C++"}
+    speakerIds: [351]
+  - id: 191
+    name:
+      - {language: en, text: "Dive into the general-purpose GPU programming"}
+    speakerIds: [998]
+  - id: 192
+    name:
+      - {language: en, text: "Modules in C++20 — real or fake?"}
+      - {language: ru, text: "Модули в С++20 — правда или вымысел?"}
+    speakerIds: [993]
+  - id: 193
+    name:
+      - {language: en, text: "Modern techniques for keeping your code dry"}
+    speakerIds: [984]
+  - id: 194
+    name:
+      - {language: en, text: "Clauses, qualifiers and patterns"}
+      - {language: ru, text: "Спецификаторы, квалификаторы и шаблоны"}
+    speakerIds: [333]
+  - id: 195
+    name:
+      - {language: en, text: "Modules: Changes in core language"}
+      - {language: ru, text: "Модули: Изменения в core language"}
+    speakerIds: [346]
+  - id: 196
+    name:
+      - {language: en, text: "Hardening the C++ standard template library"}
+    speakerIds: [988]
+  - id: 197
+    name:
+      - {language: en, text: "Dart as an opportunity to transfer a C++ application to web"}
+      - {language: ru, text: "Dart, как возможность перенести C++ приложение в web"}
+    speakerIds: [995]
+  - id: 198
+    name:
+      - {language: en, text: "The Big Four of C++20"}
+    speakerIds: [339]
+  - id: 199
+    name:
+      - {language: en, text: "Serialization with blackjack and metaprogramming"}
+      - {language: ru, text: "Сериализация объектов с блэкджеком и метапрограммированием"}
+    speakerIds: [997]
+  - id: 200
+    name:
+      - {language: en, text: "Algorithmic and microarchitecture optimizations of C++ applications"}
+      - {language: ru, text: "Алгоритмическая и микроархитектурная оптимизация C++ приложений"}
+    speakerIds: [992]
+  - id: 201
+    name:
+      - {language: en, text: "Compile-time type tagging"}
+    speakerIds: [336]
