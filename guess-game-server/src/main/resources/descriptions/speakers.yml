@@ -1905,7 +1905,7 @@ speakers:
   - id: 405
     fileName: 0405.jpg
     name:
-      - {language: en, text: "Christophe Nasarre"}
+      - {language: en, text: "Christophe Nasarre-Soulier"}
   - id: 406
     fileName: 0406.jpg
     name:
@@ -4705,3 +4705,64 @@ speakers:
     name:
       - {language: en, text: "Alexander Bychuk"}
       - {language: ru, text: "Александр Бычук"}
+  - id: 1003
+    fileName: 1003.jpg
+    name:
+      - {language: en, text: "Scott Wlaschin"}
+  - id: 1004
+    fileName: 1004.jpg
+    name:
+      - {language: en, text: "Joreg"}
+  - id: 1005
+    fileName: 1005.jpg
+    name:
+      - {language: en, text: "Stephen Cleary"}
+  - id: 1006
+    fileName: 1006.jpg
+    name:
+      - {language: en, text: "Jeff Prosise"}
+  - id: 1007
+    fileName: 1007.jpg
+    name:
+      - {language: en, text: "Elias Holzer"}
+  - id: 1008
+    fileName: 1008.jpg
+    name:
+      - {language: en, text: "Michael Staib"}
+  - id: 1009
+    fileName: 1009.jpg
+    name:
+      - {language: en, text: "Jacob Povar"}
+      - {language: ru, text: "Яков Повар"}
+  - id: 1010
+    fileName: 1010.jpg
+    name:
+      - {language: en, text: "Konstantin Zhitnik"}
+      - {language: ru, text: "Константин Житник"}
+  - id: 1011
+    fileName: 1011.jpg
+    name:
+      - {language: en, text: "Vladimir Panchenko"}
+      - {language: ru, text: "Владимир Панченко"}
+  - id: 1012
+    fileName: 1012.jpg
+    name:
+      - {language: en, text: "Marco De Sanctis"}
+  - id: 1013
+    fileName: 1013.jpg
+    name:
+      - {language: en, text: "Łukasz Pyrzyk"}
+  - id: 1014
+    fileName: 1014.jpg
+    name:
+      - {language: en, text: "Anatoly Zhmur"}
+      - {language: ru, text: "Анатолий Жмур"}
+  - id: 1015
+    fileName: 1015.jpg
+    name:
+      - {language: en, text: "Roman Prosin"}
+      - {language: ru, text: "Роман Просин"}
+  - id: 1016
+    fileName: 1016.jpg
+    name:
+      - {language: en, text: "Dan Shechter"}
