@@ -629,3 +629,134 @@ talks:
     name:
       - {language: en, text: "Compile-time type tagging"}
     speakerIds: [336]
+  - id: 202
+    name:
+      - {language: en, text: "Platform Wars"}
+    speakerIds: [501]
+  - id: 203
+    name:
+      - {language: en, text: "Asynchronous streams"}
+    speakerIds: [1005]
+  - id: 204
+    name:
+      - {language: en, text: "Code Review — the art of development"}
+      - {language: ru, text: "Code Review — искусство развивать"}
+    speakerIds: [1015]
+  - id: 205
+    name:
+      - {language: en, text: "Hot Chocolate: An introduction to GraphQL on ASP.Net Core"}
+    speakerIds: [1008]
+  - id: 206
+    name:
+      - {language: en, text: "Splendour and misery of the domain area"}
+      - {language: ru, text: "Блеск и нищета предметной области"}
+    speakerIds: [413]
+  - id: 207
+    name:
+      - {language: en, text: "Machine learning for C# developers: Introducing ML.NET"}
+    speakerIds: [1006]
+  - id: 208
+    name:
+      - {language: en, text: "Beating CoreCLR's own C++ code with CoreCLR 3.0 intrinsics"}
+    speakerIds: [1016]
+  - id: 209
+    name:
+      - {language: en, text: "What you need to know about .NET Core 3.0 and beyond"}
+    speakerIds: [403]
+  - id: 210
+    name:
+      - {language: en, text: "Pragmatic memory management"}
+    speakerIds: [1014]
+  - id: 211
+    name:
+      - {language: en, text: "Roslyn: Mastership of state analysis"}
+      - {language: ru, text: "Roslyn: Mастерство статического анализа"}
+    speakerIds: [1011]
+  - id: 212
+    name:
+      - {language: en, text: ".NET: Treating the dependences"}
+      - {language: ru, text: ".NET: Лечение зависимостей"}
+    speakerIds: [466]
+  - id: 213
+    name:
+      - {language: en, text: "The Turkish gambit. Business application in half an hour"}
+      - {language: ru, text: "Турецкий гамбит. Приложение бизнес-класса за полчаса"}
+    speakerIds: [443]
+  - id: 214
+    name:
+      - {language: en, text: "Bring your ASP.NET Core solutions to Kubernetes in Azure"}
+    speakerIds: [1012]
+  - id: 215
+    name:
+      - {language: en, text: "Fantastic biotechnologies and where to find them"}
+      - {language: ru, text: "Фантастические биотехнологии и где они обитают"}
+    speakerIds: [82]
+  - id: 216
+    name:
+      - {language: en, text: "Everything .NET developer wanted to find out about deep learning, but was afraid to ask"}
+      - {language: ru, text: "Всё, что разработчик .NET хотел знать про глубокое обучение, но боялся спросить"}
+    speakerIds: [472]
+  - id: 217
+    name:
+      - {language: en, text: "From ETW to EventPipe: dig into .NET monitoring pipelines for healthier applications"}
+    speakerIds: [405]
+  - id: 218
+    name:
+      - {language: en, text: "Create your own serverless PKI with .NET & Azure Key Vault"}
+    speakerIds: [457]
+  - id: 219
+    name:
+      - {language: en, text: ".NET 5: runtimes"}
+    speakerIds: [431]
+  - id: 220
+    name:
+      - {language: en, text: "Mutation analysis"}
+      - {language: ru, text: "Мутационный анализ"}
+    speakerIds: [946]
+  - id: 221
+    name:
+      - {language: en, text: "The debugging mindset"}
+    speakerIds: [417]
+  - id: 222
+    name:
+      - {language: en, text: "Metaprogramming for the masses"}
+    speakerIds: [450]
+  - id: 223
+    name:
+      - {language: en, text: "Nullable reference types — advanced guide"}
+    speakerIds: [426]
+  - id: 224
+    name:
+      - {language: en, text: "How to collect the entire database into a file and why we use the Akka.NET Streams library"}
+      - {language: ru, text: "Как собрать всю базу в файл и зачем тут Akka.NET Streams"}
+    speakerIds: [1010]
+  - id: 225
+    name:
+      - {language: en, text: "An in-depth look at the new features in C# 8.0 and .NET Core 3.0"}
+    speakerIds: [409]
+  - id: 226
+    name:
+      - {language: en, text: "Introduction to Event sourcing"}
+      - {language: ru, text: "Введение в Event sourcing"}
+    speakerIds: [1009]
+  - id: 227
+    name:
+      - {language: en, text: "Daily performance pitfalls"}
+    speakerIds: [1013]
+  - id: 228
+    name:
+      - {language: en, text: "Writing a .NET Core cross platform profiler in an hour"}
+    speakerIds: [406]
+  - id: 229
+    name:
+      - {language: en, text: "Distributed tracing in .NET"}
+      - {language: ru, text: "Распределенная трассировка запросов в .NET"}
+    speakerIds: [433]
+  - id: 230
+    name:
+      - {language: en, text: "vvvv — visual programming for .NET"}
+    speakerIds: [1004]
+  - id: 231
+    name:
+      - {language: en, text: "The power of composition"}
+    speakerIds: [1003]
