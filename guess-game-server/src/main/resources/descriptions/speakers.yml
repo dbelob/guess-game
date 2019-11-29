@@ -3086,7 +3086,7 @@ speakers:
   - id: 659
     fileName: 0659.jpg
     name:
-      - {language: en, text: "Lucas da Costa"}
+      - {language: en, text: "Lucas Fernandes da Costa"}
   - id: 660
     fileName: 0660.jpg
     name:
@@ -4766,3 +4766,57 @@ speakers:
     fileName: 1016.jpg
     name:
       - {language: en, text: "Dan Shechter"}
+  - id: 1017
+    fileName: 1017.jpg
+    name:
+      - {language: en, text: "Guillermo Rauch"}
+  - id: 1018
+    fileName: 1018.jpg
+    name:
+      - {language: en, text: "Vitaliy Bragilevskiy"}
+      - {language: ru, text: "Виталий Брагилевский"}
+  - id: 1019
+    fileName: 1019.jpg
+    name:
+      - {language: en, text: "Yulia Startsev"}
+  - id: 1020
+    fileName: 1020.jpg
+    name:
+      - {language: en, text: "Dmitriy Voloshin"}
+      - {language: ru, text: "Дмитрий Волошин"}
+  - id: 1021
+    fileName: 1021.jpg
+    name:
+      - {language: en, text: "Nicolò Ribaudo"}
+  - id: 1022
+    fileName: 1022.jpg
+    name:
+      - {language: en, text: "Aki Rose Braun"}
+  - id: 1023
+    fileName: 1023.jpg
+    name:
+      - {language: en, text: "Ivan Akulov"}
+      - {language: ru, text: "Иван Акулов"}
+  - id: 1024
+    fileName: 1024.jpg
+    name:
+      - {language: en, text: "Anna Herlihy"}
+  - id: 1025
+    fileName: 1025.jpg
+    name:
+      - {language: en, text: "Michael Saboff"}
+  - id: 1026
+    fileName: 1026.jpg
+    name:
+      - {language: en, text: "Ivan Popelyshev"}
+      - {language: ru, text: "Иван Попелышев"}
+  - id: 1027
+    fileName: 1027.jpg
+    name:
+      - {language: en, text: "Sergey Rubanov"}
+      - {language: ru, text: "Сергей Рубанов"}
+  - id: 1028
+    fileName: 1028.jpg
+    name:
+      - {language: en, text: "Andrey Roenko"}
+      - {language: ru, text: "Андрей Роенко"}
