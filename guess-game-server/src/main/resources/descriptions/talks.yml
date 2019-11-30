@@ -1,5 +1,4 @@
 talks:
-  # Joker 2019
   - id: 0
     name:
       - {language: en, text: "Reactive Spring revisited"}
@@ -167,596 +166,595 @@ talks:
     name:
       - {language: en, text: "Decrypting tech hype for the busy coder"}
     speakerIds: [253]
-    # JPoint 2019
-  - id: 100
+  - id: 38
     name:
       - {language: en, text: "The world needs full-stack craftsmen"}
     speakerIds: [68]
-  - id: 101
+  - id: 39
     name:
       - {language: en, text: "Software testing pitfalls"}
       - {language: ru, text: "Просчеты тестирования"}
     speakerIds: [3]
-  - id: 102
+  - id: 40
     name:
       - {language: en, text: "JDK 12: Pitfalls for the unwary"}
     speakerIds: [69]
-  - id: 103
+  - id: 41
     name:
       - {language: en, text: "Create your own interpreter with a JIT in 1 hour"}
     speakerIds: [70]
-  - id: 104
+  - id: 42
     name:
       - {language: en, text: "RSocket — future reactive application protocol"}
       - {language: ru, text: "Протокол RSocket — будущее реактивных приложений"}
     speakerIds: [33]
-  - id: 105
+  - id: 43
     name:
       - {language: en, text: "Reactive programming: lessons learned"}
     speakerIds: [71]
-  - id: 106
+  - id: 44
     name:
       - {language: en, text: "Pushing a big project forward: the Jenkins story"}
     speakerIds: [72]
-  - id: 107
+  - id: 45
     name:
       - {language: en, text: "The Proxy fairy and the magic of Spring"}
     speakerIds: [73]
-  - id: 108
+  - id: 46
     name:
       - {language: en, text: "Don't put all your eggs in one container"}
       - {language: ru, text: "Не клади все яйца в один контейнер"}
     speakerIds: [5]
-  - id: 109
+  - id: 47
     name:
       - {language: en, text: "Bulletproof Java Enterprise applications for the hard production life"}
     speakerIds: [74]
-  - id: 110
+  - id: 48
     name:
       - {language: en, text: "A tale of how we did channel algorithm in Kotlin Coroutines"}
       - {language: ru, text: "Сказ о том, как мы алгоритм каналов в Kotlin Coroutines делали"}
     speakerIds: [58]
-  - id: 111
+  - id: 49
     name:
       - {language: en, text: "Maximizing performance with GraalVM (talk + workshop)"}
     speakerIds: [75]
-  - id: 112
+  - id: 50
     name:
       - {language: en, text: "Performance aspects of Axon-based CQRS/ES systems"}
     speakerIds: [76]
-  - id: 113
+  - id: 51
     name:
       - {language: en, text: "Spring comes ahead of time, or Unbearable lightness of AOT compilation of the Spring Boot applications"}
       - {language: ru, text: "Нас Spring Boot, а мы крепчаем: невыносимая легкость AOT-компиляции Spring-приложений"}
     speakerIds: [14]
-  - id: 114
+  - id: 52
     name:
       - {language: en, text: "Lost in transaction? Strategies to manage consistency in distributed systems"}
     speakerIds: [77]
-  - id: 115
+  - id: 53
     name:
       - {language: en, text: "Don't be Homer Simpson to your Reactor!"}
       - {language: ru, text: "Не будь Гомером Симпсоном для своего Reactor-а!"}
     speakerIds: [622]
-  - id: 116
+  - id: 54
     name:
       - {language: en, text: "Anatomy and physiology of Vaadin Flow"}
       - {language: ru, text: "Анатомия и физиология Vaadin Flow"}
     speakerIds: [78]
-  - id: 117
+  - id: 55
     name:
       - {language: en, text: "Improve Java build performance with Gradle 5"}
     speakerIds: [79]
-  - id: 118
+  - id: 56
     name:
       - {language: en, text: "Java microservices: from Netflix OSS to Kubernetes"}
     speakerIds: [80]
-  - id: 119
+  - id: 57
     name:
       - {language: en, text: "Java 11 reactive HTTP Client"}
     speakerIds: [81]
-  - id: 120
+  - id: 58
     name:
       - {language: en, text: "Playing God: Has science crossed a line?"}
       - {language: ru, text: "Игра в Бога. Перешла ли наука границу"}
     speakerIds: [82]
-  - id: 121
+  - id: 59
     name:
       - {language: en, text: "JVM TI: how to create a \"plugin\" for a virtual machine"}
       - {language: ru, text: "JVM TI: как сделать «плагин» для виртуальной машины"}
     speakerIds: [18]
-  - id: 122
+  - id: 60
     name:
       - {language: en, text: "Local variable type inference: Friend or foe?"}
     speakerIds: [69]
-  - id: 123
+  - id: 61
     name:
       - {language: en, text: "Cloud native, service-meshed Java Enterprise with Istio"}
     speakerIds: [74]
-  - id: 124
+  - id: 62
     name:
       - {language: en, text: "Kotlin: how do usual constructions work"}
       - {language: ru, text: "Kotlin: как работают привычные конструкции"}
     speakerIds: [8]
-  - id: 125
+  - id: 63
     name:
       - {language: en, text: "Metacompilation, partial evaluation, the Futamura projections, and how GraalVM will save the world"}
       - {language: ru, text: "Суперкомпиляция, partial evaluation, проекции Футамуры и как GraalVM спасет мир"}
     speakerIds: [23]
-  - id: 126
+  - id: 64
     name:
       - {language: en, text: "Decomposing Java applications"}
     speakerIds: [83]
-  - id: 127
+  - id: 65
     name:
       - {language: en, text: "Kotlin/Native: why make a native language in 2019? What is beyond JVM?"}
       - {language: ru, text: "Kotlin/Native: зачем нужен еще один компилируемый язык в XXI веке?"}
     speakerIds: [84]
-  - id: 128
+  - id: 66
     name:
       - {language: en, text: "Kafka Streams API: Moving beyond Hello World"}
       - {language: ru, text: "Kafka Streams API: шаг за рамки Hello World"}
     speakerIds: [19]
-  - id: 129
+  - id: 67
     name:
       - {language: en, text: "Atomic refactoring in IntelliJ IDEA: Bending IDE to our will"}
       - {language: ru, text: "Атомарный рефакторинг в IntelliJ IDEA: прогибаем IDE под себя"}
     speakerIds: [49]
-  - id: 130
+  - id: 68
     name:
       - {language: en, text: "When it all went to Kafka"}
       - {language: ru, text: "Когда всё пошло по Кафке"}
     speakerIds: [220]
-  - id: 131
+  - id: 69
     name:
       - {language: en, text: "Fast & functional"}
     speakerIds: [85]
-  - id: 132
+  - id: 70
     name:
       - {language: en, text: "Let's make some 0xCAFEBABE — test-driven bytecode engineering"}
     speakerIds: [61, 47]
-  - id: 133
+  - id: 71
     name:
       - {language: en, text: "Moving Spring Boot microservices from Java 8 to Java 11: what can possibly go wrong?"}
       - {language: ru, text: "Перевод Spring Boot-микросервисов с Java 8 на 11: что может пойти не так?"}
     speakerIds: [86]
-  - id: 134
+  - id: 72
     name:
       - {language: en, text: "Do it yourself: Collections"}
     speakerIds: [87]
-  - id: 135
+  - id: 73
     name:
       - {language: en, text: "Java is slow: CodeCache edition"}
       - {language: ru, text: "Java тормозит: CodeCache edition"}
     speakerIds: [25]
-  - id: 136
+  - id: 74
     name:
       - {language: en, text: "The definite guide to Java agents"}
     speakerIds: [88]
-  - id: 137
+  - id: 75
     name:
       - {language: en, text: "How to unravel the tangle: Analyzing and debugging apps in IntelliJ IDEA"}
       - {language: ru, text: "Как распутать клубок ниток: анализ и отладка приложений в IntelliJ IDEA"}
     speakerIds: [0]
-  - id: 138
+  - id: 76
     name:
       - {language: en, text: "Efficient file-based IO for Java developers"}
       - {language: ru, text: "Эффективная работа с файлами для Java-разработчиков"}
     speakerIds: [89]
-  - id: 139
+  - id: 77
     name:
       - {language: en, text: "Seamless web services development with Mu"}
       - {language: ru, text: "Гибкий веб-сервис API с Mu"}
     speakerIds: [90]
-  - id: 140
+  - id: 78
     name:
       - {language: en, text: "What do I do with 1000s cores. Lessons learnt building an agent-based modelling system"}
     speakerIds: [91]
-  - id: 141
+  - id: 79
     name:
       - {language: en, text: "Making sense out of serverless computing"}
     speakerIds: [92]
-  - id: 142
+  - id: 80
     name:
       - {language: en, text: "Characters, community, and culture: Important factors for prosperity"}
     speakerIds: [968]
-  - id: 143
+  - id: 81
     name:
       - {language: en, text: "Serverless containers with Knative and Cloud Run"}
     speakerIds: [486]
-  - id: 144
+  - id: 82
     name:
       - {language: en, text: "Scale your auditing events"}
     speakerIds: [143]
-  - id: 145
+  - id: 83
     name:
       - {language: en, text: "Terraform vs Helm: Battle for infrastructure"}
       - {language: ru, text: "Terraform vs Helm: Битва за инфраструктуру"}
     speakerIds: [975]
-  - id: 146
+  - id: 84
     name:
       - {language: en, text: "Do it in code (not YAML)! Unlock power of Kotlin DSL for Kubernetes"}
       - {language: ru, text: "Do it in code (not YAML)! Unlock power of Kotlin DSL for Kubernetes"}
     speakerIds: [9, 974]
-  - id: 147
+  - id: 85
     name:
       - {language: en, text: "The unbearable lightness of scaling pods in Kubernetes"}
       - {language: ru, text: "Невыносимая легкость масштабирования подов в Kubernetes"}
     speakerIds: [380]
-  - id: 148
+  - id: 86
     name:
       - {language: en, text: "Delivering progressively with Jenkins X"}
     speakerIds: [74]
-  - id: 149
+  - id: 87
     name:
       - {language: en, text: "Pipelines & pods: DevOps with Kubernetes"}
     speakerIds: [957]
-  - id: 150
+  - id: 88
     name:
       - {language: en, text: "How to deal with Kafka so it won't get Kafkaesque"}
       - {language: ru, text: "Как готовить Кафку, чтобы не пригорало"}
     speakerIds: [220]
-  - id: 151
+  - id: 89
     name:
       - {language: en, text: "10 years of on-call. What have we learned?"}
       - {language: ru, text: "10 лет on-call. Чему мы научились?"}
     speakerIds: [980]
-  - id: 152
+  - id: 90
     name:
       - {language: en, text: "DevOps patterns and antipatterns for continuous software updates"}
       - {language: ru, text: "Паттерны и антипаттерны непрерывных обновлений в практике DevOps"}
     speakerIds: [35]
-  - id: 153
+  - id: 91
     name:
       - {language: en, text: "Flagging your features — a DevOps approach to continuous release"}
     speakerIds: [408]
-  - id: 154
+  - id: 92
     name:
       - {language: en, text: "Ansible: Tractor mode. We create a roles that will travel everywhere!"}
       - {language: ru, text: "Ansible: Тракторный режим. Создаём роли, которые проедут везде!"}
     speakerIds: [982]
-  - id: 155
+  - id: 93
     name:
       - {language: en, text: "Removing the barriers"}
     speakerIds: [508]
-  - id: 156
+  - id: 94
     name:
       - {language: en, text: "CDK and infrastructure as a code"}
     speakerIds: [979]
-  - id: 157
+  - id: 95
     name:
       - {language: en, text: "How to draw DevOps?"}
       - {language: ru, text: "Как нарисовать DevOps?"}
     speakerIds: [978]
-  - id: 158
+  - id: 96
     name:
       - {language: en, text: "How to steer MySQL steam boat"}
       - {language: ru, text: "Как рулить пароходом MySQL"}
     speakerIds: [972]
-  - id: 159
+  - id: 97
     name:
       - {language: en, text: "WTF do we need a service mesh?"}
       - {language: ru, text: "Зачем нам сервисное сито?"}
     speakerIds: [362]
-  - id: 160
+  - id: 98
     name:
       - {language: en, text: "Implementing microservices architecture as Cloud Run application"}
     speakerIds: [971]
-  - id: 161
+  - id: 99
     name:
       - {language: en, text: "Automating everything with Github Actions"}
       - {language: ru, text: "Автоматизируем все с Github Actions"}
     speakerIds: [582]
-  - id: 162
+  - id: 100
     name:
       - {language: en, text: "From zero to DevOps superhero: The container edition"}
     speakerIds: [970]
-  - id: 163
+  - id: 101
     name:
       - {language: en, text: "Service mesh for building multicluster systems"}
       - {language: ru, text: "Service mesh для построения мультикластерной системы"}
     speakerIds: [977]
-  - id: 164
+  - id: 102
     name:
       - {language: en, text: "The final story about operators"}
       - {language: ru, text: "Заключительный рассказ про операторы"}
     speakerIds: [973]
-  - id: 165
+  - id: 103
     name:
       - {language: en, text: "Making the Internet faster. And sleeping well at night"}
       - {language: ru, text: "Ускоряем Интернет-запросы, и спим спокойно"}
     speakerIds: [976]
-  - id: 166
+  - id: 104
     name:
       - {language: en, text: "Under the hood of serverless Jenkins: Jenkinsfile Runner"}
     speakerIds: [38]
-  - id: 167
+  - id: 105
     name:
       - {language: en, text: "Mobile app development: DevOps or not DevOps"}
       - {language: ru, text: "Мобильная разработка: DevOps или не DevOps"}
     speakerIds: [852]
-  - id: 168
+  - id: 106
     name:
       - {language: en, text: "The curse of infrastructure team"}
       - {language: ru, text: "Проклятие инфраструктурной команды"}
     speakerIds: [369]
-  - id: 169
+  - id: 107
     name:
       - {language: en, text: "Adapting your infrastructure to go multi-*"}
     speakerIds: [981]
-  - id: 170
+  - id: 108
     name:
       - {language: en, text: "CI of big projects in JetBrains"}
       - {language: ru, text: "CI больших проектов в JetBrains"}
     speakerIds: [0]
-  - id: 171
+  - id: 109
     name:
       - {language: en, text: "Why IT industry is entering its darkest era yet, how DevOps is to blame and why Das Kapital can help"}
       - {language: ru, text: "Почему IT-индустрия переживает темные времена, как в этом виноват DevOps, и почему «Капитал» может помочь"}
     speakerIds: [969]
-  - id: 172
+  - id: 110
     name:
       - {language: en, text: "Better code: Relationships"}
     speakerIds: [983]
-  - id: 173
+  - id: 111
     name:
       - {language: en, text: "A state of сompile time regular expressions"}
     speakerIds: [989]
-  - id: 174
+  - id: 112
     name:
       - {language: en, text: "The C++ rvalue lifetime disaster"}
     speakerIds: [990]
-  - id: 175
+  - id: 113
     name:
       - {language: en, text: "Automate it"}
       - {language: ru, text: "Автоматизируй это"}
     speakerIds: [347]
-  - id: 176
+  - id: 114
     name:
       - {language: en, text: "C++ exceptions through the prism of compiler optimizations"}
       - {language: ru, text: "Исключения C++ через призму компиляторных оптимизаций"}
     speakerIds: [996]
-  - id: 177
+  - id: 115
     name:
       - {language: en, text: "Teaching geometry to C++"}
     speakerIds: [1000]
-  - id: 178
+  - id: 116
     name:
       - {language: en, text: "How we switched to vcpkg"}
       - {language: ru, text: "Как мы начали использовать vcpkg"}
     speakerIds: [999]
-  - id: 179
+  - id: 117
     name:
       - {language: en, text: "Comfort class apartments for actors and handlers"}
       - {language: ru, text: "Жилье комфорт-класса для акторов и хендлеров"}
     speakerIds: [987]
-  - id: 180
+  - id: 118
     name:
       - {language: en, text: "Type punning in modern C++"}
     speakerIds: [340]
-  - id: 181
+  - id: 119
     name:
       - {language: en, text: "BareMetal C++"}
     speakerIds: [994]
-  - id: 182
+  - id: 120
     name:
       - {language: en, text: "Generators, coroutines and other brain-unrolling sweetness"}
     speakerIds: [1001]
-  - id: 183
+  - id: 121
     name:
       - {language: en, text: "Using slab allocators in high performance network applications"}
       - {language: ru, text: "Применение slab-аллокаторов в высоконагруженных сетевых приложениях"}
     speakerIds: [991]
-  - id: 184
+  - id: 122
     name:
       - {language: en, text: "С++ Enterprise Edition — message brokers"}
       - {language: ru, text: "С++ Enterprise Edition — брокеры сообщений"}
     speakerIds: [1002]
-  - id: 185
+  - id: 123
     name:
       - {language: en, text: "C++ tricks from Yandex.Taxi"}
       - {language: ru, text: "C++ трюки из Такси"}
     speakerIds: [332]
-  - id: 186
+  - id: 124
     name:
       - {language: en, text: "Squaring the circle: value-oriented design in an object-oriented system"}
     speakerIds: [342]
-  - id: 187
+  - id: 125
     name:
       - {language: en, text: "Premature optimization is evil! All hail premature optimization!"}
       - {language: ru, text: "Преждевременная оптимизация — зло! Да здравствует преждевременная оптимизация!"}
     speakerIds: [344]
-  - id: 188
+  - id: 126
     name:
       - {language: en, text: "A unifying abstraction for async in C++"}
     speakerIds: [986]
-  - id: 189
+  - id: 127
     name:
       - {language: en, text: "The C++20 synchronization library"}
     speakerIds: [985]
-  - id: 190
+  - id: 128
     name:
       - {language: en, text: "Insights into the C++ standard library"}
       - {language: ru, text: "Под капотом стандартной библиотеки C++"}
     speakerIds: [351]
-  - id: 191
+  - id: 129
     name:
       - {language: en, text: "Dive into the general-purpose GPU programming"}
     speakerIds: [998]
-  - id: 192
+  - id: 130
     name:
       - {language: en, text: "Modules in C++20 — real or fake?"}
       - {language: ru, text: "Модули в С++20 — правда или вымысел?"}
     speakerIds: [993]
-  - id: 193
+  - id: 131
     name:
       - {language: en, text: "Modern techniques for keeping your code dry"}
     speakerIds: [984]
-  - id: 194
+  - id: 132
     name:
       - {language: en, text: "Clauses, qualifiers and patterns"}
       - {language: ru, text: "Спецификаторы, квалификаторы и шаблоны"}
     speakerIds: [333]
-  - id: 195
+  - id: 133
     name:
       - {language: en, text: "Modules: Changes in core language"}
       - {language: ru, text: "Модули: Изменения в core language"}
     speakerIds: [346]
-  - id: 196
+  - id: 134
     name:
       - {language: en, text: "Hardening the C++ standard template library"}
     speakerIds: [988]
-  - id: 197
+  - id: 135
     name:
       - {language: en, text: "Dart as an opportunity to transfer a C++ application to web"}
       - {language: ru, text: "Dart, как возможность перенести C++ приложение в web"}
     speakerIds: [995]
-  - id: 198
+  - id: 136
     name:
       - {language: en, text: "The Big Four of C++20"}
     speakerIds: [339]
-  - id: 199
+  - id: 137
     name:
       - {language: en, text: "Serialization with blackjack and metaprogramming"}
       - {language: ru, text: "Сериализация объектов с блэкджеком и метапрограммированием"}
     speakerIds: [997]
-  - id: 200
+  - id: 138
     name:
       - {language: en, text: "Algorithmic and microarchitecture optimizations of C++ applications"}
       - {language: ru, text: "Алгоритмическая и микроархитектурная оптимизация C++ приложений"}
     speakerIds: [992]
-  - id: 201
+  - id: 139
     name:
       - {language: en, text: "Compile-time type tagging"}
     speakerIds: [336]
-  - id: 202
+  - id: 140
     name:
       - {language: en, text: "Platform Wars"}
     speakerIds: [501]
-  - id: 203
+  - id: 141
     name:
       - {language: en, text: "Asynchronous streams"}
     speakerIds: [1005]
-  - id: 204
+  - id: 142
     name:
       - {language: en, text: "Code Review — the art of development"}
       - {language: ru, text: "Code Review — искусство развивать"}
     speakerIds: [1015]
-  - id: 205
+  - id: 143
     name:
       - {language: en, text: "Hot Chocolate: An introduction to GraphQL on ASP.Net Core"}
     speakerIds: [1008]
-  - id: 206
+  - id: 144
     name:
       - {language: en, text: "Splendour and misery of the domain area"}
       - {language: ru, text: "Блеск и нищета предметной области"}
     speakerIds: [413]
-  - id: 207
+  - id: 145
     name:
       - {language: en, text: "Machine learning for C# developers: Introducing ML.NET"}
     speakerIds: [1006]
-  - id: 208
+  - id: 146
     name:
       - {language: en, text: "Beating CoreCLR's own C++ code with CoreCLR 3.0 intrinsics"}
     speakerIds: [1016]
-  - id: 209
+  - id: 147
     name:
       - {language: en, text: "What you need to know about .NET Core 3.0 and beyond"}
     speakerIds: [403]
-  - id: 210
+  - id: 148
     name:
       - {language: en, text: "Pragmatic memory management"}
     speakerIds: [1014]
-  - id: 211
+  - id: 149
     name:
       - {language: en, text: "Roslyn: Mastership of state analysis"}
       - {language: ru, text: "Roslyn: Mастерство статического анализа"}
     speakerIds: [1011]
-  - id: 212
+  - id: 150
     name:
       - {language: en, text: ".NET: Treating the dependences"}
       - {language: ru, text: ".NET: Лечение зависимостей"}
     speakerIds: [466]
-  - id: 213
+  - id: 151
     name:
       - {language: en, text: "The Turkish gambit. Business application in half an hour"}
       - {language: ru, text: "Турецкий гамбит. Приложение бизнес-класса за полчаса"}
     speakerIds: [443]
-  - id: 214
+  - id: 152
     name:
       - {language: en, text: "Bring your ASP.NET Core solutions to Kubernetes in Azure"}
     speakerIds: [1012]
-  - id: 215
+  - id: 153
     name:
       - {language: en, text: "Fantastic biotechnologies and where to find them"}
       - {language: ru, text: "Фантастические биотехнологии и где они обитают"}
     speakerIds: [82]
-  - id: 216
+  - id: 154
     name:
       - {language: en, text: "Everything .NET developer wanted to find out about deep learning, but was afraid to ask"}
       - {language: ru, text: "Всё, что разработчик .NET хотел знать про глубокое обучение, но боялся спросить"}
     speakerIds: [472]
-  - id: 217
+  - id: 155
     name:
       - {language: en, text: "From ETW to EventPipe: dig into .NET monitoring pipelines for healthier applications"}
     speakerIds: [405]
-  - id: 218
+  - id: 156
     name:
       - {language: en, text: "Create your own serverless PKI with .NET & Azure Key Vault"}
     speakerIds: [457]
-  - id: 219
+  - id: 157
     name:
       - {language: en, text: ".NET 5: runtimes"}
     speakerIds: [431]
-  - id: 220
+  - id: 158
     name:
       - {language: en, text: "Mutation analysis"}
       - {language: ru, text: "Мутационный анализ"}
     speakerIds: [946]
-  - id: 221
+  - id: 159
     name:
       - {language: en, text: "The debugging mindset"}
     speakerIds: [417]
-  - id: 222
+  - id: 160
     name:
       - {language: en, text: "Metaprogramming for the masses"}
     speakerIds: [450]
-  - id: 223
+  - id: 161
     name:
       - {language: en, text: "Nullable reference types — advanced guide"}
     speakerIds: [426]
-  - id: 224
+  - id: 162
     name:
       - {language: en, text: "How to collect the entire database into a file and why we use the Akka.NET Streams library"}
       - {language: ru, text: "Как собрать всю базу в файл и зачем тут Akka.NET Streams"}
     speakerIds: [1010]
-  - id: 225
+  - id: 163
     name:
       - {language: en, text: "An in-depth look at the new features in C# 8.0 and .NET Core 3.0"}
     speakerIds: [409]
-  - id: 226
+  - id: 164
     name:
       - {language: en, text: "Introduction to Event sourcing"}
       - {language: ru, text: "Введение в Event sourcing"}
     speakerIds: [1009]
-  - id: 227
+  - id: 165
     name:
       - {language: en, text: "Daily performance pitfalls"}
     speakerIds: [1013]
-  - id: 228
+  - id: 166
     name:
       - {language: en, text: "Writing a .NET Core cross platform profiler in an hour"}
     speakerIds: [406]
-  - id: 229
+  - id: 167
     name:
       - {language: en, text: "Distributed tracing in .NET"}
       - {language: ru, text: "Распределенная трассировка запросов в .NET"}
     speakerIds: [433]
-  - id: 230
+  - id: 168
     name:
       - {language: en, text: "vvvv — visual programming for .NET"}
     speakerIds: [1004]
-  - id: 231
+  - id: 169
     name:
       - {language: en, text: "The power of composition"}
     speakerIds: [1003]
