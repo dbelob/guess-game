@@ -3036,8 +3036,8 @@ speakers:
   - id: 648
     fileName: 0648.jpg
     name:
-      - {language: en, text: "Andrey Smirnov"}
-      - {language: ru, text: "Андрей Смирнов"}
+      - {language: en, text: "Andrey Smirnov (DINO Systems)"}
+      - {language: ru, text: "Андрей Смирнов (DINO Systems)"}
   - id: 649
     fileName: 0649.jpg
     name:
@@ -4820,3 +4820,62 @@ speakers:
     name:
       - {language: en, text: "Andrey Roenko"}
       - {language: ru, text: "Андрей Роенко"}
+  - id: 1029
+    fileName: 1029.jpg
+    name:
+      - {language: en, text: "Andrey Smirnov (IPONWEB)"}
+      - {language: ru, text: "Андрей Смирнов (IPONWEB)"}
+  - id: 1030
+    fileName: 1030.jpg
+    name:
+      - {language: en, text: "Romulo Cintra"}
+  - id: 1031
+    fileName: 1031.jpg
+    name:
+      - {language: en, text: "Mathieu Henri"}
+  - id: 1032
+    fileName: 1032.jpg
+    name:
+      - {language: en, text: "Eliran Eliassy"}
+  - id: 1033
+    fileName: 1033.jpg
+    name:
+      - {language: en, text: "Nikita Mostovoy"}
+      - {language: ru, text: "Никита Мостовой"}
+  - id: 1034
+    fileName: 1034.jpg
+    name:
+      - {language: en, text: "Zar Zakharov"}
+      - {language: ru, text: "Зар Захаров"}
+  - id: 1035
+    fileName: 1035.jpg
+    name:
+      - {language: en, text: "Alexander Kamenyar"}
+      - {language: ru, text: "Александр Каменяр"}
+  - id: 1036
+    fileName: 1036.jpg
+    name:
+      - {language: en, text: "Artyom Arutyunyan"}
+      - {language: ru, text: "Артём Арутюнян"}
+  - id: 1037
+    fileName: 1037.jpg
+    name:
+      - {language: en, text: "Prashant Palikhe"}
+  - id: 1038
+    fileName: 1038.jpg
+    name:
+      - {language: en, text: "Miguel Angel Duran Garcia"}
+  - id: 1039
+    fileName: 1039.jpg
+    name:
+      - {language: en, text: "Alexandra Kalinina"}
+      - {language: ru, text: "Александра Калинина"}
+  - id: 1040
+    fileName: 1040.jpg
+    name:
+      - {language: en, text: "Andrey Pechkurov"}
+      - {language: ru, text: "Андрей Печкуров"}
+  - id: 1041
+    fileName: 1041.jpg
+    name:
+      - {language: en, text: "Farzad YousefZadeh"}
