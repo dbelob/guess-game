@@ -4823,7 +4823,7 @@ speakers:
   - id: 1029
     fileName: 1029.jpg
     name:
-      - {language: en, text: "Andrey Smirnov (IPONWEB)"}
+      - {language: en, text: "Andrew Smirnov (IPONWEB)"}
       - {language: ru, text: "Андрей Смирнов (IPONWEB)"}
   - id: 1030
     fileName: 1030.jpg

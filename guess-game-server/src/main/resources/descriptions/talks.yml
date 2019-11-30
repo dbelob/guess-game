@@ -758,3 +758,132 @@ talks:
     name:
       - {language: en, text: "The power of composition"}
     speakerIds: [1003]
+  - id: 170
+    name:
+      - {language: en, text: "Client rendering, server rendering, pre rendering. The full spectrum of JS website and application performance delivery"}
+    speakerIds: [1017]
+  - id: 171
+    name:
+      - {language: en, text: "GraphQL fragments on the client: Appearance history, usage errors"}
+      - {language: ru, text: "GraphQL-фрагменты на клиенте: История появления, ошибки использования"}
+    speakerIds: [660]
+  - id: 172
+    name:
+      - {language: en, text: "React rendering strategies: Get the most out of performance, keep bots happy"}
+    speakerIds: [1038]
+  - id: 173
+    name:
+      - {language: en, text: "Transpile anything to everything!"}
+    speakerIds: [1024]
+  - id: 174
+    name:
+      - {language: en, text: "A story of one performance optimization in a Node.js library"}
+      - {language: ru, text: "История одной оптимизации производительности Node.js-библиотеки"}
+    speakerIds: [1040]
+  - id: 175
+    name:
+      - {language: en, text: "Get ready for Ivy — Angular 3rd generation renderer engine"}
+    speakerIds: [1032]
+  - id: 176
+    name:
+      - {language: en, text: "From code to pixels in a Blink"}
+    speakerIds: [1037]
+  - id: 177
+    name:
+      - {language: en, text: "@babel/how-to"}
+    speakerIds: [1021]
+  - id: 178
+    name:
+      - {language: en, text: "NestJS. Tried to Shift in 80 hours"}
+    speakerIds: [1039]
+  - id: 179
+    name:
+      - {language: en, text: "From specification to implementation"}
+    speakerIds: [1019]
+  - id: 180
+    name:
+      - {language: en, text: "Soft Effect: Skills development research"}
+      - {language: ru, text: "Soft Effect: Исследование развития навыков"}
+    speakerIds: [1029]
+  - id: 181
+    name:
+      - {language: en, text: "What we pay and what we get (PROFIT!) for moving from <div> to WebGL, with PixiJS examples"}
+      - {language: ru, text: "Чем мы платим за переход от <div> к WebGL и что получаем (профит!), на примерах PixiJS"}
+    speakerIds: [1026]
+  - id: 182
+    name:
+      - {language: en, text: "Can computer pray for the benefit of all living beings? Praying with JavaScript and WebGL"}
+      - {language: ru, text: "Может ли компьютер молиться на благо всех живых существ? Молитва на JavaScript и WebGL"}
+    speakerIds: [711]
+  - id: 183
+    name:
+      - {language: en, text: "Compiler development for TypeScript on TypeScript based on LLVM"}
+      - {language: ru, text: "Разработка компилятора для TypeScript на TypeScript на базе LLVM"}
+    speakerIds: [692]
+  - id: 184
+    name:
+      - {language: en, text: "WebAssembly uncut"}
+      - {language: ru, text: "WebAssembly без купюр"}
+    speakerIds: [1028]
+  - id: 185
+    name:
+      - {language: en, text: "End to end testing a world of web, mobile & desktop apps"}
+    speakerIds: [1031]
+  - id: 186
+    name:
+      - {language: en, text: "CSS definition syntax"}
+    speakerIds: [685]
+  - id: 187
+    name:
+      - {language: en, text: "The art of explicit and consistent user interfaces"}
+    speakerIds: [1041]
+  - id: 188
+    name:
+      - {language: en, text: "Figma to React: design delivery to code"}
+      - {language: ru, text: "Figma to React: доставка дизайна в код"}
+    speakerIds: [1034, 1035]
+  - id: 189
+    name:
+      - {language: en, text: "JavaScriptCore, many compilers make this engine perform"}
+    speakerIds: [1025]
+  - id: 190
+    name:
+      - {language: en, text: "Resilient Component Libraries with React"}
+    speakerIds: [754]
+  - id: 191
+    name:
+      - {language: en, text: "Contract-based programming as a tool, not a goal"}
+      - {language: ru, text: "Контрактное программирование как средство, а не цель"}
+    speakerIds: [1036]
+  - id: 192
+    name:
+      - {language: en, text: "Computability, types, tests, and why flat-earthers are bad at QA"}
+    speakerIds: [659]
+  - id: 193
+    name:
+      - {language: en, text: "I'll grab all the data from you and you won’t even know about it. I am a browser extension"}
+      - {language: ru, text: "Я заберу у тебя все данные и ты об этом даже не узнаешь. Я — браузерное расширение"}
+    speakerIds: [1033]
+  - id: 194
+    name:
+      - {language: en, text: "i18n the principles for an accessible web"}
+    speakerIds: [1030]
+  - id: 195
+    name:
+      - {language: en, text: "JavaScript in service to theoretical computer science"}
+      - {language: ru, text: "JavaScript на службе у теоретической информатики"}
+    speakerIds: [1018]
+  - id: 196
+    name:
+      - {language: en, text: "The battle of the event loops"}
+    speakerIds: [666]
+  - id: 197
+    name:
+      - {language: en, text: "The (un)needed Either monad in practice and theory"}
+      - {language: ru, text: "(Не|ну)жная монада Either на практике и в теории"}
+    speakerIds: [710, 670]
+  - id: 198
+    name:
+      - {language: en, text: "Career efficiency and career path in IT"}
+      - {language: ru, text: "Карьерная эффективность и карьерный путь в ИТ"}
+    speakerIds: [1020]
