@@ -1088,3 +1088,43 @@ talks:
     name:
       - {language: en, text: "Dual data structures"}
     speakerIds: [387]
+  - id: 244
+    name:
+      - {language: en, text: "Recoverable algorithms for non-volatile memory"}
+    speakerIds: [398]
+  - id: 245
+    name:
+      - {language: en, text: "The coordination power of distributed computing models"}
+    speakerIds: [399]
+  - id: 246
+    name:
+      - {language: en, text: "The Paxos algorithm or how to win a Turing Award"}
+    speakerIds: [386]
+  - id: 247
+    name:
+      - {language: en, text: "Byzantine agreement"}
+    speakerIds: [400]
+  - id: 248
+    name:
+      - {language: en, text: "Lower bounds in distributed computing"}
+    speakerIds: [402]
+  - id: 249
+    name:
+      - {language: en, text: "Nonblocking data structures"}
+    speakerIds: [387]
+  - id: 250
+    name:
+      - {language: en, text: "Byzantine fault-tolerance, state machine replication and blockchains"}
+    speakerIds: [397]
+  - id: 251
+    name:
+      - {language: en, text: "Blockchains and the future of distributed computing"}
+    speakerIds: [236]
+  - id: 252
+    name:
+      - {language: en, text: "Practical aspects of multicore programming"}
+    speakerIds: [401]
+  - id: 253
+    name:
+      - {language: en, text: "Blockchain Topics: proof-of-work, smart contracts, and cross-chain swaps"}
+    speakerIds: [236]

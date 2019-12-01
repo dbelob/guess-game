@@ -122,6 +122,19 @@ events:
       - {language: en, text: "Renaissance Moscow Monarch Centre"}
       - {language: ru, text: "Ренессанс Москва Монарх Центр"}
     talkIds: []
+  # SPTDC
+  - eventTypeId: 10
+    name:
+      - {language: en, text: "SPTDC 2019"}
+    startDate: 2019-07-08
+    endDate: 2019-07-12
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: "Санкт-Петербург"}
+    place:
+      - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
+      - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
+    talkIds: [244, 245, 246, 247, 248, 249, 250, 251, 252, 253]
   # JUG.MSK
   - eventTypeId: 13
     name:
