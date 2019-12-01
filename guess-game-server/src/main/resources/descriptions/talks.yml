@@ -887,3 +887,130 @@ talks:
       - {language: en, text: "Career efficiency and career path in IT"}
       - {language: ru, text: "Карьерная эффективность и карьерный путь в ИТ"}
     speakerIds: [1020]
+  - id: 199
+    name:
+      - {language: en, text: "Will a bot steal your spot in software testing?"}
+    speakerIds: [573]
+  - id: 200
+    name:
+      - {language: en, text: "AI and Testing: Tips from the trenches"}
+    speakerIds: [1055]
+  - id: 201
+    name:
+      - {language: en, text: "Static application security testing with open source tools"}
+      - {language: ru, text: "Статическое тестирование безопасности инструментами из open source"}
+    speakerIds: [911]
+  - id: 202
+    name:
+      - {language: en, text: "Testing of Kubernetes operator"}
+      - {language: ru, text: "Тестирование Kubernetes-оператора"}
+    speakerIds: [602]
+  - id: 203
+    name:
+      - {language: en, text: "Automation of automation department"}
+      - {language: ru, text: "Автоматизация отдела автоматизации"}
+    speakerIds: [1043]
+  - id: 204
+    name:
+      - {language: en, text: "Amazon Lumberyard game engine testing: Tools and approaches"}
+      - {language: ru, text: "Тестирование игрового движка Amazon Lumberyard: Подходы и инструменты"}
+    speakerIds: [1049]
+  - id: 205
+    name:
+      - {language: en, text: "Analytics test automation of mobile application"}
+      - {language: ru, text: "Автоматизация тестирования аналитики мобильного приложения"}
+    speakerIds: [1047]
+  - id: 206
+    name:
+      - {language: en, text: "Search quality evaluation basics"}
+      - {language: ru, text: "Как оценить качество работы поиска"}
+    speakerIds: [619]
+  - id: 207
+    name:
+      - {language: en, text: "Kotlintest and the Order of the Phoenix. What did Kotlin give to the testing world"}
+      - {language: ru, text: "Kotlintest и все-все-все. Что Kotlin принёс в мир тестирования"}
+    speakerIds: [8]
+  - id: 208
+    name:
+      - {language: en, text: "There is more in Appium than you think"}
+    speakerIds: [620]
+  - id: 209
+    name:
+      - {language: en, text: "IoT project testing. Where is my garbage collector?"}
+      - {language: ru, text: "Тестирование IoT-проекта. Where is my garbage collector?"}
+    speakerIds: [562]
+  - id: 210
+    name:
+      - {language: en, text: "Selenide: Bandersnatch — interactive journey through the roads of the library"}
+      - {language: ru, text: "Selenide: Брандашмыг — интерактивное путешествие по дорогам библиотеки"}
+    speakerIds: [616]
+  - id: 211
+    name:
+      - {language: en, text: "CrashMonkey & Ace: Systematically Testing File-System Crash Consistency"}
+    speakerIds: [1045]
+  - id: 212
+    name:
+      - {language: en, text: "Designing and building with privacy in mind"}
+    speakerIds: [260]
+  - id: 213
+    name:
+      - {language: en, text: "Deep into virtual reality testing"}
+    speakerIds: [1042]
+  - id: 214
+    name:
+      - {language: en, text: "Solving the problems of Espresso Android autotests in the real world"}
+      - {language: ru, text: "Решаем проблемы Espresso-автотестов Android в реальном мире"}
+    speakerIds: [1054]
+  - id: 215
+    name:
+      - {language: en, text: "Micro frontend automation: how component libraries are tested in Tinkoff"}
+      - {language: ru, text: "Автоматизация микрофронтендов, или Как в Тинькофф тестируют библиотеки компонентов"}
+    speakerIds: [1046]
+  - id: 216
+    name:
+      - {language: en, text: "Make testing Enterprise Java more joyful"}
+    speakerIds: [74]
+  - id: 217
+    name:
+      - {language: en, text: "Modern approach to testing iOS localization"}
+      - {language: ru, text: "Современный подход к тестированию локализации на iOS"}
+    speakerIds: [1052]
+  - id: 218
+    name:
+      - {language: en, text: "Don't wait for messages, get them: Asynchronous performance testing"}
+      - {language: ru, text: "Не ждите сообщений, получайте их: Асинхронное тестирование производительности"}
+    speakerIds: [541]
+  - id: 219
+    name:
+      - {language: en, text: "Testing Web Accessibility"}
+    speakerIds: [1048]
+  - id: 220
+    name:
+      - {language: en, text: "Lincheck. Testing concurrent data structures in Java"}
+      - {language: ru, text: "Lincheck. Тестирование многопоточной структуры данных в Java"}
+    speakerIds: [1051]
+  - id: 221
+    name:
+      - {language: en, text: "Real mobile applications image optimization"}
+      - {language: ru, text: "Реальная оптимизация изображений мобильных приложений"}
+    speakerIds: [626]
+  - id: 222
+    name:
+      - {language: en, text: "Autotest coverage visualization"}
+      - {language: ru, text: "Визуализация покрытия автотестов"}
+    speakerIds: [554]
+  - id: 223
+    name:
+      - {language: en, text: "Kafka: Testing and operation in a limited resource environment"}
+      - {language: ru, text: "Kafka: Тестирование и эксплуатация в условиях ограниченных ресурсов"}
+    speakerIds: [1053]
+  - id: 224
+    name:
+      - {language: en, text: "Making your microscope for iOS application testing"}
+      - {language: ru, text: "Делаем свой микроскоп для тестирования iOS-приложения"}
+    speakerIds: [1044, 1050]
+  - id: 225
+    name:
+      - {language: en, text: "We have DevOps. No one was fired. But what to do?!"}
+      - {language: ru, text: "У нас Девопс. Никого не уволили. Но делать-то что?!"}
+    speakerIds: [35]

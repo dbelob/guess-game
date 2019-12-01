@@ -42,8 +42,8 @@ speakers:
   - id: 8
     fileName: 0008.jpg
     name:
-      - {language: en, text: "Pavel Finkelshteyn"}
-      - {language: ru, text: "Павел Финкельштейн"}
+      - {language: en, text: "Pasha Finkelstein"}
+      - {language: ru, text: "Паша Финкельштейн"}
   - id: 9
     fileName: 0009.jpg
     name:
