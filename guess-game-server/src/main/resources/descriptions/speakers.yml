@@ -631,8 +631,8 @@ speakers:
   - id: 136
     fileName: 0136.jpg
     name:
-      - {language: en, text: "Vladimir Ozerov"}
-      - {language: ru, text: "Владимир Озеров"}
+      - {language: en, text: "Vladimir Ozerov (Hazelcast)"}
+      - {language: ru, text: "Владимир Озеров (Hazelcast)"}
   - id: 137
     fileName: 0137.jpg
     name:
@@ -1663,8 +1663,8 @@ speakers:
   - id: 351
     fileName: 0351.jpg
     name:
-      - {language: en, text: "Pavel Novikov"}
-      - {language: ru, text: "Павел Новиков"}
+      - {language: en, text: "Pavel Novikov (Align Technologies)"}
+      - {language: ru, text: "Павел Новиков (Align Technologies)"}
   - id: 352
     fileName: 0352.jpg
     name:
@@ -3769,8 +3769,7 @@ speakers:
   - id: 806
     fileName: 0806.jpg
     name:
-      - {language: en, text: "Sergey Ryabov"}
-      - {language: ru, text: "Сергей Рябов"}
+      - {language: en, text: "RJ Marsan"}
   - id: 807
     fileName: 0807.jpg
     name:
@@ -4946,3 +4945,83 @@ speakers:
     fileName: 1055.jpg
     name:
       - {language: en, text: "Adam Carmi"}
+  - id: 1056
+    fileName: 1056.jpg
+    name:
+      - {language: en, text: "Ben Sandofsky"}
+  - id: 1057
+    fileName: 1057.jpg
+    name:
+      - {language: en, text: "Kirill Kozhuhar"}
+      - {language: ru, text: "Кирилл Кожухар"}
+  - id: 1058
+    fileName: 1058.jpg
+    name:
+      - {language: en, text: "Ivan Morgillo"}
+  - id: 1059
+    fileName: 1059.jpg
+    name:
+      - {language: en, text: "Giorgio Natili"}
+  - id: 1060
+    fileName: 1060.jpg
+    name:
+      - {language: en, text: "Marina Pleshkova"}
+      - {language: ru, text: "Марина Плешкова"}
+  - id: 1061
+    fileName: 1061.jpg
+    name:
+      - {language: en, text: "Svetlana Smelchakova"}
+      - {language: ru, text: "Светлана Смельчакова"}
+  - id: 1062
+    fileName: 1062.jpg
+    name:
+      - {language: en, text: "Gennady Evstratov"}
+      - {language: ru, text: "Геннадий Евстратов"}
+  - id: 1063
+    fileName: 1063.jpg
+    name:
+      - {language: en, text: "Ilya Lunkin"}
+      - {language: ru, text: "Илья Лунькин"}
+  - id: 1064
+    fileName: 1064.jpg
+    name:
+      - {language: en, text: "Vladimir Ozerov (Sberbank)"}
+      - {language: ru, text: "Владимир Озеров (Сбербанк)"}
+  - id: 1065
+    fileName: 1065.jpg
+    name:
+      - {language: en, text: "Pavel Novikov (MyOffice)"}
+      - {language: ru, text: "Павел Новиков (МойОфис)"}
+  - id: 1066
+    fileName: 1066.jpg
+    name:
+      - {language: en, text: "Dmitry Tereshin"}
+      - {language: ru, text: "Дмитрий Терёшин"}
+  - id: 1067
+    fileName: 1067.jpg
+    name:
+      - {language: en, text: "Boris Bengus"}
+      - {language: ru, text: "Борис Бенгус"}
+  - id: 1068
+    fileName: 1068.jpg
+    name:
+      - {language: en, text: "Ilya Lobanov"}
+      - {language: ru, text: "Илья Лобанов"}
+  - id: 1069
+    fileName: 1069.jpg
+    name:
+      - {language: en, text: "Marcin Moskała"}
+  - id: 1070
+    fileName: 1070.jpg
+    name:
+      - {language: en, text: "Igor Talankin"}
+      - {language: ru, text: "Игорь Таланкин"}
+  - id: 1071
+    fileName: 1071.jpg
+    name:
+      - {language: en, text: "Sebastiaan de With"}
+  - id: 1072
+    fileName: 1072.jpg
+    name:
+      - {language: en, text: "Dmitry Ignatiev"}
+      - {language: ru, text: "Дмитрий Игнатьев"}
