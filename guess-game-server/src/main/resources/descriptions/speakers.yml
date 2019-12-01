@@ -4879,3 +4879,69 @@ speakers:
     fileName: 1041.jpg
     name:
       - {language: en, text: "Farzad YousefZadeh"}
+  - id: 1042
+    fileName: 1042.jpg
+    name:
+      - {language: en, text: "Noemi Ferrera"}
+  - id: 1043
+    fileName: 1043.jpg
+    name:
+      - {language: en, text: "Irina Rubchenko"}
+      - {language: ru, text: "Ирина Рубченко"}
+  - id: 1044
+    fileName: 1044.jpg
+    name:
+      - {language: en, text: "Victoria Kashlina"}
+      - {language: ru, text: "Виктория Кашлина"}
+  - id: 1045
+    fileName: 1045.jpg
+    name:
+      - {language: en, text: "Jayashree Mohan"}
+  - id: 1046
+    fileName: 1046.jpg
+    name:
+      - {language: en, text: "Aleksandr Vorobei"}
+      - {language: ru, text: "Александр Воробей"}
+  - id: 1047
+    fileName: 1047.jpg
+    name:
+      - {language: en, text: "Pavel Shchedukhin"}
+      - {language: ru, text: "Павел Щедухин"}
+  - id: 1048
+    fileName: 1048.jpg
+    name:
+      - {language: en, text: "Adrián Bolonio"}
+  - id: 1049
+    fileName: 1049.jpg
+    name:
+      - {language: en, text: "Artem Nesiolovskiy"}
+      - {language: ru, text: "Артём Несиоловский"}
+  - id: 1050
+    fileName: 1050.jpg
+    name:
+      - {language: en, text: "Anton Vlasov"}
+      - {language: ru, text: "Антон Власов"}
+  - id: 1051
+    fileName: 1051.jpg
+    name:
+      - {language: en, text: "Maria Sokolova"}
+      - {language: ru, text: "Мария Соколова"}
+  - id: 1052
+    fileName: 1052.jpg
+    name:
+      - {language: en, text: "Sergey Mokhin"}
+      - {language: ru, text: "Сергей Мохин"}
+  - id: 1053
+    fileName: 1053.jpg
+    name:
+      - {language: en, text: "Sergey Mahetov"}
+      - {language: ru, text: "Сергей Махетов"}
+  - id: 1054
+    fileName: 1054.jpg
+    name:
+      - {language: en, text: "Alexey Tyurin"}
+      - {language: ru, text: "Алексей Тюрин"}
+  - id: 1055
+    fileName: 1055.jpg
+    name:
+      - {language: en, text: "Adam Carmi"}
