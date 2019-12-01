@@ -496,6 +496,7 @@ speakers:
     fileName: 0106.jpg
     name:
       - {language: en, text: "Roman Elizarov"}
+      - {language: ru, text: "Роман Елизаров"}
   - id: 107
     fileName: 0107.jpg
     name:

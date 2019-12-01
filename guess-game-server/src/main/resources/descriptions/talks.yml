@@ -1014,3 +1014,77 @@ talks:
       - {language: en, text: "We have DevOps. No one was fired. But what to do?!"}
       - {language: ru, text: "У нас Девопс. Никого не уволили. Но делать-то что?!"}
     speakerIds: [35]
+  - id: 226
+    name:
+      - {language: en, text: "The Azul Hardware Transactional Memory experience"}
+    speakerIds: [233]
+  - id: 227
+    name:
+      - {language: en, text: "Weak memory concurrency in C/C++11"}
+    speakerIds: [390]
+  - id: 228
+    name:
+      - {language: en, text: "Not all ML algorithms go to distributed heaven"}
+    speakerIds: [31]
+  - id: 229
+    name:
+      - {language: en, text: "Liberating distributed consensus"}
+    speakerIds: [389]
+  - id: 230
+    name:
+      - {language: en, text: "Go scheduler: Implementing language with lightweight concurrency"}
+    speakerIds: [396]
+  - id: 231
+    name:
+      - {language: en, text: "Reduce your storage costs with Transient Replication and Cheap Quorums"}
+    speakerIds: [393]
+  - id: 232
+    name:
+      - {language: en, text: "Accelerating distributed graph analysis by means of probabilistic sketches (and not only them)"}
+    speakerIds: [301]
+  - id: 233
+    name:
+      - {language: en, text: "Structured concurrency"}
+    speakerIds: [106]
+  - id: 234
+    name:
+      - {language: en, text: "Yandex Database — how we guarantee fault tolerance"}
+      - {language: ru, text: "Yandex Database — как мы обеспечиваем отказоустойчивость"}
+    speakerIds: [394]
+  - id: 235
+    name:
+      - {language: en, text: "Blockchains and the future of distributed computing"}
+    speakerIds: [236]
+  - id: 236
+    name:
+      - {language: en, text: "Syncing data across user devices for distributed collaboration"}
+    speakerIds: [388]
+  - id: 237
+    name:
+      - {language: en, text: "Q & A"}
+    speakerIds: [386]
+  - id: 238
+    name:
+      - {language: en, text: "Lin-Check: Testing concurrent data structures in Java"}
+    speakerIds: [58]
+  - id: 239
+    name:
+      - {language: en, text: "Wait-free data structures and wait-free transactions"}
+    speakerIds: [392]
+  - id: 240
+    name:
+      - {language: en, text: "Distributed transactions in YDB"}
+      - {language: ru, text: "Распределённые транзакции в Yandex Database"}
+    speakerIds: [395]
+  - id: 241
+    name:
+      - {language: en, text: "The H2O distributed K/V algorithm"}
+    speakerIds: [233]
+  - id: 242
+    name:
+      - {language: en, text: "The cost of distributed transactions between arbitrary databases"}
+    speakerIds: [391]
+  - id: 243
+    name:
+      - {language: en, text: "Dual data structures"}
+    speakerIds: [387]
