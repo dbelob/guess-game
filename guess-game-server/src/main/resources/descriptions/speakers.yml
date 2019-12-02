@@ -3817,7 +3817,7 @@ speakers:
   - id: 816
     fileName: 0816.jpg
     name:
-      - {language: en, text: "Anton Shchukin"}
+      - {language: en, text: "Anton Schukin"}
       - {language: ru, text: "Антон Щукин"}
   - id: 817
     fileName: 0817.jpg

@@ -1128,3 +1128,142 @@ talks:
     name:
       - {language: en, text: "Blockchain Topics: proof-of-work, smart contracts, and cross-chain swaps"}
     speakerIds: [236]
+  - id: 254
+    name:
+      - {language: en, text: "A Spectre postmortem"}
+    speakerIds: [1056, 1071]
+  - id: 255
+    name:
+      - {language: en, text: "Performance chat development. Badoo experience"}
+      - {language: ru, text: "Разработка производительного чата. Опыт Badoo"}
+    speakerIds: [816]
+  - id: 256
+    name:
+      - {language: en, text: "Experience in choosing cross-platform technology for fast application development"}
+      - {language: ru, text: "Опыт выбора кроссплатформенной технологии для быстрой разработки приложения"}
+    speakerIds: [1062]
+  - id: 257
+    name:
+      - {language: en, text: "From Four Wheels to Two: Lyft's engineering principals for fast paced product development"}
+    speakerIds: [806]
+  - id: 258
+    name:
+      - {language: en, text: "How to become a developer that everyone wants in their team?"}
+      - {language: ru, text: "Как стать разработчиком, которого хочет в свою команду каждый?"}
+    speakerIds: [565]
+  - id: 259
+    name:
+      - {language: en, text: "Debug without sources"}
+      - {language: ru, text: "Отладка без исходников"}
+    speakerIds: [862]
+  - id: 260
+    name:
+      - {language: en, text: "Design for errors — an introduction to Domain modelling with a bit of Arrow"}
+    speakerIds: [1058]
+  - id: 261
+    name:
+      - {language: en, text: "How does the VKontakte message screen render"}
+      - {language: ru, text: "Как происходит рендеринг экрана сообщений ВКонтакте"}
+    speakerIds: [800]
+  - id: 262
+    name:
+      - {language: en, text: "Flutter State Management Wars. BLoC vs Redux"}
+    speakerIds: [931]
+  - id: 263
+    name:
+      - {language: en, text: "Dark corners of iOS Auto-renewable Subscriptions"}
+      - {language: ru, text: "Темные уголки iOS Auto-renewable Subscriptions"}
+    speakerIds: [810]
+  - id: 264
+    name:
+      - {language: en, text: "Litho: Best Practices for building efficient UI"}
+    speakerIds: [296]
+  - id: 265
+    name:
+      - {language: en, text: "It's easy: Local attacks on mobile applications"}
+      - {language: ru, text: "Как два пальца: Локальные атаки на мобильные приложения"}
+    speakerIds: [1066]
+  - id: 266
+    name:
+      - {language: en, text: "iOS multithreading"}
+      - {language: ru, text: "Устройство многопоточности в iOS"}
+    speakerIds: [1064]
+  - id: 267
+    name:
+      - {language: en, text: "How to win friends and influence people, on mobile"}
+    speakerIds: [260]
+  - id: 268
+    name:
+      - {language: en, text: "Custom Lint Rules"}
+    speakerIds: [1070]
+  - id: 269
+    name:
+      - {language: en, text: "Yandex.Drive interface development"}
+      - {language: ru, text: "Разработка интерфейса Яндекс.Драйв"}
+    speakerIds: [1057]
+  - id: 270
+    name:
+      - {language: en, text: "Building a Realtime video processor with Swift and Metal"}
+    speakerIds: [1056]
+  - id: 271
+    name:
+      - {language: en, text: "Gradle from A to Z"}
+      - {language: ru, text: "Gradle от A до Я "}
+    speakerIds: [782]
+  - id: 272
+    name:
+      - {language: en, text: "UIScrollView mechanics"}
+      - {language: ru, text: "Механика скролла UIScrollView"}
+    speakerIds: [1068]
+  - id: 273
+    name:
+      - {language: en, text: "Isolation of E2E test infrastructure or \"Soil yourself\""}
+      - {language: ru, text: "Изоляция инфраструктуры E2E тестов, или «Ходим под себя»"}
+    speakerIds: [1067]
+  - id: 274
+    name:
+      - {language: en, text: "Smart photo editor architecture"}
+      - {language: ru, text: "Архитектура умного фото-редактора"}
+    speakerIds: [859]
+  - id: 275
+    name:
+      - {language: en, text: "Text rendering in Android"}
+      - {language: ru, text: "Рендеринг текста в Android"}
+    speakerIds: [1065]
+  - id: 276
+    name:
+      - {language: en, text: "Mutation Testing at Scale"}
+    speakerIds: [1059]
+  - id: 277
+    name:
+      - {language: en, text: "Screen state modeling"}
+      - {language: ru, text: "Моделирование состояний экранов"}
+    speakerIds: [1072]
+  - id: 278
+    name:
+      - {language: en, text: "UI Automator deep diving"}
+    speakerIds: [1061]
+  - id: 279
+    name:
+      - {language: en, text: "Life hacks working with Google Play Store and App Store Connect tech support"}
+      - {language: ru, text: "Лайфхаки в работе с техподдержкой Google Play Store и App Store Connect"}
+    speakerIds: [1060]
+  - id: 280
+    name:
+      - {language: en, text: "Efficient Kotlin"}
+    speakerIds: [1069]
+  - id: 281
+    name:
+      - {language: en, text: "Translation problems. Helping Xcode understand our code faster"}
+      - {language: ru, text: "Трудности перевода. Помогаем Xcode быстрее понимать наш код"}
+    speakerIds: [1063]
+  - id: 282
+    name:
+      - {language: en, text: "\"Non-mobile\" Androids review: TV, Wear, Auto & Things"}
+      - {language: ru, text: "Обзор «не мобильных» Андроидов: TV, Wear, Auto & Things"}
+    speakerIds: [813]
+  - id: 283
+    name:
+      - {language: en, text: "How to sell yourself for fun and profit"}
+      - {language: ru, text: "Как правильно продать себя ради фана и профита"}
+    speakerIds: [35]
