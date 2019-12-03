@@ -2,21 +2,26 @@ id: 4
 name: "Conferences - HolyJS"
 logoFileName: holyjs.jpg
 speakerQuestions:
+  - {fileName: 1023.jpg, name: "Ivan Akulov"}
   - {fileName: 0751.jpg, name: "Igor Alekseenko"}
   - {fileName: 0707.jpg, name: "Vladimir Anufrienko"}
+  - {fileName: 1036.jpg, name: "Artyom Arutyunyan"}
   - {fileName: 0712.jpg, name: "Sebastien Chopin Atinux"}
   - {fileName: 0745.jpg, name: "Zalim Bashorov"}
   - {fileName: 0729.jpg, name: "Emil Bay"}
   - {fileName: 0709.jpg, name: "Dmitry Bezhetskov"}
   - {fileName: 0708.jpg, name: "Alexey Bogachuk"}
   - {fileName: 0735.jpg, name: "Mihail Bashurov"}
+  - {fileName: 1018.jpg, name: "Vitaliy Bragilevskiy"}
+  - {fileName: 1022.jpg, name: "Aki Rose Braun"}
   - {fileName: 0672.jpg, name: "Ruben Bridgewater"}
   - {fileName: 0750.jpg, name: "Georgy Buhanov"}
   - {fileName: 0677.jpg, name: "Alex Castillo"}
   - {fileName: 0742.jpg, name: "Timofey Chaptykov"}
   - {fileName: 0679.jpg, name: "Kirill Cherkashin"}
   - {fileName: 0660.jpg, name: "Pavel Chertorogov"}
-  - {fileName: 0659.jpg, name: "Lucas da Costa"}
+  - {fileName: 1030.jpg, name: "Romulo Cintra"}
+  - {fileName: 0659.jpg, name: "Lucas Fernandes da Costa"}
   - {fileName: 0721.jpg, name: "Douglas Crockford"}
   - {fileName: 0552.jpg, name: "Ryan Dahl"}
   - {fileName: 0732.jpg, name: "Vladimir Dashukevich"}
@@ -26,10 +31,13 @@ speakerQuestions:
   - {fileName: 0685.jpg, name: "Roman Dvornov"}
   - {fileName: 0763.jpg, name: "Vyacheslav Egorov"}
   - {fileName: 0704.jpg, name: "Imad Elyafi"}
+  - {fileName: 1032.jpg, name: "Eliran Eliassy"}
   - {fileName: 0404.jpg, name: "Dino Esposito"}
   - {fileName: 0260.jpg, name: "Vitaly Fridman"}
+  - {fileName: 1031.jpg, name: "Mathieu Henri"}
   - {fileName: 0671.jpg, name: "Nazim Gafarov"}
   - {fileName: 0702.jpg, name: "Lyza Danger Gardner"}
+  - {fileName: 1038.jpg, name: "Miguel Angel Duran Garcia"}
   - {fileName: 0730.jpg, name: "Minko Gechev"}
   - {fileName: 0690.jpg, name: "Sebastian Golasch"}
   - {fileName: 0764.jpg, name: "Anastasiya Goryacheva"}
@@ -39,12 +47,16 @@ speakerQuestions:
   - {fileName: 0766.jpg, name: "Stanislav Gumenjuk"}
   - {fileName: 0701.jpg, name: "Evgeny Gusev"}
   - {fileName: 0676.jpg, name: "Dmitry Haritonov"}
+  - {fileName: 1024.jpg, name: "Anna Herlihy"}
   - {fileName: 0741.jpg, name: "Claudia Hernández"}
   - {fileName: 0746.jpg, name: "Alexey Ivanov"}
   - {fileName: 0747.jpg, name: "Nikita Isaev"}
+  - {fileName: 1041.jpg, name: "Farzad YousefZadeh"}
   - {fileName: 0678.jpg, name: "Mattias Petter Johansson"}
   - {fileName: 0669.jpg, name: "Ilyas Kabirov"}
+  - {fileName: 1039.jpg, name: "Alexandra Kalinina"}
   - {fileName: 0720.jpg, name: "Alexey Kalmakov"}
+  - {fileName: 1035.jpg, name: "Alexander Kamenyar"}
   - {fileName: 0717.jpg, name: "Dmitry Karlovsky"}
   - {fileName: 0651.jpg, name: "David Khourshid"}
   - {fileName: 0757.jpg, name: "Martin Kleppe"}
@@ -78,6 +90,7 @@ speakerQuestions:
   - {fileName: 0664.jpg, name: "Marina Mironovich"}
   - {fileName: 0261.jpg, name: "Denis Mishunov"}
   - {fileName: 0658.jpg, name: "Eduardo San Martin Morote"}
+  - {fileName: 1033.jpg, name: "Nikita Mostovoy"}
   - {fileName: 0673.jpg, name: "Vladimir Mutafov"}
   - {fileName: 0684.jpg, name: "Kamil Myśliwiec"}
   - {fileName: 0700.jpg, name: "Andrey Nagih"}
@@ -85,22 +98,30 @@ speakerQuestions:
   - {fileName: 0767.jpg, name: "Mikhail Novikov"}
   - {fileName: 0736.jpg, name: "Alexey Ohrimenko"}
   - {fileName: 0754.jpg, name: "Andrey Okonechnikov"}
+  - {fileName: 1037.jpg, name: "Prashant Palikhe"}
   - {fileName: 0674.jpg, name: "Mauricio Palma"}
   - {fileName: 0692.jpg, name: "Dmitry Patsura"}
+  - {fileName: 1040.jpg, name: "Andrey Pechkurov"}
   - {fileName: 0694.jpg, name: "Bartosz Pietrucha"}
   - {fileName: 0675.jpg, name: "Arkady Pilguk"}
   - {fileName: 0716.jpg, name: "Mihail Poluboyarinov"}
   - {fileName: 0715.jpg, name: "Evgeny Pozdnyakov"}
   - {fileName: 0705.jpg, name: "Nikita Prokopov"}
+  - {fileName: 1026.jpg, name: "Ivan Popelyshev"}
   - {fileName: 0718.jpg, name: "Andrey Prokopjuk"}
-  - {fileName: 0756.jpg, name: "Evgeny Phenichny"}
+  - {fileName: 0756.jpg, name: "Eugene Pshenichnyy"}
   - {fileName: 0711.jpg, name: "Denis Radin"}
   - {fileName: 0695.jpg, name: "Erik Rasmussen"}
+  - {fileName: 1017.jpg, name: "Guillermo Rauch"}
   - {fileName: 0753.jpg, name: "Axel Rauschmayer"}
+  - {fileName: 1021.jpg, name: "Nicolò Ribaudo"}
   - {fileName: 0699.jpg, name: "Vsevolod Rodionov"}
+  - {fileName: 1028.jpg, name: "Andrey Roenko"}
+  - {fileName: 1027.jpg, name: "Sergey Rubanov"}
   - {fileName: 0768.jpg, name: "Viktor Rusakovich"}
   - {fileName: 0773.jpg, name: "Tatyana Ryzhenkova"}
   - {fileName: 0379.jpg, name: "Nikolay Ryzhikov"}
+  - {fileName: 1025.jpg, name: "Michael Saboff"}
   - {fileName: 0682.jpg, name: "Maxim Salnikov"}
   - {fileName: 0724.jpg, name: "Gerard Sans"}
   - {fileName: 0680.jpg, name: "Princiya Sequeira"}
@@ -114,10 +135,12 @@ speakerQuestions:
   - {fileName: 0653.jpg, name: "Andrey Sitnik"}
   - {fileName: 0760.jpg, name: "Vyacheslav Slinko"}
   - {fileName: 0665.jpg, name: "Vitaly Slobodin"}
+  - {fileName: 1029.jpg, name: "Andrey Smirnov (IPONWEB)"}
   - {fileName: 0761.jpg, name: "Tereza Sokol"}
   - {fileName: 0743.jpg, name: "Valery Sorokobatko"}
   - {fileName: 0654.jpg, name: "Martin Splitt"}
   - {fileName: 0738.jpg, name: "Patrick Stapfer"}
+  - {fileName: 1019.jpg, name: "Yulia Startsev"}
   - {fileName: 0706.jpg, name: "Andrey Starovoyt"}
   - {fileName: 0758.jpg, name: "Max Stoiber"}
   - {fileName: 0726.jpg, name: "Slobodan Stojanovic"}
@@ -130,11 +153,13 @@ speakerQuestions:
   - {fileName: 0722.jpg, name: "Lea Verou"}
   - {fileName: 0650.jpg, name: "Stanimira Vlaeva"}
   - {fileName: 0698.jpg, name: "Viktor Vershansky"}
+  - {fileName: 1020.jpg, name: "Dmitriy Voloshin"}
   - {fileName: 0693.jpg, name: "Theodore Vorillas"}
   - {fileName: 0683.jpg, name: "Thomas Watson"}
   - {fileName: 0587.jpg, name: "Michel Weststrate"}
   - {fileName: 0703.jpg, name: "Maxim Yuzva"}
   - {fileName: 0748.jpg, name: "Sergey Yuferev"}
+  - {fileName: 1034.jpg, name: "Zar Zakharov"}
   - {fileName: 0733.jpg, name: "Alexey Zolotyh"}
   - {fileName: 0772.jpg, name: "Igor Zotov"}
   - {fileName: 0774.jpg, name: "Sergey Zvyagin"}

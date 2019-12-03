@@ -5,7 +5,7 @@
 
 ![Screenshot](/images/screenshot.png)
 
-Guess name by picture, picture by name, talk by speaker or speaker by talk.
+Guess name by photo, photo by name, talk by speaker or speaker by talk.
 
 ## Running
 

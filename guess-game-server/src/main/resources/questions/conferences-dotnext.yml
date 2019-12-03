@@ -25,6 +25,7 @@ speakerQuestions:
   - {fileName: 0525.jpg, name: "Andrey Chasovskih"}
   - {fileName: 0491.jpg, name: "Igor Chevdar"}
   - {fileName: 0530.jpg, name: "Vlad Chistyakov"}
+  - {fileName: 1005.jpg, name: "Stephen Cleary"}
   - {fileName: 0449.jpg, name: "Ian Cooper"}
   - {fileName: 0435.jpg, name: "Ivan Dashkevich"}
   - {fileName: 0503.jpg, name: "Maurice de Beijer"}
@@ -56,12 +57,14 @@ speakerQuestions:
   - {fileName: 0421.jpg, name: "Konstantin Gustov"}
   - {fileName: 0508.jpg, name: "Hadi Hariri"}
   - {fileName: 0482.jpg, name: "Tomas Herceg"}
+  - {fileName: 1007.jpg, name: "Elias Holzer"}
   - {fileName: 0448.jpg, name: "Christian Horsdal"}
   - {fileName: 0453.jpg, name: "Rolf Huisman"}
   - {fileName: 0460.jpg, name: "Alexander Ivanov (Arcadia)"}
   - {fileName: 0513.jpg, name: "Alexander Ivanov (EPAM)"}
   - {fileName: 0478.jpg, name: "Denis Ivanov"}
   - {fileName: 0465.jpg, name: "Dmitry Ivanov (JetBrains)"}
+  - {fileName: 1004.jpg, name: "Joreg"}
   - {fileName: 0344.jpg, name: "Andrey Karpov (PVS-Studio)"}
   - {fileName: 0425.jpg, name: "Andrey Karpov (JetBrains)"}
   - {fileName: 0438.jpg, name: "Halil İbrahim Kalkan"}
@@ -88,30 +91,37 @@ speakerQuestions:
   - {fileName: 0526.jpg, name: "Sergey Mihalev"}
   - {fileName: 0454.jpg, name: "Vyacheslav Mihaylov"}
   - {fileName: 0467.jpg, name: "Dmitry Moiseev"}
+  - {fileName: 0946.jpg, name: "Nikolay Molchanov"}
   - {fileName: 0429.jpg, name: "Alexandre Mutel"}
   - {fileName: 0512.jpg, name: "Nikita Namestnikov"}
-  - {fileName: 0405.jpg, name: "Christophe Nasarre"}
+  - {fileName: 0405.jpg, name: "Christophe Nasarre-Soulier"}
   - {fileName: 0282.jpg, name: "Dmitry Nesteruk"}
   - {fileName: 0295.jpg, name: "Roman Nevolin"}
   - {fileName: 0509.jpg, name: "Alexander Nikitin"}
   - {fileName: 0527.jpg, name: "Anton Onikiychuk"}
   - {fileName: 0136.jpg, name: "Vladimir Ozerov"}
+  - {fileName: 1011.jpg, name: "Vladimir Panchenko"}
   - {fileName: 0466.jpg, name: "Evgeny Peshkov"}
   - {fileName: 0477.jpg, name: "Valery Petrov"}
   - {fileName: 0434.jpg, name: "Georgy Polevoy"}
   - {fileName: 0436.jpg, name: "Anatoly Popov"}
+  - {fileName: 1009.jpg, name: "Jacob Povar"}
+  - {fileName: 1015.jpg, name: "Roman Prosin"}
+  - {fileName: 1006.jpg, name: "Jeff Prosise"}
+  - {fileName: 1013.jpg, name: "Łukasz Pyrzyk"}
   - {fileName: 0456.jpg, name: "Adam Ralph"}
   - {fileName: 0409.jpg, name: "Raffaele Rialdi"}
-  - {fileName: 0457.jpg, name: "Eran Stiller"}
   - {fileName: 0427.jpg, name: "Jeffrey Richter"}
   - {fileName: 0528.jpg, name: "Alexey Sadomov"}
   - {fileName: 0267.jpg, name: "Mihail Samarin"}
+  - {fileName: 1012.jpg, name: "Marco De Sanctis"}
   - {fileName: 0139.jpg, name: "Alexey Savvateev"}
   - {fileName: 0464.jpg, name: "Sergey Schegrikovich"}
   - {fileName: 0415.jpg, name: "Mihail Scherbakov"}
   - {fileName: 0424.jpg, name: "Mihail Shilkov"}
   - {fileName: 0506.jpg, name: "Sergey Shkredov"}
   - {fileName: 0510.jpg, name: "Alexander Shvedov"}
+  - {fileName: 1016.jpg, name: "Dan Shechter"}
   - {fileName: 0469.jpg, name: "Mark Seemann"}
   - {fileName: 0520.jpg, name: "Stanislav Sidristy"}
   - {fileName: 0495.jpg, name: "Karlen Simonyan"}
@@ -119,6 +129,8 @@ speakerQuestions:
   - {fileName: 0481.jpg, name: "Jon Skeet"}
   - {fileName: 0501.jpg, name: "Kirill Skrygan"}
   - {fileName: 0472.jpg, name: "Dmitry Soshnikov"}
+  - {fileName: 1008.jpg, name: "Michael Staib"}
+  - {fileName: 0457.jpg, name: "Eran Stiller"}
   - {fileName: 0524.jpg, name: "Igor Sychev"}
   - {fileName: 0440.jpg, name: "Oleg Tarasov"}
   - {fileName: 0507.jpg, name: "Andrey Terehov"}
@@ -140,5 +152,8 @@ speakerQuestions:
   - {fileName: 0406.jpg, name: "Pavel Yosifovich"}
   - {fileName: 0461.jpg, name: "Evgeny Zhirov"}
   - {fileName: 0483.jpg, name: "Filip W"}
+  - {fileName: 1003.jpg, name: "Scott Wlaschin"}
   - {fileName: 0274.jpg, name: "Romuald Zdebsky"}
+  - {fileName: 1010.jpg, name: "Konstantin Zhitnik"}
+  - {fileName: 1014.jpg, name: "Anatoly Zhmur"}
   - {fileName: 0468.jpg, name: "Karel Zikmund"}

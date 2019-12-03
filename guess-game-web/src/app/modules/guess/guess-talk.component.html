@@ -1,13 +1,13 @@
 <div class="container p-2">
-  <h2 class="bg-info p-1 text-white text-center">{{title}}</h2>
+  <h3 class="bg-info p-1 text-white text-center">{{title}}</h3>
 
   <app-message></app-message>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col">
       <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
     </div>
-    <app-language-switcher (onReload)="loadQuestion()" class="col-sm"></app-language-switcher>
+    <app-language-switcher (onReload)="loadQuestion()" class="col"></app-language-switcher>
   </div>
 
   <div class="text-center mb-1">

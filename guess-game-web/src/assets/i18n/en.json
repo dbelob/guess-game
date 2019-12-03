@@ -7,8 +7,8 @@
     "setLabel": "Set:",
     "typeLabel": "Type:",
     "quantityLabel": "Quantity:",
-    "guessNameLabel": "Guess name by picture",
-    "guessPictureLabel": "Guess picture by name",
+    "guessNameLabel": "Guess name by photo",
+    "guessPictureLabel": "Guess photo by name",
     "guessTalkLabel": "Guess talk by speaker",
     "guessSpeakerLabel": "Guess speaker by talk",
     "startButtonText": "Start"

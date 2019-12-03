@@ -43,10 +43,10 @@ class Unsafe {
         for (QuestionSet questionSet : questionSets) {
             // Find speaker question set by id
             QuestionSet speakerQuestionSet = speakerQuestionSetMap.get(questionSet.getId());
-            Objects.requireNonNull(speakerQuestionSet,
-                    () -> String.format("Speaker question set id %d not found", questionSet.getId()));
 
-            questionSet.setSpeakerQuestions(speakerQuestionSet.getSpeakerQuestions());
+            if (speakerQuestionSet != null) {
+                questionSet.setSpeakerQuestions(speakerQuestionSet.getSpeakerQuestions());
+            }
         }
     }
 

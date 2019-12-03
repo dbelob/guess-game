@@ -1,16 +1,16 @@
 <div class="container p-2">
-  <h2 class="bg-info p-1 text-white text-center">{{title}}</h2>
+  <h3 class="bg-info p-1 text-white text-center">{{title}}</h3>
 
   <app-message></app-message>
 
   <div class="row">
-    <div class="col-sm">
+    <div class="col">
       <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
     </div>
-    <app-language-switcher (onReload)="loadQuestion()" class="col-sm"></app-language-switcher>
+    <app-language-switcher (onReload)="loadQuestion()" class="col"></app-language-switcher>
   </div>
 
-  <p class="h2 text-center mt-3 mb-5">{{talkSpeakers.talkName}}</p>
+  <p class="h3 text-center mt-3 mb-5">{{talkSpeakers.talkName}}</p>
   <div class="text-center">
     <figure class="figure m-1">
       <input type="image" alt="" class="img-thumbnail img-guess-speaker"

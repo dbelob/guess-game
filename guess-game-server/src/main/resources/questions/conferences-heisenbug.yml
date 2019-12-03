@@ -18,21 +18,26 @@ speakerQuestions:
   - {fileName: 0548.jpg, name: "Ekaterina Bateeva"}
   - {fileName: 0644.jpg, name: "Alexander Bayandin"}
   - {fileName: 0641.jpg, name: "Rex Black"}
+  - {fileName: 1048.jpg, name: "Adrián Bolonio"}
   - {fileName: 0590.jpg, name: "Michael Bolton"}
   - {fileName: 0618.jpg, name: "Vsevolod Brekelov"}
   - {fileName: 0643.jpg, name: "Sergey Bronnikov"}
   - {fileName: 0549.jpg, name: "Anton Bulavin"}
   - {fileName: 0633.jpg, name: "Dmitry Buzdin"}
   - {fileName: 0636.jpg, name: "Jan Jaap Cannegieter"}
+  - {fileName: 1055.jpg, name: "Adam Carmi"}
   - {fileName: 0634.jpg, name: "Dan Cuellar"}
   - {fileName: 0004.jpg, name: "Ruslan Cheremin"}
   - {fileName: 0550.jpg, name: "Anna Chernysheva"}
   - {fileName: 0551.jpg, name: "Timothy Cochran"}
   - {fileName: 0637.jpg, name: "Claudio Criscione"}
+  - {fileName: 0074.jpg, name: "Sebastian Daschner"}
   - {fileName: 0553.jpg, name: "Sergey Dokuchaev"}
   - {fileName: 0538.jpg, name: "Yury Dymov"}
   - {fileName: 0622.jpg, name: "Sergey Egorov"}
   - {fileName: 0554.jpg, name: "Artem Eroshenko"}
+  - {fileName: 1042.jpg, name: "Noemi Ferrera"}
+  - {fileName: 0008.jpg, name: "Pasha Finkelstein"}
   - {fileName: 0543.jpg, name: "Oliver B. Fischer"}
   - {fileName: 0532.jpg, name: "Neal Ford"}
   - {fileName: 0260.jpg, name: "Vitaly Fridman"}
@@ -52,6 +57,7 @@ speakerQuestions:
   - {fileName: 0611.jpg, name: "Yury Kalinin"}
   - {fileName: 0623.jpg, name: "Andrejs Kalnacs"}
   - {fileName: 0344.jpg, name: "Andrey Karpov (PVS-Studio)"}
+  - {fileName: 1044.jpg, name: "Victoria Kashlina"}
   - {fileName: 0064.jpg, name: "Maxim Kazantsev"}
   - {fileName: 0272.jpg, name: "Filipp Keks"}
   - {fileName: 0535.jpg, name: "Elena Kolpakova"}
@@ -72,6 +78,7 @@ speakerQuestions:
   - {fileName: 0600.jpg, name: "Iván López"}
   - {fileName: 0567.jpg, name: "Andrey Lushnikov"}
   - {fileName: 0539.jpg, name: "Igor Lyrchikov"}
+  - {fileName: 1053.jpg, name: "Sergey Mahetov"}
   - {fileName: 0640.jpg, name: "Alexey Mahov"}
   - {fileName: 0617.jpg, name: "Nikita Makarov"}
   - {fileName: 0593.jpg, name: "Niranjani Manoharan"}
@@ -80,8 +87,11 @@ speakerQuestions:
   - {fileName: 0592.jpg, name: "Olga Megorskaya"}
   - {fileName: 0568.jpg, name: "Kirill Merkushev"}
   - {fileName: 0569.jpg, name: "Ekaterina Miheeva"}
+  - {fileName: 1045.jpg, name: "Jayashree Mohan"}
+  - {fileName: 1052.jpg, name: "Sergey Mokhin"}
   - {fileName: 0570.jpg, name: "Lyudmila Mzhachih"}
   - {fileName: 0038.jpg, name: "Oleg Nenashev"}
+  - {fileName: 1049.jpg, name: "Artem Nesiolovskiy"}
   - {fileName: 0606.jpg, name: "Evgeny Nichegovsky"}
   - {fileName: 0602.jpg, name: "Artem Nikitin"}
   - {fileName: 0101.jpg, name: "Ivan Osipov"}
@@ -101,6 +111,7 @@ speakerQuestions:
   - {fileName: 0021.jpg, name: "Alexey Ragozin"}
   - {fileName: 0603.jpg, name: "Alexey Rodionov"}
   - {fileName: 0577.jpg, name: "Bingsheng Ru"}
+  - {fileName: 1043.jpg, name: "Irina Rubchenko"}
   - {fileName: 0578.jpg, name: "Leonid Rudenko"}
   - {fileName: 0579.jpg, name: "Ivan Rumak"}
   - {fileName: 0544.jpg, name: "Denis Rybin"}
@@ -110,28 +121,34 @@ speakerQuestions:
   - {fileName: 0594.jpg, name: "Anastasiya Semenjuk"}
   - {fileName: 0631.jpg, name: "Pavel Senin"}
   - {fileName: 0580.jpg, name: "Elena Sharova"}
+  - {fileName: 1047.jpg, name: "Pavel Shchedukhin"}
   - {fileName: 0540.jpg, name: "Artem Shishkin"}
   - {fileName: 0624.jpg, name: "Alexander Shukov"}
   - {fileName: 0614.jpg, name: "Evgeny Shumakov"}
   - {fileName: 0581.jpg, name: "Doug Sillars"}
   - {fileName: 0025.jpg, name: "Vladimir Sitnikov"}
-  - {fileName: 0648.jpg, name: "Andrey Smirnov"}
+  - {fileName: 0648.jpg, name: "Andrey Smirnov (DINO Systems)"}
   - {fileName: 0541.jpg, name: "Vyacheslav Smirnov"}
   - {fileName: 0582.jpg, name: "Nikita Sobolev"}
+  - {fileName: 1051.jpg, name: "Maria Sokolova"}
   - {fileName: 0583.jpg, name: "Vladimir Solodov"}
   - {fileName: 0237.jpg, name: "Andrey Solntsev"}
   - {fileName: 0595.jpg, name: "Christian Stein"}
   - {fileName: 0591.jpg, name: "Simon Stewart"}
   - {fileName: 0649.jpg, name: "Ivan Surovtsev"}
+  - {fileName: 0911.jpg, name: "Alexandra Svatikova"}
   - {fileName: 0584.jpg, name: "Alexander Todorov"}
   - {fileName: 0630.jpg, name: "Timur Torubarov"}
   - {fileName: 0609.jpg, name: "Dmitry Tuchs"}
   - {fileName: 0585.jpg, name: "Anton Usmansky"}
   - {fileName: 0028.jpg, name: "Kirill Tolkachev"}
+  - {fileName: 1054.jpg, name: "Alexey Tyurin"}
   - {fileName: 0586.jpg, name: "Vasily Vanchuk"}
   - {fileName: 0620.jpg, name: "Rajdeep Varma"}
   - {fileName: 0542.jpg, name: "Jack Vanlightly"}
   - {fileName: 0616.jpg, name: "Alexey Vinogradov"}
+  - {fileName: 1050.jpg, name: "Anton Vlasov"}
+  - {fileName: 1046.jpg, name: "Aleksandr Vorobei"}
   - {fileName: 0262.jpg, name: "Ivan Yamschikov"}
   - {fileName: 0610.jpg, name: "Viktor Yastrebov"}
   - {fileName: 0645.jpg, name: "Artem Zinnatullin"}

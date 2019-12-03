@@ -42,8 +42,8 @@ speakers:
   - id: 8
     fileName: 0008.jpg
     name:
-      - {language: en, text: "Pavel Finkelshteyn"}
-      - {language: ru, text: "Павел Финкельштейн"}
+      - {language: en, text: "Pasha Finkelstein"}
+      - {language: ru, text: "Паша Финкельштейн"}
   - id: 9
     fileName: 0009.jpg
     name:
@@ -496,6 +496,7 @@ speakers:
     fileName: 0106.jpg
     name:
       - {language: en, text: "Roman Elizarov"}
+      - {language: ru, text: "Роман Елизаров"}
   - id: 107
     fileName: 0107.jpg
     name:
@@ -630,8 +631,8 @@ speakers:
   - id: 136
     fileName: 0136.jpg
     name:
-      - {language: en, text: "Vladimir Ozerov"}
-      - {language: ru, text: "Владимир Озеров"}
+      - {language: en, text: "Vladimir Ozerov (Hazelcast)"}
+      - {language: ru, text: "Владимир Озеров (Hazelcast)"}
   - id: 137
     fileName: 0137.jpg
     name:
@@ -1220,6 +1221,7 @@ speakers:
     fileName: 0260.jpg
     name:
       - {language: en, text: "Vitaly Fridman"}
+      - {language: ru, text: "Виталий Фридман"}
   - id: 261
     fileName: 0261.jpg
     name:
@@ -1574,12 +1576,12 @@ speakers:
   - id: 332
     fileName: 0332.jpg
     name:
-      - {language: en, text: "Anton Poluhin"}
+      - {language: en, text: "Antony Polukhin"}
       - {language: ru, text: "Антон Полухин"}
   - id: 333
     fileName: 0333.jpg
     name:
-      - {language: en, text: "Mihail Matrosov"}
+      - {language: en, text: "Mikhail Matrosov"}
       - {language: ru, text: "Михаил Матросов"}
   - id: 334
     fileName: 0334.jpg
@@ -1641,7 +1643,7 @@ speakers:
   - id: 347
     fileName: 0347.jpg
     name:
-      - {language: en, text: "Kirill Tihonov"}
+      - {language: en, text: "Kirill Tikhonov"}
       - {language: ru, text: "Кирилл Тихонов"}
   - id: 348
     fileName: 0348.jpg
@@ -1661,8 +1663,8 @@ speakers:
   - id: 351
     fileName: 0351.jpg
     name:
-      - {language: en, text: "Pavel Novikov"}
-      - {language: ru, text: "Павел Новиков"}
+      - {language: en, text: "Pavel Novikov (Align Technologies)"}
+      - {language: ru, text: "Павел Новиков (Align Technologies)"}
   - id: 352
     fileName: 0352.jpg
     name:
@@ -1904,7 +1906,7 @@ speakers:
   - id: 405
     fileName: 0405.jpg
     name:
-      - {language: en, text: "Christophe Nasarre"}
+      - {language: en, text: "Christophe Nasarre-Soulier"}
   - id: 406
     fileName: 0406.jpg
     name:
@@ -3035,8 +3037,8 @@ speakers:
   - id: 648
     fileName: 0648.jpg
     name:
-      - {language: en, text: "Andrey Smirnov"}
-      - {language: ru, text: "Андрей Смирнов"}
+      - {language: en, text: "Andrey Smirnov (DINO Systems)"}
+      - {language: ru, text: "Андрей Смирнов (DINO Systems)"}
   - id: 649
     fileName: 0649.jpg
     name:
@@ -3085,7 +3087,7 @@ speakers:
   - id: 659
     fileName: 0659.jpg
     name:
-      - {language: en, text: "Lucas da Costa"}
+      - {language: en, text: "Lucas Fernandes da Costa"}
   - id: 660
     fileName: 0660.jpg
     name:
@@ -3767,8 +3769,7 @@ speakers:
   - id: 806
     fileName: 0806.jpg
     name:
-      - {language: en, text: "Sergey Ryabov"}
-      - {language: ru, text: "Сергей Рябов"}
+      - {language: en, text: "RJ Marsan"}
   - id: 807
     fileName: 0807.jpg
     name:
@@ -3816,7 +3817,7 @@ speakers:
   - id: 816
     fileName: 0816.jpg
     name:
-      - {language: en, text: "Anton Shchukin"}
+      - {language: en, text: "Anton Schukin"}
       - {language: ru, text: "Антон Щукин"}
   - id: 817
     fileName: 0817.jpg
@@ -4614,3 +4615,413 @@ speakers:
     name:
       - {language: en, text: "Konstantin Nifanin"}
       - {language: ru, text: "Константин Нифанин"}
+  - id: 983
+    fileName: 0983.jpg
+    name:
+      - {language: en, text: "Sean Parent"}
+  - id: 984
+    fileName: 0984.jpg
+    name:
+      - {language: en, text: "Björn Fahller"}
+  - id: 985
+    fileName: 0985.jpg
+    name:
+      - {language: en, text: "Bryce Adelstein Lelbach"}
+  - id: 986
+    fileName: 0986.jpg
+    name:
+      - {language: en, text: "Eric Niebler"}
+  - id: 987
+    fileName: 0987.jpg
+    name:
+      - {language: en, text: "Maxim Khizhinsky"}
+      - {language: ru, text: "Максим Хижинский"}
+  - id: 988
+    fileName: 0988.jpg
+    name:
+      - {language: en, text: "Marshall Clow"}
+  - id: 989
+    fileName: 0989.jpg
+    name:
+      - {language: en, text: "Hana Dusíková"}
+  - id: 990
+    fileName: 0990.jpg
+    name:
+      - {language: en, text: "Arno Schoedl"}
+  - id: 991
+    fileName: 0991.jpg
+    name:
+      - {language: en, text: "Nikolay Beloborodov"}
+      - {language: ru, text: "Николай Белобородов"}
+  - id: 992
+    fileName: 0992.jpg
+    name:
+      - {language: en, text: "Alexander Maslennikov"}
+      - {language: ru, text: "Александр Масленников"}
+  - id: 993
+    fileName: 0993.jpg
+    name:
+      - {language: en, text: "Dmitry Kozhevnikov"}
+      - {language: ru, text: "Дмитрий Кожевников"}
+  - id: 994
+    fileName: 0994.jpg
+    name:
+      - {language: en, text: "Karina Dorozhkina"}
+      - {language: ru, text: "Карина Дорожкина"}
+  - id: 995
+    fileName: 0995.jpg
+    name:
+      - {language: en, text: "Timofey Lavrenuyk"}
+      - {language: ru, text: "Тимофей Лавренюк"}
+  - id: 996
+    fileName: 0996.jpg
+    name:
+      - {language: en, text: "Roman Rusyaev"}
+      - {language: ru, text: "Роман Русяев"}
+  - id: 997
+    fileName: 0997.jpg
+    name:
+      - {language: en, text: "Alexander Ganyukhin"}
+      - {language: ru, text: "Александр Ганюхин"}
+  - id: 998
+    fileName: 0998.jpg
+    name:
+      - {language: en, text: "Ashot Vardanian"}
+  - id: 999
+    fileName: 0999.jpg
+    name:
+      - {language: en, text: "Denis Panin"}
+      - {language: ru, text: "Денис Панин"}
+  - id: 1000
+    fileName: 1000.jpg
+    name:
+      - {language: en, text: "Guy Davidson"}
+  - id: 1001
+    fileName: 1001.jpg
+    name:
+      - {language: en, text: "Adi Shavit"}
+  - id: 1002
+    fileName: 1002.jpg
+    name:
+      - {language: en, text: "Alexander Bychuk"}
+      - {language: ru, text: "Александр Бычук"}
+  - id: 1003
+    fileName: 1003.jpg
+    name:
+      - {language: en, text: "Scott Wlaschin"}
+  - id: 1004
+    fileName: 1004.jpg
+    name:
+      - {language: en, text: "Joreg"}
+  - id: 1005
+    fileName: 1005.jpg
+    name:
+      - {language: en, text: "Stephen Cleary"}
+  - id: 1006
+    fileName: 1006.jpg
+    name:
+      - {language: en, text: "Jeff Prosise"}
+  - id: 1007
+    fileName: 1007.jpg
+    name:
+      - {language: en, text: "Elias Holzer"}
+  - id: 1008
+    fileName: 1008.jpg
+    name:
+      - {language: en, text: "Michael Staib"}
+  - id: 1009
+    fileName: 1009.jpg
+    name:
+      - {language: en, text: "Jacob Povar"}
+      - {language: ru, text: "Яков Повар"}
+  - id: 1010
+    fileName: 1010.jpg
+    name:
+      - {language: en, text: "Konstantin Zhitnik"}
+      - {language: ru, text: "Константин Житник"}
+  - id: 1011
+    fileName: 1011.jpg
+    name:
+      - {language: en, text: "Vladimir Panchenko"}
+      - {language: ru, text: "Владимир Панченко"}
+  - id: 1012
+    fileName: 1012.jpg
+    name:
+      - {language: en, text: "Marco De Sanctis"}
+  - id: 1013
+    fileName: 1013.jpg
+    name:
+      - {language: en, text: "Łukasz Pyrzyk"}
+  - id: 1014
+    fileName: 1014.jpg
+    name:
+      - {language: en, text: "Anatoly Zhmur"}
+      - {language: ru, text: "Анатолий Жмур"}
+  - id: 1015
+    fileName: 1015.jpg
+    name:
+      - {language: en, text: "Roman Prosin"}
+      - {language: ru, text: "Роман Просин"}
+  - id: 1016
+    fileName: 1016.jpg
+    name:
+      - {language: en, text: "Dan Shechter"}
+  - id: 1017
+    fileName: 1017.jpg
+    name:
+      - {language: en, text: "Guillermo Rauch"}
+  - id: 1018
+    fileName: 1018.jpg
+    name:
+      - {language: en, text: "Vitaliy Bragilevskiy"}
+      - {language: ru, text: "Виталий Брагилевский"}
+  - id: 1019
+    fileName: 1019.jpg
+    name:
+      - {language: en, text: "Yulia Startsev"}
+  - id: 1020
+    fileName: 1020.jpg
+    name:
+      - {language: en, text: "Dmitriy Voloshin"}
+      - {language: ru, text: "Дмитрий Волошин"}
+  - id: 1021
+    fileName: 1021.jpg
+    name:
+      - {language: en, text: "Nicolò Ribaudo"}
+  - id: 1022
+    fileName: 1022.jpg
+    name:
+      - {language: en, text: "Aki Rose Braun"}
+  - id: 1023
+    fileName: 1023.jpg
+    name:
+      - {language: en, text: "Ivan Akulov"}
+      - {language: ru, text: "Иван Акулов"}
+  - id: 1024
+    fileName: 1024.jpg
+    name:
+      - {language: en, text: "Anna Herlihy"}
+  - id: 1025
+    fileName: 1025.jpg
+    name:
+      - {language: en, text: "Michael Saboff"}
+  - id: 1026
+    fileName: 1026.jpg
+    name:
+      - {language: en, text: "Ivan Popelyshev"}
+      - {language: ru, text: "Иван Попелышев"}
+  - id: 1027
+    fileName: 1027.jpg
+    name:
+      - {language: en, text: "Sergey Rubanov"}
+      - {language: ru, text: "Сергей Рубанов"}
+  - id: 1028
+    fileName: 1028.jpg
+    name:
+      - {language: en, text: "Andrey Roenko"}
+      - {language: ru, text: "Андрей Роенко"}
+  - id: 1029
+    fileName: 1029.jpg
+    name:
+      - {language: en, text: "Andrew Smirnov (IPONWEB)"}
+      - {language: ru, text: "Андрей Смирнов (IPONWEB)"}
+  - id: 1030
+    fileName: 1030.jpg
+    name:
+      - {language: en, text: "Romulo Cintra"}
+  - id: 1031
+    fileName: 1031.jpg
+    name:
+      - {language: en, text: "Mathieu Henri"}
+  - id: 1032
+    fileName: 1032.jpg
+    name:
+      - {language: en, text: "Eliran Eliassy"}
+  - id: 1033
+    fileName: 1033.jpg
+    name:
+      - {language: en, text: "Nikita Mostovoy"}
+      - {language: ru, text: "Никита Мостовой"}
+  - id: 1034
+    fileName: 1034.jpg
+    name:
+      - {language: en, text: "Zar Zakharov"}
+      - {language: ru, text: "Зар Захаров"}
+  - id: 1035
+    fileName: 1035.jpg
+    name:
+      - {language: en, text: "Alexander Kamenyar"}
+      - {language: ru, text: "Александр Каменяр"}
+  - id: 1036
+    fileName: 1036.jpg
+    name:
+      - {language: en, text: "Artyom Arutyunyan"}
+      - {language: ru, text: "Артём Арутюнян"}
+  - id: 1037
+    fileName: 1037.jpg
+    name:
+      - {language: en, text: "Prashant Palikhe"}
+  - id: 1038
+    fileName: 1038.jpg
+    name:
+      - {language: en, text: "Miguel Angel Duran Garcia"}
+  - id: 1039
+    fileName: 1039.jpg
+    name:
+      - {language: en, text: "Alexandra Kalinina"}
+      - {language: ru, text: "Александра Калинина"}
+  - id: 1040
+    fileName: 1040.jpg
+    name:
+      - {language: en, text: "Andrey Pechkurov"}
+      - {language: ru, text: "Андрей Печкуров"}
+  - id: 1041
+    fileName: 1041.jpg
+    name:
+      - {language: en, text: "Farzad YousefZadeh"}
+  - id: 1042
+    fileName: 1042.jpg
+    name:
+      - {language: en, text: "Noemi Ferrera"}
+  - id: 1043
+    fileName: 1043.jpg
+    name:
+      - {language: en, text: "Irina Rubchenko"}
+      - {language: ru, text: "Ирина Рубченко"}
+  - id: 1044
+    fileName: 1044.jpg
+    name:
+      - {language: en, text: "Victoria Kashlina"}
+      - {language: ru, text: "Виктория Кашлина"}
+  - id: 1045
+    fileName: 1045.jpg
+    name:
+      - {language: en, text: "Jayashree Mohan"}
+  - id: 1046
+    fileName: 1046.jpg
+    name:
+      - {language: en, text: "Aleksandr Vorobei"}
+      - {language: ru, text: "Александр Воробей"}
+  - id: 1047
+    fileName: 1047.jpg
+    name:
+      - {language: en, text: "Pavel Shchedukhin"}
+      - {language: ru, text: "Павел Щедухин"}
+  - id: 1048
+    fileName: 1048.jpg
+    name:
+      - {language: en, text: "Adrián Bolonio"}
+  - id: 1049
+    fileName: 1049.jpg
+    name:
+      - {language: en, text: "Artem Nesiolovskiy"}
+      - {language: ru, text: "Артём Несиоловский"}
+  - id: 1050
+    fileName: 1050.jpg
+    name:
+      - {language: en, text: "Anton Vlasov"}
+      - {language: ru, text: "Антон Власов"}
+  - id: 1051
+    fileName: 1051.jpg
+    name:
+      - {language: en, text: "Maria Sokolova"}
+      - {language: ru, text: "Мария Соколова"}
+  - id: 1052
+    fileName: 1052.jpg
+    name:
+      - {language: en, text: "Sergey Mokhin"}
+      - {language: ru, text: "Сергей Мохин"}
+  - id: 1053
+    fileName: 1053.jpg
+    name:
+      - {language: en, text: "Sergey Mahetov"}
+      - {language: ru, text: "Сергей Махетов"}
+  - id: 1054
+    fileName: 1054.jpg
+    name:
+      - {language: en, text: "Alexey Tyurin"}
+      - {language: ru, text: "Алексей Тюрин"}
+  - id: 1055
+    fileName: 1055.jpg
+    name:
+      - {language: en, text: "Adam Carmi"}
+  - id: 1056
+    fileName: 1056.jpg
+    name:
+      - {language: en, text: "Ben Sandofsky"}
+  - id: 1057
+    fileName: 1057.jpg
+    name:
+      - {language: en, text: "Kirill Kozhuhar"}
+      - {language: ru, text: "Кирилл Кожухар"}
+  - id: 1058
+    fileName: 1058.jpg
+    name:
+      - {language: en, text: "Ivan Morgillo"}
+  - id: 1059
+    fileName: 1059.jpg
+    name:
+      - {language: en, text: "Giorgio Natili"}
+  - id: 1060
+    fileName: 1060.jpg
+    name:
+      - {language: en, text: "Marina Pleshkova"}
+      - {language: ru, text: "Марина Плешкова"}
+  - id: 1061
+    fileName: 1061.jpg
+    name:
+      - {language: en, text: "Svetlana Smelchakova"}
+      - {language: ru, text: "Светлана Смельчакова"}
+  - id: 1062
+    fileName: 1062.jpg
+    name:
+      - {language: en, text: "Gennady Evstratov"}
+      - {language: ru, text: "Геннадий Евстратов"}
+  - id: 1063
+    fileName: 1063.jpg
+    name:
+      - {language: en, text: "Ilya Lunkin"}
+      - {language: ru, text: "Илья Лунькин"}
+  - id: 1064
+    fileName: 1064.jpg
+    name:
+      - {language: en, text: "Vladimir Ozerov (Sberbank)"}
+      - {language: ru, text: "Владимир Озеров (Сбербанк)"}
+  - id: 1065
+    fileName: 1065.jpg
+    name:
+      - {language: en, text: "Pavel Novikov (MyOffice)"}
+      - {language: ru, text: "Павел Новиков (МойОфис)"}
+  - id: 1066
+    fileName: 1066.jpg
+    name:
+      - {language: en, text: "Dmitry Tereshin"}
+      - {language: ru, text: "Дмитрий Терёшин"}
+  - id: 1067
+    fileName: 1067.jpg
+    name:
+      - {language: en, text: "Boris Bengus"}
+      - {language: ru, text: "Борис Бенгус"}
+  - id: 1068
+    fileName: 1068.jpg
+    name:
+      - {language: en, text: "Ilya Lobanov"}
+      - {language: ru, text: "Илья Лобанов"}
+  - id: 1069
+    fileName: 1069.jpg
+    name:
+      - {language: en, text: "Marcin Moskała"}
+  - id: 1070
+    fileName: 1070.jpg
+    name:
+      - {language: en, text: "Igor Talankin"}
+      - {language: ru, text: "Игорь Таланкин"}
+  - id: 1071
+    fileName: 1071.jpg
+    name:
+      - {language: en, text: "Sebastiaan de With"}
+  - id: 1072
+    fileName: 1072.jpg
+    name:
+      - {language: en, text: "Dmitry Ignatiev"}
+      - {language: ru, text: "Дмитрий Игнатьев"}
