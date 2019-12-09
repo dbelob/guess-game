@@ -136,6 +136,7 @@ class Unsafe {
                 List<LocaleItem> name = new ArrayList<LocaleItem>() {{
                     add(new LocaleItem(Language.ENGLISH.getCode(), speakerQuestion.getName()));
                 }};
+                List<LocaleItem> company = Collections.emptyList();
 
                 String russianName = LocalizationUtils.getName(contentfulSpeaker.getName(), Language.RUSSIAN);
 
@@ -146,7 +147,8 @@ class Unsafe {
                 Speaker speaker = new Speaker(
                         id,
                         filename,
-                        name);
+                        name,
+                        company);
 
                 absentSpeakers.add(speaker);
             }

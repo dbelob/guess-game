@@ -177,7 +177,7 @@ public class ContentfulUtils {
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "people")
-                .queryParam("select", "fields.name,fields.nameEn")
+                .queryParam("select", "fields.name,fields.nameEn,fields.company,fields.companyEn")
                 .queryParam(speakerFieldName, "true")   // only speakers
                 .queryParam("limit", 1000);
         URI uri = builder
@@ -198,7 +198,14 @@ public class ContentfulUtils {
                                         s.getFields().getNameEn()),
                                 new LocaleItem(
                                         Language.RUSSIAN.getCode(),
-                                        s.getFields().getName()))))
+                                        s.getFields().getName())),
+                        Arrays.asList(
+                                new LocaleItem(
+                                        Language.ENGLISH.getCode(),
+                                        s.getFields().getCompanyEn()),
+                                new LocaleItem(
+                                        Language.RUSSIAN.getCode(),
+                                        s.getFields().getCompany()))))
                 .collect(Collectors.toList());
     }
 
