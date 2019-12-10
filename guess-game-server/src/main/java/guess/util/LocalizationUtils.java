@@ -2,6 +2,7 @@ package guess.util;
 
 import guess.domain.Language;
 import guess.domain.source.LocaleItem;
+import guess.domain.source.Speaker;
 
 import java.util.List;
 import java.util.Locale;
@@ -22,7 +23,7 @@ public class LocalizationUtils {
      * @return name
      */
     private static Optional<LocaleItem> getNameInternal(List<LocaleItem> localeItems, Language language) {
-        if (language != null) {
+        if ((localeItems != null) && (language != null)) {
             return localeItems.stream()
                     .filter(et -> et.getLanguage().equals(language.getCode()))
                     .findFirst();
@@ -80,5 +81,23 @@ public class LocalizationUtils {
         ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(language.getCode()));
 
         return bundle.getString(key);
+    }
+
+    /**
+     * Gets speaker name with company name.
+     *
+     * @param speaker  speaker
+     * @param language language
+     * @return speaker name with company name
+     */
+    public static String getSpeakerNameWithCompany(Speaker speaker, Language language) {
+        String name = LocalizationUtils.getName(speaker.getName(), language);
+        String company = LocalizationUtils.getName(speaker.getCompany(), language);
+
+        if ((company != null) && !company.isEmpty()) {
+            return String.format("%s (%s)", name, company);
+        } else {
+            return name;
+        }
     }
 }
