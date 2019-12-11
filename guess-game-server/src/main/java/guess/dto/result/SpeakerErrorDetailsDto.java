@@ -39,13 +39,13 @@ public class SpeakerErrorDetailsDto {
         if (GuessType.GUESS_NAME_TYPE.equals(guessType) || GuessType.GUESS_PICTURE_TYPE.equals(guessType)) {
             List<String> wrongAnswers = errorDetails.getWrongAnswers().stream()
                     .map(q -> (GuessType.GUESS_NAME_TYPE.equals(guessType)) ?
-                            LocalizationUtils.getName(((SpeakerQuestion) q).getSpeaker().getName(), language) :
+                            LocalizationUtils.getString(((SpeakerQuestion) q).getSpeaker().getName(), language) :
                             ((SpeakerQuestion) q).getSpeaker().getFileName())
                     .collect(Collectors.toList());
 
             return new SpeakerErrorDetailsDto(
                     ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker().getFileName(),
-                    LocalizationUtils.getName(((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker().getName(), language),
+                    LocalizationUtils.getString(((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker().getName(), language),
                     wrongAnswers);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));

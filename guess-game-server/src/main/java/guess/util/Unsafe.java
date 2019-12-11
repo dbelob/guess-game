@@ -138,7 +138,7 @@ class Unsafe {
                 }};
                 List<LocaleItem> company = Collections.emptyList();
 
-                String russianName = LocalizationUtils.getName(contentfulSpeaker.getName(), Language.RUSSIAN);
+                String russianName = LocalizationUtils.getString(contentfulSpeaker.getName(), Language.RUSSIAN);
 
                 if ((russianName != null) && !russianName.isEmpty() && !russianName.equals(speakerQuestion.getName())) {
                     name.add(new LocaleItem(Language.RUSSIAN.getCode(), russianName));

@@ -47,17 +47,17 @@ public class TalkErrorDetailsDto {
             List<ErrorPair> wrongAnswers = errorDetails.getWrongAnswers().stream()
                     .map(q -> (GuessType.GUESS_TALK_TYPE.equals(guessType)) ?
                             new ErrorPair(
-                                    LocalizationUtils.getName(((TalkQuestion) q).getTalk().getName(), language),
+                                    LocalizationUtils.getString(((TalkQuestion) q).getTalk().getName(), language),
                                     null) :
                             new ErrorPair(
-                                    LocalizationUtils.getName(((TalkQuestion) q).getSpeaker().getName(), language),
+                                    LocalizationUtils.getString(((TalkQuestion) q).getSpeaker().getName(), language),
                                     ((TalkQuestion) q).getSpeaker().getFileName()))
                     .collect(Collectors.toList());
 
             return new TalkErrorDetailsDto(
                     ((TalkQuestion) errorDetails.getQuestion()).getSpeaker().getFileName(),
-                    LocalizationUtils.getName(((TalkQuestion) errorDetails.getQuestion()).getSpeaker().getName(), language),
-                    LocalizationUtils.getName(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName(), language),
+                    LocalizationUtils.getString(((TalkQuestion) errorDetails.getQuestion()).getSpeaker().getName(), language),
+                    LocalizationUtils.getString(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName(), language),
                     wrongAnswers);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));

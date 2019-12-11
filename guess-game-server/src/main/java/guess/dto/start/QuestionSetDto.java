@@ -40,7 +40,7 @@ public class QuestionSetDto {
 
     public static List<QuestionSetDto> convertToDto(List<QuestionSet> questionSets, Language language) {
         return questionSets.stream()
-                .map(a -> new QuestionSetDto(a.getId(), LocalizationUtils.getName(a.getName(), language)))
+                .map(a -> new QuestionSetDto(a.getId(), LocalizationUtils.getString(a.getName(), language)))
                 .collect(Collectors.toList());
     }
 }

@@ -62,8 +62,8 @@ public class LocalizationUtilsTest {
         }
 
         @Test
-        public void getName() {
-            assertEquals(expected, LocalizationUtils.getName(localeItems, language, defaultLanguage));
+        public void getString() {
+            assertEquals(expected, LocalizationUtils.getString(localeItems, language, defaultLanguage));
         }
     }
 

@@ -16,13 +16,13 @@ public class LocalizationUtils {
     private static final String BUNDLE_NAME = "LocaleStrings";
 
     /**
-     * Gets name for language (internal implementation).
+     * Gets string for language (internal implementation).
      *
      * @param localeItems locale items
      * @param language    language
      * @return name
      */
-    private static Optional<LocaleItem> getNameInternal(List<LocaleItem> localeItems, Language language) {
+    private static Optional<LocaleItem> getStringInternal(List<LocaleItem> localeItems, Language language) {
         if ((localeItems != null) && (language != null)) {
             return localeItems.stream()
                     .filter(et -> et.getLanguage().equals(language.getCode()))
@@ -33,23 +33,23 @@ public class LocalizationUtils {
     }
 
     /**
-     * Gets name for language.
+     * Gets string for language.
      *
      * @param localeItems     locale items
      * @param language        language
      * @param defaultLanguage default language
      * @return name
      */
-    public static String getName(List<LocaleItem> localeItems, Language language, Language defaultLanguage) {
+    public static String getString(List<LocaleItem> localeItems, Language language, Language defaultLanguage) {
         Language finalLanguage = (language != null) ? language : defaultLanguage;
-        Optional<LocaleItem> currentLanguageOptional = getNameInternal(localeItems, finalLanguage);
+        Optional<LocaleItem> currentLanguageOptional = getStringInternal(localeItems, finalLanguage);
 
         if (currentLanguageOptional.isPresent()) {
             return currentLanguageOptional.get().getText();
         }
 
         if (finalLanguage != defaultLanguage) {
-            Optional<LocaleItem> defaultLanguageOptional = getNameInternal(localeItems, defaultLanguage);
+            Optional<LocaleItem> defaultLanguageOptional = getStringInternal(localeItems, defaultLanguage);
 
             if (defaultLanguageOptional.isPresent()) {
                 return defaultLanguageOptional.get().getText();
@@ -60,24 +60,24 @@ public class LocalizationUtils {
     }
 
     /**
-     * Gets name for language.
+     * Gets string for language.
      *
      * @param localeItems locale items
      * @param language    language
      * @return name
      */
-    public static String getName(List<LocaleItem> localeItems, Language language) {
-        return getName(localeItems, language, Language.ENGLISH);
+    public static String getString(List<LocaleItem> localeItems, Language language) {
+        return getString(localeItems, language, Language.ENGLISH);
     }
 
     /**
-     * Gets locale string.
+     * Gets resource string.
      *
      * @param key      key
      * @param language language
      * @return locale string
      */
-    public static String getLocaleString(String key, Language language) {
+    public static String getResourceString(String key, Language language) {
         ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(language.getCode()));
 
         return bundle.getString(key);
@@ -91,8 +91,8 @@ public class LocalizationUtils {
      * @return speaker name with company name
      */
     public static String getSpeakerNameWithCompany(Speaker speaker, Language language) {
-        String name = LocalizationUtils.getName(speaker.getName(), language);
-        String company = LocalizationUtils.getName(speaker.getCompany(), language);
+        String name = LocalizationUtils.getString(speaker.getName(), language);
+        String company = LocalizationUtils.getString(speaker.getCompany(), language);
 
         if ((company != null) && !company.isEmpty()) {
             return String.format("%s (%s)", name, company);

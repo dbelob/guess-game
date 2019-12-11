@@ -127,10 +127,10 @@ public class StateServiceImpl implements StateService {
 
             name = Arrays.asList(
                     new LocaleItem(Language.ENGLISH.getCode(), String.format(
-                            LocalizationUtils.getLocaleString(SELECTED_SETS, Language.ENGLISH),
+                            LocalizationUtils.getResourceString(SELECTED_SETS, Language.ENGLISH),
                             startParameters.getQuestionSetIds().size())),
                     new LocaleItem(Language.RUSSIAN.getCode(), String.format(
-                            LocalizationUtils.getLocaleString(SELECTED_SETS, Language.RUSSIAN),
+                            LocalizationUtils.getResourceString(SELECTED_SETS, Language.RUSSIAN),
                             startParameters.getQuestionSetIds().size())));
             logoFileName = null;
         }

@@ -86,14 +86,14 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language),
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language),
                 ((TalkQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getFileName(),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getName(), language),
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getName(), language),
                 ((TalkQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getFileName(),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getName(), language),
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getName(), language),
                 ((TalkQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getFileName(),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getName(), language),
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getName(), language),
                 ((TalkQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getFileName(),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getName(), language));
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getName(), language));
     }
 }

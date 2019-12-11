@@ -61,9 +61,9 @@ public class PictureNamesDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
                 ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getFileName(),
-                LocalizationUtils.getName(((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getName(), language),
-                LocalizationUtils.getName(((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getName(), language),
-                LocalizationUtils.getName(((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getName(), language),
-                LocalizationUtils.getName(((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getName(), language));
+                LocalizationUtils.getString(((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getName(), language),
+                LocalizationUtils.getString(((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getName(), language),
+                LocalizationUtils.getString(((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getName(), language),
+                LocalizationUtils.getString(((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getName(), language));
     }
 }

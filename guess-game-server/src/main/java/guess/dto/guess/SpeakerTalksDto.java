@@ -68,10 +68,10 @@ public class SpeakerTalksDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
                 ((TalkQuestion) questionAnswers.getQuestion()).getSpeaker().getFileName(),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getQuestion()).getSpeaker().getName(), language),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(0)).getTalk().getName(), language),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(1)).getTalk().getName(), language),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(2)).getTalk().getName(), language),
-                LocalizationUtils.getName(((TalkQuestion) questionAnswers.getAnswers().get(3)).getTalk().getName(), language));
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getQuestion()).getSpeaker().getName(), language),
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getAnswers().get(0)).getTalk().getName(), language),
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getAnswers().get(1)).getTalk().getName(), language),
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getAnswers().get(2)).getTalk().getName(), language),
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getAnswers().get(3)).getTalk().getName(), language));
     }
 }

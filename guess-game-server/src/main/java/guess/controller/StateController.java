@@ -64,7 +64,7 @@ public class StateController {
             Language language = localeService.getLanguage(httpSession);
 
             return dtoFunction.apply(
-                    LocalizationUtils.getName(questionAnswersSet.getName(), language),
+                    LocalizationUtils.getString(questionAnswersSet.getName(), language),
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),

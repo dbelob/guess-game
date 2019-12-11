@@ -60,7 +60,7 @@ public class NamePicturesDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
-                LocalizationUtils.getName(((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getName(), language),
+                LocalizationUtils.getString(((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getName(), language),
                 ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getFileName(),
                 ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getFileName(),
                 ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getFileName(),

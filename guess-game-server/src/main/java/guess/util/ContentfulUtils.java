@@ -269,8 +269,8 @@ public class ContentfulUtils {
             List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName);
 
             for (Speaker speaker : speakers) {
-                String englishName = LocalizationUtils.getName(speaker.getName(), Language.ENGLISH);
-                String russianName = LocalizationUtils.getName(speaker.getName(), Language.RUSSIAN);
+                String englishName = LocalizationUtils.getString(speaker.getName(), Language.ENGLISH);
+                String russianName = LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN);
 
                 if ((englishName != null) && !englishName.isEmpty() &&
                         (russianName != null) && !russianName.isEmpty()) {
