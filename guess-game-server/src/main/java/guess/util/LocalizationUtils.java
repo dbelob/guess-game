@@ -94,10 +94,8 @@ public class LocalizationUtils {
         String name = LocalizationUtils.getString(speaker.getName(), language);
         String company = LocalizationUtils.getString(speaker.getCompany(), language);
 
-        if ((company != null) && !company.isEmpty()) {
-            return String.format("%s (%s)", name, company);
-        } else {
-            return name;
-        }
+        return ((company != null) && !company.isEmpty()) ?
+                String.format("%s (%s)", name, company) :
+                name;
     }
 }

@@ -1,5 +1,6 @@
 package guess.dao;
 
+import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import org.junit.Test;
@@ -14,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 
 public class QuestionDaoImplTest {
     @Test
-    public void questionSetsImagesExistance() throws IOException {
+    public void questionSetsImagesExistance() throws IOException, SpeakerDuplicatedException {
         QuestionDao questionDao = new QuestionDaoImpl();
         List<QuestionSet> questionSets = questionDao.getQuestionSets();
 

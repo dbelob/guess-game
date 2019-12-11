@@ -3108,11 +3108,6 @@ speakers:
     name:
       - {language: en, text: "Alexey Kozyatinsky"}
       - {language: ru, text: "Алексей Козятинский"}
-  - id: 656
-    fileName: 0656.jpg
-    name:
-      - {language: en, text: "Illya Klymov"}
-      - {language: ru, text: "Илья Климов"}
   - id: 657
     fileName: 0657.jpg
     name:

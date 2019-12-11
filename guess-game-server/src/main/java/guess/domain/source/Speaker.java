@@ -54,6 +54,21 @@ public class Speaker {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Speaker speaker = (Speaker) o;
+
+        return id == speaker.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
+
+    @Override
     public String toString() {
         return "Speaker{" +
                 "id=" + id +
