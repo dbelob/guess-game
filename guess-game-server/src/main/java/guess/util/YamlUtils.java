@@ -230,26 +230,42 @@ public class YamlUtils {
      * @return {@code true} if duplicates found, {@code false} otherwise
      */
     private static boolean findSpeakerDuplicates(List<Speaker> speakers) {
-        Map<String, Speaker> speakerMap = new HashMap<>();
-        Set<Speaker> speakerDuplicates = new HashSet<>();
-
-        for (Speaker speaker : speakers) {
-            String key = LocalizationUtils.getSpeakerNameWithCompany(speaker, Language.ENGLISH);
-            Speaker existingSpeaker = speakerMap.get(key);
-
-            if (existingSpeaker == null) {
-                speakerMap.put(key, speaker);
-            } else {
-                speakerDuplicates.add(existingSpeaker);
-                speakerDuplicates.add(speaker);
-            }
+        Set<Speaker> speakerDuplicatesSet = new HashSet<>();
+        for (Language language : Language.values()) {
+            speakerDuplicatesSet.addAll(findSpeakerDuplicatesByName(speakers, language));
         }
 
-        if (speakerDuplicates.isEmpty()) {
-            return false;
-        } else {
-            log.error("There are {} speaker duplicates (add or change company): {}", speakerDuplicates.size(), speakerDuplicates);
+        if (!speakerDuplicatesSet.isEmpty()) {
+            List<Speaker> speakerDuplicatesList = speakerDuplicatesSet.stream()
+                    .sorted(Comparator.comparingLong(Speaker::getId))
+                    .collect(Collectors.toList());
+
+            log.error("There are {} speaker duplicates (add company): {}", speakerDuplicatesList.size(), speakerDuplicatesList);
             return true;
         }
+
+        return false;
+    }
+
+    /**
+     * Finds speaker duplicates by name.
+     *
+     * @param speakers speakers
+     * @param language language
+     * @return speaker duplicates
+     */
+    private static Set<Speaker> findSpeakerDuplicatesByName(List<Speaker> speakers, Language language) {
+        return speakers.stream()
+                .collect(Collectors.groupingBy(s -> LocalizationUtils.getString(s.getName(), language)))
+                .values().stream()
+                .filter(e -> e.size() > 1)  // Only duplicates
+                .flatMap(Collection::stream)
+                .filter(e -> {
+                    // Without company
+                    String company = LocalizationUtils.getString(e.getCompany(), language);
+                    return ((company == null) || company.isEmpty());
+                })
+                .sorted(Comparator.comparingLong(Speaker::getId))
+                .collect(Collectors.toSet());
     }
 }
