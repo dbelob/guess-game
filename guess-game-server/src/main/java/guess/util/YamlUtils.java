@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
  * Constructor with LocalDate support.
  */
 class LocalDateYamlConstructor extends Constructor {
-    LocalDateYamlConstructor(Class<? extends Object> theRoot) {
+    LocalDateYamlConstructor(Class<?> theRoot) {
         super(theRoot);
 
         this.yamlClassConstructors.put(NodeId.scalar, new LocalDateConstructor());
