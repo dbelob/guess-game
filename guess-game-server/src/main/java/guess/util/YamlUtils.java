@@ -233,7 +233,15 @@ public class YamlUtils {
         Set<Speaker> speakerDuplicates = new TreeSet<>(Comparator.comparingLong(Speaker::getId));
 
         for (Language language : Language.values()) {
-            speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicatesByNameWithoutCompany(speakers, language));
+            speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
+                    speakers,
+                    language,
+                    s -> LocalizationUtils.getString(s.getName(), language),
+                    s -> {
+                        // Without company
+                        String company = LocalizationUtils.getString(s.getCompany(), language);
+                        return ((company == null) || company.isEmpty());
+                    }));
         }
 
         if (!speakerDuplicates.isEmpty()) {
@@ -242,7 +250,11 @@ public class YamlUtils {
         }
 
         for (Language language : Language.values()) {
-            speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicatesByNameWithCompany(speakers, language));
+            speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
+                    speakers,
+                    language,
+                    s -> LocalizationUtils.getSpeakerNameWithCompany(s, language),
+                    s -> true));
         }
 
         if (!speakerDuplicates.isEmpty()) {

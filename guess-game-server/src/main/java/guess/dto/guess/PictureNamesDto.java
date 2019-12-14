@@ -61,9 +61,11 @@ public class PictureNamesDto extends QuestionAnswersDto {
         Speaker speaker2 = ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker();
         Speaker speaker3 = ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker();
 
-        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicatesByNameWithoutCompany(
+        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 Arrays.asList(speaker0, speaker1, speaker2, speaker3),
-                language);
+                language,
+                s -> LocalizationUtils.getString(s.getName(), language),
+                s -> true);
 
         String name0 = LocalizationUtils.getSpeakerName(speaker0, language, speakerDuplicates.contains(speaker0));
         String name1 = LocalizationUtils.getSpeakerName(speaker1, language, speakerDuplicates.contains(speaker1));

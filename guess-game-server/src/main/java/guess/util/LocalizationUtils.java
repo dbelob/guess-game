@@ -5,6 +5,8 @@ import guess.domain.source.LocaleItem;
 import guess.domain.source.Speaker;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 /**
@@ -98,39 +100,23 @@ public class LocalizationUtils {
     }
 
     /**
-     * Gets speaker duplicates by name without company.
+     * Gets speaker duplicates by name.
      *
-     * @param speakers speakers
-     * @param language language
+     * @param speakers         speakers
+     * @param language         language
+     * @param groupingFunction grouping function
+     * @param filterPredicate  filter predicate
      * @return speaker duplicates
      */
-    public static Set<Speaker> getSpeakerDuplicatesByNameWithoutCompany(List<Speaker> speakers, Language language) {
+    public static Set<Speaker> getSpeakerDuplicates(List<Speaker> speakers, Language language,
+                                                    Function<Speaker, String> groupingFunction,
+                                                    Predicate<Speaker> filterPredicate) {
         return speakers.stream()
-                .collect(Collectors.groupingBy(s -> getString(s.getName(), language)))
+                .collect(Collectors.groupingBy(groupingFunction))
                 .values().stream()
                 .filter(e -> e.size() > 1)  // Only duplicates
                 .flatMap(Collection::stream)
-                .filter(e -> {
-                    // Without company
-                    String company = getString(e.getCompany(), language);
-                    return ((company == null) || company.isEmpty());
-                })
-                .collect(Collectors.toSet());
-    }
-
-    /**
-     * Gets speaker duplicates by name with company.
-     *
-     * @param speakers speakers
-     * @param language language
-     * @return speaker duplicates
-     */
-    public static Set<Speaker> getSpeakerDuplicatesByNameWithCompany(List<Speaker> speakers, Language language) {
-        return speakers.stream()
-                .collect(Collectors.groupingBy(s -> getSpeakerNameWithCompany(s, language)))
-                .values().stream()
-                .filter(e -> e.size() > 1)  // Only duplicates
-                .flatMap(Collection::stream)
+                .filter(filterPredicate)
                 .collect(Collectors.toSet());
     }
 
