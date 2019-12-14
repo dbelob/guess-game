@@ -230,63 +230,26 @@ public class YamlUtils {
      * @return {@code true} if duplicates found, {@code false} otherwise
      */
     private static boolean findSpeakerDuplicates(List<Speaker> speakers) {
-        Set<Speaker> speakerDuplicatesSet = new TreeSet<>(Comparator.comparingLong(Speaker::getId));
+        Set<Speaker> speakerDuplicates = new TreeSet<>(Comparator.comparingLong(Speaker::getId));
 
         for (Language language : Language.values()) {
-            speakerDuplicatesSet.addAll(getSpeakerDuplicatesByNameWithoutCompany(speakers, language));
+            speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicatesByNameWithoutCompany(speakers, language));
         }
 
-        if (!speakerDuplicatesSet.isEmpty()) {
-            log.error("{} speaker duplicates exist (add company to them): {}", speakerDuplicatesSet.size(), speakerDuplicatesSet);
+        if (!speakerDuplicates.isEmpty()) {
+            log.error("{} speaker duplicates exist (add company to them): {}", speakerDuplicates.size(), speakerDuplicates);
             return true;
         }
 
         for (Language language : Language.values()) {
-            speakerDuplicatesSet.addAll(getSpeakerDuplicatesByNameWithCompany(speakers, language));
+            speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicatesByNameWithCompany(speakers, language));
         }
 
-        if (!speakerDuplicatesSet.isEmpty()) {
-            log.error("{} speaker duplicates exist (change company in them): {}", speakerDuplicatesSet.size(), speakerDuplicatesSet);
+        if (!speakerDuplicates.isEmpty()) {
+            log.error("{} speaker duplicates exist (change company in them): {}", speakerDuplicates.size(), speakerDuplicates);
             return true;
         }
 
         return false;
-    }
-
-    /**
-     * Gets speaker duplicates by name without company.
-     *
-     * @param speakers speakers
-     * @param language language
-     * @return speaker duplicates
-     */
-    private static Set<Speaker> getSpeakerDuplicatesByNameWithoutCompany(List<Speaker> speakers, Language language) {
-        return speakers.stream()
-                .collect(Collectors.groupingBy(s -> LocalizationUtils.getString(s.getName(), language)))
-                .values().stream()
-                .filter(e -> e.size() > 1)  // Only duplicates
-                .flatMap(Collection::stream)
-                .filter(e -> {
-                    // Without company
-                    String company = LocalizationUtils.getString(e.getCompany(), language);
-                    return ((company == null) || company.isEmpty());
-                })
-                .collect(Collectors.toSet());
-    }
-
-    /**
-     * Gets speaker duplicates by name with company.
-     *
-     * @param speakers speakers
-     * @param language language
-     * @return speaker duplicates
-     */
-    private static Set<Speaker> getSpeakerDuplicatesByNameWithCompany(List<Speaker> speakers, Language language) {
-        return speakers.stream()
-                .collect(Collectors.groupingBy(s -> LocalizationUtils.getSpeakerNameWithCompany(s, language)))
-                .values().stream()
-                .filter(e -> e.size() > 1)  // Only duplicates
-                .flatMap(Collection::stream)
-                .collect(Collectors.toSet());
     }
 }

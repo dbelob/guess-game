@@ -4,10 +4,8 @@ import guess.domain.Language;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Speaker;
 
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Localization utility methods.
@@ -97,5 +95,56 @@ public class LocalizationUtils {
         return ((company != null) && !company.isEmpty()) ?
                 String.format("%s (%s)", name, company) :
                 name;
+    }
+
+    /**
+     * Gets speaker duplicates by name without company.
+     *
+     * @param speakers speakers
+     * @param language language
+     * @return speaker duplicates
+     */
+    public static Set<Speaker> getSpeakerDuplicatesByNameWithoutCompany(List<Speaker> speakers, Language language) {
+        return speakers.stream()
+                .collect(Collectors.groupingBy(s -> getString(s.getName(), language)))
+                .values().stream()
+                .filter(e -> e.size() > 1)  // Only duplicates
+                .flatMap(Collection::stream)
+                .filter(e -> {
+                    // Without company
+                    String company = getString(e.getCompany(), language);
+                    return ((company == null) || company.isEmpty());
+                })
+                .collect(Collectors.toSet());
+    }
+
+    /**
+     * Gets speaker duplicates by name with company.
+     *
+     * @param speakers speakers
+     * @param language language
+     * @return speaker duplicates
+     */
+    public static Set<Speaker> getSpeakerDuplicatesByNameWithCompany(List<Speaker> speakers, Language language) {
+        return speakers.stream()
+                .collect(Collectors.groupingBy(s -> getSpeakerNameWithCompany(s, language)))
+                .values().stream()
+                .filter(e -> e.size() > 1)  // Only duplicates
+                .flatMap(Collection::stream)
+                .collect(Collectors.toSet());
+    }
+
+    /**
+     * Gets speaker name.
+     *
+     * @param speaker     speaker
+     * @param language    language
+     * @param isDuplicate {@code true} for duplicate, {@code false} otherwise
+     * @return speaker name
+     */
+    public static String getSpeakerName(Speaker speaker, Language language, boolean isDuplicate) {
+        return isDuplicate ?
+                LocalizationUtils.getSpeakerNameWithCompany(speaker, language) :
+                LocalizationUtils.getString(speaker.getName(), language);
     }
 }
