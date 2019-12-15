@@ -3,9 +3,12 @@ package guess.dto.guess;
 import guess.domain.Language;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.SpeakerQuestion;
+import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Name, pictures DTO.
@@ -53,6 +56,20 @@ public class NamePicturesDto extends QuestionAnswersDto {
 
     public static NamePicturesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                                                QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
+        Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
+        Speaker answerSpeaker0 = ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker();
+        Speaker answerSpeaker1 = ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker();
+        Speaker answerSpeaker2 = ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker();
+        Speaker answerSpeaker3 = ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker();
+
+        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
+                Arrays.asList(answerSpeaker0, answerSpeaker1, answerSpeaker2, answerSpeaker3),
+                language,
+                s -> LocalizationUtils.getString(s.getName(), language),
+                s -> true);
+
+        String questionName = LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates);
+
         return new NamePicturesDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
                 questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
@@ -60,10 +77,10 @@ public class NamePicturesDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
-                LocalizationUtils.getString(((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getName(), language),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getFileName(),
-                ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getFileName());
+                questionName,
+                answerSpeaker0.getFileName(),
+                answerSpeaker1.getFileName(),
+                answerSpeaker2.getFileName(),
+                answerSpeaker3.getFileName());
     }
 }

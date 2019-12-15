@@ -67,10 +67,10 @@ public class PictureNamesDto extends QuestionAnswersDto {
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
 
-        String name0 = LocalizationUtils.getSpeakerName(speaker0, language, speakerDuplicates.contains(speaker0));
-        String name1 = LocalizationUtils.getSpeakerName(speaker1, language, speakerDuplicates.contains(speaker1));
-        String name2 = LocalizationUtils.getSpeakerName(speaker2, language, speakerDuplicates.contains(speaker2));
-        String name3 = LocalizationUtils.getSpeakerName(speaker3, language, speakerDuplicates.contains(speaker3));
+        String name0 = LocalizationUtils.getSpeakerName(speaker0, language, speakerDuplicates);
+        String name1 = LocalizationUtils.getSpeakerName(speaker1, language, speakerDuplicates);
+        String name2 = LocalizationUtils.getSpeakerName(speaker2, language, speakerDuplicates);
+        String name3 = LocalizationUtils.getSpeakerName(speaker3, language, speakerDuplicates);
 
         return new PictureNamesDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),

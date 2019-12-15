@@ -123,13 +123,13 @@ public class LocalizationUtils {
     /**
      * Gets speaker name.
      *
-     * @param speaker     speaker
-     * @param language    language
-     * @param isDuplicate {@code true} for duplicate, {@code false} otherwise
+     * @param speaker           speaker
+     * @param language          language
+     * @param speakerDuplicates speaker duplicates
      * @return speaker name
      */
-    public static String getSpeakerName(Speaker speaker, Language language, boolean isDuplicate) {
-        return isDuplicate ?
+    public static String getSpeakerName(Speaker speaker, Language language, Set<Speaker> speakerDuplicates) {
+        return speakerDuplicates.contains(speaker) ?
                 LocalizationUtils.getSpeakerNameWithCompany(speaker, language) :
                 LocalizationUtils.getString(speaker.getName(), language);
     }
