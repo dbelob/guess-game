@@ -3108,6 +3108,11 @@ speakers:
     name:
       - {language: en, text: "Alexey Kozyatinsky"}
       - {language: ru, text: "Алексей Козятинский"}
+  - id: 656
+    fileName: 0656.jpg
+    name:
+      - {language: en, text: "Dmitry Ignatiev"}
+      - {language: ru, text: "Дмитрий Игнатьев"}
   - id: 657
     fileName: 0657.jpg
     name:
@@ -5072,8 +5077,3 @@ speakers:
     fileName: 1071.jpg
     name:
       - {language: en, text: "Sebastiaan de With"}
-  - id: 1072
-    fileName: 1072.jpg
-    name:
-      - {language: en, text: "Dmitry Ignatiev"}
-      - {language: ru, text: "Дмитрий Игнатьев"}
