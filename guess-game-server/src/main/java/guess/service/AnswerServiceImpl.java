@@ -136,6 +136,7 @@ public class AnswerServiceImpl implements AnswerService {
                 if (!wrongAnswers.isEmpty()) {
                     errorDetailsList.add(new ErrorDetails(
                             questionAnswersList.get(i).getQuestion(),
+                            questionAnswersList.get(i).getAnswers(),
                             wrongAnswers));
                 }
             }

@@ -5,9 +5,12 @@ import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.ErrorPair;
 import guess.domain.question.TalkQuestion;
+import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -43,20 +46,36 @@ public class TalkErrorDetailsDto {
     }
 
     private static TalkErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType, Language language) {
+        List<Speaker> speakers = GuessType.GUESS_TALK_TYPE.equals(guessType) ?
+                errorDetails.getAllAnswers().stream()
+                        .map(q -> ((TalkQuestion) q).getTalk().getSpeakers())
+                        .flatMap(Collection::stream)
+                        .distinct()
+                        .collect(Collectors.toList()) :
+                errorDetails.getAllAnswers().stream()
+                        .map(q -> ((TalkQuestion) q).getSpeaker())
+                        .collect(Collectors.toList());
+
+        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
+                speakers,
+                language,
+                s -> LocalizationUtils.getString(s.getName(), language),
+                s -> true);
+
         if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
             List<ErrorPair> wrongAnswers = errorDetails.getWrongAnswers().stream()
-                    .map(q -> (GuessType.GUESS_TALK_TYPE.equals(guessType)) ?
+                    .map(q -> GuessType.GUESS_TALK_TYPE.equals(guessType) ?
                             new ErrorPair(
                                     LocalizationUtils.getString(((TalkQuestion) q).getTalk().getName(), language),
                                     null) :
                             new ErrorPair(
-                                    LocalizationUtils.getString(((TalkQuestion) q).getSpeaker().getName(), language),
+                                    LocalizationUtils.getSpeakerName(((TalkQuestion) q).getSpeaker(), language, speakerDuplicates),
                                     ((TalkQuestion) q).getSpeaker().getFileName()))
                     .collect(Collectors.toList());
 
             return new TalkErrorDetailsDto(
                     ((TalkQuestion) errorDetails.getQuestion()).getSpeaker().getFileName(),
-                    LocalizationUtils.getString(((TalkQuestion) errorDetails.getQuestion()).getSpeaker().getName(), language),
+                    LocalizationUtils.getSpeakerName(((TalkQuestion) errorDetails.getQuestion()).getSpeaker(), language, speakerDuplicates),
                     LocalizationUtils.getString(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName(), language),
                     wrongAnswers);
         } else {
