@@ -165,6 +165,6 @@ events:
       - {language: en, text: "Novosibirsk"}
       - {language: ru, text: "Новосибирск"}
     place:
-      - {language: en, text: "KROK"}
+      - {language: en, text: "Точка кипения"}
       - {language: ru, text: "Boiling Point"}
     talkIds: []
