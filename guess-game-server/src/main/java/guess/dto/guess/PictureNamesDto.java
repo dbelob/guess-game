@@ -3,9 +3,12 @@ package guess.dto.guess;
 import guess.domain.Language;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.SpeakerQuestion;
+import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Picture, names DTO.
@@ -53,6 +56,22 @@ public class PictureNamesDto extends QuestionAnswersDto {
 
     public static PictureNamesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                                                QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
+        Speaker speaker0 = ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker();
+        Speaker speaker1 = ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker();
+        Speaker speaker2 = ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker();
+        Speaker speaker3 = ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker();
+
+        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
+                Arrays.asList(speaker0, speaker1, speaker2, speaker3),
+                language,
+                s -> LocalizationUtils.getString(s.getName(), language),
+                s -> true);
+
+        String name0 = LocalizationUtils.getSpeakerName(speaker0, language, speakerDuplicates);
+        String name1 = LocalizationUtils.getSpeakerName(speaker1, language, speakerDuplicates);
+        String name2 = LocalizationUtils.getSpeakerName(speaker2, language, speakerDuplicates);
+        String name3 = LocalizationUtils.getSpeakerName(speaker3, language, speakerDuplicates);
+
         return new PictureNamesDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
                 questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
@@ -61,9 +80,6 @@ public class PictureNamesDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
                 wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
                 ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getFileName(),
-                LocalizationUtils.getName(((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker().getName(), language),
-                LocalizationUtils.getName(((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker().getName(), language),
-                LocalizationUtils.getName(((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker().getName(), language),
-                LocalizationUtils.getName(((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker().getName(), language));
+                name0, name1, name2, name3);
     }
 }

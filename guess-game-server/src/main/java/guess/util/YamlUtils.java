@@ -1,9 +1,13 @@
 package guess.util;
 
+import guess.dao.exception.SpeakerDuplicatedException;
+import guess.domain.Language;
 import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.yaml.snakeyaml.Yaml;
@@ -14,10 +18,7 @@ import org.yaml.snakeyaml.nodes.ScalarNode;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -25,7 +26,7 @@ import java.util.stream.Collectors;
  * Constructor with LocalDate support.
  */
 class LocalDateYamlConstructor extends Constructor {
-    LocalDateYamlConstructor(Class<? extends Object> theRoot) {
+    LocalDateYamlConstructor(Class<?> theRoot) {
         super(theRoot);
 
         this.yamlClassConstructors.put(NodeId.scalar, new LocalDateConstructor());
@@ -46,6 +47,7 @@ class LocalDateYamlConstructor extends Constructor {
  * YAML utility methods.
  */
 public class YamlUtils {
+    private static final Logger log = LoggerFactory.getLogger(YamlUtils.class);
 
     /**
      * Reads question sets from resource files.
@@ -54,7 +56,7 @@ public class YamlUtils {
      * @return question sets
      * @throws IOException if an I/O error occurs
      */
-    public static List<QuestionSet> readQuestionSets(String descriptionsDirectoryName) throws IOException {
+    public static List<QuestionSet> readQuestionSets(String descriptionsDirectoryName) throws IOException, SpeakerDuplicatedException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", descriptionsDirectoryName));
         Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", descriptionsDirectoryName));
@@ -77,6 +79,11 @@ public class YamlUtils {
         Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
 
         Events events = eventsYaml.load(eventsResource.getInputStream());
+
+        // Find duplicates for speaker names and for speaker names with company name
+        if (findSpeakerDuplicates(speakers.getSpeakers())) {
+            throw new SpeakerDuplicatedException();
+        }
 
         // Link entities
         linkSpeakersToTalks(speakerMap, talks.getTalks());
@@ -214,5 +221,47 @@ public class YamlUtils {
             throw new IllegalStateException("Entities with duplicate ids found");
         }
         return map;
+    }
+
+    /**
+     * Finds speaker duplicates.
+     *
+     * @param speakers speakers
+     * @return {@code true} if duplicates found, {@code false} otherwise
+     */
+    private static boolean findSpeakerDuplicates(List<Speaker> speakers) {
+        Set<Speaker> speakerDuplicates = new TreeSet<>(Comparator.comparingLong(Speaker::getId));
+
+        for (Language language : Language.values()) {
+            speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
+                    speakers,
+                    language,
+                    s -> LocalizationUtils.getString(s.getName(), language),
+                    s -> {
+                        // Without company
+                        String company = LocalizationUtils.getString(s.getCompany(), language);
+                        return ((company == null) || company.isEmpty());
+                    }));
+        }
+
+        if (!speakerDuplicates.isEmpty()) {
+            log.error("{} speaker duplicates exist (add company to them): {}", speakerDuplicates.size(), speakerDuplicates);
+            return true;
+        }
+
+        for (Language language : Language.values()) {
+            speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
+                    speakers,
+                    language,
+                    s -> LocalizationUtils.getSpeakerNameWithCompany(s, language),
+                    s -> true));
+        }
+
+        if (!speakerDuplicates.isEmpty()) {
+            log.error("{} speaker duplicates exist (change company in them): {}", speakerDuplicates.size(), speakerDuplicates);
+            return true;
+        }
+
+        return false;
     }
 }

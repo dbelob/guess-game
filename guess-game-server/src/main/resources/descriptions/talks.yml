@@ -1238,7 +1238,7 @@ talks:
     name:
       - {language: en, text: "Screen state modeling"}
       - {language: ru, text: "Моделирование состояний экранов"}
-    speakerIds: [1072]
+    speakerIds: [656]
   - id: 278
     name:
       - {language: en, text: "UI Automator deep diving"}

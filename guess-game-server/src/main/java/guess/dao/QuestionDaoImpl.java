@@ -1,6 +1,7 @@
 package guess.dao;
 
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.GuessType;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionSet;
@@ -29,7 +30,7 @@ public class QuestionDaoImpl implements QuestionDao {
     private final List<QuestionSet> questionSets;
     private final List<Event> events;
 
-    public QuestionDaoImpl() throws IOException {
+    public QuestionDaoImpl() throws IOException, SpeakerDuplicatedException {
         this.questionSets = YamlUtils.readQuestionSets(DESCRIPTIONS_DIRECTORY_NAME);
         this.events = YamlUtils.readEvents(DESCRIPTIONS_DIRECTORY_NAME).stream()
                 .filter(e -> (e.getStartDate() != null) && (e.getEndDate() != null) && !e.getStartDate().isAfter(e.getEndDate()))

@@ -96,8 +96,11 @@ speakers:
   - id: 19
     fileName: 0019.jpg
     name:
-      - {language: en, text: "Ivan Ponomarev (KURS)"}
-      - {language: ru, text: "Иван Пономарёв (КУРС)"}
+      - {language: en, text: "Ivan Ponomarev"}
+      - {language: ru, text: "Иван Пономарёв"}
+    company:
+      - {language: en, text: "KURS"}
+      - {language: ru, text: "КУРС"}
   - id: 20
     fileName: 0020.jpg
     name:
@@ -603,8 +606,10 @@ speakers:
   - id: 130
     fileName: 0130.jpg
     name:
-      - {language: en, text: "Alexander Borisov (Google)"}
-      - {language: ru, text: "Александр Борисов (Google)"}
+      - {language: en, text: "Alexander Borisov"}
+      - {language: ru, text: "Александр Борисов"}
+    company:
+      - {language: en, text: "Google"}
   - id: 131
     fileName: 0131.jpg
     name:
@@ -631,8 +636,10 @@ speakers:
   - id: 136
     fileName: 0136.jpg
     name:
-      - {language: en, text: "Vladimir Ozerov (Hazelcast)"}
-      - {language: ru, text: "Владимир Озеров (Hazelcast)"}
+      - {language: en, text: "Vladimir Ozerov"}
+      - {language: ru, text: "Владимир Озеров"}
+    company:
+      - {language: en, text: "Hazelcast"}
   - id: 137
     fileName: 0137.jpg
     name:
@@ -669,8 +676,10 @@ speakers:
   - id: 144
     fileName: 0144.jpg
     name:
-      - {language: en, text: "Vladimir Ivanov (Oracle)"}
-      - {language: ru, text: "Владимир Иванов (Oracle)"}
+      - {language: en, text: "Vladimir Ivanov"}
+      - {language: ru, text: "Владимир Иванов"}
+    company:
+      - {language: en, text: "Oracle"}
   - id: 145
     fileName: 0145.jpg
     name:
@@ -809,8 +818,11 @@ speakers:
   - id: 174
     fileName: 0174.jpg
     name:
-      - {language: en, text: "Alexander Borisov (SberTech)"}
-      - {language: ru, text: "Александр Борисов (СберТех)"}
+      - {language: en, text: "Alexander Borisov"}
+      - {language: ru, text: "Александр Борисов"}
+    company:
+      - {language: en, text: "Sberbank-Technology"}
+      - {language: ru, text: "Сбербанк-Технологии"}
   - id: 175
     fileName: 0175.jpg
     name:
@@ -866,8 +878,10 @@ speakers:
   - id: 186
     fileName: 0186.jpg
     name:
-      - {language: en, text: "Andrey Zaytsev (JetBrains)"}
-      - {language: ru, text: "Андрей Зайцев (JetBrains)"}
+      - {language: en, text: "Andrey Zaytsev"}
+      - {language: ru, text: "Андрей Зайцев"}
+    company:
+      - {language: en, text: "JetBrains"}
   - id: 187
     fileName: 0187.jpg
     name:
@@ -1250,8 +1264,10 @@ speakers:
   - id: 266
     fileName: 0266.jpg
     name:
-      - {language: en, text: "Pavel Malyshev (Solanteq)"}
-      - {language: ru, text: "Павел Малышев (Solanteq)"}
+      - {language: en, text: "Pavel Malyshev"}
+      - {language: ru, text: "Павел Малышев"}
+    company:
+      - {language: en, text: "Solanteq"}
   - id: 267
     fileName: 0267.jpg
     name:
@@ -1628,8 +1644,10 @@ speakers:
   - id: 344
     fileName: 0344.jpg
     name:
-      - {language: en, text: "Andrey Karpov (PVS-Studio)"}
-      - {language: ru, text: "Андрей Карпов (PVS-Studio)"}
+      - {language: en, text: "Andrey Karpov"}
+      - {language: ru, text: "Андрей Карпов"}
+    company:
+      - {language: en, text: "PVS-Studio"}
   - id: 345
     fileName: 0345.jpg
     name:
@@ -1658,13 +1676,18 @@ speakers:
   - id: 350
     fileName: 0350.jpg
     name:
-      - {language: en, text: "Sergey Fedorov (Yandex.Taxi)"}
-      - {language: ru, text: "Сергей Федоров (Yandex.Taxi)"}
+      - {language: en, text: "Sergey Fedorov"}
+      - {language: ru, text: "Сергей Федоров"}
+    company:
+      - {language: en, text: "Yandex.Taxi"}
+      - {language: ru, text: "Яндекс.Такси"}
   - id: 351
     fileName: 0351.jpg
     name:
-      - {language: en, text: "Pavel Novikov (Align Technologies)"}
-      - {language: ru, text: "Павел Новиков (Align Technologies)"}
+      - {language: en, text: "Pavel Novikov"}
+      - {language: ru, text: "Павел Новиков"}
+    company:
+      - {language: en, text: "Align Technologies"}
   - id: 352
     fileName: 0352.jpg
     name:
@@ -1687,8 +1710,10 @@ speakers:
   - id: 356
     fileName: 0356.jpg
     name:
-      - {language: en, text: "Alexander Titov (Intel)"}
-      - {language: ru, text: "Александр Титов (Intel)"}
+      - {language: en, text: "Alexander Titov"}
+      - {language: ru, text: "Александр Титов"}
+    company:
+      - {language: en, text: "Intel"}
   - id: 357
     fileName: 0357.jpg
     name:
@@ -1723,8 +1748,10 @@ speakers:
   - id: 364
     fileName: 0364.jpg
     name:
-      - {language: en, text: "Alexander Titov (Express 42)"}
-      - {language: ru, text: "Александр Титов (Express 42)"}
+      - {language: en, text: "Alexander Titov"}
+      - {language: ru, text: "Александр Титов"}
+    company:
+      - {language: en, text: "Express 42"}
   - id: 365
     fileName: 0365.jpg
     name:
@@ -1996,8 +2023,10 @@ speakers:
   - id: 425
     fileName: 0425.jpg
     name:
-      - {language: en, text: "Andrey Karpov (JetBrains)"}
-      - {language: ru, text: "Андрей Карпов (JetBrains)"}
+      - {language: en, text: "Andrey Karpov"}
+      - {language: ru, text: "Андрей Карпов"}
+    company:
+      - {language: en, text: "JetBrains"}
   - id: 427
     fileName: 0427.jpg
     name:
@@ -2149,8 +2178,10 @@ speakers:
   - id: 460
     fileName: 0460.jpg
     name:
-      - {language: en, text: "Alexander Ivanov (Arcadia)"}
-      - {language: ru, text: "Александр Иванов (Arcadia)"}
+      - {language: en, text: "Alexander Ivanov"}
+      - {language: ru, text: "Александр Иванов"}
+    company:
+      - {language: en, text: "Arcadia"}
   - id: 461
     fileName: 0461.jpg
     name:
@@ -2174,8 +2205,10 @@ speakers:
   - id: 465
     fileName: 0465.jpg
     name:
-      - {language: en, text: "Dmitry Ivanov (JetBrains)"}
-      - {language: ru, text: "Дмитрий Иванов (JetBrains)"}
+      - {language: en, text: "Dmitry Ivanov"}
+      - {language: ru, text: "Дмитрий Иванов"}
+    company:
+      - {language: en, text: "JetBrains"}
   - id: 466
     fileName: 0466.jpg
     name:
@@ -2400,8 +2433,10 @@ speakers:
   - id: 513
     fileName: 0513.jpg
     name:
-      - {language: en, text: "Alexander Ivanov (EPAM)"}
-      - {language: ru, text: "Александр Иванов (EPAM)"}
+      - {language: en, text: "Alexander Ivanov"}
+      - {language: ru, text: "Александр Иванов"}
+    company:
+      - {language: en, text: "EPAM"}
   - id: 514
     fileName: 0514.jpg
     name:
@@ -3037,8 +3072,10 @@ speakers:
   - id: 648
     fileName: 0648.jpg
     name:
-      - {language: en, text: "Andrey Smirnov (DINO Systems)"}
-      - {language: ru, text: "Андрей Смирнов (DINO Systems)"}
+      - {language: en, text: "Andrey Smirnov"}
+      - {language: ru, text: "Андрей Смирнов"}
+    company:
+      - {language: en, text: "DINO Systems"}
   - id: 649
     fileName: 0649.jpg
     name:
@@ -3074,8 +3111,8 @@ speakers:
   - id: 656
     fileName: 0656.jpg
     name:
-      - {language: en, text: "Illya Klymov"}
-      - {language: ru, text: "Илья Климов"}
+      - {language: en, text: "Dmitry Ignatiev"}
+      - {language: ru, text: "Дмитрий Игнатьев"}
   - id: 657
     fileName: 0657.jpg
     name:
@@ -3096,8 +3133,10 @@ speakers:
   - id: 661
     fileName: 0661.jpg
     name:
-      - {language: en, text: "Pavel Malyshev (Mustlab)"}
-      - {language: ru, text: "Павел Малышев (Mustlab)"}
+      - {language: en, text: "Pavel Malyshev"}
+      - {language: ru, text: "Павел Малышев"}
+    company:
+      - {language: en, text: "Mustlab"}
   - id: 662
     fileName: 0662.jpg
     name:
@@ -3724,8 +3763,10 @@ speakers:
   - id: 796
     fileName: 0796.jpg
     name:
-      - {language: en, text: "Dmitry Ivanov (ING)"}
-      - {language: ru, text: "Дмитрий Иванов (ING)"}
+      - {language: en, text: "Dmitry Ivanov"}
+      - {language: ru, text: "Дмитрий Иванов"}
+    company:
+      - {language: en, text: "ING"}
   - id: 797
     fileName: 0797.jpg
     name:
@@ -3989,8 +4030,10 @@ speakers:
   - id: 852
     fileName: 0852.jpg
     name:
-      - {language: en, text: "Vladimir Ivanov (EPAM)"}
-      - {language: ru, text: "Владимир Иванов (EPAM)"}
+      - {language: en, text: "Vladimir Ivanov"}
+      - {language: ru, text: "Владимир Иванов"}
+    company:
+      - {language: en, text: "EPAM"}
   - id: 853
     fileName: 0853.jpg
     name:
@@ -4041,8 +4084,10 @@ speakers:
   - id: 863
     fileName: 0863.jpg
     name:
-      - {language: en, text: "Ivan Ponomarev (Akvelon)"}
-      - {language: ru, text: "Иван Пономарёв (Akvelon)"}
+      - {language: en, text: "Ivan Ponomarev"}
+      - {language: ru, text: "Иван Пономарёв"}
+    company:
+      - {language: en, text: "Akvelon"}
   - id: 864
     fileName: 0864.jpg
     name:
@@ -4468,8 +4513,10 @@ speakers:
   - id: 950
     fileName: 0950.jpg
     name:
-      - {language: en, text: "Andrey Zaytsev (DotNetRu)"}
-      - {language: ru, text: "Андрей Зайцев (DotNetRu)"}
+      - {language: en, text: "Andrey Zaytsev"}
+      - {language: ru, text: "Андрей Зайцев"}
+    company:
+      - {language: en, text: "DotNetRu"}
   - id: 951
     fileName: 0951.jpg
     name:
@@ -4584,8 +4631,10 @@ speakers:
   - id: 976
     fileName: 0976.jpg
     name:
-      - {language: en, text: "Sergey Fedorov (Netflix)"}
-      - {language: ru, text: "Сергей Фёдоров (Netflix)"}
+      - {language: en, text: "Sergey Fedorov"}
+      - {language: ru, text: "Сергей Фёдоров"}
+    company:
+      - {language: en, text: "Netflix"}
   - id: 977
     fileName: 0977.jpg
     name:
@@ -4823,8 +4872,10 @@ speakers:
   - id: 1029
     fileName: 1029.jpg
     name:
-      - {language: en, text: "Andrew Smirnov (IPONWEB)"}
-      - {language: ru, text: "Андрей Смирнов (IPONWEB)"}
+      - {language: en, text: "Andrew Smirnov"}
+      - {language: ru, text: "Андрей Смирнов"}
+    company:
+      - {language: en, text: "IPONWEB"}
   - id: 1030
     fileName: 1030.jpg
     name:
@@ -4985,13 +5036,19 @@ speakers:
   - id: 1064
     fileName: 1064.jpg
     name:
-      - {language: en, text: "Vladimir Ozerov (Sberbank)"}
-      - {language: ru, text: "Владимир Озеров (Сбербанк)"}
+      - {language: en, text: "Vladimir Ozerov"}
+      - {language: ru, text: "Владимир Озеров"}
+    company:
+      - {language: en, text: "Sberbank"}
+      - {language: ru, text: "Сбербанк"}
   - id: 1065
     fileName: 1065.jpg
     name:
-      - {language: en, text: "Pavel Novikov (MyOffice)"}
-      - {language: ru, text: "Павел Новиков (МойОфис)"}
+      - {language: en, text: "Pavel Novikov"}
+      - {language: ru, text: "Павел Новиков"}
+    company:
+      - {language: en, text: "MyOffice"}
+      - {language: ru, text: "МойОфис"}
   - id: 1066
     fileName: 1066.jpg
     name:
@@ -5020,8 +5077,3 @@ speakers:
     fileName: 1071.jpg
     name:
       - {language: en, text: "Sebastiaan de With"}
-  - id: 1072
-    fileName: 1072.jpg
-    name:
-      - {language: en, text: "Dmitry Ignatiev"}
-      - {language: ru, text: "Дмитрий Игнатьев"}

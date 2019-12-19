@@ -41,7 +41,7 @@ public class QuestionController {
         List<QuestionSet> questionSets = questionService.getQuestionSets();
         Language language = localeService.getLanguage(httpSession);
 
-        questionSets.sort(Comparator.comparing(o -> LocalizationUtils.getName(o.getName(), language)));
+        questionSets.sort(Comparator.comparing(o -> LocalizationUtils.getString(o.getName(), language)));
 
         return QuestionSetDto.convertToDto(questionSets, language);
     }
