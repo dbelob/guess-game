@@ -11,34 +11,33 @@ import java.util.List;
  * Question about talk.
  */
 public class TalkQuestion extends Question {
-    private Speaker speaker;
+    private Speaker speaker;            //TODO: delete
+    private List<Speaker> speakers;
     private Talk talk;
 
-    public TalkQuestion(Speaker speaker, Talk talk) {
+    public TalkQuestion(List<Speaker> speakers, Talk talk) {
         super(talk.getId());
 
-        this.speaker = speaker;
+        this.speaker = speakers.get(0); //TODO: delete
+        this.speakers = speakers;
         this.talk = talk;
     }
 
+    //TODO: delete
     public Speaker getSpeaker() {
         return speaker;
     }
 
-    public void setSpeaker(Speaker speaker) {
-        this.speaker = speaker;
+    public List<Speaker> getSpeakers() {
+        return speakers;
     }
 
     public Talk getTalk() {
         return talk;
     }
 
-    public void setTalk(Talk talk) {
-        this.talk = talk;
-    }
-
     @Override
-    public boolean isSame(Question question) {
+    public boolean isSimilar(Question question) {
         TalkQuestion talkQuestion = (TalkQuestion) question;
 
         for (Speaker questionTalkSpeaker : talkQuestion.getTalk().getSpeakers()) {
@@ -59,7 +58,7 @@ public class TalkQuestion extends Question {
             Collections.shuffle(shuffledSpeakers);
 
             return new TalkQuestion(
-                    shuffledSpeakers.get(0),
+                    shuffledSpeakers,
                     talk);
         } else {
             // Dont't change question

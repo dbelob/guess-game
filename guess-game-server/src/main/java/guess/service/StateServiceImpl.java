@@ -8,11 +8,9 @@ import guess.domain.GuessType;
 import guess.domain.Language;
 import guess.domain.StartParameters;
 import guess.domain.State;
-import guess.domain.question.Question;
-import guess.domain.question.QuestionAnswers;
-import guess.domain.question.QuestionAnswersSet;
-import guess.domain.question.QuestionSet;
+import guess.domain.question.*;
 import guess.domain.source.LocaleItem;
+import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * State service implementation.
@@ -80,7 +79,8 @@ public class StateServiceImpl implements StateService {
         List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds(), startParameters.getGuessType());
 
         // Fill question and answers list
-        List<QuestionAnswers> questionAnswersList = new ArrayList<>();
+        List<QuestionAnswers> questionAnswersList = new ArrayList<>();      //TODO: delete
+        List<QuestionAnswers2> questionAnswersList2 = new ArrayList<>();
         if (uniqueQuestions.size() >= QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE) {
             // Shuffle questions
             List<Question> shuffledQuestions = new ArrayList<>(uniqueQuestions);
@@ -93,24 +93,25 @@ public class StateServiceImpl implements StateService {
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                List<Question> shuffledQuestionsWithoutCurrentAndSameQuestions = new ArrayList<>(shuffledQuestions);
+                List<Question> shuffledQuestionsWithoutCurrentAndSimilarQuestions = new ArrayList<>(shuffledQuestions);
 
                 // Remove current and same questions
-                shuffledQuestionsWithoutCurrentAndSameQuestions.remove(question);
-                shuffledQuestionsWithoutCurrentAndSameQuestions.removeIf(q -> q.isSame(question));
+                shuffledQuestionsWithoutCurrentAndSimilarQuestions.remove(question);
+                shuffledQuestionsWithoutCurrentAndSimilarQuestions.removeIf(q -> q.isSimilar(question));
 
-                Collections.shuffle(shuffledQuestionsWithoutCurrentAndSameQuestions);
+                Collections.shuffle(shuffledQuestionsWithoutCurrentAndSimilarQuestions);
 
                 Question transformedQuestion = question.transform();
 
                 // Select (QUESTION_ANSWERS_LIST_SIZE - 1) first elements, add current, shuffle
-                List<Question> answers = shuffledQuestionsWithoutCurrentAndSameQuestions.subList(
+                List<Question> answers = shuffledQuestionsWithoutCurrentAndSimilarQuestions.subList(
                         0,
-                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, shuffledQuestionsWithoutCurrentAndSameQuestions.size()));
+                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, shuffledQuestionsWithoutCurrentAndSimilarQuestions.size()));
                 answers.add(transformedQuestion);
                 Collections.shuffle(answers);
 
-                questionAnswersList.add(new QuestionAnswers(transformedQuestion, answers));
+                questionAnswersList.add(new QuestionAnswers(transformedQuestion, answers)); //TODO: delete
+                questionAnswersList2.add(createQuestionAnswers2(transformedQuestion, answers, startParameters.getGuessType()));
             }
         }
 
@@ -136,5 +137,36 @@ public class StateServiceImpl implements StateService {
         }
 
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
+    }
+
+    private QuestionAnswers2 createQuestionAnswers2(Question question, List<Question> availableAnswers, GuessType guessType) {
+        switch (guessType) {
+            case GUESS_NAME_TYPE:
+            case GUESS_PICTURE_TYPE:
+                Speaker speaker = ((SpeakerQuestion) question).getSpeaker();
+
+                return new QuestionAnswers2<>(
+                        speaker,
+                        Collections.singletonList(speaker),
+                        availableAnswers.stream()
+                                .map(q -> ((SpeakerQuestion) q).getSpeaker())
+                                .collect(Collectors.toList()));
+            case GUESS_TALK_TYPE:
+                return new QuestionAnswers2<>(
+                        ((TalkQuestion) question).getSpeakers().get(0),
+                        Collections.singletonList(((TalkQuestion) question).getTalk()),
+                        availableAnswers.stream()
+                                .map(q -> ((TalkQuestion) q).getTalk())
+                                .collect(Collectors.toList()));
+            case GUESS_SPEAKER_TYPE:
+                return new QuestionAnswers2<>(
+                        ((TalkQuestion) question).getTalk(),
+                        ((TalkQuestion) question).getSpeakers(),
+                        availableAnswers.stream()
+                                .map(q -> ((TalkQuestion) q).getSpeakers().get(0))      //TODO: is it right?
+                                .collect(Collectors.toList()));
+            default:
+                throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
+        }
     }
 }

@@ -33,7 +33,7 @@ public abstract class Question {
         return (int) (id ^ (id >>> 32));
     }
 
-    public abstract boolean isSame(Question question);
+    public abstract boolean isSimilar(Question question);
 
     public abstract Question transform();
 }

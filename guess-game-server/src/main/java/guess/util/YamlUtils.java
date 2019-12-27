@@ -104,7 +104,7 @@ public class YamlUtils {
                     }
 
                     talkQuestions.add(new TalkQuestion(
-                            talk.getSpeakers().get(0),
+                            talk.getSpeakers(),
                             talk));
                 }
             }

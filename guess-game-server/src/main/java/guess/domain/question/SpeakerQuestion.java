@@ -23,7 +23,7 @@ public class SpeakerQuestion extends Question {
     }
 
     @Override
-    public boolean isSame(Question question) {
+    public boolean isSimilar(Question question) {
         return (question.getId() == getId());
     }
 
