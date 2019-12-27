@@ -1,8 +1,7 @@
 package guess.dto.guess;
 
 import guess.domain.Language;
-import guess.domain.question.QuestionAnswers;
-import guess.domain.question.SpeakerQuestion;
+import guess.domain.question.QuestionAnswers2;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
@@ -55,11 +54,11 @@ public class PictureNamesDto extends QuestionAnswersDto {
     }
 
     public static PictureNamesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
-        Speaker speaker0 = ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker();
-        Speaker speaker1 = ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker();
-        Speaker speaker2 = ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker();
-        Speaker speaker3 = ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker();
+                                               QuestionAnswers2<Speaker, Speaker> questionAnswers, List<Long> wrongAnswerIds, Language language) {
+        Speaker speaker0 = questionAnswers.getAvailableAnswers().get(0);
+        Speaker speaker1 = questionAnswers.getAvailableAnswers().get(1);
+        Speaker speaker2 = questionAnswers.getAvailableAnswers().get(2);
+        Speaker speaker3 = questionAnswers.getAvailableAnswers().get(3);
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 Arrays.asList(speaker0, speaker1, speaker2, speaker3),
@@ -73,13 +72,12 @@ public class PictureNamesDto extends QuestionAnswersDto {
         String name3 = LocalizationUtils.getSpeakerName(speaker3, language, speakerDuplicates);
 
         return new PictureNamesDto(questionSetName, currentIndex, totalNumber, logoFileName,
-                questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
-                questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(0).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
-                ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getFileName(),
+                speaker0.getId(), speaker1.getId(), speaker2.getId(), speaker3.getId(),
+                wrongAnswerIds.contains(speaker0.getId()),
+                wrongAnswerIds.contains(speaker1.getId()),
+                wrongAnswerIds.contains(speaker2.getId()),
+                wrongAnswerIds.contains(speaker3.getId()),
+                questionAnswers.getQuestion().getFileName(),
                 name0, name1, name2, name3);
     }
 }

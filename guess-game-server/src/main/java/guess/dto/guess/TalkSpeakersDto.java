@@ -1,9 +1,9 @@
 package guess.dto.guess;
 
 import guess.domain.Language;
-import guess.domain.question.QuestionAnswers;
-import guess.domain.question.TalkQuestion;
+import guess.domain.question.QuestionAnswers2;
 import guess.domain.source.Speaker;
+import guess.domain.source.Talk;
 import guess.util.LocalizationUtils;
 
 import java.util.Arrays;
@@ -81,11 +81,11 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
     }
 
     public static TalkSpeakersDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
-        Speaker speaker0 = ((TalkQuestion) questionAnswers.getAnswers().get(0)).getSpeaker();
-        Speaker speaker1 = ((TalkQuestion) questionAnswers.getAnswers().get(1)).getSpeaker();
-        Speaker speaker2 = ((TalkQuestion) questionAnswers.getAnswers().get(2)).getSpeaker();
-        Speaker speaker3 = ((TalkQuestion) questionAnswers.getAnswers().get(3)).getSpeaker();
+                                               QuestionAnswers2<Talk, Speaker> questionAnswers, List<Long> wrongAnswerIds, Language language) {
+        Speaker speaker0 = questionAnswers.getAvailableAnswers().get(0);
+        Speaker speaker1 = questionAnswers.getAvailableAnswers().get(1);
+        Speaker speaker2 = questionAnswers.getAvailableAnswers().get(2);
+        Speaker speaker3 = questionAnswers.getAvailableAnswers().get(3);
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 Arrays.asList(speaker0, speaker1, speaker2, speaker3),
@@ -99,13 +99,12 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
         String name3 = LocalizationUtils.getSpeakerName(speaker3, language, speakerDuplicates);
 
         return new TalkSpeakersDto(questionSetName, currentIndex, totalNumber, logoFileName,
-                questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
-                questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(0).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
-                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language),
+                speaker0.getId(), speaker1.getId(), speaker2.getId(), speaker3.getId(),
+                wrongAnswerIds.contains(speaker0.getId()),
+                wrongAnswerIds.contains(speaker1.getId()),
+                wrongAnswerIds.contains(speaker2.getId()),
+                wrongAnswerIds.contains(speaker3.getId()),
+                LocalizationUtils.getString(questionAnswers.getQuestion().getName(), language),
                 speaker0.getFileName(),
                 name0,
                 speaker1.getFileName(),

@@ -4,6 +4,7 @@ import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.Language;
 import guess.domain.State;
 import guess.domain.question.QuestionAnswers;
+import guess.domain.question.QuestionAnswers2;
 import guess.domain.question.QuestionAnswersSet;
 import guess.dto.guess.*;
 import guess.dto.start.StartParametersDto;
@@ -54,13 +55,14 @@ public class StateController {
         stateService.setState(State.valueOf(state), httpSession);
     }
 
-    private <T> T getDto(HttpSession httpSession, DtoFunction<T> dtoFunction) {
+    private <T, S, U> T getDto(HttpSession httpSession, DtoFunction<T, S, U> dtoFunction) {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
         List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
 
-        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
-            QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
+        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList2().size())) {
+            QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);    //TODO: delete
+            QuestionAnswers2<S, U> questionAnswers2 = questionAnswersSet.getQuestionAnswersList2().get(currentQuestionIndex);
             Language language = localeService.getLanguage(httpSession);
 
             return dtoFunction.apply(
@@ -68,7 +70,7 @@ public class StateController {
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),
-                    questionAnswers,
+                    questionAnswers2,
                     wrongAnswerIds,
                     language);
         } else {

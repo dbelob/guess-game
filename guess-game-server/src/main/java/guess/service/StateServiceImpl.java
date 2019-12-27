@@ -136,7 +136,7 @@ public class StateServiceImpl implements StateService {
             logoFileName = null;
         }
 
-        return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
+        return new QuestionAnswersSet(name, logoFileName, questionAnswersList, questionAnswersList2);
     }
 
     private QuestionAnswers2 createQuestionAnswers2(Question question, List<Question> availableAnswers, GuessType guessType) {

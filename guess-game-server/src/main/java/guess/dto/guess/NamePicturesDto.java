@@ -1,8 +1,7 @@
 package guess.dto.guess;
 
 import guess.domain.Language;
-import guess.domain.question.QuestionAnswers;
-import guess.domain.question.SpeakerQuestion;
+import guess.domain.question.QuestionAnswers2;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
@@ -55,12 +54,12 @@ public class NamePicturesDto extends QuestionAnswersDto {
     }
 
     public static NamePicturesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
-        Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
-        Speaker answerSpeaker0 = ((SpeakerQuestion) questionAnswers.getAnswers().get(0)).getSpeaker();
-        Speaker answerSpeaker1 = ((SpeakerQuestion) questionAnswers.getAnswers().get(1)).getSpeaker();
-        Speaker answerSpeaker2 = ((SpeakerQuestion) questionAnswers.getAnswers().get(2)).getSpeaker();
-        Speaker answerSpeaker3 = ((SpeakerQuestion) questionAnswers.getAnswers().get(3)).getSpeaker();
+                                               QuestionAnswers2<Speaker, Speaker> questionAnswers, List<Long> wrongAnswerIds, Language language) {
+        Speaker questionSpeaker = questionAnswers.getQuestion();
+        Speaker answerSpeaker0 = questionAnswers.getAvailableAnswers().get(0);
+        Speaker answerSpeaker1 = questionAnswers.getAvailableAnswers().get(1);
+        Speaker answerSpeaker2 = questionAnswers.getAvailableAnswers().get(2);
+        Speaker answerSpeaker3 = questionAnswers.getAvailableAnswers().get(3);
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 Arrays.asList(answerSpeaker0, answerSpeaker1, answerSpeaker2, answerSpeaker3),
@@ -71,12 +70,11 @@ public class NamePicturesDto extends QuestionAnswersDto {
         String questionName = LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates);
 
         return new NamePicturesDto(questionSetName, currentIndex, totalNumber, logoFileName,
-                questionAnswers.getAnswers().get(0).getId(), questionAnswers.getAnswers().get(1).getId(),
-                questionAnswers.getAnswers().get(2).getId(), questionAnswers.getAnswers().get(3).getId(),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(0).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(1).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(2).getId()),
-                wrongAnswerIds.contains(questionAnswers.getAnswers().get(3).getId()),
+                answerSpeaker0.getId(), answerSpeaker1.getId(), answerSpeaker2.getId(), answerSpeaker3.getId(),
+                wrongAnswerIds.contains(answerSpeaker0.getId()),
+                wrongAnswerIds.contains(answerSpeaker1.getId()),
+                wrongAnswerIds.contains(answerSpeaker2.getId()),
+                wrongAnswerIds.contains(answerSpeaker3.getId()),
                 questionName,
                 answerSpeaker0.getFileName(),
                 answerSpeaker1.getFileName(),
