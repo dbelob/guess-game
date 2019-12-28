@@ -55,22 +55,22 @@ public class StateController {
         stateService.setState(State.valueOf(state), httpSession);
     }
 
+    @SuppressWarnings("unchecked")
     private <T, S, U> T getDto(HttpSession httpSession, DtoFunction<T, S, U> dtoFunction) {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
         List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList2().size())) {
-            QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);    //TODO: delete
-            QuestionAnswers2<S, U> questionAnswers2 = questionAnswersSet.getQuestionAnswersList2().get(currentQuestionIndex);
+            QuestionAnswers2<S, U> questionAnswers = questionAnswersSet.getQuestionAnswersList2().get(currentQuestionIndex);
             Language language = localeService.getLanguage(httpSession);
 
             return dtoFunction.apply(
                     LocalizationUtils.getString(questionAnswersSet.getName(), language),
                     currentQuestionIndex,
-                    questionAnswersSet.getQuestionAnswersList().size(),
+                    questionAnswersSet.getQuestionAnswersList2().size(),
                     questionAnswersSet.getLogoFileName(),
-                    questionAnswers2,
+                    questionAnswers,
                     wrongAnswerIds,
                     language);
         } else {

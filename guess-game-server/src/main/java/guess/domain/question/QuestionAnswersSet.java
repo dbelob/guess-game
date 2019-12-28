@@ -10,7 +10,7 @@ import java.util.List;
 public class QuestionAnswersSet {
     public static final int QUESTION_ANSWERS_LIST_SIZE = 4;
 
-    final private List<QuestionAnswers> questionAnswersList;
+    final private List<QuestionAnswers> questionAnswersList;    //TODO: delete
     final private List<QuestionAnswers2> questionAnswersList2;
     final private List<LocaleItem> name;
     final private String logoFileName;
