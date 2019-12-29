@@ -1,11 +1,13 @@
 package guess.domain.question;
 
+import guess.domain.Identifiable;
+
 import java.util.List;
 
 /**
  * Question and answers.
  */
-public class QuestionAnswers2<T, S> {
+public class QuestionAnswers2<T extends Identifiable, S extends Identifiable> {
     private final T question;
     private final List<S> correctAnswers;
     private final List<S> availableAnswers;

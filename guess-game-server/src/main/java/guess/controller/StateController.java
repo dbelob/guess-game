@@ -1,9 +1,9 @@
 package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
+import guess.domain.Identifiable;
 import guess.domain.Language;
 import guess.domain.State;
-import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswers2;
 import guess.domain.question.QuestionAnswersSet;
 import guess.dto.guess.*;
@@ -56,7 +56,7 @@ public class StateController {
     }
 
     @SuppressWarnings("unchecked")
-    private <T, S, U> T getDto(HttpSession httpSession, DtoFunction<T, S, U> dtoFunction) {
+    private <T, S extends Identifiable, U extends Identifiable> T getDto(HttpSession httpSession, DtoFunction<T, S, U> dtoFunction) {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
         List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);

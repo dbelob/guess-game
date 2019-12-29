@@ -3,12 +3,14 @@ package guess.service;
 import guess.dao.AnswerDao;
 import guess.dao.StateDao;
 import guess.domain.GuessType;
+import guess.domain.Identifiable;
 import guess.domain.StartParameters;
 import guess.domain.answer.AnswerSet;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.Result;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionAnswers;
+import guess.domain.question.QuestionAnswers2;
 import guess.domain.question.QuestionAnswersSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,13 +45,17 @@ public class AnswerServiceImpl implements AnswerService {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
 
             if (questionAnswersSet != null) {
-                List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
-                QuestionAnswers questionAnswers = questionAnswersList.get(questionIndex);
+                List<QuestionAnswers2> questionAnswersList2 = questionAnswersSet.getQuestionAnswersList2();
+                QuestionAnswers2 questionAnswers2 = questionAnswersList2.get(questionIndex);
                 List<Long> answers = new ArrayList<>(Collections.singletonList(answerId));
+
+                boolean isSuccess = ((List<Identifiable>) questionAnswers2.getCorrectAnswers()).stream()
+                        .anyMatch(e -> e.getId() == answerId);
+
                 AnswerSet answerSet = new AnswerSet(
-                        questionAnswers.getQuestion().getId(),
+                        questionAnswers2.getQuestion().getId(),
                         answers,
-                        (questionAnswers.getQuestion().getId() == answerId));
+                        isSuccess);
 
                 answerDao.addAnswerSet(answerSet, httpSession);
             }
@@ -99,7 +105,7 @@ public class AnswerServiceImpl implements AnswerService {
                 .filter(a -> !a.isSuccess())
                 .count();
         QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
-        long totalQuestions = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList().size() : 0;
+        long totalQuestions = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList2().size() : 0;
         long skippedAnswers = totalQuestions - (correctAnswers + wrongAnswers);
         float correctPercents = (totalQuestions != 0) ? (float) correctAnswers / totalQuestions : 0;
         float wrongPercents = (totalQuestions != 0) ? (float) wrongAnswers / totalQuestions : 0;
@@ -115,6 +121,7 @@ public class AnswerServiceImpl implements AnswerService {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
         QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
         List<QuestionAnswers> questionAnswersList = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList() : Collections.emptyList();
+        List<QuestionAnswers2> questionAnswersList2 = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList2() : Collections.emptyList();
         List<ErrorDetails> errorDetailsList = new ArrayList<>();
 
         for (int i = 0; i < answerSets.size(); i++) {

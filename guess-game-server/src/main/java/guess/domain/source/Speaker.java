@@ -1,11 +1,13 @@
 package guess.domain.source;
 
+import guess.domain.Identifiable;
+
 import java.util.List;
 
 /**
  * Speaker.
  */
-public class Speaker {
+public class Speaker implements Identifiable {
     private long id;
     private String fileName;
     private List<LocaleItem> name;
