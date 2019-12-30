@@ -7,12 +7,12 @@ import java.util.List;
 /**
  * Question and answers.
  */
-public class QuestionAnswers2 {
+public class QuestionAnswers {
     private final Question question;
     private final List<Answer> correctAnswers;
     private final List<Answer> availableAnswers;
 
-    public QuestionAnswers2(Question question, List<Answer> correctAnswers, List<Answer> availableAnswers) {
+    public QuestionAnswers(Question question, List<Answer> correctAnswers, List<Answer> availableAnswers) {
         this.question = question;
         this.correctAnswers = correctAnswers;
         this.availableAnswers = availableAnswers;

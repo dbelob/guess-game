@@ -2,7 +2,7 @@ package guess.dto.guess;
 
 import guess.domain.Language;
 import guess.domain.answer.TalkAnswer;
-import guess.domain.question.QuestionAnswers2;
+import guess.domain.question.QuestionAnswers;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
@@ -65,7 +65,7 @@ public class SpeakerTalksDto extends QuestionAnswersDto {
     }
 
     public static SpeakerTalksDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers2 questionAnswers, List<Long> wrongAnswerIds, Language language) {
+                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
         Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
         Talk talk0 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(0)).getTalk();
         Talk talk1 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(1)).getTalk();

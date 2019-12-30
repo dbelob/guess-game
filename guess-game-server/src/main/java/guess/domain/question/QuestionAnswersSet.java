@@ -10,12 +10,12 @@ import java.util.List;
 public class QuestionAnswersSet {
     public static final int QUESTION_ANSWERS_LIST_SIZE = 4;
 
-    final private List<QuestionAnswers2> questionAnswersList;
+    final private List<QuestionAnswers> questionAnswersList;
     final private List<LocaleItem> name;
     final private String logoFileName;
 
     public QuestionAnswersSet(List<LocaleItem> name, String logoFileName,
-                              List<QuestionAnswers2> questionAnswersList) {
+                              List<QuestionAnswers> questionAnswersList) {
         this.name = name;
         this.logoFileName = logoFileName;
         this.questionAnswersList = questionAnswersList;
@@ -29,7 +29,7 @@ public class QuestionAnswersSet {
         return logoFileName;
     }
 
-    public List<QuestionAnswers2> getQuestionAnswersList() {
+    public List<QuestionAnswers> getQuestionAnswersList() {
         return questionAnswersList;
     }
 }

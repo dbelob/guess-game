@@ -8,7 +8,7 @@ import guess.domain.answer.Answer;
 import guess.domain.answer.AnswerSet;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.Result;
-import guess.domain.question.QuestionAnswers2;
+import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,8 +43,8 @@ public class AnswerServiceImpl implements AnswerService {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
 
             if (questionAnswersSet != null) {
-                List<QuestionAnswers2> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
-                QuestionAnswers2 questionAnswers = questionAnswersList.get(questionIndex);
+                List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
+                QuestionAnswers questionAnswers = questionAnswersList.get(questionIndex);
                 List<Long> answers = new ArrayList<>(Collections.singletonList(answerId));
 
                 boolean isSuccess = questionAnswers.getCorrectAnswers().stream()
@@ -118,7 +118,7 @@ public class AnswerServiceImpl implements AnswerService {
     public List<ErrorDetails> getErrorDetailsList(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
         QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
-        List<QuestionAnswers2> questionAnswersList = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList() : Collections.emptyList();
+        List<QuestionAnswers> questionAnswersList = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList() : Collections.emptyList();
         List<ErrorDetails> errorDetailsList = new ArrayList<>();
 
         for (int i = 0; i < answerSets.size(); i++) {

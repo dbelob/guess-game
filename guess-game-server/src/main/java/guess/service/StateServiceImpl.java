@@ -80,7 +80,7 @@ public class StateServiceImpl implements StateService {
         List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds(), startParameters.getGuessType());
 
         // Fill question and answers list
-        List<QuestionAnswers2> questionAnswersList = new ArrayList<>();
+        List<QuestionAnswers> questionAnswersList = new ArrayList<>();
         if (uniqueQuestions.size() >= QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE) {
             // Shuffle questions
             List<Question> shuffledQuestions = new ArrayList<>(uniqueQuestions);
@@ -138,25 +138,25 @@ public class StateServiceImpl implements StateService {
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    private QuestionAnswers2 createQuestionAnswers(Question question, List<Question> availableAnswers, GuessType guessType) {
+    private QuestionAnswers createQuestionAnswers(Question question, List<Question> availableAnswers, GuessType guessType) {
         switch (guessType) {
             case GUESS_NAME_TYPE:
             case GUESS_PICTURE_TYPE:
-                return new QuestionAnswers2(
+                return new QuestionAnswers(
                         question,
                         Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker())),
                         availableAnswers.stream()
                                 .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
                                 .collect(Collectors.toList()));
             case GUESS_TALK_TYPE:
-                return new QuestionAnswers2(
+                return new QuestionAnswers(
                         question,
                         Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk())),
                         availableAnswers.stream()
                                 .map(q -> new TalkAnswer(((TalkQuestion) q).getTalk()))
                                 .collect(Collectors.toList()));
             case GUESS_SPEAKER_TYPE:
-                return new QuestionAnswers2(
+                return new QuestionAnswers(
                         question,
                         ((TalkQuestion) question).getSpeakers().stream()
                                 .map(SpeakerAnswer::new)

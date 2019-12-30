@@ -3,7 +3,7 @@ package guess.controller;
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.Language;
 import guess.domain.State;
-import guess.domain.question.QuestionAnswers2;
+import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
 import guess.dto.guess.*;
 import guess.dto.start.StartParametersDto;
@@ -60,7 +60,7 @@ public class StateController {
         List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
-            QuestionAnswers2 questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
+            QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
             Language language = localeService.getLanguage(httpSession);
 
             return dtoFunction.apply(

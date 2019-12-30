@@ -2,7 +2,7 @@ package guess.dto.guess;
 
 import guess.domain.Language;
 import guess.domain.answer.SpeakerAnswer;
-import guess.domain.question.QuestionAnswers2;
+import guess.domain.question.QuestionAnswers;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
@@ -56,7 +56,7 @@ public class PictureNamesDto extends QuestionAnswersDto {
     }
 
     public static PictureNamesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers2 questionAnswers, List<Long> wrongAnswerIds, Language language) {
+                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
         Speaker speaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(0)).getSpeaker();
         Speaker speaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(1)).getSpeaker();
         Speaker speaker2 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(2)).getSpeaker();
