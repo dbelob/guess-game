@@ -3,6 +3,7 @@ package guess.dto.result;
 import guess.domain.GuessType;
 import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
+import guess.domain.answer.SpeakerAnswer;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
@@ -38,8 +39,8 @@ public class SpeakerErrorDetailsDto {
     }
 
     private static SpeakerErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType, Language language) {
-        List<Speaker> speakers = errorDetails.getAllAnswers().stream()
-                .map(q -> ((SpeakerQuestion) q).getSpeaker())
+        List<Speaker> speakers = errorDetails.getAvailableAnswers().stream()
+                .map(q -> ((SpeakerAnswer) q).getSpeaker())
                 .collect(Collectors.toList());
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
@@ -51,8 +52,8 @@ public class SpeakerErrorDetailsDto {
         if (GuessType.GUESS_NAME_TYPE.equals(guessType) || GuessType.GUESS_PICTURE_TYPE.equals(guessType)) {
             List<String> wrongAnswers = errorDetails.getWrongAnswers().stream()
                     .map(q -> GuessType.GUESS_NAME_TYPE.equals(guessType) ?
-                            LocalizationUtils.getSpeakerName(((SpeakerQuestion) q).getSpeaker(), language, speakerDuplicates) :
-                            ((SpeakerQuestion) q).getSpeaker().getFileName())
+                            LocalizationUtils.getSpeakerName(((SpeakerAnswer) q).getSpeaker(), language, speakerDuplicates) :
+                            ((SpeakerAnswer) q).getSpeaker().getFileName())
                     .collect(Collectors.toList());
 
             return new SpeakerErrorDetailsDto(

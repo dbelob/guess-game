@@ -1,7 +1,6 @@
 package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.Identifiable;
 import guess.domain.Language;
 import guess.domain.State;
 import guess.domain.question.QuestionAnswers2;
@@ -55,14 +54,13 @@ public class StateController {
         stateService.setState(State.valueOf(state), httpSession);
     }
 
-    @SuppressWarnings("unchecked")
-    private <T, S extends Identifiable, U extends Identifiable> T getDto(HttpSession httpSession, DtoFunction<T, S, U> dtoFunction) {
+    private <T> T getDto(HttpSession httpSession, DtoFunction<T> dtoFunction) {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
         List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList2().size())) {
-            QuestionAnswers2<S, U> questionAnswers = questionAnswersSet.getQuestionAnswersList2().get(currentQuestionIndex);
+            QuestionAnswers2 questionAnswers = questionAnswersSet.getQuestionAnswersList2().get(currentQuestionIndex);
             Language language = localeService.getLanguage(httpSession);
 
             return dtoFunction.apply(

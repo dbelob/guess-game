@@ -1,9 +1,10 @@
 package guess.dto.guess;
 
 import guess.domain.Language;
+import guess.domain.answer.SpeakerAnswer;
 import guess.domain.question.QuestionAnswers2;
+import guess.domain.question.TalkQuestion;
 import guess.domain.source.Speaker;
-import guess.domain.source.Talk;
 import guess.util.LocalizationUtils;
 
 import java.util.Arrays;
@@ -81,11 +82,11 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
     }
 
     public static TalkSpeakersDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers2<Talk, Speaker> questionAnswers, List<Long> wrongAnswerIds, Language language) {
-        Speaker speaker0 = questionAnswers.getAvailableAnswers().get(0);
-        Speaker speaker1 = questionAnswers.getAvailableAnswers().get(1);
-        Speaker speaker2 = questionAnswers.getAvailableAnswers().get(2);
-        Speaker speaker3 = questionAnswers.getAvailableAnswers().get(3);
+                                               QuestionAnswers2 questionAnswers, List<Long> wrongAnswerIds, Language language) {
+        Speaker speaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(0)).getSpeaker();
+        Speaker speaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(1)).getSpeaker();
+        Speaker speaker2 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(2)).getSpeaker();
+        Speaker speaker3 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(3)).getSpeaker();
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 Arrays.asList(speaker0, speaker1, speaker2, speaker3),
@@ -104,7 +105,7 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
                 wrongAnswerIds.contains(speaker1.getId()),
                 wrongAnswerIds.contains(speaker2.getId()),
                 wrongAnswerIds.contains(speaker3.getId()),
-                LocalizationUtils.getString(questionAnswers.getQuestion().getName(), language),
+                LocalizationUtils.getString(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language),
                 speaker0.getFileName(),
                 name0,
                 speaker1.getFileName(),

@@ -9,12 +9,12 @@ import java.util.List;
  */
 public class ErrorDetails {
     private final Question question;
-    private final List<Question> allAnswers;
-    private final List<Question> wrongAnswers;
+    private final List<Answer> availableAnswers;
+    private final List<Answer> wrongAnswers;
 
-    public ErrorDetails(Question question, List<Question> allAnswers, List<Question> wrongAnswers) {
+    public ErrorDetails(Question question, List<Answer> availableAnswers, List<Answer> wrongAnswers) {
         this.question = question;
-        this.allAnswers = allAnswers;
+        this.availableAnswers = availableAnswers;
         this.wrongAnswers = wrongAnswers;
     }
 
@@ -22,11 +22,11 @@ public class ErrorDetails {
         return question;
     }
 
-    public List<Question> getAllAnswers() {
-        return allAnswers;
+    public List<Answer> getAvailableAnswers() {
+        return availableAnswers;
     }
 
-    public List<Question> getWrongAnswers() {
+    public List<Answer> getWrongAnswers() {
         return wrongAnswers;
     }
 }

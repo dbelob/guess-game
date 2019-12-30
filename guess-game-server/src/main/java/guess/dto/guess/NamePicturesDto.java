@@ -1,7 +1,9 @@
 package guess.dto.guess;
 
 import guess.domain.Language;
+import guess.domain.answer.SpeakerAnswer;
 import guess.domain.question.QuestionAnswers2;
+import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
@@ -54,12 +56,12 @@ public class NamePicturesDto extends QuestionAnswersDto {
     }
 
     public static NamePicturesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers2<Speaker, Speaker> questionAnswers, List<Long> wrongAnswerIds, Language language) {
-        Speaker questionSpeaker = questionAnswers.getQuestion();
-        Speaker answerSpeaker0 = questionAnswers.getAvailableAnswers().get(0);
-        Speaker answerSpeaker1 = questionAnswers.getAvailableAnswers().get(1);
-        Speaker answerSpeaker2 = questionAnswers.getAvailableAnswers().get(2);
-        Speaker answerSpeaker3 = questionAnswers.getAvailableAnswers().get(3);
+                                               QuestionAnswers2 questionAnswers, List<Long> wrongAnswerIds, Language language) {
+        Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
+        Speaker answerSpeaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(0)).getSpeaker();
+        Speaker answerSpeaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(1)).getSpeaker();
+        Speaker answerSpeaker2 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(2)).getSpeaker();
+        Speaker answerSpeaker3 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(3)).getSpeaker();
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 Arrays.asList(answerSpeaker0, answerSpeaker1, answerSpeaker2, answerSpeaker3),

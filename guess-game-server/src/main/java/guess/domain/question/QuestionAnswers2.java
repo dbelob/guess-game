@@ -1,32 +1,32 @@
 package guess.domain.question;
 
-import guess.domain.Identifiable;
+import guess.domain.answer.Answer;
 
 import java.util.List;
 
 /**
  * Question and answers.
  */
-public class QuestionAnswers2<T extends Identifiable, S extends Identifiable> {
-    private final T question;
-    private final List<S> correctAnswers;
-    private final List<S> availableAnswers;
+public class QuestionAnswers2 {
+    private final Question question;
+    private final List<Answer> correctAnswers;
+    private final List<Answer> availableAnswers;
 
-    public QuestionAnswers2(T question, List<S> correctAnswers, List<S> availableAnswers) {
+    public QuestionAnswers2(Question question, List<Answer> correctAnswers, List<Answer> availableAnswers) {
         this.question = question;
         this.correctAnswers = correctAnswers;
         this.availableAnswers = availableAnswers;
     }
 
-    public T getQuestion() {
+    public Question getQuestion() {
         return question;
     }
 
-    public List<S> getCorrectAnswers() {
+    public List<Answer> getCorrectAnswers() {
         return correctAnswers;
     }
 
-    public List<S> getAvailableAnswers() {
+    public List<Answer> getAvailableAnswers() {
         return availableAnswers;
     }
 }

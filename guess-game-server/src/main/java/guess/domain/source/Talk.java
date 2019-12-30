@@ -1,14 +1,12 @@
 package guess.domain.source;
 
-import guess.domain.Identifiable;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Talk.
  */
-public class Talk implements Identifiable {
+public class Talk {
     private long id;
     private List<LocaleItem> name;
 

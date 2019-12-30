@@ -8,9 +8,10 @@ import guess.domain.GuessType;
 import guess.domain.Language;
 import guess.domain.StartParameters;
 import guess.domain.State;
+import guess.domain.answer.SpeakerAnswer;
+import guess.domain.answer.TalkAnswer;
 import guess.domain.question.*;
 import guess.domain.source.LocaleItem;
-import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -143,27 +144,27 @@ public class StateServiceImpl implements StateService {
         switch (guessType) {
             case GUESS_NAME_TYPE:
             case GUESS_PICTURE_TYPE:
-                Speaker speaker = ((SpeakerQuestion) question).getSpeaker();
-
-                return new QuestionAnswers2<>(
-                        speaker,
-                        Collections.singletonList(speaker),
+                return new QuestionAnswers2(
+                        question,
+                        Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker())),
                         availableAnswers.stream()
-                                .map(q -> ((SpeakerQuestion) q).getSpeaker())
+                                .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
                                 .collect(Collectors.toList()));
             case GUESS_TALK_TYPE:
-                return new QuestionAnswers2<>(
-                        ((TalkQuestion) question).getSpeakers().get(0),
-                        Collections.singletonList(((TalkQuestion) question).getTalk()),
+                return new QuestionAnswers2(
+                        question,
+                        Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk())),
                         availableAnswers.stream()
-                                .map(q -> ((TalkQuestion) q).getTalk())
+                                .map(q -> new TalkAnswer(((TalkQuestion) q).getTalk()))
                                 .collect(Collectors.toList()));
             case GUESS_SPEAKER_TYPE:
-                return new QuestionAnswers2<>(
-                        ((TalkQuestion) question).getTalk(),
-                        ((TalkQuestion) question).getSpeakers(),
+                return new QuestionAnswers2(
+                        question,
+                        ((TalkQuestion) question).getSpeakers().stream()
+                                .map(SpeakerAnswer::new)
+                                .collect(Collectors.toList()),
                         availableAnswers.stream()
-                                .map(q -> ((TalkQuestion) q).getSpeakers().get(0))      //TODO: is it right?
+                                .map(q -> new SpeakerAnswer(((TalkQuestion) q).getSpeakers().get(0)))      //TODO: is it right?
                                 .collect(Collectors.toList()));
             default:
                 throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));

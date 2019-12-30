@@ -18,10 +18,6 @@ public class SpeakerQuestion extends Question {
         return speaker;
     }
 
-    public void setSpeaker(Speaker speaker) {
-        this.speaker = speaker;
-    }
-
     @Override
     public boolean isSimilar(Question question) {
         return (question.getId() == getId());

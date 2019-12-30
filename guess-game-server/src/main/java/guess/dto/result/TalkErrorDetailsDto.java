@@ -4,6 +4,8 @@ import guess.domain.GuessType;
 import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.ErrorPair;
+import guess.domain.answer.SpeakerAnswer;
+import guess.domain.answer.TalkAnswer;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
@@ -47,13 +49,13 @@ public class TalkErrorDetailsDto {
 
     private static TalkErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType, Language language) {
         List<Speaker> speakers = GuessType.GUESS_TALK_TYPE.equals(guessType) ?
-                errorDetails.getAllAnswers().stream()
-                        .map(q -> ((TalkQuestion) q).getTalk().getSpeakers())
+                errorDetails.getAvailableAnswers().stream()
+                        .map(a -> ((TalkAnswer) a).getTalk().getSpeakers())
                         .flatMap(Collection::stream)
                         .distinct()
                         .collect(Collectors.toList()) :
-                errorDetails.getAllAnswers().stream()
-                        .map(q -> ((TalkQuestion) q).getSpeaker())
+                errorDetails.getAvailableAnswers().stream()
+                        .map(a -> ((SpeakerAnswer) a).getSpeaker())
                         .collect(Collectors.toList());
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
@@ -64,13 +66,13 @@ public class TalkErrorDetailsDto {
 
         if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
             List<ErrorPair> wrongAnswers = errorDetails.getWrongAnswers().stream()
-                    .map(q -> GuessType.GUESS_TALK_TYPE.equals(guessType) ?
+                    .map(a -> GuessType.GUESS_TALK_TYPE.equals(guessType) ?
                             new ErrorPair(
-                                    LocalizationUtils.getString(((TalkQuestion) q).getTalk().getName(), language),
+                                    LocalizationUtils.getString(((TalkAnswer) a).getTalk().getName(), language),
                                     null) :
                             new ErrorPair(
-                                    LocalizationUtils.getSpeakerName(((TalkQuestion) q).getSpeaker(), language, speakerDuplicates),
-                                    ((TalkQuestion) q).getSpeaker().getFileName()))
+                                    LocalizationUtils.getSpeakerName(((SpeakerAnswer) a).getSpeaker(), language, speakerDuplicates),
+                                    ((SpeakerAnswer) a).getSpeaker().getFileName()))
                     .collect(Collectors.toList());
 
             return new TalkErrorDetailsDto(
