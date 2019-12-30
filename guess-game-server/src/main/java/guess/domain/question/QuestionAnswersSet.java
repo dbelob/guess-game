@@ -10,21 +10,18 @@ import java.util.List;
 public class QuestionAnswersSet {
     public static final int QUESTION_ANSWERS_LIST_SIZE = 4;
 
-    final private List<QuestionAnswers> questionAnswersList;    //TODO: delete
-    final private List<QuestionAnswers2> questionAnswersList2;
+    final private List<QuestionAnswers2> questionAnswersList;
     final private List<LocaleItem> name;
     final private String logoFileName;
 
-    public QuestionAnswersSet(List<LocaleItem>  name, String logoFileName,
-                              List<QuestionAnswers> questionAnswersList,
-                              List<QuestionAnswers2> questionAnswersList2) {
+    public QuestionAnswersSet(List<LocaleItem> name, String logoFileName,
+                              List<QuestionAnswers2> questionAnswersList) {
         this.name = name;
         this.logoFileName = logoFileName;
         this.questionAnswersList = questionAnswersList;
-        this.questionAnswersList2 = questionAnswersList2;
     }
 
-    public List<LocaleItem>  getName() {
+    public List<LocaleItem> getName() {
         return name;
     }
 
@@ -32,11 +29,7 @@ public class QuestionAnswersSet {
         return logoFileName;
     }
 
-    public List<QuestionAnswers> getQuestionAnswersList() {
+    public List<QuestionAnswers2> getQuestionAnswersList() {
         return questionAnswersList;
-    }
-
-    public List<QuestionAnswers2> getQuestionAnswersList2() {
-        return questionAnswersList2;
     }
 }

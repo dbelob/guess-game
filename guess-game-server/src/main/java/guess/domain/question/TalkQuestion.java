@@ -11,21 +11,14 @@ import java.util.List;
  * Question about talk.
  */
 public class TalkQuestion extends Question {
-    private Speaker speaker;            //TODO: delete
     private List<Speaker> speakers;
     private Talk talk;
 
     public TalkQuestion(List<Speaker> speakers, Talk talk) {
         super(talk.getId());
 
-        this.speaker = speakers.get(0); //TODO: delete
         this.speakers = speakers;
         this.talk = talk;
-    }
-
-    //TODO: delete
-    public Speaker getSpeaker() {
-        return speaker;
     }
 
     public List<Speaker> getSpeakers() {

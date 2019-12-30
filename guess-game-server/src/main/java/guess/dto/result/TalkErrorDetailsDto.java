@@ -75,9 +75,11 @@ public class TalkErrorDetailsDto {
                                     ((SpeakerAnswer) a).getSpeaker().getFileName()))
                     .collect(Collectors.toList());
 
+            Speaker questionSpeaker = ((TalkQuestion) errorDetails.getQuestion()).getSpeakers().get(0); //TODO: is it right?
+
             return new TalkErrorDetailsDto(
-                    ((TalkQuestion) errorDetails.getQuestion()).getSpeaker().getFileName(),
-                    LocalizationUtils.getSpeakerName(((TalkQuestion) errorDetails.getQuestion()).getSpeaker(), language, speakerDuplicates),
+                    questionSpeaker.getFileName(),
+                    LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates),
                     LocalizationUtils.getString(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName(), language),
                     wrongAnswers);
         } else {

@@ -59,14 +59,14 @@ public class StateController {
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
         List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
 
-        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList2().size())) {
-            QuestionAnswers2 questionAnswers = questionAnswersSet.getQuestionAnswersList2().get(currentQuestionIndex);
+        if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
+            QuestionAnswers2 questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
             Language language = localeService.getLanguage(httpSession);
 
             return dtoFunction.apply(
                     LocalizationUtils.getString(questionAnswersSet.getName(), language),
                     currentQuestionIndex,
-                    questionAnswersSet.getQuestionAnswersList2().size(),
+                    questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),
                     questionAnswers,
                     wrongAnswerIds,

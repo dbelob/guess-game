@@ -48,7 +48,7 @@ public class StateServiceImpl implements StateService {
 
         answerDao.clearAnswerSets(httpSession);
         stateDao.setState(
-                questionAnswersSet.getQuestionAnswersList2().isEmpty() ?
+                questionAnswersSet.getQuestionAnswersList().isEmpty() ?
                         State.RESULT_STATE :
                         (GuessType.GUESS_NAME_TYPE.equals(startParameters.getGuessType()) ?
                                 State.GUESS_NAME_STATE :
@@ -80,8 +80,7 @@ public class StateServiceImpl implements StateService {
         List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds(), startParameters.getGuessType());
 
         // Fill question and answers list
-        List<QuestionAnswers> questionAnswersList = new ArrayList<>();      //TODO: delete
-        List<QuestionAnswers2> questionAnswersList2 = new ArrayList<>();
+        List<QuestionAnswers2> questionAnswersList = new ArrayList<>();
         if (uniqueQuestions.size() >= QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE) {
             // Shuffle questions
             List<Question> shuffledQuestions = new ArrayList<>(uniqueQuestions);
@@ -111,8 +110,7 @@ public class StateServiceImpl implements StateService {
                 answers.add(transformedQuestion);
                 Collections.shuffle(answers);
 
-                questionAnswersList.add(new QuestionAnswers(transformedQuestion, answers)); //TODO: delete
-                questionAnswersList2.add(createQuestionAnswers2(transformedQuestion, answers, startParameters.getGuessType()));
+                questionAnswersList.add(createQuestionAnswers(transformedQuestion, answers, startParameters.getGuessType()));
             }
         }
 
@@ -137,10 +135,10 @@ public class StateServiceImpl implements StateService {
             logoFileName = null;
         }
 
-        return new QuestionAnswersSet(name, logoFileName, questionAnswersList, questionAnswersList2);
+        return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    private QuestionAnswers2 createQuestionAnswers2(Question question, List<Question> availableAnswers, GuessType guessType) {
+    private QuestionAnswers2 createQuestionAnswers(Question question, List<Question> availableAnswers, GuessType guessType) {
         switch (guessType) {
             case GUESS_NAME_TYPE:
             case GUESS_PICTURE_TYPE:

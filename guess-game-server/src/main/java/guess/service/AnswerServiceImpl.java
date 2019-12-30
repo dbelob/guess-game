@@ -43,7 +43,7 @@ public class AnswerServiceImpl implements AnswerService {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
 
             if (questionAnswersSet != null) {
-                List<QuestionAnswers2> questionAnswersList = questionAnswersSet.getQuestionAnswersList2();
+                List<QuestionAnswers2> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
                 QuestionAnswers2 questionAnswers = questionAnswersList.get(questionIndex);
                 List<Long> answers = new ArrayList<>(Collections.singletonList(answerId));
 
@@ -103,7 +103,7 @@ public class AnswerServiceImpl implements AnswerService {
                 .filter(a -> !a.isSuccess())
                 .count();
         QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
-        long totalQuestions = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList2().size() : 0;
+        long totalQuestions = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList().size() : 0;
         long skippedAnswers = totalQuestions - (correctAnswers + wrongAnswers);
         float correctPercents = (totalQuestions != 0) ? (float) correctAnswers / totalQuestions : 0;
         float wrongPercents = (totalQuestions != 0) ? (float) wrongAnswers / totalQuestions : 0;
@@ -118,7 +118,7 @@ public class AnswerServiceImpl implements AnswerService {
     public List<ErrorDetails> getErrorDetailsList(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
         QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
-        List<QuestionAnswers2> questionAnswersList = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList2() : Collections.emptyList();
+        List<QuestionAnswers2> questionAnswersList = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList() : Collections.emptyList();
         List<ErrorDetails> errorDetailsList = new ArrayList<>();
 
         for (int i = 0; i < answerSets.size(); i++) {
