@@ -8,6 +8,7 @@ import guess.domain.GuessType;
 import guess.domain.Language;
 import guess.domain.StartParameters;
 import guess.domain.State;
+import guess.domain.answer.Answer;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
 import guess.domain.question.*;
@@ -17,10 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -93,24 +91,23 @@ public class StateServiceImpl implements StateService {
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                List<Question> shuffledQuestionsWithoutCurrentAndSimilarQuestions = new ArrayList<>(shuffledQuestions);
+                // Correct answers size must be <= QUESTION_ANSWERS_LIST_SIZE
+                List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessType());
+                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, startParameters.getGuessType());
 
-                // Remove current and same questions
-                shuffledQuestionsWithoutCurrentAndSimilarQuestions.remove(question);
-                shuffledQuestionsWithoutCurrentAndSimilarQuestions.removeIf(q -> q.isSimilar(question));
+                shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
+                Collections.shuffle(shuffledAllAvailableAnswersWithoutCorrectAnswers);
 
-                Collections.shuffle(shuffledQuestionsWithoutCurrentAndSimilarQuestions);
-
-                Question transformedQuestion = question.transform();
-
-                // Select (QUESTION_ANSWERS_LIST_SIZE - 1) first elements, add current, shuffle
-                List<Question> answers = shuffledQuestionsWithoutCurrentAndSimilarQuestions.subList(
+                // Select (QUESTION_ANSWERS_LIST_SIZE - correctAnswers.size()) first elements, add correct answers, shuffle
+                List<Answer> availableAnswers = shuffledAllAvailableAnswersWithoutCorrectAnswers.subList(
                         0,
-                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, shuffledQuestionsWithoutCurrentAndSimilarQuestions.size()));
-                answers.add(transformedQuestion);
-                Collections.shuffle(answers);
+                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - correctAnswers.size(), shuffledAllAvailableAnswersWithoutCorrectAnswers.size()));
+                availableAnswers.addAll(correctAnswers);
+                Collections.shuffle(availableAnswers);
 
-                questionAnswersList.add(createQuestionAnswers(transformedQuestion, answers, startParameters.getGuessType()));
+                Question transformedQuestion = question.transform();    //TODO: is it right?
+
+                questionAnswersList.add(new QuestionAnswers(transformedQuestion, correctAnswers, availableAnswers));
             }
         }
 
@@ -138,32 +135,40 @@ public class StateServiceImpl implements StateService {
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    private QuestionAnswers createQuestionAnswers(Question question, List<Question> availableAnswers, GuessType guessType) {
+    private List<Answer> getCorrectAnswers(Question question, GuessType guessType) {
         switch (guessType) {
             case GUESS_NAME_TYPE:
             case GUESS_PICTURE_TYPE:
-                return new QuestionAnswers(
-                        question,
-                        Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker())),
-                        availableAnswers.stream()
-                                .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
-                                .collect(Collectors.toList()));
+                return Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker()));
             case GUESS_TALK_TYPE:
-                return new QuestionAnswers(
-                        question,
-                        Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk())),
-                        availableAnswers.stream()
-                                .map(q -> new TalkAnswer(((TalkQuestion) q).getTalk()))
-                                .collect(Collectors.toList()));
+                return Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk()));
             case GUESS_SPEAKER_TYPE:
-                return new QuestionAnswers(
-                        question,
-                        ((TalkQuestion) question).getSpeakers().stream()
-                                .map(SpeakerAnswer::new)
-                                .collect(Collectors.toList()),
-                        availableAnswers.stream()
-                                .map(q -> new SpeakerAnswer(((TalkQuestion) q).getSpeakers().get(0)))      //TODO: is it right?
-                                .collect(Collectors.toList()));
+                return ((TalkQuestion) question).getSpeakers().stream()
+                        .map(SpeakerAnswer::new)
+                        .collect(Collectors.toList());
+            default:
+                throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
+        }
+    }
+
+    private List<Answer> getAllAvailableAnswers(List<Question> questions, GuessType guessType) {
+        switch (guessType) {
+            case GUESS_NAME_TYPE:
+            case GUESS_PICTURE_TYPE:
+                return questions.stream()
+                        .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
+                        .collect(Collectors.toList());
+            case GUESS_TALK_TYPE:
+                return questions.stream()
+                        .map(q -> new TalkAnswer(((TalkQuestion) q).getTalk()))
+                        .collect(Collectors.toList());
+            case GUESS_SPEAKER_TYPE:
+                return questions.stream()
+                        .map(q -> ((TalkQuestion) q).getTalk().getSpeakers())
+                        .flatMap(Collection::stream)
+                        .distinct()
+                        .map(SpeakerAnswer::new)
+                        .collect(Collectors.toList());
             default:
                 throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
         }

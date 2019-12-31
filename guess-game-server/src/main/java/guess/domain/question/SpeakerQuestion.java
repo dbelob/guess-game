@@ -19,11 +19,6 @@ public class SpeakerQuestion extends Question {
     }
 
     @Override
-    public boolean isSimilar(Question question) {
-        return (question.getId() == getId());
-    }
-
-    @Override
     public Question transform() {
         // Dont't change question
         return this;

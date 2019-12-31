@@ -1,6 +1,6 @@
 package guess.util;
 
-import guess.domain.question.Question;
+import guess.domain.Identifiable;
 
 import java.util.*;
 
@@ -8,12 +8,12 @@ import java.util.*;
  * Question utility methods.
  */
 public class QuestionUtils {
-    public static <T extends Question> List<T> removeDuplicatesById(List<T> questions) {
+    public static <T extends Identifiable> List<T> removeDuplicatesById(List<T> items) {
         List<T> result = new ArrayList<>();
         Set<Long> ids = new HashSet<>();
 
-        if (questions != null) {
-            for (T question : questions) {
+        if (items != null) {
+            for (T question : items) {
                 if (!ids.contains(question.getId())) {
                     result.add(question);
                     ids.add(question.getId());

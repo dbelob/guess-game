@@ -30,21 +30,6 @@ public class TalkQuestion extends Question {
     }
 
     @Override
-    public boolean isSimilar(Question question) {
-        TalkQuestion talkQuestion = (TalkQuestion) question;
-
-        for (Speaker questionTalkSpeaker : talkQuestion.getTalk().getSpeakers()) {
-            for (Speaker speaker : talk.getSpeakers()) {
-                if (questionTalkSpeaker.getId() == speaker.getId()) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    @Override
     public Question transform() {
         if (talk.getSpeakers().size() > 1) {
             List<Speaker> shuffledSpeakers = new ArrayList<>(talk.getSpeakers());

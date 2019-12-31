@@ -10,7 +10,5 @@ public abstract class Question extends Identifiable {
         super(id);
     }
 
-    public abstract boolean isSimilar(Question question);
-
     public abstract Question transform();
 }
