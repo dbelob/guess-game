@@ -75,14 +75,14 @@
         </td>
         <td>
           <div *ngIf="!isQuestionPicture" class="text-center">
-            <p *ngFor="let wrongAnswer of speakerErrorDetails.wrongAnswers">
-              <img src="{{speakersImageDirectory}}/{{wrongAnswer}}"
+            <p *ngFor="let yourAnswer of speakerErrorDetails.yourAnswers">
+              <img src="{{speakersImageDirectory}}/{{yourAnswer}}"
                    alt="" class="img-thumbnail img-guess-result">
             </p>
           </div>
           <div *ngIf="isQuestionPicture">
-            <p *ngFor="let wrongAnswer of speakerErrorDetails.wrongAnswers">
-              {{wrongAnswer}}
+            <p *ngFor="let yourAnswer of speakerErrorDetails.yourAnswers">
+              {{yourAnswer}}
             </p>
           </div>
         </td>
@@ -112,16 +112,16 @@
         </td>
         <td>
           <div *ngIf="!isQuestionPicture" class="text-center">
-            <p *ngFor="let wrongAnswer of talkErrorDetails.wrongAnswers">
+            <p *ngFor="let yourAnswer of talkErrorDetails.yourAnswers">
               <figure class="figure">
-                <img src="{{speakersImageDirectory}}/{{wrongAnswer.fileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
-                <figcaption class="figure-caption text-center">{{wrongAnswer.name}}</figcaption>
+                <img src="{{speakersImageDirectory}}/{{yourAnswer.fileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
+                <figcaption class="figure-caption text-center">{{yourAnswer.name}}</figcaption>
               </figure>
             </p>
           </div>
           <div *ngIf="isQuestionPicture">
-            <p *ngFor="let wrongAnswer of talkErrorDetails.wrongAnswers">
-              {{wrongAnswer.name}}
+            <p *ngFor="let yourAnswer of talkErrorDetails.yourAnswers">
+              {{yourAnswer.name}}
             </p>
           </div>
         </td>

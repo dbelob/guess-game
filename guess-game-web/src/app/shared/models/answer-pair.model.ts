@@ -1,4 +1,4 @@
-export class ErrorPair {
+export class AnswerPair {
   constructor(
     public name?: string,
     public fileName?: string

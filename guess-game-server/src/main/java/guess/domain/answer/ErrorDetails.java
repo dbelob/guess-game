@@ -10,12 +10,12 @@ import java.util.List;
 public class ErrorDetails {
     private final Question question;
     private final List<Answer> availableAnswers;
-    private final List<Answer> wrongAnswers;
+    private final List<Answer> yourAnswers;
 
-    public ErrorDetails(Question question, List<Answer> availableAnswers, List<Answer> wrongAnswers) {
+    public ErrorDetails(Question question, List<Answer> availableAnswers, List<Answer> yourAnswers) {
         this.question = question;
         this.availableAnswers = availableAnswers;
-        this.wrongAnswers = wrongAnswers;
+        this.yourAnswers = yourAnswers;
     }
 
     public Question getQuestion() {
@@ -26,7 +26,7 @@ public class ErrorDetails {
         return availableAnswers;
     }
 
-    public List<Answer> getWrongAnswers() {
-        return wrongAnswers;
+    public List<Answer> getYourAnswers() {
+        return yourAnswers;
     }
 }

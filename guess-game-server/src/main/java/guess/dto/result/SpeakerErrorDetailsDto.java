@@ -18,12 +18,12 @@ import java.util.stream.Collectors;
 public class SpeakerErrorDetailsDto {
     private String fileName;
     private String name;
-    private List<String> wrongAnswers;
+    private List<String> yourAnswers;
 
-    private SpeakerErrorDetailsDto(String fileName, String name, List<String> wrongAnswers) {
+    private SpeakerErrorDetailsDto(String fileName, String name, List<String> yourAnswers) {
         this.fileName = fileName;
         this.name = name;
-        this.wrongAnswers = wrongAnswers;
+        this.yourAnswers = yourAnswers;
     }
 
     public String getFileName() {
@@ -34,8 +34,8 @@ public class SpeakerErrorDetailsDto {
         return name;
     }
 
-    public List<String> getWrongAnswers() {
-        return wrongAnswers;
+    public List<String> getYourAnswers() {
+        return yourAnswers;
     }
 
     private static SpeakerErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType, Language language) {
@@ -50,7 +50,7 @@ public class SpeakerErrorDetailsDto {
                 s -> true);
 
         if (GuessType.GUESS_NAME_TYPE.equals(guessType) || GuessType.GUESS_PICTURE_TYPE.equals(guessType)) {
-            List<String> wrongAnswers = errorDetails.getWrongAnswers().stream()
+            List<String> yourAnswers = errorDetails.getYourAnswers().stream()
                     .map(q -> GuessType.GUESS_NAME_TYPE.equals(guessType) ?
                             LocalizationUtils.getSpeakerName(((SpeakerAnswer) q).getSpeaker(), language, speakerDuplicates) :
                             ((SpeakerAnswer) q).getSpeaker().getFileName())
@@ -59,7 +59,7 @@ public class SpeakerErrorDetailsDto {
             return new SpeakerErrorDetailsDto(
                     ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker().getFileName(),
                     LocalizationUtils.getSpeakerName(((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker(), language, speakerDuplicates),
-                    wrongAnswers);
+                    yourAnswers);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
         }

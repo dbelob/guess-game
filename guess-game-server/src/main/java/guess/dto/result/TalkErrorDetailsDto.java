@@ -3,7 +3,7 @@ package guess.dto.result;
 import guess.domain.GuessType;
 import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
-import guess.domain.answer.ErrorPair;
+import guess.domain.answer.AnswerPair;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
 import guess.domain.question.TalkQuestion;
@@ -22,13 +22,13 @@ public class TalkErrorDetailsDto {
     private String speakerFileName;
     private String speakerName;
     private String talkName;
-    private List<ErrorPair> wrongAnswers;
+    private List<AnswerPair> yourAnswers;
 
-    private TalkErrorDetailsDto(String speakerFileName, String speakerName, String talkName, List<ErrorPair> wrongAnswers) {
+    private TalkErrorDetailsDto(String speakerFileName, String speakerName, String talkName, List<AnswerPair> yourAnswers) {
         this.speakerFileName = speakerFileName;
         this.speakerName = speakerName;
         this.talkName = talkName;
-        this.wrongAnswers = wrongAnswers;
+        this.yourAnswers = yourAnswers;
     }
 
     public String getSpeakerFileName() {
@@ -43,8 +43,8 @@ public class TalkErrorDetailsDto {
         return talkName;
     }
 
-    public List<ErrorPair> getWrongAnswers() {
-        return wrongAnswers;
+    public List<AnswerPair> getYourAnswers() {
+        return yourAnswers;
     }
 
     private static TalkErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType, Language language) {
@@ -65,12 +65,12 @@ public class TalkErrorDetailsDto {
                 s -> true);
 
         if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
-            List<ErrorPair> wrongAnswers = errorDetails.getWrongAnswers().stream()
+            List<AnswerPair> yourAnswers = errorDetails.getYourAnswers().stream()
                     .map(a -> GuessType.GUESS_TALK_TYPE.equals(guessType) ?
-                            new ErrorPair(
+                            new AnswerPair(
                                     LocalizationUtils.getString(((TalkAnswer) a).getTalk().getName(), language),
                                     null) :
-                            new ErrorPair(
+                            new AnswerPair(
                                     LocalizationUtils.getSpeakerName(((SpeakerAnswer) a).getSpeaker(), language, speakerDuplicates),
                                     ((SpeakerAnswer) a).getSpeaker().getFileName()))
                     .collect(Collectors.toList());
@@ -81,7 +81,7 @@ public class TalkErrorDetailsDto {
                     questionSpeaker.getFileName(),
                     LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates),
                     LocalizationUtils.getString(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName(), language),
-                    wrongAnswers);
+                    yourAnswers);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
         }

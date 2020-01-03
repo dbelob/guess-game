@@ -7,12 +7,12 @@ import java.util.List;
  */
 public class AnswerSet {
     private final long questionId;
-    private final List<Long> answers;
+    private final List<Long> yourAnswers;
     private final boolean isSuccess;
 
-    public AnswerSet(long questionId, List<Long> answers, boolean isSuccess) {
+    public AnswerSet(long questionId, List<Long> yourAnswers, boolean isSuccess) {
         this.questionId = questionId;
-        this.answers = answers;
+        this.yourAnswers = yourAnswers;
         this.isSuccess = isSuccess;
     }
 
@@ -20,8 +20,8 @@ public class AnswerSet {
         return questionId;
     }
 
-    public List<Long> getAnswers() {
-        return answers;
+    public List<Long> getYourAnswers() {
+        return yourAnswers;
     }
 
     public boolean isSuccess() {

@@ -38,7 +38,7 @@ public class AnswerServiceImpl implements AnswerService {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
-            answerSets.get(questionIndex).getAnswers().add(answerId);
+            answerSets.get(questionIndex).getYourAnswers().add(answerId);
         } else {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
 
@@ -69,7 +69,7 @@ public class AnswerServiceImpl implements AnswerService {
         } else {
             AnswerSet lastAnswerSet = answerSets.get(answerSets.size() - 1);
 
-            if (lastAnswerSet.isSuccess() || lastAnswerSet.getAnswers().contains(lastAnswerSet.getQuestionId())) {
+            if (lastAnswerSet.isSuccess() || lastAnswerSet.getYourAnswers().contains(lastAnswerSet.getQuestionId())) {
                 // Next question
                 return answerSets.size();
             } else {
@@ -84,7 +84,7 @@ public class AnswerServiceImpl implements AnswerService {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
-            return answerSets.get(questionIndex).getAnswers();
+            return answerSets.get(questionIndex).getYourAnswers();
         } else {
             return Collections.emptyList();
         }
@@ -125,23 +125,22 @@ public class AnswerServiceImpl implements AnswerService {
             AnswerSet answerSet = answerSets.get(i);
 
             if (!answerSet.isSuccess()) {
-                List<Long> wrongAnswersIds = new ArrayList<>(answerSet.getAnswers());
-                wrongAnswersIds.remove(answerSet.getQuestionId());
+                List<Long> yourAnswersIds = new ArrayList<>(answerSet.getYourAnswers());
 
-                List<Answer> wrongAnswers = new ArrayList<>();
-                for (long wrongAnswersId : wrongAnswersIds) {
+                List<Answer> yourAnswers = new ArrayList<>();
+                for (long yourAnswersId : yourAnswersIds) {
                     Optional<Answer> optionalWrongAnswer = questionAnswersList.get(i).getAvailableAnswers().stream()
-                            .filter(q -> q.getId() == wrongAnswersId)
+                            .filter(q -> q.getId() == yourAnswersId)
                             .findFirst();
 
-                    optionalWrongAnswer.ifPresent(wrongAnswers::add);
+                    optionalWrongAnswer.ifPresent(yourAnswers::add);
                 }
 
-                if (!wrongAnswers.isEmpty()) {
+                if (!yourAnswers.isEmpty()) {
                     errorDetailsList.add(new ErrorDetails(
                             questionAnswersList.get(i).getQuestion(),
                             questionAnswersList.get(i).getAvailableAnswers(),
-                            wrongAnswers));
+                            yourAnswers));
                 }
             }
         }

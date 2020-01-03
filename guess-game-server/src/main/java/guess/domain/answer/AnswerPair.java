@@ -1,10 +1,10 @@
 package guess.domain.answer;
 
-public class ErrorPair {
+public class AnswerPair {
     private final String name;
     private final String fileName;
 
-    public ErrorPair(String name, String fileName) {
+    public AnswerPair(String name, String fileName) {
         this.name = name;
         this.fileName = fileName;
     }
