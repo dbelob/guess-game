@@ -3,6 +3,7 @@ package guess.service;
 import guess.dao.AnswerDao;
 import guess.dao.StateDao;
 import guess.domain.GuessType;
+import guess.domain.Identifiable;
 import guess.domain.StartParameters;
 import guess.domain.answer.Answer;
 import guess.domain.answer.AnswerSet;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Answer service implementation.
@@ -38,21 +40,23 @@ public class AnswerServiceImpl implements AnswerService {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
-            answerSets.get(questionIndex).getYourAnswers().add(answerId);
+            answerSets.get(questionIndex).getYourAnswerIds().add(answerId);
         } else {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
 
             if (questionAnswersSet != null) {
                 List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
                 QuestionAnswers questionAnswers = questionAnswersList.get(questionIndex);
-                List<Long> answers = new ArrayList<>(Collections.singletonList(answerId));
-
+                List<Long> correctAnswerIds = questionAnswers.getCorrectAnswers().stream()
+                        .map(Identifiable::getId)
+                        .collect(Collectors.toList());
+                List<Long> yourAnswerIds = new ArrayList<>(Collections.singletonList(answerId));
                 boolean isSuccess = questionAnswers.getCorrectAnswers().stream()
                         .anyMatch(e -> e.getId() == answerId);
 
                 AnswerSet answerSet = new AnswerSet(
-                        questionAnswers.getQuestion().getId(),
-                        answers,
+                        correctAnswerIds,
+                        yourAnswerIds,
                         isSuccess);
 
                 answerDao.addAnswerSet(answerSet, httpSession);
@@ -69,7 +73,7 @@ public class AnswerServiceImpl implements AnswerService {
         } else {
             AnswerSet lastAnswerSet = answerSets.get(answerSets.size() - 1);
 
-            if (lastAnswerSet.isSuccess() || lastAnswerSet.getYourAnswers().contains(lastAnswerSet.getQuestionId())) {
+            if (lastAnswerSet.isSuccess() || lastAnswerSet.getYourAnswerIds().containsAll(lastAnswerSet.getCorrectAnswerIds())) {
                 // Next question
                 return answerSets.size();
             } else {
@@ -84,7 +88,7 @@ public class AnswerServiceImpl implements AnswerService {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
-            return answerSets.get(questionIndex).getYourAnswers();
+            return answerSets.get(questionIndex).getYourAnswerIds();
         } else {
             return Collections.emptyList();
         }
@@ -125,7 +129,7 @@ public class AnswerServiceImpl implements AnswerService {
             AnswerSet answerSet = answerSets.get(i);
 
             if (!answerSet.isSuccess()) {
-                List<Long> yourAnswersIds = new ArrayList<>(answerSet.getYourAnswers());
+                List<Long> yourAnswersIds = new ArrayList<>(answerSet.getYourAnswerIds());
 
                 List<Answer> yourAnswers = new ArrayList<>();
                 for (long yourAnswersId : yourAnswersIds) {
