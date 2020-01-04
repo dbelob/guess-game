@@ -14,7 +14,7 @@ public interface AnswerService {
 
     int getCurrentQuestionIndex(HttpSession httpSession);
 
-    List<Long> getWrongAnswerIds(int questionIndex, HttpSession httpSession);
+    List<Long> getYourAnswerIds(int questionIndex, HttpSession httpSession);
 
     Result getResult(HttpSession httpSession);
 

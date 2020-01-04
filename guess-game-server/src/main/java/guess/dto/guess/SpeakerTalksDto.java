@@ -65,7 +65,7 @@ public class SpeakerTalksDto extends QuestionAnswersDto {
     }
 
     public static SpeakerTalksDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
+                                               QuestionAnswers questionAnswers, List<Long> yourAnswerIds, Language language) {
         Speaker questionSpeaker = ((TalkQuestion) questionAnswers.getQuestion()).getSpeakers().get(0);  //TODO: is it right?
         Talk talk0 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(0)).getTalk();
         Talk talk1 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(1)).getTalk();
@@ -88,10 +88,10 @@ public class SpeakerTalksDto extends QuestionAnswersDto {
 
         return new SpeakerTalksDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 talk0.getId(), talk1.getId(), talk2.getId(), talk3.getId(),
-                wrongAnswerIds.contains(talk0.getId()),
-                wrongAnswerIds.contains(talk1.getId()),
-                wrongAnswerIds.contains(talk2.getId()),
-                wrongAnswerIds.contains(talk3.getId()),
+                yourAnswerIds.contains(talk0.getId()),
+                yourAnswerIds.contains(talk1.getId()),
+                yourAnswerIds.contains(talk2.getId()),
+                yourAnswerIds.contains(talk3.getId()),
                 questionSpeaker.getFileName(),
                 questionName,
                 LocalizationUtils.getString(talk0.getName(), language),

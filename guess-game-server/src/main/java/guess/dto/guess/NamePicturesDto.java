@@ -56,7 +56,7 @@ public class NamePicturesDto extends QuestionAnswersDto {
     }
 
     public static NamePicturesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> wrongAnswerIds, Language language) {
+                                               QuestionAnswers questionAnswers, List<Long> yourAnswerIds, Language language) {
         Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
         Speaker answerSpeaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(0)).getSpeaker();
         Speaker answerSpeaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(1)).getSpeaker();
@@ -73,10 +73,10 @@ public class NamePicturesDto extends QuestionAnswersDto {
 
         return new NamePicturesDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 answerSpeaker0.getId(), answerSpeaker1.getId(), answerSpeaker2.getId(), answerSpeaker3.getId(),
-                wrongAnswerIds.contains(answerSpeaker0.getId()),
-                wrongAnswerIds.contains(answerSpeaker1.getId()),
-                wrongAnswerIds.contains(answerSpeaker2.getId()),
-                wrongAnswerIds.contains(answerSpeaker3.getId()),
+                yourAnswerIds.contains(answerSpeaker0.getId()),
+                yourAnswerIds.contains(answerSpeaker1.getId()),
+                yourAnswerIds.contains(answerSpeaker2.getId()),
+                yourAnswerIds.contains(answerSpeaker3.getId()),
                 questionName,
                 answerSpeaker0.getFileName(),
                 answerSpeaker1.getFileName(),

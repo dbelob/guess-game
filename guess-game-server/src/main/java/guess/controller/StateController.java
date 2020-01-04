@@ -57,7 +57,7 @@ public class StateController {
     private <T> T getDto(HttpSession httpSession, DtoFunction<T> dtoFunction) {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
-        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
+        List<Long> yourAnswerIds = answerService.getYourAnswerIds(currentQuestionIndex, httpSession);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
@@ -69,7 +69,7 @@ public class StateController {
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),
                     questionAnswers,
-                    wrongAnswerIds,
+                    yourAnswerIds,
                     language);
         } else {
             return null;

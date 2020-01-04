@@ -84,7 +84,7 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public List<Long> getWrongAnswerIds(int questionIndex, HttpSession httpSession) {
+    public List<Long> getYourAnswerIds(int questionIndex, HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
