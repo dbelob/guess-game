@@ -13,6 +13,7 @@ import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
 import guess.domain.question.*;
 import guess.domain.source.LocaleItem;
+import guess.domain.source.Talk;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -93,7 +94,7 @@ public class StateServiceImpl implements StateService {
             for (Question question : selectedShuffledQuestions) {
                 // Correct answers size must be <= QUESTION_ANSWERS_LIST_SIZE
                 List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessType());
-                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, startParameters.getGuessType());
+                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessType());
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
                 Collections.shuffle(shuffledAllAvailableAnswersWithoutCorrectAnswers);
@@ -151,7 +152,7 @@ public class StateServiceImpl implements StateService {
         }
     }
 
-    private List<Answer> getAllAvailableAnswers(List<Question> questions, GuessType guessType) {
+    private List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessType guessType) {
         switch (guessType) {
             case GUESS_NAME_TYPE:
             case GUESS_PICTURE_TYPE:
@@ -159,8 +160,12 @@ public class StateServiceImpl implements StateService {
                         .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
                         .collect(Collectors.toList());
             case GUESS_TALK_TYPE:
+                Talk correctAnswerTalk = ((TalkAnswer) correctAnswers.get(0)).getTalk();
+
                 return questions.stream()
-                        .map(q -> new TalkAnswer(((TalkQuestion) q).getTalk()))
+                        .map(q -> ((TalkQuestion) q).getTalk())
+                        .filter(t -> (t.getId() == correctAnswerTalk.getId()) || !t.getSpeakerIds().containsAll(correctAnswerTalk.getSpeakerIds()))
+                        .map(TalkAnswer::new)
                         .collect(Collectors.toList());
             case GUESS_SPEAKER_TYPE:
                 return questions.stream()
