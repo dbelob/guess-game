@@ -27,12 +27,11 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
     private final String speakerName3;
 
     public TalkSpeakersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                           long id0, long id1, long id2, long id3,
-                           boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3,
+                           long id0, long id1, long id2, long id3, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
                            String talkName,
                            String speakerFileName0, String speakerName0, String speakerFileName1, String speakerName1,
                            String speakerFileName2, String speakerName2, String speakerFileName3, String speakerName3) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, id0, id1, id2, id3, invalid0, invalid1, invalid2, invalid3);
+        super(questionSetName, currentIndex, totalNumber, logoFileName, id0, id1, id2, id3, correctAnswerIds, yourAnswerIds);
 
         this.talkName = talkName;
         this.speakerFileName0 = speakerFileName0;
@@ -82,7 +81,8 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
     }
 
     public static TalkSpeakersDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> yourAnswerIds, Language language) {
+                                               QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+                                               Language language) {
         Speaker speaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(0)).getSpeaker();
         Speaker speaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(1)).getSpeaker();
         Speaker speaker2 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(2)).getSpeaker();
@@ -101,10 +101,7 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
 
         return new TalkSpeakersDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 speaker0.getId(), speaker1.getId(), speaker2.getId(), speaker3.getId(),
-                yourAnswerIds.contains(speaker0.getId()),
-                yourAnswerIds.contains(speaker1.getId()),
-                yourAnswerIds.contains(speaker2.getId()),
-                yourAnswerIds.contains(speaker3.getId()),
+                correctAnswerIds, yourAnswerIds,
                 LocalizationUtils.getString(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language),
                 speaker0.getFileName(),
                 name0,

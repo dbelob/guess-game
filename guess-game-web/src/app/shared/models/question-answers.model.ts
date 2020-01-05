@@ -11,7 +11,11 @@ export abstract class QuestionAnswers {
     public invalid0?: boolean,
     public invalid1?: boolean,
     public invalid2?: boolean,
-    public invalid3?: boolean
+    public invalid3?: boolean,
+    public valid0?: boolean,
+    public valid1?: boolean,
+    public valid2?: boolean,
+    public valid3?: boolean
   ) {
   }
 }

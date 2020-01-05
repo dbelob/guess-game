@@ -23,10 +23,9 @@ public class NamePicturesDto extends QuestionAnswersDto {
     private final String fileName3;
 
     public NamePicturesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                           long id0, long id1, long id2, long id3,
-                           boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3,
+                           long id0, long id1, long id2, long id3, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
                            String name, String fileName0, String fileName1, String fileName2, String fileName3) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, id0, id1, id2, id3, invalid0, invalid1, invalid2, invalid3);
+        super(questionSetName, currentIndex, totalNumber, logoFileName, id0, id1, id2, id3, correctAnswerIds, yourAnswerIds);
 
         this.name = name;
         this.fileName0 = fileName0;
@@ -56,7 +55,8 @@ public class NamePicturesDto extends QuestionAnswersDto {
     }
 
     public static NamePicturesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> yourAnswerIds, Language language) {
+                                               QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+                                               Language language) {
         Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
         Speaker answerSpeaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(0)).getSpeaker();
         Speaker answerSpeaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(1)).getSpeaker();
@@ -73,10 +73,7 @@ public class NamePicturesDto extends QuestionAnswersDto {
 
         return new NamePicturesDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 answerSpeaker0.getId(), answerSpeaker1.getId(), answerSpeaker2.getId(), answerSpeaker3.getId(),
-                yourAnswerIds.contains(answerSpeaker0.getId()),
-                yourAnswerIds.contains(answerSpeaker1.getId()),
-                yourAnswerIds.contains(answerSpeaker2.getId()),
-                yourAnswerIds.contains(answerSpeaker3.getId()),
+                correctAnswerIds, yourAnswerIds,
                 questionName,
                 answerSpeaker0.getFileName(),
                 answerSpeaker1.getFileName(),

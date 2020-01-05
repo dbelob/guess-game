@@ -26,11 +26,10 @@ public class SpeakerTalksDto extends QuestionAnswersDto {
     private final String talkName3;
 
     public SpeakerTalksDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                           long id0, long id1, long id2, long id3,
-                           boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3,
+                           long id0, long id1, long id2, long id3, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
                            String speakerFileName, String speakerName,
                            String talkName0, String talkName1, String talkName2, String talkName3) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, id0, id1, id2, id3, invalid0, invalid1, invalid2, invalid3);
+        super(questionSetName, currentIndex, totalNumber, logoFileName, id0, id1, id2, id3, correctAnswerIds, yourAnswerIds);
 
         this.speakerFileName = speakerFileName;
         this.speakerName = speakerName;
@@ -65,7 +64,8 @@ public class SpeakerTalksDto extends QuestionAnswersDto {
     }
 
     public static SpeakerTalksDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> yourAnswerIds, Language language) {
+                                               QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+                                               Language language) {
         Speaker questionSpeaker = ((TalkQuestion) questionAnswers.getQuestion()).getSpeakers().get(0);  //TODO: is it right?
         Talk talk0 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(0)).getTalk();
         Talk talk1 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(1)).getTalk();
@@ -88,10 +88,7 @@ public class SpeakerTalksDto extends QuestionAnswersDto {
 
         return new SpeakerTalksDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 talk0.getId(), talk1.getId(), talk2.getId(), talk3.getId(),
-                yourAnswerIds.contains(talk0.getId()),
-                yourAnswerIds.contains(talk1.getId()),
-                yourAnswerIds.contains(talk2.getId()),
-                yourAnswerIds.contains(talk3.getId()),
+                correctAnswerIds, yourAnswerIds,
                 questionSpeaker.getFileName(),
                 questionName,
                 LocalizationUtils.getString(talk0.getName(), language),
