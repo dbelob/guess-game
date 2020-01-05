@@ -8,7 +8,7 @@ import java.util.List;
 public class AnswerSet {
     private final List<Long> correctAnswerIds;
     private final List<Long> yourAnswerIds;
-    private final boolean isSuccess;
+    private boolean isSuccess;
 
     public AnswerSet(List<Long> correctAnswerIds, List<Long> yourAnswerIds, boolean isSuccess) {
         this.correctAnswerIds = correctAnswerIds;
@@ -26,5 +26,9 @@ public class AnswerSet {
 
     public boolean isSuccess() {
         return isSuccess;
+    }
+
+    public void setSuccess(boolean success) {
+        isSuccess = success;
     }
 }

@@ -40,7 +40,13 @@ public class AnswerServiceImpl implements AnswerService {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
-            answerSets.get(questionIndex).getYourAnswerIds().add(answerId);
+            AnswerSet answerSet = answerSets.get(questionIndex);
+
+            answerSet.getYourAnswerIds().add(answerId);
+
+            if (isSuccess(answerSet.getCorrectAnswerIds(), answerSet.getYourAnswerIds())) {
+                answerSet.setSuccess(true);
+            }
         } else {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
 
@@ -51,8 +57,7 @@ public class AnswerServiceImpl implements AnswerService {
                         .map(Identifiable::getId)
                         .collect(Collectors.toList());
                 List<Long> yourAnswerIds = new ArrayList<>(Collections.singletonList(answerId));
-                boolean isSuccess = questionAnswers.getCorrectAnswers().stream()
-                        .anyMatch(e -> e.getId() == answerId);
+                boolean isSuccess = isSuccess(correctAnswerIds, yourAnswerIds);
 
                 AnswerSet answerSet = new AnswerSet(
                         correctAnswerIds,
@@ -62,6 +67,10 @@ public class AnswerServiceImpl implements AnswerService {
                 answerDao.addAnswerSet(answerSet, httpSession);
             }
         }
+    }
+
+    private boolean isSuccess(List<Long> correctAnswerIds, List<Long> yourAnswerIds) {
+        return yourAnswerIds.containsAll(correctAnswerIds) && correctAnswerIds.containsAll(yourAnswerIds);
     }
 
     @Override
