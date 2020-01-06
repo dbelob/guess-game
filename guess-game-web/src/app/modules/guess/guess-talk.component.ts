@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
-import { SpeakerTalks } from "../../shared/models/speaker-talks.model";
+import { SpeakersTalks } from "../../shared/models/speakers-talks.model";
 import { StateService } from "../../shared/services/state.service";
 import { AnswerService } from "../../shared/services/answer.service";
 import { State } from "../../shared/models/state.model";
@@ -13,10 +13,9 @@ export class GuessTalkComponent {
   private imageDirectory: string = 'assets/images';
   private eventsImageDirectory: string = `${this.imageDirectory}/events`;
   private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
-  public speakerTalks: SpeakerTalks = new SpeakerTalks();
+  public speakerTalks: SpeakersTalks = new SpeakersTalks();
   public title: string;
   public logoImageSource: string;
-  public imageSource: string;
 
   constructor(private stateService: StateService, private answerService: AnswerService, private router: Router) {
     this.loadQuestion();
@@ -28,7 +27,6 @@ export class GuessTalkComponent {
           if (data) {
             this.speakerTalks = data;
             this.title = `${this.speakerTalks.questionSetName} (${this.speakerTalks.currentIndex + 1}/${this.speakerTalks.totalNumber})`;
-            this.imageSource = `${this.speakersImageDirectory}/${this.speakerTalks.speakerFileName}`;
 
             if (this.speakerTalks.logoFileName) {
               this.logoImageSource = `${this.eventsImageDirectory}/${this.speakerTalks.logoFileName}`;

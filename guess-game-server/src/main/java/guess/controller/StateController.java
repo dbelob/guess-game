@@ -92,8 +92,8 @@ public class StateController {
 
     @GetMapping("/speaker-talks")
     @ResponseBody
-    public SpeakerTalksDto getSpeakerTalks(HttpSession httpSession) {
-        return getDto(httpSession, SpeakerTalksDto::convertToDto);
+    public SpeakersTalksDto getSpeakerTalks(HttpSession httpSession) {
+        return getDto(httpSession, SpeakersTalksDto::convertToDto);
     }
 
     @GetMapping("/talk-speakers")

@@ -17,10 +17,4 @@ public class SpeakerQuestion extends Question {
     public Speaker getSpeaker() {
         return speaker;
     }
-
-    @Override
-    public Question transform() {
-        // Dont't change question
-        return this;
-    }
 }

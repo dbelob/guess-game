@@ -9,6 +9,4 @@ public abstract class Question extends Identifiable {
     public Question(long id) {
         super(id);
     }
-
-    public abstract Question transform();
 }

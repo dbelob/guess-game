@@ -92,8 +92,12 @@ public class StateServiceImpl implements StateService {
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                // Correct answers size must be <= QUESTION_ANSWERS_LIST_SIZE
                 List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessType());
+
+                // Correct answers size must be <= QUESTION_ANSWERS_LIST_SIZE
+                correctAnswers = correctAnswers.subList(
+                        0,
+                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE, correctAnswers.size()));
                 List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessType());
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
@@ -106,9 +110,7 @@ public class StateServiceImpl implements StateService {
                 availableAnswers.addAll(correctAnswers);
                 Collections.shuffle(availableAnswers);
 
-                Question transformedQuestion = question.transform();    //TODO: is it right?
-
-                questionAnswersList.add(new QuestionAnswers(transformedQuestion, correctAnswers, availableAnswers));
+                questionAnswersList.add(new QuestionAnswers(question, correctAnswers, availableAnswers));
             }
         }
 

@@ -1,9 +1,9 @@
 import { QuestionAnswers } from "./question-answers.model";
+import { SpeakerPair } from "./speaker-pair.model";
 
-export class SpeakerTalks extends QuestionAnswers {
+export class SpeakersTalks extends QuestionAnswers {
   constructor(
-    public speakerFileName?: string,
-    public speakerName?: string,
+    public speakers?: SpeakerPair[],
     public talkName0?: string,
     public talkName1?: string,
     public talkName2?: string,

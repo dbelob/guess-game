@@ -3,8 +3,6 @@ package guess.domain.question;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -27,20 +25,5 @@ public class TalkQuestion extends Question {
 
     public Talk getTalk() {
         return talk;
-    }
-
-    @Override
-    public Question transform() {
-        if (talk.getSpeakers().size() > 1) {
-            List<Speaker> shuffledSpeakers = new ArrayList<>(talk.getSpeakers());
-            Collections.shuffle(shuffledSpeakers);
-
-            return new TalkQuestion(
-                    shuffledSpeakers,
-                    talk);
-        } else {
-            // Dont't change question
-            return this;
-        }
     }
 }
