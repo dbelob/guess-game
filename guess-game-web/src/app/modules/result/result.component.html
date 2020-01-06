@@ -94,19 +94,23 @@
         <td scope="row" class="text-center">{{i + 1}}</td>
         <td>
           <div *ngIf="isQuestionPicture" class="text-center">
-            <figure class="figure">
-              <img src="{{speakersImageDirectory}}/{{talkErrorDetails.speakerFileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
-              <figcaption class="figure-caption text-center">{{talkErrorDetails.speakerName}}</figcaption>
-            </figure>
+            <p *ngFor="let speaker of talkErrorDetails.speakers">
+              <figure class="figure">
+                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
+                <figcaption class="figure-caption text-center">{{speaker.name}}</figcaption>
+              </figure>
+            </p>
           </div>
           <span *ngIf="!isQuestionPicture">{{talkErrorDetails.talkName}}</span>
         </td>
         <td>
           <div *ngIf="!isQuestionPicture" class="text-center">
-            <figure class="figure">
-              <img src="{{speakersImageDirectory}}/{{talkErrorDetails.speakerFileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
-              <figcaption class="figure-caption text-center">{{talkErrorDetails.speakerName}}</figcaption>
-            </figure>
+            <p *ngFor="let speaker of talkErrorDetails.speakers">
+              <figure class="figure">
+                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
+                <figcaption class="figure-caption text-center">{{speaker.name}}</figcaption>
+              </figure>
+            </p>
           </div>
           <span *ngIf="isQuestionPicture">{{talkErrorDetails.talkName}}</span>
         </td>

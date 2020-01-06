@@ -1,10 +1,10 @@
-package guess.domain.answer;
+package guess.dto.result;
 
-public class AnswerPair {
+public class SpeakerPair {
     private final String name;
     private final String fileName;
 
-    public AnswerPair(String name, String fileName) {
+    public SpeakerPair(String name, String fileName) {
         this.name = name;
         this.fileName = fileName;
     }

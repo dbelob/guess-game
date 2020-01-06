@@ -3,7 +3,6 @@ package guess.dto.result;
 import guess.domain.GuessType;
 import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
-import guess.domain.answer.AnswerPair;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
 import guess.domain.question.TalkQuestion;
@@ -19,31 +18,25 @@ import java.util.stream.Collectors;
  * Talk error details DTO.
  */
 public class TalkErrorDetailsDto {
-    private String speakerFileName;
-    private String speakerName;
+    private List<SpeakerPair> speakers;
     private String talkName;
-    private List<AnswerPair> yourAnswers;
+    private List<SpeakerPair> yourAnswers;
 
-    private TalkErrorDetailsDto(String speakerFileName, String speakerName, String talkName, List<AnswerPair> yourAnswers) {
-        this.speakerFileName = speakerFileName;
-        this.speakerName = speakerName;
+    private TalkErrorDetailsDto(List<SpeakerPair> speakers, String talkName, List<SpeakerPair> yourAnswers) {
+        this.speakers = speakers;
         this.talkName = talkName;
         this.yourAnswers = yourAnswers;
     }
 
-    public String getSpeakerFileName() {
-        return speakerFileName;
-    }
-
-    public String getSpeakerName() {
-        return speakerName;
+    public List<SpeakerPair> getSpeakers() {
+        return speakers;
     }
 
     public String getTalkName() {
         return talkName;
     }
 
-    public List<AnswerPair> getYourAnswers() {
+    public List<SpeakerPair> getYourAnswers() {
         return yourAnswers;
     }
 
@@ -65,21 +58,24 @@ public class TalkErrorDetailsDto {
                 s -> true);
 
         if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
-            List<AnswerPair> yourAnswers = errorDetails.getYourAnswers().stream()
+            List<SpeakerPair> questionSpeakers = ((TalkQuestion) errorDetails.getQuestion()).getSpeakers().stream()
+                    .map(s -> new SpeakerPair(
+                            LocalizationUtils.getSpeakerName(s, language, speakerDuplicates),
+                            s.getFileName()))
+                    .collect(Collectors.toList());
+
+            List<SpeakerPair> yourAnswers = errorDetails.getYourAnswers().stream()
                     .map(a -> GuessType.GUESS_TALK_TYPE.equals(guessType) ?
-                            new AnswerPair(
+                            new SpeakerPair(
                                     LocalizationUtils.getString(((TalkAnswer) a).getTalk().getName(), language),
                                     null) :
-                            new AnswerPair(
+                            new SpeakerPair(
                                     LocalizationUtils.getSpeakerName(((SpeakerAnswer) a).getSpeaker(), language, speakerDuplicates),
                                     ((SpeakerAnswer) a).getSpeaker().getFileName()))
                     .collect(Collectors.toList());
 
-            Speaker questionSpeaker = ((TalkQuestion) errorDetails.getQuestion()).getSpeakers().get(0); //TODO: is it right?
-
             return new TalkErrorDetailsDto(
-                    questionSpeaker.getFileName(),
-                    LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates),
+                    questionSpeakers,
                     LocalizationUtils.getString(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName(), language),
                     yourAnswers);
         } else {
