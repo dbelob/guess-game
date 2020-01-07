@@ -6,7 +6,7 @@ import guess.domain.source.Talk;
  * Answer about talk.
  */
 public class TalkAnswer extends Answer {
-    private Talk talk;
+    private final Talk talk;
 
     public TalkAnswer(Talk talk) {
         super(talk.getId());

@@ -6,7 +6,7 @@ import java.util.Objects;
  * Identifiable.
  */
 public abstract class Identifiable {
-    private long id;
+    private final long id;
 
     public Identifiable(long id) {
         this.id = id;
@@ -14,10 +14,6 @@ public abstract class Identifiable {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     @Override
