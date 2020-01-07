@@ -94,10 +94,10 @@ public class StateServiceImpl implements StateService {
             for (Question question : selectedShuffledQuestions) {
                 List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessType());
 
-                // Correct answers size must be <= QUESTION_ANSWERS_LIST_SIZE
+                // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
                 correctAnswers = correctAnswers.subList(
                         0,
-                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE, correctAnswers.size()));
+                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, correctAnswers.size()));
                 List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessType());
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
