@@ -1,5 +1,7 @@
 package guess.dto.guess;
 
+import java.util.List;
+
 /**
  * Question, answers DTO.
  */
@@ -19,9 +21,13 @@ public abstract class QuestionAnswersDto {
     private final boolean invalid2;
     private final boolean invalid3;
 
+    private final boolean valid0;
+    private final boolean valid1;
+    private final boolean valid2;
+    private final boolean valid3;
+
     public QuestionAnswersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                              long id0, long id1, long id2, long id3,
-                              boolean invalid0, boolean invalid1, boolean invalid2, boolean invalid3) {
+                              long id0, long id1, long id2, long id3, List<Long> correctAnswerIds, List<Long> yourAnswerIds) {
         this.questionSetName = questionSetName;
         this.currentIndex = currentIndex;
         this.totalNumber = totalNumber;
@@ -30,10 +36,22 @@ public abstract class QuestionAnswersDto {
         this.id1 = id1;
         this.id2 = id2;
         this.id3 = id3;
-        this.invalid0 = invalid0;
-        this.invalid1 = invalid1;
-        this.invalid2 = invalid2;
-        this.invalid3 = invalid3;
+        this.invalid0 = isInvalid(correctAnswerIds, yourAnswerIds, id0);
+        this.invalid1 = isInvalid(correctAnswerIds, yourAnswerIds, id1);
+        this.invalid2 = isInvalid(correctAnswerIds, yourAnswerIds, id2);
+        this.invalid3 = isInvalid(correctAnswerIds, yourAnswerIds, id3);
+        this.valid0 = isValid(correctAnswerIds, yourAnswerIds, id0);
+        this.valid1 = isValid(correctAnswerIds, yourAnswerIds, id1);
+        this.valid2 = isValid(correctAnswerIds, yourAnswerIds, id2);
+        this.valid3 = isValid(correctAnswerIds, yourAnswerIds, id3);
+    }
+
+    private boolean isInvalid(List<Long> correctAnswerIds, List<Long> yourAnswerIds, long id) {
+        return yourAnswerIds.contains(id) && !correctAnswerIds.contains(id);
+    }
+
+    private boolean isValid(List<Long> correctAnswerIds, List<Long> yourAnswerIds, long id) {
+        return yourAnswerIds.contains(id) && correctAnswerIds.contains(id);
     }
 
     public String getQuestionSetName() {
@@ -82,5 +100,21 @@ public abstract class QuestionAnswersDto {
 
     public boolean isInvalid3() {
         return invalid3;
+    }
+
+    public boolean isValid0() {
+        return valid0;
+    }
+
+    public boolean isValid1() {
+        return valid1;
+    }
+
+    public boolean isValid2() {
+        return valid2;
+    }
+
+    public boolean isValid3() {
+        return valid3;
     }
 }

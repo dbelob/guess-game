@@ -1,5 +1,7 @@
 package guess.domain.question;
 
+import guess.domain.answer.Answer;
+
 import java.util.List;
 
 /**
@@ -7,19 +9,24 @@ import java.util.List;
  */
 public class QuestionAnswers {
     private final Question question;
-    private final List<Question> answers;
+    private final List<Answer> correctAnswers;
+    private final List<Answer> availableAnswers;
 
-    public QuestionAnswers(Question question, List<Question> answers) {
+    public QuestionAnswers(Question question, List<Answer> correctAnswers, List<Answer> availableAnswers) {
         this.question = question;
-        this.answers = answers;
+        this.correctAnswers = correctAnswers;
+        this.availableAnswers = availableAnswers;
     }
 
     public Question getQuestion() {
         return question;
     }
 
-    public List<Question> getAnswers() {
-        return answers;
+    public List<Answer> getCorrectAnswers() {
+        return correctAnswers;
     }
 
+    public List<Answer> getAvailableAnswers() {
+        return availableAnswers;
+    }
 }

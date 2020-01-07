@@ -14,13 +14,14 @@ public class QuestionAnswersSet {
     final private List<LocaleItem> name;
     final private String logoFileName;
 
-    public QuestionAnswersSet(List<LocaleItem>  name, String logoFileName, List<QuestionAnswers> questionAnswersList) {
+    public QuestionAnswersSet(List<LocaleItem> name, String logoFileName,
+                              List<QuestionAnswers> questionAnswersList) {
         this.name = name;
         this.logoFileName = logoFileName;
         this.questionAnswersList = questionAnswersList;
     }
 
-    public List<LocaleItem>  getName() {
+    public List<LocaleItem> getName() {
         return name;
     }
 
@@ -31,5 +32,4 @@ public class QuestionAnswersSet {
     public List<QuestionAnswers> getQuestionAnswersList() {
         return questionAnswersList;
     }
-
 }

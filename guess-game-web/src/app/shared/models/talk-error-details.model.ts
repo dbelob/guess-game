@@ -1,11 +1,10 @@
-import { ErrorPair } from "./error-pair.model";
+import { SpeakerPair } from "./speaker-pair.model";
 
 export class TalkErrorDetails {
   constructor(
-    public speakerFileName?: string,
-    public speakerName?: string,
+    public speakers?: SpeakerPair[],
     public talkName?: string,
-    public wrongAnswers?: ErrorPair[]
+    public yourAnswers?: SpeakerPair[]
   ) {
   }
 }

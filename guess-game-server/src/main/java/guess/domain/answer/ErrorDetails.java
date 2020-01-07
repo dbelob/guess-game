@@ -9,24 +9,24 @@ import java.util.List;
  */
 public class ErrorDetails {
     private final Question question;
-    private final List<Question> allAnswers;
-    private final List<Question> wrongAnswers;
+    private final List<Answer> availableAnswers;
+    private final List<Answer> yourAnswers;
 
-    public ErrorDetails(Question question, List<Question> allAnswers, List<Question> wrongAnswers) {
+    public ErrorDetails(Question question, List<Answer> availableAnswers, List<Answer> yourAnswers) {
         this.question = question;
-        this.allAnswers = allAnswers;
-        this.wrongAnswers = wrongAnswers;
+        this.availableAnswers = availableAnswers;
+        this.yourAnswers = yourAnswers;
     }
 
     public Question getQuestion() {
         return question;
     }
 
-    public List<Question> getAllAnswers() {
-        return allAnswers;
+    public List<Answer> getAvailableAnswers() {
+        return availableAnswers;
     }
 
-    public List<Question> getWrongAnswers() {
-        return wrongAnswers;
+    public List<Answer> getYourAnswers() {
+        return yourAnswers;
     }
 }

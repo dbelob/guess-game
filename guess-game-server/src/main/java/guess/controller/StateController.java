@@ -57,7 +57,8 @@ public class StateController {
     private <T> T getDto(HttpSession httpSession, DtoFunction<T> dtoFunction) {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
-        List<Long> wrongAnswerIds = answerService.getWrongAnswerIds(currentQuestionIndex, httpSession);
+        List<Long> correctAnswerIds = answerService.getCorrectAnswerIds(currentQuestionIndex, httpSession);
+        List<Long> yourAnswerIds = answerService.getYourAnswerIds(currentQuestionIndex, httpSession);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
@@ -69,7 +70,8 @@ public class StateController {
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),
                     questionAnswers,
-                    wrongAnswerIds,
+                    correctAnswerIds,
+                    yourAnswerIds,
                     language);
         } else {
             return null;
@@ -90,8 +92,8 @@ public class StateController {
 
     @GetMapping("/speaker-talks")
     @ResponseBody
-    public SpeakerTalksDto getSpeakerTalks(HttpSession httpSession) {
-        return getDto(httpSession, SpeakerTalksDto::convertToDto);
+    public SpeakersTalksDto getSpeakerTalks(HttpSession httpSession) {
+        return getDto(httpSession, SpeakersTalksDto::convertToDto);
     }
 
     @GetMapping("/talk-speakers")

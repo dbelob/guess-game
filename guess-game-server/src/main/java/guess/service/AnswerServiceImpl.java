@@ -3,11 +3,12 @@ package guess.service;
 import guess.dao.AnswerDao;
 import guess.dao.StateDao;
 import guess.domain.GuessType;
+import guess.domain.Identifiable;
 import guess.domain.StartParameters;
+import guess.domain.answer.Answer;
 import guess.domain.answer.AnswerSet;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.Result;
-import guess.domain.question.Question;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Answer service implementation.
@@ -38,22 +40,37 @@ public class AnswerServiceImpl implements AnswerService {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
-            answerSets.get(questionIndex).getAnswers().add(answerId);
+            AnswerSet answerSet = answerSets.get(questionIndex);
+
+            answerSet.getYourAnswerIds().add(answerId);
+
+            if (isSuccess(answerSet.getCorrectAnswerIds(), answerSet.getYourAnswerIds())) {
+                answerSet.setSuccess(true);
+            }
         } else {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
 
             if (questionAnswersSet != null) {
                 List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
                 QuestionAnswers questionAnswers = questionAnswersList.get(questionIndex);
-                List<Long> answers = new ArrayList<>(Collections.singletonList(answerId));
+                List<Long> correctAnswerIds = questionAnswers.getCorrectAnswers().stream()
+                        .map(Identifiable::getId)
+                        .collect(Collectors.toList());
+                List<Long> yourAnswerIds = new ArrayList<>(Collections.singletonList(answerId));
+                boolean isSuccess = isSuccess(correctAnswerIds, yourAnswerIds);
+
                 AnswerSet answerSet = new AnswerSet(
-                        questionAnswers.getQuestion().getId(),
-                        answers,
-                        (questionAnswers.getQuestion().getId() == answerId));
+                        correctAnswerIds,
+                        yourAnswerIds,
+                        isSuccess);
 
                 answerDao.addAnswerSet(answerSet, httpSession);
             }
         }
+    }
+
+    private boolean isSuccess(List<Long> correctAnswerIds, List<Long> yourAnswerIds) {
+        return yourAnswerIds.containsAll(correctAnswerIds) && correctAnswerIds.containsAll(yourAnswerIds);
     }
 
     @Override
@@ -65,7 +82,7 @@ public class AnswerServiceImpl implements AnswerService {
         } else {
             AnswerSet lastAnswerSet = answerSets.get(answerSets.size() - 1);
 
-            if (lastAnswerSet.isSuccess() || lastAnswerSet.getAnswers().contains(lastAnswerSet.getQuestionId())) {
+            if (lastAnswerSet.isSuccess() || lastAnswerSet.getYourAnswerIds().containsAll(lastAnswerSet.getCorrectAnswerIds())) {
                 // Next question
                 return answerSets.size();
             } else {
@@ -76,11 +93,22 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public List<Long> getWrongAnswerIds(int questionIndex, HttpSession httpSession) {
+    public List<Long> getCorrectAnswerIds(int questionIndex, HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
-            return answerSets.get(questionIndex).getAnswers();
+            return answerSets.get(questionIndex).getCorrectAnswerIds();
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    @Override
+    public List<Long> getYourAnswerIds(int questionIndex, HttpSession httpSession) {
+        List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
+
+        if (questionIndex < answerSets.size()) {
+            return answerSets.get(questionIndex).getYourAnswerIds();
         } else {
             return Collections.emptyList();
         }
@@ -121,23 +149,22 @@ public class AnswerServiceImpl implements AnswerService {
             AnswerSet answerSet = answerSets.get(i);
 
             if (!answerSet.isSuccess()) {
-                List<Long> wrongAnswersIds = new ArrayList<>(answerSet.getAnswers());
-                wrongAnswersIds.remove(answerSet.getQuestionId());
+                List<Long> yourAnswersIds = new ArrayList<>(answerSet.getYourAnswerIds());
 
-                List<Question> wrongAnswers = new ArrayList<>();
-                for (long wrongAnswersId : wrongAnswersIds) {
-                    Optional<Question> optionalWrongAnswer = questionAnswersList.get(i).getAnswers().stream()
-                            .filter(q -> q.getId() == wrongAnswersId)
+                List<Answer> yourAnswers = new ArrayList<>();
+                for (long yourAnswersId : yourAnswersIds) {
+                    Optional<Answer> optionalWrongAnswer = questionAnswersList.get(i).getAvailableAnswers().stream()
+                            .filter(q -> q.getId() == yourAnswersId)
                             .findFirst();
 
-                    optionalWrongAnswer.ifPresent(wrongAnswers::add);
+                    optionalWrongAnswer.ifPresent(yourAnswers::add);
                 }
 
-                if (!wrongAnswers.isEmpty()) {
+                if (!yourAnswers.isEmpty()) {
                     errorDetailsList.add(new ErrorDetails(
                             questionAnswersList.get(i).getQuestion(),
-                            questionAnswersList.get(i).getAnswers(),
-                            wrongAnswers));
+                            questionAnswersList.get(i).getAvailableAnswers(),
+                            yourAnswers));
                 }
             }
         }

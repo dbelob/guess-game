@@ -1,14 +1,14 @@
-package guess.domain.question;
+package guess.domain.answer;
 
 import guess.domain.source.Speaker;
 
 /**
- * Question about speaker.
+ * Answer about speaker.
  */
-public class SpeakerQuestion extends Question {
-    private Speaker speaker;
+public class SpeakerAnswer extends Answer {
+    private final Speaker speaker;
 
-    public SpeakerQuestion(Speaker speaker) {
+    public SpeakerAnswer(Speaker speaker) {
         super(speaker.getId());
 
         this.speaker = speaker;

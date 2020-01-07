@@ -6,25 +6,29 @@ import java.util.List;
  * Answer set.
  */
 public class AnswerSet {
-    private final long questionId;
-    private final List<Long> answers;
-    private final boolean isSuccess;
+    private final List<Long> correctAnswerIds;
+    private final List<Long> yourAnswerIds;
+    private boolean isSuccess;
 
-    public AnswerSet(long questionId, List<Long> answers, boolean isSuccess) {
-        this.questionId = questionId;
-        this.answers = answers;
+    public AnswerSet(List<Long> correctAnswerIds, List<Long> yourAnswerIds, boolean isSuccess) {
+        this.correctAnswerIds = correctAnswerIds;
+        this.yourAnswerIds = yourAnswerIds;
         this.isSuccess = isSuccess;
     }
 
-    public long getQuestionId() {
-        return questionId;
+    public List<Long> getCorrectAnswerIds() {
+        return correctAnswerIds;
     }
 
-    public List<Long> getAnswers() {
-        return answers;
+    public List<Long> getYourAnswerIds() {
+        return yourAnswerIds;
     }
 
     public boolean isSuccess() {
         return isSuccess;
+    }
+
+    public void setSuccess(boolean success) {
+        isSuccess = success;
     }
 }
