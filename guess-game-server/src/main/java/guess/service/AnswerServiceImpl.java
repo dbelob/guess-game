@@ -153,7 +153,7 @@ public class AnswerServiceImpl implements AnswerService {
 
                 List<Answer> yourAnswers = new ArrayList<>();
                 for (long yourAnswersId : yourAnswersIds) {
-                    Optional<Answer> optionalWrongAnswer = questionAnswersList.get(i).getAvailableAnswers().stream()
+                    Optional<Answer> optionalWrongAnswer = questionAnswersList.get(i).getAvailableAnswersAsList().stream()
                             .filter(q -> q.getId() == yourAnswersId)
                             .findFirst();
 
@@ -163,7 +163,7 @@ public class AnswerServiceImpl implements AnswerService {
                 if (!yourAnswers.isEmpty()) {
                     errorDetailsList.add(new ErrorDetails(
                             questionAnswersList.get(i).getQuestion(),
-                            questionAnswersList.get(i).getAvailableAnswers(),
+                            questionAnswersList.get(i).getAvailableAnswersAsList(),
                             yourAnswers));
                 }
             }

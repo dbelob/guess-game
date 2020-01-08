@@ -1,7 +1,9 @@
 package guess.domain.question;
 
+import guess.domain.Quadruple;
 import guess.domain.answer.Answer;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -10,9 +12,9 @@ import java.util.List;
 public class QuestionAnswers {
     private final Question question;
     private final List<Answer> correctAnswers;
-    private final List<Answer> availableAnswers;
+    private final Quadruple<Answer> availableAnswers;
 
-    public QuestionAnswers(Question question, List<Answer> correctAnswers, List<Answer> availableAnswers) {
+    public QuestionAnswers(Question question, List<Answer> correctAnswers, Quadruple<Answer> availableAnswers) {
         this.question = question;
         this.correctAnswers = correctAnswers;
         this.availableAnswers = availableAnswers;
@@ -26,7 +28,15 @@ public class QuestionAnswers {
         return correctAnswers;
     }
 
-    public List<Answer> getAvailableAnswers() {
+    public Quadruple<Answer> getAvailableAnswers() {
         return availableAnswers;
+    }
+
+    public List<Answer> getAvailableAnswersAsList() {
+        return Arrays.asList(
+                availableAnswers.getFirst(),
+                availableAnswers.getSecond(),
+                availableAnswers.getThird(),
+                availableAnswers.getFourth());
     }
 }

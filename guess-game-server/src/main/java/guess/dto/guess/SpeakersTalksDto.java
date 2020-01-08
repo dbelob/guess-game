@@ -62,10 +62,10 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
     public static SpeakersTalksDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                                                 QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
                                                 Language language) {
-        Talk talk0 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(0)).getTalk();
-        Talk talk1 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(1)).getTalk();
-        Talk talk2 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(2)).getTalk();
-        Talk talk3 = ((TalkAnswer) questionAnswers.getAvailableAnswers().get(3)).getTalk();
+        Talk talk0 = ((TalkAnswer) questionAnswers.getAvailableAnswers().getFirst()).getTalk();
+        Talk talk1 = ((TalkAnswer) questionAnswers.getAvailableAnswers().getSecond()).getTalk();
+        Talk talk2 = ((TalkAnswer) questionAnswers.getAvailableAnswers().getThird()).getTalk();
+        Talk talk3 = ((TalkAnswer) questionAnswers.getAvailableAnswers().getFourth()).getTalk();
         Set<Speaker> talkSpeakers = new HashSet<Speaker>() {{
             addAll(talk0.getSpeakers());
             addAll(talk1.getSpeakers());

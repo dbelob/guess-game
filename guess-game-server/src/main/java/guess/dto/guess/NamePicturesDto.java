@@ -58,10 +58,10 @@ public class NamePicturesDto extends QuestionAnswersDto {
                                                QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
                                                Language language) {
         Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
-        Speaker answerSpeaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(0)).getSpeaker();
-        Speaker answerSpeaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(1)).getSpeaker();
-        Speaker answerSpeaker2 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(2)).getSpeaker();
-        Speaker answerSpeaker3 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(3)).getSpeaker();
+        Speaker answerSpeaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getFirst()).getSpeaker();
+        Speaker answerSpeaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getSecond()).getSpeaker();
+        Speaker answerSpeaker2 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getThird()).getSpeaker();
+        Speaker answerSpeaker3 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getFourth()).getSpeaker();
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 Arrays.asList(answerSpeaker0, answerSpeaker1, answerSpeaker2, answerSpeaker3),

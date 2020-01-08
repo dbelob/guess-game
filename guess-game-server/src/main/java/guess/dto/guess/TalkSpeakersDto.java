@@ -83,10 +83,10 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
     public static TalkSpeakersDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                                                QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
                                                Language language) {
-        Speaker speaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(0)).getSpeaker();
-        Speaker speaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(1)).getSpeaker();
-        Speaker speaker2 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(2)).getSpeaker();
-        Speaker speaker3 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().get(3)).getSpeaker();
+        Speaker speaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getFirst()).getSpeaker();
+        Speaker speaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getSecond()).getSpeaker();
+        Speaker speaker2 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getThird()).getSpeaker();
+        Speaker speaker3 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getFourth()).getSpeaker();
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 Arrays.asList(speaker0, speaker1, speaker2, speaker3),
