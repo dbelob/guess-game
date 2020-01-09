@@ -1,13 +1,13 @@
 package guess.dto.guess;
 
 import guess.domain.Language;
+import guess.domain.Quadruple;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -17,21 +17,15 @@ import java.util.Set;
 public class NamePicturesDto extends QuestionAnswersDto {
     private final String name;
 
-    private final String fileName0;
-    private final String fileName1;
-    private final String fileName2;
-    private final String fileName3;
+    private final Quadruple<String> fileNames;
 
     public NamePicturesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                           long id0, long id1, long id2, long id3, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                           String name, String fileName0, String fileName1, String fileName2, String fileName3) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, id0, id1, id2, id3, correctAnswerIds, yourAnswerIds);
+                           Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+                           String name, Quadruple<String> fileNames) {
+        super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
 
         this.name = name;
-        this.fileName0 = fileName0;
-        this.fileName1 = fileName1;
-        this.fileName2 = fileName2;
-        this.fileName3 = fileName3;
+        this.fileNames = fileNames;
     }
 
     public String getName() {
@@ -39,45 +33,41 @@ public class NamePicturesDto extends QuestionAnswersDto {
     }
 
     public String getFileName0() {
-        return fileName0;
+        return fileNames.getFirst();
     }
 
     public String getFileName1() {
-        return fileName1;
+        return fileNames.getSecond();
     }
 
     public String getFileName2() {
-        return fileName2;
+        return fileNames.getThird();
     }
 
     public String getFileName3() {
-        return fileName3;
+        return fileNames.getFourth();
     }
 
     public static NamePicturesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                                                QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
                                                Language language) {
         Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
-        Speaker answerSpeaker0 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getFirst()).getSpeaker();
-        Speaker answerSpeaker1 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getSecond()).getSpeaker();
-        Speaker answerSpeaker2 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getThird()).getSpeaker();
-        Speaker answerSpeaker3 = ((SpeakerAnswer) questionAnswers.getAvailableAnswers().getFourth()).getSpeaker();
+        Quadruple<Speaker> answerSpeakers =
+                questionAnswers.getAvailableAnswers().map(
+                        a -> ((SpeakerAnswer) a).getSpeaker()
+                );
 
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
-                Arrays.asList(answerSpeaker0, answerSpeaker1, answerSpeaker2, answerSpeaker3),
+                answerSpeakers.asList(),
                 language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
 
         String questionName = LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates);
-
         return new NamePicturesDto(questionSetName, currentIndex, totalNumber, logoFileName,
-                answerSpeaker0.getId(), answerSpeaker1.getId(), answerSpeaker2.getId(), answerSpeaker3.getId(),
+                answerSpeakers.map(Speaker::getId),
                 correctAnswerIds, yourAnswerIds,
                 questionName,
-                answerSpeaker0.getFileName(),
-                answerSpeaker1.getFileName(),
-                answerSpeaker2.getFileName(),
-                answerSpeaker3.getFileName());
+                answerSpeakers.map(Speaker::getFileName));
     }
 }

@@ -1,5 +1,10 @@
 package guess.domain;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.Function;
+
 public class Quadruple<T> {
     private final T first;
     private final T second;
@@ -27,5 +32,18 @@ public class Quadruple<T> {
 
     public T getFourth() {
         return fourth;
+    }
+
+    public <V> Quadruple<V> map(Function<? super T, ? extends V> f) {
+        return new Quadruple<>(
+                f.apply(first),
+                f.apply(second),
+                f.apply(third),
+                f.apply(fourth)
+        );
+    }
+
+    public List<T> asList() {
+        return Collections.unmodifiableList(Arrays.asList(first, second, third, fourth));
     }
 }

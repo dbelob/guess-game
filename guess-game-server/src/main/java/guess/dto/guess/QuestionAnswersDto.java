@@ -1,5 +1,7 @@
 package guess.dto.guess;
 
+import guess.domain.Quadruple;
+
 import java.util.List;
 
 /**
@@ -11,39 +13,21 @@ public abstract class QuestionAnswersDto {
     private final int totalNumber;
     private final String logoFileName;
 
-    private final long id0;
-    private final long id1;
-    private final long id2;
-    private final long id3;
+    private final Quadruple<Long> ids;
 
-    private final boolean invalid0;
-    private final boolean invalid1;
-    private final boolean invalid2;
-    private final boolean invalid3;
+    private final Quadruple<Boolean> invalid;
 
-    private final boolean valid0;
-    private final boolean valid1;
-    private final boolean valid2;
-    private final boolean valid3;
+    private final Quadruple<Boolean> valid;
 
     public QuestionAnswersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                              long id0, long id1, long id2, long id3, List<Long> correctAnswerIds, List<Long> yourAnswerIds) {
+                              Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds) {
         this.questionSetName = questionSetName;
         this.currentIndex = currentIndex;
         this.totalNumber = totalNumber;
         this.logoFileName = logoFileName;
-        this.id0 = id0;
-        this.id1 = id1;
-        this.id2 = id2;
-        this.id3 = id3;
-        this.invalid0 = isInvalid(correctAnswerIds, yourAnswerIds, id0);
-        this.invalid1 = isInvalid(correctAnswerIds, yourAnswerIds, id1);
-        this.invalid2 = isInvalid(correctAnswerIds, yourAnswerIds, id2);
-        this.invalid3 = isInvalid(correctAnswerIds, yourAnswerIds, id3);
-        this.valid0 = isValid(correctAnswerIds, yourAnswerIds, id0);
-        this.valid1 = isValid(correctAnswerIds, yourAnswerIds, id1);
-        this.valid2 = isValid(correctAnswerIds, yourAnswerIds, id2);
-        this.valid3 = isValid(correctAnswerIds, yourAnswerIds, id3);
+        this.ids = ids;
+        this.invalid = ids.map(id -> isInvalid(correctAnswerIds, yourAnswerIds, id));
+        this.valid = ids.map(id -> isValid(correctAnswerIds, yourAnswerIds, id));
     }
 
     private boolean isInvalid(List<Long> correctAnswerIds, List<Long> yourAnswerIds, long id) {
@@ -71,50 +55,50 @@ public abstract class QuestionAnswersDto {
     }
 
     public long getId0() {
-        return id0;
+        return ids.getFirst();
     }
 
     public long getId1() {
-        return id1;
+        return ids.getSecond();
     }
 
     public long getId2() {
-        return id2;
+        return ids.getThird();
     }
 
     public long getId3() {
-        return id3;
+        return ids.getFourth();
     }
 
     public boolean isInvalid0() {
-        return invalid0;
+        return invalid.getFirst();
     }
 
     public boolean isInvalid1() {
-        return invalid1;
+        return invalid.getSecond();
     }
 
     public boolean isInvalid2() {
-        return invalid2;
+        return invalid.getThird();
     }
 
     public boolean isInvalid3() {
-        return invalid3;
+        return invalid.getFourth();
     }
 
     public boolean isValid0() {
-        return valid0;
+        return valid.getFirst();
     }
 
     public boolean isValid1() {
-        return valid1;
+        return valid.getSecond();
     }
 
     public boolean isValid2() {
-        return valid2;
+        return valid.getThird();
     }
 
     public boolean isValid3() {
-        return valid3;
+        return valid.getFourth();
     }
 }
