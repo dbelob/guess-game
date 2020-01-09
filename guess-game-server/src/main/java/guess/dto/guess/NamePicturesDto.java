@@ -16,7 +16,6 @@ import java.util.Set;
  */
 public class NamePicturesDto extends QuestionAnswersDto {
     private final String name;
-
     private final Quadruple<String> fileNames;
 
     public NamePicturesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
@@ -56,14 +55,13 @@ public class NamePicturesDto extends QuestionAnswersDto {
                 questionAnswers.getAvailableAnswers().map(
                         a -> ((SpeakerAnswer) a).getSpeaker()
                 );
-
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 answerSpeakers.asList(),
                 language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
-
         String questionName = LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates);
+
         return new NamePicturesDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 answerSpeakers.map(Speaker::getId),
                 correctAnswerIds, yourAnswerIds,

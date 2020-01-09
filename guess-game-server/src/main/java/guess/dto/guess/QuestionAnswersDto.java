@@ -14,9 +14,7 @@ public abstract class QuestionAnswersDto {
     private final String logoFileName;
 
     private final Quadruple<Long> ids;
-
     private final Quadruple<Boolean> invalid;
-
     private final Quadruple<Boolean> valid;
 
     public QuestionAnswersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,

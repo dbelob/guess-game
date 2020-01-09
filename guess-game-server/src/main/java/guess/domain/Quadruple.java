@@ -1,7 +1,5 @@
 package guess.domain;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 
@@ -44,6 +42,6 @@ public class Quadruple<T> {
     }
 
     public List<T> asList() {
-        return Collections.unmodifiableList(Arrays.asList(first, second, third, fourth));
+        return List.of(first, second, third, fourth);
     }
 }
