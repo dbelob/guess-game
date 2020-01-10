@@ -15,7 +15,7 @@ https://jugspeakers.online
 
 ### Offline
 
-1. Install [Java SE 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JRE* or *JDK*) 
+1. Install [Java SE 11](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JRE* or *JDK*)
 
 1. Extract files from ZIP, for example:
 
@@ -44,7 +44,7 @@ https://jugspeakers.online
 
 ## Compilation
 
-1. Install [Java SE 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JDK*) 
+1. Install [Java SE 11](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JDK*)
 
 1. Install [Apache Maven 3.5.0](https://maven.apache.org/download.cgi) or higher 
 

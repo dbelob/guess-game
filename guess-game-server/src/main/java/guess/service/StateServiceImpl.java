@@ -4,10 +4,7 @@ import guess.dao.AnswerDao;
 import guess.dao.QuestionDao;
 import guess.dao.StateDao;
 import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.GuessType;
-import guess.domain.Language;
-import guess.domain.StartParameters;
-import guess.domain.State;
+import guess.domain.*;
 import guess.domain.answer.Answer;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
@@ -110,7 +107,10 @@ public class StateServiceImpl implements StateService {
                 availableAnswers.addAll(correctAnswers);
                 Collections.shuffle(availableAnswers);
 
-                questionAnswersList.add(new QuestionAnswers(question, correctAnswers, availableAnswers));
+                questionAnswersList.add(new QuestionAnswers(
+                        question,
+                        correctAnswers,
+                        new Quadruple<>(availableAnswers.get(0), availableAnswers.get(1), availableAnswers.get(2), availableAnswers.get(3))));
             }
         }
 
