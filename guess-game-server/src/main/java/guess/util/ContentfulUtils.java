@@ -25,8 +25,8 @@ import java.util.stream.Collectors;
  * Contentful utility methods.
  */
 public class ContentfulUtils {
-    private enum ConferenceSpaceInfo {
-        // Joker, JPoint, JBreak, TechTrain, C++, Hydra, SPTDC, DevOops, SmartData
+    public enum ConferenceSpaceInfo {
+        // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe", "fields.speaker"),
         // HolysJS
         HOLYS_JS_SPACE_INFO("nn534z2fqr9f", "1ca5b5d059930cd6681083617578e5a61187d1a71cbd75d4e0059cca3dc85f8c", "fields.speakers"),
@@ -46,6 +46,14 @@ public class ContentfulUtils {
             this.accessToken = accessToken;
             this.speakerFieldName = speakerFieldName;
         }
+
+        public String getSpaceId() {
+            return spaceId;
+        }
+
+        public String getAccessToken() {
+            return accessToken;
+        }
     }
 
     private static final Logger log = LoggerFactory.getLogger(ContentfulUtils.class);
@@ -54,14 +62,14 @@ public class ContentfulUtils {
     private static final String MAIN_SPACE_ID = "2jxgmeypnru5";
     private static final String MAIN_ACCESS_TOKEN = "08f9e9e80ee347bd9f6017bf76f0a290c2ff0c28000946f7079f94a78974f090";
 
-    private static Map<String, String> LOCALE_CODE_MAP = new HashMap<String, String>() {{
+    private static Map<String, String> LOCALE_CODE_MAP = new HashMap<>() {{
         put("ru-RU", Language.RUSSIAN.getCode());
     }};
 
     private static final RestTemplate restTemplate;
 
     static {
-        List<HttpMessageConverter<?>> converters = new ArrayList<HttpMessageConverter<?>>() {{
+        List<HttpMessageConverter<?>> converters = new ArrayList<>() {{
             add(new StringHttpMessageConverter(StandardCharsets.UTF_8));
             add(new MappingJackson2HttpMessageConverter());
         }};
@@ -108,7 +116,8 @@ public class ContentfulUtils {
                 .queryParam("access_token", accessToken)
                 .queryParam("locale", locale)
                 .queryParam("content_type", "eventsList")
-                .queryParam("select", "fields.eventName");
+                .queryParam("select", "fields.eventName")
+                .queryParam("limit", 1000);
         URI uri = builder
                 .buildAndExpand(spaceId, "entries")
                 .encode()
@@ -142,7 +151,8 @@ public class ContentfulUtils {
                 .queryParam("access_token", accessToken)
                 .queryParam("locale", locale)
                 .queryParam("content_type", "eventsCalendar")
-                .queryParam("select", "fields.conferenceName");
+                .queryParam("select", "fields.conferenceName")
+                .queryParam("limit", 1000);
         URI uri = builder
                 .buildAndExpand(spaceId, "entries")
                 .encode()
@@ -214,16 +224,22 @@ public class ContentfulUtils {
      *
      * @param spaceId     space identifier
      * @param accessToken access token
+     * @param conferences conferences
      * @return talks
      */
-    public static List<Talk> getTalks(String spaceId, String accessToken) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select=fields.name,fields.nameEn&limit=1000
+    public static List<Talk> getTalks(String spaceId, String accessToken, String conferences) {
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select=fields.name,fields.nameEn&limit=1000&fields.conferences={conferences}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "talks")
                 .queryParam("select", "fields.name,fields.nameEn")
                 .queryParam("limit", 1000);
+
+        if ((conferences != null) && !conferences.isEmpty()) {
+            builder.queryParam("fields.conferences", conferences);
+        }
+
         URI uri = builder
                 .buildAndExpand(spaceId, "entries")
                 .encode()
@@ -284,26 +300,30 @@ public class ContentfulUtils {
 
     public static void main(String[] args) {
         List<String> locales = getLocales(MAIN_SPACE_ID, MAIN_ACCESS_TOKEN);
-        log.info("Locales: {}", locales);
+        log.info("Locales: {}, {}", locales.size(), locales);
+
+        log.info("Event types");
 
         for (String locale : locales) {
             List<EventType> eventTypes = getEventTypes(MAIN_SPACE_ID, MAIN_ACCESS_TOKEN, locale);
-            log.info("Event types: {}", eventTypes);
-
-            List<Event> events = getEvents(MAIN_SPACE_ID, MAIN_ACCESS_TOKEN, locale);
-            log.info("Events: {}", events);
+            log.info("Event types (locale: {}): {}, {}", locale, eventTypes.size(), eventTypes);
         }
 
-        //TODO: combine event types (en, ru), events (en, ru)
+        log.info("Events");
+
+        for (String locale : locales) {
+            List<Event> events = getEvents(MAIN_SPACE_ID, MAIN_ACCESS_TOKEN, locale);
+            log.info("Events (locale: {}): {}, {}", locale, events.size(), events);
+        }
 
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
+            log.info("Conference: {}", conferenceSpaceInfo);
+
             List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName);
-            log.info("Speakers: {}", speakers);
+            log.info("Speakers: {}, {}", speakers.size(), speakers);
 
-            List<Talk> talks = getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken);
-            log.info("Talks: {}", talks);
+            List<Talk> talks = getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, null);
+            log.info("Talks: {}, {}", talks.size(), talks);
         }
-
-        // TODO: combine speakers, talk for all conferences
     }
 }
