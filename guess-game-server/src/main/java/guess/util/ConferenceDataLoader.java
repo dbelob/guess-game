@@ -1,5 +1,6 @@
 package guess.util;
 
+import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.Talk;
 import org.slf4j.Logger;
@@ -13,8 +14,8 @@ import java.util.List;
 public class ConferenceDataLoader {
     private static final Logger log = LoggerFactory.getLogger(ConferenceDataLoader.class);
 
-    private static void load(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
-        List<Talk> talks = ContentfulUtils.getTalks(conferenceSpaceInfo.getSpaceId(), conferenceSpaceInfo.getAccessToken(), conferenceCode);
+    private static void load(Conference conference, String conferenceCode) {
+        List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode);
         log.info("Talks: {}, {}", talks.size(), talks);
         talks.forEach(
                 t -> log.info("Talk: name: {}, nameEn: {}",
@@ -24,8 +25,6 @@ public class ConferenceDataLoader {
     }
 
     public static void main(String[] args) {
-        ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo = ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO;
-
-        load(conferenceSpaceInfo, "2019-spb-cpp");
+        load(Conference.CPP_RUSSIA, "2019-spb-cpp");
     }
 }

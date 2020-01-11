@@ -1,5 +1,6 @@
 package guess.util;
 
+import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
@@ -25,7 +26,7 @@ import java.util.stream.Collectors;
  * Contentful utility methods.
  */
 public class ContentfulUtils {
-    public enum ConferenceSpaceInfo {
+    private enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe", "fields.speaker"),
         // HolysJS
@@ -46,14 +47,6 @@ public class ContentfulUtils {
             this.accessToken = accessToken;
             this.speakerFieldName = speakerFieldName;
         }
-
-        public String getSpaceId() {
-            return spaceId;
-        }
-
-        public String getAccessToken() {
-            return accessToken;
-        }
     }
 
     private static final Logger log = LoggerFactory.getLogger(ContentfulUtils.class);
@@ -64,6 +57,22 @@ public class ContentfulUtils {
 
     private static Map<String, String> LOCALE_CODE_MAP = new HashMap<>() {{
         put("ru-RU", Language.RUSSIAN.getCode());
+    }};
+
+    private static Map<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new HashMap<>() {{
+        put(Conference.JOKER, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        put(Conference.JPOINT, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        put(Conference.JBREAK, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        put(Conference.TECH_TRAIN, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        put(Conference.CPP_RUSSIA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        put(Conference.HYDRA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        put(Conference.SPTDC, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        put(Conference.DEV_OOPS, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        put(Conference.SMART_DATA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        put(Conference.HOLY_JS, ConferenceSpaceInfo.HOLYS_JS_SPACE_INFO);
+        put(Conference.DOT_NEXT, ConferenceSpaceInfo.DOT_NEXT_SPACE_INFO);
+        put(Conference.HEISENBUG, ConferenceSpaceInfo.HEISENBUG_SPACE_INFO);
+        put(Conference.MOBIUS, ConferenceSpaceInfo.MOBIUS_SPACE_INFO);
     }};
 
     private static final RestTemplate restTemplate;
@@ -83,7 +92,7 @@ public class ContentfulUtils {
      * @param accessToken access token
      * @return locale codes
      */
-    public static List<String> getLocales(String spaceId, String accessToken) {
+    private static List<String> getLocales(String spaceId, String accessToken) {
         // https://cdn.contentful.com/spaces/{spaceId}/locales?access_token={accessToken}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -92,7 +101,6 @@ public class ContentfulUtils {
                 .buildAndExpand(spaceId, "locales")
                 .encode()
                 .toUri();
-
         ContentfulLocaleResponse response = restTemplate.getForObject(uri, ContentfulLocaleResponse.class);
 
         return Objects.requireNonNull(response)
@@ -109,7 +117,7 @@ public class ContentfulUtils {
      * @param locale      locale
      * @return event types
      */
-    public static List<EventType> getEventTypes(String spaceId, String accessToken, String locale) {
+    private static List<EventType> getEventTypes(String spaceId, String accessToken, String locale) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsList&select=fields.eventName
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -122,7 +130,6 @@ public class ContentfulUtils {
                 .buildAndExpand(spaceId, "entries")
                 .encode()
                 .toUri();
-
         ContentfulEventTypeResponse response = restTemplate.getForObject(uri, ContentfulEventTypeResponse.class);
 
         return Objects.requireNonNull(response)
@@ -144,7 +151,7 @@ public class ContentfulUtils {
      * @param locale      locale
      * @return events
      */
-    public static List<Event> getEvents(String spaceId, String accessToken, String locale) {
+    private static List<Event> getEvents(String spaceId, String accessToken, String locale) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsCalendar&select=fields.conferenceName
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -157,7 +164,6 @@ public class ContentfulUtils {
                 .buildAndExpand(spaceId, "entries")
                 .encode()
                 .toUri();
-
         ContentfulEventResponse response = restTemplate.getForObject(uri, ContentfulEventResponse.class);
 
         return Objects.requireNonNull(response)
@@ -181,7 +187,7 @@ public class ContentfulUtils {
      * @param speakerFieldName speaker flag field name
      * @return speakers
      */
-    public static List<Speaker> getSpeakers(String spaceId, String accessToken, String speakerFieldName) {
+    private static List<Speaker> getSpeakers(String spaceId, String accessToken, String speakerFieldName) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select=fields.name,fields.nameEn&{speakerFieldName}=true&limit=1000
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -194,7 +200,6 @@ public class ContentfulUtils {
                 .buildAndExpand(spaceId, "entries")
                 .encode()
                 .toUri();
-
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
 
         return Objects.requireNonNull(response)
@@ -222,34 +227,34 @@ public class ContentfulUtils {
     /**
      * Gets talks.
      *
-     * @param spaceId     space identifier
-     * @param accessToken access token
-     * @param conferences conferences
+     * @param spaceId        space identifier
+     * @param accessToken    access token
+     * @param conferenceCode conference code
      * @return talks
      */
-    public static List<Talk> getTalks(String spaceId, String accessToken, String conferences) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select=fields.name,fields.nameEn&limit=1000&fields.conferences={conferences}
+    private static List<Talk> getTalks(String spaceId, String accessToken, String conferenceCode) {
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select={fields}&order={fields}&limit=1000&fields.conferences={conferenceCode}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "talks")
-                .queryParam("select", "fields.name,fields.nameEn")
+                .queryParam("select", "fields.name,fields.nameEn,fields.sdTrack")
+                .queryParam("order", "fields.talkDay,fields.trackTime,fields.track")
                 .queryParam("limit", 1000);
 
-        if ((conferences != null) && !conferences.isEmpty()) {
-            builder.queryParam("fields.conferences", conferences);
+        if ((conferenceCode != null) && !conferenceCode.isEmpty()) {
+            builder.queryParam("fields.conferences", conferenceCode);
         }
 
         URI uri = builder
                 .buildAndExpand(spaceId, "entries")
                 .encode()
                 .toUri();
-
         ContentfulTalkResponse response = restTemplate.getForObject(uri, ContentfulTalkResponse.class);
-
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
+                .filter(t -> (t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack())   // not demo stage
                 .map(t -> new Talk(
                         0L,
                         Arrays.asList(
@@ -261,6 +266,19 @@ public class ContentfulUtils {
                                         t.getFields().getName())),
                         new ArrayList<>()))
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets talks
+     *
+     * @param conference     conference
+     * @param conferenceCode conference code
+     * @return talks
+     */
+    public static List<Talk> getTalks(Conference conference, String conferenceCode) {
+        ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
+
+        return getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceCode);
     }
 
     /**
