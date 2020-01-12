@@ -67,14 +67,14 @@
         <th rowspan="2">2014</th>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
-        <td>2014 Spb</td>
+        <td>2014&nbsp;Spb</td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
         <td rowspan="2">2014</td>
         <td rowspan="2">2014</td>
-        <td rowspan="2">2014 Spb</td>
+        <td rowspan="2">2014&nbsp;Spb</td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
@@ -83,20 +83,20 @@
         <td rowspan="2"></td>
     </tr>
     <tr>
-        <td>2014 Msk</td>
+        <td>2014&nbsp;Msk</td>
     </tr>
     <tr>
         <th rowspan="2">2015</th>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
-        <td>2015 Spb</td>
+        <td>2015&nbsp;Spb</td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
         <td rowspan="2">2015</td>
         <td rowspan="2">2015</td>
-        <td rowspan="2">2015 Spb</td>
+        <td rowspan="2">2015&nbsp;Spb</td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
@@ -105,20 +105,20 @@
         <td rowspan="2"></td>
     </tr>
     <tr>
-        <td>2015 Msk</td>
+        <td>2015&nbsp;Msk</td>
     </tr>
     <tr>
         <th rowspan="3">2016</th>
         <td rowspan="3"></td>
         <td rowspan="3"></td>
-        <td>2016 Spb</td>
-        <td rowspan="3">2016 Msk</td>
-        <td>2016 Spb</td>
+        <td>2016&nbsp;Spb</td>
+        <td rowspan="3">2016&nbsp;Msk<br>(2016msk)</td>
+        <td>2016&nbsp;Spb</td>
         <td rowspan="3"></td>
         <td rowspan="3">2016</td>
         <td rowspan="3">2016</td>
-        <td rowspan="3">2016</td>
-        <td rowspan="3">2016 Spb</td>
+        <td rowspan="3">2016<br>(2016Joker)</td>
+        <td rowspan="3">2016&nbsp;Spb</td>
         <td rowspan="3"></td>
         <td rowspan="3"></td>
         <td rowspan="3"></td>
@@ -127,113 +127,113 @@
         <td rowspan="3"></td>
     </tr>
     <tr>
-        <td>2016 Hlsn</td>
-        <td rowspan="2">2016 Msk</td>
+        <td>2016&nbsp;Hlsn<br>(2016hel)</td>
+        <td rowspan="2">2016&nbsp;Msk<br>(2016msk)</td>
     </tr>
     <tr>
-        <td>2016 Msk</td>
+        <td>2016&nbsp;Msk<br>(2016msk)</td>
     </tr>
     <tr>
         <th rowspan="2">2017</th>
         <td rowspan="2"></td>
-        <td rowspan="2">2017 Spb</td>
-        <td>2017 Spb</td>
-        <td>2017 Spb</td>
-        <td>2017 Spb</td>
+        <td rowspan="2">2017&nbsp;Spb<br>(2017DevOops)</td>
+        <td>2017&nbsp;Spb<br>(2017spb)</td>
+        <td>2017&nbsp;Spb<br>(2017spb)</td>
+        <td>2017&nbsp;Spb<br>(2017spb)</td>
         <td rowspan="2"></td>
-        <td rowspan="2">2017</td>
-        <td rowspan="2">2017</td>
-        <td rowspan="2">2017</td>
-        <td>2017 Spb</td>
-        <td rowspan="2">2017</td>
-        <td rowspan="2">2017</td>
+        <td rowspan="2">2017<br>(2017JBreak)</td>
+        <td rowspan="2">2017<br>(2017JPoint)</td>
+        <td rowspan="2">2017<br>(2017Joker)</td>
+        <td>2017&nbsp;Spb<br>(2017spb)</td>
+        <td rowspan="2"></td>
+        <td rowspan="2">2017<br>(2017smartdata)</td>
         <td rowspan="2"></td>
         <td rowspan="2">2017</td>
         <td rowspan="2">2017</td>
         <td rowspan="2"></td>
     </tr>
     <tr>
-        <td>2017 Msk</td>
-        <td>2017 Msk</td>
-        <td>2017 Msk</td>
-        <td>2017 Msk</td>
+        <td>2017&nbsp;Msk<br>(2017msk)</td>
+        <td>2017&nbsp;Msk<br>(2017msk)</td>
+        <td>2017&nbsp;Msk<br>(2017msk)</td>
+        <td>2017&nbsp;Msk<br>(2017msk)</td>
     </tr>
     <tr>
         <th rowspan="2">2018</th>
         <td rowspan="2"></td>
-        <td rowspan="2">2018 Spb</td>
-        <td>2018 Spb</td>
-        <td>2018 Spb</td>
-        <td>2018 Spb</td>
+        <td rowspan="2">2018&nbsp;Spb<br>(2018DevOops)</td>
+        <td>2018&nbsp;Spb<br>(2018spb)</td>
+        <td>2018&nbsp;Spb<br>(2018spb)</td>
+        <td>2018&nbsp;Spb<br>(2018spb)</td>
         <td rowspan="2"></td>
-        <td rowspan="2">2018</td>
-        <td rowspan="2">2018</td>
-        <td rowspan="2">2018</td>
-        <td>2018 Spb</td>
-        <td rowspan="2">2018</td>
+        <td rowspan="2">2018<br>(2018JBreak)</td>
+        <td rowspan="2">2018<br>(2018JPoint)</td>
+        <td rowspan="2">2018<br>(2018Joker)</td>
+        <td>2018&nbsp;Spb<br>(2018spb)</td>
         <td rowspan="2"></td>
-        <td rowspan="2">2018</td>
+        <td rowspan="2"></td>
+        <td rowspan="2">2018<br>(2018tt)</td>
         <td rowspan="2">2018</td>
         <td rowspan="2">2018</td>
         <td rowspan="2">2018</td>
     </tr>
     <tr>
-        <td>2018 Msk</td>
-        <td>2018 Msk</td>
-        <td>2018 Msk</td>
-        <td>2018 Msk</td>
+        <td>2018&nbsp;Msk<br>(2018msk)</td>
+        <td>2018&nbsp;Msk<br>(2018msk)</td>
+        <td>2018&nbsp;Msk<br>(2018msk)</td>
+        <td>2018&nbsp;Msk<br>(2018msk)</td>
     </tr>
     <tr>
         <th rowspan="2">2019</th>
-        <td>2019 Msk</td>
-        <td rowspan="2">2019 Spb</td>
-        <td>2019 Spb</td>
-        <td>2019 Spb</td>
-        <td>2019 Spb</td>
-        <td rowspan="2">2019</td>
+        <td>2019&nbsp;Msk<br>(2019cpp)</td>
+        <td rowspan="2">2019&nbsp;Spb<br>(2019devoops)</td>
+        <td>2019&nbsp;Spb<br>(2019spb)</td>
+        <td>2019&nbsp;Spb<br>(2019spb)</td>
+        <td>2019&nbsp;Spb<br>(2019spb)</td>
+        <td rowspan="2">2019<br>(2019hydra)</td>
         <td rowspan="2"></td>
-        <td rowspan="2">2019</td>
-        <td rowspan="2">2019</td>
-        <td>2019 Spb</td>
+        <td rowspan="2">2019<br>(2019jpoint)</td>
+        <td rowspan="2">2019<br>(2019joker)</td>
+        <td>2019&nbsp;Spb<br>(2019spb)</td>
+        <td rowspan="2">2019<br>(2019sptdc)</td>
         <td rowspan="2"></td>
-        <td rowspan="2"></td>
-        <td rowspan="2">2019</td>
+        <td rowspan="2">2019<br>(2019tt)</td>
         <td rowspan="2">2019</td>
         <td rowspan="2">2019</td>
         <td rowspan="2">2019</td>
     </tr>
     <tr>
-        <td>2019 Spb</td>
-        <td>2019 Msk</td>
-        <td>2019 Msk</td>
-        <td>2019 Msk</td>
-        <td>2019 Msk</td>
+        <td>2019&nbsp;Spb<br>(2019-spb-cpp)</td>
+        <td>2019&nbsp;Msk<br>(2019msk)</td>
+        <td>2019&nbsp;Msk<br>(2019msk)</td>
+        <td>2019&nbsp;Msk<br>(2019msk)</td>
+        <td>2019&nbsp;Msk<br>(2019msk)</td>
     </tr>
     <tr>
         <th rowspan="2">2020</th>
-        <td>2020 Msk</td>
-        <td>2020 Msk</td>
-        <td>2020 Spb</td>
-        <td>2020 Spb</td>
-        <td>2020 Spb</td>
-        <td rowspan="2">2020</td>
+        <td>2020&nbsp;Msk<br>(2020-msk-cpp)</td>
+        <td>2020&nbsp;Msk<br>(2020-msk-devoops)</td>
+        <td>2020&nbsp;Spb<br>(2020-spb)</td>
+        <td>2020&nbsp;Spb<br>(2020-spb)</td>
+        <td>2020&nbsp;Spb<br>(2020-spb)</td>
+        <td rowspan="2">2020<br>(2020-spb-hydra)</td>
         <td rowspan="2"></td>
-        <td rowspan="2">2020</td>
-        <td rowspan="2">2020</td>
-        <td>2020 Spb</td>
+        <td rowspan="2">2020<br>(2020-jpoint)</td>
+        <td rowspan="2">2020<br>(2020-joker)</td>
+        <td>2020&nbsp;Spb<br>(2020-spb)</td>
+        <td rowspan="2">2020<br>(2020-spb-sptdc)</td>
         <td rowspan="2"></td>
-        <td rowspan="2"></td>
-        <td rowspan="2"></td>
+        <td rowspan="2">2020<br>(2020-techtrain)</td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
         <td rowspan="2"></td>
     </tr>
     <tr>
-        <td>2020 Spb</td>
-        <td>2020 Spb</td>
-        <td>2020 Msk</td>
-        <td>2020 Msk</td>
-        <td>2020 Msk</td>
-        <td>2020 Msk</td>
+        <td>2020&nbsp;Spb<br>(2020-spb-cpp)</td>
+        <td>2020&nbsp;Spb<br>(2020-spb-devoops)</td>
+        <td>2020&nbsp;Msk<br>(2020-msk)</td>
+        <td>2020&nbsp;Msk<br>(2020-msk)</td>
+        <td>2020&nbsp;Msk<br>(2020-msk)</td>
+        <td>2020&nbsp;Msk<br>(2020-msk)</td>
     </tr>
 </table>
