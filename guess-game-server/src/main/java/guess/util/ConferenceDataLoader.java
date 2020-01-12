@@ -18,7 +18,7 @@ public class ConferenceDataLoader {
         List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode);
         log.info("Talks: {}, {}", talks.size(), talks);
         talks.forEach(
-                t -> log.info("Talk: name: {}, nameEn: {}",
+                t -> log.info("Talk: nameEn: {}, name: {}",
                         LocalizationUtils.getString(t.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
         );
