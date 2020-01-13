@@ -25,6 +25,8 @@ public class ConferenceDataLoader {
     }
 
     public static void main(String[] args) {
-        load(Conference.CPP_RUSSIA, "2019-spb-cpp");
+        // C++ Russia
+        load(Conference.CPP_RUSSIA, "2019cpp");
+//        load(Conference.CPP_RUSSIA, "2019-spb-cpp");
     }
 }

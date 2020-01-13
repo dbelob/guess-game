@@ -238,7 +238,7 @@ public class ContentfulUtils {
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "talks")
-                .queryParam("select", "fields.name,fields.nameEn,fields.sdTrack")
+                .queryParam("select", "fields.name,fields.nameEn,fields.sdTrack,fields.demoStage")
                 .queryParam("order", "fields.talkDay,fields.trackTime,fields.track")
                 .queryParam("limit", 1000);
 
@@ -254,7 +254,8 @@ public class ContentfulUtils {
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .filter(t -> (t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack())   // not demo stage
+                .filter(t -> ((t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack()) &&
+                        ((t.getFields().getDemoStage() == null) || !t.getFields().getDemoStage()))   // not demo stage
                 .map(t -> new Talk(
                         0L,
                         Arrays.asList(
