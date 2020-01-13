@@ -25,14 +25,12 @@ import java.util.stream.Collectors;
  */
 @Repository
 public class QuestionDaoImpl implements QuestionDao {
-    private static String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
-
     private final List<QuestionSet> questionSets;
     private final List<Event> events;
 
     public QuestionDaoImpl() throws IOException, SpeakerDuplicatedException {
-        this.questionSets = YamlUtils.readQuestionSets(DESCRIPTIONS_DIRECTORY_NAME);
-        this.events = YamlUtils.readEvents(DESCRIPTIONS_DIRECTORY_NAME).stream()
+        this.questionSets = YamlUtils.readQuestionSets();
+        this.events = YamlUtils.readEvents().stream()
                 .filter(e -> (e.getStartDate() != null) && (e.getEndDate() != null) && !e.getStartDate().isAfter(e.getEndDate()))
                 .sorted(Comparator.comparing(Event::getStartDate))
                 .collect(Collectors.toList());

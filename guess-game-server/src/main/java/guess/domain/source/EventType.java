@@ -69,9 +69,9 @@ public class EventType {
     public String toString() {
         return "EventType{" +
                 "id=" + id +
+                ", conference=" + conference +
                 ", name=" + name +
                 ", logoFileName='" + logoFileName + '\'' +
-                ", events=" + events +
                 '}';
     }
 }

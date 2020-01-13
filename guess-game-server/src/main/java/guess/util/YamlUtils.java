@@ -49,19 +49,21 @@ class LocalDateYamlConstructor extends Constructor {
 public class YamlUtils {
     private static final Logger log = LoggerFactory.getLogger(YamlUtils.class);
 
+    private static String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
+
     /**
-     * Reads question sets from resource files.
+     * Reads source information from resource files.
      *
-     * @param descriptionsDirectoryName descriptions directory name
-     * @return question sets
-     * @throws IOException if an I/O error occurs
+     * @return source information
+     * @throws IOException                if an I/O error occurs
+     * @throws SpeakerDuplicatedException if speaker duplicated
      */
-    public static List<QuestionSet> readQuestionSets(String descriptionsDirectoryName) throws IOException, SpeakerDuplicatedException {
+    public static SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", descriptionsDirectoryName));
-        Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", descriptionsDirectoryName));
-        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", descriptionsDirectoryName));
-        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", descriptionsDirectoryName));
+        Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", DESCRIPTIONS_DIRECTORY_NAME));
+        Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DESCRIPTIONS_DIRECTORY_NAME));
+        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DESCRIPTIONS_DIRECTORY_NAME));
+        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DESCRIPTIONS_DIRECTORY_NAME));
 
         Yaml speakersYaml = new Yaml(new Constructor(Speakers.class));
         Yaml talksYaml = new Yaml(new Constructor(Talks.class));
@@ -90,9 +92,22 @@ public class YamlUtils {
         linkEventsToEventTypes(eventTypeMap, events.getEvents());
         linkTalksToEvents(talkMap, events.getEvents());
 
+        return new SourceInformation(eventTypes.getEventTypes(), events.getEvents(), speakers.getSpeakers(), talks.getTalks());
+    }
+
+    /**
+     * Reads question sets from resource files.
+     *
+     * @return question sets
+     * @throws IOException                if an I/O error occurs
+     * @throws SpeakerDuplicatedException if speaker duplicated
+     */
+    public static List<QuestionSet> readQuestionSets() throws IOException, SpeakerDuplicatedException {
+        SourceInformation sourceInformation = readSourceInformation();
+
         // Create question sets
         List<QuestionSet> questionSets = new ArrayList<>();
-        for (EventType eventType : eventTypes.getEventTypes()) {
+        for (EventType eventType : sourceInformation.getEventTypes()) {
             // Fill speaker and talk questions
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
             List<TalkQuestion> talkQuestions = new ArrayList<>();
@@ -118,7 +133,7 @@ public class YamlUtils {
         }
 
         //TODO: delete
-        Unsafe.replaceSpeakerQuestions(questionSets, speakers.getSpeakers());
+        Unsafe.replaceSpeakerQuestions(questionSets, sourceInformation.getSpeakers());
 
         return questionSets;
     }
@@ -126,14 +141,13 @@ public class YamlUtils {
     /**
      * Reads events from resource files.
      *
-     * @param descriptionsDirectoryName descriptions directory name
      * @return events
      * @throws IOException if an I/O error occurs
      */
-    public static List<Event> readEvents(String descriptionsDirectoryName) throws IOException {
+    public static List<Event> readEvents() throws IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", descriptionsDirectoryName));
-        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", descriptionsDirectoryName));
+        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DESCRIPTIONS_DIRECTORY_NAME));
+        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DESCRIPTIONS_DIRECTORY_NAME));
 
         Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
         Yaml eventsYaml = new Yaml(new LocalDateYamlConstructor(Events.class));
