@@ -1,65 +1,78 @@
 eventTypes:
   - id: 0
+    conference: CPP_RUSSIA
     name:
       - {language: en, text: "Conferences — C++ Russia"}
       - {language: ru, text: "Конференции — C++ Russia"}
     logoFileName: cpprussia.jpg
   - id: 1
+    conference: DEV_OOPS
     name:
       - {language: en, text: "Conferences — DevOops"}
       - {language: ru, text: "Конференции — DevOops"}
     logoFileName: devoops.jpg
   - id: 2
+    conference: DOT_NEXT
     name:
       - {language: en, text: "Conferences — DotNext"}
       - {language: ru, text: "Конференции — DotNext"}
     logoFileName: dotnext.jpg
   - id: 3
+    conference: HEISENBUG
     name:
       - {language: en, text: "Conferences — Heisenbug"}
       - {language: ru, text: "Конференции — Heisenbug"}
     logoFileName: heisenbug.jpg
   - id: 4
+    conference: HOLY_JS
     name:
       - {language: en, text: "Conferences — HolyJS"}
       - {language: ru, text: "Конференции — HolyJS"}
     logoFileName: holyjs.jpg
   - id: 5
+    conference: HYDRA
     name:
       - {language: en, text: "Conferences — Hydra"}
       - {language: ru, text: "Конференции — Hydra"}
     logoFileName: hydra.jpg
   - id: 6
+    conference: JBREAK
     name:
       - {language: en, text: "Conferences — JBreak"}
       - {language: ru, text: "Конференции — JBreak"}
     logoFileName: jbreak.jpg
   - id: 7
+    conference: JPOINT
     name:
       - {language: en, text: "Conferences — JPoint"}
       - {language: ru, text: "Конференции — JPoint"}
     logoFileName: jpoint.jpg
   - id: 8
+    conference: JOKER
     name:
       - {language: en, text: "Conferences — Joker"}
       - {language: ru, text: "Конференции — Joker"}
     logoFileName: jokerconf.jpg
   - id: 9
+    conference: MOBIUS
     name:
       - {language: en, text: "Conferences — Mobius"}
       - {language: ru, text: "Конференции — Mobius"}
     logoFileName: mobius.jpg
   - id: 10
+    conference: SPTDC
     name:
       - {language: en, text: "Conferences — SPTDC"}
       - {language: ru, text: "Конференции — SPTDC"}
     logoFileName: sptdc.jpg
   - id: 11
+    conference: SMART_DATA
     name:
       - {language: en, text: "Conferences — SmartData"}
       - {language: ru, text: "Конференции — SmartData"}
     logoFileName: smartdata.jpg
   - id: 12
+    conference: TECH_TRAIN
     name:
       - {language: en, text: "Conferences — TechTrain"}
       - {language: ru, text: "Конференции — TechTrain"}

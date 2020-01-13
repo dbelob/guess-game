@@ -1,5 +1,7 @@
 package guess.domain.source;
 
+import guess.domain.Conference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,7 @@ import java.util.List;
  */
 public class EventType {
     private long id;
+    private Conference conference;
     private List<LocaleItem> name;
     private String logoFileName;
     private List<Event> events = new ArrayList<>();
@@ -28,6 +31,14 @@ public class EventType {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Conference getConference() {
+        return conference;
+    }
+
+    public void setConference(Conference conference) {
+        this.conference = conference;
     }
 
     public List<LocaleItem> getName() {
