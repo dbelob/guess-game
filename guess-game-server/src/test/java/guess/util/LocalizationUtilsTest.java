@@ -83,15 +83,15 @@ public class LocalizationUtilsTest {
                     new LocaleItem(Language.ENGLISH.getCode(), "Company"));
 
             return Arrays.asList(new Object[][]{
-                    {new Speaker(0L, "0000.jpg", null, null), Language.ENGLISH, ""},
-                    {new Speaker(0L, "0000.jpg", null, null), Language.RUSSIAN, ""},
-                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, null), Language.ENGLISH, "Name"},
-                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, null), Language.RUSSIAN, "Имя"},
-                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS), Language.ENGLISH, "Name (Company)"},
-                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS), Language.RUSSIAN, "Имя (Компания)"},
-                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, ENGLISH_COMPANY_LOCALE_ITEMS), Language.RUSSIAN, "Имя (Company)"},
-                    {new Speaker(0L, "0000.jpg", ENGLISH_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS), Language.RUSSIAN, "Name (Компания)"},
-                    {new Speaker(0L, "0000.jpg", ENGLISH_NAME_LOCALE_ITEMS, ENGLISH_COMPANY_LOCALE_ITEMS), Language.RUSSIAN, "Name (Company)"}
+                    {new Speaker(0L, "0000.jpg", null, null, null, false), Language.ENGLISH, ""},
+                    {new Speaker(0L, "0000.jpg", null, null, null, false), Language.RUSSIAN, ""},
+                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, null, null, false), Language.ENGLISH, "Name"},
+                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, null, null, false), Language.RUSSIAN, "Имя"},
+                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, false), Language.ENGLISH, "Name (Company)"},
+                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, false), Language.RUSSIAN, "Имя (Компания)"},
+                    {new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, ENGLISH_COMPANY_LOCALE_ITEMS, null, false), Language.RUSSIAN, "Имя (Company)"},
+                    {new Speaker(0L, "0000.jpg", ENGLISH_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, false), Language.RUSSIAN, "Name (Компания)"},
+                    {new Speaker(0L, "0000.jpg", ENGLISH_NAME_LOCALE_ITEMS, ENGLISH_COMPANY_LOCALE_ITEMS, null, false), Language.RUSSIAN, "Name (Company)"}
             });
         }
 

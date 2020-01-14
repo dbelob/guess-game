@@ -133,22 +133,25 @@ class Unsafe {
 
             if (contentfulSpeaker != null) {
                 long id = Long.parseLong(filename.substring(0, filename.indexOf(".")));
-                List<LocaleItem> name = new ArrayList<LocaleItem>() {{
+                List<LocaleItem> name = new ArrayList<>() {{
                     add(new LocaleItem(Language.ENGLISH.getCode(), speakerQuestion.getName()));
                 }};
-                List<LocaleItem> company = Collections.emptyList();
 
                 String russianName = LocalizationUtils.getString(contentfulSpeaker.getName(), Language.RUSSIAN);
-
                 if ((russianName != null) && !russianName.isEmpty() && !russianName.equals(speakerQuestion.getName())) {
                     name.add(new LocaleItem(Language.RUSSIAN.getCode(), russianName));
                 }
+
+                List<LocaleItem> company = Collections.emptyList();
+                List<LocaleItem> bio = Collections.emptyList();
 
                 Speaker speaker = new Speaker(
                         id,
                         filename,
                         name,
-                        company);
+                        company,
+                        bio,
+                        false);
 
                 absentSpeakers.add(speaker);
             }

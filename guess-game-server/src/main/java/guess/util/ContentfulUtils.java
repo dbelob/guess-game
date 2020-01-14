@@ -118,7 +118,7 @@ public class ContentfulUtils {
      * @return event types
      */
     private static List<EventType> getEventTypes(String spaceId, String accessToken, String locale) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsList&select=fields.eventName
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsList&select={fields}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
@@ -152,7 +152,7 @@ public class ContentfulUtils {
      * @return events
      */
     private static List<Event> getEvents(String spaceId, String accessToken, String locale) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsCalendar&select=fields.conferenceName
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsCalendar&select={fields}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
@@ -185,17 +185,23 @@ public class ContentfulUtils {
      * @param spaceId          space identifier
      * @param accessToken      access token
      * @param speakerFieldName speaker flag field name
+     * @param conferenceCode   conference code
      * @return speakers
      */
-    private static List<Speaker> getSpeakers(String spaceId, String accessToken, String speakerFieldName) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select=fields.name,fields.nameEn&{speakerFieldName}=true&limit=1000
+    private static List<Speaker> getSpeakers(String spaceId, String accessToken, String speakerFieldName, String conferenceCode) {
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "people")
-                .queryParam("select", "fields.name,fields.nameEn,fields.company,fields.companyEn")
+                .queryParam("select", "fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.javaChampion,fields.sdSpeaker")
                 .queryParam(speakerFieldName, "true")   // only speakers
                 .queryParam("limit", 1000);
+
+        if ((conferenceCode != null) && !conferenceCode.isEmpty()) {
+            builder.queryParam("fields.conferences", conferenceCode);
+        }
+
         URI uri = builder
                 .buildAndExpand(spaceId, "entries")
                 .encode()
@@ -204,6 +210,7 @@ public class ContentfulUtils {
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
+                .filter(t -> (t.getFields().getSdSpeaker() == null) || !t.getFields().getSdSpeaker())   // not demo stage
                 .map(s -> new Speaker(
                         0L,
                         null,
@@ -220,8 +227,30 @@ public class ContentfulUtils {
                                         s.getFields().getCompanyEn()),
                                 new LocaleItem(
                                         Language.RUSSIAN.getCode(),
-                                        s.getFields().getCompany()))))
+                                        s.getFields().getCompany())),
+                        Arrays.asList(
+                                new LocaleItem(
+                                        Language.ENGLISH.getCode(),
+                                        s.getFields().getBioEn()),
+                                new LocaleItem(
+                                        Language.RUSSIAN.getCode(),
+                                        s.getFields().getBio())),
+                        (s.getFields().getJavaChampion() != null) ? s.getFields().getJavaChampion() : false
+                ))
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets speakers.
+     *
+     * @param conference     conference
+     * @param conferenceCode conference code
+     * @return speakers
+     */
+    public static List<Speaker> getSpeakers(Conference conference, String conferenceCode) {
+        ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
+
+        return getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName, conferenceCode);
     }
 
     /**
@@ -238,7 +267,7 @@ public class ContentfulUtils {
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "talks")
-                .queryParam("select", "fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.video,fields.sdTrack,fields.demoStage")
+                .queryParam("select", "fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.video,fields.sdTrack,fields.demoStage")
                 .queryParam("order", "fields.talkDay,fields.trackTime,fields.track")
                 .queryParam("limit", 1000);
 
@@ -316,7 +345,7 @@ public class ContentfulUtils {
         Map<String, Speaker> result = new HashMap<>();
 
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
-            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName);
+            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName, null);
 
             for (Speaker speaker : speakers) {
                 String englishName = LocalizationUtils.getString(speaker.getName(), Language.ENGLISH);
@@ -351,9 +380,9 @@ public class ContentfulUtils {
         }
 
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
-            log.info("Conference: {}", conferenceSpaceInfo);
+            log.info("Conference space info: {}", conferenceSpaceInfo);
 
-            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName);
+            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName, null);
             log.info("Speakers: {}, {}", speakers.size(), speakers);
 
             List<Talk> talks = getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, null);

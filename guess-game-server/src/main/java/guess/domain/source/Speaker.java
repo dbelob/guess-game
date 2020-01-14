@@ -10,15 +10,20 @@ public class Speaker {
     private String fileName;
     private List<LocaleItem> name;
     private List<LocaleItem> company;
+    private List<LocaleItem> bio;
+    private boolean javaChampion;
 
     public Speaker() {
     }
 
-    public Speaker(long id, String fileName, List<LocaleItem> name, List<LocaleItem> company) {
+    public Speaker(long id, String fileName, List<LocaleItem> name, List<LocaleItem> company,
+                   List<LocaleItem> bio, boolean javaChampion) {
         this.id = id;
         this.fileName = fileName;
         this.name = name;
         this.company = company;
+        this.bio = bio;
+        this.javaChampion = javaChampion;
     }
 
     public long getId() {
@@ -51,6 +56,22 @@ public class Speaker {
 
     public void setCompany(List<LocaleItem> company) {
         this.company = company;
+    }
+
+    public List<LocaleItem> getBio() {
+        return bio;
+    }
+
+    public void setBio(List<LocaleItem> bio) {
+        this.bio = bio;
+    }
+
+    public boolean isJavaChampion() {
+        return javaChampion;
+    }
+
+    public void setJavaChampion(boolean javaChampion) {
+        this.javaChampion = javaChampion;
     }
 
     @Override

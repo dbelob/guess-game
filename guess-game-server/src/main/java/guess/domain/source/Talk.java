@@ -90,10 +90,6 @@ public class Talk {
         return "Talk{" +
                 "id=" + id +
                 ", name=" + name +
-                ", shortDescription=" + shortDescription +
-                ", longDescription=" + longDescription +
-                ", videoLink=" + videoLink +
-                ", speakers=" + speakers +
                 '}';
     }
 }

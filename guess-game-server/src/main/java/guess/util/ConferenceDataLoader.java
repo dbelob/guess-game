@@ -3,10 +3,7 @@ package guess.util;
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.SourceInformation;
-import guess.domain.source.Talk;
+import guess.domain.source.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,6 +28,15 @@ public class ConferenceDataLoader {
                 et -> et.getEvents().stream()
                         .filter(e -> e.getStartDate().equals(startDate))
                         .findFirst());
+
+        // Read speakers from Contentful
+        List<Speaker> speakers = ContentfulUtils.getSpeakers(conference, conferenceCode);
+        log.info("Speakers: {}", speakers.size());
+        speakers.forEach(
+                s -> log.info("Speaker: nameEn: {}, name: {}",
+                        LocalizationUtils.getString(s.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
+        );
 
         // Read talks from Contentful
         List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode);
