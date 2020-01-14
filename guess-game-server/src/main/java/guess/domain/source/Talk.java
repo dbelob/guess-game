@@ -9,6 +9,9 @@ import java.util.List;
 public class Talk {
     private long id;
     private List<LocaleItem> name;
+    private List<LocaleItem> shortDescription;
+    private List<LocaleItem> longDescription;
+    private String videoLink;
 
     private List<Long> speakerIds;
     private List<Speaker> speakers = new ArrayList<>();
@@ -16,9 +19,13 @@ public class Talk {
     public Talk() {
     }
 
-    public Talk(long id, List<LocaleItem> name, List<Speaker> speakers) {
+    public Talk(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription,
+                String videoLink, List<Speaker> speakers) {
         this.id = id;
         this.name = name;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
+        this.videoLink = videoLink;
         this.speakers = speakers;
     }
 
@@ -36,6 +43,30 @@ public class Talk {
 
     public void setName(List<LocaleItem> name) {
         this.name = name;
+    }
+
+    public List<LocaleItem> getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(List<LocaleItem> shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public List<LocaleItem> getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(List<LocaleItem> longDescription) {
+        this.longDescription = longDescription;
+    }
+
+    public String getVideoLink() {
+        return videoLink;
+    }
+
+    public void setVideoLink(String videoLink) {
+        this.videoLink = videoLink;
     }
 
     public List<Long> getSpeakerIds() {
@@ -59,6 +90,9 @@ public class Talk {
         return "Talk{" +
                 "id=" + id +
                 ", name=" + name +
+                ", shortDescription=" + shortDescription +
+                ", longDescription=" + longDescription +
+                ", videoLink=" + videoLink +
                 ", speakers=" + speakers +
                 '}';
     }

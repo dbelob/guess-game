@@ -27,15 +27,14 @@ public class ConferenceDataLoader {
         Optional<EventType> eventTypeOptional = sourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference().equals(conference))
                 .findFirst();
-        Event event = eventTypeOptional.flatMap(
+        Optional<Event> eventOptional = eventTypeOptional.flatMap(
                 et -> et.getEvents().stream()
                         .filter(e -> e.getStartDate().equals(startDate))
-                        .findFirst()
-        ).orElse(null);
+                        .findFirst());
 
         // Read talks from Contentful
         List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode);
-        log.info("Talks: {}, {}", talks.size(), talks);
+        log.info("Talks: {}", talks.size());
         talks.forEach(
                 t -> log.info("Talk: nameEn: {}, name: {}",
                         LocalizationUtils.getString(t.getName(), Language.ENGLISH),

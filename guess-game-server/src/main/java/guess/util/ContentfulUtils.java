@@ -238,7 +238,7 @@ public class ContentfulUtils {
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "talks")
-                .queryParam("select", "fields.name,fields.nameEn,fields.sdTrack,fields.demoStage")
+                .queryParam("select", "fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.video,fields.sdTrack,fields.demoStage")
                 .queryParam("order", "fields.talkDay,fields.trackTime,fields.track")
                 .queryParam("limit", 1000);
 
@@ -265,6 +265,21 @@ public class ContentfulUtils {
                                 new LocaleItem(
                                         Language.RUSSIAN.getCode(),
                                         t.getFields().getName())),
+                        Arrays.asList(
+                                new LocaleItem(
+                                        Language.ENGLISH.getCode(),
+                                        t.getFields().getShortEn()),
+                                new LocaleItem(
+                                        Language.RUSSIAN.getCode(),
+                                        t.getFields().getShortRu())),
+                        Arrays.asList(
+                                new LocaleItem(
+                                        Language.ENGLISH.getCode(),
+                                        t.getFields().getLongEn()),
+                                new LocaleItem(
+                                        Language.RUSSIAN.getCode(),
+                                        t.getFields().getLongRu())),
+                        t.getFields().getVideo(),
                         new ArrayList<>()))
                 .collect(Collectors.toList());
     }
