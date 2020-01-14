@@ -9,10 +9,10 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Conference data loader.
@@ -32,22 +32,33 @@ public class ConferenceDataLoader {
                         .findFirst());
 
         // Read speakers from Contentful
-        Map<String, Speaker> speakerMap = new HashMap<>();
-        List<Speaker> speakers = ContentfulUtils.getSpeakers(conference, conferenceCode, speakerMap);
+        Map<String, Speaker> speakers = ContentfulUtils.getSpeakers(conference, conferenceCode);
         log.info("Speakers: {}", speakers.size());
-        speakers.forEach(
-                s -> log.info("Speaker: nameEn: {}, name: {}",
+        speakers.values().forEach(
+                s -> log.info("Speaker: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
 
         // Read talks from Contentful
-        List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode, speakerMap);
+        List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode, speakers);
         log.info("Talks: {}", talks.size());
         talks.forEach(
-                t -> log.info("Talk: nameEn: {}, name: {}",
+                t -> log.info("Talk: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(t.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
+        );
+
+        // Order speakers with talk order
+        List<Speaker> speakersWithTalkOrder = talks.stream()
+                .flatMap(t -> t.getSpeakers().stream())
+                .distinct()
+                .collect(Collectors.toList());
+        log.info("Speakers with talk order: {}", speakersWithTalkOrder.size());
+        speakersWithTalkOrder.forEach(
+                s -> log.info("Speaker with talk order: nameEn: '{}', name: '{}'",
+                        LocalizationUtils.getString(s.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
     }
 
