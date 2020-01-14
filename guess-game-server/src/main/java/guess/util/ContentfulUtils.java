@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 public class ContentfulUtils {
     private enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
-        COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe", "fields.speaker"),
+        COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe", "fields.speaker", "fields.javaChampion"),
         // HolysJS
         HOLYS_JS_SPACE_INFO("nn534z2fqr9f", "1ca5b5d059930cd6681083617578e5a61187d1a71cbd75d4e0059cca3dc85f8c", "fields.speakers"),
         // DotNext
@@ -38,14 +38,20 @@ public class ContentfulUtils {
         // Mobius
         MOBIUS_SPACE_INFO("2grufn031spf", "d0c680ed11f68287348b6b8481d3313fde8c2d23cc8ce24a2b0ae254dd779e6d", "fields.speaker");
 
-        private String spaceId;
-        private String accessToken;
-        private String speakerFieldName;
+        private final String spaceId;
+        private final String accessToken;
+        private final String speakerFieldName;
+        private final String additionalFieldNames;
 
-        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFieldName) {
+        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFieldName, String additionalFieldNames) {
             this.spaceId = spaceId;
             this.accessToken = accessToken;
             this.speakerFieldName = speakerFieldName;
+            this.additionalFieldNames = additionalFieldNames;
+        }
+
+        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFieldName) {
+            this(spaceId, accessToken, speakerFieldName, null);
         }
     }
 
@@ -182,19 +188,27 @@ public class ContentfulUtils {
     /**
      * Gets speakers.
      *
-     * @param spaceId          space identifier
-     * @param accessToken      access token
-     * @param speakerFieldName speaker flag field name
-     * @param conferenceCode   conference code
+     * @param spaceId              space identifier
+     * @param accessToken          access token
+     * @param speakerFieldName     speaker flag field name
+     * @param additionalFieldNames additional field names
+     * @param conferenceCode       conference code
+     * @param speakerMap           speaker map
      * @return speakers
      */
-    private static List<Speaker> getSpeakers(String spaceId, String accessToken, String speakerFieldName, String conferenceCode) {
+    private static List<Speaker> getSpeakers(String spaceId, String accessToken, String speakerFieldName, String additionalFieldNames, String conferenceCode, Map<String, Speaker> speakerMap) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000
+        StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.sdSpeaker");
+
+        if ((additionalFieldNames != null) && !additionalFieldNames.isEmpty()) {
+            selectingFields.append(",").append(additionalFieldNames);
+        }
+
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "people")
-                .queryParam("select", "fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.javaChampion,fields.sdSpeaker")
+                .queryParam("select", selectingFields.toString())
                 .queryParam(speakerFieldName, "true")   // only speakers
                 .queryParam("limit", 1000);
 
@@ -208,36 +222,47 @@ public class ContentfulUtils {
                 .toUri();
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
 
-        return Objects.requireNonNull(response)
+        List<Speaker> speakers = new ArrayList<>();
+
+        Objects.requireNonNull(response)
                 .getItems().stream()
-                .filter(t -> (t.getFields().getSdSpeaker() == null) || !t.getFields().getSdSpeaker())   // not demo stage
-                .map(s -> new Speaker(
-                        0L,
-                        null,
-                        Arrays.asList(
-                                new LocaleItem(
-                                        Language.ENGLISH.getCode(),
-                                        s.getFields().getNameEn()),
-                                new LocaleItem(
-                                        Language.RUSSIAN.getCode(),
-                                        s.getFields().getName())),
-                        Arrays.asList(
-                                new LocaleItem(
-                                        Language.ENGLISH.getCode(),
-                                        s.getFields().getCompanyEn()),
-                                new LocaleItem(
-                                        Language.RUSSIAN.getCode(),
-                                        s.getFields().getCompany())),
-                        Arrays.asList(
-                                new LocaleItem(
-                                        Language.ENGLISH.getCode(),
-                                        s.getFields().getBioEn()),
-                                new LocaleItem(
-                                        Language.RUSSIAN.getCode(),
-                                        s.getFields().getBio())),
-                        (s.getFields().getJavaChampion() != null) ? s.getFields().getJavaChampion() : false
-                ))
-                .collect(Collectors.toList());
+                .filter(s -> (s.getFields().getSdSpeaker() == null) || !s.getFields().getSdSpeaker())   // not demo stage
+                .forEach(s -> {
+                    Speaker speaker = new Speaker(
+                            0L,
+                            null,
+                            Arrays.asList(
+                                    new LocaleItem(
+                                            Language.ENGLISH.getCode(),
+                                            s.getFields().getNameEn()),
+                                    new LocaleItem(
+                                            Language.RUSSIAN.getCode(),
+                                            s.getFields().getName())),
+                            Arrays.asList(
+                                    new LocaleItem(
+                                            Language.ENGLISH.getCode(),
+                                            s.getFields().getCompanyEn()),
+                                    new LocaleItem(
+                                            Language.RUSSIAN.getCode(),
+                                            s.getFields().getCompany())),
+                            Arrays.asList(
+                                    new LocaleItem(
+                                            Language.ENGLISH.getCode(),
+                                            s.getFields().getBioEn()),
+                                    new LocaleItem(
+                                            Language.RUSSIAN.getCode(),
+                                            s.getFields().getBio())),
+                            (s.getFields().getJavaChampion() != null) ? s.getFields().getJavaChampion() : false
+                    );
+
+                    speakers.add(speaker);
+
+                    if (speakerMap != null) {
+                        speakerMap.put(s.getSys().getId(), speaker);
+                    }
+                });
+
+        return speakers;
     }
 
     /**
@@ -245,12 +270,14 @@ public class ContentfulUtils {
      *
      * @param conference     conference
      * @param conferenceCode conference code
+     * @param speakerMap     speaker map
      * @return speakers
      */
-    public static List<Speaker> getSpeakers(Conference conference, String conferenceCode) {
+    public static List<Speaker> getSpeakers(Conference conference, String conferenceCode, Map<String, Speaker> speakerMap) {
         ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
 
-        return getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName, conferenceCode);
+        return getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName,
+                conferenceSpaceInfo.additionalFieldNames, conferenceCode, speakerMap);
     }
 
     /**
@@ -259,9 +286,10 @@ public class ContentfulUtils {
      * @param spaceId        space identifier
      * @param accessToken    access token
      * @param conferenceCode conference code
+     * @param speakerMap     speaker map
      * @return talks
      */
-    private static List<Talk> getTalks(String spaceId, String accessToken, String conferenceCode) {
+    private static List<Talk> getTalks(String spaceId, String accessToken, String conferenceCode, Map<String, Speaker> speakerMap) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select={fields}&order={fields}&limit=1000&fields.conferences={conferenceCode}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -285,31 +313,44 @@ public class ContentfulUtils {
                 .getItems().stream()
                 .filter(t -> ((t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack()) &&
                         ((t.getFields().getDemoStage() == null) || !t.getFields().getDemoStage()))   // not demo stage
-                .map(t -> new Talk(
-                        0L,
-                        Arrays.asList(
-                                new LocaleItem(
-                                        Language.ENGLISH.getCode(),
-                                        t.getFields().getNameEn()),
-                                new LocaleItem(
-                                        Language.RUSSIAN.getCode(),
-                                        t.getFields().getName())),
-                        Arrays.asList(
-                                new LocaleItem(
-                                        Language.ENGLISH.getCode(),
-                                        t.getFields().getShortEn()),
-                                new LocaleItem(
-                                        Language.RUSSIAN.getCode(),
-                                        t.getFields().getShortRu())),
-                        Arrays.asList(
-                                new LocaleItem(
-                                        Language.ENGLISH.getCode(),
-                                        t.getFields().getLongEn()),
-                                new LocaleItem(
-                                        Language.RUSSIAN.getCode(),
-                                        t.getFields().getLongRu())),
-                        t.getFields().getVideo(),
-                        new ArrayList<>()))
+                .map(t -> {
+                    List<Speaker> speakers = (speakerMap != null) ?
+                            t.getFields().getSpeakers().stream()
+                                    .map(s -> {
+                                        String speakerId = s.getSys().getId();
+                                        Speaker speaker = speakerMap.get(speakerId);
+                                        return Objects.requireNonNull(speaker,
+                                                () -> String.format("Speaker id %s not found", speakerId));
+                                    })
+                                    .collect(Collectors.toList()) :
+                            Collections.emptyList();
+
+                    return new Talk(
+                            0L,
+                            Arrays.asList(
+                                    new LocaleItem(
+                                            Language.ENGLISH.getCode(),
+                                            t.getFields().getNameEn()),
+                                    new LocaleItem(
+                                            Language.RUSSIAN.getCode(),
+                                            t.getFields().getName())),
+                            Arrays.asList(
+                                    new LocaleItem(
+                                            Language.ENGLISH.getCode(),
+                                            t.getFields().getShortEn()),
+                                    new LocaleItem(
+                                            Language.RUSSIAN.getCode(),
+                                            t.getFields().getShortRu())),
+                            Arrays.asList(
+                                    new LocaleItem(
+                                            Language.ENGLISH.getCode(),
+                                            t.getFields().getLongEn()),
+                                    new LocaleItem(
+                                            Language.RUSSIAN.getCode(),
+                                            t.getFields().getLongRu())),
+                            t.getFields().getVideo(),
+                            speakers);
+                })
                 .collect(Collectors.toList());
     }
 
@@ -318,12 +359,13 @@ public class ContentfulUtils {
      *
      * @param conference     conference
      * @param conferenceCode conference code
+     * @param speakerMap     speaker map
      * @return talks
      */
-    public static List<Talk> getTalks(Conference conference, String conferenceCode) {
+    public static List<Talk> getTalks(Conference conference, String conferenceCode, Map<String, Speaker> speakerMap) {
         ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
 
-        return getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceCode);
+        return getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceCode, speakerMap);
     }
 
     /**
@@ -345,7 +387,9 @@ public class ContentfulUtils {
         Map<String, Speaker> result = new HashMap<>();
 
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
-            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName, null);
+            List<Speaker> speakers = getSpeakers(
+                    conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName,
+                    conferenceSpaceInfo.additionalFieldNames, null, null);
 
             for (Speaker speaker : speakers) {
                 String englishName = LocalizationUtils.getString(speaker.getName(), Language.ENGLISH);
@@ -382,10 +426,12 @@ public class ContentfulUtils {
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
             log.info("Conference space info: {}", conferenceSpaceInfo);
 
-            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName, null);
+            List<Speaker> speakers = getSpeakers(
+                    conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName,
+                    conferenceSpaceInfo.additionalFieldNames, null, null);
             log.info("Speakers: {}, {}", speakers.size(), speakers);
 
-            List<Talk> talks = getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, null);
+            List<Talk> talks = getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, null, null);
             log.info("Talks: {}, {}", talks.size(), talks);
         }
     }

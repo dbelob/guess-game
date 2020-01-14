@@ -9,7 +9,9 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -30,7 +32,8 @@ public class ConferenceDataLoader {
                         .findFirst());
 
         // Read speakers from Contentful
-        List<Speaker> speakers = ContentfulUtils.getSpeakers(conference, conferenceCode);
+        Map<String, Speaker> speakerMap = new HashMap<>();
+        List<Speaker> speakers = ContentfulUtils.getSpeakers(conference, conferenceCode, speakerMap);
         log.info("Speakers: {}", speakers.size());
         speakers.forEach(
                 s -> log.info("Speaker: nameEn: {}, name: {}",
@@ -39,7 +42,7 @@ public class ConferenceDataLoader {
         );
 
         // Read talks from Contentful
-        List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode);
+        List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode, speakerMap);
         log.info("Talks: {}", talks.size());
         talks.forEach(
                 t -> log.info("Talk: nameEn: {}, name: {}",

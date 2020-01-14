@@ -172,6 +172,10 @@ public class YamlUtils {
      */
     private static void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks) {
         for (Talk talk : talks) {
+            if (talk.getSpeakerIds().isEmpty()) {
+                throw new IllegalStateException(String.format("No speakers found for talk %s", talk.getName()));
+            }
+
             // For any speakerId
             for (Long speakerId : talk.getSpeakerIds()) {
                 // Find speaker by id
