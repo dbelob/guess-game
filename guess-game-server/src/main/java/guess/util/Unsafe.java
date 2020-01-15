@@ -142,16 +142,16 @@ class Unsafe {
                     name.add(new LocaleItem(Language.RUSSIAN.getCode(), russianName));
                 }
 
-                List<LocaleItem> company = Collections.emptyList();
-                List<LocaleItem> bio = Collections.emptyList();
-
                 Speaker speaker = new Speaker(
                         id,
                         filename,
                         name,
-                        company,
-                        bio,
-                        false);
+                        contentfulSpeaker.getCompany(),
+                        contentfulSpeaker.getBio(),
+                        contentfulSpeaker.getTwitter(),
+                        contentfulSpeaker.getGitHub(),
+                        contentfulSpeaker.isJavaChampion(),
+                        contentfulSpeaker.isMvp());
 
                 absentSpeakers.add(speaker);
             }

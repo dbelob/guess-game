@@ -33,7 +33,7 @@ public class ContentfulUtils {
         // HolysJS
         HOLYS_JS_SPACE_INFO("nn534z2fqr9f", "1ca5b5d059930cd6681083617578e5a61187d1a71cbd75d4e0059cca3dc85f8c", "fields.speakers"),
         // DotNext
-        DOT_NEXT_SPACE_INFO("9n3x4rtjlya6", "14e1427f8fbee9e5a089cd634fc60189c7aff2814b496fb0ad957b867a59503b", "fields.speaker"),
+        DOT_NEXT_SPACE_INFO("9n3x4rtjlya6", "14e1427f8fbee9e5a089cd634fc60189c7aff2814b496fb0ad957b867a59503b", "fields.speaker", "fields.mvp"),
         // Heisenbug
         HEISENBUG_SPACE_INFO("ut4a3ciohj8i", "e7edd5951d844b80ef41166e30cb9645e4f89d11c8ac9eecdadb2a38c061b980", "fields.speaker"),
         // Mobius
@@ -41,18 +41,18 @@ public class ContentfulUtils {
 
         private final String spaceId;
         private final String accessToken;
-        private final String speakerFieldName;
-        private final String additionalFieldNames;
+        private final String speakerFlagFieldName;
+        private final String speakerAdditionalFieldNames;
 
-        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFieldName, String additionalFieldNames) {
+        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFlagFieldName, String speakerAdditionalFieldNames) {
             this.spaceId = spaceId;
             this.accessToken = accessToken;
-            this.speakerFieldName = speakerFieldName;
-            this.additionalFieldNames = additionalFieldNames;
+            this.speakerFlagFieldName = speakerFlagFieldName;
+            this.speakerAdditionalFieldNames = speakerAdditionalFieldNames;
         }
 
-        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFieldName) {
-            this(spaceId, accessToken, speakerFieldName, null);
+        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFlagFieldName) {
+            this(spaceId, accessToken, speakerFlagFieldName, null);
         }
     }
 
@@ -202,7 +202,7 @@ public class ContentfulUtils {
      */
     private static Map<String, Speaker> getSpeakers(String spaceId, String accessToken, String speakerFieldName, String additionalFieldNames, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000
-        StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.sdSpeaker");
+        StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.sdSpeaker,fields.twitter,fields.gitHub");
 
         if ((additionalFieldNames != null) && !additionalFieldNames.isEmpty()) {
             selectingFields.append(",").append(additionalFieldNames);
@@ -256,7 +256,10 @@ public class ContentfulUtils {
                                         new LocaleItem(
                                                 Language.RUSSIAN.getCode(),
                                                 getSafeTrimmedString(s.getFields().getBio()))),
-                                (s.getFields().getJavaChampion() != null) ? s.getFields().getJavaChampion() : false
+                                getSafeTrimmedString(s.getFields().getTwitter()),
+                                getSafeCleanedGitHub(s.getFields().getGitHub()),
+                                (s.getFields().getJavaChampion() != null) ? s.getFields().getJavaChampion() : false,
+                                (s.getFields().getMvp() != null) ? s.getFields().getMvp() : false
                         )
                 ));
     }
@@ -271,8 +274,8 @@ public class ContentfulUtils {
     public static Map<String, Speaker> getSpeakers(Conference conference, String conferenceCode) {
         ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
 
-        return getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName,
-                conferenceSpaceInfo.additionalFieldNames, conferenceCode);
+        return getSpeakers(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFlagFieldName,
+                conferenceSpaceInfo.speakerAdditionalFieldNames, conferenceCode);
     }
 
     /**
@@ -383,8 +386,8 @@ public class ContentfulUtils {
 
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
             Collection<Speaker> speakers = getSpeakers(
-                    conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName,
-                    conferenceSpaceInfo.additionalFieldNames, null).values();
+                    conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFlagFieldName,
+                    conferenceSpaceInfo.speakerAdditionalFieldNames, null).values();
 
             for (Speaker speaker : speakers) {
                 String englishName = LocalizationUtils.getString(speaker.getName(), Language.ENGLISH);
@@ -401,6 +404,13 @@ public class ContentfulUtils {
     }
 
     private static String getSafeTrimmedString(String value) {
+        return (value != null) ? value.trim() : value;
+    }
+
+    private static String getSafeCleanedGitHub(String value) {
+        //TODO: implement
+//        log.info("GitHub: {}", value);
+
         return (value != null) ? value.trim() : value;
     }
 
@@ -426,8 +436,8 @@ public class ContentfulUtils {
             log.info("Conference space info: {}", conferenceSpaceInfo);
 
             Collection<Speaker> speakers = getSpeakers(
-                    conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFieldName,
-                    conferenceSpaceInfo.additionalFieldNames, null).values();
+                    conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, conferenceSpaceInfo.speakerFlagFieldName,
+                    conferenceSpaceInfo.speakerAdditionalFieldNames, null).values();
             log.info("Speakers: {}, {}", speakers.size(), speakers);
 
             List<Talk> talks = getTalks(conferenceSpaceInfo.spaceId, conferenceSpaceInfo.accessToken, null, null);

@@ -11,19 +11,25 @@ public class Speaker {
     private List<LocaleItem> name;
     private List<LocaleItem> company;
     private List<LocaleItem> bio;
+    private String twitter;
+    private String gitHub;
     private boolean javaChampion;
+    private boolean mvp;
 
     public Speaker() {
     }
 
     public Speaker(long id, String fileName, List<LocaleItem> name, List<LocaleItem> company,
-                   List<LocaleItem> bio, boolean javaChampion) {
+                   List<LocaleItem> bio, String twitter, String gitHub, boolean javaChampion, boolean mvp) {
         this.id = id;
         this.fileName = fileName;
         this.name = name;
         this.company = company;
         this.bio = bio;
+        this.twitter = twitter;
+        this.gitHub = gitHub;
         this.javaChampion = javaChampion;
+        this.mvp = mvp;
     }
 
     public long getId() {
@@ -66,12 +72,36 @@ public class Speaker {
         this.bio = bio;
     }
 
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+
+    public String getGitHub() {
+        return gitHub;
+    }
+
+    public void setGitHub(String gitHub) {
+        this.gitHub = gitHub;
+    }
+
     public boolean isJavaChampion() {
         return javaChampion;
     }
 
     public void setJavaChampion(boolean javaChampion) {
         this.javaChampion = javaChampion;
+    }
+
+    public boolean isMvp() {
+        return mvp;
+    }
+
+    public void setMvp(boolean mvp) {
+        this.mvp = mvp;
     }
 
     @Override
