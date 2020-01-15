@@ -143,7 +143,9 @@ public class ContentfulUtils {
                 .getItems().stream()
                 .map(et -> new EventType(
                         0L,
-                        Collections.singletonList(new LocaleItem(transformLocale(locale), et.getFields().getEventName())),
+                        Collections.singletonList(new LocaleItem(
+                                transformLocale(locale),
+                                getSafeTrimmedString(et.getFields().getEventName()))),
                         null,
                         Collections.emptyList()
                 ))
@@ -177,7 +179,9 @@ public class ContentfulUtils {
                 .getItems().stream()
                 .map(e -> new Event(
                         null,
-                        Collections.singletonList(new LocaleItem(transformLocale(locale), e.getFields().getConferenceName())),
+                        Collections.singletonList(new LocaleItem(
+                                transformLocale(locale),
+                                getSafeTrimmedString(e.getFields().getConferenceName()))),
                         null,
                         null,
                         null,
@@ -234,24 +238,24 @@ public class ContentfulUtils {
                                 Arrays.asList(
                                         new LocaleItem(
                                                 Language.ENGLISH.getCode(),
-                                                s.getFields().getNameEn()),
+                                                getSafeTrimmedString(s.getFields().getNameEn())),
                                         new LocaleItem(
                                                 Language.RUSSIAN.getCode(),
-                                                s.getFields().getName())),
+                                                getSafeTrimmedString(s.getFields().getName()))),
                                 Arrays.asList(
                                         new LocaleItem(
                                                 Language.ENGLISH.getCode(),
-                                                s.getFields().getCompanyEn()),
+                                                getSafeTrimmedString(s.getFields().getCompanyEn())),
                                         new LocaleItem(
                                                 Language.RUSSIAN.getCode(),
-                                                s.getFields().getCompany())),
+                                                getSafeTrimmedString(s.getFields().getCompany()))),
                                 Arrays.asList(
                                         new LocaleItem(
                                                 Language.ENGLISH.getCode(),
-                                                s.getFields().getBioEn()),
+                                                getSafeTrimmedString(s.getFields().getBioEn())),
                                         new LocaleItem(
                                                 Language.RUSSIAN.getCode(),
-                                                s.getFields().getBio())),
+                                                getSafeTrimmedString(s.getFields().getBio()))),
                                 (s.getFields().getJavaChampion() != null) ? s.getFields().getJavaChampion() : false
                         )
                 ));
@@ -321,24 +325,24 @@ public class ContentfulUtils {
                             Arrays.asList(
                                     new LocaleItem(
                                             Language.ENGLISH.getCode(),
-                                            t.getFields().getNameEn()),
+                                            getSafeTrimmedString(t.getFields().getNameEn())),
                                     new LocaleItem(
                                             Language.RUSSIAN.getCode(),
-                                            t.getFields().getName())),
+                                            getSafeTrimmedString(t.getFields().getName()))),
                             Arrays.asList(
                                     new LocaleItem(
                                             Language.ENGLISH.getCode(),
-                                            t.getFields().getShortEn()),
+                                            getSafeTrimmedString(t.getFields().getShortEn())),
                                     new LocaleItem(
                                             Language.RUSSIAN.getCode(),
-                                            t.getFields().getShortRu())),
+                                            getSafeTrimmedString(t.getFields().getShortRu()))),
                             Arrays.asList(
                                     new LocaleItem(
                                             Language.ENGLISH.getCode(),
-                                            t.getFields().getLongEn()),
+                                            getSafeTrimmedString(t.getFields().getLongEn())),
                                     new LocaleItem(
                                             Language.RUSSIAN.getCode(),
-                                            t.getFields().getLongRu())),
+                                            getSafeTrimmedString(t.getFields().getLongRu()))),
                             t.getFields().getVideo(),
                             speakers);
                 })
@@ -394,6 +398,10 @@ public class ContentfulUtils {
         }
 
         return result;
+    }
+
+    private static String getSafeTrimmedString(String value) {
+        return (value != null) ? value.trim() : value;
     }
 
     public static void main(String[] args) {
