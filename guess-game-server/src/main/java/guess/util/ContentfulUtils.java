@@ -442,23 +442,48 @@ public class ContentfulUtils {
             return value;
         }
 
-        Pattern pattern = Pattern.compile("^[\\s]*[@]?(\\w{1,15})\\s*$");
+        Pattern pattern = Pattern.compile("^[\\s]*[@]?(\\w{1,15})[\\s]*$");
         Matcher matcher = pattern.matcher(value);
 
         if (matcher.matches()) {
-            log.info("Twitter value: {}, username: {}", value, matcher.group(1));
-
             return matcher.group(1);
         } else {
-            throw new IllegalArgumentException(String.format("Invalid twitter username: %s", value));
+            throw new IllegalArgumentException(String.format("Invalid Twitter username: %s", value));
         }
     }
 
-    private static String extractGitHub(String value) {
-        //TODO: implement
-//        log.info("GitHub: {}", value);
+    /**
+     * Extracts GitHub username.
+     *
+     * @param value source value
+     * @return extracted GitHub username
+     */
+    public static String extractGitHub(String value) {
+        if (value == null) {
+            return null;
+        }
 
-        return (value != null) ? value.trim() : value;
+        value = value.trim();
+
+        if (value.isEmpty()) {
+            return value;
+        }
+
+        Pattern pattern = Pattern.compile("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)(/)?[\\s]*$");
+        Matcher matcher = pattern.matcher(value);
+
+        if (matcher.matches()) {
+            return matcher.group(4);
+        } else {
+            pattern = Pattern.compile("^[\\s]*(http(s)?://)?([a-zA-Z0-9\\-]+).github.io/blog(/)?[\\s]*$");
+            matcher = pattern.matcher(value);
+
+            if (matcher.matches()) {
+                return matcher.group(3);
+            } else {
+                throw new IllegalArgumentException(String.format("Invalid GitHub username: %s", value));
+            }
+        }
     }
 
     public static void main(String[] args) {
