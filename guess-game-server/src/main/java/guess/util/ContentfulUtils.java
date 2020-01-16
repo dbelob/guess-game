@@ -21,6 +21,8 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -145,7 +147,7 @@ public class ContentfulUtils {
                         0L,
                         Collections.singletonList(new LocaleItem(
                                 transformLocale(locale),
-                                getSafeTrimmedString(et.getFields().getEventName()))),
+                                extractString(et.getFields().getEventName()))),
                         null,
                         Collections.emptyList()
                 ))
@@ -181,7 +183,7 @@ public class ContentfulUtils {
                         null,
                         Collections.singletonList(new LocaleItem(
                                 transformLocale(locale),
-                                getSafeTrimmedString(e.getFields().getConferenceName()))),
+                                extractString(e.getFields().getConferenceName()))),
                         null,
                         null,
                         null,
@@ -238,28 +240,28 @@ public class ContentfulUtils {
                                 Arrays.asList(
                                         new LocaleItem(
                                                 Language.ENGLISH.getCode(),
-                                                getSafeTrimmedString(s.getFields().getNameEn())),
+                                                extractString(s.getFields().getNameEn())),
                                         new LocaleItem(
                                                 Language.RUSSIAN.getCode(),
-                                                getSafeTrimmedString(s.getFields().getName()))),
+                                                extractString(s.getFields().getName()))),
                                 Arrays.asList(
                                         new LocaleItem(
                                                 Language.ENGLISH.getCode(),
-                                                getSafeTrimmedString(s.getFields().getCompanyEn())),
+                                                extractString(s.getFields().getCompanyEn())),
                                         new LocaleItem(
                                                 Language.RUSSIAN.getCode(),
-                                                getSafeTrimmedString(s.getFields().getCompany()))),
+                                                extractString(s.getFields().getCompany()))),
                                 Arrays.asList(
                                         new LocaleItem(
                                                 Language.ENGLISH.getCode(),
-                                                getSafeTrimmedString(s.getFields().getBioEn())),
+                                                extractString(s.getFields().getBioEn())),
                                         new LocaleItem(
                                                 Language.RUSSIAN.getCode(),
-                                                getSafeTrimmedString(s.getFields().getBio()))),
-                                getSafeTrimmedString(s.getFields().getTwitter()),
-                                getSafeCleanedGitHub(s.getFields().getGitHub()),
-                                (s.getFields().getJavaChampion() != null) ? s.getFields().getJavaChampion() : false,
-                                (s.getFields().getMvp() != null) ? s.getFields().getMvp() : false
+                                                extractString(s.getFields().getBio()))),
+                                extractTwitter(s.getFields().getTwitter()),
+                                extractGitHub(s.getFields().getGitHub()),
+                                extractBoolean(s.getFields().getJavaChampion()),
+                                extractBoolean(s.getFields().getMvp())
                         )
                 ));
     }
@@ -328,25 +330,25 @@ public class ContentfulUtils {
                             Arrays.asList(
                                     new LocaleItem(
                                             Language.ENGLISH.getCode(),
-                                            getSafeTrimmedString(t.getFields().getNameEn())),
+                                            extractString(t.getFields().getNameEn())),
                                     new LocaleItem(
                                             Language.RUSSIAN.getCode(),
-                                            getSafeTrimmedString(t.getFields().getName()))),
+                                            extractString(t.getFields().getName()))),
                             Arrays.asList(
                                     new LocaleItem(
                                             Language.ENGLISH.getCode(),
-                                            getSafeTrimmedString(t.getFields().getShortEn())),
+                                            extractString(t.getFields().getShortEn())),
                                     new LocaleItem(
                                             Language.RUSSIAN.getCode(),
-                                            getSafeTrimmedString(t.getFields().getShortRu()))),
+                                            extractString(t.getFields().getShortRu()))),
                             Arrays.asList(
                                     new LocaleItem(
                                             Language.ENGLISH.getCode(),
-                                            getSafeTrimmedString(t.getFields().getLongEn())),
+                                            extractString(t.getFields().getLongEn())),
                                     new LocaleItem(
                                             Language.RUSSIAN.getCode(),
-                                            getSafeTrimmedString(t.getFields().getLongRu()))),
-                            t.getFields().getVideo(),
+                                            extractString(t.getFields().getLongRu()))),
+                            extractString(t.getFields().getVideo()),
                             speakers);
                 })
                 .collect(Collectors.toList());
@@ -403,11 +405,56 @@ public class ContentfulUtils {
         return result;
     }
 
-    private static String getSafeTrimmedString(String value) {
+    /**
+     * Extracts string, i.e. trims not null string.
+     *
+     * @param value source value
+     * @return extracted string
+     */
+    private static String extractString(String value) {
         return (value != null) ? value.trim() : value;
     }
 
-    private static String getSafeCleanedGitHub(String value) {
+    /**
+     * Extracts boolean, considering null as false.
+     *
+     * @param value source value
+     * @return extracted boolean
+     */
+    private static boolean extractBoolean(Boolean value) {
+        return (value != null) ? value : false;
+    }
+
+    /**
+     * Extracts Twitter username.
+     *
+     * @param value source value
+     * @return extracted Twitter username
+     */
+    public static String extractTwitter(String value) {
+        if (value == null) {
+            return null;
+        }
+
+        value = value.trim();
+
+        if (value.isEmpty()) {
+            return value;
+        }
+
+        Pattern pattern = Pattern.compile("^[\\s]*[@]?(\\w{1,15})\\s*$");
+        Matcher matcher = pattern.matcher(value);
+
+        if (matcher.matches()) {
+            log.info("Twitter value: {}, username: {}", value, matcher.group(1));
+
+            return matcher.group(1);
+        } else {
+            throw new IllegalArgumentException(String.format("Invalid twitter username: %s", value));
+        }
+    }
+
+    private static String extractGitHub(String value) {
         //TODO: implement
 //        log.info("GitHub: {}", value);
 
