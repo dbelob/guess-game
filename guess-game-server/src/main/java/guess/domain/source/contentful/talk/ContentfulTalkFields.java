@@ -17,8 +17,10 @@ public class ContentfulTalkFields {
     private String longRu;
     private String longEn;
 
-    private List<ContentfulLink> speakers;
     private List<ContentfulLink> talksPresentation;
+    private ContentfulLink presentation;
+
+    private List<ContentfulLink> speakers;
     private String video;
     private Boolean sdTrack;
     private Boolean demoStage;
@@ -71,20 +73,28 @@ public class ContentfulTalkFields {
         this.longEn = longEn;
     }
 
-    public List<ContentfulLink> getSpeakers() {
-        return speakers;
-    }
-
-    public void setSpeakers(List<ContentfulLink> speakers) {
-        this.speakers = speakers;
-    }
-
     public List<ContentfulLink> getTalksPresentation() {
         return talksPresentation;
     }
 
     public void setTalksPresentation(List<ContentfulLink> talksPresentation) {
         this.talksPresentation = talksPresentation;
+    }
+
+    public ContentfulLink getPresentation() {
+        return presentation;
+    }
+
+    public void setPresentation(ContentfulLink presentation) {
+        this.presentation = presentation;
+    }
+
+    public List<ContentfulLink> getSpeakers() {
+        return speakers;
+    }
+
+    public void setSpeakers(List<ContentfulLink> speakers) {
+        this.speakers = speakers;
     }
 
     public String getVideo() {
