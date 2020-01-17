@@ -1,7 +1,7 @@
 package guess.domain.source.contentful.talk;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import guess.domain.source.contentful.link.ContentfulLink;
+import guess.domain.source.contentful.ContentfulLink;
 
 import java.util.List;
 
@@ -18,6 +18,7 @@ public class ContentfulTalkFields {
     private String longEn;
 
     private List<ContentfulLink> speakers;
+    private List<ContentfulLink> talksPresentation;
     private String video;
     private Boolean sdTrack;
     private Boolean demoStage;
@@ -76,6 +77,14 @@ public class ContentfulTalkFields {
 
     public void setSpeakers(List<ContentfulLink> speakers) {
         this.speakers = speakers;
+    }
+
+    public List<ContentfulLink> getTalksPresentation() {
+        return talksPresentation;
+    }
+
+    public void setTalksPresentation(List<ContentfulLink> talksPresentation) {
+        this.talksPresentation = talksPresentation;
     }
 
     public String getVideo() {

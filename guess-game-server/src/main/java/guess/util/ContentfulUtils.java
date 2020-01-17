@@ -3,6 +3,10 @@ package guess.util;
 import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.*;
+import guess.domain.source.contentful.ContentfulLink;
+import guess.domain.source.contentful.ContentfulSys;
+import guess.domain.source.contentful.asset.ContentfulAsset;
+import guess.domain.source.contentful.error.ContentfulErrorDetails;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
 import guess.domain.source.contentful.locale.ContentfulLocale;
@@ -286,7 +290,7 @@ public class ContentfulUtils {
      * @param spaceId        space identifier
      * @param accessToken    access token
      * @param conferenceCode conference code
-     * @param speakerMap     speaker map
+     * @param speakerMap     map id/speaker
      * @return talks
      */
     private static List<Talk> getTalks(String spaceId, String accessToken, String conferenceCode, Map<String, Speaker> speakerMap) {
@@ -295,7 +299,7 @@ public class ContentfulUtils {
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", accessToken)
                 .queryParam("content_type", "talks")
-                .queryParam("select", "fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.video,fields.sdTrack,fields.demoStage")
+                .queryParam("select", "fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.video,fields.talksPresentation,fields.sdTrack,fields.demoStage")
                 .queryParam("order", "fields.talkDay,fields.trackTime,fields.track")
                 .queryParam("limit", 1000);
 
@@ -308,6 +312,24 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulTalkResponse response = restTemplate.getForObject(uri, ContentfulTalkResponse.class);
+        Map<String, ContentfulAsset> assetMap = Objects.requireNonNull(response)
+                .getIncludes().getAsset().stream()
+                .collect(Collectors.toMap(
+                        a -> a.getSys().getId(),
+                        a -> a
+                ));
+        Set<String> assetErrorSet = (response.getErrors() == null) ?
+                Collections.emptySet() :
+                response.getErrors().stream()
+                        .filter(e -> {
+                            ContentfulSys sys = e.getSys();
+                            ContentfulErrorDetails details = e.getDetails();
+
+                            return ((sys != null) && "notResolvable".equals(sys.getId()) && "error".equals(sys.getType()) &&
+                                    (details != null) && "Link".equals(details.getType()) && "Asset".equals(details.getLinkType()));
+                        })
+                        .map(e -> e.getDetails().getId())
+                        .collect(Collectors.toSet());
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
@@ -348,6 +370,7 @@ public class ContentfulUtils {
                                     new LocaleItem(
                                             Language.RUSSIAN.getCode(),
                                             extractString(t.getFields().getLongRu()))),
+                            extractPresentationLinks(t.getFields().getTalksPresentation(), assetMap, assetErrorSet),
                             extractString(t.getFields().getVideo()),
                             speakers);
                 })
@@ -484,6 +507,41 @@ public class ContentfulUtils {
                 throw new IllegalArgumentException(String.format("Invalid GitHub username: %s", value));
             }
         }
+    }
+
+    /**
+     * Extracts presentation links.
+     *
+     * @param talksPresentation talks presentation attribute
+     * @param assetMap          map id/asset
+     * @param assetErrorSet     set with error assets
+     * @return presentation links
+     */
+    private static List<String> extractPresentationLinks(List<ContentfulLink> talksPresentation,
+                                                         Map<String, ContentfulAsset> assetMap,
+                                                         Set<String> assetErrorSet) {
+        if (talksPresentation == null) {
+            return Collections.emptyList();
+        }
+
+        return talksPresentation.stream()
+                .filter(l -> {
+                    String assetId = l.getSys().getId();
+                    boolean isErrorAsset = assetErrorSet.contains(l.getSys().getId());
+                    if (isErrorAsset) {
+                        log.warn("Asset id {} not resolvable", assetId);
+                    }
+
+                    return !isErrorAsset;
+                })
+                .map(l -> {
+                    String assetId = l.getSys().getId();
+                    ContentfulAsset asset = assetMap.get(assetId);
+                    return Objects.requireNonNull(asset,
+                            () -> String.format("Asset id %s not found", assetId))
+                            .getFields().getFile().getUrl();
+                })
+                .collect(Collectors.toList());
     }
 
     public static void main(String[] args) {

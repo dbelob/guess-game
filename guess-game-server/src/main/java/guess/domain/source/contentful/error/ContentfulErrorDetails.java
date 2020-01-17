@@ -1,6 +1,6 @@
-package guess.domain.source.contentful.link;
+package guess.domain.source.contentful.error;
 
-public class ContentfulLinkSys {
+public class ContentfulErrorDetails {
     private String type;
     private String linkType;
     private String id;

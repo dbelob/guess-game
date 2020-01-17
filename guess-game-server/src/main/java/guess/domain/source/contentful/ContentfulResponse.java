@@ -1,5 +1,7 @@
 package guess.domain.source.contentful;
 
+import guess.domain.source.contentful.error.ContentfulError;
+
 import java.util.List;
 
 public class ContentfulResponse<T> {
@@ -7,6 +9,8 @@ public class ContentfulResponse<T> {
     private Long skip;
     private Long limit;
     private List<T> items;
+    private List<ContentfulError> errors;
+    private ContentfulIncludes includes;
 
     public Long getTotal() {
         return total;
@@ -38,6 +42,22 @@ public class ContentfulResponse<T> {
 
     public void setItems(List<T> items) {
         this.items = items;
+    }
+
+    public List<ContentfulError> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(List<ContentfulError> errors) {
+        this.errors = errors;
+    }
+
+    public ContentfulIncludes getIncludes() {
+        return includes;
+    }
+
+    public void setIncludes(ContentfulIncludes includes) {
+        this.includes = includes;
     }
 
     @Override

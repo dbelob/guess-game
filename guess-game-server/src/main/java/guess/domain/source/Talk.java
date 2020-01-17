@@ -11,6 +11,7 @@ public class Talk {
     private List<LocaleItem> name;
     private List<LocaleItem> shortDescription;
     private List<LocaleItem> longDescription;
+    private List<String> presentationLinks;
     private String videoLink;
 
     private List<Long> speakerIds;
@@ -20,11 +21,12 @@ public class Talk {
     }
 
     public Talk(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription,
-                String videoLink, List<Speaker> speakers) {
+                List<String> presentationLinks, String videoLink, List<Speaker> speakers) {
         this.id = id;
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
+        this.presentationLinks = presentationLinks;
         this.videoLink = videoLink;
         this.speakers = speakers;
     }
@@ -59,6 +61,14 @@ public class Talk {
 
     public void setLongDescription(List<LocaleItem> longDescription) {
         this.longDescription = longDescription;
+    }
+
+    public List<String> getPresentationLinks() {
+        return presentationLinks;
+    }
+
+    public void setPresentationLinks(List<String> presentationLinks) {
+        this.presentationLinks = presentationLinks;
     }
 
     public String getVideoLink() {
