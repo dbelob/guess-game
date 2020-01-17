@@ -571,11 +571,28 @@ public class ContentfulUtils {
                 .map(l -> {
                     String assetId = l.getSys().getId();
                     ContentfulAsset asset = assetMap.get(assetId);
-                    return Objects.requireNonNull(asset,
+                    return extractAssetUrl(Objects.requireNonNull(asset,
                             () -> String.format("Asset id %s not found", assetId))
-                            .getFields().getFile().getUrl();
+                            .getFields().getFile().getUrl());
                 })
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Extracts asset URL.
+     *
+     * @param url URL
+     * @return URL with protocol
+     */
+    private static String extractAssetUrl(String url) {
+        Pattern pattern = Pattern.compile("^[\\s]*(http(s)?:)?//(.+)[\\s]*$");
+        Matcher matcher = pattern.matcher(url);
+
+        if (matcher.matches()) {
+            return String.format("https://%s", matcher.group(3));
+        } else {
+            throw new IllegalArgumentException(String.format("Invalid asset URL: %s", url));
+        }
     }
 
     public static void main(String[] args) {
