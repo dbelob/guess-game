@@ -36,19 +36,19 @@ public class ContentfulUtils {
     private enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
-                "fields.speaker", "fields.javaChampion", "fields.talksPresentation"),
+                "fields.speaker", "fields.javaChampion", "fields.talksPresentation"),               // fields.talksPresentation is list
         // HolysJS
         HOLYS_JS_SPACE_INFO("nn534z2fqr9f", "1ca5b5d059930cd6681083617578e5a61187d1a71cbd75d4e0059cca3dc85f8c",
-                "fields.speakers", null, "fields.presentation"),
+                "fields.speakers", null, "fields.presentation"),                                    // fields.presentation is single
         // DotNext
         DOT_NEXT_SPACE_INFO("9n3x4rtjlya6", "14e1427f8fbee9e5a089cd634fc60189c7aff2814b496fb0ad957b867a59503b",
-                "fields.speaker", "fields.mvp", "fields.talksPresentation,fields.presentation"),
+                "fields.speaker", "fields.mvp", "fields.talksPresentation,fields.presentation"),    // fields.talksPresentation is list, fields.presentation is single
         // Heisenbug
         HEISENBUG_SPACE_INFO("ut4a3ciohj8i", "e7edd5951d844b80ef41166e30cb9645e4f89d11c8ac9eecdadb2a38c061b980",
-                "fields.speaker", null, "fields.talksPresentation"),
+                "fields.speaker", null, null),                                                      // talksPresentation is single  //TODO: fix
         // Mobius
         MOBIUS_SPACE_INFO("2grufn031spf", "d0c680ed11f68287348b6b8481d3313fde8c2d23cc8ce24a2b0ae254dd779e6d",
-                "fields.speaker", null, "fields.talksPresentation");
+                "fields.speaker", null, null);                                                      // talkPresentation is single   //TODO: fix
 
         private final String spaceId;
         private final String accessToken;
@@ -581,17 +581,27 @@ public class ContentfulUtils {
     /**
      * Extracts asset URL.
      *
-     * @param url URL
+     * @param value URL
      * @return URL with protocol
      */
-    private static String extractAssetUrl(String url) {
+    public static String extractAssetUrl(String value) {
+        if (value == null) {
+            return null;
+        }
+
+        value = value.trim();
+
+        if (value.isEmpty()) {
+            return value;
+        }
+
         Pattern pattern = Pattern.compile("^[\\s]*(http(s)?:)?//(.+)[\\s]*$");
-        Matcher matcher = pattern.matcher(url);
+        Matcher matcher = pattern.matcher(value);
 
         if (matcher.matches()) {
             return String.format("https://%s", matcher.group(3));
         } else {
-            throw new IllegalArgumentException(String.format("Invalid asset URL: %s", url));
+            throw new IllegalArgumentException(String.format("Invalid asset URL: %s", value));
         }
     }
 
