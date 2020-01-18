@@ -12,7 +12,8 @@ import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
 import guess.domain.source.contentful.locale.ContentfulLocale;
 import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
-import guess.domain.source.contentful.talk.ContentfulTalkResponse;
+import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
+import guess.domain.source.contentful.talk.response.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -36,32 +37,40 @@ public class ContentfulUtils {
     private enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
-                "fields.speaker", "fields.javaChampion", "fields.talksPresentation"),               // fields.talksPresentation is list
-        // HolysJS
-        HOLYS_JS_SPACE_INFO("nn534z2fqr9f", "1ca5b5d059930cd6681083617578e5a61187d1a71cbd75d4e0059cca3dc85f8c",
-                "fields.speakers", null, "fields.presentation"),                                    // fields.presentation is single
+                "fields.speaker", "fields.javaChampion",
+                "fields.talksPresentation", ContentfulTalkResponseCommon.class),                        // fields.talksPresentation is list
+        // HolyJS
+        HOLY_JS_SPACE_INFO("nn534z2fqr9f", "1ca5b5d059930cd6681083617578e5a61187d1a71cbd75d4e0059cca3dc85f8c",
+                "fields.speakers", null,
+                "fields.presentation", ContentfulTalkResponseHolyJs.class),                             // fields.presentation is single value
         // DotNext
         DOT_NEXT_SPACE_INFO("9n3x4rtjlya6", "14e1427f8fbee9e5a089cd634fc60189c7aff2814b496fb0ad957b867a59503b",
-                "fields.speaker", "fields.mvp", "fields.talksPresentation,fields.presentation"),    // fields.talksPresentation is list, fields.presentation is single
+                "fields.speaker", "fields.mvp",
+                "fields.talksPresentation,fields.presentation", ContentfulTalkResponseDotNext.class),   // fields.talksPresentation is list, fields.presentation is single value
         // Heisenbug
         HEISENBUG_SPACE_INFO("ut4a3ciohj8i", "e7edd5951d844b80ef41166e30cb9645e4f89d11c8ac9eecdadb2a38c061b980",
-                "fields.speaker", null, null),                                                      // talksPresentation is single  //TODO: fix
+                "fields.speaker", null,
+                "fields.talksPresentation", ContentfulTalkResponseHeisenbug.class),                     // talksPresentation is single value
         // Mobius
         MOBIUS_SPACE_INFO("2grufn031spf", "d0c680ed11f68287348b6b8481d3313fde8c2d23cc8ce24a2b0ae254dd779e6d",
-                "fields.speaker", null, null);                                                      // talkPresentation is single   //TODO: fix
+                "fields.speaker", null,
+                "fields.talkPresentation", ContentfulTalkResponseMobius.class);                         // talkPresentation is list
 
         private final String spaceId;
         private final String accessToken;
         private final String speakerFlagFieldName;
         private final String speakerAdditionalFieldNames;
         private final String talkAdditionalFieldNames;
+        private final Class<? extends ContentfulTalkResponse<? extends ContentfulTalkFields>> talkResponseClass;
 
-        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFlagFieldName, String speakerAdditionalFieldNames, String talkAdditionalFieldNames) {
+        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFlagFieldName, String speakerAdditionalFieldNames,
+                            String talkAdditionalFieldNames, Class<? extends ContentfulTalkResponse<? extends ContentfulTalkFields>> talkResponseClass) {
             this.spaceId = spaceId;
             this.accessToken = accessToken;
             this.speakerFlagFieldName = speakerFlagFieldName;
             this.speakerAdditionalFieldNames = speakerAdditionalFieldNames;
             this.talkAdditionalFieldNames = talkAdditionalFieldNames;
+            this.talkResponseClass = talkResponseClass;
         }
     }
 
@@ -85,7 +94,7 @@ public class ContentfulUtils {
         put(Conference.SPTDC, ConferenceSpaceInfo.COMMON_SPACE_INFO);
         put(Conference.DEV_OOPS, ConferenceSpaceInfo.COMMON_SPACE_INFO);
         put(Conference.SMART_DATA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.HOLY_JS, ConferenceSpaceInfo.HOLYS_JS_SPACE_INFO);
+        put(Conference.HOLY_JS, ConferenceSpaceInfo.HOLY_JS_SPACE_INFO);
         put(Conference.DOT_NEXT, ConferenceSpaceInfo.DOT_NEXT_SPACE_INFO);
         put(Conference.HEISENBUG, ConferenceSpaceInfo.HEISENBUG_SPACE_INFO);
         put(Conference.MOBIUS, ConferenceSpaceInfo.MOBIUS_SPACE_INFO);
@@ -311,7 +320,7 @@ public class ContentfulUtils {
                 .buildAndExpand(conferenceSpaceInfo.spaceId, "entries")
                 .encode()
                 .toUri();
-        ContentfulTalkResponse response = restTemplate.getForObject(uri, ContentfulTalkResponse.class);
+        ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
         Map<String, ContentfulAsset> assetMap = Objects.requireNonNull(response)
                 .getIncludes().getAsset().stream()
                 .collect(Collectors.toMap(
@@ -371,7 +380,7 @@ public class ContentfulUtils {
                                             Language.RUSSIAN.getCode(),
                                             extractString(t.getFields().getLongRu()))),
                             extractPresentationLinks(
-                                    combineContentfulLinks(t.getFields().getTalksPresentation(), t.getFields().getPresentation()),
+                                    combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
                                     assetMap, assetErrorSet),
                             extractString(t.getFields().getVideo()),
                             speakers);
@@ -512,16 +521,16 @@ public class ContentfulUtils {
     /**
      * Combines Contentful links.
      *
-     * @param talksPresentation talk presentations
-     * @param presentation      presentation
+     * @param presentations presentations
+     * @param presentation  presentation
      * @return combined links
      */
-    private static List<ContentfulLink> combineContentfulLinks(List<ContentfulLink> talksPresentation, ContentfulLink presentation) {
+    private static List<ContentfulLink> combineContentfulLinks(List<ContentfulLink> presentations, ContentfulLink presentation) {
         //TODO: delete duplicates
         List<ContentfulLink> contentfulLinks = new ArrayList<>();
 
-        if (talksPresentation != null) {
-            contentfulLinks.addAll(talksPresentation);
+        if (presentations != null) {
+            contentfulLinks.addAll(presentations);
         }
 
         if (presentation != null) {
