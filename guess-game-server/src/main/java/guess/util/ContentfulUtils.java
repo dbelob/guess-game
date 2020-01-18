@@ -526,7 +526,6 @@ public class ContentfulUtils {
      * @return combined links
      */
     private static List<ContentfulLink> combineContentfulLinks(List<ContentfulLink> presentations, ContentfulLink presentation) {
-        //TODO: delete duplicates
         List<ContentfulLink> contentfulLinks = new ArrayList<>();
 
         if (presentations != null) {
@@ -537,7 +536,9 @@ public class ContentfulUtils {
             contentfulLinks.add(presentation);
         }
 
-        return contentfulLinks;
+        return contentfulLinks.stream()
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     /**
