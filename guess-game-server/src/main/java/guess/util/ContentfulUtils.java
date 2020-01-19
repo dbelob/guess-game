@@ -4,6 +4,7 @@ import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.contentful.ContentfulLink;
+import guess.domain.source.contentful.ContentfulResponse;
 import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.contentful.asset.ContentfulAsset;
 import guess.domain.source.contentful.error.ContentfulErrorDetails;
@@ -211,7 +212,7 @@ public class ContentfulUtils {
      */
     private static Map<String, Speaker> getSpeakers(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000
-        StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.sdSpeaker,fields.twitter,fields.gitHub");
+        StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.sdSpeaker,fields.photo,fields.twitter,fields.gitHub");
         String additionalFieldNames = conferenceSpaceInfo.speakerAdditionalFieldNames;
 
         if ((additionalFieldNames != null) && !additionalFieldNames.isEmpty()) {
@@ -236,6 +237,8 @@ public class ContentfulUtils {
                 .toUri();
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
         AtomicLong id = new AtomicLong();
+        Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
+        Set<String> assetErrorSet = getAssetErrorSet(response);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
@@ -244,7 +247,7 @@ public class ContentfulUtils {
                         s -> s.getSys().getId(),
                         s -> new Speaker(
                                 id.getAndIncrement(),
-                                null,
+                                extractPhoto(s.getFields().getPhoto(), assetMap, assetErrorSet),
                                 Arrays.asList(
                                         new LocaleItem(
                                                 Language.ENGLISH.getCode(),
@@ -321,24 +324,8 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
-        Map<String, ContentfulAsset> assetMap = Objects.requireNonNull(response)
-                .getIncludes().getAsset().stream()
-                .collect(Collectors.toMap(
-                        a -> a.getSys().getId(),
-                        a -> a
-                ));
-        Set<String> assetErrorSet = (response.getErrors() == null) ?
-                Collections.emptySet() :
-                response.getErrors().stream()
-                        .filter(e -> {
-                            ContentfulSys sys = e.getSys();
-                            ContentfulErrorDetails details = e.getDetails();
-
-                            return ((sys != null) && "notResolvable".equals(sys.getId()) && "error".equals(sys.getType()) &&
-                                    (details != null) && "Link".equals(details.getType()) && "Asset".equals(details.getLinkType()));
-                        })
-                        .map(e -> e.getDetails().getId())
-                        .collect(Collectors.toSet());
+        Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
+        Set<String> assetErrorSet = getAssetErrorSet(response);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
@@ -417,6 +404,7 @@ public class ContentfulUtils {
      *
      * @return name, speaker map
      */
+    //TODO: delete
     public static Map<String, Speaker> getNameSpeakerMap() {
         Map<String, Speaker> result = new HashMap<>();
 
@@ -435,6 +423,41 @@ public class ContentfulUtils {
         }
 
         return result;
+    }
+
+    /**
+     * Gets map id/asset.
+     *
+     * @param response response
+     * @return map id/asset
+     */
+    private static Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?> response) {
+        return response.getIncludes().getAsset().stream()
+                .collect(Collectors.toMap(
+                        a -> a.getSys().getId(),
+                        a -> a
+                ));
+    }
+
+    /**
+     * Gets error set.
+     *
+     * @param response response
+     * @return error set
+     */
+    private static Set<String> getAssetErrorSet(ContentfulResponse<?> response) {
+        return (response.getErrors() == null) ?
+                Collections.emptySet() :
+                response.getErrors().stream()
+                        .filter(e -> {
+                            ContentfulSys sys = e.getSys();
+                            ContentfulErrorDetails details = e.getDetails();
+
+                            return ((sys != null) && "notResolvable".equals(sys.getId()) && "error".equals(sys.getType()) &&
+                                    (details != null) && "Link".equals(details.getType()) && "Asset".equals(details.getLinkType()));
+                        })
+                        .map(e -> e.getDetails().getId())
+                        .collect(Collectors.toSet());
     }
 
     /**
@@ -544,22 +567,22 @@ public class ContentfulUtils {
     /**
      * Extracts presentation links.
      *
-     * @param talksPresentation talk presentations
-     * @param assetMap          map id/asset
-     * @param assetErrorSet     set with error assets
-     * @return presentation links
+     * @param links         links
+     * @param assetMap      map id/asset
+     * @param assetErrorSet set with error assets
+     * @return presentation link URLs
      */
-    private static List<String> extractPresentationLinks(List<ContentfulLink> talksPresentation,
+    private static List<String> extractPresentationLinks(List<ContentfulLink> links,
                                                          Map<String, ContentfulAsset> assetMap,
                                                          Set<String> assetErrorSet) {
-        if (talksPresentation == null) {
+        if (links == null) {
             return Collections.emptyList();
         }
 
-        return talksPresentation.stream()
+        return links.stream()
                 .filter(l -> {
                     String assetId = l.getSys().getId();
-                    boolean isErrorAsset = assetErrorSet.contains(l.getSys().getId());
+                    boolean isErrorAsset = assetErrorSet.contains(assetId);
                     if (isErrorAsset) {
                         log.warn("Asset id {} not resolvable", assetId);
                     }
@@ -574,6 +597,30 @@ public class ContentfulUtils {
                             .getFields().getFile().getUrl());
                 })
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Extracts photo.
+     *
+     * @param link          link
+     * @param assetMap      map id/asset
+     * @param assetErrorSet set with error assets
+     * @return photo URL
+     */
+    private static String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                                       Set<String> assetErrorSet) {
+        String assetId = link.getSys().getId();
+        boolean isErrorAsset = assetErrorSet.contains(assetId);
+
+        if (isErrorAsset) {
+            log.warn("Asset id {} not resolvable", assetId);
+            return null;
+        }
+
+        ContentfulAsset asset = assetMap.get(assetId);
+        return extractAssetUrl(Objects.requireNonNull(asset,
+                () -> String.format("Asset id %s not found", assetId))
+                .getFields().getFile().getUrl());
     }
 
     /**

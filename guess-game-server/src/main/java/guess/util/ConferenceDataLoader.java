@@ -33,12 +33,6 @@ public class ConferenceDataLoader {
 
         // Read speakers from Contentful
         Map<String, Speaker> speakers = ContentfulUtils.getSpeakers(conference, conferenceCode);
-        log.info("Speakers: {}", speakers.size());
-        speakers.values().forEach(
-                s -> log.info("Speaker: nameEn: '{}', name: '{}'",
-                        LocalizationUtils.getString(s.getName(), Language.ENGLISH),
-                        LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
-        );
 
         // Read talks from Contentful
         List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode, speakers);
@@ -54,7 +48,7 @@ public class ConferenceDataLoader {
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
                 .collect(Collectors.toList());
-        log.info("Speakers with talk order: {}", speakersWithTalkOrder.size());
+        log.info("Speakers total: {}, speakers with talk order: {}", speakers.size(), speakersWithTalkOrder.size());
         speakersWithTalkOrder.forEach(
                 s -> log.info("Speaker with talk order: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),

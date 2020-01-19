@@ -1,5 +1,7 @@
 package guess.domain.source.contentful.speaker;
 
+import guess.domain.source.contentful.ContentfulLink;
+
 public class ContentfulSpeakerFields {
     private String name;
     private String nameEn;
@@ -7,6 +9,7 @@ public class ContentfulSpeakerFields {
     private String companyEn;
     private String bio;
     private String bioEn;
+    private ContentfulLink photo;
     private String twitter;
     private String gitHub;
     private Boolean javaChampion;
@@ -59,6 +62,14 @@ public class ContentfulSpeakerFields {
 
     public void setBioEn(String bioEn) {
         this.bioEn = bioEn;
+    }
+
+    public ContentfulLink getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(ContentfulLink photo) {
+        this.photo = photo;
     }
 
     public String getTwitter() {
