@@ -325,7 +325,7 @@ public class ContentfulUtils {
                                         String speakerId = s.getSys().getId();
                                         Speaker speaker = speakerMap.get(speakerId);
                                         return Objects.requireNonNull(speaker,
-                                                () -> String.format("Speaker id %s not found", speakerId));
+                                                () -> String.format("Speaker id %s not found for '%s' talk", speakerId, t.getFields().getNameEn()));
                                     })
                                     .collect(Collectors.toList()) :
                             Collections.emptyList();
@@ -355,7 +355,7 @@ public class ContentfulUtils {
                                             extractString(t.getFields().getLongRu()))),
                             extractPresentationLinks(
                                     combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
-                                    assetMap, assetErrorSet),
+                                    assetMap, assetErrorSet, t.getFields().getNameEn()),
                             extractString(t.getFields().getVideo()),
                             speakers);
                 })
@@ -424,7 +424,7 @@ public class ContentfulUtils {
                                          Set<String> assetErrorSet, AtomicLong id) {
         return new Speaker(
                 id.getAndIncrement(),
-                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet),
+                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
                 Arrays.asList(
                         new LocaleItem(
                                 Language.ENGLISH.getCode(),
@@ -642,11 +642,11 @@ public class ContentfulUtils {
      * @param links         links
      * @param assetMap      map id/asset
      * @param assetErrorSet set with error assets
+     * @param talkNameEn    talk name
      * @return presentation link URLs
      */
-    private static List<String> extractPresentationLinks(List<ContentfulLink> links,
-                                                         Map<String, ContentfulAsset> assetMap,
-                                                         Set<String> assetErrorSet) {
+    private static List<String> extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
+                                                         Set<String> assetErrorSet, String talkNameEn) {
         if (links == null) {
             return Collections.emptyList();
         }
@@ -656,7 +656,7 @@ public class ContentfulUtils {
                     String assetId = l.getSys().getId();
                     boolean isErrorAsset = assetErrorSet.contains(assetId);
                     if (isErrorAsset) {
-                        log.warn("Asset id {} not resolvable", assetId);
+                        log.warn("Asset (presentation link) id {} not resolvable for '{}' talk", assetId, talkNameEn);
                     }
 
                     return !isErrorAsset;
@@ -665,7 +665,7 @@ public class ContentfulUtils {
                     String assetId = l.getSys().getId();
                     ContentfulAsset asset = assetMap.get(assetId);
                     return extractAssetUrl(Objects.requireNonNull(asset,
-                            () -> String.format("Asset id %s not found", assetId))
+                            () -> String.format("Asset (presentation link) id %s not found for '%s' talk", assetId, talkNameEn))
                             .getFields().getFile().getUrl());
                 })
                 .collect(Collectors.toList());
@@ -677,21 +677,22 @@ public class ContentfulUtils {
      * @param link          link
      * @param assetMap      map id/asset
      * @param assetErrorSet set with error assets
+     * @param speakerNameEn speaker name
      * @return photo URL
      */
     private static String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
-                                       Set<String> assetErrorSet) {
+                                       Set<String> assetErrorSet, String speakerNameEn) {
         String assetId = link.getSys().getId();
         boolean isErrorAsset = assetErrorSet.contains(assetId);
 
         if (isErrorAsset) {
-            log.warn("Asset id {} not resolvable", assetId);
+            log.warn("Asset (photo) id {} not resolvable for '{}' speaker", assetId, speakerNameEn);
             return null;
         }
 
         ContentfulAsset asset = assetMap.get(assetId);
         return extractAssetUrl(Objects.requireNonNull(asset,
-                () -> String.format("Asset id %s not found", assetId))
+                () -> String.format("Asset (photo) id %s not found for '%s' speaker", assetId, speakerNameEn))
                 .getFields().getFile().getUrl());
     }
 
