@@ -300,59 +300,43 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
+        AtomicLong id = new AtomicLong();
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getEntryErrorSet(response);
         Set<String> assetErrorSet = getAssetErrorSet(response);
         Map<String, Speaker> speakerMap = getSpeakerMap(response, assetMap, assetErrorSet);
+
+        // Fix Contentful "notResolvable" error for one entry
+        fixEntryNotResolvableError(conferenceSpaceInfo, entryErrorSet, speakerMap);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
                 .filter(t -> ((t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack()) &&
                         ((t.getFields().getDemoStage() == null) || !t.getFields().getDemoStage()))   // not demo stage
                 .map(t -> {
-                    List<Speaker> speakers = (speakerMap != null) ?
-                            t.getFields().getSpeakers().stream()
-                                    .filter(s -> {
-                                        String speakerId = s.getSys().getId();
-                                        boolean isErrorAsset = entryErrorSet.contains(speakerId);
-                                        if (isErrorAsset) {
-                                            log.warn("Speaker id {} not resolvable for '{}' talk", speakerId, t.getFields().getNameEn());
-                                        }
+                    List<Speaker> speakers = t.getFields().getSpeakers().stream()
+                            .filter(s -> {
+                                String speakerId = s.getSys().getId();
+                                boolean isErrorAsset = entryErrorSet.contains(speakerId);
+                                if (isErrorAsset) {
+                                    log.warn("Speaker id {} not resolvable for '{}' talk", speakerId, t.getFields().getNameEn());
+                                }
 
-                                        return !isErrorAsset;
-                                    })
-                                    .map(s -> {
-                                        String speakerId = s.getSys().getId();
-                                        Speaker speaker = speakerMap.get(speakerId);
-                                        return Objects.requireNonNull(speaker,
-                                                () -> String.format("Speaker id %s not found for '%s' talk", speakerId, t.getFields().getNameEn()));
-                                    })
-                                    .collect(Collectors.toList()) :
-                            Collections.emptyList();
+                                return !isErrorAsset;
+                            })
+                            .map(s -> {
+                                String speakerId = s.getSys().getId();
+                                Speaker speaker = speakerMap.get(speakerId);
+                                return Objects.requireNonNull(speaker,
+                                        () -> String.format("Speaker id %s not found for '%s' talk", speakerId, t.getFields().getNameEn()));
+                            })
+                            .collect(Collectors.toList());
 
                     return new Talk(
-                            0L,
-                            Arrays.asList(
-                                    new LocaleItem(
-                                            Language.ENGLISH.getCode(),
-                                            extractString(t.getFields().getNameEn())),
-                                    new LocaleItem(
-                                            Language.RUSSIAN.getCode(),
-                                            extractString(t.getFields().getName()))),
-                            Arrays.asList(
-                                    new LocaleItem(
-                                            Language.ENGLISH.getCode(),
-                                            extractString(t.getFields().getShortEn())),
-                                    new LocaleItem(
-                                            Language.RUSSIAN.getCode(),
-                                            extractString(t.getFields().getShortRu()))),
-                            Arrays.asList(
-                                    new LocaleItem(
-                                            Language.ENGLISH.getCode(),
-                                            extractString(t.getFields().getLongEn())),
-                                    new LocaleItem(
-                                            Language.RUSSIAN.getCode(),
-                                            extractString(t.getFields().getLongRu()))),
+                            id.getAndIncrement(),
+                            extractLocaleItems(t.getFields().getNameEn(), t.getFields().getName()),
+                            extractLocaleItems(t.getFields().getShortEn(), t.getFields().getShortRu()),
+                            extractLocaleItems(t.getFields().getLongEn(), t.getFields().getLongRu()),
                             extractPresentationLinks(
                                     combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
                                     assetMap, assetErrorSet, t.getFields().getNameEn()),
@@ -425,27 +409,9 @@ public class ContentfulUtils {
         return new Speaker(
                 id.getAndIncrement(),
                 extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
-                Arrays.asList(
-                        new LocaleItem(
-                                Language.ENGLISH.getCode(),
-                                extractString(contentfulSpeaker.getFields().getNameEn())),
-                        new LocaleItem(
-                                Language.RUSSIAN.getCode(),
-                                extractString(contentfulSpeaker.getFields().getName()))),
-                Arrays.asList(
-                        new LocaleItem(
-                                Language.ENGLISH.getCode(),
-                                extractString(contentfulSpeaker.getFields().getCompanyEn())),
-                        new LocaleItem(
-                                Language.RUSSIAN.getCode(),
-                                extractString(contentfulSpeaker.getFields().getCompany()))),
-                Arrays.asList(
-                        new LocaleItem(
-                                Language.ENGLISH.getCode(),
-                                extractString(contentfulSpeaker.getFields().getBioEn())),
-                        new LocaleItem(
-                                Language.RUSSIAN.getCode(),
-                                extractString(contentfulSpeaker.getFields().getBio()))),
+                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName()),
+                extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany()),
+                extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio()),
                 extractTwitter(contentfulSpeaker.getFields().getTwitter()),
                 extractGitHub(contentfulSpeaker.getFields().getGitHub()),
                 extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
@@ -720,6 +686,71 @@ public class ContentfulUtils {
             return String.format("https://%s", matcher.group(3));
         } else {
             throw new IllegalArgumentException(String.format("Invalid asset URL: %s", value));
+        }
+    }
+
+    /**
+     * Extracts local items.
+     *
+     * @param enText english text
+     * @param ruText russian text
+     * @return local items
+     */
+    private static List<LocaleItem> extractLocaleItems(String enText, String ruText) {
+        List<LocaleItem> localeItems = new ArrayList<>();
+
+        enText = extractString(enText);
+        ruText = extractString(ruText);
+
+        if ((enText != null) && !enText.isEmpty()) {
+            localeItems.add(new LocaleItem(
+                    Language.ENGLISH.getCode(),
+                    extractString(enText)));
+        }
+
+        if ((ruText != null) && !ruText.isEmpty()) {
+            localeItems.add(new LocaleItem(
+                    Language.RUSSIAN.getCode(),
+                    extractString(ruText)));
+        }
+
+        return localeItems;
+    }
+
+    /**
+     * Fixes Contentful "notResolvable" error for one entry.
+     *
+     * @param conferenceSpaceInfo conference space info
+     * @param entryErrorSet       entry error set
+     * @param speakerMap          map id/speaker
+     */
+    private static void fixEntryNotResolvableError(ConferenceSpaceInfo conferenceSpaceInfo,
+                                                   Set<String> entryErrorSet, Map<String, Speaker> speakerMap) {
+        final String ENTRY_ID = "3YSoYRePW0OIeaAAkaweE6";
+        long id = speakerMap.values().stream()
+                .map(Speaker::getId)
+                .max(Long::compare)
+                .orElse(-1L);
+
+        if (ConferenceSpaceInfo.HOLY_JS_SPACE_INFO.equals(conferenceSpaceInfo)) {
+            speakerMap.put(ENTRY_ID, new Speaker(
+                    ++id,
+                    "https://images.ctfassets.net/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG",
+                    Collections.singletonList(
+                            new LocaleItem(
+                                    Language.ENGLISH.getCode(),
+                                    "Irina Shestak")),
+                    Collections.emptyList(),
+                    Collections.singletonList(
+                            new LocaleItem(
+                                    Language.ENGLISH.getCode(),
+                                    "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.")),
+                    "_lrlna",
+                    "lrlna",
+                    false,
+                    false
+            ));
+            entryErrorSet.remove(ENTRY_ID);
         }
     }
 
