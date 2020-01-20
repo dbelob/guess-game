@@ -40,37 +40,42 @@ public class ContentfulUtils {
     private enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
-                "fields.speaker", "fields.javaChampion",
+                "fields.speaker", "fields.conferences", "fields.javaChampion",
                 "fields.talksPresentation", ContentfulTalkResponseCommon.class),                        // fields.talksPresentation is list
         // HolyJS
         HOLY_JS_SPACE_INFO("nn534z2fqr9f", "1ca5b5d059930cd6681083617578e5a61187d1a71cbd75d4e0059cca3dc85f8c",
-                "fields.speakers", null,
+                "fields.speakers", "fields.conference", null,
                 "fields.presentation", ContentfulTalkResponseHolyJs.class),                             // fields.presentation is single value
         // DotNext
         DOT_NEXT_SPACE_INFO("9n3x4rtjlya6", "14e1427f8fbee9e5a089cd634fc60189c7aff2814b496fb0ad957b867a59503b",
-                "fields.speaker", "fields.mvp",
+                "fields.speaker", "fields.conference", "fields.mvp",
                 "fields.talksPresentation,fields.presentation", ContentfulTalkResponseDotNext.class),   // fields.talksPresentation is list, fields.presentation is single value
         // Heisenbug
         HEISENBUG_SPACE_INFO("ut4a3ciohj8i", "e7edd5951d844b80ef41166e30cb9645e4f89d11c8ac9eecdadb2a38c061b980",
-                "fields.speaker", null,
+                "fields.speaker", "fields.conferences", null,
                 "fields.talksPresentation", ContentfulTalkResponseHeisenbug.class),                     // talksPresentation is single value
         // Mobius
         MOBIUS_SPACE_INFO("2grufn031spf", "d0c680ed11f68287348b6b8481d3313fde8c2d23cc8ce24a2b0ae254dd779e6d",
-                "fields.speaker", null,
+                "fields.speaker", "fields.conferences", null,
                 "fields.talkPresentation", ContentfulTalkResponseMobius.class);                         // talkPresentation is list
 
         private final String spaceId;
         private final String accessToken;
+
         private final String speakerFlagFieldName;
+        private final String conferenceFieldName;
+
         private final String speakerAdditionalFieldNames;
         private final String talkAdditionalFieldNames;
         private final Class<? extends ContentfulTalkResponse<? extends ContentfulTalkFields>> talkResponseClass;
 
-        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFlagFieldName, String speakerAdditionalFieldNames,
-                            String talkAdditionalFieldNames, Class<? extends ContentfulTalkResponse<? extends ContentfulTalkFields>> talkResponseClass) {
+        ConferenceSpaceInfo(String spaceId, String accessToken, String speakerFlagFieldName, String conferenceFieldName,
+                            String speakerAdditionalFieldNames, String talkAdditionalFieldNames,
+                            Class<? extends ContentfulTalkResponse<? extends ContentfulTalkFields>> talkResponseClass) {
             this.spaceId = spaceId;
             this.accessToken = accessToken;
             this.speakerFlagFieldName = speakerFlagFieldName;
+            this.conferenceFieldName = conferenceFieldName;
             this.speakerAdditionalFieldNames = speakerAdditionalFieldNames;
             this.talkAdditionalFieldNames = talkAdditionalFieldNames;
             this.talkResponseClass = talkResponseClass;
@@ -82,6 +87,7 @@ public class ContentfulUtils {
     private static final String BASE_URL = "https://cdn.contentful.com/spaces/{spaceId}/{entityName}";
     private static final String MAIN_SPACE_ID = "2jxgmeypnru5";
     private static final String MAIN_ACCESS_TOKEN = "08f9e9e80ee347bd9f6017bf76f0a290c2ff0c28000946f7079f94a78974f090";
+    private static final int MAXIMUM_LIMIT = 1000;
 
     private static Map<String, String> LOCALE_CODE_MAP = new HashMap<>() {{
         put("ru-RU", Language.RUSSIAN.getCode());
@@ -149,7 +155,7 @@ public class ContentfulUtils {
                 .queryParam("locale", locale)
                 .queryParam("content_type", "eventsList")
                 .queryParam("select", "fields.eventName")
-                .queryParam("limit", 1000);
+                .queryParam("limit", MAXIMUM_LIMIT);
         URI uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, "entries")
                 .encode()
@@ -183,7 +189,7 @@ public class ContentfulUtils {
                 .queryParam("locale", locale)
                 .queryParam("content_type", "eventsCalendar")
                 .queryParam("select", "fields.conferenceName")
-                .queryParam("limit", 1000);
+                .queryParam("limit", MAXIMUM_LIMIT);
         URI uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, "entries")
                 .encode()
@@ -213,7 +219,7 @@ public class ContentfulUtils {
      * @return speakers
      */
     private static List<Speaker> getSpeakers(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000&fields.conferences={conferenceCode}
         StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.photo,fields.twitter,fields.gitHub");
         String additionalFieldNames = conferenceSpaceInfo.speakerAdditionalFieldNames;
 
@@ -227,10 +233,10 @@ public class ContentfulUtils {
                 .queryParam("content_type", "people")
                 .queryParam("select", selectingFields.toString())
                 .queryParam(conferenceSpaceInfo.speakerFlagFieldName, "true")   // only speakers
-                .queryParam("limit", 1000);
+                .queryParam("limit", MAXIMUM_LIMIT);
 
         if ((conferenceCode != null) && !conferenceCode.isEmpty()) {
-            builder.queryParam("fields.conferences", conferenceCode);
+            builder.queryParam(conferenceSpaceInfo.conferenceFieldName, conferenceCode);
         }
 
         URI uri = builder
@@ -283,10 +289,10 @@ public class ContentfulUtils {
                 .queryParam("content_type", "talks")
                 .queryParam("select", selectingFields.toString())
                 .queryParam("order", "fields.talkDay,fields.trackTime,fields.track")
-                .queryParam("limit", 1000);
+                .queryParam("limit", MAXIMUM_LIMIT);
 
         if ((conferenceCode != null) && !conferenceCode.isEmpty()) {
-            builder.queryParam("fields.conferences", conferenceCode);
+            builder.queryParam(conferenceSpaceInfo.conferenceFieldName, conferenceCode);
         }
 
         URI uri = builder
@@ -459,11 +465,13 @@ public class ContentfulUtils {
                                                       Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
         AtomicLong id = new AtomicLong();
 
-        return response.getIncludes().getEntry().stream()
-                .collect(Collectors.toMap(
-                        s -> s.getSys().getId(),
-                        s -> createSpeaker(s, assetMap, assetErrorSet, id)
-                ));
+        return (response.getIncludes() == null) ?
+                Collections.emptyMap() :
+                response.getIncludes().getEntry().stream()
+                        .collect(Collectors.toMap(
+                                s -> s.getSys().getId(),
+                                s -> createSpeaker(s, assetMap, assetErrorSet, id)
+                        ));
     }
 
     /**
@@ -473,11 +481,13 @@ public class ContentfulUtils {
      * @return map id/asset
      */
     private static Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
-        return response.getIncludes().getAsset().stream()
-                .collect(Collectors.toMap(
-                        a -> a.getSys().getId(),
-                        a -> a
-                ));
+        return (response.getIncludes() == null) ?
+                Collections.emptyMap() :
+                response.getIncludes().getAsset().stream()
+                        .collect(Collectors.toMap(
+                                a -> a.getSys().getId(),
+                                a -> a
+                        ));
     }
 
     /**

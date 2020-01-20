@@ -20,6 +20,8 @@ public class ConferenceDataLoader {
     private static final Logger log = LoggerFactory.getLogger(ConferenceDataLoader.class);
 
     private static void load(Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException {
+        log.info("{} {} {}", conference, startDate, conferenceCode);
+
         // Read event types, events, speakers, talks from resource files
         SourceInformation sourceInformation = YamlUtils.readSourceInformation();
         Optional<EventType> eventTypeOptional = sourceInformation.getEventTypes().stream()
@@ -29,10 +31,6 @@ public class ConferenceDataLoader {
                 et -> et.getEvents().stream()
                         .filter(e -> e.getStartDate().equals(startDate))
                         .findFirst());
-
-        // Read speakers from Contentful
-        List<Speaker> speakers = ContentfulUtils.getSpeakers(conference, conferenceCode);
-        log.info("Speakers: {}", speakers.size());
 
         // Read talks from Contentful
         List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode);
@@ -48,9 +46,9 @@ public class ConferenceDataLoader {
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
                 .collect(Collectors.toList());
-        log.info("Speakers with talk order: {}", speakersWithTalkOrder.size());
+        log.info("Speakers: {}", speakersWithTalkOrder.size());
         speakersWithTalkOrder.forEach(
-                s -> log.info("Speaker with talk order: nameEn: '{}', name: '{}'",
+                s -> log.info("Speaker: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
@@ -58,7 +56,7 @@ public class ConferenceDataLoader {
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException {
         // 2016
-        load(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker");
+//        load(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker");
 //        load(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel");
 //        load(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk");
 //        load(Conference.HEISENBUG, LocalDate.of(2016, 12, 10), "2016msk");
