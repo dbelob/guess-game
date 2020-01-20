@@ -3,6 +3,7 @@ package guess.util;
 import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.*;
+import guess.domain.source.contentful.ContentfulIncludes;
 import guess.domain.source.contentful.ContentfulLink;
 import guess.domain.source.contentful.ContentfulResponse;
 import guess.domain.source.contentful.ContentfulSys;
@@ -12,6 +13,7 @@ import guess.domain.source.contentful.event.ContentfulEventResponse;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
 import guess.domain.source.contentful.locale.ContentfulLocale;
 import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
+import guess.domain.source.contentful.speaker.ContentfulSpeaker;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
 import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
 import guess.domain.source.contentful.talk.response.*;
@@ -208,11 +210,11 @@ public class ContentfulUtils {
      *
      * @param conferenceSpaceInfo conference space info
      * @param conferenceCode      conference code
-     * @return speaker map
+     * @return speakers
      */
-    private static Map<String, Speaker> getSpeakers(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+    private static List<Speaker> getSpeakers(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000
-        StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.sdSpeaker,fields.photo,fields.twitter,fields.gitHub");
+        StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.photo,fields.twitter,fields.gitHub");
         String additionalFieldNames = conferenceSpaceInfo.speakerAdditionalFieldNames;
 
         if ((additionalFieldNames != null) && !additionalFieldNames.isEmpty()) {
@@ -242,39 +244,8 @@ public class ContentfulUtils {
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .filter(s -> (s.getFields().getSdSpeaker() == null) || !s.getFields().getSdSpeaker())   // not demo stage
-                .collect(Collectors.toMap(
-                        s -> s.getSys().getId(),
-                        s -> new Speaker(
-                                id.getAndIncrement(),
-                                extractPhoto(s.getFields().getPhoto(), assetMap, assetErrorSet),
-                                Arrays.asList(
-                                        new LocaleItem(
-                                                Language.ENGLISH.getCode(),
-                                                extractString(s.getFields().getNameEn())),
-                                        new LocaleItem(
-                                                Language.RUSSIAN.getCode(),
-                                                extractString(s.getFields().getName()))),
-                                Arrays.asList(
-                                        new LocaleItem(
-                                                Language.ENGLISH.getCode(),
-                                                extractString(s.getFields().getCompanyEn())),
-                                        new LocaleItem(
-                                                Language.RUSSIAN.getCode(),
-                                                extractString(s.getFields().getCompany()))),
-                                Arrays.asList(
-                                        new LocaleItem(
-                                                Language.ENGLISH.getCode(),
-                                                extractString(s.getFields().getBioEn())),
-                                        new LocaleItem(
-                                                Language.RUSSIAN.getCode(),
-                                                extractString(s.getFields().getBio()))),
-                                extractTwitter(s.getFields().getTwitter()),
-                                extractGitHub(s.getFields().getGitHub()),
-                                extractBoolean(s.getFields().getJavaChampion()),
-                                extractBoolean(s.getFields().getMvp())
-                        )
-                ));
+                .map(s -> createSpeaker(s, assetMap, assetErrorSet, id))
+                .collect(Collectors.toList());
     }
 
     /**
@@ -284,7 +255,7 @@ public class ContentfulUtils {
      * @param conferenceCode conference code
      * @return speaker map
      */
-    public static Map<String, Speaker> getSpeakers(Conference conference, String conferenceCode) {
+    public static List<Speaker> getSpeakers(Conference conference, String conferenceCode) {
         ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
 
         return getSpeakers(conferenceSpaceInfo, conferenceCode);
@@ -295,10 +266,9 @@ public class ContentfulUtils {
      *
      * @param conferenceSpaceInfo conference space info
      * @param conferenceCode      conference code
-     * @param speakerMap          map id/speaker
      * @return talks
      */
-    private static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode, Map<String, Speaker> speakerMap) {
+    private static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select={fields}&order={fields}&limit=1000&fields.conferences={conferenceCode}
         StringBuilder selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.video,fields.sdTrack,fields.demoStage");
         String additionalFieldNames = conferenceSpaceInfo.talkAdditionalFieldNames;
@@ -325,7 +295,9 @@ public class ContentfulUtils {
                 .toUri();
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
+        Set<String> entryErrorSet = getEntryErrorSet(response);
         Set<String> assetErrorSet = getAssetErrorSet(response);
+        Map<String, Speaker> speakerMap = getSpeakerMap(response, assetMap, assetErrorSet);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
@@ -334,6 +306,15 @@ public class ContentfulUtils {
                 .map(t -> {
                     List<Speaker> speakers = (speakerMap != null) ?
                             t.getFields().getSpeakers().stream()
+                                    .filter(s -> {
+                                        String speakerId = s.getSys().getId();
+                                        boolean isErrorAsset = entryErrorSet.contains(speakerId);
+                                        if (isErrorAsset) {
+                                            log.warn("Speaker id {} not resolvable for '{}' talk", speakerId, t.getFields().getNameEn());
+                                        }
+
+                                        return !isErrorAsset;
+                                    })
                                     .map(s -> {
                                         String speakerId = s.getSys().getId();
                                         Speaker speaker = speakerMap.get(speakerId);
@@ -380,13 +361,12 @@ public class ContentfulUtils {
      *
      * @param conference     conference
      * @param conferenceCode conference code
-     * @param speakerMap     speaker map
      * @return talks
      */
-    public static List<Talk> getTalks(Conference conference, String conferenceCode, Map<String, Speaker> speakerMap) {
+    public static List<Talk> getTalks(Conference conference, String conferenceCode) {
         ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
 
-        return getTalks(conferenceSpaceInfo, conferenceCode, speakerMap);
+        return getTalks(conferenceSpaceInfo, conferenceCode);
     }
 
     /**
@@ -409,7 +389,7 @@ public class ContentfulUtils {
         Map<String, Speaker> result = new HashMap<>();
 
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
-            Collection<Speaker> speakers = getSpeakers(conferenceSpaceInfo, null).values();
+            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo, null);
 
             for (Speaker speaker : speakers) {
                 String englishName = LocalizationUtils.getString(speaker.getName(), Language.ENGLISH);
@@ -426,12 +406,73 @@ public class ContentfulUtils {
     }
 
     /**
+     * Creates speaker from Contentful information.
+     *
+     * @param contentfulSpeaker Contentful speaker
+     * @param assetMap          map id/asset
+     * @param assetErrorSet     set with error assets
+     * @param id                atomic identifier
+     * @return speaker
+     */
+    private static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
+                                         Set<String> assetErrorSet, AtomicLong id) {
+        return new Speaker(
+                id.getAndIncrement(),
+                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet),
+                Arrays.asList(
+                        new LocaleItem(
+                                Language.ENGLISH.getCode(),
+                                extractString(contentfulSpeaker.getFields().getNameEn())),
+                        new LocaleItem(
+                                Language.RUSSIAN.getCode(),
+                                extractString(contentfulSpeaker.getFields().getName()))),
+                Arrays.asList(
+                        new LocaleItem(
+                                Language.ENGLISH.getCode(),
+                                extractString(contentfulSpeaker.getFields().getCompanyEn())),
+                        new LocaleItem(
+                                Language.RUSSIAN.getCode(),
+                                extractString(contentfulSpeaker.getFields().getCompany()))),
+                Arrays.asList(
+                        new LocaleItem(
+                                Language.ENGLISH.getCode(),
+                                extractString(contentfulSpeaker.getFields().getBioEn())),
+                        new LocaleItem(
+                                Language.RUSSIAN.getCode(),
+                                extractString(contentfulSpeaker.getFields().getBio()))),
+                extractTwitter(contentfulSpeaker.getFields().getTwitter()),
+                extractGitHub(contentfulSpeaker.getFields().getGitHub()),
+                extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
+                extractBoolean(contentfulSpeaker.getFields().getMvp())
+        );
+    }
+
+    /**
+     * Gets map id/speaker.
+     *
+     * @param response      response
+     * @param assetMap      map id/asset
+     * @param assetErrorSet set with error assets
+     * @return map id/speaker
+     */
+    private static Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
+                                                      Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
+        AtomicLong id = new AtomicLong();
+
+        return response.getIncludes().getEntry().stream()
+                .collect(Collectors.toMap(
+                        s -> s.getSys().getId(),
+                        s -> createSpeaker(s, assetMap, assetErrorSet, id)
+                ));
+    }
+
+    /**
      * Gets map id/asset.
      *
      * @param response response
      * @return map id/asset
      */
-    private static Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?> response) {
+    private static Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
         return response.getIncludes().getAsset().stream()
                 .collect(Collectors.toMap(
                         a -> a.getSys().getId(),
@@ -443,9 +484,10 @@ public class ContentfulUtils {
      * Gets error set.
      *
      * @param response response
+     * @param linkType link type
      * @return error set
      */
-    private static Set<String> getAssetErrorSet(ContentfulResponse<?> response) {
+    private static Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
         return (response.getErrors() == null) ?
                 Collections.emptySet() :
                 response.getErrors().stream()
@@ -454,10 +496,30 @@ public class ContentfulUtils {
                             ContentfulErrorDetails details = e.getDetails();
 
                             return ((sys != null) && "notResolvable".equals(sys.getId()) && "error".equals(sys.getType()) &&
-                                    (details != null) && "Link".equals(details.getType()) && "Asset".equals(details.getLinkType()));
+                                    (details != null) && "Link".equals(details.getType()) && linkType.equals(details.getLinkType()));
                         })
                         .map(e -> e.getDetails().getId())
                         .collect(Collectors.toSet());
+    }
+
+    /**
+     * Gets entry error set.
+     *
+     * @param response response
+     * @return error set
+     */
+    private static Set<String> getEntryErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+        return getErrorSet(response, "Entry");
+    }
+
+    /**
+     * Gets asset error set.
+     *
+     * @param response response
+     * @return error set
+     */
+    private static Set<String> getAssetErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+        return getErrorSet(response, "Asset");
     }
 
     /**
@@ -671,10 +733,10 @@ public class ContentfulUtils {
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
             log.info("Conference space info: {}", conferenceSpaceInfo);
 
-            Collection<Speaker> speakers = getSpeakers(conferenceSpaceInfo, null).values();
+            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo, null);
             log.info("Speakers: {}, {}", speakers.size(), speakers);
 
-            List<Talk> talks = getTalks(conferenceSpaceInfo, null, null);
+            List<Talk> talks = getTalks(conferenceSpaceInfo, null);
             log.info("Talks: {}, {}", talks.size(), talks);
         }
     }

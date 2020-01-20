@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -32,10 +31,11 @@ public class ConferenceDataLoader {
                         .findFirst());
 
         // Read speakers from Contentful
-        Map<String, Speaker> speakers = ContentfulUtils.getSpeakers(conference, conferenceCode);
+        List<Speaker> speakers = ContentfulUtils.getSpeakers(conference, conferenceCode);
+        log.info("Speakers: {}", speakers.size());
 
         // Read talks from Contentful
-        List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode, speakers);
+        List<Talk> talks = ContentfulUtils.getTalks(conference, conferenceCode);
         log.info("Talks: {}", talks.size());
         talks.forEach(
                 t -> log.info("Talk: nameEn: '{}', name: '{}'",
@@ -48,7 +48,7 @@ public class ConferenceDataLoader {
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
                 .collect(Collectors.toList());
-        log.info("Speakers total: {}, speakers with talk order: {}", speakers.size(), speakersWithTalkOrder.size());
+        log.info("Speakers with talk order: {}", speakersWithTalkOrder.size());
         speakersWithTalkOrder.forEach(
                 s -> log.info("Speaker with talk order: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),

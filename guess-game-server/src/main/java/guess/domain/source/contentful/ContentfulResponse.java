@@ -4,13 +4,13 @@ import guess.domain.source.contentful.error.ContentfulError;
 
 import java.util.List;
 
-public class ContentfulResponse<T> {
+public abstract class ContentfulResponse<T, S extends ContentfulIncludes> {
     private Long total;
     private Long skip;
     private Long limit;
     private List<T> items;
     private List<ContentfulError> errors;
-    private ContentfulIncludes includes;
+    private S includes;
 
     public Long getTotal() {
         return total;
@@ -52,11 +52,11 @@ public class ContentfulResponse<T> {
         this.errors = errors;
     }
 
-    public ContentfulIncludes getIncludes() {
+    public S getIncludes() {
         return includes;
     }
 
-    public void setIncludes(ContentfulIncludes includes) {
+    public void setIncludes(S includes) {
         this.includes = includes;
     }
 
