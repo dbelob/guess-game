@@ -90,11 +90,11 @@ public class ContentfulUtils {
 
     private static final int MAXIMUM_LIMIT = 1000;
 
-    private static Map<String, String> LOCALE_CODE_MAP = new HashMap<>() {{
+    private static final Map<String, String> LOCALE_CODE_MAP = new HashMap<>() {{
         put("ru-RU", Language.RUSSIAN.getCode());
     }};
 
-    private static Map<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new HashMap<>() {{
+    private static final Map<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new HashMap<>() {{
         put(Conference.JOKER, ConferenceSpaceInfo.COMMON_SPACE_INFO);
         put(Conference.JPOINT, ConferenceSpaceInfo.COMMON_SPACE_INFO);
         put(Conference.JBREAK, ConferenceSpaceInfo.COMMON_SPACE_INFO);
@@ -110,9 +110,30 @@ public class ContentfulUtils {
         put(Conference.MOBIUS, ConferenceSpaceInfo.MOBIUS_SPACE_INFO);
     }};
 
+    private static final Map<Conference, String> CONFERENCE_EVENT_TYPE_NAME_MAP = new HashMap<>() {{
+        put(Conference.JOKER, "Joker");
+        put(Conference.JPOINT, "JPoint");
+        put(Conference.JBREAK, "JBreak");
+        put(Conference.TECH_TRAIN, "TechTrain");
+        put(Conference.CPP_RUSSIA, "C++ Russia");
+        put(Conference.HYDRA, "Hydra");
+        put(Conference.SPTDC, "SPTDC");
+        put(Conference.DEV_OOPS, "DevOops");
+        put(Conference.SMART_DATA, "SmartData");
+        put(Conference.HOLY_JS, "HolyJS");
+        put(Conference.DOT_NEXT, "DotNext");
+        put(Conference.HEISENBUG, "Heisenbug");
+        put(Conference.MOBIUS, "Mobius");
+    }};
+
+    private static final Map<String, Conference> EVENT_TYPE_NAME_CONFERENCE_MAP;
+
     private static final RestTemplate restTemplate;
 
     static {
+        EVENT_TYPE_NAME_CONFERENCE_MAP = CONFERENCE_EVENT_TYPE_NAME_MAP.entrySet().stream()
+                .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
+
         List<HttpMessageConverter<?>> converters = new ArrayList<>() {{
             add(new StringHttpMessageConverter(StandardCharsets.UTF_8));
             add(new MappingJackson2HttpMessageConverter());
@@ -155,22 +176,35 @@ public class ContentfulUtils {
                 .queryParam("access_token", MAIN_ACCESS_TOKEN)
                 .queryParam("locale", locale)
                 .queryParam("content_type", "eventsList")
-                .queryParam("select", "fields.eventName")
+                .queryParam("select", "fields.eventName,fields.eventDescriptions,fields.siteLink,fields.vkLink,fields.twLink,fields.fbLink,fields.youtubeLink,fields.telegramLink")
                 .queryParam("limit", MAXIMUM_LIMIT);
         URI uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, "entries")
                 .encode()
                 .toUri();
         ContentfulEventTypeResponse response = restTemplate.getForObject(uri, ContentfulEventTypeResponse.class);
+        AtomicLong id = new AtomicLong(-1);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
                 .map(et -> new EventType(
-                        0L,
+                        id.getAndDecrement(),
+                        EVENT_TYPE_NAME_CONFERENCE_MAP.get(et.getFields().getEventName().trim()),
                         Collections.singletonList(new LocaleItem(
                                 transformLocale(locale),
                                 extractString(et.getFields().getEventName()))),
                         null,
+                        Collections.singletonList(new LocaleItem(
+                                transformLocale(locale),
+                                extractString(et.getFields().getEventDescriptions()))),
+                        Collections.singletonList(new LocaleItem(
+                                transformLocale(locale),
+                                extractString(et.getFields().getSiteLink()))),
+                        et.getFields().getVkLink(),
+                        et.getFields().getTwLink(),
+                        et.getFields().getFbLink(),
+                        et.getFields().getYoutubeLink(),
+                        et.getFields().getTelegramLink(),
                         Collections.emptyList()
                 ))
                 .collect(Collectors.toList());
