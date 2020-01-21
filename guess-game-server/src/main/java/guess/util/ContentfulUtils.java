@@ -37,6 +37,12 @@ import java.util.stream.Collectors;
  * Contentful utility methods.
  */
 public class ContentfulUtils {
+    private static final Logger log = LoggerFactory.getLogger(ContentfulUtils.class);
+
+    private static final String BASE_URL = "https://cdn.contentful.com/spaces/{spaceId}/{entityName}";
+    private static final String MAIN_SPACE_ID = "2jxgmeypnru5";
+    private static final String MAIN_ACCESS_TOKEN = "08f9e9e80ee347bd9f6017bf76f0a290c2ff0c28000946f7079f94a78974f090";
+
     private enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
@@ -82,11 +88,6 @@ public class ContentfulUtils {
         }
     }
 
-    private static final Logger log = LoggerFactory.getLogger(ContentfulUtils.class);
-
-    private static final String BASE_URL = "https://cdn.contentful.com/spaces/{spaceId}/{entityName}";
-    private static final String MAIN_SPACE_ID = "2jxgmeypnru5";
-    private static final String MAIN_ACCESS_TOKEN = "08f9e9e80ee347bd9f6017bf76f0a290c2ff0c28000946f7079f94a78974f090";
     private static final int MAXIMUM_LIMIT = 1000;
 
     private static Map<String, String> LOCALE_CODE_MAP = new HashMap<>() {{
@@ -244,7 +245,7 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
-        AtomicLong id = new AtomicLong();
+        AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> assetErrorSet = getAssetErrorSet(response);
 
@@ -300,7 +301,7 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
-        AtomicLong id = new AtomicLong();
+        AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getEntryErrorSet(response);
         Set<String> assetErrorSet = getAssetErrorSet(response);
@@ -333,7 +334,7 @@ public class ContentfulUtils {
                             .collect(Collectors.toList());
 
                     return new Talk(
-                            id.getAndIncrement(),
+                            id.getAndDecrement(),
                             extractLocaleItems(t.getFields().getNameEn(), t.getFields().getName()),
                             extractLocaleItems(t.getFields().getShortEn(), t.getFields().getShortRu()),
                             extractLocaleItems(t.getFields().getLongEn(), t.getFields().getLongRu()),
@@ -407,7 +408,7 @@ public class ContentfulUtils {
     private static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
                                          Set<String> assetErrorSet, AtomicLong id) {
         return new Speaker(
-                id.getAndIncrement(),
+                id.getAndDecrement(),
                 extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
                 extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName()),
                 extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany()),
@@ -429,7 +430,7 @@ public class ContentfulUtils {
      */
     private static Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
                                                       Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
-        AtomicLong id = new AtomicLong();
+        AtomicLong id = new AtomicLong(-1);
 
         return (response.getIncludes() == null) ?
                 Collections.emptyMap() :
@@ -729,12 +730,12 @@ public class ContentfulUtils {
         final String ENTRY_ID = "3YSoYRePW0OIeaAAkaweE6";
         long id = speakerMap.values().stream()
                 .map(Speaker::getId)
-                .max(Long::compare)
-                .orElse(-1L);
+                .min(Long::compare)
+                .orElse(0L);
 
-        if (ConferenceSpaceInfo.HOLY_JS_SPACE_INFO.equals(conferenceSpaceInfo)) {
+        if (ConferenceSpaceInfo.HOLY_JS_SPACE_INFO.equals(conferenceSpaceInfo) && !speakerMap.containsKey(ENTRY_ID) && entryErrorSet.contains(ENTRY_ID)) {
             speakerMap.put(ENTRY_ID, new Speaker(
-                    ++id,
+                    --id,
                     "https://images.ctfassets.net/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG",
                     Collections.singletonList(
                             new LocaleItem(
