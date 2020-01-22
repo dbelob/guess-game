@@ -55,7 +55,7 @@ public class YamlUtils {
      * Reads source information from resource files.
      *
      * @return source information
-     * @throws IOException                if an I/O error occurs
+     * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speaker duplicated
      */
     public static SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
