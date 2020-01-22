@@ -4,6 +4,7 @@ import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.Event;
+import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,7 +26,21 @@ public class ConferenceDataLoader {
      * Loads all conference event types.
      */
     private static void loadEventTypes() {
-        //TODO: implemnent
+        List<EventType> eventTypes = Arrays.stream(Conference.values())
+                .map(ContentfulUtils::getEventType)
+                .collect(Collectors.toList());
+
+        log.info("Event types: {}", eventTypes.size());
+        eventTypes.forEach(
+                et -> log.info("Event type: conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
+                        et.getConference(),
+                        LocalizationUtils.getString(et.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(et.getName(), Language.RUSSIAN),
+                        LocalizationUtils.getString(et.getSiteLink(), Language.ENGLISH),
+                        LocalizationUtils.getString(et.getSiteLink(), Language.RUSSIAN))
+        );
+
+        //TODO: implement comparing and YAML file saving
     }
 
     /**
@@ -68,9 +84,13 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
+
+        //TODO: implement comparing and YAML file saving
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException {
+        loadEventTypes();
+
         // 2016
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel");

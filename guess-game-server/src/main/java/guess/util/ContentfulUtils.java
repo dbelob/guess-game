@@ -90,8 +90,9 @@ public class ContentfulUtils {
 
     private static final int MAXIMUM_LIMIT = 1000;
 
+    private static final String RUSSIAN_LOCALE = "ru-RU";
     private static final Map<String, String> LOCALE_CODE_MAP = new HashMap<>() {{
-        put("ru-RU", Language.RUSSIAN.getCode());
+        put(RUSSIAN_LOCALE, Language.RUSSIAN.getCode());
     }};
 
     private static final Map<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new HashMap<>() {{
@@ -166,10 +167,11 @@ public class ContentfulUtils {
     /**
      * Gets event types.
      *
-     * @param locale locale
+     * @param locale        locale
+     * @param eventTypeName event type name
      * @return event types
      */
-    private static List<EventType> getEventTypes(String locale) {
+    private static List<EventType> getEventTypes(String locale, String eventTypeName) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsList&select={fields}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -178,6 +180,11 @@ public class ContentfulUtils {
                 .queryParam("content_type", "eventsList")
                 .queryParam("select", "fields.eventName,fields.eventDescriptions,fields.siteLink,fields.vkLink,fields.twLink,fields.fbLink,fields.youtubeLink,fields.telegramLink")
                 .queryParam("limit", MAXIMUM_LIMIT);
+
+        if ((eventTypeName != null) && !eventTypeName.isEmpty()) {
+            builder.queryParam("fields.eventName[match]", eventTypeName);
+        }
+
         URI uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, "entries")
                 .encode()
@@ -208,6 +215,47 @@ public class ContentfulUtils {
                         Collections.emptyList()
                 ))
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets event type.
+     *
+     * @param conference conference
+     * @return event type
+     */
+    public static EventType getEventType(Conference conference) {
+        String eventTypeName = CONFERENCE_EVENT_TYPE_NAME_MAP.get(conference);
+
+        List<EventType> enEventTypes = getEventTypes(Language.ENGLISH.getCode(), eventTypeName);
+        List<EventType> ruEventTypes = getEventTypes(RUSSIAN_LOCALE, eventTypeName);
+
+        if ((enEventTypes.size() != 1) || (ruEventTypes.size() != 1)) {
+            throw new IllegalStateException(String.format(
+                    "Invalid event types quantity: enEventTypes: %d, ruEventTypes: %d", enEventTypes.size(), ruEventTypes.size()));
+        }
+
+        EventType enEventType = enEventTypes.get(0);
+        EventType ruEventType = ruEventTypes.get(0);
+
+        return new EventType(
+                -1,
+                conference,
+                extractLocaleItems(
+                        LocalizationUtils.getString(enEventType.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(ruEventType.getName(), Language.RUSSIAN)),
+                null,
+                extractLocaleItems(
+                        LocalizationUtils.getString(enEventType.getDescription(), Language.ENGLISH),
+                        LocalizationUtils.getString(ruEventType.getDescription(), Language.RUSSIAN)),
+                extractLocaleItems(
+                        LocalizationUtils.getString(enEventType.getSiteLink(), Language.ENGLISH),
+                        LocalizationUtils.getString(ruEventType.getSiteLink(), Language.RUSSIAN)),
+                enEventType.getVkLink(),
+                enEventType.getTwitterLink(),
+                enEventType.getFacebookLink(),
+                enEventType.getYoutubeLink(),
+                enEventType.getTelegramLink(),
+                Collections.emptyList());
     }
 
     /**
@@ -796,7 +844,7 @@ public class ContentfulUtils {
         log.info("Event types");
 
         for (String locale : locales) {
-            List<EventType> eventTypes = getEventTypes(locale);
+            List<EventType> eventTypes = getEventTypes(locale, null);
             log.info("Event types (locale: {}): {}, {}", locale, eventTypes.size(), eventTypes);
         }
 
