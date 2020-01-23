@@ -1,18 +1,9 @@
 package guess.domain.source.contentful.asset;
 
-import guess.domain.source.contentful.ContentfulSys;
+import guess.domain.source.contentful.ContentfulEntity;
 
-public class ContentfulAsset {
-    private ContentfulSys sys;
+public class ContentfulAsset extends ContentfulEntity {
     private ContentfulAssetFields fields;
-
-    public ContentfulSys getSys() {
-        return sys;
-    }
-
-    public void setSys(ContentfulSys sys) {
-        this.sys = sys;
-    }
 
     public ContentfulAssetFields getFields() {
         return fields;

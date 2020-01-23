@@ -1,18 +1,9 @@
 package guess.domain.source.contentful.error;
 
-import guess.domain.source.contentful.ContentfulSys;
+import guess.domain.source.contentful.ContentfulEntity;
 
-public class ContentfulError {
-    private ContentfulSys sys;
+public class ContentfulError extends ContentfulEntity {
     private ContentfulErrorDetails details;
-
-    public ContentfulSys getSys() {
-        return sys;
-    }
-
-    public void setSys(ContentfulSys sys) {
-        this.sys = sys;
-    }
 
     public ContentfulErrorDetails getDetails() {
         return details;

@@ -27,6 +27,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Matcher;
@@ -257,10 +259,12 @@ public class ContentfulUtils {
     /**
      * Gets events
      *
-     * @param locale locale
+     * @param locale    locale
+     * @param eventName event name
+     * @param startDate start date
      * @return events
      */
-    private static List<Event> getEvents(String locale) {
+    private static List<Event> getEvents(String locale, String eventName, LocalDate startDate) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsCalendar&select={fields}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -269,6 +273,17 @@ public class ContentfulUtils {
                 .queryParam("content_type", "eventsCalendar")
                 .queryParam("select", "fields.conferenceName")
                 .queryParam("limit", MAXIMUM_LIMIT);
+
+        if ((eventName != null) && !eventName.isEmpty()) {
+            builder.queryParam("fields.eventPage.sys.contentType.sys.id", "eventsList");
+            builder.queryParam("fields.eventPage.fields.eventName[match]", eventName);
+        }
+
+        if (startDate != null) {
+            builder.queryParam("fields.eventStart[gte]", startDate.format(DateTimeFormatter.ISO_LOCAL_DATE));
+            builder.queryParam("fields.eventStart[lt]", startDate.plusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE));
+        }
+
         URI uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, "entries")
                 .encode()
@@ -288,6 +303,21 @@ public class ContentfulUtils {
                         null,
                         new ArrayList<>()))
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets event.
+     *
+     * @param conference conference
+     * @param startDate  start date
+     * @return event
+     */
+    public static Event getEvent(Conference conference, LocalDate startDate) {
+        String eventName = CONFERENCE_EVENT_TYPE_NAME_MAP.get(conference);
+        List<Event> enEvents = getEvents(Language.ENGLISH.getCode(), eventName, startDate);
+        List<Event> ruEvents = getEvents(RUSSIAN_LOCALE, eventName, startDate);
+
+        return null;
     }
 
     /**
@@ -847,7 +877,7 @@ public class ContentfulUtils {
         log.info("Events");
 
         for (String locale : locales) {
-            List<Event> events = getEvents(locale);
+            List<Event> events = getEvents(locale, null, null);
             log.info("Events (locale: {}): {}, {}", locale, events.size(), events);
         }
 

@@ -61,6 +61,9 @@ public class ConferenceDataLoader {
                         .findFirst())
                 .orElse(null);
 
+        // Read event from Contentful
+        Event contentfulEvent = ContentfulUtils.getEvent(conference, startDate);
+
         // Read talks from Contentful
         List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode);
         log.info("Talks: {}", contentfulTalks.size());
@@ -86,7 +89,7 @@ public class ConferenceDataLoader {
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException {
-        loadEventTypes();
+//        loadEventTypes();
 
         // 2016
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker");
