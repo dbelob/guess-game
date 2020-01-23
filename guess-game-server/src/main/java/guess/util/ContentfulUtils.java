@@ -167,24 +167,19 @@ public class ContentfulUtils {
     /**
      * Gets event types.
      *
-     * @param locale        locale
-     * @param eventTypeName event type name
+     * @param locale locale
      * @return event types
      */
-    private static List<EventType> getEventTypes(String locale, String eventTypeName) {
-        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsList&select={fields}
+    private static List<EventType> getEventTypes(String locale) {
+        // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsList&select={fields}&order={fields}&limit=1000
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", MAIN_ACCESS_TOKEN)
                 .queryParam("locale", locale)
                 .queryParam("content_type", "eventsList")
                 .queryParam("select", "fields.eventName,fields.eventDescriptions,fields.siteLink,fields.vkLink,fields.twLink,fields.fbLink,fields.youtubeLink,fields.telegramLink")
+                .queryParam("order", "fields.eventName")
                 .queryParam("limit", MAXIMUM_LIMIT);
-
-        if ((eventTypeName != null) && !eventTypeName.isEmpty()) {
-            builder.queryParam("fields.eventName[match]", eventTypeName);
-        }
-
         URI uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, "entries")
                 .encode()
@@ -218,44 +213,45 @@ public class ContentfulUtils {
     }
 
     /**
-     * Gets event type.
+     * Gets event types.
      *
-     * @param conference conference
-     * @return event type
+     * @return event types
      */
-    public static EventType getEventType(Conference conference) {
-        String eventTypeName = CONFERENCE_EVENT_TYPE_NAME_MAP.get(conference);
+    public static List<EventType> getEventTypes() {
+        List<EventType> enEventTypes = getEventTypes(Language.ENGLISH.getCode());
+        List<EventType> ruEventTypes = getEventTypes(RUSSIAN_LOCALE);
+        Map<Conference, EventType> ruEventTypesMap = ruEventTypes.stream()
+                .filter(et -> et.getConference() != null)
+                .collect(Collectors.toMap(
+                        EventType::getConference,
+                        et -> et));
 
-        List<EventType> enEventTypes = getEventTypes(Language.ENGLISH.getCode(), eventTypeName);
-        List<EventType> ruEventTypes = getEventTypes(RUSSIAN_LOCALE, eventTypeName);
+        return enEventTypes.stream()
+                .filter(et -> et.getConference() != null)
+                .map(enEventType -> {
+                    EventType ruEventType = ruEventTypesMap.get(enEventType.getConference());
 
-        if ((enEventTypes.size() != 1) || (ruEventTypes.size() != 1)) {
-            throw new IllegalStateException(String.format(
-                    "Invalid event types quantity: enEventTypes: %d, ruEventTypes: %d", enEventTypes.size(), ruEventTypes.size()));
-        }
-
-        EventType enEventType = enEventTypes.get(0);
-        EventType ruEventType = ruEventTypes.get(0);
-
-        return new EventType(
-                -1,
-                conference,
-                extractLocaleItems(
-                        LocalizationUtils.getString(enEventType.getName(), Language.ENGLISH),
-                        LocalizationUtils.getString(ruEventType.getName(), Language.RUSSIAN)),
-                null,
-                extractLocaleItems(
-                        LocalizationUtils.getString(enEventType.getDescription(), Language.ENGLISH),
-                        LocalizationUtils.getString(ruEventType.getDescription(), Language.RUSSIAN)),
-                extractLocaleItems(
-                        LocalizationUtils.getString(enEventType.getSiteLink(), Language.ENGLISH),
-                        LocalizationUtils.getString(ruEventType.getSiteLink(), Language.RUSSIAN)),
-                enEventType.getVkLink(),
-                enEventType.getTwitterLink(),
-                enEventType.getFacebookLink(),
-                enEventType.getYoutubeLink(),
-                enEventType.getTelegramLink(),
-                Collections.emptyList());
+                    return new EventType(
+                            enEventType.getId(),
+                            enEventType.getConference(),
+                            extractLocaleItems(
+                                    LocalizationUtils.getString(enEventType.getName(), Language.ENGLISH),
+                                    LocalizationUtils.getString(ruEventType.getName(), Language.RUSSIAN)),
+                            null,
+                            extractLocaleItems(
+                                    LocalizationUtils.getString(enEventType.getDescription(), Language.ENGLISH),
+                                    LocalizationUtils.getString(ruEventType.getDescription(), Language.RUSSIAN)),
+                            extractLocaleItems(
+                                    LocalizationUtils.getString(enEventType.getSiteLink(), Language.ENGLISH),
+                                    LocalizationUtils.getString(ruEventType.getSiteLink(), Language.RUSSIAN)),
+                            enEventType.getVkLink(),
+                            enEventType.getTwitterLink(),
+                            enEventType.getFacebookLink(),
+                            enEventType.getYoutubeLink(),
+                            enEventType.getTelegramLink(),
+                            Collections.emptyList());
+                })
+                .collect(Collectors.toList());
     }
 
     /**
@@ -844,7 +840,7 @@ public class ContentfulUtils {
         log.info("Event types");
 
         for (String locale : locales) {
-            List<EventType> eventTypes = getEventTypes(locale, null);
+            List<EventType> eventTypes = getEventTypes(locale);
             log.info("Event types (locale: {}): {}, {}", locale, eventTypes.size(), eventTypes);
         }
 

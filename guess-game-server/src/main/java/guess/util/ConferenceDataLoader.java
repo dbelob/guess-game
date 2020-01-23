@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,9 +25,7 @@ public class ConferenceDataLoader {
      * Loads all conference event types.
      */
     private static void loadEventTypes() {
-        List<EventType> eventTypes = Arrays.stream(Conference.values())
-                .map(ContentfulUtils::getEventType)
-                .collect(Collectors.toList());
+        List<EventType> eventTypes = ContentfulUtils.getEventTypes();
 
         log.info("Event types: {}", eventTypes.size());
         eventTypes.forEach(
