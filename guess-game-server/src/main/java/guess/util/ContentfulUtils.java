@@ -28,6 +28,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
@@ -280,8 +283,15 @@ public class ContentfulUtils {
         }
 
         if (startDate != null) {
-            builder.queryParam("fields.eventStart[gte]", startDate.format(DateTimeFormatter.ISO_LOCAL_DATE));
-            builder.queryParam("fields.eventStart[lt]", startDate.plusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE));
+            LocalDate startDatePlusDay = startDate.plusDays(1);
+            ZoneId utcZone = ZoneId.of("UTC");
+            ZoneId moscowZone = ZoneId.of("Europe/Moscow");
+            LocalTime localTime = LocalTime.of(0, 0);
+            ZonedDateTime startZonedDateTime = ZonedDateTime.ofInstant(ZonedDateTime.of(startDate, localTime, moscowZone).toInstant(), utcZone);
+            ZonedDateTime startZonedDateTimePlusDay = ZonedDateTime.ofInstant(ZonedDateTime.of(startDatePlusDay, localTime, moscowZone).toInstant(), utcZone);
+
+            builder.queryParam("fields.eventStart[gte]", startZonedDateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+            builder.queryParam("fields.eventStart[lt]", startZonedDateTimePlusDay.plusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         }
 
         URI uri = builder
