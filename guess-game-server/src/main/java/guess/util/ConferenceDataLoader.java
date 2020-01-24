@@ -3,16 +3,14 @@ package guess.util;
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.Speaker;
-import guess.domain.source.Talk;
+import guess.domain.source.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -53,9 +51,15 @@ public class ConferenceDataLoader {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, events, speakers, talks from resource files
-        Event resourceEvent = YamlUtils.readSourceInformation().getEventTypes().stream()
+        SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
+
+        Optional<EventType> resourceOptionalEventType = resourceSourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference().equals(conference))
-                .findFirst()
+                .findFirst();
+        EventType resourceEventType = resourceOptionalEventType
+                .orElse(null);
+
+        Event resourceEvent = resourceOptionalEventType
                 .flatMap(et -> et.getEvents().stream()
                         .filter(e -> e.getStartDate().equals(startDate))
                         .findFirst())
@@ -63,6 +67,9 @@ public class ConferenceDataLoader {
 
         // Read event from Contentful
         Event contentfulEvent = ContentfulUtils.getEvent(conference, startDate);
+        log.info("Event: nameEn: {}, nameRu: {}",
+                LocalizationUtils.getString(contentfulEvent.getName(), Language.ENGLISH),
+                LocalizationUtils.getString(contentfulEvent.getName(), Language.RUSSIAN));
 
         // Read talks from Contentful
         List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode);
@@ -94,7 +101,7 @@ public class ConferenceDataLoader {
         // 2016
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel");
-//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk");
+        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2016, 12, 10), "2016msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2016, 12, 11), "2016msk");
 

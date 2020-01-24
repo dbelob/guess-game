@@ -283,15 +283,8 @@ public class ContentfulUtils {
         }
 
         if (startDate != null) {
-            LocalDate startDatePlusDay = startDate.plusDays(1);
-            ZoneId utcZone = ZoneId.of("UTC");
-            ZoneId moscowZone = ZoneId.of("Europe/Moscow");
-            LocalTime localTime = LocalTime.of(0, 0);
-            ZonedDateTime startZonedDateTime = ZonedDateTime.ofInstant(ZonedDateTime.of(startDate, localTime, moscowZone).toInstant(), utcZone);
-            ZonedDateTime startZonedDateTimePlusDay = ZonedDateTime.ofInstant(ZonedDateTime.of(startDatePlusDay, localTime, moscowZone).toInstant(), utcZone);
-
-            builder.queryParam("fields.eventStart[gte]", startZonedDateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-            builder.queryParam("fields.eventStart[lt]", startZonedDateTimePlusDay.plusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+            builder.queryParam("fields.eventStart[gte]", DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(createUtcZonedDateTime(startDate)));
+            builder.queryParam("fields.eventStart[lt]", DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(createUtcZonedDateTime(startDate.plusDays(1))));
         }
 
         URI uri = builder
@@ -302,17 +295,46 @@ public class ContentfulUtils {
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .map(e -> new Event(
-                        null,
-                        Collections.singletonList(new LocaleItem(
-                                transformLocale(locale),
-                                extractString(e.getFields().getConferenceName()))),
-                        null,
-                        null,
-                        null,
-                        null,
-                        new ArrayList<>()))
+                .map(e -> {
+                    String name = extractString(e.getFields().getConferenceName());
+
+                    if (Language.ENGLISH.getCode().equals(locale)) {
+                        name = name
+                                .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Msc")
+                                .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " Spb");
+                    } else if (RUSSIAN_LOCALE.equals(locale)) {
+                        name = name
+                                .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Мск")
+                                .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " СПб");
+                    }
+
+                    return new Event(
+                            null,
+                            Collections.singletonList(new LocaleItem(
+                                    transformLocale(locale),
+                                    name)),
+                            null,
+                            null,
+                            null,
+                            null,
+                            new ArrayList<>());
+                })
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Creates Europe/Moscow zoned date time without offset (UTC).
+     *
+     * @param localDate date
+     * @return zoned date time
+     */
+    private static ZonedDateTime createUtcZonedDateTime(LocalDate localDate) {
+        return ZonedDateTime.ofInstant(
+                ZonedDateTime.of(
+                        localDate,
+                        LocalTime.of(0, 0, 0),
+                        ZoneId.of("Europe/Moscow")).toInstant(),
+                ZoneId.of("UTC"));
     }
 
     /**
@@ -327,7 +349,29 @@ public class ContentfulUtils {
         List<Event> enEvents = getEvents(Language.ENGLISH.getCode(), eventName, startDate);
         List<Event> ruEvents = getEvents(RUSSIAN_LOCALE, eventName, startDate);
 
-        return null;
+        if (enEvents.isEmpty() || ruEvents.isEmpty()) {
+            throw new IllegalStateException(String.format("No events found for conference %s and start date %s (enEvents: %d, ruEvents: %d)",
+                    conference, startDate, enEvents.size(), ruEvents.size()));
+        }
+
+        if ((enEvents.size() > 1) || (ruEvents.size() > 1)) {
+            throw new IllegalStateException(String.format("Too much events found for conference %s and start date %s (enEvents: %d, ruEvents: %d)",
+                    conference, startDate, enEvents.size(), ruEvents.size()));
+        }
+
+        Event enEvent = enEvents.get(0);
+        Event ruEvent = ruEvents.get(0);
+
+        return new Event(
+                null,
+                extractLocaleItems(
+                        LocalizationUtils.getString(enEvent.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(ruEvent.getName(), Language.RUSSIAN)),
+                null,
+                null,
+                null,
+                null,
+                null);
     }
 
     /**
