@@ -274,7 +274,7 @@ public class ContentfulUtils {
                 .queryParam("access_token", MAIN_ACCESS_TOKEN)
                 .queryParam("locale", locale)
                 .queryParam("content_type", "eventsCalendar")
-                .queryParam("select", "fields.conferenceName")
+                .queryParam("select", "fields.conferenceName,fields.eventStart,fields.eventEnd,fields.conferenceLink,fields.eventCity,fields.youtubePlayList,fields.venueAddress,fields.addressLink")
                 .queryParam("limit", MAXIMUM_LIMIT);
 
         if ((eventName != null) && !eventName.isEmpty()) {
@@ -308,6 +308,7 @@ public class ContentfulUtils {
                                 .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " СПб");
                     }
 
+                    //TODO: fill properties
                     return new Event(
                             null,
                             Collections.singletonList(new LocaleItem(
@@ -317,7 +318,10 @@ public class ContentfulUtils {
                             null,
                             null,
                             null,
-                            new ArrayList<>());
+                            null,
+                            null,
+                            null,
+                            Collections.emptyList());
                 })
                 .collect(Collectors.toList());
     }
@@ -367,11 +371,20 @@ public class ContentfulUtils {
                 extractLocaleItems(
                         LocalizationUtils.getString(enEvent.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(ruEvent.getName(), Language.RUSSIAN)),
-                null,
-                null,
-                null,
-                null,
-                null);
+                enEvent.getStartDate(),
+                enEvent.getEndDate(),
+                extractLocaleItems(
+                        LocalizationUtils.getString(enEvent.getSiteLink(), Language.ENGLISH),
+                        LocalizationUtils.getString(ruEvent.getSiteLink(), Language.RUSSIAN)),
+                extractLocaleItems(
+                        LocalizationUtils.getString(enEvent.getCity(), Language.ENGLISH),
+                        LocalizationUtils.getString(ruEvent.getCity(), Language.RUSSIAN)),
+                extractLocaleItems(
+                        LocalizationUtils.getString(enEvent.getVenueAddress(), Language.ENGLISH),
+                        LocalizationUtils.getString(ruEvent.getVenueAddress(), Language.RUSSIAN)),
+                enEvent.getYoutubeLink(),
+                enEvent.getMapCoordinates(),
+                Collections.emptyList());
     }
 
     /**

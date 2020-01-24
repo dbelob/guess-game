@@ -14,8 +14,11 @@ public class Event {
     private List<LocaleItem> name;
     private LocalDate startDate;
     private LocalDate endDate;
+    private List<LocaleItem> siteLink;
     private List<LocaleItem> city;
-    private List<LocaleItem> place;
+    private List<LocaleItem> venueAddress;
+    private String youtubeLink;
+    private String mapCoordinates;
 
     private List<Long> talkIds;
     private List<Talk> talks = new ArrayList<>();
@@ -23,13 +26,17 @@ public class Event {
     public Event() {
     }
 
-    public Event(EventType eventType, List<LocaleItem> name, LocalDate startDate, LocalDate endDate, List<LocaleItem> city, List<LocaleItem> place, List<Talk> talks) {
+    public Event(EventType eventType, List<LocaleItem> name, LocalDate startDate, LocalDate endDate, List<LocaleItem> siteLink,
+                 List<LocaleItem> city, List<LocaleItem> venueAddress, String youtubeLink, String mapCoordinates, List<Talk> talks) {
         this.eventType = eventType;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.siteLink = siteLink;
         this.city = city;
-        this.place = place;
+        this.venueAddress = venueAddress;
+        this.youtubeLink = youtubeLink;
+        this.mapCoordinates = mapCoordinates;
         this.talks = talks;
     }
 
@@ -73,6 +80,14 @@ public class Event {
         this.endDate = endDate;
     }
 
+    public List<LocaleItem> getSiteLink() {
+        return siteLink;
+    }
+
+    public void setSiteLink(List<LocaleItem> siteLink) {
+        this.siteLink = siteLink;
+    }
+
     public List<LocaleItem> getCity() {
         return city;
     }
@@ -81,12 +96,28 @@ public class Event {
         this.city = city;
     }
 
-    public List<LocaleItem> getPlace() {
-        return place;
+    public List<LocaleItem> getVenueAddress() {
+        return venueAddress;
     }
 
-    public void setPlace(List<LocaleItem> place) {
-        this.place = place;
+    public void setVenueAddress(List<LocaleItem> venueAddress) {
+        this.venueAddress = venueAddress;
+    }
+
+    public String getYoutubeLink() {
+        return youtubeLink;
+    }
+
+    public void setYoutubeLink(String youtubeLink) {
+        this.youtubeLink = youtubeLink;
+    }
+
+    public String getMapCoordinates() {
+        return mapCoordinates;
+    }
+
+    public void setMapCoordinates(String mapCoordinates) {
+        this.mapCoordinates = mapCoordinates;
     }
 
     public List<Long> getTalkIds() {
@@ -109,7 +140,7 @@ public class Event {
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", city=" + city +
-                ", place=" + place +
+                ", venueAddress=" + venueAddress +
                 ", talks=" + talks +
                 '}';
     }
