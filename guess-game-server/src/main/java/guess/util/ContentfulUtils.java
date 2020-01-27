@@ -8,6 +8,7 @@ import guess.domain.source.contentful.ContentfulLink;
 import guess.domain.source.contentful.ContentfulResponse;
 import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.contentful.asset.ContentfulAsset;
+import guess.domain.source.contentful.city.ContentfulCity;
 import guess.domain.source.contentful.error.ContentfulErrorDetails;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
@@ -292,9 +293,10 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulEventResponse response = restTemplate.getForObject(uri, ContentfulEventResponse.class);
+        Map<String, ContentfulCity> cityMap = getCityMap(Objects.requireNonNull(response));
+        Set<String> entryErrorSet = getEntryErrorSet(response);
 
-        return Objects.requireNonNull(response)
-                .getItems().stream()
+        return response.getItems().stream()
                 .map(e -> {
                     String name = extractString(e.getFields().getConferenceName());
 
@@ -308,19 +310,24 @@ public class ContentfulUtils {
                                 .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " СПб");
                     }
 
-                    //TODO: fill properties
                     return new Event(
                             null,
                             Collections.singletonList(new LocaleItem(
                                     transformLocale(locale),
                                     name)),
-                            null,
-                            null,
-                            null,
-                            null,
-                            null,
-                            null,
-                            null,
+                            createMoscowLocalDate(e.getFields().getEventStart()),
+                            createMoscowLocalDate(e.getFields().getEventEnd()),
+                            Collections.singletonList(new LocaleItem(
+                                    transformLocale(locale),
+                                    e.getFields().getConferenceLink())),
+                            Collections.singletonList(new LocaleItem(
+                                    transformLocale(locale),
+                                    extractCity(e.getFields().getEventCity(), cityMap, entryErrorSet, name))),
+                            Collections.singletonList(new LocaleItem(
+                                    transformLocale(locale),
+                                    e.getFields().getVenueAddress())),
+                            e.getFields().getYoutubePlayList(),
+                            e.getFields().getAddressLink(),
                             Collections.emptyList());
                 })
                 .collect(Collectors.toList());
@@ -339,6 +346,19 @@ public class ContentfulUtils {
                         LocalTime.of(0, 0, 0),
                         ZoneId.of("Europe/Moscow")).toInstant(),
                 ZoneId.of("UTC"));
+    }
+
+    /**
+     * Creates Europe/Moscow local date from zoned date time string.
+     *
+     * @param zonedDateTimeString zoned date time string
+     * @return Europe/Moscow local date
+     */
+    private static LocalDate createMoscowLocalDate(String zonedDateTimeString) {
+        return ZonedDateTime.ofInstant(
+                ZonedDateTime.parse(zonedDateTimeString).toInstant(),
+                ZoneId.of("Europe/Moscow"))
+                .toLocalDate();
     }
 
     /**
@@ -633,6 +653,22 @@ public class ContentfulUtils {
     }
 
     /**
+     * Gets map id/city.
+     *
+     * @param response response
+     * @return map id/city
+     */
+    private static Map<String, ContentfulCity> getCityMap(ContentfulEventResponse response) {
+        return (response.getIncludes() == null) ?
+                Collections.emptyMap() :
+                response.getIncludes().getEntry().stream()
+                        .collect(Collectors.toMap(
+                                a -> a.getSys().getId(),
+                                a -> a
+                        ));
+    }
+
+    /**
      * Gets error set.
      *
      * @param response response
@@ -891,6 +927,31 @@ public class ContentfulUtils {
         }
 
         return localeItems;
+    }
+
+    /**
+     * Extracts city name.
+     *
+     * @param link          link
+     * @param cityMap       map id/city
+     * @param entryErrorSet set with error entries
+     * @param eventNameEn   event name
+     * @return city name
+     */
+    private static String extractCity(ContentfulLink link, Map<String, ContentfulCity> cityMap,
+                                      Set<String> entryErrorSet, String eventNameEn) {
+        String entryId = link.getSys().getId();
+        boolean isErrorAsset = entryErrorSet.contains(entryId);
+
+        if (isErrorAsset) {
+            log.warn("Entry (city name) id {} not resolvable for '{}' event", entryId, eventNameEn);
+            return null;
+        }
+
+        ContentfulCity city = cityMap.get(entryId);
+        return Objects.requireNonNull(city,
+                () -> String.format("Entry (city name) id %s not found for '%s' event", entryId, eventNameEn))
+                .getFields().getCityName();
     }
 
     /**

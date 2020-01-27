@@ -67,9 +67,10 @@ public class ConferenceDataLoader {
 
         // Read event from Contentful
         Event contentfulEvent = ContentfulUtils.getEvent(conference, startDate);
-        log.info("Event: nameEn: {}, nameRu: {}",
+        log.info("Event: nameEn: {}, nameRu: {}, startDate: {}, endDate: {}",
                 LocalizationUtils.getString(contentfulEvent.getName(), Language.ENGLISH),
-                LocalizationUtils.getString(contentfulEvent.getName(), Language.RUSSIAN));
+                LocalizationUtils.getString(contentfulEvent.getName(), Language.RUSSIAN),
+                contentfulEvent.getStartDate(), contentfulEvent.getEndDate());
 
         // Read talks from Contentful
         List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode);
