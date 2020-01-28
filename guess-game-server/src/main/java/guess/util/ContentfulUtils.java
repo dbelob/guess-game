@@ -300,7 +300,15 @@ public class ContentfulUtils {
                 .map(e -> {
                     String nameEn = e.getFields().getConferenceName().get(ENGLISH_LOCALE);
                     String nameRu = e.getFields().getConferenceName().get(RUSSIAN_LOCALE);
+                    if (nameEn == null) {
+                        nameEn = nameRu;
+                    }
+
                     ContentfulLink eventCityLink = getFirstMapValue(e.getFields().getEventCity());
+                    Map<String, String> conferenceLink = e.getFields().getConferenceLink();
+                    Map<String, String> venueAddress = e.getFields().getVenueAddress();
+                    Map<String, String> youtubePlayList = e.getFields().getYoutubePlayList();
+                    Map<String, String> addressLink = e.getFields().getAddressLink();
 
                     return new Event(
                             null,
@@ -310,16 +318,16 @@ public class ContentfulUtils {
                             createMoscowLocalDate(getFirstMapValue(e.getFields().getEventStart())),
                             createMoscowLocalDate(getFirstMapValue(e.getFields().getEventEnd())),
                             extractLocaleItems(
-                                    e.getFields().getConferenceLink().get(ENGLISH_LOCALE),
-                                    e.getFields().getConferenceLink().get(RUSSIAN_LOCALE)),
+                                    (conferenceLink != null) ? conferenceLink.get(ENGLISH_LOCALE) : null,
+                                    (conferenceLink != null) ? conferenceLink.get(RUSSIAN_LOCALE) : null),
                             extractLocaleItems(
                                     extractCity(eventCityLink, cityMap, entryErrorSet, ENGLISH_LOCALE, nameEn),
                                     extractCity(eventCityLink, cityMap, entryErrorSet, RUSSIAN_LOCALE, nameEn)),
                             extractLocaleItems(
-                                    e.getFields().getVenueAddress().get(ENGLISH_LOCALE),
-                                    e.getFields().getVenueAddress().get(RUSSIAN_LOCALE)),
-                            getFirstMapValue(e.getFields().getYoutubePlayList()),
-                            getFirstMapValue(e.getFields().getAddressLink()),
+                                    (venueAddress != null) ? venueAddress.get(ENGLISH_LOCALE) : null,
+                                    (venueAddress != null) ? venueAddress.get(RUSSIAN_LOCALE) : null),
+                            (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null,
+                            (addressLink != null) ? getFirstMapValue(addressLink) : null,
                             Collections.emptyList());
                 })
                 .collect(Collectors.toList());
@@ -375,6 +383,11 @@ public class ContentfulUtils {
      * @return event
      */
     public static Event getEvent(Conference conference, LocalDate startDate) {
+        Event fixedEvent = fixNonexistentEventError(conference, startDate);
+        if (fixedEvent != null) {
+            return fixedEvent;
+        }
+
         String eventName = CONFERENCE_EVENT_TYPE_NAME_MAP.get(conference);
         List<Event> events = getEvents(eventName, startDate);
 
@@ -958,6 +971,32 @@ public class ContentfulUtils {
                         .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " СПб");
             default:
                 throw new IllegalArgumentException(String.format("Unknown locale: %s", locale));
+        }
+    }
+
+    private static Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
+        if (Conference.DOT_NEXT.equals(conference) && LocalDate.of(2016, 12, 7).equals(startDate)) {
+            return new Event(
+                    null,
+                    extractLocaleItems(
+                            "DotNext 2016 Helsinki",
+                            "DotNext 2016 Хельсинки"),
+                    LocalDate.of(2016, 12, 7),
+                    LocalDate.of(2016, 12, 7),
+                    extractLocaleItems(
+                            "https://dotnext-helsinki.com",
+                            "https://dotnext-helsinki.com"),
+                    extractLocaleItems(
+                            "Helsinki",
+                            "Хельсинки"),
+                    extractLocaleItems(
+                            "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo",
+                            null),
+                    "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5",
+                    "60.1704769, 24.8279349",
+                    Collections.emptyList());
+        } else {
+            return null;
         }
     }
 
