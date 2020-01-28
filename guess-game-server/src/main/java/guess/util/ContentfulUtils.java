@@ -96,6 +96,7 @@ public class ContentfulUtils {
 
     private static final int MAXIMUM_LIMIT = 1000;
 
+    private static final String ENGLISH_LOCALE = "en";
     private static final String RUSSIAN_LOCALE = "ru-RU";
     private static final Map<String, String> LOCALE_CODE_MAP = new HashMap<>() {{
         put(RUSSIAN_LOCALE, Language.RUSSIAN.getCode());
@@ -224,7 +225,7 @@ public class ContentfulUtils {
      * @return event types
      */
     public static List<EventType> getEventTypes() {
-        List<EventType> enEventTypes = getEventTypes(Language.ENGLISH.getCode());
+        List<EventType> enEventTypes = getEventTypes(ENGLISH_LOCALE);
         List<EventType> ruEventTypes = getEventTypes(RUSSIAN_LOCALE);
         Map<Conference, EventType> ruEventTypesMap = ruEventTypes.stream()
                 .filter(et -> et.getConference() != null)
@@ -263,17 +264,16 @@ public class ContentfulUtils {
     /**
      * Gets events
      *
-     * @param locale    locale
      * @param eventName event name
      * @param startDate start date
      * @return events
      */
-    private static List<Event> getEvents(String locale, String eventName, LocalDate startDate) {
+    private static List<Event> getEvents(String eventName, LocalDate startDate) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsCalendar&select={fields}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", MAIN_ACCESS_TOKEN)
-                .queryParam("locale", locale)
+                .queryParam("locale", "*")
                 .queryParam("content_type", "eventsCalendar")
                 .queryParam("select", "fields.conferenceName,fields.eventStart,fields.eventEnd,fields.conferenceLink,fields.eventCity,fields.youtubePlayList,fields.venueAddress,fields.addressLink")
                 .queryParam("limit", MAXIMUM_LIMIT);
@@ -298,36 +298,28 @@ public class ContentfulUtils {
 
         return response.getItems().stream()
                 .map(e -> {
-                    String name = extractString(e.getFields().getConferenceName());
-
-                    if (Language.ENGLISH.getCode().equals(locale)) {
-                        name = name
-                                .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Msc")
-                                .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " Spb");
-                    } else if (RUSSIAN_LOCALE.equals(locale)) {
-                        name = name
-                                .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Мск")
-                                .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " СПб");
-                    }
+                    String nameEn = e.getFields().getConferenceName().get(ENGLISH_LOCALE);
+                    String nameRu = e.getFields().getConferenceName().get(RUSSIAN_LOCALE);
+                    ContentfulLink eventCityLink = getFirstMapValue(e.getFields().getEventCity());
 
                     return new Event(
                             null,
-                            Collections.singletonList(new LocaleItem(
-                                    transformLocale(locale),
-                                    name)),
-                            createMoscowLocalDate(e.getFields().getEventStart()),
-                            createMoscowLocalDate(e.getFields().getEventEnd()),
-                            Collections.singletonList(new LocaleItem(
-                                    transformLocale(locale),
-                                    e.getFields().getConferenceLink())),
-                            Collections.singletonList(new LocaleItem(
-                                    transformLocale(locale),
-                                    extractCity(e.getFields().getEventCity(), cityMap, entryErrorSet, name))),
-                            Collections.singletonList(new LocaleItem(
-                                    transformLocale(locale),
-                                    e.getFields().getVenueAddress())),
-                            e.getFields().getYoutubePlayList(),
-                            e.getFields().getAddressLink(),
+                            extractLocaleItems(
+                                    extractEventName(nameEn, ENGLISH_LOCALE),
+                                    extractEventName(nameRu, RUSSIAN_LOCALE)),
+                            createMoscowLocalDate(getFirstMapValue(e.getFields().getEventStart())),
+                            createMoscowLocalDate(getFirstMapValue(e.getFields().getEventEnd())),
+                            extractLocaleItems(
+                                    e.getFields().getConferenceLink().get(ENGLISH_LOCALE),
+                                    e.getFields().getConferenceLink().get(RUSSIAN_LOCALE)),
+                            extractLocaleItems(
+                                    extractCity(eventCityLink, cityMap, entryErrorSet, ENGLISH_LOCALE, nameEn),
+                                    extractCity(eventCityLink, cityMap, entryErrorSet, RUSSIAN_LOCALE, nameEn)),
+                            extractLocaleItems(
+                                    e.getFields().getVenueAddress().get(ENGLISH_LOCALE),
+                                    e.getFields().getVenueAddress().get(RUSSIAN_LOCALE)),
+                            getFirstMapValue(e.getFields().getYoutubePlayList()),
+                            getFirstMapValue(e.getFields().getAddressLink()),
                             Collections.emptyList());
                 })
                 .collect(Collectors.toList());
@@ -362,6 +354,20 @@ public class ContentfulUtils {
     }
 
     /**
+     * Gets first map value.
+     *
+     * @param map map
+     * @param <T> key type
+     * @param <S> value type
+     * @return first map value
+     */
+    private static <T, S> S getFirstMapValue(Map<T, S> map) {
+        Map.Entry<T, S> entry = map.entrySet().iterator().next();
+
+        return entry.getValue();
+    }
+
+    /**
      * Gets event.
      *
      * @param conference conference
@@ -370,41 +376,19 @@ public class ContentfulUtils {
      */
     public static Event getEvent(Conference conference, LocalDate startDate) {
         String eventName = CONFERENCE_EVENT_TYPE_NAME_MAP.get(conference);
-        List<Event> enEvents = getEvents(Language.ENGLISH.getCode(), eventName, startDate);
-        List<Event> ruEvents = getEvents(RUSSIAN_LOCALE, eventName, startDate);
+        List<Event> events = getEvents(eventName, startDate);
 
-        if (enEvents.isEmpty() || ruEvents.isEmpty()) {
-            throw new IllegalStateException(String.format("No events found for conference %s and start date %s (enEvents: %d, ruEvents: %d)",
-                    conference, startDate, enEvents.size(), ruEvents.size()));
+        if (events.isEmpty()) {
+            throw new IllegalStateException(String.format("No events found for conference %s and start date %s (events: %d)",
+                    conference, startDate, events.size()));
         }
 
-        if ((enEvents.size() > 1) || (ruEvents.size() > 1)) {
-            throw new IllegalStateException(String.format("Too much events found for conference %s and start date %s (enEvents: %d, ruEvents: %d)",
-                    conference, startDate, enEvents.size(), ruEvents.size()));
+        if (events.size() > 1) {
+            throw new IllegalStateException(String.format("Too much events found for conference %s and start date %s (events: %d)",
+                    conference, startDate, events.size()));
         }
 
-        Event enEvent = enEvents.get(0);
-        Event ruEvent = ruEvents.get(0);
-
-        return new Event(
-                null,
-                extractLocaleItems(
-                        LocalizationUtils.getString(enEvent.getName(), Language.ENGLISH),
-                        LocalizationUtils.getString(ruEvent.getName(), Language.RUSSIAN)),
-                enEvent.getStartDate(),
-                enEvent.getEndDate(),
-                extractLocaleItems(
-                        LocalizationUtils.getString(enEvent.getSiteLink(), Language.ENGLISH),
-                        LocalizationUtils.getString(ruEvent.getSiteLink(), Language.RUSSIAN)),
-                extractLocaleItems(
-                        LocalizationUtils.getString(enEvent.getCity(), Language.ENGLISH),
-                        LocalizationUtils.getString(ruEvent.getCity(), Language.RUSSIAN)),
-                extractLocaleItems(
-                        LocalizationUtils.getString(enEvent.getVenueAddress(), Language.ENGLISH),
-                        LocalizationUtils.getString(ruEvent.getVenueAddress(), Language.RUSSIAN)),
-                enEvent.getYoutubeLink(),
-                enEvent.getMapCoordinates(),
-                Collections.emptyList());
+        return events.get(0);
     }
 
     /**
@@ -935,23 +919,46 @@ public class ContentfulUtils {
      * @param link          link
      * @param cityMap       map id/city
      * @param entryErrorSet set with error entries
-     * @param eventNameEn   event name
+     * @param locale        locale
+     * @param eventName     event name
      * @return city name
      */
     private static String extractCity(ContentfulLink link, Map<String, ContentfulCity> cityMap,
-                                      Set<String> entryErrorSet, String eventNameEn) {
+                                      Set<String> entryErrorSet, String locale, String eventName) {
         String entryId = link.getSys().getId();
         boolean isErrorAsset = entryErrorSet.contains(entryId);
 
         if (isErrorAsset) {
-            log.warn("Entry (city name) id {} not resolvable for '{}' event", entryId, eventNameEn);
+            log.warn("Entry (city name) id {} not resolvable for '{}' event", entryId, eventName);
             return null;
         }
 
         ContentfulCity city = cityMap.get(entryId);
         return Objects.requireNonNull(city,
-                () -> String.format("Entry (city name) id %s not found for '%s' event", entryId, eventNameEn))
-                .getFields().getCityName();
+                () -> String.format("Entry (city name) id %s not found for '%s' event", entryId, eventName))
+                .getFields().getCityName().get(locale);
+    }
+
+    /**
+     * Extracts event name.
+     *
+     * @param name   name
+     * @param locale locale
+     * @return event name
+     */
+    private static String extractEventName(String name, String locale) {
+        switch (locale) {
+            case ENGLISH_LOCALE:
+                return name
+                        .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Msc")
+                        .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " Spb");
+            case RUSSIAN_LOCALE:
+                return name
+                        .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Мск")
+                        .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " СПб");
+            default:
+                throw new IllegalArgumentException(String.format("Unknown locale: %s", locale));
+        }
     }
 
     /**
@@ -996,18 +1003,14 @@ public class ContentfulUtils {
         log.info("Locales: {}, {}", locales.size(), locales);
 
         log.info("Event types");
-
         for (String locale : locales) {
             List<EventType> eventTypes = getEventTypes(locale);
             log.info("Event types (locale: {}): {}, {}", locale, eventTypes.size(), eventTypes);
         }
 
         log.info("Events");
-
-        for (String locale : locales) {
-            List<Event> events = getEvents(locale, null, null);
-            log.info("Events (locale: {}): {}, {}", locale, events.size(), events);
-        }
+        List<Event> events = getEvents(null, null);
+        log.info("Events: {}, {}", events.size(), events);
 
         for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
             log.info("Conference space info: {}", conferenceSpaceInfo);

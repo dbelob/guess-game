@@ -2,77 +2,79 @@ package guess.domain.source.contentful.event;
 
 import guess.domain.source.contentful.ContentfulLink;
 
-public class ContentfulEventFields {
-    private String conferenceName;
-    private String eventStart;
-    private String eventEnd;
-    private String conferenceLink;
-    private ContentfulLink eventCity;
-    private String venueAddress;
-    private String youtubePlayList;
-    private String addressLink;
+import java.util.Map;
 
-    public String getConferenceName() {
+public class ContentfulEventFields {
+    private Map<String, String> conferenceName;
+    private Map<String, String> eventStart;
+    private Map<String, String> eventEnd;
+    private Map<String, String> conferenceLink;
+    private Map<String, ContentfulLink> eventCity;
+    private Map<String, String> venueAddress;
+    private Map<String, String> youtubePlayList;
+    private Map<String, String> addressLink;
+
+    public Map<String, String> getConferenceName() {
         return conferenceName;
     }
 
-    public void setConferenceName(String conferenceName) {
+    public void setConferenceName(Map<String, String> conferenceName) {
         this.conferenceName = conferenceName;
     }
 
-    public String getEventStart() {
+    public Map<String, String> getEventStart() {
         return eventStart;
     }
 
-    public void setEventStart(String eventStart) {
+    public void setEventStart(Map<String, String> eventStart) {
         this.eventStart = eventStart;
     }
 
-    public String getEventEnd() {
+    public Map<String, String> getEventEnd() {
         return eventEnd;
     }
 
-    public void setEventEnd(String eventEnd) {
+    public void setEventEnd(Map<String, String> eventEnd) {
         this.eventEnd = eventEnd;
     }
 
-    public String getConferenceLink() {
+    public Map<String, String> getConferenceLink() {
         return conferenceLink;
     }
 
-    public void setConferenceLink(String conferenceLink) {
+    public void setConferenceLink(Map<String, String> conferenceLink) {
         this.conferenceLink = conferenceLink;
     }
 
-    public ContentfulLink getEventCity() {
+    public Map<String, ContentfulLink> getEventCity() {
         return eventCity;
     }
 
-    public void setEventCity(ContentfulLink eventCity) {
+    public void setEventCity(Map<String, ContentfulLink> eventCity) {
         this.eventCity = eventCity;
     }
 
-    public String getVenueAddress() {
+    public Map<String, String> getVenueAddress() {
         return venueAddress;
     }
 
-    public void setVenueAddress(String venueAddress) {
+    public void setVenueAddress(Map<String, String> venueAddress) {
         this.venueAddress = venueAddress;
     }
 
-    public String getYoutubePlayList() {
+    public Map<String, String> getYoutubePlayList() {
         return youtubePlayList;
     }
 
-    public void setYoutubePlayList(String youtubePlayList) {
+    public void setYoutubePlayList(Map<String, String> youtubePlayList) {
         this.youtubePlayList = youtubePlayList;
     }
 
-    public String getAddressLink() {
+    public Map<String, String> getAddressLink() {
         return addressLink;
     }
 
-    public void setAddressLink(String addressLink) {
+    public void setAddressLink(Map<String, String> addressLink) {
         this.addressLink = addressLink;
     }
 }

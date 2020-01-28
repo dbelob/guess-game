@@ -1,13 +1,15 @@
 package guess.domain.source.contentful.city;
 
-public class ContentfulCityFields {
-    private String cityName;
+import java.util.Map;
 
-    public String getCityName() {
+public class ContentfulCityFields {
+    private Map<String, String> cityName;
+
+    public Map<String, String> getCityName() {
         return cityName;
     }
 
-    public void setCityName(String cityName) {
+    public void setCityName(Map<String, String> cityName) {
         this.cityName = cityName;
     }
 }
