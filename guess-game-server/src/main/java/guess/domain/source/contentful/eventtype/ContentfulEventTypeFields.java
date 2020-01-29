@@ -1,76 +1,78 @@
 package guess.domain.source.contentful.eventtype;
 
-public class ContentfulEventTypeFields {
-    private String eventName;
-    private String eventDescriptions;
-    private String siteLink;
-    private String vkLink;
-    private String twLink;
-    private String fbLink;
-    private String youtubeLink;
-    private String telegramLink;
+import java.util.Map;
 
-    public String getEventName() {
+public class ContentfulEventTypeFields {
+    private Map<String, String> eventName;
+    private Map<String, String> eventDescriptions;
+    private Map<String, String> siteLink;
+    private Map<String, String> vkLink;
+    private Map<String, String> twLink;
+    private Map<String, String> fbLink;
+    private Map<String, String> youtubeLink;
+    private Map<String, String> telegramLink;
+
+    public Map<String, String> getEventName() {
         return eventName;
     }
 
-    public void setEventName(String eventName) {
+    public void setEventName(Map<String, String> eventName) {
         this.eventName = eventName;
     }
 
-    public String getEventDescriptions() {
+    public Map<String, String> getEventDescriptions() {
         return eventDescriptions;
     }
 
-    public void setEventDescriptions(String eventDescriptions) {
+    public void setEventDescriptions(Map<String, String> eventDescriptions) {
         this.eventDescriptions = eventDescriptions;
     }
 
-    public String getSiteLink() {
+    public Map<String, String> getSiteLink() {
         return siteLink;
     }
 
-    public void setSiteLink(String siteLink) {
+    public void setSiteLink(Map<String, String> siteLink) {
         this.siteLink = siteLink;
     }
 
-    public String getVkLink() {
+    public Map<String, String> getVkLink() {
         return vkLink;
     }
 
-    public void setVkLink(String vkLink) {
+    public void setVkLink(Map<String, String> vkLink) {
         this.vkLink = vkLink;
     }
 
-    public String getTwLink() {
+    public Map<String, String> getTwLink() {
         return twLink;
     }
 
-    public void setTwLink(String twLink) {
+    public void setTwLink(Map<String, String> twLink) {
         this.twLink = twLink;
     }
 
-    public String getFbLink() {
+    public Map<String, String> getFbLink() {
         return fbLink;
     }
 
-    public void setFbLink(String fbLink) {
+    public void setFbLink(Map<String, String> fbLink) {
         this.fbLink = fbLink;
     }
 
-    public String getYoutubeLink() {
+    public Map<String, String> getYoutubeLink() {
         return youtubeLink;
     }
 
-    public void setYoutubeLink(String youtubeLink) {
+    public void setYoutubeLink(Map<String, String> youtubeLink) {
         this.youtubeLink = youtubeLink;
     }
 
-    public String getTelegramLink() {
+    public Map<String, String> getTelegramLink() {
         return telegramLink;
     }
 
-    public void setTelegramLink(String telegramLink) {
+    public void setTelegramLink(Map<String, String> telegramLink) {
         this.telegramLink = telegramLink;
     }
 }

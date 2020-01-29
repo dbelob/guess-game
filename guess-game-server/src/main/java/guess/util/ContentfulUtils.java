@@ -174,15 +174,14 @@ public class ContentfulUtils {
     /**
      * Gets event types.
      *
-     * @param locale locale
      * @return event types
      */
-    private static List<EventType> getEventTypes(String locale) {
+    public static List<EventType> getEventTypes() {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsList&select={fields}&order={fields}&limit=1000
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam("access_token", MAIN_ACCESS_TOKEN)
-                .queryParam("locale", locale)
+                .queryParam("locale", "*")
                 .queryParam("content_type", "eventsList")
                 .queryParam("select", "fields.eventName,fields.eventDescriptions,fields.siteLink,fields.vkLink,fields.twLink,fields.fbLink,fields.youtubeLink,fields.telegramLink")
                 .queryParam("order", "fields.eventName")
@@ -196,69 +195,48 @@ public class ContentfulUtils {
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .map(et -> new EventType(
-                        id.getAndDecrement(),
-                        EVENT_TYPE_NAME_CONFERENCE_MAP.get(et.getFields().getEventName().trim()),
-                        Collections.singletonList(new LocaleItem(
-                                transformLocale(locale),
-                                extractString(et.getFields().getEventName()))),
-                        null,
-                        Collections.singletonList(new LocaleItem(
-                                transformLocale(locale),
-                                extractString(et.getFields().getEventDescriptions()))),
-                        Collections.singletonList(new LocaleItem(
-                                transformLocale(locale),
-                                extractString(et.getFields().getSiteLink()))),
-                        et.getFields().getVkLink(),
-                        et.getFields().getTwLink(),
-                        et.getFields().getFbLink(),
-                        et.getFields().getYoutubeLink(),
-                        et.getFields().getTelegramLink(),
-                        Collections.emptyList()
-                ))
+                .map(et -> {
+                    Map<String, String> vkLink = et.getFields().getVkLink();
+                    Map<String, String> twLink = et.getFields().getTwLink();
+                    Map<String, String> fbLink = et.getFields().getFbLink();
+                    Map<String, String> youtubeLink = et.getFields().getYoutubeLink();
+                    Map<String, String> telegramLink = et.getFields().getTelegramLink();
+
+                    return new EventType(
+                            id.getAndDecrement(),
+                            EVENT_TYPE_NAME_CONFERENCE_MAP.get(getFirstMapValue(et.getFields().getEventName()).trim()),
+                            extractLocaleItems(
+                                    extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
+                                    extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
+                            null,
+                            extractLocaleItems(
+                                    extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
+                                    extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE))),
+                            extractLocaleItems(
+                                    extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
+                                    extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
+                            (vkLink != null) ? getFirstMapValue(vkLink) : null,
+                            (twLink != null) ? getFirstMapValue(twLink) : null,
+                            (fbLink != null) ? getFirstMapValue(fbLink) : null,
+                            (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
+                            (telegramLink != null) ? getFirstMapValue(telegramLink) : null,
+                            Collections.emptyList());
+                })
                 .collect(Collectors.toList());
     }
 
     /**
-     * Gets event types.
+     * Gets first map value.
      *
-     * @return event types
+     * @param map map
+     * @param <T> key type
+     * @param <S> value type
+     * @return first map value
      */
-    public static List<EventType> getEventTypes() {
-        List<EventType> enEventTypes = getEventTypes(ENGLISH_LOCALE);
-        List<EventType> ruEventTypes = getEventTypes(RUSSIAN_LOCALE);
-        Map<Conference, EventType> ruEventTypesMap = ruEventTypes.stream()
-                .filter(et -> et.getConference() != null)
-                .collect(Collectors.toMap(
-                        EventType::getConference,
-                        et -> et));
+    private static <T, S> S getFirstMapValue(Map<T, S> map) {
+        Map.Entry<T, S> entry = map.entrySet().iterator().next();
 
-        return enEventTypes.stream()
-                .filter(et -> et.getConference() != null)
-                .map(enEventType -> {
-                    EventType ruEventType = ruEventTypesMap.get(enEventType.getConference());
-
-                    return new EventType(
-                            enEventType.getId(),
-                            enEventType.getConference(),
-                            extractLocaleItems(
-                                    LocalizationUtils.getString(enEventType.getName(), Language.ENGLISH),
-                                    LocalizationUtils.getString(ruEventType.getName(), Language.RUSSIAN)),
-                            null,
-                            extractLocaleItems(
-                                    LocalizationUtils.getString(enEventType.getDescription(), Language.ENGLISH),
-                                    LocalizationUtils.getString(ruEventType.getDescription(), Language.RUSSIAN)),
-                            extractLocaleItems(
-                                    LocalizationUtils.getString(enEventType.getSiteLink(), Language.ENGLISH),
-                                    LocalizationUtils.getString(ruEventType.getSiteLink(), Language.RUSSIAN)),
-                            enEventType.getVkLink(),
-                            enEventType.getTwitterLink(),
-                            enEventType.getFacebookLink(),
-                            enEventType.getYoutubeLink(),
-                            enEventType.getTelegramLink(),
-                            Collections.emptyList());
-                })
-                .collect(Collectors.toList());
+        return entry.getValue();
     }
 
     /**
@@ -359,20 +337,6 @@ public class ContentfulUtils {
                 ZonedDateTime.parse(zonedDateTimeString).toInstant(),
                 ZoneId.of("Europe/Moscow"))
                 .toLocalDate();
-    }
-
-    /**
-     * Gets first map value.
-     *
-     * @param map map
-     * @param <T> key type
-     * @param <S> value type
-     * @return first map value
-     */
-    private static <T, S> S getFirstMapValue(Map<T, S> map) {
-        Map.Entry<T, S> entry = map.entrySet().iterator().next();
-
-        return entry.getValue();
     }
 
     /**
@@ -1099,13 +1063,9 @@ public class ContentfulUtils {
         List<String> locales = getLocales();
         log.info("Locales: {}, {}", locales.size(), locales);
 
-        log.info("Event types");
-        for (String locale : locales) {
-            List<EventType> eventTypes = getEventTypes(locale);
-            log.info("Event types (locale: {}): {}, {}", locale, eventTypes.size(), eventTypes);
-        }
+        List<EventType> eventTypes = getEventTypes();
+        log.info("Event types: {}, {}", eventTypes.size(), eventTypes);
 
-        log.info("Events");
         List<Event> events = getEvents(null, null);
         log.info("Events: {}, {}", events.size(), events);
 
