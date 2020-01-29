@@ -1009,31 +1009,89 @@ public class ContentfulUtils {
      */
     private static void fixEntryNotResolvableError(ConferenceSpaceInfo conferenceSpaceInfo,
                                                    Set<String> entryErrorSet, Map<String, Speaker> speakerMap) {
-        final String ENTRY_ID = "3YSoYRePW0OIeaAAkaweE6";
+        abstract class NotResolvableSpeaker {
+            private ConferenceSpaceInfo conferenceSpaceInfo;
+            private String entryId;
+
+            public NotResolvableSpeaker(ConferenceSpaceInfo conferenceSpaceInfo, String entryId) {
+                this.conferenceSpaceInfo = conferenceSpaceInfo;
+                this.entryId = entryId;
+            }
+
+            public ConferenceSpaceInfo getConferenceSpaceInfo() {
+                return conferenceSpaceInfo;
+            }
+
+            public String getEntryId() {
+                return entryId;
+            }
+
+            public abstract Speaker createSpeaker(long id);
+        }
+
+        List<NotResolvableSpeaker> notResolvableSpeakers = List.of(
+                new NotResolvableSpeaker(ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "3YSoYRePW0OIeaAAkaweE6") {
+                    @Override
+                    public Speaker createSpeaker(long id) {
+                        return new Speaker(
+                                id,
+                                "https://images.ctfassets.net/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG",
+                                Collections.singletonList(
+                                        new LocaleItem(
+                                                Language.ENGLISH.getCode(),
+                                                "Irina Shestak")),
+                                Collections.emptyList(),
+                                Collections.singletonList(
+                                        new LocaleItem(
+                                                Language.ENGLISH.getCode(),
+                                                "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.")),
+                                "_lrlna",
+                                "lrlna",
+                                false,
+                                false
+                        );
+                    }
+                },
+                new NotResolvableSpeaker(ConferenceSpaceInfo.COMMON_SPACE_INFO, "6yIC7EpG1EhejCEJDEsuqA") {
+                    @Override
+                    public Speaker createSpeaker(long id) {
+                        return new Speaker(
+                                id,
+                                "https://images.ctfassets.net/oxjq45e8ilak/4K2YaPEYekHIGiGPFRPwyf/4b45c269f40874ef46370f2ef9824dcc/Chin.jpg",
+                                Collections.singletonList(
+                                        new LocaleItem(
+                                                Language.ENGLISH.getCode(),
+                                                "Stephen Chin")),
+                                Collections.singletonList(
+                                        new LocaleItem(
+                                                Language.ENGLISH.getCode(),
+                                                "JFrog")),
+                                Collections.singletonList(
+                                        new LocaleItem(
+                                                Language.ENGLISH.getCode(),
+                                                "Stephen Chin is Senior Director of Developer Relations at JFrog, author of Raspberry Pi with Java, The Definitive Guide to Modern Client Development, and Pro JavaFX Platform. He has keynoted numerous Java conferences around the world including Oracle Code One (formerly JavaOne), where he is an 8-time Rock Star Award recipient. Stephen is an avid motorcyclist who has done evangelism tours in Europe, Japan, and Brazil, interviewing hackers in their natural habitat and posting the videos on <a href=\"http://nighthacking.com/\" target=\"_blank\">http://nighthacking.com/</a>. When he is not traveling, he enjoys teaching kids how to do embedded and robot programming together with his teenage daughter.")),
+                                "steveonjava",
+                                "steveonjava",
+                                true,
+                                false
+                        );
+                    }
+                }
+        );
+
         long id = speakerMap.values().stream()
                 .map(Speaker::getId)
                 .min(Long::compare)
                 .orElse(0L);
 
-        if (ConferenceSpaceInfo.HOLY_JS_SPACE_INFO.equals(conferenceSpaceInfo) && !speakerMap.containsKey(ENTRY_ID) && entryErrorSet.contains(ENTRY_ID)) {
-            speakerMap.put(ENTRY_ID, new Speaker(
-                    --id,
-                    "https://images.ctfassets.net/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG",
-                    Collections.singletonList(
-                            new LocaleItem(
-                                    Language.ENGLISH.getCode(),
-                                    "Irina Shestak")),
-                    Collections.emptyList(),
-                    Collections.singletonList(
-                            new LocaleItem(
-                                    Language.ENGLISH.getCode(),
-                                    "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.")),
-                    "_lrlna",
-                    "lrlna",
-                    false,
-                    false
-            ));
-            entryErrorSet.remove(ENTRY_ID);
+        for (NotResolvableSpeaker notResolvableSpeaker : notResolvableSpeakers) {
+            String entryId = notResolvableSpeaker.getEntryId();
+
+            if (notResolvableSpeaker.getConferenceSpaceInfo().equals(conferenceSpaceInfo) &&
+                    !speakerMap.containsKey(entryId) && entryErrorSet.contains(entryId)) {
+                speakerMap.put(entryId, notResolvableSpeaker.createSpeaker(--id));
+                entryErrorSet.remove(entryId);
+            }
         }
     }
 
