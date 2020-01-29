@@ -98,9 +98,6 @@ public class ContentfulUtils {
 
     private static final String ENGLISH_LOCALE = "en";
     private static final String RUSSIAN_LOCALE = "ru-RU";
-    private static final Map<String, String> LOCALE_CODE_MAP = new HashMap<>() {{
-        put(RUSSIAN_LOCALE, Language.RUSSIAN.getCode());
-    }};
 
     private static final Map<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new HashMap<>() {{
         put(Conference.JOKER, ConferenceSpaceInfo.COMMON_SPACE_INFO);
@@ -514,16 +511,6 @@ public class ContentfulUtils {
         ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
 
         return getTalks(conferenceSpaceInfo, conferenceCode);
-    }
-
-    /**
-     * Transforms locale code.
-     *
-     * @param locale source locale code
-     * @return result locale code
-     */
-    private static String transformLocale(String locale) {
-        return LOCALE_CODE_MAP.getOrDefault(locale, locale);
     }
 
     /**
