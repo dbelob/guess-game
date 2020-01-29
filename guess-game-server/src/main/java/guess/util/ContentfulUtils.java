@@ -865,13 +865,13 @@ public class ContentfulUtils {
         if ((enText != null) && !enText.isEmpty()) {
             localeItems.add(new LocaleItem(
                     Language.ENGLISH.getCode(),
-                    extractString(enText)));
+                    enText));
         }
 
         if ((ruText != null) && !ruText.isEmpty()) {
             localeItems.add(new LocaleItem(
                     Language.RUSSIAN.getCode(),
-                    extractString(ruText)));
+                    ruText));
         }
 
         return localeItems;

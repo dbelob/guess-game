@@ -126,7 +126,7 @@ public class YamlUtils {
 
             questionSets.add(new QuestionSet(
                     eventType.getId(),
-                    eventType.getName(),
+                    createEventTypeNameWithPrefix(eventType),
                     eventType.getLogoFileName(),
                     QuestionUtils.removeDuplicatesById(speakerQuestions),
                     QuestionUtils.removeDuplicatesById(talkQuestions)));
@@ -136,6 +136,36 @@ public class YamlUtils {
         Unsafe.replaceSpeakerQuestions(questionSets, sourceInformation.getSpeakers());
 
         return questionSets;
+    }
+
+    /**
+     * Creates name with prefix.
+     *
+     * @param eventType event type
+     * @return name with prefix
+     */
+    private static List<LocaleItem> createEventTypeNameWithPrefix(EventType eventType) {
+        final String CONFERENCES_EVENT_TYPE_PREFIX = "conferencesEventTypePrefix";
+        final String MEETUPS_EVENT_TYPE_PREFIX = "meetupsEventTypePrefix";
+
+        List<LocaleItem> localeItems = new ArrayList<>();
+        String resourceKey = (eventType.getConference() != null) ? CONFERENCES_EVENT_TYPE_PREFIX : MEETUPS_EVENT_TYPE_PREFIX;
+        String enText = LocalizationUtils.getString(eventType.getName(), Language.ENGLISH);
+        String ruText = LocalizationUtils.getString(eventType.getName(), Language.RUSSIAN);
+
+        if ((enText != null) && !enText.isEmpty()) {
+            localeItems.add(new LocaleItem(
+                    Language.ENGLISH.getCode(),
+                    String.format(LocalizationUtils.getResourceString(resourceKey, Language.ENGLISH), enText)));
+        }
+
+        if ((ruText != null) && !ruText.isEmpty()) {
+            localeItems.add(new LocaleItem(
+                    Language.RUSSIAN.getCode(),
+                    String.format(LocalizationUtils.getResourceString(resourceKey, Language.RUSSIAN), ruText)));
+        }
+
+        return localeItems;
     }
 
     /**

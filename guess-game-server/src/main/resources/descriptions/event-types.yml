@@ -2,93 +2,93 @@ eventTypes:
   - id: 0
     conference: CPP_RUSSIA
     name:
-      - {language: en, text: "Conferences — C++ Russia"}
-      - {language: ru, text: "Конференции — C++ Russia"}
+      - {language: en, text: "C++ Russia"}
+      - {language: ru, text: "C++ Russia"}
     logoFileName: cpprussia.jpg
   - id: 1
     conference: DEV_OOPS
     name:
-      - {language: en, text: "Conferences — DevOops"}
-      - {language: ru, text: "Конференции — DevOops"}
+      - {language: en, text: "DevOops"}
+      - {language: ru, text: "DevOops"}
     logoFileName: devoops.jpg
   - id: 2
     conference: DOT_NEXT
     name:
-      - {language: en, text: "Conferences — DotNext"}
-      - {language: ru, text: "Конференции — DotNext"}
+      - {language: en, text: "DotNext"}
+      - {language: ru, text: "DotNext"}
     logoFileName: dotnext.jpg
   - id: 3
     conference: HEISENBUG
     name:
-      - {language: en, text: "Conferences — Heisenbug"}
-      - {language: ru, text: "Конференции — Heisenbug"}
+      - {language: en, text: "Heisenbug"}
+      - {language: ru, text: "Heisenbug"}
     logoFileName: heisenbug.jpg
   - id: 4
     conference: HOLY_JS
     name:
-      - {language: en, text: "Conferences — HolyJS"}
-      - {language: ru, text: "Конференции — HolyJS"}
+      - {language: en, text: "HolyJS"}
+      - {language: ru, text: "HolyJS"}
     logoFileName: holyjs.jpg
   - id: 5
     conference: HYDRA
     name:
-      - {language: en, text: "Conferences — Hydra"}
-      - {language: ru, text: "Конференции — Hydra"}
+      - {language: en, text: "Hydra"}
+      - {language: ru, text: "Hydra"}
     logoFileName: hydra.jpg
   - id: 6
     conference: JBREAK
     name:
-      - {language: en, text: "Conferences — JBreak"}
-      - {language: ru, text: "Конференции — JBreak"}
+      - {language: en, text: "JBreak"}
+      - {language: ru, text: "JBreak"}
     logoFileName: jbreak.jpg
   - id: 7
     conference: JPOINT
     name:
-      - {language: en, text: "Conferences — JPoint"}
-      - {language: ru, text: "Конференции — JPoint"}
+      - {language: en, text: "JPoint"}
+      - {language: ru, text: "JPoint"}
     logoFileName: jpoint.jpg
   - id: 8
     conference: JOKER
     name:
-      - {language: en, text: "Conferences — Joker"}
-      - {language: ru, text: "Конференции — Joker"}
+      - {language: en, text: "Joker"}
+      - {language: ru, text: "Joker"}
     logoFileName: jokerconf.jpg
   - id: 9
     conference: MOBIUS
     name:
-      - {language: en, text: "Conferences — Mobius"}
-      - {language: ru, text: "Конференции — Mobius"}
+      - {language: en, text: "Mobius"}
+      - {language: ru, text: "Mobius"}
     logoFileName: mobius.jpg
   - id: 10
     conference: SPTDC
     name:
-      - {language: en, text: "Conferences — SPTDC"}
-      - {language: ru, text: "Конференции — SPTDC"}
+      - {language: en, text: "SPTDC"}
+      - {language: ru, text: "SPTDC"}
     logoFileName: sptdc.jpg
   - id: 11
     conference: SMART_DATA
     name:
-      - {language: en, text: "Conferences — SmartData"}
-      - {language: ru, text: "Конференции — SmartData"}
+      - {language: en, text: "SmartData"}
+      - {language: ru, text: "SmartData"}
     logoFileName: smartdata.jpg
   - id: 12
     conference: TECH_TRAIN
     name:
-      - {language: en, text: "Conferences — TechTrain"}
-      - {language: ru, text: "Конференции — TechTrain"}
+      - {language: en, text: "TechTrain"}
+      - {language: ru, text: "TechTrain"}
     logoFileName: techtrain.jpg
   - id: 13
     name:
-      - {language: en, text: "Meetups — JUG.MSK"}
-      - {language: ru, text: "Митапы — JUG.MSK"}
+      - {language: en, text: "JUG.MSK"}
+      - {language: ru, text: "JUG.MSK"}
     logoFileName: jugmsk.jpg
   - id: 14
     name:
-      - {language: en, text: "Meetups — JUG.ru"}
-      - {language: ru, text: "Митапы — JUG.ru"}
+      - {language: en, text: "JUG.ru"}
+      - {language: ru, text: "JUG.ru"}
     logoFileName: jugru.jpg
   - id: 15
     name:
-      - {language: en, text: "Meetups — JUGNsk"}
-      - {language: ru, text: "Митапы — JUGNsk"}
+      - {language: en, text: "JUGNsk"}
+      - {language: ru, text: "JUGNsk"}
     logoFileName: jugnsk.jpg
