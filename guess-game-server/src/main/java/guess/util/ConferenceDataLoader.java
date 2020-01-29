@@ -23,7 +23,9 @@ public class ConferenceDataLoader {
      * Loads all conference event types.
      */
     private static void loadEventTypes() {
-        List<EventType> eventTypes = ContentfulUtils.getEventTypes();
+        List<EventType> eventTypes = ContentfulUtils.getEventTypes().stream()
+                .filter(et -> et.getConference() != null)
+                .collect(Collectors.toList());
 
         log.info("Event types: {}", eventTypes.size());
         eventTypes.forEach(
