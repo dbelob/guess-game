@@ -1046,6 +1046,34 @@ public class ContentfulUtils {
         }
     }
 
+    /**
+     * Indicates the need to update event type.
+     *
+     * @param a first event type
+     * @param b second event type
+     * @return {@code true} if need to update, {@code false} otherwise
+     */
+    public static boolean needUpdate(EventType a, EventType b) {
+        return (a.getId() != b.getId()) ||
+                (a.getConference() != b.getConference()) ||
+                !equals(a.getName(), b.getName()) ||
+                !equals(a.getDescription(), b.getDescription()) ||
+                !equals(a.getSiteLink(), b.getSiteLink()) ||
+                !equals(a.getVkLink(), b.getVkLink()) ||
+                !equals(a.getTwitterLink(), b.getTwitterLink()) ||
+                !equals(a.getFacebookLink(), b.getFacebookLink()) ||
+                !equals(a.getYoutubeLink(), b.getYoutubeLink()) ||
+                !equals(a.getTelegramLink(), b.getTelegramLink());
+    }
+
+    private static boolean equals(String a, String b) {
+        return Objects.equals(a, b);
+    }
+
+    private static <T> boolean equals(List<T> a, List<T> b) {
+        return (a.containsAll(b) && b.containsAll(a));
+    }
+
     public static void main(String[] args) {
         List<String> locales = getLocales();
         log.info("Locales: {}, {}", locales.size(), locales);

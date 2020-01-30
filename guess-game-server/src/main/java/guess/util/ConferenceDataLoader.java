@@ -9,8 +9,11 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 /**
@@ -22,22 +25,84 @@ public class ConferenceDataLoader {
     /**
      * Loads all conference event types.
      */
-    private static void loadEventTypes() {
-        List<EventType> eventTypes = ContentfulUtils.getEventTypes().stream()
+    private static void loadEventTypes() throws IOException, SpeakerDuplicatedException {
+        // Read event types from resource files
+        SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
+        List<EventType> resourceEventTypes = resourceSourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference() != null)
                 .collect(Collectors.toList());
+        log.info("Event types (resource files): {}", resourceEventTypes.size());
 
-        log.info("Event types: {}", eventTypes.size());
-        eventTypes.forEach(
-                et -> log.info("Event type: conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
-                        et.getConference(),
-                        LocalizationUtils.getString(et.getName(), Language.ENGLISH),
-                        LocalizationUtils.getString(et.getName(), Language.RUSSIAN),
-                        LocalizationUtils.getString(et.getSiteLink(), Language.ENGLISH),
-                        LocalizationUtils.getString(et.getSiteLink(), Language.RUSSIAN))
+        // Read event types from Contentful
+        List<EventType> contentfulEventTypes = ContentfulUtils.getEventTypes().stream()
+                .filter(et -> et.getConference() != null)
+                .collect(Collectors.toList());
+        log.info("Event types (Contentful): {}", contentfulEventTypes.size());
+
+        List<EventType> eventTypesToAppend = new ArrayList<>();
+        List<EventType> eventTypesToUpdate = new ArrayList<>();
+        Map<Conference, EventType> resourceEventTypeMap = resourceEventTypes.stream()
+                .collect(Collectors.toMap(
+                        EventType::getConference,
+                        et -> et));
+        AtomicLong id = new AtomicLong(
+                resourceSourceInformation.getEventTypes().stream()
+                        .map(EventType::getId)
+                        .max(Long::compare)
+                        .orElse(-1L));
+
+        contentfulEventTypes.forEach(
+                et -> {
+                    EventType resourceEventType = resourceEventTypeMap.get(et.getConference());
+
+                    if (resourceEventType == null) {
+                        // Event type not exists
+                        et.setId(id.incrementAndGet());
+                        eventTypesToAppend.add(et);
+                    } else {
+                        // Event type exists
+                        et.setId(resourceEventType.getId());
+                        if (ContentfulUtils.needUpdate(resourceEventType, et)) {
+                            // Event type need to update
+                            eventTypesToUpdate.add(et);
+                        }
+                    }
+                }
         );
 
-        //TODO: implement comparing and YAML file saving
+        if (eventTypesToAppend.isEmpty() && eventTypesToUpdate.isEmpty()) {
+            log.info("All event types are up-to-date");
+        } else {
+            if (!eventTypesToAppend.isEmpty()) {
+                log.info("Event types (to append resource files): {}", eventTypesToAppend.size());
+                eventTypesToAppend.forEach(
+                        et -> log.info("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
+                                et.getId(),
+                                et.getConference(),
+                                LocalizationUtils.getString(et.getName(), Language.ENGLISH),
+                                LocalizationUtils.getString(et.getName(), Language.RUSSIAN),
+                                LocalizationUtils.getString(et.getSiteLink(), Language.ENGLISH),
+                                LocalizationUtils.getString(et.getSiteLink(), Language.RUSSIAN)
+                        )
+                );
+            }
+
+            if (!eventTypesToUpdate.isEmpty()) {
+                log.info("Event types (to update resource files): {}", eventTypesToUpdate.size());
+                eventTypesToUpdate.forEach(
+                        et -> log.info("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
+                                et.getId(),
+                                et.getConference(),
+                                LocalizationUtils.getString(et.getName(), Language.ENGLISH),
+                                LocalizationUtils.getString(et.getName(), Language.RUSSIAN),
+                                LocalizationUtils.getString(et.getSiteLink(), Language.ENGLISH),
+                                LocalizationUtils.getString(et.getSiteLink(), Language.RUSSIAN)
+                        )
+                );
+            }
+
+            //TODO: implement file saving
+        }
     }
 
     /**
@@ -54,13 +119,11 @@ public class ConferenceDataLoader {
 
         // Read event types, events, speakers, talks from resource files
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
-
         Optional<EventType> resourceOptionalEventType = resourceSourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference().equals(conference))
                 .findFirst();
         EventType resourceEventType = resourceOptionalEventType
                 .orElse(null);
-
         Event resourceEvent = resourceOptionalEventType
                 .flatMap(et -> et.getEvents().stream()
                         .filter(e -> e.getStartDate().equals(startDate))
