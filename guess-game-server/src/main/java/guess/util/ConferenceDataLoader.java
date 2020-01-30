@@ -31,13 +31,13 @@ public class ConferenceDataLoader {
         List<EventType> resourceEventTypes = resourceSourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference() != null)
                 .collect(Collectors.toList());
-        log.info("Event types (resource files): {}", resourceEventTypes.size());
+        log.info("Event types (in resource files): {}", resourceEventTypes.size());
 
         // Read event types from Contentful
         List<EventType> contentfulEventTypes = ContentfulUtils.getEventTypes().stream()
                 .filter(et -> et.getConference() != null)
                 .collect(Collectors.toList());
-        log.info("Event types (Contentful): {}", contentfulEventTypes.size());
+        log.info("Event types (in Contentful): {}", contentfulEventTypes.size());
 
         List<EventType> eventTypesToAppend = new ArrayList<>();
         List<EventType> eventTypesToUpdate = new ArrayList<>();
@@ -58,10 +58,13 @@ public class ConferenceDataLoader {
                     if (resourceEventType == null) {
                         // Event type not exists
                         et.setId(id.incrementAndGet());
+
                         eventTypesToAppend.add(et);
                     } else {
                         // Event type exists
                         et.setId(resourceEventType.getId());
+                        et.setLogoFileName(resourceEventType.getLogoFileName());
+
                         if (ContentfulUtils.needUpdate(resourceEventType, et)) {
                             // Event type need to update
                             eventTypesToUpdate.add(et);
@@ -85,6 +88,8 @@ public class ConferenceDataLoader {
                                 LocalizationUtils.getString(et.getSiteLink(), Language.RUSSIAN)
                         )
                 );
+
+                YamlUtils.dump(eventTypesToAppend, "event-types-to-append.yml");
             }
 
             if (!eventTypesToUpdate.isEmpty()) {
@@ -99,9 +104,9 @@ public class ConferenceDataLoader {
                                 LocalizationUtils.getString(et.getSiteLink(), Language.RUSSIAN)
                         )
                 );
-            }
 
-            //TODO: implement file saving
+                YamlUtils.dump(eventTypesToUpdate, "event-types-to-update.yml");
+            }
         }
     }
 

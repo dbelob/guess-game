@@ -8,6 +8,13 @@ import java.util.List;
 public class EventTypes {
     private List<EventType> eventTypes;
 
+    public EventTypes() {
+    }
+
+    public EventTypes(List<EventType> eventTypes) {
+        this.eventTypes = eventTypes;
+    }
+
     public List<EventType> getEventTypes() {
         return eventTypes;
     }

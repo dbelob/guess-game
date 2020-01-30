@@ -16,6 +16,8 @@ import org.yaml.snakeyaml.nodes.Node;
 import org.yaml.snakeyaml.nodes.NodeId;
 import org.yaml.snakeyaml.nodes.ScalarNode;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
@@ -50,6 +52,7 @@ public class YamlUtils {
     private static final Logger log = LoggerFactory.getLogger(YamlUtils.class);
 
     private static String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
+    private static final String OUTPUT_DIRECTORY_NAME = "output";
 
     /**
      * Reads source information from resource files.
@@ -311,5 +314,26 @@ public class YamlUtils {
         }
 
         return false;
+    }
+
+    /**
+     * Dumps event types to file.
+     *
+     * @param eventTypes event types
+     * @param filename   filename
+     * @throws IOException if file creation occurs
+     */
+    public static void dump(List<EventType> eventTypes, String filename) throws IOException {
+        String fullFilename = String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename);
+        File file = new File(fullFilename);
+        file.getParentFile().mkdirs();
+        FileWriter writer = new FileWriter(file);
+
+        //TODO: keep field order
+        //TODO: use remplate (?)
+        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
+        eventTypesYaml.dump(new EventTypes(eventTypes), writer);
+
+        log.info("File '{}' saved", fullFilename);
     }
 }
