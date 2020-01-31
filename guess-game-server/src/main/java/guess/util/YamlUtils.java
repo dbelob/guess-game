@@ -10,11 +10,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
+import org.yaml.snakeyaml.introspector.Property;
 import org.yaml.snakeyaml.nodes.Node;
 import org.yaml.snakeyaml.nodes.NodeId;
 import org.yaml.snakeyaml.nodes.ScalarNode;
+import org.yaml.snakeyaml.representer.Representer;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -329,9 +332,39 @@ public class YamlUtils {
         file.getParentFile().mkdirs();
         FileWriter writer = new FileWriter(file);
 
-        //TODO: keep field order
         //TODO: use remplate (?)
-        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
+        DumperOptions options = new DumperOptions();
+//        options.setDefaultScalarStyle(DumperOptions.ScalarStyle.DOUBLE_QUOTED);
+        options.setIndent(4);
+        options.setIndicatorIndent(2);
+        options.setWidth(120);
+
+        List<String> propertyNames = List.of("id", "conference", "logoFileName", "name", "description",
+                "siteLink", "vkLink", "twitterLink", "facebookLink", "youtubeLink", "telegramLink");
+        Representer representer = new Representer() {
+            @Override
+            protected Set<Property> getProperties(Class<? extends Object> type) {
+                Set<Property> originalProperties = super.getProperties(type);
+                if (type.equals(EventType.class)) {
+                    Map<String, Property> propertyMap = originalProperties.stream()
+                            .collect(Collectors.toMap(
+                                    Property::getName,
+                                    p -> p));
+
+                    return propertyNames.stream()
+                            .filter(propertyMap::containsKey)
+                            .map(propertyMap::get)
+                            .collect(Collectors.toCollection(LinkedHashSet::new));
+                } else {
+                    return originalProperties;
+                }
+            }
+        };
+
+        Yaml eventTypesYaml = new Yaml(
+                new Constructor(EventTypes.class),
+                representer,
+                options);
         eventTypesYaml.dump(new EventTypes(eventTypes), writer);
 
         log.info("File '{}' saved", fullFilename);

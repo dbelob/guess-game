@@ -79,7 +79,7 @@ public class ConferenceDataLoader {
             if (!eventTypesToAppend.isEmpty()) {
                 log.info("Event types (to append resource files): {}", eventTypesToAppend.size());
                 eventTypesToAppend.forEach(
-                        et -> log.info("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
+                        et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
                                 et.getId(),
                                 et.getConference(),
                                 LocalizationUtils.getString(et.getName(), Language.ENGLISH),
@@ -95,7 +95,7 @@ public class ConferenceDataLoader {
             if (!eventTypesToUpdate.isEmpty()) {
                 log.info("Event types (to update resource files): {}", eventTypesToUpdate.size());
                 eventTypesToUpdate.forEach(
-                        et -> log.info("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
+                        et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
                                 et.getId(),
                                 et.getConference(),
                                 LocalizationUtils.getString(et.getName(), Language.ENGLISH),
@@ -137,7 +137,7 @@ public class ConferenceDataLoader {
 
         // Read event from Contentful
         Event contentfulEvent = ContentfulUtils.getEvent(conference, startDate);
-        log.info("Event: nameEn: {}, nameRu: {}, startDate: {}, endDate: {}",
+        log.debug("Event: nameEn: {}, nameRu: {}, startDate: {}, endDate: {}",
                 LocalizationUtils.getString(contentfulEvent.getName(), Language.ENGLISH),
                 LocalizationUtils.getString(contentfulEvent.getName(), Language.RUSSIAN),
                 contentfulEvent.getStartDate(), contentfulEvent.getEndDate());
@@ -146,7 +146,7 @@ public class ConferenceDataLoader {
         List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode);
         log.info("Talks: {}", contentfulTalks.size());
         contentfulTalks.forEach(
-                t -> log.info("Talk: nameEn: '{}', name: '{}'",
+                t -> log.debug("Talk: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(t.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
         );
@@ -158,7 +158,7 @@ public class ConferenceDataLoader {
                 .collect(Collectors.toList());
         log.info("Speakers: {}", contentfulSpeakers.size());
         contentfulSpeakers.forEach(
-                s -> log.info("Speaker: nameEn: '{}', name: '{}'",
+                s -> log.debug("Speaker: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
