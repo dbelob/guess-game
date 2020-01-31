@@ -17,6 +17,8 @@ import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 import org.yaml.snakeyaml.introspector.Property;
+import org.yaml.snakeyaml.nodes.NodeTuple;
+import org.yaml.snakeyaml.nodes.Tag;
 import org.yaml.snakeyaml.representer.Representer;
 
 import java.io.File;
@@ -325,7 +327,19 @@ public class YamlUtils {
         );
         Representer representer = new Representer() {
             @Override
+            protected NodeTuple representJavaBeanProperty(Object javaBean, Property property,
+                                                          Object propertyValue, Tag customTag) {
+                // Skip fields with null
+                if (propertyValue != null) {
+                    return super.representJavaBeanProperty(javaBean, property, propertyValue, customTag);
+                } else {
+                    return null;
+                }
+            }
+
+            @Override
             protected Set<Property> getProperties(Class<?> type) {
+                // Filter and sort fields
                 Set<Property> originalProperties = super.getProperties(type);
                 Map<String, Property> propertyMap = originalProperties.stream()
                         .collect(Collectors.toMap(
