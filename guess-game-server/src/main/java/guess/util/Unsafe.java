@@ -6,6 +6,7 @@ import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Speaker;
 import guess.domain.source.Speakers;
+import guess.util.yaml.YamlUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
@@ -29,13 +30,13 @@ import java.util.stream.Collectors;
  * </ol>
  */
 //TODO: delete
-class Unsafe {
+public class Unsafe {
     private static final Logger log = LoggerFactory.getLogger(Unsafe.class);
 
     private static String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
     private static String QUESTIONS_DIRECTORY_NAME = "questions";
 
-    static void replaceSpeakerQuestions(List<QuestionSet> questionSets, List<Speaker> speakers) throws IOException {
+    public static void replaceSpeakerQuestions(List<QuestionSet> questionSets, List<Speaker> speakers) throws IOException {
         Map<String, Speaker> speakerMap = YamlUtils.listToMap(speakers, Speaker::getFileName);
         List<QuestionSet> speakerQuestionSets = readSpeakerQuestionSets(speakerMap);
         Map<Long, QuestionSet> speakerQuestionSetMap = YamlUtils.listToMap(speakerQuestionSets, QuestionSet::getId);

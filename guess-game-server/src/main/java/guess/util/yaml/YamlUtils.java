@@ -1,4 +1,4 @@
-package guess.util;
+package guess.util.yaml;
 
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Language;
@@ -6,6 +6,9 @@ import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.*;
+import guess.util.LocalizationUtils;
+import guess.util.QuestionUtils;
+import guess.util.Unsafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
@@ -14,39 +17,14 @@ import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 import org.yaml.snakeyaml.introspector.Property;
-import org.yaml.snakeyaml.nodes.Node;
-import org.yaml.snakeyaml.nodes.NodeId;
-import org.yaml.snakeyaml.nodes.ScalarNode;
 import org.yaml.snakeyaml.representer.Representer;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
-/**
- * Constructor with LocalDate support.
- */
-class LocalDateYamlConstructor extends Constructor {
-    LocalDateYamlConstructor(Class<?> theRoot) {
-        super(theRoot);
-
-        this.yamlClassConstructors.put(NodeId.scalar, new LocalDateConstructor());
-    }
-
-    private class LocalDateConstructor extends ConstructScalar {
-        public Object construct(Node node) {
-            if (node.getType().equals(LocalDate.class)) {
-                return LocalDate.parse(((ScalarNode) node).getValue());
-            } else {
-                return super.construct(node);
-            }
-        }
-    }
-}
 
 /**
  * YAML utility methods.
@@ -326,7 +304,7 @@ public class YamlUtils {
      * @param filename   filename
      * @throws IOException if file creation occurs
      */
-    public static void dump(List<EventType> eventTypes, String filename) throws IOException {
+    public static void dump(List<EventType> eventTypes, String filename) throws IOException, NoSuchFieldException {
         String fullFilename = String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename);
         File file = new File(fullFilename);
         file.getParentFile().mkdirs();
@@ -339,25 +317,31 @@ public class YamlUtils {
         options.setIndicatorIndent(2);
         options.setWidth(120);
 
-        List<String> propertyNames = List.of("id", "conference", "logoFileName", "name", "description",
-                "siteLink", "vkLink", "twitterLink", "facebookLink", "youtubeLink", "telegramLink");
+        List<PropertyMatcher> propertyMatchers = List.of(
+                new PropertyMatcher(List.of("id", "conference", "logoFileName", "name", "description", "siteLink",
+                        "vkLink", "twitterLink", "facebookLink", "youtubeLink", "telegramLink"),
+                        EventType.class),
+                new PropertyMatcher(List.of("language", "text"), LocaleItem.class)
+        );
         Representer representer = new Representer() {
             @Override
-            protected Set<Property> getProperties(Class<? extends Object> type) {
+            protected Set<Property> getProperties(Class<?> type) {
                 Set<Property> originalProperties = super.getProperties(type);
-                if (type.equals(EventType.class)) {
-                    Map<String, Property> propertyMap = originalProperties.stream()
-                            .collect(Collectors.toMap(
-                                    Property::getName,
-                                    p -> p));
+                Map<String, Property> propertyMap = originalProperties.stream()
+                        .collect(Collectors.toMap(
+                                Property::getName,
+                                p -> p));
 
-                    return propertyNames.stream()
-                            .filter(propertyMap::containsKey)
-                            .map(propertyMap::get)
-                            .collect(Collectors.toCollection(LinkedHashSet::new));
-                } else {
-                    return originalProperties;
+                for (PropertyMatcher propertyMatcher : propertyMatchers) {
+                    if (type.equals(propertyMatcher.getClazz())) {
+                        return propertyMatcher.getPropertyNames().stream()
+                                .filter(propertyMap::containsKey)
+                                .map(propertyMap::get)
+                                .collect(Collectors.toCollection(LinkedHashSet::new));
+                    }
                 }
+
+                return originalProperties;
             }
         };
 

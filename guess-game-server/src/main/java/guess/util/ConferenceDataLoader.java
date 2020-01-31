@@ -4,6 +4,7 @@ import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.*;
+import guess.util.yaml.YamlUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +26,7 @@ public class ConferenceDataLoader {
     /**
      * Loads all conference event types.
      */
-    private static void loadEventTypes() throws IOException, SpeakerDuplicatedException {
+    private static void loadEventTypes() throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         // Read event types from resource files
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
         List<EventType> resourceEventTypes = resourceSourceInformation.getEventTypes().stream()
@@ -166,7 +167,7 @@ public class ConferenceDataLoader {
         //TODO: implement comparing and YAML file saving
     }
 
-    public static void main(String[] args) throws IOException, SpeakerDuplicatedException {
+    public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
 //        loadEventTypes();
 
         // 2016

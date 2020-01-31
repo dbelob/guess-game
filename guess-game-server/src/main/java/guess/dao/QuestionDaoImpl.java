@@ -9,7 +9,7 @@ import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.Event;
 import guess.util.QuestionUtils;
-import guess.util.YamlUtils;
+import guess.util.yaml.YamlUtils;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
