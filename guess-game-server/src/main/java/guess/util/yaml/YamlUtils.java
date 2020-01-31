@@ -312,7 +312,6 @@ public class YamlUtils {
         file.getParentFile().mkdirs();
         FileWriter writer = new FileWriter(file);
 
-        //TODO: use remplate (?)
         DumperOptions options = new DumperOptions();
 //        options.setDefaultScalarStyle(DumperOptions.ScalarStyle.DOUBLE_QUOTED);
         options.setIndent(4);
@@ -358,6 +357,7 @@ public class YamlUtils {
                 return originalProperties;
             }
         };
+        representer.addClassTag(EventTypes.class, Tag.MAP);
 
         Yaml eventTypesYaml = new Yaml(
                 new Constructor(EventTypes.class),
