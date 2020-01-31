@@ -16,10 +16,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
-import org.yaml.snakeyaml.introspector.Property;
-import org.yaml.snakeyaml.nodes.NodeTuple;
 import org.yaml.snakeyaml.nodes.Tag;
-import org.yaml.snakeyaml.representer.Representer;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -34,7 +31,7 @@ import java.util.stream.Collectors;
 public class YamlUtils {
     private static final Logger log = LoggerFactory.getLogger(YamlUtils.class);
 
-    private static String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
+    private static final String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
     private static final String OUTPUT_DIRECTORY_NAME = "output";
 
     /**
@@ -309,7 +306,14 @@ public class YamlUtils {
     public static void dump(List<EventType> eventTypes, String filename) throws IOException, NoSuchFieldException {
         String fullFilename = String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename);
         File file = new File(fullFilename);
-        file.getParentFile().mkdirs();
+        File parentFile = file.getParentFile();
+
+        if (!parentFile.exists()) {
+            if (!parentFile.mkdirs()) {
+                throw new IOException(String.format("Creation error for '%s' directory", parentFile.getAbsolutePath()));
+            }
+        }
+
         FileWriter writer = new FileWriter(file);
 
         DumperOptions options = new DumperOptions();
@@ -324,39 +328,7 @@ public class YamlUtils {
                         EventType.class),
                 new PropertyMatcher(List.of("language", "text"), LocaleItem.class)
         );
-        Representer representer = new Representer() {
-            @Override
-            protected NodeTuple representJavaBeanProperty(Object javaBean, Property property,
-                                                          Object propertyValue, Tag customTag) {
-                // Skip fields with null
-                if (propertyValue != null) {
-                    return super.representJavaBeanProperty(javaBean, property, propertyValue, customTag);
-                } else {
-                    return null;
-                }
-            }
-
-            @Override
-            protected Set<Property> getProperties(Class<?> type) {
-                // Filter and sort fields
-                Set<Property> originalProperties = super.getProperties(type);
-                Map<String, Property> propertyMap = originalProperties.stream()
-                        .collect(Collectors.toMap(
-                                Property::getName,
-                                p -> p));
-
-                for (PropertyMatcher propertyMatcher : propertyMatchers) {
-                    if (type.equals(propertyMatcher.getClazz())) {
-                        return propertyMatcher.getPropertyNames().stream()
-                                .filter(propertyMap::containsKey)
-                                .map(propertyMap::get)
-                                .collect(Collectors.toCollection(LinkedHashSet::new));
-                    }
-                }
-
-                return originalProperties;
-            }
-        };
+        CustomRepresenter representer = new CustomRepresenter(propertyMatchers);
         representer.addClassTag(EventTypes.class, Tag.MAP);
 
         Yaml eventTypesYaml = new Yaml(
