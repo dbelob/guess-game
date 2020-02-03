@@ -332,7 +332,7 @@ public class YamlUtils {
         CustomRepresenter representer = new CustomRepresenter(propertyMatchers);
         representer.addClassTag(items.getClass(), Tag.MAP);
 
-        Yaml eventTypesYaml = new Yaml(
+        CustomYaml eventTypesYaml = new CustomYaml(
                 new Constructor(items.getClass()),
                 representer,
                 options);

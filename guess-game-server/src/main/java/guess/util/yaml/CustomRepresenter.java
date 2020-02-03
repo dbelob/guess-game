@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Custom SnakeYAML representer.
+ * Custom SnakeYAML representer class.
  */
 public class CustomRepresenter extends Representer {
     private final List<PropertyMatcher> propertyMatchers;
