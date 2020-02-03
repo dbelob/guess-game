@@ -297,15 +297,15 @@ public class YamlUtils {
     }
 
     /**
-     * Dumps event types to file.
+     * Dumps items to file.
      *
-     * @param eventTypes event types
-     * @param filename   filename
-     * @throws IOException if file creation occurs
+     * @param items    items
+     * @param filename filename
+     * @throws IOException          if file creation occurs
+     * @throws NoSuchFieldException if field name is invalid
      */
-    public static void dump(List<EventType> eventTypes, String filename) throws IOException, NoSuchFieldException {
-        String fullFilename = String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename);
-        File file = new File(fullFilename);
+    public static <T> void dump(T items, String filename) throws IOException, NoSuchFieldException {
+        File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
         File parentFile = file.getParentFile();
 
         if (!parentFile.exists()) {
@@ -323,20 +323,70 @@ public class YamlUtils {
         options.setWidth(120);
 
         List<PropertyMatcher> propertyMatchers = List.of(
-                new PropertyMatcher(List.of("id", "conference", "logoFileName", "name", "description", "siteLink",
-                        "vkLink", "twitterLink", "facebookLink", "youtubeLink", "telegramLink"),
-                        EventType.class),
-                new PropertyMatcher(List.of("language", "text"), LocaleItem.class)
+                new PropertyMatcher(EventType.class,
+                        List.of("id", "conference", "logoFileName", "name", "description", "siteLink", "vkLink",
+                                "twitterLink", "facebookLink", "youtubeLink", "telegramLink")),
+                new PropertyMatcher(LocaleItem.class,
+                        List.of("language", "text"))
         );
         CustomRepresenter representer = new CustomRepresenter(propertyMatchers);
-        representer.addClassTag(EventTypes.class, Tag.MAP);
+        representer.addClassTag(items.getClass(), Tag.MAP);
 
         Yaml eventTypesYaml = new Yaml(
-                new Constructor(EventTypes.class),
+                new Constructor(items.getClass()),
                 representer,
                 options);
-        eventTypesYaml.dump(new EventTypes(eventTypes), writer);
+        eventTypesYaml.dump(items, writer);
 
-        log.info("File '{}' saved", fullFilename);
+        log.info("File '{}' saved", file.getAbsolutePath());
+    }
+
+
+    /**
+     * Dumps event types to file.
+     *
+     * @param eventTypes event types
+     * @param filename   filename
+     * @throws IOException          if file creation occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    public static void dumpEventTypes(List<EventType> eventTypes, String filename) throws IOException, NoSuchFieldException {
+        dump(new EventTypes(eventTypes), filename);
+    }
+
+    /**
+     * Dumps speakers to file.
+     *
+     * @param speakers speakers
+     * @param filename filename
+     * @throws IOException          if file creation occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    public static void dumpSpeakers(List<Speaker> speakers, String filename) throws IOException, NoSuchFieldException {
+        dump(new Speakers(speakers), filename);
+    }
+
+    /**
+     * Dumps talks to file.
+     *
+     * @param talks    talks
+     * @param filename filename
+     * @throws IOException          if file creation occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    public static void dumpTalks(List<Talk> talks, String filename) throws IOException, NoSuchFieldException {
+        dump(new Talks(talks), filename);
+    }
+
+    /**
+     * Dumps event to file.
+     *
+     * @param event    event
+     * @param filename filename
+     * @throws IOException          if file creation occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    public static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
+        dump(new Events(Collections.singletonList(event)), filename);
     }
 }

@@ -90,7 +90,7 @@ public class ConferenceDataLoader {
                         )
                 );
 
-                YamlUtils.dump(eventTypesToAppend, "event-types-to-append.yml");
+                YamlUtils.dumpEventTypes(eventTypesToAppend, "event-types-to-append.yml");
             }
 
             if (!eventTypesToUpdate.isEmpty()) {
@@ -106,7 +106,7 @@ public class ConferenceDataLoader {
                         )
                 );
 
-                YamlUtils.dump(eventTypesToUpdate, "event-types-to-update.yml");
+                YamlUtils.dumpEventTypes(eventTypesToUpdate, "event-types-to-update.yml");
             }
         }
     }
