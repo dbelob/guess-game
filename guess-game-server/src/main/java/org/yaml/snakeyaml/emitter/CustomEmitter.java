@@ -755,12 +755,14 @@ public class CustomEmitter implements Emitable {
         }
         if (!ev.isPlain() && (ev.getScalarStyle() == DumperOptions.ScalarStyle.LITERAL || ev.getScalarStyle() == DumperOptions.ScalarStyle.FOLDED)) {
             if (flowLevel == 0 && !simpleKeyContext && analysis.allowBlock) {
-                return ev.getScalarStyle();
+//                return ev.getScalarStyle();
+                return DumperOptions.ScalarStyle.DOUBLE_QUOTED;
             }
         }
         if (ev.isPlain() || ev.getScalarStyle() == DumperOptions.ScalarStyle.SINGLE_QUOTED) {
             if (analysis.allowSingleQuoted && !(simpleKeyContext && analysis.multiline)) {
-                return DumperOptions.ScalarStyle.SINGLE_QUOTED;
+//                return DumperOptions.ScalarStyle.SINGLE_QUOTED;
+                return DumperOptions.ScalarStyle.DOUBLE_QUOTED;
             }
         }
         return DumperOptions.ScalarStyle.DOUBLE_QUOTED;
