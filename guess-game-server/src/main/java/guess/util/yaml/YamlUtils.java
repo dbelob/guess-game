@@ -317,7 +317,7 @@ public class YamlUtils {
         FileWriter writer = new FileWriter(file);
 
         DumperOptions options = new DumperOptions();
-//        options.setDefaultScalarStyle(DumperOptions.ScalarStyle.DOUBLE_QUOTED);
+        options.setDefaultScalarStyle(DumperOptions.ScalarStyle.PLAIN);
         options.setIndent(4);
         options.setIndicatorIndent(2);
         options.setWidth(120);
