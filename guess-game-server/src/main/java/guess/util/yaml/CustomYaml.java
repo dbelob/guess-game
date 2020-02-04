@@ -3,7 +3,7 @@ package guess.util.yaml;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.BaseConstructor;
-import org.yaml.snakeyaml.emitter.Emitter;
+import org.yaml.snakeyaml.emitter.CustomEmitter;
 import org.yaml.snakeyaml.error.YAMLException;
 import org.yaml.snakeyaml.nodes.Node;
 import org.yaml.snakeyaml.nodes.Tag;
@@ -45,7 +45,7 @@ public class CustomYaml extends Yaml {
     }
 
     private void dumpAll(Iterator<?> data, Writer output, Tag rootTag) {
-        Serializer serializer = new Serializer(new Emitter(output, dumperOptions), resolver,
+        Serializer serializer = new Serializer(new CustomEmitter(output, dumperOptions), resolver,
                 dumperOptions, rootTag);
         try {
             serializer.open();
