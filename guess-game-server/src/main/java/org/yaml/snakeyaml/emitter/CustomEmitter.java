@@ -750,7 +750,10 @@ public class CustomEmitter implements Emitable {
         if (ev.isPlain() && ev.getImplicit().canOmitTagInPlainScalar()) {
             if (!(simpleKeyContext && (analysis.empty || analysis.multiline))
                     && ((flowLevel != 0 && analysis.allowFlowPlain) || (flowLevel == 0 && analysis.allowBlockPlain))) {
-                return null;
+//                return null;
+                return (!simpleKeyContext && ev.getImplicit().canOmitTagInNonPlainScalar() && ev.getValue().contains(" ")) ?
+                        DumperOptions.ScalarStyle.DOUBLE_QUOTED :
+                        null;
             }
         }
         if (!ev.isPlain() && (ev.getScalarStyle() == DumperOptions.ScalarStyle.LITERAL || ev.getScalarStyle() == DumperOptions.ScalarStyle.FOLDED)) {
