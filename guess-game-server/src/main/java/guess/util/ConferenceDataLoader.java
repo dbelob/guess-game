@@ -80,13 +80,11 @@ public class ConferenceDataLoader {
             if (!eventTypesToAppend.isEmpty()) {
                 log.info("Event types (to append resource files): {}", eventTypesToAppend.size());
                 eventTypesToAppend.forEach(
-                        et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
+                        et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}",
                                 et.getId(),
                                 et.getConference(),
                                 LocalizationUtils.getString(et.getName(), Language.ENGLISH),
-                                LocalizationUtils.getString(et.getName(), Language.RUSSIAN),
-                                LocalizationUtils.getString(et.getSiteLink(), Language.ENGLISH),
-                                LocalizationUtils.getString(et.getSiteLink(), Language.RUSSIAN)
+                                LocalizationUtils.getString(et.getName(), Language.RUSSIAN)
                         )
                 );
 
@@ -96,13 +94,11 @@ public class ConferenceDataLoader {
             if (!eventTypesToUpdate.isEmpty()) {
                 log.info("Event types (to update resource files): {}", eventTypesToUpdate.size());
                 eventTypesToUpdate.forEach(
-                        et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}, siteLinkEn: {}, siteLinkRu: {}",
+                        et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}",
                                 et.getId(),
                                 et.getConference(),
                                 LocalizationUtils.getString(et.getName(), Language.ENGLISH),
-                                LocalizationUtils.getString(et.getName(), Language.RUSSIAN),
-                                LocalizationUtils.getString(et.getSiteLink(), Language.ENGLISH),
-                                LocalizationUtils.getString(et.getSiteLink(), Language.RUSSIAN)
+                                LocalizationUtils.getString(et.getName(), Language.RUSSIAN)
                         )
                 );
 
@@ -120,7 +116,7 @@ public class ConferenceDataLoader {
      * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speakers duplicated
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException {
+    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, events, speakers, talks from resource files
@@ -129,7 +125,7 @@ public class ConferenceDataLoader {
                 .filter(et -> et.getConference().equals(conference))
                 .findFirst();
         EventType resourceEventType = resourceOptionalEventType
-                .orElse(null);
+                .orElseThrow(() -> new IllegalStateException(String.format("No event type found for conference %s", conference)));
         Event resourceEvent = resourceOptionalEventType
                 .flatMap(et -> et.getEvents().stream()
                         .filter(e -> e.getStartDate().equals(startDate))
@@ -164,7 +160,18 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
 
+        contentfulEvent.setEventType(resourceEventType);
+        contentfulEvent.setEventTypeId(resourceEventType.getId());
+        contentfulEvent.setTalks(contentfulTalks);
+        contentfulEvent.setTalkIds(contentfulTalks.stream()
+                .map(Talk::getId)
+                .collect(Collectors.toList()));
+
         //TODO: implement comparing and YAML file saving
+
+        YamlUtils.dumpEvent(contentfulEvent, "event.yml");
+        YamlUtils.dumpTalks(contentfulTalks, "talks.yml");
+        YamlUtils.dumpSpeakers(contentfulSpeakers, "speakers.yml");
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {

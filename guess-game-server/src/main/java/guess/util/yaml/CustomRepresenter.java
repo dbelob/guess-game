@@ -27,10 +27,15 @@ public class CustomRepresenter extends Representer {
     @Override
     protected NodeTuple representJavaBeanProperty(Object javaBean, Property property,
                                                   Object propertyValue, Tag customTag) {
-        // Skip fields with null
         if (propertyValue != null) {
-            return super.representJavaBeanProperty(javaBean, property, propertyValue, customTag);
+            if ((propertyValue instanceof Boolean) && (Boolean.FALSE.equals(propertyValue))) {
+                // Skip fields with false
+                return null;
+            } else {
+                return super.representJavaBeanProperty(javaBean, property, propertyValue, customTag);
+            }
         } else {
+            // Skip fields with null
             return null;
         }
     }

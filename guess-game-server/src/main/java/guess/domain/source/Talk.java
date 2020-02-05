@@ -2,6 +2,7 @@ package guess.domain.source;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Talk.
@@ -29,6 +30,9 @@ public class Talk {
         this.presentationLinks = presentationLinks;
         this.videoLink = videoLink;
         this.speakers = speakers;
+        this.speakerIds = speakers.stream()
+                .map(Speaker::getId)
+                .collect(Collectors.toList());
     }
 
     public long getId() {

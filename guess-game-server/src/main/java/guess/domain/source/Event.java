@@ -3,6 +3,7 @@ package guess.domain.source;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Event.
@@ -38,6 +39,9 @@ public class Event {
         this.youtubeLink = youtubeLink;
         this.mapCoordinates = mapCoordinates;
         this.talks = talks;
+        this.talkIds = talks.stream()
+                .map(Talk::getId)
+                .collect(Collectors.toList());
     }
 
     public long getEventTypeId() {
@@ -130,6 +134,10 @@ public class Event {
 
     public List<Talk> getTalks() {
         return talks;
+    }
+
+    public void setTalks(List<Talk> talks) {
+        this.talks = talks;
     }
 
     @Override
