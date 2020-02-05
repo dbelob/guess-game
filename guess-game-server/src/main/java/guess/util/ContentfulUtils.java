@@ -1064,6 +1064,7 @@ public class ContentfulUtils {
     public static boolean needUpdate(EventType a, EventType b) {
         return (a.getId() != b.getId()) ||
                 (a.getConference() != b.getConference()) ||
+                !equals(a.getLogoFileName(), b.getLogoFileName()) ||
                 !equals(a.getName(), b.getName()) ||
                 !equals(a.getDescription(), b.getDescription()) ||
                 !equals(a.getSiteLink(), b.getSiteLink()) ||
