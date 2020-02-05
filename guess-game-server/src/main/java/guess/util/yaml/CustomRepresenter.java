@@ -5,6 +5,7 @@ import org.yaml.snakeyaml.nodes.NodeTuple;
 import org.yaml.snakeyaml.nodes.Tag;
 import org.yaml.snakeyaml.representer.Representer;
 
+import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,8 @@ public class CustomRepresenter extends Representer {
 
     public CustomRepresenter(List<PropertyMatcher> propertyMatchers) {
         this.propertyMatchers = propertyMatchers;
+
+        this.representers.put(LocalDate.class, data -> CustomRepresenter.this.representData(data.toString()));
     }
 
     @Override
