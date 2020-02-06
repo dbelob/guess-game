@@ -21,6 +21,8 @@ import org.yaml.snakeyaml.nodes.Tag;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -297,6 +299,21 @@ public class YamlUtils {
     }
 
     /**
+     * Deletes all files in output directory.
+     *
+     * @throws IOException if file iteration occurs
+     */
+    public static void clearDumpDirectory() throws IOException {
+        Path directoryPath = Path.of(OUTPUT_DIRECTORY_NAME);
+
+        if (Files.exists(directoryPath) && Files.isDirectory(directoryPath)) {
+            Files.walk(directoryPath)
+                    .map(Path::toFile)
+                    .forEach(File::delete);
+        }
+    }
+
+    /**
      * Dumps items to file.
      *
      * @param items    items
@@ -308,7 +325,11 @@ public class YamlUtils {
         File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
         File parentFile = file.getParentFile();
 
-        if (!parentFile.exists()) {
+        if (parentFile.exists()) {
+            if (!parentFile.isDirectory()) {
+                throw new IOException(String.format("'%s' is not directory", parentFile.getAbsolutePath()));
+            }
+        } else {
             if (!parentFile.mkdirs()) {
                 throw new IOException(String.format("Creation error for '%s' directory", parentFile.getAbsolutePath()));
             }

@@ -77,6 +77,8 @@ public class ConferenceDataLoader {
         if (eventTypesToAppend.isEmpty() && eventTypesToUpdate.isEmpty()) {
             log.info("All event types are up-to-date");
         } else {
+            YamlUtils.clearDumpDirectory();
+
             if (!eventTypesToAppend.isEmpty()) {
                 log.info("Event types (to append resource files): {}", eventTypesToAppend.size());
                 eventTypesToAppend.forEach(
@@ -169,6 +171,7 @@ public class ConferenceDataLoader {
 
         //TODO: implement comparing and YAML file saving
 
+        YamlUtils.clearDumpDirectory();
         YamlUtils.dumpEvent(contentfulEvent, "event.yml");
         YamlUtils.dumpTalks(contentfulTalks, "talks.yml");
         YamlUtils.dumpSpeakers(contentfulSpeakers, "speakers.yml");
