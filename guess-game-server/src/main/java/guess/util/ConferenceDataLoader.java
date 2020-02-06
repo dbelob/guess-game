@@ -3,6 +3,7 @@ package guess.util;
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
+import guess.domain.NameCompany;
 import guess.domain.source.*;
 import guess.util.yaml.YamlUtils;
 import org.slf4j.Logger;
@@ -10,10 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
@@ -112,13 +110,15 @@ public class ConferenceDataLoader {
     /**
      * Loads talks, speakers, event information.
      *
-     * @param conference     conference
-     * @param startDate      start date
-     * @param conferenceCode conference code
+     * @param conference              conference
+     * @param startDate               start date
+     * @param conferenceCode          conference code
+     * @param nameCompanySpeakerIdMap (name, company)/speaker id map
      * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speakers duplicated
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
+                                               Map<NameCompany, Long> nameCompanySpeakerIdMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, events, speakers, talks from resource files
@@ -127,23 +127,35 @@ public class ConferenceDataLoader {
                 .filter(et -> et.getConference().equals(conference))
                 .findFirst();
         EventType resourceEventType = resourceOptionalEventType
-                .orElseThrow(() -> new IllegalStateException(String.format("No event type found for conference %s", conference)));
+                .orElseThrow(() -> new IllegalStateException(String.format("No event type found for conference %s (in resource files)", conference)));
+        log.info("Event type (in resource files): nameEn: {}, nameRu: {}",
+                LocalizationUtils.getString(resourceEventType.getName(), Language.ENGLISH),
+                LocalizationUtils.getString(resourceEventType.getName(), Language.RUSSIAN));
+
         Event resourceEvent = resourceOptionalEventType
                 .flatMap(et -> et.getEvents().stream()
                         .filter(e -> e.getStartDate().equals(startDate))
                         .findFirst())
                 .orElse(null);
+        if (resourceEvent == null) {
+            log.info("Event type (in resource files) not found");
+        } else {
+            log.info("Event (in resource files): nameEn: {}, nameRu: {}, startDate: {}, endDate: {}",
+                    LocalizationUtils.getString(resourceEvent.getName(), Language.ENGLISH),
+                    LocalizationUtils.getString(resourceEvent.getName(), Language.RUSSIAN),
+                    resourceEvent.getStartDate(), resourceEvent.getEndDate());
+        }
 
         // Read event from Contentful
         Event contentfulEvent = ContentfulUtils.getEvent(conference, startDate);
-        log.debug("Event: nameEn: {}, nameRu: {}, startDate: {}, endDate: {}",
+        log.info("Event (in Contentful): nameEn: {}, nameRu: {}, startDate: {}, endDate: {}",
                 LocalizationUtils.getString(contentfulEvent.getName(), Language.ENGLISH),
                 LocalizationUtils.getString(contentfulEvent.getName(), Language.RUSSIAN),
                 contentfulEvent.getStartDate(), contentfulEvent.getEndDate());
 
         // Read talks from Contentful
         List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode);
-        log.info("Talks: {}", contentfulTalks.size());
+        log.info("Talks (in Contentful): {}", contentfulTalks.size());
         contentfulTalks.forEach(
                 t -> log.debug("Talk: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(t.getName(), Language.ENGLISH),
@@ -155,13 +167,36 @@ public class ConferenceDataLoader {
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
                 .collect(Collectors.toList());
-        log.info("Speakers: {}", contentfulSpeakers.size());
+        log.info("Speakers (in Contentful): {}", contentfulSpeakers.size());
         contentfulSpeakers.forEach(
                 s -> log.debug("Speaker: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
 
+        Map<Long, Speaker> resourceSpeakerMap = resourceSourceInformation.getSpeakers().stream()
+                .collect(Collectors.toMap(
+                        Speaker::getId,
+                        s -> s));
+        contentfulSpeakers.forEach(
+                s -> {
+                    Long resourceSpeakerId = nameCompanySpeakerIdMap.get(
+                            new NameCompany(
+                                    LocalizationUtils.getString(s.getName(), Language.RUSSIAN),
+                                    LocalizationUtils.getString(s.getCompany(), Language.RUSSIAN)));
+                    if (resourceSpeakerId != null) {
+                        Speaker resourceSpeaker = resourceSpeakerMap.get(resourceSpeakerId);
+                        //TODO: implement
+                    }
+                    //TODO: implement
+                }
+        );
+
+        //TODO: find and change speakers
+
+        //TODO: find and change talks
+
+        //TODO: change event
         contentfulEvent.setEventType(resourceEventType);
         contentfulEvent.setEventTypeId(resourceEventType.getId());
         contentfulEvent.setTalks(contentfulTalks);
@@ -177,11 +212,25 @@ public class ConferenceDataLoader {
         YamlUtils.dumpSpeakers(contentfulSpeakers, "speakers.yml");
     }
 
+    /**
+     * Loads talks, speakers, event information.
+     *
+     * @param conference     conference
+     * @param startDate      start date
+     * @param conferenceCode conference code
+     * @throws IOException                if resource files could not be opened
+     * @throws SpeakerDuplicatedException if speakers duplicated
+     */
+    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap());
+    }
+
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
 //        loadEventTypes();
 
         // 2016
-//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker");
+//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker",
+//                Map.of(new NameCompany("Кирилл Толкачев", "Альфа-Банк"), 28L));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2016, 12, 10), "2016msk");
