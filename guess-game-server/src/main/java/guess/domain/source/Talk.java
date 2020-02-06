@@ -13,7 +13,7 @@ public class Talk {
     private List<LocaleItem> shortDescription;
     private List<LocaleItem> longDescription;
     private List<String> presentationLinks;
-    private String videoLink;
+    private List<String> videoLinks;
 
     private List<Long> speakerIds;
     private List<Speaker> speakers = new ArrayList<>();
@@ -22,13 +22,13 @@ public class Talk {
     }
 
     public Talk(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription,
-                List<String> presentationLinks, String videoLink, List<Speaker> speakers) {
+                List<String> presentationLinks, List<String> videoLinks, List<Speaker> speakers) {
         this.id = id;
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
         this.presentationLinks = presentationLinks;
-        this.videoLink = videoLink;
+        this.videoLinks = videoLinks;
         this.speakers = speakers;
         this.speakerIds = speakers.stream()
                 .map(Speaker::getId)
@@ -75,12 +75,12 @@ public class Talk {
         this.presentationLinks = presentationLinks;
     }
 
-    public String getVideoLink() {
-        return videoLink;
+    public List<String> getVideoLinks() {
+        return videoLinks;
     }
 
-    public void setVideoLink(String videoLink) {
-        this.videoLink = videoLink;
+    public void setVideoLinks(List<String> videoLinks) {
+        this.videoLinks = videoLinks;
     }
 
     public List<Long> getSpeakerIds() {

@@ -351,7 +351,7 @@ public class YamlUtils {
                         List.of("eventTypeId", "name", "startDate", "endDate", "siteLink", "city", "venueAddress",
                                 "youtubeLink", "mapCoordinates", "talkIds")),
                 new PropertyMatcher(Talk.class,
-                        List.of("id", "name", "shortDescription", "longDescription", "presentationLinks", "videoLink", "speakerIds")),
+                        List.of("id", "name", "shortDescription", "longDescription", "presentationLinks", "videoLinks", "speakerIds")),
                 new PropertyMatcher(Speaker.class,
                         List.of("id", "fileName", "name", "company", "bio", "twitter", "gitHub", "javaChampion", "mvp")),
                 new PropertyMatcher(LocaleItem.class,
