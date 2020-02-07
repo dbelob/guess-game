@@ -542,6 +542,31 @@ public class ContentfulUtils {
     /**
      * Creates speaker from Contentful information.
      *
+     * @param contentfulSpeaker    Contentful speaker
+     * @param assetMap             map id/asset
+     * @param assetErrorSet        set with error assets
+     * @param id                   atomic identifier
+     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
+     * @return speaker
+     */
+    private static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
+                                         Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+        return new Speaker(
+                id.getAndDecrement(),
+                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
+                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
+                extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence),
+                extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
+                extractTwitter(contentfulSpeaker.getFields().getTwitter()),
+                extractGitHub(contentfulSpeaker.getFields().getGitHub()),
+                extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
+                extractBoolean(contentfulSpeaker.getFields().getMvp())
+        );
+    }
+
+    /**
+     * Creates speaker from Contentful information.
+     *
      * @param contentfulSpeaker Contentful speaker
      * @param assetMap          map id/asset
      * @param assetErrorSet     set with error assets
@@ -550,17 +575,7 @@ public class ContentfulUtils {
      */
     private static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
                                          Set<String> assetErrorSet, AtomicLong id) {
-        return new Speaker(
-                id.getAndDecrement(),
-                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
-                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName()),
-                extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany()),
-                extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio()),
-                extractTwitter(contentfulSpeaker.getFields().getTwitter()),
-                extractGitHub(contentfulSpeaker.getFields().getGitHub()),
-                extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
-                extractBoolean(contentfulSpeaker.getFields().getMvp())
-        );
+        return createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, id, true);
     }
 
     /**
@@ -580,7 +595,7 @@ public class ContentfulUtils {
                 response.getIncludes().getEntry().stream()
                         .collect(Collectors.toMap(
                                 s -> s.getSys().getId(),
-                                s -> createSpeaker(s, assetMap, assetErrorSet, id)
+                                s -> createSpeaker(s, assetMap, assetErrorSet, id, false)
                         ));
     }
 
@@ -852,17 +867,19 @@ public class ContentfulUtils {
     /**
      * Extracts local items.
      *
-     * @param enText english text
-     * @param ruText russian text
+     * @param enText               english text
+     * @param ruText               russian text
+     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
      * @return local items
      */
-    private static List<LocaleItem> extractLocaleItems(String enText, String ruText) {
+    private static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
         enText = extractString(enText);
         ruText = extractString(ruText);
 
-        if (((enText == null) || enText.isEmpty()) &&
+        if (checkEnTextExistence &&
+                ((enText == null) || enText.isEmpty()) &&
                 ((ruText != null) && !ruText.isEmpty())) {
-            throw new IllegalArgumentException("Invalid arguments: enText is empty, ruText is not empty");
+            throw new IllegalArgumentException(String.format("Invalid arguments: enText is empty, ruText is not empty ('%s')", ruText));
         }
 
         if (Objects.equals(enText, ruText)) {
@@ -884,6 +901,17 @@ public class ContentfulUtils {
         }
 
         return localeItems;
+    }
+
+    /**
+     * Extracts local items.
+     *
+     * @param enText english text
+     * @param ruText russian text
+     * @return local items
+     */
+    private static List<LocaleItem> extractLocaleItems(String enText, String ruText) {
+        return extractLocaleItems(enText, ruText, true);
     }
 
     /**
