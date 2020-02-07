@@ -494,7 +494,7 @@ public class ContentfulUtils {
                             extractPresentationLinks(
                                     combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
                                     assetMap, assetErrorSet, t.getFields().getNameEn()),
-                            Collections.singletonList(extractString(t.getFields().getVideo())),
+                            (t.getFields().getVideo() != null) ? Collections.singletonList(extractString(t.getFields().getVideo())) : Collections.emptyList(),
                             speakers);
                 })
                 .collect(Collectors.toList());
