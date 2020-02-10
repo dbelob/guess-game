@@ -203,6 +203,11 @@ public class ConferenceDataLoader {
                         s -> LocalizationUtils.getString(s.getName(), Language.ENGLISH).trim(),
                         Collectors.toSet()
                 ));
+        AtomicLong speakerId = new AtomicLong(
+                resourceSourceInformation.getSpeakers().stream()
+                        .map(Speaker::getId)
+                        .max(Long::compare)
+                        .orElse(-1L));
         contentfulSpeakers.forEach(
                 s -> {
                     Speaker resourceSpeaker = findResourceSpeaker(s, knownSpeakerIdsMap, resourceSpeakerIdsMap,
@@ -213,9 +218,15 @@ public class ConferenceDataLoader {
                         s.setId(resourceSpeaker.getId());
                         s.setFileName(resourceSpeaker.getFileName());
 
-                        //TODO: check for update needless
+                        //TODO: check for update necessity
+                        //TODO: implement image file comparison
                     } else {
-                        //TODO: implement
+                        long id = speakerId.incrementAndGet();
+                        String fileName = String.format("%04d.jpg", id);
+
+                        s.setId(id);
+                        s.setFileName(fileName);
+                        //TODO: implement image file creation
                     }
                 }
         );
@@ -353,8 +364,8 @@ public class ConferenceDataLoader {
 
         // Load talks, speaker and event
         // 2016
-        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker",
-                Map.of(new NameCompany("Jean-Philippe BEMPEL", "Ullink"), 155L));
+//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker",
+//                Map.of(new NameCompany("Jean-Philippe BEMPEL", "Ullink"), 155L));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2016, 12, 10), "2016msk");
