@@ -182,25 +182,25 @@ public class ConferenceDataLoader {
         Map<NameCompany, Speaker> resourceRuNameCompanySpeakers = resourceSourceInformation.getSpeakers().stream()
                 .collect(Collectors.toMap(
                         s -> new NameCompany(
-                                LocalizationUtils.getString(s.getName(), Language.RUSSIAN),
-                                LocalizationUtils.getString(s.getCompany(), Language.RUSSIAN)),
+                                LocalizationUtils.getString(s.getName(), Language.RUSSIAN).trim(),
+                                LocalizationUtils.getString(s.getCompany(), Language.RUSSIAN).trim()),
                         s -> s
                 ));
         Map<NameCompany, Speaker> resourceEnNameCompanySpeakers = resourceSourceInformation.getSpeakers().stream()
                 .collect(Collectors.toMap(
                         s -> new NameCompany(
-                                LocalizationUtils.getString(s.getName(), Language.ENGLISH),
-                                LocalizationUtils.getString(s.getCompany(), Language.ENGLISH)),
+                                LocalizationUtils.getString(s.getName(), Language.ENGLISH).trim(),
+                                LocalizationUtils.getString(s.getCompany(), Language.ENGLISH).trim()),
                         s -> s
                 ));
         Map<String, Set<Speaker>> resourceRuNameSpeakers = resourceSourceInformation.getSpeakers().stream()
                 .collect(Collectors.groupingBy(
-                        s -> LocalizationUtils.getString(s.getName(), Language.RUSSIAN),
+                        s -> LocalizationUtils.getString(s.getName(), Language.RUSSIAN).trim(),
                         Collectors.toSet()
                 ));
         Map<String, Set<Speaker>> resourceEnNameSpeakers = resourceSourceInformation.getSpeakers().stream()
                 .collect(Collectors.groupingBy(
-                        s -> LocalizationUtils.getString(s.getName(), Language.ENGLISH),
+                        s -> LocalizationUtils.getString(s.getName(), Language.ENGLISH).trim(),
                         Collectors.toSet()
                 ));
         contentfulSpeakers.forEach(
@@ -353,8 +353,8 @@ public class ConferenceDataLoader {
 
         // Load talks, speaker and event
         // 2016
-//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker",
-//                Map.of(new NameCompany("Jean-Philippe BEMPEL", "Ullink"), 155L));
+        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker",
+                Map.of(new NameCompany("Jean-Philippe BEMPEL", "Ullink"), 155L));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2016, 12, 10), "2016msk");
