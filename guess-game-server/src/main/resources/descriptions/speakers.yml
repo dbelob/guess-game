@@ -741,7 +741,7 @@ speakers:
     fileName: 0158.jpg
     name:
       - {language: en, text: "Vladimir Krasilschik"}
-      - {language: ru, text: "Владимир Красильщик "}
+      - {language: ru, text: "Владимир Красильщик"}
   - id: 159
     fileName: 0159.jpg
     name:
@@ -1168,7 +1168,7 @@ speakers:
     fileName: 0246.jpg
     name:
       - {language: en, text: "Oleg Pliss"}
-      - {language: ru, text: " Олег Плисс"}
+      - {language: ru, text: "Олег Плисс"}
   - id: 247
     fileName: 0247.jpg
     name:
@@ -1435,7 +1435,7 @@ speakers:
     fileName: 0300.jpg
     name:
       - {language: en, text: "Igor Andreev"}
-      - {language: ru, text: "Игорь Андреев "}
+      - {language: ru, text: "Игорь Андреев"}
   - id: 301
     fileName: 0301.jpg
     name:
@@ -3380,7 +3380,7 @@ speakers:
     fileName: 0714.jpg
     name:
       - {language: en, text: "Ilya Taratuhin"}
-      - {language: ru, text: "Илья Таратухин "}
+      - {language: ru, text: "Илья Таратухин"}
   - id: 715
     fileName: 0715.jpg
     name:
@@ -3967,7 +3967,7 @@ speakers:
     fileName: 0839.jpg
     name:
       - {language: en, text: "Alexey Shpirko"}
-      - {language: ru, text: "Алексей Шпирко "}
+      - {language: ru, text: "Алексей Шпирко"}
   - id: 840
     fileName: 0840.jpg
     name:
@@ -4011,7 +4011,7 @@ speakers:
     fileName: 0848.jpg
     name:
       - {language: en, text: "Konstantin Yurichev"}
-      - {language: ru, text: "Константин Юричев "}
+      - {language: ru, text: "Константин Юричев"}
   - id: 849
     fileName: 0849.jpg
     name:

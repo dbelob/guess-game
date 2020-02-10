@@ -209,7 +209,14 @@ public class ConferenceDataLoader {
                             resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
                             resourceRuNameSpeakers, resourceEnNameSpeakers);
 
-                    //TODO: implement
+                    if (resourceSpeaker != null) {
+                        s.setId(resourceSpeaker.getId());
+                        s.setFileName(resourceSpeaker.getFileName());
+
+                        //TODO: check for update needless
+                    } else {
+                        //TODO: implement
+                    }
                 }
         );
 
@@ -224,6 +231,7 @@ public class ConferenceDataLoader {
                 .collect(Collectors.toList()));
 
         //TODO: implement comparing and YAML file saving
+        contentfulSpeakers.sort(Comparator.comparing(Speaker::getId));
 
         YamlUtils.clearDumpDirectory();
         YamlUtils.dumpEvent(contentfulEvent, "event.yml");
@@ -267,28 +275,13 @@ public class ConferenceDataLoader {
         }
 
         // Find in resource speakers by Russian name
-        String speakerName = LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN);
-        Set<Speaker> resourceSpeakers = resourceRuNameSpeakers.get(speakerName);
-        if (resourceSpeakers != null) {
-            if (resourceSpeakers.size() == 0) {
-                throw new IllegalStateException(String.format("No speakers found in set for speaker '%s'", speaker.getName()));
-            } else if (resourceSpeakers.size() > 1) {
-                log.warn("More than one speakers found by name '{}', new speaker will be created (may be necessary to add a known speaker to the method parameters and restart loading)", speakerName);
-                return null;
-            } else {
-                resourceSpeaker = resourceSpeakers.iterator().next();
-
-                log.warn("Speaker found only by name '{}' (resource speaker company: '{}', Contentful speaker company: '{}')",
-                        speakerName,
-                        LocalizationUtils.getString(resourceSpeaker.getCompany(), Language.RUSSIAN),
-                        LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN));
-                return resourceSpeaker;
-            }
+        resourceSpeaker = findResourceSpeakerByName(speaker, resourceRuNameSpeakers, Language.RUSSIAN);
+        if (resourceSpeaker != null) {
+            return resourceSpeaker;
         }
 
-        //...
-
-        return null;
+        // Find in resource speakers by English name
+        return findResourceSpeakerByName(speaker, resourceEnNameSpeakers, Language.ENGLISH);
     }
 
     /**
@@ -304,6 +297,39 @@ public class ConferenceDataLoader {
                 new NameCompany(
                         LocalizationUtils.getString(speaker.getName(), language),
                         LocalizationUtils.getString(speaker.getCompany(), language)));
+    }
+
+    /**
+     * Finds resource speaker by name.
+     *
+     * @param speaker              speaker
+     * @param resourceNameSpeakers map of name/speakers
+     * @param language             language
+     * @return resource speaker
+     */
+    private static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
+        String speakerName = LocalizationUtils.getString(speaker.getName(), language);
+        Set<Speaker> resourceSpeakers = resourceNameSpeakers.get(speakerName);
+        if (resourceSpeakers != null) {
+            if (resourceSpeakers.size() == 0) {
+                throw new IllegalStateException(String.format("No speakers found in set for speaker '%s'", speakerName));
+            } else if (resourceSpeakers.size() > 1) {
+                log.warn("More than one speakers found by name '{}', new speaker will be created (may be necessary to add a known speaker to the method parameters and restart loading)", speakerName);
+
+                return null;
+            } else {
+                Speaker resourceSpeaker = resourceSpeakers.iterator().next();
+
+                log.warn("Speaker found only by name '{}', speaker company (in resource files): '{}', speaker company (in Contentful): '{}')",
+                        speakerName,
+                        LocalizationUtils.getString(resourceSpeaker.getCompany(), language),
+                        LocalizationUtils.getString(speaker.getCompany(), language));
+
+                return resourceSpeaker;
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -327,7 +353,8 @@ public class ConferenceDataLoader {
 
         // Load talks, speaker and event
         // 2016
-//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker");
+//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker",
+//                Map.of(new NameCompany("Jean-Philippe BEMPEL", "Ullink"), 155L));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2016, 12, 10), "2016msk");
@@ -366,7 +393,8 @@ public class ConferenceDataLoader {
 
         // 2019
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2019, 4, 5), "2019jpoint");
-//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2019, 4, 19), "2019cpp");
+//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2019, 4, 19), "2019cpp",
+//                Map.of(new NameCompany("Павел Новиков", "Align Technology"), 351L));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2019, 5, 15), "2019spb");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2019, 5, 17), "2019spb");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2019, 5, 22), "2019spb");
