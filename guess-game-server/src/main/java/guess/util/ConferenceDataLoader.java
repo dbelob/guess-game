@@ -110,15 +110,15 @@ public class ConferenceDataLoader {
     /**
      * Loads talks, speakers, event information.
      *
-     * @param conference              conference
-     * @param startDate               start date
-     * @param conferenceCode          conference code
-     * @param nameCompanySpeakerIdMap (name, company)/speaker id map
+     * @param conference         conference
+     * @param startDate          start date
+     * @param conferenceCode     conference code
+     * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
      * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speakers duplicated
      */
     private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                               Map<NameCompany, Long> nameCompanySpeakerIdMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                                               Map<NameCompany, Long> knownSpeakerIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, events, speakers, talks from resource files
@@ -174,25 +174,44 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
 
-        Map<Long, Speaker> resourceSpeakerMap = resourceSourceInformation.getSpeakers().stream()
+        // Find speakers
+        Map<Long, Speaker> resourceSpeakerIdsMap = resourceSourceInformation.getSpeakers().stream()
                 .collect(Collectors.toMap(
                         Speaker::getId,
                         s -> s));
+        Map<NameCompany, Speaker> resourceRuNameCompanySpeakers = resourceSourceInformation.getSpeakers().stream()
+                .collect(Collectors.toMap(
+                        s -> new NameCompany(
+                                LocalizationUtils.getString(s.getName(), Language.RUSSIAN),
+                                LocalizationUtils.getString(s.getCompany(), Language.RUSSIAN)),
+                        s -> s
+                ));
+        Map<NameCompany, Speaker> resourceEnNameCompanySpeakers = resourceSourceInformation.getSpeakers().stream()
+                .collect(Collectors.toMap(
+                        s -> new NameCompany(
+                                LocalizationUtils.getString(s.getName(), Language.ENGLISH),
+                                LocalizationUtils.getString(s.getCompany(), Language.ENGLISH)),
+                        s -> s
+                ));
+        Map<String, Set<Speaker>> resourceRuNameSpeakers = resourceSourceInformation.getSpeakers().stream()
+                .collect(Collectors.groupingBy(
+                        s -> LocalizationUtils.getString(s.getName(), Language.RUSSIAN),
+                        Collectors.toSet()
+                ));
+        Map<String, Set<Speaker>> resourceEnNameSpeakers = resourceSourceInformation.getSpeakers().stream()
+                .collect(Collectors.groupingBy(
+                        s -> LocalizationUtils.getString(s.getName(), Language.ENGLISH),
+                        Collectors.toSet()
+                ));
         contentfulSpeakers.forEach(
                 s -> {
-                    Long resourceSpeakerId = nameCompanySpeakerIdMap.get(
-                            new NameCompany(
-                                    LocalizationUtils.getString(s.getName(), Language.RUSSIAN),
-                                    LocalizationUtils.getString(s.getCompany(), Language.RUSSIAN)));
-                    if (resourceSpeakerId != null) {
-                        Speaker resourceSpeaker = resourceSpeakerMap.get(resourceSpeakerId);
-                        //TODO: implement
-                    }
+                    Speaker resourceSpeaker = findResourceSpeaker(s, knownSpeakerIdsMap, resourceSpeakerIdsMap,
+                            resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
+                            resourceRuNameSpeakers, resourceEnNameSpeakers);
+
                     //TODO: implement
                 }
         );
-
-        //TODO: find and change speakers
 
         //TODO: find and change talks
 
@@ -212,6 +231,81 @@ public class ConferenceDataLoader {
         YamlUtils.dumpSpeakers(contentfulSpeakers, "speakers.yml");
     }
 
+    private static Speaker findResourceSpeaker(Speaker speaker, Map<NameCompany, Long> knownSpeakerIdsMap,
+                                               Map<Long, Speaker> resourceSpeakerIdsMap,
+                                               Map<NameCompany, Speaker> resourceRuNameCompanySpeakers,
+                                               Map<NameCompany, Speaker> resourceEnNameCompanySpeakers,
+                                               Map<String, Set<Speaker>> resourceRuNameSpeakers,
+                                               Map<String, Set<Speaker>> resourceEnNameSpeakers) {
+        // Find in known speakers by (name, company) pair because
+        // - speaker could change his/her last name (for example, woman got married);
+        // - speaker (with non-unique pair of name, company) could change his/her company.
+        Long resourceSpeakerId = knownSpeakerIdsMap.get(
+                new NameCompany(
+                        LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
+                        LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN)));
+        if (resourceSpeakerId != null) {
+            Speaker resourceSpeaker = resourceSpeakerIdsMap.get(resourceSpeakerId);
+
+            return Objects.requireNonNull(resourceSpeaker,
+                    () -> String.format("Resource speaker id %d not found (change id of known speaker '%s' and company '%s' in method parameters and rerun loading)",
+                            resourceSpeakerId,
+                            LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
+                            LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN)));
+        }
+
+        // Find in resource speakers by Russian (name, company) pair
+        Speaker resourceSpeaker = findResourceSpeakerByNameCompany(speaker, resourceRuNameCompanySpeakers, Language.RUSSIAN);
+        if (resourceSpeaker != null) {
+            return resourceSpeaker;
+        }
+
+        // Find in resource speakers by English (name, company) pair
+        resourceSpeaker = findResourceSpeakerByNameCompany(speaker, resourceEnNameCompanySpeakers, Language.ENGLISH);
+        if (resourceSpeaker != null) {
+            return resourceSpeaker;
+        }
+
+        // Find in resource speakers by Russian name
+        String speakerName = LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN);
+        Set<Speaker> resourceSpeakers = resourceRuNameSpeakers.get(speakerName);
+        if (resourceSpeakers != null) {
+            if (resourceSpeakers.size() == 0) {
+                throw new IllegalStateException(String.format("No speakers found in set for speaker '%s'", speaker.getName()));
+            } else if (resourceSpeakers.size() > 1) {
+                log.warn("More than one speakers found by name '{}', new speaker will be created (may be necessary to add a known speaker to the method parameters and restart loading)", speakerName);
+                return null;
+            } else {
+                resourceSpeaker = resourceSpeakers.iterator().next();
+
+                log.warn("Speaker found only by name '{}' (resource speaker company: '{}', Contentful speaker company: '{}')",
+                        speakerName,
+                        LocalizationUtils.getString(resourceSpeaker.getCompany(), Language.RUSSIAN),
+                        LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN));
+                return resourceSpeaker;
+            }
+        }
+
+        //...
+
+        return null;
+    }
+
+    /**
+     * Finds resource speaker by pair of name, company.
+     *
+     * @param speaker                     speaker
+     * @param resourceNameCompanySpeakers map of (name, company)/speaker
+     * @param language                    language
+     * @return resource speaker
+     */
+    private static Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
+        return resourceNameCompanySpeakers.get(
+                new NameCompany(
+                        LocalizationUtils.getString(speaker.getName(), language),
+                        LocalizationUtils.getString(speaker.getCompany(), language)));
+    }
+
     /**
      * Loads talks, speakers, event information.
      *
@@ -226,8 +320,12 @@ public class ConferenceDataLoader {
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+        // Uncomment one of lines and run
+
+        // Load event types
 //        loadEventTypes();
 
+        // Load talks, speaker and event
         // 2016
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel");
