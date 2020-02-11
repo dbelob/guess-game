@@ -23,6 +23,10 @@ public class ConferenceDataLoader {
 
     /**
      * Loads all conference event types.
+     *
+     * @throws IOException                if file creation occurs
+     * @throws SpeakerDuplicatedException if speaker duplicated
+     * @throws NoSuchFieldException       if field name is invalid
      */
     private static void loadEventTypes() throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         // Read event types from resource files
@@ -73,37 +77,19 @@ public class ConferenceDataLoader {
                 }
         );
 
+        // Save files
         if (eventTypesToAppend.isEmpty() && eventTypesToUpdate.isEmpty()) {
             log.info("All event types are up-to-date");
         } else {
             YamlUtils.clearDumpDirectory();
 
             if (!eventTypesToAppend.isEmpty()) {
-                log.info("Event types (to append resource files): {}", eventTypesToAppend.size());
-                eventTypesToAppend.forEach(
-                        et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}",
-                                et.getId(),
-                                et.getConference(),
-                                LocalizationUtils.getString(et.getName(), Language.ENGLISH),
-                                LocalizationUtils.getString(et.getName(), Language.RUSSIAN)
-                        )
-                );
-
-                YamlUtils.dumpEventTypes(eventTypesToAppend, "event-types-to-append.yml");
+                logAndDumpEventTypes(eventTypesToAppend, "Event types (to append resource file): {}", "event-types-to-append.yml");
             }
 
             if (!eventTypesToUpdate.isEmpty()) {
-                log.info("Event types (to update resource files): {}", eventTypesToUpdate.size());
-                eventTypesToUpdate.forEach(
-                        et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}",
-                                et.getId(),
-                                et.getConference(),
-                                LocalizationUtils.getString(et.getName(), Language.ENGLISH),
-                                LocalizationUtils.getString(et.getName(), Language.RUSSIAN)
-                        )
-                );
-
-                YamlUtils.dumpEventTypes(eventTypesToUpdate, "event-types-to-update.yml");
+                eventTypesToUpdate.sort(Comparator.comparing(EventType::getId));
+                logAndDumpEventTypes(eventTypesToUpdate, "Event types (to update resource file): {}", "event-types-to-update.yml");
             }
         }
     }
@@ -117,6 +103,7 @@ public class ConferenceDataLoader {
      * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
      * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speakers duplicated
+     * @throws NoSuchFieldException       if field name is invalid
      */
     private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
                                                Map<NameCompany, Long> knownSpeakerIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
@@ -209,8 +196,8 @@ public class ConferenceDataLoader {
                         .map(Speaker::getId)
                         .max(Long::compare)
                         .orElse(-1L));
-        List<Speaker> speakerToAppend = new ArrayList<>();
-        List<Speaker> speakerToUpdate = new ArrayList<>();
+        List<Speaker> speakersToAppend = new ArrayList<>();
+        List<Speaker> speakersToUpdate = new ArrayList<>();
 
         contentfulSpeakers.forEach(
                 s -> {
@@ -226,66 +213,160 @@ public class ConferenceDataLoader {
                         s.setId(id);
                         s.setFileName(fileName);
 
-                        //TODO: implement image file creation
+                        PictureUtils.create(fileName);
 
-                        speakerToAppend.add(s);
+                        speakersToAppend.add(s);
                     } else {
                         // Speaker exists
                         s.setId(resourceSpeaker.getId());
                         s.setFileName(resourceSpeaker.getFileName());
 
                         if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
-                            //TODO: implement image file comparison and creation
-
-                            speakerToUpdate.add(s);
+                            if (PictureUtils.needUpdate(resourceSpeaker.getFileName())) {
+                                PictureUtils.create(resourceSpeaker.getFileName());
+                            }
+                            speakersToUpdate.add(s);
                         }
                     }
                 }
         );
 
+        // Find talks
+        contentfulTalks.forEach(
+                t -> t.setSpeakerIds(t.getSpeakers().stream()
+                        .map(Speaker::getId)
+                        .collect(Collectors.toList())
+                )
+        );
+        List<Talk> talksToDelete = new ArrayList<>();
+        List<Talk> talksToAppend = new ArrayList<>();
+        List<Talk> talksToUpdate = new ArrayList<>();
+
         //TODO: find and change talks
 
-        //TODO: change event
+        // Find event
         contentfulEvent.setEventType(resourceEventType);
         contentfulEvent.setEventTypeId(resourceEventType.getId());
         contentfulEvent.setTalks(contentfulTalks);
         contentfulEvent.setTalkIds(contentfulTalks.stream()
                 .map(Talk::getId)
                 .collect(Collectors.toList()));
+        Event eventToAppend = null;
+        Event eventToUpdate = null;
 
-        if (speakerToAppend.isEmpty() && speakerToUpdate.isEmpty()) {
+        //TODO: change event
+
+        // Save files
+        if (speakersToAppend.isEmpty() && speakersToUpdate.isEmpty()) {
             log.info("All speakers are up-to-date");
         } else {
             YamlUtils.clearDumpDirectory();
 
-            if (!speakerToAppend.isEmpty()) {
-                log.info("Speakers (to append resource files): {}", speakerToAppend.size());
-                speakerToAppend.forEach(
-                        s -> log.debug("Speaker: nameEn: '{}', name: '{}'",
-                                LocalizationUtils.getString(s.getName(), Language.ENGLISH),
-                                LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
-                );
-
-                YamlUtils.dumpSpeakers(speakerToAppend, "speakers-to-append.yml");
+            if (!speakersToAppend.isEmpty()) {
+                logAndDumpSpeakers(speakersToAppend, "Speakers (to append resource file): {}", "speakers-to-append.yml");
             }
 
-            if (!speakerToUpdate.isEmpty()) {
-                speakerToUpdate.sort(Comparator.comparing(Speaker::getId));
-
-                log.info("Speakers (to update resource files): {}", speakerToUpdate.size());
-                speakerToUpdate.forEach(
-                        s -> log.debug("Speaker: nameEn: '{}', name: '{}'",
-                                LocalizationUtils.getString(s.getName(), Language.ENGLISH),
-                                LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
-                );
-
-                YamlUtils.dumpSpeakers(speakerToUpdate, "speakers-to-update.yml");
+            if (!speakersToUpdate.isEmpty()) {
+                speakersToUpdate.sort(Comparator.comparing(Speaker::getId));
+                logAndDumpSpeakers(speakersToUpdate, "Speakers (to update resource file): {}", "speakers-to-update.yml");
             }
         }
 
-        //TODO: implement comparing and YAML file saving
-        YamlUtils.dumpEvent(contentfulEvent, "event.yml");
-        YamlUtils.dumpTalks(contentfulTalks, "talks.yml");
+        if (talksToDelete.isEmpty() && talksToAppend.isEmpty() && talksToUpdate.isEmpty()) {
+            log.info("All talks are up-to-date");
+        } else {
+            YamlUtils.clearDumpDirectory();
+
+            if (!talksToDelete.isEmpty()) {
+                talksToDelete.sort(Comparator.comparing(Talk::getId));
+                logAndDumpTalks(talksToDelete, "Talks (to delete in resource file): {}", "talks-to-delete.yml");
+            }
+
+            if (!talksToAppend.isEmpty()) {
+                logAndDumpTalks(talksToAppend, "Talks (to append resource file): {}", "talks-to-append.yml");
+            }
+
+            if (!talksToUpdate.isEmpty()) {
+                talksToUpdate.sort(Comparator.comparing(Talk::getId));
+                logAndDumpTalks(talksToUpdate, "Talks (to update resource file): {}", "talks-to-update.yml");
+            }
+        }
+
+        if ((eventToAppend == null) && (eventToUpdate == null)) {
+            log.info("Event is up-to-date");
+        } else {
+            if (eventToAppend != null) {
+                YamlUtils.dumpEvent(eventToAppend, "event-to-append.yml");
+            }
+
+            if (eventToUpdate != null) {
+                YamlUtils.dumpEvent(eventToUpdate, "event-to-update.yml");
+            }
+        }
+    }
+
+    /**
+     * Logs and dumps event types.
+     *
+     * @param eventTypes event types
+     * @param logMessage log message
+     * @param filename   filename
+     * @throws IOException          if file creation occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void logAndDumpEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
+        log.info(logMessage, eventTypes.size());
+        eventTypes.forEach(
+                et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}",
+                        et.getId(),
+                        et.getConference(),
+                        LocalizationUtils.getString(et.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(et.getName(), Language.RUSSIAN)
+                )
+        );
+
+        YamlUtils.dumpEventTypes(eventTypes, filename);
+    }
+
+    /**
+     * Logs and dumps speakers.
+     *
+     * @param speakers   speakers
+     * @param logMessage log message
+     * @param filename   filename
+     * @throws IOException          if file creation occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
+        log.info(logMessage, speakers.size());
+        speakers.forEach(
+                s -> log.debug("Speaker: nameEn: '{}', name: '{}'",
+                        LocalizationUtils.getString(s.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
+        );
+
+        YamlUtils.dumpSpeakers(speakers, filename);
+
+    }
+
+    /**
+     * Logs and dumps talks.
+     *
+     * @param talks      talks
+     * @param logMessage log message
+     * @param filename   filename
+     * @throws IOException          if file creation occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
+        log.info(logMessage, talks.size());
+        talks.forEach(
+                t -> log.debug("Talk: nameEn: '{}', name: '{}'",
+                        LocalizationUtils.getString(t.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
+        );
+
+        YamlUtils.dumpTalks(talks, filename);
     }
 
     private static Speaker findResourceSpeaker(Speaker speaker, Map<NameCompany, Long> knownSpeakerIdsMap,
