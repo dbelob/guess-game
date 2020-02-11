@@ -494,7 +494,7 @@ public class ContentfulUtils {
                             extractPresentationLinks(
                                     combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
                                     assetMap, assetErrorSet, t.getFields().getNameEn()),
-                            (t.getFields().getVideo() != null) ? Collections.singletonList(extractString(t.getFields().getVideo())) : Collections.emptyList(),
+                            extractVideoLinks(t.getFields().getVideo()),
                             speakers);
                 })
                 .collect(Collectors.toList());
@@ -813,6 +813,22 @@ public class ContentfulUtils {
     }
 
     /**
+     * Extracts video links.
+     *
+     * @param videoLink video link
+     * @return video links
+     */
+    private static List<String> extractVideoLinks(String videoLink) {
+        List<String> videoLinks = new ArrayList<>();
+
+        if (videoLink != null) {
+            videoLinks.add(videoLink);
+        }
+
+        return videoLinks;
+    }
+
+    /**
      * Extracts photo.
      *
      * @param link          link
@@ -1031,7 +1047,9 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Irina Shestak",
                                         null),
-                                Collections.emptyList(),
+                                extractLocaleItems(
+                                        null,
+                                        null),
                                 extractLocaleItems(
                                         "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.",
                                         null),
