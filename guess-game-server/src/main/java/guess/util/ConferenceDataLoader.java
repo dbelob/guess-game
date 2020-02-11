@@ -38,8 +38,7 @@ public class ConferenceDataLoader {
                 .collect(Collectors.toList());
         log.info("Event types (in Contentful): {}", contentfulEventTypes.size());
 
-        List<EventType> eventTypesToAppend = new ArrayList<>();
-        List<EventType> eventTypesToUpdate = new ArrayList<>();
+        // Find event types
         Map<Conference, EventType> resourceEventTypeMap = resourceEventTypes.stream()
                 .collect(Collectors.toMap(
                         EventType::getConference,
@@ -49,6 +48,8 @@ public class ConferenceDataLoader {
                         .map(EventType::getId)
                         .max(Long::compare)
                         .orElse(-1L));
+        List<EventType> eventTypesToAppend = new ArrayList<>();
+        List<EventType> eventTypesToUpdate = new ArrayList<>();
 
         contentfulEventTypes.forEach(
                 et -> {
@@ -208,25 +209,36 @@ public class ConferenceDataLoader {
                         .map(Speaker::getId)
                         .max(Long::compare)
                         .orElse(-1L));
+        List<Speaker> speakerToAppend = new ArrayList<>();
+        List<Speaker> speakerToUpdate = new ArrayList<>();
+
         contentfulSpeakers.forEach(
                 s -> {
                     Speaker resourceSpeaker = findResourceSpeaker(s, knownSpeakerIdsMap, resourceSpeakerIdsMap,
                             resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
                             resourceRuNameSpeakers, resourceEnNameSpeakers);
 
-                    if (resourceSpeaker != null) {
-                        s.setId(resourceSpeaker.getId());
-                        s.setFileName(resourceSpeaker.getFileName());
-
-                        //TODO: check for update necessity
-                        //TODO: implement image file comparison
-                    } else {
+                    if (resourceSpeaker == null) {
+                        // Speaker not exists
                         long id = speakerId.incrementAndGet();
                         String fileName = String.format("%04d.jpg", id);
 
                         s.setId(id);
                         s.setFileName(fileName);
+
                         //TODO: implement image file creation
+
+                        speakerToAppend.add(s);
+                    } else {
+                        // Speaker exists
+                        s.setId(resourceSpeaker.getId());
+                        s.setFileName(resourceSpeaker.getFileName());
+
+                        if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
+                            //TODO: implement image file comparison and creation
+
+                            speakerToUpdate.add(s);
+                        }
                     }
                 }
         );
@@ -241,13 +253,39 @@ public class ConferenceDataLoader {
                 .map(Talk::getId)
                 .collect(Collectors.toList()));
 
-        //TODO: implement comparing and YAML file saving
-        contentfulSpeakers.sort(Comparator.comparing(Speaker::getId));
+        if (speakerToAppend.isEmpty() && speakerToUpdate.isEmpty()) {
+            log.info("All speakers are up-to-date");
+        } else {
+            YamlUtils.clearDumpDirectory();
 
-        YamlUtils.clearDumpDirectory();
+            if (!speakerToAppend.isEmpty()) {
+                log.info("Speakers (to append resource files): {}", speakerToAppend.size());
+                speakerToAppend.forEach(
+                        s -> log.debug("Speaker: nameEn: '{}', name: '{}'",
+                                LocalizationUtils.getString(s.getName(), Language.ENGLISH),
+                                LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
+                );
+
+                YamlUtils.dumpSpeakers(speakerToAppend, "speakers-to-append.yml");
+            }
+
+            if (!speakerToUpdate.isEmpty()) {
+                speakerToUpdate.sort(Comparator.comparing(Speaker::getId));
+
+                log.info("Speakers (to update resource files): {}", speakerToUpdate.size());
+                speakerToUpdate.forEach(
+                        s -> log.debug("Speaker: nameEn: '{}', name: '{}'",
+                                LocalizationUtils.getString(s.getName(), Language.ENGLISH),
+                                LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
+                );
+
+                YamlUtils.dumpSpeakers(speakerToUpdate, "speakers-to-update.yml");
+            }
+        }
+
+        //TODO: implement comparing and YAML file saving
         YamlUtils.dumpEvent(contentfulEvent, "event.yml");
         YamlUtils.dumpTalks(contentfulTalks, "talks.yml");
-        YamlUtils.dumpSpeakers(contentfulSpeakers, "speakers.yml");
     }
 
     private static Speaker findResourceSpeaker(Speaker speaker, Map<NameCompany, Long> knownSpeakerIdsMap,

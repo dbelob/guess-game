@@ -1090,17 +1090,36 @@ public class ContentfulUtils {
      * @return {@code true} if need to update, {@code false} otherwise
      */
     public static boolean needUpdate(EventType a, EventType b) {
-        return (a.getId() != b.getId()) ||
-                (a.getConference() != b.getConference()) ||
-                !equals(a.getLogoFileName(), b.getLogoFileName()) ||
-                !equals(a.getName(), b.getName()) ||
-                !equals(a.getDescription(), b.getDescription()) ||
-                !equals(a.getSiteLink(), b.getSiteLink()) ||
-                !equals(a.getVkLink(), b.getVkLink()) ||
-                !equals(a.getTwitterLink(), b.getTwitterLink()) ||
-                !equals(a.getFacebookLink(), b.getFacebookLink()) ||
-                !equals(a.getYoutubeLink(), b.getYoutubeLink()) ||
-                !equals(a.getTelegramLink(), b.getTelegramLink());
+        return !((a.getId() == b.getId()) &&
+                (a.getConference() == b.getConference()) &&
+                equals(a.getLogoFileName(), b.getLogoFileName()) &&
+                equals(a.getName(), b.getName()) &&
+                equals(a.getDescription(), b.getDescription()) &&
+                equals(a.getSiteLink(), b.getSiteLink()) &&
+                equals(a.getVkLink(), b.getVkLink()) &&
+                equals(a.getTwitterLink(), b.getTwitterLink()) &&
+                equals(a.getFacebookLink(), b.getFacebookLink()) &&
+                equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
+                equals(a.getTelegramLink(), b.getTelegramLink()));
+    }
+
+    /**
+     * Indicates the need to update speaker.
+     *
+     * @param a first speaker
+     * @param b second speaker
+     * @return {@code true} if need to update, {@code false} otherwise
+     */
+    public static boolean needUpdate(Speaker a, Speaker b) {
+        return !((a.getId() == b.getId()) &&
+                equals(a.getFileName(), b.getFileName()) &&
+                equals(a.getName(), b.getName()) &&
+                equals(a.getCompany(), b.getCompany()) &&
+                equals(a.getBio(), b.getBio()) &&
+                equals(a.getTwitter(), b.getTwitter()) &&
+                equals(a.getGitHub(), b.getGitHub()) &&
+                (a.isJavaChampion() == b.isJavaChampion()) &&
+                (a.isMvp() == b.isMvp()));
     }
 
     private static boolean equals(String a, String b) {
@@ -1108,7 +1127,15 @@ public class ContentfulUtils {
     }
 
     private static <T> boolean equals(List<T> a, List<T> b) {
-        return (a.containsAll(b) && b.containsAll(a));
+        if (a != null) {
+            if (b != null) {
+                return (a.containsAll(b) && b.containsAll(a));
+            } else {
+                return false;
+            }
+        } else {
+            return (b == null);
+        }
     }
 
     public static void main(String[] args) {
