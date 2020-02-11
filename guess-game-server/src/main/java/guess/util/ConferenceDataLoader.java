@@ -101,12 +101,14 @@ public class ConferenceDataLoader {
      * @param startDate          start date
      * @param conferenceCode     conference code
      * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
+     * @param knownTalkIdsMap    name/(talk id) map for known talks
      * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
     private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                               Map<NameCompany, Long> knownSpeakerIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                                               Map<NameCompany, Long> knownSpeakerIdsMap,
+                                               Map<String, Long> knownTalkIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, events, speakers, talks from resource files
@@ -126,7 +128,7 @@ public class ConferenceDataLoader {
                         .findFirst())
                 .orElse(null);
         if (resourceEvent == null) {
-            log.info("Event type (in resource files) not found");
+            log.info("Event (in resource files) not found");
         } else {
             log.info("Event (in resource files): nameEn: {}, nameRu: {}, startDate: {}, endDate: {}",
                     LocalizationUtils.getString(resourceEvent.getName(), Language.ENGLISH),
@@ -241,8 +243,52 @@ public class ConferenceDataLoader {
         List<Talk> talksToDelete = new ArrayList<>();
         List<Talk> talksToAppend = new ArrayList<>();
         List<Talk> talksToUpdate = new ArrayList<>();
+        AtomicLong talksId = new AtomicLong(
+                resourceSourceInformation.getTalks().stream()
+                        .map(Talk::getId)
+                        .max(Long::compare)
+                        .orElse(-1L));
 
-        //TODO: find and change talks
+        if (resourceEvent == null) {
+            // Event not exists
+            contentfulTalks.forEach(
+                    t -> {
+                        t.setId(talksId.incrementAndGet());
+                        talksToAppend.add(t);
+                    }
+            );
+        } else {
+            // Event exists
+            Map<Long, Talk> resourceTalkIdsMap = resourceSourceInformation.getTalks().stream()
+                    .collect(Collectors.toMap(
+                            Talk::getId,
+                            t -> t));
+            Map<String, Set<Talk>> resourceRuNameTalks = resourceSourceInformation.getTalks().stream()
+                    .collect(Collectors.groupingBy(
+                            t -> LocalizationUtils.getString(t.getName(), Language.RUSSIAN).trim(),
+                            Collectors.toSet()
+                    ));
+            Map<String, Set<Talk>> resourceEnNameTalks = resourceSourceInformation.getTalks().stream()
+                    .collect(Collectors.groupingBy(
+                            t -> LocalizationUtils.getString(t.getName(), Language.ENGLISH).trim(),
+                            Collectors.toSet()
+                    ));
+            contentfulTalks.forEach(
+                    t -> {
+                        Talk resourceTalk = findResourceTalk(t, knownTalkIdsMap, resourceTalkIdsMap, resourceRuNameTalks, resourceEnNameTalks);
+
+                        if (resourceTalk == null) {
+                            // Talk not exists
+                            t.setId(talksId.incrementAndGet());
+                            talksToAppend.add(t);
+                        } else {
+                            // Talk exists
+                            t.setId(resourceTalk.getId());
+                            talksToUpdate.add(t);
+                        }
+                    }
+            );
+        }
 
         // Find event
         contentfulEvent.setEventType(resourceEventType);
@@ -303,6 +349,35 @@ public class ConferenceDataLoader {
                 YamlUtils.dumpEvent(eventToUpdate, "event-to-update.yml");
             }
         }
+    }
+
+    /**
+     * Loads talks, speakers, event information.
+     *
+     * @param conference         conference
+     * @param startDate          start date
+     * @param conferenceCode     conference code
+     * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
+     * @throws IOException                if resource files could not be opened
+     * @throws SpeakerDuplicatedException if speakers duplicated
+     * @throws NoSuchFieldException       if field name is invalid
+     */
+    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
+                                               Map<NameCompany, Long> knownSpeakerIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+        loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, Collections.emptyMap());
+    }
+
+    /**
+     * Loads talks, speakers, event information.
+     *
+     * @param conference     conference
+     * @param startDate      start date
+     * @param conferenceCode conference code
+     * @throws IOException                if resource files could not be opened
+     * @throws SpeakerDuplicatedException if speakers duplicated
+     */
+    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap(), Collections.emptyMap());
     }
 
     /**
@@ -414,6 +489,14 @@ public class ConferenceDataLoader {
         return findResourceSpeakerByName(speaker, resourceEnNameSpeakers, Language.ENGLISH);
     }
 
+    private static Talk findResourceTalk(Talk talk, Map<String, Long> knownTalkIdsMap,
+                                         Map<Long, Talk> resourceTalkIdsMap,
+                                         Map<String, Set<Talk>> resourceRuNameTalks,
+                                         Map<String, Set<Talk>> resourceEnNameTalks) {
+        //TODO: implement
+        return null;
+    }
+
     /**
      * Finds resource speaker by pair of name, company.
      *
@@ -460,19 +543,6 @@ public class ConferenceDataLoader {
         }
 
         return null;
-    }
-
-    /**
-     * Loads talks, speakers, event information.
-     *
-     * @param conference     conference
-     * @param startDate      start date
-     * @param conferenceCode conference code
-     * @throws IOException                if resource files could not be opened
-     * @throws SpeakerDuplicatedException if speakers duplicated
-     */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap());
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
