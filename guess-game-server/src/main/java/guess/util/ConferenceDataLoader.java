@@ -101,14 +101,12 @@ public class ConferenceDataLoader {
      * @param startDate          start date
      * @param conferenceCode     conference code
      * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
-     * @param knownTalkIdsMap    name/(talk id) map for known talks
      * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
     private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                               Map<NameCompany, Long> knownSpeakerIdsMap,
-                                               Map<String, Long> knownTalkIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                                               Map<NameCompany, Long> knownSpeakerIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, events, speakers, talks from resource files
@@ -259,23 +257,19 @@ public class ConferenceDataLoader {
             );
         } else {
             // Event exists
-            Map<Long, Talk> resourceTalkIdsMap = resourceSourceInformation.getTalks().stream()
-                    .collect(Collectors.toMap(
-                            Talk::getId,
-                            t -> t));
-            Map<String, Set<Talk>> resourceRuNameTalks = resourceSourceInformation.getTalks().stream()
+            Map<String, Set<Talk>> resourceRuNameTalks = resourceEvent.getTalks().stream()
                     .collect(Collectors.groupingBy(
                             t -> LocalizationUtils.getString(t.getName(), Language.RUSSIAN).trim(),
                             Collectors.toSet()
                     ));
-            Map<String, Set<Talk>> resourceEnNameTalks = resourceSourceInformation.getTalks().stream()
+            Map<String, Set<Talk>> resourceEnNameTalks = resourceEvent.getTalks().stream()
                     .collect(Collectors.groupingBy(
                             t -> LocalizationUtils.getString(t.getName(), Language.ENGLISH).trim(),
                             Collectors.toSet()
                     ));
             contentfulTalks.forEach(
                     t -> {
-                        Talk resourceTalk = findResourceTalk(t, knownTalkIdsMap, resourceTalkIdsMap, resourceRuNameTalks, resourceEnNameTalks);
+                        Talk resourceTalk = findResourceTalk(t, resourceRuNameTalks, resourceEnNameTalks);
 
                         if (resourceTalk == null) {
                             // Talk not exists
@@ -284,7 +278,10 @@ public class ConferenceDataLoader {
                         } else {
                             // Talk exists
                             t.setId(resourceTalk.getId());
-                            talksToUpdate.add(t);
+
+                            if (ContentfulUtils.needUpdate(resourceTalk, t)) {
+                                talksToUpdate.add(t);
+                            }
                         }
                     }
             );
@@ -354,30 +351,15 @@ public class ConferenceDataLoader {
     /**
      * Loads talks, speakers, event information.
      *
-     * @param conference         conference
-     * @param startDate          start date
-     * @param conferenceCode     conference code
-     * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
-     * @throws IOException                if resource files could not be opened
-     * @throws SpeakerDuplicatedException if speakers duplicated
-     * @throws NoSuchFieldException       if field name is invalid
-     */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                               Map<NameCompany, Long> knownSpeakerIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-        loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, Collections.emptyMap());
-    }
-
-    /**
-     * Loads talks, speakers, event information.
-     *
      * @param conference     conference
      * @param startDate      start date
      * @param conferenceCode conference code
      * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speakers duplicated
+     * @throws NoSuchFieldException       if field name is invalid
      */
     private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap(), Collections.emptyMap());
+        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap());
     }
 
     /**
@@ -489,12 +471,17 @@ public class ConferenceDataLoader {
         return findResourceSpeakerByName(speaker, resourceEnNameSpeakers, Language.ENGLISH);
     }
 
-    private static Talk findResourceTalk(Talk talk, Map<String, Long> knownTalkIdsMap,
-                                         Map<Long, Talk> resourceTalkIdsMap,
+    private static Talk findResourceTalk(Talk talk,
                                          Map<String, Set<Talk>> resourceRuNameTalks,
                                          Map<String, Set<Talk>> resourceEnNameTalks) {
-        //TODO: implement
-        return null;
+        // Find in resource talks by Russian name
+        Talk resourceTalk = findResourceTalkByName(talk, resourceRuNameTalks, Language.RUSSIAN);
+        if (resourceTalk != null) {
+            return resourceTalk;
+        }
+
+        // Find in resource talks by English name
+        return findResourceTalkByName(talk, resourceEnNameTalks, Language.ENGLISH);
     }
 
     /**
@@ -523,11 +510,12 @@ public class ConferenceDataLoader {
     private static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
         String speakerName = LocalizationUtils.getString(speaker.getName(), language);
         Set<Speaker> resourceSpeakers = resourceNameSpeakers.get(speakerName);
+
         if (resourceSpeakers != null) {
             if (resourceSpeakers.size() == 0) {
-                throw new IllegalStateException(String.format("No speakers found in set for speaker '%s'", speakerName));
+                throw new IllegalStateException(String.format("No speakers found in set for speaker name '%s'", speakerName));
             } else if (resourceSpeakers.size() > 1) {
-                log.warn("More than one speakers found by name '{}', new speaker will be created (may be necessary to add a known speaker to the method parameters and restart loading)", speakerName);
+                log.warn("More than one speaker found by name '{}', new speaker will be created (may be necessary to add a known speaker to the method parameters and restart loading)", speakerName);
 
                 return null;
             } else {
@@ -539,6 +527,25 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(speaker.getCompany(), language));
 
                 return resourceSpeaker;
+            }
+        }
+
+        return null;
+    }
+
+    private static Talk findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language) {
+        String talkName = LocalizationUtils.getString(talk.getName(), language);
+        Set<Talk> resourceTalks = resourceNameTalks.get(talkName);
+
+        if (resourceTalks != null) {
+            if (resourceTalks.size() == 0) {
+                throw new IllegalStateException(String.format("No talks found in set for talk name '%s'", talkName));
+            } else if (resourceTalks.size() > 1) {
+                log.warn("More than one talk found by name '{}', new talk will be created", talkName);
+
+                return null;
+            } else {
+                return resourceTalks.iterator().next();
             }
         }
 

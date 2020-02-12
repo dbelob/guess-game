@@ -1140,6 +1140,23 @@ public class ContentfulUtils {
                 (a.isMvp() == b.isMvp()));
     }
 
+    /**
+     * Indicates the need to update talk.
+     *
+     * @param a first talk
+     * @param b second talk
+     * @return {@code true} if need to update, {@code false} otherwise
+     */
+    public static boolean needUpdate(Talk a, Talk b) {
+        return !((a.getId() == b.getId()) &&
+                equals(a.getName(), b.getName()) &&
+                equals(a.getShortDescription(), b.getShortDescription()) &&
+                equals(a.getLongDescription(), b.getLongDescription()) &&
+                equals(a.getPresentationLinks(), b.getPresentationLinks()) &&
+                equals(a.getVideoLinks(), b.getVideoLinks()) &&
+                equals(a.getSpeakerIds(), b.getSpeakerIds()));
+    }
+
     private static boolean equals(String a, String b) {
         return Objects.equals(a, b);
     }
