@@ -1157,6 +1157,26 @@ public class ContentfulUtils {
                 equals(a.getSpeakerIds(), b.getSpeakerIds()));
     }
 
+    /**
+     * Indicates the need to update event.
+     *
+     * @param a first event
+     * @param b second event
+     * @return {@code true} if need to update, {@code false} otherwise
+     */
+    public static boolean needUpdate(Event a, Event b) {
+        return !((a.getEventTypeId() == b.getEventTypeId()) &&
+                equals(a.getName(), b.getName()) &&
+                a.getStartDate().equals(b.getStartDate()) &&
+                a.getEndDate().equals(b.getEndDate()) &&
+                equals(a.getSiteLink(), b.getSiteLink()) &&
+                equals(a.getCity(), b.getCity()) &&
+                equals(a.getVenueAddress(), b.getVenueAddress()) &&
+                equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
+                equals(a.getMapCoordinates(), b.getMapCoordinates()) &&
+                equals(a.getTalkIds(), b.getTalkIds()));
+    }
+
     private static boolean equals(String a, String b) {
         return Objects.equals(a, b);
     }

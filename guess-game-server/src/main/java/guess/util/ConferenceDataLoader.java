@@ -285,6 +285,10 @@ public class ConferenceDataLoader {
                         }
                     }
             );
+
+            talksToDelete = resourceEvent.getTalks().stream()
+                    .filter(t -> !talksToUpdate.contains(t))
+                    .collect(Collectors.toList());
         }
 
         // Find event
@@ -297,7 +301,13 @@ public class ConferenceDataLoader {
         Event eventToAppend = null;
         Event eventToUpdate = null;
 
-        //TODO: change event
+        if (resourceEvent == null) {
+            eventToAppend = contentfulEvent;
+        } else {
+            if (ContentfulUtils.needUpdate(resourceEvent, contentfulEvent)) {
+                eventToUpdate = contentfulEvent;
+            }
+        }
 
         // Save files
         if (speakersToAppend.isEmpty() && speakersToUpdate.isEmpty()) {
