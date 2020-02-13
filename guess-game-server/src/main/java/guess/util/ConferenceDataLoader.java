@@ -145,7 +145,7 @@ public class ConferenceDataLoader {
         List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode);
         log.info("Talks (in Contentful): {}", contentfulTalks.size());
         contentfulTalks.forEach(
-                t -> log.debug("Talk: nameEn: '{}', name: '{}'",
+                t -> log.trace("Talk: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(t.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
         );
@@ -157,7 +157,7 @@ public class ConferenceDataLoader {
                 .collect(Collectors.toList());
         log.info("Speakers (in Contentful): {}", contentfulSpeakers.size());
         contentfulSpeakers.forEach(
-                s -> log.debug("Speaker: nameEn: '{}', name: '{}'",
+                s -> log.trace("Speaker: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
@@ -407,7 +407,7 @@ public class ConferenceDataLoader {
     private static void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, speakers.size());
         speakers.forEach(
-                s -> log.debug("Speaker: nameEn: '{}', name: '{}'",
+                s -> log.trace("Speaker: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
@@ -428,7 +428,7 @@ public class ConferenceDataLoader {
     private static void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, talks.size());
         talks.forEach(
-                t -> log.debug("Talk: nameEn: '{}', name: '{}'",
+                t -> log.trace("Talk: nameEn: '{}', name: '{}'",
                         LocalizationUtils.getString(t.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
         );

@@ -353,12 +353,12 @@ public class ContentfulUtils {
         List<Event> events = getEvents(eventName, startDate);
 
         if (events.isEmpty()) {
-            throw new IllegalStateException(String.format("No events found for conference %s and start date %s (events: %d)",
+            throw new IllegalStateException(String.format("No events found for conference %s and start date %s, events: %d (change conference and/or start date and rerun)",
                     conference, startDate, events.size()));
         }
 
         if (events.size() > 1) {
-            throw new IllegalStateException(String.format("Too much events found for conference %s and start date %s (events: %d)",
+            throw new IllegalStateException(String.format("Too much events found for conference %s and start date %s, events: %d (change conference and/or start date and rerun)",
                     conference, startDate, events.size()));
         }
 
@@ -473,10 +473,10 @@ public class ContentfulUtils {
                                 String speakerId = s.getSys().getId();
                                 boolean isErrorAsset = entryErrorSet.contains(speakerId);
                                 if (isErrorAsset) {
-                                    log.warn("Speaker id {} not resolvable for '{}' talk", speakerId, t.getFields().getNameEn());
+                                    throw new IllegalArgumentException(String.format("Speaker id %s not resolvable for '%s' talk (change fixEntryNotResolvableError() method and rerun)", speakerId, t.getFields().getNameEn()));
                                 }
 
-                                return !isErrorAsset;
+                                return true;
                             })
                             .map(s -> {
                                 String speakerId = s.getSys().getId();
@@ -716,7 +716,7 @@ public class ContentfulUtils {
         if (matcher.matches()) {
             return matcher.group(1);
         } else {
-            throw new IllegalArgumentException(String.format("Invalid Twitter username: %s", value));
+            throw new IllegalArgumentException(String.format("Invalid Twitter username: %s (change regular expression and rerun)", value));
         }
     }
 
@@ -749,7 +749,7 @@ public class ContentfulUtils {
             if (matcher.matches()) {
                 return matcher.group(3);
             } else {
-                throw new IllegalArgumentException(String.format("Invalid GitHub username: %s", value));
+                throw new IllegalArgumentException(String.format("Invalid GitHub username: %s (change regular expressions and rerun)", value));
             }
         }
     }
@@ -876,7 +876,7 @@ public class ContentfulUtils {
         if (matcher.matches()) {
             return String.format("https://%s", matcher.group(3));
         } else {
-            throw new IllegalArgumentException(String.format("Invalid asset URL: %s", value));
+            throw new IllegalArgumentException(String.format("Invalid asset URL: %s  (change regular expression and rerun)", value));
         }
     }
 
@@ -978,7 +978,7 @@ public class ContentfulUtils {
                         .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Мск")
                         .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " СПб");
             default:
-                throw new IllegalArgumentException(String.format("Unknown locale: %s", locale));
+                throw new IllegalArgumentException(String.format("Unknown locale: %s  (add new locale, change method and rerun)", locale));
         }
     }
 
@@ -1080,6 +1080,34 @@ public class ContentfulUtils {
                                 true,
                                 false
                         );
+                    }
+                },
+                new NotResolvableSpeaker(ConferenceSpaceInfo.COMMON_SPACE_INFO, "2i2OfmHelyMCiK2sCUoGsS") {
+                    @Override
+                    public Speaker createSpeaker(long id) {
+                        return new Speaker(
+                                id,
+                                "https://images.ctfassets.net/oxjq45e8ilak/3msdNYfaMAagzUjHssfbws/6f2e74bfc57d4b263643854df894b11b/Egorov.jpg",
+                                extractLocaleItems(
+                                        "Sergey Egorov",
+                                        "Сергей Егоров"),
+                                extractLocaleItems(
+                                        "Pivotal",
+                                        null),
+                                extractLocaleItems(
+                                        "Sergei works at Pivotal on Project Reactor in Berlin, Germany.\n" +
+                                                "\n" +
+                                                "He is an active member of the open source community, member of the Apache Foundation, co-maintainer of the Testcontainers project, and a contributor to various OSS projects (Apache Groovy, Testcontainers, JBoss Modules, Spring Boot, to name a few), likes to share the knowledge and was presenting at different conferences and meetups in Russia, Germany, Ukraine, Norway, Denmark, Spain, and Estonia.\n" +
+                                                "\n" +
+                                                "He is passionate about DevOps topics, clouds, and infrastructure.\n" +
+                                                "\n" +
+                                                "Before Pivotal, he was working at Vivy, N26, Zalando, ZeroTurnaround, TransferWise, and other startups.\n",
+                                        "Сергей работает в компании Pivotal в команде Project Reactor. Он является активным участником open source-сообщества, членом Apache Software Foundation, одним из главных разработчиков проекта Testcontainers и контрибьютором в разного рода проектах (Apache Groovy, Testcontainers, Spring Boot, JBoss Modules и не только)."),
+                                "bsideup",
+                                "bsideup",
+                                false,
+                                false
+                                );
                     }
                 }
         );
