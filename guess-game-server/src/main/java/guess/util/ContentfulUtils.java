@@ -895,7 +895,7 @@ public class ContentfulUtils {
         if (checkEnTextExistence &&
                 ((enText == null) || enText.isEmpty()) &&
                 ((ruText != null) && !ruText.isEmpty())) {
-            throw new IllegalArgumentException(String.format("Invalid arguments: enText is empty, ruText is not empty ('%s')", ruText));
+            log.warn("Invalid arguments: enText is empty, ruText is not empty ('{}')", ruText);
         }
 
         if (Objects.equals(enText, ruText)) {
