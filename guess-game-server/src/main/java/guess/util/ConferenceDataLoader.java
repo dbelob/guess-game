@@ -287,7 +287,23 @@ public class ConferenceDataLoader {
             );
 
             talksToDelete = resourceEvent.getTalks().stream()
-                    .filter(t -> !talksToUpdate.contains(t))
+                    .filter(dt -> {
+                        if (talksToUpdate.contains(dt)) {
+                            return false;
+                        } else {
+                            boolean talkExistsInAnyOtherEvent = resourceSourceInformation.getEvents().stream()
+                                    .filter(e -> !e.equals(resourceEvent))
+                                    .flatMap(e -> e.getTalks().stream())
+                                    .anyMatch(rt -> rt.equals(dt));
+
+                            if (talkExistsInAnyOtherEvent) {
+                                log.warn("Deleting '{}' talk exists in other events and can't be deleted",
+                                        LocalizationUtils.getString(dt.getName(), Language.ENGLISH));
+                            }
+
+                            return !talkExistsInAnyOtherEvent;
+                        }
+                    })
                     .collect(Collectors.toList());
         }
 

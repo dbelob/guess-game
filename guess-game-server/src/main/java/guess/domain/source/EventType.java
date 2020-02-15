@@ -4,6 +4,7 @@ import guess.domain.Conference;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Event type.
@@ -139,6 +140,19 @@ public class EventType {
 
     public void setEvents(List<Event> events) {
         this.events = events;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EventType eventType = (EventType) o;
+        return id == eventType.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     @Override

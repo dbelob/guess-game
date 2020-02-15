@@ -92,8 +92,7 @@ talks:
     speakerIds: [35]
   - id: 21
     name:
-      - {language: en, text: "Reactive, or not reactive: That is the question"}
-      - {language: ru, text: "Reactive или не reactive: Вот в чем вопрос"}
+      - {language: en, text: "Spring Reactive Ripper"}
     speakerIds: [1, 28]
   - id: 22
     name:
@@ -1267,3 +1266,8 @@ talks:
       - {language: en, text: "How to sell yourself for fun and profit"}
       - {language: ru, text: "Как правильно продать себя ради фана и профита"}
     speakerIds: [35]
+  - id: 284
+    name:
+      - {language: en, text: "Reactive, or not reactive: That is the question"}
+      - {language: ru, text: "Reactive или не reactive: Вот в чем вопрос"}
+    speakerIds: [1, 28]

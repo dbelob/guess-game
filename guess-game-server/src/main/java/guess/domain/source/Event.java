@@ -3,6 +3,7 @@ package guess.domain.source;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -138,6 +139,20 @@ public class Event {
 
     public void setTalks(List<Talk> talks) {
         this.talks = talks;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Event event = (Event) o;
+        return Objects.equals(eventType, event.eventType) &&
+                Objects.equals(startDate, event.startDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eventType, startDate);
     }
 
     @Override
