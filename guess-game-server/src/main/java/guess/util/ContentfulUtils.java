@@ -1107,7 +1107,7 @@ public class ContentfulUtils {
                                 "bsideup",
                                 false,
                                 false
-                                );
+                        );
                     }
                 },
                 new NotResolvableSpeaker(ConferenceSpaceInfo.COMMON_SPACE_INFO, "1FDbCMYfsEkiQG6s8CWQwS") {
@@ -1128,6 +1128,28 @@ public class ContentfulUtils {
                                 "arungupta",
                                 "arun-gupta",
                                 true,
+                                false
+                        );
+                    }
+                },
+                new NotResolvableSpeaker(ConferenceSpaceInfo.COMMON_SPACE_INFO, "MPZSTxFNbbjBdf5M5uoOZ") {
+                    @Override
+                    public Speaker createSpeaker(long id) {
+                        return new Speaker(
+                                id,
+                                "https://images.ctfassets.net/oxjq45e8ilak/24Bp61cBWjoYfrBtNvrabm/6f4cfb828f52f3e06d558559fac9c397/shaposhnik.jpg",
+                                extractLocaleItems(
+                                        "Roman Shaposhnik",
+                                        "Роман Шапошник"),
+                                extractLocaleItems(
+                                        "ZEDEDA Inc.",
+                                        null),
+                                extractLocaleItems(
+                                        "Roman is an open source software expert, currently serving on the board of directors for both The Apache Software Foundation and LF Edge. He has personally contributed to a variety of open source projects ranging from the Linux Kernel to Hadoop and ffmpeg. He is a co-founder and the vice president of product and strategy for Zededa, an edge virtualization startup. Throughout his career, Roman has held technical leadership roles at several well-known companies, including Sun Microsystems, Yahoo!, Cloudera and Pivotal Software. He holds a master's degree in mathematics and computer science from St. Petersburg State University. He likes German craft lagers and is fighting IPA invasion one seidla at a time.",
+                                        null),
+                                "rhatr",
+                                null,
+                                false,
                                 false
                         );
                     }
