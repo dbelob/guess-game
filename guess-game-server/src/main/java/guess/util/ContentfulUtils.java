@@ -1109,6 +1109,28 @@ public class ContentfulUtils {
                                 false
                                 );
                     }
+                },
+                new NotResolvableSpeaker(ConferenceSpaceInfo.COMMON_SPACE_INFO, "1FDbCMYfsEkiQG6s8CWQwS") {
+                    @Override
+                    public Speaker createSpeaker(long id) {
+                        return new Speaker(
+                                id,
+                                "https://images.contentful.com/oxjq45e8ilak/4PO4u392HuG4KkkcyOEoEQ/454ad2e9abc50d5790dd20f6d71080d4/arun-feb25-2012.png",
+                                extractLocaleItems(
+                                        "Arun Gupta",
+                                        null),
+                                extractLocaleItems(
+                                        "Couchbase",
+                                        null),
+                                extractLocaleItems(
+                                        "Arun Gupta is the vice president of developer advocacy at Couchbase. He has been built and led developer communities for 10+ years at Sun, Oracle, and Red Hat. He has deep expertise in leading cross-functional teams to develop and execute strategy, planning, and execution of content, marketing campaigns, and programs. Prior to that he led engineering teams at Sun and is a founding member of the Java EE team. Gupta has authored more than 2,000 blog posts on technology. He has extensive speaking experience in more than 40 countries on myriad topics and is a JavaOne Rock Star for three years in a row. Gupta also founded the Devoxx4Kids chapter in the US and continues to promote technology education among children. An author of a best-selling book, an avid runner, a globe trotter, a Java Champion, a JUG leader, and a Docker Captain, he is easily accessible at @arungupta.",
+                                        null),
+                                "arungupta",
+                                "arun-gupta",
+                                true,
+                                false
+                        );
+                    }
                 }
         );
 
