@@ -4,6 +4,7 @@ import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.NameCompany;
+import guess.domain.UrlFilename;
 import guess.domain.source.*;
 import guess.util.yaml.YamlUtils;
 import org.slf4j.Logger;
@@ -198,38 +199,41 @@ public class ConferenceDataLoader {
                         .orElse(-1L));
         List<Speaker> speakersToAppend = new ArrayList<>();
         List<Speaker> speakersToUpdate = new ArrayList<>();
+        List<UrlFilename> urlFilenamesToAppend = new ArrayList<>();
+        List<UrlFilename> urlFilenamesToUpdate = new ArrayList<>();
 
-        contentfulSpeakers.forEach(
-                s -> {
-                    Speaker resourceSpeaker = findResourceSpeaker(s, knownSpeakerIdsMap, resourceSpeakerIdsMap,
-                            resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
-                            resourceRuNameSpeakers, resourceEnNameSpeakers);
+        for (Speaker s : contentfulSpeakers) {
+            Speaker resourceSpeaker = findResourceSpeaker(s, knownSpeakerIdsMap, resourceSpeakerIdsMap,
+                    resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
+                    resourceRuNameSpeakers, resourceEnNameSpeakers);
 
-                    if (resourceSpeaker == null) {
-                        // Speaker not exists
-                        long id = speakerId.incrementAndGet();
-                        String fileName = String.format("%04d.jpg", id);
+            if (resourceSpeaker == null) {
+                // Speaker not exists
+                long id = speakerId.incrementAndGet();
+                String sourceUrl = s.getFileName();
+                String destinationFileName = String.format("%04d.jpg", id);
 
-                        s.setId(id);
-                        s.setFileName(fileName);
+                s.setId(id);
 
-                        PictureUtils.create(fileName);
+                urlFilenamesToAppend.add(new UrlFilename(sourceUrl, destinationFileName));
+                s.setFileName(destinationFileName);
 
-                        speakersToAppend.add(s);
-                    } else {
-                        // Speaker exists
-                        s.setId(resourceSpeaker.getId());
-                        s.setFileName(resourceSpeaker.getFileName());
+                speakersToAppend.add(s);
+            } else {
+                // Speaker exists
+                s.setId(resourceSpeaker.getId());
+                String sourceUrl = s.getFileName();
+                String destinationFileName = resourceSpeaker.getFileName();
+                s.setFileName(destinationFileName);
 
-                        if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
-                            if (PictureUtils.needUpdate(resourceSpeaker.getFileName())) {
-                                PictureUtils.create(resourceSpeaker.getFileName());
-                            }
-                            speakersToUpdate.add(s);
-                        }
+                if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
+                    if (PictureUtils.needUpdate(destinationFileName)) {
+                        urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
                     }
+                    speakersToUpdate.add(s);
                 }
-        );
+            }
+        }
 
         // Find talks
         contentfulTalks.forEach(
@@ -326,10 +330,21 @@ public class ConferenceDataLoader {
         }
 
         // Save files
-        if (speakersToAppend.isEmpty() && speakersToUpdate.isEmpty()) {
-            log.info("All speakers are up-to-date");
+        if (urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
+                speakersToAppend.isEmpty() && speakersToUpdate.isEmpty() &&
+                talksToDelete.isEmpty() && talksToAppend.isEmpty() && talksToUpdate.isEmpty() &&
+                (eventToAppend == null) && (eventToUpdate == null)) {
+            log.info("All speakers, talks and event are up-to-date");
         } else {
             YamlUtils.clearDumpDirectory();
+
+            if (!urlFilenamesToAppend.isEmpty()) {
+                logAndCreateSpeakerPictures(urlFilenamesToAppend, "Speaker pictures (to append): {}");
+            }
+
+            if (!urlFilenamesToUpdate.isEmpty()) {
+                logAndCreateSpeakerPictures(urlFilenamesToUpdate, "Speaker pictures (to update): {}");
+            }
 
             if (!speakersToAppend.isEmpty()) {
                 logAndDumpSpeakers(speakersToAppend, "Speakers (to append resource file): {}", "speakers-to-append.yml");
@@ -339,12 +354,6 @@ public class ConferenceDataLoader {
                 speakersToUpdate.sort(Comparator.comparing(Speaker::getId));
                 logAndDumpSpeakers(speakersToUpdate, "Speakers (to update resource file): {}", "speakers-to-update.yml");
             }
-        }
-
-        if (talksToDelete.isEmpty() && talksToAppend.isEmpty() && talksToUpdate.isEmpty()) {
-            log.info("All talks are up-to-date");
-        } else {
-            YamlUtils.clearDumpDirectory();
 
             if (!talksToDelete.isEmpty()) {
                 talksToDelete.sort(Comparator.comparing(Talk::getId));
@@ -359,11 +368,7 @@ public class ConferenceDataLoader {
                 talksToUpdate.sort(Comparator.comparing(Talk::getId));
                 logAndDumpTalks(talksToUpdate, "Talks (to update resource file): {}", "talks-to-update.yml");
             }
-        }
 
-        if ((eventToAppend == null) && (eventToUpdate == null)) {
-            log.info("Event is up-to-date");
-        } else {
             if (eventToAppend != null) {
                 YamlUtils.dumpEvent(eventToAppend, "event-to-append.yml");
             }
@@ -409,6 +414,20 @@ public class ConferenceDataLoader {
         );
 
         YamlUtils.dumpEventTypes(eventTypes, filename);
+    }
+
+    /**
+     * Logs and creates speaker pictures.
+     *
+     * @param urlFilenames url, filenames pairs
+     * @param logMessage   log message
+     * @throws IOException if file creation occurs
+     */
+    private static void logAndCreateSpeakerPictures(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
+        log.info(logMessage, urlFilenames.size());
+        for (UrlFilename urlFilename : urlFilenames) {
+            PictureUtils.create(urlFilename.getUrl(), urlFilename.getFilename());
+        }
     }
 
     /**
