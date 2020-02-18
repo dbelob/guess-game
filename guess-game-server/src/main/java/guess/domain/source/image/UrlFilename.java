@@ -1,4 +1,4 @@
-package guess.domain;
+package guess.domain.source.image;
 
 /**
  * URL, filename pair.

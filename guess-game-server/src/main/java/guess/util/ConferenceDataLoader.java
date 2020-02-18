@@ -3,8 +3,8 @@ package guess.util;
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
-import guess.domain.NameCompany;
-import guess.domain.UrlFilename;
+import guess.domain.source.NameCompany;
+import guess.domain.source.image.UrlFilename;
 import guess.domain.source.*;
 import guess.util.yaml.YamlUtils;
 import org.slf4j.Logger;
@@ -227,7 +227,7 @@ public class ConferenceDataLoader {
                 s.setFileName(destinationFileName);
 
                 if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
-                    if (PictureUtils.needUpdate(destinationFileName)) {
+                    if (ImageUtils.needUpdate(destinationFileName)) {
                         urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
                     }
                     speakersToUpdate.add(s);
@@ -339,11 +339,11 @@ public class ConferenceDataLoader {
             YamlUtils.clearDumpDirectory();
 
             if (!urlFilenamesToAppend.isEmpty()) {
-                logAndCreateSpeakerPictures(urlFilenamesToAppend, "Speaker pictures (to append): {}");
+                logAndCreateSpeakerImages(urlFilenamesToAppend, "Speaker images (to append): {}");
             }
 
             if (!urlFilenamesToUpdate.isEmpty()) {
-                logAndCreateSpeakerPictures(urlFilenamesToUpdate, "Speaker pictures (to update): {}");
+                logAndCreateSpeakerImages(urlFilenamesToUpdate, "Speaker images (to update): {}");
             }
 
             if (!speakersToAppend.isEmpty()) {
@@ -417,16 +417,16 @@ public class ConferenceDataLoader {
     }
 
     /**
-     * Logs and creates speaker pictures.
+     * Logs and creates speaker images.
      *
      * @param urlFilenames url, filenames pairs
      * @param logMessage   log message
      * @throws IOException if file creation occurs
      */
-    private static void logAndCreateSpeakerPictures(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
+    private static void logAndCreateSpeakerImages(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
         log.info(logMessage, urlFilenames.size());
         for (UrlFilename urlFilename : urlFilenames) {
-            PictureUtils.create(urlFilename.getUrl(), urlFilename.getFilename());
+            ImageUtils.create(urlFilename.getUrl(), urlFilename.getFilename());
         }
     }
 

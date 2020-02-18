@@ -6,6 +6,7 @@ import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.*;
+import guess.util.FileUtils;
 import guess.util.LocalizationUtils;
 import guess.util.QuestionUtils;
 import guess.util.Unsafe;
@@ -323,17 +324,7 @@ public class YamlUtils {
      */
     public static <T> void dump(T items, String filename) throws IOException, NoSuchFieldException {
         File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
-        File parentFile = file.getParentFile();
-
-        if (parentFile.exists()) {
-            if (!parentFile.isDirectory()) {
-                throw new IOException(String.format("'%s' is not directory", parentFile.getAbsolutePath()));
-            }
-        } else {
-            if (!parentFile.mkdirs()) {
-                throw new IOException(String.format("Creation error for '%s' directory", parentFile.getAbsolutePath()));
-            }
-        }
+        FileUtils.checkAndCreateDirectory(file.getParentFile());
 
         FileWriter writer = new FileWriter(file);
 
