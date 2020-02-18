@@ -1,5 +1,6 @@
 package guess.domain.source;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,6 +13,10 @@ public class Talk {
     private List<LocaleItem> name;
     private List<LocaleItem> shortDescription;
     private List<LocaleItem> longDescription;
+    private Long talkDay;
+    private LocalTime trackTime;
+    private Long track;
+    private String language;
     private List<String> presentationLinks;
     private List<String> videoLinks;
 
@@ -22,11 +27,16 @@ public class Talk {
     }
 
     public Talk(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription,
-                List<String> presentationLinks, List<String> videoLinks, List<Speaker> speakers) {
+                Long talkDay, LocalTime trackTime, Long track, String language, List<String> presentationLinks,
+                List<String> videoLinks, List<Speaker> speakers) {
         this.id = id;
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
+        this.talkDay = talkDay;
+        this.trackTime = trackTime;
+        this.track = track;
+        this.language = language;
         this.presentationLinks = presentationLinks;
         this.videoLinks = videoLinks;
         this.speakers = speakers;
@@ -65,6 +75,38 @@ public class Talk {
 
     public void setLongDescription(List<LocaleItem> longDescription) {
         this.longDescription = longDescription;
+    }
+
+    public Long getTalkDay() {
+        return talkDay;
+    }
+
+    public void setTalkDay(Long talkDay) {
+        this.talkDay = talkDay;
+    }
+
+    public LocalTime getTrackTime() {
+        return trackTime;
+    }
+
+    public void setTrackTime(LocalTime trackTime) {
+        this.trackTime = trackTime;
+    }
+
+    public Long getTrack() {
+        return track;
+    }
+
+    public void setTrack(Long track) {
+        this.track = track;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     public List<String> getPresentationLinks() {

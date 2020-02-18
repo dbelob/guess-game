@@ -3,6 +3,7 @@ package guess.domain.source.contentful.talk.fields;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import guess.domain.source.contentful.ContentfulLink;
 
+import java.time.LocalTime;
 import java.util.List;
 
 public abstract class ContentfulTalkFields {
@@ -21,6 +22,10 @@ public abstract class ContentfulTalkFields {
     private ContentfulLink presentation;
 
     private List<ContentfulLink> speakers;
+    private Long talkDay;
+    private LocalTime trackTime;
+    private Long track;
+    private Boolean language;
     private String video;
     private Boolean sdTrack;
     private Boolean demoStage;
@@ -95,6 +100,38 @@ public abstract class ContentfulTalkFields {
 
     public void setSpeakers(List<ContentfulLink> speakers) {
         this.speakers = speakers;
+    }
+
+    public Long getTalkDay() {
+        return talkDay;
+    }
+
+    public void setTalkDay(Long talkDay) {
+        this.talkDay = talkDay;
+    }
+
+    public LocalTime getTrackTime() {
+        return trackTime;
+    }
+
+    public void setTrackTime(LocalTime trackTime) {
+        this.trackTime = trackTime;
+    }
+
+    public Long getTrack() {
+        return track;
+    }
+
+    public void setTrack(Long track) {
+        this.track = track;
+    }
+
+    public Boolean getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Boolean language) {
+        this.language = language;
     }
 
     public String getVideo() {

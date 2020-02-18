@@ -51,9 +51,9 @@ public class YamlUtils {
         Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DESCRIPTIONS_DIRECTORY_NAME));
 
         Yaml speakersYaml = new Yaml(new Constructor(Speakers.class));
-        Yaml talksYaml = new Yaml(new Constructor(Talks.class));
+        Yaml talksYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Talks.class));
         Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
-        Yaml eventsYaml = new Yaml(new LocalDateYamlConstructor(Events.class));
+        Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Events.class));
 
         // Read descriptions from YAML files
         Speakers speakers = speakersYaml.load(speakersResource.getInputStream());
@@ -165,7 +165,7 @@ public class YamlUtils {
         Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DESCRIPTIONS_DIRECTORY_NAME));
 
         Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
-        Yaml eventsYaml = new Yaml(new LocalDateYamlConstructor(Events.class));
+        Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Events.class));
 
         // Read descriptions from YAML files
         EventTypes eventTypes = eventTypesYaml.load(eventTypesResource.getInputStream());
@@ -351,7 +351,8 @@ public class YamlUtils {
                         List.of("eventTypeId", "name", "startDate", "endDate", "siteLink", "city", "venueAddress",
                                 "youtubeLink", "mapCoordinates", "talkIds")),
                 new PropertyMatcher(Talk.class,
-                        List.of("id", "name", "shortDescription", "longDescription", "presentationLinks", "videoLinks", "speakerIds")),
+                        List.of("id", "name", "shortDescription", "longDescription", "talkDay", "trackTime", "track",
+                                "language", "presentationLinks", "videoLinks", "speakerIds")),
                 new PropertyMatcher(Speaker.class,
                         List.of("id", "fileName", "name", "company", "bio", "twitter", "gitHub", "javaChampion", "mvp")),
                 new PropertyMatcher(LocaleItem.class,

@@ -6,21 +6,24 @@ import org.yaml.snakeyaml.nodes.NodeId;
 import org.yaml.snakeyaml.nodes.ScalarNode;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
- * Constructor with LocalDate support.
+ * Constructor with LocalDate, LocalTime support.
  */
-class LocalDateYamlConstructor extends Constructor {
-    LocalDateYamlConstructor(Class<?> theRoot) {
+class LocalDateLocalTimeYamlConstructor extends Constructor {
+    LocalDateLocalTimeYamlConstructor(Class<?> theRoot) {
         super(theRoot);
 
-        this.yamlClassConstructors.put(NodeId.scalar, new LocalDateConstructor());
+        this.yamlClassConstructors.put(NodeId.scalar, new LocalDateLocalTimeConstructor());
     }
 
-    private class LocalDateConstructor extends ConstructScalar {
+    private class LocalDateLocalTimeConstructor extends ConstructScalar {
         public Object construct(Node node) {
             if (node.getType().equals(LocalDate.class)) {
                 return LocalDate.parse(((ScalarNode) node).getValue());
+            } else if (node.getType().equals(LocalTime.class)) {
+                return LocalTime.parse(((ScalarNode) node).getValue());
             } else {
                 return super.construct(node);
             }

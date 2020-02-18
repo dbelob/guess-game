@@ -430,7 +430,7 @@ public class ContentfulUtils {
      */
     private static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select={fields}&order={fields}&limit=1000&fields.conferences={conferenceCode}
-        StringBuilder selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.video,fields.sdTrack,fields.demoStage");
+        StringBuilder selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.talkDay,fields.trackTime,fields.track,fields.language,fields.video,fields.sdTrack,fields.demoStage");
         String additionalFieldNames = conferenceSpaceInfo.talkAdditionalFieldNames;
 
         if ((additionalFieldNames != null) && !additionalFieldNames.isEmpty()) {
@@ -491,6 +491,10 @@ public class ContentfulUtils {
                             extractLocaleItems(t.getFields().getNameEn(), t.getFields().getName()),
                             extractLocaleItems(t.getFields().getShortEn(), t.getFields().getShortRu()),
                             extractLocaleItems(t.getFields().getLongEn(), t.getFields().getLongRu()),
+                            t.getFields().getTalkDay(),
+                            t.getFields().getTrackTime(),
+                            t.getFields().getTrack(),
+                            extractLanguage(t.getFields().getLanguage()),
                             extractPresentationLinks(
                                     combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
                                     assetMap, assetErrorSet, t.getFields().getNameEn()),
@@ -752,6 +756,18 @@ public class ContentfulUtils {
                 throw new IllegalArgumentException(String.format("Invalid GitHub username: %s (change regular expressions and rerun)", value));
             }
         }
+    }
+
+    /**
+     * Extracts talk language.
+     *
+     * @param language {@code true} if Russian, {@code false} otherwise
+     * @return talk language
+     */
+    public static String extractLanguage(Boolean language) {
+        return (language != null) ?
+                (language ? Language.RUSSIAN.getCode() : Language.ENGLISH.getCode()) :
+                null;
     }
 
     /**

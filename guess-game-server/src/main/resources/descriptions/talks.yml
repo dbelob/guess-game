@@ -1268,6 +1268,6 @@ talks:
     speakerIds: [35]
   - id: 284
     name:
-      - {language: en, text: "Reactive, or not reactive: That is the question"}
+      - {language: en, text: "Reactive, or not reactive: that is the question"}
       - {language: ru, text: "Reactive или не reactive: Вот в чем вопрос"}
     speakerIds: [1, 28]
