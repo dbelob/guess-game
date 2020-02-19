@@ -319,7 +319,7 @@ public class YamlUtils {
      *
      * @param items    items
      * @param filename filename
-     * @throws IOException          if file creation occurs
+     * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
     public static <T> void dump(T items, String filename) throws IOException, NoSuchFieldException {
@@ -367,7 +367,7 @@ public class YamlUtils {
      *
      * @param eventTypes event types
      * @param filename   filename
-     * @throws IOException          if file creation occurs
+     * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
     public static void dumpEventTypes(List<EventType> eventTypes, String filename) throws IOException, NoSuchFieldException {
@@ -379,7 +379,7 @@ public class YamlUtils {
      *
      * @param speakers speakers
      * @param filename filename
-     * @throws IOException          if file creation occurs
+     * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
     public static void dumpSpeakers(List<Speaker> speakers, String filename) throws IOException, NoSuchFieldException {
@@ -391,7 +391,7 @@ public class YamlUtils {
      *
      * @param talks    talks
      * @param filename filename
-     * @throws IOException          if file creation occurs
+     * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
     public static void dumpTalks(List<Talk> talks, String filename) throws IOException, NoSuchFieldException {
@@ -403,7 +403,7 @@ public class YamlUtils {
      *
      * @param event    event
      * @param filename filename
-     * @throws IOException          if file creation occurs
+     * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
     public static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {

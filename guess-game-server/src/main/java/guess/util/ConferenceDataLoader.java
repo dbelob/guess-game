@@ -25,7 +25,7 @@ public class ConferenceDataLoader {
     /**
      * Loads all conference event types.
      *
-     * @throws IOException                if file creation occurs
+     * @throws IOException                if file creation error occurs
      * @throws SpeakerDuplicatedException if speaker duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
@@ -399,7 +399,7 @@ public class ConferenceDataLoader {
      * @param eventTypes event types
      * @param logMessage log message
      * @param filename   filename
-     * @throws IOException          if file creation occurs
+     * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
     private static void logAndDumpEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
@@ -421,7 +421,7 @@ public class ConferenceDataLoader {
      *
      * @param urlFilenames url, filenames pairs
      * @param logMessage   log message
-     * @throws IOException if file creation occurs
+     * @throws IOException if file creation error occurs
      */
     private static void logAndCreateSpeakerImages(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
         log.info(logMessage, urlFilenames.size());
@@ -436,7 +436,7 @@ public class ConferenceDataLoader {
      * @param speakers   speakers
      * @param logMessage log message
      * @param filename   filename
-     * @throws IOException          if file creation occurs
+     * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
     private static void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
@@ -457,7 +457,7 @@ public class ConferenceDataLoader {
      * @param talks      talks
      * @param logMessage log message
      * @param filename   filename
-     * @throws IOException          if file creation occurs
+     * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
     private static void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
