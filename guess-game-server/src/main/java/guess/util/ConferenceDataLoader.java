@@ -292,7 +292,7 @@ public class ConferenceDataLoader {
 
             talksToDelete = resourceEvent.getTalks().stream()
                     .filter(dt -> {
-                        if (talksToUpdate.contains(dt)) {
+                        if (contentfulTalks.contains(dt)) {
                             return false;
                         } else {
                             boolean talkExistsInAnyOtherEvent = resourceSourceInformation.getEvents().stream()
