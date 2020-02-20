@@ -239,6 +239,24 @@ events:
   # JPoint
   - eventTypeId: 7
     name:
+      - {language: en, text: "JPoint 2017"}
+    startDate: "2017-04-07"
+    endDate: "2017-04-08"
+    siteLink:
+      - {language: en, text: "https://2017.jpoint.ru/en/"}
+      - {language: ru, text: "https://2017.jpoint.ru/"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Krasnopresnenskaya Emb., 12, «WTC» Congress Center"}
+      - {language: ru, text: "Краснопресненская наб., 12, Конгресс-центр «ЦМТ»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8c09AKImmAISiEI6vPefON
+    mapCoordinates: "59.963937, 30.289414"
+    talkIds: [423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444,
+              445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462]
+  - eventTypeId: 7
+    name:
       - {language: en, text: "JPoint 2019"}
     startDate: 2019-04-05
     endDate: 2019-04-06

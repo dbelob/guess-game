@@ -198,6 +198,20 @@ speakers:
     name:
       - {language: en, text: "Sergey Kuksenko"}
       - {language: ru, text: "Сергей Куксенко"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - language: en
+        text: "Java Performance Engineer. He has been working with Java since version 1.0. During this time he managed to\
+            \ participate in the development of mobile, client, server applications and virtual machines.\nSergey is engaged\
+            \ in Java performance since 2005: firstly worked on Apache Harmony at Intel, and now he is currently engaged in\
+            \ performance OracleJDK/OpenJDK (his 3rd JVM) at Oracle."
+      - language: ru
+        text: "Java Performance Engineer. Работает с Java начиная с версии 1.0. За это время успел поучаствовать в разрабо\
+            тке мобильных, клиентских, серверных приложений и виртуальных машин.\nПроизводительностью Java занимается c 2005\
+            \ года: сначала работал в Intel над Apache Harmony, а в данный момент в Oracle занимается производительностью\
+            \ OracleJDK/OpenJDK (его 3-я JVM)."
+    twitter: kuksenk0
   - id: 14
     fileName: 0014.jpg
     name:
@@ -262,8 +276,17 @@ speakers:
       - {language: en, text: "Ivan Ponomarev"}
       - {language: ru, text: "Иван Пономарёв"}
     company:
-      - {language: en, text: "KURS"}
-      - {language: ru, text: "КУРС"}
+      - {language: en, text: KURS}
+      - {language: ru, text: КУРС}
+    bio:
+      - {language: en, text: "Tech lead in KURS company, tutor at MIPT. Has more than 15 years of experience in IT. Writes\
+            \ code and manages projects ranging from ERP systems customization to building a real-time webscraping system.\
+            \ Sometimes shares his experience as a speaker at conferences and meetups."}
+      - {language: ru, text: "Технический лидер в компании КУРС, преподаватель в МФТИ. Более 15 лет работает в ИТ, пишет к\
+            од и руководит проектами от доработки ERP-систем до построения систем мониторинга данных в интернете в реально\
+            м времени. Периодически делится своим опытом на конференциях и митапах."}
+    twitter: inponomarev
+    gitHub: inponomarev
   - id: 20
     fileName: 0020.jpg
     name:
@@ -580,6 +603,19 @@ speakers:
     name:
       - {language: en, text: "Vadim Tsesko"}
       - {language: ru, text: "Вадим Цесько"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: en, text: "Currently lead developer at Odnoklassniki Platform. Joined IT/CS field in 2004 with hydroacoustic\
+            \ systems and research projects on static code analysis. Had been developing highload distributed services at\
+            \ Yandex.Verticals for more than 5 years. Occasionally gives lectures on parallel computing and distributed data\
+            \ storages."}
+      - {language: ru, text: "Ведущий разработчик в Платформе Одноклассников. Начал свой путь в IT/CS в 2004 с создания си\
+            стем гидроакустики и исследовательских проектов по статическому анализу кода. Затем больше 5 лет разрабатывал\
+            \ высоконагруженные распределённые сервисы в Яндекс.Вертикалях. Эпизодически читает лекции по параллельным выч\
+            ислениям и распределённым хранилищам данных."}
+    twitter: incubos
   - id: 61
     fileName: 0061.jpg
     name:
@@ -617,6 +653,27 @@ speakers:
     name:
       - {language: en, text: "Anton Keks"}
       - {language: ru, text: "Антон Кекс"}
+    company:
+      - {language: en, text: Codeborne}
+    bio:
+      - language: en
+        text: "Anton Keks is a software craftsman, co-founder of Codeborne, the only extreme programming shop in the region,\
+            \ frequent speaker at conferences, and a lecturer in Tallinn Technical University. He is also a strong believer\
+            \ in open source software and agile development methodologies, author of a popular network tool — Angry IP Scanner,\
+            \ and a regular contributor to other open source projects. \n\nBefore founding Codeborne, Anton has led a team\
+            \ of developers of the award-winning internet-bank of Swedbank for 5 years, gradually introducing agile methods.\
+            \ During this time he has also co-founded Agile Estonia — non-profit organization that holds regular agile conferences\
+            \ in Estonia. During spare time he plays guitar, rides motorbike and travels to remote corners of the world."
+      - language: ru
+        text: "Мастер создания софта от начала до конца. Один из основателей компании Codeborne — единственной в Прибалтик\
+            е, занимающейся экстремальным программированием (XP). Регулярный докладчик на конференциях, лектор в Таллинско\
+            м техническом университете. Искренне верит в открытый код и методы гибкой разработки (Agile). Автор популярног\
+            о во всём мире сетевого сканера — Angry IP Scanner, регулярный коммиттер в другие проекты свободного ПО. \n\nД\
+            о основания Codeborne руководил командой разработчиков интернет-банка Swedbank, получившего множество наград,\
+            \ постепенно вводя в использование методы Agile. В то же время он основал организацию Agile Estonia, проводящу\
+            ю регулярные конференции по теме Agile. \n\nВ свободное время играет на гитаре и дарбуке, катается на мотоцикл\
+            е и путешествует в отдалённые уголки мира."
+    twitter: antonkeks
   - id: 69
     fileName: 0069.jpg
     name:
@@ -637,6 +694,16 @@ speakers:
     fileName: 0073.jpg
     name:
       - {language: en, text: "Victor Rentea"}
+    company:
+      - {language: en, text: "Independent Trainer"}
+    bio:
+      - language: en
+        text: "Sr. Architect, Developer and Technical Lead at IBM, for major client. Independent Trainer and Coach. Faculty\
+            \ Lecturer (\"Design Patterns\"). PhD(CS).\n\nA passionate Clean Coder with a very dynamic and interactive presentation\
+            \ style, spiced with jokes, metaphors and easy-to-remember visual representations. Having delivered hundreds of\
+            \ hours of training and coaching for major players in enterprise Java development, Victor got to introspect a\
+            \ huge variety of enterprise projects. His quest is to make you think deeply, learn to introspect your design."
+    twitter: victorrentea
   - id: 74
     fileName: 0074.jpg
     name:
@@ -692,6 +759,15 @@ speakers:
     fileName: 0083.jpg
     name:
       - {language: en, text: "Milen Dyankov"}
+    company:
+      - {language: en, text: Liferay}
+    bio:
+      - {language: en, text: "Milen is a Developer Advocate at Liferay and focuses on Java and OSGi Platform. He is passionate\
+            \ about designing and building software as well as helping others design and build good software! After more than\
+            \ 15 years developing, designing and consulting on various Java EE solutions for leading European companies, he\
+            \ currently spends most of his time teaching, speaking at conferences all over the world and researching his favorite\
+            \ topics around Java modularity, systems architecture and software craftsmanship."}
+    twitter: milendyankov
   - id: 84
     fileName: 0084.jpg
     name:
@@ -872,7 +948,6 @@ speakers:
             \ Android Application Development, and Modern C++. His consulting work revolves mainly around distributed architecture,\
             \ production debugging and performance diagnostics, and mobile application development."}
     twitter: goldshtn
-    mvp: true
   - id: 112
     fileName: 0112.jpg
     name:
@@ -956,6 +1031,21 @@ speakers:
     name:
       - {language: en, text: "Mikalai Alimenkou"}
       - {language: ru, text: "Николай Алименков"}
+    company:
+      - {language: en, text: "XP Injection"}
+    bio:
+      - {language: en, text: "Mikalai is a Senior Delivery Manager, Java Tech Lead and experienced coach. Expert in Java development,\
+            \ scalable architecture, Agile engineering practices and project management. He has more than 13 years of development\
+            \ experience and specializes on complex distributed scalable systems. Active participant and speaker of many international\
+            \ conferences. Founder and coach in training center XP Injection. Organizer and founder of Selenium Camp, JEEConf,\
+            \ XP Days Ukraine and IT Brunch conferences. Founder of active “Anonymous developers club” (uadevclub)."}
+      - language: ru
+        text: "Практикующий Java-техлид и Delivery Manager. Эксперт в разработке на Java, Agile-практиках и управлении про\
+            ектами. Разрабатывает на Java более 13 лет, специализируется на разработке сложных распределенных масштабируем\
+            ых систем. \nАктивный участник и докладчик многих международных конференций. Основатель и тренер тренингового\
+            \ центра XP Injection. Организатор и идеолог конференций Selenium Camp, JEEConf, XP Days Ukraine и IT Brunch.\
+            \ Основатель Клуба анонимных разработчиков."
+    twitter: xpinjection
   - id: 124
     fileName: 0124.jpg
     name:
@@ -1023,43 +1113,122 @@ speakers:
   - id: 135
     fileName: 0135.jpg
     name:
-      - {language: en, text: "Viet Nguen"}
+      - {language: en, text: "Viet Nguyen"}
+      - {language: ru, text: "Вьет Нгуен"}
+    company:
+      - {language: en, text: "Alpha Laboratory"}
+      - {language: ru, text: Альфа-Лаборатория}
+    bio:
+      - {language: en, text: "I am a leading developer from Alpha-Laboratory. I'm working on internal API and microservices\
+            \ infrastructure. Also, I'm conducting trainings within the company. Victim of DevOps with almost two years of\
+            \ experience."}
+      - {language: ru, text: "Я - ведущий разработчик из Альфа-Лаборатории. Занимаюсь внутренним API и инфраструктурой мик\
+            росервисов. Провожу обучения внутри компании. Жертва DevOps с почти двухлетним стажем."}
+    twitter: stereohorse
   - id: 136
     fileName: 0136.jpg
     name:
       - {language: en, text: "Vladimir Ozerov"}
       - {language: ru, text: "Владимир Озеров"}
     company:
-      - {language: en, text: "Hazelcast"}
+      - {language: en, text: Hazelcast}
+    bio:
+      - {language: en, text: "Vladimir is developing distributed systems and databases. He's also an engineer at Hazelcast.\
+            \ In the past — developer at Apache Ignite."}
+      - {language: ru, text: "Разрабатывает распределенные системы и базы данных. Инженер в компании Hazelcast. В прошлом\
+            \ — разработчик Apache Ignite."}
+    twitter: devozerov
   - id: 137
     fileName: 0137.jpg
     name:
       - {language: en, text: "Iliya Volkov"}
       - {language: ru, text: "Илья Волков"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "Saint Petersburg State University graduate, Sberbank Technology lead engineer with more than\
+            \ 12 years of Java development experience. Working on highload systems design architecture, performance optimization,\
+            \ troubleshooting in production."}
+      - {language: ru, text: "Выпускник СПбГУ, ведущий разработчик компании Сбербанк-Технологии с опытом разработки на Java\
+            \ более 12 лет. Занимается дизайном архитектуры высоконагруженных систем, оптимизацией производительности, реш\
+            ением проблем в промышленной эксплуатации."}
   - id: 138
     fileName: 0138.jpg
     name:
       - {language: en, text: "Yaroslav Kiselev"}
       - {language: ru, text: "Ярослав Киселев"}
+    company:
+      - {language: en, text: CROC}
+      - {language: ru, text: КРОК}
+    bio:
+      - {language: en, text: "Performance engineer at CROC. Troubleshoots applications in production and develops tools for\
+            \ performance monitoring."}
+      - {language: ru, text: "Performance engineer в компании КРОК. Занимается troubleshooting приложений в продакшене и р\
+            азработкой инструментов для мониторинга производительности."}
   - id: 139
     fileName: 0139.jpg
     name:
       - {language: en, text: "Alexey Savvateev"}
       - {language: ru, text: "Алексей Савватеев"}
+    company:
+      - {language: en, text: "University of Dmitry Pozharsky"}
+      - {language: ru, text: "Университет Дмитрия Пожарского"}
+    bio:
+      - {language: en, text: "Mathematician, math economist and math popularizer. In 2013 got a PhD in math/physics. Organizer\
+            \ of numerous scientific and popular science events."}
+      - {language: ru, text: "Математик, матэкономист и популяризатор математики. В 2013 г. стал доктором физико-математич\
+            еских наук, защитив докторскую диссертацию на тему «Задача многомерного размещения: теоретико-игровой подход»\
+            . Организатор многочисленных научных и научно-популярных мероприятий."}
   - id: 140
     fileName: 0140.jpg
     name:
       - {language: en, text: "Michael Peresypkin"}
       - {language: ru, text: "Михаил Пересыпкин"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "MSU Faculty of Mechanics and Mathematics graduate with more than 17 years of experience in software\
+            \ developing and integration. Has occupied positions ranging from programmer to system architect. An expert in\
+            \ the automation in the financial sector and telecommunications. Currently he leads the development of the Single\
+            \ Frontal System platform core."}
+      - {language: ru, text: "Выпускник мехмата МГУ с более чем 17-летним опытом в разработке и внедрении ПО. Выполнял фун\
+            кции от программиста до системного архитектора, является экспертом в области комплексной автоматизации в финан\
+            совой сфере и телекоммуникациях. В настоящее время возглавляет разработку ядра платформы «Единая фронтальная с\
+            истема»."}
   - id: 141
     fileName: 0141.jpg
     name:
       - {language: en, text: "Arun Gupta"}
+    company:
+      - {language: en, text: Couchbase}
+    bio:
+      - {language: en, text: "Arun Gupta is the vice president of developer advocacy at Couchbase. He has been built and led\
+            \ developer communities for 10+ years at Sun, Oracle, and Red Hat. He has deep expertise in leading cross-functional\
+            \ teams to develop and execute strategy, planning, and execution of content, marketing campaigns, and programs.\
+            \ Prior to that he led engineering teams at Sun and is a founding member of the Java EE team. Gupta has authored\
+            \ more than 2,000 blog posts on technology. He has extensive speaking experience in more than 40 countries on\
+            \ myriad topics and is a JavaOne Rock Star for three years in a row. Gupta also founded the Devoxx4Kids chapter\
+            \ in the US and continues to promote technology education among children. An author of a best-selling book, an\
+            \ avid runner, a globe trotter, a Java Champion, a JUG leader, and a Docker Captain, he is easily accessible at\
+            \ @arungupta."}
+    twitter: arungupta
+    gitHub: arun-gupta
+    javaChampion: true
   - id: 142
     fileName: 0142.jpg
     name:
       - {language: en, text: "Vladimir Dolzhenko"}
       - {language: ru, text: "Владимир Долженко"}
+    company:
+      - {language: en, text: "IHS Markit"}
+    bio:
+      - {language: en, text: "Vladimir has more than 10 years of Java experience, he’s into troubleshooting production issues\
+            \ (performance and otherwise)."}
+      - {language: ru, text: "Владимир более 10 лет в Java, занимается охотой на ошибки и troubleshooting в продакшене, ус\
+            транением заморочек с перформансом и не только."}
+    twitter: dolzhenko
   - id: 143
     fileName: 0143.jpg
     name:
@@ -1092,6 +1261,14 @@ speakers:
     name:
       - {language: en, text: "Victor Polischuk"}
       - {language: ru, text: "Виктор Полищук"}
+    company:
+      - {language: en, text: "Infopulse Ukraine"}
+    bio:
+      - {language: en, text: "Java technical leader at Infopulse Ukraine. Production experience counts about 15 years including\
+            \ vast amount of time dedicated to Java. Expert in Java and JavaScript. Smartass."}
+      - {language: ru, text: "Java технический лидер в Infopulse Ukraine. Разрабатывает за деньги более 15 лет, львиную до\
+            лю этого времени — на Java. Эксперт в Java и JavaScript. Много умничает."}
+    twitter: alkovictor
   - id: 146
     fileName: 0146.jpg
     name:
