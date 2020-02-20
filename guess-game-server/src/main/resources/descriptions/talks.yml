@@ -2654,3 +2654,698 @@ talks:
     presentationLinks: []
     videoLinks: []
     speakerIds: [492]
+  - id: 335
+    name:
+      - {language: en, text: "ASP.NET State of the Art"}
+    shortDescription:
+      - {language: en, text: "State of the art of the Microsoft's new development platform."}
+    longDescription:
+      - {language: en, text: "It is now six months since v1 of .NET Core and ASP.NET Core and the world is full of people\
+            \ that seem to be ready to bet the farm on it and people who wouldn't consider using it for at least a year or\
+            \ two. In this talk, Dino will try to summarize the firm points of both camps, try to get rid of any hype, add\
+            \ a bit of philosophical cynicism up to serve a yummy dish that gives you the energy to take web development on\
+            \ the Microsoft stack to the next level."}
+    talkDay: 1
+    trackTime: "10:20"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5f6HIyP1hKMuwwIgmEqYma/261d3cf04ed0e597ee24f6109734e8bd/Dino_Esposito__.NET_Core_State_of_the_art.pdf"]
+    videoLinks: ["https://youtu.be/cMRel1DbzZY?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [404]
+  - id: 336
+    name:
+      - {language: en, text: "Overview of the new .NET Core and .NET Platform Standard"}
+    shortDescription:
+      - {language: en, text: "This talk will introduce the attendees to the new .NET Platform Standard and show the role of\
+            \ .NET Core in it. We will look at the various options, tools and technologies surrounding .NET Core."}
+    longDescription:
+      - {language: en, text: "Microsoft is working hard to modernize the .NET Platform. There are great new frameworks and\
+            \ tools coming, such as .NET Core and ASP.NET Core. The amount of new things is overwhelming, with multiple .NET\
+            \ Platforms (.NET Framework, Unified Windows Platform, .NET Core), multiple runtimes (CoreCLR, CLR, CoreRT), multiple\
+            \ compilers (Roslyn, RyuJIT, .NET Native and LLILC) and much more. This session will bring you up to speed on\
+            \ all this new Microsoft technology, focusing on .NET Core."}
+    talkDay: 1
+    trackTime: "11:25"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/44bC9HxRNKmQ8AQ6iE82eK/3d65206967498b4f83199c9342615de9/NET_Core_New_Platform_DotNext_Helsinki_2016_v1.0.3.pdf"]
+    videoLinks: ["https://youtu.be/uzxaNDrdgto?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [1072]
+  - id: 337
+    name:
+      - {language: en, text: "Performance gone wild: when 100,000 req/sec isn't where you stop..."}
+      - {language: ru, text: "А не зашкалит сервер от 100,000 запросов/сек?"}
+    shortDescription:
+      - {language: en, text: "Review and discussion of algorithms and optimizations which allowed to drastically increase\
+            \ performance of HTTP request processing in the new version of RavenDB."}
+      - {language: ru, text: "Рассмотрение оптимизаций и алгоритмов, позволивших повысить на два порядка производительност\
+            ь обработки запросов HTTP в новой версии RavenDB."}
+    longDescription:
+      - language: en
+        text: "In this talk, Michael will cover how along with his team he pushed RavenDB to process hundreds of thousands\
+            \ of requests per second by using zero-copy data storage and autodidactive software, by reducing external dependencies\
+            \ and getting chummy with the operating system.\nMichael will discuss topics ranging from complete architecture\
+            \ overhaul to the using SIMD instructions to increase memory bandwidth and instruction rate on the CPU. The speaker\
+            \ will take a look at the guts of the CoreCLR and how it is possible to push it ever further to get the last push\
+            \ in service for amazing performance."
+      - language: ru
+        text: "Михаил расскажет об оптимизациях в новой версии базы данных RavenDB, позволивших повысить производительност\
+            ь обработки запросов на два порядка. Этот, казалось бы, невозможный результат был достигнут благодаря уменьшен\
+            иям зависимости от внешнего кода, с одной стороны, и «дружбе» с операционной системой с другой. \nВ частности\
+            , аудитория послушает о \"zero-copy\" и адаптирующихся алгоритмах, новом подходе к управлению памятью и исполь\
+            зовании SIMD инструкций. Кроме этого, Михаил затронет архитектуру компонентов RavenDB и расскажет, как работая\
+            \ вместе с командой CoreCLR Майкрософта, они смогли выжать ещё больше производительности из «железа»."
+    talkDay: 1
+    trackTime: "11:25"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/16NHK6hqNciKEEoQ8K8Eqm/142bb639582701f64ea8e9e351e4c6c0/________N___________________N____________N____N_______________________________N____________________N_____N________N_________.pdf"]
+    videoLinks: ["https://youtu.be/NPwc2II1jUY?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [496]
+  - id: 338
+    name:
+      - {language: en, text: "WinDbg Superpowers for .NET Developers"}
+    shortDescription:
+      - {language: en, text: "This talk will help turn WinDbg into your best ally and give you debugging superpowers."}
+    longDescription:
+      - {language: en, text: "Sasha will be the first to admit that he has a love-hate, passive-aggressive relationship with\
+            \ WinDbg. If you feel that way too, this talk will help turn WinDbg into your best ally. Even in 2016, there’\
+            s still room for this powerful, lightweight debugger than you can plug into any production environment as easily\
+            \ as into a development system. Sasha along with participants will examine several areas in which WinDbg can give\
+            \ you superpowers. First, he’ll talk about WinDbg scripts and extensions that help automate boring, tedious debugging\
+            \ tasks – think setting a bunch of breakpoints, aggregating variable values whenever a breakpoint is hit, or searching\
+            \ for a specific value in a large collection. You don’t have to learn WinDbg’s horrible scripting language if\
+            \ you don’t want to; there are available alternatives, such as PyKD. Next, Sasha will discuss some obscure WinDbg\
+            \ extensions that can perform x64 stack reconstruction, print out all currently executing ASP.NET requests, and\
+            \ run LINQ-like queries over objects on the .NET heap. Finally, there will be a talk about some of the debugger’\
+            s core features that make it so flexible and powerful: seamless remote debugging with no authentication and domain\
+            \ accounts, setting up a post-mortem or pre-startup debugger, and sharing a debugging session between multiple\
+            \ developers — for a post-modern group debugging future!"}
+    talkDay: 1
+    trackTime: "11:25"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3Wqgyj1qiAsOcCSMwa2wAm/05aaf04e2b126f155ac45eb994336a43/Sasha-Goldshtein_WinDbg-superpowers-for-NET-developers.pdf"]
+    videoLinks: ["https://youtu.be/8t1aTbnZ2CE?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [111]
+  - id: 339
+    name:
+      - {language: en, text: "Intelligent Chatbots and Cognitive Services"}
+      - {language: ru, text: "Интеллектуальные чатботы и когнитивные сервисы"}
+    shortDescription:
+      - {language: en, text: "Dmitry will demonstrate the usage of Microsoft Bot Framework and Microsoft Cognitive Services."}
+      - {language: ru, text: "Дмитрий расскажет и покажет Microsoft Bot Framework и Microsoft Cognitive Services."}
+    longDescription:
+      - {language: en, text: "Creating intelligent chatbots is not an easy task, but it is something that many companies would\
+            \ like to do in order to expose their services to larger audience. In this talk, Dmitry will focus on using Microsoft\
+            \ Bot Framework for creating chatbots that can act across different communication channels, and on how to use\
+            \ Microsoft Cognitive Services (in particular, LUIS) to make bots smarter."}
+      - {language: ru, text: "Создание интеллектуальных чатботов — таких чатботов, которые могут общаться на естественном\
+            \ языке, — является достаточно сложной, но при этом актуальной задачей. В докладе будет рассмотрено, как Microsoft\
+            \ Bot Framework сможем помочь нам в создании ботов, работающих сразу по многим каналам общения, и как использо\
+            вать когнитивные сервисы (в частности, технологию LUIS) для придания ботам интеллектуальности."}
+    talkDay: 1
+    trackTime: "11:25"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5o1EdHy4CWWoaW4IYG4a6m/6c9914ff549d389a80f0fe43e4ef9083/Dmitry_Soshnikov_Bots_n_Cognitive.pdf"]
+    videoLinks: ["https://youtu.be/rG0Sdzoljck?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [472]
+  - id: 340
+    name:
+      - {language: en, text: "C++ via C#"}
+      - {language: ru, text: "C++ через C#"}
+    shortDescription:
+      - {language: en, text: "Interaction of the C# code with existing C++ is common task. In this session Egor will tell\
+            \ how to generate wrappers in C# for a large project in C++ in the shortest terms completely repeating an object\
+            \ model of an original code. Egor also will show how to achieve cross-platform using Xamarin platform at the same\
+            \ time."}
+      - {language: ru, text: "В этом докладе Егор расскажет, как полностью перевести объектную модель проекта на С++ в C#\
+            \ на примере графического 3D движка Urho3D при помощи Clang AST. Также Егор покажет, как в то же время достичь\
+            \ кроссплатформенности между разными платформами (iOS, Android, Windows, macOS и HoloLens) с помощью платформы\
+            \ и инструментов Xamarin."}
+    longDescription:
+      - {language: en, text: "Interaction of the C# code with existing C++ is common task. In this session Egor will tell\
+            \ how to generate wrappers in C# for a large project in C++ in the shortest terms completely repeating an object\
+            \ model of an original code. Egor also will show how to achieve cross-platform using Xamarin platform at the same\
+            \ time."}
+      - {language: ru, text: "В этом докладе Егор расскажет, как полностью перевести объектную модель проекта на С++ в C#\
+            \ на примере графического 3D движка Urho3D при помощи Clang AST. Также Егор покажет, как в то же время достичь\
+            \ кроссплатформенности между разными платформами (iOS, Android, Windows, macOS и HoloLens) с помощью платформы\
+            \ и инструментов Xamarin."}
+    talkDay: 1
+    trackTime: "11:25"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/Ou1cw3lWiQAMUWC2okuuQ/e864c4470588d82c87381b62fc8c82a5/Egor_Bogatov_C___via_C_.pdf"]
+    videoLinks: ["https://youtu.be/QyR4HwjE9gI?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [431]
+  - id: 341
+    name:
+      - {language: en, text: "Multithreading Deep Dive"}
+    shortDescription:
+      - {language: en, text: "This talk discusses some fundamental concepts of multi-core programming as well as their implementation\
+            \ by the Windows operating system and the .NET Framework. It gives a rock-solid understanding of what’s happening\
+            \ while using multithreaded features in .NET."}
+    longDescription:
+      - {language: en, text: "In the single-core world, the lock keyword is all the vast majority of developers had to know\
+            \ about multithreading. But with today’s ubiquitous multi-core processors, parallel computing is becoming an increasingly\
+            \ important skill. Along with an audience, Gael will discuss fundamental concepts of multi-core programming as\
+            \ well as their implementation by the Windows operating system and the .NET Framework, and give you a rock-solid\
+            \ understanding of what’s happening when you’re using multithreaded features in .NET. This is not an explanation\
+            \ for listeners what is a lock and an event (you’re supposed to know it), but attendees will understand how this\
+            \ is implemented at the kernel and CPU level."}
+    talkDay: 1
+    trackTime: "12:45"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6gEup82R0IIKKogEoQuQoA/bfa779a06153ef21371fd976ac912f25/Multithreading_Fundamentals_-_Moscow_2016-2.pdf"]
+    videoLinks: ["https://youtu.be/z2QYa2RW9c8?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [497]
+  - id: 342
+    name:
+      - {language: en, text: "Stack Overflow — It's all about performance!"}
+    shortDescription:
+      - {language: en, text: "This talk is about how Stack Overflow achieved running a top 30 global website on a dozen servers."}
+    longDescription:
+      - language: en
+        text: "Stack Overflow is one of the world’s most popular sites, serving tens of millions of programming questions\
+            \ and answers to more than 100 million developers every month. Complex pages are routinely served in less than\
+            \ 50ms. Its network has now grown to about 150 sites.\n\nThe company’s team manages to do this with very small\
+            \ footprint in terms of servers and with a tiny development team. In this talk Marco will cover the company’s\
+            \ architecture, methodology and coding principles, with real world examples and demos. Hopefully, there are some\
+            \ good ideas here attendees can take home and work on!!"
+    talkDay: 1
+    trackTime: "12:45"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/9n3x4rtjlya6/46YMiDqZWMo6AggKG6QyeS/5dcf84a40d3b03a52fc315d5172b957a/Marco_Cecconi_a_______Stack_Overflow_-_It_s_all_about_performance.pdf"]
+    videoLinks: ["https://youtu.be/9_pluQPfbBk?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [492]
+  - id: 343
+    name:
+      - {language: en, text: "Myths about safety of C# code"}
+      - {language: ru, text: "Мифы о безопасности C# кода"}
+    shortDescription:
+      - {language: en, text: "On the topic of why C# is better than C++, but not perfect either."}
+      - {language: ru, text: "О том, почему C# лучше С++, но и в нём не обошлось без проблем."}
+    longDescription:
+      - language: en
+        text: "This is not a secret that it is easy to shoot yourself in the foot while programming in C++. Of course, C#\
+            \ is much better, in this way. Some errors that are possible in C++ are impossible in C#. However, the other found\
+            \ in both languages. Moreover, there is a number of errors occurred only in C#.\nAlong with attendees, Sergey\
+            \ will consider what these mistakes are and in which well-known open-source projects they are found. The speaker\
+            \ will explain how static analysis will help to avoid these mistakes and what programming practices is better\
+            \ to use."
+      - language: ru
+        text: "Ни для кого не секрет, что, программируя на С++, легко прострелить себе ногу. Безусловно, C# в этом плане л\
+            учше, но намного ли? Некоторые ошибки, возможные в С++, невозможно допустить в C#. Однако иные встречаются в о\
+            боих языках. Более того — есть ряд ошибок, встречающихся только в C#.\nСергей вместе со слушателями рассмотрит\
+            , что это за ошибки и в каких известных open-source проектах их удалось обнаружить. Докладчик расскажет, как с\
+            татический анализ поможет избежать эти ошибки и какие практики программирования лучше использовать."
+    talkDay: 1
+    trackTime: "12:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2iSxO8RYIcSAy2saMqQwuc/52303e0d98a6875fc56fd13d826b45f5/Sergey_Vasiliev_Myths_about_safety_of_C__code.pdf"]
+    videoLinks: ["https://youtu.be/hfVLNY2Ivjc?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [499]
+  - id: 344
+    name:
+      - {language: en, text: "ETW — Monitor Anything, Anytime, Anywhere"}
+    shortDescription:
+      - {language: en, text: "In this talk, Dina will show the rich and wonderful world of ETW events, which span numerous\
+            \ components. The audience will learn how to diagnose complex issues in production using ETW innovative tools."}
+    longDescription:
+      - {language: en, text: "Event Tracing for Windows (ETW) is the most important diagnostic tool Windows developers have\
+            \ at their disposal. In this talk, Dina along with an audience will explore the rich and wonderful world of ETW\
+            \ events, which span numerous components including the kernel scheduler, the CLR garbage collector, the Windows\
+            \ UI subsystem (including XAML-specific events), request-processing frameworks such as ASP.NET and WCF, and many\
+            \ others. Listeners of the talk will learn how to diagnose incredibly complex issues in production systems such\
+            \ as excessive garbage collection pauses, slow startup due to JIT and disk accesses, and even sluggishness during\
+            \ the Windows boot process. Dina will show some ways to automate ETW collection and analysis to build self-diagnosing\
+            \ applications that identify high CPU issues, resource leaks, and concurrency problems and produce alerts and\
+            \ reports. In the course of the talk, innovative performance tools that haven’t been applied to ETW before will\
+            \ be used — flame graphs for visualizing call stacks and a command-line interface for dynamic, scriptable ETW\
+            \ tracing. ETW is truly a window into everything happening on your system, and it doesn’t require expensive licenses,\
+            \ invasive tools, or modifying your code in any way. It is a critical, first-stop skill on your way to mastering\
+            \ application performance and diagnostics."}
+    talkDay: 1
+    trackTime: "12:45"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6A7ZxhamzKQI8cq0ikgYYO/d6430a29037100f73c235584ddada75f/Dina_Goldshtein_ETW_-_Monitor_Anything.pdf"]
+    videoLinks: ["https://youtu.be/s213p-zB7G4?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [470]
+  - id: 345
+    name:
+      - {language: en, text: "My life with actors: implementing actor model in F#"}
+      - {language: ru, text: "Моя жизнь с актерами: опыт внедрения модели актеров на F#"}
+    shortDescription:
+      - {language: en, text: "Designing scalable systems based on actor model with Akka.NET and F#."}
+      - {language: ru, text: "Разработка масштабируемых систем с использованием модели актеров, Akka.NET и F#."}
+    longDescription:
+      - language: en
+        text: "“All the software’s a stage. And all the components merely actors. They have their exits and their entrances.\
+            \ And they send each other messages”.\n\nDid Shakespeare write that? Perhaps not exactly. Never mind, this talk\
+            \ is about modern times, so modern that some developers no longer find proven OO paradigm convincing and instead\
+            \ ride new waves — newly discovered old waves, since Vagif will talk about actor model.\n\nIt’s been a year since\
+            \ Miles’s team commenced a media distribution project using Akka.NET, functional programming and F#. Queues and\
+            \ cloud storage providers, millions of files, all managed by actors. What did the team learn? What did they gain?\
+            \ Come to Vagif’s talk to know!"
+      - language: ru
+        text: "«Весь софт — театр. И классы в нём, и типы — все актёры. У них свои есть выходы, уходы. Друг другу сообщени\
+            я все шлют».\n\nТак Шекспир писал? Вероятно, не совсем так. Неважно, этот доклад — о новых временах, настолько\
+            \ новых, что некоторые разработчики не вполне удовлетворены парадигмой объектно-ориентированного программирова\
+            ния и находят новые пути — строго говоря, вновь обнаруживают старые, поскольку речь пойдет о модели актёров.\n\
+            \nПрошел год с тех пор, как группа разработчиков Miles приступила к разработке системы публикации медиафайлов\
+            \ на основе Akka.NET, функционального программирования и языка F#. Очереди сообщений и массивы данных в «облак\
+            ах», миллионы файлов — всё под управлением актёров. Что было почерпнуто и выиграно? Всё это будет представлено\
+            \ в докладе."
+    talkDay: 1
+    trackTime: "12:45"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1LDjSOAHI8QIKq6UeqKoy4/e18ae1bb769d85f7130c7d4e88115bc8/Vagif_Abilov_My_Life_With_Actors-2.pdf"]
+    videoLinks: ["https://youtu.be/wRxO5ky7S8g?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [498]
+  - id: 346
+    name:
+      - {language: en, text: "Stranger Things: Vulnerabilities in .NET Platform"}
+      - {language: ru, text: "Странные дела: уязвимости в .NET платформе"}
+    shortDescription:
+      - {language: en, text: "Mikhail will disassemble what types of security vulnerabilities are found in .NET Framework,\
+            \ what could be an aim of an attacker, and how knowledge of the typical attacks does help to develop secure applications."}
+      - {language: ru, text: "Михаил разберёт, какие типы уязвимостей находят в .NET платформе, что может стать целью атак\
+            ующего, и как знание о типичных атаках помогает разрабатывать защищённые приложения."}
+    longDescription:
+      - {language: en, text: "Everyone has seen the security bulletins from Microsoft and installed patches described in them.\
+            \ Periodically vulnerabilities related to .NET platform flash in bulletins. That is what is going to be discussed\
+            \ in this talk. What types of security vulnerabilities are found in .NET Framework? What could be an aim of an\
+            \ attacker? How knowledge of the typical attacks does help to develop secure applications? Along with an audience,\
+            \ Mikhail will disassemble these and other safety issues of .NET platform. There will be considered fault code,\
+            \ leading to vulnerabilities, as the boundaries of security assurances platform will be defined. Mikhail will\
+            \ tell what common mistakes developers can meet in their applications and how to avoid them. There will be many\
+            \ demo vulnerabilities found in ASP .NET, .NET Remoting and fresh .NET Core."}
+      - {language: ru, text: "Все видели бюллетени безопасности от Microsoft и устанавливали описанные в них патчи. Период\
+            ически в бюллетенях мелькают уязвимости, относящиеся к .NET платформе, — про них и пойдёт речь. Какие типы уяз\
+            вимостей находят в .NET Framework? Что может стать целью атакующего? Как знание о типичных атаках помогает раз\
+            рабатывать защищённые приложения? Михаил вместе со слушателями доклада разберёт эти и другие вопросы безопасно\
+            сти .NET платформы. Будет рассмотрен код недостатков, приводящих к уязвимостям, и определены границы гарантий\
+            \ защищенности платформы. Михаил расскажет, какие типичные ошибки можно допустить в своих приложениях и как их\
+            \ избежать. Будет много демо уязвимостей, найденных в ASP .NET, .NET Remoting и в свежем .NET Core."}
+    talkDay: 1
+    trackTime: "13:50"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6GTGviGzpScMsUMOWEekEM/6d6b5975bc942bc20fc8bf091b30fd3e/Mikhail-Shcherbakov-Stranger-Things.pdf"]
+    videoLinks: ["https://youtu.be/bL0U4CKVpu4?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [415]
+  - id: 347
+    name:
+      - {language: en, text: "Typescript for C# Programmers"}
+    shortDescription:
+      - {language: en, text: "Typescript is a powerful language but it is usually taught from the perspective of a JavaScript\
+            \ programmer. Here we teach from the very different perspective of a C# programmer."}
+    longDescription:
+      - language: en
+        text: "TypeScript is the future for web developers and especially for Angular 2 developers. It is a super-set of JavaScript,\
+            \ but it provides strong typing and classes, among other features. All TypeScript programs transpile down into\
+            \ standard JavaScript and so run anywhere that modern JavaScript does.\nAlmost all TypeScript courses are targeted\
+            \ at JavaScript programmers, and the emphasis is on the object oriented aspect of the language as that is what\
+            \ is new for JavaScript programmers. C# programmers start in a very different place. We are comfortable with classes,\
+            \ inheritance and all the aspects of OOP, but are not used to scripting for the web. This course assumes comfort\
+            \ with C# but not necessarily with JavaScript."
+    talkDay: 1
+    trackTime: "13:50"
+    track: 4
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/4l6UbXsfwAomKySi6UamWw/0e48ae35e44f5df6d64d639d2447425e/Jesse_Liberty_TypeScriptForCSharpDevs.pdf"]
+    videoLinks: ["https://youtu.be/bdvEcvWwHgI?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [493]
+  - id: 348
+    name:
+      - {language: en, text: "Let's continue to talk about arithmetics"}
+      - {language: ru, text: "Продолжаем говорить про арифметику"}
+    shortDescription:
+      - {language: en, text: "Andrey will talk about IEEE754, denormalized numbers, FPU registers, arithmetics performance,\
+            \ and other interesting stuff."}
+      - {language: ru, text: "Андрей расскажет про стандарт IEEE 754, денормализованные числа, про регистры FPU, про произ\
+            водительность и прочие занимательные штуки."}
+    longDescription:
+      - {language: en, text: "Arithmetic operations have two important properties: precision and performance. Which kind of\
+            \ pitfalls can we expect? We will talk about basic mathematics operations which you do every day. We will write\
+            \ benchmarks, compare different environments, talk about bit hacks and denormalized numbers, look at ASM listing\
+            \ and discuss IEEE 754."}
+      - {language: ru, text: "У арифметических операций есть две важные характеристики: точность вычислений и скорость раб\
+            оты. От чего они зависят? На какие грабли можно наступить во время сложения и вычитания? В этом докладе вы усл\
+            ышите много весёлых и полезных историй про простейшие операции, которые делаете каждый день. Андрей и слушател\
+            и будут много бенчмаркать, сравнивать разные окружения, говорить про битовые хаки и денормализованные числа, с\
+            мотреть на ассемблерные листинги, дискутировать про IEEE754."}
+    talkDay: 1
+    trackTime: "15:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6osesFo8pOyS8aUoOGUOWO/f0152328fc22be94f72231491ae586e7/Andrey_Akinshin_-_Lets_continue_to_talk_about_arithmetics.pdf"]
+    videoLinks: ["https://youtu.be/XEH0Hv54Fn8?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [471]
+  - id: 349
+    name:
+      - {language: en, text: "End-to-end JIT"}
+    shortDescription:
+      - {language: en, text: "This talk is about JIT optimizations, its capabilities, as well as common rules, by using which\
+            \ it is possible to help JIT to make our code more efficient"}
+      - {language: ru, text: "Доклад об оптимизациях JIT'a, его возможностях и правилах, с помощью которых можно помочь ср\
+            еде оптимизировать код ещё эффективнее."}
+    longDescription:
+      - language: en
+        text: "Some OOP paradigms require precise tracking of objects, low memory footprint, and extraordinary decisions,\
+            \ while implementing virtually any managed platform.\nIn this talk Karlen will focus on one of the main pillars\
+            \ of .NET — JIT.\nModern Just-in-time compilers offer sophisticated capabilities, while balancing between overall\
+            \ throughput and code quality. CLR's one is no exception.\nSometimes we can help/guide runtime to optimize our\
+            \ code more efficiently.\nIn this talk Karlen along with listeners will focus on a such common patterns as well\
+            \ as see particular JIT intrinsics, objects references counting (sic!), and OOP concepts representation in machine\
+            \ code."
+      - language: ru
+        text: "Некоторые ООП-парадигмы требуют точного отслеживания объектов, низкого расхода памяти и неординарных решени\
+            й при реализации практически любой управляемой платформы.\n\nВ докладе Карлен остановится на одном из главных\
+            \ столпов .NET — JIT. Современные Just-In-Time компиляторы предлагают невероятные возможности, балансируя при\
+            \ этом между общим временем компиляции и качеством кода — CLR JIT не является исключением.\n\nИногда мы можем\
+            \ помочь/направить среду выполнения выполнения оптимизировать наш код ещё больше. Карлен вместе со слушателями\
+            \ доклада сосредоточатся на такого рода шаблонах, воспринимаемом JIT, увидят конкретные intrinsic-функции, под\
+            счёт ссылок и представление некоторых ООП-концепций в машинном коде."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5vGq5LOPBu2kq8WuSUQssw/5edc1c830040f00960434a655f0845f7/Karlen_Simonyan_End_to_End_JIT.pdf"]
+    videoLinks: ["https://youtu.be/S3rBrq7W5lo?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [495]
+  - id: 350
+    name:
+      - {language: en, text: "Exceptional Exceptions in .NET"}
+    shortDescription:
+      - {language: en, text: "All developers know how to use try/catch/finally blocks, but do you really know how exception\
+            \ handling works? Or what could go wrong? What is time consuming? What is not? In this talk you will learn all\
+            \ the hardcore details so you will find out!"}
+    longDescription:
+      - {language: en, text: "All developers know how to use try/catch/finally blocks, but do you really know how exception\
+            \ handling works? Or what could go wrong? What is time consuming? What is not? We'll never be able to write truly\
+            \ reliable software if we do not understand exception handling. In this talk you will learn hardcore details about\
+            \ exception handling. You will see what can be thrown and which exceptions are impossible to catch. This talk\
+            \ will also discuss filter blocks and stack unwinding. You'll also find out what happens when a finally block\
+            \ fails with exception and when finally is not going to be executed. You'll also learn how to improve reliability\
+            \ with Constrained Execution Regions. Last but not least, we will cover topic of Tasks's exception handling to\
+            \ check what happens with unhandled Tasks exceptions and how good async/await is at it. With this knowledge you\
+            \ can take your .NET skills to another level!"}
+    talkDay: 1
+    trackTime: "15:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/NWJyKzBY6iACOw4UYuw0Q/3fea68ae45dbc1741eb3b97f651e73d4/Adam_Sitnik_Exceptional_Exceptions_in_.NET.pdf"]
+    videoLinks: ["https://youtu.be/U92Ts53win4?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [485]
+  - id: 351
+    name:
+      - {language: en, text: "How to create XAML application without Message Bus"}
+      - {language: ru, text: "Как написать XAML-приложение без Message Bus"}
+    shortDescription:
+      - {language: en, text: "Denis will talk about implementation of more easy and more usable CompositeUI in XAML applications\
+            \ without MessageBus pattern."}
+      - {language: ru, text: "О том, как проще и удобнее реализовать CompositeUI в XAML-приложениях без использования патт\
+            ерна Message Bus."}
+    longDescription:
+      - language: en
+        text: "All of MVVM frameworks uses Message Bus pattern for CompositeUI implementation. This pattern is usually used\
+            \ for integration between processes at backend and brings many disadvantages on UI because it makes indirect interaction\
+            \ between parts of application.\n\nDenis will talk about his experience in Composite UI design without Message\
+            \ Bus. If we design Composite UI using ViewModel First principle (but not View First principle as in Prism) then\
+            \ we don’t need MessageBus. In addition, Denis will give recommendations about designing of Composite UI using\
+            \ famous MVVM frameworks for different XAML platforms."
+      - language: ru
+        text: "Разработчики XAML-приложений, будь то WPF, UWP или Xamarin, активно используют MVVM-фреймворки для упрощени\
+            я жизни. Неотъемлемый компонент любого MVVM-фреймворка (популярных MvvmLight, Prism, Caliburn.Micro или хипсте\
+            рских ReactiveUI, Mugen — реализация паттерна Message Bus. Этот паттерн, изначально предназначенный для интегр\
+            ации процессов на бэкенде, пережил свое второе рождение на стороне UI в виде классов EventAggregator или Messenger.\
+            \ C помощью Message Bus предлагается передавать сообщения между ViewModel для реализации CompositeUI.\n\nНо де\
+            йствительно ли Message Bus упрощает жизнь? Ведь он делает взаимодействие частей приложения неявным и запутанны\
+            м.\n\nДенис расскажет о личном опыте разработки приложений практически для всех XAML-платформ без использовани\
+            я Message Bus. На примерах типичных задач XAML-разработчиков спикер покажет, что любую задачу, для которой пре\
+            длагается использовать Message Bus, вполне можно решить без него. При этом решение окажется более удобным и по\
+            нятным. А притягивание Message Bus на UI — костыль, призванный решить проблемы, вызванные неудачным подходом к\
+            \ реализации CompositeUI в большинстве MVVM-фреймворков. И, конечно, Денис поделится своим рецептом, как готов\
+            ить Composite UI для каждой XAML-платформы без Message Bus."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2uWcg6Juw8OoCKEUW00QuQ/d2f889fa34e2b323f3ef409743456d4c/Denis_Tsvettsih._How_to_live_without_MessageBus_on_UI.pdf"]
+    videoLinks: ["https://youtu.be/Xh_CLmboYc8?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [500]
+  - id: 352
+    name:
+      - {language: en, text: "Performance tuning Stack Overflow tags"}
+    shortDescription:
+      - {language: en, text: "This talk is about optimizing some specific queries from multi-second to sub-millisecond performance."}
+    longDescription:
+      - {language: en, text: "Working at scale can teach us to build better software at any scale. In this talk, Marco will\
+            \ show how we render lists of questions filtered by tags, selecting from millions of possible posts. The session\
+            \ will be starting from building an MVP using SQL, and showing how performance was iteratively optimized to the\
+            \ current implementation using CUDA."}
+    talkDay: 1
+    trackTime: "16:35"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3C4EiDWSNG4I4U4Gy0GQ8q/b80b457ff04e45f044615600f78d7cd7/Marco_Cecconi_a_______Performance_tuning_Stack_Overflow_tags.pdf"]
+    videoLinks: ["https://youtu.be/bd5WYql5vlg?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [492]
+  - id: 353
+    name:
+      - {language: en, text: "C# Scripting — why and how you can use your C# in places you never thought of before?"}
+    shortDescription:
+      - {language: en, text: "C# scripting."}
+    longDescription:
+      - language: en
+        text: "In this talk, Filip along with attendees will examine using C# as a scripting language. Pioneered by the scriptcs\
+            \ project, C# scripting has grown to become a first class citizen in the Roslyn compiler and can now be enjoyed\
+            \ and applied in your applications in various ways — using the embeddable assemblies, command line CSI tool, the\
+            \ new “dotnet” CLI, Visual Studio Interactive Window and — still — the scriptcs project. It all also works cross\
+            \ platform!\n\nFilip will dissect what’s going on under the hood in C# scripting and how it can make life easier\
+            \ for you as a developer."
+    talkDay: 1
+    trackTime: "16:35"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3OWr6WztDWau0ISMic4QuK/f98edf85d0e037e3df4a994cb26ad0c4/Filip_W_-_CSharp_Scripting.pdf"]
+    videoLinks: ["https://youtu.be/raO5BQahmlg?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [483]
+  - id: 354
+    name:
+      - {language: en, text: "Modification of .NET code during runtime"}
+      - {language: ru, text: "Модификация кода .NET в рантайме"}
+    shortDescription:
+      - language: en
+        text: "long with an audience, Igor will talk about ways of modifying .NET methods during runtime: hooks, injections,\
+            \ profiling API. We'll see how .NET methods look on the lowest level.\nFinally, Igor will look at some examples\
+            \ of applying this knowledge on practice."
+      - {language: ru, text: "Игорь расскажет о способах изменения кода .NET приложения в рантайме: хуки, инъекции, profiling\
+            \ API. Спикер и слушатели посмотрят, как на самом низком уровне выглядят методы .NET, и рассмотрят примеры исп\
+            ользования полученных знаний на практике."}
+    longDescription:
+      - language: en
+        text: "Igor will tell about ways of changing of code's application in the .NET runtime:\n1. Hook method after JIT-compilation.\n\
+            2. IL method substitution using .NET profiling API.\n3. IL method substitution by hook CLR at JIT-compilation\
+            \ stage.\nAlong with attendees of the talk, Igor will consider how .NET methods look on the lowest level, what\
+            \ tokens and metadata are.\nExamples of using the knowledge gained in practice will be discussed:\n1. The speaker\
+            \ and listeners will inject their code into another .NET process.\n2. They will prepare their own tracing profiler."
+      - language: ru
+        text: "Игорь поговорит о способах изменения кода .NET приложения в рантайме:\n1. Хук метода после JIT-компиляции.\n\
+            2. Подмена IL метода с помощью .NET profiling API.\n3. Подмена IL метода через хук CLR на этапе JIT-компиляции\
+            .\n\nВместе со слушателями доклада Игорь рассмотрит, как на самом низком уровне выглядят методы .NET, что тако\
+            е токены и метаданные. Будут рассмотрены примеры использования полученных знаний на практике:\n1. Докладчик и\
+            \ слушатели сделают инъекцию своего кода в чужой .NET процесс. \n2. Приготовят свой трассирующий профайлер."
+    talkDay: 1
+    trackTime: "16:35"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1tVjqBJmmYs24YUWeeSMgW/76b6eded5063ff2362e2ac2d89c4192f/Igor_Chevdar_-_Modification_of_.NET_code.pdf"]
+    videoLinks: ["https://youtu.be/EFsc_Pc1gZ0?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [491]
+  - id: 355
+    name:
+      - {language: en, text: "F# for the glory of Data Science"}
+      - {language: ru, text: "F# во славу Data Science"}
+    shortDescription:
+      - {language: en, text: "Usage of the functional power of F # language for data analysis and processing tasks."}
+      - {language: ru, text: "Применение функциональной мощи языка F# для решения задач анализа и обработки данных."}
+    longDescription:
+      - language: en
+        text: "What are Data Scientist need to be Absolutely Happy? Of course, data and the bigger, the better. And also a\
+            \ good tool for processing and analysis data, the possibility of interactive processing and many different visualizations.\n\
+            \nFor .NET such a tool is F#. In this talk, Roman along with an audience will look at language features that make\
+            \ it so attractive for Data Science, consider the most useful libraries for this purposes, and will look at some\
+            \ real-world use cases.\n\nBasic F# knowledge can be useful, but not required."
+      - language: ru
+        text: "Что нужно Data Scientist’у для полного счастья? Конечно, данные, и чем больше — тем лучше. А ещё удобный ин\
+            струментарий для их обработки и анализа, возможность интерактивного взаимодействия и много разнообразных визуа\
+            лизаций. На платформе .NET такой инструмент — это F#.\n\nВ этом докладе будут рассмотрены возможности языка, д\
+            елающие его таким привлекательным для Data Science, самые полезные библиотеки для этой цели. Также будут разоб\
+            раны некоторые реальные кейсы применения.\n\nБазовые знания F# будут полезны, но не обязательны."
+    talkDay: 1
+    trackTime: "16:35"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1ByVBE0LJy6Iswm8kOqmIq/e410ef4f9368c6669f2dc52dc659ead0/Roman_Nevolin_F__for_the_glory_of_Data_Science.pdf"]
+    videoLinks: ["https://youtu.be/6r9aDfEI71U?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [295]
+  - id: 356
+    name:
+      - {language: en, text: "ASP.NET SignalR: Why It's Getting Really Crucial for Web Development"}
+    shortDescription:
+      - {language: en, text: "A bunch of concrete benefits you can get from SignalR in everyday ASP.NET development work."}
+    longDescription:
+      - {language: en, text: "ASP.NET SignalR is a library that gives web applications the ability to have server-side code\
+            \ push content to the connected clients. This is quite a powerful feature as it enables connected clients to receive\
+            \ notifications (and data) of updates as it happens. The tremendous power of ASP.NET SignalR is often illustrated\
+            \ with a chat demo. While impressive as a demo, though, a chat is not a common type of application we write every\
+            \ day. In this talk, Dino will review a bunch of concrete benefits we can get from SignalR in our everyday work\
+            \ such as counting online users, updating multiple screens after an update, monitoring the progress of a remote\
+            \ task. More than everything else, though, SignalR is a critical resource for building effective event-based web\
+            \ architectures."}
+    talkDay: 1
+    trackTime: "17:55"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6jhzPGPEXYsccKy4Yy4WqM/f848802e9e9da0ae3dddb910b4a4d633/Dino_Esposito_ASP.NET_SignalR_Why_It_s_Getting_Really_Crucial_for_Web_Development.pdf"]
+    videoLinks: ["https://youtu.be/VIozYelOJF0?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [404]
+  - id: 357
+    name:
+      - {language: en, text: "Squeezing the Hardware to Make Performance Juice"}
+    shortDescription:
+      - {language: en, text: "This talk is all about squeezing the best performance out of modern hardware."}
+    longDescription:
+      - {language: en, text: "Obvious ways to get performance wins are obvious. By the end of 2016, every .NET developer should\
+            \ know about concurrency and parallelism, ORMs and web response caching, efficient collections and garbage collection\
+            \ internals. But there are so many performance wins ripe for the picking that most .NET developers don’t know\
+            \ about. This talk is all about squeezing the best performance out of modern hardware. And modern hardware is\
+            \ about vectorization in addition to parallelization; modern hardware is about optimizing your instruction flow\
+            \ and data layout for last-generation instruction sets and cache structures; modern hardware is understanding\
+            \ that using 4 cores is not the same thing as using 44 cores; modern hardware is about using tools to determine\
+            \ where bottlenecks lie and not about guessing. This talk dives deep under covers of your processor and memory\
+            \ system to deliver top-notch performance, all while using C# and .NET. We will see multiple examples of optimizing\
+            \ CPU- and memory-bound algorithms that are used in real-world applications, such as finance, image and signal\
+            \ processing, and many others."}
+    talkDay: 1
+    trackTime: "17:55"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3cEn7Rd4JqIu42ASugSAiY/17ee0ad51a6e15bfaa80c22e45dc747e/Sasha-Goldshtein_Squeezing-the-hardware-to-make-performance-juice.pdf"]
+    videoLinks: ["https://youtu.be/5jKLVGI3B4g?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [111]
+  - id: 358
+    name:
+      - {language: en, text: "Building stuff is a piece of Cake (C# Make)"}
+      - {language: ru, text: "Собрать всё, или Знакомимся с Cake (C# Make)"}
+    shortDescription:
+      - {language: en, text: "Are you tired of building with a couple of powershell and bat scripts that are pain to maintain?\
+            \ With Cake you can write build recipes using C# language and make use of dozens of strongly typed wrappers of\
+            \ common build utilities."}
+      - {language: ru, text: "Обычно инструментарий для запуска тестов и финальной сборки проекта — это зоопарк из несколь\
+            ких PowerShell-скриптов, пары bat-файлов и лежащих где-то по захардкоденым путям утилит. Всё это не очень удоб\
+            но поддерживать. С Cake по-другому: можно легко и приятно писать рецепты сборки на любимом языке, пользоваться\
+            \ полноценной системой зависимостей и десятками строго типизированных обёрток над утилитами сборки."}
+    longDescription:
+      - {language: en, text: "Usually the tools to run tests and the final assembly of the project is a zoo of a few-the PowerShell\
+            \ scripts, a pair of bat-files and lying somewhere utilities. All this is not very convenient to maintain. With\
+            \ Cake it feels differently: it can be easy and fun to write build recipes on your favorite language, use a full-fledged\
+            \ system of dependencies and dozens strictly typed wrappers of build utilities."}
+      - language: ru
+        text: "После сборки проекта Visual Studio, используемый ей MSBuild оставляет нас наедине с набором откомпилированн\
+            ых исполняемых файлов. Но понятие сборки и связанные с ним задачи включают в себя нечто большее. Бывает, нужно\
+            \ запустить тесты, выполнить преобразования типа ILMerge, подготовить nuget-пакеты, подготовить установочные п\
+            акеты, автоматически задеплоить на тестовое окружение, иногда перед сборкой в систему нужно что-то доустановит\
+            ь. При большом желании можно частично интегрировать это в сам файл проекта и запускать, но получается негибко\
+            , сложно, непонятно. Поэтому обычно это делается либо вообще вручную, либо набором разрозненных powershell-скр\
+            иптов (в запущенных случаях это bat/cmd), прочитать и понять которые может один человек в команде, который их\
+            \ и писал. При использовании каких-то внешних утилит, таких как WiX или NSIS, скрипты часто предполагают, что\
+            \ их в систему кто-то уже установил, процесс часто нормально не документирован, в итоге если ответственный за\
+            \ сборку ушёл в отпуск и пропал со связи, возникают проблемы с тем, чтобы просто собрать всё по порядку до сос\
+            тояния установщика на «чистой» машине. Сами же скрипты — некоторая каша, так как PowerShell изучают на уровне\
+            , ровно необходимом для решения поставленной задачи хоть каким-то образом. А если у нас мобильное приложение и\
+            \ нужно его собирать на билд-агенте с Mac OS X, то помимо powershell-а появляется ещё один набор скриптов уже\
+            \ на bash.\n\nТакже встаёт проблема сложности процесса сборки. Процесс этот многоэтапный, а этапы — зависимые\
+            \ друг от друга. У нас могут быть разные цели при сборке проекта, требующие выполнения разного набора этапов (н\
+            апример, мы можем хотеть только запустить тесты или только подготовить итоговую сборку и выполнить деплой), и\
+            \ это в скриптах надо учитывать. Для работы с набором задач с зависимостями люди придумали системы сборки, сам\
+            ой известной и распространённой является Make. Основная проблема с их использованием заключается всё же в чуже\
+            родном синтаксисе и сохранении ряда присущих скриптам недостатков.\n\nВ докладе пойдёт речь о Cake — C# Make,\
+            \ системе сборки, позволяющей писать сборочные скрипты на обычном и понятным всем в команде C#, предоставляя п\
+            ри этом обширный набор DSL к разного рода часто используемым сборочным утилитам, которые система к тому же уме\
+            ет самостоятельно загружать из интернета или же находить в системе нужную версию, что актуально, например, для\
+            \ MSBuild."
+    talkDay: 1
+    trackTime: "17:55"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1v5cPoffMMG84U6gQw8YS0/15e362b3a81b06d9d751b5f1f3dfb4e6/NikitaTsukanov_cake.pdf"]
+    videoLinks: ["https://youtu.be/AqTasfQIBwo?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [463]
+  - id: 359
+    name:
+      - {language: en, text: "Date and Time Pitfalls"}
+      - {language: ru, text: "Подводные камни Date & Time"}
+    shortDescription:
+      - {language: en, text: "The talk is about pitfalls related to dates and times representation including how to properly\
+            \ use the corresponding types in order to avoid major problems."}
+      - {language: ru, text: "Доклад о подводных камнях, связанных с выражением дат и времени, и о том, как правильно испо\
+            льзовать соответствующие типы данных, дабы избежать проблем."}
+    longDescription:
+      - language: en
+        text: "Dates and times surround us: calendars, watches, they are everywhere. That’s why in almost every program developers\
+            \ face the necessity to express time and manipulate date and time values. In order to correctly work with dates\
+            \ and times, you need to know how time zones are organized in the first place.\nSounds like it’s not a big deal\
+            \ but dates and times are fraught with perils by their nature, without relation to any development platforms.\
+            \ To say nothing of pitfalls related to types which represent dates and times.\n\nElias will talk about all the\
+            \ possible oddities of time zones, parsing problem. Elias will reveal the pros and cons of standard types such\
+            \ as DateTime and DateTimeOffset. The speaker will show how to avoid the majority of problems and talk about the\
+            \ pros of Noda Time library. Separately, Elias will talk about the best practices of working with dates and times."
+      - language: ru
+        text: "Даты и время окружают нас повсюду: календари, наручные часы, они повсюду. Поэтому практически в любой прогр\
+            амме разработчики сталкиваются с необходимостью выражать время, манипулировать датами и временем. Для того, чт\
+            обы грамотно манипулировать датами и временем  необходимо знать как устроены часовые пояса, в первую очередь.\n\
+            Казалось бы, это несложно, однако дата и время скрывают огромное количество подводных камней сами по себе, в о\
+            трыве от какой-либо плафтормы разработки. Что уж говорить про подводные камни, которые привносятся типами, пре\
+            дставляющими значения даты и времени.\n\nВ докладе Илья расскажет о всевозможных странностях, связанных с дата\
+            ми и временем: отсутствием дат при переходе с одного календаря на другой, особенностях вычисления возраста чел\
+            овека, проблемах планирования будущих событий, арифметике на датах и времени и многом другом.\nСпикер расскаже\
+            т о плюсах и минусах поставщиков данных по часовым поясам, проблеме парсинга, покажет недостатки стандартных т\
+            ипов: DateTime, DateTimeOffset. Также Илья покажет, как можно избежать большинства проблем и расскажет о преим\
+            уществах библиотеки Noda Time. Отдельно спикер поговорит о лучших практиках работы с датами и временем."
+    talkDay: 1
+    trackTime: "17:55"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/15HSE7Z2T02AM6GqG6iA86/3a29b59d6f279bfc477163d2f657c8f0/________N____N_____________N_________________________________________________N______________________________Date_and_Time.pdf"]
+    videoLinks: ["https://youtu.be/14l2JagZSlo?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [494]
+  - id: 360
+    name:
+      - {language: en, text: "What's new in C# 7?"}
+    shortDescription:
+      - {language: en, text: "This talk covers the latest features in C# 6 and 7, in depth and in the context of real world\
+            \ programming."}
+    longDescription:
+      - language: en
+        text: "In this talk Jesse and attendees will put the latest release of C# into perspective. During the session all\
+            \ the latest features of C# 6 and 7 will be covered. Topics will include the null conditional operator, initialization\
+            \ of automatic properties, NameOf expressions, string interpolation, the using static directive, enhanced uses\
+            \ for async and await and all the new features in C# 7.\n\nJesse will discuss no only what these are, but how\
+            \ developers would use them in real world programming, and he’ll create an example that makes their value clear."
+    talkDay: 1
+    trackTime: "19:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/pWfw6sgK2c2Mm24AOmsKq/f523d02ee56941e73d845f7cee1d989c/Jesse_Liberty_Whats_New_in_C__7-2.pdf"]
+    videoLinks: ["https://youtu.be/-9if_VSMW5A?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
+    speakerIds: [493]

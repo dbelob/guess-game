@@ -744,6 +744,17 @@ speakers:
     fileName: 0111.jpg
     name:
       - {language: en, text: "Sasha Goldshtein"}
+    company:
+      - {language: en, text: "Sela Group"}
+    bio:
+      - {language: en, text: "Sasha Goldshtein is the CTO of Sela Group, Microsoft MVP and Regional Director, Pluralsight\
+            \ and O'Reilly author, and an international consultant and trainer. Sasha is the author of \"Introducing Windows\
+            \ 7 for Developers\" (Microsoft Press, 2009) and \"Pro .NET Performance\" (Apress, 2012), a prolific blogger and\
+            \ open source contributor, and author of numerous training courses including .NET Debugging, .NET Performance,\
+            \ Android Application Development, and Modern C++. His consulting work revolves mainly around distributed architecture,\
+            \ production debugging and performance diagnostics, and mobile application development."}
+    twitter: goldshtn
+    mvp: true
   - id: 112
     fileName: 0112.jpg
     name:
@@ -1847,6 +1858,15 @@ speakers:
     name:
       - {language: en, text: "Roman Nevolin"}
       - {language: ru, text: "Роман Неволин"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Software engineer working with data in scientific projects in EPAM. Roman is engaged in research\
+            \ in the field of machine learning and developing its own machine learning tools."}
+      - {language: ru, text: "Разработчик компании EPAM, специализирующийся на работе с данными в наукоемких проектах. Акт\
+            ивно занимается исследованиями в области Machine Learning и разработкой собственных инструментов машинного обу\
+            чения."}
+    twitter: nevoroman
   - id: 296
     fileName: 0296.jpg
     name:
@@ -2432,8 +2452,19 @@ speakers:
   - id: 415
     fileName: 0415.jpg
     name:
-      - {language: en, text: "Mihail Scherbakov"}
+      - {language: en, text: "Mikhail Shcherbakov"}
       - {language: ru, text: "Михаил Щербаков"}
+    company:
+      - {language: en, text: "Independent developer"}
+    bio:
+      - {language: en, text: "Mikhail is Microsoft .NET MVP, a participant of .NET Core Bug Bounty Program, .NET community\
+            \ leader in Russia, an independent software developer and consultant. His professional area is static and dynamic\
+            \ code analysis, information security, automatization of debugging code, the research of the internal .NET CLR."}
+      - {language: ru, text: "Microsoft .NET MVP, участник .NET Core Bug Bounty Program, соорганизатор сообщества .NET про\
+            граммистов, независимый разработчик и консультант. Профессиональные интересы: статический и динамический анали\
+            з кода, информационная безопасность, автоматизация отладки кода, исследование внутреннего устройства .NET CLR."}
+    twitter: yu5k3
+    mvp: true
   - id: 416
     fileName: 0416.jpg
     name:
@@ -2506,6 +2537,14 @@ speakers:
     name:
       - {language: en, text: "Egor Bogatov"}
       - {language: ru, text: "Егор Богатов"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Egor Bogatov is a software developer at Microsoft. He is a member of .NET 5 team (Mono Runtime).\
+            \ Also he contributes to CoreCLR and CoreFX."}
+      - {language: ru, text: "Разработчик в компании Microsoft из команды Mono. Работает над .NET 5, Mono Runtime, и контр\
+            ибьютит в CoreCLR/CoreFX."}
+    twitter: EgorBo
   - id: 432
     fileName: 0432.jpg
     name:
@@ -2655,6 +2694,17 @@ speakers:
     name:
       - {language: en, text: "Nikita Tsukanov"}
       - {language: ru, text: "Никита Цуканов"}
+    company:
+      - {language: en, text: MandarinBank}
+    bio:
+      - {language: en, text: "Nikita has a vast experience developing for a broad spectrum of platforms (starting with WinCE)\
+            \ using a whole zoo of technologies and is happy to share that experience."}
+      - {language: ru, text: "Начинал в Навителе с разработки под WinCE/Mobile на C/C++. В дальнейшем занимался разработко\
+            й VPN-сервиса с кроссплатформенным клиентом на GTK#, торговой площадки Promarket, мейнтейнил Mono для Nokia N900,\
+            \ делал инструментарий для чип-тюнинга автомобилей, мобильный мессенджер с End2End шифрованием, платёжную сист\
+            ему и ещё кучу всякого по мелочи. Имеет обширный опыт разработки подо всё подряд на зоопарке технологий, котор\
+            ым рад поделиться."}
+    twitter: kekekeks
   - id: 464
     fileName: 0464.jpg
     name:
@@ -2689,6 +2739,16 @@ speakers:
     fileName: 0470.jpg
     name:
       - {language: en, text: "Dina Goldshtein"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Dina Goldshtein has recently started working at Google as a Software Engineer. Previously, she\
+            \ was a Senior Software Engineer at Riverbed. Riverbed builds performance monitoring tools that run on millions\
+            \ of PCs and mobile devices. Dina was on the team responsible for the core collection mechanism, which hooks low-level\
+            \ Windows events and collects performance information from a variety of sources. During her time at Riverbed,\
+            \ she worked a lot on boot performance monitoring, identifying bottlenecks in the Windows boot process and on\
+            \ monitoring user-experience on the Web."}
+    twitter: dinagozil
   - id: 471
     fileName: 0471.jpg
     name:
@@ -2715,6 +2775,27 @@ speakers:
     name:
       - {language: en, text: "Dmitry Soshnikov"}
       - {language: ru, text: "Дмитрий Сошников"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - language: en
+        text: "Dmitry is a technology evangelist of Microsoft company, promotes modern software development technologies among\
+            \ beginner developers: pupils, students, startups. Specializes in the Internet of things, Windows universal applications\
+            \ development, functional programming, and platform .NET (F#, Roslyn).\r\nHas personally done dozens of hackathons\
+            \ all around Russia, helped many students' startups to start their projects in various fields. Associate Professor,\
+            \ Candidate of Physical and Mathematical Sciences, teaches at MIPT and MAI, member of Russian Association for\
+            \ Artificial Intelligence, during summer time — lead of the department of computer technologies of the children\
+            \ camp JUNIO-R. In his spare time is into technological magic, does Chinese tea ceremony, Gong Fu Cha."
+      - language: ru
+        text: "Дмитрий Сошников — технологический евангелист компании Майкрософт, занимается популяризацией современных те\
+            хнологий разработки программного обеспечения среди начинающих разработчиков: школьников, студентов, начинающих\
+            \ стартапов. Специализируется в области интернета вещей, в разработке универсальных приложений Windows, в обла\
+            сти функционального программирования и на платформе .NET (F#, Roslyn).\r\nЛично провел несколько десятков хака\
+            тонов по всей России, помогал многим студенческим стартапам начать свои проекты в различных областях. Доцент,\
+            \ к.ф.-м.н., ведет занятия в МФТИ и МАИ, член Российской ассоциации искусственного интеллекта, летом — ведущий\
+            \ кафедры компьютерных технологий детского лагеря ЮНИО-Р. В свободное время увлекается технологической магией\
+            , проводит китайские чайные церемонии Гун Фу Ча."
+    twitter: shwars
   - id: 473
     fileName: 0473.jpg
     name:
@@ -2766,6 +2847,15 @@ speakers:
     fileName: 0483.jpg
     name:
       - {language: en, text: "Filip W"}
+    company:
+      - {language: en, text: Sonova}
+    bio:
+      - {language: en, text: "Filip is a popular .NET blogger, author, prolific open source contributor and a Microsoft MVP.\
+            \ Over the past few years, his blog has been one of the most popular ASP.NET resources on the internet. Filip\
+            \ specializes in ASP.NET Web Stack, modern web technologies and is experienced in delivering robust web solutions.\
+            \ He worked on projects in many corners of the world (Canada, Switzerland, Finland, Poland, Scotland)."}
+    twitter: filip_woj
+    mvp: true
   - id: 484
     fileName: 0484.jpg
     name:
@@ -2775,6 +2865,15 @@ speakers:
     fileName: 0485.jpg
     name:
       - {language: en, text: "Adam Sitnik"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Adam is a software engineer focused on performance and reliability. He has spent much of his\
+            \ professional life working on systems for energy producers and distributors. It included projects such: energy\
+            \ trading, production optimization, balance settlement and critical events detection. So far no blackouts! He’\
+            s an Open Source Contributor to BenchmarkDotNet and corefxlab. He is also an ex-MMA practitioner, AFOL, rabbit\
+            \ owner and a huge star wars fan."}
+    twitter: SitnikAdam
   - id: 486
     fileName: 0486.jpg
     name:
@@ -2804,6 +2903,14 @@ speakers:
     name:
       - {language: en, text: "Igor Chevdar"}
       - {language: ru, text: "Игорь Чевдарь"}
+    company:
+      - {language: en, text: "SKB Contur"}
+      - {language: ru, text: "СКБ Контур"}
+    bio:
+      - {language: en, text: "Member of two finals ACM ICPC 2007–2009. .NET Developer since 2007. He is fond of the low-level\
+            \ optimizations and machine learning."}
+      - {language: ru, text: "Участник двух финалов ACM ICPC 2007-2009 годов. Разработчик .NET с 2007 года. Увлекается низ\
+            коуровневыми оптимизациями, машинным обучением."}
   - id: 492
     fileName: 0492.jpg
     name:
@@ -2818,21 +2925,67 @@ speakers:
     fileName: 0493.jpg
     name:
       - {language: en, text: "Jesse Liberty"}
+    company:
+      - {language: en, text: "Liberty Associates"}
+    bio:
+      - {language: en, text: "Jesse Liberty is an independent software developer, consultant and author. Liberty hosts the\
+            \ popular Yet Another Podcast and he is the author of two dozen best-selling books. He is also the author of numerous\
+            \ Pluralsight courses on everything from Angular to Xamarin. Liberty is a Certified Xamarin Developer, a Xamarin\
+            \ MVP and a Microsoft MVP. He was a Technical Evangelist for Microsoft, Distinguished Software Engineer at AT&T;\
+            \ Software Architect for PBS and Vice President of Information Technology at Citibank, and he was on the teaching\
+            \ staff at Brandeis University."}
+    twitter: jesseliberty
+    mvp: true
   - id: 494
     fileName: 0494.jpg
     name:
       - {language: en, text: "Ilya Fofanov"}
       - {language: ru, text: "Илья Фофанов"}
+    company:
+      - {language: en, text: EngineerSpock}
+    bio:
+      - {language: en, text: "Ilya began his career as a postgraduate student participating in the Microsoft ImagineCup contest.\
+            \ Developed the dean's office management system in a university. He has been working with the .NET platform since\
+            \ 2003. Ilya has been professionally architecting and implementing software for nearly 7 years, primarily based\
+            \ on the .NET platform. The major interest is in the desktop front-end development field."}
+      - {language: ru, text: "Начинал карьеру с участия в Imagine Cup от Microsoft. Работал над системой управления декана\
+            том в вузе. На последней работе занимался разработкой ПО для автоматов по продаже билетов на пригородные элект\
+            ропоезда. Работает с платформой .NET с 2003 года. Профессионально занимается разработкой ПО более 7 лет в осно\
+            вном на платформе .NET. Основной интерес сосредоточен в desktop front-end разработке."}
+    twitter: engineerspock
   - id: 495
     fileName: 0495.jpg
     name:
       - {language: en, text: "Karlen Simonyan"}
       - {language: ru, text: "Карлен Симонян"}
+    company:
+      - {language: en, text: Luxoft}
+    bio:
+      - {language: en, text: "Senior developer at Luxoft, involved in distributed applications engineering. Karlen blogs and\
+            \ posts articles on Habr about the .NET platform using nickname szKarlen. Author of atomics.net, beginning WebKit\
+            \ project committer and fork maintainer."}
+      - {language: ru, text: "Карлен — старший разработчик в компании Luxoft, занимается распределёнными приложениями. Пиш\
+            ет о платформе .NET в блоге и на Хабре под ником szKarlen. Автор atomics.net, начинающий WebKit-коммиттер и ме\
+            йнтейнер форка."}
+    twitter: szKarlen
   - id: 496
     fileName: 0496.jpg
     name:
       - {language: en, text: "Michael Yarichuk"}
       - {language: ru, text: "Михаил Ярийчук"}
+    company:
+      - {language: en, text: "Hibernating Rhinos"}
+    bio:
+      - {language: en, text: "Michael is an experienced full-stack developer with background in development of applications\
+            \ and distributed systems. By day, as member of RavenDB Core Team he works mostly on the server side of things,\
+            \ currently participates in development of a new cross-platform version of RavenDB. By night he becomes a tinkerer\
+            \ with passion for new technologies, new ideas and coding in general, creating lots of different pet projects\
+            \ along the way."}
+      - {language: ru, text: "Разработчик fullstack с большим опытом работы над приложениями и распределёнными системами.\
+            \ Михаил работает в Hibernating Rhinos, участвует в RavenDB Core Team и в разработке новой cross-platform верс\
+            ии RavenDB. В свободное время любит экспериментировать, исследовать новые идеи и технологии — чем сложнее зада\
+            ча, тем интереснее."}
+    twitter: Myarichuk
   - id: 497
     fileName: 0497.jpg
     name:
@@ -2850,16 +3003,44 @@ speakers:
     name:
       - {language: en, text: "Vagif Abilov"}
       - {language: ru, text: "Вагиф Абилов"}
+    company:
+      - {language: en, text: Miles}
+    bio:
+      - {language: en, text: "Vagif is a Russian/Norwegian developer working for a Norwegian company Miles. He has about three\
+            \ decades of programming experience, currently focusing on building systems in F# and C#. Vagif is a frequent\
+            \ speaker on software conferences, contributor to some open source projects and maintainer of Simple.OData.Client."}
+      - {language: ru, text: "Вагиф работает в норвежской компании Miles. Его опыт программирования насчитывает около трёх\
+            \ десятилетий. В настоящее время он занимается разработками систем на F# и C#. Вагиф часто выступает на конфер\
+            енциях, принимает участие в опенсорс-проектах и поддерживает Simple.OData.Client."}
+    twitter: ooobject
   - id: 499
     fileName: 0499.jpg
     name:
       - {language: en, text: "Sergey Vasiliev"}
       - {language: ru, text: "Сергей Васильев"}
+    company:
+      - {language: en, text: SiProVer}
+      - {language: ru, text: СиПроВер}
+    bio:
+      - {language: en, text: "Leading developer at PVS-Studio. He was engaged in the development of C++ and C# parser cores.\
+            \ Sergey is focused on the direction of the Tools & DevOps. Author of articles on the audit of open-source projects."}
+      - {language: ru, text: "Ведущий разработчик в PVS-Studio. Занимался разработкой С++ и C# ядер анализатора. Сосредото\
+            чен на направлении Tools & DevOps. Автор статей о проверке open-source проектов."}
+    twitter: CPP_Coder
   - id: 500
     fileName: 0500.jpg
     name:
       - {language: en, text: "Denis Tsvettsih"}
       - {language: ru, text: "Денис Цветцих"}
+    company:
+      - {language: en, text: "One Systems"}
+    bio:
+      - {language: en, text: "Denis went the way from .NET developer to project Manager. Area of interest – the Enterprise\
+            \ Applications. He developed XAML application for all platforms using popular and hipster MVVM frameworks. And\
+            \ of course he invented his own MVVM framework :)"}
+      - {language: ru, text: "Прошёл путь от .NET-разработчика до руководителя проектов. Область интересов — кровавый Enterprise\
+            \ dj во всем его многообразии. Разрабатывал XAML-приложения для всех платформ с применением и популярных, и хи\
+            пстерских MVVM-фреймворков, и, конечно, своего собственного MVVM-велосипеда :)"}
   - id: 501
     fileName: 0501.jpg
     name:
