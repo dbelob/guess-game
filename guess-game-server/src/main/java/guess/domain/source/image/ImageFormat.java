@@ -20,7 +20,7 @@ public enum ImageFormat {
     public static ImageFormat getImageFormatByExtension(String extension) {
         return Arrays.stream(ImageFormat.values())
                 .filter(imageFormat -> imageFormat.getFileExtensions().stream()
-                        .anyMatch(fileExtension -> fileExtension.equals(extension)))
+                        .anyMatch(fileExtension -> fileExtension.equalsIgnoreCase(extension)))
                 .findFirst()
                 .orElse(null);
     }
