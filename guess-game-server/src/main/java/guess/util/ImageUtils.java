@@ -32,8 +32,7 @@ public class ImageUtils {
         File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, destinationFileName));
         FileUtils.checkAndCreateDirectory(file.getParentFile());
 
-        URL url = new URL(String.format("%s?w=%d", sourceUrl, IMAGE_WIDTH));
-        BufferedImage image = ImageIO.read(url);
+        BufferedImage image = getImageByUrl(sourceUrl);
         ImageFormat imageFormat = getImageFormatByUrl(sourceUrl);
 
         switch (imageFormat) {
@@ -50,6 +49,43 @@ public class ImageUtils {
         if (!ImageIO.write(image, "jpg", file)) {
             throw new IOException(String.format("Creation error for '%s' URL and '%s' file name", sourceUrl, destinationFileName));
         }
+    }
+
+    /**
+     * Checks for need to update file.
+     *
+     * @param sourceUrl           source URL
+     * @param destinationFileName destination file name
+     * @return {@code true} if need to update, {@code false} otherwise
+     * @throws IOException if read error occurs
+     */
+    public static boolean needUpdate(String sourceUrl, String destinationFileName) throws IOException {
+        try {
+            File file = new File(String.format("guess-game-web/src/assets/images/speakers/%s", destinationFileName));
+            BufferedImage fileImage = ImageIO.read(file);
+
+            if (fileImage.getWidth() < IMAGE_WIDTH) {
+                BufferedImage urlImage = getImageByUrl(sourceUrl);
+
+                return (fileImage.getWidth() < urlImage.getWidth());
+            } else {
+                return false;
+            }
+        } catch (IOException e) {
+            throw new IOException(String.format("Can't read image file %s or '%s' URL", destinationFileName, sourceUrl), e);
+        }
+    }
+
+    /**
+     * Gets image by URL.
+     *
+     * @param sourceUrl source URL
+     * @return image
+     * @throws IOException if read error occurs
+     */
+    private static BufferedImage getImageByUrl(String sourceUrl) throws IOException {
+        URL url = new URL(String.format("%s?w=%d", sourceUrl, IMAGE_WIDTH));
+        return ImageIO.read(url);
     }
 
     /**
@@ -86,23 +122,5 @@ public class ImageUtils {
         newImage.createGraphics().drawImage(image, 0, 0, Color.WHITE, null);
 
         return newImage;
-    }
-
-    /**
-     * Checks for need to update file.
-     *
-     * @param fileName file name
-     * @return {@code true} if need to update, {@code false} otherwise
-     * @throws IOException if file read error occurs
-     */
-    public static boolean needUpdate(String fileName) throws IOException {
-        try {
-            File file = new File(String.format("guess-game-web/src/assets/images/speakers/%s", fileName));
-            BufferedImage image = ImageIO.read(file);
-
-            return image.getWidth() < IMAGE_WIDTH;
-        } catch (IOException e) {
-            throw new IOException(String.format("Can't read image file %s", fileName), e);
-        }
     }
 }

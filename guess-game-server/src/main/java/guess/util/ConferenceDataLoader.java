@@ -226,10 +226,11 @@ public class ConferenceDataLoader {
                 String destinationFileName = resourceSpeaker.getFileName();
                 s.setFileName(destinationFileName);
 
+                if (ImageUtils.needUpdate(sourceUrl, destinationFileName)) {
+                    urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
+                }
+
                 if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
-                    if (ImageUtils.needUpdate(destinationFileName)) {
-                        urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
-                    }
                     speakersToUpdate.add(s);
                 }
             }
