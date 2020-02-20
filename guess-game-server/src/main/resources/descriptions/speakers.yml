@@ -53,6 +53,20 @@ speakers:
     name:
       - {language: en, text: "Yegor Bugayenko"}
       - {language: ru, text: "Егор Бугаенко"}
+    company:
+      - {language: en, text: Zerocracy}
+    bio:
+      - {language: en, text: "Yegor Bugayenko is a founder and CEO of Zerocracy, which replaces annoying bosses with AI bots;\
+            \ an OOP fundamentalist; an author of \"Elegant Objects\" book series; a provocative blogger at yegor256.com;\
+            \ a creator of Zold, a non-blockchain cryptocurrency for fast micro-payments; a hands-on Java programmer; a creator\
+            \ of Cactoos, Takes Framework, JCabi, and Rultor; a philanthropist donating four thousand dollars annually to\
+            \ an open source award."}
+      - {language: ru, text: "Егор Бугаенко — основатель и CEO компании Zerocracy, разрабатывающей AI роботов для управлен\
+            ия программистами; ООП-фундаменталист; автор «Elegant Objects» — серии книг об объектно-ориентированном програ\
+            ммировании; создатель криптовалюты Zold для быстрых микроплатежей; провокационный блогер на yegor256.com; пишу\
+            щий Java-программист; создатель Cactoos, Takes Framework, JCabi и Rultor; филантроп, жертвующий ежегодно неско\
+            лько тысяч долларов номинантам его собственной премии за самый качественный программный проект."}
+    twitter: yegor256
   - id: 4
     fileName: 0004.jpg
     name:
@@ -63,6 +77,28 @@ speakers:
     name:
       - {language: en, text: "Dmitry Chuyko"}
       - {language: ru, text: "Дмитрий Чуйко"}
+    company:
+      - {language: en, text: BellSoft}
+    bio:
+      - language: en
+        text: "Dmitry Chuyko is a performance engineer at BellSoft, which is among the top 5 contributors to OpenJDK. Before\
+            \ joining BellSoft, Dmitry programmed in Java, and then worked on Hotspot JVM in Oracle. After all, previous experience\
+            \ with Java has shown that the most interesting problems in applications get their solutions in the base platform.\
+            \ Currently Dmitry mostly optimizes OpenJDK for ARM64, the company even implemented its own JEP 315 on Java 11\
+            \ on this topic.\n\nBellSoft releases and supports Liberica JDK — a verified distribution of OpenJDK. Liberica\
+            \ is available in the form of binary assemblies, installers and container images for different operating systems\
+            \ and processors. Therefore, now the focus of attention is the work of various versions of Java in containers\
+            \ on ARM and x86."
+      - language: ru
+        text: "Дмитрий Чуйко — инженер по производительности в компании BellSoft, которая входит в топ-5 контрибьютеров OpenJDK.\
+            \ До того как присоединиться к BellSoft, Дмитрий программировал на Java, а затем работал над Hotspot JVM в Oracle.\
+            \ Ведь предыдущий опыт работы с Java показал, что наиболее интересные проблемы в приложениях получают свои реш\
+            ения в базовой платформе. В настоящее время Дмитрий в основном оптимизирует OpenJDK для ARM64, компания даже р\
+            еализовала на эту тему собственный JEP 315 в Java 11.\n\nBellSoft выпускает и поддерживает Liberica JDK — вери\
+            фицированный дистрибутив OpenJDK. Liberica выпускается в виде бинарных сборок, инсталляторов и контейнерных об\
+            разов для разных ОС и процессоров. Поэтому сейчас в фокусе внимания работа различных версий Java в контейнерах\
+            \ на ARM и x86."
+    twitter: dchuyko
   - id: 6
     fileName: 0006.jpg
     name:
@@ -147,6 +183,16 @@ speakers:
     name:
       - {language: en, text: "Ivan Krylov"}
       - {language: ru, text: "Иван Крылов"}
+    company:
+      - {language: en, text: "Azul Systems"}
+    bio:
+      - {language: en, text: "Ivan has been involved in JVM and compilers development for more than 13 years, recently focusing\
+            \ on JIT compiler infrastructure in Zing virtual machine at Azul Systems. Ivan is a regular speaker at JUG.ru\
+            \ events and other Java conferences in Europe."}
+      - {language: ru, text: "Иван занимается разработкой виртуальных машин Java и компиляторов более 13 лет, в настоящее\
+            \ время развивает компиляторную инфраструктуру в виртуальной машине Zing в Azul Systems. Регулярный докладчик\
+            \ на конференциях JUG.ru и других европейских Java-конференциях."}
+    twitter: JohnWings
   - id: 13
     fileName: 0013.jpg
     name:
@@ -157,6 +203,21 @@ speakers:
     name:
       - {language: en, text: "Nikita Lipsky"}
       - {language: ru, text: "Никита Липский"}
+    company:
+      - {language: en, text: Excelsior}
+    bio:
+      - {language: en, text: "Nikita is an initiator and a product lead of Excelsior JET project — complete Java SE implementation\
+            \ (JVM) with AOT compiler developed by Excelsior LLC. Working on the project since 1997 he took part in almost\
+            \ every activity of the project from the JVM core to product management and support. In particular, he is the\
+            \ author of OSGi support at the JVM level, Java Runtime Slim-Down technology (Java SE modularization implemented\
+            \ in Excelsior JET since 2007), both Java bytecode verifiers, Spring Boot support and many others."}
+      - {language: ru, text: "Один из инициаторов проекта Excelsior JET, полной реализации Java SE (JVM), разрабатываемой\
+            \ компанией Excelsior. Работая над проектом с 1997 года, поучаствовал в исследовании и разработке практически\
+            \ всех компонентов продукта от ядра до продуктовых свойств. В частности, является одним из авторов поддержки OSGi\
+            \ на уровне JVM, технологии Java Runtime Slim Down (модуляризация Java SE, реализованная в Excelsior JET с 2007\
+            \ года), обоих верификаторов Java-байткода, поддержки Spring Boot и многого другого."}
+    twitter: pjBooms
+    gitHub: pjBooms
   - id: 15
     fileName: 0015.jpg
     name:
@@ -499,6 +560,16 @@ speakers:
     name:
       - {language: en, text: "Nikita Koval"}
       - {language: ru, text: "Никита Коваль"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Nikita works on algorithms for coroutines in the Kotlin team and has been getting a PhD at IST\
+            \ Austria. In addition, he teaches a course on concurrency programming at ITMO University and is interested in\
+            \ program analysis and verification."}
+      - {language: ru, text: "Никита разрабатывает алгоритмы для корутин в команде Kotlin и получает PhD в IST Austria. По\
+            мимо этого, преподает курс по многопоточному программированию в Университете ИТМО и интересуется верификацией\
+            \ и анализом программ."}
+    twitter: nkoval_
   - id: 59
     fileName: 0059.jpg
     name:
@@ -767,6 +838,26 @@ speakers:
     name:
       - {language: en, text: "Oleg Chirukhin"}
       - {language: ru, text: "Олег Чирухин"}
+    company:
+      - {language: en, text: "JUG.ru Group"}
+    bio:
+      - language: en
+        text: "Oleg works on enterprise Java web apps for 9 years already, his primary specialization is E-Government information\
+            \ systems. Today he is employed by JUG.ru Group where he works in the marketing department promoting conferences.\n\
+            \nOleg used to work at Sberbank Technology where he was into architectural problems and research in the field\
+            \ of automated business process management systems. Before that Oleg was working on gosuslugi.ru (central e-government\
+            \ portal in Russia), Integrated Electronic Medical Record (central medical portal), the IUPAT Integrated Member\
+            \ Services information system, Flussonic streaming media server, and the infrastructure for JVM-based programming\
+            \ languages for the StarView operational intelligence platform."
+      - language: ru
+        text: "Олег работает на платформе Java в течение 9 лет, основная специализация — E-Government информационные систе\
+            мы. В данный момент работает в JUG.ru Group в отделе маркетинга и занимается продвижением конференций. \n\nДо\
+            \ этого работал в Сбербанк-Технологиях и занимался разработкой архитектуры систем автоматизированного управлен\
+            ия бизнес-процессами. Ранее принимал участие в разработке портала Госуслуг, Интегрированной Электронной Медици\
+            нской Карты, информационной системы профсоюзов США IUPAT, а также принимал участие в разработке видеостриминго\
+            вого сервера Flussonic и инфраструктуры для языков программирования на основе JVM для платформы operational intelligence\
+            \ компании StarView."
+    twitter: olegchir
   - id: 111
     fileName: 0111.jpg
     name:
@@ -917,8 +1008,18 @@ speakers:
   - id: 134
     fileName: 0134.jpg
     name:
-      - {language: en, text: "Alexey Kuragin"}
+      - {language: en, text: "Aleksey Kuragin"}
       - {language: ru, text: "Алексей Курагин"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "Aleksey is an architect at Sberbank Technology. He has eight years’ experience of enterprise\
+            \ app development. He works on the core of Sberbank Platform, designing, developing and trialling experimental\
+            \ features of Platform."}
+      - {language: ru, text: "Архитектор компании Сбербанк-Технологии. Опыт разработки корпоративных приложений — 8 лет. Р\
+            аботает над развитием ядра Платформы Сбербанка. Занимается проектированием, разработкой и апробацией экспериме\
+            нтальных технологий Платформы."}
   - id: 135
     fileName: 0135.jpg
     name:
@@ -963,6 +1064,15 @@ speakers:
     fileName: 0143.jpg
     name:
       - {language: en, text: "Philipp Krenn"}
+    company:
+      - {language: en, text: Elastic}
+    bio:
+      - {language: en, text: "Philipp lives to demo interesting technology. Having worked as a web, infrastructure, and database\
+            \ engineer for over ten years, Philipp is now working as a developer advocate at Elastic — the company behind\
+            \ the Elastic Stack consisting of Elasticsearch, Kibana, Beats, and Logstash. Based in Vienna, Austria, he is\
+            \ constantly traveling Europe and beyond to speak and discuss open source software, search, databases, infrastructure,\
+            \ and security."}
+    twitter: xeraa
   - id: 144
     fileName: 0144.jpg
     name:
@@ -1259,6 +1369,16 @@ speakers:
     name:
       - {language: en, text: "Yakov Zhdanov"}
       - {language: ru, text: "Яков Жданов"}
+    company:
+      - {language: en, text: "GridGain Systems"}
+    bio:
+      - {language: en, text: "Yakov started working at GridGain in 2010. He currently leads the Russian branch of the company,\
+            \ being involved in the development process and making of technical decisions. Commits to Apache Ignite. Can't\
+            \ imagine summer without bikes or winter without snow and mountains."}
+      - {language: ru, text: "Яков пришел в GridGain в 2010 году. В данный момент занимает должность руководителя российск\
+            ого отделения компании и в этой роли непосредственно участвует в процессе разработки и принятии технических ре\
+            шений. Является комитером проекта Apache Ignite. Не представляет лето без мотоциклов, а зиму без снега и гор."}
+    twitter: zhakob_j
   - id: 171
     fileName: 0171.jpg
     name:
@@ -1996,21 +2116,75 @@ speakers:
     name:
       - {language: en, text: "Stanislav Yantsen"}
       - {language: ru, text: "Станислав Янцен"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "Works at Sberbank Tecnhology as an architect in the «Individual deposits» development team.Has\
+            \ an experience of developing and designing Java-based information systems for investment and retail banking."}
+      - {language: ru, text: "Работает в Сбербанк-Технологиях, архитектор в команде разработки прикладной фабрики «Вклады\
+            \ физических лиц». Есть опыт разработки и проектирования информационных систем на базе Java-технологий для инв\
+            естиционного и розничного банковского бизнеса."}
   - id: 304
     fileName: 0304.jpg
     name:
       - {language: en, text: "Mikhail Getmanov"}
       - {language: ru, text: "Михаил Гетманов"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: en
+        text: "Mikhail works at Sberbank Technology where he develops the new generation of client data management system\
+            \ for Sberbank. In last 10 years created several analytic and CRM systems. Devoted a lot of time to promoting\
+            \ free solutions as components of commercial programs.\n\nIn his spare time Mikhail studies implementations of\
+            \ distributed storage systems."
+      - language: ru
+        text: "Один из разработчиков системы хранения клиентских данных в Сбербанк-Технологиях. Последние 10 лет занимался\
+            \ разработкой нескольких аналитических систем и CRM. Большая часть опыта связанна с реализацией решений на осн\
+            ове open source.\n\nВ свободное от работы времени занимается изучением реализаций распределенных систем хранен\
+            ия."
   - id: 305
     fileName: 0305.jpg
     name:
       - {language: en, text: "Dmitry Drozhzhin"}
       - {language: ru, text: "Дмитрий Дрожжин"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: en
+        text: "Graduated from NSU faculty of physics. Chief development manager in Sberbank Technology working on the new\
+            \ CRM system leveraging capabilities provided by In-Memory Data Grid from GridGain.\n\nIn past 6 years developed\
+            \ mission critical trade processing systems for international investment banks such as Deutsche Bank and UBS.\
+            \ Interested in programming language theory (in particular strongly typed functional languages) and writes some\
+            \ Haskell in his spare time."
+      - language: ru
+        text: "Окончил Физический Факультет НГУ по специальности Физика ядра и элементарных частиц. Главный руководитель р\
+            азработки в компании Сбербанк Технологии. Работает над созданием системы хранения клиентских данных на базе In-Memory\
+            \ Data Grid решения от GridGain.\n\nПредыдущие 6 лет разрабатывал системы процессинга трейдов для крупнейших и\
+            нвестиционных банков Deutsche Bank и UBS. Интересуется теорией языков программирования. В свободное от работы\
+            \ время пишет на Haskell."
+    gitHub: ghdrozh
   - id: 306
     fileName: 0306.jpg
     name:
       - {language: en, text: "Vladimir Aseev"}
       - {language: ru, text: "Владимир Асеев"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "Dealing with computers and programming since early 2000s. While in school, participated in National\
+            \ Research University of Electronic Technology competitions with marquee component project (as a team member).\
+            \ Graduated from MAI (Moscow Aviation Institute). Worked in engineering, including as a CNC system programmer.\
+            \ Using Java since 2012. Working in banking area since 2014. Currently works at Sberbank Technology developing\
+            \ distributed batch salary and pension payments system using Apache Ignite framework."}
+      - {language: ru, text: "С компьютерами и программированием связан с начала нулевых. В школьное время участник (в сос\
+            таве команды) олимпиады в МИЭТ с проектом бегущей строки. Учился в МАИ. Успел поработать в инженерии, в т.ч. в\
+            \ качестве программиста CNC-систем (ЧПУ). С 2012 разрабатывает на Java. С 2014-го работает в банковской област\
+            и. В настоящий момент в Сбербанк-Технологиях разрабатывает систему распределённых зачислений зарплат и пенсий\
+            , работая на базе фреймворка Apache Ignite."}
   - id: 307
     fileName: 0307.jpg
     name:
