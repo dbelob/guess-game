@@ -7103,3 +7103,798 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/7xVqvEYv1SqUa4muKAGEeW/259282941fa13927266daf44031860ea/Mobius-_From_app_to_product.pdf"]
     videoLinks: []
     speakerIds: [565]
+  - id: 498
+    name:
+      - {language: en, text: "Back to basics: the mess we've made of our fundamental data types"}
+    shortDescription:
+      - {language: en, text: "Numbers, text and date/time information are core bulding blocks of every data model imaginable,\
+            \ and yet are “broken”. Who is to blame and what should we do?"}
+    longDescription:
+      - language: en
+        text: "When it comes down to it, all our data is just made of 1s and 0s. But data in the real world is obviously much\
+            \ more complex than that, so we impose extra meaning on top of it. We take it for granted that we can represent\
+            \ numbers, text and date/time information in our programs... indeed, these are three of the core building blocks\
+            \ which are used in just about every data model imaginable.\n \nSo how is it that it's all so broken? Why is Stack\
+            \ Overflow full of questions about arithmetic being \"broken\" because of using float or double? Is there any\
+            \ hope for things ever getting better?\n \nIn this talk, I'll give some examples of what's wrong with the world,\
+            \ allocate blame to just about everyone involved, and give a few suggestions to avoid getting burned."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/BjfWJmF4ZM2cOQmuQCsS0/855fd08b91a89e8174d2fbd3b2a7cfc3/Jon_Skeet_Back_to_basics_-_the_mess_we_ve_made_of_our_fundamental_data_types.pdf"]
+    videoLinks: []
+    speakerIds: [481]
+  - id: 499
+    name:
+      - {language: en, text: "Under the Hood of the ASP .NET Core Security"}
+      - {language: ru, text: "Под капотом ASP .NET Core Security"}
+    shortDescription:
+      - {language: en, text: "An overview and implementation details of the built-in ASP.NET Core security features."}
+      - {language: ru, text: "Обзор и детали реализации встроенных механизмов безопасности ASP .NET Core."}
+    longDescription:
+      - {language: en, text: "There are few articles written about the built-in ASP.NET Core security features. Even official\
+            \ documentation has gaps. We’ll explore all common security features and I’ll explain how they work under the\
+            \ hood. If you use the good old ASP .NET, then information about security internals and security best practices\
+            \ will be useful for you. This talk will give you answers to following questions: How are modern anti-XSS techniques\
+            \ implemented? How to use them correctly? How to work with cookies safely? How was a CSRF prevention mechanism\
+            \ re-written? How to work with crypto algorithms correctly? Also, I will talk about my experience in .NET Core\
+            \ Bug Bounty Program. I recommend recalling OWASP Top 10 attacks before the talk."}
+      - {language: ru, text: "По встроенным механизмам безопасности ASP .NET Core написано мало статей. Даже официальная д\
+            окументация имеет пробелы. Мы пройдём по всем основным компонентам, имеющим отношение к безопасности и разберё\
+            м, как это работает внутри. Если вы используете старый добрый ASP .NET, то для вас будет полезна информация по\
+            \ внутреннему устройству компонентов безопасности и лучшим практикам их использования. Доклад даст ответы на в\
+            опросы: Как реализованы современные анти-XSS механизмы и как их правильно использовать в ASP .NET Core? Как пр\
+            авильно работать с cookies и какие подводные камни там могут встретиться? Как был переписан механизм защиты от\
+            \ CSRF? Как правильно работать с криптографическими алгоритмами? Также расскажу про опыт участия в bug bounty\
+            \ по поиску уязвимостей в ASP .NET Core. Рекомендую перед докладом освежить в памяти атаки из списка OWASP Top\
+            \ 10."}
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/psmmjQ13j2uGiEu2GAAQs/e690df6008148a80ee05183aa2261146/Mikhail_Shcherbakov_Under_the_Hood_of_the_ASP_.NET_Core_Security.pdf"]
+    videoLinks: []
+    speakerIds: [415]
+  - id: 500
+    name:
+      - {language: en, text: "Shifting gears for .NET: Moving to containers for .NET developers"}
+    shortDescription:
+      - {language: en, text: "Come find out how .NET is now an essential piece in cross-platform, highly distributed cloud\
+            \ environments, interfacing with open source cluster and Docker container technology."}
+    longDescription:
+      - {language: en, text: "The landscape of distributed applications is rapidly changing from server-based to using clusters\
+            \ of containers and server-less computing. .NET is capable of creating such cross-platform applications, being\
+            \ run in Docker containers, but it is not trivial to get started with this. This session will focus on providing\
+            \ an overview of the changing world for .NET developers, with a new workflow that has Docker and containers at\
+            \ its core. You will learn how Visual Studio 2017, .NET Core and Docker play a strategic role in building, packaging,\
+            \ deploying and running modern .NET applications, and also learn what it takes to develop these apps on your laptop\
+            \ and in container clusters."}
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2zMgzRPpVm2EuEY0MWyw0K/1374d4e477ecdce5eb5842ee72208f38/Alex_Thissen_Shifting_gears_for_.NET_developers.pdf"]
+    videoLinks: []
+    speakerIds: [1072]
+  - id: 501
+    name:
+      - {language: en, text: "Integrating .NET and Java virtual machines"}
+      - {language: ru, text: "Интеграция виртуальных машин .NET и Java"}
+    shortDescription:
+      - {language: en, text: "Let's run JVM inside the .NET process while getting acquainted with Marshal, pitfalls and other\
+            \ specifics of such integration."}
+      - {language: ru, text: "Запустим виртуальную машину Java внутри .NET-процесса, попутно разберёмся с Marshal, граблям\
+            и и прочими нюансами такого рода интеграции."}
+    longDescription:
+      - language: en
+        text: "Let's say we need to convert XML to PDF in our .NET application. There is a time-tested Java solution — Apache\
+            \ FOP.\nIt's possible to re-write everything on C# (but it's a lot of work), use cross-compilation or use Java\
+            \ library right from Java.\nIt's possible to run Java service and communicate with it from the .NET app, but it's\
+            \ also possible to run the same Java service right inside the .NET process. The former is not always suitable:\
+            \ infrastructure, monitorings etc. can be .NET-customized.\nLet's run JVM inside the .NET process while getting\
+            \ acquainted with Marshal, pitfalls and other specifics of such integration."
+      - language: ru
+        text: "Предположим, стоит задача в .NET-сервисе преобразовать XML в PDF, но при этом уже есть проверенное временем\
+            \ решение на Java — Apache FOP. \nМожно переписать всё на C#, воспользоваться кросс-компиляцией или использова\
+            ть Java-библиотеку непосредственно из Java.\nМожно поднять Java-сервис и взаимодействовать с ним из .NET-прило\
+            жения, а можно попытаться поднять этот же Java-сервис внутри .NET-процесса. Первый вариант не всегда подходит\
+            : под .NET может быть заточена инфраструктура, мониторинги и прочее, возникают вопросы эксплуатационного харак\
+            тера.\nЗапустим виртуальную машину Java внутри .NET-процесса, попутно разберёмся с Marshal, граблями и прочими\
+            \ нюансами такого рода интеграции."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/468yGoReI80u0CewaOqS4C/cbfc9aef7b8ded4cc472440ff4c9686b/Gregory_Koshelev_Integrating_.NET_and_Java_virtual_machines.pdf"]
+    videoLinks: []
+    speakerIds: [220]
+  - id: 502
+    name:
+      - {language: en, text: "What is .NET Standard?"}
+    shortDescription:
+      - {language: en, text: "Confused between .NET Standard and .NET Core? Wondering what problems you don't have that .NET\
+            \ Standard is trying to solve? Baffled by how it works? Come and find out how and why .NET Standard is set to\
+            \ make a big impact on the ecosystem."}
+    longDescription:
+      - {language: en, text: ".NET Standard is one of many new technologies to emerge from the mass of open source .NET initiatives\
+            \ during the past year. Compared to what's come before, .NET Standard is not only a more effective way to use\
+            \ NuGet packages cross platform, it's also way simpler. It has the potential to remove most, if not all, of the\
+            \ current confusion surrounding cross platform multi-targeting. So what is exactly is it and how does it work?\
+            \ How does it relate to .NET Core? Join Adam as he answers these questions and more, and takes a dive into some\
+            \ of the magic which makes .NET Standard work."}
+    talkDay: 1
+    trackTime: "13:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [456]
+  - id: 503
+    name:
+      - {language: en, text: "Containerised ASP.NET Core apps with Docker and Kubernetes"}
+    shortDescription:
+      - {language: en, text: "Kubernetes is now available to .NET developers — how to make the most of it?"}
+    longDescription:
+      - {language: en, text: "Kubernetes is an open-source container management platform that has been available to the Linux\
+            \ world for a while. With ASP.NET Core, it's now available to .NET developers too! In this session, we'll learn\
+            \ how to wrap your ASP.NET Core app into a Docker container and deploy that container to Kubernetes. Along the\
+            \ way, you will learn how to automate deployment, how to scale up/down, how to create a resilient container cluster\
+            \ and all the other features that make Kubernetes a great platform to run containers at scale."}
+    talkDay: 1
+    trackTime: "13:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6LJauBZI9GqWWkw8gUe4W/273f289cf3cd676f1bf5533e4017bedc/Containerised_ASP.NET_Core_apps_with_Kubernetes.pdf"]
+    videoLinks: []
+    speakerIds: [486]
+  - id: 504
+    name:
+      - {language: en, text: "5 commandments of PDB"}
+      - {language: ru, text: "5 заповедей PDB"}
+    shortDescription:
+      - {language: en, text: "What PDBs contain, how to store them and how to use them effectively."}
+      - {language: ru, text: "Из чего состоят PDB-файлы, как их хранить и эффективно использовать."}
+    longDescription:
+      - {language: en, text: "PDB files are an important part of debugging infrastructure. In the talk I’ll show how to use\
+            \ them effectively, demonstrate structure of PDB files and why we need them, show a new format of debugging symbols\
+            \ for .Net core. The talk will save your time on creation of debugging infrastructure inside your organization."}
+      - {language: ru, text: "PDB-файлы — важная часть инфраструктуры отладки. Я покажу, как эффективно использовать PDB ф\
+            айлы, продемонстрирую их структуру и зачем они нам, покажу новый формат отладочных символов в .Net core. Докла\
+            д поможет сэкономить время на создании инфраструктуры отладки внутри компании."}
+    talkDay: 1
+    trackTime: "13:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3UAVsRTUukoSww28EmysIW/2eacdb81d0d0094a883a46a47a762c61/Sergey_Shchegrikovich_5_commandments_of_pdb.pdf"]
+    videoLinks: []
+    speakerIds: [464]
+  - id: 505
+    name:
+      - {language: en, text: "Automate Your Dumps"}
+    shortDescription:
+      - {language: en, text: "In this talk you’ll learn how to generate dump files of .NET applications on Windows and Linux,\
+            \ how to analyze them in a debugger, and how to automate the analysis process for thousands of dumps with no user\
+            \ intervention."}
+    longDescription:
+      - {language: en, text: "When an application crashes once in a while, developers can try to reproduce the problem, use\
+            \ logs to figure out what happened, or analyze the crash dumps. Dissecting a crash dump can provide information\
+            \ on the exception that occurred, the state of the application threads, interesting memory objects, synchronization\
+            \ mechanisms, and a lot more. However, such manual analysis takes time and when your application crashes dozens\
+            \ of time a day, it’s not realistic to spend all of the developers’ time on analysis. A full automation would\
+            \ be perfect, or at the very least a triage of the crashes into groups: by component, type of crash, or any other\
+            \ criterion. In this session we will see how we can automate .NET crash analysis on both Windows and Linux, and\
+            \ how to perform more in-depth analysis (when necessary) using WinDbg, lldb, and SOS."}
+    talkDay: 1
+    trackTime: "15:15"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/9n3x4rtjlya6/eaWxdNynpQKioOKMqqasa/c9bed16a9ec6bd9b2f6205f5f4c56756/Dina_Goldshtein_Automate_Your_Dumps.pdf"]
+    videoLinks: []
+    speakerIds: [470]
+  - id: 506
+    name:
+      - {language: en, text: "HoloLens and Xbox One – new frontier for .Net developers"}
+      - {language: ru, text: "Xbox One и HoloLens, платформы для .Net разработчиков"}
+    shortDescription:
+      - {language: en, text: "Learn how you can leverage your Universal Windows Platform skills with HoloLens and Xbox One."}
+      - {language: ru, text: "Получить больше от Universal Windows Platform с HoloLens и Xbox One."}
+    longDescription:
+      - {language: en, text: "It feels like a miracle: with a regular installation of the latest Visual Studio 2015 update\
+            \ you can actually deploy your applications on HoloLens and Xbox One. You don’t have to have some special SDK,\
+            \ those are normal targets for Universal Windows Platform. Join this talk and learn the basics of developing for\
+            \ HoloLens and Xbox One, including live on-devices demonstrations of deployment cycle. Find out what you can do\
+            \ with extra tools, such as special build of Unity 3D targeting Windows.Holographic platform, and learn what has\
+            \ Windows 10 Creators Update added."}
+      - {language: ru, text: "А вы знаете, что если у вас установлена последняя версия Visual Studio, вы можете разрабатыв\
+            ать как для HoloLens, так и для Xbox One без установки специальных SDK или наборов инструментов? Это обычные Windows\
+            \ 10-устройства для Universal Windows Platform. Приходите на доклад и узнайте об основах разработки для Xbox One\
+            \ и HoloLens, включая живую демонстрацию на реальной аппаратуре. Узнайте, что можно делать с Unity 3D и Windows\
+            \ Mixed Reality, включая новшества Windows 10 Creators Update."}
+    talkDay: 1
+    trackTime: "15:15"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2Fq5yTFT048kY040yUG0ue/07d49adc187f9c3915c87568d662931a/DotNext_Piter_2017_New_Frontier_FS.pdf"]
+    videoLinks: []
+    speakerIds: [267]
+  - id: 507
+    name:
+      - {language: en, text: "NuGet beyond Hello World"}
+    shortDescription:
+      - {language: en, text: "Let's examine important things like semantic versioning, .NET Standard, building and sharing\
+            \ NuGet packages, patterns and anti-patterns."}
+    longDescription:
+      - language: en
+        text: "Everybody is consuming NuGet packages these days. It’s easy, right? But how can we create and share our own\
+            \ packages? What is .NET Standard? How should we version, create, publish and share our package?\n\nOnce we have\
+            \ those things covered, we’ll look beyond what everyone is doing. How can we use the NuGet client API to fetch\
+            \ data from NuGet? Can we build an application plugin system based on NuGet? What hidden gems are there in the\
+            \ NuGet server API? Can we create a full copy of NuGet.org?"
+    talkDay: 1
+    trackTime: "15:15"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/4JdRFpvh9ucC4oE8kqmgSy/e2016b160297fd92fb666999d85f4a31/Maarten_Balliauw_NuGet_beyond_Hello_World.pdf"]
+    videoLinks: []
+    speakerIds: [455]
+  - id: 508
+    name:
+      - {language: en, text: "JetBrains Rider IDE: personal effectiveness skills for .NET-programmers"}
+      - {language: ru, text: "JetBrains Rider IDE: навыки личной эффективности для .NET-программиста"}
+    shortDescription:
+      - {language: en, text: "This talk is for developers who want to get rid of boring repetitive coding routine. You'll\
+            \ learn new IDE features and look at known ones from a different angle."}
+      - {language: ru, text: "Доклад для программистов, не желающих тратить рабочее время на повторы рутинных операций, бл\
+            агодаря которому вы откроете новые фичи IDE и посмотрите под другим углом на уже знакомые."}
+    longDescription:
+      - language: en
+        text: "If you are a lazy developer (in a good sense) who values work time and wants to get rid of boring repetitive\
+            \ coding routine, you should attend this presentation. You'll learn new IDE features and look at old ones from\
+            \ a different angle.\n\nI'm going to present JetBrains Rider on different operating systems and show its advantage\
+            \ over existing IDEs. All features will be shown in a context of real work problems.\n\nI believe that developer's\
+            \ key responsibility is to think, not to type. So the IDE's key responsibility is to allow to express your thought\
+            \ concisely.\n\nWe will try to optimize number of actions (key types, button presses) per \"sense unit\" by solving\
+            \ different problems in Rider IDE."
+      - language: ru
+        text: "Если вы — ленивый (в хорошем смысле) программист, который хочет экономить рабочее время, а не заниматься ру\
+            тинной деятельностью снова и снова, то этот доклад для вас. Вы узнаете новые фичи IDE и посмотрите под других\
+            \ углом на уже знакомые.\n\nЯ расскажу, как использовать Rider под разными операционными системами и чем он пр\
+            евосходит привычные IDE. Все фичи будут показаны в разрезе настоящих рабочих задач.\n\nЯ исхожу из предположен\
+            ия, что основная задача программиста — не стучать по клавишам, а мыслить. Отсюда логично следует, что основная\
+            \ задача IDE — помочь максимально быстро материализовать пришедшую вам в голову мысль.\n\nМы с вами попробуем\
+            \ оптимизировать количество действий на единицу смысла. Будем решать задачки, как за минимальное число нажатий\
+            \ добиться желаемого результата."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [465]
+  - id: 509
+    name:
+      - {language: en, text: "Authentication and Authorization in ASP.NET Core"}
+    shortDescription:
+      - {language: en, text: "Authenticating an ASP.NET Core app with IdentityServer and/or ASP.NET Core Identity and authorizing\
+            \ it."}
+    longDescription:
+      - language: en
+        text: "You’ve probably seen how a ASP.NET Core application works, but authentication and authorization are a different\
+            \ cup of tea. Microsoft completely re-did a large part of these security features in ASP.NET Core.\nASP.NET Identity\
+            \ enables you to do authentication for a single application and has a lot of ready-to-go features, but isn't it\
+            \ better to do centralized authentication with a token service using OpenId Connect? We'll explore that question\
+            \ and I'll explain and show you both ASP.NET Core identity the IdentityServer framework that helps you write a\
+            \ token service.\nAuthorization has undergone a complete overhaul in ASP.NET Core. There's still the authorize\
+            \ attribute, but the recommended way of using it is by utilizing policies. You'll see how that works as well.\n\
+            After this session you'll know what options you have for implementing authentication in ASP.NET Core. And you\
+            \ will have a basic understanding on how to implement these options. Also you'll know how to enforce authorization\
+            \ rules in your ASP.NET Core app."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/11HoBCBwwsCuEqCieSoa8a/afaea143f50ecfbba26267435dd590b0/Roland_Guijt_Authentication_and_Authorization_in_ASP.NET_Core.pdf"]
+    videoLinks: []
+    speakerIds: [474]
+  - id: 510
+    name:
+      - {language: en, text: "ASP.NET Core apps on Linux in production"}
+      - {language: ru, text: "ASP.NET Core приложения под Linux в продакшене"}
+    shortDescription:
+      - {language: en, text: "We'll dive into the details of ASP.NET Core infrastructure and several popular libraries, approach\
+            \ the tasks of building the application and making Docker images, and, of course, examine Kubernetes in details."}
+      - {language: ru, text: "Мы погрузимся в детали инфраструктуры ASP.NET Core и нескольких популярных библиотек, обсуди\
+            м задачи билда приложения и сборки Docker-образов, и, конечно же, подробно остановимся на Kubernetes."}
+    longDescription:
+      - language: en
+        text: "Release of .NET Core has opened all the possibilities of Unix for us. Our applications can work perfectly fine\
+            \ on Linux — which means we can use Docker and Kubernetes for deploying our services. This talk will explain how\
+            \ to create a REST-service with ASP.NET Core and deploy it with Kubernetes.\n\nWe'll dive into the details of\
+            \ ASP.NET Core infrastructure and several popular libraries, talk about multithreading, optimization and caching\
+            \ for reducing the service response time. We'll discuss how to approach the tasks of building the application\
+            \ and making Docker images. And, of course, we'll examine Kubernetes in details, how this technology can help\
+            \ us and how to use it."
+      - language: ru
+        text: "С релизом .NET Core для нас открылись все возможности Unix-мира. Наши приложения могут отлично работать на\
+            \ Linux — а значит, мы можем использовать Docker и Kubernetes для развёртывания наших сервисов. В докладе буде\
+            т рассказано, как сделать REST-сервис на ASP.NET Core и запустить его в продакшен на платформе Kubernetes.\n\n\
+            Мы погрузимся в детали инфраструктуры ASP.NET Core и нескольких популярных библиотек, поговорим про многопоточ\
+            ность, оптимизацию и кеширование для уменьшения времени ответа сервиса. Обсудим, как решать задачи билда прило\
+            жения и сборки Docker-образов. И, конечно же, подробно остановимся на том, что такое Kubernetes, как эта техно\
+            логия может быть нам полезна и как её использовать."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6LMmDoLQI0282AaEY0mu0C/3cdf1e4d2a8081c8b6bd528c4418b957/Denis_Ivanov_ASP.NET_Core_apps_on_Linux_in_production.pdf"]
+    videoLinks: []
+    speakerIds: [478]
+  - id: 511
+    name:
+      - {language: en, text: "Democratizing AI on .NET Platform: from chat-bots and cognitive services to deep learning"}
+      - {language: ru, text: "Доступный искусственный интеллект на платформе .NET: от чат-ботов и когнитивных сервисов до\
+            \ глубоких нейросетей"}
+    shortDescription:
+      - {language: en, text: "We will learn how to use AI technologies on .NET platform: from existing cognitive services\
+            \ to deep learning using Azure ML and Cognitive Toolkit."}
+      - {language: ru, text: "В этом докладе мы научимся использовать технологии искусственного интеллекта на платформе .NET,\
+            \ начиная от готовых когнитивных сервисов и заканчивая глубоким обучением нейросетей."}
+    longDescription:
+      - {language: en, text: "In recent years there was a breakthrough in AI that allowed to solve cognitive problems relatively\
+            \ easy. Those problems — such as age and mood detection from a photo, text recognition, understanding and translation\
+            \ — were traditionally rather hard to solve, but now that can be done using either existing cognitive services\
+            \ or by using toolkits for deep learning and machine learning in general. We will demonstrate tools and techniques\
+            \ available on .NET platform for tackling such tasks, including (but not limited to) cognitive services, Azure\
+            \ Machine Learning and Microsoft Cognitive Toolkit. Spoiler: some demonstrations will be done in F#!"}
+      - {language: ru, text: "Совершившиеся в последние годы прорывы в области искусственного интеллекта и машинного обуче\
+            ния позволяют сравнительно просто решать когнитивные задачи, которые раньше казались чудом: распознавание возр\
+            аста человека по лицу, понимание естественного языка или машинный перевод. Мы рассмотрим, как эти задачи могут\
+            \ по-разному решаться на платформе .NET: начиная от использования готовых когнитивных сервисов, заканчивая обу\
+            чением на больших данных и глубоким обучением нейронных сетей с помощью Microsoft Cognitive Toolkit. ВНИМАНИЕ\
+            : некоторые демонстрации будут показаны на F# и могут сломать вам мозг."}
+    talkDay: 1
+    trackTime: "18:15"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1FDMrZmhHaK0kS0YIYOqKa/55ef6d59673df7fa08b45a1ba025ba5a/Dmitry_Soshnikov_AI.pdf"]
+    videoLinks: []
+    speakerIds: [472]
+  - id: 512
+    name:
+      - {language: en, text: "Building code analysis tools with the .NET Compiler Platform (Roslyn)"}
+    shortDescription:
+      - {language: en, text: "Static C# code analysis with Roslyn"}
+    longDescription:
+      - language: en
+        text: "We all love Resharper and its amazing code analysis capabilities, right?\nIn this talk you will learn how to\
+            \ use the new .NET Compiler Platform \"Roslyn\" to build code analysis and IDE refactoring extensions yourself.\
+            \ Enforce coding conventions? Why not. Finding logical issues on the code? Absolutely. Rearrange files in the\
+            \ project? Easy.\nWe'll have a look at everything that's needed to build such code analysis components, such as\
+            \ for example, how you can traverse the syntax trees and obtain semantic information about a code base using Roslyn.\
+            \ There is also a plot twist - are such tools usable with Visual Studio only? We'll find out."
+    talkDay: 1
+    trackTime: "18:15"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [483]
+  - id: 513
+    name:
+      - {language: en, text: "The Performance Investigator's Field Guide"}
+    shortDescription:
+      - {language: en, text: "In this talk Sasha will share his performance war-stories from years in the field, along with\
+            \ a performance checklist and a wish-list for next-generation tools."}
+    longDescription:
+      - {language: en, text: "After hundreds of performance investigations, some patterns begin to emerge. You could save\
+            \ a lot of time here, or find the root cause more easily there. In this talk, you’ll see what I learned from years\
+            \ of performance work in the field, which processes and tools work, and what I think can still be improved. First,\
+            \ we’ll talk about anti-methods for performance investigations and the USE checklist for finding the performance\
+            \ bottleneck, applied specifically to Windows and .NET applications. Then, we’ll talk about ideal performance\
+            \ investigation tools and which tools can satisfy these needs today, and review the power of Event Tracing for\
+            \ Windows for extracting hard-to-find information out of the system. I will also announce a couple of my own tools\
+            \ that I haven’t talked about before, and that are now open source on GitHub. Finally, we’ll talk about dashboards\
+            \ and visualizations, and some non-obvious mistakes you can make when working with statistics and reports. Along\
+            \ the way, I’ll take you on a tour of a couple of my most challenging performance investigations."}
+    talkDay: 2
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/9n3x4rtjlya6/e1Dq7nhh3UKMcc2YwW84m/47fa113e152d5c6f7029e5c4078796e3/Sasha-Goldshtein_The-performance-investigator_s-field-guide.pdf"]
+    videoLinks: []
+    speakerIds: [111]
+  - id: 514
+    name:
+      - {language: en, text: "The changing state of immutability C#"}
+    shortDescription:
+      - {language: en, text: "Immutability has its pain points, and sometimes they can be subtle. Let’s explore immutability\
+            \ in C#, see how it's become simpler over the various versions, and consider what the future might hold."}
+    longDescription:
+      - language: en
+        text: "Immutability rocks, right? When a type is immutable, it's usually easier to reason about your code, easier\
+            \ to share data safely, and easier to make money ooze from every USB port. That's the promise, at least. I heard\
+            \ an F# developer say it, so it must be true. Unfortunately, when a language or platform isn't designed to encourage\
+            \ immutability, immutability can introduce its own pain points - and sometimes they can be subtle.\nCome with\
+            \ me on a journey of exploring different options for implementing immutability in C#, see how it's become somewhat\
+            \ simpler over the various versions, and consider what the future might have in store."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [481]
+  - id: 515
+    name:
+      - {language: en, text: "AOP via .NET"}
+      - {language: ru, text: "АОП в .NET"}
+    shortDescription:
+      - {language: en, text: "What is AOP in general and how to use it in .NET in particular."}
+      - {language: ru, text: "Что такое АОП в целом, и как его использовать конкретно в .NET."}
+    longDescription:
+      - language: en
+        text: "Have you ever heard of aspect-oriented programming? Have you tried it? \nWe'll start with the basics — definitions\
+            \ and examples of the situations where AOP could help. We'll figure out how to «kick-start» AOP while using .NET.\n\
+            We'll solve some problems using the main AOP frameworks: learn how to generate wrappers at run time via dynamiv\
+            \ proxies, inject code in our classes at complit time, using PostSharp and Fody.\nFinally, we'll turn to Nemerle,\
+            \ figure out what do scary words like \"quasi-quotation\" and \"metaprogramming\" mean, and solve our AOP problems\
+            \ without frameworks!"
+      - language: ru
+        text: "Вы когда-нибудь слышали об аспектно-ориентированном программировании? А пробовали применять его на практике\
+            ?\nМы начнем с самого начала — с теоретических определений и примеров задач, где может помочь АОП; постараемся\
+            \ разобраться с тем, как «завести» АОП под .NET.\nТакже мы решим несколько задач, используя основные АОП-фрейм\
+            ворки: научимся генерировать врапперы во время исполнения через динамические прокси, внедрим в наши классы код\
+            \ во время компиляции, используя PostSharp и Fody.\nНа закуску мы возьмем Nemerle, и, разобравшись со страшным\
+            и на вид словами вроде «квази-цитирование» и «метапрограммирование», решим наши задачи АОП без фреймворков!"
+    talkDay: 2
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1fYb9nxPpWUKAU8aYeQomG/07447f7712f2994eff9bee8fa8250353/Igor_Yakovlev_AOP_via_.NET.pdf"]
+    videoLinks: []
+    speakerIds: [487]
+  - id: 516
+    name:
+      - {language: en, text: "Profiling .NET Core Applications on Linux"}
+      - {language: ru, text: "Профилирование приложений .NET Core на Linux"}
+    shortDescription:
+      - {language: en, text: "Sharing experience in building remote profiler for .NET CoreCLR runtime running on Linux ARM\
+            \ devices. The profiler runs and displays information right in Microsoft Visual Studio IDE. Also, we discuss some\
+            \ approaches to profiling in CoreCLR."}
+      - {language: ru, text: "Об опыте создания инструмента удалённого профилирования C#-кода из Microsoft Visual Studio,\
+            \ исполняемого в runtime-среде .NET CoreCLR на Linux ARM, а также о подходах к профилированию приложений CoreCLR\
+            \ в целом."}
+    longDescription:
+      - language: en
+        text: "This talk will examine a C# profiling technology for .NET Core Linux ARM (softfp) developed by us.\n\nIt's\
+            \ known that Microsoft develops runtime environment CoreCLR providing support for different systems and architectures\
+            \ including Linux. But for now the profiling support on platforms different than Windows is limited.\n\nOur tool\
+            \ is an alternative that allows to get information about C# code execution in CoreCLR environment running on Linux\
+            \ ARM architecture. We can get the hot methods based on the execution time and allocated memory, hot path, CPU\
+            \ load, information on JIT and GC work. More that that, our tool lets profile and analyze the result right from\
+            \ Microsoft Visual Studio 2015. This profiler can be helpful, for example, for Tizen app development. But the\
+            \ technology isn't tied to a particular IDE.\n\nThis talk will be helpful both for developers looking for specific\
+            \ profiling tools and those interested in the CoreCLR profiling."
+      - language: ru
+        text: "В докладе будет рассказано о технологиях профилирования C# кода на на платформе .NET Core Linux: таких инст\
+            рументах как Linux perf, LTTng, а также о разработанном нами профайлере для Visual Studio Tools for Tizen.\n\n\
+            Как известно, компания Microsoft разрабатывает среду выполнения CoreCLR, обеспечивая поддержку разных архитект\
+            ур и систем, включая Linux. Однако, в настоящее время, наиболее полная поддержка профилирования для .NET Core\
+            \ обеспечивается только для операционных систем семейства Windows. В то время как для других операционных сист\
+            ем существующая поддержка профилирования CoreCLR ограничена, ее реализация не полноценна. На Linux вы можете н\
+            апрямую использовать perf и LTTng, либо собирать информацию об исполнении приложений с помощью скрипта perfcollect\
+            \ с последующим просмотром на Windows в утилите PerfView. Но такой подход неудобен для решения повседневных за\
+            дач, а также ощущается нехватка инструментов для анализа собранных данных. \nТаким образом, важные параметры и\
+            сполнения приложения, имеющие значение для анализа производительности и его оптимизации, могут быть недоступны\
+            \ для пользователя.\n\nРазработанный нами инструмент, в свою очередь, является альтернативным решением и ориен\
+            тирован на широкую аудиторию разработчиков. Профилирование приложений для Tizen и анализ результатов возможен\
+            \ непосредственно из IDE Microsoft Visual Studio 2015. Пользователь может получить информацию о «горячих» по в\
+            ремени работы и выделяемой памяти методах, о горячем пути (hot path), о нагрузке на CPU, о работе JIT и GC. Пр\
+            и этом разработанная для взаимодействия с CoreCLR библиотека профилирования не имеет привязки к платформе Tizen\
+            \ и будет выложена в открытый доступ.\n\nМы продемонстрируем возможные сценарии профилирования приложений .NET\
+            \ Core на Linux, расскажем о различных инструментах, а также о подходах, которые мы использовали в своей реали\
+            зации. Эта информация может быть интересна как тем, кто ищет готовые решения для профилирования кода, так и те\
+            м, кто хочет больше узнать о том, какие средства профилирования предоставляет среда выполнения .NET Core и как\
+            \ они могут быть использованы при реализации собственного инструментария."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1hNV1stWwQEGUO0eigASQ4/1395e039cf6c53d6602a0ce6344c8192/Aleksei_Vereshchagin_Profiling_.NET_Core_Applications_on_Linux.pdf"]
+    videoLinks: []
+    speakerIds: [490]
+  - id: 517
+    name:
+      - {language: en, text: "Entity Framework Core: Is It Ready Yet?"}
+    shortDescription:
+      - {language: en, text: "All about Entity Framework Core: its new features, differences between EF Core and EF 6, and\
+            \ so on."}
+    longDescription:
+      - {language: en, text: "This talk is aimed mostly at people who haven't previously worked with Entity Framework Core\
+            \ but are interested in it. We'll talk about the differences between classic Entity Framework and Entity Framework\
+            \ Core and which one to choose in your new project. We’ll cover all the new features you can find in Entity Framework\
+            \ Core, you'll see demos of various database providers and how it runs on Linux. We'll also look at the roadmap,\
+            \ talk about the future of Entity Framework and whether it is ready for production use."}
+    talkDay: 2
+    trackTime: "13:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/4kNitHf5ra4mKWEGiwW0Q2/89bb57a582ab4eabb73478eec461e347/Tomas_Herceg_Entity_Framework_Core_-_Is_It_Ready_Yet.pdf"]
+    videoLinks: []
+    speakerIds: [482]
+  - id: 518
+    name:
+      - {language: en, text: "Learn to cook MSBuild"}
+      - {language: ru, text: "Учимся готовить MSBuild"}
+    shortDescription:
+      - {language: en, text: "How to solve different problems arising while writing your custom build tasks."}
+      - {language: ru, text: "Как решать различные проблемы, возникающие при написании собственных build task."}
+    longDescription:
+      - language: en
+        text: "MSBuild it a tool that .NET developers use every day, but not all of them understand how it works and what\
+            \ it can do. It leads to the developers encountering problems or limitations of what Visual Studio lets do, and\
+            \ at that moment they start trying to customize their build scripts. And after that their build starts acting\
+            \ slowly or incorrectly.\n\nThis talk will tell how to solve different problems arising while writing your custom\
+            \ build tasks. It will show hot to debug build problems, and how to build project with MSBuild not only on Windows."
+      - language: ru
+        text: "MSBuild — это инструмент, который .NET разработчики используют каждый день, но далеко не все понимают, как\
+            \ он работает и что он может. Это продолжается до тех пор, пока разработчики не сталкиваются с непонятными про\
+            блемами или ограничениями того, что позволяет настроить Visual Studio, и в этот момент они начинают пытаться к\
+            астомизировать свои build-скрипты. А потом их билд начинает тормозить или работать неправильно.\n\nВ докладе б\
+            удет рассказано, как решать различные проблемы, возникающие при написании собственных build task. Показано, ка\
+            к дебажить проблемы в билде — и как можно собирать проект с помощью MSBuild не только на Windows."
+    talkDay: 2
+    trackTime: "13:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/r83sypdJwyGuM4KWQ8Gqk/505cd7bf8869ecac1d0b30adc299b12d/Mikhail.Filippov_How.To.Prepare.MSBuild.pdf"]
+    videoLinks: []
+    speakerIds: [489]
+  - id: 519
+    name:
+      - {language: en, text: "AvaloniaUI — the first XAML UI-framework with .NET Core Support"}
+      - {language: ru, text: "AvaloniaUI — первый кроссплатформенный XAML UI-фреймворк с поддержкой .NET Core"}
+    shortDescription:
+      - {language: en, text: "Nikita will talk about AvaloniaUI, a cross-platform XAML-friendly UI framework with .NET Core\
+            \ support: how it was done and what can be already used."}
+      - {language: ru, text: "Кроссплатформенный WPF! (На самом деле нет, но похож.) .NET Core, опенсорс, кроссплатформенн\
+            ость, десктопы и мобилки, XAML и как со всем этим взлететь."}
+    longDescription:
+      - language: en
+        text: "Nowadays it's important to support a whole zoo of platforms and devices, while .NET Core and .NET Standard\
+            \ substantially help with the portability of C# code between them. But every platform has its own development\
+            \ tools, and most of them are stuck in the times of MFC and Windows Forms, lacking a proper C# integration. There\
+            \ is a number of solutions trying to get the platforms to a \"common denominator\" and add an adequate support\
+            \ of MVVM and XAML layout, but all of this... just doesn't quite get there.\n\n.NET developers are used to stylizng\
+            \ controls wherever and however they want, with good coupling lists to the collections, rich system of bindings.\
+            \ And that's what project AvaloniaUI is trying to achieve by evolving WPF ideas in the open source world. It's\
+            \ a challenging journey where a lot has to be made. What has been accomplished, what you can already use and what\
+            \ challenges arise while developing a project like that — a talk by one of the project members."
+      - language: ru
+        text: "Мы живём во время, когда стала актуальной поддержка целого зоопарка платформ и устройств, а .NET Core и .NET\
+            \ Standard существенно упрощают переносимость C#-кода между ними. Однако каждая из платформ предлагает какие-т\
+            о собственные средства для разработки, причём большая часть из них мысленно застряла где-то во временах MFC и\
+            \ Windows Forms, и не имеет нормальной интеграции с C#. Есть ряд решений, пытающихся привести эти платформы к\
+            \ общему знаменателю и хоть как-то добавить адекватную поддержку MVVM и XAML-вёрстки, но всё это как-то... не\
+            \ то.\n\n.NET-разработчики привыкли к возможности стилизовать контролы где угодно и как угодно, к нормальным п\
+            ривязкам списков к коллекциям, богатой системе биндингов. Именно этого и пытается достичь проект AvaloniaUI, п\
+            родолжающий идеи WPF в open source. Путь проекта нелёгок и тернист — помимо системы для работы привязок, необх\
+            одимо самостоятельно обрабатывать весь пользовательский ввод, думать о том, как эффективно отрисовать интерфей\
+            с, бороться с разного рода несуразностями со стороны целевых платформ, разбираться с отличиями систем отрисовк\
+            и (так, из-за неадекватной поддержки ArcTo пришлось адаптировать код, изначально предназначенный для правильно\
+            й отрисовки орбит комет).\n\nО том, чего уже удалось достичь, что из этого вы уже сейчас можете использовать,\
+            \ а также о трудностях и интересностях при разработке такого проекта — доклад от одного из его участников."
+    talkDay: 2
+    trackTime: "13:30"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [463]
+  - id: 520
+    name:
+      - {language: en, text: "Let's talk about memory"}
+      - {language: ru, text: "Поговорим про память"}
+    shortDescription:
+      - {language: en, text: "We will talk about the memory access performance: from hardware stuff (CPU cache and its associativity,\
+            \ alignment, store forwarding, 4K aliasing, prefetching, cache/page splits, cache bank conflicts, and so on) to\
+            \ .NET specific problems (pinned objects, the large object heap, how does the heap works in the full .NET Framework\
+            \ and Mono)."}
+      - {language: ru, text: "Поговорим про то, что влияет на производительность доступа памяти: от хардварных штук (CPU cache\
+            \ и его ассоциативность, выравнивание, store forwarding, 4K aliasing, prefetching, cache/page splits, cache bank\
+            \ conflicts и т.п.), до .NET-специфичных проблемы (pinned objects, large object heap, особенности работы кучи\
+            \ в полном .NET Framework и Mono)."}
+    longDescription:
+      - {language: en, text: "The bottleneck of many modern applications is the main memory. In this case, it's very hard\
+            \ to measure the performance and write correct benchmarks: there are too many things which affect the execution\
+            \ time. In this session, we will talk about how it happens. We will discuss low-level hardware stuff (CPU cache\
+            \ and its associativity, alignment, store forwarding, 4K aliasing, prefetching, cache/page splits, cache bank\
+            \ conflicts, and so on) and .NET specific problems (pinned objects, the large object heap, how does the heap works\
+            \ in the full .NET Framework and Mono)."}
+      - {language: ru, text: "Во многих современных приложениях производительность упирается в память. Измерять скорость р\
+            аботы и писать корректные бенчмарки в таком случае не так-то просто: слишком много факторов влияют на итоговое\
+            \ время работы. В этом докладе мы поговорим о том, из чего складывается производительность работы с памятью. О\
+            бсудим как низкоуровневые хардварные штуки (CPU cache и его ассоциативность, выравнивание, store forwarding, 4K\
+            \ aliasing, prefetching, cache/page splits, cache bank conflicts и т.п.), так и более .NET-специфичные проблем\
+            ы (pinned objects, large object heap, особенности работы кучи в полном .NET Framework и Mono)."}
+    talkDay: 2
+    trackTime: "15:15"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1hZm9cOhysmSOMSkwym64g/b9c20f34548822ac6e907a5c26a4f658/Andrey-Akinshin_Lets-talk-about-memory.pdf"]
+    videoLinks: []
+    speakerIds: [471]
+  - id: 521
+    name:
+      - {language: en, text: "Typed or dynamic API? Both!"}
+      - {language: ru, text: "Типизированный или динамический API? Дайте два!"}
+    shortDescription:
+      - {language: en, text: "The talk explains how to develop an API that supports both typed and dynamic data, using a detailed\
+            \ example to illustrate it"}
+      - {language: ru, text: "В докладе представлены и реализованы на конкретном примере принципы разработки API, поддержи\
+            вающего одновременно типовые и динамические данные"}
+    longDescription:
+      - {language: en, text: "Elements of dynamic languages have been available for C# developers for several years, so they\
+            \ can support dynamic data types in their APIs. It can work well in some scenarios but should we give up advantages\
+            \ of static typing? Can we combine both approaches? And if so, how hard is it? And how can we avoid code duplication?\
+            \ This presentation is about it. It is based on the design and implementation of the cross-platform open source\
+            \ library that the speaker wrote and maintains. During the presentation we will show how to write from scratch\
+            \ a similar library for SQL statements."}
+      - {language: ru, text: "Уже несколько лет разработчики могут использовать в C# элементы динамических языков, так что\
+            , определяя API, можно сделать его доступным для данных типа dynamic. Заманчиво для отдельных сценариев, но оч\
+            ень не хотелось бы отказываться от преимуществ статически заданных типов. Можно ли совместить два подхода? Есл\
+            и да, то насколько это трудоёмко? И как при таком подходе избежать дупликации кода? Этому всему и посвящен док\
+            лад. В основе презентации — принципы реализации мультиплатформенной опенсорсной библиотеки, написанной и подде\
+            рживаемой докладчиком. В процессе доклада показывается, как с нуля написать подобную библиотеку для обработки\
+            \ SQL команд."}
+    talkDay: 2
+    trackTime: "15:15"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1VsiztWppaUqkuo6K2OCe4/e011813dd96e5eabfd547b7a87261501/Vagif_Abilov_Typed_Dynamic_Both.pdf"]
+    videoLinks: []
+    speakerIds: [498]
+  - id: 522
+    name:
+      - {language: en, text: "My awesome journey with Open Source"}
+    shortDescription:
+      - {language: en, text: "Have you ever thought about contributing? You want to start, but not sure how? Let me tell you\
+            \ why to start, how can you make it, what to avoid and what to expect from OSS contributions."}
+    longDescription:
+      - language: en
+        text: "The NET community was closed together with the framework itself for many, many years. Recently the things has\
+            \ changed. The compiler, runtime any many other great tools are open source now. \nHave you ever thought about\
+            \ contributing? You want to start, but not sure how? This talk will be a story about my contributions to BenchmarkDotNet,\
+            \ Core CLR and corefxlab. What have I learned? What have I gained? Why should you contribute to OSS? How to start?\
+            \ What to avoid? What to focus on? How to challenge yourself? How can it help you to develop your skills as a\
+            \ developer? Can you get a public recognition? Will it help you to get a better job? This talk will give a story,\
+            \ a set of best practices and a lot of real life examples."
+    talkDay: 2
+    trackTime: "15:15"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/aYvmzgr3cAeQSQyUs8wSw/e745aad51cde5a542e9f212d6537cd5f/AdamSitnik_MyAwesomeJourneyWithOpenSource.pdf"]
+    videoLinks: []
+    speakerIds: [485]
+  - id: 523
+    name:
+      - {language: en, text: "Interprocess communications: reasons and approaches"}
+      - {language: ru, text: "Межпроцессные разговоры: причины и способы"}
+    shortDescription:
+      - {language: en, text: "We will see why the need to communicate between processes might arise, will discuss how to solve\
+            \ the problem of communication and will find out that some methods are better and more convenient than others."}
+      - {language: ru, text: "Рассмотрим, откуда может появиться задача общения процессов, обсудим способы её решения, а т\
+            акже убедимся, что не все способы одинаково удобны и полезны."}
+    longDescription:
+      - language: en
+        text: "The amount of applications that are stepping outside simple approach «use only one process» is growing. Developers\
+            \ find a lot of reasons why one process is not enough anymore. And as soon as there are multiple processes involved\
+            \ the problem of communication arises: how to pass information between them. .NET offers several means to implement\
+            \ such communication.\nIn this talk we will see why the need to communicate between processes might arise, will\
+            \ discuss how to solve the problem of communication and will find out that some methods are better and more convenient\
+            \ than others."
+      - language: ru
+        text: "Всё больше современных приложений выходят за рамки простой модели «один процесс». Разработчики находят мног\
+            о причин тому, почему одного процесса мало. А если их становится несколько, возникает проблема передачи информ\
+            ации между ними. .NET предоставляет несколько способов организации такого взаимодействия.\nМы рассмотрим, отку\
+            да может появиться задача общения процессов, обсудим способы её решения, а также убедимся, что не все способы\
+            \ одинаково удобны и полезны."
+    talkDay: 2
+    trackTime: "16:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2not4YgUvamWeO2Im6cUEE/769e03515e4a18a0aee51b4b1a362c25/Igor_Labutin_Interprocess_communications_reasons_and_approaches.pdf"]
+    videoLinks: []
+    speakerIds: [484]
+  - id: 524
+    name:
+      - {language: en, text: "Real World REST and Hands-On Hypermedia"}
+    shortDescription:
+      - {language: en, text: "An in-depth look at the architectural style known as REST. What is REST? Why does it matter?\
+            \ And how can you apply RESTful principles to real-world software development projects using ASP.NET?"}
+    longDescription:
+      - language: en
+        text: "So you've built your HTTP API, and now that it's live, you're suddenly dealing with a whole new set of problems.\
+            \ Do you really need to PUT the entire Customer just to change someone's email address? Why does it take you 25\
+            \ API calls just to render a shopping cart? How do you find the bottlenecks when just drawing a web page requires\
+            \ fifty HTTP requests? What happens when one of your API consumers accidentally tries to GET your entire customer\
+            \ database?\n\nMost of us are familiar with the architectural style known as REST, but even experienced developers\
+            \ often find it difficult to translate REST's architectural principles into running code. In this talk, we'll\
+            \ explore the elements of REST related to hypermedia and the principle of \"hypermedia as the engine of application\
+            \ state\" (HATEOAS) - we'll talk about why they matter, and when you might want to implement them in your own\
+            \ systems. We'll look at some of the tools that exist to help you design, deliver and debug your HTTP APIs, and\
+            \ we'll do some hands-on coding to show you what these patterns look like in a .NET web application using the\
+            \ NancyFX HTTP framework and the HAL hypermedia application language."
+    talkDay: 2
+    trackTime: "16:45"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3ovsgqG1gcWuwwwy2As26Y/6498edf0e469cc6a9ef461e9eab84eb3/Dylan_Beattie_Real_World_REST_and_Hands-on_Hypermedia.pdf"]
+    videoLinks: []
+    speakerIds: [407]
+  - id: 525
+    name:
+      - {language: en, text: "Xamarin.Forms — specifics of cross-platform mobile development on C#"}
+      - {language: ru, text: "Xamarin.Forms — особенности кроссплатформенной разработки мобильных приложений на C#"}
+    shortDescription:
+      - {language: en, text: "How to write a native cross-platform mobile app with Xamarin Forms: what do you need to know,\
+            \ what to pay attention to and what to expect."}
+      - {language: ru, text: "Как разрабатывать кроссплатформенные приложения на Xamarin.Forms: что необходимо знать, на ч\
+            то стоит обращать внимание, о чем следует помнить и чего ожидать в результате."}
+    longDescription:
+      - {language: en, text: "Let's take a little tour of how to use your  .NET + C# skills, XAML expertise, Visual Studio,\
+            \ and Xamarin.Forms to develop a native mobile apps for popular platforms. We'll look on a simple cross-platform\
+            \ application, in particular, project structure, UI features, troubleshootings within development process with\
+            \ Xamarin.Forms. I'll tell about a great combination DI & MVVM, and also we'll discuss tools making developer's\
+            \ work and overall development process easier. At the end of the talk we'll choose the comfortable IDE for the\
+            \ Xamarin developer."}
+      - {language: ru, text: "Проведем небольшой экскурс по тому, как используя ваши .NET + C# скиллы, опыт работы c XAML,\
+            \ Visual Studio, и Xamarin.Forms разрабатывать нативные мобильные приложения для популярных платформ. На приме\
+            ре простого кроссплатформенного приложения познакомимся с его структурой, посмотрим, как обстоят дела с UI, по\
+            говорим о различного рода проблемах, возникающих в процессе кроссплатформенной разработки на Xamarin.Forms. Вс\
+            помним про замечательную парочку DI & MVVM, затем отвлечемся на инструменты, которые облегчают труд разработчи\
+            ка и процесс разработки в целом. В конце доклада мы выберем удобную IDE для Xamarin-разработчика."}
+    talkDay: 2
+    trackTime: "16:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2V1vl3hrtYG2oqAKqGc8GI/e4776e2116b9206d48f8a1fb043d013e/Damir_Beylkhanov_Xamarin.Forms_-_specifics_of_cross-platform_mobile_development.pdf"]
+    videoLinks: []
+    speakerIds: [488]
+  - id: 526
+    name:
+      - {language: en, text: "The collective responsibility problem"}
+      - {language: ru, text: "Задача о коллективной ответственности"}
+    shortDescription:
+      - {language: en, text: "Math and game theory foundations that paved way for intricate algorithms."}
+      - {language: ru, text: "О математике и теоретико-игровых основаниях, стоящих за изобретением хитроумных алгоритмов к\
+            онтроля."}
+    longDescription:
+      - language: en
+        text: "Imagine you’re a policeman at a subway station. Freeriders are trying to jump over the tourniquets, you’re\
+            \ catching them. There’s a lot of them and only one of you. Is it possible to set such «rules of the game» that\
+            \ they won’t dare to jump even if it’s known you’ll be able to catch only one of them?\n\nTurns out it is possible,\
+            \ but not trivial. Such ways to prevent widespread violations can be used (and are in some countries) to fight\
+            \ avoiding taxes, exam cheating, bribery and so on.\n\nThis talk will be about math and game theory foundations\
+            \ behind some intricate control algorithms. The talk won’t get you a diploma and won’t let you instantly be able\
+            \ to write more effective algorithms, but it will give you an idea of how rich a mathematical model there is.\n\
+            \nIf you’re interested in game theory and in research that has led to several Nobel prizes in economics, welcome."
+      - language: ru
+        text: "Представьте себе, что вы — дежурный милиционер в турникетном зале. Безбилетники\nпытаются прыгать через тур\
+            никеты, вы их ловите. Вы один, их — много. Возможно ли им\nзадать такие «правила игры», чтобы они не смели пыт\
+            аться перепрыгивать, даже если\nзаранее известно, что поймаете вы в любом случае только одного из них?\n\nОказ\
+            ывается, возможно. Но не очень тривиально. Подобные схемы борьбы\nс массовыми нарушениями могут применяться (и\
+            \ применяются в некоторых странах)\nпри борьбе с налогоуклонением, списыванием на экзаменах, взяточничеством и\
+            \ т.д.\n\nДоклад о математике и теоретико-игровых основаниях, которые стоят за изобретением различных хитроумн\
+            ых алгоритмов контроля. На этом докладе вы не получите академического образования, вы не научитесь писать боле\
+            е эффективные алгоритмы. Однако вы получите представление о том, насколько богатый математический аппарат суще\
+            ствует.\n\nЕсли вам интересна теория игр, если вам интересно узнать об исследованиях, за которые уже несколько\
+            \ раз присуждали премию Нобелевского комитета по экономике, то добро пожаловать на доклад."
+    talkDay: 2
+    trackTime: "18:15"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5IIaJuSkogOmU0UWU08MII/25ab0add4ff6d2fc8ece5cae917c679c/Alexey_Savateev_The_collective_responsibility_problem__1_.pdf"]
+    videoLinks: []
+    speakerIds: [139]

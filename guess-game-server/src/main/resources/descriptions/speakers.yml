@@ -1173,7 +1173,7 @@ speakers:
       - {language: en, text: "Alexey Savvateev"}
       - {language: ru, text: "Алексей Савватеев"}
     company:
-      - {language: en, text: "University of Dmitry Pozharsky"}
+      - {language: en, text: "University Of Dmitry Pozharsky"}
       - {language: ru, text: "Университет Дмитрия Пожарского"}
     bio:
       - {language: en, text: "Mathematician, math economist and math popularizer. In 2013 got a PhD in math/physics. Organizer\
@@ -1800,8 +1800,22 @@ speakers:
   - id: 220
     fileName: 0220.jpg
     name:
-      - {language: en, text: "Grigory Koshelev"}
+      - {language: en, text: "Gregory Koshelev"}
       - {language: ru, text: "Григорий Кошелев"}
+    company:
+      - {language: en, text: "SKB Kontur"}
+      - {language: ru, text: "СКБ Контур"}
+    bio:
+      - {language: en, text: "Leads a small development team in the biggest IT company in Ekaterinburg: SKB Kontur. Manages\
+            \ Java community inside of the company. Frequent speaker at internal conferences and meet-ups. Although Gregory\
+            \ has quit the .NET some time ago, he still keeps track of the platform evoltuion. He believes Java and .NET should\
+            \ solve problems together instead of competing with each other."}
+      - {language: ru, text: "Руководит небольшой командой разработки в самой крупной IT-компании Екатеринбурга: СКБ Конту\
+            р. Занимается организацией и развитием Java-сообщества внутри компании. Регулярно выступает с докладами на вну\
+            тренних конференциях и встречах. Несмотря на то, что некоторое время назад ушёл из большого .NET, следит за ра\
+            звитием платформы. Считает, что платформы Java и .NET должны не конкурировать между собой, а общими усилиями р\
+            ешать общие задачи."}
+    twitter: GregoryKoshelev
   - id: 221
     fileName: 0221.jpg
     name:
@@ -2047,12 +2061,11 @@ speakers:
     company:
       - {language: en, text: Futurice}
     bio:
-      - {language: en, text: "Michael speaks at conferences, teaches, codes, manages a team of developers and holds a Microsoft\
-            \ MVP title. His vast experience ranges from developing mobile apps to interactive media installations and video\
-            \ surveillance systems. He currently works at Finnish company Futurice that repeatedly won the \"Best Place to\
-            \ Work in Europe\" contest."}
-      - {language: ru, text: "Выступает на конференциях, преподаёт, программирует, руководит командой разработчиков и имее\
-            т титул Microsoft MVP. Его многолетний практический опыт покрывает такие области, как разработка мобильных при\
+      - {language: en, text: "Speaker, teacher, developer, Microsoft MVP, Nokia Developer Champion and team leader with many\
+            \ years of experience in various technologies ranging from mobile platforms and interactive media installations\
+            \ to forensic investigations and security systems."}
+      - {language: ru, text: "Выступает на конференциях, преподаёт, программирует, руководит командой разработчиков, имеет\
+            \ титул Microsoft MVP. Его многолетний практический опыт покрывает такие области, как разработка мобильных при\
             ложений, интерактивные медиа-инсталляции, системы поддержки судебно-медицинских исследований и видеонаблюдения\
             . В настоящее время Михаил работает в финской компании Futurice, неоднократно побеждавшей в конкурсе Best Place\
             \ To Work in Europe."}
@@ -2850,6 +2863,19 @@ speakers:
     fileName: 0407.jpg
     name:
       - {language: en, text: "Dylan Beattie"}
+    company:
+      - {language: en, text: "Ursatile Ltd"}
+    bio:
+      - language: en
+        text: "Dylan Beattie is a consultant, software developer and international keynote speaker. He’s the director of Ursatile,\
+            \ an independent consultancy based in London that specialises in helping organisations bridge the knowledge gap\
+            \ between software development and business strategy. Dylan has been building data-driven web applications since\
+            \ the 1990s; he’s managed teams, taught workshops, and worked on everything from tiny standalone websites to complex\
+            \ distributed systems.  He’s a Microsoft MVP, and he regularly speaks at conferences and user groups all over\
+            \ the world.\n\nDylan is the creator of the Rockstar programming language, and he’s performed his software-themed\
+            \ parodies of classic rock songs \nall over the world as Dylan Beattie and the Linebreakers. He’s online at dylanbeattie.net\
+            \ and on Twitter as @dylanbeattie."
+    twitter: dylanbeattie
   - id: 408
     fileName: 0408.jpg
     name:
@@ -3084,10 +3110,29 @@ speakers:
     fileName: 0455.jpg
     name:
       - {language: en, text: "Maarten Balliauw"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Maarten Balliauw loves building web and cloud apps. His main interests are in ASP.NET MVC, C#,\
+            \ Microsoft Azure, PHP and application performance. He co-founded MyGet and is a Developer Advocate at JetBrains.\
+            \ He’s an ASP Insider and a former MVP for Microsoft Azure. Maarten is a frequent speaker at various national\
+            \ and international events and organizes Azure User Group events in Belgium. In his free time, he likes brewing\
+            \ his own beer. Maarten’s blog can be found at http://blog.maartenballiauw.be"}
+    twitter: maartenballiauw
+    mvp: true
   - id: 456
     fileName: 0456.jpg
     name:
       - {language: en, text: "Adam Ralph"}
+    company:
+      - {language: en, text: "Particular Software"}
+    bio:
+      - {language: en, text: "Adam is a distributed systems enthusiast and digital nomad. He works for Particular Software,\
+            \ the makers of NServiceBus. He likes to speak, maintain open source projects, and fix white space rule violations.\
+            \ He is a practiced tea drinker and snowboarder. He's often spotted coding in launderettes throughout Western\
+            \ Europe."}
+    twitter: adamralph
+    mvp: true
   - id: 457
     fileName: 0457.jpg
     name:
@@ -3138,15 +3183,32 @@ speakers:
   - id: 464
     fileName: 0464.jpg
     name:
-      - {language: en, text: "Sergey Schegrikovich"}
+      - {language: en, text: "Siarhei Shchahrykovich"}
       - {language: ru, text: "Сергей Щегрикович"}
+    company:
+      - {language: en, text: dotmailer}
+    bio:
+      - {language: en, text: "Sergey develops a globally distributed .NET application with a 10-year history. He actively\
+            \ shares the dotmailer company's experience at international and local conferences. Sergey helps his colleagues\
+            \ with debugging and performance optimizations. Also used to introduce DevOps and SRE practices."}
+      - {language: ru, text: "Сергей разрабатывает глобально-распределённое .NET-приложение с десятилетней историей. Актив\
+            но рассказывает про опыт компании на международных и локальных конференциях. Помогает коллегам с отладкой и оп\
+            тимизацией производительности, раньше также внедрял DevOps и SRE-практики."}
+    twitter: shchegrikovich
   - id: 465
     fileName: 0465.jpg
     name:
       - {language: en, text: "Dmitry Ivanov"}
       - {language: ru, text: "Дмитрий Иванов"}
     company:
-      - {language: en, text: "JetBrains"}
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "JetBrains Rider technical leader, ReSharper's Core developer: data structures, caches, concurrency.\
+            \ JetBrains employee since 2011. Graduated from SPbSU in 2006."}
+      - {language: ru, text: "Техлид JetBrains Rider, разработчик ядра ReSharper: структур данных, кэшей, многопоточности\
+            . В компании JetBrains с 2011 года, до этого руководил разработкой серверных решений в Yota. Окончил матмех СП\
+            бГУ в 2006 году. Регулярный спикер DotNext."}
+    twitter: korifey_ad
   - id: 466
     fileName: 0466.jpg
     name:
@@ -3235,6 +3297,15 @@ speakers:
     fileName: 0474.jpg
     name:
       - {language: en, text: "Roland Guijt"}
+    company:
+      - {language: en, text: "R.M.G. Holding B.V."}
+    bio:
+      - {language: en, text: "Roland is a Microsoft MVP enjoying a constant curiosity around new techniques in software development.\
+            \ His focus is on all things .NET and browser technologies. As a long-time trainer, he led many courses on these\
+            \ topics and spoke about them at international conferences. He also travels around the globe to offer his self-developed\
+            \ workshops. The word that comes to mind when he thinks about software development is passion!"}
+    twitter: rolandguijt
+    mvp: true
   - id: 475
     fileName: 0475.jpg
     name:
@@ -3255,6 +3326,20 @@ speakers:
     name:
       - {language: en, text: "Denis Ivanov"}
       - {language: ru, text: "Денис Иванов"}
+    company:
+      - {language: en, text: 2GIS}
+      - {language: ru, text: 2ГИС}
+    bio:
+      - language: en
+        text: "Denis is working at 2GIS on sales systems and services for advertising. He writes C# code on Windows and macOS,\
+            \ but compiles it and deploys his app on Linux.\nDenis is recognised as Microsoft MVP in Visual Studio and Development\
+            \ Technologies category. He is involved in several open source project and organizes CodeFest conference in Novosibirsk."
+      - language: ru
+        text: "Работает в 2ГИС над системами продаж и рекламными сервисами. Пишет код на C# в Windows и macOS, а компилиру\
+            ет его и разворачивает приложения в Linux.\nMicrosoft MVP в области Visual Studio and Development Technologies.\
+            \ Участвует в нескольких Open Source проектах и организует конференцию CodeFest в Новосибирске."
+    twitter: denisivanov
+    mvp: true
   - id: 479
     fileName: 0479.jpg
     name:
@@ -3269,10 +3354,26 @@ speakers:
     fileName: 0481.jpg
     name:
       - {language: en, text: "Jon Skeet"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Jon has been a Microsoft MVP for more than 13 years, and is currently a software engineer at\
+            \ Google, London. He's the top contributor on Stack Overflow, the main contributor on the Noda Time library, and\
+            \ the author of C# in Depth."}
+    twitter: jonskeet
   - id: 482
     fileName: 0482.jpg
     name:
       - {language: en, text: "Tomas Herceg"}
+    company:
+      - {language: en, text: RIGANTI}
+    bio:
+      - {language: en, text: "Tomas is CEO of RIGANTI, small software development company located in Prague. He is a Microsoft\
+            \ Regional Director and Microsoft MVP, author of an open source .NET-based web framework DotVVM, co-author of\
+            \ DotNetPortal (Czech website about .NET development), co-founder of DotNetCollege (a company which hosts developer\
+            \ trainings and organizes various community events)."}
+    twitter: hercegtomas
+    mvp: true
   - id: 483
     fileName: 0483.jpg
     name:
@@ -3291,6 +3392,18 @@ speakers:
     name:
       - {language: en, text: "Igor Labutin"}
       - {language: ru, text: "Игорь Лабутин"}
+    company:
+      - {language: en, text: Lanit-Terkom}
+      - {language: ru, text: Ланит-Терком}
+    bio:
+      - {language: en, text: "An architect. Started career as a developer 16 years ago in the land of C++. Igor has been developing\
+            \ for Windows, Linux, QNX in the wide variety of areas: from video processing to network card drivers with company's\
+            \ own TCP/IP implementation. 9 years ago he entered .NET/C# world and also devoted himself to software architecture\
+            \ and performance issues. And special attention was focused on challenges in the interprocess communications."}
+      - {language: ru, text: "Архитектор. Начал 16 лет назад программистом на С++, разрабатывал под Windows, Linux, QNX в\
+            \ областях начиная от обработки видео до драйверов сетевых карт с полноценной реализацией TCP/IP стека. 9 лет\
+            \ назад пришёл в мир .NET/C# и стал, кроме кодирования, заниматься архитектурой, вопросами производительности\
+            , особое внимание уделяя вопросам взаимодействия приложений."}
   - id: 485
     fileName: 0485.jpg
     name:
@@ -3308,26 +3421,91 @@ speakers:
     fileName: 0486.jpg
     name:
       - {language: en, text: "Mete Atamel"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Mete is a Developer Advocate at Google, currently focused on helping developers with Google\
+            \ Cloud Platform. As a long-time Java and a recent C# developer, he likes to compare the two ecosystems. Prior\
+            \ to Google he worked at Microsoft, Skype, Adobe, EMC, and Nokia building apps and services on various web, mobile\
+            \ and cloud platforms. Originally from Cyprus, currently lives in Greenwich, not too far away from the prime meridian."}
+    twitter: meteatamel
   - id: 487
     fileName: 0487.jpg
     name:
       - {language: en, text: "Igor Yakovlev"}
       - {language: ru, text: "Игорь Яковлев"}
+    company:
+      - {language: en, text: "Positive Technologies"}
+    bio:
+      - {language: en, text: "Igor graduated from the faculty of the Mathematics and Mechanics of Saint Petersburg State University.\
+            \ He has more than 8 years of experience in software development, about 5 years with .NET platform in particular.\
+            \ Currently is a Senior Software Developer in Positive Technologies company, in Department of application security\
+            \ analysis research. Also he is a post-graduate student of SPbSU and a lecturer of the Department of Astrophysics.\
+            \ Igor is interested in programming languages, computer science, .NET and other platforms."}
+      - {language: ru, text: "Окончил математико-механический факультет СПбГУ. Более 8 лет работает разработчиком в петерб\
+            ургских IT-компаниях, в частности, более 5 лет на платформе .NET. В настоящее время — в должности старшего про\
+            граммиста в компании Positive Technologies, в отделе исследований анализа защищенности приложений. Также являе\
+            тся аспирантом и преподаёт программирование на кафедре астрофизики СПбГУ. Область интересов: языки программиро\
+            вания, computer science, .NET и другие платформы."}
   - id: 488
     fileName: 0488.jpg
     name:
-      - {language: en, text: "Damir Beylhanov"}
+      - {language: en, text: "Damir Beylkhanov"}
       - {language: ru, text: "Дамир Бейльханов"}
+    company:
+      - {language: en, text: "Murano Software"}
+    bio:
+      - language: en
+        text: "Full stack developer with seven years of experience. He had participated in the development of many projects\
+            \ for e-commerce and m-commerce. Now he is working on outsourced projects for a customer from United States. Permanent\
+            \ member of various .net and mobile development communities. Damir is Microsoft Certified Professional, Microsoft\
+            \ ® Certified Technology Specialist. In his free time, Damir likes to participate in real quests, and he also\
+            \ enjoys snowboarding and MMA.\nPhD."
+      - language: ru
+        text: "Full Stack разработчик c 7-летним опытом. За это время успел поучаствовать в ряде проектов по разработке пр\
+            иложений для e-commerce и m-commerce. Сейчас работает над аутсорсинговыми проектами для заказчика из США. Пост\
+            оянный участник различных комьюнити по .net & mobile разработке. Является Microsoft Certified Professional, Microsoft®\
+            \ Certified Technology Specialist. В свободное время ломает голову на квестах, а также занимается сноубординго\
+            м и MMA.\nКандидат технических наук."
+    twitter: dbeylkhanov
   - id: 489
     fileName: 0489.jpg
     name:
-      - {language: en, text: "Mihail Filippov"}
+      - {language: en, text: "Mikhail Filippov"}
       - {language: ru, text: "Михаил Филиппов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Works at the Rider IDE project in JetBrains. During spare time likes to fix bugs in open source\
+            \ projects — such as mono and MSBuild."}
+      - {language: ru, text: "Работает в компании JetBrains в проекте Rider. В свободное время любит разбираться и фиксить\
+            \ баги в open source проектах — таких, как mono и MSBuild."}
+    twitter: filippovma
   - id: 490
     fileName: 0490.jpg
     name:
-      - {language: en, text: "Alexey Vereschagin"}
+      - {language: en, text: "Aleksei Vereshchagin"}
       - {language: ru, text: "Алексей Верещагин"}
+    company:
+      - {language: en, text: "CPR RTSoft"}
+      - {language: ru, text: "ЦПР РТСофт"}
+    bio:
+      - language: en
+        text: "Graduated from the Moscow State Industrial University (MSIU) in 2012. Started his career in the same university\
+            \ (development, teaching, system administration). Participated in developing different university systems (mainly\
+            \ Ruby on Rails and C/C++). Since 2015 works at RTSoft.\n\nIn 2016 got involved in a development of a CoreCLR\
+            \ applications profiler for Linux ARM. That's how he got acquainted with .NET."
+      - language: ru
+        text: "В 2012-м окончил с отличием Московский государственный индустриальный университет (МГИУ), получив квалифика\
+            цию математик-программист. Здесь же ещё до выпуска начал карьеру (разработка, преподавание, системное админист\
+            рирование). Участвовал в разработке различных информационных и образовательных систем университета (в основном\
+            \ Ruby on Rails и C/C++), включая работу по автоматизации тестирования студенческих программ и генерации тесто\
+            вых наборов по формальному описанию.\n\nС 2015-го работает в компании РТСофт, занимаясь прикладным и системным\
+            \ программированием (в т.ч. embedded), преимущественно на C/C++. Участвует в разработке производительного прог\
+            раммного обеспечения для проекта ITER (Международный экспериментальный термоядерный реактор).\n\nВ 2016 году п\
+            олучил предложение поучаствовать в разработке профайлера приложений CoreCLR для Linux ARM. Таким образом и сос\
+            тоялось первое знакомство с технологией .NET."
+    twitter: alexeyv_90
   - id: 491
     fileName: 0491.jpg
     name:
