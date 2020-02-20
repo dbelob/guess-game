@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum ImageFormat {
-    JPG(List.of("jpg", "jpeg")),
+    JPG(List.of("jpg", "jpeg", "00_jpg_srz")),
     PNG(List.of("png"));
 
     private List<String> fileExtensions;
