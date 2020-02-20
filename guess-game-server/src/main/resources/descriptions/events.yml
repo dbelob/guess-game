@@ -313,6 +313,25 @@ events:
   # Mobius
   - eventTypeId: 9
     name:
+      - {language: en, text: "Mobius 2017 Spb"}
+      - {language: ru, text: "Mobius 2017 СПб"}
+    startDate: "2017-04-21"
+    endDate: "2017-04-22"
+    siteLink:
+      - {language: en, text: "https://2017.mobiusconf.com/en/"}
+      - {language: ru, text: "https://2017.mobiusconf.com/"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Lodeynopolskaya Str., 5, Congress Centre «PetroCongress»"}
+      - {language: ru, text: "Лодейнопольская ул., 5, Конгрессный Центр «ПетроКонгресс»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236qo2oL0Sis_Zf_UUgeMAjDl
+    mapCoordinates: "59.963937, 30.289414"
+    talkIds: [463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484,
+              485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497]
+  - eventTypeId: 9
+    name:
       - {language: en, text: "Mobius 2019 Msk"}
       - {language: ru, text: "Mobius 2019 Мск"}
     startDate: 2019-12-07

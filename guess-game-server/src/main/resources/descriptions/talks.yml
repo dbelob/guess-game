@@ -6176,3 +6176,930 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/9A6she5BIcYYMYsIK6oIK/ff259dd21394adf49e371eae89fd65ba/Kotlin_Puzzlers_JPoint.pdf"]
     videoLinks: []
     speakerIds: [68, 35]
+  - id: 463
+    name:
+      - {language: en, text: "Mobile First..."}
+    shortDescription:
+      - {language: en, text: "Endless problem of choice between native iOS/Android development, mobile web, Cordova, Xamarin,\
+            \ React Native and even Unity 3D in non-gaming mobile scenarios."}
+      - {language: ru, text: "Нескончаемая проблема выбора между мобильным сайтом и native iOS/Android-разработкой, Cordova,\
+            \ Xamarin, React Native и даже Unity 3D в неигровых мобильных проектах."}
+    longDescription:
+      - language: en
+        text: "Being deeply submerged into our current projects, favorite platforms, toolsets, libraries and frameworks, quite\
+            \ often we don’t notice the very first and subtle signs of upcoming global changes in market demand for our mobile\
+            \ development skills until it’s too late. Sometimes our developer inner-self gives in to wishful thinking and\
+            \ sometimes we just close our eyes and hope for the best.\n\nSo, what to do to stay relevant? You should actively\
+            \ share your own professional experience as well as analyze experience of others. Sometimes you should really\
+            \ forget about your own technical preferences and start thinking more about your customers and end users’ goals\
+            \ and challenges.\n\nIn this talk I would like to share dramatical changes which we, consulting company, can see\
+            \ in European market demand of mobile development skills. We will talk about endless problem of choice between\
+            \ native iOS/Android development, mobile web, Cordova, Xamarin, React Native and even Unity 3D in non-gaming mobile\
+            \ scenarios."
+      - language: ru
+        text: "Погружённые в свой текущий проект, свою любимую платформу, предпочтительный набор инструментов и библиотек\
+            , мы, мобильные разработчики, зачастую не замечаем изменений в востребованности тех или иных профессиональных\
+            \ навыков — вначале небольших изменений, а затем глобальных и стремительных. Порой подсознательно выдаём желае\
+            мое за действительное, а иногда просто закрываем глаза и надеемся на лучшее.\n\nЧто же делать? Активно делитьс\
+            я своим опытом и анализировать опыт других. А самое главное — на мгновение забыть о своих глубоко обоснованных\
+            \ технических предпочтениях и задуматься о том, что в первую очередь интересует вашего заказчика или конечного\
+            \ пользователя вашего приложения.\n\nВ докладе я расскажу о драматических изменениях на рынке мобильной разраб\
+            отки, которые мы, консалтинговая компания, видим в Европе в последний год. О чём конкретно пойдёт речь? О неск\
+            ончаемой проблеме выбора между мобильным веб-сайтом и native iOS/Android разработкой, о Cordova, Xamarin, React\
+            \ Native, и даже о Unity 3D в неигровых мобильных проектах."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/63kBIbZadUsMEiIUWs2quC/92216bc88e03bd7d5a096f4a637c4e5c/Michael_Samarin_Mobius_2017_Spb_Opening_Keynote.pdf"]
+    videoLinks: []
+    speakerIds: [267]
+  - id: 464
+    name:
+      - {language: en, text: "React Native: Survival Guide"}
+      - {language: ru, text: "React Native: Уроки выживания"}
+    shortDescription:
+      - {language: en, text: "Everything you need to develop comfortably with React Native."}
+      - {language: ru, text: "Обо всём, что нужно знать для комфортной разработки на React Native."}
+    longDescription:
+      - language: en
+        text: "You already have a Flickr client made with React Native, but you doubt if you can manage a commercial app?\
+            \ Or the project is already on you but every step is a pain? You got how to make UI, but form validation is a\
+            \ hard nut? You heard there is Redux, but fear to death to try?\n\nStop worrying. We will talk why would we need\
+            \ an external state, why use a context in React Native, why action creators can return the functions and so on."
+      - language: ru
+        text: "У вас уже есть клиент в Flick в React Native, но вы сомневаетесь, справитесь ли вы с полноценным коммерческ\
+            им проектом? Или проект у вас уже есть, но что-то мешает на каждом шагу? Вы поняли, как делать UI, но валидаци\
+            я форм ставит вас в тупик? Вы слышали про Redux, но при мысли попробовать трясутся коленки?\n\nХватит бояться\
+            ! Мы поговорим о том, почему внешний для компонента стейт это хорошо, зачем нужен context в React Native, кто\
+            \ разрешил в action creators возвращать функции, и так далее."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/22klDRm3FuMuW8AIu444Mg/f19ec6038fddb1667fc403ae9cc3bb9e/Vladimir_Ivanov_React_Native_Survival_Guide.pdf"]
+    videoLinks: []
+    speakerIds: [852]
+  - id: 465
+    name:
+      - {language: en, text: "You've been told lies about Fragments — Custom Views were everything you always needed"}
+    shortDescription:
+      - {language: en, text: "Fragments are bad for your mental health, get rid of them!"}
+    longDescription:
+      - language: en
+        text: "Fragments. Some hate them, others love them. They spoiled our codebases for years. They help us solve problems\
+            \ they were meant to solve — having an ability to split our UI code into smaller, reusable pieces. They do have\
+            \ many drawbacks though — their lifecycle may get you mad from time to time, the way FragmentManager works is\
+            \ often hard to predict and despite being there for years already, same bugs appear and appear again.\n\nDuring\
+            \ my talk I want to take you for a trip to the past. To 2007, when all tablets out there were just phones with\
+            \ bigger screens and apps looked exactly the same as on phones, but streched. We'll try to build a completely\
+            \ new solution that could solve the issues Fragment do, trying to avoid supportlib's mistakes at the same time.\
+            \ We'll also analyze what kind of open source alternatives we already have and how they work."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/1v6fkSJCcgcCUusGW8ao4U/1ee48cfc5305f9054c71204e7e655a53/Mateusz_Herych_-_You_ve_been_told_lies_about_Fragments.pdf"]
+    videoLinks: []
+    speakerIds: [877]
+  - id: 466
+    name:
+      - {language: en, text: "iOS app development process: from an idea to the result"}
+      - {language: ru, text: "Процесс разработки iOS приложения: от идеи до результата"}
+    shortDescription:
+      - {language: en, text: "The talk will show adding new features to Badoo iOS app from the developer point of view — from\
+            \ the requirements coming from the product manager to supporting and monitoring in production."}
+      - {language: ru, text: "Рассказ о том, как происходит разработка новых фич для iOS приложения Badoo с точки зрения р\
+            азработчика — от требований менеджера по продукту до поддержки и мониторинга на бою."}
+    longDescription:
+      - language: en
+        text: "Developers often talk about efficient ways of writing code: what language is faster and more concise, what\
+            \ architectural approach is simpler and more flexible, how tests will solve all the world problems. But the process\
+            \ of creating, developing and supporting of a mobile app does not consist solely of the writing code. It also\
+            \ includes task management, design, testing, localization, deploy, monitoring and different fields — all of them\
+            \ taking developer time.\n\nIn this talk Igor will speak about decisions made in Badoo to optimize the workflow.\
+            \ Topics he plans to cover:\n\n- Organizing a repository\n- Creating a helper bot\n- Process of developing a feature\n\
+            - Testing and bugfixing\n- Team organization\n- Localization\n- Monitoring"
+      - language: ru
+        text: "Мы, разработчики, часто рассуждаем о том, как эффективнее писать код: какой язык лаконичнее и быстрее, како\
+            й архитектурный подход гибче и проще, как тесты решат все проблемы на свете. Но процесс создания, развития и п\
+            оддержки мобильного приложения состоит не только из написания кода в редакторе, но и менеджмента задач, дизайн\
+            а, тестирования, локализации, деплоя, мониторинга и других областей — и всё это так или иначе касается разрабо\
+            тчика напрямую и отнимает время.\n\nВ своём докладе я расскажу о решениях, к которым мы пришли при оптимизации\
+            \ процесса разработки. Темы, которые я постараюсь затронуть:\n\n- Организация репозитория\n- Бот-помощник в ра\
+            боте\n- Процесс разработки фичи\n- Тестирование и багфиксинг\n- Организация команды\n- Локализация\n- Монитори\
+            нг"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/26xq26NeRu4SKEc62mWG28/c64d2bfd4f7fa486bd9dfc51affd08c9/______________________________________________________________iOS_______________________1_.pdf"]
+    videoLinks: []
+    speakerIds: [874]
+  - id: 467
+    name:
+      - {language: en, text: "May the Code Review be with you"}
+    shortDescription:
+      - {language: en, text: "How to approach code review: details, rules and so on"}
+      - {language: ru, text: "Как подойти к code review: детали, правила и не только"}
+    longDescription:
+      - language: en
+        text: "Code review is often mistaken for a silver bullet that solves all the developer problems. In reality it's not\
+            \ exactly like that, and this process has its requirements and constraints, just like everything else. We'll talk\
+            \ about what teams can benefit from code review and how to approach this process. We'll get into the details of\
+            \ process, measure the time it takes and learn to assess its usefulness.\n\nAlso the main rules of conducting\
+            \ a code review will be shown: both technical and ethical ones that can have positive impact not only on product\
+            \ quality but also on the team making it."
+      - language: ru
+        text: "Бытует мнение, что code review — это серебряная пуля, которая решает абсолютно все проблемы разработчиков.\
+            \ На самом деле, это не совсем так, и, как и у всего остального, у этого процесса тоже есть свои требования и\
+            \ ограничения. Мы поговорим о том, каким командам может помочь code review и с какой стороны к этому процессу\
+            \ нужно подойти. Разберём детали процесса, поймём, сколько времени в среднем он отнимает и научимся определять\
+            \ пользу от него.\n\nКроме того, на реальных примерах будут показаны основные правила проведения code review —\
+            \ как технические, так и этические, которые помогут сделать этот процесс полезным не только для улучшения каче\
+            ства продукта, но и для укрепления взаимоотношений в команде."
+    talkDay: 1
+    trackTime: "13:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/1V204grT6wMwmqeG8QE8Qq/a2e30bd0b6f908573c55d359f8088cea/__________________________-_May_the_Code_Review_be_with_you.pdf"]
+    videoLinks: []
+    speakerIds: [872]
+  - id: 468
+    name:
+      - {language: en, text: "Kotlin all the... tests!"}
+    shortDescription:
+      - {language: en, text: "Let's look at Kotlin from a testing perspective: how does writing unit tests in Kotlin look\
+            \ like and what possibilities of the language will help us?"}
+    longDescription:
+      - language: en
+        text: "Kotlin was the rising star of programming languages in 2016. Not only did it get to version 1.0 but also got\
+            \ rapidly adopted in the Android community.\nBut many companies are struggling to add Kotlin to an existing Java\
+            \ project. It's not easy to add a new language to an existing team.\nIt's much easier to introduce Kotlin to your\
+            \ project using the backdoor: your unit tests. So let's look at Kotlin more from a testing perspective. How does\
+            \ writing tests in Kotlin look like, what possibilities of the language will help us?"
+    talkDay: 1
+    trackTime: "13:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/2vhtxlZhmMssY4qmWwyuI6/9091a794013f7873428c554addc422be/Danny_Preussler_Kotlin_all_your_tests__1_.pdf"]
+    videoLinks: []
+    speakerIds: [803]
+  - id: 469
+    name:
+      - {language: en, text: "IPC: AIDL is sexy, not a curse"}
+      - {language: ru, text: "IPC: AIDL — это не ругательство"}
+    shortDescription:
+      - {language: en, text: "Who are all these guys: IPC? Binder? AIDL?! Come to this talk and you will see how deep the\
+            \ rabbit hole goes."}
+      - {language: ru, text: "IPC? Binder? AIDL? Кто все эти люди?! Приходите на доклад и узнайте, насколько глубока кроли\
+            чья нора."}
+    longDescription:
+      - language: en
+        text: "Understanding more about the architecture and what’s actually going on within the platform will help you write\
+            \ better applications.\nsendBroadcast(), startService(), getSystemService() — we all use it day by day. But what\
+            \ stands behind it? Who are the parties involved in this? Who are all these guys: IPC? Binder? AIDL? Huh?! \n\
+            Come to this talk and you will see how deep the rabbit hole goes."
+      - language: ru
+        text: "Понимаение архитектуры и того, что на самом деле происходит внутри платформы, помогает писать приложения лу\
+            чше.\nsendBroadcast(), startService(), getSystemService() — мы все используем это каждый день. Но что стоит за\
+            \ ними? Кто вовлечён в это? IPC, Binder, AIDL — кто все эти люди?! \nПриходите на доклад и узнайте, насколько\
+            \ глубока кроличья нора."
+    talkDay: 1
+    trackTime: "13:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/6ZXfUQGWgEMCeO86aoS8O6/06101dee34b65c0617a561e12964f84b/Mobius-_IPC__Binder___Love.pdf"]
+    videoLinks: []
+    speakerIds: [565]
+  - id: 470
+    name:
+      - {language: en, text: "Deep dive into Clean Architecture"}
+      - {language: ru, text: "Чистая архитектура. Погружение"}
+    shortDescription:
+      - {language: en, text: "Devil's in the details. So it's the details of Clean Architecture we'll talk about."}
+      - {language: ru, text: "Дьявол кроется в деталях. Именно о деталях Чистой архитектуры мы и поговорим."}
+    longDescription:
+      - language: en
+        text: "Clean architecture. It means so much. Everyone and their uncle is talking about it. And their words seem right,\
+            \ and it all seems so good. But everyone implements it differently, and a lot of mistakes keep being made again\
+            \ and again.\n\nThat’s why a Telegram group was created in January where everyone could tell about his/her painful\
+            \ experiences. Hundreds of messages and dozens of problems every day. The area of discussion spread from the theoretical\
+            \ aspects to the intricate cases that require a lot of thinking.\n\nThere’a whole lot of information. And this\
+            \ talk will show the juicy parts of the four months of activity."
+      - language: ru
+        text: "Чистая архитектура. Как много в этом звуке. О ней сейчас не говорит уже только ленивый. И вроде бы все верн\
+            о говорят, и все красиво выглядит. Но вот только каждый реализует ее по-своему. И ошибки совершаются одни и те\
+            \ же.\n\nИменно поэтому в начале января появилась соответствующая группа в Телеграме, где каждый мог излить св\
+            ою боль и свое непонимание. Сотни сообщений, десятки проблем и дискуссий каждый день. Поле деятельности раскин\
+            улось от самых теоретических аспектов до хитроумных кейсов, над которыми можно думать очень долго.\n\nИнформац\
+            ии очень много. И в докладе будет представлена самая сочная выжимка из почти четырехмесячной деятельности."
+    talkDay: 1
+    trackTime: "15:15"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/4CpDvp7wTCqQ0OiMGkYmei/191af22e48e617df754fc9bb58d2237d/__.______________._____________-____________________________________._____________________.pdf"]
+    videoLinks: []
+    speakerIds: [779, 809]
+  - id: 471
+    name:
+      - {language: en, text: "Writing Swift code with great testability"}
+    shortDescription:
+      - {language: en, text: "Demonstrating techniques that could make your code a lot easier & more fun to test."}
+    longDescription:
+      - {language: en, text: "When starting to write code in Swift, many of us have had to rethink the way we set up our code\
+            \ for testing. The static & safe nature of Swift can make testing a bit cumbersome at first, but in this talk\
+            \ John will demonstrate some techniques that could make your code a lot easier & more fun to test."}
+    talkDay: 1
+    trackTime: "15:15"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/5VgonRyWDSKSIuuQy0a4IQ/dfb8dc5ef00027f4b57405ecbc978907/SwiftWithGreatTestability.pdf"]
+    videoLinks: []
+    speakerIds: [869]
+  - id: 472
+    name:
+      - {language: en, text: "VIP scalable architecture for React Native"}
+      - {language: ru, text: "Масштабируемая VIP архитектура на React Native"}
+    shortDescription:
+      - {language: en, text: "There’s a wide spectrum of solutions for mobile app development. How Sberbank’s Single Frontal\
+            \ System platform got its tech stack, and what does working with it look like?"}
+      - {language: ru, text: "Спектр решений для мобильной разработки широк. Как в «Единой фронтальной системе» Сбербанка\
+            \ пришли к текущему стеку технологий, и как работают с ним?"}
+    longDescription:
+      - language: en
+        text: "here’s a wide spectrum of solutions for mobile app development. Choice can be guided by availability, popularity,\
+            \ potential.\n\nWe’ll tell how we came up with our current technological stack at the Single Frontal System platform\
+            \ and how we combined them for solving new problems in a global and important system: Sberbank.\n\nWhat you can\
+            \ expect:\n- Discussion: are hybrid technologies good?\n- Experience: creating a mobile platform without compromising\
+            \ speed, quality or budget\n- Architecture: VIP + React Native + Sberbank = <3\n- Live coding: fast development\
+            \ with platform made easy\n- Best practices: pro tips. Knee deep in React Native\n- Into the future: where does\
+            \ the platform move?"
+      - language: ru
+        text: "Сегодня существует широкий спектр решений для разработки мобильных приложений. Выбор одного из них может бы\
+            ть продиктован доступностью, популярностью, перспективностью.\n\nВ нашем выступлении мы расскажем, как пришли\
+            \ к текущему стеку технологий в рамках платформы «Единая фронтальная система» и как объединили их в целостное\
+            \ решение новых задач на примере глобальной и важной системы: Сбербанка.\n\nЧто вас ждёт:\n- Дискуссия: гибрид\
+            ные технологии — хорошо это или плохо?\n- Опыт: создаём мобильную платформу. Быстро. Качественно. Недорого\n-\
+            \ Архитектура: VIP + React Native + Sberbank = <3\n- Live coding: быстрая разработка с платформой — легко!\n-\
+            \ Best practices: советы бывалых разработчиков. По колено в React Native\n- Вперёд в будущее: куда дальше двиг\
+            ается платформа?"
+    talkDay: 1
+    trackTime: "15:15"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/1V0lgXaokgeWUwoQU8GOgq/e7130168dc74e64410f151d394026261/___________________.__.______________________.__.________________________________VIP________________________________________.pdf"]
+    videoLinks: []
+    speakerIds: [876, 882]
+  - id: 473
+    name:
+      - {language: en, text: "Comparing DI frameworks & internals"}
+    shortDescription:
+      - {language: en, text: "Deep dive into Dependency Injection, from a high level comparison framework overview into the\
+            \ technologies behind DI."}
+    longDescription:
+      - {language: en, text: "Deep dive into Dependency Injection (DI) internals. First, we will introduce DI, then give a\
+            \ high level comparison overview of the different frameworks available for Android. We will then explore in depth\
+            \ the technologies behind DI like reflection vs. annotation processing and code generation. Finally, we will compare\
+            \ two DI frameworks: Dagger & Toothpick, with a lot of code examples to illustrate what it means in real life\
+            \ applications to use one or the other."}
+    talkDay: 1
+    trackTime: "16:45"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/3noRAZUlqo8uAggKkGQS00/4f5c336fa247e751d4b6dd5ce35e1e37/Danny_Preussler_Stephane_Nicolas_Dependency_Injection.pdf"]
+    videoLinks: []
+    speakerIds: [803, 873]
+  - id: 474
+    name:
+      - {language: en, text: "Spherical video in Android: 50 shades darker"}
+      - {language: ru, text: "Сферическое видео в Android: на 50 оттенков темнее"}
+    shortDescription:
+      - {language: en, text: "Developing a universal 360-degree video player for Android apps."}
+      - {language: ru, text: "Разработка универсального проигрывателя 360-градусного видео для платформы Android."}
+    longDescription:
+      - language: en
+        text: "A few years ago 360-degree video was a rarity, but nowadays due to VR it gets more popular every day, and its\
+            \ playback becomes relevant for a lot of mobile developers. How to handle it?\n\nThis talk will cover different\
+            \ aspects of working with spherical video in Android: spherical video formats, different projections, streaming\
+            \ and the «right» way to play such videos on Android Cardboard, Daydream and GearVR. No abstract musings — just\
+            \ the technical aspects!"
+      - language: ru
+        text: "Несколько лет назад 360-градусное видео было редкой диковинкой, но теперь благодаря VR оно всё востребованн\
+            ее, и его воспроизведение становится актуальной задачей для многих мобильных разработчиков. Как правильно подх\
+            одить к ней?\n\nВ докладе окажутся рассмотрены разные аспекты задачи: форматы, различные проекции, потоковая п\
+            ередача и «самый правильный» способ проиграть подобное видео на Android в Cardboard, Daydream и GearVR. Никаки\
+            х «смузи» — только технические аспекты!"
+    talkDay: 1
+    trackTime: "16:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/1NFPN1x8FicS6QmKeEQW2y/b84d241e5af01ae04084d08d2ec9a092/A.Korshak_____50_shades_darker.pdf"]
+    videoLinks: []
+    speakerIds: [823]
+  - id: 475
+    name:
+      - {language: en, text: "Startup time optimization for iOS applications"}
+      - {language: ru, text: "Оптимизация времени запуска iOS-приложений"}
+    shortDescription:
+      - {language: en, text: "The problem launch time optimization in iOS app development: how to properly measure the launch\
+            \ time, optimize the system and user parts, and ensure that the results are not diminished in the future."}
+      - {language: ru, text: "Проблема ускорения запуска iOS-приложений: как правильно замерить время запуска, оптимизиров\
+            ать системную и пользовательскую части, гарантировать сохранение результата в дальнейшем."}
+    longDescription:
+      - {language: en, text: "The report is devoted to the problem of launch time optimization in applications on mobile devices\
+            \ running iOS: how to properly measure the launch time, optimize the system and user parts, and ensure that the\
+            \ results are not diminished in the future. The story is based on personal experience of Yandex.Maps startup optimization,\
+            \ describes the whole process from understanding the problem to obtaining the result, and supported by a lot of\
+            \ technical details and real examples. The report is conceptual, contains specific proposals for developing mobile\
+            \ applications with a quick launch and will be useful for iOS developers at any level."}
+      - {language: ru, text: "Доклад посвящён проблеме ускорения запуска приложений на мобильных устройствах под управлени\
+            ем iOS: как правильно замерить время запуска, оптимизировать системную и пользовательскую части, гарантировать\
+            \ сохранение результата в дальнейшем. Рассказ основан на личном опыте оптимизации запуска Яндекс.Карт, описыва\
+            ет весь процесс от осознания проблемы до получения результата, подкреплён множеством технических подробностей\
+            \ и реальных примеров. Доклад является концептуальным, содержит конкретные предложения по разработке мобильных\
+            \ приложений с быстрым запуском и будет полезен iOS-разработчикам любого уровня."}
+    talkDay: 1
+    trackTime: "16:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/4ARX9W15p6Ygsgm2cus48q/911f9b35b26a7bcc451569022764038c/___________________.__._-______________________________________________________iOS-______________________.pdf"]
+    videoLinks: []
+    speakerIds: [804]
+  - id: 476
+    name:
+      - {language: en, text: "Hidden mysteries behind big mobile codebases"}
+    shortDescription:
+      - language: en
+        text: "You have a really cool and impactful project, but as soon as your codebase gets bigger, and more and more contributors\
+            \ come into play, things can become challenging in regards to aspects like: code consistency, technical debt,\
+            \ refactoring, application architecture and team organization. \nLet's jump onboard on this journey and walk through\
+            \ different techniques that can help us keep our code sane and healthy for better scalability. \nDisclaimer: This\
+            \ talk is going to be focused from a mobile standpoint but most of the practices included can also be applied\
+            \ to any software project under development."
+    longDescription:
+      - language: en
+        text: "You have a really cool and impactful project, but as soon as your codebase gets bigger, and more and more contributors\
+            \ come into play, things can become challenging in regards to aspects like: code consistency, technical debt,\
+            \ refactoring, application architecture and team organization. \nLet's jump onboard on this journey and walk through\
+            \ different techniques that can help us keep our code sane and healthy for better scalability. \nDisclaimer: This\
+            \ talk is going to be focused from a mobile standpoint but most of the practices included can also be applied\
+            \ to any software project under development."
+    talkDay: 1
+    trackTime: "18:15"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/sjhGROAsYCQeGc8iKQcmc/b3589086988fc7cac021efc51f8120d0/Fernando_Cejas_Hidden_mysteries_big_codebases_RELOADED__1_.pdf"]
+    videoLinks: []
+    speakerIds: [830]
+  - id: 477
+    name:
+      - {language: en, text: "Mutation Testing: how good your tests are"}
+      - {language: ru, text: "Mutation Testing: насколько хороши ваши тесты"}
+    shortDescription:
+      - {language: en, text: "About a LLVM-based mutation testing system suitable for everyday usage."}
+      - {language: ru, text: "О системе для мутационного тестирования на основе LLVM, подходящей для повседневного использ\
+            ования."}
+    longDescription:
+      - language: en
+        text: "For decades developers try to build a bug-free software. Numerous techniques and metrics have been developed.\
+            \ However, there is still a need for a method that can both assert program domain and provide reliable metrics.\n\
+            \nMutation Testing is one of such techniques.\n\nThere is a function and a test for that function. Any semantic\
+            \ change in the function (so-called \"mutant\") should break the test (\"kill mutant\"). If that's not the case\
+            \ (the test still passes), then mutant is considered as survived. No mutants should survive ever. If they are,\
+            \ then either the test is bad, or the function is not correct.\n\nResearch in this area exists since 70's. However,\
+            \ this method is not widely adopted. The computational cost was one of the blockers. Another one is the way how\
+            \ such systems are implemented.\n\nIn this talk, I want to present Mull: mutation testing system based on LLVM.\
+            \ It uses runtime compilation (JIT) to speed up the whole process and make mutation testing accessible for everyday\
+            \ usage. LLVM bitcode as a target language makes Mull applicable for high-level languages such as C++, Rust, Objective-C,\
+            \ Swift, etc."
+      - language: ru
+        text: "Десятки лет разработчики стремятся к созданию софта, в котором нет багов. Создано много различных подходов\
+            , техник и метрик, которые помогают нам в этом стремлении. Но все ещё есть куда расти: нужны инструменты, кото\
+            рые могут предоставить надежные метрики качества софта.\n\nМутационное тестирование — один из таких инструмент\
+            ов:\nЕсть некая функция и тест для этой функции. Любое семантическое изменение этой функции («мутант») должн\
+            о ломать тест («уничтожать мутанта»). Если тест все ещё проходит, то мы считаем мутанта выжившим. Выжившие мут\
+            анты говорят о том, что либо тест, либо тестируемая функция могут быть улучшены.\n\nЭтот метод не получил широ\
+            кого распространения, несмотря на то, что исследования в этой сфере ведутся с начала семидесятых годов. Однои\
+            ̆ из главных проблем является вычислительная стоимость.\n\nВ этом докладе я хочу представить Mull: систему для\
+            \ мутационного тестирования на основе LLVM.\nИспользование JIT и runtime-компиляции делает эту систему доступн\
+            ой для повседневного использования.\n\nСистема применима для языков которые построены на основе LLVM: C, C++,\
+            \ Objective-C, Rust, Swift, etc."
+    talkDay: 1
+    trackTime: "18:15"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/7DxNas0iJi8U8MQgmKmYy0/765f701baec6cad47dd189e47615fbb2/Alex_Denisov_Mutation_Testing__1_.pdf"]
+    videoLinks: []
+    speakerIds: [871]
+  - id: 478
+    name:
+      - {language: en, text: "Kotlin Puzzlers"}
+    shortDescription:
+      - {language: en, text: "Puzzlers showing the tricky parts and \"gotchas\" of Kotlin."}
+      - {language: ru, text: "Паззлеры, демонстрирующие закавыки и неочевидные нюансы Kotlin."}
+    longDescription:
+      - language: en
+        text: "Kotlin is a marvelous alternative language for the JVM, aiming to improve usability of aging Java. While not\
+            \ exactly new, it has been quickly gaining adoption since its 1.0 release in 2016.\nAnton will give a brief introduction\
+            \ and present Puzzlers of Kotlin — the gotchas that you may encounter while digging deeper into the language.\n\
+            While Kotlin was in development for 6 years, and aimed to be a perfect practical language, like all other languages,\
+            \ it still has tricky parts that you don't find in the documentation."
+      - language: ru
+        text: "Котлин — приятный альтернативный язык для JVM, старающийся улучшить удобство написания кода по сравнению с\
+            \ Java. Хоть он уже не нов, после выпущенной версии 1.0 в 2016 году его используемость стала резко расти.\nАнт\
+            он сделает быстрое вступление и сразу перейдёт к паззлерам — коротким программам на Котлине, которые делают не\
+            \ совсем то, что кажется с первого взгляда. Это будет полезно как и программирующим на языке, так и интересующ\
+            имся им. Новичкам паззлеры помогут узнать о некоторых интересных фичах языка.\nНесмотря на то, что Котлин разр\
+            абатывался в течение 6 лет и даже специально пытался избежать самые известные Java-паззлеры, у него всё равно\
+            \ появились свои закавыки и нюансы, которые не найти в документации."
+    talkDay: 1
+    trackTime: "18:15"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [68, 272]
+  - id: 479
+    name:
+      - {language: en, text: "Modern approach to Android app architecture: RxJava, Kotlin, MVVM"}
+      - {language: ru, text: "Современный подход к архитектуре Android-приложения: RxJava, Kotlin, MVVM"}
+    shortDescription:
+      - {language: en, text: "A store of how happily one can live with DataBindings, RxJava, Kotlin, Firebase cache and Dagger\
+            \ 2 for DI."}
+      - {language: ru, text: "Рассказ о том, как хорошо можно жить, когда у тебя DataBindings, RxJava, Kotlin, кэш на Firebase,\
+            \ DI на Dagger 2."}
+    longDescription:
+      - language: en
+        text: "MVVM in a reactive environment. This talk is about approaching an Android app architecture with a mindset \"\
+            Why should we write excessive code and complicated unsupported structures that are provided by MVP approach\"\
+            .\n\nIt's a story of how happily one can live with DataBindings, RxJava, Kotlin, Firebase cache and Dagger 2 for\
+            \ DI."
+      - language: ru
+        text: "MVVM в реактивном окружении. Выступление полностью посвящено ещё одному взгляду на архитектуру Android-прил\
+            ожения разработчика, который подумал «а зачем писать лишний код и сложные неподдерживаемые конструкции, так ще\
+            дро предоставляемые MVP-подходом».\n\nРассказ о том, как хорошо можно жить, когда у тебя DataBindings, RxJava,\
+            \ Kotlin, кэш на Firebase, DI на Dagger 2."
+    talkDay: 2
+    trackTime: "10:15"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/24i4PeZucwMUIWIA0a8aak/8ca8afe7fb4d614473b2865133f70cc5/Neklyudov_Goncharov_archetype_mobius_2017.pdf"]
+    videoLinks: []
+    speakerIds: [571, 782]
+  - id: 480
+    name:
+      - {language: en, text: "The Mysterious Swift Performance"}
+    shortDescription:
+      - {language: en, text: "Make Swift great again."}
+    longDescription:
+      - language: en
+        text: "This talk is for developers that already know Swift a little, and for the ones who want to learn more about\
+            \ Swift features.\nMarcin is an author of CryptoSwift, and during his research, the speaker has found patterns\
+            \ that make code written in Swift less or more performant. Marcin will discuss the current status of Swift compiler\
+            \ and syntax regarding how the compiler can optimize source code, and how that affects milliseconds in runtime."
+    talkDay: 2
+    trackTime: "10:15"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/1IC645D7EAgU2kOQw6MCQU/ed17655c2555a94b6a3de3103f464c6a/Marcin_Krzyzanowski_-_The_Mysterious_Swift_Performance.pdf"]
+    videoLinks: []
+    speakerIds: [865]
+  - id: 481
+    name:
+      - {language: en, text: "Marvel of Annotation Preprocessing in Java"}
+      - {language: ru, text: "Чудеса обработки Java-аннотаций при компиляции"}
+    shortDescription:
+      - {language: en, text: "Pros, cons and possibilities of annotation preprocessing in Android development."}
+      - {language: ru, text: "Преимущества, недостатки и возможности препроцессинга аннотаций в Android-разработке."}
+    longDescription:
+      - {language: en, text: "Why write code if you can generate all the things? This talk will be a case study about possibilities\
+            \ of annotation preprocessing in Android development. We will look into popular libraries and frameworks that\
+            \ are using annotation preprocessing (Dagger 2, Lombok, ButterKnife, etc), talk about it pros and cons compared\
+            \ with reflection / runtime code generation, and discuss how you can create your own library that will generate\
+            \ boilerplate code at compile time."}
+      - {language: ru, text: "Зачем писать код, если можно его генерировать? Этот доклад рассмотрит возможности обработки\
+            \ аннотаций при компиляции в Android-разработке. Мы посмотрим на популярные библиотеки и фреймворки, использую\
+            щие этот подход (Dagger 2, Lombok, ButterKnife, и т.д.), поговорим о преимуществах и недостатках по сравнению\
+            \ с reflection / генерацией кода во время исполнения, и обсудим, как вы можете создать собственную библиотеку\
+            , которая будет генерировать boilerplate-код при компиляции."}
+    talkDay: 2
+    trackTime: "10:15"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/3tPYYP40HmoGqu2k8KMq6G/dbb301b58635725b5a173db2e00c6698/Alexey_Buzdin_-_Marvel_of_Annotation_in_Java.pdf"]
+    videoLinks: []
+    speakerIds: [864]
+  - id: 482
+    name:
+      - {language: en, text: "Code generation from A to Z"}
+      - {language: ru, text: "Кодогенерация от А до Я"}
+    shortDescription:
+      - {language: en, text: "Code generation is a very powerful tool. Let's use it for fun and profit."}
+      - {language: ru, text: "Кодогенерация — очень мощный инструмент разработки. Так давайте же извлечём из него как можн\
+            о больше профита."}
+    longDescription:
+      - {language: en, text: "Codegeneration is one of the development trends of the latest years, and there are very few\
+            \ projects which use nothing of this list: Dagger2, Butterknife, DataBinding, IcePick, Retrolambda, LoganSquare...\
+            \ For many developers that's all there is to code generation. But it allows to do much more, and this talk will\
+            \ cover its possibilities and code generation instruments, supporting it with practical examples. Topics that\
+            \ will be addressed: Annotation Processing, AspectJ, Bytecode Weaving, Jack Plugins."}
+      - {language: ru, text: "Кодогенерация — один из трендов разработки последних лет, и почти не существует проектов, гд\
+            е не использовалось бы хоть что-то из следующего списка: Dagger2, Butterknife, DataBinding, IcePick, Retrolambda,\
+            \ LoganSquare... Для многих разработчиков на этом кодогенерация и заканчивается: взял библиотеку, написал пару\
+            \ аннотаций и радуешься. Но на самом деле она позволяет делать куда больше, и доклад поведает о возможностях и\
+            \ инструментах для кодогенерации, подкрепляя каждый практическими примерами. Темы, которые будут затронуты: Annotation\
+            \ Processing, AspectJ, Bytecode Weaving, Jack Plugins."}
+    talkDay: 2
+    trackTime: "11:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/6nApLY9IXuKCImSEGAQGkC/958ebb9272fa07e7791179115fdea2cf/__________________________________________________________________________________.pdf"]
+    videoLinks: []
+    speakerIds: [883]
+  - id: 483
+    name:
+      - {language: en, text: "How to achieve 60fps UI rendering on iOS"}
+      - {language: ru, text: "60 fps UI на iOS"}
+    shortDescription:
+      - {language: en, text: "Overview and specific examples of using frameworks that let us achieve maximum rendering speed\
+            \ while creating complex asynchronous layouts."}
+      - {language: ru, text: "Обзор и конкретные примеры использования фреймворков, позволяющих достичь максимальной скоро\
+            сти рендеринга при создании сложных асинхронных layout."}
+    longDescription:
+      - {language: en, text: "The goal of this talk is to solve the rendering of complex UI (in lists and collections in particular)\
+            \ asynchronously without FPS drops. It's no secret that Auto-Layout hangs if the layout is complex, and scrolling\
+            \ of complex lists stops being smooth. Why do Pinterest / Instagram / Facebook / LinkedIn / Buffer / eBay prohibit\
+            \ using .xib, storyboard and Auto Layout? Let's look at the alternative UI frameworks and \"reactive\" iOS layout\
+            \ in order to achieve the quickest possible rendering of the complex components and lists."}
+      - {language: ru, text: "Цель доклада — решить проблему рендеринга сложного UI (в частности в списках и коллекциях) а\
+            синхронно, не теряя FPS. Не секрет что Auto Layout начинает висеть при сложной верстке, а скроллинг сложных сп\
+            исков теряет свою плавность. Почему в Pinterest / Instagram / Facebook / LinkedIn / Buffer / eBay запрещено ис\
+            пользовать .xib, storyboard и Auto Layout? Рассмотрим альтернативные UI фреймворки и \"reactive\" верстку на iOS,\
+            \ чтобы понять, как максимально безболезненно достичь максимально быстрого рендеринга сложных компонентов и сп\
+            исков."}
+    talkDay: 2
+    trackTime: "11:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/3Y4DrercbmQII6eQommSCG/01e77ab748690cb41ee1c4c2d069cb12/____________________________60_FPS__1_.pdf"]
+    videoLinks: []
+    speakerIds: [875]
+  - id: 484
+    name:
+      - {language: en, text: "The horror of mobile graphics"}
+      - {language: ru, text: "Ужасы мобильной графики"}
+    shortDescription:
+      - {language: en, text: "The talk is about the problems of real-time mobile graphics development."}
+      - {language: ru, text: "Доклад о проблемах разработки мобильных приложений с интенсивной графикой реального времени."}
+    longDescription:
+      - {language: en, text: "A generic talk about real time graphics for mobile devices. The difference between Desktop,\
+            \ Console and Mobile GPUs. Fighting bloody battles for every millisecond. The dark present (OpenGL ES) and the\
+            \ bright future (Vulkan) of mobile graphics and more."}
+      - {language: ru, text: "Современные мобильные устройства по уровню «железа» достигли игровых консолей. Почему же уро\
+            вень real-time графики мобильных игр заметно отстаёт от консолей и ПК? Из доклада вы узнаете о неожиданных осо\
+            бенностях разработки мобильной графики с такими современными API, как OpenGL ES и DirectX, о типичных проблема\
+            х и способах их решений. Также о том, как разработчики ведут кровавую войну за каждую миллисекунду и о надежде\
+            \ на светлое будущее в роли графических программных интерфейсов нового поколения Vulkan и Metal."}
+    talkDay: 2
+    trackTime: "11:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/5I4XGCm64gAUqsE4IMwQQC/b37a2d9b5823152313f776cb200b1e0d/____________________________________________________________________.pdf"]
+    videoLinks: []
+    speakerIds: [272]
+  - id: 485
+    name:
+      - {language: en, text: "Cicerone - Navigation in MVP without pain"}
+      - {language: ru, text: "Cicerone - навигация в MVP без боли и слёз"}
+    shortDescription:
+      - {language: en, text: "A talk about the right way to do navigation in Android app with MVP."}
+      - {language: ru, text: "О правильной навигации в Android-приложении с MVP."}
+    longDescription:
+      - language: en
+        text: "This talk will tell about implementing flexible, simple and functional screen navigation while using MVP in\
+            \ Android. It will show how to make navigation code clean and lifecycle-safe, and also how to make any (even the\
+            \ most intricate) chain of screen transitions achievable with a couple of lines of code. It will help with writing\
+            \ unit tests for the transition logic. It will teach how to extend the demostrated approach.\n\nDuring this talk\
+            \ we'll examine specifics of Android architecture in terms of navigation, we'll make up list of requirements for\
+            \ ideal navigation and implement them. Frameworks Flow and Conductor will be mentioned. After all Konstantin will\
+            \ talk about his own library Cicerone."
+      - language: ru
+        text: "Доклад расскажет о реализации гибкой, простой и функциональной навигации по экранам при использовании MVP в\
+            \ Android. Научит, как сделать код навигации чистым и lifecycle-безопасным, а любую, даже самую навороченную ц\
+            епочку переходов по экранам — делом пары строк. Поможет с написанием unit-тестов для логики переходов. Подскаж\
+            ет, как расширять и дополнять представленный подход.\n\nПо ходу доклада будут рассмотрены особенности Android-а\
+            рхитектуры в плане навигации, составлен список требований для идеальной навигации и их реализация. Будут упомя\
+            нуты фреймворки Flow и Conductor. Как итог, Константин расскажет о своей библиотеке Cicerone (Чичероне)."
+    talkDay: 2
+    trackTime: "13:15"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/gvqZQu0qR2YqcEA8ckEA4/1df2068cd61c409ed12563fc65806574/Konstantin_Tskhovrebov_Cicerone_Android_Navigation__1_.pdf"]
+    videoLinks: []
+    speakerIds: [783]
+  - id: 486
+    name:
+      - {language: en, text: "Year of the Xamarin.Forms"}
+    shortDescription:
+      - {language: en, text: "Recent improvements to Xamarin.Forms take it to a whole new level. Let's examine the details!"}
+    longDescription:
+      - language: en
+        text: "It's a running joke that \"the year of the Linux desktop\" is going to be this year/next year. One could make\
+            \ the same joke about Xamarin but... no more!\n\nThis presentation focuses more on Xamarin.Forms and not on the\
+            \ whole Xamarin platform. Recent improvements to both could be compared to transformation from Objective-C to\
+            \ Swift! It's hard to believe that with one click our Xamarin.Forms app can be run on Android, iOS, Windows (Mobile),\
+            \ Tizen and maybe even on Mac. Run natively it should be noted."
+    talkDay: 2
+    trackTime: "13:15"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/2HFthcqR2w0UicEoKECgU6/970508bc3a8545c5083f442a3fd5920f/Piotrowski_Aleksander_Year_of_Xamarin_Forms.pdf"]
+    videoLinks: []
+    speakerIds: [868]
+  - id: 487
+    name:
+      - {language: en, text: "Swift Scripting in Practice"}
+    shortDescription:
+      - {language: en, text: "How to get started with Swift scripting, and how you can use it to become more productive as\
+            \ a Swift app developer."}
+    longDescription:
+      - {language: en, text: "As developers, most of us rely on various scripts & tools to get our job done — whether that’\
+            s custom build tools, scripts to handle localization or resources, or using various tools like Fastlane, CocoaPods\
+            \ and Carthage. Historically, most of these tools have been written in languages like Ruby, Python or shell scripting,\
+            \ but with Swift we now have the opportunity to use same same fantastic language that we use to build our apps,\
+            \ to easily create our own scripts & tools as well. In this talk, John will show you how to get started with Swift\
+            \ scripting, and how you can use it to become more productive as a Swift app developer."}
+    talkDay: 2
+    trackTime: "13:15"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/1WldEqxwOwEmc8w44w8Gwi/21264fb9b4a4e957b9eb0b874c583c6b/SwiftScripting.pdf"]
+    videoLinks: []
+    speakerIds: [869]
+  - id: 488
+    name:
+      - {language: en, text: "ConstraintLayout all the things!"}
+    shortDescription:
+      - {language: en, text: "ConstraintLayout is a new layout for Android platform — and it's mature enough so it's time\
+            \ to start using it."}
+    longDescription:
+      - language: en
+        text: "ConstraintLayout recently got to the 1.0 version, so it’s time to give it attention. It seems to be similar\
+            \ to RelativeLayout, but has more features, some say that performance is better too, and the tooling in new versions\
+            \ of Android Studio is also cool.\n\nThis talk will not only show you how to use ConstraintLayout and how to how\
+            \ to convert apps to it, but will also dig deep into layout itself to see how it actually works, why it's better\
+            \ than nested layouts and even how to make animations using it!"
+    talkDay: 2
+    trackTime: "14:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/w8yoOn0pa0w0MOQ8yeAu6/1f703688ff94a64ee9ac06575d7506db/Piotrowski_Aleksander_ConstraintLayout_all_the_things_.pdf"]
+    videoLinks: []
+    speakerIds: [868]
+  - id: 489
+    name:
+      - {language: en, text: "The energy saving mode, iBeacon and MFi"}
+      - {language: ru, text: "Режим сбережения энергии, iBeacon’ы и MFi"}
+    shortDescription:
+      - {language: en, text: "About Energy Saving tools, BLE-devices and advanced iBeacons integration."}
+      - {language: ru, text: "Об энергосбережении, BLE-устройствах и продвинутой работе с iBeacon."}
+    longDescription:
+      - {language: en, text: "The talk is dedicated to research on unusual usage of iBeacons, crafting custom trackers and\
+            \ energy saving while working with BLE. We will have a look at energy saving tools, go over the most common mistakes\
+            \ and come up with best practices."}
+      - {language: ru, text: "Доклад посвящён исследованию нетривиальных способов использования iBeacon, созданию собствен\
+            ных «маячков» и оптимизации работы с BLE на стороне девайса. Посмотрим на инструменты энергосохранения, разбер\
+            ём самые частые ошибки, и в итоге определим best practices."}
+    talkDay: 2
+    trackTime: "14:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/6EiOuomCROy8kOCO2YuOQm/6797dcecae62ad45e7024e1c915a14c8/Vadim_Drobinin_____iBeacons_and_Energy_Saving__1_.pdf"]
+    videoLinks: []
+    speakerIds: [880]
+  - id: 490
+    name:
+      - {language: en, text: "Measuring UX in an iOS app"}
+      - {language: ru, text: "Измеряем UX в iOS приложении"}
+    shortDescription:
+      - {language: en, text: "The ways you can measure the user interaction within your app, and the reasons you need to."}
+      - {language: ru, text: "Какими способами можно измерить взаимодействие пользователя внутри приложения, и зачем это н\
+            ужно."}
+    longDescription:
+      - language: en
+        text: "Developers are afraid of swizzling and for that reason they avoid extending the existing components of UIKit.\
+            \ Which is a pity because doing it can tell a lot about your users: for example, do they miss when tapping on\
+            \ a button, or what part of a table do they spend the most time in.\nThis talk examines the ways you can measure\
+            \ the user interaction within the app, and why do you need it to begin with."
+      - language: ru
+        text: "Разработчики боятся свизлинга, поэтому не расширяют существующие компоненты UIKit. А жаль, ведь именно они\
+            \ могут сказать всё о вашем пользователе: например, попадает ли он по кнопке, или в какой части вашей таблицы\
+            \ проводит больше всего времени.\nДоклад посвящён тому, какими же способами можно измерить взаимодействие поль\
+            зователя внутри приложения, и зачем это нужно."
+    talkDay: 2
+    trackTime: "14:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/3wtvStHHxeqa4UCW8O0QOA/a97dded7a7c92549dd62783166de40ac/Zimin_____UX_Analytics.pdf"]
+    videoLinks: []
+    speakerIds: [867]
+  - id: 491
+    name:
+      - {language: en, text: "Let's think architecture through"}
+      - {language: ru, text: "Давайте думать над архитектурой"}
+    shortDescription:
+      - {language: en, text: "We’ll talk about which architectural approach would be better for an iOS app and why."}
+      - {language: ru, text: "Порассуждаем о том, какой архитектурный подход будет лучшим для iOS-приложения и почему."}
+    longDescription:
+      - {language: en, text: "This talk tackles the problem of choosing an architectural approach for an iOS app. We'll consider\
+            \ the solutions that are currently popular (MassiveVC, MVVM, VIPER) and see how they meet the needs of everyday\
+            \ work, and we'll also analyze the bigger picture."}
+      - {language: ru, text: "Затронем проблему выбора архитектурного подхода для iOS приложений. Рассмотрим наиболее расп\
+            ространённые решения (MVC, MVVM, VIPER) с точки зрения критериев, которые могут быть важны в повседневной разр\
+            аботке, и проанализируем общую картину."}
+    talkDay: 2
+    trackTime: "15:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/3Qizdia5puy6ig2KK6w8Co/7647c5d83f83efbf6b5b382e6f09ba8a/_________________________________________________________________________________________.pdf"]
+    videoLinks: []
+    speakerIds: [870]
+  - id: 492
+    name:
+      - {language: en, text: "Writing truly testable code"}
+      - {language: ru, text: "Пишем действительно тестируемый код"}
+    shortDescription:
+      - {language: en, text: "This talk will cover how to write code that can be tested easily. We will also talk about how\
+            \ to introduce testing to an existing not-test-ready codebase."}
+      - {language: ru, text: "Поговорим о том, как писать код, который не больно покрывать тестами, и как к этому прийти."}
+    longDescription:
+      - language: en
+        text: "Many developers understand why testing is so important, but not everyone is writing tests on a daily basis.\
+            \ One of the most common issues is that it’s hard to test a codebase that was not designed to be testable. This\
+            \ talk will cover how to write code that can be tested easily. We will also talk about introducing testing to\
+            \ an existing not-test-ready codebase. \nWhile things like Android, MVP, Kotlin, and Rx will be used in examples,\
+            \ understanding of these technologies is not strictly required. Also, the approach itself is generic enough to\
+            \ be used on any platform or with any language."
+      - language: ru
+        text: "Многие разработчики уже понимают необходимость покрывать код тестами, но ещё далеко не все начали это делат\
+            ь. Одна из наиболее частых проблем — сложность покрытия тестами кода, при написании которого тестируемость не\
+            \ закладывалась в архитектуру. На докладе поговорим о том, как закладывать тестируемость в архитектуру нового\
+            \ кода, а также как рефакторить и покрывать тестами код, который изначально не был к этому готов.\nНесмотря на\
+            \ то, что доклад будет упоминать Android, MVP, Kotlin и Rx в примерах, знание этих технологий / языков / подхо\
+            дов не обязательно для понимания доклада, а подход, о котором мы поговорим, может быть применён далеко за их п\
+            ределами."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/4nlQd0WYwoIYwY0s0Sqakg/d6c14d5e14e4a6b3858f977a04665883/Anton_Rutkevich_Writing_truly_testable_code.pdf"]
+    videoLinks: []
+    speakerIds: [879]
+  - id: 493
+    name:
+      - {language: en, text: "Toothpick: a fresh approach to Dependency Injection on Android"}
+    shortDescription:
+      - {language: en, text: "Introduction of Toothpick and how its scopes/scope annotations can solve advanced use cases\
+            \ when developing Android apps."}
+    longDescription:
+      - language: en
+        text: "You find RoboGuice simple but slow? And you think Dagger 1 & 2 are fast but complex and bloated? Toothpick\
+            \ is the best of both worlds!\n\nToothpick is a scope tree based, runtime but reflection free implementation of\
+            \ JSR 330. It is pure Java, with a special focus on Android.\n\nToothpick is fast (even faster than Dagger 2 in\
+            \ some cases!) and is simpler to use, with less boilerplate code. Its syntax is very close to Guice. It supports\
+            \ named dependencies, lazy dependencies, providers, and has built-in support for custom scopes. As compared to\
+            \ Dagger 2, Toothpick provides more powerful testing support, allowing you to leverage DI to mock dependencies\
+            \ using either mockito or easymock.\n\nIts explicit scope tree helps developers to build more robust apps. It\
+            \ provides more fine grained control to easily implement complex user flows that span multiple activities or state\
+            \ preservation across configuration changes (e.g. rotations), a common issue when implementing the MVP pattern.\n\
+            \nDuring this talk there will be an introduction of Toothpick, its main features and how it compares to other\
+            \ DI libs. The talk will explain how Toothpick scopes and scope annotations can solve advanced use cases when\
+            \ developing Android apps."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/6UKvbI0m1acyEqy8sgSGeq/3b5d079dc53704d24cb2a76da6786b45/Stephane_Nicolas-Toothpick.pdf"]
+    videoLinks: []
+    speakerIds: [873]
+  - id: 494
+    name:
+      - {language: en, text: "MVP — typical tasks and approaches to solving them in Moxy"}
+      - {language: ru, text: "MVP — типичные задачи и способ их решения в Moxy"}
+    shortDescription:
+      - {language: en, text: "How to love MVP again with the help of Moxy, and why this library is so easy to use?"}
+      - {language: ru, text: "Как снова полюбить MVP с помощью Moxy, и почему эта библиотека легка в использовании?"}
+    longDescription:
+      - {language: en, text: "Lately the MVP adoption is going through the roof, as the number of approaches to its implementation.\
+            \ But not all the approaches are equally good. This talk will examine the challenges that appear in implementing\
+            \ MVP, their solutions, and how they can be avoided. After that you'll be able to love MVP again using Moxy, or\
+            \ take ideas from Moxy and use them by your own."}
+      - {language: ru, text: "Популярность MVP в последнее время зашкаливает, как и число подходов к его реализации. Однак\
+            о не все подходы одинаково хороши. В докладе будут разобраны проблемы, возникающие при имплементации MVP, их р\
+            ешения, а также рассказано, как их можно избежать с помощью Moxy. После этого доклада вы сможете вновь полюбит\
+            ь MVP, используя Moxy, или взять идеи из Moxy и применить их в своём решении."}
+    talkDay: 2
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/6CzIKq8x7qCuiSKkscoeO4/25d22b4cc5266ce2e5f7634fdf47bdb1/________________________MVP_-______________________________________________________________________Moxy.pdf"]
+    videoLinks: []
+    speakerIds: [881]
+  - id: 495
+    name:
+      - {language: en, text: "Appium: Automation for Apps"}
+    shortDescription:
+      - {language: en, text: "The talk is about writing cross-platform native-mobile, hybrid, and web application UI automation\
+            \ using Appium."}
+    longDescription:
+      - {language: en, text: "The tools and practices refined over the last decade by web developers have not crossed over\
+            \ easily into the mobile community. Mobile devs have been without tools like continuous integration and automated\
+            \ testing, which enable delivery of high-quality apps more rapidly. A key piece of the solution for mobile is\
+            \ Appium, an open-source, cross-platform, language-agnostic mobile automation framework you can use to write automated\
+            \ UI tests for Android and iOS apps (native, hybrid, web), to be run on emulators or devices. In this talk Dan\
+            \ along with an audience will explore the philosophy that underlies the work behind Appium, including the open-source\
+            \ nature of Appium’s diverse, active and friendly community. Then, after a brief explanation of the technology\
+            \ that powers Appium, Dan will move into the technical portion of the talk, where attendees will see easy it is\
+            \ to write Appium scripts using the WebDriver protocol in their favorite language."}
+    talkDay: 2
+    trackTime: "17:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/3Tc4JfHh8AAQCQyWiKyiqE/336ac185e342654b9c73644d05db5706/DanCuellar-AppiumAutomationforApps__1_.pdf"]
+    videoLinks: []
+    speakerIds: [634]
+  - id: 496
+    name:
+      - {language: en, text: "Analyze this"}
+      - {language: ru, text: "Анализируй это"}
+    shortDescription:
+      - {language: en, text: "This talk is about the possibilities of static code analysis tools and usage of such tools in\
+            \ iOS development."}
+      - {language: ru, text: "Доклад о пользе статических анализаторов кода, их возможностях и о нюансах их использования\
+            \ в iOS-проектах."}
+    longDescription:
+      - language: en
+        text: "We as developers spend at least half of our work time finding and fixing bugs. Since this is not the most pleasant\
+            \ task we try to avoid it by writing unit tests, doing code reviews or even switching to strongly typed languages.\
+            \ Static code analysis is another way to reduce the number of bugs in our projects which helps us find mistakes\
+            \ that are invisible to compilers.\n\nThis talk is about the most popular static analysis tools for iOS development.\
+            \ We're going to discuss how these tools work, which problems do they solve, how can you integrate them into your\
+            \ development cycle, how to write custom analysis rules."
+      - language: ru
+        text: "Как минимум половину своего рабочего времени разработчики занимаются поиском и исправлением багов. Занятие\
+            \ это не очень приятное, и мы стараемся всячески его избегать: пишем unit-тесты, проводим code review, переход\
+            им на языки со строгой типизацией. Статический анализ кода — ещё один способ уменьшить число багов в наших про\
+            ектах, позволяющий найти ошибки, невидимые для компиляторов.\n\nДоклад посвящён наиболее популярным статически\
+            м анализаторам кода для iOS. Будет рассказано, как ими пользоваться, какие проблемы они решают, как внедрить и\
+            х в ваш привычный цикл разработки, как писать для них свои правила. После доклада слушатели, ещё не успевшие п\
+            лотно поработать со статическими анализаторами кода, смогут быстро к этому приступить."
+    talkDay: 2
+    trackTime: "17:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/6EKvllgosoygOsMkUMiAUE/a54d029fe8c4b5eea7d682dc496d1ed1/Sergey_Krapivenskiy_-_Analyze_this.pdf"]
+    videoLinks: []
+    speakerIds: [878]
+  - id: 497
+    name:
+      - {language: en, text: "How to turn your app into a product"}
+      - {language: ru, text: "Как сделать из вашего приложения продукт"}
+    shortDescription:
+      - {language: en, text: "What's the difference between just another app and a product that becomes integral to people's\
+            \ lives? Expect perspective-altering insights, tasty tech tips and a whole load of Star Wars references."}
+      - {language: ru, text: "В чём разница между «ещё одним приложением» и продуктом, который становится важнейшей частью\
+            \ человеческой жизни? Ожидайте масштабных откровений, сочных технических советов и кучу отсылок к «Звёздным во\
+            йнам»."}
+    longDescription:
+      - language: en
+        text: "So you're sitting with friends having drinks when suddenly it strikes you — an amazing idea for an app! You\
+            \ know it's going to be the next big disruptor. You start practicing your power poses for the cover of TIME magazine.\n\
+            \nYou spend months making it work. You become a zombie, a person possessed, not sleeping, surviving on a champion's\
+            \ diet of caffeine and Cheetos. Exhausted, you finally deliver your app baby into the world. And then…Nothing.\
+            \ No reviews, no Sergey Brin shaking your hand and telling you you're like the son he never had. Sure, users are\
+            \ coming and downloading the app but they're leaving quickly without so much as making you pancakes in the morning.\
+            \ No pillow talk. Nothing. What happened? Is it something you said? Why they are not staying?\n\nAt this talk\
+            \ Yonatan will pass on his expertise from years of successful development and share insights into how to make\
+            \ an app truly great. How can you know what users are doing in your app? How much time do you have to showcase\
+            \ your app? What's the difference between just another app and a product that becomes integral to people's lives?\n\
+            \nExpect perspective-altering insights, tasty tech tips and a whole load of Star Wars references."
+      - language: ru
+        text: "Как-то вы отдыхаете с друзьями, и тут вас внезапно осеняет — потрясающая идея для мобильного приложения! Вы\
+            \ знаете, что она станет следующей революцией. Вы начинаете оттачивать позы для обложки TIME.\n\nВы проводите\
+            \ месяцы за работой. Вы превращаетесь в зомби, одержимого человека, не спите, живёте на кофе и чипсах. В измож\
+            дённом состоянии вы выпускаете своё детище в мир. А затем… Ничего. Ни обзоров, ни слов Сергея Брина «ты мне ка\
+            к сын». Да, пользователи скачивают приложение, но затем покидают вас, даже не приготовив завтрак на прощание.\
+            \ Никаких разговоров по душам. Что случилось? Вы что-то не то сказали? Почему они не остаются?\n\nВ этом докла\
+            де Йонатан поделится своим многолетним опытом успешной разработки, передав знания, позволяющие сделать приложе\
+            ние по-настоящему отличным. Как можно узнать, что пользователи делают в твоём приложении? Сколько есть времени\
+            \ для того, чтобы продемонстрировать пользователю его возможности? В чём разница между «ещё одним приложением»\
+            \ и продуктом, который становится важнейшей частью человеческой жизни?\n\nОжидайте масштабных откровений, сочн\
+            ых технических советов и кучу отсылок к «Звёздным войнам»."
+    talkDay: 2
+    trackTime: "18:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/7xVqvEYv1SqUa4muKAGEeW/259282941fa13927266daf44031860ea/Mobius-_From_app_to_product.pdf"]
+    videoLinks: []
+    speakerIds: [565]
