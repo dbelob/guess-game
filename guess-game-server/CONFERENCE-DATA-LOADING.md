@@ -224,9 +224,9 @@
         <td rowspan="2">2020<br>(2020-spb-sptdc)</td>
         <td rowspan="2"></td>
         <td rowspan="2">2020<br>(2020-techtrain)</td>
-        <td rowspan="2"></td>
-        <td rowspan="2"></td>
-        <td rowspan="2"></td>
+        <td rowspan="2">2020</td>
+        <td rowspan="2">2020</td>
+        <td rowspan="2">2020</td>
     </tr>
     <tr>
         <td>2020&nbsp;Spb<br>(2020-spb-cpp)</td>
