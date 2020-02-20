@@ -226,6 +226,24 @@ public class ConferenceDataLoader {
                 String destinationFileName = resourceSpeaker.getFileName();
                 s.setFileName(destinationFileName);
 
+                if ((resourceSpeaker.getTwitter() != null) && !resourceSpeaker.getTwitter().isEmpty() &&
+                        ((s.getTwitter() == null) || s.getTwitter().isEmpty())) {
+                    s.setTwitter(resourceSpeaker.getTwitter());
+                }
+
+                if ((resourceSpeaker.getGitHub() != null) && !resourceSpeaker.getGitHub().isEmpty() &&
+                        ((s.getGitHub() == null) || s.getGitHub().isEmpty())) {
+                    s.setGitHub(resourceSpeaker.getGitHub());
+                }
+
+                if (resourceSpeaker.isJavaChampion() && !s.isJavaChampion()) {
+                    s.setJavaChampion(true);
+                }
+
+                if (resourceSpeaker.isMvp() && !s.isMvp()) {
+                    s.setMvp(true);
+                }
+
                 if (ImageUtils.needUpdate(sourceUrl, destinationFileName)) {
                     urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
                 }
