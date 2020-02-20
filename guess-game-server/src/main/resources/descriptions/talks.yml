@@ -3884,3 +3884,515 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/203XicJ3qwswqIkUAUK2Kg/2d801136b6a0551d0422002479f19b16/Rex_Black_a________Keynote__Stupid_Metrics_Tricks_and_How_to_Avoid_Them.pdf"]
     videoLinks: ["https://youtu.be/gZrhbMpnxSA?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
     speakerIds: [641]
+  - id: 381
+    name:
+      - {language: en, text: "ECMAScript: latest and upcoming features"}
+    shortDescription:
+      - {language: en, text: "In this talk, Axel will give an overview of the latest features that were added to ECMAScript,\
+            \ the JavaScript language standard. He will also show what features will probably be added next."}
+    longDescription:
+      - {language: en, text: "In this talk, Axel will give an overview of the latest features that were added to ECMAScript,\
+            \ the JavaScript language standard. He will also show what features will probably be added next."}
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3Wtdonv1aoWq6GgMWsOmO0/aafff034449f44d200292cc7bcf161b3/Axel_Rauschmayer___ECMAScript_a_______latest_and_upcoming_features.pdf"]
+    videoLinks: []
+    speakerIds: [753]
+  - id: 382
+    name:
+      - {language: en, text: "Approaches to modern web applications"}
+      - {language: ru, text: "Как подойти к современным веб-приложениям"}
+    shortDescription:
+      - {language: en, text: "Nikita and attendees will consider the architecture of modern single-ClojureScript-application\
+            \ with real-time synchronization. The goal is to find inspiration for new approaches that might as well be applied\
+            \ in JavaScript."}
+      - {language: ru, text: "Никита и слушатели разберут архитектуру современного одностраничного ClojureScript-приложени\
+            я с real-time синхронизацией. Цель — найти вдохновение для новых подходов, которые с таким же успехом применим\
+            ы в JavaScript."}
+    longDescription:
+      - language: en
+        text: "Web is not only page. People make web applications, and people want to use the web-based applications.\n\n\
+            Yes, web technology are well, but web applications are a serious undertaking. Applications work with a lot of\
+            \ data, tricky logic, impressive interfaces. People expect from applications a responsiveness during a bad connection,\
+            \ correctness, collaboration. They saw that Google Docs may this, and they also want it. But how to make Google\
+            \ Docs and do not get tired?\n\nThe talk answers the question: how to organize the architecture to a) do b) modern,\
+            \ c) a non-trivial web application and d) not get exhausted? Where to begin? What are the main parts? How can\
+            \ they look like? \nNikita will consider possible data models, rendering, synchronization, event log, server-side\
+            \ rendering, teamwork and work offline. Applications demand approach. Good, bad, thorough — even meaningful. The\
+            \ talk is about the approach."
+      - language: ru
+        text: "Веб — это не только странички. Люди делают в вебе приложения, и люди хотят пользоваться веб-приложениями.\n\
+            \nДа, с веб-технологиями всё хорошо, но веб-приложения — это уже серьезная затея. Приложения работают с горами\
+            \ данных, хитрой логикой, впечатляющими интерфейсами. Люди ждут от приложений отзывчивости при плохой связи, к\
+            орректности, совместной работы (раз уж мы все равно в интернете). Они видели, что Google Docs это может, и тож\
+            е этого хотят. Только как сделать Google Docs и не устать?\n\nДоклад отвечает на вопрос: как организовать архи\
+            тектуру, чтобы а) сделать, б) современное, в) нетривиальное веб-приложение и г) не надорваться? С чего начать\
+            ? Какие основные части? Как они могут выглядеть? \nНикита рассмотрит возможные модели данных, рендеринга, синх\
+            ронизации, лога событий, серверного рендеринга, совместной работы и работы оффлайн. Приложения требуют подхода\
+            . Хорошего, плохого, основательного — хотя бы осмысленного. Этот доклад — про подходы."
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/3OjrzqA0JymAUEMiEA4KIO/bc8fa61d56eb52f56092947b424838db/Nikita_Prokopov_-_Approaches_to_modern_web_applications.pdf"]
+    videoLinks: []
+    speakerIds: [705]
+  - id: 383
+    name:
+      - {language: en, text: debugger;}
+    shortDescription:
+      - {language: en, text: "How the developers loose connection with the outside world."}
+      - {language: ru, text: "Как разработчики теряют связь с внешним миром."}
+    longDescription:
+      - language: en
+        text: "debugger is not just a JavaScript statement. It’s the possibility to have a breakpoint, stop and look around.\
+            \ Look around to understand what is going on. Why that or another solution does not work or works differently\
+            \ from what we have expected.\nEvery project we deal with as developers will be used by users. But as developers,\
+            \ and especially JavaScript developers, far too often we are placed in the exclusive context of the tasks we solve\
+            \ at this very moment without paying attention to what happens around us, without thinking about how our work\
+            \ will be used in the end product. The modern developer has to be a craftsman: he has to know how to choose material,\
+            \ handle it and present a product, suitable for this particular user or this particular user group.\nDuring this\
+            \ talk Denis will try to set debugger; for yourselves: look around and understand what is going on in the world\
+            \ of our “materials” that we should be using in our work like design, UX, psychology. Also speaker along with\
+            \ the audience will try to understand why, in addition to everything else, a modern developer has to understand\
+            \ these as well."
+      - language: ru
+        text: "Что помогает разработчику стать профессионалом? Постоянное чтение статей, твиттов и посещение тематических\
+            \ конференций? Кодинг 24/7? А может, это что-то другое, не связанное с разработкой вообще?\n\nКогда зрители см\
+            отрят на работу профессионального фокусника, они сконцентрированы на чем-то одном и не замечают, что именно в\
+            \ этот момент и происходит фокус — основное действие, скрытое от глаз. Так и разработчики, находясь в контекст\
+            е задач, решаемых в данный момент, не имеют ни возможности, ни желания выходить за рамки этих задач. Разработч\
+            ики не желают познавать смежные дисциплины, такие как дизайн и UX, не хотят слушать про пользователей и психол\
+            огию на JavaScript конференциях. Разрабочтки попросту не считают это необходимым.\n\nНазвание доклада «debugger;»\
+            \ — это не просто команда, известная любому JavaScript разработчику. Это не брейкпоинт в коде. Это и есть возм\
+            ожность остановиться и понять фокус, наконец увидеть, что происходит вокруг. Но в отличие от кода, в данном до\
+            кладе будет запущен debugger; для нас самих."
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [261]
+  - id: 384
+    name:
+      - {language: en, text: "A circular firing squad: How technologies drag frontend down"}
+      - {language: ru, text: "Лебедь рак и щука: как технологии тянут фронтенд на дно"}
+    shortDescription:
+      - {language: en, text: "Everyone had written a library or framework. But does everyone answer to the question: \"Why?\"\
+            \ Is modern world looks like closet with bicycles? Let's throw away the skeletons and try to understand."}
+      - {language: ru, text: "Каждый когда-нибудь писал библиотеку или фреймворк. Но каждый ли отвечал на вопрос: «А зачем\
+            ?» Похож ли современный мир на чулан с велосипедами и граблями? Раздвигаем пыль и сор и пытаемся разобраться."}
+    longDescription:
+      - language: en
+        text: "Twitterati rules today's world of frontend: popularity equals life. On the one hand, this is good: you can\
+            \ write your own application without spending money and \"rock the world.\" And on the other hand — now the frontend\
+            \ world is like a line of the famous song: \"There are nine million bicycles ...\" Is it good or bad? That's what\
+            \ is going to be figured out.\n\nWhat is a life cycle of technology and is the world really ruled by secret backstage;\
+            \ do React developers really have the highest salaries? In what direction the frontend world goes? In this session,\
+            \ listeners of the talk will see the most interesting examples of frameworks and hear the answers to these and\
+            \ other questions."
+      - language: ru
+        text: "В современном мире фронтенда правит твиттерократия: что популярнее, то и живее. С одной стороны, это хорошо\
+            : можно написать своё собственное приложение, которое без особых затрат буквально «взорвёт мир». А с другой —\
+            \ сейчас мир фронтенд-разработчиков напоминает строчку известной песни: \"There are nine million bicycles...\"\
+            \ Хорошо это или плохо? \n\nЧто такое жизненный цикл технологии и правит ли миром тайное закулисье, зарабатыва\
+            ют ли разработчики на React больше всего денег? Как и куда идёт мир фронтенда? Во время доклада слушателей жду\
+            т примеры самых интересных фреймворков и ответы на эти и другие вопросы."
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [701]
+  - id: 385
+    name:
+      - {language: en, text: "How modern libraries and frameworks work with DOM"}
+      - {language: ru, text: "Как современные библиотеки и фреймворки работают с DOM"}
+    shortDescription:
+      - language: en
+        text: "This talk is for those who are interested to learn how modern libraries and frameworks work with the DOM; for\
+            \ those who do not have enough time to explore each of them independently.\nThemes will be discussed: VirtualDOM\
+            \ in React, Dirty Checking in Angular.js, Data Binding in Ember, Change Detectors in Angular2, Updating Opcodes\
+            \ in Glimmer 2."
+      - language: ru
+        text: "Доклад для тех, кому интересно узнать, как современные библиотеки и фреймворки работают с DOM; для тех, ком\
+            у не хватает времени исследовать каждый из них самостоятельно.\nВ докладе будет затронуто: VirtualDOM в React,\
+            \ Dirty Checking в Angular.js, Data Binding в Ember, Change Detectors в Angular2, Updating Opcodes в Glimmer 2."
+    longDescription:
+      - language: en
+        text: "Everyone knows that React uses VirtualDOM. Some people know how this VirtualDOM looks like. But few people\
+            \ know how the comparison of the two versions VirtualDOM is realised, as calculating the minimum required mutations.\
+            \ The same situation with Angular: many of us know about it, but for other people is a mystery how a change of\
+            \ the object's properties is converted into a DOM change.\n\nThis talk is for those who are interested to learn\
+            \ how modern libraries and frameworks work with the DOM; for those who do not have enough time to explore each\
+            \ of them independently. Themes will be discussed: VirtualDOM in React, Updating Opcodes in Glimmer 2, Change\
+            \ Detectors in Angular2."
+      - language: ru
+        text: "Все знают, что React использует в работе VirtualDOM. Некоторые представляют, как этот VirtualDOM выглядит.\
+            \ Но мало кто знает, как происходит сравнение двух версий VirtualDOM и вычисление минимально необходимых мутац\
+            ий. То же с Angular: о его существовании знают многие, но как изменение свойства в объекте преобразуется в изм\
+            енение DOM для многих остаётся загадкой.\n\nДоклад для тех, кому интересно узнать, как современные библиотеки\
+            \ и фреймворки работают с DOM; для тех, кому не хватает времени исследовать каждый из них самостоятельно. В до\
+            кладе будет затронуто: VirtualDOM в React, Updating Opcodes в Glimmer 2, Change Detectors в Angular2."
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1qpWqK0BF2aI0mSKmuqy86/63d68412bb4582ecde32482903065ef4/Viacheslav_Slinko_-_How_modern_libraries_and_frameworks_work_with_DOM.pdf"]
+    videoLinks: []
+    speakerIds: [760]
+  - id: 386
+    name:
+      - {language: en, text: "Web applications: fractioning monolith"}
+      - {language: ru, text: "Веб-приложения: дробим монолит"}
+    shortDescription:
+      - {language: en, text: "While mobile apps try to become as lightweight as web pages, web apps increasingly resemble\
+            \ behemoths. Victor will talk about his own experiments in decomposing web apps into fine-grained pieces with\
+            \ explicit versioning and dependencies."}
+      - {language: ru, text: "В то время, как мобильные приложения стремятся стать лёгкими, как веб-страницы, веб-приложен\
+            ия становятся всё толще. Виктор расскажет о собственных экспериментах с разделением веб-приложений на компонен\
+            ты с версионированием и явно прописанными зависимостями."}
+    longDescription:
+      - language: en
+        text: "Today's Web \"pages\" increasingly turn into complex web apps with lots of code, data and other resources (styles,\
+            \ pics, you name it). For such an app, how can we deal with code versioning, updates, caching (appcache, service\
+            \ workers, zeit.co)?\n\nGoogle plans to modularize mobile apps (instant apps) to be lightweight like Web pages.\
+            \ Meanwhile, a Web page utilizing a couple frameworks looks as lightweight as a hippo.\n\nWhat kind of technology\
+            \ can sync code as well as data?\nBoth code and data may reside in browser's memory, browser-side cache, network\
+            \ cache, CDN, on a prod server, staging server or a developer's own dear laptop. \nHow can we modularize a Web\
+            \ app and deal with components flexibly? How can we version and update them?\n\nI will report on my experiments\
+            \ that may (or may not) give us some leads in answering that many questions."
+      - language: ru
+        text: "Когда в вебе оказываются уже не страницы, а долгоживущие сложные приложения, возникают вопросы управления в\
+            ерсиями, апдейтов, кэширования (appcache, service workers, zeit.co).\n \nВедь веб-приложение, использующее пач\
+            ку модных фреймворков, уже напоминает бегемота. И это в то время, когда Google пытается «распилить» мобильные\
+            \ приложения на кусочки (instant apps), чтобы они были лёгкими, как веб-страницы!\n\nИ код веб-приложения, и д\
+            анные могут быть одновременно в памяти у браузера, в кэше браузера же, в HTTP-кэше, в CDN, на проде, на машине\
+            \ разработчика. Причём везде разные версии. Допустим, мы разобрались с синхронизацией данных. Можем ли мы теми\
+            \ же инструментами синхронизировать код, компоненты, стили, ресурсы?\n\nДокладчик расскажет об экспериментах с\
+            \ «распиливанием» веб-приложений на маленькие куски с отдельными историями версий и явно прописанными зависимо\
+            стями — что из этого получилось и кто же из животных пострадал при съёмках этого фильма (да, хомячок)."
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6b6yocEZqgkms0omC2EKU2/23a2b87c370059e86f0ceafec03ba161/holy-msk.pdf"]
+    videoLinks: []
+    speakerIds: [697]
+  - id: 387
+    name:
+      - {language: en, text: "Logux, new way to connect client and server"}
+      - {language: ru, text: "Logux — новый способ связи клиента и сервера"}
+    shortDescription:
+      - {language: en, text: "Review of new ideas to replace AJAX-REST. How we could reduce code lines and bring out-of-box\
+            \ live data updates and offline editing."}
+      - {language: ru, text: "Андрей Ситник сделает обзор новых идей, которые могут заменить AJAX-REST, чтобы сократить ко\
+            личество кода, дать «из коробки» автообновление и поддержку редактирования в оффлайне."}
+    longDescription:
+      - language: en
+        text: "We got a great tools for client JS and for backend. But between them we have old AJAX-REST. It works great\
+            \ for our tasks in past, but web applications become more complicated.\nAndrey Sitnik, creator of PostCSS and\
+            \ Autoprefixer, will overview new ideas in client-server communications and announce start his new open source\
+            \ project.\nHow we could take Relay and Swarm.js ideas and goes further? What operation log synchronization could\
+            \ reduce code lines and bring out-of-box live updates and offline editing?"
+      - language: ru
+        text: "Мы создали отличные фреймворки для клиентского JS и бэкенда. Но между ними мы используем старые AJAX и REST.\
+            \ Они прекрасно служили нам раньше, но веб-приложения становятся всё более сложными.\nАндрей Ситник, создатель\
+            \ PostCSS и Автопрефиксера, рассмотрит новые идеи в связи клиента и сервера, которые он хочет заложить в своём\
+            \ новом опенсорс-проекте.\nКак мы можем взять идеи Relay и Swarm.js и развить их? Как синхронизации лога опера\
+            ций позволит сократить количество кода и дать «из-коробки» автообновление и поддержку редактирования в оффлайн\
+            е?"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [653]
+  - id: 388
+    name:
+      - {language: en, text: "Offline is the new Black"}
+    shortDescription:
+      - {language: en, text: "The network is inherently unstable. Connection failures happen to everybody on a semi-regular\
+            \ basis, and can be very frustrating. Making your web application offline compatible is extremely beneficial for\
+            \ your users. Not only are connection failures taken care of, loading performance of your application is very\
+            \ fast after the first load."}
+    longDescription:
+      - {language: en, text: "Max and listeners will examine the benefits of offline web applications, before jumping straight\
+            \ in and looking at AppCache and ServiceWorker. This talk is perfect for any developer with web development experience,\
+            \ as every website can be taken offline. It will be especially beneficial for single-page application developers,\
+            \ seeing as making those offline compatible is very easy."}
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/7JtLWND1QcS8AGKiyOMiwG/df1cc309d1ae6b7d60c885dd85ecab18/offline-is-then-new-black.pdf"]
+    videoLinks: []
+    speakerIds: [758]
+  - id: 389
+    name:
+      - {language: en, text: 3L3M3NT5}
+    shortDescription:
+      - {language: en, text: "In this mind-bending talk, Martin will explain how to use the unknown aspects of JavaScript\
+            \ to make something new: little games, small tools, and beautiful demos — all in just a bunch of bytes and out\
+            \ of nothing."}
+    longDescription:
+      - {language: en, text: "This session is about the curiosity that drives us forward. It focuses on the new possibilities\
+            \ of JavaScript and how creative coders are using them. Which are the core elements of the language? What happens,\
+            \ if we reduce them to the minimum? And how can we puzzle them together, in the most unexpected way?"}
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/66MGrpJhaE2YumkUeACowY/b245e84a8aee6c62ed984b1cafbb9cea/Martin-Kleppe_3L3M3NT5.pdf"]
+    videoLinks: []
+    speakerIds: [757]
+  - id: 390
+    name:
+      - {language: en, text: "WebVR is the next frontier"}
+    shortDescription:
+      - {language: en, text: "The new possibilities that WebVR brings to the web by enabling Virtual Reality for JavaScript\
+            \ developers"}
+    longDescription:
+      - language: en
+        text: "Virtual Reality is upon us: Oculus Rift, HTC Vive, Samsung Gear and Google Cardboard are just a few of the\
+            \ available options to dive into virtual environments.\n\nThe web as the most low-barrier option for sharing and\
+            \ exploring content shall not lack behind and luckily thanks to WebGL and WebVR we have standards to unlock this\
+            \ new universe as well, using web technologies.\n\nThis talk shows how you can start exploring this new world\
+            \ using JavaScript and what challenges, what new possibilities and what new developments you can get from it."
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3pqKcOn67uAmmcOooqOa6U/82fa7fb3dff4bb031fa1d3d7ff233fca/Martin_Splitt_-_WebVR_-_the_next_frontier.pdf"]
+    videoLinks: []
+    speakerIds: [654]
+  - id: 391
+    name:
+      - {language: en, text: "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Serverless Chatbots"}
+    shortDescription:
+      - language: en
+        text: "A talk about what could happen if the wrong person combine multiple buzzwords and press the wrong button —\
+            \ and it played the situation for laughs.\nThe main goal of this talk is to analyze 2 popular buzzwords — serverless\
+            \ and chatbots; combine them with node.js and simple NLP and show how easy is to build useful chatbots with insignificant\
+            \ cost of the infrastructure."
+    longDescription:
+      - language: en
+        text: "A talk about what could happen if the wrong person combine multiple buzzwords and press the wrong button —\
+            \ and it played the situation for laughs.\nThe main goal of this talk is to analyze 2 different and at the moment\
+            \ popular buzzwords — serverless and chatbots; combine them with node.js and simple NLP and show how easy is to\
+            \ build useful chatbots with insignificant cost of the infrastructure.\nTalk will contain following:\n— Introduction\
+            \ to serverless and AWS Lambda, and explanation why and what it is useful for.\n— Introduction to chatbots including\
+            \ a short history, an overview of the currently available platforms and a short intro to NLP.\n— Combining that\
+            \ in a practical example that shows how to develop a chatbot with node.js and simple NLP and how to deploy it\
+            \ to AWS Lambda for a fraction of the cost of a classical server infrastructure and in some cases for $0/month."
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1WMFErbKO0muAmMwoOWGaA/c240315f0a44feff038cb94d67085732/SlobodanStojanovic_DrStrangeloveOrHowILearnedToStopWorryingAndLoveTheServerlessChatbots-2.pdf"]
+    videoLinks: []
+    speakerIds: [726]
+  - id: 392
+    name:
+      - {language: en, text: "Modular CSS"}
+      - {language: ru, text: "Модульный CSS"}
+    shortDescription:
+      - {language: en, text: "How frontend-developers can avoid CSS’s bad parts, embrace good ones and even create a better\
+            \ tooling for CSS by combining the power of JavaScript using PostCSS and webpack."}
+      - {language: ru, text: "Как избежать большинства проблем и улучшить методы и инструменты для работы с CSS на больших\
+            \ проектах, используя JavaScript, PostCSS и webpack."}
+    longDescription:
+      - language: en
+        text: "Nowadays, lots of JavaScript frameworks and UI libraries are focusing on building UI components. With the rise\
+            \ of ES2015 modules and modern build tools, frontend-developers are now able to split their JavaScript codebase\
+            \ into smaller pieces that encapsulate their behavior and logic. And yet many projects are still putting generic\
+            \ class names and selectors into a huge CSS file. The fact is, styles are a part of components and deserve to\
+            \ be treated same way we treat JS. CSS deserves to be scoped and modular and have better tools that improve the\
+            \ developer experience.\nThis talk does a short retrospective of the problems developers have with how they write,\
+            \ organize and bundle CSS and how they can improve it by using a better folder structure, naming conventions and\
+            \ local scope, post-processors like PostCSS and bundlers like webpack. Andrey will tell, how by combining the\
+            \ power of JavaScript and AST, developers can avoid CSS’s bad parts, embrace good ones and even use it to create\
+            \ a better tooling for CSS."
+      - language: ru
+        text: "Практически все современные JS-фреймворки построены вокруг изолированных UI-компонентов. С популяризацией с\
+            истемы модулей ES2015 мы научились разбивать фронтенд на отдельные JS-компоненты. При этом подавляющее большин\
+            ство проектов продолжает использовать глобальные таблицы стилей в одном огромном файле. Но стили — это неотъем\
+            лемая часть UI-компонента. Они достойны такого же внимания, как и JS-код. CSS достоин быть модульным и иметь б\
+            олее удобные инструменты для разработчиков, чтобы перестать быть поводом для насмешек.\nЭтом доклад кратко рас\
+            скажет о текущих проблемах CSS для фронтенд-разработчиков и о возможных путях их решения, используя PostCSS и\
+            \ Webpack. Андрей расскажет, как, используя возможности JavaScript и AST, избежать большинства проблем и улучш\
+            ить методы и инструменты для работы с CSS на больших проектах."
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6l0ov5ckpOUeaYOIAScuIc/ee1ccd4771084d490efb3a334a262417/Andrey_Okonetchnikov_-_Modular_CSS.pdf"]
+    videoLinks: []
+    speakerIds: [754]
+  - id: 393
+    name:
+      - {language: en, text: "Handmade remote (dev)tools"}
+      - {language: ru, text: "Remote (dev)tools своими руками"}
+    shortDescription:
+      - {language: en, text: "Remote developer tools, what's inside, what are the problems and how avoid them. Thoughts about\
+            \ the future of remote devtools and their impact on development processes."}
+      - {language: ru, text: "Удаленные инструменты разработки (remote devtools), которые работают в браузере: их устройст\
+            во, какие сложности и как их решать. А также о том, что может дать дальнейшее развитие темы удаленных инструме\
+            нтов для процесса разработки."}
+    longDescription:
+      - language: en
+        text: "Sooner or later there is a need for our own tools, because existing tools don't fit out needs, or there is\
+            \ a technical specific of the project. Development of tools that work in a browser is a challenge, but also we\
+            \ often need them to work remotely (out of page). And that's all scares a lot, because developer has much to do\
+            \ and much to understand how it works. But what if most of the problems have already been solved by someone and\
+            \ you can only focus on main goals of your tool? What if such tool will be able to work in any WebView, whether\
+            \ it is built into the browser, editor or another application on the same or another device?\nThe talk is about\
+            \ remote tools: what are the difficulties and how to avoid them, how to stop being afraid and start making your\
+            \ own tools for your own needs and technology stack."
+      - language: ru
+        text: "Рано или поздно возникает необходимость в собственных инструментах по разным причинам: либо не хватает гото\
+            вых, либо есть какая-то особенность в проекте. Разработка инструментов, работающих в браузере, является непрос\
+            той задачей. Самое сложное — чтобы они умели работать удаленно, вне страницы. Это многих пугает — нужно много\
+            \ сделать и во многом разобраться. Но если большая часть проблем уже решена, и можно сосредоточиться лишь на о\
+            сновной функции инструмента? Что если такие инструменты смогут работать в произвольном WebView, будь оно встро\
+            ено в браузер, редактор или другое приложение на любом устройстве?\nВ своём докладе Роман расскажет про удалён\
+            ные инструменты: какие есть сложности и как их обойти, как перестать бояться и начать делать инструменты под с\
+            вои задачи и технологический стек."
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [685]
+  - id: 394
+    name:
+      - {language: en, text: "Debugging Node.js in Production"}
+    shortDescription:
+      - {language: en, text: "Node.js doesn’t require much to get started. But as with any other platform, you will run into\
+            \ issues like scalability, memory leaks, or slow requests. This talk covers the top Node.js performance issues,\
+            \ and will guide you through how to solve them."}
+    longDescription:
+      - {language: en, text: "This talk will cover the most common sources of performance issues in Node.js applications.\
+            \ It will introduce the audience to the tools needed for debugging performance problems in Node.js. Along with\
+            \ an audience, Thomas will go through the most common performance issues and bottlenecks and show how to discover,\
+            \ debug and solve them."}
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/2UgTARoNfG6gYyw2y2A4SG/30ad30533cfd053f6f86548589c8c8b7/Thomas_Watson_-_Debugging_Node.js_in_Production.pdf"]
+    videoLinks: []
+    speakerIds: [683]
+  - id: 395
+    name:
+      - {language: en, text: "Building Interactive npm Command Line Modules"}
+    shortDescription:
+      - {language: en, text: "The objective is for the audience to walk away being able to either 1) improve their existing\
+            \ command line application or 2) write some amazing interactive applications of their own, or 3) both \\o/ !"}
+    longDescription:
+      - language: en
+        text: "Here you are coding away, when you realize you are in desperate need of a quick shell script to get your project\
+            \ cleaned up. You are standing at a fork in the road: Bash or Node? You choose the road less travelled by (for\
+            \ some reason) — Node. Irina congratulates you on this decision. You have written it, you may have published it,\
+            \ and it certainly works. But what now? Is this all a command line module Node is good for: a project clean up\
+            \ and some data manipulation?\n\nAlong with an audience, Irina is going to take a step further and make a command\
+            \ line module that's more than just your compiling script. Irina, of course, means making it more interactive.\
+            \ In this talk, she wants to take listeners on an adventure that will require cunning, bravery, and maybe some\
+            \ magic. Irina along with attendees will walk through obtaining and parsing data, using Node's process functions,\
+            \ and finally improving the module's user experience."
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [762]
+  - id: 396
+    name:
+      - {language: en, text: "Rich text editing with Draft.js"}
+    shortDescription:
+      - {language: en, text: "Rich text editing is super hard. In this talk we are going to explore the structure and concepts\
+            \ of Draft.js - React based rich text editing framework. At Facebook it powers status updates, comments & notes.\
+            \ Others used it to build editors matching Medium’s experience. Nick will give a glance on Draft.js architecture,\
+            \ so you could build your own."}
+    longDescription:
+      - language: en
+        text: "Rich text editing is super hard. Many developers nowadays don't build rich text experiences and if they do\
+            \ they are very limited. This is because rich text editing is inherently hard and features like the HTML attribute\
+            \ contenteditable are broken. Only few companies like Medium provide a solid solution, but they never open sourced\
+            \ it.\n\nDraft.js was released earlier this year and is a rich text editing framework that fixes contenteditable\
+            \ and syncs the DOM to a immutable data-structure. This allows you to control the rendering with React components\
+            \ as well as manipulating the content in nice and sane way.\n\nIn the talk Nik will explain how the data-structure\
+            \ works and show how decorators, block renderers and style-maps can be used to create features like @-mentions,\
+            \ drag & drop images, linkify or hashtags and combine them in one editor."
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1rVBvaJvpOAeimKOakC2sK/f54551db199543d2ef2d6cd1753f1674/Nikolaus_Graf__Rich_text_editing_with_Draft.js.pdf"]
+    videoLinks: []
+    speakerIds: [755]
+  - id: 397
+    name:
+      - {language: en, text: "Koa and middleware evolution"}
+      - {language: ru, text: "Koa и эволюция middleware"}
+    shortDescription:
+      - {language: en, text: "Middleware evolution from Express to Koa and why Koa is just not another web framework."}
+      - {language: ru, text: "История эволюции middleware от Express к Koa, и почему Koa не просто еще один веб-фреймворк."}
+    longDescription:
+      - {language: en, text: "It has been long time since TC39 promised to free us from the callback hell the first time.\
+            \ Currently, promises are the most common way to solve the problem of organizing asynchronous code. Meanwhile,\
+            \ the V8 team announced their plans to natively support async functions. In his talk Eugene will cover the differences\
+            \ between Koa v1, which uses generators, and the next version, which is based on async/await approach. For getting\
+            \ the idea behind Koa, Eugene will dive into the history of JS and try to figure out how language evoulution affects\
+            \ middleware-based web frameworks. Also, in this talk you will see some real Koa use cases, performance benchmarks\
+            \ and discover why async functions are not replacment for generators."}
+      - language: ru
+        text: "Комитет по развитию джаваскрипта TC39 давно обещает избавить нас от колбек-ада. И пока промисы — это самой\
+            \ известный способ решения проблем с организацией асинхронного кода, команда V8 объявила о плане на нативные async/await.\
+            \ Это означает, что до выхода из беты второй версии фреймворка Koa ждать осталось недолго.\nВ докладе Евгений\
+            \ расскажет, чем отличаются прошлая версия Koa, использующая генераторы, от последней, в которой сделана ставк\
+            а на async/await. Чтобы лучше понять контекст, состоится погружение в историю и будет показано, как с развитие\
+            м возможностей JavaScript эволюционировала идея веб-фреймворков основанных на middleware. Попутно Евгений расс\
+            кажет о производительности и реальных кейсах, а также почему все-таки async/await полностью не вытеснят генера\
+            торы."
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/7CSsUvLVxmCWogsMCYYmck/05cf14c3627ddef869355fa208d07e32/koa-evolution-pshenichnyy-holyjs.pdf"]
+    videoLinks: []
+    speakerIds: [756]
+  - id: 398
+    name:
+      - {language: en, text: "Why you should care about Elm?"}
+    shortDescription:
+      - {language: en, text: "Frontend development can be painful, but it shouldn’t be. Based on real world experience, it\
+            \ will be explored how the Elm language’s design leads to reliable and maintainable code, before learning how\
+            \ you can use Elm yourself."}
+    longDescription:
+      - language: en
+        text: "Ensuring bug-free code in JavaScript is challenging, even when devoting considerable resources to testing,\
+            \ and this is partially due to fundamental elements of the JavaScript language design. As an alternative to JavaScript,\
+            \ the Elm language alleviates these issues by incorporating the essence of libraries like React and Redux while\
+            \ adding the advantages of pure functional programming and type inference. This results in code with increased\
+            \ reliability and maintainability, and furthermore yields an improved developer experience.\nUsing own experience\
+            \ from months of building real world components, Tereza will explain why Elm’s design guides you towards well-architectured\
+            \ apps, sharing code and insights, so you can get an impression of the Elm life, while arming you for the gotchas\
+            \ you may encounter in the quest to make your life one too."
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3J6GgXC2PC8swuEAEi8aKK/737ee2d2b870ed56cc832938d8d3a208/Tereza_Sokol_-_A_little_closer_to_frontend_bliss_with_Elm.pdf"]
+    videoLinks: []
+    speakerIds: [761]
+  - id: 399
+    name:
+      - {language: en, text: "The web is mutating"}
+      - {language: ru, text: "Мутация web"}
+    shortDescription:
+      - {language: en, text: "The web technologies we implemented and the results Pavel's team has got."}
+      - {language: ru, text: "Веб-технологии и результаты их внедрения на реальном примере."}
+    longDescription:
+      - language: en
+        text: "Pavel will tell about the web. Nowadays the web isn't just web site. Every day web resources are becoming something\
+            \ more. They can look like native application, save a state, remind about changes, know about your location and\
+            \ work without the internet.\nPavel will tell how his team has used service worker for offline mode, progressive\
+            \ web app for devices, amp for google search and web sockets for text broadcasts."
+      - language: ru
+        text: "В своем докладе Павел расскажет про то, что веб сейчас — это не просто сайт. С каждым днём ресурсы в интерн\
+            ете становятся чем-то большим. Их можно преподнести как нативное приложение, они могут хранить свое состояние\
+            , уведомлять вас об изменениях, знать, где вы находитесь, и работать без интернета.\nОн расскажет, как его ком\
+            анда использовала технологию service worker для оффлайн режима, progressive web app для устройств, amp для пои\
+            ска google и web sockets для текстовых трансляций."
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/4o5NUKOz2gisoGgMKYGUgy/0dd1f1d9b5f5e6fd336e977791b5eb81/Pavel_Kondratenko-The_web_is_mutating.pdf"]
+    videoLinks: []
+    speakerIds: [759]
+  - id: 400
+    name:
+      - {language: en, text: "Sharing files and data with friends using a P2P shared folder powered by javascript"}
+    shortDescription:
+      - {language: en, text: "Javascript, P2P, open source, mad science."}
+    longDescription:
+      - {language: en, text: "Mathias will talk about his latest project — fully open source, 100% P2P implementation of a\
+            \ modular \"dropbox\" written in Javascript. A shared folder where multiple people can share files with each other\
+            \ by simple dropping them, no matter how large. Mathias will tell about the technical aspects of this and make\
+            \ a bunch of demos. In addition, he'll show the implications of this for modern data science workflows."}
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1oAMAU2BducsGEkOaKsSE2/7d9bfb0d05d01e113716dbe393d6f31c/slides.pdf"]
+    videoLinks: []
+    speakerIds: [725]

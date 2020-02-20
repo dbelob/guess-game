@@ -163,6 +163,24 @@ events:
   # HolyJS
   - eventTypeId: 4
     name:
+      - {language: en, text: "HolyJS 2016 Msc"}
+      - {language: ru, text: "HolyJS 2016 Мск"}
+    startDate: "2016-12-11"
+    endDate: "2016-12-11"
+    siteLink:
+      - {language: en, text: "https://2016.holyjs-moscow.ru/en/"}
+      - {language: ru, text: "https://2016.holyjs-moscow.ru/"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Europe Square 2, Hotel «Radisson Slavyanskaya»"}
+      - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8IDythQu3ZJPqnvuSXQF8MV
+    mapCoordinates: "55.741881, 37.568099"
+    talkIds: [381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400]
+  - eventTypeId: 4
+    name:
       - {language: en, text: "HolyJS 2019 Msk"}
       - {language: ru, text: "HolyJS 2019 Мск"}
     startDate: 2019-11-08
