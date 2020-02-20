@@ -3349,3 +3349,538 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/pWfw6sgK2c2Mm24AOmsKq/f523d02ee56941e73d845f7cee1d989c/Jesse_Liberty_Whats_New_in_C__7-2.pdf"]
     videoLinks: ["https://youtu.be/-9if_VSMW5A?list=PLtWrKx3nUGBfBfOUlIA4xEF5MRzk9UbCQ"]
     speakerIds: [493]
+  - id: 361
+    name:
+      - {language: en, text: "No Such Thing as Manual Testing and Other Confusions"}
+    shortDescription:
+      - {language: en, text: "The talk in its essence is a clarification of common confusions and an offer of a richer model\
+            \ of what software testing is."}
+    longDescription:
+      - language: en
+        text: "Software Testing is a young discipline and as with many new things, it is not yet fully understood. Is software\
+            \ testing a technical problem to be solved by engineering solutions? What exactly is the goal of testing? What\
+            \ can you do to become a world-class tester?\n\nA world-class tester understands that we are confronted with a\
+            \ techno-human system and that our goal as testers is to extract and deliver information about the product in\
+            \ a way that help stakeholders to make the right decisions. Having said that, it does not make a lot of sense\
+            \ to distinguish between manual and automated testing as this categorization is not very helpful. Ilari Henrik\
+            \ Aegerter presents a model of software testing that takes both engineering and social aspects into consideration.\
+            \ A lively discussion during the presentation is very welcome."
+    trackTime: "10:20"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/2Yig3VcWykg4C2S6uEWUqK/5983e2581f821559ccc80deba42eb63d/Aegerter.pdf"]
+    videoLinks: ["https://youtu.be/IKx5xTtR1pU?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [638]
+  - id: 362
+    name:
+      - {language: en, text: "Testing: from bad code to the best practices"}
+      - {language: ru, text: "Тестирование: от г****кода к лучшим практикам"}
+    shortDescription:
+      - {language: en, text: "Testing: from bad code to the best practices"}
+      - {language: ru, text: "Подходы и инструменты тестирования частей современных веб-приложений: бизнес-логики, веб-сер\
+            исов и компонентов UI."}
+    longDescription:
+      - {language: en, text: "Testing: from bad code to the best practices"}
+      - {language: ru, text: "В докладе будет рассказано, как происходит процесс разработки и тестирования веб-приложений\
+            \ в компании SAP China от идеи и до успешно реализованного проекта. Практические примеры использования инструм\
+            ентов mocha, karma, enzyme и supertest, рекомендации и богатая коллекция собранных граблей. Как внедрить разра\
+            ботчикам привычку писать тесты и применить полученные знания в старом крупном проекте без единой строчки тесто\
+            вого кода — всё это в докладе."}
+    trackTime: "11:25"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/2kBvaPD4ksSOaeQieMEi8Q/e32d382492515bc462019501a66c524e/Yury_Dymov_-_Testing.pdf"]
+    videoLinks: ["https://youtu.be/bKUuJmvshoE?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [538]
+  - id: 363
+    name:
+      - {language: en, text: "Full-Cycle Testing of Dockerized Microservices"}
+      - {language: ru, text: "Полный цикл тестирования микросервисов в Docker контейнерах"}
+    shortDescription:
+      - {language: en, text: "How to design a test framework, to test microservices, to use opportunities of Jenkins 2."}
+      - {language: ru, text: "Как спроектировать свой тестовый фреймворк, тестировать микросервисы, использовать возможнос\
+            ти Jenkins 2."}
+    longDescription:
+      - {language: en, text: "How to design a test framework, to test microservices, to use opportunities of Jenkins 2."}
+      - language: ru
+        text: "Цель доклада — познакомить слушателей с примером организации автоматического тестирования микросервисов. Ан\
+            дрей и Дмитрий расскажут, как использовать для этого Gradle, Docker, Jenkins Pipeline, Allure Report.\nДоклад\
+            \ описывает следующие проблемы и их решения:\nУправление состоянием тестовых окружений;\nЗапуск компонентных т\
+            естов для микросервиса (Docker + Gradle);\nОсобенности проектирования тестового фреймворка в большой команде;\n\
+            Построение Jenkins Pipeline для полного цикла тестирования и деплоя;\nСоздание агрегированного отчета с исполь\
+            зованием Allure Report."
+    trackTime: "11:25"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/ioEQTb2tQkeWs44swKMoI/1078dc1c26edecaa5b931eddae766f68/Andrey_Smirnov.pdf"]
+    videoLinks: ["https://youtu.be/pAMxJ2xGqMw?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [648, 646]
+  - id: 364
+    name:
+      - {language: en, text: "Appium: Automation for Apps"}
+    shortDescription:
+      - {language: en, text: "This talk will cover the philosophy of Appium and how you can use it to write reliable automation\
+            \ for your mobile applications"}
+    longDescription:
+      - {language: en, text: "The tools and practices refined over the last decade by web developers have not crossed over\
+            \ easily into the mobile community. Mobile devs have been without tools like continuous integration and automated\
+            \ testing, which enable delivery of high-quality apps more rapidly. A key piece of the solution for mobile is\
+            \ Appium, an open-source, cross-platform, language-agnostic mobile automation framework you can use to write automated\
+            \ UI tests for Android and iOS apps (native, hybrid, web), to be run on emulators or devices. In this talk Dan\
+            \ along with an audience will explore the philosophy that underlies the work behind Appium, including the open-source\
+            \ nature of Appium’s diverse, active and friendly community. Then, after a brief explanation of the technology\
+            \ that powers Appium, Dan will move into the technical portion of the talk, where attendees will see easy it is\
+            \ to write Appium scripts using the WebDriver protocol in their favorite language."}
+    trackTime: "11:25"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/1pnzs1cO5CE64K4kEaU0K6/b994a859b981a75a43349252cd3b2194/Dan_Cuellar_a_______Appium-_Automation_for_Apps.pdf"]
+    videoLinks: ["https://youtu.be/WIuaT6nV9C4?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [634]
+  - id: 365
+    name:
+      - {language: en, text: "Test Automation: Do the Same but Better"}
+      - {language: ru, text: "Автотесты: такие же, но лучше"}
+    shortDescription:
+      - {language: en, text: "Unit tests are not only for developers."}
+      - {language: ru, text: "Модульные тесты — это не только для разработчиков."}
+    longDescription:
+      - {language: en, text: "There are various approaches to writing automated tests: unit tests, API calls, acceptance.\
+            \ QA teams are mostly doing acceptance one, rarely integration or API. Unit tests are usually counted as “development\
+            \ thing”. Using simple synthetic but the real example, Igor along with an audience will to understand how each\
+            \ test automation approach looks like and what proc and cons are. There will be almost no theory, only practice\
+            \ ready to be applied to your project afterward. The code will be written in Ruby, but Ruby knowledge is not really\
+            \ required to understand the presentation: only a desire, engineering attitude, and a basic understanding of web\
+            \ technologies."}
+      - {language: ru, text: "Автоматические тесты бывают разными: модульные, интеграционные, приёмочные. Зачастую QA кома\
+            нды берут на себя лишь приёмочные, иногда интеграционные, говоря о том, что модульные тесты особенные и должны\
+            \ писаться разработчиками. На лабораторном, но живом примере будет выяснено, так ли это и какие плюсы и минусы\
+            \ несёт в себе каждый из подходов к автоматизации тестирования. Теории практически не будет — чистая практика\
+            \ и готовность к применению результата после. Игорь и слушатели доклада будут писать код на Ruby, но для поним\
+            ания происходящего знания конкретного языка не потребуется: лишь желание, пытливый инженерный ум и базовое пон\
+            имание того, как работает web."}
+    trackTime: "12:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1NpLbYD43qkWCAmqSEuwwm/94e2bd04a8eb4643020c51b997967dd4/Igor_Khrol_-_Test_Automation_Do_the_Same_but_Better.pdf"]
+    videoLinks: ["https://youtu.be/JYY_52DTJqs?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [635]
+  - id: 366
+    name:
+      - {language: en, text: "Performance testing pitfalls"}
+      - {language: ru, text: "Подводные камни в нагрузочном тестировании"}
+    shortDescription:
+      - {language: en, text: "The talk will highlight typical JMeter pitfalls and provide hints to manage them."}
+      - {language: ru, text: "Доклад от том, какие типичные ошибки/проблемы возникают в нагрузочном тестировании и о том,\
+            \ как их возникновение предотвращать."}
+    longDescription:
+      - language: en
+        text: "To run a load test is enough simply. But launch without an analysis is just waste of time. Analysis reveals\
+            \ something from what it is necessary to repeat measurement. For example, the response time was good, and it turned\
+            \ out in the detailed analysis that all pages showed error 404. At the beginning of the test times are good, and\
+            \ then they are not at all. Or even so: JMeter shows that “everything is fine”, but in reality, the load has not\
+            \ been fed for half an hour. It happens that in general everything is fine, but there are unpleasant omissions.\
+            \ How to analyze the causes of omissions? How to understand on what data do they appear?\n\nThe talk will consider\
+            \ typical pitfalls appearing while testing enterprise applications, and solutions to these problems. The talk\
+            \ is built on JMeter example, but many of the approaches can be applied with the same success to other instruments.\
+            \ Vladimir will tell in what the average differs from the 90% line, how a coordinated omission prevents measure\
+            \ response times, and teach ways to circumvent the typical problems encountered during measuring performance."
+      - language: ru
+        text: "Запустить нагрузочный тест — дело нехитрое. Но запуск без анализа — время на ветер. При анализе выявляется\
+            \ такое, от чего приходится повторять замер. Например: времена отклика получились хорошее, а при детальном ана\
+            лизе оказалось, что все страницы показывали 404-ую ошибку. В начале теста времена хорошие, а потом вообще ника\
+            кие. Или даже так: JMeter показывает, что «всё замечательно», а в реальности нагрузка не подавалась полчаса. Б\
+            ывает, что в целом всё хорошо, но есть неприятные выбросы. Как анализировать причины выбросов? Как узнать, на\
+            \ каких данных они возникают? И на этот вопрос будет рекомендация.\n\nВ докладе будут рассмотрены типичные под\
+            водные камни при тестировании enterprise приложений и варианты решения этих проблем. Доклад построен на пример\
+            е JMeter, но многие подходы могут с тем же успехом применяться и к другим инструментам. Владимир расскажет, че\
+            м среднее отличается от 90% line, как coordinated omission мешает измерять времена отклика, и научит способам\
+            \ обхода типичных проблем, возникающих при замере производительности."
+    trackTime: "12:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/61LdoC0hOMqUuYOcSQyiwy/d3332fc5d39cd524bac9b0643d9caad9/____________________________N_____________N_________________________-_____________________________N_________________________.pdf"]
+    videoLinks: ["https://youtu.be/3PWBBc7rZxw?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [25]
+  - id: 367
+    name:
+      - {language: en, text: "QA Battle: PageObjects with (JDI) vs. without (Selenide) typisation"}
+      - {language: ru, text: "QA Battle: PageObjects c типизацией (JDI) vs. без типизации (Selenide)"}
+    shortDescription:
+      - {language: en, text: "About two different ways in UI Automation."}
+      - {language: ru, text: "О двух разных подходах к автоматизации тестирования UI"}
+    longDescription:
+      - language: en
+        text: "Why typified elements (like Buttosn, Images, Checkboxes, Links)  are bad practice in UI tests? Or non typified\
+            \ elements (like SelenideElement for ´em all!) are rather bad? What are the best practices in writing PageObjects\
+            \ and UI tests? Is it better to have predefind Objects hierarchy or not? \nThis is the first time when on QA arena\
+            \ gladiators Roman and Alexey will battle between forces of Selenide and JDI!"
+      - language: ru
+        text: "Почему типизированные элементы (Button, Image, Checkbox, Link) в UI тестах — зло? Или не типизированные (SelenideElement\
+            \ for ´em all!) ещё хуже? Как правильно писать PageObjects и тесты с ними? Удобно иметь иерархию предопределен\
+            ных объектов или нет? Краткость — сестра таланта, или простота хуже воровства? \nВпервые на арене (гладиаторск\
+            ой, не думайте) QA-конференции состоится баттл между силами Selenide и JDI! Приходите на битву и решите своими\
+            \ голосами, какая из концепций уйдет со щитом, а какая — в историю."
+    trackTime: "12:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/15sh7DVByWA6YIyYCeMOQC/1d25a057ce54c333fb84c2bb85d3e45e/QA_Battle_PageObjects_with__JDI__vs._without__Selenide__typisation.pdf"]
+    videoLinks: ["https://youtu.be/iX7ptfdpJXY?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [616, 286]
+  - id: 368
+    name:
+      - {language: en, text: "Distributed performance testing — full stack automation"}
+      - {language: ru, text: "Распределённое нагрузочное тестирование — автоматизируем полностью"}
+    shortDescription:
+      - {language: en, text: "Session covers architecture and tooling used for distributed performance testing automation."}
+      - {language: ru, text: "Алексей расскажет об архитектуре и инструментарии, использованном для автоматизации распреде\
+            лённого нагрузочного тестирования."}
+    longDescription:
+      - {language: en, text: "Session covers architecture and tooling used for distributed performance testing automation."}
+      - language: ru
+        text: "Чтобы протестировать производительность кластера, зачастую нужен ещё один для подачи нагрузки. Распределённ\
+            ое нагрузочное тестирование таит в себе много подводных камней — от управления распределённой средой до сбора\
+            \ результатов тестирования.\nДоклад расскажет о фреймворке для автоматизации распределённых нагрузочных тестов\
+            \ для Java-приложений.\nЭлементы фреймворка находятся в свободном доступе под лицензией Apache 2.0."
+    trackTime: "13:50"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/6U1cZ3S2xamyqSqaqGMOG4/9b51765fc94cc28f49c8e2f1ceef756f/Alexey_Ragozin_-_Distributed_performance_tetsing_-_full_stack_automation.pdf"]
+    videoLinks: ["https://youtu.be/n6YyDl3P2vg?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [21]
+  - id: 369
+    name:
+      - {language: en, text: "Randomized testing"}
+      - {language: ru, text: "Рандомизированное тестирование"}
+    shortDescription:
+      - {language: en, text: "How to speed up tests and improve coverage, writing less code."}
+      - {language: ru, text: "Как ускорить тесты и улучшить покрытие, написав меньше кода."}
+    longDescription:
+      - language: en
+        text: "Everyone is used to see in tests user John with the last name Doe. However, our applications are used by D'Artagnan,\
+            \ and 李小龙 (Bruce Lee), and many others.\nIn this talk, Stanislav will discuss how randomization helps to consider\
+            \ a variety of options and combinations of data, while reducing the amount of code. Listeners will see examples\
+            \ of generating on *the fly* not only the test data, but also the behavior."
+      - language: ru
+        text: "Все привыкли в тестах видеть пользователя Васю с фамилией Пупкин. Однако, пользуются нашими приложениями и\
+            \ Д’Артаньяны, и 李小龙 (Брюс Ли), и многие другие.\nВ докладе Станислав обсудит, как рандомизация помогает учиты\
+            вать множество вариантов данных и их комбинаций, при этом сократить количество кода. Слушатели увидят примеры\
+            , генерирующие на лету не только тестовые данные, но и поведение."
+    trackTime: "13:50"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/18hGKZb9T6CGU82scGseA6/e041aae2065ee5f47c8cf457fb77d659/Stanislav_Bashkyrtsev_-_Randomized_testing.pdf"]
+    videoLinks: ["https://youtu.be/cA_A-BSqT50?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [605]
+  - id: 370
+    name:
+      - {language: en, text: "Testing Juno Android app with ❤️: CI, Unit, Integration & Functional (UI) tests. 100% Kotlin,\
+            \ 90%+ RxJava, Spek, JUnit, DSL for UI tests"}
+      - {language: ru, text: "Тестирование Android–приложения Juno с ❤️: CI, Unit, Integration и Functional (UI) тесты. 100%\
+            \ Kotlin, 90%+ RxJava, Spek, JUnit, DSL для UI тестов"}
+    shortDescription:
+      - {language: en, text: "Artem and Orkhan will tell, how automated testing works in Juno Android applications: what technologies,\
+            \ libraries and frameworks are used by guys, why they use them and how this all is integrated with CI (+ Docker)."}
+      - {language: ru, text: "Слушатели получат понимание того, как можно устроить полномасштабное тестирование Android пр\
+            иложения, чтобы итоговый продукт было не страшно релизить в любое время, особенно под натиском задач из беклог\
+            а в стартапе."}
+    longDescription:
+      - language: en
+        text: "Atrem and Orkhan will tell, how automated testing works in Juno Android applications: what technologies, libraries\
+            \ and frameworks are used by guys, why they use them and how this all is integrated with CI (+ Docker).\n\nYou\
+            \ may ask: why there are two speakers for one talk? Because Artem is one of the developers and Orkhan is QA at\
+            \ Juno who actively automates his work"
+      - language: ru
+        text: "Артём и Орхан расскажут, как устроено автоматическое тестирование Android-приложения Juno: какие технологии\
+            , библиотеки и фреймворки применяют ребята, почему именно их и как всё это интегрировано с CI (+Docker).\n\nПо\
+            чему докладчиков двое? Потому что Артём — один из разработчиков, а Орхан — QA, который очень активно автоматиз\
+            ирует свою работу."
+    trackTime: "13:50"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/6fK9bLD8xUquwIg8iYKi8O/7d833b333cf02d43ab784bf7a9a33d22/Artem_Zinnatullin___Orkan_Guseynov_-_Testing_Juno_Android_app_with__CI.pdf"]
+    videoLinks: ["https://youtu.be/WKJRIDN9R_8?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [645, 647]
+  - id: 371
+    name:
+      - {language: en, text: "“Good” & \"Baaaaad\" versions of run Selenium WebDriver tests in parallel"}
+      - {language: ru, text: "«Хорошие» и «плохие» варианты параллельного запуска Selenium WebDriver тестов"}
+    shortDescription:
+      - {language: en, text: "Parallel run of Automated tests is not just a wish, but a real necessity, standard task which\
+            \ sooner or later any project meets. Sometimes, parallel run becomes very difficult or even not possible task.\
+            \ How to avoid that situation? What recommendations are used for paralleling tests, what tools are better to use\
+            \ and what architecture for automated tests should be chosen at the beginning? Anton will try to answer all those\
+            \ pertinent questions and of course will look at a ton of examples to consolidate the proposed material. Plus\
+            \ TRIZ inversion."}
+      - {language: ru, text: "Параллельный запуск Selenium WebDriver тестов: «Что такое хорошо и что такое плохо»."}
+    longDescription:
+      - language: en
+        text: "Parallel run of Automated tests is not just a wish, but a real necessity, standard task which sooner or later\
+            \ any project meets. Sometimes, parallel run becomes very difficult or even not possible task. How to avoid that\
+            \ situation? What recommendations are used for paralleling tests, what tools are better to use and what architecture\
+            \ for automated tests should be chosen at the beginning? Anton will try to answer all those pertinent questions\
+            \ and of course will look at a ton of examples to consolidate the proposed material.\n\nAnton has already talked\
+            \ about \"good\" ways of parallel run of automated tests. He will start from the opposite and talk about 10 ways\
+            \ of \"bad\" — hard, slow, expensive, not effective parallel run of tests on real examples. The discussion is\
+            \ devoted to failed approaches, detailed argumentation and recommendations how and why the problem could and should\
+            \ be solved the other way.\nIt's going to be interesting."
+      - language: ru
+        text: "Параллельный запуск тестов не просто желание, но острая необходимость — стандартная задача, с которой рано\
+            \ или поздно столкнется каждый проект, за исключением, разве что, совсем небольших и краткосрочных. Иногда воп\
+            рос параллелизации тестов превращается в сложный или даже почти не выполнимый. Антон расскажет, как избежать п\
+            одобной ситуации, какие рекомендации и инструменты существуют, какую архитектуру стоит выбрать изначально, как\
+            их решений следует избегать. Докладчик ответит на все эти актуальные вопросы и приведёт множество примеров для\
+            \ наглядности и практического подтверждения.\n\nВместе со слушателями Антон проговорит «хорошие» варианты пара\
+            ллельного запуска Автоматизированных тестов, но также рассмотрит ситуацию с противоположной стороны «от против\
+            ного». Будет проанализирован десяток «плохих» решений по параллелизации на реальных примерах: сложных, медленн\
+            ых, дорогих, не эффективных. Фактически, беседа будет состоять из двух частей: «что такое хорошо и что такое п\
+            лохо» в примерах, с аргументацией и рекомендациями."
+    trackTime: "15:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/7woWrlcHeMkmuamgAicSec/5a6a35684f1e293bb3472b571f959bcb/Parallel_Run_Selenium_Tests_in_a_Good_Way_COMAQA.pdf"]
+    videoLinks: ["https://youtu.be/74FT6kPmNaU?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [279]
+  - id: 372
+    name:
+      - {language: en, text: "Testing with input data analysis: testing API with dynamically generated data"}
+      - {language: ru, text: "Аналитическое тестирование: тестируем API, используя динамические данные"}
+    shortDescription:
+      - {language: en, text: "About debatable testing with using minimal amount of stable data and mostly dependent on dynamically\
+            \ gathered / generated data, which was received from input data by analysis."}
+      - {language: ru, text: "Про спорное тестирование с использованием минимального количества эталонных данных и по боль\
+            шей части динамически получаемые / генерируемые путем анализа входных данных."}
+    longDescription:
+      - {language: en, text: "About debatable testing with using minimal amount of stable data and mostly dependent on dynamically\
+            \ gathered / generated data, which was received from input data by analysis."}
+      - {language: ru, text: "Доклад о стандартных практиках тестирования API с описанием одного из самых спорных подходов\
+            \ к тестированию - с минимальным использованием эталонных данных. На примерах будет показано, как можно динами\
+            чески получать, анализировать и составлять данные для последующих тестов. Какие ограничения накладывают, какие\
+            \ проблемы возникают при таком подходе, какие преимущества появляются при таком подходе и какие возможности от\
+            крываются для тестирования непостоянных данных и/или больших выборок. Доклад подойдет как только начинающим, т\
+            ак и опытным инженерам по тестированию."}
+    trackTime: "15:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/43LCUOugPS0wSU4AkmeGw0/65054fd6e7baa133f4fdeee2f12dc2b2/Ivan_Surovtsev_-_Testing_with_input_data_analysis_testing_API_with_dynamically_generated_data.pdf"]
+    videoLinks: ["https://youtu.be/Gz8EobNJjOo?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [649]
+  - id: 373
+    name:
+      - {language: en, text: "Hero’s Journey to Perfect System Tests — Eight Assessment Criteria for Tests’ Architecture Design"}
+    shortDescription:
+      - {language: en, text: "So, what is the quest of every QA Hero? The purpose of the story is to make the talk more fun\
+            \ and to be not only about the code following the best practices to include personal author's examples and stories."}
+    longDescription:
+      - {language: en, text: "What is the quest of every QA Hero? It is to find the golden recipe for the perfect system tests’\
+            \ design — describing how to achieve fast, reliable, easy to understand and maintain tests. Anton is going to\
+            \ tell you his story of how he managed to complete this quest. The journey is going to introduce common problems\
+            \ and mistakes to you in the process of designing test automation frameworks, such as not following single responsibility\
+            \ principle, not enough code reuse, and bad object-oriented programming (OOP) design. The author is going to share\
+            \ with you how he and his teammates managed to solve these issues through the application of eight assessment\
+            \ criteria. Usually, people want to improve their tests but do not have quality metrics to determine which version\
+            \ of their improvements is most beneficial to their projects. The presented assessment framework can help you\
+            \ to figure out which is the best possible enhancement that you need to introduce into your system tests and so\
+            \ make them more stable, reliable and maintainable."}
+    trackTime: "15:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/320KBiYfYIw8QsMaKg0CwE/120b7c78d743ee2cfb84106c44128a95/Anton_Angelov_a_______Heroa______s_Journey_to_Perfect_System_Tests_-_Eight_Assessment_Criteria_for_Testsa_______Architecture.pdf"]
+    videoLinks: ["https://youtu.be/IUn61Z-RmkM?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [642]
+  - id: 374
+    name:
+      - {language: en, text: "Testing Distributed Systems"}
+      - {language: ru, text: "Тестирование распределенных систем"}
+    shortDescription:
+      - {language: en, text: "The talk is about testing distributed systems with an example of persistent queue."}
+      - {language: ru, text: "На примере персистентной распределенной очереди Андрей расскажет о подходах к тестированию р\
+            аспределенных систем."}
+    longDescription:
+      - language: en
+        text: "Distributed systems meet us on a professional way more often and often. Modern popular sites and applications\
+            \ contain “under the hood” a distributed system — they challenge developers due to the fundamental complexity\
+            \ of their development, and a huge range of possible compromises in design.\nAndrey will talk about that part\
+            \ of challenges which are present in testing, about existing limitations and their impact on functionality.\n\
+            Issues will be covered:\n\n1. How distributed systems are different from centralized systems?\n2. What does it\
+            \ all mean for testing?\n3. What properties and characteristics must be checked in distributed systems and how\
+            \ to do it?\n4. Which approaches to testing of distributed systems are there and what problems do they solve?\n\
+            5. What problems do remain unresolved?\n\nThe talk is built on an example of persistent distributed queue, which\
+            \ is being developed in Yandex. Attendees will learn how and what was tested by Andrew along Yandex team and what\
+            \ results were obtained."
+      - language: ru
+        text: "Распределенные системы всё чаще встречаются нам на профессиональном пути. Современные популярные сайты и пр\
+            иложения содержат у себя «под капотом» распределенную систему — они бросают вызов разработчикам в силу фундаме\
+            нтальной сложности их создания и огромного диапазона возможных компромиссов в дизайне.\n\nАндрей расскажет о т\
+            ой части этих вызовов, что присутствуют в тестировании, о существующих ограничениях и их влиянии на функционал\
+            ьность.\n\nБудут освещены вопросы:\n\n- чем распределенные системы отличаются от централизованных систем;\n- ч\
+            то все это значит для тестирования;\n- какие свойства и характеристики нужно проверять в распределенных систем\
+            ах и как это делать;\n- какие подходы к тестированию распределенных систем есть и какие проблемы они решают;\n\
+            - какие проблемы остаются не решенными.\n\nПримером в докладе выступит персистентная распределенная очередь, к\
+            оторая разрабатывается в Яндексе. Слушатели узнают, что и как тестировали Андрей с командой Яндекс и какие рез\
+            ультаты получили."
+    trackTime: "16:35"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2dA5KNQFisoQoUACOgQQCe/239479df88e59307421016f1ee79d5ff/Andrey_Satarin-_Testing_Distributed_Systems.pdf"]
+    videoLinks: ["https://youtu.be/h8RV4JfSovg?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [597]
+  - id: 375
+    name:
+      - {language: en, text: "Enterprise Challenges of Test Data"}
+    shortDescription:
+      - {language: en, text: "If you are testing a simple mobile app, you may find it relatively easy to find representative\
+            \ test data. However, what if you are testing enterprise scale applications? In the enterprise data center, one\
+            \ hundred or more applications of various sizes, complexity, and criticality co-exist, operating on various data\
+            \ repositories, in some cases shared data repositories. In some cases, disparate data repositories hold related\
+            \ data, and the ability to test integration across applications that access these data sets is critical. In this\
+            \ speech, Rex Black will talk about the challenges facing his clients as they deal with these testing problems.\
+            \ You’ll go away with a better understanding of the nature of the challenges, as well as ideas on how to handle\
+            \ them, grounded in lessons Rex has learned in over 30 years of software engineering and testing."}
+    longDescription:
+      - {language: en, text: "If you are testing a simple mobile app, you may find it relatively easy to find representative\
+            \ test data. However, what if you are testing enterprise scale applications? In the enterprise data center, one\
+            \ hundred or more applications of various sizes, complexity, and criticality co-exist, operating on various data\
+            \ repositories, in some cases shared data repositories. In some cases, disparate data repositories hold related\
+            \ data, and the ability to test integration across applications that access these data sets is critical. In this\
+            \ speech, Rex Black will talk about the challenges facing his clients as they deal with these testing problems.\
+            \ You’ll go away with a better understanding of the nature of the challenges, as well as ideas on how to handle\
+            \ them, grounded in lessons Rex has learned in over 30 years of software engineering and testing."}
+    trackTime: "16:35"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1soxa9MaReUcSO6YsUUEm4/8dda627f69fbe9b873e10d8cb25abe07/Rex_Black_a_______Enterprise_Challenges_of_Test_Data.pdf"]
+    videoLinks: ["https://youtu.be/WgsaZw8_tPU?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [641]
+  - id: 376
+    name:
+      - {language: en, text: "How to make automated test bots play games?"}
+      - {language: ru, text: "Как научить роботов играть в игры?"}
+    shortDescription:
+      - {language: en, text: "How to write automated tests for games with complex interactions, non standard UI and no solutions\
+            \ available on the market? In this talk Filipp will show the example of successful home made solution developed\
+            \ for real life project on Unity3D. If you are not a game developer, you will find this talk useful as an extreme\
+            \ example."}
+      - {language: ru, text: "Как писать автоматические тесты для игры, если игровой интерфейс нестандартен, интерактивнос\
+            ть сложная, а на рынке нет ни одной библиотеки и ни одного готового решения? На примере Unity3D, автор и слуша\
+            тели погрузятся прямо в код. Будет показано, как писать понятные обслуживаемые тесты и как и где их запускать\
+            . Доклад будет интересен и разработчикам, далёким от игровой индустрии."}
+    longDescription:
+      - language: en
+        text: "Your little mobile game became popular. Soon it turned into a huge project with complex codebase and tons of\
+            \ functionality. QA team is not able to test all features before the release. Number of bugs grows exponentially\
+            \ and players are leaving.\n\nDoes it sound familiar? Good solution is test automation, but how do you automate\
+            \ all the complex interactions with non standard UI and no solutions available on the market? In this talk Filipp\
+            \ will show the example of successful home made solution developed for real life project on Unity3D.\n\nGames\
+            \ are probably one of the most complex test automation candidates. If you are not a game developer, you will find\
+            \ this talk useful as an extreme example."
+      - language: ru
+        text: "Ваша маленькая мобильная игра набрала популярность, и вы решили развивать проект дальше. Со временем проект\
+            \ разросся, код стал сложнее, тестировщики уже не успевают проверить всю функциональность перед каждым релизом\
+            . Количество багов растёт, в сторе появляются недовольные комментарии, рейтинг падает, и уходят игроки.\n\nКак\
+            \ этого избежать? Писать автоматические тесты! Но как это делать, если игровой интерфейс нестандартный, интера\
+            ктивность сложная, а на рынке нет ни одной библиотеки и ни одного готового решения? К тому же мир мобильных ап\
+            паратов становится всё разнообразнее. В этом докладе Филипп покажет, что игры тестировать просто. На примере Unity3D\
+            \ слушатели погрузятся в код и узнают, как писать понятные обслуживаемые тесты, как и где их запускать.\n\nИгр\
+            ы — одна из самых сложных областей автоматизации тестирования. Если вы далеки от неё, этот доклад будет для ва\
+            с полезен как экстремальный пример."
+    trackTime: "16:35"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/5IFHLkikjC2u0QE84ssA4M/7df314eba2c985c3c039831ed6c1c2d1/Filip_Keks_-_How_to_make_automated_test_bots_play_games.pdf"]
+    videoLinks: ["https://youtu.be/pVxLYfs23Fs?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [272]
+  - id: 377
+    name:
+      - {language: en, text: "Combining manual and automated testing: process and tools"}
+    shortDescription:
+      - {language: en, text: "Manual testing and automated testing are often different roles done by different testers. In\
+            \ this talk Jan will explain how manual testers and automation testers can work together and he will also explain\
+            \ how some specific tools influence working together."}
+    longDescription:
+      - language: en
+        text: "Manual testing and automated testing are often different roles done by different testers. But to be successful\
+            \ in a project the manual testers and the automation testers will have to work together and align their way of\
+            \ working. In this talk I will explain how manual testers and automation testers can work together.\n\nThis talk\
+            \ starts with explaining the difference between a manual tester and an automation tester. In general manual testers\
+            \ are more business driven and analytical, they use test design techniques and coverage techniques. automation\
+            \ testers are more technical and tool-minded and use tools like Selenium, Tosca and SOAP UI. Jan will explain\
+            \ how manual testers can adjust their way of working to make sure they deliver the right input for automated testing.\
+            \ And he will also explain how automation testers can do to make the connection to manual testers better. In general,\
+            \ testers get better when they master both manual and automated testing. Based on this, Jan will tell about the\
+            \ benefits of changing jobs between manual and automation testers.\n\nThe session will be ended with explaining\
+            \ specific issues with combining manual and automated testing when you use some specific tools or suites; probably\
+            \ HP, Tosca, Selenium, Cucumber and Fitnesse."
+    trackTime: "17:55"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1nS03RIWGw4O4kMgKoyKMw/282ff20cc867b419a833309c355e5f11/Jan_Jaap_Cannegieter_a_______Combining_manual_and_automated_testing-_process_and_tools.pdf"]
+    videoLinks: ["https://youtu.be/yBNrLCVyk3M?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [636]
+  - id: 378
+    name:
+      - {language: en, text: "Simply about not simple in DBMS testing on the example of PostgreSQL"}
+      - {language: ru, text: "Просто о сложном в тестировании СУБД на примере PostgreSQL"}
+    shortDescription:
+      - {language: en, text: "Why is testing databases is not so easy."}
+      - {language: ru, text: "Почему тестирование баз данных — это не так просто."}
+    longDescription:
+      - {language: en, text: "Why is testing databases is not so easy."}
+      - language: ru
+        text: "В наше время базы данных используются повсеместно: от интернет-форума для хранения сообщений пользователей\
+            \ до распределённых поисковых систем для хранения индексов отсканированных веб-страниц. Да что там говорить —\
+            \ сейчас встраиваемые БД есть в любом телефоне.\nPostgreSQL давно заняла нишу надёжной, расширяемой, реляционн\
+            ой базы данных, которая находит применение и в простом интернет-сервисе, и в высоконагруженном портале, как Avito\
+            \ или Яндекс.Почта. В компании PostgresPro Сергей и команда занимаются разработкой новой функциональности для\
+            \ PostgreSQL под нужды заказчиков. \nСергей расскажет о проблематике тестирования баз данных и о своём опыте т\
+            ого, как добивается качества в разработке PostgreSQL."
+    trackTime: "17:55"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/34A6yNMvAQOMYCYMqeUKEO/fc497dc35905a21f0fc0fd5f4d945d2e/Bronnikov_Sergey-_Simply_about_not_simple_in_DBMS_testing_on_the_example_of_PostgreSQL.pdf"]
+    videoLinks: ["https://youtu.be/3M2v1Ku2jUQ?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [643]
+  - id: 379
+    name:
+      - {language: en, text: "ChromeDriver Jailbreak"}
+    shortDescription:
+      - {language: en, text: "How to extend ChromeDriver with DevTools."}
+      - {language: ru, text: "Как расширить возможности ChromeDriver при помощи DevTools."}
+    longDescription:
+      - {language: en, text: "How to extend ChromeDriver with DevTools."}
+      - language: ru
+        text: "Chrome DevTools — один из наиболее полезных инструментов веб-разработчика. Он позволяет получать исчерпываю\
+            щую информацию о странице и запросах и эмулировать мобильные браузеры на медленных устройствах. \nChromeDriver\
+            \ использует тот же Chrome Debugging Protocol, что и DevTools для реализации Selenium JSON Wire Protocol взаим\
+            одействия с браузером. Этот протокол описывает самый базовый набор методов для взаимодействия со страницей, ко\
+            торый несомненно уже всего набора методов, доступных в DevTools.\nВ своём докладе Александр расскажет о том, к\
+            ак можно использовать (почти) всю мощь DevTools в Selenium-тестах и как сделать их отладку наиболее удобной."
+    trackTime: "17:55"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/MvbJeA70Oquw4uOgGaeak/341a3aaa9274827893b33a4f69693b4e/Alexander-Bayandin_ChromeDriver-Jailbreak.pdf"]
+    videoLinks: ["https://youtu.be/5wsLUtyA6ik?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [644]
+  - id: 380
+    name:
+      - {language: en, text: "Stupid Metrics Tricks and How to Avoid Them"}
+    shortDescription:
+      - {language: en, text: "If you have been in software engineering for a while — or in fact just in the working world\
+            \ in general for a while — you’ve probably seen someone do something stupid with metrics. Such mistakes raise\
+            \ a whole bunch of interesting questions. What are the most common metrics mistakes? Why are they mistakes? Why\
+            \ do people make these mistakes? Are you making these mistakes? Why use metrics at all, when there are so many\
+            \ mistakes? In this talk, Rex will give real-world examples of these mistakes, explain the management and economic\
+            \ theories behind metrics, and help you find ways to implement metrics that aren’t stupid."}
+    longDescription:
+      - {language: en, text: "If you have been in software engineering for a while — or in fact just in the working world\
+            \ in general for a while — you’ve probably seen someone do something stupid with metrics. Such mistakes raise\
+            \ a whole bunch of interesting questions. What are the most common metrics mistakes? Why are they mistakes? Why\
+            \ do people make these mistakes? Are you making these mistakes? Why use metrics at all, when there are so many\
+            \ mistakes? In this talk, Rex will give real-world examples of these mistakes, explain the management and economic\
+            \ theories behind metrics, and help you find ways to implement metrics that aren’t stupid."}
+    trackTime: "19:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/203XicJ3qwswqIkUAUK2Kg/2d801136b6a0551d0422002479f19b16/Rex_Black_a________Keynote__Stupid_Metrics_Tricks_and_How_to_Avoid_Them.pdf"]
+    videoLinks: ["https://youtu.be/gZrhbMpnxSA?list=PLsVTVVvrKX9tLKqDQ2Ab8lBgWnTc_iHRN"]
+    speakerIds: [641]

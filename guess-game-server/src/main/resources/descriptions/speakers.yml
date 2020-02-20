@@ -213,6 +213,21 @@ speakers:
     name:
       - {language: en, text: "Alexey Ragozin"}
       - {language: ru, text: "Алексей Рагозин"}
+    company:
+      - {language: en, text: "Deutsche Bank"}
+    bio:
+      - language: en
+        text: "Alexey specializes in the development of highload distributed systems on Java platform. For more than 10 years\
+            \ of experience in the industry, he has gathered experience in developing information systems in industries such\
+            \ as finance, telecommunications, E-commerce, and healthcare.\nFrom 2009 to 2011, he was heading the introduction\
+            \ of In-memory Data Grid solutions at GridDynamics. In October 2011, Alexey moved to Deutsche Bank, where he is\
+            \ a leading expert in the field of distributed caching technology."
+      - language: ru
+        text: "Специализируется на разработке высоконагруженных распределённых систем на платформе Java. Более чем за 10 л\
+            ет работы в индустрии он собрал опыт разработки информационных систем в таких отраслях, как финансы, телеком,\
+            \ E-commerce и здравоохранение.\nС 2009 по 2011 возглавлял внедрение In-memory Data Grid решений в компании GridDynamics.\
+            \ В октябре 2011 перешёл в Deutsche Bank, где является ведущим специалистом в области технологий распределённо\
+            го кэширования."
   - id: 22
     fileName: 0022.jpg
     name:
@@ -247,6 +262,18 @@ speakers:
     name:
       - {language: en, text: "Vladimir Sitnikov"}
       - {language: ru, text: "Владимир Ситников"}
+    company:
+      - {language: en, text: Netcracker}
+    bio:
+      - {language: en, text: "Vladimir has been working on performance and scalability of NetCracker platform (a software\
+            \ used by telecom operators for automatization of network management processes and network equipment) for ten\
+            \ years. His focus is Java and Oracle Database performance optimisations. Vladimir is an author of more than a\
+            \ dozen of performance improvements in the official PostgreSQL JDBC driver."}
+      - {language: ru, text: "Десять лет работает над производительностью и масштабируемостью NetCracker OSS — ПО, использ\
+            уемого операторами связи для автоматизации процессов управления сетью и сетевым оборудованием. Увлекается вопр\
+            осами производительности Java и Oracle Database. Автор более десятка улучшений производительности в официально\
+            м PostgreSQL JDBC-драйвере."}
+    twitter: VladimirSitnikv
   - id: 26
     fileName: 0026.jpg
     name:
@@ -1743,6 +1770,18 @@ speakers:
     name:
       - {language: en, text: "Filipp Keks"}
       - {language: ru, text: "Филипп Кекс"}
+    company:
+      - {language: en, text: "Creative Mobile"}
+    bio:
+      - {language: en, text: "Filipp has a wide experience in mobile software development: from enterprise applications to\
+            \ graphically intensive video games. He is an active participant of young mobile gamedev community trying to bring\
+            \ such professional techniques as lean development and test automation. Filipp is a frequent speaker on tech conferences\
+            \ around Europe and Russia. Currently working in Creative Mobile company."}
+      - {language: ru, text: "Имеет разносторонний опыт разработки мобильных приложений — от Enterprise и финансовой сферы\
+            \ до мобильных игр. Обогащает ещё развивающуюся мобильную игровую индустрию идеями и техниками «серьёзной» раз\
+            работки. Активный спикер и участник технических конференций в странах Прибалтики. Работает в Creative Mobile с\
+            таршим разработчиком gameplay. В свободное время — фотограф, музыкант и сумасшедший путешественник."}
+    twitter: filippkeks
   - id: 273
     fileName: 0273.jpg
     name:
@@ -1778,6 +1817,17 @@ speakers:
     name:
       - {language: en, text: "Anton Semenchenko"}
       - {language: ru, text: "Антон Семенченко"}
+    company:
+      - {language: en, text: "DPI.Solutions; EPAM; COMAQA; CoreHard"}
+    bio:
+      - {language: en, text: "COMAQA.BY automation community activist, COREHard.BY hardcore development community activist,\
+            \ co-founder of DPI.Solutions company. More than 13 years of experience in IT. Main specializations: automated\
+            \ testing, C++ low-level development and lower. Management, sales."}
+      - {language: ru, text: "Активист сообщества автоматизаторов www.COMAQA.BY, активист сообщества «суровой» разработки\
+            \ C++ и co www.CoreHard.by, соучередитель компании DPI.Solutions. Менеджер в компании EPAM Systems. Более 13 л\
+            ет опыта в IT, основная специализация: автоматизированное тестирование, низкоуровневая разработка на C++ и ниж\
+            е. Менеджмент, продажи."}
+    twitter: comaqa
   - id: 280
     fileName: 0280.jpg
     name:
@@ -1813,6 +1863,19 @@ speakers:
     name:
       - {language: en, text: "Roman Iovlev"}
       - {language: ru, text: "Роман Иовлев"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - language: en
+        text: "Chief QA Automation and JDI evangelist in EPAM. \nRoman participates in different conferences in Russia and\
+            \ Europe like: SQA Days, Agile Days, IT Week, IT Subbotnik and EuroStar Conference. \nThe developer and soul of\
+            \ list of opensource projects related to automation testing like VIQA and JDI\nRoman wants to make world around\
+            \ me better and help colleagues in their projects do testing with pleasure: faster, cheaper, and with higher quality."
+      - language: ru
+        text: "Chief QA Automation и евангелист JDI в компании EPAM. \nУчаствовал в различных конференциях: SQA Days, Agile\
+            \ Days, IT Week, IT Subbotnik и EuroStar. \nАвтор нескольких opensource-фреймворков для автоматизированного те\
+            стирования: VIQA и JDI.\nРоман старается улучшить мир вокруг, помочь коллегам в проектах научиться тестировать\
+            \ в удовольствие: быстро, дешёво, качественно."
   - id: 287
     fileName: 0287.jpg
     name:
@@ -3227,6 +3290,21 @@ speakers:
     name:
       - {language: en, text: "Yury Dymov"}
       - {language: ru, text: "Юрий Дымов"}
+    company:
+      - {language: en, text: "SAP China"}
+    bio:
+      - language: en
+        text: "Graduated from Moscow State University, faculty Computational Mathematics and Cybernetics. Co-founder of QRATOR,\
+            \ leading Russian company in DDoS-attack mitigation solutions. Since 2013, Yury is a Team Lead of Mobile and Web\
+            \ Solutions Team in SAP CIS. Since 2016 Technical Architect in SAP China.\nPlayed major role in many web and mobile\
+            \ implementation projects in biggest Russian and international enterprises: Gazprom, Severstal, UkrTransGaz, SurgutNefteGaz,\
+            \ Petrobras, National Grid UK, DONG Energy, National Life and others."
+      - {language: ru, text: "Технический архитектор из SAP China с 2015 года, где с переменным успехом учит китайцев писа\
+            ть хороший код и делать качественный софт.  До этого несколько лет руководил практикой мобильных и веб-решений\
+            \ в SAP СНГ, где делал проекты для компаний Газпром, Лукойл, Северсталь, Башнефть, Сбербанк, Сургутнефтегаз, С\
+            ОКАР, УкрТрансГаз, National Grid, Dong Energy, Petrobras и других. В свободное от работы время разрабатывает н\
+            ебольшую социальную сеть и ждет подходящего проекта, чтобы опробовать на нем elixir и phoenix."}
+    twitter: YuryDymov
   - id: 539
     fileName: 0539.jpg
     name:
@@ -3500,6 +3578,18 @@ speakers:
     name:
       - {language: en, text: "Andrey Satarin"}
       - {language: ru, text: "Андрей Сатарин"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Andrey is engaged in testing distributed systems at Yandex. He has worked in very different\
+            \ projects: testing of the game at Mail.ru, cloud detection system at Kaspersky Lab, and calculator currency price\
+            \ system at Deutsche Bank. Andrey is interested in testing backend and distributed systems."}
+      - {language: ru, text: "Занимается тестированием распределенных систем в Яндексе. В своей карьере успел поработать в\
+            \ совершенно разных проектах: тестировал игру в Mail.ru, систему облачного детектирования в Лаборатории Каспер\
+            ского, систему расчета валютных цен в Deutsche Bank. Интересуется тестированием backend и распределенных систе\
+            м."}
+    twitter: asatarin
   - id: 598
     fileName: 0598.jpg
     name:
@@ -3535,8 +3625,20 @@ speakers:
   - id: 605
     fileName: 0605.jpg
     name:
-      - {language: en, text: "Stanislav Bashkirtsev"}
+      - {language: en, text: "Stanislav Bashkyrtsev"}
       - {language: ru, text: "Станислав Башкирцев"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: en, text: "Stanislav has been developing since 2008, mainly in Java. He loves testing and code quality.\
+            \ At some point, he began to get involved in the optimization of processes and switched to CI/CD activity in 2013.\
+            \ He was never totally pleased with the AQA, and so in 2015 switched to testing to prove that everything is possible\
+            \ to be done much better. Stanislav proved it and went into business intelligence."}
+      - {language: ru, text: "Разрабатывает с 2008-го, в основном на Java. Всегда тяготел к тестированию и качеству кода.\
+            \ В какой-то момент начал увлекаться оптимизацией процессов и в 2013 переключился на CI/CD активности. Никогда\
+            \ полностью не был доволен работой AQA и поэтому в 2015 ушёл в тестирование, чтобы доказать, что всё можно дел\
+            ать намного лучше. Доказал и ушёл в бизнес-анализ."}
+    twitter: sbashkirtsev
   - id: 606
     fileName: 0606.jpg
     name:
@@ -3589,8 +3691,16 @@ speakers:
   - id: 616
     fileName: 0616.jpg
     name:
-      - {language: en, text: "Alexei Vinogradov"}
+      - {language: en, text: "Alexey Vinogradov"}
       - {language: ru, text: "Алексей Виноградов"}
+    company:
+      - {language: en, text: "Radio QA"}
+    bio:
+      - {language: en, text: "Alexey has been working in various IT projects in Germany for more than 15 years. He consults\
+            \ about testing and test automation. Junior Developer of Selenide. The founder and moderator of Radio QA podcast."}
+      - {language: ru, text: "Работает в IT-проектах в Германии более 15 лет. Консультирует по вопросам тестирования и авт\
+            оматизации. Младший разработчик фреймворка Selenide. Основатель и один из ведущих подкаста Radio QA."}
+    twitter: i_vino
   - id: 617
     fileName: 0617.jpg
     name:
@@ -3678,15 +3788,47 @@ speakers:
     fileName: 0634.jpg
     name:
       - {language: en, text: "Dan Cuellar"}
+    company:
+      - {language: en, text: Appium}
+    bio:
+      - {language: en, text: "Dan Cuellar is the creator of the open source mobile automation framework Appium, and Head of\
+            \ Test Engineering at FOODit in London. Previously, he headed the test organisation at Shazam in London and Zoosk\
+            \ in San Francisco, and worked as a software engineer on Microsoft Outlook for Mac, and other products in the\
+            \ Microsoft Office suite. He is an advocate of open source technologies and technical software testing. He earned\
+            \ a Bachelor’s degree in Computer Science, with a minor in Music Technology, from the world-renowned School of\
+            \ Computer Science at Carnegie Mellon University in Pittsburgh."}
+    twitter: thedancuellar
   - id: 635
     fileName: 0635.jpg
     name:
-      - {language: en, text: "Igor Hrol"}
+      - {language: en, text: "Igor Khrol"}
       - {language: ru, text: "Игорь Хрол"}
+    company:
+      - {language: en, text: Toptal}
+    bio:
+      - {language: en, text: "Automated testing specialist at Toptal. About 10 years experience in test automation in various\
+            \ roles: engineer, architect, manager, consultant, trainer. Experience in the majority of popular tools (Selenium,\
+            \ HP QTP, TestComplete, JMeter). Currently, Igor is programming mostly in Ruby and Scala but used to write in\
+            \ other languages (Python, Java, C#, JavaScript, VBScript)."}
+      - {language: ru, text: "Специалист по автоматизации тестирования в Toptal. Около 10 лет трудится в этой области в ра\
+            зличных ролях: инженер, архитектор, менеджер, консультант, тренер. Игорь имеет большой опыт работы с большинст\
+            вом популярных инструментов (Selenium, HP QTP, TestComplete, JMeter). Программирует в основном на Ruby и Scala,\
+            \ но и на других языках также приходилось писать (Python, Java, C#, JavaScript, VBScript)."}
+    twitter: Rolzik
   - id: 636
     fileName: 0636.jpg
     name:
       - {language: en, text: "Jan Jaap Cannegieter"}
+    company:
+      - {language: en, text: Squerist}
+    bio:
+      - {language: en, text: "Jan Jaap has over 20 years of experience in ICT-project. He was, is and will always be a hardcore\
+            \ tester, but besides testing he also developed other areas of expertise and skills. Examples of other areas of\
+            \ expertise are Requirements, Scrum, CMMi, Process Improvement, digitalization, and tooling. Examples of developed\
+            \ skills are management, coaching, leading workshops and teaching. With this combination of knowledge and skills,\
+            \ Jan Jaap is able to build bridges between different (groups of) people in projects or organizations and help\
+            \ other develop their own knowledge and skills."}
+    twitter: jjcannegieter
   - id: 637
     fileName: 0637.jpg
     name:
@@ -3695,6 +3837,17 @@ speakers:
     fileName: 0638.jpg
     name:
       - {language: en, text: "Ilari Henrik Aegerter"}
+    company:
+      - {language: en, text: "House of Test GmbH"}
+    bio:
+      - {language: en, text: "Ilari Henrik Aegerter's formal studies have brought him from General Linguistics and Sociology\
+            \ to Software Engineering and Software Testing. He has 10+ years of experience in the field, coming from the medical\
+            \ software domain at Phonak AG and progressing to e-commerce at eBay. He is now the Managing Director of House\
+            \ of Test GmbH and he believes that there is still a lot of work to be done for excellent software testing. In\
+            \ 2013 he co-founded the International Society for Software Testing (ISST), which advocates for bringing back\
+            \ common sense to testing. He is currently president of the organization. In 2015 he was elected into the board\
+            \ of the Association for Software Testing (AST) where he acts as VP of Marketing."}
+    twitter: ilarihenrik
   - id: 639
     fileName: 0639.jpg
     name:
@@ -3709,35 +3862,117 @@ speakers:
     fileName: 0641.jpg
     name:
       - {language: en, text: "Rex Black"}
+    company:
+      - {language: en, text: RBCS}
+    bio:
+      - {language: en, text: "With over 30 years of software and systems engineering experience, Rex Black is President of\
+            \ RBCS (www.rbcs-us.com), a testing leader, providing consulting, training, and expert services. RBCS has over\
+            \ 100 clients on six continents, spanning all areas of software and system development, from embedded systems\
+            \ to gaming software to banking and insurance to defense systems. Rex is the most prolific author practicing in\
+            \ the field of software testing today, having written 13 books (and counting). He is past President of the ISTQB\
+            \ and of the ASTQB, a co-author of many of the ISTQB syllabi, and Chair of the Agile Working Group."}
+    twitter: LaikaTestDog
   - id: 642
     fileName: 0642.jpg
     name:
       - {language: en, text: "Anton Angelov"}
+    company:
+      - {language: en, text: Progress}
+    bio:
+      - {language: en, text: "Anton is a Quality Assurance Architect at Progress. He is passionate about automation testing\
+            \ and designing test harness and tools, having the best industry development practices in mind. Furthermore, he\
+            \ is an active blogger and the founder of Automate The Planet. Anton is ardent about technologies such as C#,\
+            \ .NET Framework, T4, WPF, SQL Server, Selenium WebDriver, Jenkins. He won MVP status at Code Project (2016) and\
+            \ MVB (Most Valuable Blogger) at DZone. Outside his work at Progress, Anton a trainer at ITCE where he leads trainings\
+            \ related to ISTQB exams. More information about Anton in his blog: http://automatetheplanet.com/about-anton-angelov/."}
   - id: 643
     fileName: 0643.jpg
     name:
       - {language: en, text: "Sergey Bronnikov"}
       - {language: ru, text: "Сергей Бронников"}
+    company:
+      - {language: en, text: "Postgres Professional"}
+    bio:
+      - language: en
+        text: "Sergey works in testing from 2009. He began his career in the testing department of the Parallels company,\
+            \ where he was responsible for the quality of the emulation of physical devices in Parallels Desktop for Mac (network\
+            \ cards, USB controller, parallel and serial ports). Sergey organized a team for the automatic and manual testing\
+            \ called Virtuozzo and released along with the team the first three versions of the product. Currently, Sergey\
+            \ is testing a commercial database based on PostgreSQL with PostgresPro.\n\nAuthor of articles in magazines \"\
+            Hacker\" and Linux Format, resources and OpenNet LWN.net. Organizer of container virtualization sections on Linux\
+            \ at FOSDEM, Linux Plumbers conferences. Leads [blog](https://bronevichok.ru/blog/). Founder of collective [twitter\
+            \ for testers](https://twitter.com/sqaunderhood)."
+      - language: ru
+        text: "Работает в тестировании с 2009 года.  Начал карьеру в отделе тестирования компании Parallels, где отвечал з\
+            а качество эмуляции физических устройств в Parallels Desktop for Mac (сетевые карты, USB контроллер, параллель\
+            ный и последовательный порты). С нуля организовал команду для автоматического и ручного тестирования Virtuozzo\
+            \ и выпустил вместе с командой три первых версии продукта. Занимается тестированием коммерческой базы данных н\
+            а основе PostgreSQL в PostgresPro.\n\nАвтор статей в  журналах «Хакер» и Linux Format, ресурсах OpenNet и LWN.net.\
+            \ Организатор секций о контейнерной виртуализации в Linux на конференциях FOSDEM, Linux Plumbers. Ведёт [блог\
+            ](https://bronevichok.ru/blog/). Инициатор создания коллективного [твиттера для тестровщиков](https://twitter.com/sqaunderhood)."
+    twitter: estet
   - id: 644
     fileName: 0644.jpg
     name:
       - {language: en, text: "Alexander Bayandin"}
       - {language: ru, text: "Александр Баяндин"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Alexander is engaged in automation testing of mobile applications at Badoo. Previously, he worked\
+            \ at 2GIS and Mail.ru, made a 2-months course at Technopark@Mail.ru about led quality assurance in development.\
+            \ Also he commits at Selenium and Appium. Alexander is not a manager, not a consultant, and not a coach. He loves\
+            \ Python and writes on Ruby. Also Alexander has a repository on GitHub with more than 17 thousands of stars."}
+      - {language: ru, text: "Занимается автоматизацией тестирования мобильных приложений в Badoo. Ранее работал в 2GIS и\
+            \ Mail.ru, 2 семестра вёл курс в Технопарк@Mail.ru по обеспечению качества в разработке. Коммитил в Selenium и\
+            \ Appium. Не менеджер, не консультант и не тренер. Любит Python, пишет на Ruby. А ещё у него есть репозиторий\
+            \ на GitHub с более чем 17 тысячами звёздочек."}
+    twitter: abayandin
   - id: 645
     fileName: 0645.jpg
     name:
       - {language: en, text: "Artem Zinnatullin"}
-      - {language: ru, text: "Артем Зиннатуллин"}
+      - {language: ru, text: "Артём Зиннатуллин"}
+    company:
+      - {language: en, text: Juno}
+    bio:
+      - {language: en, text: "Artem: 5-6 years of experience in mobile development, mostly with Android. About 3 years ago\
+            \ he has started paying a lot of attention to the quality of mobile apps he was working on: CI, Unit, Integration\
+            \ and Functional (UI) testing. One of the projects where you can find all these things is QualityMatters https://github.com/artem-zinnatullin/qualitymatters.\
+            \ Artem was working on Russian Postal Service Android app, Yandex.Mail, NY Times, StorIO, RxJava and other projects,\
+            \ and as for now, he works for Juno."}
+      - {language: ru, text: "Артём: в мобильной разработке примерно 5-6 лет, в основном — Android. Примерно три года наза\
+            д начал делать большой уклон на качество мобильных приложений: CI, Unit, Integration и Functional (UI) тестиро\
+            вание. Один из проектов, где всё это представлено — QualityMatters https://github.com/artem-zinnatullin/qualitymatters.\
+            \ Артём работал над Почтой России для Android, Yandex.Mail, NY Times, StorIO, RxJava и другими проектами, сейч\
+            ас в Juno."}
+    twitter: artem_zin
   - id: 646
     fileName: 0646.jpg
     name:
       - {language: en, text: "Dmitry Krasilnikov"}
       - {language: ru, text: "Дмитрий Красильников"}
+    company:
+      - {language: en, text: "DINO Systems"}
+    bio:
+      - {language: en, text: "A good tester and a bad man. Yesterday fully racked applications for Smart TV, and now keeps\
+            \ in suspense development department at DINO Systems."}
+      - {language: ru, text: "Хороший тестировщик и плохой человек. Вчера полностью ломал приложения для Smart TV, а сегод\
+            ня держит в напряжении разработчиков компании DINO Systems."}
   - id: 647
     fileName: 0647.jpg
     name:
-      - {language: en, text: "Orhan Guseynov"}
+      - {language: en, text: "Orkhan Guseynov"}
       - {language: ru, text: "Орхан Гусейнов"}
+    company:
+      - {language: en, text: Juno}
+    bio:
+      - {language: en, text: "Orkhan: more than 5 years in testing, 3-4 years experience of mobile testing. Test design, manual\
+            \ testing and automation. Orkhan rated the quality of Turkish search in Yandex, was responsible for quality assurance\
+            \ of products of Health Gorilla. Now he works for Juno."}
+      - {language: ru, text: "Орхан: в тестировании больше 5 лет, в мобильном тестировании примерно 3-4 года. Практикует т\
+            ест-дизайн, ручное тестирование и автоматизацию тестирования. Оценивал качество турецкого поиска в Яндексе, от\
+            вечал за тестирование продуктов Health Gorilla. На данный момент Орхан трудится в Juno."}
   - id: 648
     fileName: 0648.jpg
     name:
@@ -3745,11 +3980,38 @@ speakers:
       - {language: ru, text: "Андрей Смирнов"}
     company:
       - {language: en, text: "DINO Systems"}
+    bio:
+      - {language: en, text: "Made equipment for satellite monitoring, then it was tested. A couple of years got into the\
+            \ company-developer of software for the London Insurance Exchange. Currently, Andrey is testing backend telecommunications\
+            \ platform DINO Systems."}
+      - {language: ru, text: "Паял оборудование для спутникового мониторинга, потом его тестировал. Через пару лет устроил\
+            ся в компанию-разработчика ПО для Лондонской страховой биржи. Сейчас тестирует бэкенд телекоммуникационной пла\
+            тформы в DINO Systems."}
+    twitter: andreich
   - id: 649
     fileName: 0649.jpg
     name:
       - {language: en, text: "Ivan Surovtsev"}
       - {language: ru, text: "Иван Суровцев"}
+    company:
+      - {language: en, text: SEMrush}
+    bio:
+      - {language: en, text: "I started career of a tester around 6 years ago and around that time I started test automation.\
+            \ Prior to that I had experience as a developer and system administrator. I had experience with automation of\
+            \ UI and API. At some point I developed API clients for closed internal protocols. Since the beginning of my career,\
+            \ for load testing I’ve used such common tools as JMeter and Yandex Tank along with more specialized ones, such\
+            \ as Xena and Ixia, and even those that are uncommon for testing, like tcpreplay. As for UI testing, I had experience\
+            \ with Java language and framework pairs such as JUnit + Swing, JUnit + fest, TestNG / JUnit + selenium-java.\
+            \ For API testing I used C++ + gtest, robotframework + curl, Java + TestNG + different http libraries. In my most\
+            \ recent experience I’ve been using Java + TestNG, because this pair can be used efficiently for both UI and API\
+            \ testing."}
+      - {language: ru, text: "6 лет назад начал тестировать приложения и практически сразу же занялся автоматизацией тести\
+            рования, до этого успел поработать разработчиком и сис админом. Автоматизировал как UI, так и api, в т.ч. реал\
+            изовывал клиенты закрытых внутренних протоколов. Для тестирования нагрузки успел испробовать как обычные JMeter,\
+            \ Yandex Tank, так и более специализированные Xena, Ixia, и совсем необычное использование tcpreplay. UI автом\
+            атизировал с помощью junit+swing, junit+fest, testng/junit+selenium-java. Для тестирования API использовал с++\
+            \ + gtest, robotframework + curl, java + testng + разные http клиенты. В последнее время остановился на связке\
+            \ java+testng, потому как эту связку можно использовать эффективно как для UI, так и для API тестирования."}
   - id: 650
     fileName: 0650.jpg
     name:
