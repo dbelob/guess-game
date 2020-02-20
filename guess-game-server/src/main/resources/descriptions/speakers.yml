@@ -948,6 +948,7 @@ speakers:
             \ Android Application Development, and Modern C++. His consulting work revolves mainly around distributed architecture,\
             \ production debugging and performance diagnostics, and mobile application development."}
     twitter: goldshtn
+    mvp: true
   - id: 112
     fileName: 0112.jpg
     name:
