@@ -2526,3 +2526,131 @@ talks:
     presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/5dvFQPQUMg6Gs4KSgsMAaK/e7493c04cf2b41cc7ea4bcbb7fd88cf7/________________________.pptx"]
     videoLinks: ["https://youtu.be/AT112nDrVUY"]
     speakerIds: [1]
+  - id: 328
+    name:
+      - {language: en, text: "ASP.NET State of the Art"}
+    shortDescription:
+      - {language: en, text: "State of the art of the Microsoft's new development platform."}
+    longDescription:
+      - {language: en, text: "It is now six months since v1 of .NET Core and ASP.NET Core and the world is full of people\
+            \ that seem to be ready to bet the farm on it and people who wouldn't consider using it for at least a year or\
+            \ two. In this talk, Dino will try to summarize the firm points of both camps, try to get rid of any hype, add\
+            \ a bit of philosophical cynicism up to serve a yummy dish that gives you the energy to take web development on\
+            \ the Microsoft stack to the next level."}
+    trackTime: "10:20"
+    track: 1
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5FPXAxH5VSE0AkQegmCyaA/b5af0611ec3b43e6a94155a376390b1c/Dino_Esposito__.NET_Core_State_of_the_art.pptx"]
+    videoLinks: []
+    speakerIds: [404]
+  - id: 329
+    name:
+      - {language: en, text: "Overview of the new .NET Core and .NET Platform Standard"}
+    shortDescription:
+      - {language: en, text: "This talk will introduce the attendees to the new .NET Platform Standard and show the role of\
+            \ .NET Core in it. We will look at the various options, tools and technologies surrounding .NET Core."}
+    longDescription:
+      - {language: en, text: "Microsoft is working hard to modernize the .NET Platform. There are great new frameworks and\
+            \ tools coming, such as .NET Core and ASP.NET Core. The amount of new things is overwhelming, with multiple .NET\
+            \ Platforms (.NET Framework, Unified Windows Platform, .NET Core), multiple runtimes (CoreCLR, CLR, CoreRT), multiple\
+            \ compilers (Roslyn, RyuJIT, .NET Native and LLILC) and much more. This session will bring you up to speed on\
+            \ all this new Microsoft technology, focusing on .NET Core."}
+    trackTime: "11:25"
+    track: 1
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/4GG4CeFJqMgGawUmoiWUoY/75a207ebd0fc0b8e9c8b489a820bafac/Alex_Thissen_NET_Core_New_Platform_DotNext_Moscow_2016_v1.0.5.pdf"]
+    videoLinks: []
+    speakerIds: [1072]
+  - id: 330
+    name:
+      - {language: en, text: "HoloLens and Xbox One — new frontier for .NET developers"}
+    shortDescription:
+      - {language: en, text: "Learn how it is possible to leverage Universal Windows Platform skills with HoloLens and Xbox\
+            \ One."}
+    longDescription:
+      - {language: en, text: "It feels like a miracle... When you have a regular installation of the latest Visual Studio\
+            \ 2015 update, you can actually deploy your applications on HoloLens and Xbox One. You don’t have to have some\
+            \ special SDK, those are normal targets for Universal Windows Platform. Join this talk and learn the basics of\
+            \ developing for HoloLens and Xbox One, including live on-devices demonstrations of deployment cycle. Find out\
+            \ what what is possible to do with extra tools, such as special build of Unity 3D targeting Windows.Holographic\
+            \ platform."}
+      - {language: ru, text: "А вы знаете, что если у вас установлена последняя версия Visual Studio,  вы можете разрабаты\
+            вать как для HoloLens, так и для Xbox One без установки специальных SDK или наборов инструментов? Это обычные\
+            \ Windows 10 устройства для Universal Windows Platform. Приходите на доклад и узнайте об основах разработки дл\
+            я Xbox One и HoloLens, включая живую демонстрацию на реальной аппаратуре. Узнайте что можно делать с Unity 3D\
+            \ и Windows Mixed Reality, включая новшества Windows 10 Creators Update."}
+    trackTime: "13:05"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [267]
+  - id: 331
+    name:
+      - {language: en, text: "Let's talk about microbenchmarking"}
+    shortDescription:
+      - {language: en, text: "This talk is about a wonderful world of microbenchmarking and microperformance. Andrey will\
+            \ discuss why microbenchmarking is hard and how to measure very quick operations right way. Also, he will talk\
+            \ about the BenchmarkDotNet library which can help to design correct microbenchmarks."}
+    longDescription:
+      - language: en
+        text: "This talk is about a wonderful world of microbenchmarking and microperformance. Andrey will discuss why microbenchmarking\
+            \ is hard and how to measure very quick operations right way. Also, he will talk about the BenchmarkDotNet library\
+            \ which can help to design correct microbenchmarks.\nContent:\nGeneral methodology;\nCommon pitfalls and mistakes;\n\
+            How long we should measure and how many times?;\nWarmup importance;\nWhy we should run benchmarks in different\
+            \ environments (different C# Compilers/CLR versions/JITs/Operation systems/etc);\nOverhead evaluation;\nStatistics\
+            \ calculation;\nGood practices."
+    trackTime: "14:10"
+    track: 1
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1XWxesvuBqs6aeI8IcWiic/40bf613d2a9caebafb1e378b90f165a4/akinshin-helsinki.pdf"]
+    videoLinks: []
+    speakerIds: [471]
+  - id: 332
+    name:
+      - {language: en, text: "Integrating Cognitive services to your Xamarin app"}
+    shortDescription:
+      - {language: en, text: "In this session we'll show you how to implement contextual interaction within your Xamarin applications\
+            \ using Cognitive Services."}
+    longDescription:
+      - {language: en, text: "Cognitive services is a set of apis which can be divided into five categories: vision, speech,\
+            \ language, knowledge, and search. In this session we'll have a short introduction to Cognitive services and then\
+            \ show how to implement these features to your cross-platform app build with Xamarin."}
+    trackTime: "15:30"
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/7isJjmXy6WQ0EquKUquCwI/46c58097210720f49bf94f1b3ed06299/Cognitive_Services.pdf"]
+    videoLinks: []
+    speakerIds: [1073]
+  - id: 333
+    name:
+      - {language: en, text: "Automate design patterns with PostSharp and aspect-oriented programming"}
+    shortDescription:
+      - {language: en, text: "This talk challenges the idea that patterns are a design-only thing and shows how to remove\
+            \ redundant code with aspect-oriented programming (AOP) and PostSharp, the reference AOP framework for .NET."}
+    longDescription:
+      - {language: en, text: "Design patterns are now universally accepted and have significantly improved the way we design\
+            \ software. However, they had relatively little impact on how we implement it. Except rare exceptions like the\
+            \ \"using\" or \"lock\" keywords, most patterns must still be implemented by hand, resulting in large quantities\
+            \ of boilerplate code that must be validated by peer review. However, development tools could do a better job\
+            \ by automatically implementing some parts of the pattern, and automatically validating hand-written code against\
+            \ pattern rules. This talk shows how to remove this redundant code with aspect-oriented programming (AOP) and\
+            \ PostSharp, the reference AOP framework for .NET."}
+    trackTime: "16:35"
+    track: 1
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5TkrFpKTn2yWcWa8kQsGAG/1bf8eeb4fb1e81377d5014ab56f9f9d9/Gael_Fraiteur_a_______Automate_design_patterns_with_PostSharp_and_aspect-oriented_programming-2.pdf"]
+    videoLinks: []
+    speakerIds: [497]
+  - id: 334
+    name:
+      - {language: en, text: "Stack Overflow — It's all about performance!"}
+    shortDescription:
+      - {language: en, text: "This talk is about how Stack Overflow achieved running a top 30 global website on a dozen servers."}
+    longDescription:
+      - language: en
+        text: "Stack Overflow is one of the world’s most popular sites, serving tens of millions of programming questions\
+            \ and answers to more than 100 million developers every month. Complex pages are routinely served in less than\
+            \ 50ms. Its network has now grown to about 150 sites.\n\nThe company’s team manages to do this with very small\
+            \ footprint in terms of servers and with a tiny development team. In this talk Marco will cover the company’s\
+            \ architecture, methodology and coding principles, with real world examples and demos. Hopefully, there are some\
+            \ good ideas here attendees can take home and work on!!"
+    trackTime: "17:55"
+    track: 1
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [492]

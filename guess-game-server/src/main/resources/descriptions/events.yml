@@ -56,6 +56,22 @@ events:
   # DotNext
   - eventTypeId: 2
     name:
+      - {language: en, text: "DotNext 2016 Helsinki"}
+      - {language: ru, text: "DotNext 2016 Хельсинки"}
+    startDate: "2016-12-07"
+    endDate: "2016-12-07"
+    siteLink:
+      - {language: en, text: "https://dotnext-helsinki.com"}
+    city:
+      - {language: en, text: Helsinki}
+      - {language: ru, text: Хельсинки}
+    venueAddress:
+      - {language: en, text: "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5
+    mapCoordinates: "60.1704769, 24.8279349"
+    talkIds: [328, 329, 330, 331, 332, 333, 334]
+  - eventTypeId: 2
+    name:
       - {language: en, text: "DotNext 2019 Msk"}
       - {language: ru, text: "DotNext 2019 Мск"}
     startDate: 2019-11-06

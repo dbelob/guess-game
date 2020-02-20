@@ -1694,6 +1694,19 @@ speakers:
     name:
       - {language: en, text: "Michael Samarin"}
       - {language: ru, text: "Михаил Самарин"}
+    company:
+      - {language: en, text: Futurice}
+    bio:
+      - {language: en, text: "Speaker, teacher, developer, Microsoft MVP, Nokia Developer Champion and team leader with many\
+            \ years of experience in various technologies ranging from mobile platforms and interactive media installations\
+            \ to forensic investigations and security systems."}
+      - {language: ru, text: "Выступает на конференциях, преподаёт, программирует, руководит командой разработчиков, имеет\
+            \ титул Microsoft MVP. Его многолетний практический опыт покрывает такие области, как разработка мобильных при\
+            ложений, интерактивные медиа-инсталляции, системы поддержки судебно-медицинских исследований и видеонаблюдения\
+            . В настоящее время Михаил работает в финской компании Futurice, неоднократно побеждавшей в конкурсе Best Place\
+            \ To Work in Europe."}
+    twitter: MichaelSamarin
+    mvp: true
   - id: 268
     fileName: 0268.jpg
     name:
@@ -2365,6 +2378,16 @@ speakers:
     fileName: 0404.jpg
     name:
       - {language: en, text: "Dino Esposito"}
+    company:
+      - {language: en, text: BaxEnergy}
+    bio:
+      - {language: en, text: "Dino Esposito authored over 20 books and 1000 articles in a so far 25-year-long career, gave\
+            \ 500+ conference talks and delivered no less than 10,000 hours of training. It is commonly recognized that his\
+            \ books and articles helped the professional growth of thousands of .NET and ASP.NET developers and software architects\
+            \ worldwide. Currently, Dino is Corporate Digital Strategist at BaxEnergy and practices with renewable energy\
+            \ and artificial intelligence. Next book is \"Introducing Machine Learning in .NET\". Get in touch at youbiquitous.net."}
+    twitter: despos
+    mvp: true
   - id: 405
     fileName: 0405.jpg
     name:
@@ -2671,6 +2694,22 @@ speakers:
     name:
       - {language: en, text: "Andrey Akinshin"}
       - {language: ru, text: "Андрей Акиньшин"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Andrey Akinshin is a senior developer at JetBrains, where he works on Rider (a cross-platform\
+            \ .NET IDE based on the IntelliJ platform and ReSharper). His favorite topics are performance and micro-optimizations,\
+            \ and he is the maintainer of BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET\
+            \ Foundation). Andrey is also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC.\
+            \ In his free time, he likes to study science (his primary research interests are mathematical biology and bifurcation\
+            \ theory)."}
+      - {language: ru, text: "Андрей Акиньшин работает в компании JetBrains, где трудится над проектом Rider (кроссплатфор\
+            менная .NET IDE, основанная на платформе IntelliJ и ReSharper). Его любимые темы — производительность и микроо\
+            птимизации, он также мейнтейнер проекта BenchmarkDotNet (библиотека для написания .NET-бенчмарков, поддержанна\
+            я .NET Foundation). Андрей — к.ф.-м.н., Microsoft .NET MVP, серебрянный медалист ACM ICPC. В свободное время л\
+            юбит заниматься наукой, основные научные интересы — математическая биология и теория бифуркаций."}
+    twitter: andrey_akinshin
+    mvp: true
   - id: 472
     fileName: 0472.jpg
     name:
@@ -2769,6 +2808,12 @@ speakers:
     fileName: 0492.jpg
     name:
       - {language: en, text: "Marco Cecconi"}
+    company:
+      - {language: en, text: "Stack Overflow"}
+    bio:
+      - {language: en, text: "A software engineer at Stack Overflow in London. Marco writes about software development, coding,\
+            \ architecture and team leadership. He also speaks at conferences worldwide."}
+    twitter: sklivvz
   - id: 493
     fileName: 0493.jpg
     name:
@@ -2792,6 +2837,14 @@ speakers:
     fileName: 0497.jpg
     name:
       - {language: en, text: "Gael Fraiteur"}
+    company:
+      - {language: en, text: "PostSharp Technologies"}
+    bio:
+      - {language: en, text: "Gael Fraiteur has been passionately programming since childhood; building and selling his first\
+            \ commercial software at age 12. He is Founder and Principal Engineer at PostSharp Technologies based in Prague,\
+            \ Czech Republic. Gael is a widely recognized expert in aspect-oriented programming and pattern-aware compilers.\
+            \ He speaks at developer conferences in Europe and the United States."}
+    twitter: gfraiteur
   - id: 498
     fileName: 0498.jpg
     name:
@@ -5512,3 +5565,27 @@ speakers:
     fileName: 1071.jpg
     name:
       - {language: en, text: "Sebastiaan de With"}
+  - id: 1072
+    fileName: 1072.jpg
+    name:
+      - {language: en, text: "Alexander Thissen"}
+    company:
+      - {language: en, text: Xpirit}
+    bio:
+      - {language: en, text: "Alex has been involved in application development since the late nineties and worked as a lead\
+            \ developer and architect at large enterprises and small companies. He spends his time teaching other developers\
+            \ the details of the Microsoft development platform and frameworks, and coaches architects to design and build\
+            \ modern distributed applications at cloud scale. He has received the Microsoft Most Valuable Professional award\
+            \ for Visual Studio and Development Technologies 13 times. In his spare time Alex likes to participate in all\
+            \ kinds of sport, and loves playing and programming new and retro video games."}
+    twitter: alexthissen
+    mvp: true
+  - id: 1073
+    fileName: 1073.jpg
+    name:
+      - {language: en, text: "Jani Nevalainen"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Cross platform, IOT, tinkering with gadgets."}
+    twitter: jn1974
