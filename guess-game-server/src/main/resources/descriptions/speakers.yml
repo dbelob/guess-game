@@ -2281,8 +2281,18 @@ speakers:
   - id: 260
     fileName: 0260.jpg
     name:
-      - {language: en, text: "Vitaly Fridman"}
+      - {language: en, text: "Vitaly Friedman"}
       - {language: ru, text: "Виталий Фридман"}
+    company:
+      - {language: en, text: "Smashing Magazine"}
+    bio:
+      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn’t like to give in easily. Originally from\
+            \ Minsk, Belarus, he studied computer science and mathematics in Germany where he has discovered his passion for\
+            \ typography, writing and design. After working as a freelancing designer and developer for 6 years, he co-founded\
+            \ Smashing Magazine, one of the largest online magazines dedicated to Web design and development. Vitaly is writer,\
+            \ co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine in\
+            \ the lovely city of Germany, Freiburg."}
+    twitter: vitalyf
   - id: 261
     fileName: 0261.jpg
     name:
@@ -2290,17 +2300,10 @@ speakers:
       - {language: ru, text: "Денис Мишунов"}
     company:
       - {language: en, text: "Independent Consultant"}
+      - {language: ru, text: "Независимый Консультант"}
     bio:
-      - {language: en, text: "Denys is a fronted developer & public speaker living and working in Norway. Being 2-in-1: an\
-            \ art school graduate and an engineer, Denys is passionate about psychology, physics, history, drawing. In his\
-            \ day-to-day job he enjoys getting to the heart of the matter of things and processes. Originally on “CSS side”\
-            , for the last years Denys has been building javascript applications, still breaking CSS, abusing HTML and working\
-            \ with performance optimisations of pretty much all aspects of the fronted toolset."}
-      - {language: ru, text: "Денис работает фронтенд-разработчиком и живет в Норвегии. За плечами — более 12 лет опыта ре\
-            шения различных фронтенд-задач. Изначально, будучи на светлой стороне CSS, в последние годы перешел на темную\
-            \ сторону JavaScript, что не останавливает его подрывную деятельность в CSS и HTML. Любит историю, психологию\
-            \ и копаться в мелочах. Летом можно встретить на велосипеде на одной из многочисленных MTB-гонок Норвегии. В о\
-            стальное время года делает вид, что разбирается в искусстве и высоких материях."}
+      - {language: en, text: "Independent frontend developer"}
+      - {language: ru, text: "Независимый фронтенд разработчик"}
     twitter: mishunov
   - id: 262
     fileName: 0262.jpg
@@ -5825,6 +5828,22 @@ speakers:
     name:
       - {language: en, text: "Pavel Chertorogov"}
       - {language: ru, text: "Павел Черторогов"}
+    company:
+      - {language: en, text: PS.kz}
+    bio:
+      - {language: en, text: "GraphQL rockstar, developer of Internet products, OSS maintainer. Since 2001 Pavel's main specialization\
+            \ is web technologies. He has extensive practical knowledge on back-end/front-end development, administration,\
+            \ and architecture. Since the end of 2015, Pavel's main focus is on isomorphic applications. In summer 2016 he\
+            \ began the development of graphql-compose (GraphQL schema generator) in open source."}
+      - language: ru
+        text: "GraphQL-ниндзя, разработчик интернет-продуктов, опенсорс-мейнтейнер. С 2001 года основная специализация - в\
+            еб-технологии. Обладает обширными практическими знаниями по бэкенду, фронтенду, администрированию и построению\
+            \ архитектуры. С конца 2015 года делает основной упор на изоморфные приложения. Летом 2016 начал разработку graphql-compose\
+            \ (генератора GraphQL-схем) в опенсорсе. Написал достаточно много материала на русском про <a href=\"https://github.com/nodkz/conf-talks\"\
+            \ target=\"_blank\">GraphQL</a>. В 2019 начал формировать best practice по <a href=\"https://graphql-rules.com\"\
+            \ target=\"_blank\">дизайну</a>.\n\nTelegram — <a href=\"https://t.me/graphql_ru\" target=\"_blank\">https://t.me/graphql_ru</a>"
+    twitter: nodkz
+    gitHub: nodkz
   - id: 661
     fileName: 0661.jpg
     name:
@@ -5842,6 +5861,14 @@ speakers:
     name:
       - {language: en, text: "Nikolay Matvienko"}
       - {language: ru, text: "Николай Матвиенко"}
+    company:
+      - {language: en, text: "Grid Dynamics"}
+    bio:
+      - {language: en, text: "Nikolay is big fan of diagnostics and performance optimization of Node.js applications and works\
+            \ in Grid Dynamics company, where he makes a digital transformation for large US e-commerce companies using Node.js."}
+      - {language: ru, text: "Николай фанат диагностики и улучшения производительности Node.js приложений. Работает JavaScript\
+            \ разработчиком в Grid Dynamics и занимается реплатформингом больших US e-commerce приложений используя Node.js."}
+    twitter: matvi3nko
   - id: 664
     fileName: 0664.jpg
     name:
@@ -5852,6 +5879,19 @@ speakers:
     name:
       - {language: en, text: "Vitaly Slobodin"}
       - {language: ru, text: "Виталий Слободин"}
+    company:
+      - {language: en, text: "WIS Software"}
+    bio:
+      - {language: en, text: "Vitaly is a co-founder of IT61. He developed various projects with different platforms and frameworks.\
+            \ He has experience with .NET, Node.js, and Ruby on Rails. He loves open source software and browsers. Vitaly\
+            \ joined the PhantomJS project in 2013 and later became the core developer. He believes that browsers (not robots)\
+            \ will rule the world. A big fan of pure and solid code. Perfectionist."}
+      - {language: ru, text: "Сооснователь ростовского IT-сообщества. Занимался разработкой множественных проектов под раз\
+            личные платформы и фреймворки. Успел испытать в бою .NET, Node.js, Ruby on Rails. Любит open source и браузеры\
+            . В 2013 году присоединился к проекту PhantomJS, а впоследствии стал его основным разработчиком. Верит, что бр\
+            аузеры, а не роботы, захватят мир. Фанатик чистого и аккуратного кода. Перфекционист."}
+    twitter: vitalliumm
+    gitHub: vitallium
   - id: 666
     fileName: 0666.jpg
     name:
@@ -5965,6 +6005,20 @@ speakers:
     name:
       - {language: en, text: "Egor Malkevich"}
       - {language: ru, text: "Егор Малькевич"}
+    company: []
+    bio:
+      - language: en
+        text: "A self-taught specialist from Minsk. It's a long story how Egor went down to the IT. His roadmap wasn't row.\n\
+            \nHe started doing small sites and games, upgraded to consulting, designing microservices ecosystem and frameworks\
+            \ for company usages in a wide range of internal products. Now Egor is an active member of local developers community\
+            \ in Minsk and participates in hackathons and meetups. He also took part in several startups. He extends his communication\
+            \ and networking skills."
+      - language: ru
+        text: "Креативный специалист из Минска. Как Егор докатился до IT — это отдельная интересная история.\n\nНачинал с\
+            \ малых игр и сайтов, развился в консалтинг, позже перебрался в разработку микросервисов и фреймворков на клие\
+            нте, адаптированных под продукт и задачи компании. Активно участвует в минском IT-сообществе, а также в хакато\
+            нах и митапах. Участвовал в стартапах, развивал свою компанию. Любит общаться и помогать людям."
+    twitter: wegorelax
   - id: 687
     fileName: 0687.jpg
     name:
@@ -5978,6 +6032,15 @@ speakers:
     name:
       - {language: en, text: "Alexander Korotaev"}
       - {language: ru, text: "Александр Коротаев"}
+    company:
+      - {language: en, text: Tinkoff.ru}
+    bio:
+      - {language: en, text: "Frontend developer at Tinkoff, supports an application for legal entities and internal service.\
+            \ He's also one of the leaders of SPB Frontend community and Drinkcast podcast. He's into visualizations and games."}
+      - {language: ru, text: "Фронтенд-разработчик в Тинькофф, занимается кабинетом для бизнеса и внутренними сервисами. О\
+            дин из организаторов сообщества SPB Frontend и подкаста Drinkcast. Любит заниматься визуализацией и играми."}
+    twitter: mamu_eval
+    gitHub: lekzd
   - id: 690
     fileName: 0690.jpg
     name:
@@ -6235,6 +6298,15 @@ speakers:
     fileName: 0724.jpg
     name:
       - {language: en, text: "Gerard Sans"}
+    company:
+      - {language: en, text: AngularZone}
+    bio:
+      - {language: en, text: "Gerard is very excited about the future of the Web and JavaScript. Always happy Computer Science\
+            \ Engineer and humble Google Developer Expert. He loves to share his learnings by giving talks, trainings and\
+            \ writing about cool technologies. He loves running AngularZone and GraphQL London, mentoring students and giving\
+            \ back to the community."}
+    twitter: gerardsans
+    gitHub: gsans
   - id: 725
     fileName: 0725.jpg
     name:
@@ -6263,29 +6335,94 @@ speakers:
     fileName: 0727.jpg
     name:
       - {language: en, text: "Azat Mardan"}
+    company:
+      - {language: en, text: "Node University"}
+    bio:
+      - language: en
+        text: "Azat is the founder of Node University and...\n\n⌨\tis the most active GitHub contributor in the world right\
+            \ next to Paul Irish, Addy Osmani, Todd Motto, and other famous developers (source: https://gist.github.com/paulmillr/2657075);\n\
+            \n\U0001f4da wrote 14 books on Node and JavaScript among which is the book that was #1 on Amazon for \"node.js\"\
+            \ and now is open&free on GitHub: https://github.com/azat-co/practicalnode;\n\n\U0001f3a4 spoke at 20+ conferences\
+            \ world-wide: http://azat.co; \n\n\U0001f3e2 taught software engineers of prominent companies: Microsoft, Starbucks,\
+            \ Cisco, Walmart, Intuit, Capital One, Macy’s, OnDeck, HubSpot, Northwestern Mutual, Salesforce, DocuSign, VMWare,\
+            \ 20th Century Fox Studios, UC Davis, Michael Kors and others; \n\n\U0001f468‍\U0001f4bb wrote 200+ blog posts\
+            \ on Webapplog: https://webapplog.com; \n\n\U0001f393 has free and paid courses on Node University: https://node.university."
+    twitter: azat_co
+    gitHub: azat-co
   - id: 728
     fileName: 0728.jpg
     name:
       - {language: en, text: "Alexey Taktarov"}
       - {language: ru, text: "Алексей Тактаров"}
+    company:
+      - {language: en, text: "Resume.io / Code Hipsters"}
+    bio:
+      - {language: en, text: "Alexey’s main area of interest includes interactive single-page web applications built on top\
+            \ of React/Redux/React Saga, Ember.js and Vue.js. Passionate about UX/UI, and does his own design from time to\
+            \ time. Loves building datavis experiments with D3, WebGL, Canvas, Web Audio APIs etc. Worked in a couple of companies\
+            \ before, including a YC 2015 startup and Evil Martians team. He currently works as a cofounder and CTO in a resume.io\
+            \ startup — interactive resume and cover letter builder. In the meantime he runs local non-profit community Code\
+            \ Hipsters: they organise local IT-meetups and write frontend-digest in social media. Together they launched ficus.io\
+            \ — a tool for real-time polls and slides feedback during the presentations."}
+      - language: ru
+        text: "Алексей  —  кофаундер и CTO в небольшом HR-стартапе Resume.io. Пишет код на Ruby и JavaScript, а его «швейц\
+            арский нож» — Ruby on Rails, React, Redux и Redux Saga. В прошлом — тимлид в ресторанном В2В-сервисе Смартомат\
+            о, разработчик в Злых Марсианах и дизайнер продукта в \nкалифорнийском стартапе Shogun. Обожает строить и прое\
+            ктировать интерфейсы и экспериментировать с WebGL, Canvas, D3 и Cycle.js. Основал харизматичную фронтенд-групп\
+            ировку Code Hipsters и активно развивает ростовское JS-сообщество."
+    twitter: mlfrg
   - id: 729
     fileName: 0729.jpg
     name:
       - {language: en, text: "Emil Bay"}
+    company:
+      - {language: en, text: CommodiTrader}
+    bio:
+      - {language: en, text: "Emil Bay is a 24 year old hacker from Denmark. He used to study maths, but quickly dropped out\
+            \ to work on software. He has worked at a HPC lab, an agency and a newspaper, as a data journalist. He is now\
+            \ working on the AgTech startup CommodiTrader."}
+    twitter: emilbayes
   - id: 730
     fileName: 0730.jpg
     name:
       - {language: en, text: "Minko Gechev"}
+    company:
+      - {language: en, text: Rhyme.com}
+    bio:
+      - {language: en, text: "Minko is a co-founder of Rhyme.com and has a big passion for open source. He loves to experiment\
+            \ with theoretical computer science concepts and apply them in practice. Minko teaches, speaks and writes about\
+            \ JavaScript and Angular. Some of the projects he works on are his books “Switching to Angular 2”, \"Getting started\
+            \ with Angular\", codelyzer, the official Angular style guide, angular-seed and many others."}
+    twitter: mgechev
+    gitHub: mgechev
   - id: 731
     fileName: 0731.jpg
     name:
       - {language: en, text: "Mikhail Udalov"}
       - {language: ru, text: "Михаил Удалов"}
+    company:
+      - {language: en, text: "Deutsche Bank"}
+    bio:
+      - {language: en, text: "Full stack developer with 9 years of experience in different areas. Currently works on Autobahn\
+            \ Platform at Deutsche Bank, with a focus on web development."}
+      - {language: ru, text: "Full stack-разработчик с 9-летним опытом в различных областях. Последнее время занимается ра\
+            зработкой платформы Autobahn в компании Deutsche Bank, c фокусом на веб-разработку."}
   - id: 732
     fileName: 0732.jpg
     name:
       - {language: en, text: "Vladimir Dashukevich"}
       - {language: ru, text: "Владимир Дашукевич"}
+    company:
+      - {language: en, text: "XB Software"}
+    bio:
+      - {language: en, text: "Frontend developer with 7 years of experience in various areas of web programming at XB Software.\
+            \ Started like everyone with PHP and making layout with tables. Is an experimentalist and a passionate admirer\
+            \ of coffee, graph theory, typed programming languages and the philosophy of Immanuel Kant."}
+      - {language: ru, text: "Фронтенд-разработчик c 7-летним опытом в различных областях веб-программирования в компании\
+            \ XB Software. Начинал, как и все, с PHP и верстки таблицами. Экспериментатор в душе и страстный поклонник коф\
+            е, теории графов, типизированных языков программирования и философии Иммануила Канта."}
+    twitter: life__777
+    gitHub: life777
   - id: 733
     fileName: 0733.jpg
     name:
@@ -6306,16 +6443,49 @@ speakers:
     name:
       - {language: en, text: "Anton Lobov"}
       - {language: ru, text: "Антон Лобов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - language: en
+        text: "Started his career in QA automation, but the diversity of programming languages and tools used in this area\
+            \ quickly attached his attention to the programming languages themselves.\n\nThe last four years of his work are\
+            \ devoted to writing IDE support for languages used in web development, mainly TypeScript and JavaScript, at JetBrains.\n\
+            Started at the ReSharper project, where implemented support for ES6, TypeScript 1.4–2.2, React and Angular 2.\
+            \ Now is a part of the WebStorm team.\n\nBesides his work, is fond of learning foreign languages and traveling."
+      - language: ru
+        text: "Начал карьеру в автоматизации тестирования, но обилие языков и технологий, используемых в этой области, быс\
+            тро свело интерес Антона к самим языкам программирования.\n\nПоследние четыре года занимается написанием функц\
+            иональности IDE для веб-языков, в основном TypeScript и JavaScript, в компании JetBrains.\nСначала работал в п\
+            роекте ReSharper, где делал поддержку ES6, TypeScript с 1.4 по 2.2, React и Angular 2. Сейчас работает в проек\
+            те WebStorm.\n\nКроме работы увлекается изучением иностранных языков и путешествиями."
+    twitter: zhuravlik26
   - id: 735
     fileName: 0735.jpg
     name:
       - {language: en, text: "Michael Bashurov"}
       - {language: ru, text: "Михаил Башуров"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: en, text: "JS/.NET full stack developer. Fancies cool new stuff and sometimes allows himself to get a little\
+            \ ride on a hype train. Loves React, usable and pretty UI, code transpiling and, of course, to dig deep into the\
+            \ details."}
+      - {language: ru, text: "Full stack-разработчик на JS и .NET. Обожает всякие новые штуки и иногда позволяет себе немн\
+            ого похайпить. Любит React, удобный и приятный глазу UI, транспиляцию кода и, конечно же, покопаться в кишочка\
+            х."}
   - id: 736
     fileName: 0736.jpg
     name:
       - {language: en, text: "Alexey Okhrimenko"}
       - {language: ru, text: "Алексей Охрименко"}
+    company:
+      - {language: en, text: IPONWEB}
+    bio:
+      - {language: en, text: "The author of MALEVICH design pattern and SimplePEG peg parser. CSSComb maintainer. Speaks at\
+            \ all conferences."}
+      - {language: ru, text: "Автор дизайн-паттерна MALEVICH и peg-парсера SimplePEG. Мейнтейнер CSSComb. Выступает на все\
+            х конференциях."}
+    twitter: Ai_boy
   - id: 737
     fileName: 0737.jpg
     name:

@@ -13729,3 +13729,677 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/47M80PFb3yuaekIciwsuYu/7574b212072aaa076d302b02137d3aba/Truths_About_Technical_Testing.pdf"]
     videoLinks: ["https://youtu.be/sbPbzQvTsmU"]
     speakerIds: [615]
+  - id: 729
+    name:
+      - {language: en, text: "The Post JavaScript Apocalypse"}
+    shortDescription:
+      - {language: en, text: "What the next language after JavaScript will be like, and what to do in the mean time about\
+            \ some of the new features in ES6."}
+    longDescription:
+      - {language: en, text: "This talk speculates about the next language after JavaScript, and what to do in the mean time\
+            \ about some of the new features in ES6. There will be an emphasis on simplicity and quality. The web is cluttered\
+            \ and full of errors. The talk will also touches on why you should subscribe to HBO."}
+    talkDay: 1
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [721]
+  - id: 730
+    name:
+      - {language: en, text: "The magic of headless browsers"}
+      - {language: ru, text: "Headless browsers: что, как и почему"}
+    shortDescription:
+      - {language: en, text: "We'll dwell on headless browsers and the way they work."}
+      - {language: ru, text: "Расскажем про headless-браузеры, как они устроены и работают."}
+    longDescription:
+      - {language: en, text: "Headless browsers have been a must-have tool for web developers. Developers use them to test\
+            \ their code, run code coverage, validate layout of a web page and automate routine tasks. But the problem is\
+            \ that developers know little about them. They do not know how these tools work or what else they can do with\
+            \ them. We will show you the magic of headless browsers."}
+      - {language: ru, text: "Headless-браузеры уже давно стали незаменимым инструментом разработчиков. С их помощью можно\
+            \ проводить тестирование кода, проверять качество и соответствие верстки и другое. Но проблема в том, что разр\
+            аботчики мало знают про то, как устроен и работает их инструмент. Расскажем об этих инструментах и как они раб\
+            отают."}
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/M5ZEXvLMWsk4UcuQs0gCY/30ae2e789a4a3ab5887bccdd3c989727/Slobodin_Headless_Browsers.pdf"]
+    videoLinks: []
+    speakerIds: [665]
+  - id: 731
+    name:
+      - {language: en, text: "Troubleshooting Node.js applications under the hood"}
+      - {language: ru, text: "Поиск и устранение неисправностей Node.js-приложений под капотом"}
+    shortDescription:
+      - {language: en, text: "In this talk, we will cover strategies for using tools such as core dump debuggers, flame graphs,\
+            \ GC and Event Loop tracers, to help finding and fixing performance problems, production errors and memory leaks\
+            \ at different levels of analysis."}
+      - {language: ru, text: "В докладе расскажем о стратегиях использования таких инструментов, как core dump debuggers,\
+            \ flame graphs, трассировщики работы GC и Event Loop, помогающих в поиске и устранении проблем производительно\
+            сти, ошибок в production и утечек памяти на разных уровнях анализа."}
+    longDescription:
+      - language: en
+        text: "From the introduction of Node.js, application diagnostics have been developed in several stages, from the debugging\
+            \ of deep applications to performance analysis. \nModern diagnostic tools are reliant on updating the V8 engine\
+            \ version. As a result, most tools do not support the latest, faster versions of the JS Node. \nIn the talk, I\
+            \ will cover strategies for using tools such as core dump debuggers, flame graphs, GC and Event Loop tracers,\
+            \ to help finding and fixing performance problems, production errors and memory leaks at different levels of analysis."
+      - language: ru
+        text: "С момента появления Node.js диагностика приложений совершенствовалась в несколько этапов, от отладки прилож\
+            ений до глубокого анализа производительности. \n\nСовременные инструменты диагностики зависят от обновления ве\
+            рсий движка V8. В результате большинство инструментов не поддерживают последние, более быстрые версии Node.js.\n\
+            \nВ докладе расскажем о стратегиях использования таких инструментов, как core dump debuggers, flame graphs, тр\
+            ассировщики работы GC и Event Loop, помогающих в поиске и устранении проблем производительности, ошибок в production\
+            \ и утечек памяти на разных уровнях анализа."
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/2hbM69wuxeAIku0gEA0sm2/37bb6ae365df68af69c741e57df7d108/Matvienko_____Troubleshooting_Node.js_applications_under_the_hood.pdf"]
+    videoLinks: []
+    speakerIds: [663]
+  - id: 732
+    name:
+      - {language: en, text: "Faster Angular applications"}
+    shortDescription:
+      - {language: en, text: "We’ll discuss different techniques which can improve the runtime performance of our application\
+            \ and we’ll explain essential practices that can help us reduce the initial load time of our Angular applications."}
+    longDescription:
+      - language: en
+        text: "High performance applications always bring better user engagement and experience. We often implicitly judge\
+            \ the quality of given application by it’s initial load time and responsiveness.\n\nIn the world of the single-page\
+            \ applications, we usually have to transfer huge amount of resources over the wire which dramatically impacts\
+            \ the initial load time. On top of that, performing change detection over the entire component tree, corresponding\
+            \ to a complex UI, often causes frame drops because of heavy computations happening in the main thread.\n\nIn\
+            \ the first part, we’ll discuss different techniques which can improve the runtime performance of our application\
+            \ in order to help us achieve rendering with 60fps! In the second part of this talk we’ll explain essential practices\
+            \ that can help us reduce the initial load time of our Angular applications."
+    talkDay: 1
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/1oYh7ZdcaQMiq0AumccsaO/a8a49b03f7aabc27a00a5ce45c9e1dfe/minko-gechev-faster-angular-applications.pdf"]
+    videoLinks: []
+    speakerIds: [730]
+  - id: 733
+    name:
+      - {language: en, text: "New Adventures in Responsive Web Design"}
+    shortDescription:
+      - {language: en, text: "A strategy for crafting fast, resilient and flexible responsive design systems by utilizing\
+            \ all of those wonderful shiny web technologies we have available today."}
+    longDescription:
+      - language: en
+        text: "With HTTP/2, Service Workers, Responsive Images, Flexbox, SVG and Font Loading API now available in browsers,\
+            \ we all are still trying to figure out just the right strategy for designing and buildings responsive websites\
+            \ just in time. We want to use all of these technologies, but how can we use them efficiently, and how do we achieve\
+            \ it within a reasonable amount of time? \nIn this talk, Vitaly Friedman, editor-in-chief of Smashing Magazine,\
+            \ will be looking into a strategy for crafting fast, resilient and flexible responsive design systems by utilizing\
+            \ all of those wonderful shiny web technologies we have available today. We'll also talk about dealing with legacy\
+            \ browsers and will cover a few dirty little techniques that might ensure that your responsive websites will stay\
+            \ relevant, flexible and accessible in the years to come."
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/1xNCNjP5xm2i4QAUeiOCuE/1ea6008676818ad1afbe8c0e281796ed/vitaly-friedman-new-adventures-in-responsive-design.pdf"]
+    videoLinks: []
+    speakerIds: [260]
+  - id: 734
+    name:
+      - {language: en, text: "Security: Vulnerabilities in your application"}
+      - {language: ru, text: "Безопасность: уязвимости вашего приложения"}
+    shortDescription:
+      - {language: en, text: "In this talk, you’ll find out why your applications are in danger, why frameworks do not protect,\
+            \ how to find vulnerabilities and what tools to use."}
+      - {language: ru, text: "Вы узнаете, почему ваши приложения в опасности, почему фреймворки не спасают, как находить у\
+            язвимости и какие инструменты для этого использовать."}
+    longDescription:
+      - language: en
+        text: "Are XSS attacks still relevant? It’s been about 20 years since Cross Site Scripting (XSS) appeared as an attack\
+            \ type. Since then we have gained rich experience and knowledge, the protection of our sites has become much more\
+            \ complicated, and numerous frameworks have been designed to protect us from errors. But the latest data shows\
+            \ a completely different picture: in the first quarters of 2017, the number of messages about XSS attacks and\
+            \ the number of vulnerabilities found increased in several times. \n\nIn this talk, you’ll find out why your applications\
+            \ are in danger, why frameworks do not protect, how to find vulnerabilities and what tools to use."
+      - language: ru
+        text: "Актуальны ли ещё угрозы XSS? Прошло около 20 лет с тех пор, как Cross Site Scripting (XSS) появился как вид\
+            \ атаки. С тех пор мы получили богатый опыт и знания, защита наших сайтов стала намного сложнее, а многочислен\
+            ные фреймворки были призваны оберегать нас от ошибок. Но последние данные показывают совсем другую картину: в\
+            \ первых кварталах 2017 года количество сообщений об XSS-атаках и количество найденных уязвимостей выросло в н\
+            есколько раз.\n \nВ докладе расскажем о том, почему ваши приложения в опасности, почему фреймворки не спасают\
+            , как находить уязвимости и какие инструменты для этого использовать."
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/28uqyOE0Wo4wooiICwS0Go/4c2d2af039ab5b564fe5feb746f336e2/Aliaksei_Bahachuk_-_Vulnerabilities.pdf"]
+    videoLinks: []
+    speakerIds: [708]
+  - id: 735
+    name:
+      - {language: en, text: "HyperDB — a scalable key-value store"}
+    shortDescription:
+      - {language: en, text: "Introducing HyperDB, a P2P and versioned distributed key-value store written in JavaScript that\
+            \ allows you to share huge datasets but only replicate the data you are interested in securely and fast."}
+    longDescription:
+      - {language: en, text: "A talk about a new fully P2P database Mathias has been developing called HyperDB. It is a massively\
+            \ scalable key-value store that works both directly in the browser and in node, written in JavaScript. Mathias\
+            \ will talk about how it works, the security model and show a bunch of cool demos of all the mad science you can\
+            \ do on top of it."}
+    talkDay: 1
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [725]
+  - id: 736
+    name:
+      - {language: en, text: "Architectural sketches: how not to ruin the architecture of your project"}
+      - {language: ru, text: "Архитектурные этюды: как не угробить архитектуру своего проекта"}
+    shortDescription:
+      - {language: en, text: "During the talk, Alexey will take a standard template that is understandable to everyone and\
+            \ try to build its architecture, applying all the knowledge that he has accumulated over 10 years of work in the\
+            \ frontend."}
+      - {language: ru, text: "Во время доклада Алексей возьмет обычный и понятный всем шаблонный проект и попробует выстро\
+            ить его дальнейшую архитектуру, применяя все те знания, которые были накоплены им за 10 лет работы во фронтенд\
+            е."}
+    longDescription:
+      - language: en
+        text: "You have started a huge project with a boisterous web interface and far-reaching plans for 2-3 years. You chose\
+            \ a framework, customized the assembler, downloaded from the GitHub or created a backbone — the foundation of\
+            \ your future application. Perhaps you already have a prototype! \nAnd the question arises: what is next? Because\
+            \ mistakes in the early stages are the most painful. It is very easy to mess things up. \n\nDuring the talk, Alexey\
+            \ will take a standard template that is understandable to everyone and try to build its architecture, applying\
+            \ all the knowledge that he has accumulated over 10 years of work in the frontend."
+      - language: ru
+        text: "Вы начали огромный проект с разухабистым веб-интерфейсом и с наполеоновскими планами на 2-3 года. Выбрали ф\
+            реймворк, настроили сборщик, скачали с GitHub или сгенерировали скелет, основу вашего будущего приложения. Воз\
+            можно, у вас даже уже есть прототип. \nИ здесь возникает вопрос, как действовать дальше, ведь ошибки на ранних\
+            \ стадиях — самые болезненные. Можно очень легко наломать дров. \n\nВо время доклада Алексей возьмет обычный и\
+            \ понятный всем шаблонный проект и попробует выстроить его дальнейшую архитектуру, применяя все те знания, кот\
+            орые были накоплены им за 10 лет работы во фронтенде."
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/328nas1n9SKa8CkekcISmm/3188f125e9ae120307ec5bae560e1a23/Zolotyh.pdf"]
+    videoLinks: []
+    speakerIds: [733]
+  - id: 737
+    name:
+      - {language: en, text: "Inter Windows Communication: how to build a client-side RPC"}
+      - {language: ru, text: "Inter Windows Communication, или Как построить полноценный RPC в браузере"}
+    shortDescription:
+      - {language: en, text: "We will take a look at Inter Windows Communication problem from different angles, along with\
+            \ possible problems and solutions of building RPC on a desktop."}
+      - {language: ru, text: "Рассмотрим различные подходы к построению client-side-коммуникации между веб-приложениями, а\
+            \ также основные проблемы и их решения при построении полноценного RPC в браузере."}
+    longDescription:
+      - {language: en, text: "This talk is focused on JS engineers with hands-on experience. We will take a look at Inter\
+            \ Windows Communication problem from different angles, discuss problems (and solutions) of building your own RPC\
+            \ on a desktop."}
+      - {language: ru, text: "Доклад рассчитан на практикующих JS-разработчиков. Рассмотрим разные подходы к построению client-side-к\
+            оммуникации между веб-приложениями. Обсудим проблемы (и их решения), с которыми придется столкнуться, чтобы по\
+            строить полноценный RPC в браузере."}
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/2xgcdLIDG4WWWy0ai4ySyO/e8ddb12c228eae67c1b6c9ef267a351b/Udalov_HolyJS_v3.pdf"]
+    videoLinks: []
+    speakerIds: [731]
+  - id: 738
+    name:
+      - {language: en, text: "UI components with pixel shaders, writing your first shader"}
+      - {language: ru, text: "UI-компоненты на пиксельных шейдерах, пишем ваш первый шейдер"}
+    shortDescription:
+      - {language: en, text: "This talk is a step by step guide for web developers into the new and immersive world of pixel\
+            \ shaders which empowers you to control every pixel of user interface keeping performance high."}
+      - {language: ru, text: "Доклад — пошаговый тур для веб-разработчиков в новый и захватывающий мир пиксельных шейдеров\
+            , которые являются технологией, отвечающей за визуальные эффекты в компьютерных играх, и дают суперспособность\
+            \ контролировать каждый пиксель UI без потери производительности."}
+    longDescription:
+      - {language: en, text: "5 years ago shaders transformed game graphics and became the technology behind all amazing VFX\
+            \ we see in computer games. Now they are ready to rock the web. Shaders are little programs written in C-like\
+            \ language GLSL (OpenGL Shading Language) which are aimed at describing the state of vertices (vertex shaders)\
+            \ or pixels (fragment shaders) in OpenGL or WebGL context using math equations. GLSL compiles and runs at GPU\
+            \ achieving unprecedented performance for HTML/CSS world. Shaders are widely used in game development and 3D graphics\
+            \ apps providing unlimited abilities for implementing special effects and rendering techniques. However, for web\
+            \ development, GLSL is still underutilized despite wide browsers support. This talk reviews real-world shaders\
+            \ usage for web UI development and provides some how-to's on integrating GLSL component into your web application."}
+      - {language: ru, text: "В своё время шейдеры перевернули мир игровой графики и стали технологией, стоящей за всеми в\
+            изуальными эффектами в компьютерных играх. Сейчас они готовы встряхнуть веб. Шейдеры — небольшие программы на\
+            \ С-подобном языке GLSL (OpenGL Shading Language), которые позволяют описывать состояние вершин (вершинные шей\
+            деры) или пикселей (пиксельные шейдеры) в контексте OpenGL (или WebGL) с помощью математических функций. GLSL\
+            \ компилируется и выполняется на GPU с беспрецедентной для HTML/CSS производительностью. Как правило, шейдеры\
+            \ применяются для разработки игр и компьютерной графики, а использование их в UI-компонентах незаслуженно обхо\
+            дится стороной. В данном докладе рассматривается опыт использования GLSL при разработке веб-приложений."}
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [711]
+  - id: 739
+    name:
+      - {language: en, text: "Real-world applications of hash functions"}
+    shortDescription:
+      - {language: en, text: "Come see three exciting, real-world applications of hash functions, that you can use in your\
+            \ work. We will cover how to build a deduplicating file uploader, document similarity search engine, and combat\
+            \ online voting fraud."}
+    longDescription:
+      - language: en
+        text: "Hash functions are regarded as an advanced topic, and designing one from scratch takes a PhD in Computer Science.\
+            \ However, everyone is using hash functions in their daily work, whether they know it or not. \n\nIn this talk\
+            \ we will showcase how anyone can take advantage of the properties of hash functions, without knowing the mathematics\
+            \ or implementation details, to build exciting applications that only hash functions allow. We will cover how\
+            \ to build a deduplicating file uploader, document similarity search engine, and combat online voting fraud. All\
+            \ in pure JavaScript, with a sprinkle of WASM for blazing fast performance, and heaps of demos so everyone can\
+            \ follow along."
+    talkDay: 1
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [729]
+  - id: 740
+    name:
+      - {language: en, text: "How to fight quantum computer with WebAssembly?"}
+      - {language: ru, text: "Как победить квантовый компьютер с помощью WebAssembly?"}
+    shortDescription:
+      - {language: en, text: "This talk is about what a quantum computer is and how it can break down the entire Internet,\
+            \ how modern browsers will try to prevent such kind of problems, and how we can protect our customers' data right\
+            \ now. It's about encryption algorithms like SIDH and their use in the browser with WASM."}
+      - {language: ru, text: "В докладе расскажем, что такое квантовый компьютер и как он может сломать весь интернет, как\
+            \ современные браузеры будут пытаться не допустить таких проблем, и как мы с вами сможем защитить данные польз\
+            ователей уже сейчас. Затронем алгоритмы шифрования типа SIDH и их использование в браузере при помощи WASM."}
+    longDescription:
+      - language: en
+        text: "One of the main reasons for the popularity of web technologies today is its security and confidentiality. Without\
+            \ any hesitation, we enter our passwords and credit card numbers on the pages protected by the TLS protocol, with\
+            \ no fear that they will be intercepted by a third party. This is largely due to the simple and reliable RSA protocol,\
+            \ which was proposed in the 1970s. But to date, this protocol can theoretically be hacked by a new type of computers\
+            \ — a quantum computer.\n\nThis talk is about what a quantum computer is and how it can break down the entire\
+            \ Internet, how modern browsers will try to prevent such kind of problems, and how we can protect our customers'\
+            \ data right now. It's about encryption algorithms like SIDH that cannot be hacked at the moment by a quantum\
+            \ computer and their use in the browser with WASM. Join us, it will be very interesting!"
+      - language: ru
+        text: "Одной из главных причин популярности веб-технологий на сегодняшний день является их безопасность и конфиден\
+            циальность. Мы, не задумываясь, вводим свои пароли и номера кредитных карт на защищенные протоколом TLS-страни\
+            цы, не опасаясь того, что они будут перехвачены третьим лицом. Во многом это благодаря простому и надежному пр\
+            отоколу RSA, который был предложен ещё 1970-х годах. Но на сегодняшний день данный протокол теоретически может\
+            \ быть взломан новым типом вычислительных машин — квантовым компьютером. \n\nВ докладе расскажем, что такое кв\
+            антовый компьютер и как он может сломать весь интернет, как современные браузеры будут пытаться не допустить т\
+            аких проблем, и как мы с вами сможем защитить данные пользователей уже сейчас. Речь пойдёт об алгоритмах шифро\
+            вания типа SIDH, которые не могут быть взломаны на данный момент квантовым компьютером, и их использование в б\
+            раузере при помощи WASM. Приходите, будет безумно интересно!"
+    talkDay: 1
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [732]
+  - id: 741
+    name:
+      - {language: en, text: "Testing serverless applications"}
+    shortDescription:
+      - {language: en, text: "This talk will cover testing serverless application from testing isolated function all the way\
+            \ to integration tests."}
+    longDescription:
+      - language: en
+        text: "Serverless architecture becomes an important way we build the apps, but it's also a paradigm shift that affects\
+            \ all the aspects of software development. Most of the resources are still focused on the introduction to this\
+            \ topic, but if you decide to dive deep into it you'll face many more important challenges. \n\nOne of the most\
+            \ important part of software development is testing. But how do we test serverless applications? And what should\
+            \ we test when we don't control all the layers of the application? What is the main difference compared to testing\
+            \ traditional Node.js apps and do we need new tools for serverless apps? \n\nThe goal of this talk is to explore\
+            \ testing serverless applications and to try answering the questions above and more. It'll cover testing serverless\
+            \ application from testing isolated function all the way to integration tests."
+    talkDay: 1
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [726]
+  - id: 742
+    name:
+      - {language: en, text: "Yarn, npm v5, or pnpm — what's better?"}
+      - {language: ru, text: "Yarn, npm v5 или pnpm — кто круче?"}
+    shortDescription:
+      - {language: en, text: "Overview and comparison of node package managers: speed, CLI, lockfiles and determinism."}
+      - {language: ru, text: "Обзор и сравнение пакетных менеджеров: скорость, CLI, локфайлы и детерминизм."}
+    longDescription:
+      - {language: en, text: "Overview and comparison of node package managers: speed, CLI, lockfiles and determinism."}
+      - {language: ru, text: "Обзор и сравнение пакетных менеджеров: скорость, CLI, локфайлы и детерминизм."}
+    talkDay: 1
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/4GcxD9yQnY4sQ6IO8Ge06g/6163c60b2cc5ced1274345f8d6e94fb6/Michael_Bashurov_Yarn_npm_v5_or_pnpm_whats_better.pdf"]
+    videoLinks: []
+    speakerIds: [735]
+  - id: 743
+    name:
+      - {language: en, text: "GraphQL - concluding a profitable contract between server and client"}
+      - {language: ru, text: "GraphQL — заключаем выгодный контракт между сервером и клиентом"}
+    shortDescription:
+      - {language: en, text: "What is GraphQL, what it consists of, static analysis of GraphQL requests on client, tracking\
+            \ mistakes and changes in API, along with the main problems of building and generating GraphQL scheme on backend."}
+      - {language: ru, text: "Что такое GraphQL и из чего он состоит, статический анализ GraphQL-запросов на клиенте, отсл\
+            еживание ошибок и изменений в API, а также основные проблемы построения и генерации GraphQL-схемы на бэкенде."}
+    longDescription:
+      - {language: en, text: "REST API is giving way to GraphQL. What is GraphQL and what is it made of? How do backend developers\
+            \ describe their server's capabilities and frontend developers demand data? We'll cover static analysis of GraphQL\
+            \ requests on client and how it helps to track mistakes and changes in API. Besides, we'll dwell on the main problems\
+            \ of building and generating GraphQL scheme on backend."}
+      - {language: ru, text: "GraphQL приходит на смену REST API. Что такое GraphQL и из каких основных частей он состоит\
+            . Как бэкендеры описывают возможности своего сервера, а фронтендеры заявляют о своих потребностях в данных? За\
+            тронем тему статического анализа GraphQL-запросов на клиенте и как это позволяет отслеживать ошибки и изменени\
+            я в API. Пройдемся по основным проблемам построения и генерации GraphQL-схемы на бэкенде."}
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5zTslHVxlY6e2wAkMQMceS/d4024a20ab5cea77a9198d5d520ef970/Pavel_Chertorogov_GraphQL_the_holy_contract-between_client_and_server_v11.pdf"]
+    videoLinks: []
+    speakerIds: [660]
+  - id: 744
+    name:
+      - {language: en, text: "Managing Asynchronicity with RQ"}
+    shortDescription:
+      - {language: en, text: "The nature of work in servers presents some new challenges. Here is a solution, intended to\
+            \ enhance ease of use through minimalism."}
+    longDescription:
+      - {language: en, text: "Turn based servers are now joining turn based browsers in providing race-free and deadlock-free\
+            \ interactivity. The event-driven model has long been popular in UI systems, but the nature of work in servers\
+            \ presents some new challenges. Functional programming provides solutions, including monads, arrows, promises,\
+            \ and various flavors of FRP. This is another such solution, intended to enhance ease of use through minimalism.\
+            \ And beyond, with minlism."}
+    talkDay: 2
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [721]
+  - id: 745
+    name:
+      - {language: en, text: "TypeScript, or Why so complicated"}
+      - {language: ru, text: "TypeScript, или Зачем так сложно"}
+    shortDescription:
+      - {language: en, text: "In this talk, we'll try to figure out, what the pitfalls of typing offered by TypeScript are,\
+            \ why it is so complex and how it influences the language support from IDE, sometimes in a rather unexpected way."}
+      - {language: ru, text: "Какие подводные камни таит в себе типизация, предлагаемая языком TypeScript, почему она така\
+            я сложная и как она напрямую влияет на поддержку языка со стороны IDE, иногда очень неожиданным образом."}
+    longDescription:
+      - language: en
+        text: "In the last few years, TypeScript, which started as \"just another JavaScript with classes\", managed to develop\
+            \ into a complex tool for strictly typing complicated JavaScript code. From the developer's point of view, everything\
+            \ became more obvious and straightforward. But not everything is that obvious as it seems to be.\n\nIn this talk\
+            \ we'll try to figure out, which pitfalls are hidden in the type system provided by TypeScript language, why it\
+            \ is actually so complicated, and how it directly affects TypeScript language support from the viewpoint of IDEs\
+            \ and other developer tools, sometimes in a very unexpected way."
+      - language: ru
+        text: "TypeScript всего за пару лет сумел из очередного «JavaScript с классами» превратиться в мощный инструмент д\
+            ля типизации сложного кода на JavaScript. С точки зрения разработчика все стало очевиднее и удобнее. Но не все\
+            \ так очевидно, как хотелось бы. \n  \nВ этом докладе попробуем разобраться, какие подводные камни таит в себе\
+            \ типизация, предлагаемая языком TypeScript, зачем она такая сложная и как она напрямую влияет на поддержку яз\
+            ыка со стороны IDE и других средств разработки, иногда очень неожиданным образом."
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/6GXN8QUDq8i0UKqqOOEIug/680e937f96133dc75d41c3a202b63ab9/Anton_Lobov_TypeScript_why_so_complicated_upd.pdf"]
+    videoLinks: []
+    speakerIds: [734]
+  - id: 746
+    name:
+      - {language: en, text: "You Don’t Know Node"}
+    shortDescription:
+      - {language: en, text: "We'll talk about five core Node features which most developers who write Node or use it in front-end\
+            \ don't know about."}
+    longDescription:
+      - language: en
+        text: "This talk is a quick intro to five core Node features which most developers who write Node or use it in front-end\
+            \ don't know about. \nThis talk is technical with demos of code, and is intended for front-end developers."
+    talkDay: 2
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/eyLFJRfVAcUiYsOQGygo4/cae154ec898cf60ebf09554be4132985/Azat_Mardan__You_Don_t_Know_Node__Version_2.pdf"]
+    videoLinks: []
+    speakerIds: [727]
+  - id: 747
+    name:
+      - {language: en, text: "/Reg(exp){2}lained/: Demystifying Regular Expressions"}
+    shortDescription:
+      - {language: en, text: "We'll start with the basics and progressively enhance your knowledge until you're coding regular\
+            \ expressions like a champ."}
+    longDescription:
+      - language: en
+        text: "Quick, what does this do: /(\\/\\*?\\\\/)|\\/\\/.*?(\\r?\\n|$)/g? If you're like many developers, you just\
+            \ averted your eyes, and your heart is now in your throat. Symptoms included sweaty palms and recurring nightmares\
+            \ with blood-thirsty ASCII symbols. But don't worry, this condition doesn't have to be chronic. A cure is right\
+            \ around the corner. \n\nAs with many developers, you're familiar with the power of regular expressions, but anything\
+            \ beyond the basics scares the crap out of you. Fear no more young padawan! In this talk, we'll start with the\
+            \ basics and progressively enhance your knowledge until you're coding regular expressions like a champ. Everything\
+            \ will be demonstrated live with visual examples that ensure maximum comprehension."
+    talkDay: 2
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [722]
+  - id: 748
+    name:
+      - {language: en, text: "Unit testing with screenshots: breaking the sound barrier"}
+      - {language: ru, text: "Unit-тестирование скриншотами: преодолеваем звуковой барьер"}
+    shortDescription:
+      - {language: en, text: "In this talk, we'll share our results and dwell on different tasks we were solving and the way\
+            \ we use screenshots testing so that it almost doesn't influence the general testing time."}
+      - {language: ru, text: "Расскажем, как мы тестировали регресс верстки скриншотами, какие задачи решали и как добилис\
+            ь того, чтобы тестирование скриншотами практически не влияло на общее время прохождения тестов."}
+    longDescription:
+      - language: en
+        text: "Testing layout regress with screenshots has already become a trend, you won't surprise anyone with it. We wanted\
+            \ to implement this way of testing in our company. There were some questions, though, that we had, like support\
+            \ and use simplicity, but most of all the question of (performance) solutions capacity. We wanted to have a solution\
+            \ that would be easy to use. We didn't like the existing solutions, so we started making our own. \n\nIn this\
+            \ talk we'll share our results and dwell on different tasks we were solving and how we got."
+      - language: ru
+        text: "Тестировать регресс верстки скриншотами модно, этим никого не удивишь. Мы давно хотели внедрить этот вид те\
+            стирования у себя. Все время смущали вопросы простоты поддержки и применения, но в большей степени вопрос проп\
+            ускной способности решений (производительности). Хотелось решения, простого в использовании и быстрого в работ\
+            е. Готовые решения не подошли, и мы взялись делать свое. \n\nВ докладе расскажем, что из этого вышло, какие за\
+            дачи решали и как мы добились того, чтобы тестирование скриншотами практически не влияло на общее время прохож\
+            дения тестов."
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/Eh5ZljJm48kwmU2CAQ86A/d359c0bf649f52dff71d16069f97b022/Roman_Dvornov_-_Blazing_fast_unit-testing_with_screenshots.pdf"]
+    videoLinks: []
+    speakerIds: [685]
+  - id: 749
+    name:
+      - {language: en, text: "Bending time with Schedulers and RxJS 5"}
+    shortDescription:
+      - {language: en, text: "How to use Schedulers in RxJS 5 in testing, animations, synchronous and asynchronous scenarios."}
+    longDescription:
+      - language: en
+        text: "Observables have been very popular because of their many qualities: asynchronous processing, composition, performance,\
+            \ powerful operators. But usually there's a less covered feature that lies beneath. \nThat is: Schedulers. In\
+            \ this talk we are going to cover Schedulers in depth, going from the basic APIs to more obscure features to bend\
+            \ time to our will!"
+    talkDay: 2
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [724]
+  - id: 750
+    name:
+      - {language: en, text: "Game \"Heroes of Might and Magic\" in browser: long, difficult and incredibly interesting"}
+      - {language: ru, text: "Игра «Герои Меча и Магии» в браузере: долго, сложно и невыносимо интересно"}
+    shortDescription:
+      - {language: en, text: "In this talk you can find useful game developer cases: techniques for efficient data storing,\
+            \ drawing UI on Canvas, and ways to approach parsing binary files."}
+      - {language: ru, text: "В докладе рассматриваются полезные кейсы разработчика игр на JS: приемы эффективного хранени\
+            я данных, рисование UI на Canvas и способы подступиться к парсингу бинарных файлов."}
+    longDescription:
+      - language: en
+        text: "This is a story of self-making as a programmer through the development of a \"dream game\". This talk will\
+            \ open the window to the world of those who are enthused by what they do and will show the right way to the big\
+            \ games' development in browser. Personal experience of war with performance and searching for the right way,\
+            \ solving pressing problems and incredible discoveries in the JS world.\n\nIn this talk you can find useful game\
+            \ developer cases: techniques for efficient data storing, drawing UI on Canvas, and ways to approach parsing binary\
+            \ files."
+      - language: ru
+        text: "История становления программиста через разработку «игры мечты». Этот доклад приоткроет окно в мир фанатов с\
+            воего дела и укажет верный путь в разработку больших игр в браузере. Личный опыт войны с производительностью и\
+            \ поиски правильного пути, решения насущных проблем и невероятные открытия в мире JS.\n\nВ докладе рассматрива\
+            ются полезные кейсы разработчика игр на JS: приемы эффективного хранения данных, рисование UI на Canvas и спос\
+            обы подступиться к парсингу бинарных файлов."
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/6RJN4W5iwMKSKmeumcU0sw/319cff35869eac4fff39c336c517da31/Aleksander_Korotaev_Heroes_of_Might_and_Magic_in_browser.pdf"]
+    videoLinks: []
+    speakerIds: [689]
+  - id: 751
+    name:
+      - {language: en, text: "Animations in a stateful world"}
+      - {language: ru, text: "Анимации в мире состояний"}
+    shortDescription:
+      - {language: en, text: "Different approaches (from clean to \"dirty\") to animations in React and other stateful libraries."}
+      - {language: ru, text: "О разных подходах (от чистых до грязных) к анимациям в React и других stateful-библиотеках."}
+    longDescription:
+      - language: en
+        text: "We already know how to build pure interfaces, time travel, and write undo-redo logic in a couple of lines of\
+            \ code. But what about animations? We always forget about them and it isn't completely clear how to implement\
+            \ them using (state) ↦ DOM approach. React-Motion provides a spring for more natural UIs, but what if you I'd\
+            \ like to run complex physics simulations?\n\nIn this talk I'm going to show what tricks I use when working with\
+            \ animations in React, compare different approaches (D3, React-Motion, «dirty components») and illustrate it with\
+            \ a dozen of interactive demos. I'm also going to be talking about how I trigger animations inside components\
+            \ in Redux apps and introduce a library called Redux Actuator.\n\nThe talk is a part of ongoing research I'm been\
+            \ doing for 4 month trying to figure out clean and declarative way to do animations in React apps."
+      - language: ru
+        text: "Мы уже научились строить чистые интерфейсы и писать «undo-redo» в несколько строчек. Но как же анимации? Их\
+            \ часто обходят стороной, и они не всегда вписываются в подход (state) ↦ DOM. Существуют отличные решения врод\
+            е React Motion, но что, если вам нужно делать сложные анимации или работать с Canvas, используя физический дви\
+            жок?\n\nВ своём докладе Алексей расскажет, как он работает с анимациям в React-приложениях, сравнит несколько\
+            \ подходов (D3, React-Motion, «грязные компоненты») и проиллюстрирует это множеством интерактивных демок. Такж\
+            е расскажет, как он «запускает» анимации в Redux-приложениях.\n\nДанный доклад — часть исследования, цель кото\
+            рого — прийти к чистому и декларативному способу задания анимаций в React-приложениях."
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [728]
+  - id: 752
+    name:
+      - {language: en, text: "Node.js fatal flaw"}
+      - {language: ru, text: "Фатальный недостаток Node.js"}
+    shortDescription:
+      - {language: en, text: "We'll try to fix a fatal flaw of Node.js (not the one you thought about)."}
+      - {language: ru, text: "Попытаемся исправить фатальный недостаток Node.js (не тот, о котором вы подумали)."}
+    longDescription:
+      - {language: en, text: "Node.js has a fatal flaw (not the one you thought about). Brace yourselves since we will try\
+            \ to fix it."}
+      - {language: ru, text: "У Node.js есть фатальный недостаток (не тот, о котором вы подумали). Пристегните ремни, ибо\
+            \ мы попытаемся этот недостаток исправить."}
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [736]
+  - id: 753
+    name:
+      - {language: en, text: "Panel discussion - JS everywhere: a silver bullet or a curse?"}
+      - {language: ru, text: "Круглый стол - JS everywhere: серебряная пуля или проклятие?"}
+    shortDescription:
+      - {language: en, text: "The panel discussion experts will try to find out whether you can become a universal specialist\
+            \ by knowing JavaScript."}
+      - {language: ru, text: "Обсудим, можно ли стать специалистом по всему, зная JavaScript, и насколько JS универсален."}
+    longDescription:
+      - {language: en, text: "JavaScript is literally all over the place. In our browsers, mobile phones, watches and fridges,\
+            \ even in our thoughts. So, it seems like a universal tool has been found? Should other languages fall? Or a hammer\
+            \ is not good enough to drive woodscrews? Is it right or not that by knowing JS you can become a specialist in\
+            \ everything? Together with the panel discussion experts we will try to find the answers to the questions listed\
+            \ above."}
+      - {language: ru, text: "JavaScript сейчас буквально повсюду. В наших браузерах, мобильниках, часах и холодильниках,\
+            \ и даже в мыслях. Получается, идеальный инструмент для всего найден? Другие языки должны пасть? Или всё-таки\
+            \ молоток не очень годится, чтобы забивать шурупы? Хорошо или плохо то, что, зная JS, сейчас можно стать специ\
+            алистом по всему? На все эти вопросы постараются ответить как эксперты, так и зрители панельной дискуссии."}
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [723, 261, 663, 732]
+  - id: 754
+    name:
+      - {language: en, text: "Big Bang Redesign: Smashing Magazine’s 2017 Relaunch, a Case Study"}
+    shortDescription:
+      - {language: en, text: "Insights into Smashing Magazine’s Relaunch in 2017 — with decisions made, failures, successes,\
+            \ lessons learned and shady’n'dirty techniques used along the way."}
+    longDescription:
+      - language: en
+        text: "You’ve been there: big bang redesigns are usually a very, very bad idea. Redesigning and rebuilding an existing\
+            \ website from scratch is risky and unpredictable, and in many cases the level of complexity is highly underrated\
+            \ and underestimated. In mid-2016, Smashing Magazine has decided to make a big switch from the existing WordPress\
+            \ setup to an entirely new design, entirely new architecture (JAM Stack) and an entirely new, GitHub-based, editorial\
+            \ workflow. \n\nIn this talk, Vitaly Friedman, editor-in-chief and co-founder of Smashing Magazine, will share\
+            \ some of the insights into Smashing Magazine’s Relaunch in 2017 — with decisions made, failures, successes, lessons\
+            \ learned and shady’n'dirty techniques used along the way. Among other things, you’ll learn how Smashing Magazine\
+            \ uses HTTP/2, service workers and serverless architecture with static site generators to boost performance, with\
+            \ a dash of React, Flexbox, CSS and the peek into the new GitHub-based editorial workflow here and there. Beware:\
+            \ the session will contain at least 27 illustrations of cats!"
+    talkDay: 2
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/6OVnOnD0PeaqaOuEmEuyOw/8bb85a7a0fe2a728bfa2e8d6a0d3080f/smashing-redesign-big-bang-case-study.pdf"]
+    videoLinks: []
+    speakerIds: [260]
+  - id: 755
+    name:
+      - {language: en, text: "Let's (--rob--) crawl the internet"}
+      - {language: ru, text: "(--Воруем--) Добываем данные из интернета"}
+    shortDescription:
+      - {language: en, text: "Together with Yegor, you’ll discover not only the simple but also the complicated and quite\
+            \ unobvious ways to steal data from websites."}
+      - {language: ru, text: "Егор расскажет как о самых простых способах утащить данные с сайта, так и самых сложных и кр\
+            айне неочевидных на первый взгляд."}
+    longDescription:
+      - {language: en, text: "In this talk, you'll head to the very depths of the internet in order to find data. Together\
+            \ with Yegor, you’ll discover both the simple ways to steal data from websites and, as it seems at the first sight,\
+            \ the complicated and quite unobvious ones. The talk will be helpful for those who wanted to make a useful application\
+            \ but always postponed it. Crawling the internet is cool!"}
+      - {language: ru, text: "Данный доклад — это невероятный тур по глубинам интернета в поисках данных. Егор расскажет к\
+            ак о самых простых способах утащить данные с сайта, так и самых сложных и крайне неочевидных на первый взгляд\
+            . Доклад будет интересен тем, кто хотел бы сделать полезное приложение, но постоянно откладывал эту задачу на\
+            \ потом. А все потому, что добывать данные из интернета — здорово!"}
+    talkDay: 2
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/2HZJwOFN1KcWaKE8MYcm86/5fb66d24428853dc89614bdd2fccd55d/egor-presentation-one.pdf"]
+    videoLinks: []
+    speakerIds: [686]
+  - id: 756
+    name:
+      - {language: en, text: "How many frontend developers does it take to create a mobile app?"}
+      - {language: ru, text: "Сколько нужно фронтендеров, чтобы написать мобильное приложение?"}
+    shortDescription:
+      - {language: en, text: "In this talk, we'll show and tell you what we've learned about React Native: why sometimes interfaces\
+            \ work fast but then slow down, how to integrate bundle into a native application and what is a hidden trap in\
+            \ the Android version."}
+      - {language: ru, text: "Расскажем, какие тайны скрыты в React Native: почему иногда интерфейсы работают быстро, а ин\
+            огда тормозят, как поставить бандл в нативное приложение и какой подвох спрятан в Android-версии."}
+    longDescription:
+      - {language: en, text: "This spring we conducted an experiment and partially entrusted the development of the Yandex.Money's\
+            \ mobile app to our frontend developers. To do so we decided to merge our native applications with the screens\
+            \ written on React Native. In this talk, we'll show and tell you what we've learned about React Native: why sometimes\
+            \ interfaces work fast but then slow down, how to integrate bundle into a native application and what is a hidden\
+            \ trap in the Android version."}
+      - {language: ru, text: "Весной этого года мы решили провести эксперимент и частично переложить на плечи фронтендеров\
+            \ развитие мобильного приложения Яндекс.Деньги. Для этого мы решили скрестить наши нативные приложения с экран\
+            ами, написанными на React Native. Расскажем, что нам удалось узнать в ходе этого эксперимента и какие тайны ск\
+            рыты в React Native: почему иногда интерфейсы работают быстро, а иногда тормозят, как поставить бандл в нативн\
+            ое приложение и какой подвох спрятан в Android-версии."}
+    talkDay: 2
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1WCKJVqYeMakkUEKqwYEgu/0510ae7d09caf1e70e377e44642f8be5/Andrey_Melikhov_How_many_front-end_developers_does_it_take_to_create_a_mobile_app.pdf"]
+    videoLinks: []
+    speakerIds: [723]
