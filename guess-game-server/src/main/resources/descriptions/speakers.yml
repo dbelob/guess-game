@@ -1467,22 +1467,22 @@ speakers:
   - id: 158
     fileName: 0158.jpg
     name:
-      - {language: en, text: "Vladimir Krasilshik"}
+      - {language: en, text: "Vladimir Krasilschik"}
       - {language: ru, text: "Владимир Красильщик"}
     company:
       - {language: en, text: Yandex}
       - {language: ru, text: Яндекс}
     bio:
-      - {language: en, text: "Vladimir Krasilshik graduated with honours from the Department of Mathematical Support of SPEU\
-            \ «LETI» and for more than 13 years developing software for public, educational and financial institutions, as\
-            \ well as automotive and telecommunications corporations. He works in the St. Petersburg branch of Yandex as a\
-            \ developer of Yandex.Market. Vladimir is a resident of the Russian community of Java-developers JUG.ru and speaks\
-            \ at such sectoral Java-conferences like JPoint, Joker and JBreak."}
-      - {language: ru, text: "Владимир Красильщик с отличием окончил кафедру Математического Обеспечения СПбГЭТУ «ЛЭТИ» и\
-            \ уже более 13 лет разрабатывает программное обеспечение для государственных, образовательных и финансовых учр\
-            еждений, а также автомобильных и телекоммуникационных концернов. Работает в Санкт-Петербургском филиале компан\
-            ии Яндекс разработчиком Яндекс.Маркет. Владимир является резидентом российского сообщества Java-разработчиков\
-            \ JUG.ru и выступает на таких отраслевых Java-конференциях, как JPoint, Joker и JBreak."}
+      - {language: en, text: "Vladimir graduated with honors from St. Petersburg Electrotechnical University \"LETI\" and\
+            \ has been developing software for governmental, educational and financial establishments, along with automobile\
+            \ and telecommunication concerns for 14 years. He is currently working as a Yandex.Market developer in St. Petersburg.\
+            \ Vladimir is a resident of Russian Java developers community JUG.ru and is a speaker at such conferences as JPoint,\
+            \ Joker, JBreak and PGDay."}
+      - {language: ru, text: "Владимир с отличием окончил кафедру Математического Обеспечения СПбГЭТУ «ЛЭТИ» и уже более 14\
+            \ лет разрабатывает программное обеспечение для государственных, образовательных и финансовых учреждений, а та\
+            кже автомобильных и телекоммуникационных концернов. Работает в Санкт-Петербургском филиале компании Яндекс раз\
+            работчиком Яндекс.Маркет. Владимир является резидентом российского сообщества Java-разработчиков JUG.ru и выст\
+            упает на таких отраслевых конференциях, как JPoint, Joker, JBreak и PGDay."}
     twitter: dyer_the
   - id: 159
     fileName: 0159.jpg
@@ -1490,20 +1490,18 @@ speakers:
       - {language: en, text: "Vitaly Khudobakhshov"}
       - {language: ru, text: "Виталий Худобахшов"}
     company:
-      - {language: en, text: Odnoklassniki}
-      - {language: ru, text: Одноклассники}
+      - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "Vitaly graduated from Physics Department of St.-Petersburg State University. His experience\
-            \ on Java dates since the version 1.1. For many years, he was a professor in St.-Petersburg State University and\
-            \ taught computer science and mathematics courses. Since 2015, Vitaly is a senior analyst in OK.ru, where he deals\
-            \ with various aspects of data mining and machine learning. He has been involved with functional programming for\
-            \ many years and outside of the main job and Java stack he is also a Haskell programmer. For data mining purposes\
-            \ Vitaly uses both Spark/Scala and R programming language."}
-      - {language: ru, text: "Закончил физический факультет СПбГУ. Работает с Java, начиная c версии 1.1. На протяжении мн\
-            огих лет работал в СПбГУ, преподавал информатику и математику. С 2015 года Виталий — ведущий аналитик в Однокл\
-            ассниках, где занимает различными аспектами анализа данных. Давно увлекается функциональным программированием\
-            \ и вне основной работы и Java–стека программирует на Haskell. В области анализа данных Виталий использует Spark/Scala\
-            \ и R."}
+      - {language: en, text: "I was born in 1979 in St.-Petersburg (Leningrad) and graduated from Physics Department of St.-Petersburg\
+            \ State University. My experience with Java dates back from the version 1.1. For many years I was an assistant\
+            \ professor in St.-Petersburg State University and taught computer science and mathematics courses. From 2015\
+            \ I am a senior analyst in OK.ru, where I deal with various aspects of data mining and machine learning. I have\
+            \ been involved with functional programming for many years and outside of the main job and Java stack I am also\
+            \ a Haskell programmer. For data mining purposes I use both Spark/Scala and R programming language.rnrn"}
+      - {language: ru, text: "Закончил физический факультет СПбГУ, последние 16 лет преподает с некоторыми незначительными\
+            \ перерывами, сейчас на матмехе СПбГУ и в ВШЭ. В JetBrains занимается развитием Data Science-инструментов. Так\
+            же на полставки является ведущим аналитиком в социальной сети Одноклассники. Специалист по обработке больших д\
+            анных и поведенческому анализу. Был докладчиком на Joker и SmartData."}
     twitter: khudobakhshov
   - id: 160
     fileName: 0160.jpg
@@ -2052,6 +2050,17 @@ speakers:
     name:
       - {language: en, text: "Ivan Yamschikov"}
       - {language: ru, text: "Иван Ямщиков"}
+    company:
+      - {language: en, text: "The Max Planck Institute, Leipzig, Germany / Creaited Labs"}
+      - {language: ru, text: "Институт Макса Планка, Лейпциг, Германия / Creaited Labs"}
+    bio:
+      - {language: en, text: "Analyst at Yandex since 2011. Got PhD in applied mathematics at Brandenburg University of Technology\
+            \ (Cottbus, Germany). Is currently a research associate at Max Planck Institute (Leipzig, Germany) and a consultant\
+            \ at Yandex. Ivan is studying new AI work principles which could help us to understand how our brain works."}
+      - {language: ru, text: "Аналитик Яндекса с 2011 года. Получил PhD по прикладной математике в Бранденбургском Техноло\
+            гическом университете (Котбус, Германия). В данный момент — научный сотрудник Института Макса Планка (Лейпциг\
+            , Германия) и консультант Яндекса. Иван исследует новые принципы работы искусственного интеллекта, которые мог\
+            ли бы помочь понять, как работает наш мозг."}
   - id: 263
     fileName: 0263.jpg
     name:
@@ -2321,16 +2330,16 @@ speakers:
       - {language: en, text: Odnoklassniki}
       - {language: ru, text: Одноклассники}
     bio:
-      - {language: en, text: "Dmitriy graduated from St. Petersburg State University in 2004, got a PhD degree in the field\
-            \ on the formal logical methods in 2007. He spent almost 9 years in outsourcing without losing contact with the\
-            \ university and research community. Big data analysis at Odnoklassniki became for Dmitriy an unique chance to\
-            \ combine theoretical knowledge and scientific foundation to the development of a real and popular products. And\
-            \ with this chance, he gladly took advantage of coming here in 2011."}
+      - {language: en, text: "Graduated from St. Petersburg State University in 2004, got a PhD degree in the field of the\
+            \ formal logical methods in 2007. Spent almost 9 years in outsourcing without losing contact with the university\
+            \ and research community. Big data analysis at Odnoklassniki became for Dmitry a unique chance to combine theoretical\
+            \ knowledge and scientific foundation to the development of real and popular products. And this chance he gladly\
+            \ took advantage of by coming there in 2011."}
       - {language: ru, text: "Закончил Санкт-Петербургский Государственный Университет в 2004 году, там же защитил кандида\
             тскую по формально-логическим методам в 2007. Почти 9 лет проработал в аутсорсинге, не теряя контакта с универ\
             ситетом и научной средой. Анализ больших данных в Одноклассниках стал для Дмитрия уникальным шансом совместить\
             \ теоретическую подготовку и научный фундамент с разработкой реальных, востребованных продуктов. И этим шансом\
-            \ он с радостью воспользовался, придя сюда пять лет назад."}
+            \ он с радостью воспользовался, придя туда пять лет назад."}
   - id: 302
     fileName: 0302.jpg
     name:
@@ -2464,66 +2473,245 @@ speakers:
     name:
       - {language: en, text: "Mikhail Kamalov"}
       - {language: ru, text: "Михаил Камалов"}
+    company:
+      - {language: en, text: "Epam Systems"}
+    bio:
+      - {language: en, text: "Analyst at EPAM Systems since 2016, Mikhail is responsible for NLP judgements and information\
+            \ retrieval project development. Graduated from the Faculty of Applied Mathematics and Control Processes of Saint\
+            \ Petersburg State University. Mikhail passed the internship at the Inria French National Research Institution.\
+            \ Nowadays he is a postgraduate at Faculty of Applied Mathematics and Control Processes, SPbSU."}
+      - {language: ru, text: "Аналитик в EPAM Systems с 2016, является экспертом в области задач, связанных с NLP и информ\
+            ационным поиском. Окончил факультет Прикладной математики — процессов управления СПбГУ. Проходил стажировку в\
+            \ исследовательнском институте Inria (Франция). Аспирант факультета Прикладной математики – процессов управлен\
+            ия СПбГУ."}
+    twitter: MikhailKamalov
   - id: 318
     fileName: 0318.jpg
     name:
       - {language: en, text: "Alexey Potapov"}
       - {language: ru, text: "Алексей Потапов"}
+    company:
+      - {language: en, text: ITMO}
+      - {language: ru, text: ИТМО}
+    bio:
+      - {language: en, text: "Doctor of Science. Professor at the Department of Computer Photonics and Videomatics of ITMO\
+            \ University. 20 years of experience in R&D and academic research projects in the fields of computer vision, pattern\
+            \ recognition, machine learning and artificial general intelligence with more than 130 scientific papers and 3\
+            \ books. Current fields of interest are universal algorithmic intelligence, cognitive architectures, probabilistic\
+            \ programming and deep learning, especially including neuro-bayesian approach and meta-learning."}
+      - language: ru
+        text: "Профессор кафедры компьютерной фотоники и видеоинформатики ИТМО.\nПобедитель конкурса грантов для молодых н\
+            аучно-педагогических работников вузов Санкт-Петербурга (2009 год). Победитель конкурса грантов Президента Росс\
+            ийской Федерации для государственной поддержки молодых российских ученых– докторов наук в области знаний «Инфо\
+            рмационно-телекоммуникационные системы и технологии» (2010 год). Подготовил одного кандидата технических наук\
+            . Медалист Российской академии наук (2011 год). Дипломант международной конференции «Automatic Target Recognition»\
+            \ (2010 год). Прошел стажировку в университете Тюкё (Япония) по курсу «Повышение квалификации, включая стажиро\
+            вки работников вуза в ведущих мировых научных и университетских центрах» (2011 год). Принимал участие в 7 науч\
+            но-исследовательских проектах. За период 2009—2011 годов: опубликовал два пособия и 27 научных работ, включая\
+            \ 12 работ в реферируемых журналах и одну монографию; получил 5 свидетельств о регистрации программ для ЭВМ; п\
+            ринимал участие в 5 международных конференциях."
   - id: 319
     fileName: 0319.jpg
     name:
       - {language: en, text: "Artem Grigoriev"}
       - {language: ru, text: "Артём Григорьев"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "In Yandex since 2010. Currently a Group Head, Artem and the team are responsible for judgements\
+            \ retrieval infrastructure development, Yandex.Toloka crowdsourcing platform improvement and assessor services\
+            \ elaboration. Artem is a postgraduate at Mathematics & Mechanics Department, SPbSU."}
+      - {language: ru, text: "Работает в Яндексе с 2010 года, руководитель группы, отвечает за разработку инфраструктуры с\
+            бора экспертных оценок, развитие сервисов для асессоров и краудсорсинговой платформы Яндекс.Толока. Аспирант м\
+            атематико-механического факультета СПбГУ."}
+    twitter: ortemij
   - id: 320
     fileName: 0320.jpg
     name:
       - {language: en, text: "Sergey Nikolenko"}
       - {language: ru, text: "Сергей Николенко"}
+    company:
+      - {language: en, text: "PDMI RAS"}
+      - {language: ru, text: "ПОМИ РАН"}
+    bio:
+      - {language: en, text: "Researcher in the field of machine learning (deep learning, Bayesian methods, natural language\
+            \ processing and more) and analysis of algorithms (network algorithms, competitive analysis). Co-authored more\
+            \ than 100 research papers, several books, courses \"Machine learning\", \"Deep learning\", and others. Extensive\
+            \ experience with industrial projects (Neuromation, SolidOpinion, Surfingbird, Deloitte Analytics Institute)."}
+      - {language: ru, text: "Специалист по машинному обучению (глубокое обучение, байесовские методы, обработка текстов и\
+            \ многое другое) и анализу алгоритмов (сетевые алгоритмы, конкурентный анализ). Автор более 100 научных публик\
+            аций, нескольких книг, авторских курсов «Машинное обучение», «Обучение глубоких сетей» и др. Большой опыт сотр\
+            удничества с индустрией в области машинного обучения (Neuromation, SolidOpinion, Surfingbird, Deloitte Analytics\
+            \ Institute)."}
   - id: 321
     fileName: 0321.jpg
     name:
       - {language: en, text: "Alexander Serbul"}
       - {language: ru, text: "Александр Сербул"}
+    company:
+      - {language: en, text: 1C-Bitrix}
+      - {language: ru, text: 1С-Битрикс}
+    bio:
+      - language: en
+        text: "Has been supervising the area of the integration and implementation quality control of OOO 1C-Bitrix, as well\
+            \ as AI direction, deep learning and big data, actively participates as an architect and developer in company's\
+            \ projects, connected with highload and fault tolerance (Bitrix 24). Is also consulting partners and clients about\
+            \ high load solutions architecture and effective usage of product clustering technologies 1C-Bitrix in the context\
+            \ of modern cloud services (Amazon Web Services, etc.). Alexander is into programming in Java for more than 15\
+            \ years, along with system analysis and designing. Among his favourite books about programming, which have been\
+            \ tried out in real-world projects dozens of times, are: \"Effective Java\", \"Java Concurrency in Practice\"\
+            . Some other books to read in your spare time: \"Structured Computer Organization\" (by Andrew S. Tanenbaum),\
+            \ \"Advanced Programming in the UNIX Environment\" (by Richard Stevens). \nGraduated from Don State Technical\
+            \ University in 1998. Used to work as a councilor at the Office of the President of Russia in Southern Federal\
+            \ District, at the South-west bank of Sberbank Russia, as a senior developer at the QSoft web-studio and as the\
+            \ head of the development department at the Softline Internet Trade company."
+      - language: ru
+        text: "C 2011 года Александр курирует направление контроля качества интеграции и внедрений ООО 1С-Битрикс, а также\
+            \ направления AI, deep learning и big data, активно участвует как архитектор и разработчик в проектах компании\
+            , связанных с высокой нагрузкой и отказоустойчивостью (Битрикс24), консультирует партнеров и клиентов по вопро\
+            сам архитектуры высоконагруженных решений, эффективному использованию технологий кластеризации продуктов 1С-Би\
+            трикс в контексте современных облачных сервисов (Amazon Web Services и др.). Александр увлекается программиров\
+            анием на Java более 15 лет, а также философией unix, гибкими методологиями разработки программного обеспечения\
+            , системным анализом и проектированием. Любимые книги по программированию, зачитанные до дыр и многократно опр\
+            обованные в боевых проектах: «Effective Java», «Java Concurrency in Practice». Книги для души: «Архитектура ко\
+            мпьютера (Э.Таненбаум)», «Advanced Programming in the UNIX Environment (Richard Stevens)». \nОкончил Донской Г\
+            осударственный Технический Университет в 1998 году. Работал советником в Администрации Президента России по Юж\
+            ному федеральному округу, в Юго-Западном банке Сбербанка России, ведущим разработчиком веб-студии QSoft и глав\
+            ой отдела разработки компании Софтлайн Интернет Трейд."
+    twitter: AlexSerbul
   - id: 322
     fileName: 0322.jpg
     name:
       - {language: en, text: "Boris Shminke"}
       - {language: ru, text: "Борис Шминке"}
+    company:
+      - {language: en, text: ivi}
+    bio:
+      - {language: en, text: "Graduated from Applied Mathematics and Physics Department of Moscow Aviation Institute. Worked\
+            \ for more than 5 years in the field of corporate data warehousing, BI and financial risk management. In 2015\
+            \ started to work with Big Data at ivi where he leads the recommender system development team for about a year\
+            \ now."}
+      - {language: ru, text: "Окончил факультет прикладной математики и физики МАИ. Более пяти лет работал в области корпо\
+            ративных хранилищ данных, BI и управления финансовыми рисками. В 2015 году начал заниматься большими данным в\
+            \ ivi, где уже около года возглавляет группу разработки рекомендательной системы."}
   - id: 323
     fileName: 0323.jpg
     name:
       - {language: en, text: "Andrey Boyarov"}
       - {language: ru, text: "Андрей Бояров"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - {language: en, text: "Research engineer at Mail.Ru Group since 2016. Graduated from the Mathematics and Mechanics\
+            \ Department of St. Petersburg State University. Now is studying there as a PhD student. Is engaged in questions\
+            \ connected with the application of methods of deep learning to solve problems of machine vision."}
+      - {language: ru, text: "Программист-исследователь в Mail.Ru Group с 2016 года. Окончил математико-механический факул\
+            ьтет Санкт-Петербургского Государственного Университета. Сейчас учится там же в аспирантуре. Занимается вопрос\
+            ами, связанными с применением методов глубокого обучения для решения задач машинного зрения."}
+    twitter: andrew_bo_29
   - id: 324
     fileName: 0324.jpg
     name:
       - {language: en, text: "Artem Marinov"}
       - {language: ru, text: "Артем Маринов"}
+    company:
+      - {language: en, text: Directual}
+    bio:
+      - {language: en, text: "Has been into advertising technologies since 2013. The last two years was working at Data-Centric\
+            \ Alliance company as a DMP Facetz development leader. Is currently working at Directual company. Was previously\
+            \ involved in a couple of advertising projects development at Creara company. Works with BigData and high load.\
+            \ His main languages are Java and Scala. Has already more than 8 years experience in his profession."}
+      - {language: ru, text: "Занимается рекламными технологиями с 2013 года, последние два года работал в компании Data-Centric\
+            \ Alliance в качестве лидера разработки DMP Facetz, сейчас работает в компании Directual. До этого несколько л\
+            ет вёл разработку ряда рекламных проектов в компании Creara. Специализируется в области BigData и работе с выс\
+            окими нагрузками. Основные языки — Java / Scala, в профессии уже около 8 лет."}
+    twitter: onexdrk
   - id: 325
     fileName: 0325.jpg
     name:
       - {language: en, text: "Ivan Drokin"}
       - {language: ru, text: "Иван Дрокин"}
+    company:
+      - {language: en, text: BrainGarden}
+    bio:
+      - language: en
+        text: "Graduated from the Department of Applied Mathematics and Control Processes of St. Petersburg State University\
+            \ with specialty of Applied Mathematics and Informatics, postgraduate course of System Analysis, Information Control\
+            \ and Processing. \nProfessional interests include an application of deep learning to an analysis and processing\
+            \ of natural languages, images, video streams, as well as reinforcement learning and question-answering systems.\
+            \ Has a deep expertise in the areas of financial markets, hedge funds, bioinformatics, computational biology.\
+            \ \nHe is currently a co-founder and chief science officer at Brain Garden, which specializes in developing and\
+            \ implementing of full cycle intelligent solutions."
+      - language: ru
+        text: "Закончил Факультет Прикладной математики и процессов управления Санкт-Петербургского Государственного Униве\
+            рситета по специальности Прикладная математика и информатика, аспирантуру по направлению Системный анализ, упр\
+            авление и обработка информации. \nВ профессиональные интересы входят приложение глубокого обучения к анализу и\
+            \ обработке естественных языков, изображений, видеопотока, а также обучение с подкреплением и вопрос-ответные\
+            \ системы. Имеет глубокую экспертизу в облатях финансовых рынков, хедж-фондов, биоинформатике, вычислительной\
+            \ биологии. \nВ настоящее время является сооснователем и chief science officer компании Brain Garden, специали\
+            зирующейся на разработке и внедрении интеллектуальных решений полного цикла."
   - id: 326
     fileName: 0326.jpg
     name:
       - {language: en, text: "Anna Veronika Dorogush"}
       - {language: ru, text: "Анна Вероника Дорогуш"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Graduated from the Faculty of Computational Mathematics and Cybernetics of Lomonosov Moscow\
+            \ State University and the School of Data Analysis. Used to work at ABBYY, Microsoft, Bing, Google. Has been working\
+            \ at Yandex since 2015. Deals with machine learning algorithms problems."}
+      - {language: ru, text: "Окончила факультет ВМК Московского государственного университета и Школу анализа данных (ШАД\
+            ). Работала в компаниях ABBYY, Microsoft, Bing, Google. В Яндексе с 2015 года. Занимается задачами, связанными\
+            \ с развитием алгоритмов машинного обучения."}
   - id: 327
     fileName: 0327.jpg
     name:
       - {language: en, text: "Alexander Krasheninnikov"}
       - {language: ru, text: "Александр Крашенинников"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "The Head of DataTeam at Badoo. Deals with tool development for data processing within ETL, processing\
+            \ of various statistics and Hadoop infrastructure. Has more than 10 years experience in web-dev. To get a result\
+            \ can use a volatile mix of programming languages (Java, PHP, Go), databases (MySQL, Exasol) and technologies\
+            \ of distributed computing (Hadoop, Spark, Hive, Presto)."}
+      - language: ru
+        text: "Руководитель DataTeam в компании Badoo. \nЗанимается разработкой инструментов для обработки данных в рамках\
+            \ ETL и процессинга различного рода статистики, инфраструктурой Hadoop. \nОпыт web-dev более 10 лет. Для дости\
+            жения наилучших результатов не гнушается использовать гремучие смеси из языков программирования (Java, PHP, Go),\
+            \ баз данных (MySQL, Exasol) и технологий распределённых вычислений (Hadoop, Spark, Hive, Presto)."
   - id: 328
     fileName: 0328.jpg
     name:
       - {language: en, text: "Alexey Natekin"}
       - {language: ru, text: "Алексей Натёкин"}
+    company:
+      - {language: en, text: "DM Labs, Arktur, Open Data Science"}
+    bio:
+      - {language: en, text: "Founder of a couple of projects with machine learning and data analysis. Dictator and coordinator\
+            \ at Open Data Science — the largest Data Scientists online community in Eastern Europe."}
+      - {language: ru, text: "Основатель ряда проектов с машинным обучением и анализом данных. Диктатор и координатор Open\
+            \ Data Science — крупнейшего в Восточной Европе онлайн-сообщества Data Scientist-ов."}
   - id: 329
     fileName: 0329.jpg
     name:
       - {language: en, text: "Alexander Sibiryakov"}
       - {language: ru, text: "Александр Сибиряков"}
+    company:
+      - {language: en, text: Scrapinghub}
+    bio:
+      - {language: en, text: "Used to work for five years in Yandex in the search quality department, dealing with development\
+            \ of social and question answering search and annotations improvement. After that worked for two years on Avast!\
+            \ antivirus, developed an automatic processing of false positives. Is interested in problems of processing large\
+            \ amounts of data and informational retrieval."}
+      - {language: ru, text: "Пять лет работал в Яндексе в отделе качества поиска. Занимался разработкой социального и воп\
+            росно-ответного поиска, а также улучшением сниппетов. Затем два года работал над антивирусом Avast!, где постр\
+            оил автоматическое разрешение ложных срабатываний. Интересуется проблемами обработки данных в больших объемах\
+            \ и информационного поиска."}
+    gitHub: sibiryakov
   - id: 330
     fileName: 0330.jpg
     name:

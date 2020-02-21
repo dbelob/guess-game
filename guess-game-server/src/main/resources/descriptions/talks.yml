@@ -9472,3 +9472,571 @@ talks:
     presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/2N7zPOP3lmUuE2GcywQIwQ/8474041e5ba59347fda515feb5b5c7e5/Igolnik-Sadogursky_____Devops__Scale.pdf"]
     videoLinks: ["https://youtu.be/HiPSp2xf0yo"]
     speakerIds: [35, 367]
+  - id: 588
+    name:
+      - {language: en, text: "Name is a feature"}
+      - {language: ru, text: "Имя — это фича"}
+    shortDescription:
+      - {language: en, text: "We'll talk about the most unexpected and counterintuitive observations you can do using data\
+            \ analysis in social networks, along with the statistical significance of such observations, bot influence, and\
+            \ false correlations."}
+      - {language: ru, text: "Поговорим о самых неожиданных и контринтуитивных наблюдениях, которые можно сделать с помощь\
+            ю анализа данных в социальных сетях. Не обойдём вниманием вопросы статистической значимости таких наблюдений,\
+            \ влиянии ботов и ложных корреляций."}
+    longDescription:
+      - language: en
+        text: "As strange it may sound to an educated person, the possibility to be lonely \"depends\" on your name. In fact,\
+            \ we'll talk about love and relationship, or rather about what social networks' data can tell us about it. That\
+            \ is as if we say: \"The possibility to be hit by car if your name is Sergey is higher than if you were called\
+            \ Kostya!\" Sounds weird, right? Unscientific, at the very least. \nSo, we'll talk about the most unexpected and\
+            \ counterintuitive observations you can do using data analysis in social networks. Sure, we'll cover the statistical\
+            \ significance of such observations, bot influence, and false correlations."
+      - language: ru
+        text: "Как бы странно это ни казалось образованному человеку, вероятность быть одинокой/одиноким «зависит» от имен\
+            и. Мы поговорим про любовь и отношения, а точнее, что именно могут рассказать об этом данные социальной сети.\
+            \ Это примерно всё равно, что сказать: «Вероятность быть сбитым машиной, если тебя зовут Серёжа, выше, чем есл\
+            и бы тебя звали Костя!» Звучит довольно дико, не правда ли? Ну, как минимум, ненаучно. \nТаким образом, мы пог\
+            оворим о самых неожиданных и контринтуитивных наблюдениях, которые можно сделать с помощью анализа данных в со\
+            циальных сетях. Конечно, мы не обойдём вниманием вопросы статистической значимости таких наблюдений, влиянии б\
+            отов и ложных корреляций."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/lVz9G8jRgyM6WOCwIy8I0/e9df100f4efb86872af5842024873369/____________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/AS6xSbl6VXE"]
+    speakerIds: [159]
+  - id: 589
+    name:
+      - {language: en, text: "Recommendation systems: from matrix factorization to deep learning in stream mode"}
+      - {language: ru, text: "Рекомендательные системы: от матричных разложений к глубинному обучению в поточном режиме"}
+    shortDescription:
+      - {language: en, text: "The talk will cover the practical aspects of using deep learning, collaborative and content\
+            \ filtering and filtering by time, as well as approaches for recommendation systems. In addition, the construction\
+            \ of hybrid advisory systems and modifications of approaches for online learning on Spark will be considered."}
+      - {language: ru, text: "Рассмотрим практические аспекты применения глубинного обучения, коллаборативной и контентной\
+            \ фильтрации и фильтрации по времени как подходов в рекомендательных системах, а также построение гибридных ре\
+            комендательных систем и модификации подходов для онлайн обучения на Spark."}
+    longDescription:
+      - {language: en, text: "Nowadays the recommendation systems are actively used both in entertainment (YouTube, Netflix)\
+            \ and in Internet marketing (Amazon, Aliexpress). In this regard, the talk will cover the practical aspects of\
+            \ using deep learning, collaborative and content filtering and filtering by time, as approaches for recommendation\
+            \ systems. In addition, the construction of hybrid advisory systems and modifications of approaches for online\
+            \ learning on Spark will be considered."}
+      - {language: ru, text: "В настоящее время рекомендательные системы активно применяются как в сфере развлечений (YouTube,\
+            \ Netflix), так и в сфере интернет-маркетинга (Amazon, Aliexpress). В связи с этим, в докладе будут рассмотрен\
+            ы практические аспекты применения глубинного обучения, коллаборативной и контентной фильтрации и фильтрации по\
+            \ времени как подходов в рекомендательных системах. Дополнительно будет рассмотрено построение гибридных реком\
+            ендательных систем и модификации подходов для онлайн-обучения на Spark."}
+    talkDay: 1
+    trackTime: "11:40"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6Hu5ty4a9UuAsK4ogQ8eYI/fd2a77f46b73eb4f59749ad05f464a09/Kamalov_Mikhail_recommendation_system.pdf"]
+    videoLinks: ["https://youtu.be/P1tJuzthqPA"]
+    speakerIds: [317]
+  - id: 590
+    name:
+      - {language: en, text: "Deep learning, probabilistic programming and meta-estimation: point of intersection"}
+      - {language: ru, text: "Глубокое обучение, вероятностное программирование и метавычисления: точка пересечения"}
+    shortDescription:
+      - {language: en, text: "Discussing generative and discriminative models' connections in terms of program specialization,\
+            \ their role within the framework of deep learning and probabilistic programming. Addressing neural Bayesian approach,\
+            \ neural probabilistic programming as an integration of two paradigms on an example of Edward library."}
+      - {language: ru, text: "Обсуждаем генеративные и дискриминантные модели и связь между ними в терминах специализации\
+            \ программ, роль этих моделей в рамках глубокого обучения и вероятностного программирования. В частности, речь\
+            \ пойдёт о нейробайесовском подходе и о нейровероятностном программировании как объединении двух парадигм на п\
+            римере библиотеки Edward."}
+    longDescription:
+      - language: en
+        text: "Two main classes of models in data analysis and machine learning, namely generative and discriminative models,\
+            \ will be discussed, and the connection between them will be given. The role of these models will be described\
+            \ within the framework of two most prospective approaches to machine learning — deep learning and probabilistic\
+            \ programming. In particular, the talk will address the neural Bayesian approach, in which deep learning models\
+            \ are explicitly described as generative and discriminative, and will address also neural probabilistic programming\
+            \ as an integration of two paradigms on an example of Edward library. \n\nThen, the connection between generative\
+            \ and discriminative models will be explained in terms of program specialization. Such deep learning models as\
+            \ autoencoders and generative adversarial networks will be used as examples to describe how variational Bayesian\
+            \ inference can be treated as a form of specialization, and how probabilistic programs can be compiled into deep\
+            \ neural networks. A new conception of partial specialization and its relation to meta learning will then be presented."
+      - language: ru
+        text: "В докладе будут рассмотрены два основных класса моделей в анализе данных и машинном обучении — генеративные\
+            \ и дискриминантные модели, а также связь между ними. Будет представлено описание роли этих моделей в рамках д\
+            вух наиболее перспективных подходов к машинному обучению — глубокого обучения и вероятностного программировани\
+            я. В частности, речь пойдет о нейробайесовском подходе, в котором модели глубокого обучения в явном виде описы\
+            ваются как генеративные и дискриминантные, а также о нейровероятностном программировании как объединении двух\
+            \ парадигм на примере библиотеки Edward. \n\nДалее будет рассказано, как связь между генеративными и дискримин\
+            антными моделями может быть понята в терминах специализации программ. На примере таких моделей глубокого обуче\
+            ния, как автоэнкодеры и генеративные конкурирующие сети, будет рассказано, как вариационный байесовский вывод\
+            \ может трактоваться в качестве специализации, и как вероятностные программы можно компилировать в сети глубок\
+            ого обучения. Далее будет описана новая концепция частичной специализации и ее связь с методами метаобучения."
+    talkDay: 1
+    trackTime: "11:40"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/36WGbyOCScmm2oucqEy0sE/12d33bad47c8a24ea28fd7a78dbf62cc/____________________________________________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/WD3hQWy1YAY"]
+    speakerIds: [318]
+  - id: 591
+    name:
+      - {language: en, text: "Crowdsourcing: How to train your crowd"}
+      - {language: ru, text: "Краудсорсинг: как приручить толпу?"}
+    shortDescription:
+      - {language: en, text: "The talk encouraged by the experience of the Yandex.Toloka crowdsourcing platform creation and\
+            \ use shares clues on the quality control, motivation of performers and various models of aggregating separate\
+            \ judgements."}
+      - {language: ru, text: "Основываясь на опыте создания и использования краудсорсинговой платформы Яндекс.Толока, расс\
+            мотрим вопросы контроля качества, мотивации исполнителей, а также различные модели агрегации результатов разме\
+            тки."}
+    longDescription:
+      - language: en
+        text: "In the tasks of machine learning and data analysis it is often imperative to collect a massive amount of manual\
+            \ markup. Given a small number of performers, this work could take months. \n\nWe know how to make it fast and\
+            \ cheap! The talk encouraged by the experience of the Yandex.Toloka crowdsourcing platform creation and use shares\
+            \ clues on the quality control, motivation of performers and various models of aggregating separate judgements."
+      - {language: ru, text: "В задачах машинного обучения и анализа данных зачастую требуется собрать большое количество\
+            \ ручной разметки. При малом количестве исполнителей работа может занимать месяцы. Мы знаем, как это можно дел\
+            ать быстро и дёшево! В докладе, основанном на опыте создания и использования Толоки, краудсорсинговой платформ\
+            ы Яндекса, рассмотрим вопросы контроля качества, мотивации исполнителей, а также различные модели агрегации ре\
+            зультатов разметки."}
+    talkDay: 1
+    trackTime: "11:40"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2FkAXQq8mcoqiEgC0IUOaK/7db7060654c7f587962fc5a3270056e9/_________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/npv1nSU0vys"]
+    speakerIds: [319]
+  - id: 592
+    name:
+      - {language: en, text: "Deep convolutional networks for object detection and image segmentation"}
+      - {language: ru, text: "Глубокие свёрточные сети для обнаружения объектов и сегментации изображений"}
+    shortDescription:
+      - {language: en, text: "In this talk we'll discuss how CNNs have evolved from classifying individual objects to detecting\
+            \ multiple objects on a picture. We'll dwell on YoLo, single-shot detectors, and a range of models from R-CNN\
+            \ till Mask R-CNN."}
+      - {language: ru, text: "В докладе мы обсудим, как сети, распознающие отдельные объекты, превращаются в сети, выделяю\
+            щие объекты среди массы других. Поговорим о YoLo, single-shot detectors и линии моделей от R-CNN до Mask R-CNN."}
+    longDescription:
+      - {language: en, text: "Convolutional neural networks have been the dominant force in computer vision for a very long\
+            \ time. In this talk, we start from the very basics of convolutional networks and then discuss how CNNs have evolved\
+            \ from classifying individual objects to detecting multiple objects on a picture. We will consider in detail several\
+            \ well-known object detection models, including YoLo, single-shot detectors, and a range of models from R-CNN\
+            \ to the recently released Mask R-CNN for segmentation."}
+      - {language: ru, text: "Свёрточные нейронные сети давно стали основным классом моделей для обработки изображений. В\
+            \ докладе мы обсудим, как сети, распознающие отдельные объекты, превращаются в сети, выделяющие объекты среди\
+            \ массы других. Мы поговорим и о знаменитом YoLo, и о single-shot detectors, и о линии моделей от R-CNN до сов\
+            сем недавно появившейся Mask R-CNN."}
+    talkDay: 1
+    trackTime: "12:50"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6orwcDmhDqoo6KiEMeGEsq/63f60eb63e6f903ec0ed149723183b8e/Nikolenko_ObjectDetection.pdf"]
+    videoLinks: ["https://youtu.be/eycXojn9rcI"]
+    speakerIds: [320]
+  - id: 593
+    name:
+      - {language: en, text: "Applied machine learning in e-commerce — scenarios and architectures of pilots and real-world\
+            \ projects"}
+      - {language: ru, text: "Прикладное машинное обучение в электронной коммерции: сценарии и архитектуры пилотов и боевы\
+            х проектов"}
+    shortDescription:
+      - {language: en, text: "Presenting a number of company's pilots and real-world projects applying popular and \"rare\"\
+            \ algorithms of machine learning, as well as technical implementation on different platforms such as Java, PHP,\
+            \ Python using open libraries and a range of Amazon Web Services tools."}
+      - {language: ru, text: "Разберем ряд пилотов и боевых проектов с применением популярных и «редких» алгоритмов машинн\
+            ого обучения. Рассматривается техническая реализация на платформах Java, PHP, Python с использованием открытых\
+            \ библиотек и спектра инструментов в Amazon Web Services."}
+    longDescription:
+      - language: en
+        text: "In this session, we will talk about our company pilots and real-world projects that use various popular and\
+            \ \"rare\" machine learning algorithms: from recommendation systems to deep neural networks. We’ll consider the\
+            \ technical realization on Java (Deeplearning4j), PHP, Python (keras/tf) platforms using the Apache Mahout (Taste),\
+            \ Apache Lucene, Jetty, Apache Spark (incl. Streaming) open source libraries, Amazon Web Services tool spectrum.\
+            \ We'll underline the importance of certain algorithms and libraries, the relevance of their use and demand on\
+            \ the market. \n\nLet's consider the following implemented projects: \n- Clustering Bitrix24 users with Apache\
+            \ Spark \n- Calculating the probability of user leaving (churn rate), future profit (CLV) and other business metrics\
+            \ in big data and highload context \n- Collaborative recommender system for more than 20 000 online stores \n\
+            - LSH commodity catalog clustering method \n- Content-based recommender service for more than 100 million Russian\
+            \ internet users \n- Bitrix24 technical support calls classifier based on a neural network (anything but n-gramm\
+            \ models) \n- Chatbot answering to questions on the basis of a neural network that connects semantic spaces of\
+            \ Q and A."
+      - language: ru
+        text: "В докладе расскажем о реализованных в компании пилотах и боевых проектах, использующих различные популярные\
+            \ и «редкие» алгоритмы машинного обучения: от рекомендательных систем до глубоких нейронных сетей. Рассмотрим\
+            \ техническую реализацию на платформах Java (deeplearning4j), PHP, Python (keras/tf) с использованием открытых\
+            \ библиотек Apache Mahout (Taste), Apache Lucene, Jetty, Apache Spark (в т.ч. Streaming), спектра инструментов\
+            \ в Amazon Web Services. Соориентируем в важности тех или иных алгоритмов и библиотек, актуальности их примене\
+            ния и востребованности на рынке. \n\nРассмотрим следующие реализованные проекты: \n- кластеризацию пользовател\
+            ей Битрикс24 с помощью Apache Spark \n- расчет вероятности ухода (churn), возможной прибыли (CLV) и других биз\
+            нес-метрик в условиях big data и высоких нагрузок \n- коллаборативную рекомендательную систему на более чем 20\
+            \ 000 интернет-магазинов \n- кластеризацию товарного каталога методом LSH \n- content-based рекоментадельный с\
+            ервис для более чем 100 млн. пользователей рунета \n- классификатор обращений в техническую поддержку Битрикс\
+            24 на базе нейронной сети (рассмотрим кроме n-gramm моделей также пилоты с одномерной сверткой) \n- чат-бот от\
+            ветов на вопросы на базе нейросети, осуществляющей соединение семантических пространств вопросов и ответов."
+    talkDay: 1
+    trackTime: "12:50"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5uXvljq8s8KEAQSimSqyaq/138b08439fd1c3322da2f23fa1e699e4/_________________________________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/eNdk6YB1IoQ"]
+    speakerIds: [321]
+  - id: 594
+    name:
+      - {language: en, text: "Distributed ML on Big Data: recommender system building experience at ivi"}
+      - {language: ru, text: "Распределённое ML на больших данных: опыт построения рекомендательной системы в ivi"}
+    shortDescription:
+      - {language: en, text: "How we walked a path from a single matrix multiplying script to a Hadoop Data Lake of our own,\
+            \ distributed Machine Learning with Spark, offline evaluation framework in Scala and, as a result, a Recommender\
+            \ System highly tunable to business needs."}
+      - {language: ru, text: "Как из небольшого скрипта, перемножавшего матрицы, мы прошли путь до собственного Hadoop Data\
+            \ Lake, распределённого машинного обучения на Spark, фреймворка оффлайн-оценок на Scala и высококастомизирован\
+            ной под нужды бизнеса рекомендательной системы."}
+    longDescription:
+      - {language: en, text: "A blog post about the first version of a recommender system at ivi in 2014 is still easy to\
+            \ be found at habr.ru. In this talk we decided to tell about how we walked a path from a single matrix multiplying\
+            \ script to a Hadoop Data Lake of our own, distributed Machine Learning with Spark, offline evaluation framework\
+            \ in Scala and, as a result, a recommender system highly tunable to business needs."}
+      - {language: ru, text: "Пост о том, какой была первая версия рекомендательной системы ivi в 2014 году, всё ещё легко\
+            \ можно найти на Хабре. В этом докладе мы решили рассказать о том, как из небольшого скрипта, перемножавшего м\
+            атрицы, мы прошли путь до собственного Hadoop Data Lake, распределённого машинного обучения на Spark, фреймвор\
+            ка оффлайн-оценок на Scala и, в результате, высококастомизированной под нужды бизнеса рекомендательной системы\
+            ."}
+    talkDay: 1
+    trackTime: "12:50"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4jUBgdY0PmUQ24cUQqYaa6/55e886dfd2645f7df4cfb579fde4d600/_______________________________________________________ML___________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/DYw6YGPrs4I"]
+    speakerIds: [322]
+  - id: 595
+    name:
+      - {language: en, text: "From click to predict and back: Data Science pipelines at Odnoklassniki"}
+      - {language: ru, text: "От клика к прогнозу и обратно: Data Science-пайплайны в Одноклассниках"}
+    shortDescription:
+      - {language: en, text: "We will consider one complex task of news feed personalization and talk about getting a model\
+            \ and model predictions, along with different data processing and storage technologies from Hadoop ecosystem."}
+      - {language: ru, text: "Рассмотрим задачу персонализации новостной ленты и поговорим о получении модели и основанных\
+            \ на ней прогнозов, а также о технологиях обработки и хранения данных экосистемы Hadoop."}
+    longDescription:
+      - language: en
+        text: "Machine Learning is fun, but in order to make it work in industry a lot of boring stuff needs to be done. In\
+            \ our talk we will consider all the technologies, algorithms and methods needed to make your ML shine like a diamond\
+            \ in a beautiful setting. \n\nAs an example, we will consider a single, but complex task – news feed personalization.\
+            \ Without diving into ML details, we will talk about real-time and batched data collection, ETL, and processing\
+            \ needed to get a model. \n\nBut getting the model is not enough, thus we will also discuss the way how to get\
+            \ model predictions in a complex high-load distributed environment and use them for decision making. \n\nThe talk\
+            \ covers different data processing and storage technologies from Hadoop ecosystem and more. If you are doing ML\
+            \ not just for fun, but also for profit, you might get some useful information from the talk."
+      - language: ru
+        text: "Машинное обучение — это весело, но чтобы оно работало в промышленности, нужно делать много всего скучного.\
+            \ В данном докладе мы рассмотрим все технологии, алгоритмы и методы, необходимые для того, чтобы ваше машинное\
+            \ обучение сияло, как бриллиант в золотой оправе. \n\nВ качестве примера мы рассмотрим одну сложную задачу — п\
+            ерсонализацию новостной ленты. Не вдаваясь в детали машинного обучения, мы поговорим о сборе данных (пакетном\
+            \ и в режиме реального времени), ETL, а также об обработке, необходимой для получения модели. \n\nНо просто по\
+            лучить модель недостаточно, поэтому мы также поговорим о том, как получить основанные на модели прогнозы в сло\
+            жной высоконагруженной распределённой среде и как их использовать для принятия решений. \n\nВ данном докладе м\
+            ы поговорим о технологиях обработки и хранения данных экосистемы Hadoop, а также о многом другом. Этот доклад\
+            \ будет полезен тем, кто занимается машинным обучением не только для развлечения, но и для профита."
+    talkDay: 1
+    trackTime: "14:25"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4mO1lz1ew0WaWU4OUUSig8/5771fb5c5920bf225dedf45530c9f9a7/From_click_to_predict_and_back.pdf"]
+    videoLinks: ["https://youtu.be/AL9Yq9nTfIs"]
+    speakerIds: [301]
+  - id: 596
+    name:
+      - {language: en, text: "Back to the future of a modern banking system"}
+      - {language: ru, text: "Назад в будущее современной банковской системы"}
+    shortDescription:
+      - {language: en, text: "This talk will cover Audit-Driven Development and its origin, how to organize a bitemporal database\
+            \ of facts, why a built-in time machine must be in every modern distributed system. Also, we'll share a \"universal\
+            \ formula of fact\" and what the tasks of so called \"analytics\" most frequently appear to be."}
+      - {language: ru, text: "Поговорим о том, что такое Audit-Driven Development и откуда оно взялось, как организовать б\
+            итемпоральное хранилище фактов, зачем распределённой системе нужна машина времени, а также поделимся «универса\
+            льной формулой факта» и чем чаще всего оказываются задачи так называемой «аналитики»."}
+    longDescription:
+      - {language: en, text: "Modern banking Big Data systems do not only process and store hundreds of millions of transactions\
+            \ per day and interact with the world trading platforms at a cosmic speed, but also involve a strict control by\
+            \ auditors and regulators who always demand reporting. We'll dwell on Audit-Driven Development, its origin, give\
+            \ a clue on how to organize a bitemporal database of facts not to fail in front of supervisory authorities and\
+            \ prove that there must be a built-in time machine in every modern distributed system. We'll also share a \"universal\
+            \ formula of fact\" and discover what the tasks of so called \"analytics\" most frequently appear to be."}
+      - {language: ru, text: "Современные банковские Big Data системы — это не только обработка и хранение сотен миллионов\
+            \ транзакций в день и взаимодействие с мировыми торговыми площадками на космических скоростях, но также жёстки\
+            й контроль и отчётность со стороны аудиторов и регуляторов. Мы расскажем, что такое Audit-Driven Development и\
+            \ откуда оно взялось, подскажем, как организовать битемпоральное хранилище фактов, чтобы не облажаться перед к\
+            онтролирующими органами, и докажем, что в любой современной распределённой системе просто обязана быть встроен\
+            а машина времени. Также в процессе выступления поделимся «универсальной формулой факта» и чем чаще всего оказы\
+            ваются задачи так называемой «аналитики»."}
+    talkDay: 1
+    trackTime: "14:25"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4RhlntP7CMEWaa802oUQ2o/aa16770db292065ae1c0c39a8436ee61/____________________________________________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/FkUqLZtIP1U"]
+    speakerIds: [158]
+  - id: 597
+    name:
+      - {language: en, text: "Deep Learning: Scene recognition and attractions recognition in the images"}
+      - {language: ru, text: "Deep Learning: Распознавание сцен и достопримечательностей на изображениях"}
+    shortDescription:
+      - {language: en, text: "In this talk we will discuss the development of a system for solving the problem of scene recognition\
+            \ with the help of a state-of-the-art approach based on deep convolutional neural networks."}
+      - {language: ru, text: "В данном докладе пойдет речь о построении системы для решения задачи scene recognition при п\
+            омощи state-of-the-art подхода, основанного на глубоких сверточных нейронных сетях."}
+    longDescription:
+      - language: en
+        text: "Scene recognition is one of the branches of computer vision, which is actively used, for instance, in the search\
+            \ by image. The problem of scene recognition in these images is much more complicated than the object recognition\
+            \ problem, which is rather well-studied and already used in the industry. The main reason for it being that is\
+            \ that a scene is a more complex and a less formalized concept: it is quite difficult to mark out the characteristics\
+            \ that describe such concepts as a restaurant, a kitchen, a sport event and so forth. Besides, unlike an object,\
+            \ a scene takes up the whole picture, not a part of it. \n\nIn this talk we will discuss the development of a\
+            \ system for solving the problem of scene recognition with the help of a state-of-the-art approach based on deep\
+            \ convolutional neural networks. \n\nThe problem of sights recognition follows from scene recognition. Here, out\
+            \ of all scenes, we need to tell apart those which include sights: palaces, monuments, squares, cathedrals and\
+            \ so on. In the mean time, it is also important to keep the false detection rate negligible. In this talk we will\
+            \ consider the sights recognition problem solving based on scene recognition neural networks."
+      - language: ru
+        text: "Распознавание сцен (scene recognition) является одной из областей машинного зрения, которая активно применя\
+            ется, например, в поиске по изображениям. Задача распознавания сцен на картинках является более сложной задаче\
+            й, чем относительно хорошо изученная и используемая в индустрии задача распознавания объектов. Главная причина\
+            \ заключается в том, что сцена – более комплексное и менее формализуемое понятие: достаточно сложно выделить п\
+            ризнаки, которые описывают такие понятия, как ресторан, кухня, спортивное мероприятие и т.д. Кроме того, сцено\
+            й является все изображение, а не какая-то его часть, в отличие от объектов. \n\nВ данном докладе пойдет речь о\
+            \ построении системы для решения задачи scene recognition при помощи state-of-the-art подхода, основанного на\
+            \ глубоких сверточных нейронных сетях. \n\nЗадача распознавания достопримечательностей вытекает из распознаван\
+            ия сцен. Здесь нам нужно среди всех изображений сцен выделить те, на которых присутствуют разнообразные извест\
+            ные места: дворцы, памятники, площади, храмы и т.д. Однако при решении этой задачи важно обеспечить низкий уро\
+            вень ложных срабатываний. В докладе будет рассмотрено решение задачи распознавания достопримечательностей на о\
+            снове нейронной сети для scene recognition."
+    talkDay: 1
+    trackTime: "14:25"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/5BWWLIhZy8wYc8cO0c2I0c/cf671a485121482a06ef001305ba9421/____________________________Deep_Learning___________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/dL1-OrjtMvY"]
+    speakerIds: [323]
+  - id: 598
+    name:
+      - {language: en, text: "Segmenting 600 millions of users in real-time mode every day"}
+      - {language: ru, text: "Сегментируем 600 миллионов пользователей в режиме реального времени каждый день"}
+    shortDescription:
+      - {language: en, text: "How we've changed the architecture of the platform to process in real-time 600 million users'\
+            \ data (hundreds of thousands of events per second), which problems we've faced and how we've dealt with them."}
+      - {language: ru, text: "Как мы переработали архитектуру платформы для обработки в реальном времени данных 600 миллио\
+            нов пользователей (сотни тысяч событий в секунду), с какими проблемами столкнулись и как их решали."}
+    longDescription:
+      - language: en
+        text: "Every day users perform millions of actions on the Internet. Project FACETz DMP has to structure these data\
+            \ and make segmentation in order to reveal users' preferences. We'll tell you how, by using Kafka and HBase, we\
+            \ manage to: \n- segment 600 millions of users after the switch from MapReduce to Realtime and how we did it;\
+            \ \n- process 5 billions of events every day; \n- keep statistics on the number of unique users in a segment during\
+            \ the stream processing; \n- monitor the influence of segmentation parameters changes."
+      - language: ru
+        text: "Каждый день пользователи совершают миллионы действий в Интернете. Проекту FACETz DMP необходимо структуриро\
+            вать эти данные и проводить сегментацию для выявления предпочтений пользователей. \nРасскажем, как мы, использ\
+            уя Kafka и HBase: \n- сегментируем 600 миллионов пользователей после перехода с MapReduce на Realtime и как мы\
+            \ это сделали; \n- обрабатываем 5 миллиардов событий каждый сутки; \n- храним статистику по количеству уникаль\
+            ных пользователей в сегменте при потоковой обработке; \n- отслеживаем влияние изменений параметров сегментации\
+            ."
+    talkDay: 1
+    trackTime: "15:35"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2vI3FLvj1SIMkGIUgagciM/b11dfe1f3484474acf3f022404388d16/__________________________-__________________________600____________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/5Ybt_k53CIE"]
+    speakerIds: [324]
+  - id: 599
+    name:
+      - {language: en, text: "No data? No problem! Deep Learning with CGI"}
+      - {language: ru, text: "Нет данных? Нет проблем! Deep Learning на CGI"}
+    shortDescription:
+      - {language: en, text: "We will consider an example of training deep convolutional networks for object keypoints localization\
+            \ on a fully synthetic data set."}
+      - {language: ru, text: "Рассмотрим пример обучения глубоких свёрточных сетей для локализации ключевых точек объекта\
+            \ на полностью синтетическом наборе данных."}
+    longDescription:
+      - {language: en, text: "At the moment, deep convolutional networks are state-of-the-art algorithms in many problems\
+            \ of computer vision. However, most of the algorithms require huge training datasets, and the quality of the model\
+            \ depends entirely on the quality and quantity of the data. In a number of tasks, data collection is difficult\
+            \ and sometimes impossible. In the talk, we will consider an example of training deep convolutional networks for\
+            \ object keypoints localization on a fully synthetic data set."}
+      - {language: ru, text: "В настоящий момент глубокие свёрточные сети являются state-of-the-art алгоритмами во многих\
+            \ задачах компьютерного зрения. Однако большинство таких алгоритмов требуют огромных обучающих выборок, и каче\
+            ство модели целиком зависит от качества данных и их количества. В ряде задач сбор данных затруднен или подчас\
+            \ невозможен. В докладе мы рассмотрим пример обучения глубоких свёрточных сетей для локализации ключевых точек\
+            \ объекта на полностью синтетическом наборе данных."}
+    talkDay: 1
+    trackTime: "15:35"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/3twjgTtJSM4WmEEsikeqKW/a5f4e0ed593caeab0ec9c8b6d22cec03/Drokin_DLCGI.pptx"]
+    videoLinks: ["https://youtu.be/VZcmogKXC18"]
+    speakerIds: [325]
+  - id: 600
+    name:
+      - {language: en, text: "CatBoost — the next generation of gradient boosting"}
+      - {language: ru, text: "CatBoost — следующее поколение градиентного бустинга"}
+    shortDescription:
+      - {language: en, text: "How to effectively use an open-source algorithm of CatBoost gradient boosting, who benefits\
+            \ from it now, where it will be used and who should pay attention to it."}
+      - {language: ru, text: "Как наиболее эффективно пользоваться алгоритмом градиентного бустинга CatBoost, где он приме\
+            няется уже сейчас, где будет применяться и кому стоит обратить на него внимание."}
+    longDescription:
+      - {language: en, text: "We'll cover the features of a new open-source algorithm of CatBoost gradient boosting from Yandex.\
+            \ We'll discuss how we developed a technology that can work with categorical characteristics and why we made it\
+            \ open-source. We'll also see where CatBoost is already used, where it will be used and who should pay attention\
+            \ to it. This talk will be useful for machine learning specialists and data processing specialists: they will\
+            \ understand how to effectively use our gradient boosting algorithm and where they can benefit from it now."}
+      - {language: ru, text: "Особенности нового открытого алгоритма градиентного бустинга CatBoost от Яндекса. В докладе\
+            \ пойдет речь о том, как мы разработали технологию, которая умеет работать с категориальными характеристиками\
+            , и зачем выложили ее в открытый доступ. Мы также расскажем, где CatBoost применяется уже сейчас, где будет пр\
+            именяться и кому стоит обратить на него внимание. Доклад будет полезен специалистам по машинному обучению и сп\
+            ециалистам по работе с данными: после его прослушивания они получат понимание, как наиболее эффективно пользов\
+            аться нашим алгоритмом градиентного бустинга и где он может принести пользу уже сейчас."}
+    talkDay: 1
+    trackTime: "15:35"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1NtBCBQxXCaAOwy8kumUKu/edccea9c32bdf119e10417367cc85602/_________________________________________CatBoost___________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/9ZrfErvm97M"]
+    speakerIds: [326]
+  - id: 601
+    name:
+      - {language: en, text: "Hadoop high availability: Badoo experience"}
+      - {language: ru, text: "Hadoop high availability: опыт Badoo"}
+    shortDescription:
+      - {language: en, text: "We will discuss how to provide high availability of Hadoop cluster components and why we need\
+            \ it."}
+      - {language: ru, text: "Поговорим об обеспечении высокой доступности компонентов Hadoop-кластера, зачем и как это де\
+            лать."}
+    longDescription:
+      - language: en
+        text: "Hadoop infrastructure is a popular solution for such tasks as distributed data storage and calculation of Map/Reduce\
+            \ on cluster. High scalability and developed ecosystem make Hadoop one of the most popular frameworks in the infrastructure\
+            \ of various information systems. But the more responsibility you put on it, the more important it becomes to\
+            \ provide its fault tolerance and high availability. This talk will be useful to those, who have already been\
+            \ using Hadoop. For the rest it will be interesting to learn some architectural solutions used in Hadoop. \nIn\
+            \ this talk we will discuss how to provide high availability of Hadoop cluster components. Besides, we will talk\
+            \ on: \n- “the zoo” we deal with; \n- why we should provide high availability: points of system failure and its\
+            \ consequences; \n- tools and solutions to such problems; \n- our practical implementation experience: preparation,\
+            \ deploy, testing."
+      - language: ru
+        text: "Инфраструктура Hadoop – популярное решение для таких задач, как распределённые хранение и обработка данных\
+            . Хорошая масштабируемость и развитая экосистема подкупают и обеспечивают Hadoop’у прочное место в инфраструкт\
+            уре различных информационных систем. Но чем больше ответственности возлагается на этот компонент, тем важнее о\
+            беспечивать его отказоустойчивость и высокую доступность. \nВ докладе мы расскажем про обеспечение высокой дос\
+            тупности компонентов Hadoop-кластера. Кроме этого, поговорим: \n- о «зоопарке», с которым мы имеем дело; \n- о\
+            \ том, зачем обеспечивать высокую доступность: точки отказа системы и последствия отказов; \n- о средствах и р\
+            ешениях, существующих для этого; \n- о нашем практическом опыте внедрения: подготовка, деплой, проверки. \n\nД\
+            оклад будет наиболее полезен тем, кто уже использует Hadoop (для углубления своих знаний). Другой части аудито\
+            рии доклад будет интересен с точки зрения обзора архитектурных решений, применяемых в этом программном комплек\
+            се."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/8FcLFH0MUgGg0YK4aUMMk/5d622e18979a2d8ba32312183ee7f54b/___________________________Hadoop_HighAvailability__________Badoo.pdf"]
+    videoLinks: ["https://youtu.be/pBqrKNX2CJE"]
+    speakerIds: [327]
+  - id: 602
+    name:
+      - {language: en, text: "Lock, stock and two boosting barrels"}
+      - {language: ru, text: "Карты, бустинг, 2 стула"}
+    shortDescription:
+      - {language: en, text: "We'll try to figure out if we need a video card in 2017-2018 for gradient boosting learning."}
+      - {language: ru, text: "Попробуем вместе разобраться, нужна ли вам в 2017-2018 видеокарта, чтобы обучать градиентный\
+            \ бустинг."}
+    longDescription:
+      - language: en
+        text: "Everybody loves gradient boosting. It shows great results in the most part of real-world applications, the\
+            \ phrase \"stacking xgboost\" has become a meme. Usually, this is about decision tree boosting, as we use CPU\
+            \ and machines with loads of RAM for learning. Recently many have bought video cards and decided: why don't we\
+            \ boost on them, cause neural networks significantly speed up on GPU. \n\nUnfortunately, it's not that easy: boosting\
+            \ realization on GPU exists, but there are many nuances in its usefulness and conciseness. Do we need a video\
+            \ card in 2017-2018 for gradient boosting learning? We'll try to figure it out together."
+      - language: ru
+        text: "Все любят градиентный бустинг. Он показывает отличные результаты в большинстве практических приложений, а ф\
+            раза «стакать xgboost-ы» стала мемом. Как правило, речь идёт о бустинге деревьев решений, а для обучения испол\
+            ьзуют CPU и машины с кучей оперативной памяти. В последнее время многие по разным причинам закупились видеокар\
+            тами и решили: а почему бы нам не позапускать бустинг на них, нейросети же на GPU существенно ускоряются. \n\n\
+            К сожалению, не всё так просто: реализации бустинга на GPU есть, но в их полезности и осмысленности есть много\
+            \ нюансов. Попробуем вместе разобраться, нужна ли вам в 2017-2018 видеокарта, чтобы обучать градиентный бустин\
+            г."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/6vocldNhte04IO0cAYMoiS/ce1466f2ca4aaeef5794517d9f2b1b2f/natekin_gbm_gpu.pdf"]
+    videoLinks: ["https://youtu.be/u8az6sLEGpA"]
+    speakerIds: [328]
+  - id: 603
+    name:
+      - {language: en, text: "Automatic contact information extraction from the web"}
+      - {language: ru, text: "Автоматический поиск контактной информации в интернете"}
+    shortDescription:
+      - {language: en, text: "This talk is about a distributed web-crawler for search and extraction of contact information\
+            \ from corporate websites."}
+      - {language: ru, text: "Доклад о распределенном роботе для обхода веба, поиска и извлечения контактной информации с\
+            \ корпоративных веб-сайтов."}
+    longDescription:
+      - language: en
+        text: "In this talk we will discuss a distributed web-crawler for search and extraction of contact information from\
+            \ corporate websites. In fact, there are two components: a web-scraper and a separate app for analysis and extraction.\
+            \ \n\nThe entire system has online architecture and is built on queues. Extraction is implemented as a Python\
+            \ app, which aggregates content into host-based buckets and makes decisions on every bucket separately. Contact\
+            \ information is to be extracted from every host: address, phone number, company's name, as well as social networks\
+            \ accounts, company's business sectors and technologies, on which the website is based. It is all preceded by\
+            \ corporate sites classifier to filter out the hosts, from which we will fail to extract anything, or, on the\
+            \ contrary, the huge catalogues, where it will be hard to get high accuracy. \n\nThis talk focuses mainly on the\
+            \ extraction itself, on our search of working architecture, algorithm sequence and training data collection methods.\
+            \ This talk will be useful for those who work with web data processing or process large amounts of data."
+      - language: ru
+        text: "Речь в докладе пойдет о распределенном роботе для обхода веба, поиска и извлечения контактной информации с\
+            \ корпоративных веб-сайтов. Фактически, это два компонента: веб-робот для получения контента и отдельное прило\
+            жение для анализа и извлечения. \n\nВся система имеет онлайн-архитектуру и построена на очередях. Извлечение в\
+            ыполнено в виде Python-приложения, агрегирующего контент в букеты по хостам и принимающего решение отдельно по\
+            \ каждому букету. С каждого хоста нам нужно извлечь контактную информацию: адрес, телефон, название компании,\
+            \ а также аккаунты в соцсетях, сферы деятельности компании и технологии, на которых построен веб-сайт. Всему э\
+            тому предшествует классификатор корпоративных сайтов, чтобы отфильтровать хосты, с которых ничего не удастся и\
+            звлечь, или, наоборот, большие каталоги, где будет тяжело добиться высокой точности. \n\nОсновной фокус доклад\
+            а будет направлен на само извлечение, на наш поиск работающей архитектуры, последовательность алгоритмов и спо\
+            собы сбора обучающих данных. Доклад будет полезен всем, кто работает с обработкой веб-данных или предоставляет\
+            \ решения для обработки больших объемов данных."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/3hc3qkTcEU2CICoMiU0mim/ef9099263cfa84133481b7c558738352/____________________________________________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/qYqekdksQ0M"]
+    speakerIds: [329]
+  - id: 604
+    name:
+      - {language: en, text: "Neurona: why we taught a neural network to write poems in Kurt Cobain style"}
+      - {language: ru, text: "Neurona: зачем мы научили нейросеть писать стихи в стиле Курта Кобейна?"}
+    shortDescription:
+      - {language: en, text: "We'll discuss modern tasks in developing a creative AI and why it is important and interesting,\
+            \ along with sharing our experience of creating Neurona, Neuronnaya Oborona and Pianola."}
+      - {language: ru, text: "Мы обсудим современные задачи в области построения творческого ИИ и поговорим о том, почему\
+            \ это важно и интересно, а также расскажем, как мы создавали Neurona, Нейронную Оборону и Пианолу."}
+    longDescription:
+      - {language: en, text: "In 2017 the words \"artificial intelligence\" can be heard everywhere. There are plenty of examples\
+            \ of using machine learning and artificial neural networks in business, but in this talk we'll discuss the creative\
+            \ abilities of AI. We'll explain how we were making Neurona (https://www.youtube.com/watch?v=c759T8zOe5A), Neuronnaya\
+            \ Oborona (https://music.yandex.ru/artist/4445922) and Pianola (https://www.youtube.com/watch?v=5bfI3bhiRa4).\
+            \ We'll discuss modern tasks in developing a creative AI and why it is important and interesting."}
+      - {language: ru, text: "В 2017 году «искусственный интеллект» — это словосочетание, которое слышно из каждого утюга\
+            . Есть много примеров применения машинного обучения и искусственных нейронных сетей в бизнесе, но в этом докла\
+            де мы поговорим о творческих возможностях ИИ. Расскажем, как мы делали Neurona (https://www.youtube.com/watch?v=c759T8zOe5A),\
+            \ Нейронную Оборону (https://music.yandex.ru/artist/4445922) и Пианолу (https://www.youtube.com/watch?v=5bfI3bhiRa4).\
+            \ Мы обсудим современные задачи в области построения творческого ИИ и поговорим о том, почему это важно и инте\
+            ресно."}
+    talkDay: 1
+    trackTime: "17:50"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3l9H97QddYkSmEyMsSg2k8/93a50794181d2f79ef2f8706c4079190/_______________________Neurona______________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/TBabMVwpMD8"]
+    speakerIds: [262]
