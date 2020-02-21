@@ -373,6 +373,24 @@ events:
               307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327]
   - eventTypeId: 8
     name:
+      - {language: en, text: "Joker 2017"}
+    startDate: "2017-11-03"
+    endDate: "2017-11-04"
+    siteLink:
+      - {language: en, text: "https://2017.jokerconf.com/en/"}
+      - {language: ru, text: "https://2017.jokerconf.com/"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Peterburgskoye hwy., 62/1, Expoforum"}
+      - {language: ru, text: "Петербургское шоссе, 64/1, КВЦ «Экспофорум»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b9kr-i1z8gVosLgzW0KnVgn
+    mapCoordinates: "59.762236, 30.356121"
+    talkIds: [605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626,
+              627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646]
+  - eventTypeId: 8
+    name:
       - {language: en, text: "Joker 2019"}
     startDate: 2019-10-25
     endDate: 2019-10-26

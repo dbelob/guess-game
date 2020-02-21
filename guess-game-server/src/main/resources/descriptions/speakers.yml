@@ -349,11 +349,11 @@ speakers:
     company:
       - {language: en, text: Netcracker}
     bio:
-      - {language: en, text: "Vladimir has been working on performance and scalability of NetCracker platform (a software\
+      - {language: en, text: "Vladimir has been working on performance and scalability of Netcracker platform (a software\
             \ used by telecom operators for automatization of network management processes and network equipment) for ten\
             \ years. His focus is Java and Oracle Database performance optimisations. Vladimir is an author of more than a\
             \ dozen of performance improvements in the official PostgreSQL JDBC driver."}
-      - {language: ru, text: "Десять лет работает над производительностью и масштабируемостью NetCracker OSS — ПО, использ\
+      - {language: ru, text: "Десять лет работает над производительностью и масштабируемостью Netcracker OSS — ПО, использ\
             уемого операторами связи для автоматизации процессов управления сетью и сетевым оборудованием. Увлекается вопр\
             осами производительности Java и Oracle Database. Автор более десятка улучшений производительности в официально\
             м PostgreSQL JDBC-драйвере."}
@@ -363,6 +363,19 @@ speakers:
     name:
       - {language: en, text: "Gleb Smirnov"}
       - {language: ru, text: "Глеб Смирнов"}
+    company:
+      - {language: en, text: Plumbr}
+    bio:
+      - {language: en, text: "Gleb specializes in developing highly performant fault-tolerant systems, including high frequency\
+            \ trading platforms. In his spare time, Gleb likes to dabble in the sources of OpenJDK and doing various horrible\
+            \ perversions with the JVM. For the last two years, Gleb has been working at Plumbr on a state-of-the-art APM\
+            \ solution."}
+      - {language: ru, text: "Специалист по разработке высокопроизводительных отказоустойчивых приложений, в том числе пла\
+            тформ для высокочастотной торговли. В свободное время любит поковыряться в исходниках OpenJDK и потворить с ни\
+            ми всяческое непотребство. Некоторое время проработал в петербургских подразделениях Яндекса и центра разработ\
+            ки Deutsche Bank. Последние два года работает в Plumbr, где разрабатывает state-of-the-art систему мониторинга\
+            \ надёжности и производительности систем."}
+    twitter: gvsmirnov
   - id: 27
     fileName: 0027.jpg
     name:
@@ -506,6 +519,18 @@ speakers:
     name:
       - {language: en, text: "Evgeny Mandrikov"}
       - {language: ru, text: "Евгений Мандриков"}
+    company:
+      - {language: en, text: SonarSource}
+    bio:
+      - {language: en, text: "Evgeny is a contributor to various open source projects and a speaker at international conferences\
+            \ and JUGs. He is one of the lead developers of JaCoCo project, and also the project lead of the award-winning\
+            \ EclEmma project at the Eclipse Foundation that integrates JaCoCo into Eclipse IDE. In his day job at SonarSource\
+            \ Evgeny develops SonarQube's static source code analysis for languages such as Java, C/C++, C#, JavaScript."}
+      - {language: ru, text: "Евгений участвует в различных проектах с открытым исходным кодом и выступает на международны\
+            х конференциях и JUG-ах. Он является одним из ведущих разработчиков JaCoCo, а также руководителем проекта EclEmma\
+            \ в Eclipse Foundation, интегрирующего JaCoCo в Eclipse IDE. В своей повседневной работе в SonarSource Евгений\
+            \ занимается разработкой статических анализаторов кода для таких языков, как Java, C/C++, C#, JavaScript."}
+    twitter: _Godin_
   - id: 48
     fileName: 0048.jpg
     name:
@@ -620,6 +645,15 @@ speakers:
     fileName: 0061.jpg
     name:
       - {language: en, text: "Marc Hoffmann"}
+    company:
+      - {language: en, text: "mtrail GmbH"}
+    bio:
+      - {language: en, text: "Marc is the initial author of the JaCoCo project. Working on bytecode analysis for over than\
+            \ 10 years he became almost a bytecode native speaker. He is a frequent speaker at various international conferences.\
+            \ For his contributions to Java community he became a Java Champion in 2014. In his day job at mtrail Marc works\
+            \ on Java-based solutions to control trains on European railroad networks."}
+    twitter: marcandsweep
+    javaChampion: true
   - id: 62
     fileName: 0062.jpg
     name:
@@ -708,6 +742,21 @@ speakers:
     fileName: 0074.jpg
     name:
       - {language: en, text: "Sebastian Daschner"}
+    company:
+      - {language: en, text: IBM}
+    bio:
+      - language: en
+        text: "Sebastian Daschner is a Lead Java Developer Advocate for IBM, author, and trainer and is enthusiastic about\
+            \ programming and Java (EE). He is the author of the book \"Architecting Modern Java EE Applications\". Sebastian\
+            \ is participating in the JCP, helping to form the future standards of Java EE, serving in the JAX-RS, JSON-P\
+            \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
+            \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
+            \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
+            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
+            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
+            — either by plane or motorbike."
+    twitter: DaschnerS
+    javaChampion: true
   - id: 75
     fileName: 0075.jpg
     name:
@@ -957,6 +1006,17 @@ speakers:
     fileName: 0113.jpg
     name:
       - {language: en, text: "Cay Horstmann"}
+    company:
+      - {language: en, text: "San José State University"}
+    bio:
+      - language: en
+        text: "Cay Horstmann grew up in Northern Germany and attended the Christian-Albrechts-Universität in Kiel, a harbor\
+            \ town at the Baltic sea. He received a M.S. in computer science from Syracuse University and a Ph.D. in mathematics\
+            \ from the University of Michigan in Ann Arbor. \n\nFor four years, he was VP and CTO of an Internet startup that\
+            \ went from 3 people in a tiny office to a public company. He now teaches computer science at San Jose State University.\
+            \ Cay has written many books and articles on programming languages and computer science education, including the\
+            \ international bestseller Core Java, with ten editions since 1996. He was named a Java Champion in 2005."
+    twitter: cayhorstmann
   - id: 114
     fileName: 0114.jpg
     name:
@@ -980,14 +1040,45 @@ speakers:
     fileName: 0115.jpg
     name:
       - {language: en, text: "Chris Seaton"}
+    company:
+      - {language: en, text: "Oracle Labs"}
+    bio:
+      - language: en
+        text: "Chris Seaton is Research Manager at the Virtual Machine Group in Oracle Labs, \nwhere he leads the work to\
+            \ implement Ruby using the next generation of Java \nVirtual Machine technology and other projects, and a Visitor\
+            \ at the University \nof Manchester. \n\nBefore this he completed a PhD at the University of Manchester where\
+            \ he \nresearched programming languages and irregular parallelism. Before that, he \ncompleted an MEng at the\
+            \ University of Bristol on languages with mutable syntax \nand semantics. \n\nIn his spare time he used to develop\
+            \ an award winning medical app that is the \nfirst app regulated as a medical device in the UK, and ran a consultancy\
+            \ to help \nclients such as the UK National Health Service to develop revolutionary medical \nsoftware."
+    twitter: ChrisGSeaton
+    gitHub: chrisseaton
   - id: 116
     fileName: 0116.jpg
     name:
       - {language: en, text: "Axel Fontaine"}
+    company:
+      - {language: en, text: "Boxfuse GmbH"}
+    bio:
+      - {language: en, text: "Axel Fontaine is the founder and CEO of Boxfuse, the easiest way to deploy JVM, Node.js and\
+            \ Go applications to AWS. Axel is also the creator and project lead of Flyway, an open-source tool that makes\
+            \ database migration easy. He is a Continuous Delivery and Immutable Infrastructure expert, a Java Champion, a\
+            \ JavaOne Rockstar and a regular speaker at many large international conferences including JavaOne, Devoxx, Jfokus,\
+            \ JavaZone, QCon, JAX, etc."}
+    twitter: axelfontaine
   - id: 117
     fileName: 0117.jpg
     name:
       - {language: en, text: "Nitsan Wakart"}
+    company:
+      - {language: en, text: "TTNR Labs"}
+    bio:
+      - language: en
+        text: "A coder with a pedantic passion for performance. His work has spanned army intelligence systems, dot.com era\
+            \ startups, financial institutions and innovative product companies. \nAlso a blogger and active Open Source developer\
+            \ (importantly JCTools but a modest contributor to RxJava/Netty/Akka and others as well). \nWhen not plotting\
+            \ world domination, Nitsan enjoys pinnacoladas and getting caught in the rain."
+    twitter: nitsanw
   - id: 118
     fileName: 0118.jpg
     name:
@@ -1012,21 +1103,62 @@ speakers:
   - id: 119
     fileName: 0119.jpg
     name:
-      - {language: en, text: "Alexey Dobrynin"}
+      - {language: en, text: "Aleksey Dobrynin"}
       - {language: ru, text: "Алексей Добрынин"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "Chief technical officer at Sberbank-Technology. Has been working in app development for more\
+            \ than 10 years. During this time has gained vast experience in designing and creating systems of different size,\
+            \ starting with corporate CRM till high-load services. He believes that a clean and maintainable code is a hard\
+            \ one to create."}
+      - {language: ru, text: "Главный инженер в Сбербанк-Технологии. Занимается прикладной разработкой более 10-ти лет. За\
+            \ это время накопил большой опыт в проектировании и создании систем различного масштаба, от корпоративных CRM\
+            \ до сложных высоконагруженных сервисов. Верит, что простой и понятный код создавать сложно."}
   - id: 120
     fileName: 0120.jpg
     name:
       - {language: en, text: "Ruslan Mikhalev"}
       - {language: ru, text: "Руслан Михалёв"}
+    company:
+      - {language: en, text: Alfa-Lab}
+      - {language: ru, text: Альфа-Лаборатория}
+    bio:
+      - {language: en, text: "enior Developer at Alfa-Lab. Develops banking API in microservices, is interested in libraries\
+            \ development, pays particular attention to the contract, user-friendliness and tools' flexibility. Is a big fan\
+            \ of Groovy, as well as other JVM-based languages."}
+      - {language: ru, text: "Ведущий разработчик в Альфа-Лаборатории. Разрабатывает банковские API в микросервисах, увлек\
+            ается разработкой библиотек, где особое внимание уделяет контракту, удобству использования и гибкости инструме\
+            нтов. Большой поклонник Groovy, а также ценитель других JVM-based языков программирования."}
+    twitter: CryonixMe
   - id: 121
     fileName: 0121.jpg
     name:
       - {language: en, text: "Carlos Sanchez"}
+    company:
+      - {language: en, text: CloudBees}
+    bio:
+      - {language: en, text: "Carlos Sanchez specializes in software automation, from build tools to Continuous Delivery.\
+            \ He has spoken at several conferences around the world, including ApacheCON, JavaOne, Fosdem, etc. Involved in\
+            \ Open Source for more than ten years, he is the author of the Jenkins Kubernetes plugin and a member of the Apache\
+            \ Software Foundation amongst other open source groups, contributing to several projects, such as Jenkins, Apache\
+            \ Maven, or Puppet. He works at CloudBees scaling the Jenkins platform."}
+    twitter: csanchez
   - id: 122
     fileName: 0122.jpg
     name:
       - {language: en, text: "Mark West"}
+    company:
+      - {language: en, text: Bouvet}
+    bio:
+      - language: en
+        text: "Originally from the UK, Mark is now based in Oslo where he works as a manager at Bouvet, a Norwegian IT Consultancy.\
+            \ He is an avid Maker and IoT hobbyist, and has far too many projects currently in progress.\nIn what is left\
+            \ of his spare time Mark is involved in javaBin (the Norwegian JUG) where he helps organise community events such\
+            \ as JavaZone and JavaZone Kids. He has spoken at numerous conferences and in 2015 received the JavaOne Rockstar\
+            \ award for his talk about JavaScript powered robotics."
+    twitter: markawest
   - id: 123
     fileName: 0123.jpg
     name:
@@ -1035,16 +1167,17 @@ speakers:
     company:
       - {language: en, text: "XP Injection"}
     bio:
-      - {language: en, text: "Delivery Manager and Java Tech Lead. Expert in Java development, scalable architecture, Agile\
-            \ engineering practices and project management. Having 13+ years of development experience, specializes on complex\
-            \ distributed scalable systems. Active participant and speaker of many international conferences. Founder and\
-            \ coach in training center XP Injection. Organizer and founder of Selenium Camp, JEEConf, XP Days Ukraine and\
-            \ IT Brunch conferences. Founder of active “Anonymous developers club” (uadevclub)."}
-      - {language: ru, text: "Практикующий Java-техлид и Delivery Manager. Эксперт в разработке на Java, Agile-практиках и\
-            \ управлении проектами. Разрабатывает на Java более 13 лет, специализируется на разработке сложных распределён\
-            ных масштабируемых систем. Активный участник и докладчик многих международных конференций. Основатель и тренер\
-            \ тренингового центра XP Injection. Организатор и идеолог конференций Selenium Camp, JEEConf, XP Days Ukraine\
-            \ и IT Brunch. Основатель «Клуба анонимных разработчиков»."}
+      - {language: en, text: "Mikalai is a Senior Delivery Manager, Java Tech Lead and experienced coach. Expert in Java development,\
+            \ scalable architecture, Agile engineering practices and project management. He has more than 13 years of development\
+            \ experience and specializes on complex distributed scalable systems. Active participant and speaker of many international\
+            \ conferences. Founder and coach in training center XP Injection. Organizer and founder of Selenium Camp, JEEConf,\
+            \ XP Days Ukraine and IT Brunch conferences. Founder of active “Anonymous developers club” (uadevclub)."}
+      - language: ru
+        text: "Практикующий Java-техлид и Delivery Manager. Эксперт в разработке на Java, Agile-практиках и управлении про\
+            ектами. Разрабатывает на Java более 13 лет, специализируется на разработке сложных распределенных масштабируем\
+            ых систем. \nАктивный участник и докладчик многих международных конференций. Основатель и тренер тренингового\
+            \ центра XP Injection. Организатор и идеолог конференций Selenium Camp, JEEConf, XP Days Ukraine и IT Brunch.\
+            \ Основатель Клуба анонимных разработчиков."
     twitter: xpinjection
   - id: 124
     fileName: 0124.jpg
@@ -1056,34 +1189,74 @@ speakers:
       - {language: ru, text: Одноклассники}
     bio:
       - {language: en, text: "Oleg Anastasyev started his career in computer programming in 1995. He developed banking, telecom,\
-            \ public transportation software as well as software for the government of Latvia. Oleg is a principal engineer\
-            \ at Odnoklassniki. His primary responsibilities are development of architectures and solutions for highly loaded\
-            \ as well as big data services, solving performance and availability problems. His last successful projects include\
-            \ NewSQL ACID compliant distributed fault-tolerant database and private cloud system to help manage the whole\
-            \ fleet of Odnoklassniki machines."}
+            \ public transportation software as well as software for the government of Latvia. Oleg is a leading developer\
+            \ at Odnoklassniki (http://ok.ru/) since 2007. His primary responsibilities as a Platform Team member are development\
+            \ of architectures and solutions for highly loaded as well as big data services, solving performance and availability\
+            \ problems. His last successful projects include NewSQL ACID compliant distributed fault-tolerant database and\
+            \ private cloud system to help manage the whole fleet of Odnoklassniki machines."}
       - {language: ru, text: "Начал карьеру программиста в далеком 1995 году. Разрабатывал ПО в банковской сфере, телекоме\
-            , транспорте. Работает главным инженером в Одноклассниках. В его обязанности входит разработка архитектур и ре\
-            шений для высоконагруженных систем, больших хранилищ данных, решение проблем производительности и надежности п\
-            ортала."}
+            , транспорте. Работает ведущим разработчиком в Одноклассниках с 2007 года в команде платформы. В его обязаннос\
+            ти входит разработка архитектур и решений для высоконагруженных систем, больших хранилищ данных, решение пробл\
+            ем производительности и надежности портала. Также занимается обучением разработчиков внутри компании."}
   - id: 125
     fileName: 0125.jpg
     name:
       - {language: en, text: "Anastasia Lieva"}
       - {language: ru, text: "Анастасия Лиева"}
+    company:
+      - {language: en, text: TabMo}
+    bio:
+      - {language: en, text: "For more than 6 years Anastasia has been into AI — for the benefit of humanity, of course! Her\
+            \ professional interests are in the area of machine learning and functional programming. Anastasia currently works\
+            \ as a data scientist in RTB area at the French company TabMo. She also teaches Data Science at Polytech Montpellier.\
+            \ Anastasia is an active participant in Montpellier TechHub, she created and runs the Big-Data-Montpellier and\
+            \ Functional-Programming-Montpellier communities and organizes their meetings."}
+      - {language: ru, text: "Более 6 лет Анастасия занимается искусственным интеллектом, конечно же, для блага всего чело\
+            вечества! Её профессиональные интересы лежат в области машинного обучения и функционального программирования.\
+            \ Сегодня Анастасия — data scientist в сфере RTB во французской компании TabMo. Она также проводит курсы Data\
+            \ Science в Политехническом университете Монпелье. Анастасия — активный участник TechHub в Монпелье, она созда\
+            ла и организовывает сообщества Big-Data-Montpellier и Functional-Programming-Montpellier."}
+    twitter: lievAnastazia
   - id: 126
     fileName: 0126.jpg
     name:
       - {language: en, text: "Ionut Balosin"}
+    company:
+      - {language: en, text: "Raiffeisen Bank International AG"}
+    bio:
+      - {language: en, text: "Ionut Balosin is an Independent Technical Trainer an a Software Architect currently employed\
+            \ by Raiffeisen Bank International AG. He is also a regular speaker at software development conferences and meetups\
+            \ around the world, delivering presentations, training courses and workshops."}
+    twitter: ionutbalosin
   - id: 127
     fileName: 0127.jpg
     name:
       - {language: en, text: "Mikhail Malyutin"}
       - {language: ru, text: "Михаил Малютин"}
+    company: []
+    bio:
+      - {language: en, text: "Has been developing in Java since 2003. After 10 years experience in outsourcing and product\
+            \ development decided to make a switch to Ceylon. Among his main interests are backend development and programming\
+            \ languages."}
+      - {language: ru, text: "Разрабатывает на Java c 2003 года. Проработал более 10 лет в аутсорсинге и продуктовой разра\
+            ботке, после чего решил сменить язык программирования Java на Ceylon. Основные интересы — backend разработка,\
+            \ языки программирования."}
   - id: 128
     fileName: 0128.jpg
     name:
       - {language: en, text: "Nikolay Rychkov"}
       - {language: ru, text: "Николай Рычков"}
+    company: []
+    bio:
+      - {language: en, text: "Has been into leadership for more than 10 years. Is passionate about programming and maths;\
+            \ is a Jboss community leader 2011. Nikolay was the chairman of the social \"Young science and technology specialists\"\
+            \ movement of Saint-Petersburg Academy of Sciences, the president of the \"Science and higher education support\"\
+            \ fund, as well as a State councillor of Saint-Petersburg. He is currently the head of IT department."}
+      - {language: ru, text: "Николай Рычков занимается руководящей деятельностью более 10 лет. Активно увлекается програм\
+            мированием и математикой, Jboss community leader 2011 года. В трудовой биографии Николая значатся такие должно\
+            сти, как председатель общественного движения \"Молодые специалисты науки и техники\" при Академии наук СПб, пр\
+            езидент фонда \"Содействие науке и высшей школе\", государственный советник СПб. В настоящее время - директор\
+            \ ИТ департамента."}
   - id: 129
     fileName: 0129.jpg
     name:
@@ -1093,30 +1266,74 @@ speakers:
     bio:
       - {language: en, text: "Marc Philipp is a software engineer who works on cloud-based SaaS products for LogMeIn in Karlsruhe,\
             \ Germany. He is a long-time core committer and maintainer of JUnit and initiator of the JUnit Lambda crowdfunding\
-            \ campaign that started what has become JUnit 5. As a regular conference speaker in Germany, he's thrilled to\
-            \ speak at a conference in Russia for the first time."}
+            \ campaign that started what has become JUnit 5."}
     twitter: marcphilipp
   - id: 130
     fileName: 0130.jpg
     name:
-      - {language: en, text: "Alexander Borisov"}
+      - {language: en, text: "Alex Borysov"}
       - {language: ru, text: "Александр Борисов"}
     company:
-      - {language: en, text: "Google"}
+      - {language: en, text: Google}
+    bio:
+      - language: en
+        text: "Software engineer / tech lead with solid experience in large scale software development.\nDeveloped trading\
+            \ systems; worked on microservice architecture for a world leading social casino; built core infrastructure backend\
+            \ services for a unicorn startup in Silicon Valley with 300+ million users. \nCurrently works on IoT platform\
+            \ at Google. Aimed to deliver the software with better product and code quality. Clean coder, test-driven developer."
+      - language: ru
+        text: "Инженер/техлид, специализирующийся на построении высоконагруженных распределённых систем. Участвовал в разр\
+            аботке трейдинговых систем; занимался построением микросервисной архитектуры для мирового лидера в области соц\
+            иального казино; разрабатывал ключевые инфраструктурные сервисы для unicorn-стартапа в Кремниевой долине с 300-м\
+            иллионной пользовательской базой.\nНа данный момент занимается разработкой платформы для интернета вещей в Google.\
+            \ Сторонник и практик идей чистого кода и разработки через тестирование."
+    twitter: aiborisov
   - id: 131
     fileName: 0131.jpg
     name:
       - {language: en, text: "Anuar Nurmakanov"}
       - {language: ru, text: "Ануар Нурмаканов"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: en, text: "Works as a software engineer in EPAM Systems Kazakhstan. He is said to have a purple belt in\
+            \ team leading and project delivery, a brown belt in Java and XP practices and a blue belt in software architecture.\
+            \ Strives to Kaizen and Agile way of thinking, though it's not that easy."}
+      - {language: ru, text: "Разработчик в компании EPAM Systems Kazakhstan. Можно сказать, что на текущий момент обладае\
+            т фиолетовым поясом в вопросах работы с командами и проектами, коричневым поясом в Java и XP-практиках и синим\
+            \ поясом в вопросах архитектуры. Стремится в сторону Kaizen и Agile-мышления, хоть это и не всегда получается."}
+    twitter: ssshogunnn
   - id: 132
     fileName: 0132.jpg
     name:
       - {language: en, text: "Alvaro Hernandez"}
+    company:
+      - {language: en, text: ToroDB}
+    bio:
+      - language: en
+        text: "Álvaro is a 38-year-old Spanish entrepreneur. Founder and CEO at 8Kdata, a database R&D company. Spends most\
+            \ of his time working on the ToroDB project, the first NoSQL-on-SQL database, a MongoDB-compatible database that\
+            \ runs on top of an RDBMS and is written in Java. \nHe is a passionate Java software developer and open source\
+            \ advocate. Álvaro is a member of JavaSpecialists.eu and jCrete.org, and a frequent speaker at international conferences."
+    twitter: ahachete
   - id: 133
     fileName: 0133.jpg
     name:
       - {language: en, text: "Alexander Khristoforov"}
       - {language: ru, text: "Александр Христофоров"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: en, text: "Was born in 1979. Graduated from Riga Technical University. Has been working as a programmer\
+            \ since 1998, started writing in Java in 2000. Senior Developer in a platform team at Odnoklassniki since 2009,\
+            \ where among his duties were development and implementation of data warehouses, along with creation and development\
+            \ of various services, such as API, video, feed, music."}
+      - language: ru
+        text: "Родился в 1979 году. Окончил Рижский Технический Университет. Работает программистом с 1998 года, начал пис\
+            ать на Java в 2000 году. \nВ Одноклассниках с 2009 года работает ведущим разработчиком в команде платформы. В\
+            \ Одноклассниках в основном занимался разработкой и внедрением хранилищ данных, а также принимал участие в соз\
+            дании и развитии различных сервисов, таких как API, видео, лента, музыка."
   - id: 134
     fileName: 0134.jpg
     name:
@@ -1907,6 +2124,15 @@ speakers:
     name:
       - {language: en, text: "Artur Pilipenko"}
       - {language: ru, text: "Артур Пилипенко"}
+    company:
+      - {language: en, text: "Azul Systems"}
+    bio:
+      - {language: en, text: "Engineer in the compiling team at Azul Systems company. During the last two years has been taking\
+            \ part in the development of the LLVM-based JIT compiler Falcon. Before Azul Systems used to work at Oracle, where\
+            \ he was developing the CLDC HI virtual machine (aka Monty VM)."}
+      - {language: ru, text: "Инженер из компиляторной команды в компании Azul Systems. На протяжении последних двух лет у\
+            частвует в разработке LLVM-based JIT компилятора Falcon. До прихода в Azul работал в компании Oraсle, где зани\
+            мался разработкой виртуальной машины CLDC HI (aka Monty VM)."}
   - id: 236
     fileName: 0236.jpg
     name:
@@ -2016,6 +2242,22 @@ speakers:
     name:
       - {language: en, text: "Sergey Abdulmanov"}
       - {language: ru, text: "Сергей Абдульманов"}
+    company:
+      - {language: en, text: Mosigra}
+      - {language: ru, text: Мосигра}
+    bio:
+      - {language: en, text: "Sergey Abdulmanov is a mathematician from Astrakhan State University. He worked as a newspaper\
+            \ editor, was head of the advertisement department, owned an IT company. Since 2010 he is a marketing director\
+            \ of Mosigra. Since 2009 he operates a popular Mosigra blog in the Habrahabr business space. Sergey received an\
+            \ award \"Business Book of the Year in Russia\" for a book \"Business as a Game\" (co-authored with D. Kibkalo\
+            \ and D. Borisov). Founder of the Loft PR agency. He provided advice for several companies from the Russian market\
+            \ top 20. Prize winner of the \"Best Marketing Company of the Year\" and \"Best Client Experience\"."}
+      - {language: ru, text: "Сергей Абдульманов — математик из Астраханского государственного университета. Работал редак\
+            тором газеты, руководил рекламным отделом, затем владел IT-компанией. С 2010 года маркетинговый директор Мосиг\
+            ры. С 2009 года ведёт популярный блог Мосигры на площадке Хабр про бизнес. Обладатель премии «Деловая книга го\
+            да» за книгу «Бизнес как игра» (в соавторстве с Д. Кибкало и Д. Борисовым). Учредитель пиар-агентства Loft. Ко\
+            нсультировал ряд компаний из Топ-20 российского рынка. Премии «Лучшая маркетинговая компания года» и «Лучший к\
+            лиентский опыт»."}
   - id: 259
     fileName: 0259.jpg
     name:
@@ -2311,6 +2553,15 @@ speakers:
     fileName: 0298.jpg
     name:
       - {language: en, text: "Christian Thalinger"}
+    company:
+      - {language: en, text: Twitter}
+    bio:
+      - {language: en, text: "Chris Thalinger is a software engineer working on Java Virtual Machines for more than 13 years.\
+            \ His main expertise is in compiler technology with just-in-time compilation in particular. Initially being involved\
+            \ with the CACAO and GNU Classpath projects, the focus shifted to OpenJDK as soon as Sun Microsystems made the\
+            \ JDK open-source. Ever since Chris has worked on the HotSpot JVM at Sun, Oracle and now at Twitter."}
+    twitter: christhalinger
+    javaChampion: true
   - id: 299
     fileName: 0299.jpg
     name:
@@ -4780,6 +5031,22 @@ speakers:
     name:
       - {language: en, text: "Sergey Egorov"}
       - {language: ru, text: "Сергей Егоров"}
+    company:
+      - {language: en, text: Pivotal}
+    bio:
+      - language: en
+        text: "Sergei works at Pivotal on Project Reactor in Berlin, Germany.\n\nHe is an active member of the open source\
+            \ community, member of the Apache Foundation, co-maintainer of the Testcontainers project, and a contributor to\
+            \ various OSS projects (Apache Groovy, Testcontainers, JBoss Modules, Spring Boot, to name a few), likes to share\
+            \ the knowledge and was presenting at different conferences and meetups in Russia, Germany, Ukraine, Norway, Denmark,\
+            \ Spain, and Estonia.\n\nHe is passionate about DevOps topics, clouds, and infrastructure.\n\nBefore Pivotal,\
+            \ he was working at Vivy, N26, Zalando, ZeroTurnaround, TransferWise, and other startups."
+      - {language: ru, text: "Сергей работает в компании Pivotal в команде Project Reactor. Он является активным участнико\
+            м open source-сообщества, членом Apache Software Foundation, одним из главных разработчиков проекта Testcontainers\
+            \ и контрибьютором в разного рода проектах (Apache Groovy, Testcontainers, Spring Boot, JBoss Modules и не тол\
+            ько)."}
+    twitter: bsideup
+    gitHub: bsideup
   - id: 623
     fileName: 0623.jpg
     name:
