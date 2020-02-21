@@ -14403,3 +14403,640 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1WCKJVqYeMakkUEKqwYEgu/0510ae7d09caf1e70e377e44642f8be5/Andrey_Melikhov_How_many_front-end_developers_does_it_take_to_create_a_mobile_app.pdf"]
     videoLinks: []
     speakerIds: [723]
+  - id: 757
+    name:
+      - {language: en, text: "JDK 9, Mission Accomplished: What next for Java?"}
+    shortDescription:
+      - {language: en, text: "We'll dwell on what's included in JDK 9, the proposed changes to the release cadence of the\
+            \ JDK, the numbering scheme and GPL released binaries. We’ll also look at the introduction of a long-term support\
+            \ (LTS) model and what that means for developers and administrators, along with the future of the Java platform."}
+    longDescription:
+      - language: en
+        text: "JDK 9 including the Java Platform Module System (JPMS) has finally been released. We’ll start this talk with\
+            \ a quick recap of what’s included in JDK 9 and how this will help (and challenge) Java developers. \n\nOracle\
+            \ has made some significant announcements about the future of the JDK as well as Java EE. Find out about the proposed\
+            \ changes to the release cadence of the JDK, the numbering scheme and GPL released binaries. We’ll also look at\
+            \ the introduction of a long-term support (LTS) model and what that means for developers and administrators. \n\
+            \nFinally, we’ll look ahead to the future of the Java platform. There is a plethora of JDK enhancement proposals\
+            \ (JEPs) and OpenJDK projects like Valhalla, Amber, Metropolis and Loom. What these are and what they mean for\
+            \ developers will be explored."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2fygU88f8sgeKIIUcowGEI/9b0681a34d5d25e7327ba4beea470da8/JDK_9_Mission_Accomplished__1_.pdf"]
+    videoLinks: ["https://youtu.be/oJF-CnBPeBY"]
+    speakerIds: [69]
+  - id: 758
+    name:
+      - {language: en, text: "Increasing the development effectiveness: the ML hackathon in SberTech"}
+      - {language: ru, text: "Как повысить эффективность разработки: хакатон по ML в СберТехе"}
+    shortDescription:
+      - {language: en, text: "Making an internal ML hackathon without any experience and longtime preparation and getting\
+            \ a real benefit from it."}
+      - {language: ru, text: "Как без опыта и длительной подготовки провести внутренний хакатон по машинному обучению и по\
+            лучить от этого реальную пользу."}
+    longDescription:
+      - language: en
+        text: "That's a story about how to make an internal ML hackathon without any experience and longtime preparation and\
+            \ get a real benefit from it. \n\nWe'll discuss: \n- if Hadoop works in OpenStack; \n- how to bring together Hadoop\
+            \ and Python; \n- a battle for resources — intrigues and investigations in YARN and Spark; \n- interesting things\
+            \ we've found in datasets; \n- how to win an ML hackathon."
+      - language: ru
+        text: "История про то, как без опыта и длительной подготовки провести внутренний хакатон по машинному обучению и п\
+            олучить от этого реальную пользу. \n\nОбсудим: \n- «работает» ли Hadoop в OpenStack; \n- как подружить Hadoop\
+            \ и Pyhton; \n- битва за ресурсы — подковёрные интриги и расследования в YARN и Spark; \n- что интересного уда\
+            лось найти в датасетах; \n- как победить на хакатоне по ML."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6Rs1cF387mMGGiycuSCooO/12e753ebc4eaed67f903ecd77b3ab63a/_______________________________________________________________________________________ML.pdf"]
+    videoLinks: ["https://youtu.be/3Ea0O7vfdtY"]
+    speakerIds: [171]
+  - id: 759
+    name:
+      - {language: en, text: "Advanced client load balancing with Spring Cloud"}
+      - {language: ru, text: "Балансируем клиентские запросы вместе со Spring Cloud"}
+    shortDescription:
+      - {language: en, text: "We'll look into a standard solution of the problem in Live Demo mode on the base of Spring Cloud\
+            \ project. During this demo, we'll dwell on inside realization of client load balancing with examples from different\
+            \ libraries."}
+      - {language: ru, text: "Разберем типовое решение проблемы в режиме Live Demo на базе проекта Spring Cloud. По ходу д\
+            емо будет рассмотрена внутренняя реализация клиентской балансировки запросов с примерами из официальных библио\
+            тек и собственной библиотеки автора."}
+    longDescription:
+      - language: en
+        text: "In distributed systems with dynamic configuration, there is a problem of correct detection of working services\
+            \ and load balancing between them. The main question is not even about which service can be called, but which\
+            \ instance is better for the call at the exact moment of time (and that requires smart balancing in a state of\
+            \ constantly changing system configuration). \n\nIn this talk, Alexander will look into a standard solution of\
+            \ the problem in Live Demo mode on the base of Spring Cloud project, which includes ready realizations of main\
+            \ patterns for distributed apps development. During this demo, Alexander will dwell on inside realization of client\
+            \ load balancing with examples from official libraries and the one of his own. \n\n* This talk is not connected\
+            \ with the engineer solutions in Odnoklassniki and is based on projects and libraries with open source code, along\
+            \ with speaker's personal experience of their usage or creation."
+      - language: ru
+        text: "В распределённых системах с динамической конфигурацией существует проблема корректного обнаружения работающ\
+            их экземпляров сервисов и балансировки запросов между ними. Основной вопрос даже же не в том, какой экземпляр\
+            \ может быть вызван в принципе, а в том, какой инстанс лучше подходит для вызова в определенный момент времени\
+            , что требует умной балансировки в условиях постоянно меняющейся конфигурации системы. \n  \nВ докладе Алексан\
+            др разберет типовое решение проблемы в режиме Live Demo на базе проекта Spring Cloud, который содержит готовые\
+            \ реализации основных паттернов для разработки распределенных приложений. По ходу демо будет рассмотрена внутр\
+            енняя реализация клиентской балансировки запросов с примерами из официальных библиотек и собственной библиотек\
+            и автора. \n  \n* Доклад не связан с инженерными решениями в Одноклассниках и базируется на проектах и библиот\
+            еках с открытым исходным кодом, личном опыте автора по их использованию или созданию."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/5GB2Fp0DBuMa8Cgmk6qqYo/69e64e7b40b348cde63bc07bec851d3c/Tarasov.JBreak.AdvancedLoadBalancingSpringCloud__3_.pdf"]
+    videoLinks: ["https://youtu.be/xS5EJ5ooqRc"]
+    speakerIds: [36]
+  - id: 760
+    name:
+      - {language: en, text: "ML and Spark MLlib smoothie"}
+      - {language: ru, text: "Смузи ML вместе со Spark MLlib"}
+    shortDescription:
+      - {language: en, text: "This talk is about how to come into/start your own Spark + Machine Learning and get away with\
+            \ it. It will be useful for those with no experience in ML in distributed systems."}
+      - {language: ru, text: "Рассказ о том, как сесть на проект/начать свой со Spark + Machine Learning и не огрести проб\
+            лем. Будет полезно тем, у кого нет опыта работы с машинным обучением в распределенных системах."}
+    longDescription:
+      - {language: en, text: "When talking about BigData, there is a need in both data scientists that can tune models' parameters\
+            \ from R/Python packages and Java developers able to understand the built models after implementing them to Java/Scala,\
+            \ including Spark MLlib. Let's get acquainted with this most powerful distributed ML library, along with discussing\
+            \ the special aspects of using standard machine learning algorithms and Spark data structures."}
+      - {language: ru, text: "В направлении BigData требуются не только data scientist-ы, тюнящие параметры моделей из пак\
+            етов на R/Python, но и джависты, которые способны понять построенные модели, воплотив их на Java/Scala, в том\
+            \ числе при помощи Spark MLlib. Давайте начнем знакомство с этой самой мощной библиотекой распределенного маши\
+            нного обучения, заодно обсудив особенности использования стандартных алгоритмов машинного обучения и структур\
+            \ данных в Spark."}
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5GJij9hVksSK6uo6cA6O8e/51125fd81d478360b8f906ed61b63645/JBREAK_Zinovyev.pdf"]
+    videoLinks: ["https://youtu.be/3dUhSwTPXao"]
+    speakerIds: [31]
+  - id: 761
+    name:
+      - {language: en, text: "Class data sharing in the HotSpot VM"}
+    shortDescription:
+      - {language: en, text: "What are class data sharing (CDS) and AppCDS (introduced in OpenJDK 10) all about? Come to hear\
+            \ how to use it, how it is implemented, what benefits it brings and what challenges are still ahead of us."}
+    longDescription:
+      - language: en
+        text: "Class Data Sharing (CDS) is a feature introduced in Java 5 to improve startup performance and reduce the memory\
+            \ footprint of Java by storing the preprocessed class metadata of system classes on disk and sharing it between\
+            \ virtual machines. During the last years, CDS has been constantly improved. In OpenJDK 10, CDS will be extended\
+            \ by AppCDS which additionally allows sharing of application classes between VM instances (see [JEP 310: \"Application\
+            \ Class-Data Sharing\"](http://openjdk.java.net/jeps/310)).\n\nIn this talk, Volker will briefly introduce CDS\
+            \ and AppCDS and demonstrate how it can be used. While CDS is well documented, the usage of AppCDS with application\
+            \ classes and custom class loaders still requires a lot of handcrafting, so Volker will introduce a small tool\
+            \ which helps automating these tasks. After presenting some memory consumption and performance numbers, Volker\
+            \ will do a short deep-dive into the implementation details and describe some of the challenges. Finally, he will\
+            \ briefly show how [Strings and Symbols can be stored in the CDS archive](http://openjdk.java.net/jeps/250) and\
+            \ shared across VM as well since OpenJDK 9.\n\nAfter the talk, the audience should have a better understand of\
+            \ CDS/AppCDS and be able to decide whether it makes sense to use it for their own applications."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 4
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/fqUG1rr-y78"]
+    speakerIds: [146]
+  - id: 762
+    name:
+      - {language: en, text: "Reactive programming with Vert.x"}
+      - {language: ru, text: "Реактивное программирование на Vert.x"}
+    shortDescription:
+      - {language: en, text: "We'll use Vert.x to write an app and learn how to add functions to this app really fast, how\
+            \ to avoid the old code redesign, how to easily scale, along with the features you get in so doing. We'll explain\
+            \ where Vert.x is most efficient. The talk will be useful for those who want to start using Vert.x."}
+      - {language: ru, text: "Напишем приложение на Vert.x. Покажем, как добавлять в него функции, как не переписывать ста\
+            рый код, как легко масштабировать, какие при этом есть особенности. Расскажем, для каких задач подходит Vert.x.\
+            \ Будет полезно тем, кто хочет начать использовать Vert.x."}
+    longDescription:
+      - language: en
+        text: "Tired of debugging critical section for the umpteenth time? Want to write useful code instead of solving a\
+            \ problem of racing threads? Maybe it's time to try something new?\n\nVert.x doesn't look anything like good old\
+            \ Spring or Java EE. That's its power and that's also where the difficulties hide. It's easy to write code that\
+            \ is hard to maintain. On the other hand, with some experience, Vert.x turns into a convenient development tool.\n\
+            But how to launch an app on Vert.x in production? \n\nThis talk will be useful for those who wanted to start using\
+            \ Vert.x, but are not sure which side to approach."
+      - language: ru
+        text: "Надоело отлаживать критическую секцию в сто первый раз? Хочется писать полезный код, а не решать проблему с\
+            \ гонками потоков? Может, стоит попробовать что-то новое?\n\nVert.x совершенно не похож на старый добрый Spring\
+            \ и Java EE. В этом его сила, это таит сложности. Легко написать код, который тяжело поддерживать. С другой ст\
+            ороны, имея опыт, Vert.x превращается в удобный инструмент разработки.\nА как после этого запускать приложение\
+            \ на Vert.x в промышленной среде? \n\nДоклад будет полезен тем, кто хотел бы начать использовать Vert.x, но не\
+            \ знает, с какой стороны подойти."
+    talkDay: 1
+    trackTime: "13:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6FMSfy0SZ2642wygIsMea2/611085d640bc3482007a1b24998c8cd2/_________________________________________________________________________________Vertx__2_.pdf"]
+    videoLinks: ["https://youtu.be/_RdhB_HFcVI"]
+    speakerIds: [108]
+  - id: 763
+    name:
+      - {language: en, text: "Side Effect Injection, or The virtuous duct tape"}
+      - {language: ru, text: "Side Effect Injection, или Добродетельные костыли"}
+    shortDescription:
+      - {language: en, text: "We’ll go into the details of Side Effect Injection approach, look at the Java code compilation\
+            \ variants, dig into one bytecode modification case in JVM, dissect Java formal grammar, and then play with it\
+            \ all using a real application as an example."}
+      - {language: ru, text: "По косточкам разберем подход Side Effect Injection, полюбуемся вариантами компиляции Java-ко\
+            да, расковыряем один кейс модификации байт-кода в JVM, препарируем формальную грамматику Java, а затем поиграе\
+            м со всем этим на примере реального приложения."}
+    longDescription:
+      - language: en
+        text: "Remember the time when you have accidentally (or not) sent to production a piece of code meant to be for test\
+            \ only? Or temporarily put a tiny “if”, for instance, with Thread.sleep() or logging for debugging? You are not\
+            \ alone. There is a numerous number of tasks, after the solution of which the test/debugging code goes to production,\
+            \ becoming a time bomb waiting to explode, increasing technical debt and spoiling developer’s karma along the\
+            \ way. \n\nIn this talk, we’ll go into the details of Side Effect Injection approach, that will allow you to implement\
+            \ almost any behavior into the testing application: delays, stubs, logging, security bypass and so on, and yet\
+            \ not mess up the repository with hacks and even not reassemble the application itself. \n\nDuring the talk, we’\
+            ll look at the Java code compilation variants, dig into one bytecode modification case in JVM, dissect Java formal\
+            \ grammar, and then play with it all using a real application as an example."
+      - language: ru
+        text: "Помните тот случай, когда вы случайно (или нет) отправили на продакшн кусочек кода, предназначенный только\
+            \ для теста? Или временно вставили крохотный if’чик, например, с Thread.sleep() или логированием для отладки?\
+            \ Знайте, вы не одиноки. Есть куча реальных задач, после решения которых на продакшн частенько уезжает тестовы\
+            й/отладочный код, превращаясь там в бомбу замедленного действия, попутно преумножая тех.долг и пятно на карме\
+            \ разработчика. \n\nВ докладе мы по косточкам разберем подход Side Effect Injection, который позволит вам внед\
+            рять в тестируемое приложение почти любое поведение: задержки, заглушки, логирование, обход безопасности и т.д\
+            ., но при этом не пачкать репозиторий грязными хаками и даже не пересобирать само приложение. \n\nВ ходе разбо\
+            ра полюбуемся вариантами компиляции Java-кода, расковыряем один кейс модификации байт-кода в JVM, препарируем\
+            \ формальную грамматику Java, а затем поиграем со всем этим на примере реального приложения."
+    talkDay: 1
+    trackTime: "13:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/NQcJjl348CgYs2iKqw0wC/f59db221f97a1cd8b92335710952e505/______________________________Side_Effect_Injection_____________________________________________________1___1_.pdf"]
+    videoLinks: ["https://youtu.be/5gEyr-25rfE"]
+    speakerIds: [86]
+  - id: 764
+    name:
+      - {language: en, text: "ML Pipelines at Odnoklassniki"}
+      - {language: ru, text: "ML Pipelines в Одноклассниках"}
+    shortDescription:
+      - {language: en, text: "We'll cover the main architecture of Spark ML library, as well as a row of limitations which\
+            \ can make it harder to use the library and how to avoid them. We'll use the problem of news feed ranging in Odnoklassniki\
+            \ social network as an example to demonstrate the work of standard library and its extensions."}
+      - {language: ru, text: "Рассмотрим основную архитектуру библиотеки машинного обучения Spark ML, а также ряд ограниче\
+            ний, усложняющих применение библиотеки, и как их обойти. Для демонстрации работы стандартной библиотеки и её р\
+            асширений разберём задачу ранжирования новостной ленты в социальной сети Одноклассники."}
+    longDescription:
+      - {language: en, text: "This talk covers the main architecture of Spark ML library, as well as several peculiarities\
+            \ you can meet while using it to solve real problems with a large amount of data processing. We'll focus on a\
+            \ row of limitations which make it harder to use the library, and tell about the extensions for standard elements\
+            \ that had to be developed in order to avoid these limitations and fully unleash the potential of massive distributed\
+            \ machine learning. We'll demonstrate the work of standard library and its extensions using the problem of news\
+            \ feed ranging in Odnoklassniki social network as an example. The talk will be helpful for developers, data engineers\
+            \ and analysts who use ML methods and platforms of distributed processing of information."}
+      - {language: ru, text: "В рамках доклада мы рассмотрим основную архитектуру библиотеки машинного обучения Spark ML,\
+            \ а также особенности её использования для решения реальных задач с обработкой больших объёмов данных. Особое\
+            \ внимание уделим ряду ограничений, усложняющих применение библиотеки, и расскажем о том, какие расширения для\
+            \ стандартных элементов пришлось разработать, чтобы эти ограничения обойти и полноценно раскрыть потенциал мас\
+            сивного распределённого машинного обучения. Работу стандартной библиотеки и её расширений продемонстрируем на\
+            \ примере задачи ранжирования новостной ленты в социальной сети Одноклассники. Доклад будет полезен разработчи\
+            кам, инженерам данных и аналитикам, использующим методы машинного обучения и платформы распределенной обработк\
+            и информации."}
+    talkDay: 1
+    trackTime: "13:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4xYqnFuQ9WS2iWiGkwmwm8/73132ff2930e0edb35ce9786578c0a9d/Bugaychenko_OK_ML_Pipelines__1_.pdf"]
+    videoLinks: ["https://youtu.be/yHAvPdlULTk"]
+    speakerIds: [301]
+  - id: 765
+    name:
+      - {language: en, text: "Graal: how to use the new JVM JIT compiler in real life"}
+    shortDescription:
+      - {language: en, text: "You'll learn how to use Graal with JDK 9, how to compile an upstream Graal version and what\
+            \ to look out for when using it for benchmarking or even in production."}
+    longDescription:
+      - language: en
+        text: "With JEP 317: Experimental Java-Based JIT Compiler, it is very likely that Graal will be part of JDK 10. In\
+            \ fact, Graal is already available in JDK 9 due to JEP 243: Java-Level JVM Compiler Interface. Graal is itself\
+            \ written in Java and that brings some new properties and behavior to the table which we haven’t seen with existing\
+            \ HotSpot JIT compilers. \n\nThis talk will show how to use Graal with JDK 9, how to compile an upstream Graal\
+            \ version and what to look out for when using it for benchmarking or even in production."
+    talkDay: 1
+    trackTime: "13:45"
+    track: 4
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/1r4i54cCKIicQckSGUCWu2/24589d235f05db55cd3532fa64886ed5/Chris_Thalinger_Graal_-_How_to_use_the_new_JVM_JIT_compiler_in_real_life__1_.pdf"]
+    videoLinks: ["https://youtu.be/OPOHmQORG6M"]
+    speakerIds: [298]
+  - id: 766
+    name:
+      - {language: en, text: "Spring Boot Starter — how and why?"}
+      - {language: ru, text: "Spring Boot Starter — как и зачем?"}
+    shortDescription:
+      - {language: en, text: "We'll discuss, why a standard company that uses Spring Boot needs its own starters, what happens\
+            \ if you recklessly use these starters, along with how self-consistent Spring Boot is and what it means for the\
+            \ newcomers."}
+      - {language: ru, text: "Обсудим, зачем в рамках типовой компании, использующей Spring Boot, могут понадобиться собст\
+            венные стартеры, что бывает, если эти стартеры бездумно использовать, а также насколько Spring Boot самостояте\
+            лен и что это значит для разработчиков."}
+    longDescription:
+      - language: en
+        text: "Spring is no longer a dark magic (thanks to [“Spring the Ripper”](http://2014.jpoint.ru/talks/17/) and Evgeny\
+            \ Borisov), but Spring Boot is still considered to be like some sort of magic craft. Still, many like it, especially\
+            \ the newcomers! \n\nIn this talk we’ll discuss: \n- why a standard company that uses Spring Boot needs its own\
+            \ starters; \n- how soon the Inquisition comes after the newcomers if they recklessly use starters; \n- how self-consistent\
+            \ Spring Boot is and what it means for the newcomers. \n\nThis talk aims at engineers who practice Spring (or\
+            \ better Spring Boot) and who have already faced various difficulties of maintaining a heavy infrastructure developed\
+            \ with the help of Spring."
+      - language: ru
+        text: "Spring — уже не магия (спасибо [«Spring-потрошителю»](http://2014.jpoint.ru/talks/17/) и Евгению Борисову),\
+            \ а вот Spring Boot довольно часто клеймят магической поделкой. Но многим нравится, особенно новичкам! \n\nВ д\
+            окладе мы осветим следующее: \n- зачем вообще в рамках типовой компании, использующей Spring Boot, могут понад\
+            обиться собственные стартеры; \n- как скоро инквизиция приходит за новичками, если они бездумно используют гот\
+            овые стартеры; \n- насколько Spring Boot самостоятелен и что это значит для разработчиков. \n\nДоклад рассчита\
+            н на практикующих Spring (а лучше Spring Boot) инженеров, которые уже сталкивались с различными трудностями по\
+            ддержки увесистой инфраструктуры, разрабатываемой с использованием Spring."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/2_iE7jZWl3U"]
+    speakerIds: [10, 28]
+  - id: 767
+    name:
+      - {language: en, text: "IMDG exploitation from Dev and Ops sides"}
+      - {language: ru, text: "Эксплуатация IMDG со стороны Dev и Ops"}
+    shortDescription:
+      - {language: en, text: "A few words about the general stack, in more detail about Ignite in tow with various services."}
+      - {language: ru, text: "Немного об общем стеке, подробно про Ignite в связке с различными сервисами."}
+    longDescription:
+      - {language: en, text: "To start with, we’ll say a few words about the general scheme of the software we’ve migrated\
+            \ to, along with a short discussion of the migration itself. We’ll touch on Ignite, the problems of its implementation\
+            \ and possible solutions. Together we’ll look at the analysis and solutions of such problems as making clients’\
+            \ nodes work faster, changing the fields which are undesirable during the serialization, changing entity types\
+            \ and increasing the reliability while working with the local cache."}
+      - {language: ru, text: "Вначале расскажем в двух словах об общей схеме ПО, на которую произошла миграция, а также о\
+            \ самой миграции в целом. Обсудим Ignite, проблемы его внедрения и возможные решения. Поговорим об анализе и р\
+            ешении проблем с ускорением работы клиентских узлов, об изменениях, нежелательных при сериализации полей, о пр\
+            облемах изменения типа сущностей и о повышении надёжности при работе с локальным кэшем."}
+    talkDay: 1
+    trackTime: "15:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4d7Pb7bBzGy0wECqoY2006/8f76245519ced76c4405948d61eca34f/_________________________________________________________IMDG_____________________Dev____Ops.pdf"]
+    videoLinks: ["https://youtu.be/u0C11e4sD70"]
+    speakerIds: [302]
+  - id: 768
+    name:
+      - {language: en, text: "Create effective tests or create excuses — testing the Java EE way"}
+    shortDescription:
+      - {language: en, text: "What is necessary to effectively test Java EE applications, as well as how to keep fast feedback,\
+            \ sufficient coverage, and constant development velocity. All of the time will be spent live-coding test cases\
+            \ with different scopes using different technologies. We will especially focus on how to develop maintainable\
+            \ test code with high quality that embraces principles of software craftsmanship."}
+    longDescription:
+      - language: en
+        text: "Testing is still a topic that most developers would like to avoid. Even though it is crucial for working software,\
+            \ developing and maintaining tests take certain time and effort — especially when changes in existing functionality\
+            \ forces test scenarios to adapt. Omitting software tests can’t be the solution; therefore, how can we tackle\
+            \ enterprise tests in an effective and productive way? \n\nThis session shows what is necessary to test Java EE\
+            \ applications in an effective, pragmatic and automated way. It covers how to keep fast feedback, sufficient coverage,\
+            \ and constant development velocity. All of the time will be spent live-coding test cases with different scopes\
+            \ using different technologies. The session will show how containers and orchestration frameworks support effective\
+            \ enterprise testing. We will especially focus on how to develop maintainable test code with high quality that\
+            \ embraces principles of software craftsmanship."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/JPctzdfxeXo"]
+    speakerIds: [74]
+  - id: 769
+    name:
+      - {language: en, text: "Using test generator to stabilize the compiler of Zing VM"}
+      - {language: ru, text: "Как генератор тестов помог стабилизировать компилятор в Zing VM"}
+    shortDescription:
+      - {language: en, text: "In this talk we’ll share how we look for functional problems in the compiler of Zing Java machine,\
+            \ using automatic generator of test programs on Java."}
+      - {language: ru, text: "В этом докладе мы расскажем, как мы ищем функциональные проблемы в компиляторе Java-машины Zing,\
+            \ используя автоматический генератор тестовых программ на языке Java."}
+    longDescription:
+      - language: en
+        text: "Stability and functional consistency are what Java machines’ users usually expect, along with the fast work\
+            \ of the code they’ve compiled. For this very purpose, there are compiler optimizations, but the more aggressive\
+            \ they improve the code, the more problems can sneak in. \n\nSo how can we bring together such controversial goals\
+            \ as speed and consistency of the compiled code? Especially if your compiler is based on LLVM and tens of thousands\
+            \ of changed code lines are added to it every week? How to find hidden bugs before any user runs into one of them?\n\
+            \nIn this talk we’ll share how we look for functional problems in the compiler of Zing Java machine, using automatic\
+            \ generator of test programs on Java."
+      - language: ru
+        text: "Стабильность и функциональная корректность — это то, чего ждут пользователи Java-машин. А ещё они ждут, что\
+            \ скомпилированный ими код будет работать быстро. Для этого существуют компиляторные оптимизации, но чем агрес\
+            сивнее они улучшают код, тем больше проблем в них может быть скрыто.\n\nТак как же помирить такие противоречив\
+            ые цели, как скорость и корректность скомпилированного кода? Особенно если ваш компилятор основан на LLVM, и в\
+            \ него вливаются десятки тысяч строк изменений каждую неделю? Как находить скрытые баги у себя дома до того, к\
+            ак пользователь наткнётся на один из них?\n\nВ этом докладе мы расскажем, как мы ищем функциональные проблемы\
+            \ в компиляторе Java-машины Zing, используя автоматический генератор тестовых программ на языке Java."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5dIlEMavr2KEGaascUwqEQ/c8907e9f49793030ae6cbab7349094c3/____________________________________________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/eyWFQ42dzd0"]
+    speakerIds: [64]
+  - id: 770
+    name:
+      - {language: en, text: "Clustered event sourcing and CQRS with Akka and Java"}
+    shortDescription:
+      - {language: en, text: "We will take a look at motivations for and the architecture of ES & CQRS, digging into an example\
+            \ implementation of ES & CQRS implemented with Akka and Java. We will also see how Akka Persistence is built on\
+            \ other Akka features, such as cluster singletons and cluster sharding."}
+    longDescription:
+      - language: en
+        text: "The decomposition of the monolith into systems of microservices does not only involve the division of monolithic\
+            \ code, it also often includes the dissolution of monolithic data. Therefore, building systems composed of loosely\
+            \ coupled microservices requires new software strategies as well as new data strategies. One of the alternative\
+            \ data strategies commonly used is Event Sourcing & CQRS (Command Query Responsibility Segregation). \nIn this\
+            \ talk, we will take a look at motivations for and the architecture of ES & CQRS. We will also dig into an example\
+            \ implementation of ES & CQRS implemented with Akka and Java. The Akka toolkit provides an actor based implementation\
+            \ of Event Sourcing & CQRS, which means that you can build solutions that run in distributed clusters. We will\
+            \ also look at how Akka Persistence is built on other Akka features, such as cluster singletons and cluster sharding."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/14dYY16yr4GkgoccAKGeq4/0beeb4d5313a5c46a5c00f30f9ed207b/hugh_mckee_clustered_event_sourcing_and_cqrs_with_akka_and_java.pdf"]
+    videoLinks: ["https://youtu.be/1P5M1vd_W_c"]
+    speakerIds: [297]
+  - id: 771
+    name:
+      - {language: en, text: "Database replication in Hadoop"}
+      - {language: ru, text: "Репликация баз данных в Hadoop"}
+    shortDescription:
+      - {language: en, text: "We'll focus on loading data into Hadoop for later analysis."}
+      - {language: ru, text: "Остановимся на задаче загрузки данных в Hadoop для последующего анализа."}
+    longDescription:
+      - language: en
+        text: "Nowadays you can find lots of information devoted to working with data in Hadoop, starting from traditional\
+            \ SQL engines till machine learning and stream processing. So, we've successfully prototyped the solution and\
+            \ showed to our customer all the advantages you can get due to data processing on Hadoop. Now it's time for simple\
+            \ infrastructure tasks to come to the fore: loading data to Hadoop on a regular basis, ensuring access control,\
+            \ along with what to do in case of failure and so on.\n\nIn this talk, we'll focus on one task — loading data\
+            \ into Hadoop for later analysis."
+      - language: ru
+        text: "Сейчас можно найти много материалов, посвящённых работе с данными в Hadoop – от традиционных SQL-движков до\
+            \ машинного обучения и потоковой обработки. Но, когда успешно пройден этап прототипирования решения и заказчик\
+            у показаны преимущества, которые можно получить за счёт обработки данных на Hadoop, на первый план выходит про\
+            стые инфраструктурные задачи – как загружать данные в Hadoop на регулярной основе, как обеспечить разграничени\
+            е доступа, что делать при сбоях и так далее.\n\nВ этом докладе остановимся на одной задаче – загрузка в Hadoop\
+            \ данных для последующего анализа."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/6Dt1HRlguka0eqK62GqMSg/1d1613e0b0e0c35e27cebe970b144115/JBreak_-________________._-_5.pdf"]
+    videoLinks: ["https://youtu.be/EG6dNgxA3XI"]
+    speakerIds: [299]
+  - id: 772
+    name:
+      - {language: en, text: "Java bytecode verification: when, how, or maybe to turn it off?"}
+      - {language: ru, text: "Верификация Java-байткода: когда, как, а может отключить?"}
+    shortDescription:
+      - {language: en, text: "In this talk, Nikita will tell what mission the Java bytecode verifier carries out in the JVM,\
+            \ when and how it works, whether it may affect the performance of your application, and why turning it off is\
+            \ so dangerous."}
+      - {language: ru, text: "В этом докладе мы разберёмся, какую миссию в JVM несёт верификатор байткода, когда и как он\
+            \ работает, может ли повлиять на производительность вашего приложения и почему опасно его отключать."}
+    longDescription:
+      - language: en
+        text: "Today's Java developers are increasingly relying on libraries that generate Java bytecode at runtime to effectively\
+            \ implement various tricks that are hard or impossible to do in Java. However, while the javac compiler is guaranteed\
+            \ to produce correct Java bytecode, shifting down to the bytecode level requires that you keep track of its correctness\
+            \ yourself. Otherwise, there is a chance to get a j.l.VerifyError at runtime upon the loading of a generated class,\
+            \ because the JVM passes all classes through the Java bytecode verifier to enforce strict correctness requirements.\
+            \ Therefore, knowing just the semantics of Java bytecode instructions is often not enough to properly synthesize\
+            \ classes — you also need to know how the Java bytecode verifier works, what bytecode it deems correct, and what\
+            \ it does not.\n\nIn this talk, Nikita will tell what mission the Java bytecode verifier carries out in the JVM,\
+            \ when and how it works, whether it may affect the performance of your application, and why turning it off is\
+            \ so dangerous."
+      - language: ru
+        text: "Сегодня Java-разработчики всё чаще используют библиотеки для порождения Java-байткода в рантайме для эффект\
+            ивной реализации различных трюков, которые сложно или невозможно выразить на языке Javа. Но если используя язы\
+            к Java, компилятор javac гарантирует, что на выходе получится корректный Java-байткод, то спускаясь на уровень\
+            \ непосредственно байткода, вам нужно часто самостоятельно следить за его корректностью. Иначе вы будете получ\
+            ать j.l.VerifyError при загрузке порождённых вами классов, потому что JVM строго следит за корректностью байтк\
+            ода, который она загружает, посредством верификатора Java-байткода. Таким образом, порождая байткод, вам часто\
+            \ недостаточно просто знать семантику байткодных инструкций, вам также нужно знать, как работает Java bytecode-в\
+            ерификатор, какой байткод он считает корректным, а какой — нет. \n\nВ этом докладе мы разберёмся, какую миссию\
+            \ в JVM несёт верификатор байткода, когда и как он работает, может ли повлиять на производительность вашего пр\
+            иложения и почему опасно его отключать."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/1sXPKKQQg8KQ6m0E6CYCcw/31ac2efae382709976b5ee4429121b80/______________________________-________________________Java____________________-_jbreak1__1_.pdf"]
+    videoLinks: ["https://youtu.be/-OocG7tFIOQ"]
+    speakerIds: [14]
+  - id: 773
+    name:
+      - {language: en, text: "Riding the Jet Streams"}
+      - {language: ru, text: "Верхом на реактивных стримах"}
+    shortDescription:
+      - {language: en, text: "You will learn how to take Java Stream API and make distributed collection iteration effortless\
+            \ af."}
+      - {language: ru, text: "Берём Java Stream API, пишем обработку коллекции и запускаем ее на кластере, не прилагая осо\
+            бых усилий."}
+    longDescription:
+      - language: en
+        text: "Java 8 introduced the Stream API as a modern, functional, and very powerful tool for processing collections\
+            \ of data. One of the main benefits of the Stream API is that it hides the details of iteration over the underlying\
+            \ data set, allowing for parallel processing within a single JVM, using a fork/join framework.\n\nViktor will\
+            \ talk about a Stream API implementation that enables parallel processing across many machines and many JVMs.\n\
+            \nYou will learn how you can use the same API to process massive data sets across large clusters, which you already\
+            \ know how to do in a single JVM.\n\nWith an explanation of internals of the implementation, Viktor will give\
+            \ an introduction to the general design behind stream processing using DAG (directed acyclic graph) engines and\
+            \ how an actor-based implementation can provide in-memory performance while still leveraging industry-wide known\
+            \ frameworks as Java Streams API."
+      - language: ru
+        text: "Вы из тех, кто считает, что, распараллелив любой цикл, можно улучшить перформанс, и Collection.parallelStream()\
+            \ — ваш лучший друг? А как вам идея — вбросить ещё пачку машин и получить распределенную обработку? Интересно\
+            ? Тогда для вас этот доклад обязателен к просмотру.\n\nВиктор познакомит слушателей со своим другом, Ориентиро\
+            ванным (Направленным) Ациклическим Графом (или Маркизом?!), и покажет, как с его помощью была организована рас\
+            пределенная высокопроизводительная система обработки информации в памяти поверх нашего знакомого Java 8 Stream\
+            \ API."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/4cQYkO23puc6mIoiOUOIMI/922a8afe4df0a2b8947800932bf41478/riding-the-jet-streams.pdf"]
+    videoLinks: ["https://youtu.be/WMZFOCsIPWU"]
+    speakerIds: [9]
+  - id: 774
+    name:
+      - {language: en, text: "Who's that tweeting about #jbreak?"}
+      - {language: ru, text: "Это кто там такой твитит про #jbreak?"}
+    shortDescription:
+      - {language: en, text: "We'll use KSQL to process Twitter news feed in real time and find out, who tweets most of all\
+            \ during the conference!"}
+      - {language: ru, text: "Используя KSQL, будем обрабатывать ленту твитов в режиме реального времени и разберемся, кто\
+            \ больше всех твитит на конференции!"}
+    longDescription:
+      - language: en
+        text: "What can be more interesting than making systems of data processing pipelines? Let's deal with these numerous\
+            \ tweets right now, using popular technologies — Apache Kafka, Kafka Connect and KSQL! \nWe all know and love\
+            \ SQL, right? Well, KSQL is almost like SQL, only it's Kafka. KSQL allows creating complex systems of thread-specific\
+            \ data processing, without writing Java or Scala (sick!) code! But the most interesting part is when, by using\
+            \ KSQL, we'll process Twitter news feed in real time and find out, who tweets most of all during the conference!"
+      - language: ru
+        text: "Что может быть интересней, чем построение систем конвейерной обработки данных (data pipelines)? Давайте раз\
+            берём поток твитов прямо здесь, используя модные технологии — Apache Kafka, Kafka Connect и KSQL! \nМы же все\
+            \ знаем и любим SQL, правда? Так вот, KSQL — это почти как SQL, только для Kafka. KSQL позволяет создавать сло\
+            жные системы обработки потоковых данных, без написания Java или Scala (sick!) кода! \nНо самое интересное начн\
+            ется тогда, когда в режиме реального времени, с помощью KSQL, мы будем обрабатывать ленту твитов и разберемся\
+            , кто больше всех твитит на конференции!"
+    talkDay: 1
+    trackTime: "17:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/4475hGOK1qWM2CSU2sIyMi/73b44d0d030d7c84e7ccff6b3480a2c8/VIKTOR_GAMOV_-_Who_s_tweeting_about_KSQL_-_JBreak_-_03-04-2018.pdf"]
+    videoLinks: ["https://youtu.be/u5vqfQ5B9VE"]
+    speakerIds: [9]
+  - id: 775
+    name:
+      - {language: en, text: "How to build a crypto trading platform with Spring 5 and Reactor 3"}
+      - {language: ru, text: "Строим криптотрейдинг-платформу, используя Spring 5 и Reactor 3"}
+    shortDescription:
+      - {language: en, text: "We'll look at Reactive approaches with Spring 5 and Reactor 3 and learn how to migrate from\
+            \ Spring 4 to the new Reactive Spring 5, using a crypto trading platform as an example."}
+      - {language: ru, text: "Рассмотрим Reactive-подходы со Spring 5 и Reactor 3, узнаем, что требуется для перехода со Spring\
+            \ 4 на новый Reactive Spring 5, и всё это на примере криптотрейдинговой платформы."}
+    longDescription:
+      - language: en
+        text: "This talk gives a fundamental understanding of Reactive approaches with Spring 5 and Reactor 3 and shows how\
+            \ to build Reactive System using Spring Reactive Stack. The audience will get an understanding of common business\
+            \ needs where those techniques shine the brightest and help in solving complex problems most effectively.\n\n\
+            During this talk, we’ll build a crypto trading platform. \n\nWe’ll:\n-\tdiscuss the ways to build WebSocker API\
+            \ for data transfer;\n-\tlook at the existing crypto-platforms you can integrate with at the very beginning and\
+            \ how Reactor 3 and Spring WebFlux can help us here;\n-\tbuild a simple trading and user wallet.\n-\tprotect access\
+            \ to user operations using reactive Spring Security.\n\nWe won’t talk about:\n-\tthe way Blockchain works;\n-\t\
+            the detailed mechanism for purchases and sales of crypto-currency;\n-\tKotlin.\n\nDuring our talk, we’ll see if\
+            \ Reactor 3 and the new reactive Spring 5 help us in solving our problems and how they do it. We’ll try to find\
+            \ out what’s so interesting about Reactor 3, what’s working and what’s not in WebFlux and whether we can actually\
+            \ start working with Spring Boot 2 with no fear."
+      - language: ru
+        text: "В докладе подробно рассмотрим Reactive-подходы со Spring 5 и Reactor 3 и покажем, как построить Reactive System\
+            \ с использованием Spring Reactive Stack. Расскажем об общих потребностях бизнеса, где эти техники работают лу\
+            чше всего и помогают решить сложные задачи наиболее эффективно. \n\nВо время доклада мы построим криптотрейдин\
+            г-платформу. \n\nЧто будет рассмотрено в процессе разработки: \n- разберем, как построить простой WebSocket API\
+            \ для передачи данных;\n- изучим, с какими существующими крипто-платформами можно интегрироваться на начальных\
+            \ этапах и как в этом нам поможет Reactor 3 и Spring WebFlux; \n- построим простой трейдинг и пользовательский\
+            \ кошелек;\n- защитим доступ к пользовательским операциям при помощи реактивной Spring Security;\n\nЧего не бу\
+            дет:\n- работы Blockchain;\n- детального механизма покупок продаж криптовалюты;\n- Kotlin.\n\nНа протяжении вс\
+            его доклада мы будем разбираться, как помогает/не помогает в решении наших проблем Reactor 3 и новый реактивны\
+            й Spring 5, постараемся узнать, что интересного нам дает Reactor 3, что работает в WebFlux, а что — нет, а так\
+            же можем ли мы уже начинать работу с Spring Boot 2 без опаски."
+    talkDay: 1
+    trackTime: "18:40"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/1jXF380FPC8i6YO0YqcSeO/ebc6dc8592debd2e44d0d72438641ba6/OlehDokuka____________________________________________-_______________________________________Spring_5____Reactor_3__3_.pdf"]
+    videoLinks: ["https://youtu.be/9E64BClVi7E"]
+    speakerIds: [33]
+  - id: 776
+    name:
+      - {language: en, text: "On the way to efficient concurrent hash table"}
+      - {language: ru, text: "На пути к быстрой многопоточной хеш-таблице"}
+    shortDescription:
+      - {language: en, text: "We’ll touch on both theoretical aspects and some practical approaches for high-performance algorithms\
+            \ development."}
+      - {language: ru, text: "Коснёмся теоретических аспектов и практических подходов к построению высокопроизводительных\
+            \ алгоритмов."}
+    longDescription:
+      - {language: en, text: "Nowadays, the hash table is probably the most used data structure, the performance of which\
+            \ influences many application’s components. However, is it that simple to write a fast implementation which uses\
+            \ all power of multi-core architectures? How efficient are the standard solutions in Java? We will try to get\
+            \ the answer to these and many other questions during this talk. We will touch on both theoretical aspects and\
+            \ some practical approaches for high-performance algorithms development."}
+      - {language: ru, text: "Хеш-таблицы — вероятно, самая используемая на сегодняшний день структура данных, от производ\
+            ительности которой зависят многие компоненты приложения. Однако, так ли просто написать быструю реализацию, ис\
+            пользующую всю мощь многоядерных архитектур? И насколько эффективны стандартные решения в Java? Ответ на эти и\
+            \ другие вопросы мы постараемся получить в рамках доклада. В поисках ответа коснёмся как теоретических аспекто\
+            в, так и некоторых практических подходов к построению высокопроизводительных алгоритмов."}
+    talkDay: 1
+    trackTime: "18:40"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1dKEVszM6wUk4Y0i8gIyu4/0fe023fffb921a4a4eb8d9459b6dae29/Koval_Nikita_On_the_way_to_efficient_concurrent_hash_table.pdf"]
+    videoLinks: ["https://youtu.be/BpgL2LGEhP4"]
+    speakerIds: [58]
+  - id: 777
+    name:
+      - {language: en, text: "Hadoop exploitation: tips and tricks"}
+      - {language: ru, text: "Эксплуатация Hadoop: tips and tricks"}
+    shortDescription:
+      - {language: en, text: "We'll look at the problems and tasks of Hadoop exploitation and explain how we've adapted Hadoop\
+            \ for the Yandex infrastructure."}
+      - {language: ru, text: "Расскажем о проблемах и задачах со стороны эксплуатации Hadoop, а также о том, как мы адапти\
+            ровали Hadoop под инфраструктуру Яндекса."}
+    longDescription:
+      - language: en
+        text: "We'll look at the problems and tasks of Hadoop exploitation and explain, how we've adapted Hadoop for the Yandex\
+            \ infrastructure. \n\nThe talk will be useful for those who have Hadoop in production: system administrators,\
+            \ DevOps, developers."
+      - language: ru
+        text: "Речь пойдет о проблемах и задачах со стороны эксплуатации Hadoop, а также о том, как мы адаптировали Hadoop\
+            \ под инфраструктуру Яндекса. \n\nДоклад будет полезен всем, у кого есть Hadoop в продакшне: системным админис\
+            траторам, DevOps'ам, разработчикам."
+    talkDay: 1
+    trackTime: "18:40"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5hVeRkQLNmqgAuSwaaQgO/b30a574e0d8f1c834353aebac8c68a77/__________________________-__________________________Hadoop3.pdf"]
+    videoLinks: ["https://youtu.be/PZVTIKz8r8c"]
+    speakerIds: [300]

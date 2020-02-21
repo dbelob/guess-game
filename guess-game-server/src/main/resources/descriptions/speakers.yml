@@ -128,22 +128,26 @@ speakers:
       - {language: en, text: "Viktor Gamov"}
       - {language: ru, text: "Виктор Гамов"}
     company:
-      - {language: en, text: Hazelcast}
+      - {language: en, text: Confluent}
     bio:
-      - {language: en, text: "Viktor Gamov is a Senior Solution Architect at Hazelcast, the leading open-source in-memory\
-            \ technologies company. Viktor has comprehensive knowledge and expertise in enterprise application architecture\
-            \ leveraging open source technologies. He's helping companies build low latency, scalable and highly available\
-            \ distributed systems. He is co-organizer of Princeton JUG and New York Hazelcast User Group. He is a co-author\
-            \ of O'Reilly's «Enterprise Web Development». Viktor’s presenting at the conferences (http://lanyrd.com/gamussa/),\
-            \ blogging and producing a podcast. Follow Viktor on Twitter @gamussa."}
+      - language: en
+        text: "Viktor Gamov is a Developer Advocate at Confluent, the company that makes a streaming platform based on Apache\
+            \ Kafka. \n\nWorking in the field, Viktor Gamov developed comprehensive expertise in building enterprise application\
+            \ architectures using open source technologies. He enjoys helping different organizations design and develop low\
+            \ latency, scalable and highly available distributed systems. \n\nBack in his consultancy days, he co-authored\
+            \ O'Reilly's \"Enterprise Web Development\". \n\nHe is a professional conference speaker on distributed systems,\
+            \ Java, and JavaScript topics, and is regular on events including JavaOne, Devoxx, OSCON, QCon, and others. He\
+            \ blogs at http://gamov.io and produces the podcasts Razbor Poletov (in Russian) and co-hosts DevRelRad.io. \n\
+            \nFollow Viktor on Twitter @gamussa, where he posts about gym life, food, open source, and, of course, Kafka and\
+            \ Confluent!"
       - language: ru
-        text: "Виктор Гамов — со-основатель и лидер любимого многими программистами правильного подкаста «Разбор Полётов»\
-            . По совместительству является Senior Solution Architect в компании Hazelcast — лидере в разработке in-memory\
-            \ решений с открытым исходным кодом. Накопил большой опыт, участвуя во множестве Java/JavaScript/HTML5 проекто\
-            в. Помогает клиентам финансового и телекоммуникационного сектора в проектировании и разработке высоконагруженн\
-            ых систем. Соавтор книги «Enterprise Web Development» издательства O’Reilly.\n\nВ свободное от работы время Ви\
-            ктор не забывает про качалку и бицуху, а также выступает на международных конференциях, пишет в твиттер как @gamussa\
-            \ и организует встречи Princeton JUG и NYC Hazelcast User Group."
+        text: "Виктор Гамов — сооснователь и лидер любимого многими программистами правильного подкаста «Разбор Полётов».\
+            \ По совместительству является Developer Advocate в компании Confluent, которая разрабатывает платформу на баз\
+            е Apache Kafka. Помогает клиентам в проектировании и разработке распределенных систем обработки потоковых данн\
+            ых. Соавтор книги «Enterprise Web Development» издательства O'Reilly.\n\nВ свободное от работы время Виктор не\
+            \ забывает про качалку и бицуху. Является завсегдатаем конференций JUG.ru Group (JPoint, Joker, JBreak) и друг\
+            их международных конференций (JavaOne, Devoxx, OSCON, Qcon). Пишет в Twitter как @gamussa. Ведет канал про Kafka\
+            \ в Telegram."
     twitter: gamussa
   - id: 10
     fileName: 0010.jpg
@@ -378,17 +382,17 @@ speakers:
       - {language: en, text: "Kirill Tolkachev"}
       - {language: ru, text: "Кирилл Толкачев"}
     company:
-      - {language: en, text: Alpha-Bank}
-      - {language: ru, text: Альфа-Банк}
+      - {language: en, text: Alpha-Laboratory}
+      - {language: ru, text: Альфа-Лаборатория}
     bio:
-      - {language: en, text: "Kirill is a Developer at Alfa-Bank. He develops different banking API's, forms principles and\
-            \ tools related to microservice architecture. He is a fan of Groovy, Gradle, Spring and Netflix technologies stack.\
-            \ Kirill is a resident of famous Russian IT-podcast “Razbor Poletov”. He knows DevOps methodology like the palm\
-            \ of his hand and has two years' experience of its production usage."}
-      - {language: ru, text: "Разработчик в Альфа-Банке. Разрабатывает различные банковские API. Формирует принципы и набо\
-            ры инструментов для работы с микросервисной архитектурой. Большой поклонник Groovy, Gradle, Spring и стека тех\
-            нологий Netflix. Постоянный резидент подкаста «Разбор Полётов». Знает не понаслышке методологию DevOps и имеет\
-            \ почти двухлетний опыт её применения."}
+      - {language: en, text: "Kirill is a Lead Developer in Alpha-Laboratory. He develops different banking API's, forms principles\
+            \ and tools related to microservice architecture. He is a fan of Groovy, Gradle, Spring and Netflix technologies\
+            \ stack. Kirill is a resident of famous Russian IT-podcast “Razbor Poletov”. He knows DevOps methodology like\
+            \ the palm of the hand and has two years' experience of its production usage."}
+      - {language: ru, text: "Главный разработчик в Альфа-Лаборатории. Разрабатывает различные банковские API. Формирует п\
+            ринципы и наборы инструментов для работы с микросервисной архитектурой. Большой поклонник Groovy, Gradle, Spring\
+            \ и стека технологий Netflix-а. Постоянный резидент подкаста «Разбор Полётов». Методологию DevOps-а знает не п\
+            онаслышке и имеет почти двухлетний опыт её применения."}
     twitter: tolkv
   - id: 29
     fileName: 0029.jpg
@@ -407,11 +411,16 @@ speakers:
       - {language: ru, text: "Алексей Зиновьев"}
     company:
       - {language: en, text: EPAM}
+      - {language: ru, text: "EPAM Systems"}
     bio:
-      - {language: en, text: "Alexey is a Java/BigData trainer in EPAM. He is an independent expert in machine learning. Alexey\
-            \ loves text data and big graphs."}
-      - {language: ru, text: "Тренер по Java/BigData в компании EPAM, с Hadoop/Spark и прочей бигдатой дружит с 2012 года\
-            , форкается и пуллреквестит с 2014, рассказывает с 2015. Особенно любит текстовые данные и большие графы."}
+      - {language: en, text: "Just as Charon from the Greek myths, Alexey helps people to get from one side to the other,\
+            \ the sides being Java and Big Data in his case. Or, in more simple words, he is a trainer at EPAM Systems. He\
+            \ works with Hadoop/Spark and other Big Data projects since 2012, forks such projects and sends pull requests\
+            \ since 2014, presents talks since 2015. His favourite areas are text data and big graphs."}
+      - {language: ru, text: "Харон (в греческой мифологии — перевозчик душ умерших через реку Стикс) из Java в Big Data.\
+            \ Если говорить проще, то практикующий тренер в компании EPAM Systems. С Hadoop/Spark и прочей бигдатой дружит\
+            \ с 2012 года, форкается и пуллреквестит с 2014, рассказывает с 2015. Особенно любит текстовые данные и больши\
+            е графы."}
   - id: 32
     fileName: 0032.jpg
     name:
@@ -422,6 +431,18 @@ speakers:
     name:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
+    company:
+      - {language: en, text: "Netifi, Inc"}
+    bio:
+      - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
+            \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
+            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+      - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
+            я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
+            \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
+            ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
+            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+    twitter: OlehDokuka
   - id: 34
     fileName: 0034.jpg
     name:
@@ -671,6 +692,15 @@ speakers:
     name:
       - {language: en, text: "Maxim Kazantsev"}
       - {language: ru, text: "Максим Казанцев"}
+    company:
+      - {language: en, text: "Azul Systems"}
+    bio:
+      - {language: en, text: "Compiler engineer at Azul Systems. For the last 5 years is into optimizing JIT compilers for\
+            \ virtual machines. Since 2017 works on Zing VM, actively commits to LLVM. Before that used to work with ART and\
+            \ Dalvik virtual machines at Intel, along with contributing to Android Open Source Project."}
+      - {language: ru, text: "Инженер компиляторов в Azul Systems. Последние 5 лет занимается оптимизирующими JIT-компилят\
+            орами для виртуальных машин. С 2017 года работает над Zing VM, активно коммитит в LLVM. До этого работал над в\
+            иртуальными машинами ART и Dalvik в компании Intel, внёс свой вклад в Android Open Source Project."}
   - id: 65
     fileName: 0065.jpg
     name:
@@ -715,6 +745,20 @@ speakers:
     fileName: 0069.jpg
     name:
       - {language: en, text: "Simon Ritter"}
+    company:
+      - {language: en, text: "Azul Systems"}
+    bio:
+      - language: en
+        text: "Simon Ritter is the Deputy CTO of Azul Systems. He has been in the IT business since 1984 and holds a Bachelor\
+            \ of Science degree in Physics from Brunel University in the U.K. \n\nSimon joined Sun Microsystems in 1996 and\
+            \ started working with Java technology from JDK 1.0; he has spent time working in both Java development and consultancy.\
+            \ Having moved to Oracle as a part of the Sun acquisition, he managed the Java Evangelism team for the core Java\
+            \ platform, Java for client applications and embedded Java. Now at Azul, he continues to help people understand\
+            \ Java as well as Azul's JVM technologies and products. Simon has twice been awarded a Java Rockstar status at\
+            \ JavaOne and is a Java Champion. He currently represents Azul on the JCP Executive Committee and on the Java\
+            \ SE Expert Group (JSR 379 and JSR 383)."
+    twitter: speakjava
+    javaChampion: true
   - id: 70
     fileName: 0070.jpg
     name:
@@ -834,6 +878,25 @@ speakers:
     name:
       - {language: en, text: "Vladimir Plizga"}
       - {language: ru, text: "Владимир Плизга"}
+    company:
+      - {language: en, text: СFT}
+      - {language: ru, text: ЦФТ}
+    bio:
+      - {language: en, text: "Since his school days Vladimir was enthusiastic about programming and from then on has managed\
+            \ to code everything: from Soviet programmable calculators to modern SCADA systems in production. For the last\
+            \ several years he has been involved in backend development of Internet banking and other follow-up services at\
+            \ CFT (Center of Financial Technologies), where he actively stands for microservices and other popular things.\
+            \ Constantly bothers with ideas about optimization of difficult development/server software testing tasks, nurtures\
+            \ solutions for them while jogging or swimming and then puts them into life, experimenting shamelessly on his\
+            \ colleagues."}
+      - {language: ru, text: "Владимир со школьной скамьи болеет программированием и с тех пор успел покодировать на много\
+            м: от советских программируемых калькуляторов до промышленных SCADA-систем на заводах. Но последние несколько\
+            \ лет погружен в разработку бэкенда интернет-банков и сопутствующих сервисов в ЦФТ, где активно топит за микро\
+            сервисы и прочие модные штуки. Кроме этого, регулярно заморачивается идеями оптимизации сложных задач разработ\
+            ки/тестирования серверного ПО, вынашивает для них решения на пробежках и в бассейне, а затем воплощает их в жи\
+            знь, бессовестно испытывая на собственных коллегах."}
+    twitter: toparvion
+    gitHub: Toparvion
   - id: 87
     fileName: 0087.jpg
     name:
@@ -957,6 +1020,15 @@ speakers:
     name:
       - {language: en, text: "Anton Lenok"}
       - {language: ru, text: "Антон Ленок"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "Software engineer at Sberbank Technology. Develops server side for Sberbank Online. In his projects\
+            \ implements solutions that make engineers' life more fun: ELK, Docker, Kubernetes, reactive programming, etc."}
+      - {language: ru, text: "Инженер-программист в Сбербанк-Технологии. Разрабатывает серверную часть для Сбербанк Онлайн\
+            . В своих проектах внедряет решения, делающие жизнь инженеров веселее: ELK, Docker, Kubernetes, реактивное про\
+            граммирование и т.д."}
   - id: 109
     fileName: 0109.jpg
     name:
@@ -1800,6 +1872,18 @@ speakers:
     name:
       - {language: en, text: "Mikhail Ruzhentsev"}
       - {language: ru, text: "Михаил Руженцев"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: en
+        text: "Head of IT systems development at Sberbank Technology.\nIs into the development and implementation of DevOps\
+            \ practices in the direction of Big Data.\nLikes to use the most advanced technologies and practices, not forgetting\
+            \ to take a piece of advice from architects."
+      - language: ru
+        text: "Руководитель направления по развитию ИТ-систем в команде Сбербанк-Технологии.\nЗанимается развитием и внедр\
+            ением DevOps-практик по направлению Big Data.\nЛюбит использовать самые передовые технологии и практики, не за\
+            бывая советоваться с архитекторами."
   - id: 172
     fileName: 0172.jpg
     name:
@@ -2579,6 +2663,16 @@ speakers:
     fileName: 0297.jpg
     name:
       - {language: en, text: "Hugh McKee"}
+    company:
+      - {language: en, text: Lightbend}
+    bio:
+      - {language: en, text: "Hugh McKee is a developer advocate at Lightbend. He has had a long career building applications\
+            \ that evolved slowly, inefficiently utilized their infrastructure, and were brittle and prone to failure. That\
+            \ all changed when he started building reactive, asynchronous, actor-based systems. This radically new way of\
+            \ building applications rocked his world. As an added benefit, building application systems became way more fun\
+            \ than it had ever been. Now he is focused on helping others to discover the significant advantages and joys of\
+            \ building responsive, resilient, elastic, message-driven applications."}
+    twitter: mckeeh3
   - id: 298
     fileName: 0298.jpg
     name:
@@ -2597,11 +2691,33 @@ speakers:
     name:
       - {language: en, text: "Vadim Surpin"}
       - {language: ru, text: "Вадим Сурпин"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: en
+        text: "Has been working on the direction of Big Data in Sberbank Technology since the very first day it was organized;\
+            \ created the department dealing with the development of the Big Data Sberbank platform from scratch. \nActively\
+            \ takes part in the design of the solution architecture. Aside from being a developer, is also a part of Data\
+            \ Science direction, where he leads the initiatives based on Big Data."
+      - language: ru
+        text: "Работает над направлением Big Data в Сбербанк-Технологии с момента его появления, с нуля создал отдел, зани\
+            мающийся разработкой платформы Big Data Сбербанка. \nАктивно принимает участие в проектировании архитектуры ре\
+            шений. В сферу деятельности, помимо разработки, входит также направление Data Science, пилотирование инициатив\
+            \ на основе больших данных."
   - id: 300
     fileName: 0300.jpg
     name:
       - {language: en, text: "Igor Andreev"}
       - {language: ru, text: "Игорь Андреев"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "System administrator at Yandex. For the last 4 years is into development and support of Hadoop\
+            \ clusters."}
+      - {language: ru, text: "Системный администратор в компании Яндекс. Последние 4 года занят развитием и поддержкой кла\
+            стеров Hadoop."}
   - id: 301
     fileName: 0301.jpg
     name:
@@ -2626,6 +2742,20 @@ speakers:
     name:
       - {language: en, text: "Alexey Sharapov"}
       - {language: ru, text: "Алексей Шарапов"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "Alexey brings DevOps culture to the world of Java engineers at Sberbank Technology. While working\
+            \ with building and infrastructure, he tries to make the world a better place and ease developers' work. Sberbank\
+            \ Technology has been a unique chance for Alexey to become one of the discoverers as a part of the move towards\
+            \ Agile methodologies of software development in such a not-agile sphere as banking. Alexey managed to have a\
+            \ closer look at the whole stack of in-memory data grid solutions, which he wants to share."}
+      - {language: ru, text: "Алексей несёт DevOps-культуру в мир Java-программистов компании Сбербанк-Технологии. Занимая\
+            сь сборкой и инфраструктурой, он старается сделать мир лучше, а работу девелоперов — проще. Сбербанк-Технологи\
+            и стал для Алексея уникальным шансом быть одним из первооткрывателей в рамках перехода к гибким методологиям р\
+            азработки в такой негибкой сфере, как банковская. В рамках этого перехода Алексею удалось максимально близко п\
+            ощупать весь стек in-memory data grid-решений, о чем, собственно, он и хочет рассказать."}
   - id: 303
     fileName: 0303.jpg
     name:
