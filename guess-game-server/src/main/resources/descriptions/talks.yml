@@ -11289,3 +11289,566 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/37XS16TwvCqAWm6EIsKisy/ac83b01643e530646c2228f939fe8bb7/__________-_____________________________17_2.pdf"]
     videoLinks: []
     speakerIds: [258]
+  - id: 647
+    name:
+      - {language: en, text: "Void of the Legacy: The strategy of drastic improvements in a software project"}
+      - {language: ru, text: "Пустота наследия: стратегия кардинальных улучшений в проекте"}
+    shortDescription:
+      - {language: en, text: "We'll discuss how to know your debt, come up with a refactoring plan and perform it easily."}
+      - {language: ru, text: "Обсудим, как осознать размер технического долга, придумать план рефакторинга и провести его\
+            \ максимально безболезненно."}
+    longDescription:
+      - language: en
+        text: "There is one swear word: \"legacy\". Every developer meets it regularly. And even worse, every current project\
+            \ becomes legacy once the team stops the technical debt payments. We are going to talk about the terminal case,\
+            \ like a mobile project having more than 5 years of active development.  \n\nYou'll learn:\n- How to know your\
+            \ debt\n- How to come up with a refactoring plan\n- How to perform it easily\n\nWe'll use Java for code, but it\
+            \ will have almost no Android specific, so iOS engineers are welcome as well.\n\nA little theory, a lot of practice,\
+            \ a pinch of statistics, funny pictures — all that we love.\n\nWe'll migrate from plain old SQLite to GreenDAO,\
+            \ from plain old Apache HttpClient to Retrofit, from AsyncTasks to RxJava, from findViewByld to MVVM and much\
+            \ more!"
+      - language: ru
+        text: "Есть такое матерное слово «legacy». И каждому разработчику приходится с ним сталкиваться постоянно. Более т\
+            ого, каждый новый проект становится legacy со временем, если не уделять достаточно внимания техническому долгу\
+            . В докладе мы поговорим, как жить с особо запущенным случаем, aka проектом возраста более 5 лет.\n\nМы узнаем\
+            :\n- как осознать размер долга;\n- как придумать план рефакторинга;\n- провести его максимально безболезненно\
+            ;\n\nКод будет на Java, но специфики Android почти нет, поэтому интересно будет инженерам обеих платформ.\n\nН\
+            емного теории, много практики, щепотка статистики, нескучные картинки — всё, как вы любите."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/5PhqHqEebeKkemioEYKGkC/9ce129e39cb39753af522819e60b097b/Vladimir_Ivanov_-_________________________________-_________________________________________________________________________.pdf"]
+    videoLinks: []
+    speakerIds: [852]
+  - id: 648
+    name:
+      - {language: en, text: "Data Binding in a Kotlin world"}
+    shortDescription:
+      - {language: en, text: "If you like Butterknife, get ready to discover a whole new tool drawer. Data binding in 2017\
+            \ is a stable framework that can drastically reduce boilerplate code and transform the way you write UI."}
+    longDescription:
+      - {language: en, text: "If you like Butterknife, get ready to discover a whole new tool drawer. Data binding in 2017\
+            \ is a stable framework that can drastically reduce boilerplate code and transform the way you write UI. Yes,\
+            \ even if you already use Kotlin extensions and RxJava. Animate, transition, and respond to user input without\
+            \ cluttering your code. Add your own custom properties to Android’s View classes (like android:font or android:imageUrl)!\
+            \ We'll start at the very beginning, discover tricks to supercharge your XML, and end in a deep dive to lambdas\
+            \ and two-way binding. No prior knowledge of data binding needed."}
+    talkDay: 1
+    trackTime: "10:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/6OFotaelgWO6WM6as4Asm8/7067a0497259c013b98a2f5d8af600ff/MobiusConf_--_Data_Binding_in_a_Kotlin_world.pdf"]
+    videoLinks: []
+    speakerIds: [856]
+  - id: 649
+    name:
+      - {language: en, text: "Mastering GPU engineering in one hour"}
+      - {language: ru, text: "Как стать GPU-инженером за час"}
+    shortDescription:
+      - {language: en, text: "What you can do with GPU on your mobile device. Talk pays attention to modern trending technologies\
+            \ such as neural networks."}
+      - {language: ru, text: "Знакомство с программированием графических процессоров, с прицелом на мобильные платформы и\
+            \ трендовые темы вроде нейросетей."}
+    longDescription:
+      - language: en
+        text: "GPU is the key thing that empowers most of world-changing technologies we currently see: bitcoin, machine learning,\
+            \ AR/VR, CGI — all of them are executed via graphics cards. \n\nHowever, it is uncommon among iOS developers to\
+            \ incorporate GPU into their development pipeline. Some of them simply don't need it, others either think it is\
+            \ too complicated or don't even know there's GPU in iPhone. \n\nThis talk will give you a picture of what you\
+            \ can do with GPU on your mobile device. And of course we're going to pay attention to modern trending technologies\
+            \ such as neural networks."
+      - language: ru
+        text: "Современный мир не был бы таким, какой он есть, без GPU-вычислений. Современные консольные игры, VR, AR, кр\
+            иптовалюты, машинное обучение — всё это работает на горячих графических процессорах. \n\nОднако среди мобильны\
+            х разработчиков видеокарты не пользуются большой популярностью: многие думают, что это очень сложно, а некотор\
+            ые вообще не замечают, что iPhone в принципе имеет видеокарту. \n\nЭтим докладом хотелось бы ознакомить широки\
+            е массы разработчиков с программированием графических процессоров, с прицелом на мобильные платформы и, конечн\
+            о же, трендовые темы."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/3ieeJ8qVYQyG8k48KYoISy/713a39a44263891de5a355969e97d2b2/Andrey_Volodin_-_Mastering_GPU_engineering_easy.pdf"]
+    videoLinks: []
+    speakerIds: [859]
+  - id: 650
+    name:
+      - {language: en, text: "Messenger inside out, or How to make a messenger in a mobile iOS app"}
+      - {language: ru, text: "Мессенджер наизнанку, или Как сегодня сделать мессенджер в мобильном iOS-приложении"}
+    shortDescription:
+      - {language: en, text: "We'll discuss pros, cons, and pitfalls of different ways of a messenger realization using the\
+            \ Avito messenger evolution as an example, as well as how to implement a scalable architecture that enables to\
+            \ easily add new features."}
+      - {language: ru, text: "Расскажем про плюсы, минусы и подводные камни различных подходов реализации мессенджеров на\
+            \ примере эволюции мессенджера в Avito, а также как заложить масштабируемую архитектуру, которая позволит легк\
+            о добавлять новые фишки."}
+    longDescription:
+      - language: en
+        text: "Messengers are a part of lots of modern mobile apps. Nowadays it is one of the ways for users to communicate.\
+            \ In this talk we would like to share our experience of a messenger development for Avito as a part of a big mobile\
+            \ application with a multimillion audience. \nWe'll cover various realization ways using the Avito messenger evolution\
+            \ as an example: how we were developing our messenger from a simple HTTP-API till WebSockets usage, pros, cons,\
+            \ and pitfalls of different ways. How we were designing a client-server API and how Swift helped us in that.\n\
+            You'll learn how to ensure the message delivery to your clients, online status of users, messages status and other\
+            \ functions of modern messengers and their realization.\nNowadays messengers rapidly evolve and new features have\
+            \ to be added rather fast. We'll tell you how to implement a scalable architecture that enables to easily add\
+            \ new features."
+      - language: ru
+        text: "Мессенджеры являются частью многих современных мобильных приложений. Сегодня это один из основных способов\
+            \ коммуникации пользователей. В докладе мы бы хотели поделиться нашим опытом разработки мессенджера в Avito, к\
+            ак части большого мобильного приложения с многомиллионной аудиторией.\nМы рассмотрим различные способы реализа\
+            ции на примере эволюции мессенджера в Avito: о том, как мы развивали мессенджер от простого HTTP-API до исполь\
+            зования веб-сокетов, плюсы, минусы и подводные камни различных подходов. Как мы проектировали клиент-серверное\
+            \ API и как нам в этом помогал Swift.\nВы узнаете о том, как гарантировать доставку сообщений клиентам, онлайн\
+            -статусы пользователей, статусы сообщений и других функциях современных мессенджеров и их реализации.\nМессенд\
+            жеры стремительно развиваются, и новый функционал требуется добавлять быстро. В рамках доклада мы также расска\
+            жем, как заложить масштабируемую архитектуру, которая позволит легко добавлять новые фишки."
+    talkDay: 1
+    trackTime: "11:40"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/27L7vx4TqwMSe8sk2U4CEG/486e47b55fee10c13280827cfc0eb8a5/Maksim_Sokolov_-________________________________________.pdf"]
+    videoLinks: []
+    speakerIds: [860]
+  - id: 651
+    name:
+      - {language: en, text: "Android meets Docker"}
+    shortDescription:
+      - {language: en, text: "Аll aspects of using Docker for Android CI — benefits, limitations, pitfalls, tweaks, and performance.\
+            \ Includes a live demo showing how to setup a Jenkins Android slave via Android Docker image with minimal effort\
+            \ in 2 minutes."}
+    longDescription:
+      - {language: en, text: "CI is an eternal topic in software engineering, it is still evolving for mobile. With an introduction\
+            \ to Docker, and a well-crafted Docker image for Android, this presentation will guide you through all aspects\
+            \ of using Docker for Android CI — benefits, limitations, pitfalls, tweaks, and performance. It wouldn't be complete\
+            \ without a live demo, showing you how to setup a Jenkins Android slave via Android Docker image with minimal\
+            \ effort in 2 minutes (yes, really). This talk will help you build your own Acme CI at zero cost. Last but not\
+            \ least, there are some other tips about how Docker could help your mobile engineering."}
+      - {language: ru, text: "CI is an eternal topic in software engineering, it is still evolving for mobile. With an introduction\
+            \ to Docker, and a well-crafted Docker image for Android, this talk will guide you through all aspects of using\
+            \ Docker for Android CI — benefits, limitations, pitfalls, tweaks, and performance. It wouldn't be complete without\
+            \ a live demo, showing you how to setup a Jenkins Android slave via Android Docker image with minimal effort in\
+            \ 2 minutes (yes, really). This talk will help you build your own Acme CI at zero cost. Last but not least, there\
+            \ are some other tips about how Docker could help your mobile engineering."}
+    talkDay: 1
+    trackTime: "11:40"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/1jrc7s5wOI0wYYc48IwmWE/255925cd93b64b4128bd9ce52856d155/Jing_Li_Android_meets_Docker.pdf"]
+    videoLinks: []
+    speakerIds: [855]
+  - id: 652
+    name:
+      - {language: en, text: "Universal links — tons of pitfalls"}
+      - {language: ru, text: "Универсальные ссылки — дворец из подводных камней"}
+    shortDescription:
+      - {language: en, text: "How to launch a modern system of universal links in your company from scratch with no doubts\
+            \ or problems."}
+      - {language: ru, text: "Как запустить современную систему универсальных ссылок в своей компании без проблем и сомнен\
+            ий."}
+    longDescription:
+      - language: en
+        text: "Both Google and Apple claim that the so called universal links can be used on their platform. According to\
+            \ the plan, by clicking this link user will get to the app, if it's installed, or to the website, if it's not.\
+            \ \n\nIn reality, if you precisely follow the instructions, there will be more problems than solutions. \n\nWhat\
+            \ if there is no such function in the mobile version of the website? \nWhat if the link is opened in WebView?\
+            \ \nWhat if the new version of the app supports this function, but the old one not? \nHow to minify links and\
+            \ not to break anything? \nHow to direct users with no app to the App Store and not to the website? \nHow to make\
+            \ the thing to which the link was directing open after the download? \n\nAll this gets more complicated by the\
+            \ fact that right after the universal links are launched, there is no way back. They have to be supported, and\
+            \ perhaps your mistakes will stay with you forever. \n\nNot to get this \"forever\" mistakes, we offer you this\
+            \ talk. We expect that after it you will get enough information to launch a modern system of universal links in\
+            \ your company from scratch with no doubts or problems."
+      - language: ru
+        text: "И Google, и Apple рекламируют, что на их платформе можно использовать так называемые универсальные ссылки.\
+            \ По задумке, нажав на такую ссылку, пользователь попадёт в приложение, если оно установлено, или на мобильный\
+            \ сайт, если нет.\n\nНа практике, если просто сделать по инструкции производителя, проблем будет больше, чем р\
+            ешений. \n\nЧто, если этой функции нет на мобильном сайте? \nЧто, если ссылка открыта в WebView? \nЧто, если н\
+            овая версия приложения поддерживает эту функцию, а старая — нет? \nКак минифицировать ссылки, чтобы ничего не\
+            \ сломалось? \nКак направить пользователей без приложения в App Store, а не на веб-сайт? \nКак сделать так, чт\
+            обы после установки сразу открывалось то, на что была ссылка? \n\nВсё это осложняется тем, что, как только уни\
+            версальные ссылки запущены, пути назад нет. Нужно их поддерживать, и ваши ошибки, возможно, навсегда останутся\
+            \ с вами. \n\nА чтобы у вас осталось меньше ошибок «навсегда», мы и предлагаем этот доклад. Мы ожидаем, что че\
+            ловек, прослушавший его, получит достаточно информации, чтобы с нуля запустить современную систему универсальн\
+            ых ссылок в своей компании без проблем и сомнений."
+    talkDay: 1
+    trackTime: "11:40"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/2LXmLDORhe08yeSkwkAqKY/046d2046a0b1221fb36b66b1e048e632/Konstantin_Yakushev_-_Universal_Links.pdf"]
+    videoLinks: []
+    speakerIds: [861]
+  - id: 653
+    name:
+      - {language: en, text: "Life in offline mode: from chaos to consensus"}
+      - {language: ru, text: "Жизнь без подключения: от хаоса к консенсусу"}
+    shortDescription:
+      - {language: en, text: "This talk is about how an app should work either with no Internet connection at all or when\
+            \ it has suddenly disappeared."}
+      - {language: ru, text: "Доклад о том, как работать приложению без постоянного подключения к интернету, а также в слу\
+            чае, если подключение внезапно пропало."}
+    longDescription:
+      - language: en
+        text: "This talk is about how an app should handle the fact that Internet connection is absent, or, even worse, has\
+            \ suddenly disappeared. Many of us have already forgotten the times when the Internet was just on wires, but users\
+            \ are still pissed off by watching download indicator spinning endlessly. \n\nThe easiest way to handle this problem\
+            \ is to pretend there is no problem at all, and that the server is always available and answers instantly. But\
+            \ let's turn the situation upside down: what if we consider the Internet as a rare miracle and try to be prepared\
+            \ to spend most of the time in a scary offline darkness. Let's see if we are able to win this game."
+      - language: ru
+        text: "Поговорим о том, как приложению на смартфоне жить с тем фактом, что подключения нет или, хуже того, оно вне\
+            запно пропало. И, хотя многие уже забыли те времена, когда интернета в метро не было, пользователи все так же\
+            \ бесятся, глядя на бесконечно крутящиеся индикаторы загрузки. \n\nСамый простой способ справиться с проблемой\
+            \ — это убедить себя, что проблемы нет и сервер всегда ответит за пару секунд. Предлагаем перевернуть все с но\
+            г на голову: давайте считать, что интернет — это прекрасное, но временное явление, а большую часть времени мы\
+            \ будем проводить, погрузившись во мрак оффлайна. И посмотрим, стоит ли игра свеч."
+    talkDay: 1
+    trackTime: "12:50"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/5LgghZU8P6mOqWmyACAcce/f71d7b141e083d4c00fdfd141e2f99c2/Evgenii_Kamyshanov_-_From_Chaos_To_Consensus.pdf"]
+    videoLinks: []
+    speakerIds: [1074]
+  - id: 654
+    name:
+      - {language: en, text: "How I started to hate ORM"}
+      - {language: ru, text: "Как я возненавидел ORM"}
+    shortDescription:
+      - {language: en, text: "This talk is about the feasibility of using ORM in projects, its purpose and what restrictions\
+            \ it can impose on developers."}
+      - {language: ru, text: "Доклад о целесообразности использования ORM в проектах, ее назначении и об ограничениях, кот\
+            орые она накладывает на разработчиков."}
+    longDescription:
+      - language: en
+        text: "We want to tell a story from our current project on Android, what problems we were brought by ORM (increasing\
+            \ the size of the database to a mind-blowing scale) and how we solved them. We will discuss the purpose of ORM\
+            \ and what restrictions it imposes on developers. \nThe purpose of the talk is to make an ordinary developer think\
+            \ about the feasibility of using ORM in the project. \nTechnologies that will be involved — OrmLite, Stetho, DbInspector,\
+            \ Sqlite."
+      - language: ru
+        text: "Расскажем историю из нашего текущего проекта на Android, какие проблемы нам принесла ORM (рост размера файл\
+            а базы до умопомрачительных размеров) и как мы их решали. Мы обсудим назначение ORM и какие ограничения она на\
+            кладывает на разработчиков. \nЦель доклада — заставить рядового разработчика задуматься о целесообразности исп\
+            ользования ORM в своем проекте. \nТехнологии, которые будут задействованы — OrmLite, Stetho, DBInspector, SQLite."
+    talkDay: 1
+    trackTime: "12:50"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/2wToEBHBfOYweI8kM8uKKe/7da8fd3144f52b5cbcca414b283bfd86/Sergey_Boishtyan_-_How_I_started_to_hate_ORM.pdf"]
+    videoLinks: []
+    speakerIds: [1075]
+  - id: 655
+    name:
+      - {language: en, text: "Decipher the encoding"}
+    shortDescription:
+      - {language: en, text: "A general talk about encoding vs. encryption, what is used in the real life, described with\
+            \ iOS examples."}
+    longDescription:
+      - {language: en, text: "What is encoding? It’s more common than you may think. We use it everywhere. UTF, Text, etc…\
+            \ What is not encoding? Everything else. A general talk about encoding vs. encryption, what is used in the real\
+            \ life. Described with the examples (rather iOS due to exampled, but general topic)."}
+    talkDay: 1
+    trackTime: "12:50"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/2TMVYvzW8wokeqOeW8Wgqm/5d06ced32a7261d05c4e18b48da9050d/Marcin_Krzy__anowski_-_Decipher_the_encoding_-_Moscow2017.pdf"]
+    videoLinks: []
+    speakerIds: [865]
+  - id: 656
+    name:
+      - {language: en, text: "Designing UI — let's make it right"}
+      - {language: ru, text: "Давайте проектировать UI правильно"}
+    shortDescription:
+      - {language: en, text: "This talk covers the UI development approaches, which let new developers make modifications\
+            \ without rewriting the code and reuse the components. Also, a part of the talk will be dedicated to Atomic Design."}
+      - {language: ru, text: "Рассмотрим подходы к разработке UI, которые позволяют новым разработчикам вносить изменения\
+            \ без переписывания кода и переиспользовать написанные компоненты, а также поговорим об Atomic Design."}
+    longDescription:
+      - language: en
+        text: "Usually, View plays a secondary role for architects, the screens of applications are quite often rewritten\
+            \ from scratch, and the fun part is connected with Rx implementation to a project. But even in UI development\
+            \ there are recurring moments (working with keyboard, tables, similar sign-up screens, etc.), while screens with\
+            \ several states or different layout (for iPhone and iPad, for instance) quite often bring forth the code of not\
+            \ the best quality. \n\nThis talk covers the UI development approaches, which let new developers make modifications\
+            \ without rewriting the code and reuse the components.\n\nAlso, a part of the talk will be dedicated to Atomic\
+            \ Design. Plenty of popular applications use non-standard visual components, and we here in Badoo are not an exception.\
+            \ To avoid multiple headaches for designers and developers, we had to find a solution, which will be presented\
+            \ in this talk."
+      - language: ru
+        text: "Обычно View для архитекторов играет второстепенную роль, экраны приложения часто переписываются с нуля, а с\
+            амое веселое связано с внедрением Rx в проект. Но даже на стороне разработки UI бывают повторяющиеся моменты (р\
+            абота с клавиатурой, работа с таблицами, похожие экраны вовлечения или регистраций и т.д.), а экраны с несколь\
+            кими состояниями или разной версткой (например, для iPhone и iPad) часто плодят не самый качественный код. \n\n\
+            В докладе хотелось бы рассказать про подходы к разработке UI, которые позволяют новым разработчикам вносить из\
+            менения без переписывания кода и переиспользовать написанные компоненты. \n\nТакже часть доклада будет посвяще\
+            на Atomic Design. Многие популярные приложения используют нестандартные визуальные компоненты, и мы в Badoo не\
+            \ исключение. Чтобы это не создавало много головной боли дизайнерам и разработчикам, нам пришлось выработать р\
+            ешение, которое и будет представлено в докладе."
+    talkDay: 1
+    trackTime: "14:25"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/4cZ8sNVS3eeEQaKc6sQQIg/48f81fea84c17cf2c47191b9c4d1502d/Zimin._How_to_work_with_UI.pdf"]
+    videoLinks: []
+    speakerIds: [867]
+  - id: 657
+    name:
+      - {language: en, text: "Crash reports Android NDK"}
+      - {language: ru, text: "Crash репорты Android NDK"}
+    shortDescription:
+      - {language: en, text: "In this talk we will cover existing elaborations for collecting information about mistakes in\
+            \ C/C++ development, as well as how it works under the hood."}
+      - {language: ru, text: "Краткий обзор имеющихся решений для сбора информации об ошибках при разработке на С/С++, а т\
+            акже более детальное рассмотрение самого рабочего процесса."}
+    longDescription:
+      - language: en
+        text: "It's not a secret that C/C++ development is much more exacting for code quality than development on Java. Fatal\
+            \ errors are much more likely to be made. In the meantime, collecting information about such mistakes is a non-trivial\
+            \ task, even for experienced developers. \nIn the first part of this talk we will cover existing elaborations:\
+            \ how the built-in Android debugger works, what solutions already exist. The second part is dedicated to a story,\
+            \ how it works under the hood: how to obtain a processor state when an error has occurred, how to unwind a call\
+            \ stack, how to know source code line numbers. We will review stack unwinding libraries such as libcorkscrew,\
+            \ libunwind, libunwindstack. \nThe talk will be interesting to Android developers, whose apps use the NDK, and\
+            \ to everyone else for expanding the horizons."
+      - language: ru
+        text: "Не секрет, что разработка на C/C++ предъявляет гораздо более высокие требования к качеству кода, чем разраб\
+            отка на Java. Вероятность допустить фатальную ошибку значительно выше. В то же время, сбор информации о таких\
+            \ ошибках является нетривиальной задачей даже для опытных программистов. \n\nВ первой части доклада будут крат\
+            ко рассмотрены уже имеющиеся наработки: как работает встроенный отладчик Android, какие решения уже существуют\
+            . Вторая часть посвящена рассказу о том, как это работает «под капотом»: как получить состояние процессора на\
+            \ момент ошибки, как раскрутить стек вызовов, как узнать номера строк в исходном коде. Будет дан обзор таких б\
+            иблиотек для раскрутки стека, как libcorkscrew, libunwind, libunwindstack. \n\nДоклад будет интересен как Android-р\
+            азработчикам, в чьих приложениях используется NDK, так и всем остальным для расширения кругозора."
+    talkDay: 1
+    trackTime: "14:25"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/16qJHdLiV8IMqgc04IGGeI/7ef98df915a84c59098d5d08044950e0/Ivan_Ponomarev_-_Crash_Reports_Android_NDK.pdf"]
+    videoLinks: []
+    speakerIds: [863]
+  - id: 658
+    name:
+      - {language: en, text: "Instant Apps: how to teach an app to work without installing"}
+      - {language: ru, text: "Instant Apps: как научить приложение работать без установки"}
+    shortDescription:
+      - {language: en, text: "This talk is about pros and cons of using Instant Apps, why it is helpful and what the pitfalls\
+            \ are."}
+      - {language: ru, text: "Делимся опытом использования технологии Instant Apps, чем она полезна, и каких подводных кам\
+            ней стоит остерегаться."}
+    longDescription:
+      - {language: en, text: "Instant Apps is a technology that erases boundaries between the traditional web and native mobile\
+            \ apps. The ability to use an app on your device without installation opens up new horizons and audiences for\
+            \ business. We here at Surf were the first ones in Russia to implement Instant Apps into a commercial product\
+            \ thus getting access to an early access program by Google. In this talk we'll discuss the technology itself,\
+            \ and share our implementation experience. We'll talk about how to get your project ready for the Instant Apps\
+            \ implementation and about the pitfalls of this process. Special emphasis will be on the topic of choosing the\
+            \ use cases, along with the benefits clean architecture can give in the context of Instant Apps creation."}
+      - {language: ru, text: "Instant Apps — технология, стирающая границы между традиционным вебом и нативными мобильными\
+            \ приложениями. Возможность использования приложения без необходимости устанавливать его на устройство открыва\
+            ет новые горизонты и аудитории перед бизнесом. Мы в Surf первыми в России внедрили Instant Apps в коммерческий\
+            \ продукт, получив доступ к программе раннего доступа от Google. В рамках доклада мы расскажем о самой техноло\
+            гии, поделимся опытом реализации, расскажем о том, как подготовить проект к внедрению Instant Apps и подводных\
+            \ камнях, с которыми можно столкнуться в процессе. Особое внимание будет уделено вопросу выбора use cases, а т\
+            акже бенефитам, которые дает чистая архитектура в контексте создания Instant Apps."}
+    talkDay: 1
+    trackTime: "14:25"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/7adxX8xvTqW4SAe68emmGI/92195be21ebbd198550160c16efe1c93/Eugene_Saturov_-_Instant_Apps_how_to_teach_an_app_to_work_without_installing.pdf"]
+    videoLinks: []
+    speakerIds: [858]
+  - id: 659
+    name:
+      - {language: en, text: "Designing a service layer with compound operations"}
+      - {language: ru, text: "Архитектура сервисного слоя с использованием составных операций"}
+    shortDescription:
+      - {language: en, text: "How the compound operations can be used in designing a service layer and how the COOperation\
+            \ framework can help you with that."}
+      - {language: ru, text: "Как можно использовать составные операции при построении сервисного слоя и как в этом поможе\
+            т фреймворк COOperation."}
+    longDescription:
+      - language: en
+        text: "The most common way to design a service layer of an app is to use GCD to create an asynchronous interaction\
+            \ of components. Many of us have thought of it, but much less really use all the power of NSOperation classes\
+            \ and NSOperationQueue to solve this task.\n\nWith the help of a thorough decomposition and a little bit of refinement\
+            \ of the indicated classes, you can get an extremely flexible and transportable component that will become your\
+            \ loyal friend in the creation of new services. Gleb will explain how the compound operations can be used in designing\
+            \ a service layer and how the COOperation framework he developed can help you with that."
+      - language: ru
+        text: "Наиболее распространенный способ построения сервисного слоя приложения — это использование механизмов GCD д\
+            ля создания асинхронного взаимодействия компонентов. Многие задумываются, но мало кто использует на практике в\
+            сю мощь классов NSOperation и NSOperationQueue для данной задачи.\n\nС помощью тщательной декомпозиции и небол\
+            ьшой доработки указанных классов можно получить чрезвычайно гибкий и переносимый компонент, который станет ваш\
+            им верным другом при создании новых сервисов. Глеб расскажет о том, как можно использовать составные операции\
+            \ при построении сервисного слоя и как в этом может помочь разработанный им фреймворк COOperation (https://github.com/strongself/COOperation)."
+    talkDay: 1
+    trackTime: "15:35"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/24XJDUZjOguC2mUIgUsCOs/fb2195c5ed0b631ee66d424dd9821914/____________________-_______________________________________________________________________________________________________.pdf"]
+    videoLinks: []
+    speakerIds: [866]
+  - id: 660
+    name:
+      - {language: en, text: "Make your gadget talk: Google Assistant"}
+      - {language: ru, text: "Заставь свой гаджет говорить: Google Assistant"}
+    shortDescription:
+      - {language: en, text: "This talk is about Google Assistant, how to write and debug an app for it."}
+      - {language: ru, text: "Доклад о Google Assistant, как написать и отладить для него приложения."}
+    longDescription:
+      - {language: en, text: "Google Assistant is a new way to interact with the Web. In this talk we will show how to get\
+            \ started with writing apps for Google Assistant and test them on Android, iOS and Google Home device. In 40 minutes\
+            \ we will write an app from scratch and will debug it together using Google Home device."}
+      - {language: ru, text: "Google Assistant — это новый способ общения с Web. В докладе мы покажем, как начать писать п\
+            риложения для Google Assistant и тестировать их на Android, iOS и Google Home. В течение 40 минут мы вместе на\
+            пишем приложение с нуля и отладим его с помощью Google Home."}
+    talkDay: 1
+    trackTime: "15:35"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/7eUnSspWWAwQsOicyA22ma/c2652dbc9ebd7552e61820382af4508b/buzdin_google_assistant.pdf"]
+    videoLinks: []
+    speakerIds: [864]
+  - id: 661
+    name:
+      - {language: en, text: "A friend in need – a JS indeed"}
+    shortDescription:
+      - {language: en, text: "We’ll learn how to “outsource” your critical business code to your server, deploy immediately\
+            \ and still have the ability to run your application, even if you are offline, and do this with almost the same\
+            \ performance as if this was the native code."}
+      - {language: ru, text: "Мы научимся выносить исполнение бизнес-логики на сервер, немедленно его разворачивать и по-п\
+            режнему иметь возможность запускать приложение, даже если вы оффлайн. И делать это с почти той же производител\
+            ьностью, как если бы это был нативный код."}
+    longDescription:
+      - language: en
+        text: "Your VP of Product decides that you need to add a new, awesome critical piece of business logic to the thousands\
+            \ of lines of code that already make up your codebase. You worked hard, add it, built a new version, and uploaded\
+            \ it to the Play Store. The only thing that’s left, is to wait while all your millions of users will update it.\n\
+            Hoping that it won’t take too long.\nWhat if we told you that you could “outsource” your critical business code\
+            \ to your server, deploy immediately and still have the ability to run your application, even if you are offline,\
+            \ and do this with almost the same performance as if this was the native code.\nSounds too good to be true?\n\
+            So come and we’ll show you how deep the rabbit hole goes."
+      - language: ru
+        text: "Ваш вице-президент по продуктам решает, что вам необходимо добавить одну потрясающую, невероятно важную час\
+            ть бизнес-логики в тысячи строк кода, которые уже составляют вашу кодовую базу. Вы много работали, всё добавил\
+            и, собрали новую версию и загрузили на Play Store. Осталось только подождать, пока миллионы ваших пользователе\
+            й обновятся, и надеяться, что это не займёт много времени.\n\nА что, если мы скажем, что можно вынести исполне\
+            ние бизнес-логики на сервер, немедленно развернуть и по-прежнему иметь возможность запускать приложение, даже\
+            \ если вы оффлайн? И делать это с почти той же производительностью, как если бы это был нативный код.\nЗвучит\
+            \ неплохо, неправда ли?\nПриходите, и мы покажем, насколько глубока кроличья нора."
+    talkDay: 1
+    trackTime: "15:35"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/7efZWQpXTqkKu2IgGSWyks/800adb4f391087d33d1a63751bbaad63/Mobius-_A_friend_in_need_-_a_JS_indeed.pdf"]
+    videoLinks: []
+    speakerIds: [565]
+  - id: 662
+    name:
+      - {language: en, text: "Application size optimization"}
+      - {language: ru, text: "Оптимизация размера приложения"}
+    shortDescription:
+      - {language: en, text: "This talk reveals what an iOS application size is made up of and how this size could be decreased."}
+      - {language: ru, text: "Рассмотрим, из чего складывается размер приложения на iOS и как этот размер можно уменьшить."}
+    longDescription:
+      - language: en
+        text: "This talk covers the components of an application size and how this size could be decreased. \n\nWe'll show\
+            \ a couple of experiments to clarify the contents of an application size in AppStore. We'll discuss the instruments\
+            \ that can help you to find unnecessary data and define the biggest parts of program code."
+      - language: ru
+        text: "Основная часть доклада будет построена вокруг оптимизации размера исполняемого кода.\n\nВ докладе мы привед\
+            ем несколько экспериментов для пояснения, из чего в итоге складывается размер приложения в AppStore. Расскажем\
+            \ про инструменты, которые помогут найти лишние данные и определить наиболее объёмные участки кода программы."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/7ebceRqRWMAkc46se0s4Om/09c921fd8f236c8665c106599042cb7d/Dmitriy_Kurkin_-_Size_optimization.pdf"]
+    videoLinks: []
+    speakerIds: [862]
+  - id: 663
+    name:
+      - {language: en, text: "Writing Java-friendly Kotlin code"}
+      - {language: ru, text: "Пишем Java-френдли Kotlin-код"}
+    shortDescription:
+      - {language: en, text: "We`ll discuss details of calling Kotlin code from Java for library creators."}
+      - {language: ru, text: "Доклад о нюансах работы с Kotlin-кодом из Java, полезный для авторов библиотек и не только."}
+    longDescription:
+      - language: en
+        text: "While Kotlin becomes more and more popular, lots of Java libraries are getting Kotlin helpers to make their\
+            \ usage in Kotlin code more idiomatic and clean. People, who’ve already tried Kotlin, understand that this language\
+            \ is much more pleasant to write code in than Java. Sure, one of the main selling sides of the language is its\
+            \ stunning Java interoperability. It’s really easy to call Java code from Kotlin, however, the opposite has its\
+            \ pitfalls. \n\nIn this talk we'll discuss, what tools Kotlin creators have prepared for such cases and how they\
+            \ will affect the resulting JVM bytecode.\nThis talk will be useful not only for library creators, but also for\
+            \ developers who are hesitant to migrate their Java codebase."
+      - language: ru
+        text: "В то время как Kotlin становится всё более популярным, всё больше Java-библиотек обзаводятся Kotlin-обёртка\
+            ми, чтобы сделать их использование в Kotlin-коде более идиоматичным. Из многочисленных докладов, а может, и по\
+            \ собственному опыту, вы уже знаете, что на Kotlin-код писать гораздо приятнее, так почему бы и библиотеки сра\
+            зу не писать на нём? Действительно, интероп с Java широко разрекламирован. Однако, в то время как Java-код дёр\
+            гать из Kotlin можно без особых проблем, работа с православным Kotlin-кодом из Java имеет свои нюансы. Расскаж\
+            ем, что же припасли создатели Kotlin для таких случаев.\n\nДоклад будет полезен не только писателям библиотек\
+            , но и тем, у кого мысль о миграции большого код-бейза на Kotlin вызывает фантомные боли."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/6fnGRrH58kskuKuGEgSa8O/02b81dbc139d53dba07dcb7e69b1a1dd/Sergey_Ryabov_-_Writing_Java-friendly_Kotlin_code.pdf"]
+    videoLinks: []
+    speakerIds: [296]
+  - id: 664
+    name:
+      - {language: en, text: "TensorFlow for mobile devs"}
+    shortDescription:
+      - {language: en, text: "Make your first steps into the fascinating world of ML for mobile."}
+    longDescription:
+      - {language: en, text: "There is a lot of hype around ML and AI lately, and TensorFlow is the framework of choice from\
+            \ Google. But as a mobile developer you might have asked yourself, how can I benefit from it? This talk will help\
+            \ you make your first steps into the fascinating world of ML for mobile."}
+    talkDay: 1
+    trackTime: "16:45"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [857]
+  - id: 665
+    name:
+      - {language: en, text: "How to develop a feature on your own and not get fired"}
+      - {language: ru, text: "Как самому запилить новую фичу и при этом не быть убитым своим менеджером"}
+    shortDescription:
+      - {language: en, text: "The speaker will share his experience of what to do if the company you work for doesn't approve\
+            \ your idea about developing a new feature, how to carefully balance your creative freedom with respect to your\
+            \ company's priorities."}
+      - {language: ru, text: "Докладчик поделится своим опытом: что делать, если ваша компания не одобряет вашу идею по ра\
+            зработке новой фичи, как балансировать между свободой творчества и приоритетами компании."}
+    longDescription:
+      - language: en
+        text: "Were you ever working on your company's app when suddenly you get an idea for an awesome new feature? You know\
+            \ it is a game-changer, but when you ask around for support and approval to develop it you hit roadblocks.\n\"\
+            We don't have the resources.\"  \"It's just not a priority right now.\"\nEmployees who are intimately familiar\
+            \ with a company's product are best-placed to identify and design the best features for an app, but sometimes\
+            \ policies and procedures can get in the way.\nBut where there's a will there's a way! The world is conquered\
+            \ by rebels and courageous people — the Empire's fate is to be fallen! If you know the feature is essential but\
+            \ don't have the authorization to continue, it's vital you carefully balance your creative freedom with respect\
+            \ to your company's priorities.\n \nIn this talk Yonatan will share his experience of how to develop a feature\
+            \ without approval and not be fired/maimed/killed by your manager."
+      - language: ru
+        text: "У вас когда-нибудь была ситуация, когда вы работаете в компании над приложением, и внезапно вам в голову пр\
+            иходит идея новой крутой фичи? Вы понимаете, вот он — переломный момент, но когда вы обращаетесь за поддержкой\
+            \ и одобрением на разработку, вы сталкиваетесь с препятствием: «У нас нет ресурсов», или «На данный момент у н\
+            ас другие приоритеты».\nСотрудники, которые не понаслышке знакомы с продуктом компании, больше всего подходят\
+            \ для придумывания и проектирования лучших фич для приложения, но иногда на пути встают политики и процедуры к\
+            омпании.\nНо где есть желание, там есть возможности! Мир завоёвывают повстанцы и мятежники — Империя должна па\
+            сть! Если вы знаете, что эта фича важна, но у вас нет разрешения продолжать, вам придётся осторожно балансиров\
+            ать между свободой творчества и уважением к приоритетам вашей компании.\nВ данном докладе Йонатан поделится, к\
+            ак он разработал фичу без разрешения и как при этом его не уволили/покалечили/убили."
+    talkDay: 1
+    trackTime: "17:50"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/iorHlL6BkkYs4y8oCoacc/b976ed9b0b78d3d81246af29104f5453/Mobius-_How_to_develop_feature_on_your_own.pdf"]
+    videoLinks: []
+    speakerIds: [565]

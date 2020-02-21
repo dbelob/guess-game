@@ -423,6 +423,24 @@ events:
               485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497]
   - eventTypeId: 9
     name:
+      - {language: en, text: "Mobius 2017 Msc"}
+      - {language: ru, text: "Mobius 2017 Мск"}
+    startDate: "2017-11-11"
+    endDate: "2017-11-11"
+    siteLink:
+      - {language: en, text: "https://mobiusconf.com/en/2017/msk/"}
+      - {language: ru, text: "https://mobiusconf.com/2017/msk/"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Europe Square 2, Hotel «Radisson Slavyanskaya»"}
+      - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236rwEv556SL9jD_m7E5FjfA-
+    mapCoordinates: "55.741881, 37.568099"
+    talkIds: [647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665]
+  - eventTypeId: 9
+    name:
       - {language: en, text: "Mobius 2019 Msk"}
       - {language: ru, text: "Mobius 2019 Мск"}
     startDate: 2019-12-07

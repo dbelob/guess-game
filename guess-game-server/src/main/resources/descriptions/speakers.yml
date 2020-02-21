@@ -2545,6 +2545,18 @@ speakers:
     name:
       - {language: en, text: "Sergey Ryabov"}
       - {language: ru, text: "Сергей Рябов"}
+    company:
+      - {language: en, text: Facebook}
+    bio:
+      - {language: en, text: "Sergey is the developer from London who put on hold his digital nomadic lifestyle to admire\
+            \ the clouds every day. Currently is working on Android UI frameworks and infrastructures. Suspected of organizing\
+            \ the Kotlin User Group in St. Petersburg and Android Academy schools in St. Petersburg and Moscow, has been seen\
+            \ in the propaganda of Kotlin and Android."}
+      - {language: ru, text: "Сергей – разработчик из Лондона, который поставил на паузу свой кочевой образ жизни, чтобы к\
+            аждый день любоваться тучами. В настоящий момент работает над Android UI-фреймворками и инфраструктурой. Подоз\
+            ревается в организации Kotlin User Group в Питере и школ Android Academy в Питере и Москве, был замечен в проп\
+            аганде Kotlin и Android."}
+    twitter: colriot
   - id: 297
     fileName: 0297.jpg
     name:
@@ -4678,22 +4690,19 @@ speakers:
       - {language: en, text: "Yonatan Levin"}
       - {language: ru, text: "Йонатан Левин"}
     company:
-      - {language: en, text: Gett}
+      - {language: en, text: KolGene}
     bio:
-      - language: en
-        text: "A born entrepreneur, combining the creative imagination of an artist with the meticulous precision of an engineer,\
-            \ Yonatan Levin is not only one of Israel’s top mobile developers, he’s also a member of the elite worldwide group\
-            \ of Google Developers Experts.\n\nAnd while Yonatan’s primary expertise is in Mobile and Product Management,\
-            \ he also gets along extremely well with backend technologies — not to mention people in general.\n\nAt Gett Yonatan\
-            \ headed up Android development, helping make it the world’s largest on-demand transportation, delivery, and logistics\
-            \ company. \nMost recently, Yonatan has received funding for his thirds (and latest) startup, KolGene, which is\
-            \ already revolutionizing the field of genetic testing.\n\nIn his free time, Yonatan can often be found, like\
-            \ his Star Wars hero Luke Skywalker, saving the galaxy, one groundbreaking technology at a time."
-      - language: ru
-        text: "Предприниматель и инженер Йонатан Левин — один из ведущих мобильных разработчиков Израиля, обладающий звани\
-            ем Google Developers Expert. Помимо своей основной специализации, он отлично ладит с бэкенд-технологиями — а т\
-            акже с людьми.\n\nВ Gett Йонатан возглавил Android-разработку. Недавно он также получил финансирование для сво\
-            его третьего стартапа KolGene, занимающегося генетическим тестированием."
+      - {language: en, text: "Yonatan is one of Israel's top mobile developers and part of the elite Google Developer Experts.\
+            \ He played a key role in the success of Gett which has raised over $500M and secured funding for his startup\
+            \ KolGene, a genetics market connector that's making big waves. Lovingly committed to Mobile & Product Management,\
+            \ Yonatan has also had passionate affairs with backend tech. Accomplished developer and entrepreneur, he knows\
+            \ exactly what's needed to transform smart ideas into lucrative products."}
+      - {language: ru, text: "Йонатан — один из ведущих израильских мобильных разработчиков, часть элитной команды Google\
+            \ Developer Experts. Сыграл ключевую роль в успехе Gett, собравшем более 500 миллионов долларов, а также получ\
+            ил финансирование своего стартапа KolGene, набирающего популярность генетического market connector-а. Будучи в\
+            ерным приверженцем мобильного и продукт-менеджмента, Йонатан также с большим энтузиазмом занимается бэкендом.\
+            \ Как состоявшийся разработчик и предприниматель, он точно знает, как превратить умные идеи в прибыльный проду\
+            кт."}
   - id: 566
     fileName: 0566.jpg
     name:
@@ -6860,17 +6869,18 @@ speakers:
       - {language: en, text: "Vladimir Ivanov"}
       - {language: ru, text: "Владимир Иванов"}
     company:
-      - {language: en, text: EPAM}
+      - {language: en, text: "EPAM Systems"}
     bio:
-      - {language: en, text: "Vladimir's main skill is Android applications development, but his interest in mobile it not\
-            \ limited to the Android platform. In addition to his experience with Android exceeding 6 years, he has a couple\
-            \ of years of Windows Phone experience, a year with iOS and some server side Java experience, but lately he is\
-            \ really enthusiastic about React Native."}
-      - {language: ru, text: "Главный коммерческий скилл — разработка под Android, но профессиональный интерес лежит в моб\
-            ильных технологиях в целом. Помимо того, что Владимир пишет под Android больше 6 лет, у него есть также пара л\
-            ет опыта коммерческих проектов с Windows Phone, год с iOS и опыт работы с server-side Java, а в последний год\
-            \ он глубоко копается с React Native."}
+      - {language: en, text: "Vladimir Ivanov is now a lead software engineer in EPAM Systems. Started as a Java EE engineer,\
+            \ but got interested in mobile technologies. Vladimir develops Android apps mostly last 7 years, but looks around\
+            \ and comprehends nearby technologies like React Native, iOS app development, web development, etc. Vladimir is\
+            \ passionate about sharing his knowledge."}
+      - {language: ru, text: "Владимир Иванов — ведущий разработчик в EPAM Systems. Начинал как Java EE-инженер, но увлекс\
+            я мобильным технологиями. Последние 7 лет разрабатывает приложения под Android, но этим не ограничивается, по\
+            \ ходу осваивая смежные технологии, такие как React Native, разработку под iOS, Web и прочее. Увлеченно делитс\
+            я знаниями с коллегами."}
     twitter: vvsevolodovich
+    gitHub: vlivanov
   - id: 853
     fileName: 0853.jpg
     name:
@@ -6885,46 +6895,126 @@ speakers:
     fileName: 0855.jpg
     name:
       - {language: en, text: "Jing Li"}
+    company:
+      - {language: en, text: mytaxi}
+    bio:
+      - {language: en, text: "Jing Li is a language-agnostic software engineer with a focus on tools, quality and CI.  He\
+            \ dedicated himself to mobile industry throughout the past decade, can't stop playing with gadgets.  As an active\
+            \ GitHub user having various open source projects alongside heaps of stargazers, he is passionate about crafting\
+            \ tools."}
+    twitter: thyrlian
   - id: 856
     fileName: 0856.jpg
     name:
       - {language: en, text: "Lisa Wray"}
+    company:
+      - {language: en, text: "New York Times"}
+    bio:
+      - {language: en, text: "Lisa Wray is an Android developer, speaker, and advocate specializing in user interfaces. She\
+            \ currently works at the New York Times on their flagship Android app. She has a B.S. from M.I.T. in music and\
+            \ computer science, and is an Android Google Developer Expert. She previously worked at Google on the Developer\
+            \ Relations team on Android, Google Glass, and Android Wear, and at Genius, a Brooklyn-based startup, where she\
+            \ built their Android app from scratch. She currently lives in Seattle."}
+    twitter: lisawrayz
   - id: 857
     fileName: 0857.jpg
     name:
       - {language: en, text: "Enrique López Mañas"}
+    company:
+      - {language: en, text: "Independent Developer"}
+    bio:
+      - language: en
+        text: "Enrique López Mañas is a Google Developer Expert and independent IT consultant. He has been working with mobile\
+            \ technologies and learning from them since 2007. He is an avid contributor to the open source community and a\
+            \ FLOSS (Free Libre Open Source Software) kind of guy, being among the top 10 open source Java contributors in\
+            \ Germany. He is a part of the Google LaunchPad accelerator, where he participates in Google global initiatives\
+            \ to influence hundreds of the best startups from all around the globe. He is also a big data and machine learning\
+            \ aficionado.\n\nIn his free time he rides his bike, take pictures, and travels until exhaustion. He also writes\
+            \ literature and enjoys all kinds of arts. He likes to write about himself in third person. You can follow him\
+            \ on Twitter (@eenriquelopez) to stay updated on his latest movements."
+    twitter: eenriquelopez
   - id: 858
     fileName: 0858.jpg
     name:
       - {language: en, text: "Eugene Saturov"}
       - {language: ru, text: "Евгений Сатуров"}
+    company:
+      - {language: en, text: Surf}
+    bio:
+      - {language: en, text: "Fan of mobile technologies, neat architecture and early access programs, Eugene has done a couple\
+            \ of projects with audience of hundreds of thousands of people. Currently he's the team leader of Labirint Android,\
+            \ the first team in Russia to implement Instant App; this team can boast having a 4,8 score app in Google Play."}
+      - {language: ru, text: "Фанат мобильных технологий, хорошей архитектуры и программ раннего доступа. За спиной нескол\
+            ько проектов с аудиторией в сотни тысяч человек. В данный момент лидер команды Лабиринт Android, той самой, ко\
+            торая первой в России реализовала Instant App и может похвастаться приложением с оценкой 4,8 в Google Play."}
+    twitter: saturovv
   - id: 859
     fileName: 0859.jpg
     name:
       - {language: en, text: "Andrey Volodin"}
       - {language: ru, text: "Андрей Володин"}
+    company:
+      - {language: en, text: "Prisma AI"}
+    bio:
+      - {language: en, text: "Lead developer Cocos2D-ObjC, author of the world’s first Swift app on Android, author of the\
+            \ cross-platform Swift game engine Fiber2D, currently doing Metal/ARKit job."}
+      - {language: ru, text: "Lead developer Cocos2D-ObjC, создатель первого приложения на Swift под Android, автор кроссп\
+            латформенного игрового движка Fiber2D, в настоящее время Metal/ARKit-инженер."}
+    twitter: s1ddok
+    gitHub: s1ddok
   - id: 860
     fileName: 0860.jpg
     name:
       - {language: en, text: "Maksim Sokolov"}
       - {language: ru, text: "Максим Соколов"}
+    company:
+      - {language: en, text: Avito}
+    bio:
+      - {language: en, text: "Team Lead at Avito company, where he is developing a messenger. Is into open source, in his\
+            \ spare time is developing and maintaining several libraries on Swift (TableKit got in Trending in open source\
+            \ on Github). Is also interested in Node.js backend development."}
+      - {language: ru, text: "Team Lead в Avito, занимается разработкой мессенджера. Увлекается open source, в свободное в\
+            ремя разрабатывает и поддерживает несколько библиотек на Swift (TableKit попадал в Trending in open source на\
+            \ Github). Также интересуется бэкенд-разработкой на Node.js"}
+    twitter: max_sokolov
   - id: 861
     fileName: 0861.jpg
     name:
       - {language: en, text: "Konstantin Yakushev"}
       - {language: ru, text: "Константин Якушев"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Has been working at Badoo since 2015. Started there as a frontend developer, is currently working\
+            \ in a team of API architects."}
+      - {language: ru, text: "В Badoo с 2015 года. Пришёл в компанию как фронтенд-разработчик, сейчас работает в команде а\
+            рхитекторов API."}
   - id: 862
     fileName: 0862.jpg
     name:
-      - {language: en, text: "Dmitry Kurkin"}
+      - {language: en, text: "Dmitriy Kurkin"}
       - {language: ru, text: "Дмитрий Куркин"}
+    company:
+      - {language: en, text: Mail.Ru}
+    bio:
+      - {language: en, text: "Dmitriy is in messengers development for various platforms for 12 years. Team Lead of iOS client\
+            \ development for ICQ for the last 5 years."}
+      - {language: ru, text: "12 лет занимается разработкой мессенджеров под разные платформы. Последние 5 лет делает iOS\
+            \ клиент для ICQ в должности team lead."}
   - id: 863
     fileName: 0863.jpg
     name:
       - {language: en, text: "Ivan Ponomarev"}
-      - {language: ru, text: "Иван Пономарёв"}
+      - {language: ru, text: "Иван Пономарев"}
     company:
-      - {language: en, text: "Akvelon"}
+      - {language: en, text: Akvelon}
+    bio:
+      - {language: en, text: "Senior developer for mobile platforms of Akvelon company. More than 5 years experience in the\
+            \ game industry with specialization on cross-platform development for mobile devices using C/C++ languages. The\
+            \ problem of collecting information about errors in NDK code is known firsthand."}
+      - {language: ru, text: "Ведущий программист под мобильные платформы компании Аквелон. Позади более 5 лет опыта в игр\
+            овой индустрии со специализацией на кроссплатформенной разработке под мобильные устройства с использованием C/C++.\
+            \ С проблемой сбора информации об ошибках в NDK-коде знаком не понаслышке."}
   - id: 864
     fileName: 0864.jpg
     name:
@@ -6959,6 +7049,15 @@ speakers:
     name:
       - {language: en, text: "Gleb Novik"}
       - {language: ru, text: "Глеб Новик"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Likes clean code and elegant solutions. Participates in OpenSource-projects and has a \"Podlodka\"\
+            \ podcast about mobile development. Is currently working as a Senior iOS developer in Tinkoff mobile bank team."}
+      - {language: ru, text: "Любит чистый код и красивые решения. Участвует в open source-проектах и ведёт подкаст про мо\
+            бильную разработку Podlodka. На данный момент занимает должность ведущего iOS-разработчика в команде мобильног\
+            о банка Тинькофф."}
   - id: 867
     fileName: 0867.jpg
     name:
@@ -8160,3 +8259,38 @@ speakers:
     bio:
       - {language: en, text: "Cross platform, IOT, tinkering with gadgets."}
     twitter: jn1974
+  - id: 1074
+    fileName: 1074.jpg
+    name:
+      - {language: en, text: "Evgenii Kamyshanov"}
+      - {language: ru, text: "Евгений Камышанов"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Lead iOS developer in EPAM in Saint Petersburg, Russia, i.e. works on projects which are not\
+            \ allowed to be talked about. Before that was participating in a variety of projects, from C++ GUI to Java servers,\
+            \ but all the time Evgenii was in love with gadgets. He does not believe in silver bullets and tries to overcome\
+            \ perfectionism as much as he can."}
+      - {language: ru, text: "Lead iOS developer в компании EPAM в Санкт-Петербурге, то есть работает над проектами, о кот\
+            орых никому нельзя рассказывать. До этого также занимался разнообразными проектами, от GUI на С++ до серверов\
+            \ на Java, но всегда был неравнодушен к гаджетам. Не верит в серебряные пули и по мере сил борется с перфекцио\
+            низмом."}
+    twitter: ptiz
+    gitHub: ptiz
+  - id: 1075
+    fileName: 1075.jpg
+    name:
+      - {language: en, text: "Sergey Boishtian"}
+      - {language: ru, text: "Сергей Боиштян"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Started his way as a backend developer and then fell in love with mobile development for its\
+            \ relevance, modernity and young community. For his first Android projects, which Sergey did as a freelancer in\
+            \ his spare time, he and his colleague wrote together the backend part as well. For the last two years, Sergey\
+            \ is an Android developer in Tinkoff company's team of business application."}
+      - {language: ru, text: "Начинал свой путь как бэкенд-разработчик, потом влюбился в мобильную разработку за ее актуал\
+            ьность, современность и молодое комьюнити. Для своих первых Android-проектов, которые делал на фрилансе в своб\
+            одное от основной работы время, писал с коллегой также и бэкенд-часть. Последние два года Сергей — Android-раз\
+            работчик в Тинькофф в команде приложения для юридических лиц."}
