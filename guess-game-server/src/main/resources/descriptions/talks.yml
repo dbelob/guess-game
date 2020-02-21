@@ -14883,40 +14883,6 @@ talks:
     presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/1sXPKKQQg8KQ6m0E6CYCcw/31ac2efae382709976b5ee4429121b80/______________________________-________________________Java____________________-_jbreak1__1_.pdf"]
     videoLinks: ["https://youtu.be/-OocG7tFIOQ"]
     speakerIds: [14]
-  - id: 773
-    name:
-      - {language: en, text: "Riding the Jet Streams"}
-      - {language: ru, text: "Верхом на реактивных стримах"}
-    shortDescription:
-      - {language: en, text: "You will learn how to take Java Stream API and make distributed collection iteration effortless\
-            \ af."}
-      - {language: ru, text: "Берём Java Stream API, пишем обработку коллекции и запускаем ее на кластере, не прилагая осо\
-            бых усилий."}
-    longDescription:
-      - language: en
-        text: "Java 8 introduced the Stream API as a modern, functional, and very powerful tool for processing collections\
-            \ of data. One of the main benefits of the Stream API is that it hides the details of iteration over the underlying\
-            \ data set, allowing for parallel processing within a single JVM, using a fork/join framework.\n\nViktor will\
-            \ talk about a Stream API implementation that enables parallel processing across many machines and many JVMs.\n\
-            \nYou will learn how you can use the same API to process massive data sets across large clusters, which you already\
-            \ know how to do in a single JVM.\n\nWith an explanation of internals of the implementation, Viktor will give\
-            \ an introduction to the general design behind stream processing using DAG (directed acyclic graph) engines and\
-            \ how an actor-based implementation can provide in-memory performance while still leveraging industry-wide known\
-            \ frameworks as Java Streams API."
-      - language: ru
-        text: "Вы из тех, кто считает, что, распараллелив любой цикл, можно улучшить перформанс, и Collection.parallelStream()\
-            \ — ваш лучший друг? А как вам идея — вбросить ещё пачку машин и получить распределенную обработку? Интересно\
-            ? Тогда для вас этот доклад обязателен к просмотру.\n\nВиктор познакомит слушателей со своим другом, Ориентиро\
-            ванным (Направленным) Ациклическим Графом (или Маркизом?!), и покажет, как с его помощью была организована рас\
-            пределенная высокопроизводительная система обработки информации в памяти поверх нашего знакомого Java 8 Stream\
-            \ API."
-    talkDay: 1
-    trackTime: "17:00"
-    track: 2
-    language: ru
-    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/4cQYkO23puc6mIoiOUOIMI/922a8afe4df0a2b8947800932bf41478/riding-the-jet-streams.pdf"]
-    videoLinks: ["https://youtu.be/WMZFOCsIPWU"]
-    speakerIds: [9]
   - id: 774
     name:
       - {language: en, text: "Who's that tweeting about #jbreak?"}
