@@ -3,9 +3,8 @@ package guess.util;
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
-import guess.domain.source.NameCompany;
-import guess.domain.source.image.UrlFilename;
 import guess.domain.source.*;
+import guess.domain.source.image.UrlFilename;
 import guess.util.yaml.YamlUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -102,12 +101,14 @@ public class ConferenceDataLoader {
      * @param startDate          start date
      * @param conferenceCode     conference code
      * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
+     * @param invalidTalksSet    invalid talk name set
      * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
     private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                               Map<NameCompany, Long> knownSpeakerIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                                               Map<NameCompany, Long> knownSpeakerIdsMap,
+                                               Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, events, speakers, talks from resource files
@@ -150,6 +151,19 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(t.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
         );
+
+        // Fix talks
+        if (!invalidTalksSet.isEmpty()) {
+            contentfulTalks = contentfulTalks.stream()
+                    .filter(t -> !invalidTalksSet.contains(LocalizationUtils.getString(t.getName(), Language.RUSSIAN)))
+                    .collect(Collectors.toList());
+            log.info("Fixed talks (in Contentful): {}", contentfulTalks.size());
+            contentfulTalks.forEach(
+                    t -> log.trace("Fixed talk: nameEn: '{}', name: '{}'",
+                            LocalizationUtils.getString(t.getName(), Language.ENGLISH),
+                            LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
+            );
+        }
 
         // Order speakers with talk order
         List<Speaker> contentfulSpeakers = contentfulTalks.stream()
@@ -309,9 +323,10 @@ public class ConferenceDataLoader {
                     }
             );
 
+            List<Talk> finalContentfulTalks = contentfulTalks;
             talksToDelete = resourceEvent.getTalks().stream()
                     .filter(dt -> {
-                        if (contentfulTalks.contains(dt)) {
+                        if (finalContentfulTalks.contains(dt)) {
                             return false;
                         } else {
                             boolean talkExistsInAnyOtherEvent = resourceSourceInformation.getEvents().stream()
@@ -401,6 +416,22 @@ public class ConferenceDataLoader {
     /**
      * Loads talks, speakers, event information.
      *
+     * @param conference         conference
+     * @param startDate          start date
+     * @param conferenceCode     conference code
+     * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
+     * @throws IOException                if resource files could not be opened
+     * @throws SpeakerDuplicatedException if speakers duplicated
+     * @throws NoSuchFieldException       if field name is invalid
+     */
+    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode, Map<NameCompany, Long> knownSpeakerIdsMap)
+            throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+        loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, Collections.emptySet());
+    }
+
+    /**
+     * Loads talks, speakers, event information.
+     *
      * @param conference     conference
      * @param startDate      start date
      * @param conferenceCode conference code
@@ -408,8 +439,9 @@ public class ConferenceDataLoader {
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap());
+    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode)
+            throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap(), Collections.emptySet());
     }
 
     /**
@@ -632,7 +664,8 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2016, 12, 11), "2016msk");
 
         // 2017
-//        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2017, 4, 4), "2017JBreak");
+//        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2017, 4, 4), "2017JBreak",
+//                Collections.emptyMap(), Set.of("Верхом на реактивных стримах"));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2017, 4, 7), "2017JPoint",
 //                Map.of(new NameCompany("Владимир Озеров", "GridGain Systems"), 28L));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2017, 4, 21), "2017spb");
@@ -649,7 +682,8 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2017, 12, 10), "2017msk");
 
         // 2018
-//        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2018, 3, 4), "2018JBreak");
+//        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2018, 3, 4), "2018JBreak",
+//                Collections.emptyMap(), Set.of("Верхом на реактивных стримах"));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2018, 4, 6), "2018JPoint");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2018, 4, 20), "2018spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 4, 22), "2018spb");
