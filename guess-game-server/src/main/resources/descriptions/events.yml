@@ -127,6 +127,25 @@ events:
               520, 521, 522, 523, 524, 525, 526]
   - eventTypeId: 2
     name:
+      - {language: en, text: "DotNext 2017 Msc"}
+      - {language: ru, text: "DotNext 2017 Мск"}
+    startDate: "2017-11-12"
+    endDate: "2017-11-13"
+    siteLink:
+      - {language: en, text: "https://2017.dotnext-moscow.ru/en/"}
+      - {language: ru, text: "https://2017.dotnext-moscow.ru/"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Europe Square 2, Hotel «Radisson Slavyanskaya»"}
+      - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBfYHhmiGih2lanzmRigE9cc
+    mapCoordinates: "55.741881, 37.568099"
+    talkIds: [666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687,
+              688, 689, 690, 691, 692, 693, 694, 695, 696]
+  - eventTypeId: 2
+    name:
       - {language: en, text: "DotNext 2019 Msk"}
       - {language: ru, text: "DotNext 2019 Мск"}
     startDate: 2019-11-06

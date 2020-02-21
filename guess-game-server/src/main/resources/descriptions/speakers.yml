@@ -56,16 +56,10 @@ speakers:
     company:
       - {language: en, text: Zerocracy}
     bio:
-      - {language: en, text: "Yegor Bugayenko is a founder and CEO of Zerocracy, which replaces annoying bosses with AI bots;\
-            \ an OOP fundamentalist; an author of \"Elegant Objects\" book series; a provocative blogger at yegor256.com;\
-            \ a creator of Zold, a non-blockchain cryptocurrency for fast micro-payments; a hands-on Java programmer; a creator\
-            \ of Cactoos, Takes Framework, JCabi, and Rultor; a philanthropist donating four thousand dollars annually to\
-            \ an open source award."}
-      - {language: ru, text: "Егор Бугаенко — основатель и CEO компании Zerocracy, разрабатывающей AI роботов для управлен\
-            ия программистами; ООП-фундаменталист; автор «Elegant Objects» — серии книг об объектно-ориентированном програ\
-            ммировании; создатель криптовалюты Zold для быстрых микроплатежей; провокационный блогер на yegor256.com; пишу\
-            щий Java-программист; создатель Cactoos, Takes Framework, JCabi и Rultor; филантроп, жертвующий ежегодно неско\
-            лько тысяч долларов номинантам его собственной премии за самый качественный программный проект."}
+      - {language: en, text: "The author of \"Elegant Objects\"; CEO at Zerocracy; Oracle Certified Enterprise Architect;\
+            \ creator of Takes Framework JCabi, and Rultor."}
+      - {language: ru, text: "Автор книги «Elegant Objects»; CEO в Zerocracy; сертифицированный Oracle Java Architect; Java\
+            \ архитектор в нескольких open source проектах (Rultor, Takes, JCabi)."}
     twitter: yegor256
   - id: 4
     fileName: 0004.jpg
@@ -3549,10 +3543,28 @@ speakers:
     fileName: 0409.jpg
     name:
       - {language: en, text: "Raffaele Rialdi"}
+    company:
+      - {language: en, text: "Vevy Europe S.p.A."}
+    bio:
+      - {language: en, text: "Raffaele Rialdi is a senior Software Architect working as a consultant, speaker and trainer.\
+            \ Since 2003, he is a Microsoft MVP in the Developer Security category. His passion for the community brought\
+            \ him to be a member of the board of UGIdotNET, president of DotNetLiguria and co-founder of the Italian C++ user\
+            \ group. He is currently working as an architect and developer on the backend of an enterprise project with a\
+            \ specific focus on code generation and working on cross-platform mobile and IoT development in both C# and C++\
+            \ languages."}
+    twitter: raffaeler
+    mvp: true
   - id: 410
     fileName: 0410.jpg
     name:
       - {language: en, text: "Matthias Koch"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Matthias is a passionate C# developer and likes to talk about clean code, testing and tooling\
+            \ in general. Much of his spare time in the last years was devoted to his very own open source projects. He is\
+            \ working at JetBrains as developer advocate for the .NET department."}
+    twitter: matkoch87
   - id: 411
     fileName: 0411.jpg
     name:
@@ -3733,6 +3745,20 @@ speakers:
     name:
       - {language: en, text: "Sergey Bykov"}
       - {language: ru, text: "Сергей Быков"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Sergey Bykov is one of the Orleans project founders at Microsoft Research and continues to lead\
+            \ its open source development now in the Xbox division. Before joining Research Sergey worked in several Microsoft\
+            \ groups, from BizTalk and Host Integration Server to embedded operating systems for POS terminals and Bing. The\
+            \ mediocre state of developer tools for cloud services and distributed systems at the time prompted him to join\
+            \ the Orleans project in order to improve developers' productivity in this field."}
+      - {language: ru, text: "Сергей Быков начинал проект Orleans в Microsoft Research и продолжает руководить его разрабо\
+            ткой в open source в подразделении Xbox. До прихода в Research Сергей проработал в различных группах Microsoft,\
+            \ от BizTalk и Host Integration Server до встроенных операционных систем для кассовых терминалов и Bing. Удруч\
+            ающая ситуация со средствами разработки для облачных сервисов и распределённых систем побудила его заняться пр\
+            оектом Orleans с целью качественно повысить производительность труда программистов в этой сфере."}
+    twitter: sergeybykov
   - id: 446
     fileName: 0446.jpg
     name:
@@ -3753,11 +3779,34 @@ speakers:
     fileName: 0450.jpg
     name:
       - {language: en, text: "Federico Lois"}
+    company:
+      - {language: en, text: Corvalius}
+    bio:
+      - {language: en, text: "Federico is a cofounder of Corvalius, a R&D company, and of Codealike, a Developer Analytics\
+            \ company. He has been working on algorithmic performance for the last 10 years, both with CPU and specialized\
+            \ hardware like GPUs. His experience ranges from banking software performance tuning to database engine optimization.\
+            \ He enjoys reading in binary and tinkering with registers and caches. Among his technology interests are highly\
+            \ distributed systems, massively parallel technology, low-level optimization and high-performance computer graphics."}
+    twitter: federicolois
   - id: 451
     fileName: 0451.jpg
     name:
       - {language: en, text: "Elizaveta Golenok"}
       - {language: ru, text: "Елизавета Голенок"}
+    company:
+      - {language: en, text: "MTS IT"}
+      - {language: ru, text: "МТС ИТ"}
+    bio:
+      - language: en
+        text: "Elizaveta is a leading developer at MTS Information Technologies.\nHas got experience in developing and designing\
+            \ systems both in C/C++ and C# ASP.NET, Mono (from navigation systems to enterprise solutions).\nIs into route\
+            \ planning and multi-agent systems, compilation, LLVM, Clang, low-level debugging of applications, P/Invoke and\
+            \ Mono."
+      - language: ru
+        text: "Елизавета – ведущий разработчик в компании МТС Информационные Технологии. \nИмеет опыт разработки и проекти\
+            рования систем как на С/С++, так и на C# ASP.NET, Mono (от навигационных систем до enterprise-решений).\nОблас\
+            ть интересов — планирование маршрутов и многоагентные системы, компиляция, LLVM, Clang, низкоуровневая отладка\
+            \ приложений, P/Invoke и Mono."
   - id: 452
     fileName: 0452.jpg
     name:
@@ -3903,10 +3952,25 @@ speakers:
     fileName: 0468.jpg
     name:
       - {language: en, text: "Karel Zikmund"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Karel is a Software Engineering Manager on .NET Framework team / .NET Core team at Microsoft.\
+            \ He spends most of his time at his job as a community manager of CoreFX repo and as a manager of a few CoreFX\
+            \ areas like Networking, Crypto, Collections, Process, etc."}
+    twitter: ziki_cz
   - id: 469
     fileName: 0469.jpg
     name:
       - {language: en, text: "Mark Seemann"}
+    company:
+      - {language: en, text: blog.ploeh.dk}
+    bio:
+      - {language: en, text: "Mark Seemann helps programmers make code easier to maintain. His professional interests include\
+            \ functional programming, object-oriented development, software architecture, as well as software development\
+            \ in general. Apart from writing a book about Dependency Injection he has also spoken at dozens of international\
+            \ conferences, and written numerous articles and blog posts about programming."}
+    twitter: ploeh
   - id: 470
     fileName: 0470.jpg
     name:
@@ -3973,6 +4037,18 @@ speakers:
     name:
       - {language: en, text: "Anatoly Kulakov"}
       - {language: ru, text: "Анатолий Кулаков"}
+    company:
+      - {language: en, text: "Paladyne Systems"}
+    bio:
+      - {language: en, text: "Was getting an education to become an information security specialist. Was earning money like\
+            \ a tough C++ developer on Linux. After getting bored of coding, he felt the urge to create and switched to C#.\
+            \ Has been writing in .NET since its first versions. Is designing and developing business applications, distributed\
+            \ and fault-tolerant systems. Spends his spare time with ES, CQRS and DDD."}
+      - {language: ru, text: "Получал образование специалиста по информационной безопасности. Зарабатывал, как суровый C++\
+            \ разработчик под Linux. Когда надоело кодировать и захотелось творить, перешёл на C#. Пишет на .NET с первых\
+            \ его версий. Занимается проектированием и построением бизнес-приложений, распределённых и отказоустойчивых си\
+            стем. Отдыхает с ES, CQRS и DDD."}
+    twitter: kulakovt
   - id: 474
     fileName: 0474.jpg
     name:
@@ -3991,16 +4067,64 @@ speakers:
     name:
       - {language: en, text: "Vladimir Kochetkov"}
       - {language: ru, text: "Владимир Кочетков"}
+    company:
+      - {language: en, text: "Positive Technologies"}
+    bio:
+      - language: en
+        text: "Has been working in information security domain knowledge since 2006. Started working at Positive Technologies\
+            \ in 2012 as a leading expert in web application security analysis group. Was taking part in application security\
+            \ analysis projects, was doing research on application testing methodologies. Was taking part in PT Application\
+            \ Inspector realization. In 2014-2016 was leading the compiled applications analyzer development, along with binary\
+            \ code analysis module development project. Is leading the department of application security analysis research.\
+            \ Is directly involved in theoretical findings in app security analysis and promising company products prototyping.\
+            \ Writes articles for HITB Magazine, \"Hacker\" and RSDN Magazine. \nIs an avid speaker at the international forum\
+            \ Positive Hack Days (which he organizes as well), at the DotNext conference of .NET developers and at user group\
+            \ meetings. Participates in the development of Russian software developer network RSDN. Is one of the organizers\
+            \ of Positive Development User Group — the initiative that is aimed to immerse developers into the applications\
+            \ security domain knowledge. Has a blog kochetkov.github.io."
+      - language: ru
+        text: "С 2006 года работал в предметной области информационной безопасности. В Positive Technologies пришел в 2012\
+            \ году на должность ведущего эксперта группы анализа защищенности веб-приложений. Участвовал в проектах по ана\
+            лизу защищенности приложений, исследовал методики тестирования приложений. При участии Владимира реализован пр\
+            одукт PT Application Inspector. В 2014-2016 возглавлял группу разработки анализаторов компилируемых приложений\
+            \ и руководил проектом разработки модуля анализа бинарного кода. С сентября 2016 года руководит отделом исслед\
+            ований анализа защищенности приложений. Принимает непосредственное участие в теоретических изысканиях в направ\
+            лении анализа защищенности приложений и прототипировании перспективных продуктов компании. Автор статей в журн\
+            алах HITB Magazine, «Хакер» и RSDN Magazine. \nНеоднократно участвовал в международном форуме Positive Hack Days\
+            \ (в качестве организатора и докладчика) и конференции .NET-разработчиков DotNext, регулярно выступает на встр\
+            ечах user group разработчиков. Принимает участие в развитии сообщества русскоязычных разработчиков RSDN. Один\
+            \ из организаторов Positive Development User Group — инициативы, направленной на погружение разработчиков в пр\
+            едметную область защиты приложений. Ведет блог kochetkov.github.io."
   - id: 476
     fileName: 0476.jpg
     name:
       - {language: en, text: "Kirill Vetchinkin"}
       - {language: ru, text: "Кирилл Ветчинкин"}
+    company:
+      - {language: en, text: TYME}
+    bio:
+      - {language: en, text: "Kirill is the head of the development department at TYME company. Was into creating of electronic\
+            \ banking for Life group and Megafon. Is currently managing company's IT processes and actively using automatization.\
+            \ Is doing all his projects by using .NET Core on Linux OS."}
+      - {language: ru, text: "Кирилл — руководитель отдела разработки в компании TYME. Создавал электронные банкинги для г\
+            руппы Лайф и МегаФон. Сейчас занимается построением процессов ИТ-компании, активно применяет автоматизацию. Вс\
+            е проекты ведёт, используя .NET Core на ОС Linux."}
   - id: 477
     fileName: 0477.jpg
     name:
       - {language: en, text: "Valery Petrov"}
       - {language: ru, text: "Валерий Петров"}
+    company:
+      - {language: en, text: Sidenis}
+    bio:
+      - {language: en, text: ".NET Developer at Sidenis company. Uses his spare time to study the \"insides\", especially\
+            \ the ones of concurrency, because to know something well you need to dig at least one level lower than you use\
+            \ it."}
+      - {language: ru, text: ".NET Developer в компании Sidenis. На работе по большей части «кровавый энтерпрайз», но есть\
+            \ «гильдийное» время, которое (совместно со свободным временем) используется для изучения «кишочков», особенно\
+            \ того, что касается concurrency, ведь чтобы узнать что-то хорошо, надо копнуть как минимум на уровень глубже\
+            , чем используешь."}
+    gitHub: m08pvv
   - id: 478
     fileName: 0478.jpg
     name:
@@ -4023,13 +4147,51 @@ speakers:
   - id: 479
     fileName: 0479.jpg
     name:
-      - {language: en, text: "Vitaly Ezepchuk"}
+      - {language: en, text: "Vitaliy Ezepchuk"}
       - {language: ru, text: "Виталий Езепчук"}
+    company:
+      - {language: en, text: "Fast Reports"}
+      - {language: ru, text: "Фаст Репортс"}
+    bio:
+      - {language: en, text: "Is working in a report generator systems development team at Fast Reports company. Is a graduate\
+            \ of Faculty of Mathematics, Mechanics & Computer Science of Southern Federal University. Used to develop bots\
+            \ for computer games in .NET and Java. Was working with migration modeling problems. Among his hobbies are mathematics,\
+            \ fishing, guitar, and development of a free of charge document generator DocumentSprint. MCP in Developing Microsoft\
+            \ Azure Solutions."}
+      - {language: ru, text: "Работает в команде разработки систем генераторов отчётов в компании Fast Reports. Выпускник\
+            \ магистратуры мехмата Южного Федерального Университета. Увлекался написанием ботов для компьютерных игр на .NET\
+            \ и Java. Занимался задачами моделирования миграций. Хобби – математика, рыбалка, игра на гитаре и разработка\
+            \ бесплатного генератора документации DocumentSprint. MCP в области Developing Microsoft Azure Solutions."}
+    twitter: witaly_ezepchuk
   - id: 480
     fileName: 0480.jpg
     name:
       - {language: en, text: "Nikolay Gusev"}
       - {language: ru, text: "Николай Гусев"}
+    company:
+      - {language: en, text: "Deutsche Bank Technology Centre"}
+    bio:
+      - language: en
+        text: "Started as a C++ programmer at university and after became a C# developer. \nSince 2008, he worked at IBS as\
+            \ a leading frontend/backend developer of the corporate Sharepoint portal (oh, this development under Sharepoint\
+            \ 2007). Got into code-craft and patterns which allow producing clean code. Of despair, he wrote Linq-provider\
+            \ to access data stored in Sharepoint-lists. \nThen he joined JSC DRAGA and developed a system for holding shareholders'\
+            \ meetings of major Russian JSCs like Gazprom, Mosenergo, etc. Also was a full-stack developer, used ASP.MVC,\
+            \ WPF, WCF, TypeScript and got interested in F# and functional programming, being inspired by the new ways of\
+            \ doing things that allow creating a clean, concise and maintainable code. \nHas been working at Deutsche Bank\
+            \ since 2015 as a developer of trading UI. Being into F# wrote a few functional programming constructs that are\
+            \ going to be discussed in the talk."
+      - language: ru
+        text: "Увлекался программированием на С++ в институте, в дальнейшем переквалифицировался в программиста C#. \nС 2008\
+            \ года работал в компании IBS ведущим frontend/backend-разработчиком корпоративного Sharepoint портала (о, эта\
+            \ разработка под Sharepoint 2007). В то же время заинтересовался темой культуры написания кода. От безысходнос\
+            ти написал свой домашний Linq-провайдер для доступа к данным, хранящимся в Sharepoint-списках. \nЗатем перешел\
+            \ в компанию ДРАГА, где разрабатывал систему проведения собраний акционеров для крупнейших акционерных обществ\
+            \ РФ, таких как Газпром, Мосэнерго и т.д. Также был full-stack разработчиком, использовал ASP.MVC, WPF, WCF, TypeScript.\
+            \ Одновременно начал изучать F# и функциональное программирование, воодушевившись на тот момент новыми для нег\
+            о концепциями, способными сделать код проще, чище и понятнее. \nВ Deutsche Bank начал работать с 2015 года, ра\
+            зрабатывает trading UI на основе in-house WPF-фреймворков. Во время написания программ увлёкся идеей переноса\
+            \ опыта и полезных концепций из языка F# в C#."
   - id: 481
     fileName: 0481.jpg
     name:
