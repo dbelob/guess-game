@@ -446,16 +446,16 @@ speakers:
       - {language: en, text: "Alexander Tarasov"}
       - {language: ru, text: "Александр Тарасов"}
     company:
-      - {language: en, text: Alpha-Laboratory}
-      - {language: ru, text: Альфа-Лаборатория}
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
     bio:
-      - {language: en, text: "Alexander is an architect in Alpha-Laboratory. As for now, he works on a new architecture with\
-            \ microservice approach and simultaneously drives DevOps approaches in production. He has nearly nine years of\
-            \ experience in server-side Java development and more than one year of application deployment automatization practice.\
-            \ Alexander is a fan of Docker and related technologies."}
-      - {language: ru, text: "Архитектор в Альфа-Лаборатории. В настоящее время прорабатывает новую архитектуру с микросер\
-            висным подходом и попутно двигает направление DevOps. Имеет почти девять лет опыта серверной Java-разработки и\
-            \ больше года практики автоматизации развертывания приложений. Фанат Docker-а и связанных с ним технологий."}
+      - {language: en, text: "Alexander is a software engineer at one of the most popular social networks Odnoklassniki. He\
+            \ has more than eleven years of experience in server-side Java development and more than three years of deployment\
+            \ automatization and different engineering practices. The author of several open-source projects connected with\
+            \ Spring Cloud on GitHub, writes articles for the own blog, Habrahabr and DZone."}
+      - {language: ru, text: "Инженер-программист из Одноклассников. За плечами Александра — более 11 лет разработки, в ос\
+            новном на Java, более трех лет практики внедрения различного рода автоматизации. Имеет несколько open source-п\
+            роектов, связанных со Spring Cloud на GitHub, ведет собственный блог, пишет статьи на Хабрахабр и DZone."}
   - id: 37
     fileName: 0037.jpg
     name:
@@ -1051,6 +1051,20 @@ speakers:
     name:
       - {language: en, text: "Oleg Anastasiev"}
       - {language: ru, text: "Олег Анастасьев"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: en, text: "Oleg Anastasyev started his career in computer programming in 1995. He developed banking, telecom,\
+            \ public transportation software as well as software for the government of Latvia. Oleg is a principal engineer\
+            \ at Odnoklassniki. His primary responsibilities are development of architectures and solutions for highly loaded\
+            \ as well as big data services, solving performance and availability problems. His last successful projects include\
+            \ NewSQL ACID compliant distributed fault-tolerant database and private cloud system to help manage the whole\
+            \ fleet of Odnoklassniki machines."}
+      - {language: ru, text: "Начал карьеру программиста в далеком 1995 году. Разрабатывал ПО в банковской сфере, телекоме\
+            , транспорте. Работает главным инженером в Одноклассниках. В его обязанности входит разработка архитектур и ре\
+            шений для высоконагруженных систем, больших хранилищ данных, решение проблем производительности и надежности п\
+            ортала."}
   - id: 125
     fileName: 0125.jpg
     name:
@@ -2675,6 +2689,15 @@ speakers:
     fileName: 0363.jpg
     name:
       - {language: en, text: "Paul Stack"}
+    company:
+      - {language: en, text: "Samsung research"}
+    bio:
+      - {language: ru, text: "Paul Stack is an infrastructure coder who has spoken at various events throughout the world\
+            \ about his passion for continuous integration, continuous delivery and good operational procedures and why they\
+            \ should be part of what developers and system administrators do on a day to day basis. He believes that reliably\
+            \ delivering software is more important as its development. Paul’s passions are the DevOps and Continuous Delivery\
+            \ movements and how they help the entire business and its customers."}
+    twitter: stack72
   - id: 364
     fileName: 0364.jpg
     name:
@@ -2682,6 +2705,19 @@ speakers:
       - {language: ru, text: "Александр Титов"}
     company:
       - {language: en, text: "Express 42"}
+      - {language: ru, text: "Экспресс 42"}
+    bio:
+      - language: en
+        text: "Managing partner at Express 42 which grows up DevOps in technology companies.\n\nIn 2009-2010 was a technical\
+            \ director of Scalaxy — the first cloud hosting in Russia.\n\nIn 2010-2012 made an exciting path of takeovers\
+            \ together with Qik — the path from exploitation of a fast-growing startup to exploitation in a large international\
+            \ company — Microsoft.\n\nOrganizer of DevOps Moscow community and DevOpsDays Moscow conference."
+      - language: ru
+        text: "Управляющий партнер в компании Экспресс 42, которая выращивает DevOps в технологических компаниях.\n\nВ 2009-2010\
+            \ годах был техническим директором первого облачного хостинга в России Скалакси.\n\nВ 2010-2012 прошёл увлекат\
+            ельный путь поглощений вместе с компанией Qik — путь из эксплуатации быстрорастущего стартапа к эксплуатации в\
+            \ крупной международной компании Microsoft.\n\nОрганизатор сообщества DevOps Moscow, конференции DevOpsDays Moscow."
+    twitter: osminog
   - id: 365
     fileName: 0365.jpg
     name:
@@ -2697,6 +2733,24 @@ speakers:
     name:
       - {language: en, text: "Leonid Igolnik"}
       - {language: ru, text: "Леонид Игольник"}
+    company:
+      - {language: en, text: "CA Technologies"}
+    bio:
+      - {language: en, text: "Leonid is a technologist blending product development, product management and product operations\
+            \ at scale. In his current role as a Vice President of Engineering with CA Technologies he is responsible for\
+            \ product development of SaaS applications for the Enterprise Security space. He has spent his entire professional\
+            \ career building online applications starting his career at one of the earliest internet service providers in\
+            \ Israel. Leonid first started building large scale applications in Java in 2002 while working for the 2nd largest\
+            \ domain registrar at the time at Tucows/OpenSRS where he led the platform team. Subsequently to that he held\
+            \ several technology leadership roles with companies in Canada and US. Most recently Leonid has been responsible\
+            \ for engineering teams at Taleo (acquired by Oracle) building applications that help millions of people find\
+            \ jobs that have propelled the company to a position of one of the 4 largest SaaS companies in the world."}
+      - {language: ru, text: "Леонид хорошо знаком и с разработкой, и с управлением, и с администрированием масштабных про\
+            ектов. Сейчас он занимает должность Vice President of Engineering в CA Technologies, отвечая за разработку SaaS-п\
+            риложений в сфере enterprise security. Всю свою карьеру он занимается онлайн-приложениями, начав её в одном из\
+            \ первых интернет-провайдеров Израиля. Первый опыт работы с масштабными приложениями на Java у него произошёл\
+            \ в 2002-м, когда он работал во втором по величине на тот момент доменном регистраторе."}
+    twitter: ligolnik
   - id: 368
     fileName: 0368.jpg
     name:
@@ -2731,57 +2785,198 @@ speakers:
     fileName: 0374.jpg
     name:
       - {language: en, text: "Corey Quinn"}
+    company:
+      - {language: en, text: "Editor, lastweekinaws.com"}
+    bio:
+      - language: en
+        text: "Corey has a history as an engineering manager, public speaker, and cloud strategist. He's best known for editing\
+            \ the weekly newsletter \"Last Week in AWS.\" \nOutside of his professional work, Corey can be found overdressing,\
+            \ telling entertaining stories, and carrying a cigarette case full of drink umbrellas."
+    twitter: quinnypig
   - id: 375
     fileName: 0375.jpg
     name:
       - {language: en, text: "Adrian Cole"}
+    company:
+      - {language: en, text: Pivotal}
+    bio:
+      - {language: en, text: "Adrian works at Pivotal, on the Spring Cloud team. He spends most time on Zipkin, usually in\
+            \ Java. He also runs a distributed tracing working group for implementors."}
+    twitter: adrianfcole
+    gitHub: adriancole
   - id: 376
     fileName: 0376.jpg
     name:
       - {language: en, text: "Sergey Sharapov"}
       - {language: ru, text: "Сергей Шарапов"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: en, text: "Has been working at Odnoklassniki since 2010. Used to install and set up server and network\
+            \ hardware. After that worked in monitoring team and since 2014 has been creating and developing various internal\
+            \ systems for Mail.Ru Group as a system analyst starting with automated KPI systems creation till business processes\
+            \ building for HR. Was participating in the creation of a system for checking and predicting operational indicators\
+            \ of servers and storage arrays and a system for real-time monitoring of business logic rates in Odnoklassniki.\
+            \ Is also developing the already existing monitoring for the other MRG projects."}
+      - {language: ru, text: "С 2010 года начал работать в Одноклассниках инженером. Устанавливал и настраивал серверное и\
+            \ сетевое оборудование. Потом поработал в команде мониторинга и с 2014 года занимается созданием и развитием р\
+            азличных внутренних систем для Mail.Ru Group в роли системного аналитика: от создания автоматизированных систе\
+            м KPI до выстраивания бизнес процессов для HR. Участвовал в создании системы для проверки и прогнозирования оп\
+            ерационных показателей серверов и массивов и системы для оперативного мониторинга показателей бизнес логики в\
+            \ Одноклассниках. Также занимается развитием существующего мониторинга для остальных проектов MRG."}
   - id: 377
     fileName: 0377.jpg
     name:
-      - {language: en, text: "Ray Tsang"}
+      - {language: en, text: "Ray Тsang"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Ray is a Developer Advocate for the Google Cloud Platform. Ray had extensive hands on cross-industry\
+            \ enterprise systems integration delivery and management experiences during his time at Accenture, managed full\
+            \ stack application development, DevOps, and ITOps. Ray specialized in middleware, big data, and PaaS products\
+            \ during his time at Red Hat while contributing to open source projects, such as Infinispan. Aside from technology,\
+            \ Ray enjoys traveling and adventures."}
+    twitter: saturnism
   - id: 378
     fileName: 0378.jpg
     name:
       - {language: en, text: "Craig Box"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Craig is an advocate and field product lead for Google Cloud. His job is spreading the message\
+            \ of platforms, collecting customer feedback on rough edges, and then working with the engineers until they are\
+            \ smoothed! He started his career as a systems administrator, and has worked in development, deployment, DevOps,\
+            \ consulting, advisory and management roles."}
+    twitter: craigbox
   - id: 379
     fileName: 0379.jpg
     name:
       - {language: en, text: "Nikolay Ryzhikov"}
       - {language: ru, text: "Николай Рыжиков"}
+    company:
+      - {language: en, text: "Health Samurai"}
+    bio:
+      - {language: en, text: "Likes Clojure, PostgreSQL, open source code and open standards, flexible and careful approach\
+            \ in development. Actively participates in St. Petersburg communities FProg and Piter-United and Internet community\
+            \ Clojurians. Most of his code and almost all his presentations can be found on [GitHub](https://github.com/niquola)."}
+      - {language: ru, text: "Любит Clojure, PostgreSQL, открытый код и открытые стандарты, гибкий и бережливый подход к р\
+            азработке. Активно участвует в питерских сообществах FProg и Piter-United и интернет-сообществе Clojurians. Зн\
+            ачительную часть производимого Николаем кода и почти все его презентации можно найти на [GitHub](https://github.com/niquola)."}
+    twitter: niquola
+    gitHub: niquola
   - id: 380
     fileName: 0380.jpg
     name:
       - {language: en, text: "Ivan Glushkov"}
       - {language: ru, text: "Иван Глушков"}
+    company:
+      - {language: en, text: Postmates}
+    bio:
+      - language: en
+        text: "Software Engineer with more than 15 years of experience, works at Postmates, Infrastructure Team, previously\
+            \ worked on Platform Products (mainly k8s) in MZ, Commenting Platform in Echo, Elbrus Compiler project in MCST.\
+            \ \nHost of the DevZen podcast (over 3 years). \nPrefers to deal with functional languages, but as the world is\
+            \ not perfect, had to learn a lot of other languages. \nIn all the companies advocates for DevOps ideas."
+      - language: ru
+        text: "Уже более 15 лет является разработчиком ПО, сейчас работает в Postmates над разными продуктами Infrastructure\
+            \ Team, до этого работал над продуктами в MZ (в основном k8s), писал платформу для комментирования в Echo, раз\
+            рабатывал компиляторы для процессора Эльбрус в MCST. \nБолее 3 лет является ведущим подкаста DevZen. \nПредпоч\
+            итает писать на функциональных языках, но из-за неидеальности мира пришлось выучить много других языков. \nГде\
+            \ бы ни работал, везде продвигает идеи DevOps."
+    twitter: gliush
   - id: 381
     fileName: 0381.jpg
     name:
       - {language: en, text: "Radek Simko"}
+    company:
+      - {language: en, text: HashiCorp}
+    bio:
+      - {language: en, text: "Radek is a software engineer at HashiCorp working on Terraform. Prior to joining he was part\
+            \ of the operations team at Time Inc. in the UK where he built tools for automating many parts of the deployment\
+            \ pipeline. He gravitated for most of his career towards automation and solving problems through code. Besides\
+            \ open-source communities where he’s been active in the past years as both contributor and maintainer he also\
+            \ enjoys discovering new places around the world and eating food while posting it on Instagram."}
+    twitter: radeksimko
+    gitHub: radeksimko
   - id: 382
     fileName: 0382.jpg
     name:
       - {language: en, text: "Artem Kalichkin"}
-      - {language: ru, text: "Артем Каличкин"}
+      - {language: ru, text: "Артём Каличкин"}
+    company:
+      - {language: en, text: "Zolotaya Korona"}
+      - {language: ru, text: "Золотая Корона"}
+    bio:
+      - language: en
+        text: "Director of Maintenance and Operation of Services Department at \"KoronaPay — Money transfer service\". \n\n\
+            Is providing fault tolerance and continuity of company's processing services. Successfully launched ITIL, fan\
+            \ the spark of DevOps — you can learn more about it in his previous talks at RootConf 2015 and 2016. \n\nActively\
+            \ works with both Dev and Ops young specialists. Tries to teach the principles of commercial development and software\
+            \ operation. Teacher at special courses at Novosibirsk State University."
+      - language: ru
+        text: "Директор по сопровождению и эксплуатации сервисов платёжной системы «Золотая корона — Денежные переводы». \n\
+            \nОбеспечивает отказоустойчивость и непрерывность предоставления процессинговых сервисов компании. Успешно зап\
+            устил ITIL, потом немного пододвинул его, и, вовлекая инженеров всех уровней, зажёг луч DevOps, о чём можно уз\
+            нать из докладов Артёма с конференции RootConf 2015 и 2016 гг. \n\nАктивно занимается работой с молодыми специ\
+            алистами, как Dev, так и Ops. Рассказывает и старается научить принципам промышленной разработки и эксплуатаци\
+            и ПО. Ведёт профильные спецкурсы в Новосибирском Государственном Университете."
   - id: 383
     fileName: 0383.jpg
     name:
       - {language: en, text: "Sergey Berdnikov"}
       - {language: ru, text: "Сергей Бердников"}
+    company:
+      - {language: en, text: "Zolotaya Korona"}
+      - {language: ru, text: "Золотая Корона"}
+    bio:
+      - language: en
+        text: "Lead of Operation Department at \"KoronaPay — Money transfer service\". \n\nWorks with services operation in\
+            \ enterprise environment and helps developers to add there both familiar and new instruments, integrating them\
+            \ into IT landscape. \n\nActively works with the development of both build processes and continuous software delivery\
+            \ automatization."
+      - language: ru
+        text: "Руководитель отдела эксплуатации платежной системы «Золотая корона — Денежные переводы». \n  \nЗанимается э\
+            ксплуатацией сервисов в энтерпрайз-окружении и помогает разработчикам добавлять в него привычные и новые инстр\
+            ументы, интегрируя их в IT-ландшафт. \n\nОптимизирует процессы выноса новых продуктов в компании. Активно зани\
+            мается разработкой по вопросам автоматизации процессов сборки и непрерывной поставки ПО."
   - id: 384
     fileName: 0384.jpg
     name:
       - {language: en, text: "Vitaly Khabarov"}
       - {language: ru, text: "Виталий Хабаров"}
+    company:
+      - {language: en, text: "Express 42"}
+      - {language: ru, text: "Экспресс 42"}
+    bio:
+      - {language: en, text: "Working as a system administrator, Vitaly came to a conclusion that useful tasks should be automated\
+            \ and activities that do not bring benefits should be disposed of. Having settled into the company Express 42,\
+            \ Vitaly discovered DevOps practices, which he now helps to distribute within the developer companies."}
+      - {language: ru, text: "Работая системным администратором, пришёл к выводу, что полезные задачи надо автоматизироват\
+            ь, а от деятельности, не приносящей пользу, следует избавляться. Устроившись в компанию Экспресс 42, открыл дл\
+            я себя практики DevOps, которые сейчас и помогает распространять внутри компаний-разработчиков."}
+    twitter: vitkhab
   - id: 385
     fileName: 0385.jpg
     name:
       - {language: en, text: "Andrey Filatov"}
       - {language: ru, text: "Андрей Филатов"}
+    company:
+      - {language: en, text: "Epam Systems"}
+    bio:
+      - {language: en, text: "Andrey is a high-skilled DevOps engineer involved in the development and support of high-load\
+            \ and high-performance client and server-side web applications. Has strong maintenance experience for 10+ years.\
+            \ Was involved in building of high-load infrastructure, managing and leading L2/L3 support team, migrating applications\
+            \ to Clouds (AWS, OpenStack, etc.). Is experienced in implementing Continuous Integration and Delivery, developing/adopting\
+            \ software development live cycle suitable for DevOps engineering teams, as well as performance optimization,\
+            \ debugging and profiling."}
+      - {language: ru, text: "Высококвалифицированный DevOps-инженер, участвовавший в разработке и поддержке многих высоко\
+            нагруженных систем. Имеет более 10 лет опыта в администрировании. Занимался построением высоконагруженных инфр\
+            аструктур, управлением команд поддержки L2/L3. Опытен в миграции различного рода приложений в «Облака» (AWS, OpenStack,\
+            \ etc.), в построении Continuous Integration и Delivery решений, в создании/адаптировании полного цикла разраб\
+            отки для команд, занимающихся DevOps-инжинирингом, а также в оптимизации производительности и профилировании."}
+    twitter: dvl_lincore
   - id: 386
     fileName: 0386.jpg
     name:

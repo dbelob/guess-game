@@ -29,6 +29,23 @@ events:
   # DevOops
   - eventTypeId: 1
     name:
+      - {language: en, text: "DevOops 2017"}
+    startDate: "2017-10-20"
+    endDate: "2017-10-20"
+    siteLink:
+      - {language: en, text: "https://2017.devoops.ru/en/"}
+      - {language: ru, text: "https://2017.devoops.ru/"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Startovaya St., 6 A, Hotel «Crowne Plaza St.Petersburg Airport»"}
+      - {language: ru, text: "Стартовая, д. 6 литер А, Гостиница «Crowne Plaza St.Petersburg Airport»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PL-ety8gh7rToUMuEgJFAL3T3ufc0VlCAe
+    mapCoordinates: "59.806223, 30.316258"
+    talkIds: [571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587]
+  - eventTypeId: 1
+    name:
       - {language: en, text: "DevOops 2019 SPb"}
       - {language: ru, text: "DevOops 2019 СПб"}
     startDate: 2019-10-29

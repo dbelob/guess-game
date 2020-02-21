@@ -8989,3 +8989,486 @@ talks:
     presentationLinks: []
     videoLinks: ["https://youtu.be/EnooA2kEhY0"]
     speakerIds: [123]
+  - id: 571
+    name:
+      - {language: en, text: "Come scale away with me: solving for problems you don’t have"}
+    shortDescription:
+      - {language: en, text: "In this entertaining talk, come see why everything is terrible, nobody is happy, and why you’\
+            re going to be okay, even though after visiting intellectual conferences with smart talks you think you're a crap\
+            \ at building reliable applications."}
+    longDescription:
+      - language: en
+        text: "Many talks at DevOps conferences are about the speaker’s infrastructure as a shining light in a sea of darkness.\
+            \ The takeaway is invariable that your infrastructure is bad, you’re crap at building reliable applications, and\
+            \ you should probably go become an accountant instead. Having seen inside these large mythical environments, Corey\
+            \ is well positioned to tell the story of why this narrative is complete crap. \nIn this entertaining talk, come\
+            \ see why everything is terrible, nobody is happy, and why you’re going to be okay."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/3gzXwMhOOcawoqOcUOse4e/54b036be09ae9a0aa8d736622900b11c/Corey_Quinn_-_Come_Scale_Away_With_Me.pdf"]
+    videoLinks: ["https://youtu.be/oplbmUaLUBw"]
+    speakerIds: [374]
+  - id: 572
+    name:
+      - {language: en, text: "How to properly blame things for causing latency: an introduction to distributed tracing and\
+            \ Zipkin"}
+    shortDescription:
+      - {language: en, text: "This session will overview how to debug latency problems, using call graphs created by Zipkin."}
+    longDescription:
+      - language: en
+        text: "Latency analysis is an act of blaming components for causing user perceptible delay. In today's world of microservices,\
+            \ this can be tricky as requests can fan out across polyglot components and even data-centers. This session will\
+            \ overview how to debug latency problems, using call graphs created by Zipkin. \n\nThis talk will review concepts,\
+            \ such as how tracing logging and metrics fit together. It will introduce Zipkin including its tracing data model\
+            \ and architecture. It will show a little demo code in JavaScript and Java, but code expertise isn't required.\
+            \ When you leave, you'll at least know something about distributed tracing, and hopefully be on your way to blaming\
+            \ things for causing latency!"
+    talkDay: 1
+    trackTime: "11:40"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2M7YYzILDqMqWSyQ6SKMEY/dee738b162260421a7fdd77d5598d8c5/Adrian_Cole_How_to_properly_blame_things_for_causing_latency-_an_introduction_to_distributed_tracing_and_Zipkin.pdf"]
+    videoLinks: ["https://youtu.be/g6urcYnbXFI"]
+    speakerIds: [375]
+  - id: 573
+    name:
+      - {language: en, text: "10 reasons [not] to use k8s"}
+      - {language: ru, text: "10 причин [не] использовать k8s"}
+    shortDescription:
+      - {language: en, text: "We'll dwell on the problems that we encountered while working with k8s, give some advice that\
+            \ helped us, and try to prove that in the modern world you can’t live without k8s."}
+      - {language: ru, text: "Расскажем про собранные грабли при работе с Kubernetes, поделимся наработками, которые в сво\
+            ё время нам помогли, а также постараемся доказать, что без k8s в современном мире никуда."}
+    longDescription:
+      - {language: en, text: "Based on personal experience we’ll show the problems that we encountered while working with\
+            \ k8s, and give some advice that helped us and most likely will help you. We’ll try to prove that in the modern\
+            \ world you can’t live without k8s. For those who don’t like k8s, we’ll provide some proofs why you shouldn’t\
+            \ move to it."}
+      - {language: ru, text: "На основе своего опыта работы с Kubernetes расскажем про грабли, которые мы собрали, и про н\
+            аработки, которые помогли нам и которые должны помочь и вам. Постараемся доказать, что без k8s в современном м\
+            ире никуда. Противникам k8s также предоставим отличные причины, почему не стоит на него переходить."}
+    talkDay: 1
+    trackTime: "11:40"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4nxZsZlzSwiQig8IwaAskM/dc4f420165c61eef90793ed09a189b74/________________________10______________________________________________k8s.pdf"]
+    videoLinks: ["https://youtu.be/wiCKL2SrDM0"]
+    speakerIds: [380]
+  - id: 574
+    name:
+      - {language: en, text: "Silicon Valley Chainsaw Massacre (how I spent my last Friday night on-call)"}
+      - {language: ru, text: "Кремниевая Резня Бензопилой (как я провёл прошлые выходные на дежурстве)"}
+    shortDescription:
+      - {language: en, text: "It’s 2017 and on-call shifts don’t have to be a horror movie anymore."}
+      - {language: ru, text: "На дворе 2017 год, и дежурство уже не обязательно должно напоминать фильм ужасов."}
+    longDescription:
+      - {language: en, text: "It’s 2017 and on-call shifts don’t have to be a nightmare anymore. In this talk we’ll discuss\
+            \ how to structure the process in a way it won’t look like blood, guts and body parts flying around. Which tools\
+            \ and techniques can help us? From a knowledge base tips, via proper design of the escalation path and an overview\
+            \ of the tools, we’ll talk about everything that can release the pain. Also, should all the developers have access\
+            \ to the production?"}
+      - {language: ru, text: "На дворе 2017 год, и дежурство уже не обязательно должно напоминать фильм ужасов. В этом док\
+            ладе мы обсудим, как построить процесс дежурства таким образом, чтобы оно перестало проходить в атмосфере кров\
+            ищи, отлетающих конечностей и размазанных кишок. Какие инструменты и методологии могут в этом помочь? Мы обсуд\
+            им такие вещи, как база знаний, построение иерархического порядка, RCA и полезные инструменты. Поговорим обо в\
+            сём, что может снять боль, а заодно подумаем, кому всё же давать доступ в прод?"}
+    talkDay: 1
+    trackTime: "11:40"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/73TFhVRh04sGU2oG2sgCmq/aa627310b51637ba868539a73e8fdba5/Igolnik-Sadogursky_____Chainsaw_Massacre.pdf"]
+    videoLinks: ["https://youtu.be/_zbUlDkLVok"]
+    speakerIds: [35, 367]
+  - id: 575
+    name:
+      - {language: en, text: "SmartMonitoring — business logic monitoring in Odnoklassniki"}
+      - {language: ru, text: "SmartMonitoring — мониторинг бизнес-логики в Одноклассниках"}
+    shortDescription:
+      - {language: en, text: "This talk is devoted to SmartMonitoring system, how it works and which difficulties the creators\
+            \ have faced."}
+      - {language: ru, text: "Как создавалась система SmartMonitoring, особенности ее работы, а также с какими трудностями\
+            \ столкнулись ее создатели."}
+    longDescription:
+      - language: en
+        text: "The most critical aspect of business logic monitoring is to identify the incident's nature. Quite often it\
+            \ takes a significant amount of time and requires a highly qualified specialist, seeing that the main indicators\
+            \ of web site and services performance are presented in thousands of graphs, thus the search of the original source\
+            \ is challenging. So that's why the SmartMonitoring system has been created. It can find anomalies in portal's\
+            \ work and shows the connection between them, therefore making administrator's and developer's work easier. In\
+            \ case of an incident, such system helps to understand exactly which of a dozen of our services was the first\
+            \ one to fail, speeds up the \"unraveling of the tangle\" during the incident investigation and helps to quickly\
+            \ find the service that is to be blamed. \nWe'll tell you how we've created a system like this, how it works and\
+            \ which difficulties we've faced."
+      - language: ru
+        text: "Самым критичным в мониторинге бизнес-логики является этап выяснения сути инцидента, зачастую он занимает зн\
+            ачительное время и требует высокой квалификации сотрудника, так как основные показатели работы сайта и сервисо\
+            в представлены более чем 100 тысячами графиков и нахождение первоисточника — не самое простое дело. Поэтому бы\
+            ла создана система мониторинга (SmartMonitoring), которая умеет находить аномалии в работе портала и показыват\
+            ь связь между ними, что значительно упрощает работу как администраторам, так и программистам. Такая система по\
+            могает в случае инцидента понять, какой именно среди десятков наших сервисов засбоил первым и, соответственно\
+            , ускоряет распутывание «клубка» в процессе расследования инцидента и помогает быстро находить сервис, который\
+            \ во всем виноват. \nВ этом докладе мы расскажем, как мы создали такую систему, как она работает и с какими тр\
+            удностями мы столкнулись."
+    talkDay: 1
+    trackTime: "12:50"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/3u1hJ04FrGQmIwmosmYkaw/c44153509c401e5681f1b88fee50502f/_______________________________SmartMonitoring_DevOps.pdf"]
+    videoLinks: ["https://youtu.be/eE_V_wFV6HE"]
+    speakerIds: [376]
+  - id: 576
+    name:
+      - {language: en, text: "Expanding k8s"}
+      - {language: ru, text: "Расширяем k8s"}
+    shortDescription:
+      - {language: en, text: "We'll check out how and why Kubernetes is connected with cybernetics, discuss a bunch of architectural\
+            \ slip-ups in Kubernetes and how to fix them. You'll learn why you can throw away Jenkins or TeamCity and build\
+            \ your CI/CD or a PostgreSQL high-availability cluster in a short time."}
+      - {language: ru, text: "Разберёмся, как и почему Kubernetes связан с кибернетикой, обсудим набор архитектурных недос\
+            мотров и как их исправить, а также узнаем, как собрать из кубиков свой CI/CD или высокодоступный кластер PostgreSQL,\
+            \ выбросив Jenkins или TeamCity."}
+    longDescription:
+      - language: en
+        text: "Kubernetes is probably the most interesting thing that happened in DevOps world after Docker. We'll try to\
+            \ sort out how and why Kubernetes is connected with cybernetics. We'll discuss a bunch of architectural slip-ups\
+            \ in Kubernetes and how to fix them. \n\nKubernetes is a framework that creates an adult infrastructure. We'll\
+            \ try to find an idiomatic way to build the final solution using the primitives of Kubernetes, ThirdPartyResources\
+            \ and Operations (Custom Controllers). \n\nWe'll check out why you can throw away Jenkins or TeamCity and build\
+            \ your CI/CD or a PostgreSQL high-availability cluster in a short time."
+      - language: ru
+        text: "Kubernetes — наверное, самое интересное, что случилось в мире DevOps после Docker. Мы попробуем разобраться\
+            , как и почему Kubernetes связан с кибернетикой. Обсудим набор архитектурных недосмотров в Kubernetes и как их\
+            \ исправить. \n\nKubernetes — это фреймворк для создания взрослой инфраструктуры. Попробуем увидеть идиоматиче\
+            ский путь построения конечного решения с использованием примитивов Kubernetes, ThirdPartyResources и Operators\
+            \ (Custom Controllers). \n\nПосмотрим, почему можно выбросить Jenkins или TeamCity и за короткое время собрать\
+            \ из кубиков свой CI/CD или высокодоступный кластер PostgreSQL."
+    talkDay: 1
+    trackTime: "12:50"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/3BMTNx2xCtQ"]
+    speakerIds: [379]
+  - id: 577
+    name:
+      - {language: en, text: "Managing multiple clouds FTW"}
+    shortDescription:
+      - {language: en, text: "Key differences between two popular cloud offerings (AWS, Google Cloud) and how to manage a\
+            \ multi-cloud environment using Terraform"}
+    longDescription:
+      - language: en
+        text: "Once your applications live in the cloud you begin to realize that not all clouds are the same. They differ\
+            \ in price, some offer better performance in certain areas, some are more suitable for your business use cases\
+            \ etc. Sooner or later you might begin to ponder with an idea of running your workload in multiple cloud providers\
+            \ to get the best service you can for a reasonable price.\n \nWhile workload schedulers solve the top layer of\
+            \ the problem — abstract work being scheduled in the form of containers, processes, etc. — not so many organisations\
+            \ realize the challenge of managing lower layers, meaning compute, databases, load balancers and generally anything\
+            \ prior to having a scheduler running in the infrastructure, ready to schedule work.\n \nIn this talk we’ll walk\
+            \ through some key differences between two popular cloud offerings (AWS, Google Cloud) and talk about how to manage\
+            \ a multi-cloud environment using Terraform. Time permitting we'll also see a demonstration involving deployment\
+            \ across multiple clouds."
+    talkDay: 1
+    trackTime: "12:50"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/63Xp9AEVXiYaguscGuscw4/be6c55cf32dcfa3b1504fbda4e2cf2ce/Radek_Simko_Managing_Multiple_Clouds_FTW.pdf"]
+    videoLinks: ["https://youtu.be/u9Yi9VAO0Ec"]
+    speakerIds: [381]
+  - id: 578
+    name:
+      - {language: en, text: "From a sysadmin to a human being"}
+      - {language: ru, text: "От сисадмина к человеку"}
+    shortDescription:
+      - {language: en, text: "DevOps as a system, how it helps business, what developers' competences should be there for\
+            \ DevOps, what business tasks can be solved by DevOps method of production, along with mistakes that are waiting\
+            \ for you on your way to DevOps production and how to avoid them."}
+      - {language: ru, text: "DevOps как система, как он помогает бизнесу, какие компетенции со стороны инженеров должны п\
+            оявиться для DevOps, какие бизнес-задачи можно решать DevOps-методом производства, а также какие ошибки возмож\
+            ны на пути к DevOps производству и как их избежать или купировать."}
+    longDescription:
+      - language: en
+        text: "There are basically two well-established points of view about DevOps — one of system administrators and the\
+            \ other of developers. The first ones usually boast that they've been using Chef/Puppet/Ansible/Docker since 200X,\
+            \ the second ones assume that DevOps has outlived itself and leads to NoOps, or that \"I've wrapped it all in\
+            \ a container, now we'll wait and see\". \n\nAt the same time, business reads articles about DevOps and hopes\
+            \ that the low-level guys will figure it out. DevOps though doesn't seem to happen, business doesn't look like\
+            \ Google, the company isn't turquoise, people do not create new approaches to test hypotheses in the world. \n\
+            \nThis talk is about DevOps as a system. How it helps business, what developers' competences should be there for\
+            \ DevOps, what business tasks can be solved by DevOps method of production, along with mistakes that are waiting\
+            \ for you on your way to DevOps production and how to avoid them. \n\nHow an engineer can finally become a decent\
+            \ human being and a creator in this world, how to make a career path according to this purpose and how to start\
+            \ looking at technologies in a proper way."
+      - language: ru
+        text: "На DevOps есть по крайней мере два устоявшихся взгляда — со стороны системных администраторов и со стороны\
+            \ разработчиков. Первые обычно хвастаются тем, что используют Chef/Puppet/Ansible/Docker c 200X года, вторые с\
+            читают, что DevOps либо изжил себя и ведет к NoOps, либо, что «я завернул всё в контейнер, а дальше, как пойдё\
+            т». \n\nБизнес при этом читает про DevOps в статьях и надеется, что ребята снизу разберутся, что с ним делать\
+            . При этом самого DevOps не происходит, бизнес не похож на Google, компания не становится бирюзовой, люди не с\
+            оздают новых подходов для проверки гипотез в мире. \n\nДоклад будет про DevOps как систему. Как он помогает би\
+            знесу, какие компетенции со стороны инженеров должны появиться для DevOps, какие бизнес-задачи можно решать DevOps-м\
+            етодом производства программного обеспечения, а также какие ошибки возможны на пути к DevOps производству и ка\
+            к их избежать или купировать. \n\nКак в конце концов инженеру стать Человеком и быть в этом мире творцом, как\
+            \ для этого построить карьерный путь и как начать смотреть на технологии по-человечески."
+    talkDay: 1
+    trackTime: "14:25"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/6dYt28v3B6EY4GcSkI4Qkk/2478105a9ef7b8403909235a5b7b29f5/Titov_Alexander_Ot_sysadmina_k_cheloveky.pdf"]
+    videoLinks: ["https://youtu.be/FAyTAMjcCbI"]
+    speakerIds: [364]
+  - id: 579
+    name:
+      - {language: en, text: "Managing your microservices with Kubernetes and Istio"}
+    shortDescription:
+      - {language: en, text: "As applications move towards a distributed microservice architecture they become more difficult\
+            \ to manage. Learn how you can do it with Kubernetes and Istio."}
+    longDescription:
+      - language: en
+        text: "As monolithic applications transition towards a distributed microservice architecture they become more difficult\
+            \ to manage and understand. You need basic necessities such as discovery, load balancing, failure recovery, metrics\
+            \ and monitoring, and more complex operational requirements such as A/B testing, canary releases, rate limiting,\
+            \ access control, and end-to-end authentication. The term \"service mesh\" is used to describe a network of microservices\
+            \ that make up applications and the interactions between them. As the service mesh grows in size and complexity,\
+            \ it becomes harder to understand and manage. \n\nLearn how you can solve these problems with Kubernetes and Istio.\
+            \ \n\nThis talk will be accessible to anyone with an understanding of \"DevOps\" but will be best for people with\
+            \ some experience with containers (Docker/rkt) and Kubernetes."
+    talkDay: 1
+    trackTime: "14:25"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4hM6NpHRCMsq60Gqw0Oow2/e1acc71e332e09427e66ad32cbdb58e0/Craig_Box_-_Managing_your_microservices_with_Kubernetes_and_Istio.pdf"]
+    videoLinks: ["https://youtu.be/RnBXQpo6Mjs"]
+    speakerIds: [378]
+  - id: 580
+    name:
+      - {language: en, text: "Comparing Ansible, SaltStack, Chef and Puppet from practice perspective"}
+      - {language: ru, text: "Ансамбль солёных поваров-кукловодов: сравниваем Ansible, SaltStack, Chef и Puppet"}
+    shortDescription:
+      - {language: en, text: "Using the real stories from our practice, we'll compare Ansible, SaltStack, Chef and Puppet\
+            \ and decide which one is actually more suitable for a particular case."}
+      - {language: ru, text: "Основываясь на историях из практики, сравним Ansible, SaltStack, Chef и Puppet и выберем луч\
+            ший вариант для конкретной задачи."}
+    longDescription:
+      - {language: en, text: "This talk contains a few stories from our practice which should allow us to compare Ansible,\
+            \ SaltStack, Chef and Puppet and decide which one is actually more suitable for a particular case."}
+      - {language: ru, text: "Доклад будет построен на основе историй из практики, через призму которых мы постараемся сра\
+            внить Ansible, SaltStack, Chef и Puppet, выбрав лучший вариант для конкретной задачи."}
+    talkDay: 1
+    trackTime: "14:25"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/6vujod0vmgm82KkSGwOc0a/e75d72a5fbd63192ef08933861c1b702/______________________________________________________________________________-____________________.pdf"]
+    videoLinks: ["https://youtu.be/3xA2SggKQKo"]
+    speakerIds: [385]
+  - id: 581
+    name:
+      - {language: en, text: "Continuously delivering infrastructure to the cloud"}
+    shortDescription:
+      - {language: en, text: "Let's look at real world examples of how to deploy infrastructure to the cloud that self heals\
+            \ and is scalable to withstand third party provider outages."}
+    longDescription:
+      - language: en
+        text: "In this talk Paul will demonstrate how to use open source tooling like Packer and Terraform to continuously\
+            \ deliver infrastructure changes to everyone's favourite cloud environment. \n\nBy the end of the session you\
+            \ will have learned how to setup builds to build and deploy your AMIs, and a bit of extra polish to make it ready\
+            \ for production. Following this you will be able to build a safe, controlled continuous delivery pipeline using\
+            \ open source tooling, that self heals and is scalable to withstand 3rd party provider outages. This should help\
+            \ you think about ways to avoid that 4am pager alert."
+    talkDay: 1
+    trackTime: "15:35"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/47ke7OvXHOAmsyGEyqcQOS/c64b628388293bdf8a5c6c5f9493a5a2/Paul_Stack_-_CDforInfra.pdf"]
+    videoLinks: ["https://youtu.be/FJvl13EYtBU"]
+    speakerIds: [363]
+  - id: 582
+    name:
+      - {language: en, text: "Panel discussion – How to \"sell\" DevOps to your teammates, your boss, and others who don't\
+            \ give a f*ck"}
+      - {language: ru, text: "Круглый стол - Как \"продать\" DevOps коллегам, начальству и прочим равнодушным"}
+    shortDescription:
+      - {language: en, text: "In this panel discussion, we'll dwell on your colleagues, bosses, and others who still not fully\
+            \ understand why all this buzz around DevOps is necessary."}
+      - {language: ru, text: "За этим круглым столом мы поговорим о ваших коллегах, начальниках и остальных, кто, возможно\
+            , ещё не до конца понимает, зачем вот эта вся движуха вокруг DevOps необходима."}
+    longDescription:
+      - language: en
+        text: "If you came to this conference, you aware of how DevOps can be useful to you and your company. Here in this\
+            \ panel discussion, we'll dwell on your colleagues, bosses, and others who still not fully understand why all\
+            \ this buzz is necessary. \n\nThis hot issue will be considered from different perspectives by a Developer Advocate\
+            \ of JFrog company, a software engineer of Odnoklassniki with more than 10 years of experience in server-side\
+            \ Java development, a Vice President of Engineering with CA Technologies, a leading developer of Odnoklassniki\
+            \ (a Platform Team member), along with a managing partner at Express 42 — a DevOps consulting company. By the\
+            \ end of this discussion you'll be up in arms with new arguments to persuade any retrograde person. \n\nPanel\
+            \ discussion's moderator: Baruch Sadogursky\nParticipants: Alexander Titov, Alexander Tarasov, Leonid Igolnik,\
+            \ Oleg Anastasiev"
+      - language: ru
+        text: "Если вы пришли на эту конференцию, значит, вы понимаете, чем DevOps полезен вам и вашей организации. За эти\
+            м круглым столом мы поговорим о ваших коллегах, начальниках и остальных, кто, возможно, ещё не до конца понима\
+            ет, зачем вот эта вся движуха необходима. \n\nЭтот животрепещущий вопрос обсудят с разных сторон Developer Advocate\
+            \ компании JFrog, инженер Одноклассников с опытом разработки более 10 лет, Vice President of Engineering в CA\
+            \ Technologies, ведущий разработчик Одноклассников в команде платформы, а также управляющий партнер компании Э\
+            кспресс 42, представляющей услуги и консалтинг в области DevOps. По окончании дискусии вы будете вооружены нов\
+            ыми аргументами для того, чтобы уговорить любого ретрограда. \n\nВедущий круглого стола: Барух Садогурский\nУч\
+            астники: Александр Титов, Александр Тарасов, Леонид Игольник, Олег Анастасьев"
+    talkDay: 1
+    trackTime: "15:35"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/ZWyjxjDeUvg"]
+    speakerIds: [364, 124, 367, 36, 35]
+  - id: 583
+    name:
+      - {language: en, text: "Continuous Delivery in Windows environment"}
+      - {language: ru, text: "Continuous Delivery в Windows среде"}
+    shortDescription:
+      - {language: en, text: "We'll tell you how we managed to automate the launch of test environments, with Windows as an\
+            \ application server, about the problems we faced and how we overcame them."}
+      - {language: ru, text: "Расскажем о том, как у нас получилось автоматизировать запуск тестовых сред, где сервером пр\
+            иложений является Windows, о проблемах, с которыми мы столкнулись, и как мы их преодолели."}
+    longDescription:
+      - language: en
+        text: "Is it possible to build a solid foundation for Continuous Delivery in an environment so unusual for DevOps?\
+            \ We'll tell you how we managed to automate the launch of test environments, with Windows as an application server,\
+            \ about the problems we faced and how we overcame them. \n\nThe talk will be interesting for engineers going to\
+            \ implement DevOps practices in Windows environments, as well as for newcomers to DevOps, as some details of the\
+            \ Continuous Delivery process will be revealed."
+      - language: ru
+        text: "Возможно ли построить прочный фундамент для Continuous Delivery в столь непривычной для DevOps среде? Расск\
+            ажем о том, как у нас получилось автоматизировать запуск тестовых сред, где сервером приложений является Windows,\
+            \ о проблемах, с которыми мы столкнулись, и как мы их преодолели. \n\nДоклад будет интересен инженерам, только\
+            \ собирающимся внедрять практики DevOps в Windows среду, а также новичкам в DevOps, так как в докладе будут ос\
+            вещены детали процесса Continuous Delivery."
+    talkDay: 1
+    trackTime: "15:35"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1QglFQaqA4G84U6IWM0IG8/82fc83d160c757f95e3565759fe56554/Vitaly_Khabarov_Continuous_Delivery_in_Windows_environment.pdf"]
+    videoLinks: ["https://youtu.be/WSNJU7RYhC4"]
+    speakerIds: [384]
+  - id: 584
+    name:
+      - {language: en, text: "Troubleshooting & debugging production applications in Kubernetes (a.k.a. The Failing Demo Talk)"}
+    shortDescription:
+      - {language: en, text: "How you can diagnose and troubleshoot production issues with the insight provided by JFrog Artifactory\
+            \ and Google Cloud Platform, as well as out of the box Kubernetes tools."}
+    longDescription:
+      - language: en
+        text: "Debugging applications in production is like being the detective in a crime movie where you are also the murderer.\
+            \ Especially with microservices. Especially with containers. Especially in the cloud. Trying to see what’s going\
+            \ on in a production deployment at scale is impossible without proper tools! Google has spent over a decade deploying\
+            \ containerized Java applications at unprecedented scale and the infrastructure and tools developed by Google\
+            \ and JFrog have made it uniquely possible to manage, troubleshoot, and debug, at scale. \n\nJoin this session\
+            \ to see how you can diagnose and troubleshoot production issues with the insight provided by JFrog Artifactory\
+            \ and Google Cloud Platform, as well as out of the box Kubernetes tools."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/LEWcySTSHNU"]
+    speakerIds: [377, 35]
+  - id: 585
+    name:
+      - {language: en, text: "Success story: \"Dev+DevOps+Ops\""}
+      - {language: ru, text: "История успеха, или «Dev+DevOps+Ops»"}
+    shortDescription:
+      - {language: en, text: "Using our personal experience, we'll discuss how to implement DevOps methodology in enterprise\
+            \ and how DevOps practices can be transformed to be realized in a company with firmly established orders, policies\
+            \ and just people's habits."}
+      - {language: ru, text: "На собственном примере расскажем, как применять методологии DevOps в enterprise, насколько п\
+            рактики DevOps могут трансформироваться для реализации в компании с давно устоявшимися регламентами, политикам\
+            и и просто привычками людей."}
+    longDescription:
+      - language: en
+        text: "Implementing DevOps methodology in enterprise. How DevOps practices can be distorted and transformed to be\
+            \ realized in a company with firmly established orders, policies and just people's habits. \nWe'll cover: \n-\
+            \ why we needed DevOps and why we think we did it. \n- how we got a team with more than 200 people, most of whom\
+            \ are nearly connected, work in different directions and haven't heard of any DevOps, and how we worked it out.\
+            \ \n- difficulties we got through, problematic decisions we made, a curious symbiosis of both new and old we had\
+            \ in the end. \n- what problems we still have and how we plan to figure them out. \n\nThis talk will be interesting\
+            \ for those who want to implement DevOps in enterprise."
+      - language: ru
+        text: "Применение методологий DevOps в enterprise. Насколько практики DevOps могут искажаться и трансформироваться\
+            , чтобы их можно было реализовать в компании с давно устоявшимися регламентами, политиками и просто привычками\
+            \ людей. \nМы расскажем: \n- зачем нам нужен был DevOps и почему мы считаем, что у нас получилось. \n- как мы\
+            \ пришли к команде в 200+ человек, многие из которых слабо связаны между собой, работают в разных направлениях\
+            \ и не слышали ни про какой DevOps (который большинству был неинтересен и не нужен), и что из этого получилось\
+            . \n- о трудностях, которые возникали, какие спорные решения пришлось принимать, насколько интересный симбиоз\
+            \ старого и нового у нас получился. \n- какие ещё проблемы остались и что мы планируем делать. \n\nДоклад буде\
+            т интересен всем, кто хочет в enterprise внедрять DevOps."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1ZTLIkD4o0i80YaGaI86GK/5323e63a50df9e40be17daec5e57b8e3/__________________________________________________________________________Dev_DevOps_Ops__.pdf"]
+    videoLinks: ["https://youtu.be/74bqTSmSI4E"]
+    speakerIds: [383, 382]
+  - id: 586
+    name:
+      - {language: en, text: "One-cloud: data center OS in Odnoklassniki"}
+      - {language: ru, text: "One-cloud: ОС уровня дата-центра в Одноклассниках"}
+    shortDescription:
+      - {language: en, text: "About the basic principles and processes underlying Odnoklassniki cloud; fault tolerance of\
+            \ both the cloud and the tasks it performs; its approach to task isolating."}
+      - {language: ru, text: "Об основных принципах и процессах в основе облака ОК, обеспечении отказоустойчивости, подход\
+            е к изоляции задач и повышения плотности использования техники."}
+    longDescription:
+      - language: en
+        text: "Social network Odnoklassniki consists of more than 8 000 servers located in several data centers. Each one\
+            \ of these machines was allocated for a specific task, both for failure isolation and for providing automated\
+            \ infrastructure management. \nAt a certain moment, it became clear that a new data center management system could\
+            \ improve efficiency in utilizing the hardware, make access management easier, automate resource management, better\
+            \ time to market for new services, faster repair of incidents and even full outages. \nThe new system has to manage\
+            \ all servers we have, so it is to become the biggest and the most critical distributed system while simultaneously\
+            \ setting up strict requirements on its resilience under any conditions — especially during major failures and\
+            \ outages. It required both thorough fault tolerance planning and unique architecture solutions. \nWe’ll discuss\
+            \ both interesting details of one-cloud internal workings as well as our experience running containerized Java\
+            \ apps under high load."
+      - language: ru
+        text: "Одноклассники состоят из более чем восьми тысяч железных серверов, расположенных в нескольких дата-центрах\
+            . Каждая из этих машин была специализированной под конкретную задачу (как для обеспечения изоляции отказов, та\
+            к и для обеспечения автоматизированного управления инфраструктурой). \n\nВ определённый момент стало понятно,\
+            \ что внедрение новой системы управления позволит более эффективно загрузить технику, облегчить управление дос\
+            тупами, автоматизировать (пере)распределение вычислительных ресурсов, ускорить запуск новых сервисов, ускорить\
+            \ реакции на масштабные аварии. \n\nНовая система должна объединять под своим управлением все сервера Одноклас\
+            сников, что, с одной стороны, делает её самой крупной и критичной распределённой системой, а с другой, выдвига\
+            ет жёсткие требования по обеспечению надёжности её правильного функционирования в любый условиях — особенно пр\
+            и возникновении масштабных отказов и аварий. Это потребовало как тщательного планирования отказоустойчивости,\
+            \ так и особых архитектурных решений. \n\nВ данном докладе будет рассказано как о интересных деталях устройств\
+            а one-cloud, так и об опыте Одноклассников по эксплуатации высоконагруженных Java-приложений в контейнерах."
+    talkDay: 1
+    trackTime: "16:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1KdpcSwYEIm2mKW2wKKe4E/3d46ac21623680fd9d3a24186854640d/Oleg_Anastasyev_one-cloud.pdf"]
+    videoLinks: ["https://youtu.be/eJShMFzDV6g"]
+    speakerIds: [124]
+  - id: 587
+    name:
+      - {language: en, text: "DevOps @ scale — greek tragedy in three acts"}
+      - {language: ru, text: "DevOps в масштабе: греческая трагедия в трёх актах"}
+    shortDescription:
+      - {language: en, text: "As in a good Greek Tragedy, scaling DevOps to big teams has three stages and usually ends badly."}
+      - {language: ru, text: "Как и положено хорошей греческой трагедии, масштабирование DevOps происходит в три акта, и з\
+            аканчивается, чаще всего, плачевно."}
+    longDescription:
+      - {language: en, text: "In this talk we’ll take you to a scaling journey, from 3 developers to a 100. We’ll talk about\
+            \ the challenges each milestone in this growth brings, both technological and methodological, and how to solve\
+            \ those challenges using the right mix of people, the right selection of tools and the correctly crafted process.\
+            \ The speakers excel in the different aspects of this triangle and went through this journey (more than once)\
+            \ themselves. And the fun and entertaining presentation as a Greek tragedy can’t hurt, can it?"}
+      - {language: ru, text: "В этой трагедии мы представим вам историю роста компании, от трёх разработчиков до ста. Мы о\
+            бсудим сложности, которые возникают на каждом этапе взросления, как технологические, так и методологические, и\
+            \ предложим решения этих проблем с помощью правильных кадровых, методологических и технических средств. Мы сам\
+            и это всё проходили, и не раз, так что понимаем толк в хорошей греческой трагедии в DevOps."}
+    talkDay: 1
+    trackTime: "17:50"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/2N7zPOP3lmUuE2GcywQIwQ/8474041e5ba59347fda515feb5b5c7e5/Igolnik-Sadogursky_____Devops__Scale.pdf"]
+    videoLinks: ["https://youtu.be/HiPSp2xf0yo"]
+    speakerIds: [35, 367]
