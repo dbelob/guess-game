@@ -1035,17 +1035,16 @@ speakers:
     company:
       - {language: en, text: "XP Injection"}
     bio:
-      - {language: en, text: "Mikalai is a Senior Delivery Manager, Java Tech Lead and experienced coach. Expert in Java development,\
-            \ scalable architecture, Agile engineering practices and project management. He has more than 13 years of development\
-            \ experience and specializes on complex distributed scalable systems. Active participant and speaker of many international\
-            \ conferences. Founder and coach in training center XP Injection. Organizer and founder of Selenium Camp, JEEConf,\
-            \ XP Days Ukraine and IT Brunch conferences. Founder of active “Anonymous developers club” (uadevclub)."}
-      - language: ru
-        text: "Практикующий Java-техлид и Delivery Manager. Эксперт в разработке на Java, Agile-практиках и управлении про\
-            ектами. Разрабатывает на Java более 13 лет, специализируется на разработке сложных распределенных масштабируем\
-            ых систем. \nАктивный участник и докладчик многих международных конференций. Основатель и тренер тренингового\
-            \ центра XP Injection. Организатор и идеолог конференций Selenium Camp, JEEConf, XP Days Ukraine и IT Brunch.\
-            \ Основатель Клуба анонимных разработчиков."
+      - {language: en, text: "Delivery Manager and Java Tech Lead. Expert in Java development, scalable architecture, Agile\
+            \ engineering practices and project management. Having 13+ years of development experience, specializes on complex\
+            \ distributed scalable systems. Active participant and speaker of many international conferences. Founder and\
+            \ coach in training center XP Injection. Organizer and founder of Selenium Camp, JEEConf, XP Days Ukraine and\
+            \ IT Brunch conferences. Founder of active “Anonymous developers club” (uadevclub)."}
+      - {language: ru, text: "Практикующий Java-техлид и Delivery Manager. Эксперт в разработке на Java, Agile-практиках и\
+            \ управлении проектами. Разрабатывает на Java более 13 лет, специализируется на разработке сложных распределён\
+            ных масштабируемых систем. Активный участник и докладчик многих международных конференций. Основатель и тренер\
+            \ тренингового центра XP Injection. Организатор и идеолог конференций Selenium Camp, JEEConf, XP Days Ukraine\
+            \ и IT Brunch. Основатель «Клуба анонимных разработчиков»."}
     twitter: xpinjection
   - id: 124
     fileName: 0124.jpg
@@ -1075,6 +1074,14 @@ speakers:
     fileName: 0129.jpg
     name:
       - {language: en, text: "Marc Philipp"}
+    company:
+      - {language: en, text: LogMeIn}
+    bio:
+      - {language: en, text: "Marc Philipp is a software engineer who works on cloud-based SaaS products for LogMeIn in Karlsruhe,\
+            \ Germany. He is a long-time core committer and maintainer of JUnit and initiator of the JUnit Lambda crowdfunding\
+            \ campaign that started what has become JUnit 5. As a regular conference speaker in Germany, he's thrilled to\
+            \ speak at a conference in Russia for the first time."}
+    twitter: marcphilipp
   - id: 130
     fileName: 0130.jpg
     name:
@@ -3174,8 +3181,23 @@ speakers:
   - id: 462
     fileName: 0462.jpg
     name:
-      - {language: en, text: "Yulia Kovaleva"}
+      - {language: en, text: "Iuliia Kovaleva"}
       - {language: ru, text: "Юлия Ковалева"}
+    company:
+      - {language: en, text: "Alpha Laboratory"}
+      - {language: ru, text: Альфа-Лаборатория}
+    bio:
+      - language: en
+        text: "Automation QA engineer at Alfa Lab. Her way in test automation has started 4 years ago. Excel was the main\
+            \ instrument to verify results of PL/SQL functions. \nNow she's an adherent of BDD methodology and actively promote\
+            \ it. In Alfa Lab she develops and supports UI tests library for scaling the test automation into teams, which\
+            \ uses Cucumber and Selenide. Her favorite hobbies are snowboarding and board games."
+      - language: ru
+        text: "Старший Java-разработчик автотестов в Альфа-Лаборатории. Начинала свой путь в автоматизацию тестирования 4\
+            \ года назад с работы аналитиком-тестировщиком и с ручных сценариев в Excel.\nНа текущий момент является приве\
+            рженцем BDD-методологии и активно её продвигает. В Альфа Лаборатории разрабатывает библиотеку шагов для масшта\
+            бирования автоматизации тестирования в команде с использованием Cucumber + Selenide. А в свободное время играе\
+            т в настольные игры и осваивает сноуборд."
   - id: 463
     fileName: 0463.jpg
     name:
@@ -3829,6 +3851,18 @@ speakers:
     name:
       - {language: en, text: "Alexey Lavrenuke"}
       - {language: ru, text: "Алексей Лавренюк"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Developer at Yandex, makes tools and services for performance testing. He is into developing\
+            \ open source tools for load testing, such as [Yandex.Tank](https://github.com/yandex/yandex-tank) and [Pandora](https://github.com/yandex/pandora),\
+            \ along with load test results storage and analysis, [Overload](https://overload.yandex.net/)."}
+      - {language: ru, text: "Разработчик в Яндексе в службе нагрузочного тестирования. Делает инструменты и сервисы для т\
+            естирования производительности. Участвует в разработке таких open source-инструментов для нагрузочного тестиро\
+            вания, как [Яндекс.Танк](https://github.com/yandex/yandex-tank) и [Pandora](https://github.com/yandex/pandora),\
+            \ а также сервиса для нагрузочного тестирования — [Overload](https://overload.yandex.net/)."}
+    twitter: direvius
   - id: 535
     fileName: 0535.jpg
     name:
@@ -3919,6 +3953,15 @@ speakers:
     name:
       - {language: en, text: "Anna Chernyshova"}
       - {language: ru, text: "Анна Чернышева"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Lead Software Test Automation Engineer at EPAM. An expert in the field of BDD, an adherent of\
+            \ engineering and DevOps practices. Anna has strong experience in test automation frameworks development and building\
+            \ of test automation approaches and processes. One of the creators of the BDD library Akita."}
+      - {language: ru, text: "Lead Software Test Automation Engineer в EPAM. Эксперт в области BDD, приверженец инженерных\
+            \ и DevOps-практик. Имеет большой опыт в разработке тестовых фреймворков и построении процессов автоматизации\
+            \ тестирования. Одна из создателей BDD-библиотеки Akita."}
   - id: 551
     fileName: 0551.jpg
     name:
@@ -3937,6 +3980,17 @@ speakers:
     name:
       - {language: en, text: "Artem Eroshenko"}
       - {language: ru, text: "Артем Ерошенко"}
+    company:
+      - {language: en, text: QametaSoftware}
+    bio:
+      - {language: en, text: "Works in web app testing automation for more than 8 years. Has worked in different teams and\
+            \ occupied different positions up to the head of automation testing group. Has a vast experience with popular\
+            \ tools (Selenium, HtmlElements, Allure, Jenkins). Codes mostly in Java and Groovy."}
+      - {language: ru, text: "Более 8 лет занимается автоматизацией тестирования веб-приложений. За это время работал в ра\
+            зных командах и в разных ролях: автоматизатор тестирования, менеджер команды разработки инструментов тестирова\
+            ния, руководитель группы автоматизации тестирования. Артем имеет большой опыт работы с популярными инструмента\
+            ми (Selenium, HtmlElements, Allure, Jenkins). Программирует в основном на Java, Groovy."}
+    twitter: eroshenkoam
   - id: 555
     fileName: 0555.jpg
     name:
@@ -4019,6 +4073,22 @@ speakers:
     name:
       - {language: en, text: "Kirill Merkushev"}
       - {language: ru, text: "Кирилл Меркушев"}
+    company:
+      - {language: en, text: Vivy}
+    bio:
+      - language: en
+        text: "Fullstack multi-cloud solution architect advocate senior developer. Ah, just kidding :D But now Kirill works\
+            \ in startup Vivy based in Berlin as Java-backend, JS-frontend and AWS integrated developer, in the company which\
+            \ will revolutionalize eHealth sector in Germany. Previously worked as a senior developer and team lead at Personal\
+            \ Services in Yandex. Started as a test automation engineer and didn't actually stop doing that. \n\nOne of the\
+            \ maintainers of the Aerokube projects and Selenoid as an example. Active participant of the OSS community."
+      - language: ru
+        text: "Человек-велосипед-оркестр, в основное время занимающийся Java-бэкенд- и JS-фронтенд-разработкой, в свободно\
+            е, когда не держит на руках маленького сына, — на Golang для души. Сейчас работает в Берлине в компании Vivy,\
+            \ революционизирующей медицинский документооборот в Германии. Раньше работал старшим разработчиком и тимлидом\
+            \ в персональных сервисах Яндекса. Начинал как автоматизатор тестирования, да так и не заканчивал. \n\nОдин из\
+            \ мейнтейнеров проектов Aerokube, в частности Selenoid. Активный участник опенсорс-сообщества."
+    twitter: delnariel
   - id: 569
     fileName: 0569.jpg
     name:
@@ -4076,6 +4146,19 @@ speakers:
     name:
       - {language: en, text: "Leonid Rudenko"}
       - {language: ru, text: "Леонид Руденко"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Leonid has been doing test automation for about 8 years. In Yandex he lead a group which was\
+            \ responsible for test automation of Search interfaces, both desktop (Selenium) and mobile (Appium, Selendroid).\
+            \ In JetBrains he works on integration testing of Team Tools. He is writing tests in Java, JavaScript, Python,\
+            \ Groovy and Kotlin."}
+      - {language: ru, text: "Восемь лет занимается автоматизацией тестирования. Из них более пяти работал в Яндексе, прой\
+            дя путь от стажёра-автоматизатора до руководителя команды автоматизации тестирования поисковых интерфейсов, гд\
+            е довелось поработать над тестированием web-приложений на десктопах (Selenium, куда без него) и мобильных (Appium,\
+            \ Selendroid). Сейчас работает в JetBrains в отделе командных продуктов. Писал и пишет тесты на Java, JavaScript,\
+            \ Python, Groovy и Kotlin."}
+    twitter: LeonSabr
   - id: 579
     fileName: 0579.jpg
     name:
@@ -4363,6 +4446,17 @@ speakers:
     name:
       - {language: en, text: "Ilya Korobitsyn"}
       - {language: ru, text: "Илья Коробицын"}
+    company:
+      - {language: en, text: "Grid Dynamics"}
+    bio:
+      - {language: en, text: "Programmer working on QA Automation in Grid Dynamics. The team creates autotests for backends\
+            \ in Java and for frontend applications in JavaScript. Ilya focuses on offbeat automation tasks and provides technical\
+            \ help to other team members, also works a lot with data validation."}
+      - {language: ru, text: "Программист, работающий над автоматизацией тестирования в компании Grid Dynamics. Команда пи\
+            шет автотесты для сервисов на Java и для frontend-приложений на JavaScript. Илья занимается решением необычных\
+            \ задач по автоматизации и помощью с техническими проблемами другим членам команды, также много работает над в\
+            алидацией данных."}
+    twitter: korobochka191
   - id: 633
     fileName: 0633.jpg
     name:
@@ -4375,12 +4469,12 @@ speakers:
     company:
       - {language: en, text: Appium}
     bio:
-      - {language: en, text: "Dan is the creator of the open source mobile automation framework Appium, and Head of Test Engineering\
-            \ at FOODit in London. Previously, he headed the test organisation at Shazam in London and Zoosk in San Francisco,\
-            \ and worked as a software engineer on Microsoft Outlook for Mac, and other products in the Microsoft Office suite.\
-            \ He is an advocate of open source technologies and technical software testing. He earned a Bachelor’s degree\
-            \ in Computer Science, with a minor in Music Technology, from the world-renowned School of Computer Science at\
-            \ Carnegie Mellon University in Pittsburgh."}
+      - {language: en, text: "Dan Cuellar is the creator of the open source mobile automation framework Appium, and Head of\
+            \ Test Engineering at FOODit in London. Previously, he headed the test organisation at Shazam in London and Zoosk\
+            \ in San Francisco, and worked as a software engineer on Microsoft Outlook for Mac, and other products in the\
+            \ Microsoft Office suite. He is an advocate of open source technologies and technical software testing. He earned\
+            \ a Bachelor’s degree in Computer Science, with a minor in Music Technology, from the world-renowned School of\
+            \ Computer Science at Carnegie Mellon University in Pittsburgh."}
     twitter: thedancuellar
   - id: 635
     fileName: 0635.jpg
@@ -4417,6 +4511,17 @@ speakers:
     fileName: 0637.jpg
     name:
       - {language: en, text: "Claudio Criscione"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - language: en
+        text: "Claudio Criscione leads the Information Security Assurance Automation team at Google: a very long title for\
+            \ a group that scales security testing — a lot.\n\nIn a previous life he was a penetration tester with a keen\
+            \ interest in cloud and web security. He presented at the main security conferences and has released a few security\
+            \ tools and advisories. These days, he reviews design documents and worries a lot about security testing strategy,\
+            \ coffee quality and preventing facepalm security bugs."
+    twitter: paradoxengine
+    gitHub: paradoxengine
   - id: 638
     fileName: 0638.jpg
     name:
@@ -4437,11 +4542,32 @@ speakers:
     name:
       - {language: en, text: "Irina Pchelintseva"}
       - {language: ru, text: "Ирина Пчелинцева"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Works at Yandex since 2012 and is responsible for the quality of its main page yandex.ru. Organized testing\
+            \ processes for Yandex.Zen recommendation service (starting from solo testing alpha versions of product as first\
+            \ test automation up to hiring and teaching team of QA engineers), also currently is involved in quality assurance\
+            \ of Yandex.News and Yandex.Weather products.\nPhD in mathematics."
+      - language: ru
+        text: "Работает в Яндексе с 2012 года, отвечает за качество страницы yandex.ru, организовала тестирование сервиса\
+            \ Яндекс.Дзен (от соло-тестирования и первичной автоматизации до найма и обучения команды), сейчас также заним\
+            ается обеспечением качества проектов Яндекс.Новости и Яндекс.Погода.\nPhD по математике."
   - id: 640
     fileName: 0640.jpg
     name:
-      - {language: en, text: "Alexey Mahov"}
+      - {language: en, text: "Alexey Makhov"}
       - {language: ru, text: "Алексей Махов"}
+    company:
+      - {language: en, text: Avito}
+    bio:
+      - {language: en, text: "Senior software engineer in Avito. Works on developing the test infrastructure and testing tools."}
+      - {language: ru, text: "Ведущий разработчик в Авито. Занимается развитием тестовой инфраструктуры и инструментов тес\
+            тирования."}
+    twitter: makhov
+    gitHub: makhov
   - id: 641
     fileName: 0641.jpg
     name:

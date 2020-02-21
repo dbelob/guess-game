@@ -8544,3 +8544,448 @@ talks:
     presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/7D27swnvi06UeIk6YCGOgG/78a641b97b5862f9ccea38b253d85cb5/George_Mandis_Make_More_Than_Music_With_MIDI.pdf"]
     videoLinks: []
     speakerIds: [740]
+  - id: 554
+    name:
+      - {language: en, text: "Think Bigger – How to Truly Become World-Class in Testing"}
+    shortDescription:
+      - {language: en, text: "Concrete actions that will help you to become a better tester."}
+    longDescription:
+      - language: en
+        text: "This talk is the output of more than a decade of active deliberation and observation on what makes a tester\
+            \ world-class. It is all about what YOU can do to become more skilled, more satisfied in your job and more hirable\
+            \ to the high-class companies you look up to.\n\nWe will keep this session real and talk about concrete steps\
+            \ and ideas you can implement immediately. You will also hear real stories about testers and how they did it.\
+            \ You will be able to choose among the presented ideas and start implementing them today.\n\nThis session is less\
+            \ about complaining and more about concrete actions that will help you to become a better version of yourself."
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/1FxdPHTNDKWwGSkUoQMcQ0/22f650e8d9def7858394e364369ee9d8/Think_Bigger_-_How_to_Become_Truly_World-Class_in_Testing.pdf"]
+    videoLinks: ["https://youtu.be/B8icsBgCWIs"]
+    speakerIds: [638]
+  - id: 555
+    name:
+      - {language: en, text: "How to improve your autotests: black magic performance"}
+      - {language: ru, text: "Как улучшить автотесты: сеанс черной магии"}
+    shortDescription:
+      - {language: en, text: "Let’s apply some popular automation design patterns, think out of the box and cleanse our karma."}
+      - {language: ru, text: "Применим популярные дизайн-паттерны автоматизации, расширим горизонты и почистим карму."}
+    longDescription:
+      - {language: en, text: "There are many ways to write UI autotests. What should a professional developer use and what\
+            \ should be avoided? What is more painful in the modern automated testing? Alexei will illustrate his point of\
+            \ view with examples. He will start with some simple code and consequently apply popular design patters such as\
+            \ PageFactory, Fluent/Chainable PageObjects, Single Responsibility Principle and other."}
+      - {language: ru, text: "Писать UI-автотесты можно по-разному. Какие приёмы стоит применять профессиональному разрабо\
+            тчику, а какие лучше обходить стороной? Где кроется боль в современном автоматизированном тестировании? Алексе\
+            й продемонстрирует свою позицию на наглядных примерах. Начнём с простого кода и последовательно применим к нем\
+            у популярные дизайн-паттерны, как-то: PageFactory, Fluent/Chainable PageObjects, Single Responsibility Principle\
+            \ и другие."}
+    trackTime: "11:40"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2kfmhuYuF2c8682Sem68oA/dbb03cbff12a3591d765401841cdb88c/Alexei_Vinogradov_DesignPatterns-BlackMagic.pdf"]
+    videoLinks: ["https://youtu.be/JMk_3KorNtw"]
+    speakerIds: [616]
+  - id: 556
+    name:
+      - {language: en, text: "Front-end data mocks: making them effective and desired"}
+      - {language: ru, text: "Моки данных для фронтенда: как сделать эффективно и востребованно"}
+    shortDescription:
+      - {language: en, text: "From the beginning to the end: why mock your data, what approaches exist, implementation details\
+            \ of different components and how it affects the project."}
+      - {language: ru, text: "От и до: зачем подменять данные, какие существуют подходы, особенности реализации различных\
+            \ компонентов, и как это в итоге меняет проект."}
+    longDescription:
+      - language: en
+        text: "During web-project testing sooner or later you start to think about mocking the data that goes to front-end.\
+            \ Sometimes this is what manual testing needs, sometimes it is a test automation requirement, and every once in\
+            \ a while that’s what front-end developers want.\nIn this talk I will discuss a variety of tasks that can be solved\
+            \ by convenient mock system. How it affects the developing cycle and speeds up the project development. I will\
+            \ cover different implementations and tell you how we ended up with our own personal favourite – one that makes\
+            \ data modification not just a technical possibility, but a must have tool that is used daily by the whole team.\
+            \ From the beginning to the end: why mock your data, what approaches exist, implementation details of different\
+            \ components and how it affects the project."
+      - language: ru
+        text: "В тестировании различных веб-проектов рано или поздно возникает желание подменять данные для фронтенда. Ино\
+            гда задача вырастает из потребностей ручного тестирования, иногда — из нужд автотестов, порою — из нужд самих\
+            \ разработчиков фронтенда.\nДоклад расскажет про спектр задач, которые можно решать удобной подменой данных, ч\
+            то это улучшает и ускоряет в цикле разработки. Поговорим про различные реализации, и как мы нашли свой идеал —\
+            \ сделали модификацию данных не просто инженерной возможностью, а инструментом, которым пользуются все члены к\
+            оманды ежедневно. От и до: зачем подменять данные, какие существуют подходы, особенности реализации различных\
+            \ компонентов, и как это в итоге меняет проект."
+    trackTime: "11:40"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/7fsDNAUXBUA"]
+    speakerIds: [639]
+  - id: 557
+    name:
+      - {language: en, text: "JUnit 5 — The New Testing Framework for Java and Platform for the JVM"}
+    shortDescription:
+      - {language: en, text: "JUnit 5 is the new major version of the programmer-friendly testing framework for Java 8. In\
+            \ this talk that will include live-coding, we'll learn how to write tests using the new Jupiter API."}
+    longDescription:
+      - language: en
+        text: "Over the last decade a lot has happened in the world of Java and testing, but JUnit 4 hasn't kept up. Now JUnit\
+            \ 5 is here to help shape the future of testing on the JVM with a focus on Java 8 language features, extensibility,\
+            \ and a modern programming API for testing in Java. Moreover, JUnit isn't just a Java testing framework anymore.\
+            \ Third parties are already developing test engines for Scala, Groovy, Kotlin, etc. that run on the new JUnit\
+            \ Platform.\n\nIn this session, we will start off with an example-driven tour of the new Jupiter programming model\
+            \ and learn how to migrate our existing JUnit 4 based tests. Then, we will discuss the inspiration for JUnit 5,\
+            \ look more closely at its architecture, and discuss compatibility with JUnit 4. Next, we will explore the Jupiter\
+            \ extension model, learn about the extension points it provides, and see how custom extensions for conditional\
+            \ tests, method parameter resolution, lifecycle callbacks etc. are authored and registered. To round off the session,\
+            \ we will look at the roadmap of what's still to come and when you can expect the GA release."
+    trackTime: "11:40"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/4d1BP1klVmgwMIG44yGguw/040e3930f56cb89eb774467b5bbfd598/Marc_Philipp_JUnit_5.pdf"]
+    videoLinks: ["https://youtu.be/751gMXH-lEE"]
+    speakerIds: [129]
+  - id: 558
+    name:
+      - {language: en, text: "Learning to analyse performance reports"}
+      - {language: ru, text: "Учимся анализировать результаты нагрузочного тестирования"}
+    shortDescription:
+      - {language: en, text: "Practicing load testing a web service using open-source and free of charge tools from Yandex."}
+      - {language: ru, text: "Практика нагрузочного тестирования сетевого сервиса с помощью открытых и бесплатных инструме\
+            нтов от Яндекса."}
+    longDescription:
+      - {language: en, text: "We’ll «shoot» a web service which was written in Python Tornado especially for learning purposes.\
+            \ We'll examine what you can find on different kinds of charts you have in your performance report. We’ll discuss\
+            \ the types of tests you have to run in order to determine the performance characteristics of your service. We'll\
+            \ see the results of these tests and try to find the bottlenecks and opportunities to optimize the code."}
+      - {language: ru, text: "Мы «обстреляем» учебный web-сервис на Python Tornado, который специально написан так, чтобы\
+            \ проявились проблемы производительности. Мы разберемся в разных типах графиков в отчетах о производительности\
+            , поняв, что на них можно увидеть. Будет рассказано, какие тесты нужно провести для того, чтобы определить про\
+            изводительность сервиса. Мы проанализируем результаты этих тестов и узнаем как обнаружить с их помощью узкие м\
+            еста."}
+    trackTime: "12:50"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/5ZBdOxpn4420QUoU0gOkG8/a1c685d3fb325ad5b47ad5b6290a5e25/____________________________________________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/gws7L3EaeC0"]
+    speakerIds: [534]
+  - id: 559
+    name:
+      - {language: en, text: "Appium: The Language of Automation"}
+    shortDescription:
+      - {language: en, text: "The talk is about writing cross-platform native-mobile, hybrid, and web application UI automation\
+            \ using Appium."}
+    longDescription:
+      - language: en
+        text: "Over the last 5 years, Appium has become the de-facto standard for automating mobile applications. More recently,\
+            \ Appium has added support for a host of other platforms from Windows and Mac apps to apps for the TV. In a world\
+            \ where most products support several platforms and devices, it becomes imperative that you should not need to\
+            \ learn a new framework every time you need to automate a new device. Much as the composer writes one set of musical\
+            \ notation for all instruments, an Appium developer can script all of the devices in his orchestra with a single\
+            \ protocol.\n\nThis talk will cover in depth the newest members of the family, Mac and Windows, and discuss the\
+            \ future of Appium as the language and protocol of automation."
+    trackTime: "12:50"
+    track: 2
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/31ZqFDvUZGiAUwYMseOWUQ/66e3b54e84549c2ebd089c2ed1afca08/Dan_Cuellar_Heisenbug2017.pdf"]
+    videoLinks: ["https://youtu.be/DXndQaV_llw"]
+    speakerIds: [634]
+  - id: 560
+    name:
+      - {language: en, text: "Writing Selenium tests in JS for Angular testing: benefits and pitfalls"}
+      - {language: ru, text: "Пишем Selenium тесты на JS для тестирования Angular: плюсы, минусы, подводные камни"}
+    shortDescription:
+      - {language: en, text: "In this talk we will cover how Protractor helps with writing Selenium tests for Angular applications,\
+            \ how JavaScript can surprise us in the process, and by what means we can avoid it."}
+      - {language: ru, text: "В данном докладе мы рассмотрим, как Protractor помогает писать Selenium тесты для Angular пр\
+            иложений, какие сюрпризы преподносит JavaScript, и можно ли как-нибудь обойтись без него."}
+    longDescription:
+      - {language: en, text: "While creating Selenium tests for modern web application QAs often face difficulties with element\
+            \ locators or with waiters which detect page stabilization as server responses are processed. For applications\
+            \ written with Angular Protractor framework was designed to help with this, but there is a price: you will have\
+            \ to create scenarios in JavaScript. In this talk we will cover some common pitfalls and how to avoid them, and,\
+            \ ultimately, if it is possible to avoid Protractor altogether without losing its benefits."}
+      - {language: ru, text: "При создании Selenium-тестов для современных веб-приложений часто возникают сложности с поис\
+            ком элементов на странице или с ожиданием момента, когда представление обновится после получения ответа от сер\
+            вера. Если приложение написано на Angular, то фреймворк Protractor призван с этим помочь, однако сценарии прид\
+            ётся писать на JavaScript. В данном докладе мы рассмотрим сюрпризы, которые может преподнести этот язык, и поп\
+            ытаемся разобраться, действительно ли нам нужен Protractor, или можно обойтись и без него."}
+    trackTime: "12:50"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/0WKzCzNWrZs"]
+    speakerIds: [632]
+  - id: 561
+    name:
+      - {language: en, text: "Wash your hands before you eat, or Sanitizers in testing"}
+      - {language: ru, text: "Мойте руки перед едой, или Санитайзеры в тестировании"}
+    shortDescription:
+      - {language: en, text: "Sanitizers (Address, Leak, Memory, Thread, UB), what we need them for and how to use them."}
+      - {language: ru, text: "Рассказ про санитайзеры (Address, Leak, Memory, Thread, UB), зачем они нужны и их практическ\
+            ое применение."}
+    longDescription:
+      - language: en
+        text: "As the saying goes, “with great power comes great responsibility”. C++ is a language with great expression\
+            \ power and vast capabilities. One have to pay for this capabilities with possible defects, which are absent in\
+            \ programs written in managed languages.\n\nSanitizers are wonderful tools, which will help you find complex defects\
+            \ in C++ programs. I’ll talk about these tools, what they can do, and how to use them in your project."
+      - language: ru
+        text: "Как известно, «с большой силой приходит и большая ответственность». С++ – это язык с большой выразительной\
+            \ силой и огромными возможностями. За эти возможности приходится платить потенциальными дефектами, которые отс\
+            утствуют в программах на управляемых (managed) языках.\n\nСанитайзеры – замечательные инструменты, которые поз\
+            воляют находить сложные дефекты в программах на C++. Я расскажу об этих инструментах, их возможностях и о том\
+            , как их использовать с пользой для своего проекта."
+    trackTime: "14:25"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2VswntrquQKKKW2G4kAMg2/93cab42e1c0af3de968b641882fc1010/Andrey_Satarin_Sanitizers_in_testing.pdf"]
+    videoLinks: ["https://youtu.be/Aeu7abIKgGs"]
+    speakerIds: [597]
+  - id: 562
+    name:
+      - {language: en, text: "Code generation as a way to solve some of the automator problems"}
+      - {language: ru, text: "Кодогенерация как способ решения проблем автоматизатора"}
+    shortDescription:
+      - {language: en, text: "Tired to write one more http client to test your service? Your project is mostly objects, getters,\
+            \ setters and builders for them? Boring? Try the best way to solve it — code generation!"}
+      - {language: ru, text: "Устали писать очередной http-клиент к сервису, чтобы его протестировать? Львиная доля вашего\
+            \ проекта — это объекты и сеттеры, геттеры, билдеры к ним? Решение есть — кодогенерация!"}
+    longDescription:
+      - language: en
+        text: "Test automation is not only about writing WebDriver tests. Primary it's about simplifying and optimization\
+            \ the repetitive work and solving the regularly occuring problems.\n\nBut for writing good test tools and tests\
+            \ you need to add a lot of overhead — http clients, readable assertions maintaining, project documentation (and\
+            \ so on).\n\nThis talk will cover the automation of code writing and mechanics which helps to maintain additional\
+            \ test code. There will be a review of existing tools in Java ecosystem to convert a few declarative lines to\
+            \ a lot of complex code that you can just start to use."
+      - language: ru
+        text: "Автоматизация тестирования — это не только про написание WebDriver-тестов. Это прежде всего решение регуляр\
+            но возникающих проблем, либо оптимизация повторяющегося труда.\n\nДля того, чтобы написать качественные, подде\
+            рживаемые тесты и утилиты для тестирования, требуется множество дополнительных издержек — http-клиенты, органи\
+            зация проверок, описание проекта с тестами, поддержка документации (список можно продолжать и продолжать).\n\n\
+            В докладе будет рассказано, как можно автоматизировать написание кода, облегчающее бремя поддержки дополнитель\
+            ного кода для тестов, какие уже готовые инструменты и механизмы существуют в Java-экосистеме и что используют\
+            \ в Яндексе, чтобы превратить десяток строк декларативного описания в сотни строк кода, который можно просто б\
+            рать и использовать."
+    trackTime: "14:25"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/3HptJAfl8cOsYqQQ8eW4aa/053ad2a6257cfb97f4821faf659c7f8b/Kirill_Merkushev_Codegeneration_as_way_to_solve_automation_problems.pdf"]
+    videoLinks: ["https://youtu.be/9mF0zFW7cDQ"]
+    speakerIds: [568]
+  - id: 563
+    name:
+      - {language: en, text: "Java → Kotlin: Tests Made Simple"}
+      - {language: ru, text: "Java → Kotlin: пишите тесты проще"}
+    shortDescription:
+      - {language: en, text: "How Kotlin can improve your tests."}
+      - {language: ru, text: "Как язык Kotlin может улучшить ваши тесты."}
+    longDescription:
+      - {language: en, text: "What if I told you that you can write your tests in Kotlin? Never heard of it? If you are using\
+            \ Java now, there are reasons why your tests’ language can be Kotlin. Don’t be afraid, Kotlin is not a rocket\
+            \ science. I’ll tell you how the features of this language make it possible to spend less time on the tests’ support.\
+            \ How clean the code is. And why your favorite libraries/frameworks (e.g. JUnit, HtmlELements, Allure) will stay\
+            \ with you. And, of course, the main thing: how to start. Where possible, a comparison with Java and Groovy will\
+            \ be made. If you do test automation or you develop in Java/Groovy — this talk is for you."}
+      - {language: ru, text: "Что если я скажу вам, что вы можете писать тесты на языке Kotlin? Никогда про него не слышал\
+            и? Если вы используете Java, есть причины, почему языком ваших тестов может стать Kotlin. Без паники, Kotlin —\
+            \ это просто. Я расскажу, как особенности языка позволяют тратить меньше времени на поддержку тестов. Наскольк\
+            о код становится лаконичнее. И почему ваши любимые библиотеки и фреймворки (например, JUnit, HtmlELements, Allure)\
+            \ останутся с вами. И, конечно, самое главное: с чего начать. Где это возможно, будет приведено сравнение с Java\
+            \ и Groovy. Если вы тестируете или разрабатываете на Java/Groovy — этот доклад для вас."}
+    trackTime: "14:25"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/Nbu96n6r5jU"]
+    speakerIds: [578]
+  - id: 564
+    name:
+      - {language: en, text: "Testing in Data World"}
+      - {language: ru, text: "Тестирование в мире данных"}
+    shortDescription:
+      - {language: en, text: "How to test the software that's used to calculate data?"}
+      - {language: ru, text: "Как тестировать работу программного обеспечения, обрабатывающего данные?"}
+    longDescription:
+      - {language: en, text: "Management tries to make decisions based on numbers and objective data, not just gut feeling.\
+            \ How to test the software that was used to calculate these numbers? Your code processed company information for\
+            \ the whole year and gave answer: 42%. Is it correct answer or there is a bug and 43% is what we should get? Based\
+            \ on real experience from Analytics department of Toptal I would try to answer these questions. BI, ETL, DWH,\
+            \ ML… If you know these abbreviations - welcome to talk about testing in data world."}
+      - {language: ru, text: "Руководство компаний старается принимать решения не по наитию, а на основе цифр и объективны\
+            х данных. Как же тестировать работу программного обеспечения, которое эти цифры считает? Если код, обработав д\
+            анные компании за год, показывает 42% — это правильный ответ, или же там ошибка, и мы должны были получить 43%?\
+            \ На основе практик, наработанных в отделе аналитики компании Toptal, хотелось бы ответить на эти вопросы. BI,\
+            \ ETL, DWH, ML... Если вы знаете, что означают эти аббревиатуры — приходите поговорить о тестировании в мире д\
+            анных."}
+    trackTime: "15:35"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/s8pnPnLw3IeAyySqMwGys/e7efa51cebee4158a69ab66eae1372c5/Igor_Khrol_Testing_in_Data_World.pdf"]
+    videoLinks: ["https://youtu.be/bny86gxbUcg"]
+    speakerIds: [635]
+  - id: 565
+    name:
+      - {language: en, text: "Finding the best way to test your system"}
+    shortDescription:
+      - {language: en, text: "What are the differences between the multiple ways systems can be tested, and which one is the\
+            \ most suitable for you?"}
+    longDescription:
+      - language: en
+        text: "There are different ways systems can be tested. Most test organizations, test teams or testers use one or only\
+            \ a few ways in there projects, even if that way is not the most appropriate. This talk aims to improve that.\n\
+            \nFirstly it will explain the difference between scripted testing and exploratory testing, and then explain the\
+            \ different ways of testing on the continuum from scripted to exploratory, i.e. detailed scripting, global scripting,\
+            \ session based testing, bug hunts, test tours and freestyle exploratory testing. Both the essence of every way\
+            \ and the situation it is most useful will be explained. For every way of testing Jan Jaap will also explain how\
+            \ the link with automated testing can be made.\n\nThe last part of the presentation will be devoted to giving\
+            \ practices and discussing a checklist which you can use to decide what way of testing is the most appropriate\
+            \ in your project. This part makes the talk very applicable, the checklist can help the attendees to determine\
+            \ which way of testing is the best in their situation."
+    trackTime: "15:35"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/4L9HmMIfskOmg0smws6YS4/affc70a7b3cac1716729253e2e9d89ef/Finding_the_best_way_to_test_your_system_final.pdf"]
+    videoLinks: ["https://youtu.be/QgT6eXyPTuQ"]
+    speakerIds: [636]
+  - id: 566
+    name:
+      - {language: en, text: "BDD Girls Battle: Cucumber vs. JBehave"}
+    shortDescription:
+      - {language: en, text: "This talk will examine disadvantages of two most popular BDD libraries for Java."}
+      - {language: ru, text: "Доклад расскажет о минусах двух популярных BDD-библиотек для Java."}
+    longDescription:
+      - language: en
+        text: "In this talk two cute Java developers will compete against each other in the style of Mortal Kombat. We will\
+            \ show which of two instruments, Cucumber or JBehave, has more restrictions. We will choose the worst tool. For\
+            \ what?\n\nMany of us have faced the difficulty of choosing a BDD framework. Which library has more features?\
+            \ What complications does it have?\n\nYou can learn about frameworks capabilities from documentation or talks\
+            \ in which people praise tools they already chose. But to discover issues and bugs you have to dive through Stack\
+            \ Overflow or personally trial libraries. This talk will help you to avoid a fatal error of choosing the wrong\
+            \ tool to implement autotests."
+      - language: ru
+        text: "В своем докладе мы, две Java-разработчицы автотестов, будем соревноваться друг с другом в стиле Mortal Kombat,\
+            \ чтобы показать, у какого из двух инструментов — Cucumber или JBehave — наибольшее количество ограничений. Мы\
+            \ будем выбирать худший инструмент. А для чего?\n\nМногие из нас при выборе BDD-библиотеки задаются вопросом «\
+            что лучше». У какой больше возможностей? А с какими проблемами мы столкнёмся?\n\nУзнать о возможностях можно,\
+            \ зайдя в документацию библиотеки или посмотрев доклады, где докладчик хвалит уже выбранный им инструмент. Но\
+            \ вот узнать о том, что именно подстерегает разработчика при выборе Cucumber или JBehave, он сможет, только ес\
+            ли «прошуршит» весь Stack Overflow или сам попробует библиотеку в работе. Наш доклад поможет вам избежать пере\
+            писывания старого фреймворка с автотестами на новую либу просто из-за того, что однажды кто-то выбрал не тот и\
+            нструмент."
+    trackTime: "15:35"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/56DoI17zt6C4QiMyqouiM0/ab0c63d71f844fdf0b7c43021a3ee246/____________________________________BDD_girls_battle.pdf"]
+    videoLinks: ["https://youtu.be/bFLq74AWh-c"]
+    speakerIds: [462, 550]
+  - id: 567
+    name:
+      - {language: en, text: "Allure 2: new gen test report tool"}
+      - {language: ru, text: "Allure 2: тест-репорты нового поколения"}
+    shortDescription:
+      - {language: en, text: "A tool for generating simple and clear autotest reports gets a new version."}
+      - {language: ru, text: "Новая версия инструмента для простых и понятных отчётов автотестов."}
+    longDescription:
+      - language: en
+        text: "Everyone involved in the automated testing has to examine the autotest results. The bigger the project is,\
+            \ the more results one has to review. The world keeps getting faster, some products release several times a week\
+            \ if not a day.\n\nAllure Framework is a popular instrument that makes analysis of autotest reports easier. This\
+            \ talk will cover its new version Allure 2. One of its main advantages is extendability: now you can adapt Allure\
+            \ to suite your needs using a plugin system. Besides that, it has a lot of interesting features ranging from test\
+            \ environment and test retries to text fixtures."
+      - language: ru
+        text: "Каждому человеку, который сталкивается с автоматизированным тестированием, приходится разбирать результаты\
+            \ тестов. Чем больше ваш проект, тем больше отчётов вам приходится отсматривать. Мир не стоит на месте, релизн\
+            ый цикл ускоряется, некоторые продукты успевают релизиться несколько раз в неделю, а некоторые несколько раз в\
+            \ день.\n\nAllure Framework — популярный инструмент построения отчётов автотестов, упрощающий их анализ. В док\
+            ладе я расскажу про его новую версию Allure 2. В ней появилось много нового: окружение, перезапуски и история\
+            \ теста, отображение фикстур, категории ошибок и многое другое. Одной из ключевых особенностей является возмож\
+            ность адаптировать Allure под себя с помощью системы плагинов."
+    trackTime: "16:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/25ZivEBU7yqGe4ewkam4Ws/351ca85b60e58822c7e009f7edb0c62c/Allure_2.pdf"]
+    videoLinks: ["https://youtu.be/tTV00kSutQI"]
+    speakerIds: [554]
+  - id: 568
+    name:
+      - {language: en, text: "Security testing at a scale"}
+    shortDescription:
+      - {language: en, text: "In Hollywood movies hackers look fantastic, but it does not quite apply to scaling security\
+            \ to large, modern infrastructures. This talk is a travel diary of the years spent looking for a different, non\
+            \ Hollywood-way to scale security testing."}
+    longDescription:
+      - language: en
+        text: "As anyone involved in testing knows, all the challenges in this space have been solved long ago. If we still\
+            \ have bugs, it’s only because engineers are lazy: existing practices and technologies can surely catch all issues,\
+            \ if properly applied. Finally, security bugs are just bugs, ergo security testing is also a solved problem for\
+            \ non-lazy engineers.\n\nIn this talk I’ll try to debunk this blatant lie, looking at some of the lessons I’ve\
+            \ learnt dealing with security testing in an uncomfortably large infrastructure. After demonstrating that security\
+            \ testing is a full citizen of testing practices and not a weird alien, I’ll trace my journey in building security\
+            \ testing tools at Google.\n\nSpoiler alert: There won’t be any Hollywood style root-shell-and-ride-off-into-the-sunset\
+            \ moment: security testing at scale is a trench war, not a walk in the park. In a surprising turn of events, I’\
+            ll also cover the things that did not quite work and those that did not work at all, because sometimes failures\
+            \ are even more interesting than victories.\n\nIf you care about in-the-trenches security, are curious about the\
+            \ tiny details that can derail an initiative, or need to worry about security testing web software or infrastructures,\
+            \ then you might find this talk interesting.\nYou'll walk away with some insights on strategies for web security\
+            \ testing that are not regular penetration testing."
+    trackTime: "16:45"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/A4vaX1xPs4AmK2Ueo6guO/4588514e71a7092bd64dfb2dfc99b467/Claudio_Criscione_-_Hollywood_mode_off-_security_testing_at_scale__1_.pdf"]
+    videoLinks: ["https://youtu.be/Frjn83MLbaY"]
+    speakerIds: [637]
+  - id: 569
+    name:
+      - {language: en, text: "Patching Facebook WDA and Inspector. Functional, automated testing iOS"}
+      - {language: ru, text: "Прокачиваем WebDriverAgent, или Как тестировать iOS-приложения после ядерного взрыва"}
+    shortDescription:
+      - {language: en, text: "The problems we faced after Xcode 8 release, how we solved them and how it affected our iOS\
+            \ testing infrastructure."}
+      - {language: ru, text: "C какими проблемами мы столкнулись с выходом Xcode 8, как их решали и как это повлияло на на\
+            шу инфраструктуру тестирования iOS-приложений."}
+    longDescription:
+      - language: en
+        text: "Last year Apple killed UI Automator in Xcode 8, making things harder for a lot of people. Appium, which we\
+            \ used, stopped working and we needed to find an alternative tool. We found WebDriverAgent from Facebook. \nThis\
+            \ talk is about problems we faced, how we solved them and how it affected our iOS testing infrastructure."
+      - language: ru
+        text: "Когда в прошлом году Apple с выходом Xcode 8 отказались от UI Automator, мы, как и многие, оказались у разб\
+            итого корыта. \nAppium, который у нас использовался, потерял актуальность, мы начали искать альтернативы и наш\
+            ли инструмент WebDriverAgent от Facebook. \nДоклад о том, с какими проблемами мы столкнулись, как мы их решали\
+            \ и как это повлияло на нашу инфраструктуру тестирования iOS-приложений."
+    trackTime: "16:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/4AbfFfcTb2Oko0C262I2wK/5d9809fd6d4639fab27452b1b22868d0/Alexey_Makhov_-_Patched_WebDriverAgent.pdf"]
+    videoLinks: ["https://youtu.be/SoCw8IidXDM"]
+    speakerIds: [640]
+  - id: 570
+    name:
+      - {language: en, text: "Design patterns in test automation"}
+      - {language: ru, text: "Паттерны проектирования в автоматизации тестирования"}
+    shortDescription:
+      - {language: en, text: "Running through all known patterns in the area of test automation and describing them in details\
+            \ with several practical samples."}
+      - {language: ru, text: "Доклад пройдётся по всем известным паттернам в области автоматизации тестирования, подробно\
+            \ описав их с несколькими практическими примерами."}
+    longDescription:
+      - language: en
+        text: "Design patterns exist for years in software development. Some developers love them, some think they are useless.\
+            \ But design patterns have very clear goals: describe common solutions for common problems, create shared language\
+            \ for community, improve understanding and reuse of existing approaches.\n\nTest automation has its own set of\
+            \ problems, so there is a set of helpful design patterns for this area. In this talk Mikalai will run through\
+            \ all known patterns and describe them in details with several practical samples."
+      - language: ru
+        text: "Паттерны проектирования известны в разработке уже много лет. Одни разработчики любят их, другие считают бес\
+            полезными. Но у паттернов проектирования есть очень чёткие задачи: описания типичные решения для типичных проб\
+            лем, создать общий язык для сообщества, улучшить понимание и переиспользование существующих подходов.\n\nУ авт\
+            оматизации тестирования есть свой собственный набор задач, так что существует и набор полезных паттернов проек\
+            тирования для этой области. В докладе Николай пройдётся по всем известным паттернам и подробно опишет их с нес\
+            колькими практическими примерами."
+    trackTime: "17:50"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/EnooA2kEhY0"]
+    speakerIds: [123]
