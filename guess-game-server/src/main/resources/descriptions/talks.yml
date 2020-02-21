@@ -7898,3 +7898,649 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5IIaJuSkogOmU0UWU08MII/25ab0add4ff6d2fc8ece5cae917c679c/Alexey_Savateev_The_collective_responsibility_problem__1_.pdf"]
     videoLinks: []
     speakerIds: [139]
+  - id: 527
+    name:
+      - {language: en, text: "React with the speed of light: not quite the usual server rendering"}
+      - {language: ru, text: "React со скоростью света: не совсем обычный серверный рендеринг"}
+    shortDescription:
+      - {language: en, text: "How we considered if VK can afford to use React for individual website elements, and what problems\
+            \ get in the way."}
+      - {language: ru, text: "Как мы определяли, может ли ВКонтакте позволить себе использовать React для отдельных элемен\
+            тов на сайте, и какие проблемы встают на этом пути."}
+    longDescription:
+      - {language: en, text: "This talk will tell about a research where we considered if VK can afford to use React for individual\
+            \ website elements. About a problems that need to be solved on that way. And a bit about server rendering in VK,\
+            \ string-based templating engines, and writing parsers."}
+      - {language: ru, text: "В докладе речь пойдет о небольшом исследовании, с помощью которого мы определяли, может ли В\
+            Контакте позволить себе использовать Virtual DOM для отдельных элементов на сайте. О том, какие проблемы приде\
+            тся решить на этом пути. И немного о серверном рендеринге Вконтакте, строковых шаблонизаторах и написании парс\
+            еров."}
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5DpR4KB79uQM4yowEgukQu/62b6b05a66ac9e44622c3d39e11e6bb3/Timofey_Chaptykov_Fast_server_side_rendering_with_React.pdf"]
+    videoLinks: []
+    speakerIds: [742]
+  - id: 528
+    name:
+      - {language: en, text: "Forgotten funky functions"}
+    shortDescription:
+      - {language: en, text: "In the age of frameworks, transpilers and build systems the powerful fundamentals of JavaScript\
+            \ are often overlooked. Let's rediscover them."}
+    longDescription:
+      - {language: en, text: "In the day and age of frameworks, transpilers and build systems most developers new to JavaScript\
+            \ spend more time understanding these tools than the language itself. The powerful fundamentals of JavaScript\
+            \ — and the even more powerful recent additions — are lost when there's a library for everything. This talk aims\
+            \ to explore some of the useful and sometimes strange sides of the language. We'll talk about higher order functions,\
+            \ the object model and meta programming (traditional as well as modern). We will dive into the language itself\
+            \ and rediscover its forgotten funky functions."}
+    talkDay: 1
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1uUK5azGpGckw42QqQwyYA/b84a6e5cfbe1de3be65676533a30fda2/Jakob_Mattsson_Forgotten_Funky_Functions.pdf"]
+    videoLinks: []
+    speakerIds: [737]
+  - id: 529
+    name:
+      - {language: en, text: "«Strict» JavaScript: typings vs reality"}
+      - {language: ru, text: "«Строгий» JavaScript: типы против реальности"}
+    shortDescription:
+      - {language: en, text: "Story of forcing one small company to write everything in «typed JS» for a year and what came\
+            \ out of it."}
+      - {language: ru, text: "История о том, как небольшая компания год писала «типизированный JS» и что из этого вышло."}
+    longDescription:
+      - language: en
+        text: "Putting types everywhere. Does it help? Are benefits worth an effort? What to choose — Flow or TypeScript?\n\
+            \nPrimary idea of talk is to share experience of personal war vs typed Javascript and what caveats are on the\
+            \ way, how much it will cost to you and what benefits and profits (both from dev and \nbusiness point of view)\
+            \ it provides\n\nWe will speak just a bit about TypeScript (why we rejected it) and then examine the existing\
+            \ FlowType ecosystem. Come to this talk to understand that FlowType is not «yet another TypeScript», what are\
+            \ the main challenges of typings and why could someone commit into that."
+      - language: ru
+        text: "Строгая типизация: серебряная пуля или маркетинговый ход? Этот доклад — история о том, как небольшая компан\
+            ия год писала «типизированный JS» и что из этого вышло. Личный опыт войны с типизацией, какие проблемы возникл\
+            и на пути «перехода», какую ценность (и с позиции разработки, и с позиции бизнеса) это принесло, и когда стоит\
+            \ об этом беспокоиться.\n\nВ докладе немного затронем TypeScript (в основном отвечая на вопрос «почему не он»\
+            ) и сконцентрируемся вокруг FlowType и его экосистемы — чтобы понять, «зачем нам еще один TypeScript», куда дв\
+            ижется сообщество «типизаторов» и зачем к нему присоединяться."
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [264]
+  - id: 530
+    name:
+      - {language: en, text: Numbers}
+    shortDescription:
+      - {language: en, text: "The story of numbers, where they came from, how they work, and what they might do next."}
+    longDescription:
+      - {language: en, text: "This is the story of numbers, where they came from, how they work, and what they might do next.\
+            \ Computers are machines that manipulate numbers. Understanding the nature of numbers is essential for the making\
+            \ of good programs."}
+    talkDay: 1
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/63nhb7ENc44WckQSuEOEMK/1f7ad6130674fcacaeff03748aed7892/numbers.pdf"]
+    videoLinks: []
+    speakerIds: [721]
+  - id: 531
+    name:
+      - {language: en, text: "The Road to a Statically Typed Future"}
+    shortDescription:
+      - {language: en, text: "Discussing how tools like Flow will help us writing type-safe and analyzable JavaScript, and\
+            \ philosophizing about the future of typed JavaScript."}
+    longDescription:
+      - language: en
+        text: "JavaScript's dynamic nature and rich and expressive syntax are strengths of the language, making it an approachable\
+            \ and beginner-friendly language to get started with. However, this same flexibility through dynamic typing and\
+            \ runtime evaluation increases the difficulty of debugging and makes it tough to confidently change existing code.\n\
+            \nThis talk will discuss Patrick's personal journey and experience on using existing type systems within and outside\
+            \ of the JavaScript ecosystem, specifically Flow and ReasonML, and demonstrate how they can improve your workflow.\n\
+            \nPatrick will talk about general concepts of why we need type definitions, how types will influence API designs,\
+            \ the differences between static and runtime types and how we can bridge the gap between a statically compiled,\
+            \ type-safe language and the JavaScript ecosystem."
+    talkDay: 1
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/8T70CbD3mEWwa6uEOGkCg/1de675b774b20cc2d845b584b60a1850/Patrick_Stapfer_the_road_to_a_staically_typed_future_holyjs.pdf"]
+    videoLinks: []
+    speakerIds: [738]
+  - id: 532
+    name:
+      - {language: en, text: "Down the Rabbit Hole: JavaScript in Wonderland"}
+    shortDescription:
+      - {language: en, text: "What even makes sense in JavaScript? Experience Alice's trip through Wonderland of JS oddities\
+            \ and their explanations."}
+    longDescription:
+      - language: en
+        text: "What even makes sense in Javascript? For a language originally created in 10 days it surely has a lot of quirks\
+            \ and perks many JS developers are unaware of. Sometimes, it might even seem like we fell down the rabbit hole\
+            \ only to find that NaN is actually a Number, undefined can be defined, +!![] equals 1, Array.sort() may not work\
+            \ as you suspected and so much other nonsense that can trip any JS developer’s mind.\n\nThis talk is a collection\
+            \ of Javascript’s oddities and unexpected behaviors that hopefully will prevent some future headaches and help\
+            \ understand the language that we all love in a more deeper and meaningful way."
+    talkDay: 1
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/2OJhLEpLkk4iey4KUQEe4M/a8ed54343527d202f1fcd59623c62ee7/Claudia_Hernandez_Javascript_In_Wonderland__1_.pdf"]
+    videoLinks: []
+    speakerIds: [741]
+  - id: 533
+    name:
+      - {language: en, text: "The cost of a skipped frame"}
+      - {language: ru, text: "Цена пропущенного фрейма"}
+    shortDescription:
+      - {language: en, text: "This talk covers some aspects of browser rendering mechanics, underlying browser optimisations,\
+            \ techniques for achieving smooth animation as well as instruments for its developing and debugging."}
+      - {language: ru, text: "Доклад об особенностях отрисовки контента в браузере, неочевидных браузерных оптимизациях, п\
+            риёмах для достижения плавности анимаций, а также об инструментах для их разработки и отладки."}
+    longDescription:
+      - language: en
+        text: "Yet another talk on animation.\L\L Hardware marked is developing so rapidly that some new phones are more powerful\
+            \ than an average 4-year old laptop. But despite all the computational power, many animations in the web are still\
+            \ janky and stuttering.\L\L\n\nWhat makes the browser skip frames? The concepts of GPU rendering, compositing\
+            \ layers, transform/opacity animation are well-known by now. In this talk we will dig a little deeper into them,\
+            \ take a look at what happens when frames get skipped, learn some techniques to achieve smooth and performant\
+            \ animations and review development tools useful for their creating and debugging."
+      - language: ru
+        text: "И снова говорим об анимации. Рынок hardware развивается семимильными шагами, новые четырёхъядерные Android-с\
+            мартфоны уже мощнее, чем ноутбук четырёхлетней давности. Но, несмотря на все вычислительные мощности, многие а\
+            нимации в вебе продолжают быть дёргаными и неопрятными.\n\nЧто заставляет браузер пропускать фреймы? Такие пон\
+            ятия, как отрисовка на GPU, композиция слоёв, анимация transform/opacity, давно известны и привычны. В докладе\
+            \ мы взглянем глубже на них, поговорим о том, к чему приводят пропущенные фреймы, как сгладить анимацию технич\
+            ески и визуально, какие есть инструменты разработки и отладки анимаций, а также о подходах и приёмах для дости\
+            жения плавности."
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [744]
+  - id: 534
+    name:
+      - {language: en, text: "8 1/2 things about serverless (with Node.js)"}
+    shortDescription:
+      - {language: en, text: "Explaining serverless architecture, showing why it’s important, and showing why it works great\
+            \ with Node.js and how to use it."}
+    longDescription:
+      - language: en
+        text: "What is serverless? How does it work? Can you explain it with something as simple as Lego bricks?\n\nThis talk\
+            \ will answer that and at least six and a half more questions. It’s main goal is to explain serverless architecture,\
+            \ show you why it’s important, and finally, show you why it works great with Node.js and how to use it."
+    talkDay: 1
+    track: 2
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/6NGdg4bq4oUa4cca4UEssK/a8eec0e17247c16b0f013257513a898a/Slobodan-Stojanovic_8-1-2-things-about-serverless.pdf"]
+    videoLinks: []
+    speakerIds: [726]
+  - id: 535
+    name:
+      - {language: en, text: "Kotlin as a language for frontend development"}
+      - {language: ru, text: "Kotlin как язык для разработки фронтенда"}
+    shortDescription:
+      - {language: en, text: "Interop with JS, differences with JVM version and so on."}
+      - {language: ru, text: "Взаимодействие с JS-кодом, отличия от Kotlin для JVM и не только."}
+    longDescription:
+      - language: en
+        text: "Kotlin is a young programming language. Originally it was designed to target the JVM, but now it targets the\
+            \ JavaScript too (and even Native).\nDuring this talk we will discuss about some aspects of Kotlin JS, such as:\n\
+            - interop with JavaScript;\n- what differences there are compared to Kotlin on JVM;\n- sharing code between target\
+            \ platforms;\n- and more."
+      - language: ru
+        text: "Kotlin — относительно новый язык программирования, который изначально разрабатывался для JVM, но сегодня мо\
+            жет компилироваться в JavaScript и не только.\nВ данном докладе будет рассказано про различные аспекты Kotlin\
+            \ JS:\n- взаимодействие с кодом на JavaScript;\n- какие есть отличия от Kotlin на JVM;\n- как использовать оди\
+            н и тот же код для разных платформ;\n- и т.д."
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/7vnMUx0CpUiKAaKEui8MYk/c7e551e4a2f4be9048056233c9a29993/Zalim_Bashorov_Kotlin_as_a_language_for_Frontend_Development.pdf"]
+    videoLinks: []
+    speakerIds: [745]
+  - id: 536
+    name:
+      - {language: en, text: "Architecture of modern JS-applications: three frameworks, three approaches"}
+      - {language: ru, text: "Архитектура современных JS-приложений: три фреймворка, три подхода"}
+    shortDescription:
+      - {language: en, text: "We will speak about the approaches of three popular frameworks to the modern patterns of the\
+            \ front-end architecture. That can be a good occasion to brush up on your skills or to try out something new."}
+      - {language: ru, text: "Сравним подходы популярных фреймворков к современным архитектурным паттернам: это хороший по\
+            вод освежить свои знания или попробовать что-то новое."}
+    longDescription:
+      - {language: en, text: "In this talk we will compare how three popular frameworks (React, Angular 2, Vue) interpret\
+            \ modern architectural patterns in different ways, considering their own ideology and internal logic. In doing\
+            \ so, we will analyze how the approaches differ, what good and bad parts each of them has and which is the winning\
+            \ one in some particular situations."}
+      - {language: ru, text: "В ходе доклада мы сравним, как три популярных фронтенд-фреймворка (React, Angular 2, Vue) по\
+            -разному трактуют современные архитектурные паттерны, опираясь на собственную идеологию и внутреннюю логику. П\
+            ри этом мы проанализируем, в чем подходы различаются, в чём преимущества и недостатки каждого подхода, и какой\
+            \ из них выигрывает в той или иной ситуации."}
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/mF5m1iWtUcA4gcGEGOeqE/89e695de9db5888a062a0b28abaee295/HolyJS.pdf"]
+    videoLinks: []
+    speakerIds: [747]
+  - id: 537
+    name:
+      - {language: en, text: "Rendering performance from the ground up"}
+    shortDescription:
+      - {language: en, text: "In this talk we will explore how a page is rendered from the pixel to the whole page and get\
+            \ an intuition why some things are slow and others are fast... and what \"hardware accelerated\" actually means!"}
+    longDescription:
+      - language: en
+        text: "Web developers should care about web performance.\nUnfortunately web performance explanations usually start\
+            \ from the rendered website, go down to the DOM and stop with statements as \".. and it's fast because it's accelerated\"\
+            .\nWe will do it the other way around: We will start with a pixel and work our way up:\nHow does a piece of markup\
+            \ turn into pixels, how are they combined to the page?\nWe will visit:\nParsing\nLayers / Textures\nPainting\n\
+            Compositing / Transformations\nFrom this we will conclude what we need to do to help the platform make our sites\
+            \ slick and fast."
+    talkDay: 1
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/TmMf1WrigKmsuAAUIO2AE/0878c78db092cc65ce59c9e139016043/Martin_Splitt_Rendering_performance_from_the_ground_up.pdf"]
+    videoLinks: []
+    speakerIds: [654]
+  - id: 538
+    name:
+      - {language: en, text: "The inner structure of a webpack bundle"}
+      - {language: ru, text: "Внутреннее устройство бандла webpack"}
+    shortDescription:
+      - {language: en, text: "How does webpack create bundles, transform code, choose which files to add to build, connect\
+            \ chunks? Knowing all this you can debug your code easier and control bundle size."}
+      - {language: ru, text: "Как webpack собирает бандл, связывает чанки, преобразует код и определяет, добавлять ли файл\
+            ы в сборку? Зная все это, гораздо проще контролировать размер бандла и ловить баги в сборке."}
+    longDescription:
+      - language: en
+        text: "webpack is a de-facto standard bundler for large frontend projects. Lots of developers use it, but mostly like\
+            \ a black box: you place your files in some place, write some magical words in config and then magic happens.\
+            \ Until it doesn’t. \n\nThe talk will explain how this magic works, how a webpack bundle looks from inside, how\
+            \ different settings can change output and lead to unexpected side effects. And also how you can debug and optimize\
+            \ it."
+      - language: ru
+        text: "webpack стал де-факто стандартом для сборки крупных приложений на JS. Его используют почти все, но, как пра\
+            вило, в качестве черного ящика: «если положить вот сюда файлы и написать такие-то строчки в конфиг, то потом н\
+            а выходе автомагически получится бандл». \n\nВ докладе будет раскрыто, как эта магия работает, как выглядит ба\
+            ндл изнутри, как разные настройки на него влияют, почему некоторые настройки могут привести к неожиданным побо\
+            чным эффектам, а также как все это отлаживать и оптимизировать."
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6grHdTSZYkuG2iqOY82QSG/58bb4494f3b28e8470d1f7a52c63aa4e/Alexey_Ivanov_Inner_structure_of_webpack_bundle.pdf"]
+    videoLinks: []
+    speakerIds: [746]
+  - id: 539
+    name:
+      - {language: en, text: "JS UX: Writing code for humans"}
+    shortDescription:
+      - {language: en, text: "In this light-hearted talk you will learn a ton of tips and tricks to improve your API design."}
+    longDescription:
+      - {language: en, text: "We tend to think of user interfaces and UX as designer concerns that do not apply to us. However,\
+            \ every time we write code to be used by others — or ourselves in the future! — we are creating a UI. A UI whose\
+            \ usability can be vastly improved by many UX principles, some tailored to code, others applying to every UI,\
+            \ ever. In this light-hearted talk you will learn a ton of tips and tricks to improve your API design, distilled\
+            \ from Lea’s experience of creating & managing dozens of successful open source projects with thousands of merged\
+            \ pull requests."}
+    talkDay: 2
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [722]
+  - id: 540
+    name:
+      - {language: en, text: "Dependencies in component web done right"}
+      - {language: ru, text: "Зависимости в компонентном вебе, сделанные правильно"}
+    shortDescription:
+      - {language: en, text: "Get rid of manual work on component based projects."}
+      - {language: ru, text: "Избавляемся от ручной работы при поддержке проекта, основанного на компонентном подходе."}
+    longDescription:
+      - language: en
+        text: "We live in a component-based world. And complex components are based on simple ones. This implies the need\
+            \ to express dependencies between them. Most existing methods have notable disadvantages: hardcode, refactoring\
+            \ complexity, large amount of manual work and so on.\n\nAt Yandex we thought of a way to get rid of all these\
+            \ dependency problems. In this talk a new approach will be shown, using building with Gulp and Webpack as an example.\
+            \ Also a package will be shown that not only lets build React projects in such a way but also provides multiple\
+            \ inheritance for React components."
+      - language: ru
+        text: "Мы живем в компонентном мире. При этом сложные компоненты строятся на основе простых. Из этого вытекает нео\
+            бходимость выражать зависимости между ними. Абсолютное большинство существующих способов имеют заметные недост\
+            атки: хардкод, сложность при рефакторинге, большое количество ручной работы и так далее.\n\nМы в Яндексе приду\
+            мали способ, как избавиться от всех этих проблем с зависимостями. В докладе будет рассказано, как применить но\
+            вый подход на примере сборки на Gulp и Webpack. А также о пакете, который не только позволяет собирать таким о\
+            бразом проекты на React, но и обеспечивает множественное наследование для React-компонентов."
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6AQaclj7gIYesm82CEeosM/030624060be5a67c59fb72f81ef374da/Grinenko_-_deps_-_holyJS_Piter.pdf"]
+    videoLinks: []
+    speakerIds: [749]
+  - id: 541
+    name:
+      - {language: en, text: "Functional Programming in JS: What? Why? How?"}
+    shortDescription:
+      - {language: en, text: "In this gentle, practical intro to functional programming, we'll explore the advantages and\
+            \ basic principles of the paradigm, letting holy, pure functions deliver us from the evils of mutable state."}
+    longDescription:
+      - language: en
+        text: "Functional programming has become a hot topic in the JS community, leaving many JavaScripters wondering: What's\
+            \ all the hype about? What do functional programs look like, and why might I prefer them to imperative/object-oriented\
+            \ code? How do I get started writing code in a functional style?\n\nIf you've been asking yourself these questions,\
+            \ you'll enjoy this gentle, practical intro to functional programming. We'll explore the advantages and basic\
+            \ principles of the paradigm, in which holy, pure functions deliver us from the evils of mutable state. We'll\
+            \ see how rejecting side-effects and mutability in our code can avoid a lot of common JS headaches. And we'll\
+            \ learn how to use core JS features as well as some popular FP libraries like Mori and Ramda to start writing\
+            \ our own functional programs."
+    talkDay: 2
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5YqZAn4MGkww8aAsSo0MIm/605847abdf60ac063335e1be5d7e6299/Functional_Programming-_What-_Why-_How-.pdf"]
+    videoLinks: []
+    speakerIds: [739]
+  - id: 542
+    name:
+      - {language: en, text: "ES2017 vs Typescript vs Dart. Comparing without emotion"}
+      - {language: ru, text: "ES2017 vs Typescript vs Dart. Сравниваем без эмоций"}
+    shortDescription:
+      - {language: en, text: "Unbiased competition between Dart, JS, Typescript."}
+      - {language: ru, text: "Объективное соревнование между языками программирования."}
+    longDescription:
+      - language: en
+        text: "Developers often face a difficult choice of a programming language for developing client-side applications.\
+            \ Usually, the choice is between the three pillars: JavaScript, TypeScript and Dart.\nThis talk will compare those\
+            \ three technologies."
+      - {language: ru, text: "Перед разработчиками очень часто стоит непростая задача выбрать язык программирования для ра\
+            зработки клиентской части приложения. Как правило: выбор стоит между тремя китами: JavaScript, TypeScript и Dart.\
+            \ Доклад сравнит три этих технологии."}
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [733]
+  - id: 543
+    name:
+      - {language: en, text: "Goto There and Back Again"}
+    shortDescription:
+      - {language: en, text: "We'll look at the history of some current controversies in language design, starting with Dijkstra's\
+            \ letter to the editor."}
+    longDescription:
+      - {language: en, text: "The March of Progress is not a stable thing. It moves in fits, and frequently changes direction.\
+            \ N steps forward. M steps back. Can we get there from here? Are we there yet? JavaScript has become incredibly\
+            \ popular, and yet is little loved and much hated. And it is trying to change while petrified by its own popularity.\
+            \ We'll look at the history of some current controversies in language design, starting with Dijkstra's letter\
+            \ to the editor. A go to technology is sometimes useful and so must be eliminated."}
+    talkDay: 2
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3FMe9juA2scSYEWS0uaEgC/04e96481d2d0a5ca7e001660faf587fa/goto.pdf"]
+    videoLinks: []
+    speakerIds: [721]
+  - id: 544
+    name:
+      - {language: en, text: "From frameworks to overframeworks"}
+      - {language: ru, text: "От фреймворков к сверхфреймворкам"}
+    shortDescription:
+      - {language: en, text: "How popular libraries force us to write non-reusable code, unnecessary refactoring and copy-paste.\
+            \ And how to solve these problems without overhead by developing DI ideas on the front-end."}
+      - {language: ru, text: "Как популярные библиотеки заставляют нас писать непереиспользуемый код, делать ненужный рефа\
+            кторинг и копипаст. И как без оверхеда решить эти проблемы, развивая идеи DI на фронтенде."}
+    longDescription:
+      - language: en
+        text: "The usage cost of any good practice depends on application size and quality level of programming language and\
+            \ development tools: syntactic sugar, typings, code assembly process, the ide support, etc..\n\nThis talk will\
+            \ tell you about high-coupling application code with frontend frameworks. How popular libraries are force us to\
+            \ write non-reused code, unnecessary refactoring and copy-paste. Not exactly chosen strategy at the beginning\
+            \ of the path, affects the future of the front-end development.\n\nIt will also tell you about trying to solve\
+            \ these problems in reactive-di, which is based on dependencty injection and reactive programming ideas. This\
+            \ is a something like a docker for code, having control over the state of the application, which combines the\
+            \ ideas of mobx, mol, cellx, angular2 di."
+      - language: ru
+        text: "Цена использования любой хорошей практики программирования складывается из масштаба приложения и из того, н\
+            асколько удобно позволяют реализовать её текущий уровень развития языка и инструментов разработки: синтаксичес\
+            кий сахар, наличие типизации, поддержка типизации в run-time, поддержка IDE.\n\nДоклад расскажет о «прибитости\
+            \ гвоздями» кода приложения к фреймворкам. О том, как популярные библиотеки заставляют нас писать непереисполь\
+            зуемый код, делать ненужный рефакторинг и копипаст. О том, как неточно выбранная стратегия в начале пути влияе\
+            т на будущее фронтенд-разработки в целом.\n\nО попытках решить эти проблемы в reactive-di, основанном на идеях\
+            \ внедрения зависимостей (DI) и реактивного программирования. Своего рода «докера» для кода, контролирующего с\
+            остояние приложения и комбинирующего в себе идеи mobx, mol, cellx, angular2 di."
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/4oiH7qIrZuCEWG4aSoKU20/158785d22e69286945a8a6f1c38709bb/Sergey_Yuferev_From_frameworks_to_overframeworks.pdf"]
+    videoLinks: []
+    speakerIds: [748]
+  - id: 545
+    name:
+      - {language: en, text: "V8 under the hood"}
+      - {language: ru, text: "V8 под капотом"}
+    shortDescription:
+      - {language: en, text: "What steps does our program go through on the way from a text file to machine code. Why do you\
+            \ need compiler for an interpreted language and how does it work."}
+      - {language: ru, text: "Какой путь проходит наша программа: от текстового файла до машинного кода. Для чего нужен ко\
+            мпилятор в интерпретируемом языке и как он работает."}
+    longDescription:
+      - {language: en, text: "We all use JavaScript every day, but few people think about what happens after the source code\
+            \ gets into a browser. I’ll take V8 engine as an example for showing you all the stages that our code goes through\
+            \ before becoming a set of machine instructions for the processor. I’ll tell you why almost identical code samples\
+            \ have different benchmarks and why these benchmarks can not be trusted. We will go through the history of the\
+            \ V8 engine from the first version without an optimizing compiler, to the modern Ignition + Turbofan pipeline\
+            \ and learn how the V8 authors managed to achieve such impressive performance."}
+      - {language: ru, text: "Мы все используем JavaScript каждый день, но мало кто задумывается, что происходит после тог\
+            о, как исходный код попадает в браузер. На примере движка V8 я расскажу про стадии, которые проходит наш код,\
+            \ прежде чем стать набором машинных инструкций для процессора. Расскажу, почему почти одинаковые, на первый вз\
+            гляд, примеры кода показывают разные результаты на тестах и почему этим тестам нельзя доверять. Мы пройдёмся п\
+            о истории движка V8 от самой первой версии без оптимизирующего компилятора до современного конвейера Ignition\
+            \ + Turbofan и узнаем, как авторам V8 удалось добиться столь впечатляющей производительности."}
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/5CKHA7h43YKscaCGMQ0sO4/bc2c164a90b96ed0a5d887e11ae835b3/Melikhov_Andrey_V8_under_the_hood__1_.pdf"]
+    videoLinks: []
+    speakerIds: [723]
+  - id: 546
+    name:
+      - {language: en, text: "Why my site lags and how to fix it"}
+      - {language: ru, text: "Почему мой сайт тормозит и как это исправить"}
+    shortDescription:
+      - {language: en, text: "A talk about client-side app optimization."}
+      - {language: ru, text: "Доклад о способах оптимизации приложений."}
+    longDescription:
+      - {language: en, text: "This talk will explain how to make a choice between caching and dynamic calculation."}
+      - {language: ru, text: "В докладе будет показано на примерах, в каких случаях при разработке интерфейсов нужно делат\
+            ь ставку на кеширование, а в каких можно довериться процессору."}
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/4bRG6TLbEc24aWAyQQGeE/79bc30a4c78d8bf13ce54c128a67ac6e/Alexeenko_Why-My-Site-Lags-And-How-To-Fix-It__1_.pdf"]
+    videoLinks: []
+    speakerIds: [751]
+  - id: 547
+    name:
+      - {language: en, text: "Offline Second"}
+    shortDescription:
+      - {language: en, text: "How to add an offline mode to an already existing app."}
+      - {language: ru, text: "Как добавить поддержку offline-режима в уже существующие приложения."}
+    longDescription:
+      - {language: en, text: "Nowadays there are many tips on using «Offline First» principle in a greenfield project. But\
+            \ how to add an offline mode to an application that has already been released? What tactics and architectural\
+            \ approaches should be used? What technologies and libraries should one look for? What kinds of storage are needed\
+            \ for implementation of pull/push strategies?"}
+      - {language: ru, text: "Существует множество рекомендаций, как начинать проекты, следуя принципу «Offline First». Но\
+            \ как добавить поддержку offline-режима в приложениях, которые уже написаны? Какие тактики и архитектурные под\
+            ходы применять, чтобы не возникло необходимости полностью переписывать приложение? Какие технологии и библиоте\
+            ки использовать для этого? Какие хранилища подойдут для реализации pull/push стратегий?"}
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1KtAAeRNsY0oogOg2eWU2U/6a87521753ff4367ae96520fe7504de5/Aliaksei_Bahachuk_Offline_Second.pdf"]
+    videoLinks: []
+    speakerIds: [708]
+  - id: 548
+    name:
+      - {language: en, text: "React Loadable: Code Splitting with Server Side Rendering"}
+    shortDescription:
+      - {language: en, text: "In this talk we will explore how to organize component-centric code splitting with server side\
+            \ rendering and universal data fetching in React, when your application becomes large enough."}
+      - {language: ru, text: "Как организовать компонентно-ориентированное разделение кода для большого SPA-приложения на\
+            \ React с рендерингом на сервере и универсальной загрузкой данных."}
+    longDescription:
+      - language: en
+        text: "When you have a large enough application, a single large bundle with all of your code becomes a problem for\
+            \ startup time. You need to start breaking your app into separate bundles and load them dynamically when needed.\n\
+            \nSplitting a single bundle into several ones is a well-solved problem with tools like Browserify and Webpack.\n\
+            \nBut now you need to find places in your application where you can split off into another bundle and load it\
+            \ asynchronously. You also need a way to communicate between server and client, and need to organize server side\
+            \ rendering and implement universal data fetching for your application.\n\nEven React Router team failed with\
+            \ this task, as shown in its documentation: \"We’ve tried and failed a couple of times\".\n\nThe talk will show\
+            \ how to solve this problem using a library called React Loadable.\n\nAlso, we will look at some solutions which\
+            \ you can achieve with React Router v4 and why they are not the best ones.\n\nFor this talk, you will need some\
+            \ knowledge in React, Babel (ES6), Node, Webpack 2, Redux, and little bit React Router v4."
+      - language: ru
+        text: "Когда у нас достаточно большое приложение, существенной проблемой при его старте становится один-единственн\
+            ый бандл со всем кодом. Нужно разбивать приложение на отдельные бандлы и загружать их динамически, когда это н\
+            еобходимо.\n\nРазделить один бандл на несколько помогают такие инструменты, как Browserify и webpack. Но как т\
+            олько требуется также организовать рендеринг на сервере и имплементировать универсальную загрузку данных для н\
+            ашего приложения, решать эту проблему становится сложнее. Кроме того, нам нужно найти места в нашем приложении\
+            , где мы будем разбивать его на другие бандлы и загружать их асинхронно, а также подумать, как нам связать сер\
+            вер и клиент.\n\nЕсли открыть в документации React Router 4 раздел «Code-splitting + server rendering», то мож\
+            но увидеть: \n«We’ve tried and failed a couple of times».\n\nВ докладе будет показано, как можно решить эту пр\
+            облему с помощью простой библиотеки React Loadable. Для этого доклада вам пригодятся знания React, Babel (ES6),\
+            \ Node, webpack 2 и Redux."
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1F1M1wNjnicWywOWeUEuSq/17cb533027ee8412616af9f98fa9b0cf/George_Bukhanov_Code_Splitting_with_Server_Side_Rendering.pdf"]
+    videoLinks: []
+    speakerIds: [750]
+  - id: 549
+    name:
+      - {language: en, text: "Migrating your existing web app into virtual reality"}
+      - {language: ru, text: "Переносим существующее web-приложение в виртуальную реальность"}
+    shortDescription:
+      - {language: en, text: "WebVR technology and approaches you might use to move existing web applications to virtual reality\
+            \ in order to provide new experience to users and a bit of fun for yourself."}
+      - {language: ru, text: "Как интегрировать существующие web-приложения в виртуальную реальность, давая вашим пользова\
+            телям новые возможности и UX, а себе дозу фана."}
+    longDescription:
+      - language: en
+        text: "Virtual Reality is a big trend now which is not that close to the commonplace front-end development. However\
+            \ it might be beneficial to move existing Web application to Virtual Reality world in order to provide new experience\
+            \ to users and fun for web devs.\n\nShould we use CSS3d or WebGL to drop web app into 3D scene?\nWhat solutions\
+            \ are available and what common pitfalls should be avoided while migrating your app to VR?\nWhy HTML is as good\
+            \ for VR UIs as it good for flat web UIs?\nHow web developer can be a part of VR movement?"
+      - language: ru
+        text: "Виртуальная реальность — мощный тренд, который до текущего момента обходил стороной веб-разработчиков. Данн\
+            ый доклад о том, как интегрировать существующие web-приложения в мир виртуальной реальности, давая вашим польз\
+            ователям новые возможности и UX, а себе дозу фана.\n\nДолжны ли мы использовать CSS или WebGL для проброса при\
+            ложения в VR? \nКакие решения доступны на текущий момент и каких ошибок стоит остерегаться? \nПочему HTML так\
+            \ же хорош для разработки VR интерфейсов, как и для обычного, плоского Web? \nКак веб-разработчик может быть ч\
+            астью VR-революции?"
+    talkDay: 2
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/4YbCtcqOjeWeYGQ2QI2usC/da7e2507da77402e2b3308bef38cc790/New_Migrating_Web_apps_to_Virtual_Reality.pdf"]
+    videoLinks: []
+    speakerIds: [711]
+  - id: 550
+    name:
+      - {language: en, text: "Screen mirroring in action"}
+      - {language: ru, text: "Демонстрация экрана в действии"}
+    shortDescription:
+      - {language: en, text: "The story about how \"easy\" it is to implement screen sharing from a user to a call center\
+            \ operator."}
+      - {language: ru, text: "Рассказ о том как «просто» реализовать демонстрацию экрана web-пользователя оператору колл-ц\
+            ентра в реальном времени."}
+    longDescription:
+      - {language: en, text: "Who needs a user screen-sharing, and why? How to implement it? This talk describes existing\
+            \ approaches to organizing image streaming from the browser part of an application. We will talk about their pros\
+            \ and cons. We’ll demonstrate our full-stack JS implementation grown from a simple prototype based on a WebSocket\
+            \ server. You will know about our experiments and research preceding a production-ready implementation. We’ll\
+            \ discuss ways to make such application persistent for any session interruption and capable to survive on high\
+            \ load. You’ll also know about a data compression, parsers, testing and RxJS usage."}
+      - {language: ru, text: "Зачем и кому нужна демонстрация экрана пользователя? Как это реализовать? В докладе будет ра\
+            ссказано о существующих способах организации стриминга изображения в браузерной части приложения. Поговорим об\
+            \ их достоинствах и недостатках. Будет показано наше full-stack JS-решение, выросшее из простого прототипа, ос\
+            нованного на WebSocket-сервере. Вы узнаете об исследованиях и опытах, предшествовавших production-ready реализ\
+            ации. Обсудим, как можно сделать такое приложение устойчивым к обрывам соединений и выдерживающим большой траф\
+            ик. Вы также узнаете о сжатии данных, парсерах, тестировании и внедрении RxJS."}
+    talkDay: 2
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/rxJIHVXZPqkmUYYE2Geoa/3a66c56283188010d3050c8b341865d1/Aleksei_Nosov_Screen_mirroring_in_action.pdf"]
+    videoLinks: []
+    speakerIds: [752]
+  - id: 551
+    name:
+      - {language: en, text: "CSS in JS. Why and how?"}
+      - {language: ru, text: "CSS in JS. Зачем и почему?"}
+    shortDescription:
+      - {language: en, text: "How to choose CSS in JS library, when its better to use this approach instead of usual CSS,\
+            \ how to make code more concise and less complex. A lot of examples."}
+      - {language: ru, text: "Как выбрать библиотеку, реализующую CSS in JS, когда использовать такой подход вместо привыч\
+            ного CSS, как писать код лаконичнее и стройнее. Много примеров."}
+    longDescription:
+      - language: en
+        text: "Let's examine CSS in JS from all the sides: \n\n- Why do we need CSS in JS? \n- How CSS in JS works. \n- Dynamic\
+            \ CSS \n- Existing Solutions and differents between them. \n- What approach we use and why. \n- Experiments with\
+            \ CSS in JS - Browser extension and Service Worker to cache generated CSS. \n- Examples, lots of examples."
+      - language: ru
+        text: "Рассмотрим CSS in JS со всех сторон: \n\n- Зачем нам нужен CSS in JS? \n- Как это работает. \n- Динамически\
+            й CSS. \n- Существующие решения и разница между ними. \n- Какой подход используем мы и почему. \n- CSS in JS-э\
+            ксперименты: Browser extension и Service Worker для кеширования сгенерированного CSS. \n- Примеры, много приме\
+            ров."
+    talkDay: 2
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/73zaX85dokgYs6GUaayU8G/bff756e1e4fa2e1079c00b2c36f5fadb/CSS-in-JS_Sorokobatko.pdf"]
+    videoLinks: []
+    speakerIds: [743]
+  - id: 552
+    name:
+      - {language: en, text: "Migrating Pinterest profiles to React"}
+    shortDescription:
+      - {language: en, text: "Techniques tried and challenges faced while migrating to React a service that’s constantly changing\
+            \ and used by millions of people."}
+    longDescription:
+      - language: en
+        text: "We all have been in situation when we had to move from one platform to another. While it’s relatively easy\
+            \ to build a new web app in React, migrating a service that’s constantly changing and used by millions of people\
+            \ is a much more complicated challenge. It’s like changing the engines of an airplane while mid-flight. Some of\
+            \ the problems are: rendering JavaScript on the server, measuring the impact, debugging issues, dealing with old\
+            \ resource library and rendering React components inside of the existing JS Framework.\n\nThe talk is about techniques\
+            \ we tried and challenges we faced while migrating to React at Pinterest. Also, we’ll share our performance and\
+            \ engagement gains after migrating Pinterest’s profiles to React."
+    talkDay: 2
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3RwYa1gv9SyQqsyscwws0A/be3e79ee3073cb973038395648bd249a/Imad_Elyafi_How_We_Migrated_Pinterest_Profiles_to_React.pdf"]
+    videoLinks: []
+    speakerIds: [704]
+  - id: 553
+    name:
+      - {language: en, text: "Make More Than Music with Tiny Computers, JavaScript and MIDI"}
+    shortDescription:
+      - {language: en, text: "We're living the halcyon days of tiny computers and JavaScript, but MIDI is a technology that's\
+            \ been around for much longer. In this talk we'll explore why its implementation and prevalence in hardware makes\
+            \ for a uniquely intriguing and accessible platform for creative coding."}
+    longDescription:
+      - language: en
+        text: "Tiny computers such as the RaspberryPi, Arduino and C.H.I.P. have finally reached a level of performance and\
+            \ affordability that makes hardware experimentation accessible to everyone. At the same time, JavaScript has emerged\
+            \ as the lingua franca of web programming and can be found in many places beyond just the browser.\n\nWhat if\
+            \ I told you there was a mature protocol that's been around since 1983 and was uniquely poised to take advantage\
+            \ of this development?\n\nWell, wonder no more and meet MIDI!\n\nSitting at convergence of these two things is\
+            \ MIDI — a niche protocol that's been around since 1983 and was originally designed for musical instruments to\
+            \ communicate with one another. Its event-oriented approach to messaging feels right at home in the asynchronous\
+            \ world of JavaScript & Node, and the prevalence of MIDI support in older musical equipment means you can find\
+            \ unique, hackable and affordable hardware at your local pawnshop or Craig's List.\n\nThis unlikely tech stack\
+            \ — Tiny Computers + JavaScript + MIDI — can lend itself to creative programming beyond music. George's Talk will\
+            \ explain how to get started, walk through several examples and elaborate on the future of this stack, not only\
+            \ as a platform for experimentation but for education as well."
+    talkDay: 2
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/7D27swnvi06UeIk6YCGOgG/78a641b97b5862f9ccea38b253d85cb5/George_Mandis_Make_More_Than_Music_With_MIDI.pdf"]
+    videoLinks: []
+    speakerIds: [740]

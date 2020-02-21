@@ -2041,6 +2041,18 @@ speakers:
     name:
       - {language: en, text: "Illya Klymov"}
       - {language: ru, text: "Илья Климов"}
+    company:
+      - {language: en, text: JavaScript.Ninja}
+    bio:
+      - {language: en, text: "14 years of JS everywhere: from microcontrollers to rendering video in the cloud. More than\
+            \ 5 years of educational experience (at two universities and Illya's own courses), Ph.D. in Computer Science (field\
+            \ of interest: System Analysis and Theory of optimal decisions). Coach at Kottans.Org project. Owns and runs small\
+            \ outsourcing company WookieeLabs, specializing in JS-only solutions."}
+      - {language: ru, text: "14 лет программирует на JS во всех его проявлениях: от микроконтроллеров до облачного рендер\
+            инга видео. Более 5 лет профессионально учит людей (в двух вузах и на собственных курсах), кандидат технически\
+            х наук. Организовывает конференцию KhJS в Харькове, тренер проекта Kottans.Org. Владелец небольшой аутсорсинго\
+            вой компании WookieeLabs, специализирующейся исключительно на JS-проектах."}
+    twitter: xanf_ua
   - id: 265
     fileName: 0265.jpg
     name:
@@ -4893,6 +4905,13 @@ speakers:
     fileName: 0704.jpg
     name:
       - {language: en, text: "Imad Elyafi"}
+    company:
+      - {language: en, text: Pinterest}
+    bio:
+      - {language: en, text: "Software engineer on Core Experience Team at Pinterest. Passionate about React. Was a Tech Lead\
+            \ while Pinterest was being migrated to React. Before that used to work as a software engineer on Newsfeed at\
+            \ Facebook."}
+    twitter: eelyafi
   - id: 705
     fileName: 0705.jpg
     name:
@@ -4925,6 +4944,15 @@ speakers:
     name:
       - {language: en, text: "Alexey Bogachuk"}
       - {language: ru, text: "Алексей Богачук"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: en, text: "Solution Architect, Head of JavaScript Competency Center at EPAM Systems, which consists of\
+            \ more that 3200 experts and developers. One of the leaders of local frontend community in Minsk. Main areas of\
+            \ professional interest: application architecture and infrastructure, management."}
+      - {language: ru, text: "Solution Architect, глава центра компетенции JavaScript, который состоит из более чем 3200 э\
+            кспертов и разработчиков в компании EPAM. Один из лидеров местного фронтенд-сообщества в Минске. Основные обла\
+            сти профессиональных интересов: архитектура и инфраструктура приложений, менеджмент."}
   - id: 709
     fileName: 0709.jpg
     name:
@@ -4940,6 +4968,16 @@ speakers:
     name:
       - {language: en, text: "Denis Radin"}
       - {language: ru, text: "Денис Радин"}
+    company:
+      - {language: en, text: "Evolution Gaming"}
+    bio:
+      - {language: en, text: "Being a part of R&D team at Evolution Gaming, Denis works on photorealistic web games using\
+            \ React and WebGL. Has a weakness for computer graphics and code optimization. Leads a workshop (http://challengingnative.com),\
+            \ organizes React Amsterdam and AmsterdamJS conferences."}
+      - {language: ru, text: "Работает в R&D отделе Evolution Gaming над фотореалистичными веб-играми с использованием React\
+            \ и WebGL. Питает слабость к компьютерной графике и оптимизации кода. Ведет воркшоп http://challengingnative.com,\
+            \ организатор конференций React Amsterdam, AmsterdamJS."}
+    twitter: pixelscommander
   - id: 712
     fileName: 0712.jpg
     name:
@@ -4987,15 +5025,48 @@ speakers:
     fileName: 0721.jpg
     name:
       - {language: en, text: "Douglas Crockford"}
+    company: []
+    bio:
+      - {language: en, text: "Douglas Crockford was born in Frostbite Falls, Minnesota, but left when he was only six months\
+            \ old because it was just too damn cold. He turned his back on a promising career in television when he discovered\
+            \ computers. He has worked in learning systems, small business systems, office automation, games, interactive\
+            \ music, multimedia, location-based entertainment, social systems, and programming languages. He is the inventor\
+            \ of Tilton, the ugliest programming language that was not specifically designed to be an ugly programming language.\
+            \ He is best known for having discovered that there are good parts in JavaScript. This was an important and unexpected\
+            \ discovery. He also discovered the JSON, the world’s most loved data format."}
   - id: 722
     fileName: 0722.jpg
     name:
       - {language: en, text: "Lea Verou"}
+    company: []
+    bio:
+      - {language: en, text: "Lea is currently busy doing research in Human-Computer Interaction at MIT CSAIL. She has previously\
+            \ written a bestselling CSS book for O’Reilly (CSS Secrets) and worked as a Developer Advocate at W3C. She has\
+            \ a long-standing passion for open web standards, and is one of the few Invited Experts in the CSS Working Group.\
+            \ Lea has also started several popular open source projects and web applications, such as Prism, Dabblet and -prefix-free\
+            \ and maintains a technical blog at lea.verou.me. Despite her academic pursuits in Computer Science, Lea is one\
+            \ of the few misfits who love code and design equally."}
+    twitter: leaverou
+    gitHub: LeaVerou
   - id: 723
     fileName: 0723.jpg
     name:
       - {language: en, text: "Andrey Melikhov"}
       - {language: ru, text: "Андрей Мелихов"}
+    company:
+      - {language: en, text: Yandex.Money}
+      - {language: ru, text: Яндекс.Деньги}
+    bio:
+      - {language: en, text: "Andrey is a lead frontend developer at Yandex.Money. In his free time, he engages in a non-commercial\
+            \ project \"Devschacht\", where he translates and writes articles about web development. Also, he makes podcasts\
+            \ \"Devschacht\" and \"Midnight Frontend\" and actively participates in the life of the local and the global frontend\
+            \ community."}
+      - {language: ru, text: "Работает ведущим разработчиком в компании Яндекс.Деньги. В свободное от работы время развива\
+            ет некоммерческий проект «Девшахта», в рамках которого делает переводы и пишет оригинальные статьи на тему веб\
+            -разработки. Ведёт подкасты «Девшахта» и «Ночной фронтенд». Активно участвует в жизни петербургского (и не тол\
+            ько) фронтенд-сообщества."}
+    twitter: amel_true
+    gitHub: amel-true
   - id: 724
     fileName: 0724.jpg
     name:
@@ -5056,6 +5127,16 @@ speakers:
     name:
       - {language: en, text: "Alexey Zolotykh"}
       - {language: ru, text: "Алексей Золотых"}
+    company:
+      - {language: en, text: Wrike}
+    bio:
+      - {language: en, text: "Alexey codes in JavaScript since 2007. Previously worked as a typesetter (more than 100 sites\
+            \ on his list). He used jQuery, Backbone.js, Angular 1, Angular 2, React, Ext JS, PolymerJS. Likes user interfaces\
+            \ and coffee."}
+      - {language: ru, text: "Пишет на JavaScript c 2007 года. До перехода к JS работал верстальщиком, сверстал более 100\
+            \ сайтов. Писал на jQuery, Backbone.js, Angular 1, Angular 2, React, Ext JS, PolymerJS. Любит пользовательские\
+            \ интерфейсы и кофе."}
+    twitter: zolotyh
   - id: 734
     fileName: 0734.jpg
     name:
@@ -5075,77 +5156,242 @@ speakers:
     fileName: 0737.jpg
     name:
       - {language: en, text: "Jakob Mattson"}
+    company: []
+    bio:
+      - {language: en, text: "Jakob is a CTO, founder and consultant but first and foremost a developer at heart. He has worked\
+            \ for a variety of companies including startups, the finance industry and venture capital funds. As a programming\
+            \ language enthusiast he is usually getting his hands dirty with several and has also written a few of his own.\
+            \ His fascination with JavaScript in particular comes from its combination of simplicity and applicability. Being\
+            \ a fan of libraries he has published 65 JavaScript modules to npm and is always thinking about the next one."}
+    twitter: jakobmattsson
+    gitHub: jakobmattsson
   - id: 738
     fileName: 0738.jpg
     name:
       - {language: en, text: "Patrick Stapfer"}
+    company:
+      - {language: en, text: "Digital Nomad & Freelancer"}
+    bio:
+      - {language: en, text: "Patrick Stapfer is a JavaScript Software Engineer and freelancer, mostly known for his contributions\
+            \ to the flowtype ecosystem and his recent work at Runtastic, where he spent most of his time working on the Mobile\
+            \ News Feed feature (built in React-Native). Most of his Open Source time is dedicated to Facebook’s flowtype\
+            \ platform to improve JavaScript code quality and to talk about the technologies behind it."}
+    twitter: ryyppy
+    gitHub: ryyppy
   - id: 739
     fileName: 0739.jpg
     name:
       - {language: en, text: "Anjana Vakil"}
+    company:
+      - {language: en, text: ÜberResearch}
+    bio:
+      - {language: en, text: "Anjana suffers from a debilitating case of curiosity, which led her from philosophy to English\
+            \ teaching to computational linguistics to software development. An engineer at ÜberResearch, she can usually\
+            \ be found in Berlin; that is, when she's not speaking at events around the world, trying to share the joy of\
+            \ coding and make tech more diverse and accessible. Talk to her about functional programming, language design,\
+            \ and speech technology; ask her about Mozilla, Outreachy, and the Recurse Center!"}
+    twitter: AnjanaVakil
   - id: 740
     fileName: 0740.jpg
     name:
       - {language: en, text: "George Mandis"}
+    company:
+      - {language: en, text: Snaptortoise}
+    bio:
+      - {language: en, text: "George Mandis is a freelance web developer, consultant, frequent traveler and occasional educator\
+            \ based primarily out of Portland, Oregon. He’s worked with startups, professional sports teams, small businesses\
+            \ and individuals but excels at helping people find elegant solutions for their projects. He spent a year living\
+            \ as a digital nomad, inadvertently cheated at a marathon in North Korea and writes frequently on technology and\
+            \ travel on his website."}
+    twitter: georgemandis
   - id: 741
     fileName: 0741.jpg
     name:
       - {language: en, text: "Claudia Hernández"}
+    company:
+      - {language: en, text: Dailymotion}
+    bio:
+      - {language: en, text: "Claudia Hernández is a Senior Frontend Engineer at Dailymotion in Paris. She crossed the Atlantic\
+            \ to work on projects for companies such as Air France, EDF, Groupe SEB and Aéroport de Paris. Claudia has a computer\
+            \ science background and loves learning emerging web technologies. When she is not coding, chances are you’ll\
+            \ find her reading a book! Claudia also loves travelling and discovering new cultures."}
+    twitter: koste4
   - id: 742
     fileName: 0742.jpg
     name:
       - {language: en, text: "Timofey Chaptykov"}
       - {language: ru, text: "Тимофей Чаптыков"}
+    company:
+      - {language: en, text: VK}
+    bio:
+      - {language: en, text: "VK Developer. Currently he works on the message section. Previously worked at 2GIS. He has assisted\
+            \ in the development of several open projects. Sometimes speaks at conferences and writes technical articles."}
+      - {language: ru, text: "Разработчик Вконтакте. Работает над разделом сообщений. Ранее работал в 2ГИС. Принимал участ\
+            ие в разработке нескольких открытых проектов. Иногда выступает на конференциях и пишет технические статьи."}
+    twitter: chaptykov
   - id: 743
     fileName: 0743.jpg
     name:
       - {language: en, text: "Valerii Sorokobatko"}
       - {language: ru, text: "Валерий Сорокобатько"}
+    company:
+      - {language: en, text: Plarium}
+    bio:
+      - {language: en, text: "Almost always worked at gamedev on internal applications designed for marketing and game analysis.\
+            \ Always uses cutting edge technologies and approaches. Researcher, developer, public speaker, constant learner.\
+            \ Loves open source and tech process automatisation. Create-react-appp contributor. Author of storybook readme\
+            \ addon, rockey and awesome-create-react-app. Ready to talk for hours about app architecture and UX."}
+      - {language: ru, text: "Практически всегда работал в сфере геймдева, разрабытывая внутренние инструменты. В основном\
+            \ для игровой и маркетинговой аналитики, используя современные технологии и подходы. Исследователь, изобретате\
+            ль велосипедов, докладчик. Любит open source и автоматизацию технических процессов. Контрибьютер create-react-app.\
+            \ Автор storybook readme addon, rockey и awesome-create-react-app. Готов говорить вечно об архитектуре приложе\
+            ний и UX."}
+    twitter: tuchk4
   - id: 744
     fileName: 0744.jpg
     name:
       - {language: en, text: "Dmitry Shuranov"}
       - {language: ru, text: "Дмитрий Шуранов"}
+    company:
+      - {language: en, text: Tutu.ru}
+      - {language: ru, text: Туту.ру}
+    bio:
+      - {language: en, text: "Frontend developer at Tutu.ru. Have been in the industry for about five years, the last 3 of\
+            \ them has been mostly doing client-side JavaScript development. Likes JS community for its constant vigorous\
+            \ evolution."}
+      - {language: ru, text: "Фронтэнд-разработчик в Туту.ру. В вебе около 5 лет, последние 3 года занимается JavaScript-р\
+            азработкой, в основном, клиентской. Любит JS-сообщество за темпы развития и динамичность."}
   - id: 745
     fileName: 0745.jpg
     name:
       - {language: en, text: "Zalim Bashorov"}
       - {language: ru, text: "Залим Башоров"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Zalim is a member of the Kotlin team in JetBrains. He's leading the team working on Kotlin JS.\
+            \ Previously he worked on the incremental compilation for Kotlin on JVM."}
+      - {language: ru, text: "Работает в компании JetBrains в команде Kotlin, возглавляет направление Kotlin JS. Ранее зан\
+            имался инкрементальной компиляцией для Kotlin на JVM."}
+    twitter: bashorov
   - id: 746
     fileName: 0746.jpg
     name:
       - {language: en, text: "Alexey Ivanov"}
       - {language: ru, text: "Алексей Иванов"}
+    company:
+      - {language: en, text: "Evil Martians"}
+    bio:
+      - {language: en, text: "10+ years of experience as a developer and a teamlead. Worked on projects for eBay, Yandex and\
+            \ Communigate."}
+      - {language: ru, text: "Более 10 лет опыта работы разработчиком и тимлидом, в том числе над проектами для eBay, Янде\
+            кса и Communigate."}
+    twitter: iadramelk
   - id: 747
     fileName: 0747.jpg
     name:
       - {language: en, text: "Nikita Isaev"}
       - {language: ru, text: "Никита Исаев"}
+    company:
+      - {language: en, text: Jinnius}
+    bio:
+      - {language: en, text: "Fullstack web developer (JS). CEO and leading developer at Jinnius startup. Interests: architecture\
+            \ of modern JS applications, evolution of architectures."}
+      - {language: ru, text: "Fullstack web-разработчик (JS). CEO и ведущий разработчик стартапа Jinnius. Интересы: архите\
+            ктура современных JS-приложений, эволюция архитектур."}
   - id: 748
     fileName: 0748.jpg
     name:
       - {language: en, text: "Sergey Yuferev"}
       - {language: ru, text: "Сергей Юферев"}
+    company:
+      - {language: en, text: qiwi.ru}
+    bio:
+      - language: en
+        text: "Was a PHP developer since 2005 to 2012. Seen the evolution of PHP frameworks from singletone-based (code igniter,\
+            \ kohana, symfony1, zf1, yii) to SOLID and dependency injection-based (Symfony2, zf2, yii2, laravel).\nThen switched\
+            \ to JavaScript frontend applications and noticed that a lot of things was missing. Considers SOLID and DI in\
+            \ the frontend and reactivity to be unsolved problems. For roughly two years develops the ideas of IoC and DI\
+            \ with respect to reactive programming, most of them are realized in his library reactive-di."
+      - language: ru
+        text: "Программировал на PHP с 2005-го по 2012-й, за это время успев увидеть, как с развитием языка от синглтонов\
+            \ (code igniter, kohana, symfony1, zend1, yii) постепенно переходят к инверсии зависимостей и SOLID (symfony2,\
+            \ zend2, yii2, laravel).\nЗатем начал писать приложение на JS и понял, как многого не хватает из ставших привы\
+            чными вещей. Пришел к выводу, что SOLID, DI на фронтенде и реактивность — это непаханое поле экспериментов. Пр\
+            имерно два года развивает идеи IoC и DI применительно к реактивному программированию, которые воплощает в свое\
+            й библиотеке reactive-di."
   - id: 749
     fileName: 0749.jpg
     name:
       - {language: en, text: "Vladimir Grinenko"}
       - {language: ru, text: "Владимир Гриненко"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Team leader of shared component interfaces group at Yandex. Participated in development of the yandex.ru main\
+            \ page, internal services and portal components. Engaged in the development of BEM and gladly answers questions\
+            \ about the methodology.\nSupports multiple open source projects. Gave talks at numerous international IT conferences."
+      - language: ru
+        text: "Руководитель группы общих компонентов интерфейсов в симферопольском офисе Яндекса.\nВ разное время принимал\
+            \ участие в разработке главной страницы yandex.ru, внутренних сервисов и компонентов портала. Занимается разви\
+            тием БЭМ и с удовольствием отвечает разработчикам на вопросы о методологии. Вне Яндекса не один год разрабатыв\
+            ал сайты и консультировал команды различного уровня.\nПоддерживает несколько открытых проектов. Спикер на мног\
+            очисленных международных IT-конференциях."
+    twitter: tadatuta
   - id: 750
     fileName: 0750.jpg
     name:
       - {language: en, text: "George Bukhanov"}
       - {language: ru, text: "Георгий Буханов"}
+    company:
+      - {language: en, text: "Toughbyte Ltd"}
+    bio:
+      - language: en
+        text: "Works as a Senior Frontend Developer for more than four years. Specializes in creating complicated single page\
+            \ applications (SPA) with Node.js, React, Redux, redux-saga and other top notch web technologies like webpack\
+            \ 2, babel, react-router, immutable, post-CSS, eslint etc.\n\nLast 2 years I worked at Oppex, finish startup where\
+            \ we built a great react application with technologies described above. I still think that Oppex is a state of\
+            \ the art of currently react development.\n\nRight now I'm working at Toughbyte, also finish company, where I\
+            \ help other companies and startups to build a good architecture for their tech stack, and building a team that\
+            \ knows how to build products.\n\nOverall I have a various experience starting from desktop applications, servers\
+            \ and ending native mobile development."
+      - language: ru
+        text: "Работает более четырёх лет на позиции Senior Frontend Developer. Специализируется на создании сложных однос\
+            траничных приложений (SPA) с использованием таких технологий, как Node.js, React, Redux, Redux Saga, и других\
+            \ современных решений: webpack 2, Babel, React Router, Immutable.js, PostCSS, ESLint, и т.д.\n\nПоследние два\
+            \ года работал в финском стартапе Oppex, поучаствовав в создании приложения на React c использованием всех выш\
+            еописанных технологий. Недавно перешёл в Toughbyte, но уже как Tech Lead с фокусом на фронтенд. Toughbyte помо\
+            гает другим компаниям и стартапам выстроить их архитектуру, подобрать соответствующий стек технологий и многое\
+            \ другое.\n\nПомимо этого, обладает богатым опытом в разработке desktop-приложений, нативных мобильных приложе\
+            ний, а также в серверной разработке."
+    twitter: notherneyes
   - id: 751
     fileName: 0751.jpg
     name:
-      - {language: en, text: "Igor Alekseenko"}
+      - {language: en, text: "Igor Alexeenko"}
       - {language: ru, text: "Игорь Алексеенко"}
+    company:
+      - {language: en, text: "HTML Academy"}
+    bio:
+      - {language: en, text: "Teacher. JS-developer with more than 8 years' experience. Worked at Art. Lebedev Studio, Ostrovok.ru\
+            \ and JetBrains."}
+      - {language: ru, text: "Преподаватель. JS-разработчик с опытом более 8 лет. Работал в Студии Лебедева, Островке, JetBrains.\
+            \ Ведёт курсы HTML Academy по программированию на JavaScript."}
+    twitter: iamo0
   - id: 752
     fileName: 0752.jpg
     name:
-      - {language: en, text: "Alexey Nosov"}
+      - {language: en, text: "Aleksey Nosov"}
       - {language: ru, text: "Алексей Носов"}
+    company:
+      - {language: en, text: Tinkoff.ru}
+    bio:
+      - {language: en, text: "Web developer for about 5 years, developed UI for secure document flow, video streaming, and\
+            \ internet banking projects."}
+      - {language: ru, text: "Занимается web-разработкой 5 лет, разрабатывал UI в проектах защищенного документооборота, с\
+            тримингового видео, интернет-банкинга."}
   - id: 753
     fileName: 0753.jpg
     name:
