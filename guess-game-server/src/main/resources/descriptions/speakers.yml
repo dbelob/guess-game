@@ -343,14 +343,11 @@ speakers:
     company:
       - {language: en, text: Netcracker}
     bio:
-      - {language: en, text: "Vladimir has been working on performance and scalability of Netcracker platform (a software\
-            \ used by telecom operators for automatization of network management processes and network equipment) for ten\
-            \ years. His focus is Java and Oracle Database performance optimisations. Vladimir is an author of more than a\
-            \ dozen of performance improvements in the official PostgreSQL JDBC driver."}
-      - {language: ru, text: "Десять лет работает над производительностью и масштабируемостью Netcracker OSS — ПО, использ\
+      - {language: en, text: "System performance engineer at NetCracker. Looking forward to tuning Java and SQL things."}
+      - {language: ru, text: "Десять лет работает над производительностью и масштабируемостью NetCracker OSS — ПО, использ\
             уемого операторами связи для автоматизации процессов управления сетью и сетевым оборудованием. Увлекается вопр\
-            осами производительности Java и Oracle Database. Автор более десятка улучшений производительности в официально\
-            м PostgreSQL JDBC-драйвере."}
+            осами производительности Java и Oracle Database. В его обязанности входит планирование нагрузочных замеров, ан\
+            ализ и объяснение полученных результатов. Владимир является commiter’ом в Apache JMeter."}
     twitter: VladimirSitnikv
   - id: 26
     fileName: 0026.jpg
@@ -473,6 +470,18 @@ speakers:
     name:
       - {language: en, text: "Oleg Nenashev"}
       - {language: ru, text: "Олег Ненашев"}
+    company:
+      - {language: en, text: CloudBees}
+    bio:
+      - {language: en, text: "Engineer at CloudBees, core team member in the Jenkins project. Since 2008 works in the areas\
+            \ of automation, infrastructures, and frameworks for mixed software-hardware projects, with the help of Jenkins\
+            \ and dozens of other tools. Oleg writes code, maintains Jenkins core and plugins, and organizes meetups and other\
+            \ community events."}
+      - {language: ru, text: "Разработчик в CloudBees, состоит в core team проекта Jenkins. C 2008 года занимается автомат\
+            изацией, инфраструктурой и фреймворкостроением для крупных программно-аппаратных проектов с помощью Jenkins и\
+            \ десятков других тулов. Пишет код, поддерживает ядро и плагины Jenkins, организует митапы в СПб и других горо\
+            дах."}
+    twitter: oleg_nenashev
   - id: 39
     fileName: 0039.jpg
     name:
@@ -1161,17 +1170,16 @@ speakers:
     company:
       - {language: en, text: "XP Injection"}
     bio:
-      - {language: en, text: "Mikalai is a Senior Delivery Manager, Java Tech Lead and experienced coach. Expert in Java development,\
-            \ scalable architecture, Agile engineering practices and project management. He has more than 13 years of development\
-            \ experience and specializes on complex distributed scalable systems. Active participant and speaker of many international\
-            \ conferences. Founder and coach in training center XP Injection. Organizer and founder of Selenium Camp, JEEConf,\
-            \ XP Days Ukraine and IT Brunch conferences. Founder of active “Anonymous developers club” (uadevclub)."}
-      - language: ru
-        text: "Практикующий Java-техлид и Delivery Manager. Эксперт в разработке на Java, Agile-практиках и управлении про\
-            ектами. Разрабатывает на Java более 13 лет, специализируется на разработке сложных распределенных масштабируем\
-            ых систем. \nАктивный участник и докладчик многих международных конференций. Основатель и тренер тренингового\
-            \ центра XP Injection. Организатор и идеолог конференций Selenium Camp, JEEConf, XP Days Ukraine и IT Brunch.\
-            \ Основатель Клуба анонимных разработчиков."
+      - {language: en, text: "Delivery Manager and Java Tech Lead. Expert in Java development, scalable architecture, Agile\
+            \ engineering practices and project management. Having 13+ years of development experience, specializes on complex\
+            \ distributed scalable systems. Active participant and speaker of many international conferences. Founder and\
+            \ coach in training center XP Injection. Organizer and founder of Selenium Camp, JEEConf, XP Days Ukraine and\
+            \ IT Brunch conferences. Founder of active “Anonymous developers club” (uadevclub)."}
+      - {language: ru, text: "Практикующий Java-техлид и Delivery Manager. Эксперт в разработке на Java, Agile-практиках и\
+            \ управлении проектами. Разрабатывает на Java более 13 лет, специализируется на разработке сложных распределён\
+            ных масштабируемых систем. Активный участник и докладчик многих международных конференций. Основатель и тренер\
+            \ тренингового центра XP Injection. Организатор и идеолог конференций Selenium Camp, JEEConf, XP Days Ukraine\
+            \ и IT Brunch. Основатель «Клуба анонимных разработчиков»."}
     twitter: xpinjection
   - id: 124
     fileName: 0124.jpg
@@ -2136,6 +2144,19 @@ speakers:
     name:
       - {language: en, text: "Andrey Solntsev"}
       - {language: ru, text: "Андрей Солнцев"}
+    company:
+      - {language: en, text: Codeborne}
+    bio:
+      - language: en
+        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
+            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
+            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."
+      - language: ru
+        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллиннского\
+            \ Devclub, частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматически\
+            х тестов, парного программирования и чистого кода."
+    twitter: asolntsev
   - id: 238
     fileName: 0238.jpg
     name:
@@ -4751,6 +4772,16 @@ speakers:
     name:
       - {language: en, text: "Ekaterina Bateeva"}
       - {language: ru, text: "Екатерина Батеева"}
+    company:
+      - {language: en, text: Tinkoff.ru}
+    bio:
+      - {language: en, text: "Lead QA automation engineer in Tinkoff Bank, Ekaterina has been working in testing since 2012\
+            \ and has experience in testing messengers, web-services, bank systems. She has a lot of experience in functional\
+            \ and integration testing. For the last few years she has been involved in mobile automation testing."}
+      - {language: ru, text: "Ведущий инженер по автоматизированному тестированию в Тинькофф Банк. Работает в тестировании\
+            \ с 2012 года, занималась автоматизацией мессенджеров, веб-сервисов, банковских систем. Имеет значительный опы\
+            т в функциональном и интеграционном тестировании. Последние несколько лет занимается тестированием мобильных п\
+            риложений."}
   - id: 549
     fileName: 0549.jpg
     name:
@@ -4818,6 +4849,15 @@ speakers:
     name:
       - {language: en, text: "Antonina Khisametdinova"}
       - {language: ru, text: "Антонина Хисаметдинова"}
+    company:
+      - {language: en, text: BANKEX}
+    bio:
+      - {language: en, text: "Antonina is into user interface design for about 5 years. Her areas of expertise include human-technology\
+            \ interaction design, user research and data analytics, teaching methods, UI-designing by mind."}
+      - language: ru
+        text: "Занимается проектированием пользовательских интерфейсов 5 лет.\nОбласти профессиональных интересов: проекти\
+            рование взаимодействия человека и техники, исследования пользователей и аналитика данных, методики обучения, р\
+            исование интерфейсов головой."
   - id: 559
     fileName: 0559.jpg
     name:
@@ -5023,6 +5063,17 @@ speakers:
     fileName: 0591.jpg
     name:
       - {language: en, text: "Simon Stewart"}
+    company:
+      - {language: en, text: "The Selenium Project"}
+    bio:
+      - language: en
+        text: "Simon Stewart is the creator of WebDriver, the Open Source browser automation tool, and is the Selenium project\
+            \ lead. He previously led the build tool team at Facebook, developing the graph-based build tool Buck, and being\
+            \ a strong advocate of monorepos. Before joining Facebook, he spent almost five years at Google, and three at\
+            \ ThoughtWorks. He’s seen a lot of code. \n\nSimon has an interest in byte-for-byte reproducible builds at incredible\
+            \ speed, and describes himself as \"undeniably hairy\"."
+    twitter: shs96c
+    gitHub: shs96c
   - id: 592
     fileName: 0592.jpg
     name:
@@ -5051,16 +5102,16 @@ speakers:
       - {language: en, text: "Andrey Satarin"}
       - {language: ru, text: "Андрей Сатарин"}
     company:
-      - {language: en, text: Yandex}
-      - {language: ru, text: Яндекс}
+      - {language: en, text: "Amazon Web Services"}
     bio:
-      - {language: en, text: "Andrey is engaged in testing distributed systems at Yandex. He has worked in very different\
-            \ projects: testing of the game at Mail.ru, cloud detection system at Kaspersky Lab, and calculator currency price\
-            \ system at Deutsche Bank. Andrey is interested in testing backend and distributed systems."}
-      - {language: ru, text: "Занимается тестированием распределенных систем в Яндексе. В своей карьере успел поработать в\
-            \ совершенно разных проектах: тестировал игру в Mail.ru, систему облачного детектирования в Лаборатории Каспер\
-            ского, систему расчета валютных цен в Deutsche Bank. Интересуется тестированием backend и распределенных систе\
-            м."}
+      - {language: en, text: "Andrey is involved in testing at Amazon Web Services. Previously he has worked in various projects:\
+            \ testing distributed NewSQL database at Yandex, cloud antivirus detection system at Kaspersky Lab, online multiplayer\
+            \ game at Mail.ru, and foreign exchange pricing service at Deutsche Bank. Andrey is interested in testing large\
+            \ scale distributed and backend systems."}
+      - {language: ru, text: "Занимается тестированием в Amazon Web Services. В своей карьере успел поработать в совершенн\
+            о разных проектах: тестировал распределенную NewSQL базу данных в Яндексе, систему облачного детектирования в\
+            \ Лаборатории Касперского, многопользовательскую игру в Mail.ru и сервис расчёта валютных цен в Deutsche Bank.\
+            \ Интересуется тестированием крупномасштабных backend и распределённых систем."}
     twitter: asatarin
   - id: 598
     fileName: 0598.jpg
@@ -5160,6 +5211,19 @@ speakers:
     fileName: 0615.jpg
     name:
       - {language: en, text: "Alan Page"}
+    company:
+      - {language: en, text: Unity}
+    bio:
+      - language: en
+        text: "Alan Page has been a software tester for nearly 25 years. He was the lead author of the book \"How We Test\
+            \ Software at Microsoft\", contributed chapters for \"Beautiful Testing and Experiences of Test Automation: Case\
+            \ Studies of Software Test Automation\". He also writes about a variety of software engineering subjects (and\
+            \ other assorted rants) on his blog, and elsewhere on the internet. His latest “book” is a collection of essays\
+            \ on test automation called \"The A Word\". \n\nAlan joined Microsoft as a member of the Windows 95 team, and\
+            \ since then has worked on a variety of Windows releases, early versions of Internet Explorer, and Office Lync.\
+            \ Notably, Alan served for over two years as Microsoft’s Director of Test Excellence. \n\nIn January of 2017,\
+            \ Alan left Microsoft to become the Director of Quality for Unity services."
+    twitter: alanpage
   - id: 616
     fileName: 0616.jpg
     name:
@@ -5178,90 +5242,230 @@ speakers:
     name:
       - {language: en, text: "Nikita Makarov"}
       - {language: ru, text: "Никита Макаров"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: en, text: "Experienced in outsourcing and product companies, was into built-in OS automatization based\
+            \ on Linux, complex VPN-solutions for business, software and hardware complexes. Since January 2012, is a group\
+            \ lead of testing automatization at Odnoklassniki."}
+      - {language: ru, text: "Работал в аутсорсинге и продуктовых компаниях. Занимался автоматизацией встраиваемых операци\
+            онных систем на базе Linux, комплексных VPN-решений для бизнеса, программно-аппаратных комплексов. С января 2012\
+            \ года является руководителем группы автоматизации тестирования в проекте Одноклассники."}
+    twitter: papaminos
   - id: 618
     fileName: 0618.jpg
     name:
       - {language: en, text: "Vsevolod Brekelov"}
       - {language: ru, text: "Всеволод Брекелов"}
+    company:
+      - {language: en, text: "Grid Dynamics"}
+    bio:
+      - language: en
+        text: "Over 5 years in software testing/test automation. Works as a Full Stack Developer/Tech Lead for one year now.\
+            \ \n\nHas experience in building test automation from scratch in mobile, desktop, web projects (especially for\
+            \ financial companies). Passionate about hackathons and fond of working with smart teammates. Conducted a lot\
+            \ of interviews (over 200 but stopped counting) for QAs, developers, analysts. Last couple of years works at Grid\
+            \ Dynamics. Right now lives in California working by the contract at Google."
+      - language: ru
+        text: "Более 5 лет в тестировании программного обеспечения/автоматизации тестирования. Последний год работает Full\
+            \ Stack Developer/Tech Lead. \n\nОпыт построения автоматизации тестирования с нуля для mobile, desktop, веб-пр\
+            оектов (в основном для финансовых компаний). Любит участвовать в хакатонах и работать с умными коллегами. Пров\
+            ёл много собеседований (более 200, и уже перестал считать) для инженеров по автоматизации тестирования, разраб\
+            отчиков, аналитиков.\n\nПоследние несколько лет работает в компании Grid Dynamics. Сейчас проживает в Калифорн\
+            ии, работая по контракту в Google."
+    twitter: brekelov
   - id: 619
     fileName: 0619.jpg
     name:
       - {language: en, text: "Roman Poborchy"}
       - {language: ru, text: "Роман Поборчий"}
+    company:
+      - {language: en, text: "Independent consultant"}
+      - {language: ru, text: "Независимый консультант"}
+    bio:
+      - language: en
+        text: "In 1997-2004, Roman worked in Sun's JDK, in 2004-2008 he moved to Intel where he also worked on Java-related\
+            \ projects. \nAfter that he spent 6 years at Yandex, where he gained most of the experience relevant to this talk.\
+            \ \nSince 2015, Roman changed his professional domain and now trains speakers on technical conferences and generally\
+            \ coaches people willing to make better presentations."
+      - language: ru
+        text: "До 2004 года работал в Sun Microsystems, принимал участие в разработке JDK. Затем работал в Intel, где тоже\
+            \ занимался проектами, связанными с Java. \n\nПосле этого шесть лет провёл в Яндексе, где строил метрики качес\
+            тва поиска. С 2015 года сменил род деятельности, ушёл на вольные хлеба и теперь готовит спикеров для техническ\
+            их конференций и ведёт тренинги по выступлениям."
   - id: 620
     fileName: 0620.jpg
     name:
       - {language: en, text: "Rajdeep Varma"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Rajdeep is a Senior Test Automation engineer at Badoo. He has a passion for test automation.\
+            \ He has worked on automation of many mobile apps across various domains for more than 7 years. Rajdeep has authored\
+            \ open source testing tools \"parallel_calabash\" and \"nakal\" (RubyGems) for mobile apps testing."}
   - id: 621
     fileName: 0621.jpg
     name:
       - {language: en, text: "Alexander Khozya"}
       - {language: ru, text: "Александр Хозя"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Is into mobile application testing for more than 7 years (entire career actually). Is currently\
+            \ leading native mobile QA team in Badoo. Loves all kinds of gadgets (one of the reasons why he went to mobile\
+            \ testing), exploratory testing, complex problems."}
+      - {language: ru, text: "В тестировании 7 лет, столько же занимается тестированием мобильных приложений :) Ответствен\
+            ный за всё ручное мобильное тестирование в компании Badoo. Обожает всевозможные гаджеты (одна из причин, почем\
+            у пошёл в мобильное тестирование), тестирование методом свободного поиска, детективную работу по нахождению ко\
+            мплексных проблем."}
+    twitter: akhozya
   - id: 622
     fileName: 0622.jpg
     name:
       - {language: en, text: "Sergey Egorov"}
       - {language: ru, text: "Сергей Егоров"}
     company:
-      - {language: en, text: Pivotal}
+      - {language: en, text: "Uvita GmbH"}
     bio:
-      - language: en
-        text: "Sergei works at Pivotal on Project Reactor in Berlin, Germany.\n\nHe is an active member of the open source\
-            \ community, member of the Apache Foundation, co-maintainer of the Testcontainers project, and a contributor to\
-            \ various OSS projects (Apache Groovy, Testcontainers, JBoss Modules, Spring Boot, to name a few), likes to share\
-            \ the knowledge and was presenting at different conferences and meetups in Russia, Germany, Ukraine, Norway, Denmark,\
-            \ Spain, and Estonia.\n\nHe is passionate about DevOps topics, clouds, and infrastructure.\n\nBefore Pivotal,\
-            \ he was working at Vivy, N26, Zalando, ZeroTurnaround, TransferWise, and other startups."
-      - {language: ru, text: "Сергей работает в компании Pivotal в команде Project Reactor. Он является активным участнико\
-            м open source-сообщества, членом Apache Software Foundation, одним из главных разработчиков проекта Testcontainers\
-            \ и контрибьютором в разного рода проектах (Apache Groovy, Testcontainers, Spring Boot, JBoss Modules и не тол\
-            ько)."}
+      - {language: en, text: "An active member of open source community, Apache Software Foundation member and contributor\
+            \ in projects such as Apache Groovy, TestContainers, Spring Boot, JBoss Modules, Zipkin. He is also a co-creator\
+            \ of Russian DevOps podcast \"Two Devs One Ops\" where he shares his knowledge of DevOps, cloud solutions and\
+            \ modern infrastructure solutions such as Docker (which he uses since 2014)."}
+      - {language: ru, text: "Сергей является активным участником open source-сообщества, членом Apache Software Foundation\
+            \ и контрибьютором в разного рода проектах (Apache Groovy, TestContainers, Spring Boot, JBoss Modules, Zipkin\
+            \ и не только). Он также является одним из основателей русскоязычного DevOps-подкаста «Two Devs One Ops», где\
+            \ делится своим опытом в вопросах DevOps, облачных решений и современных инфраструктурных решений вроде Docker\
+            \ (пользователь с 2014 года)."}
     twitter: bsideup
     gitHub: bsideup
   - id: 623
     fileName: 0623.jpg
     name:
       - {language: en, text: "Andrejs Kalnacs"}
+    company:
+      - {language: en, text: "Evolution Gaming"}
+    bio:
+      - language: en
+        text: "Andrejs Kalnacs is devoted to testing automation and software quality, mastering mobile web app testing. \n\
+            \nAndrejs has 10 years of industry experience in software testing in different business domains – gaming, mobile\
+            \ telecommunications, biometrics, banking and retail. \n\nCurrently Andrejs works as a Lead Software Developer\
+            \ in Test at Evolution Gaming, skyrocketing web app testing to new level – implementing not only functional testing\
+            \ solutions, but also non-functional – as performance and load time tests. \n\nHe is known for his passion to\
+            \ help other engineers by mentoring, motivating and inspiring them to think out of the box, learn, and apply more\
+            \ efficient tools and solutions."
+    twitter: TesterFromRiga
   - id: 624
     fileName: 0624.jpg
     name:
       - {language: en, text: "Alexander Shukov"}
       - {language: ru, text: "Александр Шуков"}
+    company:
+      - {language: en, text: Wargaming}
+    bio:
+      - language: en
+        text: "QA automation engineer. Since 2011 works on World of Tanks project in Wargaming.net, where he went all the\
+            \ way from any-key-QA till tech lead of QA automation. \nLast 2 years focuses on functional and server performance\
+            \ test automation."
+      - language: ru
+        text: "С 2011 года работает в Wargaming.net на проекте World Of Tanks в должности QA-инженера, пройдя путь от «джу\
+            на на все руки» до лида автоматизации. \nПоследние 2 года занимается функциональными автотестами и нагрузочным\
+            \ тестированием игрового сервера."
   - id: 625
     fileName: 0625.jpg
     name:
       - {language: en, text: "Julia Atlygina"}
       - {language: ru, text: "Юлия Атлыгина"}
+    company:
+      - {language: en, text: "ALM Works"}
+    bio:
+      - {language: en, text: "More than 9 years in quality assurance area, last years spent in ALM Works, creating plugins\
+            \ for Atlassian JIRA/Confluence. Works as a test engineer, QA manager, product owner and SAFe consultant. If you\
+            \ have any questions regarding JIRA — don't hesitate to ask!"}
+      - language: ru
+        text: "В тестировании более 9 лет, последние из которых провела в ALM Works, разрабатывая плагины для Atlassian JIRA\
+            \ и Confluence. Роль тестировщика совмещает с ролями Product Owner и SAFe консультанта. \nЕсли есть вопросы по\
+            \ JIRA — не стесняйтесь задавать!"
   - id: 626
     fileName: 0626.jpg
     name:
       - {language: en, text: "Nikolay Kozlov"}
       - {language: ru, text: "Николай Козлов"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "5+ years of Android geek experience."}
+      - {language: ru, text: "5+ лет опыта Android-гика."}
   - id: 627
     fileName: 0627.jpg
     name:
       - {language: en, text: "Andrey Kuleshov"}
       - {language: ru, text: "Андрей Кулешов"}
+    company:
+      - {language: en, text: "Deutsche Bank"}
+    bio:
+      - {language: en, text: "Andrey is currently working at Deutsche Bank in QA team. Among his responsibilities is the development\
+            \ of a highly loaded Unix-hosted system for trading. Andrey graduated from Lomonosov Moscow State University with\
+            \ MA Equivalent degree. Previously worked at Intel in a team that developed compilers, took part in test framework\
+            \ development and tested Intel C/C++ and open source Clang compilers. Is interested in development, tests automation\
+            \ and creation of tools for SDLC."}
+      - {language: ru, text: "В настоящее время Андрей работает в Deutsche Bank, занимается разработкой высоконагруженного\
+            \ server-side-приложения для биржевой торговли. Андрей — выпускник ВМК МГУ им. Ломоносова. Ранее работал в ком\
+            пании Intel в отделе разработки компиляторов, участвовал в написании тестового фреймворка и тестировании Intel\
+            \ C/C++ и open source Clang-компиляторов. Интересуется разработкой, автоматизацией процессов тестирования, опт\
+            имизацией процесса разработки ПО."}
   - id: 628
     fileName: 0628.jpg
     name:
       - {language: en, text: "Vyacheslav Alenkov"}
       - {language: ru, text: "Вячеслав Аленьков"}
+    company:
+      - {language: en, text: Rosatom}
+      - {language: ru, text: Росатом}
+    bio:
+      - {language: en, text: "Director of System engineering and IT at Atomstroyexport-NIAEP."}
+      - {language: ru, text: "Директор по Системной инженерии и ИТ в Атомстройэкспорт-НИАЭП."}
   - id: 629
     fileName: 0629.jpg
     name:
       - {language: en, text: "Michael Podtserkovskiy"}
       - {language: ru, text: "Михаил Подцерковский"}
+    company:
+      - {language: en, text: Avito}
+    bio:
+      - {language: en, text: "Mikhail develops testing tools at Avito."}
+      - {language: ru, text: "Михаил работает в Avito, где занимается разработкой инструментов для тестирования."}
   - id: 630
     fileName: 0630.jpg
     name:
       - {language: en, text: "Timur Torubarov"}
       - {language: ru, text: "Тимур Торубаров"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "8 years in IT performance: 4 years in telecom (web/wap/sms services), 4 years at Yandex. Long\
+            \ story short: “… and suddenly produced much more load than we had expected…”"}
+      - {language: ru, text: "Занимается производительностью в IT 8 лет. 4 года в телекоме (МТС и сопутствующие web/wap/sms-с\
+            ервисы), 4 года в Яндексе. Краткая история жизни: «... и неожиданно для нас выдал гораздо больше нагрузки, чем\
+            \ мы хотели...»."}
   - id: 631
     fileName: 0631.jpg
     name:
       - {language: en, text: "Pavel Senin"}
       - {language: ru, text: "Павел Сенин"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: en, text: "Test Automation Engineer at EPAM Systems. Is into IT for more than 10 years, started as a system\
+            \ administrator and step by step moved towards testing. Is sure that with a sound strategy and a smart combination\
+            \ of automatization instruments the project's autotests will definitely contribute to business by providing relevant\
+            \ information about the current status of a product."}
+      - {language: ru, text: "Test Automation Engineer в компании EPAM Systems. Карьеру в ИТ начал более 10 лет назад сиса\
+            дмином и постепенно перешёл в тестирование. Уверен, что если на проекте есть здравая стратегия тестирования и\
+            \ грамотное сочетание инструментов автоматизации, то автотесты обязательно принесут существенную ценность для\
+            \ бизнеса, т.к. будут предоставлять актуальную и достоверную информацию о текущем состоянии продукта."}
+    twitter: senin24
   - id: 632
     fileName: 0632.jpg
     name:
@@ -5283,6 +5487,19 @@ speakers:
     name:
       - {language: en, text: "Dmitry Buzdin"}
       - {language: ru, text: "Дмитрий Буздин"}
+    company:
+      - {language: en, text: "Riga Dev Days"}
+    bio:
+      - {language: en, text: "Dmitry is a software architect who codes, automates, draws diagrams, talks and participates\
+            \ in meetings with an equal level of engagement. Currently, he organizes Riga Dev Days conference and runs a small\
+            \ “stealth-mode” consultancy company, which helps to develop financial applications. He advices customers on architecture,\
+            \ development, Agile, test automation and DevOps best practices."}
+      - {language: ru, text: "Дмитрий работает архитектором программного обеспечения, программирует, автоматизирует, рисуе\
+            т диаграммы и ходит на митинги с равной степенью профессионализма. На данный момент он занят организацией конф\
+            еренции Riga Dev Days, а также руководит небольшой «секретной» консалтинг-компанией, которая помогает клиентам\
+            \ разрабатывать приложения в финансовой области. Дмитрий консультирует в областях системной архитектуры, Agile,\
+            \ тестовой автоматизации и DevOps."}
+    twitter: buzdin
   - id: 634
     fileName: 0634.jpg
     name:
@@ -8456,3 +8673,12 @@ speakers:
             ьность, современность и молодое комьюнити. Для своих первых Android-проектов, которые делал на фрилансе в своб\
             одное от основной работы время, писал с коллегой также и бэкенд-часть. Последние два года Сергей — Android-раз\
             работчик в Тинькофф в команде приложения для юридических лиц."}
+  - id: 1076
+    fileName: 1076.jpg
+    name:
+      - {language: en, text: "Andrey Dmitriev"}
+      - {language: ru, text: "Андрей Дмитриев"}
+    company:
+      - {language: en, text: "JUG.ru Group"}
+    bio:
+      - {language: en, text: "JUG.ru Group"}
