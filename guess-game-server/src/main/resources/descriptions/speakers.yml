@@ -42,10 +42,11 @@ speakers:
     bio:
       - {language: en, text: "Andrey Breslav has been leading design and development of the Kotlin programming language at\
             \ JetBrains since 2010 when the project started. He often presents as a speaker at large software conferences\
-            \ and contributes to the [Kotlin blog](https://blog.jetbrains.com/kotlin/author/andrey-breslav/)."}
+            \ and contributes to the <a href=\"https://blog.jetbrains.com/kotlin/author/andrey-breslav/\" target=\"_blank\"\
+            >Kotlin blog</a>."}
       - {language: ru, text: "Андрей Бреслав возглавляет разработку языка Kotlin в компании JetBrains c 2010 года, занимае\
             тся как дизайном языка, так и общим руководством проекта. Ключевой спикер крупных конференций. Один из авторов\
-            \ [блога Kotlin](https://blog.jetbrains.com/kotlin/author/andrey-breslav/)."}
+            \ <a href=\"https://blog.jetbrains.com/kotlin/author/andrey-breslav/\" target=\"_blank\">блога Kotlin</a>."}
     twitter: abreslav
     gitHub: abreslav
   - id: 3
@@ -2873,6 +2874,16 @@ speakers:
     name:
       - {language: en, text: "Artur Vasilov"}
       - {language: ru, text: "Артур Василов"}
+    company:
+      - {language: en, text: Яндекс}
+    bio:
+      - {language: en, text: "Works at Yandex on “Yandex” Android application. Is very sensitive about the quality of applications\
+            \ he develops. Has no intentions to switch to Kotlin, always makes slides in Java. Is a conference speaker, organizes\
+            \ GDG & KUG SPB meetups."}
+      - {language: ru, text: "Работает в Яндексе над Android-приложением «Яндекс». Очень трепетно относится к качеству раз\
+            рабатываемых приложений. Не собирается переходить на Kotlin и всегда делает слайды на Java. Выступает на конфе\
+            ренциях и занимается организацией митапов в рамках GDG & KUG SPB."}
+    twitter: VasilovArtur
   - id: 292
     fileName: 0292.jpg
     name:
@@ -5343,14 +5354,16 @@ speakers:
       - {language: en, text: "Denis Neklyudov"}
       - {language: ru, text: "Денис Неклюдов"}
     company:
-      - {language: en, text: "90seconds.tv, Android GDE"}
+      - {language: en, text: Lyft}
     bio:
-      - {language: en, text: "Google Developer Expert who is close with Android for more than six years. Studyjams lecturer.\
-            \ Speaker on many conferences such as Dump, Droidcon, Mobius. He is also well known as co-host of a Russian Android\
-            \ development podcast. Now he’s working in Singapore at 90Seconds.tv."}
-      - {language: ru, text: "Google Developer Expert, живущий бок о бок с Android более шести лет. Несколько раз проводил\
-            \ курсы Studyjams по обучению Android, спикер многих конференций, в том числе Dump, Droidcon, Mobius. Также из\
-            вестен как один из ведущих подкаста о разработке под Android. Сейчас работает в Сингапуре в 90Seconds.tv."}
+      - language: en
+        text: "Google Developer Expert Android, Pay and IoT.\r\n\r\nDenis did his part in developing mobile apps for several\
+            \ startups in Russia, Asia, and Europe. Now he works at Lyft in sunny California.\r\n\r\nYou probably heard Denis\
+            \ in Android Dev Podcast or at the conferences."
+      - language: ru
+        text: "Google Developer Expert по Android, Pay и IoT.\r\n\r\nВнес свою небольшую лепту в мобильные приложения неск\
+            ольких стартапов в России, Азии и Европе, сейчас работает в Lyft в солнечной Калифорнии.\r\n\r\nВозможно, вы у\
+            же слышали голос Дениса в Android Dev Подкасте или видели его на конференциях."
     twitter: nekdenis
   - id: 572
     fileName: 0572.jpg
@@ -7592,6 +7605,20 @@ speakers:
     name:
       - {language: en, text: "Denis Kirillov"}
       - {language: ru, text: "Денис Кириллов"}
+    company:
+      - {language: en, text: Mamba}
+      - {language: ru, text: Мамба}
+    bio:
+      - {language: en, text: "Denis used to dream of being a submarine captain, but as soon as he got his first computer,\
+            \ he decided to become a programmer. He has been working in IT for about 12 years now, the last 8 of which specializing\
+            \ in software development for mobile devices. He wrote his first iOS app in 2009, a game that was downloaded one\
+            \ hundred thousand times. Since then he's sure that mobile industry is the best way for a programmer to express\
+            \ own self. Denis appreciates clean and concise code. Since 2014 he leads iOS development at Mamba company."}
+      - {language: ru, text: "В детстве мечтал стать капитаном подводной лодки, но когда дома появился первый компьютер, р\
+            ешил, что будет программистом. Работает в сфере IT 12 лет, последние 8 специализируется на разработке ПО для м\
+            обильных устройств. В 2009 году написал свое первое приложение для iOS — это была игра, которую в первый месяц\
+            \ скачали 100 тыс. раз. С тех пор уверен, что мобильная индустрия — лучшее средство для самовыражения программ\
+            иста. В коде ценит простоту и ясность. С 2014 года руководит iOS-разработкой в компании Mamba."}
   - id: 811
     fileName: 0811.jpg
     name:
@@ -7688,16 +7715,49 @@ speakers:
     fileName: 0827.jpg
     name:
       - {language: en, text: "Felix Krause"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Felix is the creator of fastlane, an open source toolset for automating all your iOS and Android\
+            \ development tasks. He joined Twitter in 2015, and recently started working at Google, where he now works full-time\
+            \ on open source tooling for mobile app developers. Before that Felix worked at various startups in Europe and\
+            \ in the U.S. where he collected over 6 years of experience in the iOS ecosystem."}
+    twitter: KrauseFx
+    gitHub: KrauseFx
   - id: 828
     fileName: 0828.jpg
     name:
       - {language: en, text: "Alexey Demedeckiy"}
       - {language: ru, text: "Алексей Демедецкий"}
+    company:
+      - {language: en, text: "Sigma Software"}
+    bio:
+      - {language: en, text: "Mobile competence lead at Sigma Software. Spent last 7 years creating mobile-first products.\
+            \ Sees his mission in finding the most efficient approach to converting business ideas into machine-readable code.\
+            \ To fulfill his mission often explores new architectures, learns a lot about DSL and metaprogramming. Sees \"\
+            cost of change\" as the main metric of any software product and constantly thrives to minimize it."}
+      - {language: ru, text: "Мобильный разработчик в компании Sigma Software. Семь лет своей жизни занимается созданием м\
+            обильных продуктов на заказ. Свою миссию видит в поиске максимально эффективного подхода к конвертации бизнес\
+            -гипотез в поддерживаемый код. Для этого часто исследует новые архитектуры, изучает встраиваемые языки, метапр\
+            ограммирование. Основной метрикой оптимизации для себя видит стоимость внесения изменений и все свои решения с\
+            троит вокруг ее минимизации."}
+    twitter: DalooG
   - id: 829
     fileName: 0829.jpg
     name:
       - {language: en, text: "Kirill Popov"}
       - {language: ru, text: "Кирилл Попов"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: en, text: "Odnoklassniki Android application developer. Graduated from St.Petersburg State University,\
+            \ where he studied computer vision and security. Is into Android development since his second year at university.\
+            \ Loves football, table tennis, roller blades, and snowboard."}
+      - {language: ru, text: "Разрабатывает Android-приложение Одноклассников. Закончил матмех СПбГУ, где занимался компью\
+            терными зрением и безопасностью. Разработкой под Android занимается со второго курса. Любит футбол, настольный\
+            \ теннис, ролики и сноуборд."}
+    twitter: Sk1talec
   - id: 830
     fileName: 0830.jpg
     name:
@@ -7716,101 +7776,309 @@ speakers:
     fileName: 0831.jpg
     name:
       - {language: en, text: "Yuliya Kaleda"}
+    company:
+      - {language: en, text: Jet.com}
+    bio:
+      - {language: en, text: "Yuliya is an Android developer at Jet.com, leading a team of 5 developers whose main focus is\
+            \ to build performant, scalable and cutting-edge Android projects. For the last few months Yuliya has been leading\
+            \ AR development. Yuliya is actively involved at C4Q — non-profit organization, which fosters the tech community\
+            \ in NY."}
+    twitter: YuliyaKaleda
   - id: 832
     fileName: 0832.jpg
     name:
       - {language: en, text: "Ewa Ludwiczak"}
+    company:
+      - {language: en, text: Allegro}
+    bio:
+      - {language: en, text: "Ewa and Aleksander are both working at Allegro in the same team. Ewa is a senior iOS engineer\
+            \ in tests and Aleksander is an iOS engineer. They are passionate about their work and strive for the highest\
+            \ quality product. They want to share their experience with testing an iOS app at scale and give the Mobius participants\
+            \ a little bit of insight of how they do it in a large team that’s distributed through a couple of cities in Poland."}
+    twitter: ewabielskapoz
+    gitHub: bielski
   - id: 833
     fileName: 0833.jpg
     name:
       - {language: en, text: "Dmitry Trimonov"}
       - {language: ru, text: "Дмитрий Тримонов"}
+    company:
+      - {language: en, text: Яндекс}
+    bio:
+      - {language: en, text: "Graduated from the MIPT department of aerophysics and space research. Before Yandex Maps, was\
+            \ into pattern recognition and .NET development (WPF). Used to work with maps development on Windows, now works\
+            \ on iOS versions of these maps. In his free time takes part in debates with his colleagues, discussing everything\
+            \ connected to software architecture. Can’t imagine his life without reactive programming."}
+      - {language: ru, text: "Окончил факультет аэрофизики и космических исследований МФТИ. До работы в команде Яндекс.Кар\
+            ты занимался распознаванием образов и разработкой на .NET (WPF). В Яндексе занимался разработкой карт под Windows,\
+            \ сейчас разрабатывает iOS-версию карт. В свободное время спорит с коллегами обо всем, что связано с архитекту\
+            рой ПО. Не может представить жизнь без реактивщины."}
   - id: 834
     fileName: 0834.jpg
     name:
       - {language: en, text: "Martin Mitrevski"}
+    company:
+      - {language: en, text: Netcetera}
+    bio:
+      - {language: en, text: "Martin Mitrevski works as a technical lead at Netcetera, developing apps in several areas, such\
+            \ as transport, indoor navigation, virtual reality, entertainment and publishing. He is the author of the book\
+            \ “Developing Conversational Interfaces for iOS”. Martin shares his knowledge on his blog martinmitrevski.com\
+            \ and as a conference speaker."}
   - id: 835
     fileName: 0835.jpg
     name:
       - {language: en, text: "Ivan Alyakskin"}
       - {language: ru, text: "Иван Алякскин"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - language: en
+        text: "Way back at school, Ivan got carried away by portable devices, from radio to mobile phones, his hobby becoming\
+            \ his career.\nWorked his way up from being a developer of embedded systems, drivers and web apps to a mobile\
+            \ lead.\nEvening nights, while his daughter is asleep, develops kid's Android media center.\n\nAt Mobius conference\
+            \ will talk about high performance code for Android devices."
+      - language: ru
+        text: "Еще в школе увлекся портативными устройствами, от радио до мобильных телефонов, детское хобби переросло в п\
+            рофессиональную работу. Прошел путь от разработчика встраиваемых систем, драйверов и веб-приложений до лида мо\
+            бильного направления.  По вечерам, пока дочка спит, программирует для нее Android-медиацентр. \n\nНа Mobius ра\
+            сскажет о том, как писать высокопроизводительный код под Android."
   - id: 836
     fileName: 0836.jpg
     name:
       - {language: en, text: "Artem Logutov"}
       - {language: ru, text: "Артем Логутов"}
+    company:
+      - {language: en, text: CFT}
+      - {language: ru, text: ЦФТ}
+    bio:
+      - {language: en, text: "Is into information security since school days, thus choosing to study at Novosibirsk State\
+            \ Technical University as an information security specialist. In 2015 finally managed to combine both his passion\
+            \ and profession. Helps developers to create secure applications. Is of the opinion that if you want to protect\
+            \ in an efficient way, you need to know how to attack."}
+      - {language: ru, text: "Увлекается информационной безопасностью со школы, поэтому поступил в НГТУ на специалиста по\
+            \ информационной безопасности. Свое хобби и профессию смог совместить в 2015 году. Помогает разработчикам созд\
+            авать безопасные приложения. Считает, что для того, чтобы эффективно защищать, надо уметь атаковать."}
   - id: 837
     fileName: 0837.jpg
     name:
       - {language: en, text: "Michał Kałużny"}
+    company:
+      - {language: en, text: "NWTN Berlin"}
+    bio:
+      - {language: en, text: "Michał Kałużny has over a decade of software development (and software breaking) experience,\
+            \ both as a professional developer and hobbyist reverse-engineer. His first \"hello world\" echoed in BASIC on\
+            \ his Atari 65 XLE and he found his first exploit not long after. That started him on a path through various languages\
+            \ and technologies until he settled down on iOS development."}
+    twitter: justMaku
+    gitHub: justMaku
   - id: 838
     fileName: 0838.jpg
     name:
       - {language: en, text: "Konrad Feiler"}
+    company:
+      - {language: en, text: www.looc.io}
+    bio:
+      - {language: en, text: "A mathematician turned software engineer, Konrad Feiler has been creating mobile apps for the\
+            \ past seven years, and after work as iOS architect for Viacom currently focusses on his own companies. Welcoming\
+            \ type safety and functional paradigms with open arms, he has encouraged corporations to adopt the benefits of\
+            \ Swift, leading to a modern codebase for brands like MTV, Comedy Central and TVLand. Whether it’s simulating\
+            \ ecosystems or testing visual acuity for LooC, the medical startup he recently co-founded, Konrad’s real passion\
+            \ is applying his background in geometry and probability theory to everyday problems."}
+    gitHub: Bersaelor
   - id: 839
     fileName: 0839.jpg
     name:
       - {language: en, text: "Alexey Shpirko"}
       - {language: ru, text: "Алексей Шпирко"}
+    company:
+      - {language: en, text: Avito}
+    bio:
+      - {language: en, text: "iOS developer from 2011, is now a tech lead of a cross-functional team, responsible for mobile\
+            \ apps release cycle in Avito. Used to work as an iOS team lead in Avito for three years, and as a senior iOS\
+            \ developer in Samsung."}
+      - {language: ru, text: "iOS-разработчик с 2011 года, техлид кроссфункциональной команды, занимающейся ускорением рел\
+            изов мобильных приложений в Avito. Ранее три года был тимлидом команды iOS-разработчиков в Avito, а до этого —\
+            \ Senior iOS-разработчиком в Samsung."}
   - id: 840
     fileName: 0840.jpg
     name:
       - {language: en, text: "Anton Dudakov"}
       - {language: ru, text: "Антон Дудаков"}
+    company:
+      - {language: en, text: Яндекс}
+    bio:
+      - {language: en, text: "Anton is an Android developer at Yandex. He's leading the development of Yandex Auto, an embedded\
+            \ system for Cars."}
+      - {language: ru, text: "Антон работает в Лаборатории встраиваемых автомобильных решений компании Яндекс. Занимает по\
+            зицию тимлида проекта Яндекс.Авто, благодаря которому Яндекс встраивается в автомобили."}
+    twitter: bwdude
   - id: 841
     fileName: 0841.jpg
     name:
       - {language: en, text: "Nikolay Ashanin"}
       - {language: ru, text: "Николай Ашанин"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Lead software engineer in EPAM. More than 7 years of experience in mobile development, also\
+            \ interested in machine learning and Python. The author of a blog for Software Architects https://medium.com/@nvashanin."}
+      - {language: ru, text: "Lead software engineer в компании EPAM. Более 7 лет опыта в мобильной разработке, также имее\
+            т опыт в машинном обучении и Python. Ведет блог для начинающих Software Architects https://medium.com/@nvashanin."}
   - id: 842
     fileName: 0842.jpg
     name:
       - {language: en, text: "Aleksander Grzyb"}
+    company:
+      - {language: en, text: Allegro}
+    bio:
+      - {language: en, text: "Ewa and Aleksander are both working at Allegro in the same team. Ewa is a senior iOS engineer\
+            \ in tests and Aleksander is an iOS engineer. They are passionate about their work and strive for the highest\
+            \ quality product. They want to share their experience with testing an iOS app at scale and give the Mobius participants\
+            \ a little bit of insight of how they do it in a large team that’s distributed through a couple of cities in Poland."}
+    twitter: aleksandergrzyb
+    gitHub: aleksandergrzyb
   - id: 843
     fileName: 0843.jpg
     name:
       - {language: en, text: "Artur Badretdinov"}
       - {language: ru, text: "Артур Бадретдинов"}
+    company:
+      - {language: en, text: Vyng}
+    bio:
+      - {language: en, text: "Is of the opinion that every program engineer is a developer, yet not every developer is a program\
+            \ engineer. Writes code in such a way as not to feel ashamed later. Works hard to make his programs not only do\
+            \ their job, but also have clear logic that can be extended by other people. At Vyng company makes Android ringtones\
+            \ unique."}
+      - {language: ru, text: "Считает, что каждый программный инженер — разработчик, но не каждый разработчик — программны\
+            й инженер. Пишет код так, чтобы потом за него не было стыдно. Работает над тем, чтобы программа не просто дела\
+            ла своё дело, но и её логика была понятна и расширяема другими людьми. В последнее время делает рингтоны под Android\
+            \ уникальными в компании Vyng."}
+    gitHub: Gaket
   - id: 844
     fileName: 0844.jpg
     name:
       - {language: en, text: "Victor Lapin"}
       - {language: ru, text: "Виктор Лапин"}
+    company:
+      - {language: en, text: Advantum}
+    bio:
+      - {language: en, text: "Moscow State University of Applied Biotechnology graduate, spent 10 years working in various\
+            \ enterprise projects, moving little by little towards Android. Takes part in the development of two Android custom\
+            \ firmwares based on AOSP/CAF."}
+      - {language: ru, text: "Окончил университет прикладной биотехнологии (МГУПБ), около 10 лет проработал во всяческом э\
+            нтерпрайзе, с годами всё больше начал уходить в Android. Участвует в разработке двух кастомных прошивок Android\
+            \ на базе AOSP/CAF."}
+    twitter: VictorLapin
+    gitHub: victorlapin
   - id: 845
     fileName: 0845.jpg
     name:
       - {language: en, text: "Kirill Borisov"}
       - {language: ru, text: "Кирилл Борисов"}
+    company:
+      - {language: en, text: Яндекс}
+    bio:
+      - {language: en, text: "An old mercenary who did not despise writing in a whole bunch of languages: from C to Clojure,\
+            \ from Java to PHP. But deep inside he is a simple pythonist, though he gets paid for mobile development."}
+      - {language: ru, text: "Старый наёмник, который не гнушался писать на целом зоопарке языков: от С до Clojure, от Java\
+            \ до PHP. В душе — простой питонист, но платят ему за мобильную разработку. Характер нордический. Женат."}
+    twitter: lensvol
+    gitHub: lensvol
   - id: 846
     fileName: 0846.jpg
     name:
       - {language: en, text: "Kirill Zuev"}
       - {language: ru, text: "Кирилл Зуев"}
+    company:
+      - {language: en, text: CFT}
+      - {language: ru, text: ЦФТ}
+    bio:
+      - {language: en, text: "Former game developer in a startup, now Kirill is into mobile bank apps development in Center\
+            \ of Financial Technologies. Fell in love with Apple since 1993 when he first met Macintosh in real life. Was\
+            \ chasing his dream till 2011 becoming an iOS developer."}
+      - {language: ru, text: "Бывший стартапер-геймдевелопер, сейчас разрабатывает приложения для мобильного банкинга в ко\
+            мпании ЦФТ. Увидел Macintosh в 1993 году и влюбился, догнал мечту в 2011, став iOS-разработчиком."}
   - id: 847
     fileName: 0847.jpg
     name:
       - {language: en, text: "Ivan Vazhnov"}
       - {language: ru, text: "Иван Важнов"}
+    company:
+      - {language: en, text: Revolut}
+    bio:
+      - language: en
+        text: "Android Developer at Revolut. \nHad been working long time with databases and enterprise projects before mobile\
+            \ development. Is also interested in iOS development. \nApart from mobile development, he's into many related\
+            \ areas. \nLoves clean and beautiful code."
+      - language: ru
+        text: "Android-разработчик в Revolut. \nДо мобильной разработки долго занимался базами данных и enterprise-проекта\
+            ми, также увлекается разработкой под iOS и смежными сферами. \nЛюбит чистый и красивый код."
+    twitter: ivazhnov
   - id: 848
     fileName: 0848.jpg
     name:
       - {language: en, text: "Konstantin Yurichev"}
       - {language: ru, text: "Константин Юричев"}
+    company:
+      - {language: en, text: Mamba}
+      - {language: ru, text: Мамба}
+    bio:
+      - {language: en, text: TBD}
+      - {language: ru, text: "В мобильную разработку вошел через game-dev еще в 2010 году, перепробовав массу технологий о\
+            т Flash, Unity до Cocos2d (Obj-c), Qt и хардкорных C++ движков. Чуть позже плавно сконцентрировался на разрабо\
+            тке бизнес приложений под iOS. Активно участвую в жизни сообщества Swift Evolution с ранних дней, люблю черпат\
+            ь вдохновение из мира функционального программирования (ML-семейство) и фронтенда (flux, redux, ELM). Горжусь\
+            \ своим опытом в Bookmate, а сейчас имею еще больше возможностей что-то менять к лучшему в проекте Mamba!"}
   - id: 849
     fileName: 0849.jpg
     name:
       - {language: en, text: "Evgeny Suvorov"}
       - {language: ru, text: "Евгений Суворов"}
+    company:
+      - {language: en, text: Avito}
+    bio:
+      - {language: en, text: "A professional developer of mobile applications since 2010. Got working experience in various\
+            \ types of companies: custom development startups, product development startups, big holding companies. Works\
+            \ in Avito since 2014 as a leader of a team focused on iOS and Android mobile architecture. Is a Program Committee\
+            \ member of such conferences as AppsConf (since 2016) and Mobius (since 2017)."}
+      - {language: ru, text: "Профессионально начал разрабатывать для мобильных приложений осенью 2010 года. Прошел через\
+            \ многие виды компаний: стартапы заказной разработки, стартапы продуктовые, большие холдинги. С 2014 года рабо\
+            тает в Avito, руководит командой, сфокусированной на мобильной архитектуре iOS и Android. С 2016 года член Про\
+            граммного комитета AppsConf, с 2017 — член ПК Mobius."}
   - id: 850
     fileName: 0850.jpg
     name:
       - {language: en, text: "Vladimir Tebloev"}
       - {language: ru, text: "Владимир Теблоев"}
+    company:
+      - {language: en, text: Сбербанк-Технологии}
+    bio:
+      - language: en
+        text: "Is into Android development for about five years. Tech lead at Sberbank Technology, works on \"Dialogues\"\
+            \ project for Sberbank Online service.\nIs interested in the architecture and Android OS internals, new development\
+            \ approaches and other languages that work with JVM."
+      - language: ru
+        text: "Занимается Android-разработкой около пяти лет. Техлид в СберТехе, работает над «Диалоги» для Сбербанк-Онлай\
+            н. \nИнтересуется архитектурой и «внутренностями» ОС Android, новыми подходами к разработке и другими языками\
+            , работающими с JVM."
+    gitHub: makavelka
   - id: 851
     fileName: 0851.jpg
     name:
       - {language: en, text: "Ivan Vavilov"}
       - {language: ru, text: "Иван Вавилов"}
+    company:
+      - {language: en, text: Redmadrobot}
+    bio:
+      - {language: en, text: "Devoted most part of his career to iOS development, working last three years at Redmadrobot\
+            \ – the leader of opensource development in Russia. Is of the opinion that there is always room for improvement,\
+            \ meaning every aspect of the work can be done better, in a more effective way. The level of conferences and open-source\
+            \ projects determines the matureness of the developers’ community."}
+      - {language: ru, text: "Большую часть своей карьеры занимается разработкой под iOS, из них последние 3 года — в Redmadrobot,\
+            \ лидере в аутсорс-разработке в России. Считает, что нет предела совершенству и что любой аспект работы всегда\
+            \ можно сделать еще лучше и эффективнее. Уровень конференций и open source-проектов для Ивана — основной показ\
+            атель зрелости комьюнити по разработке."}
+    gitHub: vani2
   - id: 852
     fileName: 0852.jpg
     name:
@@ -7834,11 +8102,34 @@ speakers:
     name:
       - {language: en, text: "Roman Yatsina"}
       - {language: ru, text: "Роман Яцына"}
+    company:
+      - {language: en, text: Revolut}
+    bio:
+      - language: en
+        text: "Android Developer at Revolut. \nAdherent of the Clean Architecture, a longtime Kotlin fan. \nWrites about Android\
+            \ development on Medium in his spare time."
+      - language: ru
+        text: "Android-разработчик в Revolut. \nПриверженец Clean Architecture, давний фанат Kotlin. \nВ свободное время п\
+            ишет об Android-разработке на Medium и Хабрахабр."
+    twitter: Yatsinar
   - id: 854
     fileName: 0854.jpg
     name:
       - {language: en, text: "Konstantin Volkov"}
       - {language: ru, text: "Константин Волков"}
+    company:
+      - {language: en, text: Revolut}
+    bio:
+      - language: en
+        text: "For quite a long time was into the development of equipment for processing signals (from speech to microwave).\
+            \ \nUsed to work at Samsung (embedded systems development for TV-tuners based on Android). \nWhile working at\
+            \ Tinkoff, was involved in the development of the Mobile Bank and various banking applications. \nNow works at\
+            \ Revolut, developing the main application of the bank and introducing new features."
+      - language: ru
+        text: "Долгое время занимался разработкой оборудования для обработки сигналов (от речевых до СВЧ). \nРаботал в Samsung,\
+            \ занимался разработкой встроенных систем для ТВ-приставок на базе Android. \nВ Тинькофф разрабатывал Мобильны\
+            й банк, приложения «Штрафы», «С карты на карту» и тд. \nСейчас работает в Revolut, где занимается разработкой\
+            \ основного приложения банка, внедрением новых фич."
   - id: 855
     fileName: 0855.jpg
     name:
