@@ -988,7 +988,7 @@ public class ContentfulUtils {
             case ENGLISH_LOCALE:
                 return name
                         .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Msc")
-                        .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " Spb");
+                        .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " SPb");
             case RUSSIAN_LOCALE:
                 return name
                         .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Мск")

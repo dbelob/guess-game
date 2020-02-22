@@ -3939,6 +3939,17 @@ speakers:
     fileName: 0405.jpg
     name:
       - {language: en, text: "Christophe Nasarre-Soulier"}
+    company:
+      - {language: en, text: Criteo}
+    bio:
+      - language: en
+        text: "In addition to developing and shipping software on Microsoft stacks for 25+ years, Christophe Nasarre has been\
+            \ working as a technical reviewer for MSPress, Addison-Wesley and other publishing companies since 1996 on books\
+            \ such as \"CLR via C#\" and the last editions of Windows Internals. \n\nHe is providing tools and insights on\
+            \ .NET and Windows development via his <a href=\"https://medium.com/@chnasarre/\" target=\"_blank\">blog</a>.\
+            \ Christophe also presented technical sessions on stage both internally at Microsoft or for ISVs and customers\
+            \ at public events."
+    twitter: chnasarre
   - id: 406
     fileName: 0406.jpg
     name:
@@ -3994,15 +4005,57 @@ speakers:
     fileName: 0411.jpg
     name:
       - {language: en, text: "Edwin van Wijk"}
+    company:
+      - {language: en, text: "Info Support"}
+    bio:
+      - language: en
+        text: "Edwin has been working in IT since 1999 and is currently working as Principal Software Architect and Microsoft\
+            \ Community lead at Info Support in the Netherlands. He's a Microsoft MVP in the Developer Technologies category.\
+            \ \n\nHis primary areas of expertise are: building distributed systems, systems integration, (web-scale) software\
+            \ architecture and patterns, software craftsmanship, .NET (Core) development, Azure and DevOps. Edwin likes sharing\
+            \ his knowledge about these subjects by publishing videos and speaking on events."
+    twitter: evanwijk
+    mvp: true
   - id: 412
     fileName: 0412.jpg
     name:
       - {language: en, text: "Stan Drapkin"}
+    company: []
+    bio:
+      - language: en
+        text: "Stan Drapkin is a hands-on technical leader, manager, and security and \ncompliance expert. He is focused on\
+            \ hiring, training, and leading top-talent engineering teams using .NET to build highly secure cloud-based solutions\
+            \ for strongly regulated environments. \n\nStan has computer science and MBA degrees, as well as more than 17\
+            \ years of .NET Framework experience. He picked up .NET 1.0-beta in 2001 while working as an engineer at Microsoft,\
+            \ and has been immersed in .NET evolution ever since.\n\nStan is an author of <a href=\"http://securitydriven.net/\"\
+            \ target=\"_blank\">\"Security Driven .NET\"</a> (2014) and <a href=\"https://blog.syncfusion.com/post/interview-with-application-security-in-net-succinctly-author-stan-drapkin.aspx\"\
+            \ target=\"_blank\">\"Application Security in .NET, Succinctly\"</a> (2017) books, as well as several open source\
+            \ .NET libraries."
+    twitter: sdrapkin
   - id: 413
     fileName: 0413.jpg
     name:
       - {language: en, text: "Maxim Arshinov"}
       - {language: ru, text: "Максим Аршинов"}
+    company:
+      - {language: en, text: "HighTech Group"}
+      - {language: ru, text: "Хайтек Груп"}
+    bio:
+      - language: en
+        text: "The co-founder of HighTech Group, teacher in KFU and blogger. Try to google \"как писать тесты\" (\"how to\
+            \ write tests\" — in Russian). The first result is his article. \n\nPreviously, before founding his own company,\
+            \ Maxim was employed as a Web Developer, Team Leader, CTO and Head of Quality Department in various companies\
+            \ from Kazan, Moscow, Saint Petersburg and Antwerp, Belgium. \n\nHe is sure that technology is not a \"thing in\
+            \ itself\", but tools. The tools must suit the problem being solved. The work of an engineer is to select the\
+            \ right tools and create new ones."
+      - language: ru
+        text: "Соучредитель казанской аутсорс-компании «Хайтек Груп». Кроме ведения бизнеса преподает в Высшей школе инфор\
+            мационных технологий и информационных систем Казанского федерального университета и ведет [блог](https://habrahabr.ru/users/marshinov/)\
+            \ на Хабре. По запросу «Как писать тесты» в Google первым результатом выйдет его [статья](https://www.google.co.id/search?q=%D0%BA%D0%B0%D0%BA+%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C+%D1%82%D0%B5%D1%81%D1%82%D1%8B&oq=%D0%BA%D0%B0%D0%BA+%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C+%D1%82%D0%B5%D1%81%D1%82%D1%8B&aqs=chrome..69i57j0l5.3597j0j7&sourceid=chrome&ie=UTF-8).\
+            \ \n\nСуммарный стаж в программировании и управлении разработкой — 10 лет. За это время прошел путь от програм\
+            миста в казанской веб-студии до руководителя отдела качества в финансовой индустрии. Работал в компаниях Казан\
+            и, Москвы, Питера и Антверпена (Бельгия). \n\nСчитает, что технологии — это не «вещь в себе», а инструменты дл\
+            я достижения целей. Каждая — со своей областью применения."
   - id: 414
     fileName: 0414.jpg
     name:
@@ -4031,6 +4084,13 @@ speakers:
     fileName: 0417.jpg
     name:
       - {language: en, text: "Kevin Gosse"}
+    company:
+      - {language: en, text: Criteo}
+    bio:
+      - {language: en, text: "Kevin Gosse has been using Microsoft .NET technologies for 15 years, across client, server,\
+            \ and mobile applications. He is currently employed at Criteo, where he works on scalability, debugging, and optimization\
+            \ issues."}
+    twitter: kookiz
   - id: 418
     fileName: 0418.jpg
     name:
@@ -4188,18 +4248,58 @@ speakers:
     fileName: 0446.jpg
     name:
       - {language: en, text: "Andrei Alexandrescu"}
+    company:
+      - {language: en, text: "The D Language Foundation"}
+    bio:
+      - language: en
+        text: "Romanian-born Computer Scientist Andrei Alexandrescu is an expert in a broad range of topics including software\
+            \ systems design and implementation, programming language design, library design, all aspects of the C++ and D\
+            \ programming languages, Machine Learning, and Natural Language Processing. His creative approach to problem solving,\
+            \ broad knowledge, and charismatic presence make Andrei a sought-after invited speaker at conferences worldwide.\
+            \ \n\nAndrei's books and articles have had a marked influence in the software industry. He is the author of such\
+            \ best-sellers as \"Modern C++ Design\", \"C++ Coding Standards\" (in co-authorship with Herb Sutter), \"The D\
+            \ Programming Language\", along with the articles like \"Simplify Your Exception-Safe Code - Forever\" (in co-authorship\
+            \ with Petru Marginean) and \"Mojo: Move of Joint Objects\". The full list can be found here: http://erdani.com/index.php/articles/"
+    twitter: incomputable
   - id: 447
     fileName: 0447.jpg
     name:
       - {language: en, text: "Jeremy Likness"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Jeremy Likness is a Cloud Developer Advocate for Azure at Microsoft. Jeremy has spent two decades\
+            \ building enterprise software with a focus on line of business web applications. He is the author of several\
+            \ highly acclaimed technical books including \"Designing Silverlight Business Applications\" and \"Programming\
+            \ the Windows Runtime by Example\". He has given hundreds of technical presentations during his career as a professional\
+            \ developer that spans two decades. In his free time Jeremy likes to jog, hike, and maintain a 100% plant-based\
+            \ diet."}
+    twitter: jeremylikness
   - id: 448
     fileName: 0448.jpg
     name:
       - {language: en, text: "Christian Horsdal"}
+    company:
+      - {language: en, text: "Horsdal Consult"}
+    bio:
+      - {language: en, text: "Christian Horsdal is an independent consultant with many years of experience building web and\
+            \ distributed systems on .NET. He is a Nancy committer, a Microsoft MVP, and author of the books \"Instant Nancy\
+            \ Web Development\" and \"Microservices in .NET Core\"."}
+    twitter: chr_horsdal
+    mvp: true
   - id: 449
     fileName: 0449.jpg
     name:
       - {language: en, text: "Ian Cooper"}
+    company:
+      - {language: en, text: Huddle}
+    bio:
+      - {language: en, text: "Polyglot Coding Architect in London, founder of #ldnug, speaker, tabletop gamer, geek. Tattooed,\
+            \ pierced, and bearded. The \"guv\" on @BrighterCommand. Ian is an \"old man\" of the business now, with over\
+            \ 20 years of experience. He talks a lot about patterns and practices, with a strong focus on architecture. He's\
+            \ known for \"telling it how it is\" — taking today's topics and sharing with you war stories and experience to\
+            \ help you assess them."}
+    twitter: ICooper
   - id: 450
     fileName: 0450.jpg
     name:
@@ -4236,15 +4336,49 @@ speakers:
     fileName: 0452.jpg
     name:
       - {language: en, text: "Tamir Dresher"}
+    company:
+      - {language: en, text: CodeValue}
+    bio:
+      - language: en
+        text: "Tamir Dresher is a software architect, consultant, instructor and technology addict that leads the Cloud Division\
+            \ at CodeValue Israel. \nWith more than 10 years of experience of developing and architecting systems both on-premise\
+            \ and on the cloud, Tamir holds the title of Microsoft MVP in Visual Studio and Development Technologies, and\
+            \ he is the author of the book \"Rx.NET in Action\" published by Manning (http://manning.com/dresher/). \n\nHe\
+            \ blogs at http://blogs.microsoft.co.il/iblogger/ and you can reach out to him via Twitter @tamir_dresher."
+    twitter: tamir_dresher
+    mvp: true
   - id: 453
     fileName: 0453.jpg
     name:
       - {language: en, text: "Rolf Huisman"}
+    company:
+      - {language: en, text: "Info Support"}
+    bio:
+      - {language: en, text: "Rolf works as an application lifecycle management (ALM), DevOps, and Continuous Delivery (CD)\
+            \ consultant at Info Support. His main focus is using the Microsoft Technologies (e.g. Visual Studio, TFS, Release\
+            \ Management, Azure, Azure Stack, MTM) to improve and accelerate software development and the delivery of added\
+            \ value. For his work he has been awarded by Microsoft as a MVP in the Visual Studio and Development Technologies\
+            \ category. His personal interests include analog electronics, security and discrete mathematics."}
+    twitter: rlrhuisman
+    mvp: true
   - id: 454
     fileName: 0454.jpg
     name:
-      - {language: en, text: "Vyacheslav Mihaylov"}
+      - {language: en, text: "Viacheslav Mikhailov"}
       - {language: ru, text: "Вячеслав Михайлов"}
+    company:
+      - {language: en, text: DataArt}
+    bio:
+      - {language: en, text: "Viacheslav is a solution architect in DataArt. Has got a professional education in computer\
+            \ science, works in IT for 20 years. Is mostly into Finance Industry (8 years), IT security (3 years) and other\
+            \ enterprise development. Viacheslav has a wide range of experience, starting from the iterative decomposition\
+            \ of highly coupled legacy systems and up to designing and building scalable microservices architectures with\
+            \ zero downtime."}
+      - {language: ru, text: "Вячеслав — solution architect в компании DataArt. Профессиональное образование в области раз\
+            работки программного обеспечения, занимается IT уже 20 лет. Основной опыт в финансовой индустрии и информацион\
+            ной безопасности. Вячеслав имеет богатый опыт разработки и проектирования различных приложений, начиная от ите\
+            ративной переработки устаревших сложных легаси-систем и заканчивая проектированием и разработкой современных м\
+            асштабируемых микросервисных приложений с минимальным временем простоя."}
   - id: 455
     fileName: 0455.jpg
     name:
@@ -4276,48 +4410,114 @@ speakers:
     fileName: 0457.jpg
     name:
       - {language: en, text: "Eran Stiller"}
+    company:
+      - {language: en, text: CodeValue}
+    bio:
+      - language: en
+        text: "Eran Stiller is a software architect, consultant, instructor and technology addict. With many years of experience\
+            \ in software development and architecture and a track record of public speaking and community contribution, Eran\
+            \ is recognized as a Microsoft Most Valuable Professional (MVP) on Microsoft Azure since 2016 and as a Microsoft\
+            \ Regional Director (MRD) since 2018.\n\nA Co-Founder at CodeValue Ltd., Eran practices software architecture\
+            \ at various clients on an almost daily basis, reviewing many designs in many professional fields. As CodeValue’\
+            s Chief Technology Officer, Eran is in charge of learning and promoting the usage of various technology platforms\
+            \ throughout CodeValue’s projects and customer solutions. \n\nEran instructs various software courses and workshops\
+            \ and is a frequent public speaker at various local and international events, meetups and user groups on topics\
+            \ he finds especially interesting. Furthermore, Eran is the founder of Azure Israel — the largest Azure related\
+            \ Meetup in Israel."
+    twitter: eranstiller
+    mvp: true
   - id: 458
     fileName: 0458.jpg
     name:
       - {language: en, text: "Sergey Tihon"}
       - {language: ru, text: "Сергей Тихон"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: en, text: "Solution architect at EPAM System, author of F# Weekly, Microsoft F# MVP, open source enthusiast\
+            \ — maintainer of Stanford.NLP.NET, OpenNLP.NET, SwaggerProvider and some other fsprojects."}
+      - {language: ru, text: "Solution architect в EPAM Systems, автор F# Weekly, Microsoft F# MVP, open source энтузиаст\
+            \ — автор проектов Stanford.NLP.NET, OpenNLP.NET, SwaggerProvider и некоторых других fsprojects."}
+    twitter: sergey_tihon
+    mvp: true
   - id: 459
     fileName: 0459.jpg
     name:
       - {language: en, text: "Vitaly Egorov"}
       - {language: ru, text: "Виталий Егоров"}
+    company:
+      - {language: en, text: "Space popularizer, Zelenyikot blogger"}
+      - {language: ru, text: "Популяризатор космонавтики, блогер Zelenyikot"}
+    bio:
+      - {language: en, text: "Public relations specialist at Dauria Aerospace, Russian private space company. Blogs under\
+            \ Zelenyikot nickname, popularizes astronautics in the internet. Founded \"Open space\" community, which now has\
+            \ over 1 million subscribers. In 2013 managed to find a lander of the Soviet unmanned space probe \"Mars-3\" on\
+            \ the Mars surface. Initiated the project of creation of a lunar microsatellite for shooting \"Apollo\" and \"\
+            Rovers\" landing places."}
+      - {language: ru, text: "Специалист по связям с общественностью российской частной космической компании Dauria Aerospace.\
+            \ Блогер Zelenyikot, популяризатор космонавтики в интернете, основатель сообществ «Открытый космос» в соцсетях\
+            \ суммарным количеством более 1 млн подписчиков. В 2013 году сумел обнаружить на поверхности Марса посадочный\
+            \ модуль советской автоматической межпланетной станции «Марс-3». Инициатор проекта создания лунного микроспутн\
+            ика для съемки мест посадок «Аполлонов» и «Луноходов»."}
   - id: 460
     fileName: 0460.jpg
     name:
-      - {language: en, text: "Alexander Ivanov"}
+      - {language: en, text: "Alexandr Ivanov"}
       - {language: ru, text: "Александр Иванов"}
     company:
-      - {language: en, text: "Arcadia"}
+      - {language: en, text: Arcadia}
+    bio:
+      - {language: en, text: "Сame to .NET development in 2008 from 1C:Enterprise. Is now very happy to have freedom of choosing\
+            \ architectural solutions and tries to use it all in development. Is currently fascinated by ASP.NET Core, Docker\
+            \ and nearby technologies, promoting them whenever possible."}
+      - {language: ru, text: "Пришёл в .NET в 2008 году из 1С, с тех пор не нарадуется свободе в выборе архитектурных реше\
+            ний и старается попробовать их в деле. В данный момент интересуется ASP.NET Core, Docker и смежными технология\
+            ми, продвигая их по мере возможности."}
   - id: 461
     fileName: 0461.jpg
     name:
       - {language: en, text: "Evgeny Zhirov"}
       - {language: ru, text: "Евгений Жиров"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - language: en
+        text: "Evgenii Zhirov is a software developer at SKB Kontur. As a member of infrastructure team, he develops and supports\
+            \ common libraries, custom distributed tracing system and other high-performance solutions. \n\nHis main interests\
+            \ in IT include building robust and scalable HTTP services, software performance, C# and .NET technologies, robotics\
+            \ and IoT. He loves to share knowledge with other people and does this by teaching robotics and C# programming\
+            \ at Ural Federal University."
+      - language: ru
+        text: "C# разработчик в инфраструктурной команде СКБ Контур. Занимается разработкой и поддержкой общих библиотек,\
+            \ системы распределенных трассировок, другими высокопроизводительными сервисами. \n\nИнтересуется созданием на\
+            дежных и масштабируемых HTTP-сервисов, написанием производительного кода, C# и .NET, робототехникой и IoT. Евг\
+            ению нравится делиться знаниями с другими, поэтому он прокачивает навык публичных выступлений и преподает неск\
+            олько курсов для студентов в УрФУ."
+    twitter: ezsilmar
   - id: 462
     fileName: 0462.jpg
     name:
-      - {language: en, text: "Iuliia Kovaleva"}
+      - {language: en, text: "Yulia Kovaleva"}
       - {language: ru, text: "Юлия Ковалева"}
     company:
-      - {language: en, text: "Alpha Laboratory"}
-      - {language: ru, text: Альфа-Лаборатория}
+      - {language: en, text: "Dodo Pizza"}
     bio:
-      - language: en
-        text: "Automation QA engineer at Alfa Lab. Her way in test automation has started 4 years ago. Excel was the main\
-            \ instrument to verify results of PL/SQL functions. \nNow she's an adherent of BDD methodology and actively promote\
-            \ it. In Alfa Lab she develops and supports UI tests library for scaling the test automation into teams, which\
-            \ uses Cucumber and Selenide. Her favorite hobbies are snowboarding and board games."
-      - language: ru
-        text: "Старший Java-разработчик автотестов в Альфа-Лаборатории. Начинала свой путь в автоматизацию тестирования 4\
-            \ года назад с работы аналитиком-тестировщиком и с ручных сценариев в Excel.\nНа текущий момент является приве\
-            рженцем BDD-методологии и активно её продвигает. В Альфа Лаборатории разрабатывает библиотеку шагов для масшта\
-            бирования автоматизации тестирования в команде с использованием Cucumber + Selenide. А в свободное время играе\
-            т в настольные игры и осваивает сноуборд."
+      - {language: en, text: "Yulia has a master’s degree in IT and has worked in the sphere of testing for the last 5 years.\
+            \ Her first serious decision was a relocation to Saint Petersburg. This allowed her to change the vector from\
+            \ fundamental education to applied one. She rose from a test analyst to a test project developer with lead responsibilities.\
+            \ She is not afraid of using new languages and frameworks for automation. For her it is important to find balance\
+            \ when choosing tools and approaches in testing. A year ago, she first made speeches at several conferences and\
+            \ this year she hopes that the April DotNext will please all the participants both with interesting talks and\
+            \ a soulful atmosphere of St. Petersburg."}
+      - {language: ru, text: "Юлия окончила магистратуру в ЛЭТИ, решив, что свое алтайское фундаментальное образование нуж\
+            но сделать более прикладным. После магистратуры она уже 5-й год работает в сфере тестирования ПО и не жалеет о\
+            б этом. Пожалуй, поиск неверного решения или некорректно поставленного условия задачи – это навык, привитый ещ\
+            е со времен школьных математических боев. Юлия успела пройти путь от аналитика-тестировщика с жестким менеджме\
+            нтом, где шаг влево-вправо и расстрел, до автоматизатора c обязанностями лида. Она не боится экспериментов, не\
+            знакомых ей языков разработки и фреймворков: главное же сделать работу качественно и помочь команде. Юлия наде\
+            ется, что апрельский DotNext порадует всех участников не только интересными докладами, но и своей питерской ду\
+            шевной атмосферой."}
   - id: 463
     fileName: 0463.jpg
     name:
@@ -4368,11 +4568,33 @@ speakers:
     name:
       - {language: en, text: "Evgeny Peshkov"}
       - {language: ru, text: "Евгений Пешков"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: ".NET developer at Kontur. Works on a common infrastructure, develops the cloud-based hosting\
+            \ platform. Is interested in .NET and Windows internals and uses this knowledge in production."}
+      - {language: ru, text: ".NET-разработчик в Контур. В компании занимается общей инфраструктурой: разрабатывает облачн\
+            ую платформу хостинга приложений. Интересуется внутренним устройством .NET и Windows и использует эти знания н\
+            а практике."}
+    twitter: epeshk
+    gitHub: epeshk
   - id: 467
     fileName: 0467.jpg
     name:
       - {language: en, text: "Dmitry Moiseev"}
       - {language: ru, text: "Дмитрий Моисеев"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: "Dmitry is professionally engaged in programming since 2009. Works as a developer of mobile applications\
+            \ in SKB Kontur since 2013. Is sure that the future of applications' software development lies within the cross-platform\
+            \ solutions."}
+      - {language: ru, text: "Дмитрий профессионально занимается программированием с 2009 года, разработкой мобильных прил\
+            ожений в СКБ Контуре — с 2013 года. Уверен, что будущее разработки прикладного ПО — в кроссплатформенных решен\
+            иях."}
+    twitter: newbilius
   - id: 468
     fileName: 0468.jpg
     name:
