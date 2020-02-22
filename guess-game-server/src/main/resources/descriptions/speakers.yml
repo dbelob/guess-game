@@ -235,6 +235,19 @@ speakers:
     name:
       - {language: en, text: "Rustam Mehmandarov"}
       - {language: ru, text: "Рустам Мехмандаров"}
+    company:
+      - {language: en, text: "Computas AS"}
+    bio:
+      - language: en
+        text: "Passionate computer scientist. Leader of JavaZone. During the past years, heavily involved in the Norwegian\
+            \ Java User Group – javaBin, being the leader, second-in-command, and a board member. \n\nOne of the founders\
+            \ and organizers of Arctic IoT Challenge. Principal engineer, and a competency network coordinator for IT architecture\
+            \ and integration at work. \n\nCommunity builder. Course instructor. Speaker. Java Champion."
+      - language: ru
+        text: "Computer scientist. Лидер JavaZone. Активно участвует в норвежской Java User Group — javaBin. За последние\
+            \ годы – в качестве лидера, правой руки и члена правления.\n\nОдин из основателей и организаторов Arctic IoT Challenge.\
+            \ Главный инженер, competency network coordinator по IT-архитектуре и интеграции на работе.\n\nПродвигает сооб\
+            щества, ведет курсы, выступает на конференциях. Java Champion."
   - id: 16
     fileName: 0016.jpg
     name:
@@ -382,28 +395,58 @@ speakers:
       - {language: en, text: "Kirill Tolkachev"}
       - {language: ru, text: "Кирилл Толкачев"}
     company:
-      - {language: en, text: Alpha-Laboratory}
-      - {language: ru, text: Альфа-Лаборатория}
+      - {language: en, text: Alpha-Bank}
+      - {language: ru, text: Альфа-Банк}
     bio:
-      - {language: en, text: "Kirill is a Lead Developer in Alpha-Laboratory. He develops different banking API's, forms principles\
-            \ and tools related to microservice architecture. He is a fan of Groovy, Gradle, Spring and Netflix technologies\
-            \ stack. Kirill is a resident of famous Russian IT-podcast “Razbor Poletov”. He knows DevOps methodology like\
-            \ the palm of the hand and has two years' experience of its production usage."}
-      - {language: ru, text: "Главный разработчик в Альфа-Лаборатории. Разрабатывает различные банковские API. Формирует п\
-            ринципы и наборы инструментов для работы с микросервисной архитектурой. Большой поклонник Groovy, Gradle, Spring\
-            \ и стека технологий Netflix-а. Постоянный резидент подкаста «Разбор Полётов». Методологию DevOps-а знает не п\
-            онаслышке и имеет почти двухлетний опыт её применения."}
+      - {language: en, text: "Kirill is a Developer at Alfa-Bank. He develops different banking API's, forms principles and\
+            \ tools related to microservice architecture. He is a fan of Groovy, Gradle, Spring and Netflix technologies stack.\
+            \ Kirill is a resident of famous Russian IT-podcast “Razbor Poletov”. He knows DevOps methodology like the palm\
+            \ of his hand and has two years' experience of its production usage."}
+      - {language: ru, text: "Разработчик в Альфа-Банке. Разрабатывает различные банковские API. Формирует принципы и набо\
+            ры инструментов для работы с микросервисной архитектурой. Большой поклонник Groovy, Gradle, Spring и стека тех\
+            нологий Netflix. Постоянный резидент подкаста «Разбор Полётов». Знает не понаслышке методологию DevOps и имеет\
+            \ почти двухлетний опыт её применения."}
     twitter: tolkv
   - id: 29
     fileName: 0029.jpg
     name:
       - {language: en, text: "Ivan Ugliansky"}
       - {language: ru, text: "Иван Углянский"}
+    company:
+      - {language: en, text: Huawei}
+    bio:
+      - language: en
+        text: "Worked at Excelsior since 2011, was one of the Excelsior JET developers (Java SE certified implementation based\
+            \ on optimizing AOT compilation). \n\nBasically, worked with runtime: GC, class loading, concurrency maintenance,\
+            \ profiling and so on. Besides, supported one plugin for the JET-compiled applications' debugging in GDB and sometimes\
+            \ wrote for Excelsior JET Team Blog. \n\nAlso, he is co-founder and co-lead of JUGNsk — an official Java Users\
+            \ Group in Novosibirsk, helps to organize meetups about Java and JVM. \n\nIn his free time teaches C/C++ courses\
+            \ at Novosibirsk State University."
+      - language: ru
+        text: "Работал в компании Excelsior c 2011 года, являлся одним из разработчиков Excelsior JET: сертифицированной р\
+            еализации Java SE, основанной на оптимизирующей AOT-компиляции.\n\nВ основном занимался рантаймом: GC, загрузк\
+            а классов, поддержка многопоточности, профилирование и т. д. Кроме того, поддерживал плагин для отладки JET-compiled\
+            \ приложений в GDB и иногда писал посты в Excelsior JET Team Blog.\n\nТакже является одним из основателей и ли\
+            деров JUGNsk — официальной Java User Group в Новосибирске, организовывает Java-митапы и другие мероприятия.\n\n\
+            В качестве хобби преподает в НГУ курсы по C/C++."
+    twitter: dbg_nsk
+    gitHub: ugliansky
   - id: 30
     fileName: 0030.jpg
     name:
       - {language: en, text: "Dmitry Jemerov"}
       - {language: ru, text: "Дмитрий Жемеров"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "While working at JetBrains since 2003, Dmitry Jemerov has participated in the development of\
+            \ various company's products, like IntelliJ IDEA, PyCharm, and Kotlin. Now he leads a team that is responsible\
+            \ for Kotlin development tools (IDE plugins and build systems). Besides, Dmitry coauthored a book called \"Kotlin\
+            \ in Action\"."}
+      - {language: ru, text: "Дмитрий Жемеров работает в JetBrains с 2003 года. Участвовал в разработке многих продуктов к\
+            омпании, включая IntelliJ IDEA, PyCharm и Kotlin. В последнее время руководит командой, отвечающей за инструме\
+            нты разработки на языке Kotlin (плагины к IDE и системы сборки). Кроме того, Дмитрий — один из соавторов книги\
+            \ «Kotlin in Action» («Kotlin в действии»)."}
   - id: 31
     fileName: 0031.jpg
     name:
@@ -426,6 +469,21 @@ speakers:
     name:
       - {language: en, text: "Alexander Belokrylov"}
       - {language: ru, text: "Александр Белокрылов"}
+    company:
+      - {language: en, text: BellSoft}
+    bio:
+      - language: en
+        text: "Works in IT for more than 15 years, having gone from an engineer to a manager. At Oracle Alexander led the\
+            \ Java ME Embedded development and later one of the Oracle IoT Cloud Service components development. In 2017 together\
+            \ with like-minded fellows he founded BellSoft company which releases and supports OpenJDK binary distribution\
+            \ for variety of platforms called Liberica JDK and makes Big Data and IoT solutions. \n\nHas previously spoken\
+            \ on JPoint, Joker, JavaOne, JEEConf and many other events."
+      - language: ru
+        text: "Работает в индустрии IT более 15 лет, прошел путь от инженера до руководителя. В компании Oracle руководил\
+            \ развитием продукта Java ME Embedded, а позднее одного из компонентов Oracle IoT Cloud Service. В 2017 с груп\
+            пой единомышленников основал компанию BellSoft, которая выпускает и поддерживает собственный Java-дистрибутив\
+            \ Liberica JDK для Linux x86, Linux ARM, Windows, Mac и других, а также разрабатывает решения для анализа боль\
+            ших данных и IoT. \n\nНеоднократный участник конференций JPoint, Joker, JavaOne, JEEConf и многих других."
   - id: 33
     fileName: 0033.jpg
     name:
@@ -610,6 +668,18 @@ speakers:
     name:
       - {language: en, text: "Sergey Melnikov"}
       - {language: ru, text: "Сергей Мельников"}
+    company:
+      - {language: en, text: RaiffeisenBank}
+      - {language: ru, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: "Works on a high-frequency trading application at Raiffeisenbank since 2016. Basically, is into\
+            \ speeding up the existing and writing the new low-latency Java code. Before that worked at Intel as an engineer\
+            \ for the compilers' performance for C / C ++ / FORTRAN languages."}
+      - language: ru
+        text: "Работает в Райффайзенбанке с 2016 года над высокочастотным торговым приложением. В основном занимается уско\
+            рением существующего и написанием нового low-latency кода на Java. \nДо этого работал в Intel инженером по про\
+            изводительности компиляторов для языков C/C++/FORTRAN."
+    gitHub: rainm
   - id: 54
     fileName: 0054.jpg
     name:
@@ -763,6 +833,13 @@ speakers:
     fileName: 0070.jpg
     name:
       - {language: en, text: "Charlie Gracie"}
+    company:
+      - {language: en, text: IBM}
+    bio:
+      - {language: en, text: "Charlie Gracie is currently working at IBM as the Garbage Collection Architect on the Eclipse\
+            \ OpenJ9 and Eclipse OMR projects. He has more than a decade of JVM development experience with a focus on memory\
+            \ management and garbage collection. Recently, his focus has been on community growth for the OpenJ9 and OMR projects."}
+    twitter: crgracie
   - id: 71
     fileName: 0071.jpg
     name:
@@ -819,8 +896,21 @@ speakers:
   - id: 78
     fileName: 0078.jpg
     name:
-      - {language: en, text: "Yury Artamonov"}
+      - {language: en, text: "Yuriy Artamonov"}
       - {language: ru, text: "Юрий Артамонов"}
+    company:
+      - {language: en, text: Haulmont}
+    bio:
+      - {language: en, text: "Yuriy is playing an integral role in the CUBA Platform development team and contributing a lot\
+            \ to the platform architecture design, specializing in front-end technologies. For better or for worse, he had\
+            \ to sort out Vaadin Framework in detail and even become its contributor and co-author of several popular addons.\
+            \ Yuriy is a brave tamer of a fork of Vaadin with 8 years of experience."}
+      - {language: ru, text: "Юрий является одним из ключевых разработчиков опенсорс-фреймворка CUBA и активно участвует в\
+            \ разработке его архитектуры, специализируясь на фронтенд-технологиях. Хорошо это или плохо, ему пришлось дета\
+            льно разобраться в Vaadin Framework и даже стать его контрибьютором и соавтором нескольких популярных аддонов\
+            . Юрий — отважный укротитель форка Vaadin с восьмилетним стажем."}
+    twitter: Yuriy_Artamonov
+    gitHub: jreznot
   - id: 79
     fileName: 0079.jpg
     name:
@@ -938,20 +1028,64 @@ speakers:
     fileName: 0093.jpg
     name:
       - {language: en, text: "Juergen Hoeller"}
+    company:
+      - {language: en, text: Pivotal}
+    bio:
+      - {language: en, text: "Juergen Hoeller is co-founder of the Spring Framework open source project and has been serving\
+            \ as the project lead and release manager for the core framework since 2003. Juergen is an experienced software\
+            \ architect and consultant with outstanding expertise in code organization, transaction management and enterprise\
+            \ messaging."}
+    twitter: springjuergen
   - id: 94
     fileName: 0094.jpg
     name:
       - {language: en, text: "Sergei Tsypanov"}
       - {language: ru, text: "Сергей Цыпанов"}
+    company:
+      - {language: en, text: Luxoft}
+    bio:
+      - language: en
+        text: "Since 2013 works as a developer at Luxoft.The responsibilities include development and support of existing\
+            \ solutions using enterprise technologies stack. \nThe main direction of professional development is the solution\
+            \ of performance-related tasks."
+      - language: ru
+        text: "С 2013 года трудится разработчиком в компании Luxoft. В круг его обязанностей входит разработка и поддержка\
+            \ существующих решений с использованием технологий enterprise-стека. \nОсновное направление профессионального\
+            \ развития — решение задач, связанных с производительностью."
   - id: 95
     fileName: 0095.jpg
     name:
       - {language: en, text: "Tobi Ajila"}
+    company:
+      - {language: en, text: IBM}
+    bio:
+      - language: en
+        text: "Tobi is a Java Runtime developer for the OpenJ9 VM team in Ottawa, Canada. In the past he has worked on Interpreter\
+            \ optimizations, JVMTI enhancements, Lambda expressions for Java and more. Currently, his main focus is on Project\
+            \ Valhalla and Project Panama where he collaborates with other developers in the respective OpenJDK expert groups.\
+            \ \n\nTobi has an interest in optimizing the Java Runtime for cloud environments. He previously worked on a JVM\
+            \ multi-tenant incubator project and has investigated enhancements for Java application deployments on IBM cloud.\
+            \ \n\nIn his spare time Tobi enjoys playing soccer and is an avid supporter of Arsenal F.C. Apart from sports\
+            \ Tobi also enjoys listening to music and catching the odd live show."
   - id: 96
     fileName: 0096.jpg
     name:
       - {language: en, text: "Andrey Kogun"}
       - {language: ru, text: "Андрей Когунь"}
+    company:
+      - {language: en, text: KROK}
+      - {language: ru, text: КРОК}
+    bio:
+      - {language: en, text: "Born in Moscow, Andrey has been working in IT for more than 15 years, for the last 6 years -\
+            \ in KROK. During his career he took part in many custom development projects, mainly e-document flow systems\
+            \ and business processes automatization for several big Russian companies as a senior developer and an architect.\
+            \ At the universities of Moscow, he delivers lectures in development basics with the use of Java technologies.\
+            \ Organizer and leader of [Moscow Java developers community](https://jug.msk.ru)."}
+      - {language: ru, text: "Родом из Москвы, в IT более 15 лет. Сейчас работает в компании КРОК, уже более 6 лет. За сво\
+            ю карьеру принял участие в большом количестве проектов по заказной разработке, в основном систем электронного\
+            \ документооборота и автоматизации бизнес-процессов для ряда крупных российских компаний в роли ведущего разра\
+            ботчика и архитектора. Преподает для студентов московских вузов курсы по основам разработки с применением Java-т\
+            ехнологий. Основатель и организатор встреч московского сообщества Java-разработчиков [JUG.MSK](https://jug.msk.ru)."}
   - id: 97
     fileName: 0097.jpg
     name:
@@ -966,43 +1100,148 @@ speakers:
     fileName: 0098.jpg
     name:
       - {language: en, text: "Christopher Batey"}
+    company:
+      - {language: en, text: Lightbend}
+    bio:
+      - language: en
+        text: "Christopher (@chbatey) is a Senior Engineer at Lightbend. He is currently on the core Akka team responsible\
+            \ for developing [Akka](https://akka.io/), Akka Http, Akka Streams, Reactive Kafka and [Alpakka](https://github.com/akka/alpakka).\
+            \ He has previously built trading systems, online television platforms and worked extensively with Apache Cassandra.\
+            \ Likes Scala, Java, the JVM, Akka, distributed databases, XP, TDD, pairing. Dislikes untested software and code\
+            \ ownership. \nYou can check out his blog at: http://www.batey.info."
+    twitter: chbatey
   - id: 99
     fileName: 0099.jpg
     name:
       - {language: en, text: "Rabea Gransberger"}
+    company:
+      - {language: en, text: MEKOS}
+    bio:
+      - language: en
+        text: "Studied computer science and got a diploma in 2008. Co-leading the software development department and working\
+            \ as a software engineer on various projects at MEKOS. The main focus is on keeping the code base clean and educating\
+            \ the team on how to write a better code. A well-known speaker at Java conferences and user groups around the\
+            \ world. Started the Java user group Bremen in 2012 and is a part of the organisation team ever since. Besides\
+            \ software development likes to watch Werder football games in the local Weserstadion. \n\nMost of the time is\
+            \ writing Java software based on Eclipse RCP. Rabea configures Continuous Integration servers and tries to automate\
+            \ the deployments as much as possible. Sometimes she also does Javascript, C#, VBA or other languages she needs\
+            \ to complete her current task."
+    javaChampion: true
   - id: 100
     fileName: 0100.jpg
     name:
       - {language: en, text: "Douglas Hawkins"}
+    company:
+      - {language: en, text: "Azul Systems"}
+    bio:
+      - language: en
+        text: "Lead developer at Azul Systems. Douglas has been developing in Java for 15 years — creating applications for\
+            \ a variety of industries including bioinformatics, finance, and online retail. \n\nWhile working on those diverse\
+            \ applications, Douglas became interested in understanding the inner-workings of Java Virtual Machines. 5 years\
+            \ ago, Douglas made the switch to working on the internals of Azul’s server JVM: Zing and was the principal developer\
+            \ behind Azul’s ReadyNow technology. \n\nNow, Douglas has the unique experience of having worked with JVMs both\
+            \ as a Java developer and a JVM implementor — and continues working at Azul as a lead developer."
+    twitter: dougqh
   - id: 101
     fileName: 0101.jpg
     name:
       - {language: en, text: "Ivan Osipov"}
       - {language: ru, text: "Иван Осипов"}
+    company:
+      - {language: en, text: Haulmont}
+    bio:
+      - {language: en, text: "Developer at Haulmont since 2016. Works in the outsourcing projects department. Is mostly responsible\
+            \ for the development of a module for scheduling for educational institutions. More than 3 years is engaged in\
+            \ the development and support of resource planning systems. Enthusiast of Kotlin language and problem-oriented\
+            \ languages based on it."}
+      - {language: ru, text: "Разработчик в компании Haulmont с 2016 года. Работает в подразделении аутсорсинговых проекто\
+            в. Основная область ответственности — разработка модуля построения расписаний для образовательных учреждений.\
+            \ Более 3 лет занимается разработкой и поддержкой систем планирования ресурсов. Энтузиаст языка Kotlin и пробл\
+            емно-ориентированных языков на его основе."}
   - id: 102
     fileName: 0102.jpg
     name:
       - {language: en, text: "Mikhail Gelfand"}
       - {language: ru, text: "Михаил Гельфанд"}
+    company:
+      - {language: en, text: "National Research University Higher School of Economics"}
+      - {language: ru, text: "Национальный исследовательский университет «Высшая школа экономики»"}
+    bio:
+      - language: en
+        text: "Doctor of Biological Sciences, member of the Academia Europaea.\nDeputy director of the Institute for Information\
+            \ Transmission Problems of the Russian Academy of Sciences (Kharkevich Institute). \nProfessor, head of the \"\
+            Biotechnology\" master program at Skolkovo Institute of Science and Technology (SkolTech); professor of the Faculty\
+            \ of Computer Science at the Higher School of Economics; professor of the Faculty of Bioengineering and Bioinformatics\
+            \ at Lomonosov Moscow State University."
+      - language: ru
+        text: "Доктор биологических наук, член Academia Europaea.\nЗаместитель директора Института проблем передачи информ\
+            ации им. А.А.Харкевича РАН.\nПрофессор, руководитель магистерской программы «Биотехнология» Сколковского инсти\
+            тута науки и технологий; профессор факультета компьютерных наук Высшей школы экономики и факультета биоинженер\
+            ии и биоинформатики Московского государственного университета им. М.В.Ломоносова."
   - id: 103
     fileName: 0103.jpg
     name:
       - {language: en, text: "Vladislav Goncharov"}
       - {language: ru, text: "Владислав Гончаров"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "Leading IT engineer at Sberbank Technology since 2016. Is involved in the Platform of Business\
+            \ Development Support project— a universal tool to create business applications. His main responsibility is to\
+            \ develop application modules and make the development processes automatic."}
+      - {language: ru, text: "Ведущий IT-инженер в компании Сбербанк-Технологии с 2016 года. Участвует в разработке Платфо\
+            рмы поддержки развития бизнеса: универсального инструмента для создания бизнес-приложений. Основная область от\
+            ветственности – разработка прикладных модулей и автоматизация процессов разработки."}
   - id: 104
     fileName: 0104.jpg
     name:
       - {language: en, text: "Nikolay Archakov"}
       - {language: ru, text: "Николай Арчаков"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: en, text: "Senior Architect in Sberbank Technology since 2012. He participates in development of Credit\
+            \ Factory: system of processing and deciding on loan applications. His main area of responsibility is architecture\
+            \ of Credit Factory automated systems."}
+      - {language: ru, text: "Старший Архитектор в компании Сбербанк-Технологии с 2012 года. Участвует в разработке «Креди\
+            тной фабрики» Сбербанка: системе сквозного процесса обработки и принятия решений по кредитным заявкам. Основна\
+            я область ответственности — развитие архитектуры прикладных автоматизированных систем «Кредитной фабрики» Сбер\
+            банка."}
   - id: 105
     fileName: 0105.jpg
     name:
       - {language: en, text: "Sanhong Li"}
+    company:
+      - {language: en, text: Alibaba}
+    bio:
+      - language: en
+        text: "Sanhong Li is a JVM lead at Alibaba. He has been working on Java since 2004, where he began at Intel Asia-Pacific\
+            \ R&D Lab implementing JSR135. He joined IBM in 2008 to improve runtime security on OSGi platform. He progressed\
+            \ to working on the development of IBM's Java Virtual Machine in 2010, where he led a project to develop multi-tenancy\
+            \ technology for the JVM. \n\nIn 2014, he joined Alibaba to lead the development of Alibaba JDK, a customized\
+            \ OpenJDK version. Sanhong Li has presented at local and international conferences such as JVM language summit,\
+            \ JavaOne and QCon. He co-leads Shanghai Java User Group and co-chairs APMCon. He has authored over 10 technical\
+            \ papers and a number of technical patents."
+    twitter: sanhong_li
+    javaChampion: true
   - id: 106
     fileName: 0106.jpg
     name:
       - {language: en, text: "Roman Elizarov"}
       - {language: ru, text: "Роман Елизаров"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Kotlin developer at JetBrains company, concurrency expert. Before JetBrains was into software\
+            \ development for brokerage and exchanges at Devexperts. Member of the international organizing committee of the\
+            \ ACM ICPC Finals. Winner of the Presidential award in education. Java Champion."}
+      - {language: ru, text: "Разработчик языка Kotlin в компании JetBrains, эксперт в области многопоточного программиров\
+            ания. До JetBrains более 10 лет занимался разработкой ПО для биржевой и брокерской деятельности в компании Devexperts.\
+            \ Член международного организационного комитета Финала ACM ICPC. Лауреат премии Президента в области образован\
+            ия. Java Champion."}
+    twitter: relizarov
   - id: 107
     fileName: 0107.jpg
     name:
@@ -1033,6 +1272,16 @@ speakers:
     fileName: 0109.jpg
     name:
       - {language: en, text: "Marcus Biel"}
+    company:
+      - {language: en, text: "Clean Code Craftsman"}
+    bio:
+      - {language: en, text: "Marcus is a Clean Code evangelist who has authored a series of video tutorials that focus on\
+            \ teaching others how to create the cleanest and most well-structured code possible. As a conference speaker,\
+            \ he shares his ideas on Java Clean Code development. Marcus is also an author, technical book reviewer and JCP\
+            \ member. In 2017, Marcus was named [TOP 13 Java influencer worldwide](http://bit.ly/top20JavaInfluencers) by\
+            \ jaxenter.com. On his website [Clean Code Academy](https://join.cleancodeacademy.com/), he offers comprehensive\
+            \ online training for Java Clean Coding."}
+    twitter: MarcusBiel
   - id: 110
     fileName: 0110.jpg
     name:
@@ -1077,6 +1326,17 @@ speakers:
     fileName: 0112.jpg
     name:
       - {language: en, text: "David Delabassée"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - language: en
+        text: "Java, from Java EE/EE4J to Serverless, and Java running in the Cloud. David is a seasoned speaker and regular\
+            \ presenter at JavaOne and other conferences on technical and software engineering topics. Prior to Oracle, he\
+            \ spent a decade at Sun Microsystems focusing on Java end-to-end. In his various roles, he has been involved in\
+            \ numerous Java projects since the early days of this technology. \n\nDavid lives in Belgium and in his spare\
+            \ time, he tinkers with technologies such as home automation, electronics, pinballs, etc. But more importantly,\
+            \ he enjoys playing video games with his daughter!"
+    twitter: delabassee
   - id: 113
     fileName: 0113.jpg
     name:
@@ -5188,6 +5448,15 @@ speakers:
     fileName: 0589.jpg
     name:
       - {language: en, text: "Claus Ibsen"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - language: en
+        text: "Claus Ibsen is a senior principal software engineer at Red Hat, working primarily as the project lead on Apache\
+            \ Camel. Claus has been a full-time developer on Apache Camel for the past 9 years. He is the author of the \"\
+            Camel in Action\" books (1st and 2nd edition). \n\nClaus is very active in the open source communities, where\
+            \ he helps \nothers, blogs, records videos, writes, and tweets as well."
+    twitter: davsclaus
   - id: 590
     fileName: 0590.jpg
     name:

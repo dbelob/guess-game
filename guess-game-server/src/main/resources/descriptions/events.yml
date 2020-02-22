@@ -404,6 +404,24 @@ events:
               445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462]
   - eventTypeId: 7
     name:
+      - {language: en, text: "JPoint 2018"}
+    startDate: "2018-04-06"
+    endDate: "2018-04-07"
+    siteLink:
+      - {language: en, text: "https://2018.jpoint.ru/en/"}
+      - {language: ru, text: "https://2018.jpoint.ru/"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Krasnopresnenskaya Emb., 12, «WTC» Congress Center"}
+      - {language: ru, text: "Краснопресненская наб., 12, Конгресс-центр «ЦМТ»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_b3GZR4CCOy3rxNfvKi9ns
+    mapCoordinates: "55.754203, 37.556388"
+    talkIds: [778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799,
+              800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815]
+  - eventTypeId: 7
+    name:
       - {language: en, text: "JPoint 2019"}
     startDate: 2019-04-05
     endDate: 2019-04-06
