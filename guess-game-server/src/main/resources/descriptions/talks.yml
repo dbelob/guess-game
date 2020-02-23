@@ -18016,3 +18016,1079 @@ talks:
     presentationLinks: []
     videoLinks: ["https://youtu.be/2CIOCSS5u6g"]
     speakerIds: [459]
+  - id: 877
+    name:
+      - {language: en, text: "Shipping is a risky business"}
+    shortDescription:
+      - {language: en, text: "We’ll recast the software development lifecycle as a conversation about risk. We’ll discuss\
+            \ the position of testers in a team, the role of testing, and the place that automation has in the conversation\
+            \ that is software development as a mechanism for assuaging the fear of risk."}
+    longDescription:
+      - language: en
+        text: "Businesses don’t write and release software for the fun of it. They write code to meet business needs. Of course,\
+            \ no software is without bugs, and no process is without edge cases, missed opportunities, and the normal sprinkling\
+            \ of errors. This means that each release is the result of a risk assessment that has determined that the risks\
+            \ of release outweigh the costs of failure to push to production. Because we’re human, that assessment is coloured\
+            \ not just by the fear of risk. \n\nCanary releases, feature toggles, vigilant monitoring, and clearly defined\
+            \ rollback procedures are all technical approaches to mitigating this risk, but what else can we do? In particular,\
+            \ what can testers contribute over the lifetime of the project to keep the risk as low as possible? Over the course\
+            \ of this talk, we’ll recast the software development lifecycle as a conversation about risk. We’ll discuss the\
+            \ position of testers in a team, the role of testing, and the place that automation has in the conversation that\
+            \ is software development as a mechanism for assuaging the fear of risk."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Хотите услышать мнение автора Selenium WebDriver про тестир\
+            ование в нашем мире? Приходите!* \n\n\n\nBusinesses don’t write and release software for the fun of it. They write\
+            \ code to meet business needs. Of course, no software is without bugs, and no process is without edge cases, missed\
+            \ opportunities, and the normal sprinkling of errors. This means that each release is the result of a risk assessment\
+            \ that has determined that the risks of release outweigh the costs of failure to push to production. Because we’\
+            re human, that assessment is coloured not just by the fear of risk. \n\nCanary releases, feature toggles, vigilant\
+            \ monitoring, and clearly defined rollback procedures are all technical approaches to mitigating this risk, but\
+            \ what else can we do? In particular, what can testers contribute over the lifetime of the project to keep the\
+            \ risk as low as possible? Over the course of this talk, we’ll recast the software development lifecycle as a\
+            \ conversation about risk. We’ll discuss the position of testers in a team, the role of testing, and the place\
+            \ that automation has in the conversation that is software development as a mechanism for assuaging the fear of\
+            \ risk."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1xms0ppTTSqKsEsMqiK220/d33de8754c7d0e9e169ea0ba868354b6/Simon_Stewart_-_Release_is_a_risky_business.pdf"]
+    videoLinks: ["https://youtu.be/uOFkL5wxrsE"]
+    speakerIds: [591]
+  - id: 878
+    name:
+      - {language: en, text: "Testing with a crowd"}
+      - {language: ru, text: "Краудсорсинг в тестировании"}
+    shortDescription:
+      - {language: en, text: "We'll look at our experience in setting up crowdtesting in Yandex and highlight major steps\
+            \ of this process: how to select and train performers; how to control quality; how to prepare the infrastructure\
+            \ for testing with a crowd; how to combine crowd force with highly qualified in-house QA specialists."}
+      - {language: ru, text: "Расскажем, как мы в Яндексе масштабировали ручное регрессионное тестирование с помощью крауд\
+            сорсинга, и разберем все этапы становления процесса на промышленные рельсы."}
+    longDescription:
+      - language: en
+        text: "Crowdtesting is one of effective ways to scale up manual testing and allow in-house testers to focus on more\
+            \ complicated job. With hundreds of people available for the testrun 24/7, it allows to significantly increase\
+            \ the speed of testing and cover a large diversity of environments. \n\nWe will speak about our experience in\
+            \ setting up crowdtesting in Yandex and highlight major steps of this process: how to select and train performers;\
+            \ how to control quality; how to prepare the infrastructure for testing with a crowd; how to combine crowd force\
+            \ with highly qualified in-house QA specialists."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Что будет, если тестированием займутся много-много людей, к\
+            оторые до этого вообще не имели отношения к IT? Из этого вообще что-то хорошее может получиться? Может!* \n\n\n\
+            \nМы хотим рассказать о том, как мы в Яндексе решили проблему масштабирования задач ручного регрессионного тес\
+            тирования с помощью краудсорсинга. \n\nРегрессионное тестирование — очень важная часть работы над качеством пр\
+            одукта. И чем больше у вас продуктов и чем быстрее они развиваются, тем больше усилий нужно на него тратить. \n\
+            \nЗа последний год мы научились масштабировать задачи ручного тестирования для большинства продуктов Яндекса с\
+            \ помощью асессоров — удаленных сотрудников, работающих по совместительству на сдельной основе, и теперь в тес\
+            тировании наших продуктов кроме штатных тестировщиков принимает участие более 700 асессоров. \n\nВ докладе мы\
+            \ расскажем: \n- как удалось сделать задачи ручного тестирования максимально формализованными и обучить им сот\
+            ни удаленных сотрудников; \n- как удалось поставить процесс на промышленные рельсы, обеспечить тестирование в\
+            \ различных окружениях, выдерживать SLA по скорости и качеству; \n- с какими трудностями мы сталкивались и как\
+            \ их решали (а некоторые еще не решили); \n- какой вклад внесло тестирование асессорами в развитие продуктов Я\
+            ндекса, как оно сказалось на частоте релизов и количестве пропускаемых багов."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2E0FRRHHtGCqIw0ma6UoeO/da31da43ae5b2f8f8c1c11d6899ea3b1/Olga_Megorskaya______test_crowd3.pdf"]
+    videoLinks: ["https://youtu.be/1yq9aModCyo"]
+    speakerIds: [592]
+  - id: 879
+    name:
+      - {language: en, text: "Evolution of mobile test automation at Badoo: from 0 to 45 hours of tests"}
+    shortDescription:
+      - {language: en, text: "Come and learn about the mobile test automation tools, the reason why we love Cucumber (BDD),\
+            \ how we killed the flakiness of the tests, how we overcome the challenges of keeping releases' speed, and why\
+            \ involving manual QA in automation is the most important thing."}
+    longDescription:
+      - language: en
+        text: "Challenges in mobile test automation (Android, iOS and mobile web) are quite different from desktop web. Applications\
+            \ are developed with different technologies on different languages and different platforms. You need a strategy\
+            \ while picking the tools for mobile test automation. It is important to understand what you want to achieve with\
+            \ it and how to show the value to your stakeholders. Having automation tests doesn't mean anything by itself.\
+            \ Speed and stability of your tests are necessary to build the trust between the developers and QA. While we want\
+            \ to see a pyramid structure in testing — unit tests, integration tests, etc — end-to-end tests are not merely\
+            \ the pointy bit at the top, but are the bridge between client and server pyramids. \n\nBadoo delivers Android\
+            \ and iOS applications once in a week and mobile web twice per day. While the product is continuously pushing\
+            \ for the features and teams got scaled over the last two years, how do we start working with developers and manual\
+            \ QA and keep being a part of its delivery process?"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Что ждёт ваш проект после нескольких лет внедрения автомати\
+            зации и появления большого количества тестов от главного тестера Badoo.* \n\n\n\nChallenges in mobile test automation\
+            \ (Android, iOS and mobile web) are quite different from desktop web. Applications are developed with different\
+            \ technologies on different languages and different platforms. You need a strategy while picking the tools for\
+            \ mobile test automation. It is important to understand what you want to achieve with it and how to show the value\
+            \ to your stakeholders. Having automation tests doesn't mean anything by itself. Speed and stability of your tests\
+            \ are necessary to build the trust between the developers and QA. While we want to see a pyramid structure in\
+            \ testing — unit tests, integration tests, etc — end-to-end tests are not merely the pointy bit at the top, but\
+            \ are the bridge between client and server pyramids. \n\nBadoo delivers Android and iOS applications once in a\
+            \ week and mobile web twice per day. While the product is continuously pushing for the features and teams got\
+            \ scaled over the last two years, how do we start working with developers and manual QA and keep being a part\
+            \ of its delivery process?"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/7oPffrgnduyMQSUgmW66oi/759aa5d09a7708ef05a029e8a8e2f0f7/Sathish_Gogineni_evolution_of_mobile_test_atomation_at_Badoo.pdf"]
+    videoLinks: ["https://youtu.be/N8RfVODFvq4"]
+    speakerIds: [596]
+  - id: 880
+    name:
+      - {language: en, text: "Building CI for mobile SDK from scratch"}
+      - {language: ru, text: "Делаем CI для мобильного SDK с нуля"}
+    shortDescription:
+      - {language: en, text: "This talk is about our approach to building new CI from scratch. What we tried, what didn't\
+            \ work, what types of issues we faced."}
+      - {language: ru, text: "Доклад о том, как мы подходили к построению CI для нашего нового продукта, что попробовали,\
+            \ что выбрали, от чего отказались и что оставили на потом."}
+    longDescription:
+      - language: en
+        text: "At the end of 2017, our team started to work on a completely new mobile SDK. We started from scratch and we\
+            \ wanted to fix issues that we witnessed during our work on the existing SDK. And CI was one of the major topics.\
+            \ \n\nThis talk is about our approach to building new CI from scratch. What we tried, what didn't work, what types\
+            \ of issues we faced. \n\nKeywords for this talk: Jenkins, AWS, Serverless, Docker, Mac mini, git, repo, Gerrit,\
+            \ Java, Go"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Рассказ о том, как создать CI в 2018 году с использованием\
+            \ современных инструментов для проекта любой сложности. Доклад будет полезен инженерам, интересующимся создани\
+            ем инфраструктуры для тестирования и разработки.* \n\n\nВ конце 2017 года наша команда начала работу над новым\
+            \ мобильным SDK, используя как самые последние опенсорс-технологии, так и самые последние внутренние разработк\
+            и. И конечно мы хотели исправить и те недочеты, которые видели в CI наших предыдущих продуктов. \n\nДоклад о т\
+            ом, как мы подходили к построению CI для нашего нового продукта, что попробовали, что выбрали, от чего отказал\
+            ись и что оставили на потом. \n\nСписок ключевых слов: Jenkins, AWS, Serverless, Docker, Mac mini, git, repo,\
+            \ Gerrit, Java, Go"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1RBrsNxobCKy0kMSuqScQ4/cb8dbed97725aa31dcbf203e8616aecc/Artem_Nikitin_Building_CI_for_mobile_SDK_from_scratch.pdf"]
+    videoLinks: ["https://youtu.be/EilLcLJYHYg"]
+    speakerIds: [602]
+  - id: 881
+    name:
+      - {language: en, text: "Petri nets based testing"}
+      - {language: ru, text: "Тестирование на основе сетей Петри"}
+    shortDescription:
+      - {language: en, text: "We'll touch on how we started moving from usual tests to model-based testing, what problems\
+            \ we faced during this transition, why we use Petri net instead of state and what we ended up with. The talk is\
+            \ illustrated with examples of Petri nets and plenty of Ruby code."}
+      - {language: ru, text: "Расскажем, как мы начали переход от обычных тестов к тестированию на основе моделей, какие п\
+            роблемы встретили на этом пути, почему мы используем сети Петри вместо конечных автоматов и что у нас получило\
+            сь в итоге. Доклад будет проиллюстрирован примерами сетей Петри и множеством Ruby-кода."}
+    longDescription:
+      - language: en
+        text: "What to do when tests cannot catch bugs which occur because of weird states of a system under test, known as\
+            \ \"edge cases\"? Is it possible to increase test coverage and find more issue without creating excessive tests\
+            \ or sacrificing their execution time? \n\nIn this talk, we’ll discuss how we faced this problem at Toptal, started\
+            \ moving from usual tests to model-based testing, what problems we faced during this transition, why we use Petri\
+            \ net instead of state and what we ended up with. The talk is illustrated with examples of Petri nets and plenty\
+            \ of Ruby code."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Применение математического аппарата для создания тестов мож\
+            но смело назвать Тестированием 2.0. Алексей расскажет, как эту задачу решили на своём проекте, покажет альтерн\
+            ативные способы разработки тестов с помощью теории графов.* \n\n\nЧто делать, когда тесты принципиально не спо\
+            собны находить ошибки, возникающие при необычных состояниях тестируемой системы, обычно называемые «edge cases»\
+            ? Можно ли увеличить тестовое покрытие и находить больше ошибок, не создавая излишних тестов и не жертвуя врем\
+            енем их выполнения? \n\nВ этом докладе мы поговорим о том, как мы столкнулись с этой проблемой в Toptal, начал\
+            и переход от обычных тестов к тестированию на основе моделей, какие проблемы встретили на этом пути, почему мы\
+            \ используем сети Петри вместо конечных автоматов и что у нас получилось в итоге. Доклад будет проиллюстрирова\
+            н примерами сетей Петри и множеством Ruby-кода."
+    talkDay: 1
+    trackTime: "13:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/13fzaTS3fKUYCCsGae8qyk/defe9855e4e70078fba071a6d690d9e0/Alexey_Rodionov_Petri_nets_based_testing.pdf"]
+    videoLinks: ["https://youtu.be/TeKHZw61pb8"]
+    speakerIds: [603]
+  - id: 882
+    name:
+      - {language: en, text: "JUnit, high five! Migrating to JUnit 5 Extensions"}
+      - {language: ru, text: "JUnit, дай пять! Переносим код в JUnit 5 Extensions"}
+    shortDescription:
+      - {language: en, text: "Using real-life examples, we'll show you how we didn`t just replace the annotations but got\
+            \ rid of the first \"A\" in the \"AAA\" abbreviation (Arrange – Act – Assert)."}
+      - {language: ru, text: "На реальных примерах расскажем, как мы не ограничились простой заменой аннотаций и избавилис\
+            ь от первой «А» в аббревиатуре AAA (Arrange – Act – Assert)."}
+    longDescription:
+      - language: en
+        text: "JUnit 5 is a totally new framework, its first release candidate has been issued less than one year ago. \n\
+            JUnit name demands a lot, as it is the most popular solution for writing tests in Java-world, fresh version of\
+            \ which has been wanted for more than 3 years. \nWhat did we get? Totally new coding base, architecture and API\
+            \ in the combination with the simple and impressive previous version. \n\nMigration process from the version 4\
+            \ is easy — you can limit it by simple annotations replacement. \nBut here at PropellerAds, while migrating to\
+            \ the JUnit 5, we first tried to answer the question — how to use new API to make our testing better? \n\nTo make\
+            \ the long story short: \n- if your functional tests are written in AAA style (Arrange — Act — Assert), and the\
+            \ section of data preparation is more complex than `Calculator calculator = new Calculator();` \n- if you write\
+            \ tests for \"complex\" web-projects, such as: internet banking, documentation systems, CRM and etc., also creating\
+            \ a lot of \"domain\" objects for simple test-case; \n- if you want to provide really Simple API to make it possible\
+            \ for the newbie to spread testing coverage in your project without being shocked by the class with tests, then…\
+            \ \n\nThis talk is 100% for you! Using real-life examples, we'll show you how we didn`t just replace the annotations\
+            \ but got rid of the first \"A\" in the \"AAA\" abbreviation."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Что вам может дать JUnit 5 в вашем проекте. Неприкрытая пра\
+            вда и голые факты.* \n\n\n\nJUnit 5 — полностью новый фреймворк, первый релиз-кандидат которого выпущен менее\
+            \ года назад. Имя JUnit обязывает ко многому, так как он является самым популярным решением для написания тест\
+            ов в Java-мире, свежую версию которого ждали более трех лет. \n\nЧто же мы получили? Полностью новую кодовую б\
+            азу, архитектуру и API, в сочетании с простотой и выразительностью предыдущей версии. \n\nПроцесс миграции с в\
+            ерсии 4 прост — вы можете ограничиться исключительно заменой аннотаций. \nНо мы в PropellerAds, при переходе н\
+            а JUnit 5, постарались ответить на вопрос: как использовать новые API для того, чтобы изменить наши тесты к лу\
+            чшему? \n\nИтак, \n- если ваши функциональные тесты написаны в стиле AAA (Arrange – Act – Assert), и секция по\
+            дготовки данных сложнее, чем Calculator calculator = new Calculator(); \n- если вы пишете тесты на «сложные» в\
+            еб-проекты, такие как: интернет-банки, системы документооборота, CRM и т.д., а также создаете большое число «д\
+            оменных» объектов ради простого тест-кейса; \n- если вы хотите реализовать действительно простые API для того\
+            , чтобы любой новичок мог расширять тестовое покрытие в вашем проекте, не испытывая шока при виде класса с тес\
+            тами, \n\nто этот доклад именно для вас! На реальных примерах расскажем, как мы не ограничились простой замено\
+            й аннотаций и избавились от первой «А» в аббревиатуре AAA."
+    talkDay: 1
+    trackTime: "13:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/4lu7C25hG0m2Gs2oWs8goe/71916a01aad87173232f0bb18f97fb8b/__________________________JUnit__________________.pdf"]
+    videoLinks: ["https://youtu.be/DAszLeWMsqU"]
+    speakerIds: [609]
+  - id: 883
+    name:
+      - {language: en, text: "How to improve CI/CD pipeline for mobile test automation"}
+    shortDescription:
+      - {language: en, text: "We'll discuss how containers can simplify the many different flavors of mobile app builds, how\
+            \ to utilize parallelization to speed up build and test execution time, and how the choice of a CI system can\
+            \ improve the efficiency of the entire CI/CD pipeline."}
+    longDescription:
+      - language: en
+        text: "In this talk, Niranjani will discuss how containers can simplify the many different flavors of mobile app builds,\
+            \ how to utilize parallelization to speed up build and test execution time, and how the choice of a CI system\
+            \ can improve the efficiency of the entire CI/CD pipeline. She’ll be citing examples from her experience in the\
+            \ Android world via a problem/solution based approach which will be helpful for the audience to understand and\
+            \ apply to other platforms.\n\nKey takeaways: \n- Learn how containers can simplify your build process.\n- A problem/solution\
+            \ approach to addressing the common test automation issues while trying to improve CI/CD pipeline.\n- Caveats\
+            \ of different CI systems."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Интересный опыт Pinterest.* \n\n\n\n\nIn this talk, Niranjani\
+            \ will discuss how containers can simplify the many different flavors of mobile app builds, how to utilize parallelization\
+            \ to speed up build and test execution time, and how the choice of a CI system can improve the efficiency of the\
+            \ entire CI/CD pipeline. She’ll be citing examples from her experience in the Android world via a problem/solution\
+            \ based approach which will be helpful for the audience to understand and apply to other platforms.\n\nKey takeaways:\
+            \ \n- Learn how containers can simplify your build process.\n- A problem/solution approach to addressing the common\
+            \ test automation issues while trying to improve CI/CD pipeline.\n- Caveats of different CI systems."
+    talkDay: 1
+    trackTime: "13:45"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2hgCU2U2fGGCmmuqc2Y6g2/86faab0371235178b872662d6f8f9af4/Niranjani_Manoharan_How_to_improve_CI_2FCD_pipeline_for_mobile_test_automation.pdf"]
+    videoLinks: ["https://youtu.be/g3Oas5xKseY"]
+    speakerIds: [593]
+  - id: 884
+    name:
+      - {language: en, text: "Don’t repeat yourself: UI tests for web, iOS and Android simultaneously"}
+      - {language: ru, text: "Don’t repeat yourself: UI-тесты для веб, iOS и Android одновременно"}
+    shortDescription:
+      - {language: en, text: "Let’s see how with the help of open source solutions we can quickly organize E2E tests that\
+            \ will work both in the web and in mobile applications. The approach will be demonstrated on the Python stack,\
+            \ but can easily be transferred to another stack."}
+      - {language: ru, text: "Давайте посмотрим, как на основе open source-решений можно быстро организовать E2E-тесты, ко\
+            торые заработают и в вебе, и в мобильных приложениях. Подход будет продемонстрирован на Python-стеке, но может\
+            \ быть легко перенесен на другой стек."}
+    longDescription:
+      - language: en
+        text: "Nowadays you won't surprise anyone by saying that the product has a web version and a mobile application. But\
+            \ UI tests are usually written separately for each platform. We often get different frameworks, test runners,\
+            \ sometimes even languages and we have to support this zoo, of course. When the product's behavior changes, we\
+            \ have to change the same thing in several places. \n\nLet’s see how with the help of open source solutions we\
+            \ can quickly organize E2E tests that will work both in the web and in mobile applications. We'll also look at\
+            \ the possible difficulties that might arise with such solution. The approach will be demonstrated on the Python\
+            \ stack, but can easily be transferred to another stack. \n#python #web #mobile"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Сделать успешные мультиплатформенные тесты оказывается не т\
+            ак сложно (история успеха).* \n\n\nНикого уже не удивишь, что у продукта есть веб-версия и мобильное приложени\
+            е. При этом UI-тесты чаще всего пишутся отдельно для каждой платформы. Очень часто при этом мы получаем разные\
+            \ фреймворки, тестраннеры, иногда даже языки, а заодно и поддержку этого зоопарка. Затем при изменениях в пове\
+            дении продукта приходится менять одно и то же в нескольких местах. \n\nДавайте посмотрим, как на основе open source-р\
+            ешений можно быстро организовать E2E-тесты, которые заработают и в вебе, и в мобильных приложениях, а также ка\
+            кие сложности возникнут с подобным решением. Подход будет продемонстрирован на Python-стеке, но может быть лег\
+            ко перенесен на другой стек. \n#python #web #mobile"
+    talkDay: 1
+    trackTime: "15:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/22TdlDVRckMEk0MYKkuooe/e90e4ece99b0c8409743c5ebff2e9152/Igor_Balagurov__Don___t_repeat_yourself_-_UI_tests_for_web__iOS_and_Android_simultaneously.pdf"]
+    videoLinks: ["https://youtu.be/YoMt08OcxMI"]
+    speakerIds: [607]
+  - id: 885
+    name:
+      - {language: en, text: "Automated testing of legacy code: methods of safe refactoring"}
+      - {language: ru, text: "Автоматизированное тестирование унаследованного кода: приемы безопасного рефакторинга"}
+    shortDescription:
+      - {language: en, text: "We'll look at the basic approaches to refactoring in order to cover the legacy code with automated\
+            \ tests, and also consider their interaction. You will learn how to choose solutions that allow you to make reliable\
+            \ changes by creating a \"reliability grid\" around the modifiable module."}
+      - {language: ru, text: "Пройдемся по основным подходам к рефакторингу с целью покрытия унаследованного кода автомати\
+            зированными тестами, рассмотрим их взаимосвязь друг с другом. Вы научитесь подбирать решения, которые позволяю\
+            т вносить надежные изменения за счет формирования «сетки надежности» вокруг изменяемого модуля."}
+    longDescription:
+      - language: en
+        text: "It is known, that the consequences of an error in production are extremely expensive: they lead to both financial\
+            \ and reputational costs. In this case, it must be taken into account that the search and correction of the causes\
+            \ must be carried out as carefully as possible. This is connected with the fact that, as practice statistics shows,\
+            \ correcting one mistake, in the absence of a competently built testing process, can lead to the introduction\
+            \ of the new ones. \n\nWhat should the developers who value the quality and reliability of the product do in the\
+            \ situation when in a short time it is required to make changes in the legacy code for which there are no tests?\
+            \ \n\nWe will look at the basic approaches to refactoring in order to cover the legacy code with automated tests,\
+            \ and also consider their interaction. You will learn how to choose solutions that allow you to make reliable\
+            \ changes by creating a \"reliability grid\" around the modifiable module. \n\nThe talk will mostly demonstrate\
+            \ examples from the C++ world, yet it will also be relevant for other programming languages."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Должно же на конференции быть что-то и для души? Так пусть\
+            \ это будут приёмы рефакторинга легаси-кода на C++.* \n\n\n\nКак известно, последствия проявления ошибки в про\
+            дакшне чрезвычайно дороги: они приводят как к финансовым, так и к репутационным издержкам. При этом надо учиты\
+            вать, что поиск и исправление причин необходимо осуществлять максимально аккуратно. Это связано с тем, что, ка\
+            к показывает практика, а вместе с ней и статистика, исправление одной ошибки, при отсутствии грамотно выстроен\
+            ного процесса тестирования, может привести к внесению новых. \n  \nКак же быть в подобной ситуации нам — разра\
+            ботчикам, ценящим качество и надежность продукта, когда требуется в короткие сроки внести изменения в унаследо\
+            ванный код, для которого нет тестов? \n  \nМы пройдемся по основным подходам к рефакторингу с целью покрытия у\
+            наследованного кода автоматизированными тестами, а также рассмотрим их взаимосвязь друг с другом. Вы научитесь\
+            \ подбирать решения, которые позволяют вносить надежные изменения за счет формирования «сетки надежности» вокр\
+            уг изменяемого модуля. \n  \nДоклад продемонстрирует примеры из мира С++, но будет актуален и для других языко\
+            в программирования."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/4EPeTuKw2saUMUw2uUU4C/53bf51ea3ee91efbb17baf285e32ddb5/____________________________________________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/x3uDD3xa-ks"]
+    speakerIds: [610]
+  - id: 886
+    name:
+      - {language: en, text: "Test your Java applications with Spock"}
+    shortDescription:
+      - {language: en, text: "In this live-coding session, you'll learn the basics of Spock and you'll see how easily you\
+            \ can test a Java application."}
+    longDescription:
+      - language: en
+        text: "Remember the old days when you tested using JUnit? How boring it was? You made a lot of excuses to avoid testing\
+            \ your code. Luckily those dark days now belong to the past because Spock is with us. \n\nSpock is a Groovy-based\
+            \ testing and specification framework for Java and Groovy applications that makes writing tests fun again. We\
+            \ can write beautiful and highly expressive tests because of its DSL and all the power that Groovy provides us.\
+            \ \n\nIn this live-coding session, you'll learn the basics of Spock and you'll see how easily you can test a Java\
+            \ application. After the talk you won't have any excuse not to test your applications, so you have been warned\
+            \ before coming to the talk!"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n>\n> *Надоело тестировать с JUnit? Посмотрите на другие инструме\
+            нты!* \n\n\n\nRemember the old days when you tested using JUnit? How boring it was? You made a lot of excuses\
+            \ to avoid testing your code. Luckily those dark days now belong to the past because Spock is with us. \n\nSpock\
+            \ is a Groovy-based testing and specification framework for Java and Groovy applications that makes writing tests\
+            \ fun again. We can write beautiful and highly expressive tests because of its DSL and all the power that Groovy\
+            \ provides us. \n\nIn this live-coding session, you'll learn the basics of Spock and you'll see how easily you\
+            \ can test a Java application. After the talk you won't have any excuse not to test your applications, so you\
+            \ have been warned before coming to the talk!"
+    talkDay: 1
+    trackTime: "15:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/lbU2QEcIp2YaGAG6WCqug/bb5a40862eef64ac5b64563f78175ecf/Iva__n_Lo__pez_Test_your_java_applications_with_Spock.pdf"]
+    videoLinks: ["https://youtu.be/XmOTrWy3FZA"]
+    speakerIds: [600]
+  - id: 887
+    name:
+      - {language: en, text: "10 000 000 of tests a day"}
+      - {language: ru, text: "10 000 000 тестов в день"}
+    shortDescription:
+      - {language: en, text: "This is a story about building a dam against the never-ending flood of millions of tests which\
+            \ turned out to be not that scary. You are very welcome to join and see it for yourself."}
+      - {language: ru, text: "Рассказ о том, как мы прогоняем десятки миллионов тестов, как мы строили процессы и инфрастр\
+            уктуру, в какие лужи сели, а какие обошли, и, главное, как перестали бояться и полюбили большие числа."}
+    longDescription:
+      - {language: en, text: "Once upon a time, we got a requirement to finish all testing in 2 days despite the number of\
+            \ tests to run. That number grew, and grew, and grew, and now there are tens of millions of them. So this is a\
+            \ story about building a dam against the never-ending flood which turned out to be not that scary. You are very\
+            \ welcome to join and see it for yourself."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Хорошо, когда у вас много автотестов, и становится немного\
+            \ сложно, когда их количество превышает разумные пределы по разным причинам. У Сергея уникальный опыт запуска\
+            \ огромного количества тестов одновременно на множестве платформ, чем он и поделится.* \n\n\nОднажды небольшой\
+            \ QA-команде поставили задачу: прогонять все тесты за двое суток независимо от их количества, которое росло, р\
+            астёт и продолжает расти. На момент доклада тестов уже десятки миллионов. И это рассказ о том, как мы строили\
+            \ процессы и инфраструктуру, в какие лужи сели, а какие обошли, и, главное, как перестали бояться и полюбили б\
+            ольшие числа."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/4RubcjByZiagOKMKSo6YI8/861d8f7a86bdbb9d77b7bd1d74fe1058/Sergey_Grinev_10M_tests_per_day.pdf"]
+    videoLinks: ["https://youtu.be/YbawZmpZG1g"]
+    speakerIds: [255]
+  - id: 888
+    name:
+      - {language: en, text: "Auxiliary approaches in the testing of microservices"}
+      - {language: ru, text: "Вспомогательные приемы при тестировании микросервисов"}
+    shortDescription:
+      - {language: en, text: "We'll look at the problems of generating, loading and cleaning test data; maintenance of multiple\
+            \ HTTP clients; verification that the whole cluster of microservices is ready for testing at the beginning and\
+            \ during the execution of tests."}
+      - {language: ru, text: "Поговорим о проблемах генерации, загрузки и очистки тестовых данных; о поддержке множества HTTP-к\
+            лиентов и проверке того, что весь кластер микросервисов готов к тестированию в начале и в процессе прогона тес\
+            тов."}
+    longDescription:
+      - {language: en, text: "Testing of microservices introduces many interesting and new tasks. Following will be considered:\
+            \ problems of generating, loading and cleaning test data. Maintenance of multiple HTTP clients. Verification that\
+            \ the whole cluster of microservices is ready for testing at the beginning and during the execution of tests.\
+            \ The talk is built on \"problem-solution\" concept. #spring #cucumber #java"}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *То, чего давно не было в программе нашей конференции, и то\
+            , о чем все много говорили и продолжают говорить, — как тестировать микросервисы!* \n\n\n\nТестирование микрос\
+            ервисов привносит много интересных и новых задач. Речь пойдет о проблемах генерации, загрузки и очистки тестов\
+            ых данных; о поддержке множества HTTP-клиентов и проверке того, что весь кластер микросервисов готов к тестиро\
+            ванию в начале и в процессе прогона тестов. Доклад построен на модели «проблема-решение». #spring #cucumber #java"
+    talkDay: 1
+    trackTime: "17:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/sLzOazC9aKim2806kYcGU/3bae92c2f75faf46ce612b86aad98453/Martiushov_Aleksandr-______________________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/V8UOYNJlz24"]
+    speakerIds: [601]
+  - id: 889
+    name:
+      - {language: en, text: "Android Test Driven Development: from writing testable code to multiple devices automation"}
+    shortDescription:
+      - {language: en, text: "From practically writing code to test genuine production level scenarios with different approaches\
+            \ to incredibly optimising your tests cases, we will see what’s new in Android Test Support Library 1.0 and how\
+            \ to test on multiple devices."}
+    longDescription:
+      - language: en
+        text: "8/10 developers don’t really know how to test their apps and write testable code. From practically writing\
+            \ code to test genuine production level scenarios with different approaches to incredibly optimising your tests\
+            \ cases, we will see what’s new in Android Test Support Library 1.0 and how to test on multiple devices: \n\n\
+            - important testing guidelines; \n- Espresso and Robolectric (in and out, crisp and to the point); \n- making\
+            \ code highly testable using MVVM, repository pattern and data binding and Dagger 2.\n- genuine production level\
+            \ scenarios testing demos; \n- common mistakes made by developers resulting in inefficient test driven development\
+            \ which leads to de-prioritization of TDD :( ; \n- will be showing this with the following three approaches using\
+            \ Dagger 2: \n\n-   a. using Robolectric (JVM based without needing a device or emulator) \n-   b. using Espresso\
+            \ (unit instrumentation tests) \n-   c. testing the ViewModel (purely JVM based)\n  \n- performance analysis of\
+            \ these testing techniques; which one to choose and when; \n- testing on multiple devices; \n- testing migrations\
+            \ and queries in Room DB; \n- lots and lots of code snippets."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Разработчики об этом слышали, но не использовали, тестировщ\
+            ики не слышали, но используют. Подробный доклад об автоматизации тестирования Android-приложений нативными инс\
+            трументами со всех сторон, сравнение их между собой, tips & hints.* \n\n\n\n8/10 developers don’t really know\
+            \ how to test their apps and write testable code. From practically writing code to test genuine production level\
+            \ scenarios with different approaches to incredibly optimising your tests cases, we will see what’s new in Android\
+            \ Test Support Library 1.0 and how to test on multiple devices: \n\n- important testing guidelines; \n- Espresso\
+            \ and Robolectric (in and out, crisp and to the point); \n- making code highly testable using MVVM, repository\
+            \ pattern and data binding and Dagger 2.\n- genuine production level scenarios testing demos; \n- common mistakes\
+            \ made by developers resulting in inefficient test driven development which leads to de-prioritization of TDD\
+            \ :( ; \n- will be showing this with the following three approaches using Dagger 2: \n\n-   a. using Robolectric\
+            \ (JVM based without needing a device or emulator) \n-   b. using Espresso (unit instrumentation tests) \n-  \
+            \ c. testing the ViewModel (purely JVM based) \n  \n- performance analysis of these testing techniques; which\
+            \ one to choose and when; \n- testing on multiple devices; \n- testing migrations and queries in Room DB; \n-\
+            \ lots and lots of code snippets."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/41lMQAAF2oQ2SkUUgy0YcW/1d287845383dc732dab29f43151da6e1/Kapil_Bakshi_Android_Test_Driven_Development__from_writing_testable_code_to_multiple_devices_automation.pdf"]
+    videoLinks: ["https://youtu.be/tqvCf6loKs0"]
+    speakerIds: [604]
+  - id: 890
+    name:
+      - {language: en, text: "The logic of verification"}
+    shortDescription:
+      - {language: en, text: "We'll outline the logic of verification and ways in which we might be vulnerable to false premises\
+            \ and misleading conclusions about it. We’ll also identify ways that we can address those problems by embedding\
+            \ verification in a larger system of testing, experimentation and critical thinking."}
+    longDescription:
+      - language: en
+        text: "Software testing is sometimes described as \"verification and validation\" — according to Wikipedia \"the process\
+            \ of checking that a software system meets specifications and that it fulfills its intended purpose\". Yet, if\
+            \ we examine the concept and logic of verification, we quickly recognize that there are serious limitations to\
+            \ what can and cannot be checked and verified. This is not to say that checking is a bad thing — on the contrary;\
+            \ checking can be very valuable. Still, it’s important for testers and their clients to recognize the fundamental\
+            \ limitations of checking, and to address those limitations in our testing strategies. \n\nIn this talk, Michael\
+            \ Bolton will outline the logic of verification and ways in which we might be vulnerable to false premises and\
+            \ misleading conclusions about it. He’ll also identify ways that we can address those problems by embedding verification\
+            \ in a larger system of testing, experimentation and critical thinking."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Майкл в комментариях не нуждается.* \n\n\nSoftware testing\
+            \ is sometimes described as \"verification and validation\" — according to Wikipedia \"the process of checking\
+            \ that a software system meets specifications and that it fulfills its intended purpose\". Yet, if we examine\
+            \ the concept and logic of verification, we quickly recognize that there are serious limitations to what can and\
+            \ cannot be checked and verified. This is not to say that checking is a bad thing — on the contrary; checking\
+            \ can be very valuable. Still, it’s important for testers and their clients to recognize the fundamental limitations\
+            \ of checking, and to address those limitations in our testing strategies. \n\nIn this talk, Michael Bolton will\
+            \ outline the logic of verification and ways in which we might be vulnerable to false premises and misleading\
+            \ conclusions about it. He’ll also identify ways that we can address those problems by embedding verification\
+            \ in a larger system of testing, experimentation and critical thinking."
+    talkDay: 1
+    trackTime: "18:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/5bMM95uh1KuAImcmOCKYaK/1d3fb264c2ec78acc79fb5604a3731f8/Michael_Bolton-TheLogicOfVerification.pdf"]
+    videoLinks: ["https://youtu.be/eIGI1lDLYKA"]
+    speakerIds: [590]
+  - id: 891
+    name:
+      - {language: en, text: "Issues and solutions of blockchain testing using Waves platform as an example"}
+      - {language: ru, text: "Проблемы тестирования блокчейна и способы их решения на примере блокчейн-платформы Waves"}
+    shortDescription:
+      - {language: en, text: "We'll introduce you a few blockchain protocols, along with a brief description of Waves platform\
+            \ features. We'll also give you examples of issues which could be found and tools that we use for testing."}
+      - {language: ru, text: "Кратко рассмотрим различные протоколы блокчейна. Выясним, в чем особенность блокчейна Waves,\
+            \ что нужно проверять в первую очередь, какие возникают проблемы. Расскажем об используемых инструментах тести\
+            рования и мониторинга."}
+    longDescription:
+      - {language: en, text: "At this talk, we would like to introduce you a few blockchain protocols, along with a brief\
+            \ description of Waves platform features. After that we'll give you examples of issues which could be found and\
+            \ tools that we use for testing."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Согласитесь, вероятность пойти работать в блокчейн-стартап\
+            \ очень высока. А из этого доклада вы как раз узнаете, что там надо проверять при тестировании. Полезно для ка\
+            рьеры.* \n\n\nВ ходе доклада кратко рассмотрим различные протоколы блокчейна. Выясним, в чем особенность блокч\
+            ейна Waves, что нужно проверять в первую очередь, какие возникают проблемы. Расскажем об используемых инструме\
+            нтах тестирования и мониторинга."
+    talkDay: 1
+    trackTime: "18:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/2f43cWojlmMIOySK2uaqEk/172ea3f24c5b8a75b66f2e3bb9783475/_________________________________________-__________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/JilYr7iHPj8"]
+    speakerIds: [606]
+  - id: 892
+    name:
+      - {language: en, text: "How to build a testing pyramid"}
+      - {language: ru, text: "Как разработчику научиться строить тестовую пирамиду"}
+    shortDescription:
+      - {language: en, text: "We'll discuss how to layer tests respectively in order to build a pyramid, multiple pyramids,\
+            \ application architecture choice, as well as which kinds of mocks aid in building good-quality testing and which\
+            \ don't."}
+      - {language: ru, text: "Поговорим о том, на каком уровне какие из тестов стоит писать для построения пирамиды, как с\
+            оздать несколько пирамид, о выборе архитектуры приложения и о том, какие моки помогают, а какие мешают выстрои\
+            ть качественное тестирование."}
+    longDescription:
+      - language: en
+        text: "Quite often we hear how important it is to build pyramids — they make testing fast, simple, robust. But why\
+            \ no one actually does it? We'll discuss: \n\n- Architectural layers in Web/Enterprise applications and how to\
+            \ layer tests respectively in order to build a pyramid; \n- How to build multiple pyramids given that many projects\
+            \ today actually consist of 2 subprojects: backend & UI; \n- What architecture allows writing more of the low-level\
+            \ tests and why so many projects around fail to build test pyramids; \n- Which kinds of mocks aid in building\
+            \ good-quality testing and which don't. \n\nTarget audience: developers, dev leads, PMs."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Тестовые пирамиды без велосипедов и костылей.* \n\n\n\nМы с\
+            лышим ото всюду о том, как важно строить пирамиды, чтобы тестирование стало быстрым, простым, надежным. Но поч\
+            ему никто этого не делает? Мы обсудим: \n\n - Какие из тестов на каком уровне стоит писать, чтобы построить пи\
+            рамиду; \n - Как создавать несколько пирамид, учитывая, что многие проекты сегодня фактически состоят из двух\
+            \ подпроектов: backend & UI; \n - Какой должна быть архитектура приложения, чтобы позволять писать больше низк\
+            оуровневых тестов; \n - Какие моки помогают, а какие мешают выстроить качественное тестирование. \n\nДоклад ор\
+            иентирован на разработчиков и руководителей проектов."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2EpaEGPTaUgQCkm4soAIgw/fa9e62aea30cc53f48fbd2d9ee1b16b0/Stanislav_Bashkyrtsev____________________________________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/L2c8awaHIAg"]
+    speakerIds: [605]
+  - id: 893
+    name:
+      - {language: en, text: "Remote iOS device server: scaling iOS testing"}
+      - {language: ru, text: "Когда нужны скорость и масштабирование: сервер распределенных iOS-устройств"}
+    shortDescription:
+      - {language: en, text: "Come and learn how easy it is to run tests in parallel with tools like fbsimctl and how separating\
+            \ tests from infrastructure might ease adoption of your tests, maintenance, and scaling of infrastructure."}
+      - {language: ru, text: "Приходите и узнайте, как легко запускать тесты параллельно с помощью таких инструментов, как\
+            \ fbsimctl, и как разделение тестов и инфраструктуры может упростить принятие, поддержку и масштабирование ваш\
+            их тестов."}
+    longDescription:
+      - language: en
+        text: "We here at Badoo run more than 1200 end-to-end tests for our main iOS mobile application. This amounts to 40+\
+            \ hours of tests, which we usually ran in 1,5 hour. Now we can run the same tests under 45 minutes. \n\nIn this\
+            \ talk, we'll describe how we moved from tests tightly coupled to infrastructure (simulators hosts and tools)\
+            \ to the iOS remote device server. We'll discuss how this simplified our parallel test runs and made tests and\
+            \ infrastructure easier to maintain and scale. \n\nYou will learn how easy it is to run tests in parallel with\
+            \ tools like fbsimctl and how separating tests from infrastructure might ease adoption of your tests, maintenance,\
+            \ and scaling of infrastructure.\nhttps://github.com/badoo/ios-device-server"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Для всех, кто разрабатывает UI-тесты под iOS, проблема врем\
+            ени тестового прогона очень актуальна. Николай поделится, как им удалось ускорить выполнение тестов в 3 раза.*\
+            \ \n\n\nВ Badoo мы прогоняем более 1200 end-to-end тестов для наших iOS-приложений в один прогон. Это более 40\
+            \ часов тестов, которые проходят за 45 реальных минут. \n\nВ докладе расскажем, как мы распутали тесно связанн\
+            ые тесты и инфраструктуру iOS и перешли к серверу устройств; как это упростило параллельный запуск тестов и сд\
+            елало наши тесты и инфраструктуру проще для поддержки и масштабирования. \n\nИз доклада вы узнаете, как легко\
+            \ запускать тесты параллельно с помощью таких инструментов, как fbsimctl, и как разделение тестов и инфраструк\
+            туры может упростить принятие, поддержку и масштабирование ваших тестов.\nhttps://github.com/badoo/ios-device-server"
+    talkDay: 2
+    trackTime: "10:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/6HLet0PO2k2wugQAasiq6G/eb12fe12af4dad9d74d849e01f87d20f/Nikolai_Abalov_Remote_iOS_Devices_Server_____Scaling_iOS_Testing.pdf"]
+    videoLinks: ["https://youtu.be/shVlya4YuA0"]
+    speakerIds: [598]
+  - id: 894
+    name:
+      - {language: en, text: "Are there autotests in mobile video games?"}
+      - {language: ru, text: "Есть ли автотестирование в мобильных видеоиграх?"}
+    shortDescription:
+      - {language: en, text: "We'll look at the issues of using Appium default tools and gamescenes graphs for autotests implementation.\
+            \ Using real-life examples, we'll explain how it works in Zeptolab and how our expertise might be useful in other\
+            \ projects."}
+      - {language: ru, text: "Поговорим об использования штатного инструментария Appium и графов игровых сцен для реализац\
+            ии автоматизированного тестирования. На живых примерах покажем, как это работает в компании Zeptolab и как пол\
+            ученный нами опыт можно использовать в других проектах."}
+    longDescription:
+      - language: en
+        text: "The problem of software testing automation is now a matter of extreme concern. In the gaming industry, we face\
+            \ non-standard approaches towards development, and as a result, the automation is done out of the beaten path.\
+            \ \n\nThis talk is devoted to the issues of using Appium default tools and gamescenes graphs for autotests implementation.\
+            \ Using real-life examples, we'll explain how it works in Zeptolab and how our expertise might be useful in other\
+            \ projects."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Хотели узнать, как тестируют в компании, которая создала «\
+            Cut the rope»? * \n\n\nВ современном мире остро стоит проблема автоматизации тестирования ПО. В игровой индуст\
+            рии мы сталкиваемся с нестандартными подходами к разработке, а значит, и автоматизировать приходится самобытно\
+            . \n\nДоклад посвящен вопросам использования штатного инструментария Appium и графов игровых сцен для реализац\
+            ии автоматизированного тестирования. Расскажем как пришли к автоматизации, на живых примерах покажем, как это\
+            \ работает в компании Zeptolab и как полученный нами опыт можно использовать в других проектах."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/jFo37_DXMLM"]
+    speakerIds: [608, 614]
+  - id: 895
+    name:
+      - {language: en, text: "Still generating your report? We're coming for you!"}
+      - {language: ru, text: "Вы всё еще пилите свой отчет? Тогда мы идем к вам!"}
+    shortDescription:
+      - {language: en, text: "We'll look at the new major version of Allure test report. This talk will be useful both for\
+            \ those who are not familiar with Allure and for active users."}
+      - {language: ru, text: "Расскажем о новой мажорной версии Allure. Доклад будет одинаково интересен как тем, кто незн\
+            аком с Allure-отчетом, так и активным пользователям."}
+    longDescription:
+      - language: en
+        text: "It’s been a year since the second version of Allure was released. During this time the number of tests has\
+            \ drastically increased, we started using new tools and learned to visualize information about the quality of\
+            \ our tests. All these changes had an impact on Allure, so now we’ve released a new major version of our test\
+            \ report. \n\nThis talk will be useful both for those who are not familiar with Allure test report and for active\
+            \ users. We’ve added lots of new features. Come and join the talk!"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Бренд нью Аллюр 3.0.* \n\n\nС момента релиза второй версии\
+            \ Allure прошел уже год. За это время у нас сильно увеличилось количество тестов, мы переехали на новые инстру\
+            менты и научились визуализировать информацию о качестве наших тестов. Все эти изменения отразились на Allure,\
+            \ и мы выпустили новую мажорную версию нашего отчета. \n\nДоклад будет одинаково интересен как тем, кто незнак\
+            ом с Allure-отчетом, так и активным пользователям. Мы добавили довольно много новых фич. Приходите, будет инте\
+            ресно!"
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/27MbSZdRh6YaGIss6sOGcw/762084b06862cf7f452622fa35ef58af/Artem_Eroshenko_____Allure_3.pdf"]
+    videoLinks: ["https://youtu.be/RK8U0vWZ-RE"]
+    speakerIds: [554]
+  - id: 896
+    name:
+      - {language: en, text: "Enterprise Automation with Selenium and why it has very little to do with Selenium"}
+    shortDescription:
+      - {language: en, text: "This talk shows cases with many practical examples how test automation with Selenium boils down\
+            \ to being a full-blown software project, along with the major pitfalls that prevent teams to build a scalable\
+            \ and reliable automation solution with the Selenium tool family. You'll also learn how to apply a lean approach\
+            \ in making test automation with Selenium a full success."}
+    longDescription:
+      - language: en
+        text: "As Selenium is becoming a W3C standard, more and more organizations are moving to Selenium as their GUI automation\
+            \ tool. Most teams focus on writing tests and tackling issues via Selenium itself. \n\nHowever, in our experience\
+            \ Selenium is usually the smallest \"problem\" in getting an enterprise ready test automation solution off the\
+            \ ground. This talk shows cases with many practical examples how test automation with Selenium boils down to being\
+            \ a full-blown software project, that needs to be treated and staffed as such. It will show the major pitfalls\
+            \ that prevent teams to build a scalable and reliable automation solution with the Selenium tool family. And it\
+            \ will show how to apply a lean approach in making test automation with Selenium a full success."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/4GzhFvJ3gsy2SYM46qKCY6/6330ca3bc549823f8fb0e94e28de32cb/Michael-Palotas-Heisenbug-Enterprise-Automation-with-Selenium-FINAL.pdf"]
+    videoLinks: ["https://youtu.be/c0kkh9mN_0I"]
+    speakerIds: [599]
+  - id: 897
+    name:
+      - {language: en, text: "Fuzz testing: finding bugs in JIT compiler and much more"}
+      - {language: ru, text: "Fuzzing-тестирование: ищем баги в JIT-компиляторе и не только"}
+    shortDescription:
+      - {language: en, text: "In this talk we’ll share how we look for functional problems in the compiler of Zing Java machine,\
+            \ using automatic generator of test programs on Java."}
+      - {language: ru, text: "В этом докладе мы расскажем, как мы ищем функциональные проблемы в компиляторе Java-машины Zing,\
+            \ используя автоматический генератор тестовых программ на языке Java."}
+    longDescription:
+      - language: en
+        text: "Stability and functional consistency are what Java machines’ users usually expect, along with the fast work\
+            \ of the code they’ve compiled. For this very purpose, there are compiler optimizations, but the more aggressive\
+            \ they improve the code, the more problems can sneak in. \n\nSo how can we bring together such controversial goals\
+            \ as speed and consistency of the compiled code? Especially if your compiler is based on LLVM and tens of thousands\
+            \ of changed code lines are added to it every week? How to find hidden bugs before any user runs into one of them?\
+            \ \n\nIn this talk we’ll share how we look for functional problems in the compiler of Zing Java machine, using\
+            \ automatic generator of test programs on Java."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Доклад про тестирование был в топ-3 на JBreak? А ну-ка, под\
+            ать сюда автора, пусть ещё раскроет тему!* \n\n\n\nСтабильность и функциональная корректность — это то, чего ж\
+            дут пользователи Java-машин. А ещё они ждут, что скомпилированный ими код будет работать быстро. Для этого сущ\
+            ествуют компиляторные оптимизации, но чем агрессивнее они улучшают код, тем больше проблем в них может быть ск\
+            рыто. \n\nТак как же помирить такие противоречивые цели, как скорость и корректность скомпилированного кода? О\
+            собенно если ваш компилятор основан на LLVM, и в него вливаются десятки тысяч строк изменений каждую неделю? К\
+            ак находить скрытые баги у себя дома до того, как пользователь наткнётся на один из них?\n\nВ этом докладе мы\
+            \ расскажем, как мы ищем функциональные проблемы в компиляторе Java-машины Zing, используя автоматический гене\
+            ратор тестовых программ на языке Java."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1F8ypHZOS4gooQekMEsews/a1517d670f0c8f81200b55a34e00d290/Max_Kazantsev_Fuzzing-________________________-_____________________JIT-___________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/S2vBz_ZPAbc"]
+    speakerIds: [64]
+  - id: 898
+    name:
+      - {language: en, text: "Testing to the last: smart responsive interface design patterns"}
+      - {language: ru, text: "Тестируем до последнего: smart responsive interface design patterns"}
+    shortDescription:
+      - {language: en, text: "A microscopic examination of common interface components and problems appearing and tested in\
+            \ responsive user interfaces."}
+      - {language: ru, text: "Детальное исследование общих компонентов интерфейса и проблем отзывчивых пользовательских ин\
+            терфейсов."}
+    longDescription:
+      - language: en
+        text: "In this session, Vitaly will be taking a microscopic examination of common interface components and problems\
+            \ appearing and tested in responsive user interfaces. We’ll look into what makes a perfect accordion, date/time\
+            \ pickers, feature comparison, insurance calculator and a car configurator, among other things. \n\nBeware: you\
+            \ might not be able to unlearn the things you’ll learn in this session."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *В докладе вы узнаете о всех тонкостях того, как UX влияет н\
+            а продукт, сможете понять, на что стоит обращать внимание при тестировании.* \n\n\n\nВ докладе Виталий проведе\
+            т детальное исследование общих компонентов интерфейса и проблем отзывчивых пользовательских интерфейсов. \nРас\
+            смотрим, что из себя представляют идеальный аккордеон, указатели даты и времени, сравнительные таблицы, страхо\
+            вой калькулятор, конфигуратор автомобилей и многое другое.\n\nВнимание! Возможно, вы не сможете забыть всё то\
+            , чему вы научитесь во время доклада."
+    talkDay: 2
+    trackTime: "13:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/6ifyTcigNi82SKi6kAeCe2/fc941ef7efcdee8a7dc60295f974eb50/Vitaly_Friedman_____Smart_Responsive_Design_Patterns.pdf"]
+    videoLinks: ["https://youtu.be/Q8-WYLvorRA"]
+    speakerIds: [260]
+  - id: 899
+    name:
+      - {language: en, text: "Atlas is your new PageObject guide"}
+      - {language: ru, text: "Atlas — ваш новый путеводитель по PageObject"}
+    shortDescription:
+      - {language: en, text: "We’ll speak about the shortcomings of the first implementations of HtmlElements and why we refused\
+            \ to use any existing solutions and created our own. We’ll show the functionality on which Atlas is based, how\
+            \ it transformed old projects and how to use existing extension points for your own projects."}
+      - {language: ru, text: "Расскажем, чем нас не удовлетворяли первые HtmlElements и почему мы отказались от существующ\
+            их решений в пользу своего. Покажем, какая функциональность лежит в основе Atlas, как с ней преобразились наши\
+            \ старые проекты, какие точки расширения есть и как их использовать для себя."}
+    longDescription:
+      - language: en
+        text: "How can one understand that the industry is indeed developing? The answer is simple: the industry develops\
+            \ if new solutions continuously appear. \nNowadays there are many tools for UI test automation. The most popular\
+            \ for Java are Selenide, JDI, Serenity BDD and HtmlElements. Each one of them has its own way, its own advantages,\
+            \ and disadvantages. \n\nHistorically we’ve been using HtmlElements for our projects, but it is not up-to-date\
+            \ anymore. About a year and a half ago we spoke with HtmlElements creator about a new version, and then we together\
+            \ started to develop this project further, thus introducing a new framework for PageObject — Atlas (Application\
+            \ Test Layout). \n\nIn this talk, we’ll speak about the shortcomings of the first implementations of HtmlElements\
+            \ and why we refused to use any existing solutions and created our own. We’ll show the functionality on which\
+            \ Atlas is based, how it transformed old projects and how to use existing extension points for your own projects."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Используете HTML elements, но хотите делать свою жизнь лучш\
+            е и шагать в ногу со временем? Возможно, это то, чего вы ждали.* \n\n\nКак понять, что индустрия развивается?\
+            \ В ней появляются всё новые и новые решения. \nСегодня существует много инструментов для автоматизации тестир\
+            ования UI. Наиболее популярные для Java — это Selenide, JDI, Serenity BDD и HtmlElements. Каждый из них идёт с\
+            воим путём, имеет свои плюсы и минусы. \n\nИсторически на своих проектах мы использовали HtmlElements, но они\
+            \ сильно устарели. Полтора года назад узнали от разработчика HtmlElements о существовании новой версии. Дальше\
+            \ мы стали развивать проект вместе и создали новый фреймворк для работы с PageObject — Atlas (Application Test\
+            \ Layout). \n\nВ докладе расскажем, чем нас не удовлетворяли первые HtmlElements и почему мы отказались от сущ\
+            ествующих решений в пользу своего. Покажем, какая функциональность лежит в основе Atlas, как с ней преобразили\
+            сь наши старые проекты, какие точки расширения есть и как их использовать для себя. \n\nДоклад будет полезен к\
+            ак старым пользователям HtmlElements, так и новым людям, которые находятся в поисках фреймворка для тестирован\
+            ия."
+    talkDay: 2
+    trackTime: "13:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/lCjG1ldNMk2UQ6AksWiIw/b4be426a0be1268afa7f720657f4910c/180518___________________________atlas-______-____________-________________________-____-page-object.pdf"]
+    videoLinks: ["https://youtu.be/MbzCd5Jpbds"]
+    speakerIds: [611]
+  - id: 900
+    name:
+      - {language: en, text: "Configuration testing for Java developers: a case study"}
+      - {language: ru, text: "Тестирование конфигурации для Java-разработчиков: практический опыт"}
+    shortDescription:
+      - {language: en, text: "We'll discuss how we write Java unit-tests for configuration, how we benefit from them, pitfalls\
+            \ and workarounds."}
+      - {language: ru, text: "Поделимся своим опытом: с чего начинать писать тесты для конфигурации, какие есть подводные\
+            \ камни, какие решения оказались удобными и полезными при разработке таких тестов на Java."}
+    longDescription:
+      - language: en
+        text: "Andrew Satarin has given a talk on recent Heisenbug about how to cover configuration with tests. Thanks to\
+            \ Andrew, we’re already doing it in our projects for 3 years now, and it was proved as a very useful idea, which\
+            \ helps us to catch many potential deployment issues early. But the idea of testing configuration is also quite\
+            \ new, with \"best practices\" yet unknown, thus write and support such tests could be a bit of challenge. \n\n\
+            We want to share our own experience as Java developers: how we write Java unit-tests for configuration, how we\
+            \ benefit from them, pitfalls and workarounds."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *По мотивам доклада Андрея Сатарина, со множеством практичес\
+            ких примеров, как сделать жизнь с конфигами проще.* \n\n\nНа одном из прошлых Heisenbug Андрей Сатарин рассказ\
+            ывал, как можно покрывать тестами не только код, но и конфигурацию. С его подачи последние 3 года мы используе\
+            м этот подход в своих проектах. И да, тесты для конфигурации существенно уменьшают количество ошибок при разве\
+            ртывании приложения. Но писать и поддерживать такие тесты может быть непросто, это новая и непривычная задача\
+            \ для тестирования, со своими тонкостями. \n\nХотим поделиться своим опытом: с чего начинать, какие есть подво\
+            дные камни, какие решения оказались удобными и полезными при разработке таких тестов на Java."
+    talkDay: 2
+    trackTime: "13:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/HcZWuiIEg0ESicwEGWQM0/d0d76e5edb016747d1a6a3fba032ddb2/_______________________________________________________________________________________________-__________________________.pdf"]
+    videoLinks: ["https://youtu.be/Tk_nmV-mWOA"]
+    speakerIds: [4]
+  - id: 901
+    name:
+      - {language: en, text: "Web security testing starter kit"}
+    shortDescription:
+      - {language: en, text: "We'll cover the simple course of action that allows you to make your web application safer:\
+            \ how to search for vulnerabilities, what threats to users and services they may contain and so forth."}
+      - {language: ru, text: "Расскажем о несложном порядке действий, которые позволят сделать веб-приложение безопаснее:\
+            \ как искать уязвимости, какие угрозы для пользователей и сервиса они несут и многое другое."}
+    longDescription:
+      - language: en
+        text: "During the talk, we'll cover the simple course of action that allows you to make your web application safer.\
+            \ \n\nWe'll learn how to search for vulnerabilities, what threats to users and services they may contain, providing\
+            \ more details on the most common ones: XSS, SQL injection, SSRF, XXE. \n\nWe'll also touch on Burp Suite tool,\
+            \ which will make the process of finding vulnerabilities easier. \n\nThis talk will be useful both for developers\
+            \ (as it will help them to understand issues' root cause) and for QAs (to help them understand how to search for\
+            \ vulnerabilities). Top managers will be able to understand the threats that vulnerabilities carry and reconsider\
+            \ the value of the web application security process. \n\nAt the end of the talk, the participants will get basic\
+            \ knowledge which is needed for the web application security testing."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Введение в тестирование безопасности веб-приложений от иссл\
+            едователя, bounty hunter’а, тренера, нашедшего много критических уязвимостей, в том числе и в Facebook.* \n\n\n\
+            В докладе расскажем о несложном порядке действий, которые позволят сделать веб-приложение безопаснее. \n\nРасс\
+            кажем, как искать уязвимости, какие угрозы для пользователей и сервиса они несут. \n\nПодробнее остановимся на\
+            \ самых распространённых: XSS, SQL injection, SSRF, XXE. \n\nРасскажем об инструменте (Burp Suite), который по\
+            зволит облегчить процесс поиска уязвимостей. И о паре других полезных инструментов. \n\nДоклад рассчитан как н\
+            а разработчиков — позволит понять суть уязвимостей и почему они возникают, так и для тестировщиков — поможет п\
+            онять, как эти уязвимости искать. Руководители смогут понять угрозы, которые несут в себе уязвимости, и пересм\
+            отреть ценность процесса обеспечения безопасности приложения. \n\nПосле доклада аудитория получит начальные зн\
+            ания, необходимые для проверки веб-приложения на безопасность."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/5TLPKWoxt6uocWiScCKoKC/ad0c0738ca7f342d466bc955419d1459/Leonov_Andrey_Web_Security_Testing_Starter_Kit.pdf"]
+    videoLinks: ["https://youtu.be/X7ajJ2oGfzk"]
+    speakerIds: [613]
+  - id: 902
+    name:
+      - {language: en, text: "Testing in the modular world"}
+    shortDescription:
+      - {language: en, text: "We'll start with a basic introduction to JUnit 5 and the JPMS (Java Platform Module System)\
+            \ and then present the three approaches for executing tests when using the JPMS from the command line."}
+    longDescription:
+      - language: en
+        text: "The Java Platform Module System (JPMS) introduced with Java 9 poses new challenges when it comes to organizing\
+            \ and executing automated software tests. Finding tests and executing them via the Reflection API is still possible\
+            \ but needs some extra configuration. \n\nJUnit 5 supports scanning for tests in modules since 5.1 and has a sample\
+            \ project that demonstrates three possible approaches. \nSources are available at: https://github.com/junit-team/junit5-samples/tree/master/junit5-modular-world\
+            \ \n\nWe'll start with a basic introduction to JUnit 5 and the JPMS. The remainder of the talk will be spent on\
+            \ presenting the three approaches for executing tests when using the JPMS from the command line: \n- Resorting\
+            \ to the `--class-path`; \n- Patching test binaries into main modules at runtime; \n- Patching main sources into\
+            \ test modules at compile time. \n\nHappy modular testing!"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Если вы думаете, что всё уже рассказано про JUnit 5, то заб\
+            луждаетесь. Есть темы, которые совсем не были затронуты. Java 9 приоткрыла двери в модули, и Christian немного\
+            \ об этом расскажет.* \n\n\nThe Java Platform Module System (JPMS) introduced with Java 9 poses new challenges\
+            \ when it comes to organizing and executing automated software tests. Finding tests and executing them via the\
+            \ Reflection API is still possible but needs some extra configuration. \n\nJUnit 5 supports scanning for tests\
+            \ in modules since 5.1 and has a sample project that demonstrates three possible approaches. \nSources are available\
+            \ at: https://github.com/junit-team/junit5-samples/tree/master/junit5-modular-world \n\nWe'll start with a basic\
+            \ introduction to JUnit 5 and the JPMS. The remainder of the talk will be spent on presenting the three approaches\
+            \ for executing tests when using the JPMS from the command line: \n- Resorting to the `--class-path`; \n- Patching\
+            \ test binaries into main modules at runtime; \n- Patching main sources into test modules at compile time. \n\n\
+            Happy modular testing!"
+    talkDay: 2
+    trackTime: "15:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1fgyXGSa56C2YiakqUIK8g/b11128f68a826ffe26958eeae2f7c69e/ChristianStein-TestingInTheModularWorld-Heisenbug-20180518.pdf"]
+    videoLinks: ["https://youtu.be/vkjXc-saNQQ"]
+    speakerIds: [595]
+  - id: 903
+    name:
+      - {language: en, text: "Static code analysis systems: lost in choices"}
+      - {language: ru, text: "Системы статического анализа кода: трудности выбора"}
+    shortDescription:
+      - {language: en, text: "How to choose Static Application Security Testing system."}
+      - {language: ru, text: "Как правильно выбрать систему статического анализа кода."}
+    longDescription:
+      - language: en
+        text: "When the number of developers in a company is already over several hundred and the number of code lines in\
+            \ their sources is over a couple of millions, testing becomes a big part of the application lifecycle. QA should\
+            \ create some new tests and implement new testing techniques. \n\nBut even if code coverage is near 100%, it doesn't\
+            \ mean that this code doesn't have any issues. Quite often it does, and these issues are hard to find even with\
+            \ the help of unit tests or QA staff. There might be some specific errors in sources such as deadlocks or race\
+            \ conditions related to mistakes made in the design of multi-threaded applications.\n\nOne of the tools which\
+            \ can help QA and programmers in their bug-fighting is a SAST – Static Application Security Testing. It’s a very\
+            \ difficult and complicated system which price is far from being low. Moreover, making such system a part of CI\
+            \ is quite a tricky task. So the right SAST can significantly increase the productivity of QA teams, whereas the\
+            \ bad SAST might drastically decrease it."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Из доклада вы узнаете, что внедрять статический анализ — на\
+            стоящая пытка. Но Алексей хотя бы расскажет, как это делать сразу правильно, чтобы два раза не мучиться.* \n\n\
+            \n\nКогда число разработчиков в компании начинает исчисляться сотнями, а количество строк написанного ими кода\
+            \ – миллионами, тестирование такого ПО становится весьма нетривиальной задачей. Вместе с ростом числа программ\
+            истов, растёт и отдел тестирования ПО, множатся тесты, применяются новые методики. \n\nНо даже код, покрытие к\
+            оторого близко к 100%, может и, как правило, содержит в себе ещё массу ошибок, отловить которые не под силу ни\
+            \ разработчику, ни тестировщику. Связано это с тем, что автотесты и функциональное тестирование не могут выяви\
+            ть большое количество специфических проблем, таких как, например, взаимная блокировка потоков или состояние го\
+            нки, связанных с ошибками проектирования многопоточных систем. \n\nПоэтому на борьбу с багами выходят относите\
+            льно новые типы ПО под общим названием SAST — системы статического анализа исходного кода. Сложность этих сист\
+            ем достаточно высока, учитывая их специфику. Из этого вытекает их высокая стоимость. Кроме того, интеграция та\
+            кой системы в цикл разработки — дело отнюдь не простое, поэтому от её выбора напрямую зависит, вырастет ли эфф\
+            ективность работы технических отделов или же наоборот, она станет ненужной обузой или дорогой игрушкой."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/4n3HUop5gIMmCYaeYw8ykk/1508043ded7771ab3835eb0c46b7e7f9/__________________________________-_________________________________________________________________-_______________________.pdf"]
+    videoLinks: ["https://youtu.be/KsbBjXP8prQ"]
+    speakerIds: [612]
+  - id: 904
+    name:
+      - {language: en, text: "VK beta testing"}
+      - {language: ru, text: "Бета-тестирование ВКонтакте"}
+    shortDescription:
+      - {language: en, text: "We'll look at how beta testing in VK started, how we test major updates and completely new products,\
+            \ our tools and platform, how to manage 12 thousand testers, handle tens of thousands of bug reports and effectively\
+            \ integrate beta testing into the product development process."}
+      - {language: ru, text: "Расскажем, как начиналось бета-тестирование ВКонтакте, как мы тестируем масштабные обновлени\
+            я и совершенно новые продукты и какой инструментарий используем, а также как мы обрабатываем десятки тысяч баг\
+            репортов и встраиваем бета-тестирование в процесс разработки."}
+    longDescription:
+      - {language: en, text: "This talk is about beta testing in VK. How it all started and what James Bach had to do with\
+            \ it, how we test major updates and completely new products, our tools and platform, how to manage 12 thousand\
+            \ testers, handle tens of thousands of bug reports and effectively integrate beta testing into the product development\
+            \ process. Also, what projects require beta tests and how our beta testing platform is being used by other companies."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Уникальный опыт становления тестирования в одной социальной\
+            \ сети. Также вы узнаете, при чём здесь может быть Джеймс Бах.* \n\n\nРассказ о бета-тестировании ВКонтакте: с\
+            \ чего всё начиналось и при чём тут Джеймс Бах, как мы тестируем масштабные обновления и совершенно новые прод\
+            укты и какой инструментарий используем. \n\nПоделимся опытом развития сообщества из 12 тысяч тестировщиков, об\
+            работки десятков тысяч багрепортов и встраивания этапа бета-тестирования в процесс разработки. Рассмотрим прим\
+            еры использования нашего подхода и платформы другими командами."
+    talkDay: 2
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/1tFWmouKDGaOSCsmsm00ay/e9436d5b3b93607b1f0aca191b885b36/Anastasia_Semenyuk_____VK_Beta.pdf"]
+    videoLinks: ["https://youtu.be/-rIdMwtv0wk"]
+    speakerIds: [594]
+  - id: 905
+    name:
+      - {language: en, text: "Kotlin DSL: theory and practice"}
+      - {language: ru, text: "Kotlin DSL: теория и практика"}
+    shortDescription:
+      - {language: en, text: "We'll cover the main tools from developers' armory and show how we can combine them to solve\
+            \ testing tasks. Together we'll go all the way from designing the Perfect Test till launching the cleanest and\
+            \ clearest test possible for the system of sources planning based on Kotlin."}
+      - {language: ru, text: "Разберем все основные инструменты из арсенала разработчика и то, как их можно комбинировать\
+            \ для решения задач тестирования. Проделаем путь от проектирования Идеального Теста до запуска максимально при\
+            ближенного, чистого и понятного теста для системы планирования ресурсов на основе Kotlin."}
+    longDescription:
+      - language: en
+        text: "Application tests development is not one of the most pleasant things in the world. This process takes a lot\
+            \ of time, requires more concentration and is in high demand. Kotlin language provides a tool kit which allows\
+            \ rather easily to build your own problem-oriented language (DSL). In our experience, Kotlin DSL has replaced\
+            \ builders and static methods for testing the resources planning module. Thus, the process of adding new tests\
+            \ and supporting the old ones has become more exciting. \n\nDuring the talk, we'll cover the main tools from developers'\
+            \ armory and show how we can combine them to solve testing tasks. Together we'll go all the way from designing\
+            \ the Perfect Test till launching the cleanest and clearest test possible for the system of resources planning\
+            \ based on Kotlin. \n\nThe talk will be useful for practicing engineers, those who consider Kotlin as a language\
+            \ that enables to write tests seamlessly and those who want to improve the testing process in their projects."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Свой DSL может быть очень полезен для упрощения написания т\
+            естов. Но это сложная задача, которая намного проще вместе с Kotlin.* \n\n\n\nРазработка тестов приложения — н\
+            е самое приятное занятие. Этот процесс занимает долгое время, требует большой концентрации и при этом крайне в\
+            остребован. Язык Kotlin дает набор инструментов, который позволяет довольно легко построить собственный пробле\
+            мно-ориентированный язык (DSL). В нашем опыте Kotlin DSL заменил билдеры и статические методы для тестирования\
+            \ модуля планирования ресурсов, что превратило добавление новых тестов и поддержку старых из рутины в увлекате\
+            льный процесс. \n\nВ ходе доклада мы разберем все основные инструменты из арсенала разработчика и то, как их м\
+            ожно комбинировать для решения задач тестирования. Мы с вами проделаем путь от проектирования Идеального Теста\
+            \ до запуска максимально приближенного, чистого и понятного теста для системы планирования ресурсов на основе\
+            \ Kotlin. \n\nДоклад будет полезен практикующим инженерам, тем, кто рассматривает Kotlin как язык для комфортн\
+            ого написания компактных тестов, и тем, кто хочет улучшить процесс тестирования в своем проекте."
+    talkDay: 2
+    trackTime: "17:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/3jlHBsV0VOEIO6kYEa8swI/1aef533f02f91f9810343d3e3dc2178b/Ivan_Osipov___Kotlin_DSL_-_________________________________.pdf"]
+    videoLinks: ["https://youtu.be/Y5_s8hNROBQ"]
+    speakerIds: [101]
+  - id: 906
+    name:
+      - {language: en, text: "EqualsVerifier, ErrorProne and all the others"}
+      - {language: ru, text: "EqualsVerifier, ErrorProne и все-все-все"}
+    shortDescription:
+      - {language: en, text: "Best kind of tests are ones that cost almost nothing, yet find defects. We’ll talk about two\
+            \ Java tools (EqualsVerifier library and ErrorProne) that are close to this ideal."}
+      - {language: ru, text: "Самый лучший вид тестов — это тесты, которые почти не надо писать, но которые при этом наход\
+            ят баги. Расскажем о двух инструментах для Java (библиотека EqualsVerifier и ErrorProne), которые позволяют пр\
+            иблизиться к этому идеалу."}
+    longDescription:
+      - language: en
+        text: "Best kind of tests are ones that cost almost nothing, yet find defects. We’ll talk about two Java tools that\
+            \ are close to this ideal. First tool is [EqualsVerifier library](http://jqno.nl/equalsverifier/), which helps\
+            \ with testing equals() and hashCode() contracts. The second tool is [ErrorProne](http://errorprone.info/) from\
+            \ Google — a compile-time checker for common mistakes in your code. \n\nThis talk will be useful for testers and\
+            \ Java developers."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Хорошо, когда машины сами ищут баги в твоём коде, а тебе дл\
+            я этого ничего не нужно делать. Про такие инструменты и поговорит Андрей.* \n\n\n\nСамый лучший вид тестов — э\
+            то тесты, которые почти не надо писать, но которые при этом находят баги. Расскажем о двух инструментах для Java,\
+            \ которые позволяют приблизиться к этому идеалу. Первый из них — библиотека [EqualsVerifier](http://jqno.nl/equalsverifier/)\
+            \ для тестирования контракта методов equals() и hashCode(). Второй инструмент — [ErrorProne](http://errorprone.info/)\
+            \ от Google, надстройка над компилятором Java, которая позволяет находить типичные ошибки в вашем коде. \n\nДо\
+            клад будет полезен тестировщикам и разработчикам, разрабатывающим проекты на Java."
+    talkDay: 2
+    trackTime: "17:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/3Qnwtx1TZuaO0ICWQIKiMk/ed858df8bf0798e9e2ac6df87ea05e35/Andrey_Satarin_EqualsVerifier_ErrorProne_and_all_the_others.pdf"]
+    videoLinks: ["https://youtu.be/jeCpYOEuL64"]
+    speakerIds: [597]
+  - id: 907
+    name:
+      - {language: en, text: "Testers as their own worst enemies"}
+    shortDescription:
+      - {language: en, text: "In order to keep up testers' reputation and the image of the testing profession, we'll point\
+            \ the way towards developing technical skills, socials skills, and most importantly thinking skills that can build\
+            \ respect for testing and increase testers’ effectiveness."}
+    longDescription:
+      - language: en
+        text: "Sometimes, in some organizations, testers complain that they're not respected or acknowledged. Project management\
+            \ views testers as obstacles to timely releases; developers see testers as uninformed and technically ignorant\
+            \ pests. Testers themselves step into professional and interpersonal tar pits by misunderstanding the role of\
+            \ the tester, the mission of testing, and the skills required to get the job done. \n\nIn this session, Michael\
+            \ Bolton will talk about several ways in which testers undermine their own reputations and the image of the testing\
+            \ profession. He will provide reframes and antidotes to help testers identify and resolve those problems, and\
+            \ he'll point the way towards developing technical skills, socials skills, and most importantly thinking skills\
+            \ that can build respect for testing and increase testers’ effectiveness."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n\n> *Майкл в комментариях не нуждается.* \n\n\n\nSometimes, in some\
+            \ organizations, testers complain that they're not respected or acknowledged. Project management views testers\
+            \ as obstacles to timely releases; developers see testers as uninformed and technically ignorant pests. Testers\
+            \ themselves step into professional and interpersonal tar pits by misunderstanding the role of the tester, the\
+            \ mission of testing, and the skills required to get the job done. \n\nIn this session, Michael Bolton will talk\
+            \ about several ways in which testers undermine their own reputations and the image of the testing profession.\
+            \ He will provide reframes and antidotes to help testers identify and resolve those problems, and he'll point\
+            \ the way towards developing technical skills, socials skills, and most importantly thinking skills that can build\
+            \ respect for testing and increase testers’ effectiveness."
+    talkDay: 2
+    trackTime: "18:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/4YsqN4SHrayuik0iCsKkKI/69f2ce5a67e47d5d1c83201f14a64043/Michael_Bolton-TestersAsTheirOwnWorstEnemies.pdf"]
+    videoLinks: ["https://youtu.be/27UYebjXQmI"]
+    speakerIds: [590]

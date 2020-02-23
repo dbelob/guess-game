@@ -247,6 +247,25 @@ events:
               719, 720, 721, 722, 723, 724, 725, 726, 727, 728]
   - eventTypeId: 3
     name:
+      - {language: en, text: "Heisenbug 2018 SPb"}
+      - {language: ru, text: "Heisenbug 2018 СПб"}
+    startDate: "2018-05-17"
+    endDate: "2018-05-18"
+    siteLink:
+      - {language: en, text: "https://2018.heisenbug-piter.ru/en/"}
+      - {language: ru, text: "https://2018.heisenbug-piter.ru/"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLsVTVVvrKX9uQ2UbF4JU07LSMGnu8udz6
+    mapCoordinates: "59.842400, 30.318815"
+    talkIds: [877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898,
+              899, 900, 901, 902, 903, 904, 905, 906, 907]
+  - eventTypeId: 3
+    name:
       - {language: en, text: "Heisenbug 2019 Msk"}
       - {language: ru, text: "Heisenbug 2019 Мск"}
     startDate: 2019-12-05

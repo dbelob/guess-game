@@ -67,6 +67,17 @@ speakers:
     name:
       - {language: en, text: "Ruslan Cheremin"}
       - {language: ru, text: "Руслан Черемин"}
+    company:
+      - {language: en, text: "Deutsche Bank"}
+    bio:
+      - {language: en, text: "Java developer for >10 years. Has coded ERP for food and cellular in his youth, later developed\
+            \ LMS in 1C, and ad strategy simulator in Yandex, and nowadays works on pricing strategies in Deutsche Bank. Prefers\
+            \ to code bug-free right from the start, but sometimes uses tests to support his overconfidence."}
+      - {language: ru, text: "Разрабатывает на Java более 10 лет. В юности программировал всякое-разное за еду и мобильный\
+            \ телефон, позже создавал обучающие программы для школьников в 1С и симулятор рекламных стратегий в Яндексе, а\
+            \ сейчас занимается генерацией цен в Deutsche Bank. Как настоящий профессионал, предпочитает сразу писать код\
+            \ без багов, но иногда подогревает свою самоуверенность тестами."}
+    twitter: dj_begemot
   - id: 5
     fileName: 0005.jpg
     name:
@@ -766,12 +777,12 @@ speakers:
     company:
       - {language: en, text: "Azul Systems"}
     bio:
-      - {language: en, text: "Compiler engineer at Azul Systems. For the last 5 years is into optimizing JIT compilers for\
+      - {language: en, text: "Compiler engineer at Azul Systems. For the last 4 years is into optimizing JIT compilers for\
             \ virtual machines. Since 2017 works on Zing VM, actively commits to LLVM. Before that used to work with ART and\
             \ Dalvik virtual machines at Intel, along with contributing to Android Open Source Project."}
-      - {language: ru, text: "Инженер компиляторов в Azul Systems. Последние 5 лет занимается оптимизирующими JIT-компилят\
-            орами для виртуальных машин. С 2017 года работает над Zing VM, активно коммитит в LLVM. До этого работал над в\
-            иртуальными машинами ART и Dalvik в компании Intel, внёс свой вклад в Android Open Source Project."}
+      - {language: ru, text: "Инженер компиляторов в Azul Systems. Последние 4 года занимается оптимизирующими JIT-компиля\
+            торами для виртуальных машин. С 2017 года работает над Zing VM, активно коммитит в LLVM. До этого работал над\
+            \ виртуальными машинами ART и Dalvik в компании Intel, внёс свой вклад в Android Open Source Project."}
   - id: 65
     fileName: 0065.jpg
     name:
@@ -2587,6 +2598,17 @@ speakers:
     name:
       - {language: en, text: "Sergey Grinev"}
       - {language: ru, text: "Сергей Гринев"}
+    company:
+      - {language: en, text: "Azul Systems"}
+    bio:
+      - language: en
+        text: "An experienced engineer focused on building reliable quality processes for Java platforms. Started to work\
+            \ in this area during his employment with Oracle where he was responsible for JavaFX testing. Last few years works\
+            \ for Azul Systems on quality of their custom JDKs. \n\nAlso, Sergey enjoys sharing his experience: he presents\
+            \ on various Java conferences, gives lessons, and answers on stackoverflow.com"
+      - {language: ru, text: "Тимлид QA/Release команды в Azul Systems, отвечающей за Zulu OpenJDK. До этого долгое время\
+            \ проработал в Oracle, где занимался QA JavaFX и Java2D. Любит делиться своим опытом на конференциях и stackoverflow.com"}
+    twitter: SergeyGrinev
   - id: 256
     fileName: 0256.jpg
     name:
@@ -2631,12 +2653,18 @@ speakers:
     company:
       - {language: en, text: "Smashing Magazine"}
     bio:
-      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn’t like to give in easily. Originally from\
+      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn't like to give in easily. Originally from\
             \ Minsk, Belarus, he studied computer science and mathematics in Germany where he has discovered his passion for\
             \ typography, writing and design. After working as a freelancing designer and developer for 6 years, he co-founded\
-            \ Smashing Magazine, one of the largest online magazines dedicated to Web design and development. Vitaly is writer,\
-            \ co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine in\
-            \ the lovely city of Germany, Freiburg."}
+            \ Smashing Magazine, one of the largest online magazines dedicated to web design and development. Vitaly is the\
+            \ writer, co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine\
+            \ in the lovely city of Germany, Freiburg."}
+      - {language: ru, text: "Виталий Фридман любит красивый контент и никогда просто так не сдаётся. Родом из Минска, Бел\
+            арусь, Виталий изучал информатику и математику в Германии, где обнаружил интерес к типографии, письму и дизайн\
+            у. Проработав в качестве фрилансера дизайнером и разработчиком в течение шести лет, он основал Smashing Magazine,\
+            \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
+            \ Books. В настоящее время занимает позицию главного редактора Smashing Magazine в прекрасном городе Фрайбург\
+            , Германия."}
     twitter: vitalyf
   - id: 261
     fileName: 0261.jpg
@@ -5696,6 +5724,16 @@ speakers:
     fileName: 0590.jpg
     name:
       - {language: en, text: "Michael Bolton"}
+    company:
+      - {language: en, text: DevelopSense}
+    bio:
+      - {language: en, text: "Tester, consultant, and trainer Michael Bolton is the co-author (with James Bach) of Rapid Software\
+            \ Testing, a course that presents a methodology and mindset for testing software expertly in uncertain conditions\
+            \ and under extreme time pressure. Michael is a leader in the context-driven software testing movement with twenty\
+            \ years of experience testing, developing, managing, and writing about software. Currently, he leads DevelopSense,\
+            \ a Toronto-based consultancy. Prior to DevelopSense, Michael was with Quarterdeck Corporation. Michael's home\
+            \ page is www.developsense.com."}
+    twitter: michaelbolton
   - id: 591
     fileName: 0591.jpg
     name:
@@ -5716,23 +5754,77 @@ speakers:
     name:
       - {language: en, text: "Olga Megorskaya"}
       - {language: ru, text: "Ольга Мегорская"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Head of crowdsourcing platform Yandex.Toloka and department of human intelligence tasks at Yandex. \n\nCurrently\
+            \ is in charge of scaling up and applying crowdsourcing techniques to production processes which require human\
+            \ labour, such as producing the training data for AI, call centers, service support teams, translation, and many\
+            \ others. \nOne of the latest projects was to set up crowdsourcing practices for manual testing at Yandex. \n\n\
+            Sphere of research interest — mathematical background of crowdsourcing and subjective human evaluation; author\
+            \ of papers on this subject."
+      - language: ru
+        text: "Руководитель краудсорсинговой платформы Толока и управления экспертных оценок Яндекса. \n\nВ настоящее врем\
+            я отвечает за автоматизацию, масштабирование и применение краудсорсинга в самых разных направлениях и проектах\
+            \ в Яндексе: сборе данных для обучения искусственного интеллекта, работе колл-центров, служб поддержки пользов\
+            ателей, модерации контента, производства данных для карт, переводах и многих других. \nОдин из недавних проект\
+            ов — построение процессов ручного тестирования с помощью краудсорсинга. \n\nОбласть интересов — математика в м\
+            ире экспертных оценок, автор докладов и статей по этой теме."
   - id: 593
     fileName: 0593.jpg
     name:
       - {language: en, text: "Niranjani Manoharan"}
+    company:
+      - {language: en, text: Pinterest}
+    bio:
+      - {language: en, text: "Niranjani is a Senior Software Engineer in Test at Pinterest. She is responsible for developing\
+            \ test automation solutions for the Android platform. She has 8 years of experience and has worked at companies\
+            \ like eBay and Twitter in a similar role. She’s passionate about code and product quality and gets involved in\
+            \ efforts to improve the CI/CD pipeline."}
+    twitter: RanjaniRambles
   - id: 594
     fileName: 0594.jpg
     name:
-      - {language: en, text: "Anastasiya Semenjuk"}
+      - {language: en, text: "Anastasia Semenyuk"}
       - {language: ru, text: "Анастасия Семенюк"}
+    company:
+      - {language: en, text: VK}
+      - {language: ru, text: ВКонтакте}
+    bio:
+      - {language: en, text: "Originally from Kiev, Ukraine, Anastasia studied at ITMO’s CIT faculty and graduated from Game|Changers\
+            \ program. Interned at Yota Lab, worked at Korus Consulting, i-Free and Documatic. In 2014 joined the VK team\
+            \ as a tester. Since the beginning of 2016, Anastasia manages VK’s QA department and VK Testers program."}
+      - {language: ru, text: "Родилась в Киеве, училась в ИТМО на кафедре БИТ. Выпускник программы Game|Changers. Работала\
+            \ в Yota Lab, Корус Консалтинг, i-Free и Documatic. В 2014 году присоединилась к команде ВКонтакте в качестве\
+            \ тестировщика. С 2016 года руководит тестированием ВКонтакте и развивает программу бета-тестирования VK Testers."}
+    twitter: yakudastya
   - id: 595
     fileName: 0595.jpg
     name:
       - {language: en, text: "Christian Stein"}
+    company:
+      - {language: en, text: Micromata}
+    bio:
+      - language: en
+        text: "Christian is an open source software developer who is programming with Java since 1996. He has a faible for\
+            \ automated testing and joined the core JUnit 5 team in 2017. \nHe lives in Bonn, Germany and works for MICROMATA\
+            \ GmbH."
+    twitter: sormuras
+    gitHub: sormuras
   - id: 596
     fileName: 0596.jpg
     name:
       - {language: en, text: "Sathish Gogineni"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Sathish works as Mobile QA Automation Lead at Badoo. Since 2013, he is responsible for developing\
+            \ test automation solutions for mobile applications at Badoo. He has 13 years of experience and has worked in\
+            \ various positions from a software developer to a technical lead. He strongly believes the true success of the\
+            \ test automation lies when it is integral part of the product delivery process and meets the needs of it's stakeholders."}
+    twitter: satgog
   - id: 597
     fileName: 0597.jpg
     name:
@@ -5753,35 +5845,117 @@ speakers:
   - id: 598
     fileName: 0598.jpg
     name:
-      - {language: en, text: "Nikolay Abalov"}
+      - {language: en, text: "Nikolai Abalov"}
       - {language: ru, text: "Николай Абалов"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - language: en
+        text: "Nikolai works as a software engineer in test at Badoo primarily focusing on tooling and iOS infrastructure\
+            \ at the moment. \nUsed to work for 3 years at local search company 2GIS, building both user-facing and internal\
+            \ products, including a system for continuous testing of data packages and an open source implementation of WebDriver\
+            \ for Windows Phone automation."
+      - language: ru
+        text: "Занимается автоматизацией тестирования в Badoo с фокусом на инструментах и инфраструктуре iOS. \nДо этого р\
+            аботал 3 года в 2ГИС, разрабатывая в основном внутренние инструменты, включая систему непрерывного тестировани\
+            я пакетов данных и open source-реализацию WebDriver для автоматизации тестирования под Windows Phone."
+    twitter: NickAb
   - id: 599
     fileName: 0599.jpg
     name:
       - {language: en, text: "Michael Palotas"}
+    company:
+      - {language: en, text: "Element34 Solutions GmbH"}
+    bio:
+      - {language: en, text: "Founder and CEO of Element34 Solutions. Co-developed Selenium Grid. Ex-eBay Head of Quality\
+            \ Engineering. For more than 10 years Michael Palotas shaped software and test engineering at eBay International\
+            \ as the Head of Quality Engineering. He was key responsible for leading the transformation for eBay International\
+            \ from a waterfall to a highly agile organization employing new paths and approaches especially in the field of\
+            \ engineering practices. Before joining eBay, Michael held lead roles in companies like Ericsson, Nortel Networks,\
+            \ Intel."}
+    twitter: michael_palotas
   - id: 600
     fileName: 0600.jpg
     name:
       - {language: en, text: "Iván López"}
+    company:
+      - {language: en, text: "Object Computing, Inc."}
+    bio:
+      - language: en
+        text: "Iván is a Software Engineer and Systems Administrator with 14 years of experience. He is a member of the Grails\
+            \ team at Object Computing, Inc. (OCI). He discovered Grails 8 years ago and since then he develops almost exclusively\
+            \ using Groovy. He is the creator of some Grails plugins like PostgreSQL-Extensions and Slug-Generator. \n\nHe's\
+            \ also the coordinator of the Madrid Groovy User Group (@madridgug), the organizer of the Greach Conference (http://greachconf.com)\
+            \ and a frequent speaker at conferences like SpringOne 2GX, GR8Conf, Greach, Codemotion, GeeCon, Spring IO, RigaDevDays,\
+            \ JavaCro, and so forth."
+    twitter: ilopmar
   - id: 601
     fileName: 0601.jpg
     name:
-      - {language: en, text: "Alexander Martjushov"}
-      - {language: ru, text: "Александр Мартюшев"}
+      - {language: en, text: "Aleksandr Martiushov"}
+      - {language: ru, text: "Александр Мартюшов"}
+    company:
+      - {language: en, text: Signavio}
+    bio:
+      - language: en
+        text: "Is in the development and testing industry since 2008, with some break for Ph.D studies and experiments in\
+            \ nuclear physics. Worked with e-commerce platforms, IPTV systems and location-based services. Was involved in\
+            \ supporting the existing test architecture as well as building automation from scratch for backend, UI and mobile\
+            \ applications. \nCurrently works in Berlin's company Signavio and builds automation for backend and UI."
+      - language: ru
+        text: "В индустрии разработки и тестирования с 2008 года, с некоторым перерывом на аспирантуру и эксперименты по я\
+            дерной физике. В тестировании работал с e-commerce платформами, IPTV системами и location-based сервисами. Зан\
+            имался как поддержкой существующей тестовой архитектуры, так и построением автоматизации с нуля для backend, UI\
+            \ и мобильных приложений. \nВ данный момент работает в берлинской компании Signavio и строит автоматизацию для\
+            \ backend и UI."
+    twitter: amartyushov
   - id: 602
     fileName: 0602.jpg
     name:
       - {language: en, text: "Artem Nikitin"}
       - {language: ru, text: "Артем Никитин"}
+    company:
+      - {language: en, text: "HERE Technologies"}
+    bio:
+      - {language: en, text: "Started on the client side of different web applications, then moved to the backend and now\
+            \ mostly works on CI, infrastructure and automation topics. AWS user since 2010. Gopher since 2015. Contributor\
+            \ to open source projects. Truly (and very passionately) believes that testing is not about bugs and reports,\
+            \ but about the overall improvement of quality, speed, and engineering productivity."}
+      - {language: ru, text: "Начинал с веб-приложений, затем перешел на бэкенд. Сейчас в основном работает над CI, инфрас\
+            труктурой и автоматизацией. Пользователь AWS с 2010 года. Гофер с 2015 года. Контрибьютор в опенсорс-проекты.\
+            \ Ярый сторонник точки зрения, что тестирование сейчас — это не про поиск багов, а про увеличение качества, ск\
+            орости и продуктивности."}
+    twitter: artemnikitin
   - id: 603
     fileName: 0603.jpg
     name:
       - {language: en, text: "Alexey Rodionov"}
       - {language: ru, text: "Алексей Родионов"}
+    company:
+      - {language: en, text: Toptal}
+    bio:
+      - {language: en, text: "Has been doing software testing for more than 11 years. For the last 5 years, helps improve\
+            \ the quality in Toptal, the largest fully distributed high-skilled workforce in the world. Contributor to Mozilla.\
+            \ Developer of Watir. Selenium committer, maintaining its Ruby part."}
+      - {language: ru, text: "Занимается тестированием больше 11 лет, из них последние 5 лет помогает улучшать качество в\
+            \ Toptal, крупнейшем в мире распределенном сообществе высококлассных специалистов. Контрибьютор Mozilla. Разра\
+            ботчик Watir. Коммитер Selenium, где отвечает за Ruby-часть."}
+    twitter: p0deje
   - id: 604
     fileName: 0604.jpg
     name:
       - {language: en, text: "Kapil Bakshi"}
+    company:
+      - {language: en, text: BlackBuck}
+    bio:
+      - language: en
+        text: "Kapil’s in depth and highly informative talks on Test Driven Development have been getting selected at International\
+            \ Conferences like DroidCon Beijing 2017, Android makers 2018, DroidKaigi Tokyo, Developers Conference Mauritius.\
+            \ \n\nHe has also spoken on emerging Android technologies at Google Devfest India, Google Developer Days Extended,\
+            \ the Great IndianDeveloper Summit and other conferences in India and has got an overwhelmingly amazing response.\
+            \ \n\nHe is currently working at BlackBuck which is redefining the logistics landscape of India, making it reliable\
+            \ and efficient."
+    twitter: akapil167
   - id: 605
     fileName: 0605.jpg
     name:
@@ -5804,46 +5978,153 @@ speakers:
     name:
       - {language: en, text: "Eugene Nichegovskiy"}
       - {language: ru, text: "Евгений Ничеговский"}
+    company:
+      - {language: en, text: Waves}
+    bio:
+      - language: en
+        text: "Has got over 10 years of experience in manual and automation testing. The experience includes a set up of processes\
+            \ for manual and automated testing at different companies, like ITAR-TASS. Used to work with mobile, desktop and\
+            \ web applications. Through his career, has developed several frameworks for frontend and backend test automation\
+            \ and practiced in different automation frameworks. \n\nSince July 2017 works with blockchain technology in Waves\
+            \ company."
+      - language: ru
+        text: "Занимается тестированием более 10 лет. Создавал отделы тестирования и руководил ими в IT-компаниях, в том ч\
+            исле в компании ИТАР-ТАСС. Проводил тестирование десктопных, мобильных и веб-приложений. Разработал несколько\
+            \ фреймворков для автоматизации тестирования — фронта и бекэнда. Обладает обширным практическим опытом примене\
+            ния различных средств автоматизации тестирования. \n\nС июля 2017 года работает в компании Waves."
   - id: 607
     fileName: 0607.jpg
     name:
       - {language: en, text: "Igor Balagurov"}
       - {language: ru, text: "Игорь Балагуров"}
+    company:
+      - {language: en, text: Uptick}
+    bio:
+      - {language: en, text: "During the last year, Igor works with automated testing in the Uptick startup. Mainly writes\
+            \ tests using Python for UI (Web + Mobile) and API (REST + GraphQL), a little bit .NET for Component and Integration\
+            \ tests. Before that Igor worked in New Cloud Technologies, where he gained experience in writing and supporting\
+            \ over one thousand web tests on Ruby, Watir, Cucumber."}
+      - {language: ru, text: "Последний год Игорь занимается автоматизированным тестированием в стартапе Uptick. В основно\
+            м пишет тесты на Python для UI (Web + Mobile) и API (REST + GraphQL) и немного на .NET (Component и Integration-т\
+            есты). До этого работал в Новых облачных технологиях, где получил опыт написания и поддержки более тысячи веб\
+            -тестов на Ruby, Watir, Cucumber."}
   - id: 608
     fileName: 0608.jpg
     name:
       - {language: en, text: "Dmitry Alekseev"}
       - {language: ru, text: "Дмитрий Алексеев"}
+    company:
+      - {language: en, text: Zeptolab}
+    bio:
+      - {language: en, text: "Has been working in GameDev QA for six and a half years. Started growing as a professional at\
+            \ Gaijin Entertainment, after that managed to work in such major GameDev companies as Glu Mobile, Crazy Panda,\
+            \ and several startups. At the moment takes the position of QA Lead in Zeptolab."}
+      - {language: ru, text: "QA в GameDev уже шесть с половиной лет. Начал свой профессиональный путь в компании Gaijin Entertainment,\
+            \ после неё успел поработать в таких крупных игровых компаниях, как Glu Mobile, Crazy Panda, а также в несколь\
+            ких стартапах. В данный момент занимает позицию QA-лида в компании Zeptolab."}
   - id: 609
     fileName: 0609.jpg
     name:
       - {language: en, text: "Dmitry Tuchs"}
       - {language: ru, text: "Дмитрий Тучс"}
+    company:
+      - {language: en, text: PropellerAds}
+    bio:
+      - language: en
+        text: "Works in IT for about 10 years so far. Started in analytics, switched then to running projects as a project\
+            \ manager, but the craving for beauty won and several years ago Dmitry concentrated all his attention and efforts\
+            \ on developing and automation testing on Java. Most part of his career was devoted to the EDI systems, but the\
+            \ hunger to gain unique experience moved him to work for post-startup PropellerAds, where a lot of processes,\
+            \ including QA, needed to be built from the zero level. \n\nDmitry truly believes that simple tests could be written\
+            \ for complex systems, and doesn’t really think that testing automation is less exciting than development."
+      - language: ru
+        text: "Работает в IT 10 лет. Начинал в аналитике, затем управлял проектами в роли Project Manager, но тяга к прекр\
+            асному победила, и несколько лет назад Дмитрий сконцентрировался на разработке и автоматизации тестирования на\
+            \ Java. \n\nБольшую часть карьеры посвятил системам электронного документооборота, но ради уникального опыта п\
+            ерешел в настоящий возмужавший пост-стартап PropellerAds, где многие процессы, в частности QA, предстояло выст\
+            раивать с нуля. \n\nВерит в то, что «простые» тесты могут быть написаны для сколь угодно сложных систем, и счи\
+            тает, что автоматизация тестирования не менее увлекательна, чем разработка."
   - id: 610
     fileName: 0610.jpg
     name:
       - {language: en, text: "Viktor Yastrebov"}
       - {language: ru, text: "Виктор Ястребов"}
+    company:
+      - {language: en, text: Tensor}
+      - {language: ru, text: Тензор}
+    bio:
+      - {language: en, text: "Is into the development and automated testing of real-time applications. Is convinced that in\
+            \ the modern world the ability to write a testable code is an important skill of a qualified developer. Is interested\
+            \ in quality assurance issues using automated testing methods."}
+      - {language: ru, text: "Занимается разработкой и автоматизированным тестированием приложений, работающих в режиме ре\
+            ального времени. Убежден, что в современном мире умение писать тестируемый код является важным навыком квалифи\
+            цированного разработчика. Интересуется вопросами обеспечения качества разработки с использованием методов авто\
+            матизированного тестирования."}
   - id: 611
     fileName: 0611.jpg
     name:
       - {language: en, text: "Yuri Kalinin"}
       - {language: ru, text: "Юрий Калинин"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Has been working in testing for more than 6 years. Started as a manual test engineer for browser\
+            \ games, then decided to proceed with test automation and moved to Yandex, where he's still employed. Has switched\
+            \ projects and tasks several times. Has got extensive experience in API and UI Java-based test automation."}
+      - {language: ru, text: "Больше шести лет в тестировании. Начинал с ручного тестировщика браузерных игр и постепенно\
+            \ стал задумываться об автоматизации, поэтому следующим местом работы выбрал Яндекс, где работает до сих пор.\
+            \ За это время несколько раз менял проекты и задачи. Имеет большой опыт в написании API и UI-тестов на Java."}
   - id: 612
     fileName: 0612.jpg
     name:
-      - {language: en, text: "Alexey Pletnev"}
+      - {language: en, text: "Aleksey Pletnev"}
       - {language: ru, text: "Алексей Плетнёв"}
+    company:
+      - {language: en, text: Bazis-Center}
+      - {language: ru, text: Базис-Центр}
+    bio:
+      - {language: en, text: "Has been working at Bazis-Center Ltd. since 2006 as a software engineer. The team develops CAD\
+            \ for automation of furniture production. From the very beginning of his professional career, Alexey solves issues\
+            \ of software licensing and its protection against illegal use. Recently, the problems of code quality have been\
+            \ added to the list. Knows how to write in assembly language and how errors look like at the deepest level."}
+      - {language: ru, text: "Работает в компании Базис-Центр с 2006 года инженером-программистом. Команда занимается разр\
+            аботкой САПР для автоматизации мебельных производств. С самого начала своего профессионального пути занимался\
+            \ вопросами лицензирования ПО и его защитой от нелегального использования. В последнее время к ним добавились\
+            \ проблемы качества кода. Умеет писать на языке ассемблера и знает, как выглядят ошибки на самом глубоком уров\
+            не."}
+    twitter: zix_bazis
   - id: 613
     fileName: 0613.jpg
     name:
       - {language: en, text: "Andrey Leonov"}
       - {language: ru, text: "Андрей Леонов"}
+    company:
+      - {language: en, text: SEMrush}
+    bio:
+      - {language: en, text: "For the last ten years has been searching for vulnerabilities in web applications. Participated\
+            \ in many Bug Bounty programs. Most of all likes business logic's issues when an application works as coded, but\
+            \ not as developer wanted. Here at SEMrush works at Security Team, responsible for product security, work infrastructure\
+            \ safety and many other things."}
+      - {language: ru, text: "Последние десять лет занимается поиском уязвимостей в веб-приложениях. Участник многих Bug Bounty-п\
+            рограмм. Больше всего любит ошибки бизнес-логики, когда программа работает так, как написано, а не так, как хо\
+            тел программист. В компании SEMrush работает в команде безопасности, отвечающей за безопасность продукта и раб\
+            очей инфраструктуры и многое другое."}
+    twitter: 4lemon
   - id: 614
     fileName: 0614.jpg
     name:
       - {language: en, text: "Evheny Shumakov"}
       - {language: ru, text: "Евгений Шумаков"}
+    company:
+      - {language: en, text: Zeptolab}
+    bio:
+      - {language: en, text: "IT specialist. Worked in such large companies as IBM, Dors, Paragon Software. Worked his way\
+            \ up from a system administrator to the product owner. Now takes the position of Quality Assurance Manager in\
+            \ Zeptolab company and is into the implementation of innovative solutions."}
+      - {language: ru, text: "Специалист в области IT. Работал в таких крупных IT-компаниях, как IBM, Dors, Paragon Software.\
+            \ Прошел путь от системного администратора до Product Owner. В настоящий момент работает на позиции QA Manager\
+            \ в компании Zeptolab и занимается внедрением инновационных решений."}
   - id: 615
     fileName: 0615.jpg
     name:
