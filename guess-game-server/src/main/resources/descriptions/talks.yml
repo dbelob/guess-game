@@ -19092,3 +19092,895 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/4YsqN4SHrayuik0iCsKkKI/69f2ce5a67e47d5d1c83201f14a64043/Michael_Bolton-TestersAsTheirOwnWorstEnemies.pdf"]
     videoLinks: ["https://youtu.be/27UYebjXQmI"]
     speakerIds: [590]
+  - id: 908
+    name:
+      - {language: en, text: "Solution architecture and JavaScript"}
+      - {language: ru, text: "Solution architecture и JavaScript"}
+    shortDescription:
+      - {language: en, text: "We’ll share some stories that can help you look at the architecture and its meaning for the\
+            \ modern apps from the right perspective, as well as avoid mistakes that can simply ruin your project."}
+      - {language: ru, text: "Поделимся с вами историями, которые помогут правильно сформировать видение и значение архите\
+            ктуры в современных приложениях, а также не допустить ошибок, которые могут просто уничтожить ваш проект."}
+    longDescription:
+      - language: en
+        text: "Quite often the architecture in JavaScript reduces itself to the choice of a framework according to the frontend\
+            \ world’s recent trends. What if we told you that the choice of technology is just the step №7 on your way to\
+            \ developing project design? Every day many projects feel the draught or even fall to pieces because of the incorrectly\
+            \ chosen architecture.\n\nWe’ll share some stories that can help you look at the architecture and its meaning\
+            \ for the modern apps from the right perspective, as well as avoid mistakes that can simply ruin your project."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Алексей всегда хорошо готовится к выступлениям. И в этот\
+            \ раз он решил поделиться опытом правильного проектирования приложений, потому как тут мы совершаем больше все\
+            го ошибок.* \n\nЧасто архитектура в JavaScript сводится к выбору фреймворка согласно последним тенденциям в ми\
+            ре фронтенда. А если мы скажем, что выбор технологий – это лишь седьмой шаг при принятии проектного решения? К\
+            аждый день множество проектов несут убытки или вовсе разваливаются из-за некорректно выбранной архитектуры.\n\n\
+            Поделимся с вами историями, которые помогут правильно сформировать видение и значение архитектуры в современны\
+            х приложениях, а также не допустить ошибок, которые могут просто уничтожить ваш проект."
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/39cPKuUZ5CCkGwIgsoiAQS/380323d6acca8609260860fc1574ca8a/Aliaksei_Bahachuk_-_JavaScript_and_Solution_Architecture.pdf"]
+    videoLinks: ["https://youtu.be/UVRi9LoFyfI"]
+    speakerIds: [708]
+  - id: 909
+    name:
+      - {language: en, text: "New adventures in frontend, Season 2"}
+    shortDescription:
+      - {language: en, text: "The next season of new adventures in frontend is here: tighten up your seatbelts and get ready\
+            \ for a dash of dirty little frontend tricks!"}
+    longDescription:
+      - language: en
+        text: "The beast is alive! How do you feel about ASCII-alike CSS Grid layout with polyfluid sizing and ch unit? Do\
+            \ you feel itchy when it comes to building responsive HTML email layouts? What about the brave new world of dynamic\
+            \ static site generators and JAM stack? Have you ever tried to work around nested CSS Custom Properties, untamed\
+            \ 3rd-party scripts, shady service workers, multi-dimensional variable fonts and painfully outdated pattern libraries?\
+            \ Well, let’s bring it on!\n\nIf you attended or watched the first season(https://youtu.be/rgHLV2fe-2I), you better\
+            \ tighten up your seatbelts: it's an entirely different session, with a slightly different cast and a dash of\
+            \ dirty little front-end tricks. Beware: you will not be able to unlearn what you’ll learn in the session! Ah,\
+            \ one more thing, take the techniques with a grain of salt — we do not take responsibility for sleepless nights\
+            \ and nightmares caused by the content of this session."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Есть мнение, что вторая часть всегда лучше. «Терминатор»\
+            , «Крёстный Отец», «Сумерки» — список можно продолжать очень долго. Справедливо ли это для Виталия и его «Прик\
+            лючений в мире Фронтенда»? Мы считаем, что да, без сомнений!* \n\nThe beast is alive! How do you feel about ASCII-alike\
+            \ CSS Grid layout with polyfluid sizing and ch unit? Do you feel itchy when it comes to building responsive HTML\
+            \ email layouts? What about the brave new world of dynamic static site generators and JAM stack? Have you ever\
+            \ tried to work around nested CSS Custom Properties, untamed 3rd-party scripts, shady service workers, multi-dimensional\
+            \ variable fonts and painfully outdated pattern libraries? Well, let’s bring it on!\n\nIf you attended or watched\
+            \ the first season, you better tighten up your seatbelts: it's an entirely different session, with a slightly\
+            \ different cast and a dash of dirty little front-end tricks. Beware: you will not be able to unlearn what you’\
+            ll learn in the session! Ah, one more thing, take the techniques with a grain of salt — we do not take responsibility\
+            \ for sleepless nights and nightmares caused by the content of this session."
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/258nBVG8gIoqgU6Gc2ymGQ/321f64509d556f34ebc8a050e1b90891/holyjs-opening.pdf"]
+    videoLinks: ["https://youtu.be/wuTPzW6aK0Q"]
+    speakerIds: [260]
+  - id: 910
+    name:
+      - {language: en, text: "21-century engineering"}
+      - {language: ru, text: "Мерцание технологий, или Инжиниринг 21-го века"}
+    shortDescription:
+      - {language: en, text: "Come and learn how to become a 21-century engineer."}
+      - {language: ru, text: "Приходите и узнайте, как стать инженером 21-го века."}
+    longDescription:
+      - language: en
+        text: "We write code. Interpreter strictly follows our instructions. It doesn’t object or argue, we don’t need to\
+            \ discuss anything with it. Everything is loud and clear. That’s the reason we love programming, we rule the world\
+            \ we’ve created. That’s also why the best programmers hate communicating with something so imperfect as people\
+            \ with their endless emotions, needs, and whims.\n\nThis talk will teach you to sell refactoring on a project,\
+            \ to persuade your colleagues to implement Linter or to stop caring about what to choose, Angular, React or Vue.\n\
+            \nWe’ll try to become programmers that can understand the others and, most importantly, themselves, we’ll try\
+            \ to become engineers!"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *В докладе Максим разберет ту часть нашей работы, которая\
+            \ находится вне холиваров о фреймворках, парадигмах и вне вечной фронтендерской суеты. Приоткроем завесу тайн\
+            \ рабочих процессов, мотивации и направлений развития нас, как профессионалов своего дела.* \n\nМы пишем код.\
+            \ Интерпретатор четко следует нашим инструкциями. Он не возражает, не спорит, с ним не нужно вести переговоры\
+            . Всё четко и по делу. За это мы и любим программирование, ведь это — полная власть в созданном нами мире. Име\
+            нно поэтому лучшие программисты не терпят общения с чем-то столь несовершенным, как люди, с их бесконечными эм\
+            оциями, потребностями и причудами.\n\nЭтот доклад научит нас, как продать рефакторинг на проекте, как убедить\
+            \ коллег внедрить Линтер или как перестать париться, на чём писать, Angular, React или Vue.\n\nМы попробуем ст\
+            ать программистами, которые умеют понимать других, а главное — себя, мы попробуем стать инженерами!"
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3t7RLg6CIg0w8k6myekMwu/8a9832d378568ebe478c6c8b9b6ed084/Yuzva_technology_flashing_.pdf"]
+    videoLinks: ["https://youtu.be/MzTng78DCm4"]
+    speakerIds: [703]
+  - id: 911
+    name:
+      - {language: en, text: "Architecture of React Native for JS developer"}
+      - {language: ru, text: "Архитектура React Native для JS-разработчика"}
+    shortDescription:
+      - {language: en, text: "We'll look at the React Native architecture. The talk will help you get used to the technology,\
+            \ understand it and have no fear of it if you consider RN a promising technology for future or current projects."}
+      - {language: ru, text: "Разберем архитектуру React Native. Будет полезно разработчикам любого уровня, как уже исполь\
+            зующим React Native, так и присматривающимся к данной технологии. Доклад поможет обрести понимание технологии\
+            \ и не бояться разработчикам, которые только смотрят на RN как на перспективную технологию для будущих или нын\
+            ешних проектов."}
+    longDescription:
+      - language: en
+        text: "This technical talk reveals the React Native architecture. The talk will be useful for the developers of all\
+            \ levels, starting from those who already use React Native up to those only taking a look at this technology.\
+            \ The talk will help you get used to the technology, understand it and have no fear of it if you consider RN a\
+            \ promising technology for future or current projects.\n\nThis talk consists of 5 independent parts:\n- Development\
+            \ on React Native (an introduction to those unfamiliar with this technology);\n- Looking at the insides (what\
+            \ an Android app consists of; the communication between JS and native part; a story about timers in JS);\n- Performance\
+            \ constraints;\n- Animations (an example for the demonstration of performance constraints);\n- Real examples (we'll\
+            \ show you a little bit of business code for you not to be scared)."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Весьма не просто найти человека, который пытается залезть\
+            \ в React Native глубже, чем Дима. В докладе пойдет рассказ о компонентах и устройстве React Native, а также б\
+            удет раскрыто множество интересных моментов подкапотной работы данной технологии. На основе этого вы увидите с\
+            ильные и слабые стороны React Native.* \n\nЭто технологический доклад, раскрывающий архитектуру React Native.\n\
+            Доклад будет полезен разработчикам любого уровня, как уже использующим React Native, так и присматривающимся к\
+            \ данной\nтехнологии. Поможет влиться, обрести понимание технологии и не бояться разработчикам, которые только\
+            \ смотрят на RN как на перспективную технологию для будущих или нынешних проектов.\n\nВ докладе присутствует 5\
+            \ независимых глав:\n- Разработка на React Native (вступления для людей, незнакомых с технологией);\n- Изучени\
+            е внутренностей (пример устройства приложения на Android; коммуникация JS и нативной части; рассказ про таймер\
+            ы в JS);\n- Ограничение производительности;\n- Анимации (пример для демонстрации ограничение производительност\
+            и);\n- Реальные примеры (покажем немного бизнес-кода, чтобы вы не боялись)."
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/4as61mVuDmKK8WmeqkqWmk/c143a714e75cb61f9cd924a6cf37d9af/Dmitry_ReactNative.pdf"]
+    videoLinks: ["https://youtu.be/v4MnR41SHZc"]
+    speakerIds: [692]
+  - id: 912
+    name:
+      - {language: en, text: "Mining crypto in browser: GPU, WebAssembly, JavaScript and all the good things to try"}
+      - {language: ru, text: "Майним крипту в браузере: WebWorkers, GPU, WebAssembly и другие хорошие вещи"}
+    shortDescription:
+      - {language: en, text: "This talk gives an idea of what to expect when mining cryptocurrencies using a pool of browser-based\
+            \ miners."}
+      - {language: ru, text: "Расскажем о том, что будет, если майнить криптовалюту с помощью браузерных майнеров."}
+    longDescription:
+      - {language: en, text: "A year ago an unnamed investor asked me for a consultancy on topic: \"If this is possible to\
+            \ mine crypto in a browser using GPU?\". The talk shares some insights / outcome found during the research and\
+            \ gives an idea of what to expect when mining cryptocurrencies using a pool of browser-based miners."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Денис расскажет о способах майнинга криптовалюты в браузе\
+            ре, а также поделится результатами исследования рентабельности майнинга в браузере для разных криптовалют. Док\
+            лад основан не на базе хайповой темы для звёздочек, где бы там ни было, а на реальном запросе, исследовании да\
+            нной темы, и наполнен очень интересными выводами и цифрами.* \n\nГод назад один инвестор попросил проконсульти\
+            ровать его на следующую тему: «Можно ли майнить крипту в браузере, используя GPU?». В докладе поделимся с вами\
+            \ полученными в ходе исследования данными и выводами, а также дадим представление о том, что будет, если майни\
+            ть криптовалюту с помощью браузерных майнеров."
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3nNdltiwhOykGOICks6U6E/9e547c6c30222317cb3661a9c1ecebcc/Mining-crypto-in-browser_-GPU-WebAssembly-and-all-the-good-things-to-try.pdf"]
+    videoLinks: ["https://youtu.be/Ngrsx_8yfds"]
+    speakerIds: [711]
+  - id: 913
+    name:
+      - {language: en, text: "Decomposition of the Main Thread in Node.js to increase throughput"}
+      - {language: ru, text: "Декомпозиция Main Thread в Node.js для увеличения пропускной способности"}
+    shortDescription:
+      - {language: en, text: "In this talk we start with the dispersion of the Node.js Main Thread and spread it into a spectrum\
+            \ of operations. We learn which of these operations we can offload from the Main Thread to threads/workers/processes,\
+            \ and how to do that ."}
+      - {language: ru, text: "В этом докладе мы начнем с дисперсии Main Thread (основного потока Node.js) и разложим его н\
+            а спектр выполняемых в нем операций. Узнаем, какие из этих операций мы можем перенести в отдельные потоки/ворк\
+            еры/процессы и как это сделать."}
+    longDescription:
+      - {language: en, text: "The growth of functionality in Enterprise Node.js applications often leads to a decline in throughput.\
+            \ In this talk we start with the dispersion of the Node.js Main Thread and spread it into a spectrum of operations.\
+            \ We learn which of these operations we can offload from the Main Thread to threads/workers/processes, and how\
+            \ to do that . We select successful ways of parallelization for each type of operation, consider the benefits\
+            \ and limitations. In addition to the standard methods, we also consider alternative solutions for parallelizing\
+            \ tasks using the capabilities of the V8 and libuv thread pool. And as a result, we’ll take a look at how the\
+            \ application architecture and throughput have changed after the decomposition of the Main Thread."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Опытный Node.js-разработчик, обладает большим багажом зна\
+            ний по созданию и поддержке высоконагруженных систем на Node.js* \n\nРост функциональности в Enterprise Node.js\
+            \ приложениях часто приводит к снижению пропускной способности. В этом докладе мы начнем с дисперсии Main Thread\
+            \ (основного потока Node.js) и разложим его на спектр выполняемых в нем операций. Узнаем, какие из этих операц\
+            ий мы можем перенести в отдельные потоки/воркеры/процессы и как это сделать. Мы выберем успешные способы распа\
+            раллеливания для каждого типа операций, рассмотрим их преимущества и ограничения. Помимо стандартных способов\
+            \ мы также рассмотрим альтернативные решения распараллеливания задач используя возможности V8 и libuv thread pool.\
+            \ В завершение сравним как архитектура приложения и пропускная способность изменились после декомпозиции Main\
+            \ Thread."
+    talkDay: 1
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3xtKFHSuissgAqMIMmaQ4w/52e391982259a4244a231cb8a5460dc6/Nikolay_Matvienko_Decomposition_of_the_Main_Thread.pdf"]
+    videoLinks: ["https://youtu.be/Mfz1_blLl9Q"]
+    speakerIds: [663]
+  - id: 914
+    name:
+      - {language: en, text: "System approach to frontend performance: online measurements"}
+      - {language: ru, text: "Системный подход к скорости во фронтенде: онлайн-измерения"}
+    shortDescription:
+      - {language: en, text: "We'll look at the way we collect feedback on the service speed using metrics and how this feedback\
+            \ can be used while making decisions about optimizations' implementation."}
+      - {language: ru, text: "Расскажем, как мы собираем фидбэк о скорости работы сервиса со всей аудитории с помощью метр\
+            ик и как этот фидбэк использовать для принятия решений о внедрении оптимизаций."}
+    longDescription:
+      - {language: en, text: "We'll look at the way we collect feedback on the service speed using metrics and how this feedback\
+            \ can be used while making decisions about optimizations' implementation."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Первый доклад из двух (см. Алексей Калмаков). Два специал\
+            иста из группы скорости поисковых интерфейсов Яндекса поделятся опытом сбора и валидации метрик скорости фронт\
+            енда. Два доклада – два разных подхода, в два раза больше информации.* \n\nРасскажем, как мы собираем фидбэк о\
+            \ скорости работы сервиса со всей аудитории с помощью метрик и как этот фидбэк использовать для принятия решен\
+            ий о внедрении оптимизаций."
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5JoTEYnAGIGSY8YYyWkMyu/483f47ff09102e02fc4c174e617743bb/Andrey_Prokopyuk_Velocity_Online_Measurements.pdf"]
+    videoLinks: ["https://youtu.be/Whm2FMBIgA0"]
+    speakerIds: [718]
+  - id: 915
+    name:
+      - {language: en, text: "RxJS: improving performance and memory leaks"}
+      - {language: ru, text: "RxJS: производительность и утечки памяти в большом приложении"}
+    shortDescription:
+      - {language: en, text: "We’ll talk about RxJS and its philosophy, touching upon possible memory leaks, main mistakes\
+            \ in using RxJS."}
+      - {language: ru, text: "Поговорим об RxJS и его философии, о возможных утечках памяти и основных ошибках при использ\
+            овании RxJS."}
+    longDescription:
+      - {language: en, text: "We’d like to talk about RxJS and its philosophy, touching upon possible memory leaks, main mistakes\
+            \ in using RxJS. We’ll share our experience of using Rx in a big Angular 4 application and how we fixed and avoided\
+            \ Memory Leaks. Few people talk about it, almost nothing is mentioned in the documentation. We’ll look at what\
+            \ should be done with the help of RxJS and what shouldn’t."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Библиотека RxJs сейчас очень популярна, можно найти множе\
+            ство докладов про подходы и паттерны работы с ней. Евгений копнул глубже: он расскажет не только про то, как м\
+            ожно работать с RxJs, но и как делать это максимально эффективно с точки зрения производительности.* \n\nХотел\
+            ось бы поговорить об RxJS и его философии, о возможных утечках памяти, основных ошибках при использовании RxJS.\
+            \ Поделимся личным опытом использования Rx в большом Angular 4 приложении и тем, как фиксить и избегать memory\
+            \ leaks. О них мало кто говорит, почти ничего не написано в документации. Также расскажем о том, что стоит дел\
+            ать с помощью RxJS, а что — нет."
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/7806msvJ1HE"]
+    speakerIds: [715]
+  - id: 916
+    name:
+      - {language: en, text: "Serverless and React 2 (it's just sleight of hand)"}
+      - {language: ru, text: "Serverless и React 2 (ловкость рук и никакого мошенничества)"}
+    shortDescription:
+      - {language: en, text: "We'll show how to create an isomorphic React Redux application step by step. We'll start from\
+            \ the creation of sample lambda function from AWS console and at the end will make a more complex isomorphic project\
+            \ with fully automated deployment."}
+      - {language: ru, text: "По шагам расскажем, как создать изоморфное приложение на AWS-лямбде, начиная с простого созд\
+            ания лямбды руками из консоли и заканчивая проектом с полностью автоматизированным деплойментом."}
+    longDescription:
+      - language: en
+        text: "We bet, it's not the first time when you meet a word \"serverless\", but we still hope that this time we persuade\
+            \ you to try it out. And for those who are already familiar with AWS lambdas, we have a few handy tricks and tools\
+            \ to share. \n\nIn this talk, we'll show how to create an isomorphic React Redux application step by step. We'll\
+            \ start with the creation of sample lambda function from AWS console and at the end will make a more complex isomorphic\
+            \ project with fully automated deployment."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Раскрывает тему создания serverless-лямбд на AWS в сочета\
+            нии с React-стеком. Марина, как ведущий разработчик в EPAM, отлично знает, почему это может быть лучше, чем кл\
+            ассический подход, и насколько это выгодно.* \n\nНаверняка это не первый раз, когда вы слышите о бессерверных\
+            \ вычислениях, но мы надеемся, что именно в этот раз мы убедим вас попробовать их своими руками. А для тех, кт\
+            о не новичок в AWS-лямбдах, покажем их дополнительные возможности и полезные инструменты для разработки.\n\nВ\
+            \ докладе мы по шагам расскажем, как создать изоморфное приложение на AWS-лямбде, начиная с простого создания\
+            \ лямбды руками из консоли и заканчивая проектом с полностью автоматизированным деплойментом."
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/2prL4EWA8ww2uWG26E2K22/417da3e92118c2fad465cbc75791b0ff/Marina_Miranovich_Serverless____React_2__________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/wJcXVjemrEY"]
+    speakerIds: [664]
+  - id: 917
+    name:
+      - {language: en, text: "System approach to frontend performance: offline measurements"}
+      - {language: ru, text: "Системный подход к скорости во фронтенде: оффлайн-измерения"}
+    shortDescription:
+      - {language: en, text: "We'll look at the hardware-software complex which lets us keep the performance under control\
+            \ and catch speed regressions at the design level."}
+      - language: ru
+        text: "Продолжение доклада о системном подходе к скорости Андрея Прокопюка. \nРасскажет о программно-аппаратном ко\
+            мплексе, который позволяет нам держать производительность под контролем и ловить деградации скорости еще на ст\
+            адии разработки."
+    longDescription:
+      - {language: en, text: "The page with search results is being developed by almost 40 developers. That's a huge line\
+            \ of pull requests which constantly change code base of the project! We'll look at the hardware-software complex\
+            \ which lets us keep the performance under control and catch speed regressions at the design level."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Продолжение темы (см. Андрей Прокопюк). Два специалиста и\
+            з группы скорости поисковых интерфейсов Яндекса поделятся опытом сбора и валидации метрик скорости фронтенда.\
+            \ Два доклада – два разных подхода, в два раза больше информации.* \n\nСтраницу поисковой выдачи разрабатывает\
+            \ почти 40 фронтендеров. Это огромный поток пул-реквестов, постоянно меняющих кодовую базу проекта! Расскажем\
+            \ о программно-аппаратном комплексе, который позволяет нам держать производительность под контролем и ловить д\
+            еградации скорости еще на стадии разработки."
+    talkDay: 1
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/gYzskQG7cIMEcwq4qU6MS/6a16289ec84f6b22298e7450e32bc045/Alexey_Kalmakov_offline_measurements.pdf"]
+    videoLinks: ["https://youtu.be/TzCMDlYMydA"]
+    speakerIds: [720]
+  - id: 918
+    name:
+      - {language: en, text: "Wallaby.js & Quokka.js. Fast. Wonderful. Qualitatively."}
+      - {language: ru, text: "Wallaby.js & Quokka.js. Быстро. Красиво. Качественно."}
+    shortDescription:
+      - {language: en, text: "How to combine the beauty and simplicity of fast prototyping with tests, so that business tasks\
+            \ would not take a backseat, there would still be time to study and «undefind is not a function» would not come\
+            \ to you at night? Let's find out how Wallaby.js and Quokka.js can help you with this."}
+      - {language: ru, text: "Как совместить красоту и лёгкость быстрого прототипирования с тестами, чтобы бизнес-задачи н\
+            е ушли на второй план, оставалось время для обучения и «undefind is not a fucntion» не прилетал с прода ночью\
+            ? Давайте узнаем, как с этим вам могут помочь Wallaby.js и Quokka.js."}
+    longDescription:
+      - {language: en, text: "Someone says that code is like a poetry, others say it's an instrument for solving business\
+            \ tasks. There are those who just like to learn and play with code, yet the others say «undefind is not a function»\
+            , cause they do not test. How to combine the beauty and simplicity of fast prototyping with tests, so that business\
+            \ tasks would not take a backseat, there would still be time to study and «undefind is not a function» would not\
+            \ come to you at night? The instruments such as Wallaby.js and Quokka.js can help you be creative in your favourite\
+            \ environment without being distracted from the main code while maintaining complete control of the situation.\
+            \ Let's find out, how?"}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Вы не любите TDD? Да вы просто не умеете его готовить! Дм\
+            итрий покажет, как с помощью такого инструмента, как Wallaby, можно писать код, покрытый тестами на 100%, и по\
+            лучать от этого настоящее удовольствие. А Quokka поможет оживить каждую написанную вами строчку. Вы узнаете, к\
+            ак писать код, который работает до того, как вы его первый раз запустите.* \n\nКто-то говорит, что код — это п\
+            оэзия, для кого-то код — это инструмент решения бизнес-задач, кто-то просто любит учиться и играть с кодом, а\
+            \ кто-то просто говорит «undefind is not a function», потому что ничего не тестирует. Как совместить красоту и\
+            \ лёгкость быстрого прототипирования с тестами, чтобы бизнес-задачи не ушли на второй план, оставалось время д\
+            ля обучения и «undefind is not a function» не прилетал с прода ночью? Инструменты Wallaby.js и Quokka.js помог\
+            ут в вашем любимом окружении творить, не отвлекаясь от основного кода, и полностью контролировать ситуацию. Да\
+            вайте узнаем, как?"
+    talkDay: 1
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3UXp2o6r1uECkKUY2eSYsW/f3f82a779c5ca40720a748baa3cee467/Dmitry_Makhnev_____Wallaby.js___Quokka.js._Fast._Wonderful._Qualitatively..pdf"]
+    videoLinks: ["https://youtu.be/5UILmcIdkt8"]
+    speakerIds: [710]
+  - id: 919
+    name:
+      - {language: en, text: "Web Annotation: the web’s conversation layer"}
+    shortDescription:
+      - {language: en, text: "We'll look at the evolution of Web Annotation and the way it deals with the upcoming challenges."}
+    longDescription:
+      - {language: en, text: "Web Annotation — now a W3C standard — aims to establish a conversation layer on top of the web.\
+            \ By theoretically allowing anyone to annotate any web page content, it's an ennobling premise and thoroughly\
+            \ web-like: democratic, open and standardized. But with this freedom comes challenges. Content publishers are\
+            \ faced with an anxiety-inducing lack of control over what people say about their content. And nothing in the\
+            \ standard itself protects against conversations devolving into troll-hijacked chaos. The evolution of Web Annotation\
+            \ mirrors that of the Web itself, in miniature, facing off with some of the same big themes of identity, security,\
+            \ authority and freedom."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Перевернут ли аннотации мир и станут \"Web 3.0\" с невида\
+            нным уровнем социализации? Жизнь покажет, а тем временем из этого доклада можно узнать, что же это такое на са\
+            мом деле.* \n\nWeb Annotation — now a W3C standard — aims to establish a conversation layer on top of the web.\
+            \ By theoretically allowing anyone to annotate any web page content, it's an ennobling premise and thoroughly\
+            \ web-like: democratic, open and standardized. But with this freedom comes challenges. Content publishers are\
+            \ faced with an anxiety-inducing lack of control over what people say about their content. And nothing in the\
+            \ standard itself protects against conversations devolving into troll-hijacked chaos. The evolution of Web Annotation\
+            \ mirrors that of the Web itself, in miniature, facing off with some of the same big themes of identity, security,\
+            \ authority and freedom."
+    talkDay: 1
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/5GilJ41BWooEGwoaAKuGoc/d77dd19c65d4f2f68ec2e929fda73921/Lyza_Gardner_Web_Annotation.pdf"]
+    videoLinks: ["https://youtu.be/KFNeplO4aHk"]
+    speakerIds: [702]
+  - id: 920
+    name:
+      - {language: en, text: "EME? CDM? DRM? CENC? IDK!"}
+    shortDescription:
+      - {language: en, text: "We'll explore the technical details behind Encrypted Media Extension (EME), Content Decryption\
+            \ Modules (CDM) like Widevine, and the foundation of Web Digital Rights Management (DRM) by reverse engineering\
+            \ Netflix and building our own personal Netflix video player!"}
+    longDescription:
+      - language: en
+        text: "Once there was the < video/> tag, but content distributors decided it wasn't enough. They wanted more — more\
+            \ power, more protection, more control, more features. So, Encrypted Media Extensions were born and Digital Rights\
+            \ Management appeared in our browsers.\n\nIn this talk, we'll explore the technical details behind Encrypted Media\
+            \ Extension (EME), Content Decryption Modules (CDM) like Widevine, and the foundation of Web Digital Rights Management\
+            \ (DRM). How? By reverse engineering Netflix and building our own personal Netflix video player!"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Разбираемся с защитой веб-видео через реверс-инжиниринг Netflix:\
+            \ стриминг, скачивание, защита от пиратства, лицензирование и многое другое.* \n\nOnce there was the < video/>\
+            \ tag, but content distributors decided it wasn't enough. They wanted more — more power, more protection, more\
+            \ control, more features. So, Encrypted Media Extensions were born and Digital Rights Management appeared in our\
+            \ browsers.\n\nIn this talk, we'll explore the technical details behind Encrypted Media Extension (EME), Content\
+            \ Decryption Modules (CDM) like Widevine, and the foundation of Web Digital Rights Management (DRM). How? By reverse\
+            \ engineering Netflix and building our own personal Netflix video player!"
+    talkDay: 1
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/3cee4odqrCyuUqm6YYC8Ga/bf153bf0e98e15307326ecfbe225994f/Sebastian_Golasch_-_EME__CDM__DRM__CENC__IDK_.pdf"]
+    videoLinks: ["https://youtu.be/3Y3R_snaDDc"]
+    speakerIds: [690]
+  - id: 921
+    name:
+      - {language: en, text: "Generated REST API documentation in Node.js"}
+    shortDescription:
+      - {language: en, text: "Come and learn how to focus on developing your API without having to write any documentation\
+            \ for it."}
+    longDescription:
+      - {language: en, text: "It takes time to write a correct API documentation with Node.js. Some solutions exist like Swagger,\
+            \ OpenAPI, Postman, etc. Sebastien worked on a module that lets you write your REST API in Node.js without having\
+            \ to write any documentation, but still, you can, while developing your application, see how your API looks like\
+            \ and interact with it by a Postman collection generated automatically. Sebastien believes this example can show\
+            \ people that it’s possible to focus on developing your API without having to write any documentation for it if\
+            \ it’s well thought at the beginning."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Автор известен во Vue-сообществе. Является одним из созда\
+            телей фреймворка Nuxt.js, обладает большой экспертизой. \nДавайте поспорим, что вы слышали о Vue? А если так,\
+            \ то слышали о Nuxt.js - фреймворке для серверного рендеринга. Так вот, перед вами его автор.\nПрезентует свой\
+            \ моднейший, угарный в чаде кутежа турбо фреймворк для создания просто ломовейшего, тащем-то, фреймворка. Коти\
+            руем дико. Например.* \n\nIt takes time to write a correct API documentation with Node.js. Some solutions exist\
+            \ like Swagger, OpenAPI, Postman, etc. Sebastien worked on a module that lets you write your REST API in Node.js\
+            \ without having to write any documentation, but still, you can, while developing your application, see how your\
+            \ API looks like and interact with it by a Postman collection generated automatically. Sebastien believes this\
+            \ example can show people that it’s possible to focus on developing your API without having to write any documentation\
+            \ for it if it’s well thought at the beginning."
+    talkDay: 1
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3WwSxOUDnaKkiuyqKMoWsu/dcc1f463ed6856bbb2155f753dbe414e/Sebastien_Chopin_-_REST_API_documentation_in_Node.pdf"]
+    videoLinks: ["https://youtu.be/jgUHyW84Dpg"]
+    speakerIds: [712]
+  - id: 922
+    name:
+      - {language: en, text: "Reservoir dogs, season 2: React vs. Vue"}
+      - {language: ru, text: "Бешеные псы, сезон 2: React vs. Vue"}
+    shortDescription:
+      - {language: en, text: "We’ll look at React and Vue in order to understand what are the differences and similarities\
+            \ and who’s got a chance to come out on top in this fight."}
+      - {language: ru, text: "Посмотрим на React и Vue и поймём, чем они похожи, чем отличаются и кто же всё-таки победит\
+            \ в этой войне."}
+    longDescription:
+      - language: en
+        text: "\"Do you feel that smell? That’s frontend, son. Nothing else in this world smells like it.\n\nI like the smell\
+            \ of frontend in the morning. Once we were refactoring one feature for 12 hours in a row. And when it all finished…\
+            \  Well, there were no unchanged files left.\n\nOne day this war of frameworks will be over…\"\n\nHi, it’s us\
+            \ again! This time the experts Mr. Blue (Ilya Taratukhin) and Mr. Green (Evgeny Gusev) reach new heights: our\
+            \ good old star-spangled React tries to defend the border against the rapidly coming Vue. Explosions everywhere,\
+            \ frontenders lying around… Wait. This analogy has gone way too far. Let’s make it simple: we’ll look at two frameworks\
+            \ in order to understand what are the differences and similarities and who’s got a chance to come out on top in\
+            \ this fight."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Казалось бы, всем давно понятно, что React - лучший фрейм\
+            ворк... Возможно ли, что ему придётся подвинуться? Холивары уже давно не в моде, но Евгений и Илья живут духом\
+            \ старой школы, где ещё помнят, что такое честь офицера.* \n\n«Чувствуешь запах? Это фронтенд, сынок. Больше н\
+            ичто в мире не пахнет так.\n\nЯ люблю запах фронтенда поутру. Однажды мы рефакторили одну фичу двенадцать часо\
+            в подряд. И когда всё закончилось… Там уже не было ни одного неизменённого файла.\n\nКогда-нибудь эта война фр\
+            еймворков закончится…»\n\nДа, мы опять с вами! В этот раз эксперты мистер Синий (Илья Таратухин) и мистер Зелё\
+            ный (Евгений Гусев) берут штурмом новые высоты: наш старый знакомый звёздно-полосатый React пытается отстоять\
+            \ рубежи перед стремительно наступающим Vue. Кругом взрывы, фронтендеры тут и там… Так, стойте, эта аналогия з\
+            ашла слишком далеко. Давайте по-простому: посмотрим на два фреймворка и поймём, чем они похожи, чем отличаются\
+            \ и кто же всё-таки победит в этой войне?"
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/LHvxXKirOZg"]
+    speakerIds: [701, 714]
+  - id: 923
+    name:
+      - {language: en, text: "Acquiring skills"}
+      - {language: ru, text: "Обретение навыков"}
+    shortDescription:
+      - {language: en, text: "How to teach programmers the right way, who works more effectively with whom in a team, how\
+            \ to level up, the nature of arguments and hints."}
+      - {language: ru, text: "Как правильно обучать программистов, кто с кем эффективно работает в команде, как переходить\
+            \ на следующий уровень, природа споров и советов."}
+    longDescription:
+      - {language: en, text: "How people acquire new skills and what consequences for developers it causes. Five stages of\
+            \ leveling up: newbie, advanced, competent, specialist, expert. The basic moments: how to teach programmers the\
+            \ right way, who works more effectively with whom in a team, how to level up, the nature of arguments and hints."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Мы постоянно учимся: новые технологии, методологии, инстр\
+            ументы... Никита хочет поделиться с нами, как правильно это делать.* \n\nКак люди учатся новым навыкам и какие\
+            \ из этого следствия для программистов. Пять стадий прокачки: новичок, продвинутый, компетентный, специалист,\
+            \ эксперт. Основные моменты: как правильно обучать программистов, кто с кем эффективно работает в команде, как\
+            \ переходить на следующий уровень, природа споров и советов."
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/67BsqZskIEA0IsIc8sKKKo/33f797cddc362a5c89f25ee4bc46f66a/Nikita_Prokopov_Skill_Acquisition.pdf"]
+    videoLinks: ["https://youtu.be/f6LsU1zotPI"]
+    speakerIds: [705]
+  - id: 924
+    name:
+      - {language: en, text: "Tooling for a component library: rethinking"}
+      - {language: ru, text: "Каталог компонентов: переосмысление"}
+    shortDescription:
+      - {language: en, text: "We'll look at how to present components, demonstrate their possibilities, technical solutions\
+            \ for that, how to identify components, collection and binding of meta-information, knowledge base organization\
+            \ and many other challenging things."}
+      - {language: ru, text: "Расскажем, как представлять компоненты, демонстрировать их возможности, технические решения\
+            \ для этого, как идентифицировать компоненты, сбор и привязка метаинформации, организация базы знаний и многое\
+            \ другое."}
+    longDescription:
+      - language: en
+        text: "One day we started developing our own solution to browse a component library, view the different states of\
+            \ each component and so on. This talk is an answer to the question \"There are ready solutions, so why?\". We'll\
+            \ touch on the following topics:\n- How to present a component, show its functionality, what technical solutions\
+            \ is needed for that;\n- What functions may be useful to designers and developers;\n- How to identify components,\
+            \ to collect and attach a meta-information, building a knowledge base;\n- Usage data of components and the code\
+            \ ownership;\n- Going beyond the catalogue boundaries – integration with an internal services."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Пожалуй, почти не возможно найти человека, который бы глу\
+            бже Романа погружался в проблему изучаемого им вопроса. Basis.js, CSSO, CSSTree, rempl — очень интересные вещи\
+            , потенциал и глубина которых с первого раза скорее не видны до того, пока не попробуешь, но стоит попробовать\
+            \ или изучить детальнее - и они поражают. В этот раз Роман расскажет про переосмысление каталога компонентов.\
+            \ Это действительно мощно.* \n\nТак получилось, что мы разрабатываем свой каталог компонентов. Этот доклад — о\
+            твет на вопрос «Зачем, когда уже есть готовые решения?». Какие темы затронем:\n- как представлять компоненты,\
+            \ демонстрировать их возможности, технические решения для этого;\n- какие функции могут быть полезны дизайнера\
+            м и разработчикам;\n- как идентифицировать компоненты, сбор и привязка метаинформации, организация базы знаний\
+            ;\n- информация о местах использования компонентов и владении кодом;\n- выход за границы каталога и его «дружб\
+            а» с другими внутренними сервисами."
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/zZUbXAVV-HA"]
+    speakerIds: [685]
+  - id: 925
+    name:
+      - {language: en, text: "What JavaScript has for us in 2018?"}
+      - {language: ru, text: "Чего ждать от JavaScript в 2018 году?"}
+    shortDescription:
+      - {language: en, text: "The latest meeting of TC39 committee took place this January. The ES2018 specification was finally\
+            \ set. In this talk, we'll follow its steps."}
+      - {language: ru, text: "В январе прошел очередной митинг комитета TC39, на котором окончательно сформировалась специ\
+            фикация ES2018, по ее следам мы и пойдем."}
+    longDescription:
+      - {language: en, text: "The latest meeting of TC39 committee took place this January. The ES2018 specification was finally\
+            \ set. In this talk, we'll follow its steps."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Камо грядеши? Куда идёт мир JS и что нас ждёт в будущем?\
+            \ Вопрос без шуток серьёзный. Посмотрим на всё то новое, что уже добавлено в стандарт языка. Тем более докладч\
+            ик - главный член ПК HolyJS. (Это писал не я - Ж) (А кто? - М).* \n\nВ январе прошел очередной митинг комитета\
+            \ TC39, на котором окончательно сформировалась спецификация ES2018, по ее следам мы и пойдем."
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/SHKeaCFt4YMaIyAQ2GAeK/39e786dce1e6d95b7688a9a6888982df/ES2018.pdf"]
+    videoLinks: ["https://youtu.be/Hf0zHNYS4Fg"]
+    speakerIds: [716]
+  - id: 926
+    name:
+      - {language: en, text: "30: too much JavaScript"}
+      - {language: ru, text: "30: слишком много JavaScript"}
+    shortDescription:
+      - {language: en, text: "How to understand what is a necessary thing to learn in JavaScript and what is just hype, and\
+            \ how to structure information to master it as soon as possible."}
+      - {language: ru, text: "Как в JavaScript учить то, что нужно, а не хайпово, и как структурировать информацию для мак\
+            симально быстрого освоения."}
+    longDescription:
+      - language: en
+        text: "Our industry grows with a burst. Have you thought a couple of years ago that at the conference with JavaScript\
+            \ in its name we'll dive deep into AST, study inline assembler to get a better understanding of V8 and be interested\
+            \ in Rust (cause that's WebAssembly!)? This talk answers three questions Ilya is always being asked by his students:\n\
+            \n- How to understand what is a necessary thing to learn and what is just hype?\n- How to structure information\
+            \ to master it as soon as possible?\n- Which way to run?\n\nIlya hates abstract talks about spaceships sailing\
+            \ the universe. His goal is to make the talk's participants if not understand, what, how and when to learn in\
+            \ JavaScript, then at least to have a vision of how to get this understanding."
+      - language: ru
+        text: "«Мне 30, и я стар. Ок, на самом деле пока еще 29, и я super-star (по крайней мере так мне всегда говорила м\
+            оя мама, а разве она может быть неправа?), но уже сейчас я отчетливо вижу ограничения своего мозга по перерабо\
+            тке информации, восприятию нового контента и обучению».\n\nНаша индустрия растет взрывообразно. Думали ли вы п\
+            ару лет назад, что на конференции с JavaScript в названии мы будем погружаться в глубины AST, изучать ассембле\
+            рные вставки для лучшего понимания производительности V8 и интересоваться Rust (потому что WebAssembly же!)? Э\
+            тот доклад — ответ на три вопроса, которые задают Илье каждую неделю по несколько раз его студенты:\n\n- Как у\
+            чить то, что нужно, а не хайпово?\n- Как структурировать информацию для максимально быстрого освоения?\n- Куда\
+            \ бежать?\n\nИлья терпеть не может разговоры про космические корабли, бороздящие бескрайние просторы Большого\
+            \ театра. Его цель, чтобы после доклада каждый вышел если не с твердым пониманием, что, как и когда учить в JS,\
+            \ то хотя бы со знанием, как это понимание обрести."
+    talkDay: 2
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5atzdSm2BaQiiE4K8YSkyk/0223bac6e570274836e9b47ac9d148c9/Illya_Klymov_30_2.pdf"]
+    videoLinks: ["https://youtu.be/ZCQuIV4sftI"]
+    speakerIds: [264]
+  - id: 927
+    name:
+      - {language: en, text: "Bringing mobile web back to life"}
+    shortDescription:
+      - {language: en, text: "We'll share challenges, technologies and best practices we used in order to rebuild the whole\
+            \ mobile web experience for authenticated users in 11 weeks only!"}
+    longDescription:
+      - {language: en, text: "We rebuilt the whole mobile web experience for authenticated users in 11 weeks only! It looks\
+            \ and feels just like our native apps while maintaining the fast load times expected of mobile web. We used cutting\
+            \ edge technologies which led to a 40% increase in each of our core engagement metrics and up to 30% in time spent.\
+            \ But it was not all sunshine and rainbows! In this talk, we'll share challenges, technologies and best practices\
+            \ that we used for the new Mobile Website."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Честный опыт создания мобильного web-приложения, набор пр\
+            актик, не ограничивающийся PWA, с реальными метриками.* \n\nWe rebuilt the whole mobile web experience for authenticated\
+            \ users in 11 weeks only! It looks and feels just like our native apps while maintaining the fast load times expected\
+            \ of mobile web. We used cutting edge technologies which led to a 40% increase in each of our core engagement\
+            \ metrics and up to 30% in time spent. But it was not all sunshine and rainbows! In this talk, we'll share challenges,\
+            \ technologies and best practices that we used for the new Mobile Website."
+    talkDay: 2
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/6LFlknbgTCgSW62oI62oOk/65402561639582669a23c372a183435b/Imad_Elyafi_Bringing_Mobile_Web_Back_to_Life.pdf"]
+    videoLinks: ["https://youtu.be/iQLwbBOYabo"]
+    speakerIds: [704]
+  - id: 928
+    name:
+      - {language: en, text: "Make frontend \"backend\" again"}
+      - {language: ru, text: "Make frontend «backend» again"}
+    shortDescription:
+      - {language: en, text: "We’ll try to make sense out of the sources of the essential and random complexity of interface\
+            \ development. Using ClojureScript & Reagent & Re-frame stack as an example, we’ll look at what can be done in\
+            \ here."}
+      - {language: ru, text: "Мы попробуем разобраться в источниках существенной и случайной сложности разработки мордочек\
+            . И на примере стека ClojureScript & Reagent & Re-frame посмотрим, как можно хоть что-то с этим сделать."}
+    longDescription:
+      - {language: en, text: "User interface effective development still means pain and loss, even despite the fact that now\
+            \ we have React and Angular. It’s a long process, the result is unreliable and unsatisfying. In this talk, we’\
+            ll try to make sense out of the sources of the essential and random complexity of interface development. Using\
+            \ ClojureScript & Reagent & Re-frame stack as an example, we’ll look at what can be done in here."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Приверженец динамической типизации и функционального прог\
+            раммирования.  Как представляется сам докладчик - «Художественный руководитель Health Samurai», что хорошо отр\
+            ажает философский и творческий взгляд докладчика на подход к разработке.*\n\nЭффективная разработка интерфейса\
+            \ пользователя до сих пор, даже при наличии современных реактов и ангуляров, — это боль и потери. Делается дол\
+            го, результат ненадежен и неудовлетворителен. В докладе мы попробуем разобраться в источниках существенной и с\
+            лучайной сложности разработки мордочек. И на примере стека ClojureScript & Reagent & Re-frame посмотрим, как м\
+            ожно хоть что-то с этим сделать."
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/XBfi3Q74BnE"]
+    speakerIds: [379]
+  - id: 929
+    name:
+      - {language: en, text: "Dirty little tricks from the dark corners of eCommerce"}
+    shortDescription:
+      - {language: en, text: "In this talk, Vitaly will be covering a few design patterns to increase conversion by improving\
+            \ clarity and consistency of the eCommerce experience and sparkling a little bit of delight here and there. You’\
+            ll walk away with hands-on tips and techniques for crafting better eCommerce experience right away."}
+    longDescription:
+      - language: en
+        text: "When designing eCommerce experiences, we tend to prioritize what we want to say rather than how it's actually\
+            \ said. It's not easy because there are literally hundreds of things that can go wrong: from selecting a product,\
+            \ to adding an item to the cart, to getting that final confirmation email, to actually receiving the purchased\
+            \ item. Every step along the way has to be meticulously designed with an eye for error and potential misunderstandings.\
+            \ It affects interaction with filters as much as displaying shipping options or sending a shopping cart abandonment\
+            \ email.\n\nIn this talk, Vitaly will be covering a few design patterns to increase conversion by improving clarity\
+            \ and consistency of the eCommerce experience and sparkling a little bit of delight here and there. You’ll walk\
+            \ away with hands-on tips and techniques for crafting better eCommerce experience right away."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Виталий - человек, который рассказывает просто о важном.\
+            \ Соучередитель Smashing Magazine, обладает большой экспертизой в глобальных вещах фронтенд разработки, UX, ди\
+            зайна.* \n\nWhen designing eCommerce experiences, we tend to prioritize what we want to say rather than how it's\
+            \ actually said. It's not easy because there are literally hundreds of things that can go wrong: from selecting\
+            \ a product, to adding an item to the cart, to getting that final confirmation email, to actually receiving the\
+            \ purchased item. Every step along the way has to be meticulously designed with an eye for error and potential\
+            \ misunderstandings. It affects interaction with filters as much as displaying shipping options or sending a shopping\
+            \ cart abandonment email.\n\nIn this talk, Vitaly will be covering a few design patterns to increase conversion\
+            \ by improving clarity and consistency of the eCommerce experience and sparkling a little bit of delight here\
+            \ and there. You’ll walk away with hands-on tips and techniques for crafting better eCommerce experience right\
+            \ away."
+    talkDay: 2
+    track: 2
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/2sw2xzK7c8qeW4UeW6ugsC/c12e156572aaf355308dcd5d0a89e3f8/holy-dirty-little-tricks.pdf"]
+    videoLinks: ["https://youtu.be/JZQsvPXMuJM"]
+    speakerIds: [260]
+  - id: 930
+    name:
+      - {language: en, text: "Working with JavaScript abstract syntax trees"}
+      - {language: ru, text: "Работаем с абстрактными синтаксическими деревьями JavaScript"}
+    shortDescription:
+      - {language: en, text: "In this talk, we will investigate approaches to analyzing and transforming JavaScript code via\
+            \ parsing it and working with the resulting Abstract Syntax Trees. We will use Babel and ESLint in the examples."}
+      - {language: ru, text: "В этом выступлении мы рассмотрим, как AST помогают анализировать и изменять исходный JavaScript-к\
+            од. В качестве примеров возьмем Babel и ESLint."}
+    longDescription:
+      - {language: en, text: "In this talk, we will investigate approaches to analyzing and transforming JavaScript code via\
+            \ parsing it and working with the resulting Abstract Syntax Trees. We will use Babel and ESLint in the examples."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Зачем парсить свой код? Например, для того, чтобы найти з\
+            абытый console.log перед коммитом. А что делать, если вам надо поменять сигнатуру функции в сотнях вхождений в\
+            \ коде? Справятся ли тут регулярные выражения? Кирилл покажет, какие возможности перед разработчиком открывают\
+            \ абстрактные синтаксические деревья.* \n\nВ этом выступлении мы рассмотрим, как AST помогают анализировать и\
+            \ изменять исходный JavaScript-код. В качестве примеров возьмем Babel и ESLint."
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/ILSpvViUlPU"]
+    speakerIds: [679]
+  - id: 931
+    name:
+      - {language: en, text: "Evolution of TypeScript: curiouser and curiouser"}
+      - {language: ru, text: "Эволюция TypeScript: всё чудесатее и чудесатее"}
+    shortDescription:
+      - {language: en, text: "We'll look at the evolution of the TypeScript types system: where it all started, what's wrong\
+            \ with TypeScript types, the possibility to \"inject\" the type information into runtime, the main difference\
+            \ between TypeScript and other languages types and what will happen in the future."}
+      - {language: ru, text: "Обсудим эволюцию типовой системы TypeScript: с чего всё начиналось, что не так с типами в TypeScript,\
+            \ можно ли «протянуть» типовую информацию в runtime, чем типы TypeScript отличаются от типов в других языках п\
+            рограммирования и чего ждать в будущем."}
+    longDescription:
+      - language: en
+        text: "This talk is about the evolution of the TypeScript types system. \nThe main questions we'll try to answer:\n\
+            - where it all started;\n- what's wrong with TypeScript types;\n- the possibility to \"inject\" the type information\
+            \ into runtime;\n- the main difference between TypeScript and other languages types;\n- what will happen in the\
+            \ future."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Продолжаем вместе с JetBrains погружаться в тонкости TypeScript.\
+            \ Взгляд со стороны разработчика IDE.* \n\nВ докладе мы обсудим эволюцию типовой системы TypeScript.\nОсновные\
+            \ вопросы, на которые постараемся ответить:\n- с чего всё началось;\n- что не так с типами в TypeScript;\n- мо\
+            жно ли «протянуть» типовую информацию в runtime;\n- чем типы TypeScript отличаются от типов в других языках пр\
+            ограммирования;\n- чего ждать в будущем."
+    talkDay: 2
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/745Yp0RLkAm6gcg6m6kMwE/4df2f247de5926d2be5b277715122a4f/Andrey_Starovoyt_Evolution_of_TypeScript.pdf"]
+    videoLinks: ["https://youtu.be/srqqwuqzYMM"]
+    speakerIds: [706]
+  - id: 932
+    name:
+      - {language: en, text: "Yew — Rust&WebAssembly — frontend framework"}
+      - {language: ru, text: "Yew — Rust&WebAssembly — фреймворк для фронтенда"}
+    shortDescription:
+      - {language: en, text: "We'll look at how Yew framework was created, how to create a framework without a garbage collector,\
+            \ how to effectively provide immutable, without any need to copy the state due to the rules of Rust data ownership\
+            \ and what the peculiarities while translating Rust to WebAssembly are."}
+      - {language: ru, text: "Поговорим о том, как разрабатывался фреймворк Yew, как можно создать фреймворк без сборщика\
+            \ мусора, эффективно обеспечить immutable, без необходимости копирования состояния благодаря правилам владения\
+            \ данными Rust и какие есть особенности при трансляции Rust в WebAssembly."}
+    longDescription:
+      - {language: en, text: "In this talk, we'll look at how Yew framework (https://github.com/DenisKolodin/yew), the analogue\
+            \ of React and Elm, was created. It is written on Rust and compiles into an honest WebAssembly: how to create\
+            \ a framework without a garbage collector, how to effectively provide immutable, without any need to copy the\
+            \ state due to the rules of Rust data ownership and what the peculiarities while translating Rust to WebAssembly\
+            \ are."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Интересный опыт создания фрейморка на Rust, который компи\
+            лируется в WASM, чем-то похожий на React.* \n\nВ докладе будет рассказано, как разрабатывался фреймворк Yew (https://github.com/DenisKolodin/yew)\
+            \ — аналог React и Elm, написанный полностью на Rust и компилируемый в честный WebAssembly: как можно создать\
+            \ фреймворк без сборщика мусора, эффективно обеспечить immutable, без необходимости копирования состояния благ\
+            одаря правилам владения данными Rust и какие есть особенности при трансляции Rust в WebAssembly."
+    talkDay: 2
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3bjvSmSNfqqcQ6GEImg6ik/2e0983d91ebb41b653cd18f71eb3efe0/Yew_HolyJS_v9.pdf"]
+    videoLinks: ["https://youtu.be/OqFOXMIwzTc"]
+    speakerIds: [719]
+  - id: 933
+    name:
+      - {language: en, text: "Quantum mechanics of calculations"}
+      - {language: ru, text: "Квантовая механика вычислений"}
+    shortDescription:
+      - {language: en, text: "How to achieve 60 fps without turning the code into spaghetti, in case the client has a slow\
+            \ device, and you need to do a lot of hard work in the UI-stream? When you have a server that calculates the response\
+            \ to the request from 1 ms to 10 s, how to make sure that long tasks don't block fast tasks, without creating\
+            \ a thread for each request? Join this talk to learn the answers to these (and many other) questions ."}
+      - {language: ru, text: "Как добиться 60 кадров в секунду, не превращая код в спагетти, если у клиента медленный дева\
+            йс, а вам нужно делать кучу тяжёлых действий в UI-потоке? Как сделать так, чтобы долгие задачи не блокировали\
+            \ быстрые, не создавая по потоку на каждый запрос, если у вас сервер, вычисляющий ответ на запрос от 1 мс до 10\
+            \ с? Ответы на эти и многие другие вопросы в этом докладе."}
+    longDescription:
+      - language: en
+        text: "The client has a slow device, and you need to do a lot of hard work in the UI-stream. \n- How to achieve 60\
+            \ fps without turning the code into spaghetti? \n- How to cancel already started calculations when they need to\
+            \ be repeated with up-to-date data?\n\nYou have a server that calculates the response to the request from 1 ms\
+            \ to 10 s. \n- How to make sure that long tasks don't block fast tasks, without creating a thread for each request?\
+            \ \n- How to cancel already started calculations when the client has disconnected?\n\nSpoiler: stackfull fibers\
+            \ will help us to give each task a processor time by quants up to 16 ms."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Отсутсвие полноценной многопоточности и 16ms на кадр заст\
+            авляют JS разработчиков применять и придумывать удивительно нетривиальные решения, порой основательно меняющие\
+            \ многие сложившиеся практики. Как, почему и когда стоит прерывать работу главного треда JS, в своём докладе г\
+            лубоко и подробно расскажет автор достаточно известного фреймворка $mol — Дмитрий Карловский.* \n\nУ клиента м\
+            едленный девайс, а вам нужно делать кучу тяжёлых действий в UI-потоке. \n- Как добиться 60 кадров в секунду, н\
+            е превращая код в спагетти? \n- Как отменять уже начатые вычисления, когда их нужно повторить с более актуальн\
+            ыми данными?\n\nУ вас сервер, вычисляющий ответ на запрос от 1 мс до 10 с. \n- Как сделать так, чтобы долгие з\
+            адачи не блокировали быстрые, не создавая по потоку на каждый запрос? \n- Как отменять уже начатые вычисления\
+            , когда клиент отключился?\n\nСпойлер: stackfull fibers помогут нам выдавать каждой задаче процессорное время\
+            \ квантами по 16 мс."
+    talkDay: 2
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/2BJu_6OsO08"]
+    speakerIds: [717]
+  - id: 934
+    name:
+      - {language: en, text: "Tied to Mongoose: virtuals, nested schemas, discriminators"}
+      - {language: ru, text: "Тонкости Mongoose: виртуальные поля, вложенные схемы, дискриминаторы"}
+    shortDescription:
+      - {language: en, text: "You'll get acquainted with the way Mongoose.js works with life cycles of alike yet diverse data\
+            \ structures. We'll look at virtuals, nested schemas, discriminators."}
+      - {language: ru, text: "Познакомим слушателей с заложенными в Mongoose.js принципами работы с жизненными циклами одн\
+            ообразных, но разнородных структур данных. Поговорим о virtuals, затем о вложенных схемах и закончим всё дискр\
+            иминаторами."}
+    longDescription:
+      - language: en
+        text: "You'll get acquainted with the way Mongoose.js works with life cycles of alike yet diverse data structures.\n\
+            \nMongoose basics:\n- Basic principles and work approaches;\n- Beginners' typical mistakes.\n\nWhy and how:\n\
+            - Virtual fields and methods;\n- Nested schemas;\n- Discriminators."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Виктор использует MongoDB и Mongoose для хранения данных\
+            \ более 1 миллиона сайтов в продакшене. Он расскажет, как выжать все возможности из Mongoose и когда их стоит\
+            \ применять, чтобы с вашими данными всё было красиво, а ODM была максимально функциональна. Также, Виктор расс\
+            кажет про типичные ошибки и проблемы при работе с Mongoose.* \n\nПознакомим слушателей с заложенными в Mongoose.js\
+            \ принципами работы с жизненными циклами однообразных, но разнородных структур данных.\n\nОсновы Mongoose:\n-\
+            \ Базовые принципы и подходы к работе; \n- Типичные ошибки начинающих.\n\nЗачем и как:\n- Виртуальные поля и в\
+            иртуальные методы;\n- Вложенные схемы;\n- Дискриминаторы."
+    talkDay: 2
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/Zc3CDFUfHUA"]
+    speakerIds: [698]
+  - id: 935
+    name:
+      - {language: en, text: "Building Alexa Skills with Node.js"}
+    shortDescription:
+      - {language: en, text: "We will run you through writing, locally testing, and properly deploying a basic Node.js Skill,\
+            \ along with giving you pointers and tips on design patterns that work well for Skills."}
+    longDescription:
+      - {language: en, text: "Alexa is an intelligent personal assistant developed by Amazon used in devices such as the Echo\
+            \ as well as third party devices such as Sonos. AI IS taking over the world and Amazon is at the forefront. Developers\
+            \ can build apps or “Skills” for Alexa using Node.js. The Alexa Skill ecosystem is extremely new and immature.\
+            \ I will run you through writing, locally testing, and properly deploying a basic Node.js Skill. I will also give\
+            \ you pointers and tips on design patterns that work well for Skills."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Устройства, управляемые голосом, становятся интереснее и\
+            \ функциональнее год от года. Как же попробовать сделать какое-то полезное приложение для них, зная JavaScript?\
+            \ Тэйлор расскажет, как легко и просто сделать функциональное приложение для Amazon Echo на Node.js. В дополне\
+            ние к этому в докладе будет хорошо рассмотрен вопрос тестирования приложений для Amazon Echo.* \n\nAlexa is an\
+            \ intelligent personal assistant developed by Amazon used in devices such as the Echo as well as third party devices\
+            \ such as Sonos. AI IS taking over the world and Amazon is at the forefront. Developers can build apps or “Skills”\
+            \ for Alexa using Node.js. The Alexa Skill ecosystem is extremely new and immature. I will run you through writing,\
+            \ locally testing, and properly deploying a basic Node.js Skill. I will also give you pointers and tips on design\
+            \ patterns that work well for Skills."
+    talkDay: 2
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/7yTIdML80EGqkS4o0CCA4q/889dca16850764e14bcdec7043a24d3f/building-alexa-skills-with-node_-_Taylor_Lovett.pdf"]
+    videoLinks: ["https://youtu.be/4pJ8ykDsT0I"]
+    speakerIds: [713]
+  - id: 936
+    name:
+      - {language: en, text: "Porting JS on Elbrus"}
+      - {language: ru, text: "Портирование JS на Эльбрус"}
+    shortDescription:
+      - {language: en, text: "We'll get acquainted with the internal structure of virtual JS machines, understand how high-level\
+            \ JS code is transformed into binary code, what issues we encountered while porting these VMs. The talk will be\
+            \ useful for anyone who wants to learn something new about Russian technologies."}
+      - {language: ru, text: "Познакомимся с внутренним устройством виртуальных JS-машин, поймем, как JS преобразуется в б\
+            инарный код, узнаем, с какими задачами придется столкнуться при портировании виртуальных машин и как с ними сп\
+            равлялись мы. Доклад будет полезен всем, кому интересно развитие российских технологий."}
+    longDescription:
+      - language: en
+        text: "Elbrus comes back, this time with the talk on Javascript. We in Unipro haven’t sat idly and ported SpiderMonkey,\
+            \ V8 and even NodeJS for a year and a half.\n\nWe'll touch on the following topics:\n- Elbrus and its specifics;\n\
+            - caveats of porting and optimizing V8 FullCodegen and SpiderMonkey Baseline;\n- reusing the code from Java for\
+            \ optimizing Ion compiler in SpiderMonkey; \n- implementation of deoptimization.\n\nThat's the first talk in HolyJS\
+            \ in which not only will you learn about Chrome and V8, but about Firefox as well. This talk will be useful for\
+            \ everyone who wants to get acquainted with the internal structure of virtual JS machines, understand how high-level\
+            \ JS code is transformed into binary code, and what issues we encountered while porting these VMs. The talk will\
+            \ be useful for anyone who wants to learn something new about Russian technologies."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__ \n> \n> *Дмитрий и Владимир поделятся уникальным опытом портирован\
+            ия Node.js платформы на архитектуру VLIW / EPIC. Мы услышим про структуру и особенности V8, SpiderMonkey, пого\
+            ворим о деоптимизации и рассмотрим, как движки работают с регистрами. Услышим о новой надежде HolyJit. Хмм… Ин\
+            тересно, в честь какой конференции ребята из Mozilla выбрали название движка? :)* \n\nЭльбрус возвращается, те\
+            перь с докладом про JavaScript. Мы в Unipro не сидели сложа руки и за прошедшие полтора года портировали SpiderMonkey,\
+            \ V8 и даже NodeJS.\n\nВ докладе мы расскажем про:\n- Эльбрус и его особенности;\n- подводные камни портирован\
+            ия SpiderMonkey Baseline и V8 FullCodegen;\n- переиспользование кода из Java для реализации оптимизирующего ко\
+            мпилятора, SpiderMonkey Ion;\n- реализацию деоптимизации.\n\nПервый доклад на HolyJS, в котором расскажем не т\
+            олько про Chrome и V8, но еще и про Firefox! Доклад будет полезен всем, кто хочет познакомиться с внутренним у\
+            стройством виртуальных JS-машин, понять, как JS преобразуется в бинарный код, и узнать, с какими задачами прид\
+            ется столкнуться при портировании виртуальных машин и как с ними справлялись мы. И конечно, доклад будет полез\
+            ен всем, кому интересно развитие российских технологий."
+    talkDay: 2
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1nWkRMc3fukKg84oOaeI0W/a708d7b9a340fb861d0433e4e238439e/ElbrusAnufrienkoBezhetskov.pdf"]
+    videoLinks: ["https://youtu.be/mPCTpCJ26zs"]
+    speakerIds: [709, 707]

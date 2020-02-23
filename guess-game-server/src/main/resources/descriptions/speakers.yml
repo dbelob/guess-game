@@ -2653,18 +2653,12 @@ speakers:
     company:
       - {language: en, text: "Smashing Magazine"}
     bio:
-      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn't like to give in easily. Originally from\
+      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn’t like to give in easily. Originally from\
             \ Minsk, Belarus, he studied computer science and mathematics in Germany where he has discovered his passion for\
             \ typography, writing and design. After working as a freelancing designer and developer for 6 years, he co-founded\
-            \ Smashing Magazine, one of the largest online magazines dedicated to web design and development. Vitaly is the\
-            \ writer, co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine\
-            \ in the lovely city of Germany, Freiburg."}
-      - {language: ru, text: "Виталий Фридман любит красивый контент и никогда просто так не сдаётся. Родом из Минска, Бел\
-            арусь, Виталий изучал информатику и математику в Германии, где обнаружил интерес к типографии, письму и дизайн\
-            у. Проработав в качестве фрилансера дизайнером и разработчиком в течение шести лет, он основал Smashing Magazine,\
-            \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
-            \ Books. В настоящее время занимает позицию главного редактора Smashing Magazine в прекрасном городе Фрайбург\
-            , Германия."}
+            \ Smashing Magazine, one of the largest online magazines dedicated to Web design and development. Vitaly is writer,\
+            \ co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine in\
+            \ the lovely city of Germany, Freiburg."}
     twitter: vitalyf
   - id: 261
     fileName: 0261.jpg
@@ -3751,17 +3745,17 @@ speakers:
   - id: 379
     fileName: 0379.jpg
     name:
-      - {language: en, text: "Nikolay Ryzhikov"}
+      - {language: en, text: "Nicolay Ryzhikov"}
       - {language: ru, text: "Николай Рыжиков"}
     company:
       - {language: en, text: "Health Samurai"}
     bio:
-      - {language: en, text: "Likes Clojure, PostgreSQL, open source code and open standards, flexible and careful approach\
-            \ in development. Actively participates in St. Petersburg communities FProg and Piter-United and Internet community\
-            \ Clojurians. Most of his code and almost all his presentations can be found on [GitHub](https://github.com/niquola)."}
-      - {language: ru, text: "Любит Clojure, PostgreSQL, открытый код и открытые стандарты, гибкий и бережливый подход к р\
-            азработке. Активно участвует в питерских сообществах FProg и Piter-United и интернет-сообществе Clojurians. Зн\
-            ачительную часть производимого Николаем кода и почти все его презентации можно найти на [GitHub](https://github.com/niquola)."}
+      - {language: en, text: "Loves functional programming, Clojure, PostgreSQL, Health IT and open standards. Shares Agile\
+            \ values. Is the CTO of HealthSamurai, Clojure and FProg communities activist, a member of FHIR standard development\
+            \ committee."}
+      - {language: ru, text: "Любит программирование, в частности, функциональное, Clojure, PostgreSQL, Health IT и открыт\
+            ые стандарты. Разделяет ценности Agile. CTO HealthSamurai, активист Clojure и FProg-сообществ, член комитета п\
+            о разработке стандарта FHIR."}
     twitter: niquola
     gitHub: niquola
   - id: 380
@@ -6789,6 +6783,19 @@ speakers:
     name:
       - {language: en, text: "Marina Mironovich"}
       - {language: ru, text: "Марина Миронович"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: en, text: "Lead software engineer in EPAM Systems defiantly living in Los Angeles. Currently in teleportation\
+            \ to a Solution Architecture role. As part of that she leads a few projects for data science department, and,\
+            \ in spite of a good weather, spends her weekends studying online courses. She has a dream to write a control\
+            \ module for a space rocket on JS."}
+      - {language: ru, text: "Ведущий разработчик в EPAM Systems, бессовестно живущая в Лос Анджелесе. В текущий момент в\
+            \ процессе телепортации в Solution Architect роль. Как часть этого ведет несколько проектов для data science о\
+            тдела и, не смотря на хорошую погоду, просиживает выходные за онлайн курсами. Мечтает написать модуль управлен\
+            ия космической ракетой на JS."}
+    twitter: obnoxious_mari
+    gitHub: Marina-Miranovich
   - id: 665
     fileName: 0665.jpg
     name:
@@ -6870,6 +6877,17 @@ speakers:
     name:
       - {language: en, text: "Kirill Cherkashin"}
       - {language: ru, text: "Кирилл Черкашин"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Originally from Moscow, now lives in NYC and works for Firebase. Kirill teaches Angular at Google\
+            \ and all over the world and organizes the largest Angular meet-up in the world — AngularNYC (as well as VueNYC\
+            \ and ReactNYC). When not programming, he enjoys dancing tango, reading books and having good conversations."}
+      - {language: ru, text: "Родился в Москве, сейчас живет в Нью-Йорке и работает в Firebase. Обучает Angular не только\
+            \ в Google, но и во всем мире, организует самый большой Angular-митап в мире — AngularNYC (а также VueNYC и ReactNYC).\
+            \ В свободное от программирования время увлекается танго, книгами и приятными беседами."}
+    twitter: kirjs
+    gitHub: kirjs
   - id: 680
     fileName: 0680.jpg
     name:
@@ -6960,6 +6978,17 @@ speakers:
     fileName: 0690.jpg
     name:
       - {language: en, text: "Sebastian Golasch"}
+    company:
+      - {language: en, text: "Deutsche Telekom"}
+    bio:
+      - language: en
+        text: "Sebastian works as a Specialist Senior Manager Software Developer at Deutsche Telekom. After some time developing\
+            \ backend applications with Java and PHP he became a citizen of the JavaScript world. Recently he's getting his\
+            \ hands dirty with Python and Rust. For the last seven years Sebastian tries to improve our lives, working on\
+            \ Deutsche Telekom's Smart Home platform Qivicon.\n\nFamous last words: \"If I would've wanted to work in 'Enterprise',\
+            \ I'd have joined Starfleet…\""
+    twitter: asciidisco
+    gitHub: asciidisco
   - id: 691
     fileName: 0691.jpg
     name:
@@ -6970,6 +6999,25 @@ speakers:
     name:
       - {language: en, text: "Dmitry Patsura"}
       - {language: ru, text: "Дмитрий Пацура"}
+    company:
+      - {language: en, text: LOWL}
+    bio:
+      - language: en
+        text: "Developer with 10 years of experience, developed a lot of projected in open source, from a static analyzer\
+            \ — PHPSA, to the TypeScript compiler called StaticScript. Leading the most obscure podcast in the entire frontend\
+            \ — [UnderJS](https://underjs.ru \"UnderJS\")\n\nRelated open source:\n- [PHPSA](https://github.com/ovr/phpsa)\
+            \ — static analyzer on PHP for PHP;\n- [GHubber](http://github.com/ovr/ghubber) — mobile client for Github powered\
+            \ by React Native;\n- [StaticScript](https://github.com/ovr/StaticScript) — language on top of TypeScript as frontend,\
+            \ and LLVM framework as backend. \n\nDmitry also was a contributor to Zephir Language & Phalcon framework."
+      - language: ru
+        text: "Разработчик, 10 лет опыта, писал множество проектов в open-source, начиная от статического анализатора, зак\
+            анчивая компилятором TypeScript. Ведущий самого безызвестного подкаста во всем frontend — [UnderJS](https://underjs.ru\
+            \ \"UnderJS\").\n\nRelated open source:\n- [PHPSA](https://github.com/ovr/phpsa) — статический анализатор на PHP\
+            \ для PHP;\n- [GHubber](http://github.com/ovr/ghubber) — мобильный клиент для GitHub на React Native;\n- [StaticScript](https://github.com/ovr/StaticScript)\
+            \ — язык программирования, использующий LLVM как бэкенд и typescript как фронтенд.\n\nКроме того, Дмитрий явля\
+            лся контрибьютором в Zephir Language & Phalcon framework."
+    twitter: ovrweb
+    gitHub: ovr
   - id: 693
     fileName: 0693.jpg
     name:
@@ -7005,6 +7053,18 @@ speakers:
     name:
       - {language: en, text: "Victor Vershanskij"}
       - {language: ru, text: "Виктор Вершанский"}
+    company:
+      - {language: en, text: "uKit Group"}
+    bio:
+      - {language: en, text: "Developer Advocate at [uKit Group](https://ukit.group/en): [uKit](https://ukit.com) and [uLanding](https://ulanding.io/en).\
+            \ Operation Team consultant developer: Data Layer. Tech Lead of Domain Selling team. Former university lecturer.\
+            \ Former Project Manager and Systems Analyst. JavaScript [ spicy ] practice user and Evangelist: team-renowned\
+            \ initiator of progressive solutions and special architectural approaches. Musician, dreamer."}
+      - {language: ru, text: "Developer Advocate в [uKit Group](https://ukit.group/): [uKit](https://ukit.com/ru) и [uLanding](https://ulanding.io/).\
+            \ Operation Team консультант-разработчик: Data Layer. Tech Lead команды управления и продажи доменных имён. Бы\
+            вший преподаватель университета по экономике IT-инноваций, PM и системный аналитик. Признанный командой зачина\
+            тель прогрессивных решений и специальных архитектурных подходов. Музыкант, мечтатель."}
+    twitter: went_out
   - id: 699
     fileName: 0699.jpg
     name:
@@ -7038,11 +7098,34 @@ speakers:
     fileName: 0702.jpg
     name:
       - {language: en, text: "Lyza Danger Gardner"}
+    company:
+      - {language: en, text: hypothes.is}
+    bio:
+      - language: en
+        text: "Lyza likes figuring out how to do things. In turn, she likes to teach others how to do new things, too. Writer\
+            \ for O’Reilly, A List Apart, Smashing Magazine, NET Magazine and co-founder of Cloud Four, Lyza advocates for\
+            \ elegant standards, education and compassion in pursuit of the best possible future Web. Building on over 20\
+            \ years of web experience, Lyza’s current focuses include JavaScript-powered IoT, platform standards stewardship,\
+            \ Web APIs and progressive web applications. Her latest book is JavaScript on Things: A Web Developer’s Introduction\
+            \ to Electronics (Manning).\n\nAs a counterpoint to this futuristic vantage, she lives in the forest in Vermont\
+            \ and enjoys anachronistic hobbies. She reads and reads and reads."
+    twitter: lyzadanger
   - id: 703
     fileName: 0703.jpg
     name:
-      - {language: en, text: "Maksim Yuzva"}
+      - {language: en, text: "Maks Yuzva"}
       - {language: ru, text: "Максим Юзва"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: en, text: "Frontend team lead, hiring and resource manager at EPAM Systems. Organizer of FrontSpot community,\
+            \ often hangs out with BeerJS. Trains developers to negotiate. Looks at development from a different angle and\
+            \ gives talks about it."}
+      - language: ru
+        text: "Фронтенд-тимлид, нанимающий и ресурсный менеджер в EPAM Systems. \nОрганизатор сообщества FrontSpot и завсе\
+            гдатай BeerJS. \nТренирует разработчиков вести переговоры. \nВидит разработку с другой стороны, о чём и расска\
+            зывает."
+    twitter: MaksYu
   - id: 704
     fileName: 0704.jpg
     name:
@@ -7076,11 +7159,26 @@ speakers:
     name:
       - {language: en, text: "Andrey Starovoyt"}
       - {language: ru, text: "Андрей Старовойт"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "I am a part of the WebStorm IDE team last four years. I am working on the IDE support for TypeScript,\
+            \ JavaScript, JSX and some JS frameworks."}
+      - {language: ru, text: "Я разработчик в команде WebStorm. Последние 4 года я занимаюсь поддержкой в IDE TypeScript,\
+            \ JavaScript, JSX и других JS-технологий."}
+    twitter: anstarovoyt
   - id: 707
     fileName: 0707.jpg
     name:
       - {language: en, text: "Vladimir Anufrienko"}
       - {language: ru, text: "Владимир Ануфриенко"}
+    company:
+      - {language: en, text: Unipro}
+    bio:
+      - {language: en, text: "Software engineer at Unipro, student of the physics department of Novosibirsk State University.\
+            \ Most of the time have been working on porting JavaScript for Elbrus."}
+      - {language: ru, text: "Инженер-программист в компании Унипро, студент физического факультета Новосибирского государ\
+            ственного университета. Большую часть времени работал над портированием JavaScript на Эльбрус."}
   - id: 708
     fileName: 0708.jpg
     name:
@@ -7098,13 +7196,31 @@ speakers:
   - id: 709
     fileName: 0709.jpg
     name:
-      - {language: en, text: "Dmitry Bezhetskov"}
+      - {language: en, text: "Dmitry Bezheckov"}
       - {language: ru, text: "Дмитрий Бежецков"}
+    company:
+      - {language: en, text: igalia}
+    bio:
+      - {language: en, text: "Dmitry was a software engineer at Unipro. All his career has worked in virtual machines area,\
+            \ from Java for Intel to JavaScript for Elbrus. In his free time teaches advanced C++ in CSC centre."}
+      - {language: ru, text: "Работал инженером-программистом в компании Unipro. Всю свою карьеру занимается разработкой в\
+            иртуальных машин от Java под Intel до JavaScript на Эльбрусе. В свободное время преподает advanced C++ в CSC-ц\
+            ентре."}
   - id: 710
     fileName: 0710.jpg
     name:
       - {language: en, text: "Dmitry Makhnev"}
       - {language: ru, text: "Дмитрий Махнёв"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: en, text: "Develops m.ok.ru. Is into web development for more than 8 years. Often writes HTML on Java.\
+            \ Loves good talks, Dadaism, tests and Dart."}
+      - {language: ru, text: "Разработчик m.ok.ru. Более 8 лет в веб-разработке. Часто пишет HTML на Java. Любит хорошие д\
+            оклады, дадаизм, тесты и Dart."}
+    twitter: DmitryMakhnev
+    gitHub: DmitryMakhnev
   - id: 711
     fileName: 0711.jpg
     name:
@@ -7124,45 +7240,132 @@ speakers:
     fileName: 0712.jpg
     name:
       - {language: en, text: "Sebastien Chopin Atinux"}
+    company:
+      - {language: en, text: ORION}
+    bio:
+      - {language: en, text: "Web developer since the age of 14. Has been using Node.js for the last 7 years and since then\
+            \ mostly writes JavaScript. Co-founded Nuxt.js to make universal application an easy task."}
+    twitter: Atinux
+    gitHub: Atinux
   - id: 713
     fileName: 0713.jpg
     name:
       - {language: en, text: "Taylor Lovett"}
+    company:
+      - {language: en, text: "10up Inc"}
+    bio:
+      - {language: en, text: "Taylor Lovett is the Vice President of Engineering at 10up, one of the biggest WordPress centric\
+            \ agencies in the world. Having been involved with WordPress since 2007, he is the creator of ElasticPress, contributed\
+            \ to WordPress core, authored popular plugins (downloaded over a million times), and spoken at many conferences\
+            \ across multiple continents. He is a lover of all things open-source. Other than developing web applications,\
+            \ Taylor is a lover of music. He enjoys listening to blues and jazz music as well as playing acoustic fingerstyle\
+            \ guitar."}
+    twitter: tlovett12
+    gitHub: tlovett1
   - id: 714
     fileName: 0714.jpg
     name:
       - {language: en, text: "Ilya Taratuhin"}
       - {language: ru, text: "Илья Таратухин"}
+    company:
+      - {language: en, text: VKontakte}
+      - {language: ru, text: ВКонтакте}
+    bio:
+      - {language: en, text: "Used to work at 2GIS for 5 years, starting as a Junior Developer, finally becoming a Senior\
+            \ Developer. While working on 2gis.ru and other company’s products, managed to work with Knockoutjs, take part\
+            \ in writing personal isomorphic framework and take a closer look at React. Then worked for one year and a half\
+            \ at Wrike, where he got all sorrow and joy of working on Dart + Angular stack. Since recently works at VKontakte.\
+            \ As you see, you’ve got plenty of things to discuss with Ilya!"}
+      - {language: ru, text: "Работал в компании 2ГИС 5 лет, пройдя путь от джуниора до ведущего разработчика. За время ра\
+            боты над 2gis.ru и другими продуктами компании успел поработать с Knockoutjs, поучаствовать в написании собств\
+            енного изоморфного фреймворка и плотно познакомился с React. Потом полтора года проработал в компании Wrike, г\
+            де познал все радости и печали работы на стеке Dart + Angular. С недавнего времени работает в компании ВКонтак\
+            те. В общем, с Ильей будет о чем пообщаться!"}
   - id: 715
     fileName: 0715.jpg
     name:
       - {language: en, text: "Evgeny Pozdnyakov"}
       - {language: ru, text: "Евгений Поздняков"}
+    company:
+      - {language: en, text: Exadel}
+    bio:
+      - {language: en, text: "Full Stack JavaScript Developer working at Exadel. I’m passionate about trends in the world\
+            \ of JavaScript and Golang. Enjoy finding the best and robust solutions to complex architectural problems."}
+      - {language: ru, text: "Full Stack JavaScript разработчик из Exadel. Увлечен тенденциями в мире JavaScript и Golang."}
+    twitter: youhy17kk
   - id: 716
     fileName: 0716.jpg
     name:
       - {language: en, text: "Mikhail Poluboyarinov"}
       - {language: ru, text: "Михаил Полубояринов"}
+    company:
+      - {language: en, text: "Health Samurai"}
+    bio:
+      - {language: en, text: "Full-stack developer, been developing since 2004. Organizer of PiterJS and IT Global Meetup."}
+      - {language: ru, text: "Full-stack developer, занимается разработкой с 2004 года. Занимается организацией PiterJS и\
+            \ IT Global Meetup."}
+    twitter: mike1pol
+    gitHub: mike1pol
   - id: 717
     fileName: 0717.jpg
     name:
       - {language: en, text: "Dmitry Karlovsky"}
       - {language: ru, text: "Дмитрий Карловский"}
+    company: []
+    bio:
+      - {language: en, text: "In my childhood I had a computer but didn’t have any toys. So I had to invent them myself. So\
+            \ I became a programmer. I used to work in Yandex, Wrike, Saprun, Gazprom. I created a few startups. Including\
+            \ a web framework that was ahead of its time."}
+      - {language: ru, text: "В детстве был компьютер, но не было игрушек. Приходилось писать их себе самому. Так я и стал\
+            \ программистом. С тех пор успел поработать в Яндексе, Райке, Сапране, Газпроме и поднять несколько стартапов\
+            . В том числе веб-фреймворк, обогнавший время."}
+    gitHub: nin-jin
   - id: 718
     fileName: 0718.jpg
     name:
       - {language: en, text: "Andrey Prokopyuk"}
       - {language: ru, text: "Андрей Прокопюк"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "In 2008 was impressed by web development due to the speed of ideas' implementation and how easy they can be\
+            \ demonstrated to users. Works at Yandex since 2014, developing the page with search results. Loves challenging\
+            \ problems, is interested in analytics, testing and new ways to automate routine.\n\nIs currently involved in\
+            \ being a tech lead, making analytics and infrastructure of Yandex services' speed."
+      - language: ru
+        text: "В 2008 году впечатлился веб-разработкой из-за скорости воплощения идей и лёгкости их донесения до пользоват\
+            елей. В Яндексе с 2014 года, разрабатывает страницу поисковой выдачи. Любит сложные задачи, интересуется анали\
+            тикой, тестированием и новыми способами автоматизировать рутину.\n\nВ данный момент в основном занимается техн\
+            ическим лидерством, аналитикой и инфраструктурой скорости сервисов Яндекса."
+    twitter: Andre_487
+    gitHub: andre487
   - id: 719
     fileName: 0719.jpg
     name:
       - {language: en, text: "Denis Kolodin"}
       - {language: ru, text: "Денис Колодин"}
+    company:
+      - {language: en, text: Bitfury}
+    bio:
+      - {language: en, text: TBD}
+      - language: ru
+        text: "Tech Lead at Exonum, Bitfury Group, Rust-разработчик.\nОпыт в разработке программного обеспечения более 12\
+            \ лет. Создавал: HFT-роботов, OTT-сервисы, множество корпоративных проектов и блокчейн-решений."
   - id: 720
     fileName: 0720.jpg
     name:
       - {language: en, text: "Alexey Kalmakov"}
       - {language: ru, text: "Алексей Калмаков"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: TBD}
+      - language: ru
+        text: "Пишу код с 14 лет. Последние 6 лет делаю разные части фронтенда поисковых сервисов Яндекса.\nЕсли вбить сло\
+            во \"красноглазить\" в поисковик - там будет моя фотка."
   - id: 721
     fileName: 0721.jpg
     name:

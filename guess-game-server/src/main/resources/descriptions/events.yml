@@ -349,6 +349,25 @@ events:
               751, 752, 753, 754, 755, 756]
   - eventTypeId: 4
     name:
+      - {language: en, text: "HolyJS 2018 SPb"}
+      - {language: ru, text: "HolyJS 2018 СПб"}
+    startDate: "2018-05-19"
+    endDate: "2018-05-20"
+    siteLink:
+      - {language: en, text: "https://2018.holyjs-piter.ru/en/"}
+      - {language: ru, text: "https://2018.holyjs-piter.ru/"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8Jy7ZwExrn1bayUuy5xB3uJ
+    mapCoordinates: "59.842400, 30.318815"
+    talkIds: [908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929,
+              930, 931, 932, 933, 934, 935, 936]
+  - eventTypeId: 4
+    name:
       - {language: en, text: "HolyJS 2019 Msk"}
       - {language: ru, text: "HolyJS 2019 Мск"}
     startDate: 2019-11-08
