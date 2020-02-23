@@ -683,7 +683,8 @@ public class ConferenceDataLoader {
 
         // 2018
 //        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2018, 3, 4), "2018JBreak",
-//                Collections.emptyMap(), Set.of("Верхом на реактивных стримах"));
+//                Collections.emptyMap(),
+//                Set.of("Верхом на реактивных стримах"));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2018, 4, 6), "2018JPoint");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2018, 4, 20), "2018spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 4, 22), "2018spb");

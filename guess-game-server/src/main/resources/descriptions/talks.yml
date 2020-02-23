@@ -19984,3 +19984,1100 @@ talks:
     presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1nWkRMc3fukKg84oOaeI0W/a708d7b9a340fb861d0433e4e238439e/ElbrusAnufrienkoBezhetskov.pdf"]
     videoLinks: ["https://youtu.be/mPCTpCJ26zs"]
     speakerIds: [709, 707]
+  - id: 937
+    name:
+      - {language: en, text: "Put Slona ili Karera v open source"}
+      - {language: ru, text: "Путь Слона, или Карьера в open source"}
+    shortDescription:
+      - {language: ru, text: "Олег поделится тем, как ему удалось пройти путь от простого астронома до разработчика с миро\
+            вым именем благодаря участию в open source-проекте PostgreSQL."}
+    longDescription:
+      - language: ru
+        text: "В ходе выступления Олег поделится тем, как ему удалось пройти путь от простого астронома до разработчика с\
+            \ мировым именем благодаря участию в open source-проекте PostgreSQL.\n\nРаботая в крупных корпорациях, програм\
+            мист становится винтиком в огромной махине. А создавая ПО с открытым кодом, человек остается личностью, и перс\
+            пективы, которые открываются перед ним как профессионалом, иногда даже больше, чем в коммерческой компании. По\
+            ложение и карьера разработчика в open source не зависят от руководства, здесь все прозрачно и зависит только о\
+            т личного вклада. Работа в open source приносит чувство причастности к созданию продукта, которым будут пользо\
+            ваться миллионы людей по всему миру.\n\nОлег расскажет о личном опыте становления в ИТ-сфере, от студенчества\
+            \ на физфаке МГУ в Москве, астрономических исследований в ГАИШ и Санта-Круз (США) до вовлечения в международно\
+            е сообщество разработчиков СУБД PostgreSQL и основания собственной компании Postgres Professional."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/28BYeLGvWo02GW2O80GG4Y/51adea77be5c85d8f44cf03486fb76fd/Oleg_Bartunov_Put_Slona_ili_Karera_v_open_source.pdf"]
+    videoLinks: ["https://youtu.be/YM03vMqxNfk"]
+    speakerIds: [259]
+  - id: 938
+    name:
+      - {language: en, text: "CatBoost biblioteka mashinnogo obucheniya dlya resheniya prakticheskikh zadach s ispolzovaniem\
+            \ bolshikh dannykh"}
+      - {language: ru, text: "CatBoost — библиотека машинного обучения для решения практических задач с использованием бол\
+            ьших данных"}
+    shortDescription:
+      - {language: ru, text: "Мы расскажем, что такое градиентный бустинг, как он применяется, чем отличается CatBoost от\
+            \ других библиотек, как при помощи него обучать модели на больших данных и как работать с разными типами данны\
+            х — числовыми и категориальными."}
+    longDescription:
+      - language: ru
+        text: "Градиентный бустинг — один из наиболее часто используемых алгоритмов машинного обучения. Этот алгоритм помо\
+            гает решать задачи регрессии, классификации и ранжирования на разнородных данных. При помощи градиентного буст\
+            инга в Яндексе мы выбираем наиболее релевантные документы для ответа на поисковые запросы, ранжируем музыкальн\
+            ые композиции, предсказываем погоду и решаем много других задач.\n \nCatBoost — это библиотека градиентного бу\
+            стинга, написанная в Яндексе и выложенная в открытый доступ. В докладе мы расскажем, что такое градиентный бус\
+            тинг, как он применяется, чем отличается CatBoost от других библиотек, как при помощи него обучать модели на б\
+            ольших данных и как работать с разными типами данных — числовыми и категориальными."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3hNMQfM2Bq8UmkiQm8A0c2/94a54728088c32a05fc31cad3e6a3046/Vasily_Ershov_CatBoost_biblioteka_mashinnogo_obucheniya_dlya_resheniya_prakticheskikh_zadach_s_ispolzovaniem_bolshikh_dannyk.pdf"]
+    videoLinks: ["https://youtu.be/2TZLRayoptY"]
+    speakerIds: [271]
+  - id: 939
+    name:
+      - {language: en, text: "Panelnaya diskussiya Rol angliyskogo yazika dlya razrabotchika"}
+      - {language: ru, text: "Панельная дискуссия: Роль английского языка для разработчика"}
+    shortDescription:
+      - {language: ru, text: "Бруно Гельб, лидер сообщества PiterPy Meetup, проведёт дискуссию на болезненную тему: нужен\
+            \ ли английский? В каком объёме? На каком языке обучать стажёров-разработчиков и джунов? Правильно ли делает PiterPy\
+            \ Conf, принимая докладчиков даже с неидеальным английским? Какова роль языка в технологической изоляции стран\
+            \ СНГ?"}
+    longDescription:
+      - language: ru
+        text: "Бруно Гельб, лидер сообщества PiterPy Meetup, проведёт дискуссию на болезненную тему: нужен ли английский?\
+            \ В каком объёме? На каком языке обучать стажёров-разработчиков и джунов? Правильно ли делает PiterPy Conf, пр\
+            инимая докладчиков даже с неидеальным английским? Какова роль языка в технологической изоляции стран СНГ?\n\nВ\
+            \ дискуссии примут участие:\n- Алекс Вахитов, Tech Lead в CloudKB;\n- Виталий Левченко, организатор SPb GoLang\
+            \ Community;\n- Дарья Маньшина, технический писатель в 4xxi;\n- Юлия Цисык, .NET developer в CUSTIS."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [1077]
+  - id: 940
+    name:
+      - {language: en, text: "Plastilinovaya Jira: lepim svoimi rukami"}
+      - {language: ru, text: "Пластилиновая Jira: лепим своими руками"}
+    shortDescription:
+      - {language: ru, text: "Мы разберем наиболее распространенные вопросы по кастомизации Jira и поговорим о компромисса\
+            х решения данных проблем. Также мы обсудим тему «реализуемости» кастомизаций (что можно сделать, а чего нельзя\
+            ) и ответим на ваши вопросы по этой теме."}
+    longDescription:
+      - language: ru
+        text: "Jira уже давно стала неотъемлемой частью многих компаний, где ведение бизнеса немыслимо без этого инструмен\
+            та. Одной из основных причин такой популярности является гибкость и расширяемость Jira. Но какова стоимость эт\
+            ой гибкости? \n\nВ данном докладе мы разберем наиболее распространенные вопросы по кастомизации Jira и поговор\
+            им о компромиссах решения данных проблем. Также мы обсудим тему «реализуемости» кастомизаций (что можно сделат\
+            ь, а чего нельзя) и ответим на ваши вопросы по этой теме. \n\nДанный доклад будет полезен тем, кто работает не\
+            посредственно с Jira: рядовым пользователям, ПО, ПМ и администраторам, т. е. всем тем, кто хочет сделать свою\
+            \ Jira немного удобней."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4frQCUHHJCUQOw0C46GAM2/51c7cb618d711a5aa92d5ab4ca9b4954/Andrey_Markelov_Plastilinovaya_Jira_lepim_svoimi_rukami.pdf"]
+    videoLinks: []
+    speakerIds: [289]
+  - id: 941
+    name:
+      - {language: en, text: "Resilience in distributed systems"}
+      - {language: ru, text: "Надежность в распределенных системах"}
+    shortDescription:
+      - {language: ru, text: "Расскажем об опыте разработки отказоустойчивых распределенных систем, накопленном в Одноклас\
+            сниках: основных ошибках, отказах, приемах их маскировки и тестирования."}
+    longDescription:
+      - language: ru
+        text: "Одноклассники — это одна из самых больших, сложных и нагруженных распределенных систем в мире. Тысячи серве\
+            ров участвуют в обработке запросов пользователей в реальном времени. Каждый из этих серверов владеет только ча\
+            стью данных или логики. Эти части в социальной сети изолировать друг от друга невозможно, поэтому между сервер\
+            ами происходит много сетевого взаимодействия, разнообразного и большого по объему.\n\nВ распределенной системе\
+            \ такого размера что-то постоянно тупит и отказывает. Как же построить систему так, чтобы, несмотря на постоян\
+            ные сбои, все продолжало работать? Что делать с полными и частичными отказами?\n\nЧто такое идемпотентность и\
+            \ спекуляция? Что нужно предусмотреть на случай неработоспособности целой подсистемы или «главной» БД? Как орг\
+            анизовать надежное препродакшн-тестирование и выкатку релизов?\n\nВопросов в таких системах всегда много. Прих\
+            одите, и мы расскажем ответы Одноклассников на эти вопросы."
+    talkDay: 1
+    trackTime: "13:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/66HSVGS06ck6w4owSwo4kC/679662acebd0d7377df8484437463cbc/Oleg_Anastasiev_Nadezhnost_v_raspredelennykh_sistemakh.pdf"]
+    videoLinks: ["https://youtu.be/zfmwd52VuQ0"]
+    speakerIds: [124]
+  - id: 942
+    name:
+      - {language: en, text: "Razvedopros: Ivan Yamshchikov"}
+      - {language: ru, text: "Разведопрос: Иван Ямщиков"}
+    shortDescription:
+      - {language: ru, text: "Дмитрий Goblin Пучков и его «Разведопрос» в формате live! Собеседником известного «оперуполн\
+            омоченного» в этот раз станет один из спикеров TechTrain — Иван Ямщиков, гуру в области искусственного интелле\
+            кта."}
+    longDescription:
+      - {language: ru, text: "Дмитрий Goblin Пучков и его «Разведопрос» в формате live! Собеседником известного «оперуполн\
+            омоченного» в этот раз станет один из спикеров TechTrain — Иван Ямщиков, гуру в области искусственного интелле\
+            кта. Обсуждать будем серьезные вещи: когда нейросети смогут (и смогут ли) творить, думать и стоит ли ждать бун\
+            та искусственного интеллекта против гуманистической тирании. Будет интересно, категорически полезно и захватыв\
+            ающе."}
+    talkDay: 1
+    trackTime: "13:00"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/q53KaExmMvg"]
+    speakerIds: [257]
+  - id: 943
+    name:
+      - {language: en, text: "Praktiki I kejsy proektnogo upravleniya"}
+      - {language: ru, text: "Практики и кейсы проектного управления"}
+    shortDescription:
+      - {language: ru, text: "Мы рассмотрим несколько реальных кейсов (все имена изменены, любые сходства случайны), показ\
+            ывающих, какие могут быть сложности в применении различных практик проектного управления."}
+    longDescription:
+      - language: ru
+        text: "Проектное управление — вещь сложная и затрагивает процессы не только внутри вашей компании, но и внутри ком\
+            пании-заказчика. \n\nВ каких-то случаях вы можете влиять на процессы только внутри своей компании. Изредка вы\
+            \ косвенно можете влиять на процессы внутри компании, которая заказывает разработку. \n\nВ этом докладе мы рас\
+            смотрим несколько реальных кейсов (все имена изменены, любые сходства случайны), показывающих, какие могут быт\
+            ь сложности в применении различных практик проектного управления."
+    talkDay: 1
+    trackTime: "13:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3T0H9TjGhiAIK0oo6ukYIU/90c7197a2eb260d716ff961692a372b7/Dmitry_Zavalishin_Praktiki_I_kejsy_proektnogo_upravleniya.pdf"]
+    videoLinks: ["https://youtu.be/o4tcNBE-By8"]
+    speakerIds: [256]
+  - id: 944
+    name:
+      - {language: en, text: "Kak i zachem podruzhitsya dizayneru i razrabotchiku"}
+      - {language: ru, text: "Как и зачем подружиться дизайнеру и разработчику"}
+    shortDescription:
+      - {language: ru, text: "На собственном опыте покажем, зачем и какими средствами выстроить в команде, работающей над\
+            \ цифровыми продуктами, коммуникации, которые будут работать на качество продукта, помогут избежать иногда нен\
+            ужных затрат и сделают процесс сфокусированным на продукте."}
+    longDescription:
+      - {language: ru, text: "Цель доклада: на собственном опыте показать, зачем и какими средствами выстроить в команде,\
+            \ работающей над цифровыми продуктами, коммуникации, которые будут работать на качество продукта, помогут избе\
+            жать иногда ненужных затрат и сделают процесс сфокусированным на продукте."}
+    talkDay: 1
+    trackTime: "13:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6WkiHpcKC44goOeiwKemYm/0d93bc5639fc06584b57fc7afa6fbe08/Pavel_Malyshev_Kak_i_zachem_podruzhitsya_dizayneru_i_razrabotchiku.pdf"]
+    videoLinks: ["https://youtu.be/Bcn3sQZAMeg"]
+    speakerIds: [266]
+  - id: 945
+    name:
+      - {language: en, text: "Vse chto vi hoteli znat ob instrumentah dlya Data Science no boyalis sprosit"}
+      - {language: ru, text: "Всё, что вы хотели знать об инструментах для Data Science, но боялись спросить"}
+    shortDescription:
+      - {language: ru, text: "Виталий ответит на множество вопросов, связанных с настоящим и будущим Data Science: как мно\
+            го людей на самом деле используют глубокое обучение; чем отличается набор инструментов в области Data Science\
+            \ в России и в мире и многое другое."}
+    longDescription:
+      - language: ru
+        text: "- Как много людей на самом деле используют глубокое обучение?\n- Чем отличается набор инструментов в област\
+            и Data Science в России и в мире?\n- Какие фреймворки и языки программирования будут популярны в будущем?\n- К\
+            ак много людей на самом деле использует Spark из Python?\n- Знание какой технологии позволяет зарабатывать бол\
+            ьше денег?\n\nВ своем докладе Виталий ответит на эти и множество других вопросов, связанных с настоящим и буду\
+            щим Data Science."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2yKOojYukMsmSmiuG6CAG0/9d936c372fec4895fba1d764b2bebb66/Vitaly_Khudobakhshov_Vse_chto_vi_hoteli_znat_ob_instrumentah_dlya_Data_Science_no_boyalis_sprosit.pdf"]
+    videoLinks: []
+    speakerIds: [159]
+  - id: 946
+    name:
+      - {language: en, text: "Uslozhnenie igri"}
+      - {language: ru, text: "Усложнение игры"}
+    shortDescription:
+      - {language: ru, text: "Как и во что играют звери; первые простые игры древних культур, проблема даунтайма в игре «н\
+            акоси»; особенности и синтез action-игр, интеллектуальных и социальных игры; что делает игру интересной, а что\
+            \ — нет, и почему это так биологически; игрофикация реальных вещей и матрица; какую фигню можно творить IRL."}
+    longDescription:
+      - language: ru
+        text: "1. Как и во что играют звери, и что случается, когда слонёнок находит свой хобот.\n2. Первые простые игры д\
+            ревних культур, проблема даунтайма в игре «накоси».\n3. Action-игры, интеллектуальные игры и социальные игры:\
+            \ особенности и синтез.\n4. Что делает игру интересной, а что — нет. Почему это так биологически.\n5. Игрофика\
+            ция реальных вещей и матрица.\n6. Какую фигню можно творить IRL."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/32VVXL6rhuc0IG0ksEoecw/7c5a4f81a512d7957248108fadbb12ed/Sergey_Abdulmanov_Uslozhnenie_igri.pdf"]
+    videoLinks: ["https://youtu.be/NpR0XEmD0OE"]
+    speakerIds: [258]
+  - id: 947
+    name:
+      - {language: en, text: "Upravlenie avariyami v bolshom internet-proekte"}
+      - {language: ru, text: "Управление авариями в большом интернет-проекте"}
+    shortDescription:
+      - {language: ru, text: "Андрей подробно расскажет о самой крупной технической аварии в Рунете от первого лица и о то\
+            м, как они научились управлять авариями."}
+    longDescription:
+      - language: ru
+        text: "Хорошо, что аварии случаются! Звучит странно, но если уточнить, что речь идет про тестовые аварии, устраива\
+            емые на постоянной основе, то это один из примеров того, как можно научиться авариями управлять.\n\nОтказ желе\
+            зного компонента для нас является стандартным событием, происходящим по нескольку раз за день, но вот потеря д\
+            атацентра по питанию или отказ корневого сетевого устройства — это всегда возможность получить полезную информ\
+            ацию и сделать определенные выводы.\n\nАндрей подробно расскажет о самой крупной технической аварии в Рунете о\
+            т первого лица и о том, как они научились управлять авариями."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/7bjPQAq7rqKQ0eMow0GS0M/6c4235d33dc61f76f79cd31126dca7bf/Andrejs_Guba_Upravlenie_avariyami_v_bolshom_internet-proekte.pdf"]
+    videoLinks: ["https://youtu.be/9TlHn4_Wfts"]
+    speakerIds: [273]
+  - id: 948
+    name:
+      - {language: en, text: "Biznes-trendy i nestandartnye kejsy v testirovanii"}
+      - {language: ru, text: "Бизнес-тренды и нестандартные кейсы в тестировании"}
+    shortDescription:
+      - {language: ru, text: "Современные тренды в автоматизации тестирования. Используемые технологии и подходы. Что буде\
+            т модно завтра в автоматизации тестирования."}
+    longDescription:
+      - {language: ru, text: "Современные тренды в автоматизации тестирования. Используемые технологии и подходы. Что буде\
+            т модно завтра в автоматизации тестирования."}
+    talkDay: 1
+    trackTime: "14:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1thEpvRy6cyM2UIcqUas6m/e319a358fd8f415e5a7f6c32da1f8b57/Roman_Iovlev_Biznes-trendy_i_nestandartnye_kejsy_v_testirovanii.pdf"]
+    videoLinks: []
+    speakerIds: [286]
+  - id: 949
+    name:
+      - {language: en, text: "Kak dannie prevraschayut v znaniya i pochemu umet mechtat — odno iz samih vazhnih umeniy"}
+      - {language: ru, text: "Как данные превращают в знания и почему уметь мечтать — одно из самых важных умений"}
+    shortDescription:
+      - {language: ru, text: "Мы обсудим, как искусственный интеллект меняет образование, бизнес и общество, и попробуем п\
+            онять, какие стороны нашей жизни анализ данных пока изменить не может."}
+    longDescription:
+      - language: ru
+        text: "Зина и Тома — сёстры-близнецы. Зина пользуется сервисом по подписке и получает по одной книге в неделю. Чит\
+            ать, правда, Зина успевает не больше одной книжки в месяц. Тома пользуется тем же сервисом, но тариф у неё под\
+            ешевле. Она получает одну книгу в месяц и успевает её прочитать. Сёстры советуют книги друг другу, так что, ка\
+            к правило, Зина и Тома читают одну и ту же книгу. Это очень простой пример, который показывает разницу между д\
+            анными (их у Зины в 4 раза больше) и знаниями (их у близнецов, скорее всего, поровну).\n\nДело в том, что чело\
+            вечество уже довольно давно живёт, как Зина: мы производим больше информации, чем обрабатываем. Мы попробуем в\
+            месте подумать, что это значит для образования, бизнеса и общества, обсудим, как искусственный интеллект меняе\
+            т все эти сферы, и попробуем понять, какие стороны нашей жизни анализ данных пока изменить не может."
+    talkDay: 1
+    trackTime: "15:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/9timSEHMRyasqMCsUwgAE/46b5aae4a7b09f049872f8ad50d65657/Ivan_Yamschikov_Kak_dannie_prevraschayut_v_znaniya_i_pochemu_umet_mechtat_odno_iz_samih_vazhnih_umeniy.pdf"]
+    videoLinks: ["https://youtu.be/OuWHmLYBWu8"]
+    speakerIds: [262]
+  - id: 950
+    name:
+      - {language: en, text: "Build pipelines priklyucheniya v konveyere TeamCity"}
+      - {language: ru, text: "Build pipelines: приключения в конвейере TeamCity"}
+    shortDescription:
+      - {language: ru, text: "Покажем, как можно организовать конвейер сборки на основе TeamCity. Продемонстрируем, как пр\
+            и помощи Kotlin можно описать цепочку зависимостей сборок, как настроить сборку веток и какие интересные настр\
+            ойки и другие плюшки могут помочь при работе с CI. А также увидим, как CI-сервер может экономить вычислительны\
+            е ресурсы, оптимизируя поток сборок!"}
+    longDescription:
+      - language: ru
+        text: "В мире CI уже давно популярен термин «build pipelines», и, услышав его, мы автоматически представляем себе\
+            \ последовательность действий, которые выполняются одно за другим. Так ли это на самом деле? (Конечно же нет!)\n\
+            \nВ докладе покажем, как можно организовать конвейер сборки на основе TeamCity. Продемонстрируем, как при помо\
+            щи Kotlin можно описать цепочку зависимостей сборок, как настроить сборку веток и какие интересные настройки и\
+            \ другие плюшки могут помочь при работе с CI. А также увидим, как CI-сервер может экономить вычислительные рес\
+            урсы, оптимизируя поток сборок!"
+    talkDay: 1
+    trackTime: "15:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/3MN6wqPmkwQOwG2mCgAOQm/747ca29136b55073fedd001b818d477e/Anton_Arhipov_Build_pipelines_priklyucheniya_v_konveyere_TeamCity.pdf"]
+    videoLinks: ["https://youtu.be/EUCOfbJQL5E"]
+    speakerIds: [0]
+  - id: 951
+    name:
+      - {language: en, text: "Postroenie multiplatformennykh proektov na Kotlin"}
+      - {language: ru, text: "Построение мультиплатформенных проектов на Kotlin"}
+    shortDescription:
+      - {language: ru, text: "Мы познакомимся с механизмами построения мультиплатформенных приложений и разберём их особен\
+            ности на примере Android-приложения и браузерного расширения с общей кодовой базой."}
+    longDescription:
+      - language: ru
+        text: "Позиционируя себя изначально как лучшая Java, Kotlin тоже не смог обойти стороной концепт «Write Once, Run\
+            \ Everywhere», но сделал это по-своему. С некоторых пор на этом языке можно писать мультиплатформенные приложе\
+            ния — Kotlin не пытается заставить вас писать всё под JVM и запускать на разных платформах в виртуальной машин\
+            е, напротив, ваш код будет скомпилирован под каждую конкретную платформу, а платформозависимый функционал сове\
+            ршенно не рекомендуется объединять. Но вот бизнес-логика в отрыве от специфик той или иной платформы — это как\
+            \ раз то, на дублировании чего мы можем отлично сэкономить, написав всего раз. \n\nВ докладе мы познакомимся с\
+            \ механизмами построения мультиплатформенных приложений и разберём их особенности на примере Android-приложени\
+            я и браузерного расширения с общей кодовой базой."
+    talkDay: 1
+    trackTime: "15:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4zlPJiMr9YI88GgSq04eoQ/4902cd031a72a9f68d9f99c15381c38d/Sergey_Ryabov_Postroenie_multiplatformennykh_proektov_na_Kotlin__2_.pdf"]
+    videoLinks: ["https://youtu.be/MWV5TS2gNzU"]
+    speakerIds: [296]
+  - id: 952
+    name:
+      - {language: en, text: "Razrabotka videoigr: pedagogika, problemy ottsov i detej, kak sdelat pervyj shag v ehtu sferu"}
+      - {language: ru, text: "Разработка видеоигр: педагогика, проблемы отцов и детей, как сделать первый шаг в эту сферу"}
+    shortDescription:
+      - {language: ru, text: "Александр расскажет о своем менторском и педагогическом опыте, особенностях преподавания в о\
+            бласти создания игр и о важности предоставления информации о возможностях для самореализации в современном мир\
+            е."}
+    longDescription:
+      - language: ru
+        text: "Образование — это та сфера, в которой с каждым годом появляются новые техники и методики преподавания. Всё\
+            \ больше принимается во внимание важность менторского образования, как вместо, так и в дополнение к классическ\
+            ой передаче академических материалов от педагога к обучающемуся. Возрастает интерес в получении целевых знаний\
+            \ напрямую от ментора в областях, которые обычно считаются закрытыми и труднодоступными, к примеру, в видеоигр\
+            ах или машинном обучении.\n\nВ этом докладе Александр расскажет о:\n- своем менторском и педагогическом опыте\
+            ;\n- особенностях преподавания в области создания игр;\n- важности предоставления информации о возможностях дл\
+            я самореализации в современном мире."
+    talkDay: 1
+    trackTime: "15:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3aCt06YHWMaQQGeSCYEwyE/f866a5f17c880bcbd979ff9dd35fe15e/Aleksandr_Khoroshavin_Razrabotka_videoigr_pedagogika_problemy_ottsov_i_detej_kak_sdelat_pervyj_shag_v_ehtu_sferu.pdf"]
+    videoLinks: []
+    speakerIds: [292]
+  - id: 953
+    name:
+      - {language: en, text: "Iskusstvenniy intellekt i tsifrovaya transformatsiya biznesa"}
+      - {language: ru, text: "Искусственный интеллект и цифровая трансформация бизнеса"}
+    shortDescription:
+      - {language: ru, text: "Поделимся некоторыми проектами по внедрению ИИ, расскажем о конкретных шагах и технологиях,\
+            \ с которых можно начать внедрение ИИ в бизнес-процессы. Поговорим про когнитивные сервисы, чат-боты, распозна\
+            вание изображений, обучение нейросетей и о том, какую роль во всем этом играют облачные технологии."}
+    longDescription:
+      - language: ru
+        text: "В настоящее время многие говорят о так называемой цифровой трансформации — стремительном преображении, кото\
+            рое претерпевают бизнес-процессы из-за эффективного использования цифровых технологий. Важнейшими технологиями\
+            \ в этой области являются технологии искусственного интеллекта, поскольку в перспективе именно они позволяют з\
+            аменить человека во многих областях его деятельности. \n\nВ докладе Дмитрий поделится некоторыми проектами по\
+            \ внедрению ИИ, а также расскажет о конкретных шагах и технологиях, с которых можно начать внедрение ИИ в бизн\
+            ес-процессы. Поговорим про когнитивные сервисы, чат-боты, распознавание изображений, обучение нейросетей и о т\
+            ом, какую роль во всем этом играют облачные технологии."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/DlXGT9joHueMAQiSAk4CI/985979be0b74e3c8822908b21124bf4c/Dmitry_Soshnikov_Iskusstvenniy_intellekt_i_tsifrovaya_transformatsiya_biznesa.pdf"]
+    videoLinks: ["https://youtu.be/igGM1qpsKSA"]
+    speakerIds: [472]
+  - id: 954
+    name:
+      - {language: en, text: "Sessiya blitsvoprosov"}
+      - {language: ru, text: "Сессия блиц-вопросов"}
+    shortDescription:
+      - {language: ru, text: "Если вы пишете на Котлине или интересуетесь этим языком, не упустите возможность пообщаться\
+            \ с его ведущим разработчиком."}
+    longDescription:
+      - {language: ru, text: "Возможно, вам уже доводилось слушать доклады знаменитого «отца» Котлина — Андрея Бреслава, в\
+            ыступавшего в том числе и на наших конференциях. Но официальная сессия блиц-вопросов у нас проводится впервые\
+            . Если вы пишете на Котлине или интересуетесь этим языком, не упустите возможность пообщаться с его ведущим ра\
+            зработчиком."}
+    talkDay: 1
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/MHDuNkzDwdQ"]
+    speakerIds: [2]
+  - id: 955
+    name:
+      - {language: en, text: "Server Side Request Forgery ataka na vebprilozhenie kotoraya strashnee chem kazhetsya"}
+      - {language: ru, text: "Server Side Request Forgery: атака на веб-приложение, которая страшнее, чем кажется"}
+    shortDescription:
+      - {language: ru, text: "Рассматривается уязвимость в веб-приложениях, приводящая к атаке SSRF (Server Side Request Forgery),\
+            \ к каким серьёзным последствиям может приводить наличие этой уязвимости и в каких неожиданных местах она може\
+            т появляться. Отдельно затрагивается проблема некорректных и недостаточных мер противодействия атаке и того, к\
+            ак их обходят злоумышленники."}
+    longDescription:
+      - language: ru
+        text: "В докладе рассматривается уязвимость в веб-приложениях, приводящая к атаке SSRF (Server Side Request Forgery).\
+            \ Доклад включает в себя описание самой уязвимости, к каким серьёзным последствиям может приводить её наличие\
+            \ и в каких неожиданных местах она может появляться. Отдельно затрагивается проблема некорректных и недостаточ\
+            ных мер противодействия атаке и того, как их обходят злоумышленники.\r\n\r\nЦелевая аудитория: разработчики ве\
+            б-приложений и других клиент-серверных программ, а также специалисты по информационной безопасности, обеспечив\
+            ающие защиту внешнего периметра инфраструктуры компании.\r\n\r\nПо окончании доклада аудитория должна лучше по\
+            нять причины возникновения SSRF, какие ошибки можно допустить при имплементации механизмов защиты и почему же\
+            \ всё-таки стоит больше внимания уделять данному вопросу."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/CBYQudN4xEEAqc8IcWE8E/b07585e61596650cc7b9349bd0885a3b/Denis_Ribin_Server_Side_Request_Forgery_ataka_na_vebprilozhenie_kotoraya_strashnee_chem_kazhetsya.pdf"]
+    videoLinks: ["https://youtu.be/GrBU4wRhMWQ"]
+    speakerIds: [544]
+  - id: 956
+    name:
+      - {language: en, text: "15 years of WordPress"}
+      - {language: ru, text: "WordPress: 15 лет спустя"}
+    shortDescription:
+      - {language: en, text: "We will look at where WordPress came from, how it flew, how it stumbled and what is next. We'll\
+            \ ponder over what it gets right, what it gets wrong. The talk will be mostly non-technical, sprinkled with general\
+            \ programming and webstack terminology and a couple of simple PHP examples."}
+      - {language: ru, text: "Поговорим о том, откуда пришел WordPress, как он взлетал, как он падал, что его ждет в будущ\
+            ем. Обсудим, чем платформа хороша, а чем совсем не очень. Доклад будет по большей части не техническим, с прос\
+            той терминологией и несложными примерами на языке программирования PHP."}
+    longDescription:
+      - language: en
+        text: "WordPress turned 15 this year. Based on b2cafelog, it went from 2000+ installs to powering 30% of the web.\n\
+            \nWe will look at where WordPress came from, how it flew, how it stumbled and what is next. We'll ponder over\
+            \ why WordPress is hated so much, what it gets right, what it gets wrong.\n\nFinally, we'll take a look at the\
+            \ community behind WordPress in Russia and all over the world.\n\nThe talk will be mostly non-technical, sprinkled\
+            \ with general programming and webstack terminology and a couple of simple PHP examples."
+      - language: ru
+        text: "В этом году WordPress исполнилось 15 лет. Форк b2cafelog, WordPress прошел путь от 2000+ инсталляций до 30%\
+            \ всего Интернета.\r\n\r\nПоговорим о том, откуда пришел WordPress, как он взлетал, как он падал, что его ждет\
+            \ в будущем. Обсудим ненависть к WordPress, чем платформа хороша, а чем совсем не очень. Разрушим мифы, постро\
+            им новые.\r\n\r\nКак развивается одна из крупнейших экосистем свободного кода? Что из себя представляет сообще\
+            ство WordPress в России и в мире?\r\n\r\nДоклад будет по большей части не техническим, с простой терминологией\
+            \ и несложными примерами на языке программирования PHP."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/61VrACQXyEs42W6CIscoiI/4712d50aee8559386ba55a5cac54f6c4/Gennady_Kovshenin_WordPress_15_let_spustya.pdf"]
+    videoLinks: ["https://youtu.be/XmW6MxLUn8w"]
+    speakerIds: [294]
+  - id: 957
+    name:
+      - {language: en, text: "debugger; for developers"}
+      - {language: ru, text: "debugger; для разработчиков"}
+    shortDescription:
+      - {language: ru, text: "Этот доклад не о разработке, а о разработчиках. Вместо кода этот вдохновляющий доклад застав\
+            ит нас запустить дебаггер на нас самих, чтобы проанализировать ошибки, с которыми мы сталкиваемся в нашей повс\
+            едневной жизни как разработчики."}
+    longDescription:
+      - {language: en, text: "What’s common for Meryl Streep, Henry Ford and Albert Einstein? All of them suffered from different\
+            \ problems in their professional lives despite their success. This talk *is not about development*. Instead of\
+            \ code, this inspirational and motivational talk will set debugger on ourselves as humans to analyse the bugs\
+            \ most of us face in our day-to-day jobs as developers. Among others, we will be talking about:rnrnPerfectionismrnImposter\
+            \ syndromernOverworkrnBut these are not limited to developers and are applicable to a much wider audience. It\
+            \ will be about psychology, neuroscience, work-life balance, work quality and… us."}
+      - language: ru
+        text: "Что общего у Мерил Стрип, Генри Форда и Альберта Эйнштейна? Все они, несмотря на свои успехи в профессионал\
+            ьной жизни, страдали от различных проблем. Этот доклад не о разработке, а о разработчиках. Вместо кода этот вд\
+            охновляющий доклад заставит вас запустить дебаггер на нас самих, чтобы проанализировать ошибки, с которыми мы\
+            \ сталкиваемся в нашей повседневной жизни как разработчики. Среди прочего будут рассмотрены проблемы:\n- Перфе\
+            кционизм\n- Синдром самозванца\n- Переработка\n\nЭтот доклад не ограничивается разработчиками и может быть при\
+            менен к гораздо более широкому кругу специалистов. Тут будут психология и неврология, качество жизни, работы и\
+            \ их баланс. Но самое главное, доклад будет про всех нас."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/H-qnHH3o1IE"]
+    speakerIds: [261]
+  - id: 958
+    name:
+      - {language: en, text: "Perspektivi i problemi vnedreniya tehnologii blokcheyn v razlichnih industriyah"}
+      - {language: ru, text: "Перспективы и проблемы внедрения технологии блокчейн в различных индустриях"}
+    shortDescription:
+      - {language: ru, text: "Мы посмотрим, как различные индустрии по-разному применяют блокчейн, что поможет вам увидеть\
+            \ возможности технологии и выстроить прагматичный диалог с клиентами."}
+    longDescription:
+      - language: ru
+        text: "Будь то в продажах, консалтинге или разработке, мы все чаще слышим о блокчейне. Эта новая технология распре\
+            деленного реестра представляет большой интерес для клиентов, надеющихся с ее помощью решить существующие вызов\
+            ы, перестроить процессы, снизить риски и уменьшить затраты.\r\n\r\nВ этом докладе мы посмотрим, как различные\
+            \ индустрии по-разному применяют блокчейн. Это поможет вам увидеть возможности технологии и выстроить прагмати\
+            чный диалог с клиентами."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/lBnXzsRiPVg"]
+    speakerIds: [265]
+  - id: 959
+    name:
+      - {language: en, text: "Mifi o Spark, ili Mozhet li polzovatsya Spark obichniy Java-razrabotchik"}
+      - {language: ru, text: "Мифы о Spark, или Может ли пользоваться Spark обычный Java-разработчик"}
+    shortDescription:
+      - {language: ru, text: "Практическая демонстрация возможностей Spark. Вы выйдете с этого доклада с достаточными знан\
+            иями, чтобы начать самостоятельно работать на Spark."}
+    longDescription:
+      - language: ru
+        text: "Тот, у кого в руке молоток, во всём видит гвоздь! Глупо?\nА что, если это не молоток, а универсальный инстр\
+            умент, который может быть и бензопилой, и пылесосом, и зубной щёткой?\nВ мире Big Data есть Hadoop и целый зоо\
+            парк инструментов, которые на него пашут, и каждый заточен под что-то своё. А ещё там недавно появился Spark,\
+            \ который можно применять для любых целей.\n\nЕсли вы хотите писать в Hadoop с различных БД, стримить всякие и\
+            сточники в реальном времени, параллельно делать с данными какую-нибудь сложную обработку, и не при помощи каки\
+            х-то батчей, скриптов и SQL-запросов, а при помощи мощного функционального языка — добро пожаловать в Spark!\n\
+            \nДанный доклад познакомит вас со Spark: как он работает, какие задачи он способен выполнять, как им правильно\
+            \ пользоваться. Мы обсудим проблемы и решения, с которыми поначалу сталкиваются неопытные Spark-разработчики.\
+            \ Разберемся с его синтаксисом и всякими хитростями.\n\nБудет много live coding, и в конечном итоге вы выйдете\
+            \ с этого доклада с достаточными знаниями, чтобы начать самостоятельно работать на Spark."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2FyilBkNTW6KwiSyWWIOG8/8501f8c8b287eaa38b4e4e8a1e35c872/Evgeny_Borisov_Mifi_o_Spark__ili_Mozhet_li_polzovatsya_Spark_obichniy_Java-razrabotchik.pdf"]
+    videoLinks: ["https://youtu.be/7Er4oGWpmWs"]
+    speakerIds: [1]
+  - id: 960
+    name:
+      - {language: en, text: "Kassovoe PO vosstanie mashin"}
+      - {language: ru, text: "Кассовое ПО: восстание машин"}
+    shortDescription:
+      - {language: ru, text: "Мы расскажем, как тестируется кассовый софт, с чего начинали осваивать непаханое поле online-к\
+            асс, с какими задачами столкнулись, а также приоткроем завесу тайны и расскажем о том, что на самом деле проис\
+            ходит, когда вы приходите в магазин покупать пельмешки с майонезом."}
+    longDescription:
+      - language: ru
+        text: "Большой Брат наблюдает за тобой! Задумывались ли вы, что каждая покупка, совершенная в интернете, магазине\
+            , ларьке и на остановке, теперь контролируется государством?\r\n\r\nПредприниматели всех сетей и даже вашего л\
+            юбимого магазина покупают online-кассы. Сотни тысяч магазинов страны покупают миллионы касс. И Большой Брат зн\
+            ает о каждой вашей покупке через 5 секунд.\r\n\r\nМы расскажем, как тестируется кассовый софт, с чего начинали\
+            \ осваивать непаханое поле online-касс, с какими задачами столкнулись, а также приоткроем завесу тайны и расск\
+            ажем о том, что на самом деле происходит, когда вы приходите в магазин покупать пельмешки с майонезом.\r\n\r\n\
+            2027 год нашей эры. Кассовые Машины восстали из пепла чековой ленты. Их война, направленная на борьбу с уклоне\
+            нием от налогов, длилась уже десятилетие, но решающая схватка предстоит не в будущем. Здесь. Сегодня. В наши д\
+            ни…"
+    talkDay: 1
+    trackTime: "17:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2TTJMOsNVSc8MsgAGk086g/e5aa58a9c02db7f753fa2b63e799a334/Dmitriy_Yakin_Tatyana_Shhipanova_Kassovoe_PO_vosstanie_mashin.pdf"]
+    videoLinks: ["https://youtu.be/l36ABiVhpnA"]
+    speakerIds: [280, 287]
+  - id: 961
+    name:
+      - {language: en, text: "JavaScript dlya teh kogo tam net"}
+      - {language: ru, text: "JavaScript для тех, кого там нет"}
+    shortDescription:
+      - {language: ru, text: "Этот доклад — легкая и увлекательная прогулка в то, какова жизнь современного эксперта в обл\
+            асти JS-разработки."}
+    longDescription:
+      - language: ru
+        text: "Общение мира фронтенд-разработки и прочей IT-тусовки всегда было натянутым. В конце концов, как можно счита\
+            ть программистом того, кто не знает третьей нормальной формы, не понимает, что такое указатель, и не может отл\
+            ичить Приму от Краскала. Ок, хотя бы что-то одно, но бинго «3 из 3» встречается повсеместно.\n\nЛишь в последн\
+            ие годы взрывообразный рост JavaScript (уже не просто фронтенда) привел к фундаментальному росту сложности, и\
+            \ если вы все еще считаете, что основное, чем мы занимаемся, — это «ты ж верстальщик — наверстай нам упущенное\
+            », этот доклад станет легкой и увлекательной прогулкой в то, какова жизнь современного эксперта в области JS-р\
+            азработки."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/755VWezUTCawGUeOkiOakk/2fa6f952e27bcbd6243ef97c6ae81363/Illya_Klymov_JavaScript_dlya_teh_kogo_tam_net.pdf"]
+    videoLinks: ["https://youtu.be/bmnu4-DlbbE"]
+    speakerIds: [264]
+  - id: 962
+    name:
+      - {language: en, text: "Otkazoustoychivost raspredelennih vichisleniy pomenshe prob i oshibok"}
+      - {language: ru, text: "Отказоустойчивость распределенных вычислений: поменьше проб и ошибок!"}
+    shortDescription:
+      - {language: ru, text: "В своем докладе Артем расскажет, как сам шел к знаниям об известных механизмах отказоустойчи\
+            вости и почему считает, что это часть фундаментальных принципов в нашей отрасли. Расскажет, как все это легко\
+            \ уложить в голове и что следует прочитать, чтобы не идти методом проб и ошибок к заветным 99,999."}
+    longDescription:
+      - language: ru
+        text: "Все мы знаем про паттерны проектирования. И убеждены, что это базовое знание для любого программиста. Когда\
+            \ же речь заходит об отказоустойчивости под высокими нагрузками, мы часто ограничиваем себя кластеризацией, ша\
+            рдированием и вот этим всем. А потом начинается реальная жизнь нашего приложения, которая приносит немало сюрп\
+            ризов. И начинается путь через тернии… к терниям.\r\n\r\nПосле череды ошибок у нас в проекте появляются «переб\
+            орки», circuit breakers, heartbeat и leak bucket-тесты мониторинга. Но это все тоже известные и довольно фунда\
+            ментальные паттерны взаимодействия. Они появились не сегодня, пришли к нам из области электроники, прошли зака\
+            лку в космических проектах и аккуратно изложены на блюдечке во многих полезных как узкоспециальных, так и широ\
+            ко известных книгах.\r\n\r\nВ своем докладе Артем расскажет, как сам шел к этим знаниям и почему считает, что\
+            \ это часть фундаментальных принципов в нашей отрасли. Расскажет, как все это легко уложить в голове и что сле\
+            дует прочитать, чтобы не идти методом проб и ошибок к заветным 99,999."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3h11QtmrQkSYeA8gQ0im4c/ba90a9422f7be20678b53031eee4d0b7/Artem_Kalichkin_Otkazoustoychivost_raspredelennih_vichisleniy_pomenshe_prob_i_oshibok.pdf"]
+    videoLinks: ["https://youtu.be/x09raz5oElY"]
+    speakerIds: [382]
+  - id: 963
+    name:
+      - {language: en, text: "Dinamicheskoe proektirovanie: kak razrabatyvat bez perekompilyatsii"}
+      - {language: ru, text: "Динамическое проектирование: как разрабатывать без перекомпиляции"}
+    shortDescription:
+      - {language: en, text: "We are used to an established paradigm: you write a program, compile it and run it. If you need\
+            \ to change something, you stop the program, change it recompile and run again. This approach works, but there\
+            \ is another way that lets us create applications while having the application running. Just like a cardiologist\
+            \ that has to work on a running system, the dynamic prototyping paradigm allows us to make precision changes to\
+            \ parts of the program, making it work better while avoid the distraction of the constant recompile cycles. In\
+            \ this talk, we'll take a look at how this paradigm can be implemented."}
+      - {language: ru, text: "Мы привыкли к устоявшейся парадигме: пишешь программу, компилируешь, запускаешь. Если нужно\
+            \ что-то поменять, останавливаешь программу, меняешь, компилируешь и запускаешь снова. Есть и другой подход: п\
+            арадигма динамического проектирования позволяет прецезионно подменять части программы, не отрывая разработчика\
+            \ на постоянные циклы перекомпиляции. В этом докладе мы посмотрим на то, как можно собственноручно реализовать\
+            \ эту парадигму."}
+    longDescription:
+      - language: en
+        text: "We are used to an established paradigm: you write a program, compile it and run it. If you need to change something,\
+            \ you stop the program, change it recompile and run again. \n\nThis approach works, but there is another way that\
+            \ lets us create applications while having the application running. Just like a cardiologist that has to work\
+            \ on a running system, the dynamic prototyping paradigm allows us to make precision changes to parts of the program,\
+            \ making it work better while avoid the distraction of the constant recompile cycles.\n\nIn this talk we'll discuss\
+            \ how this approach can be implemented (with examples in C#), how this approach differs from other paradigms (such\
+            \ as REPL), what advantages it offers and what kind of problems you're likely to encounter in its implementation."
+      - language: ru
+        text: "Мы привыкли к устоявшейся парадигме: пишешь программу, компилируешь, запускаешь. Если нужно что-то поменять\
+            , останавливаешь программу, меняешь, компилируешь и запускаешь снова.\n\nЭтот подход работает, но есть и друго\
+            й подход, который позволяет заниматься созданием приложений, работая на запущенном приложении. Как кардиолог,\
+            \ который оперирует на работающем движке, парадигма динамического проектирования позволяет прецезионно подменя\
+            ть части программы, заставляя ее работать лучше и не отрывая разработчика на постоянные циклы перекомпиляции.\n\
+            \nВ этом докладе мы обсудим то, как можно реализовать этот подход (с примерами на C#), как подход отличается о\
+            т других похожих парадигм (например, REPL), какие преимущества он предоставляет и с какими проблемами можно ст\
+            олкнуться в его реализации."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3YT3bvS0AgeOCgsoaUq8oO/a7fafd28623eb4d48160c22e5209e0d2/Dmitri_Nesteruk_Dinamicheskoe_proektirovanie_kak_razrabatyvat_bez_perekompilyatsii.pdf"]
+    videoLinks: ["https://youtu.be/l5r8XrQvi5o"]
+    speakerIds: [282]
+  - id: 964
+    name:
+      - {language: en, text: "Mesto Flutter v zhizni Android-razrabotchika"}
+      - {language: ru, text: "Место Flutter в жизни Android-разработчика"}
+    shortDescription:
+      - {language: ru, text: "Мы рассмотрим использование технологии Flutter, ее преимущества и возможные проблемы и нюанс\
+            ы с точки зрения разработки под Android. Доклад будет интересен тем, кто еще не писал ничего особо серьезного\
+            \ на Flutter и хотел поближе познакомиться с этой технологией и попробовать ее в действии."}
+    longDescription:
+      - language: ru
+        text: "Flutter активно развивается, и сейчас немало людей задаются вопросом, заменит ли он нативную разработку? И\
+            \ какое у него будущее? Ведь его разрабатывает и продвигает непосредственно Google. Конечно, мы не можем знать\
+            \ планы Google, но мы можем подробнее посмотреть на эту технологию и понять, может ли она дать нам какие-то пр\
+            еимущества, а также узнать о различных проблемах и нюансах. Мы будем рассматривать использование Flutter в пер\
+            вую очередь с точки зрения разработки под Android.\r\n\r\nДоклад будет интересен тем, кто еще не писал ничего\
+            \ особо серьезного на Flutter и хотел поближе познакомиться с этой технологией и попробовать ее в действии."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/3TGhQpfBQAiIyys0cQ2qsG/c7d7c761f49683978a89f35efb257d75/Artur_Vasilov_Mesto_Flutter_v_zhizni_Android-razrabotchika.pdf"]
+    videoLinks: ["https://youtu.be/W0T_uaMY0t8"]
+    speakerIds: [291]
+  - id: 965
+    name:
+      - {language: en, text: "Kak sdelat bistroe mobilnoe prilozhenie odin raz dlya vseh platform"}
+      - {language: ru, text: "Как сделать быстрое мобильное приложение один раз для всех платформ"}
+    shortDescription:
+      - {language: ru, text: "На примере технологии Xamarin мы рассмотрим, как эволюционировали технологии кроссплатформен\
+            ной мобильной разработки для создания быстрых приложений с нативными интерфейсами и полным доступом к возможно\
+            стям смартфонов; узнаем, как можно тестировать и разрабатывать мобильные приложения с помощью облачных техноло\
+            гий."}
+    longDescription:
+      - {language: ru, text: "В докладе на примере технологии Xamarin мы рассмотрим, как эволюционировали технологии кросс\
+            платформенной мобильной разработки для создания быстрых приложений с нативными интерфейсами и полным доступом\
+            \ к возможностям смартфонов. Также мы познакомимся с тем, как можно тестировать и разрабатывать мобильные прил\
+            ожения с помощью облачных технологий."}
+    talkDay: 2
+    trackTime: "13:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5HD24pKVvGiQoGE40mqeSG/8bcc149faa7c9fa791ed650a82859946/Romuald_Zdebskiy_Kak_sdelat_bistroe_mobilnoe_prilozhenie_odin_raz_dlya_vseh_platform.pdf"]
+    videoLinks: ["https://youtu.be/NbwxFqMcMQo"]
+    speakerIds: [274]
+  - id: 966
+    name:
+      - {language: en, text: "Avtotesteri ne nuzhni ili Evolyutsiya primeneniya testov"}
+      - {language: ru, text: "Автотестеры не нужны, или Эволюция применения тестов"}
+    shortDescription:
+      - {language: ru, text: "Максим и Ирина расскажут о том, как из предельно вредной активности автоматизация тестирован\
+            ия становилась относительно бесполезной, а затем приносящей небольшую пользу; покажут эволюцию процесса в карт\
+            инках, цифрах и примерах."}
+    longDescription:
+      - language: ru
+        text: "Максим и Ирина расскажут о том, как на протяжении десяти лет команды, в которых они работали, пробовали раз\
+            ные подходы, процессы и виды тестов. Как из предельно вредной активности автоматизация тестирования становилас\
+            ь относительно бесполезной, а затем приносящей небольшую пользу. Покажут эволюцию процесса в картинках, цифрах\
+            \ и примерах (на картинках можно будет узнать себя). \n\nПрозвучат такие фразы, как «Нам некогда писать тесты»\
+            , «Время разработчиков слишком ценно, чтоб тратить его на поднятие тестов», «Юнит-тестами должны заниматься ра\
+            зработчики, а UI — тестировщики». \n  \nЧасть доклада посвящена сложностям и неожиданным эффектам, которые воз\
+            никли у одной команды при попытке эволюционировать, и решениям, которые они нашли или еще ищут."
+    talkDay: 2
+    trackTime: "13:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/4v6ubn5fxmGucOCoM84IGA/8656a51a181b965dd08df7fbd26d81c1/Maksim_Zaharov_Irina_Polunina_Avtotesteri_ne_nuzhni_ili_Evolyutsiya_primeneniya_testov.pdf"]
+    videoLinks: []
+    speakerIds: [281, 275]
+  - id: 967
+    name:
+      - {language: en, text: "Uzhasi mobilnoy grafiki"}
+      - {language: ru, text: "Ужасы мобильной графики"}
+    shortDescription:
+      - {language: ru, text: "Расскажем об неожиданных особенностях разработки мобильной графики с OpenGL ES и DirectX, о\
+            \ типичных проблемах и способах их решений. Также о борьбе разработчиков за каждую миллисекунду и о надежде на\
+            \ светлое будущее в роли графических программных интерфейсов нового поколения Vulkan и Metal."}
+    longDescription:
+      - {language: ru, text: "Современные мобильные устройства по уровню «железа» достигли игровые консоли. Почему же уров\
+            ень real-time графики мобильных игр заметно отстаёт от консолей и ПК? Из доклада вы узнаете об неожиданных осо\
+            бенностях разработки мобильной графики с такими современными API, как OpenGL ES и DirectX, о типичных проблема\
+            х и способах их решений. Также о том, как разработчики ведут кровавую войну за каждую миллисекунду, и о надежд\
+            е на светлое будущее в роли графических программных интерфейсов нового поколения Vulkan и Metal."}
+    talkDay: 2
+    trackTime: "13:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3fePNROgVaSk2C8UyMCAK6/87aa44f983a6a5f3c248ed15e66e82db/Filipp_Keks_Uzhasi_mobilnoy_grafiki.pdf"]
+    videoLinks: ["https://youtu.be/yc1WWTkFbFo"]
+    speakerIds: [272]
+  - id: 968
+    name:
+      - {language: en, text: "Obzor otechestvennih protsessorov"}
+      - {language: ru, text: "Обзор отечественных процессоров"}
+    shortDescription:
+      - {language: ru, text: "Будут описаны достоинства и недостатки отечественных процессоров, в том числе с оригинальным\
+            и архитектурами Мультиклет и Эльбрус, а также сферы их применения. Доклад основан на опыте портирования ОС Embox\
+            \ на эти процессоры."}
+    longDescription:
+      - language: ru
+        text: "В докладе рассматриваются различные аспекты современных микропроцессоров (архитектура, производительность и\
+            \ т. д.). Будет представлено сравнение отечественных процессоров с зарубежными. \n\nДоклад основан на опыте по\
+            ртирования ОС Embox на разные отечественные процессоры, в том числе с оригинальными архитектурами Мультиклет и\
+            \ Эльбрус. Будут описаны достоинства и недостатки этих процессоров, а также сферы их применения."
+    talkDay: 2
+    trackTime: "13:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1LjeZGqX6kaUCQys0SOm0M/98dfdbba5087287a8b4889c7dbc777a3/Anton_Bondarev_Obzor_otechestvennih_protsessorov.pdf"]
+    videoLinks: []
+    speakerIds: [283]
+  - id: 969
+    name:
+      - {language: en, text: "Zachem nuzhen esche odin yazik programmirovaniya"}
+      - {language: ru, text: "Зачем нужен еще один язык программирования?"}
+    shortDescription:
+      - {language: ru, text: "Поговорим о том, что не так с ведущими языками, зачем тратить время на альтернативы, зачем с\
+            оздавать что-то еще и есть ли в этом смысл."}
+    longDescription:
+      - {language: ru, text: "Java, C/C++, JavaScript, Python — вот основные (ведущие) языки программирования современност\
+            и. Вместе с тем, множество компаний и групп работает над альтернативами — Swift, Go, Scala, TypeScript, Flow,\
+            \ Rust и т.д. Мы в компании JetBrains работаем над Kotlin. Зачем? Что же не так с ведущими языками? Зачем трат\
+            ить время на все эти альтернативы и почему мы создаем еще что-то другое, свое? Это простое велосипедостроение\
+            \ или в этом есть смысл? Вот на эти вопросы и попытаемся ответить."}
+    talkDay: 2
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/oRHnjMkv16KusG8Mucoi2/8218c77cc01881dbb67bbd0aad0d85a4/Roman_Elizarov_Zachem_nuzhen_esche_odin_yazik_programmirovaniya.pdf"]
+    videoLinks: ["https://youtu.be/iMlsKA_cXc0"]
+    speakerIds: [106]
+  - id: 970
+    name:
+      - {language: en, text: "Polnaya prozrachnost v kompanii"}
+      - {language: ru, text: "Полная прозрачность в компании"}
+    shortDescription:
+      - {language: ru, text: "Поговорим о том, возможно ли осуществить абсолютную информационную и финансовую прозрачность\
+            \ у вас в компании, как выстраивается внутренняя карьерная модель для всех сотрудников и каков может быть подх\
+            од к иерархии в организации из 600 человек."}
+    longDescription:
+      - language: ru
+        text: "Работая в различных проектах и наблюдая одни и те же закономерности в управлении компанией и открытости инф\
+            ормации о ней, зачастую мы даже не задумываемся, что бывает как-то по-другому. Например, вы можете точно сказа\
+            ть, какие основные финансовые показатели у компании, в которой вы работаете? Сколько она получает за час вашей\
+            \ работы и сколько тратит на офис? Кто основные клиенты? Если вы не руководитель высшего звена, ответ наверняк\
+            а будет отрицательным. \n\nМихаил десять лет работает в компании с другой парадигмой: абсолютная информационна\
+            я и финансовая прозрачность. Решает ли это все внутренние организационные проблемы? Конечно, нет. Но при этом\
+            \ создается уникальный внутренний мир и внешний имидж компании. Мы обсудим преимущества и сложности во внутрен\
+            ней жизни компании. Поговорим о том, возможно ли построить подобное у вас, как выстраивается внутренняя карьер\
+            ная модель для всех сотрудников и каков может быть подход к иерархии в организации из 600 человек."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1qH0wTwvPGuCa8Y4ige06I/7ecf4cbd1a676a76a3fa3ea982d40281/Michael_Samarin_Polnaya_prozrachnost_v_kompanii.pdf"]
+    videoLinks: ["https://youtu.be/Btd1mzJ56Yo"]
+    speakerIds: [267]
+  - id: 971
+    name:
+      - {language: en, text: "Tipichnie oshibki avtomatizatorov testirovaniya"}
+      - {language: ru, text: "Типичные ошибки автоматизаторов тестирования"}
+    shortDescription:
+      - {language: ru, text: "Мы тезисно проговорим типичные ошибки автоматизаторов, а также рецепты по недопущению подобн\
+            ых оплошностей впредь при старте новых проектов и их устранению в уже запущенных проектах."}
+    longDescription:
+      - {language: ru, text: "Мы тезисно проговорим типичные ошибки автоматизаторов, а также рецепты по недопущению подобн\
+            ых оплошностей впредь при старте новых проектов и их устранению в уже запущенных проектах."}
+    talkDay: 2
+    trackTime: "14:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/7lFgCWBFKgwOSW0qK2EYkQ/713df82b480af9f971e820e31db47245/Anton_Semenchenko_Vadim_Zubovich_Roman_Soroka_Tipichnie_oshibki_avtomatizatorov_testirovaniya.pdf"]
+    videoLinks: ["https://youtu.be/GSFNBa9xSsE"]
+    speakerIds: [279, 285, 276]
+  - id: 972
+    name:
+      - {language: en, text: "Mikroservisi na Nodejs kak sohranit sebya"}
+      - {language: ru, text: "Микросервисы на Node.js: как сохранить себя"}
+    shortDescription:
+      - {language: ru, text: "Две жизненные истории про разработку на микросервисах: в одной — смерть проекта после перехо\
+            да, в другой — решение большинства задач и развитие."}
+    longDescription:
+      - language: ru
+        text: "Две истории про разработку на микросервисах: одна закончилась провалом, другая — success story. Из доклада\
+            \ можно будет узнать различные варианты перехода с монолита на микросервисы и организации инфраструктуры микро\
+            сервисов, несколько способов сэкономить нервы при написании кода микросервиса, а также некоторые проблемы и пр\
+            еимущества Node.js. В конце — вывод, почему микросервисы можно применять и когда это дает результат.\n\nТехнол\
+            огии: Node.js, RabbitMQ, REST API, Mongo, PostgreSQL."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/2DWWeik3qMcYKqosM0kS6y/e0060cbb81188d8711f8c49a1032b94a/Kirill_Sergeev_Mikroservisi_na_Nodejs_kak_sohranit_sebya.pdf"]
+    videoLinks: []
+    speakerIds: [293]
+  - id: 973
+    name:
+      - {language: en, text: "Can self-driving car predict intentions?"}
+      - {language: ru, text: "Может ли беспилотный автомобиль предсказывать намерения?"}
+    shortDescription:
+      - {language: ru, text: "Речь пойдёт о том, как беспилотный автомобиль предсказывает поведение других участников доро\
+            жного движения, а также о проблемах, с которыми мы сталкиваемся при решении этой задачи."}
+    longDescription:
+      - {language: en, text: "In this talk we will discuss how self-driving car can predict the behavior of other vehicles\
+            \ and pedestrians on the road. We'll look at different ways to generate predictions for the vehicles and pedestrians\
+            \ around us and talk about the problems we encounter while solving this problem."}
+      - {language: ru, text: "В докладе речь пойдёт о том, как беспилотный автомобиль предсказывает поведение других участ\
+            ников дорожного движения. Мы рассмотрим различные способы генерации прогнозов для окружающих нас автомобилей и\
+            \ пешеходов, а также поговорим о проблемах, с которыми мы сталкиваемся при решении этой задачи."}
+    talkDay: 2
+    trackTime: "15:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5qK8teZjPOiUCmWkAycmci/f901a409f36fcdb989b61dedf173611b/Roman_Udovichenko_Mozhet_li_bespilotnyj_avtomobil_predskazyvat_namereniya.pdf"]
+    videoLinks: []
+    speakerIds: [270]
+  - id: 974
+    name:
+      - {language: en, text: "Bezopasnaya razrabotka v bolshikh proektakh, ili Kak uluchshit bezopasnost PO bez otryva ot\
+            \ proizvodstva"}
+      - {language: ru, text: "Безопасная разработка в больших проектах, или Как улучшить безопасность ПО без отрыва от про\
+            изводства"}
+    shortDescription:
+      - {language: ru, text: "Алексей расскажет, как сделать так, чтобы в реалиях непрерывности процесса, больших объемов\
+            \ и горящих дедлайнов дефекты безопасности не остались незамеченными, а процесс их верификации не превратился\
+            \ в бутылочное горлышко."}
+    longDescription:
+      - language: ru
+        text: "Когда разработка ставится на поток из-за высокого спроса на услуги и продукты, все больше разработчиков стр\
+            емятся выстроить ее более гибко и эффективно, внедряют процессы непрерывной интеграции и поставки (CI/CD). Обе\
+            спечение безопасности разрабатываемого ПО — неотъемлемая часть такого процесса. Нужно точно и без отрыва от пр\
+            оизводства определять и устранять риски безопасности — уязвимости. Но как показывает практика, здесь есть две\
+            \ проблемы. Первая — анализ качества кода ошибочно считают достаточной мерой для проверки ПО в том числе на ри\
+            ски безопасности. Вторая — те, кто понимает, что этого недостаточно, и прибегает к инструментам анализа защище\
+            нности, сталкиваются с трудностью: мало просто найти уязвимости, их нужно верифицировать (подтвердить, что это\
+            \ не ложное срабатывание), ведь только в этом случае уязвимость можно исправить. Усугубляет проблему тот факт\
+            , что верификация в большинстве случаев делается вручную, а с учетом того, что число уязвимостей может достига\
+            ть сотен и тысяч, не просто эффективность, но сама целесообразность поддержки процесса CI/CD оказывается под б\
+            ольшим вопросом.\r\n\r\nВ своем докладе Алексей расскажет, как сделать так, чтобы в реалиях непрерывности проц\
+            есса, больших объемов и горящих дедлайнов дефекты безопасности не остались незамеченными, а процесс их верифик\
+            ации не превратился в бутылочное горлышко. Мы подробно поговорим о том, как грамотно автоматизировать процесс\
+            \ обеспечения безопасности ПО, не снижая, а даже повышая эффективность выполнения основных задач."
+    talkDay: 2
+    trackTime: "15:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2CA3vK0Lj6UMC6KeiCu0M0/3f65a3416150212646c57e2760f600d1/Aleksey_Zhukov_Bezopasnaya_razrabotka_v_bolshikh_proektakh__ili_Kak_uluchshit_bezopasnost_PO_bez_otryva_ot_proizvodstva.pdf"]
+    videoLinks: []
+    speakerIds: [290]
+  - id: 975
+    name:
+      - {language: en, text: "Evolution of paradigms"}
+      - {language: ru, text: "Эволюция парадигм"}
+    shortDescription:
+      - {language: ru, text: "Поговорим о том, почему языки уходят очень далеко от первоначальной задумки, какие проблемы\
+            \ это создает и что с этим делать."}
+    longDescription:
+      - {language: ru, text: "Популярным сегодня языкам программирования уже много лет, и то, как сегодня выглядит код на\
+            \ C# или Java, очень сильно отличается от того, что задумывали разработчики -дцать лет назад. А ведь подходы,\
+            \ лежащие в их основе, парадигмы, остались все теми же. Как так получилось? По каким законам рождаются, растут\
+            \ и умирают парадигмы и почему это важно для нас, разработчиков? Что же, попробуем в этом разобраться!"}
+    talkDay: 2
+    trackTime: "15:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5kva4iNGaAAMo8oSkqgM4O/d6489eed09d20bb19e253b89ccfff8d1/Roman_Nevolin_Evolyutsiya_paradigm.pdf"]
+    videoLinks: ["https://youtu.be/1LXeZethk28"]
+    speakerIds: [295]
+  - id: 976
+    name:
+      - {language: en, text: "Soobschenie kak osnova integratsii prilozheniy"}
+      - {language: ru, text: "Сообщение как основа интеграции приложений"}
+    shortDescription:
+      - {language: ru, text: "О том, как пара простых фокусов с сообщениями может изменить вашу жизнь к лучшему, избавив в\
+            ас от недосыпов, работы по ночам, а также необходимости покупать антидепрессанты ;)"}
+    longDescription:
+      - {language: ru, text: "В докладе повествуется о том, как пара простых фокусов с сообщениями может изменить вашу жиз\
+            нь к лучшему, избавив вас от недосыпов, работы по ночам, а также необходимости покупать антидепрессанты ;)"}
+    talkDay: 2
+    trackTime: "15:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1hawah2JOScwouIcIgmy6M/061fc5302129914c9c87f1c0f35bd194/Roman_Gordeev_Soobschenie_kak_osnova_integratsii_prilozheniy.pdf"]
+    videoLinks: []
+    speakerIds: [284]
+  - id: 977
+    name:
+      - {language: en, text: "Arhitektura kakaya esche arhitektura"}
+      - {language: ru, text: "Архитектура, какая ещё архитектура?"}
+    shortDescription:
+      - {language: ru, text: "Разберём самые характерные проблемы, которые приводят к плохой архитектуре, и попробуем найт\
+            и советы, как этих ошибок избежать."}
+    longDescription:
+      - language: ru
+        text: "Архитектура програмного продукта — зачастую достаточно загадочная вещь. Все про нее слышали, кто-то даже ви\
+            дел, и многие считают, что она плохая.\n\nВ докладе мы разберём самые характерные проблемы, которые приводят к\
+            \ той самой плохой архитектуре, и попробуем найти советы, как этих ошибок избежать. После доклада слушатели см\
+            огут более осознанно проектировать системы."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6h5MZoN5Xqkw8og08MmGcO/d5c060a777c8522143a93715cfcf09cb/Mikhail_Druzhinin_Arhitektura_kakaya_esche_arhitektura.pdf"]
+    videoLinks: ["https://youtu.be/7-RoKQTiI5U"]
+    speakerIds: [268]
+  - id: 978
+    name:
+      - {language: en, text: "It's a mad mad mad mad search bar pt 1"}
+      - {language: ru, text: "Этот безумный, безумный, безумный, безумный инпут. Часть 1"}
+    shortDescription:
+      - {language: ru, text: "Роман расскажет про свой опыт создания компонента поисковой строки, начиная с привычек и ожи\
+            даний пользователей и продолжая архитектурой всего компонента."}
+    longDescription:
+      - language: en
+        text: "Search bar is a common way to help users to find whatever they want on your website. Especially it works when\
+            \ your website was developed to help users. However, it isn't easy to make a search bar for your app which is\
+            \ written in React and Redux.\r\n\r\nIn this talk, Roman will share his experience of developing a search bar\
+            \ component, starting from the UX of a search bar and to the architecture of the React-component they made. Of\
+            \ course, there'll be a word about Redux-saga which helped them.\r\n\r\nAfter this talk you'll know how to make\
+            \ search bars accessible and how to rewrite your code once again to make the search bar easy to use not only for\
+            \ developers."
+      - language: ru
+        text: "Строка поиска — самый распространенный и удобный способ навигации по сайту. Казалось бы, что может быть про\
+            ще? Но на практике создание такой строки в приложении, написанном на React, оказывается не самой простой задач\
+            ей, ведь поиск должен работать на мобильных устройствах и быть доступным.\r\n\r\nВ этом докладе Роман расскаже\
+            т про свой опыт создания компонента поисковой строки, начиная с привычек и ожиданий пользователей и продолжая\
+            \ архитектурой всего компонента."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/5uP6W9jzLUaYyIaaUkq4eo/bd2e0e2a91222eadf8208d4c44e4bf1c/Roman_Prudnikov_It_s_a_mad_mad_mad_mad_search_bar_pt_1.pdf"]
+    videoLinks: ["https://youtu.be/r8UTkmx_LBY"]
+    speakerIds: [278]
+  - id: 979
+    name:
+      - {language: en, text: "Plyusy i minusy Go a takzhe ego primeneniya v VKontakte"}
+      - {language: ru, text: "Плюсы и минусы Go, а также его применения в ВКонтакте"}
+    shortDescription:
+      - {language: ru, text: "Язык Go и масса хайпа вокруг него в последнее время — основная тема доклада. Алексей рассмот\
+            рит основные причины негатива в адрес Go и что с ними можно сделать (или нельзя). Затем пройдется по плюсам яз\
+            ыка для тех задач, где он наиболее широко используется."}
+    longDescription:
+      - language: ru
+        text: "Язык Go и масса хайпа вокруг него в последнее время — основная тема доклада. Алексей рассмотрит основные пр\
+            ичины негатива в адрес Go и что с ними можно сделать (или нельзя). Затем пройдется по плюсам языка для тех зад\
+            ач, где он наиболее широко используется. \n\nАлексей постарается дать взвешенные и обоснованные сравнения с др\
+            угими языками, не скатываясь в holy war. В конце он расскажет, как Go применяется у них (и где не применяется\
+            \ и почему). \n\nДоклад в первую очередь для тех, кто с Go не знаком или только начинает изучать/хейтить язык."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6opgTPGWacYMcQQ4IgIUai/648452172835c0723cbd5ebd53abb533/Aleksey_Akulovich_Plyusy_i_minusy_Go_a_takzhe_ego_primeneniya_v_VKontakte.pdf"]
+    videoLinks: ["https://youtu.be/2fxNbhy2gt0"]
+    speakerIds: [288]
+  - id: 980
+    name:
+      - {language: en, text: "Skreshhivaem DP Visitor, Builder, Composite, Decorator i Iterator: primer S++ arkhitektury"}
+      - {language: ru, text: "Скрещиваем DP Visitor, Builder, Composite, Decorator и Iterator: пример С++ архитектуры"}
+    shortDescription:
+      - {language: ru, text: "Мы поговорим о важности архитектурных решений, в том числе для обеспечения высокого качества\
+            \ ПО при минимальных трудозатратах. Предложенный вариант на базе метрик, которые мы обязательно упомянем, был\
+            \ признан лучшим архитектурным решением в рамках компании — одного из лидеров отрасли, получил награду Microsoft,\
+            \ был «размножен» на смежные области."}
+    longDescription:
+      - {language: ru, text: "В рамках доклада мы поговорим о важности архитектурных решений, в том числе для обеспечения\
+            \ высокого качества ПО при минимальных трудозатратах. Сквозной пример из области резервного копирования данных\
+            \ позволит лучше понять техническую, QA и общепроцессную составляющие подхода. Прошло достаточно времени, чтоб\
+            ы раскрыть технические детали без нарушения NDA. Предложенный вариант на базе метрик, которые мы обязательно у\
+            помянем, был признан лучшим архитектурным решением в рамках компании — одного из лидеров отрасли, получил нагр\
+            аду Microsoft, был «размножен» на смежные области. Приступаем: Builder, Decorator, Composite, Iterator и Visitor\
+            \ — как эти паттерны помогли решить нетривиальную С++ задачу."}
+    talkDay: 2
+    trackTime: "16:00"
+    track: 4
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1uap8pYWT6yUWSMmcyOyCI/6efc47c62af28b38b4bb2d6e499a4ce0/Anton_Semenchenko_Skreshhivaem_DP_Visitor__Builder__Composite__Decorator_i_Iterator_primer_S___arkhitektury.pdf"]
+    videoLinks: ["https://youtu.be/b7gh0oeEyks"]
+    speakerIds: [279]
+  - id: 981
+    name:
+      - {language: en, text: "Smart responsive interface design patterns"}
+      - {language: ru, text: "Паттерны проектирования умных отзывчивых интерфейсов"}
+    shortDescription:
+      - {language: en, text: "A microscopic examination of common interface components and problems appearing in responsive\
+            \ user interfaces."}
+      - {language: ru, text: "Тщательное исследование общих интерфейсных компонентов и проблем отзывчивых пользовательских\
+            \ интерфейсов."}
+    longDescription:
+      - language: en
+        text: "You’re a smart cookie. If someone asks you to build a responsive accordion, you’ll figure it out. The same\
+            \ goes for a table. Or a calendar. Or, God forbid, a multi-level-mega-drop-down. But how would you go around slightly\
+            \ more complicated components?\n\nWhat if you had to build a sophisticated car configurator with a real-time updated\
+            \ 3D view? What about an advanced mortgage calculator? How about a feature comparison table, a music festival\
+            \ schedule, an election map, an airfare booking and check-in, a live world football championship leaderboard and\
+            \ a theatre map seat selection? In this session, we’ll take a microscopic examination of common interface components\
+            \ and problems appearing in responsive user interfaces.\n\nWe’ll cover them all: both from the design and from\
+            \ the development perspective — with a few dirty little tricks. Keep in mind: you won’t be able to unsee the things\
+            \ you’ll see in this session. Yes, it’s going to be dirty, tricky and horribly annoying at times. You’ll leave\
+            \ with a toolbox of practical techniques that you’ll be able to apply to your work right away. And potentially\
+            \ some tips for saving money on airfare, too!"
+      - language: ru
+        text: "Вы –– умница. Если вас попросят сделать отзывчивый аккордеон, вы справитесь. Сделаете вы и таблицу, и кален\
+            дарь, и (боже упаси!) супер-многоуровневый раскрывающийся список. Но как насчёт компонентов посложнее?\n\nЧто\
+            , если вам нужно будет сделать навороченный конфигуратор автомобилей с объёмным изображением, обновляющимся в\
+            \ реальном времени? Или продвинутый ипотечный калькулятор? А сравнительную таблицу функций, расписание музыкал\
+            ьного фестиваля, карту избирательных участков, сервис бронирования авиабилетов и регистрации на рейсы, турнирн\
+            ую таблицу чемпионата мира по футболу, обновляющуюся в реальном времени, или схему выбора места в театре? В эт\
+            ом докладе мы тщательно исследуем общие интерфейсные компоненты и проблемы отзывчивых пользовательских интерфе\
+            йсов.\n\nМы поговорим обо всём этом, прежде всего с точки зрения дизайна, и увидим пару хитрых приёмчиков. Пом\
+            ните: вы не сможете развидеть то, что увидите в нашем докладе. Будут неожиданные техники и временами очень стр\
+            ашные трюки. Из доклада вы вынесете набор практических методов, которые сразу же можно будет попробовать в раб\
+            оте, и, возможно, научитесь экономить на авиабилетах!"
+    talkDay: 2
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/xDJlb8GzReuWE6UkKk8MS/9fab01d289461c07a0111ee9bcc5cc07/Vitaly_Friedman_Smart_responsive_interface_design_patterns.pdf"]
+    videoLinks: ["https://youtu.be/hzVYV50Ckbg"]
+    speakerIds: [260]
+  - id: 982
+    name:
+      - {language: en, text: "Lean ML: ratsionalnyj podhod k mashinnomu obucheniyu"}
+      - {language: ru, text: "Lean ML: рациональный подход к машинному обучению"}
+    shortDescription:
+      - {language: ru, text: "Обсудим, в каких продуктах важно думать про технологии искусственного интеллекта и в каких с\
+            лучаях машинное обучение может быть точкой роста, а также как максимально эффективно внедрить ML."}
+    longDescription:
+      - language: ru
+        text: "Обсудим, в каких продуктах важно думать про технологии искусственного интеллекта и в каких случаях машинное\
+            \ обучение может быть точкой роста.\r\n\r\nКак максимально эффективно внедрить ML: исследуем технологии, форму\
+            лируем MVP, постепенно усложняем.\r\n\r\nПравильно запускаем эксперименты в продакшн, думаем про продуктовые м\
+            етрики и создаем удобную ML-инфраструктуру."
+    talkDay: 2
+    trackTime: "17:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/6gpRgoSDrUGw46q22yISKe/aa3f0d892536106c6f554da47a946729/Andrew_Zakonov_Lean_ML_ratsionalnyj_podhod_k_mashinnomu_obucheniyu.pdf"]
+    videoLinks: ["https://youtu.be/PkjpPtV2cZA"]
+    speakerIds: [263]
