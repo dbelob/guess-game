@@ -404,19 +404,19 @@ speakers:
     fileName: 0028.jpg
     name:
       - {language: en, text: "Kirill Tolkachev"}
-      - {language: ru, text: "Кирилл Толкачев"}
+      - {language: ru, text: "Кирилл Толкачёв"}
     company:
-      - {language: en, text: Alpha-Bank}
-      - {language: ru, text: Альфа-Банк}
+      - {language: en, text: CIAN}
+      - {language: ru, text: ЦИАН}
     bio:
-      - {language: en, text: "Kirill is a Developer at Alfa-Bank. He develops different banking API's, forms principles and\
-            \ tools related to microservice architecture. He is a fan of Groovy, Gradle, Spring and Netflix technologies stack.\
-            \ Kirill is a resident of famous Russian IT-podcast “Razbor Poletov”. He knows DevOps methodology like the palm\
-            \ of his hand and has two years' experience of its production usage."}
-      - {language: ru, text: "Разработчик в Альфа-Банке. Разрабатывает различные банковские API. Формирует принципы и набо\
-            ры инструментов для работы с микросервисной архитектурой. Большой поклонник Groovy, Gradle, Spring и стека тех\
-            нологий Netflix. Постоянный резидент подкаста «Разбор Полётов». Знает не понаслышке методологию DevOps и имеет\
-            \ почти двухлетний опыт её применения."}
+      - {language: en, text: "Up until recently Kirill was a lead developer at Alfa-Lab. He was developing different banking\
+            \ APIs, forming principles and tools related to microservice architecture. He is a fan of Groovy, Gradle, Spring\
+            \ and Netflix technologies stack. Kirill is a resident of famous Russian IT-podcast \"Razbor Poletov\". He knows\
+            \ DevOps methodology like the palm of his hand and has four years' experience of its production usage."}
+      - {language: ru, text: "До недавнего времени Кирилл выступал как главный разработчик в Альфа-Лаборатории и разрабаты\
+            вал банковские API, формируя принципы и наборы инструментов для работы с микросервисной архитектурой. Большой\
+            \ поклонник Groovy, Gradle, Spring и стека технологий Netflix. Постоянный резидент подкаста «Разбор Полётов».\
+            \ Методологию DevOps знает не понаслышке и имеет четырехлетний опыт её применения."}
     twitter: tolkv
   - id: 29
     fileName: 0029.jpg
@@ -3855,24 +3855,79 @@ speakers:
     fileName: 0358.jpg
     name:
       - {language: en, text: "John Willis"}
+    company:
+      - {language: en, text: "SJ Technologies"}
+    bio:
+      - {language: en, text: "John Willis has worked in the IT management industry for more than 35 years. Currently he is\
+            \ Vice President of DevOps and Digital Practices at SJ Technologies. He was formerly Director of Ecosystem Development\
+            \ at Docker. Prior to Docker, Willis was the VP of Solutions for Socketplane (sold to Docker) and Enstratius (sold\
+            \ to Dell). Prior to to Socketplane and Enstratius, Willis was the VP of Training and Services at Opscode, where\
+            \ he formalized the training, evangelism, and professional services functions at the firm. Willis also founded\
+            \ Gulf Breeze Software, an award-winning IBM business partner, which specializes in deploying Tivoli technology\
+            \ for the enterprise. Willis has authored six IBM Redbooks on enterprise systems management and was the founder\
+            \ and chief architect at Chain Bridge Systems."}
+    twitter: botchagalupe
   - id: 359
     fileName: 0359.jpg
     name:
       - {language: en, text: "Liz Rice"}
+    company:
+      - {language: en, text: "Aqua Security"}
+    bio:
+      - {language: en, text: "Liz's background and core competence is systems software engineering, but she loves the whole\
+            \ process of building products. She's been in startups that have succeeded and others that have failed. Liz enjoys\
+            \ writing code, and understanding how other people will use it. She's now the technology evangelist with container\
+            \ security specialists Aqua Security. She's also co-chairing the KubeCon / CloudNativeCon 2018 events in Copenhagen,\
+            \ Shanghai and Seattle."}
+    twitter: lizrice
   - id: 360
     fileName: 0360.jpg
     name:
       - {language: en, text: "Seth Vargo"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Seth Vargo is a Developer Advocate at Google. Previously he worked at HashiCorp, Chef Software,\
+            \ CustomInk, and a few Pittsburgh-based startups. He is the author of Learning Chef and is passionate about reducing\
+            \ inequality in technology. When he is not writing, working on open source, teaching, or speaking at conferences,\
+            \ Seth enjoys spending time with his friends and advising non-profits."}
+    twitter: sethvargo
+    gitHub: sethvargo
   - id: 361
     fileName: 0361.jpg
     name:
       - {language: en, text: "Alena Prokharchyk"}
       - {language: ru, text: "Алёна Прохорчик"}
+    company:
+      - {language: en, text: "Rancher Labs"}
+    bio:
+      - {language: en, text: "Alena is a Principal Software Engineer at Rancher Labs and a Project Management Committee at\
+            \ Apache Software Foundation. She's been working on building infrastructure services first for Virtual Machines\
+            \ as a part of CloudStack project, now for containers with the main focus on Kubernetes. Alena enjoys helping\
+            \ others make sense of problems and explore solutions together. In her free she likes rollerblading, reading books\
+            \ on totally random subjects and listening to other people's stories."}
+      - {language: ru, text: "Алёна — Principal Software Engineer в Rancher Labs и Project Management Committee в Apache Software\
+            \ Foundation. Раньше работала над построением инфраструктурных сервисов для виртуальных машин в проекте CloudStack,\
+            \ а теперь — для контейнеров с упором на Kubernetes. Алёна любит помогать другим разбираться в сути проблем и\
+            \ совместно искать решения. В свободное время любит кататься на роликах, читать книги на абсолютно разнообразн\
+            ые темы и слушать истории других людей."}
+    twitter: lemonjet
   - id: 362
     fileName: 0362.jpg
     name:
       - {language: en, text: "Anton Weiss"}
       - {language: ru, text: "Антон Вайс"}
+    company:
+      - {language: en, text: Otomato}
+    bio:
+      - {language: en, text: "The co-owner of Otomato Software technological consulting, has got over 15 years of experience\
+            \ in cutting-edge technologies. An expert in technical coaching, the initiator and co-author of the first Israeli\
+            \ DevOps certification course. Anton takes part in international conferences and is known as a great speaker."}
+      - {language: ru, text: "Совладелец технологического консалтинга Otomato Software, обладатель более чем 15-летнего оп\
+            ыта в области высоких технологий. Является экспертом по техническому преподаванию, инициатором и соавтором пер\
+            вого в Израиле курса DevOps-сертификации. Антон участвует в международных конференциях и известен как крутой д\
+            окладчик."}
+    twitter: antweiss
   - id: 363
     fileName: 0363.jpg
     name:
@@ -3911,64 +3966,154 @@ speakers:
     name:
       - {language: en, text: "Andrey Ermakov"}
       - {language: ru, text: "Андрей Ермаков"}
+    company:
+      - {language: en, text: Tinkoff.ru}
+    bio:
+      - {language: en, text: "Lead developer at Tinkoff.ru on projects for small and medium enterprise. Develops practices\
+            \ of continuous delivery, creates services in Kotlin and Typescript."}
+      - {language: ru, text: "Ведущий разработчик в Tinkoff.ru на проектах для малого бизнеса. Занимается развитием практи\
+            к continuous delivery, пишет сервисы на Kotlin и Typescript."}
   - id: 366
     fileName: 0366.jpg
     name:
       - {language: en, text: "Vladimir Borodin"}
       - {language: ru, text: "Владимир Бородин"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Head of Yandex.Cloud storage service team."}
+      - {language: ru, text: "Руководитель службы сервисов хранения данных Яндекс.Облака."}
+    twitter: man_brain
   - id: 367
     fileName: 0367.jpg
     name:
       - {language: en, text: "Leonid Igolnik"}
       - {language: ru, text: "Леонид Игольник"}
     company:
-      - {language: en, text: "CA Technologies"}
+      - {language: en, text: SignalFx}
     bio:
       - {language: en, text: "Leonid is a technologist blending product development, product management and product operations\
-            \ at scale. In his current role as a Vice President of Engineering with CA Technologies he is responsible for\
-            \ product development of SaaS applications for the Enterprise Security space. He has spent his entire professional\
-            \ career building online applications starting his career at one of the earliest internet service providers in\
-            \ Israel. Leonid first started building large scale applications in Java in 2002 while working for the 2nd largest\
-            \ domain registrar at the time at Tucows/OpenSRS where he led the platform team. Subsequently to that he held\
-            \ several technology leadership roles with companies in Canada and US. Most recently Leonid has been responsible\
-            \ for engineering teams at Taleo (acquired by Oracle) building applications that help millions of people find\
-            \ jobs that have propelled the company to a position of one of the 4 largest SaaS companies in the world."}
+            \ at scale. He has spent his entire professional career building online applications starting his career at one\
+            \ of the earliest internet service providers in Israel. Leonid first started building large scale applications\
+            \ in Java in 2002 while working for the 2nd largest domain registrar at the time at Tucows/OpenSRS where he led\
+            \ the platform team. Subsequently to that he held several technology leadership roles with companies in Canada\
+            \ and US. Most recently Leonid has been responsible for engineering teams at Taleo (acquired by Oracle) building\
+            \ applications that help millions of people find jobs that have propelled the company to a position of one of\
+            \ the 4 largest SaaS companies in the world."}
       - {language: ru, text: "Леонид хорошо знаком и с разработкой, и с управлением, и с администрированием масштабных про\
-            ектов. Сейчас он занимает должность Vice President of Engineering в CA Technologies, отвечая за разработку SaaS-п\
-            риложений в сфере enterprise security. Всю свою карьеру он занимается онлайн-приложениями, начав её в одном из\
-            \ первых интернет-провайдеров Израиля. Первый опыт работы с масштабными приложениями на Java у него произошёл\
-            \ в 2002-м, когда он работал во втором по величине на тот момент доменном регистраторе."}
+            ектов. Сейчас он занимает должность Executive Vice President of Engineering в SignalFx. Всю свою карьеру он за\
+            нимается онлайн-приложениями, начав её в одном из первых интернет-провайдеров Израиля. Первый опыт работы с ма\
+            сштабными приложениями на Java у него произошёл в 2002-м, когда он работал во втором по величине на тот момент\
+            \ доменном регистраторе."}
     twitter: ligolnik
   - id: 368
     fileName: 0368.jpg
     name:
       - {language: en, text: "Anton Babenko"}
       - {language: ru, text: "Антон Бабенко"}
+    company:
+      - {language: en, text: Betajob}
+    bio:
+      - {language: en, text: "Anton Babenko is a long time developer, CTO, and tech-lead who is spending a large amount of\
+            \ his time as an open source contributor to various Terraform & AWS projects, terraform-aws-modules, modules.tf\
+            \ and a few others. The most popular one is where he manages a collection of verified Terraform [AWS modules](https://github.com/terraform-aws-modules)\
+            \ which is being downloaded more than 1 million times. He also leads AWS, DevOps and HashiCorp User Groups in\
+            \ Norway, organizes DevOpsDays Oslo, and speaks often at various technical meetups and conferences. He is passionate\
+            \ about all-things-cloud and solution architecture combined with automation and scripting."}
+      - {language: ru, text: "Антон Бабенко много лет работает программистом и техлидом и проводит большую часть своего вр\
+            емени, управляя различными проектами, связанными с Terraform, AWS, terraform-aws-modules, modules.tf и другими\
+            . Один из наиболее успешных его проектов — тот, где он управляет коллекцией проверенных Terraform-модулей для\
+            \ [AWS](https://github.com/terraform-aws-modules), которые были скачаны более миллиона раз. Он также является\
+            \ организатором встреч пользовательских групп по темам AWS, DevOps, HashiCorp в Норвегии."}
+    twitter: antonbabenko
   - id: 369
     fileName: 0369.jpg
     name:
       - {language: en, text: "Alexey Kirpichnikov"}
       - {language: ru, text: "Алексей Кирпичников"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - language: en
+        text: "Alexey works at Kontur and builds infrastructure-as-a-service for Kontur's product developers. Alexey's core\
+            \ interests are metrics, alerting, log agregation, service discovery, deploy, hosting and every other tool a developer\
+            \ needs in order to concentrate on features and stop thinking about operations.\n\nAlexey was formerly a team\
+            \ lead at Yandex, bringing Yandex.Taxi backend infrastructure from the ground up to the millionth ride."
+      - language: ru
+        text: "Алексей работает в Контуре и делает инфраструктуру-как-сервис для разработчиков продуктов этой компании. В\
+            \ сферу интересов Алексея входит сбор метрик, алертинг, агрегация логов, service discovery, деплой, хостинг и\
+            \ все остальное, что нужно разработчику, чтобы сосредоточиться на развитии сервиса и не тратить время на экспл\
+            уатацию.\n\nДо Контура Алексей был тимлидом команды разработки Яндекс.Такси и довел инфраструктуру бэкендов эт\
+            ого сервиса от основания до миллионного заказа."
   - id: 370
     fileName: 0370.jpg
     name:
       - {language: en, text: "Oksana Nekrasova"}
       - {language: ru, text: "Оксана Некрасова"}
+    company:
+      - {language: en, text: "Dell EMC"}
+    bio:
+      - language: en
+        text: "Oksana leads DevOps team at Dell EMC. Before this she participated in development, architecture and management\
+            \ of different projects within Dell EMC and Motorola. Oksana became SAFe Program Consultant (SPC) and in this\
+            \ position participated in transformation of big Business Unit from waterfall development process to agile. The\
+            \ process of this transformation was presented at SECR 2015 conference in Moscow, Russia. \n\nOksana is very interested\
+            \ in DevOps technologies and development processes."
+      - language: ru
+        text: "Оксана руководит командой DevOps в Dell EMC. До этого Оксана участвовала в разработке и управлении в различ\
+            ных проектах в Dell EMC и Motorola. Оксана получила сертификат SAFe Program Consultant (SPC) и в качестве конс\
+            ультанта помогала трансформировать процесс разработки в большом подразделении Dell EMC. Результат был представ\
+            лен на конференции SECR 2015 в Москве. \n\nОксана увлечена DevOps-технологиями и процессами разработки."
+    twitter: Oks_Nekrasova
   - id: 371
     fileName: 0371.jpg
     name:
       - {language: en, text: "Ruslan Serkin"}
       - {language: ru, text: "Руслан Серкин"}
+    company:
+      - {language: en, text: DataArt}
+    bio:
+      - {language: en, text: "Ruslan works on blockchain and IoT projects at DataArt, writes code in JavaScript and Go; likes\
+            \ K8s and Docker; teaches web development in his spare time."}
+      - {language: ru, text: "Руслан работает в компании DataArt над блокчейн- и IoT-проектами, пишет код на JavaScript и\
+            \ Go; любит K8s и Docker; в свободное время читает курс по веб-разработке."}
   - id: 372
     fileName: 0372.jpg
     name:
       - {language: en, text: "Evgeny Dekhtyarev"}
       - {language: ru, text: "Евгений Дехтярёв"}
+    company:
+      - {language: en, text: 2GIS}
+      - {language: ru, text: 2ГИС}
+    bio:
+      - {language: en, text: "Three years ago Evgeny came to 2GIS to organize its infrastructure. Since then he has changed\
+            \ his broom to Kubernetes robotic vacuum cleaner. Now he helps his teams use the infrastructure correctly and\
+            \ without causing any harm to the company's budget. Recently he has been leading an infrastructure engineer team\
+            \ and procrastinating on loads of meetings every week :)"}
+      - {language: ru, text: "Три года назад пришел в 2ГИС наводить порядок в инфраструктуре. За это время сменил метёлку\
+            \ на робот-пылесос марки Kubernetes. Теперь помогает командам использовать инфраструктуру правильно и без боли\
+            \ для бюджета компании. С недавних времён руководит командой инфраструктурных инженеров и прокрастинирует на 100500\
+            \ встречах в неделю :)"}
   - id: 373
     fileName: 0373.jpg
     name:
       - {language: en, text: "Anton Rymkus"}
       - {language: ru, text: "Антон Рымкус"}
+    company:
+      - {language: en, text: "Dell EMC"}
+    bio:
+      - language: en
+        text: "Anton works in a DevOps command for Dell EMC as an architect and team lead. Before that he worked for 15 years\
+            \ as system administrator, system engineer and IT dept. manager, resulting in decision to make a personal digital\
+            \ transformation into a DevOps engineer to work in more dynamic and interesting field. \n\nFollows *nix and BSD-based\
+            \ OS, open source and process optimization."
+      - language: ru
+        text: "Антон работает в команде DevOps в Dell EMC в роли архитектора и тимлида. До этого на протяжении 15 лет рабо\
+            тал системным администратором, инженером и менеджером ИТ-отделов, в результате чего принял решение личной тран\
+            сформации в DevOps для работы в более интересном и гибком поле. \n\nУвлечен *nix и BSD-based ОС, open source и\
+            \ оптимизацией связанных процессов."
   - id: 374
     fileName: 0374.jpg
     name:
