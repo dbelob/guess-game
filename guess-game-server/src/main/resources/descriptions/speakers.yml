@@ -56,10 +56,16 @@ speakers:
     company:
       - {language: en, text: Zerocracy}
     bio:
-      - {language: en, text: "The author of \"Elegant Objects\"; CEO at Zerocracy; Oracle Certified Enterprise Architect;\
-            \ creator of Takes Framework JCabi, and Rultor."}
-      - {language: ru, text: "Автор книги «Elegant Objects»; CEO в Zerocracy; сертифицированный Oracle Java Architect; Java\
-            \ архитектор в нескольких open source проектах (Rultor, Takes, JCabi)."}
+      - {language: en, text: "Yegor Bugayenko is a founder and CEO of Zerocracy, which replaces annoying bosses with AI bots;\
+            \ an OOP fundamentalist; an author of \"Elegant Objects\" book series; a provocative blogger at yegor256.com;\
+            \ a creator of Zold, a non-blockchain cryptocurrency for fast micro-payments; a hands-on Java programmer; a creator\
+            \ of Cactoos, Takes Framework, JCabi, and Rultor; a philanthropist donating four thousand dollars annually to\
+            \ an open source award."}
+      - {language: ru, text: "Егор Бугаенко — основатель и CEO компании Zerocracy, разрабатывающей AI роботов для управлен\
+            ия программистами; ООП-фундаменталист; автор «Elegant Objects» — серии книг об объектно-ориентированном програ\
+            ммировании; создатель криптовалюты Zold для быстрых микроплатежей; провокационный блогер на yegor256.com; пишу\
+            щий Java-программист; создатель Cactoos, Takes Framework, JCabi и Rultor; филантроп, жертвующий ежегодно неско\
+            лько тысяч долларов номинантам его собственной премии за самый качественный программный проект."}
     twitter: yegor256
   - id: 4
     fileName: 0004.jpg
@@ -131,8 +137,24 @@ speakers:
   - id: 8
     fileName: 0008.jpg
     name:
-      - {language: en, text: "Pasha Finkelstein"}
-      - {language: ru, text: "Паша Финкельштейн"}
+      - {language: en, text: "Pavel Finkelstein"}
+      - {language: ru, text: "Павел Финкельштейн"}
+    company:
+      - {language: en, text: lamoda}
+    bio:
+      - language: en
+        text: "Former sysadmin, now a developer with a psychologist background, who not only likes solving interesting problems\
+            \ (technical as well as business), but also is always trying some new things. Likes to form an opinion about these\
+            \ things and tell this opinion to others. Tried Kotlin very early, even before its first release, and started\
+            \ using it in production shortly after release. \n\nLikes word-play and jokes, but is also capable of serious\
+            \ discussion."
+      - language: ru
+        text: "Бывший админ, а нынешний разработчик с психологическим бэкграундом, который не только любит решать интересн\
+            ые задачки (как технические, так и бизнес-), но и постоянно пробует новые штуки. Любит об этих новых штуках ск\
+            ладывать мнение и рассказывать его другим. Очень рано попробовал Kotlin, задолго до первого релиза, и начал ис\
+            пользовать его в продакшне через совсем небольшое время после релиза. \n\nКаламбурит, балагурит, но и серьёзно\
+            \ разговаривать тоже умеет."
+    twitter: asm0di0
   - id: 9
     fileName: 0009.jpg
     name:
@@ -342,8 +364,20 @@ speakers:
   - id: 23
     fileName: 0023.jpg
     name:
-      - {language: en, text: "Oleg Shelajev"}
+      - {language: en, text: "Oleg Šelajev"}
       - {language: ru, text: "Олег Шелаев"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - {language: en, text: "Oleg Šelajev is a developer advocate for the GraalVM project at Oracle Labs, which aims to make\
+            \ programs run faster and developers more productive. He helps to organize VirtualJUG, the online Java User Group,\
+            \ and a GDG chapter in Tartu, Estonia. Became a Java Champion in 2017. Loves pizza and playing chess. Favorite\
+            \ languages: Java, JavaScript, and Clojure."}
+      - {language: ru, text: "Олег — developer advocate проекта GraalVM в OracleLabs, организатор VirtualJUG и митапов GDG\
+            \ Tartu. В 2017 году стал Java Champion. Любит виртуальные машины, компиляторы, смотреть, как бегут бенчмарки\
+            , почти все языки программирования и немного шахматы."}
+    twitter: shelajev
+    javaChampion: true
   - id: 24
     fileName: 0024.jpg
     name:
@@ -371,11 +405,14 @@ speakers:
     company:
       - {language: en, text: Netcracker}
     bio:
-      - {language: en, text: "System performance engineer at NetCracker. Looking forward to tuning Java and SQL things."}
+      - {language: en, text: "Vladimir has been working on performance and scalability of NetCracker platform (a software\
+            \ used by telecom operators for automatization of network management processes and network equipment) for ten\
+            \ years. His focus is Java and Oracle Database performance optimisations. Vladimir is an author of more than a\
+            \ dozen of performance improvements in the official PostgreSQL JDBC driver."}
       - {language: ru, text: "Десять лет работает над производительностью и масштабируемостью NetCracker OSS — ПО, использ\
             уемого операторами связи для автоматизации процессов управления сетью и сетевым оборудованием. Увлекается вопр\
-            осами производительности Java и Oracle Database. В его обязанности входит планирование нагрузочных замеров, ан\
-            ализ и объяснение полученных результатов. Владимир является commiter’ом в Apache JMeter."}
+            осами производительности Java и Oracle Database. Автор более десятка улучшений производительности в официально\
+            м PostgreSQL JDBC-драйвере."}
     twitter: VladimirSitnikv
   - id: 26
     fileName: 0026.jpg
@@ -581,32 +618,108 @@ speakers:
     fileName: 0040.jpg
     name:
       - {language: en, text: "Venkat Subramaniam"}
+    company:
+      - {language: en, text: "Agile Developer, Inc."}
+    bio:
+      - {language: en, text: "Dr. Venkat Subramaniam, the founder of Agile Developer, Inc., has trained and mentored thousands\
+            \ of software developers in the US, Canada, Europe, and Asia. Venkat helps his clients effectively apply and succeed\
+            \ with agile practices on their software projects. He is a frequent invited speaker at international software\
+            \ conferences and user groups. He's the author of .NET Gotchas (O'Reilly), coauthor of the 2007 Jolt Productivity\
+            \ award-winning book Practices of an Agile Developer (Pragmatic Bookshelf), and author of Programming Groovy (Pragmatic\
+            \ Bookshelf)."}
+    twitter: venkat_s
+    javaChampion: true
   - id: 41
     fileName: 0041.jpg
     name:
       - {language: en, text: "Nicolai Parlog"}
+    company:
+      - {language: en, text: CodeFX}
+    bio:
+      - language: en
+        text: "Nicolai is a thirty year old boy, as the narrator would put it (if he squints), who has found his passion in\
+            \ software development. He constantly reads, thinks, and writes about it, and codes for a living as well as for\
+            \ fun.\n\nNicolai is a freelancing developer, author, and trainer. He wrote [The Java Module System](https://www.manning.com/books/the-java-module-system?a_aid=nipa&a_bid=869915cb)\
+            \ with Manning, blogs about software development on [codefx.org](http://codefx.org), recently started [a YouTube\
+            \ channel](https://youtube.com/c/codefx), and is a long-tail contributor to several open source projects. You\
+            \ can [hire him](http://blog.codefx.org/hire-nicolai-parlog/) for all kinds of things."
+    twitter: nipafx
+    javaChampion: true
   - id: 42
     fileName: 0042.jpg
     name:
       - {language: en, text: "Marcus Hirt"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - {language: en, text: "Marcus is one of the founders of Appeal Virtual Machines, the company that created the JRockit\
+            \ JVM. He is currently working in the Java Product Group at Oracle. In his spare time he used to enjoy coding\
+            \ on his many pet projects, composing music, and scuba diving. Now he has toddler twins. Marcus has contributed\
+            \ articles, whitepapers, tutorials, and webinars to the Java community, and has been an appreciated speaker at\
+            \ various conferences. He also co-authored a book about JVM technology. He holds an M.Sc. in Comp. Sci. & Engineering\
+            \ from the Royal Institute of Technology in Stockholm."}
+    twitter: hirt
   - id: 43
     fileName: 0043.jpg
     name:
       - {language: en, text: "Aleksei Voitylov"}
       - {language: ru, text: "Алексей Войтылов"}
+    company:
+      - {language: en, text: BellSoft}
+    bio:
+      - {language: en, text: "Aleksei is the CTO of BellSoft where he drives innovation for the company customers, including\
+            \ optimizing OpenJDK. Prior to co-founding BellSoft, he ran teams at Oracle and Sun Microsystems and, in particular,\
+            \ helped deliver multiple components of the JDK 8 and 9 releases, including the HotSpot JVM and the Java Language.\
+            \ In 2017 together with like-minded fellows he founded BellSoft company which releases and supports OpenJDK binary\
+            \ distribution for variety of platforms called Liberica JDK and makes Big Data and IoT solutions. Aleksei holds\
+            \ a Ph.D. from St. Petersburg State University."}
+      - {language: ru, text: "В качестве технического директора BellSoft Алексей отвечает за выпуск Liberica JDK и помогае\
+            т клиентам компании получать максимум от информационных технологий, включая оптимизацию OpenJDK. До начала раб\
+            оты в BellSoft Алексей руководил Java-командами в Oracle и Sun Microsystems и участвовал в выпуске множества к\
+            омпонентов JDK 8 и 9, таких как HotSpot JVM и Java Language. В 2017 с группой единомышленников он основал комп\
+            анию BellSoft, которая выпускает и поддерживает собственный Java-дистрибутив Liberica JDK для Linux x86, Linux\
+            \ ARM, Windows, Mac и других, а также разрабатывает решения для анализа больших данных и IoT. Алексей получил\
+            \ ученую степень кандидата физико-математических наук в Санкт-Петербургском государственном университете."}
   - id: 44
     fileName: 0044.jpg
     name:
       - {language: en, text: "Konstantin Knizhnik"}
       - {language: ru, text: "Константин Книжник"}
+    company:
+      - {language: en, text: PostgresPro}
+    bio:
+      - language: en
+        text: "Experience: DBMS, programming languages, distributed and parallel systems. \n\nWorked at Digital Equipment,\
+            \ TogetherSoft, Borland, NIICS MSU, SciDB. \n\nNow works as a leading developer at Postgres Professional.\n\n\
+            Author of open source DBMSes: Goods, GigaBASE, FastDB, JRacer..."
+      - language: ru
+        text: "Специализация: СУБД, языки программирования, распределённые и параллельные системы. \n\nРаботал в Digital Equipment,\
+            \ TogetherSoft, Borland, НИИВЦ МГУ, SciDB. \n\nВ настоящий момент — ведущий разработчик в Postgres Professional.\
+            \ \n\nАвтор open source-СУБД: Goods, GigaBASE, FastDB, JRacer..."
   - id: 45
     fileName: 0045.jpg
     name:
       - {language: en, text: "Harald Wendel"}
+    company:
+      - {language: en, text: TransferWise}
+    bio:
+      - {language: en, text: "Harald is a software developer at TransferWise, building the rails to move their customers'\
+            \ money around the world. Before that he's been building trading systems for almost 10 years. He's been working\
+            \ with Java for over 15 years with a focus on low latency and stream processing systems. When he's not coding\
+            \ he likes to cycle or just hang out with his family. Most of the year you can find him either in Berlin or Tallinn."}
+    gitHub: hwendel
   - id: 46
     fileName: 0046.jpg
     name:
       - {language: en, text: "John McClean"}
+    company:
+      - {language: en, text: Oath}
+    bio:
+      - {language: en, text: "John McClean is an Architect at Oath. At the moment, he is working on Oath's Demand Side Platform\
+            \ for Advertisers with a particular focus on forecasting, data insights and emerging channels. John also maintains\
+            \ the open source libraries cyclops-react (functional and reactive data structures) and micro-server (a plugin\
+            \ in system for building micro services with Spring and Spring Boot)."}
+    twitter: johnmcclean_ie
   - id: 47
     fileName: 0047.jpg
     name:
@@ -628,6 +741,14 @@ speakers:
     fileName: 0048.jpg
     name:
       - {language: en, text: "Sébastien Blanc"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - {language: en, text: "Sébastien Blanc is a principal software engineer with 12 years of experience. He works at Red\
+            \ Hat and works on the Keycloak project. Besides his \"heavy\" JEE profile (middleware, banking and insurance\
+            \ products) Sébastien likes advocating his passion through different conferences (Devoxx, JUDCon, JavaOne, SpringOne)."}
+    twitter: sebi2706
+    gitHub: sebastienblanc
   - id: 49
     fileName: 0049.jpg
     name:
@@ -669,11 +790,28 @@ speakers:
     fileName: 0051.jpg
     name:
       - {language: en, text: "Denis Cutic"}
+    company:
+      - {language: en, text: Infobip}
+    bio:
+      - {language: en, text: "Senior software engineer at Infobip with 4 years of experience developing several high throughput\
+            \ and mission-critical systems. Among them are Infobip's public APIs and the API management system as the infrastructure\
+            \ supporting the whole API lifecycle. Worked also on developing part of Infobip's data pipeline and managing several\
+            \ ElasticSearch clusters. Denis is quite eager about learning new stuff in both professional and private life.\
+            \ The less he knows about it, the more interesting it is."}
   - id: 52
     fileName: 0052.jpg
     name:
       - {language: en, text: "Jaroslav Smirnov"}
       - {language: ru, text: "Ярослав Смирнов"}
+    company:
+      - {language: en, text: "OTS Lab / odgAssist"}
+    bio:
+      - {language: en, text: "The science and innovation chief in the optimal transport system laboratory in ITMO University.\
+            \ Co-founder of odgAssist (LIMS & eQMS software). Jaroslav and his team have designed and created transport macro\
+            \ models of big cities as well as models for the whole world for major events."}
+      - {language: ru, text: "Главный по науке и инновациям в лаборатории оптимальные транспортные системы в университете\
+            \ ИТМО. Сооснователь компании odgAssist (LIMS & eQMS software). Проектировал и создавал транспортные макромоде\
+            ли городов и всего мира для крупных мероприятий."}
   - id: 53
     fileName: 0053.jpg
     name:
@@ -695,19 +833,58 @@ speakers:
     fileName: 0054.jpg
     name:
       - {language: en, text: "Gerrit Grunwald"}
+    company:
+      - {language: en, text: "Karakun AG"}
+    bio:
+      - language: en
+        text: "Gerrit Grunwald is a software engineer with more than fifteen years of experience in software development.\
+            \ He is a true believer in open source and has participated in popular projects like JFXtras.org, as well as his\
+            \ own projects (TilesFX, Medusa, Enzo, SteelSeries Swing, SteelSeries Canvas).\n\nGerrit <a href=\"http://harmonic-code.org\"\
+            \ target=\"_blank\">blogs</a> regularly, he is an active member of Java community, where he founded and leads\
+            \ the Java User Group Münster (Germany), is a JavaOne rockstar and Java Champion. He is a speaker at conferences\
+            \ and user groups internationally and writes for several magazines."
+    twitter: hansolo_
+    javaChampion: true
   - id: 55
     fileName: 0055.jpg
     name:
       - {language: en, text: "Derek Ferguson"}
+    company:
+      - {language: en, text: "JP Morgan Chase"}
+    bio:
+      - {language: en, text: "Derek Ferguson graduated with honors from Chicago's DePaul University and worked with a local\
+            \ ISP to deliver one of the world's first commercial DSL deployments. Out of that effort, he was recruited into\
+            \ book writing and conference speaking, serving as Editor-in-Chief of a major software development magazine, authoring\
+            \ best-selling software development books such as \"Broadband Internet Access for Dummies\" and speaking at events\
+            \ ranging from Sun's Java One to Java Dev Con. In 2008, he joined JP Morgan Chase and led the effort to integrate\
+            \ Bear Stearns' institutional trading system for retail use. He is presently Head of Engineering for Chase's Commercial\
+            \ Bank."}
   - id: 56
     fileName: 0056.jpg
     name:
       - {language: en, text: "Pavel Kondratyuk"}
       - {language: ru, text: "Павел Кондратюк"}
+    company:
+      - {language: en, text: Tinkoff.ru}
+    bio:
+      - {language: en, text: "Pavel is a Scala developer at Tinkoff.ru, building highload, asynchronous applications. He has\
+            \ experience in Information Security and IT infrastructure administration. Interested in functional programming\
+            \ and AI."}
+      - {language: ru, text: "Работает Scala-разработчиком в Tinkoff.ru. Специализируется на проектировании и разработке в\
+            ысоконагруженных асинхронных приложений. Имеет опыт администрирования и работы в области информационной безопа\
+            сности. Увлекается функциональным программированием и машинным обучением."}
   - id: 57
     fileName: 0057.jpg
     name:
       - {language: en, text: "Robert Scholte"}
+    company:
+      - {language: en, text: Sourcegrounds}
+    bio:
+      - {language: en, text: "Robert Scholte is the chairman of the Apache Maven Project and has been working on Maven and\
+            \ related projects for ten years. He was a member of the expert group of JSR 376 (aka Project Jigsaw) and has\
+            \ done most of the implementations to support the Java 9+ features."}
+    twitter: rfscholte
+    gitHub: rfscholte
   - id: 58
     fileName: 0058.jpg
     name:
@@ -728,6 +905,15 @@ speakers:
     name:
       - {language: en, text: "Artem Shutak"}
       - {language: ru, text: "Артем Шутак"}
+    company:
+      - {language: en, text: "Grid Dynamics"}
+    bio:
+      - {language: en, text: "Senior software engineer at Grid Dynamics, specializes in big data processing and analysis.\
+            \ He used to be a full-time Apache Ignite contributor, that's why he knows how distributed systems work under\
+            \ the hood. Actively interested in machine learning."}
+      - {language: ru, text: "Старший программист в компании Grid Dynamics, специализирующийся на обработке и анализе боль\
+            ших данных. Являлся full-time контрибьютером в Apache Ignite, поэтому имеет хорошее представление о том, как р\
+            аспределенные системы работают изнутри. Активно интересуется машинным обучением."}
   - id: 60
     fileName: 0060.jpg
     name:
@@ -764,10 +950,31 @@ speakers:
     name:
       - {language: en, text: "Anton Lapitskiy"}
       - {language: ru, text: "Антон Лапицкий"}
+    company:
+      - {language: en, text: CUSTIS}
+    bio:
+      - {language: en, text: "Software architect in CUSTIS. Has more then 8 years of experience in commercial development\
+            \ on Java in the banking and educational spheres, as well as for the government sector. The main activity is the\
+            \ design of distributed systems and issues of fine-grained authorization. He likes to experiment with reactive\
+            \ approaches in Java, with Netflix stack, Event Sourcing and CQRS."}
+      - {language: ru, text: "Архитектор приложений в CUSTIS. Более 8 лет занимается промышленной разработкой на Java в ба\
+            нковской и образовательной сферах, а также для госсектора. Основное направление деятельности — проектирование\
+            \ распределенных систем и вопросы разделения доступа. Любит экспериментировать с реактивными подходами в Java,\
+            \ со стеком Netflix, Event Sourcing и CQRS."}
   - id: 63
     fileName: 0063.jpg
     name:
       - {language: en, text: "Josh Long"}
+    company:
+      - {language: en, text: Pivotal}
+    bio:
+      - {language: en, text: "Josh is the Spring Developer Advocate at Pivotal. He is a Java Champion, author of 5 books (including\
+            \ O'Reilly's \"Cloud Native Java: Designing Resilient Systems with Spring Boot, Spring Cloud, and Cloud Foundry\"\
+            ) and numerous best-selling video trainings (including \"Building Microservices with Spring Boot Livelessons\"\
+            \ with Spring Boot co-founder Phil Webb). He is also an open source contributor (Spring Boot, Spring Integration,\
+            \ Spring Cloud, Activiti and Vaadin)."}
+    twitter: starbuxman
+    javaChampion: true
   - id: 64
     fileName: 0064.jpg
     name:
@@ -776,26 +983,58 @@ speakers:
     company:
       - {language: en, text: "Azul Systems"}
     bio:
-      - {language: en, text: "Compiler engineer at Azul Systems. For the last 4 years is into optimizing JIT compilers for\
+      - {language: en, text: "Compiler engineer at Azul Systems. For the last 5 years is into optimizing JIT compilers for\
             \ virtual machines. Since 2017 works on Zing VM, actively commits to LLVM. Before that used to work with ART and\
             \ Dalvik virtual machines at Intel, along with contributing to Android Open Source Project."}
-      - {language: ru, text: "Инженер компиляторов в Azul Systems. Последние 4 года занимается оптимизирующими JIT-компиля\
-            торами для виртуальных машин. С 2017 года работает над Zing VM, активно коммитит в LLVM. До этого работал над\
-            \ виртуальными машинами ART и Dalvik в компании Intel, внёс свой вклад в Android Open Source Project."}
+      - {language: ru, text: "Инженер компиляторов в Azul Systems. Последние 5 лет занимается оптимизирующими JIT-компилят\
+            орами для виртуальных машин. С 2017 года работает над Zing VM, активно коммитит в LLVM. До этого работал над в\
+            иртуальными машинами ART и Dalvik в компании Intel, внёс свой вклад в Android Open Source Project."}
   - id: 65
     fileName: 0065.jpg
     name:
       - {language: en, text: "Benjamin Nothdurft"}
+    company:
+      - {language: en, text: "codecentric AG"}
+    bio:
+      - language: en
+        text: "Benjamin has a long-term and hands-on experience with introducing, building, running, coaching and speaking\
+            \ about Java, Microservices (including DDD and events), Docker/Containerization, distributed/self-contained systems\
+            \ (SCS) and disruptive technologies.\n\nAt day he works as Technical Lead for Cloud Technologies at codecentric\
+            \ AG. At night he hacks on innovative trends like FaaS, Service Meshes, Voice UIs and IoT. At evenings he organizes\
+            \ workshops, talks and code retreats at the Software Crafters Community Jena (Softwerkskammer Jena) and the Java\
+            \ User Group Thüringen, Germany — totaling over 40 events in the past 3 years. On weekends he serves as a board\
+            \ member at the Java aktuell Magazine and at the JavaLand conference — leading the Architecture and Methodology\
+            \ & Culture streams, which also focus on DDD and Microservices.\n\nHe also runs Open Data Hackathons as well as\
+            \ Devoxx4Kids events. Regularly he also gives university lectures on OOP, Java, Docker, Git, Project Management\
+            \ and Agile Methodologies. In his leisure time he enjoys road cycling, art and theaters, wine/gin/whiskey tastings\
+            \ and discussions about politics and improving IT organizations."
+    twitter: dataduke
+    gitHub: dataduke
   - id: 66
     fileName: 0066.jpg
     name:
       - {language: en, text: "Oleg Nizhnikov"}
       - {language: ru, text: "Олег Нижников"}
+    company:
+      - {language: en, text: Tinkoff.ru}
+    bio:
+      - {language: en, text: "Scala developer, architect, zealot of functional programming. 10 years of backend development\
+            \ experience."}
+      - {language: ru, text: "Скалист, архитектор, фанат функционального программирования. 10 лет бэкенд-разработки."}
+    twitter: odomontois
   - id: 67
     fileName: 0067.jpg
     name:
       - {language: en, text: "Andrey Kurpatov"}
       - {language: ru, text: "Андрей Курпатов"}
+    company: []
+    bio:
+      - {language: en, text: "Psychotherapist, Higher Methology School president, founder of the Brain Games intellectual\
+            \ cluster, author of more than hundred academic papers, father of systemic behavioral therapy and methodology\
+            \ of thinking."}
+      - {language: ru, text: "Врач-психотерапевт, президент Высшей школы методологии, основатель интеллектуального кластер\
+            а «Игры разума», автор более сотни научных работ, создатель системной поведенческой психотерапии и методологии\
+            \ мышления."}
   - id: 68
     fileName: 0068.jpg
     name:
@@ -2397,18 +2636,15 @@ speakers:
       - {language: en, text: "Gregory Koshelev"}
       - {language: ru, text: "Григорий Кошелев"}
     company:
-      - {language: en, text: "SKB Kontur"}
-      - {language: ru, text: "СКБ Контур"}
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
     bio:
-      - {language: en, text: "Leads a small development team in the biggest IT company in Ekaterinburg: SKB Kontur. Manages\
-            \ Java community inside of the company. Frequent speaker at internal conferences and meet-ups. Although Gregory\
-            \ has quit the .NET some time ago, he still keeps track of the platform evoltuion. He believes Java and .NET should\
-            \ solve problems together instead of competing with each other."}
-      - {language: ru, text: "Руководит небольшой командой разработки в самой крупной IT-компании Екатеринбурга: СКБ Конту\
-            р. Занимается организацией и развитием Java-сообщества внутри компании. Регулярно выступает с докладами на вну\
-            тренних конференциях и встречах. Несмотря на то, что некоторое время назад ушёл из большого .NET, следит за ра\
-            звитием платформы. Считает, что платформы Java и .NET должны не конкурировать между собой, а общими усилиями р\
-            ешать общие задачи."}
+      - {language: en, text: "Has more than 9 years of experience in commercial development on Java. Leads a small development\
+            \ team in Kontur, the biggest IT company in Ekaterinburg. Manages Java community inside of the company and in\
+            \ Ekaterinburg."}
+      - {language: ru, text: "Более 9 лет опыта промышленной разработки на Java. Григорий руководит небольшой инфраструкту\
+            рной командой в самой крупной IT-компании Екатеринбурга — «Контур». Занимается организацией и развитием Java-с\
+            ообщества внутри компании и в Екатеринбурге."}
     twitter: GregoryKoshelev
   - id: 221
     fileName: 0221.jpg
@@ -10690,7 +10926,19 @@ speakers:
     company:
       - {language: en, text: "JUG.ru Group"}
     bio:
-      - {language: en, text: "JUG.ru Group"}
+      - language: en
+        text: "Andrey graduated from SPbU \"Mathematics and Mechanics\" faculty. He was developing a graphical stack of JDK\
+            \ libraries (AWT / Swing / JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in\
+            \ QuickOffice, was responsible for the functionality QuickPoint component, worked as a manager of load testing\
+            \ group in NetCracker.\n\nCurrently, Andrey is the program director and organizer of JUG.ru Group conferences,\
+            \ Java conferences JPoint, Joker and JBreak, JUG.ru and CodeFreeze community meetings in St. Petersburg and Moscow."
+      - language: ru
+        text: "Закончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
+            \ Oracle. Руководил группой разработки в компании QuickOffice, отвечал за функциональность компонента QuickPoint.\
+            \ Работал менеджером группы нагрузочного тестирования в компании NetCracker.\n\nНа данный момент Андрей — прог\
+            раммный директор и организатор конференций команды JUG.ru Group, Java-конференций JPoint, Joker и JBreak, встр\
+            еч JUG.ru и сообщества CodeFreeze в Петербурге и Москве."
+    twitter: it_improve
   - id: 1077
     fileName: 1077.jpg
     name:
@@ -10705,3 +10953,19 @@ speakers:
             \ [Django Girls SPb](https://djangogirls.org/stpetersburg/) и [PyLadies SPb](http://spb.pyladies.com/). \n\nОн\
             \ выступал в Москве, Лиссабоне, Берлине, Минске, Литве; является талисманом конференции index-tech.ru и извест\
             ен своими [статьями по проблематике найма](https://huntflow.ru/insight/article/v-samye-klassnye-kontory-samye-lyogkie-sobesedovaniya)."
+  - id: 1078
+    fileName: 1078.jpg
+    name:
+      - {language: en, text: "Alexey Fyodorov"}
+      - {language: ru, text: "Алексей Федоров"}
+    company:
+      - {language: en, text: "JUG.ru Group"}
+    bio:
+      - {language: en, text: "Director of JUG.ru Group, organizes the largest technological conferences for developers in\
+            \ Russia. In 5 years Alexey's team arranged more than 40 conferences. JUG.ru community leader, for several years\
+            \ was creating HR brand at Odnoklassniki."}
+      - {language: ru, text: "Алексей Федоров – директор JUG.ru Group, организатор крупнейших в России технологических кон\
+            ференций для разработчиков. За 5 лет команда Алексея провела более 40 конференций. Лидер сообщества JUG.ru, не\
+            сколько лет занимался созданием HR-бренда в Одноклассниках."}
+    twitter: 23derevo
+    javaChampion: true
