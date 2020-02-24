@@ -19986,7 +19986,7 @@ talks:
     speakerIds: [709, 707]
   - id: 937
     name:
-      - {language: en, text: "Put Slona ili Karera v open source"}
+      - {language: en, text: "Elephant Path, or Career in open source"}
       - {language: ru, text: "Путь Слона, или Карьера в open source"}
     shortDescription:
       - {language: ru, text: "Олег поделится тем, как ему удалось пройти путь от простого астронома до разработчика с миро\
@@ -20011,8 +20011,7 @@ talks:
     speakerIds: [259]
   - id: 938
     name:
-      - {language: en, text: "CatBoost biblioteka mashinnogo obucheniya dlya resheniya prakticheskikh zadach s ispolzovaniem\
-            \ bolshikh dannykh"}
+      - {language: en, text: "CatBoost — machine learning library for practical big data applications"}
       - {language: ru, text: "CatBoost — библиотека машинного обучения для решения практических задач с использованием бол\
             ьших данных"}
     shortDescription:
@@ -20037,7 +20036,7 @@ talks:
     speakerIds: [271]
   - id: 939
     name:
-      - {language: en, text: "Panelnaya diskussiya Rol angliyskogo yazika dlya razrabotchika"}
+      - {language: en, text: "Panel discussion: The Role of English for the developer"}
       - {language: ru, text: "Панельная дискуссия: Роль английского языка для разработчика"}
     shortDescription:
       - {language: ru, text: "Бруно Гельб, лидер сообщества PiterPy Meetup, проведёт дискуссию на болезненную тему: нужен\
@@ -20060,7 +20059,7 @@ talks:
     speakerIds: [1077]
   - id: 940
     name:
-      - {language: en, text: "Plastilinovaya Jira: lepim svoimi rukami"}
+      - {language: en, text: "Plasticine Jira: do it yourself"}
       - {language: ru, text: "Пластилиновая Jira: лепим своими руками"}
     shortDescription:
       - {language: ru, text: "Мы разберем наиболее распространенные вопросы по кастомизации Jira и поговорим о компромисса\
@@ -20130,7 +20129,7 @@ talks:
     speakerIds: [257]
   - id: 943
     name:
-      - {language: en, text: "Praktiki I kejsy proektnogo upravleniya"}
+      - {language: en, text: "Project management practices and cases"}
       - {language: ru, text: "Практики и кейсы проектного управления"}
     shortDescription:
       - {language: ru, text: "Мы рассмотрим несколько реальных кейсов (все имена изменены, любые сходства случайны), показ\
@@ -20151,7 +20150,7 @@ talks:
     speakerIds: [256]
   - id: 944
     name:
-      - {language: en, text: "Kak i zachem podruzhitsya dizayneru i razrabotchiku"}
+      - {language: en, text: "How and why make friends designer and developer"}
       - {language: ru, text: "Как и зачем подружиться дизайнеру и разработчику"}
     shortDescription:
       - {language: ru, text: "На собственном опыте покажем, зачем и какими средствами выстроить в команде, работающей над\
@@ -20170,7 +20169,7 @@ talks:
     speakerIds: [266]
   - id: 945
     name:
-      - {language: en, text: "Vse chto vi hoteli znat ob instrumentah dlya Data Science no boyalis sprosit"}
+      - {language: en, text: "Everything that you wanted to know about tools for Data Science, but were afraid to ask"}
       - {language: ru, text: "Всё, что вы хотели знать об инструментах для Data Science, но боялись спросить"}
     shortDescription:
       - {language: ru, text: "Виталий ответит на множество вопросов, связанных с настоящим и будущим Data Science: как мно\
@@ -20192,7 +20191,7 @@ talks:
     speakerIds: [159]
   - id: 946
     name:
-      - {language: en, text: "Uslozhnenie igri"}
+      - {language: en, text: "Game complication"}
       - {language: ru, text: "Усложнение игры"}
     shortDescription:
       - {language: ru, text: "Как и во что играют звери; первые простые игры древних культур, проблема даунтайма в игре «н\
@@ -20213,7 +20212,7 @@ talks:
     speakerIds: [258]
   - id: 947
     name:
-      - {language: en, text: "Upravlenie avariyami v bolshom internet-proekte"}
+      - {language: en, text: "Accident management in a large Internet project"}
       - {language: ru, text: "Управление авариями в большом интернет-проекте"}
     shortDescription:
       - {language: ru, text: "Андрей подробно расскажет о самой крупной технической аварии в Рунете от первого лица и о то\
@@ -20235,7 +20234,7 @@ talks:
     speakerIds: [273]
   - id: 948
     name:
-      - {language: en, text: "Biznes-trendy i nestandartnye kejsy v testirovanii"}
+      - {language: en, text: "Business trends and custom test cases"}
       - {language: ru, text: "Бизнес-тренды и нестандартные кейсы в тестировании"}
     shortDescription:
       - {language: ru, text: "Современные тренды в автоматизации тестирования. Используемые технологии и подходы. Что буде\
@@ -20252,7 +20251,7 @@ talks:
     speakerIds: [286]
   - id: 949
     name:
-      - {language: en, text: "Kak dannie prevraschayut v znaniya i pochemu umet mechtat — odno iz samih vazhnih umeniy"}
+      - {language: en, text: "How data is turned into knowledge and why being able to dream is one of the most important skills"}
       - {language: ru, text: "Как данные превращают в знания и почему уметь мечтать — одно из самых важных умений"}
     shortDescription:
       - {language: ru, text: "Мы обсудим, как искусственный интеллект меняет образование, бизнес и общество, и попробуем п\
@@ -20276,7 +20275,7 @@ talks:
     speakerIds: [262]
   - id: 950
     name:
-      - {language: en, text: "Build pipelines priklyucheniya v konveyere TeamCity"}
+      - {language: en, text: "Build pipelines: adventures in the TeamCity pipeline"}
       - {language: ru, text: "Build pipelines: приключения в конвейере TeamCity"}
     shortDescription:
       - {language: ru, text: "Покажем, как можно организовать конвейер сборки на основе TeamCity. Продемонстрируем, как пр\
@@ -20300,7 +20299,7 @@ talks:
     speakerIds: [0]
   - id: 951
     name:
-      - {language: en, text: "Postroenie multiplatformennykh proektov na Kotlin"}
+      - {language: en, text: "Building multi-platform projects on Kotlin"}
       - {language: ru, text: "Построение мультиплатформенных проектов на Kotlin"}
     shortDescription:
       - {language: ru, text: "Мы познакомимся с механизмами построения мультиплатформенных приложений и разберём их особен\
@@ -20324,7 +20323,7 @@ talks:
     speakerIds: [296]
   - id: 952
     name:
-      - {language: en, text: "Razrabotka videoigr: pedagogika, problemy ottsov i detej, kak sdelat pervyj shag v ehtu sferu"}
+      - {language: en, text: "Video game development: pedagogy, problems of fathers and children, how to take the first step in this area"}
       - {language: ru, text: "Разработка видеоигр: педагогика, проблемы отцов и детей, как сделать первый шаг в эту сферу"}
     shortDescription:
       - {language: ru, text: "Александр расскажет о своем менторском и педагогическом опыте, особенностях преподавания в о\
@@ -20348,7 +20347,7 @@ talks:
     speakerIds: [292]
   - id: 953
     name:
-      - {language: en, text: "Iskusstvenniy intellekt i tsifrovaya transformatsiya biznesa"}
+      - {language: en, text: "Artificial intelligence and digital business transformation"}
       - {language: ru, text: "Искусственный интеллект и цифровая трансформация бизнеса"}
     shortDescription:
       - {language: ru, text: "Поделимся некоторыми проектами по внедрению ИИ, расскажем о конкретных шагах и технологиях,\
@@ -20372,7 +20371,7 @@ talks:
     speakerIds: [472]
   - id: 954
     name:
-      - {language: en, text: "Sessiya blitsvoprosov"}
+      - {language: en, text: "Blitz session"}
       - {language: ru, text: "Сессия блиц-вопросов"}
     shortDescription:
       - {language: ru, text: "Если вы пишете на Котлине или интересуетесь этим языком, не упустите возможность пообщаться\
@@ -20391,7 +20390,7 @@ talks:
     speakerIds: [2]
   - id: 955
     name:
-      - {language: en, text: "Server Side Request Forgery ataka na vebprilozhenie kotoraya strashnee chem kazhetsya"}
+      - {language: en, text: "Server Side Request Forgery: attack on a web application that is worse than it sounds"}
       - {language: ru, text: "Server Side Request Forgery: атака на веб-приложение, которая страшнее, чем кажется"}
     shortDescription:
       - {language: ru, text: "Рассматривается уязвимость в веб-приложениях, приводящая к атаке SSRF (Server Side Request Forgery),\
@@ -20479,7 +20478,7 @@ talks:
     speakerIds: [261]
   - id: 958
     name:
-      - {language: en, text: "Perspektivi i problemi vnedreniya tehnologii blokcheyn v razlichnih industriyah"}
+      - {language: en, text: "Prospects and challenges of implementing blockchain technology in various industries"}
       - {language: ru, text: "Перспективы и проблемы внедрения технологии блокчейн в различных индустриях"}
     shortDescription:
       - {language: ru, text: "Мы посмотрим, как различные индустрии по-разному применяют блокчейн, что поможет вам увидеть\
@@ -20500,7 +20499,7 @@ talks:
     speakerIds: [265]
   - id: 959
     name:
-      - {language: en, text: "Mifi o Spark, ili Mozhet li polzovatsya Spark obichniy Java-razrabotchik"}
+      - {language: en, text: "Myths about Spark, or Can a regular Java developer use Spark"}
       - {language: ru, text: "Мифы о Spark, или Может ли пользоваться Spark обычный Java-разработчик"}
     shortDescription:
       - {language: ru, text: "Практическая демонстрация возможностей Spark. Вы выйдете с этого доклада с достаточными знан\
@@ -20526,7 +20525,7 @@ talks:
     speakerIds: [1]
   - id: 960
     name:
-      - {language: en, text: "Kassovoe PO vosstanie mashin"}
+      - {language: en, text: "Cash Software: rise of the machines"}
       - {language: ru, text: "Кассовое ПО: восстание машин"}
     shortDescription:
       - {language: ru, text: "Мы расскажем, как тестируется кассовый софт, с чего начинали осваивать непаханое поле online-к\
@@ -20552,7 +20551,7 @@ talks:
     speakerIds: [280, 287]
   - id: 961
     name:
-      - {language: en, text: "JavaScript dlya teh kogo tam net"}
+      - {language: en, text: "JavaScript for those who are not there"}
       - {language: ru, text: "JavaScript для тех, кого там нет"}
     shortDescription:
       - {language: ru, text: "Этот доклад — легкая и увлекательная прогулка в то, какова жизнь современного эксперта в обл\
@@ -20575,7 +20574,7 @@ talks:
     speakerIds: [264]
   - id: 962
     name:
-      - {language: en, text: "Otkazoustoychivost raspredelennih vichisleniy pomenshe prob i oshibok"}
+      - {language: en, text: "Fault tolerance of distributed computing: less trial and error!"}
       - {language: ru, text: "Отказоустойчивость распределенных вычислений: поменьше проб и ошибок!"}
     shortDescription:
       - {language: ru, text: "В своем докладе Артем расскажет, как сам шел к знаниям об известных механизмах отказоустойчи\
@@ -20602,7 +20601,7 @@ talks:
     speakerIds: [382]
   - id: 963
     name:
-      - {language: en, text: "Dinamicheskoe proektirovanie: kak razrabatyvat bez perekompilyatsii"}
+      - {language: en, text: "Dynamic design: how to develop without recompilation"}
       - {language: ru, text: "Динамическое проектирование: как разрабатывать без перекомпиляции"}
     shortDescription:
       - {language: en, text: "We are used to an established paradigm: you write a program, compile it and run it. If you need\
@@ -20643,7 +20642,7 @@ talks:
     speakerIds: [282]
   - id: 964
     name:
-      - {language: en, text: "Mesto Flutter v zhizni Android-razrabotchika"}
+      - {language: en, text: "Flutter's place in the life of an Android developer"}
       - {language: ru, text: "Место Flutter в жизни Android-разработчика"}
     shortDescription:
       - {language: ru, text: "Мы рассмотрим использование технологии Flutter, ее преимущества и возможные проблемы и нюанс\
@@ -20666,7 +20665,7 @@ talks:
     speakerIds: [291]
   - id: 965
     name:
-      - {language: en, text: "Kak sdelat bistroe mobilnoe prilozhenie odin raz dlya vseh platform"}
+      - {language: en, text: "How to make a quick mobile application once for all platforms"}
       - {language: ru, text: "Как сделать быстрое мобильное приложение один раз для всех платформ"}
     shortDescription:
       - {language: ru, text: "На примере технологии Xamarin мы рассмотрим, как эволюционировали технологии кроссплатформен\
@@ -20687,7 +20686,7 @@ talks:
     speakerIds: [274]
   - id: 966
     name:
-      - {language: en, text: "Avtotesteri ne nuzhni ili Evolyutsiya primeneniya testov"}
+      - {language: en, text: "Autotests are not needed, or the evolution of the application of tests"}
       - {language: ru, text: "Автотестеры не нужны, или Эволюция применения тестов"}
     shortDescription:
       - {language: ru, text: "Максим и Ирина расскажут о том, как из предельно вредной активности автоматизация тестирован\
@@ -20711,7 +20710,7 @@ talks:
     speakerIds: [281, 275]
   - id: 967
     name:
-      - {language: en, text: "Uzhasi mobilnoy grafiki"}
+      - {language: en, text: "Horror of mobile graphics"}
       - {language: ru, text: "Ужасы мобильной графики"}
     shortDescription:
       - {language: ru, text: "Расскажем об неожиданных особенностях разработки мобильной графики с OpenGL ES и DirectX, о\
@@ -20732,7 +20731,7 @@ talks:
     speakerIds: [272]
   - id: 968
     name:
-      - {language: en, text: "Obzor otechestvennih protsessorov"}
+      - {language: en, text: "Overview of domestic processors"}
       - {language: ru, text: "Обзор отечественных процессоров"}
     shortDescription:
       - {language: ru, text: "Будут описаны достоинства и недостатки отечественных процессоров, в том числе с оригинальным\
@@ -20753,7 +20752,7 @@ talks:
     speakerIds: [283]
   - id: 969
     name:
-      - {language: en, text: "Zachem nuzhen esche odin yazik programmirovaniya"}
+      - {language: en, text: "Why is another programming language needed?"}
       - {language: ru, text: "Зачем нужен еще один язык программирования?"}
     shortDescription:
       - {language: ru, text: "Поговорим о том, что не так с ведущими языками, зачем тратить время на альтернативы, зачем с\
@@ -20773,7 +20772,7 @@ talks:
     speakerIds: [106]
   - id: 970
     name:
-      - {language: en, text: "Polnaya prozrachnost v kompanii"}
+      - {language: en, text: "Full transparency in the company"}
       - {language: ru, text: "Полная прозрачность в компании"}
     shortDescription:
       - {language: ru, text: "Поговорим о том, возможно ли осуществить абсолютную информационную и финансовую прозрачность\
@@ -20799,7 +20798,7 @@ talks:
     speakerIds: [267]
   - id: 971
     name:
-      - {language: en, text: "Tipichnie oshibki avtomatizatorov testirovaniya"}
+      - {language: en, text: "Common mistakes made by test automation"}
       - {language: ru, text: "Типичные ошибки автоматизаторов тестирования"}
     shortDescription:
       - {language: ru, text: "Мы тезисно проговорим типичные ошибки автоматизаторов, а также рецепты по недопущению подобн\
@@ -20816,7 +20815,7 @@ talks:
     speakerIds: [279, 285, 276]
   - id: 972
     name:
-      - {language: en, text: "Mikroservisi na Nodejs kak sohranit sebya"}
+      - {language: en, text: "Microservices on Node.js: how to save yourself"}
       - {language: ru, text: "Микросервисы на Node.js: как сохранить себя"}
     shortDescription:
       - {language: ru, text: "Две жизненные истории про разработку на микросервисах: в одной — смерть проекта после перехо\
@@ -20858,8 +20857,7 @@ talks:
     speakerIds: [270]
   - id: 974
     name:
-      - {language: en, text: "Bezopasnaya razrabotka v bolshikh proektakh, ili Kak uluchshit bezopasnost PO bez otryva ot\
-            \ proizvodstva"}
+      - {language: en, text: "Safe development in large projects, or How to improve software security on the job"}
       - {language: ru, text: "Безопасная разработка в больших проектах, или Как улучшить безопасность ПО без отрыва от про\
             изводства"}
     shortDescription:
@@ -20910,7 +20908,7 @@ talks:
     speakerIds: [295]
   - id: 976
     name:
-      - {language: en, text: "Soobschenie kak osnova integratsii prilozheniy"}
+      - {language: en, text: "Message as the basis for application integration"}
       - {language: ru, text: "Сообщение как основа интеграции приложений"}
     shortDescription:
       - {language: ru, text: "О том, как пара простых фокусов с сообщениями может изменить вашу жизнь к лучшему, избавив в\
@@ -20927,7 +20925,7 @@ talks:
     speakerIds: [284]
   - id: 977
     name:
-      - {language: en, text: "Arhitektura kakaya esche arhitektura"}
+      - {language: en, text: "Architecture, what kind of architecture?"}
       - {language: ru, text: "Архитектура, какая ещё архитектура?"}
     shortDescription:
       - {language: ru, text: "Разберём самые характерные проблемы, которые приводят к плохой архитектуре, и попробуем найт\
@@ -20976,7 +20974,7 @@ talks:
     speakerIds: [278]
   - id: 979
     name:
-      - {language: en, text: "Plyusy i minusy Go a takzhe ego primeneniya v VKontakte"}
+      - {language: en, text: "Pros and cons of Go, as well as its application on VK"}
       - {language: ru, text: "Плюсы и минусы Go, а также его применения в ВКонтакте"}
     shortDescription:
       - {language: ru, text: "Язык Go и масса хайпа вокруг него в последнее время — основная тема доклада. Алексей рассмот\
@@ -20998,7 +20996,7 @@ talks:
     speakerIds: [288]
   - id: 980
     name:
-      - {language: en, text: "Skreshhivaem DP Visitor, Builder, Composite, Decorator i Iterator: primer S++ arkhitektury"}
+      - {language: en, text: "Crossing DP Visitor, Builder, Composite, Decorator and Iterator: an example of C ++ architecture"}
       - {language: ru, text: "Скрещиваем DP Visitor, Builder, Composite, Decorator и Iterator: пример С++ архитектуры"}
     shortDescription:
       - {language: ru, text: "Мы поговорим о важности архитектурных решений, в том числе для обеспечения высокого качества\
@@ -21063,7 +21061,7 @@ talks:
     speakerIds: [260]
   - id: 982
     name:
-      - {language: en, text: "Lean ML: ratsionalnyj podhod k mashinnomu obucheniyu"}
+      - {language: en, text: "Lean ML: rational approach to machine learning"}
       - {language: ru, text: "Lean ML: рациональный подход к машинному обучению"}
     shortDescription:
       - {language: ru, text: "Обсудим, в каких продуктах важно думать про технологии искусственного интеллекта и в каких с\
