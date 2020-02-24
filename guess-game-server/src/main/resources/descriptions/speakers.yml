@@ -1245,6 +1245,9 @@ speakers:
     company:
       - {language: en, text: JetBrains}
     bio:
+      - {language: en, text: "Kotlin developer at JetBrains company, concurrency expert. Before JetBrains was into software\
+            \ development for brokerage and exchanges at Devexperts. Member of the international organizing committee of the\
+            \ ACM ICPC Finals. Winner of the Presidential award in education. Java Champion."}
       - {language: ru, text: "Разработчик языка Kotlin в компании JetBrains, эксперт в области многопоточного программиров\
             ания. До JetBrains более 10 лет занимался разработкой ПО для биржевой и брокерской деятельности в компании Devexperts.\
             \ Член международного организационного комитета Финала ACM ICPC. Лауреат премии Президента в области образован\
@@ -3165,6 +3168,9 @@ speakers:
     company:
       - {language: ru, text: Яндекс}
     bio:
+      - {language: en, text: "Works at Yandex on “Yandex” Android application. Is very sensitive about the quality of applications\
+            \ he develops. Has no intentions to switch to Kotlin, always makes slides in Java. Is a conference speaker, organizes\
+            \ GDG & KUG SPB meetups."}
       - {language: ru, text: "Работает в Яндексе над Android-приложением «Яндекс». Очень трепетно относится к качеству раз\
             рабатываемых приложений. Выступает на конференциях и занимается организацией митапов в рамках GDG & KUG SPB."}
     twitter: VasilovArtur
@@ -10546,7 +10552,7 @@ speakers:
       - {language: en, text: "Bruno Gelb"}
       - {language: ru, text: "Бруно Гельб"}
     company:
-      - {language: ru, text: TransCrypt}
+      - {language: en, text: TransCrypt}
     bio:
       - language: ru
         text: "Бруно Гельб — флагманская фигура Python-движа на балтийских берегах: член программного комитета конференций\
