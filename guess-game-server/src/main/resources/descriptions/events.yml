@@ -182,6 +182,25 @@ events:
               868, 869, 870, 871, 872, 873, 874, 875, 876]
   - eventTypeId: 2
     name:
+      - {language: en, text: "DotNext 2018 Msc"}
+      - {language: ru, text: "DotNext 2018 Мск"}
+    startDate: "2018-11-22"
+    endDate: "2018-11-23"
+    siteLink:
+      - {language: en, text: "https://2018.dotnext-moscow.ru/en/"}
+      - {language: ru, text: "https://2018.dotnext-moscow.ru/"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Kutuzovsky Prospect 2/1 Building 1, Congress Park at the Radisson Royal Hotel"}
+      - {language: ru, text: "Кутузовский просп., 2/1, стр. 1, Конгресс-парк гостиницы «Рэдиссон Ройал Москва»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9
+    mapCoordinates: "55.751979, 37.566894"
+    talkIds: [1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059,
+              1060, 1061, 1062, 1063, 1064, 1065, 1066, 1067, 1068, 1069, 1070, 1071]
+  - eventTypeId: 2
+    name:
       - {language: en, text: "DotNext 2019 Msk"}
       - {language: ru, text: "DotNext 2019 Мск"}
     startDate: 2019-11-06

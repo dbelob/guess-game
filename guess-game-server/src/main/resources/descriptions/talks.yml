@@ -23168,3 +23168,973 @@ talks:
     presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/6y9ypnmQtaSQCsUoq44YkO/f08f060bb2047f6694da6f8ecc736af9/Andrey_Kurpatov_New_reality_of_digital_civilization.pdf"]
     videoLinks: ["https://www.youtube.com/watch?v=ePK82v0d6W8&list=PLVe-2wcL84b_DvLWtURPD0Dz2NZil55XI&index=8"]
     speakerIds: [67]
+  - id: 1042
+    name:
+      - {language: en, text: Generics}
+    shortDescription:
+      - {language: en, text: "Jeff focuses on .NET Generics, on how the CLR creates type objects of generic types and memory\
+            \ and performance issues when using generics with reference types versus value types, and on constraints and the\
+            \ odd behaviors they exhibit."}
+    longDescription:
+      - {language: en, text: "In this talk, Jeff focuses on .NET Generics and talks about all the changes that had to happen\
+            \ to the CLR and compilers to make them work. He'll also go into how the CLR creates type objects of generic types\
+            \ and memory and performance issues when using generics with reference types versus value types. Constraints and\
+            \ the odd behaviors they exhibit will also be discussed."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Автор настольной книги каждого .NET-разработчика и один из с\
+            амых известных людей в мире .NET.*\n\nIn this talk, Jeff focuses on .NET Generics and talks about all the changes\
+            \ that had to happen to the CLR and compilers to make them work. He'll also go into how the CLR creates type objects\
+            \ of generic types and memory and performance issues when using generics with reference types versus value types.\
+            \ Constraints and the odd behaviors they exhibit will also be discussed."
+    talkDay: 1
+    trackTime: "11:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=PL-Trygak6I&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=29"]
+    speakerIds: [427]
+  - id: 1043
+    name:
+      - {language: en, text: "When to use Test Last, Test First, and TDD"}
+      - {language: ru, text: "Test Last, Test First, TDD: когда применять тот или иной подход"}
+    shortDescription:
+      - {language: en, text: "Instead of fighting \"Test Last vs TDD\" war we'll discuss in which cases choosing either approach\
+            \ gives the greatest advantage."}
+      - {language: ru, text: "Вместо того чтобы продолжать войну Test Last vs TDD, мы выясним, в каких случаях выбор того\
+            \ или иного подхода даст максимальные преимущества."}
+    longDescription:
+      - language: en
+        text: "\"Test Last vs TDD\" war has been on for many years, falling and rising again and again. Inveterate opponents\
+            \ are willing to spend hundreds of hours, trying to prove the other point of view absurd. \n\nUnfortunately, in\
+            \ the heat of the fight opponents do not recognize obvious advantages of either approach, thus diminishing their\
+            \ own efficiency and robbing themselves of many possibilities. \n\nIn this talk, Aleksandr will consider strengths\
+            \ and weaknesses of three different approaches: Test Last, Test First, and TDD. He will set a complex task as\
+            \ an example and try to find the most fitting approach for each case."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Основательно и доходчиво помогает разобраться в понятиях, не\
+            обходимых каждому разработчику ежедневно.*\n\nВойна Test Last vs TDD идет уже много лет, то затухая, то разгор\
+            аясь вновь. Непримиримые стороны готовы тратить сотни часов в попытке доказать абсурдность противоположной точ\
+            ки зрения. \n\nК сожалению, в пылу битвы участники не замечают безусловные преимущества того или иного подхода\
+            , снижая таким образом свою продуктивность и лишая себя многих возможностей. \n\nВ докладе Александр рассмотри\
+            т преимущества и недостатки трех разных подходов: Test Last, Test First и TDD. В качестве примера будет постав\
+            лена сложная задача и выбрана наиболее подходящая методология для каждого из случаев."
+    talkDay: 1
+    trackTime: "11:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1o54r1jBIsu2mIWYOMcsAK/7a04e117e9e7af1f8350fbf336fc4cda/Aleksandr_Kugushev_Test_Last__Test_First__TDD__kogda_primenyat_tot_ili_inoy_podkhod.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=TmY3AuoW_PU&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=20"]
+    speakerIds: [442]
+  - id: 1044
+    name:
+      - {language: en, text: "Using Tarantool in .NET projects"}
+      - {language: ru, text: "Использование Tarantool в .NET-проектах"}
+    shortDescription:
+      - {language: en, text: "Anatoly will tell about using the Tarantool DBMS and writing a connector for it. He will also\
+            \ touch on connector optimization and practices of writing quick code, using Span< T> and others."}
+      - {language: ru, text: "Анатолий расскажет о применении СУБД Tarantool и написании коннектора для него. Также он кос\
+            нется оптимизации коннектора и практик написания быстрого кода с использованием Span< T> и не только."}
+    longDescription:
+      - {language: en, text: "Anatoly will tell about using the Tarantool DBMS and writing a connector for it. He will also\
+            \ touch on connector optimization and practices of writing quick code, using Span< T> and others."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Уникальный опыт написания высокопроизводительного драйвера д\
+            ля распределённой базы данных.*\n\nАнатолий расскажет о применении СУБД Tarantool и написании коннектора для н\
+            его. Также он коснется оптимизации коннектора и практик написания быстрого кода с использованием Span< T> и не\
+            \ только."
+    talkDay: 1
+    trackTime: "11:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/42P2X4ZwRi64SMyiGOoEYE/e375b1847c59016e75b95d3d1a13f359/Anatoliy_Popov_Ispolzovaniye_Tarantool_v_.NET-proyektakh.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=f7KTa9F6DSI&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=16"]
+    speakerIds: [436]
+  - id: 1045
+    name:
+      - {language: en, text: ".NET Core 2.1: Intrinsics and other micro-optimizations"}
+      - {language: ru, text: "Оптимизации внутри .NET Core"}
+    shortDescription:
+      - {language: en, text: "This talk consists of interesting micro-optimizations, which were used in .NET Core by the developers\
+            \ and community members, and concentrates on newly minted API to the processor's SIMD instructions, such as SSE\
+            \ and AVX."}
+      - {language: ru, text: "Доклад состоит из интересных микрооптимизаций, примененных в самом .NET Core разработчиками\
+            \ и участниками сообщества, а также уделяет большое внимание новоиспеченному API к SIMD-инструкциям процессора\
+            , таким как SSE и AVX."}
+    longDescription:
+      - {language: en, text: "This talk consists of interesting micro-optimizations, which were used in .NET Core by the developers\
+            \ and community members, and concentrates on newly minted API to the processor's SIMD instructions, such as SSE\
+            \ and AVX. This API will help you feel smarter than JIT and vectorize your code manually, without using low-level\
+            \ languages."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Инсайт из Майкрософта, человек, который напрямую работает с\
+            \ Mono .NET Core. Знаменитый спикер. Вместе с Мютелем покрывает своим докладом тему хардкора и низкоуровневых\
+            \ оптимизаций.*\n\nДоклад состоит из интересных микрооптимизаций, примененных в самом .NET Core разработчиками\
+            \ и участниками сообщества, а также уделяет большое внимание новоиспеченному API к SIMD-инструкциям процессора\
+            , таким как SSE и AVX. Этот API позволит вам почувствовать себя умнее, чем JIT, и вручную векторизовать свой к\
+            од, не прибегая к помощи низкоуровневых языков."
+    talkDay: 1
+    trackTime: "12:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6PVdPk0AaQsQaWucCOIGIm/005fc179751e1d393eedd676a3852c53/Egor_Bogatov_NET_Core_2.1_Intrinsics_and_other_micro-optimizations.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=n3-j_sTtGb0&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=9"]
+    speakerIds: [431]
+  - id: 1046
+    name:
+      - {language: en, text: "Help all the humans: Why in the world would you invent your own chat bot platform"}
+      - {language: ru, text: "Помочь всем человекам: зачем мы написали свой движок чат-бота"}
+    shortDescription:
+      - {language: en, text: "Yes, we created our own chat bot platform. In this talk you're going to find out why we did\
+            \ this and what challenges chat bots encounter in a cruel human-centric world. We will also discuss some neat\
+            \ machine learning algorithms which help machines understand the gibberish we humans call language."}
+      - {language: ru, text: "Мы написали свой движок для создания чат-ботов с полностью кастомизируемой системой сценарие\
+            в. В докладе расскажем, почему мы решили писать собственный движок; какие вызовы стоят перед чат-ботом, которы\
+            й оказывает поддержку для крупного телеком-оператора; какие алгоритмы лежали в основе первых прототипов NLU и\
+            \ как он работает сейчас; какие приёмы и технологии мы используем в разработке."}
+    longDescription:
+      - language: en
+        text: "We created our own chat bot platform. It has completely customizable scenario system which we use to create\
+            \ bot interactions with almost infinite complexity. Our platform also contains Natural Language Understanding\
+            \ components which allows us to understand precisely what our clients want to achieve. We are running our chat\
+            \ bot on actual clients of Russia's biggest telecom operators.\n\nIn this talk, we will cover:\n- why did we decide\
+            \ to create our own platform;\n- what challenges chat bots encounter in a cruel human-centric world;\n- which\
+            \ machine learning algorithms we used in our first prototypes and what we use now;\n- what tricks and technology\
+            \ we use in our development process."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Актуальная тема на примере одной из крупнейших телекоммуника\
+            ционных компаний.*\n\nМы написали свой движок для создания чат-ботов с полностью кастомизируемой системой сцен\
+            ариев. В качестве базового транспортного уровня мы используем MS Bot Framework, поверх которого работает сцена\
+            рный движок. Для того чтобы бот мог обрабатывать запросы на естественном языке, мы с нуля разработали сервис Natural\
+            \ Language Understanding (аналог LUIS от MS), который может использоваться как отдельный продукт, доступный по\
+            \ REST API. Сейчас чат-бот пилотируется в некоторых регионах России в Личном кабинете МТС.\n\nВ докладе расска\
+            жем:\n- почему мы решили писать собственный движок;\n- какие вызовы стоят перед чат-ботом, который оказывает п\
+            оддержку для крупного телеком-оператора;\n- какие алгоритмы лежали в основе первых прототипов NLU и как он раб\
+            отает сейчас;\n- какие приёмы и технологии мы используем в разработке."
+    talkDay: 1
+    trackTime: "12:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3SXXNScpCMeQW2Owiugsoq/239f3041dc3000322f9774c3d85e50b7/Oleg_Tarasov_Pomoch_vsem_chelovekam__zachem_my_napisali_svoy_dvizhok_chat-bota.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=ultumbjiCro&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=24"]
+    speakerIds: [440]
+  - id: 1047
+    name:
+      - {language: en, text: "So you want to create your own .NET runtime?"}
+    shortDescription:
+      - {language: en, text: "Running C#/.NET code is something we do all the time. But how does the .exe/.dll file produced\
+            \ by the compiler actually get executed? We'll explore some of what's going on inside the dotnet[core]/Mono runtime,\
+            \ giving some insight into the inner workings of .NET."}
+    longDescription:
+      - language: en
+        text: "Running C#/.NET code is something we do all the time. But how does the .exe/.dll file produced by the compiler\
+            \ actually get executed? What's going on inside the dotnet[core]/Mono runtime?\n\nIn an attempt to answer these\
+            \ questions we'll investigate the contents of a .NET executable file and the things that the runtime needs to\
+            \ have in place in order to execute .NET code. With examples from a very simple interpreted .NET runtime, demonstrating\
+            \ that this may not be as complex as you imagined!\n\nThis will be based on the (inefficient, pointless, and obsolete!)\
+            \ [DotNetAnywhere runtime](https://github.com/chrisdunelm/DotNetAnywhere) that Chris wrote many years ago."
+    talkDay: 1
+    trackTime: "12:30"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=xhPinNSydcE&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=27"]
+    speakerIds: [437]
+  - id: 1048
+    name:
+      - {language: en, text: "Modern web development with SAFE-Stack"}
+    shortDescription:
+      - {language: en, text: "You will learn about the full power of SAFE-Stack, a stack which includes powerful F# to JavaScript\
+            \ compiler, library that brings the popular \"Elm architecture\" to F#, and ASP.NET Core technologies."}
+    longDescription:
+      - language: en
+        text: "Modern web stacks often involve more than one programming language. SAFE-Stack on the other side offers an\
+            \ end-to-end solution, with static typing safety and other powerful language capabilities on both server and client\
+            \ side in F#. \n\nIn this talk you will learn about the full power of SAFE-Stack. Fable is a powerful F# to JavaScript\
+            \ compiler and allows to write the web and mobile apps in F#. Elmish on the other hand is library that brings\
+            \ the popular \"Elm architecture\" to F#. Together with ASP.NET Core technologies like Saturn and Azure hosting\
+            \ these tools build an excellent foundation for modern web development."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Создатель Paket, FAKE, известная фигура в альтернативном дот\
+            нете.*\n\nModern web stacks often involve more than one programming language. SAFE-Stack on the other side offers\
+            \ an end-to-end solution, with static typing safety and other powerful language capabilities on both server and\
+            \ client side in F#. \n\nIn this talk you will learn about the full power of SAFE-Stack. Fable is a powerful F#\
+            \ to JavaScript compiler and allows to write the web and mobile apps in F#. Elmish on the other hand is library\
+            \ that brings the popular \"Elm architecture\" to F#. Together with ASP.NET Core technologies like Saturn and\
+            \ Azure hosting these tools build an excellent foundation for modern web development."
+    talkDay: 1
+    trackTime: "14:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=0UdU3iNm7Ik&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=5"]
+    speakerIds: [428]
+  - id: 1049
+    name:
+      - {language: en, text: "Building integration test environment using Docker containers"}
+      - {language: ru, text: "Создание окружения для интеграционных тестов на основе Docker-контейнеров"}
+    shortDescription:
+      - {language: en, text: "Aliaksei will offer an approach to writing integration tests using containerization technology,\
+            \ which allows us to create test environment of almost any degree of complexity. He will tell how this kind of\
+            \ integration tests can become a part of the development process and drastically improve the project quality,\
+            \ drawing on real-life examples."}
+      - {language: ru, text: "Алексей предлагает подход к написанию интеграционных тестов с применением технологии контейн\
+            еризации, позволяющей воссоздать тестовое окружение практически любой сложности. Опираясь на реальные примеры\
+            , он расскажет о том, как такие интеграционные тесты могут стать частью процесса разработки и серьезно улучшит\
+            ь качество проекта."}
+    longDescription:
+      - language: en
+        text: "Testing an application as a whole isn't easy, because preparing its dependencies can be hard or even impossible.\
+            \ For example, a web service often needs a storage, such as MSSQL server, a search engine, such as Elasticsearch,\
+            \ or distributed cache.\n\nOf course, you can always prepare database from backup in advance and then run the\
+            \ tests, but it's obvious that such tests would be heavyweight and time-consuming. Another option is to replace\
+            \ complex dependencies with simplified ones, such as in-memory storage, which in turn will worsen test validity\
+            \ and reliability.\n\nIn this talk, Aliaksei will offer an approach to writing integration tests using containerization\
+            \ technology, which allows us to create test environment of almost any degree of complexity. He will tell how\
+            \ this kind of integration tests can become a part of the development process and drastically improve the project\
+            \ quality, drawing on real-life examples.\n\nDevelopers focused on building a microservice architecture or disappointed\
+            \ in unit testing might find this talk especially interesting.\n\nTechnologies mentioned in this talk include\
+            \ ASP.NET Core, Docker, and Xunit."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Отличная идея с богатым корпоративным опытом.*\n\nВозможност\
+            ь тестировать приложение как единое целое осложнено невозможностью или трудностью подготовки его зависимостей\
+            . Например, разрабатываемый вами веб-сервис чаще всего нуждается в каком-либо хранилище, таком как MSSQL-серве\
+            р, поисковом движке вроде Elasticsearch или распределенном кэше.\n\nБезусловно, можно заранее подготовить базу\
+            \ данных из бэкапа, а затем запустить тестирование, однако очевидно, что такие тесты будут тяжеловесными для з\
+            апуска и займут много времени. Другим возможным сценарием может быть подмена сложных зависимостей на упрощенны\
+            е, такие как in-memory хранилища, что в свою очередь приводит к сильному ухудшению достоверности и надежности\
+            \ тестов.\n\nВ своем докладе Алексей предлагает подход к написанию интеграционных тестов с применением техноло\
+            гии контейнеризации, позволяющей воссоздать тестовое окружение практически любой сложности. Опираясь на реальн\
+            ые примеры, он расскажет о том, как такие интеграционные тесты могут стать частью процесса разработки и серьез\
+            но улучшить качество проекта.\n\nДоклад будет особенно интересен разработчикам, которые сконцентрированы на со\
+            здании микросервисной архитектуры, а также тем, кто разочаровался в юнит-тестировании.\n\nТехнологии, которые\
+            \ будут затронуты в докладе: ASP.NET Core, Docker, Xunit."
+    talkDay: 1
+    trackTime: "14:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2MxcIDPtpSoIsIYSMmS0Ii/60f1bcf41db9ce4f7158b0660d962180/Aleksey_Gorshkolep_Sozdaniye_okruzheniya_dlya_integratsionnykh_testov_na_osnove_Docker-konteynerov.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=OuKoHQdZW9E&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=21"]
+    speakerIds: [439]
+  - id: 1050
+    name:
+      - {language: en, text: "Implementing IQueryProvider"}
+      - {language: ru, text: "Реализация своих поставщиков запросов"}
+    shortDescription:
+      - language: en
+        text: "This talk covers the following topics:\n- what is IQueryProvider in .NET;\n- using IQueryProvider to expand\
+            \ IQueryable;\n- implementing your own ORM based on IQueryProvider;\n- building facade with the help of IQueryProvider."
+      - language: ru
+        text: "В докладе будет рассмотрены следующие вопросы:\n- что такое поставщики запросов в .NET;\n- использование по\
+            ставщиков запросов для расширения IQueryable;\n- реализация собственной ORM на основе IQueryProvider;\n- постр\
+            оение фасада с помощью поставщиков запросов."
+    longDescription:
+      - language: en
+        text: "This talk covers the following topics:\n- what is IQueryProvider in .NET;\n- using IQueryProvider to expand\
+            \ IQueryable;\n- implementing your own ORM based on IQueryProvider;\n- building facade with the help of IQueryProvider."
+      - language: ru
+        text: "В докладе будет рассмотрены следующие вопросы:\n- что такое поставщики запросов в .NET;\n- использование по\
+            ставщиков запросов для расширения IQueryable;\n- реализация собственной ORM на основе IQueryProvider;\n- постр\
+            оение фасада с помощью поставщиков запросов."
+    talkDay: 1
+    trackTime: "14:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3x49oR9lPOiussSMuUeyyM/eddbd0f58e4f4ae4a58997e2f9d75fc5/Anton_Tretyakov_Realizatsiya_svoikh_postavshchikov_zaprosov.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=MT6LtWQXRdc&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=10"]
+    speakerIds: [444]
+  - id: 1051
+    name:
+      - {language: en, text: "From monolith to microservices: history and practice"}
+      - {language: ru, text: "От монолита к микросервисам: история и практика"}
+    shortDescription:
+      - {language: en, text: "Konstantin will tell about a case of switching from monolithic to microservice architecture,\
+            \ give some tips and describe several situations in which these practices helped to reach the goal."}
+      - {language: ru, text: "Константин расскажет об опыте перевода проекта с монолитной архитектуры на микросервисную, д\
+            аст практические советы и опишет ситуации, в которых эти приёмы помогли достичь поставленного результата."}
+    longDescription:
+      - language: en
+        text: "This talk deals with a case of switching from monolithic to microservice architecture.\r\n\r\nThere is a lot\
+            \ of information on how to build an app based on microservices, but not on how to switch smoothly, to evolve from\
+            \ one architecture to another. However, this is a pressing issue, as many companies now consider dividing their\
+            \ software systems to several loosely coupled services in order to face challenges appearing before them. We'll\
+            \ study several facets of this matter: dividing source code of the monolith, organizing source code storage, working\
+            \ with existing database of the monolith, choosing new infrastructure and testing tools which are a must have\
+            \ in the microservice architecture.\r\n\r\nThis talk is aimed at lead developers, architects and team leads who\
+            \ want to divide their monolithic systems or have already started the process but face some difficulties.\r\n\r\
+            \nThis talk not only offers tips, but also describes several situations in which these practices helped to reach\
+            \ the goal."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Умудрённый богатым корпоративным опытом автор.*\n\nВ данном\
+            \ докладе рассказывается об опыте перевода проекта с монолитной архитектуры на микросервисную.\n\nЕсть достато\
+            чно много материала на тему того, как создавать приложения на основе микросервисов, но не так часто рассматрив\
+            аются случаи, когда нужен плавный, эволюционный переход от одной архитектуры к другой. Проблема на данный моме\
+            нт имеет большую актуальность, поскольку многие компании задумываются о разделении своих программных комплексо\
+            в на набор слабосвязанных сервисов для того, чтобы бороться с вызовами, которые перед ними стоят. Проблема рас\
+            сматривается с нескольких точек зрения: разделения исходного кода монолита, организации хранения исходного код\
+            а, работы с существующей базой данных монолита, выбора новых средств для инфраструктуры и тестирования, без ко\
+            торых в микросервисной архитектуре не обойтись.\n\nВ качестве целевой аудитории представляются ведущие разрабо\
+            тчики, архитекторы и тимлиды, которые хотят приступить к разделению своих монолитных систем либо уже начали эт\
+            о делать, но  в процессе столкнулись с трудностями.\n\nДоклад предполагает в дополнение к советам описания сит\
+            уаций, в которых эти приёмы помогли достичь поставленной цели."
+    talkDay: 1
+    trackTime: "16:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6gocsEksr66WEeo4Gos64K/d7e9de4e37431b563542087c937fc2b4/Konstantin_Gustov_Ot_monolita_k_mikroservisam__istoriya_i_praktika.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=qTNbx18DzpQ&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=7"]
+    speakerIds: [421]
+  - id: 1052
+    name:
+      - {language: en, text: "ASP.NET Core multi-tenant architecture: Challenges and solutions"}
+    shortDescription:
+      - {language: en, text: "Implementation of a multi-tenant infrastructure to create SaaS applications in ASP.NET Core."}
+    longDescription:
+      - language: en
+        text: "Multi-tenancy is a widely used architecture to build Software as a Service applications. In a multi-tenant\
+            \ application, tenants (customers) may share the same infrastructure, application and database without interfering\
+            \ with each other. They have their own users, roles, permissions, settings and data isolated from other tenants.\r\
+            \n\r\nIn this talk, we will see the problems of multi-tenancy and different options to solve them with real world\
+            \ scenarios and code samples. \r\n\r\nThe following topics will be covered in the talk:\r\n\r\n- SaaS and multi-tenancy:\
+            \ benefits and difficulties.\r\n- Deployment and database options and best practices.\r\n- How to determine, get\
+            \ and change the current tenant in the application code (using ambient context pattern).\r\n- How to implement\
+            \ an ASP.NET Core middleware to determine the current tenant.\r\n- Data isolation (between tenants): dynamically\
+            \ select the connection string and automatically filter data for the current tenant (EF Core Global Query filters,\
+            \ SQL RLS and other options).\r\n- Safe way of manipulating the data.\r\n- Enable/disable multi-tenancy for a\
+            \ required scope.\r\n- Database migrations in a multi-tenant multi-database system.\r\n- Packages and features\
+            \ in a SaaS application."
+    talkDay: 1
+    trackTime: "16:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1DwFu8ZzBiq6Sc2CqKk24o/d1fd606e4f53ecaa7906f4053493d94c/100235_1044104919_Halil_brahim_Kalkan_ASP.NET_Core_multi-tenant_architecture__Challenges_and_solutions.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=G8onwaKFRgc&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=17"]
+    speakerIds: [438]
+  - id: 1053
+    name:
+      - {language: en, text: "Creating airplane mode proof Xamarin applications"}
+    shortDescription:
+      - {language: en, text: "Creating offline-first, bandwidth-aware applications to enrich your user experience."}
+    longDescription:
+      - language: en
+        text: "It has never been more important to create apps that also work offline. Mobile app users can flick that \"\
+            airplane mode\" switch any given time and the cellular connection isn't as stable as it is at home. To ensure\
+            \ great user experience you, as a developer, need to account for these scenarios. And honestly: that can be a\
+            \ pain in the butt.\n\nIn this session Gerald will show you how to use awesome libraries like Akavache and Polly\
+            \ to create connected apps in a very easy way. Step-by-step he will guide you through a sample application, so\
+            \ after his talk you can go home and implement it in your every app. Have a good flight!"
+    talkDay: 1
+    trackTime: "16:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3rMnOenjxmgMgUysqAKSYw/56cc244b908b43aeee5fbf28e35b5a29/Gerald_Versluis_Creating_airplane_mode_proof_Xamarin_applications.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=4S6SnBYnHSQ&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=11"]
+    speakerIds: [430]
+  - id: 1054
+    name:
+      - {language: en, text: "Boosting memory management in interoperability scenarios"}
+    shortDescription:
+      - {language: en, text: "We will dig into the new APIs, language features and runtime implementations in IoT and communication\
+            \ scenarios. The goal is showing how these tools give us the opportunity to manage memory efficiently with low\
+            \ complexity in code to improve performance, code maintenance and safety."}
+    longDescription:
+      - language: en
+        text: "Historically, the ability of .NET to operate on managed and native memory was quite limited, either leading\
+            \ to performance problems or forcing the use of unsafe code.\n\nFor example, in order to interoperate with native\
+            \ code, the need to marshal the native memory into managed structures and vice versa has been a source of performance\
+            \ hits.\n\nThe new Span< T> and Memory< T> provide the solution by voiding the need to copy memory while still\
+            \ keeping the ability to access raw memory blocks safely and \"casted\" to the desired type.\n\nDuring the session\
+            \ we will dig into the new APIs, language features and runtime implementations in IoT and communication scenarios.\n\
+            \nThe goal is showing how these tools give us the opportunity to manage memory efficiently with low complexity\
+            \ in code to improve performance, code maintenance and safety."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Рафаэль — активный участник .NET user groups в Италии, а так\
+            же один из успешных спикеров на DotNext.*\n\nHistorically, the ability of .NET to operate on managed and native\
+            \ memory was quite limited, either leading to performance problems or forcing the use of unsafe code.\n\nFor example,\
+            \ in order to interoperate with native code, the need to marshal the native memory into managed structures and\
+            \ vice versa has been a source of performance hits.\n\nThe new Span< T> and Memory< T> provide the solution by\
+            \ voiding the need to copy memory while still keeping the ability to access raw memory blocks safely and \"casted\"\
+            \ to the desired type.\n\nDuring the session we will dig into the new APIs, language features and runtime implementations\
+            \ in IoT and communication scenarios.\n\nThe goal is showing how these tools give us the opportunity to manage\
+            \ memory efficiently with low complexity in code to improve performance, code maintenance and safety."
+    talkDay: 1
+    trackTime: "18:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=Do0mcw8hwYo&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=6"]
+    speakerIds: [409]
+  - id: 1055
+    name:
+      - {language: en, text: "Domain-driven design: pragmatic approach"}
+      - {language: ru, text: "Domain-driven design: рецепт для прагматика"}
+    shortDescription:
+      - {language: en, text: "Alexey will talk about domain-driven design: what it is, why we need it, what are its essentials\
+            \ and problems with implementing it."}
+      - {language: ru, text: "В докладе Алексей расскажет, что такое domain-driven design, зачем он нужен, в чем его суть\
+            \ и какие есть сложности с его применением."}
+    longDescription:
+      - language: en
+        text: "Domain-driven design is a set of development approaches, which almost everybody heard of but which is very\
+            \ hard to get into. There are large books (Evans, Vernon), but only some of us read them, even fewer read them\
+            \ to the end, and even if we do, we can miss the point. Hundreds of posts and papers make things even worse.\n\
+            \n- What does Evans regret 15 years after the release of his book?\n- Bounded context: does size matter?\n- Should\
+            \ you use all the patterns around?\n- And, finally, what is the essence of domain-driven design?\n\nAll these\
+            \ topics will be covered in Alexey's talk. It will be good introduction for newcomers and will bring new thoughts\
+            \ to DDD practitioners."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Богатый личный опыт позволяет рассказывать Алексею сложные в\
+            ещи простым и понятным языком.*\n\nDomain-driven design — набор подходов к разработке, который, с одной сторон\
+            ы, на слуху, а с другой, к нему очень сложно подступиться. Есть большие книги (Эванс, Вернон), но далеко не вс\
+            е читают их и еще меньше читают их до конца. А даже и дочитав, могут упустить суть за обилием деталей. Сотни с\
+            татей в блогах и постов на StackExchange только усугубляют эту проблему.\n\n- О чем жалеет Эванс спустя 15 лет\
+            \ после выхода его книги?\n- Bounded context: имеет ли значение размер?\n- Все ли паттерны одинаково полезны?\n\
+            - И, наконец, в чем же суть domain-driven design?\n\nОбо всём этом расскажет Алексей в своем докладе. Кто не з\
+            нает — узнает. Кто знает — узнает лучше."
+    talkDay: 1
+    trackTime: "18:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5yzv29Osi4sIeUemaMIeKE/ea44178e07da0dea8ef3d411b107e003/Aleksey_Merson_Domain-driven_design__retsept_dlya_pragmatika.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=CR9mLGN9jh0&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=12"]
+    speakerIds: [443]
+  - id: 1056
+    name:
+      - {language: en, text: "Yield and async-await: internals and uses"}
+      - {language: ru, text: "Yield и async-await: как оно все устроено внутри и как этим воспользоваться"}
+    shortDescription:
+      - {language: en, text: "Compiler turns methods with yield return and async methods into automata. We'll discuss what\
+            \ exactly they are turned into, some nuances and specific aspects, and examples of tasks where these automata\
+            \ can be used."}
+      - {language: ru, text: "Методы с yield return и async-методы превращаются компилятором в автомат. Рассмотрим, во что\
+            \ конкретно они превращаются, некоторые нюансы и особенности, а также примеры задач, где эти автоматы можно ис\
+            пользовать."}
+    longDescription:
+      - {language: en, text: "Compiler turns methods with yield return and async methods into automata. We'll discuss what\
+            \ exactly they are turned into, some nuances and specific aspects, and examples of tasks where these automata\
+            \ can be used."}
+      - {language: ru, text: "Методы с yield return и async-методы превращаются компилятором в автомат. Рассмотрим, во что\
+            \ конкретно они превращаются, некоторые нюансы и особенности, а также примеры задач, где эти автоматы можно ис\
+            пользовать."}
+    talkDay: 2
+    trackTime: "10:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/47WqssaSY0scMg0M8CYGuC/a7afe90258a0bef562ac707455afd476/Ivan_Dashkevich_Yield_i_async-await__kak_ono_vse_ustroyeno_vnutri_i_kak_etim_vospolzovatsya.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=TFsT8bgs024&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=2&t=0s"]
+    speakerIds: [435]
+  - id: 1057
+    name:
+      - {language: en, text: "Pragmatic unit testing"}
+    shortDescription:
+      - {language: en, text: "Unit testing is a vast topic. The industry has accumulated a huge amount of information about\
+            \ it during the past two decades. However, not all unit testing practices yield equal results. It is important\
+            \ for you as a developer to know which practices provide the best return on your efforts."}
+    longDescription:
+      - language: en
+        text: "Unit testing is a vast topic. The industry has accumulated a huge amount of information about it during the\
+            \ past two decades. However, not all unit testing practices yield equal results. Some of them are valuable and\
+            \ contribute a lot to the overall software quality. Others result in brittle tests: tests that raise many false\
+            \ alarms and dilute your ability to spot the problem in case something goes wrong. It is important for you as\
+            \ a developer to know which practices provide the best return on your efforts.\n\nThis talk targets developers\
+            \ who are familiar with unit testing, already mastered all the basics around it and want to take their unit testing\
+            \ skills to the next level. The audience will learn how to get the most out of their unit test suite.\n\nThe topics\
+            \ Vladimir will cover include:\n- what makes a test valuable;\n- test-induced design damage and how to avoid it;\n\
+            - how to choose which parts of the code deserve 100% or close to 100% test coverage and which can be left mostly\
+            \ uncovered by unit tests;\n- why using mocks in tests is almost never a good idea."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Крутейший автор легендарного архитектурного блога, а также п\
+            риложил руку к отличным online-курсам.*\n\nUnit testing is a vast topic. The industry has accumulated a huge amount\
+            \ of information about it during the past two decades. However, not all unit testing practices yield equal results.\
+            \ Some of them are valuable and contribute a lot to the overall software quality. Others result in brittle tests:\
+            \ tests that raise many false alarms and dilute your ability to spot the problem in case something goes wrong.\
+            \ It is important for you as a developer to know which practices provide the best return on your efforts.\n\n\
+            This talk targets developers who are familiar with unit testing, already mastered all the basics around it and\
+            \ want to take their unit testing skills to the next level. The audience will learn how to get the most out of\
+            \ their unit test suite.\n\nThe topics Vladimir will cover include:\n- what makes a test valuable;\n- test-induced\
+            \ design damage and how to avoid it;\n- how to choose which parts of the code deserve 100% or close to 100% test\
+            \ coverage and which can be left mostly uncovered by unit tests;\n- why using mocks in tests is almost never a\
+            \ good idea."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2TGdlhqDhmqKwaOE6QmwGQ/d173c9d91cdc84534a6880f8c8201029/Vladimir_Khorikov_Pragmatic_unit_testing.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=XHxJ78iMAzM&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=25"]
+    speakerIds: [432]
+  - id: 1058
+    name:
+      - {language: en, text: "Make your custom .NET GC — \"whys\" and \"hows\""}
+    shortDescription:
+      - {language: en, text: "Learn how you can customize or even completely rewrite the GC in .NET, as well as, why you may\
+            \ ever want to do it."}
+    longDescription:
+      - language: en
+        text: "Starting with .NET Core 2.1 a new feature called Local GC has been added. It allows you to do magic things\
+            \ — you can completely replace the default GC used by the runtime with your own, or you can use the default GC\
+            \ outside .NET environment. In the session we will look at these possibilities — how and why we can do it. We'll\
+            \ find out exactly where to start writing your own GC and whether it is difficult or not. We will also look at\
+            \ less flexible but still powerful possibilities of GC customization when CLR Hosting is being used.\n\nThe target\
+            \ audience should be interested in advanced memory management topics, as session will be concentrated on the GC\
+            \ customization and GC algorithms in general. The main takeaway for the audience is an inspiration — to encourage\
+            \ experiments with their own GC, or at least to be more aware what is possible on that field."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/46Yzhu8XRCieSOMMQ0wE6Q/8a10bcc959ecb128acaaa6eb20c82e78/Konrad_Kokosa_-_Make_your_custom_.NET_whys_and_hows.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=om8YFyTO5ik&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=13"]
+    speakerIds: [416]
+  - id: 1059
+    name:
+      - {language: en, text: "Instant design"}
+      - {language: ru, text: "Быстрорастворимое проектирование"}
+    shortDescription:
+      - {language: en, text: "Maxim will tell about the criteria of good and bad code, how and by what we should measure them.\
+            \ He will review the common tasks and approaches, advantages and disadvantages. In the conclusion he will give\
+            \ recommendations and best practices for web apps design."}
+      - {language: ru, text: "Максим расскажет о критериях хорошего кода и плохого кода, как и чем мерить. Сделает обзор т\
+            иповых задач и подходов, разберет плюсы и минусы. В конце даст рекомендации и best practices по проектированию\
+            \ web-приложений."}
+    longDescription:
+      - language: en
+        text: "People learn architecture from old books written for Java. These books are good, but they offer solutions for\
+            \ old-time problems using old-time tools. But times have changed, C# is now more like a light Scala then Java,\
+            \ and there aren't many new good books.\r\n\r\nIn this session, Maxim will tell about the criteria of good and\
+            \ bad code, how and by what we should measure them. He will review the common tasks and approaches, advantages\
+            \ and disadvantages. In the conclusion he will give recommendations and best practices for web apps design."
+      - language: ru
+        text: "Люди учатся архитектуре по старым книжкам, которые писались для Java. Книжки хорошие, но дают решение задач\
+            \ того времени инструментами того времени. Время поменялось, C# уже больше похож на лайтовую Scala, чем Java,\
+            \ а новых хороших книжек мало.\r\n\r\nВ этом докладе Максим расскажет о критериях хорошего кода и плохого кода\
+            , как и чем мерить. Сделает обзор типовых задач и подходов, разберет плюсы и минусы. В конце даст рекомендации\
+            \ и best practices по проектированию web-приложений."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3TzGJj7fKwISGYQw4ku4c0/54a2ac651d438607970854d91f2f7f1a/Maksim_Arshinov_Bystrorastvorimoye_proyektirovaniye.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=qJPwSvDLmQE&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=2"]
+    speakerIds: [413]
+  - id: 1060
+    name:
+      - {language: en, text: "Windows 10 internals for .NET developers"}
+    shortDescription:
+      - {language: en, text: "Windows 10 is here and is progressing at a much faster cadence than in the past. This session\
+            \ is about Windows 10 internals features and how they impact and/or can be used by .NET developers."}
+    longDescription:
+      - language: en
+        text: "The .NET Framework provides some level of abstraction over the Windows OS, but understanding the way Windows\
+            \ works can make you a better .NET developer. Windows 10 is progressing at a faster cadence than in the past.\
+            \ Some of its features are not exposed to .NET developers directly.\r\n\r\nIn this session, we'll look at various\
+            \ Windows 10 internals features and how they impact .NET developers. Also, we'll see how to utilize some of these\
+            \ features in .NET to gain performance or capabilities, using interop techniques."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Один из авторов книги \"Windows Internals\".*\n\nThe .NET Framework\
+            \ provides some level of abstraction over the Windows OS, but understanding the way Windows works can make you\
+            \ a better .NET developer. Windows 10 is progressing at a faster cadence than in the past. Some of its features\
+            \ are not exposed to .NET developers directly.\n\nIn this session, we'll look at various Windows 10 internals\
+            \ features and how they impact .NET developers. Also, we'll see how to utilize some of these features in .NET\
+            \ to gain performance or capabilities, using interop techniques."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6isCHPOhLq8eA0U0AKuAyY/3d02ef18b8dc2fca10179d8ec5122235/Pavel_Yosifovich_Windows_Internals_for_.NET_developers.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=h6BXMcRqYhA&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=18"]
+    speakerIds: [406]
+  - id: 1061
+    name:
+      - {language: en, text: "Extend the new WinDbg to build your own dream debugging tool"}
+    shortDescription:
+      - {language: en, text: "You'll explore the various extension points provided by the new WinDbg and learn how to use\
+            \ them to improve the user experience by turning the app into a fully featured multi-window debugger with live\
+            \ C#/ClrMD scripting support."}
+    longDescription:
+      - language: en
+        text: "It's the beginning of a new era. After all those years, Microsoft has finally done what we stopped hoping for:\
+            \ WinDbg has been updated with a brand new UI! Past the \"wow!\" effect, it looks like many of the old WinDbg\
+            \ flaws are still there: a single command window, no history, limited scripting… But fear not, for something has\
+            \ changed: WinDbg now provides a number of extension points (undocumented at this time) that can be used to fully\
+            \ customize the UI and drive the debugging engine. It's up to us to turn this application into our own dream debugging\
+            \ tool!\r\n\r\nIn that session, you'll explore the various extension points provided by the new WinDbg. You will\
+            \ learn how to use them to improve the user experience by turning the app into a fully featured multi-window debugger\
+            \ with live C#/ClrMD scripting support."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/4KbHhG0jfqc8gEuwgGEoyG/b15749c33da221d15145ea2e76b01f53/Kevin_Gosse_Extend_the_new_WinDbg_to_build_your_own_dream_debugging_tool.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=tSlFd0CIo0g&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=14"]
+    speakerIds: [417]
+  - id: 1062
+    name:
+      - {language: en, text: "FAKE + Paket — PowerTools for .NET developers"}
+    shortDescription:
+      - {language: en, text: "This talk will show you how to set up basic build scripts with FAKE and give you an overview\
+            \ about dependency management with Paket."}
+    longDescription:
+      - language: en
+        text: "FAKE — F# Make is a build automation system with capabilities which are similar to make and rake. It is using\
+            \ an easy domain-specific language (DSL) which allows you to express your build logic in F#.\n\nPaket is a dependency\
+            \ manager for .NET and mono projects, which is designed to work well with NuGet packages and also enables referencing\
+            \ files directly from GitHub repositories. It enables precise and predictable control over what packages the projects\
+            \ within your application reference.\n\nThis talk will show you how to set up basic build scripts with FAKE and\
+            \ give you an overview about dependency management with Paket. This talk is for every .NET developer that wants\
+            \ to get rid of the problems that come with XML build scripts and NuGet dependency chaos."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Создатель Paket, FAKE, известная фигура в альтернативном дот\
+            нете.*\n\nFAKE — F# Make is a build automation system with capabilities which are similar to make and rake. It\
+            \ is using an easy domain-specific language (DSL) which allows you to express your build logic in F#.\n\nPaket\
+            \ is a dependency manager for .NET and mono projects, which is designed to work well with NuGet packages and also\
+            \ enables referencing files directly from GitHub repositories. It enables precise and predictable control over\
+            \ what packages the projects within your application reference.\n\nThis talk will show you how to set up basic\
+            \ build scripts with FAKE and give you an overview about dependency management with Paket. This talk is for every\
+            \ .NET developer that wants to get rid of the problems that come with XML build scripts and NuGet dependency chaos."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=TFqBzYMYmS0&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=30"]
+    speakerIds: [428]
+  - id: 1063
+    name:
+      - {language: en, text: "Behind the burst compiler, converting .NET IL to highly optimized native code by using LLVM"}
+    shortDescription:
+      - {language: en, text: "In this talk you will discover the work behind the burst compiler done at Unity Technologies:\
+            \ a solution to compile a subset of the C# language to highly optimized native code using the LLVM compiler infrastructure."}
+    longDescription:
+      - language: en
+        text: "From mobile to console, games are often trying to push the limit of our hardware to provide a better gaming\
+            \ experience, in a very constrained time, the famous 60 FPS or even at a higher framerate, while still saving\
+            \ power consumption. With a budget of 16.6ms per frame, a game has to perform lots of complex calculations in\
+            \ different programming domains including physics, rendering, audio, machine learning. \n\nWe believe that .NET\
+            \ and specially C# for games can provide a fantastic balance between productivity, safety and performance. But\
+            \ for certain critical code, we know also that C# is currently not able to deliver the performance that some games\
+            \ are looking for. \n\nIn order to lower the gap between the performance of C# games versus a more optimized language\
+            \ like C++, and even to go beyond what we can achieve with C++, we have been developing for the past year at Unity\
+            \ Technologies the \"burst\" compiler: a solution to compile a subset of the C# language to highly optimized native\
+            \ code using the LLVM compiler infrastructure. \n\nIn this talk, we will go through the details behind this challenge\
+            \ and how we were able to unlock it: \n\n- The challenges of generating better native code from IL/.NET than existing\
+            \ solutions like RyuJIT \n- The subset of the C# language used to maximize the performance \n- How to allow auto-vectorizing\
+            \ IL code? \n- Using data-oriented programming in C# without a GC \n- Integrate dedicated optimizations for mathematic\
+            \ functions \n- Developing an automatic Structure-Of-Array (SOA) approach into the compiler \n- How much difference\
+            \ between JIT and AOT in this solution? \n\nAttendees will learn about Unity Technologies' approach to deliver\
+            \ a new JIT/AOT compiler for a subset of the C# language to unlock performance in games. \n\nThe target audience\
+            \ consists of people interested in low-level optimizations, native code generation, compilers, IL bytecode, .NET\
+            \ JIT and AOT, and LLVM."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Автор многих крутых проектов (например, SharpDX и Markdig) и\
+            \ умных низкоуровневых [постов](http://xoofx.com/blog/), MVP, один из самых хардкорных девелоперов из Unity Technologies.*\n\
+            \n\nFrom mobile to console, games are often trying to push the limit of our hardware to provide a better gaming\
+            \ experience, in a very constrained time, the famous 60 FPS or even at a higher framerate, while still saving\
+            \ power consumption. With a budget of 16.6ms per frame, a game has to perform lots of complex calculations in\
+            \ different programming domains including physics, rendering, audio, machine learning. \n\nWe believe that .NET\
+            \ and specially C# for games can provide a fantastic balance between productivity, safety and performance. But\
+            \ for certain critical code, we know also that C# is currently not able to deliver the performance that some games\
+            \ are looking for. \n\nIn order to lower the gap between the performance of C# games versus a more optimized language\
+            \ like C++, and even to go beyond what we can achieve with C++, we have been developing for the past year at Unity\
+            \ Technologies the \"burst\" compiler: a solution to compile a subset of the C# language to highly optimized native\
+            \ code using the LLVM compiler infrastructure. \n\nIn this talk, we will go through the details behind this challenge\
+            \ and how we were able to unlock it: \n\n- The challenges of generating better native code from IL/.NET than existing\
+            \ solutions like RyuJIT \n- The subset of the C# language used to maximize the performance \n- How to allow auto-vectorizing\
+            \ IL code? \n- Using data-oriented programming in C# without a GC \n- Integrate dedicated optimizations for mathematic\
+            \ functions \n- Developing an automatic Structure-Of-Array (SOA) approach into the compiler \n- How much difference\
+            \ between JIT and AOT in this solution? \n\nAttendees will learn about Unity Technologies' approach to deliver\
+            \ a new JIT/AOT compiler for a subset of the C# language to unlock performance in games. \n\nThe target audience\
+            \ consists of people interested in low-level optimizations, native code generation, compilers, IL bytecode, .NET\
+            \ JIT and AOT, and LLVM."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=LKpyaVrby04&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=19"]
+    speakerIds: [429]
+  - id: 1064
+    name:
+      - {language: en, text: "ValueTask: what and why"}
+      - {language: ru, text: "ValueTask: что, зачем и почему"}
+    shortDescription:
+      - {language: en, text: "Recently, in the new versions of language, ValueTask, task-like types and IValueTaskSource appeared.\
+            \ Most people don't even know they exist, and those who do know don't understand what to do with them. Egor will\
+            \ tell what are these new types, why we might need them and when it is and isn't reasonable to use them."}
+      - {language: ru, text: "Недавно, в свежих версиях языка, появились ValueTask, task-like типы и IValueTaskSource. Мно\
+            гие даже не знают о том, что эти типы существуют, а большинство из тех, кто знает об их существовании, не пони\
+            мает, зачем они. Егор расскажет, что это за новые средства, для чего они и когда их использование обосновано,\
+            \ а когда нет."}
+    longDescription:
+      - {language: en, text: "Recently, in the new versions of language, ValueTask, task-like types and IValueTaskSource appeared.\
+            \ Most people don't even know they exist, and those who do know don't understand what to do with them. Egor will\
+            \ tell what are these new types, why we might need them and when it is and isn't reasonable to use them."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Отлично раскопанный и структурированный материал по одной из\
+            \ основополагающих тем в жизни каждого современного .NET-разработчика.*\n\nНедавно, в свежих версиях языка, по\
+            явились ValueTask, task-like типы и IValueTaskSource. Многие даже не знают о том, что эти типы существуют, а б\
+            ольшинство из тех, кто знает об их существовании, не понимает, зачем они. Егор расскажет, что это за новые сре\
+            дства, для чего они и когда их использование обосновано, а когда нет."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3aDGgTNrQIMqwCuICGgSiU/40ca50082e27478b2bab21a8e3636899/Yegor_Grishechko_ValueTask__chto__zachem_i_pochemu.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=Xcb8blEWIUw&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=15"]
+    speakerIds: [433]
+  - id: 1065
+    name:
+      - {language: en, text: "Building responsive and scalable applications"}
+    shortDescription:
+      - {language: en, text: "Jeff will demonstrate the importance of performing asynchronous I/O to build responsive and\
+            \ highly-scalable applications that efficiently use system and application resources."}
+    longDescription:
+      - language: en
+        text: "Today's computer users are not willing to put up with application hangs and not knowing what the application\
+            \ is doing. Instead, they demand that applications be responsive and under their control at all times. Building\
+            \ applications that users can trust is a matter of using threads effectively especially in today's world of multi-core\
+            \ CPUs. Furthermore, users expect applications to run faster by taking advantage of all the computer's CPUs. \n\
+            \nIn this talk, Jeff will demonstrate the importance of performing asynchronous I/O to build responsive and highly-scalable\
+            \ applications that efficiently use system and application resources. The concepts discussed are applicable for\
+            \ building both client-side and server-side applications."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Автор настольной книги каждого .NET-разработчика и один из с\
+            амых известных людей в мире .NET.*\n\nToday's computer users are not willing to put up with application hangs\
+            \ and not knowing what the application is doing. Instead, they demand that applications be responsive and under\
+            \ their control at all times. Building applications that users can trust is a matter of using threads effectively\
+            \ especially in today's world of multi-core CPUs. Furthermore, users expect applications to run faster by taking\
+            \ advantage of all the computer's CPUs. \n\nIn this talk, Jeff will demonstrate the importance of performing asynchronous\
+            \ I/O to build responsive and highly-scalable applications that efficiently use system and application resources.\
+            \ The concepts discussed are applicable for building both client-side and server-side applications."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1sD9eMGQNGgEAYeUykoyqo/87268467a4e6d6f35cfdd723de068b4d/Jeffrey__Richter_Building_responsive_and_scalable_applications.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=xGSabgBo-S8&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=3"]
+    speakerIds: [427]
+  - id: 1066
+    name:
+      - {language: en, text: "Life of actors in clusters: why, when and how"}
+      - {language: ru, text: "Жизнь акторов в кластере: зачем, когда и как"}
+    shortDescription:
+      - {language: en, text: "Vagif will talk about a system based on actor model with built-in scalability: frameworks like\
+            \ Akka let you seamlessly distribute the load between multiple cluster nodes, and actors have location transparency."}
+      - {language: ru, text: "Вагиф расскажет о системе, разработанной на основе модели акторов, со встроенными средствами\
+            \ масштабирования: Akka позволяет распределять нагрузку на систему между узлами кластера, а сами акторы облада\
+            ют прозрачностью местоположения."}
+    longDescription:
+      - language: en
+        text: "Your system is successfully deployed in produciton, but is still running on a single server. Not only it will\
+            \ soon reach its hardware capacity, it is at constant availability risk. The system is based on actor model, and\
+            \ one of the reasons for the choice was built-in scalability: frameworks like Akka let you seamlessly distribute\
+            \ the load between multiple cluster nodes, and actors have location transparency. Is this what you need? When\
+            \ is it right time to support clustering? And what are the main patterns of the cluster solution? \n\nWe had to\
+            \ answer these questions in our project at Norwegian Broadcasting Corporation (NRK) extending our system with\
+            \ cluster support. Some of the lessons we learned apply not only to the actor model but to general problems of\
+            \ scalability and domain-driven design. We will share with you our experience and run a small cluster right from\
+            \ a Visual Studio Code terminal window."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *У него отличные рейтинги, широкий кругозор, и он поёт! Второ\
+            го такого докладчика просто не найти.*\n\nВаша система успешно внедрена, но по-прежнему работает на одном-един\
+            ственном сервере. Она не только рано или поздно достигнет своих пределов быстродействия, она находится под пос\
+            тоянным риском машинного сбоя. Система разработана на основе модели акторов, и одной из причин выбора были вст\
+            роенные средства масштабирования: Akka позволяет распределять нагрузку на систему между узлами кластера, а сам\
+            и акторы обладают прозрачностью местоположения. Это то, что вам нужно? Когда это стоит начать внедрять? И како\
+            вы основные паттерны кластерных решений? \n\nМы получили ответы на эти вопросы в проекте Норвежской вещательно\
+            й корпорации (NRK), расширив нашу систему поддержкой кластера. Некоторые из выученных уроков относятся не толь\
+            ко к модели акторов, а к общим задачам масштабирования и предметно-ориентированного программирования (DDD). Мы\
+            \ расскажем об опыте нашей разработки и запустим небольшой кластер прямо из терминала Visual Studio Code."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1OOQ69Jddy6cy64w4asg2a/4f9b5244b61fb46ddb03441ec99236c4/Vagif_Abilov_Zhizn_aktorov_v_klastere__zachem__kogda_i_kak.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=XIFuVFwqRQw&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=22"]
+    speakerIds: [498]
+  - id: 1067
+    name:
+      - {language: en, text: "System metrics: learning to avoid pitfalls"}
+      - {language: ru, text: "Системные метрики: собираем подводные камни"}
+    shortDescription:
+      - {language: en, text: "Evgeny will tell what are the differences between various system metrics, which mistakes in\
+            \ metric collecting do not allow you to see performance issues, which performance issues do Process and PerformanceCounter\
+            \ classes have, and what is the internal design of Performance Counters and how to work with them correctly and\
+            \ effectively."}
+      - {language: ru, text: "Евгений расскажет, чем отличаются различные системные метрики, какие ошибки при сборе метрик\
+            \ не позволяют заметить проблемы с производительностью, какие проблемы с производительностью есть у классов Process\
+            \ и PerformanceCounter, как устроены PerformanceCounters внутри и как работать с ними правильно и эффективно.w"}
+    longDescription:
+      - language: en
+        text: "For monitoring the apps' performance it is useful to watch their system metrics: memory consumption, CPU utilization,\
+            \ network resource consumption, garbage collector's work. It can easily be done using Task Manager, Process Explorer,\
+            \ PerfMon, and other GUI tools.\n\nBut in order to send these metrics to Graphite, for example, or to write it\
+            \ to your app's log you need to know how to collect these metrics from the code. It would also be good if metric-collecting\
+            \ tools were not interfering with your app's performance.\n\nIn this talk Evgeny will tell:\n- what are the differences\
+            \ between various system metrics;\n- which mistakes in metric collecting do not allow you to see performance issues;\n\
+            - which performance issues do Process and PerformanceCounter classes have;\n- what is the internal design of Performance\
+            \ Counters and how to work with them correctly and effectively.\n\nWe will also knock together different ways\
+            \ of collecting metrics in benchmarks."
+      - language: ru
+        text: "Для мониторинга производительности приложений полезно наблюдать за их системными метриками: потреблением па\
+            мяти, загрузкой процессора, потреблением сетевых ресурсов, активностью сборщика мусора. Это сделать легко, исп\
+            ользуя Task Manager, Process Explorer, PerfMon и другие GUI-инструменты.\n\nНо для того чтобы отправить эти ме\
+            трики, например, в Graphite или записать в логи своего приложения — нужно уметь собирать эти метрики из кода.\
+            \ При этом желательно, чтобы инструменты для сбора метрик не влияли на производительность приложения.\n\nВ док\
+            ладе Евгений расскажет:\n- чем отличаются различные системные метрики;\n- какие ошибки при сборе метрик не поз\
+            воляют заметить проблемы с производительностью;\n- какие проблемы с производительностью есть у классов Process\
+            \ и PerformanceCounter;\n- как устроены Performance Counters внутри и как работать с ними правильно и эффектив\
+            но.\n\nТакже столкнём различные способы сбора метрик в бенчмарках."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6i0d7L17peSI4IAEgiG8IY/9f2db183f13f4cefb60dec9908b7fd25/Yevgeniy_Peshkov_Sistemnyye_metriki__sobirayem_podvodnyye_kamni.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=9V8JNnnmeDM&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=26"]
+    speakerIds: [466]
+  - id: 1068
+    name:
+      - {language: en, text: "Surviving under load: fault-tolerant server, smart client"}
+      - {language: ru, text: "Как выжить под нагрузкой: отказоустойчивый сервер, умный клиент"}
+    shortDescription:
+      - {language: en, text: "You'll learn how to build load-tolerant microservices and perform load testing to make sure\
+            \ they can sustain load."}
+      - {language: ru, text: "Вы узнаете, как создавать устойчивые к нагрузке микросервисы и проводить нагрузочное тестиро\
+            вание, чтобы убедиться, что они выдерживают нагрузку."}
+    longDescription:
+      - {language: en, text: "All of us write microservices and all could fail from time to time. In our .NET microservices\
+            \ hosting system more than 5,000 replicas are running simultaneously under load from hundreds to dozens of thousands\
+            \ RPS, and in the postmortem list there are more than 600 records from the last two years. We are used to analyzing\
+            \ causes of troubles and from our own experience know how to design load-tolerant microservice clusters and smart\
+            \ clients for them. From this talk you'll learn how to build such microservices and perform load testing to make\
+            \ sure they can sustain load."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Лучшие советы по масштабированию от самой большой продуктово\
+            й .NET-компании в России.*\n\nВсе пишут микросервисы и у всех случаются фейлы. В нашей системе для хостинга .NET-м\
+            икросервисов одновременно запущено больше 5 тысяч реплик под нагрузкой от сотен до десятков тысяч RPS, а в спи\
+            ске постмортемов больше 600 записей за последние два года. Мы привыкли анализировать причины неполадок и знаем\
+            \ на своём опыте, как проектировать устойчивые к нагрузке кластеры микросервисов и умные клиенты для них. Вы у\
+            знаете из доклада, как создавать такие микросервисы и проводить нагрузочное тестирование, чтобы убедиться, что\
+            \ они выдерживают нагрузку."
+    talkDay: 2
+    trackTime: "17:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/38pmIhPClWYQUi02aisqIO/24a3784051b1564ce6f5f3d21eaf6f89/Igor_Lukanin_Kak_vyzhit_pod_nagruzkoy__otkazoustoychivyy_server__umnyy_kliyent.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=MnAG11dWV0c&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=8"]
+    speakerIds: [441]
+  - id: 1069
+    name:
+      - {language: en, text: "Dodo IS performance architecture"}
+      - {language: ru, text: "Архитектура производительности Dodo IS"}
+    shortDescription:
+      - {language: en, text: "Performance and stability of a distributed system are inextricably intertwined. We'll discuss\
+            \ how one influences another and how to attain good characteristics mainly by means of architecture, not runtime\
+            \ characteristics of specific components."}
+      - {language: ru, text: "Производительность и стабильность распределенной системы неразрывно связаны. Рассмотрим, как\
+            \ одно влияет на другое и как добиться хороших характеристик в основном за счет архитектуры, а не за счет рант\
+            айм-характеристик отдельных компонентов."}
+    longDescription:
+      - {language: en, text: "Performance and stability of a distributed system are inextricably intertwined. We'll discuss\
+            \ how one influences another and how to attain good characteristics mainly by means of architecture, not runtime\
+            \ characteristics of specific components."}
+      - {language: ru, text: "Производительность и стабильность распределенной системы неразрывно связаны. Рассмотрим, как\
+            \ одно влияет на другое и как добиться хороших характеристик в основном за счет архитектуры, а не за счет рант\
+            айм-характеристик отдельных компонентов."}
+    talkDay: 2
+    trackTime: "17:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6YjtsmwxnaWomiMySwuw0W/a796bf0b83df3d2a80fd616d63b2d97b/George_Polevoy_Dodo_IS_performance_architecture.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=XNuAJmOXgYw&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=23"]
+    speakerIds: [434]
+  - id: 1070
+    name:
+      - {language: en, text: "Building your own debugging toolbox with ClrMD"}
+    shortDescription:
+      - language: en
+        text: "You have to investigate problems live or post-mortem on tens of GB of application memory by browsing complex\
+            \ structures, such as the threadpool or the timer queue and… you start to spend your life typing tons of SOS commands\
+            \ in WinDbg… and you abandon it. Here comes ClrMD to the rescue! \n\nJoin us to learn how to write your own tools\
+            \ and WinDbg extensions in C# to automate your future investigations."
+    longDescription:
+      - language: en
+        text: "You have to investigate problems live or post-mortem on tens of GB of application memory by browsing complex\
+            \ structures, such as the threadpool or the timer queue and… you start to spend your life typing and typing tons\
+            \ of SOS commands in WinDbg. You think about scripting WinDbg and… you abandon it. Here comes ClrMD to the rescue!\
+            \ \n\nImagine. You're investigating an issue on a 20GB memory dump. You navigate around memory structures with\
+            \ WinDbg and SOS, trying to figure out what's going on. You start to get a grasp of the overall problem, but to\
+            \ validate the hypothesis you need to figure out the number of scheduled timers and their respective intervals.\
+            \ \n\nWhat are your options? You could spend hours browsing them one by one with !dumpheap and !do. You also could\
+            \ try to use the WinDbg scripting API to automate the process, given that you're one of the lucky few who were\
+            \ ever able to use it efficiently. Or you could write a simple C# program in a few minutes and get the result.\
+            \ What would you do? \n\nThis talk is aimed at those who, like us, have a strong preference for the last option.\
+            \ ClrMD is a .NET library from Microsoft to introspect live processes and memory dumps. It allows you to do everything\
+            \ you could do with SOS in WinDbg: list threads, navigate into the managed heaps and dig into the instances of\
+            \ .NET types. It also allows you to go the extra mile: writing your own debugging tools, adding new commands to\
+            \ WinDbg, and all this in plain C#. \n\nThis session will show you how to achieve real world debugging goals:\
+            \ \n- load a dump or attach a live process with symbols, sos and mscordac tricks and tips; \n- iterate on object\
+            \ instances in the managed heap; \n- get static and instance field values; \n- leverage C# dynamic to make coding\
+            \ even easier; \n- create a WinDbg extension and transform your code into ninja-friendly commands. \n\nAfter the\
+            \ session, you will know how to write code to list duplicated strings, list running timers, whatever you would\
+            \ need in your next investigation."
+    talkDay: 2
+    trackTime: "17:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1Hyze0icAwKQS2s4WgMWa0/aeda74ceaebee6397ca622c15d36115d/Christophe_Nasarre_Building_your_own_debugging_toolbox_with_ClrMD.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=O8c5WwfbGFU&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=28"]
+    speakerIds: [405]
+  - id: 1071
+    name:
+      - {language: en, text: "Ctrl-Alt-Del: learning to love legacy code"}
+    shortDescription:
+      - {language: en, text: "We'll talk about how to bring legacy code under control using continuous integration and managed\
+            \ deployments, explore creative ways to use common technologies like DNS to create more productive development\
+            \ environments, and talk about why good old Ctrl-Alt-Del might be the secret to unlocking the potential of your\
+            \ legacy codebase."}
+    longDescription:
+      - language: en
+        text: "The world runs on legacy code. For every greenfield progressive web app with 100% test coverage, there are\
+            \ literally hundreds of archaic line-of-business applications running in production — systems with no tests, no\
+            \ documentation, built using out-of-date tools, languages and platforms. It's the code developers love to hate:\
+            \ it's not exciting, it's not shiny, and it won't look good on your CV — but the world runs on legacy code, and,\
+            \ as developers, if we're going to work on anything that actually matters, we're going to end up dealing with\
+            \ legacy. To work effectively with this kind of system, we need to answer some fundamental questions: why was\
+            \ it built this way in the first place? What's happened over the years it's been running in production? And, most\
+            \ importantly, how can we develop our understanding of legacy codebases to the point where we're confident that\
+            \ we can add features, fix bugs and improve performance without making things worse?\n\nDylan worked on the web\
+            \ application stack at Spotlight (www.spotlight.com) from 2000 until 2018 — first as a supplier, then as webmaster,\
+            \ then as systems architect. Working on the same codebase for nearly two decades has given him an unusual perspective\
+            \ on how applications go from being cutting-edge to being \"legacy\".\n\nIn this talk, he'll share tips, patterns\
+            \ and techniques that he's learned from helping new developers work with a large and unfamiliar codebase. We'll\
+            \ talk about virtualisation, refactoring tools, and how to bring legacy code under control using continuous integration\
+            \ and managed deployments. We'll explore creative ways to use common technologies like DNS to create more productive\
+            \ development environments. We'll talk about how to bridge the gap between automated testing and systems monitoring,\
+            \ how to improve visibility and transparency of your production systems — and why good old Ctrl-Alt-Del might\
+            \ be the secret to unlocking the potential of your legacy codebase."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *У Дилана всегда хорошие доклады и высокие рейтинги, он умеет\
+            \ делать зажигательные кейноуты.*\n\nThe world runs on legacy code. For every greenfield progressive web app with\
+            \ 100% test coverage, there are literally hundreds of archaic line-of-business applications running in production\
+            \ — systems with no tests, no documentation, built using out-of-date tools, languages and platforms. It's the\
+            \ code developers love to hate: it's not exciting, it's not shiny, and it won't look good on your CV — but the\
+            \ world runs on legacy code, and, as developers, if we're going to work on anything that actually matters, we're\
+            \ going to end up dealing with legacy. To work effectively with this kind of system, we need to answer some fundamental\
+            \ questions: why was it built this way in the first place? What's happened over the years it's been running in\
+            \ production? And, most importantly, how can we develop our understanding of legacy codebases to the point where\
+            \ we're confident that we can add features, fix bugs and improve performance without making things worse?\n\n\
+            Dylan worked on the web application stack at Spotlight (www.spotlight.com) from 2000 until 2018 — first as a supplier,\
+            \ then as webmaster, then as systems architect. Working on the same codebase for nearly two decades has given\
+            \ him an unusual perspective on how applications go from being cutting-edge to being \"legacy\".\n\nIn this talk,\
+            \ he'll share tips, patterns and techniques that he's learned from helping new developers work with a large and\
+            \ unfamiliar codebase. We'll talk about virtualisation, refactoring tools, and how to bring legacy code under\
+            \ control using continuous integration and managed deployments. We'll explore creative ways to use common technologies\
+            \ like DNS to create more productive development environments. We'll talk about how to bridge the gap between\
+            \ automated testing and systems monitoring, how to improve visibility and transparency of your production systems\
+            \ — and why good old Ctrl-Alt-Del might be the secret to unlocking the potential of your legacy codebase."
+    talkDay: 2
+    trackTime: "19:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/9n3x4rtjlya6/s4TS0l4kNUlM9PUoDVRiY/e922fd95fe86c53274b01301f101eebb/Dylan_Beattie_Ctrl_Alt_Del_Learning_to_Love_Legacy_Code.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=afZGZOL6Fr8&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=4"]
+    speakerIds: [407]

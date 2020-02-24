@@ -4646,6 +4646,15 @@ speakers:
     fileName: 0406.jpg
     name:
       - {language: en, text: "Pavel Yosifovich"}
+    company:
+      - {language: en, text: "Author of the \"Windows Internals\" book"}
+      - {language: ru, text: "Автор книги «Windows Internals»"}
+    bio:
+      - {language: en, text: "Pavel Yosifovich is a developer, trainer author and speaker. He's the co-author of \"Windows\
+            \ Internals 7th edition Part 1\" (2017) and author of \"WPF 4.5 Cookbook\" (2012). Pavel is also a former MVP\
+            \ and a Pluralsight author. He can be reached at zodiacon@live.com or through his <a href=\"http://blogs.microsoft.co.il/pavely\"\
+            \ target=\"_blank\">blog</a>."}
+    twitter: zodiacon
   - id: 407
     fileName: 0407.jpg
     name:
@@ -4735,19 +4744,20 @@ speakers:
     bio:
       - language: en
         text: "The co-founder of HighTech Group, teacher in KFU and blogger. Try to google \"как писать тесты\" (\"how to\
-            \ write tests\" — in Russian). The first result is his article. \n\nPreviously, before founding his own company,\
+            \ write tests\" in Russian). The first result is his article. \n\nPreviously, before founding his own company,\
             \ Maxim was employed as a Web Developer, Team Leader, CTO and Head of Quality Department in various companies\
             \ from Kazan, Moscow, Saint Petersburg and Antwerp, Belgium. \n\nHe is sure that technology is not a \"thing in\
             \ itself\", but tools. The tools must suit the problem being solved. The work of an engineer is to select the\
             \ right tools and create new ones."
       - language: ru
         text: "Соучредитель казанской аутсорс-компании «Хайтек Груп». Кроме ведения бизнеса преподает в Высшей школе инфор\
-            мационных технологий и информационных систем Казанского федерального университета и ведет [блог](https://habrahabr.ru/users/marshinov/)\
-            \ на Хабре. По запросу «Как писать тесты» в Google первым результатом выйдет его [статья](https://www.google.co.id/search?q=%D0%BA%D0%B0%D0%BA+%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C+%D1%82%D0%B5%D1%81%D1%82%D1%8B&oq=%D0%BA%D0%B0%D0%BA+%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C+%D1%82%D0%B5%D1%81%D1%82%D1%8B&aqs=chrome..69i57j0l5.3597j0j7&sourceid=chrome&ie=UTF-8).\
-            \ \n\nСуммарный стаж в программировании и управлении разработкой — 10 лет. За это время прошел путь от програм\
-            миста в казанской веб-студии до руководителя отдела качества в финансовой индустрии. Работал в компаниях Казан\
-            и, Москвы, Питера и Антверпена (Бельгия). \n\nСчитает, что технологии — это не «вещь в себе», а инструменты дл\
-            я достижения целей. Каждая — со своей областью применения."
+            мационных технологий и информационных систем Казанского федерального университета и ведет <a href=\"https://habrahabr.ru/users/marshinov/\"\
+            \ target=\"_blank\">блог</a> на Хабре. По запросу «Как писать тесты» в Google первым результатом выйдет его <a\
+            \ href=\"https://www.google.co.id/search?q=%D0%BA%D0%B0%D0%BA+%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C+%D1%82%D0%B5%D1%81%D1%82%D1%8B&oq=%D0%BA%D0%B0%D0%BA+%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C+%D1%82%D0%B5%D1%81%D1%82%D1%8B&aqs=chrome..69i57j0l5.3597j0j7&sourceid=chrome&ie=UTF-8\"\
+            \ target=\"_blank\">статья</a>. \n\nСуммарный стаж в программировании и управлении разработкой — 10 лет. За эт\
+            о время прошел путь от программиста в казанской веб-студии до руководителя отдела качества в финансовой индуст\
+            рии. Работал в компаниях Казани, Москвы, Питера и Антверпена (Бельгия). \n\nСчитает, что технологии — это не «\
+            вещь в себе», а инструменты для достижения целей. Каждая — со своей областью применения."
   - id: 414
     fileName: 0414.jpg
     name:
@@ -4772,6 +4782,17 @@ speakers:
     fileName: 0416.jpg
     name:
       - {language: en, text: "Konrad Kokosa"}
+    company:
+      - {language: en, text: Gritstep}
+    bio:
+      - {language: en, text: "Author of the Pro .NET Memory Management book. Programming for over a dozen years, solving performance\
+            \ problems and architectural puzzles in the .NET world, speeding up web applications. Independent consultant,\
+            \ blogger, speaker and fan of Twitter. He also shares his passion as a trainer at Bottega IT Solutions in the\
+            \ area of .NET, especialy about application performance and diagnostics. Founder of the Warsaw Web Performance\
+            \ group. Microsoft MVP in the Visual Studio and Development Tools category. Co-founder of <a href=\"https://dotnetos.org\"\
+            \ target=\"_blank\">https://dotnetos.org</a> initiative."}
+    twitter: konradkokosa
+    mvp: true
   - id: 417
     fileName: 0417.jpg
     name:
@@ -4800,6 +4821,18 @@ speakers:
     name:
       - {language: en, text: "Konstantin Gustov"}
       - {language: ru, text: "Константин Густов"}
+    company:
+      - {language: en, text: Raiffeisenbank}
+      - {language: ru, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: "Currently Konstantin works as an architect. He has been developing software for more than 10\
+            \ years. Having started with C++ and a bit of Delphi, later he completely switched to .NET and C# and is really\
+            \ happy about it. He has worked in several fields, from military and oil production energetics to banking. Konstantin\
+            \ always seeks to employ pragmatic approaches without extremes. He works with service architecture and DDD."}
+      - {language: ru, text: "На данный момент работает архитектором. Разработкой ПО занимается уже больше 10 лет. Начинал\
+            \ с C++ и немного Delphi, потом полностью перешел на .NET и C#, чему очень рад. Сменил несколько предметных об\
+            ластей, от военной отрасли и энергетики нефтедобычи до банковского дела. Старается всегда придерживаться прагм\
+            атичных подходов без крайностей. Работает с сервисными архитектурами и DDD."}
   - id: 422
     fileName: 0422.jpg
     name:
@@ -4830,18 +4863,57 @@ speakers:
     fileName: 0427.jpg
     name:
       - {language: en, text: "Jeffrey Richter"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Jeffrey Richter is an Azure Software Architect and author of several best-selling Windows and\
+            \ .NET programming books as well as many MSDN magazine feature articles and columns. He is also a co-founder of\
+            \ Wintellect, a software consulting and training company where he has authored many videos available on WintellectNOW."}
+    twitter: jeffrichter
   - id: 428
     fileName: 0428.jpg
     name:
       - {language: en, text: "Steffen Forkmann"}
+    company:
+      - {language: en, text: "msu solutions GmbH"}
+    bio:
+      - {language: en, text: "Steffen Forkmann works as a Software Developer on large billing systems and therefore has great\
+            \ experience in applying functional concepts to real-world applications. Steffen is a very active part in the\
+            \ F# open source community and works on many OSS projects like FAKE — F# Make, Paket and the F# compiler."}
+    twitter: sforkmann
+    mvp: true
   - id: 429
     fileName: 0429.jpg
     name:
       - {language: en, text: "Alexandre Mutel"}
+    company:
+      - {language: en, text: "Unity Technologies"}
+    bio:
+      - language: en
+        text: "Alexandre Mutel is a Lead Software Architect at Unity Technologies. He is an Open-Source developer that has\
+            \ been contributing to several OSS projects including SharpDX, Markdig, Zio. He has been awarded as an MVP since\
+            \ 2014 in Visual Studio and Development Technologies. \n\nAlexandre is passionate about working on a wide range\
+            \ of different problems, from low-level to high-level, in the domain of real-time graphics rendering, GPGPU, audio\
+            \ synthesis, efficient usage of managed languages, documentation and code generation, language design, building\
+            \ workflows."
+    twitter: xoofx
+    mvp: true
   - id: 430
     fileName: 0430.jpg
     name:
       - {language: en, text: "Gerald Versluis"}
+    company:
+      - {language: en, text: DotControl}
+    bio:
+      - language: en
+        text: "Gerald Versluis (@jfversluis) is an all-round software developer, Microsoft MVP and three-time author from\
+            \ the Netherlands. After years of experience working with Xamarin, Azure and .NET technologies, he has been involved\
+            \ in a number of different projects and has been building several apps and solutions.\n\nNot only does he like\
+            \ to code, but he is also passionate about spreading his knowledge — as well as gaining some in the bargain. Gerald\
+            \ involves himself in speaking, providing training sessions and writing [blogs](https://blog.verslu.is) or articles\
+            \ in his free time. Twitter: @jfversluis | Website: https://gerald.verslu.is"
+    twitter: jfversluis
+    mvp: true
   - id: 431
     fileName: 0431.jpg
     name:
@@ -4859,64 +4931,198 @@ speakers:
     fileName: 0432.jpg
     name:
       - {language: en, text: "Vladimir Khorikov"}
+    company: []
+    bio:
+      - {language: en, text: "Vladimir Khorikov is a Microsoft MVP and has been professionally involved in software development\
+            \ for more than 10 years. Nowadays he specializes in rescuing legacy code bases and helping teams with large enterprise\
+            \ applications. He practices clean code, domain-driven design, functional programming, and other techniques that\
+            \ help him on this path."}
+    twitter: vkhorikov
+    mvp: true
   - id: 433
     fileName: 0433.jpg
     name:
       - {language: en, text: "Egor Grishechko"}
       - {language: ru, text: "Егор Гришечко"}
+    company:
+      - {language: en, text: Insolar}
+    bio:
+      - {language: en, text: "For a long time Egor was doing bloody web enterprise as a full stack developer. After that,\
+            \ he changed his views and run off to the smoothie and self-balancing scooter lovers (startuppers). He likes open\
+            \ source and fiddling with the source code. He thinks that .NET Core is the best that could happen to .NET."}
+      - {language: ru, text: "Долгое время занимался кровавым веб-энтерпрайзом в качестве full-stack разработчика. После ч\
+            его поменял взгляды и убежал в ряды любителей смузи и гироскутеров (стартапер). Любит open source и ковыряться\
+            \ в исходниках. Считает, что .NET Core — лучшее, что могло быть с .NET."}
+    twitter: egor_grishechko
   - id: 434
     fileName: 0434.jpg
     name:
-      - {language: en, text: "Georgy Polevoy"}
+      - {language: en, text: "George Polevoy"}
       - {language: ru, text: "Георгий Полевой"}
+    company:
+      - {language: en, text: "Dodo Pizza"}
+      - {language: ru, text: "Додо Пицца"}
+    bio:
+      - {language: en, text: "George Polevoy is in software engineering since 1997. He has experience in different industries:\
+            \ 3D graphics, news, payments, retail, booking and cloud automation. In Dodo Pizza, George specializes on performance-critical\
+            \ components and reliability of online services."}
+      - {language: ru, text: "Георгий Полевой в разработке информационных систем с 1997 года. У него есть опыт во многих и\
+            ндустриях: 3D-графика, новости, платежи, ритейл, системы бронирования, автоматизация облачных систем. В компан\
+            ии Dodo Pizza Георгий специализируется на высоконагруженных компонентах и отказоустойчивости online-сервисов."}
   - id: 435
     fileName: 0435.jpg
     name:
       - {language: en, text: "Ivan Dashkevich"}
       - {language: ru, text: "Иван Дашкевич"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: "Staff software engineer. Ivan works at Kontur for 17 years, during which time he was a team\
+            \ lead in 5 teams. He develops web services for business and likes to puzzle out complex domains and solve tricky\
+            \ engineering problems. As a student he participated in ACM, and quite successfully: his team ranked 9th on NEERC\
+            \ in 2000. Now in his free time he participates in online contests, such as CodinGame, IPSC, ICFP Contest."}
+      - {language: ru, text: "Ведущий инженер-программист. Работает в Контуре уже 17 лет, за это время был тим-лидом в 5 к\
+            омандах. Разрабатывает веб-сервисы для бизнеса. Любит распутывать сложные предметные области, решать сложные и\
+            нженерные задачи. В студенческие годы играл в ACM — довольно успешно: его команда заняла 9 место на NEERC в 2000\
+            \ году. А сейчас в свободное время играет в онлайн-контесты, такие как CodinGame, IPSC, ICFP Contest."}
   - id: 436
     fileName: 0436.jpg
     name:
       - {language: en, text: "Anatoly Popov"}
       - {language: ru, text: "Анатолий Попов"}
+    company:
+      - {language: en, text: Net2Phone}
+    bio:
+      - {language: en, text: "Anatoly Popov is using .NET for more than 10 years for various services that work around the\
+            \ clock. He strongly supports DevOps movement and helps teams to accept DevOps culture and practices and adjust\
+            \ their processes to achieve better product quality, more reliable releases, improved productivity and efficiency."}
+      - {language: ru, text: "Анатолий Попов использует .NET более 10 лет для различных сервисов, которые круглосуточно ра\
+            ботают. Поддерживает движение DevOps и помогает командам внедрить практики DevOps для улучшения качества проду\
+            кта, получения более надёжных релизов и увеличения эффективности."}
+    twitter: aensidhe
   - id: 437
     fileName: 0437.jpg
     name:
       - {language: en, text: "Chris Bacon"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Chris is a Software Engineer working on C#/.NET support for Google Cloud Platform. He is mainly\
+            \ focused on existing and new .NET gRPC client libraries."}
+    twitter: chrisdunelm
   - id: 438
     fileName: 0438.jpg
     name:
       - {language: en, text: "Halil İbrahim Kalkan"}
+    company:
+      - {language: en, text: "Volosoft Computer and Technology"}
+    bio:
+      - {language: en, text: "Halil is the lead developer of the [ASP.NET Boilerplate](https://aspnetboilerplate.com), an\
+            \ open source web application framework. He is a full stack software architect and developer who focuses on enterprise\
+            \ application architectures and developer productivity. He is co-founder of Volosoft, a startup that produces\
+            \ tools for developers. He develops frameworks and talks on software architectures, DDD, microservices, multi-tenancy\
+            \ and modularity."}
+    twitter: hibrahimkalkan
   - id: 439
     fileName: 0439.jpg
     name:
-      - {language: en, text: "Alexey Gorshkolep"}
+      - {language: en, text: "Aliaksei Harshkalep"}
       - {language: ru, text: "Алексей Горшколеп"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Lead Software Engineer at EPAM, where for more than 5 years he's been working on design and\
+            \ implementation of enterprise-level solutions using .NET platform. Aliaksei is passionate about learning new\
+            \ technologies and architecture design principles using different patterns including microservices."}
+      - {language: ru, text: "Ведущий инженер в компании EPAM, где более 5 лет занимается проектированием и имплементацией\
+            \ бизнес-решений на платформе .NET. Активно изучает новые технологии и принципы построения архитектуры приложе\
+            ний с применением различных паттернов, в частности микросервисов."}
   - id: 440
     fileName: 0440.jpg
     name:
       - {language: en, text: "Oleg Tarasov"}
       - {language: ru, text: "Олег Тарасов"}
+    company:
+      - {language: en, text: MTS}
+      - {language: ru, text: МТС}
+    bio:
+      - language: en
+        text: "Head of machine learning department at MTS IT. Oleg made a long journey from being a junior .NET developer\
+            \ to enterprise architect to team leader and machine learning expert. The journey is far from being over, as Oleg\
+            \ sees each new challenge as an opportunity to learn new things and share the most valuable insights with the\
+            \ community.\n\nDuring his talks Oleg trusts his train of thought more than a fixed deck of slides. Also, a little\
+            \ bit of jokes and goofy tales from the exciting world of IT never hurts anyone."
+      - language: ru
+        text: "Руководитель направления машинного обучения в МТС ИТ. В компании прошёл полный путь от .NET-разработчика до\
+            \ enterprise-архитектора, тимлида и эксперта по машинному обучению.\n\nВ выступлениях меньше полагается на сла\
+            йды и больше — на живое общение, разбавленное байками из непростой жизни айтишников и парой анекдотов про пору\
+            чика Ржевского."
   - id: 441
     fileName: 0441.jpg
     name:
       - {language: en, text: "Igor Lukanin"}
       - {language: ru, text: "Игорь Луканин"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - language: en
+        text: "Igor Lukanin is deputy head of engineering and developer relations team leader at Kontur. Since 2017 he helps\
+            \ developers to share their experience via conferences, meetups, hackathons, contests, open source projects, publications,\
+            \ podcasts, etc. He also connects HR and PR teams with engineering unit.\n\nhttps://igorlukanin.io/"
+      - language: ru
+        text: "Заместитель руководителя инженерного подразделения и лидер DevRel-команды в Контуре. С 2017 года помогает р\
+            азработчикам в Контуре делиться своим опытом через конференции, митапы, хакатоны, соревнования, проекты с откр\
+            ытым кодом, статьи и подкасты, а также связывает команды HR и PR с инженерным подразделением. Интересуется над\
+            ёжностью систем, высокими нагрузками и DevOps.\n\nhttps://igorlukanin.io/"
+    twitter: igorlukanin
   - id: 442
     fileName: 0442.jpg
     name:
-      - {language: en, text: "Alexander Kugushev"}
+      - {language: en, text: "Aleksandr Kugushev"}
       - {language: ru, text: "Александр Кугушев"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Lead Software Engineer in EPAM. He develops a private capital market cloud-based platform. Besides\
+            \ AWS, Docker and a bloody enterprise, he participates in teaching students."}
+      - {language: ru, text: "Lead Software Engineer в компании EPAM, где разрабатывает облачную платформу для рынка частн\
+            ых инвестиций (private capital market). В свободное от AWS, Docker и остального кровавого энтерпрайза время за\
+            нимается обучением студентов."}
   - id: 443
     fileName: 0443.jpg
     name:
       - {language: en, text: "Alexey Merson"}
       - {language: ru, text: "Алексей Мерсон"}
+    company:
+      - {language: en, text: Intermedia}
+    bio:
+      - {language: en, text: "Software developer, Architect, PhD. Prefers a backend development, but isn't limited to. Likes\
+            \ good code and beautiful architecture. Looks towards functional programming."}
+      - {language: ru, text: "Разработчик, архитектор, к.т.н. Предпочитает бэкенд в enterprise, но жизнь помотала. Любит к\
+            расивую архитектуру и увлекательный код. С интересом поглядывает в сторону функционального программирования."}
   - id: 444
     fileName: 0444.jpg
     name:
       - {language: en, text: "Anton Tretyakov"}
       - {language: ru, text: "Антон Третьяков"}
+    company:
+      - {language: en, text: "BARS Group"}
+      - {language: ru, text: "БАРС Груп"}
+    bio:
+      - language: en
+        text: "Leading developer of BARS Group, participated in the development of the AlphaBI analytical system, is now developing\
+            \ a tool for creating registry systems with minimal costs, and also teaches at the Higher School of Information\
+            \ Technologies and Information Systems of the Kazan Federal University. Shares his experience at various meetings\
+            \ and conferences.\n\nThe total experience in programming is 5 years. Worked in organizations from Krasnodar,\
+            \ Yekaterinburg and Kazan."
+      - language: ru
+        text: "Ведущий разработчик БАРС Груп, участвовал в разработке аналитической системы AlphaBI, сейчас занимается раз\
+            работкой инструментария для создания учётных систем с минимальными затратами, а также преподаёт в Высшей школе\
+            \ информационных технологий и информационных систем Казанского федерального университета. Делится своим опытом\
+            \ на различных митапах и конференциях.\n\nСуммарный стаж в программировании 5 лет. Работал в организациях из К\
+            раснодара, Екатеринбурга и Казани."
   - id: 445
     fileName: 0445.jpg
     name:
