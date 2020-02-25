@@ -2,6 +2,24 @@ events:
   # C++ Russia
   - eventTypeId: 0
     name:
+      - {language: en, text: "C++ Russia 2019"}
+    startDate: "2019-04-19"
+    endDate: "2019-04-20"
+    siteLink:
+      - {language: en, text: "https://2019.cppconf-moscow.ru/en/"}
+      - {language: ru, text: "https://2019.cppconf-moscow.ru/"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Kutuzovsky Prospect 2/1 Building 1, Congress Park at the Radisson Royal Hotel"}
+      - {language: ru, text: "Кутузовский просп., 2/1, стр. 1, Конгресс-парк гостиницы «Рэдиссон Ройал Москва»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw
+    mapCoordinates: "55.751979, 37.566894"
+    talkIds: [1164, 1165, 1166, 1167, 1168, 1169, 1170, 1171, 1172, 1173, 1174, 1175, 1176, 1177, 1178, 1179, 1180, 1181,
+              1182, 1183, 1184, 1185, 1186, 1187, 1188, 1189, 1190, 1191]
+  - eventTypeId: 0
+    name:
       - {language: en, text: "C++ Russia 2019 SPb"}
       - {language: ru, text: "C++ Russia 2019 СПб"}
     startDate: 2019-10-31

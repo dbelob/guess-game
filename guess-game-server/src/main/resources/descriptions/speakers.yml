@@ -4161,63 +4161,203 @@ speakers:
     fileName: 0330.jpg
     name:
       - {language: en, text: "Nicolai Josuttis"}
+    company:
+      - {language: en, text: "Author of \"The C++ Standard Library\" and \"C++ Templates\""}
+      - {language: ru, text: "Автор книг «The C++ Standard Library» и «C++ Templates»"}
+    bio:
+      - language: en
+        text: "Nicolai Josuttis is an independent systems architect, technical manager, author, and consultant. He designs\
+            \ mid-sized and large software systems for the telecommunication, traffic, finance, and manufacturing industries.\
+            \ \n\nHe is well known in the C++ Community for speaking and writing with authority about C++ (being the author\
+            \ of [The C++ Standard Library](http://www.cppstdlib.com/) and [C++ Templates](http://www.tmplbook.com/)) but\
+            \ is also an innovative presenter. \n\nHe is an active member of C++ standardization committee for almost 20 years\
+            \ now."
+    twitter: NicoJosuttis
   - id: 331
     fileName: 0331.jpg
     name:
-      - {language: en, text: "Alexey Milovidov"}
+      - {language: en, text: "Aleksei Milovidov"}
       - {language: ru, text: "Алексей Миловидов"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Education:\n- Moscow State University, department of Mechanics and Mathematics — specialist degree, mathematician\
+            \ (2003-2008);\n \nWork:\n[Yandex](https://yandex.com/company/) (2008-now):\n- software developer of [Yandex Metrica](https://metrica.yandex.com/)\
+            \ engine (2008-2012);\n- head of Yandex Metrica engine development team (2012-2015);\n- head of [ClickHouse](https://clickhouse.yandex/)\
+            \ development team (2015-now)."
+      - {language: ru, text: "Окончил МГУ им. Ломоносова. В Яндексе с 2008 года. Руководит группой разработки СУБД ClickHouse."}
   - id: 332
     fileName: 0332.jpg
     name:
       - {language: en, text: "Antony Polukhin"}
       - {language: ru, text: "Антон Полухин"}
+    company:
+      - {language: en, text: Yandex.Taxi}
+      - {language: ru, text: Яндекс.Такси}
+    bio:
+      - language: en
+        text: "A representative of Russia at the C++ Standardization Committee. Author of several accepted proposals to the\
+            \ C++ standard.\n\nAuthor of the Boost libraries: TypeIndex, DLL, Stacktrace; maintainer of Any, Conversion, LexicalCast,\
+            \ Variant.\n\nAuthor of \"Boost C++ Application Development Cookbook\" and \"Boost C++ Application Development\
+            \ Cookbook, Second Edition\"."
+      - language: ru
+        text: "Эксперт-разработчик C++ в Яндекс.Такси.\n\nПредставитель России в ISO на международных заседаниях рабочей г\
+            руппы по стандартизации C++. Автор нескольких принятых предложений к стандарту языка C++.\n\nAвтор Boost-библи\
+            отек TypeIndex, DLL, Stacktrace и активный maintainer Any, Conversion, LexicalCast, Variant. \n\nАвтор книг «\
+            Boost C++ Application Development Cookbook» и «Boost C++ Application Development Cookbook, Second Edition».\n\n\
+            Изобретатель новой метапрограммной техники для рефлексии в C++14."
   - id: 333
     fileName: 0333.jpg
     name:
       - {language: en, text: "Mikhail Matrosov"}
       - {language: ru, text: "Михаил Матросов"}
+    company:
+      - {language: en, text: "Align Technology"}
+    bio:
+      - language: en
+        text: "Mikhail is an expert software engineer in the Moscow R&D office of Align Technology. He develops a specialized\
+            \ 3D CAD system for designing orthodontic appliances.\n\nFrequent speaker on numerous conferences: CppCon, C++\
+            \ Russia, SECR, CoreHard, SECON. Co-author of the courses \"Основы разработки на С++: коричневый пояс\" and \"\
+            Основы разработки на С++: чёрный пояс\" on Coursera, which were developed jointly with Yandex."
+      - language: ru
+        text: "Выпускник ВМК МГУ. Работал там же в лаборатории компьютерной графики и мультимедиа. Занимался обработкой из\
+            ображений, компьютерным зрением и теорией цвета.\n\nВ настоящий момент — разработчик-эксперт в московском R&D-о\
+            фисе компании Align Technology. Развивает специализированную 3D CAD-систему для дизайна ортодонтических приспо\
+            соблений.\n\nПостоянный докладчик на конференциях: CppCon, C++ Russia, SECR, CoreHard, SECON. Соавтор курсов «\
+            Основы разработки на С++: коричневый пояс» и «Основы разработки на С++: чёрный пояс» на курсере, разработанных\
+            \ совместно с Яндексом."
+    twitter: cppjedi
   - id: 334
     fileName: 0334.jpg
     name:
       - {language: en, text: "Phil Nash"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Phil is the author of the test frameworks Catch for C++ and Objective-C, and Swordfish for Swift.\
+            \ As Developer Advocate at JetBrains he's involved with CLion, AppCode and ReSharper C++. More generally he's\
+            \ an advocate for good testing practices, TDD and using the type system and functional techniques to reduce complexity\
+            \ and increase correctness. He's previously worked in Finance and Mobile as well as an independent consultant\
+            \ and coach specialising in TDD on iOS."}
+    twitter: phil_nash
   - id: 335
     fileName: 0335.jpg
     name:
       - {language: en, text: "Valentin Ziegler"}
+    company:
+      - {language: en, text: think-cell}
+    bio:
+      - {language: en, text: "Valentin Ziegler is a senior software engineer at think-cell (Berlin), where he has been working\
+            \ for over 9,5 years. Valentin focuses on the development of layout algorithms and their integration with intuitive\
+            \ user interfaces. Recently, he became a member of DIN and is part of the German delegation in the ISO committee\
+            \ for the standardization of C++."}
   - id: 336
     fileName: 0336.jpg
     name:
       - {language: en, text: "Ivan Čukić"}
+    company:
+      - {language: en, text: "KDE e.V."}
+    bio:
+      - language: en
+        text: "Ivan Čukić is the author of \"Functional Programming in C++\" published by Manning.\n\nHe is one of the core\
+            \ developers in KDE, the largest free/libre open source C++ project.\n\nHe is also teaching modern C++ techniques\
+            \ and functional programming at the Faculty of Mathematics in Belgrade and has been using C++ for more than 20\
+            \ years. He has been researching functional programming in C++ before and during his PhD studies, and uses the\
+            \ techniques in real-world projects."
+    twitter: ivan_cukic
   - id: 337
     fileName: 0337.jpg
     name:
       - {language: en, text: "Alexander Granin"}
       - {language: ru, text: "Александр Гранин"}
+    company: []
+    bio:
+      - {language: en, text: "Haskell developer, likes functional programming. Speaker, writer, researcher."}
+      - {language: ru, text: "Любитель функционального программирования, хаскеллист, спикер, исследователь, писатель."}
+    twitter: graninas
   - id: 338
     fileName: 0338.jpg
     name:
       - {language: en, text: "Viktor Kirilov"}
+    company:
+      - {language: en, text: onqtam.com}
+    bio:
+      - {language: en, text: "With 6 years of professional experience with C++ in the games and VFX industries, Viktor currently\
+            \ spends his time writing open source software (since 01.01.2016) and occasionally doing some contract work. His\
+            \ latest work has been the implementation of hot code-reloading at runtime for the Nim programming language. He\
+            \ is also the author of doctest — \"The fastest feature-rich C++11 single-header testing framework\". His interests\
+            \ are the making of games and game engines, high performance code, data oriented design, cryptocurrencies, optimizing\
+            \ workflows and incorporating good practices in the software development process such as testing and the use of\
+            \ modern tools like static analysis or instrumentation. Viktor is from Sofia, Bulgaria and his profession is his\
+            \ hobby. Personal website: http://onqtam.com/"}
+    twitter: KirilovVik
   - id: 339
     fileName: 0339.jpg
     name:
       - {language: en, text: "Rainer Grimm"}
+    company:
+      - {language: en, text: "Modernes C++"}
+    bio:
+      - {language: en, text: "Rainer Grimm has worked as a software architect, team lead and instructor for about 20 years.\
+            \ In his spare time he likes to write articles about C++, Python and Haskell, but he also likes to speak at conferences.\
+            \ He publishes very often on his blog \"Modern C++\". Now he is a trainer giving seminars to modern C++ and Python.\
+            \ His books \"C++11 für Programmierer \", \"C++\", \"C++-Standardbibliothek\", and \"The C++ Standard Library\"\
+            \ were published by O'Reilly and Leanpub."}
+    twitter: rainer_grimm
   - id: 340
     fileName: 0340.jpg
     name:
       - {language: en, text: "Timur Doumler"}
+    company: []
+    bio:
+      - {language: en, text: "Timur Doumler is a C++ developer specialising in audio and music technology, member of the ISO\
+            \ C++ committee, and program chair of the Audio Developer Conference (ADC). He is passionate about writing clean\
+            \ code, providing good tools, evolving the C++ language, and building inclusive communities."}
+    twitter: timur_audio
   - id: 341
     fileName: 0341.jpg
     name:
       - {language: en, text: "Vittorio Romeo"}
+    company:
+      - {language: en, text: "Bloomberg L.P."}
+    bio:
+      - language: en
+        text: "Vittorio is a Software Engineer at Bloomberg L.P. with a BS in Computer Science from Università degli Studi\
+            \ di Messina.\n\nHe began programming at a very young age and is now a C++ enthusiast. While following and participating\
+            \ in the evolution of the C++ Standard and embracing the newest features, he worked on several open source projects,\
+            \ including modern general-purpose libraries and free cross-platform indie games.\n\nVittorio is an active member\
+            \ of the C++ community: he participated as a speaker in CppCon, C++Now, Meeting C++, ACCU, and ++it Florence.\
+            \ He currently maintains a technical blog revolving around C++, several open source projects, and an YouTube channel\
+            \ featuring modern C++ tutorials.\n\nWhen he's not writing code, Vittorio enjoys weightlifting and fitness-related\
+            \ activities, competitive computer gaming and sci-fi movies/TV series."
+    twitter: supahvee1234
   - id: 342
     fileName: 0342.jpg
     name:
       - {language: en, text: "Juan Pedro Bolívar Puente"}
+    company:
+      - {language: en, text: "Independent consultant"}
+    bio:
+      - {language: en, text: "Juanpe is a Berlin-based freelance consultant and engineer, with a focus on value oriented design,\
+            \ interactive software, modern C++, functional programming and open source strategy. Before he worked for Ableton\
+            \ and has been involved in various music technology projects. He has also participated in the GNU project and\
+            \ cofounded a Hacklab in Granada."}
+    twitter: sinusoidalen
   - id: 343
     fileName: 0343.jpg
     name:
       - {language: en, text: "Alexey Malov"}
       - {language: ru, text: "Алексей Малов"}
+    company:
+      - {language: en, text: iSpring}
+    bio:
+      - {language: en, text: "Chief Software Architect at iSpring. The author of the Object-Oriented Design and Computer Graphics\
+            \ courses at Volga State University of Technology."}
+      - {language: ru, text: "Главный архитектор в iSpring. Автор курсов «Объектно-ориентированное проектирование» и «Комп\
+            ьютерная графика» в Поволжском государственном технологическом университете."}
+    twitter: amalov
   - id: 344
     fileName: 0344.jpg
     name:
@@ -4233,79 +4373,189 @@ speakers:
       - {language: ru, text: "Андрей Карпов — один из основателей проекта PVS-Studio, технический директор компании «Систе\
             мы программной верификации». Microsoft MVP в номинации «Developer Technologies». Является автором большого кол\
             ичества статей, посвященных качеству кода и рассказывающих о различных паттернах ошибок, которые допускают про\
-            граммисты C++. Популяризует методологию статического и динамического анализа кода."}
+            граммисты C++. Популяризирует методологию статического и динамического анализа кода."}
     twitter: Code_Analysis
   - id: 345
     fileName: 0345.jpg
     name:
-      - {language: en, text: "Sergey Sadovnikov"}
+      - {language: en, text: "Sergei Sadovnikov"}
       - {language: ru, text: "Сергей Садовников"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Software developer and architect for more than 25 years, Sergei has worked on projects regarding\
+            \ digital telephony and cybersecurity in automated process control systems (APCS) as well as general-purpose libraries.\
+            \ Currently he works on an IoT Security project. Sergei is actively interested in development of general-purpose\
+            \ libraries. He has built several projects regarding automatic code generation."}
+      - {language: ru, text: "Архитектор и разработчик ПО со стажем более 25 лет. Работал над проектами в области цифровой\
+            \ телефонии, обеспечения безопасности ПО в сфере систем автоматизированного управления (АСУТП), библиотеками о\
+            бщего назначения. В настоящий момент работает над проектом в области IoT Security. Активно интересуется вопрос\
+            ами разработки библиотек общего назначения, есть самостоятельные проекты в области автогенерации кода (на базе\
+            \ C++)."}
+    twitter: flex_ferrum
   - id: 346
     fileName: 0346.jpg
     name:
       - {language: en, text: "Andrey Davydov"}
       - {language: ru, text: "Андрей Давыдов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Andrey has been working in ReSharper C++ team, JetBrains for the last 3 years. Before that,\
+            \ he worked in the GIS industry in the areas related to computational geometry and 3D-visualization."}
+      - {language: ru, text: "Последние 3 года Андрей работает в команде ReSharper C++ в JetBrains. В прошлом занимался пр\
+            омышленным программированием в областях, связанных с ГИС-ами и системами 3D-визуализации."}
   - id: 347
     fileName: 0347.jpg
     name:
       - {language: en, text: "Kirill Tikhonov"}
       - {language: ru, text: "Кирилл Тихонов"}
+    company:
+      - {language: en, text: DINS}
+    bio:
+      - {language: en, text: "Senior software developer in DINS. He develops and supports backend of cloud telephony system."}
+      - {language: ru, text: "В DINS занимается разработкой, поддержкой и развитием бэкенда для сервиса облачной телефонии\
+            . Долгое время занимался программированием встраиваемых систем на C++."}
   - id: 348
     fileName: 0348.jpg
     name:
-      - {language: en, text: "Oleg Fathiev"}
+      - {language: en, text: "Oleg Fatkhiev"}
       - {language: ru, text: "Олег Фатхиев"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Oleg works in Yandex, where he develops the L7 network balancer and some core C++ Yandex libraries.\
+            \ In the past, he worked in the Russian Quantum Center. Enjoys functional programming and metaprogramming. ACM\
+            \ ICPC competition semi-finalist."}
+      - {language: ru, text: "Работает в компании «Яндекс», занимается разработкой сетевого балансера запросов, а также не\
+            которых базовых C++ библиотек Яндекса. В прошлом работал в Российском квантовом центре. Увлекается функциональ\
+            ным и метапрограммированием. Призер полуфинала соревнования ACM ICPC по спортивному программированию."}
   - id: 349
     fileName: 0349.jpg
     name:
       - {language: en, text: "Anton Dunchev"}
       - {language: ru, text: "Антон Дунчев"}
+    company:
+      - {language: en, text: Wargaming}
+    bio:
+      - {language: en, text: "Encore engine developer in World of Tanks. Responsible for various subsystems inside game engine,\
+            \ such as game resource management, rendering subsystem, animations and scripting languages embedding."}
+      - {language: ru, text: "Разработчик движка Encore для World of Tanks. Занимается проработкой архитектуры подсистем в\
+            нутри движка игры, таких как ресурсная подсистема, рендеринг, анимации, интеграция со скриптовыми языками."}
   - id: 350
     fileName: 0350.jpg
     name:
-      - {language: en, text: "Sergey Fedorov"}
+      - {language: en, text: "Sergei Fedorov"}
       - {language: ru, text: "Сергей Федоров"}
     company:
-      - {language: en, text: "Yandex.Taxi"}
-      - {language: ru, text: "Яндекс.Такси"}
+      - {language: en, text: Yandex.Taxi}
+      - {language: ru, text: Яндекс.Такси}
+    bio:
+      - {language: en, text: "Lead software engineer at Yandex.Taxi, works on developing an asynchronous framework for Taxi\
+            \ back-end. Big fan of metaprogramming and open source."}
+      - {language: ru, text: "Ведущий разработчик в «Яндекс.Такси», занимается разработкой асинхронного фреймворка для бэк\
+            енда Такси. Большой любитель метапрограммирования и open source."}
   - id: 351
     fileName: 0351.jpg
     name:
       - {language: en, text: "Pavel Novikov"}
       - {language: ru, text: "Павел Новиков"}
     company:
-      - {language: en, text: "Align Technologies"}
+      - {language: en, text: "Align Technology"}
+    bio:
+      - language: en
+        text: "Got an engineering degree in missilery from BMSTU.\n\nLoves C++ and knows how to cook it.\n\nLikes metaprogramming,\
+            \ multithreading and asynchronous programming, coroutine adoption enthusiast."
+      - language: ru
+        text: "Выпускник МГТУ имени Н.Э. Баумана (ракетостроение).\n\nЛюбит C++ и умеет его готовить.\n\nЛюбитель метапрог\
+            раммирования, многопоточного и асинхронного программирования, энтузиаст распространения корутин."
   - id: 352
     fileName: 0352.jpg
     name:
       - {language: en, text: "Ilya Bogdanov"}
       - {language: ru, text: "Илья Богданов"}
+    company:
+      - {language: en, text: "Exonum, the Bitfury Group"}
+    bio:
+      - {language: en, text: "Rust developer at Exonum — an open source framework for private blockchains, completely written\
+            \ in Rust. Ilya is fond of game development, computer graphics, and exotic programming languages. Moderator and\
+            \ active participant of the Russian-speaking Rust community, organizer of regular Rust meetings in St. Petersburg."}
+      - {language: ru, text: "Rust-разработчик Exonum — опенсорс-фреймворка для приватных блокчейнов, полностью написанног\
+            о на Rust. Увлекается разработкой игр, компьютерной графикой, экзотическими языками программирования. Модерато\
+            р и активный участник русскоязычного Rust-сообщества, организатор регулярных Rust-митапов в Санкт-Петербурге."}
+    twitter: vitvakatu
   - id: 353
     fileName: 0353.jpg
     name:
       - {language: en, text: "Ruslan Arutyunyan"}
       - {language: ru, text: "Руслан Арутюнян"}
+    company:
+      - {language: en, text: Intel}
+    bio:
+      - {language: en, text: "Working in software development since 2011. Currently, Ruslan is an Intel employee. He develops\
+            \ C++ Standard library for Autonomous Driving  (Tech Lead). C++ for Ruslan is a kind of separate subject area,\
+            \ he likes to dig deeply into the details to have one big picture. He likes sharing knowledge and learning something\
+            \ new."}
+      - {language: ru, text: "В разработке ПО с 2011 года. В данный момент работает в компании Intel. Занимается созданием\
+            \ стандартной библиотеки C++ для применения в области автономного вождения (Tech Lead). Интересуется С++ как п\
+            редметной областью, любит копаться в деталях, чтобы в итоге сложить картину целиком. Любит делиться знаниями и\
+            \ учиться чему-то новому."}
   - id: 354
     fileName: 0354.jpg
     name:
       - {language: en, text: "Alexander Schmidt"}
       - {language: ru, text: "Александр Шмидт"}
+    company:
+      - {language: en, text: "Artec 3D"}
+    bio:
+      - {language: en, text: "Senior developer in Artec 3D. Managed to make a robotic arm to successfully 3D scan."}
+      - {language: ru, text: "Старший разработчик в Artec 3D. Заставил роборуку сканировать в 3D."}
+    twitter: chupans
   - id: 355
     fileName: 0355.jpg
     name:
       - {language: en, text: "Javier García Sogo"}
+    company:
+      - {language: en, text: JFrog/Conan}
+    bio:
+      - {language: en, text: "After more than 10 years of programming in C++, Javier decided to tackle the hardest problem\
+            \ he had encountered: dependency management. He joined JFrog to develop Conan, the C/C++ package manager, with\
+            \ the aim of alleviating that pain."}
+    twitter: jgsogo
   - id: 356
     fileName: 0356.jpg
     name:
       - {language: en, text: "Alexander Titov"}
-      - {language: ru, text: "Александр Титов"}
     company:
-      - {language: en, text: "Intel"}
+      - {language: en, text: Intel}
+    bio:
+      - language: en
+        text: "Alexander Titov is a hardware architect at Intel with 11 years of experience in CPU architecture design and\
+            \ performance/power modeling. He specializes in CPU memory hierarchy (caching, prefetching, and memory ordering).\n\
+            \nAlexander is passionate about new computation paradigms, high performance hardware, well-written code, modern\
+            \ C++, and teaching."
   - id: 357
     fileName: 0357.jpg
     name:
       - {language: en, text: "Alexander Voronkov"}
       - {language: ru, text: "Александр Воронков"}
+    company:
+      - {language: en, text: "Align Technology"}
+    bio:
+      - language: en
+        text: "Alexander graduated from Control Systems School of Moscow Aviation Institute.\n\nHe was developing aero turbine\
+            \ engines vibration diagnostics system, then, for 10 years — server software for Sirena Travel, a flight booking\
+            \ system.\n\nCurrently Alexander is a senior developer in Moscow R&D office of Align Technology. He develops core\
+            \ of specialized 3D CAD system for designing orthodontic appliances. \n\nAlexander is passionate about cross-platform\
+            \ solutions. He's been working with C++ for more than 20 years."
+      - language: ru
+        text: "Выпускник МАИ, факультет «Системы управления».\n\nЗанимался разработкой систем вибрационной диагностики ави\
+            ационных газотурбинных двигателей, затем в течение десяти лет — разработкой серверного ПО системы бронирования\
+            \ авиаперевозок «Сирена-Трэвел».\n\nВ настоящее время — старший разработчик в московском R&D-офисе компании Align\
+            \ Technology. Развивает ядро специализированной 3D CAD-системы для дизайна ортодонтических приспособлений.\n\n\
+            Ценитель и пропагандист кроссплатформенных решений, использует C++ более 20 лет."
   - id: 358
     fileName: 0358.jpg
     name:

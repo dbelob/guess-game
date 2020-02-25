@@ -28458,3 +28458,851 @@ talks:
     presentationLinks: []
     videoLinks: ["https://www.youtube.com/watch?v=4RtR-X0BbBc&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=12&t=0s"]
     speakerIds: [260]
+  - id: 1164
+    name:
+      - {language: en, text: "C++17 — the biggest traps"}
+    shortDescription:
+      - {language: en, text: "This talk will list and discuss C++17 traps, explain the reasons for the underlying design,\
+            \ and give guidance how to deal with them. As a side effect you will learn a lot about some cool new features\
+            \ of C++17."}
+    longDescription:
+      - language: en
+        text: "C++17 is a huge combination of small new features both in the language and the library. These features have\
+            \ more poser but also more traps than you might expect. These traps are not theoretical. They already occur in\
+            \ real-world programming.\n\nThis talk will list and discuss all these traps, explain the reasons for the underlying\
+            \ design, and give guidance how to deal with them. As a side effect you will learn a lot about some cool new features\
+            \ of C++17."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=h-zy1hBqT74&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=5"]
+    speakerIds: [330]
+  - id: 1165
+    name:
+      - {language: en, text: "Modern C++ allocators"}
+    shortDescription:
+      - {language: en, text: "This talk's purpose is to introduce allocators to the audience, show which allocators to use\
+            \ in which cases, tell how allocator propagation model works for nested containers, and discuss what allocator\
+            \ support can bring to library developers."}
+      - {language: ru, text: "Цель доклада — познакомить людей с аллокаторами в целом, рассказать про современные тенденци\
+            и, рассказать, какие виды аллокаторов в каких случаях использовать, объяснить, как работает модель пропагации\
+            \ аллокаторов для вложенных контейнеров, рассказать, что может ждать разработчиков библиотек при поддержке алл\
+            окаторов."}
+    longDescription:
+      - language: en
+        text: "This talk covers allocators, basic concepts and advanced thongs alike. We'll touch on the history of allocators,\
+            \ discuss mistakes in their design, look at modern allocators offered by the standard library and see which problems\
+            \ they solve. We'll discuss more thoroughly polymorphic_allocator and memory_resource, introduced in С++17 and\
+            \ evolving further in C++20. We'll also cover C++ allocators support from the library developers' point of view;\
+            \ that should help us write correct code.\n\nThis talk's purpose is to introduce allocators to the audience, show\
+            \ which allocators to use in which cases, tell how allocator propagation model works for nested containers, and\
+            \ discuss what allocator support can bring to library developers."
+      - language: ru
+        text: "Доклад направлен на то, чтобы рассказать про аллокаторы, как про базовые понятия, так и про продвинутые вещ\
+            и. Мы посмотрим на историю аллокаторов, разберем ошибки в их дизайне, посмотрим на современные аллокаторы, пре\
+            доставляемые стандартной библиотекой, увидим, какие проблемы они решают. Более подробно остановимся на polymorphic_allocator\
+            \ и memory_resource, так как это нововведения в С++17, которые продолжают развиваться в C++20. Также поговорим\
+            \ про поддержку С++ аллокаторов с точки зрения разработчиков библиотек, что поможет правильно писать код.\n\nЦ\
+            ель доклада — познакомить людей с аллокаторами в целом, рассказать про современные тенденции, рассказать, каки\
+            е виды аллокаторов в каких случаях использовать, объяснить, как работает модель пропагации аллокаторов для вло\
+            женных контейнеров, рассказать, что может ждать разработчиков библиотек при поддержке аллокаторов."
+    talkDay: 1
+    trackTime: "12:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=DIH-9ae_3DE&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=20"]
+    speakerIds: [353]
+  - id: 1166
+    name:
+      - {language: en, text: "Metaprogramming evolution: The right way to work with type lists"}
+      - {language: ru, text: "Эволюция метапрограммирования: как правильно работать со списками типов"}
+    shortDescription:
+      - {language: en, text: "We'll discuss metaprogramming through the ages and the right way to work with type lists."}
+      - {language: ru, text: "Рассказ о метапрограммировании в разные годы его существования, а также о том, как правильно\
+            \ работать со списками типов."}
+    longDescription:
+      - {language: en, text: "We'll dive deep into metaprogramming through the ages. We'll discuss general metaprogramming\
+            \ approaches and then proceed to type lists. Step by step, we'll write a small type list management library similar\
+            \ to Boost.Hana. For each problem we'll discuss several possible solutions, from outdated, but none the less interesting\
+            \ C++98/03 approaches to advanced C++17 and even C++20 techniques."}
+      - {language: ru, text: "Глубокий рассказ о метапрограммировании в ретроспективе. Обсудим общие подходы в метапрограм\
+            мировании, а затем перейдём к спискам типов. По шагам напишем небольшую библиотеку для работы со списками типо\
+            в, похожую на Boost.Hana. Для каждой проблемы рассмотрим несколько возможных решений: от использования устарев\
+            ших, но не менее интересных подходов из C++98/03 до применения продвинутых техник из C++17 и даже немного из C++20."}
+    talkDay: 1
+    trackTime: "12:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/79HLi5EV0LZE1XKzzHmNrM/c12db65945da9e57e5e2b75bc9d82d6e/Oleg_Fatkhiyev_Evolyutsiya_metaprogrammirovaniya_kak_pravilno_rabotat_so_spiskami_tipov.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=ZUmc45Njs9U&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=4"]
+    speakerIds: [348]
+  - id: 1167
+    name:
+      - {language: en, text: "Know your hardware: CPU memory hierarchy"}
+    shortDescription:
+      - {language: en, text: "The talk provides an overview of the structure and algorithms of the memory hierarchy in a modern\
+            \ CPU."}
+    longDescription:
+      - language: en
+        text: "A modern CPU is a combination of many sophisticated features. Among them, the memory hierarchy probably has\
+            \ the most impact on the performance of your programs. Understanding how it works is essential for writing high-performance\
+            \ applications.\n\nThe talk provides an overview of the structure and algorithms of the memory hierarchy in a\
+            \ modern CPU. Specific topics include cache organization, locality principle and cache-friendly data organization.\
+            \ In addition, some practical guidelines are given to avoid common performance traps.\n\nThe talk does not require\
+            \ any prior knowledge of hardware design."
+    talkDay: 1
+    trackTime: "12:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/1LriV4eAdhNlu9Zv06H9NJ/53576095f772b5f6cddbbedccb7ebd8a/Alexander_Titov_Know_your_hardware_CPU_memory_hierarchy.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=QOJ2hsop6hM&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=2&t=0s"]
+    speakerIds: [356]
+  - id: 1168
+    name:
+      - {language: en, text: "Compile time optimization"}
+      - {language: ru, text: "Оптимизации времени компиляции. Даем больше информации компилятору"}
+    shortDescription:
+      - {language: en, text: "We'll discuss methods of giving information about data in use and actions performed on them\
+            \ to the compiler."}
+      - {language: ru, text: "Будут рассмотрены способы передачи компилятору информации об используемых данных и действиях\
+            \ над ними."}
+    longDescription:
+      - {language: en, text: "In this talk, we'll discuss methods of giving information about data in use and actions performed\
+            \ on them to the compiler: from single compilation unit, link time optimization, and static initialization to\
+            \ consteval and template metaprogramming."}
+      - {language: ru, text: "В докладе будут рассмотрены способы передачи компилятору информации об используемых данных и\
+            \ действиях над ними: от single compilation unit, link time optimization и static initialization до consteval\
+            \ и шаблонного метапрограммирования."}
+    talkDay: 1
+    trackTime: "14:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4RJeEuEzEzeeZcbapfk3vt/eccbb1293e96e6e1983a8d8a169992ef/Kirill_Tikhonov_Optimizatsii_vremeni_kompilyatsii._Dayem_bolshe_informatsii_kompilyatoru.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=k26IOUaz2es&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=22"]
+    speakerIds: [347]
+  - id: 1169
+    name:
+      - {language: en, text: "Metaprogramming in game development"}
+      - {language: ru, text: "Метапрограммирование для игрового движка"}
+    shortDescription:
+      - {language: en, text: "Anton will tell about specific aspects of using modern C++ standards in World of Tanks game\
+            \ engine."}
+      - {language: ru, text: "Доклад посвящен особенностям применения современных стандартов языка С++ в игровом движке World\
+            \ of Tanks."}
+    longDescription:
+      - language: en
+        text: "Anton will tell about specific aspects of using modern C++ standards in World of Tanks game engine. \n\nHe'll\
+            \ cover the following questions: \n- how metaprogramming is used for reflection of native functions into Python\
+            \ scripting language; \n- why it isn't a job for Boost.Python; \n- how we can completely reinvent parameter passing\
+            \ in function, using the mechanism proposed by Anton and new С++20 features; \n- how this mechanism can be implemented,\
+            \ what are its benefits and drawbacks; \n- how reflection of material parameters is implemented for 3D models\
+            \ and how we can optimize this process with minimal damage to readability and usability in application code. \n\
+            \nThis talk is aimed at people interested in particular details of implementing different subsystems inside of\
+            \ game engines, and also at people passionate about unorthodox approaches and solutions in writing C++ code."
+      - language: ru
+        text: "Доклад посвящен особенностям применения современных стандартов языка С++ в игровом движке World of Tanks. \n\
+            \nАнтон расскажет о том, как метапрограммирование используется для рефлексии нативных функций в скриптовый язы\
+            к Python, по какой причине не используется Boost.Python и каким образом на основании предлагаемого Антоном мех\
+            анизма и новых фич в грядущем С++20 можно полностью переосмыслить передачу параметров в функции. Подробно оста\
+            новится на реализации данного механизма, на том, какие достоинства и недостатки этот механизм имеет. Также Ант\
+            он покажет, каким образом реализуется рефлексия параметров материалов для 3D-моделей и как можно оптимизироват\
+            ь установку данных параметров с минимальным ущербом для читаемости и удобства использования в прикладном коде\
+            . \n\nДоклад прежде всего направлен на людей, заинтересованных в некоторых подробностях имплементации различны\
+            х подсистем внутри игровых движков, а также на энтузиастов нестандартных подходов и решений для написания кода\
+            \ на С++."
+    talkDay: 1
+    trackTime: "14:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4esNdpa6pHBQtt9B3wZKvr/a35dc36b1783995f237892a8437590e7/Anton_Dunchev_Metaprogrammirovaniye_dlya_igrovogo_dvizhka.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=HgRLRvurWus&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=23"]
+    speakerIds: [349]
+  - id: 1170
+    name:
+      - {language: en, text: "Text formatting for a future range-based standard library"}
+    shortDescription:
+      - {language: en, text: "Valentin intends to convince you that the combination of ranges with a bit of metaprogramming\
+            \ makes for a very elegant solution to the text formatting problem."}
+    longDescription:
+      - language: en
+        text: "Text formatting has been a favorite problem of C++ library authors for a long time. The standard C++ iostreams\
+            \ have been criticized for being difficult to use due to their statefulness and slow due to runtime polymorphism.\
+            \ Despite its age, printf is still popular because of simplicity and speed. The Boost library offers two more\
+            \ alternatives, Boost.Format and Boost.LexicalCast. And finally, the P0645 standard proposal sponsored by Facebook\
+            \ is currently finding its way through the C++ committee. All these approaches are still firmly based on standard\
+            \ containers and iterators. But the Standard Library is changing radically with the advent of ranges, range adaptors\
+            \ and functional style programming in C++. Generating optimized code with metaprogramming is becoming standard\
+            \ fare. \n\nIn this talk, Valentin intends to convince you that the combination of ranges with a bit of metaprogramming\
+            \ makes for a very elegant solution to the text formatting problem. He introduces a form of ranges with internal\
+            \ iteration, which are generating their elements one by one rather than exposing external iterators. You can use\
+            \ these generator ranges to represent the values to be formatted, conceptually turning them into lazily evaluated\
+            \ strings. These can be used just like regular strings are used today: in function returns; as standard algorithm\
+            \ input; embedded into other, equally lazily evaluated strings; and so on, before they are finally expanded for\
+            \ display. By choosing the right interfaces, you can optimize this expansion at compile-time, making it no less\
+            \ pretty to write, but more efficient to expand than any text formatting approaches that rely on format strings\
+            \ that must be parsed at runtime. Valentin believes that this approach is the natural extension of a range-based\
+            \ future standard library to text formatting."
+    talkDay: 1
+    trackTime: "14:30"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=EJRpJ3ae_28&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=27"]
+    speakerIds: [335]
+  - id: 1171
+    name:
+      - {language: en, text: "Reactive C++"}
+      - {language: ru, text: "Реактивный C++"}
+    shortDescription:
+      - {language: en, text: "This talk is a reactive programming tutorial. Step by step we'll uncover how this approach allows\
+            \ us to disengage ourselves from working with complicated asynchronous code and simplifies testing it."}
+      - {language: ru, text: "Доклад-туториал по реактивному программированию. По шагам — от простого к сложному — разберё\
+            мся, как данный подход помогает нам абстрагироваться от работы со сложным асинхронным кодом, при этом упрощая\
+            \ его тестирование."}
+    longDescription:
+      - language: en
+        text: "This talk is a reactive programming tutorial.\n\nStep by step we'll uncover how this approach allows us to\
+            \ disengage ourselves from working with complicated asynchronous code and simplifies testing it.\n\nWe'll solve\
+            \ several tasks, using RxCpp, and compare the results with classic asynchronous code. We'll then write tests and\
+            \ check performance."
+      - language: ru
+        text: "Доклад-туториал по реактивному программированию.\n\nПо шагам — от простого к сложному — разберёмся, как дан\
+            ный подход помогает нам абстрагироваться от работы со сложным асинхронным кодом, при этом упрощая его тестиров\
+            ание.\n\nИспользуя RxCpp, решим несколько задач, сравнив результаты с традиционным асинхронным кодом. Напишем\
+            \ тесты и узнаем про производительность."
+    talkDay: 1
+    trackTime: "16:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5cjdEsA4ohZiqQ4vU6uuZS/14212641877b6b2cdd264fc4f29d803e/Aleksandr_Shmidt_Reaktivnyy_C.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=Q1ocv2-jQAg&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=3"]
+    speakerIds: [354]
+  - id: 1172
+    name:
+      - {language: en, text: "How we were upgrading compiler and supporting cross-platform software"}
+      - {language: ru, text: "Как мы апгрейдили компилятор и поддерживали кроссплатформенность"}
+    shortDescription:
+      - {language: en, text: "We had been using С++11 in Visual Studio 2013 (only for Windows). Now we're using С++17 in Visual\
+            \ Studio 2017 (for Windows) and GCC 7.3 (for Linux). We'll tell how we solved different challenges that appeared\
+            \ during this transition."}
+      - {language: ru, text: "Мы долгое время использовали С++11 в Visual Studio 2013 (только под Windows), а теперь испол\
+            ьзуем С++17 в Visual Studio 2017 (под Windows) и GCC 7.3 (под Linux). Расскажем, как мы справились с основными\
+            \ проблемами, с которыми пришлось столкнуться в процессе этого перехода."}
+    longDescription:
+      - language: en
+        text: "For a long time, for our codebase containing 2M lines of code and depending on 80 third-party libraries (including\
+            \ MFC) we had been using С++11 in Visual Studio 2013 (only for Windows). Now we're using С++17 in Visual Studio\
+            \ 2017 (for Windows) and GCC 7.3 (for Linux). We'll tell how we solved different challenges that appeared during\
+            \ this transition:\n- Proving to our senior officials that this transition is worth it\n- Using the Conan package\
+            \ manager for third-party libraries assembly\n- VS2017 interaction with CMake and Linux\n- Achieving build reproducibility\
+            \ with the constant updates of VS2017\n- Fixing incompatibilities in code that came with update to С++17"
+      - language: ru
+        text: "Для нашей кодобазы на 2М строк кода с зависимостью от 80 сторонних библиотек (включая MFC) мы долгое время\
+            \ использовали С++11 в Visual Studio 2013 (только под Windows), а теперь используем С++17 в Visual Studio 2017\
+            \ (под Windows) и GCC 7.3 (под Linux). Расскажем, как мы справились с основными проблемами, с которыми пришлос\
+            ь столкнуться в процессе этого перехода:\n- Обоснование ценности работы для руководства\n- Использование пакет\
+            ного менеджера Conan для сборки сторонних библиотек\n- Как VS2017 дружит с CMake и Linux\n- Обеспечение воспро\
+            изводимости сборок при использовании постоянно обновляющейся VS2017\n- Исправление несовместимостей в коде при\
+            \ обновлении на С++17"
+    talkDay: 1
+    trackTime: "16:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3P8EQLu0SlswgFul1dIUQU/39bc41ba8b5979ad7cf27634bd3e97bf/Mikhail_Matrosov_Kak_my_apgreydili_kompilyator_i_podderzhivali_krossplatformennost.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=PGOvl0dH8lM&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=6"]
+    speakerIds: [333, 357]
+  - id: 1173
+    name:
+      - {language: en, text: "Initialisation in modern C++"}
+    shortDescription:
+      - {language: en, text: "In this talk, we will discuss the past, present, and future of initialisation in C++, the different\
+            \ types of initialisation and syntaxes for them, and how to use them correctly."}
+    longDescription:
+      - language: en
+        text: "Initialisation semantics is widely regarded as one of the most difficult aspects of the C++ language. We have\
+            \ many different kinds of initialisation and many different syntaxes for it, and they interact in complex and\
+            \ often surprising ways. C++11 introduced the concept of \"uniform initialisation\". But instead of unifying,\
+            \ this feature introduced even more complex rules, which were subsequently amended in C++14, C++17, and will be\
+            \ changed again for C++20.\n\nIn this talk, Timur will first summarise the history of initialisation in C++. He'll\
+            \ then give a systematic overview over the current initialisation rules and common pitfalls and surprises. There\
+            \ will be some practical coding guidelines to help using those rules effectively. Finally, Timur will offer to\
+            \ discuss recent proposals towards making initialisation semantics in C++20 simpler and more user-friendly."
+    talkDay: 1
+    trackTime: "16:30"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=2jJumNzcp6Y&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=7"]
+    speakerIds: [340]
+  - id: 1174
+    name:
+      - {language: en, text: "Move-only C++ design"}
+    shortDescription:
+      - {language: en, text: "This talk will cover an approach to software design that allows only non-copyable move-only\
+            \ types called \"linear types\". We'll see all the C++ features that make and enforce types like these."}
+    longDescription:
+      - language: en
+        text: "RAII usually releases all the acquired resources in our programs. But there is one resource that is never returned\
+            \ to us — time.\n\nOne of the most time costly mistakes we can make is creating unnecessary copies. C++11 move\
+            \ semantics made a move (pun intended) into the right direction. It allows us to give away data that we no longer\
+            \ want to use to somebody else without the penalty of creating the copy and without the risk of data races due\
+            \ to data having multiple users.\n\nWe are going to cover an approach to software design that allows only non-copyable\
+            \ move-only types called \"linear types\". We'll see all the C++ features that make and enforce types like these.\n\
+            \nFor this, we will have to leverage concepts (as planned for inclusion in C++20), &&-qualified member functions,\
+            \ etc."
+    talkDay: 1
+    trackTime: "18:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=04HcVuqlZ5E&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=28"]
+    speakerIds: [336]
+  - id: 1175
+    name:
+      - {language: en, text: "What you should pay extra attention to at your library's code review"}
+      - {language: ru, text: "На что нужно обратить внимание при обзоре кода разрабатываемой библиотеки"}
+    shortDescription:
+      - {language: en, text: "Andrey will give some advices on what the libraries developers should pay extra attention to\
+            \ at their code review."}
+      - {language: ru, text: "В докладе будет дан ряд советов, на что разработчикам библиотек стоит дополнительно обращать\
+            \ внимание на code review."}
+    longDescription:
+      - language: en
+        text: "Developing libraries is more demanding than developing software, as the developer doesn't know how their library\
+            \ will be used and should pay extra attention to small details and portability issues. This makes the developer\
+            \ see such functions as realloc, exit, memset, memcmp in a new light, more carefully choose data types and error\
+            \ handling techniques.\n\nIn this talk, Andrey will give some advices on what the libraries developers should\
+            \ pay extra attention to at their code review."
+      - language: ru
+        text: "Разработка библиотек — более ответственное дело, чем разработка прикладного программного обеспечения. Разра\
+            ботчик не знает, как именно будет использоваться его библиотека, и должен обращать дополнительное внимание на\
+            \ мелкие детали и вопросы переносимости. Это заставляет по-новому взглянуть на использование таких функций, ка\
+            к realloc, exit, memset, memcmp. Заставляет быть более аккуратным при выборе типов данных и способов обработки\
+            \ ошибок.\n\nВ докладе будет дан ряд советов, на что разработчикам библиотек стоит дополнительно обращать вним\
+            ание на code review."
+    talkDay: 1
+    trackTime: "18:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2iK3QAGvDp09GvhdOUK3p6/52a48eedcc4db36f737479bc3069fcd0/Andrey_Karpov_Na_chto_nuzhno_obratit_vnimaniye_pri_obzore_koda_razrabatyvayemoy_biblioteki.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=_1Nuae9EvhY&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=2"]
+    speakerIds: [344]
+  - id: 1176
+    name:
+      - {language: en, text: "Concurrency and parallelism in C++17 and C++20/23"}
+    shortDescription:
+      - {language: en, text: "Threads, atomic variables, mutexes, and conditional variables are the basic building blocks\
+            \ of any concurrent application in C++, which are a big challenge even for the experienced C++ programmers. This\
+            \ massively changed with C++17 and even more with C++20/23. Let's discuss what did we get with C++17 and what\
+            \ can we hope for with C++20/23."}
+    longDescription:
+      - language: en
+        text: "What do threads, atomic variables, mutexes, and conditional variables have in common? They are the basic building\
+            \ blocks of any concurrent application in C++, which are a big challenge even for the experienced C++ programmers.\n\
+            \nThis massively changed with C++17 and even more with C++20/23.\n\nWhat did we get with C++17, what can we hope\
+            \ for with C++20/23?\n\nWith C++17, most of the standard template library algorithms are available in sequential,\
+            \ parallel, and vectorised variants. With the upcoming standards, we can look forward to executors, transactional\
+            \ memory, significantly improved futures and coroutines. These are just the highlights from the concurrent and\
+            \ parallel perspective.\n\nThus there is hope that in the future C++ abstractions such as executors, transactional\
+            \ memory, futures and coroutines will be used and threads, atomic variables, mutexes and condition variables will\
+            \ be just implementation details."
+      - language: ru
+        text: "> __Комментарий программного комитета:__\n\n\n\n> *Райнер очень хорошо ориентируется в Modern C++: как в те\
+            кущих стандартах, так и в функциональности, которая еще только на пути. Его темы касаются тонкостей применения\
+            \ новых фишек, мультитредности и конкурентного кода. Это всегда интересно, однако, слушатель должен быть готов\
+            \ к акценту Райнера, который может показаться непривычным.*\n\nWhat do threads, atomic variables, mutexes, and\
+            \ conditional variables have in common? They are the basic building blocks of any concurrent application in C++,\
+            \ which are a big challenge even for the experienced C++ programmers.\n\nThis massively changed with C++17 and\
+            \ even more with C++20/23.\n\nWhat did we get with C++17, what can we hope for with C++20/23?\n\nWith C++17, most\
+            \ of the standard template library algorithms are available in sequential, parallel, and vectorised variants.\
+            \ With the upcoming standards, we can look forward to executors, transactional memory, significantly improved\
+            \ futures and coroutines. These are just the highlights from the concurrent and parallel perspective.\n\nThus\
+            \ there is hope that in the future C++ abstractions such as executors, transactional memory, futures and coroutines\
+            \ will be used and threads, atomic variables, mutexes and condition variables will be just implementation details."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=qE4AxHg_H_A&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=9"]
+    speakerIds: [339]
+  - id: 1177
+    name:
+      - {language: en, text: "Monadic parsers"}
+      - {language: ru, text: "Монадические парсеры"}
+    shortDescription:
+      - {language: en, text: "We'll discuss monadic parsers: what's the difference between this parsing approach and the other\
+            \ ones, what are its advantages and disadvantages, and what's the role of such important concepts of functional\
+            \ programming as functors, applicative functors, and monads."}
+      - {language: ru, text: "Рассмотрим монадические парсеры: чем этот подход отличается от других видов парсинга, какие\
+            \ у него преимущества и недостатки и в чем здесь проявляются такие важные концепции функционального программир\
+            ования, как функтор, аппликативный функтор и монада."}
+    longDescription:
+      - language: en
+        text: "A frequent question in the C++ developer community is: \"Who does even need monads?\" There are common examples\
+            \ of monadic use of types like std::optional, std::future, and std::expected, but list of monads most frequently\
+            \ used in the functional programming world is much more longer. For example, in Haskell there are the following\
+            \ monads: Maybe (std::optional), Either (std::expected), IO, State, Reader, STM, Par (std::future). But instead\
+            \ of trying to grasp what a monad is and how does it work, it might be more useful to learn how to use specific\
+            \ monads and which tasks they solve, getting this way a basic understanding that could be applied for any monad.\n\
+            \nIn this session, we'll discuss monadic parsers: what's the difference between this parsing approach and the\
+            \ other ones (parser combinators such as Boost::Spirit, parser generators, ad hoc solutions — for example, parser\
+            \ finite state machine, etc.), what are its advantages and disadvantages, and what's the role of such important\
+            \ concepts of functional programming as functors, applicative functors, and monads."
+      - language: ru
+        text: "«Зачем нужны эти ваши монады?» — такой вопрос звучит в сообществе С++ разработчиков с завидной частотой. Тр\
+            адиционно приводятся примеры монадического использования таких типов, как std::optional, std::future и std::expected,\
+            \ но список наиболее используемых монад в мире функционального программирования значительно шире. Вот какие ес\
+            ть монады в Haskell: Maybe (std::optional), Either (std::expected), IO, State, Reader, STM, Par (std::future).\
+            \ Не слишком полезно пытаться понять, что такое абстрактная монада и как она работает. Лучше предварительно из\
+            учить, как пользоваться конкретными монадами, какие задачи они решают, и из этого знания вынести базовую интуи\
+            цию, справедливую для любых монад.\n\nВ докладе будут рассмотрены монадические парсеры: чем этот подход отлича\
+            ется от других видов парсинга (комбинаторные парсеры а-ля Boost::Spirit, парсер-генераторы, ad hoc-решения вро\
+            де парсящих конечных автоматов и т. д.), какие у него преимущества и недостатки и в чем здесь проявляются таки\
+            е важные концепции функционального программирования, как функтор, аппликативный функтор и монада."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5TIAGvUnsDqTDwWNF0R86m/9714f8f32b6620c2790478a564dfb18f/Aleksandr_Granin_Monadicheskiye_parsery.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=q39PHTJDaLE&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=26"]
+    speakerIds: [337]
+  - id: 1178
+    name:
+      - {language: en, text: "ABI compatibility is not a MAJOR problem"}
+    shortDescription:
+      - {language: en, text: "Javier intends to make clear the difference between API and ABI, source and binary compatibility.\
+            \ He'll point out the extreme relevance that ABI compatibility has for library developers and give examples of\
+            \ things that affect the ABI and some techniques to minimize that pain."}
+    longDescription:
+      - language: en
+        text: "Too often, C++ developers tend to ignore ABI compatibility problems and think that incompatibilities are limited\
+            \ to changes in the interface of the library motivated by new features or bugs. However, the ABI can also be affected\
+            \ by the context of the compilation (architecture, compiler, C++ runtime, ...) and even by the libraries that\
+            \ we are consuming. Using semantic versioning is not enough.\n\nIn this presentation, Javier intends to make clear\
+            \ the difference between API and ABI, source and binary compatibility. He'll point out the extreme relevance that\
+            \ ABI compatibility has for library developers and give examples of things that affect the ABI and some techniques\
+            \ to minimize that pain. Taking care of ABI stability can become very important when libraries can't be built\
+            \ always from sources due to very long compilation times, licensing issues or closed source components.\n\nIn\
+            \ the last part of the talk Javier will introduce [Conan](https://conan.io) as the right tool to address this\
+            \ problem. He'll show how many different binaries can be generated by one simple library taking into account some\
+            \ settings (OS, compiler) and options (shared, static), and how the problem becomes more and more complex when\
+            \ the graph of dependencies of your project grows. Conan has some useful tools to help you know and handle the\
+            \ ABI compatibility problem."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/1J3R7U08spWyg3GpL1qATT/76ee2ddeca341c542c0ab7a2a8baed5a/Javier_Garca_Sogo_ABI_compatibility_is_not_a_MAJOR_problem.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=aqQT3J16OxI&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=8"]
+    speakerIds: [355]
+  - id: 1179
+    name:
+      - {language: en, text: "Asynchronous C++ programming"}
+      - {language: ru, text: "Асинхронная разработка на C++"}
+    shortDescription:
+      - {language: en, text: "Pavel will tell about asynchronous programming capabilities that the C++ standard library offers\
+            \ now and that are slated to be added in the future, about concurrency::task from PPL as an illustration for possible\
+            \ implementation, and how using coroutines can make writing and understanding of code much easier."}
+      - {language: ru, text: "Павел расскажет о возможностях асинхронного выполнения задач, которые предоставляет стандарт\
+            ная библиотека C++ сейчас и планируется добавить в будущем, о concurrency::task из PPL как иллюстрации этого и\
+            \ о том, как облегчает написание и понимание написанного кода использование корутин."}
+    longDescription:
+      - {language: en, text: "Since C++11, the standard includes primitives for asynchronous tasks. Pavel will tell about\
+            \ capabilities that the standard library offers now and that are slated to be added in the future. He will also\
+            \ tell about concurrency::task from PPL as an illustration for possible implementation. He will also cover how\
+            \ using coroutines can make writing and understanding of code much easier (as Gor Nishanov describes it in his\
+            \ proposal, which was voted in C++20) with reference to aforementioned primitives."}
+      - {language: ru, text: "Начиная с C++11 в стандарте появились примитивы для асинхронного выполнения задач. Павел рас\
+            скажет о возможностях, которые предоставляет стандартная библиотека сейчас и планируется добавить в будущем. Т\
+            акже он расскажет о concurrency::task из PPL как иллюстрации того, как это может быть реализовано, и о том, ка\
+            к облегчает написание и понимание написанного кода использование корутин (как это описано в предложении Гора Н\
+            ишанова, вошедшем в C++20) в контексте уже упомянутых примитивов."}
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/24uwsB8haiB8w3FOWgyB2F/f27755da0067b25706578af703184fb4/Pavel_Novikov_Asinkhronnaya_razrabotka_na_C.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=seDJT66BJJo&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=21"]
+    speakerIds: [351]
+  - id: 1180
+    name:
+      - {language: en, text: "Rust programming language — ecosystem review"}
+      - {language: ru, text: "Язык программирования Rust — обзор экосистемы"}
+    shortDescription:
+      - {language: en, text: "Brief overview of developer tools, libraries and features of the Rust language."}
+      - {language: ru, text: "Краткий обзор инструментов для разработчика, библиотек и языковых возможностей языка Rust."}
+    longDescription:
+      - language: en
+        text: "This talk is a brief review of the current ecosystem around the Rust language. We'll discuss the innovations\
+            \ brought by the Rust community into modern software development and see how developers writing in other languages,\
+            \ including C++, can use these innovations in their work. \n\nThis talk would be interesting to people interested\
+            \ in new software development tendencies and also those who'd like to know better what the Rust language has to\
+            \ offer."
+      - language: ru
+        text: "В докладе будет выполнен краткий обзор экосистемы, сложившейся вокруг языка Rust к настоящему времени. Мы р\
+            ассмотрим нововведения, которые были внесены Rust-сообществом в современную разработку программного обеспечени\
+            я, и обсудим, как их можно использовать программистам на других языках, включая С++. \n\nДоклад будет интересе\
+            н тем, кто интересуется новыми веяниями в разработке ПО, и тем, кто хочет поближе узнать, что предлагает язык\
+            \ Rust."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6L3ocfxncXgmbOE9wtnDqg/9c30a1f709f0b7b3e7ce58690e3acc4b/Ilya_Bogdanov_Yazyk_programmirovaniya_Rust__obzor_ekosistemy.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=vpPgC4cPja0&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=11"]
+    speakerIds: [352]
+  - id: 1181
+    name:
+      - {language: en, text: "The hitchhiker's guide to faster builds"}
+    shortDescription:
+      - {language: en, text: "This talk will provide insights into why compilation (and linking) take so long for C++ and\
+            \ will then provide an exhaustive list of techniques and tools to mitigate the problem."}
+    longDescription:
+      - language: en
+        text: "C++ is known for things such as performance, expressiveness, the lack of a standard build system and package\
+            \ management, complexity and long compile times. The inability to iterate quickly is one of the biggest killers\
+            \ of productivity. \n\nThis talk is aimed at anyone interested in improving the last of these points — it will\
+            \ provide insights into why compilation (and linking) take so long for C++ and will then provide an exhaustive\
+            \ list of techniques and tools to mitigate the problem, such as: \n- tooling and infrastructure — hardware, build\
+            \ systems, caching, distributed builds, diagnostics of bottlenecks, code hygiene; \n- techniques — unity builds,\
+            \ precompiled headers, linking (static vs shared libraries); \n- source code modification — the PIMPL idiom, better\
+            \ template use, annotations; \n- modules — what they are, when they are coming to C++ and what becomes obsolete\
+            \ because of them."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=5rRLHRRqg5A&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=16"]
+    speakerIds: [338]
+  - id: 1182
+    name:
+      - {language: en, text: "Compiler-friendly metaprogramming"}
+      - {language: ru, text: "Метапрограммирование, щадящее компилятор"}
+    shortDescription:
+      - {language: en, text: "Few advices how to write metaprograms minimizing stress of compiler."}
+      - {language: ru, text: "Немного советов, как писать метапрограммы, минимизируя нагрузку на компилятор."}
+    longDescription:
+      - language: en
+        text: "Every developer plunging into the C++ world knows that templates are Turing complete, substitution failure\
+            \ is not an error, and in compile-time you can do amazing, sometimes even useful things. On the other side, an\
+            \ experienced C++ developer understands that \"you can\" does not mean \"you should\" and that there is a price\
+            \ for abusing metaprogramming. Compilation time is one of the most crucial bottlenecks, so we'll discuss which\
+            \ operations/techniques are the most expensive for the compiler and how we can avoid them.\n\nWe'll cover several\
+            \ issues, including:\n- why SFINAE is the last thing you should use;\n- why std::conditional_t is defined inefficiently;\n\
+            - what's the difference between tuple implementations in Microsoft STL and libc++;\n- when you should use std::{conjunction,disjunction}\
+            \ and when — fold expressions;\n- why you shoudln't use std::void_t;\n- how the concepts appearing in C++20 can\
+            \ help you."
+      - language: ru
+        text: "Любой окунувшийся в мир C++ программист знает, что шаблоны тьюринг-полные, substitution failure is not an error,\
+            \ и в compile-time можно делать удивительные, а иногда даже полезные вещи. С другой стороны, опытный С++ разра\
+            ботчик понимает, что можно — не значит нужно и что за злоупотребление метапрограммированием приходится платить\
+            . Один из основных сдерживающих факторов — время компиляции, поэтому мы рассмотрим, какие операции/техники наи\
+            более дороги с точки зрения компилятора и как их можно избегать.\n\nВ частности, будут освещены следующие вопр\
+            осы:\n- почему SFINAE — это последнее, что нужно использовать;\n- почему std::conditional_t определен неэффект\
+            ивно;\n- в чем разница между реализациями tuple в Microsoft STL и libc++;\n- когда стоит использовать std::{conjunction,disjunction},\
+            \ а когда — fold expressions;\n- почему не стоит использовать std::void_t;\n- как появляющиеся в C++20 концепт\
+            ы могут помочь."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=udTEfwCkmaw&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=13"]
+    speakerIds: [346]
+  - id: 1183
+    name:
+      - {language: en, text: "C++ smart pointer cookbook"}
+      - {language: ru, text: "Рецепты использования умных указателей"}
+    shortDescription:
+      - {language: en, text: "This talk's aimed at C++ developers already familiar with basic capabilities of default smart\
+            \ pointers. From this talk they'll learn several handy tricks of using both default and custom smart pointers."}
+      - {language: ru, text: "Целевая аудитория доклада — разработчики С++, уже имеющие представление о базовых возможност\
+            ях стандартных умных указателей. Из этого доклада они узнают ряд полезных приёмов использования как стандартны\
+            х, так и пользовательских умных указателей."}
+    longDescription:
+      - language: en
+        text: "C++11 introduces the unique_ptr, shared_ptr, weak_ptr smart pointers. Apart from handling their main task —\
+            \ simplifying dynamic memory management — they can also become building blocks for more complex structures.\n\n\
+            This talk's aimed at C++ developers already familiar with basic capabilities of default smart pointers. From this\
+            \ talk they'll learn several handy tricks of using both default and custom smart pointers."
+      - language: ru
+        text: "В стандарт C++11 были введены умные указатели unique_ptr, shared_ptr, weak_ptr. Помимо решения своей главно\
+            й задачи, упрощения управления динамической памятью, они могут выступать в виде строительных блоков для создан\
+            ия более сложных конструкций.\n\nЦелевая аудитория доклада — разработчики С++, уже имеющие представление о баз\
+            овых возможностях стандартных умных указателей. Из этого доклада они узнают ряд полезных приёмов использования\
+            \ как стандартных, так и пользовательских умных указателей."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5dU44LadCvnJQT71vcUlND/2c8bb27cc1fc073816757aee4bc438ac/Aleksey_Malov_Retsepty_ispolzovaniya_umnykh_ukazateley.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=UQyA8P1mHoc&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=25"]
+    speakerIds: [343]
+  - id: 1184
+    name:
+      - {language: en, text: "Higher-order functions and function_ref"}
+    shortDescription:
+      - {language: en, text: "We're going to see examples of how higher-order functions can be used in practice to increase\
+            \ the quality of production code and the productivity of developers. A new abstraction proposed to the Standard\
+            \ Library for C++20, function_ref, will also be covered and compared to other techniques for the implementation\
+            \ of higher-order functions."}
+    longDescription:
+      - language: en
+        text: "Most modern languages treat functions as first-class citizens, and Modern C++ is no different. The introduction\
+            \ of lambda expressions and utilities such as std::function enable countless functional programming patterns that\
+            \ can increase the flexibility and safety of APIs, and help reduce code repetition on the implementation side.\n\
+            \nIn this talk we're going to see examples of how higher-order functions can be used in practice to increase the\
+            \ quality of production code and the productivity of developers, focusing on pragmatic use cases that can be integrated\
+            \ in an existing codebase instead of fully functional patterns.\n\nA new abstraction proposed to the Standard\
+            \ Library for C++20, function_ref, will also be covered and compared to other techniques for the implementation\
+            \ of higher-order functions.\n\nfunction_ref is a lightweight wrapper over any Callable with a given signature\
+            \ that is easy for the compiler to optimize and inline. This presentation will go over the specification and implementation\
+            \ of function_ref, covering potential future extensions and possible pitfalls."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=HYENjkZvsrM&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=15"]
+    speakerIds: [341]
+  - id: 1185
+    name:
+      - {language: en, text: "Concepts: simplifying implementation of std utility classes"}
+      - {language: ru, text: "Концепты: упрощаем реализацию классов std utility"}
+    shortDescription:
+      - {language: en, text: "We'll discuss concepts in general a little and how it simplifies the implementation of generic\
+            \ classes."}
+      - {language: ru, text: "Поговорим немного о концептах в общем и о том, как они упрощают реализацию generic-классов."}
+    longDescription:
+      - language: en
+        text: "Concepts appearing in C++20 have for a long time been the subject of a wide discussion. Despite lots of information\
+            \ accumulated through the years (including speeches given by world-class experts), among the application developers\
+            \ (those who do not fall asleep cuddling up to the standard every night) there still isn't clear understanding\
+            \ on what exactly C++20 concepts are and do we really need them when we've got good old enable_if. Part of the\
+            \ blame is on concepts' evolution in 15 years (Concepts Full + Concept Map -> Concepts Lite), and part is on their\
+            \ dissimilarity to the corresponding tools in other languages (Java/С# generic bounds, Rust traits, ...).\n\n\
+            This talk will begin with a brief overview of concept-related changes in C++20. Then we'll explore implementation\
+            \ of several STL classes and functions, comparing C++17 и С++20 solutions. For example:\n- to implement std::optional,\
+            \ today we have to use inheritance hierarchy with a depth of 7. In C++20, there will be no need for that;\n- for\
+            \ the default constructor std::pair today two template functions are required, in C++20 — one non-template;\n\
+            - template classes often have partial specialization; if template parameters have some special properties, it\
+            \ is easier and more correct to use concepts.\n\nThe audience is expected to have basic understanding of concepts\
+            \ and SFINAE. Knowledge of C++ standard library will also be useful, but you don't need to know all the implementation\
+            \ intricacies and details."
+      - language: ru
+        text: "Появляющиеся в C++20 концепты — давно и широко обсуждаемая тема. Несмотря на избыток материала, накопившего\
+            ся за годы (в т. ч. выступления экспертов мирового уровня), среди прикладных программистов (не засыпающих ежед\
+            невно в обнимку со стандартом) все еще остается неразбериха, что же такое С++20-концепты и так ли они нам нужн\
+            ы, если есть проверенный годами enable_if. Частично виной тому то, как концепты эволюционировали за ~15 лет (Concepts\
+            \ Full + Concept Map -> Concepts Lite), а частично то, что концепты получились непохожими на аналогичные средс\
+            тва в других языках (Java/С# generic bounds, Rust traits, ...).\n\nДоклад начнется с краткого обзора concept-related\
+            \ нововведений C++20, после чего мы посмотрим на реализацию некоторых классов и функций STL, сравнивая C++17 и\
+            \ С++20-решения. К примеру:\n- для реализации std::optional сейчас приходится использовать иерархию наследован\
+            ия глубины 7, в С++20 это будет не нужно;\n- для default-конструктора std::pair сейчас требуется 2 шаблонные ф\
+            ункции, в С++20 — 1 нешаблонная;\n- часто шаблонные классы частично специализируются, в случае, когда у шаблон\
+            ных параметров есть какие-то специальные свойства, c концептами это делать удобнее и правильнее.\n\nОт слушате\
+            лей предполагается общее представление, что такое концепты и SFINAE. Также будет полезно знакомство со стандар\
+            тной библиотекой C++, знание тонкостей и деталей реализации не требуется."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=vYzjV0xSqJE&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=14"]
+    speakerIds: [346]
+  - id: 1186
+    name:
+      - {language: en, text: "Not so dull pointers in ClickHouse"}
+      - {language: ru, text: "Не слишком глупые указатели в ClickHouse"}
+    shortDescription:
+      - {language: en, text: "We had to invent a new kind of pointer which could be used to carefully manage object modifications.\
+            \ In this talk, we'll cover the mechanics of implementing these pointers, details of how they can be used for\
+            \ complex data structures, and examples of the capabilities of modern C++ which are necessary for the implementation."}
+      - {language: ru, text: "Нам пришлось реализовать новый вид указателей, с помощью которого можно точно контролировать\
+            \ модификации объекта. В докладе будет описана механика реализации этих указателей, детали их использования дл\
+            я сложных структур данных, примеры современных возможностей C++, необходимых для реализации."}
+    longDescription:
+      - language: en
+        text: "ClickHouse is a column-oriented DBMS. In it, data processing pipeline works with parts of columns — medium-sized\
+            \ arrays of homogeneous data. Concerning these objects, it would be logical to manage resources through std::shared_ptr\
+            \ or intrusive pointer with reference count. And the option to divide ownership is very convenient for implementing\
+            \ common subexpression elimination in the queries.\n\nBut reality showed that shared_ptr was not safe enough.\
+            \ So we had to invent a new kind of pointer which could be used to carefully manage object modifications. In this\
+            \ talk, we'll cover the mechanics of implementing these pointers, details of how they can be used for complex\
+            \ data structures, and examples of the capabilities of modern C++ which are necessary for the implementation.\
+            \ We'll also discuss several capabilities modern C++ is missing — they could make the implementation easier."
+      - language: ru
+        text: "ClickHouse — column-oriented DBMS. Конвейер обработки данных в ClickHouse оперирует кусочками столбцов — ма\
+            ссивами однородных данных среднего размера. Для управления ресурсами для этих объектов было бы логично использ\
+            овать std::shared_ptr либо интрузивный указатель со счётчиком ссылок. А возможность разделить владение очень у\
+            добно подходит для реализации common subexpression elimination в запросах.\n\nНо на практике оказалось, что shared_ptr\
+            \ недостаточно безопасен. Нам пришлось реализовать новый вид указателей, с помощью которого можно точно контро\
+            лировать модификации объекта. В докладе будет описана механика реализации этих указателей, детали их использов\
+            ания для сложных структур данных, примеры современных возможностей C++, необходимых для реализации. Также буде\
+            т рассказано про несколько возможностей, которых не хватает в стандарте C++, чтобы сделать реализацию более пр\
+            остой."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=pCUfOExRM4I&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=24"]
+    speakerIds: [331]
+  - id: 1187
+    name:
+      - {language: en, text: "Postmodern immutable data structures"}
+    shortDescription:
+      - {language: en, text: "We will talk about the architectural benefits of immutability and show how a very efficient\
+            \ and powerful persistent vector type can be built using state-of-the-art structures (Relaxed Radix Balanced Trees).\
+            \ We will also show an example application (a text editor) built using the architectural style proposed here.\
+            \ Not only is its code extremely simple, it outperforms most similar programs. Don't believe it? Come and see!"}
+    longDescription:
+      - language: en
+        text: "The C++ elites have been talking for years about value semantics, immutability, and sharing by communicating.\
+            \ A better world without mutexes, races, observers, command patterns and so more lies ahead! When it comes to\
+            \ doing it in practice, it is not so easy. One of the main problem lies in our data structures...\n\nImmutable\
+            \ data structures don't change their values. They are manipulated by producing new values. The old values remain\
+            \ there, and can be read safely from multiple threads without locks. They provide structural sharing, because\
+            \ new and old values can share common data — they are fast to compare and can keep a compact undo-history. As\
+            \ such, they are great for concurrent and interactive systems: they simplify the architecture of desktop software\
+            \ and allow servers to scale better. They are the secret sauce behind the success of Clojure and Scala, and even\
+            \ the JavaScript crowd is loving it via Facebook's Immutable.js. \n\nWe are presenting Immer, a C++ library implementing\
+            \ modern and efficient immutable data structures. \n\nIn this session, we will talk about the architectural benefits\
+            \ of immutability and show how a very efficient and powerful persistent vector type can be built using state-of-the-art\
+            \ structures (Relaxed Radix Balanced Trees). We will also show an example application (a text editor) built using\
+            \ the architectural style proposed here. Not only is its code extremely simple, it outperforms most similar programs.\
+            \ Don't believe it? Come and see!\n\nTechnologies presented:\n- https://github.com/arximboldi/immer\n- https://github.com/arximboldi/ewig\n\
+            - https://github.com/arximboldi/lager"
+    talkDay: 2
+    trackTime: "16:00"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=dbFfpTp3EhA&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=17"]
+    speakerIds: [342]
+  - id: 1188
+    name:
+      - {language: en, text: "The dawn of a new error"}
+    shortDescription:
+      - {language: en, text: "This talk will give you a solid idea of which error handling strategy to use when, what's coming\
+            \ next, and how to approach code now that will play nicely in that possible future."}
+    longDescription:
+      - language: en
+        text: "As a community we've tried many different ways to express, propagate and handle error conditions in our code\
+            \ over the years. Each seem to have different trade-offs, with none being perfect in all cases. \n\nIn C++ we\
+            \ adopted exceptions as the primary mechanism early on, and the standard library uses them extensively. \n\nYet\
+            \ many — 52% according to last year's Standard C++ Foundation survey — ban exceptions in all, or part, of their\
+            \ codebases! \n\nRecently there has been a lot of interest in using ADTs (Algebraic Data Types) such as 'std::optional',\
+            \ or the proposed 'std::expected', for error handling. There are definitely advantages here, but we're still not\
+            \ quite there yet. Can we do better? \n\nWe start by summarizing the material from Phil's earlier talk, \"Option(al)\
+            \ is not a failure\", which surveys existing error handling approaches and scores them against each other, leading\
+            \ up to the new proposal, p0709r1, \"Zero-overhead deterministic exceptions\". We then dig into this proposal\
+            \ in more depth and look at the implications, considering also the supporting proposals, p1028 (std::error) and\
+            \ p1029 ([[move relocates]]) and others. We'll also look at experiences with similar mechanisms in other languages,\
+            \ notably Swift, to get an idea of how it might work out in practice. \n\nIn the end we should have a solid idea\
+            \ of which error handling strategy to use when, what's coming next, and how to approach code now that will play\
+            \ nicely in that possible future."
+    talkDay: 2
+    trackTime: "17:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=pwrYcBIGrQc&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=18"]
+    speakerIds: [334]
+  - id: 1189
+    name:
+      - {language: en, text: "C++ templates and databases"}
+      - {language: ru, text: "Шаблоны C++ и базы данных"}
+    shortDescription:
+      - {language: en, text: "We'll talk about designing and implementing PostgreSQL driver with user-friendly interface,\
+            \ using almost all C++17 features available at the moment."}
+      - {language: ru, text: "Рассказ о проектировании и реализации драйвера PostgreSQL с человеческим интерфейсом с приме\
+            нением почти всех доступных на данный момент языковых средств C++17."}
+    longDescription:
+      - language: en
+        text: "Working with databases, we often get just the raw buffers, while it would be nice to get data in the form of\
+            \ C++ structures, classes and containers. \n\nWe'll talk about designing and implementing PostgreSQL driver with\
+            \ user-friendly interface, using almost all C++17 features available at the moment. \n\nThis approach can be adapted\
+            \ for almost any application level protocol."
+      - language: ru
+        text: "Когда мы работаем с БД, мы зачастую получаем сырые буферы, в то время как хочется получать данные в виде ст\
+            руктур, классов и контейнеров C++. \n\nРассказ о проектировании и реализации драйвера PostgreSQL с человечески\
+            м интерфейсом с применением почти всех доступных на данный момент языковых средств C++17. \n\nОписанный в докл\
+            аде подход можно адаптировать практически к любому протоколу уровня приложений."
+    talkDay: 2
+    trackTime: "17:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4YubsfskRBgTNq4s6Wx6h7/6adf149eb7094db068228d5dd91f5ca0/Sergey_Fedorov_Shablony_C_i_bazy_dannykh.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=7qCtCXxpgfw&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=19"]
+    speakerIds: [350]
+  - id: 1190
+    name:
+      - {language: en, text: "Metaclasses in C++: dream? Reality!"}
+      - {language: ru, text: "Метаклассы в C++17: фантастика? Реальность!"}
+    shortDescription:
+      - {language: en, text: "Sergey will tell how you can implement metaclasses support in the form of an external utility\
+            \ (based on clang frontend) and what you can/should do to integrate the results of that utility's work into your\
+            \ code."}
+      - {language: ru, text: "Сергей расскажет, как именно поддержку метаклассов можно реализовать в виде сторонней утилит\
+            ы (на базе clang frontend) и что можно/нужно сделать для того, чтобы интегрировать результаты работы этой утил\
+            иты в собственный код."}
+    longDescription:
+      - language: en
+        text: "This talk deals with one of the metaclasses implementation approaches (proposal p0707 rev3, currently the latest\
+            \ publicly available) for versions of compilers that do not support neither static reflection nor out-of-the-box\
+            \ metaclasses themselves. Sergey will tell how you can implement metaclasses support in the form of an external\
+            \ utility (based on clang frontend) and what you can/should do to integrate the results of that utility's work\
+            \ into your code. As time permits, we'll thoroughly discuss different aspects of working with clang AST, namely,\
+            \ how to use clang C++ AST analysis results for code generation and C++ interpreter implementation.\n\nThis talk's\
+            \ aimed at people familiar with the concept of metaclasses proposed by Sutter and (preferably) with basic aspects\
+            \ of clang frontend implementation."
+      - language: ru
+        text: "Доклад посвящён одному из подходов реализации метаклассов (пропозал p0707 rev3 — последний доступный публич\
+            но на текущий момент) для тех версий компиляторов, которые не поддерживают ни статической рефлексии, ни собств\
+            енно метаклассов из коробки. В докладе будет рассказано, как именно поддержку метаклассов можно реализовать в\
+            \ виде сторонней утилиты (на базе clang frontend) и что можно/нужно сделать для того, чтобы интегрировать резу\
+            льтаты работы этой утилиты в собственный код. Будут относительно подробно (насколько позволяет время) рассмотр\
+            ены различные аспекты работы с clang AST, а именно: как результаты анализа clang C++ AST можно использовать дл\
+            я генерации кода, а также для реализации интерпретатора C++.\n\nДоклад рассчитан на аудиторию, знакомую с конц\
+            епцией метаклассов, предлагаемых Саттером, а также (крайне желательно) с основными аспектами реализации clang\
+            \ frontend."
+    talkDay: 2
+    trackTime: "17:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/55bGdX2PnYzmrpM8rwCjcE/791e7eee3236c2023e86e169faca8a0e/Sergei_Sadovnikov_Metaclasses_in_C___dream_Reality.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=4ewl9LJXaZQ&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=10"]
+    speakerIds: [345]
+  - id: 1191
+    name:
+      - {language: en, text: "Indispensible C++"}
+      - {language: ru, text: "Незаменимый С++"}
+    shortDescription:
+      - {language: en, text: "Every trendy programming language goes out of its way to claim that it's faster, more reliable\
+            \ and in general better than C++ in all possible ways. Let's separate facts from fables. Let the battle between\
+            \ C++ и Asm/Rust/Go/Java/C#... begin!"}
+      - {language: ru, text: "Каждый новомодный язык программирования норовит заявить о том, что он быстрее, надёжнее и во\
+            обще по всем параметрам в несколько раз лучше C++. Давайте разберёмся — где правда, а где вымысел. Да начнётся\
+            \ битва между C++ и Asm/Rust/Go/Java/C#... !"}
+    longDescription:
+      - language: en
+        text: "Every trendy programming language goes out of its way to claim that it's faster, more reliable and in general\
+            \ better than C++ in all possible ways.\n\nLet's separate facts from fables. Let the battle between C++ и Asm/Rust/Go/Java/C#...\
+            \ begin!"
+      - language: ru
+        text: "Каждый новомодный язык программирования норовит заявить о том, что он быстрее, надёжнее и вообще по всем па\
+            раметрам в несколько раз лучше C++.\n\nДавайте разберёмся — где правда, а где вымысел. Да начнётся битва между\
+            \ C++ и Asm/Rust/Go/Java/C#... !"
+    talkDay: 2
+    trackTime: "19:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=LZflL44SVVY&list=PLZN9ZGiWZoZry4qywRiaNQ1CqGEpqKyMw&index=12"]
+    speakerIds: [332]
