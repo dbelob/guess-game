@@ -24138,3 +24138,970 @@ talks:
     presentationLinks: ["https://downloads.ctfassets.net/9n3x4rtjlya6/s4TS0l4kNUlM9PUoDVRiY/e922fd95fe86c53274b01301f101eebb/Dylan_Beattie_Ctrl_Alt_Del_Learning_to_Love_Legacy_Code.pdf"]
     videoLinks: ["https://www.youtube.com/watch?v=afZGZOL6Fr8&list=PLtWrKx3nUGBfx-TBNymPp3WSpeHp7vxj9&index=4"]
     speakerIds: [407]
+  - id: 1072
+    name:
+      - {language: en, text: "State management beyond the libraries"}
+    shortDescription:
+      - {language: en, text: "Many battles have been fought over what is the best way to do state management. A gazillion\
+            \ of strategies and libraries are out there. So... it is time to take one step back. What problems does state\
+            \ management solve, and what are the benefits and disadvantages of the many different state management approaches\
+            \ out there?"}
+    longDescription:
+      - language: en
+        text: "Many battles have been fought over what is the best way to do state management. A gazillion of strategies and\
+            \ libraries are out there. So... it is time to take one step back. \n\nWhy is state management relevant in the\
+            \ first place? What problems does it solve? For example, many debates are about mutability or immutability. But\
+            \ Michel thinks that the more fundamental question to ask is: identities or values? \n\nWith these concepts in\
+            \ mind, we will take a look at several libraries and frameworks and recognize the patterns. We will look at the\
+            \ advantages and disadvantages of different approaches. Finally, Michel will show that those concepts are highly\
+            \ interchangeable with a PoC that will blow your mind. Michel's goal is to enable you to reason about state on\
+            \ a far more fundamental level, resulting in better system design and earlier recognition of bugs."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Michel является автором MobX и детально изучает проблему state\
+            \ management. Он поделится с нами свежим взглядом на эту столь непростую проблему.*\n\nMany battles have been\
+            \ fought over what is the best way to do state management. A gazillion of strategies and libraries are out there.\
+            \ So... it is time to take one step back. \n\nWhy is state management relevant in the first place? What problems\
+            \ does it solve? For example, many debates are about mutability or immutability. But Michel thinks that the more\
+            \ fundamental question to ask is: identities or values? \n\nWith these concepts in mind, we will take a look at\
+            \ several libraries and frameworks and recognize the patterns. We will look at the advantages and disadvantages\
+            \ of different approaches. Finally, Michel will show that those concepts are highly interchangeable with a PoC\
+            \ that will blow your mind. Michel's goal is to enable you to reason about state on a far more fundamental level,\
+            \ resulting in better system design and earlier recognition of bugs."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/Ezk73ofhW8sCC8wuIA4iE/f6c12f39312901e55889a5fda0d410e9/Michel_Weststrate_State_management_beyond_libraries.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=JKaJ9r3xYN4&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=24"]
+    speakerIds: [587]
+  - id: 1073
+    name:
+      - {language: en, text: "JavaScript ❤ binary data"}
+    shortDescription:
+      - {language: en, text: "We'll discuss how to work with binary data in JavaScript, delve into binary files using *.gif\
+            \ files as an example and clear up the matter of serializing frameworks, such as Protobuf or Thrift."}
+      - {language: ru, text: "Мы посмотрим, как работать с бинарными данными в JavaScript, покопаемся в бинарных файлах на\
+            \ примере *.gif-файлов и разберемся с сериализующими фреймворками, такими как Protobuf или Thrift."}
+    longDescription:
+      - {language: en, text: "We'll discuss how to work with binary data in JavaScript, delve into binary files using *.gif\
+            \ files as an example and clear up the matter of serializing frameworks, such as Protobuf or Thrift."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *В вебе мы часто работаем с бинарными данными, не задумываяс\
+            ь об этом (хотя если уйти от абстракций, мы только с ними и работаем, но все же). В докладе Кирилл опустится н\
+            а уровень бинарных данных, разберет некоторые особенности и покажет интересные метрики.*\n\nМы посмотрим, как\
+            \ работать с бинарными данными в JavaScript, покопаемся в бинарных файлах на примере *.gif-файлов и разберемся\
+            \ с сериализующими фреймворками, такими как Protobuf или Thrift."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=BN02zpuPGoY&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=25"]
+    speakerIds: [679]
+  - id: 1074
+    name:
+      - {language: en, text: "Naked truth about files at Web"}
+      - {language: ru, text: "Голая правда про файлы"}
+    shortDescription:
+      - {language: en, text: "We'll analyze in detail all the opportunities of file uploads by clients, even the most critical\
+            \ enterprise cases. In the end of the talk, we'll get a code you can reuse in your project."}
+      - {language: ru, text: "Подробным образом разберем все возможности по загрузке файлов клиентами. Даже самые критичес\
+            кие кейсы из «кровавого» энтерпрайза. По итогу получим код, который вы сможете переиспользовать у себя в проек\
+            те."}
+    longDescription:
+      - {language: en, text: "We'll analyze in detail all the opportunities of file uploads by clients, even the most critical\
+            \ enterprise cases. In the end of the talk, we'll get a code you can reuse in your project."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Работа с загрузкой файлов, да и вообще с браузерными API дл\
+            я работы с файлами, мягко говоря, реализована не очень консистентно. В частности, если нам необходимо загрузит\
+            ь директорию с 10000+  файлами, мы легко можем повесить наш браузер на продолжительное время. Егор раскроет ин\
+            тересные детали и подходы, которые помогут избежать некоторых проблем и выбрать для себя тот или иной путь.*\n\
+            \nПодробным образом разберем все возможности по загрузке файлов клиентами. Даже самые критические кейсы из «кр\
+            овавого» энтерпрайза. По итогу получим код, который вы сможете переиспользовать у себя в проекте."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/6YB3HXOGzeyMQ4M0cm0Img/3cd63548e8a84875cbba35e4962a5446/Egor_Malkevich_Naked_truth_about_files_at_Web.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=2r2yj2nGJi8&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=30"]
+    speakerIds: [686]
+  - id: 1075
+    name:
+      - {language: en, text: "Revealing framework fundamentals: NestJS behind the curtain"}
+    shortDescription:
+      - {language: en, text: "Kamil will introduce Nest to you as well as show internals of the framework's key features."}
+    longDescription:
+      - {language: en, text: "When Node.js came up for the first time, it was considered as an outstanding revolution. After\
+            \ few years, the platform evolved substantially, albeit tooling wasn't good enough to compete with mature technologies\
+            \ from other languages. Nest has been formed to bring hope back by applying modern techniques and design patterns\
+            \ to the Node.js world. In this talk, Kamil will introduce Nest to you as well as show internals of the framework's\
+            \ key features."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Kamil — автор NestJS. Он расскажет про подкапотные вещи и о\
+            сновные концепции NestJS. Что может быть интереснее, чем детальный разбор интересной и популярной технологии о\
+            т её автора?*\n\nWhen Node.js came up for the first time, it was considered as an outstanding revolution. After\
+            \ few years, the platform evolved substantially, albeit tooling wasn't good enough to compete with mature technologies\
+            \ from other languages. Nest has been formed to bring hope back by applying modern techniques and design patterns\
+            \ to the Node.js world. In this talk, Kamil will introduce Nest to you as well as show internals of the framework's\
+            \ key features."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/3So323TYJO080w2g4oA8QC/dbcdea22f11ffea831cdb1cbe2b9f2f3/Kamil_Mysliwiec_Revealing_framework_fundamentals__NestJS_behind_the_curtain.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=jo-1EUxMmxc&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=10"]
+    speakerIds: [684]
+  - id: 1076
+    name:
+      - {language: en, text: "Service Worker: Using gathered experience and looking into the future"}
+      - {language: ru, text: "Сервис-воркеры: используем накопленный опыт и смотрим в будущее"}
+    shortDescription:
+      - {language: en, text: "Service Worker API allows us to implement a whole layer of application logic and has lots of\
+            \ nuances in its behaviour, which we'll cover in this session."}
+      - {language: ru, text: "Service Worker API дает нам возможность реализовать целый слой логики приложения и содержит\
+            \ массу нюансов в своем поведении, которые и будут представлены в рамках сессии."}
+    longDescription:
+      - language: en
+        text: "Service Worker API is a progressive web application concept base in charge of offline working, network request\
+            \ optimization, push notifications and many other useful things. Technically defined as a programmable network\
+            \ proxy, Service Worker allows us to implement a whole layer of application logic and has lots of nuances in its\
+            \ behaviour, which we'll cover in this session. \n\nUsing the community's experience of developing and using Service\
+            \ Worker in real projects, we'll discuss: \n- best practices with code examples for the whole Service Worker lifecycle,\
+            \ from registration to emergency deletion; \n- possible issues and special cases in working with HTTP requests\
+            \ from Service Worker; \n- recent news about different browsers supporting separate parts of the specification;\
+            \ \n- tools recommended for automation of some network tasks; \n- additions planned for Service Worker API: new\
+            \ interesting options."
+      - language: ru
+        text: "Service Worker API — это фундамент концепта прогрессивных веб-приложений, отвечающий за возможность работы\
+            \ оффлайн, оптимизацию сетевых запросов, push-уведомления и массу других полезных вещей. Формально определяемы\
+            й как программируемый сетевой прокси, сервис-воркер дает нам возможность реализовать целый слой логики приложе\
+            ния и содержит массу нюансов в своем поведении, которые и будут представлены в рамках сессии. \n\nОсновываясь\
+            \ на накопленном сообществом опыте разработки и использования сервис-воркеров в реальных проектах, мы обсудим\
+            : \n- лучшие практики с примерами кода для всего жизненного цикла сервис-воркера, от регистрации до экстренног\
+            о удаления; \n- возможные проблемы и особые случаи при работе с HTTP-запросами из сервис-воркера; \n- последни\
+            е новости о поддержке отдельных частей спецификации разными браузерами; \n- рекомендуемые инструменты для авто\
+            матизации некоторых сетевых задач; \n- планируемые добавления в Service Worker API: новые интересные возможнос\
+            ти."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=sly5O_f6w6g&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=17"]
+    speakerIds: [682]
+  - id: 1077
+    name:
+      - {language: en, text: "Diving deep into webpack"}
+      - {language: ru, text: "Глубокое погружение в webpack"}
+    shortDescription:
+      - {language: en, text: "Stas will tell about inner workings of webpack using loader for work with SVG sprites as an\
+            \ example."}
+      - {language: ru, text: "Стас расскажет о внутреннем устройстве webpack на примере написания лоадера для работы с SVG-с\
+            прайтами."}
+    longDescription:
+      - {language: en, text: "Stas will tell about inner workings of webpack using loader for work with SVG sprites as an\
+            \ example. He will examine the landmarks of its working process, show when you need loader and when — plug-in,\
+            \ how you can connect them and why you should do it. Besides, he will explain the operating principles of the\
+            \ popular plug-ins: extract-text-webpack-plugin, html-webpack-plugin, react-styleguidist."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Когда мы разбирали черновик этого доклада, мы столкнулись с\
+            \ двумя интересными моментами:*\n>\n>1. *Список инструментов, которые Стас написал, не вошел на один слайд.*\n\
+            >2. *Стас нарисовал настолько подробную схему работы webpack, что стало понятно, как же вся эта магия работает\
+            .*\n>\n> *Эти 2 момента — результат долгих копаний в самых дебрях исходников всеми используемой технологии, ре\
+            зультатами которых нельзя не поделиться. После этого доклада становится понятно, как написать плагин к webpack.*\n\
+            \nСтас расскажет о внутреннем устройстве webpack на примере написания лоадера для работы с SVG-спрайтами. Он р\
+            ассмотрит основные этапы его работы, покажет, когда нужен лоадер, когда — плагин, как можно наладить связь меж\
+            ду ними и зачем она нужна. Также он объяснит, как работают популярные плагины — extract-text-webpack-plugin, html-webpack-plugin,\
+            \ react-styleguidist."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/4AS3hkBXbi6wSOYUoa444y/dd811bfc6d3b37a0e63e6e3d3eb5b35d/Stas_Kurilov_Glubokoye_pogruzheniye_v_webpack.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=aiYkJOPD9v8&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=29"]
+    speakerIds: [662]
+  - id: 1078
+    name:
+      - {language: en, text: "An introduction to distributed tracing"}
+    shortDescription:
+      - {language: en, text: "This talk will focus on what distributed tracing is, how to roll it out across your infrastructure,\
+            \ and how to use it to gain better insights and fix problems."}
+    longDescription:
+      - language: en
+        text: "With the rise of single-page web apps and microservice architectures, web applications are becoming increasingly\
+            \ complex. The old tools with which we used to monitor the performance of monolith applications are no longer\
+            \ sufficient. To better understand how data is flowing between the different components of your application and\
+            \ to detect the bottlenecks before it's too late, you need a new set of tools to monitor the whole stack — enter\
+            \ distributed tracing. \n\nThis talk will focus on what distributed tracing is, how to roll it out across your\
+            \ infrastructure, and how to use it to gain better insights and fix problems. \n\nThis talk aims to give the listener\
+            \ a better understanding of distributed tracing and why it's important. It will focus on the OpenTracing standard\
+            \ developed to make your monitoring solution vendor-neutral, and will use examples from Elastic APM — the newest\
+            \ open source project coming to the Elastic Stack."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5aPRuBSqEosCsCqsKQ8aAk/85c176bb7683ba139a105ce1df43bd0a/Thomas_Watson_An_introduction_to_distributed_tracing.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=g7XSEdriSFM&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=6"]
+    speakerIds: [683]
+  - id: 1079
+    name:
+      - {language: en, text: "Building GraphQL Server"}
+      - {language: ru, text: "Строим GraphQL-сервер"}
+    shortDescription:
+      - {language: en, text: "GraphQL is not a database — it's a new standard for highly comfortable API, which is now taking\
+            \ over from REST API. In this talk we'll discuss GraphQL on back end. You will learn what is necessary to launch\
+            \ GraphQL Server, how to build schemes and do authorization, and dwell on safety and problems that may appear."}
+      - {language: ru, text: "GraphQL — это не база данных! Это новый стандарт для мега-удобного API, который приходит на\
+            \ смену REST API. В докладе будет затронута тема GraphQL на бэкенде. Вы узнаете, что необходимо для запуска GraphQL-с\
+            ервера, поймете, как строить схемы и крутить авторизацию, и задумаетесь о безопасности и возможных проблемах."}
+    longDescription:
+      - language: en
+        text: "REST API was good for its time, as well as Swagger. But nowadays everybody talks about component approach,\
+            \ so in 2018 back-end developers should really take a look at GraphQL. In fact, it's a new standard of super comfortable\
+            \ API for front-end developers and their component approach. But front-end developers' meat could become poison\
+            \ for unprepared back-end developers. \n\nIn this talk we'll discuss things that back-end developers should pay\
+            \ attention to. Which parts GraphQL Server consists of — there are lots of packages in the internet, so it would\
+            \ be good to know what we should install and, more importantly, why. What is schema and how to write it for the\
+            \ whole thing to work. We'll talk about authorization, about how to write a simple ACL. We'll address the issues\
+            \ of performance and safety. We'll delve into file loading, schema generation, documentation, and see if all is\
+            \ good with the API versioning. \n\nThis talk will be useful for junior, middle and senior developers alike, whether\
+            \ you are already using GraphQL or just sizing up this promising technology."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Павел работает с GraphQL около 4 лет, является автором graphql-compose\
+            \ и действительно знает, как делать с GraphQL безумно крутые штуки. Готовясь к HolyJS, он собрал материала на\
+            \ книгу с небольшим, мы отобрали самые сливки из этого. Никаких интродакшнов! Только глубокие кейсы.*\n\nREST\
+            \ API был хорош для своего времени и Swagger тоже. Кругом все обсуждают компонентный подход, поэтому в 2018 го\
+            ду бэкендерам сильно пора задуматься о GraphQL. По факту это новый стандарт мега-удобного API для фронтендеров\
+            \ и их компонентного подхода. Но что фронтендеру хорошо, то может стать болью для неподготовленного бэкендера\
+            . \n\nВ докладе рассмотрим моменты, о которых стоит задуматься бэкендеру. Из каких кусочков собирается GraphQL-с\
+            ервер: в интернетах уже много пакетов, хорошо бы понять, что необходимо установить и, самое главное, зачем. Чт\
+            о такое схема и как ее написать, чтобы все это дело зашуршало. Рассмотрим авторизацию, написание примитивного\
+            \ ACL. Затронем вопрос производительности и безопасности. Разберем тему загрузки файлов, генерации схем, докум\
+            ентирования и всё ли хорошо с версионированием API. \n\nДоклад будет полезен разработчикам любого уровня, как\
+            \ уже использующим GraphQL, так и присматривающимся к данной перспективной технологии."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/1EyPLtP3Qcc6wUYOEmsuIg/a503c12215254823f41311baf194700a/Pavel_Chertorogov_Building_GraphQL_Server.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=NnnvOPdstzg&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=18"]
+    speakerIds: [660]
+  - id: 1080
+    name:
+      - {language: en, text: "Paranoid Service Worker"}
+    shortDescription:
+      - {language: en, text: "This is a talk about a lot of new browser APIs and their combinations that allow us not to trust\
+            \ servers, 3rd party, network connection and even browser itself. Because we can and because being paranoid is\
+            \ good."}
+      - {language: ru, text: "Это рассказ о том, что за последние несколько лет в браузерах появилось множество новых API,\
+            \ которые можно так замечательно использовать, чтобы перестать доверять и серверу, и браузеру, и даже сетевому\
+            \ подключению и окончательно стать параноиком."}
+    longDescription:
+      - language: en
+        text: "Our story starts not so long ago.\n\nIt was the year 2018. Everything was getting hacked: Facebook accounts,\
+            \ Google doors, and plug-ins in browsers; Chinese phones were sold with built-in free connection to botnets; you\
+            \ could still read the contents of the RAM via HTTPS, location of secret bases via fitness websites (strava),\
+            \ and memory in other processes (meltdown and spectre) via the division, even from the \"protected zone\" in the\
+            \ processor's memory (foreshadow). The Internet was filled with rumors (which turned out to be true) that in the\
+            \ processor there is one more computer, on which you can run DOOM (allegedly). And a cherry on top was that it\
+            \ was technically possible to disable the server by sending units and zeros across the network so that the electrons\
+            \ began to jump out of RAM (nethammer/throwhammer).\n\nAnd the question hung in the air, \"Is it even possible\
+            \ to store at least some data in browsers without fear of them being stolen?\".\n\nLittle by little the understanding\
+            \ came that it seemed possible. But you cannot trust anyone, neither yourself nor others. The client must check\
+            \ the server and the server must check the client so that nothing happens for no reason, and the sandbox must\
+            \ hold inside another sandbox across itself. Little by little it turned into real paranoia, but it ended with\
+            \ a number of unique finds, which this talk will cover."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Всеволод продемонстрирует, пожалуй, самое неординарное испо\
+            льзование Service Worker в сочетании с некоторыми современными и старыми API браузера в целях качественного по\
+            вышения безопасности при работе с данными на стороне клиента. \nВсеволод погрузится так глубоко, что поможет о\
+            бойти проблему браузерных расширений. Перед докладом стоит собраться и сконцентрироваться, ибо будет жарко.*\n\
+            \nЭта история начинается не так давно.\n\nШел 2018-й год. Интернет полнился историями о взломах: ломали аккаун\
+            ты Фейсбука, дверные ручки Гугла и плагины в браузерах, китайские телефоны продавались сразу с бесплатным подк\
+            лючением к ботнетам, расположение секретных баз вычисляли через фитнес-трекеры (strava), через HTTPS на части\
+            \ серверов еще можно было прочитать содержимое оперативной памяти (heartbleed), а через деление — прочитать па\
+            мять в других процессах (meltdown и spectre), при желании — даже из «защищенной зоны» в памяти процессора (foreshadow).\
+            \ Интернет полнился слухами, которые оказались не слухами, что в процессорах есть еще один маленький компьютер\
+            , на котором можно запустить DOOM (предположительно). Ну и вишенкой на торте было то, что технически возможно\
+            \ вывести из строя сервера, отправляя по сети единицы и нули так, что электроны начинали выпрыгивать из операт\
+            ивной памяти (nethammer/throwhammer).\n\nИ в воздухе висел вопрос: можно ли вообще хранить хоть какие-то данны\
+            е в браузерах без страха, что их украдут?\n\nПонемногу приходило понимание, что вроде бы можно. Но доверять не\
+            льзя никому, ни себе, ни другим. Нужно, чтобы клиент проверял сервер, а сервер — клиент, чтобы ничего не проис\
+            ходило просто так, а песочница внутри себя держала еще одну песочницу, но поперек. Понемногу это превращалось\
+            \ в самую настоящую паранойю, но закончилось рядом уникальных находок, о которых и будет этот доклад."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=lXQTSXfGfbo&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=28"]
+    speakerIds: [699]
+  - id: 1081
+    name:
+      - {language: en, text: "Bringing mixed reality to the web"}
+    shortDescription:
+      - {language: en, text: "The main part of the talk is to show how to import a 3D model to a WebGL scene using Three.js,\
+            \ how A-Frame is leveraging this to enable developers to create a simple 3D VR scenes and where is WebXR in all\
+            \ of this."}
+    longDescription:
+      - language: en
+        text: "The main topic of this talk is to make a short introduction to guide the audience through the recent history\
+            \ of virtual and augmented reality on the web, to demonstrate the current possibilities and illustrate the future\
+            \ ones. The software stack that is involved in this process will be discussed, and technologies like WebGL, Three.js,\
+            \ A-Frame, and others will be presented. \n\nThe main part of the talk is to show how to import a 3D model to\
+            \ a WebGL scene using Three.js, how A-Frame is leveraging this to enable developers to create a simple 3D VR scenes\
+            \ and where is WebXR in all of this. GitHub start-up project is provided so the audience will be able to follow\
+            \ the lecturer as AR-enabled solution is developed. \n\nBasic knowledge of HTML/CSS/JavaScript stack is desirable\
+            \ if you want to be an active participant. At the end of the talk, members of the audience will be able to run\
+            \ the built solution on their smartphone in VR or AR in their web browsers."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Ломовейшее сочетание VR и AR, а также разбор WebXR API с кр\
+            утейшими демками от человека, который пишет на эту тему PhD и работает с этими технологиями каждый день на пра\
+            ктических задачах. Доклад обещает быть нереальным.*\n\nThe main topic of this talk is to make a short introduction\
+            \ to guide the audience through the recent history of virtual and augmented reality on the web, to demonstrate\
+            \ the current possibilities and illustrate the future ones. The software stack that is involved in this process\
+            \ will be discussed, and technologies like WebGL, Three.js, A-Frame, and others will be presented. \n\nThe main\
+            \ part of the talk is to show how to import a 3D model to a WebGL scene using Three.js, how A-Frame is leveraging\
+            \ this to enable developers to create a simple 3D VR scenes and where is WebXR in all of this. GitHub start-up\
+            \ project is provided so the audience will be able to follow the lecturer as AR-enabled solution is developed.\
+            \ \n\nBasic knowledge of HTML/CSS/JavaScript stack is desirable if you want to be an active participant. At the\
+            \ end of the talk, members of the audience will be able to run the built solution on their smartphone in VR or\
+            \ AR in their web browsers."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5NZEeYNtvygS8YeaaIgYIe/e88c1c7b4ef6e94ccc7009f9cf7947e0/Marko_Letic_Bringing_mixed_reality_to_the_web.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=XumBgejSxKs&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=9"]
+    speakerIds: [687]
+  - id: 1082
+    name:
+      - {language: en, text: "JS battle: How I wrote my own eval()"}
+      - {language: ru, text: "JS-битва: как я написал свой eval()"}
+    shortDescription:
+      - {language: en, text: "This talk covers making a game for developers (not only front-end ones). Why RxJS and Workers\
+            \ are cool, but the most popular game engine isn't? Is it possible to make JS safe and developers happy? How to\
+            \ survive loads of events and criticisms and release your game for the Day of the Programmer?"}
+      - {language: ru, text: "Доклад о том, как написать игру, для разработчиков, причем не только из мира фронтенда. Поче\
+            му RxJS и Workers — это круто, а самый популярный игровой движок — нет. Можно ли сделать JS безопасным, а прог\
+            раммистов — счастливыми. Как пережить войну с потоками событий и критики, чтобы успеть выкатить все ко дню про\
+            граммиста..."}
+    longDescription:
+      - language: en
+        text: "Once upon a time, Alexander was offered to make a game for stand on WSD conference. He had only three weeks,\
+            \ was completely free to choose a subject and could test the result on all of his colleagues. \n\nThis talk covers\
+            \ making a game for developers (not only front-end ones). Why RxJS and Workers are cool, but the most popular\
+            \ game engine isn't? Is it possible to make JS safe and developers happy? How to survive loads of events and criticisms\
+            \ and release your game for the Day of the Programmer?"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Кто из нас не мечтал написать свою игрушку (или компилятор\
+            )? Игра, о которой пойдет речь, называется Script Battle Game и по сути своей довольна проста, но интересна. Н\
+            а конференции вам удастся поиграть в нее и узнать, как она работает изнутри, а также посмотреть на технические\
+            \ детали реализации своей безопасной «песочницы» для исполнения кода, некоторые нюансы воркеров и реактивности\
+            .*\n\nОднажды Александру предложили написать какую-нибудь игру для стенда на конференции WSD. У него было всег\
+            о три недели, полная свобода в выборе темы и коллеги, на которых он все это тестировал. \n\nДоклад о том, как\
+            \ написать игру для разработчиков, причем не только из мира фронтенда. Почему RxJS и Workers — это круто, а са\
+            мый популярный игровой движок — нет. Можно ли сделать JS безопасным, а программистов — счастливыми. Как пережи\
+            ть войну с потоками событий и критики, чтобы успеть выкатить все ко дню программиста..."
+    talkDay: 1
+    trackTime: "17:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=TJ7TGk5WJ5k&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=13"]
+    speakerIds: [689]
+  - id: 1083
+    name:
+      - {language: en, text: "Asynchronous zero"}
+      - {language: ru, text: "Асинхронный ноль"}
+    shortDescription:
+      - {language: en, text: "Asynchrony: hooks (async_hooks), Continuation (or Thread) Local Storage, Tracing, Duration,\
+            \ statistics, analytics and error processing."}
+      - {language: ru, text: "Асинхронность: хуки (async_hooks), Continuation (or Thread) Local Storage, трассировка, длит\
+            ельность, статистика, аналитика и обработка ошибок."}
+    longDescription:
+      - language: en
+        text: "This talk's purpose is to explain, as fully and accurately as possible, why synchrony of JavaScript is good.\n\
+            \nWe are going to:\n- review basics of Event Loop in Node.js;\n- delve into use-cases of async_hooks;\n- clear\
+            \ the difference between sampling and tracking;\n- discuss basic and extended use-cases: long stack trace, continuation\
+            \ local storage, event marks, async events pub~sub, simultaneous calculations, etc.;\n- finally, catch requestId\
+            \ in uncaughtException in full battle rattle and discuss the limitations for all these creative impulses.\n\n\
+            While we're at it, we're also going to clear what lies beyond asynchronous operations: nuances of debugging, asynchronous\
+            \ console.log, strengths of window.alert and synchronous HTTP request, and drawbacks of failing to understand\
+            \ synchrony."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Виктор поддерживает немалую часть огромного бэкенда на Node.js\
+            \ в связке с MongoDB и не понаслышке знает про непростые кейсы использования Node.js. Он расскажет, как работа\
+            ть с этими кейсами в условиях продакшна с наименьшим количеством боли.*\n\nЦель доклада: по мере сил и возможн\
+            остей объяснить, почему синхронность JavaScript является благом.\n\nПовторим основы Event Loop в Node.js. Углу\
+            бимся в примеры использования async_hooks. Проясним разницу между семплированием и трекингом. Рассмотрим базов\
+            ые и расширенные примеры использования: long stack trace, continuation local storage, event marks, async events\
+            \ pub~sub, simultaneous calculations и т. п. В конце концов отловим requestId в uncaughtException с полной вык\
+            ладкой и поговорим об ограничениях всех этих творческих порывов.\n\nПопутно также проясним, что лежит за преде\
+            лами асинхронных операций: нюансы отладки, асинхронность console.log, чем был хорош window.alert и синхронный\
+            \ HTTP request и что плохого в непонимании синхронности."
+    talkDay: 1
+    trackTime: "17:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/4JG7XeeyTucWioeuYsqqcy/1fa3d2f3b2d7feb297ca4ffe2fea5f22/Viktor_Vershanskiy_Asinkhronnyy_nol.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=6Tg2UA4XaQY&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=2"]
+    speakerIds: [698]
+  - id: 1084
+    name:
+      - {language: en, text: "A11Y IRL (Accessibility in real life)"}
+    shortDescription:
+      - {language: en, text: "In 2018, it is imperative that information is readily available to everyone, regardless of their\
+            \ disability or financial status. In this talk, you'll find out how to create accessible real-life objects, using\
+            \ run-of-the-mill JavaScript and the basic principles of Internet of Things."}
+    longDescription:
+      - language: en
+        text: "The year is 2018, and accessibility is not a buzzword anymore. It's now imperative that information is readily\
+            \ available to everyone, regardless of their disability or financial status.\n\nIn this talk, you'll find out\
+            \ how to create accessible real-life objects, using run-of-the-mill JavaScript and the basic principles of Internet\
+            \ of Things."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Theodore подходит к теме accessibility с одной из самых нео\
+            бычных сторон для этой темы —\_IoT. Он спроектировал IoT-open source-продукт для чтения с помощью шрифта Брайл\
+            я, основанный на Arduino и Johnny-Five. В докладе вы увидите, как легко начать делать весьма полезные вещи для\
+            \ реального мира.*\n\nThe year is 2018, and accessibility is not a buzzword anymore. It's now imperative that\
+            \ information is readily available to everyone, regardless of their disability or financial status.\n\nIn this\
+            \ talk, you'll find out how to create accessible real-life objects, using run-of-the-mill JavaScript and the basic\
+            \ principles of Internet of Things."
+    talkDay: 1
+    trackTime: "17:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/E7jAy6u7Mk86gqkYk8gyK/2e257b856ea8dbe65207b7e9fe16616f/Theodore_Vorillas_A11Y_IRL__Accessibility_in_real_life_.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=1A2Q-nos2hc&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=7"]
+    speakerIds: [693]
+  - id: 1085
+    name:
+      - {language: en, text: "Surviving death by complexity (*offline only)"}
+    shortDescription:
+      - {language: en, text: "It feels like a law of nature that features are added to software at a pace much faster than\
+            \ they are removed. It seems like our nice simple software always eventually evolves into a slobbering complex\
+            \ monster, incomprehensible for its users and unmaintainable by its developers. Is this an unavoidable phenomenon?\
+            \ If so, how can we adapt to that, as software creators?"}
+    longDescription:
+      - {language: en, text: "It feels like a law of nature that features are added to software at a pace much faster than\
+            \ they are removed. It seems like our nice simple software always eventually evolves into a slobbering complex\
+            \ monster, incomprehensible for its users and unmaintainable by its developers. Is this an unavoidable phenomenon?\
+            \ If so, how can we adapt to that, as software creators?"}
+    talkDay: 1
+    trackTime: "19:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=ulggVz2ySzQ&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=26"]
+    speakerIds: [678]
+  - id: 1086
+    name:
+      - {language: en, text: "Decentralized web"}
+      - {language: ru, text: "Децентрализованный веб"}
+    shortDescription:
+      - {language: en, text: "Victor will show how the \"giternet\" with Merkle trees and peer2peer replication works (using\
+            \ DAT, IPFS and possibly other technologies as examples) and how to put a simple site (with blackjack and CDN)\
+            \ on it."}
+      - {language: ru, text: "Виктор расскажет, как работает «гитернет» с деревьями Merkle и peer2peer-репликацией (на при\
+            мере DAT, IPFS и, возможно, других технологий) и как выложить в него простенький сайтик (с блэкджеком и CDN)."}
+    longDescription:
+      - language: en
+        text: "Current web has a lot of problems. First, monopolism. Two or three companies control everything that's going\
+            \ on in it. The one who stores our data has all the power over it. Second, amnesia. Old sites and old links fade\
+            \ away. Third, unreliability. If the internet doesn't work (when out of the city, in the basement, no money or\
+            \ something's wrong), our state-of-the-art smartphone becomes a very expensive flashlight. And slow internet is\
+            \ an ordinary issue. These are all parts of one problem: data serfdom. And this problem lays deep in the very\
+            \ idea of URL the whole web is built upon. \n\nDecentralized web solves this problem much as git does: with Merkle\
+            \ trees and peer2peer replication. Data can be stored in any place, remaining the same. This is a perfect answer\
+            \ to the questions of ownership, reliability and access rate. \n\nHow this \"giternet\" works (using DAT, IPFS\
+            \ and possibly other technologies as examples) and how to put a simple site (with blackjack and CDN) on it — that's\
+            \ what the talk is about."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Отец отечественного CRDT.*\n\nУ веба в том виде, в котором\
+            \ он существует, накопились очевидные проблемы. Во-первых, монополизм. Две-три компании контролируют всё в нём\
+            \ происходящее. Кто наши данные хранит — тот ими и распоряжается. Во-вторых, амнезия. Старые сайты, старые ссы\
+            лки медленно испаряются. В-третьих, ненадежность. Если не работает интернет (на природе, в подвале, тариф конч\
+            ился, неполадки), то наш новейший смартфон превращается в *очень* дорогой фонарик. А медленный интернет — это\
+            \ просто повсеместно. Всё это грани одной проблемы — «крепостного права» для данных. И эта проблема заложена в\
+            \ саму идею URL, на которой и построен весь веб. \n\nДецентрализованный веб решает эту проблему примерно так ж\
+            е, как её решает git: деревьями Merkle и peer2peer-репликацией. Данные могут храниться где угодно, оставаясь т\
+            еми же данными. Это прекрасно решает вопросы владения, надежности и скорости доступа. \n\nКак работает такой «\
+            гитернет» (на примере DAT, IPFS и, возможно, других технологий) и как выложить в него простенький сайтик (с бл\
+            экджеком и CDN) — об этом и доклад."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=lROd9NUBP5Q&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=14"]
+    speakerIds: [697]
+  - id: 1087
+    name:
+      - {language: en, text: "Visualising third-party website trackers"}
+    shortDescription:
+      - {language: en, text: "We'll discuss the lessons we took from migrating a visual third-party website tracker tool using\
+            \ D3.js and ES6 from SVG to Canvas. You'll learn how to tackle some of Canvas challenges, how to get better graph\
+            \ performance and how all of this can be converted to an immersive virtual reality experience using A-Frame!"}
+    longDescription:
+      - {language: en, text: "In this talk, we shall look into the lessons learned from migrating a visual third-party website\
+            \ tracker tool using D3.js and ES6 from SVG to Canvas, synchronous to asynchronous data capture and storage using\
+            \ IndexedDB, with performance being the key factor. Canvas comes with its own challenges and we shall look into\
+            \ practical examples of how we tackled them. We shall also look into the concepts behind JavaScript physical simulations\
+            \ in order to understand the graph networks and hierarchies and the web-worker based approach for better graph\
+            \ performance. Lastly, let's see how all of this can be converted to an immersive virtual reality experience using\
+            \ A-Frame!"}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Спикер — участница программы Mozilla Outreachy, расскажет о\
+            \ проекте, который делала в рамках стажировки. На повестке дня: визуализация больших объемов данных с упором н\
+            а перформанс.*\n\nIn this talk, we shall look into the lessons learned from migrating a visual third-party website\
+            \ tracker tool using D3.js and ES6 from SVG to Canvas, synchronous to asynchronous data capture and storage using\
+            \ IndexedDB, with performance being the key factor. Canvas comes with its own challenges and we shall look into\
+            \ practical examples of how we tackled them. We shall also look into the concepts behind JavaScript physical simulations\
+            \ in order to understand the graph networks and hierarchies and the web-worker based approach for better graph\
+            \ performance. Lastly, let's see how all of this can be converted to an immersive virtual reality experience using\
+            \ A-Frame!"
+    talkDay: 2
+    trackTime: "10:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/4koDfwrY4ww6m8aWomk4wG/20dd7cd7fddca3456bd0c0360c205988/Princiya_Sequeira_Visualising_third-party_website_trackers.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=_nrezLQrHZ8&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=22"]
+    speakerIds: [680]
+  - id: 1088
+    name:
+      - {language: en, text: "Turn your smartphone into Nintendo Wii-like controller with JavaScript and machine learning"}
+    shortDescription:
+      - {language: en, text: "Bartosz will show you how to utilize machine learning algorithms and real-time stream processing\
+            \ to recognize gestures made by hand movements."}
+    longDescription:
+      - language: en
+        text: "In this talk Bartosz will show you how to utilize machine learning algorithms and real-time stream processing\
+            \ to recognize gestures made by hand movements.\n\nYou hold your smartphone in your hands and make a meaningful\
+            \ gesture. Smartphone generates accelerometer signal that is fetched by the web application. Application processes\
+            \ this stream of data points and executes machine learning algorithm to recognize your intention! This is later\
+            \ used to control an application or even a game!\n\nYou will learn how to apply all the pieces together to turn\
+            \ your smartphone into Nintendo Wii-like controller. Come and join Bartosz in this journey full of fun and science!"
+    talkDay: 2
+    trackTime: "10:30"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=MtpcOghiMkk&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=21"]
+    speakerIds: [694]
+  - id: 1089
+    name:
+      - {language: en, text: "There is a bluebird in my talk that wants to get out"}
+    shortDescription:
+      - {language: en, text: "Everyone talks about functional programming these days, but not many people talk about lambda\
+            \ calculus. In this talk, Lucas will show how you can write code using only functions, or, even better, only birds.\
+            \ Lucas promises your mind will be blown or he'll give you your time back."}
+    longDescription:
+      - language: en
+        text: "There is a bluebird in my talk that wants to get out, but state machines are too tough for him. This is not\
+            \ your usual functional programming talk. In it, you'll learn lambda calculus itself and see how exciting it can\
+            \ be to derive combinators from the most elegant ideas in computability theory.\n\nFunctional programming, JavaScript,\
+            \ and birds. Most people like at least two of them.\n\nIn this talk, we'll explore functional programming from\
+            \ a different angle. Instead of talking about functors, bifunctors, profunctors, monads, comonads and other trendy\
+            \ concepts we'll take a step back and learn lambda calculus itself.\n\nHow does lambda calculus express computation?\
+            \ How can we represent concepts such as true or false or, even better, how can we express boolean logic? How can\
+            \ we do arithmetic operations without using any numbers? What about loops? These are a few of the questions we're\
+            \ going to answer and we're gonna do that with small incremental steps.\n\nDuring all this process we'll also\
+            \ identify some unique and exquisite creatures: birds (or combinators, as some other people call them). These\
+            \ are patterns that will emerge naturally from the process of rediscovering lambda calculus and are guaranteed\
+            \ to blow everyone's mind by their simplicity and elegance.\n\nRediscovering lambda calculus feels like rediscovering\
+            \ math and finally understanding what is behind functional programming.\n\nWe'll finally let our bluebird out.\
+            \ We won't be too tough for him."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Сам Лукас говорит, что его доклад достаточно простой и ему\
+            \ можно поставить уровень смузи. А именно если вы понимаете, что такое функции в js, условные и арифметические\
+            \ операторы — то велком.*\n>\n> *Но все же мы решили поставить хардкор. Основной упор в докладе идет на концеп\
+            т Y-комбинаторов и лямбда-исчислений, и если вы используете функциональный подход в промышленной разработке, н\
+            екоторые концептуальные моменты функционального программирования выходят за рамки вашего кода. И то, что покаж\
+            ет Лукас, будет в максимальной мере полезно практикующим функциональный подход и позволит раскрыть некоторые м\
+            оменты самой концепции.*\n>\n> *Будет ли показанный подход применим в продакшне? Не думаем. Но сами идеи дадут\
+            \ взгляд с другого ракурса и помогут составить более полную картину.*\n\nThere is a bluebird in my talk that wants\
+            \ to get out, but state machines are too tough for him. This is not your usual functional programming talk. In\
+            \ it, you'll learn lambda calculus itself and see how exciting it can be to derive combinators from the most elegant\
+            \ ideas in computability theory.\n\nFunctional programming, JavaScript, and birds. Most people like at least two\
+            \ of them.\n\nIn this talk, we'll explore functional programming from a different angle. Instead of talking about\
+            \ functors, bifunctors, profunctors, monads, comonads and other trendy concepts we'll take a step back and learn\
+            \ lambda calculus itself.\n\nHow does lambda calculus express computation? How can we represent concepts such\
+            \ as true or false or, even better, how can we express boolean logic? How can we do arithmetic operations without\
+            \ using any numbers? What about loops? These are a few of the questions we're going to answer and we're gonna\
+            \ do that with small incremental steps.\n\nDuring all this process we'll also identify some unique and exquisite\
+            \ creatures: birds (or combinators, as some other people call them). These are patterns that will emerge naturally\
+            \ from the process of rediscovering lambda calculus and are guaranteed to blow everyone's mind by their simplicity\
+            \ and elegance.\n\nRediscovering lambda calculus feels like rediscovering math and finally understanding what\
+            \ is behind functional programming.\n\nWe'll finally let our bluebird out. We won't be too tough for him."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6s9d9TYgeWICAICKEigOIc/a37aec636258d39be95ee9a2cf157f64/Lucas_da_Costa_There_is_a_bluebird_in_my_talk_that_wants_to_get_out.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=rqZuNAjT2nI&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=27"]
+    speakerIds: [659]
+  - id: 1090
+    name:
+      - {language: en, text: "What if Picasso was a robot? Teaching art to the machine"}
+    shortDescription:
+      - {language: en, text: "You'll see what happens when we mix computational power and the greatest works of art the world\
+            \ has ever seen! And guess what? All that using Node.js. Hold tight, art class is about to start!"}
+    longDescription:
+      - language: en
+        text: "Machine learning is revolutionizing the technology world as we know it: recommender systems that know exactly\
+            \ what we're into, earphones capable of translating entire conversations on the fly and even predictive power\
+            \ to help us guess what the future may look like. But what about art? Can we teach machines how to be creative\
+            \ and come up with new art styles? \n\nIn this talk you'll see what happens when we mix computational power and\
+            \ the greatest works of art the world has ever seen! And guess what? All that using Node.js. Hold tight, art class\
+            \ is about to start!"
+    talkDay: 2
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=5sAL5_pi6cs&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=11"]
+    speakerIds: [688]
+  - id: 1091
+    name:
+      - {language: en, text: "Developing with WebAssembly: pitfalls and examples"}
+      - {language: ru, text: "Разработка под WebAssembly: реальные грабли и примеры"}
+    shortDescription:
+      - {language: en, text: "This talk is about pitfalls we fell into while moving our big app to C++ in browser."}
+      - {language: ru, text: "Расскажем, какие реальные грабли мы собрали при переносе нашего большого приложения на C++ в\
+            \ браузер."}
+    longDescription:
+      - language: en
+        text: "This talk is about pitfalls we fell into while moving our big app to C++ in browser.\n\nWe'll discuss: \n-\
+            \ the instruments and what they can do;\n- how to throw objects between JS and Wasm;\n- the problems you can face\
+            \ and how to solve them;\n- the things Wasm can and cannot do;\n- how to find C++ code in browser debugger;\n\
+            - how much faster than JS is Wasm."
+      - language: ru
+        text: "Технология WebAssembly стремительно ворвалась во все популярные браузеры и таким образом стала доступной дл\
+            я коммерческой разработки. \n\nРасскажем, какие реальные грабли мы собрали при переносе нашего большого прилож\
+            ения на C++ в браузер. \n\nМы обсудим: \n- какие есть инструменты и что они могут; \n- как пробрасывать объект\
+            ы между JS и Wasm; \n- какие при этом возникают проблемы и как их решить; \n- что может Wasm, и чего он не мож\
+            ет; \n- как увидеть код C++ в отладчике браузера; \n- насколько Wasm быстрее JS."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6x7SlpJ7TqwWsAmK0AUkCW/0213f29f4d8123a578e6f6faa61a312d/Andrey_Nagikh_Razrabotka_pod_WebAssembly__realnyye_grabli_i_primery.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=uqG9DiT80UE&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=4"]
+    speakerIds: [700]
+  - id: 1092
+    name:
+      - {language: en, text: "Type systems in a nutshell"}
+      - {language: ru, text: "Системы типов в двух словах"}
+    shortDescription:
+      - {language: en, text: "How were the type systems of modern languages shaped, what theory lies behind them and where\
+            \ all of this is going? Let's try to discuss this."}
+      - {language: ru, text: "Как формировались системы типов современных языков, какая теория за ними лежит и куда все эт\
+            о движется? Попробуем коротко об этом поговорить."}
+    longDescription:
+      - {language: en, text: "Apps on JS gradually become bigger and more complicated, and tools such as Flow and TypeScript\
+            \ become more popular. Static typing is now a common thing in JS world, but we rarely wonder why these types look\
+            \ one way of another. How were the type systems of modern languages shaped, what theory lies behind them and where\
+            \ all of this is going? Let's try to discuss this."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *История систем типов. Анализ текущего состояния языков. Взг\
+            ляд в будущее системы типов.*\n>\n> *Лямбда-исчисление Черча. Лямбда-куб. Линейные типы.*\n>\n> *Глубоко. Осно\
+            вательно. Доходчиво.*\n>\n> *Прогоны доклада расширили сознание некоторых членов ПК.*\n\nПриложения на JS стан\
+            овятся больше и сложнее, а инструменты вроде Flow и TypeScript набирают популярность. Статическая типизация ст\
+            ановится обычной темой в JS-мире, при этом мы редко задаем себе вопрос, почему эти типы выглядят так или иначе\
+            . Как формировались системы типов современных языков, какая теория за ними лежит и куда все это движется? Попр\
+            обуем коротко об этом поговорить."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=nFtO6419A5k&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=15"]
+    speakerIds: [696]
+  - id: 1093
+    name:
+      - {language: en, text: "The Universal Serial Web"}
+    shortDescription:
+      - {language: en, text: "Sebastian will give an intro to the endless wonders we can encounter in the hardware world through\
+            \ our browser windows. Aside from learning the basics of USB and serial port communication, we'll paint on USB\
+            \ displays, live tweet to receipt printers, control an Arduino, steal data from Android phones and many more...\
+            \ The only limit is your imagination."}
+    longDescription:
+      - language: en
+        text: "As a web developer, it's easy to feel intimidated by the world of hardware hacking and the physical web: we\
+            \ have to leave our comfort zone and need to get familiar with a completely new development environment. But not\
+            \ anymore, thanks to wonderful possibilities that the WebUSB API brings to our browsers. \n\nIn this talk Sebastian\
+            \ will give an intro to the endless wonders we can encounter in the hardware world through our browser windows.\
+            \ Aside from learning the basics of USB and serial port communication, we'll paint on USB displays, live tweet\
+            \ to receipt printers, control an Arduino, steal data from Android phones and many more... The only limit is your\
+            \ imagination."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Раскрывается новый стандарт WebUSB, возможность работать с\
+            \ USB-устройствами из браузера. Живые демо-примеры, очень интересно и наглядно. Технология выглядит очень прив\
+            лекательно.*\n\nAs a web developer, it's easy to feel intimidated by the world of hardware hacking and the physical\
+            \ web: we have to leave our comfort zone and need to get familiar with a completely new development environment.\
+            \ But not anymore, thanks to wonderful possibilities that the WebUSB API brings to our browsers. \n\nIn this talk\
+            \ Sebastian will give an intro to the endless wonders we can encounter in the hardware world through our browser\
+            \ windows. Aside from learning the basics of USB and serial port communication, we'll paint on USB displays, live\
+            \ tweet to receipt printers, control an Arduino, steal data from Android phones and many more... The only limit\
+            \ is your imagination."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/5mwoMzLOqAumsiEscKoIKs/03623993840d8689717f3e267ea0ce2f/Sebastian_Golasch_The_Universal_Serial_Web.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=qXwO5N_xmUo&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=8"]
+    speakerIds: [690]
+  - id: 1094
+    name:
+      - {language: en, text: "Rendering 3D like adults"}
+      - {language: ru, text: "Рендерим 3D по-взрослому"}
+    shortDescription:
+      - {language: en, text: "This talk's purpose is to show that you can and should develop in 3D. It is aimed at developers\
+            \ who want to start developing 3D applications, but get confused by complexity. You will learn how to make your\
+            \ own 3D engine right now."}
+      - {language: ru, text: "Целью доклада является демонстрация того, что 3D-разработкой можно и нужно заниматься. Целев\
+            ая аудитория — это разработчики, которые хотят начать разрабатывать 3D-приложения, но побаиваются сложности. Д\
+            оклад дает представление о том, как создать свой 3D-движок уже сегодня."}
+    longDescription:
+      - language: en
+        text: "Artem will show how to build from scratch your own 3D rendering system (engine) on WebGL in browser, just like\
+            \ the professionals do it, and share architectural solutions and approaches. He will use evolving WebGL 2.0 standard\
+            \ and glTF 2.0 protocol for describing 3D scenes made by Khronos Group. \n\nThis talk's purpose is to show that\
+            \ you can and should develop in 3D. It is aimed at developers who want to start developing 3D applications, but\
+            \ get confused by complexity. You will learn how to make your own 3D engine right now."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Сама сфера 3D-моделирования не нова. Но ее реализация в веб\
+            е сейчас достаточно молодая. Соответственно, для веб-разработчиков процесс рендеринга 3D может показаться весь\
+            ма непонятным, так как работа с матрицами и векторами имеет под собой богатую теоретическую базу из смежной об\
+            ласти. Артем приоткроет тайны, поделится подходами для работы с 3D и погрузит вас в созерцательный мир построе\
+            ния сцен, работы со светом и взаимодействия с 3D-объектами.*\n\nАртем расскажет, как с нуля создать свою систе\
+            му 3D-рендеринга (движок) на WebGL в браузере так, как это делают профессионалы индустрии, поделится архитекту\
+            рными решениями и подходами. Он будет использовать развивающийся стандарт WebGL 2.0 и протокол описания 3D-сце\
+            н glTF 2.0 от Khronos Group. \n\nЦелью доклада является демонстрация того, что 3D-разработкой можно и нужно за\
+            ниматься. Целевая аудитория — это разработчики, которые хотят начать разрабатывать 3D-приложения, но побаивают\
+            ся сложности. Доклад дает представление о том, как создать свой 3D-движок уже сегодня."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/2HOMiamMRGCuQIo40scWqe/f3a501094513a89783d472665fe76d2b/Artem_Kunets_Renderim_3D_po-vzroslomu.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=2ptADWLEk6w&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=3"]
+    speakerIds: [691]
+  - id: 1095
+    name:
+      - {language: en, text: "\U0001f3c1 Final Form: Form state management via Observers"}
+    shortDescription:
+      - {language: en, text: "Erik's talk will discuss the lessons learned from building and maintaining the most popular\
+            \ form library, and how they were used to create a new form library, optimized for minimal React rerenders, but\
+            \ also powerful enough to be used with other libraries."}
+    longDescription:
+      - {language: en, text: "Managing form state is extremely complicated. Take it from the author of the most popular React\
+            \ form library, Redux-Form. Erik's talk will discuss the lessons learned from building and maintaining the most\
+            \ popular form library, and how they were used to create a new form library, optimized for minimal React rerenders,\
+            \ but also powerful enough to be used with other libraries."}
+    talkDay: 2
+    trackTime: "16:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=fxEW4jgoX-4&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=19"]
+    speakerIds: [695]
+  - id: 1096
+    name:
+      - {language: en, text: "Microservice architecture"}
+      - {language: ru, text: "Микросервисная архитектура"}
+    shortDescription:
+      - {language: en, text: "The hype has passed, and that means it's time to dive into the microservice architecture. We'll\
+            \ start with a conversation about the basic principles of technology, considering its basic principles in the\
+            \ light of its advantages and disadvantages. We'll talk about how the services architecture should look like,\
+            \ what problems there are and how to solve them."}
+      - {language: ru, text: "Хайп прошел, а это значит, самое время погружаться в микросервисную архитектуру. Начнем с ра\
+            зговора об основных принципах технологии, рассматривая ее базовые принципы в свете ее преимуществ и недостатко\
+            в. Поговорим, как должна выглядеть архитектура сервисов, какие проблемы бывают и как их решать."}
+    longDescription:
+      - language: en
+        text: "The hype has passed, and that means it's time to dive into the microservice architecture. We'll start with\
+            \ a conversation about the basic principles of technology, considering its basic principles in the light of its\
+            \ advantages and disadvantages. We'll talk about how the services architecture should look like, what problems\
+            \ there are and how to solve them.\n\nIn the talk we'll cover:\n- what architectures are;\n- the basic principles\
+            \ in the light of advantages and disadvantages;\n- teamwork;\n- dependency control;\n- communication between services;\n\
+            - service architecture;\n- when exactly we create a new microservice;\n- complexity and importance of CI/CD;\n\
+            - delusions."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Глубокое погружение в мир микросервисов на TS с исключитель\
+            но практической стороны, разбавленное огромным количеством опыта. Как? Куда? Зачем? Почему? Дмитрий подробно о\
+            тветит на все эти вопросы с весьма качественными примерами из весьма интересного проекта.*\n\nХайп прошел, а э\
+            то значит, самое время погружаться в микросервисную архитектуру. Начнем с разговора об основных принципах техн\
+            ологии, рассматривая ее базовые принципы в свете ее преимуществ и недостатков. Поговорим, как должна выглядеть\
+            \ архитектура сервисов, какие проблемы бывают и как их решать.\n\nВ докладе обсудим:\n- какие архитектуры быва\
+            ют;\n- базовые принципы в свете преимуществ и недостатков;\n- работу в команде;\n- контроль зависимостей;\n- к\
+            оммуникацию между сервисами;\n- архитектуру сервиса;\n- когда мы выделяем новый микросервис;\n- сложности и ва\
+            жность CI/CD;\n- заблуждения."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6ctXGTntFSAUIeaSymC8uG/d67d6379d4880dba71ab0ade0db5e480/Dmitriy_Patsura_Mikroservisnaya_arkhitektura.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=wXaoKroEnp4&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=2&t=0s"]
+    speakerIds: [692]
+  - id: 1097
+    name:
+      - {language: en, text: "Accessible charts done right"}
+      - {language: ru, text: "Разработка доступных графиков"}
+    shortDescription:
+      - {language: en, text: "Sergei will guide you through real world examples and identify solutions and best practices\
+            \ for making charts accessible."}
+      - {language: ru, text: "Сергей расскажет про разные способы создания доступных графиков с помощью библиотеки d3 и на\
+            \ живых примерах покажет, как это работает."}
+    longDescription:
+      - {language: en, text: "What can be better than beautiful, descriptive and interactive charts for presenting complex\
+            \ data? We like charts because we tend to perceive graphical information faster than plain text. But what about\
+            \ people with visual impairments? How do they get information from charts? Is it even possible to make charts\
+            \ for everybody? Definitely yes! In this presentation Sergei will guide you through real world examples and identify\
+            \ solutions and best practices for making charts accessible."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Проблема доступности в столь необычном контексте весьма инт\
+            ересна. Сергей проработал и покажет на примерах множество подходов к разработке доступных графиков.*\n\nЧто мо\
+            жет быть лучше красивых, наглядных и интерактивных графиков для представления комплексных данных? Мы любим гра\
+            фики, потому что воспринимаем изображения гораздо быстрее и проще, чем простой текст. Но как насчет людей с на\
+            рушенным зрением? Как они получают информацию из графиков? Возможно ли вообще создавать графики для всех? Коне\
+            чно, да! В этом докладе Сергей расскажет про разные способы создания доступных графиков с помощью библиотеки d3\
+            \ и на живых примерах покажет, как это работает."
+    talkDay: 2
+    trackTime: "16:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/qTnEDmP1yocwOEuIs8GUE/e14985bdd5920b75904d625184efa754/Sergey_Kriger_Razrabotka_dostupnykh_grafikov.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=TvjRAwp4qSs&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=20"]
+    speakerIds: [667]
+  - id: 1098
+    name:
+      - {language: en, text: "Reliable JavaScript: chasing the myth"}
+      - {language: ru, text: "Надежный JavaScript: в погоне за мифом"}
+    shortDescription:
+      - language: en
+        text: "Illya will try to review the results brought by almost a year of research and selection of technologies and\
+            \ architectural solutions, all to make his team's code more reliable, as he sees it: \n- bad and \"wrong\" code\
+            \ should look wrong; \n- it should be easier for juniors (and not for them only) to write right code than wrong;\
+            \ \n- all that could be automated should be automated but without additional trouble."
+      - language: ru
+        text: "Илья постарается осветить результаты без малого года своих изысканий, подбора технологий и архитектурных ре\
+            шений для повышения надежности кода его команды так, как понимает это он: \n- плохой и «неправильный» код долж\
+            ен выглядеть неправильно; \n- джуну (да и не только) должно быть проще писать правильный код, чем неправильный\
+            ; \n- все, что может быть автоматизировано, должно быть автоматизировано, но максимально малой кровью."
+    longDescription:
+      - language: en
+        text: "January 2018. Setting: Illya's own little outsourcing company. A small mistake in the code costs the client\
+            \ $600k, a sum which neither Illya nor (now) his client has. \n\nWhile this episode didn't (thankfully) have a\
+            \ disastrous impact on the project or on the company as a whole, it did play a key role in Illya reconsidering\
+            \ his views on how a developer team should write reliable code.\n\nIn this talk, Illya will try to review the\
+            \ results brought by almost a year of research and selection of technologies and architectural solutions, all\
+            \ to make his team's code more reliable, as he sees it: \n- bad and \"wrong\" code should look wrong; \n- it should\
+            \ be easier for juniors (and not for them only) to write right code than wrong; \n- all that could be automated\
+            \ should be automated but without additional trouble. \n\nBasically Illya will introduce his own subjective choice\
+            \ in the vast world of JS technologies and tell which pains are behind his choice and how it works."
+      - language: ru
+        text: "Январь 2018 года. Место действия: собственная маленькая аутсорсинговая компания Ильи. Небольшая ошибка в ко\
+            де стоит клиенту $600k — суммы, которой нет ни у Ильи, ни (теперь) у клиента. \n\nЭто событие, хоть и не ставш\
+            ее (к счастью) фатальным ни для проекта, ни для компании в целом, стало решающим фактором в пересмотре Ильей е\
+            го взглядов на написание надежного кода командой разработчиков. \n\nВ этом докладе Илья постарается осветить р\
+            езультаты без малого года своих изысканий, подбора технологий и архитектурных решений для повышения надежности\
+            \ кода его команды так, как понимает это он: \n- плохой и «неправильный» код должен выглядеть неправильно; \n\
+            - джуну (да и не только) должно быть проще писать правильный код, чем неправильный; \n- все, что может быть ав\
+            томатизировано, должно быть автоматизировано, но максимально малой кровью. \n\nФактически Илья познакомит вас\
+            \ со своим, сугубо субъективным выбором в огромном мире JS-технологий, расскажет, какие боли за ним стоят и ка\
+            к это работает."
+    talkDay: 2
+    trackTime: "17:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/55vEG1RMOQGWcwGUOIcCsc/cb364415978ff1b111369eba8d323c18/Ilya_Klimov_Nadezhnyy_JavaScript__v_pogone_za_mifom.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=o9zh5EHrpQA&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=16"]
+    speakerIds: [264]
+  - id: 1099
+    name:
+      - {language: en, text: "State of crypto in Node.js"}
+    shortDescription:
+      - {language: en, text: "The current state of cryptography in Node.js regarding security, interoperability and performance:\
+            \ what has happened, what is about to happen? What are our long-term plans?"}
+    longDescription:
+      - language: en
+        text: "Cryptography is all around us, and that's a good thing. In a world that increasingly depends on data, leveraging\
+            \ cryptography is mandatory for any modern application that deals with private user data. \n\nAs a Node.js core\
+            \ team member, Ujjwal will focus on the current state of cryptography in Node.js regarding security, interoperability\
+            \ and performance: what has happened, what is about to happen? What are our long-term plans? \n\nNode.js is made\
+            \ for the web and already well-equipped for the challenges of cryptography in today's applications! You will come\
+            \ away with a deeper understanding of some of these challenges and how to solve them using the Node.js crypto\
+            \ module (and how not to!)."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Модуль crypto и вообще криптография — достаточно неосвещенн\
+            ая, но находящаяся в стадии активной разработки часть Node.js. К счастью, Ujjwal Sharma сможет из первых рук р\
+            ассказать прошлое, настоящее и будущее этого направления.*\n\nCryptography is all around us, and that's a good\
+            \ thing. In a world that increasingly depends on data, leveraging cryptography is mandatory for any modern application\
+            \ that deals with private user data. \n\nAs a Node.js core team member, Ujjwal will focus on the current state\
+            \ of cryptography in Node.js regarding security, interoperability and performance: what has happened, what is\
+            \ about to happen? What are our long-term plans? \n\nNode.js is made for the web and already well-equipped for\
+            \ the challenges of cryptography in today's applications! You will come away with a deeper understanding of some\
+            \ of these challenges and how to solve them using the Node.js crypto module (and how not to!)."
+    talkDay: 2
+    trackTime: "17:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/41ds97ACOkSouGWAUecqeI/3dae96801e0d7ea60d334c27a8db6844/Ujjwal_Sharma_State_of_crypto_in_Node.js.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=8oWCX1dqZ-k&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=5"]
+    speakerIds: [666]
+  - id: 1100
+    name:
+      - {language: en, text: "Building cross-platform mobile apps with Flutter.io"}
+    shortDescription:
+      - {language: en, text: "In this session, we'll talk about Flutter, what it is, why it's so cool, and we'll see a real-life\
+            \ application and illustrate how easy it is to build using Dart and Flutter."}
+    longDescription:
+      - language: en
+        text: "Wanna build a mobile application that covers both Android and iOS, but don't want to sacrifice speed and efficiency\
+            \ of your application? The next generation of cross-platform mobile app frameworks is already here. In this session,\
+            \ we'll talk about Flutter, what it is, why it's so cool, and we'll see a real-life application and illustrate\
+            \ how easy it is to build using Dart and Flutter. \n\nThis talk targets JavaScript developers, those who are familiar\
+            \ with JavaScript, but do not have to be familiar with Dart."
+    talkDay: 2
+    trackTime: "17:30"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=HRELNstRkKc&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=12"]
+    speakerIds: [681]
+  - id: 1101
+    name:
+      - {language: en, text: "Little Data Science for the big front-end"}
+      - {language: ru, text: "Маленький Data Science для большого фронтенда"}
+    shortDescription:
+      - language: en
+        text: "We'll discuss the following topics:\n- What is Data Science and why we should know about it?\n- How Data Science\
+            \ can help us in front-end and what we should do for it?\n- Demo of a new data analysis tool and why we created\
+            \ it.\n- Case studies, what can be done by now and in the future."
+      - language: ru
+        text: "Обсудим:\n- Что такое Data Science и почему стоит знать об этом?\n- Чем Data Science может помочь во фронте\
+            нде и что для этого нужно?\n- Анонс инструмента для построения стендов анализа данных и как мы дошли до этого\
+            .\n- Ответ на вопрос «кто такой Жора?»\n- Практические примеры, что можно сделать уже сегодня и планы на будущ\
+            ее."
+    longDescription:
+      - language: en
+        text: "We'll discuss the following topics:\n- What is Data Science and why we should know about it?\n- How Data Science\
+            \ can help us in front-end and what we should do for it?\n- Preview of a data analysis stand building tool and\
+            \ how it came to that.\n- Case studies, what can be done by now and in the future."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Почти каждую HolyJS Роман демонстрирует интереснейшие инстр\
+            ументы и подходы, которые не оставляют равнодушным почти никого. В этот раз Роман сделает шаг в сторону Data Science,\
+            \ поделится новыми глубокими идеями и представит публике Жору.*\n\nОбсудим:\n- Что такое Data Science и почему\
+            \ стоит знать об этом?\n- Чем Data Science может помочь во фронтенде и что для этого нужно?\n- Анонс инструмен\
+            та для построения стендов анализа данных и как мы дошли до этого.\n- Ответ на вопрос «кто такой Жора?»\n- Прак\
+            тические примеры, что можно сделать уже сегодня и планы на будущее."
+    talkDay: 2
+    trackTime: "19:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3bj4XaKAKAiyMkeeMKSy0/5c73a6f6e7d39d68c70a1643f966b3e6/Roman_Dvornov_Little_Data_Science_for_the_big_front-end.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=ltV7zyEr4vQ&list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238&index=23"]
+    speakerIds: [685]

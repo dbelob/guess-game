@@ -473,7 +473,7 @@ public class ContentfulUtils {
                                 String speakerId = s.getSys().getId();
                                 boolean isErrorAsset = entryErrorSet.contains(speakerId);
                                 if (isErrorAsset) {
-                                    throw new IllegalArgumentException(String.format("Speaker id %s not resolvable for '%s' talk (change fixEntryNotResolvableError() method and rerun)", speakerId, t.getFields().getNameEn()));
+                                    throw new IllegalArgumentException(String.format("Speaker id %s not resolvable for '%s' talk (change ContentfulUtils:fixEntryNotResolvableError() method and rerun)", speakerId, t.getFields().getNameEn()));
                                 }
 
                                 return true;
@@ -1054,28 +1054,6 @@ public class ContentfulUtils {
         }
 
         List<NotResolvableSpeaker> notResolvableSpeakers = List.of(
-                new NotResolvableSpeaker(ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "3YSoYRePW0OIeaAAkaweE6") {
-                    @Override
-                    public Speaker createSpeaker(long id) {
-                        return new Speaker(
-                                id,
-                                "https://images.ctfassets.net/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG",
-                                extractLocaleItems(
-                                        "Irina Shestak",
-                                        null),
-                                extractLocaleItems(
-                                        null,
-                                        null),
-                                extractLocaleItems(
-                                        "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.",
-                                        null),
-                                "_lrlna",
-                                "lrlna",
-                                false,
-                                false
-                        );
-                    }
-                },
                 new NotResolvableSpeaker(ConferenceSpaceInfo.COMMON_SPACE_INFO, "6yIC7EpG1EhejCEJDEsuqA") {
                     @Override
                     public Speaker createSpeaker(long id) {
@@ -1168,6 +1146,50 @@ public class ContentfulUtils {
                                 false,
                                 false
                         );
+                    }
+                },
+                new NotResolvableSpeaker(ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "3YSoYRePW0OIeaAAkaweE6") {
+                    @Override
+                    public Speaker createSpeaker(long id) {
+                        return new Speaker(
+                                id,
+                                "https://images.ctfassets.net/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG",
+                                extractLocaleItems(
+                                        "Irina Shestak",
+                                        null),
+                                extractLocaleItems(
+                                        null,
+                                        null),
+                                extractLocaleItems(
+                                        "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.",
+                                        null),
+                                "_lrlna",
+                                "lrlna",
+                                false,
+                                false
+                        );
+                    }
+                },
+                new NotResolvableSpeaker(ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "2UddvLNyXmy4YaukAuE4Ao") {
+                    @Override
+                    public Speaker createSpeaker(long id) {
+                        return new Speaker(
+                                id,
+                                "https://images.ctfassets.net/nn534z2fqr9f/5cXGxn3cYwwYQu0c6kWYKU/5438788ca0a8c4aa8c1b69a775fc9d7d/Kriger.jpg",
+                                extractLocaleItems(
+                                        "Sergei Kriger",
+                                        "Сергей Кригер"),
+                                extractLocaleItems(
+                                        null,
+                                        null),
+                                extractLocaleItems(
+                                        "Sergei fell in love with web development back in high school. He got a degree in Information Technologies at the University of Helsinki and has been spending his professional career working for web design studios in Helsinki and Munich. Sergei's focus areas are JavaScript development, UX and accessibility.",
+                                        "Заболел веб-разработкой еще в школе (Windows 95, IE6, табличная верстка). Окончил Хельсинкский университет по специальности Information Technology, в настоящее время работает в Мюнхене фронтенд-разработчиком."),
+                                "_sergeikriger",
+                                null,
+                                false,
+                                false
+                                );
                     }
                 }
         );

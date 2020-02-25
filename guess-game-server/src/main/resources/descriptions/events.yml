@@ -404,6 +404,25 @@ events:
               930, 931, 932, 933, 934, 935, 936]
   - eventTypeId: 4
     name:
+      - {language: en, text: "HolyJS 2018 Msc"}
+      - {language: ru, text: "HolyJS 2018 Мск"}
+    startDate: "2018-11-24"
+    endDate: "2018-11-25"
+    siteLink:
+      - {language: en, text: "https://2018.holyjs-moscow.ru/en/"}
+      - {language: ru, text: "https://2018.holyjs-moscow.ru/"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Kutuzovsky Prospect 2/1 Building 1, Congress Park at the Radisson Royal Hotel"}
+      - {language: ru, text: "Кутузовский просп., 2/1, стр. 1, Конгресс-парк гостиницы «Рэдиссон Ройал Москва»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8JoTXuB47RLJthvyiZ94238
+    mapCoordinates: "55.751979, 37.566894"
+    talkIds: [1072, 1073, 1074, 1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089,
+              1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098, 1099, 1100, 1101]
+  - eventTypeId: 4
+    name:
       - {language: en, text: "HolyJS 2019 Msk"}
       - {language: ru, text: "HolyJS 2019 Мск"}
     startDate: 2019-11-08

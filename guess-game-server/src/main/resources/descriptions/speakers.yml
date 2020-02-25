@@ -3010,9 +3010,13 @@ speakers:
       - {language: en, text: "Illya Klymov"}
       - {language: ru, text: "Илья Климов"}
     company:
-      - {language: en, text: WookieeLabs}
+      - {language: en, text: JavaScript.Ninja}
     bio:
-      - {language: ru, text: "13 лет программирует на JS во всех его проявлениях: от микроконтроллеров до облачного рендер\
+      - {language: en, text: "14 years of JS everywhere: from microcontrollers to rendering video in the cloud. More than\
+            \ 5 years of educational experience (at two universities and Illya's own courses), Ph.D. in Computer Science (field\
+            \ of interest: System Analysis and Theory of optimal decisions). Coach at Kottans.Org project. Owns and runs small\
+            \ outsourcing company WookieeLabs, specializing in JS-only solutions."}
+      - {language: ru, text: "14 лет программирует на JS во всех его проявлениях: от микроконтроллеров до облачного рендер\
             инга видео. Более 5 лет профессионально учит людей (в двух вузах и на собственных курсах), кандидат технически\
             х наук. Организовывает конференцию KhJS в Харькове, тренер проекта Kottans.Org. Владелец небольшой аутсорсинго\
             вой компании WookieeLabs, специализирующейся исключительно на JS-проектах."}
@@ -6581,6 +6585,12 @@ speakers:
     fileName: 0587.jpg
     name:
       - {language: en, text: "Michel Weststrate"}
+    company:
+      - {language: en, text: michel.codes}
+    bio:
+      - {language: en, text: "Tech Lead and Open Source evangelist at Mendix. Speaker, blogger and author of MobX, MobX-state-tree,\
+            \ immer and several other libraries."}
+    twitter: mweststrate
   - id: 588
     fileName: 0588.jpg
     name:
@@ -7616,7 +7626,15 @@ speakers:
   - id: 659
     fileName: 0659.jpg
     name:
-      - {language: en, text: "Lucas Fernandes da Costa"}
+      - {language: en, text: "Lucas da Costa"}
+    company:
+      - {language: en, text: Converge.io}
+    bio:
+      - {language: en, text: "Lucas is a Brazilian software engineer living in London. He breathes JavaScript and is passionate\
+            \ about open source. He is a core team member of Chai.js and Sinon.js, two of the most popular libraries in the\
+            \ JS ecosystem, and is always trying to find better and more efficient ways to solve problems. His motto is \"\
+            strive to be lazy\"."}
+    twitter: thewizardlucas
   - id: 660
     fileName: 0660.jpg
     name:
@@ -7650,6 +7668,15 @@ speakers:
     name:
       - {language: en, text: "Stas Kurilov"}
       - {language: ru, text: "Стас Курилов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "For the last few years Stas has been developing frontend tools. He has the most experience with\
+            \ webpack, for which he's built a loader and a plug-in for work with SVG, a documentation generator, and even\
+            \ a banner rotator. Stas knows a lot about inner workings of this complex and powerful tool."}
+      - {language: ru, text: "Последние годы занимается разработкой инструментов для фронтенда. Больше всего у Стаса опыта\
+            \ с webpack, для которого он сделал лоадер и плагин для работы с SVG, генератор документации и даже баннерокру\
+            тилку. Стас много знает о внутреннем устройстве этого сложного и мощного инструмента."}
   - id: 663
     fileName: 0663.jpg
     name:
@@ -7703,11 +7730,28 @@ speakers:
     fileName: 0666.jpg
     name:
       - {language: en, text: "Ujjwal Sharma"}
+    company:
+      - {language: en, text: Igalia}
+    bio:
+      - {language: en, text: "Ujjwal is an undergrad student, an open source software fanatic and an active member of the\
+            \ JavaScript ecosystem. A Node.js core collaborator, Electron maintainer, Google Summer of Code mentor and ex-student,\
+            \ he has been working with the V8 team and the TC39 committee to help make JavaScript better, one commit at a\
+            \ time. He loves to talk about open source software, DevOps, JavaScript, Web Standards and the Open Web."}
+    twitter: ryzokuken
   - id: 667
     fileName: 0667.jpg
     name:
-      - {language: en, text: "Sergey Kriger"}
+      - {language: en, text: "Sergei Kriger"}
       - {language: ru, text: "Сергей Кригер"}
+    company: []
+    bio:
+      - {language: en, text: "Sergei fell in love with web development back in high school. He got a degree in Information\
+            \ Technologies at the University of Helsinki and has been spending his professional career working for web design\
+            \ studios in Helsinki and Munich. Sergei's focus areas are JavaScript development, UX and accessibility."}
+      - {language: ru, text: "Заболел веб-разработкой еще в школе (Windows 95, IE6, табличная верстка). Окончил Хельсинкск\
+            ий университет по специальности Information Technology, в настоящее время работает в Мюнхене фронтенд-разработ\
+            чиком."}
+    twitter: _sergeikriger
   - id: 668
     fileName: 0668.jpg
     name:
@@ -7757,6 +7801,12 @@ speakers:
     fileName: 0678.jpg
     name:
       - {language: en, text: "Mattias Petter Johansson"}
+    company: []
+    bio:
+      - {language: en, text: "MPJ runs Fun Fun Function, a YouTube channel about programming. Prior to that, he has worked\
+            \ as a developer for 13 years, for companies such as Spotify, Absolute Vodka and Blackberry. His record for solving\
+            \ the Rubik's Cube is 88 seconds but he has never been able to do a single correct time estimation in his life."}
+    twitter: mpjme
   - id: 679
     fileName: 0679.jpg
     name:
@@ -7777,15 +7827,50 @@ speakers:
     fileName: 0680.jpg
     name:
       - {language: en, text: "Princiya Sequeira"}
+    company:
+      - {language: en, text: smartHelios}
+    bio:
+      - language: en
+        text: "FOSS enthusiast, loves food and JavaScript. \n\nWorks at smartHelios. Outreachy Intern for Lightbeam with Mozilla."
+    twitter: princi_ya
+    gitHub: princiya
   - id: 681
     fileName: 0681.jpg
     name:
       - {language: en, text: "Ari Lerner"}
+    company: []
+    bio:
+      - {language: en, text: "Ari is the author of \"ng-book\" and has been teaching web development for a long time. He likes\
+            \ to speak at conferences and eat spicy food. He technically got paid while he traveled the country as a professional\
+            \ comedian, but has come to terms with the fact that he is not funny."}
+    twitter: auser
+    gitHub: auser
   - id: 682
     fileName: 0682.jpg
     name:
       - {language: en, text: "Maxim Salnikov"}
       - {language: ru, text: "Максим Сальников"}
+    company:
+      - {language: en, text: ForgeRock}
+    bio:
+      - language: en
+        text: "Maxim Salnikov is Oslo-based Web Full-Stack Engineer, a Google Developer Expert in Web Technologies & IoT,\
+            \ and a Microsoft MVP in Development Technologies. He architects complex web applications since the end of the\
+            \ last century and has extensive experience with all aspects of web platform focusing on the apps managing real-time\
+            \ data from IoT devices and Progressive Web Apps.\n\nMaxim is a founder and active contributor to two conferences:\
+            \ Mobile Era and ngVikings — Nordics' main conferences for mobile and Angular developers respectively. Also, he\
+            \ leads Norway's largest meetups dedicated to web front-end and mobile: Angular Oslo, Mobile Meetup, Oslo PWA.\n\
+            \nMaxim is passionate about sharing his web platform experience and knowledge with the community. He travels extensively\
+            \ for visiting developers events and speaking/training at conferences and meetups around the world."
+      - language: ru
+        text: "Максим — full-stack разработчик в ForgeRock, Google Developer Expert и Microsoft MVP. Фронтенд-разработкой\
+            \ он занимается с конца прошлого века, а в последнее время активно занялся темой Progressive Web Apps, запусти\
+            в самые большие англо- и русскоязычные площадки для обсуждения этой темы.\n\nМаксим является основателем и рук\
+            оводителем двух конференций: Mobile Era и ngVikings — главных скандинавских мероприятий по мобильной и Angular-р\
+            азработке соответственно. Кроме того, он проводит крупнейшие в Норвегии митапы по фронтенд- и мобайл-тематике\
+            .\n\nМаксим всегда готов поделиться своим опытом и знаниями. Он много путешествует, выступает и проводит масте\
+            р-классы на конференциях для разработчиков по всему миру."
+    twitter: webmaxru
   - id: 683
     fileName: 0683.jpg
     name:
@@ -7802,6 +7887,13 @@ speakers:
     fileName: 0684.jpg
     name:
       - {language: en, text: "Kamil Myśliwiec"}
+    company:
+      - {language: en, text: NestJS}
+    bio:
+      - {language: en, text: "Kamil Myśliwiec is an enthusiastic software engineer truly passionate about the web technologies.\
+            \ Creator of NestJS, open source evangelist, currently working as a Full-Stack developer with variety of languages,\
+            \ mainly focused on the web-related things."}
+    twitter: kammysliwiec
   - id: 685
     fileName: 0685.jpg
     name:
@@ -7841,10 +7933,32 @@ speakers:
     fileName: 0687.jpg
     name:
       - {language: en, text: "Marko Letic"}
+    company:
+      - {language: en, text: AVA}
+    bio:
+      - language: en
+        text: "Marko Letic is a front-end engineer, lecturer and data visualization scientist. He is currently connected with\
+            \ a Berlin-based company named AVA where he is working on a platform that combines big data, pattern recognition\
+            \ and artificial intelligence to take the safety of individuals, organizations, cities, and countries to a whole\
+            \ new level. His main role is to create a contextual analysis of the processed data through a web-based client\
+            \ application. \n\nMarko is a long time member of DAFED, a non-profit organization that is working on networking\
+            \ and educating the IT community. He holds a MSc degree in Computer Science and is pursuing his PhD in data visualization.\
+            \ He sometimes writes fiction novels that probably will never get published as he spends too much time coding."
+    twitter: NisamProgramer
   - id: 688
     fileName: 0688.jpg
     name:
       - {language: en, text: "Isa Silveira"}
+    company:
+      - {language: en, text: Work&Co}
+    bio:
+      - {language: en, text: "Isa is a software engineer building digital products at Work&Co. Throughout her career, she\
+            \ has worked with scientific research at COPPE, one of Brazil's most prestigious research organizations, and nowadays\
+            \ works both on back and front end applications. Isa has worked on products from world class companies like the\
+            \ Stanford University, Planned Parenthood and Virgin. She never turns down a good talk and a beer. In her free\
+            \ time she thinks about how she can make the world a better place while playing with her dogs and practicing slalom\
+            \ skating."}
+    twitter: silveira_bells
   - id: 689
     fileName: 0689.jpg
     name:
@@ -7879,6 +7993,15 @@ speakers:
     name:
       - {language: en, text: "Artem Kunets"}
       - {language: ru, text: "Артем Кунец"}
+    company:
+      - {language: en, text: "Align Technology"}
+    bio:
+      - {language: en, text: "Artem is developing a 3D application in Align Technology and researching the possibilities of\
+            \ WebGL in browser. In his free time, he develops his rendering engine. He believes that 3D graphics gives developers\
+            \ unlimited opportunities to implement their ideas."}
+      - {language: ru, text: "Артем разрабатывает приложение с 3D-сценой в Align Technology и изучает возможности WebGL в\
+            \ браузере. В свободное время развивает свой движок для рендеринга. Считает, что 3D-графика даёт разработчику\
+            \ безграничные возможности для реализации его идей."}
   - id: 692
     fileName: 0692.jpg
     name:
@@ -7907,19 +8030,51 @@ speakers:
     fileName: 0693.jpg
     name:
       - {language: en, text: "Theodore Vorillas"}
+    company:
+      - {language: en, text: Workable}
+    bio:
+      - language: en
+        text: "Theodore is a software engineer at Workable in Athens, currently working with a large scale JavaScript codebase.\n\
+            \nHe recently started researching A11Y and he realized he could combine IoT and JavaScript to help visually impaired\
+            \ people.\n\nHe loves FOSS, coffee, drones, woodworking and DIYing all the things."
+    twitter: vorillaz
   - id: 694
     fileName: 0694.jpg
     name:
       - {language: en, text: "Bartosz Pietrucha"}
+    company:
+      - {language: en, text: angular-academy.com}
+    bio:
+      - {language: en, text: "Bartosz Pietrucha is a full-stack software engineer, software consultant and founder of angular-academy.com.\
+            \ For the last couple of years he has been working with clients from Great Britain, Switzerland, Poland and Finland.\
+            \ Having achieved OOP proficiency with Java, he delved into JavaScript programming and found front-end world extremely\
+            \ fascinating. He wants to share his knowledge via trainings and workshops as it gives him great dose of fulfillment.\
+            \ He speaks at international conferences and gives workshops across Europe. He was teaching advanced front-end\
+            \ technologies in Poland, Israel, Great Britain, Finland, Romania, Tunisia and Colombia."}
+    twitter: pietrucha
   - id: 695
     fileName: 0695.jpg
     name:
       - {language: en, text: "Erik Rasmussen"}
+    company: []
+    bio:
+      - {language: en, text: "American expat settled in Spain, JavaScript aficionado, passionate about forms for some reason.\
+            \ Most GitHub stars in all of Spain, because that matters."}
+    twitter: erikras
   - id: 696
     fileName: 0696.jpg
     name:
       - {language: en, text: "Vyacheslav Shebanov"}
       - {language: ru, text: "Вячеслав Шебанов"}
+    company:
+      - {language: en, text: VK}
+      - {language: ru, text: ВКонтакте}
+    bio:
+      - {language: en, text: "Engineering manager for messaging service on VK platform. Likes functional programming languages.\
+            \ Extremely interested in type theory and adjacent subjects."}
+      - {language: ru, text: "Руководит командой сообщений ВКонтакте. Увлекается функциональным программированием. Последн\
+            ие 2 года много интересуется теорией типов и связанными областями."}
+    twitter: thought_sync
   - id: 697
     fileName: 0697.jpg
     name:
@@ -7955,11 +8110,28 @@ speakers:
     name:
       - {language: en, text: "Vsevolod Rodionov"}
       - {language: ru, text: "Всеволод Родионов"}
+    company:
+      - {language: en, text: Startup}
+      - {language: ru, text: Стартап}
+    bio:
+      - {language: en, text: "Lead software engineer."}
+    twitter: jabher
   - id: 700
     fileName: 0700.jpg
     name:
       - {language: en, text: "Andrey Nagikh"}
       - {language: ru, text: "Андрей Нагих"}
+    company:
+      - {language: en, text: Inetra}
+      - {language: ru, text: Инетра}
+    bio:
+      - {language: en, text: "Started working with the web in the last century. Used to be a full stack developer for quite\
+            \ a long time. In 2013 switched to the frontend. Now develops peer-2-peer system of video delivery in the browser\
+            \ using Node.js, MSE, WebSocket, WebRTC and WebAssembly."}
+      - {language: ru, text: "Начал заниматься вебом в прошлом веке. Долгое время был fullstack-разработчиком. В 2013 скон\
+            центрировался на фронтенде. Сейчас занимается разработкой peer-2-peer системы доставки видео в браузере, испол\
+            ьзуя технологии Node.js, MSE, WebSocket, WebRTC и WebAssembly."}
+    twitter: andrnag
   - id: 701
     fileName: 0701.jpg
     name:
