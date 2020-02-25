@@ -3173,15 +3173,15 @@ speakers:
       - {language: en, text: "Ivan Yamshchikov"}
       - {language: ru, text: "Иван Ямщиков"}
     company:
-      - {language: en, text: ABBYY}
+      - {language: en, text: "ABBYY, Max Planck Institute for Mathematics in the Sciences"}
     bio:
-      - {language: en, text: "Analyst at Yandex since 2011. Got PhD in applied mathematics at Brandenburg University of Technology\
-            \ (Cottbus, Germany). Is currently a research associate at Max Planck Institute (Leipzig, Germany) and a consultant\
-            \ at Yandex. Ivan is studying new AI work principles which could help us to understand how our brain works."}
-      - {language: ru, text: "Получил степень PhD по прикладной математике в Бранденбургском Технологическом университете\
-            . Шесть лет проработал аналитиком в Яндексе. Научный сотрудник Института Макса Планка в Лейпциге, евангелист к\
-            омпании ABBYY и сооснователь проекта Creaited Labs. Исследует новые принципы машинного интеллекта, которые пом\
-            огли бы понять, как работает наш мозг."}
+      - {language: en, text: "Got PhD in applied mathematics at Brandenburg University of Technology (Cottbus, Germany). Is\
+            \ currently a research associate at Max Planck Institute (Leipzig, Germany) and an AI-evangelist at ABBYY. Ivan\
+            \ is studying new AI work principles which could help us to understand how our brain works."}
+      - {language: ru, text: "Получил PhD по прикладной математике в Бранденбургском Технологическом университете (Котбус\
+            , Германия). В данный момент — научный сотрудник Института Макса Планка (Лейпциг, Германия) и AI-евангелист ABBYY.\
+            \ Иван исследует новые принципы работы искусственного интеллекта, которые могли бы помочь понять, как работает\
+            \ наш мозг."}
     twitter: kr0niker
   - id: 263
     fileName: 0263.jpg
@@ -6777,10 +6777,37 @@ speakers:
     fileName: 0532.jpg
     name:
       - {language: en, text: "Neal Ford"}
+    company:
+      - {language: en, text: ThoughtWorks}
+    bio:
+      - language: en
+        text: "Neal is Director, Software Architect, and Meme Wrangler at ThoughtWorks, a software company and a community\
+            \ of passionate, purpose-led individuals, who thinks disruptively to deliver technology to address the toughest\
+            \ challenges, all while seeking to revolutionize the IT industry and create positive social change.\n\nHe is an\
+            \ internationally recognized expert on software development and delivery, especially in the intersection of agile\
+            \ engineering techniques and software architecture. Neal has authored magazine articles, seven books (and counting),\
+            \ dozens of video presentations, and spoken at hundreds of developers conferences worldwide. His topics include\
+            \ software architecture, continuous delivery, functional programming, cutting edge software innovations, and includes\
+            \ a business-focused book and video on improving technical presentations.\n\nCheck out his <a href=\"http://nealford.com/\"\
+            \ target=\"_blank\">web site</a>."
+    twitter: neal4d
   - id: 533
     fileName: 0533.jpg
     name:
       - {language: en, text: "Jim Holmes"}
+    company:
+      - {language: en, text: "Guidepost Systems"}
+    bio:
+      - language: en
+        text: "Jim is the owner/principal of Guidepost Systems which lets him engage directly with struggling organizations.\
+            \ He's also an Executive Consultant at Pillar Technology where he works with organizations trying to improve their\
+            \ software delivery process. \n\nHe has been in various corners of the IT world since joining the US Air Force\
+            \ in 1982. He's spent time in LAN/WAN and server management roles in addition to many years helping teams and\
+            \ customers deliver great systems. Jim has worked with organizations ranging from start-ups to Fortune 10 companies\
+            \ to improve their delivery processes and ship better value to their customers. \n\nWhen not at work you might\
+            \ find Jim in the kitchen with a glass of wine, playing Xbox, hiking with his family, or banished to the garage\
+            \ while trying to practice his guitar."
+    twitter: aJimHolmes
   - id: 534
     fileName: 0534.jpg
     name:
@@ -6790,84 +6817,173 @@ speakers:
       - {language: en, text: Yandex}
       - {language: ru, text: Яндекс}
     bio:
-      - {language: en, text: "Developer at Yandex, makes tools and services for performance testing. He is into developing\
-            \ open source tools for load testing, such as [Yandex.Tank](https://github.com/yandex/yandex-tank) and [Pandora](https://github.com/yandex/pandora),\
-            \ along with load test results storage and analysis, [Overload](https://overload.yandex.net/)."}
-      - {language: ru, text: "Разработчик в Яндексе в службе нагрузочного тестирования. Делает инструменты и сервисы для т\
-            естирования производительности. Участвует в разработке таких open source-инструментов для нагрузочного тестиро\
-            вания, как [Яндекс.Танк](https://github.com/yandex/yandex-tank) и [Pandora](https://github.com/yandex/pandora),\
-            \ а также сервиса для нагрузочного тестирования — [Overload](https://overload.yandex.net/)."}
+      - {language: en, text: "Making infrastructure services and tools for performance testing and mobile development. Leading\
+            \ several open source projects: <a href=\"https://github.com/yandex/yandex-tank\" target=\"_blank\">Yandex.Tank</a>,\
+            \ <a href=\"https://github.com/yandex/pandora\" target=\"_blank\">Pandora</a> and <a href=\"https://github.com/yandex-load/volta\"\
+            \ target=\"_blank\">Volta</a>."}
+      - {language: ru, text: "Занимается разработкой инфраструктурных сервисов и инструментов, связанных с тестированием п\
+            роизводительности и мобильной разработкой. Развивает open source-проекты <a href=\"https://github.com/yandex/yandex-tank\"\
+            \ target=\"_blank\">Яндекс.Танк</a>, <a href=\"https://github.com/yandex/pandora\" target=\"_blank\">Pandora</a>\
+            \ и <a href=\"https://github.com/yandex-load/volta\" target=\"_blank\">Volta</a>."}
     twitter: direvius
   - id: 535
     fileName: 0535.jpg
     name:
       - {language: en, text: "Elena Kolpakova"}
       - {language: ru, text: "Елена Колпакова"}
+    company:
+      - {language: en, text: AKQA}
+    bio:
+      - language: en
+        text: "Elena is a test engineer and a test coach with nearly 15y of professional experience. Being a daughter of a\
+            \ software developer, you could say she took the path of a software tester as early as her childhood. Listed in\
+            \ the \"Next 125 Awesome Testers You Should Keep Your Eye on Always\".\n\nCurrently Elena applies her skills at\
+            \ AKQA in Berlin. This involves all kinds of testing activities, manual or automated, and helps her stay on track\
+            \ with the latest and pioneering technologies.\n\nIn addition, she takes part in hiring testers and helps them\
+            \ develop and grow through coaching sessions, tech talks, and workshops."
+      - language: ru
+        text: "Елена родилась в семье программиста, поэтому можно смело сказать, что она занимается тестированием с пелёно\
+            к. Окончив ВМиК МГУ, она начала карьеру профессионального тестировщика и на сегодняшний день проработала в это\
+            й области уже около 15 лет. Включена в список «Next 125 Awesome Testers You Should Keep Your Eye on Always».\n\
+            \nПоследние 10 лет Елена работает в Германии, в данный момент — в берлинском офисе компании AKQA. Она выполняе\
+            т как практические задачи, связанные с тестированием, включая автоматизацию, так и задачи тренера инженеров по\
+            \ тестированию. Это позволяет ей оставаться в курсе всех современных методов тестирования и инновационных техн\
+            ологий разработки.\n\nЕлена с удовольствием делится своим опытом с другими посредством семинаров внутри компан\
+            ии и участия в различных европейских конференциях, таких как EuroSTAR и Agile Testing Days."
+    twitter: helenekolpakova
   - id: 536
     fileName: 0536.jpg
     name:
       - {language: en, text: "Jessica Ingrassellino"}
+    company:
+      - {language: en, text: teachcode.org}
+    bio:
+      - {language: en, text: "Jessica Ingrassellino is a musician, teacher, philosopher, researcher, programmer, business\
+            \ owner, and software tester from New York. Before becoming a software tester, she was a full-time music teacher\
+            \ in New York City public schools. In 2015, she completed a dissertation about assessment and school music; in\
+            \ 2016, she wrote \"Python Projects for Kids\". She runs teachcode.org, working to bring coding education to underserved\
+            \ communities."}
+    twitter: jess_ingrass
   - id: 537
     fileName: 0537.jpg
     name:
       - {language: en, text: "Ang Li"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Ang is a Software Engineer in Google focusing on Tools and Infrastructure for mobile testing.\
+            \ Ang spent a few years on Android OS development before moving to broader Google missions. His current infrastructure\
+            \ project supports the testing of a wide range of Google products from mobile apps, to hardware platforms, to\
+            \ cutting-edge applications like VR/AR and Loon."}
   - id: 538
     fileName: 0538.jpg
     name:
       - {language: en, text: "Yury Dymov"}
       - {language: ru, text: "Юрий Дымов"}
     company:
-      - {language: en, text: "SAP China"}
+      - {language: en, text: "Uber Technologies"}
     bio:
       - language: en
-        text: "Graduated from Moscow State University, faculty Computational Mathematics and Cybernetics. Co-founder of QRATOR,\
-            \ leading Russian company in DDoS-attack mitigation solutions. Since 2013, Yury is a Team Lead of Mobile and Web\
-            \ Solutions Team in SAP CIS. Since 2016 Technical Architect in SAP China.\nPlayed major role in many web and mobile\
-            \ implementation projects in biggest Russian and international enterprises: Gazprom, Severstal, UkrTransGaz, SurgutNefteGaz,\
-            \ Petrobras, National Grid UK, DONG Energy, National Life and others."
-      - {language: ru, text: "Технический архитектор из SAP China с 2015 года, где с переменным успехом учит китайцев писа\
-            ть хороший код и делать качественный софт.  До этого несколько лет руководил практикой мобильных и веб-решений\
-            \ в SAP СНГ, где делал проекты для компаний Газпром, Лукойл, Северсталь, Башнефть, Сбербанк, Сургутнефтегаз, С\
-            ОКАР, УкрТрансГаз, National Grid, Dong Energy, Petrobras и других. В свободное от работы время разрабатывает н\
-            ебольшую социальную сеть и ждет подходящего проекта, чтобы опробовать на нем elixir и phoenix."}
+        text: "iOS Teamlead @Uber in Uber Rewards organization.\n\nPrior to that Yury oversaw mobile and web team at SAP CIS\
+            \ for several years. He was involved in web and mobile project implementations in the following enterprises: Gazprom,\
+            \ Lukoil, Bashneft, Sberbank, Gazprom, Severstal, SurgutNefteGaz, SOCAR, UkrTransGaz, Petrobras, DONG Energy,\
+            \ National Grid and others."
+      - language: ru
+        text: "Тимлид организации Uber Rewards, отвечает за iOS-разработку программы лояльности.\n\nДо этого несколько лет\
+            \ руководил практикой мобильных и веб-решений в SAP СНГ, где делал проекты для компаний Газпром, Лукойл, Север\
+            сталь, Башнефть, Сбербанк, Сургутнефтегаз, СОКАР, УкрТрансГаз, National Grid, Dong Energy, Petrobras и других."
     twitter: YuryDymov
   - id: 539
     fileName: 0539.jpg
     name:
       - {language: en, text: "Igor Lyrchikov"}
       - {language: ru, text: "Игорь Лырчиков"}
+    company:
+      - {language: en, text: "Digital Security"}
+    bio:
+      - {language: en, text: "Pentester, Bounty Hunter, speaker and researcher. HOF member: Mail.ru, Qiwi, KyivStar, Yandex,\
+            \ Unity3d. Likes to create things that break things :)"}
+      - {language: ru, text: "Пентестер и Bounty Hunter, находил уязвимости у таких компаний, как Yandex, Mail.ru, Qiwi, KyivStar,\
+            \ Unity3d. В свободное время занимается автоматизацией инструментов для поиска уязвимостей."}
+    twitter: hd_421
   - id: 540
     fileName: 0540.jpg
     name:
       - {language: en, text: "Artem Shishkin"}
       - {language: ru, text: "Артём Шишкин"}
+    company:
+      - {language: en, text: "Intel Corporation"}
+    bio:
+      - {language: en, text: "Virtualisation expert and reverse engineer. Author of the following articles: \"Overview of\
+            \ the Intel SMEP technology and its partial bypassing on Windows 8\", \"Aligning the stars: Kernel pool spraying\
+            \ and VMware CVE-2013-2406\", and \"Windows 8.1 Kernel Patch Protection — PatchGuard\". Artem's areas of expertise\
+            \ are development of reverse engineering tools and low-level programming. He spoke at Positive Hack Days и ZeroNights\
+            \ conferences."}
+      - {language: ru, text: "Специалист по виртуализации и реверс-инженер. Автор статей «Обзор технологии Intel SMEP и ее\
+            \ частичный обход на Windows 8», «Руководство по выстраиванию звезд: kernel pool spraying и VMware CVE-2013-2406»\
+            \ и «Windows 8.1 Kernel Patch Protection — PatchGuard». Занимается созданием инструментов обратной разработки\
+            \ и низкоуровневым программированием. Выступал на конференциях Positive Hack Days и ZeroNights."}
+    twitter: honorary_bot
   - id: 541
     fileName: 0541.jpg
     name:
       - {language: en, text: "Vyacheslav Smirnov"}
       - {language: ru, text: "Вячеслав Смирнов"}
+    company:
+      - {language: en, text: Raiffeisenbank}
+      - {language: ru, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: "Vyacheslav works in testing for 10 years; he's a performance testing expert. He was improving\
+            \ quality in document flow, digital accounting, government services projects. Currently Vyacheslav is developing\
+            \ online banking channels for legal entities."}
+      - {language: ru, text: "Занимается тестированием 10 лет, хорошо разбирается в тестировании производительности. Повыш\
+            ал качество в проектах по документообороту, электронной отчётности, госуслугам. Сейчас развивает каналы дистан\
+            ционного банковского обслуживания для юридических лиц."}
   - id: 542
     fileName: 0542.jpg
     name:
       - {language: en, text: "Jack Vanlightly"}
+    company:
+      - {language: en, text: "SII Concatel"}
+    bio:
+      - {language: en, text: "Jack Vanlightly is a software architect and engineer with a focus on distributed systems, messaging\
+            \ systems and automation. He usually can be found working on projects related to event-driven architectures, systems\
+            \ reliability, test strategy and automation. He is active in the open source world, especially in the arena of\
+            \ messaging systems."}
+    twitter: vanlightly
   - id: 543
     fileName: 0543.jpg
     name:
       - {language: en, text: "Oliver B. Fischer"}
+    company:
+      - {language: en, text: "diconium digital solutions"}
+    bio:
+      - {language: en, text: "Oliver is Head of Development and Software Architect at diconium digital solutions in Berlin.\
+            \ He is an active Apache committer and contributes to a range of open source projects, mainly to jQAssistant.\
+            \ He also publishes widely in peer-reviewed journals and magazines with a strong focus on Java. He is passionate\
+            \ about innovative systems and ideas, especially in connection with Java but also on DevOps-related topics. Oliver\
+            \ leads the Java Usergroup Berlin-Brandenburg, is one of the organisers of the Hackergarten in Berlin and helps\
+            \ organise several conferences."}
+    twitter: sweblogtweets
   - id: 544
     fileName: 0544.jpg
     name:
-      - {language: en, text: "Denis Ribin"}
+      - {language: en, text: "Denis Rybin"}
       - {language: ru, text: "Денис Рыбин"}
     company:
-      - {language: ru, text: "Digital Security"}
+      - {language: en, text: "Digital Security"}
     bio:
-      - {language: ru, text: "Окончил СПБПУ по специальности «Информационная безопасность». В компании Digital Security за\
-            нимается анализом защищенности веб-приложений и внутренних сетей компаний. Читал лекции в рамках программы ста\
-            жировки внутри компании. Выступал с докладом на конференции Zeronights 2017 в секции Web Village. В свободное\
-            \ время исследует защищенность различных современных фреймворков разработки веб-приложений, а также инструмент\
-            ов развёртки (k8s, Docker). Участвует в программах bug bounty."}
-    twitter: __tfd__
+      - {language: en, text: "At Digital Security Denis analyses security of web applications and companies' local networks.\
+            \ He keeps up with new trends in organizing system infrastructure and keeping those systems secure, such as k8s,\
+            \ cloud solutions, serverless. Denis is passionate about different ways of automating pentesters' routine tasks,\
+            \ writing his own scripts, and analyzing efficiency of existing solutions. Bug bounter, researcher, speaker, and\
+            \ other fancy words."}
+      - {language: ru, text: "В компании Digital Security Денис занимается анализом защищенности веб-приложений и внутренн\
+            их сетей компаний. Активно интересуется свежими веяниями в области организации инфраструктуры систем и особенн\
+            остей обеспечения их безопасности, в частности, такими как k8s, облачные решения, serverless. Увлечен различны\
+            ми способами автоматизации рутинных задач пентестера, написанием собственных скриптов и анализом эффективности\
+            \ существующих решений. Багбаунтер, ресёрчер, спикер, а также другие пафосные слова."}
+    twitter: _ttffdd_
   - id: 545
     fileName: 0545.jpg
     name:
@@ -6936,6 +7052,19 @@ speakers:
     name:
       - {language: en, text: "Anton Bulavin"}
       - {language: ru, text: "Антон Булавин"}
+    company:
+      - {language: en, text: SEMrush}
+    bio:
+      - {language: en, text: "At SEMrush Anton is working on information security of product and internal services. He performs\
+            \ pentests and audit of web applications' architecture with regard to information security. Previously he was\
+            \ working on security of enterprise systems and services. In his free time Anton automates utilities for bug bounty\
+            \ and looks for new ways of detecting vulnerabilities. He had found vulnerabilities in companies such as Auth0,\
+            \ Ford, BMW, IKEA, etc."}
+      - {language: ru, text: "Антон занимается вопросами информационной безопасности продукта и внутренних сервисов в комп\
+            ании SEMrush. Проводит пентесты и аудит архитектуры веб-приложений со стороны ИБ. Ранее занимался безопасность\
+            ю enterprise-систем и сервисов. В свободное время автоматизирует утилиты для bug bounty и ищет новые способы н\
+            ахождения уязвимостей. Находил уязвимости в таких компаниях, как Auth0, Ford, BMW, IKEA и др."}
+    twitter: averonesis
   - id: 550
     fileName: 0550.jpg
     name:
@@ -6954,6 +7083,14 @@ speakers:
     fileName: 0551.jpg
     name:
       - {language: en, text: "Timothy Cochran"}
+    company:
+      - {language: en, text: ThoughtWorks}
+    bio:
+      - {language: en, text: "Tim Cochran works for ThoughtWorks NYC. He has been full stack developer and architect for over\
+            \ 15 years, working on everything from large distributed enterprise projects to small NGO visualization apps.\
+            \ He recently has been helping companies with digital transformation, moving towards continuous delivery and building\
+            \ a DevOps culture. He also is an automated testing zealot, practices TDD almost exclusively."}
+    twitter: timcochran
   - id: 552
     fileName: 0552.jpg
     name:
@@ -7034,6 +7171,16 @@ speakers:
     fileName: 0557.jpg
     name:
       - {language: en, text: "Nisan Haramati"}
+    company:
+      - {language: en, text: "Wallaroo Labs"}
+    bio:
+      - language: en
+        text: "Nisan Haramati is a software engineer who works on distributed data systems and their verification at Wallaroo\
+            \ Labs.\r\n\r\nHaving built and supported a variety of large-scale distributed data systems, he is passionate\
+            \ about making it easier to build robust distributed applications that produce high-quality data.\r\n\r\nIn his\
+            \ ideal world, the data could prove its own correctness, but in reality, we need to build trust in the systems\
+            \ that we use.\r\n\r\nNisan has a B.Sc from the University of British Columbia."
+    twitter: nisanharamati
   - id: 558
     fileName: 0558.jpg
     name:
@@ -7053,6 +7200,13 @@ speakers:
     name:
       - {language: en, text: "Vladimir Khonin"}
       - {language: ru, text: "Владимир Хонин"}
+    company:
+      - {language: en, text: MegaFon}
+      - {language: ru, text: МегаФон}
+    bio:
+      - {language: en, text: "QA Architect. Teamlead delivery Greenfield. CI/CD."}
+      - {language: ru, text: "Внедряет всё, что можно внедрить. НТ. QA."}
+    twitter: XVladyV
   - id: 560
     fileName: 0560.jpg
     name:
@@ -7071,13 +7225,34 @@ speakers:
   - id: 561
     fileName: 0561.jpg
     name:
-      - {language: en, text: "Viktor Koronevich"}
+      - {language: en, text: "Viktar Karanevich"}
       - {language: ru, text: "Виктор Короневич"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Senior Software Test Automation Engineer, Badoo, London, UK. 10+ years experience in automation\
+            \ of mobile apps. Viktar writes tests on Java / Ruby. He likes to explore the world, investigate issues with Fault\
+            \ Fail и Fault Pass tests."}
+      - {language: ru, text: "Senior Software Test Automation Engineer, Badoo, Лондон, Великобритания. 10+ лет опыта в авт\
+            оматизации тестирования мобильных приложений. Пишет тесты на Java / Ruby. Любит исследовать мир, разбираться с\
+            \ Fault Fail- и Fault Pass-тестами."}
   - id: 562
     fileName: 0562.jpg
     name:
       - {language: en, text: "Anatoliy Korovin"}
       - {language: ru, text: "Анатолий Коровин"}
+    company:
+      - {language: en, text: TheWhite}
+    bio:
+      - {language: en, text: "Anatoliy is a Java Architect with more than 8 years of experience in design and developing software\
+            \ applications. Interested in microservice architecture, test-driven development, object-oriented design and concurrency.\
+            \ Writes a <a href=\"http://antkorwin.com/\" target=\"_blank\">blog about Java and Spring Framework</a>. Active\
+            \ contributor to open source software. Public speaker at meetups about Java, software development and TDD."}
+      - {language: ru, text: "Анатолий работает Java-архитектором, активно использует TDD в повседневной работе. Пропаганд\
+            ирует использование микросервисной архитектуры и является фанатом стека Netflix Spring Cloud. Также он ведет <a\
+            \ href=\"http://antkorwin.com/\" target=\"_blank\">блог про Java-разработку</a>. В свободное время активно ком\
+            митит в open source проекты и выступает на Java-митапах."}
+    twitter: antkorwin
   - id: 563
     fileName: 0563.jpg
     name:
@@ -7095,6 +7270,15 @@ speakers:
     fileName: 0564.jpg
     name:
       - {language: en, text: "Shelley Lambert"}
+    company:
+      - {language: en, text: "IBM Canada"}
+    bio:
+      - {language: en, text: "Shelley Lambert is the Test Lead for IBM Runtime Technologies team. She and her team test open\
+            \ and freely available JDK implementations and have delivered the test strategy, test code base, and test frameworks\
+            \ into the Eclipse OMR, Eclipse OpenJ9 and AdoptOpenJDK projects. She is a committer at OpenJ9 and AdoptOpenJDK,\
+            \ where she also serves on the TSC and draws stories and lessons from her experiences in the open projects where\
+            \ she is most active."}
+    twitter: ShelleyMLambert
   - id: 565
     fileName: 0565.jpg
     name:
@@ -7138,6 +7322,11 @@ speakers:
     fileName: 0567.jpg
     name:
       - {language: en, text: "Andrey Lushnikov"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Former Chrome Puppeteer TL. Currently in Microsoft Playwright team."}
+    twitter: aslushnikov
   - id: 568
     fileName: 0568.jpg
     name:
@@ -7309,11 +7498,29 @@ speakers:
     name:
       - {language: en, text: "Ivan Rumak"}
       - {language: ru, text: "Иван Румак"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: "Web application security tester at Kontur."}
+      - {language: ru, text: "Тестировщик безопасности веб-приложений в Контуре."}
   - id: 580
     fileName: 0580.jpg
     name:
-      - {language: en, text: "Elena Sharova"}
+      - {language: en, text: "Helene Sharova"}
       - {language: ru, text: "Елена Шарова"}
+    company:
+      - {language: en, text: CIAN}
+      - {language: ru, text: ЦИАН}
+    bio:
+      - {language: en, text: "Software engineer at CIAN. Up until recently Helene was a lead developer at Alfa-Lab, designing\
+            \ and developing online bank and preparing a set of tools and approaches to work with microservice architecture\
+            \ in the front-end area. She was passionate about developing tools for automating internal development processes.\
+            \ For more than 6 years Helene works a lot with TypeScript, React ecosystem, and Node.js."}
+      - {language: ru, text: "Software engineer в ЦИАН. До недавнего времени как главный разработчик в Альфа-Лаборатории з\
+            анималась проектированием и разработкой интернет-банка, формированием набора инструментов и подходов для работ\
+            ы с микросервисной архитектурой на фронтенде. Уделяла большое внимание созданию инструментов для автоматизации\
+            \ внутренних процессов разработки. Более 6 лет много работает с TypeScript, экосистемой React, Node.js."}
   - id: 581
     fileName: 0581.jpg
     name:
@@ -7334,11 +7541,27 @@ speakers:
     name:
       - {language: en, text: "Nikita Sobolev"}
       - {language: ru, text: "Никита Соболев"}
+    company:
+      - {language: en, text: wemake.services}
+    bio:
+      - language: en
+        text: "CTO at wemake.services, ElixirLangMoscow and MoscowPythonConf++ organizer.\n\nWriting <a href=\"https://sobolevn.me/\"\
+            \ target=\"_blank\">provocative articles</a>."
+      - language: ru
+        text: "CTO в wemake.services, организатор ElixirLangMoscow и MoscowPythonConf++.\n\nВедет <a href=\"https://sobolevn.me/\"\
+            \ target=\"_blank\">провокационный блог</a>."
   - id: 583
     fileName: 0583.jpg
     name:
       - {language: en, text: "Vladimir Solodov"}
       - {language: ru, text: "Владимир Солодов"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Vladimir has been working in testing of financial applications since 2009. He is experienced\
+            \ in testing applications for analysis in trading, online banking, now he tests billing in Badoo."}
+      - {language: ru, text: "Занимается тестированием с 2009 года, в арсенале тестирование финансовых приложений (аналити\
+            ческие платформы для трейдинга, дистанционное банковское обслуживание, биллинг), сейчас тестирует биллинг в Badoo."}
   - id: 584
     fileName: 0584.jpg
     name:
@@ -7376,6 +7599,15 @@ speakers:
     name:
       - {language: en, text: "Vasiliy Vanchuk"}
       - {language: ru, text: "Василий Ванчук"}
+    company:
+      - {language: en, text: DM}
+    bio:
+      - {language: en, text: "Passionate developer and troubleshooter. Works with great and productive teams and technologies.\
+            \ Has fun both with coding and communications."}
+      - {language: ru, text: "Увлеченный разработчик, который любит нестандартные задачи, любит как кодить, так и общаться\
+            . Обращает внимание на саморазвитие, много читает и помогает развиваться другим. Преподает на курсах и являетс\
+            я активным участником сообщества Web Not Bombs."}
+    twitter: vvscode
   - id: 587
     fileName: 0587.jpg
     name:

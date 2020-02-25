@@ -30344,3 +30344,859 @@ talks:
     presentationLinks: []
     videoLinks: ["https://youtu.be/001SxQCEuv8"]
     speakerIds: [407]
+  - id: 1223
+    name:
+      - {language: en, text: "Building evolutionary architectures: Fitness functions"}
+    shortDescription:
+      - {language: en, text: "This talk illustrates how to achieve evolutionary architectures and how to retrofit existing\
+            \ systems to support better evolution."}
+    longDescription:
+      - language: en
+        text: "_An evolutionary architecture supports incremental, guided change across multiple dimensions._\n\nFor many\
+            \ years, software architecture was described as the \"parts that are hard to change later\". But then microservices\
+            \ showed that if architects build evolvability into the architecture, change becomes easier. This talk, based\
+            \ on Neal's upcoming book, investigates the family of software architectures that support evolutionary change,\
+            \ along with how to build evolvable systems. Understanding how to evolve architecture requires understanding how\
+            \ architectural dimensions interact; Neal describes how to achieve appropriate coupling between components and\
+            \ services. Incremental change is critical for the mechanics of evolution; Neal covers how to build engineering\
+            \ and DevOps practices to support continuous change. Uncontrolled evolution leads to undesirable side effects;\
+            \ Neal covers how fitness functions build protective, testable scaffolding around critical parts to guide the\
+            \ architecture as it evolves.\n\nThe software development ecosystem exists in a state of dynamic equilibrium,\
+            \ where any new tool, framework, or technique leads to disruption and the establishment of a new equilibrium.\
+            \ Predictability is impossible when the foundation architects plan against changes constantly in unexpected ways.\
+            \ Instead, prefer evolvability over predictability. This talk illustrates how to achieve evolutionary architectures\
+            \ and how to retrofit existing systems to support better evolution."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/jq0kkSq9r1Y"]
+    speakerIds: [532]
+  - id: 1224
+    name:
+      - {language: en, text: "Modern web testing and automation with Puppeteer"}
+    shortDescription:
+      - {language: en, text: "The future of web testing and automation belongs to Puppeteer — Andrey will show why and how."}
+    longDescription:
+      - {language: en, text: "Andrey will explain how Puppeteer works and what makes it so fast. He'll show interesting use\
+            \ cases and will discuss how Puppeteer fits into clouds and docker containers. The future of web testing and automation\
+            \ belongs to Puppeteer — Andrey will show why and how."}
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/4nMIEyT6J7UVU9N8OeQA2I/e804c68a385250fd1a467599df0c1a12/Andrey_Lushnikov_Modern_web_testing_and_automation_with_Puppeteer.pdf"]
+    videoLinks: ["https://youtu.be/qpW69uD0w8o"]
+    speakerIds: [567]
+  - id: 1225
+    name:
+      - {language: en, text: "Vulnerability is a lucky bug"}
+    shortDescription:
+      - {language: en, text: "Have you thought about what a vulnerability is? Would you ever think you are directly connected\
+            \ to this phenomenon? We'd like to discuss what types of bugs matter. Let's see a real-life vulnerability example\
+            \ and how security researchers fight against it. Let's raise our security awareness."}
+      - {language: ru, text: "Вы когда-нибудь задумывались о том, что такое уязвимость? Приходило ли вам в голову, что вы\
+            \ имеете самое непосредственное отношение к их появлению? Посмотрим, какие баги представляют серьезную опаснос\
+            ть, поговорим об одной из часто встречающихся уязвимостей, о том, как исследователи проблем безопасности борют\
+            ся с ней, и научимся лучше понимать важность безопасности."}
+    longDescription:
+      - language: en
+        text: "You might have heard some news lately talking about a newly discovered fancy vulnerability. Have you thought\
+            \ about what a vulnerability is? Would you ever think you are directly connected to this phenomenon? Because yes,\
+            \ we as IT guys are the potential source of significant real world problems. So what we'd like to discuss in this\
+            \ talk is what types of bugs matter. Let's see a real-life vulnerability example and how security researchers\
+            \ fight against it. Let's raise our security awareness.\n\nThis talk is addressed to developers and testers of\
+            \ all kinds. Let's see how we can make a better world together."
+      - language: ru
+        text: "Наверняка вы не раз слышали о том, что найдена очередная хитрая уязвимость. Но вы когда-нибудь задумывались\
+            \ о том, что же такое уязвимость? Приходило ли вам в голову, что вы имеете самое непосредственное отношение к\
+            \ их появлению? Ведь мы, айтишники — потенциальный источник серьезных проблем в реальном мире. Поэтому в этом\
+            \ докладе мы посмотрим, какие баги представляют серьезную опасность. Поговорим об одной из часто встречающихся\
+            \ уязвимостей, о том, как исследователи проблем безопасности борются с ней, и научимся лучше понимать важность\
+            \ безопасности.\n\nДоклад ориентирован на разработчиков и тестировщиков любых специализаций. Давайте посмотрим\
+            , как мы вместе можем сделать мир лучше."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2H4w4zehx2N3St3RdfavTm/22e62441291bcdb4a8b326339c4dde77/Artem_Shishkin_Vulnerability_is_a_lucky_bug.pdf"]
+    videoLinks: ["https://youtu.be/n35TClQH7JM"]
+    speakerIds: [540]
+  - id: 1226
+    name:
+      - {language: en, text: "Tested for business: An open and transparent quality kit"}
+    shortDescription:
+      - {language: en, text: "Beyond a frank discussion starter on the criteria by which we measure quality, this talk summarizes\_\
+            the real quality requirements of enterprise customers and presents a compelling story for verifying and/or selecting\
+            \ your OpenJDK implementation."}
+    longDescription:
+      - language: en
+        text: "With the proliferation of OpenJDK binaries for a business to choose from, one factor in determining the selection\
+            \ is quality.\_How do you know your choice is up to snuff?\_The AdoptOpenJDK Quality Kit is an open and transparent\
+            \ verification story for OpenJDK binaries.\_A robust and adaptable test kit that can be utilized by any OpenJDK\
+            \ implementor, and represents the quality bar required by large-scale customers in enterprise environments.\_\
+            We test multiple freely available JDK implementations at AdoptOpenJDK and continue to refine this suite of tests\
+            \ to give the community access to high-quality binaries.\_\n\nBeyond a frank discussion starter on the criteria\
+            \ by which we measure quality, this talk summarizes\_the real quality requirements of enterprise customers and\
+            \ presents a compelling story for verifying and/or selecting your OpenJDK implementation."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Как тестировать OpenJDK на совместимость с различными версия\
+            ми ОС и фреймворками.*\n\nWith the proliferation of OpenJDK binaries for a business to choose from, one factor\
+            \ in determining the selection is quality.\_How do you know your choice is up to snuff?\_The AdoptOpenJDK Quality\
+            \ Kit is an open and transparent verification story for OpenJDK binaries.\_A robust and adaptable test kit that\
+            \ can be utilized by any OpenJDK implementor, and represents the quality bar required by large-scale customers\
+            \ in enterprise environments.\_We test multiple freely available JDK implementations at AdoptOpenJDK and continue\
+            \ to refine this suite of tests to give the community access to high-quality binaries.\_\n\nBeyond a frank discussion\
+            \ starter on the criteria by which we measure quality, this talk summarizes\_the real quality requirements of\
+            \ enterprise customers and presents a compelling story for verifying and/or selecting your OpenJDK implementation."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1ocj4OJksVmYOVwmb6JM78/84de23c33df6572e155bc9b839337df0/Shelley_Lambert_Tested_for_business_An_open_and_transparent_quality_kit.pdf"]
+    videoLinks: ["https://youtu.be/pYjFHOMJ2kc"]
+    speakerIds: [564]
+  - id: 1227
+    name:
+      - {language: en, text: "Move fast and don't break things"}
+    shortDescription:
+      - {language: en, text: "Two-hour global system failure which took place several years ago made Uber restructure their\
+            \ development and testing processes on all levels. Yury will tell about processes, approaches and tools concerning\
+            \ the iOS development part."}
+      - {language: ru, text: "Произошедший несколько лет назад глобальный отказ систем Убера на 2 часа заставил компанию п\
+            ерестроить процессы разработки и тестирования на всех уровнях. Юрий расскажет о процессах, подходах и инструме\
+            нтах, которые относятся к iOS-разработке."}
+    longDescription:
+      - {language: en, text: "Several years ago a two-hour global system failure cost Uber a small fortune. This incident\
+            \ made the company restructure its development and testing processes on all levels: for example, back-end was\
+            \ divided into microservices, and iOS and Android applications were rewritten from scratch, using the Presidio\
+            \ architecture. The way they view testing was changed, a new SLA — 99.99% crash free sessions — appeared. In this\
+            \ talk, Yury will tell about processes, approaches and tools concerning the iOS development part."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *О том, как Uber обеспечивает тестируемость своих мобильных п\
+            риложений и тестирует их.*\n\nНесколько лет назад глобальный отказ систем Убера на 2 часа стоил компании неско\
+            лько десятков миллионов долларов. Этот инцидент заставил перестроить процессы разработки и тестирования на все\
+            х уровнях, в частности, бэкенд был распилен на микросервисы, а iOS- и Android-приложения были переписаны с нул\
+            я на базе архитектуры Presidio. Изменилось отношение к тестированию, появилось SLA «99.99% crash free sessions»\
+            . В докладе Юрий расскажет о процессах, подходах и инструментах, которые относятся к iOS-разработке."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/5DEsQT61bBHCdwlKFXYReA/752ef4080d9d25cf4e4dd65dcd3077b6/100385_1521738191_Yuriy_Dymov_Move_fast_and_dont_break_things.pdf"]
+    videoLinks: ["https://youtu.be/Y0D62N_Xo8A"]
+    speakerIds: [538]
+  - id: 1228
+    name:
+      - {language: en, text: "Accelerating Apache JMeter"}
+      - {language: ru, text: "Ускоряем Apache JMeter"}
+    shortDescription:
+      - {language: en, text: "In the projects requiring high load, performance of a load script becomes a crucial question.\
+            \ And so we've tested performance of the performance testing tool."}
+      - {language: ru, text: "В проектах, где нужна высокая нагрузка, важным становится вопрос производительности нагрузоч\
+            ного скрипта. Поэтому мы подготовили отчёт по тестированию производительности инструмента для тестирования про\
+            изводительности."}
+    longDescription:
+      - language: en
+        text: "Apache JMeter is a popular performance testing tool with a lot of components and capabilities. With it, one\
+            \ and the same operation can be performed in several possible ways.\n\nIn the projects requiring high load, performance\
+            \ of a load script becomes a crucial question. And it would be great to have performance rating of Apache JMeter\
+            \ components and approaches to script writing.\n\nUsing Java applications profiling means, such as Java Flight\
+            \ Recorder, jVisualVM, SJK, having access to the tool source code, having written synthetic tests, and having\
+            \ taken some real-life examples, we've tested performance of the performance testing tool.\n\nThis talk could\
+            \ be of interest for performance testing engineers using Apache JMeter, juniors and seniors alike, and for developers\
+            \ using JVM/JDK for work and dealing with code profiling and optimization."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Apache JMeter не требует рекламы, но нечасто время уделяют с\
+            корости работы самих нагрузочных скриптов. Вячеслав рассматривает подходы к оптимальному написанию скриптов, ч\
+            то позволяет сэкономить на нагрузочных машинах и позволяет по-новому посмотреть на JMeter.*\n\nApache JMeter я\
+            вляется популярным инструментом тестирования производительности с большим количеством компонентов и возможност\
+            ей. Одни и те же операции в Apache JMeter можно выполнить несколькими способами.\n\nВ проектах, где нужна высо\
+            кая нагрузка, важным становится вопрос производительности нагрузочного скрипта. И хорошо бы иметь рейтинг прои\
+            зводительности компонентов Apache JMeter и подходов к написанию скриптов.\n\nПользуясь средствами профилирован\
+            ия Java-приложений, такими как Java Flight Recorder, jVisualVM, SJK, имея доступ к исходным кодам инструмента\
+            , написав синтетические тесты и взяв примеры из практики, мы подготовили отчёт по тестированию производительно\
+            сти инструмента для тестирования производительности.\n\nДоклад будет интересен инженерам по тестированию произ\
+            водительности, использующим Apache JMeter, как начинающим, так и опытным, а также разработчикам, использующим\
+            \ JVM/JDK в работе и занимающихся профилированием и оптимизацией кода."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/4THjBjVvHr3gZ6posIXqwG/2f51020a8addcd0f79d4581dfdf18321/100351_2035585911_Vyacheslav_Smirnov_Uskoryayem_Apache_JMeter.pdf"]
+    videoLinks: ["https://youtu.be/rQCspOA30Bc"]
+    speakerIds: [541]
+  - id: 1229
+    name:
+      - {language: en, text: "Property testing: Strategic automation for devs and SDETs"}
+    shortDescription:
+      - {language: en, text: "Property testing has been discussed as the next logical step to augment unit tests. By learning\
+            \ to write property tests, developers and SDETs can get more mileage out of unit tests by either using random\
+            \ libraries to test ranges of inputs over time, or in some cases automating testing for a specified series of\
+            \ inputs."}
+    longDescription:
+      - language: en
+        text: "Property testing has been discussed as the next logical step to augment unit tests. While unit tests are typically\
+            \ written to assert a single condition, property tests are written to assert multiple conditions within a set\
+            \ range that would apply to the specific unit of code under test. By learning to write property tests, developers\
+            \ and SDETs can get more mileage out of unit tests by either using random libraries to test ranges of inputs over\
+            \ time, or in some cases automating testing for a specified series of inputs. \r\n\r\nWhile this type of testing\
+            \ has been specified in UI testing (testing a feature using scenario outlines and data tables in Cucumber, for\
+            \ example), it is less common in unit and integration level tests. Yet, tests throwing a lot of data at a specific\
+            \ area of code are significantly less expensive to create and run in a property testing framework than in a UI\
+            \ framework. Thus, it is beneficial to consider how property testing can create value in our automation framework."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Заходит однажды тестировщик в бар и заказывает:*\n>- *кружку\
+            \ пива,*\n>- *2 кружки пива,*\n>- *0 кружек пива,*\n>- *999999999 кружек пива,*\n>- *ящерицу в стакане,*\n>- *–\
+            1 кружку пива,*\n>- *qwertyuip кружек пива.*\n\n>*А Джессика расскажет, как сделать такие тесты проще и удобне\
+            е.*\n\nProperty testing has been discussed as the next logical step to augment unit tests. While unit tests are\
+            \ typically written to assert a single condition, property tests are written to assert multiple conditions within\
+            \ a set range that would apply to the specific unit of code under test. By learning to write property tests, developers\
+            \ and SDETs can get more mileage out of unit tests by either using random libraries to test ranges of inputs over\
+            \ time, or in some cases automating testing for a specified series of inputs. \n\nWhile this type of testing has\
+            \ been specified in UI testing (testing a feature using scenario outlines and data tables in Cucumber, for example),\
+            \ it is less common in unit and integration level tests. Yet, tests throwing a lot of data at a specific area\
+            \ of code are significantly less expensive to create and run in a property testing framework than in a UI framework.\
+            \ Thus, it is beneficial to consider how property testing can create value in our automation framework."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/NiMEsnqLUUE"]
+    speakerIds: [536]
+  - id: 1230
+    name:
+      - {language: en, text: "Team testing: How to stop worrying and start getting results"}
+      - {language: ru, text: "Командное тестирование: как перестать беспокоиться и начать получать результат"}
+    shortDescription:
+      - {language: en, text: "We'll discuss how to combine tools and testing approaches in order to not to test one and the\
+            \ same things multiple times; use tests to make your system more easy to observe; ease test code support; stop\
+            \ locking ourselves into specific testing technologies."}
+      - {language: ru, text: "Рассмотрим, как сочетать инструменты и подходы к тестированию, для того чтобы не тестировать\
+            \ всем одно и то же по несколько раз; сделать так, чтобы тесты увеличивали обозреваемость вашей системы; упрос\
+            тить поддержку кода тестов; избавиться от лока на конкретные технологии в тестировании."}
+    longDescription:
+      - language: en
+        text: "A Rascal-Monkey\n\nDonkey\n\nBilly Goat\n\nAnd klunky Bear\n\nSet out to play a Project.\n\nThey found some\
+            \ Rust, Java, JS, and, of course, .NET.\n\nThey struck their keyboards, and typed with all their heart.\n\nNo\
+            \ luck.\n\nIn this talk, we'll discuss how to combine tools and testing approaches in order to: \n- not to test\
+            \ one and the same things multiple times; \n- use tests to make your system more easy to observe; \n- ease test\
+            \ code support; \n- stop locking ourselves into specific testing technologies. \n\nWe'll explore a real-life example\
+            \ of testing of related services, show how code and tests evolve in system components, and even manage to get\
+            \ an end-to-end report on them. We'll see how correct and optimal is the end result and discuss strategies of\
+            \ testing systems with associated program organization units."
+      - language: ru
+        text: "Проказница-Мартышка,\n\nОсел,\n\nКозёл\n\nДа косолапый Мишка\n\nЗатеяли сыграть Проект.\n\nДостали Rust, Java,\
+            \ JS и, конечно же, .NET,\n\nУдарили по клаве, а толку нет...\n\nВ докладе рассмотрим, как сочетать инструмент\
+            ы и подходы к тестированию, для того чтобы:\n- не тестировать всем одно и то же по несколько раз;\n- сделать т\
+            ак, чтобы тесты увеличивали обозреваемость вашей системы;\n- упростить поддержку кода тестов;\n- избавиться от\
+            \ лока на конкретные технологии в тестировании.\n\nВместе попробуем разобрать реальный пример тестирования вза\
+            имосвязанных сервисов, покажем эволюцию кода и тестов в компонентах системы и даже сумеем получить сквозной от\
+            чёт по ним. Рассмотрим полученный результат на корректность и оптимальность, обсудим стратегии тестирования си\
+            стем со связанными компонентами."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/svxwPOxIGCpMv3sEhNm3J/011e8aebc250b07ea48a793bc7979d17/Kirill_Tolkachev_Helene_Sharova_Team_testing_How_to_stop_worrying_and_start_getting_results.pdf"]
+    videoLinks: ["https://youtu.be/8PSy-VYazz0"]
+    speakerIds: [28, 580]
+  - id: 1231
+    name:
+      - {language: en, text: "Got a Kubernetes cluster, but not miner on pods? We're coming for you!"}
+      - {language: ru, text: "У вас есть кластер Kubernetes, но нет майнера на подах? Тогда мы идем к вам!"}
+    shortDescription:
+      - {language: en, text: "Anton will share his experience of automating use of the basic cluster protection rules, and\
+            \ also detection and attack techniques."}
+      - {language: ru, text: "Антон поделится опытом автоматизации применения базовых правил защиты кластеров Kubernetes,\
+            \ а также способами обнаружения и атак."}
+    longDescription:
+      - language: en
+        text: "Kubernetes is a powerful and at the same time complex tool. The question of security is pretty important, so\
+            \ it's necessary to pay extra attention even to the basic settings.\n\nSEMrush Security Team performed an internal\
+            \ audit, collected the most common mistakes of using clusters in the GKE environment, and researched public clusters.\
+            \ In this talk, Anton will share his experience of automating use of the basic cluster protection rules, and also\
+            \ detection and attack techniques."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Kubernetes шагает по планете, и рассказ про безопасность кла\
+            стера от эксперта как раз вовремя.*\n\nKubernetes является мощным и одновременно с этим сложным инструментом.\
+            \ Вопрос безопасности далеко не последний в списке, поэтому следует уделять особое внимание даже базовым настр\
+            ойкам. \n\nВ ходе внутреннего аудита кластеров в компании SEMrush Security Team собрала основные ошибки при ис\
+            пользовании кластера в среде GKE, а также провела небольшое исследование публично доступных кластеров. Докладч\
+            ик поделится опытом автоматизации применения базовых правил их защиты, а также способами обнаружения и атак."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/6fKybDeHsOn1NYh7TIDAz5/3326e3070f03c1b3693ec0fd8184886a/Anton_Bulavin_U_vas_yest_klaster_Kubernetes_no_net_maynera_na_podakh_Togda_my_idem_k_vam.pdf"]
+    videoLinks: ["https://youtu.be/X8YB3wzVR-w"]
+    speakerIds: [549]
+  - id: 1232
+    name:
+      - {language: en, text: "A systematic approach to building reliable distributed systems"}
+    shortDescription:
+      - {language: en, text: "We'll being looking at how applying TLA+ and random testing can catch hard-to-find bugs in our\
+            \ designs and implementations of distributed systems. People will see the utility of these techniques and where\
+            \ to start learning about them so they can apply the techniques themselves."}
+    longDescription:
+      - language: en
+        text: "Building distributed systems is hard. Even mature projects can continue to have design defects and implementation\
+            \ bugs.\n\nDesign defects are the worst as the cost of repair is higher due to the amount of code rework and testing\
+            \ required. We'll take a look at how we can rigorously check designs with TLA+ in order to catch defects before\
+            \ coding begins.\n\nImplementation bugs can be less costly to fix, but extremely costly to end users and the project's\
+            \ reputation. We'll look at finding implementation bugs with different types of testing such as rigorous randomized\
+            \ testing with failure injection. How we can automate this testing process and log the history of events that\
+            \ lead to failure. \n\nThe target audience is anyone involved in distributed systems development and testing.\n\
+            \nThe takeaway is that building reliable distributed systems requires a systematic approach but that all the tools\
+            \ we need are available to us today."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2BQh8PmJXNYVWWOj77bX2y/e1afce3290eceb29b3b70e1477f0246f/Jack_Vanlightly_A_systematic_approach_to_building_reliable_distributed_systems.pdf"]
+    videoLinks: ["https://youtu.be/s4sEEZBTx9c"]
+    speakerIds: [542]
+  - id: 1233
+    name:
+      - {language: en, text: "Testing tests"}
+      - {language: ru, text: "Тестирование тестов"}
+    shortDescription:
+      - {language: en, text: "Nikita will explain the theory — why and how to test the tests — show what tools there are,\
+            \ using Python as an example, and reveal the implementation issues honestly."}
+      - {language: ru, text: "Никита объяснит теоретическую основу: как и зачем тестировать тесты, покажет, какие есть инс\
+            трументы, на примере Python, честно расскажет о проблемах внедрения."}
+    longDescription:
+      - language: en
+        text: "Our tests don't test anything. And we only learn that they weren't enough when production crashes.\r\n\r\n\
+            Can't we do anything to fix this? Of course we can. We just need to test our tests!\r\n\r\nIn this talk, Nikita\
+            \ will explain the theory — why and how to test the tests — show what tools there are, using Python as an example,\
+            \ and reveal the implementation issues honestly."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Ты разрабатываешь код, делаешь к нему крутые тесты, и потом\
+            \ все это все равно падает в проде? Проблема с теми, кто будет проверять проверяющих, стара как мир, и Никита\
+            \ расскажет нам, как использовать мутационное тестирование, чтобы быть уверенным в качестве своих тестов и лит\
+            ь на прод спокойно.*\n\nНаши тесты ничего не тестируют. А узнаем мы о их недостаточности только после падения\
+            \ прода.\n\nНеужели никак нельзя исправить ситуацию? Конечно, можно. Просто нужно тестировать тесты!\n\nВ свое\
+            м докладе Никита объяснит теоретическую основу: как и зачем тестировать тесты, покажет, какие есть инструменты\
+            , на примере Python, честно расскажет о проблемах внедрения."
+    talkDay: 1
+    trackTime: "17:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1XNgWTK01mRvvzJkPgvK61/323a9155cce24320e97a726f8f4a04b6/Nikita_Sobolev_Testing_tests.pdf"]
+    videoLinks: ["https://youtu.be/wIOX_I69zYg"]
+    speakerIds: [582]
+  - id: 1234
+    name:
+      - {language: en, text: "Successfully detecting XSS vulnerabilities"}
+      - {language: ru, text: "Эффективный поиск XSS-уязвимостей"}
+    shortDescription:
+      - {language: en, text: "Ivan will tell what XSS vulnerability is, share his own technique of detecting it, explore potentially\
+            \ vulnerable parts of web applications and show how to create a generic payload to successfully detect XSS."}
+      - {language: ru, text: "Иван расскажет про суть XSS-уязвимости, поделится своей методологией ее поиска, рассмотрит п\
+            отенциально уязвимые части веб-приложений и покажет, как создать универсальный пейлоад для эффективного поиска\
+            \ XSS."}
+    longDescription:
+      - language: en
+        text: "XSS vulnerabilities are very common and highly dangerous web application security bugs. 10 out of 10 web applications\
+            \ are susceptible to XSS attacks, one way or another. A tester's task is to find these bugs faster than an intruder.\r\
+            \n\r\nIn this talk, Ivan will tell what this vulnerability is and share his own technique of detecting it. Using\
+            \ this technique, for the last year he found 54 XSS bugs through bug bounty programs. Some of these bugs were\
+            \ found in the products of large companies, such as Mail.ru, Yandex, Qiwi, etc. He'll explore potentially vulnerable\
+            \ parts of web applications and show how to create a generic payload to successfully detect XSS. He'll also show\
+            \ what similar vulnerabilities you can look for in your web applications.\r\n\r\nThis talk would be useful to\
+            \ testers who want to start testing security or already are testing it and want to level up."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Cross-Site Scripting стабильно входит в top 10 самых опасных\
+            \ атак на web-приложения, и рассказ от эксперта одновременно и интересен, и полезен.*\n\nXSS-уязвимости являют\
+            ся очень распространенными и опасными багами безопасности веб-приложений. 10 из 10 веб-приложений так или инач\
+            е подвержены риску быть атакованными через эксплуатацию XSS. Найти эти баги быстрее злоумышленников — в том чи\
+            сле задача тестировщика.\n\nВ докладе Иван расскажет про суть уязвимости, поделится своей методологией поиска\
+            , с помощью которой за последний год нашёл 54 XSS-бага в программах поиска уязвимостей: некоторые из них были\
+            \ у таких крупных компаний, как Mail.ru, Yandex, Qiwi и т. д. Он рассмотрит потенциально уязвимые части веб-пр\
+            иложений и покажет, как создать универсальный пейлоад для эффективного поиска XSS. Дополнительно он покажет, к\
+            акие похожие уязвимости можно поискать в своих веб-приложениях.\n\nДоклад будет полезен тестировщикам, которые\
+            \ хотят начать тестировать безопасность, а также тем, кто уже занимается тестированием безопасности и хочет пр\
+            окачаться."
+    talkDay: 1
+    trackTime: "17:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2vK0gVh6gWaN0mVwdOYpBQ/78fa8c49a13ccbb13fb3dbe8ea3077a2/Ivan_Rumak_Effektivnyy_poisk_XSS-uyazvimostey.pdf"]
+    videoLinks: ["https://youtu.be/EmJnUqFgaK8"]
+    speakerIds: [579]
+  - id: 1235
+    name:
+      - {language: en, text: "Continuous static code analysis"}
+      - {language: ru, text: "Непрерывный статический анализ кода"}
+    shortDescription:
+      - {language: en, text: "We'll see how to make static analyzers useful in your continuous integration pipeline, including\
+            \ projects that are old and didn't employ static analysis previously."}
+      - {language: ru, text: "Рассмотрим, как заставить статические анализаторы приносить пользу в вашем конвейере непреры\
+            вной интеграции, в том числе для старых и не использовавших ранее анализ проектов."}
+    longDescription:
+      - {language: en, text: "Static analyzers are our trusty allies capable of checking code for formatting violations, common\
+            \ bugs, and even spelling and configuration errors. In this talk, we'll see how to make these analyzers useful\
+            \ in your continuous integration pipeline, including projects that are old and didn't employ static analysis previously.\
+            \ We'll discuss limitations of the analysers and their place in the continuous integration process. We'll explore\
+            \ \"ratchet method\" of decreasing the number of static analysis findings. Code examples will be in Jenkins, but\
+            \ general principles can be applied to any CI system."}
+      - {language: ru, text: "Статические анализаторы — верные помощники, умеющие просматривать код на предмет нарушений ф\
+            орматирования, характерных багов и даже ошибок правописания и конфигурации. В докладе мы рассмотрим, как заста\
+            вить анализаторы приносить пользу в вашем конвейере непрерывной интеграции, в том числе для старых и не исполь\
+            зовавших ранее анализ проектов. Обсудим ограничения анализаторов и их место в процессе непрерывной интеграции\
+            . Рассмотрим «метод храповика» уменьшения количества находок статического анализа. Примеры кода будут на Jenkins,\
+            \ но общие принципы могут быть применены для любой CI-системы."}
+    talkDay: 1
+    trackTime: "17:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/4RYlO5NRRXEMbTML8VsLHZ/116a4efd700b11e91c7cff80dd9e2185/Ivan_Ponomarev_Continuous_static_code_analysis.pdf"]
+    videoLinks: ["https://youtu.be/_Wv-PvZeRlI"]
+    speakerIds: [19]
+  - id: 1236
+    name:
+      - {language: en, text: "Changing your organization's testing culture"}
+    shortDescription:
+      - {language: en, text: "Lessons learned working to change testing culture in a Fortune 10 global auto manufacturing\
+            \ company."}
+    longDescription:
+      - language: en
+        text: "How do you change the culture in your organization? One small step at a time. \n\nChanging culture can be a\
+            \ very frustrating experience in any organization, especially in larger ones. Often software delivery team members\
+            \ feel powerless and unable to affect any change themselves — but it's possible! \n\nThis talk centers around\
+            \ Jim's work changing the testing culture in a Fortune 10 company. You'll learn practical approaches that can\
+            \ help you change culture in your own organizations regardless of size. You'll learn about clarifying your ideas,\
+            \ finding advocates, understanding how to influence business goals, and other hands-on approaches. You'll also\
+            \ learn about the many abject failures Jim suffered and some ideas on how to avoid them. \n\nChanging culture\
+            \ may seem an impossible task, but it's possible! Join this talk and learn how!"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Порой кажется, что один тестировщик не может повлиять на мет\
+            оды разработки в компании. Джим поделится советами, как можно изменить то, что стоит изменить.*\n\nHow do you\
+            \ change the culture in your organization? One small step at a time. \n\nChanging culture can be a very frustrating\
+            \ experience in any organization, especially in larger ones. Often software delivery team members feel powerless\
+            \ and unable to affect any change themselves — but it's possible! \n\nThis talk centers around Jim's work changing\
+            \ the testing culture in a Fortune 10 company. You'll learn practical approaches that can help you change culture\
+            \ in your own organizations regardless of size. You'll learn about clarifying your ideas, finding advocates, understanding\
+            \ how to influence business goals, and other hands-on approaches. You'll also learn about the many abject failures\
+            \ Jim suffered and some ideas on how to avoid them. \n\nChanging culture may seem an impossible task, but it's\
+            \ possible! Join this talk and learn how!"
+    talkDay: 1
+    trackTime: "19:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/4ygx3DD9pRmifer1SWkHkg/6038ec88aa20d4a63498407212237223/Jim_Holmes_Changing_your_organizations_testing_culture.pdf"]
+    videoLinks: ["https://youtu.be/e7rz9D0ACbI"]
+    speakerIds: [533]
+  - id: 1237
+    name:
+      - {language: en, text: "Payments testing: How to avoid space mission to check a bulb"}
+      - {language: ru, text: "Тестируем платные сервисы: как перестать запускать самолет, чтобы проверить лампочку на приб\
+            орной панели"}
+    shortDescription:
+      - {language: en, text: "Payments testing is always a complicated process due to variety of payment providers. This talk\
+            \ is devoted to approach applied in Badoo, which let us increase speed and quality of service delivery."}
+      - {language: ru, text: "Тестирование платежей всегда усложняется наличием третьих сторон — платежных провайдеров. Мы\
+            \ расскажем о способе тестирования платных сервисов, который мы применили в Badoo и который позволил ускорить\
+            \ доставку сервиса пользователю."}
+    longDescription:
+      - language: en
+        text: "Viktar and Vladimir have a talk about payments testing method at Badoo. With this method, we improved the delivery\
+            \ speed of application testing keeping the quality of our products on the high level.\n\nAfter 7 years of testing\
+            \ payments, Vladimir observed that the elegant idea to eliminate external dependencies of real systems can cause\
+            \ negative revenge feelings. De facto, it is a simple and easy way to avoid issues with unstable environment like\
+            \ payment sandbox.\n\nAfter 10 years of automation, Viktar destroyed many unstable automated tests of payments.\
+            \ He integrated and applied on practice the method that allowed to keep tests fast and stable.\n\nOur method,\
+            \ applied for testing Apple payments on iOS, can be used on any other platform and any payment system."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Как тестировать платежи через разные платежные агрегаторы и\
+            \ не разориться.*\n\nВ докладе Виктор и Владимир расскажут о методе тестирования платежей в Badoo, изменившем\
+            \ скорость доставки конечного сервиса и качество продуктов. \n\nЗа семь лет тестирования платных сервисов и фи\
+            нансовых приложений Владимир с удивлением обнаружил, что элегантность идеи избавления от внешних зависимостей\
+            \ при тестировании платных сервисов не только не очевидна, но и вызывает яростное сопротивление. При этом толь\
+            ко такой подход может избавить от ограничений нестабильно работающих песочниц.\n\nВиктор, имея 10-летний опыт\
+            \ автоматизации, сломал много копий вокруг тестирования платных сервисов. Он предложил и применил на практике\
+            \ подход, который вывел автотесты для платных сервисов на новый уровень.\n\nМетод, примененный к платежам в Apple\
+            \ Store, может быть расширен на другие платформы и любые платежные системы."
+    talkDay: 2
+    trackTime: "11:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/1hHirh8bY5I5iIQARwzH5R/4c97a9c191ac8e3611121b893b6a88f8/Viktor_Koronevich_Vladimir_Solodov_Testiruyem_platnyye_servisy_kak_perestat_zapuskat_samolet_chtoby_proverit_lampochku_na_pr.pdf"]
+    videoLinks: ["https://youtu.be/PWxE0KZLU8Q"]
+    speakerIds: [583, 561]
+  - id: 1238
+    name:
+      - {language: en, text: "jQAssistant: Treat your code as a graph"}
+    shortDescription:
+      - {language: en, text: "jQAssistant allows you to build a graph representation of your Java project to analyze it and\
+            \ to write automatic checks to ensure your own rules in your code base without limitations on what you would like\
+            \ to check."}
+    longDescription:
+      - language: en
+        text: "Each software project is built of many different software artifacts, and each of them is connected to many\
+            \ others. All these aspects can be represented in form of a graph. The nodes of this graph represent items of\
+            \ your software project, and the edges between the nodes describe their relationship, how they are connected to\
+            \ each other. \n\nOne difficult task in our daily work is to find unwanted or harmful relationships. The second\
+            \ difficult task is to ensure that only allowed relationships are used and applied. \n\nThe open source tool <a\
+            \ href=\"http://www.jqassistant.org\" target=\"_blank\">jQAssistant</a> can help you to understand, visualize,\
+            \ and analyze structures and relationships of a Java project. It scans all files in the project and builds a graph\
+            \ out of the found artifacts and relationships in a graph database. Therefore, jQAssistant uses Neo4j 3. The generated\
+            \ graph can be queried with Neo4j's query language Cypher. You can also add your own nodes and relations to describe\
+            \ your own concepts. \n\nFurthermore, jQAssistant allows you to define rules for your project which can be checked\
+            \ automatically during the build or in the CI pipeline. \n\nIn this talk, Oliver will show what is possible with\
+            \ jQAssistant, how to integrate it and how it can help you to enforce your coding rules and architecture. \n\n\
+            Afterwards the attendee — programmer, quality engineer, or architect — will understand the idea behind software\
+            \ as graph, will be able to integrate jQAssistant and to write their own checks for their project."
+    talkDay: 2
+    trackTime: "11:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/m96mSaGaO2Fg470ssAtkk/31397379c0ab161d7fa96c5e35c11ac7/Oliver_Fischer_jQAssistant_Treat_your_code_as_a_graph.pdf"]
+    videoLinks: ["https://youtu.be/JbGjWRSRPN4"]
+    speakerIds: [543]
+  - id: 1239
+    name:
+      - {language: en, text: "Testing the internet of elevators"}
+      - {language: ru, text: "Тестирование интернета лифтов"}
+    shortDescription:
+      - {language: en, text: "What is testing of IoT platforms as illustrated by successful project for elevator systems."}
+      - {language: ru, text: "В чём заключается тестирование IoT-платформы на примере успешного проекта для лифтовых систе\
+            м."}
+    longDescription:
+      - language: en
+        text: "For the last two years Elena has been working on an IoT cloud platform for elevator systems as a lead tester\
+            \ in a small agile development team.\n\nTogether, they had to face and test quite a range of technologies, from\
+            \ elevator systems of the last century to cutting-edge data transfer protocols such as MQTT. \n\nThe list also\
+            \ included:\n- CAN bus,\n- 3G/LTE networking,\n- Raspberry Pi,\n- REST и MQTT API,\n- serverless architecture,\n\
+            - AWS IoT.\n\nIn the end, the solution they've been working on is now being successfully deployed on client's\
+            \ real-life elevator systems, and the users can access data of every elevator through web applications made by\
+            \ AKQA.\n\nIn this talk, Elena will introduce the basic aspects of testing an IoT platform using an example of\
+            \ connected elevators. She'll tell about the practical experience gained throughout the project, about testing\
+            \ the accompanying technologies listed above, as well as about the challenges she faced and how she solved them."
+      - language: ru
+        text: "На протяжении последних двух лет Елена принимала участие в создании облачной IoT-платформы для лифтовых сис\
+            тем по заказу клиента, а именно отвечала за тестирование на этом проекте.\n\nЗа это время команда Елены столкн\
+            улась с необходимостью тестирования целого ряда технологий — от лифтовых систем прошлого столетия до передовых\
+            \ технологий передачи данных по протоколу MQTT. А также:\n- CAN bus,\n- 3G/LTE networking,\n- Raspberry Pi,\n\
+            - REST и MQTT API,\n- serverless architecture,\n- AWS IoT.\n\nВ результате сегодня это решение успешно развора\
+            чивается на реальных лифтовых системах заказчика, а пользователям предоставлен удобный доступ к данным с каждо\
+            го лифта с помощью разработанных AKQA веб-приложений. \n\nВ докладе будут представлены основные особенности те\
+            стирования IoT-платформы на примере тестирования интернета лифтовых систем. Будет рассказано о практическом оп\
+            ыте и задачах тестирования перечисленных выше сопутствующих технологий, трудностях, с которыми приходится стал\
+            киваться, и способах их преодоления."
+    talkDay: 2
+    trackTime: "11:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/6KlshhPvoh33EZY9CpWKDZ/85e3966f87cb4a14a2559e23c8cfca58/Yelena_Kolpakova_Testirovaniye_interneta_liftov.pdf"]
+    videoLinks: ["https://youtu.be/LqdOXBfFZdI"]
+    speakerIds: [535]
+  - id: 1240
+    name:
+      - {language: en, text: "Pandora: Writing load scenarios in Go"}
+      - {language: ru, text: "Pandora: нагрузочные тесты в виде кода"}
+    shortDescription:
+      - {language: en, text: "Pandora is a load tool that can run your Go scenarios. Alexey will explain its architecture,\
+            \ show you how to write a load scenario, to configure and run it."}
+      - {language: ru, text: "Pandora — это генератор нагрузки, который может выполнять сценарии на Go. Алексей расскажет\
+            , как она устроена, как написать для нее сценарий, как ее сконфигурировать и запустить."}
+    longDescription:
+      - language: en
+        text: "Alexey will explain the architecture of Pandora, show you how to write a load scenario, to configure and run\
+            \ it.\r\n\r\nPandora is an open source load tool written in Go. You can use one of the off-the-shelf guns to shoot,\
+            \ but it's much more interesting to create your own scenarios (in Go). The compiler's high speed allows you to\
+            \ assemble scenarios into a binary right before shooting and get a high-performance generator built specifically\
+            \ for your service. You can keep load tests written in Go in your repository and work with them like with a code.\
+            \ Vast (especially concerning network libraries) Go ecosystem allows you to work with almost any protocol. Besides,\
+            \ Pandora can be integrated transparently with Yandex.Tank and enables you to automate launch of load tests, gather\
+            \ monitoring and receive fancy reports."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Everything as code, нагрузка as code. Это уже интересно! А р\
+            ассказ от известного создателя нагрузочных инструментов — бесценно.*\n\nАлексей расскажет, как устроена Pandora,\
+            \ как написать для нее сценарий, как ее сконфигурировать и запустить.\n\nPandora — это опенсорсный генератор н\
+            агрузки, написанный на Go. Для стрельб можно использовать одну из готовых пушек, но гораздо интереснее возможн\
+            ость создавать свои сценарии (на Go). Высокая скорость работы компилятора позволяет собирать сценарии в бинарь\
+            \ прямо перед стрельбой и получать высокопроизводительный генератор, заточенный именно под ваш сервис. Написан\
+            ные на Go нагрузочные тесты можно хранить в вашем репозитории и работать с ними как с кодом. Обширная экосисте\
+            ма языка Go, особенно в области сетевых библиотек, позволит работать практически с любым протоколом. Кроме тог\
+            о, Pandora прозрачно интегрируется в Yandex.Tank, позволяет автоматизировать запуск нагрузочных тестов, собира\
+            ть мониторинг и получать красивые отчеты."
+    talkDay: 2
+    trackTime: "12:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/5lwPIecdv5jgW56mvYjYNj/b5acb3fda8659276b61c3185019f3bcb/Aleksey_Lavrenyuk_Pandora_nagruzochnyye_testy_v_vide_koda.pdf"]
+    videoLinks: ["https://youtu.be/lkusMkIniq0"]
+    speakerIds: [534]
+  - id: 1241
+    name:
+      - {language: en, text: "Recon techniques in 2k19"}
+      - {language: ru, text: "Рекон и сбор скоупа перед тестированием на проникновение"}
+    shortDescription:
+      - {language: en, text: "Igor will describe in detail how recon's being performed, covering procedures of gathering information\
+            \ about a test object, ways of automating these actions on any scripting language and existing solutions which\
+            \ are mainly used in the industry."}
+      - {language: ru, text: "Игорь подробно расскажет, как производится recon, включая методологии, по которым осуществля\
+            ется сбор информации об объекте тестирования, а также способы автоматизации этих действий на любом скриптовом\
+            \ языке и обзор уже готовых решений, которые в основном и используются."}
+    longDescription:
+      - language: en
+        text: "Recon is the first step for every hacker or pentester; Igor will describe in detail how it's being performed.\
+            \ He'll cover procedures of gathering information about a test object, ways of automating these actions on any\
+            \ scripting language and existing solutions which are mainly used in the industry.\n\nThis talk's aimed at everyone\
+            \ who'd like to know what pentesters do and what they begin their working process with. The audience will learn\
+            \ what could become the base of cyberattack on their product or company."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *В своём выступлении Игорь расскажет, как собрать максимум ин\
+            формации об инфраструктуре для выявления векторов атаки и проведения тестирования на безопасность.*\n\nRecon,\
+            \ или разведка, является первым шагом, который совершается хакерами/пентестерами; Игорь подробно расскажет, ка\
+            кими способами это делается. В докладе будут освещены методологии, по которым осуществляется сбор информации о\
+            б объекте тестирования, а также способы автоматизации этих действий на любом скриптовом языке и обзор уже гото\
+            вых решений, которые в основном и используются.\n\nЦелевая аудитория доклада — все, кому интересно узнать о то\
+            м, что делают пентестеры и с чего они начинают свою работу. Слушатели получат представление о том, что может с\
+            тать плацдармом для совершения хакерской атаки на их продукт/компанию."
+    talkDay: 2
+    trackTime: "12:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/1MvQHJk8E4faDccq5MZeR0/4933f50ab968c5bdd48e7e735b75fee9/100353_956535706_Igor_Lyrchikov_Rekon_i_sbor_skoupa_pered_testirovaniyem_na_proniknoveniye.pdf"]
+    videoLinks: ["https://youtu.be/tPdUaow2IHU"]
+    speakerIds: [539]
+  - id: 1242
+    name:
+      - {language: en, text: "Utilizing component testing for ultra fast builds"}
+    shortDescription:
+      - {language: en, text: "Tim will walk you through the different kinds of component testing, show working examples and\
+            \ advise when to apply them. He will also cover what this might mean for your organization's broader testing strategy."}
+    longDescription:
+      - language: en
+        text: "A best practice of software architecture is to design your applications into independent modules or components,\
+            \ with a published contract for interaction between components. This is a principle of the popular microservice-style\
+            \ architecture, but it also applies to components created in a large monolith or with the out-of-the-box patterns\
+            \ that front-end libraries promote.\r\n\r\nIf we are able to test the functionality of the component independently,\
+            \ and apply a level of trust that those components work, this opens the door to rethinking Continuous Integration\
+            \ and Continuous Delivery strategy, potentially reducing the need for long test suites and many environments.\
+            \ It will also cause a rethinking of how to unite testing strategy and the test pyramid.\r\n\r\nIn this talk Tim\
+            \ Cochran will walk you through the different kinds of component testing, show working examples and advise when\
+            \ to apply them. He will also cover what this might mean for your organization's broader testing strategy."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Во-первых, это доклад про то, как правильно распределять тес\
+            ты между разными уровнями, в котором ни разу не звучит словосочетание «пирамида тестирования». Во-вторых, в до\
+            кладе очень много примеров кода, как делать это хорошо. И они базируются на очень большом опыте Тима по работе\
+            \ с различными системами и их тестированием.*\n\nA best practice of software architecture is to design your applications\
+            \ into independent modules or components, with a published contract for interaction between components. This is\
+            \ a principle of the popular microservice-style architecture, but it also applies to components created in a large\
+            \ monolith or with the out-of-the-box patterns that front-end libraries promote.\n\nIf we are able to test the\
+            \ functionality of the component independently, and apply a level of trust that those components work, this opens\
+            \ the door to rethinking Continuous Integration and Continuous Delivery strategy, potentially reducing the need\
+            \ for long test suites and many environments. It will also cause a rethinking of how to unite testing strategy\
+            \ and the test pyramid.\n\nIn this talk Tim Cochran will walk you through the different kinds of component testing,\
+            \ show working examples and advise when to apply them. He will also cover what this might mean for your organization's\
+            \ broader testing strategy."
+    talkDay: 2
+    trackTime: "12:30"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/13JPGx3JAZg"]
+    speakerIds: [551]
+  - id: 1243
+    name:
+      - {language: en, text: "Model-driven testing: A property-based approach to end-to-end testing"}
+    shortDescription:
+      - {language: en, text: "Applying property-based testing methods to end-to-end tests for distributed data systems and\
+            \ other complex applications."}
+    longDescription:
+      - language: en
+        text: "We often joke that the only thing harder than building a distributed system is testing it. And as with most\
+            \ jokes, there is a truth at its core. Distributed systems are difficult to test because their complexity grows\
+            \ in two directions: the complexity of concurrently moving parts is compounded by the unreliability of the distribution\
+            \ medium itself, often leading to failure circumstances that are as difficult to predict as they are to reproduce.\r\
+            \n\r\nProperty-based testing is the method of repeated execution of a function over a wide range of (possibly\
+            \ random) inputs in order to find cases where a specified property is violated. It can be further enhanced with\
+            \ a refinement process that minimizes the failing input range. This method is often helpful in discovering earlier\
+            \ the sort of edge-case bugs that would otherwise only crop up in production.\r\n\r\nWhen it comes to testing\
+            \ the properties of Wallaroo, a framework for building distributed data applications, the idea of combining property-based\
+            \ testing methods with end-to-end tests seemed liked a natural fit. On the one hand, we can leverage the property-based\
+            \ tests to show that Wallaroo's core properties hold over a broad range of application designs and system events\
+            \ (such as cluster scaling, network errors, and process crashes). And on the other hand, the end-to-end tests\
+            \ help show that these applications do, in fact, work in a variety of real-world conditions.\r\n\r\nThis presentation\
+            \ will focus on the challenges and benefits of using property-based testing in the end-to-end tests of distributed\
+            \ systems like Wallaroo. It will walk through the infrastructure and automation requirements, the signal design\
+            \ theory underpinning the tests, the active cycle of generation-execution-refinement for obtaining minimal reproducing\
+            \ test cases, and finally the results and lessons learned in the process."
+    talkDay: 2
+    trackTime: "14:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1b07Tmhf2rNPZXxUUaWGUi/82a759918568b61b4b4cf171c2724a03/Nisan_Haramati_Model-driven_testing_A_property-based_approach_to_end-to-end_testing.pdf"]
+    videoLinks: ["https://youtu.be/NqLt7DBeijQ"]
+    speakerIds: [557]
+  - id: 1244
+    name:
+      - {language: en, text: "How one drop of JavaScript might not infect the whole tun of your tests?"}
+      - {language: ru, text: "Как ложка JavaScript может не испортить ваши тесты?"}
+    shortDescription:
+      - {language: en, text: "Can a front-end developer do any good for a QA except for programming bugs? Let's imagine that\
+            \ we are all friends, eager to help each other. Which little things that developer's able to do without much effort\
+            \ can ease the testing process?"}
+      - {language: ru, text: "Может ли фронтендщик быть полезен QA чем-то, кроме программирования багов? Представим, что м\
+            ы живем дружно и готовы помогать друг другу. Какие мелочи могут упростить тестирование при незначительных затр\
+            атах со стороны разработчика?"}
+    longDescription:
+      - {language: en, text: "Can a front-end developer do any good for a QA except for programming bugs? Let's imagine that\
+            \ we are all friends, eager to help each other. Which little things that developer's able to do without much effort\
+            \ can ease the testing process?"}
+      - {language: ru, text: "Может ли фронтендщик быть полезен QA чем-то, кроме программирования багов? Представим, что м\
+            ы живем дружно и готовы помогать друг другу. Какие мелочи могут упростить тестирование при незначительных затр\
+            атах со стороны разработчика?"}
+    talkDay: 2
+    trackTime: "14:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1I1T1eZdWsDQOCYU6zLUtS/f3e468cb0220393c6d80f3bb3ed05f48/Vasiliy_Vanchuk_Kak_lozhka_JavaScript_mozhet_ne_isportit_vashi_testy.pdf"]
+    videoLinks: ["https://youtu.be/L7jOWLktXvA"]
+    speakerIds: [586]
+  - id: 1245
+    name:
+      - {language: en, text: "Microservice wars: JUnit episode V — TestContainers strikes back"}
+      - {language: ru, text: "Микросервисные войны: JUnit эпизод 5 — TestContainers наносит ответный удар"}
+    shortDescription:
+      - {language: en, text: "We'll explore how infrastructure of back-end integration testing evolves when we switch from\
+            \ monolith to microservices. We'll pay special attention to problems that only appear in testing of microservice\
+            \ applications."}
+      - {language: ru, text: "Рассмотрим эволюцию инфраструктуры интеграционного тестирования бэкенда при переходе от моно\
+            лита к микросервисам. Большое внимание будет уделено проблемам, которые появляются только в тестировании микро\
+            сервисных приложений."}
+    longDescription:
+      - language: en
+        text: "In this talk, we'll explore how infrastructure of back-end integration testing evolves when we switch from\
+            \ monolith to microservices. We'll pay special attention to problems that only appear in testing of microservice\
+            \ applications.\r\n\r\nWe'll see how JUnit5 can help us make our tests more concise.\r\n\r\nWe'll test working\
+            \ with databases and message brokers using Docker and test-containers library. If you think that testing asynchronous\
+            \ communication (for example, with RabbitMQ) is hard, then come and see for yourself that it really isn't.\r\n\
+            \r\nWe'll also discuss pitfalls of integration testing in Spring Framework and how to avoid them."
+      - language: ru
+        text: "В этом докладе мы рассмотрим эволюцию инфраструктуры интеграционного тестирования бэкенда при переходе от м\
+            онолита к микросервисам. Большое внимание будет уделено проблемам, которые появляются только в тестировании ми\
+            кросервисных приложений.\r\n\r\nПосмотрим, как JUnit5 может помочь нам сделать наши тесты более лаконичными.\r\
+            \n\r\nПри помощи Docker и библиотеки test-containers мы будем тестировать работу с базами данных и брокерами с\
+            ообщений. Если вы думаете, что тестировать асинхронное взаимодействие (например, с RabbitMQ) сложно, то приход\
+            ите, и вы увидите, что это не так.\r\n\r\nТакже мы поговорим о подводных камнях интеграционного тестирования в\
+            \ Spring Framework и вариантах их обхода."
+    talkDay: 2
+    trackTime: "14:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/5yPbR9rdb7RcgfryN2Zcfx/cb7b1056c8c3cd5e8dd8c6a3f54ec2ff/Anatoliy_Korovin_Microservice_wars_JUnit_episode_V_TestContainers.pdf"]
+    videoLinks: ["https://youtu.be/UeQfaulJJDo"]
+    speakerIds: [562]
+  - id: 1246
+    name:
+      - {language: en, text: "Wrong request"}
+      - {language: ru, text: "Запрос не туда"}
+    shortDescription:
+      - {language: en, text: "All that Denis knows about SSRF and considers interesting. The auditor's experience."}
+      - {language: ru, text: "Всё, что Денис знает о SSRF и считает интересным. Опыт аудитора."}
+    longDescription:
+      - language: en
+        text: "SSRF (Server-Side Request Forgery) is considered one of the most critical vulnerabilities in modern web applications.\
+            \ We'll talk about how to configure your environment to easily detect vulnerabilities causing SSRF, which scenarios\
+            \ you should consider in order to cover most checks and increase your chances of detecting the vulnerability.\n\
+            \nWe'll also discuss:\n- recommendations from personal experience of configuring own VDS host to detect SSRF;\n\
+            - ways of bypassing ill-implemented security techniques;\n- interesting cases of exploiting SSRF illustrated by\
+            \ bug bounty cases and personal experience."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *К чему ведёт наличие SSRF, как найти и как защититься. Подро\
+            бный и обстоятельный рассказ о выявлении уязвимостей server side request forgery (SSRF) в тестируемом приложен\
+            ии от постоянного участника bug bounty-программ.*\n\nАтака SSRF считается одной из наиболее критичных уязвимос\
+            тей, которую можно встретить в современных веб-приложениях. Поговорим, как стоит настроить окружения для облег\
+            чения процесса обнаружения уязвимостей, приводящих к SSRF, какие сценарии стоит учитывать для покрытия наиболь\
+            шего количества проверок и увеличения своих шансов найти уязвимость.\n\nБез внимания не останутся:\n- рекоменд\
+            ации из личного опыта настройки своего VDS-хоста для обнаружения SSRF;\n- способы обхода некорректно реализова\
+            нных методов защиты;\n- интересные сценарии эксплуатации SSRF на примере кейсов из bug bounty и личного опыта."
+    talkDay: 2
+    trackTime: "16:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/S1QrG5aYDkUjpceDq4Xx7/5ad53a6a2139f21780e38eb6fe7b9448/Denis_Rybin_Zapros_ne_tuda.pdf"]
+    videoLinks: ["https://youtu.be/qW6Vq19w2CM"]
+    speakerIds: [544]
+  - id: 1247
+    name:
+      - {language: en, text: "Test automation in the modern mobile world"}
+    shortDescription:
+      - {language: en, text: "This talk covers how to create complex end-to-end tests to cover the evolving user scenarios\
+            \ and emerging hw platforms like IOR devices. We will introduce the concept of host-driven test architecture and\
+            \ the tools Google built to implement such tests."}
+    longDescription:
+      - language: en
+        text: "As mobile applications and devices become the main venue to serve cutting-edge technologies to end users, their\
+            \ user scenarios become more interactive and inter-connected. Meanwhile, new hw platforms are created to interact\
+            \ with existing mobile devices. These trends in the mobile world present new challenges for test automation that\
+            \ traditional mobile testing tools are not able to meet.\n\nThis talk covers how to create complex end-to-end\
+            \ tests to cover the evolving user scenarios and emerging hw platforms like IOR devices. We will introduce the\
+            \ concept of host-driven test architecture and the tools Google built to implement such tests."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *Как тестировать Android, IOS, термостат, VR-очки с помощью о\
+            дного инструмента.*\n\nAs mobile applications and devices become the main venue to serve cutting-edge technologies\
+            \ to end users, their user scenarios become more interactive and inter-connected. Meanwhile, new hw platforms\
+            \ are created to interact with existing mobile devices. These trends in the mobile world present new challenges\
+            \ for test automation that traditional mobile testing tools are not able to meet.\n\nThis talk covers how to create\
+            \ complex end-to-end tests to cover the evolving user scenarios and emerging hw platforms like IOR devices. We\
+            \ will introduce the concept of host-driven test architecture and the tools Google built to implement such tests."
+    talkDay: 2
+    trackTime: "16:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/43VqiuCAGkdeeoicy8fzDj/850d1c36089c2387ac67ee85652d6da6/Ang_Li_Test_automation_in_the_modern_mobile_world.pdf"]
+    videoLinks: ["https://youtu.be/PhMXLa5afDk"]
+    speakerIds: [537]
+  - id: 1248
+    name:
+      - {language: en, text: "Load testing of MegaFon's Single Convergent Billing"}
+      - {language: ru, text: "Нагрузочное тестирование Единого биллинга МегаФон"}
+    shortDescription:
+      - {language: en, text: "We'll tell how we were doing this, what solutions we had to reject and why."}
+      - {language: ru, text: "Расскажем, как именно мы это сделали, какие решения пришлось отвергнуть и почему."}
+    longDescription:
+      - {language: en, text: "We'll tell how we were doing this, what solutions we had to reject and why."}
+      - {language: ru, text: "Расскажем, как именно мы это сделали, какие решения пришлось отвергнуть и почему."}
+    talkDay: 2
+    trackTime: "16:30"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/4dXr_8DFmek"]
+    speakerIds: [559]
+  - id: 1249
+    name:
+      - {language: en, text: "Quis custodiet ipsos custodes? Common ground between testing and data science"}
+      - {language: ru, text: "Quis custodiet ipsos custodes? Что общего между тестированием и анализом данных"}
+    shortDescription:
+      - {language: en, text: "How do data scientists formulate the hypothesis that they want to test? What does overfitting\
+            \ has in common with the hard quality control rules? What is critical rationalism and why we should remember about\
+            \ it when working with real-world data?"}
+      - {language: ru, text: "Как формулировать гипотезы и требования к задаче анализа данных? Что общего между переобучен\
+            ием модели и жёсткими системами контроля качества? Что такое критический рационализм и почему всем, кто работа\
+            ет с реальными данными, надо о нём помнить?"}
+    longDescription:
+      - {language: en, text: "How do data scientists formulate the hypothesis that they want to test? What does overfitting\
+            \ has in common with the hard quality control rules? What is critical rationalism and why we should remember about\
+            \ it when working with real-world data?"}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n\n> *В докладе Иван на примерах продемонстрирует, насколько сильн\
+            о связаны и отличаются между собой такие темы, как обеспечение качества и анализ данных.*\n\nКак формулировать\
+            \ гипотезы и требования к задаче анализа данных? Что общего между переобучением модели и жёсткими системами ко\
+            нтроля качества? Что такое критический рационализм и почему всем, кто работает с реальными данными, надо о нём\
+            \ помнить?"
+    talkDay: 2
+    trackTime: "18:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/3Ls007DGGW4"]
+    speakerIds: [262]
