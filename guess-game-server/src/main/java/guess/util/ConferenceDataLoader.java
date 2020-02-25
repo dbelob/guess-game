@@ -699,7 +699,8 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2018, 12, 8), "2018msk");
 
         // 2019
-//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2019, 4, 5), "2019jpoint");
+//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2019, 4, 5), "2019jpoint",
+//                Map.of(new NameCompany("Паша Финкельштейн", "Lamoda"), 8L));
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2019, 4, 19), "2019cpp",
 //                Map.of(new NameCompany("Павел Новиков", "Align Technology"), 351L));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2019, 5, 15), "2019spb");

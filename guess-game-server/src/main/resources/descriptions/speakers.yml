@@ -137,23 +137,16 @@ speakers:
   - id: 8
     fileName: 0008.jpg
     name:
-      - {language: en, text: "Pavel Finkelstein"}
-      - {language: ru, text: "Павел Финкельштейн"}
+      - {language: en, text: "Paul Finkelshteyn"}
+      - {language: ru, text: "Паша Финкельштейн"}
     company:
-      - {language: en, text: lamoda}
+      - {language: en, text: Lamoda}
     bio:
-      - language: en
-        text: "Former sysadmin, now a developer with a psychologist background, who not only likes solving interesting problems\
-            \ (technical as well as business), but also is always trying some new things. Likes to form an opinion about these\
-            \ things and tell this opinion to others. Tried Kotlin very early, even before its first release, and started\
-            \ using it in production shortly after release. \n\nLikes word-play and jokes, but is also capable of serious\
-            \ discussion."
-      - language: ru
-        text: "Бывший админ, а нынешний разработчик с психологическим бэкграундом, который не только любит решать интересн\
-            ые задачки (как технические, так и бизнес-), но и постоянно пробует новые штуки. Любит об этих новых штуках ск\
-            ладывать мнение и рассказывать его другим. Очень рано попробовал Kotlin, задолго до первого релиза, и начал ис\
-            пользовать его в продакшне через совсем небольшое время после релиза. \n\nКаламбурит, балагурит, но и серьёзно\
-            \ разговаривать тоже умеет."
+      - {language: en, text: "Former system administrator, master of psychology in business, loves to learn and discover.\
+            \ Also loves RPGs (Gloomhaven currently) and talk. To be honest, to talk may be his TOP-1 hobby."}
+      - {language: ru, text: "Бывший системный администратор с психологическим образованием, любит разбираться и учиться.\
+            \ А ещё любит ролевые игры (сейчас Gloomhaven, например) и говорить. На самом деле говорить, может быть, больш\
+            е почти всего остального."}
     twitter: asm0di0
   - id: 9
     fileName: 0009.jpg
@@ -1094,10 +1087,37 @@ speakers:
     fileName: 0071.jpg
     name:
       - {language: en, text: "Tomasz Nurkiewicz"}
+    company:
+      - {language: en, text: Allegro}
+    bio:
+      - language: en
+        text: "Java Champion. Spent half of his life on programming, for the last decade professionally in Java land. Loves\
+            \ back-end and data visualization. Passionate about alternative JVM languages. Disappointed with the quality of\
+            \ software written these days (so often by himself!), hates long methods and hidden side effects. Interested in\
+            \ charting, data analysis and reactive programming. Believes that computers were invented so that developers can\
+            \ automate boring and repetitive tasks. Also their own.\n\nOn a daily basis works in e-commerce sector. Involved\
+            \ in open source, DZone's Most Valuable Blogger, used to be very active on StackOverflow. Author, trainer, conference\
+            \ speaker, technical reviewer, runner. Claims that code not tested automatically is not a feature but just a rumour.\
+            \ Wrote a book on RxJava for O'Reilly."
+    twitter: tnurkiewicz
+    javaChampion: true
   - id: 72
     fileName: 0072.jpg
     name:
       - {language: en, text: "Kohsuke Kawaguchi"}
+    company:
+      - {language: en, text: CloudBees}
+    bio:
+      - language: en
+        text: "Kohsuke is a well-respected developer and popular speaker at industry and Jenkins community events. He's often\
+            \ asked to speak about his experience and approach in creating Jenkins; a CI platform that has become a widely\
+            \ adopted and successful community-driven open source project. The principles behind the Jenkins community — extensibility,\
+            \ inclusiveness, low barriers to participation — have been the keys to its success. Kohsuke's sensibilities in\
+            \ creating Jenkins and his deep understanding of how to translate its capabilities into usable software have also\
+            \ had a major impact on CloudBees' strategy as a company.\n\nBefore joining CloudBees, where he currently serves\
+            \ as CTO, Kohsuke was with Sun Microsystems and Oracle, where he worked on a variety of projects and initiated\
+            \ the open source work that led to Jenkins."
+    twitter: kohsukekawa
   - id: 73
     fileName: 0073.jpg
     name:
@@ -1135,14 +1155,50 @@ speakers:
     fileName: 0075.jpg
     name:
       - {language: en, text: "Thomas Wuerthinger"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - {language: en, text: "Thomas Wuerthinger is a Senior Research Director at Oracle Labs leading programming language\
+            \ implementation teams for languages including Java, JavaScript, Ruby, and R. He is the architect of the GraalVM\
+            \ compiler and the Truffle self-optimizing runtime system. Previously, he worked on the Crankshaft optimizing\
+            \ compiler of V8 at Google, and the Maxine research virtual machine at Sun Microsystems. He received a PhD degree\
+            \ from JKU Linz for his research about dynamic code evolution."}
+    twitter: thomaswue
   - id: 76
     fileName: 0076.jpg
     name:
       - {language: en, text: "Allard Buijze"}
+    company:
+      - {language: en, text: AxonIQ}
+    bio:
+      - language: en
+        text: "Allard Buijze is founder and CTO of AxonIQ. Starting at the age of 6, he has developed a great passion for\
+            \ programming and has guided both large and small organizations in building performant and scalable applications.\
+            \ Now, he is on a mission to make implementations of large scale systems easier, using the concepts of Domain-Driven\
+            \ Design, Command-Query Responsiblity Segregation and Event-Driven Architectures. He created Axon Framework as\
+            \ an experiment initially, but when both large and small organizations started using Axon as a solution to their\
+            \ complexity problems, AxonIQ was born.\n\nThrough his conviction that good craftsmanship can only be achieved\
+            \ through continuous and intensive exchange of experience with others, Allard is a frequent speaker at conferences\
+            \ and meetups and enjoys giving trainings to fellow developers and architects. Allard is also regularly found\
+            \ in board rooms, explaining the concepts and values of DDD, CQRS and EDA to C-level executives."
+    twitter: allardbz
   - id: 77
     fileName: 0077.jpg
     name:
       - {language: en, text: "Bernd Rücker"}
+    company:
+      - {language: en, text: Camunda}
+    bio:
+      - language: en
+        text: "Throughout his 15+ years in software development, Bernd has helped automating highly scalable core workflows\
+            \ at global companies including T-Mobile, Lufthansa and Zalando. He has contributed to various open source workflow\
+            \ engines. He is a co-founder and developer advocate of Camunda, an open source software company reinventing workflow\
+            \ automation.\n\nBernd co-authored \"Real-Life BPMN\", a popular book about workflow modeling and automation,\
+            \ now in its fifth edition and available in English, German and Spanish. He regularly speaks at conferences and\
+            \ writes for various magazines. He is currently focused on new workflow automation paradigms that fit into modern\
+            \ architectures around distributed systems, microservices, domain-driven design, event-driven architecture and\
+            \ reactive systems."
+    twitter: berndruecker
   - id: 78
     fileName: 0078.jpg
     name:
@@ -1180,17 +1236,48 @@ speakers:
   - id: 80
     fileName: 0080.jpg
     name:
-      - {language: en, text: "Alexander Nozdrin-Plotnitsky"}
+      - {language: en, text: "Aliaksandr Nozdryn-Platnitski"}
       - {language: ru, text: "Александр Ноздрин-Плотницкий"}
+    company:
+      - {language: en, text: "Godel Technologies"}
+    bio:
+      - {language: en, text: "Aliaksandr is a Lead Java developer in Godel Technologies. He has been developing commercial\
+            \ products for over 12 years. He went all the way from Junior Java developer to Technical Architect on projects\
+            \ for international corporations. Appreciates simple and elegant solutions. He is a huge fan of the philosophy\
+            \ of distributed systems and Spring stack. Aliaksandr has been introducing DevOps philosophy to all the projects\
+            \ lately."}
+      - {language: ru, text: "Ведущий Java-разработчик в Godel Technologies. Разрабатывает коммерческие продукты более 12\
+            \ лет. Прошел путь от Junior Java-разработчика до Technical Architect на проектах для международных корпораций\
+            .  Ценит простоту и элегантность решений. Является большим поклонником философии распределенных систем и стека\
+            \ Spring. В последнее время на всех проектах внедряет философию DevOps."}
   - id: 81
     fileName: 0081.jpg
     name:
       - {language: en, text: "Chris Hegarty"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - {language: en, text: "Chris Hegarty is Networking Lead of the Java Platform Group at Oracle. His contributions to\
+            \ the platform include the Java 11 HTTP Client, the Stream Control Transport Protocol API, Windows Dual TCP/IP\
+            \ Stack support, and countless other enhancements in the core libraries. Chris was a key contributor on Project\
+            \ Jigsaw, including Incubator Modules and Encapsulating JDK Internals. He has worked on Java platforms since 2000,\
+            \ and currently leads the Networking group."}
+    twitter: chegar999
   - id: 82
     fileName: 0082.jpg
     name:
       - {language: en, text: "Alexander Panchin"}
       - {language: ru, text: "Александр Панчин"}
+    company: []
+    bio:
+      - {language: en, text: "Alexander graduated at the Department of Bioengineering and Bioinformatics, Moscow State University\
+            \ (PhD in Computational biology). Currently he's involved and interested in the topics of human metagenome research,\
+            \ phylogenetic analysis and evolutionary biology."}
+      - {language: ru, text: "Кандидат биологических наук. Старший научный сотрудник Института проблем передачи информации\
+            \ РАН. Окончил факультет биоинженерии и биоинформатики МГУ им. М.В. Ломоносова. Член комиссии РАН по борьбе с\
+            \ лженаукой. Член совета [фонда «Эволюция»](http://evolutionfund.ru/). Член экспертного совета [Премии имени Г\
+            арри Гудини](http://houdiniprize.org/)."}
+    twitter: Scinquisitor
   - id: 83
     fileName: 0083.jpg
     name:
@@ -1209,10 +1296,35 @@ speakers:
     name:
       - {language: en, text: "Nikolay Igotti"}
       - {language: ru, text: "Николай Иготти"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - language: en
+        text: "Nikolay Igotti works as Team Lead on Kotlin/Native at JetBrains. Previously used to work at Sun Microsystems,\
+            \ EMC, Oracle, Google on various system level software, such as HotSpot Java Virtual Machine, VirtualBox hypervisor\
+            \ and Native/Client runtime.\n\nInterests: runtimes, virtual machines, memory management, language design and\
+            \ concurrency approaches."
+      - language: ru
+        text: "Разработчик компиляторов и виртуальных машин, технический руководитель проекта Kotlin/Native. Преподавал в\
+            \ Санкт-Петербургском Академическом университете и Computer Science клубе при ОМИ РАН.\n\nОкончил в 1998 физич\
+            еский факультет Санкт-Петербургского государственного университета, затем изучал Computer Science в Стэнфордск\
+            ом университете, одновременно работая в компании Sun Microsystems. После этого работал в ведущих международных\
+            \ ИТ-корпорациях: EMC, Oracle, Google. Имеет разносторонний опыт разработки системного ПО, участвовал в работа\
+            х над виртуальной машиной Java Hotspot, гипервизором VirtualBox, высокопроизводительными системами хранения, а\
+            \ также браузерами Mozilla и Chrome.\n\nСфера научных и инженерных интересов: системы исполнения, компиляторы\
+            , виртуальные машины, новые парадигмы организации конкурентных вычислений."
   - id: 85
     fileName: 0085.jpg
     name:
       - {language: en, text: "Michał Płachta"}
+    company:
+      - {language: en, text: "Reality Games"}
+    bio:
+      - {language: en, text: "Michał is a software engineer developing software & collaborative working environments. He is\
+            \ currently using functional programming (Scala) and DevOps culture approach. He speaks at conferences, runs workshops\
+            \ & organises meetups to help others make better products. He currently works at Reality Games, where they are\
+            \ building games based on big data."}
+    twitter: miciek
   - id: 86
     fileName: 0086.jpg
     name:
@@ -1241,6 +1353,16 @@ speakers:
     fileName: 0087.jpg
     name:
       - {language: en, text: "Nikhil Nanivadekar"}
+    company:
+      - {language: en, text: Independent}
+    bio:
+      - {language: en, text: "Nikhil graduated in 2012 from University of Utah with a Masters in Mechanical Engineering with\
+            \ specialization in Robotics and Controls. He is the project lead for Eclipse Collections and has presented at\
+            \ JavaOne, DevoxxUS, Great Indian Developer Summit and Java User Group meetups. He is passionate about robotics\
+            \ and has conducted robotics workshops at JCrete4Kids, JavaOne4Kids and Devoxx4Kids. In 2017, Nikhil was named\
+            \ an Oracle Developer Champion."}
+    twitter: NikhilNanivade
+    javaChampion: true
   - id: 88
     fileName: 0088.jpg
     name:
@@ -1259,21 +1381,67 @@ speakers:
   - id: 89
     fileName: 0089.jpg
     name:
-      - {language: en, text: "Dmitry Govoruhin"}
+      - {language: en, text: "Dmitriy Govorukhin"}
       - {language: ru, text: "Дмитрий Говорухин"}
+    company:
+      - {language: en, text: GridGain}
+    bio:
+      - language: en
+        text: "Group Leader / Lead Developer at GridGain.\n\nSince 2014 was engaged in the development of corporate software.\
+            \ In 2016 came to GridGain R&D and started working with the Apache Ignite native persistence store module for\
+            \ storing data structures on disk. The main specialization is distributed systems: performance, fault tolerance\
+            \ and scaling."
+      - language: ru
+        text: "Руководитель группы разработчиков/ведущий разработчик в GridGain.\n\nC 2014 года занимался разработкой корп\
+            оративного ПО. В 2016 пришел в GridGain в R&D и там начал свою работу с native persistence store-модулем Apache\
+            \ Ignite для хранения структур данных на диске. Основная специализация — распределенные системы, проблемы их п\
+            роизводительности, отказоустойчивости и масштабирования."
   - id: 90
     fileName: 0090.jpg
     name:
-      - {language: en, text: "Olga Makhasoeva"}
+      - {language: en, text: "Oli Makhasoeva"}
       - {language: ru, text: "Ольга Махасоева"}
+    company:
+      - {language: en, text: "47 Degrees"}
+    bio:
+      - {language: en, text: "Oli is a Scala Software Engineer specializing in developing high-load backend platforms. Recently,\
+            \ she shifted gears and joined 47 Degrees as a Solutions Architect where she is working on a variety of different\
+            \ projects focused on improving client experience with Scala and Functional Programming (FP). She is the founder\
+            \ and co-organizer of the popular FP meetup, Fun(c) that draws tech experts from around the world for speaking\
+            \ engagements. She also hosts two podcasts about Scala: ScalaLove and Scalalaz."}
+      - language: ru
+        text: "Ведущая подкастов ScalaLove и «Скалалаз» и основатель популярного митапа Fun(c) в Сиэтле, Ольга является бо\
+            льшим фанатом функционального программирования и объединяет экспертов со всех концов света, чтобы обсудить про\
+            блемы и реалии индустрии. \n\nРаботая в крупнейшем трэвел-агентстве Expedia, Ольга специализировалась на разра\
+            ботке высоконагруженных распределенных систем на Scala. Сейчас занимает позицию Solutions Architect в компании\
+            \ 47 Degrees и сфокусирована на помощи клиентам в построении надежных систем на базе Scala и ФП."
+    twitter: Oli_kitty
   - id: 91
     fileName: 0091.jpg
     name:
       - {language: en, text: "Andrzej Grzesik"}
+    company:
+      - {language: en, text: Simudyne}
+    bio:
+      - {language: en, text: "Andrzej likes distributed systems in all shapes and forms. Coding since the age of 8, loves\
+            \ simplicity and continuous delivery. While he has written in many languages, he favours the JVM. Since \"most\
+            \ software problems are people problems\", he stirs communities, organizes and speaks at conferences (proud to\
+            \ be a JavaONE Rockstar!). He is passionate about all things data, because science! In his spare time… cycling,\
+            \ photography and books. And he is a Java Champion!"}
+    twitter: ags313
+    javaChampion: true
   - id: 92
     fileName: 0092.jpg
     name:
       - {language: en, text: "Bruno Borges"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Bruno Borges has over 18 years of experience as a software developer. Frequent conference speaker,\
+            \ now developer advocate for Java at Microsoft. Before, between 2012/2017 was Oracle's Principal Product Manager\
+            \ responsible for Developer Relations and Engagement Strategy for Oracle Cloud, Fusion Middleware, Java, and related\
+            \ technologies for application development. You can find him on Twitter @brunoborges."}
+    twitter: brunoborges
   - id: 93
     fileName: 0093.jpg
     name:
@@ -7397,17 +7565,19 @@ speakers:
       - {language: en, text: "Sergey Egorov"}
       - {language: ru, text: "Сергей Егоров"}
     company:
-      - {language: en, text: "Uvita GmbH"}
+      - {language: en, text: Pivotal}
     bio:
-      - {language: en, text: "An active member of open source community, Apache Software Foundation member and contributor\
-            \ in projects such as Apache Groovy, TestContainers, Spring Boot, JBoss Modules, Zipkin. He is also a co-creator\
-            \ of Russian DevOps podcast \"Two Devs One Ops\" where he shares his knowledge of DevOps, cloud solutions and\
-            \ modern infrastructure solutions such as Docker (which he uses since 2014)."}
-      - {language: ru, text: "Сергей является активным участником open source-сообщества, членом Apache Software Foundation\
-            \ и контрибьютором в разного рода проектах (Apache Groovy, TestContainers, Spring Boot, JBoss Modules, Zipkin\
-            \ и не только). Он также является одним из основателей русскоязычного DevOps-подкаста «Two Devs One Ops», где\
-            \ делится своим опытом в вопросах DevOps, облачных решений и современных инфраструктурных решений вроде Docker\
-            \ (пользователь с 2014 года)."}
+      - language: en
+        text: "Sergei works at Pivotal on Project Reactor in Berlin, Germany.\n\nHe is an active member of the open source\
+            \ community, member of the Apache Foundation, co-maintainer of the Testcontainers project, and a contributor to\
+            \ various OSS projects (Apache Groovy, Testcontainers, JBoss Modules, Spring Boot, to name a few), likes to share\
+            \ the knowledge and was presenting at different conferences and meetups in Russia, Germany, Ukraine, Norway, Denmark,\
+            \ Spain, and Estonia.\n\nHe is passionate about DevOps topics, clouds, and infrastructure.\n\nBefore Pivotal,\
+            \ he was working at Vivy, N26, Zalando, ZeroTurnaround, TransferWise, and other startups."
+      - {language: ru, text: "Сергей работает в компании Pivotal в команде Project Reactor. Он является активным участнико\
+            м open source-сообщества, членом Apache Software Foundation, одним из главных разработчиков проекта Testcontainers\
+            \ и контрибьютором в разного рода проектах (Apache Groovy, Testcontainers, Spring Boot, JBoss Modules и не тол\
+            ько)."}
     twitter: bsideup
     gitHub: bsideup
   - id: 623

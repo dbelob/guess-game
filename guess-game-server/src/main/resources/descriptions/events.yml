@@ -554,15 +554,21 @@ events:
   - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2019"}
-    startDate: 2019-04-05
-    endDate: 2019-04-06
+    startDate: "2019-04-05"
+    endDate: "2019-04-06"
+    siteLink:
+      - {language: en, text: "https://2019.jpoint.ru/en/"}
+      - {language: ru, text: "https://2019.jpoint.ru/"}
     city:
-      - {language: en, text: "Moscow"}
-      - {language: ru, text: "Москва"}
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
     venueAddress:
-      - {language: en, text: "WTC Congress Center"}
-      - {language: ru, text: "Конгресс-центр ЦМТ"}
-    talkIds: [38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 284, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79]
+      - {language: en, text: "Krasnopresnenskaya Emb., 12, «WTC» Congress Center"}
+      - {language: ru, text: "Краснопресненская наб., 12, Конгресс-центр «ЦМТ»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b94ehIDEskAMbQKDzt5JZNS
+    mapCoordinates: "55.754203, 37.556388"
+    talkIds: [38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 284, 55, 56, 57, 58, 59, 60, 61, 62, 63,
+              64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79]
   - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2020"}
