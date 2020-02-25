@@ -2421,8 +2421,22 @@ speakers:
   - id: 176
     fileName: 0176.jpg
     name:
-      - {language: en, text: "Mihail Dudarev"}
+      - {language: en, text: "Mikhail Dudarev"}
       - {language: ru, text: "Михаил Дударев"}
+    company:
+      - {language: en, text: "Licel Corporation"}
+    bio:
+      - language: en
+        text: "Cybersecurity architect, IoT expert, entrepreneur and yachtsman.\n\nAreas of expertise: more than eighteen\
+            \ years of experience in the SmartCards field (JavaCard, EMV, GlobalPlatform). Design of hardware and software\
+            \ for cryptographic devices. Mobile payments and banking software development. Analyze and review of application\
+            \ security (Java, Android, iOS)."
+      - language: ru
+        text: "Cybersecurity/IoT-эксперт, предприниматель и яхтсмен.\n\nОбласти экспертизы: восемнадцатилетний опыт в обла\
+            сти SmartCards (JavaCard, EMV, GlobalPlatform) и Java Security. Дизайн аппаратного и программного обеспечения\
+            \ для криптографических устройств. Мобильные платежи и разработка банковского программного обеспечения. Анализ\
+            \ и обзор безопасности приложений (Java, Android, iOS)."
+    twitter: MikhailDudarev
   - id: 177
     fileName: 0177.jpg
     name:
@@ -2565,6 +2579,23 @@ speakers:
     name:
       - {language: en, text: "Alexander Tobol"}
       - {language: ru, text: "Александр Тоболь"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: en, text: "Head of engineering, Video and News Feed Platforms at Odnoklassniki project, Mail.Ru Group company.\
+            \ Works on video processing and data storage for more than 10 years. Since 2012 works on software video platform\
+            \ which is the basis of Video service of Odnoklassniki portal. Used to work at Zodiac Interactive as a lead developer\
+            \ of multimedia service of tru2way® interactive television. Before that was into the development of CAS (Content-addressable\
+            \ storage) EMC Centera with 99.9999% availability. Took part in ACM International Collegiate Programming Contest\
+            \ as a member of SPbGETU LETI team. Enjoys yachting and playing chess."}
+      - {language: ru, text: "Руководитель разработки платформ видео и ленты проекта «Одноклассники» компании Mail.Ru Group.\
+            \ Свыше 10 лет работает над обработкой видео и хранением информации. C 2012 года занимается программной видеоп\
+            латформой, лежащей в основе сервиса Видео на портале Одноклассники. Ранее в компании Zodiac Interactive работа\
+            л ведущим разработчиком платформы мультимедийных сервисов интерактивного телевидения tru2way®. До этого в EMC\
+            \ разрабатывал CAS (Content-addressable storage) EMC Centera с доступностью 99.9999%. Принимал участие в между\
+            народных командных соревнованиях студентов по программированию ACM ICPC в составе команды СПбГЭТУ ЛЭТИ. Увлека\
+            ется яхтингом и шахматами."}
   - id: 207
     fileName: 0207.jpg
     name:
@@ -2947,7 +2978,7 @@ speakers:
             \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
             \ Books. В настоящее время занимает позицию главного редактора Smashing Magazine в прекрасном городе Фрайбург\
             , Германия."}
-    twitter: vitalyf
+    twitter: smashingmag
   - id: 261
     fileName: 0261.jpg
     name:
@@ -3483,11 +3514,16 @@ speakers:
       - {language: en, text: "Sergey Ryabov"}
       - {language: ru, text: "Сергей Рябов"}
     company:
-      - {language: ru, text: "Independent Developer"}
+      - {language: en, text: Facebook}
     bio:
-      - {language: ru, text: "Независимый Android-разработчик с бэкенд-бэкграундом, соорганизатор Kotlin User Group SPb и\
-            \ Android Academy SPb. Несколько лет назад обрёл Kotlin-суперспособности, которые и по сей день использует во\
-            \ благо в своих экспериментах и продакшне. Rx-фанатик, Kotlin-евангелист."}
+      - {language: en, text: "Sergey is the developer from London who put on hold his digital nomadic lifestyle to admire\
+            \ the clouds every day. Currently is working on Android UI frameworks and infrastructures. Suspected of organizing\
+            \ the Kotlin User Group in St. Petersburg and Android Academy schools in St. Petersburg and Moscow, has been seen\
+            \ in the propaganda of Kotlin and Android."}
+      - {language: ru, text: "Сергей – разработчик из Лондона, который поставил на паузу свой кочевой образ жизни, чтобы к\
+            аждый день любоваться тучами. В настоящий момент работает над Android UI-фреймворками и инфраструктурой. Подоз\
+            ревается в организации Kotlin User Group в Питере и школ Android Academy в Питере и Москве, был замечен в проп\
+            аганде Kotlin и Android."}
     twitter: colriot
   - id: 297
     fileName: 0297.jpg
@@ -6532,21 +6568,28 @@ speakers:
     fileName: 0565.jpg
     name:
       - {language: en, text: "Yonatan Levin"}
-      - {language: ru, text: "Йонатан Левин"}
     company:
       - {language: en, text: KolGene}
     bio:
-      - {language: en, text: "Yonatan is one of Israel's top mobile developers and part of the elite Google Developer Experts.\
-            \ He played a key role in the success of Gett which has raised over $500M and secured funding for his startup\
-            \ KolGene, a genetics market connector that's making big waves. Lovingly committed to Mobile & Product Management,\
-            \ Yonatan has also had passionate affairs with backend tech. Accomplished developer and entrepreneur, he knows\
-            \ exactly what's needed to transform smart ideas into lucrative products."}
-      - {language: ru, text: "Йонатан — один из ведущих израильских мобильных разработчиков, часть элитной команды Google\
-            \ Developer Experts. Сыграл ключевую роль в успехе Gett, собравшем более 500 миллионов долларов, а также получ\
-            ил финансирование своего стартапа KolGene, набирающего популярность генетического market connector-а. Будучи в\
-            ерным приверженцем мобильного и продукт-менеджмента, Йонатан также с большим энтузиазмом занимается бэкендом.\
-            \ Как состоявшийся разработчик и предприниматель, он точно знает, как превратить умные идеи в прибыльный проду\
-            кт."}
+      - language: en
+        text: "Yonatan is a co-founder and CTO of KolGene, being on a mission to make genetic tests usage optimized, accessible\
+            \ and affordable worldwide.\n\nPreviously, at Gett, which to date has raised almost $650 million in VC funding\
+            \ — he was the Head of Android, helping make it the world's largest on-demand transportation, delivery, and logistics\
+            \ company.\n\nOne of his greatest passions is helping people to learn and adopt new technologies.\n\nAs a result,\
+            \ he founded and now co-leads one of the largest, most active, gender diverse Android community in the world:\
+            \ Android Academy in Tel Aviv. 3500 members so far and they continue introducing hundreds of engineers to Android\
+            \ technology every year.\n\nAs a dev, Yonatan's primary expertise is Android and Mobile UX, but he's also friendly\
+            \ to frontend and backend technologies."
+      - language: ru
+        text: "Yonatan is a co-founder and CTO of KolGene, being on a mission to make genetic tests usage optimized, accessible\
+            \ and affordable worldwide.\r\n\r\nPreviously, at Gett, which to date has raised almost $650 million in VC funding\
+            \ — he was the Head of Android, helping make it the world's largest on-demand transportation, delivery, and logistics\
+            \ company.\r\n\r\nOne of his greatest passions is helping people to learn and adopt new technologies.\r\n\r\n\
+            As a result, he founded and now co-leads one of the largest, most active, gender diverse Android community in\
+            \ the world: Android Academy in Tel Aviv. 3500 members so far and they continue introducing hundreds of engineers\
+            \ to Android technology every year.\r\n\r\nAs a dev, Yonatan's primary expertise is Android and Mobile UX, but\
+            \ he's also friendly to frontend and backend technologies."
+    twitter: parahall
   - id: 566
     fileName: 0566.jpg
     name:
@@ -6747,10 +6790,13 @@ speakers:
     company:
       - {language: en, text: Freelance}
     bio:
-      - {language: en, text: "Doug is a freelance mobile performance expert, having helped thousands of developers speed up\
-            \ their mobile apps and websites. A Google Developer Expert and the author of O'Reilly’s \"High Performance Android\
-            \ Apps\", Doug has spoken at developer conferences in the US and Europe, and he blogs regularly at dougsillars.com.\
-            \ He is currently working as a freelance digital nomad, traveling with his family in Europe."}
+      - language: en
+        text: "Doug is a leading mobile developer advocate and evangelist.\r\n\r\nHe is widely known as an expert in mobile\
+            \ application architecture, especially when it comes to performance. Doug has worked with thousands of developers\
+            \ around the world, helping them improve the speed, battery life and customer satisfaction of their applications\
+            \ (both native and web). The author of O'Reilly's \"High Performance Android Apps\", he has spoken at conferences\
+            \ around the world on mobile performance.\r\n\r\nHe is currently freelancing, and traveling with his family of\
+            \ 6 (plus the dog!) as a digital nomad in Europe."
     twitter: dougsillars
   - id: 582
     fileName: 0582.jpg
@@ -7705,20 +7751,20 @@ speakers:
     fileName: 0645.jpg
     name:
       - {language: en, text: "Artem Zinnatullin"}
-      - {language: ru, text: "Артём Зиннатуллин"}
+      - {language: ru, text: "Артем Зиннатуллин"}
     company:
-      - {language: en, text: Juno}
+      - {language: en, text: Lyft}
     bio:
-      - {language: en, text: "Artem: 5-6 years of experience in mobile development, mostly with Android. About 3 years ago\
-            \ he has started paying a lot of attention to the quality of mobile apps he was working on: CI, Unit, Integration\
-            \ and Functional (UI) testing. One of the projects where you can find all these things is QualityMatters https://github.com/artem-zinnatullin/qualitymatters.\
-            \ Artem was working on Russian Postal Service Android app, Yandex.Mail, NY Times, StorIO, RxJava and other projects,\
-            \ and as for now, he works for Juno."}
-      - {language: ru, text: "Артём: в мобильной разработке примерно 5-6 лет, в основном — Android. Примерно три года наза\
-            д начал делать большой уклон на качество мобильных приложений: CI, Unit, Integration и Functional (UI) тестиро\
-            вание. Один из проектов, где всё это представлено — QualityMatters https://github.com/artem-zinnatullin/qualitymatters.\
-            \ Артём работал над Почтой России для Android, Yandex.Mail, NY Times, StorIO, RxJava и другими проектами, сейч\
-            ас в Juno."}
+      - language: en
+        text: "Developing and maintaining mobile infrastructure at Lyft: build systems, tooling, infra backends, Kubernetes,\
+            \ architecture, libraries.\n\nContributor/author of following crimes against humanity:\n- RxJava;\n- Mainframer;\n\
+            - The Context Podcast;\n- Domic;\n- Composer/Swarmer;\n- StorIO;\n- QualityMatters;\n- Juno;\n- Yandex.Mail;\n\
+            - etc."
+      - language: ru
+        text: "Разрабатывает и поддерживает мобильную инфраструктуру в Lyft: системы сборки, тулинг, инфраструктурный бэке\
+            нд, Kubernetes, архитектура, библиотеки.\n\nСоучастник/автор следующих преступлений против человечества:\n- RxJava;\n\
+            - Mainframer;\n- The Context Podcast;\n- Domic;\n- Composer/Swarmer;\n- StorIO;\n- QualityMatters;\n- Juno;\n\
+            - Яндекс.Почта;\n- etc."
     twitter: artem_zin
   - id: 646
     fileName: 0646.jpg
@@ -9511,10 +9557,34 @@ speakers:
     fileName: 0801.jpg
     name:
       - {language: en, text: "Paul Hudson"}
+    company:
+      - {language: en, text: "Hacking with Swift"}
+    bio:
+      - {language: en, text: "Paul is the author of Hacking with Swift, Pro Swift, Swift Design Patterns, Server-Side Swift,\
+            \ Hacking with macOS, Hacking with watchOS, Hacking with tvOS, Swift Coding Challenges, and more. Suffice it to\
+            \ say, he quite likes Swift. And coffee. (But mostly Swift.) (And coffee.)"}
+    twitter: twostraws
   - id: 802
     fileName: 0802.jpg
     name:
       - {language: en, text: "Royi Benyossef"}
+    company:
+      - {language: en, text: "Samsung NEXT/GDE"}
+    bio:
+      - {language: en, text: "Royi Benyossef is the ecosystem relations manager at Samsung NEXT TLV, an early stage investment\
+            \ and innovation arm that focuses on software and services. Royi is also an Android Google expert since 2013 with\
+            \ a vast experience as an Android evangelist on stages that included 4YFN/MWC, Google I/O, AppsWorld, DroidCon,\
+            \ CodeMotion, BABBQ and more. Prior to joining Samsung, Royi was the Android group leader at Vidmind where he\
+            \ managed a multinational group of engineers in designing and building Android clients for Vidmind’s OTT platform\
+            \ as well as proprietary Android based Smart TVs and STBs with Hisense."}
+      - {language: ru, text: "Royi Benyossef is the ecosystem relations manager at Samsung NEXT TLV, an early stage investment\
+            \ and innovation arm that focuses on software and services. Royi is also an Android Google expert since 2013 with\
+            \ a vast experience as an Android evangelist on stages that included 4YFN/MWC, Google I/O, AppsWorld, DroidCon,\
+            \ CodeMotion, BABBQ and more. Prior to joining Samsung, Royi was the Android group leader at Vidmind where he\
+            \ managed a multinational group of engineers in designing and building Android clients for Vidmind's OTT platform\
+            \ as well as proprietary Android based Smart TVs and STBs with Hisense."}
+    twitter: Royiby
+    gitHub: royiby
   - id: 803
     fileName: 0803.jpg
     name:
@@ -9549,6 +9619,13 @@ speakers:
     fileName: 0805.jpg
     name:
       - {language: en, text: "Paulina Szklarska"}
+    company:
+      - {language: en, text: "Droids On Roids"}
+    bio:
+      - {language: en, text: "Paulina is an Android developer at Droids On Roids. She is actively involved in Android community,\
+            \ co-organizing TOAST, one of the biggest meetups series for Android developers in Wrocław, engaged into GDG &\
+            \ WTM Wrocław community and blogging in her free time. Her passion is traveling around the world."}
+    twitter: p_szklarska
   - id: 806
     fileName: 0806.jpg
     name:
@@ -9558,10 +9635,30 @@ speakers:
     name:
       - {language: en, text: "Aleksei Savin"}
       - {language: ru, text: "Алексей Савин"}
+    company:
+      - {language: en, text: VK}
+      - {language: ru, text: ВКонтакте}
+    bio:
+      - {language: en, text: "Started working in iOS development in 2012. Worked on Boom and VK Live projects. In 2016 joined\
+            \ VK, where he works with video and live streaming."}
+      - {language: ru, text: "Начал заниматься iOS-разработкой в 2012 году. Работал над такими проектами, как Boom и VK Live.\
+            \ В 2016 пришёл работать во ВКонтакте, где занимается задачами, связанными с видео и live-трансляциями."}
   - id: 808
     fileName: 0808.jpg
     name:
       - {language: en, text: "Nishant Srivastava"}
+    company:
+      - {language: en, text: Soundbrenner}
+    bio:
+      - language: en
+        text: "Nishant is a Sr. Android Engineer at Soundbrenner in Berlin, Germany and an open source enthusiast who spends\
+            \ his time doodling when not hacking on Android. He is a caffeine-dependent life-form and can be found either\
+            \ talking about Android libraries or advocating that coffee is the elixir of life at community gatherings.\r\n\
+            \r\nHe has been part of 2 startups in the past (Founding Team Member at\r\nOmniLabs, Inc. and one of the first\
+            \ employees at Silverpush) with experience in Android SDK Engineering and Audio Digital Signal Processing (DSP)\
+            \ on Android.\r\n\r\nWhile working at his past company (Silverpush), he developed the company's patented UAB (Unique\
+            \ Audio Beacon) Technology."
+    twitter: nisrulz
   - id: 809
     fileName: 0809.jpg
     name:
@@ -9605,93 +9702,269 @@ speakers:
     name:
       - {language: en, text: "Dmitry Vasilyev"}
       - {language: ru, text: "Дмитрий Васильев"}
+    company:
+      - {language: en, text: FunCorp}
+    bio:
+      - {language: en, text: "Dmitry started developing on Android in 2014. In the same year he wrote \"USE (Unified State\
+            \ Examination) public bank\" (later \"PASSING USE\") application for Android and iOS, which made it to the top\
+            \ 10 in the Education category. Worked on many projects, such as \"Benefits calculator\", \"RZD (Russian Railways)\
+            \ for Passengers\", \"RZD Online\". In 2017 ran \"Development on Android from scratch\" courses in Penza within\
+            \ the scope of GDG Penza. Currently is iFunny developer in the FunCorp company."}
+      - {language: ru, text: "Начал заниматься Android-разработкой в 2014 году. В том же году написал и вывел в топ-10 в к\
+            атегории «Образование» приложение «Открытый банк ЕГЭ» на Android и iOS, которое впоследствии стало РЕШУ ЕГЭ. Р\
+            аботал над такими проектами, как «Калькулятор льгот», «РЖД Пассажирам», «РЖД Онлайн». В 2017 году провёл курсы\
+            \ Android-разработки с нуля в г. Пенза в рамках GDG Penza. В данный момент — разработчик iFunny в компании FunCorp."}
+    gitHub: smartvdd
   - id: 812
     fileName: 0812.jpg
     name:
       - {language: en, text: "Alexandr Guzenko"}
       - {language: ru, text: "Александр Гузенко"}
+    company:
+      - {language: en, text: Tinkoff.ru}
+    bio:
+      - {language: en, text: "Was in love with computers since childhood, literally grew up with the indusrty and was there\
+            \ at the very dawn of it. Since 2015 has been writing Android apps. Worked at QIWI, Russian payment service provider,\
+            \ had written the main app for them, was telling people about FinTech. Now Alexandr is working at Tinkoff.ru,\
+            \ writing the \"Clients\" app. He was always interested in security, including security of the mobile apps, so\
+            \ he surely has something to tell about it."}
+      - {language: ru, text: "C детства был увлечён компьютерами, буквально рос вместе с этой индустрией, попал в самый её\
+            \ рассвет. С 2015 года пишет приложения под Android. Работал в QIWI, писал главное приложение кошелька, расска\
+            зывал людям о финтехе. Сейчас работает в Tinkoff.ru, пишет приложение «Клиенты». Александр всегда интересовалс\
+            я безопасностью, в том числе мобильных приложений, поэтому ему есть что вам рассказать в этой области."}
+    twitter: JACKS0N23
   - id: 813
     fileName: 0813.jpg
     name:
       - {language: en, text: "Fedor Tsymbal"}
       - {language: ru, text: "Фёдор Цымбал"}
+    company:
+      - {language: en, text: MERA}
+    bio:
+      - {language: en, text: "Fedor works as an architect in the MERA company for 11 years. For the last 4 years, he has been\
+            \ developing an Android Board Support Package (BSP) for one chip-making company. During this time, Fyodor acquired\
+            \ a good experience working with different versions of Android."}
+      - {language: ru, text: "Фёдор работает архитектором в MERA 11 лет. Последние 4 года занимается разработкой Android Board\
+            \ Support Package (BSP) для одного микроэлектронного производства. За это время Фёдор получил много опыта рабо\
+            ты на разных версиях Android."}
+    twitter: ftsymbal
+    gitHub: ftsymbal
   - id: 814
     fileName: 0814.jpg
     name:
       - {language: en, text: "Evgeny Chormonov"}
       - {language: ru, text: "Евгений Чормонов"}
+    company:
+      - {language: en, text: Pinect}
+    bio:
+      - {language: en, text: "Developer of embedded systems. Android development is mostly secondary. Main area of expertise:\
+            \ hardware platforms, Linux and bare metal systems."}
+      - {language: ru, text: "Разработчик встраиваемых систем. Разработка под Android в основном имеет второстепенное знач\
+            ение. Основной профиль деятельности: аппаратные платформы, Linux и bare metal-системы."}
   - id: 815
     fileName: 0815.jpg
     name:
       - {language: en, text: "Ivan Grigoriev"}
       - {language: ru, text: "Иван Григорьев"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: en, text: "Full stack developer since 2008. Generally works with video: streaming, coding, playing and\
+            \ everything related. At Odnoklassniki works on OK Live application, video platform, calls and conferences."}
+      - {language: ru, text: "Занимается full stack-разработкой с 2008 года. В основном работал в области видео: стриминг\
+            , кодирование, проигрывание и всё, что с этим связано. В Одноклассниках занимается приложением OK Live, платфо\
+            рмой видео, звонками и конференциями."}
   - id: 816
     fileName: 0816.jpg
     name:
-      - {language: en, text: "Anton Schukin"}
+      - {language: en, text: "Anton Shchukin"}
       - {language: ru, text: "Антон Щукин"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Anton has been working at Badoo for the last 3,5 years, now he's the part of iOS Core team.\
+            \ Prior to that, he worked on Yandex.Search and Yandex.Browser for iOS. He maintains Chatto framework that is\
+            \ used in all Badoo iOS applications. In development, he appreciates simple solutions, clean code and tests. Big\
+            \ fan of Uncle Bob (Robert C. Martin) and his books, once managed to shake his hand and get his autograph."}
+      - {language: ru, text: "Антон работает в Badoo уже 3,5 года, сейчас является частью iOS Core team. До этого работал\
+            \ над Яндекс.Поиском и Яндекс.Браузером для iOS. Мейнтейнер фреймворка Chatto, который используется во всех iOS-п\
+            риложениях Badoo. В разработке ценит простые решения, понятный код и тесты. Большой поклонник дяди Боба (Robert\
+            \ C. Martin) и его книг, однажды сумел пожать ему руку и получить автограф."}
+    twitter: AntonPalich
   - id: 817
     fileName: 0817.jpg
     name:
       - {language: en, text: "Vyacheslav Beltyukov"}
       - {language: ru, text: "Вячеслав Бельтюков"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - language: en
+        text: "Vyacheslav has started his career as an indie developer in 2013. Since then, he participated in creation of\
+            \ a bunch of mobile applications, from travel to corporate systems. Now he works at EPAM Saint Petersburg. He\
+            \ also took a part in first IOS school in EPAM as lecturer and mentor. \n\nDuring his professional life, Vyacheslav\
+            \ learned how to turn his technical idealism into real value for app users and the project."
+      - language: ru
+        text: "Начал свой путь программиста как инди-разработчик в 2013 году. С тех пор поучаствовал в разработке совершен\
+            но разных приложений: от travel до корпоративных систем. Сейчас работает старшим разработчиком в EPAM Санкт-Пе\
+            тербург, где помимо разработки занимался организацией iOS-школы. \n\nЗа время работы научился направлять свой\
+            \ технический идеализм на улучшение жизни пользователей и достижение успеха проекта."
   - id: 818
     fileName: 0818.jpg
     name:
       - {language: en, text: "Dmitry Mikhailov"}
       - {language: ru, text: "Дмитрий Михайлов"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Mobile tech lead at Yandex, now works on Toloka project. 15 years of development experience.\n\nDmitry is a\
+            \ fan of clean code, scalable solutions and progressive architectures."
+      - language: ru
+        text: "Руководитель группы мобильной разработки в Яндексе. В последнее время занимается проектом Толока. 15 лет оп\
+            ыта разработки.\n\nДмитрий — поклонник чистого кода, масштабируемых решений и прогрессивных архитектур."
+    twitter: Dima_clif
   - id: 819
     fileName: 0819.jpg
     name:
       - {language: en, text: "Alexander Mikhaylov"}
       - {language: ru, text: "Александр Михайлов"}
+    company:
+      - {language: en, text: Uber}
+    bio:
+      - language: en
+        text: "Alexander wrote his first Android app in 2010. Since then, he has been engaged in mobile development professionally.\
+            \ He managed to work in the mobile development studio and non-ailing startups.\r\n\r\nIn 2016, he moved to Uber\
+            \ in Amsterdam. In the company, he works with payments in Uber / Uber Eats applications on mobile devices."
+      - language: ru
+        text: "Свое первое приложение для Android написал в 2010 году. С тех пор занимается мобильной разработкой професси\
+            онально. Успел поработать в студии мобильной разработки и небольших стартапах. \r\n\r\nВ 2016 году перешел на\
+            \ работу в Uber в Амстердам. В компании занимается платежами в приложениях Uber/Uber Eats на мобильных устройс\
+            твах."
   - id: 820
     fileName: 0820.jpg
     name:
       - {language: en, text: "Eugene Antropov"}
       - {language: ru, text: "Евгений Антропов"}
+    company:
+      - {language: en, text: Raiffeisenbank}
+      - {language: ru, text: Райффайзенбанк}
+    bio:
+      - language: en
+        text: "Eugene started his developer career working with Apple platforms in 2010. He participated in developing various\
+            \ applications — from dating services to banking sector. In his free time he was doing reverse engineering and\
+            \ writing apps for Cydia.\n\nEugene was always interested in IoT devices and managing them from a mobile device.\n\
+            \nHe created and implemented the idea of MoneyDrop.\n\nCurrently he is a Team Lead in Raiffeisen Bank."
+      - language: ru
+        text: "Начал свой путь разработки на платформах Apple в 2010. Участвовал в разработке различных приложений — от са\
+            йтов знакомств до банковского; в свободное время занимался reverse engineering и созданием приложений для Cydia.\n\
+            \nВсегда интересовался IoT-устройствами и взаимодействием с ними посредством телефона.\n\nПридумал и реализова\
+            л идею MoneyDrop.\n\nВ настоящее время занимает позицию Team Lead в Raiffeisen Bank."
   - id: 821
     fileName: 0821.jpg
     name:
       - {language: en, text: "Vyacheslav Gilevich"}
       - {language: ru, text: "Вячеслав Гилевич"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Vyacheslav has been working on Yandex.Maps for iOS for 2 years. For the last year he's been\
+            \ working with ARKit and SceneKit, learning their capabilities and experimenting with them."}
+      - {language: ru, text: "2 года работает над Яндекс.Картами на iOS. В течение последнего года работает с ARKit'ом и SceneKit'о\
+            м, изучает их возможности и проводит разные эксперименты с ними."}
   - id: 822
     fileName: 0822.jpg
     name:
       - {language: en, text: "Alexey Ulyenkov"}
       - {language: ru, text: "Алексей Ульенков"}
+    company:
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
+    bio:
+      - {language: en, text: "When Alexey first got his hands on ZX Spectrum, he immediately knew that he would dedicate his\
+            \ whole life to software engineering. He worked as an engineer at a company, ran his own company, was an independent\
+            \ developer. He was developing systems for Russian Ministry of Defence, communication systems, tools for business.\
+            \ In 2009 Alexey wrote his first iOS app, and since then he has been hooked. Since 2016 he works at Sberbank,\
+            \ remodeling and optimizing Sberbank Online production."}
+      - {language: ru, text: "После того как в руки Алексея попал ZX Spectrum, он понял, что свяжет жизнь с программирован\
+            ием. Работал инженером в компании, владел своей, был независимым разработчиком. Разрабатывал системы для Миноб\
+            ороны, системы связи, инструменты для бизнеса. В 2009 году написал первое приложение для iOS и теперь никак не\
+            \ может слезть с этой иглы. С 2016 года в Сбербанке занимается перестройкой и оптимизацией производства Сберба\
+            нк Онлайн."}
   - id: 823
     fileName: 0823.jpg
     name:
       - {language: en, text: "Alexander Korshak"}
       - {language: ru, text: "Александр Коршак"}
     company:
-      - {language: en, text: "MERA, GDG Nizhny Novgorod"}
+      - {language: en, text: MERA}
     bio:
       - {language: en, text: "Alex has been specializing in Android application development since 2009. Currently, he changed\
-            \ the focus from mobile app development to mobile VR app development (not game development). He graduated NNSU\
-            \ with a master degree in Computer Graphics. He claims that he was born with a basketball and a keyboard in his\
-            \ hands."}
+            \ the focus from mobile app development to mobile VR app development (not game development). He graduated from\
+            \ NNSU with a master degree in Computer Graphics. He claims that he was born with a basketball and a keyboard\
+            \ in his hands."}
       - {language: ru, text: "Специализируется на разработке приложений для Android c 2009 года. В настоящее время сместил\
-            \ фокус с разработки обычных мобильных приложений в мобильный VR (и мы сейчас не об играх). Закончил ННГУ им.\
-            \ Н.И.Лобачевского, факультет Вычислительной Математики и Кибернетики по специальности «Компьютерная графика»\
-            . Утверждает, что родился с баскетбольным мячом и клавиатурой в руках."}
+            \ фокус с разработки обычных мобильных приложений на мобильный VR (и мы сейчас не об играх). Закончил ННГУ им\
+            . Н. И. Лобачевского, факультет вычислительной математики и кибернетики по специальности «Компьютерная графика\
+            ». Утверждает, что родился с баскетбольным мячом и клавиатурой в руках."}
     twitter: alex_korshak
   - id: 824
     fileName: 0824.jpg
     name:
       - {language: en, text: "Svyatoslav Scherbina"}
       - {language: ru, text: "Святослав Щербина"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - language: en
+        text: "Svyatoslav Scherbina is a developer interested in programming languages design and implementation. Currently\
+            \ he works as software developer on Kotlin/Native project at JetBrains and appears to be responsible for bridging\
+            \ Kotlin and iOS worlds. \n\nPreviously he used to work at Excelsior LLC on Excelsior JET project, certified Java\
+            \ SE implementation with AOT compiler."
+      - language: ru
+        text: "Святослав Щербина интересуется разработкой и реализацией языков программирования и сейчас работает над прое\
+            ктом Kotlin/Native в компании JetBrains. В частности, отвечает за взаимодействие Kotlin и iOS.\n\nРанее работа\
+            л в компании Excelsior LLC над проектом Excelsior JET, сертифицированной реализацией Java SE с AOT-компиляторо\
+            м."
   - id: 825
     fileName: 0825.jpg
     name:
       - {language: en, text: "Igor Savelev"}
       - {language: ru, text: "Игорь Савельев"}
+    company:
+      - {language: en, text: "Badoo Limited"}
+    bio:
+      - {language: en, text: "iOS developer since 2013. Most of the time Igor worked in Warefly on iOS applications for music\
+            \ services. In October 2017 he started wishing to join a team of more than two people and at the same time he\
+            \ found a link to Badoo Hiring Event. Online test, 3 reviews in one day and Igor's wish came true: now he works\
+            \ in a big team."}
+      - {language: ru, text: "iOS-разработчик с 2013 года. Большую часть времени проработал в Warefly, работая над iOS-при\
+            ложениями для музыкальных сервисов. В октябре 2017 года назрело желание поработать в команде, состоящей больше\
+            \ чем из двух человек, и тогда же на глаза попалась ссылка на Badoo Hiring Event. Онлайн-тест, 3 ревью в один\
+            \ день, и желание Игоря исполнилось: теперь он работает в большой команде."}
+    twitter: leonspok
   - id: 826
     fileName: 0826.jpg
     name:
       - {language: en, text: "Ilya Bogin"}
       - {language: ru, text: "Илья Богин"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Ilya worked in Moscow Engineering Physics Institute for a long time as a senior lecturer and a researcher.\
+            \ He studied the image processing and analysis algorithms and participated in some startups in this field working\
+            \ on image and video codecs.\n\nIn 2013 Ilya started working for Yandex as an iOS developer in mobile Yandex.Browser.\
+            \ Currently he is a head of mobile browser core development service."
+      - language: ru
+        text: "Долгое время работал преподавателем в МИФИ, совмещая преподавательскую, научную и исследовательскую деятель\
+            ность с работой в различных стартапах. Область научных интересов: обработка и анализ изображений, а также разр\
+            аботка видеокодеков.\n\nС 2013 года перешел в Яндекс на позицию iOS-разработчика в мобильный Яндекс.Браузер. С\
+            ейчас занимает должность руководителя службы разработки ядра в мобильном Яндекс.Браузере."
   - id: 827
     fileName: 0827.jpg
     name:

@@ -26149,3 +26149,1054 @@ talks:
     presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/8aNJSlZkLSA6AqMo6K8ce/5f0c6ad5ee5acf4e8fcb14df5832ff86/Vitaly_Friedman_Testing_to_extremes_Dirty_little_tricks_from_the_dark_corners_of_mobile_UIs.pdf"]
     videoLinks: ["https://youtu.be/qnmY7-oGnwU"]
     speakerIds: [260]
+  - id: 1132
+    name:
+      - {language: en, text: "Fast and beautiful: Modern image delivery techniques"}
+    shortDescription:
+      - {language: en, text: "We'll examine strategies to send the perfect image to every device, ensuring a fast, beautiful\
+            \ rendering of your content. We'll look at progressive images, placeholder images, lazy loading and other techniques\
+            \ and real world examples that will improve the usability of your site or app."}
+    longDescription:
+      - language: en
+        text: "The average mobile website page weight is ~50% images. Toss in the complication of thousands of differently\
+            \ sized screens, and it might appear that efficient delivery of images to every device is an impossible task.\
+            \ But all is not lost!\r\n\r\nIn this talk, we'll examine strategies to send the perfect image to every device,\
+            \ ensuring a fast, beautiful rendering of your content. We'll look at progressive images, placeholder images,\
+            \ lazy loading and other techniques and real world examples that will improve the usability of your site or app.\r\
+            \n\r\nAttendees will come away with an understanding of the current \"state of the art\" for optimizing visual\
+            \ content on the web."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Очень крутой докладчик с огромным опытом в производительнос\
+            ти (в частности, автор книги «High Performance Android Apps»), который может рассказать много интересного и по\
+            знавательного для всех.*\n\nThe average mobile website page weight is ~50% images. Toss in the complication of\
+            \ thousands of differently sized screens, and it might appear that efficient delivery of images to every device\
+            \ is an impossible task. But all is not lost!\n\nIn this talk, we'll examine strategies to send the perfect image\
+            \ to every device, ensuring a fast, beautiful rendering of your content. We'll look at progressive images, placeholder\
+            \ images, lazy loading and other techniques and real world examples that will improve the usability of your site\
+            \ or app.\n\nAttendees will come away with an understanding of the current \"state of the art\" for optimizing\
+            \ visual content on the web."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=1aAzX5xOM84&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=16&t=0s"]
+    speakerIds: [581]
+  - id: 1133
+    name:
+      - {language: en, text: "The lord of the modules"}
+      - {language: ru, text: "Властелин модулей"}
+    shortDescription:
+      - {language: en, text: "It began with the forging of the Great Modules. Some of them were core modules, the mighty rulers\
+            \ of network and databases. Some of them were feature modules, for within them was bound the strength and will\
+            \ to govern each feature. But they were all of them deceived... for in the land of Mordor, in the fires of Mount\
+            \ Doom, DI and Routing were forged in secret to control the whole application."}
+      - {language: ru, text: "Были выкованы Великие Модули. Часть из них были кор-модулями, могучими правителями сети и ба\
+            з данных. Часть из них были фича-модулями, в них содержалось могущество и воля, для того чтобы править каждой\
+            \ из фич. Но они все были обмануты. Ибо в стране Мордор, в жерле Роковой горы были созданы DI и Routing, чтобы\
+            \ подчинить себе все приложение."}
+    longDescription:
+      - language: en
+        text: "The world is changed. I feel it in the slow release of features. I feel it in the unscalable decisions. I feel\
+            \ it in the lengthening mobile commands... Much that once was is lost, for none now remain in the team who remember\
+            \ it.\n\nIt began with the forging of the Great Modules. Some of them were core modules, the mighty rulers of\
+            \ network and databases. Some of them were feature modules, for within them was bound the strength and will to\
+            \ govern each feature. But they were all of them deceived... for in the land of Mordor, in the fires of Mount\
+            \ Doom, DI and Routing were forged in secret to control the whole application."
+      - language: ru
+        text: "Мир изменился. Я чувствую это в медленном выпуске фичей. Чувствую это в немасштабируемости решений. Чувству\
+            ю в увеличении размера мобильных команд. Многое, что когда-то было преимуществом... теперь утеряно. Потому что\
+            \ никого, кто помнил это, нет более среди команды.\n\nБыли выкованы Великие Модули. Часть из них были кор-моду\
+            лями, могучими правителями сети и баз данных. Часть из них были фича-модулями, в них содержалось могущество и\
+            \ воля, для того чтобы править каждой из фич. Но они все были обмануты. Ибо в стране Мордор, в жерле Роковой г\
+            оры были созданы DI и Routing, чтобы подчинить себе все приложение."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/5qcHJZjPEsuuWGuUKMgCqg/0e26048c497b9532a85bd31a8ee8ecca/Aleksandr_Blinov_Vlastelin_moduley.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=7y3SurtFqL0&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=18&t=0s"]
+    speakerIds: [809]
+  - id: 1134
+    name:
+      - {language: en, text: "Things I wish I knew when I started building Android libraries — Vol. 2"}
+    shortDescription:
+      - {language: en, text: "Building an Android library brings with it quite a few challenges and nuances. You will get\
+            \ to learn about the common pitfalls and how to overcome them by leveraging architecture components, making your\
+            \ Android libraries lifecycle-aware and using the power of Kotlin language to build better SDK."}
+    longDescription:
+      - language: en
+        text: "Building an Android library in the current times is way different than what it used to be earlier. Things have\
+            \ changed considerably and keeping up to date with them is now a necessity rather than just some acquirable knowledge.\r\
+            \n\r\nThis session is a second part to the last year's talk at Droidcon Berlin 2017 which was Vol. 1. In this\
+            \ session, you will dive deeper into best practices and ways of architecting Android libraries. You will get to\
+            \ learn about the common pitfalls and how to overcome them by using the right approach such as leveraging architecture\
+            \ components and making your Android libraries lifecycle-aware. You will also understand how one can leverage\
+            \ Kotlin language when developing Android libraries as well as information around API design and exploring the\
+            \ path to becoming a better Android Library Developer.\r\n\r\nBy the end of this session, you will be all set\
+            \ to build Android libraries that scale and have API which contributes to developer's happiness."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Разработка библиотек может быть хитрым предприятием. Nishant\
+            \ — опытный разработчик библиотек под Android с тысячами звезд на [гитхабе](https://github.com/nisrulz). Боево\
+            й опыт вкупе с техническими деталями дадут отличный доклад.*\n\nBuilding an Android library in the current times\
+            \ is way different than what it used to be earlier. Things have changed considerably and keeping up to date with\
+            \ them is now a necessity rather than just some acquirable knowledge.\n\nThis session is a second part to the\
+            \ last year's talk at Droidcon Berlin 2017 which was Vol. 1. In this session, you will dive deeper into best practices\
+            \ and ways of architecting Android libraries. You will get to learn about the common pitfalls and how to overcome\
+            \ them by using the right approach such as leveraging architecture components and making your Android libraries\
+            \ lifecycle-aware. You will also understand how one can leverage Kotlin language when developing Android libraries\
+            \ as well as information around API design and exploring the path to becoming a better Android Library Developer.\n\
+            \nBy the end of this session, you will be all set to build Android libraries that scale and have API which contributes\
+            \ to developer's happiness."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/1nq2Rk96eg6soMAUMWGeyc/720c0563d4ccb1bdf41d023769a6cb90/Nishant_Srivastava_Things_I_wish_I_knew_when_I_started_building_Android_libraries__Vol._2.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=ZLYcEkkdj4A&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=3&t=0s"]
+    speakerIds: [808]
+  - id: 1135
+    name:
+      - {language: en, text: "Core Bluetooth is not that scary, or how to improve user experience with little effort"}
+      - {language: ru, text: "Core Bluetooth не так уж и страшен, или Как улучшить пользовательский опыт без особых усилий"}
+    shortDescription:
+      - {language: en, text: "We'll talk how to use Bluetooth LE in Apple systems, about problems in development and how to\
+            \ solve them. This talk will provide an understanding of how to use this technology and what possible limitations\
+            \ it can bring."}
+      - {language: ru, text: "Поговорим про то, как пользоваться Bluetooth LE в системах Apple, рассмотрим в том числе и п\
+            роблемы, с которыми можно столкнуться при разработке, и как их решать. По итогам доклада сложится понимание, к\
+            ак использовать эту технологию и какие возможные ограничения она несет."}
+    longDescription:
+      - language: en
+        text: "In this session, we'll talk how to use Bluetooth LE in Apple systems. We'll review use options and limitations\
+            \ imposed by different systems (iOS, watchOs, tvOS). We'll learn how Raiffeisenbank implemented money transfer\
+            \ through Bluetooth. Then we'll discuss how to develop it, what programs can be used for development and debugging,\
+            \ how to manage devices of third-party vendors. And, finally, we'll talk about problems in development and how\
+            \ to transfer images through BTLE.\n\nThis talk will be interesting both for developers (because we'll talk about\
+            \ problems in development and how to solve them) and for business — this talk will provide an understanding of\
+            \ how to use this technology and what possible limitations it can bring."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Среди потока новых архитектур и высокоуровневых абстракций\
+            \ порой хочется отвлечься на что-то практическое. Данный доклад поможет взглянуть на Bluetooth под другим угло\
+            м. Вы узнаете про новые возможности и способы применения, сможете сделать это максимально эффективно.*\n\nВ до\
+            кладе поговорим про то, как пользоваться Bluetooth LE в системах Apple. Рассмотрим варианты использования и ог\
+            раничения, которые накладываются разными системами (iOS, watchOs, tvOS). Узнаем, как в Райффайзенбанке делали\
+            \ передачу денег через Bluetooth. Далее обсудим, как его разрабатывать, какие есть программы для разработки и\
+            \ отладки, как управлять устройствами сторонних вендоров. И в конце рассмотрим, какие возникают проблемы при р\
+            азработке, как можно передавать картинку через BTLE.\n\nДоклад будет интересен как разработчикам (поскольку бу\
+            дут рассмотрены в том числе и проблемы, с которыми можно столкнуться при разработке, и как их решать), так и б\
+            изнесу — по итогам доклада сложится понимание, как использовать эту технологию и какие возможные ограничения о\
+            на несет."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/3pw9enzGVaQaeSO86UuMqg/fc478af277a7f73f177c2918d2e96685/Yevgeniy_Antropov_Core_Bluetooth_ne_tak_uzh_i_strashen__ili_Kak_uluchshit_polzovatelskiy_opyt_bez_osobykh_usiliy.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=KDmUPgWjz-E&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=6&t=0s"]
+    speakerIds: [820]
+  - id: 1136
+    name:
+      - {language: en, text: "Android builds at Lyft"}
+    shortDescription:
+      - {language: en, text: "Deep dive into details of Android monorepo builds at Lyft, infrastructure and tooling around\
+            \ it, and some engineering stories, of course!"}
+      - {language: ru, text: "Погружение в особенности сборки Android-монорепозитория в Lyft, инфраструктуру и тулинг вокр\
+            уг и, конечно же, инженерные байки!"}
+    longDescription:
+      - language: en
+        text: "This talk's about how and why we build big Android monorepo at Lyft, what processes, problems and solutions\
+            \ we have within the project, how infrastructure is organized.\n\nProject stats at the time of talk submission:\n\
+            - 2 big Android apps in a single Git repo;\n- ~50 developers;\n- 700+ modules;\n- 700k+ lines of code in Java\
+            \ (w/o comments), 120k+ XML, active Kotlin adoption;\n- two build systems: Gradle + Buck;\n- in-house distributed\
+            \ build cache service;\n- in-house build tooling analytics service;\n- in-house continuous integration service;\n\
+            - in-house build tooling written in Kotlin, Bash, Python;\n- etc."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Артем — один из первопроходцев в области мобильного DevOps,\
+            \ плюс он не стесняется писать свои решения и получается отлично, тот же Mainframer используют многие.*\n\nДок\
+            лад о том, как и зачем мы собираем большой Android-монорепозиторий в Lyft, какие у нас процессы, проблемы и ре\
+            шения по работе с проектом, как организована инфраструктура.\n\nОсновной посыл — применение и выработка инжене\
+            рных подходов к решению инфраструктурных проблем мобильных приложений.\n\nПобочные темы:\n- структура проекта\
+            , что в Lyft получилось хорошо, что плохо;\n- как организация кода помогает или мешает работе с ним;\n- как в\
+            \ большой команде делать большие технические изменения;\n- почему иногда имеет смысл пробовать немейнстримовые\
+            \ инструменты;\n- как фиксить медленный тулинг, если его написали не вы;\n- как вообще жить и в чем смысл всег\
+            о этого.\n\nВводные данные на момент подачи доклада:\n- 2 больших Android-приложения в одном Git-репозитории;\n\
+            - ~50 разработчиков;\n- 700+ модулей;\n- 700k+ строк Java (без комментариев), 120k+ XML, активно растет доля Kotlin-к\
+            ода;\n- две билд-системы: Gradle + Buck;\n- in-house сервис для распределенного билд-кеша;\n- in-house сервис\
+            \ для аналитики build tooling;\n- in-house сервис continuous integration;\n- in-house тулинг, написанный на Kotlin,\
+            \ Bash, Python;\n- и т. д."
+    talkDay: 1
+    trackTime: "13:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=Wd91Y8sRs2k&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=11&t=0s"]
+    speakerIds: [645]
+  - id: 1137
+    name:
+      - {language: en, text: "Android in terminals and corporate gadgets: Our experience of building COSU architecture"}
+      - {language: ru, text: "Android в терминалах и корпоративных гаджетах: наш опыт в построении COSU-архитектуры"}
+    shortDescription:
+      - {language: en, text: "Evgeny will share his experience of building COSU devices, tell about their architecture and\
+            \ limitations of some approaches, and also touch on security measures."}
+      - {language: ru, text: "Евгений собирается поделиться опытом создания COSU-устройств, рассказать о построении архите\
+            ктуры, ограничениях некоторых подходов, а также затронуть тему мер безопасности."}
+    longDescription:
+      - language: en
+        text: "Android has made significant progress: now it is not only for common users' work and entertainment, it has\
+            \ become a workhorse employed in hardware products and corporate devices. \n\nThere already are out-of-the-box\
+            \ tools for remote control of the system, including those with restriction of user rights — Google's enterprise\
+            \ mobility management (EMM). This API allows us to create COSU (corporate-owned, single-use) devices for executing\
+            \ highly specialized tasks with restriction of user rights. Examples of such devices include payment, verification\
+            \ and stock-taking terminals, interactive signs and smartphone- or tablet-based corporate mobile devices for the\
+            \ employees. \n\nIn this talk, Evgeny will share his experience of building this kind of devices, tell about their\
+            \ architecture and limitations of some approaches, and also touch on security measures."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Довольно необычная и познавательная тема, с которой мало кт\
+            о сталкивался, но которая может помочь понять, как устроены некоторые части системы на более глубоком уровне.*\n\
+            \nAndroid шагнул далеко вперед и стал не только развлекательной и рабочей системой для людей: сейчас это уже р\
+            абочая лошадка для использования в hardware-продуктах и корпоративных устройствах. \n\nУже из коробки есть инс\
+            трументы для удаленного управления системой, в том числе и с ограничением прав пользователя — enterprise mobility\
+            \ management (EMM) от Google. Данный API позволяет создать COSU-устройства (COSU — corporate-owned, single-use),\
+            \ выполняющие узкоспециализированные задачи с ограничением прав пользователя. Стандартная область применения —\
+            \ это терминалы оплаты, верификации или инвентаризации, интерактивные вывески и рабочие мобильные устройства (н\
+            а базе телефонов/планшетов) для сотрудников компании. \n\nВ докладе Евгений собирается поделиться опытом созда\
+            ния подобных продуктов, рассказать о построении архитектуры, ограничениях некоторых подходов, а также затронут\
+            ь тему мер безопасности."
+    talkDay: 1
+    trackTime: "13:30"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=MOTNeZHDbGU&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=4&t=0s"]
+    speakerIds: [814]
+  - id: 1138
+    name:
+      - {language: en, text: "Implementing UI in iOS: Better. Faster. And it scales!"}
+      - {language: ru, text: "Реализуем UI в iOS: улучшаем, ускоряем, масштабируем!"}
+    shortDescription:
+      - {language: en, text: "Tools and techniques that will boost your UI development process."}
+      - {language: ru, text: "Инструменты и методики, которые помогут вам в разработке UI."}
+    longDescription:
+      - language: en
+        text: "Let's face it: if you want your app to be successful in the App Store, you will be dedicating long hours to\
+            \ the UI development. Eventually you will face the need of creating reusable components and getting them organised.\n\
+            \nThere are several ways to do this, and some of them can lead to common issues, raising questions like:\n- Why\
+            \ can't I have a more organised catalogue of UI components for my application? \n- How do I test the user interface\
+            \ of my app? \n- Why is the project's compilation time so long?\n\nBuilding a UI framework similar to the UIKit\
+            \ from Apple, but tailored to your own project, helps to solve problems that many teams face on a daily basis.\
+            \ It might feel like a dream, but effective communication with designers allows you to reuse UI components, which\
+            \ decreases your development time. Testing the UI elements to avoid regressions is not always easy, but it is\
+            \ possible.\n\nIt doesn't matter whether you have to develop one app or several apps that share UI components,\
+            \ whether you work as a freelancer or as a part of a big team — a good UI development environment can help in\
+            \ all sorts of cases.\n\nAt Badoo, they've faced all these issues and already tackled them; Igor will explain\
+            \ you in depth how they did it."
+      - language: ru
+        text: "Будем реалистами: если вы хотите, чтобы приложение имело успех в App Store, готовьтесь посвятить долгие час\
+            ы разработке UI. В конечном итоге вам придется создать и упорядочить повторно используемые компоненты.\n\nЭто\
+            \ можно сделать несколькими способами, у многих из которых есть свои недостатки, вызывающие такие вопросы:\n-\
+            \ Почему каталог UI-компонентов приложения нельзя было организовать лучше?\n- Как тестировать пользовательский\
+            \ интерфейс приложения?\n- Почему проект так долго компилируется?\n\nФреймворк, похожий на UIKit от Apple, но\
+            \ заточенный под ваш собственный проект, поможет решить множество проблем, с которыми большинство команд сталк\
+            ивается каждый день. Похоже на сказку, но налаженная коммуникация с дизайнерами позволит вам повторно использо\
+            вать UI-компоненты, что ускорит разработку. Тестировать элементы UI, чтобы избежать регрессии, не всегда легко\
+            , но это возможно.\n\nНеважно, разрабатываете вы одно приложение или несколько, где применяются одни и те же UI-к\
+            омпоненты, фрилансер вы или часть большой команды — грамотно выстроенная среда разработки UI пригодится всегда\
+            .\n\nВ Badoo со всеми этими проблемами уже сталкивались и принялись за их решение; Игорь подробно расскажет, к\
+            ак они это делали."
+    talkDay: 1
+    trackTime: "13:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/1Ci17xIgUIog0iacImsaga/9b99d27a695c20f74ca267b919470d44/Igor_Savelyev_Realizuyem_UI_v_iOS__uluchshayem__uskoryayem__masshtabiruyem_.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=RqnLPO14v-k&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=14&t=0s"]
+    speakerIds: [825]
+  - id: 1139
+    name:
+      - {language: en, text: "Squeeze your Swift: how to write safer, smarter code by constraining associated types, protocols,\
+            \ generics, and extensions"}
+    shortDescription:
+      - {language: en, text: "It might sound counterintuitive, but laying down strict rules for what your code can and can't\
+            \ do helps you work faster. By constraining your associated types, protocols, generics, and extensions, the Swift\
+            \ compiler can help you avoid problems, minimize namespace clutter, and write better code."}
+    longDescription:
+      - {language: en, text: "It might sound counterintuitive, but laying down strict rules for what your code can and can't\
+            \ do helps you work faster. By constraining your associated types, protocols, generics, and extensions, the Swift\
+            \ compiler can help you avoid problems, minimize namespace clutter, and write better code."}
+    talkDay: 1
+    trackTime: "15:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=hvB-t66Yl-w&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=17&t=0s"]
+    speakerIds: [801]
+  - id: 1140
+    name:
+      - {language: en, text: "Using Kotlin to share code between Android and iOS"}
+      - {language: ru, text: "Kotlin для написания общего кода под Android и iOS"}
+    shortDescription:
+      - {language: en, text: "This talk's main topic is how you can use Kotlin to share code between Android and iOS. We will\
+            \ also cover Kotlin platform development trends that make this easy and possible."}
+      - {language: ru, text: "Доклад посвящён тому, как Kotlin может быть полезен для написания общего кода под Android и\
+            \ iOS. Речь пойдёт и о направлениях развития платформы Kotlin, которые делают это возможным и удобным."}
+    longDescription:
+      - language: en
+        text: "This talk's main topic is how you can use Kotlin to share code between Android and iOS. We will also cover\
+            \ Kotlin platform development trends that make this easy and possible.\n\nKotlin Multiplatform Programming technology\
+            \ allows you to combine common and platform-specific code in a single codebase while also supporting tooling for\
+            \ this kind of development model. We'll see how this looks and discuss why it should be like this and not the\
+            \ other way around.\n\nKotlin/Native technology allows you to compile Kotlin into native code while also giving\
+            \ you an option to interact seamlessly with native platform (iOS, for example). We'll discuss what, why and how\
+            \ does (and does not) work."
+      - language: ru
+        text: "Доклад посвящён тому, как Kotlin может быть полезен для написания общего кода под Android и iOS. Речь пойдё\
+            т и о направлениях развития платформы Kotlin, которые делают это возможным и удобным.\n\nKotlin Multiplatform\
+            \ Programming — это технология мультиплатформенной разработки на языке Kotlin, которая позволяет сочетать как\
+            \ общий для всех платформ код, так и платформенно-специфичные части в одной кодовой базе, сохраняя поддержку т\
+            улинга для такой модели разработки. Посмотрим на то, как это выглядит, и обсудим, почему всё должно быть именн\
+            о так.\n\nKotlin/Native — это технология компиляции языка Kotlin в нативный код с возможностью прозрачного вза\
+            имодействия с нативной платформой (например, iOS). Поговорим о том, как, почему и что работает (а что нет)."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/3DFA4EPHe808w6yYcCsCuc/2d49f6b887d291928fba8594d8e80ff4/Svyatoslav_Shcherbina_Kotlin_dlya_napisaniya_obshchego_koda_pod_Android_i_iOS.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=BDTgkXUgXPk&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=13&t=0s"]
+    speakerIds: [824]
+  - id: 1141
+    name:
+      - {language: en, text: "Sign me"}
+      - {language: ru, text: Доподписывались...}
+    shortDescription:
+      - {language: en, text: "We'll discuss signature schemes used in Android (Jar Signature, APK Signature 2 и 3!!!, Google\
+            \ Play Signing), their strengths, weaknesses, vulnerabilities — and, of course, test it all out."}
+      - {language: ru, text: "Мы поговорим о схемах подписи, использующихся в Android (Jar Signature, APK Signature 2 и 3!!!,\
+            \ Google Play Signing), их плюсах, минусах, уязвимостях — и, конечно же, проверим все это на практике."}
+    longDescription:
+      - language: en
+        text: "Control of app integrity and authenticity is one of the key security mechanisms in Android. It is provided\
+            \ by the app content digital signature.\r\n\r\nWe'll discuss signature schemes used in Android (Jar Signature,\
+            \ APK Signature 2 и 3!!!, Google Play Signing), their strengths, weaknesses, vulnerabilities — and, of course,\
+            \ test it all out."
+      - language: ru
+        text: "Контроль целостности и аутентичности приложений является одним из ключевых механизмов обеспечения безопасно\
+            сти в Android. Для его реализации используется цифровая подпись содержимого приложений.\r\n\r\nМы поговорим о\
+            \ схемах подписи, использующихся в Android (Jar Signature, APK Signature 2 и 3!!!, Google Play Signing), их пл\
+            юсах, минусах, уязвимостях — и, конечно же, проверим все это на практике."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/jSutxpNs3e6OiSCmWI4WE/70c05f8032ca3f23014048d05874d986/Mikhail_Dudarev_Dopodpisyvalis....pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=PuS8Lx3l6Jk&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=7&t=0s"]
+    speakerIds: [176]
+  - id: 1142
+    name:
+      - {language: en, text: "Make mobile apps fast again"}
+    shortDescription:
+      - {language: en, text: "We'll discuss technical difficulties of monitoring regression of mobile apps performance characteristics\
+            \ and how to build this monitoring into CI. We'll tell how we organized this process for Yandex mobile apps and\
+            \ what challenges we faced."}
+      - {language: ru, text: "Мы обсудим, в чем состоят технические сложности отслеживания регрессий перформанс-характерис\
+            тик мобильных приложений и как встроить в CI их мониторинг. Расскажем о том, как организовали этот процесс в р\
+            амках мобильных приложений Яндекса и с какими сложностями столкнулись на этом пути."}
+    longDescription:
+      - language: en
+        text: "This talk's main topic is controlling the changes in mobile apps performance characteristics (startup speed,\
+            \ energy consumption, amount of traffic). We'll discuss technical difficulties of monitoring regression of those\
+            \ characteristics and how to build this monitoring into CI. We'll tell how we organized this process for Yandex\
+            \ mobile apps and what challenges we faced.\r\n\r\nThis talk's aimed at developers, managers and team leads interested\
+            \ in mobile apps performance characteristics and willing to improve the process in their projects."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Уникальный опыт по востребованной теме. Докладчик сам проше\
+            л весь путь построения мощной системы контроля производительности и глубоко разбирается в различных ее аспекта\
+            х.*\n\nЦель доклада — разобраться с вопросом контроля изменений перформанс-характеристик мобильных приложений\
+            \ (скорости запуска, энергопотребления, объема сетевого трафика). В рамках доклада мы обсудим, в чем состоят т\
+            ехнические сложности отслеживания регрессий этих характеристик и как встроить в CI их мониторинг. Мы расскажем\
+            \ о том, как организовали этот процесс в рамках мобильных приложений Яндекса и с какими сложностями столкнулис\
+            ь на этом пути. \n\nАудитория доклада — разработчики, менеджеры и руководители разработки, которым небезразлич\
+            ен вопрос перформанс-характеристик мобильных приложений и которые хотели бы улучшить процессы в своих проектах\
+            ."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/3dHgrNKWXYuCQYS4OMuqM2/691897ebc2605b84d421fe6a818a3bb7/Ilya_Bogin_Make_mobile_apps_fast_again.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=tNLJHlptOJM&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=2&t=0s"]
+    speakerIds: [826]
+  - id: 1143
+    name:
+      - {language: en, text: "Dependency injection with Koin"}
+    shortDescription:
+      - {language: en, text: "Koin, a new way of dependency injection for Android. Let's look at the full Koin 1.0 features.\
+            \ Let's look at migration steps. Let's discuss when to use it and maybe when not to."}
+    longDescription:
+      - language: en
+        text: "Dependency injection via frameworks like Dagger were present in most modern Android projects. But then Kotlin\
+            \ happened. And since then a bunch of new libraries like Koin or Kodein appeared.\r\n\r\nWe went through the migration\
+            \ from classic annotation processing DI framework to Koin in our projects.\r\n\r\nWe chose it for its simplicity.\
+            \ We were happy about its testing capabilities. And as early adopters we were happy when in summer 2018 first\
+            \ 1.0 beta came out with some great adjustments. Let's look at the full 1.0 features. Let's look at migration\
+            \ steps. Let's discuss when to use it and maybe when not to."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Доклад хорошо структурирован и раскрывает интересные аспект\
+            ы. Дэнни использует фреймворк в продакшне и готов поделиться своим опытом. Кроме того, он известен как отличны\
+            й спикер!*\n\nDependency injection via frameworks like Dagger were present in most modern Android projects. But\
+            \ then Kotlin happened. And since then a bunch of new libraries like Koin or Kodein appeared.\n\nWe went through\
+            \ the migration from classic annotation processing DI framework to Koin in our projects.\n\nWe chose it for its\
+            \ simplicity. We were happy about its testing capabilities. And as early adopters we were happy when in summer\
+            \ 2018 first 1.0 beta came out with some great adjustments. Let's look at the full 1.0 features. Let's look at\
+            \ migration steps. Let's discuss when to use it and maybe when not to."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/25FsmzWcfaS8guSGOs6Qu4/afd7eb89b38a4f984d7edd77906676d6/Danny_Preussler_Dependency_injection_with_Koin.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=SYZ2-NLtuMM&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=5&t=0s"]
+    speakerIds: [803]
+  - id: 1144
+    name:
+      - {language: en, text: "Advanced live streaming"}
+    shortDescription:
+      - {language: en, text: "You'll learn how Aleksei and his colleagues created the biggest platform in Russia for broadcasting\
+            \ and watching live streams and which problems they encountered."}
+      - {language: ru, text: "Вы узнаете, как Алексей и его коллеги создавали крупнейшую в России платформу для проведения\
+            \ и просмотра live-трансляций и с какими проблемами сталкивались в процессе."}
+    longDescription:
+      - language: en
+        text: "Live streaming as a form of social interaction becomes more and more popular with the users. People want to\
+            \ share what's happening around them here and how. From this talk you'll learn how Aleksei and his colleagues\
+            \ created the biggest platform in Russia for broadcasting and watching live streams and which problems they encountered.\r\
+            \n\r\nThis talk deals with the following themes:\r\n- live streaming technologies;\r\n- managing live events;\r\
+            \n- real-time video processing;\r\n- dynamic resolution change;\r\n- adaptive bitrate."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Возможность взглянуть на интересный опыт в сфере, с которой\
+            \ сталкивается далеко не каждый iOS-разработчик. Докладчик глубоко исследовал вопрос стриминга, закрепил решен\
+            ие на крупном проекте, провалидировал на большой аудитории! Не это ли опыт и экспертиза, которых мы достойны к\
+            ак слушатели?*\n\nС каждым днём формат live-трансляций как вида социального взаимодействия становится всё боле\
+            е популярным среди пользователей. Люди хотят делиться происходящим вокруг них здесь и сейчас. Из этого доклада\
+            \ вы узнаете, как Алексей и его коллеги создавали крупнейшую в России платформу для проведения и просмотра live-т\
+            рансляций и с какими проблемами сталкивались в процессе.\n\nВ докладе будут затронуты следующие темы:\n- техно\
+            логии для проведения live-трансляций;\n- организация интерактивных событий;\n- обработка видеопотока в реально\
+            м времени;\n- динамическая смена разрешения;\n- адаптивный битрейт."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/6s2BY8Mt6EIAiacUkGIqE4/e79be771b81ff072efca408a75ab6b40/Aleksey_Savin_Advanced_live_streaming.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=s-kAu9D_GiU&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=19&t=0s"]
+    speakerIds: [807]
+  - id: 1145
+    name:
+      - {language: en, text: "Kotlin puzzlers, Vol. 2"}
+    shortDescription:
+      - {language: en, text: "This talk will present some of the more interesting nuances of Kotlin syntax or features with\
+            \ the help of small puzzler programs letting the audience guess their behavior. The mystery will then be revealed\
+            \ with an explanation in a fun way."}
+      - {language: ru, text: "Доклад посвящен наиболее интересных нюансам синтаксиса и языковых фич в форме несложных прог\
+            рамм-паззлеров: слушателям будет предложено догадаться, как эти программы себя поведут. Затем тайна будет раск\
+            рыта с увлекательным пояснением."}
+    longDescription:
+      - language: en
+        text: "Kotlin is a marvelous language that makes programming on the JVM fun again. During the design phase of the\
+            \ language, it was said that Kotlin specifically tried to avoid some of the most famous Java Puzzlers. However,\
+            \ having so many advanced features, it cannot avoid introducing puzzlers of its own. This talk will present some\
+            \ of the more interesting nuances of syntax or language features with the help of small puzzler programs letting\
+            \ the audience guess their behavior. The mystery will then be revealed with an explanation in a fun way.\n\nHaving\
+            \ received an overwhelmingly good feedback from the previous version, Anton is ready with a set of completely\
+            \ new puzzlers to entertain you among all these really serious talks!"
+      - language: ru
+        text: "Kotlin — удивительный язык, который вдохнул новую жизнь в программирование на JVM. Еще на этапе дизайна был\
+            о сказано, что Kotlin специально старается избежать наиболее знаменитых Java-паззлеров — но в нем столько прод\
+            винутых фич, что он неизбежно начал порождать собственные паззлеры. Этот доклад посвящен наиболее интересных н\
+            юансам синтаксиса и языковых фич в форме несложных программ-паззлеров: слушателям будет предложено догадаться\
+            , как эти программы себя поведут. Затем тайна будет раскрыта с увлекательным пояснением. \n\nПредыдущая версия\
+            \ этого доклада собрала исключительно положительные отзывы, и теперь Антон привезет совершенно новый набор паз\
+            злеров, чтобы разбавить все эти сверхсерьезные доклады!"
+    talkDay: 1
+    trackTime: "18:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=t387acWEK3o&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=21&t=0s"]
+    speakerIds: [68]
+  - id: 1146
+    name:
+      - {language: en, text: "Compilers. Dalvik. ART. And everything in between"}
+    shortDescription:
+      - {language: en, text: "We will go over all compilation and building process: D8 & R8, we will learn what is Virtual\
+            \ Machine and how ART is different from Dalvik, what is JIT and how AOT replace it and how the modern project\
+            \ put all this together."}
+    longDescription:
+      - language: en
+        text: "Android Team did a lot of work in improving the compile, build and runtime: from Dalvik to ART, from Java &\
+            \ Dex Compiler to D8, from Proguard to R8, from JIT compiler to AOT compiler. With all those changes it could\
+            \ be confusing and hard to follow on what is actually happens and what and how works under the hood.\r\n\r\nAt\
+            \ this talk, we will go over all compilation and building process: D8 & R8, we will learn what is Virtual Machine\
+            \ and how ART is different from Dalvik, what is JIT and how AOT replace it and how the modern project put all\
+            \ this together."
+    talkDay: 1
+    trackTime: "18:30"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=ug2ccVnbpig&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=20&t=0s"]
+    speakerIds: [565]
+  - id: 1147
+    name:
+      - {language: en, text: "Performance analytics: Why and how?"}
+      - {language: ru, text: "Performance analytics: как и зачем?"}
+    shortDescription:
+      - {language: en, text: "We're going to talk about how performance analysis can help you understand problems you didn't\
+            \ even know about."}
+      - {language: ru, text: "Поговорим о том, как анализ производительности может открыть вам глаза на проблемы, о которы\
+            х вы не подозревали."}
+    longDescription:
+      - language: en
+        text: "It often happens that advertisement is going, new users come, but don't stay for long. We change design, switch\
+            \ buttons, swamp users with pushes, correct monetization, but we never learn that users just can't bear to wait\
+            \ till the application is loaded. What can help us to recognize this kind of situation as well as many others?\
+            \ It's application performance analysis.\n\nIn this talk, we'll cover the following questions: why we should implement\
+            \ performance metrics, how to choose the right metric, which tools we could use and what typical mistakes can\
+            \ skew the results.\n\nWe'll give examples of technical details for iOS, but our talk can also give Android developers\
+            \ some food for thought."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Докладчик тащит темой и юзкейсами. Такого почти никто не ра\
+            ссказывал, а это интересно, полезно и самое главное — просто.*\n\nЧасто мы сталкиваемся с ситуацией: реклама и\
+            дет, новые пользователи приходят, но не задерживаются надолго. Мы переделываем дизайн, меняем кнопки местами,\
+            \ заваливаем пользователя пушами, корректируем монетизацию, но так и не узнаём, что пользователя просто бесит\
+            \ ждать, когда приложение загрузится. Распознать эту и многие другие ситуации нам поможет анализ производитель\
+            ности приложения.\n\nВ докладе будут раскрыты следующие темы: зачем внедрять performance metrics, как правильн\
+            о выбрать метрику, какие инструменты можно использовать и какие типичные ошибки могут исказить результаты.\n\n\
+            Примеры технических подробностей приводятся для iOS, однако доклад может дать пищу для размышлений и Android-р\
+            азработчикам."
+    talkDay: 1
+    trackTime: "18:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/4IQR9MpQk00CICQ8YiyKks/9da0daedfca1969950182d7634191325/Vyacheslav_Beltyukov_Performance_analytics__kak_i_zachem.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=2ImSpfbMaAE&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=15&t=0s"]
+    speakerIds: [817]
+  - id: 1148
+    name:
+      - {language: en, text: "Monorepo: The journey back. History of modularization at Badoo"}
+      - {language: ru, text: "Монорепо: путешествие обратно. История модуляризации в Badoo"}
+    shortDescription:
+      - {language: en, text: "Anton will tell about their iOS team's journey to monorepo and modular application structure,\
+            \ from what it all begun to what they have in the end. It allowed them to scale iOS development and increase individual\
+            \ developer's performance."}
+      - {language: ru, text: "Антон расскажет про путь их iOS-команды к монорепозиторию и модульной структуре приложений:\
+            \ с чего все начиналось и к чему они пришли. В результате это позволило им масштабировать iOS-разработку и уве\
+            личить производительность отдельного разработчика."}
+    longDescription:
+      - language: en
+        text: "At Badoo, structure of repositories and iOS projects has been continuously evolving for the last 9 years. The\
+            \ team went all the way from monorepo to several repositories for each application and back, using CocoaPods and\
+            \ Carthage, static libraries and frameworks, workspaces and xcodeproj files, copying code and reusing it.\n\n\
+            Anton will tell about their iOS team's journey to monorepo and modular application structure, from what it all\
+            \ begun to what they have in the end. It allowed them to scale iOS development and increase individual developer's\
+            \ performance."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Спикер рассказывает историю модуляризации из кейса Badoo, к\
+            ак все начиналось еще в 2009 году и что вышло сейчас. Многие команды могут узнать себя в рассказе Антона и пон\
+            ять, куда им двигаться дальше. Из-за полезности и реальных юзкейсов мы и взяли этот доклад.*\n\nВ Badoo за пос\
+            ледние девять лет структура репозиториев и iOS-проектов непрерывно эволюционировала. Команда прошла путь от мо\
+            норепо до нескольких репозиториев под каждое из приложений и обратно, использовала CocoaPods и Carthage, стати\
+            ческие библиотеки и фреймворки, workspaces и xcodeproj-файлы, копировала код и переиспользовала его.\n\nАнтон\
+            \ расскажет про путь их iOS-команды к монорепозиторию и модульной структуре приложений: с чего все начиналось\
+            \ и к чему они пришли. В результате это позволило им масштабировать iOS-разработку и увеличить производительно\
+            сть отдельного разработчика."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/5ItTyl4T6wUIMGomIOmus4/1ac90b5d6c8f51749f460c00abca0048/Anton_Shchukin_Monorepo__puteshestviye_obratno._Istoriya_modulyarizatsii_v_Badoo.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=V_lBeu4Xcp0&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=8&t=0s"]
+    speakerIds: [816]
+  - id: 1149
+    name:
+      - {language: en, text: "How to cache information in an Android application and not to shoot yourself in the leg"}
+      - {language: ru, text: "Как кэшировать информацию в Android-приложении и не стрелять себе в ногу"}
+    shortDescription:
+      - {language: en, text: "About caching in Android applications overall and about particular implementations."}
+      - {language: ru, text: "О кэшировании в Android-приложениях в целом и о конкретных реализациях в частности."}
+    longDescription:
+      - language: en
+        text: "This talk deals with caching in Android applications overall and with particular implementations. The purpose\
+            \ of the talk is to tell about current caching types, to show why it's important and to share the experience of\
+            \ implementing LRU cache in an application used by millions of people every day. \n\nThis talk will cover the\
+            \ following caching types: \n1. Lazy cache; \n2. Synchronized cache; \n3. Write-through cache; \n4. LRU cache."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Дмитрий расскажет, чем руководствоваться при выборе предпоч\
+            тительной стратегии кэширования для вашего проекта, и поделится опытом своей команды в реализации по-настоящем\
+            у быстрого и гибкого кэша на примере social media-приложения с многомиллионной аудиторией.*\n\nДоклад про кэши\
+            рование в Android-приложениях в целом и про конкретные реализации в частности. Цель — рассказать об актуальных\
+            \ в данный момент видах кэширования, показать, почему это важно, и поделиться опытом реализации LRU-кэша в при\
+            ложении с ежедневной аудиторией в несколько миллионов. \n\nВиды кэширования, которые будут фигурировать в докл\
+            аде: \n1. Lazy cache; \n2. Synchronized cache; \n3. Write-through cache; \n4. LRU cache."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/1LCRsIRS7y80W6mqmyYKCa/837f61b90c5fa1ef85a0811e34771dcc/Dmitriy_Vasilyev_Kak_keshirovat_informatsiyu_v_Android-prilozhenii_i_ne_strelyat_sebe_v_nogu.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=-IaESTc9fno&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=32&t=0s"]
+    speakerIds: [811]
+  - id: 1150
+    name:
+      - {language: en, text: "Mobile VR: From idea to release"}
+      - {language: ru, text: "Мобильный VR: от идеи до релиза"}
+    shortDescription:
+      - {language: en, text: "This talk offers answers to the most popular questions from mobile developers and enthusiasts\
+            \ entering the mobile VR development world."}
+      - {language: ru, text: "Доклад позволит слушателям получить ответы на самые популярные вопросы, которые задают мобил\
+            ьные разработчики и энтузиасты, попадающие в мир разработки мобильного VR."}
+    longDescription:
+      - {language: en, text: "This talk offers answers to the most popular questions from mobile developers and enthusiasts\
+            \ entering the mobile VR development world. How relevant is mobile VR and is it even alive? How to integrate mobile\
+            \ VR into existing mobile solution and what do you need for it? What libraries and frameworks can be useful? How\
+            \ to organize A/B testing, get accepted into different app markets and not to fail?"}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *В докладе рассмотрены типовые проблемы и трейдофы, с которы\
+            ми сталкиваются разработчики VR-приложений, а также практические советы, как эти самые трейдофы решать. Такой\
+            \ доклад как раз подойдет людям, которые ещё не решаются окунуться в мир VR или только делают там первые шаги\
+            .*\n\nДоклад позволит слушателям получить ответы на самые популярные вопросы, которые задают мобильные разрабо\
+            тчики и энтузиасты, попадающие в мир разработки мобильного VR. Насколько мобильный VR актуален и жив ли он воо\
+            бще? Как интегрировать мобильный VR в существующее мобильное решение и что для этого нужно? Какие библиотеки и\
+            \ фреймворки понадобятся? Как организовать A/B-тестирование, успешно пройти модерацию во все возможные маркеты\
+            \ приложений и не облажаться?"
+    talkDay: 2
+    trackTime: "10:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/27ecwQl3hiAcasY0Y8ogyA/a39d2a7e09fd5d5c27814192686da314/Aleksandr_Korshak_Mobilnyy_VR__ot_idei_do_reliza.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=MryQWG0HSIM&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=28&t=0s"]
+    speakerIds: [823]
+  - id: 1151
+    name:
+      - {language: en, text: "Architectural approach to errors handling"}
+      - {language: ru, text: "Архитектурный подход к обработке ошибок"}
+    shortDescription:
+      - {language: en, text: "Convenient and system implementation of error handling on all levels of an application typically\
+            \ gives developers headaches. Dmitry will share his experience of solving such a problem."}
+      - {language: ru, text: "Удобная и системная реализация обработки ошибок во всех слоях приложения — типичная головная\
+            \ боль разработчиков. Дмитрий поделится опытом решения такой задачи."}
+    longDescription:
+      - language: en
+        text: "Error handling in mobile development appears to be plain underrated, but in reality it greatly influences reliability\
+            \ of an application and cost of its support. Convenient and system implementation of error handling on all levels\
+            \ of an application typically gives developers headaches. Dmitry will share his experience of solving such a problem.\n\
+            \nFrom this talk you'll learn:\n- how to create perfect error handling system, convenient for developers and easy\
+            \ for users to understand;\n- how to embed error handling into application architecture seamlessly;\n- how to\
+            \ make the most of errors, monitor them quickly and respond to them efficiently;\n- and how modern Swift allows\
+            \ us to implement this kind of handling gracefully."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Хороший доклад на важную тему, которую многие разработчики\
+            \ обходят стороной. В докладе спикер делится опытом построения архитектурного подхода, который он использует,\
+            \ чтобы сделать работу с ошибками максимально прозрачной, тем самым облегчив жизнь как разработчикам, так и по\
+            льзователям.*\n\nОбработка ошибок — откровенно недооцененная тема в мобильной разработке, но ее влияние на над\
+            ежность и стоимость поддержки приложения действительно огромно. Удобная и системная реализация обработки ошибо\
+            к во всех слоях приложения — типичная головная боль разработчиков. Дмитрий поделится опытом решения такой зада\
+            чи.\n\nИз доклада вы узнаете:\n- как создать цельную систему обработки ошибок, удобную для разработчика и поня\
+            тную для пользователя;\n- как органично встроить обработку ошибок в архитектуру приложения;\n- как извлечь мак\
+            симум пользы из ошибок, оперативно их отслеживать и эффективно на них реагировать;\n- и как современный Swift\
+            \ помогает элегантно реализовать такую обработку."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/1mbchoE4jKOqK2Q0kYAuEK/6c56bb594a28c639e6b014881cce8727/Dmitry_Mikhailov_Architectural_approach_to_errors_handling.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=AmUCZRRc-OE&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=9&t=0s"]
+    speakerIds: [818]
+  - id: 1152
+    name:
+      - {language: en, text: "Android: He protec, but he also attac"}
+    shortDescription:
+      - {language: en, text: "Alexander will tell about the basic protection methods, show the technique of hacking which\
+            \ uses method hooking, explain what it is and how to secure yourself against it."}
+      - {language: ru, text: "Александр расскажет про базовые способы защиты, покажет способ взлома через method hooking,\
+            \ объяснит, что это такое, и расскажет, как от него защититься."}
+    longDescription:
+      - {language: en, text: "Nowadays more and more companies start to worry about security, but most of them know only the\
+            \ most simple protection methods, and only few know how they might be hacked. Alexander will tell about the basic\
+            \ protection methods, show the technique of hacking which uses method hooking, explain what it is and how to secure\
+            \ yourself against it."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Доклад спускается до уровня ассемблера, раскапывая глубокие\
+            \ детали механизма работы Android-приложений и операционной системы. То, что надо для Mobius!*\n\nПоследнее вр\
+            емя всё больше компаний заботятся о безопасности, но все знают способы защиты не дальше, чем «не палить логи в\
+            \ проде», и уж точно единицы знают, как их могут взломать. Александр расскажет про базовые способы защиты, пок\
+            ажет способ взлома через method hooking, объяснит, что это такое, и расскажет, как от него защититься."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/5kO2BYCDPGEmagC0WS6Ec6/49c61e4c6cf0a8cb6735577696c6264d/Aleksandr_Guzenko_Android__He_protec__but_he_also_attac.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=t6JQuxZz0Z0&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=26&t=0s"]
+    speakerIds: [812]
+  - id: 1153
+    name:
+      - {language: en, text: "Flutter — how to make a beautiful app in an hour?"}
+    shortDescription:
+      - {language: en, text: "Announced at\_Google I/O '17\_Flutter is a new open source library for creating cross-platform\
+            \ mobile applications\_with beautiful UI. Is it something new? Is it needed? Will this be a future? After this\
+            \ talk\_you'll be able to face a question — is Flutter something for you?"}
+    longDescription:
+      - {language: en, text: "Announced at\_Google I/O '17\_Flutter is a new open source library for creating cross-platform\
+            \ mobile applications\_with beautiful UI. Is it something new? Is it needed? Will this be a future? In this\_\
+            presentation Paulina'd like to give an overview of approach in creating mobile applications in Flutter, point\
+            \ advantages\_of this solution and present example of application. After this talk\_you'll be able to face a question\
+            \ — is Flutter something for you?"}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Многие разработчики с осторожностью относятся к различным к\
+            россплатформенным технологиям. Но при этом также нельзя пропускать перспективные проекты, которые могут принес\
+            ти большую пользу. Таким может оказаться Flutter, так как он разрабатывается компанией Google, которая активно\
+            \ его развивает. А узнать подробнее обо всем, чтобы решить для себя, стоит ли использовать эту технологию, луч\
+            ше всего от человека, который уже давно начал разбираться в ней, писать приложения и рассказывать доклады. И т\
+            аким человеком как раз является Паулина, которая с радостью поделится своим опытом и ответит на все вопросы!*\n\
+            \nAnnounced at\_Google I/O '17\_Flutter is a new open source library for creating cross-platform mobile applications\_\
+            with beautiful UI. Is it something new? Is it needed? Will this be a future? In this\_presentation Paulina'd like\
+            \ to give an overview of approach in creating mobile applications in Flutter, point advantages\_of this solution\
+            \ and present example of application. After this talk\_you'll be able to face a question — is Flutter something\
+            \ for you?"
+    talkDay: 2
+    trackTime: "12:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/2CnWOqf8mwSs4QCwU0Ukoq/bea67547b2289e86c728491a335be840/Paulina_Szklarska_Flutter__how_to_make_a_beautiful_app_in_an_hour.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=vqms11423AU&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=29&t=0s"]
+    speakerIds: [805]
+  - id: 1154
+    name:
+      - {language: en, text: "Video streaming and playback over bare sockets and codecs"}
+      - {language: ru, text: "Стриминг и воспроизведение видео поверх голых сокетов и кодеков"}
+    shortDescription:
+      - {language: en, text: "We'll discuss video streaming and real-time playback, fight delays and CPU utilization, and\
+            \ learn to write our own players."}
+      - {language: ru, text: "Поговорим про стриминг и воспроизведение видео в реальном времени, поборем задержки и утилиз\
+            ацию CPU и научимся писать свои плееры."}
+    longDescription:
+      - language: en
+        text: "Many developers take video players for granted (AVPlayer or ExoPlayer/MediaPlayer). Those are good, but you\
+            \ can achieve better results using bare socket and codec. \n\nIn this talk, we'll see how to diminish video launch\
+            \ delay, delay between streamer and viewer, and CPU utilization in the process of streaming and playback. We'll\
+            \ improve AVPlayer and then replace it with our own DASH player. We'll show how to cook ExoPlayer properly and\
+            \ make our own Android RTMP player. We'll discuss streaming protocols HLS/DASH/RTMP/webRTC/rawUDP. \n\nAs an example\
+            \ we'll use Odnoklassniki mobile client and OK Live application — first Android application for 1080p mobile streaming."
+      - language: ru
+        text: "Многие разработчики воспринимают видеоплеер как данность (AVPlayer или ExoPlayer/MediaPlayer). Это хорошие\
+            \ решения, однако можно добиться лучших результатов, используя голые сокет и кодек. \n\nВ этом докладе мы посм\
+            отрим, как уменьшить задержку старта видео, задержку между стримером и зрителем и утилизацию CPU при стриминге\
+            \ и воспроизведении. Сначала улучшим AVPlayer, а потом заменим его на свой DASH-плеер. Расскажем, как правильн\
+            о готовить ExoPlayer, и сделаем свой RTMP-плеер на Android. Рассмотрим протоколы стриминга HLS/DASH/RTMP/webRTC/rawUDP.\
+            \ \n\nВсе будет рассказано на примере мобильного клиента Одноклассников и приложения OK Live — первого Android-п\
+            риложения для мобильного стриминга в качестве 1080p."
+    talkDay: 2
+    trackTime: "13:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=e1JYFRwHzkQ&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=24&t=0s"]
+    speakerIds: [206, 815]
+  - id: 1155
+    name:
+      - {language: en, text: "G(PU) force"}
+    shortDescription:
+      - {language: en, text: "We'll review past cases where Royi had trouble that originated in the GPU and how you can diagnose\
+            \ and solve similar issues quickly and more effectively in your Android application."}
+    longDescription:
+      - language: en
+        text: "The GPU is your silent partner 98% of the time as it allows you to provide sleeker animations and richer UIs\
+            \ with little to no effort for the majority of applications and users, but it can also create bugs and issues\
+            \ that are very hard to debug and resolve, especially if you don't know how GPU run hardware acceleration works.\n\
+            \nIn this session we'll review past cases where Royi had trouble that originated in the GPU and how you can diagnose\
+            \ and solve similar issues quickly and more effectively in your Android application."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Харизматичный докладчик и один из первых GDE.*\n\nThe GPU is\
+            \ your silent partner 98% of the time as it allows you to provide sleeker animations and richer UIs with little\
+            \ to no effort for the majority of applications and users, but it can also create bugs and issues that are very\
+            \ hard to debug and resolve, especially if you don't know how GPU run hardware acceleration works.\n\nIn this\
+            \ session we'll review past cases where Royi had trouble that originated in the GPU and how you can diagnose and\
+            \ solve similar issues quickly and more effectively in your Android application."
+    talkDay: 2
+    trackTime: "13:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/3ipm6Q7rBeGOUiusAm6Sk6/d00a6aacad4c75cebf535fc7aec77d9a/Royi_Benyossef_G_PU__force.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=b7Rl1NEuF1w&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=27&t=0s"]
+    speakerIds: [802]
+  - id: 1156
+    name:
+      - {language: en, text: "Flux architecture in an iOS project"}
+      - {language: ru, text: "Flux-архитектура в iOS-проекте"}
+    shortDescription:
+      - {language: en, text: "Denis will tell about challenges one might face when developing an iOS project on the Flux architecture\
+            \ and how to find solutions for those challenges. This talk's aimed at all developers who know basic principles\
+            \ of the Flux architecture."}
+      - {language: ru, text: "Денис расскажет о трудностях, с которыми можно столкнуться при разработке iOS-проекта на Flux-а\
+            рхитектуре, и о том, как с ними справиться. Доклад рассчитан на разработчиков любого уровня, знакомых с основн\
+            ыми принципами Flux-архитектуры."}
+    longDescription:
+      - {language: en, text: "In this talk, Denis will tell about challenges one might face when developing an iOS project\
+            \ on the Flux architecture and how to find solutions for those challenges. This talk's aimed at all developers\
+            \ who know basic principles of the Flux architecture."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Спикер поделится малораспространенным сейчас опытом работы\
+            \ с однонаправленной Flux-архитектурой в iOS. Покажет, как можно хранить весь стейт в одном месте, какие пробл\
+            емы этим можно решить и какие есть минусы.*\n\nВ докладе Денис расскажет о трудностях, с которыми можно столкн\
+            уться при разработке iOS-проекта на Flux-архитектуре, и о том, как с ними справиться. Доклад рассчитан на разр\
+            аботчиков любого уровня, знакомых с основными принципами Flux-архитектуры."
+    talkDay: 2
+    trackTime: "13:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/av4j6QuGFGwge88OqmMUS/be45b77ab648bc151ece4b3ab42f4aa7/Denis_Kirillov_Flux-arkhitektura_v_iOS-proyekte.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=W4QNaOQcW4A&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=30&t=0s"]
+    speakerIds: [810]
+  - id: 1157
+    name:
+      - {language: en, text: "Mobile architecture at scale"}
+      - {language: ru, text: "Мобильная архитектура в большой команде"}
+    shortDescription:
+      - {language: en, text: "Alexander will take a look at well-known mobile architectures in terms of a large team's work.\
+            \ What problems Uber had 2 years ago and why they rewrote their application from scratch. What problems arise\
+            \ when hundreds of engineers work in one repository and how some of these problems are solved using RIBs architecture."}
+      - {language: ru, text: "Александр рассмотрит общеизвестные мобильные архитектуры с точки зрения работы большой коман\
+            ды. С какими проблемами в Uber столкнулись 2 года назад и почему переписали свое приложение с нуля. Какие проб\
+            лемы возникают, когда сотни инженеров работают в одном репозитории, и как сегодня эти проблемы решаются с помо\
+            щью RIBs-архитектуры."}
+    longDescription:
+      - {language: en, text: "Alexander will take a look at well-known mobile architectures in terms of a large team's work.\
+            \ What problems Uber had 2 years ago and why they rewrote their application from scratch. What problems arise\
+            \ when hundreds of engineers work in one repository and how some of these problems are solved using RIBs architecture."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Докладчик из Убера. В докладе раскрыта проблема архитектуры\
+            \ мобильных приложений с мега-большим количеством разработчиков (500+). Будут как интересные моменты (архитект\
+            ура, построенная на плагинах), так и холиварные (переписать большое приложение, находящееся на вершине своей п\
+            опулярности, с нуля).*\n\nАлександр рассмотрит общеизвестные мобильные архитектуры с точки зрения работы больш\
+            ой команды. С какими проблемами в Uber столкнулись 2 года назад и почему переписали свое приложение с нуля. Ка\
+            кие проблемы возникают, когда сотни инженеров работают в одном репозитории, и как сегодня эти проблемы решаютс\
+            я с помощью RIBs-архитектуры."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/4CrnFHgEw0qQy00Ym2a6Au/1f000f1f16c44bf7b4232659bc8c6c76/Aleksandr_Mikhaylov_Mobilnaya_arkhitektura_v_bolshoy_komande.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=AtvXOUjXmbs&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=25&t=0s"]
+    speakerIds: [819]
+  - id: 1158
+    name:
+      - {language: en, text: "How to cook a well done MVI for Android"}
+      - {language: ru, text: "Как приготовить хорошо прожаренный MVI под Android"}
+    shortDescription:
+      - {language: en, text: "We'll discuss how we can adapt Unidirectional Data Flow for mobile development and how Kotlin\
+            \ and its key features can help us in that. We'll also take a look at examples of typical use cases implementation\
+            \ for this approach."}
+      - {language: ru, text: "Поговорим о том, как можно адаптировать Unidirectional Data Flow под реалии мобильной разраб\
+            отки и как нам в этом поможет Kotlin и его ключевые фичи. А также посмотрим на примеры реализации типичных юзк\
+            ейсов в этом подходе."}
+    longDescription:
+      - language: en
+        text: "Reactive programming has firmly become one of the modern Android developer's tools. But most developers only\
+            \ use it in specific application parts concerning background operations. But what if we build an application solely\
+            \ on reactive patterns, what if we model our app as a single data stream? You've probably heard of Redux from\
+            \ the web world. It seems that per se this approach doesn't fit Android, however, we can still borrow something\
+            \ useful from it.\n\nIn this talk, we'll discuss how we can adapt Unidirectional Data Flow to modern Android development\
+            \ and how Kotlin and its key features can help us in that. We'll also take a look at examples of typical use cases\
+            \ implementation for this approach."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Интересный рассказ о чуть менее известной в Android архитек\
+            туре, которая многим может прийтись по вкусу, от опытного докладчика Mobius!*\n\nРеактивное программирование п\
+            рочно закрепилось в инструментарии современного Android-разработчика. Но большинство использует реактивщину ли\
+            шь в отдельных частях приложения, которые затрагивают фоновую работу. А что если целиком спроектировать прилож\
+            ение, полагаясь на реактивные паттерны, что если всё наше приложение представить в виде одного стрима данных?\
+            \ Вы наверняка слышали про Redux из мира веба. Несмотря на то, что в чистом виде этот подход для Android не ос\
+            обо годится, нам определённо есть что позаимствовать у него. \n\nВ этом докладе мы поговорим о том, как можно\
+            \ адаптировать Unidirectional Data Flow под текущие реалии разработки под Android и как нам в этом поможет Kotlin\
+            \ и его ключевые фичи. А также посмотрим на примеры реализации типичных юзкейсов в этом подходе."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/6lC85sBYmQmSCoiqYiQOMo/a7ccea6ded95c6a1c5d3f46d74773da1/Sergey_Ryabov_Kak_prigotovit_khorosho_prozharennyy_MVI_pod_Android.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=hBkQkjWnAjg&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=33&t=0s"]
+    speakerIds: [296]
+  - id: 1159
+    name:
+      - {language: en, text: "SceneKit in use"}
+      - {language: ru, text: "SceneKit на практике"}
+    shortDescription:
+      - {language: en, text: "Vyacheslav will tell how to start working with SceneKit, which pitfalls they encountered and\
+            \ how to record video alongside rendering in SceneKit and ARKit working. He will also tell about little-knows\
+            \ features of this engine and how you can use them to implement the most complex visual effects."}
+      - {language: ru, text: "Вячеслав расскажет, как начать работать со SceneKit, на какие подводные камни они в нём натк\
+            нулись и как записывать видео параллельно с рендерингом в SceneKit и работой ARKit. Также он расскажет о малои\
+            звестных возможностях этого движка и о том, как с их помощью можно реализовывать сложнейшие визуальные эффекты\
+            ."}
+    longDescription:
+      - language: en
+        text: "In 2012 Apple introduced SceneKit, their own 3D engine, and two years later ported it to iOS. Yandex.Maps team\
+            \ use it to show routes and objects in augmented reality.\n\nVyacheslav will tell how to start working with this\
+            \ engine, which pitfalls they encountered and how to record video alongside rendering in SceneKit and ARKit working.\
+            \ He will also tell about little-knows features of this engine and how you can use them to implement the most\
+            \ complex visual effects."
+      - language: ru
+        text: "В 2012 году Apple представила свой 3D-движок — SceneKit, который они два года спустя портировали на iOS. В\
+            \ Яндекс.Картах с его помощью показывают маршрут и объекты в дополненной реальности.\n\nВячеслав расскажет, ка\
+            к начать с ним работать, на какие подводные камни они в нём наткнулись и как записывать видео параллельно с ре\
+            ндерингом в SceneKit и работой ARKit. Также он расскажет о малоизвестных возможностях этого движка и о том, ка\
+            к с их помощью можно реализовывать сложнейшие визуальные эффекты."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/2grufn031spf/2NeFjBjGZq2MSewOIi8qGY/b9121be7252bf8b0cd368fee594a2852/Vyacheslav_Gilevich_SceneKit_On_Practice.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=4DQUDk_ZT-I&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=31&t=0s"]
+    speakerIds: [821]
+  - id: 1160
+    name:
+      - {language: en, text: "How modularity changed not only our code, but also the whole process"}
+      - {language: ru, text: "Как модульность изменила не только наш код, но и весь процесс"}
+    shortDescription:
+      - {language: en, text: "We'll cover the following questions: on what modules should we divide our application? How should\
+            \ we connect them? When it's time to stop? Which tools can make the process easier? How to arrange all that in\
+            \ order to make creating separate project for each feature comfortable?"}
+      - {language: ru, text: "Разберем вопросы: на какие модули разбить приложение? Какие должны быть между ними связи? Ко\
+            гда остановиться? Какие инструменты могут облегчить жизнь? Как все так наладить, чтобы было удобно создавать о\
+            тдельные проекты для каждой фичи?"}
+    longDescription:
+      - language: en
+        text: "When we started to modularize our application, we didn't even know how drastically our development process\
+            \ will change as a result. Just like many others, we decided to do this only when compile time went beyond all\
+            \ reason and the build simply started to crash because of excessively long compile commands. But now we use modularity\
+            \ mainly to organize concurrent feature development in separate projects, and the problem of long compilation\
+            \ with minimum expenses is not that critical. \n\nThere have already been talks on this topic, but back in the\
+            \ day we couldn't find answers to specific questions: on what modules should we divide our application? How should\
+            \ we connect them? When it's time to stop? Which tools can make the process easier? How to arrange all that in\
+            \ order to make creating separate project for each feature comfortable? In this talk, we'll cover all these questions,\
+            \ discuss the pitfalls of using CocoaPods, backup tooling, working with tests, through case histories see how\
+            \ to organize dependency inversion between modules, and finally talk about what we got in the end and at what\
+            \ price. \n\nMultimodularity completely changed not only our code, but also our process, our attitude towards\
+            \ the project. This talk's purpose is to help you avoid possible mistakes and encourage you to try this approach\
+            \ even if you don't have to face the big monolith problem."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *На примере проекта Яндекс.Карт Николай делится реальным опы\
+            том, рассказывает о мотивации принятого решения распила монолита и о том, как это повлияло не только на метрик\
+            и, но и на культуру в их команде. Если коротко, то прикладная и популярная в последнее время тема, интересный\
+            \ проект, интересный спикер.*\n\nНачиная разбивать приложение на модули, наша команда и не представляла, как с\
+            ильно в итоге изменится наш процесс разработки. Как и многие, мы засели за эту работу, лишь когда время компил\
+            яции превысило все моральные границы, да и билд начал просто вылетать из-за превышения длины команды компиляци\
+            и. Однако на данный момент мы используем модульность в первую очередь как способ организации параллельной разр\
+            аботки фич в отдельных проектах, а проблема долгой компиляции при минимальных затратах перестала быть такой кр\
+            итичной. \n\nПо данной теме уже существуют доклады, но нам в свое время не хватило ответов на конкретные вопро\
+            сы: на какие модули разбить приложение? Какие должны быть между ними связи? Когда остановиться? Какие инструме\
+            нты могут облегчить жизнь? Как все так наладить, чтобы было удобно создавать отдельные проекты для каждой фичи\
+            ? В докладе мы разберем все эти вопросы, пройдемся по подводным камням использования CocoaPods, вспомогательно\
+            му тулингу, работе с тестами, на конкретных примерах посмотрим, как организовать dependency inversion между мо\
+            дулями, обсудим, что в итоге мы получили и какими усилиями. \n\nМногомодульность в корне преобразовала не толь\
+            ко наш код, но и наш процесс, наше отношение к проекту. Доклад призван помочь избежать возможных ошибок и моти\
+            вировать заняться этой темой, даже если перед вами не стоит проблема большого монолита."
+    talkDay: 2
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/22VRTK3LVqkUASwcQ2SgoM/fe650e847580b6ed4c79280a7f8d822c/Nikolay_Likhogrud_How_modularity_changed_not_only_our_code__but_also_the_whole_process.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=iXWLr_J1S3o&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=10&t=0s"]
+    speakerIds: [804]
+  - id: 1161
+    name:
+      - {language: en, text: "One app, 200+ developers: practices and tools"}
+      - {language: ru, text: "Одно приложение, 200+ разработчиков: практики и инструменты"}
+    shortDescription:
+      - {language: en, text: "We'll discuss tools and methods of automation, safe code writing, testing and service control\
+            \ — these tools and methods we at Sberbank Online use every day, releasing our project for 40 millions of clients."}
+      - {language: ru, text: "Будут рассмотрены инструменты и практики автоматизации, безопасного написания кода, тестиров\
+            ания и управления сервисами, которые мы ежедневно используем в Сбербанк Онлайн, выпуская продукт для 40 млн. к\
+            лиентов."}
+    longDescription:
+      - language: en
+        text: "What to do when your mobile development grows quickly from 20 to 200+ men, how to manage processes, quicken\
+            \ releases and provide high-level quality and security. In this talk, we'll discuss tools and practices of automation,\
+            \ safe code writing, testing and service control — these tools and methods we at Sberbank Online use every day,\
+            \ releasing our project for 40 millions of clients.\n\nThis talk's aimed at senior developers, tech leads, and\
+            \ release managers from companies that make products with high-level quality, high load, security, and short release\
+            \ cycle."
+      - language: ru
+        text: "Что делать, если ваша мобильная разработка за короткий промежуток времени вырастает с 20 человек до 200+, к\
+            ак управлять процессами, сокращать сроки релизов и обеспечивать высокий уровень качества и безопасности. В док\
+            ладе будут рассмотрены инструменты и практики автоматизации, безопасного написания кода, тестирования и управл\
+            ения сервисами, которые мы ежедневно используем в Сбербанк Онлайн, выпуская продукт для 40 млн. клиентов.\n\nЦ\
+            елевая аудитория доклада — ведущие разработчики, технические лидеры, релизные менеджеры компаний, выпускающих\
+            \ продукты, для которых характерны: высокий уровень качества, высокая нагрузка, безопасность, короткий релизны\
+            й цикл."
+    talkDay: 2
+    trackTime: "17:00"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=yfPwsX3rTDU&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=23&t=0s"]
+    speakerIds: [822]
+  - id: 1162
+    name:
+      - {language: en, text: "Project Treble: a lifelong technical debt"}
+    shortDescription:
+      - {language: en, text: "Sometimes one mistake in developing the architecture of the product can cost you dearly. There\
+            \ was such mistake in Android OS, and to fix it Google had to invent a new language (HIDL), bindarized HALs, VINTF\
+            \ objects and many other interesting things, as a whole called Project Treble. If you want to know what it it,\
+            \ what's it for, what did it cost Google and how it will influence the developers and end users of Android devices,\
+            \ you should come and listen to the talk."}
+    longDescription:
+      - language: en
+        text: "This talk is a take on Project Treble from people who had to delve into it. It deals with what until recently\
+            \ was a main problem of the Android OS — fragmentation of the ecosystem to different versions — and about all\
+            \ that Google had to change in the Android architecture to solve this problem. \n\nFyodor will tell about all\
+            \ the main components of what Google calls Project Treble and about what are they for: \n- what's the difference\
+            \ between Binderazed and Passthrough HALs; \n- why Hardware Interface Definition Language had to be invented;\
+            \ \n- how the partitions on USB flash drive for Android device should look like now; \n- how Device and Framework\
+            \ use Vendor Interface Object to decide whether they are going to work together. \n\nAll of these questions will\
+            \ be laced with personal experience from working with these components. But the main idea of the talk is that\
+            \ from the very first day Android had a problem on the architecture level. Project Treble is a solution for this\
+            \ problem: expensive, bulky and a great illustration of how troublesome the technical debt could be."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Не каждый день можно встретить разработчиков железа для Android,\
+            \ которые расскажут тебе, как устроен Android со стороны вендорских разработок.*\n\nThis talk is a take on Project\
+            \ Treble from people who had to delve into it. It deals with what until recently was a main problem of the Android\
+            \ OS — fragmentation of the ecosystem to different versions — and about all that Google had to change in the Android\
+            \ architecture to solve this problem. \n\nFyodor will tell about all the main components of what Google calls\
+            \ Project Treble and about what are they for: \n- what's the difference between Binderazed and Passthrough HALs;\
+            \ \n- why Hardware Interface Definition Language had to be invented; \n- how the partitions on USB flash drive\
+            \ for Android device should look like now; \n- how Device and Framework use Vendor Interface Object to decide\
+            \ whether they are going to work together. \n\nAll of these questions will be laced with personal experience from\
+            \ working with these components. But the main idea of the talk is that from the very first day Android had a problem\
+            \ on the architecture level. Project Treble is a solution for this problem: expensive, bulky and a great illustration\
+            \ of how troublesome the technical debt could be."
+    talkDay: 2
+    trackTime: "17:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/2grufn031spf/67RZ0ASw3Cqw0aEO8o2Ee8/53905b452fd96883d31e4f9be3413884/Fedor_Tsymbal_Project_Treble__tekhnicheskiy_dolg_dlinoyu_v_zhizn.pdf"]
+    videoLinks: ["https://www.youtube.com/watch?v=ctYJno7dx4s&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=22&t=0s"]
+    speakerIds: [813]
+  - id: 1163
+    name:
+      - {language: en, text: "Testing to extremes: Dirty little tricks from the dark corners of mobile UIs"}
+      - {language: ru, text: "Крайности тестирования: хитрости из темных уголков мобильных интерфейсов"}
+    shortDescription:
+      - {language: en, text: "Vitaly will be taking a microscopic examination of common interaction patterns and interface\
+            \ components appearing and tested in mobile interfaces. We'll look into onboarding issues, the infamous hamburger\
+            \ icon, strange carousels, complex data visualization and feature comparison."}
+      - {language: ru, text: "Виталий проведет детальное исследование схем взаимодействия и интерфейсных компонентов, част\
+            о встречающихся (и протестированных) в мобильных интерфейсах. Мы поговорим о проблемах адаптации, пресловутой\
+            \ иконке «гамбургер», странных каруселях, визуализации сложных данных и сравнении свойств."}
+    longDescription:
+      - {language: en, text: "In this brand new session, Vitaly will be taking a microscopic examination of common interaction\
+            \ patterns and interface components appearing and tested in mobile interfaces. We'll look into onboarding issues,\
+            \ the infamous hamburger icon, strange carousels, complex data visualization and feature comparison."}
+      - {language: ru, text: "В своем новом докладе Виталий проведет детальное исследование схем взаимодействия и интерфей\
+            сных компонентов, часто встречающихся (и протестированных) в мобильных интерфейсах. Мы поговорим о проблемах а\
+            даптации, пресловутой иконке «гамбургер», странных каруселях, визуализации сложных данных и сравнении свойств."}
+    talkDay: 2
+    trackTime: "18:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://www.youtube.com/watch?v=4RtR-X0BbBc&list=PLb1A91j1236ob2oOxaJ4VPSVb9M897UGE&index=12&t=0s"]
+    speakerIds: [260]
