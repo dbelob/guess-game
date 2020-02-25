@@ -23676,7 +23676,7 @@ talks:
     language: ru
     presentationLinks: []
     videoLinks: ["https://www.youtube.com/watch?v=tEsrFFRZM-w&list=PLVe-2wcL84b_DvLWtURPD0Dz2NZil55XI&index=27"]
-    speakerIds: [1078, 1076, 25, 96, 50]
+    speakerIds: [7, 1076, 25, 96, 50]
   - id: 1021
     name:
       - {language: en, text: "Reactive hardcore: how to implement own Publisher<?>"}

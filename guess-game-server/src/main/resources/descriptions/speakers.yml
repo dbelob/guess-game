@@ -132,8 +132,19 @@ speakers:
   - id: 7
     fileName: 0007.jpg
     name:
-      - {language: en, text: "Alexey Fedorov"}
-      - {language: ru, text: "Алексей Фёдоров"}
+      - {language: en, text: "Alexey Fyodorov"}
+      - {language: ru, text: "Алексей Федоров"}
+    company:
+      - {language: en, text: "JUG.ru Group"}
+    bio:
+      - {language: en, text: "Director of JUG.ru Group, organizes the largest technological conferences for developers in\
+            \ Russia. In 5 years Alexey's team arranged more than 40 conferences. JUG.ru community leader, for several years\
+            \ was creating HR brand at Odnoklassniki."}
+      - {language: ru, text: "Алексей Федоров – директор JUG.ru Group, организатор крупнейших в России технологических кон\
+            ференций для разработчиков. За 5 лет команда Алексея провела более 40 конференций. Лидер сообщества JUG.ru, не\
+            сколько лет занимался созданием HR-бренда в Одноклассниках."}
+    twitter: 23derevo
+    javaChampion: true
   - id: 8
     fileName: 0008.jpg
     name:
@@ -12587,19 +12598,3 @@ speakers:
             \ [Django Girls SPb](https://djangogirls.org/stpetersburg/) и [PyLadies SPb](http://spb.pyladies.com/). \n\nОн\
             \ выступал в Москве, Лиссабоне, Берлине, Минске, Литве; является талисманом конференции index-tech.ru и извест\
             ен своими [статьями по проблематике найма](https://huntflow.ru/insight/article/v-samye-klassnye-kontory-samye-lyogkie-sobesedovaniya)."
-  - id: 1078
-    fileName: 1078.jpg
-    name:
-      - {language: en, text: "Alexey Fyodorov"}
-      - {language: ru, text: "Алексей Федоров"}
-    company:
-      - {language: en, text: "JUG.ru Group"}
-    bio:
-      - {language: en, text: "Director of JUG.ru Group, organizes the largest technological conferences for developers in\
-            \ Russia. In 5 years Alexey's team arranged more than 40 conferences. JUG.ru community leader, for several years\
-            \ was creating HR brand at Odnoklassniki."}
-      - {language: ru, text: "Алексей Федоров – директор JUG.ru Group, организатор крупнейших в России технологических кон\
-            ференций для разработчиков. За 5 лет команда Алексея провела более 40 конференций. Лидер сообщества JUG.ru, не\
-            сколько лет занимался созданием HR-бренда в Одноклассниках."}
-    twitter: 23derevo
-    javaChampion: true
