@@ -219,6 +219,25 @@ events:
               1060, 1061, 1062, 1063, 1064, 1065, 1066, 1067, 1068, 1069, 1070, 1071]
   - eventTypeId: 2
     name:
+      - {language: en, text: "DotNext 2019 SPb"}
+      - {language: ru, text: "DotNext 2019 СПб"}
+    startDate: "2019-05-15"
+    endDate: "2019-05-16"
+    siteLink:
+      - {language: en, text: "https://2019.dotnext-piter.ru/en/"}
+      - {language: ru, text: "https://2019.dotnext-piter.ru/"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBe5P8j7ZCi950cVn6YCPX7a
+    mapCoordinates: "59.842400, 30.318815"
+    talkIds: [1192, 1193, 1194, 1195, 1196, 1197, 1198, 1199, 1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209,
+              1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222]
+  - eventTypeId: 2
+    name:
       - {language: en, text: "DotNext 2019 Msk"}
       - {language: ru, text: "DotNext 2019 Мск"}
     startDate: 2019-11-06

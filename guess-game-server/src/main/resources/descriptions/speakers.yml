@@ -3092,13 +3092,12 @@ speakers:
             \ of Mosigra. Since 2009 he operates a popular Mosigra blog in the Habrahabr business space. Sergey received an\
             \ award \"Business Book of the Year in Russia\" for a book \"Business as a Game\" (co-authored with D. Kibkalo\
             \ and D. Borisov). Founder of the Loft PR agency. He provided advice for several companies from the Russian market\
-            \ top 20. Prize winner of the \"Best Marketing Company of the Year\" and \"Best Client Experience\"."}
+            \ top 20."}
       - {language: ru, text: "Сергей Абдульманов — математик из Астраханского государственного университета. Работал редак\
             тором газеты, руководил рекламным отделом, затем владел IT-компанией. С 2010 года маркетинговый директор Мосиг\
             ры. С 2009 года ведёт популярный блог Мосигры на площадке Хабр про бизнес. Обладатель премии «Деловая книга го\
             да» за книгу «Бизнес как игра» (в соавторстве с Д. Кибкало и Д. Борисовым). Учредитель пиар-агентства Loft. Ко\
-            нсультировал ряд компаний из Топ-20 российского рынка. Премии «Лучшая маркетинговая компания года» и «Лучший к\
-            лиентский опыт»."}
+            нсультировал ряд компаний из Топ-20 российского рынка."}
   - id: 259
     fileName: 0259.jpg
     name:
@@ -3464,16 +3463,14 @@ speakers:
     name:
       - {language: en, text: "Dmitri Nesteruk"}
       - {language: ru, text: "Дмитрий Нестерук"}
-    company:
-      - {language: en, text: ActiveMesa}
+    company: []
     bio:
-      - {language: en, text: "Dmitri Nesteruk is a quantitative analyst, developer, course and book author, and an occasional\
-            \ conference speaker. His interests lie in software development and integration practices in the areas of computation,\
-            \ quantitative finance and algorithmic trading. His technological interests include C# and C++ programming as\
-            \ well as high-performance computing using technologies such as CUDA and FPGAs."}
-      - {language: ru, text: "Квант, разработчик и просто увлеченный человек. Автор нескольких книг по разработке и паттер\
-            нам проектирования. Интересуется разработкой в сфере вычислений, численных финансов и алгоритмической торговли\
-            . Интересуется C# и C++, а также технологиями высокопроизводительных вычислений, такими как CUDA и FPGA."}
+      - {language: en, text: "Dmitri is a quantitative analyst. He has authored multiple books and courses on development\
+            \ and design patterns. His interests include computation, quanitative finance and algorithmic trading. He works\
+            \ with C# and C++ as well as HPC technologies such as CUDA and FPGAs."}
+      - {language: ru, text: "Квант, разработчик и просто увлеченный человек. Автор нескольких книг и курсов по разработке\
+            \ и паттернам проектирования. Интересуется разработкой в сфере вычислений, численных финансов и алгоритмическо\
+            й торговли. Интересуется C# и C++, а также технологиями высокопроизводительных вычислений, такими как CUDA и FPGA."}
     twitter: dnesteruk
   - id: 283
     fileName: 0283.jpg
@@ -3667,11 +3664,11 @@ speakers:
       - {language: en, text: "Roman Nevolin"}
       - {language: ru, text: "Роман Неволин"}
     company:
-      - {language: en, text: Careem}
+      - {language: en, text: Groupon}
     bio:
-      - {language: en, text: "The developer of the bioinformatics software with .NET, chemical with Java, financial with Haskell\
-            \ and some other interesting stuff. Likes to dive into new areas and languages and then talk about them at conferences\
-            \ and use them in production, if necessary."}
+      - {language: en, text: "Developer of the bioinformatics software with .NET, chemical with Java, financial with Haskell\
+            \ and some other interesting stuff. Roman likes to dive into new areas and languages and then talk about them\
+            \ at conferences and use them in production, if necessary."}
       - {language: ru, text: "Разработчик приложений для биоинформатиков на .NET, для химиков на Java, для финансистов на\
             \ Haskell и множества других интересных вещей. Любит изучать новые области и языки, а потом рассказывать о них\
             \ на конференциях и по необходимости использовать в продакшне."}
@@ -5082,6 +5079,20 @@ speakers:
     fileName: 0403.jpg
     name:
       - {language: en, text: "Jon Galloway"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - language: en
+        text: "Jon is the executive director of the .NET Foundation. He works at Microsoft as a Technical Evangelist focused\
+            \ on ASP.NET and Windows Azure.\n\nHe's co-author of <a href=\"http://www.wrox.com/WileyCDA/WroxTitle/Professional-ASP-NET-MVC-5.productCd-1118794753.html\"\
+            \ target=\"_blank\">Professional ASP.NET MVC</a>, writes samples and tutorials like the MVC Music Store and is\
+            \ a frequent speaker at conferences and international Web Camps events. Jon's been doing professional web development\
+            \ for 17 years, including high scale applications in financial, entertainment and healthcare analytics. He's part\
+            \ of the <a href=\"http://herdingcode.com/\" target=\"_blank\">Herding Code podcast</a>, Twitters as @jongalloway\
+            \ and blogs at <a href=\"http://weblogs.asp.net/jongalloway\" target=\"_blank\">http://weblogs.asp.net/jongalloway</a>.\n\
+            \nHe likes to travel, but spends most of his time in San Diego with his amazingly patient wife Rachel, three wonderful\
+            \ daughters, a dozen avocado trees and the occasional rattlesnake."
+    twitter: jongalloway
   - id: 404
     fileName: 0404.jpg
     name:
@@ -5117,12 +5128,11 @@ speakers:
       - {language: en, text: "Pavel Yosifovich"}
     company:
       - {language: en, text: "Author of the \"Windows Internals\" book"}
-      - {language: ru, text: "Автор книги «Windows Internals»"}
     bio:
       - {language: en, text: "Pavel Yosifovich is a developer, trainer author and speaker. He's the co-author of \"Windows\
-            \ Internals 7th edition Part 1\" (2017) and author of \"WPF 4.5 Cookbook\" (2012). Pavel is also a former MVP\
-            \ and a Pluralsight author. He can be reached at zodiacon@live.com or through his <a href=\"http://blogs.microsoft.co.il/pavely\"\
-            \ target=\"_blank\">blog</a>."}
+            \ Internals 7th edition Part 1\" (2017), author of \"WPF 4.5 Cookbook\" (2012) and \"Windows Kernel Programming\"\
+            \ (2019). Pavel is also a former MVP and a Pluralsight author. He can be reached at zodiacon@live.com or through\
+            \ his <a href=\"http://blogs.microsoft.co.il/pavely\" target=\"_blank\">blog</a>."}
     twitter: zodiacon
   - id: 407
     fileName: 0407.jpg
@@ -5231,20 +5241,29 @@ speakers:
     fileName: 0414.jpg
     name:
       - {language: en, text: "Alfonso García-Caro"}
+    company:
+      - {language: en, text: Freelance}
+    bio:
+      - {language: en, text: "A linguist by heart and a programmer by choice, Alfonso has brought his passion for natural\
+            \ languages to the computing world. He is the creator of Fable, a popular F# to JS compiler, and coauthor of the\
+            \ book \"Mastering F#\". Currently works as a web engineer using F# and Fable for highly productive and reliable\
+            \ software development."}
+    twitter: alfonsogcnunez
   - id: 415
     fileName: 0415.jpg
     name:
       - {language: en, text: "Mikhail Shcherbakov"}
       - {language: ru, text: "Михаил Щербаков"}
     company:
-      - {language: en, text: "Independent developer"}
+      - {language: en, text: "KTH Royal Institute of Technology"}
     bio:
-      - {language: en, text: "Mikhail is Microsoft .NET MVP, a participant of .NET Core Bug Bounty Program, .NET community\
-            \ leader in Russia, an independent software developer and consultant. His professional area is static and dynamic\
-            \ code analysis, information security, automatization of debugging code, the research of the internal .NET CLR."}
-      - {language: ru, text: "Microsoft .NET MVP, участник .NET Core Bug Bounty Program, соорганизатор сообщества .NET про\
-            граммистов, независимый разработчик и консультант. Профессиональные интересы: статический и динамический анали\
-            з кода, информационная безопасность, автоматизация отладки кода, исследование внутреннего устройства .NET CLR."}
+      - {language: en, text: "Mikhail is a PhD student and researcher at KTH Royal Institute of Technology, an independent\
+            \ developer and consultant, a participant of Microsoft Bug Bounty Programs, co-organizer of DotNet.ru, and Microsoft\
+            \ MVP. His professional areas are Application Security, Web Security, Static and Dynamic Code Analysis, Information\
+            \ Flow Security."}
+      - {language: ru, text: "Докторант в KTH Royal Institute of Technology, независимый разработчик и консультант, участн\
+            ик Microsoft Bug Bounty Programs, соорганизатор сообщества DotNet.ru, Microsoft MVP. Профессиональные интересы\
+            : безопасность приложений, статический и динамический анализ кода, Information Flow Security."}
     twitter: yu5k3
     mvp: true
   - id: 416
@@ -5252,7 +5271,7 @@ speakers:
     name:
       - {language: en, text: "Konrad Kokosa"}
     company:
-      - {language: en, text: Gritstep}
+      - {language: en, text: Gritstep/Dotnetos}
     bio:
       - {language: en, text: "Author of the Pro .NET Memory Management book. Programming for over a dozen years, solving performance\
             \ problems and architectural puzzles in the .NET world, speeding up web applications. Independent consultant,\
@@ -5277,14 +5296,45 @@ speakers:
     fileName: 0418.jpg
     name:
       - {language: en, text: "Sean Farmar"}
+    company:
+      - {language: en, text: "Particular Software"}
+    bio:
+      - language: en
+        text: "Sean Farmar holds the world record for answering the most NServiceBus questions — even more than Udi :-). \n\
+            \nWith over 20 years of experience, he specializes in providing simple solutions for complex business requirements\
+            \ using NServiceBus and applying SOA principles inspired by Udi Dahan. \n\nAs a solution architect with Particular\
+            \ Software, the creators of NServiceBus, Sean provides support, training and consulting for customers using NServiceBus\
+            \ and the Particular Platform."
+    twitter: farmar
   - id: 419
     fileName: 0419.jpg
     name:
       - {language: en, text: "Nico Vermeir"}
+    company:
+      - {language: en, text: Realdolmen}
+    bio:
+      - {language: en, text: "Nico Vermeir is a Microsoft Windows Development MVP. He works as a Lead Developer at Realdolmen\
+            \ Belgium (part of the GFI group) where he and his team specialize in building amazing front-end applications,\
+            \ ranging from mobile, over web, to desktop applications. Nico spends a lot of time doing community work and keeping\
+            \ up with the latest technologies. In 2011 Nico co-founded MADN, a user group focusing on modern application development\
+            \ within the Microsoft stack."}
+    twitter: nicovermeir
+    mvp: true
   - id: 420
     fileName: 0420.jpg
     name:
       - {language: en, text: "Wesley Cabus"}
+    company:
+      - {language: en, text: "UCB BioPharma"}
+    bio:
+      - language: en
+        text: "Wesley is a Lead Developer at UCB in Belgium, where he helps improving the overall code quality by performing\
+            \ code reviews, creating shared services and reusable packages, and investigates new technologies to see how they\
+            \ can help either UCB or people living with neurology or immunology conditions.\n\nHe's also a Microsoft Azure\
+            \ MVP, crew member at Techorama, global organizer of the Global Azure Bootcamp and speaks at local meetups and\
+            \ usergroups."
+    twitter: WesleyCabus
+    mvp: true
   - id: 421
     fileName: 0421.jpg
     name:
@@ -5306,28 +5356,91 @@ speakers:
     fileName: 0422.jpg
     name:
       - {language: en, text: "Roberto Freato"}
+    company:
+      - {language: en, text: "Consultant / Author / Solution Architect"}
+    bio:
+      - language: en
+        text: "Roberto has been an independent IT consultant since he started to work. After his MSc in computer science engineering\
+            \ with a thesis about consumer cloud computing he got specialization in Cloud and Azure. Today he works as a freelance\
+            \ consultant for major companies in Italy, helping clients to design and kick off their distributed software solutions.\
+            \ \n\nHe wrote some books on Microsoft Azure, for K12 education; he also trains/speaks for the developer community\
+            \ in many conferences. Roberto holds 45+ technical certifications on various vendors (MS, Sun, EXIN, Apple, Cisco,\
+            \ IBM). He's been a Microsoft MVP for 8 years."
   - id: 423
     fileName: 0423.jpg
     name:
       - {language: en, text: "Alexander Laptev"}
       - {language: ru, text: "Александр Лаптев"}
+    company:
+      - {language: en, text: Devbridge}
+    bio:
+      - {language: en, text: "Alexander comes to Devbridge from GMCS and Present Connection. An experienced technical specialist,\
+            \ Alexander remembers his first encounter with a computer as playing Warcraft 2. His first experience with programming\
+            \ was making a picture of a ship in Pascal. While he wasn't able to make his childhood dream of becoming a paleontologist\
+            \ come true, he has many things in his life to be proud of, most importantly his marriage. He can't live without\
+            \ Google or ice cream."}
+      - {language: ru, text: "Александр — опытный технический специалист, до Devbridge работал в GMCS и Present Connection.\
+            \ Впервые сел за компьютер, чтобы поиграть в Warcraft 2; начал программировать, создав изображение корабля на\
+            \ Pascal. Хотя Александру и не удалось исполнить детскую мечту и стать палеонтологом, ему все же есть чем горд\
+            иться, особенно своим браком. Жить не может без Google и мороженого."}
   - id: 424
     fileName: 0424.jpg
     name:
       - {language: en, text: "Mikhail Shilkov"}
       - {language: ru, text: "Михаил Шилков"}
+    company:
+      - {language: en, text: Freelance}
+    bio:
+      - language: en
+        text: "Mikhail Shilkov is a Microsoft Azure MVP, Russian expat living in the Netherlands. He is passionate about cloud\
+            \ technologies, functional programming and the intersection of the two.\n\nYou can find him blogging at <a href=\"\
+            https://mikhail.io\" target=\"_blank\">https://mikhail.io</a> or presenting the stories of serverless and functional\
+            \ adoption at conferences and meetups. Mikhail is a co-host of the F#P Eindhoven meetup and the ServerlessDays\
+            \ Amsterdam conference."
+      - language: ru
+        text: "Михаил родом из Питера, но сейчас живёт в Нидерландах. Он — Microsoft Azure MVP, ибо любит ковыряться в обл\
+            аках, а затем делиться своим опытом. А ещё он фанат функционального программирования и старается упомянуть F#\
+            \ при любом удобном случае. \n\nВ свободное время Михаил пишет в своём <a href=\"https://mikhail.io\" target=\"\
+            _blank\">блоге</a> и выступает на конференциях и митапах на тему serverless-технологий или ФП. Он помог органи\
+            зовать F#-митап в Эйндховене и запустить конференцию ServerlessDays Amsterdam. \n\nDotNext — отличный повод ве\
+            рнуться в Питер, поэтому Михаил ужасно рад!"
+    twitter: MikhailShilkov
+    mvp: true
+  - id: 425
+    fileName: 0425.jpg
+    name:
+      - {language: en, text: "Andrew Karpov"}
+      - {language: ru, text: "Андрей Карпов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Andrew Karpov is a Software Developer at JetBrains, working on C# support in ReSharper and Rider.\
+            \ Before joining JetBrains he's got wide experience ranging from low-level programming and Windows kernel research\
+            \ to full-stack web development and working on UI components for complex metrology systems. His interests include\
+            \ programming languages design, functional programming, static analysis and program transformations."}
+      - {language: ru, text: "Андрей Карпов работает в компании JetBrains, где занимается поддержкой языка C# в продуктах\
+            \ ReSharper и Rider. До прихода в JetBrains получил разнообразный опыт от низкоуровневого программирования и и\
+            сследования ядра Windows до full-stack web-разработки и работы над UI-компонентами сложных систем метрологии.\
+            \ Интересуется дизайном языков программирования, функциональным программированием, статическим анализом и прео\
+            бразованием программ."}
+    twitter: akarpov89
   - id: 426
     fileName: 0426.jpg
     name:
       - {language: en, text: "Andrey Dyatlov"}
       - {language: ru, text: "Андрей Дятлов"}
-  - id: 425
-    fileName: 0425.jpg
-    name:
-      - {language: en, text: "Andrey Karpov"}
-      - {language: ru, text: "Андрей Карпов"}
     company:
-      - {language: en, text: "JetBrains"}
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Andrey works at JetBrains for 3,5 years, being in charge of C# support in ReSharper/Rider from\
+            \ parser implementation to static analysis and refactoring. He started his way to programming from SCADA systems\
+            \ and automation of industrial equipment — magnetron splattering and plasma-chemical etching sets. Andrey is passionate\
+            \ about static analysis, type theory, and metaprogramming."}
+      - {language: ru, text: "Работает в JetBrains вот уже 3,5 года, занимается поддержкой языка C# в ReSharper/Rider от р\
+            еализации парсера до статических анализов и рефакторингов. Начинал свой путь к программированию со SCADA-систе\
+            м и автоматизации промышленного оборудования — установок магнетронного напыления и плазмохимического травления\
+            . Интересуется статическим анализом кода, теорией типов и метапрограммированием."}
+    twitter: a_tessenr
   - id: 427
     fileName: 0427.jpg
     name:
@@ -5891,13 +6004,13 @@ speakers:
       - {language: en, text: "Nikita Tsukanov"}
       - {language: ru, text: "Никита Цуканов"}
     company:
-      - {language: en, text: MandarinBank}
+      - {language: en, text: "ANNA Systems"}
     bio:
       - {language: en, text: "Nikita has a vast experience developing for a broad spectrum of platforms (starting with WinCE)\
             \ using a whole zoo of technologies and is happy to share that experience."}
       - {language: ru, text: "Начинал в Навителе с разработки под WinCE/Mobile на C/C++. В дальнейшем занимался разработко\
-            й VPN-сервиса с кроссплатформенным клиентом на GTK#, торговой площадки Promarket, мейнтейнил Mono для Nokia N900,\
-            \ делал инструментарий для чип-тюнинга автомобилей, мобильный мессенджер с End2End шифрованием, платёжную сист\
+            й VPN-сервиса с кросс-платформенным клиентом на GTK#, торговой площадки Promarket, мейнтейнил Mono для Nokia N900,\
+            \ делал инструментарий для чип-тюнинга автомобилей, мобильный мессенджер с End2End-шифрованием, платёжную сист\
             ему и ещё кучу всякого по мелочи. Имеет обширный опыт разработки подо всё подряд на зоопарке технологий, котор\
             ым рад поделиться."}
     twitter: kekekeks
