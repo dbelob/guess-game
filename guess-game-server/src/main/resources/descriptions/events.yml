@@ -302,6 +302,25 @@ events:
               899, 900, 901, 902, 903, 904, 905, 906, 907]
   - eventTypeId: 3
     name:
+      - {language: en, text: "Heisenbug 2018 Msc"}
+      - {language: ru, text: "Heisenbug 2018 Мск"}
+    startDate: "2018-12-06"
+    endDate: "2018-12-07"
+    siteLink:
+      - {language: en, text: "https://2018.heisenbug-moscow.ru/en/"}
+      - {language: ru, text: "https://2018.heisenbug-moscow.ru/"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Europe Square 2, Hotel «Radisson Slavyanskaya»"}
+      - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLsVTVVvrKX9t1xlDqeSHTVwhZvwvDTF7v
+    mapCoordinates: "55.741881, 37.568099"
+    talkIds: [1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118, 1119,
+              1120, 1121, 1122, 1123, 1124, 1125, 1126, 1127, 1128, 1129, 1130, 1131]
+  - eventTypeId: 3
+    name:
       - {language: en, text: "Heisenbug 2019 Msk"}
       - {language: ru, text: "Heisenbug 2019 Мск"}
     startDate: 2019-12-05

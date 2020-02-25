@@ -2947,7 +2947,7 @@ speakers:
             \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
             \ Books. В настоящее время занимает позицию главного редактора Smashing Magazine в прекрасном городе Фрайбург\
             , Германия."}
-    twitter: smashingmag
+    twitter: vitalyf
   - id: 261
     fileName: 0261.jpg
     name:
@@ -3371,10 +3371,11 @@ speakers:
     company:
       - {language: en, text: Infobip}
     bio:
-      - {language: en, text: "Andrey is a Senior Software Engineer at platform department of Infobip. He has 11+ years experience\
-            \ in Java programming and DevOps in different areas: banking, telecommunications and mobile app development. Developer\
-            \ evangelist for Prometheus, Docker and Redis. In addition to his main job, Andrey is one of the leaders of SPB\
-            \ Atlassian User Group and develops several popular free Atlassian add-ons, such as Prometheus exporters."}
+      - {language: en, text: "Andrey Markelov is a Senior Software Engineer at platform department of Infobip. He has 11+\
+            \ years experience in Java programming and DevOps in different areas: banking, telecommunications and mobile app\
+            \ development. Besides, he is developer evangelist for Prometheus, Docker and Redis. In addition to his main job,\
+            \ Andrey is an active member of Atlassian Community; he developed several popular free Atlassian add-ons, such\
+            \ as Prometheus exporters."}
       - {language: ru, text: "Ведущий инженер-программист в компании Infobip, более 11 лет занимается разработкой приложен\
             ий на Java в области финансов и телекоммуникаций. Помимо бизнес-проектов, активно участвует в разработке open\
             \ source-продуктов, в том числе собственных плагинов для продуктов Atlassian, очень популярных в сообществе. А\
@@ -4019,7 +4020,17 @@ speakers:
       - {language: en, text: "Andrey Karpov"}
       - {language: ru, text: "Андрей Карпов"}
     company:
-      - {language: en, text: "PVS-Studio"}
+      - {language: en, text: PVS-Studio}
+    bio:
+      - {language: en, text: "Andrey is a co-founder of PVS-Studio project and CTO at Program Verification Systems. He is\
+            \ Microsoft MVP in the nomination \"Developer Technologies\". He is an author of large number of articles dedicated\
+            \ to the code quality and error patterns that C++ developers make. He promotes methodology of static and dynamic\
+            \ code analysis."}
+      - {language: ru, text: "Андрей Карпов — один из основателей проекта PVS-Studio, технический директор компании «Систе\
+            мы программной верификации». Microsoft MVP в номинации «Developer Technologies». Является автором большого кол\
+            ичества статей, посвященных качеству кода и рассказывающих о различных паттернах ошибок, которые допускают про\
+            граммисты C++. Популяризует методологию статического и динамического анализа кода."}
+    twitter: Code_Analysis
   - id: 345
     fileName: 0345.jpg
     name:
@@ -6295,15 +6306,49 @@ speakers:
     name:
       - {language: en, text: "Liliia Abdulina"}
       - {language: ru, text: "Лилия Абдулина"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Liliia writes code every day, mainly on Kotlin or Java, not to automate but to test."}
+      - {language: ru, text: "Лилия ежедневно пишет код, в основном на Kotlin и Java, но не для того, чтобы автоматизирова\
+            ть, а для того, чтобы тестировать."}
   - id: 546
     fileName: 0546.jpg
     name:
       - {language: en, text: "Alexander Andelkovic"}
+    company:
+      - {language: en, text: King}
+    bio:
+      - {language: en, text: "Alexander is the senior agile testing lead for Sweden-based King/Midasplayer AB, developer of\
+            \ the popular mobile game Candy Crush Saga. He has worked on multiple complex test projects ranging from using\
+            \ session-based test management for quality assuring MED-Tech devices for life critical systems to establishing\
+            \ a world class approval process for Spotify apps used by Fortune 500 companies. Now he teams with developers\
+            \ in testing big data, business analytics, and game level regression testing using AI. Alexander performs both\
+            \ system testing and exploratory testing with a focus on assisting teams with high-quality deliveries. He is a\
+            \ frequent speaker at international conferences including both STAREAST and STARWEST."}
   - id: 547
     fileName: 0547.jpg
     name:
       - {language: en, text: "Alexey Barantsev"}
       - {language: ru, text: "Алексей Баранцев"}
+    company:
+      - {language: en, text: Software-Testing.Ru}
+    bio:
+      - language: en
+        text: "Alexey works in software testing since 1994. He started as an ordinary tester and finally became Head of the\
+            \ Custom Testing Department, having tried himself as a developer, an analyst, a consultant, and a project manager.\
+            \ He has experience in outsourcing testing and in development of the new testing tools. \n\nCurrently Alexey works\
+            \ as a consultant for testing, organizes trainings for the testers, participates in organizing professional conferences,\
+            \ provides support for the biggest Russian-language testing website, Software-Testing.Ru, and helps it evolve.\
+            \ \n\nAuthor and editor of the selenium2.ru website, one of the developers of the Selenium WebDriver tool."
+      - language: ru
+        text: "Алексей работает в области тестирования программного обеспечения с 1994 года. Прошёл путь от рядового тести\
+            ровщика до руководителя подразделения заказного тестирования, побывав по пути и разработчиком, и аналитиком, и\
+            \ консультантом, и менеджером проектов. Приходилось заниматься и аутсорсинговым тестированием, и разработкой н\
+            овых инструментов тестирования. \n\nСейчас Алексей оказывает консультационные услуги в области тестирования, п\
+            роводит тренинги для тестировщиков, участвует в организации профессиональных конференций, обеспечивает поддерж\
+            ание и развитие крупнейшего русскоязычного сайта о тестировании Software-Testing.Ru. \n\nАвтор и редактор сайт\
+            а selenium2.ru, один из разработчиков инструмента Selenium WebDriver."
   - id: 548
     fileName: 0548.jpg
     name:
@@ -6330,7 +6375,7 @@ speakers:
       - {language: en, text: "Anna Chernyshova"}
       - {language: ru, text: "Анна Чернышева"}
     company:
-      - {language: en, text: EPAM}
+      - {language: en, text: "EPAM Systems"}
     bio:
       - {language: en, text: "Lead Software Test Automation Engineer at EPAM. An expert in the field of BDD, an adherent of\
             \ engineering and DevOps practices. Anna has strong experience in test automation frameworks development and building\
@@ -6351,17 +6396,31 @@ speakers:
     name:
       - {language: en, text: "Sergey Dokuchaev"}
       - {language: ru, text: "Сергей Докучаев"}
+    company:
+      - {language: en, text: Tensor}
+      - {language: ru, text: Тензор}
+    bio:
+      - {language: en, text: "Before he started his testing career, Sergey tried a dozen of different occupations before he\
+            \ found the one that he really liked. And so for the last ten years he's been solving puzzles in testing, which\
+            \ is a whole world by itself. He went from manual testing expert in a small company to a department manager in\
+            \ a big one. Sergey doesn't limit himself to a single field: he likes to plan and write code as much as check\
+            \ functionality manually and hunt for especially tricky bugs."}
+      - {language: ru, text: "До карьеры в тестировании Сергей перепробовал с десяток различных профессий до того, как най\
+            ти то, что действительно нравится. И последние десять лет он занимается решением головоломок в тестировании, к\
+            оторое целый мир. Прошёл путь от специалиста по ручному тестированию в маленькой компании до руководителя отде\
+            ла в крупной. Сергей не останавливается на какой-то одной специализации: ему одинаково нравится как планироват\
+            ь и писать код, так и вручную проверять функционал и охотиться за особо заковыристыми багами."}
   - id: 554
     fileName: 0554.jpg
     name:
       - {language: en, text: "Artem Eroshenko"}
       - {language: ru, text: "Артем Ерошенко"}
     company:
-      - {language: en, text: QametaSoftware}
+      - {language: en, text: "Qameta Software"}
     bio:
-      - {language: en, text: "Works in web app testing automation for more than 8 years. Has worked in different teams and\
-            \ occupied different positions up to the head of automation testing group. Has a vast experience with popular\
-            \ tools (Selenium, HtmlElements, Allure, Jenkins). Codes mostly in Java and Groovy."}
+      - {language: en, text: "Artem works in web app testing automation for more than 8 years. He has worked in different\
+            \ teams and occupied different positions up to the head of automation testing group. Artem has a vast experience\
+            \ with popular tools (Selenium, HtmlElements, Allure, Jenkins). He codes mostly in Java and Groovy."}
       - {language: ru, text: "Более 8 лет занимается автоматизацией тестирования веб-приложений. За это время работал в ра\
             зных командах и в разных ролях: автоматизатор тестирования, менеджер команды разработки инструментов тестирова\
             ния, руководитель группы автоматизации тестирования. Артем имеет большой опыт работы с популярными инструмента\
@@ -6372,11 +6431,38 @@ speakers:
     name:
       - {language: en, text: "Vyacheslav Frolov"}
       - {language: ru, text: "Вячеслав Фролов"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "More than ten year of experience in QA. QA in System Technologies, Test Automation in Motorola\
+            \ Mobility, Yandex, now Badoo. Vyacheslav was creating functional tests for web in Java, JavaScript, stress testing\
+            \ for backend in Groovy. Now he works on test automation for mobile apps in Ruby and Kotlin."}
+      - {language: ru, text: "Более десяти лет работает в области тестирования приложений. Tестировал в ЗАО НПП «Системные\
+            \ технологии». Автоматизировал в Motorola Mobility, Яндексе, теперь в Badoo. Писал функциональные тесты для web\
+            \ на Java, JavaScript, нагрузочные тесты для backend на Groovy. Сейчас пишет для мобильных приложений на Ruby\
+            \ и Kotlin."}
   - id: 556
     fileName: 0556.jpg
     name:
       - {language: en, text: "Andrey Glazkov"}
       - {language: ru, text: "Андрей Глазков"}
+    company:
+      - {language: en, text: Paysystem.tech}
+    bio:
+      - language: en
+        text: "Andrey has been testing professionally for over 10 years. During this time, he dealt with both distributed\
+            \ client-server systems on desktops and web applications built using a variety of approaches and technologies.\n\
+            \nAt the moment, Andrey occupies the Head of QA position in the Paysystem.tech company, which specializes in custom\
+            \ development of high-loaded IT solutions in the field of financial technologies. His area of interest is integrated\
+            \ automation of quality control processes and everything related to improving the efficiency of development as\
+            \ a whole.\n\nAndrey loves Python and beauty in projects. He does not like mess and whiners."
+      - language: ru
+        text: "Занимается тестированием профессионально более 10 лет. За это время имел дело как с распределенными клиент\
+            -серверными системами на десктопах, так и с web-приложениями, построенными с использованием самых разных подхо\
+            дов и технологий.\n\nНа данный момент занимает позицию Head of QA в компании Paysystem.tech, специализирующейс\
+            я на заказной разработке высоконагруженных IT-решений в сфере финансовых технологий. Область интересов — компл\
+            ексная автоматизация процессов контроля качества и всё, что связано с повышением эффективности разработки в це\
+            лом.\n\nЛюбит Python и красоту в проектах. Не любит бардак и нытиков."
   - id: 557
     fileName: 0557.jpg
     name:
@@ -6405,6 +6491,16 @@ speakers:
     name:
       - {language: en, text: "Alisa Kokoreva"}
       - {language: ru, text: "Алиса Кокорева"}
+    company:
+      - {language: en, text: "Alfa Bank"}
+      - {language: ru, text: Альфа-Банк}
+    bio:
+      - {language: en, text: "Alisa went from manual functional testing expert to leading Java developer. In Alfa Bank, she\
+            \ works on in-house product for management of CI/CD processes and bootstrapping of new projects. She took part\
+            \ in developing BDD framework and building testing automation infrastructure."}
+      - {language: ru, text: "Прошла путь от специалиста по ручному функциональному тестированию до ведущего Java-разработ\
+            чика. В Альфа-Банке занимается in-house продуктом для обеспечения процессов CI/CD и бутстраппинга новых проект\
+            ов. Принимала участие в разработке BDD-фреймворка и построении инфраструктуры для автоматизации тестирования."}
   - id: 561
     fileName: 0561.jpg
     name:
@@ -6419,6 +6515,15 @@ speakers:
     fileName: 0563.jpg
     name:
       - {language: en, text: "Piotr Kubowicz"}
+    company:
+      - {language: en, text: "Ocado Technology"}
+    bio:
+      - {language: en, text: "Piotr is a software engineer with more than 10 years experience in Java, currently helping Ocado\
+            \ Technology grow an online grocery backed up by highly automated warehouses. Being incorrigibly lazy and impatient,\
+            \ he focuses on automating repeatable work and fast feedback loops. Seeing the rise and fall of many projects,\
+            \ he became immune to silver bullets and started valuing human interactions. Likes to learn new ways of thinking\
+            \ through different languages, but prefers modern Java in professional software development."}
+    twitter: pkubowicz
   - id: 564
     fileName: 0564.jpg
     name:
@@ -6446,6 +6551,15 @@ speakers:
     fileName: 0566.jpg
     name:
       - {language: en, text: "Rhian Lewis"}
+    company:
+      - {language: en, text: CountMyCrypto}
+    bio:
+      - {language: en, text: "Rhian Lewis is a software engineer who is the co-developer of altcoin portfolio tracker CountMyCrypto.\
+            \ She is also the co-host of London Bitcoin Women, which she founded with a friend in 2014. She has a BSc in Economics\
+            \ from UCL and is a former digital journalist at The Times. She is a regular conference speaker and educator on\
+            \ blockchain technology, cryptocurrency and cryptoassets, and writes about blockchain technology at https://medium.com/@rhian_is.\
+            \ She is an instructor for the B9Lab Ethereum QA Engineer course."}
+    twitter: rhian_is
   - id: 567
     fileName: 0567.jpg
     name:
@@ -6476,11 +6590,30 @@ speakers:
     name:
       - {language: en, text: "Ekaterina Mikheeva"}
       - {language: ru, text: "Екатерина Михеева"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - language: en
+        text: "Ekaterina is a senior Android QA Engineer in Badoo. She has 8 years of experience in mobile testing. Android\
+            \ is her favorite platform that she has been working with for more than 6 years, with the number of devices she\
+            \ has dealt with exceeding 100.\n\nEkaterina is not just a bug hunter but also a UI/UX evangelist :)"
+      - language: ru
+        text: "Екатерина — старший Android QA-инженер в Badoo, тестирует мобильные приложения уже более 8 лет. Ее любимая\
+            \ платформа — Android, с которой она работает уже около 6 лет, а количество мобильных устройств, которые прошл\
+            и через ее руки, уже давно перевалило за сотню.\n\nЕкатерина не только ищет баги, но и активно борется за крас\
+            ивые и удобные интерфейсы :)"
   - id: 570
     fileName: 0570.jpg
     name:
       - {language: en, text: "Liudmila Mzhachikh"}
       - {language: ru, text: "Людмила Мжачих"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - {language: en, text: "Team lead of front-end development team at Mail.Ru Group. Co-organizer of moscowCSS meetup.\
+            \ Teacher and author of courses, operates a blog at Medium."}
+      - {language: ru, text: "Тимлид команды frontend-разработки в Mail.Ru Group. Соорганизатор moscowCSS meetup. Преподав\
+            атель и автор курсов, автор блога на Medium."}
   - id: 571
     fileName: 0571.jpg
     name:
@@ -6503,28 +6636,82 @@ speakers:
     name:
       - {language: en, text: "Valentin \"Wylsacom\" Petukhov"}
       - {language: ru, text: "Валентин Wylsacom Петухов"}
+    company: []
+    bio:
+      - {language: en, text: "Wylsacom is a popular YouTube channel about different technologies, gadgets and software, hosted\
+            \ by videoblogger Valentin Petukhov."}
+      - {language: ru, text: "Wylsacom — популярный канал о различных технологиях, гаджетах и программных обеспечениях вид\
+            еоблогера Валентина Петухова."}
+    twitter: wylsacom
   - id: 573
     fileName: 0573.jpg
     name:
       - {language: en, text: "Ingo Philipp"}
+    company:
+      - {language: en, text: Tricentis}
+    bio:
+      - {language: en, text: "Ingo Philipp, Distinguished Evangelist at Tricentis, champions the methodologies and technologies\
+            \ at the core of the company's continuous testing solution. In his previous position as a senior product manager,\
+            \ he orchestrated product development and product marketing. Before that, he worked as a theoretical astrophysicist\
+            \ in the field of high-energy particle physics and computational fluid dynamics. He holds a Master of Science\
+            \ degree."}
+    twitter: IngoPhilipp
   - id: 574
     fileName: 0574.jpg
     name:
-      - {language: en, text: "Anatoly Plaskovsky"}
+      - {language: en, text: "Anatolii Plaskovskii"}
       - {language: ru, text: "Анатолий Пласковский"}
+    company:
+      - {language: en, text: Yandex.Money}
+      - {language: ru, text: Яндекс.Деньги}
+    bio:
+      - {language: en, text: "Author and leader of performance analysis system at Yandex.Money, lead organizer of unique integration\
+            \ experiments using real money, implementor of direct influence of load testing on the product release cycle."}
+      - {language: ru, text: "Руководитель и создатель системы исследований производительности в компании Яндекс.Деньги, в\
+            едущий организатор уникальных интеграционных экспериментов с использованием реальных финансовых средств, реали\
+            затор прямого влияния нагрузочного тестирования на релизный цикл продуктов."}
   - id: 575
     fileName: 0575.jpg
     name:
       - {language: en, text: "Vadim Pushtaev"}
       - {language: ru, text: "Вадим Пуштаев"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - {language: en, text: "Mail.Ru Group senior developer."}
+      - {language: ru, text: "Ведущий программист проекта «Поиск» компании Mail.Ru Group."}
   - id: 576
     fileName: 0576.jpg
     name:
       - {language: en, text: "Amber Race"}
+    company:
+      - {language: en, text: "Big Fish Games"}
+    bio:
+      - {language: en, text: "Amber Race has nearly 20 years of testing experience at Big Fish and Microsoft, doing everything\
+            \ from manual application testing to tools development to writing automation frameworks for web services. She\
+            \ currently specializes in test automation and performance testing for high volume back-end services supporting\
+            \ iOS and Android games. Amber lives in Seattle, WA, where you can find her cheering on the Seattle Sounders with\
+            \ her family or belting out Guns and Roses at her local karaoke bar."}
+    twitter: ambertests
   - id: 577
     fileName: 0577.jpg
     name:
       - {language: en, text: "Bingsheng Ru"}
+    company:
+      - {language: en, text: eBay}
+    bio:
+      - language: en
+        text: "Bingsheng Ru currently serves as technical lead for QE-infrastructure team in Engineering Productivity Org\
+            \ at eBay COOE. He has served as Senior Test Architect for Hewlett-Packard Software R&D Center, Senior Technical\
+            \ Lead for Alcatel-Lucent and Principal Test Engineer for Cisco. \n\nHe has more than 12 years of experience in\
+            \ software testing and development. He has extensive experience in test framework design and automation testing.\
+            \ He was responsible for establishing test infrastructure and automation test solutions for large-scale e-commerce\
+            \ websites, building continuous integration ecosystem, leading SDK test framework design for financial platform\
+            \ products, building white-box testing solutions for system development platforms and establishing automation\
+            \ testing and performance testing for several large e-commerce websites. \n\nAlso, he has published several testing\
+            \ technical papers in international and domestic academic journals, and served as a judge of the Asian region\
+            \ of the \"Software Test World Cup\". In China, he was invited to give a speech at many top software testing and\
+            \ quality conferences, such as Arch Summit, GITC, TiD and MTSC, etc."
   - id: 578
     fileName: 0578.jpg
     name:
@@ -6557,6 +6744,14 @@ speakers:
     fileName: 0581.jpg
     name:
       - {language: en, text: "Doug Sillars"}
+    company:
+      - {language: en, text: Freelance}
+    bio:
+      - {language: en, text: "Doug is a freelance mobile performance expert, having helped thousands of developers speed up\
+            \ their mobile apps and websites. A Google Developer Expert and the author of O'Reilly’s \"High Performance Android\
+            \ Apps\", Doug has spoken at developer conferences in the US and Europe, and he blogs regularly at dougsillars.com.\
+            \ He is currently working as a freelance digital nomad, traveling with his family in Europe."}
+    twitter: dougsillars
   - id: 582
     fileName: 0582.jpg
     name:
@@ -6571,11 +6766,34 @@ speakers:
     fileName: 0584.jpg
     name:
       - {language: en, text: "Alexander Todorov"}
+    company:
+      - {language: en, text: "Red Hat / Kiwi TCMS"}
+    bio:
+      - language: en
+        text: "Alex is a Senior QA engineer and Python developer with more than 10 years of experience. He's been responsible\
+            \ for testing Red Hat Enterprise Linux and various other products at Red Hat. \n\nAlex is also the project lead\
+            \ of Kiwi TCMS — an open source test case management system with long and vibrant history, the current maintainer\
+            \ of pylint-django and a contributor to pylint. He loves everything open source, cooking and fast motorcycles!"
+    twitter: atodorov_
   - id: 585
     fileName: 0585.jpg
     name:
       - {language: en, text: "Anton Usmansky"}
       - {language: ru, text: "Антон Усманский"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Anton has been working in development for 10 years, having started with writing network software for Linux/OS\
+            \ X. After a while he took a liking to the idea of the development and testing process automation. For the last\
+            \ 4 years he has been leading a team developing test infrastructure for search interfaces in Yandex.\n\nLead developer\
+            \ of Gemini and Hermione tools. Anton uses JS, C++, Python, Java."
+      - language: ru
+        text: "10 лет в разработке. Начинал с написания сетевого ПО под Linux/OS X. Постепенно проникся идеей автоматизаци\
+            и процесса разработки и тестирования. Последние 4 года руководит группой разработки инфраструктуры тестировани\
+            я поисковых интерфейсов в Яндексе.\n\nВедущий разработчик таких инструментов, как Gemini и Hermione. Пишет на\
+            \ JS, C++, Python, Java."
   - id: 586
     fileName: 0586.jpg
     name:
