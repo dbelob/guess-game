@@ -1305,12 +1305,11 @@ speakers:
     company: []
     bio:
       - {language: en, text: "Alexander graduated at the Department of Bioengineering and Bioinformatics, Moscow State University\
-            \ (PhD in Computational biology). Currently he's involved and interested in the topics of human metagenome research,\
-            \ phylogenetic analysis and evolutionary biology."}
+            \ (Ph.D. in Computational biology). Currently, he's involved and interested in the topics of human metagenome\
+            \ research, phylogenetic analysis and evolutionary biology."}
       - {language: ru, text: "Кандидат биологических наук. Старший научный сотрудник Института проблем передачи информации\
             \ РАН. Окончил факультет биоинженерии и биоинформатики МГУ им. М.В. Ломоносова. Член комиссии РАН по борьбе с\
-            \ лженаукой. Член совета [фонда «Эволюция»](http://evolutionfund.ru/). Член экспертного совета [Премии имени Г\
-            арри Гудини](http://houdiniprize.org/)."}
+            \ лженаукой. Член совета фонда «Эволюция». Член экспертного совета Премии имени Гарри Гудини."}
     twitter: Scinquisitor
   - id: 83
     fileName: 0083.jpg
@@ -6311,14 +6310,14 @@ speakers:
       - {language: en, text: "Evgeny Peshkov"}
       - {language: ru, text: "Евгений Пешков"}
     company:
-      - {language: en, text: Kontur}
-      - {language: ru, text: Контур}
+      - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: ".NET developer at Kontur. Works on a common infrastructure, develops the cloud-based hosting\
-            \ platform. Is interested in .NET and Windows internals and uses this knowledge in production."}
-      - {language: ru, text: ".NET-разработчик в Контур. В компании занимается общей инфраструктурой: разрабатывает облачн\
-            ую платформу хостинга приложений. Интересуется внутренним устройством .NET и Windows и использует эти знания н\
-            а практике."}
+      - {language: en, text: "JetBrains Rider developer. Now migrating Rider on .NET Core. Previously engaged in shared infrastructure\
+            \ at Kontur, a cloud-based application hosting platform. He is interested in the inner structure of .NET and Windows\
+            \ and uses this knowledge in practice."}
+      - {language: ru, text: "Разработчик JetBrains Rider. Сейчас переводит райдер на .NET Core. Ранее занимался общей инф\
+            раструктурой в Контуре, облачной платформой хостинга приложений. Интересуется внутренним устройством .NET и Windows\
+            \ и использует эти знания на практике."}
     twitter: epeshk
     gitHub: epeshk
   - id: 467
@@ -6406,7 +6405,7 @@ speakers:
       - language: en
         text: "Dmitry is a technology evangelist of Microsoft company, promotes modern software development technologies among\
             \ beginner developers: pupils, students, startups. Specializes in the Internet of things, Windows universal applications\
-            \ development, functional programming, and platform .NET (F#, Roslyn).\n\nHas personally done dozens of hackathons\
+            \ development, functional programming, and platform .NET (F#, Roslyn).\r\nHas personally done dozens of hackathons\
             \ all around Russia, helped many students' startups to start their projects in various fields. Associate Professor,\
             \ Candidate of Physical and Mathematical Sciences, teaches at MIPT and MAI, member of Russian Association for\
             \ Artificial Intelligence, during summer time — lead of the department of computer technologies of the children\
@@ -6415,7 +6414,7 @@ speakers:
         text: "Дмитрий Сошников — технологический евангелист компании Майкрософт, занимается популяризацией современных те\
             хнологий разработки программного обеспечения среди начинающих разработчиков: школьников, студентов, начинающих\
             \ стартапов. Специализируется в области интернета вещей, в разработке универсальных приложений Windows, в обла\
-            сти функционального программирования и на платформе .NET (F#, Roslyn).\n\nЛично провел несколько десятков хака\
+            сти функционального программирования и на платформе .NET (F#, Roslyn).\r\nЛично провел несколько десятков хака\
             тонов по всей России, помогал многим студенческим стартапам начать свои проекты в различных областях. Доцент,\
             \ к.ф.-м.н., ведет занятия в МФТИ и МАИ, член Российской ассоциации искусственного интеллекта, летом — ведущий\
             \ кафедры компьютерных технологий детского лагеря ЮНИО-Р. В свободное время увлекается технологической магией\
@@ -6885,6 +6884,22 @@ speakers:
     name:
       - {language: en, text: "Kirill Skrygan"}
       - {language: ru, text: "Кирилл Скрыган"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - language: en
+        text: "Leads Rider project, actively participates in the development and planning of IntelliJ IDEA, in the past one\
+            \ of the main developers of ReSharper. Besides political interactions in the Tech market, Kirill is interested\
+            \ in performance automation, trends in the world of tooling, psychology and philosophy of modern IT. In his field\
+            \ actively participated in negotiations with such giants as Microsoft, Unity, Epic Games, Amazon, Google, Red\
+            \ Hat, etc. \nIn industrial programming for over 15 years."
+      - language: ru
+        text: "Руководит проектом Rider, активно участвует в разработке и планировании IntelliJ IDEA, в прошлом один из ос\
+            новных разработчиков ReSharper. Помимо политических взаимодействий на Tech-рынке, Кириллу интересны задачи авт\
+            оматизации производительности, прорывные тренды в мире тулинга, психология и философия современного IT. По род\
+            у деятельности активно участвовал в переговорах с такими гигантами, как Microsoft, Unity, Epic Games, Amazon,\
+            \ Google, Red Hat и др.\nВ промышленном программировании уже более 15 лет."
+    twitter: kskrygan
   - id: 502
     fileName: 0502.jpg
     name:
@@ -12680,6 +12695,13 @@ speakers:
     name:
       - {language: en, text: "Nikolay Molchanov"}
       - {language: ru, text: "Николай Молчанов"}
+    company:
+      - {language: en, text: "JUG Ru Group"}
+    bio:
+      - {language: en, text: "Fullstack developer on .NET and JavaScript platforms. Maintainer of Flurl project. Sticks to\
+            \ the TDD and BDD development principles."}
+      - {language: ru, text: "Fullstack-разработчик на платформах .NET и JavaScript. Ментейнер проекта Flurl. Придерживает\
+            ся принципов разработки TDD и BDD."}
   - id: 947
     fileName: 0947.jpg
     name:
@@ -13477,63 +13499,194 @@ speakers:
     fileName: 1003.jpg
     name:
       - {language: en, text: "Scott Wlaschin"}
+    company:
+      - {language: en, text: "Author of the book \"Domain Modeling Made Functional\""}
+    bio:
+      - language: en
+        text: "Scott Wlaschin is a developer, architect and author. He is the author of the popular F# site <a href=\"https://fsharpforfunandprofit.com/\"\
+            \ target=\"_blank\">fsharpforfunandprofit.com</a> and the book \"Domain Modeling Made Functional\".\n\nKnown for\
+            \ his non-academic approach to functional programming, Scott is a popular speaker and has given talks at NDC,\
+            \ F# Exchange, DDD Europe, and other conferences around the world."
+    twitter: ScottWlaschin
   - id: 1004
     fileName: 1004.jpg
     name:
-      - {language: en, text: "Joreg"}
+      - {language: en, text: Joreg}
+    company:
+      - {language: en, text: vvvv}
+    bio:
+      - {language: en, text: "Joreg is co-founder of <a href=\"https://vvvv.org\" target=\"_blank\">vvvv</a> and core-developer\
+            \ of the multipurpose toolkit vvvv. Besides he teaches, works for money and is mainly concerned with the integration\
+            \ of sound, image and computer code."}
   - id: 1005
     fileName: 1005.jpg
     name:
       - {language: en, text: "Stephen Cleary"}
+    company:
+      - {language: en, text: Faithlife}
+    bio:
+      - language: en
+        text: "Stephen Cleary is a Christian, husband, and father who programs software in his spare time. :)\n\nHe is a Microsoft\
+            \ MVP and the author of \"Concurrency in C# Cookbook\" (O'Reilly) as well as several MSDN articles. He's also\
+            \ the top answerer for async/await questions on Stack Overflow.\n\nHis work usually deals with asynchronous and\
+            \ multithreaded programming, but he finds any challenging subject interesting. These days he uses C#/TypeScript,\
+            \ but remains interested in many different languages."
+    twitter: aSteveCleary
+    mvp: true
   - id: 1006
     fileName: 1006.jpg
     name:
       - {language: en, text: "Jeff Prosise"}
+    company:
+      - {language: en, text: Wintellect}
+    bio:
+      - {language: en, text: "Jeff is co-founder and CTO of Wintellect, a developer consulting and education firm that serves\
+            \ companies all over the world. He has written nine books and hundreds of articles on software development, and\
+            \ today spends most of his time working with Azure and AI. In his spare time, Jeff builds and flies large radio-control\
+            \ jets. He loves the smell of jet fuel in the morning."}
+    twitter: jprosise
   - id: 1007
     fileName: 1007.jpg
     name:
       - {language: en, text: "Elias Holzer"}
+    company:
+      - {language: en, text: vvvv}
+    bio:
+      - {language: en, text: "Elias is a core developer of the multipurpose toolkit <a href=\"https://vvvv.org/\" target=\"\
+            _blank\">vvvv</a>. He's is mainly tasked with the design and specification of its new visual programming language\
+            \ VL as well as building its real-time incremental compiler targeting C#."}
   - id: 1008
     fileName: 1008.jpg
     name:
       - {language: en, text: "Michael Staib"}
+    company:
+      - {language: en, text: ChilliCream}
+    bio:
+      - {language: en, text: "Michael Staib is the co-founder of ChilliCream, a company focused on building open-source tooling\
+            \ around GraphQL and helping large companies transform their service layers with scalable GraphQL infrastructure.\
+            \ Apart from his work at ChilliCream, Michael works as a trainer, consultant and speaker in the Microsoft environment."}
+    twitter: michael_staib
   - id: 1009
     fileName: 1009.jpg
     name:
       - {language: en, text: "Jacob Povar"}
       - {language: ru, text: "Яков Повар"}
+    company:
+      - {language: en, text: "Positive Technologies"}
+    bio:
+      - {language: en, text: "Team lead at Positive Technologies. He likes architecture of distributed systems and functional\
+            \ programming. He has 8 years of working with .NET, mainly with enterprise applications."}
+      - language: ru
+        text: "Руководитель группы разработки в Positive Technologies. Увлекается архитектурой распределенных систем и фун\
+            кциональным программированием.\nИмеет 8 лет опыта работы с .NET, в основном в области enterprise-приложений."
   - id: 1010
     fileName: 1010.jpg
     name:
       - {language: en, text: "Konstantin Zhitnik"}
       - {language: ru, text: "Константин Житник"}
+    company:
+      - {language: en, text: "ePayments Technologies"}
+    bio:
+      - language: en
+        text: "Konstantin Zhitnik is a Tech lead of one of the development teams in ePayments Technologies company. So, about\
+            \ five years ago he starts to use .NET. In his free time he's looking through the source code of popular libraries\
+            \ and frameworks. \nKonstantin loves functional programming and actively engages in promoting F# in his company.\n\
+            So, he's got mixed feelings about front-end. :)"
+      - {language: ru, text: "Работает в ePayments Technologies на позиции техлида одной из команд разработки. Пришел в .NET\
+            \ 5 лет назад. Не любит фронтенд, любит функциональное программирование и копаться в исходном коде популярных\
+            \ библиотек. В компании активно занимается продвижением F#."}
   - id: 1011
     fileName: 1011.jpg
     name:
       - {language: en, text: "Vladimir Panchenko"}
       - {language: ru, text: "Владимир Панченко"}
+    company:
+      - {language: en, text: Acumatica}
+    bio:
+      - language: en
+        text: "Team lead in Acumatica — the fastest-growing Cloud ERP company on the market. \nHas eight years of experience\
+            \ with .NET, six of them was spent developing a platform for the ERP system and other enterprise applications.\
+            \ \nThe last two years he's actively involved in static code analysis and Visual Studio Extensions development,\
+            \ as well as starting up his project in IoT area (.NET Core)."
+      - language: ru
+        text: "Руководитель группы разработки в компании Acumatica — самой быстрорастущей компании на рынке Cloud ERP.\nИм\
+            еет 8 лет опыта работы с .NET, из которых 6 — это разработка ядра облачной ERP-системы и фреймворка для написа\
+            ния бизнес-приложений. Последние два года активно занимается статическим анализом кода и разработкой Visual Studio\
+            \ Extensions (в компании), а также стартапит в IoT и .NET Core."
   - id: 1012
     fileName: 1012.jpg
     name:
       - {language: en, text: "Marco De Sanctis"}
+    company:
+      - {language: en, text: Freelance}
+    bio:
+      - language: en
+        text: "Marco has an incredible passion for technology which he had the privilege to turn into a job. He has been working\
+            \ with .NET since the first beta, focusing on ASP.NET and, more generally, anything that is web-related. Also,\
+            \ he has been an early adopter of Microsoft Azure and, since its introduction, Cloud technologies have represented\
+            \ the core of his professional interest.\n\nNow he's working as a freelance Solutions Architect in London, focusing\
+            \ on Cloud transformation. .NET and Azure community is a key aspect of his profession. Has been awarded as a Microsoft\
+            \ MVP for the last 9 years in a row."
+    twitter: crad77
   - id: 1013
     fileName: 1013.jpg
     name:
       - {language: en, text: "Łukasz Pyrzyk"}
+    company:
+      - {language: en, text: Sonova}
+    bio:
+      - {language: en, text: "Łukasz is a software developer with nearly five years of work experience in large corporations\
+            \ such as Volvo, Credit Suisse and Ryanair. He has extensive knowledge of building efficient and scalable back-end\
+            \ applications using .NET Framework. As part of his skills development, he often participates in solving algorithmic\
+            \ puzzles and programming meetings."}
+    twitter: lukaszpyrzyk
   - id: 1014
     fileName: 1014.jpg
     name:
       - {language: en, text: "Anatoly Zhmur"}
       - {language: ru, text: "Анатолий Жмур"}
+    company:
+      - {language: en, text: Broadridge}
+    bio:
+      - {language: en, text: "Got acquainted with .NET in 2002 at the beta stage. He has been working on it for most of his\
+            \ career. Currently, he is a Senior Technical Architect at Broadridge and still writing code. For the past five\
+            \ years, he has been developing a bitemporal document database for storing and processing information about security\
+            \ papers. Actively playing with rocksdb and socket transport to go beyond the performance limitations of Asp.Net\
+            \ Core + PostgreSQL."}
+      - {language: ru, text: "Познакомился с .NET в 2002 году на этапе беты. Работает на нем большую часть карьеры. На дан\
+            ный момент занимает должность Senior Technical Architect в компании Broadridge и все еще пишет код. Последние\
+            \ пять лет занимается проектом собственной битемпоральной документной базы данных для хранения и обработки инф\
+            ормации о ценных бумагах. Активно играется с rocksdb и своим сокетным транспортом, чтобы выйти за performance-о\
+            граничения Asp.Net Core + PostgreSQL."}
+    twitter: AnatolyZhmur
   - id: 1015
     fileName: 1015.jpg
     name:
       - {language: en, text: "Roman Prosin"}
       - {language: ru, text: "Роман Просин"}
+    company:
+      - {language: en, text: Raiffeisenbank}
+      - {language: ru, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: ".NET developer at Raiffeisenbank. Roman is a bright representative of the new school of innovation\
+            \ in software development. He believes that any impact should lead to an improvement in the system. He convinced\
+            \ that each person is able to understand the program code created by another person, regardless of the programming\
+            \ language and experience in IT."}
+      - {language: ru, text: "Разработчик .NET в Райффайзенбанк. Роман — яркий представитель новой школы инноватики в разр\
+            аботке программного обеспечения. Считает, что любое воздействие должно приводить к улучшению системы. Убежден\
+            , что каждый человек способен понимать программный код, созданный другим человеком, независимо от языка програ\
+            ммирования и опыта в ИТ."}
   - id: 1016
     fileName: 1016.jpg
     name:
       - {language: en, text: "Dan Shechter"}
+    company:
+      - {language: en, text: "Eagle Labs"}
+    bio:
+      - language: en
+        text: "CTO of Eagle Labs.\n\nLong time *nix systems and low-level programmer with a passion for performance and writing\
+            \ fast and efficient code."
+    twitter: damageboy
   - id: 1017
     fileName: 1017.jpg
     name:

@@ -4892,133 +4892,1047 @@ talks:
   - id: 140
     name:
       - {language: en, text: "Platform Wars"}
+    shortDescription:
+      - {language: en, text: "Kirill will tell the success story of JetBrains in the IDE market and share the latest news\
+            \ about the world of development products."}
+      - {language: ru, text: "Кирилл расскажет историю успеха JetBrains на рынке IDE и поделится последними новостями о ми\
+            ре продуктов для разработки."}
+    longDescription:
+      - language: en
+        text: "Ah, these enthralling interactions between us, our business rivals, partners, modern platforms and community.\n\
+            In the modern turbulent IT world sometimes it is hard to see the main point of what is happening behind regular\
+            \ news. Some IT giant is releasing another super innovative project. What's behind it? How to understand that\
+            \ it should be invested or as it often happens in six months this project will go in the doldrums.\nThrough the\
+            \ prism of JetBrains company, based on the experience of victories and failures we will try to understand the\
+            \ modern IT market.\n\nThe connection between tooling and platform is like an atom of interaction in the IT market.\
+            \ Clouds role. IDE role. Why did products develop as they developed? All this and some insides, tales, intrigues,\
+            \ investigations and even a little bit of gamedev in a report about the global IT market."
+      - language: ru
+        text: "Ах уж эти увлекательные взаимодействия между нами, нашими конкурентами, партнёрами, современными платформам\
+            и и сообществом.\nВ современном турбулентном мире IT порой бывает очень сложно за очередными новостями разгляд\
+            еть суть того, что происходит. Какой-то IT-гигант выпускает очередной супер инновационный проект. Что стоит за\
+            \ этим? Как понять, вкладываться в это или, как это часто бывает, через полгода этот проект сдуется?\nЧерез пр\
+            изму компании JetBrains, на опыте своих побед и неудач, мы попытаемся разобраться в современном рынке IT.\n\nС\
+            вязь тулинга и платформы как атом взаимодействия на рынке IT. Роль клаудов. Роль IDE. Почему продукты развивал\
+            ись так, как они развивались?\nВсё это, а также немного инсайдов, баек, интриг, расследований и даже немного г\
+            еймдева, в докладе-вбросе про мировой рынок IT.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Про рыно\
+            к IDE лучше всего сможет рассказать тимлид одной из двух самых популярных сред разработки под .NET. Через схем\
+            у функционирования этого рынка можно понять, что происходит вообще во всех сферах IT-индустрии.*"
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [501]
   - id: 141
     name:
       - {language: en, text: "Asynchronous streams"}
+    shortDescription:
+      - {language: en, text: "This talk will be dedicated to asynchronous streams in JS and C#. You will learn why asynchrony\
+            \ is important, how async/await has influenced modern languages and we will not forget about its common drawback.\
+            \ Also, we will consider differences between new asynchronous streams and existing frameworks, such as System.Reactive\
+            \ and RxJS."}
+    longDescription:
+      - language: en
+        text: "Asynchronous iteration landed in JavaScript last year, and C# is following up with its async streams. This\
+            \ presentation looks at why these new asynchronous streams are useful, how they are different from existing libraries\
+            \ like System.Reactive and RxJS, and how to use them in your projects.\n\nWe'll start with a conceptual overview\
+            \ of why asynchrony is important, and the impact that async/await has had on modern languages. Then we'll address\
+            \ one of the common shortcomings of async/await: the fact that it only deals with single values.\n\nWe'll briefly\
+            \ review library-based approaches for dealing with streams of asynchronous data, including the classic producer/consumer\
+            \ queues as well as the more modern reactive approaches. Finally, we'll address how true pull-based asynchronous\
+            \ streams require language constructs and examine consuming and producing asynchronous streams in C#.\n\nBy the\
+            \ end of this session, you'll be equipped to handle asynchronous streams in your projects."
+      - language: ru
+        text: "Asynchronous iteration landed in JavaScript last year, and C# is following up with its async streams. This\
+            \ presentation looks at why these new asynchronous streams are useful, how they are different from existing libraries\
+            \ like System.Reactive and RxJS, and how to use them in your projects.\n\nWe'll start with a conceptual overview\
+            \ of why asynchrony is important, and the impact that async/await has had on modern languages. Then we'll address\
+            \ one of the common shortcomings of async/await: the fact that it only deals with single values.\n\nWe'll briefly\
+            \ review library-based approaches for dealing with streams of asynchronous data, including the classic producer/consumer\
+            \ queues as well as the more modern reactive approaches. Finally, we'll address how true pull-based asynchronous\
+            \ streams require language constructs and examine consuming and producing asynchronous streams in C#.\n\nBy the\
+            \ end of this session, you'll be equipped to handle asynchronous streams in your projects. \n\n> __Комментарий\
+            \ программного комитета:__\n\n\n\n> *Про Стивена Клири можно сказать «он всерьез занялся многопоточным програм\
+            мированием еще до того, как это стало модным». Клири стал палочкой-выручалочкой для тысяч разработчиков, терпе\
+            ливо объясняя на StackOverflow почему программы не работают и как их исправить. Свой опыт Стивен Клири обобщил\
+            \ в книге «Concurrency in C# Cookbook: Asynchronous, Parallel, and Multithreaded Programming».*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/qbBczdvktL4DzNRVfKSiI/4507f8bc43f6f192813e1b3dc6e1d32c/100669_2032867176_Stephen_Cleary_Asynchronous_streams.pdf"]
+    videoLinks: []
     speakerIds: [1005]
   - id: 142
     name:
       - {language: en, text: "Code Review — the art of development"}
       - {language: ru, text: "Code Review — искусство развивать"}
+    shortDescription:
+      - language: en
+        text: "Roman Prosin will speak about the art of reviewing, give some advises \non developing a project and tell the\
+            \ audience about the different tools of reviewing."
+      - {language: ru, text: "Роман Просин расскажет про искусство рецензирования, даст советы по развитию проекта и позна\
+            комит слушателей с разными инструментами рецензирования."}
+    longDescription:
+      - {language: en, text: "The process of manual code inspections often leads to conflicts, has a low-quality attribute\
+            \ and takes a lot of time. How to solve these problems? How to turn Code Review in a process that will make the\
+            \ project better and will become the force of progress for you and your team. Roman will share the experience\
+            \ of his team, good practices and how to build the process of code inspection so that you never face such problems\
+            \ again."}
+      - language: ru
+        text: "Процесс ручной инспекции кода часто приводит к конфликтам, имеет весьма низкие показатели качества (поверхн\
+            остный) и отнимает много времени. Как решить эти проблемы? Как превратить Code Review в процесс, который позво\
+            лит сделать проект лучше, станет одним из двигателей прогресса у вас и членов команды. Роман поделится с вами\
+            \ опытом его команды, полезными практиками и расскажет о том, как построить процесс инспекции кода так, чтобы\
+            \ вы больше никогда не сталкивались с такими проблемами.\n\n> __Комментарий программного комитета:__\n\n\n\n>\
+            \ *Код ревью, с одной стороны, штука простая — прочитай код, да напиши комментарии. А с другой, сложная — как\
+            \ подготовить код, как проводить, как выдавать комментарии, как их воспринимать и на что обращать внимание.*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1yzZiCNdJlqDGX7TkcAAP3/05627e937bfba8c5d2267fee88b2a7eb/100747_142499676_Roman_Prosin_Code_Review__iskusstvo_razvivat.pdf"]
+    videoLinks: []
     speakerIds: [1015]
   - id: 143
     name:
-      - {language: en, text: "Hot Chocolate: An introduction to GraphQL on ASP.Net Core"}
+      - {language: en, text: "Hot chocolate: An introduction to GraphQL on ASP.Net Core"}
+      - {language: ru, text: "Hot Chocolate: An introduction to GraphQL on ASP.Net Core"}
+    shortDescription:
+      - {language: en, text: "Michael will talk about features of using GraphQL, how to build its API with Hot Chocolate on\
+            \ ASP.Net Core and what benefits we can get from this."}
+    longDescription:
+      - language: en
+        text: "GraphQL is a great way to expose your APIs and it has changed the way we think about consuming data over HTTP.\
+            \ Not only does GraphQL give us the power to ask for exactly what we want but it also exposes data in a way that\
+            \ is more aligned with the way we think about data.\n\nOver the last two years, GraphQL has become more and more\
+            \ mainstream. The ecosystem has grown phenomenally and major players like Amazon, Twitter, Facebook and more are\
+            \ all committed to GraphQL.\n\nBut what is GraphQL? What are the benefits of using GraphQL it instead of REST?\n\
+            \nTogether we will have a look at the core problems that we are facing with the traditional REST service layers,\
+            \ which still power most of the Web.\n\nAfter we have a better understanding of GraphQL, we will explore how we\
+            \ can build a GraphQL API with Hot Chocolate on ASP.Net Core. We will look at things like Prisma filters and how\
+            \ we can get your existing infrastructure under this new service layer. We will merge data from different sources\
+            \ like you did not think was possible by using the power of the GraphQL resolver concept."
+      - language: ru
+        text: "GraphQL is a great way to expose your APIs and it has changed the way we think about consuming data over HTTP.\
+            \ Not only does GraphQL give us the power to ask for exactly what we want but it also exposes data in a way that\
+            \ is more aligned with the way we think about data.\n\nOver the last two years, GraphQL has become more and more\
+            \ mainstream. The ecosystem has grown phenomenally and major players like Amazon, Twitter, Facebook and more are\
+            \ all committed to GraphQL.\n\nBut what is GraphQL? What are the benefits of using GraphQL it instead of REST?\n\
+            \nTogether we will have a look at the core problems that we are facing with the traditional REST service layers,\
+            \ which still power most of the Web.\n\nAfter we have a better understanding of GraphQL, we will explore how we\
+            \ can build a GraphQL API with Hot Chocolate on ASP.Net Core. We will look at things like Prisma filters and how\
+            \ we can get your existing infrastructure under this new service layer. We will merge data from different sources\
+            \ like you did not think was possible by using the power of the GraphQL resolver concept.\n\n> __Комментарий п\
+            рограммного комитета:__\n\n\n\n> *Мы говорим «API», подразумеваем «REST». Или не только REST? Всегда полезно п\
+            осмотреть что еще бывает, особенно когда это придумывают гиганты вроде Facebook и GitHub. Является ли GraphQL\
+            \ реальной альтернативой REST? Разработчики GraphQL-сервера точно смогут об этом рассказать.*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [1008]
   - id: 144
     name:
       - {language: en, text: "Splendour and misery of the domain area"}
       - {language: ru, text: "Блеск и нищета предметной области"}
+    shortDescription:
+      - {language: en, text: "The talk will be about the main principles of organizing logic in an application: Maxim will\
+            \ speak about domain model pattern and compare its two main models."}
+      - {language: ru, text: "В докладе пойдет речь об основных принципах организации логики в приложении: Максим расскаже\
+            т про паттерн domain model и сравнит его две основные модели."}
+    longDescription:
+      - language: en
+        text: "Martin Fowler in the book \"Patterns of Enterprise Application Architecture\" describes the \"Domain Model\"\
+            \ as a complex approach to organizing business logic. The method consists in the consciousness of classes corresponding\
+            \ to domain model objects both in terms of data structure and behavior. At the same time, technical aspects such\
+            \ as data storage, authentication, and authorization, transaction management are taken out of the business logic.\
+            \ \n\nThe pattern is implemented in two ways:\n1) Rich model — data and behavior are encapsulated inside of domain\
+            \ objects.\n2) Anemic model — only data is encapsulated in the objects of the domain model, the behavior is transferred\
+            \ to a separate layer of services.\n\nFowler and Evans consider the anemic model to be an antipattern. However,\
+            \ a lot of codebases the speaker has worked with are implemented in the style of \"anemic\" model. This talk is\
+            \ dedicated to the comparison of strong and weak sides of both approaches and non-obvious details of each implementation\
+            \ of the domain model in the OOP paradigm and the functional style."
+      - language: ru
+        text: "Мартин Фаулер в книге «Patterns of Enterprise Application Architecture» описывает «Модель предметной област\
+            и (Domain Model)» как сложный подход к организации бизнес-логики. Метод заключается в сознании классов, соотве\
+            тствующих объектам предметной области из реального мира как с точки зрения структуры данных, так и поведения.\
+            \ При этом технические аспекты, такие как хранение данных, аутентификация и авторизация, управление транзакция\
+            ми, выносится за пределы слоя бизнес-логики.\n\nПаттерн реализуется одним из двух способов:\n1. Богатая (насыщ\
+            енная) модель — данные и поведение инкапсулируются внутри объектов предметной области.\n2. Анемичная модель —\
+            \ в объектах предметной области инкапсулируются только данные, поведение (методы) выносится в отдельный слой с\
+            ервисов.\n\nФаулер и Эванс считают анемичную модель антипаттерном. Однако многие кодовые базы, с которыми дово\
+            дилось работать спикеру, реализованы в стиле «анемичной» модели. Доклад посвящен сравнению сильных и слабых ст\
+            орон обоих подходов и не очевидным деталям реализации модели предметной области в парадигме ООП и в функционал\
+            ьном стиле.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Взгляд на проектирование сложных корпоративн\
+            ых приложений с обеих сторон баррикад: разработки и бизнеса.*"
+    talkDay: 1
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2Jlx7M6eaHOevqAuut3Shy/847f6fbd5ac896fb7944892fcc362f71/100594_1659835933_Maksim_Arshinov_Blesk_i_nishcheta_predmetnoy_oblasti.pdf"]
+    videoLinks: []
     speakerIds: [413]
   - id: 145
     name:
       - {language: en, text: "Machine learning for C# developers: Introducing ML.NET"}
+    shortDescription:
+      - {language: en, text: "ML.NET is Microsoft's new open source ML and AI library for .NET developers. Join the fun as\
+            \ Jeff takes a deep dive into ML.NET, presents numerous real-world code samples, and demonstrates that C# programmers,\
+            \ too, can live on the cutting edge of ML and AI."}
+    longDescription:
+      - {language: en, text: "Need to incorporate ML and AI into your next project, but not excited about learning Python?\
+            \ ML.NET is Microsoft's new open source ML and AI library for .NET developers. With it, you can create sophisticated\
+            \ machine learning models that perform sentiment analysis, fraud detection, and other predictive analytics using\
+            \ the same world-class learning algorithms used in Microsoft products. And you can do it all in C#. Join the fun\
+            \ as Jeff takes a deep dive into ML.NET, presents numerous real-world code samples, and demonstrates that C# programmers,\
+            \ too, can live on the cutting edge of ML and AI."}
+      - language: ru
+        text: "Need to incorporate ML and AI into your next project, but not excited about learning Python? ML.NET is Microsoft's\
+            \ new open source ML and AI library for .NET developers. With it, you can create sophisticated machine learning\
+            \ models that perform sentiment analysis, fraud detection, and other predictive analytics using the same world-class\
+            \ learning algorithms used in Microsoft products. And you can do it all in C#. Join the fun as Jeff takes a deep\
+            \ dive into ML.NET, presents numerous real-world code samples, and demonstrates that C# programmers, too, can\
+            \ live on the cutting edge of ML and AI.\n\n> __Комментарий программного комитета:__\n\n\n\n> *ML.NET претенду\
+            ет на звание самой мощной библиотеки для машинного обучения на платформе .NET. Узнаем так ли это от коллеги Дж\
+            еффри Рихтера по Wintellect, активно взаимодействующего с разработчиками продукта.*"
+    talkDay: 1
+    trackTime: "14:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1WpeTHDK1eIRe1Toj0w8mU/eff3ee2e8eb5ed98c11bc3e46a716379/100533_1238993435_Jeff_Prosise_Machine_learning_for_C_developers_Introducing_ML.NET.pdf"]
+    videoLinks: []
     speakerIds: [1006]
   - id: 146
     name:
       - {language: en, text: "Beating CoreCLR's own C++ code with CoreCLR 3.0 intrinsics"}
+    shortDescription:
+      - {language: en, text: "During this session we will explore how developers can substantially improve performance of\
+            \ computationally intensive code by using CPU intrinsics, and go over the new support introduced in the recently\
+            \ released .NET Core 3.0."}
+    longDescription:
+      - language: en
+        text: "We will explore how developers can substantially improve performance of computationally intensive code by using\
+            \ CPU intrinsics, and go over the new support introduced in the recently released .NET Core 3.0.\n\nWe'll be taking\
+            \ a non-trivial algorithm that is already a part of the CoreCLR code-base that should be familiar for most devs,\
+            \ and (re)build an efficient intrinsics based version of it with AVX+AVX2 instructions about 7 vectorized CPU\
+            \ instruction that can be combined in a challenging way.\n\nWe'll discuss common hurdles/befits encountered while\
+            \ building/optimizing intrinsics based code such as:\n- replacing scalar code with branch-less vectorized code;\n\
+            - dealing with CPU branch mis-prediction;\n- unrolling code to improve performance / complexity trade-off of doing\
+            \ so.\n\nBy the end of the talk we'll show how we can beat the CoreCLR's own C++ code with C# Intrinsics utilizing\
+            \ AVX2 instructions."
+      - language: ru
+        text: "We will explore how developers can substantially improve performance of computationally intensive code by using\
+            \ CPU intrinsics, and go over the new support introduced in the recently released .NET Core 3.0.\n\nWe'll be taking\
+            \ a non-trivial algorithm that is already a part of the CoreCLR code-base that should be familiar for most devs,\
+            \ and (re)build an efficient intrinsics based version of it with AVX+AVX2 instructions about 7 vectorized CPU\
+            \ instruction that can be combined in a challenging way.\n\nWe'll discuss common hurdles/befits encountered while\
+            \ building/optimizing intrinsics based code such as:\n- replacing scalar code with branch-less vectorized code;\n\
+            - dealing with CPU branch mis-prediction;\n- unrolling code to improve performance / complexity trade-off of doing\
+            \ so.\n\nBy the end of the talk we'll show how we can beat the CoreCLR's own C++ code with C# Intrinsics utilizing\
+            \ AVX2 instructions.\n\n> __Комментарий программного комитета:__\n\n\n\n> *С появлением поддержки intrinsic в\
+            \ .NET Core 3.0 стало возможным писать очень быстрый код. Насколько быстрый? Насколько получится ускорить обыч\
+            ные алгоритмы, если копать глубоко в оптимизации?*"
+    talkDay: 1
+    trackTime: "14:00"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [1016]
   - id: 147
     name:
       - {language: en, text: "What you need to know about .NET Core 3.0 and beyond"}
+    shortDescription:
+      - {language: en, text: "Jon will talk about .NET 3.0 Core and its features."}
+    longDescription:
+      - {language: en, text: ".NET Core 3.0 has just been release on September 23, and includes a lot of new features from\
+            \ desktop support (WPF and Windows Forms), Blazor, single file executables, language features, and more. In this\
+            \ demo filled session, Jon will explain what this means for you as an application developer, what you can start\
+            \ using today, and how to get ready for the future."}
+      - language: ru
+        text: ".NET Core 3.0 has just been release on September 23, and includes a lot of new features from desktop support\
+            \ (WPF and Windows Forms), Blazor, single file executables, language features, and more. In this demo filled session,\
+            \ Jon will explain what this means for you as an application developer, what you can start using today, and how\
+            \ to get ready for the future.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Релиз .NET Core 3.0 состо\
+            ялся и надо понимать, что уже можно использовать, а что еще пока рано. А также готовиться к .NET 5. Джон расск\
+            ажет о состоянии дел в .NET Core/.NET 5, .NET Foundation и о взглядах на развитие с точки зрения главы организ\
+            ации.*"
+    talkDay: 1
+    trackTime: "16:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/9n3x4rtjlya6/1xDo9P4aZikhN2d5WvJX0o/a4335bdb9361e087324aca77e71319d2/100728_1040276802_Jon_Galloway_What_you_need_to_know_about_.NET_Core_3.0_and_beyond.pdf"]
+    videoLinks: []
     speakerIds: [403]
   - id: 148
     name:
       - {language: en, text: "Pragmatic memory management"}
+    shortDescription:
+      - {language: en, text: "Anatoly will talk about the principles of working with CG and how to improve your performance."}
+      - {language: ru, text: "О принципах работы с CG и о том, как улучшить производительность, Анатолий расскажет в данно\
+            м докладе."}
+    longDescription:
+      - {language: en, text: "When talking about GC a lot of time is traditionally devoted to its device and abstract tips\
+            \ which rarely help to improve something besides abstract memory traffic metrics. We will try to consider this\
+            \ from the practical point of view of the engineer, from performance measures to concepts underlying assembly\
+            \ waste. There will be a little provocation."}
+      - language: ru
+        text: "При разговоре о GC слишком много времени традиционно уделяется его устройству и абстрактным советам, которы\
+            е, на самом деле, редко помогают что-то улучшить, кроме абстрактных метрик трафика памяти. Мы постараемся расс\
+            мотреть это с практический точки зрения инженера, от измерений производительности к концепциям, лежащим в осно\
+            ве сборке мусора. Будет немного срыва покровов и провокаций.\n\n> __Комментарий программного комитета:__\n\n\n\
+            \n> *Про .NET и память было уже много докладов. Большинство из них сводится к «следите за memory traffic», «не\
+            \ надо допускать Gen2 collections, особенно LOH», и т.п. Анатолий представит слегка альтернативный взгляд на п\
+            роблемы работы с памятью.*"
+    talkDay: 1
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6uXrK4MMR6Y2QHHx98TpCV/2706bee7154daca6d944575286caea0f/100737_1099988362_Anatoliy_Zhmur_Pragmatic_memory_management.pdf"]
+    videoLinks: []
     speakerIds: [1014]
   - id: 149
     name:
       - {language: en, text: "Roslyn: Mastership of state analysis"}
       - {language: ru, text: "Roslyn: Mастерство статического анализа"}
+    shortDescription:
+      - {language: en, text: "Vladimir will speak about how to improve the quality of the code, to cut down the time it takes\
+            \ to find a solution to the typical problems when working with frameworks and share examples from his own experience."}
+      - {language: ru, text: "В своем докладе Владимир расскажет о том, как улучшить качество кода, сократить время на реш\
+            ение типовых проблем при работе с фреймворками и поделится примерами из собственной практики."}
+    longDescription:
+      - language: en
+        text: "Technologies used: Roslyn, Visual Studio SDK (VSIX). \n\nTarget audience: developers and build-engineers, especially\
+            \ those who develop their frameworks or works with someone else's frameworks, where there is no static analysis\
+            \ support. \n\nThe main problems and their solutions: to improve quality of the code, to cut down the time it\
+            \ takes to find a solution to the typical problems when working with frameworks (especially self-written). \n\n\
+            What audience would learn from the talk: \n\n- in which cases it's worth writing your own code analysis and in\
+            \ which cases it's not; \n- how much does it cost in terms of effort; \n- introduction to Roslyn: how to create\
+            \ a new analyzer, how to test it, how to create a code fix; \n- how to make a full integration into development\
+            \ process: working with legacy-code, integration into CI/CD, pull requests; \n- the pitfalls: versioning and backward\
+            \ compatibility of Roslyn SDK, aspects of integration into Visual Studio; \n- how to further accelerate the development\
+            \ process using Roslyn for refactoring, formating, improvement of the code readability, etc. \n\nWhat kind of\
+            \ experience does speaker have in this area: for a year and a half, Vladimir’s team has been developing tools\
+            \ for static analysis and extension to Visual Studio using Roslyn. This project was born as a solution of the\
+            \ following problem: company has its own development platform (Acumatica xRP Framework), developers inside the\
+            \ company and partner companies use it to write a business logic (ERP and various extensions to it). That is why\
+            \ speaker’s company faced with a task of improving quality of a code, written on company’s platform, checking\
+            \ it for compliance with company’s guidelines, partner’s decisions certification, reducing development time by\
+            \ avoiding the most common mistakes even at the stage of the code writing (since errors are shown immediately\
+            \ during the static analysis), and accelerating the development with the help of additional tools (custom syntax\
+            \ highlighting, custom code navigation, formatting, refactoring etc.)."
+      - language: ru
+        text: "Используемые технологии: Roslyn, Visual Studio SDK (VSIX). \n\nЦелевая аудитория: разработчики и билд-инжен\
+            еры, особенно те, кто занимаются разработкой собственных фреймворков или работают с чужими, где готовый статич\
+            еский анализ кода отсутствует. \n\nОсновные проблемы и их решения: улучшить качество кода, сократить время на\
+            \ решение типовых проблем при работе с фреймворками (особенно самописными). \n\nЧто слушатели узнают из доклад\
+            а: \n\n- в каких случаях стоит писать свой собственный анализ кода, а в каких не стоит; \n- сколько это стоит\
+            \ в терминах трудозатрат; \n- введение в Roslyn: как создать новый анализатор, как его протестировать, как соз\
+            дать code fix; \n- как сделать полноценную интеграцию в процесс разработки: работа с legacy-кодом, интеграция\
+            \ в CI/CD, пулл-реквесты; \n- подводные камни: версионность и обратная совместимость Roslyn SDK, особенности и\
+            нтеграции с Visual Studio; \n- как ещё ускорить процесс разработки, используя Roslyn для рефакторинга, формати\
+            рования, улучшения читаемости кода и т.п. \n\nКакой опыт спикер имеет в этой области: уже полтора года команда\
+            \ Владимира разрабатывает средства статического анализа и extension к Visual Studio с использованием Roslyn. Д\
+            анный проект родился как решение следующей проблемы: компания имеет масштабную платформу (Acumatica xRP Framework),\
+            \ на которой прикладные разработчики внутри самой компании и в компаниях-партнёрах пишут бизнес-логику (ERP и\
+            \ различные расширения к ней). Поэтому перед компанией спикера встала задача улучшения качества кода, написанн\
+            ого на платформе компании, проверки его на соответствие гайдлайнам компании, сертификации решений партнёров, с\
+            окращения затрачиваемого на разработку времени за счёт избегания наиболее распространённых ошибок ещё на этапе\
+            \ написания кода (т.к. ошибки сразу показываются во время статического анализа), и ускорения разработки за счё\
+            т дополнительного тулинга (кастомная подсветка синтаксиса, кастомная навигация по коду, форматирование, рефакт\
+            оринги и т.п.).\n\n> __Комментарий программного комитета:__\n\n\n\n> *Roslyn с нами уже давно и не раз на DotNext\
+            \ были доклады «как написать свой анализатор». Но Владимир и его команда подошли к вопросу основательно и в до\
+            кладе будут озвучены не только простые соображения «как писать анализатор», но и то сколько это стоит, как его\
+            \ поставлять команде, какие подводные камни можно встретить.*"
+    talkDay: 1
+    trackTime: "16:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5NUCLWWohm5Lj2kODAzYyS/c10dcd2e75df10acf3042c6645473b7a/100745_1750911309_Vladimir_Panchenko_Roslyn_Masterstvo_staticheskogo_analiza.pdf"]
+    videoLinks: []
     speakerIds: [1011]
   - id: 150
     name:
       - {language: en, text: ".NET: Treating the dependences"}
       - {language: ru, text: ".NET: Лечение зависимостей"}
+    shortDescription:
+      - {language: en, text: "Evgeny will tell when errors with connected frameworks happen on .NET Framework and .NET Core\
+            \ and what approaches we can use to solve these problems."}
+      - {language: ru, text: "Евгений расскажет когда возникают ошибки с подключаемыми библиотеками на .NET Framework и .NET\
+            \ Core, и какие использовать подходы к решению этих проблем."}
+    longDescription:
+      - language: en
+        text: "Every .NET developer some day or other faces the fact that his application stops working because of problems\
+            \ with plug-in frameworks: it doesn't compile, it crashes with FileNotFoundException in runtime or at the first\
+            \ glance mysteriously do nothing. It can happen due to real problems with backward compatibility or strict rules\
+            \ of build versioning. \n\nIn this talk Evgeny will talk about cases when such errors happen on .NET Framework\
+            \ and .NET Core, and about common approaches to solving problems. Also we will consider the features of developing\
+            \ applications that load executable code with dependencies (plugins) in runtime."
+      - language: ru
+        text: "Каждый .NET-разработчик рано или поздно сталкивается с тем, что его приложение перестаёт работать из-за про\
+            блем с подключаемыми библиотеками: не компилируется, падает с FileNotFoundException в рантайме или, на первый\
+            \ взгляд, просто загадочно ничего не делает. Это может происходить как из-за реальных проблем с обратной совме\
+            стимостью, так и из-за строгих правил версионирования сборок.\n\nВ докладе Евгений расскажет о случаях, когда\
+            \ подобные ошибки возникают на .NET Framework и .NET Core, о некоторых общих подходах к решению проблем. Также\
+            \ мы рассмотрим особенности разработки приложений, которые загружают исполняемый код с зависимостями (плагины\
+            ) в рантайме.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Кто не сталкивался с проблемами из-за assembly\
+            \ redirect? Скорее всего любой, кто разрабатывал относительно большое приложение, рано или поздно с этой пробл\
+            емой столкнётся. Помимо этого существуют и другие трудности при работе со сборками в .NET и Евгений, как обычн\
+            о, на практических примерах покажет что бывает и как с этим бороться.*"
+    talkDay: 1
+    trackTime: "17:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5ADIi4VVd4OCdWnYVpULTU/97fde14eb71bb798031de71cd49d9635/100719_2105757385_Yevgeniy_Peshkov_.NET_Lecheniye_zavisimostey.pdf"]
+    videoLinks: []
     speakerIds: [466]
   - id: 151
     name:
       - {language: en, text: "The Turkish gambit. Business application in half an hour"}
       - {language: ru, text: "Турецкий гамбит. Приложение бизнес-класса за полчаса"}
+    shortDescription:
+      - {language: en, text: "How to save time at the beginning of the project by getting a reliable application framework\
+            \ out of the box? Alexey Merson will show it live. There will be several demos and as a result, you will see a\
+            \ working web portal with auditing, plugins, SignalR, localization and other opportunities."}
+      - {language: ru, text: "Как сэкономить время в начале проекта, получив надежный каркас приложения «из коробки»? Алек\
+            сей Мерсон покажет это вживую. Будет несколько демо, в результате которых получится рабочий веб-портал с аудит\
+            ом, плагинами, SignalR, локализацией и другими возможностями."}
+    longDescription:
+      - language: en
+        text: "Suddenly your team gets a chance to write a project from scratch. The deadlines are tough, you need to write\
+            \ business logic, but the infrastructure is stuck. After a couple of months you realize that the deadline is close,\
+            \ open browser tabs are growing exponentially and each task, each meeting raises more questions than answers.\
+            \ Autofac or Castle Windsor? Entity Framework or Dapper? NLog or Serilog? Rich model or Anemic?\n\nAlexey's team\
+            \ was in such a situation. They needed a fast start and a solid frame for a huge enterprise-project so they can\
+            \ focus on business logic and not think about infrastructure. Their solution was ASP.NET Boilerplate (ABP), the\
+            \ framework from Turkey.\n\nDuring this session, Alexey will tell how to make high-quality complex applications\
+            \ on the .NET stack in a short time. There will be several demos as a result of which firstly you get a working\
+            \ web portal with a lot of things (auditing, plugins, SignalR, localization, etc.), secondly the explanation of\
+            \ how these things were implemented."
+      - language: ru
+        text: "Внезапно вам выпадает шанс на миллион, счастливый билет в лотерее Green Field: вашей команде доверяют напис\
+            ать проект с нуля. Сроки жёсткие, нужно уже писать бизнес-логику, но инфраструктура буксует. И через пару меся\
+            цев вы обнаруживаете, что дедлайн не за горами, открытые вкладки браузера растут в геометрической прогрессии,\
+            \ а каждая задача, каждый митинг вызывает больше вопросов, чем ответов. Autofac или Castle Windsor? Entity Framework\
+            \ или Dapper? NLog или Serilog? Rich model или Anemic?\n\nИменно в такой ситуации оказалась команда Алексея. И\
+            м нужен был быстрый старт и прочный каркас для большого enterprise-проекта, чтобы сосредоточиться на бизнес-ло\
+            гике и не думать об инфраструктуре. И они нашли решение для этой проблемы: ASP.NET Boilerplate (ABP), фреймвор\
+            к родом из Турции.\n\nВ докладе Алексей расскажет, как сделать качественное сложное приложение на .NET-стеке в\
+            \ короткие сроки. Будет несколько демо, в результате которых, во-первых, получится рабочий веб-портал с кучей\
+            \ плюшек (аудит логи, плагины, SignalR, локализация и др.), а во-вторых, объяснение как эти плюшки реализованы\
+            .\n\n> __Комментарий программного комитета:__\n\n\n\n> *Можно потратить много времени, тщательно спроектироват\
+            ь приложение, отобрать нужные компоненты и библиотеки, написать много кода и получить отличный продукт. А можн\
+            о взять готовый фреймворк и тоже получить отличный продукт. Брать готовое — это не всегда плохо. Но есть нюанс\
+            ы.*"
+    talkDay: 1
+    trackTime: "17:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/7ab4h27NVSeexatw6XUTZZ/9d5c2e989698d0b315bececa9397585a/100781_651687101_Aleksey_Merson_Turetskiy_gambit._Prilozheniye_biznes-klassa_za_polchasa..pdf"]
+    videoLinks: []
     speakerIds: [443]
   - id: 152
     name:
       - {language: en, text: "Bring your ASP.NET Core solutions to Kubernetes in Azure"}
+    shortDescription:
+      - {language: en, text: "This talk will showcase a possible approach to port an existing ASP.NET Core solution to Docker,\
+            \ demonstrating how seamlessly Visual Studio integrates them in the development experience."}
+    longDescription:
+      - language: en
+        text: "Containers are one of the major breakthrough in IT of the past few years, and promise to revolutionise the\
+            \ way software is developed and deployed. Thanks to the support in Visual Studio 2019, time has never been more\
+            \ favourable to adopt them in our technological stack.\n\nThis talk will showcase a possible approach to port\
+            \ an existing ASP.NET Core solution to Docker, demonstrating how seamlessly Visual Studio integrates them in the\
+            \ development experience, while still embracing the advantages of dependency management that containers make possible.\n\
+            \nAfter executing the solution locally on the development machine, we'll explore which options we have in order\
+            \ to deploy it on Azure Kubernetes Service. We'll show a possible example for a CI/CD pipeline in Azure DevOps\
+            \ and demonstrate how we can integrate it with the PaaS offering in Azure, such as Cosmos DB and Redis Cache."
+      - language: ru
+        text: "Containers are one of the major breakthrough in IT of the past few years, and promise to revolutionise the\
+            \ way software is developed and deployed. Thanks to the support in Visual Studio 2019, time has never been more\
+            \ favourable to adopt them in our technological stack.\n\nThis talk will showcase a possible approach to port\
+            \ an existing ASP.NET Core solution to Docker, demonstrating how seamlessly Visual Studio integrates them in the\
+            \ development experience, while still embracing the advantages of dependency management that containers make possible.\n\
+            \nAfter executing the solution locally on the development machine, we'll explore which options we have in order\
+            \ to deploy it on Azure Kubernetes Service. We'll show a possible example for a CI/CD pipeline in Azure DevOps\
+            \ and demonstrate how we can integrate it with the PaaS offering in Azure, such as Cosmos DB and Redis Cache.\n\
+            \n> __Комментарий программного комитета:__\n\n\n\n> *Доклад, предложенный Марко, показался нам интересным и гл\
+            убиной подачи материала, и уверенностью лайв-кодинга во время презентации, а также тем, что Марко в начале сво\
+            их выступлений расспрашивает аудиторию об уровне владения темой, и в зависимости от этого вносит изменения в п\
+            одачу материала. Мы уверены, что все заинтересованные вопросами разработки распределенных систем на основе кон\
+            тейнеров, почерпнут что-то новое в докладе Марко ди Санктиса.*"
+    talkDay: 1
+    trackTime: "17:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1utpqK3KkOGt3oKFXMuzOr/b4a518ff8edd24b017c356ced311e42b/100619_1234241147_Marco_De_Sanctis_Bring_your_ASP.NET_Core_solutions_to_Kubernetes_in_Azure.pdf"]
+    videoLinks: []
     speakerIds: [1012]
   - id: 153
     name:
       - {language: en, text: "Fantastic biotechnologies and where to find them"}
       - {language: ru, text: "Фантастические биотехнологии и где они обитают"}
+    shortDescription:
+      - {language: en, text: "Biotechnologies are developing more rapidly — where mankind has already mage great progress\
+            \ and what remains only in our imagination? Is it possible to bring this to life? Alexander Panchin will devote\
+            \ his talk to this."}
+      - {language: ru, text: "Биотехнологии развиваются всё стремительнее — в чем человечество уже сильно продвинулось, а\
+            \ что пока остается только в нашем воображении? Возможно ли воплотить это в жизнь? Этому и посвятит свой докла\
+            д Александр Панчин."}
+    longDescription:
+      - {language: en, text: "Dinosaurs resurrection, cloning, artificial viruses creating and man genetic modification —\
+            \ these and other topics were raised in science fiction, movies and computer games. What fantastic biotechnologies\
+            \ await us in the future and what are already real? Where science fiction writers were right or wrong?"}
+      - {language: ru, text: "Воскрешение динозавров, клонирование, создание искусственных вирусов и генная модификация че\
+            ловека — эти и другие темы поднимались фантастами в книгах, фильмах и компьютерных играх. Какие фантастические\
+            \ биотехнологии ждут нас в будущем, а какие уже реальны? В чем правы, а в чем ошибались фантасты?"}
+    talkDay: 1
+    trackTime: "19:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [82]
   - id: 154
     name:
       - {language: en, text: "Everything .NET developer wanted to find out about deep learning, but was afraid to ask"}
       - {language: ru, text: "Всё, что разработчик .NET хотел знать про глубокое обучение, но боялся спросить"}
+    shortDescription:
+      - {language: en, text: "In this talk, Dmitry will tell about main types of modern neural network and how .NET developers\
+            \ can use finished trained networks to solve problems."}
+      - {language: ru, text: "В этом докладе Дмитрий расскажет про основные виды нейронных сетей, используемых на сегодняш\
+            ний день, и как .NET-разработчики могут использовать готовые обученные сети для решения своих задач."}
+    longDescription:
+      - language: en
+        text: "Machine learning and neural networks are quite popular topics now, which allow making a howling success in\
+            \ various fields: from image processing to music synthesis. For some reasons, Python is often used for such tasks,\
+            \ but it's hated by .NET developers. The bitter truth is that .NET platform hasn't got convenient tools that allow\
+            \ you to solve the problems of neural network learning. Because of this all tasks of machine learning are usually\
+            \ given to data scientist and further separated in the form of distinct services. .NET developers prefer not to\
+            \ think about it.\n\nIn this talk, Dmitry will tell about main types of modern neural network and how .NET developers\
+            \ can use finished trained networks to solve problems. Also, how to teach these networks to the end. The main\
+            \ emphasis of the demonstration will be on image processing — we will learn to recognize and find objects on the\
+            \ image. We will use ML.NET, the audience must stay calm during the demonstration of Python code."
+      - language: ru
+        text: "Машинное обучение и нейронные сети — это крайне популярные сейчас темы, которые позволяют добиваться небыва\
+            лых успехов в различных областях: от обработки изображений до синтеза музыки. По ряду причин, для таких задач\
+            \ чаще всего используют язык Python, который ненавистен .NET-разработчикам.\nГорькая правда состоит в том, что\
+            \ на платформе .NET действительно не так много удобных инструментов, позволяющих решать задачи обучения нейрос\
+            етей. Из-за этого все задачи машинного обучения обычно отдаются на откуп data scientist'у и в дальнейшем обосо\
+            бляются в виде отдельных сервисов. .NET-разработчики же предпочитают не забивать себе голову.\n\nВ этом доклад\
+            е Дмитрий расскажет про основные виды нейронных сетей, используемых на сегодняшний день, и как .NET-разработчи\
+            ки могут использовать готовые обученные сети для решения своих задач. А также, как производить «дообучение» та\
+            ких сетей. Основной акцент в демонстрациях будет сделан на обработке изображений — мы научимся распознавать и\
+            \ находить объекты на изображении. Мы будем использовать технологию ML.NET, от слушателей требуется способност\
+            ь сохранять спокойствие при виде фрагментов кода на Python.\n\n> __Комментарий программного комитета:__\n\n\n\n\
+            > *Не Питоном единым! Развенчание мифа о том, что в .NET машинного обучения нет.*"
+    talkDay: 2
+    trackTime: "10:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [472]
   - id: 155
     name:
       - {language: en, text: "From ETW to EventPipe: dig into .NET monitoring pipelines for healthier applications"}
+    shortDescription:
+      - {language: en, text: "This session will first show you how to easily build an accurate .NET monitoring of your applications\
+            \ based on CLR Events; including the Linux case for .NET Core."}
+    longDescription:
+      - language: en
+        text: "With .NET Core, performance counters are no more there to help you monitor .NET metrics such as memory, threadpool\
+            \ or contention in your applications. Even with the .NET Framework, some of the performance counters are far from\
+            \ being accurate. The best replacement solution is to rely on CLR Events to monitor the health of your applications.\n\
+            \nThis session will first show you how to easily build an accurate .NET monitoring of your applications based\
+            \ on CLR Events; including the Linux case for .NET Core. \n\nBeyond the monitoring use with .NET Core counters,\
+            \ Christophe will drive you into the implementation details to show you how these events can become invaluable\
+            \ during real world debugging and performance investigations. \n\nLast but not least, you will see how to leverage\
+            \ the new .NET Core EventPipe architecture to get accurate metrics about your applications."
+      - language: ru
+        text: "With .NET Core, performance counters are no more there to help you monitor .NET metrics such as memory, threadpool\
+            \ or contention in your applications. Even with the .NET Framework, some of the performance counters are far from\
+            \ being accurate. The best replacement solution is to rely on CLR Events to monitor the health of your applications.\n\
+            \nThis session will first show you how to easily build an accurate .NET monitoring of your applications based\
+            \ on CLR Events; including the Linux case for .NET Core. \n\nBeyond the monitoring use with .NET Core counters,\
+            \ Christophe will drive you into the implementation details to show you how these events can become invaluable\
+            \ during real world debugging and performance investigations. \n\nLast but not least, you will see how to leverage\
+            \ the new .NET Core EventPipe architecture to get accurate metrics about your applications.\n\n> __Комментарий\
+            \ программного комитета:__\n\n\n\n> *Все знают про performance counters. К сожалению, их нет на Linux/macOS, а\
+            \ .NET Core — это кроссплатформенная среда. Кристоф — известный любитель ETW и прочих техник профилирования и\
+            \ измерения производительности .NET-приложений. Но ETW это снова только Windows. В докладе посмотрим, что пред\
+            лагает .NET Core и как с этим работать на всех платформах.*"
+    talkDay: 2
+    trackTime: "10:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/64oeOVRnpuUeT8rTyO7gJK/bd629f0a711c85663b3fcec3e6279e5f/ChristopheNasarre_MonitoringPipelineIn.NET.pdf"]
+    videoLinks: []
     speakerIds: [405]
   - id: 156
     name:
       - {language: en, text: "Create your own serverless PKI with .NET & Azure Key Vault"}
+    shortDescription:
+      - {language: en, text: "In this session Eran will tell about building a Serverless Public Key Infrastructure (PKI) system\
+            \ in .NET."}
+    longDescription:
+      - language: en
+        text: "A Public Key Infrastructure (PKI) is the basis of modern system authentication; X.509 certificates are at the\
+            \ core of modern cryptography. Building your own PKI is not for the faint of heart, so we usually buy our certificates\
+            \ from an external Certificate Authority or operate a 3rd-party off-the-shelf PKI. \nBut what can you do if you\
+            \ need to issue your certificates while keeping your costs low? What if, for example, you're in the business of\
+            \ manufacturing millions of IoT devices and you need to issue a certificate to each one of them? And to top it\
+            \ off — you want to do it in .NET? \n\nJoin Eran in this developer-focused session, as we build a Serverless PKI\
+            \ system in .NET on top of Azure Functions & Azure Key Vault and learn all about Key Vault's & .NET's capabilities\
+            \ in regards to X.509 certificates along the way."
+      - language: ru
+        text: "A Public Key Infrastructure (PKI) is the basis of modern system authentication; X.509 certificates are at the\
+            \ core of modern cryptography. Building your own PKI is not for the faint of heart, so we usually buy our certificates\
+            \ from an external Certificate Authority or operate a 3rd-party off-the-shelf PKI. \nBut what can you do if you\
+            \ need to issue your certificates while keeping your costs low? What if, for example, you're in the business of\
+            \ manufacturing millions of IoT devices and you need to issue a certificate to each one of them? And to top it\
+            \ off — you want to do it in .NET? \n\nJoin Eran in this developer-focused session, as we build a Serverless PKI\
+            \ system in .NET on top of Azure Functions & Azure Key Vault and learn all about Key Vault's & .NET's capabilities\
+            \ in regards to X.509 certificates along the way.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Когда\
+            \ речь заходит о безопасности, часто вспоминают про сертификаты. Про них все слышали, многие знают что это и з\
+            ачем, но не все знают, как правильно их готовить (выпускать, отзывать, и т.п.). В докладе будет рассмотрена ра\
+            бота с сертификатами когда их нужно много, и лучшее решение — сделать свой внутренний центр сертификации. Коне\
+            чно же, на .NET.*"
+    talkDay: 2
+    trackTime: "10:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/2BWOJH9fCgvnaBFLerC8jC/469b7bf8855c2f0bece41dec2bd051f5/100750_1540182257_Eran_Stiller_Create_your_own_serverless_PKI_with_.NET__Azure_Key_Vault.pdf"]
+    videoLinks: []
     speakerIds: [457]
   - id: 157
     name:
       - {language: en, text: ".NET 5: runtimes"}
+    shortDescription:
+      - {language: en, text: ".NET innovations, performance, replaceable runtimes."}
+      - {language: ru, text: "Нововведения .NET 5, производительность, подменяемые рантаймы."}
+    longDescription:
+      - {language: en, text: "We will consider .NET 5 innovations, improvements in the launch speed with help of Tired Compilation\
+            \ and R2R, runtime performance, also consider the new feature — runtime CoreCLR on Mono (LLVM) replacing for each\
+            \ application and why we need that."}
+      - language: ru
+        text: "Рассмотрим нововведения .NET 5, улучшения в области скорости запуска посредством Tired Compilation и R2R, п\
+            роизводительности рантайма, а также подробно рассмотрим новую фичу - подмена рантайма CoreCLR на Mono (LLVM) д\
+            ля любого приложения и зачем это может понадобиться.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Его\
+            р Богатов работает в команде .NET 5 и знает обо всем, что происходит, по собственному опыту.*"
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/3rgGbKxMboaVKfdFbURlCu/61f9d0da42248a9ea05877f85b542d08/100701_297894786_Yegor_Bogatov_.NET_5_runtimes.pdf"]
+    videoLinks: []
     speakerIds: [431]
   - id: 158
     name:
       - {language: en, text: "Mutation analysis"}
       - {language: ru, text: "Мутационный анализ"}
+    shortDescription:
+      - {language: en, text: "Mutation analysis is a way to test applications and a set of tests to check robustness. Nikolay\
+            \ will explain how to check your tests for compliance with their main function — early detection of errors in\
+            \ your application. We'll discuss how this method of code analysis changes the developer's mind and how applicable\
+            \ it is in real life."}
+      - {language: ru, text: "Мутационный анализ — это способ тестирования приложений и набора тестов на устойчивость к не\
+            большим изменениям кода. Николай расскажет, как проверить ваши тесты на соответствие их основной функции — ран\
+            нем детектировании ошибок в приложении. Расскажет, каким образом такой способ анализа кода меняет мышление раз\
+            работчика и насколько это применимо в реальной жизни."}
+    longDescription:
+      - language: en
+        text: "Mutation analysis is a tool to test software robustness.\n\nMutation analysis or mutation testing check the\
+            \ application's test system and architecture, allowing you to find non-obvious bugs.\n\nEven with 100% test coverage\
+            \ (checked by a human), there is no guarantee that an application is tested properly to ensure compliance with\
+            \ the requirements.\n\nThis talk is aimed at a wide range of attendees interested in achieving high-quality software\
+            \ products.\n\nThe talk dwells on the theory of mutation analysis, the possibilities of its implementation in\
+            \ .NET, an analysis tool, the most common mutations, and real-life examples."
+      - language: ru
+        text: "Мутационный анализ — это средство проверки программного обеспечения на устойчивость к изменениям.\n\nМутаци\
+            онный анализ или мутационное тестирование комплексно проверяет систему тестов и архитектуру приложения, позвол\
+            яет найти неочевидные баги и места.\n\nПри 100% покрытии тестами и при проверке их человеком, не гарантируется\
+            \ то, что тесты действительно качественно проверяют приложение на соответствие требованиям.\n\nДоклад ориентир\
+            ован на широкий круг слушателей, заинтересованных в достижении высокого качества программных продуктов.\n\nВ д\
+            окладе рассматривается теория мутационного анализа, как это возможно реализовать в .NET, инструмент для анализ\
+            а, рассматриваются самые распространенные мутации и примеры из реальной жизни.\n\n> __Комментарий программного\
+            \ комитета:__\n\n\n\n> *Тесты пишутся, чтобы проверять код. А как проверить сами тесты? А если прямо вместе с\
+            \ кодом? Из доклада мы это и попробуем узнать.*"
+    talkDay: 2
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/9n3x4rtjlya6/769HNKX4sadEipF9xqTowb/6c441268c56a2211fe4aa5a98fd19c58/100593_495153246_Nikolay_Molchanov_Mutatsionnyy_analiz.pdf"]
+    videoLinks: []
     speakerIds: [946]
   - id: 159
     name:
       - {language: en, text: "The debugging mindset"}
+    shortDescription:
+      - {language: en, text: "A lot of developers underestimate and don't understand debugging and how it works. Kevin will\
+            \ show you the whole process of it: from the choice of the workflow to building a setup that allows you to iterate\
+            \ faster."}
+    longDescription:
+      - language: en
+        text: "Debugging is often misunderstood. Many people that are unfamiliar with debugging tend to think it's all about\
+            \ mastering difficult and austere tools. Kevin often had coworkers asked him \"what sequence of commands should\
+            \ I type in WinDbg to debug this kind of issue?\", as if debugging was about applying a simple flowchart with\
+            \ a complex tool. This is, in fact, quite the opposite. Debugging is all about the mindset and the methodology,\
+            \ and the tooling is the simple part. \n\nTo illustrate this, we will diagnose and fix a bug in a mainstream application\
+            \ without having the source code or any prior knowledge of its inner workings. Faced with an overwhelming number\
+            \ of unknowns, we'll see how to methodically gain knowledge about the issue, formulate theories, verify them,\
+            \ and use the results to make progress in the investigation."
+      - language: ru
+        text: "Debugging is often misunderstood. Many people that are unfamiliar with debugging tend to think it's all about\
+            \ mastering difficult and austere tools. Kevin often had coworkers asked him \"what sequence of commands should\
+            \ I type in WinDbg to debug this kind of issue?\", as if debugging was about applying a simple flowchart with\
+            \ a complex tool. This is, in fact, quite the opposite. Debugging is all about the mindset and the methodology,\
+            \ and the tooling is the simple part. \n\nTo illustrate this, we will diagnose and fix a bug in a mainstream application\
+            \ without having the source code or any prior knowledge of its inner workings. Faced with an overwhelming number\
+            \ of unknowns, we'll see how to methodically gain knowledge about the issue, formulate theories, verify them,\
+            \ and use the results to make progress in the investigation. \n\n> __Комментарий программного комитета:__\n\n\n\
+            \n> *Когда разработчик встречает проблему, то каждый приступает к решению по-своему: кто-то пишет больше логов\
+            , кто-то сразу хватается за отладчик. Кевин расскажет, как решать проблемы системно, не тратить время на лишне\
+            е и получать максимум информации из имеющихся данных.*"
+    talkDay: 2
+    trackTime: "12:00"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [417]
   - id: 160
     name:
       - {language: en, text: "Metaprogramming for the masses"}
+    shortDescription:
+      - {language: en, text: "Building upon the low-level optimization primitives and techniques presented at \"Patterns for\
+            \ high-performance C#\" (DotNext Moscow 2017) and \"Scratched metal\" (DotNext Piter 2018), we'll explore advanced\
+            \ design principles to build configurable, composable and highly optimized code."}
+    longDescription:
+      - {language: en, text: "Building upon the low-level optimization primitives and techniques presented at <a href=\"https://2017.dotnext-moscow.ru/en/2017/msk/talks/3dzbwqxenm6eqkai4giygw/\"\
+            \ target=\"_blank\">\"Patterns for high-performance C#\" (DotNext Moscow 2017)</a> and <a href=\"https://2018.dotnext-piter.ru/en/2018/spb/talks/apudgod3fgyeeg8asigsq/\"\
+            \ target=\"_blank\">\"Scratched metal\" (DotNext Piter 2018)</a>, we'll explore advanced design principles to\
+            \ build configurable, composable and highly optimized code. We will present novel design principles that allow\
+            \ exploiting the JIT code emitting infrastructure rules to craft code that for those familiar with C++ it resembles\
+            \ metaprogramming. This is a hardcore talk aimed at engineers doing micro-optimization and high-performance computing\
+            \ library designers."}
+      - language: ru
+        text: "Building upon the low-level optimization primitives and techniques presented at <a href=\"https://2017.dotnext-moscow.ru/2017/msk/talks/3dzbwqxenm6eqkai4giygw/\"\
+            \ target=\"_blank\">\"Patterns for high-performance C#\" (DotNext Moscow 2017)</a> and <a href=\"https://2018.dotnext-piter.ru/2018/spb/talks/apudgod3fgyeeg8asigsq/\"\
+            \ target=\"_blank\">\"Scratched metal\" (DotNext Piter 2018)</a>, we'll explore advanced design principles to\
+            \ build configurable, composable and highly optimized code. We will present novel design principles that allow\
+            \ exploiting the JIT code emitting infrastructure rules to craft code that for those familiar with C++ it resembles\
+            \ metaprogramming. This is a hardcore talk aimed at engineers doing micro-optimization and high-performance computing\
+            \ library designers.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Выжать последние капли производител\
+            ьности из .NET Runtime? Это к Федерико. Посмотрим, как убедить JIT делать то, что нам нужно, чтобы сгенерирова\
+            ть высокооптимизированный код.*"
+    talkDay: 2
+    trackTime: "14:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/57VNPGlawoN2yxIWmwmWRw/524e2e9391811f2bd7510537fe60a7f2/100666_1852902999_Federico_Lois_Metaprogramming_for_the_masses.pdf"]
+    videoLinks: []
     speakerIds: [450]
   - id: 161
     name:
       - {language: en, text: "Nullable reference types — advanced guide"}
+    shortDescription:
+      - {language: en, text: "Andrey will speak about how to start using C#8 nullable reference types, which problems and\
+            \ special aspect you may face and how to solve them."}
+      - {language: ru, text: "Андрей расскажет о том, как начать использовать C#8 nullable reference types, с какими пробл\
+            емами и особенностями их работы можно столкнуться и как их решить."}
+    longDescription:
+      - language: en
+        text: "Andrey will speak about how to start using C#8 nullable reference types, which problems and aspects you may\
+            \ face and how to solve them. \n\nThe talk will show: \n\n- how to transfer a big project to work with nullable\
+            \ reference types step-by-step; \n- how to help compiler to understand complex methods' contracts by using the\
+            \ annotations; \n- how to use nullable reference types in generic code and which problems may arise; \n- the pitfalls\
+            \ which users of this feature of language can expect, when it may work unexpectedly or wrongly and what to do\
+            \ in this case. \n\nThe talk will be interesting for those who plan to use nullable reference types since it reveals\
+            \ the details of how they work. It will be most helpful for those who plan to use them in the big projects that\
+            \ cannot be converted to using NRT and entirely annotated for a short time. Also in projects that use their own\
+            \ solutions for assertions or exceptions, or complex methods' contracts combine availability of \"null\" in input\
+            \ and output values since these methods will have to be annotated for proper work of compiler."
+      - language: ru
+        text: "В докладе Андрей расскажет о том, как начать использовать C#8 nullable reference types, с какими проблемами\
+            \ и особенностями их работы можно столкнуться и как их решить. \n\nВ докладе будет показано:\n\n- как постепен\
+            но переводить большой проект на работу с nullable reference types; \n- как при помощи аннотаций помочь компиля\
+            тору понять сложные контракты методов; \n- как использовать nullable reference types в обобщенном коде и какие\
+            \ проблемы при этом могут возникнуть; \n- какие подводные камни могут ожидать пользователей этой фичи языка, к\
+            огда она может сработать неожиданно или неправильно, и что делать в этом случае.\n\nДоклад будет интересен все\
+            м, кто планирует использовать nullable reference types, т.к. раскрывает подробности их работы. Наиболее полезе\
+            н он будет тем, кто планирует использовать их в больших проектах, которые невозможно перевести на использовани\
+            е NRT и проаннотировать целиком за короткое время; проектах, в которых используются собственные решения для ас\
+            сертов или исключений, либо методы со сложными контрактами, связывающими наличие `null` во входных и выходных\
+            \ значениях, т.к. эти методы придется аннотировать для корректной работы компилятора с ними.\n\n> __Комментари\
+            й программного комитета:__\n\n\n\n> *Одно из самых больших изменений в C# 8 — это nullable reference types. Из\
+            менение настолько революционное и важное, что правильно его применять мы еще только учимся. Андрей расскажет о\
+            бо всех трудностях и проблемах, которые вы можете встретить.*"
+    talkDay: 2
+    trackTime: "14:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/1rFHIMDaLKQkwwXilifkhY/54e8be01c0ebb0474d0d231a7ec26243/100790_994755672_Andrey_Dyatlov_Nullable_reference_types__advanced_guide.pdf"]
+    videoLinks: []
     speakerIds: [426]
   - id: 162
     name:
       - {language: en, text: "How to collect the entire database into a file and why we use the Akka.NET Streams library"}
       - {language: ru, text: "Как собрать всю базу в файл и зачем тут Akka.NET Streams"}
+    shortDescription:
+      - {language: en, text: "This talk will provide the types of data processing tasks for which Akka.NET Streams would be\
+            \ suited. We will consider alternatives and describe the way of learning this technology and searching for the\
+            \ weaknesses in the source code of the library. The issue of monitoring and testing the resulting code will also\
+            \ be raised."}
+      - {language: ru, text: "В докладе будут представлены типы задач обработки данных для которых подойдет Akka.NET Streams,\
+            \ рассмотрены альтернативные способы решения таких задач; описан путь изучения данной технологии, нахождения с\
+            лабых мест в коде самой библиотеки, затронуты вопросы мониторинга и тестирования полученного кода."}
+    longDescription:
+      - language: en
+        text: "The talk describes the experience of one development team in using Akka.NET Streams library, which was born\
+            \ as an implementation of Reactive Streams by the Akka.Net team over the actors and also allows to build complex\
+            \ data flow graphs. \nThis talk will provide the types of data processing tasks for which Akka.NET Streams would\
+            \ be suited. We will consider alternatives and describe the way of learning this technology and searching the\
+            \ weaknesses in the source code of the library. The issue of monitoring and testing the resulting code will also\
+            \ be raised."
+      - language: ru
+        text: "В докладе описывается опыт одной команды разработки по использованию библиотеки Akka.NET Streams, которая р\
+            ождена как имплементация Reactive Streams командой Akka.Net поверх акторов, и позволяет строить сложные графы\
+            \ прохождения данных.\nВ докладе будут представлены типы задач обработки данных для которых подойдет Akka.NET\
+            \ Streams, рассмотрены альтернативные способы решения таких задач; описан путь изучения данной технологии, нах\
+            ождения слабых мест в коде самой библиотеки, затронуты вопросы мониторинга и тестирования полученного кода.\n\n\
+            > __Комментарий программного комитета:__\n\n\n\n> *Мы всегда с особым интересом относимся к докладам, в которы\
+            х  рассказывается о том, как новые технологии обкатываются в реальных проектах, и презентация Константина Житн\
+            ика относится к этой категории. Многих разработчиков в последнее время привлекает модель акторов, а технология\
+            \ Akka Streams позволяет существенно сократить размер кода, моделируя бизнес-процессы с помощью акторов. Если\
+            \ вы хотите узнать, как проходил процесс разработки подсистемы с использованием Akka Streams и каковы впечатле\
+            ния самих разработчиков, то этот доклад для вас. В докладе будет использован язык C#.*"
+    talkDay: 2
+    trackTime: "14:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6MYghuTm6UMus6QM9dzSLW/7afe9f450fd8c593693fdbf7eef08023/100767_1678503653_Konstantin_Zhitnik_Kak_sobrat_vsyu_bazu_v_fayl_i_zachem_tut_Akka.NET_Streams.pdf"]
+    videoLinks: []
     speakerIds: [1010]
   - id: 163
     name:
       - {language: en, text: "An in-depth look at the new features in C# 8.0 and .NET Core 3.0"}
+    shortDescription:
+      - {language: en, text: "For developer it's important to keep track not only the news of language and frameworks but\
+            \ also what features have recently appeared. During this session, Raffaele will make out the most interesting\
+            \ features and how to use them in development."}
+    longDescription:
+      - language: en
+        text: "The new version of the language and the framework offer a wide range of new capabilities that you may have\
+            \ already heard of, like the nullable reference types, the default interface implementations or the support for\
+            \ assembly unloading. But beyond the most discussed features there are many other gems that are definitely worth\
+            \ discovering.\nDuring this session, after a brief overview, we will peek some of the most interesting features,\
+            \ analyzing the practical use-cases with the performance and productivity in mind."
+      - language: ru
+        text: "The new version of the language and the framework offer a wide range of new capabilities that you may have\
+            \ already heard of, like the nullable reference types, the default interface implementations or the support for\
+            \ assembly unloading. But beyond the most discussed features there are many other gems that are definitely worth\
+            \ discovering.\nDuring this session, after a brief overview, we will peek some of the most interesting features,\
+            \ analyzing the practical use-cases with the performance and productivity in mind.\n\n> __Комментарий программ\
+            ного комитета:__\n\n\n\n> *Релиз .NET Core 3.0 официально состоялся. Много раз обсуждали все нововведения, но\
+            \ каждый раз затрагивали одни фичи и умалчивали о других. В этот раз узнаем мнение Раффаеле о тех фичах, котор\
+            ые ему кажутся полезными и важными в новом релизе.*"
+    talkDay: 2
+    trackTime: "16:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/7eA83FDPnEQ4jPyLX7eQYj/23144face7a433c303ee045d3e585f96/100788_279808118_Raffaele_Rialdi_An_in-depth_look_at_the_new_features_in_C_8.0_and_.NET_Core_3.0.pdf"]
+    videoLinks: []
     speakerIds: [409]
   - id: 164
     name:
       - {language: en, text: "Introduction to Event sourcing"}
       - {language: ru, text: "Введение в Event sourcing"}
+    shortDescription:
+      - {language: en, text: "Jacob will tell how event sourcing and how it can help solve the functional and nonfunctional\
+            \ requirements that are often presented to modern applications."}
+      - {language: ru, text: "Яков расскажет про event sourcing и как он может помочь решить функциональные и нефункционал\
+            ьные требования, которые часто предъявляются к современным приложениям."}
+    longDescription:
+      - language: en
+        text: "Event sourcing is a powerful architecture approach that can reveal the depth of the application domain. However\
+            \ improper use can lead to a confusing system that will be difficult to develop.\n\nIn this talk, we will analyze\
+            \ what event sourcing is and how it differs from other architectural styles. Next, we analyze how event sourcing\
+            \ can help solve the functional and nonfunctional requirements that are often presented to modern applications.\n\
+            \nIn conclusion, we will see how to connect event sourcing and distributed systems. We will separately analyze\
+            \ how in this case to find and resolve data change conflicts. This talk is intended to listeners who haven't worked\
+            \ with event sourced systems yet but will also be useful for people who are already familiar with this concept."
+      - language: ru
+        text: "Event sourcing является достаточно мощным архитектурным подходом, способным раскрыть глубину предметной обл\
+            асти приложения. Вместе с тем, неправильное его использование может привести к запутанной системе, которую буд\
+            ет трудно развивать. \n\nВ этом докладе мы разберем что такое event sourcing и чем он отличается от других арх\
+            итектурных стилей. Далее проанализируем то, как event sourcing может помочь решить функциональные и нефункцион\
+            альные требования, которые часто предъявляются к современным приложениям.\n\nВ заключении мы посмотрим, как св\
+            язать event sourcing и распределенные системы. Отдельно разберем как в этом случае находить и разрешать конфли\
+            кты изменения данных. Доклад в основном рассчитан на слушателей, которые еще не работали с event sourced систе\
+            мами, но будет так же полезен и тем, кто уже знаком с этой концепцией.\n\n> __Комментарий программного комитет\
+            а:__\n\n\n\n> *Автор отлично осведомлен о том, как работает одна из самых интересных архитектур современности\
+            , и покажет это в своем докладе.*"
+    talkDay: 2
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/5OR1reA9fwlgq7Cq4n2aqB/083af4b7b4a18d70c3fdc2de90cc56ae/100739_2103313691_Yakov_Povar_Vvedeniye_v_Event_sourcing.pdf"]
+    videoLinks: []
     speakerIds: [1009]
   - id: 165
     name:
       - {language: en, text: "Daily performance pitfalls"}
+    shortDescription:
+      - {language: en, text: "Łukasz will focus on the everyday performance traps which can spoil your hard effort."}
+    longDescription:
+      - {language: en, text: ".NET has accustomed us to writing code quickly and without thinking about what is going on underneath.\
+            \ Unfortunately, convenience comes with additional cost. It is very easy to lose the performance of our component\
+            \ through simple statement or code block which behaves differently than we thought. Łukasz will focus on the everyday\
+            \ performance traps which can spoil your hard effort."}
+      - language: ru
+        text: ".NET has accustomed us to writing code quickly and without thinking about what is going on underneath. Unfortunately,\
+            \ convenience comes with additional cost. It is very easy to lose the performance of our component through simple\
+            \ statement or code block which behaves differently than we thought. Łukasz will focus on the everyday performance\
+            \ traps which can spoil your hard effort.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Все ошибаются\
+            . Но ошибаться так, чтобы работало медленно — это очень интересно!*"
+    talkDay: 2
+    trackTime: "16:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/27F0wysNUMm04ycdwZbC4x/3b62cc231c1db8ef90279b5b6c7b31da/100499_1020921005_ukasz_Pyrzyk_Daily_performance_pitfalls.pdf"]
+    videoLinks: []
     speakerIds: [1013]
   - id: 166
     name:
       - {language: en, text: "Writing a .NET Core cross platform profiler in an hour"}
+    shortDescription:
+      - {language: en, text: "In this almost demo-only session we’ll build a simple, yet functional, cross-platform .NET Core\
+            \ profiler and run it on Windows and Linux."}
+    longDescription:
+      - {language: en, text: ".NET supports injecting an instrumentation profiler, built as a C++ COM component, that can\
+            \ be loaded into any .NET process. With .NET Core, the profiler mechanism is extended to work on non-Windows platforms\
+            \ as well. In this almost demo-only session we’ll build a simple, yet functional, cross-platform .NET Core profiler\
+            \ and run it on Windows and Linux."}
+      - language: ru
+        text: ".NET supports injecting an instrumentation profiler, built as a C++ COM component, that can be loaded into\
+            \ any .NET process. With .NET Core, the profiler mechanism is extended to work on non-Windows platforms as well.\
+            \ In this almost demo-only session we’ll build a simple, yet functional, cross-platform .NET Core profiler and\
+            \ run it on Windows and Linux.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Про кишки Windows лучше в\
+            сего может рассказать один из авторов книги «Windows Internals».*"
+    talkDay: 2
+    trackTime: "17:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/QDfdxN66cmy75OCOyts9G/b1b169083ecbb76ead56bca3cc3ecbea/100620_757082830_Pavel_Yosifovich_Writing_a_.NET_Core_cross_platform_profiler_in_an_hour.pdf"]
+    videoLinks: []
     speakerIds: [406]
   - id: 167
     name:
       - {language: en, text: "Distributed tracing in .NET"}
       - {language: ru, text: "Распределенная трассировка запросов в .NET"}
+    shortDescription:
+      - {language: en, text: "Egor Grishechko will speak about why it's cool to use Jaeger, why we need OpenCensus, how to\
+            \ integrate it with Jaeger and why connection between OpenCensus and OpenTracing is inevitable."}
+      - {language: ru, text: "Егор Гришечко расскажет про то, почему круто использовать Jaeger, зачем нужна OpenCensus, ка\
+            к заинтегрировать ее с Jaeger, и почему соединение OpenCensus и OpenTracing неизбежно."}
+    longDescription:
+      - language: en
+        text: "This talk will be about Jaeger — a trace tag collection for distributed systems written by Uber and inspired\
+            \ by Zipkin. She's used for distributed systems monitoring. Also, she allows to analyze a query path, measure\
+            \ the performance/delay of the requests and much more. \n\nAlso, Egor plans to talk about OpenCensus framework\
+            \ and OpenTracing initiative. \n\nThis talk will be useful for microservice systems developers who can open these\
+            \ technologies for themselves. Also, it will be interesting for backend developers who are interested in metrics\
+            \ and monitoring."
+      - language: ru
+        text: "В докладе пойдет речь про Jaeger — систему сбора trace-меток в распределенных системах, написанную компание\
+            й Uber и вдохновленную Zipkin. Она используется для мониторинга распределенных систем. Также позволяет анализи\
+            ровать путь запроса, измерять производительность/задержки запросов и еще много всего.\n\nВ дополнении, Егор пл\
+            анирует рассказать про библиотеку OpenCensus и инициативу OpenTracing.\n\nДоклад будет полезен разработчикам м\
+            икросервисных систем, которые смогут для себя открыть эти технологии. А также будет интересен бэкенд-разработч\
+            икам, интересующимся метриками и мониторингом.\n\n> __Комментарий программного комитета:__\n\n\n\n> *В любой с\
+            истеме возникает задача понять, как взаимодействуют компоненты между собой. Особенно важно это в распределённы\
+            х системах. Как понять, какие компоненты обработали запрос, сколько времени это заняло, какой был порядок обра\
+            ботки. Всё это можно узнать, но нужно добавить немного инфраструктуры.*"
+    talkDay: 2
+    trackTime: "17:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/7gOQ5KEQmFErREsLBIRls9/b98e57ebe4ae93d014571be5ed69147b/100715_566325543_Yegor_Grishechko_Raspredelennaya_trassirovka_zaprosov_v_.NET.pdf"]
+    videoLinks: []
     speakerIds: [433]
   - id: 168
     name:
       - {language: en, text: "vvvv — visual programming for .NET"}
-    speakerIds: [1004]
+    shortDescription:
+      - {language: en, text: "The talk about the novelties in the .NET world — VL, new visual language and vvvv gamma, a development\
+            \ environment. Joreg and Elias will tell about the history of their creation, what they are consist of and why\
+            \ they are needed in visual programming."}
+    longDescription:
+      - language: en
+        text: "We present our new visual language for the .NET ecosystem, called \"VL\" and a development environment for\
+            \ it, called \"vvvv gamma\". \n\nVL combines dataflow paradigms with features known from object-oriented programming\
+            \ and defaults to program-while-running with a hot state reload approach. It can directly consume any .NET library\
+            \ and its compiler is using Roslyn to generate C# code in memory from the visual language. This allows to potentially\
+            \ build to any platform that is supported by the .NET ecosystem.\n\nThis does not only allow for very rapid prototyping\
+            \ but is also indispensable for productions where you need the flexibility of modifying a program while it is\
+            \ running.\n\nVisual programming is widely criticized for not being suitable for anything other than domain specific\
+            \ problem solving. With vvvv gamma we argue we enter a new era of general purpose visual programming."
+      - language: ru
+        text: "Joreg and Elias present new visual language for the .NET ecosystem, called \"VL\" and a development environment\
+            \ for it, called \"vvvv gamma\". \n\nVL combines dataflow paradigms with features known from object-oriented programming\
+            \ and defaults to program-while-running with a hot state reload approach. It can directly consume any .NET library\
+            \ and its compiler is using Roslyn to generate C# code in memory from the visual language. This allows to potentially\
+            \ build to any platform that is supported by the .NET ecosystem.\n\nThis does not only allow for very rapid prototyping\
+            \ but is also indispensable for productions where you need the flexibility of modifying a program while it is\
+            \ running.\n\nVisual programming is widely criticized for not being suitable for anything other than domain specific\
+            \ problem solving. With vvvv gamma we argue we enter a new era of general purpose visual programming.\n\n> __К\
+            омментарий программного комитета:__\n\n\n\n> *Многие годы мы писали код в текстовых редакторах. Но что, если п\
+            опробовать его «рисовать»? Идеи визуального программирования живут давно и интересно посмотреть насколько дале\
+            ко продвинулась технологии.*"
+    talkDay: 2
+    trackTime: "17:30"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [1004, 1007]
   - id: 169
     name:
       - {language: en, text: "The power of composition"}
+    shortDescription:
+      - {language: en, text: "We'll start by going over the basic concepts of functional programming, and then look at some\
+            \ different ways that composition can be used to build large things from small things. After that, we'll see how\
+            \ composition is used in practice, beginning with some basic examples, and ending with a complete (object-free!)\
+            \ web application."}
+    longDescription:
+      - language: en
+        text: "Composition is a fundamental building block of functional programming, but how is it different from an object-oriented\
+            \ approach, and how do you use it in practice? \n\nIn this talk for beginners, we'll start by going over the basic\
+            \ concepts of functional programming, and then look at some different ways that composition can be used to build\
+            \ large things from small things. \n\nAfter that, we'll see how composition is used in practice, beginning with\
+            \ some basic examples, and ending with a complete (object-free!) web application."
+      - language: ru
+        text: "Composition is a fundamental building block of functional programming, but how is it different from an object-oriented\
+            \ approach, and how do you use it in practice? \n\nIn this talk for beginners, we'll start by going over the basic\
+            \ concepts of functional programming, and then look at some different ways that composition can be used to build\
+            \ large things from small things. \n\nAfter that, we'll see how composition is used in practice, beginning with\
+            \ some basic examples, and ending with a complete (object-free!) web application.\n\n> __Комментарий программн\
+            ого комитета:__\n\n\n\n> *Скотт Влашин зарекомендовал себя в последние годы как популяризатор функционального\
+            \ программирования и его применения к доменному моделированию (DDD). Вышедшую недавно книгу Влашина «Domain Modeling\
+            \ Made Functional» можно рекомендовать всем интересующимся доменным моделированием, вне зависимости от языка п\
+            рограммирования. Скотт впервые выступит на российской конференции.*"
+    talkDay: 2
+    trackTime: "19:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/9n3x4rtjlya6/6EbVGoVOjQRMwhY92TQLUf/68884381ae5ce32828e88ecbd964590a/100541_1483174356_Scott_Wlaschin_The_power_of_composition.pdf"]
+    videoLinks: []
     speakerIds: [1003]
   - id: 170
     name:

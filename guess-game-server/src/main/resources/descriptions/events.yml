@@ -250,17 +250,23 @@ events:
               1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222]
   - eventTypeId: 2
     name:
-      - {language: en, text: "DotNext 2019 Msk"}
+      - {language: en, text: "DotNext 2019 Msc"}
       - {language: ru, text: "DotNext 2019 Мск"}
-    startDate: 2019-11-06
-    endDate: 2019-11-07
+    startDate: "2019-11-06"
+    endDate: "2019-11-07"
+    siteLink:
+      - {language: en, text: "https://dotnext-moscow.ru/en/"}
+      - {language: ru, text: "https://dotnext-moscow.ru/"}
     city:
-      - {language: en, text: "Moscow"}
-      - {language: ru, text: "Москва"}
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
     venueAddress:
-      - {language: en, text: "WTC Congress Center"}
-      - {language: ru, text: "Конгресс-центр ЦМТ"}
-    talkIds: [140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169]
+      - {language: en, text: "Krasnopresnenskaya Emb., 12, «WTC» Congress Center"}
+      - {language: ru, text: "Краснопресненская наб., 12, Конгресс-центр «ЦМТ»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBfg3H0bRcA6-zOHfN42_atE
+    mapCoordinates: "55.754203, 37.556388"
+    talkIds: [140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161,
+              162, 163, 164, 165, 166, 167, 168, 169]
   - eventTypeId: 2
     name:
       - {language: en, text: "DotNext 2020 SPb"}
