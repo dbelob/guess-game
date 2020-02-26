@@ -578,14 +578,23 @@ speakers:
     company:
       - {language: en, text: JFrog}
     bio:
-      - {language: en, text: "Developer Advocate of JFrog, the creators of Artifactory Binary Repository, the home of Bintray,\
-            \ and JavaOne 2011 Duke Choice Awards winner. For a living he hangs out with the JFrog tech leaders, writes some\
-            \ code around Artifactory and Bintray, and then speaks and blogs about all that. He does it repeatedly for the\
-            \ last 10 years and enjoys every moment of it."}
-      - {language: ru, text: "Поскольку «религия не позволяет» быть евангелистом, Барух — developer advocate в компании JFrog\
-            \ и делает в жизни ровно 3 вещи: зависает с разработчиками Bintray и Artifactory, пописывает для них код и рас\
-            сказывает о впечатлениях в блогах и на конференциях, таких как JavaOne, Devoxx, OSCON, конечно же, JPoint и Joker,\
-            \ да и многих других. И так более десяти лет подряд."}
+      - language: en
+        text: "Baruch Sadogursky (a.k.a JBaruch) is the Head of Developer Relations and a Developer Advocate at JFrog. His\
+            \ passion is speaking about technology. Well, speaking in general, but doing it about technology makes him look\
+            \ smart, and 18 years of hi-tech experience sure helps. When he's not on stage (or on a plane to get there), he\
+            \ learns about technology, people and how they work, or more precisely, don't work together.\n\nHe is a CNCF ambassador,\
+            \ Developer Champion, and a professional conference speaker on DevOps, DevSecOps, Go, Java and many other topics,\
+            \ and is a regular at the industry's most prestigious events including DockerCon, GopherCon, Devoxx, DevOps Days,\
+            \ OSCON, Qcon, JavaOne and many others. You can see some of his talks at jfrog.com/shownotes"
+      - language: ru
+        text: "Барух Садогурский (a.k.a. JBaruch) — Head of Developer Relations и Developer Advocate в компании JFrog. Бол\
+            ьше всего любит рассказывать о технологиях — то есть просто поболтать любит, но человек, говорящий о технологи\
+            ях, имеет умный вид, да и 18 лет опыта в сфере высоких технологий никуда не делись. Когда он не выступает (ну\
+            , или не летит к месту следующего выступления), то изучает технологии, людей и то, как они работают, точнее, н\
+            е работают вместе.\n\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер по та\
+            ким темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, как Joker,\
+            \ JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Некоторые\
+            \ его доклады можно посмотреть здесь: jfrog.com/shownotes"
     twitter: jbaruch
   - id: 36
     fileName: 0036.jpg
@@ -3229,7 +3238,7 @@ speakers:
             \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
             \ Books. В настоящее время занимает позицию главного редактора Smashing Magazine в прекрасном городе Фрайбург\
             , Германия."}
-    twitter: vitalyf
+    twitter: smashingmag
   - id: 261
     fileName: 0261.jpg
     name:
@@ -8965,6 +8974,17 @@ speakers:
     name:
       - {language: en, text: "Dmitry Ignatiev"}
       - {language: ru, text: "Дмитрий Игнатьев"}
+    company:
+      - {language: en, text: Beeline}
+      - {language: ru, text: Билайн}
+    bio:
+      - {language: en, text: "Dmitry is an iOS Lead of the \"My Beeline\" application. His experience in commercial iOS development\
+            \ is 3 years. Likes programming since school when he gets his first computer. Appreciates clean and easy code,\
+            \ reasonable design and farseeing. Thinks that beautiful products are born between engineering and art."}
+      - {language: ru, text: "Дмитрий — iOS Lead приложения «Мой Билайн». Опыт коммерческой iOS-разработки — 3 года. Прогр\
+            аммированием увлечён со школьных времён, когда появился свой собственный компьютер. В разработке ценит чистый\
+            \ и понятный код, разумное проектирование и дальновидность. Считает, что прекрасные продукты рождаются на стык\
+            е инженерии и искусства."}
   - id: 657
     fileName: 0657.jpg
     name:
@@ -10935,10 +10955,12 @@ speakers:
       - {language: en, text: VK}
       - {language: ru, text: ВКонтакте}
     bio:
-      - {language: en, text: "Senior Android developer at VK, Aleksandr works on the Messages section. He has been developing\
-            \ for Android since 2011."}
+      - {language: en, text: "Senior Android developer at VKontakte. Engaged in the development of the message section. Has\
+            \ been programming on Android since 2011, previously freelance on PHP/Node.js. Alexander likes tasks with multithreading,\
+            \ optimizations and non-trivial logic."}
       - {language: ru, text: "Старший Android-разработчик компании ВКонтакте. Занимается разработкой раздела сообщений. Пр\
-            ограммирует под Android с 2011 года."}
+            ограммирует под Android с 2011 года, ранее занимался фрилансом для PHP/Node.js. Любит задачи, где надо возитьс\
+            я с многопоточностью, оптимизациями и нетривиальной логикой."}
   - id: 801
     fileName: 0801.jpg
     name:
@@ -11016,6 +11038,12 @@ speakers:
     fileName: 0806.jpg
     name:
       - {language: en, text: "RJ Marsan"}
+    company:
+      - {language: en, text: Lyft}
+    bio:
+      - {language: en, text: "9 years of Android @ Lyft, Google & Hulu. Pourover coffee, donuts, snowboarding, cooking, hiking,\
+            \ and overall just a pretty cool hipster with long hair."}
+    twitter: RJMarsan
   - id: 807
     fileName: 0807.jpg
     name:
@@ -11073,16 +11101,12 @@ speakers:
       - {language: en, text: Mamba}
       - {language: ru, text: Мамба}
     bio:
-      - {language: en, text: "Denis used to dream of being a submarine captain, but as soon as he got his first computer,\
-            \ he decided to become a programmer. He has been working in IT for about 12 years now, the last 8 of which specializing\
-            \ in software development for mobile devices. He wrote his first iOS app in 2009, a game that was downloaded one\
-            \ hundred thousand times. Since then he's sure that mobile industry is the best way for a programmer to express\
-            \ own self. Denis appreciates clean and concise code. Since 2014 he leads iOS development at Mamba company."}
-      - {language: ru, text: "В детстве мечтал стать капитаном подводной лодки, но когда дома появился первый компьютер, р\
-            ешил, что будет программистом. Работает в сфере IT 12 лет, последние 8 специализируется на разработке ПО для м\
-            обильных устройств. В 2009 году написал свое первое приложение для iOS — это была игра, которую в первый месяц\
-            \ скачали 100 тыс. раз. С тех пор уверен, что мобильная индустрия — лучшее средство для самовыражения программ\
-            иста. В коде ценит простоту и ясность. С 2014 года руководит iOS-разработкой в компании Mamba."}
+      - {language: en, text: "Lead developer of iOS team at Mamba. For 15 years in IT, he participated in work on projects\
+            \ on the platforms like macOS, Windows, Android, Bada, Tizen и Smart TV. In 2009 he chose iOS. Likes electronics\
+            \ and believes in the bright future of IoT."}
+      - {language: ru, text: "Руководит командой iOS-разработки в компании Mamba. За 15 лет в сфере ИТ участвовал в работе\
+            \ над проектами на платформах: macOS, Windows, Android, Bada, Tizen и Smart TV. В 2009 остановил свой выбор на\
+            \ iOS. Увлекается электроникой и верит в светлое будущее IoT."}
   - id: 811
     fileName: 0811.jpg
     name:
@@ -11164,16 +11188,16 @@ speakers:
   - id: 816
     fileName: 0816.jpg
     name:
-      - {language: en, text: "Anton Shchukin"}
+      - {language: en, text: "Anton Schukin"}
       - {language: ru, text: "Антон Щукин"}
     company:
       - {language: en, text: Badoo}
     bio:
-      - {language: en, text: "Anton has been working at Badoo for the last 3,5 years, now he's the part of iOS Core team.\
+      - {language: en, text: "Anton has been working at Badoo for the last 4,5 years, now he's the part of iOS Core team.\
             \ Prior to that, he worked on Yandex.Search and Yandex.Browser for iOS. He maintains Chatto framework that is\
             \ used in all Badoo iOS applications. In development, he appreciates simple solutions, clean code and tests. Big\
             \ fan of Uncle Bob (Robert C. Martin) and his books, once managed to shake his hand and get his autograph."}
-      - {language: ru, text: "Антон работает в Badoo уже 3,5 года, сейчас является частью iOS Core team. До этого работал\
+      - {language: ru, text: "Антон работает в Badoo уже 4,5 года, сейчас является частью iOS Core team. До этого работал\
             \ над Яндекс.Поиском и Яндекс.Браузером для iOS. Мейнтейнер фреймворка Chatto, который используется во всех iOS-п\
             риложениях Badoo. В разработке ценит простые решения, понятный код и тесты. Большой поклонник дяди Боба (Robert\
             \ C. Martin) и его книг, однажды сумел пожать ему руку и получить автограф."}
@@ -11835,10 +11859,10 @@ speakers:
     company:
       - {language: en, text: "Prisma AI"}
     bio:
-      - {language: en, text: "Lead developer Cocos2D-ObjC, author of the world’s first Swift app on Android, author of the\
+      - {language: en, text: "Cocos2D-ObjC lead developer, author of the world’s first Swift app on Android, author of the\
             \ cross-platform Swift game engine Fiber2D, currently doing Metal/ARKit job."}
-      - {language: ru, text: "Lead developer Cocos2D-ObjC, создатель первого приложения на Swift под Android, автор кроссп\
-            латформенного игрового движка Fiber2D, в настоящее время Metal/ARKit-инженер."}
+      - {language: ru, text: "Ведущий разработчик Cocos2D-ObjC, создатель первого приложения на Swift под Android, автор к\
+            россплатформенного игрового движка Fiber2D, в настоящее время Metal/ARKit-инженер."}
     twitter: s1ddok
     gitHub: s1ddok
   - id: 860
@@ -11871,15 +11895,15 @@ speakers:
   - id: 862
     fileName: 0862.jpg
     name:
-      - {language: en, text: "Dmitriy Kurkin"}
+      - {language: en, text: "Dmitry Kurkin"}
       - {language: ru, text: "Дмитрий Куркин"}
     company:
-      - {language: en, text: Mail.Ru}
+      - {language: en, text: Adviqo}
     bio:
-      - {language: en, text: "Dmitriy is in messengers development for various platforms for 12 years. Team Lead of iOS client\
-            \ development for ICQ for the last 5 years."}
-      - {language: ru, text: "12 лет занимается разработкой мессенджеров под разные платформы. Последние 5 лет делает iOS\
-            \ клиент для ICQ в должности team lead."}
+      - {language: en, text: "Spent a lot of time for messengers in Mail.Ru, has taken part in Yandex.Navigator and Yandex.Auto.\
+            \ From time to time makes talks about developing for iOS."}
+      - {language: ru, text: "Много лет занимался мессенджерами в Mail.Ru, поучаствовал в Яндекс.Навигаторе и Яндекс.Авто\
+            . Время от времени выступает с докладами про разработку под iOS."}
   - id: 863
     fileName: 0863.jpg
     name:
@@ -12576,8 +12600,20 @@ speakers:
   - id: 931
     fileName: 0931.jpg
     name:
-      - {language: en, text: "Alexander Denisov"}
+      - {language: en, text: "Aleksandr Denisov"}
       - {language: ru, text: "Александр Денисов"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: en, text: "Alexander is experienced a lot in enterprise development, in IT for more than 15 years. He worked\
+            \ in the field of the nuclear industry, taxation, telecom. Recently, I specialized mainly in a microservice architecture,\
+            \ but now my main interest is Flutter. Alexander is a Flutter enthusiast and Co-Head of Flutter Competency in\
+            \ EPAM, organizer of GDG Nizhny Novgorod community, host of podcasts Mobile People Talks and Flutter Dev Podcast"}
+      - {language: ru, text: "Александр, Senior Software Engineer, Co-Head of Flutter Competency в EPAM Systems, профессио\
+            нально занимается разработкой больше 15 лет, раньше работал с С++ и С#, потом писал микросервисы на Java, но с\
+            \ появлением Flutter активно увлекся разработкой на Dart. Flutter энтузиаст. Организатор комьюнити GDG Nizhny\
+            \ Novgorod. Ведущий в подкастах Mobile People Talks и Flutter Dev Podcast"}
+    twitter: ShuregDenisov
   - id: 932
     fileName: 0932.jpg
     name:
@@ -14212,83 +14248,205 @@ speakers:
     fileName: 1056.jpg
     name:
       - {language: en, text: "Ben Sandofsky"}
+    company:
+      - {language: en, text: "Lux Optics"}
+    bio:
+      - {language: en, text: "Ben Sandofsky is co-founder of Halide and Spectre. In the past, he's advised startups, lead\
+            \ Twitter for iPhone, and was a technical consultant for HBO's Silicon Valley."}
+    twitter: sandofsky
   - id: 1057
     fileName: 1057.jpg
     name:
       - {language: en, text: "Kirill Kozhuhar"}
       - {language: ru, text: "Кирилл Кожухар"}
+    company:
+      - {language: en, text: Yandex.Drive}
+      - {language: ru, text: Яндекс.Драйв}
+    bio:
+      - {language: en, text: "Develops an iOS version of Yandex.Drive. Before this, he developed an Android version of this\
+            \ application. 10 years of experience in mobile application developing."}
+      - {language: ru, text: "Разрабатывает iOS-версию Яндекс.Драйв. До этого разрабатывал Android-версию этого приложения\
+            . Опыт разработки мобильных приложений около 10 лет."}
   - id: 1058
     fileName: 1058.jpg
     name:
       - {language: en, text: "Ivan Morgillo"}
+    company:
+      - {language: en, text: Freelance}
+    bio:
+      - {language: en, text: "Senior Android engineer, freelancing in Berlin and remote. He wrote a couple of books and read\
+            \ a few more. He shares his learnings at conferences and meetups."}
+    twitter: hamen
   - id: 1059
     fileName: 1059.jpg
     name:
       - {language: en, text: "Giorgio Natili"}
+    company:
+      - {language: en, text: Amazon}
+    bio:
+      - language: en
+        text: "On paper, Giorgio is an engineering lead at Amazon where he works with the layout team of the Kindle organization\
+            \ solving the problem of converting, delivering and rendering the content of millions of books on billions of\
+            \ devices on every supported language.\n\nIn a parallel universe, he fosters the vision of an inclusive and diverse\
+            \ community where great training is affordable to everyone. To achieve this goal, Giorgio runs several conferences\
+            \ (Droidcon Boston and SwiftFest), participated in many meetups in Boston, Seattle, and New York, and spoke at\
+            \ conferences covering his favorite topics: Android, Angular, Machine Learning, Swift and TDD. \n\nHe has the\
+            \ honor of being part of the Google Developer Experts program."
+    twitter: giorgionatili
   - id: 1060
     fileName: 1060.jpg
     name:
       - {language: en, text: "Marina Pleshkova"}
       - {language: ru, text: "Марина Плешкова"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - {language: en, text: "Platform Relations Manager at Mail.Ru Group. Helps build relations between Mail.Ru Group projects\
+            \ and tech. teams at Apple and Google. Assist managers and developers in solving issues connected with Google\
+            \ Play Console and App Store Connect."}
+      - {language: ru, text: "Platform Relations Manager, помогает налаживать отношения между проектами Mail.Ru Group и те\
+            хническими командами Apple и Google. В том числе помогает разбираться с банами, реджектами и другими проблемам\
+            и Google Play Console и App Store Connect."}
   - id: 1061
     fileName: 1061.jpg
     name:
       - {language: en, text: "Svetlana Smelchakova"}
       - {language: ru, text: "Светлана Смельчакова"}
+    company:
+      - {language: en, text: "LG Russia R&D Lab"}
+    bio:
+      - {language: en, text: "Has been developing Android applications integrated with LG Russia R&D Lab for 4 years. She\
+            \ likes to research Android internals and read source codes."}
+      - {language: ru, text: "Занимается разработкой интегрированного в Android приложения в LG Russia R&D Lab 4 года. Люб\
+            ит разбираться во внутренностях Android и почитать исходники."}
   - id: 1062
     fileName: 1062.jpg
     name:
       - {language: en, text: "Gennady Evstratov"}
       - {language: ru, text: "Геннадий Евстратов"}
+    company:
+      - {language: en, text: Yandex.Taxi}
+      - {language: ru, text: Яндекс.Такси}
+    bio:
+      - {language: en, text: "Working on iOS version of the taximeter in Yandex.Taxi. Before that worked on iOS in Youla and\
+            \ earlier did a lot of things. In mobile development for more than 10 years, in programming — almost 30. For a\
+            \ long time taught the \"Introduction to iOS\" course at BMSTU in the context of the project \"Technopark\"."}
+      - {language: ru, text: "Делает iOS-версию таксометра в Яндекс.Такси. До этого занимался iOS в Юле, а ещё раньше дела\
+            л много разного. В мобильной разработке уже больше 10 лет, вообще в программировании — почти 30. Долгое время\
+            \ вёл курс «Введение в iOS» в МГТУ им. Баумана в рамках проекта «Технопарк»."}
   - id: 1063
     fileName: 1063.jpg
     name:
       - {language: en, text: "Ilya Lunkin"}
       - {language: ru, text: "Илья Лунькин"}
+    company:
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
+    bio:
+      - {language: en, text: "One of the iOS leads of the Sberbank Online large development team. Has come a long professional\
+            \ way from debugging the code of the onboard computer of a satellite to building development process in one of\
+            \ the largest mobile applications in Russia."}
+      - {language: ru, text: "Является одним из iOS лидов большой команды разработки Сбербанк Онлайн. Прошел долгий профес\
+            сиональный путь от отладки кода бортовой вычислительной машины космического спутника до выстраивания процессов\
+            \ разработки в одном из самых крупных мобильных приложений России."}
   - id: 1064
     fileName: 1064.jpg
     name:
       - {language: en, text: "Vladimir Ozerov"}
       - {language: ru, text: "Владимир Озеров"}
     company:
-      - {language: en, text: "Sberbank"}
-      - {language: ru, text: "Сбербанк"}
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
+    bio:
+      - {language: en, text: "Higher education in mathematics programmer. iOS developer since 2009."}
+      - {language: ru, text: "Математик-программист по образованию. В iOS разработке с 2009 года."}
+    twitter: mrv0van
   - id: 1065
     fileName: 1065.jpg
     name:
       - {language: en, text: "Pavel Novikov"}
       - {language: ru, text: "Павел Новиков"}
     company:
-      - {language: en, text: "MyOffice"}
-      - {language: ru, text: "МойОфис"}
+      - {language: en, text: MyOffice}
+      - {language: ru, text: МойОфис}
+    bio:
+      - {language: en, text: "Pavel has been developing Android applications for over 7 years. The last few years has been\
+            \ working on a line of mobile office applications."}
+      - {language: ru, text: "Занимается разработкой Android-приложений более 7 лет. Последние несколько лет работает над\
+            \ линейкой мобильных офисных приложений."}
+    twitter: E13Mort
   - id: 1066
     fileName: 1066.jpg
     name:
       - {language: en, text: "Dmitry Tereshin"}
       - {language: ru, text: "Дмитрий Терёшин"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Five years of experience in information security, two years of which he's working in Sberbank\
+            \ and Tinkoff application security departments."}
+      - {language: ru, text: "Пять лет занимается информационной безопасностью, из них последние два года работает в Application\
+            \ Security-подразделениях Сбербанка и Тинькофф."}
   - id: 1067
     fileName: 1067.jpg
     name:
       - {language: en, text: "Boris Bengus"}
       - {language: ru, text: "Борис Бенгус"}
+    company:
+      - {language: en, text: Dostavista}
+    bio:
+      - {language: en, text: "iOS Lead at Dostavista. Has been working on the project since 2015. Code for 11 years, last\
+            \ 5 years for iOS. Before that Boris tried .NET, PHP, Java. Loves Docker, CI and other infrastructure-related\
+            \ stuff."}
+      - {language: ru, text: "iOS Lead в Dostavista. Работает над проектом с 2015 года. В разработке 11 лет, последние 5 з\
+            анимается iOS-разработкой. До этого перепробовал .NET, PHP, Java. Любит Docker, CI и другую околоинфраструктур\
+            ную тему."}
   - id: 1068
     fileName: 1068.jpg
     name:
       - {language: en, text: "Ilya Lobanov"}
       - {language: ru, text: "Илья Лобанов"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Has been working in Yandex for 5 years. Participated in development of Yandex.Maps and Metro\
+            \ for iOS and MetroKit crossplatform framework. Currently engaged in AR."}
+      - {language: ru, text: "Работает в Яндексе 5 лет. Участвовал в разработке Яндекс.Карт и Метро для iOS и кроссплатфор\
+            менной библиотеки MetroKit. На данный момент занимается AR."}
   - id: 1069
     fileName: 1069.jpg
     name:
       - {language: en, text: "Marcin Moskała"}
+    company:
+      - {language: en, text: Kt.Academy}
+    bio:
+      - {language: en, text: "Marcin Moskala is an experienced developer, speaker and technology evangelist, founder of Kt.Academy,\
+            \ an official JetBrains partner, author of the book \"Android Development with Kotlin\", active programming community\
+            \ member."}
+    twitter: marcinmoskala
   - id: 1070
     fileName: 1070.jpg
     name:
       - {language: en, text: "Igor Talankin"}
       - {language: ru, text: "Игорь Таланкин"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "More than 4 years with Android. Teaching Android at Tinkoff's Fintech school."}
+      - {language: ru, text: "Занимается разработкой приложений под Android уже более 4 лет. Преподает курс Android в Финт\
+            ех Школе в Тинькофф."}
   - id: 1071
     fileName: 1071.jpg
     name:
       - {language: en, text: "Sebastiaan de With"}
+    company:
+      - {language: en, text: Halide}
+    bio:
+      - {language: en, text: "Freelance designer, photographer, motorcycle traveler. Designer of Halide."}
+    twitter: sdw
   - id: 1072
     fileName: 1072.jpg
     name:

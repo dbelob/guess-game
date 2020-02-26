@@ -861,17 +861,23 @@ events:
               1268, 1269, 1270, 1271, 1272, 1273, 1274, 1275, 1276, 1277, 1278]
   - eventTypeId: 9
     name:
-      - {language: en, text: "Mobius 2019 Msk"}
+      - {language: en, text: "Mobius 2019 Msc"}
       - {language: ru, text: "Mobius 2019 Мск"}
-    startDate: 2019-12-07
-    endDate: 2019-12-08
+    startDate: "2019-12-07"
+    endDate: "2019-12-08"
+    siteLink:
+      - {language: en, text: "https://mobiusconf.com/en/"}
+      - {language: ru, text: "https://mobiusconf.com"}
     city:
-      - {language: en, text: "Moscow"}
-      - {language: ru, text: "Москва"}
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
     venueAddress:
-      - {language: en, text: "Renaissance Moscow Monarch Centre"}
-      - {language: ru, text: "Ренессанс Москва Монарх Центр"}
-    talkIds: [254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283]
+      - {language: en, text: "Leningradsky Prospekt 31A Bld.1, Renaissance Moscow Monarch Centre"}
+      - {language: ru, text: "Ленинградский проспект, 31А, корп. 1, Гостиница «Ренессанс Москва Монарх Центр»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236pt711o6853Gs_yf2gqM5Lt
+    mapCoordinates: "55.783321, 37.560867"
+    talkIds: [254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275,
+              276, 277, 278, 279, 280, 281, 282, 283]
   # SPTDC
   - eventTypeId: 10
     name:
