@@ -503,8 +503,7 @@ speakers:
       - {language: en, text: "Alexey Zinoviev"}
       - {language: ru, text: "Алексей Зиновьев"}
     company:
-      - {language: en, text: EPAM}
-      - {language: ru, text: "EPAM Systems"}
+      - {language: en, text: "Apache Ignite Committer"}
     bio:
       - {language: en, text: "Just as Charon from the Greek myths, Alexey helps people to get from one side to the other,\
             \ the sides being Java and Big Data in his case. Or, in more simple words, he is a trainer at EPAM Systems. He\
@@ -514,6 +513,7 @@ speakers:
             \ Если говорить проще, то практикующий тренер в компании EPAM Systems. С Hadoop/Spark и прочей бигдатой дружит\
             \ с 2012 года, форкается и пуллреквестит с 2014, рассказывает с 2015. Особенно любит текстовые данные и больши\
             е графы."}
+    twitter: zaleslaw
   - id: 32
     fileName: 0032.jpg
     name:
@@ -1657,17 +1657,21 @@ speakers:
     fileName: 0106.jpg
     name:
       - {language: en, text: "Roman Elizarov"}
-      - {language: ru, text: "Роман Елизаров"}
     company:
       - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "Kotlin developer at JetBrains company, concurrency expert. Before JetBrains was into software\
-            \ development for brokerage and exchanges at Devexperts. Member of the international organizing committee of the\
-            \ ACM ICPC Finals. Winner of the Presidential award in education. Java Champion."}
-      - {language: ru, text: "Разработчик языка Kotlin в компании JetBrains, эксперт в области многопоточного программиров\
-            ания. До JetBrains более 10 лет занимался разработкой ПО для биржевой и брокерской деятельности в компании Devexperts.\
-            \ Член международного организационного комитета Финала ACM ICPC. Лауреат премии Президента в области образован\
-            ия. Java Champion."}
+      - language: en
+        text: "Roman Elizarov works at JetBrains as Team Lead for Kotlin Libraries team, where he is focused on development\
+            \ and maintenance of multi-platform foundational libraries for Kotlin programming language. His main contribution\
+            \ in this role is design of Kotlin coroutines and development of Kotlin coroutines library.\n\nIn 2000 Roman Elizarov\
+            \ had graduated from St. Petersburg ITMO and started his career as a professional software developer. During his\
+            \ undergraduate study he participated in International Collegiate Programming Contests (ICPC). Since 1997 and\
+            \ until now Roman serves as a Chief Judge of Northern Eurasia Region of ICPC. He also maintains his academic ties\
+            \ and now teaches a course on concurrent and distributed programming at ITMO. Roman Elizarov had worked for most\
+            \ of his career at Devexperts, where he designed and developed high-performance trading software for leading brokerage\
+            \ firms and market data delivery services that routinely handle millions of events per second. He is an expert\
+            \ in Java and JVM, particularly in concurrency, real-time data processing, algorithms, and performance optimizations\
+            \ for modern architectures."
     twitter: relizarov
     javaChampion: true
   - id: 107
@@ -2924,6 +2928,28 @@ speakers:
     fileName: 0233.jpg
     name:
       - {language: en, text: "Cliff Click"}
+    company:
+      - {language: en, text: CRATUS}
+    bio:
+      - language: en
+        text: "Cliff Click was the CTO of Neurensic (now successfully exited) and CTO and Co-Founder of h2o.ai (formerly 0xdata),\
+            \ a firm dedicated to creating a new way to think about web-scale math and real-time analytics. \n\nHe wrote his\
+            \ first compiler when he was 15 (Pascal to TRS Z-80!), although his most famous compiler is the HotSpot Server\
+            \ Compiler (the Sea of Nodes IR). Cliff helped Azul Systems build an 864 core pure-Java mainframe that keeps GC\
+            \ pauses on 500Gb heaps in the micro-second range, and worked on all aspects of that JVM. Before that he worked\
+            \ on HotSpot at Sun, and is at least partially responsible for bringing Java into the mainstream. \n\nCliff is\
+            \ invited to speak regularly at industry and academic conferences and holds a PhD in Computer Science and more\
+            \ than 20 patents."
+      - language: ru
+        text: "Cliff Click was the CTO of Neurensic (now successfully exited) and CTO and Co-Founder of h2o.ai (formerly 0xdata),\
+            \ a firm dedicated to creating a new way to think about web-scale math and real-time analytics.\n\nHe wrote his\
+            \ first compiler when he was 15 (Pascal to TRS Z-80!), although his most famous compiler is the HotSpot Server\
+            \ Compiler (the Sea of Nodes IR). Cliff helped Azul Systems build an 864 core pure-Java mainframe that keeps GC\
+            \ pauses on 500Gb heaps in the micro-second range, and worked on all aspects of that JVM. Before that he worked\
+            \ on HotSpot at Sun, and is at least partially responsible for bringing Java into the mainstream.\n\nCliff is\
+            \ invited to speak regularly at industry and academic conferences and holds a PhD in Computer Science and more\
+            \ than 20 patents."
+    twitter: cliff_click
   - id: 234
     fileName: 0234.jpg
     name:
@@ -3787,10 +3813,10 @@ speakers:
     bio:
       - {language: en, text: "Graduated from St. Petersburg State University in 2004, got a PhD degree in the field of the\
             \ formal logical methods in 2007. Spent almost 9 years in outsourcing without losing contact with the university\
-            \ and research community. Big data analysis at Odnoklassniki became for Dmitry a unique chance to combine theoretical\
-            \ knowledge and scientific foundation to the development of real and popular products. And this chance he gladly\
+            \ and research community. Big data analysis at Odnoklassniki became for Dmitry an unique chance to combine theoretical\
+            \ knowledge and scientific foundation with the development of real and popular products. And this chance he gladly\
             \ took advantage of by coming there in 2011."}
-      - {language: ru, text: "Закончил Санкт-Петербургский Государственный Университет в 2004 году, там же защитил кандида\
+      - {language: ru, text: "Закончил Санкт-Петербургский государственный университет в 2004 году, там же защитил кандида\
             тскую по формально-логическим методам в 2007. Почти 9 лет проработал в аутсорсинге, не теряя контакта с универ\
             ситетом и научной средой. Анализ больших данных в Одноклассниках стал для Дмитрия уникальным шансом совместить\
             \ теоретическую подготовку и научный фундамент с разработкой реальных, востребованных продуктов. И этим шансом\
@@ -5064,40 +5090,119 @@ speakers:
     fileName: 0388.jpg
     name:
       - {language: en, text: "Martin Kleppmann"}
+    company:
+      - {language: en, text: "University of Cambridge"}
+    bio:
+      - {language: en, text: "Dr Martin Kleppmann is a researcher in distributed systems at the University of Cambridge, and\
+            \ author of the acclaimed \"Designing Data-Intensive Applications\" (O'Reilly Media, 2017). He mainly works on\
+            \ collaboration software, CRDTs, and formal verification of distributed algorithms. Previously he was a software\
+            \ engineer and entrepreneur at Internet companies including LinkedIn and Rapportive, where he worked on large-scale\
+            \ data infrastructure."}
+    twitter: martinkl
   - id: 389
     fileName: 0389.jpg
     name:
       - {language: en, text: "Heidi Howard"}
+    company:
+      - {language: en, text: "University of Cambridge"}
+    bio:
+      - {language: en, text: "Dr Heidi Howard is a research fellow based at Cambridge University's Department of Computer\
+            \ Science and Technology. Heidi's research focuses on improving consistency, reliability and performance in distributed\
+            \ systems. Heidi received her BA in Computer Science from Cambridge University in 2014. In 2019, Heidi received\
+            \ her PhD from Cambridge University for her research on distributed consensus. Heidi is probably most widely known\
+            \ for her generalizations of the widely used Paxos algorithm for solving consensus, including her work on Flexible\
+            \ Paxos."}
+    twitter: heidiann360
   - id: 390
     fileName: 0390.jpg
     name:
       - {language: en, text: "Ori Lahav"}
+    company:
+      - {language: en, text: "Tel Aviv University"}
+    bio:
+      - language: en
+        text: "Ori is a faculty member in the School of Computer Science at Tel Aviv University. He did his PhD at Tel Aviv\
+            \ University under the supervision of Arnon Avron. In 2014, he was a postdoctoral researcher at Tel Aviv University\
+            \ hosted by Mooly Sagiv. After that, until September 2017, he was a postdoctoral researcher at MPI-SWS in Germany\
+            \ hosted by Viktor Vafeiadis and Derek Dreyer.\r\n\r\nOri's main areas of research are programming languages and\
+            \ verification, with a focus on concurrency and relaxed memory models. He's also interested in proof-theory and\
+            \ semantics of (non-classical) logics and automated reasoning."
   - id: 391
     fileName: 0391.jpg
     name:
       - {language: en, text: "Denis Rystsov"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - language: en
+        text: "Denis Rystsov is a software engineer working at Microsoft on Cosmos DB, globally distributed, multi-model database\
+            \ service. His area of experience lays in testing consistency models, consensus algorithms and distributed transactions.\
+            \ He likes to read CS papers and apply them in practice.\n\nDenis received his MSc in Applied Mathematics and\
+            \ Computer Science from SPbSU. Before joining Microsoft he worked on distributed systems at Yandex and Amazon.\n\
+            \nWhen he's not into research or coding he likes to go surfing, snowboarding or practice other balance-related\
+            \ activities."
+    twitter: rystsov
   - id: 392
     fileName: 0392.jpg
     name:
       - {language: en, text: "Pedro Ramalhete"}
+    company:
+      - {language: en, text: "Cisco Systems"}
+    bio:
+      - {language: en, text: "Pedro Ramalhete has been working in concurrent algorithms for the past 10 years, developing\
+            \ synchronization mechanisms and lock-free and wait-free data structures. He works at Cisco Systems, designing\
+            \ and implementing scalable software. His current research is in Universal Constructions, Software Transactional\
+            \ Memory, Persistent Memory and how to use these tools to let software developers implement correct and scalable\
+            \ failure-resilient applications."}
   - id: 393
     fileName: 0393.jpg
     name:
       - {language: en, text: "Alex Petrov"}
+    company: []
+    bio:
+      - {language: en, text: "Alex is data infrastructure engineer, database and storage systems enthusiast, Apache Cassandra\
+            \ committer and PMC member, interested in storage, distributed systems and algorithms. Currently writing the Database\
+            \ Internals books with O'Reilly."}
+    twitter: ifesdjeen
   - id: 394
     fileName: 0394.jpg
     name:
       - {language: en, text: "Vladislav Kuznecov"}
       - {language: ru, text: "Владислав Кузнецов"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Developer at Yandex in the distributed platform group."}
+      - {language: ru, text: "Разработчик в Яндексе в группе распределенной платформы."}
   - id: 395
     fileName: 0395.jpg
     name:
       - {language: en, text: "Semyon Checherinda"}
       - {language: ru, text: "Семен Чечеринда"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Software engineer. As a part of the Yandex development of data storage and processing system\
+            \ team Semyon worked on multitenant architecture of YDB."}
+      - {language: ru, text: "Разработчик в группе распределенной платформы в Яндексе. Работает над возможностью мультиаре\
+            ндного использования инсталляции YDB."}
+    twitter: che_sema
   - id: 396
     fileName: 0396.jpg
     name:
       - {language: en, text: "Dmitry Vyukov"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Dmitry Vyukov works as a programmer at Google. He works on dynamic testing tools for C/C++ and\
+            \ Go — Address/Memory/ThreadSanitizer, and on similar tools for Linux kernel. He is also interested in randomized\
+            \ testing/fuzzing, wrote syzkaller (system call fuzzer), go-fuzz (fuzzing system for Go) and GoSmith (random program\
+            \ generator). Active contributor to Go language, implemented scalable goroutine scheduler, network poller and\
+            \ parallel garbage collector. Dmitry is an expert in multithreading, concurrency and synchronization, author of\
+            \ a dozen of novel lock-free algorithms, holds Intel BlackBelt title."}
+    twitter: dvyukov
   - id: 397
     fileName: 0397.jpg
     name:

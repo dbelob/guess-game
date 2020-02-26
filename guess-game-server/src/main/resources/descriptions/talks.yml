@@ -2240,76 +2240,462 @@ talks:
   - id: 226
     name:
       - {language: en, text: "The Azul Hardware Transactional Memory experience"}
+    shortDescription:
+      - {language: en, text: "Azul made a really strong Hardware Transactional Memory, and yet in practice it was not good\
+            \ enough to run Java synchronized blocks concurrently — and Cliff will tell you why it didn't work and why HTM/STM\
+            \ in general will not allow concurrent execution in practice."}
+    longDescription:
+      - language: en
+        text: "Back in 2006-2010 Azul made custom hardware for running Big Business Java — basically a super-computer for\
+            \ running e.g. web portals written in Java. The hardware had many innovations, and most were geared towards Java's\
+            \ special needs (read barriers for low-latency GC, support range-checked array operations, virtual calls). Probably\
+            \ the most innovative hardware was the Hardware Transactional Memory — the entire L1 of every one of the 864 cores\
+            \ could do a transactional update! This was specifically designed to allow transactional update of Java locks\
+            \ — to allow concurrent execution of Java synchronized blocks as long as there was no actual memory update conflict.\n\
+            \nThe HTM was really strong — transactions could be as large as the entire L1 cache — yet in practice it was not\
+            \ good enough to run Java synchronized blocks concurrently. Cliff will tell you why it didn't work and why HTM/STM\
+            \ in general will not allow concurrent execution in practice."
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"]
+    videoLinks: ["https://youtu.be/GEkeOHw87Sg"]
     speakerIds: [233]
   - id: 227
     name:
       - {language: en, text: "Weak memory concurrency in C/C++11"}
+    shortDescription:
+      - {language: en, text: "Ori will introduce the formal underpinning of the C/C++ concurrency model from 2011 and the\
+            \ key ideas behind it. He will discuss some of the flaws of the model, ways of correcting it, and some remaining\
+            \ open problems."}
+    longDescription:
+      - language: en
+        text: "A memory model defines the semantics of memory accesses in multithreaded programs. For programmers, sequential\
+            \ consistency (i.e., interleaving-based semantics) is considered as the simplest model. However, naive sequential\
+            \ consistency is too costly to implement, and, in fact, designing a satisfactory memory model is highly challenging,\
+            \ as one has to carefully balance the conflicting desiderata of programmers, compilers, and hardware.\n\nIn this\
+            \ talk Ori will introduce the formal underpinning of the C/C++ concurrency model from 2011 and the key ideas behind\
+            \ it. He will discuss some of the flaws of the model, ways of correcting it, and some remaining open problems.\
+            \ In particular, he will describe the notorious \"out-of-thin-air\" problem, and describe the \"promising semantics\"\
+            \ solution for it (appeared in POPL'17)."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5473Rmjm5dRyDT7uLlnb9x/218a81b68994a6338178024e26bf3725/lahav_c11.pdf"]
+    videoLinks: ["https://youtu.be/mOqu8vGSysc"]
     speakerIds: [390]
   - id: 228
     name:
       - {language: en, text: "Not all ML algorithms go to distributed heaven"}
+      - {language: ru, text: "Не все ML-алгоритмы попадают в распределенный рай"}
+    shortDescription:
+      - {language: en, text: "Alexey will tell about problems of adapting classic machine learning algorithms for distributed\
+            \ execution from his experience of working with Apache Spark ML, Apache Mahout, Apache Flink ML and creating Apache\
+            \ Ignite ML."}
+      - {language: ru, text: "Алексей расскажет о проблемах адаптации классических алгоритмов машинного обучения для выпол\
+            нения в распределенном режиме на основе своего опыта работы с Apache Spark ML, Apache Mahout, Apache Flink ML\
+            \ и опыта создания Apache Ignite ML."}
+    longDescription:
+      - language: en
+        text: "In this session, Alexey will tell about problems of adapting classic machine learning algorithms for distributed\
+            \ execution from his experience of working with Apache Spark ML, Apache Mahout, Apache Flink ML and creating Apache\
+            \ Ignite ML.\n\nDisclaimer: in this session, there won't be any code, demo, sales pitch, etc. But Alexey will\
+            \ touch upon approaches to implementing ML algorithms in the aforementioned frameworks and share his own opinion\
+            \ on these approaches."
+      - language: ru
+        text: "В этом докладе Алексей расскажет о проблемах адаптации классических алгоритмов машинного обучения для выпол\
+            нения в распределенном режиме на основе своего опыта работы с Apache Spark ML, Apache Mahout, Apache Flink ML\
+            \ и опыта создания Apache Ignite ML.\n\nDisclaimer: В этом докладе не будет кода, демо, sales pitch и т. д. Од\
+            нако будут затронуты подходы к имплементации распределенных ML-алгоритмов в вышеупомянутых фреймворках и будет\
+            \ высказана позиция докладчика по отношению к этим подходам."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5LqSQmERSFlqHQNxC1r7Lk/25b5bb0b55d316091e0604c610584725/100534_966169108_Aleksey_Zinovyev_Ne_vse_ML-algoritmy_popadayut_v_raspredelennyy_ray.pdf"]
+    videoLinks: ["https://youtu.be/ZlPb4UrYZVI"]
     speakerIds: [31]
   - id: 229
     name:
       - {language: en, text: "Liberating distributed consensus"}
+    shortDescription:
+      - {language: en, text: "We revisit the underlying theory behind Paxos, weakening its original requirements and generalising\
+            \ the algorithm."}
+    longDescription:
+      - language: en
+        text: "The ability to reach consensus between hosts, whether for addressing, primary election, locking, or coordination,\
+            \ is a fundamental necessity of modern distributed systems. The Paxos algorithm is at the heart of how we achieve\
+            \ distributed consensus today and as such has been the subject of extensive research to extend and optimise the\
+            \ algorithm for practical distributed systems.\n\nIn the talk, we revisit the underlying theory behind Paxos,\
+            \ weakening its original requirements and generalising the algorithm. We demonstrate that Paxos is, in fact, a\
+            \ single point on a broad spectrum of approaches to consensus and conclude by arguing that different points on\
+            \ this spectrum offer a much-improved foundation for constructing scalable, resilient and high performance distributed\
+            \ systems."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/CPBTZaTnpElXrLRbobGez/f7e205289e33fb2c529f0431ad859668/100523_872773343_Heidi_Howard_Liberating_distributed_consensus.pdf"]
+    videoLinks: ["https://youtu.be/l4hxsYq9zUc"]
     speakerIds: [389]
   - id: 230
     name:
       - {language: en, text: "Go scheduler: Implementing language with lightweight concurrency"}
+    shortDescription:
+      - {language: en, text: "Dmitry will look inside of the Go scheduler and expose how magic of goroutines is implemented."}
+    longDescription:
+      - language: en
+        text: "The Go programming language has native support for concurrency in the form of goroutines (light-weight threads)\
+            \ and channels (FIFO queues). This gives users a very convenient means for writing modern concurrent software\
+            \ and feels almost like magic. But we know there is no magic.\n\nIn this talk, Dmitry will look inside of the\
+            \ Go scheduler and expose how this magic is implemented. First, he will give an overview of the main components\
+            \ of the scheduler and overall operation. Then, take a closer look at some specific aspects like blocking system\
+            \ call handling and growable stacks implementation. Lastly, Dmitry will speculate about potential future improvement\
+            \ to the scheduler."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/48lwQdnyDJr2O64KUsUB5V/5d8343da0119045c4b26eb65a83e786f/100545_516729073_DMITRII_VIUKOV_Go_scheduler_Implementing_language_with_lightweight_concurrency.pdf"]
+    videoLinks: ["https://youtu.be/-K11rY57K7k"]
     speakerIds: [396]
   - id: 231
     name:
       - {language: en, text: "Reduce your storage costs with Transient Replication and Cheap Quorums"}
+    shortDescription:
+      - {language: en, text: "We discuss Witness Replicas, a replication scheme used in Spanner and Megastore, and Apache\
+            \ Cassandra implementation of this concept, called Transient Replication and Cheap Quorums."}
+    longDescription:
+      - language: en
+        text: "In eventually consistent systems, when a node failures or network partition occurs, we're presented with a\
+            \ trade-off: to execute a request and sacrifice consistency or reject execution and sacrifice availability. In\
+            \ such system, quorums, overlapping node subsets guaranteeing at least one node to hold the most recent value,\
+            \ can be a good middle-ground. We can tolerate failures and loss of connectivity for some nodes while still serving\
+            \ latest results.\n\nQuorum-based replication schemes incur high storage costs: we have to store redundant values\
+            \ on several nodes to guarantee enough copies are going to be available in case of failure. It turns out that\
+            \ we do not have to store data on each replica. We can reduce storage and compute resources by storing the data\
+            \ only a subset of nodes, and only use the other nodes (Transient Replicas), for redundancy in failure scenarios.\
+            \ \n\nIn this talk, we discuss Witness Replicas, a replication scheme used in Spanner and Megastore, and Apache\
+            \ Cassandra implementation of this concept, called Transient Replication and Cheap Quorums."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/yJJsCdzUSsEjxB5JVnoUz/39e07a79e69280c72df53be0acce9615/100530_1995736422_Alex_Petrov_Reduce_your_storage_costs_with_Transient_Replication_and_Cheap_Quorums.pdf"]
+    videoLinks: ["https://youtu.be/pEtRBid5oeA"]
     speakerIds: [393]
   - id: 232
     name:
       - {language: en, text: "Accelerating distributed graph analysis by means of probabilistic sketches (and not only them)"}
+    shortDescription:
+      - {language: en, text: "We'll discuss several tricks we use at OK for working with big graphs."}
+    longDescription:
+      - language: en
+        text: "Distributed graph analysis has always been a hard task: when you need to get data about links of a nearby node,\
+            \ you often have to transfer data between computers, which increases execution time and puts more load on network\
+            \ infrastructure.\n\nIn this talk, we'll discuss several tricks we use at OK for working with big graphs, especially\
+            \ friendship graph including more than 13 billions of links. You can accelerate processing exponentially by exploiting\
+            \ graph symmetry, but you can achieve even more by using probabilistic data structures.\n\nAt OK, the main platform\
+            \ for distributed analytics, including graph analytics, is Apache Spark, so the talk will be illustrated with\
+            \ examples of code for this platform.\n\nThis talk will be useful for data scientists and data engineers."
+    talkDay: 1
+    trackTime: "15:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/d4vekmbiqU5s4hs0RFnqR/9f7560c9794e2267e0d52595ef1f6130/Graph_fx.pdf"]
+    videoLinks: ["https://youtu.be/H3qB4lIkQF0"]
     speakerIds: [301]
   - id: 233
     name:
       - {language: en, text: "Structured concurrency"}
+    shortDescription:
+      - {language: en, text: "We'll tell the story of the path that we went through when designing concurrency libraries for\
+            \ Kotlin programming language."}
+    longDescription:
+      - language: en
+        text: "A traditional approach to concurrency in programming languages is well known — you are given primitives that\
+            \ launch concurrent processes, threads, tasks, coroutines, actors (you name it!) and some means to establish communication\
+            \ between them. As systems become more concurrent and as those primitives become more lightweight, tracking lifetimes\
+            \ of those entities and making sure they do not leak becomes a challenge.\n\nIn this talk we'll tell the story\
+            \ of the path that we went through when designing concurrency libraries for Kotlin programming language. How we\
+            \ started with traditional concurrency primitives and how we've discovered and implemented the concept of structured\
+            \ concurrency, what's behind the name, and how it is now gaining popularity in other ecosystems. It would not\
+            \ be an exaggeration to say that we are witnessing a programming style revolution akin to move from GOTO-based\
+            \ unstructured code of the past to the structured programming paradigms of today that had started with iconic\
+            \ \"Go To Statement Considered Harmful\" letter of Dijkstra in 1968."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/Mj5P47F6nJg"]
     speakerIds: [106]
   - id: 234
     name:
       - {language: en, text: "Yandex Database — how we guarantee fault tolerance"}
       - {language: ru, text: "Yandex Database — как мы обеспечиваем отказоустойчивость"}
+    shortDescription:
+      - {language: en, text: "For providing fault tolerance of Yandex Database, we use our own algorithm of achieving distributed\
+            \ consensus as well as several technical solutions explored in this talk."}
+      - {language: ru, text: "Для обеспечения отказоустойчивости Yandex Database применяется собственный алгоритм достижен\
+            ия распределенного консенсуса, а также ряд технических решений, которые детально рассмотрены в докладе."}
+    longDescription:
+      - {language: en, text: "Yandex Database is a horizontally scalable, geographically distributed, fault-tolerant DBMS\
+            \ which can endure fail of discs, servers, racks, and data centers without consistency loss. For providing fault\
+            \ tolerance, we use our own algorithm of achieving distributed consensus as well as several technical solutions\
+            \ explored in this talk. This talk could be useful for developers of DBMS and DBMS-based app solutions."}
+      - {language: ru, text: "Yandex Database — горизонтально масштабируемая геораспределенная отказоустойчивая СУБД, выде\
+            рживающая отказ дисков, серверов, стоек и датацентров без нарушения консистентности. Для обеспечения отказоуст\
+            ойчивости применяется собственный алгоритм достижения распределенного консенсуса, а также ряд технических реше\
+            ний, которые детально рассмотрены в докладе. Доклад может быть интересен как разработчикам СУБД, так и разрабо\
+            тчикам прикладных решений на базе СУБД."}
+    talkDay: 1
+    trackTime: "17:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/55rqTonJzyrtzEb8xUIhQ0/3f7cffc793eb7f698d920dd56317079c/100540_2088668841_Vladislav_Kuznetsov_Yandex_Database__kak_my_obespechivayem_otkazoustoychivost.pptx"]
+    videoLinks: ["https://youtu.be/_7FAeeWAhT4"]
     speakerIds: [394]
   - id: 235
     name:
       - {language: en, text: "Blockchains and the future of distributed computing"}
+    shortDescription:
+      - {language: en, text: "This talk surveys the theory and practice of blockchain-based distributed systems from the point\
+            \ of view of classical distributed computing, and how treating blockchains as a distributed computing problem\
+            \ simplifies everything."}
+    longDescription:
+      - language: en
+        text: "There has been a recent explosion of interest in blockchain-based distributed ledger systems such as Bitcoin,\
+            \ Ethereum, and many others. Much of this work originated outside the distributed computing community, but the\
+            \ questions raised, such as consensus, replication, fault-tolerance, privacy, and security, and so on, are all\
+            \ issues familiar to our community.\n\nThis talk surveys the theory and practice of blockchain-based distributed\
+            \ systems from the point of view of classical distributed computing, and how treating blockchains as a distributed\
+            \ computing problem simplifies everything."
+    talkDay: 1
+    trackTime: "18:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/6fZZ2Qz23jfy6rE74uuNJX/9ea8db94ddaceacb9399fd23656af684/hydra.pdf"]
+    videoLinks: ["https://youtu.be/XbD3LpWMX4c"]
     speakerIds: [236]
   - id: 236
     name:
       - {language: en, text: "Syncing data across user devices for distributed collaboration"}
+    shortDescription:
+      - {language: en, text: "An update on the latest research on Conflict-free Replicated Data Types (CRDTs)."}
+    longDescription:
+      - language: en
+        text: "Google Docs and similar web apps are very convenient if several people need to work together on a document:\
+            \ all users can simultaneously edit the shared document without having to send files back and forth by email.\
+            \ From a distributed systems point of view, real-time collaboration is a replication problem: each user has a\
+            \ replica of the shared document on their device, which they can modify locally, and any changes are sent over\
+            \ the network to their collaborators.\n\nUsers may edit a document while offline, causing their replica to become\
+            \ temporarily inconsistent with the others. As they re-synchronise with others, conflicts need to be resolved\
+            \ so that all collaborators end up in a consistent state. Conflict-free Replicated Data Types (CRDTs), first proposed\
+            \ in 2011, are increasingly being used to merge different users' versions of a document in collaborative software.\n\
+            \nThis talk will give an update on the latest research on CRDTs, and our open source implementation Automerge.\
+            \ We will also discuss efforts to build \"local-first software\", a new generation of collaborative software,\
+            \ top of these technologies."
+    talkDay: 2
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/4P6KXmhk1N1qbY3z61bhcC/081dca1f1db0b147f05cfa71d72b7b2f/100528_66863104_Martin_Kleppmann_Syncing_data_across_user_devices_for_distributed_collaboration.pdf"]
+    videoLinks: ["https://youtu.be/_odfim83lgA"]
     speakerIds: [388]
   - id: 237
     name:
       - {language: en, text: "Q & A"}
+    shortDescription:
+      - {language: en, text: "Attendees will be expected to watch videos of Leslie's talks \"Programming Should Be More Than\
+            \ Coding\" and \"If You're Not Writing a Program, Don't Use a Programming Language\", and Leslie will answer questions\
+            \ related to the topics of these talks. Each attendee should prepare at least one question."}
+    longDescription:
+      - language: en
+        text: "Attendees will be expected to watch videos of Leslie's talks <a href=\"https://youtu.be/6QsTfL-uXd8\" target=\"\
+            _blank\">\"Programming Should Be More Than Coding\"</a> and <a href=\"https://www.heidelberg-laureate-forum.org/blog/video/lecture-monday-september-24-2018-leslie-lamport/\"\
+            \ target=\"_blank\">\"If You're Not Writing a Program, Don't Use a Programming Language\"</a>, and Leslie will\
+            \ answer questions related to the topics of these talks. Each attendee should prepare at least one question.\n\
+            \nThere are Russian translations of both Leslie's talks in our blog: <a href=\"https://habr.com/ru/company/jugru/blog/454898/\"\
+            \ target=\"_blank\">\"Programming Should Be More Than Coding\"</a> and <a href=\"https://habr.com/ru/company/jugru/blog/455467/\"\
+            \ target=\"_blank\">\"If You're Not Writing a Program, Don't Use a Programming Language\"</a>."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [386]
   - id: 238
     name:
       - {language: en, text: "Lin-Check: Testing concurrent data structures in Java"}
+    shortDescription:
+      - {language: en, text: "Nikita presents Lin-Check, a tool for testing concurrent data structures in JVM-based languages."}
+    longDescription:
+      - language: en
+        text: "Writing concurrent programs is hard. However, testing them is not easy as well. In this talk, Nikita presents\
+            \ Lin-Check, a tool for testing concurrent data structures in JVM-based languages. Essentially, it takes some\
+            \ declarations of the data structure operations, generates random scenarios, runs them a lot of times, and verifies\
+            \ the corresponding results. During the talk, Nikita mostly focuses on the verification phase.\n\nAt first, he\
+            \ explains how LTS (Labeled Transition System) formalism can help us with implementing the verifier efficiently.\
+            \ After that, he extends LTS to support dual data structures; this formalism is useful for data structures with\
+            \ partial methods (synchronous queues, blocking queues, channels, semaphores, ...). However, such an extension\
+            \ is not sufficient, and some small tricks should be added, which restrict the model a bit but make it possible\
+            \ to use it in practice."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/hwbpUEGHvvY"]
     speakerIds: [58]
   - id: 239
     name:
       - {language: en, text: "Wait-free data structures and wait-free transactions"}
+    shortDescription:
+      - {language: en, text: "Learn how to make a wait-free data structure."}
+    longDescription:
+      - language: en
+        text: "Concurrent data structures are at the heart of most multi-threaded applications, from queues that pass messages\
+            \ between actors, to indexing data structures in Key/Value stores. The Java JDK has had several for many years,\
+            \ and C++ is on track to add a few as well.\r\n\r\nThe easiest way to implement a concurrent data structure is\
+            \ to take a sequential implementation (single-threaded) and protect its methods with a mutual exclusion lock.\
+            \ This approach is easy enough to be done correctly by a novice software engineer, however, it has low scalability\
+            \ and is subject to large latencies.\r\n\r\nApart from being resilient to failures, lock-free and wait-free data\
+            \ structures can have a better latency profile, but it takes significant expertise to implement or modify them\
+            \ to suit specific application needs. Changing a single line of code in a lock-free data structure is likely to\
+            \ cause it to become incorrect.\r\n\r\nWhat if there was a way to allow a non-expert software developer to design\
+            \ and implement correct wait-free data structures? And what if these data structures could scale, have low tail\
+            \ latency, be resilient to failures and have integrated memory reclamation?\r\n\r\nPerhaps surprisingly, at the\
+            \ exception of one of these things, it is possible to have this today using an Universal Construction or a Software\
+            \ Transactional Memory.\r\n\r\nIn this talk we're going to explain what are and how to use Universal Constructions\
+            \ and Software Transactional Memories, and how we can use their wait-free transactions to make wait-free data\
+            \ structures."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3HI169Td52g546fSu3u4sY/569ab945154cfae37149dfd036b28a11/100531_2034081103_Pedro_Ramalhete__Wait-free_data_structures_and_wait-free_transactions.pdf"]
+    videoLinks: ["https://youtu.be/oDfr9w9p8XY"]
     speakerIds: [392]
   - id: 240
     name:
       - {language: en, text: "Distributed transactions in YDB"}
-      - {language: ru, text: "Распределённые транзакции в Yandex Database"}
+      - {language: ru, text: "Распределенные транзакции в YDB"}
+    shortDescription:
+      - {language: en, text: "We'll explore transaction planning algorithm which Yandex Database (YDB) transactional system\
+            \ is based on. We'll see which entities participate in transactions, who sets global order for the transactions,\
+            \ and how transaction atomicity, reliability and high-level isolation are achieved."}
+      - {language: ru, text: "Рассмотрим алгоритм планирования транзакций, лежащий в основе транзакционной системы Yandex\
+            \ Database (YDB). Разберем, какие сущности участвуют в транзакциях, кто назначает транзакциям глобальный поряд\
+            ок, как достигается атомарность транзакций, надежность и строгий уровень изоляции."}
+    longDescription:
+      - language: en
+        text: "Yandex Database (YDB) is a horizontally scalable, geographically distributed database designed for OLTP queries\
+            \ and fitting ACID requirements for transactional systems.\n\nIn this talk, we'll explore transaction planning\
+            \ algorithm which YDB transactional system is based on. We'll see which entities participate in transactions,\
+            \ who sets global order for the transactions, and how transaction atomicity, reliability and high-level isolation\
+            \ are achieved.\n\nUsing a common problem as an example, we'll examine implementation of transactions with use\
+            \ of two-phase commit and deterministic transactions. Then we'll discuss their differences."
+      - language: ru
+        text: "Yandex Database (YDB) — горизонтально масштабируемая геораспределенная база данных, рассчитанная на OLTP-за\
+            просы и соответствующая требованиям ACID к транзакционной системе.\n\nВ докладе рассмотрим алгоритм планирован\
+            ия транзакций, лежащий в основе транзакционной системы YDB. Разберем, какие сущности участвуют в транзакциях,\
+            \ кто назначает транзакциям глобальный порядок, как достигается атомарность транзакций, надежность и строгий у\
+            ровень изоляции.\n\nНа примере распространенной задачи рассмотрим реализации транзакций с применением двухфазн\
+            ого коммита и детерминистических транзакций. Обсудим их различия."
+    talkDay: 2
+    trackTime: "14:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3eCeNjl6e6d92WFtAR33V7/121386767be896368fb21308ade4b101/100539_1956415700_Semen_Checherinda_Raspredelennyye_tranzaktsii_v_YDB.pptx"]
+    videoLinks: ["https://youtu.be/85GIFpG3zx4"]
     speakerIds: [395]
   - id: 241
     name:
       - {language: en, text: "The H2O distributed K/V algorithm"}
+    shortDescription:
+      - {language: en, text: "A fast (typically under a microsecond) and exact (Java Memory Model) distributed key/value store."}
+    longDescription:
+      - language: en
+        text: "H2O includes a distributed Key / Value store with exact (JMM volatile) semantics — instead of the more common\
+            \ lazy semantics. The DKV is very fast:\n- All values can be cached locally; local reads require only a hashtable\
+            \ probe, typically ~100ns.\n- Remote reads without conflicting writes require a single UDP packet round-trip.\n\
+            - Writes without conflicting reads are either local (~100ns for a hashtable probe) or remote (UDP packet round-trip).\n\
+            - Reads/writes can be declared \"NOT volatile\" and then typically the return UDP packet can be lazy / pipelined.\n\
+            - Bulk remote reads and writes stream: all internal i/o is lazy and overlaps, until the end and then the whole\
+            \ stream operation is treated as exact.\n- Conflicting reads/writes will block on each other but always maintain\
+            \ JMM semantics, including non-volatile updates.\n- Individual Keys can update with atomic transactions with local\
+            \ retry as needed.\n\nThe DKV is well geared to support individual updates for H2O control logic, as well as bulk\
+            \ throughput for Big Data applications. Big Data streaming math operations can commonly include millions to billions\
+            \ of streaming key reads & writes, and this volume is handled fast and gracefully while maintaining exact semantics.\n\
+            \nHowever, the best and fastest K/V operation is purely local. Thus the standard DKV hash function deterministically\
+            \ stripes the Big Data across the cluster, and the standard H2O work distribution sends the work to the data based\
+            \ on the hash function — and most work never requires a remote Key."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4bHsg8rqEuGosX9P7052h9/a5949ce4d54f9aa217ea1b161c329598/2019_H2O_KeyValue.pdf"]
+    videoLinks: ["https://youtu.be/kTMQCEkf_AA"]
     speakerIds: [233]
   - id: 242
     name:
       - {language: en, text: "The cost of distributed transactions between arbitrary databases"}
+    shortDescription:
+      - {language: en, text: "This talk's main purpose is to introduce protocols of distributed transactions invented in the\
+            \ last few years, which can be implemented on client side on any cloud storage supporting compare-and-set."}
+    longDescription:
+      - language: en
+        text: "This talk's main purpose is to introduce protocols of distributed transactions invented in the last few years,\
+            \ which can be implemented on client side on any cloud storage supporting compare-and-set.\r\n\r\nThis talk's\
+            \ aimed at application developers using NoSQL/cloud databases and/or sharded SQL databases.\r\n\r\nThe audience\
+            \ will learn that:\r\n- distributed transactions are not limited to 2PC (two-phase commit);\r\n- transactions\
+            \ can be added on the application level on any database, including cloud databases, NoSQL solutions, sharded SQL\
+            \ databases;\r\n- different protocols of distributed transactions (2PC, Percolator, RAMP) have different tradeoffs\
+            \ (isolation level, behaviour in case of conflicting transactions);\r\n- transactions are not free, you have to\
+            \ pay for them (increased delay, increased bill when using cloud database)."
+      - language: ru
+        text: "This talk's main purpose is to introduce protocols of distributed transactions invented in the last few years,\
+            \ which can be implemented on client side on any cloud storage supporting compare-and-set.\n\nThis talk's aimed\
+            \ at application developers using NoSQL/cloud databases and/or sharded SQL databases.\n\nThe audience will learn\
+            \ that:\n- distributed transactions are not limited to 2PC (two-phase commit);\n- transactions can be added on\
+            \ the application level on any database, including cloud databases, NoSQL solutions, sharded SQL databases;\n\
+            - different protocols of distributed transactions (2PC, Percolator, RAMP) have different tradeoffs (isolation\
+            \ level, behaviour in case of conflicting transactions);\n- transactions are not free, you have to pay for them\
+            \ (increased delay, increased bill when using cloud database)."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/37p6twAzixMIcxNu7cpuHw/a39aad8a44f2ffbf8c9a2f77f6547b62/Denis_Rystsov_The_cost_of_distributed_transactions_between_arbitrary_databases.pdf"]
+    videoLinks: ["https://youtu.be/KfxQk6MvEKM"]
     speakerIds: [391]
   - id: 243
     name:
       - {language: en, text: "Dual data structures"}
+    shortDescription:
+      - {language: en, text: "How java.util.concurrent.SynchronousQueue and java.util.concurrent.Exchanger work, and why you\
+            \ should care if you write multithreaded code."}
+    longDescription:
+      - language: en
+        text: "Synchronized blocks in Java allow multithreaded programs to coordinate access to shared data structures. Their\
+            \ performance can suffer, however, if the operating system preempts a thread that is holding the lock on a synchronized\
+            \ object. Nonblocking data structures avoid this problem with clever algorithms (based on atomic variables) in\
+            \ which no thread ever waits for another.\n\nThis talk will present the notion of _dual_ data structures, which\
+            \ also support condition synchronization. When expected conditions are met, a dual data structure works like any\
+            \ other nonblocking structure. It also avoids contention when threads must wait (e.g., for data to be added to\
+            \ a currently empty queue), and guarantees immediate wakeup when the wait is over. When dual queues were used\
+            \ (in the Java SE 6 release) to replace the original semaphore-based code in java.util.concurrent.ThreadPoolExecutor,\
+            \ performance improved by about a factor of 10."
+    talkDay: 2
+    trackTime: "17:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2rCjhML8OuSbuBkDLRtXj7/751fd4596b0d32ee69a4aabb65088fd4/dual_data_structures.pptx"]
+    videoLinks: ["https://youtu.be/nz6fASCVmT8"]
     speakerIds: [387]
   - id: 244
     name:

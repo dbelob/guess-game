@@ -545,14 +545,18 @@ events:
   - eventTypeId: 5
     name:
       - {language: en, text: "Hydra 2019"}
-    startDate: 2019-07-11
-    endDate: 2019-07-12
+    startDate: "2019-07-11"
+    endDate: "2019-07-12"
+    siteLink:
+      - {language: en, text: "https://hydraconf.com"}
     city:
       - {language: en, text: "Saint Petersburg"}
-      - {language: ru, text: "Санкт-Петербург"}
+      - {language: ru, text: Санкт-Петербург}
     venueAddress:
-      - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
-      - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLC5OGTO4dWxYuuASJMj1xePLQjNg05HzT
+    mapCoordinates: "59.842400, 30.318815"
     talkIds: [226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243]
   # JBreak
   - eventTypeId: 6
