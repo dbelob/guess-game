@@ -9003,9 +9003,9 @@ speakers:
   - id: 659
     fileName: 0659.jpg
     name:
-      - {language: en, text: "Lucas da Costa"}
+      - {language: en, text: "Lucas Fernandes da Costa"}
     company:
-      - {language: en, text: Converge.io}
+      - {language: en, text: Converge}
     bio:
       - {language: en, text: "Lucas is a Brazilian software engineer living in London. He breathes JavaScript and is passionate\
             \ about open source. He is a core team member of Chai.js and Sinon.js, two of the most popular libraries in the\
@@ -9020,14 +9020,17 @@ speakers:
     company:
       - {language: en, text: PS.kz}
     bio:
-      - {language: en, text: "GraphQL rockstar, consultant and trainer, developer of Internet products, OSS maintainer. Since\
-            \ 2001 Pavel's main specialization is web technologies. He has extensive practical knowledge on back-end/front-end\
-            \ development, administration, and architecture. Since the end of 2015, Pavel's main focus is on isomorphic applications.\
-            \ In summer 2016 he began the development of graphql-compose (GraphQL schema generator) in open source."}
-      - {language: ru, text: "GraphQL-гуру, консультант и тренер, разработчик интернет-продуктов, опенсорс-мейнтейнер. С 2001\
-            \ года основная специализация — веб-технологии. Обладает обширными практическими знаниями по бэкенду, фронтенд\
-            у, администрированию и построению архитектуры. С конца 2015 года делает основной упор на изоморфные приложения\
-            . Летом 2016 начал разработку graphql-compose (генератора GraphQL-схем) в опенсорсе."}
+      - {language: en, text: "GraphQL rockstar, developer of Internet products, OSS maintainer. Since 2001 Pavel's main specialization\
+            \ is web technologies. He has extensive practical knowledge on back-end/front-end development, administration,\
+            \ and architecture. Since the end of 2015, Pavel's main focus is on isomorphic applications. In summer 2016 he\
+            \ began the development of graphql-compose (GraphQL schema generator) in open source."}
+      - language: ru
+        text: "GraphQL-ниндзя, разработчик интернет-продуктов, опенсорс-мейнтейнер. С 2001 года основная специализация - в\
+            еб-технологии. Обладает обширными практическими знаниями по бэкенду, фронтенду, администрированию и построению\
+            \ архитектуры. С конца 2015 года делает основной упор на изоморфные приложения. Летом 2016 начал разработку graphql-compose\
+            \ (генератора GraphQL-схем) в опенсорсе. Написал достаточно много материала на русском про <a href=\"https://github.com/nodkz/conf-talks\"\
+            \ target=\"_blank\">GraphQL</a>. В 2019 начал формировать best practice по <a href=\"https://graphql-rules.com\"\
+            \ target=\"_blank\">дизайну</a>.\n\nTelegram — <a href=\"https://t.me/graphql_ru\" target=\"_blank\">https://t.me/graphql_ru</a>"
     twitter: nodkz
     gitHub: nodkz
   - id: 661
@@ -9164,13 +9167,12 @@ speakers:
       - {language: en, text: "Artem Kobzar"}
       - {language: ru, text: "Артём Кобзарь"}
     company:
-      - {language: en, text: "Hell Yeah, JavaScript.Ninja"}
+      - {language: en, text: Wrike}
     bio:
-      - language: en
-        text: "JavaScript.Ninja courses teacher. On the tech fringe.\n\nLikes functional programming, compilers and open source."
-      - language: ru
-        text: "Преподаватель на курсах JavaScript.Ninja. Маргинал от мира технологий.\n\nЛюбитель ФП, компиляторов и open\
-            \ source."
+      - {language: en, text: "Wrike engineer, JavaScript.Ninja sempai, UnderJS podcast host, pagan, outcast, traditionalist,\
+            \ post-modernist, underdog."}
+      - {language: ru, text: "Инженер Wrike, сэмпай в JavaScript.Ninja, ведущий подкаста UnderJS, язычник, маргинал, тради\
+            ционалист, постмодернист, андердог."}
     twitter: rage_monk
   - id: 671
     fileName: 0671.jpg
@@ -9364,12 +9366,10 @@ speakers:
     company:
       - {language: en, text: Wrike}
     bio:
-      - {language: en, text: "Author of basis.js, CSSTree, Component Inspector, rempl, maintainer of CSSO and others. The\
-            \ researcher, evangelist for web standards, inspirer, critic and speaker. Most interested in the web technologies,\
-            \ tooling, architecture and related subjects."}
-      - {language: ru, text: "Автор basis.js, CSSTree, Component Inspector, rempl, мейнтенер CSSO и др. Исследователь, изо\
-            бретатель велосипедов, евангелист веб-стандартов, идейный вдохновитель, критик, докладчик. Основной интерес —\
-            \ веб-технологии, что мы можем от них получить, инструменты, архитектура и смежные задачи."}
+      - {language: en, text: "Frontend researcher, speaker, web standards evangelist, open source enthusiast. Author of CSSTree,\
+            \ discovery.js, basis.js and others, maintainer of CSSO."}
+      - {language: ru, text: "Исследователь, изобретатель велосипедов, евангелист веб-стандартов, идейный вдохновитель, кр\
+            итик, докладчик. Автор CSSTree, discovery.js, basis.js и других, мейнтейнер CSSO."}
     twitter: rdvornov
   - id: 686
     fileName: 0686.jpg
@@ -9730,13 +9730,12 @@ speakers:
       - {language: en, text: "Dmitry Makhnev"}
       - {language: ru, text: "Дмитрий Махнёв"}
     company:
-      - {language: en, text: Odnoklassniki}
-      - {language: ru, text: Одноклассники}
+      - {language: en, text: "JUG Ru Group"}
     bio:
-      - {language: en, text: "Develops m.ok.ru. Is into web development for more than 8 years. Often writes HTML on Java.\
-            \ Loves good talks, Dadaism, tests and Dart."}
-      - {language: ru, text: "Разработчик m.ok.ru. Более 8 лет в веб-разработке. Часто пишет HTML на Java. Любит хорошие д\
-            оклады, дадаизм, тесты и Dart."}
+      - {language: en, text: "Developer at JUG Ru Group. LongestJS organizer. He has been in web development for more than\
+            \ 10 years and often wrote HTML on Java. Loves good talks, Dadaism, tests, and Dart."}
+      - {language: ru, text: "Разработчик в JUG Ru Group. Организатор LongestJS. Более 10 лет в веб-разработке. Часто писа\
+            л HTML на Java. Любит хорошие доклады, дадаизм, тесты и Dart."}
     twitter: DmitryMakhnev
     gitHub: DmitryMakhnev
   - id: 711
@@ -9745,14 +9744,14 @@ speakers:
       - {language: en, text: "Denis Radin"}
       - {language: ru, text: "Денис Радин"}
     company:
-      - {language: en, text: "Evolution Gaming"}
+      - {language: en, text: "Focus Reactive"}
     bio:
-      - {language: en, text: "Being a part of R&D team at Evolution Gaming, Denis works on photorealistic web games using\
-            \ React and WebGL. Has a weakness for computer graphics and code optimization. Leads a workshop (http://challengingnative.com),\
-            \ organizes React Amsterdam and AmsterdamJS conferences."}
-      - {language: ru, text: "Работает в R&D отделе Evolution Gaming над фотореалистичными веб-играми с использованием React\
-            \ и WebGL. Питает слабость к компьютерной графике и оптимизации кода. Ведет воркшоп http://challengingnative.com,\
-            \ организатор конференций React Amsterdam, AmsterdamJS."}
+      - {language: en, text: "Author of HTML-GL, ReactiveElements. JavaScript/WebGL engineer on high performant 3d React applications\
+            \ at FocusReactive. Passionate about code performance and aesthetics, mastering <a href=\"http://challengingnative.com\"\
+            \ target=\"_blank\">workshop</a>, organizer of React Amsterdam, JSNation. Likes synthwave, climbing addict."}
+      - {language: ru, text: "Автор HTML-GL, Reactive Elements. Работает тех.лидом в консалтинге Focus Reactive. Питает сл\
+            абость к оптимизации быстродействия и эстетике кода. Ведет <a href=\"http://challengingnative.com\" target=\"\
+            _blank\">воркшоп</a>, организатор конференций React Amsterdam, AmsterdamJS. Любит WebGL, synthwave, горы."}
     twitter: pixelscommander
   - id: 712
     fileName: 0712.jpg
@@ -10378,40 +10377,18 @@ speakers:
       - {language: en, text: "Andrey Okonetchnikov"}
       - {language: ru, text: "Андрей Оконечников"}
     company:
-      - {language: en, text: "http://okonet.ru/"}
+      - {language: en, text: Component-Driven}
     bio:
-      - language: en
-        text: "Andrey is a Russian-born front-end engineer and UI designer living in Vienna, Austria for the last 8 years.\
-            \ He has been working on modern user interfaces using web technologies for more than 10 years. Before that he\
-            \ worked as a web and UI designer and UX and usability expert. That combination allows him to better understand\
-            \ the user's needs and create an outstanding UIs by implementing them himself.\n\nAndrey worked for companies\
-            \ like JetBrains, Yandex, Wildbit and many others. He is also a designer and co-creator of <a href=\"http://colorsnapper.com\"\
-            \ target=\"_blank\">ColorSnapper</a> — a macOS color picker for developers and designers.\n\nBeing an active open\
-            \ source contributor, he has been working on his own OSS projects like <a href=\"https://github.com/okonet/react-dropzone\"\
-            \ target=\"_blank\">react-dropzone</a>, <a href=\"https://github.com/okonet/lint-staged\" target=\"_blank\">lint-staged</a>\
-            \ but also made contributions to the React.js core, Jest testing framework, designed <a href=\"http://postcss.org\"\
-            \ target=\"_blank\">PostCSS official website</a> and wrote documentation for <a href=\"http://webpack.io\" target=\"\
-            _blank\">webpack</a>. Along with Nick Graf and Max Stoiber, Andrey is a co-organizer of <a href=\"https://twitter.com/ReactVienna\"\
-            \ target=\"_blank\">ReactVienna community</a> in Vienna.\n\nAndrey loves mountain biking and coffee. He's a co-owner\
-            \ of <a href=\"http://kaffemik.at\" target=\"_blank\">Kaffemik</a> — a third-wave coffee shop in the center of\
-            \ Vienna."
-      - language: ru
-        text: "Андрей — frontend-инженер и UI-дизайнер родом из Ярославля (Россия), последние 8 лет живущий в Вене (Австри\
-            я). Более 10 лет он придумывает и разрабатывает пользовательские интерфейсы, используя современные веб-техноло\
-            гии. До этого он работал дизайнером веб-сайтов и пользовательских интерфейсов. Комбинация опыта дизайнера и ра\
-            зработчика помогает ему лучше понимать проблемы пользователей и находить оригинальные решения в пользовательск\
-            их интерфейсах.\n\nАндрей работал с JetBrains, Яндексом, Wildbit и многими другими компаниями. Он дизайнер и о\
-            дин из создателей <a href=\"http://colorsnapper.com\" target=\"_blank\">ColorSnapper</a> — macOS-приложения цв\
-            етовой пипетки для разработчиков и дизайнеров. Будучи активным участником open source с <a href=\"https://github.com/okonet\"\
-            \ target=\"_blank\">собственными проектами</a> <a href=\"https://github.com/okonet/react-dropzone\" target=\"\
-            _blank\">react-dropzone</a>, <a href=\"https://github.com/okonet/lint-staged\" target=\"_blank\">lint-staged</a>,\
-            \ Андрей контрибьютил в React.js-core, Jest, разработал дизайн для <a href=\"http://postcss.org\" target=\"_blank\"\
-            >официального сайта PostCSS</a> и помогал с документацией для <a href=\"http://webpack.io\" target=\"_blank\"\
-            >webpack</a>. Вместе с <a href=\"https://github.com/nikgraf/\" target=\"_blank\">Ником Графом</a> и <a href=\"\
-            https://github.com/mxstbr/\" target=\"_blank\">Максом Штойбером</a> он является соорганизатором сообщества раз\
-            работчиков <a href=\"https://twitter.com/ReactVienna\" target=\"_blank\">ReactVienna</a> в Вене.\n\nАндрей люб\
-            ит кататься на горных велосипедах и хороший кофе. Он совладелец <a href=\"http://kaffemik.at\" target=\"_blank\"\
-            >«Kaffemik»</a> — third-wave кафе в центре Вены."
+      - {language: en, text: "Andrey is a frontend engineer and an interaction designer, specializing in UX, design systems\
+            \ and modern frontend architecture. He has been designing and developing real products using web technologies\
+            \ for the past 20 years. Andrey is a co-organizer of ReasonConf, ReactVienna, co-creator of macOS app ColorSnapper,\
+            \ author and maintainer of several popular open source projects like react-dropzone and lint-staged. International\
+            \ speaker and workshops coach."}
+      - {language: ru, text: "Андрей — фронтенд-разработчик и проектировщик, специализируется на UX, разработке систем и с\
+            овременной фронтенд-архитектуре. Проектирует и разрабатывает продукты последние 20 лет. Андрей — соорганизатор\
+            \ ReasonConf, ReactVienna, соавтор приложения для macOS — ColorSnapper, автор и создатель нескольких популярны\
+            х опенсорсных проектов, таких как react-dropzone and lint-staged. Международный спикер и ведущий мастер-классо\
+            в."}
     twitter: okonetchnikov
   - id: 755
     fileName: 0755.jpg
@@ -13691,24 +13668,79 @@ speakers:
     fileName: 1017.jpg
     name:
       - {language: en, text: "Guillermo Rauch"}
+    company:
+      - {language: en, text: ZEIT}
+    bio:
+      - {language: en, text: "Guillermo Rauch is the founder of ZEIT, co-creator of Now and Next.js, and former CTO and co-founder\
+            \ of LearnBoost and Cloudup, acquired by Wordpress.com in 2013. His background and expertise are in the realtime\
+            \ web. He's the creator of socket.io, one of the most popular JavaScript projects on GitHub, with implementations\
+            \ in many different programming languages and frameworks. He created the first MongoDB ORM for Node.JS, MongooseJS.\
+            \ Before that, he was a core developer of the MooTools JavaScript framework. He's the author of \"Smashing Node.JS\"\
+            \ published by Wiley in 2012, best-selling book about Node.JS on Amazon in multiple programming categories. He's\
+            \ spoken at dozens of conferences all around the world about JavaScript and the realtime web, such as O'Reilly\
+            \ OSCon, QCon, and NDC. Originally from Argentina, he dropped out of high school and moved to the US to pursue\
+            \ his passions in the San Francisco startup world. He's passionate about open source as an education medium. He's\
+            \ a former mentor of an Open Source Engineering class organized and pioneered by Stanford, with students from\
+            \ Harvard, MIT, Carnegie Mellon, UPenn, Columbia, and others."}
+    twitter: rauchg
   - id: 1018
     fileName: 1018.jpg
     name:
       - {language: en, text: "Vitaliy Bragilevskiy"}
       - {language: ru, text: "Виталий Брагилевский"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Vitaly is a professor of functional programming, programming language theory and computation\
+            \ theory, a member of the Haskell programming language standardization committee and the Haskell GHC compiler\
+            \ development supervisory committee, the author of the book \"Haskell in Depth\" (Manning Publications)."}
+      - {language: ru, text: "Преподаватель функционального программирования, теории языков программирования и теории вычи\
+            слений, член комитета по стандартизации языка программирования Haskell и наблюдательного комитета по разработк\
+            е компилятора GHC языка Haskell, автор книги «Haskell in Depth» (Manning Publications)."}
+    twitter: _bravit
   - id: 1019
     fileName: 1019.jpg
     name:
       - {language: en, text: "Yulia Startsev"}
+    company:
+      - {language: en, text: Mozilla}
+    bio:
+      - {language: en, text: "Yulia Startsev is a programmer at Mozilla, recently working on SpiderMonkey. She is also one\
+            \ of three co-chairs of Ecma's TC39, the standardizing body for JavaScript."}
+    twitter: ioctaptceb
   - id: 1020
     fileName: 1020.jpg
     name:
       - {language: en, text: "Dmitriy Voloshin"}
       - {language: ru, text: "Дмитрий Волошин"}
+    company:
+      - {language: en, text: Otus}
+    bio:
+      - language: en
+        text: "Dmitry was graduated from The State University of Management where he took MBI degree in 2008. Ph.D. in Pedagogy,\
+            \ author of \"Lifelong learning concept\" monography. \n\nAt 27 he became a CIO of the large research and production\
+            \ group, in 2012 he joined the Mail.Ru team and headed the department of research and production. Since 2016 he\
+            \ is head of Rostec corporate network academy, since 2017 he is a senior vice president of \"ProObraz\". A councilor\
+            \ of Moscow Aviation Institute rector, a member of social and business council under the government of the Russian\
+            \ Federation.\n\nFounder of Otus, an online education company."
+      - language: ru
+        text: "Закончил ГУУ, где получил степень MBA (MBI) в 2008 году. Кандидат педагогических наук, автор монографии «Ко\
+            нцепция непрерывного обучения».\n\nВ 27 лет стал CIO крупного научно-производственного холдинга, в 2012 году п\
+            рисоединился к команде Mail.Ru и возглавил департамент исследований и образования. С 2016 года — директор корп\
+            оративной сетевой академии «Ростех», с 2017 года — старший вице-президент УК «ПроОбраз». Советник ректора МАИ\
+            , член общественно-делового совета при правительстве РФ.\n\nОснователь компании Otus, специализирующейся в обл\
+            асти онлайн-образования."
   - id: 1021
     fileName: 1021.jpg
     name:
       - {language: en, text: "Nicolò Ribaudo"}
+    company:
+      - {language: en, text: Babel}
+    bio:
+      - language: en
+        text: "Nicolò has been a core Babel developer since 2017, and he has helped with the development of different ECMAScript\
+            \ proposal.\n\nWhen offline, he is a mathematics student in Turin, Italy."
+    twitter: NicoloRibaudo
   - id: 1022
     fileName: 1022.jpg
     name:
@@ -13722,15 +13754,39 @@ speakers:
     fileName: 1024.jpg
     name:
       - {language: en, text: "Anna Herlihy"}
+    company:
+      - {language: en, text: MongoDB}
+    bio:
+      - {language: en, text: "Anna Herlihy is a senior software engineer working for MongoDB in Stockholm. She is a contributor\
+            \ to PyMongo, MongoDB, bson-numpy, and a few other MongoDB Drivers but is working now on Compass, the GUI for\
+            \ MongoDB. She enjoys hiking, biking, climbing, and is most happy when she can do her work outdoors."}
+    twitter: annaisworking
   - id: 1025
     fileName: 1025.jpg
     name:
       - {language: en, text: "Michael Saboff"}
+    company:
+      - {language: en, text: Apple}
+    bio:
+      - {language: en, text: "Michael Saboff is a Software Engineer working on the JavaScriptCore virtual machine for the\
+            \ past 9 years. He is a member of the JS standards committee, TC-39."}
+    twitter: msaboff
   - id: 1026
     fileName: 1026.jpg
     name:
       - {language: en, text: "Ivan Popelyshev"}
       - {language: ru, text: "Иван Попелышев"}
+    company:
+      - {language: en, text: "Crazy Panda"}
+    bio:
+      - language: en
+        text: "Ivan helps people with Canvas 2d/WebGL projects, knows many practical cases.\n\nIvan works with HTML5 games\
+            \ since 2012 (gameofbombs.com), he's a member of the core PixiJS team since 2016. When he studied in the math\
+            \ department at Moscow State University he participated in many algorithm competitions, including ICPC Finals."
+      - language: ru
+        text: "Иван помогает всем желающим с Canvas 2d/WebGL проектами, из-за этого знает много практических кейсов.\n\nЗа\
+            нимается играми на HTML5 с 2012 года (gameofbombs.com), состоит в ядре команды PixiJS с 2015. Учился на мехмат\
+            е МГУ, участвовал в алгоритмических соревнованиях, таких как финал ICPC."
   - id: 1027
     fileName: 1027.jpg
     name:
@@ -13741,67 +13797,208 @@ speakers:
     name:
       - {language: en, text: "Andrey Roenko"}
       - {language: ru, text: "Андрей Роенко"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Loves to create his own abstraction and analyze and deconstruct everyone else's.\n7 years in web development.\
+            \ Currently leads Yandex.Maps JavaScript API development team."
+      - language: ru
+        text: "Любит создавать свои высокие абстракции и разбирать по косточкам чужие.\nВ веб-разработке более 7 лет. Сейч\
+            ас руководит группой разработки JavaScript API Яндекс.Карт."
   - id: 1029
     fileName: 1029.jpg
     name:
       - {language: en, text: "Andrew Smirnov"}
       - {language: ru, text: "Андрей Смирнов"}
     company:
-      - {language: en, text: "IPONWEB"}
+      - {language: en, text: IPONWEB}
+    bio:
+      - {language: en, text: "UI Practice Lead in IPONWEB. The all-time host of the Frontend Weekend podcast and active member\
+            \ of the frontend community. Ex-actor of the student theatre of the faculty of Computational Mathematics and Cybernetics\
+            \ of Moscow State University."}
+      - {language: ru, text: "Руководитель группы клиентской разработки в IPONWEB. Бессменный ведущий подкаста Frontend Weekend\
+            \ и активный участник frontend-сообщества. В прошлом актёр студенческого театра ВМК МГУ."}
+    twitter: frontendweekend
   - id: 1030
     fileName: 1030.jpg
     name:
       - {language: en, text: "Romulo Cintra"}
+    company:
+      - {language: en, text: "CaixaBank \"Silk\""}
+    bio:
+      - language: en
+        text: "Technology enthusiast, working in Software development and Architectures for more than 10 years. Contributor\
+            \ in Open Source projects, TC39 Delegate, and blogger in part-time.\n\nHis main goal is to democratize technology\
+            \ and empower developers, teams, and companies mostly in the financial sector to build better products. His main\
+            \ focuses are the web, mobile, and cloud. He loves and advocates for the future of the internet and decentralized\
+            \ technology culture where all the globe is connected."
+    twitter: romulocintra
   - id: 1031
     fileName: 1031.jpg
     name:
       - {language: en, text: "Mathieu Henri"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Mathieu is a Senior Software Engineer at Microsoft. He works on the Profile card in Office and\
+            \ Office 365, and specializes in cross platform automation. Previously he worked 11 years on the Opera browsers.\
+            \ In his spare time, Mathieu creates tiny demos in JavaScript and Pico-8 and runs a Code Club with Elementary\
+            \ school children."}
   - id: 1032
     fileName: 1032.jpg
     name:
       - {language: en, text: "Eliran Eliassy"}
+    company:
+      - {language: ru, text: e-square.io}
+    bio:
+      - language: en
+        text: "Eliran is an experienced FE developer, specialized in B2C applications\nFounder and developer @ e-square.io\n\
+            \nCo-Organiser @ AngularUP Annual Conference \nCo-Organiser and manager @ Angular-IL meetup\nWriter for <a href=\"\
+            http://angularindepth.com/\" target=\"_blank\">AngularInDepth</a>"
+    twitter: eliraneliassy
   - id: 1033
     fileName: 1033.jpg
     name:
       - {language: en, text: "Nikita Mostovoy"}
       - {language: ru, text: "Никита Мостовой"}
+    company:
+      - {language: en, text: HeadHunter}
+    bio:
+      - language: en
+        text: "Lead frontend developer at HeadHunter. Started from an intern at HeadHunter developers school and now he has\
+            \ been teaching for over 5 years in this school. \nNikita has been working at 5 different teams during all career.\
+            \ A member of the architecture team for the last year. The security of user data, the architecture, and the infrastructure\
+            \ of the project are the most important things at his work."
+      - language: ru
+        text: "Ведущий фронтенд-разработчик в компании HeadHunter. Начинал с интерна в школе разработчиков ХХ, где ведет л\
+            екции уже более 5 лет. \nЗа свою карьеру поработал в 5 командах. \nПоследний год работает в команде архитектур\
+            ы основного сайта, где безопасность пользовательских данных, архитектура и инфраструктура проекта — на первом\
+            \ месте."
+    twitter: xnimorz
   - id: 1034
     fileName: 1034.jpg
     name:
       - {language: en, text: "Zar Zakharov"}
       - {language: ru, text: "Зар Захаров"}
+    company: []
+    bio:
+      - {language: en, text: "Zar is more than 10 years in web development. He was a leader of the frontend in e-travel startup\
+            \ Voyanga. He was the first one who wrote Russian-language AngularJS courses. Worked in Alfa-Bank for 3 years\
+            \ where he developed a retail business and helped users to get services faster."}
+      - {language: ru, text: "В веб-разработке более 10 лет. Руководил отделом frontend в e-travel стартапе Voyanga. Был п\
+            ервым, кто записал русскоязычные курсы по AngularJS. Более 3 лет проработал в Альфа-Банк, где развивал розничн\
+            ый бизнес и помогал пользователям получать услуги быстрее. Участвовал в развитии Дизайн-Системы."}
+    twitter: severenit
   - id: 1035
     fileName: 1035.jpg
     name:
       - {language: en, text: "Alexander Kamenyar"}
       - {language: ru, text: "Александр Каменяр"}
+    company:
+      - {language: en, text: TradingView}
+    bio:
+      - {language: en, text: "Alexander led design in e-travel startup Voyanga. Then he was a senior designer in SberTech\
+            \ where he worked on online banking. Now he is a leader of the product design department of the TradingView fintech\
+            \ project."}
+      - {language: ru, text: "Руководил дизайном в e-travel стартапе Voyanga. Занимал должность старшего дизайнера в СберТ\
+            ехе, работал над интернет-банкингом. Сейчас руководит отделом продуктового дизайна финтех-проекта TradingView."}
+    twitter: akamenyar
   - id: 1036
     fileName: 1036.jpg
     name:
       - {language: en, text: "Artyom Arutyunyan"}
       - {language: ru, text: "Артём Арутюнян"}
+    company:
+      - {language: en, text: dbeaver}
+    bio:
+      - language: en
+        text: "7 years in IT: at different times supported, launched and developed projects in the largest financial companies\
+            \ in Russia. Now specializes in frontend developing of big web applications. \r\n\r\nChristian, husband, coder,\
+            \ bushcrafter."
+      - language: ru
+        text: "7 лет в ИТ: в разное время поддерживал, запускал, разрабатывал проекты в крупнейших финансовых компаниях РФ\
+            . Сейчас специализируется на разработке фронтенда крупных web-приложений.\r\n\r\nХристианин, муж, кодер, бушкр\
+            афтер."
+    twitter: art_al_ar
   - id: 1037
     fileName: 1037.jpg
     name:
       - {language: en, text: "Prashant Palikhe"}
+    company:
+      - {language: en, text: Independent}
+    bio:
+      - {language: en, text: "Prashant is a frontend developer at Frontmen in the Netherlands. Apart from coding, he is also\
+            \ responsible for creating a technical trajectory for developers within Frontmen. While not coding, he likes to\
+            \ travel, preach about technologies and break a sweat at the basketball court with friends."}
+    twitter: PrashantPalikhe
   - id: 1038
     fileName: 1038.jpg
     name:
       - {language: en, text: "Miguel Angel Duran Garcia"}
+    company:
+      - {language: en, text: Adevinta}
+    bio:
+      - {language: en, text: "Miguel works as Enabler frontend at Adevinta, a marketplace specialist based in Barcelona, Spain.\
+            \ He accelerates teams by defining a common platform, building cross tools, sharing best practices and helping\
+            \ to solve meaningful problems. He is passionate about performance and is always looking for solutions through\
+            \ technology to offer the best experience to users."}
+    twitter: midudev
   - id: 1039
     fileName: 1039.jpg
     name:
       - {language: en, text: "Alexandra Kalinina"}
       - {language: ru, text: "Александра Калинина"}
+    company:
+      - {language: en, text: "Valor Software"}
+    bio:
+      - language: en
+        text: "10+ years of programming experience.\nWell skilled in web development: figuring out a problem where the abstraction\
+            \ leaked.\nGreat experience in writing unit/integration/E2E/B2B tests using mocha/chai/sinon.\nStrong experience\
+            \ in major web development technologies, design patterns, DB design, algorithms development and data structures.\n\
+            Some experience in project specification and technical documentation development."
+      - language: ru
+        text: "Более 10 лет опыта в программировании.\nХорошо подкована в веб-разработке: решает проблемы с дырявыми абстр\
+            акциями.\nИмеет опыт в написании unit/integration/E2E/B2B-тестов, используя mocha/chai/sinon.\nБольшой опыт в\
+            \ технологиях веб-разработки, шаблонах проектирования, проектирования баз данных, разработки алгоритмов и стру\
+            ктуры данных.\nЕсть опыт в разработке проектных заданий и технической документации."
+    twitter: korery
+    gitHub: korel-san
   - id: 1040
     fileName: 1040.jpg
     name:
       - {language: en, text: "Andrey Pechkurov"}
       - {language: ru, text: "Андрей Печкуров"}
+    company:
+      - {language: en, text: Hazelcast}
+    bio:
+      - language: en
+        text: "Andrey's been involved in design and development of various web apps and systems for many years and always\
+            \ enjoyed it. Came a long road from a greenhorn junior developer in a small product team to a solution architect\
+            \ in a large outsourcing company. Some time ago joined Hazelcast engineering team and started working on the company's\
+            \ products, including Node.js client library.\r\n\r\nFirst met and fell in love with Node.js during the good old\
+            \ v0.12.0 era. Enjoys non-trivial technical challenges that require a deep dive. Has a personal blog, maintains\
+            \ several open source libraries. Constantly learns new stuff from others and shares his experience with the community."
+      - language: ru
+        text: "Давно и с удовольствием занимается проектированием и разработкой разнообразных веб-приложений и систем. Про\
+            шел путь от зеленого джуниора в небольшой продуктовой команде до solution architect в крупной аутсорсинговой к\
+            омпании. Некоторое время назад присоединился к инженерной команде Hazelcast и работает над различными продукта\
+            ми компании, включая клиентскую Node.js-библиотеку.\r\n\r\nС Node.js познакомился и полюбил в далекие времена\
+            \ версии 0.12.x. Любит нетривиальные технические задачи, требующие глубокого погружения. Ведет свой персональн\
+            ый блог и поддерживает несколько open source-библиотек. Постоянно учится у других и старается делиться своим о\
+            пытом с сообществом."
+    twitter: AndreyPechkurov
   - id: 1041
     fileName: 1041.jpg
     name:
       - {language: en, text: "Farzad YousefZadeh"}
+    company:
+      - {language: en, text: "Epic Games"}
+    bio:
+      - {language: en, text: "Senior software engineer @EpicGames. International conference speaker. Web and Mobile development.\
+            \ Javascript, Typescript. UI engineering and Reactivity."}
+    twitter: farzad_yz
   - id: 1042
     fileName: 1042.jpg
     name:
@@ -14043,3 +14240,26 @@ speakers:
             \ [Django Girls SPb](https://djangogirls.org/stpetersburg/) и [PyLadies SPb](http://spb.pyladies.com/). \n\nОн\
             \ выступал в Москве, Лиссабоне, Берлине, Минске, Литве; является талисманом конференции index-tech.ru и извест\
             ен своими [статьями по проблематике найма](https://huntflow.ru/insight/article/v-samye-klassnye-kontory-samye-lyogkie-sobesedovaniya)."
+  - id: 1078
+    fileName: 1078.jpg
+    name:
+      - {language: en, text: "TC39 delegates"}
+    company: []
+    bio:
+      - {language: en, text: "Michael Saboff, Aki Rose Braun, Yulia Startsev, Romulo Cintra, Sergey Rubanov, Nicolò Ribaudo."}
+      - {language: ru, text: "Michael Saboff, Aki Rose Braun, Yulia Startsev, Romulo Cintra, Сергей Рубанов, Nicolò Ribaudo."}
+    twitter: TC39
+  - id: 1079
+    fileName: 1079.jpg
+    name:
+      - {language: en, text: "Rajat Kumar"}
+    company:
+      - {language: en, text: "Netflix Inc."}
+    bio:
+      - language: en
+        text: "Rajat is a Senior Software Engineer at Netflix and is passionate about building products. He enjoys writing\
+            \ code in Javascript because he believes Javascript has its complexities and imperfections that mimic the real\
+            \ world.\n\nRajat has been involved in several engineering challenges at Netflix, including Conditional Runtime\
+            \ Bundler called Codex, Netflix’s NodeJS PaaS called NodeQuark. \n\nHe also maintains and is a core contributor\
+            \ to <a href=\"http://restify.com\" target=\"_blank\">Restify</a>."
+    twitter: rajatkumar

@@ -535,17 +535,23 @@ events:
               1297, 1298, 1299, 1300, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308]
   - eventTypeId: 4
     name:
-      - {language: en, text: "HolyJS 2019 Msk"}
+      - {language: en, text: "HolyJS 2019 Msc"}
       - {language: ru, text: "HolyJS 2019 Мск"}
-    startDate: 2019-11-08
-    endDate: 2019-11-09
+    startDate: "2019-11-08"
+    endDate: "2019-11-09"
+    siteLink:
+      - {language: en, text: "https://holyjs-moscow.ru/en/"}
+      - {language: ru, text: "https://holyjs-moscow.ru/"}
     city:
-      - {language: en, text: "Moscow"}
-      - {language: ru, text: "Москва"}
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
     venueAddress:
-      - {language: en, text: "WTC Congress Center"}
-      - {language: ru, text: "Конгресс-центр ЦМТ"}
-    talkIds: [170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198]
+      - {language: en, text: "Krasnopresnenskaya Emb., 12, «WTC» Congress Center"}
+      - {language: ru, text: "Краснопресненская наб., 12, Конгресс-центр «ЦМТ»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8KXjvw3i0bY-fCn1abQMbv8
+    mapCoordinates: "55.754203, 37.556388"
+    talkIds: [170, 171, 172, 1345, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190,
+              191, 192, 193, 194, 195, 1346, 196, 197, 198]
   - eventTypeId: 4
     name:
       - {language: en, text: "HolyJS 2020 SPb"}

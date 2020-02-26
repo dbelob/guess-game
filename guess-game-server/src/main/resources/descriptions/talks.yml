@@ -5936,132 +5936,971 @@ talks:
     speakerIds: [1003]
   - id: 170
     name:
-      - {language: en, text: "Client rendering, server rendering, pre rendering. The full spectrum of JS website and application performance delivery"}
+      - {language: en, text: "Client rendering, server rendering, pre rendering. The full spectrum of JS website and application\
+            \ performance delivery"}
+    shortDescription:
+      - {language: en, text: "This talk will share everything we've learned about the spectrum of approaches for creating\
+            \ and scaling JavaScript websites and applications."}
+    longDescription:
+      - {language: en, text: "This talk will share everything we've learned about the spectrum of approaches for creating\
+            \ and scaling JavaScript websites and applications."}
+      - language: ru
+        text: "This talk will share everything we've learned about the spectrum of approaches for creating and scaling JavaScript\
+            \ websites and applications.\n\n> __Комментарий программного комитета:__\n\n>\n\n> *Гильермо является сооснова\
+            телем ZEIT, компании, которая пишет Next.js, который, в свою очередь, является сейчас одним из основных решени\
+            й для динамических вещей на React. Доклад обещает быть очень интересным с точки зрения обширного взгляда на те\
+            му server-side rendering. И Гильермо, конечно, можно будет позадавать вопросы про Next.js.*"
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [1017]
   - id: 171
     name:
       - {language: en, text: "GraphQL fragments on the client: Appearance history, usage errors"}
       - {language: ru, text: "GraphQL-фрагменты на клиенте: История появления, ошибки использования"}
+    shortDescription:
+      - {language: en, text: "Pavel will analyze the main mistakes made by backend and frontend and explain how to work with\
+            \ GraphQL fragments."}
+      - {language: ru, text: "Павел разберет основные ошибки, совершаемые бэкендерами и фронтендерами и объяснит, как рабо\
+            тать с GraphQL-фрагментами."}
+    longDescription:
+      - language: en
+        text: "Pavel will tell the real story of Facebook about how models were written on the clients, how they received\
+            \ data and worked with it. How evolved over time, solving certain problems. \n\nDuring this session, following\
+            \ approaches will be discussed: JSON Models (hard manual work), Type Models (similar to generating models from\
+            \ Swagger), Responsible Models (ApolloClient approach), Fragment Models (Relay approach). \n\nSpeaker will also\
+            \ share common frontend mistakes that were made during the work with GraphQL fragments. \n\nAnd if time allowes\
+            \ in bonus track Pavel will tell about how \"gray\" scientific works that describe the possibilities of GraphQL\
+            \ too cool began to appear: \"We'll show that GraphQL can reduce the size of the JSON documents returned by REST\
+            \ APIs in 94% (in number of fields) and in 99% (in number of bytes), both median results\". GraphQL is certainly\
+            \ cool but not like that."
+      - language: ru
+        text: "Павел расскажет реальную историю Фейсбука о том, как писали модели на клиентах, как получали данные и работ\
+            али с ними. Как эволюционировали со временем, решая те или иные проблемы. \n\nВ докладе будут разобраны следую\
+            щие подходы: JSON Models (тяжелый ручной труд), Type Models (похоже на генерацию моделей из Swagger), Response\
+            \ Models (подход ApolloClient), Fragment Models (подход Relay). \n\nСпикер также поделится частыми ошибками фр\
+            онтендеров, которые совершаются при работе с GraphQL-фрагментами. \n\nИ если позволит время, то бонус треком П\
+            авел расскажет про то, как в академической среде стали появляться «серые» научные работы, которые уж больно кр\
+            уто описывают возможности GraphQL: \"We'll show that GraphQL can reduce the size of the JSON documents returned\
+            \ by REST APIs in 94% (in number of fields) and in 99% (in number of bytes), both median results\". GraphQL ко\
+            нечно хорош, но не настолько."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [660]
   - id: 172
     name:
       - {language: en, text: "React rendering strategies: Get the most out of performance, keep bots happy"}
+    shortDescription:
+      - {language: en, text: "React Rendering strategies to improve your app web performance while keeping the maximum compatibility\
+            \ with bots."}
+    longDescription:
+      - language: en
+        text: "Rendering your app on the client is expensive. Quite expensive if you’re using a library such as React. Applying\
+            \ a Server-Side Rendering strategy was the best solution to improve metrics like First Contentful Paint, and enhance\
+            \ the support for crawlers. Until now.\n\nHow can we improve the user experience in terms of performance while\
+            \ keeping the best support for crawlers? How can we mitigate the hydration cost? How to definitely improve our\
+            \ Time-To-Interactive metric of our React application? In this talk, we will share some of the techniques we have\
+            \ been using in Adevinta as well as our insights after applying them during months in production. We will explore\
+            \ what Dynamic Rendering and Progressive Rendering are, their benefits over the performance, the limitations of\
+            \ each one and how to implement them."
+      - language: ru
+        text: "Rendering your app on the client is expensive. Quite expensive if you’re using a library such as React. Applying\
+            \ a Server-Side Rendering strategy was the best solution to improve metrics like First Contentful Paint, and enhance\
+            \ the support for crawlers. Until now.\n\nHow can we improve the user experience in terms of performance while\
+            \ keeping the best support for crawlers? How can we mitigate the hydration cost? How to definitely improve our\
+            \ Time-To-Interactive metric of our React application? In this talk, we will share some of the techniques we have\
+            \ been using in Adevinta as well as our insights after applying them during months in production. We will explore\
+            \ what Dynamic Rendering and Progressive Rendering are, their benefits over the performance, the limitations of\
+            \ each one and how to implement them.\n\n> __Комментарий программного комитета:__\n>\n> *Испанский блогер, под\
+            кастер и тренер на Udemy поделится опытом оптимизации рендеринга React. Думаете, что рендеринг в React огранич\
+            ивается VirtualDOM? Подумайте еще раз — вы можете использовать разные стратегии рендеринга, каждая из которых\
+            \ имеет свои достоинства и недостатки. И это работает не только с React. Речь пойдет про принципы, которые мож\
+            но применять в других фреймворках.*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [1038]
   - id: 173
     name:
       - {language: en, text: "Transpile anything to everything!"}
+    shortDescription:
+      - {language: en, text: "During her session, Anna will talk about classic compiler design and is going to explain how\
+            \ to extend Compass to support new languages."}
+    longDescription:
+      - language: en
+        text: "Compass, the UI for MongoDB, is an Electron app that allows developers to visually develop aggregations and\
+            \ queries for their database. Right now it accepts these queries in the MongoDB Shell syntax, a JavaScript-based\
+            \ query language. However, developers use a wide range of programming languages in their apps, and constant context\
+            \ switching between languages can be painful. \n\nTo cure this pain, we wanted to allow users to export the queries\
+            \ they built-in Compass into whatever programming language they wanted. Even better, we wanted to also allow users\
+            \ to write their favorite language directly into Compass. To achieve these goals, we needed a way to translate\
+            \ query syntax in any programming language into query syntax in any other language, so we needed to write a multi-language-input\
+            \ to multi-language-output transpiler!\n\nThis talk will go through the technical design of the anything-to-anything\
+            \ pluggable transpiler and teach attendees how they can add their own favorite language to Compass. Anna will\
+            \ talk about classic compiler design principles and how she leveraged various compiler technologies to create\
+            \ a dynamic, extensible transpiler. Lastly, she'll talk about how we can take this transpiler and apply it to\
+            \ an abundance of other use cases!\n\nAnyone with an interest in compilers, parsers, Compass, MongoDB, ANTLR,\
+            \ or a general passion for complex technical problems is welcome. Anna will talk about classic compiler design\
+            \ without requiring attendees to be programming-language experts, although any knowledge of compiler implementations\
+            \ will be useful. Attendees will leave the talk knowing exactly how to extend Compass to support new languages\
+            \ and will hopefully be inspired to go out and add their favorite language to Compass!\n\nThis talk addresses\
+            \ both MongoDB-specific challenges as well as highly technical computer science problems. Attendees will learn\
+            \ not only about Compass itself but about compiler design. As developers, we use compilers every day, but it is\
+            \ not so often that we get the opportunity to actually write them, and compilers are awesome!"
+      - language: ru
+        text: "Compass, the UI for MongoDB, is an Electron app that allows developers to visually develop aggregations and\
+            \ queries for their database. Right now it accepts these queries in the MongoDB Shell syntax, a JavaScript-based\
+            \ query language. However, developers use a wide range of programming languages in their apps, and constant context\
+            \ switching between languages can be painful. \n\nTo cure this pain, we wanted to allow users to export the queries\
+            \ they built-in Compass into whatever programming language they wanted. Even better, we wanted to also allow users\
+            \ to write their favorite language directly into Compass. To achieve these goals, we needed a way to translate\
+            \ query syntax in any programming language into query syntax in any other language, so we needed to write a multi-language-input\
+            \ to multi-language-output transpiler!\n\nThis talk will go through the technical design of the anything-to-anything\
+            \ pluggable transpiler and teach attendees how they can add their own favorite language to Compass. Anna will\
+            \ talk about classic compiler design principles and how she leveraged various compiler technologies to create\
+            \ a dynamic, extensible transpiler. Lastly, she'll talk about how we can take this transpiler and apply it to\
+            \ an abundance of other use cases!\n\nAnyone with an interest in compilers, parsers, Compass, MongoDB, ANTLR,\
+            \ or a general passion for complex technical problems is welcome. Anna will talk about classic compiler design\
+            \ without requiring attendees to be programming-language experts, although any knowledge of compiler implementations\
+            \ will be useful. Attendees will leave the talk knowing exactly how to extend Compass to support new languages\
+            \ and will hopefully be inspired to go out and add their favorite language to Compass!\n\nThis talk addresses\
+            \ both MongoDB-specific challenges as well as highly technical computer science problems. Attendees will learn\
+            \ not only about Compass itself but about compiler design. As developers, we use compilers every day, but it is\
+            \ not so often that we get the opportunity to actually write them, and compilers are awesome!\n\n> __Комментар\
+            ий программного комитета:__\n\n>\n\n> *Анна работала с Mongoose, сейчас работает с Compass, графическим интерф\
+            ейсом для MongoDB. Проблема создания любой ORM в том, что это необходимо делать для каждого языка и технологии\
+            . А что, если сделать один интерфейс, подходящий для всего? Анна поделится итогом — получилось или нет.*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/sKHzmgt0vOXDi4dArlnXF/7f67dfa30fd3a3230e5ab412a272b0f1/100603_1000432722_Anna_Herlihy_Transpile_anything_to_everything.pdf"]
+    videoLinks: []
     speakerIds: [1024]
   - id: 174
     name:
       - {language: en, text: "A story of one performance optimization in a Node.js library"}
       - {language: ru, text: "История одной оптимизации производительности Node.js-библиотеки"}
+    shortDescription:
+      - {language: en, text: "The talk will explain performance optimization of the Hazelcast IMDG Node.js client library,\
+            \ which happened not so long ago, and possible approaches for such optimization."}
+      - {language: ru, text: "В докладе пойдет речь о не так давно приключившейся оптимизации производительности в клиентс\
+            кой Node.js-библиотеке для Hazelcast IMDG в частности и о подходах к оптимизации в общем."}
+    longDescription:
+      - language: en
+        text: "The talk will explain the performance optimization of the Hazelcast IMDG Node.js client library, which happened\
+            \ not so long ago. We will talk about used approaches, performance measurements, tools, experiments, and related\
+            \ hypotheses and, of course, about optimization results. Further plans for optimizations and related processes\
+            \ will be covered as well.\n\nDespite the fact that client libraries have their own specifics, many of the discussed\
+            \ approaches and the experience, in general, should be valuable for all Node.js developers who build network apps\
+            \ of any kind."
+      - language: ru
+        text: "В докладе пойдет речь о не так давно приключившейся оптимизации производительности в клиентской Node.js-биб\
+            лиотеке для Hazelcast IMDG. Мы поговорим об использованных подходах, методах замера производительности, инстру\
+            ментах, экспериментах и выдвинутых на их основе гипотезах и, конечно же, о полученных результатах. Кроме того\
+            , доклад коснется дальнейших планов по оптимизации и связанных с этим практик.\n\nНесмотря на то, что специфик\
+            а клиентских библиотек отличается от таковой для прикладных приложений, большинство изложенных приемов и получ\
+            енный опыт будут полезны для всех Node.js-разработчиков, разрабатывающих какие-либо сетевые приложения.\n\n> __К\
+            омментарий программного комитета:__\n\n>\n\n> *Оптимизация, это, обычно, такая задача, которую многие откладыв\
+            ают в «бэклог». В докладе пойдет речь об истории оптимизации библиотеки для работы с базой данных, где быстрот\
+            а — одна из важных фич. Как подступиться к проблемам и найти узкое место, почему нужно измерять производительн\
+            ость каждого релиза, и отчего преждевременная оптимизация обязательно выстрелит в будущем.*"
+    talkDay: 1
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3TYh3SMlt1ZciMrUouYWA2/7fbffdd2a47096c584b717d8d4c9dca9/100590_191084787_Andrey_Pechkurov_Istoriya_odnoy_optimizatsii_proizvoditelnosti_Node.js-biblioteki.pdf"]
+    videoLinks: []
     speakerIds: [1040]
   - id: 175
     name:
       - {language: en, text: "Get ready for Ivy — Angular 3rd generation renderer engine"}
+    shortDescription:
+      - language: en
+        text: "Smaller bundles, faster compilations, Better debugging, dynamic loading of module & components and the ability\
+            \ to change components through Higher order components. \n\nAfter a long time of waiting, it’s finally coming\
+            \ for real - Ivy is HERE!\n\nIn this talk, I will demonstrate why Angular Ivy is truly a game changer, what's\
+            \ the benefits of it, how it makes Angular much more dynamic and breaks the concept of NgModules. \nWe will understand\
+            \ how we can leverage the Ivy renderer to create higher order components (HOC), what is incremental DOM and how\
+            \ to import non-routable components dynamically to make our application much faster and much flexible."
+      - {language: ru, text: "In this talk, Eliran will demonstrate why Angular Ivy is truly a game changer, what's the benefits\
+            \ of it, how it makes Angular much more dynamic and breaks the concept of NgModules."}
+    longDescription:
+      - language: en
+        text: "Smaller bundles, faster compilations, Better debugging, dynamic loading of module & components and the ability\
+            \ to change components through Higher order components. \n\nAfter a long time of waiting, it’s finally coming\
+            \ for real - Ivy is HERE!\n\nIn this talk, I will demonstrate why Angular Ivy is truly a game changer, what's\
+            \ the benefits of it, how it makes Angular much more dynamic and breaks the concept of NgModules. \nWe will understand\
+            \ how we can leverage the Ivy renderer to create higher order components (HOC), what is incremental DOM and how\
+            \ to import non-routable components dynamically to make our application much faster and much flexible."
+      - language: ru
+        text: "Smaller bundles, faster compilations, better debugging, dynamic loading of module and components and the ability\
+            \ to change components through Higher order components. \n\nAfter a long time of waiting, it’s finally coming\
+            \ for real — Ivy is HERE!\n\nIn this talk, Eliran will demonstrate why Angular Ivy is truly a game changer, what's\
+            \ the benefits of it, how it makes Angular much more dynamic and breaks the concept of NgModules. \nWe will understand\
+            \ how we can leverage the Ivy renderer to create higher order components (HOC), what is incremental DOM and how\
+            \ to import non-routable components dynamically to make our application much faster and much flexible."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/2QMiiEEzNkZK4RskSbGCi8/27406f0150a76b1b1204a59a021d8cee/100598_1929629313_Eliran_Eliassy_Get_ready_for_Ivy_-_Angular_3rd_generation_renderer_engine.pdf"]
+    videoLinks: []
     speakerIds: [1032]
   - id: 176
     name:
       - {language: en, text: "From code to pixels in a Blink"}
+    shortDescription:
+      - {language: en, text: "In this session, we will talk about how the code that we write, HTML, CSS and JavaScript gets\
+            \ converted into pixels on the screen an example of Google Chrome rendering engine, Blink."}
+    longDescription:
+      - {language: en, text: "Let’s take a journey through the browser’s rendering pipeline. How the code that we write, HTML,\
+            \ CSS and JavaScript gets converted into pixels on the screen in a Blink of an eye. And how we can leverage that\
+            \ information to understand why industry best practices are the way they are and write performant applications.\
+            \ Since the internals of browsers engines varies between vendors, let’s focus on Google Chrome’s rendering engine,\
+            \ Blink. The key takeaways of the talk will be bird’s eye overview of Blink’s architecture, how Blink’s rendering\
+            \ pipeline works, how APIs like requestAnimationFrame(), requestIdleCallback() fit into the picture, how to decipher\
+            \ the complex Chrome dev tools performance flame graph, what kind of parallelism browsers allow us to work with\
+            \ and how to use all these information to create highly performant frontend applications."}
+    talkDay: 1
+    trackTime: "16:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [1037]
   - id: 177
     name:
       - {language: en, text: "@babel/how-to"}
+    shortDescription:
+      - {language: en, text: "We will learn about how the Babel compiler works, and how to create a plugin implementing support\
+            \ for a new ECMAScript proposal."}
+    longDescription:
+      - language: en
+        text: "More and more developers are using Babel in their build process, but do you know how it internally works?\n\
+            \nWe will first briefly discuss the different parts that compose a JavaScript to JavaScript compiler, and how\
+            \ it tries to reduce the complexity of implementing a custom code transformer: it's not just a search & replace\
+            \ based on regular expressions!\n\nThen, we will learn how Babel implements support for new ECMAScript proposals,\
+            \ by going through a plugin which will transform future syntax to old ECMAScript. In order to code it correctly,\
+            \ we will need to understand the proposed semantics, and we will discuss the trade-offs between specification\
+            \ compliancy and output complexity."
+      - language: ru
+        text: "More and more developers are using Babel in their build process, but do you know how it internally works?\n\
+            \nWe will first briefly discuss the different parts that compose a JavaScript to JavaScript compiler, and how\
+            \ it tries to reduce the complexity of implementing a custom code transformer: it's not just a search & replace\
+            \ based on regular expressions!\n\nThen, we will learn how Babel implements support for new ECMAScript proposals,\
+            \ by going through a plugin which will transform future syntax to old ECMAScript. In order to code it correctly,\
+            \ we will need to understand the proposed semantics, and we will discuss the trade-offs between specification\
+            \ compliancy and output complexity.\n\n> __Комментарий программного комитета:__\n\n>\n\n> *Николо активно учас\
+            твовал в написании плагинов к Babel для поддержки Optional Chaining и Nullish Coalescing. В своем докладе он б\
+            удет рассказывать как вам сделать собственный плагин под Babel для поддержки новых фич языка или решения ваших\
+            \ задач.*"
+    talkDay: 1
+    trackTime: "16:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/4pwL91N1BMrptrYv5EylhX/7dceef7cf5da44a125b1e47df0852dd4/100664_356577165_Nicol_Ribaudo_babelhow-to.pdf"]
+    videoLinks: []
     speakerIds: [1021]
   - id: 178
     name:
       - {language: en, text: "NestJS. Tried to Shift in 80 hours"}
+    shortDescription:
+      - {language: en, text: "Alexandra will talk about main reasons of switching to NestJS, what do you need to know about\
+            \ safe migration under deadline, what negative aspects of NestJS you may face and what to be prepare for."}
+      - {language: ru, text: "Александра расскажет об основных причинах перехода на NestJS, что необходимо знать про безоп\
+            асную миграцию в условиях дедлайна, с какими негативными сторонами NestJS можно столкнуться и к чему быть гото\
+            вым."}
+    longDescription:
+      - language: en
+        text: "Alexandra will talk about main reasons of switching to NestJS from ExpressJS, what do you need to know about\
+            \ safe migration under deadline, how to partially automate the process and what to be prepared for.\nWhat audience\
+            \ will learn from this talk: tool for fast and safe migration, pros and cons of switching to NestJS."
+      - language: ru
+        text: "Александра расскажет об основных причинах перехода с ExpressJS на NestJS, что необходимо знать про безопасн\
+            ую миграцию в условиях дедлайна, как частично автоматизировать процесс и к чему быть готовым.\nЧто люди узнают\
+            \ и получат из доклада: инструменты для быстрой и безопасной миграции, аргументы за и против перехода на NestJS.\n\
+            \n> __Комментарий программного комитета:__\n\n>\n\n> *Александра расскажет о том, как она и ее команда перевод\
+            или своё Express-приложение на NestJS за максимально короткий срок, объяснит, почему они сделали такой выбор,\
+            \ какие в этом плюсы для разработчика, менеджера и пользователя.*"
+    talkDay: 1
+    trackTime: "16:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5Lbm745eD6pWxK9AWGwJsQ/163d1a8a5498b64d5c37de805be8c873/_V2__Holyjs_2019_-_Nestjs._Tried_To_Shift_In_80_Hours.pdf"]
+    videoLinks: []
     speakerIds: [1039]
   - id: 179
     name:
       - {language: en, text: "From specification to implementation"}
+    shortDescription:
+      - {language: en, text: "In this talk, we join the Nullish Coalescing operator on it’s journey through the TC39 process,\
+            \ and we will dive into its implementation in SpiderMonkey. You will come away from the talk knowing about the\
+            \ process from start to finish."}
+    longDescription:
+      - language: en
+        text: "Every year, Ecma’s TC39 (technical committee 39) releases a rolling specification with new language features\
+            \ added to JavaScript. But how does a feature go from an idea to a cross-browser implementation? \n\nIn this talk,\
+            \ we join the Nullish Coalescing operator on it’s journey through the TC39 process, and we will dive into its\
+            \ implementation in SpiderMonkey. You will come away from the talk knowing about the process from start to finish."
+      - language: ru
+        text: "Every year, Ecma’s TC39 (technical committee 39) releases a rolling specification with new language features\
+            \ added to JavaScript. But how does a feature go from an idea to a cross-browser implementation? \n\nIn this talk,\
+            \ we join the Nullish Coalescing operator on it’s journey through the TC39 process, and we will dive into its\
+            \ implementation in SpiderMonkey. You will come away from the talk knowing about the process from start to finish.\n\
+            \n> __Комментарий программного комитета:__\n\n>\n\n> *Доклады про движок SpiderMonkey можно услышать очень ред\
+            ко и у вас есть отличная возможность послушать человека, который работает и в команде этого движка, и является\
+            \ сопредседателем TC39. В докладе Yulia расскажет о пути Nullish Coalescing в SpiderMonkey.*"
+    talkDay: 1
+    trackTime: "17:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/2I6ChPKFRdfFi5SJ56I9lO/b2bcc96d559742fb06fd68b7fd5be298/100688_271280888_Yulia_Startsev_From_Specification_to_Implementation.pdf"]
+    videoLinks: []
     speakerIds: [1019]
   - id: 180
     name:
       - {language: en, text: "Soft Effect: Skills development research"}
       - {language: ru, text: "Soft Effect: Исследование развития навыков"}
+    shortDescription:
+      - {language: en, text: "During this session Andrew Smirnov would like to share his thoughts about frontend, what skills\
+            \ developer should learn and why soft skills are more important now."}
+      - {language: ru, text: "На данном выступлении Андрей Смирнов хотел бы поделиться своими мыслями по поводу фронтенда\
+            , какие навыки стоит развивать развивать разработчику и почему soft skills сейчас очень важны."}
+    longDescription:
+      - language: en
+        text: "In 2019 researches realized that soft skills are more important for developers career than hard skills. In\
+            \ the next few months a study was conducted to analyze the importance of skills and the dynamics of the impact\
+            \ of their growth. The research was based on the statistics providing an interesting evidential base.\n\nThey\
+            \ called it the greatest discovery in development history.\n\nSome researches call it Soft Effect."
+      - language: ru
+        text: "В 2019 году исследователи обнаружили, что разработчикам для успешного развития карьеры важнее развивать soft\
+            \ skills, а не hard skills. В последующие несколько месяцев было проведено исследование, позволяющее проанализ\
+            ировать важность навыков и динамику влияния их роста. Основой исследования была статистика, обеспечивающая инт\
+            ересную доказательную базу.\n\nОни назвали это величайшим открытием в истории разработки.\n\nНекоторые исследо\
+            ватели называют это Soft Effect.\n\n> __Комментарий программного комитета:__\n\n>\n\n> *Многие ругают доклады\
+            \ про soft skills из-за плохой доказательной базы. Андрей Смирнов собирается поменять ваше мнение, представив\
+            \ свое исследование в этой области. Из него мы узнаем не только какие навыки сейчас наиболее важны, но и динам\
+            ику влияния их роста.*"
+    talkDay: 1
+    trackTime: "17:30"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [1029]
   - id: 181
     name:
       - {language: en, text: "What we pay and what we get (PROFIT!) for moving from <div> to WebGL, with PixiJS examples"}
       - {language: ru, text: "Чем мы платим за переход от <div> к WebGL и что получаем (профит!), на примерах PixiJS"}
+    shortDescription:
+      - {language: en, text: "Ivan will analyze the advantages and features of WebGL and PixiJS, the cost of using them, compares\
+            \ them with HTML elements and tell you capabilities of visualizations and games on this tech."}
+      - {language: ru, text: "Иван разберет преимущества и особенности WebGL и PixiJS, их цену, противопоставит им HTML-эл\
+            ементы, и расскажет чего могут и не могут достичь визуализации и игры на этих библиотеках."}
+    longDescription:
+      - language: en
+        text: "You have an interesting application, but its potential is limited by graphics capabilities. You move certain\
+            \ parts to WebGL using the code from demos from public sources, but then everything looks like squares and colors\
+            \ are off. Is there something we missed or WebGL just can't achieve the same quality as a standard HTML5 page?\n\
+            \nAfter this talk, you'll be able to navigate through problems and responsibilities you get by moving from multi-functional\
+            \ DOM to powerful WebGL, enough to open correct pages of documentation or find code pieces when you see artifacts\
+            \ that shouldn't be there. You also will be confident enough to not miss the path to WOW! you are trying to achieve.\n\
+            \nThe talk has parallels between DOM/CSS/SVG, canvas2d and WebGL, but its focus is on WebGL."
+      - language: ru
+        text: "У вас уже есть интересное приложение, но графических возможностей не хватает, чтобы вскрыть весь его потенц\
+            иал. Вы переносите его части на WebGL, включаете код, взятый из красивых демок, но всё стало более квадратным\
+            \ и блеклым. Либо мы что-то упустили, либо WebGL просто не может дать такое же качество — в чём дело?\n\nПосле\
+            \ данного доклада вы станете разбираться в проблемах и ответственности при переходе от многофункционального DOM\
+            \ на сильный WebGL достаточно, чтобы открыть правильные странички документации или кода, когда вы видите стран\
+            ные артефакты, которых быть не должно. А также быть достаточно уверенными, чтобы случайно не пройти мимо «ВАУ\
+            !» ради которого вы осуществляете переход.\n\nВ докладе проводятся параллели между решениями на DOM/CSS/SVG, canvas2d\
+            \ и WebGL, фокус, конечно, на последнем."
+    talkDay: 1
+    trackTime: "17:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/51hxZooo6cQ4ChZzPKo3bW/7c8dc89e521718252a1de1ad4ab7998f/HolyJS_WebGL-PixiJS.pdf"]
+    videoLinks: []
     speakerIds: [1026]
   - id: 182
     name:
       - {language: en, text: "Can computer pray for the benefit of all living beings? Praying with JavaScript and WebGL"}
       - {language: ru, text: "Может ли компьютер молиться на благо всех живых существ? Молитва на JavaScript и WebGL"}
+    shortDescription:
+      - {language: en, text: "It seems that technologies and theology cannot be connected in any way — these are two completely\
+            \ different areas. Denis will probe that it's wrong and will show how he made the computer pray."}
+      - {language: ru, text: "Кажется, что технологии и теология никак не могут быть связаны — это две абсолютно разные об\
+            ласти. Денис докажет, что это не так, и покажет, как заставил компьютер молиться."}
+    longDescription:
+      - {language: en, text: "Can computer pray in any of established religious traditions? The talk is an outcome of few\
+            \ years-long research and answers the question through an analysis of theological and cultural Tibetan texts then,\
+            \ includes technical details on the implementation of ReactJS + WebGL app which can pray or help us in praying.\
+            \ As a wrap-up interview with Tibetan Buddhist monastery monk about the application. Interview conducted during\
+            \ an expedition author organized on purpose to research if we can pray using JavaScript."}
+      - {language: ru, text: "Может ли компьютер молиться в одной из существующих религиозных традиций? Доклад базируется\
+            \ на исследовании длиной в несколько лет и отвечает на этот вопрос, дает теоретическую основу, анализ теологич\
+            еских и культурных текстов, детали имплементации ReactJS + WebGL приложения, которое может молиться само или п\
+            омочь вам в молитве. В конце увидим интервью с тибетским монахом о данном приложении, которое автор взял в спе\
+            циально организованную экспедицию."}
+    talkDay: 1
+    trackTime: "19:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [711]
   - id: 183
     name:
       - {language: en, text: "Compiler development for TypeScript on TypeScript based on LLVM"}
       - {language: ru, text: "Разработка компилятора для TypeScript на TypeScript на базе LLVM"}
+    shortDescription:
+      - {language: en, text: "The real story about how in a distant cold St. Petersburg a brave developer is trying to write\
+            \ a compiler for TypeScript."}
+      - {language: ru, text: "Реальная история о том, как в далеком холодном Санкт-Петербурге отважный разработчик пытаетс\
+            я написать компилятор для TypeScript."}
+    longDescription:
+      - language: en
+        text: "At the beginning of the talk we will cover various architectures from the interpreter to the JIT compiler,\
+            \ find out why we need a bytecode and make the bytecode interpreter from V8 to JS in the browser. Having received\
+            \ the basic ideas, we will dive into the topic of writing a compiler for TypeScript\n\nThis talk will be about:\n\
+            \n- Basic knowledge of interpretations/compilers and bytecode;\n- Architecture of V8/Hermes;\n- Hermes architecture;\n\
+            - Stack/Register based VM;\n- LLVM;\n- Attempting to write a StaticScript v1 compiler;"
+      - language: ru
+        text: "В начале доклада мы затронем различные архитектуры от интерпретатора до JIT-компилятора, узнаем зачем нужен\
+            \ bytecode и сделаем интерпретатор байт-кода от V8 на JS в браузере. Получив базовые представления, мы окунемс\
+            я в тему написания компилятора для TypeScript.\n\nВ докладе будут затронуты такие темы, как:\n\n- Базовые поня\
+            тие про компиляторы/интерпретаторы и bytecode;\n- Архитектура движков V8/Hermes;\n- Стековые/регистровые вирту\
+            альные машины;\n- LLVM;\n- Архитектура Hermes;\n- Попытка написания компилятора StaticScript v1.\n\n> __Коммен\
+            тарий программного комитета:__\n\n>\n\n> *Дмитрий поднимет вопрос о том, можно ли компилировать JS, расскажет\
+            , как писал компилятор из TypeScript в LLVM IR, и что из этого получилось.*"
+    talkDay: 2
+    trackTime: "11:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/4dnzHnvgHQyqpslzZzkWlD/e1dc116fb57e29a424518fd6452b5197/100711_626459496_Dmitriy_Patsura_Razrabotka_kompilyatora_dlya_TypeScript_na_TypeScript_na_baze_LLVM.pdf"]
+    videoLinks: []
     speakerIds: [692]
   - id: 184
     name:
       - {language: en, text: "WebAssembly uncut"}
       - {language: ru, text: "WebAssembly без купюр"}
+    shortDescription:
+      - {language: en, text: "This talk will explain how WebAssembly works and why exactly that way."}
+      - {language: ru, text: "В этом докладе вы узнаете про то, как устроен WebAssembly и почему именно таким образом."}
+    longDescription:
+      - language: en
+        text: "This talk will explain how WebAssembly works and why exactly that way. Speaker will talk about the virtual\
+            \ machine, it's abilities and restrictions, bytecode format, and current implementations. No \"we installed emscripten,\
+            \ compiled something, and now it works somehow\".\n\nAlso, you'll know how WebAssembly increases the performance\
+            \ of Yandex.Maps."
+      - language: ru
+        text: "В этом докладе вы узнаете про то, как устроен WebAssembly и почему именно таким образом. Спикер разберет ви\
+            ртуальную машину, ее возможности и ограничения, формат байткода, текущие реализации. Никаких «мы скачали emscripten\
+            \ и что-то там скомпилировалось и как-то там работает».\n\nА еще спикер расскажет, как WebAssembly ускоряет Ян\
+            декс.Карты."
+    talkDay: 2
+    trackTime: "11:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5jIBFdb072ui43XjdWdnQ4/135f53dc5ef8b6d3e3fc42db63d21ed8/100809_205207388_Andrey_Royenko_WebAssembly_bez_kupyur.pdf"]
+    videoLinks: []
     speakerIds: [1028]
   - id: 185
     name:
       - {language: en, text: "End to end testing a world of web, mobile & desktop apps"}
+    shortDescription:
+      - {language: en, text: "The talk about testing of application that is intended to different platforms."}
+    longDescription:
+      - language: en
+        text: "Things get complicated when your code targets multiple platforms and powers components used on Android, iOS,\
+            \ Mac, Win32 and the web from IE11 and up.\n\nThis is the testing journey of the Profile card serving +100M people\
+            \ in Outlook and Office 365: How we style, test and monitor our components for any hiccups. And boy do they misbehave\
+            \ at times!\n\nStarting with one browser and some open source libraries, we worked our way up, improved the status\
+            \ quo and set a framework that scales our end to end testing across browsers and native applications."
+      - language: ru
+        text: "Things get complicated when your code targets multiple platforms and powers components used on Android, iOS,\
+            \ Mac, Win32 and the web from IE11 and up.\n\nThis is the testing journey of the Profile card serving +100M people\
+            \ in Outlook and Office 365: How we style, test and monitor our components for any hiccups. And boy do they misbehave\
+            \ at times!\n\nStarting with one browser and some open source libraries, we worked our way up, improved the status\
+            \ quo and set a framework that scales our end to end testing across browsers and native applications.\n\n> __К\
+            омментарий программного комитета:__\n\n>\n\n> *Поделится опытом Microsoft тестирования под разные платформы на\
+            чиная с мобильных платформ и заканчивая десктоптными браузерами (от IE11 и выше). Мэттью расскажет про решение\
+            \ противоречия между сложностью и длительностью тестов и максимально быстрым нахождением проблем.*"
+    talkDay: 2
+    trackTime: "11:00"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [1031]
   - id: 186
     name:
       - {language: en, text: "CSS definition syntax"}
+    shortDescription:
+      - {language: en, text: "Don't know what CSS definition syntax is? That's not a problem! In this talk, you will learn\
+            \ about it, and also technical details and interesting architectural solutions."}
+      - {language: ru, text: "Не знаете, что такое CSS definition syntax? Не беда! На этом докладе вы узнаете что это и с\
+            \ чем его едят. Вас ждут погружение в технические детали и интересные архитектурные решения."}
+    longDescription:
+      - language: en
+        text: "CSS is one of the few languages that uses its own language for syntax description — definition syntax. This\
+            \ \"language\" is used in all CSS specifications. \"So what?\" — you thought, — \"I'm don't read specs anyway,\
+            \ I know CSS without it\". It might be true, but Custom Properties came into our life not so long ago. Later it\
+            \ turned out that we needed to describe their value syntax somehow, otherwise an animation will not work. And\
+            \ what was decided to use for this? Definition syntax! Also, CSS Houdini is coming. You can use Paint Worklet\
+            \ already (some browsers supported it), that takes parameters which value syntax is describing in definition syntax\
+            \ (its subset, but still).\n\nDefinition syntax is coming from specs to the code. And knowing it for sure will\
+            \ not be superfluous. How does it works, what tools we have for it? This talk is about it, as usual with deep\
+            \ dive into technical details and interesting architectural solutions."
+      - language: ru
+        text: "CSS один из немногих языков, в которых используется свой внутренний язык для описания своего синтаксиса — definition\
+            \ syntax. Этот «язык» используется во всех CSS спецификациях. «Ну, и что?» — можете подумать вы, — «Я все равн\
+            о не читаю спеки, я и так знаю CSS». Всё может и так, но в нашу жизнь не так давно пришли Custom Properties, а\
+            \ потом встал вопрос, что нужно как-то описывать синтаксис их значений, иначе, например, анимация не работает\
+            . И что придумали использовать для этого? Definition syntax! А еще CSS Houdini на подходе, его уже можно испол\
+            ьзовать, хоть и с оговорками, а также Paint Worklet, принимающий на вход параметры, которые описываются в definition\
+            \ syntax.\n\nDefinition syntax на уровне спек с нами давно, но он проникает все больше на прикладной уровень.\
+            \ И знать его точно не будет лишним. А как он работает, что вообще это за синтаксис такой, откуда ноги растут\
+            , какие для этого есть инструменты? Об этом и будет доклад, как обычно, с погружением в технические детали и и\
+            нтересными архитектурными решениями."
+    talkDay: 2
+    trackTime: "12:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/4LVAp3NYgzpcyJoUyCT8ac/ac9cb0e44d8b237bd471446d57059075/CSS_definition_syntax_____Holyjs_Moscow__19.pdf"]
+    videoLinks: []
     speakerIds: [685]
   - id: 187
     name:
       - {language: en, text: "The art of explicit and consistent user interfaces"}
+    shortDescription:
+      - {language: en, text: "In this talk, Farzad will show how using current tooling isn't the complete solution and how\
+            \ our current approaches lack a whole modeling layer in between and what are the most critical mistakes we make\
+            \ in modeling our user interfaces these days."}
+    longDescription:
+      - language: en
+        text: "There are many reasons why developing user interface is hard. No matter which platform we target or the way\
+            \ we present our UI, the user interface is hard to develop due to different reasons. One of the hardest problems\
+            \ of UI development that has been shining more and more in recent years is the state management.\n\nIn this talk,\
+            \ Farzad will show how using current tooling isn't the complete solution and how our current approaches lack a\
+            \ whole modeling layer in between and what are the most critical mistakes we make in modeling our user interfaces\
+            \ these days. He will demonstrate how this modeling problem can be enhanced using state machines and statecharts\
+            \ in particular."
+      - language: ru
+        text: "There are many reasons why developing user interface is hard. No matter which platform we target or the way\
+            \ we present our UI, the user interface is hard to develop due to different reasons. One of the hardest problems\
+            \ of UI development that has been shining more and more in recent years is the state management.\n\nIn this talk,\
+            \ Farzad will show how using current tooling isn't the complete solution and how our current approaches lack a\
+            \ whole modeling layer in between and what are the most critical mistakes we make in modeling our user interfaces\
+            \ these days. He will demonstrate how this modeling problem can be enhanced using state machines and statecharts\
+            \ in particular.\n\n> __Комментарий программного комитета:__\n\n>\n\n> *Всё больше и больше внимания начинают\
+            \ обращать не просто на управление состоянием, а на то, как делать это более системно. Farzad YousefZadeh же б\
+            удет рассказывать про то, как для этого использовать небольшие стейт-машины на практическом примере с React-пр\
+            иложением.*"
+    talkDay: 2
+    trackTime: "12:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6yMT3gDLlhyDRwfMKKQJFU/1f9d0cd424edbf3a0d046c9b8721998c/100527_1072660984_Farzad_YousefZadeh_The_art_of_explicit_and_consistent_user_interfaces.pdf"]
+    videoLinks: []
     speakerIds: [1041]
   - id: 188
     name:
       - {language: en, text: "Figma to React: design delivery to code"}
       - {language: ru, text: "Figma to React: доставка дизайна в код"}
+    shortDescription:
+      - {language: en, text: "During this session you will learn a lot about Figma, about accelerating and simplifying the\
+            \ delivery of features and design updates, and also about ways to reduce development price."}
+      - {language: ru, text: "В этом докладе слушатели узнают много про Figma, про ускорение и упрощение доставки фич и об\
+            новлений дизайна, а также про способы сокращения стоимости разработки."}
+    longDescription:
+      - language: en
+        text: "In 2019 vendor design teams use design system on graphics editor level. Development team port this system to\
+            \ code using React component approach.  \n\nBut there is a problem. There is no final version of the product.\
+            \ Like there is no final iPhone. Vendor teams develop the product every day. But design and code live in different\
+            \ worlds. We need a constant parallel manual synchronization. \n\nHow to deliver changes from design system to\
+            \ React design system permanently? \n\nFigma is a new design tool. Figma, unlike Sketch, works on the web, in\
+            \ the native environment of component design systems. It has an API. Alexander and Zar will show how to befriend\
+            \ design systems from different worlds."
+      - language: ru
+        text: "В 2019 продуктовые дизайн-команды используют дизайн-систему на уровне графического редактора. Команда разра\
+            ботчиков переносит эту систему в код, используя компонентный подход React.\n\nНо есть проблема. Финальной верс\
+            ии продукта не существует. Как не существует финального айфона. Продуктовые команды ежедневно развивают продук\
+            т. Но дизайн и код живут в разных мирах. Требуется постоянная параллельная синхронизация руками.\n\nКак непрер\
+            ывно доставлять изменения из дизайнерской дизайн-системы в React дизайн-систему?\n\nFigma — это новый дизайн-и\
+            нструмент. Figma в отличие от Sketch работает в вебе, родной среде компонентных дизайн-систем. У нее есть API.\
+            \ Александр и Зар покажут, как подружить дизайн-системы из двух миров."
+    talkDay: 2
+    trackTime: "12:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/14dQ7m3Vo8FkGLgyXXMc22/a1bbb10feac3a50bfe6682510b29a38c/HolyJs_-_Figma_to_React.pdf"]
+    videoLinks: []
     speakerIds: [1034, 1035]
   - id: 189
     name:
       - {language: en, text: "JavaScriptCore, many compilers make this engine perform"}
+    shortDescription:
+      - {language: en, text: "This talk will provide an overview of the WebKit open-source Javascript virtual machine called\
+            \ JavaScriptCore. It will cover how JavaScript source is transformed into bytecode and then executed by the various\
+            \ tiers in the engine."}
+    longDescription:
+      - language: en
+        text: "This talk will provide an overview of the WebKit open source Javascript virtual machine called JavaScriptCore.\
+            \ It will cover how JavaScriptCore transforms JS source into bytecode, and then executes that bytecode using various\
+            \ tiers in the engine. The talk will provide details on the four tiers that execute JS, the purpose of each tier\
+            \ and how code execution moves between those tiers. We’ll also cover how we execute JavaScript, a dynamically\
+            \ typed language, in an optimal way using techniques like speculation, static analysis and profiling.\n\nIf you\
+            \ are curious as to what happens when your code executes and the transformations done to make your code perform\
+            \ well, you don’t want to miss this talk."
+      - language: ru
+        text: "This talk will provide an overview of the WebKit open source Javascript virtual machine called JavaScriptCore.\
+            \ It will cover how JavaScriptCore transforms JS source into bytecode, and then executes that bytecode using various\
+            \ tiers in the engine. The talk will provide details on the four tiers that execute JS, the purpose of each tier\
+            \ and how code execution moves between those tiers. We’ll also cover how we execute JavaScript, a dynamically\
+            \ typed language, in an optimal way using techniques like speculation, static analysis and profiling.\n\nIf you\
+            \ are curious as to what happens when your code executes and the transformations done to make your code perform\
+            \ well, you don’t want to miss this talk.\n\n> __Комментарий программного комитета:__\n\n>\n\n> *Michael расск\
+            ажет о внутреннем устройстве одного из самых быстрых движков для JS — JavaScriptCore.*"
+    talkDay: 2
+    trackTime: "14:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/32DdEHV6USA5hKqfkJnMje/86c9824c131ea4474d6eba7932671c6b/100706_1906701695_Michael_Saboff_JavaScriptCore_Many_Compilers_Make_This_Engine_Perform.pdf"]
+    videoLinks: []
     speakerIds: [1025]
   - id: 190
     name:
       - {language: en, text: "Resilient Component Libraries with React"}
+    shortDescription:
+      - {language: en, text: "Andrey will tell about general architecture principles and React-specific techniques that lead\
+            \ to better components architecture and API design."}
+    longDescription:
+      - language: en
+        text: "In the world where frontend applications are becoming more complex and time constraints tighter, design systems\
+            \ and component libraries are becoming everyday tools for developers to fulfill new business requirements as fast\
+            \ as possible without sacrificing user experience and quality of the product.\nThe truth is, the way your design\
+            \ system and the component library is built will inevitably affect the quality of the application code. If components\
+            \ aren't flexible enough to match business requirements and time constraints, there will be hacks and workarounds\
+            \ — the source of endless bugs and maintenance issues. \nOn the other hand, too much control over markup and styling\
+            \ can lead to inconsistent user interfaces and hurt user experience.\n\nThis talk covers general architecture\
+            \ principles and React-specific techniques that lead to better components architecture and API design and is going\
+            \ to make teams more productive and products are more consistent."
+      - language: ru
+        text: "In the world where frontend applications are becoming more complex and time constraints tighter, design systems\
+            \ and component libraries are becoming everyday tools for developers to fulfill new business requirements as fast\
+            \ as possible without sacrificing user experience and quality of the product.\nThe truth is, the way your design\
+            \ system and the component library is built will inevitably affect the quality of the application code. If components\
+            \ aren't flexible enough to match business requirements and time constraints, there will be hacks and workarounds\
+            \ — the source of endless bugs and maintenance issues. \nOn the other hand, too much control over markup and styling\
+            \ can lead to inconsistent user interfaces and hurt user experience.\n\nThis talk covers general architecture\
+            \ principles and React-specific techniques that lead to better components architecture and API design and is going\
+            \ to make teams more productive and products are more consistent.\n\n> __Комментарий программного комитета:__\n\
+            \n>\n\n> *Кто будет спорить, что дизайн системы — это важно? И вроде бы у всех они есть, но какие-то... не так\
+            ие. Андрей расскажет, как сделать прочный и хороший фундамент для вашей системы. Примечание: часто такие докла\
+            ды «как сделать хорошо» полны воды. Тут же совсем другая история. Приходите — не пожалеете.*"
+    talkDay: 2
+    trackTime: "14:30"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [754]
   - id: 191
     name:
       - {language: en, text: "Contract-based programming as a tool, not a goal"}
       - {language: ru, text: "Контрактное программирование как средство, а не цель"}
+    shortDescription:
+      - {language: en, text: "Artem will explain with understandable terms how with help of contract-based programming simplify\
+            \ all best development tolls: static types, tests, documentation."}
+      - {language: ru, text: "Артем понятным языком расскажет, как с помощью контрактного программирования упростить все л\
+            учшие инструменты разработки: статические типы, тесты, документацию."}
+    longDescription:
+      - language: en
+        text: "What does creating mean? To have an idea? To build something physical? To draw a picture or make a sound?\n\
+            Good support for reliable program execution is contract-based programming because this approach guarantees the\
+            \ correctness of incoming and outgoing data. Artyom will talk about what problems it solves and what creates,\
+            \ how to simplify the development with the help of contract-based programming. In particular, static typing, tests,\
+            \ documentation. We will discuss existing frameworks implemented in JS and dive a little into Artyom's own development\
+            \ — rtcad."
+      - language: ru
+        text: "Отличное подспорье для надежного исполнения программы — контрактное программирование, т.к. этот подход гара\
+            нтирует корректность входящих и исходящих данных. Артем расскажет что это, какие проблемы решает, а какие созд\
+            ает, и как с помощью контрактного программирования сильно упростить разработку. В частности статическую типиза\
+            цию, тесты, документацию. Мы разберем существующие библиотеки, реализованные в JS, и немного погрузимся в собс\
+            твенную разработку Артема — rtcad.\n\n> __Комментарий программного комитета:__\n\n>\n\n> *TypeScript стал стан\
+            дартом в индустрии, и многие заявляют о достаточных гарантиях со стороны данного инструмента. Артем в своем до\
+            кладе опровергнет данное мнение, покажет ключевые недостатки подхода статической типизации с существующими инс\
+            трументами (Flow, TypeScript), а также расскажет о том, как их можно решить, чтобы приложение было максимально\
+            \ надежным.*"
+    talkDay: 2
+    trackTime: "14:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/45tx7htHbRbFtyVYmgLsvo/0fb2d02cac784094b744b8c173077c24/100710_517459704_Artm_Arutyunyan_Kontraktnoye_programmirovaniye_kak_sredstvo_a_ne_tsel.pdf"]
+    videoLinks: []
     speakerIds: [1036]
   - id: 192
     name:
-      - {language: en, text: "Computability, types, tests, and why flat-earthers are bad at QA"}
+      - {language: en, text: "Computability types tests and why flatearthers are bad at QA"}
+      - {language: ru, text: "Computability, types, tests, and why flat-earthers are bad at QA"}
+    shortDescription:
+      - {language: en, text: "Lucas will compare physics and mathematics principles with programming and explain what tools\
+            \ we should use to make our code and tests work better."}
+    longDescription:
+      - language: en
+        text: "When an apple hit Newton’s head, he couldn’t prove all apples would do the same, but he could prove they wouldn’\
+            t. When we write tests, we cannot prove our code works, we can only prove it doesn’t. Types complement tests like\
+            \ mathematics complement physics, in this talk we’ll see why, and how.\n\nThis talk is as much of a journey through\
+            \ epistemology as it is a journey through software testing. How can we prove correctness is not the right question\
+            \ to ask. The right question to ask is: \"Can we ever prove correctness?\"\n\nWe’ll explore and compare the parallels\
+            \ between mathematics and physics, and types and tests. If physics cannot prove its theories are truthful, why\
+            \ do we believe it? We believe it for the same reason we believe in tests: we make observations, create models\
+            \ and check if reality matches our assumptions. When we have a formal system with well-defined rules, such as\
+            \ we have in mathematics, things change: truth is now attainable. We’ll explore the most brilliant ideas in the\
+            \ field of computer science and see how they can be applied to make better software, faster, with fewer bugs.\n\
+            \nGoing beyond theory, we’ll see how we can better use TypeScript’s features to make impossible states indeed\
+            \ impossible by using generics, conditional types, intersection and union types, discriminated unions and exhaustiveness\
+            \ checking and many others, after all, since TypeScript is Turing Complete, with it we can write any program that\
+            \ has ever been written or that will ever be written.\n\nGetting even more practical, we’ll see what testing tools\
+            \ are available to us and how they complement each other: we’ll dig deep in the differences between how these\
+            \ tools work so that we can make informed choices about them and what is the role of each. We’ll talk about the\
+            \ difference between the different kinds of tests, end-to-end tests, snapshot testing, serializers, mocks, stubs,\
+            \ spies, and tight and loose assertions. Whenever necessary, we’ll go into the source code of some of JavaScript’\
+            s most popular libraries to show you all the mind-blowing minutiae in the way they have been implemented."
+      - language: ru
+        text: "When an apple hit Newton’s head, he couldn’t prove all apples would do the same, but he could prove they wouldn’\
+            t. When we write tests, we cannot prove our code works, we can only prove it doesn’t. Types complement tests like\
+            \ mathematics complement physics, in this talk we’ll see why, and how.\n\nThis talk is as much of a journey through\
+            \ epistemology as it is a journey through software testing. How can we prove correctness is not the right question\
+            \ to ask. The right question to ask is: \"Can we ever prove correctness?\"\n\nWe’ll explore and compare the parallels\
+            \ between mathematics and physics, and types and tests. If physics cannot prove its theories are truthful, why\
+            \ do we believe it? We believe it for the same reason we believe in tests: we make observations, create models\
+            \ and check if reality matches our assumptions. When we have a formal system with well-defined rules, such as\
+            \ we have in mathematics, things change: truth is now attainable. We’ll explore the most brilliant ideas in the\
+            \ field of computer science and see how they can be applied to make better software, faster, with fewer bugs.\n\
+            \nGoing beyond theory, we’ll see how we can better use TypeScript’s features to make impossible states indeed\
+            \ impossible by using generics, conditional types, intersection and union types, discriminated unions and exhaustiveness\
+            \ checking and many others, after all, since TypeScript is Turing Complete, with it we can write any program that\
+            \ has ever been written or that will ever be written.\n\nGetting even more practical, we’ll see what testing tools\
+            \ are available to us and how they complement each other: we’ll dig deep in the differences between how these\
+            \ tools work so that we can make informed choices about them and what is the role of each. We’ll talk about the\
+            \ difference between the different kinds of tests, end-to-end tests, snapshot testing, serializers, mocks, stubs,\
+            \ spies, and tight and loose assertions. Whenever necessary, we’ll go into the source code of some of JavaScript’\
+            s most popular libraries to show you all the mind-blowing minutiae in the way they have been implemented.\n\n\
+            > __Комментарий программного комитета:__\n\n>\n\n> *Какое отношение тесты имеют к экспериментам в физике? Лука\
+            с решил зайти с философии и охватить все известные на данный момент аспекты тестирования: юнит-тесты, E2E, тип\
+            ы, спапшоты, и не только.*"
+    talkDay: 2
+    trackTime: "16:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/4RFNb581dQas7SCIh0EL5C/b09f954e9c7ff9a8eb3c63ff8fe669b6/typesvstests.pdf"]
+    videoLinks: []
     speakerIds: [659]
   - id: 193
     name:
       - {language: en, text: "I'll grab all the data from you and you won’t even know about it. I am a browser extension"}
       - {language: ru, text: "Я заберу у тебя все данные и ты об этом даже не узнаешь. Я — браузерное расширение"}
+    shortDescription:
+      - {language: en, text: "Nikita will tell how browser plug-in works, what components it has and what restrictions they\
+            \ have, how plug-ins can \"attack\" users and websites, and more."}
+      - {language: ru, text: "Никита расскажет о том, как работает браузерный плагин, какие у него составляющие и какие ог\
+            раничения они имеют, каким образом плагины могут «атаковать» пользователей и веб-сайты, и еще много чего интер\
+            есного."}
+    longDescription:
+      - language: en
+        text: "Let's take a look at the browser address bar. How many extensions do you have?\nBrowser extensions can use\
+            \ permissions, content and background scripts to get almost full access to web-pages. Such mechanisms are used\
+            \ by almost any extension: adblockers, dev tools, etc.\nExtensions can collect user data, parse phones and emails\
+            \ and put them in spam databases. Also, extensions can show their own ads on other websites.\nThe worst thing\
+            \ is that neither user nor website developers can find out it. In what environment are browser extensions executed?\
+            \ How can we detect this? Are we able to do it? How can we defend ourselves?\nLet's dive into this arms race."
+      - language: ru
+        text: "Давайте посмотрим на адресную панель браузера. Сколько расширений у вас стоит?\nБраузерные расширения через\
+            \ механизм permissions, content и background scripts могут получить почти полный доступ к веб-страницам. Подоб\
+            ные механизмы использует практически любое расширение: блокировщики рекламы, dev tools и т.д. \nРасширения мог\
+            ут собирать данные о пользователе, парсить телефоны и email и заносить их в спам базы. А могут наоборот, показ\
+            ывать свою рекламу на чужих веб-сайтах. \nСамое страшное — это то, что ни пользователь, ни разработчики сайта\
+            , на котором хозяйничает расширение, об этом не узнают. В каком окружении исполняются браузерные расширения? К\
+            ак мы можем отслеживать это? Можем ли? А как можем защищаться? \nДавайте окунемся в эту гонку вооружений, где\
+            \ разработчики веб-сайтов являются догоняющими.\n\n> __Комментарий программного комитета:__\n\n>\n\n> *В докла\
+            де будут рассмотрены проблемы, которые приносят браузерные расширения в жизнь пользователей и разработчиков. Н\
+            икита, как разработчик, который и делал браузерные расширения, и оборонялся от них, расскажет кучу нюансов и п\
+            роблем, начиная от разработки, заканчивая безопасностью.*"
+    talkDay: 2
+    trackTime: "16:30"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [1033]
   - id: 194
     name:
       - {language: en, text: "i18n the principles for an accessible web"}
+    shortDescription:
+      - {language: en, text: "How to make the web accessible by people of all ages and races speaking different languages."}
+    longDescription:
+      - language: en
+        text: "The main goal of the talk is to show how to make the web accessible by all people of all ages, from all races\
+            \ speaking different languages, because i18n should be part of a11y.\n\nThe JS land in the browser does not offer\
+            \ an API that promotes the MessageFormat. This means that a big percentage of developers writes their contents\
+            \ in English just because is the easiest way to be global, or they end up using a library that does the job of\
+            \ i18n and l10n for them.\n\nThe talk will show how a unique API can make the web more accessible and enhance\
+            \ the development experience.\n\nMain Topics:\n\n- actual i18n, l10n landscape in web (Node, Android, iOS);\n\
+            - actual developer experience;\n- how many libraries exist to solve this problem and how they try to solve them;\n\
+            - we need Intl.MessageFormat?\n- how many people know from actual Intl. API's that solves some of these issues.\
+            \ (code samples of API);\n- the future (impact that Intl.messageFormat would have in Javascript);\n- scaling Intl.MessageFormat/ICU\
+            \ to be cross-platform."
+      - language: ru
+        text: "The main goal of the talk is to show how to make the web accessible by all people of all ages, from all races\
+            \ speaking different languages, because i18n should be part of a11y.\n\nThe JS land in the browser does not offer\
+            \ an API that promotes the MessageFormat. This means that a big percentage of developers writes their contents\
+            \ in English just because is the easiest way to be global, or they end up using a library that does the job of\
+            \ i18n and l10n for them.\n\nThe talk will show how a unique API can make the web more accessible and enhance\
+            \ the development experience.\n\nMain Topics:\n\n- actual i18n, l10n landscape in web (Node, Android, iOS);\n\
+            - actual developer experience;\n- how many libraries exist to solve this problem and how they try to solve them;\n\
+            - we need Intl.MessageFormat?\n- how many people know from actual Intl. API's that solves some of these issues.\
+            \ (code samples of API);\n- the future (impact that Intl.messageFormat would have in Javascript);\n- scaling Intl.MessageFormat/ICU\
+            \ to be cross-platform.\n\n> __Комментарий программного комитета:__\n\n>\n\n> *Представитель TC39 раскроет тем\
+            у интернационализации. Проблема актуальна для многих разработчиков и поэтому имеет много решений. У вас есть ш\
+            анс узнать про то, какие варианты есть сейчас, и в каком виде эту проблему собираются решать средствами нового\
+            \ API в самом JavaScript.*"
+    talkDay: 2
+    trackTime: "16:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/4jLRIu55jEaulqhi0iAoOI/4b5a4aa5b1f0677d6513cfcadde7afdf/i18n_the_principles_for_an_accessible_web.pdf"]
+    videoLinks: []
     speakerIds: [1030]
   - id: 195
     name:
       - {language: en, text: "JavaScript in service to theoretical computer science"}
       - {language: ru, text: "JavaScript на службе у теоретической информатики"}
+    shortDescription:
+      - {language: en, text: "We'll talk about one approach to the study of theoretical informatics (and more specifically,\
+            \ the theory of algorithms), in which programming in JavaScript becomes the main activity of the student. We will\
+            \ walk through the main sections of the theory and see how Javascript can help us there."}
+      - {language: ru, text: "Виталий расскажет об одном подходе к изучению теоретической информатики (а конкретнее, теори\
+            и алгоритмов), при котором программирование на JavaScript становится основным видом деятельности учащегося. Та\
+            кже пройдёмся по основным разделам теории и посмотрим, чем нам там поможет JavaScript."}
+    longDescription:
+      - language: en
+        text: "A wide variety of tools can be used to study theoretical computer science. Perhaps, most of the time the induction\
+            \ theorems are to be proved, yet there is always a place for programming.\n\nIn this talk, we'll discuss one approach\
+            \ to the study of theoretical informatics (and more specifically, the theory of algorithms), in which programming\
+            \ in JavaScript becomes the main activity of the student. We will walk through the main sections of the theory\
+            \ and see how Javascript can help us.\n\nTo start with, we'll introduce three calculation models (λ calculation,\
+            \ recursive functions and Turing machines), spin them a little to understand what is what, and then try to apply\
+            \ to the theory of computability (where the existence of insoluble problems is proved) and the theory of complexity\
+            \ of calculations (where the problems are classified by the resources level required to solve them — time and\
+            \ memory). Not that Javascript allows you to do basic work in theoretical computer science, but it is able to\
+            \ illustrate important concepts and techniques, and that's exactly what we'll use it for. There will also be a\
+            \ lot of programming exercises. In Javascript! Join us in learning theoretical computer science with our favorite\
+            \ programming language!"
+      - language: ru
+        text: "При изучении теоретической информатики можно использовать самые разнообразные инструменты. Пожалуй, чаще вс\
+            его нужно доказывать теоремы по индукции, но программированию место тоже можно найти. \n\nВ этом докладе мы ра\
+            сскажем об одном подходе к изучению теоретической информатики (а конкретнее, теории алгоритмов), при котором п\
+            рограммирование на JavaScript становится основным видом деятельности учащегося. Мы пройдёмся по основным разде\
+            лам теории и посмотрим, чем нам там поможет Javascript. \n\nДля начала мы введём три модели вычислений (λ-исчи\
+            сление, рекурсивные функции и машины Тьюринга), покрутим их немного, чтобы разобраться, что к чему, а потом по\
+            пробуем применить к теории вычислимости (там доказывают существование неразрешимых задач) и теории сложности в\
+            ычислений (там классифицируют задачи по объёмам требуемых для их решения ресурсов — времени и памяти). Не то ч\
+            тобы Javascript позволяет проделывать основную работу в рамках теоретической информатики, но вот иллюстрироват\
+            ь важные понятия и приёмы он точно способен, именно для этого мы им и воспользуемся. А ещё будет много упражне\
+            ний по программированию. На Javascript! Все на изучение теоретической информатики с нашим любимым языком прогр\
+            аммирования!\n\n> __Комментарий программного комитета:__\n\n>\n\n> *Фундаментальный доклад от человека, которы\
+            й вращается в академической среде и в курсе всех последних тенденций теории языков программирования и теоретич\
+            еской информатики. Виталий расскажет про то, как строятся вычисления в любом языке, поведает про машину тьюрин\
+            га, лямбда-исчисление и т.д.*"
+    talkDay: 2
+    trackTime: "18:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/33r82kADTtOrW3kLOA3F3S/8dd04918fead0eaa945358ef7ee44b8a/100639_1687246118_Vitaliy_Bragilevskiy_JavaScript_na_sluzhbe_u_teoreticheskoy_informatiki.pdf"]
+    videoLinks: []
     speakerIds: [1018]
   - id: 196
     name:
       - {language: en, text: "The battle of the event loops"}
+    shortDescription:
+      - {language: en, text: "A comprehensive comparison of the libuv and tokio event loops alongside a discussion of the\
+            \ different cases in which either outshine the other."}
+    longDescription:
+      - language: en
+        text: "We all love a good event loop. The libuv event loop has to be one of the most discussed topics when it comes\
+            \ to Node.js. That said, there’s a new kid on the block, with a completely different approach to asynchrony that\
+            \ challenges some of the common underlying assumptions people make when thinking about how asynchrony works under\
+            \ the hood. \n\nUjjwal will discuss both external and internal aspects of libuv, comparing them to those of tokio,\
+            \ the event loop that powers deno, with a special emphasis on performance. We will discover the cases in which\
+            \ one outperforms the other, and how both employ different approaches to solving, essentially, the same problem.\
+            \ \n\nYou will come away with a deep appreciation of event loops, a thorough knowledge of how they work internally,\
+            \ and profound respect for how both projects strive harder each day to make sure JavaScript code is as performant\
+            \ as ever. You will also spot certain patterns which are handled and optimized for differently in both the loops\
+            \ and how to make the best of your favorite runtime."
+    talkDay: 2
+    trackTime: "18:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6DqsijpIFGq2QorhLsC1EZ/f5eca142f52f68fd5efc351eba3b853f/The_battle_of_the_event_loops_copy_2.pdf"]
+    videoLinks: []
     speakerIds: [666]
   - id: 197
     name:
       - {language: en, text: "The (un)needed Either monad in practice and theory"}
       - {language: ru, text: "(Не|ну)жная монада Either на практике и в теории"}
+    shortDescription:
+      - {language: en, text: "Artem and Dmitry will talk about the experience and reasons for introducing monads in production."}
+      - {language: ru, text: "Артём и Дмитрий расскажут об опыте и причинах внедрения монад в продакшн."}
+    longDescription:
+      - {language: en, text: "JavaScript error handling is one of the most controversial issues. Almost every conference offers\
+            \ new architectures and patterns to solve these problems. When you sort out the subject area, you often come across\
+            \ the \"M\" word. Artem and Dmitry will talk about the experience and reasons for introducing monads in production."}
+      - {language: ru, text: "Обработка ошибок в JavaScript — один из самых спорных вопросов. Почти на каждой конференции\
+            \ предлагают новые архитектуры и паттерны для решения этой проблемы. Разбираясь в предметной области, часто на\
+            талкиваешься на слово на букву «М». Артём и Дмитрий расскажут об опыте и причинах внедрения монад в продакшн."}
+    talkDay: 2
+    trackTime: "18:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/1BT8eyj61TlZB9MsGm8U17/c14a399dd398a20304f8b1237ef91cca/Kobzar_Makhnev_Either_monad.pdf"]
+    videoLinks: []
     speakerIds: [710, 670]
   - id: 198
     name:
       - {language: en, text: "Career efficiency and career path in IT"}
       - {language: ru, text: "Карьерная эффективность и карьерный путь в ИТ"}
+    shortDescription:
+      - {language: en, text: "Dmitry will speak about a career in IT and all related to that."}
+      - {language: ru, text: "Дмитрий подробно расскажет про карьеру в ИТ и всё, что с этим связано."}
+    longDescription:
+      - language: en
+        text: "- What is career efficiency;\n- The Sims model as a realistic metaphor;\n- Career stages and crisis;\n- Career\
+            \ stage matrix;\n- How does this happen in IT or by skipping steps."
+      - language: ru
+        text: "- Что такое карьерная эффективность;\n- Модель The Sims как реалистичная метафора;\n- Карьерные этапы и кри\
+            зисы;\n- Матрица карьерных этапов;\n- Как это происходит в ИТ или перескакивая через ступеньки.\n\n> __Коммент\
+            арий программного комитета:__\n\n>\n\n> *Дмитрий Волошин расскажет про путь, по которому можно идти в своей ка\
+            рьере, в своём развитии, как и на что обращать внимание при переходе со ступеньки на ступеньку. И казалось бы\
+            , причем тут слово «ликвидность», как научно подходить к своему собственному развитию? Дмитрий объяснит это.*"
+    talkDay: 2
+    trackTime: "19:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/3M7bRovACHMgO8LZku0xFU/19f118b9f3e75539fe09f47014da22da/wlb_jug_design.pdf"]
+    videoLinks: []
     speakerIds: [1020]
   - id: 199
     name:
@@ -38621,3 +39460,47 @@ talks:
     presentationLinks: []
     videoLinks: []
     speakerIds: [920]
+  - id: 1345
+    name:
+      - {language: en, text: "TC39 Panel"}
+    shortDescription: []
+    longDescription:
+      - language: en
+        text: "TC39 is the standards committee that designs the JavaScript language (sometimes called ECMAScript). The panel\
+            \ will feature a range of committee members is your chance to ask questions about the past, present and future\
+            \ of JavaScript!\n\n__Submitting a Question__\nTo submit a question to the panel, please send it by <a href=\"\
+            https://docs.google.com/forms/d/e/1FAIpQLScKmDXMu8E77U4iCcvLIzGg6eJ9_oIBkE_3oGpVfBmn9nxGzg/viewform?usp=sf_link\"\
+            \ target=\"_blank\">google form</a> or just tweet us mentioning @HolyJSconf and #tc39panel.\n\nEverybody can submit\
+            \ a question, no conference ticket necessary!"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [1078]
+  - id: 1346
+    name:
+      - {language: en, text: "Conditional modules & dynamic bundling, a Netflix original"}
+    shortDescription:
+      - {language: en, text: "We learn about how team at Netflix hacked Webpack, leveraged Abstract Syntax Tree (AST) to identify\
+            \ conditional dependencies in dependency graph and glued them all together to build a highly scalable, server-side\
+            \ JS and CSS bundler, that serves these unique user experiences to millions of Netflix customers across the globe."}
+    longDescription:
+      - language: en
+        text: "Netflix runs hundreds of A/B tests a year and we have seen exponential growth in variations of user experiences\
+            \ we serve to our Netflix users. Pre-publishing these millions of variations of the UI bundles to allow for these\
+            \ unique experiences, was not possible at Netflix’s scale.\n\nSo what did we do?\n\nWe built our own \"Conditional\
+            \ Module Bundler\" on top of Webpack. \nThis talk gives a sneak peek at how Netflix uses \"conditional dependency\
+            \ graph\" and \"runtime dynamic bundling\" to generate and deliver unique UI bundles directly at runtime. The\
+            \ audience will also get to know about the challenges involved and the lessons learned while building such a system.\n\
+            \nLearn about how we hacked Webpack for our needs, leveraged Abstract Syntax Tree (AST) to identify conditional\
+            \ dependencies in our dependency graph and glued them all together to build a highly scalable, server-side JS\
+            \ and CSS bundler, that serves these unique user experiences to millions of Netflix customers across the globe."
+    talkDay: 2
+    trackTime: "18:00"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [1079]
