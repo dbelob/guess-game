@@ -32175,3 +32175,873 @@ talks:
     presentationLinks: []
     videoLinks: ["https://youtu.be/goSz5radB7U"]
     speakerIds: [260]
+  - id: 1279
+    name:
+      - {language: en, text: "Deno, a new way to JavaScript"}
+    shortDescription:
+      - {language: en, text: "Deno is a new runtime for JavaScript and TypeScript."}
+    longDescription:
+      - {language: en, text: "From async-await to ArrayBuffers, the JavaScript language has changed significantly in the decade\
+            \ since Node.js was designed. Deno takes advantage of these developments and incorporate lessons learned in the\
+            \ development of Node to provide a new general purpose scripting environment built on V8 and Rust. This talk will\
+            \ teach the audience how to get started with Deno."}
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/HjdJzNoT_qg"]
+    speakerIds: [552]
+  - id: 1280
+    name:
+      - {language: en, text: "ApolloClient or Relay with fragments, \"hairy\" GraphQL and TypeScript — all we need for proper\
+            \ static analysis of a React application"}
+      - {language: ru, text: "ApolloClient или Relay с фрагментами, «волосатый» GraphQL и TypeScript — всё, что нужно для\
+            \ правильного статического анализа React-приложения"}
+    shortDescription:
+      - {language: en, text: "Pavel will start with an overview of Apollo Client's and Relay architecture. He'll tell what\
+            \ \"hairy\" GraphQL is, how it can be useful and what are the differences between it and RestQL. He'll show how\
+            \ to use GraphQL correctly on the client side in react-apollo, how to write bottom-up queries over fragments (just\
+            \ like in Facebook). Then he'll match it with TypeScript to get hardcore enterprise static analysis."}
+      - {language: ru, text: "В начале Павел разберет архитектуру Apollo Client'а и Relay. Расскажет, что такое «волосатый\
+            » GraphQL, чем он полезен и чем отличается от RestQL. Покажет, как правильно использовать GraphQL на стороне к\
+            лиента в react-apollo, как писать запросы снизу вверх через фрагменты (прямо как в Фейсбуке). Все это дело под\
+            ружит с TypeScript'ом, чтоб получить суровый энтерпрайзный статический анализ."}
+    longDescription:
+      - language: en
+        text: "Pavel will start with an overview of Apollo Client's and Relay's architectures. He'll tell what \"hairy\" GraphQL\
+            \ is, how it can be useful and what are the differences between it and RestQL. He'll show how to use GraphQL correctly\
+            \ on the client side in react-apollo, how to write bottom-up queries over fragments (just like in Facebook). Then\
+            \ he'll match it with TypeScript to get hardcore enterprise static analysis.\n\nPavel is sure that 90% of ApolloClient\
+            \ users haven't got the slightest idea what fragments are really capable of."
+      - language: ru
+        text: "В начале Павел разберет архитектуру Apollo Client'а и Relay. Расскажет, что такое «волосатый» GraphQL, чем\
+            \ он полезен и чем отличается от RestQL. Покажет, как правильно использовать GraphQL на стороне клиента в react-apollo,\
+            \ как писать запросы снизу вверх через фрагменты (прямо как в Фейсбуке). Все это дело подружит с TypeScript'ом\
+            , чтоб получить суровый энтерпрайзный статический анализ.\n\nПавел уверен, что 90% пользователей ApolloClient'а\
+            \ даже не догадываются о всей мощи фрагментов."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/VdoPraj0QqU"]
+    speakerIds: [660]
+  - id: 1281
+    name:
+      - {language: en, text: "Error handling: doing it right!"}
+    shortDescription:
+      - {language: en, text: "A journey into the asynchronous debugging horrors, how to avoid them and what patterns can be\
+            \ used to ease the life of each developer debugging applications."}
+    longDescription:
+      - language: en
+        text: "A journey into the asynchronous debugging horrors, how to avoid them and what patterns can be used to ease\
+            \ the life of each developer debugging applications.\r\n\r\nWe all have run into issues debugging JavaScript.\
+            \ Knowing what went wrong due to missing stack traces in asynchronous contexts and finding the actual issue takes\
+            \ way too long. Especially code with promises can be tedious to debug. Following best practices in error handling\
+            \ reduces debugging time and improves the code base a lot!"
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *В докладе Ruben рассмотрит огромное количество разных момен\
+            тов и best practices, касающихся обработки ошибок в ваших приложениях, написанных на JS.*\n\nA journey into the\
+            \ asynchronous debugging horrors, how to avoid them and what patterns can be used to ease the life of each developer\
+            \ debugging applications.\n\nWe all have run into issues debugging JavaScript. Knowing what went wrong due to\
+            \ missing stack traces in asynchronous contexts and finding the actual issue takes way too long. Especially code\
+            \ with promises can be tedious to debug. Following best practices in error handling reduces debugging time and\
+            \ improves the code base a lot!"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6mtehQ3oGlucgD3yxfSxpe/39a5cd1671a7c788b52773a4490a1914/Ruben_Bridgewater_Error_handling_doing_it_right.pdf"]
+    videoLinks: ["https://youtu.be/bJ3glfA-jqo"]
+    speakerIds: [672]
+  - id: 1282
+    name:
+      - {language: en, text: "Stranger testing"}
+      - {language: ru, text: "Очень странное тестирование"}
+    shortDescription:
+      - {language: en, text: "Classic example-based testing has a lot of flaws. Nazim will consider the advantages of another\
+            \ approach — property-based testing. He will start from the simple mathematical functions, gradually making his\
+            \ examples more and more complex up to real-life examples."}
+      - {language: ru, text: "Классическое тестирование на основе примеров имеет много недостатков. Назим рассмотрит преим\
+            ущества другого подхода — тестирования на основе свойств. Он начнёт с простых математических функций, постепен\
+            но усложняя образцы до примеров из реальной жизни."}
+    longDescription:
+      - language: en
+        text: "Classic example-based testing has a lot of flaws: for instance, tests don't cover all possible options of using\
+            \ a function.\n\nIn this talk, Nazim will consider the advantages of another approach — property-based testing.\
+            \ He will start from the simple mathematical functions, gradually making his examples more and more complex up\
+            \ to real-life examples."
+      - language: ru
+        text: "Классическое тестирование на основе примеров имеет много недостатков: например, тесты не покрывают все вари\
+            анты использования функции.\n\nВ докладе Назим рассмотрит преимущества другого подхода — тестирования на основ\
+            е свойств. Он начнёт с простых математических функций, постепенно усложняя образцы до примеров из реальной жиз\
+            ни."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/5brr3qLfo8lTUUQtbOW4CO/3d99f76706c79ea8f404e4137e3a35c6/Nazim_Gafarov_Ochen_strannoye_testirovaniye.pdf"]
+    videoLinks: ["https://youtu.be/H-cBhNMxlCw"]
+    speakerIds: [671]
+  - id: 1283
+    name:
+      - {language: en, text: "Chrome DevTools protocol"}
+      - {language: ru, text: "Протокол Chrome DevTools"}
+    shortDescription:
+      - {language: en, text: "Alexey will tell about DevTools Protocol, which parts of it you can use to build your own tools\
+            \ for Node.js and how you can do it. In addition to that, he will show how to write your own plugin for ndb, to\
+            \ get a convenient GUI for your tool as well."}
+      - {language: ru, text: "Алексей расскажет о DevTools Protocol и о том, как и какие его части можно использовать для\
+            \ того, чтобы делать свои инструменты для Node.js. Кроме того, он покажет, как написать свой плагин для ndb, ч\
+            тобы получить еще и удобный GUI для нового инструмента."}
+    longDescription:
+      - language: en
+        text: "This talk deals with present and future of tools for Node.js. \n\nAlexey will tell about DevTools Protocol,\
+            \ which parts of it you can use to build your own tools for Node.js and how you can do it. To illustrate his words,\
+            \ he will show how to measure code coverage, using only the protocol.\n\nIn addition to that, he will show how\
+            \ to write your own plugin for ndb, to get a convenient GUI for your tool as well."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *В наше время Chrome DevTools является обязательным инструме\
+            нтом в руках веб-разработчика. Тем не менее не все понимают его гибкость и не все пользуются возможностью его\
+            \ дорабатывать и самостоятельно делать инструменты, которые помогут лучше работать с нашим кодом. Давайте это\
+            \ исправим ;)*\n\nДоклад посвящен настоящему и будущему инструментов для Node.js. \n\nАлексей расскажет о DevTools\
+            \ Protocol и о том, как и какие его части можно использовать для того, чтобы делать свои инструменты для Node.js.\
+            \ В качестве примера он покажет, как можно измерить покрытие кода, используя только протокол. \n\nДополнительн\
+            о Алексей расскажет, как можно написать свой плагин для ndb, чтобы получить еще и удобный GUI для нового инстр\
+            умента."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/79LNrnTK4OMG7UMV6gy4Be/d359c0336ea2ef388936040bf87e5a99/Aleksey_Kozyatinskiy_Protokol_Chrome_DevTools.pdf"]
+    videoLinks: ["https://youtu.be/z0TP-9QSdHI"]
+    speakerIds: [655]
+  - id: 1284
+    name:
+      - {language: en, text: "Scaling a React component library — building a design language for 500+ web applications"}
+    shortDescription:
+      - {language: en, text: "This talk discusses the process of building an unified design language and designing a high-quality\
+            \ library of reusable, composable, themeable, and highly customizable React components."}
+    longDescription:
+      - language: en
+        text: "Duplication of code and inconsistent design and experience are major issues across web applications. This talk\
+            \ discusses the process of building an unified design language and designing a high-quality library of reusable,\
+            \ composable, themeable, and highly customizable React components.\n\nNadiia will share what they learned from\
+            \ their previous experience building a component library. She'll share ways to design components for wide adoption\
+            \ and will define the major areas to consider when architecting reusable building blocks. And finally, she'll\
+            \ share how to make web applications more accessible by leveraging reusable WCAG-compliant UI components."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Кто создавал библиотеки компонентов? Много кто. Кто создава\
+            л библиотеки таких размеров? Рассказ про удачные (и не только) решения при разработке гибкой библиотеки компон\
+            ентов и про то, что дает то или иное решение.*\n\nDuplication of code and inconsistent design and experience are\
+            \ major issues across web applications. This talk discusses the process of building an unified design language\
+            \ and designing a high-quality library of reusable, composable, themeable, and highly customizable React components.\n\
+            \nNadiia will share what they learned from their previous experience building a component library. She'll share\
+            \ ways to design components for wide adoption and will define the major areas to consider when architecting reusable\
+            \ building blocks. And finally, she'll share how to make web applications more accessible by leveraging reusable\
+            \ WCAG-compliant UI components."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/mlLTA1fjSew"]
+    speakerIds: [657]
+  - id: 1285
+    name:
+      - {language: en, text: "\U0001f680 PDF printing"}
+      - {language: ru, text: "Реактивная печать PDF \U0001f680"}
+    shortDescription:
+      - {language: en, text: "What should you do when you need to print pretty PDF files very quickly and to a good quality?\
+            \ Or when you're required to make PDF previewable before printing with an online editing option?"}
+      - {language: ru, text: "Что делать, когда нужно очень быстро и качественно печатать красивые PDF-файлы? А что, если\
+            \ поступила задача сделать предпросмотр PDF перед печатью с возможностью онлайн-редактирования?"}
+    longDescription:
+      - {language: en, text: "Sooner or later developers face PDF printing: regular pages, bills, and contracts. There are\
+            \ a lot of solutions which do their job fairly well. But what should you do when you need to print pretty PDF\
+            \ files very quickly and to a good quality? Or when you're required to make PDF previewable before printing with\
+            \ an online editing option?"}
+      - {language: ru, text: "Рано или поздно разработчикам приходится сталкиваться с печатью в PDF: обычные страницы, сче\
+            та и договора. Есть множество текущих решений, которые вполне выполняют свою задачу. Но что делать, когда нужн\
+            о очень быстро и качественно печатать красивые PDF-файлы? А что, если поступила задача сделать предпросмотр PDF\
+            \ перед печатью с возможностью онлайн-редактирования?"}
+    talkDay: 1
+    trackTime: "14:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/799tqOAML5sZ5iXlqFaAFV/913735af27df3ccddc822aab545efddd/Vitaliy_Slobodin_Reaktivnaya_pechat_PDF_rocket.pdf"]
+    videoLinks: ["https://youtu.be/T5nwBqFGtOM"]
+    speakerIds: [665]
+  - id: 1286
+    name:
+      - {language: en, text: "Recursion has never been invented: A tale of intrigue"}
+    shortDescription:
+      - {language: en, text: "We'll not only explore the very concept of recursion and its mathematical origins but also show\
+            \ how we can implement it without any explicit support, live-coding together we'll reinvent one of the most beautiful\
+            \ ideas in computer science: the Y combinator."}
+    longDescription:
+      - language: en
+        text: "In the cold December of 1959, E.W. Dijkstra — one of the greatest computer scientists of all time — made his\
+            \ first international phone call. In it, he tricked the editor of the Algol 60 committee to explicitly introduce\
+            \ recursion in a programming language for the first time.\n\nThis phone call was never necessary: recursion has\
+            \ never been invented, it has been discovered. In this talk, we'll explain why...\n\nWe'll not only explore the\
+            \ very concept of recursion and its mathematical origins but also show how we can implement it without any explicit\
+            \ support, live-coding together we'll reinvent one of the most beautiful ideas in computer science: the Y combinator.\
+            \ (This was a great source of curiosity and Lucas was asked many questions about it after his <a href=\"https://2018.holyjs-moscow.ru/en/talks/3f0cjbv0rckwecoeq6e6ak/\"\
+            \ target=\"_blank\">talk at HolyJS 2018 Moscow</a> where he mentioned it.)\n\nTo keep it hardcore we'll explore\
+            \ how our engines deal with recursion, talk about the call stack, and demystify concepts such as proper tail calls,\
+            \ tail call optimisation, syntactic tail calls and shadow stacks. Finally, we will see what is the current state\
+            \ of recursion-related features and support in the JS ecosystem and where we're going to.\n\nIf simplicity is\
+            \ the ultimate sophistication, then recursion is the best example of elegance... once you understand it properly."
+      - language: ru
+        text: "In the cold December of 1959, E.W. Dijkstra — one of the greatest computer scientists of all time — made his\
+            \ first international phone call. In it, he tricked the editor of the Algol 60 committee to explicitly introduce\
+            \ recursion in a programming language for the first time.\n\nThis phone call was never necessary: recursion has\
+            \ never been invented, it has been discovered. In this talk, we'll explain why...\n\nWe'll not only explore the\
+            \ very concept of recursion and its mathematical origins but also show how we can implement it without any explicit\
+            \ support, live-coding together we'll reinvent one of the most beautiful ideas in computer science: the Y combinator.\
+            \ (This was a great source of curiosity and Lucas was asked many questions about it after his <a href=\"https://2018.holyjs-moscow.ru/talks/3f0cjbv0rckwecoeq6e6ak/\"\
+            \ target=\"_blank\">talk at HolyJS 2018 Moscow</a> where he mentioned it.)\n\nTo keep it hardcore we'll explore\
+            \ how our engines deal with recursion, talk about the call stack, and demystify concepts such as proper tail calls,\
+            \ tail call optimisation, syntactic tail calls and shadow stacks. Finally, we will see what is the current state\
+            \ of recursion-related features and support in the JS ecosystem and where we're going to.\n\nIf simplicity is\
+            \ the ultimate sophistication, then recursion is the best example of elegance... once you understand it properly."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/FukpDL4-KOg"]
+    speakerIds: [659]
+  - id: 1287
+    name:
+      - {language: en, text: "Creating accessible alerts, notifications and other asynchronous components"}
+      - {language: ru, text: "Создание доступных уведомлений, алёртов и других асинхронных элементов"}
+    shortDescription:
+      - {language: en, text: "Being a developer in 2019 means being able to make beautiful, fast and fully accessible user\
+            \ interfaces. In this talk you will learn how to apply the best accessibility practices when making \"asynchronous\"\
+            \ components and how to test these components with modern assistive technologies."}
+      - {language: ru, text: "Быть разработчиком сегодня означает уметь создавать красивые, быстрые и доступные пользовате\
+            льские интерфейсы. Из этого доклада вы узнаете, как применять лучшие практики доступности при разработке «асин\
+            хронных» компонентов и как тестировать эти компоненты на современных технологиях доступности."}
+    longDescription:
+      - language: en
+        text: "The time of plain web pages and dial-up internet is gone forever. We live in the world where our devices are\
+            \ able to simultaneously operate with tons of data. Tweets, notifications, alert messages, progress bars — all\
+            \ these components appear on the web page asynchronously, which makes the user experience more convenient than\
+            \ ever.\n\nBeing a developer in 2019 means being able to make beautiful, fast and fully accessible user interfaces.\
+            \ In this talk you will learn how to apply the best accessibility practices when making \"asynchronous\" components\
+            \ and how to test these components with modern assistive technologies."
+      - language: ru
+        text: "Время простых сайтов и проводного интернета ушло навсегда. Мы живем в мире, когда наши устройства способны\
+            \ одновременно обрабатывать гигантское количество данных. Твиты, уведомления, алёрты, индикаторы прогресса — в\
+            се эти элементы появляются на веб-страницах асинхронно, что делает пользовательский опыт удобным как никогда.\r\
+            \n\r\nБыть разработчиком сегодня означает уметь создавать красивые, быстрые и доступные пользовательские интер\
+            фейсы. Из этого доклада вы узнаете, как применять лучшие практики доступности при разработке «асинхронных» ком\
+            понентов и как тестировать эти компоненты на современных технологиях доступности."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5bv5fNenasdrYDvC8yELIc/a980a5a8493aeead23b6ddfe8910332c/Sergey_Kriger_Sozdaniye_dostupnykh_uvedomleniy_alrtov_i_drugikh_asinkhronnykh_elementov.pdf"]
+    videoLinks: ["https://youtu.be/XKBjrBxqsfE"]
+    speakerIds: [667]
+  - id: 1288
+    name:
+      - {language: en, text: "Identity verification with ML"}
+    shortDescription:
+      - {language: en, text: "Arkadiy will tell how modern web developers can use the magic of machine learning in their client-side\
+            \ applications, what they should know in order to do that and what tools they can use."}
+      - {language: ru, text: "Аркадий расскажет, как современному веб-разработчику начать использовать магию машинного обу\
+            чения для своих приложений на клиентской стороне, что для этого необходимо знать и какие инструменты доступны\
+            \ для использования."}
+    longDescription:
+      - {language: en, text: "Browser is a wonderful platform that allows developers to carry out their most audacious concepts,\
+            \ such as 3D rendering, working with cryptographical algorithms, working with external devices via Bluetooth,\
+            \ etc. Now machine learning becomes available in the browser, too. So Arkadiy will tell how modern web developers\
+            \ can use the magic of machine learning in their client-side applications, what they should know in order to do\
+            \ that and what tools they can use."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Аркадий покажет практическое применение ML в браузере на пр\
+            имере реального продукта и объяснит, как они это делали, с основ и до продакшна.*\n\nБраузер — это отличная пл\
+            атформа, которая позволяет разработчикам реализовывать даже самые смелые задумки, такие как рендеринг 3D, рабо\
+            та с криптографическими алгоритмами, работа с внешними устройствами через Bluetooth и многие другие. А теперь\
+            \ в браузер проникает и машинное обучение. Именно поэтому Аркадий расскажет, как современному веб-разработчику\
+            \ начать использовать магию машинного обучения для своих приложений на клиентской стороне, что для этого необх\
+            одимо знать и какие инструменты доступны для использования."
+    talkDay: 1
+    trackTime: "16:00"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/wawekVzgqmc"]
+    speakerIds: [675]
+  - id: 1289
+    name:
+      - {language: en, text: "How does a frontend router work? Deep dive with Vue Router"}
+    shortDescription:
+      - {language: en, text: "What is behind a simple and easy-to-use API? Is it really that difficult to create your own\
+            \ SPA router? What are the different approaches and their advantages, caveats? Let's answer all these questions\
+            \ by comparing different routers and taking a deeper dive into Vue Router."}
+    longDescription:
+      - language: en
+        text: "When we develop single-page applications, we have to use a router. Every single framework has its own router,\
+            \ React even has multiple ones you can choose from. And even though each framework is different and every router\
+            \ takes a different approach, they all share the same principles.\n\nWhat is behind a simple and easy-to-use API?\
+            \ Is it really that difficult to create your own SPA router? What are the different approaches and their advantages,\
+            \ caveats?\n\nLet's answer all these questions by comparing different routers and taking a deeper dive into Vue\
+            \ Router."
+    talkDay: 1
+    trackTime: "17:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/1pL41sV0M03dGfz4t9rChZ/49a996dbda7a8daf8db7a52f10e682fb/Eduardo_San_Martin_Morote_How_does_a_frontend_router_work_Deep_dive_with_Vue_Router.pdf"]
+    videoLinks: ["https://youtu.be/CBCQPs0U1sQ"]
+    speakerIds: [658]
+  - id: 1290
+    name:
+      - {language: en, text: "Documenting application behaviours with E2E tests"}
+    shortDescription:
+      - {language: en, text: "This talk will provide step by step guidance to ease the developer burden by letting a simple\
+            \ E2E testing and QA tool do the continuous interactions with the application for you."}
+    longDescription:
+      - language: en
+        text: "Front-end developers normally have their IDE in one window and a running instance of the application in another.\
+            \ They work very interactively discovering and experimenting with their running application in a browser window\
+            \ to ensure it continues to work as expected.\n\nThis talk will provide step by step guidance to ease the developer\
+            \ burden by letting a simple E2E testing and QA tool do the continuous interactions with the application for you.\
+            \ As a result you get a nice suite of tests. You can share these tests with your team members so they can see\
+            \ how the application is supposed to function. Such tests are becoming more and more vital as single developers\
+            \ get shuffled around to different projects to quickly try out new market opportunities."
+    talkDay: 1
+    trackTime: "17:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6Xdphm9yHN1fPmkTBsc5Ma/8a2786d3eed21769a5fa4c1c27c2a6af/Basarat_Ali_Syed_Documenting_application_behaviours_with_E2E_tests.pdf"]
+    videoLinks: ["https://youtu.be/3oCDjj_AtaE"]
+    speakerIds: [668]
+  - id: 1291
+    name:
+      - {language: en, text: "An approach to type-safe development in TypeScript"}
+      - {language: ru, text: "Подход к типобезопасной разработке на TypeScript"}
+    shortDescription:
+      - {language: en, text: "We'll explore an approach to writing type-safe code and toolset for this, as well as benefits\
+            \ and drawbacks of using TypeScript."}
+      - {language: ru, text: "Будет рассмотрен подход к написанию типобезопасного кода и набор инструментов для этого, а т\
+            акже трудности и преимущества использования TypeScript."}
+    longDescription:
+      - {language: en, text: "Supporting architecture of applications with strong typing requires great efforts, and you have\
+            \ to write code you don't actually want to write. In this talk, we'll explore an approach to writing type-safe\
+            \ code and toolset for this, as well as benefits and drawbacks of using TypeScript."}
+      - {language: ru, text: "Поддерживание архитектуры приложений со строгой типизацией требует значительных усилий, прих\
+            одится писать код, который писать не хочется. В докладе будет рассмотрен подход к написанию типобезопасного ко\
+            да и набор инструментов для этого, а также трудности и преимущества использования TypeScript."}
+    talkDay: 1
+    trackTime: "17:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/6p7zVyecC96dGrVuMgFq1t/62a06c1c70f996ddfc2c9caa60882a3a/Dmitriy_Kharitonov_Podkhod_k_tipobezopasnoy_razrabotke_na_TypeScript.pdf"]
+    videoLinks: ["https://youtu.be/_-tSzfGkrew"]
+    speakerIds: [676]
+  - id: 1292
+    name:
+      - {language: en, text: "Promoting open source projects"}
+      - {language: ru, text: "Продвижение опенсорс-проектов"}
+    shortDescription:
+      - {language: en, text: "Andrey Sitnik, author of the famous Autoprefixer, PostCSS, Browserslist, and Nano ID, will tell\
+            \ about his experience of promoting open source projects. You will learn how marketing works in open source, learn\
+            \ to shield yourself from hype and choose technologies that would actually be of use for your project."}
+      - {language: ru, text: "Андрей Ситник, создатель популярных Автопрефиксера, PostCSS, Браузерслиста и Nano ID, расска\
+            жет про свой опыт продвижения опенсорс-проектов. Доклад поможет понять методы маркетинга в опенсорсе, защитить\
+            ся от хайпа и выбрать технологии по их пользе для проекта."}
+    longDescription:
+      - language: en
+        text: "Andrey Sitnik, author of the famous Autoprefixer, PostCSS, Browserslist, and Nano ID, will tell about his experience\
+            \ of promoting open source projects.\n\nThis talk could be useful for experienced developers who want to start\
+            \ their own open source projects. It could also be useful for newcomers: when you know how marketing works in\
+            \ open source, it becomes easier to shield yourself from hype and choose technologies that would actually be of\
+            \ use for your project."
+      - language: ru
+        text: "Андрей Ситник, создатель популярных Автопрефиксера, PostCSS, Браузерслиста и Nano ID, расскажет про свой оп\
+            ыт продвижения опенсорс-проектов.\n\nДоклад будет полезен опытным разработчикам, которые хотят начать свои опе\
+            нсорс-проекты. Также доклад будет полезен новичкам — понимая методы маркетинга в опенсорсе, легче защититься о\
+            т хайпа и выбрать технологии по их пользе для проекта."
+    talkDay: 1
+    trackTime: "19:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/7Fn6u1WpheLSSSbvx3Moeu/2b922c1809afed8fb6c50fdf334f2a92/Andrey_Sitnik_Prodvizheniye_opensors-proyektov.pdf"]
+    videoLinks: ["https://youtu.be/SbgqR79nPd0"]
+    speakerIds: [653]
+  - id: 1293
+    name:
+      - {language: en, text: "Technical SEO 101 for web developers"}
+    shortDescription:
+      - {language: en, text: "Martin wants to give web developers a sound understanding of how Googlebot and other crawlers\
+            \ see their content and what are common pitfalls to avoid."}
+    longDescription:
+      - language: en
+        text: "Martin feels sick and tired of SEOs, marketing folks and developers spreading fear, uncertainty and doubt about\
+            \ SEO and JavaScript.\r\n\r\nIn this talk he wants to give web developers a sound understanding of how Googlebot\
+            \ and other crawlers see their content and what are common pitfalls to avoid.\r\n\r\nWe will look into:\r\n- How\
+            \ crawlers find and index your content\r\n- The techniques for all major frameworks to ensure your web app is\
+            \ discoverable\r\n- Dynamic rendering and hybrid rendering to improve UX and discoverability\r\n- Common misconceptions\
+            \ and mistakes and how to avoid them\r\n- Debugging tools and techniques to make sure people can find the things\
+            \ you put on the web"
+    talkDay: 2
+    trackTime: "11:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/XF08jiOKaiQ"]
+    speakerIds: [654]
+  - id: 1294
+    name:
+      - {language: en, text: "Migrate a React application to server-side with Next.js"}
+      - {language: ru, text: "Переводим React-приложение на SSR, используя Next.js"}
+    shortDescription:
+      - {language: en, text: "Why would you want a server-side rendering app or static site generator? How can you improve\
+            \ user experience without negatively impacting developer experience? Nataliya will give you an insight into her\
+            \ experiences migrating a project to Next.js — from recapping a process to sharing the lessons learned."}
+      - {language: ru, text: "Хотели бы оптимизировать React-приложение для SEO и улучшить метрики загрузки страницы? Стои\
+            т ли смотреть в сторону создания «универсального» приложения или генераторов статических сайтов? Как можно улу\
+            чшить UX, не потеряв при этом DX? Наталия расскажет о результатах и опыте, накопленном за время перехода на Next.js."}
+    longDescription:
+      - language: en
+        text: "Why would you want a server-side rendering app or static site generator? How can you improve user experience\
+            \ without negatively impacting developer experience?\n\nNataliya will give you an insight into her experiences\
+            \ migrating a project to Next.js — from recapping a process to sharing the lessons learned."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *SSR — новейший из старейших вызов для современных компонент\
+            ных фреймворков, заточенных в основном под client side. Наталия на примере реального кейса по шагам расскажет\
+            , как готовить SSR без вреда для DX и с пользой для продукта на примере React и Next.js.*\n\nХотели бы оптимиз\
+            ировать React-приложение для SEO и улучшить метрики загрузки страницы? Стоит ли смотреть в сторону создания «у\
+            ниверсального» приложения или генераторов статических сайтов? Как можно улучшить UX, не потеряв при этом DX?\n\
+            \nВ этом докладе Наталия расскажет о результатах и опыте, накопленном за время перехода на Next.js."
+    talkDay: 2
+    trackTime: "11:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/6bi9Dv2LlZOve0UhCKRjnh/3304c9c7c4ddac88b09e3ad7a36c5ece/Nataliya_Korotkova_Perevodim_React-prilozheniye_na_SSR_ispolzuya_Next.js.pdf"]
+    videoLinks: ["https://youtu.be/GKSDZMlNHt0"]
+    speakerIds: [652]
+  - id: 1295
+    name:
+      - {language: en, text: "Embedding V8 in the real world"}
+    shortDescription:
+      - {language: en, text: "Come to learn what challenges the NativeScript team met embedding V8 in a mobile framework and\
+            \ how they were solved."}
+    longDescription:
+      - {language: en, text: "V8 is the JavaScript engine powering Google Chrome, Node.js, and NativeScript. NativeScript\
+            \ embeds V8 to process JavaScript and dynamically call Android APIs. This enables developers to write Android\
+            \ applications in JavaScript and directly access the underlying OS. Come to this session to learn what challenges\
+            \ the NativeScript team met embedding V8 in a mobile framework and how they were solved."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Глубокая тема про виртуальную машину V8, хардкор с техничес\
+            кими деталями. *\n\nV8 is the JavaScript engine powering Google Chrome, Node.js, and NativeScript. NativeScript\
+            \ embeds V8 to process JavaScript and dynamically call Android APIs. This enables developers to write Android\
+            \ applications in JavaScript and directly access the underlying OS. Come to this session to learn what challenges\
+            \ the NativeScript team met embedding V8 in a mobile framework and how they were solved."
+    talkDay: 2
+    trackTime: "11:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/2hYwwSyz40cgu2PsSUGnRQ/2b9cdd2ef3746de31c04d0a862dea0fa/Stanimira_Vlaeva_Vladimir_Mutafov_Embedding_V8_in_the_real_world.pdf"]
+    videoLinks: ["https://youtu.be/sQ8UyltZGRQ"]
+    speakerIds: [650, 673]
+  - id: 1296
+    name:
+      - {language: en, text: "Modern web testing and automation with Puppeteer"}
+    shortDescription:
+      - {language: en, text: "The future of web testing and automation belongs to Puppeteer — Andrey will show why and how."}
+    longDescription:
+      - {language: en, text: "Andrey will explain how Puppeteer works and what makes it so fast. He'll show interesting use\
+            \ cases and will discuss how Puppeteer fits into clouds and docker containers. The future of web testing and automation\
+            \ belongs to Puppeteer — Andrey will show why and how."}
+    talkDay: 2
+    trackTime: "12:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/3BL3mW29fORsvWhJLJdy3T/5dc36c212e25a971b2019359c2d580cb/Andrey_Lushnikov_Modern_web_testing_and_automation_with_Puppeteer.pdf"]
+    videoLinks: ["https://youtu.be/r-2a8G0hXKc"]
+    speakerIds: [567]
+  - id: 1297
+    name:
+      - {language: en, text: "Graph algorithms"}
+      - {language: ru, text: "Алгоритмы на графах"}
+    shortDescription:
+      - {language: en, text: "Marina will code the graph traversal algorithm using recommendations problem as an example."}
+      - {language: ru, text: "Марина расскажет о разных алгоритмах обхода графа на примере решения проблемы рекомендаций."}
+    longDescription:
+      - {language: en, text: "Marina will code the graph traversal algorithm using recommendations problem as an example.\
+            \ This talk will be mostly live coding in IDE, with a minimal amount of slides."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *На практических и интересных примерах Марина разберёт подхо\
+            ды работы с графами в JS.*\n\nМарина расскажет о разных алгоритмах обхода графа на примере решения проблемы ре\
+            комендаций. Доклад будет представлен в формате live coding, минимум слайдов, все происходит в IDE."
+    talkDay: 2
+    trackTime: "12:30"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/Q61wpfFnYYo"]
+    speakerIds: [664]
+  - id: 1298
+    name:
+      - {language: en, text: "Google Closure Compiler — how it works and how it can be used in modern front-end"}
+      - {language: ru, text: "Google Closure Compiler — принцип работы и использование в современном фронтенде"}
+    shortDescription:
+      - {language: en, text: "Ilyas will tell about Google Closure Compiler's inner workings and try to show best practices\
+            \ established for 7 years of working with it."}
+      - {language: ru, text: "Ильяс расскажет про внутреннее устройство Google Closure Compiler и постарается передать сло\
+            жившиеся за 7 лет его использования best practices."}
+    longDescription:
+      - language: en
+        text: "Ilyas will tell about Google Closure Compiler's inner workings and try to show best practices established for\
+            \ 7 years of working with it.\r\n\r\nHe'll cover the following topics:\r\n- comparing bundles with Closure Compiler\
+            \ and Webpack/UglifyJS;\r\n- optimizations;\r\n- using it in modern projects."
+      - language: ru
+        text: "Ильяс расскажет про внутреннее устройство Google Closure Compiler и постарается передать сложившиеся за 7 л\
+            ет его использования best practices.\r\n\r\nВ докладе будет:\r\n- Сравнение бандлов при использовании Closure\
+            \ Compiler и Webpack/UglifyJS\r\n- Разбор оптимизаций\r\n- Использование в современных проектах"
+    talkDay: 2
+    trackTime: "12:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/5Hr9RXpCHjlPxIT8aW8dAH/df83d65d5c657ca0ee2c30aadf8c3fb9/Ilyas_Kabirov_Google_Closure_Compiler__printsip_raboty_i_ispolzovaniye_v_sovremennom_frontende.pdf"]
+    videoLinks: ["https://youtu.be/TodYDWUKlWI"]
+    speakerIds: [669]
+  - id: 1299
+    name:
+      - {language: en, text: "Processing Data Lake with Node.js in serverless architecture"}
+      - {language: ru, text: "Обработка озера данных на Node.js в serverless-архитектуре"}
+    shortDescription:
+      - {language: en, text: "We'll discuss processing of data lake with cloud AWS Lambda functions on Node.js, from choosing\
+            \ cloud design patterns to deep diving into optimization of lambda functions on Node.js."}
+      - {language: ru, text: "Рассмотрим процесс обработки озера данных с помощью облачных функций AWS Lambda на Node.js:\
+            \ от выбора применяемых архитектурных облачных паттернов до углубления в оптимизации лямбда-функций на Node.js."}
+    longDescription:
+      - {language: en, text: "We'll discuss processing of data lake with cloud AWS Lambda functions on Node.js, from choosing\
+            \ cloud architecture patterns to deep diving into optimization of lambda functions on Node.js. We will identify\
+            \ and use the strengths of Node.js to accelerate data processing. We'll see how to increase throughput by scaling\
+            \ up to 7000 instances of lambda functions and services we use (streams, queues, and databases), tuning and optimizing\
+            \ lambda functions on Node.js, and choosing the best possible data communication protocols. We'll explore special\
+            \ aspects of profiling functions, logging, and monitoring in production cloud infrastructure."}
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Serverless — это не только про легковесный код. С этим подх\
+            одом можно организовать и обработку огромных объемов данных, главное, правильно организовать архитектуру. Техн\
+            ические детали и реальные подходы в решении нетривиальных задач — вы можете с таким не столкнуться, но это опр\
+            еделенно интересный опыт.*\n\nМы рассмотрим процесс обработки озера данных с помощью облачных функций AWS Lambda\
+            \ на Node.js: от выбора применяемых архитектурных облачных паттернов до углубления в оптимизации лямбда-функци\
+            й на Node.js. Выявим и используем сильные стороны Node.js для ускорения обработки данных. Исследуем увеличение\
+            \ пропускной способности с помощью масштабирования до 7000 экземпляров лямбда-функций и используемых сервисов\
+            \ (стримов, очередей и баз данных), тюнинга и оптимизаций лямбда-функций на Node.js и выбора оптимальных прото\
+            колов передачи данных. Рассмотрим особенности профилирования функций, логирования и мониторинга в облачной инф\
+            раструктуре для выхода в продакшн."
+    talkDay: 2
+    trackTime: "14:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/v0DvUwICec13eSHre64Kg/91c6f3bc63f1ab9e6ff0344ecf81716e/Nikolay_Matviyenko_Obrabotka_ozera_dannykh_na_Node.js_v_serverless-arkhitekture.pdf"]
+    videoLinks: ["https://youtu.be/FOCDEk-OLTI"]
+    speakerIds: [663]
+  - id: 1300
+    name:
+      - {language: en, text: "MobX and the unique symbiosis of predictability and speed"}
+    shortDescription:
+      - {language: en, text: "We will dive deep into the design principles and implementation details of MobX. If MobX always\
+            \ looked like magic to you: after this talk no longer. And most importantly, we'll discover that predictability\
+            \ and speed are not competing concerns but rather catalysts of each other."}
+    longDescription:
+      - language: en
+        text: "\"Oh, this is Meteor / Knockout / Angular all over again...\" is the initial reaction many developers have\
+            \ when glancing over the reactivity model of MobX. Many developer still bear the scars of trying to fix problems\
+            \ that result from events firing at random, and derivation computing all over the place at undesirable moments.\
+            \ \n\nBut what if the basic idea was correct, but all the implementations we have seen so far were just sub-optimal?\
+            \ What if we could address the root issues of the predictability and performance of this reactivity model?\n\n\
+            In this talk we will dive deep into the design principles and implementation details of MobX. In what ways is\
+            \ it fundamentally different from its predecessors? What makes it so insanely fast? (Making React manually as\
+            \ fast is, a few years later, still a complicated process!).\n\nPrepare for a talk that dives into the nitty-gritty\
+            \ details of the implementation and design decisions of MobX. If MobX always looked like magic to you: after this\
+            \ talk no longer. And most importantly, we'll discover that predictability and speed are not competing concerns\
+            \ but rather catalysts of each other."
+    talkDay: 2
+    trackTime: "14:30"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/NBYbBbjZeX4"]
+    speakerIds: [587]
+  - id: 1301
+    name:
+      - {language: en, text: "How and why I write my own static type checker"}
+      - {language: ru, text: "Как и зачем я пишу свой статический типизатор"}
+    shortDescription:
+      - {language: en, text: "Artem will tell how today's most popular static typing solutions work and how he writes his\
+            \ own solution."}
+      - {language: ru, text: "Артём расскажет, как работают самые популярные на сегодняшний день решения для статической т\
+            ипизации и как он пишет свое собственное решение."}
+    longDescription:
+      - {language: en, text: "Artem believes that to use something well you need to write your own analog. He'll tell how\
+            \ today's most popular static typing solutions work and how he writes his own solution."}
+      - {language: ru, text: "Артём — приверженец следующего подхода: «Чтобы эффективно что-то использовать — нужно написа\
+            ть свой аналог». Он расскажет о том, как работают самые популярные на сегодняшний день решения для статической\
+            \ типизации и как он пишет свое собственное решение."}
+    talkDay: 2
+    trackTime: "14:30"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/GIHrPm_YAIc"]
+    speakerIds: [670]
+  - id: 1302
+    name:
+      - {language: en, text: "Nice and neat CI/CD: Where and how to start"}
+      - {language: ru, text: "Ламповый CI/CD. Как и с чего начать"}
+    shortDescription:
+      - {language: en, text: "We'll explore the process step by step, from putting service into Docker to Blue/Green deployment\
+            \ in Kubernetes. We'll tell not only how, but also why."}
+      - {language: ru, text: "Покажем чёткую последовательность шагов от банального заворачивания сервиса в Docker до Blue/Green\
+            \ deployment в Kubernetes. Расскажем не только, как, но и зачем."}
+    longDescription:
+      - language: en
+        text: "We'll explore the process step by step, from putting service into Docker to Blue/Green deployment in Kubernetes.\
+            \ We'll tell not only how, but also why.\n\nWe'll cover the following topics:\n- first steps of implementing DevOps,\
+            \ what to begin with and what direction to choose;\n- common mistakes and what beginners should avoid (for example,\
+            \ deploying Kubernetes on their own);\n- how-to and configurations for generic solutions.\n\nThis talk's aimed\
+            \ at developers from small teams and companies without a specific DevOps process."
+      - language: ru
+        text: "Покажем чёткую последовательность шагов от банального заворачивания сервиса в Docker до Blue/Green deployment\
+            \ в Kubernetes. Расскажем не только, как, но и зачем.\n\nОбсудим следующие темы:\n- шаги внедрения DevOps для\
+            \ самых маленьких, с чего начать и куда двигаться;\n- основные ошибки и чего не стоит делать в первую очередь\
+            \ (к примеру, пытаться разворачивать Kubernetes самостоятельно);\n- инструкцию и конфиги для типового решения\
+            .\n\nЦелевая аудитория: разработчики небольших компаний и команд, которые не имеют выделенного DevOps."
+    talkDay: 2
+    trackTime: "16:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/CwU-OiS_PEQ"]
+    speakerIds: [264]
+  - id: 1303
+    name:
+      - {language: en, text: "The visual future of reactive applications with statecharts"}
+    shortDescription:
+      - {language: en, text: "As the number of possible states in your app grows, developing UIs can become exponentially\
+            \ more complex. With the help of finite automata, or finite state machines (FSMs), you will be able to manage\
+            \ your app's states in a simple, robust way, and even visualize them! In this session, we will discover how FSMs\
+            \ and statecharts can take your UIs to the next level, with innovative techniques for implementing, testing, and\
+            \ visualizing your app's finite states in a robust, automated way, with plenty of use cases, demos, and resources."}
+    longDescription:
+      - language: en
+        text: "As the number of possible states in your app grows, developing UIs can become exponentially more complex. With\
+            \ the help of finite automata, or finite state machines (FSMs), you will be able to manage your app's states in\
+            \ a simple, robust way, and even visualize them! In this session, we will discover how FSMs and statecharts can\
+            \ take your UIs to the next level, with innovative techniques for implementing, testing, and visualizing your\
+            \ app's finite states in a robust, automated way, with plenty of use cases, demos, and resources.\n\nFinite state\
+            \ machines are an extremely important topic for any software developer who wants to create robust systems and\
+            \ user interfaces, and they're nothing new: FSMs have been used for over 50 years in applications from electronics\
+            \ to video games. Unfortunately, FSMs are seldom used explicitly when creating user interfaces, because it's much\
+            \ easier to implement UIs from a bottom-up approach, which is adding code inside event handlers that mutate and\
+            \ juggle state when needed.\n\nHowever, this approach means that the entire app flow is inside the mind of the\
+            \ developer, which makes understanding an app's logic difficult to understand, test, and extend when more features\
+            \ are needed. FSMs and statecharts solve this problem elegantly by making the transition between states explicit.\
+            \ David will be presenting an innovative approach to representing these declaratively, which gives developers\
+            \ many advantages:\n- An easily configurable representation of business logic and user flows\n- A way to parse\
+            \ and visualize those state machines\n- Sharing state machines between different languages (!!)\n- Automatically\
+            \ generating comprehensive tests for every single state-to-state flow in your app (never forget a unit/integration\
+            \ test again)\n- Statically analyze and optimize state machines (improved performance and user experience)\n-\
+            \ TypeScript can enforce finite states/actions for better developer experience."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *David покажет нам, как можно делать удивительные вещи с исп\
+            ользованием state machines, делая логику работы вашего приложения более прозрачной и предсказуемой.*\n\nAs the\
+            \ number of possible states in your app grows, developing UIs can become exponentially more complex. With the\
+            \ help of finite automata, or finite state machines (FSMs), you will be able to manage your app's states in a\
+            \ simple, robust way, and even visualize them! In this session, we will discover how FSMs and statecharts can\
+            \ take your UIs to the next level, with innovative techniques for implementing, testing, and visualizing your\
+            \ app's finite states in a robust, automated way, with plenty of use cases, demos, and resources.\n\nFinite state\
+            \ machines are an extremely important topic for any software developer who wants to create robust systems and\
+            \ user interfaces, and they're nothing new: FSMs have been used for over 50 years in applications from electronics\
+            \ to video games. Unfortunately, FSMs are seldom used explicitly when creating user interfaces, because it's much\
+            \ easier to implement UIs from a bottom-up approach, which is adding code inside event handlers that mutate and\
+            \ juggle state when needed.\n\nHowever, this approach means that the entire app flow is inside the mind of the\
+            \ developer, which makes understanding an app's logic difficult to understand, test, and extend when more features\
+            \ are needed. FSMs and statecharts solve this problem elegantly by making the transition between states explicit.\
+            \ David will be presenting an innovative approach to representing these declaratively, which gives developers\
+            \ many advantages:\n- An easily configurable representation of business logic and user flows\n- A way to parse\
+            \ and visualize those state machines\n- Sharing state machines between different languages (!!)\n- Automatically\
+            \ generating comprehensive tests for every single state-to-state flow in your app (never forget a unit/integration\
+            \ test again)\n- Statically analyze and optimize state machines (improved performance and user experience)\n-\
+            \ TypeScript can enforce finite states/actions for better developer experience."
+    talkDay: 2
+    trackTime: "16:30"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/o84Xw8qiTCw"]
+    speakerIds: [651]
+  - id: 1304
+    name:
+      - {language: en, text: "To ESM is human: Module systems in Node.js"}
+    shortDescription:
+      - {language: en, text: "Join Ujjwal, a Node.js core collaborator and an avid contributor to V8 in order to know all\
+            \ about ES Modules. You will come away with a deep understanding of how the module systems work internally in\
+            \ Node.js and what are the challenges facing these systems, moving forwards."}
+    longDescription:
+      - language: en
+        text: "There's only one thing more complicated than ES Modules on browsers — ES Modules in Node.js. But how did we\
+            \ get here? How do modules even work? What are the merits and demerits around these conflicting module systems\
+            \ and why does everyone get so emotional while talking about them?\n\nJoin Ujjwal, a Node.js core collaborator\
+            \ and an avid contributor to V8 in order to know all these and more. You will come away with a deep understanding\
+            \ of how the module systems work internally in Node.js and what are the challenges facing these systems, moving\
+            \ forwards."
+    talkDay: 2
+    trackTime: "16:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/KnwMpDa0JMqmawXnBx0Ky/3f45eb73894fcdf5ac24eead2301a085/Ujjwal_Sharma_To_ESM_is_human_Module_systems_in_Node.js.pdf"]
+    videoLinks: ["https://youtu.be/LJbOQ4m3_oM"]
+    speakerIds: [666]
+  - id: 1305
+    name:
+      - {language: en, text: "I built <frankenstein-monster>: 3 stories of migration"}
+      - {language: ru, text: "Я создал Франкенштейна: 3 истории миграции"}
+    shortDescription:
+      - {language: en, text: "This talk will tell 3 entertaining stories (mixed with code) of application migrations with\
+            \ different approaches, different architectural decisions and different results. Attendees will get idea of how\
+            \ to approach framework-agnostic front-end migrations using microservices architecture, web components and good\
+            \ sense of humour."}
+      - {language: ru, text: "Доклад в достаточно непринужденной форме расскажет три истории миграции трех приложений с ра\
+            зличным подходом, различными архитектурными решениями и, соответственно, различным результатом. Слушатели полу\
+            чат базовое понимание общих подходов к фреймворк-независимой миграции фронтенд-приложений с использованием мик\
+            росервисной архитектуры, веб-компонентов и хорошего чувства юмора."}
+    longDescription:
+      - language: en
+        text: "A lot of people consider complete re-write to be the best solution for project migration. Even though this\
+            \ might definitely give better result at the end, most projects can not afford this move due to limited work-force,\
+            \ budget or other reasons.\r\n\r\nBut what if we could migrate our applications without polluting global scope,\
+            \ messing up with CSS leaking and different JS bits yelling at each other?\r\n\r\nThis talk will tell 3 entertaining\
+            \ stories (mixed with code) of application migrations with different approaches, different architectural decisions\
+            \ and different results. Attendees will get idea of how to approach framework-agnostic front-end migrations using\
+            \ microservices architecture, web components and good sense of humour."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Дважды подумайте, прежде чем начинать рефакторинг. А лучше\
+            \ трижды. И даже не надейтесь, что все будет сделано правильно. Хотите узнать, как процесс улучшения может зав\
+            ести в тупик? Учиться на чужих ошибках гораздо полезнее, чем на своих.*\n\nДля многих полное переписывание про\
+            екта — единственно верный способ миграции. Несмотря на то что это может дать отличный результат по сравнению с\
+            \ постепенной миграцией, большинство проектов не могут себе это позволить из-за нехватки ресурсов, времени, бю\
+            джета и других причин. В таком случае остается миграция «по частям», при которой, как правило, «старое» и «про\
+            шлое» сталкиваются в некое «старошлое», проект становится неповоротливым, сложным в управлении и поддержке. Чт\
+            о в итоге все равно рано или поздно приводит к полному переписыванию.\n\nНо что, если бы мы могли мигрировать\
+            \ наши фронтенд-приложения постепенно, при этом не волноваться, что наш глобальный скоуп будет бесконечно испо\
+            рчен, CSS начнет выливаться и заливаться во все возможные щели, а различные JS-библиотеки и фреймворки нашего\
+            \ проекта начнут крыть друг друга по матушке? Что, если бы мы могли разбить наше фронтенд-приложение на микрос\
+            ервисы, в рамках которых могли бы делать практически все что угодно без стандартных прелестей постепенной мигр\
+            ации?\n\nЭтот доклад в достаточно непринужденной форме расскажет три истории миграции трех приложений с различ\
+            ным подходом, различными архитектурными решениями и, соответственно, различным результатом. Слушатели получат\
+            \ базовое понимание общих подходов к фреймворк-независимой миграции фронтенд-приложений с использованием микро\
+            сервисной архитектуры, веб-компонентов и хорошего чувства юмора."
+    talkDay: 2
+    trackTime: "18:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/CaP5eAylYpI"]
+    speakerIds: [261]
+  - id: 1306
+    name:
+      - {language: en, text: "Node.js: Just as fast, higher, stronger with GraalVM"}
+      - {language: ru, text: "Node.js: так же быстро, выше, сильнее с GraalVM"}
+    shortDescription:
+      - {language: en, text: "You'll learn about a new implementation of the Node.js runtime with its benefits and tradeoffs,\
+            \ and will understand whether you should evaluate it right away or maybe stick to whatever runtime you're using\
+            \ for a while."}
+      - {language: ru, text: "Вы узнаете о новой реализации Node.js-рантайма со всеми его плюсами и минусами и поймете, ст\
+            оит ли попробовать эту реализацию сейчас или продолжить работать с вашим текущим рантаймом."}
+    longDescription:
+      - language: en
+        text: "GraalVM is a new runtime for programs in different languages including JS. It includes Node.js where V8 is\
+            \ replaced with its own JavaScript engine, written in Java \U0001f631.\n\nJava, perhaps, is not the most obvious\
+            \ choice for the engine implementation, however it opens doors for very interesting capabilities:\n- interop with\
+            \ Java applications and libraries\n- interop with other languages supported by GraalVM: Python, Ruby, R, C/C++\
+            \ through LLVM\n- running Node.js apps with large memory heaps\n- enhanced sandboxing and security options\n \n\
+            In this session, we'll talk about how GraalVM implements support for the languages, how it uses partial evaluation\
+            \ and state-of-the-art JIT compiler to achieve reasonable performance even for extremely dynamic languages. \n\
+            You'll learn about the peculiarities of interoperability of the event-based Node.js environments with the thread-based\
+            \ JVM; about sandboxing the code to restrict its access to the filesystem or network and how GraalVM deals with\
+            \ the native extensions for JavaScript modules.\n\nAll in all, you'll learn about a new implementation of the\
+            \ Node.js runtime with its benefits and tradeoffs, and will understand whether you should evaluate it right away\
+            \ or maybe stick to whatever runtime you're using for a while."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *Издревле JS на сервере запускали на разных VM, но с появлен\
+            ием Node.js запуск не на V8 стал чем-то странным. V8 действительно очень крут, но иногда нам нужно подружить с\
+            ерверный JS с другим окружением, например, с Java для энтерпрайза или с Python для доступа к бесконечному исто\
+            чнику ML-библиотек. Кажется, GraalVM может помочь нам...*\n\nGraalVM — это новый рантайм для программ, написан\
+            ных на разных языках, в т. ч. JS. В него входит Node.js, где V8 заменен его собственным движком JavaScript, на\
+            писанным на Java \U0001f631.\n\nВозможно, Java и не самый очевидный выбор для реализации движка, но она открыв\
+            ает очень интересные возможности:\n- интеграция с Java-приложениями и библиотеками;\n- интеграция с другими яз\
+            ыками, которые поддерживает GraalVM: Python, Ruby, R, C/C++ через LLVM;\n- запуск Node.js-приложений с большим\
+            и memory heaps;\n- улучшенная безопасная среда и другие параметры безопасности.\n\nВ этом докладе мы поговорим\
+            \ о том, как в GraalVM реализована поддержка языков, как с помощью частичных вычислений и новейшего JIT-компил\
+            ятора GraalVM удается достигать неплохой производительности даже в самых динамических языках. Вы узнаете об ос\
+            обенностях интеграции управляемых событиями сред Node.js с управляемой потоками JVM, о том, как запускать код\
+            \ в безопасной среде, чтобы ограничить его доступ к файловой системе или сети, и о том, как GraalVM работает с\
+            \ нативными расширениями модулей JavaScript.\n\nИз доклада вы узнаете о новой реализации Node.js-рантайма со в\
+            семи его плюсами и минусами и поймете, стоит ли попробовать эту реализацию сейчас или продолжить работать с ва\
+            шим текущим рантаймом."
+    talkDay: 2
+    trackTime: "18:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/nn534z2fqr9f/3ikVcsgxK74tvM549EUwwm/9cbc372ae901fe0f1e8c1d6896216fcf/Oleg_Shelayev_Node.js_tak_zhe_bystro_vyshe_silneye_s_GraalVM.pdf"]
+    videoLinks: ["https://youtu.be/sKS4A9I8xb8"]
+    speakerIds: [23]
+  - id: 1307
+    name:
+      - {language: en, text: "You can't read this sentence — A11y automation"}
+    shortDescription:
+      - {language: en, text: "As developers, it's still our responsibility to include as many people as possible in our applications.\
+            \ In this talk we will learn some important JavaScript automation tasks, e.g. enhanced color contrast and voice\
+            \ interfaces."}
+    longDescription:
+      - language: en
+        text: "Exemplum illud exclusive…\n\nHow does it feel not being able to read the sentence above? This is what we are\
+            \ doing every day to about 217 million people with visual impairments.\n \nAs developers, we don't think very\
+            \ much about this numbers, and yet it's still our responsibility to include as many people as possible in our\
+            \ applications.\n\nIn this talk we will learn some important JavaScript automation tasks, e.g. enhanced color\
+            \ contrast and voice interfaces. Let us dive into some best practices and real-life examples to avoid making the\
+            \ same mistakes all over again in the future."
+      - language: ru
+        text: "> __Комментарий Программного комитета:__\n>\n> *A11y — безусловно, одна из важнейших тем. Mauricio покажет\
+            , зачем и как можно автоматизировать некоторые элементы доступности. Также он покажет инструмент, который помо\
+            жет подружить с этой автоматизацией вашего дизайнера.*\n\nExemplum illud exclusive…\n\nHow does it feel not being\
+            \ able to read the sentence above? This is what we are doing every day to about 217 million people with visual\
+            \ impairments.\n \nAs developers, we don't think very much about this numbers, and yet it's still our responsibility\
+            \ to include as many people as possible in our applications.\n\nIn this talk we will learn some important JavaScript\
+            \ automation tasks, e.g. enhanced color contrast and voice interfaces. Let us dive into some best practices and\
+            \ real-life examples to avoid making the same mistakes all over again in the future."
+    talkDay: 2
+    trackTime: "18:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/nn534z2fqr9f/39rMx5uzeAc1DqBTDSBZx5/0de03163ac1afced6a580ddb6703ac3b/Mauricio_Palma_You_cant_read_this_sentence__A11y_automation.pdf"]
+    videoLinks: ["https://youtu.be/2UZXyisKs18"]
+    speakerIds: [674]
+  - id: 1308
+    name:
+      - {language: en, text: "MAAS: Mind as a Service"}
+    shortDescription:
+      - {language: en, text: "As humans, we average 29,000 thoughts a day but we can only navigate applications with our fingers\
+            \ and voices. Why not use our minds as a service and drive the user experience with our thoughts?"}
+    longDescription:
+      - {language: en, text: "Traditional user interfaces rely on keyboards, mice, or voice as input for UI navigation. As\
+            \ humans, we average 29,000 thoughts a day but we can only navigate applications with our fingers and voices.\
+            \ Why not use our minds as a service and drive the user experience with our thoughts?"}
+    talkDay: 2
+    trackTime: "19:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/hvTchNNDSes"]
+    speakerIds: [677]

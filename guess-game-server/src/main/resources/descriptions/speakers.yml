@@ -3169,20 +3169,21 @@ speakers:
       - {language: en, text: "Denys Mishunov"}
       - {language: ru, text: "Денис Мишунов"}
     company:
-      - {language: en, text: "Independent Consultant"}
+      - {language: en, text: GitLab}
     bio:
-      - {language: en, text: "Denys is a frontend developer and public speaker living and working in Norway. Denys is a 2-in-1\
-            \ art school graduate and engineer, he is passionate about psychology, physics, history, drawing. In his day-to-day\
-            \ job, he enjoys getting to the heart of the matter of things and processes. Originally on \"CSS side\", for the\
-            \ last few years Denys has been building JavaScript applications, still breaking CSS, abusing HTML and working\
-            \ with performance optimizations of pretty much all aspects of the frontend toolset."}
-      - {language: ru, text: "Денис — фронтенд-разработчик, регулярно выступающий на международных конференциях, живет и р\
-            аботает в Норвегии. Будучи «2 в 1» — инженером и выпускником художественной школы, интересуется всем, от психо\
-            логии и искусства до физики и истории. Изначально будучи на стороне CSS, последние несколько лет Денис занимае\
-            тся разработкой JavaScript-приложений, время от времени возвращаясь к разбору CSS-завалов и HTML-препон, воюя\
-            \ на передовой фронтенд-разработки. Питает страсть к оптимизации производительности. Страсть эта далеко не вза\
-            имна. В полнолуние превращается в нудного ботана: его интересует возможность докопаться до сути вещей и процес\
-            сов, с которыми он работает."}
+      - language: en
+        text: "Denys is a front-end developer & public speaker living and working in Norway. Being 2-in-1: an art school graduate\
+            \ and an engineer, Denys is passionate about psychology, physics, history, drawing. In his day-to-day job he enjoys\
+            \ getting to the heart of the matter of things and processes.\r\n\r\nOriginally on \"CSS side\", for the last\
+            \ years Denys has been building JavaScript applications using Web Components, still breaking CSS, abusing HTML\
+            \ and working with performance optimisations of pretty much all aspects of the front-end toolset."
+      - {language: ru, text: "Фронтенд-разработчик, регулярно выступающий на международных конференциях, живет и работает\
+            \ в Норвегии. Будучи «2 в 1» — инженером и выпускником художественной школы, интересуется всем — от психологии\
+            \ и искусства до физики и истории. Изначально будучи на стороне CSS, последние несколько лет Денис занимается\
+            \ разработкой JavaScript-приложений, время от времени возвращаясь к разбору CSS-завалов и HTML-препон, воюя на\
+            \ передовой фронтенд-разработки. Питает страсть к оптимизации производительности. Страсть эта далеко не взаимн\
+            а. В полнолуние превращается в нудного ботана: его интересует возможность докопаться до сути вещей и процессов\
+            , с которыми он работает."}
     twitter: mishunov
   - id: 262
     fileName: 0262.jpg
@@ -3225,16 +3226,14 @@ speakers:
       - {language: en, text: "Illya Klymov"}
       - {language: ru, text: "Илья Климов"}
     company:
-      - {language: en, text: JavaScript.Ninja}
+      - {language: en, text: GitLab}
     bio:
-      - {language: en, text: "14 years of JS everywhere: from microcontrollers to rendering video in the cloud. More than\
-            \ 5 years of educational experience (at two universities and Illya's own courses), Ph.D. in Computer Science (field\
-            \ of interest: System Analysis and Theory of optimal decisions). Coach at Kottans.Org project. Owns and runs small\
-            \ outsourcing company WookieeLabs, specializing in JS-only solutions."}
-      - {language: ru, text: "14 лет программирует на JS во всех его проявлениях: от микроконтроллеров до облачного рендер\
-            инга видео. Более 5 лет профессионально учит людей (в двух вузах и на собственных курсах), кандидат технически\
-            х наук. Организовывает конференцию KhJS в Харькове, тренер проекта Kottans.Org. Владелец небольшой аутсорсинго\
-            вой компании WookieeLabs, специализирующейся исключительно на JS-проектах."}
+      - {language: en, text: "15 years of JS everywhere: from microcontrollers to rendering video in the cloud. More than\
+            \ 6 years of educational experience (at two universities and Illya's own courses), Ph.D. in Computer Science (field\
+            \ of interest: System Analysis and Theory of optimal decisions). Now works as front-end developer in GitLab."}
+      - {language: ru, text: "15 лет программирует на JS во всех его проявлениях: от микроконтроллеров до облачного рендер\
+            инга видео. Более 6 лет профессионально учит людей (в двух вузах и на собственных курсах), кандидат технически\
+            х наук. Сейчас занимается фронтом в GitLab."}
     twitter: xanf_ua
   - id: 265
     fileName: 0265.jpg
@@ -7112,6 +7111,12 @@ speakers:
     fileName: 0552.jpg
     name:
       - {language: en, text: "Ryan Dahl"}
+    company: []
+    bio:
+      - {language: en, text: "Ryan is from California. He studied mathematics at UCSD and University of Rochester before pursuing\
+            \ software professionally. In 2009, he created Node.js. Ryan managed the project through its initial years of\
+            \ development, before yielding it in favor of other interests like build systems, computer vision, and electronic\
+            \ music. Currently he lives in Brooklyn."}
   - id: 553
     fileName: 0553.jpg
     name:
@@ -8610,15 +8615,48 @@ speakers:
     fileName: 0650.jpg
     name:
       - {language: en, text: "Stanimira Vlaeva"}
+    company:
+      - {language: en, text: "Progress Software"}
+    bio:
+      - {language: en, text: "Stanimira is a software engineer on the NativeScript core team focused on the integration with\
+            \ Angular and performance optimizations. Lately, she's been working on providing an official way for sharing code\
+            \ between web and mobile Angular via NativeScript schematics and webpack."}
+    twitter: StanimiraVlaeva
   - id: 651
     fileName: 0651.jpg
     name:
       - {language: en, text: "David Khourshid"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "David Khourshid is a Florida-based web developer for Microsoft, a tech author, and speaker.\
+            \ Also a fervent open source contributor, he is passionate about JavaScript, CSS, animation, innovative user interfaces,\
+            \ and cutting-edge front-end technologies. When not behind a computer keyboard, he's behind a piano keyboard or\
+            \ traveling."}
+    twitter: davidkpiano
+    gitHub: davidkpiano
   - id: 652
     fileName: 0652.jpg
     name:
       - {language: en, text: "Nataliya Karatkova"}
       - {language: ru, text: "Наталия Короткова"}
+    company:
+      - {language: en, text: Midrive}
+    bio:
+      - language: en
+        text: "Nataliya has been a web developer since 2010. She currently lives in London and delivers front-end solutions\
+            \ at the Midrive startup.\n\nShe loves the user interface development process and solving challenges behind it.\
+            \ She is excited about tools that help to automate routine tasks, allowing focus to shift to creative parts of\
+            \ a project. Nataliya keeps up to date with developments in the modern JS and React ecosystems and sometimes combines\
+            \ travel with conferences.\n\nBesides the technical, she has an arts education. She feels inspired by seeing how\
+            \ the digital industry has revolutionised traditional art."
+      - language: ru
+        text: "Наталия начала делать веб-проекты в 2010 году. Сейчас живет в Лондоне и отвечает за фронтенд в стартапе Midrive.\n\
+            \nЕй интересен процесс создания интерфейсов и решение задач, стоящих за этим. Предпочитает автоматизировать ру\
+            тинные задачи. Следит за происходящим в JS- и React-экосистеме и часто сочетает путешествия с конференциями. \n\
+            \nКроме технического образования у Наталии есть художественное. Её вдохновляет, как сегодня традиционное искус\
+            ство развивается в цифровой индустрии."
+    twitter: meuwka
   - id: 653
     fileName: 0653.jpg
     name:
@@ -8649,6 +8687,21 @@ speakers:
     name:
       - {language: en, text: "Alexey Kozyatinsky"}
       - {language: ru, text: "Алексей Козятинский"}
+    company:
+      - {language: en, text: Netflix}
+    bio:
+      - language: en
+        text: "Believes in JavaScript. Creates and improves debugging tools as a part of Chrome DevTools team since 2014.\
+            \ Led the most part of company's attempts to improve developers' life, starting from asynchronous stacks till\
+            \ new Query Objects.\n\nIn his spare time loves to play guitar and travel, wishes he had a travel blogger career,\
+            \ yet still keeps writing code, cause we all deserve to have even more new debugging tools. :)"
+      - language: ru
+        text: "Верит в JavaScript. Создает и улучшает инструменты для его отладки в команде Chrome DevTools с 2014 года. В\
+            озглавлял большинство попыток компании улучшить жизнь разработчиков, начиная от асинхронных стеков и заканчива\
+            я новым модным Query Objects.\n\nВ свободное время играет на гитаре и путешествует, мечтает о карьере тревел-б\
+            логера, но продолжает программировать в свободное время, потому что все мы заслуживаем еще больше новых инстру\
+            ментов для отладки наших багов. :)"
+    twitter: ak_239
   - id: 656
     fileName: 0656.jpg
     name:
@@ -8658,10 +8711,26 @@ speakers:
     fileName: 0657.jpg
     name:
       - {language: en, text: "Nadiia Dmytrenko"}
+    company:
+      - {language: en, text: Uber}
+    bio:
+      - {language: en, text: "Nadiia is a software engineer on the UI platform team in Uber who loves JavaScript and is passionate\
+            \ about CSS and seamless design. She is one of the creators and maintainers of <a href=\"https://baseweb.design/\"\
+            \ target=\"_blank\">Uber's open source Base Web component library</a> and co-organizer of the <a href=\"http://destination-web.uber.com\"\
+            \ target=\"_blank\">Destination:Web meetup series</a> in San Francisco. When she doesn't code you can find her\
+            \ hanging out with her <a href=\"https://www.instagram.com/umka.the.marshmallow/\" target=\"_blank\">fluffy dog</a>,\
+            \ taking him on a hike or a beach run."}
+    twitter: inadiia
   - id: 658
     fileName: 0658.jpg
     name:
       - {language: en, text: "Eduardo San Martin Morote"}
+    company:
+      - {language: en, text: "Freelance — Posva Solutions"}
+    bio:
+      - {language: en, text: "Eduardo is a JavaScript enthusiast who focuses on UI and likes game dev too. He's a member of\
+            \ the Vue.js core team and he organizes the Paris Vue.js Meetup. He helps daily to improve the Vue ecosystem."}
+    twitter: posva
   - id: 659
     fileName: 0659.jpg
     name:
@@ -8724,27 +8793,32 @@ speakers:
     company:
       - {language: en, text: "Grid Dynamics"}
     bio:
-      - {language: en, text: "Nikolay is big fan of diagnostics and performance optimization of Node.js applications and works\
-            \ in Grid Dynamics company, where he makes a digital transformation for large US e-commerce companies using Node.js."}
-      - {language: ru, text: "Николай фанат диагностики и улучшения производительности Node.js приложений. Работает JavaScript\
-            \ разработчиком в Grid Dynamics и занимается реплатформингом больших US e-commerce приложений используя Node.js."}
+      - language: en
+        text: "Nikolay is a software engineer and Node.js expert at Grid Dynamics. He is a big fan of performance optimization\
+            \ in Node.js.\n\nNow he is working in St. Petersburg, Florida. Together with Amazon's consulting team, he is building\
+            \ a cloud computing platform for a product supply chain management project for one of the largest electronics\
+            \ companies in the United States."
+      - language: ru
+        text: "Инженер и эксперт по Node.js в Grid Dynamics. Большой фанат оптимизаций производительности Node.js-приложен\
+            ий. \n\nСейчас Николай работает в городе Санкт-Петербург, штат Флорида. Совместно с командой консультантов Amazon\
+            \ он делает облачную вычислительную платформу для проекта по управлению цепочкой поставок изделий для одной из\
+            \ самых крупных компаний в США по производству электроники."
     twitter: matvi3nko
   - id: 664
     fileName: 0664.jpg
     name:
-      - {language: en, text: "Marina Mironovich"}
+      - {language: en, text: "Marina Miranovich"}
       - {language: ru, text: "Марина Миронович"}
     company:
-      - {language: en, text: "EPAM Systems"}
+      - {language: en, text: EPAM}
     bio:
-      - {language: en, text: "Lead software engineer in EPAM Systems defiantly living in Los Angeles. Currently in teleportation\
-            \ to a Solution Architecture role. As part of that she leads a few projects for data science department, and,\
-            \ in spite of a good weather, spends her weekends studying online courses. She has a dream to write a control\
-            \ module for a space rocket on JS."}
-      - {language: ru, text: "Ведущий разработчик в EPAM Systems, бессовестно живущая в Лос Анджелесе. В текущий момент в\
-            \ процессе телепортации в Solution Architect роль. Как часть этого ведет несколько проектов для data science о\
-            тдела и, не смотря на хорошую погоду, просиживает выходные за онлайн курсами. Мечтает написать модуль управлен\
-            ия космической ракетой на JS."}
+      - {language: en, text: "Marina is a solutions architect at EPAM with more than 8 years of experience in frontend and\
+            \ backend technologies. She drives a number of projects, starting with big cross-team programs and ending with\
+            \ small and cozy, I-do-everything applications. Known for her love to JavaScript and serverless, she enjoys learning\
+            \ and sharing knowledge and some people may say that she has a power to \"put pieces together\", that's why she\
+            \ usually ends up in surge projects."}
+      - {language: ru, text: "Марина — архитектор решений в EPAM, сейчас живет в Лос-Анджелесе, Калифорния. В узких кругах\
+            \ известна за любовь к фронтенду и serverless."}
     twitter: obnoxious_mari
     gitHub: Marina-Miranovich
   - id: 665
@@ -8795,47 +8869,130 @@ speakers:
     fileName: 0668.jpg
     name:
       - {language: en, text: "Basarat Ali Syed"}
+    company:
+      - {language: en, text: "Australia Post"}
+    bio:
+      - language: en
+        text: "Microsoft MVP and a key member of the TypeScript community.\n\nFront-end Practice Lead. Open source advocate,\
+            \ book author, youtuber, screencaster, developer empathiser. Top contributor for TypeScript on stackoverflow."
+    twitter: basarat
   - id: 669
     fileName: 0669.jpg
     name:
       - {language: en, text: "Ilyas Kabirov"}
       - {language: ru, text: "Ильяс Кабиров"}
+    company:
+      - {language: en, text: iSpring}
+    bio:
+      - {language: en, text: "Developer since 2006. Having tried PHP, JS, ActionScript, C++, since 2012 Ilyas switched to\
+            \ JS stack with Google Closure Compiler. Currently he develops architecture for front-end project at iSpring.\
+            \ For the last 2 years Ilyas has been actively studying Google Closure Compiler and watching it evolve."}
+      - {language: ru, text: "Занимается разработкой с 2006 года. За первые годы работы успел попробовать себя в PHP, JS,\
+            \ ActionScript, C++. С 2012 года перешел на JS-стек с использованием Google Closure Compiler. Сейчас занимаетс\
+            я разработкой архитектуры для фронтенд-проектов в компании iSpring. Последние 2 года активно изучает и следит\
+            \ за развитием Google Closure Compiler."}
+    twitter: i_kabirov
   - id: 670
     fileName: 0670.jpg
     name:
       - {language: en, text: "Artem Kobzar"}
       - {language: ru, text: "Артём Кобзарь"}
+    company:
+      - {language: en, text: "Hell Yeah, JavaScript.Ninja"}
+    bio:
+      - language: en
+        text: "JavaScript.Ninja courses teacher. On the tech fringe.\n\nLikes functional programming, compilers and open source."
+      - language: ru
+        text: "Преподаватель на курсах JavaScript.Ninja. Маргинал от мира технологий.\n\nЛюбитель ФП, компиляторов и open\
+            \ source."
+    twitter: rage_monk
   - id: 671
     fileName: 0671.jpg
     name:
       - {language: en, text: "Nazim Gafarov"}
       - {language: ru, text: "Назим Гафаров"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - {language: en, text: "Lead Lambda developer at Mail.Ru Cloud Solutions. Before that, Nazim worked at Yandex.Market.\
+            \ He's an author of a JS library with 14 stars. Top 100 Europe Solo Hard Lane."}
+      - {language: ru, text: "Ведущий лямбда-программист в Mail.Ru Cloud Solutions. До этого работал в Яндекс.Маркете. Авт\
+            ор JS-библиотеки с четырнадцатью звездочками. Top 100 Europe Solo Hard Lane."}
   - id: 672
     fileName: 0672.jpg
     name:
       - {language: en, text: "Ruben Bridgewater"}
+    company:
+      - {language: en, text: "Freelance Software Architect"}
+    bio:
+      - {language: en, text: "Ruben is a Node.js core collaborator and a freelance software architect consultant. His main\
+            \ emphasis is building powerful and easy-to-use APIs for scalable and fast applications. He is continuously working\
+            \ with the V8 team and the TC39 committee to improve the developer experience with JavaScript."}
+    twitter: BridgeAR
   - id: 673
     fileName: 0673.jpg
     name:
       - {language: en, text: "Vladimir Mutafov"}
+    company:
+      - {language: en, text: "Progress Software"}
+    bio:
+      - {language: en, text: "Vladimir Mutafov is a software engineer on the NativeScript team at Progress Software. He's\
+            \ working on the NativeScript Android Runtime which provides all the high-performant JS to Java communication\
+            \ support."}
+    twitter: VladimirMutafov
   - id: 674
     fileName: 0674.jpg
     name:
       - {language: en, text: "Mauricio Palma"}
+    company:
+      - {language: en, text: SinnerSchrader}
+    bio:
+      - language: en
+        text: "A self-educated UI Developer working at SinnerSchrader. As part of the product engineering team, he works as\
+            \ a proxy between the design and engineering teams. You'll find him in that sweet spot where art meets science.\
+            \ Using technology to craft user-centric experiences. \r\n\r\nHe is also the co-founder of Woodlike Ocean and\
+            \ an engaged social entrepreneur."
+    twitter: palmaswell
   - id: 675
     fileName: 0675.jpg
     name:
       - {language: en, text: "Arkadiy Pilguk"}
       - {language: ru, text: "Аркадий Пильгук"}
+    company:
+      - {language: en, text: "Peculiar Ventures"}
+    bio:
+      - {language: en, text: "Arkadiy is the Manager and Lead Engineer of Peculiar Ventures Ukraine. He started his career\
+            \ in user experience, where his relentless focus on users led him to front-end development and later machine learning\
+            \ and computer vision along with how they can be used to improve user experience with technology."}
+      - {language: ru, text: "Аркадий — ведущий инженер в Peculiar Ventures Ukraine. Он начал свою карьеру как разработчик\
+            \ пользовательского интерфейса, что привело его к фронтенд-разработке, а позже к машинному обучению и компьюте\
+            рному зрению, при помощи которых он и пытается улучшить пользовательское взаимодействие с технологиями."}
+    twitter: apilguk
   - id: 676
     fileName: 0676.jpg
     name:
       - {language: en, text: "Dmitry Kharitonov"}
       - {language: ru, text: "Дмитрий Харитонов"}
+    company:
+      - {language: en, text: Isovalent}
+    bio:
+      - {language: en, text: "Front-end developer, lives in Astrakhan and works remotely from there. Dmitry uses TypeScript/React/Redux\
+            \ as his main tools."}
+      - {language: ru, text: "Фронтенд-разработчик, живет в Астрахани, работает отсюда же — удаленно. Использует TypeScript/React/Redux\
+            \ в качестве основных инструментов."}
+    twitter: geakstr
   - id: 677
     fileName: 0677.jpg
     name:
       - {language: en, text: "Alex Castillo"}
+    company:
+      - {language: en, text: Neurosity}
+    bio:
+      - {language: en, text: "Alex Castillo is a Co-founder at Neurosity, a neurotechnology company reimagining brain-computer\
+            \ interfaces. He is passionate about the human brain, and how we can use it to power next-generation apps. As\
+            \ a Google Developer Expert, Alex has contributed to the open source community with a focus on web technologies\
+            \ and neurotech."}
+    twitter: castillo__io
   - id: 678
     fileName: 0678.jpg
     name:
