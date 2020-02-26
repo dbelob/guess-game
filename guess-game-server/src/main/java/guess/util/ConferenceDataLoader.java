@@ -729,15 +729,15 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 4, 29), "2020-msk-devoops");
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2020, 5, 15), "2020-jpoint");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 6, 23), "2020-spb");
-//        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 8), "2020-spb-sptdc");         // valid date?
-//        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 11), "2020-spb-hydra");        // valid date?
-//        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 8, 24), "2020-techtrain");    // valid date?
+//        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc");
+//        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 10), "2020-msk-hydra");
+//        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 8, 22), "2020-techtrain");    // valid date?
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 10, 7), "2020-spb-devoops");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 10, 9), "2020-spb-cpp");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 10, 23), "2020-joker");
-//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 3), "2020-msk");
-//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 11, 5), "2020-msk");
-//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 8), "2020-msk");
-//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 12, 7), "2020-msk");             // valid date?
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 11, 2), "2020-msk");
+//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 4), "2020-msk");
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 7), "2020-msk");
+//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 9), "2020-msk");
     }
 }
