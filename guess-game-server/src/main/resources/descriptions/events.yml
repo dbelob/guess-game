@@ -783,6 +783,25 @@ events:
               1150, 1151, 1152, 1153, 1154, 1155, 1156, 1157, 1158, 1159, 1160, 1161, 1162, 1163]
   - eventTypeId: 9
     name:
+      - {language: en, text: "Mobius 2019 SPb"}
+      - {language: ru, text: "Mobius 2019 СПб"}
+    startDate: "2019-05-22"
+    endDate: "2019-05-23"
+    siteLink:
+      - {language: en, text: "https://mobiusconf.com/en/2019/spb/"}
+      - {language: ru, text: "https://mobiusconf.com/2019/spb/"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236qyWB8mBbWF_FN6fC4ztPXG
+    mapCoordinates: "59.842400, 30.318815"
+    talkIds: [1250, 1251, 1252, 1253, 1254, 1255, 1256, 1257, 1258, 1259, 1260, 1261, 1262, 1263, 1264, 1265, 1266, 1267,
+              1268, 1269, 1270, 1271, 1272, 1273, 1274, 1275, 1276, 1277, 1278]
+  - eventTypeId: 9
+    name:
       - {language: en, text: "Mobius 2019 Msk"}
       - {language: ru, text: "Mobius 2019 Мск"}
     startDate: 2019-12-07

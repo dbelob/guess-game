@@ -38,14 +38,12 @@ speakers:
       - {language: en, text: "Andrey Breslav"}
       - {language: ru, text: "Андрей Бреслав"}
     company:
-      - {language: en, text: JetBrains}
+      - {language: en, text: "JetBrains, Alter"}
     bio:
-      - {language: en, text: "Andrey Breslav has been leading design and development of the Kotlin programming language at\
-            \ JetBrains since 2010 when the project started. He often presents as a speaker at large software conferences\
-            \ and contributes to the [Kotlin blog](https://blog.jetbrains.com/kotlin/author/andrey-breslav/)."}
-      - {language: ru, text: "Андрей Бреслав возглавляет разработку языка Kotlin в компании JetBrains c 2010 года, занимае\
-            тся как дизайном языка, так и общим руководством проекта. Ключевой спикер крупных конференций. Один из авторов\
-            \ [блога Kotlin](https://blog.jetbrains.com/kotlin/author/andrey-breslav/)."}
+      - {language: en, text: "Andrey Breslav is leading design and development of the Kotlin programming language at JetBrains.\
+            \ In parallel, he's building Alter — a service that helps you find a competent psychotherapist."}
+      - {language: ru, text: "Андрей Бреслав возглавляет разработку языка Kotlin в компании JetBrains. Параллельно он разв\
+            ивает Alter — сервис, который помогает клиентам находить профессиональных психологов/психотерапевтов."}
     twitter: abreslav
     gitHub: abreslav
   - id: 3
@@ -2861,6 +2859,14 @@ speakers:
     name:
       - {language: en, text: "Ilya Matveev"}
       - {language: ru, text: "Илья Матвеев"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Ilya worked at Intel on ART virtual machine. Now he works at JetBrains on Kotlin/Native project.\
+            \ His areas of responsibility are support of the tooling in regards to integration with Gradle and some aspects\
+            \ of Kotlin/Native compiler itself."}
+      - {language: ru, text: "Работал в Intel над виртуальной машиной ART. Сейчас в JetBrains в проекте Kotlin/Native. Зан\
+            имается поддержкой тулинга со стороны интеграции с Gradle и немного самим компилятором Kotlin/Native."}
   - id: 222
     fileName: 0222.jpg
     name:
@@ -7294,27 +7300,20 @@ speakers:
     fileName: 0565.jpg
     name:
       - {language: en, text: "Yonatan Levin"}
+      - {language: ru, text: "Йонатан Левин"}
     company:
-      - {language: en, text: KolGene}
+      - {language: en, text: Monday.com}
     bio:
-      - language: en
-        text: "Yonatan is a co-founder and CTO of KolGene, being on a mission to make genetic tests usage optimized, accessible\
-            \ and affordable worldwide.\n\nPreviously, at Gett, which to date has raised almost $650 million in VC funding\
-            \ — he was the Head of Android, helping make it the world's largest on-demand transportation, delivery, and logistics\
-            \ company.\n\nOne of his greatest passions is helping people to learn and adopt new technologies.\n\nAs a result,\
-            \ he founded and now co-leads one of the largest, most active, gender diverse Android community in the world:\
-            \ Android Academy in Tel Aviv. 3500 members so far and they continue introducing hundreds of engineers to Android\
-            \ technology every year.\n\nAs a dev, Yonatan's primary expertise is Android and Mobile UX, but he's also friendly\
-            \ to frontend and backend technologies."
-      - language: ru
-        text: "Yonatan is a co-founder and CTO of KolGene, being on a mission to make genetic tests usage optimized, accessible\
-            \ and affordable worldwide.\r\n\r\nPreviously, at Gett, which to date has raised almost $650 million in VC funding\
-            \ — he was the Head of Android, helping make it the world's largest on-demand transportation, delivery, and logistics\
-            \ company.\r\n\r\nOne of his greatest passions is helping people to learn and adopt new technologies.\r\n\r\n\
-            As a result, he founded and now co-leads one of the largest, most active, gender diverse Android community in\
-            \ the world: Android Academy in Tel Aviv. 3500 members so far and they continue introducing hundreds of engineers\
-            \ to Android technology every year.\r\n\r\nAs a dev, Yonatan's primary expertise is Android and Mobile UX, but\
-            \ he's also friendly to frontend and backend technologies."
+      - {language: en, text: "Startupper to the core. Founder of Global Android Academy and community leader. Yonatan is the\
+            \ head of the mobile development team of a fast-growing startup — Monday.com. In the past, he headed a startup\
+            \ in the field of genetics and before that he was an Android Tech Lead at Gett almost from the foundation. Loves\
+            \ to speak around the world and share his knowledge in the field of entrepreneurship, mobile development and life\
+            \ in general."}
+      - {language: ru, text: "Стартапист до мозга костей. Основатель Глобальной Android Academy и лидер сообщества. Йоната\
+            н возглавляет отдел мобильной разработки в быстро растущем стартапе Monday.com. В прошлом возглавлял стартап в\
+            \ области генетики, а до этого являлся Android Tech Lead в компании Gett почти с основания. Очень любит выступ\
+            ать по всему миру и делиться своими знаниями в области предпринимательства, мобильной разработки и жизни в цел\
+            ом."}
     twitter: parahall
   - id: 566
     fileName: 0566.jpg
@@ -10167,18 +10166,47 @@ speakers:
     fileName: 0775.jpg
     name:
       - {language: en, text: "Corey Latislaw"}
+    company:
+      - {language: en, text: "The App Business"}
+    bio:
+      - {language: en, text: "Corey Latislaw is a technical leader at TAB (The App Business) in London and an avid sketchnoter.\
+            \ She has led many teams over the years at companies such as Capital One, OffGrid Electric, and Pinterest."}
+    twitter: corey_latislaw
   - id: 776
     fileName: 0776.jpg
     name:
       - {language: en, text: "Hannes Dorfmann"}
+    company:
+      - {language: en, text: Freeletics}
+    bio:
+      - language: en
+        text: "Hannes Dorfmann is an enthusiastic software engineer and open source contributor mostly focused on Android\
+            \ development. \n\nHe works at Freeletics (Germany) and takes the green little robot very close to his heart,\
+            \ but if a helping hand is needed in iOS land, web front-end or back-end, he is willing to help. \n\nIf Hannes\
+            \ is not coding, then he is recording new episodes as co-host for TheContext podcast or writing his thoughts down\
+            \ in his blog. \n\nHe is a sports maniac and particularly likes football. Really, he likes football a lot!"
+    twitter: sockeqwe
   - id: 777
     fileName: 0777.jpg
     name:
       - {language: en, text: "John Fox"}
+    company:
+      - {language: en, text: Netflix}
+    bio:
+      - {language: en, text: "Geek dad, traveler, drummer, snark monster. iOS UI Engineer @ Netflix."}
+    twitter: djembe
   - id: 778
     fileName: 0778.jpg
     name:
       - {language: en, text: "Eliza Camber"}
+    company:
+      - {language: en, text: Pixplicity}
+    bio:
+      - {language: en, text: "Eliza is an Android developer at Pixplicity, a GDE for the Google Assistant, and the Women Techmakers\
+            \ Lead and an organizer of the GDG Netherlands. Her big passion is to explore and play with new technologies;\
+            \ she also enjoys travelling and attending conferences and meetups. Her latest obsession is conversational apps\
+            \ and IoT."}
+    twitter: ElizaCamber
   - id: 779
     fileName: 0779.jpg
     name:
@@ -10204,11 +10232,34 @@ speakers:
     fileName: 0780.jpg
     name:
       - {language: en, text: "Andy Dyer"}
+    company:
+      - {language: en, text: Zalando}
+    bio:
+      - {language: en, text: "Andy Dyer is a Senior Software Engineer at Zalando in Berlin and an editor for ProAndroidDev.\
+            \ An Android developer since Froyo, he's currently trying to learn two of the world's toughest languages at the\
+            \ same time: German and Haskell."}
+    twitter: dammitandy
   - id: 781
     fileName: 0781.jpg
     name:
       - {language: en, text: "Evgenii Rtischev"}
       - {language: ru, text: "Евгений Ртищев"}
+    company:
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
+    bio:
+      - language: en
+        text: "Evgenii has been working as a mobile developer for almost 10 years.\r\n\r\nHe likes to make decent, reliable\
+            \ products that are useful to people and solve their problems.\r\n\r\nHe develops all the new projects on Swift\
+            \ and aims to use cutting-edge approaches and modern frameworks.\r\n\r\nDuring his time as a mobile developer\
+            \ Evgenii was a part of dozen teams, worked as a freelancer, participated in creating of several startups, and\
+            \ launched projects for large companies."
+      - language: ru
+        text: "В мобильной разработке почти 10 лет.\r\n\r\nЛюбит делать качественные надёжные продукты, которые несут людя\
+            м пользу и решают их проблемы.\r\n\r\nВсе новые проекты разрабатывает на Swift, стремится использовать передов\
+            ые подходы и современные фреймворки.\r\n\r\nЗа время работы побывал в десятке команд, занимался фрилансом, раб\
+            отал в мобильной студии, участвовал в создании нескольких стартапов, также запускал проекты в рамках крупных к\
+            омпаний."
   - id: 782
     fileName: 0782.jpg
     name:
@@ -10222,10 +10273,10 @@ speakers:
             \ of users worldwide. Currently works at Grab, leading Kotlin Singapore User Group, actively uses Rx, and spends\
             \ more and more time contributing to OSS."}
       - {language: ru, text: "Разрабатывает приложения и игры под Android c 2008 года, за свою карьеру успел побывать в ро\
-            ли QA, менеджера, макретолога, блоггера, аналитика, советника и многих других. Участвовал в разработке как ник\
-            ому не известных приложений, так и приложений с миллионами пользователей по всему миру. В настоящее время рабо\
-            тает в Grab, является лидером Kotlin Singapore User Group, активно использует Rx и все больше времени посвящае\
-            т OSS."}
+            ли QA, менеджера, маркетолога, блогера, аналитика, советника и многих других. Участвовал в разработке как нико\
+            му неизвестных приложений, так и приложений с миллионами пользователей по всему миру. В настоящее время работа\
+            ет в Grab, является лидером Kotlin Singapore User Group, активно использует Rx и все больше времени посвящает\
+            \ OSS."}
     twitter: stepango
     gitHub: stepango
   - id: 783
@@ -10234,101 +10285,272 @@ speakers:
       - {language: en, text: "Konstantin Tskhovrebov"}
       - {language: ru, text: "Константин Цховребов"}
     company:
-      - {language: en, text: MobileUp}
+      - {language: en, text: "Redmadrobot SPb"}
     bio:
-      - {language: en, text: "More than 6 years of experience in development. Has worked at ooApps, Phereo, i-Free. Since\
-            \ 2014 works as a lead Android developer at MobileUp. In 2015 won Pavel Durov's contest for Android developers\
-            \ \"Telegram Challenge\". Gave talks at conferences AppsConf 2016 and DevFest Siberia 2016, also gave internal\
-            \ master classes."}
+      - language: en
+        text: "Android developer since 2010, Konstantin likes to inspire his developer team, build correct architecture and\
+            \ organize professional events.\n\nIn his free time, he contributes to open source, tinkers with C and works to\
+            \ join in the global community."
       - language: ru
-        text: "Опыт работы в программировании — более 6 лет. Работал в ooApps, Phereo, i-Free. С октября 2014-го — ведущий\
-            \ Android-разработчик в MobileUp. Проекты: Первый канал; Вечерний Ургант; tutu.ru; Мобильный банк ВТБ24; Велог\
-            ород; Такси «Букет495»; «Формула Такси»; DMV Genius; Радио «Аэростат»; Shumaev Club и ещё 9 проектов.\n\nВ 2015\
-            \ году стал победителем конкурса Павла Дурова для Android-разработчиков «Telegram Challenge» . Выступал на кон\
-            ференциях AppsConf 2016, DevFest Siberia 2016 и проводил ряд внутренних мастер-классов."
+        text: "С 2010 года занимается Android-разработкой. Любит вдохновлять команду разработчиков, выстраивать правильную\
+            \ архитектуру и устраивать профессиональные мероприятия.\n\nВ свободное время участвует в open source, ковыряе\
+            тся в Си и старается приобщиться к глобальному комьюнити."
+    twitter: terrakok
   - id: 784
     fileName: 0784.jpg
     name:
       - {language: en, text: "Kirill Rozov"}
       - {language: ru, text: "Кирилл Розов"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Devoted Android developer, likes to evangelize Kotlin."}
+      - {language: ru, text: "Заядлый андроидист и любитель поевангелировать за Kotlin."}
+    twitter: kirill_rozov
   - id: 785
     fileName: 0785.jpg
     name:
       - {language: en, text: "Dmitry Sidorenko"}
       - {language: ru, text: "Дмитрий Сидоренко"}
+    company:
+      - {language: en, text: RoboQA}
+    bio:
+      - {language: en, text: "Dmitry's current title is Cloud Architect. He's working for Nordcloud, which is a largest cloud\
+            \ consulting company in Europe. On daily basis he either designs architecture for projects starting in the cloud\
+            \ or plans and executes migrations from private data centers to the cloud. In the past he was working as Senior\
+            \ Server Developer for large gaming companies like Glu Mobile and Rovio, so programming is one of his hobbies\
+            \ and area of a great interest."}
+      - {language: ru, text: "Облачный архитектор в компании Nordcloud — самом крупном облачном консалтинге в Европе. Стро\
+            ит архитектуру с нуля для проектов, стартующих в облаке, или планирует и выполняет миграцию существующих из ча\
+            стных дата-центров. В прошлом Дмитрий работал старшим серверным разработчиком в крупных игровых компаниях, и п\
+            рограммирование остается его хобби и одной из сфер интересов."}
+    gitHub: daemon4d
   - id: 786
     fileName: 0786.jpg
     name:
       - {language: en, text: "Maurice Gavin"}
+    company:
+      - {language: en, text: Toothpic}
+    bio:
+      - {language: en, text: "Maurice is the Android Lead at Toothpic in Dublin, Ireland. He has been working with Android\
+            \ since 2010 and is currently using his skills to make quality dental care more accessible through teledentistry.\
+            \ His interests include machine learning, mobile security and clean architecture. In his spare time he likes to\
+            \ travel, run and play computer games."}
+    twitter: mauricegavin
   - id: 787
     fileName: 0787.jpg
     name:
       - {language: en, text: "Anton Davydov"}
       - {language: ru, text: "Антон Давыдов"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Senior software engineer at EPAM, where except project work Anton is responsible for mobile\
+            \ community's growth in St. Pete and globally at company."}
+      - {language: ru, text: "Старший iOS-разработчик в компании EPAM, где помимо проектной работы занимается развитием са\
+            нкт-петербургского и глобального мобильного сообщества в компании."}
+    twitter: dydus0x14
   - id: 788
     fileName: 0788.jpg
     name:
       - {language: en, text: "Vyacheslav Tarasov"}
       - {language: ru, text: "Вячеслав Тарасов"}
+    company:
+      - {language: en, text: Expload}
+    bio:
+      - language: en
+        text: "CTO at Expload. For 6 years Vyacheslav has been giving lectures in operational systems at the university. He\
+            \ once used to be C++ and parallel computing fan. Previously he worked as a lead engineer/developer/tester in\
+            \ the Prisma project, adapting it for new (at that moment) NPU Kirin chips. He had to master Android for ML tasks\
+            \ and GPGPU, OpenGL, OpenCL, Vulcan parallel computing.\n\nFor the last 6 months Vyacheslav has been developing\
+            \ a streaming mobile app.\n\nIt doesn't really matter for him how complex the task is. He can properly coordinate\
+            \ and polish any project. He likes deadlines and sleepless nights. In emergency cases he can make wonders with\
+            \ a couple of liters of orange juice."
+      - language: ru
+        text: "CTO в Expload. Уже 6 лет преподает операционные системы в университете. Когда-то был поклонником С++ и пара\
+            ллельных вычислений. В прошлом работал ведущим инженером-программистом-тестировщиком в проекте Prisma. Участво\
+            вал в адаптации Prisma под новые на тот момент NPU-чипы Kirin. Пришлось разобраться с Android под задачи ML, п\
+            араллельные вычисления GPGPU, OpenGL, OpenCL, Vulcan.\n\nВ последние полгода трудится над созданием мобильного\
+            \ приложения для ведения стримов.\n\nСложность задачи не имеет значения. Способен любой проект правильно скоор\
+            динировать и довести до состояния конфетки. Любит дедлайны и бессонные ночи. В экстренных ситуациях за пару ли\
+            тров апельсинового сока может творить чудеса."
   - id: 789
     fileName: 0789.jpg
     name:
       - {language: en, text: "Dmitry Movchan"}
       - {language: ru, text: "Дмитрий Мовчан"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Developing on Android since 2016. Right now working on Kaspersky Internet Security for Android.\
+            \ Graduated from BMSTU. Android Academy MSK organizer."}
+      - {language: ru, text: "Занимается разработкой под Android с 2016 года. Работает над проектом Kaspersky Internet Security\
+            \ for Android. Выпускник МГТУ им. Баумана. Организатор Android Academy MSK."}
   - id: 790
     fileName: 0790.jpg
     name:
       - {language: en, text: "Vladislav Alexeev"}
       - {language: ru, text: "Владислав Алексеев"}
+    company:
+      - {language: en, text: Avito}
+      - {language: ru, text: Авито}
+    bio:
+      - {language: en, text: "Developer since 2011, Vladislav started his career at Yandex (Maps and Browser). The Buck build\
+            \ system at Facebook UK was a very interesting project for him: he learned a lot of new things about compilers\
+            \ and linkers. There, he worked on performance so that Buck wouldn't lag behind Xcode in the worst case scenario.\
+            \ Since October 2017 Vladislav works at Avito on build & test infra."}
+      - {language: ru, text: "Занимается разработкой с 2011 года. Начал в Яндексе — Карты, Браузер. Крайне интересный прое\
+            кт — система сборки Buck в Facebook UK, где узнал много нового о компиляторах, линковщиках. Занимался производ\
+            ительностью, чтобы Buck не отставал от Xcode в worst case scenario. В Авито с октября 2017 года, занимается build\
+            \ & test infra."}
+    twitter: Beefon
   - id: 791
     fileName: 0791.jpg
     name:
       - {language: en, text: "Filip Babić"}
+    company:
+      - {language: en, text: "Five Agency"}
+    bio:
+      - language: en
+        text: "Professional Android application developer focusing on optimization, testability, and stability by following\
+            \ SOLID principles, using programming design principles to his advantage in order to make each project, file,\
+            \ class, and method as reusable and clean as possible.\n\nBeing an active member of the programming community,\
+            \ Filip has held over 10 lectures and workshops locally and at KulenDayz, Mobilization and AppDevCon conferences,\
+            \ focusing on sharing knowledge and connecting people. Through these lectures he's grown his teaching and mentoring,\
+            \ becoming a strong pillar in the local community. He's also co-founded the Kotlin User Group Croatia and the\
+            \ Google Developers Group Osijek.\n\nFilip also writes and edits articles and books for the RayWenderlich publication\
+            \ and his personal Medium blog."
+    twitter: filbabic
   - id: 792
     fileName: 0792.jpg
     name:
       - {language: en, text: "Iurii Medvedev"}
       - {language: ru, text: "Юрий Медведев"}
+    company:
+      - {language: en, text: "Emirates Airline"}
+    bio:
+      - language: en
+        text: "Technical lead with 12 years of hands-on experience with private and public clouds, HashiСorp tools, CI/CD\
+            \ and DevOps processes.\n\nKey skills:\n- Private and public clouds\n- HashiСorp tools\n- SRE management\n- Company\
+            \ transformation\n- Implementation of DevOps processes\n- RnD"
+      - language: ru
+        text: "Technical lead, более 12 лет работает с частными и общедоступными облачными средами, инструментами HashiСorp,\
+            \ CI/CD и DevOps.\n\nЭксперт в таких областях, как:\n- частные и общедоступные облачные среды;\n- инструменты\
+            \ HashiСorp;\n- SRE management;\n- company transformation;\n- внедрение DevOps;\n- RnD."
   - id: 793
     fileName: 0793.jpg
     name:
       - {language: en, text: "Pavel Strelchenko"}
       - {language: ru, text: "Павел Стрельченко"}
+    company:
+      - {language: en, text: hh.ru}
+    bio:
+      - {language: en, text: "Android developer at hh.ru in Moscow. Pavel has been working with Android since 2015 and is\
+            \ currently using his skills to support company's applications and developing internal automation tools. His interests\
+            \ include machine learning, mobile apps architecture and IntelliJ IDEA plugins development. Pavel participated\
+            \ in the Android Academy MSK as a mentor and lecturer."}
+      - {language: ru, text: "Разрабатывает под Android с 2015 года. В hh.ru занимается поддержкой основных приложений, а\
+            \ также разработкой внутренних инструментов. Интересуется разработкой плагинов под Android Studio, вопросами а\
+            рхитектуры приложений, нейронными сетями. Участвовал в Android Academy MSK в качестве ментора и лектора."}
   - id: 794
     fileName: 0794.jpg
     name:
       - {language: en, text: "Kostiantyn Tarasenko"}
+    company:
+      - {language: en, text: Freeletics}
+    bio:
+      - language: en
+        text: "Busy with Android since API Level 3.\n\nEnjoys good things and clean code.\n\nDeveloper@Freeletics"
   - id: 795
     fileName: 0795.jpg
     name:
       - {language: en, text: "Alexander Shalamov"}
       - {language: ru, text: "Александр Шаламов"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Alexander stumbled into IT back in high school by creating servers for Ragnarok Online. He wrote\
+            \ scripts for NPCs, rebuilt server engines, ran small projects. Then he switched to C++ and Qt, building software\
+            \ for spacecraft motion visualization. After graduation from the university, he tried himself in a startup, wrote\
+            \ in PHP, JavaScript, HTML, CSS. When the startup gloriously imploded, Alexander took up iOS development. Since\
+            \ then he worked in the Ministry of Education and Sberbank, currently working in EPAM. Recently he started coding\
+            \ for macOS. In his free time, Alexander rides BMX, jumps on a trampoline and misses his motorcycle. Academically\
+            \ he is slowly crawling towards ML, reviving high school math along the way."}
+      - {language: ru, text: "Случайно оказался в IT, будучи школьником, поднимая сервера для Ragnarok Online. Писал скрип\
+            ты для NPC, пересобирал серверные движки, запускал небольшие проекты. Потом писал на С++ и Qt софт для визуали\
+            зации движения космических аппаратов. Закончил университет и ушел стартапить, писал на PHP, JavaScript, HTML,\
+            \ CSS. Когда стартап не взлетел, занялся iOS-разработкой. Работал в дочке Министерства образования и Сбербанке\
+            , а теперь — в EPAM. С недавних пор пишет под macOS. В свободное время катается на ВМХ, прыгает на батуте, ску\
+            чает по мотоциклу. Ползет в сторону ML, попутно вспоминая школьную математику."}
   - id: 796
     fileName: 0796.jpg
     name:
-      - {language: en, text: "Dmitry Ivanov"}
+      - {language: en, text: "Dmitrii Ivanov"}
       - {language: ru, text: "Дмитрий Иванов"}
     company:
-      - {language: en, text: "ING"}
+      - {language: en, text: ING}
+    bio:
+      - {language: en, text: "Dmitrii is the Russian guy who lives and works in the heart of Europe — in Amsterdam. On his\
+            \ day job he mostly does iOS development: he's been designing and implementing dating services, developing health\
+            \ care app, integrating external Bluetooth devices. Currently Dmitrii works at ING where he helps to develop modern\
+            \ banking app which strives to make banking as easy for the clients as possible. After work he spends time with\
+            \ his beloved family or having a glass of wonderful Dutch or Belgian beer in some cosy bar."}
+      - {language: ru, text: "Дмитрий живет и работает в самом сердце Европы — в Амстердаме. В основном он занимается iOS-р\
+            азработкой: он проектировал и реализовывал сервисы знакомств, разрабатывал медицинское приложение, интегрирова\
+            л внешние Bluetooth-устройства. Сейчас Дмитрий работает в ING, где помогает разрабатывать современное банковск\
+            ое приложение, направленное на то, чтобы сделать работу с банком максимально простой и понятной для клиентов.\
+            \ Свободное время Дмитрий проводит с семьей или за стаканом отличного голландского или бельгийского пива в как\
+            ом-нибудь уютном баре."}
+    twitter: dmtopolog
   - id: 797
     fileName: 0797.jpg
     name:
       - {language: en, text: "Alexander Krasikov"}
       - {language: ru, text: "Александр Красиков"}
+    company:
+      - {language: en, text: VK}
+      - {language: ru, text: ВКонтакте}
+    bio:
+      - {language: en, text: "iOS Developer since 2014. Currently working in \"Music\" team at VK."}
+      - {language: ru, text: "Занимается iOS-разработкой с 2014 года. В команде ВКонтакте работает в отделе «Музыка»."}
   - id: 798
     fileName: 0798.jpg
     name:
       - {language: en, text: "Libranner Santos"}
+    company:
+      - {language: en, text: "Ray Wenderlich"}
+    bio:
+      - {language: en, text: "Libranner is a Software Engineer that has been working with iOS for the past 6-7 years."}
+    twitter: libranner
   - id: 799
     fileName: 0799.jpg
     name:
       - {language: en, text: "Mikhail Emeljanov"}
       - {language: ru, text: "Михаил Емельянов"}
+    company:
+      - {language: en, text: CFT}
+      - {language: ru, text: ЦФТ}
+    bio:
+      - language: en
+        text: "Android developer since 2010, Mikhail worked on different projects, from multimedia to fintech.\n\nMikhail\
+            \ is a snowboarder enjoying powder and high springboards. He also loves music and plays guitar."
+      - language: ru
+        text: "В Android-разработке с 2010 года. Участвовал в разработке проектов от мультимедийных до финтеха.\n\nКатаетс\
+            я на сноуборде, любит пухляк и высокие трамплины. Меломан, играет на гитаре."
   - id: 800
     fileName: 0800.jpg
     name:
       - {language: en, text: "Aleksandr Sorokin"}
       - {language: ru, text: "Александр Сорокин"}
+    company:
+      - {language: en, text: VK}
+      - {language: ru, text: ВКонтакте}
+    bio:
+      - {language: en, text: "Senior Android developer at VK, Aleksandr works on the Messages section. He has been developing\
+            \ for Android since 2011."}
+      - {language: ru, text: "Старший Android-разработчик компании ВКонтакте. Занимается разработкой раздела сообщений. Пр\
+            ограммирует под Android с 2011 года."}
   - id: 801
     fileName: 0801.jpg
     name:
