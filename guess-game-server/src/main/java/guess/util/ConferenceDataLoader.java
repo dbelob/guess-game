@@ -693,7 +693,8 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2018, 9, 1), "2018tt");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2018, 10, 14), "2018DevOops");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2018, 10, 19), "2018Joker",
-//                Map.of(new NameCompany("Алексей Федоров", "JUG.ru Group"), 7L));
+//                Map.of(new NameCompany("Алексей Федоров", "JUG.ru Group"), 7L,
+//                        new NameCompany("Павел Финкельштейн", "lamoda"), 8L));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 11, 22), "2018msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2018, 11, 24), "2018msk");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2018, 12, 6), "2018msk");
