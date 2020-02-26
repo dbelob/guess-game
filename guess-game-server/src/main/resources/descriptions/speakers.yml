@@ -2947,6 +2947,17 @@ speakers:
     fileName: 0236.jpg
     name:
       - {language: en, text: "Maurice Herlihy"}
+    company:
+      - {language: en, text: "Brown University Computer Science Dept"}
+    bio:
+      - {language: en, text: "Maurice Herlihy has an A.B. in Mathematics from Harvard University, and a Ph.D. in Computer\
+            \ Science from M.I.T. He has served on the faculty of Carnegie Mellon University and the staff of DEC Cambridge\
+            \ Research Lab. He is the recipient of the 2003 Dijkstra Prize in Distributed Computing, the 2004 Gödel Prize\
+            \ in theoretical computer science, the 2008 ISCA influential paper award, the 2012 Edsger W. Dijkstra Prize, and\
+            \ the 2013 Wallace McDowell award. He received a 2012 Fulbright Distinguished Chair in the Natural Sciences and\
+            \ Engineering Lecturing Fellowship, and he is fellow of the ACM, a fellow of the National Academy of Inventors,\
+            \ the National Academy of Engineering, and the National Academy of Arts and Sciences."}
+    twitter: mpherlihy
   - id: 237
     fileName: 0237.jpg
     name:
@@ -5025,10 +5036,30 @@ speakers:
     fileName: 0386.jpg
     name:
       - {language: en, text: "Leslie Lamport"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Leslie B. Lamport is an American computer scientist. Lamport is best known for his seminal work\
+            \ in distributed systems and as the initial developer of the document preparation system LaTeX. Leslie Lamport\
+            \ was the winner of the 2013 Turing Award for imposing clear, well-defined coherence on the seemingly chaotic\
+            \ behavior of distributed computing systems, in which several autonomous computers communicate with each other\
+            \ by passing messages. He devised important algorithms and developed formal modeling and verification protocols\
+            \ that improve the quality of real distributed systems. These contributions have resulted in improved correctness,\
+            \ performance, and reliability of computer systems."}
   - id: 387
     fileName: 0387.jpg
     name:
       - {language: en, text: "Michael Scott"}
+    company:
+      - {language: en, text: "University of Rochester"}
+    bio:
+      - language: en
+        text: "Michael L. Scott is the Arthur Gould Yates Professor of Engineering and past chair of the Department of Computer\
+            \ Science at the University of Rochester, in Rochester, NY, USA. He is a Fellow of the ACM and the IEEE, and a\
+            \ recipient of the 2006 SIGACT/SIGOPS Edsger W. Dijkstra Prize.\r\n\r\nHis textbook on programming language design\
+            \ and implementation (Programming Language Pragmatics, 4th ed., Morgan Kauffman, 2016) is used at more than 200\
+            \ universities around the world.\r\n\r\nIn the java.util.concurrent library, he is a co-inventor of the ConcurrentLinkedQueue,\
+            \ Exchanger, and SynchronousQueue classes."
   - id: 388
     fileName: 0388.jpg
     name:
@@ -5071,26 +5102,87 @@ speakers:
     fileName: 0397.jpg
     name:
       - {language: en, text: "Ittai Abraham"}
+    company:
+      - {language: en, text: VMware}
+    bio:
+      - language: en
+        text: "Ittai does research in algorithms and distributed computing.\n\nHe is a founding member and Senior Staff Researcher\
+            \ at the VMware Research Group. He is a founding member of the VMware Blockchain Project and the VMware Research\
+            \ Group in Israel (2016-). Prior to joining VMware, he was a Researcher in Microsoft Research Silicon Valley (2008-2014).\
+            \ He holds a PhD in Computer Science from the Hebrew University.\n\nIttai has a broad interest in the areas of\
+            \ algorithms and distributed computing. His work spans from the theory of algorithms through the foundations of\
+            \ distributed computing to practical aspects in industrial research, algorithm engineering and distributed systems.\n\
+            \nIttai is co-steering and co-chairing the <a href=\"https://aft.acm.org/\" target=\"_blank\">first ACM conference\
+            \ on Advances in Financial Technologies</a>."
+    twitter: ittaia
   - id: 398
     fileName: 0398.jpg
     name:
       - {language: en, text: "Danny Hendler"}
+    company:
+      - {language: en, text: "Ben-Gurion University of the Negev"}
+    bio:
+      - {language: en, text: "Danny Hendler received his B.Sc. degree in Mathematics and Computer Science and his M.Sc. and\
+            \ Ph.D. degrees in Computer Science from Tel-Aviv University. In 2001 he returned to academia after spending 18\
+            \ years in Israel's hi-tech industry, holding various technical and managerial positions. He joined the Department\
+            \ of Computer Science at Ben-Gurion University of the Negev in 2006 and is currently an Associate Professor in\
+            \ the department. Since 2014 he has served as the vice head of BGU's Cyber Security Research Center. His key research\
+            \ interests are distributed and parallel computation, cyber security, and complex network analysis."}
   - id: 399
     fileName: 0399.jpg
     name:
       - {language: en, text: "Eli Gafni"}
+    company:
+      - {language: en, text: UCLA}
+    bio:
+      - language: en
+        text: "Eli Gafni received his first degree from the Technion, second from UIUC, and third from MIT, all in E.E. He\
+            \ was involved with the Internet in the early days when it consisted of only few nodes. Unlike his contemporaries\
+            \ in MIT, of which quite a few went on to become few hundred times Internet millionaires, he joined UCLA computer\
+            \ science department and abstracted the Internet to the point that he became even too theoretical for that discipline.\n\
+            \nHe received the Presidential Young Investigator award when he was young and promising. He still promises but\
+            \ ain't young any more. His claim to fame is for missing on the Godel award, for lack of Journal Version, leading\
+            \ one of the 3 teams which found the relationship between distributed computing and algebraic topology.\n\nNevertheless,\
+            \ with tenure, he is still a Professor at UCLA, holding forth that intellectual fun or the ability to roam perhaps\
+            \ aimlessly through intellectually challenging roads is the reason to be in university rather than Industry. He\
+            \ does not envy the millionaires, he is only partially responsible for the sorry financial state of the UC system,\
+            \ and most of his publications are still missing a Journal Version."
   - id: 400
     fileName: 0400.jpg
     name:
       - {language: en, text: "Achour Mostefaoui"}
+    company:
+      - {language: en, text: "University of Nantes"}
+    bio:
+      - {language: en, text: "Achour Mostefaoui is currently Professor at the Computer Science Department of the University\
+            \ of Nantes, France. He received his M.Sc. in computer science in 1991, and a Ph.D. in 1994 from the University\
+            \ of Rennes. He is co-head of the GDD research team within the LS2N Lab. He authored more than 150 research papers."}
   - id: 401
     fileName: 0401.jpg
     name:
       - {language: en, text: "Trevor Brown"}
+    company:
+      - {language: en, text: "University of Waterloo"}
+    bio:
+      - language: en
+        text: "Trevor Brown is currently an assistant professor in the Cheriton School of Computer Science at the University\
+            \ of Waterloo. Before that, he was a postdoctoral researcher at the Institute of Science and Technology, Austria.\
+            \ Before that, he was a postdoctoral researcher at the Technion, Israel Institute of Technology. Before that,\
+            \ he was a PhD student at the University of Toronto.\n\nAlthough Trevor was in the theory group at the University\
+            \ of Toronto, he would say that his work is closer to systems work than theory. He cares greatly about rigor,\
+            \ whether in theoretical or experimental work. His research currently revolves around concurrent data structures\
+            \ and non-uniform memory architectures. He is also interested in transactional memory, non-volatile memory, and\
+            \ memory allocation and reclamation."
   - id: 402
     fileName: 0402.jpg
     name:
       - {language: en, text: "Petr Kuznetsov"}
+    company:
+      - {language: en, text: "Professor, Telecom Paris, Institut Polytechnique Paris"}
+    bio:
+      - language: en
+        text: "Research interests: \n- Distributed systems and algorithms; \n- Synchronization and failure detection; \n-\
+            \ Algebraic topology and distributed computing; \n- Distributed aspects in networking."
   - id: 403
     fileName: 0403.jpg
     name:

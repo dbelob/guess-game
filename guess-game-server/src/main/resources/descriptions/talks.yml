@@ -2314,42 +2314,234 @@ talks:
   - id: 244
     name:
       - {language: en, text: "Recoverable algorithms for non-volatile memory"}
+    shortDescription:
+      - {language: en, text: "We will describe emerging shared-memory models for recoverable objects, as well as algorithms\
+            \ for implementing recoverable versions of mutual-exclusion locks and lock-free concurrent objects."}
+    longDescription:
+      - language: en
+        text: "Byte-addressable non-volatile main memory (NVRAM) combines the performance benefits of conventional DRAM-based\
+            \ main memory with the durability of secondary storage. Systems where NVRAM co-exists with (or even replaces)\
+            \ traditional volatile main memory have recently become commercially available and are anticipated to become increasingly\
+            \ widespread in the future. Consequently, there is growing interest in recoverable concurrent objects (also called\
+            \ persistent or durable objects) — concurrent objects that leverage state saved in NVRAM for efficient recovery\
+            \ from crash failures.\n\nIn this tutorial, we will describe emerging shared-memory models for recoverable objects,\
+            \ as well as algorithms for implementing recoverable versions of mutual-exclusion locks and lock-free concurrent\
+            \ objects."
+    talkDay: 1
+    trackTime: "10:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2orm2PafIJ7IpiB5s0R4Eq/44eabc1e90ce9f0f74e525a3626b50bb/Recoverable-algorithms-for-NVRAM-based-systems-exercises-and-solutions-v2__1_.pdf"]
+    videoLinks: ["https://youtu.be/YnvOGggZyY4"]
     speakerIds: [398]
   - id: 245
     name:
       - {language: en, text: "The coordination power of distributed computing models"}
+    shortDescription:
+      - {language: en, text: "Discussion of problems of distributed computing and their solutions."}
+    longDescription:
+      - language: en
+        text: "Research is about asking the right questions. Distributed computing started with the impossibility result of\
+            \ the \"coordinated attack problem\", and the question of \"mutual exclusion\". In this class, I'll do what is\
+            \ called in US Football, \"Monday Morning Quarterbacking\". How could our team score easily \"if only....\" \n\
+            \nI'll describe the two problems mentioned above and pose similar alternative problems. I'll show that the solutions\
+            \ to these problems are natural and almost trivial, in a new setting called \"message adversary\", and by this\
+            \ I'll cover some of the main achievements of theoretical distributed computing that took decades in the making."
+    talkDay: 1
+    trackTime: "14:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6p4qAJtX5Lckr8SRjeLqqI/292933c57893dfe76187311ec7eb6798/Exercises.pdf"]
+    videoLinks: ["https://youtu.be/la1rElcVKI8"]
     speakerIds: [399]
   - id: 246
     name:
       - {language: en, text: "The Paxos algorithm or how to win a Turing Award"}
+    shortDescription:
+      - {language: en, text: "How to think about concurrent systems mathematically is explained using the Paxos consensus\
+            \ algorithm as an example. First, the problem to be solved is precisely specified. Then, a \"shared memory\" voting\
+            \ algorithm is specified and shown to implement the problem specification. Finally, the Paxos algorithm is specified\
+            \ and shown to implement the voting algorithm. How mathematical thinking is used in industry is then briefly discussed."}
+    longDescription:
+      - {language: en, text: "How to think about concurrent systems mathematically is explained using the Paxos consensus\
+            \ algorithm as an example. First, the problem to be solved is precisely specified. Then, a \"shared memory\" voting\
+            \ algorithm is specified and shown to implement the problem specification. Finally, the Paxos algorithm is specified\
+            \ and shown to implement the voting algorithm. How mathematical thinking is used in industry is then briefly discussed."}
+    talkDay: 2
+    trackTime: "10:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/tw3gsBms-f8"]
     speakerIds: [386]
   - id: 247
     name:
       - {language: en, text: "Byzantine agreement"}
+    shortDescription:
+      - {language: en, text: "This talk will discuss how to solve the consensus problem in the case where some processes of\
+            \ a distributed message-passing system may exhibit a Byzantine behavior."}
+    longDescription:
+      - language: en
+        text: "More and more applications are now distributed and in non-trivial distributed applications, it appears that\
+            \ the computing entities (processes) have to agree in one way or another, for example, to take a common decision,\
+            \ execute specific actions, or validate some commitment. The most famous distributed agreement problem is the\
+            \ consensus problem. A process crash failure occurs when a process stops prematurely; it can be seen as a benign\
+            \ failure, as a crashed process did not pollute the computation before crashing. The situation is different with\
+            \ Byzantine failures. A process has a Byzantine behavior when it arbitrarily deviates from its intended behavior.\
+            \ Let us notice that, from a failure hierarchy point of view, process crashes (unexpected halting) constitute\
+            \ a strict subset of Byzantine failures. As message-passing distributed systems are more and more pervasive, the\
+            \ assumption \"no process has a bad behavior\" is no longer sensible. Hence, agreement in Byzantine message-passing\
+            \ systems is becoming a more and more important issue of fault-tolerance.\n\nThis lecture aims to show how the\
+            \ consensus problem can be solved in both synchronous and asynchronous distributed message-passing systems prone\
+            \ to Byzantine failures. We present some lower bounds on the ratio of Byzantine processes that can be tolerated\
+            \ and how these bounds evolve according to the expected complexity of the obtained solutions. In synchronous systems,\
+            \ we will present the basic consensus algorithm called EIG (exponential information gathering) and show how its\
+            \ exponential complexity can be lowered. In the asynchronous model, consensus cannot be solved deterministically,\
+            \ we will show how to circumvent this impossibility by using timing assumptions or randomization. For this and\
+            \ in order to have more intuitive algorithms, we will introduce a series of broadcast primitives that help reduce\
+            \ the noise due to the Byzantine behavior of part of the processes."
+    talkDay: 2
+    trackTime: "14:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/IFuRCxA8JtQ"]
     speakerIds: [400]
   - id: 248
     name:
       - {language: en, text: "Lower bounds in distributed computing"}
+    shortDescription:
+      - {language: en, text: "We discuss popular techniques designed for establishing (tight) lower bounds in distributed\
+            \ computing."}
+    longDescription:
+      - language: en
+        text: "How do you know that your program is efficient? What is efficiency in the first place? First, we need to choose\
+            \ a complexity metric and agree that the metric is relevant. Second, we need to show that the program performs\
+            \ \"well\", having this metric in mind. Ideally, we would like to show that no program can solve the given problem\
+            \ with a better complexity. How to do it? We need to establish a *tight lower bound*, i.e. (1) find a complexity\
+            \ level that no program can beat, and (2) show that our program exhibits precisely this complexity.\n\nIn this\
+            \ lecture, we discuss popular techniques designed for establishing (tight) lower bounds in distributed computing.\
+            \ Models for distributed systems come in many flavors: processes may communicate through shared memory or by message\
+            \ passing, they may be synchronous or asynchronous, prone to failures or not, and so on. Different models require\
+            \ different lower bound results. Nevertheless, many of these results rely on common techniques, having to do with\
+            \ information transfer and the difficulty of dealing with indistinguishable scenarios. This lecture will explore\
+            \ and explain some of these techniques, together with their applications."
+    talkDay: 3
+    trackTime: "10:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4bDlAmCVCQ0PPtZtAWs632/afba56b9ad4fa3338c75904b6db4032c/sol1.pdf"]
+    videoLinks: ["https://youtu.be/fl8sZ3CzyH0"]
     speakerIds: [402]
   - id: 249
     name:
       - {language: en, text: "Nonblocking data structures"}
+    shortDescription:
+      - {language: en, text: "This course will briefly survey background material on hardware primitives and memory models,\
+            \ together with formal notions of safety, liveness, and proof techniques; explore nonblocking versions of important\
+            \ data structures; and introduce appropriate memory management techniques."}
+    longDescription:
+      - language: en
+        text: "Nonblocking concurrent data structures are an increasingly valuable tool for shared-memory parallel programming.\
+            \ By ensuring that no reachable state precludes forward progress by any given thread, nonblocking structures avoid\
+            \ performance anomalies in the presence of preemption, and can in principle tolerate thread failures. They can\
+            \ also outperform lock-based alternatives in several important cases, and are competitive in others. They are,\
+            \ however, quite difficult to write — due, among other things, to inherent data races, interactions with the language\
+            \ and hardware memory model, and the need for concurrent memory management.\n\nThis course will briefly survey\
+            \ background material on hardware primitives and memory models, together with formal notions of safety, liveness,\
+            \ and proof techniques. It will then explore nonblocking versions of important data structures, including stacks,\
+            \ queues, linked lists, hash tables, skip lists, and search trees. In the process, it will introduce appropriate\
+            \ memory management techniques. To the extent that time permits, it will also point to work on several more advanced\
+            \ topics, including condition synchronization (partial methods), combining and flat combining, universal constructions,\
+            \ nonblocking software transactional memory, and RCU."
+    talkDay: 4
+    trackTime: "10:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/O1nKSdo1vWfai0MBARzPn/afdd9d2436c0aea0f464842c932da07c/exercises_with_solutions.pdf"]
+    videoLinks: ["https://youtu.be/9XAx279s7gs"]
     speakerIds: [387]
   - id: 250
     name:
       - {language: en, text: "Byzantine fault-tolerance, state machine replication and blockchains"}
+    shortDescription:
+      - {language: en, text: "In the first part of this tutorial we will provide a new general framework that can be used\
+            \ to explain many consensus protocol variants, and in the second — touch upon the deep connections between Byzantine\
+            \ fault-tolerance and blockchains."}
+    longDescription:
+      - language: en
+        text: "In the first part of this tutorial we will provide a new general framework that can be used to explain many\
+            \ consensus protocol variants. We start with a simple primary backup replication scheme and via a series of steps\
+            \ extend it in several dimensions:\n1. from crash failures, to omission failures, to Byzantine failures.\n2. from\
+            \ single-shot to multi-shot.\n3. from synchrony, to partial synchrony, to asynchrony.\n\nIn the second part of\
+            \ this tutorial we will touch upon the deep connections between Byzantine fault-tolerance and blockchains."
+    talkDay: 4
+    trackTime: "14:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/JEKyVMUjFPw"]
     speakerIds: [397]
   - id: 251
     name:
-      - {language: en, text: "Blockchains and the future of distributed computing"}
-    speakerIds: [236]
+      - {language: en, text: "The coordination power of distributed computing models (part 2)"}
+    shortDescription:
+      - {language: en, text: "Discussion of problems of distributed computing and their solutions."}
+    longDescription:
+      - language: en
+        text: "Research is about asking the right questions. Distributed computing started with the impossibility result of\
+            \ the \"coordinated attack problem\", and the question of \"mutual exclusion\". In this class, I'll do what is\
+            \ called in US Football, \"Monday Morning Quarterbacking\". How could our team score easily \"if only....\" \n\
+            \nI'll describe the two problems mentioned above and pose similar alternative problems. I'll show that the solutions\
+            \ to these problems are natural and almost trivial, in a new setting called \"message adversary\", and by this\
+            \ I'll cover some of the main achievements of theoretical distributed computing that took decades in the making."
+    talkDay: 1
+    trackTime: "16:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/3pE-wBw-9Pg"]
+    speakerIds: [399]
   - id: 252
     name:
       - {language: en, text: "Practical aspects of multicore programming"}
+    shortDescription:
+      - {language: en, text: "A brief introduction to concurrent data structures, including what it means for concurrent data\
+            \ structures to be correct, and how they should be implemented to achieve high performance on real systems."}
+    longDescription:
+      - language: en
+        text: "Modern servers have dozens or even hundreds of cores, which can execute many threads of computation in parallel.\
+            \ In such a system, the difference between the performance of a bad implementation and a good one can easily be\
+            \ 100x.\n\nThis lecture uses concurrent data structures as examples to explain high performance implementation\
+            \ techniques and surprising performance pitfalls. Along the way, we will cover linearizability, which is a way\
+            \ to define what correctness means for a concurrent data structure.\n\nStudents should finish with knowledge of\
+            \ some simple linearizable concurrent data structures, and an understanding of how these data structures interact\
+            \ with various aspects of real systems, with a special focus on processor caches."
+    talkDay: 5
+    trackTime: "10:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/DybISjXdUW8"]
     speakerIds: [401]
   - id: 253
     name:
       - {language: en, text: "Blockchain Topics: proof-of-work, smart contracts, and cross-chain swaps"}
+    shortDescription:
+      - {language: en, text: "These lectures describe how blockchain-based ledgers require rethinking the foundations of classical\
+            \ distributed computing."}
+    longDescription:
+      - {language: en, text: "Modern distributed data management systems face a new challenge: how to allow autonomous, mutually-distrusting\
+            \ parties to co-operate safely and effectively. This challenge presents many questions familiar from classical\
+            \ distributed systems: how to combine multiple steps into a single atomic action, how to recover from failures,\
+            \ how to synchronize concurrent access to data, and what it means for that action to be correct. These lectures\
+            \ describe how blockchain-based ledgers require rethinking the foundations of classical distributed computing."}
+    talkDay: 5
+    trackTime: "14:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5iQjTSvLaUl4paAMBGrPuX/57d3e456e366f7759c7ce9ee015f0610/sptdcsolutions.pdf"]
+    videoLinks: ["https://youtu.be/wO4_Z716zEM"]
     speakerIds: [236]
   - id: 254
     name:
@@ -33045,3 +33237,197 @@ talks:
     presentationLinks: []
     videoLinks: ["https://youtu.be/hvTchNNDSes"]
     speakerIds: [677]
+  - id: 1309
+    name:
+      - {language: en, text: "Recoverable algorithms for non-volatile memory (part 2)"}
+    shortDescription:
+      - {language: en, text: "We will describe emerging shared-memory models for recoverable objects, as well as algorithms\
+            \ for implementing recoverable versions of mutual-exclusion locks and lock-free concurrent objects."}
+    longDescription:
+      - language: en
+        text: "Byte-addressable non-volatile main memory (NVRAM) combines the performance benefits of conventional DRAM-based\
+            \ main memory with the durability of secondary storage. Systems where NVRAM co-exists with (or even replaces)\
+            \ traditional volatile main memory have recently become commercially available and are anticipated to become increasingly\
+            \ widespread in the future. Consequently, there is growing interest in recoverable concurrent objects (also called\
+            \ persistent or durable objects) — concurrent objects that leverage state saved in NVRAM for efficient recovery\
+            \ from crash failures.\n\nIn this tutorial, we will describe emerging shared-memory models for recoverable objects,\
+            \ as well as algorithms for implementing recoverable versions of mutual-exclusion locks and lock-free concurrent\
+            \ objects."
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/S3R7vw5rHA8"]
+    speakerIds: [398]
+  - id: 1310
+    name:
+      - {language: en, text: "The Paxos algorithm or how to win a Turing Award (part 2)"}
+    shortDescription:
+      - {language: en, text: "How to think about concurrent systems mathematically is explained using the Paxos consensus\
+            \ algorithm as an example. First, the problem to be solved is precisely specified. Then, a \"shared memory\" voting\
+            \ algorithm is specified and shown to implement the problem specification. Finally, the Paxos algorithm is specified\
+            \ and shown to implement the voting algorithm. How mathematical thinking is used in industry is then briefly discussed."}
+    longDescription:
+      - {language: en, text: "How to think about concurrent systems mathematically is explained using the Paxos consensus\
+            \ algorithm as an example. First, the problem to be solved is precisely specified. Then, a \"shared memory\" voting\
+            \ algorithm is specified and shown to implement the problem specification. Finally, the Paxos algorithm is specified\
+            \ and shown to implement the voting algorithm. How mathematical thinking is used in industry is then briefly discussed."}
+    talkDay: 2
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/65dMv9ibir2N2VKpGcabcZ/c37037df59568460a1584df603f565b0/saint-petersburg1.pdf",
+                        "https://assets.ctfassets.net/oxjq45e8ilak/7sNBkEBx0OnLKNyzsRs7wt/3b716eead75fa91891169bd14da7f7b0/saint-petersburg2.pdf",
+                        "https://assets.ctfassets.net/oxjq45e8ilak/3STaHUd80vajqKB6lYPumm/a14307052ccf9e5bda792a733dc67ccb/saint-petersburg3.pdf"]
+    videoLinks: ["https://youtu.be/8-Bc5Lqgx_c"]
+    speakerIds: [386]
+  - id: 1311
+    name:
+      - {language: en, text: "Byzantine agreement (part 2)"}
+    shortDescription:
+      - {language: en, text: "This talk will discuss how to solve the consensus problem in the case where some processes of\
+            \ a distributed message-passing system may exhibit a Byzantine behavior."}
+    longDescription:
+      - language: en
+        text: "More and more applications are now distributed and in non-trivial distributed applications, it appears that\
+            \ the computing entities (processes) have to agree in one way or another, for example, to take a common decision,\
+            \ execute specific actions, or validate some commitment. The most famous distributed agreement problem is the\
+            \ consensus problem. A process crash failure occurs when a process stops prematurely; it can be seen as a benign\
+            \ failure, as a crashed process did not pollute the computation before crashing. The situation is different with\
+            \ Byzantine failures. A process has a Byzantine behavior when it arbitrarily deviates from its intended behavior.\
+            \ Let us notice that, from a failure hierarchy point of view, process crashes (unexpected halting) constitute\
+            \ a strict subset of Byzantine failures. As message-passing distributed systems are more and more pervasive, the\
+            \ assumption \"no process has a bad behavior\" is no longer sensible. Hence, agreement in Byzantine message-passing\
+            \ systems is becoming a more and more important issue of fault-tolerance.\n\nThis lecture aims to show how the\
+            \ consensus problem can be solved in both synchronous and asynchronous distributed message-passing systems prone\
+            \ to Byzantine failures. We present some lower bounds on the ratio of Byzantine processes that can be tolerated\
+            \ and how these bounds evolve according to the expected complexity of the obtained solutions. In synchronous systems,\
+            \ we will present the basic consensus algorithm called EIG (exponential information gathering) and show how its\
+            \ exponential complexity can be lowered. In the asynchronous model, consensus cannot be solved deterministically,\
+            \ we will show how to circumvent this impossibility by using timing assumptions or randomization. For this and\
+            \ in order to have more intuitive algorithms, we will introduce a series of broadcast primitives that help reduce\
+            \ the noise due to the Byzantine behavior of part of the processes."
+    talkDay: 2
+    trackTime: "16:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/o37QtB3P4H0"]
+    speakerIds: [400]
+  - id: 1312
+    name:
+      - {language: en, text: "Lower bounds in distributed computing (part 2)"}
+    shortDescription:
+      - {language: en, text: "We discuss popular techniques designed for establishing (tight) lower bounds in distributed\
+            \ computing."}
+    longDescription:
+      - language: en
+        text: "How do you know that your program is efficient? What is efficiency in the first place? First, we need to choose\
+            \ a complexity metric and agree that the metric is relevant. Second, we need to show that the program performs\
+            \ \"well\", having this metric in mind. Ideally, we would like to show that no program can solve the given problem\
+            \ with a better complexity. How to do it? We need to establish a *tight lower bound*, i.e. (1) find a complexity\
+            \ level that no program can beat, and (2) show that our program exhibits precisely this complexity.\n\nIn this\
+            \ lecture, we discuss popular techniques designed for establishing (tight) lower bounds in distributed computing.\
+            \ Models for distributed systems come in many flavors: processes may communicate through shared memory or by message\
+            \ passing, they may be synchronous or asynchronous, prone to failures or not, and so on. Different models require\
+            \ different lower bound results. Nevertheless, many of these results rely on common techniques, having to do with\
+            \ information transfer and the difficulty of dealing with indistinguishable scenarios. This lecture will explore\
+            \ and explain some of these techniques, together with their applications."
+    talkDay: 3
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/qdGrCFqmsc4"]
+    speakerIds: [402]
+  - id: 1313
+    name:
+      - {language: en, text: "Nonblocking data structures (part 2)"}
+    shortDescription:
+      - {language: en, text: "This course will briefly survey background material on hardware primitives and memory models,\
+            \ together with formal notions of safety, liveness, and proof techniques; explore nonblocking versions of important\
+            \ data structures; and introduce appropriate memory management techniques."}
+    longDescription:
+      - language: en
+        text: "Nonblocking concurrent data structures are an increasingly valuable tool for shared-memory parallel programming.\
+            \ By ensuring that no reachable state precludes forward progress by any given thread, nonblocking structures avoid\
+            \ performance anomalies in the presence of preemption, and can in principle tolerate thread failures. They can\
+            \ also outperform lock-based alternatives in several important cases, and are competitive in others. They are,\
+            \ however, quite difficult to write — due, among other things, to inherent data races, interactions with the language\
+            \ and hardware memory model, and the need for concurrent memory management.\n\nThis course will briefly survey\
+            \ background material on hardware primitives and memory models, together with formal notions of safety, liveness,\
+            \ and proof techniques. It will then explore nonblocking versions of important data structures, including stacks,\
+            \ queues, linked lists, hash tables, skip lists, and search trees. In the process, it will introduce appropriate\
+            \ memory management techniques. To the extent that time permits, it will also point to work on several more advanced\
+            \ topics, including condition synchronization (partial methods), combining and flat combining, universal constructions,\
+            \ nonblocking software transactional memory, and RCU."
+    talkDay: 4
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/cQIktrroRL0"]
+    speakerIds: [387]
+  - id: 1314
+    name:
+      - {language: en, text: "Byzantine fault-tolerance, state machine replication and blockchains (part 2)"}
+    shortDescription:
+      - {language: en, text: "In the first part of this tutorial we will provide a new general framework that can be used\
+            \ to explain many consensus protocol variants, and in the second — touch upon the deep connections between Byzantine\
+            \ fault-tolerance and blockchains."}
+    longDescription:
+      - language: en
+        text: "In the first part of this tutorial we will provide a new general framework that can be used to explain many\
+            \ consensus protocol variants. We start with a simple primary backup replication scheme and via a series of steps\
+            \ extend it in several dimensions:\n1. from crash failures, to omission failures, to Byzantine failures.\n2. from\
+            \ single-shot to multi-shot.\n3. from synchrony, to partial synchrony, to asynchrony.\n\nIn the second part of\
+            \ this tutorial we will touch upon the deep connections between Byzantine fault-tolerance and blockchains."
+    talkDay: 4
+    trackTime: "16:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/Uoo2cOvQVN0"]
+    speakerIds: [397]
+  - id: 1315
+    name:
+      - {language: en, text: "Practical aspects of multicore programming (part 2)"}
+    shortDescription:
+      - {language: en, text: "A brief introduction to concurrent data structures, including what it means for concurrent data\
+            \ structures to be correct, and how they should be implemented to achieve high performance on real systems."}
+    longDescription:
+      - language: en
+        text: "Modern servers have dozens or even hundreds of cores, which can execute many threads of computation in parallel.\
+            \ In such a system, the difference between the performance of a bad implementation and a good one can easily be\
+            \ 100x.\n\nThis lecture uses concurrent data structures as examples to explain high performance implementation\
+            \ techniques and surprising performance pitfalls. Along the way, we will cover linearizability, which is a way\
+            \ to define what correctness means for a concurrent data structure.\n\nStudents should finish with knowledge of\
+            \ some simple linearizable concurrent data structures, and an understanding of how these data structures interact\
+            \ with various aspects of real systems, with a special focus on processor caches."
+    talkDay: 5
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/3UC11rCpk_U"]
+    speakerIds: [401]
+  - id: 1316
+    name:
+      - {language: en, text: "Blockchain Topics: proof-of-work, smart contracts, and cross-chain swaps (part 2)"}
+    shortDescription:
+      - {language: en, text: "These lectures describe how blockchain-based ledgers require rethinking the foundations of classical\
+            \ distributed computing."}
+    longDescription:
+      - {language: en, text: "Modern distributed data management systems face a new challenge: how to allow autonomous, mutually-distrusting\
+            \ parties to co-operate safely and effectively. This challenge presents many questions familiar from classical\
+            \ distributed systems: how to combine multiple steps into a single atomic action, how to recover from failures,\
+            \ how to synchronize concurrent access to data, and what it means for that action to be correct. These lectures\
+            \ describe how blockchain-based ledgers require rethinking the foundations of classical distributed computing."}
+    talkDay: 5
+    trackTime: "16:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/pLNmYD8wjxk"]
+    speakerIds: [236]

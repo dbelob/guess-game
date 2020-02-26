@@ -836,15 +836,19 @@ events:
   - eventTypeId: 10
     name:
       - {language: en, text: "SPTDC 2019"}
-    startDate: 2019-07-08
-    endDate: 2019-07-12
+    startDate: "2019-07-08"
+    endDate: "2019-07-12"
+    siteLink:
+      - {language: en, text: "https://sptdc.ru/"}
     city:
       - {language: en, text: "Saint Petersburg"}
-      - {language: ru, text: "Санкт-Петербург"}
+      - {language: ru, text: Санкт-Петербург}
     venueAddress:
-      - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
-      - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
-    talkIds: [244, 245, 246, 247, 248, 249, 250, 251, 252, 253]
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PL_5iU_mKtf3tVGo_x8XO0J8SEr32BxYjv
+    mapCoordinates: "59.842400, 30.318815"
+    talkIds: [244, 1309, 245, 251, 246, 1310, 247, 1311, 248, 1312, 249, 1313, 250, 1314, 252, 1315, 253, 1316]
   # SmartData
   - eventTypeId: 11
     name:
