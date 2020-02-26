@@ -33817,3 +33817,854 @@ talks:
     presentationLinks: []
     videoLinks: ["https://youtu.be/pLNmYD8wjxk"]
     speakerIds: [236]
+  - id: 1317
+    name:
+      - {language: en, text: "Pride and Prejudice. Why do we think we are smart?"}
+      - {language: ru, text: "Гордость и предубеждение. Почему мы думаем, что мы умные?"}
+    shortDescription:
+      - {language: en, text: "Ivan will talk about the features of the \"living\" and artificial creations and will try to\
+            \ expound the difference between the brainwork of biological being and machine."}
+      - {language: ru, text: "Иван расскажет об особенностях «живых» и искусственных систем, и постарается разъяснить разн\
+            ицу между мышлением биологического существа и машины."}
+    longDescription:
+      - {language: en, text: "There are a lot of analogies between how \"living\" and artificial systems are learning. How\
+            \ unique is biological intellect? Why do we even think that our biological algorithms of making decisions are\
+            \ somehow fundamentally different from machine learning algorithms?"}
+      - {language: ru, text: "Есть много аналогий между тем, как учатся «живые» системы и системы искусственные. А так ли\
+            \ уникален биологический интеллект? Почему мы вообще считаем, что наши биологические алгоритмы принятия решени\
+            й как-то принципиально отличаются от алгоритмов машинного обучения?"}
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/uMKa5z1Lem8"]
+    speakerIds: [262]
+  - id: 1318
+    name:
+      - {language: en, text: "Form a picture of the GraphQL world"}
+      - {language: ru, text: "Формируем картину GraphQL-мира"}
+    shortDescription:
+      - {language: en, text: "Pavel will come up with the new topic from his GraphQL series of talks: there will be not only\
+            \ the simple explanation of the term but also a narration about what the server consists of, how to request data\
+            \ from it and why clients are needed."}
+      - {language: ru, text: "Павел выступит с новой темой из серии своих докладов про GraphQL: будет не только объяснение\
+            \ данного термина простыми словами, но и рассказ о том, из чего сервер состоит, как запрашивать данные с него\
+            \ и для чего нужны клиенты."}
+    longDescription:
+      - language: en
+        text: "What is GraphQL? Pavel will describe and show what GraphQL is by simple words, not like in the documentation.\n\
+            \nSpeaker will tell what parts of GraphQL server consist of. For what GraphQL is responsible and what has to be\
+            \ implemented by the backend developer itself. Pavel will show on a diagram where is GraphQL place along with\
+            \ REST and RPC.\n\nAlso, Pavel will demonstrate several ways to request data from GraphQL server.\n\nThere will\
+            \ also be information about why feature-packed GraphQL clients are needed. How they allow forming GraphQL requests\
+            \ without mistakes, how can cleverly send requests to the server, caching answers and work remotely? Once, after\
+            \ working with Relay and ApolloClient, you'll remember Redux like a bad dream.\n\nGraphQL is an ideal companion\
+            \ for the modern component approach and allows to take the development of client application to a new level. \n\
+            \nPeople, who have already seen Pavel's talks about GraphQL and is waiting for something new are asked not to\
+            \ be disappointed — the talk is aimed at newbies and skeptics, both for back-end and front-end developers."
+      - language: ru
+        text: "Что такое GraphQL? Павел опишет и покажет, что такое GraphQL простыми словами, не так, как в документации.\r\
+            \n\r\nСпикер расскажет из каких частей состоит GraphQL-сервер. За что GraphQL отвечает, а что придется реализо\
+            вывать бэкендеру самостоятельно. На схеме покажет где его место наряду с REST и RPC.\r\n\r\nЕще Павел продемон\
+            стрирует несколько способов как можно запросить данные с GraphQL-сервера.\r\n\r\nТакже будет информация о том\
+            , зачем нужны навороченные GraphQL-клиенты. Как они позволяют без ошибок формировать GraphQL-запросы на этапе\
+            \ разработки, как могут хитро слать запросы на сервер, кэшировать ответы и работать с данными. Однажды, порабо\
+            тав с Relay или ApolloClient, вы будете вспоминать Redux как страшный сон.\r\n\r\nGraphQL — идеальный компаньо\
+            н для современного компонентного подхода и позволяет вывести разработку клиентских приложений на новый уровень\
+            .\r\n\r\nКто уже видел доклады Павла про GraphQL и ждет что-то нового, то просит не разочаровываться — доклад\
+            \ нацелен на новичков и скептиков, как бэкендеров, так и фронтендеров."
+    talkDay: 1
+    trackTime: "12:15"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/kMARjBBe4FM"]
+    speakerIds: [660]
+  - id: 1319
+    name:
+      - {language: en, text: "Self-esteem and inherent worth. How to stop chasing \"success\" and start living"}
+      - {language: ru, text: "Самооценка и самоценность. Как перестать гоняться за «успехом» и начать жить"}
+    shortDescription:
+      - {language: en, text: "Irina will talk about such hot topics as regaining self-confidence and stopping to overreact\
+            \ to failures and most importantly she will show what daily habits will help us increase self-esteem."}
+      - {language: ru, text: "Ирина расскажет о таких актуальных темах, как вернуть уверенность в себе и перестать остро р\
+            еагировать на неудачи, и, самое главное, покажет какие ежедневные привычки помогут нам повысить самооценку."}
+    longDescription:
+      - language: en
+        text: "Targeted audience: all participants. \n\nOutside world dictates the concept of \"success\" to us and our self-esteem\
+            \ is often \"delegated\" to society, colleagues, parents. A different story — inherent worth, confidence, although\
+            \ life is very different. \n\nThe purpose of the talk is to give practical tools on how to support and enhance\
+            \ self-esteem and be in harmony with yourself including:\n\n- how self-esteem is formed;\n- why people lose her,\
+            \ when they don't get support from society and important people, peer group, when they're not \"good fellows\"\
+            ;\n- description of typical scenarios in which successful IT specialists often drive themselves;\n- a couple of\
+            \ examples from practice."
+      - language: ru
+        text: "Целевая аудитория: все участники.\n\nВнешний мир диктует нам понятие «успех» и очень часто наша самооценка\
+            \ «делегирована» социуму, коллегам, родителям. Другое дело — самоценность, уверенность в себе, несмотря на то\
+            , что жизнь бывает очень разной.\n\nЦель выступления: дать практические инструменты, как можно поддерживать и\
+            \ улучшать свою самооценку и быть в согласии с собой, в том числе: \n\n- рассказать, как формируется самооценк\
+            а;\n- почему люди ее часто теряют, когда они не получают поддержку от социума и важных для них людей, референт\
+            ной группы, когда они «не молодцы»;\n- описать типовые сценарии, в которые часто загоняют себя успешные IT-спе\
+            циалисты;\n- привести пару примеров из практики;\n- дать пару упражнений, которые помогут людям поддерживать с\
+            вою самоценность."
+    talkDay: 1
+    trackTime: "12:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/zCtrujrJ5VVndrXGMxrXO/551161597fae1839c073869169d54b80/____________________________________________________________________________.pdf"]
+    videoLinks: ["https://youtu.be/b-ZmCLOZ28M"]
+    speakerIds: [928]
+  - id: 1320
+    name:
+      - {language: en, text: "Quake Postmortem"}
+    shortDescription:
+      - {language: en, text: "A month-by-month look at the development of a game that changed the industry."}
+    longDescription:
+      - {language: en, text: "A month-by-month look at the development of a game that changed the industry."}
+    talkDay: 1
+    trackTime: "13:15"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/zAC4_ID8quY"]
+    speakerIds: [919]
+  - id: 1321
+    name:
+      - {language: en, text: "This is beneficial: why do we need more female programmers?"}
+      - {language: ru, text: "Это выгодно: почему нам нужно больше женщин-программисток?"}
+    shortDescription:
+      - {language: en, text: "The talk is focused on how to attract more women to programming and IT sphere and what needs\
+            \ to be done to overcome gender prejudices."}
+      - {language: ru, text: "Доклад посвящен тому, как привлечь больше женщин в программирование и IT-индустрию и что нео\
+            бходимо сделать, чтобы побороть гендерные предрассудки."}
+    longDescription:
+      - language: en
+        text: "A share of woman among programmers and IT specialists are much less than in the population. It means that a\
+            \ lot of women who could successfully work in that sphere didn't come to it. Historical traditions lead to the\
+            \ fact that we didn't get enough personnel.\n\nThe market of IT specialists is constantly growing and there is\
+            \ always a shortage of people. Several companies usually struggle for the strong specialist, salary and other\
+            \ compensations increase. In conclusion: all IT businesses are interested in having more specialists on the market.\
+            \ By attracting women on that market, you could increase it by 10, 20, 30% or even more. It means that if you're\
+            \ not investing in attracting women, someone else will. \n\nIn this talk, Andrey tells about what in his opinion\
+            \ IT companies will do in this situation, how women will behave when their market share grows, and what should\
+            \ be done now to prepare for coming changes."
+      - language: ru
+        text: "Доля женщин среди программистов и IT-специалистов вообще гораздо меньше, чем в популяции. Это значит, что м\
+            ногие женщины, которые могли бы успешно работать в этой сфере, в нее просто не пришли. Исторически сложившиеся\
+            \ традиции приводят к тому, что мы все недополучаем кадры.\n\nРынок IT-специалистов постоянно растет, и всем п\
+            остоянно не хватает людей. За сильного специалиста обычно борется сразу несколько компаний, растут зарплаты и\
+            \ другие виды компенсации. Вывод: все IT-бизнесы заинтересованы в том, чтобы на рынке стало больше специалисто\
+            в. Привлекая на этот рынок женщин, можно увеличить его на 10, 20, 30% или даже больше. Это значит, что если вы\
+            \ сейчас не вкладываетесь в привлечение женщин в IT, это делает кто-то другой.\n\nВ этом докладе Андрей расска\
+            зывает о том, что, по его мнению, будут делать IT-компании в такой ситуации, как поведут себя женщины, когда и\
+            х доля на рынке станет больше, и что стоит предпринимать уже сейчас, чтобы подготовиться к грядущим изменениям\
+            ."
+    talkDay: 1
+    trackTime: "13:30"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/zcZNA30vmaQ"]
+    speakerIds: [2]
+  - id: 1322
+    name:
+      - {language: en, text: "Does Microsoft have a future in Russia, or why we should stop hating"}
+      - {language: ru, text: "Есть ли будущее у Майкрософт в России, или Почему надо перестать ненавидеть"}
+    shortDescription:
+      - {language: en, text: "The Regional Director, Alexander Ermakov, will speak about the latest and current news on the\
+            \ Microsoft market in Russia."}
+      - {language: ru, text: "О всех последних и актуальных новостях на рынке Microsoft в России нам расскажет региональны\
+            й директор компании — Александр Ермаков."}
+    longDescription:
+      - {language: en, text: "Microsoft Regional Director Alexander Ermakov shares insights and interesting facts about present\
+            \ and future of technology. He will tell what happened the past 4 years in the market, why Microsoft turned its\
+            \ face to community and what all IT Pro can now expect from this turn, especially in Russia."}
+      - {language: ru, text: "Региональный директор Майкрософт Александр Ермаков делится инсайтами и интересными фактами о\
+            \ настоящем и будущем технологий. Он расскажет, что произошло за последние четыре года на рынке, почему Майкро\
+            софт повернулся к сообществу лицом и что всем IT Pro теперь от этого поворота ожидать, особенно в России."}
+    talkDay: 1
+    trackTime: "13:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/39QVGRgkr398PhUyGm3C3F/1d982923ecf7922f4ebe41f6b4f2ef53/100663_466188531_Aleksandr_Yermakov_Yest_li_budushcheye_u_Maykrosoft_v_Rossii_ili_pochemu_nado_perestat_nenavidet.pdf"]
+    videoLinks: ["https://youtu.be/DRHRdxedV_Y"]
+    speakerIds: [924]
+  - id: 1323
+    name:
+      - {language: en, text: "AI vs. AI"}
+    shortDescription:
+      - {language: en, text: "Many people are interested in security problems of AI and how easy it's to deceive him, especially\
+            \ now, when attacks are constantly improving. Grigori will answer all questions on the subject of errors and manipulations\
+            \ of artificial intelligence."}
+      - {language: ru, text: "Многих волнуют проблемы безопасности ИИ и насколько легко его обмануть, особенно сейчас, ког\
+            да атаки постоянно совершенствуются. Григорий ответит на все интересующие вопросы по теме ошибок и манипуляций\
+            \ искусственного интеллекта."}
+    longDescription:
+      - language: en
+        text: "All sorts of approaches to AI appears more and more often, today we hear about new projects every day, in which\
+            \ AI will replace people. But is it safe? How much artificial intelligence is protected from errors and malicious\
+            \ manipulations. \n\nIn his talk, Grigory will tell about how it's simple to cheat the typical AI and what errors\
+            \ it may cause. Also, we will look at a few examples of how specific attacks on AI affected (or could have) the\
+            \ life of a person or society."
+      - language: ru
+        text: "Всевозможные подходы к ИИ появляются все чаще, сегодня мы каждый день слышим о новом проекте, в котором ИИ\
+            \ заменит людей. Но так ли это безопасно? Насколько искусственный интеллект защищен от ошибок и злонамеренных\
+            \ манипуляций. \n\nВ своем докладе Григорий расскажет о том, насколько легко сейчас обмануть типичный ИИ, и к\
+            \ чему могут привести такие ошибки. Также мы рассмотрим несколько примеров, как конкретные атаки на ИИ влияли\
+            \ (или могли повлиять) на жизнь человека и общества."
+    talkDay: 1
+    trackTime: "14:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/wpjHDeuGfxA"]
+    speakerIds: [921]
+  - id: 1324
+    name:
+      - {language: en, text: "All about machine learning competitions"}
+      - {language: ru, text: "Всё о соревнованиях по машинному обучению"}
+    shortDescription:
+      - {language: en, text: "Why the finest Data Scientists spend sleepless nights, taking part in data analysis competitions?\
+            \ Why spend your days off on offline hackathons? What can you possibly gain from constant digging into someone\
+            \ else's data? Kaggle Grandmaster and Top 1 among the Russian-speaking Data Scientists will answer all those and\
+            \ many other questions."}
+      - {language: ru, text: "Почему лучшие дата-сайентисты проводят бессонные ночи, участвуя в соревнованиях по анализу д\
+            анных? Зачем тратить свободные выходные на оффлайн-хакатоны? Какая польза от бесконечного копания в чужих данн\
+            ых? На эти и другие вопросы ответит Kaggle Grandmaster и топ-1 среди русскоговорящих дата-сайентистов."}
+    longDescription:
+      - {language: en, text: "Why the finest Data Scientists spend sleepless nights, taking part in data analysis competitions?\
+            \ Why spend your days off on offline hackathons? What can you possibly gain from constant digging into someone\
+            \ else's data? Kaggle Grandmaster and Top 1 among the Russian-speaking Data Scientists will answer all those and\
+            \ many other questions."}
+      - {language: ru, text: "Почему лучшие дата-сайентисты проводят бессонные ночи, участвуя в соревнованиях по анализу д\
+            анных? Зачем тратить свободные выходные на оффлайн-хакатоны? Какая польза от бесконечного копания в чужих данн\
+            ых? На эти и другие вопросы ответит Kaggle Grandmaster и топ-1 среди русскоговорящих дата-сайентистов."}
+    talkDay: 1
+    trackTime: "14:45"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/5ToJie9delc"]
+    speakerIds: [922]
+  - id: 1325
+    name:
+      - {language: en, text: "Round table: RuNet isolation. The truth without fiction"}
+      - {language: ru, text: "Круглый стол: Изоляция Рунета. Правда без вымыслов"}
+    shortDescription:
+      - {language: en, text: "Thanks to incompetent media and bloggers, we all waiting for the day when Russia will be disconnected\
+            \ to the Internet. But we are engineers and want to understand the technical side of the issue. That's why we\
+            \ will gather at the round table people who know how the network works, thanks to which it works and we will discuss\
+            \ what is the RuNet protection law in detail."}
+      - {language: ru, text: "Благодаря некомпетентным СМИ и блогерам, мы все с ужасом ждём дня отключения России от Интер\
+            нета. Но мы — инженеры и хотим разобраться в технической стороне вопроса. Поэтому мы соберём за круглым столом\
+            \ людей знающих, как устроена сеть, благодаря чему она работает, и тщательно обсудим, что же такое Закон о Защ\
+            ите Рунета."}
+    longDescription:
+      - language: en
+        text: "During the panel discussion we will think over the next questions:\n\n1. From what threat we should be protected,\
+            \ how real they are?\n2. Is it possible to simply turn off (technically) the Internet in any country from the\
+            \ inside or outside?\n3. If they still turn it off, what will break?\n4. What technical means are offered to protect\
+            \ the RuNet? How effective they are?\n5. How does all this affect the lives of ordinary people?\n6. Are there\
+            \ any similar laws?\n\nDiscussion participants:\n- Dmitry Moldavanov. CTO of \"VAS Experts\" DPI СКАТ platform\
+            \ developer. They specialize in the development of solutions in the field of traffic control and analyze; \n-\
+            \ Dmitry Petrov. CEO of \"Komfortel\", which provides communication services to providers and corporate clients;\n\
+            - Michail Klimarev. COO of the Internet Protection Community. Author of Telegram channel @zatelecom.\n- Vartan\
+            \ Khachaturov, crypto enthusiast."
+      - language: ru
+        text: "Во время панельной дискуссии мы обсудим следующие вопросы:\n\n1. От каких угроз нас собрались защищать, нас\
+            колько они реальны?\n2. Можно ли просто взять и выключить интернет в какой-нибудь стране (технически) изнутри\
+            \ или снаружи?\n3. Если всё-таки выключат, что у нас сломается?\n4. Какими техническими средствами предлагают\
+            \ защищать Рунет? Насколько они могут быть эффективны?\n5. Как это всё скажется на жизни обывателей.\n6. Есть\
+            \ ли где-то ещё подобные законы?\n\nУчастники дискуссии:\n- Дмитрий Молдаванов. Технический директор компании\
+            \ \"VAS Experts\", разработчика DPI платформы СКАТ. Специализируются на разработке решений в области контроля\
+            \ и анализа трафика.\n- Дмитрий Петров. Генеральный директор оператора связи «Комфортел», предоставляющего усл\
+            уги связи провайдерам и корпоративным клиентам.\n- Михаил Климарев. Исполнительный директор Общества Защиты Ин\
+            тернета. Автор телеграмм-канала @zatelecom.\n- Вартан Хачатуров, криптоэнтузиаст."
+    talkDay: 1
+    trackTime: "15:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/7EB21n4G7gJz8iSyNJ4Gmt/ae024d1aa6caa0f8c30e7f6060cbf09e/100626_81531347_Aleksandr_Fatin_Kruglyy_stol_Izolyatsiya_Runeta._Pravda_bez_vymyslov.pdf"]
+    videoLinks: ["https://youtu.be/qjq2uh4sIis"]
+    speakerIds: [935, 939]
+  - id: 1326
+    name:
+      - {language: en, text: "Twelve ways to make code suck less"}
+    shortDescription:
+      - {language: en, text: "Come to this talk to learn about some common code smells and how to improve the quality of code."}
+    longDescription:
+      - {language: en, text: "We all have seen our share of bad code and some really good code as well. What are some of the\
+            \ common anti-patterns that seem to be recurring over and over in code that sucks? By learning about these code\
+            \ smells and avoiding them, we can greatly help make our code better. Come to this talk to learn about some common\
+            \ code smells and how to improve the quality of code."}
+    talkDay: 1
+    trackTime: "15:45"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/OheeK7Ux2-8"]
+    speakerIds: [40]
+  - id: 1327
+    name:
+      - {language: en, text: "The state of Reactive Streams"}
+    shortDescription:
+      - {language: en, text: "Reactive Streams overview with a survey of the current state on various language platforms and\
+            \ future development of the specification."}
+      - {language: ru, text: "Обзор Reactive Streams с обзором текущего положения на различных языковых платформах и будущ\
+            его развития спецификации."}
+    longDescription:
+      - {language: en, text: "Reactive Streams: what it actually is and what advantages we gain by using it? Can you use this\
+            \ technology on your language platform and should you use this paradigm at all? In this talk, Oleh will share\
+            \ the current state of Reactive Streams and what happens to this specification on different language platforms.\
+            \ We'll learn what libraries can be used today if you're JS developer or dedicated .NET/Java/Ruby/Python back-end\
+            \ developer."}
+      - {language: ru, text: "Реактивные стримы: что это такое и с чем их едят? Можете ли вы использовать эту технологию н\
+            а своей языковой платформе и стоит ли использовать данную парадигму вообще? В этом докладе Олег поделится теку\
+            щим состоянием Reactive Streams и тем, что происходит с данной спецификацией на разных языковых платформах. Мы\
+            \ изучим какие библиотеки можно использовать сегодня, будь вы JS-разработчик или заядлый .NET/Java/Ruby/Python-б\
+            экендщик."}
+    talkDay: 1
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/7pflfBUZH98"]
+    speakerIds: [33]
+  - id: 1328
+    name:
+      - {language: en, text: "Toward a Distributed System"}
+      - {language: ru, text: "На пути к распределенной системе"}
+    shortDescription:
+      - {language: en, text: "Roman will speak about how and what can replace the development approach, consisting of services\
+            \ connected with business processes. Also, we will consider the ways and advantages of Message-oriented middleware\
+            \ and Event Sourcing."}
+      - {language: ru, text: "Роман расскажет как и чем можно заменить подход к разработке, состоящий из сервисов, связанн\
+            ых с бизнес-процессами. Также будут рассмотрены способы и преимущества подходов Message-oriented middleware и\
+            \ Event Sourcing."}
+    longDescription:
+      - language: en
+        text: "Modern applications often represent a difficult topology of segmental services, united by an implacable line\
+            \ of business processes. From the one side, it gives certain advantages, but at the same time imposes serious\
+            \ restrictions on the applied architectural approaches and engineering solutions when designing each application.\
+            \ \n\nIn the talk, we will discuss reputable approaches known since the days of Smalltalk and Erlang — Message-oriented\
+            \ middleware and Event Sourcing. We will discuss migration path of RPI based application towards asynchrony and\
+            \ reactivity. Roman will speak about hardships along this path, will see how to solve ACID and CAP questions and\
+            \ what approaches can be used to test such systems."
+      - language: ru
+        text: "Современные приложения часто представляют собой непростую топологию разрозненных сервисов, объединенных неу\
+            молимым конвейером бизнес-процессов. С одной стороны, это дает определенные преимущества, но в то же время нак\
+            ладывает весьма серьезные ограничения на применяемые архитектурные подходы и инженерные решения при проектиров\
+            ании подобных приложений.\n\nВ докладе мы поговорим о весьма хорошо зарекомендовавших себя подходах, известных\
+            \ еще со времен Smalltalk и Erlang, — Message-oriented middleware и Event Sourcing. Обсудим пути миграции RPI\
+            \ based приложения в сторону асинхронности и реактивности. Роман расскажет о трудностях, возникающих на этом п\
+            ути, посмотрит, как решаются вопросы с ACID и CAP, а также какие подходы можно применить для тестирования подо\
+            бных систем."
+    talkDay: 1
+    trackTime: "16:15"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2Tst3zzalPOm6MaD60O5CB/1b7015abc6440c8c85c70c13e79ffa3a/100668_278134250_Roman_Gordeyev_Na_puti_k_raspredelennoy_sisteme.pdf"]
+    videoLinks: ["https://youtu.be/vWBVwHbW2p4"]
+    speakerIds: [284]
+  - id: 1329
+    name:
+      - {language: en, text: "(In)adequate technical interview"}
+      - {language: ru, text: "(Не)адекватное техническое интервью"}
+    shortDescription:
+      - {language: en, text: "In this talk we will discuss what questions you encounter when hiring and whether these questions\
+            \ are adequate at all."}
+      - {language: ru, text: "В этом докладе мы обсудим, какие вопросы встречаются при найме на работу и адекватны ли эти\
+            \ вопросы вообще."}
+    longDescription:
+      - language: en
+        text: "Community is dapple with stories about questions asked during technical interviews. Yet these stories are also\
+            \ accompanied by an emotion outburst: \"I've been flooded! They are all ghouls, ask some strange questions! What\
+            \ do they want from me?!\" The same stories by employ look like \"You can't find people! They can't count two\
+            \ and two! I should find someone, work doesn't go!\"\n\nIn this talk we will discuss what questions you encounter\
+            \ during an interview, are they adequate at all and most importantly, who deal with questions you don't know how\
+            \ to answer."
+      - language: ru
+        text: "Сообщество пестрит историями о вопросах, которые задают во время технических интервью. А ещё этим историям\
+            \ часто сопутствует эмоциональный выплеск: «Меня завалили! Да они все там упыри, спрашивают какие-то странные\
+            \ вопросы! Что они вообще от меня хотят?!» Эти же самые истории со стороны нанимающего звучат как «Да вообще л\
+            юдей не найти! Два плюс два сложить не могут! Найти бы кого нибудь, работа стоит!»\n\nВ этом докладе мы обсуди\
+            м, какие вопросы встречаются при найме на работу, адекватны ли эти вопросы вообще, а главное — как быть с вопр\
+            осами, на которые вы не знаете ответа."
+    talkDay: 1
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/OELKqDbYtrA"]
+    speakerIds: [0]
+  - id: 1330
+    name:
+      - {language: en, text: "Why Frontend is awesome"}
+      - {language: ru, text: "Почему фронтенд — это круто"}
+    shortDescription:
+      - {language: en, text: "The purpose of the talk is to tell in detail about front-end for people who are not familiar\
+            \ with this development area and encourage them to study it further."}
+      - {language: ru, text: "Цель доклада — подробно рассказать о фронтенде для людей, не знакомых с данной областью разр\
+            аботки и вдохновить их на ее дальнейшее изучение."}
+    longDescription:
+      - language: en
+        text: "Someone doesn't take front-end seriously, someone is joking about plenty of frameworks in front-end and hype\
+            \ around that, or someone buries it... Roman will speak about how lucky front-end developers are, about inspiration,\
+            \ the expansion of horizons and give some predictions about the future of front-end.\n\nThe target audience is\
+            \ not front-end developers, it's someone who has a poor representation of this sphere. The goal is to explain\
+            \ how this development area is cool, change the attitude to it and encourage for further studying of issues connected\
+            \ to it."
+      - language: ru
+        text: "Кто-то не воспринимает фронтенд серьезно, кто-то шутит над изобилием фреймворков во фронтенде и хайпа вокру\
+            г этого, а кто-то вообще его (фронтенд) хоронит... Роман расскажет про то, как повезло фронтендерам, про вдохн\
+            овение, расширение горизонтов и даст немного прогнозов о будущем фронтенда.\n\nЦелевая аудитория — не фронтенд\
+            еры, а те, кто имеют слабое представление об этой области. Цель — донести, насколько это крутая область разраб\
+            отки, поменять отношение к ней, вдохновить на дальнейшее изучение вопросов, с ней связанных."
+    talkDay: 1
+    trackTime: "17:15"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/dOkcO2tLEwI"]
+    speakerIds: [685]
+  - id: 1331
+    name:
+      - {language: en, text: "AR — augmenting reality"}
+      - {language: ru, text: "AR — дополняем реальность"}
+    shortDescription:
+      - {language: en, text: "The talk about the future of AR and about creation of tools for indoor navigation."}
+      - {language: ru, text: "Доклад о будущем дополненной реальности и о создании инструментов для навигации внутри помещ\
+            ений."}
+    longDescription:
+      - language: en
+        text: "A story about the experience of creating tools for indoor navigation using AR technologies available in modern\
+            \ Apple smartphones. \nOn example of application prototype for constructing shortest route we will discuss how\
+            \ to work with internal geometry of the room. \nYou can quickly and easy create effective AR application with\
+            \ the help of Apple developers tools, such as ARKit, SceneKit, UIKit, Swift, included with IDE Xcode. There are\
+            \ also practical results that have identified existing technology limitations and future development ideas for\
+            \ Indoor Navigation."
+      - language: ru
+        text: "Рассказ об опыте создания инструментов для навигации внутри помещений с использованием технологий дополненн\
+            ой реальности, доступных в современных смартфонах от Apple.\nНа примере прототипа приложения для построения кр\
+            атчайшего маршрута, обсудим вопрос, как работать с внутренней геометрией помещения.\nСоздавать эффективные AR-п\
+            риложения возможно просто и быстро с помощью инструментария, доступного Apple-разработчику, «из коробки», тако\
+            го как ARKit, SceneKit, UIKit, Swift, поставляемых с IDE Xcode. Также существуют практические результаты, кото\
+            рые позволили определить существующие ограничения технологий и дальнейшие идеи развития для целей Indoor Navigation."
+    talkDay: 1
+    trackTime: "17:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/3D6wF02EFNQNPXGbVs9VQI/1e8195d5d15cab50b6933d48c5fb950a/100659_1925419997_Danis_Tazetdinov_AR__dopolnyayem_realnost.pdf"]
+    videoLinks: ["https://youtu.be/QMROqGagEIo"]
+    speakerIds: [929]
+  - id: 1332
+    name:
+      - {language: en, text: "Privacy UX"}
+    shortDescription:
+      - {language: en, text: "Vitaly will be exploring privacy UX patterns, techniques, strategies and important decisions\
+            \ to consider when designing and building privacy-aware websites and applications."}
+      - {language: ru, text: "Доклад Виталия будет посвящен UX-паттернам, методикам, стратегиям и важным решениям, которым\
+            \ стоит уделить внимание при проектировании и разработке сайтов и приложений с учетом требований конфиденциаль\
+            ности."}
+    longDescription:
+      - language: en
+        text: "GDPR cookie consent prompts, push notifications, app install prompts, video autoplays and annoying pop-ups.\
+            \ Every time we enter a new site, it feels like a fight against all the annoying marketing messages endlessly\
+            \ streaming at us. If you've wondered why a product you looked up in a search engine one day keeps showing up\
+            \ in all your social channels over and over just a few hours later, that's the power of data collection and retargeting\
+            \ at play. We can do better than that though.\n\nIn this session, Vitaly will be exploring privacy UX patterns,\
+            \ techniques, strategies and important decisions to consider when designing and building privacy-aware websites\
+            \ and applcations. You'll walk away with a toolbox of applicable techniques, privacy nightmares and a few notes\
+            \ on how to keep your website/app GDPR-compliant and privacy-focused."
+      - language: ru
+        text: "Запросы на использование cookie-файлов или установку приложения, push-уведомления, автоматически запускающи\
+            еся видео и назойливые всплывающие окошки. Каждый раз, как мы заходим на новый сайт, это превращается в борьбу\
+            \ с надоедливыми рекламными сообщениями, что так и сыплются на нас. Если вы когда-нибудь замечали, как продукт\
+            , чье название вы однажды ввели в поисковую строку, начинает то и дело всплывать во всех ваших соцсетях всего\
+            \ через пару часов, знайте — вот она, истинная мощь сбора данных и ретаргетинга. Но необязательно обрекать на\
+            \ это своих пользователей. \n\nДоклад Виталия будет посвящен UX-паттернам, методикам, стратегиям и важным реше\
+            ниям, которым стоит уделить внимание при проектировании и разработке сайтов и приложений с учетом требований к\
+            онфиденциальности. Из доклада вы вынесете набор полезных методик, антипримеров и пару советов, как сделать сай\
+            т/приложение, отвечающее требованиям GDPR и соблюдающее право пользователя на частную жизнь."
+    talkDay: 2
+    trackTime: "11:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/iHKlsHQ4SUs"]
+    speakerIds: [260]
+  - id: 1333
+    name:
+      - {language: en, text: "Spring Patterns"}
+    shortDescription:
+      - {language: en, text: "In this talk, Evgeny will show how with the help of spring you can easily and simply implement\
+            \ the most popular patterns that we encounter in everyday life."}
+      - {language: ru, text: "В этом докладе Евгений покажет, как при помощи спринга можно легко и просто реализовывать на\
+            иболее популярные паттерны, с которыми мы сталкиваемся в повседневной жизни."}
+    longDescription:
+      - language: en
+        text: "How many design patterns do you know? 24? 36? 100+ And how many design patterns do you really use in your daily\
+            \ code? 3? 5? 10? \n\nIn this talk, Evgeny will show you the most common and daily spring usage for implementing\
+            \ design patterns which will make your code more clean, flexible and maintainable. We will not talk about patterns\
+            \ and concepts which already comes with spring and everybody knows, like factory, singleton and inversion of control.\
+            \ It will be patterns or technics which naturally can be implemented with spring, like chain of responsibility,\
+            \ strategy, command, lazy initialization, scala traits, AOP, proxy, decorator and more."
+      - language: ru
+        text: "Сколько дизайн паттернов вы знаете? 24? 36? 100? А сколько из них вы применяете в реальной жизни? 3? 5? 10?\
+            \ \n\nВ этом докладе Евгений покажет, как при помощи спринга можно легко и просто реализовывать наиболее попул\
+            ярные паттерны, с которыми мы сталкиваемся в повседневной жизни. Chain of responsibility, strategy, command, lazy\
+            \ initialization, scala traits, AOP, proxy, decorator и прочие паттерны и концепции, внедренные при помощи спр\
+            инга, сделают ваш код мягким и шелковистым. А перхоть вашего бойлерплэйта в виде switch-ей, статических методо\
+            в, наследования, и прочей устаревшей шелухи, посыпется с вашего проекта под радостные крики сонара. Код станет\
+            \ более читабельным, гибким и поддерживаемым. Такой код проще обкладывать тестами и, наконец, это просто краси\
+            во. \n\nВ этом докладе мы не будем ковырять внутренности спринга или пытаться его кастомизировать. Мы даже не\
+            \ напишем ни одного бин пост процессора или стартера (разве что кастомный класслоадер). \nТолько практические\
+            \ задачи и самый обычный, простой, добрый, пятый спринг."
+    talkDay: 2
+    trackTime: "11:45"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/61duchvKI6o"]
+    speakerIds: [1]
+  - id: 1334
+    name:
+      - {language: en, text: "Fast launch of microservice"}
+      - {language: ru, text: "Быстрый запуск микросервиса"}
+    shortDescription:
+      - {language: en, text: "In his talk Nikolai will speak about the importance of fast microservices and present the template\
+            \ developed in his company."}
+      - {language: ru, text: "В своем докладе Николай расскажет о важности быстрой работы микро-сервисов и представит разр\
+            аботанный в его компании шаблон."}
+    longDescription:
+      - language: en
+        text: "How often do you encounter the question \"How to quickly launch new micro-service?\" How do you solve problems\
+            \ with the environment for local development, code quality check and deploy? Do you encounter the need to deploy\
+            \ in different configurations (Bare metal, Docker, k8s)?\n\nNikolai is working in the Internet advertising world\
+            \ which requires the emergence of microservices with a short lifetime, where delay in developing business features\
+            \ is not allowed. These requirements led to the fact that the deployment of a new microservices on Go occurs by\
+            \ executing one command and in this talk speaker will present the template developed in his company and how they\
+            \ came to it."
+      - language: ru
+        text: "Как часто вы сталкиваетесь с вопросом «Как быстро запустить новый микро-сервис?». Как решаете вопросы с окр\
+            ужением для локальной разработки, проверки качества кода и деплоя? Сталкиваетесь ли вы с необходимостью деплоя\
+            \ в несколько различных конфигураций (Bare metal, Docker, k8s)? \n\nНиколай работает в мире интернет-рекламы,\
+            \ которая требует появления микро-сервисов с коротким временем жизни, где не позволительно промедление с разра\
+            боткой бизнес-фич. Эти требования привели к тому, что разворачивание нового микро-сервиса на Go происходит вып\
+            олнением одной команды, и в данном докладе спикер представлю шаблон, разработанный в его компании, и расскажет\
+            \ каким путем они пришли к нему."
+    talkDay: 2
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/65nKd6LUh5jxLD16lifNXE/0a944acf69eddb91bc1aaf55db207e15/100624_211200545_Nikolay_Mulyar_Bystryy_zapusk_mikroservisa.pdf"]
+    videoLinks: ["https://youtu.be/-TMIDPCsEP0"]
+    speakerIds: [948]
+  - id: 1335
+    name:
+      - {language: en, text: "Why you shouldn't go to the small business"}
+      - {language: ru, text: "Почему не надо идти в малый бизнес"}
+    shortDescription:
+      - {language: en, text: "The talk is dedicated to the small business: Sergey will speak about how to start this difficult\
+            \ deed and answer frequently asked questions on this topic."}
+      - {language: ru, text: "Доклад посвящен малому бизнесу: Сергей расскажет, с чего начать это непростое дело, а также\
+            \ ответит на часто задаваемые вопросы по этой теме."}
+    longDescription:
+      - language: en
+        text: "This rundown about small business is for those who haven't tried. Sergey offers to take frequently asked questions\
+            \ in one hand, mathematics in the other and try to understand the rational behavior patterns. \n\nHe proposes\
+            \ to compare the probability of losing everything with probability of success and the time to achieve it. If we\
+            \ got such a lottery ticket for a million, would we buy it?\n\nMinuses of small business are the \"pleasures\"\
+            \ for 5 years and without breaks on first 3-4 years, sick time and etc. This is statistically less profitable\
+            \ than a menial job. Anyway, a large client will tell us what to do.\n\nSergey will answer the questions about\
+            \ what we should know before starting our own project and what could be counted and gathered in advance. A specific\
+            \ algorithm of testing hypotheses is not magic, it's a skill. Or rather, it can be.\n\nAlso, there will be some\
+            \ more shattered illusions, especially about lack of stability. And the encouraging finale about how we're special,\
+            \ we can do it, so it's worth trying."
+      - language: ru
+        text: "Это ликбез про малый бизнес для тех, кто никогда не пробовал. Сергей предлагает взять часто задаваемые вопр\
+            осы в одну руку, а математику в другую, и попробовать разобраться в рациональных моделях поведения. \n\nОн пре\
+            длагает сравнить вероятность всё потерять с вероятностью успеха и сроком его достижения. Если бы нам достался\
+            \ такой лотерейный билет за миллион, мы бы его купили?\n\nМинусы малого бизнеса — это «удовольствие» на 5 лет\
+            \ и без перерывов в первые 3-4 года на отдых, больничный и т. п. Это статистически менее выгодно, чем работа «\
+            на дядю». Всё равно крупный клиент будет указывать нам, что делать. \n\nСергей ответит на вопросы о том, что с\
+            тоит знать до того, как начать свой проект, и что можно посчитать и собрать заранее. Конкретный алгоритм прове\
+            рки гипотез — это не магия, это навык. Точнее, может им стать.\n\nТакже будет ещё немного разбитых иллюзий, ос\
+            обенно про то, что стабильности не будет. И обнадёживающий финал про то, что мы особенные, у нас будет не так\
+            , поэтому стоит пробовать."
+    talkDay: 2
+    trackTime: "12:45"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/TOCKDMKyTls"]
+    speakerIds: [258]
+  - id: 1336
+    name:
+      - {language: en, text: "Getting sh!t done in devops style"}
+      - {language: ru, text: "Getting sh!t done in devops style: разрабатываем так, чтобы коллегам не хотелось вас прищучи\
+            ть"}
+    shortDescription:
+      - {language: en, text: "The talk is about increasing the speed of work and how we pay for it."}
+      - {language: ru, text: "Доклад рассказывает о повышении скорости работы и как за нее расплачиваются."}
+    longDescription:
+      - language: en
+        text: "There is a huge amount of technologies, frameworks, methodologies, with help of which you can increase effectiveness.\
+            \ But nothing comes for free, let's see the real price of speed. How debts are created and who will have to pay\
+            \ for them, and we are not talking about classic technical debt — a patch in the code or lack of tests. \n\nHow\
+            \ to work without transferring debts to others? How to make decisions, aware of the consequences? Let's think\
+            \ about that together. Speakers, Maksim and Kirill will tell the practical experience and what they learned from\
+            \ it."
+      - language: ru
+        text: "Есть огромное количество технологий, фреймворков, методологий, с помощью которых можно повысить свою эффект\
+            ивность. Но ничто не дается бесплатно, давайте посмотрим на реальную цену скорости. Как создаются долги и кому\
+            \ придется по ним платить, и это мы не про классический технический долг — заплатку в коде или недостаток тест\
+            ов. \n\nКак работать, не перекладывая долги на других? Как принимать решения, осознавая последствия? Подумаем\
+            \ вместе на эти темы. Спикеры, Максим и Кирилл, расскажут свой практический опыт из жизни и что они из него вы\
+            несли."
+    talkDay: 2
+    trackTime: "13:00"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/_EnZ_DPZ2PE"]
+    speakerIds: [28, 10]
+  - id: 1337
+    name:
+      - {language: en, text: "PostgreSQL Quickstart"}
+      - {language: ru, text: "PostgreSQL — быстрый старт"}
+    shortDescription:
+      - {language: en, text: "Konstantine will speak about the current status of PostgreSQL and share the best examples of\
+            \ its development, and also make an overview of the infrastructure and show the architectural patterns created\
+            \ in Avito."}
+      - {language: ru, text: "Константин расскажет о сегодняшнем статусе PostgreSQL и поделится лучшими примерами ее разра\
+            ботки, а также сделает обзор инфраструктуры и покажет архитектурные паттерны, созданные в Авито."}
+    longDescription:
+      - language: en
+        text: "DMBS in the modern project has a strong influence on architecture and NFR (non-functional requirements). Many\
+            \ people faced the task of choosing DMBS for the new project, for example, Konstantin has received a huge number\
+            \ of requests to select a DMBS. It's good to have some checklist, knowledge about candidate and idea of the scope\
+            \ of work. \n\nAs part of this talk Konstantin will review the current status of PostgreSQL, infrastructure, approaches,\
+            \ and practices:\n- he will share the best examples of business logic and PostgreSQL (code versioning, deploy,\
+            \ tests, coverage) development;\n- will demonstrate the examples of the implementation of different architectural\
+            \ patterns that his colleagues used in Avito;\n- will review the infrastructure and finished tools;\n- will look\
+            \ into the maproad and make an overview of future improvements. \n\nTargeted audience are not experts in this\
+            \ topic. The purpose is to explain the variety of features and directions for further use of PostgreSQL."
+      - language: ru
+        text: "СУБД в современном проекте оказывает сильное влияние на архитектуру и NFR (non-functional requirements). Пе\
+            ред многими стоит задача выбора СУБД для нового проекта, например, Константину в последнее время поступает огр\
+            омное количество запросов на выбор СУБД. Для этого хорошо иметь некий чеклист, знания о кандидатах и представл\
+            ение о масштабе работ. \n\nВ рамках этого доклада Константин сделает обзор сегодняшнего статуса PostgreSQL, ин\
+            фраструктуры, подходов и практик:\n- поделится лучшими примерами разработки бизнес логики и PostgreSQL (версио\
+            нирование кода, деплой, тесты, покрытие);\n- продемонстрирует примеры реализации различных архитектурных патте\
+            рнов, которые его коллеги использовали в Авито;\n- проведет обзор инфраструктуры и готовых инструментов;\n- за\
+            глянет в дорожную карту и сделает обзор грядущих улучшений. \n\nЦелевая аудитория — не эксперты, а те, кто име\
+            ют слабое представление о данной теме. Цель — донести разнообразие возможностей и направлений для дальнейшего\
+            \ использования PostgreSQL."
+    talkDay: 2
+    trackTime: "13:15"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3Ajt2sceAsaTLohGJq33NS/bc5217ac1f7405e9c4c7d60ac273f855/100610_1521798588_Konstantin_Yevteyev_PostgreSQL__bystryy_start_.pdf"]
+    videoLinks: ["https://youtu.be/EfNfB1ob-fM"]
+    speakerIds: [925]
+  - id: 1338
+    name:
+      - {language: en, text: "Professional Postgres"}
+      - {language: ru, text: "Профессиональный Postgres"}
+    shortDescription:
+      - {language: en, text: "Oleg will show how PostgreSQL, started as an university open source project, grew into modern\
+            \ industrial database."}
+      - {language: ru, text: "Олег расскажет, как из университетского open source-проекта PostgreSQL превратился в совреме\
+            нную индустриальную базу данных."}
+    longDescription:
+      - {language: en, text: "Oleg will show how PostgreSQL, started as an university open source project, grew into modern\
+            \ industrial database."}
+      - {language: ru, text: "Олег расскажет, как из университетского open source-проекта PostgreSQL превратился в совреме\
+            нную индустриальную базу данных."}
+    talkDay: 2
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/YYkfvTvh89M"]
+    speakerIds: [259]
+  - id: 1339
+    name:
+      - {language: en, text: "Space exploration lessons for developers"}
+      - {language: ru, text: "Ракета из четырёх морковок, или Уроки космоса для разработчиков"}
+    shortDescription:
+      - {language: en, text: "In this talk, Igor will narrate a few episodes from the history of space exploration and explain\
+            \ what software engineers should learn from them."}
+      - {language: ru, text: "В своем докладе Игорь расскажет о нескольких ярких эпизодах из истории космонавтики и объясн\
+            ит, чему они могут научить разработчиков."}
+    longDescription:
+      - language: en
+        text: "We have missed the \"golden age\" of the space exploration with its major successes and failures. But why did\
+            \ they happen? Igor Lukanin read a couple of books, went to Baikonur and Cape Canaveral, watched a couple of rocket\
+            \ launches and eventually understood something.\n\nThis talk will be about several episodes from the history of\
+            \ the space exploration: the tasks that confronted designers of spaceships and flight chiefs, their engineering\
+            \ decisions and tough consequences. During the talk, we will verticalize the rocket at the Gagarin's Start, fail\
+            \ to reach the Moon four times, and send the greetings to the PayPal co-founder.\n\nIgor believes that software\
+            \ engineers and team leaders can definitely learn from space scale mistakes and don't repeat them."
+      - language: ru
+        text: "Мы родились после окончания «золотого века» космонавтики и не застали главных успехов и провалов. Но почему\
+            \ случались провалы? Игорь Луканин прочитал пару книг, съездил в Байконур и на мыс Канаверал, посмотрел на зап\
+            уски ракет и кое-что понял.\n\nВ докладе пойдет речь о нескольких эпизодах из истории космонавтики: о задачах\
+            , которые стояли перед конструкторами космических аппаратов и руководителями полётов, о принятых инженерных ре\
+            шениях и об их непростых последствиях. Во время доклада мы вертикализируем ракету на Гагаринском старте, четыр\
+            е раза не долетим до Луны и обязательно передадим привет сооснователю PayPal.\n\nИгорь верит, что конструкторы\
+            \ компьютерных программ и руководители команд могут научиться на ошибках космического масштаба и не повторять\
+            \ их."
+    talkDay: 2
+    trackTime: "14:15"
+    track: 2
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/Bne_3rjUAv4"]
+    speakerIds: [441]
+  - id: 1340
+    name:
+      - {language: en, text: "SOLID clean code by simple examples"}
+      - {language: ru, text: "SOLIDный чистый код на простых примерах"}
+    shortDescription:
+      - {language: en, text: "This talk will be about clean code and SOLID principles as basic approaches to the development\
+            \ of reliable and extensible systems."}
+      - {language: ru, text: "Доклад посвящен чистому коду и принципам SOLID как основным подходам к разработке надежных и\
+            \ расширяемых систем."}
+    longDescription:
+      - language: en
+        text: "Software development is an extremely complicated and laborious process so it’s crucial to use approaches proven\
+            \ by time and practice. SOLID principles and the clean code are the simplest approaches but at the same time,\
+            \ the most useful that allows developing of the reliable and extensible systems in the long term. \n\nEven the\
+            \ poorly-written code could work if it's written according to syntax. If we take into account that we need to\
+            \ read code more often than write, the support of poorly-written becomes a nightmare. Clean code is the set of\
+            \ practices for writing readable code that is understandable not only for the author.\n\nSOLID is an abbreviation\
+            \ of five principles in object-oriented programming — Single responsibility, Open-closed, Liskov substitution,\
+            \ Interface segregation и Dependency inversion. You need time to learn them, but if you'll write code following\
+            \ these principles, the quality will increase and architecture will become more flexible and expandable."
+      - language: ru
+        text: "Разработка программного обеспечения — невероятно сложный и трудозатратный процесс, поэтому критически важно\
+            \ использовать инструменты, проверенные временем и практикой. Принципы SOLID и чистый код - простейшие, но в т\
+            о же время, одни из наиболее полезных в долгосрочной перспективе. \n\nДаже плохо написанный код работает, если\
+            \ написан в соответствии с синтаксисом языка. Но если учесть, что читать код приходится намного чаще, чем писа\
+            ть, то поддержка неаккуратно написанного кода становится кошмаром. Чистый код — набор практик по написанию чит\
+            абельного кода, понятного не только автору. \n\nSOLID — это аббревиатура пяти принципов проектирования в объек\
+            тно-ориентированном программировании — Single responsibility, Open-closed, Liskov substitution, Interface segregation\
+            \ и Dependency inversion. Чтобы их освоить требуется время, но если писать код, следуя с этими принципами, то\
+            \ его качество повысится, а архитектура станет гибкой и расширяемой."
+    talkDay: 2
+    trackTime: "14:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5M3XrpeuFBcv0Av0hmjtUw/09e6fbf651ff40a63d2d3a7f3dd88205/100611_1427483939_Aleksandr_Barmin_SOLIDnyy_chistyy_kod_na_prostykh_primerakh.pdf"]
+    videoLinks: ["https://youtu.be/StWB7NJjPZc"]
+    speakerIds: [952]
+  - id: 1341
+    name:
+      - {language: en, text: "Digital transformation: how to jump from an abstract dream to certain tasks"}
+      - {language: ru, text: "Цифровая трансформация: как перепрыгнуть от абстрактной мечты к конкретным задачам"}
+    shortDescription:
+      - {language: en, text: "The talk describes one of the possible ways of concretizing the cloud of tasks and the formation\
+            \ of objective metrics, based on which top management can make decisions on choosing ways to achieve the goal."}
+      - {language: ru, text: "В докладе описывается один из возможных способов конкретизации облака задач и формирования о\
+            бъективных метрик, на основе которых топ-менеджмент может принимать решения о выборе путей достижения цели."}
+    longDescription:
+      - language: en
+        text: "One of the typical problems of the head of IT or digital transformation of the company is that the company\
+            \ dreams of such transformation abstractly, but attempts to move from general arguments to specific projects are\
+            \ broken up about the nonconcreteness of the tasks. Such problem appears on big projects of the scale of a plant\
+            \ and group of companies, and on humble tasks like online shop launch in addition to offline activity.\n\nThe\
+            \ talk describes one of the possible ways of concretizing the cloud of tasks and the formation of objective metrics,\
+            \ based on which top management can make decisions on choosing ways to achieve the goal."
+      - language: ru
+        text: "Одна из типовых проблем директора по IT или по цифровой трансформации компании, заключается в том, что комп\
+            ания абстрактно о такой трансформации мечтает, но попытки перейти от общих рассуждений к конкретным проектам р\
+            азбиваются о неконкретность сформулированных задач. Проблема эта возникает и на огромных проектах масштабов кр\
+            упного завода и группы компаний, и на скромных на вид задачах, типа запуска онлайн-магазина в дополнение к обы\
+            чной офлайновой деятельности. \n\nВ докладе описывается один из возможных способов конкретизации облака задач\
+            \ и формирования объективных метрик, на основе которых топ-менеджмент может принимать решения о выборе путей д\
+            остижения цели."
+    talkDay: 2
+    trackTime: "15:15"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/d-FE0zcabXk"]
+    speakerIds: [256]
+  - id: 1342
+    name:
+      - {language: en, text: "Modern Enterprise Java from the ground up"}
+    shortDescription:
+      - {language: en, text: "This session is dedicated to a modern Enterprise Java projects, its tools, and best practices.\
+            \ Sebastian will tell what technologies can be best for certain projects."}
+    longDescription:
+      - language: en
+        text: "Enterprise Java has come a long way. Let’s not focus on the old, darker days, but modern approaches on how\
+            \ to do enterprise applications. Where do we start? What technologies, tools, and approaches are a good choice\
+            \ for our applications and what allows us to effectively implement business logic and to deliver value to our\
+            \ users?\n\nIn this session, we’ll have a look at modern Enterprise Java projects, best practices, tools such\
+            \ as Maven, Docker, 12-factor apps, and more. We’ll see which enterprise technologies to choose from between Java\
+            \ EE, Jakarta EE, and MicroProfile, to fulfill the needs of our projects, how to design our projects and build\
+            \ effective development and deployment workflows. This session is aimed both at developers who are just starting\
+            \ out with Enterprise Java, as well as engineers who have seen the days of J2EE and who are wondering what the\
+            \ modern EE world looks like."
+    talkDay: 2
+    trackTime: "15:30"
+    track: 2
+    language: en
+    presentationLinks: []
+    videoLinks: ["https://youtu.be/XCBPkjfrT3E"]
+    speakerIds: [74]
+  - id: 1343
+    name:
+      - {language: en, text: "Etudes on buffering: asynchronous notifications, update replication, collation of pending requests"}
+      - {language: ru, text: "Этюды о буферизации: асинхронные оповещения, репликация обновлений, объединение ожидающих за\
+            просов"}
+    shortDescription:
+      - {language: en, text: "Three tasks arising from practice and all related to storing data in a buffer are taken as an\
+            \ example to show the use of modern C++ features."}
+      - {language: ru, text: "На примере трёх задач, взятых из практики и объединённых общей темой хранения данных в буфер\
+            е, будет показано применение современных средств языка С++."}
+    longDescription:
+      - language: en
+        text: "Practical application development can lead to tasks that, after analysis, appears to be general enough to extract\
+            \ an abstraction that is potentially useful for multiple applications. Bringing the solution to the level suitable\
+            \ for reusing (in contrast to an ad hoc solution for one particular application) can involve more mental efforts\
+            \ to extract variative details of the tasks and to express them in the programming language.\nThe talk shares\
+            \ implementation of three abstractions relating to one topic, namely storing data in a buffer in concurrent programming.\
+            \ The way from task analysis to implementation in C++17 is shown."
+      - language: ru
+        text: "Практика разработки конкретного приложения может приводить к постановке задачи, которая, в зрелом размышлен\
+            ии, оказывается достаточно общей, чтобы вычленить её в абстракцию, потенциально полезную для множества различн\
+            ых приложений. Приведение решения к виду, пригодному для многократного применения, в отличие от решения, отвеч\
+            ающего нуждам конкретного приложения, требует дополнительных мыслительных усилий по выделению вариативных аспе\
+            ктов задачи, и по их моделированию средствами языка.\n\nВ докладе представлен опыт реализации трёх абстракций\
+            , объединенных общей темой — буферизацией данных при многопоточной обработке. Показан ход мысли от анализа зад\
+            ачи до реализации средствами языка C++17."
+    talkDay: 2
+    trackTime: "15:45"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4LIDsVrcc2kJlzOIcKDEFE/8f0375c1ffc32b103dd88157dce1d77f/100714_709966243_Vadim_Vinnik_Etyudy_o_buferizatsii_asinkhronnyye_opoveshcheniya_replikatsiya_obnovleniy_obyedineniye_ozhida.pdf"]
+    videoLinks: ["https://youtu.be/ECYeVMJx55Q"]
+    speakerIds: [923]
+  - id: 1344
+    name:
+      - {language: en, text: "Free software and your freedom"}
+    shortDescription:
+      - {language: en, text: "The Free Software Movement campaigns for computer users' freedom to cooperate and control their\
+            \ own computing. The Free Software Movement developed the GNU operating system, typically used together with the\
+            \ kernel Linux, specifically to make these freedoms possible."}
+    longDescription:
+      - {language: en, text: "The Free Software Movement campaigns for computer users' freedom to cooperate and control their\
+            \ own computing. The Free Software Movement developed the GNU operating system, typically used together with the\
+            \ kernel Linux, specifically to make these freedoms possible."}
+    talkDay: 2
+    trackTime: "16:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
+    speakerIds: [920]

@@ -38,7 +38,7 @@ speakers:
       - {language: en, text: "Andrey Breslav"}
       - {language: ru, text: "Андрей Бреслав"}
     company:
-      - {language: en, text: "JetBrains, Alter"}
+      - {language: en, text: JetBrains}
     bio:
       - {language: en, text: "Andrey Breslav is leading design and development of the Kotlin programming language at JetBrains.\
             \ In parallel, he's building Alter — a service that helps you find a competent psychotherapist."}
@@ -540,16 +540,18 @@ speakers:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
     company:
-      - {language: en, text: "Netifi, Inc"}
+      - {language: en, text: Netifi}
     bio:
       - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
             \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
-            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+            \ Along with that, public speaker and author of the book <a href=\"https://www.packtpub.com/application-development/reactive-programming-spring-50\"\
+            \ target=\"_blank\">\"Reactive Programming in Spring 5.0\"</a>."}
       - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
             я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
             \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
             ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
-            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+            ренций, как JEEConf и JavaDay Ukraine. Автор книги <a href=\"https://www.packtpub.com/application-development/reactive-programming-spring-50\"\
+            \ target=\"_blank\">«Reactive Programming in Spring 5.0»</a>."}
     twitter: OlehDokuka
   - id: 34
     fileName: 0034.jpg
@@ -3146,12 +3148,13 @@ speakers:
             \ of Mosigra. Since 2009 he operates a popular Mosigra blog in the Habrahabr business space. Sergey received an\
             \ award \"Business Book of the Year in Russia\" for a book \"Business as a Game\" (co-authored with D. Kibkalo\
             \ and D. Borisov). Founder of the Loft PR agency. He provided advice for several companies from the Russian market\
-            \ top 20."}
+            \ top 20. Prize winner of the \"Best Marketing Company of the Year\" and \"Best Client Experience\"."}
       - {language: ru, text: "Сергей Абдульманов — математик из Астраханского государственного университета. Работал редак\
             тором газеты, руководил рекламным отделом, затем владел IT-компанией. С 2010 года маркетинговый директор Мосиг\
             ры. С 2009 года ведёт популярный блог Мосигры на площадке Хабр про бизнес. Обладатель премии «Деловая книга го\
             да» за книгу «Бизнес как игра» (в соавторстве с Д. Кибкало и Д. Борисовым). Учредитель пиар-агентства Loft. Ко\
-            нсультировал ряд компаний из Топ-20 российского рынка."}
+            нсультировал ряд компаний из Топ-20 российского рынка. Премии «Лучшая маркетинговая компания года» и «Лучший к\
+            лиентский опыт»."}
   - id: 259
     fileName: 0259.jpg
     name:
@@ -5862,15 +5865,13 @@ speakers:
       - {language: en, text: Kontur}
       - {language: ru, text: Контур}
     bio:
-      - language: en
-        text: "Igor Lukanin is deputy head of engineering and developer relations team leader at Kontur. Since 2017 he helps\
-            \ developers to share their experience via conferences, meetups, hackathons, contests, open source projects, publications,\
-            \ podcasts, etc. He also connects HR and PR teams with engineering unit.\n\nhttps://igorlukanin.io/"
-      - language: ru
-        text: "Заместитель руководителя инженерного подразделения и лидер DevRel-команды в Контуре. С 2017 года помогает р\
-            азработчикам в Контуре делиться своим опытом через конференции, митапы, хакатоны, соревнования, проекты с откр\
-            ытым кодом, статьи и подкасты, а также связывает команды HR и PR с инженерным подразделением. Интересуется над\
-            ёжностью систем, высокими нагрузками и DevOps.\n\nhttps://igorlukanin.io/"
+      - {language: en, text: "Igor Lukanin is deputy head of engineering and developer relations team leader at Kontur. Since\
+            \ 2017 he helps developers to share their experience via conferences, meetups, hackathons, contests, open source\
+            \ projects, publications, podcasts, etc.; connects HR and PR teams with engineering unit."}
+      - {language: ru, text: "Заместитель руководителя инженерного подразделения и лидер DevRel-команды в Контуре. С 2017\
+            \ года помогает разработчикам в Контуре делиться своим опытом через конференции, митапы, хакатоны, соревновани\
+            я, проекты с открытым кодом, статьи и подкасты, а также связывает команды HR и PR с инженерным подразделением\
+            . Интересуется надёжностью систем, высокими нагрузками и DevOps."}
     twitter: igorlukanin
   - id: 442
     fileName: 0442.jpg
@@ -8948,17 +8949,14 @@ speakers:
     company:
       - {language: en, text: PS.kz}
     bio:
-      - {language: en, text: "GraphQL rockstar, developer of Internet products, OSS maintainer. Since 2001 Pavel's main specialization\
-            \ is web technologies. He has extensive practical knowledge on back-end/front-end development, administration,\
-            \ and architecture. Since the end of 2015, Pavel's main focus is on isomorphic applications. In summer 2016 he\
-            \ began the development of graphql-compose (GraphQL schema generator) in open source."}
-      - language: ru
-        text: "GraphQL-ниндзя, разработчик интернет-продуктов, опенсорс-мейнтейнер. С 2001 года основная специализация - в\
-            еб-технологии. Обладает обширными практическими знаниями по бэкенду, фронтенду, администрированию и построению\
-            \ архитектуры. С конца 2015 года делает основной упор на изоморфные приложения. Летом 2016 начал разработку graphql-compose\
-            \ (генератора GraphQL-схем) в опенсорсе. Написал достаточно много материала на русском про <a href=\"https://github.com/nodkz/conf-talks\"\
-            \ target=\"_blank\">GraphQL</a>. В 2019 начал формировать best practice по <a href=\"https://graphql-rules.com\"\
-            \ target=\"_blank\">дизайну</a>.\n\nTelegram — <a href=\"https://t.me/graphql_ru\" target=\"_blank\">https://t.me/graphql_ru</a>"
+      - {language: en, text: "GraphQL rockstar, consultant and trainer, developer of Internet products, OSS maintainer. Since\
+            \ 2001 Pavel's main specialization is web technologies. He has extensive practical knowledge on back-end/front-end\
+            \ development, administration, and architecture. Since the end of 2015, Pavel's main focus is on isomorphic applications.\
+            \ In summer 2016 he began the development of graphql-compose (GraphQL schema generator) in open source."}
+      - {language: ru, text: "GraphQL-гуру, консультант и тренер, разработчик интернет-продуктов, опенсорс-мейнтейнер. С 2001\
+            \ года основная специализация — веб-технологии. Обладает обширными практическими знаниями по бэкенду, фронтенд\
+            у, администрированию и построению архитектуры. С конца 2015 года делает основной упор на изоморфные приложения\
+            . Летом 2016 начал разработку graphql-compose (генератора GraphQL-схем) в опенсорсе."}
     twitter: nodkz
     gitHub: nodkz
   - id: 661
@@ -9293,15 +9291,14 @@ speakers:
       - {language: en, text: "Roman Dvornov"}
       - {language: ru, text: "Роман Дворнов"}
     company:
-      - {language: en, text: Avito}
+      - {language: en, text: Wrike}
     bio:
-      - {language: en, text: "Technical lead of Frontend Architecture unit at Avito. Author of basis.js, CSSTree, Component\
-            \ Inspector, rempl, maintainer of CSSO and others. The researcher, evangelist for web standards, inspirer, critic\
-            \ and speaker. Most interested in the web technologies, tooling, architecture and related subjects."}
-      - {language: ru, text: "Руководитель группы разработки Frontend Architecture в Avito. Автор basis.js, CSSTree, Component\
-            \ Inspector, rempl, мейнтенер CSSO и др. Исследователь, изобретатель велосипедов, евангелист веб-стандартов, и\
-            дейный вдохновитель, критик, докладчик. Основной интерес — веб-технологии, что мы можем от них получить, инстр\
-            ументы, архитектура и смежные задачи."}
+      - {language: en, text: "Author of basis.js, CSSTree, Component Inspector, rempl, maintainer of CSSO and others. The\
+            \ researcher, evangelist for web standards, inspirer, critic and speaker. Most interested in the web technologies,\
+            \ tooling, architecture and related subjects."}
+      - {language: ru, text: "Автор basis.js, CSSTree, Component Inspector, rempl, мейнтенер CSSO и др. Исследователь, изо\
+            бретатель велосипедов, евангелист веб-стандартов, идейный вдохновитель, критик, докладчик. Основной интерес —\
+            \ веб-технологии, что мы можем от них получить, инструменты, архитектура и смежные задачи."}
     twitter: rdvornov
   - id: 686
     fileName: 0686.jpg
@@ -12364,35 +12361,125 @@ speakers:
     fileName: 0919.jpg
     name:
       - {language: en, text: "John Romero"}
+    company:
+      - {language: en, text: "Romero Games"}
+    bio:
+      - language: en
+        text: "John Romero is an award-winning game development icon whose work spans over 130 games, 108 of which have been\
+            \ published commercially. Romero is the \"father of first-person shooters\" having led the design and contributed\
+            \ to the programming and audio design of the iconic and genre-defining games DOOM, Quake, Heretic and Hexen. Romero\
+            \ is also one of the earliest supporters of eSports and a current competitive DOOM and Quake player.\n\nTo date,\
+            \ Romero has co-founded eight successful game companies including the likes of id Software. He is considered to\
+            \ be among the world's top game designers, and his products have won well over 100 awards. Romero most recently\
+            \ won a Lifetime Achievement award at the Fun & Serious Games Festival in Bilbao and the Legend Award at 2017's\
+            \ Develop: Brighton.\n\nOne of the earliest indie developers, Romero began working in the game space in 1979 on\
+            \ mainframes before moving to the Apple II in 1981. He is a completely self-taught programmer, designer and artist,\
+            \ having drawn his inspirations from early Apple II programmers."
+    twitter: romero
   - id: 920
     fileName: 0920.jpg
     name:
       - {language: en, text: "Richard Stallman"}
+    company: []
+    bio:
+      - language: en
+        text: "Dr. Richard Stallman launched the free software movement in 1983 and started the development of the GNU operating\
+            \ system (see www.gnu.org) in 1984. GNU is free software: everyone has the freedom to copy it and redistribute\
+            \ it, with or without changes. The GNU/Linux system, basically the GNU operating system with Linux added, is used\
+            \ on tens of millions of computers today.\n\nStallman has received the ACM Grace Hopper Award and the ACM Software\
+            \ and Systems Award, a MacArthur Foundation fellowship, the Electronic Frontier Foundation's Pioneer Award, and\
+            \ the Takeda Award for Social/Economic Betterment, as well as several doctorates honoris causa, and has been inducted\
+            \ into the Internet Hall of Fame."
   - id: 921
     fileName: 0921.jpg
     name:
       - {language: en, text: "Grigori Bakunov"}
       - {language: ru, text: "Григорий Бакунов"}
+    company:
+      - {language: en, text: Яндекс}
+    bio:
+      - {language: en, text: "Grigory Bakunov is Yandex's Director of Technology Distribution. He is a populariser of programming,\
+            \ a successful entrepreneur, a frequent participant at internet technology conferences, and one of the creators\
+            \ and regular hosts of the podcast Radio-T."}
+      - {language: ru, text: "Директор по распространению технологий Яндекса. Популяризатор программирования, успешный пре\
+            дприниматель и частый участник многих конференций по интернет-технологиям. Один из создателей и постоянный вед\
+            ущий подкаста Радио-Т."}
+    twitter: bobuk
   - id: 922
     fileName: 0922.jpg
     name:
       - {language: en, text: "Pavel Pleskov"}
       - {language: ru, text: "Павел Плесков"}
+    company:
+      - {language: en, text: "Point API"}
+    bio:
+      - {language: en, text: "Pavel graduated from Lomonosov Moscow State University (2010) and New Economic School (2012).\
+            \ For a year, he worked as a financial consultant at Oliver Wyman. Then he began to build algorithms in the high-frequency\
+            \ trading industry (HFT). For two years, he was a co-founder and CBDO of ThunderBid. After that, he found his\
+            \ calling in Data Science. In a year and a half, Pavel became the 1st in Russia and the 2nd in the world competition\
+            \ ranking at Kaggle. Since then, he was professionally participating and helping to organize online competitions\
+            \ and hackathons in DS / ML. Pavel is a huge fan of traveling, motorcycles, and kitesurfing."}
+      - {language: ru, text: "Павел закончил мехмат МГУ (2010) и магистратуру РЭШ (2012). Год работал финансовым консульта\
+            нтом в компании Oliver Wyman. Далее занимался созданием торговых биржевых роботов в индустрии высокочастотной\
+            \ торговли (HFT). В течение двух лет был сооснователем и главным квантом фонда ThunderBid. После этого нашел с\
+            вое призвание в Data Science. За год стал первым в России и вторым в мире в рейтинге самой популярной соревнов\
+            ательной платформы по анализу данных — Kaggle. С тех пор профессионально участвует и помогает организовывать о\
+            нлайн-соревнования и хакатоны по DS/ML. Увлекается путешествиями, мотоциклами и кайтсерфингом."}
+    twitter: ppleskov
   - id: 923
     fileName: 0923.jpg
     name:
       - {language: en, text: "Vadim Vinnik"}
       - {language: ru, text: "Вадим Винник"}
+    company:
+      - {language: en, text: "SolarWinds MSP"}
+    bio:
+      - {language: en, text: "Lead developer at SolarWinds, Ph.D. in physical and mathematical sciences, author of books and\
+            \ scientific publications on theory of programming; translator of books on programming; university lecturer on\
+            \ programming and some supporting areas of mathematics. Favourite programming languages: C++ and Haskell."}
+      - {language: ru, text: "Ведущий разрабочик в SolarWinds, кандидат физико-математических наук, автор книг и научных п\
+            убликаций по теории программирования, переводчик книг по программированию, преподаватель программирования и со\
+            путствующих разделов математики. Любимые языки: C++ и Haskell."}
   - id: 924
     fileName: 0924.jpg
     name:
       - {language: en, text: "Alexander Ermakov"}
       - {language: ru, text: "Александр Ермаков"}
+    company:
+      - {language: en, text: "Russian Microsoft MVP Community"}
+    bio:
+      - {language: en, text: "Microsoft Regional Director in Russia, Microsoft MVP in Business Applications, inspiring speaker,\
+            \ Certified Auditor, Partner at Awara IT. Having graduated in two degrees — in Economics and Mathematics — Alexander\
+            \ got MBA in 2000. Alexander has over 25 years of experience working with IT, last 12 were tightly dedicated to\
+            \ Microsoft technologies in Business Solutions."}
+      - {language: ru, text: "Региональный директор Microsoft в России, Microsoft MVP в бизнес приложениях, вдохновляющий\
+            \ спикер, сертифицированный ревизор, партнер в Awara IT. Имеет два образования — экономическое и математическо\
+            е, — получил магистра делового администрирования в 2000 году. Александр имеет более 25 лет опыта работы в ИТ,\
+            \ последние 12 лет были тесно связаны с технологиями Microsoft в области бизнес-решений."}
   - id: 925
     fileName: 0925.jpg
     name:
       - {language: en, text: "Konstantin Evteev"}
       - {language: ru, text: "Константин Евтеев"}
+    company:
+      - {language: en, text: "PostgreSQL Russia"}
+    bio:
+      - language: en
+        text: "DBA Unit Leader at Avito (Avito.ru)\r\nKonstantin's career with PostgreSQL (PostgreSQL 7.4) began at the Tula\
+            \ branch office \"Research Institute of Reprography\" (www.reprograf.ru) in position of Senior Programming Specialist\
+            \ in 2009. In 2013 Konstantin joined the Ingate team in position: The developer of the department of system architecture,\
+            \ Database specialist — to migrate the existing projects from Microsoft SQL Server to PostgreSQL, set up database\
+            \ backup, provide fault tolerance, and as a DBA specialist to maintain projects working on Microsoft SQL Server\
+            \ 2008r2/2012 servers. In 2014 Konstantin comes to Avito, the biggest classified site of Russia, and the second\
+            \ largest classified site in the world (after Craigslist of USA). Konstantin is leading the database development\
+            \ team, is in charge of the development of the architecture in the context of databases and training and consulting\
+            \ for developers to work with PostgreSQL."
+      - language: ru
+        text: "Авито, DBA Unit Leader.\r\nКарьеру начал с PostgreSQL версии 7.4 и Microsoft SQL Server 2000. До Авито зани\
+            мался миграциями нагруженных проектов с MSSQL Server на PostgreSQL и администрированием обоих СУБД. В Авито пр\
+            ишел в 2014 году на роль разработчика баз данных, в настоящий момент возглавляет команду DBA.\r\nАктивно участ\
+            вует в жизни PostgreSQL community."
+    twitter: kevteev
   - id: 926
     fileName: 0926.jpg
     name:
@@ -12408,11 +12495,32 @@ speakers:
     name:
       - {language: en, text: "Irina Matveeva"}
       - {language: ru, text: "Ирина Матвеева"}
+    company:
+      - {language: en, text: "IT HR"}
+    bio:
+      - language: en
+        text: "Leader of SPB IT HR community, organizational consultant, business coach, facilitator, managing partner of\
+            \ Escalate. Manages projects in development of teams and leaders, client service, facilitation of communications,\
+            \ change management. \n10 years of experience in software development and IT solutions. 15 years in managing HR\
+            \ in international and Russian companies (mostly IT segment), from startups to industry leaders. Couching practice\
+            \ since 2010."
+      - language: ru
+        text: "Лидер SPB IT HR сообщества, организационный консультант, бизнес-коуч, фасилитатор, управляющий партнер Escalate.\
+            \ Реализует проекты в области развития команд, руководителей, коммуникаций, клиентского сервиса, управления из\
+            менениями. \n10 лет опыта разработки IT-решений. 15 лет опыта руководства HR в западных и российских компаниях\
+            \ (преимущественно IT), от стартапов до лидеров индустрии, практикующий коуч с 2010."
+    twitter: Irigma
   - id: 929
     fileName: 0929.jpg
     name:
       - {language: en, text: "Danis Tazetdinov"}
       - {language: ru, text: "Данис Тазетдинов"}
+    company:
+      - {language: en, text: "Mobile People Talks"}
+    bio:
+      - {language: en, text: "iOS Team Leader in EPAM Nizhny Novgorod."}
+      - {language: ru, text: "Руководитель iOS-команды EPAM Нижний Новгород."}
+    twitter: edeniska
   - id: 930
     fileName: 0930.jpg
     name:
@@ -12443,6 +12551,19 @@ speakers:
     name:
       - {language: en, text: "Alexander Fatin"}
       - {language: ru, text: "Александр Фатин"}
+    company:
+      - {language: en, text: linkmeup}
+    bio:
+      - language: en
+        text: "Alexander (better known as Loxmatiy Mamont) for more than 13 years has been involved in IT with anything but\
+            \ programming. Passed a full-fledged way from ordinary technical support in large-scale production, through the\
+            \ terrors of sysadmin-ism to the stars of evangelism.\nOne of the co-autors of linkmeup project, that tells people\
+            \ about engineering in IT."
+      - language: ru
+        text: "Александр (более известный, как Loxmatiy Mamont) уже более 13ти лет занимается в IT чем угодно, но только н\
+            е программированием. Прошёл полноценный путь от рядового техсаппорта на крупном производстве, через терни сиса\
+            дминства к звёздам евангелизма. \nОдин из со-авторов проекта linkmeup, где рассказывает людям про инженерию в\
+            \ IT."
   - id: 936
     fileName: 0936.jpg
     name:
@@ -12463,6 +12584,11 @@ speakers:
     name:
       - {language: en, text: "Alexey Uchakin"}
       - {language: ru, text: "Алексей Учакин"}
+    company:
+      - {language: en, text: linkmeup}
+    bio:
+      - {language: en, text: "Network engineer. Linkmeup podcast host."}
+      - {language: ru, text: "Сетевой инженер. Ведущий подкаста linkmeup."}
   - id: 940
     fileName: 0940.jpg
     name:
@@ -12508,6 +12634,16 @@ speakers:
     name:
       - {language: en, text: "Nikolai Muliar"}
       - {language: ru, text: "Николай Муляр"}
+    company:
+      - {language: en, text: "Go SPb"}
+    bio:
+      - language: en
+        text: "Go developer. Co-organizer of the St. Petersburg Go community.\r\nWorked in such companies as PropellerAds,\
+            \ Yandex.\r\nPractically all entire career has been working on the development of online advertising."
+      - language: ru
+        text: "Go-разработчик. Соорганизатор Санкт-Петербургского сообщества разработчиков на Go.\r\nРаботал в таких компа\
+            ниях как PropellerAds, Яндекс.\r\nПрактически всю свою карьеру работал над разработкой в сфере интернет-реклам\
+            ы."
   - id: 949
     fileName: 0949.jpg
     name:
@@ -12530,6 +12666,19 @@ speakers:
     name:
       - {language: en, text: "Aleksandr Barmin"}
       - {language: ru, text: "Александр Бармин"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - language: en
+        text: "Alexander has been developing software since 2010 and has a significant experience in backend and frontend\
+            \ technologies — Java, Java EE, Spring, Hibernate, JSF, IBM Domino, IBM FileNet, IBM Content Navigator, React,\
+            \ Angular, Dojo Toolkit, Yahoo! UI, vanilla JS. \n\nAt the same time he's experienced in solution architecture\
+            \ development — developed architecture for distributed monolithic and microservices solutions in ECM domain."
+      - language: ru
+        text: "Александр разрабатывает ПО с 2010 и имеет большой опыт работы с фронтенд и бэкенд технологиями — Java, Java\
+            \ EE, Spring, Hibernate, JSF, IBM Domino, IBM FileNet, IBM Content Navigator, React, Angular, Dojo Toolkit, Yahoo!\
+            \ UI, vanilla JS.\n\nТакже он имеет опыт разработки архитектуры бизнес-решений — он разрабатывал архитектуру д\
+            ля распределенных монолитных и микросервисных решений в области ECM."
   - id: 953
     fileName: 0953.jpg
     name:
