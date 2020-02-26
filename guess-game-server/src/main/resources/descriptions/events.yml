@@ -22,15 +22,21 @@ events:
     name:
       - {language: en, text: "C++ Russia 2019 SPb"}
       - {language: ru, text: "C++ Russia 2019 СПб"}
-    startDate: 2019-10-31
-    endDate: 2019-11-01
+    startDate: "2019-10-31"
+    endDate: "2019-11-01"
+    siteLink:
+      - {language: en, text: "https://cppconf-piter.ru/en/"}
+      - {language: ru, text: "https://cppconf-piter.ru/"}
     city:
       - {language: en, text: "Saint Petersburg"}
-      - {language: ru, text: "Санкт-Петербург"}
+      - {language: ru, text: Санкт-Петербург}
     venueAddress:
-      - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
-      - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
-    talkIds: [110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139]
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLZN9ZGiWZoZp6wYMijN-W4HOrJCsciwLj
+    mapCoordinates: "59.842400, 30.318815"
+    talkIds: [110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131,
+              132, 133, 134, 135, 136, 137, 138, 139]
   - eventTypeId: 0
     name:
       - {language: en, text: "C++ Russia 2020 Msk"}

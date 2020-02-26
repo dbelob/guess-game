@@ -4347,14 +4347,14 @@ speakers:
     name:
       - {language: en, text: "Ivan Čukić"}
     company:
-      - {language: en, text: "KDE e.V."}
+      - {language: en, text: KDE}
     bio:
       - language: en
-        text: "Ivan Čukić is the author of \"Functional Programming in C++\" published by Manning.\n\nHe is one of the core\
-            \ developers in KDE, the largest free/libre open source C++ project.\n\nHe is also teaching modern C++ techniques\
-            \ and functional programming at the Faculty of Mathematics in Belgrade and has been using C++ for more than 20\
-            \ years. He has been researching functional programming in C++ before and during his PhD studies, and uses the\
-            \ techniques in real-world projects."
+        text: "Ivan Čukić is the author of \"Functional Programming in C++\" published by Manning.\r\n\r\nHe is one of the\
+            \ core developers in KDE, the largest free/libre open source C++ project.\r\n\r\nHe is also teaching modern C++\
+            \ techniques and functional programming at the Faculty of Mathematics in Belgrade and has been using C++ for more\
+            \ than 20 years. He has been researching functional programming in C++ before and during his PhD studies, and\
+            \ uses the techniques in real-world projects."
     twitter: ivan_cukic
   - id: 337
     fileName: 0337.jpg
@@ -4389,21 +4389,23 @@ speakers:
     company:
       - {language: en, text: "Modernes C++"}
     bio:
-      - {language: en, text: "Rainer Grimm has worked as a software architect, team lead and instructor for about 20 years.\
-            \ In his spare time he likes to write articles about C++, Python and Haskell, but he also likes to speak at conferences.\
-            \ He publishes very often on his blog \"Modern C++\". Now he is a trainer giving seminars to modern C++ and Python.\
-            \ His books \"C++11 für Programmierer \", \"C++\", \"C++-Standardbibliothek\", and \"The C++ Standard Library\"\
-            \ were published by O'Reilly and Leanpub."}
+      - language: en
+        text: "Rainer Grimm has worked as a software architect, team lead and instructor for about 20 years. In his spare\
+            \ time, he likes to write articles about C++, Python, and Haskell. Rainer Grimm also likes to speak at conferences.\
+            \ He publishes weekly on his English and German blog \"Modernes C++\". Heise Developer hosts the German blog.\n\
+            \nNow he is an independent instructor giving seminars about modern C++ and Python. He published several books\
+            \ in various languages about modern C++ and concurrency in particular."
     twitter: rainer_grimm
   - id: 340
     fileName: 0340.jpg
     name:
       - {language: en, text: "Timur Doumler"}
-    company: []
+    company:
+      - {language: en, text: audio++}
     bio:
-      - {language: en, text: "Timur Doumler is a C++ developer specialising in audio and music technology, member of the ISO\
-            \ C++ committee, and program chair of the Audio Developer Conference (ADC). He is passionate about writing clean\
-            \ code, providing good tools, evolving the C++ language, and building inclusive communities."}
+      - {language: en, text: "Timur Doumler is a C++ developer specializing in audio and music technology, an active member\
+            \ of the ISO C++ committee, and part of the <a href=\"http://includecpp.org\" target=\"_blank\">#include < C++\
+            \ ></a> team. He is passionate about building communities, clean code, good tools, and the evolution of C++."}
     twitter: timur_audio
   - id: 341
     fileName: 0341.jpg
@@ -13187,92 +13189,290 @@ speakers:
     fileName: 0983.jpg
     name:
       - {language: en, text: "Sean Parent"}
+    company:
+      - {language: en, text: Adobe}
+    bio:
+      - {language: en, text: "Sean Parent is a principal scientist and software architect for Adobe's mobile digital imaging\
+            \ group. Sean has been at Adobe since 1993 when he joined as a senior engineer working on Photoshop and later\
+            \ managed Adobe's Software Technology Lab. In 2009 Sean spent a year at Google working on Chrome OS before returning\
+            \ to Adobe. From 1988 through 1993 Sean worked at Apple, where he was part of the system software team that developed\
+            \ the technologies allowing Apple's successful transition to PowerPC."}
+    twitter: SeanParent
   - id: 984
     fileName: 0984.jpg
     name:
       - {language: en, text: "Björn Fahller"}
+    company:
+      - {language: en, text: "Net Insight"}
+    bio:
+      - language: en
+        text: "Björn wrote his first program in 1980. After completing his MSc in CS and Engineering in 1994, programming\
+            \ has been the primary source of income, mostly from writing embedded software for communications systems. He\
+            \ has been working for a while at Net Insight, where he wears many hats, including mentor, trouble shooter, network\
+            \ communications expert, software architect and programmer; the latter in increasingly modern C++.\r\n\r\nOccasionally\
+            \ Björn has been seen tinkering with unorthodox software constructs, pondering \"what can be done with this?\"\
+            \ He lives in Stockholm."
+    twitter: bjorn_fahller
   - id: 985
     fileName: 0985.jpg
     name:
       - {language: en, text: "Bryce Adelstein Lelbach"}
+    company:
+      - {language: en, text: NVIDIA}
+    bio:
+      - {language: en, text: "Bryce Adelstein Lelbach has spent nearly a decade developing libraries in C++. Bryce is passionate\
+            \ about C++ evolution and is one of the leaders of the C++ community. He is an officer of ISO/IEC JTC1/SC22/WG21,\
+            \ the C++ Standards Committee. Bryce chairs both the C++ Committee's Tooling Study Group (SG15) and Library Evolution\
+            \ Incubator (SG18). He is the program chair for the C++Now and CppCon conferences, and the chief organizer of\
+            \ the Bay Area C++ User Group. On the C++ Committee, he has personally worked on the C++17 parallel algorithms,\
+            \ executors, futures, senders/receivers, multidimensional arrays, and modules. Bryce works at NVIDIA, where he\
+            \ leads the CUDA C++ core libraries team. He is one of the initial developers of the HPX parallel runtime system.\
+            \ He also helped start the LLVMLinux initiative and has occasionally contributed to the Boost C++ libraries."}
+    twitter: blelbach
   - id: 986
     fileName: 0986.jpg
     name:
       - {language: en, text: "Eric Niebler"}
+    company:
+      - {language: en, text: Facebook}
+    bio:
+      - {language: en, text: "Eric Niebler is a senior engineer at Facebook and an active member of the ISO C++ Standardization\
+            \ Committee. He was the principal author of the Ranges TS, which forms the basis of the Range support in C++20,\
+            \ and of the range-v3 library on which it is based. Before Facebook, Eric consulted independently and with BoostPro\
+            \ computing. He has authored several Boost libraries and served as a Boost release manager and a member of the\
+            \ Boost Steering Committee. He's happiest when finding powerful, elegant, and efficient abstractions for complicated\
+            \ code, and firmly believes code can and should be fast and beautiful."}
+    twitter: ericniebler
   - id: 987
     fileName: 0987.jpg
     name:
       - {language: en, text: "Maxim Khizhinsky"}
       - {language: ru, text: "Максим Хижинский"}
+    company:
+      - {language: en, text: "VAS Experts"}
+    bio:
+      - {language: en, text: "Developer of highload server systems. Areas of interest: C++, multithreading, lock-free data\
+            \ structures. Author of concurrent data structures library — libcds. Idiosyncrasic to std::mutex, std::condition_variable\
+            \ and other synchronization primitives. Diagnosed a terminal incurable brain asynchrony."}
+      - {language: ru, text: "Программист, интересующийся конкурентной обработкой данных в многопоточных средах. Воплощате\
+            ль чужих идей, автор библиотеки Concurrent Data Structures."}
   - id: 988
     fileName: 0988.jpg
     name:
       - {language: en, text: "Marshall Clow"}
+    company:
+      - {language: en, text: "C++ Alliance"}
+    bio:
+      - {language: en, text: "Marshall has been programming professionally for 35 years. He is the author of Boost.Algorithm,\
+            \ and has been a contributor to Boost for more than 15 years. He is the chairman of the Library working group\
+            \ of the C++ standard committee. He is the lead developer for libc++, the C++ standard library for LLVM."}
   - id: 989
     fileName: 0989.jpg
     name:
       - {language: en, text: "Hana Dusíková"}
+    company:
+      - {language: en, text: AVAST}
+    bio:
+      - {language: en, text: "Hana is working as a senior researcher at Avast Software. Her responsibility is exploring new\
+            \ ideas and optimizing existing ones. She also propagates modern C++ techniques and libraries in internal tech\
+            \ talks and gives talks at local C++ meetups. She studied computer science at Mendel University and subsequently\
+            \ taught several courses there, including Data Structures, Computability and Complexity, and Formal Languages\
+            \ and Automata."}
+    twitter: hankadusikova
   - id: 990
     fileName: 0990.jpg
     name:
       - {language: en, text: "Arno Schoedl"}
+    company:
+      - {language: en, text: think-cell}
+    bio:
+      - language: en
+        text: "Arno is responsible for the design, architecture, and development of all the think-cell's software products.\
+            \ He oversees think-cell's R&D team, Quality Assurance, and Customer Care. \n\nBefore founding think-cell, Arno\
+            \ worked at Microsoft Research and McKinsey. Arno studied computer science and management and holds a Ph.D. from\
+            \ the Georgia Institute of Technology with a specialization in Computer Graphics."
+    twitter: aschoedl
   - id: 991
     fileName: 0991.jpg
     name:
       - {language: en, text: "Nikolay Beloborodov"}
       - {language: ru, text: "Николай Белобородов"}
+    company:
+      - {language: en, text: Variti}
+    bio:
+      - {language: en, text: "For the past eight years has been in the development of various high performance network services\
+            \ made with Linux on C++ and Boost. For the last two years he has been working as a lead developer in Variti helping\
+            \ to save the Internet from the bot invasion."}
+      - {language: ru, text: "Занимается разработкой различных высоконагруженных сетевых сервисов под Linux на C++ и Boost\
+            \ на протяжении последних восьми лет. Последние два года работает ведущим разработчиком в компании Variti, пом\
+            огая ей спасать Интернет от нашествия ботов."}
   - id: 992
     fileName: 0992.jpg
     name:
       - {language: en, text: "Alexander Maslennikov"}
       - {language: ru, text: "Александр Масленников"}
+    company:
+      - {language: en, text: Intel}
+    bio:
+      - {language: en, text: "One-man army. Transforms the powerful performance profiler into a cloud service starting with\
+            \ the GUI and ending with the new ways of collecting performance data from remote targets."}
+      - {language: ru, text: "Человек-оркестр. Занимается превращением мощного профайлера в облачный сервис, начиная от гр\
+            афического интерфейса и заканчивая новыми способами сбора данных о производительности с удаленных машин."}
   - id: 993
     fileName: 0993.jpg
     name:
       - {language: en, text: "Dmitry Kozhevnikov"}
       - {language: ru, text: "Дмитрий Кожевников"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Dmitry works on in the CLion IDE by JetBrains, his main interest is the C++ language support:\
+            \ the in-house C++ engine, inspections and refactoring engine, and Clang integration. Previously, he was a C++\
+            \ developer in fields related to 3D visualization, simulation, and training system. Actively following current\
+            \ trends and news in the C++ world."}
+      - {language: ru, text: "Дмитрий работает над IDE CLion в JetBrains, главным образом над поддержкой языка C++: собств\
+            енным C++ парсером, рефакторингами, инспекциями и интеграцией с Clang. До JetBrains он занимался профессиональ\
+            ной разработкой на C++ в областях, связанных с 3D-моделированием, симуляцией и тренажерными системами. Активно\
+            \ интересуется тенденциями и новостями в мире C++."}
   - id: 994
     fileName: 0994.jpg
     name:
       - {language: en, text: "Karina Dorozhkina"}
       - {language: ru, text: "Карина Дорожкина"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Karina has been developing basic components for the top-of-the-line Kaspersky Lab products for\
+            \ four years. Last three years she has shifted focus to the transport security sector. During that time participated\
+            \ in the creating of several prototypes: secure gateway for cars on the basis of Kaspersky OS in partnership with\
+            \ the Austrian company AVL, EDR solution for cars head unit on the basis of QNX OS, conduct similar studies on\
+            \ the basis of the Genivi car platform. Wrote in C and C++."}
+      - {language: ru, text: "Четыре года занималась разработкой базовых компонентов для флагманских продуктов Лаборатории\
+            \ Касперского. Последние три года сместила фокус на область безопасности транспортного сектора. За это время п\
+            оучаствовала в создании нескольких прототипов: безопасного гейтвея для автомобилей на базе Kaspersky OS в парт\
+            нерстве с австрийской компанией AVL, EDR-решения для head unit’a автомобиля на базе QNX OS, аналогичные исслед\
+            ования проводит на базе автомобильной платформы Genivi. Писала на C и С++."}
   - id: 995
     fileName: 0995.jpg
     name:
       - {language: en, text: "Timofey Lavrenuyk"}
       - {language: ru, text: "Тимофей Лавренюк"}
+    company:
+      - {language: en, text: KeepSolid}
+    bio:
+      - {language: en, text: "Timofey is a software engineer in web development. He is working in KeepSolid, Odessa-based\
+            \ product company. For the past 2 years, he has been working on migrating native applications to web using TypeScript\
+            \ and Dart."}
+      - {language: ru, text: "Тимофей — инженер ПО в веб-разработке. Работает в KeepSolid, одесской продуктовой компании.\
+            \ Последние 2 года работает над мигрированием нативных приложений в веб, используя TypeScript и Dart."}
+    twitter: geek_timofey
   - id: 996
     fileName: 0996.jpg
     name:
       - {language: en, text: "Roman Rusyaev"}
       - {language: ru, text: "Роман Русяев"}
+    company:
+      - {language: en, text: Samsung}
+    bio:
+      - language: en
+        text: "Roman is a developer of compiler for neural networks in Russian Samsung R&D center. That compiler generates\
+            \ code for NPU (Neural Processing Unit). Compiled neural networks are deployed in flagship phones as such Galaxy\
+            \ Note 10.\r\nAlso he worked as a developer of optimizing compiler for Elbrus and SPARC microprocessors from C,\
+            \ C++ and Fortran input languages. He has implemented:\r\n- architecture-independent and architecture-dependent\
+            \ optimizations;\r\n- C++ zero-cost exception handling in middle-end of optimizing compiler;\r\n- AddressSanitizer,\
+            \ MemorySanitizer and LeakSanitizer (https://github.com/google/sanitizers/wiki) in compiler as well as porting\
+            \ compiler-rt library (https://compiler-rt.llvm.org) for Elbrus platform."
+      - language: ru
+        text: "Занимается разработкой компилятора нейронных сетей для NPU (Neural Processing Unit) в российском центре Samsung\
+            \ R&D. Скомпилированные нейронные сети поставляются в составе флагманских телефонов Samsung, таких как Galaxy\
+            \ Note 10.\r\nИмеется опыт разработки оптимизирующего компилятора под VLIW-архитектуру «Эльбрус» и архитектуру\
+            \ SPARC с языков C, C++, Fortran. В процессе разработки оптимизирующего компилятора, занимался реализацией:\r\n\
+            - платформозависимых и платформонезависимых оптимизаций;\r\n- оптимальной обработки исключений С++ (zero-cost\
+            \ exception handling) в части middle-end компилятора;\r\n- санитайзеров (https://github.com/google/sanitizers/wiki):\
+            \ AddressSanitizer, MemorySanitizer, LeakSanitizer, включая портирование библиотеки compiler-rt (https://compiler-rt.llvm.org)\
+            \ на платформу «Эльбрус»."
   - id: 997
     fileName: 0997.jpg
     name:
       - {language: en, text: "Alexander Ganyukhin"}
       - {language: ru, text: "Александр Ганюхин"}
+    company:
+      - {language: en, text: MERA}
+    bio:
+      - {language: en, text: "Has been working as a C++ programmer for over 8 years, mostly in mobile communications and car\
+            \ industry. Recently he became interested in metaprogramming and developing tools in C++ to make life of colleagues\
+            \ a little easier."}
+      - {language: ru, text: "Работает C++ программистом уже на протяжении более 8 лет, в большей степени в сферах сотовой\
+            \ связи и автомобильной индустрии. В последнее время увлекся метапрограммированием и разработкой инструментов\
+            \ на C++, чтобы сделать жизнь коллег немножечко легче."}
   - id: 998
     fileName: 0998.jpg
     name:
       - {language: en, text: "Ashot Vardanian"}
+    company:
+      - {language: en, text: UNUM}
+    bio:
+      - {language: en, text: "Ashot is a computer scientist with a background in astrophysics, who works primarily on scalable\
+            \ AI systems and computational complexity issues. He has been using C++ almost exclusively for the past four years\
+            \ for everything, including data science, web & user interfaces."}
+    twitter: ashvardanian
   - id: 999
     fileName: 0999.jpg
     name:
       - {language: en, text: "Denis Panin"}
       - {language: ru, text: "Денис Панин"}
+    company:
+      - {language: en, text: NVIDIA}
+    bio:
+      - {language: en, text: "Senior developer in NVIDIA. Develops application virtualisation system for Windows and uses\
+            \ template metaprogramming even in drivers."}
+      - {language: ru, text: "Старший разработчик в NVIDIA. Разрабатывает систему виртуализации приложений для Windows и и\
+            спользует шаблонное метапрограммирование даже в драйверах."}
   - id: 1000
     fileName: 1000.jpg
     name:
       - {language: en, text: "Guy Davidson"}
+    company:
+      - {language: en, text: "Creative Assembly"}
+    bio:
+      - {language: en, text: "Guy Davidson is the Principal Coding Manager at Creative Assembly. He has been writing games\
+            \ for about 40 years and show no sign of stopping. He is a voting member of the C++ committee, and interested\
+            \ in graphics, audio, IO and all things game related. He plays piano, sings for the Brighton Festival Chorus,\
+            \ teaches Tai Chi, raises teenagers and promotes diversity and inclusion in the C++ community."}
+    twitter: hatcat01
   - id: 1001
     fileName: 1001.jpg
     name:
       - {language: en, text: "Adi Shavit"}
+    company:
+      - {language: en, text: Consultant}
+    bio:
+      - {language: en, text: "Adi is Chief Science Officer of Swapp, entrepreneur, speaker, experienced software architect\
+            \ and a computer vision, image processing, and machine learning expert targeting real-time applications. He specializes\
+            \ in building cross-platform, high-performance software combined with high production quality and maintainable\
+            \ codebases."}
+    twitter: adishavit
   - id: 1002
     fileName: 1002.jpg
     name:
       - {language: en, text: "Alexander Bychuk"}
       - {language: ru, text: "Александр Бычук"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Since 2007, Alexander has been developing middleware and ECM systems. All this was written in\
+            \ C and C++, so the C++ Enterprise Edition for Alexander is not fiction, but daily work. One of the important\
+            \ components of any corporate system is transport, to be more precise, message brokers, and Alexander wants to\
+            \ tell you about them. He will talk about the current situation in the world of MQ-Brokers and, of course, about\
+            \ his own broker and the features of his writing."}
+      - {language: ru, text: "С 2007 года Александр занимался разработкой middleware и системы электронного документооборо\
+            та. Все это писалось на C и C++, так что C++ Enterprise Edition для Александра не выдумка, а ежедневная работа\
+            . Одним из важных компонентов любой корпоративной системы является транспорт, если быть точнее — брокеры сообщ\
+            ений, именно о них Александр и расскажет. Он поговорит о текущей обстановке в мире MQ-Brokers и, конечно же, о\
+            \ собственном брокере и особенностях его написания."}
+    twitter: bychuk_as
   - id: 1003
     fileName: 1003.jpg
     name:
