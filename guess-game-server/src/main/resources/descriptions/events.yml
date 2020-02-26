@@ -719,15 +719,21 @@ events:
   - eventTypeId: 8
     name:
       - {language: en, text: "Joker 2019"}
-    startDate: 2019-10-25
-    endDate: 2019-10-26
+    startDate: "2019-10-25"
+    endDate: "2019-10-26"
+    siteLink:
+      - {language: en, text: "https://jokerconf.com/en/"}
+      - {language: ru, text: "https://jokerconf.com/"}
     city:
       - {language: en, text: "Saint Petersburg"}
-      - {language: ru, text: "Санкт-Петербург"}
+      - {language: ru, text: Санкт-Петербург}
     venueAddress:
-      - {language: en, text: "Expoforum"}
-      - {language: ru, text: "Экспофорум"}
-    talkIds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]
+      - {language: en, text: "Peterburgskoye hwy., 62/1, Expoforum"}
+      - {language: ru, text: "Петербургское шоссе, 64/1, КВЦ «Экспофорум»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_ZJJywYZru7IQVvIPcfj6a
+    mapCoordinates: "59.762236, 30.356121"
+    talkIds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+              30, 31, 32, 33, 34, 35, 36, 37]
   # Mobius
   - eventTypeId: 9
     name:

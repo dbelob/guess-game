@@ -234,16 +234,13 @@ speakers:
     company:
       - {language: en, text: Oracle}
     bio:
-      - language: en
-        text: "Java Performance Engineer. He has been working with Java since version 1.0. During this time he managed to\
-            \ participate in the development of mobile, client, server applications and virtual machines.\nSergey is engaged\
-            \ in Java performance since 2005: firstly worked on Apache Harmony at Intel, and now he is currently engaged in\
-            \ performance OracleJDK/OpenJDK (his 3rd JVM) at Oracle."
+      - {language: en, text: "Sergey works as Java Performance Engineer at Oracle. His primary goal is making Oracle JVM faster\
+            \ digging into JVM runtime, JIT compilers, class libraries and etc. His favorite area is an interaction of Java\
+            \ with modern hardware."}
       - language: ru
         text: "Java Performance Engineer. Работает с Java начиная с версии 1.0. За это время успел поучаствовать в разрабо\
-            тке мобильных, клиентских, серверных приложений и виртуальных машин.\nПроизводительностью Java занимается c 2005\
-            \ года: сначала работал в Intel над Apache Harmony, а в данный момент в Oracle занимается производительностью\
-            \ OracleJDK/OpenJDK (его 3-я JVM)."
+            тке мобильных, клиентских, серверных приложений и виртуальных машин.\n\nПроизводительностью Java занимается c\
+            \ 2005 года и в данный момент в Oracle занимается производительностью OracleJDK/OpenJDK."
     twitter: kuksenk0
   - id: 14
     fileName: 0014.jpg
@@ -361,8 +358,22 @@ speakers:
   - id: 22
     fileName: 0022.jpg
     name:
-      - {language: en, text: "Nikita Salnikov-Tarnovsky"}
+      - {language: en, text: "Nikita Salnikov-Tarnovski"}
       - {language: ru, text: "Никита Сальников-Тарновский"}
+    company:
+      - {language: en, text: Plumbr}
+    bio:
+      - language: en
+        text: "Co-founder of Plumbr, the only performance monitor solution with root cause detection, where he now contributes\
+            \ as core developer and lead of engineering team. Besides his daily technical tasks he is an active blogger, 3\
+            \ times JavaOne RockStar and frequent conference speaker.\n\nTroubleshooter, assumptions destroyer, finds the\
+            \ most joy when deletes deprecated code."
+      - language: ru
+        text: "Соучредитель PLumbr, единственного решения для мониторинга производительности с обнаружением коренных причи\
+            н, где он на данный момент главный разработчик и руководитель команды инженеров. Помимо основной работы ведет\
+            \ собственный блог, три раза получал JavaOne RockStar и является активным спикером.\n\nБорец с неполадками, ра\
+            зрушитель допущений, получает большое удовольствие от удаления устаревшего кода."
+    twitter: iNikem
   - id: 23
     fileName: 0023.jpg
     name:
@@ -540,18 +551,16 @@ speakers:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
     company:
-      - {language: en, text: Netifi}
+      - {language: en, text: "Netifi, Inc"}
     bio:
       - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
             \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
-            \ Along with that, public speaker and author of the book <a href=\"https://www.packtpub.com/application-development/reactive-programming-spring-50\"\
-            \ target=\"_blank\">\"Reactive Programming in Spring 5.0\"</a>."}
+            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
       - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
             я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
             \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
             ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
-            ренций, как JEEConf и JavaDay Ukraine. Автор книги <a href=\"https://www.packtpub.com/application-development/reactive-programming-spring-50\"\
-            \ target=\"_blank\">«Reactive Programming in Spring 5.0»</a>."}
+            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
     twitter: OlehDokuka
   - id: 34
     fileName: 0034.jpg
@@ -566,14 +575,24 @@ speakers:
     company:
       - {language: en, text: JFrog}
     bio:
-      - {language: en, text: "Developer Advocate of JFrog, the creators of Artifactory Binary Repository, the home of Bintray,\
-            \ and JavaOne 2011 Duke Choice Awards winner. For a living he hangs out with the JFrog tech leaders, writes some\
-            \ code around Artifactory and Bintray, and then speaks and blogs about all that. He does it repeatedly for the\
-            \ last 10 years and enjoys every moment of it."}
-      - {language: ru, text: "Поскольку «религия не позволяет» быть евангелистом, Барух — developer advocate в компании JFrog\
-            \ и делает в жизни ровно 3 вещи: зависает с разработчиками Bintray и Artifactory, пописывает для них код и рас\
-            сказывает о впечатлениях в блогах и на конференциях, таких как JavaOne, Devoxx, OSCON, конечно же, JPoint и Joker,\
-            \ да и многих других. И так более десяти лет подряд."}
+      - language: en
+        text: "Baruch Sadogursky (a.k.a. JBaruch) is the Head of Developer Relations and a Developer Advocate at JFrog. His\
+            \ passion is speaking about technology. Well, speaking in general, but doing it about technology makes him look\
+            \ smart, and 18 years of hi-tech experience sure helps. When he's not on stage (or on a plane to get there), he\
+            \ learns about technology, people and how they work, or more precisely, don't work together.\n\nHe is a co-author\
+            \ of the Liquid Software book, CNCF ambassador and a professional conference speaker on DevOps, DevSecOps, Go,\
+            \ Java and many other topics, and is a regular at the industry's most prestigious events including DockerCon,\
+            \ GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne and many others. You can see some of his talks at <a href=\"\
+            https://jfrog.com/shownotes/\" target=\"_blank\">jfrog.com/shownotes</a>."
+      - language: ru
+        text: "Барух Садогурский (a.k.a. JBaruch) — Head of Developer Relations и Developer Advocate в компании JFrog. Бол\
+            ьше всего любит рассказывать о технологиях — то есть просто поболтать любит, но человек, говорящий о технологи\
+            ях, имеет умный вид, да и 18 лет опыта в сфере высоких технологий никуда не делись. Когда он не выступает (ну\
+            , или не летит к месту следующего выступления), то изучает технологии, людей и то, как они работают, точнее, н\
+            е работают вместе.\n\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер по та\
+            ким темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, как Joker,\
+            \ JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Некоторые\
+            \ его доклады можно посмотреть <a href=\"https://jfrog.com/shownotes/\" target=\"_blank\">здесь</a>."
     twitter: jbaruch
   - id: 36
     fileName: 0036.jpg
@@ -1213,19 +1232,22 @@ speakers:
   - id: 78
     fileName: 0078.jpg
     name:
-      - {language: en, text: "Yuriy Artamonov"}
+      - {language: en, text: "Yuri Artamonov"}
       - {language: ru, text: "Юрий Артамонов"}
     company:
-      - {language: en, text: Haulmont}
+      - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "Yuriy is playing an integral role in the CUBA Platform development team and contributing a lot\
-            \ to the platform architecture design, specializing in front-end technologies. For better or for worse, he had\
-            \ to sort out Vaadin Framework in detail and even become its contributor and co-author of several popular addons.\
-            \ Yuriy is a brave tamer of a fork of Vaadin with 8 years of experience."}
-      - {language: ru, text: "Юрий является одним из ключевых разработчиков опенсорс-фреймворка CUBA и активно участвует в\
-            \ разработке его архитектуры, специализируясь на фронтенд-технологиях. Хорошо это или плохо, ему пришлось дета\
-            льно разобраться в Vaadin Framework и даже стать его контрибьютором и соавтором нескольких популярных аддонов\
-            . Юрий — отважный укротитель форка Vaadin с восьмилетним стажем."}
+      - language: en
+        text: "For the last few years, Yuriy has played an integral role in the CUBA Platform development team and contributed\
+            \ a lot to the platform architecture design, specializing in front end technologies. As part of my academic activities,\
+            \ he mentored applied math students from Samara University.\n\nCurrently, working at IntelliJ IDEA Team of JetBrains\
+            \ and trying to bring new useful tools to developers daily routine."
+      - language: ru
+        text: "До недавнего времени Юрий занимался разработкой открытого фреймворка CUBA Platform, где посвятил много врем\
+            ени архитектуре и фронтенд-технологиям. Преподавал курсы разработки мобильных приложений и основы UI/UX для ст\
+            удентов магистратуры Самарского Университета.\n\nСейчас работает в команде IntelliJ IDEA, стараясь улучшить жи\
+            знь разработчиков при помощи различных инструментов. Обожает реализовывать безумные идеи с лозунгом «Почему бы\
+            \ и нет?»."
     twitter: Yuriy_Artamonov
     gitHub: jreznot
   - id: 79
@@ -3079,6 +3101,19 @@ speakers:
     fileName: 0253.jpg
     name:
       - {language: en, text: "Stephen Chin"}
+    company:
+      - {language: en, text: JFrog}
+    bio:
+      - {language: en, text: "Stephen Chin is Senior Director of Developer Relations at JFrog, author of Raspberry Pi with\
+            \ Java, The Definitive Guide to Modern Client Development, and Pro JavaFX Platform. He has keynoted numerous Java\
+            \ conferences around the world including Oracle Code One (formerly JavaOne), where he is an 8-time Rock Star Award\
+            \ recipient. Stephen is an avid motorcyclist who has done evangelism tours in Europe, Japan, and Brazil, interviewing\
+            \ hackers in their natural habitat and posting the videos on <a href=\"http://nighthacking.com/\" target=\"_blank\"\
+            >http://nighthacking.com/</a>. When he is not traveling, he enjoys teaching kids how to do embedded and robot\
+            \ programming together with his teenage daughter."}
+    twitter: steveonjava
+    gitHub: steveonjava
+    javaChampion: true
   - id: 254
     fileName: 0254.jpg
     name:
@@ -12688,61 +12723,192 @@ speakers:
     fileName: 0954.jpg
     name:
       - {language: en, text: "Mark Heckler"}
+    company:
+      - {language: en, text: Pivotal}
+    bio:
+      - {language: en, text: "Mark Heckler is a Professional Problem Solver and Spring Developer & Advocate at Pivotal, conference\
+            \ speaker, published author, & Java Champion focusing upon developing innovative production-ready software at\
+            \ velocity for the Cloud. He has worked with key players in the manufacturing, retail, medical, scientific, telecom,\
+            \ and financial industries and various public sector organizations to develop and deliver critical capabilities\
+            \ on time and on budget. Mark is an open source contributor and author/curator of a <a href=\"https://thehecklers.com\"\
+            \ target=\"_blank\">developer-focused blog</a> and an occasionally interesting Twitter account (@mkheck)."}
+    twitter: MkHeck
+    javaChampion: true
   - id: 955
     fileName: 0955.jpg
     name:
       - {language: en, text: "Dan Heidinga"}
+    company:
+      - {language: en, text: IBM}
+    bio:
+      - {language: en, text: "Dan Heidinga wears two hats: first as an Eclipse OpenJ9 project lead, and the second as IBM's\
+            \ JVM J9 VM Architect. Fortunately, both of those hats let him hack on the OpenJ9 JVM which he's been doing since\
+            \ 2007. Along the way he's represented IBM on multiple JSRS include JSR 292 (\"invokedynamic\") and JSR 335 (\"\
+            lambda\"). He currently has his hands in most new JVM features and all major Java releases. In the past, he's\
+            \ spent entirely too long staring at Java bytecode while maintaining the verifier and still enjoys an occasional\
+            \ detour into Smalltalk development."}
+    twitter: DanHeidinga
   - id: 956
     fileName: 0956.jpg
     name:
       - {language: en, text: "Dalia Abo Sheasha"}
+    company:
+      - {language: en, text: IBM}
+    bio:
+      - {language: en, text: "Dalia Abo Sheasha is the development lead for the IBM WebSphere Migration Tools. Her team develops\
+            \ several migration tools that deal with a variety of scenarios including Java SE migrations and on-premise to\
+            \ cloud migrations. Dalia has worked on WebSphere for 5 years starting her career with the EJB team and transitioning\
+            \ to the JPA team where she contributed to the open-source projects: EclipseLink and OpenJPA."}
+    twitter: DaliaShea
   - id: 957
     fileName: 0957.jpg
     name:
       - {language: en, text: "Burr Sutter"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - language: en
+        text: "Red Hat's Director of Developer Experience. A Java Champion, former president of the Atlanta Java User Group,\
+            \ and founder of the <a href=\"https://devnexus.com/\" target=\"_blank\">DevNexus conference</a>.\n\nTechnologist,\
+            \ creator, catalyst — a product manager & marketer, teacher, and \"internal start-up\" leader with the vision\
+            \ to see tomorrow's technology and the ability to focus and energize the engineers who build it and the communities\
+            \ who use it. Areas of expertise include Cloud, Docker, Kubernetes, OpenShift, Java EE, SOA, Business Rules, BPM,\
+            \ PaaS, Mobile, and IoT."
+    twitter: burrsutter
   - id: 958
     fileName: 0958.jpg
     name:
       - {language: en, text: "Juan Fumero"}
+    company:
+      - {language: en, text: "The University of Manchester"}
+    bio:
+      - {language: en, text: "Juan Fumero is a postdoc at the University of Manchester. His research topics are Heterogeneous\
+            \ High-Level Languages Virtual Machines, GPGPUs, and distributed computing. Currently, he is working as part of\
+            \ the TornadoVM and E2Data European projects for bringing automatic GPU and FPGA JIT compilation and execution\
+            \ for Java programs. He received a Ph.D. degree from The University of Edinburgh on Accelerating Interpreted Programming\
+            \ Languages on GPUs for Java, R, and Ruby.  Additionally, he has also worked as an intern at Oracle Labs and CERN\
+            \ implementing compilers and evaluating parallel techniques for multi-core systems."}
+    twitter: snatverk
   - id: 959
     fileName: 0959.jpg
     name:
       - {language: en, text: "Gunnar Morling"}
+    company:
+      - {language: en, text: "Red Hat, Inc."}
+    bio:
+      - {language: en, text: "Gunnar Morling is a software engineer and open-source enthusiast by heart. He is leading the\
+            \ Debezium project, a tool for change data capture (CDC). He is a Java Champion, the spec lead for Bean Validation\
+            \ 2.0 (JSR 380) and has founded multiple open source projects such as Deptective and MapStruct. Prior to joining\
+            \ Red Hat, Gunnar worked on a wide range of Java EE projects in the logistics and retail industries. He's based\
+            \ in Hamburg, Germany."}
   - id: 960
     fileName: 0960.jpg
     name:
       - {language: en, text: "Alexey Andreev"}
       - {language: ru, text: "Алексей Андреев"}
+    company:
+      - {language: en, text: Delightex}
+    bio:
+      - {language: en, text: "Developer at Delightex. Develops compilers in his spare time. Used to develop Kotlin/JS at JetBrains\
+            \ some time ago."}
+      - {language: ru, text: "Разработчик в компании Delightex. В свободное время увлекается разработкой компиляторов. Ког\
+            да-то вполне профессионально разрабатывал Kotlin/JS в JetBrains."}
   - id: 961
     fileName: 0961.jpg
     name:
       - {language: en, text: "Simone Bordet"}
+    company:
+      - {language: en, text: Webtide}
+    bio:
+      - language: en
+        text: "Simone Bordet is a Jetty Committer, the CometD project leader and \na Java Champion. Simone works as Lead Architect\
+            \ at Webtide, the company that provides support and services for Jetty and CometD. Active open source developer,\
+            \ he founded and contributed to various open source projects such as Jetty, CometD, MX4J, Foxtrot, LiveTribe,\
+            \ and others. \n\nSimone has been technical speaker at various national and international conferences such as\
+            \ Devoxx, JavaOne, CodeMotion, etc., and is a co-lead of the Java User Group of Torino, Italy. Simone specializes\
+            \ in server-side multi-thread development, EE application development, in Comet technologies applied to web development,\
+            \ web network protocols (HTTP, WebSocket, SPDY, HTTP/2) and in high performance JVM tuning."
+    twitter: simonebordet
   - id: 962
     fileName: 0962.jpg
     name:
       - {language: en, text: "Dmitry Pisklov"}
       - {language: ru, text: "Дмитрий Писклов"}
+    company:
+      - {language: en, text: "Chronicle Software"}
+    bio:
+      - {language: en, text: "Software developer and architect in Chronicle Software with 12+ years of experience in IT and\
+            \ 10+ in software engineering specializing in ultra-low-latency Java development."}
+      - {language: ru, text: "Разработчик в Chronicle Software, специализирующийся на ultra-low-latency-приложениях на Java,\
+            \ с обширным опытом в разработке приложений в банковской сфере и трейдинге."}
   - id: 963
     fileName: 0963.jpg
     name:
       - {language: en, text: "Remi Forax"}
+    company:
+      - {language: en, text: "University Paris East Marne la Vallee"}
+    bio:
+      - {language: en, text: "Assistant professor for a small university at the east of Paris. Not young anymore so he has\
+            \ the chance to follow the creation of Java. Although he didn't work for SUN/Oracle, Forax is one of the fathers\
+            \ of invokedynamic introduces in Java 7. Helped to create the specifications of lambdas (Java 8), modules (Java\
+            \ 9) and constant dynamic (Java 11). Currently working to deliver pattern matching (project Amber) and inline\
+            \ types (project Valhalla) to Java."}
   - id: 964
     fileName: 0964.jpg
     name:
       - {language: en, text: "Dmitry Konstantinov"}
       - {language: ru, text: "Дмитрий Константинов"}
+    company:
+      - {language: en, text: Netcracker}
+    bio:
+      - language: en
+        text: "A system architect and Java developer from Netcracker company. During the last years participated in many different\
+            \ projects including network management, monitoring and billing. Works a lot with open source technologies like\
+            \ Apache Cassandra, Zookeeper, Kafka, Hazelcast, etc.\nProfessional interests: distributed systems, high performance\
+            \ and high availability."
+      - language: ru
+        text: "Системный архитектор и по-прежнему практикующий Java-разработчик в компании Netcracker. За последние 9 лет\
+            \ участвовал в различных проектах, начиная с задач управления сетью, мониторинга и заканчивая биллингом.\nАкти\
+            вно работает с различными open source-технологиями, такими как Apache Cassandra, Zookeeper, Kafka, Hazelcast и\
+            \ т.д.\nПрофессиональные интересы включают в себя вопросы построения распределенных систем, производительности\
+            \ и отказоустойчивости."
+    twitter: java_dnk
   - id: 965
     fileName: 0965.jpg
     name:
       - {language: en, text: "Roberto Cortez"}
+    company:
+      - {language: en, text: Talkdesk}
+    bio:
+      - {language: en, text: "Roberto Cortez is a passionate Java Developer with more than 10 years of experience. He is involved\
+            \ within the Open Source Community to help other individuals spread the knowledge about Java technologies. He\
+            \ is a regular speaker at conferences like JavaOne, Devoxx, Devnexus, JFokus and others. He leads the Coimbra\
+            \ JUG and founded the JNation Conference in Portugal. When he is not working, he hangs out with friends, play\
+            \ computer games and spends time with family."}
+    twitter: radcortez
   - id: 966
     fileName: 0966.jpg
     name:
       - {language: en, text: "Jacek Kunicki"}
+    company:
+      - {language: en, text: SoftwareMill}
+    bio:
+      - {language: en, text: "Jacek is a passionate software engineer living in the JVM land — mainly, but not limited to.\
+            \ He also tends to play with electronics and hardware. When sharing his knowledge, Jacek always keeps in mind\
+            \ that a working example is worth a thousand words."}
+    twitter: rucek
   - id: 967
     fileName: 0967.jpg
     name:
       - {language: en, text: "Trustin Lee"}
+    company:
+      - {language: en, text: "LINE+ Corporation"}
+    bio:
+      - {language: en, text: "Trustin Lee is a software engineer who is often known as the founder of Netty project, the most\
+            \ popular asynchronous networking framework in JVM ecosystem. He enjoys designing frameworks and libraries which\
+            \ yield the best experience to developers. At LINE+ corporation, the company behind \"LINE\" the top mobile messenger\
+            \ in Japan, Taiwan and Thailand, he builds various open-source software, such as a microservice framework Armeria\
+            \ and a distributed configuration repository Central Dogma, to facilitate the adoption of microservice architecture."}
   - id: 968
     fileName: 0968.jpg
     name:
