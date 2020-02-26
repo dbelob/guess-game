@@ -7,10 +7,12 @@ speakers:
     company:
       - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "Anton is a Developer Advocate at JetBrains. Working with TeamCity and IntelliJ IDEA. Programming\
-            \ in Java and Kotlin. Professional interests include programming languages, middleware, and developer tooling."}
-      - {language: ru, text: "Developer Advocate в компании JetBrains, резидент подкаста «Разбор Полётов». Профессиональны\
-            е интересы связаны с языками программирования и средствами разработки ПО."}
+      - {language: en, text: "Anton is a Developer Advocate at JetBrains, resident of \"Разбор Полётов\" podcast. Working\
+            \ with TeamCity and IntelliJ IDEA. Programming in Java and Kotlin. Professional interests include programming\
+            \ languages, middleware, and developer tooling."}
+      - {language: ru, text: "Developer Advocate в компании JetBrains, резидент подкаста «Разбор Полётов». Работает с TeamCity\
+            \ и IntelliJ IDEA. Программирует на Java и Kotlin. Профессиональные интересы связаны с языками программировани\
+            я и средствами разработки ПО."}
     twitter: antonarhipov
     javaChampion: true
   - id: 1
@@ -160,19 +162,19 @@ speakers:
   - id: 9
     fileName: 0009.jpg
     name:
-      - {language: en, text: "Viktor Gamov"}
+      - {language: en, text: "Victor Gamov"}
       - {language: ru, text: "Виктор Гамов"}
     company:
       - {language: en, text: Confluent}
     bio:
       - language: en
         text: "Viktor Gamov is a Developer Advocate at Confluent, the company that makes a streaming platform based on Apache\
-            \ Kafka. \n\nWorking in the field, Viktor Gamov developed comprehensive expertise in building enterprise application\
+            \ Kafka.\n\nWorking in the field, Viktor Gamov developed comprehensive expertise in building enterprise application\
             \ architectures using open source technologies. He enjoys helping different organizations design and develop low\
-            \ latency, scalable and highly available distributed systems. \n\nBack in his consultancy days, he co-authored\
-            \ O'Reilly's \"Enterprise Web Development\". \n\nHe is a professional conference speaker on distributed systems,\
-            \ Java, and JavaScript topics, and is regular on events including JavaOne, Devoxx, OSCON, QCon, and others. He\
-            \ blogs at http://gamov.io and produces the podcasts Razbor Poletov (in Russian) and co-hosts DevRelRad.io. \n\
+            \ latency, scalable and highly available distributed systems.\n\nBack in his consultancy days, he co-authored\
+            \ O'Reilly's \"Enterprise Web Development\".\n\nHe is a professional conference speaker on distributed systems,\
+            \ Java, and JavaScript topics, and is regular on events including JavaOne, Devoxx, OSCON, QCon, and others (http://lanyrd.com/gamussa).\
+            \ He blogs at http://gamov.io and produces the podcasts Razbor Poletov (in Russian) and co-hosts DevRelRad.io.\n\
             \nFollow Viktor on Twitter @gamussa, where he posts about gym life, food, open source, and, of course, Kafka and\
             \ Confluent!"
       - language: ru
@@ -180,7 +182,7 @@ speakers:
             \ По совместительству является Developer Advocate в компании Confluent, которая разрабатывает платформу на баз\
             е Apache Kafka. Помогает клиентам в проектировании и разработке распределенных систем обработки потоковых данн\
             ых. Соавтор книги «Enterprise Web Development» издательства O'Reilly.\n\nВ свободное от работы время Виктор не\
-            \ забывает про качалку и бицуху. Является завсегдатаем конференций JUG.ru Group (JPoint, Joker, JBreak) и друг\
+            \ забывает про качалку и бицуху. Является завсегдатаем конференций JUG Ru Group (JPoint, Joker, JBreak) и друг\
             их международных конференций (JavaOne, Devoxx, OSCON, Qcon). Пишет в Twitter как @gamussa. Ведет канал про Kafka\
             \ в Telegram."
     twitter: gamussa
@@ -576,23 +578,22 @@ speakers:
       - {language: en, text: JFrog}
     bio:
       - language: en
-        text: "Baruch Sadogursky (a.k.a. JBaruch) is the Head of Developer Relations and a Developer Advocate at JFrog. His\
+        text: "Baruch Sadogursky (a.k.a JBaruch) is the Head of Developer Relations and a Developer Advocate at JFrog. His\
             \ passion is speaking about technology. Well, speaking in general, but doing it about technology makes him look\
             \ smart, and 18 years of hi-tech experience sure helps. When he's not on stage (or on a plane to get there), he\
-            \ learns about technology, people and how they work, or more precisely, don't work together.\n\nHe is a co-author\
-            \ of the Liquid Software book, CNCF ambassador and a professional conference speaker on DevOps, DevSecOps, Go,\
-            \ Java and many other topics, and is a regular at the industry's most prestigious events including DockerCon,\
-            \ GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne and many others. You can see some of his talks at <a href=\"\
-            https://jfrog.com/shownotes/\" target=\"_blank\">jfrog.com/shownotes</a>."
+            \ learns about technology, people and how they work, or more precisely, don't work together.\r\n\r\nHe is a CNCF\
+            \ ambassador, Developer Champion, and a professional conference speaker on DevOps, DevSecOps, Go, Java and many\
+            \ other topics, and is a regular at the industry's most prestigious events including DockerCon, GopherCon, Devoxx,\
+            \ DevOps Days, OSCON, Qcon, JavaOne and many others. You can see some of his talks at jfrog.com/shownotes"
       - language: ru
         text: "Барух Садогурский (a.k.a. JBaruch) — Head of Developer Relations и Developer Advocate в компании JFrog. Бол\
             ьше всего любит рассказывать о технологиях — то есть просто поболтать любит, но человек, говорящий о технологи\
             ях, имеет умный вид, да и 18 лет опыта в сфере высоких технологий никуда не делись. Когда он не выступает (ну\
             , или не летит к месту следующего выступления), то изучает технологии, людей и то, как они работают, точнее, н\
-            е работают вместе.\n\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер по та\
-            ким темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, как Joker,\
-            \ JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Некоторые\
-            \ его доклады можно посмотреть <a href=\"https://jfrog.com/shownotes/\" target=\"_blank\">здесь</a>."
+            е работают вместе.\r\n\r\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер п\
+            о таким темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, к\
+            ак Joker, JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Не\
+            которые его доклады можно посмотреть здесь: jfrog.com/shownotes"
     twitter: jbaruch
   - id: 36
     fileName: 0036.jpg
@@ -4711,7 +4712,7 @@ speakers:
       - {language: en, text: "Anton Weiss"}
       - {language: ru, text: "Антон Вайс"}
     company:
-      - {language: en, text: Otomato}
+      - {language: en, text: "Otomato Software"}
     bio:
       - {language: en, text: "The co-owner of Otomato Software technological consulting, has got over 15 years of experience\
             \ in cutting-edge technologies. An expert in technical coaching, the initiator and co-author of the first Israeli\
@@ -5406,6 +5407,16 @@ speakers:
     fileName: 0408.jpg
     name:
       - {language: en, text: "Alex Thissen"}
+    company:
+      - {language: en, text: Xpirit}
+    bio:
+      - {language: en, text: "Alex has been involved in application development since the late nineties and worked as a lead\
+            \ developer and architect at large enterprises and small companies. He spends his time teaching other developers\
+            \ the details of the Microsoft development platform and frameworks, and coaches architects to design and build\
+            \ modern distributed applications at cloud scale. He has received the Microsoft Most Valuable Professional award\
+            \ for Visual Studio and Development Technologies 10 times. In his spare time Alex likes to participate in all\
+            \ kinds of sport, and loves playing and programming new and retro video games."}
+    twitter: alexthissen
   - id: 409
     fileName: 0409.jpg
     name:
@@ -6642,10 +6653,10 @@ speakers:
     company:
       - {language: en, text: Google}
     bio:
-      - {language: en, text: "Mete is a Developer Advocate at Google, currently focused on helping developers with Google\
-            \ Cloud Platform. As a long-time Java and a recent C# developer, he likes to compare the two ecosystems. Prior\
-            \ to Google he worked at Microsoft, Skype, Adobe, EMC, and Nokia building apps and services on various web, mobile\
-            \ and cloud platforms. Originally from Cyprus, currently lives in Greenwich, not too far away from the prime meridian."}
+      - {language: en, text: "Mete is a Developer Advocate at Google, focused on helping developers with Google Cloud. As\
+            \ a long-time Java and C# developer, he likes to compare the two ecosystems. Prior to Google, he worked at Microsoft,\
+            \ Skype, Adobe, EMC, and Nokia building apps and services on various web, mobile and cloud platforms. Originally\
+            \ from the island of Cyprus, he currently lives in Greenwich of London, not too far away from the prime meridian."}
     twitter: meteatamel
   - id: 487
     fileName: 0487.jpg
@@ -6905,6 +6916,14 @@ speakers:
     fileName: 0508.jpg
     name:
       - {language: en, text: "Hadi Hariri"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Developer and creator of many things OSS, his passions includes Web Development and Software\
+            \ Architecture. Has authored a couple of books, a few courses and has been speaking at industry events for nearly\
+            \ 15 years. Currently at JetBrains leading the Developer Advocacy team. Spends as much time as he can writing\
+            \ code."}
+    twitter: hhariri
   - id: 509
     fileName: 0509.jpg
     name:
@@ -7793,11 +7812,11 @@ speakers:
       - {language: en, text: wemake.services}
     bio:
       - language: en
-        text: "CTO at wemake.services, ElixirLangMoscow and MoscowPythonConf++ organizer.\n\nWriting <a href=\"https://sobolevn.me/\"\
-            \ target=\"_blank\">provocative articles</a>."
+        text: "CTO at wemake.services, ElixirLangMoscow and MoscowPythonConf++ organizer.\n\nWriting provocative <a href=\"\
+            https://sobolevn.me/\" target=\"_blank\">articles</a>."
       - language: ru
-        text: "CTO в wemake.services, организатор ElixirLangMoscow и MoscowPythonConf++.\n\nВедет <a href=\"https://sobolevn.me/\"\
-            \ target=\"_blank\">провокационный блог</a>."
+        text: "CTO в wemake.services, организатор ElixirLangMoscow и MoscowPythonConf++.\n\nВедет провокационный <a href=\"\
+            https://sobolevn.me/\" target=\"_blank\">блог</a>."
   - id: 583
     fileName: 0583.jpg
     name:
@@ -11726,11 +11745,11 @@ speakers:
       - {language: en, text: "EPAM Systems"}
     bio:
       - {language: en, text: "Vladimir Ivanov is now a lead software engineer in EPAM Systems. Started as a Java EE engineer,\
-            \ but got interested in mobile technologies. Vladimir develops Android apps mostly last 7 years, but looks around\
-            \ and comprehends nearby technologies like React Native, iOS app development, web development, etc. Vladimir is\
-            \ passionate about sharing his knowledge."}
+            \ but got interested in mobile technologies. For the last 7 years, Vladimir mostly develops Android apps, but\
+            \ looks around and comprehends nearby technologies like React Native, iOS app development, web development, etc.\
+            \ Vladimir is passionate about sharing his knowledge."}
       - {language: ru, text: "Владимир Иванов — ведущий разработчик в EPAM Systems. Начинал как Java EE-инженер, но увлекс\
-            я мобильным технологиями. Последние 7 лет разрабатывает приложения под Android, но этим не ограничивается, по\
+            я мобильными технологиями. Последние 7 лет разрабатывает приложения под Android, но этим не ограничивается, по\
             \ ходу осваивая смежные технологии, такие как React Native, разработку под iOS, Web и прочее. Увлеченно делитс\
             я знаниями с коллегами."}
     twitter: vvsevolodovich
@@ -12913,75 +12932,257 @@ speakers:
     fileName: 0968.jpg
     name:
       - {language: en, text: "Timothy Lister"}
+    company:
+      - {language: en, text: "The Atlantic Systems Guild Inc., co-author of the \"Peopleware: Productive Projects and Teams\""}
+    bio:
+      - {language: en, text: "Tim Lister is a principal of the Atlantic Systems Guild, Inc. and co-author of the \"Peopleware:\
+            \ Productive Projects and Teams\". He spends most of his time consulting on the front end of projects: project\
+            \ planning, project estimating and staffing, risk management, requirements definition, and project strategizing.\
+            \ He has been an invited speaker at the Agile Development Conference three times. Tim, along with the other 5\
+            \ Principals at the Guild, is co-author of \"Adrenaline Junkies and Template Zombies: Understanding Patterns of\
+            \ Project Behavior\" (Dorset House, 2008). Tim Lister has over 40 years of professional software development experience.\
+            \ Before the formation of the Atlantic Systems Guild, he worked at Yourdon Inc. from 1975 to 1983 as Executive\
+            \ Vice President and Fellow. He also serves as a panelist for the American Arbitration Association, arbitrating\
+            \ disputes involving software an software services, and has served as an expert witness in litigation proceedings\
+            \ involving software problems. He is a Certified Professional for Requirements Engineering, certified by IREB."}
   - id: 969
     fileName: 0969.jpg
     name:
       - {language: en, text: "Roman Shaposhnik"}
       - {language: ru, text: "Роман Шапошник"}
+    company:
+      - {language: en, text: "ZEDEDA Inc."}
+    bio:
+      - {language: en, text: "Roman is an open source software expert, currently serving on the board of directors for both\
+            \ The Apache Software Foundation and LF Edge. He has personally contributed to a variety of open source projects\
+            \ ranging from the Linux Kernel to Hadoop and ffmpeg. He is a co-founder and the vice president of product and\
+            \ strategy for Zededa, an edge virtualization startup. Throughout his career, Roman has held technical leadership\
+            \ roles at several well-known companies, including Sun Microsystems, Yahoo!, Cloudera and Pivotal Software. He\
+            \ holds a master's degree in mathematics and computer science from St. Petersburg State University. He likes German\
+            \ craft lagers and is fighting IPA invasion one seidla at a time."}
+    twitter: rhatr
   - id: 970
     fileName: 0970.jpg
     name:
       - {language: en, text: "Jessica Deen"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - language: en
+        text: "Jessica is a Cloud Developer Advocate for Microsoft focusing on Azure, Containers, cloud, OSS, and, of course,\
+            \ DevOps. Prior to joining Microsoft, she spent over a decade as an IT Consultant/Systems Administrator for various\
+            \ corporate and enterprise environments, catering to end users and IT professionals in the San Francisco Bay Area.\
+            \ Jessica holds two Microsoft Certifications (MCP, MSTS), 3 CompTIA certifications (A+, Network+, and Security+),\
+            \ 4 Apple Certifications, and is a former 4-year Microsoft Most Valuable Professional for Windows and Devices\
+            \ for IT. In 2013, she also achieved her FEMA certification from the U.S Department of Homeland Security, which\
+            \ recognizes her leadership and influence abilities during times of crisis and emergency.\n\nWhen she's not doing\
+            \ something geeky, you can find her doing something active, most likely running out of breath at her local CrossFit\
+            \ gym. Yes, she's one of those! She also enjoys biking (motorcycles and/or bicycles), shooting, eating, reading,\
+            \ and hanging with her 5-year-old rescue pup."
+    twitter: jldeen
   - id: 971
     fileName: 0971.jpg
     name:
       - {language: en, text: "Nikhil Barthwal"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Nikhil Barthwal is passionate about building distributed systems. He has several years of work\
+            \ experience in both big companies & smaller startups and also acts as a mentor to several startups. Currently,\
+            \ he is Product Manager in Google Cloud Platform working on Serverless products. Outside of work, he regularly\
+            \ speaks at international conferences on several topics related to Distributed systems & Programming Languages.\
+            \ You can know more him via his <a href=\"http://www.nikhilbarthwal.com/\" target=\"_blank\">homepage</a>."}
+    twitter: nikhilbarthwal
   - id: 972
     fileName: 0972.jpg
     name:
       - {language: en, text: "Nikolay Ihalaynen"}
       - {language: ru, text: "Николай Ихалайнен"}
+    company:
+      - {language: en, text: Percona}
+    bio:
+      - {language: en, text: "Nikolay is an opensource database enthusiast. He spent the recent 8 years in Percona struggling\
+            \ with MySQL, PostgreSQL and MongoDB problems as a DBA and Support Engineer. Before that, Nikolay and a small\
+            \ team of developers were responsible for scaling the site into one which now serves over a million unique visitors\
+            \ per day. Before that, he worked for several other companies, including NetUp, which provides ISP billing and\
+            \ IPTV solutions, and eHouse, the oldest Russian e-commerce company. Nikolay has a great deal of experience in\
+            \ both systems administration and programming. His experience includes extensive hands-on work with a broad range\
+            \ of technologies, including SQL, MySQL, PostgreSQL, MongoDB, PHP, C, C++, Python, Java, XML, OS parameter tuning\
+            \ (Linux, Solaris), caching techniques (e.g., memcached), RAID, file systems, SMTP, POP3, Apache, networking and\
+            \ network data formats, and many others. He is an expert in scalability, performance, and system reliability."}
+      - {language: ru, text: "Николай большой приверженец баз данных с открытым исходным кодом. Последние 8 лет в Percona\
+            \ он потратил на борьбу с проблемами MySQL, PostreSQL и MongoDB как DBA и инженер поддержки. Перед этим Никола\
+            й и небольшая группа разработчиков были ответственны за масштабирование сайта до уровня, который теперь обслуж\
+            ивает более миллиона уникальных пользователей в день. Раньше он работал на несколько компаний, включая NetUp,\
+            \ которая предоставляет услуги ISP для биллинга и IPTV, и в eHouse, старейшей российской e-commerce компании.\
+            \ У Николая большой опыт в системном администрировании и программировании. Его опыт включает практическую рабо\
+            ту с широким спектром различных технологий: SQL, MySQL, PostgreSQL, MongoDB, PHP, C, C++, Python, Java, XML, н\
+            астройка параметров OS (Linux, Solaris), методы кэширования (например, memcached), RAID, file systems, SMTP, POP3,\
+            \ Apache, сетевая конфигурация и сетевые форматы данных, и многое другое. Также он является экспертом в област\
+            и масштабируемости, производительности и надежности систем."}
   - id: 973
     fileName: 0973.jpg
     name:
       - {language: en, text: "Fedor Chemashkin"}
       - {language: ru, text: "Федор Чемашкин"}
+    company:
+      - {language: en, text: "Dell Technologies"}
+    bio:
+      - language: en
+        text: "In the 10th grade of the school instead of DevOps training in hometown, he went to the wrestling training camp.\
+            \ Now he's making up for a lost time.\n\nFedor started a career as a DevOps-engineer, but then joined a dev team.\
+            \ He develops Kubernetes-native storage systems, expands Kubernetes' behavior and builds CI/CD processes around\
+            \ it.\n\nTakes part in university programs of the company, gives lectures for students, speaks at technical events\
+            \ and meetups."
+      - language: ru
+        text: "В 10 классе вместо DevOps-стажировки в родном городе поехал на сборы по борьбе. Теперь навёрстывает упущенн\
+            ое. \n\nНачал карьеру как DevOps-инженер, но затем перешёл в разработчики. Занимается разработкой Kubernetes-native\
+            \ систем хранения данных, расширением поведения Kubernetes и построением CI/CD процессов вокруг этого.\n\nПрин\
+            имает участие в университетских программах компании, читает лекции для студентов, выступает на технических мер\
+            оприятиях и митапах."
   - id: 974
     fileName: 0974.jpg
     name:
       - {language: en, text: "Fedor Korotkov"}
       - {language: ru, text: "Федор Коротков"}
+    company:
+      - {language: en, text: "Cirrus Labs"}
+    bio:
+      - {language: en, text: "Chief X Officer at Cirrus Labs. Fedor spent many years at the industry leading companies building\
+            \ tools for engineers before founding Cirrus Labs which is focused on innovative tools for the Cloud Computing\
+            \ Era."}
+      - {language: ru, text: "Генеральный директор Cirrus Labs. Федор провел много лет в индустрии разработок для инженеро\
+            в, прежде чем основал Cirrus Labs, компанию, которая специализируется на инновационных инструментах для эпохи\
+            \ «облачных» вычислений."}
   - id: 975
     fileName: 0975.jpg
     name:
       - {language: en, text: "Dmitry Gubenko"}
       - {language: ru, text: "Дмитрий Губенко"}
+    company:
+      - {language: en, text: KURS}
+      - {language: ru, text: КУРС}
+    bio:
+      - {language: en, text: "Working in IT since 2013. In development since 2015. Worked on the portal of public services\
+            \ of a Moscow region and a megical video system for all of Russia. Now he's involved in the development of a real-time\
+            \ monitoring system."}
+      - {language: ru, text: "В IT c 2013 года. В разработке — с 2015. Трудился над порталом госуслуг Московской области,\
+            \ медицинской видеосистемой для всей России. Сейчас участвует в разработке системы мониторинга данных в реальн\
+            ом времени."}
   - id: 976
     fileName: 0976.jpg
     name:
       - {language: en, text: "Sergey Fedorov"}
       - {language: ru, text: "Сергей Фёдоров"}
     company:
-      - {language: en, text: "Netflix"}
+      - {language: en, text: Netflix}
+    bio:
+      - language: en
+        text: "Early engineer of the Open Connect — team that has built a Netflix CDN that delivers 13% of the world Internet\
+            \ traffic. After spending years building monitoring and data analysis systems for video traffic, Sergey now focuses\
+            \ on improving all types of Netflix Internet communications to achieve better latency, reliability and control\
+            \ over client-server communications. Strong advocate of observability approach to engineering and making data-driven\
+            \ decisions. \n\nThe author and maintainer of FAST.com — one of the most popular Internet speed tests.\n\nFinding\
+            \ actionable signals in loosely controlled environments is what keeps Sergey awake, much better than caffeine.\
+            \ This might also explain why outside of work he can be seen playing ice hockey, brewing beer, or exploring exotic\
+            \ travel destinations."
+      - language: ru
+        text: "Один из первых разработчиков в Open Connect — Netflix CDN, которая доставляет около 13% мирового Интернет-т\
+            рафика. Имея 7 лет опыта в разработке инфраструктуры, систем мониторинга и анализа данных для Netflix-видео, С\
+            ергей сейчас работает над улучшением производительности всех видов Интернет-коммуникаций в Netflix. Активный п\
+            ропагандист observability культуры, прагматичного и data-driven подхода к разработке программных систем. \n\nА\
+            втор FAST.com — одного из самых популярных сервисов по оценке скорости интернет-соединения.\n\nСергей любит ре\
+            шать новые масштабные задачи в атмосфере неопределенности и отсутствия полного контроля. И не только в работе\
+            \ - вне офиса Сергей варит собственное пиво, играет в хоккей и любит экстремальный туризм."
   - id: 977
     fileName: 0977.jpg
     name:
       - {language: en, text: "Alexander Lukyanchenko"}
       - {language: ru, text: "Александр Лукьянченко"}
+    company:
+      - {language: en, text: Авито}
+    bio:
+      - {language: en, text: "Alexander is a part of Architecture team in Avito. He's working on developing internal PaaS\
+            \ and cloud solutions based on Kubernetes, Docker, envoy. Creator of netramesh and navigator service mesh solutions."}
+      - {language: ru, text: "Занимается созданием и развитием облака и платформы как сервис, в Avito, на базе инструменто\
+            в: Kubernetes, Docker, envoy. Создатель netramesh, navigator service mesh-решений."}
   - id: 978
     fileName: 0978.jpg
     name:
       - {language: en, text: "Igor Kurochkin"}
       - {language: ru, text: "Игорь Курочкин"}
+    company:
+      - {language: en, text: "Express 42"}
+    bio:
+      - {language: en, text: "Auditing and consultancy team leader in Express 42. Helps companies develop DevOps practices\
+            \ and tools. Worked for Skype, Microsoft, Qik and Scalaxy."}
+      - {language: ru, text: "Лидер команды аудита и консалтинга в Express 42. Помогает компаниям в развитии DevOps-практи\
+            к и инструментов. Работал в компаниях Skype, Microsoft, Qik и Scalaxy."}
+    twitter: igoritl
   - id: 979
     fileName: 0979.jpg
     name:
       - {language: en, text: "Sergey Kurson"}
       - {language: ru, text: "Сергей Курсон"}
+    company:
+      - {language: en, text: AWS}
+    bio:
+      - language: en
+        text: "Sergey has been doing full-stack web development for about 8 years before joining AWS. Past few years he was\
+            \ building projects from scratch including building a team, configuring an infrastructure, ticket systems and\
+            \ \nCI/CD pipelines. He has an experience in building and configuration of complex multicomponent systems. Sergey\
+            \ also has been involved in IoT projects and digital signature solution for EU company in a severe GDPR compliant\
+            \ environment. Today Sergey is a solutions architect with development, gaming and IoT focus."
+      - {language: ru, text: "Перед тем как прийти в AWS, занимался full stack веб-разработкой порядка 8 лет. Из них после\
+            дние несколько лет разработкой проектов с нуля, включая конфигурацию и поддержку инфраструктуры, тикет систем\
+            , CI/CD. С нуля до релиза на тысячи пользователей. Имеет опыт запуска и настройки сложных многокомпонентных си\
+            стем и разработки этих систем с нуля. Также Сергей имеет опыт запуска IoT-проектов и системы цифровой подписи\
+            \ в суровом мире GDPR. Сейчас Сергей архитектор облачных решений с фокусом на разработку, gaming и IoT-проекты\
+            ."}
   - id: 980
     fileName: 0980.jpg
     name:
-      - {language: en, text: "Dmitry Stolyarov"}
+      - {language: en, text: "Dmitriy Stolyarov"}
       - {language: ru, text: "Дмитрий Столяров"}
+    company:
+      - {language: en, text: Flant}
+      - {language: ru, text: Флант}
+    bio:
+      - {language: en, text: "CTO and co-founder of Flant company. 14 years with Linux, over 30 high load projects. Writes\
+            \ code in C++, PHP, Python, and Bash. Loves C and Ruby. Reads Go. Used to be a fan of Chef, lost his faith in\
+            \ it and turned towards Ansible. Understands Docker and Kubernetes. Architect and co-author of: nginx-http-rdns,\
+            \ pam_docker, php_fpm_docker, werf и loghouse."}
+      - {language: ru, text: "Технический директор и соучредитель компании Флант. 14 лет с Linux, 10 лет эксплуатации, бол\
+            ее 30 highload-проектов. Программирует на C++, PHP, Python и Bash. Любит C и Ruby. Читает на Go. Активно испол\
+            ьзовал Chef, но потерял в него веру и осваивает Ansible. Понимает Docker и Kubernetes. Архитектор и соавтор: nginx-http-rdns,\
+            \ pam_docker, php_fpm_docker, werf и loghouse."}
+    twitter: dmistol
   - id: 981
     fileName: 0981.jpg
     name:
       - {language: en, text: "Erik Veld"}
+    company:
+      - {language: en, text: HashiCorp}
+    bio:
+      - {language: en, text: "Erik has over 15 years experience working with cloud and infrastructure.  Before joining HashiCorp\
+            \ he worked as a consultant at Xebia and also founded Instruqt, a hands-on learning platform that uses real infrastructure\
+            \ to teach cloud and DevOps tooling."}
+    twitter: erikveld
   - id: 982
     fileName: 0982.jpg
     name:
       - {language: en, text: "Konstantin Nifanin"}
       - {language: ru, text: "Константин Нифанин"}
+    company:
+      - {language: en, text: "MTS IT"}
+      - {language: ru, text: "МТС ИТ"}
+    bio:
+      - {language: en, text: "Experience in software development as DevOps — 5 years. Former system administrator. Migrated\
+            \ from Rostov-on-Don to St. Petersburg in 2017. Currently, he is engaged in the transition of software development\
+            \ companies from the old development ideology to the DevOps ideology."}
+      - {language: ru, text: "Стаж в разработке ПО в качестве DevOps — 5 лет. Бывший системный администратор. Мигрировал и\
+            з Ростова-на-Дону в Санкт-Петербург в 2017 году. На текущий момент занимается вопросами перехода компаний разр\
+            аботки ПО от старой идеологии разработки к идеологии DevOps."}
   - id: 983
     fileName: 0983.jpg
     name:

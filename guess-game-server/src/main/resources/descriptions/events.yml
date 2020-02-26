@@ -83,15 +83,21 @@ events:
     name:
       - {language: en, text: "DevOops 2019 SPb"}
       - {language: ru, text: "DevOops 2019 СПб"}
-    startDate: 2019-10-29
-    endDate: 2019-10-30
+    startDate: "2019-10-29"
+    endDate: "2019-10-30"
+    siteLink:
+      - {language: en, text: "https://devoops.ru/en/"}
+      - {language: ru, text: "https://devoops.ru/"}
     city:
       - {language: en, text: "Saint Petersburg"}
-      - {language: ru, text: "Санкт-Петербург"}
+      - {language: ru, text: Санкт-Петербург}
     venueAddress:
-      - {language: en, text: "Park Inn by Radisson Pulkovskaya"}
-      - {language: ru, text: "Гостиница «Park Inn by Radisson Пулковская»"}
-    talkIds: [80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109]
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PL-ety8gh7rTpTfIaormD2gRFxO0Ocnb22
+    mapCoordinates: "59.842400, 30.318815"
+    talkIds: [80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105,
+              106, 107, 108, 109]
   - eventTypeId: 1
     name:
       - {language: en, text: "DevOops 2020 Msk"}

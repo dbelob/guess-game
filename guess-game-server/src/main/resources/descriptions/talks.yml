@@ -2650,140 +2650,1118 @@ talks:
   - id: 80
     name:
       - {language: en, text: "Characters, community, and culture: Important factors for prosperity"}
+    shortDescription:
+      - {language: en, text: "Corporate culture has a huge impact on our lives, so, how to make your workplace more comfortable\
+            \ in all respects? Timothy Lister believes, that first of all, we need to identify organization's behaviors and\
+            \ alter our beliefs. And how to do it he will tell during this session."}
+    longDescription:
+      - language: en
+        text: "Tim Lister, a Principal of the Atlantic Systems Guild, and five of his partners at the Guild, are working on\
+            \ a book about workplace culture, and how to improve it. \n\nWe all talk about \"best practices\" but a tiny minority\
+            \ of organizations actually practice them all. But not to worry, think of \"best practices\" for human health.\
+            \ We know all about them, but very few of us actually practice them all. Maybe if someone did arduously practice\
+            \ all health practices they would forget to have a life.\n\nTim has come to believe that workplace culture has\
+            \ a huge effect on processes, strategies, and ultimately, success. The corporate culture, the unstated rules,\
+            \ that dominate office life, varies widely in our world. Some organizations are extremely healthy and vital, and\
+            \ some are dysfunctional to the point of being the Living Dead.\n\nThe first key is to identify your own organization’\
+            s behaviors. If they are positive, how can you perpetrate them across all projects? If they are negative, how\
+            \ can you break the habit? To do exactly that we need to recognize the underlying beliefs the organization holds\
+            \ that manifest those behaviors. In order to change a culture, we need to alter our underlying common beliefs.\n\
+            \nTim will start the talk with some examples from the book project. He will then let the audience offer up some\
+            \ of their own behaviors and beliefs."
+      - language: ru
+        text: "Tim Lister, a Principal of the Atlantic Systems Guild, and five of his partners at the Guild, are working on\
+            \ a book about workplace culture, and how to improve it. \n\nWe all talk about \"best practices\" but a tiny minority\
+            \ of organizations actually practice them all. But not to worry, think of \"best practices\" for human health.\
+            \ We know all about them, but very few of us actually practice them all. Maybe if someone did arduously practice\
+            \ all health practices they would forget to have a life.\n\nTim has come to believe that workplace culture has\
+            \ a huge effect on processes, strategies, and ultimately, success. The corporate culture, the unstated rules,\
+            \ that dominate office life, varies widely in our world. Some organizations are extremely healthy and vital, and\
+            \ some are dysfunctional to the point of being the Living Dead.\n\nThe first key is to identify your own organization’\
+            s behaviors. If they are positive, how can you perpetrate them across all projects? If they are negative, how\
+            \ can you break the habit? To do exactly that we need to recognize the underlying beliefs the organization holds\
+            \ that manifest those behaviors. In order to change a culture, we need to alter our underlying common beliefs.\n\
+            \nTim will start the talk with some examples from the book project. He will then let the audience offer up some\
+            \ of their own behaviors and beliefs. \n\n> __Комментарий программного комитета:__\n\n\n\n> *АААААА! Слишком к\
+            руто, всем идти! Автор PeopleWare в России. Некогда объяснять, бегите слушать!*"
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1A8hwPzBlQHOGzg8zD3JeC/f9c320515583a5ccae825ee8e3277ff1/keynote-lister.pdf"]
+    videoLinks: []
     speakerIds: [968]
   - id: 81
     name:
       - {language: en, text: "Serverless containers with Knative and Cloud Run"}
+    shortDescription:
+      - {language: en, text: "In this talk, we’ll see how we can use Knative primitives to build a serverless app that utilizes\
+            \ the Machine Learning magic of the cloud."}
+    longDescription:
+      - language: en
+        text: "When you build a serverless app, you either tie yourself to a cloud provider, or you end up building your own\
+            \ serverless stack. Knative provides a better choice. Open-source Knative extends Kubernetes to provide a set\
+            \ of middleware components for container-based serverless apps that can run anywhere. In this talk, we’ll explore\
+            \ Knative components (serving, eventing, build) and also take a look at its managed cousin Cloud Run on Google\
+            \ Cloud.\n\n> __Program committee comment:__\n\n> *Mete is well-known developer with diverse experience in software\
+            \ world giving very detailed technical talks. At the same time serverless and Kubernetes is two hottest topics.\
+            \ So this talk will give you best technical overview on both topics.*"
+      - language: ru
+        text: "When you build a serverless app, you either tie yourself to a cloud provider, or you end up building your own\
+            \ serverless stack. Knative provides a better choice. Open-source Knative extends Kubernetes to provide a set\
+            \ of middleware components for container-based serverless apps that can run anywhere. In this talk, we’ll explore\
+            \ Knative components (serving, eventing, build) and also take a look at its managed cousin Cloud Run on Google\
+            \ Cloud.\n\n> __Комментарий программного комитета:__\n\n> *Mete is well-known developer with diverse experience\
+            \ in software world giving very detailed technical talks. At the same time serverless and Kubernetes is two hottest\
+            \ topics. So this talk will give you best technical overview on both topics.*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5eYAbriO32W4XIOgGIEX84/7bc7483f4f23d293b3b71a7eaedaa4ec/100602_2040845120_Mete_Atamel_Serverless_Containers_with_Knative_and_Cloud_Run.pdf"]
+    videoLinks: []
     speakerIds: [486]
   - id: 82
     name:
       - {language: en, text: "Scale your auditing events"}
+    shortDescription:
+      - {language: en, text: "Audit daemon allows to monitor the system and changes, but it has its own weaknesses. Elastic's\
+            \ new Auditbeat fixes this and centralizes records of all changes for ease of use. So, this will be discussed\
+            \ in Phillip's talk."}
+    longDescription:
+      - language: en
+        text: "The Linux Audit daemon is responsible for writing audit records to the disk, which you can then access with\
+            \ ausearch and aureport. However, it turned out that parsing and centralizing these records is not as easy as\
+            \ you would hope. Elastic's new Auditbeat fixes this by keeping the original configuration, but ships them to\
+            \ a centralized location where you can easily visualize all events. You can also use Auditbeat to detect changes\
+            \ to critical files, like binaries and configuration files, and identify potential security policy violations.\n\
+            \nThis talk shows what you can do to discover changes, events, and potential security breaches as soon as possible\
+            \ on interactive dashboards. Additionally, we are combining Auditd events with logs, which are security-relevant\
+            \ and explore them in Elastic's free SIEM — all running on Kubernetes."
+      - language: ru
+        text: "The Linux Audit daemon is responsible for writing audit records to the disk, which you can then access with\
+            \ ausearch and aureport. However, it turned out that parsing and centralizing these records is not as easy as\
+            \ you would hope. Elastic's new Auditbeat fixes this by keeping the original configuration, but ships them to\
+            \ a centralized location where you can easily visualize all events. You can also use Auditbeat to detect changes\
+            \ to critical files, like binaries and configuration files, and identify potential security policy violations.\n\
+            \nThis talk shows what you can do to discover changes, events, and potential security breaches as soon as possible\
+            \ on interactive dashboards. Additionally, we are combining Auditd events with logs, which are security-relevant\
+            \ and explore them in Elastic's free SIEM — all running on Kubernetes.\n\n> __Комментарий программного комитет\
+            а:__\n\n\n\n> *Аудит — это в целом боль. Филипп расскажет, как строить аудит в больших проектах (или как сдела\
+            ть так, чтобы вся боль прошла сквозь сервисное сито).*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/4J7YRoomfRN6ViHcxvtfOG/9db37ae07dcbe68935f956de05d8faf5/100677_176471941_Philipp_Krenn_Scale_Your_Auditing_Events.pdf"]
+    videoLinks: []
     speakerIds: [143]
   - id: 83
     name:
       - {language: en, text: "Terraform vs Helm: Battle for infrastructure"}
       - {language: ru, text: "Terraform vs Helm: Битва за инфраструктуру"}
+    shortDescription:
+      - {language: en, text: "Terraform is a powerful instrument, but what if it becomes hard to support? In this talk Dmitry\
+            \ suggests a way out — leave Terraform at a minimum and do the rest through Helm: code becomes more readable,\
+            \ migration between clouds is simplified and maintaining such solution is much easier."}
+      - {language: ru, text: "Terraform — достаточно мощный инструмент, но что, если поддерживать его становится тяжело? В\
+            \ этом докладе Дмитрий предлагает выход — оставить Terraform на минимуме, а всё остальное делать через Helm: к\
+            од становится более читаемым, переезд между облаками упрощается, а поддерживать такое решение намного проще."}
+    longDescription:
+      - {language: en, text: "Infrastructure support for a small project could be very unprofitable. Administration of iron\
+            \ servers is annoying. VPS too — scaling within a provider can be painful and portability between providers is\
+            \ even more painful. However modern technologies can save us, they can easily manage the infrastructure, configure\
+            \ your application and services. With scaling and opportunity of light migration between cloud providers. But\
+            \ here as always — some problems are solved, others arise..."}
+      - language: ru
+        text: "Поддержка инфраструктуры для маленького проекта может быть очень накладной. Администрирование железных серв\
+            еров раздражает. VPS тоже — масштабирование в рамках провайдера может принести боль, а переносимость между про\
+            вайдерами ещё большую боль. На помощь приходят технологии, набирающие популярность в последние годы, которые п\
+            озволяют легко управлять инфраструктурой, конфигурировать собственное приложение и сервисы, от которых оно зав\
+            исит. С масштабированием и возможностью лёгкой миграции между облачными провайдерами. Но тут как всегда: одни\
+            \ проблемы решаются, другие возникают...\n\n> __Комментарий программного комитета:__\n\n>\n\n> *Альтернативное\
+            \ название доклада: «Как мы сходили на прошлый DevOops, применили Terraform, и что мы по этому поводу думаем»\
+            .*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/3bmh4wHPiu7diFJD8pTg2b/7ac03c777e5169cfa3ef052698ac109b/100735_1590419148_Dmitriy_Gubenko_Terraform_vs_Helm_bitva_za_infrastrukturu.pdf"]
+    videoLinks: []
     speakerIds: [975]
   - id: 84
     name:
       - {language: en, text: "Do it in code (not YAML)! Unlock power of Kotlin DSL for Kubernetes"}
-      - {language: ru, text: "Do it in code (not YAML)! Unlock power of Kotlin DSL for Kubernetes"}
+    shortDescription:
+      - {language: en, text: "Viktor and Fedor will show how to design and develop your Kubernetes deployment using k8s-Kotlin-dsl\
+            \ — how to use it with standard Kubernetes resources (deployment, PVCs, stateful sets) and with custom CRDs."}
+      - {language: ru, text: "Виктор и Федор покажут, как спроектировать и разработать Kubernetes deployment, используя k8s-Kotlin-dsl\
+            \ — как использовать его со стандартными ресурсами Kubernetes (deployment, PVCs, stateful sets) и пользователь\
+            ским CRD."}
+    longDescription:
+      - {language: en, text: "When it comes to deploying applications at scale without needing to integrate different pieces\
+            \ of infrastructure yourself, the answer nowadays is increasingly Kubernetes. While Kubernetes does provide all\
+            \ the building blocks and deployment tools, much thought is required to truly deployment pipelines to use in production.\
+            \ Configuring your builds with things like YAML may be tedious and error-prone. What if you can use the power\
+            \ of Kotlin’s type system and compile-time checks while building your deployments! In this interactive and code-driven\
+            \ session Fedor and Viktor teach you how to use Kotlin DSL for Kubernetes to configure your deployments (including\
+            \ custom resource definitions like Kafka CRD)."}
+      - language: ru
+        text: "Когда речь идет о деплое приложения без необходимости интеграции различных частей инфраструктуры, подавляющ\
+            им ответом становится использование Kubernetes. Kubernetes предоставляет весь материал для сборки и инструмент\
+            ы для деплоя, требуется много усилий для того, чтобы развернуть контейнеры в продакшене. Настройка ваших сборо\
+            к с YAML может быть утомительной и \nненадежной. Но что, если использовать систему типов Kotlin и проверки во\
+            \ время компиляции пока собирается ваша сборка. В этом интерактивном докладе Федор и Виктор научат вас как исп\
+            ользовать Kotlin DLS для Kubernetes для настройки вашего деплоя (включая определения кастомных ресурсов, напри\
+            мер, Kafka CRD).\n\n> __Комментарий программного комитета:__\n\n\n\n> *Все мы любим «хэйтить» YAML, а Виктор и\
+            \ Фёдор расскажут про рабочие альтернативы для вашего проекта.*"
+    talkDay: 1
+    trackTime: "13:45"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/glUb1AVulyb7NTs31T2zU/d5fb8eadcc0eeabfc425961550a9ecc5/deck-d302deb85a51a3db.pdf"]
+    videoLinks: []
     speakerIds: [9, 974]
   - id: 85
     name:
       - {language: en, text: "The unbearable lightness of scaling pods in Kubernetes"}
       - {language: ru, text: "Невыносимая легкость масштабирования подов в Kubernetes"}
+    shortDescription:
+      - {language: en, text: "During this session, you will learn what problems exist in different implementations of Kubernetes\
+            \ \"podautoscaler\", and how to merge your patch into Kubernetes."}
+      - {language: ru, text: "На докладе вы узнаете какие проблемы есть в разных реализациях «podautoscaler» в Kubernetes,\
+            \ а также как тестировать и запускать свой патч в production."}
+    longDescription:
+      - language: en
+        text: "If you are not satisfied with the default functionality of Kubernetes, you need to take matters into your own\
+            \ hands. \n\nIvan will show how to solve this problem and what it will take. You will figure out why this is still\
+            \ an issue while it is being solved for quite a long time.\n\nDuring this session, you will learn what problems\
+            \ exist in the previous and current HPA implementations. And what difficulties you might encounter following this\
+            \ path. As a bonus track, the speaker will tell about the process of patch developing in Kubernetes, about its\
+            \ stages and difficulties."
+      - language: ru
+        text: "Если вас не устраивает дефолтная функциональность «podautoscaler» в Kubernetes, надо брать дело в свои руки\
+            .\n\nИван покажет, каким образом решить эту проблему и что для этого понадобится. Вы попробуете разобраться по\
+            чему эта проблема все еще существует, хотя ее пытаются решить уже достаточно долгое время.\n\nНа докладе вы уз\
+            наете какие проблемы есть в прошлой и текущей реализации HPA. И, в целом, какие сложности ждут вас на этом пут\
+            и. В качестве бонус-трека спикер расскажет про процесс разработки патча в Kubernetes, про ее стадии и сложност\
+            и.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Все умеют scale'ить Hello World на тысячи подов, но м\
+            ало кто сделал это для реальных приложений. Иван расскажет, как это сделать.*"
+    talkDay: 1
+    trackTime: "13:45"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4T36peqU7eizr6EBa5Qrux/432af04c34ab32081fca1a1391f0625e/devoops2019-chpa-v1.2.pdf"]
+    videoLinks: []
     speakerIds: [380]
   - id: 86
     name:
       - {language: en, text: "Delivering progressively with Jenkins X"}
+    shortDescription:
+      - {language: en, text: "Sebastian's talk will show how to implement a fully-fledged Continuous Delivery pipeline for\
+            \ cloud-native environments using Jenkins X."}
+    longDescription:
+      - language: en
+        text: "Ideally, our enterprise projects define a fully-automated Continuous Delivery pipeline, including end-to-end\
+            \ testing, database migrations, canarying, monitoring, and rollbacks. However, most real-world projects are not\
+            \ quite there yet. The excuses are mostly complexity, insufficient testing, discrepancies between environments,\
+            \ or database migrations. Cloud-native technologies such as Docker, Kubernetes, or Istio also brought new ways\
+            \ of running software in production that need to be addressed.\n\nThis session shows how to implement a fully-fledged\
+            \ Continuous Delivery pipeline for cloud-native environments using Jenkins X. We'll see how to run automated testing\
+            \ and how to handle data in test scenarios. In order to fully automate, we also need a way to evolve schemas,\
+            \ that reside in databases by implementing N-1 compatibility. Automated canarying approach enables us to step\
+            \ to advance to a full Progressive Delivery pipeline, that limit the blast radius of potential errors, and automatically\
+            \ rolls out or back to a working state."
+      - language: ru
+        text: "Ideally, our enterprise projects define a fully-automated Continuous Delivery pipeline, including end-to-end\
+            \ testing, database migrations, canarying, monitoring, and rollbacks. However, most real-world projects are not\
+            \ quite there yet. The excuses are mostly complexity, insufficient testing, discrepancies between environments,\
+            \ or database migrations. Cloud-native technologies such as Docker, Kubernetes, or Istio also brought new ways\
+            \ of running software in production that need to be addressed.\n\nThis session shows how to implement a fully-fledged\
+            \ Continuous Delivery pipeline for cloud-native environments using Jenkins X. We'll see how to run automated testing\
+            \ and how to handle data in test scenarios. In order to fully automate, we also need a way to evolve schemas,\
+            \ that reside in databases by implementing N-1 compatibility. Automated canarying approach enables us to step\
+            \ to advance to a full Progressive Delivery pipeline, that limit the blast radius of potential errors, and automatically\
+            \ rolls out or back to a working state.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Jenkins X до сих\
+            \ пор вызывает много вопросов — как это применять, когда и зачем? Тот-кто-это-уже-опробовал пришёл к нам из ст\
+            ана разработчиков, чтобы доступно и понятно ответить на часть из них.*"
+    talkDay: 1
+    trackTime: "13:45"
+    track: 3
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [74]
   - id: 87
     name:
       - {language: en, text: "Pipelines & pods: DevOps with Kubernetes"}
+    shortDescription:
+      - {language: en, text: "In this talk, Burr will be demonstrating the power of the automated build and deployment pipeline\
+            \ augmented by the flexibility of infrastructure-as-code via Kubernetes/OpenShift."}
+    longDescription:
+      - language: en
+        text: "In this talk, Burr will be demonstrating the power of the automated build and deployment pipeline augmented\
+            \ by the flexibility of infrastructure-as-code via Kubernetes/OpenShift. We will be specifically focusing on the\
+            \ concepts of the smart and dark canary deployment model via pipeline automation leveraging open source technologies\
+            \ like Istio, Knative, and Tekton.\n\n> __Program committee comment:__\n\n> *Do you want to know how to make deployment\
+            \ pipelines right from person who works directly on OpenShift/Kubernetes and worked on set of PaaS and Open Source\
+            \ projects for last 25 years? So this talk for you.*"
+    talkDay: 1
+    trackTime: "15:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/2YNsACUDeMJ2Yxo0pbwdQl/75414bd7cfa435c4b6f2436114698c2c/Pipelines___Pods__DevOps_with_Kubernetes.pdf"]
+    videoLinks: []
     speakerIds: [957]
   - id: 88
     name:
       - {language: en, text: "How to deal with Kafka so it won't get Kafkaesque"}
       - {language: ru, text: "Как готовить Кафку, чтобы не пригорало"}
+    shortDescription:
+      - {language: en, text: "This talk focuses on the experience of exploiting several Kafka clusters in production: monitoring,\
+            \ maintenance, tooling."}
+      - {language: ru, text: "Доклад про опыт эксплуатации нескольких кластеров Кафки в продакшене: мониторинг, обслуживан\
+            ие и инструментарий."}
+    longDescription:
+      - language: en
+        text: "This talk focuses on the experience of exploiting several Kafka clusters in production:\n- monitoring;\n- maintenance;\n\
+            - tooling.\n\nDuring this session, we will review Kafka components: how and why we monitor them, what metrics\
+            \ we collect and what we are looking at. We will analyze the main scenarios in servicing the Kafka clusters: what\
+            \ pitfalls can be encountered when performing standard operations, what metrics to look out for. We will also\
+            \ consider open source DevOps tools for Kafka."
+      - language: ru
+        text: "Доклад про опыт эксплуатации нескольких кластеров Kafka в продакшне:\n- мониторинг;\n- обслуживание;\n- инс\
+            трументарий.\n\nВ докладе мы пройдёмся по компонентам Kafka: как и зачем мы их мониторим, какие метрики собира\
+            ем и на что смотрим. Разберём основные сценарии в обслуживании кластеров Kafka: какие подводные камни можно вс\
+            третить при выполнении стандартных операций, за какими метриками надо приглядывать. Также рассмотрим опенсорсн\
+            ые DevOps-инструменты для Kafka и их использование.\n\n> __Комментарий программного комитета:__\n\n\n\n> *У Гр\
+            игория огромный опыт эксплуатации Apache Kafka, рассказывает он хорошо и понятно. Доклад однозначно рекомендуе\
+            тся тем, у кого уже есть или планируется Kafka.*"
+    talkDay: 1
+    trackTime: "15:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/4gC4ZPDuHKiRAB07iTTLE0/5fa298f16e129e8efc9f8860562f3070/100595_113978852_Grigoriy_Koshelev_Kak_gotovit_Kafku_chtoby_ne_prigoralo.pdf"]
+    videoLinks: []
     speakerIds: [220]
   - id: 89
     name:
       - {language: en, text: "10 years of on-call. What have we learned?"}
       - {language: ru, text: "10 лет on-call. Чему мы научились?"}
+    shortDescription:
+      - {language: en, text: "Once Dmitry had to personally monitor all the problems 24/7. Now more than 50 engineers who\
+            \ provide twenty-four-hour technical support are engaged in this. How to achieve this will become the key topic\
+            \ of the talk."}
+      - {language: ru, text: "Когда-то Дмитрию приходилось лично отслеживать все проблемы 24/7. Теперь этим занимаются бол\
+            ее 50 инженеров, которые обеспечивают круглосуточную работу технической поддержки. Как удалось этого добиться\
+            \ и станет ключевой темой доклада."}
+    longDescription:
+      - language: en
+        text: "10 years ago Dmitry received SMS alerts on his private mobile phone and was that one who got up at night and\
+            \ repaired everything. \n\nNow in Flant tech support are working more than 20 people, providing 24/7 availability\
+            \ for numerous L1 and L2 clients. Besides at least 30 more engineers, distributed geographically and by time zone\
+            \ are an on-call duty.\n\nDmitry will talk about this fascinating evolution and what Flant learned in his report."
+      - language: ru
+        text: "10 лет назад Дмитрий сам принимал все оповещения по SMS на личный мобильный номер и был тем единственным че\
+            ловеком, который вставал по ночам и всё чинил. \n\nСейчас в технической поддержке Флант работает более 20 чело\
+            век, обеспечивая для многочисленных клиентов L1 и L2 доступность в режиме 24/7. А кроме них еще не менее 30 ин\
+            женеров, распределенных географически и по часовым поясам, дежурят on-call. \n\nОб этой увлекательной эволюции\
+            \ и о том, чему научилась Флант, Дмитрий и расскажет в своём докладе.\n\n> __Комментарий программного комитета\
+            :__\n\n\n\n> *Дмитрий — опытный спикер, его доклады всегда интересны и насыщены полезной информацией. В этот р\
+            аз Дмитрий расскажет об эволюции on-call во Flant: какие подходы они внедряли, чтобы люди перестали лизать обо\
+            и и не убегали в даль смеясь. Будет очень сочно и интересно!*"
+    talkDay: 1
+    trackTime: "15:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/5ErMQHTzeVSZ1g5imkPWM0/ff6af31f3f9d5b9fa7568f5477bca435/100676_629292698_Dmitriy_Stolyarov_10_let_on-call._Chemu_my_nauchilis.pdf"]
+    videoLinks: []
     speakerIds: [980]
   - id: 90
     name:
       - {language: en, text: "DevOps patterns and antipatterns for continuous software updates"}
       - {language: ru, text: "Паттерны и антипаттерны непрерывных обновлений в практике DevOps"}
+    shortDescription:
+      - {language: en, text: "In this talk, Baruch will analyze real-world software update fails and how multiple DevOps patterns\
+            \ could have saved the developers."}
+      - {language: ru, text: "Итак, ты решил обновить софт: в браузере, K8s-кластере или в автомобиле клиента. Что же може\
+            т пойти не так, правда?! В этом докладе Барух покажет, как всевозможные DevOps-паттерны могут спасти разработч\
+            иков, занимающихся непрерывным обновлением."}
+    longDescription:
+      - language: en
+        text: "So, you want to update the software for your user, be it the nodes in your K8s cluster, a browser on user’\
+            s desktop, an app in user’s smartphone or even a user’s car. What can possibly go wrong?\n\nIn this talk, we’\
+            ll analyze real-world software update fails and how multiple DevOps patterns, that fit a variety of scenarios,\
+            \ could have saved the developers. Manually making sure that everything works before sending update and expecting\
+            \ the user to do acceptance tests before they update is most definitely not on the list of such patterns.\_\n\n\
+            Join us for some awesome and scary continuous update horror stories and some obvious (and some not so obvious)\
+            \ proven ideas for improvement and best practices you can start following tomorrow."
+      - language: ru
+        text: "Итак, ты решил обновить софт у своих пользователей. Может быть, это 100500 микросервисов в их кластере Kubernetes,\
+            \ может быть, это очередной редактор на JavaScript у них на ноутбуке, может быть, это приложение для дипфейков\
+            \ в их смартфоне, а может быть, ты даже не побоялся обновить их автомобиль! Что уже может пойти не так, правда\
+            ?!\n\nВ этом докладе мы проанализируем реальные фейлы, которые ежедневно и повсеместно происходят при обновлен\
+            ии софта. Мы посмотрим, как всевозможные DevOps-паттерны ложатся на эти сценарии и как правильное их применени\
+            е смогло бы, возможно, спасти всех этих людей. И нет, хорошенько проверить всё ручками перед отправкой и попро\
+            сить у пользователя еще раз хорошенько проверить всё ручками при приёмке не является одним из рекомендованых п\
+            аттернов, несмотря на то, что так делает половина индустрии!\n\nПриходите послушать полезные кошмарики про неп\
+            рерывное обновление, и вы получите шанс познакомиться со множеством очевидных (и не таких уж и очевидных!) про\
+            веренных идей и практик, которые вы сможете начать применять сразу после доклада, и, может быть, ваши пользова\
+            тели будут ненавидеть вас немножко меньше!\n\n> __Комментарий программного комитета:__\n\n\n\n> *DevOps или не\
+            \ DevOps, вот в чем вопрос. Ответ найти можете только вы сами, ну а доклад даст пищу для размышлений.*"
+    talkDay: 1
+    trackTime: "17:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [35]
   - id: 91
     name:
       - {language: en, text: "Flagging your features — a DevOps approach to continuous release"}
+    shortDescription:
+      - {language: en, text: "You will learn how to get started with feature flags for continuous release DevOps style."}
+    longDescription:
+      - language: en
+        text: "Your DevOps team wants to deliver business value as often and fast as possible. Ideally you want to release\
+            \ a new feature whenever it seems ready. With feature flags you can achieve this selective releasing, but how\
+            \ do you do this in a structure and maintainable way that fits well with DevOps practices?\n\nIn this session\
+            \ we will look at the implementation of feature flags in cloud native applications, the platform needed to support\
+            \ it and some strategies and patterns related to feature flagging, such as rings and A/B testing. You will learn\
+            \ how to build and maintain this using the Microsoft platform with .NET Core applications, Azure and Azure DevOps.\
+            \ Also, we will cover how to get feedback from the feature flags and loop it back to the deployment and release\
+            \ pipelines and environments to achieve an automated and stable system during release.\n\nAt the end of this session\
+            \ you will know how to get started with feature flags for continuous release DevOps style."
+      - language: ru
+        text: "Your DevOps team wants to deliver business value as often and fast as possible. Ideally you want to release\
+            \ a new feature whenever it seems ready. With feature flags you can achieve this selective releasing, but how\
+            \ do you do this in a structure and maintainable way that fits well with DevOps practices?\n\nIn this session\
+            \ we will look at the implementation of feature flags in cloud native applications, the platform needed to support\
+            \ it and some strategies and patterns related to feature flagging, such as rings and A/B testing. You will learn\
+            \ how to build and maintain this using the Microsoft platform with .NET Core applications, Azure and Azure DevOps.\
+            \ Also, we will cover how to get feedback from the feature flags and loop it back to the deployment and release\
+            \ pipelines and environments to achieve an automated and stable system during release.\n\nAt the end of this session\
+            \ you will know how to get started with feature flags for continuous release DevOps style.\n\n> __Комментарий\
+            \ программного комитета:__\n\n\n\n> *Continuous delivery без feature flagging — деньги на ветер, и Алекс расск\
+            ажет, как это сделать на примере Azure devops.*"
+    talkDay: 1
+    trackTime: "17:00"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/1Lgi3xO6LN2r4lP4IGf3dR/83ecf33c0f6280f5be2bfd3a94a60af9/Flagging_your_features_a_DevOps.pdf"]
+    videoLinks: []
     speakerIds: [408]
   - id: 92
     name:
       - {language: en, text: "Ansible: Tractor mode. We create a roles that will travel everywhere!"}
       - {language: ru, text: "Ansible: Тракторный режим. Создаём роли, которые проедут везде!"}
+    shortDescription:
+      - {language: en, text: "MTS experience in creating roles that will be fulfilled everywhere. Konstantin will tell you\
+            \ how his team came to this, how they decided it and how to live now."}
+      - {language: ru, text: "Опыт МТС в создании ролей, которые выполнятся везде. Константин расскажет, как его команда п\
+            ришла к этому, как они это решили и как живут теперь."}
+    longDescription:
+      - language: en
+        text: "How to make the Ansible role go everywhere? To do this, there is a Tractor Mode, which is successfully used\
+            \ in the infrastructure of MTS IT.\n\nHave a big Linux distribution zoo? A lot of different project requirements?\
+            \ Different qualifications of employees? Tractor Мode can solve this!\n\nIt doesn’t matter if you need to put\
+            \ some Elasticsearch in cluster mode with backup and fine tuning of performance or just create an index - this\
+            \ is one \"Elasticsearch\" role. You need to do the installation of three PostgreSQL on Ubuntu, Centos and Redhat\
+            \ - this is one \"PostgreSQL\" role. Do you just need to create a topic in Kafka - this is one role \"Kafka\"\
+            .\n\nIt sounds like something complicated, bulky and hard to maintain, but in fact - no. Come to the performance\
+            \ and take away that it is simple enough to be true!"
+      - language: ru
+        text: "Как сделать так, чтобы Ansible-роль «проехала» везде? Для этого существует Тракторный режим, который успешн\
+            о применяется в инфраструктуре МТС ИТ.\n\nИмеете большой зоопарк дистрибутивов Linux? Много разных требований\
+            \ к проекту? Разную квалификацию сотрудников? Тракторный режим может это решить!\n\nНе важно, требуется ли вам\
+            \ поставить какой-нибудь Elasticsearch в кластерном режиме с бэкапированием и тонкой настройкой производительн\
+            ости, или просто создать индекс — это одна роль «Elasticsearch». Вам нужно сделать установку трёх PostgreSQL н\
+            а Ubuntu, Centos и Redhat — это одна роль PostgreSQL. Нужно ли вам просто создать топик в Kafka — это одна рол\
+            ь Kafka.\n\nЗвучит как что-то сложное, громоздкое и тяжелообслуживаемое, но по факту — нет. Приходите на высту\
+            пление и убедитесь, что это достаточно просто, чтобы быть правдой!\n\n> __Комментарий программного комитета:__\n\
+            \n\n\n> *Ansible-код превращается в «не самый хороший код» с невероятной скоростью и Константин расскажет, как\
+            \ сделать так, чтобы этого не произошло.*"
+    talkDay: 1
+    trackTime: "17:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/deL2j7rjd7tJNz97Bg2Vb/b5eaaad9a8a6def074609263f4e01898/100764_1817136362_Konstantin_Nifanin_Ansible_Traktornyy_rezhim.pdf"]
+    videoLinks: []
     speakerIds: [982]
   - id: 93
     name:
       - {language: en, text: "Removing the barriers"}
+    shortDescription:
+      - {language: en, text: "Having no barriers and managements seems like a perfect work when you can be more productive\
+            \ and free. But it that good for you? Hadi will sort this question and prove that every approach has its pros\
+            \ and cons."}
+    longDescription:
+      - {language: en, text: "Imagine most of the artificial barriers imposed on your development work were to be removed.\
+            \ Imagine if nobody micromanaged you, nobody asked when you come into work or when you leave. Imagine if there\
+            \ was very little management. Wouldn’t it be ideal? Everything would just fall into place and we’d be so much\
+            \ more productive, right? At JetBrains, a lot of these barriers don’t exist. But not having barriers isn’t always\
+            \ easy. In fact, you cannot just break them all down and think everything will just work. In this talk, we’re\
+            \ going to look at the pros and cons of this approach, and see how to overcome certain issues that arise, or even\
+            \ if they can be easily overcome."}
+      - language: ru
+        text: "Imagine most of the artificial barriers imposed on your development work were to be removed. Imagine if nobody\
+            \ micromanaged you, nobody asked when you come into work or when you leave. Imagine if there was very little management.\
+            \ Wouldn’t it be ideal? Everything would just fall into place and we’d be so much more productive, right? At JetBrains,\
+            \ a lot of these barriers don’t exist. But not having barriers isn’t always easy. In fact, you cannot just break\
+            \ them all down and think everything will just work. In this talk, we’re going to look at the pros and cons of\
+            \ this approach, and see how to overcome certain issues that arise, or even if they can be easily overcome.\n\n\
+            > __Комментарий программного комитета:__\n\n\n\n> *DevOps родился с целью сломать барьеры между operations и developers.\
+            \ А Хади расскажет, как это работает, на примере JetBrains.*"
+    talkDay: 1
+    trackTime: "18:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [508]
   - id: 94
     name:
       - {language: en, text: "CDK and infrastructure as a code"}
+    shortDescription:
+      - {language: en, text: "Sergey will talk about how to create and provision AWS infrastructure deployments predictably\
+            \ and repeatedly."}
+      - {language: ru, text: "Сергей расскажет, как создавать и обеспечивать развертывание AWS предсказуемо и многократно."}
+    longDescription:
+      - language: en
+        text: "Deep dive talk about Infrastructure as a code using recently released AWS Cloud Development Kit (CDK) which\
+            \ allows provisioning of cloud resources in familiar programming languages like TypeScript, JavaScript, and Python,\
+            \ reuse programming techniques. Also allows modular code building and sharing. DevOps practices and features overview.\n\
+            \nPurpose of the talk: describe how to create and provision AWS infrastructure deployments predictably and repeatedly.\n\
+            \nTarget audience: AWS Cloud DevOps, programmers."
+      - language: ru
+        text: "Глубокое погружение в тему инфраструктуры-как-кода, использующей AWS Cloud Development Kit (CDK), который п\
+            озволяет предоставлять облачные ресурсы в известных языки программирования, такие как TypeScript, JavaScript и\
+            \ Python, а также использовать методы программирования. Дополнительно CDK позволяет создавать модульный код и\
+            \ делиться им. Будут рассмотрены и практики DevOps, и сделан обзор фич. \n\nЦель доклада: описать, как создава\
+            ть и обеспечивать развертывание AWS предсказуемо и многократно. \n\nЦелевая аудитория: AWS Cloud DevOps, прогр\
+            аммисты.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Все, кто работал с Terraform, понимают, что он\
+            \ «не очень», а Сергей рассказывает об альтернативе, поддерживаемой Amazon.*"
+    talkDay: 2
+    trackTime: "11:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/5TaNBbsgFdQ5fbXsU3Lv76/e130aa2ca2485976d27a88e2cc801ada/CDK_Development_Kurson_Sergey.pdf"]
+    videoLinks: []
     speakerIds: [979]
   - id: 95
     name:
       - {language: en, text: "How to draw DevOps?"}
       - {language: ru, text: "Как нарисовать DevOps?"}
+    shortDescription:
+      - {language: en, text: "During this talk you will learn how to organize teams and establish interaction from the point\
+            \ of DevOps."}
+      - {language: ru, text: "В этом докладе речь пойдёт о том, как организовать команды и наладить взаимодействие с точки\
+            \ зрения DevOps."}
+    longDescription:
+      - language: en
+        text: "DevOps is a cool goal, but how do real companies change themselves to achieve it? The industry already has\
+            \ certain experience and answers to this question. \n\nWe want to consider variants of topology and tell how teams\
+            \ communicate with each other.\n\nThis talk will be of interest to heads and engineers of product or platform/infrastructure\
+            \ teams, architects, C-level representatives, consultants and evangelists."
+      - language: ru
+        text: "DevOps — это классная цель, но как реальные компании на самом деле организовывают себя, чтобы ее достичь? В\
+            \ индустрии уже накоплен опыт и есть ответы на этот вопрос. \n\nМы рассмотрим варианты топологий и как команды\
+            \ могут взаимодействовать друг с другом.\n\nДоклад будет интересен руководителям и инженерам как продуктовых,\
+            \ так и платформенных/инфраструктурных команд, архитекторам, представителям C-level, консультантам и евангелис\
+            там.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Игорь занимается консалтингом по внедрению DevOps д\
+            ля крупных компаний и расскажет о своем опыте в этой области и рабочей модели DevOps. Очень мощно, нам понрави\
+            лось!*"
+    talkDay: 2
+    trackTime: "11:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/2EZsDYDs8W4hnyQMyFNNd0/67a157146565e90e8110f40bcbd43019/100766_736291850_Igor__Kurochkin__Kak_narisovat_DevOps.pdf"]
+    videoLinks: []
     speakerIds: [978]
   - id: 96
     name:
       - {language: en, text: "How to steer MySQL steam boat"}
       - {language: ru, text: "Как рулить пароходом MySQL"}
+    shortDescription:
+      - {language: en, text: "This talk will help to understand how to launch MySQL servers clusters and how to solve everyday\
+            \ problems in the life of cloud DBA."}
+      - {language: ru, text: "Доклад поможет понять, как запускать кластера MySQL-серверов и как решать повседневные задач\
+            и из жизни облачного DBA."}
+    longDescription:
+      - language: en
+        text: "In application world that requires a cluster of servers or clouds for their work, there are not enough database\
+            \ servers for a long time. Relational database MySQL does its job perfectly on dedicated servers. \n\nWhat hardships\
+            \ face DevOps developers and database administrators when moving MySQL in a container environment. How does an\
+            \ application find its data in K8S? Kubernetes operators for Percona XtraDB Cluster, InnoDB Cluster, MySQL+Orchestrator\
+            \ allow launching MySQL servers clusters.\n\nThis talk will help to understand how all this works and how to solve\
+            \ everyday problems in the life of cloud DBA."
+      - language: ru
+        text: "В мире приложений, требующих для своей работы кластера серверов или облака, уже давно не хватает серверов б\
+            аз данных. Реляционная база данных MySQL отлично справляется со своими задачами на выделенных серверах. \n\nС\
+            \ какими сложностями сталкиваются девопсы и администраторы БД при помещении MySQL в контейнерную среду? Как пр\
+            иложение находит именно свои данные в K8S? Операторы Kubernetes для Percona XtraDB Cluster, InnoDB Cluster, MySQL+Orchestrator\
+            \ позволяют запускать кластера MySQL-серверов. \n\nДоклад поможет понять, как всё это работает и как решать по\
+            вседневные задачи из жизни облачного DBA.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Управлять база\
+            ми данных в облачной инфраструктуре — сложная задача. Как правило, от этой задачи отмахиваются, а Николай расс\
+            кажет, как к ней подступиться.*"
+    talkDay: 2
+    trackTime: "11:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/abIUDFkzQginDOytksXA6/9f1a81dbbea97c91e46f3ac42f8687fc/100774_1626643106_Nikolay_Ikhalaynen_Kak_rulit_parokhodom_MySQL.pdf"]
+    videoLinks: []
     speakerIds: [972]
   - id: 97
     name:
       - {language: en, text: "WTF do we need a service mesh?"}
       - {language: ru, text: "Зачем нам сервисное сито?"}
+    shortDescription:
+      - {language: en, text: "We're going to discuss the following: what SMI Spec includes, why everyone want service mesh,\
+            \ and why they want it now, how service mesh can help us with progressive delivery, and, finally, how to understand\
+            \ whether your system and you personally need service mesh."}
+      - {language: ru, text: "Поговорим о том, что включает в себя SMI Spec, почему все хотят сервисное сито и хотят его с\
+            ейчас, как сито помогает нам с прогрессивной доставкой. Ну и наконец, как понять, нужно ли сито вашей системе\
+            \ и лично вам."}
+    longDescription:
+      - language: en
+        text: "Service meshes are all the buzz in cloud-native world. \n\nHow come only yesterday we didn't know such a thing\
+            \ existed and now everybody seems to want one? \n\nIf you're already running a microservice-based system or only\
+            \ starting out with one — you may be asking yourself: \"Do I also need a mesh?\"\n\nIn this session we'll try\
+            \ to answer what the mesh is good for, what problem it solves, what new questions it poses. \n\nMore specifically\
+            \ we will:\n\n- explore the SMI Spec;\n- understand why everybody wants a mesh;\n- see how the mesh helps with\
+            \ progressive delivery;\n- discuss if it's time for you to get into the mesh."
+      - language: ru
+        text: "Сервисное сито (service mesh) — это инфраструктурный подход, позволяющий умным образом управлять общением м\
+            ежду разбросанными по облакам частями распределенной системы.\n\nС тех пор как мы заглянули в сито (на примере\
+            \ Istio) в прошлом году, немало изменилось. Conduit превратился в Linkerd 2.0, Istio порешали проблемы перформ\
+            анса, а все cloud-провайдеры теперь машут своими собственными ситечками. Ну и самое главное, у нас теперь есть\
+            \ официальная спецификация — SMI Spec!\n\nВот об этом и поговорим:\n- что включает в себя SMI Spec;\n- почему\
+            \ все хотят сито и хотят его сейчас;\n- как сито помогает нам с прогрессивной доставкой;\n- как понять, нужно\
+            \ ли сито вашей системе и лично вам.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Лучший спикер 2018\
+            \ года + доклад на горящую тему «Service Mesh» — все составляющие хита. *"
+    talkDay: 2
+    trackTime: "12:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6hEXkbmjrPZ4EZLLrOt6Fq/757e71bd8366e3e3e69762689ab5a6c4/100544_167494231_Anton_Weiss_Zachem_nam_servisnoye_sito.pdf"]
+    videoLinks: []
     speakerIds: [362]
   - id: 98
     name:
       - {language: en, text: "Implementing microservices architecture as Cloud Run application"}
+    shortDescription:
+      - language: en
+        text: "Cloud Run brings Serverless to containers. It is a managed compute platform that automatically scales your\
+            \ stateless containers and abstracts away all infrastructure management, so developers can focus on building great\
+            \ applications.\nThe objective of this talk is to understand the benefits of implementing microservices architecture\
+            \ as a Cloud Run and to enable the developer to navigate through the pitfalls during the implementation stage."
+    longDescription:
+      - language: en
+        text: "<a href=\"https://cloud.google.com/run/\" target=\"_blank\">Cloud Run</a> brings Serverless to containers.\
+            \ It is a managed compute platform that automatically scales your stateless containers and abstracts away all\
+            \ infrastructure management, so developers can focus on building great applications.\n\nMicroservices architecture\
+            \ uses an assembly of fine-grained services, often packaged in containers, to deliver functionality. While there\
+            \ are several advantages of microservices architecture, most notably faster code to production by reducing the\
+            \ dependencies between teams, it has the drawback of significant management overhead.\n\nThis talk describes how\
+            \ CloudRun can be used to implement Microservices architecture without the need for management overhead that comes\
+            \ with Microservices and is cheaper to operate since you only pay for what you use (in a Serverless fashion).\n\
+            \nA major issue with Microservices architecture is distributed data management and sagas are used to ensure data\
+            \ consistency across services. The talk covers, how to implement distributed sagas as a protocol for coordinating\
+            \ request among multiple containers.\n\nThe talk elaborates on how <a href=\"https://cloud.google.com/tasks/\"\
+            \ target=\"_blank\">Clouds Tasks</a>, a managed service that allows you to manage the execution, dispatch, and\
+            \ delivery of a large number of distributed tasks, can be used to increase performance of the system by increasing\
+            \ the throughput & response times.\n\nAlso, <a href=\"https://cloud.google.com/scheduler/\" target=\"_blank\"\
+            >Cloud Scheduler</a>, a managed enterprise-grade scheduler, can be used to schedule virtually any job, including\
+            \ batch, big data jobs, cloud infrastructure operations, and more. The talk shows an example on how you can automate\
+            \ retries in case of failure to reduce manual toil and intervention. Cloud Scheduler can even act as a single\
+            \ pane of glass, allowing you to manage all your automation tasks from one place.\n\nCloud Run is <a href=\"www.knative.dev\"\
+            \ target=\"_blank\">Knative</a> compatible, so it is possible to implement a hybrid system through a combination\
+            \ of Knative & Cloud Run. Event multi-cloud systems can be implemented since Cloud Run application can be made\
+            \ to run on any kubernetes cluster including GKE.\n\nThe talk covers some best practices to follow, particularly\
+            \ around schema isolation and avoiding common data ownership. Moreover, it emphasizes the need for having a rollback\
+            \ mechanism (which is needed for sagas anyway) and adopting eventual consistency for designing fault tolerant\
+            \ systems. Some aspects on how testing application are covered using local testing for faster feedback cycles.\n\
+            \nThe objective of this talk is to understand the benefits of implementing microservices architecture as a Cloud\
+            \ Run and to enable the developer to navigate through the pitfalls during the implementation stage."
+      - language: ru
+        text: "<a href=\"https://cloud.google.com/run/\" target=\"_blank\">Cloud Run</a> brings Serverless to containers.\
+            \ It is a managed compute platform that automatically scales your stateless containers and abstracts away all\
+            \ infrastructure management, so developers can focus on building great applications.\n\nMicroservices architecture\
+            \ uses an assembly of fine-grained services, often packaged in containers, to deliver functionality. While there\
+            \ are several advantages of microservices architecture, most notably faster code to production by reducing the\
+            \ dependencies between teams, it has the drawback of significant management overhead.\n\nThis talk describes how\
+            \ CloudRun can be used to implement Microservices architecture without the need for management overhead that comes\
+            \ with Microservices and is cheaper to operate since you only pay for what you use (in a Serverless fashion).\n\
+            \nA major issue with Microservices architecture is distributed data management and sagas are used to ensure data\
+            \ consistency across services. The talk covers, how to implement distributed sagas as a protocol for coordinating\
+            \ request among multiple containers.\n\nThe talk elaborates on how <a href=\"https://cloud.google.com/tasks/\"\
+            \ target=\"_blank\">Clouds Tasks</a>, a managed service that allows you to manage the execution, dispatch, and\
+            \ delivery of a large number of distributed tasks, can be used to increase performance of the system by increasing\
+            \ the throughput & response times.\n\nAlso, <a href=\"https://cloud.google.com/scheduler/\" target=\"_blank\"\
+            >Cloud Scheduler</a>, a managed enterprise-grade scheduler, can be used to schedule virtually any job, including\
+            \ batch, big data jobs, cloud infrastructure operations, and more. The talk shows an example on how you can automate\
+            \ retries in case of failure to reduce manual toil and intervention. Cloud Scheduler can even act as a single\
+            \ pane of glass, allowing you to manage all your automation tasks from one place.\n\nCloud Run is <a href=\"www.knative.dev\"\
+            \ target=\"_blank\">Knative</a> compatible, so it is possible to implement a hybrid system through a combination\
+            \ of Knative & Cloud Run. Event multi-cloud systems can be implemented since Cloud Run application can be made\
+            \ to run on any kubernetes cluster including GKE.\n\nThe talk covers some best practices to follow, particularly\
+            \ around schema isolation and avoiding common data ownership. Moreover, it emphasizes the need for having a rollback\
+            \ mechanism (which is needed for sagas anyway) and adopting eventual consistency for designing fault tolerant\
+            \ systems. Some aspects on how testing application are covered using local testing for faster feedback cycles.\n\
+            \nThe objective of this talk is to understand the benefits of implementing microservices architecture as a Cloud\
+            \ Run and to enable the developer to navigate through the pitfalls during the implementation stage.\n\n> __Ком\
+            ментарий программного комитета:__\n\n\n\n> *Никто больше не понимает, что такое KNative. Это горящая тема, а Nikhil\
+            \ — представитель Google, который в этом отлично разбирается.*"
+    talkDay: 2
+    trackTime: "12:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/7Gxp8nhEGDBWBbBu2RTBXZ/2efe2c959bebc4deb57d059c75e568b2/100722_366835318_Nikhil_Barthwal_Implementing_Microservices_Architecture_as_Cloud_Run_Application.pdf"]
+    videoLinks: []
     speakerIds: [971]
   - id: 99
     name:
       - {language: en, text: "Automating everything with Github Actions"}
       - {language: ru, text: "Автоматизируем все с Github Actions"}
+    shortDescription:
+      - {language: en, text: "Github Actions is not just another CI. Github Actions is a platform for automating of everything\
+            \ related to your repository. Speaker will show how to start using a rich set of existing tools and how to create\
+            \ your unique one."}
+      - {language: ru, text: "Github Actions — не просто еще один CI. Github Actions — это целая платформа для автоматизац\
+            ии всего связанного с кодом и вашим проектом. Мы поговорим о том, как начать использовать кучу готового, и как\
+            \ создать свое решение для собственных задач."}
+    longDescription:
+      - language: en
+        text: "Nikita will show multiple features of Github Actions, share his several month experiences of using it, and\
+            \ show how to create your custom actions.\n\nThis session will be interesting to people who love automation and\
+            \ order: team leads, seniors, DevOps and decision-makers. \n\nWhat is the main idea people will endure? Automatization\
+            \ process changed. It became affordable and simple. There are ways to improve your work in a few days."
+      - language: ru
+        text: "Никита покажет множество функций Github Actions, поделится собственными впечатлениями и болями от первых ме\
+            сяцев использования, покажет, как сделать собственные инструменты.\n\nЭто выступление будет интересно тем, кто\
+            \ любит автоматизацию и порядок: тимлиды, сеньоры, опсы и люди, принимающие решения.\n\nКакую основную мысль в\
+            ынесут люди после? Процесс автоматизации в корне изменился. Он стал доступным и простым. Существуют способы, к\
+            ак улучшить процесс свой работы за несколько дней.\n\n> __Комментарий программного комитета:__\n\n> *Никита ав\
+            томатизирует всё, что можно автоматизировать, и скоро заменит даже себя. Доклад будет хорош и для тех, кто хоч\
+            ет начать автоматизацию рутинных задач, и для тех, кто уже начал первые шаги в этом направлении.*"
+    talkDay: 2
+    trackTime: "12:30"
+    track: 3
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [582]
   - id: 100
     name:
       - {language: en, text: "From zero to DevOps superhero: The container edition"}
+    shortDescription:
+      - {language: en, text: "Jessica will tell how to be a cool devops developer not with simple \"Hello, World\" examples,\
+            \ but with a deep immersion in the container topic."}
+    longDescription:
+      - {language: en, text: "Microservices can be hard, understanding container best practices can be hard as those practices\
+            \ are still being discovered. This session aids in minimizing the learning curve with container orchestration,\
+            \ specifically Kubernetes, by bringing DevOps best practices into the mix. This is not another HelloWorld session\
+            \ with quick tips. Instead, you can expect a deep dive into how you can truly go from zero to DevOps superhero\
+            \ by simply selecting container tooling specifically built for simplifying the process. In doing so, you will\
+            \ also learn how these tools can provide better orchestration for cloud services, abstraction and encapsulation\
+            \ for your microservices deployments, and visibility into what runs where and why. You will not only walk away\
+            \ with a deeper understanding of this area, but also some hands-on material to help you get started."}
+      - language: ru
+        text: "Microservices can be hard, understanding container best practices can be hard as those practices are still\
+            \ being discovered. This session aids in minimizing the learning curve with container orchestration, specifically\
+            \ Kubernetes, by bringing DevOps best practices into the mix. This is not another HelloWorld session with quick\
+            \ tips. Instead, you can expect a deep dive into how you can truly go from zero to DevOps superhero by simply\
+            \ selecting container tooling specifically built for simplifying the process. In doing so, you will also learn\
+            \ how these tools can provide better orchestration for cloud services, abstraction and encapsulation for your\
+            \ microservices deployments, and visibility into what runs where and why. You will not only walk away with a deeper\
+            \ understanding of this area, but also some hands-on material to help you get started.\n\n> __Комментарий прог\
+            раммного комитета:__\n\n\n\n> *Доклады Джессики впечатляют своей глубиной и простотой. И количеством live-coding.*"
+    talkDay: 2
+    trackTime: "14:15"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [970]
   - id: 101
     name:
       - {language: en, text: "Service mesh for building multicluster systems"}
       - {language: ru, text: "Service mesh для построения мультикластерной системы"}
+    shortDescription:
+      - {language: en, text: "We will consider solutions for building a single system from several Kubernetes clusters."}
+      - {language: ru, text: "Рассмотрим решения для построения единой системы из нескольких Kubernetes-кластеров."}
+    longDescription:
+      - language: en
+        text: "Alexander will tell you how to build a transparent system discovery services for product developers with all\
+            \ features provided by service mesh technologies. \n\nTargeted audience: software engineers, observability engineers,\
+            \ system administrators. This talk will be useful both to people who are building a platform and for developers\
+            \ who want to understand how platform \"under the bonnet\" works. \n\nWe will solve the problem of transparent\
+            \ discovery between several Kubernetes clusters and support various options for balancing intracluster traffic.\
+            \ Also, we will focus on work with several isolated clusters (mainly under Kubernetes), which can be located in\
+            \ several data centers. Alexander will also touch on features which can be used when setup is already configured\
+            \ (distributed tracing, routing, canary balancing)."
+      - language: ru
+        text: "Александр расскажет о том, как построить прозрачную для продуктовых разработчиков систему discovery-сервисо\
+            в со всеми возможностями, предоставляемыми service mesh-технологиями. \n\nЦелевая аудитория: системные програм\
+            мисты, observability engineers, системные администраторы. Будет полезно как тем, кто строит платформу, так и р\
+            азработчикам, желающим понять как работает платформа «под капотом».\n\nМы решим проблему прозрачного discovery\
+            \ между несколькими Kubernetes-кластерами и поддержим различные варианты балансировки внутрикластерного трафик\
+            а. Также сфокусируемся на работе в условиях нескольких изолированных кластеров (в основном под Kubernetes), ко\
+            торые могут быть расположены в нескольких ДЦ. \nЕще Александр затронет фичи, которые можно использовать, когда\
+            \ весь сетап уже настроен (distributed tracing, routing, canary balancing).\n\n> __Комментарий программного ко\
+            митета:__\n\n\n\n> *Рассказ про использование service mesh в огромном production. Что делать, когда ты выраста\
+            ешь настолько, что Istio перестаёт справляться?*"
+    talkDay: 2
+    trackTime: "14:15"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6rsHRqGZaDMaQ4viLeRLLg/24004b12d20a9e222db1f7e2f6bf971c/100699_250457712_Aleksandr_Lukyanchenko_Service_mesh_dlya_postroyeniya_multiklasternoy_sistemy.pdf"]
+    videoLinks: []
     speakerIds: [977]
   - id: 102
     name:
       - {language: en, text: "The final story about operators"}
       - {language: ru, text: "Заключительный рассказ про операторы"}
+    shortDescription:
+      - {language: en, text: "During this session Fedor will share the experience of Elastic Cloud Storage team, the accepted\
+            \ philosophy and use-case of using operators for building Kubernetes-native applications on the Pravega-Operator\
+            \ example."}
+      - {language: ru, text: "В докладе Фёдор поделится опытом команды Elastic Cloud Storage, принятой философией и use-case\
+            \ использования операторов для построения Kubernetes-native приложений на примере Pravega-Operator."}
+    longDescription:
+      - language: en
+        text: "Kubernetes has changed the approach to the way containerized applications are operated. Operators are Kubernetes-way\
+            \ of automation and creating new primitives. But if we consider Kubernetes as a framework for development, operators\
+            \ are an opportunity for developers to create a \"control system\", which can make the framework operation as\
+            \ autonomous and feasible for end-users as possible.\n\nIn the talk, Fedor will share the experience of the Elastic\
+            \ Cloud Storage team, its philosophy and use-cases of using Operators to build Kubernetes-native applications\
+            \ on the example of Pravega-Operator.\n\nDuring this session, speaker wants to draw the final line in conversations\
+            \ about what operators are and what to do with them (write them)."
+      - language: ru
+        text: "Kubernetes изменил подходы к эксплуатации контейнеризированных приложений. Операторы — это Kubernetes-way а\
+            втоматизации и создание новых примитивов. Но если мы рассмотрим Kubernetes как фреймворк для разработки, то оп\
+            ераторы — это возможность для разработчиков создать «систему управления», которая способна сделать эксплуатаци\
+            ю максимально автономной и выполнимой простыми пользователями.\n\nВ докладе Фёдор поделится опытом команды Elastic\
+            \ Cloud Storage, принятой философией и use-case использования операторов для построения Kubernetes-native прил\
+            ожений на примере Pravega-Operator.\n\nСвоим докладом спикер хочет подвести финальную черту в разговорах о том\
+            , что такое операторы и что с ними делать (писать).\n\n> __Комментарий программного комитета:__\n\n\n\n> *Моло\
+            дой амбициозный разработчик хочет поставить точку в вопросе операторов в K8s...*"
+    talkDay: 2
+    trackTime: "14:15"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/35GjaPDqoR1P2Lf96glHUY/72056b748cbbb65cc88724d3c04a7a5f/100692_1495191636_Fedor__Chemashkin_Zaklyuchitelnyy_rasskaz_pro_Operatory.pdf"]
+    videoLinks: []
     speakerIds: [973]
   - id: 103
     name:
       - {language: en, text: "Making the Internet faster. And sleeping well at night"}
       - {language: ru, text: "Ускоряем Интернет-запросы, и спим спокойно"}
+    shortDescription:
+      - {language: en, text: "What happens with network requests between your clients and servers? How to make them faster,\
+            \ not break things and keep quiet on-calls? This talk will show how to architect, engineer and operate complex\
+            \ fault-tolerant systems, using Netflix network optimizations work as an example."}
+      - {language: ru, text: "Что происходит с запросами между клиентом и сервером, как их ускорить, ничего не сломать, и\
+            \ спать спокойно? Презентация о том, как решать такие задачи, и как грамотно подходить к моделированию, разраб\
+            отке и поддержке сложных fault-tolerant систем. В стиле Netflix."}
+    longDescription:
+      - language: en
+        text: "A lot of people know about what Netflix is doing in AWS cloud, in microservices architecture and chaos engineering.\
+            \ They know about Netflix' approach to DevOps. Somebody is aware how Netflix delivers about 15% of global Internet\
+            \ traffic with its in-house CDN (Open Connect). Personalization and recommendations come from the cloud. Video\
+            \ and other static files — from CDN. \n\nWhat happens if we will connect two systems? Use CDN to speed up dynamic\
+            \ requests to the cloud? Send requests from the client through the fastest way on the Internet? \n\nThis talk\
+            \ is about how the team of three engineers solved this problem. It's about how to collect and use Internet performance\
+            \ metrics. How to redirect millions of requests through own infrastructure. How to do it in a tight schedule but\
+            \ without risk to clients. And how to make team receive less than one critical alert per week, although something\
+            \ changes and breaks on the Internet. \n\nThis talk is not for those who work in corporate giants. Presented principles\
+            \ and techniques should be known and practiced by every owner of Internet products. You will hear about metrics\
+            \ collection practices, fault-tolerant architecture and safe approach to development on the example of tasks that\
+            \ have been successfully solved in Netflix."
+      - language: ru
+        text: "Многие знают о том, что Netflix делает в AWS-облаке, архитектуре микросервисов и chaos engineering. Знают и\
+            \ про подход Netflix к DevOps. Кто-то в курсе того, как Netflix доставляет 15% мирового Интернет-трафика с пом\
+            ощью собственного CDN (Open Connect). Персонализация и рекомендации идут из облака. Видео и статические ресурс\
+            ы — из CDN.\n\nЧто будет, использовать CDN, чтобы ускорить динамические запросы в облако? Направлять запросы с\
+            \ клиента через самый быстрый путь в Интернете (ведь в сети много маршрутов, особенно если учесть тысячи CDN-с\
+            ерверов)?\n\nЭтот доклад о том, как команда из трех инженеров решила эту проблему. О том, как собирать и испол\
+            ьзовать метрики о производительности Интернета. О том, как перенаправить миллионы запросов в секунду через соб\
+            ственную инфраструктуру. О том, как это сделать в сжатые сроки, но без риска для клиентов. И как сделать так,\
+            \ чтобы команда получала меньше одного критического alert в неделю, хотя что-то в Интернете (и в продукте) мен\
+            яется и ломается каждый час. \n\nЭтот доклад не только для тех, кто работает в крупных корпорациях. Представле\
+            нные принципы и техники должен знать и практиковать каждый владелец Интернет-продуктов. Вы услышите о практика\
+            х сбора метрик, fault-tolerant архитектуре и безопасном подходе к разработке на примерах задач, которые были у\
+            спешно решены в Netflix. О практиках, которые можно (и нужно) применять при разработке различных сложных прогр\
+            аммных систем.\n\n> __Комментарий программного комитета:__\n\n> *Do you want to sleep well at night? Come to this\
+            \ talk, learn principles which can be applied to different companies and make your life easy.*"
+    talkDay: 2
+    trackTime: "16:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/58AHyEL0fLcH79notVTcjq/1c93f7c2f35c35e89e48be850b077c60/100657_100448325_Sergey_Fedorov_Uskoryayem_Internet_zaprosy_i_spim_spokoyno..pdf"]
+    videoLinks: []
     speakerIds: [976]
   - id: 104
     name:
       - {language: en, text: "Under the hood of serverless Jenkins: Jenkinsfile Runner"}
+    shortDescription:
+      - {language: en, text: "In this talk Oleg will present Jenkinsfile Runner — an engine which allows running Jenkins Pipelines\
+            \ in a single-shot container and in any environment."}
+      - {language: ru, text: "В этом докладе Олег представит Jenkinsfile Runner — механизм, который позволяет запускать Jenkins\
+            \ Pipelines в одноразовых контейнерах и в любой среде."}
+    longDescription:
+      - language: en
+        text: "There were significant changes in the Jenkins project over last year. It is still one of the most popular automation\
+            \ servers in the world, but it is not just a \"server\" anymore. In 2019 Jenkins is a universal automation engine,\
+            \ which actively evolves towards the new Cloud Native architecture and which can be used in any CI/CD flows. It\
+            \ can be used not only as a server, but also as a FaaS. And it is not only about Jenkins X in Kubernetes, but\
+            \ also about more classic usages.\n\nIn this talk Oleg will present Jenkinsfile Runner — an engine which allows\
+            \ running Jenkins Pipelines in a single-shot container in any environment. Running Jenkins pipelines in Travis?\
+            \ Easy. In FaaS like AWS Lambda? We can do it as well. Speaker will show examples for these services few other\
+            \ use-cases (Jenkins X, CodeShip, Tekton). And, finally, he will show how to package your own Jenkinsfile Runner\
+            \ images with several plug-ins and preconfiguration."
+      - language: ru
+        text: "За последний год проект Jenkins подвергся важным изменениям. Это все еще один из популярнейших серверов для\
+            \ автоматизации в мире, но это уже не только «сервер». На 2019 Jenkins — это универсальный инструмент, который\
+            \ активно развивается в сторону архитектуры Cloud Native и который может быть использован в любых задачах CI/CD.\
+            \ Jenkins может использоваться не только как монолитный сервер, но и как легковесный FaaS. И это возможно не т\
+            олько для Jenkins X в Kubernetes, но и для более классических задач.\n\nВ этом докладе Олег представит Jenkinsfile\
+            \ Runner — механизм, который позволяет запускать Jenkins Pipeline как single-shot контейнер в любом окружении\
+            . Запустить Jenkins Pipeline в Docker, Travis или CloudBees CodeShip? Легко. В таких FaaS как AWS Lambda? Мы и\
+            \ это можем. Олег покажет примеры этих сервисов (Jenkins X, CodeShip, Tekton) и расскажет, как вы можете собра\
+            ть кастомные образы Jenkinsfile Runner с различными плагинами и преконфигурацией для ваших задач.\n\n> __Комме\
+            нтарий программного комитета:__\n\n\n\n> *Наконец в старом добром Jenkins появился модный и молодёжный Serverless.\
+            \ И Олег покажет как его распространить, применяя в ожидаемых и неожиданных местах.*"
+    talkDay: 2
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/6UDjy3MTIc52JKPbZhttP7/3bd2bd1934278cc3493085bc3e07cc9a/100683_401321557_Oleg_Nenashev_Under_the_hood_of_serverless_Jenkins_Jenkinsfile_Runner.pdf"]
+    videoLinks: []
     speakerIds: [38]
   - id: 105
     name:
       - {language: en, text: "Mobile app development: DevOps or not DevOps"}
       - {language: ru, text: "Мобильная разработка: DevOps или не DevOps"}
+    shortDescription:
+      - {language: en, text: "During this talk you will learn everything you wanted to understand about mobile DevOps and\
+            \ what you were afraid to ask."}
+      - {language: ru, text: "В этом докладе вы узнаете всё, что хотели понять о мобильном DevOps и что боялись спросить."}
+    longDescription:
+      - language: en
+        text: "There is a bunch of DevOps practices, like Continuous Integration, Blue/Green Deployment, Staged Rollouts,\
+            \ etc. How do things work for Mobile from DevOps perspective? Can we call the current situation in mobile development\
+            \ fully DevOps compliant? Let's see! \n\nFirst of all, we need to check out the code. Then build it and run static\
+            \ analysis, followed by unit tests. Then sign it and publish. Sounds like it is the same as you would do for server\
+            \ side development. But the devil's in details. \nTo build a mobile app you will need a Mac machine, at least\
+            \ for iOS. Then you will need to deal with the problems of dependency managers and build systems used for mobile:\
+            \ gradle, CocoaPods, Xcode build, Swift PM, etc. And when you built your binary you need to sign it, that means\
+            \ coping with provisioning profiles, certificates, etc. \nAnd when you think you're done you have to deploy your\
+            \ app to distribution services or right to the google play/app store and this is a separate problem. \n\nThis\
+            \ talk gonna cover everything you need to know about mobile DevOps and if you can call it a proper DevOps practice."
+      - language: ru
+        text: "В DevOps куча практик: Continuous Integration, Blue/Green Deployment, Staged Rollouts и так далее. Как они\
+            \ работают в мобильном мире? Можем ли мы говорить, что это полноценный DevOps? Давайте разберемся! \n\nДля нач\
+            ала нужно сделать чек-аут. Дальше собрать приложение, прогнать проверки, такие как статический анализ, запусти\
+            ть юнит-тесты. Дальше приложение нужно подписать, а уже подписанное выложить куда-нибудь. Звучит знакомо? Но д\
+            ьявол как всегда в деталях. \nНапример, собрать iOS-приложение вы можете только на Mac-железе. Потом вас насти\
+            гнут проблемы сборочных систем, используемых в мобильной разработке: gradle, CocoaPods, Xcode build, Swift PM\
+            \ и т.д. Когда готов бинарник, надо постараться удачно его подписать: заморочьтесь с сертификатами, профилями\
+            \ и прочим добром. \nИ вот, когда вы уже думаете, что находитесь у цели, встает последняя преграда: процедура\
+            \ публикации приложения, и не сомневайтесь, Google Play и App Store с удовольствием вставят палки в колеса. \n\
+            \nЭто выступление покроет всё, что вам нужно знать о Mobile DevOps, и можно ли вообще это так называть.\n\n> __К\
+            омментарий программного комитета:__\n\n\n\n> *Обычный CI/CD настраивали все. Но умеете ли вы настраивать доста\
+            вку ваших мобильных приложений до маркета полностью автоматически, без ручного вмешательства и костылей? Влади\
+            мир расскажет про проблемы и особенности доставки мобильных приложений.*"
+    talkDay: 2
+    trackTime: "16:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/4jqGOXVPq0uBvlgPt5E6ZS/66a32a0c5cdf6c9363c51d4e40addb45/devops.pdf"]
+    videoLinks: []
     speakerIds: [852]
   - id: 106
     name:
       - {language: en, text: "The curse of infrastructure team"}
       - {language: ru, text: "Проклятие инфраструктурной команды"}
+    shortDescription:
+      - {language: en, text: "Infrastructure is hard: if you make it too hard to use, nobody will use it; if you make it too\
+            \ easy to use—everyone will abuse it. How do we find a balance? You will learn this during this session."}
+      - {language: ru, text: "Инфраструктуру делать сложно: если порог входа слишком высокий, то пользователи разбегутся,\
+            \ а если слишком низкий, то ее будут использовать нерационально. Как найти баланс? Об этом вы узнаете в данном\
+            \ докладе."}
+    longDescription:
+      - language: en
+        text: "You're in luck: your job is a dream job. Your job is to make infrastructure tools for other developers. No\
+            \ business bullshit, no coding of online order forms for web marketplaces. Every day you masterfully apply Helm\
+            \ charts to your Kubernetes cluster and send distributed traces to your fault-tolerant Jaeger instance. Your user\
+            \ base consists of skilled and professional engineers who read documentation and optimally use cloud resources.\
+            \ Sounds like a dream?\r\n\r\nIn this talk, Alexey will tell a chilling story of the Curse of Infrastructure Team.\
+            \ A heartbreaking story of one line of code that generates 100s of gigabytes of log records per day. A scary story\
+            \ of engineers who create tens of temporary VMs and forget to delete them afterward. A terrifying story of millions\
+            \ of unique metrics that nobody ever uses.\r\n\r\nA team that creates infrastructure for other teams is doomed.\
+            \ It is squeezed between two mutually exclusive goals: to make their tools as easy to use as possible and to avoid\
+            \ devastating results of inefficient usage of resources that engineers got their hands on so easily. Infrastructure\
+            \ teams learn to create services that bring teams more value than a nuisance: services that have convenient APIs,\
+            \ reliable on-call engineers and so on. But when a service finally reaches this level of quality, users overrun\
+            \ it, selfishly draining common resources and causing infrastructure team immense pain.\r\n\r\nWe can cope with\
+            \ this. And Alexey has some ideas, how. But is there a happy ending to the story of the Curse of Infrastructure\
+            \ Team?"
+      - language: ru
+        text: "Вам повезло: ваша работа — это работа мечты. Вы работаете в инфраструктурной команде и делаете инструменты\
+            \ для других разработчиков. Никакой бизнес-лапши в разработке, никакого клепания формочек для заказа в интерне\
+            т-магазине. Вы мастерски заливаете chart'ы в Kubernetes и отказоустойчиво перекладываете трассировки в Jaeger.\
+            \ Ваши пользователи — грамотные и профессиональные инженеры, которые читают документацию и оптимально использу\
+            ют ресурсы облака. Звучит, как сказка?\n\nВ этом докладе Алексей расскажет леденящую душу историю Проклятия ин\
+            фраструктурной команды. Душераздирающую историю о том, как одной строчкой кода генерировать 100 гигабайт логов\
+            \ в сутки. Страшную историю о том, как создать себе пару десятков виртуальных серверов, а потом забыть их удал\
+            ить. Ужасающую историю о том, как записать миллион уникальных метрик, а потом не использовать ни одну из них.\n\
+            \nКоманда, которая делает инфраструктуру для других разработчиков — проклята. Она зажата в тиски двух взаимоис\
+            ключающих желаний: как можно сильнее снизить порог входа в свои инструменты и при этом избежать разрушительных\
+            \ последствий нерационального использования того, что разработчикам досталось легко и бесплатно. Инфраструктур\
+            ные команды учатся делать так, чтобы их продукты несли разработчикам больше пользы, чем создавали неудобств: и\
+            мели удобный API, надежных дежурных инженеров. Когда однажды это получается, пользователи налетают как саранча\
+            , эгоистично истощают общие ресурсы и доставляют инфраструктурной команде настоящую боль.\n\nС этим можно жить\
+            . И у Алексея есть пара идей как. Но будет ли счастливый конец у этой леденящей душу истории Проклятия инфраст\
+            руктурной команды?\n\n> __Комментарий программного комитета:__\n\n\n\n> *Мы гонимся за технологиями и низкоуро\
+            вневыми оптимизациями, забывая о том, для чего всё это делаем. Алексей покажет на конкретных кейсах к чему это\
+            \ может привести и зачем вообще нужен вопрос «ЗАЧЕМ?»*"
+    talkDay: 2
+    trackTime: "17:30"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/3lrAuGYb2LWkQXoVnXvxFo/7554ff414979a15e859bd135e4a7ad65/100700_566188811_Aleksey_Kirpichnikov_Proklyatiye_infrastrukturnoy_komandy.pdf"]
+    videoLinks: []
     speakerIds: [369]
   - id: 107
     name:
       - {language: en, text: "Adapting your infrastructure to go multi-*"}
+    shortDescription:
+      - {language: en, text: "In this talk Eric will clarify challenges that come with going Multi-***, and how to tackle\
+            \ with them."}
+    longDescription:
+      - language: en
+        text: "The world is going Multi-***; Multi-Cloud, Multi-Platform and Multi-Service. Where traditionally the Cloud\
+            \ is something for small organizations, this is rapidly changing, with more and more large organizations adopting\
+            \ Cloud. With this move to Cloud, both the platform and application architecture is changing, bringing with it\
+            \ a whole host of new challenges.\n\nIn this talk we will take a look at the challenges that come with going Multi-***,\
+            \ and how to tackle these challenges. We will then show how you can create a Multi-Cloud, Multi-Platform environment\
+            \ and connect them together to create a \"flat world\" view of your environment."
+      - language: ru
+        text: "The world is going Multi-*** ; Multi-Cloud, Multi-Platform and Multi-Service. Where traditionally the Cloud\
+            \ is something for small organizations, this is rapidly changing, with more and more large organizations adopting\
+            \ Cloud. With this move to Cloud, both the platform and application architecture is changing, bringing with it\
+            \ a whole host of new challenges.\n\nIn this talk we will take a look at the challenges that come with going Multi-***\
+            \ , and how to tackle these challenges. We will then show how you can create a Multi-Cloud, Multi-Platform environment\
+            \ and connect them together to create a \"flat world\" view of your environment.\n\n> __Комментарий программно\
+            го комитета:__\n\n\n\n> *Облачно-инфраструктурный эксперт из HashiСorp расскажет, как добавить больше облаков\
+            \ и инфраструктуры в ваше микросервисное и как потом со всем этим жить.*"
+    talkDay: 2
+    trackTime: "17:30"
+    track: 2
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/oxjq45e8ilak/7D9HyvZyVhu1kqENeEHP1l/b10434d76d35a8be64824dc94a66c263/100675_1052636594_Erik_Veld_Bridging_the_gap_between_brownfield_and_greenfield_applications_with_a_Service_Mesh.pdf"]
+    videoLinks: []
     speakerIds: [981]
   - id: 108
     name:
       - {language: en, text: "CI of big projects in JetBrains"}
       - {language: ru, text: "CI больших проектов в JetBrains"}
+    shortDescription:
+      - {language: en, text: "Anton will talk about all simple and complex aspects of CI and analyze the latest trends in\
+            \ this area."}
+      - {language: ru, text: "Антон расскажет о всех простых и сложных аспектах CI и разберет последние тренды данной обла\
+            сти."}
+    longDescription:
+      - language: en
+        text: "\"What is Continuous Integration for you?\" — I ask. \"Make a build, testing, checking results\" — you will\
+            \ answer naively.\n\nHowever teamwork often requires support for more twisted build scripts: start build for one\
+            \ branch, for the other, merge this two branches and start build again, start the test twice and if test \"blinked\"\
+            , start it 5 times — and many other interesting scenarios. Such scenarios can be unsupportable by CI servers —\
+            \ we have to invent a wheel and use a crutch. \n\nIn this talk, you will learn about scenarios of projects build\
+            \ in JetBrains for the needs in which you have to show creativity and courage. We will consider how JetBrains\
+            \ use CI TeamCity server and what additions had to be implemented to support the build scripts of own Java and\
+            \ .NET projects."
+      - language: ru
+        text: "«Что для вас Continuous Integration?» — спрошу я. «Запустить сборку, прогнать тесты, оповестить о результат\
+            ах», — ответите вы наивно. \n\nОднако работа в командах часто требует поддержки более извращённых сценариев сб\
+            орки: запустить сборку для одной ветки, для другой, свести эти две ветки и запустить сборку снова, запустить т\
+            ест два раза, а если тест «мигнул», запустить его 5 раз, — и ещё много интересных сценариев. Такие сценарии не\
+            \ всегда вписываются в конвенции, поддерживаемые CI–серверами — приходится изобретать колёса и подставлять кос\
+            тыли.\n\nВ этом докладе вы узнаете о сценариях сборки проектов в JetBrains для нужд, в которых приходится проя\
+            влять креатив и отвагу. Рассмотрим, как в JetBrains используется CI–сервер TeamCity и какие дополнения пришлос\
+            ь внедрить, чтобы поддержать сценарии сборки собственных Java и .NET проектов.\n\n> __Комментарий программного\
+            \ комитета:__\n\n\n\n> *Случайно взяли, Антон не хотел... Кстати, доклад будет о боли.*"
+    talkDay: 2
+    trackTime: "17:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/4A7KVKd2VxAbFFm3yIjVBz/1c49b3558b5e3a7c8b3a26ed24e60895/CI_in_JetBrains.pdf"]
+    videoLinks: []
     speakerIds: [0]
   - id: 109
     name:
-      - {language: en, text: "Why IT industry is entering its darkest era yet, how DevOps is to blame and why Das Kapital can help"}
-      - {language: ru, text: "Почему IT-индустрия переживает темные времена, как в этом виноват DevOps, и почему «Капитал» может помочь"}
+      - {language: en, text: "Why IT industry is entering its darkest era yet, how DevOps is to blame and why Das Kapital\
+            \ can help"}
+      - {language: ru, text: "Почему IT-индустрия переживает темные времена, как в этом виноват DevOps, и почему «Капитал»\
+            \ может помочь"}
+    shortDescription:
+      - {language: en, text: "How did the era of the computer industry begin and what is happening now? Why DevOps influenced\
+            \ IT so much? How developers can stand against huge corporations? And the most interesting how \"Das Kapital\"\
+            \ by Karl Marx will help answer all these questions."}
+      - {language: ru, text: "С чего начиналась эпоха компьютерной индустрии и что происходит сейчас? Почему DevOps так си\
+            льно повлиял на обстановку в сфере ИТ? Как простые разработчики могут противостоять огромным корпорациям? И са\
+            мое интересное, как «Капитал» Карла Маркса поможет ответить на все эти вопросы."}
+    longDescription:
+      - language: en
+        text: "A lot of us are too young to remember, but the 50s and 60s were not a particularly cheerful era to be in computing.\
+            \ And no, Roman is not talking about the dress code for developers. He's talking about the awful monopolies around\
+            \ compute infrastructure that defined that period in our history. You see, back then, if you wanted to earn your\
+            \ paycheck doing computing it meant selling your soul to IBM and hoping for a small slice, the breadcrumbs really,\
+            \ of an enormous concentration of computing power bottled up in one of its mainframes. Then Silicon Valley and\
+            \ minicomputers happened and the world was alright for any little geek to live in again.\n\nWhat is happening\
+            \ in front of our eye right now is, in many respects, a replay of the 50s and 60s. We see a handful of companies\
+            \ building a modern-day equivalent of mainframes. This time, somehow, they are called hyperscale clouds, but that's\
+            \ where the difference ends. While initially skeptical, most Fortune 500 companies are now enthusiastically embracing\
+            \ moving almost all their IT operations into the Cloud (to a point where even Pentagon's future is going to be\
+            \ very cloudy). And who can blame them? The quantity and quality of the services offered by the hyperscale cloud\
+            \ providers are second to none. It will be madness to replicate even a small percentage of those services in an\
+            \ environment of traditional datacenters of yore. \n\nThe DevOps community, of course, is a major catalyst of\
+            \ this change: constantly helping spread the gospel of hyperscale clouds and forever accelerating the adoption\
+            \ of more and more cloud-native services.\n\nBut is this the future we dreamed of? Did you ever expect \"Hello,\
+            \ World!\" web application to require 9 microservices and at least two different platforms to manage them? Does\
+            \ a computer industry, dominated by a handful of closed source, extremely well-financed multinational companies\
+            \ exerting their will on the rest of us (while brutally eliminating all competition) make you shudder and feel\
+            \ like you're entering a really bad dream? And even if it does, what can us (little geeks) do about it?\n\nThis\
+            \ talk will try to answer some of those questions while highlighting whatever silver lining there is: the rise\
+            \ of multi-cloud, open-source platforms (Kubernetes and Cloud Foundry), Edge Computing and how a little knowledge\
+            \ of Das Kapital may ultimately provide an answer to the next phase in our industry's evolution."
+      - language: ru
+        text: "Многие из вас слишком молоды, чтобы помнить эти времена, но 50-е и 60-е не были особенно веселой эрой в сфе\
+            ре компьютерных технологий. И нет, Роман не имеет ввиду дресс-код для разработчиков. Он имеет ввиду ужасные мо\
+            нополии, охватившие компьютерную инфраструктуру, во многом определившие тот период нашей истории. В те времена\
+            , если вы хотели зарабатывать в области компьютерных вычислений, это означало, что вам придется продать душу IBM\
+            \ и надеяться на крошки, доставшиеся от огромной корпорации. Затем случилась Силиконовая долина и мини-компьют\
+            еры, и мир снова стал дружелюбен к маленьким гикам.\n\nТо, что происходит сейчас, во многом повторяет 50-е и 60-е\
+            . У нас есть несколько компаний, производящих современные эквиваленты мейнфреймов. Однако сейчас они называют\
+            \ их hyperscale-облаками, но на этом отличия заканчиваются. Внешне скептичные Fortune 500-компании сейчас с ра\
+            достью переводят все свои операции в облако. И кто будет винить их за это? Количество и качество сервисов, пре\
+            длагаемых провайдерами hyperscale-облаков, не имеют себе равных. Копирование даже небольшого процента этих сер\
+            висов в среде традиционных центров данных выглядит безумно. \n\nСообщество DevOps, конечно, важный катализатор\
+            \ этих изменений: они проповедовали идеи hyperscale-облаков и постоянно ускоряли внедрение облачных сервисов.\n\
+            \nНо это ли будущее, о котором мы мечтали? Вы когда-нибудь думали, что веб-приложение «Hello, World» будет тре\
+            бовать 9 микросервисов и хотя бы две разные платформы, чтобы управлять ими? Компьютерная индустрия, управляема\
+            я горсткой богатых международных компаний с закрытым исходным кодом, проявляющая свою волю по отношению к нам\
+            \ (при этом жестко устраняя всякую конкуренцию), не заставляет вас дрожать и чувствовать, что всё происходящее\
+            \ — плохой сон? И если это так, что можем мы (маленькие гики) сделать с этим?\n\nЭтот доклад постарается ответ\
+            ить на несколько таких вопросов: восхождение мультимедиа-облачных платформ, платформ с открытым кодом (Kubernetes\
+            \ и Cloud Foundry), Edge Computing, и как даже небольшое знание содержания «Капитала» может дать ответ на вопр\
+            ос о второй фазе развития нашей индустрии.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Узнаем от одн\
+            ого из представителей Apache Foundation о том, как знание философии и истории может быть применимо в современн\
+            ом IT-сообществе.*"
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/oxjq45e8ilak/9BZxcQe1iBPmWiwWrkpfW/6b06dd3188499cfa11899d998a37d05a/100682_840664729_Roman_Shaposhnik_Pochemu_IT-industriya_perezhivayet_temnyye_vremena_kak_v_etom_vinovat_DevOps_i_pochemu_Kap.pdf"]
+    videoLinks: []
     speakerIds: [969]
   - id: 110
     name:
