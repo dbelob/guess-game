@@ -395,17 +395,23 @@ events:
               1241, 1242, 1243, 1244, 1245, 1246, 1247, 1248, 1249]
   - eventTypeId: 3
     name:
-      - {language: en, text: "Heisenbug 2019 Msk"}
+      - {language: en, text: "Heisenbug 2019 Msc"}
       - {language: ru, text: "Heisenbug 2019 Мск"}
-    startDate: 2019-12-05
-    endDate: 2019-12-06
+    startDate: "2019-12-05"
+    endDate: "2019-12-06"
+    siteLink:
+      - {language: en, text: "https://heisenbug-moscow.ru/en/"}
+      - {language: ru, text: "https://heisenbug-moscow.ru/"}
     city:
-      - {language: en, text: "Moscow"}
-      - {language: ru, text: "Москва"}
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
     venueAddress:
-      - {language: en, text: "Renaissance Moscow Monarch Centre"}
-      - {language: ru, text: "Ренессанс Москва Монарх Центр"}
-    talkIds: [199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225]
+      - {language: en, text: "Leningradsky Prospekt 31A Bld.1, Renaissance Moscow Monarch Centre"}
+      - {language: ru, text: "Ленинградский проспект, 31А, корп. 1, Гостиница «Ренессанс Москва Монарх Центр»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLsVTVVvrKX9tyVb79MeUZAox5OTInS1wE
+    mapCoordinates: "55.783321, 37.560867"
+    talkIds: [199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220,
+              221, 222, 223, 224, 225]
   - eventTypeId: 3
     name:
       - {language: en, text: "Heisenbug 2020 SPb"}

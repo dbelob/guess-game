@@ -148,16 +148,17 @@ speakers:
   - id: 8
     fileName: 0008.jpg
     name:
-      - {language: en, text: "Paul Finkelshteyn"}
+      - {language: en, text: "Pasha Finkelstein"}
       - {language: ru, text: "Паша Финкельштейн"}
     company:
       - {language: en, text: Lamoda}
     bio:
-      - {language: en, text: "Former system administrator, master of psychology in business, loves to learn and discover.\
-            \ Also loves RPGs (Gloomhaven currently) and talk. To be honest, to talk may be his TOP-1 hobby."}
-      - {language: ru, text: "Бывший системный администратор с психологическим образованием, любит разбираться и учиться.\
-            \ А ещё любит ролевые игры (сейчас Gloomhaven, например) и говорить. На самом деле говорить, может быть, больш\
-            е почти всего остального."}
+      - {language: en, text: "IT guy with psychological background — he has tried everything from humanitarian to exact science\
+            \ and from technical support to programming and data engineering. Such life inevitably develops a wide outlook\
+            \ and curiosity. He likes to share things he has learned."}
+      - {language: ru, text: "Айтишник с психологическим бэкграундом — Павел попробовал всё: от гуманитарных до точных нау\
+            к и от технической поддержки до программирования и дата инжиниринга. Такая жизнь не могла не развить кругозор\
+            \ и любознательность. Любит делиться тем, что нашёл и тем, что его заинтересовало."}
     twitter: asm0di0
   - id: 9
     fileName: 0009.jpg
@@ -577,23 +578,14 @@ speakers:
     company:
       - {language: en, text: JFrog}
     bio:
-      - language: en
-        text: "Baruch Sadogursky (a.k.a JBaruch) is the Head of Developer Relations and a Developer Advocate at JFrog. His\
-            \ passion is speaking about technology. Well, speaking in general, but doing it about technology makes him look\
-            \ smart, and 18 years of hi-tech experience sure helps. When he's not on stage (or on a plane to get there), he\
-            \ learns about technology, people and how they work, or more precisely, don't work together.\r\n\r\nHe is a CNCF\
-            \ ambassador, Developer Champion, and a professional conference speaker on DevOps, DevSecOps, Go, Java and many\
-            \ other topics, and is a regular at the industry's most prestigious events including DockerCon, GopherCon, Devoxx,\
-            \ DevOps Days, OSCON, Qcon, JavaOne and many others. You can see some of his talks at jfrog.com/shownotes"
-      - language: ru
-        text: "Барух Садогурский (a.k.a. JBaruch) — Head of Developer Relations и Developer Advocate в компании JFrog. Бол\
-            ьше всего любит рассказывать о технологиях — то есть просто поболтать любит, но человек, говорящий о технологи\
-            ях, имеет умный вид, да и 18 лет опыта в сфере высоких технологий никуда не делись. Когда он не выступает (ну\
-            , или не летит к месту следующего выступления), то изучает технологии, людей и то, как они работают, точнее, н\
-            е работают вместе.\r\n\r\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер п\
-            о таким темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, к\
-            ак Joker, JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Не\
-            которые его доклады можно посмотреть здесь: jfrog.com/shownotes"
+      - {language: en, text: "Developer Advocate of JFrog, the creators of Artifactory Binary Repository, the home of Bintray,\
+            \ and JavaOne 2011 Duke Choice Awards winner. For a living he hangs out with the JFrog tech leaders, writes some\
+            \ code around Artifactory and Bintray, and then speaks and blogs about all that. He does it repeatedly for the\
+            \ last 10 years and enjoys every moment of it."}
+      - {language: ru, text: "Поскольку «религия не позволяет» быть евангелистом, Барух — developer advocate в компании JFrog\
+            \ и делает в жизни ровно 3 вещи: зависает с разработчиками Bintray и Artifactory, пописывает для них код и рас\
+            сказывает о впечатлениях в блогах и на конференциях, таких как JavaOne, Devoxx, OSCON, конечно же, JPoint и Joker,\
+            \ да и многих других. И так более десяти лет подряд."}
     twitter: jbaruch
   - id: 36
     fileName: 0036.jpg
@@ -1177,9 +1169,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
-            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
-            — either by plane or motorbike."
+            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
+            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
+            either by plane or motorbike."
     twitter: DaschnerS
     javaChampion: true
   - id: 75
@@ -3237,7 +3229,7 @@ speakers:
             \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
             \ Books. В настоящее время занимает позицию главного редактора Smashing Magazine в прекрасном городе Фрайбург\
             , Германия."}
-    twitter: smashingmag
+    twitter: vitalyf
   - id: 261
     fileName: 0261.jpg
     name:
@@ -7695,13 +7687,12 @@ speakers:
     name:
       - {language: en, text: "Ingo Philipp"}
     company:
-      - {language: en, text: Tricentis}
+      - {language: en, text: UiPath}
     bio:
-      - {language: en, text: "Ingo Philipp, Distinguished Evangelist at Tricentis, champions the methodologies and technologies\
-            \ at the core of the company's continuous testing solution. In his previous position as a senior product manager,\
-            \ he orchestrated product development and product marketing. Before that, he worked as a theoretical astrophysicist\
-            \ in the field of high-energy particle physics and computational fluid dynamics. He holds a Master of Science\
-            \ degree."}
+      - {language: en, text: "Ingo Philipp is director of product management at UiPath. His responsibilities range from product\
+            \ strategy, product development and product marketing to test management, test conception, test design, and test\
+            \ automation. Before that, he worked as a theoretical astrophysicist in the field of high-energy particle physics\
+            \ and computational fluid dynamics. He holds a Master of Science degree."}
     twitter: IngoPhilipp
   - id: 574
     fileName: 0574.jpg
@@ -8115,7 +8106,7 @@ speakers:
       - {language: en, text: "Artem Nikitin"}
       - {language: ru, text: "Артем Никитин"}
     company:
-      - {language: en, text: "HERE Technologies"}
+      - {language: en, text: Elastic}
     bio:
       - {language: en, text: "Started on the client side of different web applications, then moved to the backend and now\
             \ mostly works on CI, infrastructure and automation topics. AWS user since 2010. Gopher since 2015. Contributor\
@@ -8345,14 +8336,14 @@ speakers:
   - id: 616
     fileName: 0616.jpg
     name:
-      - {language: en, text: "Alexey Vinogradov"}
+      - {language: en, text: "Alexei Vinogradov"}
       - {language: ru, text: "Алексей Виноградов"}
     company:
-      - {language: en, text: "Radio QA"}
+      - {language: en, text: "Vinogradov IT-Beratung"}
     bio:
-      - {language: en, text: "Alexey has been working in various IT projects in Germany for more than 15 years. He consults\
+      - {language: en, text: "Alexei has been working in various IT projects in Germany for more than 20 years. He consults\
             \ about testing and test automation. Junior Developer of Selenide. The founder and moderator of Radio QA podcast."}
-      - {language: ru, text: "Работает в IT-проектах в Германии более 15 лет. Консультирует по вопросам тестирования и авт\
+      - {language: ru, text: "Работает в IT-проектах в Германии более 20 лет. Консультирует по вопросам тестирования и авт\
             оматизации. Младший разработчик фреймворка Selenide. Основатель и один из ведущих подкаста Radio QA."}
     twitter: i_vino
   - id: 617
@@ -8398,30 +8389,28 @@ speakers:
     name:
       - {language: en, text: "Roman Poborchy"}
       - {language: ru, text: "Роман Поборчий"}
-    company:
-      - {language: en, text: "Independent consultant"}
-      - {language: ru, text: "Независимый консультант"}
+    company: []
     bio:
-      - language: en
-        text: "In 1997-2004, Roman worked in Sun's JDK, in 2004-2008 he moved to Intel where he also worked on Java-related\
-            \ projects. \nAfter that he spent 6 years at Yandex, where he gained most of the experience relevant to this talk.\
-            \ \nSince 2015, Roman changed his professional domain and now trains speakers on technical conferences and generally\
-            \ coaches people willing to make better presentations."
-      - language: ru
-        text: "До 2004 года работал в Sun Microsystems, принимал участие в разработке JDK. Затем работал в Intel, где тоже\
-            \ занимался проектами, связанными с Java. \n\nПосле этого шесть лет провёл в Яндексе, где строил метрики качес\
-            тва поиска. С 2015 года сменил род деятельности, ушёл на вольные хлеба и теперь готовит спикеров для техническ\
-            их конференций и ведёт тренинги по выступлениям."
+      - {language: en, text: "In 1997-2004, Roman worked in Sun's JDK, in 2004-2008 he moved to Intel where he also worked\
+            \ on Java-related projects. After that he spent 6 years at Yandex, where he gained most of the experience relevant\
+            \ to this talk. Since 2015, Roman changed his professional domain and now trains speakers on technical conferences\
+            \ and generally coaches people willing to make better presentations."}
+      - {language: ru, text: "С 1997 по 2004 год работал в Sun Microsystems, принимал участие в разработке JDK. С 2004 по\
+            \ 2008 работал в Intel, где тоже занимался проектами, связанными с Java. После этого 6 лет провёл в Яндексе, г\
+            де строил метрики качества поиска. С 2015 года сменил род деятельности и теперь готовит спикеров для выступлен\
+            ия на технических конференциях, ведёт тренинги."}
   - id: 620
     fileName: 0620.jpg
     name:
       - {language: en, text: "Rajdeep Varma"}
     company:
-      - {language: en, text: Badoo}
+      - {language: en, text: "Badoo (by MagicLab)"}
     bio:
       - {language: en, text: "Rajdeep is a Senior Test Automation engineer at Badoo. He has a passion for test automation.\
-            \ He has worked on automation of many mobile apps across various domains for more than 7 years. Rajdeep has authored\
-            \ open source testing tools \"parallel_calabash\" and \"nakal\" (RubyGems) for mobile apps testing."}
+            \ He has worked on automation of many mobile apps across various domains for more than 8 years. Rajdeep has authored\
+            \ open source testing tools \"parallel_calabash\" and \"nakal\" (RubyGems) for mobile apps testing. He has contributed\
+            \ to a few open-source tools Calabash and Appium"}
+    twitter: varmarajdeep
   - id: 621
     fileName: 0621.jpg
     name:
@@ -8512,10 +8501,10 @@ speakers:
       - {language: en, text: "Nikolay Kozlov"}
       - {language: ru, text: "Николай Козлов"}
     company:
-      - {language: en, text: Badoo}
+      - {language: en, text: "Badoo (by MagicLab)"}
     bio:
-      - {language: en, text: "5+ years of Android geek experience."}
-      - {language: ru, text: "5+ лет опыта Android-гика."}
+      - {language: en, text: "The guy who is responsible for the quality of mobile application with 10+ years of experience."}
+      - {language: ru, text: "Ответственный за качество мобильных приложений человек с 10+ годами опыта работы."}
   - id: 627
     fileName: 0627.jpg
     name:
@@ -12370,6 +12359,16 @@ speakers:
     name:
       - {language: en, text: "Alexandra Svatikova"}
       - {language: ru, text: "Александра Сватикова"}
+    company:
+      - {language: en, text: OK.RU}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - language: en
+        text: "Application security expert in OK.RU.\nStarted her career in IT as a Java developer, but then became interested\
+            \ in secure development and appsec. Has been specialising in web and mobile application security for 8 years now."
+      - language: ru
+        text: "Эксперт по информационной безопасности в Одноклассниках. \nПуть в IT начинала как Java-разработчик, но свер\
+            нула не туда. Последние 8 лет занимается безопасностью веб и мобильных приложений."
   - id: 912
     fileName: 0912.jpg
     name:
@@ -14003,68 +14002,212 @@ speakers:
     fileName: 1042.jpg
     name:
       - {language: en, text: "Noemi Ferrera"}
+    company:
+      - {language: en, text: SauceLabs}
+    bio:
+      - {language: en, text: "Noemi is a technology passionate and results oriented software engineer. She has been in and\
+            \ out of testing roles and has always strive for quality, automation and tooling creation to ease the entire development\
+            \ process."}
   - id: 1043
     fileName: 1043.jpg
     name:
       - {language: en, text: "Irina Rubchenko"}
       - {language: ru, text: "Ирина Рубченко"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Worked as a programmer for more than 10 years: went from C++ to JavaScript. Her first PC was\
+            \ ZX Spectrum 128K. The first program was written on Basic: displaying a two-dimensional snowman on a lamp TV\
+            \ screen. She couldn't choose between frontend and backend. Currently working as enior Full Stack Developer at\
+            \ Tinkoff. Irina likes the whole process of product creating: from discussing the concept to developing and covering\
+            \ it with E2E tests."}
+      - {language: ru, text: "Более 10 лет работает программистом: прошла путь от С++ до JavaScript. Первым компьютером бы\
+            л ZX Spectrum 128K. Первая программа была написана на Basic: вывод двухмерного снеговика на экран лампового те\
+            левизора. Так и не смогла выбрать между frontend и backend. В настоящее время Senior Full Stack Developer в Ти\
+            нькофф. Ирине нравится полный цикл создания продукта: от обсуждения концепции до разработки и покрытия E2E-тес\
+            тами."}
   - id: 1044
     fileName: 1044.jpg
     name:
       - {language: en, text: "Victoria Kashlina"}
       - {language: ru, text: "Виктория Кашлина"}
+    company:
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
+    bio:
+      - {language: en, text: "iOS Developer. Trying to figure out the variety of technical aspects is not easy at all, so\
+            \ she strives to find solutions that make life easier for the whole community. Victoria believes that the active\
+            \ exchange of experience contributes positively to the common cause. The main thing is that the exchange should\
+            \ be effective — and this is the most difficult part."}
+      - {language: ru, text: "iOS-разработчик. Разобраться в многообразии технических аспектов совсем непросто, поэтому в\
+            \ своей работе Виктория стремится находить решения, которые облегчат жизнь сообществу. Верит, что активный обм\
+            ен опытом идёт на благо общему делу. Главное, чтобы он был эффективным — и это самое сложное."}
   - id: 1045
     fileName: 1045.jpg
     name:
       - {language: en, text: "Jayashree Mohan"}
+    company:
+      - {language: en, text: "University of Texas at Austin"}
+    bio:
+      - {language: en, text: "Jayashree Mohan is a 4th year PhD student at the University of Texas at Austin. Her research\
+            \ aims at building efficient tools and infrastructure to test and address reliability of storage systems. Her\
+            \ recent effort has been in building CrashMonkey and Ace, an automated infrastructure to test file-system crash\
+            \ consistency bugs. She is now working on testing reliability of distributed storage systems and Persistent Memory\
+            \ applications. Her research is supported by the Microsoft Research PhD fellowship."}
+    twitter: jayashree2912
   - id: 1046
     fileName: 1046.jpg
     name:
       - {language: en, text: "Aleksandr Vorobei"}
       - {language: ru, text: "Александр Воробей"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Has been working at Tinkoff as automated testing specialist for a year and a half, in testing\
+            \ for 3,5 years. During his work at Tinkoff, he made developing and E2E testing friends. Actively commits to the\
+            \ CodeceptJS project. Teaches students at a fintech school."}
+      - {language: ru, text: "Работает в Тинькофф специалистом автоматизированного тестирования уже полтора года, в тестир\
+            овании 3,5 года. За время работы в Тинькофф подружил разработку с E2E-тестированием. Активно коммитит в проект\
+            \ CodeceptJS. Обучает студентов в финтех-школе."}
+    twitter: CaptainASparrow
   - id: 1047
     fileName: 1047.jpg
     name:
       - {language: en, text: "Pavel Shchedukhin"}
       - {language: ru, text: "Павел Щедухин"}
+    company:
+      - {language: en, text: OZON}
+    bio:
+      - language: en
+        text: "Head of Mobile QA OZON.\nAbout 10 years in mobile development. \nManaged to work with a dozen mobile platforms\
+            \ and participate in development on a different roles."
+      - language: ru
+        text: "Руководит тестированием мобильных приложений компании OZON. \nВ мобильной разработке уже около 10 лет. \nУс\
+            пел поработать с десятком мобильных платформ, поучаствовать в разработке на самых разных ролях."
   - id: 1048
     fileName: 1048.jpg
     name:
       - {language: en, text: "Adrián Bolonio"}
+    company:
+      - {language: en, text: willhaben}
+    bio:
+      - {language: en, text: "Experienced Web Team Lead, Frontend Developer, and Web Accessibility (a11y) advocate. Since\
+            \ 2012 he's living and working in Vienna. When Adrián is not at the office he enjoys a good read, working his\
+            \ way through any delicious recipe and indulging his love for traveling to new places."}
+    twitter: bolonio
   - id: 1049
     fileName: 1049.jpg
     name:
       - {language: en, text: "Artem Nesiolovskiy"}
       - {language: ru, text: "Артём Несиоловский"}
+    company:
+      - {language: en, text: Amazon}
+    bio:
+      - {language: en, text: "Graduated from Mephi, Cybernetics faculty. 8+ years in development and QA, 5 of them in game\
+            \ development. Ex Nvidia, Yandex employee; currently working in Amazon on game engine Lumberyard as Software Development\
+            \ Engineer in Test."}
+      - {language: ru, text: "Окончил МИФИ, фак. Кибернетики. 8+ лет в разработке и тестировани, 5 из них в играх. Экс-сот\
+            рудник Nvidia, Yandex; на данный момент — инженер по автоматизации в Amazon на игровом движке Lumberyard."}
   - id: 1050
     fileName: 1050.jpg
     name:
       - {language: en, text: "Anton Vlasov"}
       - {language: ru, text: "Антон Власов"}
+    company:
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
+    bio:
+      - language: en
+        text: "Senior iOS Developer. Everything should be tested — that is Anton's credo.\nIn his work, he reaches the lowest\
+            \ levels of the program, transfers the gained knowledge to a language that everyone understands and share it."
+      - language: ru
+        text: "Senior iOS Developer. Всё должно быть протестировано — вот кредо Антона. \nВ своей работе он доходит до сам\
+            ых низких уровней работы программы, перекладывает полученное знание на понятный всем язык и делится результата\
+            ми."
   - id: 1051
     fileName: 1051.jpg
     name:
       - {language: en, text: "Maria Sokolova"}
       - {language: ru, text: "Мария Соколова"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Software developer in Kotlin Libraries team at JetBrains and also in the first year of getting\
+            \ a master’s degree in computer sciences at ITMO University."}
+      - {language: ru, text: "Работает в JetBrains над библиотеками для Kotlin. Учится на первом курсе магистратуры кафедр\
+            ы Компьютерных Технологий университета ИТМО."}
+    twitter: mvicsokolova
   - id: 1052
     fileName: 1052.jpg
     name:
       - {language: en, text: "Sergey Mokhin"}
       - {language: ru, text: "Сергей Мохин"}
+    company:
+      - {language: en, text: Exness}
+    bio:
+      - language: en
+        text: "Mobile QA Engineer at Exness. Has been testing since 2015. Started in Barnaul, Altai Territory, now in Limassol,\
+            \ Cyprus. At first, he tested both Web, Mobile and Backend.\nNow only Mobile (70% iOS, 30% Mobile backend and\
+            \ Android). There were many interesting projects: payment systems, payment terminals, instant messenger, online\
+            \ stores and more. Now the main project is a multilingual native application for traders all around the world.\
+            \ Loves iOS, respects Android, a fan of native frameworks."
+      - {language: ru, text: "Mobile QA Engineer в Exness. Тестирирует с 2015 года, начал в Барнауле, Алтайский край, сейч\
+            ас в Лимассоле, остров Кипр. Поначалу тестил и Web, и Mobile, и Backend. Сейчас только Mobile (70% iOS, 30% мо\
+            бильный backend и Android). Было много интересных проектов: платежные системы, терминалы оплаты, мессенджер, и\
+            нтернет-магазины и прочее. Сейчас основной проект — мультиязычное нативное приложение для трейдеров. Любит iOS,\
+            \ уважает Android, топит за нативные фреймворки."}
   - id: 1053
     fileName: 1053.jpg
     name:
       - {language: en, text: "Sergey Mahetov"}
       - {language: ru, text: "Сергей Махетов"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: "Leading tester at Kontur. In the field of software development for more than 10 years, in testing\
+            \ for more than 5. The main direction is the testing and operation of infrastructure solutions. Generally, it's\
+            \ a highly performance fault-tolerant integration buses based on various message brokers and information storage\
+            \ systems, as well as on NoSQL databases. Main Stack — Linux/JVM, favorite language — Scala and tools like Jmeter/Gatling."}
+      - {language: ru, text: "Ведущий тестировщик в компании Контур. В сфере разработки ПО более 10 лет, в тестировании бо\
+            лее 5. Основное направление — тестирование и эксплуатация инфраструктурных решений. Как правило, это высоконаг\
+            руженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения инфор\
+            мации, основанные как на реляционных, так и на NoSQL базах данных. Основной стек — Linux/JVM, предпочитаемый я\
+            зык — Scala и инструменты Jmeter/Gatling."}
   - id: 1054
     fileName: 1054.jpg
     name:
       - {language: en, text: "Alexey Tyurin"}
       - {language: ru, text: "Алексей Тюрин"}
+    company:
+      - {language: en, text: VKontakte}
+      - {language: ru, text: ВКонтакте}
+    bio:
+      - {language: en, text: "Engaged in testing automation for over 7 years. Started from automation of banking platform\
+            \ on a C-like language. Developed web application autotests on Selenium and Java. Has been engaged in testing\
+            \ automation of Android application for 5 years. During that time he tried various automation tools from Robotium\
+            \ and Appium to Espresso. Tries to promote automation in all areas of testing. Initiate of Kotlin and Espresso\
+            \ in Android development."}
+      - language: ru
+        text: "В автоматизации тестирования уже больше 7 лет. Начинал с автоматизации банковской платформы на C-подобном я\
+            зыке. Разрабатывал автотесты веб-приложений на Selenium и Java. Уже 5 лет занимается автоматизацией тестирован\
+            ия Android-приложений. За это время опробовал множество инструментов автоматизации: от Robotium и Appium до Espresso.\
+            \ \nПытается продвигать автоматизацию во всех областях тестирования. Является адептом Kotlin и Espresso в Android-р\
+            азработке."
   - id: 1055
     fileName: 1055.jpg
     name:
       - {language: en, text: "Adam Carmi"}
+    company:
+      - {language: en, text: Applitools}
+    bio:
+      - {language: en, text: "Adam is the Co-founder and CTO of Applitools — a cloud service provider for automated visual\
+            \ testing and monitoring. Prior to Applitools he held management, research and development positions at Safend,\
+            \ IBM and Intel. He regularly talks about software testing at conferences around the world, and organizes the\
+            \ Israeli Selenium Meetup group."}
+    twitter: carmiadam
   - id: 1056
     fileName: 1056.jpg
     name:

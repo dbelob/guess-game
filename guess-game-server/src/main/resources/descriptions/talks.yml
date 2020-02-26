@@ -6905,129 +6905,1029 @@ talks:
   - id: 199
     name:
       - {language: en, text: "Will a bot steal your spot in software testing?"}
+    shortDescription:
+      - {language: en, text: "Should we be afraid of AI? Will it completely capture the technological world? To answer this\
+            \ questions Ingo will dive into software testing."}
+    longDescription:
+      - language: en
+        text: "Stephen Hawking, Bill Gates, and Elon Musk have one thing in common (besides wealth): they’re all terrified\
+            \ of the so-called AI apocalypse, a hypothetical scenario where intelligent machines become our overlords and\
+            \ exterminate mankind. Will AI also take over software testing? Ingo's answer to this question comes in three\
+            \ parts. \r\n\r\nIn part (A) he will explore the hype around AI to explain why we are even asking this question.\
+            \ In part (B) we will explore how to define (artificial) intelligence to make sure that you understand answer\
+            \ to this question. In part (C) Ingo will dive deeper into software testing to finally answer this question."
+      - language: ru
+        text: "Stephen Hawking, Bill Gates, and Elon Musk have one thing in common (besides wealth): they’re all terrified\
+            \ of the so-called AI apocalypse, a hypothetical scenario where intelligent machines become our overlords and\
+            \ exterminate mankind. Will AI also take over software testing? Ingo's answer to this question comes in three\
+            \ parts. \n\nIn part (A) he will explore the hype around AI to explain why we are even asking this question. In\
+            \ part (B) we will explore how to define (artificial) intelligence to make sure that you understand answer to\
+            \ this question. In part (C) Ingo will dive deeper into software testing to finally answer this question.\n\n\
+            > __Комментарий программного комитета:__\n\n\n\n> *Человек из отрасли, тесно связанной с AI/ML, расскажет всю\
+            \ правду о том, чем Machine Learning грозит обычному тестировщику.*"
+    talkDay: 1
+    trackTime: "10:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/5QGZddUPiT1gLfS9lv980J/93c25e875a20a03c5d0023d50e34af9d/100797_277617571_Ingo_Philipp_Will_a_bot_steal_your_spot_in_software_testing.pdf"]
+    videoLinks: []
     speakerIds: [573]
   - id: 200
     name:
       - {language: en, text: "AI and Testing: Tips from the trenches"}
+    shortDescription:
+      - {language: en, text: "We'll share practical development and testing tips from our years of experience building an\
+            \ AI-powered service."}
+    longDescription:
+      - language: en
+        text: "AI is changing our world. It is being employed in all types of applications and increasingly impacts the way\
+            \ we build and test software. However, although machine learning has been around for decades, very little real-world\
+            \ experience is publicly available on how to test AI based systems.\n\nIn this talk, Adam will share practical\
+            \ AI testing tips from our years of experience building an AI-powered service at Applitools. We will cover common\
+            \ approaches to implementing AI: from hand-coded algorithms to classic machine learning and deep learning, and\
+            \ review their applicability to solving different types of problems and the challenges involved. Speaker will\
+            \ share practical tips for testing AI-based features including how to determine if accuracy is a sufficient quality\
+            \ measure for a statistical model, how to avoid degrading the overall quality of a system when improving the accuracy\
+            \ of a specific model, why and how to \"canary test\" your candidate models in production, and many others. Lastly,\
+            \ we'll explore areas where you can easily utilize AI to reduce your automated test maintenance overhead."
+      - language: ru
+        text: "AI is changing our world. It is being employed in all types of applications and increasingly impacts the way\
+            \ we build and test software. However, although machine learning has been around for decades, very little real-world\
+            \ experience is publicly available on how to test AI based systems.\n\nIn this talk, Adam will share practical\
+            \ AI testing tips from our years of experience building an AI-powered service at Applitools. We will cover common\
+            \ approaches to implementing AI: from hand-coded algorithms to classic machine learning and deep learning, and\
+            \ review their applicability to solving different types of problems and the challenges involved. Speaker will\
+            \ share practical tips for testing AI-based features including how to determine if accuracy is a sufficient quality\
+            \ measure for a statistical model, how to avoid degrading the overall quality of a system when improving the accuracy\
+            \ of a specific model, why and how to \"canary test\" your candidate models in production, and many others. Lastly,\
+            \ we'll explore areas where you can easily utilize AI to reduce your automated test maintenance overhead.\n\n\
+            > __Комментарий программного комитета:__\n\n\n\n> *AI сейчас звучит из каждого утюга, тем не менее успешных пр\
+            имеров, когда это действительно работает, в тестированиии не так уж и много. Адам поделится практическими шага\
+            ми и советами, которые он набрал за годы разработки сервиса, успешно применяющего AI для решения задач визуаль\
+            ного тестирования.*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/5kOTSWWJ2CtHlirjzcQUzh/a7a1b291aa583be8601f18d12c0218c3/100462_323665014_Adam_Carmi_AI_and_Testing_Tips_from_the_trenches.pdf"]
+    videoLinks: []
     speakerIds: [1055]
   - id: 201
     name:
       - {language: en, text: "Static application security testing with open source tools"}
       - {language: ru, text: "Статическое тестирование безопасности инструментами из open source"}
+    shortDescription:
+      - {language: en, text: "In this talk we will consider how to organize Static Application Security Testing from the tools\
+            \ available in open source, learn how to write new detectors and customize the analyzer for project needs."}
+      - {language: ru, text: "В докладе рассмотрим, как организовать статическое тестирование безопасности из инструментов\
+            , доступных в open source, научимся писать новые детекторы и кастомизировать анализатор для нужд своего проект\
+            а."}
+    longDescription:
+      - language: en
+        text: "The necessity of search and hole fix in a developed product is no longer in doubt. The need for test automation\
+            \ is understandable too — in large systems manual testing will not be in time for all changes. \nA common way\
+            \ to automate the search for holes is to use fuzzers and scanners, they have already been discussed at Heisenbug\
+            \ 2018. Sometimes such approach is called Dynamic Application Security Testing (DAST). Dynamic security testing\
+            \ has its restrictions and drawbacks. But there is another way — we can use static code analysis to search for\
+            \ potential holes. Such an approach is called Static Application Security Testing (SAST). \n\nSAST solutions market\
+            \ is diverse — it has commercial/full packaged products and open source projects. Odnoklassniki needed opportunities\
+            \ for customization and as a result, they settled on a combination of SonarQube and SpotBugs+Find Security Bugs.\
+            \ \n\nThe talk is dedicated to tools above for detecting holes in web application source code. Alexandra will\
+            \ tell what opportunities they provide OOB, how to expand them by adding own analysis rules (sometimes they are\
+            \ called detectors). The necessity of customization may arise if the project uses frameworks and technologies\
+            \ that are not yet supported. \n\nAs examples, you will see two holes: saved XSS and IDOR. For them, speaker will\
+            \ show how to create your rules for static analysis. \n\nThe purpose of the talk: to tell about the use of SonarQube\
+            \ и Find Security Bugs to search holes in your project. \n\nTechnologies: custom rules are written in Java, as\
+            \ an example Alexandra will demonstrate Java web application. \n\nTargeted audience: security specialists. \n\n\
+            People will learn about the possibility of using static code analysis for security testing and will see basic\
+            \ examples of adding detectors for source code analysis."
+      - language: ru
+        text: "Необходимость поиска и исправления уязвимостей в разрабатываемом продукте сомнению уже не подвергается. Нео\
+            бходимость автоматизации тестирования тоже понятна — в больших системах ручное тестирование за всеми изменения\
+            ми успевать не будет.\nРаспространенным способом автоматизации поиска уязвимостей является использование разно\
+            образных фаззеров и сканеров, про них, в том числе, уже рассказывали на Heisenbug 2018. Иногда такой подход на\
+            зывают Dynamic Application Security Testing (DAST). У динамического тестирования безопасности есть свои ограни\
+            чения и недостатки. Существует и другой путь — можно применить статический анализ кода для поиска потенциальны\
+            х уязвимостей. Такой подход называют Static Application Security Testing (SAST).\n\nРынок SAST-решений разнооб\
+            разен — там есть и коммерческие/коробочные продукты и open source проекты. В Одноклассниках требовались возмож\
+            ности для кастомизации, и команда при выборе конкретного решения остановилась на комбинации из SonarQube и SpotBugs+Find\
+            \ Security Bugs.\n\nДоклад посвящен использованию вышеупомянутых инструментов для обнаружения уязвимостей в ис\
+            ходном коде веб-приложения. Александра расскажет, какие возможности они предоставляют «из коробки» и как их ра\
+            сширить, добавив собственные правила анализа (иногда их называют детекторы). Необходимость кастомизации может\
+            \ возникнуть в случае, если в проекте используются фреймворки и технологии, еще не поддерживаемые в наборе ста\
+            ндартных правил.\n\nВ качестве примеров будут рассмотрены две разновидности уязвимостей: хранимые XSS и IDOR.\
+            \ Для них спикер покажет, как создавать свои правила для статического анализатора.\n\nЦель доклада: рассказать\
+            \ о применении SonarQube и Find Security Bugs для поиска уязвимостей в своем проекте.\n\nТехнологии: кастомные\
+            \ правила пишутся на Java, в качестве примера продемонстрируют веб-приложение на Java.\n\nЦелевая аудитория: а\
+            втоматизаторы тестирования, специалисты по безопасности.\n\nЛюди узнают о возможности применения статического\
+            \ анализа кода для тестирования безопасности и увидят базовые примеры добавления собственных детекторов при ан\
+            ализе исходного кода.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Как можно тестировать безопасность\
+            \ помимо использования известных сканеров уязвимостей? Как можно настроить правила статического анализатора, ч\
+            тобы дешевле и быстрее находить уязвимости на примерах? Ответы на эти вопросы вы сможете узнать на докладе.*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/67KghEcUpYODHsr83w6PlN/d6215b8b2f70df1521a4cb78dc864eba/100761_204227730_Aleksandra_Svatikova_Staticheskoye_testirovaniye_bezopasnosti_instrumentami_iz_open_source.pdf"]
+    videoLinks: []
     speakerIds: [911]
   - id: 202
     name:
       - {language: en, text: "Testing of Kubernetes operator"}
       - {language: ru, text: "Тестирование Kubernetes-оператора"}
+    shortDescription:
+      - {language: en, text: "In this talk you will hear about building and testing Kubernetes operator and how to run it\
+            \ on CI. You will also hear the useful information about the mistakes that Artem's team stepped on and how you\
+            \ can avoid them."}
+      - {language: ru, text: "В этом докладе вы узнаете про то, как разрабатывать и тестировать Kubernetes-оператор, как в\
+            сё это запускать в CI. Также будет полезная информация про грабли, на которые наступила команда Артёма и как в\
+            ам избежать их."}
+    longDescription:
+      - {language: en, text: "At testing conferences you can hear about Kubernetes more often. But mainly in the context how\
+            \ to use it. Artem wants to share his experience with the audience — how to develop, test and release functionality\
+            \ for the Kubernetes extension. Artem's team is working on the operator that can run Elasctic Stack on Kubernetes.\
+            \ A feature of this talk is that almost all things mentioned here you can find in the public domain. Repository\
+            \ you can find <a href=\"https://github.com/elastic/cloud-on-k8s\" target=\"_blank\">here</a> and CI <a href=\"\
+            https://devops-ci.elastic.co/view/cloud-on-k8s/\" target=\"_blank\">here</a>."}
+      - language: ru
+        text: "На конференциях по тестированию в последнее время все чаще и чаще упоминается Kubernetes. Но в основном в к\
+            онтексте как его использовать. Артем же хочет поделиться с аудиторией какого это — разрабатывать, тестировать\
+            \ и релизить функциональность для расширения Kubernetes. Команда Артема работает над оператором, который позво\
+            ляет эксплуатировать Elasctic Stack на Kubernetes. Особенностью этого доклада будет также то, практически все\
+            \ упомянутое в нем находится в публичном доступе. Репозиторий можно найти <a href=\"https://github.com/elastic/cloud-on-k8s\"\
+            \ target=\"_blank\">здесь</a>, а CI <a href=\"https://devops-ci.elastic.co/view/cloud-on-k8s/\" target=\"_blank\"\
+            >тут</a>. \n\n> __Комментарий программного комитета:__\n\n\n\n> *Артем расскажет о том, как протестировать опе\
+            раторы Kubernetes на выживаемость. Убийство операторов, удушение кластера, фарширование оператора подами и мно\
+            гое другое в увлекательном рассказе Артема.*"
+    talkDay: 1
+    trackTime: "12:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/52wiFLvLDxPX8ZflfaoEFI/37ddff93c561c61756b3a43f1bfb7571/100729_1996064486_Artem_Nikitin_Testirovaniye_Kubernetes_operatora_.pdf"]
+    videoLinks: []
     speakerIds: [602]
   - id: 203
     name:
       - {language: en, text: "Automation of automation department"}
       - {language: ru, text: "Автоматизация отдела автоматизации"}
+    shortDescription:
+      - {language: en, text: "During this session, Irina will try to figure out why no one likes to write test cases and how\
+            \ to overcome this hostility through process automation."}
+      - {language: ru, text: "В этом докладе Ирина постарается разобраться почему никто не любит писать тест-кейсы, и как\
+            \ побороть эту неприязнь через автоматизацию процессов."}
+    longDescription:
+      - language: en
+        text: "Are you familiar with the situation when you need to write 1000+ test cases and E2E tests to automate web application?\
+            \ \nRegression takes more than 3 days and there is no time to write test cases. Imagine that there is a team that\
+            \ managed to get rid of this pain.\nIrina will tell how to fully automate the process of writing test cases and\
+            \ E2E tests for web application with highly loaded interface."
+      - language: ru
+        text: "Вам знакома ситуация, когда для автоматизации веб-приложения нужно написать 1000+ тест-кейсов и E2E-тестов\
+            \ по ним?\nРегресс занимает больше 3 дней и на написание тест-кейсов не остается времени. Представьте, что ест\
+            ь команда, которой удалось избавиться от этой боли.\nИрина расскажет, как можно полностью автоматизировать про\
+            цесс написания тест-кейсов и E2E-тестов для веб-приложения с высоконагруженным интерфейсом.\n\n> __Комментарий\
+            \ программного комитета:__\n\n\n\n> *Труд всему голова. Ирина расскажет, как можно сделать ручной труд более п\
+            олезным с помощью системы автоматической генерации тестов, на основе мануального тестирования.*"
+    talkDay: 1
+    trackTime: "14:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/7JGxJtEVkWlNh6HP5lf3yi/b35ca6a8d12396259042641ea65628dd/100810_2040731449_Irina_Rubchenko_Avtomatizatsiya_otdela_avtomatizatsii.pdf"]
+    videoLinks: []
     speakerIds: [1043]
   - id: 204
     name:
       - {language: en, text: "Amazon Lumberyard game engine testing: Tools and approaches"}
       - {language: ru, text: "Тестирование игрового движка Amazon Lumberyard: Подходы и инструменты"}
+    shortDescription:
+      - {language: en, text: "The talk about QA for Amazon Lumberyard game engine, approaches in manual testing and tools\
+            \ for automation."}
+      - {language: ru, text: "Доклад о тестировании игрового движка Amazon Lumberyard, подходах в ручном тестировании и ин\
+            струментах для автоматизации."}
+    longDescription:
+      - language: en
+        text: "Talk about QA of Amazon Lumberyard Game engine, a big multi-platform project, challenges of manual testing\
+            \ and approaches to mitigate them, tools for game automation.\n\nThe talk will include the following:\n\n* What\
+            \ makes game engine testing different;\n* ACC modeling for a project and how it can improve test coverage;\n*\
+            \ Tools for automation of 3d graphics, game logic, editor interface and game performance;\n* Interesting game\
+            \ bugs and the ways to find a balance in manual and automated testing."
+      - language: ru
+        text: "Доклад о тестировании игрового движка Amazon Lumberyard, большого мультиплатформенного проекта; о сложностя\
+            х, возникающих при ручном тестировании и их решениях, а также инструментах для автоматизации.\n\nВ докладе буд\
+            ет рассказано про:\n\n* Особенности тестирования игровых движков;\n* ACC-моделирование проекта для улучшения т\
+            естового покрытия;\n* Инструменты для автоматизации 3D-графики, игровой логики, интерфейса редактора и произво\
+            дительности игры;\n* Интересные игровые баги и поиски баланса в ручном и автоматизированном тестировании.\n\n\
+            > __Комментарий программного комитета:__\n\n\n\n> *Amazon. Игры. Звучит необычно?\nКак тестировать продукт и д\
+            ля разработчиков, и для геймеров? Артем разложит все по полочкам. Доклад будет интересен как инженерам по авто\
+            матизации, так и инженерам, которые тестируют вручную.*"
+    talkDay: 1
+    trackTime: "14:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/1SeF0Mg17FKZdch8nmssm2/710461a793c34eaba71d64d93a89b302/100777_2071763790_Artm_Nesiolovskiy_Testirovaniye_igrovogo_dvizhka_Amazon_Lumberyard_podkhody_i_instrumenty.pdf"]
+    videoLinks: []
     speakerIds: [1049]
   - id: 205
     name:
       - {language: en, text: "Analytics test automation of mobile application"}
       - {language: ru, text: "Автоматизация тестирования аналитики мобильного приложения"}
+    shortDescription:
+      - {language: en, text: "Pavel will tell about the difficulties in testing mobile analytics, how the OZON team concluded\
+            \ that it needs to be automated, what options they tried. And what pros and cons they have."}
+      - {language: ru, text: "Павел расскажет про трудности тестирования мобильной аналитики, как команда OZON пришла к то\
+            му, что ее надо автоматизировать, какие варианты они попробовали. И какие у них плюсы/минусы."}
+    longDescription:
+      - language: en
+        text: "Pavel will tell about how his team decided to automate analytic testing of the OZON mobile application. How\
+            \ to do it, how long it took.\nDuring this session, you will also hear about sniffer in automation and testing\
+            \ with access to the database."
+      - language: ru
+        text: "Павел расскажет про то, как его команда пришла к необходимости автоматизации тестирования аналитики мобильн\
+            ого приложения OZON.\nКак это сделать, сколько времени заняло. \nВы услышите про использование сниффера в авто\
+            матизации и тестирование с доступом к базе."
+    talkDay: 1
+    trackTime: "14:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2LQonRJbQLT4E8EkzeCSh2/64fdf825b2f04fd426be0effc5cc5331/Pavel_Shchedukhin_Avtomatizatsiya_testirovaniya_analitiki_mobilnogo_prilozheniya.pdf"]
+    videoLinks: []
     speakerIds: [1047]
   - id: 206
     name:
       - {language: en, text: "Search quality evaluation basics"}
       - {language: ru, text: "Как оценить качество работы поиска"}
+    shortDescription:
+      - {language: en, text: "Roman will consider a different way of checking the quality of the search base: what techniques\
+            \ to compile the set of metrics to choose, metrics and data markup, what can hamper the choice."}
+      - {language: ru, text: "Роман рассмотрит разные способы проверки качества поисковой базы: какие выбирать техники сос\
+            тавления набора запросов, метрики и разметки данных, что может мешать поиску и т.д."}
+    longDescription:
+      - language: en
+        text: "You have a large online store and users always strive to find some good in it? Or you have a large knowledge\
+            \ base and the whole company wants to some find answers? Users are complaining that they can't find the information\
+            \ meanwhile the lead developer corrects the request. At the same time, thousands of requests are breaking down\
+            \ because it's all connected. \n\nWe will discuss how to build the quality control system that verifies the search\
+            \ won't have spoiled. It's quite a costly affair that's why we will also consider all low-hanging fruits: how\
+            \ to get an acceptable first version with minimum effort."
+      - language: ru
+        text: "У вас огромный интернет-магазин и пользователи всё время норовят найти в нём какой-то товар? Или у вас огро\
+            мная база знаний, и вся компания надеется найти в ней ответы на свои вопросы? Пользователи жалуются, что не на\
+            ходят нужную информацию, тем временем главный разработчик шаманит и исправляет запрос. Но при этом ломаются ты\
+            сячи других, потому что, о ужас, там всё взаимосвязано. \n\nМы обсудим, как построить систему контроля качеств\
+            а, которая проверяет, что поиск не испортился. Это довольно дорогое удовольствие, поэтому мы также рассмотрим\
+            \ все низко висящие фрукты: как с минимальными усилиями получить приемлемую первую версию.\n\n> __Комментарий\
+            \ программного комитета:__\n\n\n\n> *Доклад будет интересен инженерам разных специализаций, кому интересно узн\
+            ать истории из тестирования поиска.*"
+    talkDay: 1
+    trackTime: "16:00"
+    track: 1
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/nf05KMGnbWDSFptzrTjMm/8455d1d7e0756cb3ed0ac95fec93497b/RomanPoborchiySearchQualityEvaluation.pdf"]
+    videoLinks: []
     speakerIds: [619]
   - id: 207
     name:
       - {language: en, text: "Kotlintest and the Order of the Phoenix. What did Kotlin give to the testing world"}
       - {language: ru, text: "Kotlintest и все-все-все. Что Kotlin принёс в мир тестирования"}
+    shortDescription:
+      - {language: en, text: "Pavel will tell how Kotlin can make testing easier."}
+      - {language: ru, text: "Павел расскажет о том, как Kotlin может облегчить процесс тестирования."}
+    longDescription:
+      - language: en
+        text: "Do you write in Kotlin but still using Java infrastructure for testing? With the Kotlin ecosystem, the number\
+            \ of tools for Kotlin testing is growing too.\n\nPavel will talk about Kotlin's role in testing and about its\
+            \ ways to simplify the life of test developer — either he's developer, QA or somebody else."
+      - language: ru
+        text: "Пишете на Kotlin, но всё ещё используете джавовую инфраструктуру для тестирования? А ведь вместе с экосисте\
+            мой Kotlin растёт и количество инструментов для тестирования на нём.\n\nПавел расскажет о том, как Kotlin може\
+            т облегчить жизнь разработчику тестов независимо от того, кто он: разработчик, QA или кто-то ещё.\n\n> __Комме\
+            нтарий программного комитета:__\n\n\n\n> *Примеры того, как именно Kotlin улучшает код и подход к тестированию\
+            \ полезны и тем, кто присматривается к языку, и тем, кто уже перешёл на него.*"
+    talkDay: 1
+    trackTime: "16:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2uo5iQ2GwvNMvN0sPtBFO/45d2866e4ec0635612a09003e14627a4/100796_1937031934_Pasha_Finkelshteyn_Kotlintest_i_vse-vse-vse._Chto_Kotlin_prins_v_mir_testirovaniya.pdf"]
+    videoLinks: []
     speakerIds: [8]
   - id: 208
     name:
       - {language: en, text: "There is more in Appium than you think"}
+    shortDescription:
+      - {language: en, text: "Via the session speaker will introduce how he created and contributed Backdoor feature to Appium\
+            \ Android. Also, he will introduce how his team performs persona-based testing with Appium which involves multiple\
+            \ log-ins at the same time."}
+    longDescription:
+      - language: en
+        text: "Have you been in a situation when some cases are impossible to test because Appium doesn't have support? Appium\
+            \ is improving continuously and release of espresso-driver is an example of this.\nEspresso driver opens up possibilities\
+            \ of white-box testing using Appium. One of which is the ability to call platform methods on elements via backdoor\
+            \ without modifying Application under test. What it means is, if the Android platform supports some actions or\
+            \ properties on an element, then Appium will support it out of the box.\nFor an automation engineer, that's a\
+            \ very powerful addition. Rajdeep was fortunate enough to work on this feature and would like to showcase what\
+            \ are the various tricky cases where this feature can be applied. There will be real examples shown with a sample\
+            \ android app. Speaker will also introduce how his team do persona based testing with Appium which involves multiple\
+            \ log-ins at same time."
+      - language: ru
+        text: "Have you been in a situation when some cases are impossible to test because Appium doesn't have support? Appium\
+            \ is improving continuously and release of espresso-driver is an example of this.\nEspresso driver opens up possibilities\
+            \ of white-box testing using Appium. One of which is the ability to call platform methods on elements via backdoor\
+            \ without modifying Application under test. What it means is, if the Android platform supports some actions or\
+            \ properties on an element, then Appium will support it out of the box.\nFor an automation engineer, that's a\
+            \ very powerful addition. Rajdeep was fortunate enough to work on this feature and would like to showcase what\
+            \ are the various tricky cases where this feature can be applied. There will be real examples shown with a sample\
+            \ android app. Speaker will also introduce how his team do persona based testing with Appium which involves multiple\
+            \ log-ins at same time.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Рассказ Раждипа будет полезен те\
+            м, кто уже имеет опыт с Appium и понимает его ограничения — он вживую покажет, как скрещивать бульдога (Appium)\
+            \ c носорогом (Espresso)*"
+    talkDay: 1
+    trackTime: "16:00"
+    track: 3
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/8NZDaXYMnnGfuAeE65jUS/3163d617903d41c2f6e4ba8bc9eaed21/100759_1255830325_Rajdeep_Varma_There_is_more_in_Appium_than_you_think.pdf"]
+    videoLinks: []
     speakerIds: [620]
   - id: 209
     name:
       - {language: en, text: "IoT project testing. Where is my garbage collector?"}
       - {language: ru, text: "Тестирование IoT-проекта. Where is my garbage collector?"}
+    shortDescription:
+      - {language: en, text: "During this session, you will hear a fascinating story about garbage collection: project implementation,\
+            \ \"smart\" cans and trash trucks, sensors and weighbridges, problems encountered during the project and their\
+            \ solutions."}
+      - {language: ru, text: "В докладе Анатолия вас ждет увлекательная история о вывозе мусора: реализация проекта, «умны\
+            е» баки и мусоровозы, датчики и весовые станции, проблемы, возникшие в ходе проекта и способы их решения."}
+    longDescription:
+      - language: en
+        text: "Anatoliy will tell about his experience in developing/testing of the not quite ordinary project. He needed\
+            \ to develop a control system of garbage collection in the city and its subsequent \"disposal\" at the test range.\
+            \ \n\nTo do this Anatoliy has to equip the garbage cans with filling sensors and GPS/GPRS modems. And trash trucks\
+            \ were equipped with GPS trackers, RFID readers and photo fixing cameras. In turn, weighbridge was placed at the\
+            \ test range for weighing trucks at the entrance and exit from the landfill and a license plate recognition system.\n\
+            \nAs a result, we have an IoT from a whole bunch of sensors and devices, the data from which we collect in Kafka\
+            \ topics and process it with a microservice backend in the spring.\n\nDuring the development process, some device\
+            \ working problems were revealed which the speaker plans to talk about. Also, there will be a few words about\
+            \ building the imitation model for testing."
+      - language: ru
+        text: "Анатолий расскажет про опыт разработки/тестирования проекта не совсем обычного с точки зрения предметной об\
+            ласти. Нужно было разработать систему контроля вывоза мусора в городе и его последующей «переработки» на полиг\
+            оне. \n\nДля этого пришлось оборудовать мусорные баки датчиками наполнения и GPS/GPRS-модемами. А мусоровозы с\
+            набдили GPS-трэкерами, RFID-считывателями и камерами фото-фиксации.\nНа полигонах в свою очередь были установл\
+            ены весовые станции для взвешивания грузовиков на въезде и выезде с полигона, и система распознавания номеров\
+            \ автомобилей.\n\nВ итоге получился IoT из целой кучи датчиков и устройств, данные с которых собирают в Kafka-т\
+            опики и обрабатывают микросервисным бэкендом на спринге.\n\nВ процессе разработки было поймано довольно много\
+            \ граблей, касающихся работы с данными различных девайсов, о которых спикер и планирует рассказать. Так же буд\
+            ет немного информации про довольно интересную историю — построение имитационной модели для тестирования.\n\n>\
+            \ __Комментарий программного комитета:__\n\n\n\n> *Ваш робот-пылесос думает, как восстать? Анатолий расскажет\
+            \ удивительную историю о том, как умные баки и мусоровозы встали на борьбу с мусором под чутким руководством м\
+            икросервисного бэкенда.*"
+    talkDay: 1
+    trackTime: "17:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [562]
   - id: 210
     name:
       - {language: en, text: "Selenide: Bandersnatch — interactive journey through the roads of the library"}
       - {language: ru, text: "Selenide: Брандашмыг — интерактивное путешествие по дорогам библиотеки"}
+    shortDescription:
+      - {language: en, text: "Interactive show around usage of Selenide in Web UI Testing."}
+      - {language: ru, text: "Интерактивное шоу про использование Selenide в тестировании веб-интерфейсов."}
+    longDescription:
+      - language: en
+        text: "Alexei will lead you through the interactive show around the practical usage of Selenide in Web UI Testing.\
+            \ He wants to play a game. Live or die, it's your choice.\n\nSelenide is a popular Java library to write and run\
+            \ your Selenium tests fast and painless. No Selenide users will be harmed during the presentation."
+      - language: ru
+        text: "Алексей будет вашим гидом в этом интерактивном докладе про практическое использование Selenide в тестирован\
+            ии веб-интерфейсов. Он хочет сыграть с вами в одну игру... Он хочет, чтобы вы сделали выбор...\n\nSelenide — п\
+            опулярная Java-библиотека на основе Selenium. С её помощью вы сможете писать и выполнять тесты быстро и безбол\
+            езненно. Ни один пользователь Selenide не пострадает во время доклада.\n\n> __Комментарий программного комитет\
+            а:__\n\n\n\n> *Интерактивный доклад для тех, кто весьма неплохо знаком с Selenide и при этом хочет испытать св\
+            ои знания.*"
+    talkDay: 1
+    trackTime: "17:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/5AiBRr6zys0nSjonPAyNgG/04d8960417f2f25ef98a2c75536cbb6d/100808_707955165_Aleksey_Vinogradov_Selenide_Brandashmyg_-_interaktivnoye_puteshestviye_po_dorogam_biblioteki_.pdf"]
+    videoLinks: []
     speakerIds: [616]
   - id: 211
     name:
       - {language: en, text: "CrashMonkey & Ace: Systematically Testing File-System Crash Consistency"}
+    shortDescription:
+      - {language: en, text: "The talk discusses the importance of crash-consistency in storage systems and how we build an\
+            \ efficient infrastructure to find crash-consistency bugs."}
+    longDescription:
+      - language: en
+        text: "Problem description: Crash-consistency is the ability of a storage system to recover to a correct state after\
+            \ a crash due to power loss or a kernel panic. What we mean by a correct state is to check if the internal metadata\
+            \ structures are consistent, and that the files and directories persisted before the crash are not lost or contain\
+            \ corrupt data. The potential consequences of crash-consistency bugs could be disastrous, leading to loss of user\
+            \ data or resulting in unusable system state after recovery. However, there is little to no crash-consistency\
+            \ testing today for widely-used Linux file systems such as ext4, xfs, btrfs, and F2FS. Linux file-system developers\
+            \ use xfstests, an ad-hoc collection of correctness tests, to perform regression testing. xfstests contains a\
+            \ total of around 500 correctness tests that are applicable to all POSIX file systems. Of these tests, only about\
+            \ 30 (5%) are crash-consistency tests. Thus, file-system developers have no easy way of systematically testing\
+            \ the crash consistency of their file systems.\n\nSolution: We present a new approach to testing file-system crash\
+            \ consistency: bounded black-box crash testing (B3). B3 tests the file system in a black-box manner using workloads\
+            \ of file-system operations. Since the space of possible workloads is infinite, B3 bounds this space based on\
+            \ parameters such as the number of file-system operations or which operations to include, and exhaustively generates\
+            \ workloads within this bounded space. Each workload is tested on the target file system by simulating power-loss\
+            \ crashes while the workload is being executed and checking automatically if the file system recovers to a correct\
+            \ state after each crash. B3 builds upon insights derived from our study of crash-consistency bugs reported in\
+            \ Linux file systems in the last five years. We observed that most reported bugs can be reproduced using small\
+            \ workloads of three or fewer file-system operations on a newly-created file system, and that all reported bugs\
+            \ result from crashes after fsync() related system calls. We built the tool CrashMonkey to demonstrate the effectiveness\
+            \ of this approach. CrashMonkey revealed 10 new crash-consistency bugs in widely-used, mature Linux file systems,\
+            \ seven of which existed in the kernel since 2014. It also revealed a data loss bug in a verified file system,\
+            \ FSCQ. The new bugs result in severe consequences like broken rename atomicity and loss of persisted files."
+      - language: ru
+        text: "Problem description: Crash-consistency is the ability of a storage system to recover to a correct state after\
+            \ a crash due to power loss or a kernel panic. What we mean by a correct state is to check if the internal metadata\
+            \ structures are consistent, and that the files and directories persisted before the crash are not lost or contain\
+            \ corrupt data. The potential consequences of crash-consistency bugs could be disastrous, leading to loss of user\
+            \ data or resulting in unusable system state after recovery. However, there is little to no crash-consistency\
+            \ testing today for widely-used Linux file systems such as ext4, xfs, btrfs, and F2FS. Linux file-system developers\
+            \ use xfstests, an ad-hoc collection of correctness tests, to perform regression testing. xfstests contains a\
+            \ total of around 500 correctness tests that are applicable to all POSIX file systems. Of these tests, only about\
+            \ 30 (5%) are crash-consistency tests. Thus, file-system developers have no easy way of systematically testing\
+            \ the crash consistency of their file systems.\n\nSolution: We present a new approach to testing file-system crash\
+            \ consistency: bounded black-box crash testing (B3). B3 tests the file system in a black-box manner using workloads\
+            \ of file-system operations. Since the space of possible workloads is infinite, B3 bounds this space based on\
+            \ parameters such as the number of file-system operations or which operations to include, and exhaustively generates\
+            \ workloads within this bounded space. Each workload is tested on the target file system by simulating power-loss\
+            \ crashes while the workload is being executed and checking automatically if the file system recovers to a correct\
+            \ state after each crash. B3 builds upon insights derived from our study of crash-consistency bugs reported in\
+            \ Linux file systems in the last five years. We observed that most reported bugs can be reproduced using small\
+            \ workloads of three or fewer file-system operations on a newly-created file system, and that all reported bugs\
+            \ result from crashes after fsync() related system calls. We built the tool CrashMonkey to demonstrate the effectiveness\
+            \ of this approach. CrashMonkey revealed 10 new crash-consistency bugs in widely-used, mature Linux file systems,\
+            \ seven of which existed in the kernel since 2014. It also revealed a data loss bug in a verified file system,\
+            \ FSCQ. The new bugs result in severe consequences like broken rename atomicity and loss of persisted files. \n\
+            \n> __Комментарий программного комитета:__\n\n\n\n> *В файловых системах много что может пойти не так, и проте\
+            стировать их непросто. В докладе разбирается подход к такой задаче.*"
+    talkDay: 1
+    trackTime: "17:30"
+    track: 3
+    language: en
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/2tV2mXxNhbR0J3fEsEOlTz/4f062709f7e2c7a87f7878430d035cd4/100658_2143169083_Jayashree_Mohan_Mohan_CrashMonkey__Ace_Systematically_Testing_File-System_Crash_Consistency.pdf"]
+    videoLinks: []
     speakerIds: [1045]
   - id: 212
     name:
       - {language: en, text: "Designing and building with privacy in mind"}
+    shortDescription:
+      - {language: en, text: "Vitaly will be exploring privacy UX patterns, techniques, strategies and important decisions\
+            \ to consider when designing and building privacy-aware websites and applications."}
+      - {language: ru, text: "Доклад Виталия будет посвящен UX-паттернам, методикам, стратегиям и важным решениям, которым\
+            \ стоит уделить внимание при проектировании и разработке сайтов и приложений с учетом требований конфиденциаль\
+            ности."}
+    longDescription:
+      - language: en
+        text: "GDPR cookie consent prompts, push notifications, app install prompts, video autoplays and annoying pop-ups.\
+            \ Every time we enter a new site, it feels like a fight against all the annoying marketing messages endlessly\
+            \ streaming at us. If you've wondered why a product you looked up in a search engine one day keeps showing up\
+            \ in all your social channels over and over just a few hours later, that's the power of data collection and retargeting\
+            \ at play. We can do better than that though.\n\nIn this session, Vitaly will be exploring privacy UX patterns,\
+            \ techniques, strategies and important decisions to consider when designing and building privacy-aware websites\
+            \ and applications. You'll walk away with a toolbox of applicable techniques, privacy nightmares and a few notes\
+            \ on how to keep your website/app GDPR-compliant and privacy-focused."
+      - language: ru
+        text: "Запросы на использование cookie-файлов или установку приложения, push-уведомления, автоматически запускающи\
+            еся видео и назойливые всплывающие окошки. Каждый раз, как мы заходим на новый сайт, это превращается в борьбу\
+            \ с надоедливыми рекламными сообщениями, что так и сыплются на нас. Если вы когда-нибудь замечали, как продукт\
+            , чье название вы однажды ввели в поисковую строку, начинает то и дело всплывать во всех ваших соцсетях всего\
+            \ через пару часов, знайте — вот она, истинная мощь сбора данных и ретаргетинга. Но необязательно обрекать на\
+            \ это своих пользователей.\n\nДоклад Виталия будет посвящен UX-паттернам, методикам, стратегиям и важным решен\
+            иям, которым стоит уделить внимание при проектировании и разработке сайтов и приложений с учетом требований ко\
+            нфиденциальности. Из доклада вы вынесете набор полезных методик, антипримеров и пару советов, как сделать сайт\
+            /приложение, отвечающее требованиям GDPR и соблюдающее право пользователя на частную жизнь.\n\n> __Комментарий\
+            \ программного комитета:__\n\n\n\n> *GDPR. Зажигательно. Сладко.\nВы задумывались, как правильно понять, не на\
+            рушает ли ваше приложение права ваших пользователей? Хотите услышать интересные случаи? Заходите к Виталию.*"
+    talkDay: 1
+    trackTime: "19:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [260]
   - id: 213
     name:
       - {language: en, text: "Deep into virtual reality testing"}
+    shortDescription:
+      - {language: en, text: "In this talk, Noemi will present specific ways of testing VR apps in Unity using Unity's test\
+            \ runner and Unity's profiler tool."}
+    longDescription:
+      - language: en
+        text: "As VR applications are growing in popularity and users, we need to find ways of testing them faster and more\
+            \ accurately.\n\nIn this talk, Noemi will present specific ways of testing VR apps in Unity using Unity's test\
+            \ runner (for unit/integration tests) and Unity's profiler tool (for performance tests). The audience should have\
+            \ some basic knowledge about testing and test types and some exposure to coding. Exposure to VR or Unity/C# is\
+            \ desirable but not mandatory.\n\nWe will explore the status of the automated recording for Unity apps, and the\
+            \ issues the speaker found along the way trying to automate them.\nNoemi hopes to make the talk a bit more interesting\
+            \ with a mini-game in which different apps are showcased and the audience can guess what's wrong with them.\n\n\
+            By attending to this talk you can get exposure to issues particular to VR apps, learn how you can deeply test\
+            \ Unity apps, understand the automation challenges for the future and have some fun!"
+      - language: ru
+        text: "As VR applications are growing in popularity and users, we need to find ways of testing them faster and more\
+            \ accurately.\n\nIn this talk, Noemi will present specific ways of testing VR apps in Unity using Unity's test\
+            \ runner (for unit/integration tests) and Unity's profiler tool (for performance tests). The audience should have\
+            \ some basic knowledge about testing and test types and some exposure to coding. Exposure to VR or Unity/C# is\
+            \ desirable but not mandatory.\n\nWe will explore the status of the automated recording for Unity apps, and the\
+            \ issues the speaker found along the way trying to automate them.\nNoemi hopes to make the talk a bit more interesting\
+            \ with a mini-game in which different apps are showcased and the audience can guess what's wrong with them.\n\n\
+            By attending to this talk you can get exposure to issues particular to VR apps, learn how you can deeply test\
+            \ Unity apps, understand the automation challenges for the future and have some fun!\n\n> __Комментарий програ\
+            ммного комитета:__\n\n\n\n> *Подробный и обстоятельный доклад об автоматизированном и performance-тестировании\
+            \ проектов с технологией виртуальной реальности внутри.*"
+    talkDay: 2
+    trackTime: "11:00"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/1yoa4aWKLT7PSOTvLGQ31E/1c0c96010fbd9c4230a001927a68fa14/Noemi_Ferrera_Deep_into_virtual_reality_testing.pdf"]
+    videoLinks: []
     speakerIds: [1042]
   - id: 214
     name:
       - {language: en, text: "Solving the problems of Espresso Android autotests in the real world"}
       - {language: ru, text: "Решаем проблемы Espresso-автотестов Android в реальном мире"}
+    shortDescription:
+      - {language: en, text: "Alexey Turin will tell how certain problems in UI testing automation of Android application\
+            \ are solved without architecture reworking and revision for autotests."}
+      - {language: ru, text: "Алексей Тюрин расскажет, как решаются конкретные проблемы в автоматизации UI-тестирования Android-п\
+            риложения без переделывания архитектуры и доработки под автотесты."}
+    longDescription:
+      - language: en
+        text: "Very often the projects that have already gained the course and have a large codebase conclude that you need\
+            \ to write autotests. Including the UI autotests. In this situation, you don't have the opportunity to remake\
+            \ the architecture for tests. As a result, tests became unstable and distract the product development team more\
+            \ than they help it. \n\nIn his talk Andrey will tell: \n- how to lower the threshold to project participants\
+            \ tests;\n- how to build simple and clear UI autotests architecture;\n- how to make tests stable without changing\
+            \ application architecture and how to deal with emerging flaky tests;\n- how to implement the solution in CI and\
+            \ build a reporting system that everyone will understand.\n\nAll solutions will be shown on the example of a specific\
+            \ demo application. This application you can see on GitHub. People can use ready-made solutions in their work.\n\
+            \nThe purpose of the talk: to show people how certain problems in UI testing automation of Android application\
+            \ are solved (case by case). These solutions don't require reworking the application architecture or any significant\
+            \ revision for autotests."
+      - language: ru
+        text: "Часто проекты, которые уже набрали ход и имеют большую кодовую базу, приходят к тому, что нужно писать авто\
+            тесты. В том числе и UI-автотесты. В такой ситуации у вас нет возможности значительно переделать архитектуру п\
+            роекта под тесты. В итоге создаваемые тесты становятся не стабильными и больше отвлекают команду развития прод\
+            укта, чем помогают ей. \n\nВ своем докладе Алексей рассажет:\n- как снизить порог вхождения в тесты участников\
+            \ проекта;\n- как выстроить понятную и простую архитектуру UI-автотестов;\n- как сделать тесты стабильными не\
+            \ изменяя архитектуру приложения, и как бороться с возникающими flaky-тестами;\n- как внедрить решение в CI и\
+            \ построить систему отчетов, понятную всем заинтересованным участникам.\n\nВсе решения будут показаны на приме\
+            ре конкретного демо-приложения. Это приложение будет размещено на GitHub в открытом доступе. Люди смогут прийт\
+            и на работу и применить все описанные подходы у себя.\n\nЦель доклада: показать людям, как решаются конкретные\
+            \ проблемы в автоматизации UI-тестирования Android-приложения (case-by-case). Причем эти решения не требуют пе\
+            ределки архитектуры приложения и какой-либо значительной доработки под автотесты.\n\n> __Комментарий программн\
+            ого комитета:__\n\n\n\n> *Исчерпывающий гайд по нативной автоматизации под Android на Espresso и решению сопут\
+            ствующих нетривиальных проблем.*"
+    talkDay: 2
+    trackTime: "11:00"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/29Ew3mtVkfOz9blXPJIzR9/9f5c7d96d90c5dd135f329a6ac67d0bf/100813_885473727_Aleksey_Tyurin_Reshayem_problemy_Espresso_avtotestov_Android_v_realnom_mire.pdf"]
+    videoLinks: []
     speakerIds: [1054]
   - id: 215
     name:
       - {language: en, text: "Micro frontend automation: how component libraries are tested in Tinkoff"}
       - {language: ru, text: "Автоматизация микрофронтендов, или Как в Тинькофф тестируют библиотеки компонентов"}
+    shortDescription:
+      - {language: en, text: "Tormented with testing automation of small applications? Alexander will tell from his own experience\
+            \ how to integrate this automation into your project as painlessly as possible and so the whole team is happy\
+            \ with the result."}
+      - {language: ru, text: "Мучаетесь с автоматизацией тестирования небольших приложений? Александр на собственном опыте\
+            \ расскажет, как максимально безболезненно внедрить эту автоматизацию в ваш проект, и так, чтобы все команда б\
+            ыла довольна результатом."}
+    longDescription:
+      - language: en
+        text: "During this talk, you will hear about component libraries' automation testing. On the example of a library\
+            \ that Tinkoff develops we will consider the whole process from the beginning of automation to the present. You\
+            \ will learn:\n\n- what tools were used and what aspects were important for tool choice;\n- what problems did\
+            \ Tinkoff team encounter and how did they solve them;\n- thoughts about how they would act if they could start\
+            \ all over again of which rake could not be stepped on.\n\nThis talk will be interesting to:\n\n- people who are\
+            \ just starting to test their component library and don't want to run into problems;\n- people who are already\
+            \ testing and have encountered similar problems that they heroically solve.\n\nThese people may find answers to\
+            \ their questions in this talk."
+      - language: ru
+        text: "В докладе пойдет речь об автоматизации тестирования библиотеки компонентов. На примере библиотеки, разрабат\
+            ываемой в Тинькофф, будет рассмотрен полный процесс от начала автоматизации до настоящего времени. Будет расск\
+            азано:\n\n- какие инструменты были использованы и какие критерии были важны для выбора инструмента;\n- с каким\
+            и проблемами столкнулись и как их решили;\n- мысли о том, как бы действовали, если бы могли начать все сначала\
+            \ или на какие грабли можно было бы не наступать.\n\nДоклад будет интересен разным людям:\n\n- тем, кто только\
+            \ начинает тестировать свою библиотеку компонентов и не хочет столкнуться с проблемами;\n- тем, кто уже тестир\
+            ует и встретил похожие проблемы, которые героически решает.\n\nЭти категории людей возможно найдут в данном до\
+            кладе ответы на свои вопросы.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Идеальная автоматизация —\
+            \ мечта каждой команды! Достижима ли она? Александр расскажет о тестировании фронтенда на компонентном уровне\
+            .*"
+    talkDay: 2
+    trackTime: "11:00"
+    track: 3
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/4VEXOXkXa6R8d9gZbAygq6/5f81cd599a97237c62ccf263f0878ed6/100820_648350173_Aleksandr_Vorobey_Avtomatizatsiya_mikrofrontendov_ili_kak_v_Tinkoff_testiruyut_biblioteki_komponentov.pdf"]
+    videoLinks: []
     speakerIds: [1046]
   - id: 216
     name:
       - {language: en, text: "Make testing Enterprise Java more joyful"}
+    shortDescription:
+      - {language: en, text: "In his talk Sebastian will show approaches to automated testing of Java Enterprise microservices."}
+    longDescription:
+      - language: en
+        text: "Testing is still a topic that most developers would like to avoid. Even though it is crucial for working software,\
+            \ developing and maintaining tests takes certain time and effort — especially for distributed applications or\
+            \ when changes in existing functionality forces test scenarios to adapt. Omitting software tests can’t be the\
+            \ solution; therefore, how can we tackle enterprise tests effectively and productively?\n\nThis session shows\
+            \ what is necessary to effectively test Java Enterprise microservices in an automated way. We’ll see which approaches\
+            \ worked well in real-world projects, how to keep fast feedback and constant velocity in our development circle,\
+            \ how to manage complex test scenarios that involve multiple services, and how to verify our API contracts. The\
+            \ development productivity must keep an immediate feedback loop, not only for unit but also integrative tests.\
+            \ We’ll see how container orchestration and service meshes support our tests regarding distributed applications.\n\
+            \nOne of the key aspects will be how to write maintainable test code with high quality that embraces principles\
+            \ of software craftsmanship. All of the time will be spent live-coding typical test cases with different scopes\
+            \ using different technologies. While Sebastian will be focusing on Jakarta EE, the concepts and approaches hold\
+            \ true for all enterprise Java projects."
+      - language: ru
+        text: "Testing is still a topic that most developers would like to avoid. Even though it is crucial for working software,\
+            \ developing and maintaining tests takes certain time and effort — especially for distributed applications or\
+            \ when changes in existing functionality forces test scenarios to adapt. Omitting software tests can’t be the\
+            \ solution; therefore, how can we tackle enterprise tests effectively and productively?\n\nThis session shows\
+            \ what is necessary to effectively test Java Enterprise microservices in an automated way. We’ll see which approaches\
+            \ worked well in real-world projects, how to keep fast feedback and constant velocity in our development circle,\
+            \ how to manage complex test scenarios that involve multiple services, and how to verify our API contracts. The\
+            \ development productivity must keep an immediate feedback loop, not only for unit but also integrative tests.\
+            \ We’ll see how container orchestration and service meshes support our tests regarding distributed applications.\n\
+            \nOne of the key aspects will be how to write maintainable test code with high quality that embraces principles\
+            \ of software craftsmanship. All of the time will be spent live-coding typical test cases with different scopes\
+            \ using different technologies. While Sebastian will be focusing on Jakarta EE, the concepts and approaches hold\
+            \ true for all enterprise Java projects.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Себастьян знает\
+            \ если не все, то многое о тестировании джавового enterprise. Если вы хотите узнать, как можно тестировать Java-п\
+            риложения, то заходите на доклад.*"
+    talkDay: 2
+    trackTime: "12:30"
+    track: 1
+    language: en
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [74]
   - id: 217
     name:
       - {language: en, text: "Modern approach to testing iOS localization"}
       - {language: ru, text: "Современный подход к тестированию локализации на iOS"}
+    shortDescription:
+      - {language: en, text: "Sergey will introduce a new feature for testing — XCTestPlan and talk about how it can simplify\
+            \ life when working with an iOS application."}
+      - {language: ru, text: "Сергей представит новую фичу для тестирования — XCTestPlan и расскажет о том, как она может\
+            \ сильно упростить жизнь при работе с iOS-приложением."}
+    longDescription:
+      - language: en
+        text: "Sergey wants to tell how with new Xcode features we can quickly check how multilingual (10+ languages) iOS\
+            \ application work on all locales and all screen types of iPhone.\n\nYou will learn what problems happened and\
+            \ how XCTestPlan reduced the testing time of localization and application layout. Speaker will how the easy test\
+            \ on two-three languages and two-three screens. And also will tell what XCTestPlan is missing.\n\nThe purpose\
+            \ of the Sergey's talk is that if you have a UI test on Swift that runs through all screens then you can get screenshots\
+            \ for all supported languages on screens of all sizes (iPhone SE, XS Max, etc.).\nThe solution is that if you\
+            \ don't want to use third-party solutions, for example, Fastline, now you can safely not use them."
+      - language: ru
+        text: "Сергей хочет рассказать про то, как с новыми фичами Xcode мы относительно быстро проверяем, как выглядит му\
+            льтиязычное (10+ языков) iOS-приложение на всех языках и на всех типах экранов iPhone.\n\nВы узнаете, какие бы\
+            ли проблемы и как XCTestPlan уменьшил время на тестирование локализации и тестирование верстки приложения. Спи\
+            кер покажет наглядно простенький тест на двух-трех языках и двух-трех экранах. А также расскажет чего не хвата\
+            ет XCTestPlan.\n\nСуть доклада Сергея в том, что если у вас есть написанный на Swift UI-тест, который пробегае\
+            т все экраны, то вам можно с минимумом усилий получить скриншоты всех экранов для всех поддерживаемых языков н\
+            а экранах нескольких размеров (iPhone SE, XS Max и пр.).\nРешение проблемы в том, что, если вы в вашем проекте\
+            \ для решения схожих задач не хотите использовать сторонние решения, например, Fastline, то теперь их можно сп\
+            окойно не использовать.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Сергей рассказывает об автоматиз\
+            ированном тестировании локализации. Обязательно к применению тем, у кого iOS и локализация присутствует.*"
+    talkDay: 2
+    trackTime: "12:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/3pGK8GyFr4e3AE8JDJ8lzF/6d2fb33f9cde524927f1b14142733795/100803_1501597007_Sergey_Mokhin_Sovremennyy_podkhod_k_testirovaniyu_lokalizatsii_na_iOS.pdf"]
+    videoLinks: []
     speakerIds: [1052]
   - id: 218
     name:
       - {language: en, text: "Don't wait for messages, get them: Asynchronous performance testing"}
       - {language: ru, text: "Не ждите сообщений, получайте их: Асинхронное тестирование производительности"}
+    shortDescription:
+      - {language: en, text: "The talk about the development of plugins for Gatling and performance testing through RabbitMQ\
+            \ and solving technical problems and creating new ones."}
+      - {language: ru, text: "Доклад о разработке плагинов для Gatling и тестировании производительности через RabbitMQ, и\
+            \ решении технических проблем и создании новых."}
+    longDescription:
+      - language: en
+        text: "The talk about the development of plugins for Gatling and performance testing through RabbitMQ and solving\
+            \ technical problems and creating new ones.\n\nThe talk is based on the Raiffeisen Business Platform team experience\
+            \ in asynchronous microservices performance testing that receives requests through RabbitMQ using the AMQP protocol\
+            \ and respond to RabbitMQ.\n\nGatling was chosen as the tool for loading. During the writing of tests the next\
+            \ technical problems were solved:\n\n- how to load through RabbitMQ when there is no plugin for AMQP;\n- how to\
+            \ write an optimal Gatling script that will not consume gigabytes of RAM;\n- how to effectively measure the duration\
+            \ from the moment a message is sent in one queue to the moment the message appears in another queue and not to\
+            \ forget the moment the message appears in the time queue;\n- how to log asynchronous operation, what approach\
+            \ to choose to split a dozen scenarios within a single Gatling test."
+      - language: ru
+        text: "Доклад о разработке плагинов для Gatling и тестировании производительности через RabbitMQ, и решении технич\
+            еских проблем и создании новых.\n\nДоклад основан на опыте команды Raiffeisen Business Platform по тестировани\
+            ю производительности асинхронных микросервисов, которые принимают запросы через RabbitMQ по протоколу AMQP и о\
+            твечают в RabbitMQ.\n\nВ качестве инструмента для подачи нагрузки был выбран Gatling. И в ходе написания тесто\
+            в были решены следующие технические проблемы:\n\n- как подать нагрузку через RabbitMQ, когда нет плагина для AMQP;\n\
+            - как написать оптимальный Gatling-сценарий, который не будет потреблять гигабайты оперативной памяти;\n- как\
+            \ эффективно замерить длительность от момента отправки сообщения в одну очередь, до момента появления сообщени\
+            я в другой очереди, и не забыть момент появления сообщения во временной очереди;\n- как логировать асинхронные\
+            \ операции, какой подход выбрать для разделения десятка сценариев в рамках одного Gatling-теста.\n\n> __Коммен\
+            тарий программного комитета:__\n\n\n\n> *Вячеслав нагружал много разных систем, и его рекомендации к тестирова\
+            нию очередей могут пригодиться многим.*"
+    talkDay: 2
+    trackTime: "12:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/5DuiJityCzOwqYMq8QytW2/c2e939e7f85f0f613c1cb06f9d4c5782/100799_191519134_Vyacheslav_Smirnov_Ne_zhdite_soobshcheniy_poluchayte_ikh_asinkhronnoye_testirovaniye_proizvoditelnosti.pdf"]
+    videoLinks: []
     speakerIds: [541]
   - id: 219
     name:
       - {language: en, text: "Testing Web Accessibility"}
+    shortDescription:
+      - {language: en, text: "Adrián will show you some testing tools, libraries and techniques to increase the a11y test\
+            \ coverage of your code with a simple React application example."}
+    longDescription:
+      - language: en
+        text: "When we develop a new web application, we often put a lot of work on the design, on making it beautiful and\
+            \ usable. In other words, we want our web app to be effective, efficient and satisfying for the user. But a lot\
+            \ of times we don’t think about the user experience for people with disabilities, including people with age-related\
+            \ impairments.\n\nFor the web, accessibility (a11y) means that people with disabilities can perceive, understand,\
+            \ navigate and interact with websites and tools and that they can contribute equally without barriers. Our role\
+            \ as frontend and web developers is to create clear interfaces to make people understand and care about data,\
+            \ independently of their disabilities or impairments, but what we, developers, often forget is to ensure that\
+            \ the code we write follows the Web Content Accessibility Guidelines (WCAG), and the only way to achieve that\
+            \ is testing, either manual or automated.\n\nAutomated web a11y tests can free up our QA team from manual testing\
+            \ every part of our application but they can’t automatically and magically make our site accessible.\n\nWe should\
+            \ use automated a11y tests as one step of a larger testing process. Don’t forget that only 20% to 50% of all accessibility\
+            \ issues can automatically be detected.\n\nAdrián will show you some testing tools, libraries and techniques to\
+            \ increase the a11y test coverage of your code with a simple React application example."
+      - language: ru
+        text: "When we develop a new web application, we often put a lot of work on the design, on making it beautiful and\
+            \ usable. In other words, we want our web app to be effective, efficient and satisfying for the user. But a lot\
+            \ of times we don’t think about the user experience for people with disabilities, including people with age-related\
+            \ impairments.\n\nFor the web, accessibility (a11y) means that people with disabilities can perceive, understand,\
+            \ navigate and interact with websites and tools and that they can contribute equally without barriers. Our role\
+            \ as frontend and web developers is to create clear interfaces to make people understand and care about data,\
+            \ independently of their disabilities or impairments, but what we, developers, often forget is to ensure that\
+            \ the code we write follows the Web Content Accessibility Guidelines (WCAG), and the only way to achieve that\
+            \ is testing, either manual or automated.\n\nAutomated web a11y tests can free up our QA team from manual testing\
+            \ every part of our application but they can’t automatically and magically make our site accessible.\n\nWe should\
+            \ use automated a11y tests as one step of a larger testing process. Don’t forget that only 20% to 50% of all accessibility\
+            \ issues can automatically be detected.\n\nAdrián will show you some testing tools, libraries and techniques to\
+            \ increase the a11y test coverage of your code with a simple React application example.\n\n> __Комментарий про\
+            граммного комитета:__\n\n\n\n> *Практический рассказ о том, как тестировать accessibility в CI и руками.*"
+    talkDay: 2
+    trackTime: "14:30"
+    track: 1
+    language: en
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/6XyOMwoWMA4FvfnHkTaMvT/5dd6cddf6d26f489b2ff1bb4425cb76b/100802_96370657_Adrin_Bolonio_Testing_Web_Accessibility.pdf"]
+    videoLinks: []
     speakerIds: [1048]
   - id: 220
     name:
       - {language: en, text: "Lincheck. Testing concurrent data structures in Java"}
       - {language: ru, text: "Lincheck. Тестирование многопоточной структуры данных в Java"}
+    shortDescription:
+      - {language: en, text: "The talk about automate testing of multi-threaded data structures in Java and approaches to\
+            \ checking the execution of multi-threaded structures for linearizability."}
+      - {language: ru, text: "Доклад про автоматизацию тестирования многопоточных структур данных в Java и подходы к прове\
+            рке исполнения многопоточной структуры данных на линеаризуемость."}
+    longDescription:
+      - language: en
+        text: "If you've ever been into multi-threaded programming, you know that writing concurrent programs is hard. Usually,\
+            \ just a few dangerous execution scenarios are covered with stress tests. But often, such testing can not help\
+            \ in finding bugs. To solve this problem, lincheck was created — the only JVM tool so far that allows you to test\
+            \ multi-threaded code correctness (usually linearizability) conveniently. \n\nFirst, Maria will describe lincheck\
+            \ work steps: generating scenarios of the tested program execution, strategies for running these scenarios, approaches\
+            \ for program verification, then will talk about lincheck usage."
+      - language: ru
+        text: "Если вы писали многопоточный код, то знаете, что сложно написать его корректно сразу. Для тестирования обыч\
+            но пишут стресс-тесты, покрывающие лишь некоторые опасные сценарии исполнения. Но часто для поиска ошибки тако\
+            го подхода оказывается недостаточно. Для решения этой проблемы был создан lincheck — пока единственный инструм\
+            ент в мире JVM, позволяющий удобно тестировать корректность (обычно линеаризуемость) многопоточного кода. \n\n\
+            Сперва в докладе будет описано использование инструмента, затем его внутреннее устройство.\n\n> __Комментарий\
+            \ программного комитета:__\n\n\n\n> *Немногие понимают, как правильно писать многопоточный код, а уж как его т\
+            естировать знают вообще единицы. Мария расскажет какие подходы и какие инструменты в этом помогают.*"
+    talkDay: 2
+    trackTime: "14:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://assets.ctfassets.net/ut4a3ciohj8i/3HxtOGAIZk00IZTroaWYg3/d6632f4236700fe83b3282d4173aa399/100674_1911345268_Mariya_Sokolova_Lincheck._Testirovaniye_mnogopotochnykh_struktur_dannykh_v_Java.pdf"]
+    videoLinks: []
     speakerIds: [1051]
   - id: 221
     name:
       - {language: en, text: "Real mobile applications image optimization"}
       - {language: ru, text: "Реальная оптимизация изображений мобильных приложений"}
+    shortDescription:
+      - {language: en, text: "During this session, Nikolay will tell about Badoo experience in mobile applications image loading\
+            \ optimization, the importance of a precise understanding of what is expected from the team and testers in general."}
+      - {language: ru, text: "В этом докладе Николай расскажет об опыте Badoo по оптимизации изображений мобильных приложе\
+            ний, о важности четкого понимания чего ждут от команды и причем тут вообще тестировщики."}
+    longDescription:
+      - {language: en, text: "During this session, Nikolay will tell about Badoo experience in mobile applications image loading\
+            \ optimization, the importance of a precise understanding of what is expected from the team and testers in general.\
+            \ Also, there will be information about the preparation of the mobile test stand and how to change stand under\
+            \ the changing test conditions."}
+      - language: ru
+        text: "В этом докладе Николай расскажет об опыте Badoo по оптимизации загрузки изображений мобильных приложений, о\
+            \ важности четкого понимания чего ждут от команды и причем тут вообще тестировщики. Также в докладе будет инфо\
+            рмация о подготовке мобильного тестового стенда и о том, как менять стенд под меняющиеся условия тестирования\
+            .\n\n> __Комментарий программного комитета:__\n\n\n\n> *Скорость работы мобильного приложения часто очень важн\
+            а для успешного развития, и Николай как раз рассказывает про подходы и инструменты для оптимизации приложений\
+            .*"
+    talkDay: 2
+    trackTime: "14:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/7KUgETaPmibXgo2lxY1Pko/a052cab6a920b1c5e17b88f9721ef3b2/100816_2139826531_Nikolay_Kozlov_Realnaya_optimizatsiya_izobrazheniy_mobilnykh_prilozheniy.pdf"]
+    videoLinks: []
     speakerIds: [626]
   - id: 222
     name:
       - {language: en, text: "Autotest coverage visualization"}
       - {language: ru, text: "Визуализация покрытия автотестов"}
+    shortDescription:
+      - {language: en, text: "The volume of autotests is growing. Autotests are written at all levels by all participants:\
+            \ backend, frontend, QA. How to hold in your mind everything that was covered? How not to forget anything? How\
+            \ to check yourself? During this talk, you will hear several visualization based approaches. Come hear it!"}
+      - {language: ru, text: "Объём автотестов растёт. Автотесты пишутся на всех уровнях всеми участниками процесса: бэкен\
+            дерами, фронтендерами, тестировщиками. Как удержать в голове всё, что покрыто? Как ничего не забыть? Как прове\
+            рить себя? В докладе будет предложено несколько подходов на основе визуализации. Приходите послушать!"}
+    longDescription:
+      - language: en
+        text: "Modern methods for coverage measuring are good only for development. However, the amount of useful information\
+            \ from coverage reports is extremely small. One the one hand all code lines weren't involved during tests. On\
+            \ the other hand, the only important information is the percentage of coverage. And we are not interested in the\
+            \ absolute value, but we want a delta with the previous one.\nArtem will present some simple solutions that allow\
+            \ you to evaluate the coverage of tests written by test automation.  \n\n1. API tests. There is a swagger and\
+            \ during his execution, we also collect a swagger. We count coverage as a diff of two swaggers. We can see what\
+            \ is covered, what is not and what data.\n2. Web tests. During the execution of tests, we collect information\
+            \ about elements, pages and actions. As a result, we have such format:\na. page;\nb. elements;\nc. actions;\n\
+            d. tests.\n\nAll this is sent to the plugin. We draw elements on the page that were affected during these tests.\
+            \ Plus additional information: the list of tests on the video page.\n\nAs a result, we can answer the next questions\
+            \ very quick:\n1. What is covered and what isn't.\n2. How it was covered (just clicked or checked the text).\n\
+            3. What tests go through the page.\n4. Which elements are most commonly used? In general, we should avoid it because\
+            \ it's a potential point of failure.\n5. Point to the test, see the Selenoid video.\n\nConnected to Selenium.\
+            \ It can be easily completed for the puppeteer and for anything else. It will be convenient to understand what\
+            \ is being checked and why."
+      - language: ru
+        text: "Современные способы измерения покрытия хороши только для разработки. При этом количество полезной информаци\
+            и из отчетов покрытия крайне мало. С одной стороны, есть все строчки кода, которые не были задействованы в ход\
+            е выполнения тестов. С другой стороны, единственная важная информация — это процент покрытия. При этом интерес\
+            но не абсолютное значение, а дельта с предыдущим.\nАртем представит несколько простых решений, которые позволя\
+            ют оценивать покрытие тестов, написанных автоматизаторами тестирования.\n\n1. API-тесты. Есть сваггер, во врем\
+            я его выполнения мы тоже собираем сваггер. Считаем покрытие, как дифф двух свагеров. Видно что покрыто, что не\
+            т, и какими данными.\n2. Web-тесты. Во время выполнения тестов мы собираем информацию про элементы, страницы и\
+            \ действия. В результате получаем такой формат:\n   1. Страница;\n   2. Элементы;\n   3. Действия;\n   4. Тест\
+            ы.\n\nВсе это отправляем в плагин. На странице рисуем элементы, которые были затронуты в ходе выполнения тесто\
+            в. Плюс дополнительную информацию: список тестов на странице с видео.\n\nВ результате можно очень быстро отвеч\
+            ать на следующие вопросы:\n1. Что покрыто, а что нет.\n2. Как покрыто (только кликнули или проверили текст).\n\
+            3. Какие тесты проходят через эту страницу.\n4. Какие элементы наиболее часто используются. Вообще, такого луч\
+            ше избегать, потому что это потенциальная точка отказа.\n5. Наводить на тест, увидеть видео из Selenoid.\n\nПо\
+            дключили к Selenium. Можно легко доделать для Puppeteer и для чего угодно. Будет удобно понимать, что проверяе\
+            тся и зачем.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Если вы помните, то Артем — тот самый челов\
+            ек, который постоянно пытается улучшить жизнь тестировщиков (как тех, кто автоматизирует тесты, так и тех, кто\
+            \ тестирует вручную). В этот раз Артем затронет необычную, но очень полезную тему: как можно визуально померит\
+            ь покрытие. Доклад будет полезен инженерам разного калибра.*"
+    talkDay: 2
+    trackTime: "16:30"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [554]
   - id: 223
     name:
       - {language: en, text: "Kafka: Testing and operation in a limited resource environment"}
       - {language: ru, text: "Kafka: Тестирование и эксплуатация в условиях ограниченных ресурсов"}
+    shortDescription:
+      - {language: en, text: "Business solutions contain a large number of services, applications and transaction. To support\
+            \ these solutions we need to collect telemetrics. Sergey and his team from Kontur are developing a machine to\
+            \ deliver this data. During this talk, you will learn about the principles of this work, interesting cases, problems\
+            \ and their solutions."}
+      - {language: ru, text: "Бизнес-решения содержат в себе большое количество сервисов, приложений и транзакций. Чтобы п\
+            оддерживать эти решения, нужно собирать телеметрию. Сергей и команда Контура разрабатывают транспорт для доста\
+            вки этих данных. В этом докладе вы узнаете о принципах этой работы, интересных случаях, возникших проблемах и\
+            \ их решениях."}
+    longDescription:
+      - language: en
+        text: "Targeted audience: developers, QA, ops in systems with Kafka. \n\nDuring this session, you will hear about\
+            \ practices used for Kafka. You will hear interesting cases from testing and operating Kafka and applications\
+            \ that interact with it.\n\nKontur is one of the main suppliers of business solutions for tax reporting, electronic\
+            \ document management, bookkeeping, OFD, EGAIS and other B2B and B2G solutions. The number of services, applications,\
+            \ transactions are huge and for all of them you need to collect telemetrics — logs, metrics, traces, then transport\
+            \ and distribute them to the appropriate applications for alerting, storage and analysis.\n\nSergey and his team\
+            \ are developing transport for services telemetrics and applications with Kafka. The system pumps 300 thousand\
+            \ messages per second on a small cluster and this range continues to grow.\n\nSpeaker wants to tell how to survive\
+            \ in the conditions of a shortage of servers, what problems and interesting cases happened, what tools and tricks\
+            \ Kontur use to test Kafka and applications that write or read from Kafka, for monitoring cluster status, etc."
+      - language: ru
+        text: "Целевая аудитория: разработчики, тестировщики, ops в системах с Kafka в основе.\n\nВ докладе пойдет речь о\
+            \ практиках, используемых для работы с Kafka. Вы услышите интересные случаи из тестирования и эксплуатации Kafka\
+            \ и приложений, которые взаимодействуют с ней.\n\nКонтур является одним из главных поставщиков решений для биз\
+            неса в части предоставления налоговой отчетности, электронного документооборота, ведения бухгалтерии, систем О\
+            ФД, ЕГАИС и других решений B2B и B2G. Количество сервисов, приложений, транзакций огромно, и для них всех нужн\
+            о собирать данные телеметрии — логи, метрики, трассировки, затем транспортировать и распределять их в соответс\
+            твующие приложения для алертинга, хранения и последующего анализа.\n\nСергей и его команда разрабатывают транс\
+            порт для телеметрии сервисов и приложений с Kafka в основе. Система прокачивает на данном этапе 300 тысяч сооб\
+            щений в секунду на небольшом кластере и этот объем продолжает расти.\n\nСпикер хочет рассказать, как выживать\
+            \ в условиях дефицита серверов, какие проблемы и интересные случаи возникали, какие инструменты и приемы в Кон\
+            тур используют для тестирования Kafka и приложений, которые пишут или читают из Kafka, для мониторинга состоян\
+            ия кластера и т.д.\n\n> __Комментарий программного комитета:__\n\n\n\n> *«У нас будет Kafka», — сказали архите\
+            кторы. Чем это грозит? На что обращать внимание при тестировании? Сергей расскажет о практическом опыте тестир\
+            ования таких систем.*"
+    talkDay: 2
+    trackTime: "16:30"
+    track: 2
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/3aFbNW4vy7qvURKVprpKQY/e579b06c993ea244fef320f232a1f3f3/Sergey_Makhetov_Kafka_Testirovaniye_i_ekspluatatsiya_v_usloviyakh_ogranichennykh_resursov.pdf"]
+    videoLinks: []
     speakerIds: [1053]
   - id: 224
     name:
       - {language: en, text: "Making your microscope for iOS application testing"}
       - {language: ru, text: "Делаем свой микроскоп для тестирования iOS-приложения"}
+    shortDescription:
+      - {language: en, text: "Anton and Victoria will talk about the experience of using Xcode Instruments and how it came\
+            \ in handy during the developing of the Sberbank Online application."}
+      - {language: ru, text: "Антон и Виктория расскажут об опыте Сбербанка в использовании Xcode Instruments и том, как о\
+            ни пригодились во время создания приложения «Сбербанк Онлайн»."}
+    longDescription:
+      - language: en
+        text: "Debugging and testing are inherent parts of developers life. But only a few people know about new tools provided\
+            \ by Apple to modernize this process — signpost is just one of these examples. \n\nFor Sberbank Online project\
+            \ uses similar tools that allow you to find thin parts in the code's work and make the best decision for its improvement.\
+            \ The next step was the creation of a custom tool that allowed to debug external framework due to which Sberbank's\
+            \ team wrote unit tests. \n\nGuys are convinced that integration of the experience of developers and testers can\
+            \ bring a positive synergy for both communities and she's ready to talk about difficulties that were successfully\
+            \ overcome at this conference."
+      - language: ru
+        text: "Отладка и тестирование — неотъемлемая часть жизни разработчика. Но мало кто знает о новых инструментах, пре\
+            доставляемых Apple в целях модернизации данного процесса — signpost является одним из таких примеров.\n\nВ про\
+            екте Сбербанк Онлайн используются подобные инструменты, которые позволяют найти тонкие места в работе кода и п\
+            ринимать лучшие решения по его совершенствованию. Следующим шагом стало создание своего кастомного инструмента\
+            , который позволил отладить баги сторонней библиотеки, за счет которой большая команда Сбербанка писала юнит-т\
+            есты.\n\nСпикеры убеждены, что интеграция опыта разработчиков и тестировщиков привнесет положительную синергию\
+            \ для обоих сообществ, и готовы рассказать о сложностях, которые были успешно преодолены на данной конференции\
+            .\n\n> __Комментарий программного комитета:__\n\n\n\n> *Виктория и Антон затронут неизвестную широкому кругу т\
+            естировщиков и разработчиков тему профилирования и performance-тестирования iOS-приложений нативными инструмен\
+            тами Xcode. В докладе будут рассмотрены не только существующие в SDK инструменты, но и создание собственного т\
+            ула, под нужды вашего приложения.*"
+    talkDay: 2
+    trackTime: "16:30"
+    track: 3
+    language: ru
+    presentationLinks: ["https://downloads.ctfassets.net/ut4a3ciohj8i/2RAqWmGFcSPDIXyQozbfeu/c4a3292e0e55ab9898ecca524c3011b1/Kashlina_Vlasov_Instruments.pdf"]
+    videoLinks: []
     speakerIds: [1044, 1050]
   - id: 225
     name:
       - {language: en, text: "We have DevOps. No one was fired. But what to do?!"}
       - {language: ru, text: "У нас Девопс. Никого не уволили. Но делать-то что?!"}
+    shortDescription:
+      - {language: en, text: "In his second talk from \"the DevOps\" series, Baruch will tell about the necessity for digital\
+            \ transformation and give detailed information with instructions on what to do and how to negotiate with business\
+            \ and testers."}
+      - {language: ru, text: "В своем втором докладе из серии «про девопс», Барух расскажет про необходимость цифровой тра\
+            нсформации и даст подробную инструкцию с указаниями что делать, и как договариваться с бизнесом и тестировщика\
+            ми."}
+    longDescription:
+      - language: en
+        text: "So, last year we figured out that no one is getting fired. Phew, that’s good. But we also figured that if your\
+            \ business is not transforming, it will fall behind and become irrelevant. That’s bad. So, what can we do? \n\n\
+            In the talk Baruch will explain what to learn, what to say, and what to do when the argument \"this is how they\
+            \ do it in Netflix\" doesn’t work.\nWe’ll discuss the required reading list, who to talk to (who are those mythical\
+            \ \"stakeholders\" and why are they holding those steaks? Is it a meat factory transformation thing?), and what\
+            \ to say: how to go about digital transformation for the sake of the future of the business in general, and the\
+            \ testers in particular."
+      - language: ru
+        text: "Итак, мы выяснили, что никто никого увольнять не собирается. Это, конечно, хорошо. Но мы также выяснили, чт\
+            о если не меняться, то нас ждет застой, разруха и Кобол — и это, конечно, страшно. Что же делать? \n\nВ этом д\
+            окладе Барух расскажет, что учить, с кем говорить, что делать, когда довод «но вот в Нефликсе сын маминой подр\
+            уги делает девопс» не работает.\nМы обсудим что знать (список литературы), с кем говорить (кто же такие stakeholder'ы\
+            , и зачем они вцепились в свой стейк, это же какая-то фишка омского мясокомбината, да?), и что говорить: какие\
+            \ приводить тезисы и как убеждать в необходимости цифровой трансформации, ради бизнеса вообще, и тестировщиков\
+            \ в частности.\n\n> __Комментарий программного комитета:__\n\n\n\n> *Если вы помните, то на предыдущем Heisenbug\
+            \ был <a href=\"https://youtu.be/8eH3k4BxV6k\" target=\"_blank\">доклад</a> про то, почему нужно уволить всех\
+            \ тестировщиков (или нет). В этот раз Барух подготовил для вас хорошие ответы на вопросы менеджмента, чтобы жи\
+            ть стало лучше.*"
+    talkDay: 2
+    trackTime: "18:00"
+    track: 1
+    language: ru
+    presentationLinks: []
+    videoLinks: []
     speakerIds: [35]
   - id: 226
     name:
