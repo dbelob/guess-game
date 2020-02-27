@@ -6385,14 +6385,18 @@ speakers:
       - {language: en, text: "Andrey Akinshin is a senior developer at JetBrains, where he works on Rider (a cross-platform\
             \ .NET IDE based on the IntelliJ platform and ReSharper). His favorite topics are performance and micro-optimizations,\
             \ and he is the maintainer of BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET\
-            \ Foundation). Andrey is also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC.\
-            \ In his free time, he likes to study science (his primary research interests are mathematical biology and bifurcation\
-            \ theory)."}
-      - {language: ru, text: "Андрей Акиньшин работает в компании JetBrains, где трудится над проектом Rider (кроссплатфор\
-            менная .NET IDE, основанная на платформе IntelliJ и ReSharper). Его любимые темы — производительность и микроо\
-            птимизации, он также мейнтейнер проекта BenchmarkDotNet (библиотека для написания .NET-бенчмарков, поддержанна\
-            я .NET Foundation). Андрей — к.ф.-м.н., Microsoft .NET MVP, серебрянный медалист ACM ICPC. В свободное время л\
-            юбит заниматься наукой, основные научные интересы — математическая биология и теория бифуркаций."}
+            \ Foundation). Andrey is a frequent speaker at various events for developers, and he is the program director of\
+            \ the DotNext conference. Andrey is also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of\
+            \ ACM ICPC. In his free time, he likes to study science (his primary research interests are mathematical biology\
+            \ and bifurcation theory). Previously, he worked as a postdoctoral research fellow in the Weizmann Institute of\
+            \ Science and as a research scientist in the Sobolev Institute of Mathematics SB RAS."}
+      - {language: ru, text: "Андрей Акиньшин работает в компании JetBrains, где он трудится над проектом Rider (кроссплат\
+            форменная .NET IDE, основанная на платформе IntelliJ и ReSharper). Его любимые темы — производительность и мик\
+            рооптимизации, он также мейнтейнер проекта BenchmarkDotNet (библиотека для написания .NET-бенчмарков, поддержа\
+            нная .NET Foundation). Андрей — частый спикер на различных мероприятиях для разработчиков и председатель прогр\
+            аммного комитета конференции DotNext. Он также к.ф.-м.н., Microsoft .NET MVP, серебрянный медалист ACM ICPC. В\
+            \ свободное время любит заниматься наукой, основные научные интересы — математическая биология и теория бифурк\
+            аций. Раньше он работал постдоком в Институте Вейцмана и научным сотрудником в Институте математики СО РАН."}
     twitter: andrey_akinshin
     mvp: true
   - id: 472
@@ -6810,20 +6814,19 @@ speakers:
   - id: 496
     fileName: 0496.jpg
     name:
-      - {language: en, text: "Michael Yarichuk"}
+      - {language: en, text: "Mikhail Yarichuk"}
       - {language: ru, text: "Михаил Ярийчук"}
-    company:
-      - {language: en, text: "Hibernating Rhinos"}
+    company: []
     bio:
       - {language: en, text: "Michael is an experienced full-stack developer with background in development of applications\
             \ and distributed systems. By day, as member of RavenDB Core Team he works mostly on the server side of things,\
-            \ currently participates in development of a new cross-platform version of RavenDB. By night he becomes a tinkerer\
+            \ currently participates in development of a new, cross-platform version of RavenDB. By night he becomes a tinkerer\
             \ with passion for new technologies, new ideas and coding in general, creating lots of different pet projects\
             \ along the way."}
-      - {language: ru, text: "Разработчик fullstack с большим опытом работы над приложениями и распределёнными системами.\
-            \ Михаил работает в Hibernating Rhinos, участвует в RavenDB Core Team и в разработке новой cross-platform верс\
-            ии RavenDB. В свободное время любит экспериментировать, исследовать новые идеи и технологии — чем сложнее зада\
-            ча, тем интереснее."}
+      - {language: ru, text: "Разработчик Fullstack с большим опытом работы над приложениями и распределенными системами.\
+            \ На данный момент работает в Hibernating Rhinos, член RavenDB Core Team. Участвует в разработке новой, cross-platform\
+            \ версии RavenDB. В свободное время любит экспериментировать, исследовать новые идеи и технологии - чем сложне\
+            е задача, тем интереснее."}
     twitter: Myarichuk
   - id: 497
     fileName: 0497.jpg
@@ -7004,6 +7007,28 @@ speakers:
     name:
       - {language: en, text: "Stanislav Sidristy"}
       - {language: ru, text: "Станислав Сидристый"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - language: en
+        text: "Stanislav worked in many large companies, gaining development experience on the .NET platform. The speaker\
+            \ of many conferences, including .NEXT, SpbDotNet, the author and main speaker of the CLRium seminars. <br> <br>\n\
+            \_\_\_\_\nStanislav's interests for a long time lay in the field of memory management algorithms and techniques\
+            \ for manipulating the CLR runtime from unsafe code. But recently, the vector has been changed to a more practical\
+            \ part of development: multithreading, blocking and non-blocking algorithms <br> <br>\n\nHe is the author of the\
+            \ online book <a href=\"https://github.com/sidristij/dotnetbook\"> .NET Platform Architecture </a>, which is widely\
+            \ used due to its good translation into English and Chinese. The book is so easy to read that its <a href=\"https://anchor.fm/stanislav-sidristij\"\
+            >audio version</a> gradually began to be published."
+      - language: ru
+        text: "Станислав работал во многих крупных компаниях, набирая опыт разработки на платформе .NET. Спикер многих кон\
+            ференций, в том числе .NEXT, SpbDotNet, автор и основной спикер семинаров CLRium. <br><br>\n    \nИнтересы Ста\
+            нислава долгое время лежали в области алгоритмов управления памятью и техник манимулирования рантаймом CLR из\
+            \ unsafe кода. Но в последнее время вектор изменен на более практичную часть разработки: многопоточность, блок\
+            ирующие и неблокирующие алгоритмы<br><br>\n\nЯвляется автором онлайн-книги <a href=\"https://github.com/sidristij/dotnetbook\"\
+            >.NET Platform Architecture</a>, получившей широкое распространение благодаря хорошему переводу на английский\
+            \ и китайский языки. Книга настолько легко читается, что понемногу начала выходить её <a href=\"https://anchor.fm/stanislav-sidristij\"\
+            >аудиоверсия</a>"
+    twitter: sidristij
   - id: 521
     fileName: 0521.jpg
     name:
@@ -14564,3 +14589,155 @@ speakers:
             \ Bundler called Codex, Netflix’s NodeJS PaaS called NodeQuark. \n\nHe also maintains and is a core contributor\
             \ to <a href=\"http://restify.com\" target=\"_blank\">Restify</a>."
     twitter: rajatkumar
+  - id: 1080
+    fileName: 1080.jpg
+    name:
+      - {language: en, text: "Kirill Maurin"}
+      - {language: ru, text: "Кирилл Маурин"}
+    company:
+      - {language: en, text: Intelkon}
+      - {language: ru, text: ИнтелКон}
+    bio:
+      - language: en
+        text: "A developer with experience in refactoring an ancient legacy, introducing useful templates, technologies and\
+            \ practices in a bloody enterprise.\nNow he works for a small but ambitious company Intelcon.\nKirill considers\
+            \ the savings on the quality of execution unprofitable.\nBelieves that optimizing the correct code is easier than\
+            \ correcting the optimized one."
+      - language: ru
+        text: "Разработчик с опытом рефакторинга древнего легаси, внедрения полезных шаблонов, технологий и практик в кров\
+            авом энтерпрайзе.\nСейчас работает на маленькую, но амбициозную компанию Интелкон.\nСчитает экономию на качест\
+            ве исполнения убыточной.\nПолагает, что оптимизировать корректный код проще, чем корректировать оптимизированн\
+            ый."
+  - id: 1081
+    fileName: 1081.jpg
+    name:
+      - {language: en, text: "Johnny Hooyberghs"}
+    company:
+      - {language: en, text: Involved}
+    bio:
+      - {language: en, text: "Johnny Hooyberghs is a consultant for Involved since 2014 focusing on .NET architecture and\
+            \ backend development. Prior to joining Involved, he has had experience developing software for Corilus since\
+            \ 2008. He has been passionate about .NET ever since it was released and his areas of expertise are C#, .NET (Core),\
+            \ WCF, WinForms, WPF, ASP.NET (Core), Entity Framework (Core), Azure and ALM using the Microsoft Stack. Every\
+            \ now and then he enjoys doing some web development using JavaScript. Since 2010, Johnny spends some of his free\
+            \ time teaching .NET and C# for the adult education institute CVO Antwerpen. When he's not working or teaching,\
+            \ he likes some casual gaming, scuba diving, learning to play the piano, traveling the world and visiting as many\
+            \ theme parks as possible."}
+    twitter: djohnnieke
+  - id: 1082
+    fileName: 1082.jpg
+    name:
+      - {language: en, text: "Rene Schulte"}
+    company:
+      - {language: en, text: "Valorem Reply"}
+    bio:
+      - language: en
+        text: "René Schulte is Director of Global Innovation at Valorem Reply working with teams across the globe on emerging\
+            \ technologies like the revolutionary 3D volumetric video telepresence solution HoloBeam and the AR Cloud enabling\
+            \ large, cross-platform user experiences with persistence.\nHe is a creative thought leader with passion for UX\
+            \ and deep technical knowledge from more than 10 years in VR/AR/MR/XR technology and 3D programming, developing\
+            \ for the Microsoft HoloLens since 2015, was featured on Forbes and is listed as VR/AR/MR dev influencer. He also\
+            \ coded AI deep learning neural networks before it was cool and is leveraging modern AI to empower humans.\nHe\
+            \ is a frequent (keynote) speaker and panelist at conferences like //build, Unite, Vision VR/AR Summit, VRDC (GDC),\
+            \ AWE, ESA and more. Blogs about many topics. He also created popular open source libraries like WriteableBitmapEx\
+            \ and the AR library SLARToolKit.\nHe was honored several times for his dev community work with the Microsoft\
+            \ MVP award and recognized as Microsoft Regional Director."
+    twitter: rschu
+  - id: 1083
+    fileName: 1083.jpg
+    name:
+      - {language: en, text: "Shay Rojansky"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Microsoft software engineer working on .NET data access and perf, member of the Entity Framework\
+            \ team. Lead dev of Npgsql, the PostgreSQL provider."}
+    twitter: shayrojansky
+  - id: 1084
+    fileName: 1084.jpg
+    name:
+      - {language: en, text: "Eric Sink"}
+    company:
+      - {language: en, text: SourceGear}
+    bio:
+      - language: en
+        text: "A software developer at SourceGear. Eric has a B.S. in Computer Science from the University of Illinois at\
+            \ Urbana-Champaign. He also founded the AbiWord project and was responsible for much of the original design and\
+            \ implementation. \r\nPrior to founding SourceGear, he was at Spyglass for around five years. Eric served there\
+            \ as Project Lead for the browser team. They built the original versions of the browser you now know as \"Internet\
+            \ Explorer\"."
+    twitter: eric_sink
+  - id: 1085
+    fileName: 1085.jpg
+    name:
+      - {language: en, text: "Ivan Patudin"}
+      - {language: ru, text: "Иван Патудин"}
+    company:
+      - {language: en, text: Arcadia}
+    bio:
+      - {language: en, text: "Ivan is interested in open source projects and cross-platform solutions and using different\
+            \ architectural approaches in different applications of various loads and complexity."}
+      - {language: ru, text: "Интересуется open source-проектами и кросс-платформенными решениями, а также применением раз\
+            ных архитектурных подходов в приложениях различной нагруженности и сложности."}
+  - id: 1086
+    fileName: 1086.jpg
+    name:
+      - {language: en, text: "Richard Lander"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Richard Lander is a Principal Program Manager on the .NET Core team at Microsoft. He works on\
+            \ making .NET Core work great in memory-limited Docker containers, on ARM hardware like the Raspberry Pi, and\
+            \ enabling GPIO programming and IoT scenarios. He is part of the design team that defines new .NET runtime capabilities\
+            \ and features. Richard helps teams at Microsoft establish successful open source communities on GitHub, adopting\
+            \ the patterns used by the .NET team. He also writes extensively for the .NET blog. Richard reported for work\
+            \ at Microsoft in 2000, having just graduated from the University of Waterloo (Canada) with an Honours English\
+            \ degree, with intensive study areas in Computer Science and SGML/XML Markup Languages. In his spare time, he\
+            \ swims, bikes and runs and participates in a few local races each year. He enjoys British rock and Doctor Who.\
+            \ He grew up in Canada and New Zealand."}
+    twitter: runfaster2000
+  - id: 1087
+    fileName: 1087.jpg
+    name:
+      - {language: en, text: "Robert \"Uncle Bob\" Martin"}
+    company:
+      - {language: en, text: "Uncle Bob Consulting LLC"}
+    bio:
+      - language: en
+        text: "Mr. Martin has been a programmer since 1970.\n\nHe is a co-founder of cleancoders.com, offering on-line video\
+            \ training for software developers.\n\nHe is the founder of Uncle Bob Consulting LLC, offering software consulting,\
+            \ training, and skill development services to major corporations worldwide. He served as the Master Craftsman\
+            \ at 8th Light inc, a Chicago based Software Consulting firm.\n\nMr. Martin has published dozens of articles in\
+            \ various trade journals, and is a regular speaker at international conferences and trade shows.\n\nHe is also\
+            \ the creator of the acclaimed educational Clean Code video series at cleancoders.com.\n\nMr. Martin has authored\
+            \ and edited many books."
+    twitter: unclebobmartin
+  - id: 1088
+    fileName: 1088.jpg
+    name:
+      - {language: en, text: "Jane Ryzhikova"}
+      - {language: ru, text: "Женя Рыжикова"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - language: en
+        text: "Jane is a developer of the product with 1.5 million active users in company Kontur. She pays attention to code\
+            \ quality and performance. Right now she rewrites the product's infrastructure to .NET Core. She is the founder\
+            \ of meetup EkbDotNet in Yekaterinburg.\r\nJane teaches other developers not afraid to move to other products\
+            \ to find their dream team."
+      - {language: ru, text: "Женя пишет код в Контуре в продукте с полутора миллионами активных пользователей. Болеет за\
+            \ качество кода и его производительность, а прямо сейчас переводит сервисы в продукте на .NET Core. Стартовала\
+            \ митапы EkbDotNext в Екатеринбурге. Учит других разработчиков не бояться стажировок и смены продукта, чтобы н\
+            айти свою команду мечты."}
+  - id: 1089
+    fileName: 1089.jpg
+    name:
+      - {language: en, text: "Bartosz Sypytkowski"}
+    company:
+      - {language: en, text: Ditto}
+    bio:
+      - {language: en, text: "An Akka.NET (one of the core team members) and F# consultant. An advocate of OSS and remote\
+            \ work culture. Interested in distributed systems, functional programming and deep understanding of the goals,\
+            \ means and proposed solutions."}
+    twitter: Horusiath
