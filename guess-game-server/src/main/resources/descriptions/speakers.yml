@@ -12630,6 +12630,23 @@ speakers:
     name:
       - {language: en, text: "Anastasia Kazakova"}
       - {language: ru, text: "Анастасия Казакова"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "As a C and C++ software developer, Anastasia Kazakova created real-time \\*nix-based systems\
+            \ and pushed them to production for 8 years. She worked as an intern in Microsoft Research, Networking department,\
+            \ and launched the first 4G network in Russia being a part of the Yota operator team. She has a passion for networking\
+            \ algorithms and embedded programming and believes in good tooling. With all her love for C++, she is now the\
+            \ Product Marketing Manager on the JetBrains C++ tools and .NET marketing teams. Besides, Anastasia runs a C++\
+            \ user group in Saint-Petersburg, Russia (https://www.meetup.com/St-Petersburg-CPP-User-Group/)."}
+      - {language: ru, text: "Имеет опыт более 8 лет в коммерческой разработке на C и C++. В прошлом занималась встроенным\
+            и система и задачами управления сетевым трафиком, стажировалась в лаборатории Microsoft Research по направлени\
+            ю Сетевой трафик и участвовала в запуске сетей поколения 4G в компании Yota. Анастасия уверена в том, что разр\
+            аботка — процесс творческий, а рутинные задачи должны быть переданы «умным» инструментам. Поэтому сейчас она я\
+            вляется частью команды JetBrains и работает менеджером по продуктовому маркетингу продуктов для разработки на\
+            \ C++ и .NET. Уже несколько лет занимается организацией встреч питерского сообщества C++ разработчиков (St. Petersburg\
+            \ C++ User Group)."}
+    twitter: anastasiak2512
   - id: 931
     fileName: 0931.jpg
     name:
@@ -12725,6 +12742,14 @@ speakers:
     name:
       - {language: en, text: "Alexey Tkachenko"}
       - {language: ru, text: "Алексей Ткаченко"}
+    company:
+      - {language: en, text: Peleng}
+      - {language: ru, text: Пеленг}
+    bio:
+      - {language: en, text: "12 years in the software development for automated testing of equipment for space technology\
+            \ products."}
+      - {language: ru, text: "12 лет в разработке программного обеспечения для проведения автоматизированного тестирования\
+            \ аппаратуры изделий космической техники."}
   - id: 944
     fileName: 0944.jpg
     name:
@@ -15241,3 +15266,253 @@ speakers:
             \ speaker and author of articles on different topics related to Vue.js . Thanks to these activities Natalia has\
             \ got a title of Google Developer Expert in Web Technologies."
     twitter: N_Tepluhina
+  - id: 1127
+    fileName: 1127.jpg
+    name:
+      - {language: en, text: "Gor Nishanov"}
+      - {language: ru, text: "Гор Нишанов"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Graduate of MSU Faculty of Computational Mathematics and Cybernetics. Gor Nishanov is a Principal\
+            \ Software Design Engineer on the Microsoft C++ team. Gor is responsible for the design and standardization of\
+            \ C++ coroutines, and contributed to C++ asynchronous programming models. Prior to joining C++ team, Gor was working\
+            \ on distributed systems in Windows Clustering team."}
+      - language: ru
+        text: "Выпускник ВМК МГУ. Разработчик в команде Microsoft Visual C++.\nГор отвественен за проектирование и стандар\
+            тизацию C++ корутин и участвует в разработке подходов для упрощения многопоточного программирования в C++. До\
+            \ этого Гор работал в области распределённых систем в Windows NT Clustering Team."
+    twitter: GorNishanov
+  - id: 1128
+    fileName: 1128.jpg
+    name:
+      - {language: en, text: "Anton Bikineev"}
+      - {language: ru, text: "Антон Бикинеев"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: TBD}
+  - id: 1129
+    fileName: 1129.jpg
+    name:
+      - {language: en, text: "Alexey Veselovsky"}
+      - {language: ru, text: "Алексей Веселовский"}
+    company:
+      - {language: en, text: "Align Technology"}
+    bio:
+      - language: en
+        text: "Senior C++ developer at Align Technology. Alexey is engaged in the development of common system components\
+            \ and the framework of the specialized 3D CAD system.\n\nPreviously he developed a realtime patient monitoring\
+            \ system as well as data collection and processing system for self-driving car. Participated in Squid-proxy project.\n\
+            \nAlexey is interested in software reliability, compiler engineering and system programming."
+      - language: ru
+        text: "Старший С++ разработчик в Align Technology. Занимается разработкой общих системных компонентов и фреймворка\
+            \ специализированной 3D CAD-системы.\n\nРанее разработал систему реалтайм мониторинга пациентов, а также систе\
+            му сбора и обработки данных для self driving car. Участвовал в проекте Squid-proxy.\n\nВ область интересов вхо\
+            дят вопросы надежности ПО, компиляторостроения, системного программирования.\n\nВсегда старается докопаться до\
+            \ инстины."
+  - id: 1130
+    fileName: 1130.jpg
+    name:
+      - {language: en, text: "Danila Kutenin"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Danila Kutenin is a Software Engineer aiming at high performance distributed systems. Danila's\
+            \ main priorities are performance and design issues in search engines, file systems, storage systems, data bases\
+            \ with single or multiple nodes. Danila also has side projects in C++ library and compiler teams at Google helping\
+            \ improving the performance of main libraries."}
+  - id: 1131
+    fileName: 1131.jpg
+    name:
+      - {language: en, text: "Anton Kvyatkovsky"}
+      - {language: ru, text: "Антон Квятковский"}
+    company:
+      - {language: en, text: Dins}
+    bio:
+      - {language: en, text: "Software Engineer at Dins. has passion for metaprogramming and stuff described as \"hardcore\"\
+            . Active member of SPb C++ community."}
+      - {language: ru, text: "Software Engineer в компании Dins, в свободное время занимается метапрограммированием и разв\
+            итием С++ сообщества в СПб."}
+  - id: 1132
+    fileName: 1132.jpg
+    name:
+      - {language: en, text: "Denis Kormalev"}
+      - {language: ru, text: "Денис Кормалев"}
+    company:
+      - {language: en, text: "Amazon Robotics"}
+    bio:
+      - language: en
+        text: "Denis Kormalev is a C++ Software Engineer with 10+ years of experience, passion for metaprogramming and extra\
+            \ curiosity for pragmatic application of functional programming paradigms in C++ world. \n\nDenis now works in\
+            \ Amazon Robotics as a Senior Software Engineer."
+      - language: ru
+        text: "Разработчик на С++ уже более 10 лет. Основными интересами в разработке последние годы являются метапрограмм\
+            ирование и прагматичное применение парадигм функционального программирования в C++.\n\nВ настоящее время Денис\
+            \ работает в Amazon Robotics."
+  - id: 1133
+    fileName: 1133.jpg
+    name:
+      - {language: en, text: "Sergey Nepomnyachiy"}
+    company:
+      - {language: en, text: "Bloomberg L.P."}
+    bio:
+      - language: en
+        text: "Sergey has been writing code for some time. Occasionally for money. Wrote it for Intel, then for IBM. \r\n\
+            After that, he wrote code for Ph.D. research which yielded a dissertation. \r\nNow he's writing code for Bloomberg,\
+            \ and a different code on weekends for fun."
+  - id: 1134
+    fileName: 1134.jpg
+    name:
+      - {language: en, text: "Evgeny Pats"}
+    company:
+      - {language: en, text: Fuzzit}
+    bio:
+      - language: en
+        text: "Security enthusiast. Israeli cyber-security intelligence veteran. Polyglot (Computer) & Serial entrepreneur.\r\
+            \nApart from that he loves extreme sports — snowboarding/surfing/wind-surfing/kite-surfing/mtb."
+    twitter: fuzzitdev
+  - id: 1135
+    fileName: 1135.jpg
+    name:
+      - {language: en, text: "Ivan Afanasyev"}
+      - {language: ru, text: "Иван Афанасьев"}
+    company:
+      - {language: en, text: "Align Technology"}
+    bio:
+      - language: en
+        text: "C++ developer at Align Technology.\nGraduated from MMF NSU.\n\nParticipated in Intel MKL, 2GIS mobile/core\
+            \ and Yandex.Browser development as C/C++ engineer."
+      - {language: ru, text: "С++ инженер в Align Technology. Окончил ММФ НГУ. Волей судьбы удалось познакомиться с С/С++\
+            \ в Intel MKL, мобильной/core разработке 2ГИС и Я.Браузере."}
+    twitter: ivafanas
+  - id: 1136
+    fileName: 1136.jpg
+    name:
+      - {language: en, text: "Mateusz Pusz"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - language: en
+        text: "Software architect, chief engineer, and security champion with more than 14 years of experience in designing,\
+            \ writing and maintaining C++ code for fun and living. C++ consultant, trainer, and evangelist focused on Modern\
+            \ C++. His main areas of interest and expertise are code performance, low latency, stability, and security.\n\n\
+            Mateusz worked at Intel for 13 years and now he leads C++ Community at EPAM Systems. He is also a founder of Train\
+            \ IT that provides C++ trainings to corporations. Mateusz is an active voting member of the ISO C++ Committee\
+            \ (WG21) where, together with the best C++ experts in the world, he shapes the next official version of the C++\
+            \ language. He is also a member of WG21 Study Group 14 (SG14) responsible for driving performance and low latency\
+            \ subjects in the Committee. In 2013 Mateusz won “Bench Games 2013” – worldwide competition in the C++ language\
+            \ knowledge."
+    twitter: mateusz_pusz
+  - id: 1137
+    fileName: 1137.jpg
+    name:
+      - {language: en, text: "Mikhail Kashkarov"}
+      - {language: ru, text: "Михаил Кашкаров"}
+    company:
+      - {language: en, text: "Samsung R&D Russia"}
+    bio:
+      - {language: en, text: TBD}
+  - id: 1138
+    fileName: 1138.jpg
+    name:
+      - {language: en, text: "Elena Stepanova"}
+      - {language: ru, text: "Елена Степанова"}
+    company:
+      - {language: en, text: Nokia}
+    bio:
+      - language: en
+        text: "C++ developer and Product Owner at Nokia.\n\n10 years of commercial development experience in avionics and\
+            \ telecommunications. Spent the last 6 years writing code for LTE/5G core networks. Mentor and evangelist of modern\
+            \ development approaches. A fan of Linux kernel and well-written specs."
+      - language: ru
+        text: "С++ разработчик и Product Owner в Nokia.\n\n10 лет опыта коммерческой разработки в авионике и телекоммуника\
+            циях. Последние 6 лет пишет код для опорных сетей LTE/5G. Ментор и евангелист современных подходов в разработк\
+            е. Фанат линуксового ядра и хорошо написанных спецификаций."
+    twitter: st_1ena
+  - id: 1139
+    fileName: 1139.jpg
+    name:
+      - {language: en, text: "JeanHeyd Meneide"}
+    company:
+      - {language: en, text: "Shepherd's Oasis"}
+    bio:
+      - language: en
+        text: "JeanHeyd \"ThePhD\" is a Software Engineering at Columbia University in New York. His largest open-source contribution\
+            \ — sol2 — is used across many industries. He is currently working towards earning his own nickname, climbing\
+            \ the academic ladder while spending as much time as possible contributing to C++ standardization and development.\n\
+            \nHe very much loves dogs and hopes to have his own in a year or so. He also likes Vulf's \"Tee Time\" from the\
+            \ album Mr. Finish Line, as well as represents Shepherd's Oasis."
+    twitter: thephantomderp
+  - id: 1140
+    fileName: 1140.jpg
+    name:
+      - {language: en, text: "Ruslan Manaev"}
+      - {language: ru, text: "Руслан Манаев"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Ruslan Manaev works at Yandex as a software engineer in the Search Quality Infrastructure Group.\
+            \ He previously worked in the Yandex browser backend group. He successfully uses template magic at work. He is\
+            \ a fan of competitive programming."}
+      - {language: ru, text: "Руслан Манаев работает в Яндексе разработчиком в группе инфраструктуры качества поиска. Ране\
+            е работал в группе бэкенда Яндекс браузера. Успешно применяет шаблонную магию в работе. Любитель олимпиадного\
+            \ программирования."}
+  - id: 1141
+    fileName: 1141.jpg
+    name:
+      - {language: en, text: "Jason McGuiness"}
+    company:
+      - {language: en, text: "Count-Zero Ltd"}
+    bio:
+      - {language: en, text: "Jason is a contract programmer in C++ on Linux. His 15 years experience spans: initially a nuclear\
+            \ physicist then programming prototype super-computers, but now in finance; focussing on low-latency and HFT software,\
+            \ their architectures and the issues arising from them. He is also actively involved with the ISO/UK C++ Panel\
+            \ and the ACCU to maintain his skill-set."}
+  - id: 1142
+    fileName: 1142.jpg
+    name:
+      - {language: en, text: "John Lakos"}
+    company:
+      - {language: en, text: "Bloomberg LP"}
+    bio:
+      - {language: en, text: "John Lakos, author of Large-Scale C++ Software Design, serves at Bloomberg LP in New York City\
+            \ as a senior architect and mentor for C++ Software Development world-wide. He is also an active voting member\
+            \ of the C++ Standards Committee's Evolution Working Group."}
+  - id: 1143
+    fileName: 1143.jpg
+    name:
+      - {language: en, text: "Igor Lobanchikov"}
+      - {language: ru, text: "Игорь Лобанчиков"}
+    company: []
+    bio:
+      - {language: en, text: "Igor has been developing games since 2003. Worked with Intel, AMD, Qualcomm, Amazon, Confetti,\
+            \ etc. Computer graphics expert. He helps to improve and optimize other projects. Ports games to new platforms."}
+      - {language: ru, text: "Разрабатывает игры с 2003 года. Работал с Intel, AMD, Qualcomm, Amazon, Confetti и др. Экспе\
+            рт по компьютерной графике. Помогает улучшать и оптимизировать чужие проекты. Портирует игры на новые платформ\
+            ы."}
+  - id: 1144
+    fileName: 1144.jpg
+    name:
+      - {language: en, text: "Yuriy Syrovetskiy"}
+      - {language: ru, text: "Юрий Сыровецкий"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Senior Haskell developer at Kaspersky Lab, RuHaskell activist, distributed systems enthusiast."}
+      - {language: ru, text: "Старший хаскелист в Лаборатории Касперского, активист сообщества RuHaskell, энтузиаст распре\
+            делённых систем."}
+    twitter: cblp_su
+  - id: 1145
+    fileName: 1145.jpg
+    name:
+      - {language: en, text: "Victor Zverovich"}
+    company:
+      - {language: en, text: Facebook}
+    bio:
+      - {language: en, text: "Victor Zverovich is a software engineer at Facebook working on the Thrift RPC framework. Before\
+            \ joining Facebook in 2016, he worked for several years on modeling systems for mathematical optimization. He\
+            \ is an active contributor to open-source projects, an author of the {fmt} library and the C++20 formatting library."}
+    twitter: vzverovich

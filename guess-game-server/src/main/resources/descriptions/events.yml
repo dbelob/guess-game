@@ -39,17 +39,22 @@ events:
               132, 133, 134, 135, 136, 137, 138, 139]
   - eventTypeId: 0
     name:
-      - {language: en, text: "C++ Russia 2020 Msk"}
+      - {language: en, text: "C++ Russia 2020 Msc"}
       - {language: ru, text: "C++ Russia 2020 Мск"}
-    startDate: 2020-04-27
-    endDate: 2020-04-28
+    startDate: "2020-04-27"
+    endDate: "2020-04-28"
+    siteLink:
+      - {language: en, text: "https://cppconf-moscow.ru/en/"}
+      - {language: ru, text: "https://cppconf-moscow.ru/"}
     city:
-      - {language: en, text: "Moscow"}
-      - {language: ru, text: "Москва"}
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
     venueAddress:
-      - {language: en, text: "Radisson Slavyanskaya Hotel & Business Center"}
-      - {language: ru, text: "Рэдиссон Славянская Отель и Бизнес-Центр"}
-    talkIds: []
+      - {language: en, text: "Europe Square 2, Hotel «Radisson Slavyanskaya»"}
+      - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
+    mapCoordinates: "55.741881, 37.568099"
+    talkIds: [1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454,
+              1455, 1456, 1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464]
   # DevOops
   - eventTypeId: 1
     name:
