@@ -1240,13 +1240,13 @@ speakers:
       - {language: en, text: JetBrains}
     bio:
       - language: en
-        text: "For the last few years, Yuriy has played an integral role in the CUBA Platform development team and contributed\
+        text: "For the last few years Yuriy have played an integral role in the CUBA Platform development team and contributed\
             \ a lot to the platform architecture design, specializing in front end technologies. As part of my academic activities,\
-            \ he mentored applied math students from Samara University.\n\nCurrently, working at IntelliJ IDEA Team of JetBrains\
-            \ and trying to bring new useful tools to developers daily routine."
+            \ he mentored applied math students from the Samara University.\n\nCurrently, working at IntelliJ IDEA Team of\
+            \ JetBrains and trying to bring new useful tools to developers daily routine."
       - language: ru
         text: "До недавнего времени Юрий занимался разработкой открытого фреймворка CUBA Platform, где посвятил много врем\
-            ени архитектуре и фронтенд-технологиям. Преподавал курсы разработки мобильных приложений и основы UI/UX для ст\
+            ени архитектуре и фронтенд технологиям. Преподавал курсы разработки мобильных приложений и основы UI/UX для ст\
             удентов магистратуры Самарского Университета.\n\nСейчас работает в команде IntelliJ IDEA, стараясь улучшить жи\
             знь разработчиков при помощи различных инструментов. Обожает реализовывать безумные идеи с лозунгом «Почему бы\
             \ и нет?»."
@@ -6385,18 +6385,14 @@ speakers:
       - {language: en, text: "Andrey Akinshin is a senior developer at JetBrains, where he works on Rider (a cross-platform\
             \ .NET IDE based on the IntelliJ platform and ReSharper). His favorite topics are performance and micro-optimizations,\
             \ and he is the maintainer of BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET\
-            \ Foundation). Andrey is a frequent speaker at various events for developers, and he is the program director of\
-            \ the DotNext conference. Andrey is also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of\
-            \ ACM ICPC. In his free time, he likes to study science (his primary research interests are mathematical biology\
-            \ and bifurcation theory). Previously, he worked as a postdoctoral research fellow in the Weizmann Institute of\
-            \ Science and as a research scientist in the Sobolev Institute of Mathematics SB RAS."}
+            \ Foundation). Andrey is also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC.\
+            \ In his free time, he likes to study science (his primary research interests are mathematical biology and bifurcation\
+            \ theory)."}
       - {language: ru, text: "Андрей Акиньшин работает в компании JetBrains, где он трудится над проектом Rider (кроссплат\
             форменная .NET IDE, основанная на платформе IntelliJ и ReSharper). Его любимые темы — производительность и мик\
             рооптимизации, он также мейнтейнер проекта BenchmarkDotNet (библиотека для написания .NET-бенчмарков, поддержа\
-            нная .NET Foundation). Андрей — частый спикер на различных мероприятиях для разработчиков и председатель прогр\
-            аммного комитета конференции DotNext. Он также к.ф.-м.н., Microsoft .NET MVP, серебрянный медалист ACM ICPC. В\
-            \ свободное время любит заниматься наукой, основные научные интересы — математическая биология и теория бифурк\
-            аций. Раньше он работал постдоком в Институте Вейцмана и научным сотрудником в Институте математики СО РАН."}
+            нная .NET Foundation). Андрей — к.ф.-м.н., Microsoft .NET MVP, серебрянный медалист ACM ICPC. В свободное врем\
+            я любит заниматься наукой, основные научные интересы — математическая биология и теория бифуркаций."}
     twitter: andrey_akinshin
     mvp: true
   - id: 472
@@ -14704,13 +14700,13 @@ speakers:
       - {language: en, text: "Uncle Bob Consulting LLC"}
     bio:
       - language: en
-        text: "Mr. Martin has been a programmer since 1970.\n\nHe is a co-founder of cleancoders.com, offering on-line video\
-            \ training for software developers.\n\nHe is the founder of Uncle Bob Consulting LLC, offering software consulting,\
-            \ training, and skill development services to major corporations worldwide. He served as the Master Craftsman\
-            \ at 8th Light inc, a Chicago based Software Consulting firm.\n\nMr. Martin has published dozens of articles in\
-            \ various trade journals, and is a regular speaker at international conferences and trade shows.\n\nHe is also\
-            \ the creator of the acclaimed educational Clean Code video series at cleancoders.com.\n\nMr. Martin has authored\
-            \ and edited many books."
+        text: "Mr. Martin has been a programmer since 1970.\n\nHe is a co-founder of [cleancoders.com](https://cleancoders.com/),\
+            \ offering on-line video training for software developers.\n\nHe is the founder of Uncle Bob Consulting LLC, offering\
+            \ software consulting, training, and skill development services to major corporations worldwide. He served as\
+            \ the Master Craftsman at 8th Light inc, a Chicago based Software Consulting firm.\n\nMr. Martin has published\
+            \ dozens of articles in various trade journals, and is a regular speaker at international conferences and trade\
+            \ shows.\n\nHe is also the creator of the acclaimed educational Clean Code video series at cleancoders.com.\n\n\
+            Mr. Martin has authored and edited many books."
     twitter: unclebobmartin
   - id: 1088
     fileName: 1088.jpg
@@ -14741,3 +14737,204 @@ speakers:
             \ work culture. Interested in distributed systems, functional programming and deep understanding of the goals,\
             \ means and proposed solutions."}
     twitter: Horusiath
+  - id: 1090
+    fileName: 1090.jpg
+    name:
+      - {language: en, text: "Maria Palagina"}
+      - {language: ru, text: "Мария Палагина"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Test manager at Tinkoff. Seven years experience as tester, QA lead and QA manager."}
+      - {language: ru, text: "Тест-менеджер в привлечении Tinkoff. Семь лет опыта работы в качестве тестировщика, лида QA\
+            \ и QA-менеджера."}
+  - id: 1091
+    fileName: 1091.jpg
+    name:
+      - {language: en, text: "Adam Tornhill"}
+    company:
+      - {language: en, text: Empear}
+    bio:
+      - {language: en, text: "Adam is a programmer that combines degrees in engineering and psychology. He’s the founder of\
+            \ Empear where he designs tools for software analysis. Adam is the author of \"Software Design X-Rays\", the best-selling\
+            \ \"Your Code as a Crime Scene,\" \"Lisp for the Web\" and \"Patterns in C.\""}
+    twitter: AdamTornhill
+  - id: 1092
+    fileName: 1092.jpg
+    name:
+      - {language: en, text: "Viktor Orlovsky"}
+      - {language: ru, text: "Виктор Орловский"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Viktor has been worked in Yandex in automated testing since 2013. He has had a lot of projects\
+            \ in testing REST API services, services that use IMAP/POP3 application layer protocols, web interfaces, and mobile\
+            \ applications. Viktor is one of the founders of the OpenAPI generator and author of swagger-coverage. He runs\
+            \ blog on automated testing."}
+      - {language: ru, text: "Занимается автоматизацией с 2013 года в компании Яндекс. Успел позаниматься множеством проек\
+            тов для тестирования REST API сервисов, а также сервисов, использующих протоколы прикладного уровня IMAP/POP3,\
+            \ web-интерфейсов и мобильных приложений. Является одним из основателей OpenAPI generator, а также автором swagger-coverage.\
+            \ Ведет свой блог по автоматизации тестирования."}
+  - id: 1093
+    fileName: 1093.jpg
+    name:
+      - {language: en, text: "Ivan Krutov"}
+      - {language: ru, text: "Иван Крутов"}
+    company:
+      - {language: en, text: Aerokube}
+    bio:
+      - {language: en, text: "10+ years of Java and Golang development experience. Workes with distributed and fault-tolerant\
+            \ software testing infrastructure for more than 6 years. Maintains a big Selenium cluster with more than 5000\
+            \ browsers running in parallel."}
+      - {language: ru, text: "Больше 10 лет разрабатывает на Java и Golang. Работает с распределенной отказоустойчивой инф\
+            раструктурой тестирования больше 6 лет. Обеспечивает бесперебойную работу Selenium-кластера из более чем 5000\
+            \ параллельно работающих браузеров."}
+  - id: 1094
+    fileName: 1094.jpg
+    name:
+      - {language: en, text: "Andrey Serbin"}
+      - {language: ru, text: "Андрей Сербин"}
+    company:
+      - {language: en, text: "Grid Dynamics"}
+    bio:
+      - {language: en, text: "In IT since 2012. Almost immediately went into automation. He was a QA lead and helped Silicon\
+            \ Valley startups set up QA processes from scratch. Now he is engaged in infrastructure testing at Grid Dynamics."}
+      - {language: ru, text: "В IT c 2012 года. Почти сразу ушел в автоматизацию. Был QA-лидом и помогал стартапам Силикон\
+            овой долины ставить QA-процессы с нуля. Сейчас занимается инфраструктурным тестированием в Grid Dynamics."}
+  - id: 1095
+    fileName: 1095.jpg
+    name:
+      - {language: en, text: "Aleksei Dremin"}
+    company:
+      - {language: en, text: Invitae}
+    bio:
+      - {language: en, text: "Aleksei has been in IT for 9 years. At the beginning of the career he was a Software Engineer\
+            \ and last 4 years he's working as Application and Engineering Security Team Lead in Invitae. Aleksei is in charge\
+            \ of build and maintains Application Security Program in my company. Main duties are tracking and analysis application\
+            \ and cloud threats, security analysis of architecture and code, developing guides on designing secure applications\
+            \ and teaching developers based on Security Champions program. Speaker at Positive Hack Days. Areas of expertise\
+            \ include cloud security AWS, Azure, web application security and building Security Operation Center. Aleksei\
+            \ holds CISSP (Certified Information Systems Security Professional) and in the process of obtaining OSWE (Offensive\
+            \ Security Web Expert)."}
+    twitter: alekseidremin
+  - id: 1096
+    fileName: 1096.jpg
+    name:
+      - {language: en, text: "Elliotte Rusty Harold"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Elliotte Rusty Harold is originally from New Orleans to which he returns periodically in search\
+            \ of a decent bowl of gumbo. However, he currently resides in the Prospect Heights neighborhood of Brooklyn with\
+            \ his wife Beth and dog Thor. He’s the current maintainer of the Jaxen XPath library, a committer in the Apache\
+            \ Maven project, and the creator of the XOM library for processing XML with Java. His books include Java I/O,\
+            \ Java Network Programming, XML in a Nutshell, and Refactoring HTML. He's currently tech lead for Google’s Cloud\
+            \ Tools for Eclipse."}
+    twitter: elharo
+  - id: 1097
+    fileName: 1097.jpg
+    name:
+      - {language: en, text: "Dmitry Makarenko"}
+      - {language: ru, text: "Дмитрий Макаренко"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Has been testing mobile applications for more than 5 years. For the last 2.5 years, Dmitry has\
+            \ been working as Android QA in Badoo, where he does both manual testing and test automation for Android applications."}
+      - {language: ru, text: "Тестирует мобильные приложения более 5 лет. Последние 2.5 года работает Android QA в Badoo,\
+            \ где занимается как ручным тестированием, так и автоматизацией тестов для Андроид-приложения"}
+  - id: 1098
+    fileName: 1098.jpg
+    name:
+      - {language: en, text: "Sven Ruppert"}
+    company:
+      - {language: en, text: JFrog}
+    bio:
+      - {language: en, text: "Sven is Developer Advocate (DevSecOps) at JFrog and working with Java since 1996 in industrial\
+            \ projects. He was working over 15 years as a consultant worldwide in industries like Automotive, Space, Insurance,\
+            \ Banking, UN and WorldBank. During the last years before he joined JFrog, he was Head of R&D at a reply company\
+            \ and Developer Advocate for Vaadin. Sven is working on Mutation Testing of Web apps and Distributed UnitTesting\
+            \ besides his evergreen topic Core Java and DevSecOps."}
+    twitter: SvenRuppert
+  - id: 1099
+    fileName: 1099.jpg
+    name:
+      - {language: en, text: "Maksim Mikharev"}
+      - {language: ru, text: "Максим Михарев"}
+    company:
+      - {language: en, text: Wrike}
+    bio:
+      - {language: en, text: TBD}
+  - id: 1100
+    fileName: 1100.jpg
+    name:
+      - {language: en, text: "Konstantin Chuprov"}
+      - {language: ru, text: "Константин Чупров"}
+    company: []
+    bio:
+      - language: en
+        text: "Graduated from Saratov State Technical University with a degree in \"Automated Information Processing and Management\
+            \ Systems\".\nBefore gamedev Konstantine worked at Mirantis and Neoflex with automated testing.\nIn 2014 he got\
+            \ a job at Wargaming Spb for the World of Warships project where he was engaged in testing and game performance\
+            \ analysis."
+      - language: ru
+        text: "Закончил Саратовской Государственный Технический Университет по специальности «Автоматизированные системы о\
+            бработки информации и управления».\nДо геймдева работал в компаниях Mirantis и Neoflex в направлениях автомати\
+            зации тестирования.\nВ 2014 году устроился в Wargaming Spb на проект World of Warships, где занимался тестиров\
+            анием и анализом производительности игры."
+  - id: 1101
+    fileName: 1101.jpg
+    name:
+      - {language: en, text: "Stanislav Vasenkov"}
+      - {language: ru, text: "Станислав Васенков"}
+    company:
+      - {language: en, text: Jobtoday.com}
+    bio:
+      - language: en
+        text: "Working in IT since 2007, started with WAP-sites for first mobile phones with internet.\nStanislav was backend-,\
+            \ frontend-developer, product-manager.\nIn love with QA since 2013, currently working as an engineer, consultant\
+            \ and teacher in test automation.\n\nFounder of test automation community in [Telegram](https://t.me/qa_automation).\n\
+            Organized QA conference in [Cyprus](https://qa.cyprusitforum.com/ru)."
+      - language: ru
+        text: "В IT с 2007 года, начинал с написания черно-белых WAP-сайтов для первых мобильных телефонов с интернетом.\n\
+            Был backend-, frontend-разработчиком, product-менеджером.\nЗанимается QA с 2013 года, в настоящий момент работ\
+            ает как инженер, консультант и преподаватель по автоматизации тестирования.\n\nОснователь комьюнити по автомат\
+            изации тестирования в [Телеграме](https://t.me/qa_automation).\nОрганизовывал конференцию по [QA](https://qa.cyprusitforum.com/ru)."
+  - id: 1102
+    fileName: 1102.jpg
+    name:
+      - {language: en, text: "Olga Kuksa"}
+      - {language: ru, text: "Ольга Кукса"}
+    company:
+      - {language: en, text: "Modelus LLC"}
+    bio:
+      - {language: en, text: "Passionate QA engineer with software development background. Experienced in all kinds of tests\
+            \ — from the manual (functional/non-functional) to automated unit/integration/API/UI. During QA team leadership\
+            \ trained the skill to turn complex things into simple words. In Test in Modelus LLC software engineer."}
+      - {language: ru, text: "Увлечённый full-stack QA engineer с навыками разработки. Опыт во всех видах тестирования — о\
+            т ручного (функционального/нефункционального) до автоматизированного (unit/integration/API/UI). Во время руков\
+            одства командой тестировщиков натренировала навык превращать сложные вещи в простые слова. Software Engineer In\
+            \ Test в Modelus LLC."}
+  - id: 1103
+    fileName: 1103.jpg
+    name:
+      - {language: en, text: "Yorgos Saslis"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - {language: en, text: "Yorgos is an OSS enthusiast and software craftsman, with a background in concurrency and distributed\
+            \ systems, in telecoms. He cares about improving the problem-solving process — not just solving the problem —\
+            \ so he helps teams improve their software delivery process. He believes deeply in the power of community, and\
+            \ so helps run AgileCrete.org and JCrete.org, along with other meet-ups on the (paradise) island of Crete. His\
+            \ day job finds him automating stuff, at Red Hat, the world’s open source leader."}
+    twitter: gsaslis
+  - id: 1104
+    fileName: 1104.jpg
+    name:
+      - {language: en, text: "Tim Baverstock"}
+    company:
+      - {language: en, text: "Badoo (by MagicLab)"}
+    bio:
+      - {language: en, text: TBD}

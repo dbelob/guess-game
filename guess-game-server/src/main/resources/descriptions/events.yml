@@ -421,15 +421,20 @@ events:
     name:
       - {language: en, text: "Heisenbug 2020 SPb"}
       - {language: ru, text: "Heisenbug 2020 СПб"}
-    startDate: 2020-04-08
-    endDate: 2020-04-09
+    startDate: "2020-04-08"
+    endDate: "2020-04-09"
+    siteLink:
+      - {language: en, text: "https://heisenbug-piter.ru/en/"}
+      - {language: ru, text: "https://heisenbug-piter.ru/"}
     city:
       - {language: en, text: "Saint Petersburg"}
-      - {language: ru, text: "Санкт-Петербург"}
+      - {language: ru, text: Санкт-Петербург}
     venueAddress:
-      - {language: en, text: "Expoforum"}
-      - {language: ru, text: "Экспофорум"}
-    talkIds: []
+      - {language: en, text: "Peterburgskoye hwy., 62/1, Expoforum"}
+      - {language: ru, text: "Петербургское шоссе, 64/1, КВЦ «Экспофорум»"}
+    mapCoordinates: "59.762236, 30.356121"
+    talkIds: [1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387, 1388, 1389, 1390, 1391, 1392, 1393, 1394,
+              1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402]
   # HolyJS
   - eventTypeId: 4
     name:
