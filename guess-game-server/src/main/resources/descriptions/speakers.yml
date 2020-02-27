@@ -9069,7 +9069,15 @@ speakers:
       - {language: en, text: "Pavel Malyshev"}
       - {language: ru, text: "Павел Малышев"}
     company:
-      - {language: en, text: "Mustlab"}
+      - {language: en, text: Mustlab}
+    bio:
+      - {language: en, text: "Experienced full-stack developer, project manager, and entrepreneur. Speaker at the most popular\
+            \ conferences and meetups. IT evangelist and CIS countries SvelteJS community leader. Prefers to work on interesting\
+            \ projects as a technical leader and solve complex tasks using various technologies and approaches."}
+      - {language: ru, text: "Опытный full-stack разработчик и руководитель разработки. Спикер конференций и митапов по фр\
+            онтенду. ИТ-евангелист и организатор сообщества фреймворка SvelteJS в СНГ. Предпочитает работать над интересны\
+            ми проектами в качестве технического лидера и решать сложные задачи, используя различные технологии и подходы."}
+    twitter: PaulMaly
   - id: 662
     fileName: 0662.jpg
     name:
@@ -9582,7 +9590,7 @@ speakers:
   - id: 698
     fileName: 0698.jpg
     name:
-      - {language: en, text: "Victor Vershanskij"}
+      - {language: en, text: "Viktor Vershansky"}
       - {language: ru, text: "Виктор Вершанский"}
     company:
       - {language: en, text: "uKit Group"}
@@ -9949,14 +9957,18 @@ speakers:
       - {language: en, text: Yandex.Money}
       - {language: ru, text: Яндекс.Деньги}
     bio:
-      - {language: en, text: "Andrey is a lead frontend developer at Yandex.Money. In his free time, he engages in a non-commercial\
-            \ project \"Devschacht\", where he translates and writes articles about web development. Also, he makes podcasts\
-            \ \"Devschacht\" and \"Midnight Frontend\" and actively participates in the life of the local and the global frontend\
-            \ community."}
-      - {language: ru, text: "Работает ведущим разработчиком в компании Яндекс.Деньги. В свободное от работы время развива\
-            ет некоммерческий проект «Девшахта», в рамках которого делает переводы и пишет оригинальные статьи на тему веб\
-            -разработки. Ведёт подкасты «Девшахта» и «Ночной фронтенд». Активно участвует в жизни петербургского (и не тол\
-            ько) фронтенд-сообщества."}
+      - language: en
+        text: "Before becoming a frontend developer, Andrey was engaged in the development of geophysical equipment. He was\
+            \ writing assembly code for the microcontrollers and was solving the problem of data transfer by kilometer noisy\
+            \ cable. \nThen he got a bit bored in the frontend, but recently discovered a lot of poorly researched (at least\
+            \ in Runet) low-level areas associated with the issues of generating machine code from JavaScript.\nHe continues\
+            \ to dig deeper and shares the results with the community."
+      - language: ru
+        text: "Прежде чем стать фронтендером, Андрей несколько лет отдал разработке геофизического оборудования. Писал код\
+            \ для микроконтроллеров на ассемблере и решал задачи передачи данных по километровому шумному кабелю. Во фронт\
+            енде немного заскучал, но недавно обнаружил целый пласт слабо исследованных (по крайней мере, в рунете) низкоу\
+            ровневых областей, связанных с вопросами генерации машинного кода из JavaScript.\nПродолжает копать вглубь и д\
+            елиться с сообществом."
     twitter: amel_true
     gitHub: amel-true
   - id: 724
@@ -13848,6 +13860,16 @@ speakers:
     name:
       - {language: en, text: "Sergey Rubanov"}
       - {language: ru, text: "Сергей Рубанов"}
+    company:
+      - {language: en, text: RealAdvisor}
+    bio:
+      - {language: en, text: "BeerJS Moscow, BeerJS Summit, MoscowJS and WebAssembly Moscow meetup organizer, digital nomad,\
+            \ TC39 invited expert, WebAssembly Community Group participant, certified beer sommelier and community guy whose\
+            \ glass is always half full."}
+      - {language: ru, text: "Организатор BeerJS Moscow, BeerJS Summit, MoscowJS и WebAssembly Moscow meetup, цифровой коч\
+            евник, приглашенный эксперт TC39, участник WebAssembly Community Group, сертифицированный пивной сомелье, и community\
+            \ guy, чей стакан всегда наполовину полон. Ведёт канал https://t.me/juliarderity в Telegram."}
+    twitter: chicoxyzzy
   - id: 1028
     fileName: 1028.jpg
     name:
@@ -14700,13 +14722,13 @@ speakers:
       - {language: en, text: "Uncle Bob Consulting LLC"}
     bio:
       - language: en
-        text: "Mr. Martin has been a programmer since 1970.\n\nHe is a co-founder of [cleancoders.com](https://cleancoders.com/),\
-            \ offering on-line video training for software developers.\n\nHe is the founder of Uncle Bob Consulting LLC, offering\
-            \ software consulting, training, and skill development services to major corporations worldwide. He served as\
-            \ the Master Craftsman at 8th Light inc, a Chicago based Software Consulting firm.\n\nMr. Martin has published\
-            \ dozens of articles in various trade journals, and is a regular speaker at international conferences and trade\
-            \ shows.\n\nHe is also the creator of the acclaimed educational Clean Code video series at cleancoders.com.\n\n\
-            Mr. Martin has authored and edited many books."
+        text: "Mr. Martin has been a programmer since 1970.\n\nHe is a co-founder of cleancoders.com, offering on-line video\
+            \ training for software developers.\n\nHe is the founder of Uncle Bob Consulting LLC, offering software consulting,\
+            \ training, and skill development services to major corporations worldwide. He served as the Master Craftsman\
+            \ at 8th Light inc, a Chicago based Software Consulting firm.\n\nMr. Martin has published dozens of articles in\
+            \ various trade journals, and is a regular speaker at international conferences and trade shows.\n\nHe is also\
+            \ the creator of the acclaimed educational Clean Code video series at cleancoders.com.\n\nMr. Martin has authored\
+            \ and edited many books."
     twitter: unclebobmartin
   - id: 1088
     fileName: 1088.jpg
@@ -14930,3 +14952,292 @@ speakers:
             \ so helps run AgileCrete.org and JCrete.org, along with other meet-ups on the (paradise) island of Crete. His\
             \ day job finds him automating stuff, at Red Hat, the world’s open source leader."}
     twitter: gsaslis
+  - id: 1104
+    fileName: 1104.jpg
+    name:
+      - {language: en, text: "Charlie Gerard"}
+    company:
+      - {language: en, text: Netlify}
+    bio:
+      - {language: en, text: "Charlie is a senior frontend developer, Google Developer Expert and Mozilla Tech Speaker. She’\
+            s passionate about human-computer interaction and spends her personal time building interactive side projects\
+            \ using creative coding, machine learning and hardware. She also loves giving back to the community by making\
+            \ all her prototypes open-source, mentoring, blogging and speaking at conferences."}
+    twitter: devdevcharlie
+  - id: 1105
+    fileName: 1105.jpg
+    name:
+      - {language: en, text: "Damian Dulisz"}
+    company:
+      - {language: en, text: Coursedog}
+    bio:
+      - {language: en, text: "Damian is a Vue.js core team member, currently working as a lead frontend engineer at Coursedog.\
+            \ Back in 2016, he co-founded the Official Vue.js Newsletter (news.vuejs.org). He also created several popular\
+            \ open source libraries: vue-multiselect, vuelidate and vue-global-events. In 2017, he co-organised the first\
+            \ international VueConf. Since then, he has been coordinating multiple Vue meetups in Poland. When not coding,\
+            \ he is probably practicing his latte art skills or playing with his camera."}
+    twitter: DamianDulisz
+  - id: 1106
+    fileName: 1106.jpg
+    name:
+      - {language: en, text: "Alexander Rudenko"}
+      - {language: ru, text: "Александр Руденко"}
+    company:
+      - {language: en, text: "Acme Corp"}
+    bio:
+      - {language: en, text: "Alexey worked in companies such as Rambler Group, Raiffeisen Bank, Waves as a Senior Engineer/Team\
+            \ Lead. He's a Ph.D. and Community Leader of Facebook Developer Circle: Moscow. Alexey is fond of the development\
+            \ of Data-Driven Web Applications, Cyber Security, ML&AI."}
+      - {language: ru, text: "Работал в компаниях Rambler Group, Raiffeisen Bank, Waves в роли старшего инженера-разработч\
+            ика/тимлида. Кандидат наук и лид сообщества Facebook Developer Circle: Moscow. Увлекается разработкой высокона\
+            груженных данными web-приложений, Cyber Security, ML&AI."}
+  - id: 1107
+    fileName: 1107.jpg
+    name:
+      - {language: en, text: "Maria Shakshina"}
+      - {language: ru, text: "Мария Шакшина"}
+    company:
+      - {language: en, text: "Roox Solutions"}
+    bio:
+      - {language: en, text: "Still in school, Maria was inspired by programmer's success stories, went to tech university\
+            \ and never regretted. She has a master's degree in SPb ITMO, faculty of Corporate information systems development.\
+            \ For almost 6 years she was a full-stack, frontend developer and DevOps a little. Now she develops business portals\
+            \ for Internet banks."}
+      - {language: ru, text: "Еще в школе вдохновилась историями успеха программистов, поступила в технический ВУЗ своей м\
+            ечты и ни разу не пожалела. Окончила магистратуру в СПб ИТМО по специальности Разработка корпоративных информа\
+            ционных систем. За почти 6 лет успела попробовать себя в роли фуллстека, фронтендера и немного девопса. Сейчас\
+            \ занимается разработкой бизнес-порталов для Интернет-банков."}
+  - id: 1108
+    fileName: 1108.jpg
+    name:
+      - {language: en, text: "David Nolen"}
+    company:
+      - {language: en, text: "LEDGR Inc"}
+    bio:
+      - {language: en, text: "David Nolen is a software engineer and international speaker on applying functional programming\
+            \ techniques and tools to industrial software development. He is the lead developer of ClojureScript, a version\
+            \ of Clojure that compiles to JavaScript."}
+    twitter: swannodette
+  - id: 1109
+    fileName: 1109.jpg
+    name:
+      - {language: en, text: "Sergey Melyukov"}
+      - {language: ru, text: "Сергей Мелюков"}
+    company:
+      - {language: en, text: Avito}
+    bio:
+      - {language: en, text: "Web Engineer. At different times he used different languages and directions, and in the last\
+            \ few years, he has focused on JS. Sergey is interested in developing CG applications, actively contributes to\
+            \ Webpack, loves rare tasks such as analysis and work with AST, self-written bundlers, etc."}
+      - {language: ru, text: "Веб-инженер. В разное время использовал разные языки и направления, а в последние несколько\
+            \ лет сосредоточен на JS. Интересуется разработкой CG-приложений, активно контрибьютит в Webpack, любит редкие\
+            \ задачки типа анализа и работы с AST, самописные сборщики, и т.п."}
+    twitter: smelukov
+  - id: 1110
+    fileName: 1110.jpg
+    name:
+      - {language: en, text: "Margarita Obraztsova"}
+    company:
+      - {language: en, text: Nitor}
+    bio:
+      - {language: en, text: "Margarita is a software engineer and international speaker on tools to improving software development\
+            \ processes. She is a consultant software engineer, who loves to find different ways to optimize project work."}
+    twitter: riittagirl
+  - id: 1111
+    fileName: 1111.jpg
+    name:
+      - {language: en, text: "Franziska Hinkelmann"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Franziska has a Ph.D. in mathematics and is a senior engineer at Google working on the Cloud\
+            \ Platform team in New York City. She’s a member of the Node.js Technical Steering Committee and an expert on\
+            \ JavaScript performance. When she's not working hard on making Node.js better on the Cloud Platform, she's probably\
+            \ out riding horses."}
+    twitter: fhinkel
+  - id: 1112
+    fileName: 1112.jpg
+    name:
+      - {language: en, text: "Craig Spence"}
+    company:
+      - {language: en, text: Spotify}
+    bio:
+      - {language: en, text: "Experienced JavaScript/Front-end Developer with several years experience working on large scale\
+            \ web applications. Passionate about mobile, automated testing, and enabling teams to build great things through\
+            \ great tools."}
+    twitter: phenomnominal
+  - id: 1113
+    fileName: 1113.jpg
+    name:
+      - {language: en, text: "Phil Hawksworth"}
+    company:
+      - {language: en, text: Netlify}
+    bio:
+      - language: en
+        text: "Phil is Principal Developer Experience Engineer at Netlify.\n\nWith a passion for browser technologies, and\
+            \ the empowering properties of the web, he loves seeking out ingenuity and simplicity, especially in places where\
+            \ over-engineering is common.\n\nAfter more than 20 years of building web applications for companies such as Google,\
+            \ Apple, Nike, R/GA, and The London Stock Exchange, Phil has worked to challenge traditional technical architectures\
+            \ in favour of simplicity and effectiveness.\n\nPhil is co-author of “Modern Web Development on the JAMstack”\
+            \ (O’Reilly, 2019)"
+    twitter: philhawksworth
+  - id: 1114
+    fileName: 1114.jpg
+    name:
+      - {language: en, text: "Aleksandr Bogachev"}
+      - {language: ru, text: "Александр Богачёв"}
+    company:
+      - {language: en, text: "Arrival Ltd"}
+    bio:
+      - {language: en, text: "12 years in web development. Backend-developer in the past. Worked at the bloody enterprise,\
+            \ then moved to startup. One of Frontend Youth podcast participants. Dan Abramov said that Aleksandr is a prominent\
+            \ character."}
+      - {language: ru, text: "12 лет в разработке. Бывший бэкендер. Работал в кровавом энтерпрайзе, ушёл в стартап. Ведущи\
+            й подкаста Фронтенд Юность. Дэн Абрамов сказал, что Александр — видный персонаж."}
+    twitter: rm_baad
+  - id: 1115
+    fileName: 1115.jpg
+    name:
+      - {language: en, text: m4dz}
+    company:
+      - {language: en, text: alwaysdata}
+    bio:
+      - {language: en, text: "m4dz is a \"curious pet\". Tech Evangelist at alwaysdata, a PaaS hosting provider, he has made\
+            \ security and privacy one of his challenges for the Web. All the technologies are under his radar, to make all\
+            \ the digital players aware of our realities. Chronic optimist, his favourite book will always remain \"Alice\
+            \ in Wonderland\"."}
+    twitter: m4d_z
+  - id: 1116
+    fileName: 1116.jpg
+    name:
+      - {language: en, text: "Jacek Broński-Jankowski"}
+    company:
+      - {language: en, text: Fandom}
+    bio:
+      - {language: en, text: "Works in Ad Engineering team at Fandom, bringing content to 200M unique visitors per month.\
+            \ Jacek is a huge fan of browser APIs and Web Components. Having worked much as backend engineer with Python he\
+            \ adopted the Zen, especially Simple Is Better Than Complex. He's a developer with too much taste for breadth-first\
+            \ exploration, struggling with work-life balance."}
+    twitter: jacekbj
+  - id: 1117
+    fileName: 1117.jpg
+    name:
+      - {language: en, text: "Ken Wheeler"}
+    company:
+      - {language: en, text: "Citadel Securities"}
+    bio:
+      - language: en
+        text: "Ken Wheeler is a passionate web developer, renowned and celebrated in the developer community: he’s been in\
+            \ the web development business for over a decade, has written and contributed to multiple OSS projects, most notably\
+            \ Slick Carousel and Webpack Dashboard. \nIn his free time, he cracks jokes on the Undefined podcast with one\
+            \ of his all-time best buddies, Jared Palmer, takes care of his kids, and writes awesome music."
+    twitter: ken_wheeler
+  - id: 1118
+    fileName: 1118.jpg
+    name:
+      - {language: en, text: "Roman Paradeev"}
+      - {language: ru, text: "Роман Парадеев"}
+    company:
+      - {language: en, text: Klarna}
+    bio:
+      - {language: en, text: TBD}
+  - id: 1119
+    fileName: 1119.jpg
+    name:
+      - {language: en, text: "Alex Culliere"}
+    company:
+      - {language: en, text: "Relex Oy"}
+    bio:
+      - {language: en, text: "Alex (he/him) is a self-taught engineer with diverse background in development of learning resources,\
+            \ semantic web and domain-specific knowledge systems. He considers software development less of a job and more\
+            \ of a daily practice; curiosity and excitement being his driving force."}
+    twitter: AlexCulliere
+  - id: 1120
+    fileName: 1120.jpg
+    name:
+      - {language: en, text: "Önder Ceylan"}
+    company:
+      - {language: en, text: LINKIT}
+    bio:
+      - {language: en, text: "Önder is a Google Developer Expert in Web Technologies and he has been working on building web\
+            \ and mobile apps in various development ecosystems since the late 90s. JavaScript and web have always been his\
+            \ passion and nowadays he enjoys it at its full while working as a Tech Lead at LINKIT. He believes in teamwork\
+            \ and he shares his knowledge on ITNEXT and GDG-NL communities as a co-organizer and speaker. He's also interested\
+            \ in photography, capturing night photos specifically."}
+    twitter: onderceylan
+  - id: 1121
+    fileName: 1121.jpg
+    name:
+      - {language: en, text: "Hugh Francis"}
+    company:
+      - {language: en, text: "Sanctuary Computer"}
+    bio:
+      - language: en
+        text: "Founder of Sanctuary Computer, Pipe Music, Silo Arts & Records, and author of open source projects such as\
+            \ Ember Infinity, Contentful Fragment, Ember Chimp, MTPLite, Brandibble.js, Brandibble Redux, Spree Ember, and\
+            \ others. Ex-Gin Lane & New Inc.\nHe has spoken in New York, London, Toronto & Brisbane about code & music, and\
+            \ his audio visual art has shown at galleries & festivals including Brisbane’s Emerging Artist Festival, 2High\
+            \ Festival & Badpixel."
+    twitter: _HHFF
+  - id: 1122
+    fileName: 1122.jpg
+    name:
+      - {language: en, text: "Brian Holt"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Brian is currently working as a senior program manager over Visual Studio Code and JavaScript\
+            \ on Azure at Microsoft and he's all about developers, developers, developers. Previously he was a JavaScript\
+            \ engineer at Netflix, LinkedIn and Reddit. When not working, Brian finds time to teach on Frontend Masters, run\
+            \ his mouth on Front End Happy Hour, travel all over the world, and play with his adorable dog. Brian is currently\
+            \ a resident of Seattle, WA."}
+    twitter: holtbt
+  - id: 1123
+    fileName: 1123.jpg
+    name:
+      - {language: en, text: "Sergey Fetiskin"}
+      - {language: ru, text: "Сергей Фетискин"}
+    company:
+      - {language: en, text: Akelius}
+    bio:
+      - {language: en, text: "Frontend developer. Sergey started his carrier with jQuery in the epoch of Web 2.0. Over the\
+            \ years he experienced different technologies and frameworks. For several last years his main choice is Angular.\
+            \ Lives and works in Berlin."}
+      - {language: ru, text: "Фронтенд-разработчик. Сергей начинал ещё с jQuery в эпоху Web 2.0. За прошедшие годы ему дов\
+            елось поработать с разными технологиями и фреймворками. Последние несколько лет его основной выбор — Angular.\
+            \ Живет и работает в Берлине."}
+    twitter: fetis26
+  - id: 1124
+    fileName: 1124.jpg
+    name:
+      - {language: en, text: "Eunjae Lee"}
+    company:
+      - {language: en, text: Algolia}
+    bio:
+      - {language: en, text: "Eunjae is a software engineer at Algolia. He gets excited when learning new things and loves\
+            \ building tools to make life easier. He was born and raised in South Korea. He moved to Singapore in 2017 and\
+            \ now lives in Paris since 2019. He is happily working in Algolia, surrounded by amazing colleagues."}
+    twitter: eunjae_lee
+  - id: 1125
+    fileName: 1125.jpg
+    name:
+      - {language: en, text: "Dario Kondratiuk"}
+    company:
+      - {language: en, text: Multitracks.com}
+    bio:
+      - {language: en, text: "Web Developer with 15+ years on the web industry. Author of Puppeteer-Sharp and Playwright-Sharp.\
+            \ He is also a Puppeteer and Playwright contributor. Passionate about C#, the web, remote work, and the open-source\
+            \ community."}
+    twitter: hardkoded
+  - id: 1126
+    fileName: 1126.jpg
+    name:
+      - {language: en, text: "Natalia Tepluhina"}
+    company:
+      - {language: en, text: GitLab}
+    bio:
+      - language: en
+        text: "Natalia Tepluhina is a Vue.js core team member and a Senior Frontend Engineer at GitLab.\r\n\r\nShe is a conference\
+            \ speaker and author of articles on different topics related to Vue.js . Thanks to these activities Natalia has\
+            \ got a title of Google Developer Expert in Web Technologies."
+    twitter: N_Tepluhina
