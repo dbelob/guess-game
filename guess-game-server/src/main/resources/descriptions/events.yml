@@ -646,6 +646,22 @@ events:
   # JPoint
   - eventTypeId: 7
     name:
+      - {language: en, text: "JPoint 2013"}
+    startDate: "2013-04-05"
+    endDate: "2013-04-05"
+    siteLink:
+      - {language: en, text: "https://2013.jpoint.ru"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Lodeynopolskaya Str., 5, Congress Centre «PetroCongress»"}
+      - {language: ru, text: "Лодейнопольская ул., 5, Конгрессный Центр «ПетроКонгресс»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_v45ufYBhiktO68VmiJF9K
+    mapCoordinates: "59.963937, 30.289414"
+    talkIds: [1465]
+  - eventTypeId: 7
+    name:
       - {language: en, text: "JPoint 2017"}
     startDate: "2017-04-07"
     endDate: "2017-04-08"
