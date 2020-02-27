@@ -42944,28 +42944,3 @@ talks:
     presentationLinks: []
     videoLinks: []
     speakerIds: [1087]
-  - id: 1402
-    name:
-      - {language: en, text: "Scaling Android functional testing is hard"}
-    shortDescription:
-      - {language: en, text: "This talk covers a number of the things Badoo team tried with particular reference to the Android\
-            \ infrastructure, and problems the speaker worked around while working towards the solution they have now, where\
-            \ the team can run 1500 tests in nearly 15 minutes, providing support for multiple versions and configurations\
-            \ of Android where needed."}
-    longDescription:
-      - language: en
-        text: "It’s relatively easy to develop a small suite of Android functional tests, but as a project develops they can\
-            \ become harder to scale and slow.\r\n\r\nFive years ago, Badoo was already an established and successful app\
-            \ with about 300 multi-platform functional tests to help ensure consistency between Android, iOS, and Mobile Web.\
-            \ The tests were relatively easy to write and run, but engineers found those tests to be a nuisance: they usually\
-            \ ran slowly overnight on the master branch, giving very late feedback.\r\n\r\nBadoo team had to improve, to give\
-            \ engineers quick feedback for their particular changes before they merged to master: to do that, they needed\
-            \ to scale Android infrastructure. They had to move slowly, building confidence in the value of the tests, integrating\
-            \ with other systems, and acquiring more hardware to deploy on.\r\n\r\nThis talk covers a number of the things\
-            \ team tried with particular reference to the Android infrastructure, and problems Tim worked around while working\
-            \ towards the solution they have now, where the team can run 1500 tests in nearly 15 minutes, providing support\
-            \ for multiple versions and configurations of Android where needed."
-    language: en
-    presentationLinks: []
-    videoLinks: []
-    speakerIds: [1104]

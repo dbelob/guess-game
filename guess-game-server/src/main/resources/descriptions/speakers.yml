@@ -14930,11 +14930,3 @@ speakers:
             \ so helps run AgileCrete.org and JCrete.org, along with other meet-ups on the (paradise) island of Crete. His\
             \ day job finds him automating stuff, at Red Hat, the world’s open source leader."}
     twitter: gsaslis
-  - id: 1104
-    fileName: 1104.jpg
-    name:
-      - {language: en, text: "Tim Baverstock"}
-    company:
-      - {language: en, text: "Badoo (by MagicLab)"}
-    bio:
-      - {language: en, text: TBD}
