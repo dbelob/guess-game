@@ -659,7 +659,7 @@ events:
       - {language: ru, text: "Лодейнопольская ул., 5, Конгрессный Центр «ПетроКонгресс»"}
     youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_v45ufYBhiktO68VmiJF9K
     mapCoordinates: "59.963937, 30.289414"
-    talkIds: [1465]
+    talkIds: [1465, 1466, 1467, 1468, 1469, 1470, 1471]
   - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2017"}
