@@ -2855,16 +2855,22 @@ speakers:
     name:
       - {language: en, text: "Dmitry Tsitelov"}
       - {language: ru, text: "Дмитрий Цителов"}
+    company:
+      - {language: en, text: Devexperts}
   - id: 215
     fileName: 0215.jpg
     name:
       - {language: en, text: "Vitaly Trifanov"}
       - {language: ru, text: "Виталий Трифанов"}
+    company:
+      - {language: en, text: Devexperts}
   - id: 216
     fileName: 0216.jpg
     name:
       - {language: en, text: "Alexander Makarov"}
       - {language: ru, text: "Александр Макаров"}
+    company:
+      - {language: en, text: Luxoft}
   - id: 217
     fileName: 0217.jpg
     name:
@@ -3060,6 +3066,8 @@ speakers:
     name:
       - {language: en, text: "Alexander Ilin"}
       - {language: ru, text: "Александр Ильин"}
+    company:
+      - {language: en, text: Oracle}
   - id: 242
     fileName: 0242.jpg
     name:
