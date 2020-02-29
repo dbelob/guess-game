@@ -216,12 +216,12 @@
         <td>2020&nbsp;Spb<br>(2020-spb)</td>
         <td>2020&nbsp;Spb<br>(2020-spb)</td>
         <td>2020&nbsp;Spb<br>(2020-spb)</td>
-        <td rowspan="2">2020<br>(2020-spb-hydra)</td>
+        <td rowspan="2">2020<br>(2020-msk-hydra)</td>
         <td rowspan="2"></td>
         <td rowspan="2">2020<br>(2020-jpoint)</td>
         <td rowspan="2">2020<br>(2020-joker)</td>
         <td>2020&nbsp;Spb<br>(2020-spb)</td>
-        <td rowspan="2">2020<br>(2020-spb-sptdc)</td>
+        <td rowspan="2">2020<br>(2020-msk-sptdc)</td>
         <td rowspan="2"></td>
         <td rowspan="2">2020<br>(2020-techtrain)</td>
         <td rowspan="2">2020</td>
