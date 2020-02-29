@@ -1682,6 +1682,7 @@ speakers:
     fileName: 0106.jpg
     name:
       - {language: en, text: "Roman Elizarov"}
+      - {language: ru, text: "Роман Елизаров"}
     company:
       - {language: en, text: JetBrains}
     bio:
@@ -2772,6 +2773,8 @@ speakers:
     fileName: 0203.jpg
     name:
       - {language: en, text: "Pawel Lipinski"}
+    company:
+      - {language: en, text: Pragmatists}
   - id: 204
     fileName: 0204.jpg
     name:
@@ -2824,6 +2827,9 @@ speakers:
     name:
       - {language: en, text: "Roman Antipin"}
       - {language: ru, text: "Роман Антипин"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
   - id: 211
     fileName: 0211.jpg
     name:

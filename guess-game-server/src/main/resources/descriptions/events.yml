@@ -729,6 +729,22 @@ events:
   # Joker
   - eventTypeId: 8
     name:
+      - {language: en, text: "Joker 2013"}
+    startDate: "2013-10-15"
+    endDate: "2013-10-15"
+    siteLink:
+      - {language: en, text: "https://2013.jokerconf.com"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Korablestroiteley St., 14, Hotel «Park Inn Pribaltiyskaya»"}
+      - {language: ru, text: "ул. Кораблестроителей, 14, Гостиница «Park Inn Прибалтийская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8g_BkXetdmDEKYK3hUGnPw
+    mapCoordinates: "59.938730, 30.214385"
+    talkIds: [1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489]
+  - eventTypeId: 8
+    name:
       - {language: en, text: "Joker 2016"}
     startDate: "2016-10-14"
     endDate: "2016-10-15"
