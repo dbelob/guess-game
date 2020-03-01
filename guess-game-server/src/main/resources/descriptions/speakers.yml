@@ -2764,11 +2764,15 @@ speakers:
     fileName: 0201.jpg
     name:
       - {language: en, text: "Kirk Pepperdine"}
+    company:
+      - {language: en, text: "Kodewerk Ltd."}
   - id: 202
     fileName: 0202.jpg
     name:
       - {language: en, text: "Alexander Belocerkovsky"}
       - {language: ru, text: "Александр Белоцерковский"}
+    company:
+      - {language: en, text: Microsoft}
   - id: 203
     fileName: 0203.jpg
     name:
@@ -2780,6 +2784,8 @@ speakers:
     name:
       - {language: en, text: "Alexander Otenko"}
       - {language: ru, text: "Александр Отенко"}
+    company:
+      - {language: en, text: Oracle}
   - id: 205
     fileName: 0205.jpg
     name:
@@ -2812,6 +2818,8 @@ speakers:
     name:
       - {language: en, text: "Mihail Bykov"}
       - {language: ru, text: "Михаил Быков"}
+    company:
+      - {language: en, text: Oracle}
   - id: 208
     fileName: 0208.jpg
     name:
