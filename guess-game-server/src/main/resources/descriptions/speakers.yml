@@ -570,6 +570,8 @@ speakers:
     name:
       - {language: en, text: "Alexander Mironenko"}
       - {language: ru, text: "Александр Мироненко"}
+    company:
+      - {language: en, text: Oracle}
   - id: 35
     fileName: 0035.jpg
     name:
@@ -2830,6 +2832,8 @@ speakers:
     name:
       - {language: en, text: "Pavel Pavlov"}
       - {language: ru, text: "Павел Павлов"}
+    company:
+      - {language: en, text: Excelsior}
   - id: 210
     fileName: 0210.jpg
     name:
@@ -2843,6 +2847,8 @@ speakers:
     name:
       - {language: en, text: "Sergey Klimenkov"}
       - {language: ru, text: "Сергей Клименков"}
+    company:
+      - {language: en, text: Tune-IT}
   - id: 212
     fileName: 0212.jpg
     name:
