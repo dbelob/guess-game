@@ -25,7 +25,7 @@
 
         <logback.version>1.2.3</logback.version>
         <sl4j.version>1.7.30</sl4j.version>
-        <snakeyaml.version>1.25</snakeyaml.version>
+        <snakeyaml.version>1.26</snakeyaml.version>
         <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
         <springfox.swagger>2.9.2</springfox.swagger>
 
