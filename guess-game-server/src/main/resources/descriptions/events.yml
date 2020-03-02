@@ -675,7 +675,7 @@ events:
       - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
     youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8qDFSA2rpbpuE3OTkEbAwe
     mapCoordinates: "55.741881, 37.568099"
-    talkIds: []
+    talkIds: [1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520, 1521]
   - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2017"}

@@ -214,6 +214,16 @@ speakers:
     name:
       - {language: en, text: "Konstantin Krivopustov"}
       - {language: ru, text: "Константин Кривопустов"}
+    company:
+      - {language: en, text: Haulmont}
+    bio:
+      - {language: ru, text: "Технический директор Haulmont, архитектор и один из основных разработчиков платформы\
+      \ <a href=\"https://www.cuba-platform.com/\" target=\"_blank\">CUBA</a>. Опыт работы с Java — 10 лет, всего опыт\
+      \ разработки бизнес-приложений — более 15 лет. Начинал с участия в разработке тиражируемой системы управления\
+      \ предприятием, затем MES для автомобильного производства. Позднее был техническим руководителем проекта для крупнейшего\
+      \ оператора minicabs (такси) в Лондоне, предъявлявшего жесточайшие требования по производительности и отказоустойчивости\
+      \ решения.\n\nВ данный момент занимается разработкой ядра платформы, вопросами модульности и отказоустойчивости\
+      \ приложений, а также руководит созданием CUBA Studio — инструмента разработки на платформе."}
   - id: 12
     fileName: 0012.jpg
     name:
@@ -2757,11 +2767,26 @@ speakers:
     name:
       - {language: en, text: "Alexey Vishentsev"}
       - {language: ru, text: "Алексей Вишенцев"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: ru
+        text: "Инженер компании Сбербанк-Технологии. В прошлом инженер Deutsche Bank, Sun Microsystems и TogetherSoft.\
+        \ Женат, воспитывает троих детей."
   - id: 200
     fileName: 0200.jpg
     name:
       - {language: en, text: "Ilya Agoshkov"}
       - {language: ru, text: "Илья Агошков"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: ru
+        text: "Разрабатывает на Java с 2004 года. С 2010 по 2012 год работал в компании DeutscheBank в команде разработки\
+        \ трейдинговой платформы AutobahnFX. С 2012 года работает в компании Сбербанк-Технологии и руководит разработкой\
+        \ ядра платформы для управления рисками инвестиционного бизнеса."
   - id: 201
     fileName: 0201.jpg
     name:
