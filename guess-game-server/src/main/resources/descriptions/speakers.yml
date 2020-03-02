@@ -2793,6 +2793,8 @@ speakers:
     name:
       - {language: en, text: "Kuzma Deretuk"}
       - {language: ru, text: "Кузьма Деретюк"}
+    company:
+      - {language: en, text: "Deutsche Bank"}
   - id: 206
     fileName: 0206.jpg
     name:
@@ -2827,6 +2829,8 @@ speakers:
     name:
       - {language: en, text: "Mihail Hludnev"}
       - {language: ru, text: "Михаил Хлуднев"}
+    company:
+      - {language: en, text: GridDynamics}
   - id: 209
     fileName: 0209.jpg
     name:
