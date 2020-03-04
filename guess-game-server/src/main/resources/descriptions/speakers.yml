@@ -2730,10 +2730,24 @@ speakers:
     fileName: 0190.jpg
     name:
       - {language: en, text: "Christoph Engelbert"}
+    bio:
+      - language: en
+        text: "Started with Basic and C64, later moved over C++ but eventually started Java around 2005. After some years\
+        \ of web development started to get interested in the JVM internals and what makes a Java application fast and\
+        \ memory efficient.\nNow is mostly helping companies making efficient and scalable architectures and so he’s\
+        \ finally working for Hazelcast."
   - id: 191
     fileName: 0191.jpg
     name:
       - {language: en, text: "Peter Lawrey"}
+    bio:
+      - language: en
+        text: "Likes to inspire developers to improve the craftmanship of their solutions, engineer their systems for\
+        \ simplicity and performance, and enjoy their work more by being creative and innovative. Has a popular blog\
+        \ \"Vanilla Java\" which has had over 3 million page views, is 3rd on StackOverflow.com for Java with over 10K\
+        \ answers.\nFounder of the Performance Java User's Group with 900 members. Lead developer of the OpenHFT project\
+        \ which includes support for off heap memory such as embedded databases supporting billions of keys-values with 1\
+        \ micro-second update latency, thread pinning and low latency persisted IPC (as low as 100 nano-seconds)"
   - id: 192
     fileName: 0192.jpg
     name:
