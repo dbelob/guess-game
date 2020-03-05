@@ -2752,6 +2752,16 @@ speakers:
     fileName: 0192.jpg
     name:
       - {language: en, text: "Markus Eisele"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - language: en
+        text: "Developer Advocate at Red Hat and focuses on JBoss Middleware. He is working with Java EE servers from\
+        \ different vendors since more than 14 years and talks about his favorite topics around Java EE on conferences\
+        \ all over the world. He has been a principle consultant and worked with different customers on all kinds of Java\
+        \ EE related applications and solutions. Beside that he has always been a prolific blogger, writer and tech editor\
+        \ for different Java EE related books. He is the Java Community leader of the German DOAG e.V. and it's representative\
+        \ on the iJUG e.V. As a Java Champion and former ACE Director he is well known in the community."
   - id: 193
     fileName: 0193.jpg
     name:
