@@ -3145,6 +3145,15 @@ speakers:
     fileName: 0242.jpg
     name:
       - {language: en, text: "Nicolas Fränkel"}
+    company:
+      - {language: en, text: hybris}
+    bio:
+      - language: en
+        text: "Software Architect with 12+ years experience consulting for many different customers, in a wide range of\
+        \ contexts (such as telecoms, banking, insurances, large retail and public sector). Generally focused on Java and\
+        \ JavaEE technologies, but narrowed interests like Software Quality, Build Processes and Rich Internet\
+        \ Applications.\n\nCurrently working for a eCommerce solution vendor leader. Also double as a teacher in universities\
+        \ and higher education schools, and a trainer for experienced pros, and triples as a book author."
   - id: 243
     fileName: 0243.jpg
     name:
