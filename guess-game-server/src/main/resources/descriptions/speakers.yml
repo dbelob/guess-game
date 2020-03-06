@@ -2772,6 +2772,12 @@ speakers:
     name:
       - {language: en, text: "Dmitry Lazarenko"}
       - {language: ru, text: "Дмитрий Лазаренко"}
+    company:
+      - {language: en, text: "Jelastic"}
+    bio:
+      - language: ru
+        text: "Управляющий директор Jelastic-Россия. Имеет за плечами десятилетний опыт проектирования и разработки\
+        \ высоконагруженных систем на Java, включая кластерные и интеграционные решения, а так же системы защиты информации."
   - id: 195
     fileName: 0195.jpg
     name:
