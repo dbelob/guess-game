@@ -26,8 +26,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/question")
 public class QuestionController {
-    private QuestionService questionService;
-    private LocaleService localeService;
+    private final QuestionService questionService;
+    private final LocaleService localeService;
 
     @Autowired
     public QuestionController(QuestionService questionService, LocaleService localeService) {

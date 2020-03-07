@@ -25,9 +25,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/state")
 public class StateController {
-    private StateService stateService;
-    private AnswerService answerService;
-    private LocaleService localeService;
+    private final StateService stateService;
+    private final AnswerService answerService;
+    private final LocaleService localeService;
 
     @Autowired
     public StateController(StateService stateService, AnswerService answerService, LocaleService localeService) {

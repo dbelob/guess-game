@@ -24,9 +24,9 @@ import java.util.stream.Collectors;
  */
 @Service
 public class StateServiceImpl implements StateService {
-    private StateDao stateDao;
-    private QuestionDao questionDao;
-    private AnswerDao answerDao;
+    private final StateDao stateDao;
+    private final QuestionDao questionDao;
+    private final AnswerDao answerDao;
 
     @Autowired
     public StateServiceImpl(StateDao stateDao, QuestionDao questionDao, AnswerDao answerDao) {

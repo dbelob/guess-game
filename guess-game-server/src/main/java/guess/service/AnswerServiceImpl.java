@@ -26,8 +26,8 @@ import java.util.stream.Collectors;
  */
 @Service
 public class AnswerServiceImpl implements AnswerService {
-    private AnswerDao answerDao;
-    private StateDao stateDao;
+    private final AnswerDao answerDao;
+    private final StateDao stateDao;
 
     @Autowired
     public AnswerServiceImpl(AnswerDao answerDao, StateDao stateDao) {

@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Service
 public class QuestionServiceImpl implements QuestionService {
-    private QuestionDao questionDao;
+    private final QuestionDao questionDao;
 
     @Autowired
     public QuestionServiceImpl(QuestionDao questionDao) {

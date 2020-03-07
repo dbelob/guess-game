@@ -3,8 +3,8 @@ package guess.util.yaml;
 import java.util.List;
 
 public class PropertyMatcher {
-    private Class<?> clazz;
-    private List<String> propertyNames;
+    private final Class<?> clazz;
+    private final List<String> propertyNames;
 
     public PropertyMatcher(Class<?> clazz, List<String> propertyNames) throws NoSuchFieldException {
         this.clazz = clazz;
