@@ -2773,7 +2773,7 @@ speakers:
       - {language: en, text: "Dmitry Lazarenko"}
       - {language: ru, text: "Дмитрий Лазаренко"}
     company:
-      - {language: en, text: "Jelastic"}
+      - {language: en, text: Jelastic}
     bio:
       - language: ru
         text: "Управляющий директор Jelastic-Россия. Имеет за плечами десятилетний опыт проектирования и разработки\
@@ -2783,11 +2783,28 @@ speakers:
     name:
       - {language: en, text: "Svetlana Isakova"}
       - {language: ru, text: "Светлана Исакова"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - language: ru
+        text: "Разработчик языка Kotlin в компании JetBrains c 2011 года. Любит рассказывать про Kotlin на конференциях.\
+        \ До присоединения к команде Kotlin была апологетом программирования на Scala. Любит концепты и идеи, а также\
+        \ кататься на горных лыжах."
   - id: 196
     fileName: 0196.jpg
     name:
       - {language: en, text: "Alexey Shevchuk"}
       - {language: ru, text: "Алексей Шевчук"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - language: ru
+        text: "Начал карьеру программиста в 1999 году. Разрабатывал ПО в банковской, государственной и игровой сферах.\
+        \ Ведущий разработчик в «Одноклассниках» с 2009 года. Отвечает за разработку, архитектуру и производительность\
+        \ поисковой системы, обрабатывающей более 4000 запросов в секунду и делающей для этого десятки тысяч подзапросов\
+        \ в индексы и за данными.\n\nПомимо этого Алексей занимается обучением разработчиков внутри компании и регулярно\
+        \ выступает на конференциях (Highload++, JavaOne Russia, Lucene/Solr Revolution и др.)."
   - id: 197
     fileName: 0197.jpg
     name:
@@ -3174,6 +3191,16 @@ speakers:
     fileName: 0243.jpg
     name:
       - {language: en, text: "Marcus Lagergren"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - language: en
+        text: "One of the founding members of Appeal Virtual Machines, the company that developed the JRockit JVM, bought\
+        \ by BEA Systems in 2002. Team lead and architect for the JRockit code generators; he has been involved in pretty\
+        \ much every other aspect of JVMs over the years. Between 2007 and 2010, worked for Oracle on fast Virtualization\
+        \ technology. As of September 2011, he is a member of the Oracle Java language team, investigating dynamic languages\
+        \ on the JVM and general runtime futurist.\n\nCo-author of the book “Oracle JRockit – the definitive guide“, which,\
+        \ despite the product centric title, has been praised as the best book ever written on JVM internals."
   - id: 244
     fileName: 0244.jpg
     name:
