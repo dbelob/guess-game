@@ -392,8 +392,8 @@ public class CustomEmitter implements Emitable {
     }
 
     private void expectAlias() throws IOException {
-        if (((NodeEvent) event).getAnchor() == null) {
-            throw new EmitterException("anchor is not specified for alias");
+        if (!(event instanceof AliasEvent)) {
+            throw new EmitterException("Alias must be provided");
         }
         processAnchor("*");
         state = states.pop();
@@ -681,10 +681,10 @@ public class CustomEmitter implements Emitable {
             if (analysis == null) {
                 analysis = analyzeScalar(((ScalarEvent) event).getValue());
             }
-            length += analysis.scalar.length();
+            length += analysis.getScalar().length();
         }
         return length < maxSimpleKeyLength && (event instanceof AliasEvent
-                || (event instanceof ScalarEvent && !analysis.empty && !analysis.multiline)
+                || (event instanceof ScalarEvent && !analysis.isEmpty() && !analysis.isMultiline())
                 || checkEmptySequence() || checkEmptyMapping());
     }
 
@@ -748,8 +748,8 @@ public class CustomEmitter implements Emitable {
             return DumperOptions.ScalarStyle.DOUBLE_QUOTED;
         }
         if (ev.isPlain() && ev.getImplicit().canOmitTagInPlainScalar()) {
-            if (!(simpleKeyContext && (analysis.empty || analysis.multiline))
-                    && ((flowLevel != 0 && analysis.allowFlowPlain) || (flowLevel == 0 && analysis.allowBlockPlain))) {
+            if (!(simpleKeyContext && (analysis.isEmpty() || analysis.isMultiline()))
+                    && ((flowLevel != 0 && analysis.isAllowFlowPlain()) || (flowLevel == 0 && analysis.isAllowBlockPlain()))) {
 //                return null;
                 return (!simpleKeyContext && ev.getImplicit().canOmitTagInNonPlainScalar() && ev.getValue().contains(" ")) ?
                         DumperOptions.ScalarStyle.DOUBLE_QUOTED :
@@ -757,13 +757,13 @@ public class CustomEmitter implements Emitable {
             }
         }
         if (!ev.isPlain() && (ev.getScalarStyle() == DumperOptions.ScalarStyle.LITERAL || ev.getScalarStyle() == DumperOptions.ScalarStyle.FOLDED)) {
-            if (flowLevel == 0 && !simpleKeyContext && analysis.allowBlock) {
+            if (flowLevel == 0 && !simpleKeyContext && analysis.isAllowBlock()) {
 //                return ev.getScalarStyle();
                 return DumperOptions.ScalarStyle.DOUBLE_QUOTED;
             }
         }
         if (ev.isPlain() || ev.getScalarStyle() == DumperOptions.ScalarStyle.SINGLE_QUOTED) {
-            if (analysis.allowSingleQuoted && !(simpleKeyContext && analysis.multiline)) {
+            if (analysis.isAllowSingleQuoted() && !(simpleKeyContext && analysis.isMultiline())) {
 //                return DumperOptions.ScalarStyle.SINGLE_QUOTED;
                 return DumperOptions.ScalarStyle.DOUBLE_QUOTED;
             }
@@ -781,20 +781,20 @@ public class CustomEmitter implements Emitable {
         }
         boolean split = !simpleKeyContext && splitLines;
         if (style == null) {
-            writePlain(analysis.scalar, split);
+            writePlain(analysis.getScalar(), split);
         } else {
             switch (style) {
                 case DOUBLE_QUOTED:
-                    writeDoubleQuoted(analysis.scalar, split);
+                    writeDoubleQuoted(analysis.getScalar(), split);
                     break;
                 case SINGLE_QUOTED:
-                    writeSingleQuoted(analysis.scalar, split);
+                    writeSingleQuoted(analysis.getScalar(), split);
                     break;
                 case FOLDED:
-                    writeFolded(analysis.scalar, split);
+                    writeFolded(analysis.getScalar(), split);
                     break;
                 case LITERAL:
-                    writeLiteral(analysis.scalar);
+                    writeLiteral(analysis.getScalar());
                     break;
                 default:
                     throw new YAMLException("Unexpected style: " + style);
