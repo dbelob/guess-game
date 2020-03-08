@@ -678,6 +678,22 @@ events:
     talkIds: [1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520, 1521, 1522, 1523, 1524, 1525, 1526, 1527, 1528, 1529, 1530]
   - eventTypeId: 7
     name:
+      - {language: en, text: "JPoint 2015"}
+    startDate: "2015-04-20"
+    endDate: "2015-04-20"
+    siteLink:
+      - {language: en, text: "https://2015.jpoint.ru"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Europe Square 2, Hotel «Radisson Slavyanskaya»"}
+      - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_xDvw7rO_qlw7OcllbHsIN
+    mapCoordinates: "55.741881, 37.568099"
+    talkIds: []
+  - eventTypeId: 7
+    name:
       - {language: en, text: "JPoint 2017"}
     startDate: "2017-04-07"
     endDate: "2017-04-08"
