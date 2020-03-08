@@ -2810,11 +2810,28 @@ speakers:
     name:
       - {language: en, text: "Maurice Naftalin"}
     company:
-      - {language: en, text: Incept5}
+      - {language: en, text: "Morningside Light Ltd."}
+    bio:
+      - language: en
+        text: "A programmer and a teacher of programmers. He has been a developer, researcher and teacher in the software\
+        \ industry for several decades. He is co-author of \"Java Generics and Collections\" (O'Reilly, 2006), and author\
+        \ of \"Mastering Lambdas: Java Programming in a Multicore World\" (Oracle Press, forthcoming)."
   - id: 198
     fileName: 0198.jpg
     name:
       - {language: en, text: "Jaroslaw Palka"}
+    company:
+      - {language: en, text: "Symentis"}
+    bio:
+      - language: en
+        text: "Spent last 15 years in IT working as database and system administrator, developer, architect, manager and\
+        \ \"on site disaster engineer\". At the moment works as chief architect in Lumesse, European HR SaaS solution\
+        \ provider. Involved in small, medium and horribly and nonsense large systems, from \"waterfall\" through Agile\
+        \ to \"no methodology\" methodology.\nThinks that it doesn't matter what you do as long as you do it right, keep\
+        \ it simple and use the right tool to do the job for you. Loves TDD, Software Craftmanship and beautiful and simple\
+        \ ideas like REST, JavaScript and NOSQL. Spent a lot of time exploring ideas like system thinking, system dynamics,\
+        \ strange attractor and complexity theory. Trying to make a world a better place as member of SSEEP and\
+        \ <a href=\"http://geekyprimitives.wordpress.com/\" target=\"_blank\">blog author</a>."
   - id: 199
     fileName: 0199.jpg
     name:
