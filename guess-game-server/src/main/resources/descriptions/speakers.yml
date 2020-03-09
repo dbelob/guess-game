@@ -2718,6 +2718,11 @@ speakers:
       - {language: ru, text: "Андрей Зайцев"}
     company:
       - {language: en, text: "JetBrains"}
+    bio:
+      - language: ru
+        text: "За пять лет работы в Jetbrains успел приложить руку ко многим продуктам компании, включая IntelliJ IDEA\
+        \ и AppCode. В данный момент времени принимает активное участие в разработке нового продукта UpSource. Кроме Java,\
+        \ увлекается Clojure."
   - id: 187
     fileName: 0187.jpg
     name:
