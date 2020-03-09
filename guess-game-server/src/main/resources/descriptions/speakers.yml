@@ -382,7 +382,7 @@ speakers:
             \ times JavaOne RockStar and frequent conference speaker.\n\nTroubleshooter, assumptions destroyer, finds the\
             \ most joy when deletes deprecated code."
       - language: ru
-        text: "Соучредитель PLumbr, единственного решения для мониторинга производительности с обнаружением коренных причи\
+        text: "Соучредитель Plumbr, единственного решения для мониторинга производительности с обнаружением коренных причи\
             н, где он на данный момент главный разработчик и руководитель команды инженеров. Помимо основной работы ведет\
             \ собственный блог, три раза получал JavaOne RockStar и является активным спикером.\n\nБорец с неполадками, ра\
             зрушитель допущений, получает большое удовольствие от удаления устаревшего кода."
@@ -2704,6 +2704,13 @@ speakers:
     name:
       - {language: en, text: "Yakov Sirotkin"}
       - {language: ru, text: "Яков Сироткин"}
+    company:
+      - {language: en, text: "Sidenis"}
+    bio:
+      - language: ru
+        text: "Закончил матмех СПбГУ, работает программистом с 1999 года в том числе в DataArt, Яндексе и лаборатории\
+        \ алгоритмической биологии Академического университета. Сейчас работает в компании Sidenis."
+    twitter: yakov_sirotkin
   - id: 186
     fileName: 0186.jpg
     name:
