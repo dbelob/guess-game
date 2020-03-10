@@ -2583,6 +2583,13 @@ speakers:
     name:
       - {language: en, text: "Roman Grebennikov"}
       - {language: ru, text: "Роман Гребенников"}
+    company:
+      - {language: en, text: Sociohub}
+    bio:
+      - {language: ru, text: "Разработчик распределенных систем в компании Sociohub. Прошел тернистый путь от\
+      \ дизайнера-неудачника до C++ => Java => Scala программиста, в процессе защитив диссертацию. Любит все\
+      \ распределенное и отказоустойчивое. Активист воронежской Scala User Group."}
+    twitter: public_void_grv
   - id: 169
     fileName: 0169.jpg
     name:
@@ -2717,7 +2724,7 @@ speakers:
       - {language: en, text: "Andrey Zaytsev"}
       - {language: ru, text: "Андрей Зайцев"}
     company:
-      - {language: en, text: "JetBrains"}
+      - {language: en, text: JetBrains}
     bio:
       - language: ru
         text: "За пять лет работы в Jetbrains успел приложить руку ко многим продуктам компании, включая IntelliJ IDEA\
@@ -2728,16 +2735,35 @@ speakers:
     name:
       - {language: en, text: "Alexander Podhalyuzin"}
       - {language: ru, text: "Александр Подхалюзин"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - language: ru
+        text: "Закончил матмех СПбГУ, вёл в СПбАУ РАН курс по программированию на Scala.\n\nПоследние несколько лет\
+        \ руководит командой, отвечающей за поддержку Scala и Clojure в IntelliJ IDEA."
   - id: 188
     fileName: 0188.jpg
     name:
       - {language: en, text: "Nikolay Garbuzov"}
       - {language: ru, text: "Николай Гарбузов"}
+    company:
+      - {language: en, text: ДонРивер}
+      - language: ru
+        text: "Закончил направление прикладной математики МехМата ЮФУ. Прошел путь от начинающего до ведущего разработчика.\
+        \ Последний год руководит разработкой финансовой платформы мобильных платежей в компании ДонРивер. В свободное от\
+        \ работы время занимается саморазвитием и путешествует."
   - id: 189
     fileName: 0189.jpg
     name:
       - {language: en, text: "Yakov Fain"}
       - {language: ru, text: "Яков Файн"}
+    bio:
+      - language: ru
+        text: "Java-чемпион и сооснователь двух американских компаний: Farata Systems и SuranceBay. Автор книг и статей\
+        \ о программировании на Java и других языках. Ведущий автор «Enterprise Web Development» (O’Reilly). Также две\
+        \ его книги будут опубликованы в этом году: второе издание «Java 24-Hour Trainer» (Wrox) и «Java For Kids»\
+        \ (No Starch Press).\n\nЯков является лидером Princeton Java Users Group."
+    twitter: yfain
   - id: 190
     fileName: 0190.jpg
     name:
@@ -15691,3 +15717,28 @@ speakers:
             \ joining Facebook in 2016, he worked for several years on modeling systems for mathematical optimization. He\
             \ is an active contributor to open-source projects, an author of the {fmt} library and the C++20 formatting library."}
     twitter: vzverovich
+  - id: 1146
+    fileName: 1146.jpg
+    name:
+      - {language: en, text: "Andrey Cheptsov"}
+      - {language: ru, text: "Андрей Чепцов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: ru, text: "Руководитель маркетинга продуктов IntelliJ IDEA и 0xDBE в компании JetBrains. В 2006 году\
+            \ окончил Саратовский государственный технический университет по специальности «Программирование вычислительной\
+            \ техники». Более восьми лет занимался разработкой ПО, в том числе для брокерской и биржевой деятельности."}
+  - id: 1147
+    fileName: 1147.jpg
+    name:
+      - {language: en, text: "Oleg Bunin"}
+      - {language: ru, text: "Олег Бунин"}
+    company:
+      - {language: en, text: Ontiko}
+      - {language: ru, text: Онтико}
+    bio:
+      - {language: ru, text: "Генеральный директор студии разработки высоконагруженных интернет-проектов «Онтико». Окончил\
+      \ факультет Автоматики и вычислительной техники Московского государственного института электроники и математики.\n\nВ\
+      \ настоящий момент Олег — признанный российский эксперт в области высоких интернет-нагрузок. А также является\
+      \ организатором ведущих в России профессиональных конференций для веб-разработчиков HighLoad++, «Российские\
+      \ интернет-технологии» (РИТ++) и Whale Rider."}
