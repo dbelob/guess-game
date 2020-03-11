@@ -805,7 +805,7 @@ events:
       - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
     mapCoordinates: "59.842400, 30.318815"
     youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8x3krxqsYHwlmfb4kb8A4n
-    talkIds: [1596, 1597, 1598, 1599, 1600]
+    talkIds: [1596, 1597, 1598, 1599, 1600, 1601]
   - eventTypeId: 8
     name:
       - {language: en, text: "Joker 2016"}
