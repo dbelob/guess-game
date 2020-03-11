@@ -2688,15 +2688,37 @@ speakers:
     fileName: 0180.jpg
     name:
       - {language: en, text: "Martin Thompson"}
+    bio:
+      - language: en
+        text: "Martin is a high-performance and low-latency specialist, with experience gained over two decades working\
+        \ on the bleeding edge of large transactional and big-data systems. He believes in Mechanical Sympathy, i.e.\
+        \ applying an understanding of the hardware to the creation of software as being fundamental to delivering elegant\
+        \ high-performance solutions. The Disruptor framework is just one example of what his mechanical sympathy has\
+        \ created.\n\nMartin was the co-founder and CTO of LMAX. He blogs at\
+        \ <a href=\"http://mechanical-sympathy.blogspot.com\" target=\"_blank\">mechanical-sympathy.blogspot.com</a>, and\
+        \ can be found giving training courses on performance and concurrency when he is not cutting code to make systems\
+        \ better."
   - id: 181
     fileName: 0181.jpg
     name:
       - {language: en, text: "Dmytro Vyazelenko"}
+    bio:
+      - language: en
+        text: "Java developer with 10 years of professional experience interested in concurrency, performance and\
+        \ lock-free programming. Since 2008 working in Switzerland at Sowatec AG, where I'm responsible for development\
+        \ of its key framework. I am a Chief Disorganizer for a <a href=\"http://www.jcrete.org/\" target=\"_blank\">JCrete unconference</a>."
   - id: 182
     fileName: 0182.jpg
     name:
       - {language: en, text: "Vyacheslav Lapin"}
       - {language: ru, text: "Вячеслав Лапин"}
+    company:
+      - {language: en, text: "EPAM"}
+    bio:
+      - language: ru
+        text: "Более 10 лет в IT, в таких областях, как интеграция, автоматизация бизнес-процессов, телеком и Internet-проекты.\
+        \ Предмет профессиональной страсти – системы обмена сообщениями. Так же интересуюсь функциональными ЯП, особенно\
+        \ Clojure`ом, базами NoSQL, предпочитаю Agile-практики в разработке."
   - id: 183
     fileName: 0183.jpg
     name:
