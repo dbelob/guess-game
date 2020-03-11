@@ -301,8 +301,8 @@ public class ContentfulUtils {
                             extractLocaleItems(
                                     (venueAddress != null) ? venueAddress.get(ENGLISH_LOCALE) : null,
                                     (venueAddress != null) ? venueAddress.get(RUSSIAN_LOCALE) : null),
-                            (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null,
                             (addressLink != null) ? getFirstMapValue(addressLink) : null,
+                            (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null,
                             Collections.emptyList());
                 })
                 .collect(Collectors.toList());
@@ -1016,8 +1016,8 @@ public class ContentfulUtils {
                     extractLocaleItems(
                             "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo",
                             null),
-                    "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5",
                     "60.1704769, 24.8279349",
+                    "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5",
                     Collections.emptyList());
         } else {
             return null;

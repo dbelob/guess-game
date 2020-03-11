@@ -19,8 +19,8 @@ public class Event {
     private List<LocaleItem> siteLink;
     private List<LocaleItem> city;
     private List<LocaleItem> venueAddress;
-    private String youtubeLink;
     private String mapCoordinates;
+    private String youtubeLink;
 
     private List<Long> talkIds;
     private List<Talk> talks = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Event {
     }
 
     public Event(EventType eventType, List<LocaleItem> name, LocalDate startDate, LocalDate endDate, List<LocaleItem> siteLink,
-                 List<LocaleItem> city, List<LocaleItem> venueAddress, String youtubeLink, String mapCoordinates, List<Talk> talks) {
+                 List<LocaleItem> city, List<LocaleItem> venueAddress, String mapCoordinates, String youtubeLink, List<Talk> talks) {
         this.eventType = eventType;
         this.name = name;
         this.startDate = startDate;
@@ -37,8 +37,8 @@ public class Event {
         this.siteLink = siteLink;
         this.city = city;
         this.venueAddress = venueAddress;
-        this.youtubeLink = youtubeLink;
         this.mapCoordinates = mapCoordinates;
+        this.youtubeLink = youtubeLink;
         this.talks = talks;
         this.talkIds = talks.stream()
                 .map(Talk::getId)
@@ -109,20 +109,20 @@ public class Event {
         this.venueAddress = venueAddress;
     }
 
-    public String getYoutubeLink() {
-        return youtubeLink;
-    }
-
-    public void setYoutubeLink(String youtubeLink) {
-        this.youtubeLink = youtubeLink;
-    }
-
     public String getMapCoordinates() {
         return mapCoordinates;
     }
 
     public void setMapCoordinates(String mapCoordinates) {
         this.mapCoordinates = mapCoordinates;
+    }
+
+    public String getYoutubeLink() {
+        return youtubeLink;
+    }
+
+    public void setYoutubeLink(String youtubeLink) {
+        this.youtubeLink = youtubeLink;
     }
 
     public List<Long> getTalkIds() {
