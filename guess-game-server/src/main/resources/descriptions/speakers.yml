@@ -4202,6 +4202,10 @@ speakers:
     fileName: 0309.jpg
     name:
       - {language: en, text: "Michal Kordas"}
+    bio:
+      - {language: en, text: "I’m a quality maniac with passion about Java, Groovy, JVM and fancy tools that help to test\
+      \ code in smart, fluent and expressive way. I love bringing feedback loops to the micro-level. my main area of\
+      \ interest is Agile Testing."}
   - id: 310
     fileName: 0310.jpg
     name:
