@@ -2731,6 +2731,12 @@ speakers:
     fileName: 0183.jpg
     name:
       - {language: en, text: "Ted Neward"}
+    bio:
+      - language: en
+        text: "An independent consultant specializing in high-scale enterprise systems. He speaks on the conference\
+        \ circuit, discussing Java, .NET and XML service technologies, focusing on Java-.NET interoperability. He is\
+        \ author/co-author of Effective Enterprise Java, C# In a Nutshell, SSCLI Essentials, Server-Based Java Programming,\
+        \ and an Microsoft MVP Architect."
   - id: 184
     fileName: 0184.jpg
     name:
