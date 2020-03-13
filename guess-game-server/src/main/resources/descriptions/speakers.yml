@@ -5653,9 +5653,10 @@ speakers:
             \ developer and architect at large enterprises and small companies. He spends his time teaching other developers\
             \ the details of the Microsoft development platform and frameworks, and coaches architects to design and build\
             \ modern distributed applications at cloud scale. He has received the Microsoft Most Valuable Professional award\
-            \ for Visual Studio and Development Technologies 10 times. In his spare time Alex likes to participate in all\
+            \ for Visual Studio and Development Technologies 13 times. In his spare time Alex likes to participate in all\
             \ kinds of sport, and loves playing and programming new and retro video games."}
     twitter: alexthissen
+    mvp: true
   - id: 409
     fileName: 0409.jpg
     name:
@@ -6547,15 +6548,14 @@ speakers:
     name:
       - {language: en, text: "Evgeny Peshkov"}
       - {language: ru, text: "Евгений Пешков"}
-    company:
-      - {language: en, text: JetBrains}
+    company: []
     bio:
-      - {language: en, text: "JetBrains Rider developer. Now migrating Rider on .NET Core. Previously engaged in shared infrastructure\
-            \ at Kontur, a cloud-based application hosting platform. He is interested in the inner structure of .NET and Windows\
-            \ and uses this knowledge in practice."}
-      - {language: ru, text: "Разработчик JetBrains Rider. Сейчас переводит райдер на .NET Core. Ранее занимался общей инф\
-            раструктурой в Контуре, облачной платформой хостинга приложений. Интересуется внутренним устройством .NET и Windows\
-            \ и использует эти знания на практике."}
+      - {language: en, text: "Migrates Rider on .NET Core. Previously engaged in shared infrastructure at Kontur, a cloud-based\
+            \ application hosting platform. He is interested in the inner structure of .NET and Windows and uses this knowledge\
+            \ in practice."}
+      - {language: ru, text: "Переводит райдер на .NET Core. Ранее занимался общей инфраструктурой в Контуре, облачной пла\
+            тформой хостинга приложений. Интересуется внутренним устройством .NET и Windows и использует эти знания на пра\
+            ктике."}
     twitter: epeshk
     gitHub: epeshk
   - id: 467
@@ -6616,20 +6616,21 @@ speakers:
     name:
       - {language: en, text: "Andrey Akinshin"}
       - {language: ru, text: "Андрей Акиньшин"}
-    company:
-      - {language: en, text: JetBrains}
+    company: []
     bio:
-      - {language: en, text: "Andrey Akinshin is a senior developer at JetBrains, where he works on Rider (a cross-platform\
-            \ .NET IDE based on the IntelliJ platform and ReSharper). His favorite topics are performance and micro-optimizations,\
-            \ and he is the maintainer of BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET\
-            \ Foundation). Andrey is also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC.\
-            \ In his free time, he likes to study science (his primary research interests are mathematical biology and bifurcation\
-            \ theory)."}
-      - {language: ru, text: "Андрей Акиньшин работает в компании JetBrains, где он трудится над проектом Rider (кроссплат\
-            форменная .NET IDE, основанная на платформе IntelliJ и ReSharper). Его любимые темы — производительность и мик\
-            рооптимизации, он также мейнтейнер проекта BenchmarkDotNet (библиотека для написания .NET-бенчмарков, поддержа\
-            нная .NET Foundation). Андрей — к.ф.-м.н., Microsoft .NET MVP, серебрянный медалист ACM ICPC. В свободное врем\
-            я любит заниматься наукой, основные научные интересы — математическая биология и теория бифуркаций."}
+      - {language: en, text: "Andrey's favorite topics are performance and micro-optimizations, and he is the maintainer of\
+            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is a frequent\
+            \ speaker at various events for developers, and he is the program director of the DotNext conference. Andrey is\
+            \ also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes\
+            \ to study science (his primary research interests are mathematical biology and bifurcation theory). Previously,\
+            \ he worked as a postdoctoral research fellow in the Weizmann Institute of Science and as a research scientist\
+            \ in the Sobolev Institute of Mathematics SB RAS."}
+      - {language: ru, text: "Любимые темы Андрея — производительность и микрооптимизации, он также мейнтейнер проекта BenchmarkDotNet\
+            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — частый спикер на различны\
+            х мероприятиях для разработчиков и председатель программного комитета конференции DotNext. Он также к.ф.-м.н.,\
+            \ Microsoft .NET MVP, серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научн\
+            ые интересы — математическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и\
+            \ научным сотрудником в Институте математики СО РАН."}
     twitter: andrey_akinshin
     mvp: true
   - id: 472
