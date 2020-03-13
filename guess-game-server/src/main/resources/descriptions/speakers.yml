@@ -564,16 +564,14 @@ speakers:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
     company:
-      - {language: en, text: "Netifi, Inc"}
+      - {language: en, text: Netifi}
     bio:
-      - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
-            \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
-            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
-      - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
-            я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
-            \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
-            ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
-            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+      - {language: en, text: "Software engineer. Knows how to live with React both from the outside and inside. Java Champion.\
+            \ Co-author of the book on reactive programming in Spring. He mainly writes RSocket, helps Project Reactor and\
+            \ all related ecosystems. Talks much."}
+      - {language: ru, text: "Инженер ПО. Знает, как жить с реактивщиной как извне, так и внутри. Java Champion. Соавтор к\
+            ниги по реактивному программированию в Spring. В основном пишет RSocket, помогает Project Reactor и всем связа\
+            нным экосистемам. Много говорит."}
     twitter: OlehDokuka
   - id: 34
     fileName: 0034.jpg
@@ -6619,18 +6617,13 @@ speakers:
     company: []
     bio:
       - {language: en, text: "Andrey's favorite topics are performance and micro-optimizations, and he is the maintainer of\
-            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is a frequent\
-            \ speaker at various events for developers, and he is the program director of the DotNext conference. Andrey is\
-            \ also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes\
-            \ to study science (his primary research interests are mathematical biology and bifurcation theory). Previously,\
-            \ he worked as a postdoctoral research fellow in the Weizmann Institute of Science and as a research scientist\
-            \ in the Sobolev Institute of Mathematics SB RAS."}
+            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is also\
+            \ a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes to\
+            \ study science (his primary research interests are mathematical biology and bifurcation theory)."}
       - {language: ru, text: "Любимые темы Андрея — производительность и микрооптимизации, он также мейнтейнер проекта BenchmarkDotNet\
-            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — частый спикер на различны\
-            х мероприятиях для разработчиков и председатель программного комитета конференции DotNext. Он также к.ф.-м.н.,\
-            \ Microsoft .NET MVP, серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научн\
-            ые интересы — математическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и\
-            \ научным сотрудником в Институте математики СО РАН."}
+            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — к.ф.-м.н., Microsoft .NET\
+            \ MVP, серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — м\
+            атематическая биология и теория бифуркаций."}
     twitter: andrey_akinshin
     mvp: true
   - id: 472
@@ -7620,10 +7613,11 @@ speakers:
     bio:
       - {language: en, text: "Lead Software Test Automation Engineer at EPAM. An expert in the field of BDD, an adherent of\
             \ engineering and DevOps practices. Anna has strong experience in test automation frameworks development and building\
-            \ of test automation approaches and processes. One of the creators of the BDD library Akita."}
+            \ of test automation approaches and processes. One of the creators of the Self-Healing library Healenium and BDD\
+            \ library Akita."}
       - {language: ru, text: "Lead Software Test Automation Engineer в EPAM. Эксперт в области BDD, приверженец инженерных\
             \ и DevOps-практик. Имеет большой опыт в разработке тестовых фреймворков и построении процессов автоматизации\
-            \ тестирования. Одна из создателей BDD-библиотеки Akita."}
+            \ тестирования. Одна из создателей Self-healing библиотеки Healenium и BDD-библиотеки Akita."}
   - id: 551
     fileName: 0551.jpg
     name:
@@ -15031,9 +15025,10 @@ speakers:
       - {language: en, text: Tinkoff}
       - {language: ru, text: Тинькофф}
     bio:
-      - {language: en, text: "Test manager at Tinkoff. Seven years experience as tester, QA lead and QA manager."}
-      - {language: ru, text: "Тест-менеджер в привлечении Tinkoff. Семь лет опыта работы в качестве тестировщика, лида QA\
-            \ и QA-менеджера."}
+      - {language: en, text: "Senior Quality Assurance Engineer at Tinkoff. Seven years of experience as a tester, QA lead\
+            \ and QA manager."}
+      - {language: ru, text: "Старший инженер по обеспечению качества в привлечении Tinkoff. Семь лет опыта работы в качес\
+            тве тестировщика, лида QA и QA-менеджера."}
   - id: 1091
     fileName: 1091.jpg
     name:
@@ -15779,3 +15774,31 @@ speakers:
       \ настоящий момент Олег — признанный российский эксперт в области высоких интернет-нагрузок. А также является\
       \ организатором ведущих в России профессиональных конференций для веб-разработчиков HighLoad++, «Российские\
       \ интернет-технологии» (РИТ++) и Whale Rider."}
+  - id: 1148
+    fileName: 1148.jpg
+    name:
+      - {language: en, text: "Stepan Pilshchikov"}
+      - {language: ru, text: "Степан Пильщиков"}
+    company:
+      - {language: en, text: "GridGain Systems"}
+    bio:
+      - {language: en, text: "QA Automation Engineer в GridGain Systems. Over 4 years of experience in test automation for\
+            \ banking, security and distributed systems. Develops and integrates tools for efficient tests execution and analysis."}
+      - {language: ru, text: "QA Automation Engineer в GridGain Systems. Четыре года работал с автоматизацией тестирования\
+            \ банкинга, систем компьютерной безопасности и платформ для распределенного хранения и вычисления. В GridGain\
+            \ занимается созданием и интеграцией инструментов для увеличения эффективности тестирования."}
+  - id: 1149
+    fileName: 1149.jpg
+    name:
+      - {language: en, text: "Mikhail Shaverdo"}
+      - {language: ru, text: "Михаил Шавердо"}
+    company:
+      - {language: en, text: Avito}
+      - {language: ru, text: Авито}
+    bio:
+      - {language: en, text: "Has been doing IT for money since 2004. Not a tester but forced to write tests. Currently working\
+            \ in Avito in the \"architecture\" team where together with his colleagues he does another service mesh and something\
+            \ else. Motorcyclist, a fan of Linux and Go."}
+      - {language: ru, text: "Занимается ЭТИМ за деньги с 2004 года. Совсем не тестировщик, но вынужден писать тесты, чтоб\
+            ы не уронить продакшн. В настоящий момент работает в Авито, в команде «архитектура», где вместе с коллегами де\
+            лает yet another service mesh и всякое другое. Мотоциклист, линуксоид, гофер."}
