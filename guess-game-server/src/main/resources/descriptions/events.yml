@@ -611,6 +611,22 @@ events:
   # JBreak
   - eventTypeId: 6
     name:
+      - {language: en, text: "JBreak 2016"}
+    startDate: "2016-03-19"
+    endDate: "2016-03-19"
+    siteLink:
+      - {language: en, text: "https://2016.jbreak.ru/"}
+    city:
+      - {language: en, text: Novosibirsk}
+      - {language: ru, text: Новосибирск}
+    venueAddress:
+      - {language: en, text: "Nikolaev St., 12, Technopark of Novosibirsk Academgorodok"}
+      - {language: ru, text: "Николаева ул., 12, Технопарк Новосибирского Академгородка"}
+    mapCoordinates: "54.857844, 83.111798"
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_iJvIflZu74vcyjezF6Fx9
+    talkIds: []
+  - eventTypeId: 6
+    name:
       - {language: en, text: "JBreak 2017"}
     startDate: "2017-04-04"
     endDate: "2017-04-04"
