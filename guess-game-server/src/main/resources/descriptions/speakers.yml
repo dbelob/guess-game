@@ -9281,6 +9281,7 @@ speakers:
       - {language: ru, text: "Павел Черторогов"}
     company:
       - {language: en, text: PS.kz}
+      - {language: ru, text: ps.kz}
     bio:
       - {language: en, text: "GraphQL rockstar, developer of Internet products, OSS maintainer. Since 2001 Pavel's main specialization\
             \ is web technologies. He has extensive practical knowledge on back-end/front-end development, administration,\
@@ -9290,9 +9291,8 @@ speakers:
         text: "GraphQL-ниндзя, разработчик интернет-продуктов, опенсорс-мейнтейнер. С 2001 года основная специализация - в\
             еб-технологии. Обладает обширными практическими знаниями по бэкенду, фронтенду, администрированию и построению\
             \ архитектуры. С конца 2015 года делает основной упор на изоморфные приложения. Летом 2016 начал разработку graphql-compose\
-            \ (генератора GraphQL-схем) в опенсорсе. Написал достаточно много материала на русском про <a href=\"https://github.com/nodkz/conf-talks\"\
-            \ target=\"_blank\">GraphQL</a>. В 2019 начал формировать best practice по <a href=\"https://graphql-rules.com\"\
-            \ target=\"_blank\">дизайну</a>.\n\nTelegram — <a href=\"https://t.me/graphql_ru\" target=\"_blank\">https://t.me/graphql_ru</a>"
+            \ (генератора GraphQL-схем) в опенсорсе. Написал достаточно много материала на русском про GraphQL – https://github.com/nodkz/conf-talks.\
+            \ В 2019 начал формировать best practice по дизайну GraphQL-схем – https://graphql-rules.com.\n\nTelegram — https://t.me/graphql_ru"
     twitter: nodkz
     gitHub: nodkz
   - id: 661
@@ -9827,14 +9827,14 @@ speakers:
     company:
       - {language: en, text: "uKit Group"}
     bio:
-      - {language: en, text: "Developer Advocate at [uKit Group](https://ukit.group/en): [uKit](https://ukit.com) and [uLanding](https://ulanding.io/en).\
-            \ Operation Team consultant developer: Data Layer. Tech Lead of Domain Selling team. Former university lecturer.\
-            \ Former Project Manager and Systems Analyst. JavaScript [ spicy ] practice user and Evangelist: team-renowned\
-            \ initiator of progressive solutions and special architectural approaches. Musician, dreamer."}
-      - {language: ru, text: "Developer Advocate в [uKit Group](https://ukit.group/): [uKit](https://ukit.com/ru) и [uLanding](https://ulanding.io/).\
-            \ Operation Team консультант-разработчик: Data Layer. Tech Lead команды управления и продажи доменных имён. Бы\
-            вший преподаватель университета по экономике IT-инноваций, PM и системный аналитик. Признанный командой зачина\
-            тель прогрессивных решений и специальных архитектурных подходов. Музыкант, мечтатель."}
+      - language: en
+        text: "Backend consultant developer advocate combining positions at uKit Group (Russia). JavaScript [ spicy ] practice\
+            \ user and Evangelist. Former Project Manager and Systems Analyst. Former university lecturer at Economy.\nMusician,\
+            \ Dreamer, Teapot System Administrator."
+      - {language: ru, text: "Developer Advocate и в uKit Group. С 2011 года занимается консалтингом по разработке backend-р\
+            ешений на Node.js. В последнее время интересуется Data Layer. Бывший преподаватель университета по экономике IT-и\
+            нноваций, project manager и системный аналитик. Признанный командой зачинатель прогрессивных решений и специал\
+            ьных архитектурных подходов. Музыкант, мечтатель."}
     twitter: went_out
   - id: 699
     fileName: 0699.jpg
@@ -9987,7 +9987,7 @@ speakers:
       - {language: en, text: "Dmitry Bezheckov"}
       - {language: ru, text: "Дмитрий Бежецков"}
     company:
-      - {language: en, text: igalia}
+      - {language: en, text: Igalia}
     bio:
       - {language: en, text: "Dmitry was a software engineer at Unipro. All his career has worked in virtual machines area,\
             \ from Java for Intel to JavaScript for Elbrus. In his free time teaches advanced C++ in CSC centre."}
@@ -15265,6 +15265,7 @@ speakers:
             ечты и ни разу не пожалела. Окончила магистратуру в СПб ИТМО по специальности Разработка корпоративных информа\
             ционных систем. За почти 6 лет успела попробовать себя в роли фуллстека, фронтендера и немного девопса. Сейчас\
             \ занимается разработкой бизнес-порталов для Интернет-банков."}
+    twitter: Marflenx
   - id: 1108
     fileName: 1108.jpg
     name:
@@ -15320,7 +15321,7 @@ speakers:
     company:
       - {language: en, text: Spotify}
     bio:
-      - {language: en, text: "Experienced JavaScript/Front-end Developer with several years experience working on large scale\
+      - {language: en, text: "Experienced JavaScript/Frontend Developer with several years experience working on large scale\
             \ web applications. Passionate about mobile, automated testing, and enabling teams to build great things through\
             \ great tools."}
     twitter: phenomnominal
@@ -15430,13 +15431,12 @@ speakers:
     company:
       - {language: en, text: "Sanctuary Computer"}
     bio:
-      - language: en
-        text: "Founder of Sanctuary Computer, Pipe Music, Silo Arts & Records, and author of open source projects such as\
-            \ Ember Infinity, Contentful Fragment, Ember Chimp, MTPLite, Brandibble.js, Brandibble Redux, Spree Ember, and\
-            \ others. Ex-Gin Lane & New Inc.\nHe has spoken in New York, London, Toronto & Brisbane about code & music, and\
-            \ his audio visual art has shown at galleries & festivals including Brisbane’s Emerging Artist Festival, 2High\
-            \ Festival & Badpixel."
-    twitter: _HHFF
+      - {language: en, text: "Hugh Francis is a mechanical engineer and technical draftsperson by trade. During his studies\
+            \ in Brisbane, Australia, he founded a boutique record label that led him to NYC, where he eventually turned UX\
+            \ designer and software developer. He worked with various agencies in New York before starting Sanctuary Computer,\
+            \ a technology studio that he currently leads. He's an active contributor to open-source and has released many\
+            \ of his own libraries."}
+    twitter: _hhff
   - id: 1122
     fileName: 1122.jpg
     name:
@@ -15802,3 +15802,15 @@ speakers:
       - {language: ru, text: "Занимается ЭТИМ за деньги с 2004 года. Совсем не тестировщик, но вынужден писать тесты, чтоб\
             ы не уронить продакшн. В настоящий момент работает в Авито, в команде «архитектура», где вместе с коллегами де\
             лает yet another service mesh и всякое другое. Мотоциклист, линуксоид, гофер."}
+  - id: 1150
+    fileName: 1150.jpg
+    name:
+      - {language: en, text: "Aleksandra Sikora"}
+    company:
+      - {language: en, text: Hasura}
+    bio:
+      - {language: en, text: "Software Engineer at Hasura, based in Wrocław, Poland. Worked as a full-stack developer for\
+            \ quite some time with many different languages such as Elixir, Golang, Python, TypeScript. Now focused on the\
+            \ frontend side of the Hasura Console. In love with building modern, scalable applications with exceptional user\
+            \ experience."}
+    twitter: aleksandrasays
