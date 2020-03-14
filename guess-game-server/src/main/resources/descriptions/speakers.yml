@@ -2638,11 +2638,17 @@ speakers:
     name:
       - {language: en, text: "Yegor Fedorov"}
       - {language: ru, text: "Егор Федоров"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
   - id: 173
     fileName: 0173.jpg
     name:
       - {language: en, text: "Maria Nasyrova"}
       - {language: ru, text: "Мария Насырова"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
   - id: 174
     fileName: 0174.jpg
     name:
@@ -4221,11 +4227,17 @@ speakers:
     name:
       - {language: en, text: "Dmitry Tkachev"}
       - {language: ru, text: "Дмитрий Ткачев"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
   - id: 313
     fileName: 0313.jpg
     name:
       - {language: en, text: "Artem Zhukov"}
       - {language: ru, text: "Артем Жуков"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
   - id: 314
     fileName: 0314.jpg
     name:
@@ -8164,6 +8176,9 @@ speakers:
     name:
       - {language: en, text: "Vitaly Chayko"}
       - {language: ru, text: "Виталий Чайко"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
   - id: 589
     fileName: 0589.jpg
     name:
