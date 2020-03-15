@@ -2692,6 +2692,14 @@ speakers:
     name:
       - {language: en, text: "Maxim Zelinsky"}
       - {language: ru, text: "Максим Зелинский"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: ru
+        text: "Начальник отдела развития платформы Единой Фронтальной Системы в СберТехе. Отвечает за ядро и архитектуру\
+        \ одной из крупнейших банковских фронтальных систем в Европе. Занимается разработкой и архитектурой\
+        \ высокопроизводительных и отказоустойчивых систем более 10 лет, сначала в Deutsche Bank, потом в СберТехе."
   - id: 179
     fileName: 0179.jpg
     name:
@@ -4266,16 +4274,25 @@ speakers:
     name:
       - {language: en, text: "Evgeny Gorodov"}
       - {language: ru, text: "Евгений Городов"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
   - id: 315
     fileName: 0315.jpg
     name:
       - {language: en, text: "Alexey Kopylov"}
       - {language: ru, text: "Алексей Копылов"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
   - id: 316
     fileName: 0316.jpg
     name:
       - {language: en, text: "Igor Tyazhev"}
       - {language: ru, text: "Игорь Тяжев"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
   - id: 317
     fileName: 0317.jpg
     name:
