@@ -2363,7 +2363,8 @@ speakers:
       - {language: en, text: "Roman Artemev"}
       - {language: ru, text: "Роман Артемьев"}
     company:
-      - {language: en, text: Унипро}
+      - {language: en, text: Unipro}
+      - {language: ru, text: Унипро}
     bio:
       - {language: en, text: "Roman has been making porting of OpenJDK on Elbrus architecture for almost 4 years. He develops\
             \ compilers, interpreters. Roman performs as a speaker at conferences, where he tells about his work."}
@@ -4199,6 +4200,9 @@ speakers:
     name:
       - {language: en, text: "Andrey Bogoslovskih"}
       - {language: ru, text: "Андрей Богословских"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
   - id: 308
     fileName: 0308.jpg
     name:
@@ -4217,11 +4221,30 @@ speakers:
     name:
       - {language: en, text: "Sergey Andreenko"}
       - {language: ru, text: "Сергей Андреенко"}
+    company:
+      - {language: en, text: Unipro}
+      - {language: ru, text: Унипро}
+    bio:
+      - {language: ru, text: "Занимается разработкой компиляторов 4 года. Начинал карьеру в Intel в командах Intel GT\
+      \ compiler и Intel Compiler Perfomance Team. Проходил стажировку в Microsoft в команде Phoenix compiler infrastructure\
+      \ и LLILC (LLVM based MSIL Compiler). Последние 2 года работает в компании Унипро над проектом JVM для Эльбруса.\
+      \ Разрабатывает и поддерживает внутри- и межблоковое планирование инструкций."}
   - id: 311
     fileName: 0311.jpg
     name:
       - {language: en, text: "Oleg Zolotyh"}
       - {language: ru, text: "Олег Золотых"}
+    company:
+      - {language: en, text: "Luxoft"}
+    bio:
+      - {language: ru, text: "Олег имеет более 20 лет опыта в сфере IT. Олег начал свою карьеру в одной из американских\
+      \ IT компаний, где работал с инвестиционными проектами и отвечал за IT консалтинг ряда правительственных учреждений\
+      \ Штата Нью-Йорк. В 2003 году Олег присоединился к команде Luxoft и в первые годы был ответственным за крупный\
+      \ международный проект для компании Dell — одного из ведущих партнеров Luxoft. С 2009 года Олег уже руководил выделенным\
+      \ центром разработок для Dell. Одним из результатов этой работы стало создание корпоративной практики ERP систем и\
+      \ привлечение новых клиентов. С 2015 года является управляющим директором Luxoft Россия. Олег Золотых с отличием\
+      \ окончил факультет технической кибернетики Тульского Государственного Университета и имеет диплом магистра техники\
+      \ и технологий."}
   - id: 312
     fileName: 0312.jpg
     name:
