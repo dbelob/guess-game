@@ -4216,6 +4216,11 @@ speakers:
     name:
       - {language: en, text: "Alexey Kakunin"}
       - {language: ru, text: "Алексей Какунин"}
+    company:
+      - {language: en, text: EmDev}
+    bio:
+      - {language: ru, text: "Руководит компанией EmDev, партнером Liferay в России, которая занимается разработкой и\
+      \ внедрением порталов на Liferay."}
   - id: 309
     fileName: 0309.jpg
     name:

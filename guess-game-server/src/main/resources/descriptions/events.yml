@@ -625,7 +625,7 @@ events:
     mapCoordinates: "54.857844, 83.111798"
     youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_iJvIflZu74vcyjezF6Fx9
     talkIds: [1644, 1645, 1646, 1647, 1648, 1649, 1650, 1651, 1652, 1653, 1654, 1655, 1656, 1657, 1658, 1659, 1660, 1661,
-              1662, 1663, 1664]
+              1662, 1663, 1664, 1665, 1666, 1667]
   - eventTypeId: 6
     name:
       - {language: en, text: "JBreak 2017"}
