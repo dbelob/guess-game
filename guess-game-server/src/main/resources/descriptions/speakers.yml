@@ -2601,6 +2601,9 @@ speakers:
     name:
       - {language: en, text: "Evgeniya Timonova"}
       - {language: ru, text: "Евгения Тимонова"}
+    bio:
+      - {language: ru, text: "Я делаю «Всё как у зверей», программу о том, в кого люди такие. Натуралист, писатель,\
+      \ GUE-дайвер и что там еще."}
   - id: 167
     fileName: 0167.jpg
     name:

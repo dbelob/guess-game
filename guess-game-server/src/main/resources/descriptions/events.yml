@@ -727,7 +727,7 @@ events:
     mapCoordinates: "55.741881, 37.568099"
     youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b-Waky1nkWVSNHPg6eOQWU9
     talkIds: [1669, 1670, 1671, 1672, 1673, 1674, 1675, 1676, 1677, 1678, 1679, 1680, 1681, 1682, 1683, 1684, 1685, 1686,
-              1687, 1688, 1689]
+              1687, 1688, 1689, 1690, 1691]
   - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2017"}
