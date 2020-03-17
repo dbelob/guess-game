@@ -2576,6 +2576,16 @@ speakers:
     fileName: 0165.jpg
     name:
       - {language: en, text: "Kai Waehner"}
+    company:
+      - {language: en, text: TIBCO}
+    bio:
+      - {language: en, text: "Kai Wähner works as Technical Lead at TIBCO. Kai’s main area of expertise lies within the\
+      \ fields of Integration, Big Data, Analytics, SOA, Microservices, BPM, Cloud Computing, Java EE and Enterprise\
+      \ Architecture Management. He is speaker at international IT conferences such as JavaOne, ApacheCon or OOP, writes\
+      \ articles for professional journals, and shares his experiences with new technologies on his\
+      \ <a href=\"http://www.kai-waehner.de/blog/\" target=\"_blank\">blog</a>. Find more details and references\
+      \ (presentations, articles, blog posts) on his <a href=\"http://www.kai-waehner.de/\" target=\"_blank\">website</a>."}
+    twitter: KaiWaehner
   - id: 166
     fileName: 0166.jpg
     name:
