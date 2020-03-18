@@ -558,6 +558,7 @@ speakers:
             пой единомышленников основал компанию BellSoft, которая выпускает и поддерживает собственный Java-дистрибутив\
             \ Liberica JDK для Linux x86, Linux ARM, Windows, Mac и других, а также разрабатывает решения для анализа боль\
             ших данных и IoT. \n\nНеоднократный участник конференций JPoint, Joker, JavaOne, JEEConf и многих других."
+    twitter: gigabel
   - id: 33
     fileName: 0033.jpg
     name:
@@ -2549,6 +2550,13 @@ speakers:
     name:
       - {language: en, text: "Sergey Vladimirov"}
       - {language: ru, text: "Сергей Владимиров"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: ru, text: "Выпускник ФРТК МФТИ, кандидат физико-математических наук. Успел поработать в NetCracker\
+      \ Tech., Яндексе, Mail.Ru Одноклассниках, а теперь двигает большие данные в АО Сбербанк Технологии, преподавая на\
+      \ Физтехе науку о защите информации. Любит OpenSource и открытые стандарты, но очень не любит делать работу дважды."}
   - id: 162
     fileName: 0162.jpg
     name:
@@ -2608,23 +2616,39 @@ speakers:
     fileName: 0167.jpg
     name:
       - {language: en, text: "Tim Berglund"}
+    company:
+      - {language: en, text: DataStax}
+    bio:
+      - {language: en, text: "Tim is a teacher, author, and technology leader with DataStax, where he serves as the\
+      \ Director of Training. He can frequently be found at speaking at conferences in the United States and all over\
+      \ the world. He is the co-presenter of various O’Reilly training videos on topics ranging from Git to Distributed\
+      \ Systems, and is the author of Gradle Beyond the Basics. He tweets as @tlberglund, blogs very occasionally at\
+      \ http://timberglund.com, and lives in Littleton, CO, USA with the wife of his youth and their youngest child."}
+    twitter: tlberglund
   - id: 168
     fileName: 0168.jpg
     name:
       - {language: en, text: "Roman Grebennikov"}
       - {language: ru, text: "Роман Гребенников"}
     company:
-      - {language: en, text: Sociohub}
+      - {language: en, text: Findify}
     bio:
-      - {language: ru, text: "Разработчик распределенных систем в компании Sociohub. Прошел тернистый путь от\
-      \ дизайнера-неудачника до C++ => Java => Scala программиста, в процессе защитив диссертацию. Любит все\
-      \ распределенное и отказоустойчивое. Активист воронежской Scala User Group."}
+      - {language: ru, text: "Разработчик распределенных систем в компании Sociohub/DSR. Прошел тернистый путь от\
+      \ дизайнера-неудачника до C++ => Java => Scala программиста, в процессе защитив диссертацию. Любит все распределенное\
+      \ и отказоустойчивое. Активист воронежской Scala User Group."}
     twitter: public_void_grv
   - id: 169
     fileName: 0169.jpg
     name:
       - {language: en, text: "Alexander Perkovsky"}
       - {language: ru, text: "Александр Перковский"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - {language: ru, text: "Заместитель директора Центра Компетенции Платформы Поддержки Развития Бизнеса. Является\
+      \ одним из идеологов проекта по созданию новой Платформы банка и отвечает за спектр стратегических и инновационных\
+      \ разработок. В команде Сбербанк-Технологии с начала 2012 года."}
   - id: 170
     fileName: 0170.jpg
     name:
@@ -2665,6 +2689,13 @@ speakers:
     company:
       - {language: en, text: Sberbank-Technology}
       - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: ru
+        text: "Работает в компании Сбербанк Технологии с 2012 года. На данный момент является главным архитектором\
+        \ системного ядра банка и отвечает за разработку, проектирование, апробацию и внедрение новых технологий и\
+        \ инструментов суммарно образующих Технологическое Ядро банка. Практический опыт в построении распределённых\
+        \ систем - 7 лет. Последние два года практически всё рабочее и свободное время посвящает технологии IMDG, а\
+        \ также её конкретным реализациям."
   - id: 173
     fileName: 0173.jpg
     name:
@@ -2673,6 +2704,14 @@ speakers:
     company:
       - {language: en, text: Sberbank-Technology}
       - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: ru
+        text: "Архитектор Лаборатории системного ядра СберТеха. Питает страсть к быстрой езде, HPC и созданию удобных\
+        \ инструментов разработки. Последние два года трудится над новым ORM-фреймворком для IMDG-приложений. Участвует\
+        \ в проектировании внутренней IDE на базе IntelliJ IDEA, к которой успела прикипеть и душой, и сердцем. С радостью\
+        \ проводит обучение других разработчиков внутри компании. В свободное время разрабатывает вычислительное ядро\
+        \ среды моделирования в Новосибирском Государственном Техническом Университете и делится результатами\
+        \ научно-практических изысканий на международных конференциях. В минуты отдыха любит играть на фортепиано и укулеле."
   - id: 174
     fileName: 0174.jpg
     name:
@@ -2681,11 +2720,24 @@ speakers:
     company:
       - {language: en, text: "Sberbank-Technology"}
       - {language: ru, text: "Сбербанк-Технологии"}
+    bio:
+      - language: ru
+        text: "Родился в Самаре. Образование: Самарский Государственный Аэрокосмический Университет, год окончания – 2000.\
+        \ Стаж: 16 лет, из них 10 лет в сфере банковского IT. На текущий момент занимается КМ ППРБ в роли руководителя\
+        \ разработки."
   - id: 175
     fileName: 0175.jpg
     name:
       - {language: en, text: "Maria Besfamilnaya"}
       - {language: ru, text: "Мария Бесфамильная"}
+    company:
+      - {language: en, text: "Sberbank-Technology"}
+      - {language: ru, text: "Сбербанк-Технологии"}
+    bio:
+      - language: ru
+        text: "Родилась в Санкт-Петербурге. Закончила Московский Государственный Университет имени М.В.Ломоносова, год\
+        \ окончания – 2013. Стаж: 5 лет, из них 4 лет в сфере банковского IT. На текущий момент занимается КМ ППРБ в роли\
+        \ разработчика."
   - id: 176
     fileName: 0176.jpg
     name:
@@ -2710,6 +2762,13 @@ speakers:
     name:
       - {language: en, text: "Alexey Stolbovskih"}
       - {language: ru, text: "Алексей Столбовских"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: ru
+        text: "Родился в Воронеже. Образование: Воронежский Государственный Технический Университет, год окончания – 2006.\
+        \ Стаж: 10 лет, из них 7 лет в сфере банковского IT. На текущий момент занимается КМ ППРБ в роли главного архитектора."
   - id: 178
     fileName: 0178.jpg
     name:
@@ -2728,6 +2787,15 @@ speakers:
     name:
       - {language: en, text: "Dmitry Sokolov"}
       - {language: ru, text: "Дмитрий Соколов"}
+    company:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+    bio:
+      - language: ru
+        text: "Выпускник МГУ ЭСИ и МГТУ им. Н. Э. Баумана. Более 13 лет опыта автоматизации бизнеса кредитных организаций,\
+        \ работал в таких компаниях как Union Card, Росевробанк, Финам и др. специализируюсь на технологиях эквайринга и\
+        \ процессинга, за плечами ряд крупных проектов в области платежей и электронной коммерции. В данный момент отвечаю\
+        \ за развитие кластера эквайринг ПАО Сбербанк."
   - id: 180
     fileName: 0180.jpg
     name:
