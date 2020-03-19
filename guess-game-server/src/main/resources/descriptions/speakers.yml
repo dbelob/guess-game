@@ -7307,6 +7307,8 @@ speakers:
     name:
       - {language: en, text: "Sergey Shkredov"}
       - {language: ru, text: "Сергей Шкредов"}
+    company:
+      - {language: en, text: JetBrains}
   - id: 507
     fileName: 0507.jpg
     name:
