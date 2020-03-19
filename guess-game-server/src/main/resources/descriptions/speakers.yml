@@ -7373,6 +7373,8 @@ speakers:
     name:
       - {language: en, text: "Yulia Tsisyk"}
       - {language: ru, text: "Юлия Цисык"}
+    company:
+      - {language: en, text: CUSTIS}
   - id: 518
     fileName: 0518.jpg
     name:
