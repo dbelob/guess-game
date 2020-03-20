@@ -156,7 +156,7 @@ events:
       - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
     mapCoordinates: "55.741881, 37.568099"
     youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBeCTpN--0BsxxM0dFPVMXip
-    talkIds: [1732]
+    talkIds: [1732, 1733, 1734, 1735]
   - eventTypeId: 2
     name:
       - {language: en, text: "DotNext 2016 Helsinki"}
