@@ -723,8 +723,8 @@ public class ConferenceDataLoader {
 
         // 2020
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 14), "2020-spb");
+//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 6, 16), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 6, 18), "2020-spb");
-//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 4, 10), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 4, 27), "2020-msk-cpp");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 4, 29), "2020-msk-devoops");
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2020, 5, 15), "2020-jpoint");

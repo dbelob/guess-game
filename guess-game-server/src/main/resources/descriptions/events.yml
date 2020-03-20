@@ -612,8 +612,8 @@ events:
     name:
       - {language: en, text: "HolyJS 2020 SPb"}
       - {language: ru, text: "HolyJS 2020 СПб"}
-    startDate: "2020-04-10"
-    endDate: "2020-04-11"
+    startDate: "2020-06-16"
+    endDate: "2020-06-17"
     siteLink:
       - {language: en, text: "https://holyjs-piter.ru/en/"}
       - {language: ru, text: "https://holyjs-piter.ru"}
@@ -624,8 +624,8 @@ events:
       - {language: en, text: "Peterburgskoye hwy., 62/1, Expoforum"}
       - {language: ru, text: "Петербургское шоссе, 64/1, КВЦ «Экспофорум»"}
     mapCoordinates: "59.762236, 30.356121"
-    talkIds: [1403, 1639, 1405, 1406, 1640, 1409, 1410, 1435, 1412, 1413, 1414, 1415, 1416, 1418, 1436, 1419, 1420, 1421,
-              1422, 1641, 1642, 1425, 1426, 1427, 1428, 1429, 1430, 1643, 1432, 1433, 1434]
+    talkIds: [1403, 1639, 1405, 1406, 1640, 1409, 1410, 1435, 1412, 1413, 1414, 1415, 1416, 1755, 1418, 1436, 1419, 1420,
+              1421, 1422, 1641, 1642, 1425, 1426, 1427, 1428, 1429, 1430, 1756, 1643, 1432, 1433, 1434, 1757]
   # Hydra
   - eventTypeId: 5
     name:

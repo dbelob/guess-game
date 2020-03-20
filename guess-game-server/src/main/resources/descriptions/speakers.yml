@@ -10968,8 +10968,22 @@ speakers:
   - id: 768
     fileName: 0768.jpg
     name:
-      - {language: en, text: "Viktor Rusakovich"}
+      - {language: en, text: "Victor Rusakovich"}
       - {language: ru, text: "Виктор Русакович"}
+    company:
+      - {language: en, text: "GP Solutions"}
+    bio:
+      - {language: en, text: "True Internet developer since 2008. The character is consistent. He has good relations with\
+            \ his workmates. Impeccably executes code review. Merciless to bugs in production. A good sportsman: the company's\
+            \ champion in typing speed using the ten-finger blind method. Married, was involved in backend development in\
+            \ 2011-2014, since then he hasn't been noticed in the relations defaming him. Adheres to reactive views. Marked\
+            \ with certificates and thanks."}
+      - {language: ru, text: "Истинный разработчик интернета с 2008 года. Характер — скрамовский, выдержанный. С товарищам\
+            и по работе поддерживает хорошие отношения. Безукоризненно выполняет код ревью. Беспощаден к багам в проде. От\
+            личный спортсмен: чемпион компании по скорости печати слепым десятипальцевым методом. Женат, был замешан в бэк\
+            енд-разработке в 2011-2014 году, с тех пор в связях, порочащих его, замечен не был. Придерживается реактивных\
+            \ взглядов. Отмечен сертификатами и благодарностями."}
+    twitter: the_ghost_minsk
   - id: 769
     fileName: 0769.jpg
     name:
@@ -15979,3 +15993,22 @@ speakers:
             \ frontend side of the Hasura Console. In love with building modern, scalable applications with exceptional user\
             \ experience."}
     twitter: aleksandrasays
+  - id: 1151
+    fileName: 1151.jpg
+    name:
+      - {language: en, text: "Andrey Churakov"}
+      - {language: ru, text: "Андрей Чураков"}
+    company:
+      - {language: en, text: Miro}
+    bio:
+      - {language: en, text: TBD}
+  - id: 1152
+    fileName: 1152.jpg
+    name:
+      - {language: en, text: "Oleg Obidin"}
+      - {language: ru, text: "Олег Обидин"}
+    company:
+      - {language: en, text: Revolut}
+    bio:
+      - {language: en, text: TBD}
+    twitter: o_obidin
