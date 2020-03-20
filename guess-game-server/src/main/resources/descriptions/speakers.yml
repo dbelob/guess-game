@@ -7634,10 +7634,11 @@ speakers:
     bio:
       - {language: en, text: "Vyacheslav works in testing for 10 years; he's a performance testing expert. He was improving\
             \ quality in document flow, digital accounting, government services projects. Currently Vyacheslav is developing\
-            \ online banking channels for legal entities."}
-      - {language: ru, text: "Занимается тестированием 10 лет, хорошо разбирается в тестировании производительности. Повыш\
-            ал качество в проектах по документообороту, электронной отчётности, госуслугам. Сейчас развивает каналы дистан\
-            ционного банковского обслуживания для юридических лиц."}
+            \ online banking channels for legal entities. Develops a community of performance testing engineers."}
+      - {language: ru, text: "Практикующий эксперт с 10 летним опытом в тестировании производительности. Участвовал в прое\
+            ктах по повышению качества производительности систем по документообороту, электронной отчётности, государствен\
+            ных и банковских проектах. Развивает сообщество инженеров по тестированию производительности. Спикер техническ\
+            их конференций."}
   - id: 542
     fileName: 0542.jpg
     name:
