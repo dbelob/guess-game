@@ -24,8 +24,8 @@
     "bootstrap": "^4.4.1",
     "core-js": "^2.6.11",
     "rxjs": "^6.5.4",
-    "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "tslib": "^1.11.1",
+    "zone.js": "^0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.7",
@@ -34,7 +34,7 @@
     "@angular/language-service": "^9.0.7",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "^2.0.8",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.12.30",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
