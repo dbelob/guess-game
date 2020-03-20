@@ -15703,7 +15703,16 @@ speakers:
     company:
       - {language: en, text: Google}
     bio:
-      - {language: en, text: TBD}
+      - {language: en, text: "Anton has worked on multiple projects in various areas, from embedded systems to high-performance\
+            \ distributed applications. Worked at companies such as Terminal Technologies, Ste||ar-group, Parallels, Kaspersky\
+            \ Lab. He contributed to HPX (library for high performance computing) and Boost. Anton has now settled at Google\
+            \ working on the browser Chrome in the memory management team."}
+      - {language: ru, text: "Проработал над различными проектами в различных сферах, начиная от встроенных систем и закан\
+            чивая распределенными серверными приложениями. Работал в компаниях Terminal Technologies, Ste||ar-group, Parallels,\
+            \ Kaspersky Lab. Внес вклад в разработку библиотеки для высокопроизводительных вычислений HPX, а также разраба\
+            тывал различные математические спец. функции для библиотеки Boost. Сейчас работает в Google над управлением па\
+            мятью в браузере Chrome."}
+    twitter: antohabikineev
   - id: 1129
     fileName: 1129.jpg
     name:

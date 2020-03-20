@@ -41,8 +41,8 @@ events:
     name:
       - {language: en, text: "C++ Russia 2020 Msc"}
       - {language: ru, text: "C++ Russia 2020 Мск"}
-    startDate: "2020-04-27"
-    endDate: "2020-04-28"
+    startDate: "2020-07-14"
+    endDate: "2020-07-15"
     siteLink:
       - {language: en, text: "https://cppconf-moscow.ru/en/"}
       - {language: ru, text: "https://cppconf-moscow.ru/"}
