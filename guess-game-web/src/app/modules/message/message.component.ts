@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { MessageService } from "./message.service";
 import { Message } from "./message.model";
 
@@ -6,13 +6,16 @@ import { Message } from "./message.model";
   selector: "app-message",
   templateUrl: "message.component.html",
 })
-export class MessageComponent {
+export class MessageComponent implements OnInit {
   private lastMessage: Message;
   @Input() private autoHide = false;
   @Input() private hidingTime = 10;
 
-  constructor(messageService: MessageService) {
-    messageService.messages.subscribe(m => this.lastMessage = m);
+  constructor(private messageService: MessageService) {
+  }
+
+  ngOnInit(): void {
+    this.messageService.messages.subscribe(m => this.lastMessage = m);
   }
 
   isVisible(): boolean {

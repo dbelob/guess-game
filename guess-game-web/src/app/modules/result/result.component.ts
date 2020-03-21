@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from "@ngx-translate/core";
 import { Result } from "../../shared/models/result.model";
 import { AnswerService } from "../../shared/services/answer.service";
@@ -11,13 +11,16 @@ import { GuessType } from "../../shared/models/guess-type.model";
   selector: 'app-result',
   templateUrl: './result.component.html'
 })
-export class ResultComponent {
+export class ResultComponent implements OnInit {
   private speakersImageDirectory: string = 'assets/images/speakers';
   public result = new Result();
   private isQuestionPicture = true;
 
   constructor(private answerService: AnswerService, private stateService: StateService, private router: Router,
               public translateService: TranslateService) {
+  }
+
+  ngOnInit(): void {
     this.loadResult();
   }
 

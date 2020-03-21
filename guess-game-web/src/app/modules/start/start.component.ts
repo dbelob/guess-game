@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { QuestionSet } from "../../shared/models/question-set.model";
 import { QuestionService } from "../../shared/services/question.service";
@@ -10,7 +10,7 @@ import { GuessType } from "../../shared/models/guess-type.model";
   selector: 'app-start',
   templateUrl: './start.component.html'
 })
-export class StartComponent {
+export class StartComponent implements OnInit {
   public questionSets: QuestionSet[] = [];
   public quantities: number[] = [];
   public selectedQuestionSets: QuestionSet[] = [];
@@ -19,6 +19,9 @@ export class StartComponent {
   public guessType = GuessType;
 
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
+  }
+
+  ngOnInit(): void {
     this.loadQuestionSets();
   }
 

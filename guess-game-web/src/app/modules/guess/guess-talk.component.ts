@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { SpeakersTalks } from "../../shared/models/speakers-talks.model";
 import { StateService } from "../../shared/services/state.service";
@@ -9,7 +9,7 @@ import { State } from "../../shared/models/state.model";
   selector: 'app-guess-talk',
   templateUrl: './guess-talk.component.html'
 })
-export class GuessTalkComponent {
+export class GuessTalkComponent implements OnInit {
   private imageDirectory: string = 'assets/images';
   private eventsImageDirectory: string = `${this.imageDirectory}/events`;
   private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
@@ -18,6 +18,9 @@ export class GuessTalkComponent {
   public logoImageSource: string;
 
   constructor(private stateService: StateService, private answerService: AnswerService, private router: Router) {
+  }
+
+  ngOnInit(): void {
     this.loadQuestion();
   }
 
