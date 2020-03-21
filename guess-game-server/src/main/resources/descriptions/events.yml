@@ -972,6 +972,23 @@ events:
     talkIds: [1758, 1759, 1760, 1761, 1762, 1763, 1764, 1765, 1766, 1767, 1768, 1769, 1770]
   - eventTypeId: 9
     name:
+      - {language: en, text: "Mobius 2015 SPb"}
+      - {language: ru, text: "Mobius 2015 СПб"}
+    startDate: "2015-04-03"
+    endDate: "2015-04-03"
+    siteLink:
+      - {language: en, text: "https://2015.mobius-piter.ru"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Lodeynopolskaya Str., 5, Congress Centre «PetroCongress»"}
+      - {language: ru, text: "Лодейнопольская ул., 5, Конгрессный Центр «ПетроКонгресс»"}
+    mapCoordinates: "59.963937, 30.289414"
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236qP8YO3U3YBkK27hnZ7kWfo
+    talkIds: []
+  - eventTypeId: 9
+    name:
       - {language: en, text: "Mobius 2017 SPb"}
       - {language: ru, text: "Mobius 2017 СПб"}
     startDate: "2017-04-21"
