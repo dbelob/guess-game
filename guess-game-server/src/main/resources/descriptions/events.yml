@@ -969,7 +969,7 @@ events:
       - {language: ru, text: "Лодейнопольская ул., 5, Конгрессный Центр «ПетроКонгресс»"}
     mapCoordinates: "59.963937, 30.289414"
     youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236qHkYwtuI-0HHMEwhnkGi-Q
-    talkIds: []
+    talkIds: [1758, 1759, 1760, 1761, 1762, 1763, 1764, 1765, 1766, 1767, 1768, 1769, 1770]
   - eventTypeId: 9
     name:
       - {language: en, text: "Mobius 2017 SPb"}

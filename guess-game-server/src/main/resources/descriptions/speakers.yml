@@ -3357,6 +3357,15 @@ speakers:
     name:
       - {language: en, text: "Ivan Kinash"}
       - {language: ru, text: "Иван Кинаш"}
+    company:
+      - {language: en, text: "Licel Corporation"}
+    bio:
+      - language: ru
+        text: "Со-основатель копании Licel, генеральный директор Более 10 лет в IT.\n\nТекущие проекты: jCardSim -\
+        \ open-source симулятор, реализующий Java Card API, v.2.2.1, обладатель премии Duke's Choice Award\
+        \ (https://www.java.net/dukeschoice), http://jcardsim.org Stringer Java Obfuscator - обфускатор и протектор для\
+        \ всех Java-платформ, https://jfxstore.com/stringer DexProtector - обфускатор и протектор для платформы Android,\
+        \ http://dexprotector.com"
   - id: 240
     fileName: 0240.jpg
     name:
@@ -3743,6 +3752,7 @@ speakers:
       - {language: en, text: "Vasily Ershov"}
       - {language: ru, text: "Василий Ершов"}
     company:
+      - {language: en, text: Yandex}
       - {language: ru, text: Яндекс}
     bio:
       - {language: ru, text: "Закончил Санкт-Петербургский государственный университет и Computer Science Center (Санкт-Пе\
@@ -3771,6 +3781,7 @@ speakers:
       - {language: en, text: "Andrejs Guba"}
       - {language: ru, text: "Андрей Губа"}
     company:
+      - {language: en, text: Odnoklassniki}
       - {language: ru, text: Одноклассники}
     bio:
       - language: ru
@@ -4036,6 +4047,7 @@ speakers:
       - {language: en, text: "Artur Vasilov"}
       - {language: ru, text: "Артур Василов"}
     company:
+      - {language: en, text: Yandex}
       - {language: ru, text: Яндекс}
     bio:
       - {language: en, text: "Works at Yandex on “Yandex” Android application. Is very sensitive about the quality of applications\
@@ -11911,7 +11923,8 @@ speakers:
       - {language: en, text: "Dmitry Trimonov"}
       - {language: ru, text: "Дмитрий Тримонов"}
     company:
-      - {language: en, text: Яндекс}
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
     bio:
       - {language: en, text: "Graduated from the MIPT department of aerophysics and space research. Before Yandex Maps, was\
             \ into pattern recognition and .NET development (WPF). Used to work with maps development on Windows, now works\
@@ -12013,7 +12026,8 @@ speakers:
       - {language: en, text: "Anton Dudakov"}
       - {language: ru, text: "Антон Дудаков"}
     company:
-      - {language: en, text: Яндекс}
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
     bio:
       - {language: en, text: "Anton is an Android developer at Yandex. He's leading the development of Yandex Auto, an embedded\
             \ system for Cars."}
@@ -12084,7 +12098,8 @@ speakers:
       - {language: en, text: "Kirill Borisov"}
       - {language: ru, text: "Кирилл Борисов"}
     company:
-      - {language: en, text: Яндекс}
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
     bio:
       - {language: en, text: "An old mercenary who did not despise writing in a whole bunch of languages: from C to Clojure,\
             \ from Java to PHP. But deep inside he is a simple pythonist, though he gets paid for mobile development."}
@@ -12747,6 +12762,14 @@ speakers:
     name:
       - {language: en, text: "Andrey Sklyarevsky"}
       - {language: ru, text: "Андрей Скляревский"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - {language: ru, text: "Более 8 лет занимается разработкой Веб-сервисов и сопутствующих им инструментов. Работал\
+      \ над созданием решений для бизнес-аналитики и обмена данными с применением ASP.NET, C#, Silverlight, XAML, SQL,\
+      \ JavaScript. Сейчас Андрей занимается программированием пользовательских интерфейсов, ориентированных на мобильные\
+      \ браузеры."}
   - id: 896
     fileName: 0896.jpg
     name:
@@ -12782,6 +12805,13 @@ speakers:
     name:
       - {language: en, text: "Yury Buyanov"}
       - {language: ru, text: "Юрий Буянов"}
+    company:
+      - {language: en, text: e-Legion}
+    bio:
+      - {language: en, text: "CIO и руководитель iOS-разработки в e-Legion. Пришёл в компанию младшим разработчиком в дни\
+      \ её основания и в разные годы занимался Java (ME, SE, EE), .Net, Scala, Android и iOS проектами. Организатор и\
+      \ вдохновитель серии конференций ScalaDev в СПб. Последние 2.5 года практически полностью посвятил iOS-разработке\
+      \ и развитию этого направления в компании."}
   - id: 903
     fileName: 0903.jpg
     name:
@@ -12842,36 +12872,90 @@ speakers:
     name:
       - {language: en, text: "Alexey Nikitin"}
       - {language: ru, text: "Алексей Никитин"}
+    company:
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
+    bio:
+      - language: ru
+        text: "В данный момент работает в компании Одноклассники в команде Android-разработки. До присоединения к\
+        \ Одноклассникам участвовал в проекте по реализации компьютерного зрения, разрабатывал корпоративные приложения\
+        \ и поучаствовал в стартапе. Учился в ФМЛ №30 где и увлекся программированием, изучая компьютерную графику.\
+        \ Закончил физический факультет СПбГУ. Увлекается горными лыжами, велосипедом и историей. Не любит писать под iOS."
   - id: 913
     fileName: 0913.jpg
     name:
       - {language: en, text: "Alexey Ushakov"}
       - {language: ru, text: "Алексей Ушаков"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: ru, text: "Алексей Ушаков работает в компани JetBrains, где занимается разработкой продукта AppCode.\
+      \ До этого длительное время работал в компании Oracle (Sun Microsystems), участвуя в нескольких проектах по разработке\
+      \ JCK, Java2D, JavaFX и WebView компоненты, основанной на WebKit. Занимался реализацией компилятора С++ под ОС Солярис.\
+      \ Закончил математико-механический факультет СПбГУ."}
   - id: 914
     fileName: 0914.jpg
     name:
       - {language: en, text: "Evgeny Kudelevsky"}
       - {language: ru, text: "﻿Евгений Куделевский"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: ru, text: "Работает разработчиком в компании JetBrains с 2008 года. Занимался разработкой\
+      \ Android-плагина к IntelliJ IDEA, который впоследствии лег в основу среды Android Studio. Также занимался поддержкой\
+      \ HTML и CSS в платформе IntelliJ. Закончил математико-механический факультет СПбГУ."}
   - id: 915
     fileName: 0915.jpg
     name:
       - {language: en, text: "Renat Nyazhemetdinov"}
       - {language: ru, text: "﻿Ренат Няжеметдинов"}
+    company:
+      - {language: en, text: Samsung}
+    bio:
+      - {language: ru, text: "В прошлом разработчик приложений на C/C++, эксперт по встраиваемым системам и информационной\
+      \ безопасности. Последние несколько лет активно занимается мобильными системами. В данный момент является экспертом\
+      \ по ОС Tizen в Центре Мультимедийных Технологий компании Samsung Electronics Russia. Большой поклонник качественного\
+      \ программного продукта независимо от его области применения."}
   - id: 916
     fileName: 0916.jpg
     name:
       - {language: en, text: "Nikita Timofeev"}
       - {language: ru, text: "﻿Никита Тимофеев"}
+    company:
+      - {language: en, text: Mail.ru}
+    bio:
+      - {language: ru, text: "С 2012 года Технический директор студии разработки игр Mail.ru Group в Санкт-Петербурге.\
+      \ В игровую индустрию пришел в 2006 году. Сначала в качестве php, а затем - Java разработчика. Никита принимал\
+      \ участие в создании нескольких крупных MMO онлайн, браузерных и социальных игр. В последнее время увлекается C++\
+      \ и управляет командой разработки игры «Jungle Heat». Закончил физический факультет СПбГПУ. Всегда поддержит беседу\
+      \ про микроконтроллеры и физику твердого тела. Убежден, что терпение и труд всё перетрут!"}
   - id: 917
     fileName: 0917.jpg
     name:
       - {language: en, text: "Anastasiya Karimova"}
       - {language: ru, text: "Анастасия Каримова"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: ru, text: "Работает в команде проекта One Platform Foundation. До этого работала в таких компаниях,\
+      \ как Quickoffice и Devpocket. Окончила факультет Прикладной математики - процессов управления СПбГУ."}
   - id: 918
     fileName: 0918.jpg
     name:
       - {language: en, text: "Emin Askerov"}
       - {language: ru, text: "Эмин Аскеров"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - {language: ru, text: "В настоящее я работаю в корпорации Oracle (ISV Migration Center), в департаменте по работе\
+      \ с партнерами, где занимаюсь техническим консультированием, проведением тренингов и другими 1 to 1 и 1 to N\
+      \ активностями по стеку продуктов Oracle FMW для партнеров-разработчиков ISV, помогая им внедрять технологии Oracle\
+      \ в своих решениях. Имею опыт практической разработки ГИС систем с использованием Oracle ADF, MapViewer и Oracle\
+      \ Spatial технологий. Активно интересуюсь всеми продуктами линейки FMW, фокусируясь на таких продуктах как ADF, ADF\
+      \ Mobile, WebLogic Server. Свои мысли и опыт для русскоязычного сообщества FMW разработчиков публикую в неофициальном\
+      \ блоге: middletier.blogspot.com. На английском языке статьи выходят в официальном блоге Oracle IMC:\
+      \ blogs.oracle.com/imc Интересуюсь высокими технологиями, популярной наукой, музыкой и кино."}
   - id: 919
     fileName: 0919.jpg
     name:
@@ -12911,7 +12995,8 @@ speakers:
       - {language: en, text: "Grigori Bakunov"}
       - {language: ru, text: "Григорий Бакунов"}
     company:
-      - {language: en, text: Яндекс}
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
     bio:
       - {language: en, text: "Grigory Bakunov is Yandex's Director of Technology Distribution. He is a populariser of programming,\
             \ a successful entrepreneur, a frequent participant at internet technology conferences, and one of the creators\
