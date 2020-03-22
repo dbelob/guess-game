@@ -12728,6 +12728,8 @@ speakers:
     name:
       - {language: en, text: "Matvey Malkov"}
       - {language: ru, text: "Матвей Мальков"}
+    company:
+      - {language: en, text: 2GIS}
   - id: 889
     fileName: 0889.jpg
     name:
@@ -12790,11 +12792,16 @@ speakers:
     name:
       - {language: en, text: "Dmitry Evdokimov"}
       - {language: ru, text: "Дмитрий Евдокимов"}
+    company:
+      - {language: en, text: "Digital Security"}
   - id: 900
     fileName: 0900.jpg
     name:
       - {language: en, text: "Yury Leonychev"}
       - {language: ru, text: "Юрий Леонычев"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
   - id: 901
     fileName: 0901.jpg
     name:
@@ -12832,6 +12839,8 @@ speakers:
     name:
       - {language: en, text: "Andrey Belenko"}
       - {language: ru, text: "Андрей Беленко"}
+    company:
+      - {language: en, text: NowSecure}
   - id: 907
     fileName: 0907.jpg
     name:
