@@ -12807,18 +12807,16 @@ speakers:
     name:
       - {language: en, text: "Viktor Korsun"}
       - {language: ru, text: "Виктор Корсун"}
+    company:
+      - {language: en, text: "ZeptoLab LLC"}
   - id: 902
     fileName: 0902.jpg
     name:
       - {language: en, text: "Yury Buyanov"}
       - {language: ru, text: "Юрий Буянов"}
     company:
-      - {language: en, text: e-Legion}
-    bio:
-      - {language: en, text: "CIO и руководитель iOS-разработки в e-Legion. Пришёл в компанию младшим разработчиком в дни\
-      \ её основания и в разные годы занимался Java (ME, SE, EE), .Net, Scala, Android и iOS проектами. Организатор и\
-      \ вдохновитель серии конференций ScalaDev в СПб. Последние 2.5 года практически полностью посвятил iOS-разработке\
-      \ и развитию этого направления в компании."}
+      - {language: en, text: Odnoklassniki}
+      - {language: ru, text: Одноклассники}
   - id: 903
     fileName: 0903.jpg
     name:
@@ -12846,11 +12844,15 @@ speakers:
     name:
       - {language: en, text: "Alexander Pavlov"}
       - {language: ru, text: "Александр Павлов"}
+    company:
+      - {language: en, text: Zeptolab}
   - id: 908
     fileName: 0908.jpg
     name:
       - {language: en, text: "Fyodor Nesterenko"}
       - {language: ru, text: "Федор Нестеренко"}
+    company:
+      - {language: en, text: Zeptolab}
   - id: 909
     fileName: 0909.jpg
     name:
