@@ -12822,6 +12822,8 @@ speakers:
     name:
       - {language: en, text: "Alexander Smirnov"}
       - {language: ru, text: "Александр Смирнов"}
+    company:
+      - {language: en, text: "Mail.ru Group"}
   - id: 904
     fileName: 0904.jpg
     name:
