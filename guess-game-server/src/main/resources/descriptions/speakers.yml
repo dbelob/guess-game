@@ -12750,6 +12750,8 @@ speakers:
     name:
       - {language: en, text: "Alexey Rybakov"}
       - {language: ru, text: "Алексей Рыбаков"}
+    company:
+      - {language: en, text: DataArt}
   - id: 893
     fileName: 0893.jpg
     name:
@@ -12777,6 +12779,9 @@ speakers:
     name:
       - {language: en, text: "Denis Kretov"}
       - {language: ru, text: "Денис Кретов"}
+    company:
+      - {language: en, text: "Notissimus"}
+      - {language: ru, text: "Нотиссимус"}
   - id: 897
     fileName: 0897.jpg
     name:
@@ -12829,11 +12834,17 @@ speakers:
     name:
       - {language: en, text: "Kirill Bessonov"}
       - {language: ru, text: "Кирилл Бессонов"}
+    company:
+      - {language: en, text: "TCS Bank"}
+      - {language: ru, text: "ТКС Банк"}
   - id: 905
     fileName: 0905.jpg
     name:
       - {language: en, text: "Artem Kiselev"}
       - {language: ru, text: "Артем Киселев"}
+    company:
+      - {language: en, text: "TCS Bank"}
+      - {language: ru, text: "ТКС Банк"}
   - id: 906
     fileName: 0906.jpg
     name:
@@ -12860,11 +12871,16 @@ speakers:
     name:
       - {language: en, text: "Danil Nikiforov"}
       - {language: ru, text: "Данил Никифоров"}
+    company:
+      - {language: en, text: Tamtek}
+      - {language: ru, text: Тамтек}
   - id: 910
     fileName: 0910.jpg
     name:
       - {language: en, text: "Sergey Lalov"}
       - {language: ru, text: "Сергей Лалов"}
+    company:
+      - {language: en, text: "Spiral Code Studio"}
   - id: 911
     fileName: 0911.jpg
     name:
