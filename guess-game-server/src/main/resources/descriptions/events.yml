@@ -160,6 +160,23 @@ events:
               1750, 1751, 1752, 1753]
   - eventTypeId: 2
     name:
+      - {language: en, text: "DotNext 2015 SPb"}
+      - {language: ru, text: "DotNext 2015 СПб"}
+    startDate: "2015-06-05"
+    endDate: "2015-06-05"
+    siteLink:
+      - {language: en, text: "https://2015.dotnext-piter.ru"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»"}
+    mapCoordinates: "59.842400, 30.318815"
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBf4vpWccEM59jH-chuEw4Z0
+    talkIds: []
+  - eventTypeId: 2
+    name:
       - {language: en, text: "DotNext 2016 Helsinki"}
       - {language: ru, text: "DotNext 2016 Хельсинки"}
     startDate: "2016-12-07"
