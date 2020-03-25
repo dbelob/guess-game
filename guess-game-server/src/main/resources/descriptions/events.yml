@@ -174,7 +174,7 @@ events:
       - {language: ru, text: "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»"}
     mapCoordinates: "59.842400, 30.318815"
     youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBf4vpWccEM59jH-chuEw4Z0
-    talkIds: []
+    talkIds: [1792, 1793, 1794, 1795, 1796, 1797, 1798, 1799, 1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807]
   - eventTypeId: 2
     name:
       - {language: en, text: "DotNext 2016 Helsinki"}

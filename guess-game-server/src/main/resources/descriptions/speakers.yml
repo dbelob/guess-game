@@ -7305,6 +7305,8 @@ speakers:
     name:
       - {language: en, text: "Vitaly Baum"}
       - {language: ru, text: "Виталий Баум"}
+    company:
+      - {language: en, text: "Bright Box"}
   - id: 503
     fileName: 0503.jpg
     name:
@@ -7319,6 +7321,8 @@ speakers:
     name:
       - {language: en, text: "Dmitry Garavsky"}
       - {language: ru, text: "Дмитрий Гаравский"}
+    company:
+      - {language: en, text: DevExpress}
   - id: 506
     fileName: 0506.jpg
     name:
@@ -7380,11 +7384,16 @@ speakers:
     name:
       - {language: en, text: "Pavel Avsenin"}
       - {language: ru, text: "Павел Авсенин"}
+    company:
+      - {language: en, text: "DevExpress"}
   - id: 516
     fileName: 0516.jpg
     name:
       - {language: en, text: "Alexander Korolev"}
       - {language: ru, text: "Александр Королёв"}
+    company:
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
   - id: 517
     fileName: 0517.jpg
     name:
