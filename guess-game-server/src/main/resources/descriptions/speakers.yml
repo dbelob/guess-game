@@ -7362,6 +7362,8 @@ speakers:
     name:
       - {language: en, text: "Roman Belov"}
       - {language: ru, text: "Роман Белов"}
+    company:
+      - {language: en, text: JetBrains}
   - id: 512
     fileName: 0512.jpg
     name:
