@@ -178,6 +178,23 @@ events:
               1810, 1811, 1812, 1813]
   - eventTypeId: 2
     name:
+      - {language: en, text: "DotNext 2015 Msk"}
+      - {language: ru, text: "DotNext 2015 Мск"}
+    startDate: "2015-12-11"
+    endDate: "2015-12-11"
+    siteLink:
+      - {language: en, text: "https://2015.dotnext-moscow.ru"}
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Europe Square 2, Hotel «Radisson Slavyanskaya»"}
+      - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
+    mapCoordinates: "55.741881, 37.568099"
+    youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBd905TLsV5wMhAhKto0gyx_
+    talkIds: [1814, 1815, 1816, 1817, 1818]
+  - eventTypeId: 2
+    name:
       - {language: en, text: "DotNext 2016 Helsinki"}
       - {language: ru, text: "DotNext 2016 Хельсинки"}
     startDate: "2016-12-07"
