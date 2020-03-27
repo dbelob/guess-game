@@ -7369,6 +7369,8 @@ speakers:
     name:
       - {language: en, text: "Nikita Namestnikov"}
       - {language: ru, text: "Никита Наместников"}
+    company:
+      - {language: en, text: "DevExpress"}
   - id: 513
     fileName: 0513.jpg
     name:
@@ -7381,6 +7383,8 @@ speakers:
     name:
       - {language: en, text: "Kirill Levchenko"}
       - {language: ru, text: "Кирилл Левченко"}
+    company:
+      - {language: en, text: "ABBYY"}
   - id: 515
     fileName: 0515.jpg
     name:
