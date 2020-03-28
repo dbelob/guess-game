@@ -7352,11 +7352,15 @@ speakers:
     name:
       - {language: en, text: "Alexander Nikitin"}
       - {language: ru, text: "Александр Никитин"}
+    company:
+      - {language: en, text: Adform}
   - id: 510
     fileName: 0510.jpg
     name:
       - {language: en, text: "Alexander Shvedov"}
       - {language: ru, text: "Александр Шведов"}
+    company:
+      - {language: en, text: JetBrains}
   - id: 511
     fileName: 0511.jpg
     name:
