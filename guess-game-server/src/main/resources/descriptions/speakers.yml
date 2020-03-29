@@ -6781,13 +6781,18 @@ speakers:
     company: []
     bio:
       - {language: en, text: "Andrey's favorite topics are performance and micro-optimizations, and he is the maintainer of\
-            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is also\
-            \ a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes to\
-            \ study science (his primary research interests are mathematical biology and bifurcation theory)."}
+            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is a frequent\
+            \ speaker at various events for developers, and he is the program director of the DotNext conference. Andrey is\
+            \ also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes\
+            \ to study science (his primary research interests are mathematical biology and bifurcation theory). Previously,\
+            \ he worked as a postdoctoral research fellow in the Weizmann Institute of Science and as a research scientist\
+            \ in the Sobolev Institute of Mathematics SB RAS."}
       - {language: ru, text: "Любимые темы Андрея — производительность и микрооптимизации, он также мейнтейнер проекта BenchmarkDotNet\
-            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — к.ф.-м.н., Microsoft .NET\
-            \ MVP, серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — м\
-            атематическая биология и теория бифуркаций."}
+            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — частый спикер на различны\
+            х мероприятиях для разработчиков и председатель программного комитета конференции DotNext. Он также к.ф.-м.н.,\
+            \ Microsoft .NET MVP, серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научн\
+            ые интересы — математическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и\
+            \ научным сотрудником в Институте математики СО РАН."}
     twitter: andrey_akinshin
     mvp: true
   - id: 472
