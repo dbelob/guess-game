@@ -6781,18 +6781,13 @@ speakers:
     company: []
     bio:
       - {language: en, text: "Andrey's favorite topics are performance and micro-optimizations, and he is the maintainer of\
-            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is a frequent\
-            \ speaker at various events for developers, and he is the program director of the DotNext conference. Andrey is\
-            \ also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes\
-            \ to study science (his primary research interests are mathematical biology and bifurcation theory). Previously,\
-            \ he worked as a postdoctoral research fellow in the Weizmann Institute of Science and as a research scientist\
-            \ in the Sobolev Institute of Mathematics SB RAS."}
+            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is also\
+            \ a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes to\
+            \ study science (his primary research interests are mathematical biology and bifurcation theory)."}
       - {language: ru, text: "Любимые темы Андрея — производительность и микрооптимизации, он также мейнтейнер проекта BenchmarkDotNet\
-            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — частый спикер на различны\
-            х мероприятиях для разработчиков и председатель программного комитета конференции DotNext. Он также к.ф.-м.н.,\
-            \ Microsoft .NET MVP, серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научн\
-            ые интересы — математическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и\
-            \ научным сотрудником в Институте математики СО РАН."}
+            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — к.ф.-м.н., Microsoft .NET\
+            \ MVP, серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — м\
+            атематическая биология и теория бифуркаций."}
     twitter: andrey_akinshin
     mvp: true
   - id: 472
@@ -15399,6 +15394,7 @@ speakers:
     fileName: 1095.jpg
     name:
       - {language: en, text: "Aleksei Dremin"}
+      - {language: ru, text: "Алексей Дремин"}
     company:
       - {language: en, text: Invitae}
     bio:
@@ -16154,3 +16150,14 @@ speakers:
     bio:
       - {language: en, text: TBD}
     twitter: o_obidin
+  - id: 1153
+    fileName: 1153.jpg
+    name:
+      - {language: en, text: "Tim Baverstock"}
+    company:
+      - {language: en, text: "Badoo (by MagicLab)"}
+    bio:
+      - language: en
+        text: "Over 20 years as a toolsmith with experience in test and development infrastructure, at companies including\
+            \ Unigraphics, Google, and Shazam. Currently at Badoo/MagicLab with particular responsibility for Android test\
+            \ infrastructure.\n\nTim likes badgers."
