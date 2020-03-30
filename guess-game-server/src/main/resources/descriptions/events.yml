@@ -532,6 +532,24 @@ events:
   # HolyJS
   - eventTypeId: 4
     name:
+      - {language: en, text: "HolyJS 2016 SPb"}
+      - {language: ru, text: "HolyJS 2016 СПб"}
+    startDate: "2016-06-05"
+    endDate: "2016-06-05"
+    siteLink:
+      - {language: en, text: "https://2016.holyjs-piter.ru/en/"}
+      - {language: ru, text: "https://2016.holyjs-piter.ru/"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»"}
+    mapCoordinates: "59.842400, 30.318815"
+    youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8JST_ZwTcGG1FHGgKBMcpn6
+    talkIds: []
+  - eventTypeId: 4
+    name:
       - {language: en, text: "HolyJS 2016 Msc"}
       - {language: ru, text: "HolyJS 2016 Мск"}
     startDate: "2016-12-11"
