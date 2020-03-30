@@ -7306,7 +7306,11 @@ speakers:
       - {language: en, text: "Vitaly Baum"}
       - {language: ru, text: "Виталий Баум"}
     company:
-      - {language: en, text: "Bright Box"}
+      - {language: en, text: "Independent Consultant"}
+    bio:
+      - language: ru
+        text: "Виталий имеет экспертизу в создании:\n\n- корпоративных систем\n- распределенных систем и микросервисной\
+        \ архитектуры\n- Internet Of Things платформы для Connected Car."
   - id: 503
     fileName: 0503.jpg
     name:
