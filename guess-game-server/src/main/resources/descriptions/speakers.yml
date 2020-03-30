@@ -7311,11 +7311,27 @@ speakers:
     fileName: 0503.jpg
     name:
       - {language: en, text: "Maurice de Beijer"}
+    company:
+      - {language: en, text: "ABL - The Problem Solver"}
+    bio:
+      - language: en
+        text: "Maurice de Beijer is an independent software consultant and trainer. He specializes in JavaScript, React,\
+        \ AngularJS and ASP.NET MVC. His work includes a large, global, safety application for the oil and gas industry.\
+        \ Maurice is also active in the open source community. He teaches ECMAScript, TypeScript, React, Angular JS and\
+        \ ASP.NET MVC courses. Since 2005, he has received Microsoft’s Yearly Most Valuable Professional Award. Further,\
+        \ Maurice is active in the Dutch dotNED user group and organizes it meetings."
+    mvp: true
   - id: 504
     fileName: 0504.jpg
     name:
       - {language: en, text: "Vladimir Koshelev"}
       - {language: ru, text: "Владимир Кошелев"}
+    company:
+      - {language: en, text: "ИСП РАН"}
+    bio:
+      - {language: ru, text: "Эксперт в области статического анализа и компиляторных технологий. Последние годы занимаюсь\
+      \ разработкой статических анализаторов для C/C++/Java/C#. В настоящее время разрабатываю статический анализатор на\
+      \ основе Roslyn – SharpChecker."}
   - id: 505
     fileName: 0505.jpg
     name:
@@ -7323,6 +7339,11 @@ speakers:
       - {language: ru, text: "Дмитрий Гаравский"}
     company:
       - {language: en, text: DevExpress}
+    bio:
+      - {language: ru, text: "Lead .NET Developer. в DevExpress в отделе Desktop-разработки. Фокусируется на разработке\
+      \ UI-компонентов Desktop-приложений. Сфера профессиональных интересов – MVVM, PnP, тонкие моменты .NET (интроспекция,\
+      \ сериализация, динамическая компиляция и кодогенерация, оптимизация). В свободное время любит помогать другим\
+      \ разработчикам разбираться с тонкостями .NET."}
   - id: 506
     fileName: 0506.jpg
     name:
@@ -7330,11 +7351,22 @@ speakers:
       - {language: ru, text: "Сергей Шкредов"}
     company:
       - {language: en, text: JetBrains}
+    bio:
+      - {language: ru, text: "Руководитель отдела .NET продуктов в JetBrains. Принимаю непосредственное участие в\
+      \ разработке ReSharper и Project Rider. Интересуюсь архитектурой больших программ, производительностью и подходами\
+      \ к созданию удобного пользовательского интерфейса."}
   - id: 507
     fileName: 0507.jpg
     name:
       - {language: en, text: "Andrey Terehov"}
       - {language: ru, text: "Андрей Терехов"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: ru, text: "Разработчик в EPAM Systems. Занимаюсь full-stack разработкой. За время работы имел счастье\
+      \ поучаствовать в разработках как суровых back-end-ов со всеми любимыми biztalk-ми, так и front-end-ов, в которых\
+      \ не было ни одной строго типизированной строчки кода. Стараюсь держать руку на пульсе, следить за развитием\
+      \ современных веб-технологий."}
   - id: 508
     fileName: 0508.jpg
     name:
