@@ -547,7 +547,7 @@ events:
       - {language: ru, text: "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»"}
     mapCoordinates: "59.842400, 30.318815"
     youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8JST_ZwTcGG1FHGgKBMcpn6
-    talkIds: []
+    talkIds: [1869, 1870, 1871, 1872, 1873, 1874, 1875]
   - eventTypeId: 4
     name:
       - {language: en, text: "HolyJS 2016 Msc"}

@@ -2825,12 +2825,11 @@ speakers:
       - {language: en, text: "Vyacheslav Lapin"}
       - {language: ru, text: "Вячеслав Лапин"}
     company:
-      - {language: en, text: "EPAM"}
+      - {language: en, text: "EPAM Systems"}
     bio:
       - language: ru
-        text: "Более 10 лет в IT, в таких областях, как интеграция, автоматизация бизнес-процессов, телеком и Internet-проекты.\
-        \ Предмет профессиональной страсти – системы обмена сообщениями. Так же интересуюсь функциональными ЯП, особенно\
-        \ Clojure`ом, базами NoSQL, предпочитаю Agile-практики в разработке."
+        text: "Full-stack Developer и тренер. Начинал с HTML-вёрстки и js-scripting`а в небольшой дизайн-студии. Работал\
+        \ в сфере автоматизации журналистики, банковских CRM-систем, интегратором, а также системным аналитиком."
   - id: 183
     fileName: 0183.jpg
     name:
@@ -11076,11 +11075,23 @@ speakers:
     name:
       - {language: en, text: "Tatyana Ryzhenkova"}
       - {language: ru, text: "Татьяна Рыженкова"}
+    company:
+      - {language: en, text: DevExpress}
+    bio:
+      - {language: ru, text: "Работаю в компании DevExpress, занимаюсь web и front-end разработкой. Посвятила себя\
+      \ созданию инструментов для отображения данных, графиков и диаграмм. Специализируюсь на визуализации данных, UI/UX,\
+      \ способах передачи информации от человека к человеку, а также интересуюсь методиками планирования, мотивации и\
+      \ эффективного достижения целей."}
   - id: 774
     fileName: 0774.jpg
     name:
       - {language: en, text: "Sergey Zvyagin"}
       - {language: ru, text: "Сергей Звягин"}
+    company:
+      - {language: en, text: DevExpress}
+    bio:
+      - {language: ru, text: "Ведущий разработчик в DevExpress. Фронтэндер с бэкграундом бэкендера. Верю в программистов,\
+      \ которые не пишут #$%^@код, стартапы, которые взлетают, и то, что будущее с дополненной реальностью скоро наступит."}
   - id: 775
     fileName: 0775.jpg
     name:
