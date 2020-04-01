@@ -11016,6 +11016,11 @@ speakers:
     name:
       - {language: en, text: "Anastasiya Goryacheva"}
       - {language: ru, text: "Анастасия Горячева"}
+    company:
+      - {language: en, text: Avito}
+    bio:
+      - {language: ru, text: "Работаю в Avito, делаю большое одностраничное приложение для профессиональных пользователей\
+      \ Avito. Использую фреймворк basisjs. Участвую в разработке инструментов разработки для basisjs."}
   - id: 765
     fileName: 0765.jpg
     name:
@@ -11031,6 +11036,12 @@ speakers:
     name:
       - {language: en, text: "Mikhail Novikov"}
       - {language: ru, text: "Михаил Новиков"}
+    company:
+      - {language: en, text: Reindex}
+    bio:
+      - {language: ru, text: "Я СТО в Reindex, мы делаем самый удобный GraphQL сервер для фронтенд разработчиков. До\
+      \ этого я делал консалтинг на React, строил роботов для сортировки мусора на Clojure и писал IM решения для\
+      \ телефонных операторов."}
   - id: 768
     fileName: 0768.jpg
     name:
@@ -11055,6 +11066,11 @@ speakers:
     name:
       - {language: en, text: "Alexey Simonenko"}
       - {language: ru, text: "Алексей Симоненко"}
+    bio:
+      - {language: ru, text: "Веб-евангелист и сооснователь HTML Academy. Обучает тысячи людей фронтенду и влияет на\
+      \ невинные умы новичков. Родился в Ленинграде и со школьных времён начал увлекаться вебом. Восемь лет посвятил\
+      \ маркетинговому агентству. В роли технического директора познакомился со всеми аспектами агентской веб-разработки\
+      \ и автоматизации бизнес-процессов. Активный сторонник веб-стандартов."}
   - id: 770
     fileName: 0770.jpg
     name:
