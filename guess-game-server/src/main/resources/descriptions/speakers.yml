@@ -11011,6 +11011,13 @@ speakers:
     name:
       - {language: en, text: "Vyacheslav Egorov"}
       - {language: ru, text: "Вячеслав Егоров"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: ru, text: "Сотрудник Google в городе Орхус, Дания, в том самом офисе, где появился на свет V8 JavaScript\
+      \ engine. Компиляторщик до мозга костей, интересующийся всем, что так или иначе связанно с виртуальными машинами.\
+      \ Работал над V8, сейчас работаю над Dart VM и иногда чиню баги в LuaJIT. До Google работал в Новосибирской компании\
+      \ Excelsior над JVM с ahead-of-time компилятором."}
   - id: 764
     fileName: 0764.jpg
     name:
@@ -11026,11 +11033,21 @@ speakers:
     name:
       - {language: en, text: "Dmitriy Loktev"}
       - {language: ru, text: "Дмитрий Локтев"}
+    company:
+      - {language: en, text: Indie}
+    bio:
+      - {language: ru, text: "Пишу приложения под iOS и OS X, где большая часть кода на JavaScript."}
   - id: 766
     fileName: 0766.jpg
     name:
       - {language: en, text: "Stanislav Gumenyuk"}
       - {language: ru, text: "Станислав Гуменюк"}
+    company:
+      - {language: en, text: SEMrush}
+    bio:
+      - {language: ru, text: "Разработчик сервисов в компании SEMrush. За свою жизнь прошёл путь от PHP разработчика до\
+      \ архитектора HighLoad проектов, релиз инженера и почувствовал вкус и боль DevOps. Сейчас активно занимаюсь\
+      \ созданием приложения с использованием Node.js и с применением практик DevOps."}
   - id: 767
     fileName: 0767.jpg
     name:
@@ -11076,6 +11093,13 @@ speakers:
     name:
       - {language: en, text: "Kirill Sukhomlin"}
       - {language: ru, text: "Кирилл Сухомлин"}
+    company:
+      - {language: en, text: "EPAM Systems"}
+    bio:
+      - {language: ru, text: "В общем-то, программирую. Начиная с простого клона Howitzer\
+      \ (http://www.old-games.ru/game/4732.html) в 7-м классе на quick basic, в который я даже поиграл с друзьями, и до\
+      \ проектов, используемых миллионами людей с ~2010 и позже:\n\n- Интерфейс Яндекс.почты\n- B2B конструктор аналитики,\
+      \ а также движок для http://www.innometrics.com/\n- Крупнейшая канадская сеть супермаркетов: http://bit.ly/1XbUMPY"}
   - id: 771
     fileName: 0771.jpg
     name:
@@ -11086,6 +11110,11 @@ speakers:
     name:
       - {language: en, text: "Igor Zotov"}
       - {language: ru, text: "Игорь Зотов"}
+    company:
+      - {language: en, text: Amperka}
+      - {language: ru, text: Амперка}
+    bio:
+      - {language: ru, text: "Разработчик технических решений в компании Амперка, инженер-конструктор."}
   - id: 773
     fileName: 0773.jpg
     name:
