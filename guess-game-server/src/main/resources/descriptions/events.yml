@@ -1063,6 +1063,23 @@ events:
               1789, 1790, 1791]
   - eventTypeId: 9
     name:
+      - {language: en, text: "Mobius 2016 SPb"}
+      - {language: ru, text: "Mobius 2016 СПб"}
+    startDate: "2016-06-04"
+    endDate: "2016-06-04"
+    siteLink:
+      - {language: en, text: "https://2016.mobius-piter.ru"}
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Pobedy Square 1, Hotel «Park Inn by Radisson Pulkovskaya»"}
+      - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
+    mapCoordinates: "59.842400, 30.318815"
+    youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236pH1yoUvq5YDZUWAJz1T4DF
+    talkIds: []
+  - eventTypeId: 9
+    name:
       - {language: en, text: "Mobius 2017 SPb"}
       - {language: ru, text: "Mobius 2017 СПб"}
     startDate: "2017-04-21"
