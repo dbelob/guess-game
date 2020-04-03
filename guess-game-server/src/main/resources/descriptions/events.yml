@@ -1068,7 +1068,8 @@ events:
     startDate: "2016-06-04"
     endDate: "2016-06-04"
     siteLink:
-      - {language: en, text: "https://2016.mobius-piter.ru"}
+      - {language: en, text: "https://2016.mobius-piter.ru/en/"}
+      - {language: ru, text: "https://2016.mobius-piter.ru/"}
     city:
       - {language: en, text: "Saint Petersburg"}
       - {language: ru, text: Санкт-Петербург}
@@ -1077,7 +1078,7 @@ events:
       - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
     mapCoordinates: "59.842400, 30.318815"
     youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236pH1yoUvq5YDZUWAJz1T4DF
-    talkIds: []
+    talkIds: [1890]
   - eventTypeId: 9
     name:
       - {language: en, text: "Mobius 2017 SPb"}

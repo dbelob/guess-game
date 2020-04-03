@@ -12872,6 +12872,12 @@ speakers:
     fileName: 0894.jpg
     name:
       - {language: en, text: "Wiebe Elsinga"}
+    company:
+      - {language: en, text: "Google Developer Expert for Android / Egeniq"}
+    bio:
+      - {language: en, text: "Besides being a Google Developer Expert for Android, Wiebe Elsinga is a Lead Developer at\
+      \ Egeniq in the Netherlands. He has a passion for UX and design. He regularly speaks at Mobile Developer conferences\
+      \ or is giving workshops. And let’s not forget who is a co-founder/organizer of the GDG Dutch Android User Group."}
   - id: 895
     fileName: 0895.jpg
     name:
