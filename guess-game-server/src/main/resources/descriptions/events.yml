@@ -1078,7 +1078,7 @@ events:
       - {language: ru, text: "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"}
     mapCoordinates: "59.842400, 30.318815"
     youtubeLink: https://www.youtube.com/playlist?list=PLb1A91j1236pH1yoUvq5YDZUWAJz1T4DF
-    talkIds: [1890]
+    talkIds: [1890, 1891, 1892, 1893, 1894, 1895, 1896, 1897]
   - eventTypeId: 9
     name:
       - {language: en, text: "Mobius 2017 SPb"}

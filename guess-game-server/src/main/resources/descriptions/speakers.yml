@@ -12819,6 +12819,11 @@ speakers:
     name:
       - {language: en, text: "Stanislav Tsyganov"}
       - {language: ru, text: "Станислав Цыганов"}
+    company:
+      - {language: en, text: Rambler&Co}
+    bio:
+      - {language: ru, text: "Разработчик Rambler&Co. Программирую под iOS в течение 4 лет. Принимаю участие в разработке\
+      \ Афиша.Ресторанов, написал Рамблер.Новости."}
   - id: 885
     fileName: 0885.jpg
     name:
@@ -12863,6 +12868,9 @@ speakers:
       - {language: ru, text: "Алексей Рыбаков"}
     company:
       - {language: en, text: DataArt}
+    bio:
+      - {language: ru, text: "Senior Developer, Technical Evangelist DataArt. 12+ лет опыта разработки игр для мобильных\
+      \ устройств из них 5 в компании Gameloft"}
   - id: 893
     fileName: 0893.jpg
     name:
@@ -12887,10 +12895,9 @@ speakers:
       - {language: en, text: Odnoklassniki}
       - {language: ru, text: Одноклассники}
     bio:
-      - {language: ru, text: "Более 8 лет занимается разработкой Веб-сервисов и сопутствующих им инструментов. Работал\
-      \ над созданием решений для бизнес-аналитики и обмена данными с применением ASP.NET, C#, Silverlight, XAML, SQL,\
-      \ JavaScript. Сейчас Андрей занимается программированием пользовательских интерфейсов, ориентированных на мобильные\
-      \ браузеры."}
+      - {language: ru, text: "Работаю программистом более 10 лет. Разрабатывал ориентированные на бизнес системы учёта и\
+      \ аналитики на .NET стеке с применением ASP.NET, Windows Forms, WPF и Windows Phone. Сейчас занимаюсь развитием\
+      \ мобильной версии Одноклассников, программируя на Java и JavaScript."}
   - id: 896
     fileName: 0896.jpg
     name:
