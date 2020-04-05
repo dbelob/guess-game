@@ -12882,6 +12882,10 @@ speakers:
     name:
       - {language: en, text: "Kirill Rozumyansky"}
       - {language: ru, text: "Михаил Розумянский"}
+    bio:
+      - {language: ru, text: "Занимается разработкой более 10 лет, 6 из которых посвятил Android-разработке. Работал в\
+      \ таких компаниях как ABBYY и Parallels. Последние два года пишет Android приложения на Kotlin и является активным\
+      \ членом Kotlin сообщества."}
   - id: 891
     fileName: 0891.jpg
     name:
@@ -12911,6 +12915,17 @@ speakers:
     name:
       - {language: en, text: "Andrey Hitry"}
       - {language: ru, text: "Андрей Хитрый"}
+    company:
+      - {language: en, text: "Trinity Digital"}
+    bio:
+      - {language: ru, text: "Старший Android - разработчик студии Trinity Digital.\nОбучался: LAPPEENRANTA UNIVERSITY\
+      \ OF TECHNOLOGY · 2010 Summer school, Android, Data mining, Product design.\nUNIVERSITY OF HELSINKI · 2011.\
+      \ Exchange student, Computer Science.\nPETROZAVODSK STATE UNIVERSITY · 2012. Bachelor, Applied mathematics and\
+      \ information sciences.\nJury head on Russia Android Challenge 2014. (судил, писал задания почти по всем\
+      \ категориям, единственный автор всех заочных задач, кроме тестов).\nSpeaker on Droidcon Russia 2015 и Droidcon\
+      \ Italy 2016.\nРазрабатывал, начиная от библиотеки на C для XMPP (студенческие проекты) и интегрирования модулей\
+      \ в ядро линукс (Maemo/Meego projects) и заканчивая системами автоматизации служб такси и связью Android устройств\
+      \ в немецкими железками (с документацией на немецком)."}
   - id: 894
     fileName: 0894.jpg
     name:
@@ -12942,11 +12957,22 @@ speakers:
     company:
       - {language: en, text: "Notissimus"}
       - {language: ru, text: "Нотиссимус"}
+    bio:
+      - {language: ru, text: "Технический директор в компании «НОТИССИМУС». Специализируется на разработке мобильных\
+      \ приложений для интернет магазинов, а также решений на базе iBeacon."}
   - id: 897
     fileName: 0897.jpg
     name:
       - {language: en, text: "Maxim Evtuh"}
       - {language: ru, text: "Максим Евтух"}
+    company:
+      - {language: en, text: "Notissimus"}
+      - {language: ru, text: "Нотиссимус"}
+    bio:
+      - {language: ru, text: "Разработчик мобильных приложений на фреймворке Xamarin в компании «НОТИССИМУС». В мобильной\
+      \ разработке с 2013 года. Автор статей о Xamarin на habr.ru (https://habrahabr.ru/users/pocheshire/topics/)\
+      \ В свободное время занимается изучением вопроса усовершенствования MvvmCross’а и поддержкой контрола GitHub для\
+      \ реализации новых гайдов Material Design."}
   - id: 898
     fileName: 0898.jpg
     name:
