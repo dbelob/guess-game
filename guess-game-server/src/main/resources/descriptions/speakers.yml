@@ -12824,16 +12824,31 @@ speakers:
     bio:
       - {language: ru, text: "Разработчик Rambler&Co. Программирую под iOS в течение 4 лет. Принимаю участие в разработке\
       \ Афиша.Ресторанов, написал Рамблер.Новости."}
+    twitter: DevAlloy
   - id: 885
     fileName: 0885.jpg
     name:
       - {language: en, text: "Igor Vasilenko"}
       - {language: ru, text: "Игорь Василенко"}
+    company:
+      - {language: en, text: Yota}
+    bio:
+      - {language: ru, text: "iOS разработчик с 2-х летним опытом. Свою карьеру начал в маленькой незнакомой компании\
+      \ из Санкт-Петербурга, затем успел поработать над большими проектами в E-Legion, такими как Yota, Райффайзен Банк.\
+      \ После перешел в команду Yota продолжать разрабатывать продукт в штате. Люблю MVVM и ReactiveCocoa, иногда пишу\
+      \ в свой маленький и уютный блог, который вы сможете найти в моем твиттере!"}
+    twitter: i_vasilenko
   - id: 886
     fileName: 0886.jpg
     name:
       - {language: en, text: "Irina Dyagileva"}
       - {language: ru, text: "Ирина Дягилева"}
+    company:
+      - {language: en, text: Rambler&Co}
+    bio:
+      - {language: ru, text: "Старший iOS разработчик в компании RAMBLER&Co. За 5 лет опыта iOS разработки участвовала\
+      \ в создании нескольких приложений для крупных газетных издательств, в которых нужно было осуществлять полный\
+      \ контроль над отрисовкой текста. А теперь я готова поделиться опытом с вами!"}
   - id: 887
     fileName: 0887.jpg
     name:
@@ -12845,12 +12860,23 @@ speakers:
       - {language: en, text: "Matvey Malkov"}
       - {language: ru, text: "Матвей Мальков"}
     company:
-      - {language: en, text: 2GIS}
+      - {language: en, text: Nexters}
+    bio:
+      - {language: ru, text: "Пишу на Scala под Android, люблю функциональщину и реактивщину. Довольно консервативен в\
+      \ плане выбора технологий и фреймворков. Раньше работал тимлидом Java-команды в 2GIS."}
+    twitter: matveyka_jj
   - id: 889
     fileName: 0889.jpg
     name:
       - {language: en, text: "Yan Zhulanov"}
       - {language: ru, text: "Ян Жуланов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: ru, text: "Ян Жуланов работает программистом в компании JetBrains в команде Kotlin, где, в частности,\
+      \ занимается поддержкой Android. До этого работал Android-разработчиком, есть опыт создания приложений и для таких\
+      \ динозавров, как Blackberry OS и Java ME. Закончил факультет ИТиП СПбГУ ИТМО."}
+    twitter: yanex_ru
   - id: 890
     fileName: 0890.jpg
     name:
@@ -12861,6 +12887,14 @@ speakers:
     name:
       - {language: en, text: "Dmitry Polischuk"}
       - {language: ru, text: "Дмитрий Полищук"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: ru, text: "Занимается разработкой программного обеспечения уже 10 лет, в основном встраиваемыми и\
+      \ мобильными приложениями, в частности, низкоуровневыми приложениями для Android. Под Android пишет с момента выхода\
+      \ самого первого SDK. Сейчас участвует в разработке Яндекс.Такси и других интересных проектов."}
+    twitter: dpolishuk
   - id: 892
     fileName: 0892.jpg
     name:
@@ -12871,6 +12905,7 @@ speakers:
     bio:
       - {language: ru, text: "Senior Developer, Technical Evangelist DataArt. 12+ лет опыта разработки игр для мобильных\
       \ устройств из них 5 в компании Gameloft"}
+    twitter: al_rybakov
   - id: 893
     fileName: 0893.jpg
     name:
@@ -12886,6 +12921,7 @@ speakers:
       - {language: en, text: "Besides being a Google Developer Expert for Android, Wiebe Elsinga is a Lead Developer at\
       \ Egeniq in the Netherlands. He has a passion for UX and design. He regularly speaks at Mobile Developer conferences\
       \ or is giving workshops. And let’s not forget who is a co-founder/organizer of the GDG Dutch Android User Group."}
+    twitter: welsinga
   - id: 895
     fileName: 0895.jpg
     name:
@@ -12916,6 +12952,13 @@ speakers:
     name:
       - {language: en, text: "Boris Rjutin"}
       - {language: ru, text: "Борис Рютин"}
+    company:
+      - {language: en, text: "Digital Security"}
+    bio:
+      - {language: ru, text: "Окончил факультет авиа- и ракетостроения БГТУ «Военмех», где в данный момент обучается в\
+      \ аспирантуре. Аналитик в компании «Digital Security». В область интересов, помимо reverse engineering, входит\
+      \ безопасность мобильных платформ. Постоянный автор журнала «Хакер» и евангелист Open Source проекта в сфере ИБ -\
+      \ Radare2. Награжден рядом компаний за обнаруженные уязвимости."}
   - id: 899
     fileName: 0899.jpg
     name:
