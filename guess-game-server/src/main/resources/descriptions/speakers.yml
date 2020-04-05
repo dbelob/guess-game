@@ -16340,3 +16340,16 @@ speakers:
         text: "Over 20 years as a toolsmith with experience in test and development infrastructure, at companies including\
             \ Unigraphics, Google, and Shazam. Currently at Badoo/MagicLab with particular responsibility for Android test\
             \ infrastructure.\n\nTim likes badgers."
+  - id: 1154
+    fileName: 1154.jpg
+    name:
+      - {language: en, text: "Scott Hanselman"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Scott is a web developer who has been [blogging](https://hanselman.com) for over a decade. He\
+            \ works in Open Source on ASP.NET and the Azure Cloud for Microsoft out of his home office in Portland, Oregon.\
+            \ Scott has three podcasts: [for tech talk](http://hanselminutes.com), [on developers' lives and loves](http://thisdeveloperslife.com),\
+            \ and [for pop culture and tech media](http://ratchetandthegeek.com). He's written a number of books and spoken\
+            \ in person to almost a half million developers worldwide."}
+    twitter: shanselman
