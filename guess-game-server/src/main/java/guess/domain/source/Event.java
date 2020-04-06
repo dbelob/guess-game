@@ -22,6 +22,9 @@ public class Event {
     private String mapCoordinates;
     private String youtubeLink;
 
+    private long placeId;
+    private Place place;
+
     private List<Long> talkIds;
     private List<Talk> talks = new ArrayList<>();
 
@@ -123,6 +126,22 @@ public class Event {
 
     public void setYoutubeLink(String youtubeLink) {
         this.youtubeLink = youtubeLink;
+    }
+
+    public long getPlaceId() {
+        return placeId;
+    }
+
+    public void setPlaceId(long placeId) {
+        this.placeId = placeId;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
     }
 
     public List<Long> getTalkIds() {

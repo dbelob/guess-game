@@ -1,0 +1,9 @@
+places:
+  - id: 0
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: "Kutuzovsky Prospect 2/1 Building 1, Congress Park at the Radisson Royal Hotel"}
+      - {language: ru, text: "Кутузовский просп., 2/1, стр. 1, Конгресс-парк гостиницы «Рэдиссон Ройал Москва»"}
+    mapCoordinates: "55.751979, 37.566894"
