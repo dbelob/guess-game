@@ -22,7 +22,7 @@ public class Event {
     private String mapCoordinates;
     private String youtubeLink;
 
-    private long placeId;
+    private Long placeId;
     private Place place;
 
     private List<Long> talkIds;
@@ -128,11 +128,11 @@ public class Event {
         this.youtubeLink = youtubeLink;
     }
 
-    public long getPlaceId() {
+    public Long getPlaceId() {
         return placeId;
     }
 
-    public void setPlaceId(long placeId) {
+    public void setPlaceId(Long placeId) {
         this.placeId = placeId;
     }
 

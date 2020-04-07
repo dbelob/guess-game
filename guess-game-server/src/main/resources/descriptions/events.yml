@@ -111,16 +111,20 @@ events:
               106, 107, 108, 109]
   - eventTypeId: 1
     name:
-      - {language: en, text: "DevOops 2020 Msk"}
+      - {language: en, text: "DevOops 2020 Msc"}
       - {language: ru, text: "DevOops 2020 Мск"}
-    startDate: 2020-04-29
-    endDate: 2020-04-30
+    startDate: "2020-07-12"
+    endDate: "2020-07-13"
+    siteLink:
+      - {language: en, text: "https://devoops-moscow.ru/en/"}
+      - {language: ru, text: "https://devoops-moscow.ru/"}
     city:
-      - {language: en, text: "Moscow"}
-      - {language: ru, text: "Москва"}
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
     venueAddress:
-      - {language: en, text: "Radisson Slavyanskaya Hotel & Business Center"}
-      - {language: ru, text: "Рэдиссон Славянская Отель и Бизнес-Центр"}
+      - {language: en, text: "Europe Square 2, Hotel «Radisson Slavyanskaya»"}
+      - {language: ru, text: "пл. Европы, 2, Гостиница «Рэдиссон Славянская»"}
+    mapCoordinates: "55.741881, 37.568099"
     talkIds: []
   # DotNext
   - eventTypeId: 2
@@ -747,7 +751,7 @@ events:
       - {language: ru, text: Новосибирск}
     venueAddress:
       - {language: en, text: "Stancionnaya St., 104, Novosibirsk Expocentre"}
-      - {language: ru, text: "Станционная ул., 104, МВК «Новосибирск\_Экспоцентр»"}
+      - {language: ru, text: "Станционная ул., 104, МВК «Новосибирск Экспоцентр»"}
     mapCoordinates: "54.997945, 82.747784"
     youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b-eT3ipLMPxeZMhntA1C6HW
     talkIds: [401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 419, 420, 421, 422]
@@ -764,7 +768,7 @@ events:
       - {language: ru, text: Новосибирск}
     venueAddress:
       - {language: en, text: "Stancionnaya St., 104, Novosibirsk Expocentre"}
-      - {language: ru, text: "Станционная ул., 104, МВК «Новосибирск\_Экспоцентр»"}
+      - {language: ru, text: "Станционная ул., 104, МВК «Новосибирск Экспоцентр»"}
     mapCoordinates: "54.997945, 82.747784"
     youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b_t-VOsbfZU3V-hTjUvGMCX
     talkIds: [757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 774, 775, 776, 777]
@@ -894,14 +898,18 @@ events:
   - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2020"}
-    startDate: 2020-05-15
-    endDate: 2020-05-16
+    startDate: "2020-06-26"
+    endDate: "2020-06-27"
+    siteLink:
+      - {language: en, text: "https://jpoint.ru/en/"}
+      - {language: ru, text: "https://jpoint.ru/"}
     city:
-      - {language: en, text: "Moscow"}
-      - {language: ru, text: "Москва"}
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
     venueAddress:
-      - {language: en, text: "Crocus Expo"}
-      - {language: ru, text: "Крокус Экспо"}
+      - {language: en, text: "Mezhdunarodnaya str. 16, Krasnogorsk, Krasnogorsk area, Moscow region, Crocus Expo"}
+      - {language: ru, text: "Международная ул., 16, Красногорск, Московская обл., МВЦ «Крокус Экспо»"}
+    mapCoordinates: "55.824414, 37.390359"
     talkIds: []
   # Joker
   - eventTypeId: 8
@@ -1272,8 +1280,8 @@ events:
       - {language: en, text: "Moscow"}
       - {language: ru, text: "Москва"}
     venueAddress:
-      - {language: en, text: "KROK"}
-      - {language: ru, text: "КРОК"}
+      - {language: en, text: "Volochaevskaya st., 5 Bld.1, CROC office"}
+      - {language: ru, text: "Волочаевская ул., 5, корп. 1, Офис компании КРОК"}
     talkIds: []
   # JUG.ru
   - eventTypeId: 14
@@ -1283,8 +1291,8 @@ events:
       - {language: en, text: "Saint Petersburg"}
       - {language: ru, text: "Санкт-Петербург"}
     venueAddress:
-      - {language: en, text: "Oracle"}
-      - {language: ru, text: "Oracle"}
+      - {language: en, text: "10th Krasnoarmeyskaya 22a, 2nd floor, Oracle office"}
+      - {language: ru, text: "10я Красноармейская 22а, 2 этаж, Офис компании Oracle"}
     talkIds: []
   # JUGNsk
   - eventTypeId: 15
@@ -1294,6 +1302,6 @@ events:
       - {language: en, text: "Novosibirsk"}
       - {language: ru, text: "Новосибирск"}
     venueAddress:
-      - {language: en, text: "Boiling Point"}
-      - {language: ru, text: "Точка кипения"}
+      - {language: en, text: "Nikolaev St., 11, 13th floor, Technopark of Novosibirsk Academgorodok, Boiling Point"}
+      - {language: ru, text: "Николаева ул., 11, 13 этаж, Технопарк Новосибирского Академгородка, Точка кипения"}
     talkIds: []
