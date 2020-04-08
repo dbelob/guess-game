@@ -18,8 +18,8 @@ public class PlaceAnalyzer {
     private static final Logger log = LoggerFactory.getLogger(PlaceAnalyzer.class);
 
     static class CityVenueAddress {
-        private String city;
-        private String venueAddress;
+        private final String city;
+        private final String venueAddress;
 
         public CityVenueAddress(String city, String venueAddress) {
             this.city = city;

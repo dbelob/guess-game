@@ -1034,8 +1034,8 @@ public class ContentfulUtils {
     private static void fixEntryNotResolvableError(ConferenceSpaceInfo conferenceSpaceInfo,
                                                    Set<String> entryErrorSet, Map<String, Speaker> speakerMap) {
         abstract class NotResolvableSpeaker {
-            private ConferenceSpaceInfo conferenceSpaceInfo;
-            private String entryId;
+            private final ConferenceSpaceInfo conferenceSpaceInfo;
+            private final String entryId;
 
             public NotResolvableSpeaker(ConferenceSpaceInfo conferenceSpaceInfo, String entryId) {
                 this.conferenceSpaceInfo = conferenceSpaceInfo;
