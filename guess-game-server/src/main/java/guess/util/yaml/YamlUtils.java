@@ -338,6 +338,8 @@ public class YamlUtils {
                 new PropertyMatcher(EventType.class,
                         List.of("id", "conference", "logoFileName", "name", "description", "siteLink", "vkLink",
                                 "twitterLink", "facebookLink", "youtubeLink", "telegramLink")),
+                new PropertyMatcher(Place.class,
+                        List.of("id", "city", "venueAddress", "mapCoordinates")),
                 new PropertyMatcher(Event.class,
                         List.of("eventTypeId", "name", "startDate", "endDate", "siteLink", "city", "venueAddress",
                                 "youtubeLink", "mapCoordinates", "talkIds")),
@@ -408,5 +410,17 @@ public class YamlUtils {
      */
     public static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
         dump(new Events(Collections.singletonList(event)), filename);
+    }
+
+    /**
+     * Dumps places to file.
+     *
+     * @param places   places
+     * @param filename filename
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    public static void dumpPlaces(List<Place> places, String filename) throws IOException, NoSuchFieldException {
+        dump(new Places(places), filename);
     }
 }

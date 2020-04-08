@@ -15,6 +15,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 public class PlaceAnalyzer {
@@ -35,6 +36,25 @@ public class PlaceAnalyzer {
 
         public String getVenueAddress() {
             return venueAddress;
+        }
+
+        public int getOrderNumber() {
+            switch (city) {
+                case "Saint Petersburg":
+                case "Санкт-Петербург":
+                    return 0;
+                case "Moscow":
+                case "Москва":
+                    return 1;
+                case "Novosibirsk":
+                case "Новосибирск":
+                    return 2;
+                case "Helsinki":
+                case "Хельсинки":
+                    return 3;
+                default:
+                    return 4;
+            }
         }
 
         @Override
@@ -112,7 +132,7 @@ public class PlaceAnalyzer {
         return ContentfulUtils.extractLocaleItems(enVenueAddress, ruVenueAddress, true);
     }
 
-    public static void main(String[] args) throws IOException, SpeakerDuplicatedException {
+    public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
         List<Event> events = resourceSourceInformation.getEvents();
         Map<CityVenueAddress, Place> placeMap = events.stream()
@@ -128,16 +148,26 @@ public class PlaceAnalyzer {
                                 fixVenueAddress(e.getCity(), e.getVenueAddress()),
                                 e.getMapCoordinates()),
                         (e1, e2) -> e1));
-        List<CityVenueAddress> cityVenueAddresses = placeMap.keySet().stream()
-                .sorted(Comparator.comparing(CityVenueAddress::getCity).thenComparing(CityVenueAddress::getVenueAddress))
+        List<Place> placesToAppend = placeMap.keySet().stream()
+                .sorted(Comparator.comparing(CityVenueAddress::getOrderNumber)
+                        .thenComparing(CityVenueAddress::getCity)
+                        .thenComparing(CityVenueAddress::getVenueAddress))
+                .map(placeMap::get)
                 .collect(Collectors.toList());
 
-        log.info("places: {}", placeMap.size());
+        log.info("places: {}", placesToAppend.size());
 
-        cityVenueAddresses.forEach(
-                e -> {
-                    log.info("city: {}, venueAddress: {}", e.city, e.venueAddress);
+        placesToAppend.forEach(
+                p -> {
+                    log.info("city: {}, venueAddress: {}",
+                            LocalizationUtils.getString(p.getCity(), Language.RUSSIAN),
+                            LocalizationUtils.getString(p.getVenueAddress(), Language.RUSSIAN));
                 }
         );
+
+        AtomicLong placesId = new AtomicLong(0);
+        placesToAppend.forEach(p -> p.setId(placesId.getAndIncrement()));
+
+        YamlUtils.dumpPlaces(placesToAppend, "places-to-append.yml");
     }
 }
