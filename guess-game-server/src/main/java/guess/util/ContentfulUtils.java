@@ -904,7 +904,7 @@ public class ContentfulUtils {
      * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
      * @return local items
      */
-    private static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
+    public static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
         enText = extractString(enText);
         ruText = extractString(ruText);
 

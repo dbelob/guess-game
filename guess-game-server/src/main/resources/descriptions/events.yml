@@ -908,7 +908,7 @@ events:
       - {language: ru, text: Москва}
     venueAddress:
       - {language: en, text: "Mezhdunarodnaya str. 16, Krasnogorsk, Krasnogorsk area, Moscow region, Crocus Expo"}
-      - {language: ru, text: "Международная ул., 16, Красногорск, Московская обл., МВЦ «Крокус Экспо»"}
+      - {language: ru, text: "Международная ул., 16, Красногорск, Московская обл.,, МВЦ «Крокус Экспо»"}
     mapCoordinates: "55.824414, 37.390359"
     talkIds: []
   # Joker

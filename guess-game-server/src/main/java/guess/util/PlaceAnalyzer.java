@@ -11,7 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class PlaceAnalyzer {
@@ -49,30 +52,64 @@ public class PlaceAnalyzer {
         }
     }
 
-    private static List<LocaleItem> fixVenueAddress(List<LocaleItem> city, List<LocaleItem> venueAddress) {
-        final String SAINT_PETERSBURG_CITY = "Санкт-Петербург";
-        final String FIXING_VENUE_ADDRESS = "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»";
-        final String FIXED_VENUE_ADDRESS = "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»";;
+    static class FixingVenueAddress {
+        private final String city;
+        private final String invalidVenueAddress;
+        private final String validVenueAddress;
 
-        if (SAINT_PETERSBURG_CITY.equals(LocalizationUtils.getString(city, Language.RUSSIAN)) &&
-                FIXING_VENUE_ADDRESS.equals(LocalizationUtils.getString(venueAddress, Language.RUSSIAN))) {
-            List<LocaleItem> localeItems = new ArrayList<>();
-            String enText = LocalizationUtils.getString(venueAddress, Language.ENGLISH);
+        public FixingVenueAddress(String city, String invalidVenueAddress, String validVenueAddress) {
+            this.city = city;
+            this.invalidVenueAddress = invalidVenueAddress;
+            this.validVenueAddress = validVenueAddress;
+        }
 
-            if ((enText != null) && !enText.isEmpty()) {
-                localeItems.add(new LocaleItem(
-                        Language.ENGLISH.getCode(),
-                        enText));
+        public String getCity() {
+            return city;
+        }
+
+        public String getInvalidVenueAddress() {
+            return invalidVenueAddress;
+        }
+
+        public String getValidVenueAddress() {
+            return validVenueAddress;
+        }
+    }
+
+    private static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
+        for (FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
+            if (fixingVenueAddress.getCity().equals(city) &&
+                    fixingVenueAddress.getInvalidVenueAddress().equals(venueAddress)) {
+                return fixingVenueAddress.getValidVenueAddress();
             }
-
-            localeItems.add(new LocaleItem(
-                    Language.RUSSIAN.getCode(),
-                    FIXED_VENUE_ADDRESS));
-
-            return localeItems;
         }
 
         return venueAddress;
+    }
+
+    private static List<LocaleItem> fixVenueAddress(List<LocaleItem> city, List<LocaleItem> venueAddress) {
+        List<FixingVenueAddress> enFixingVenueAddresses = List.of();
+        List<FixingVenueAddress> ruFixingVenueAddresses = List.of(
+                new FixingVenueAddress(
+                        "Санкт-Петербург",
+                        "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»",
+                        "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"),
+                new FixingVenueAddress(
+                        "Москва",
+                        "Международная ул., 16, Красногорск, Московская обл.,, МВЦ «Крокус Экспо»",
+                        "Международная ул., 16, Красногорск, Московская обл., МВЦ «Крокус Экспо»")
+        );
+
+        String enVenueAddress = getFixedVenueAddress(
+                LocalizationUtils.getString(city, Language.ENGLISH),
+                LocalizationUtils.getString(venueAddress, Language.ENGLISH),
+                enFixingVenueAddresses);
+        String ruVenueAddress = getFixedVenueAddress(
+                LocalizationUtils.getString(city, Language.RUSSIAN),
+                LocalizationUtils.getString(venueAddress, Language.RUSSIAN),
+                ruFixingVenueAddresses);
+
+        return ContentfulUtils.extractLocaleItems(enVenueAddress, ruVenueAddress, true);
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException {
