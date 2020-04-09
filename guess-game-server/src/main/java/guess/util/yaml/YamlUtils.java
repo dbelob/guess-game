@@ -49,11 +49,13 @@ public class YamlUtils {
         Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", DESCRIPTIONS_DIRECTORY_NAME));
         Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DESCRIPTIONS_DIRECTORY_NAME));
         Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DESCRIPTIONS_DIRECTORY_NAME));
+        Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DESCRIPTIONS_DIRECTORY_NAME));
         Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DESCRIPTIONS_DIRECTORY_NAME));
 
         Yaml speakersYaml = new Yaml(new Constructor(Speakers.class));
         Yaml talksYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Talks.class));
         Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
+        Yaml placesYaml = new Yaml(new Constructor(Places.class));
         Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Events.class));
 
         // Read descriptions from YAML files
@@ -66,6 +68,9 @@ public class YamlUtils {
         EventTypes eventTypes = eventTypesYaml.load(eventTypesResource.getInputStream());
         Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
 
+        Places places = placesYaml.load(placesResource.getInputStream());
+        Map<Long, Place> placeMap = listToMap(places.getPlaces(), Place::getId);
+
         Events events = eventsYaml.load(eventsResource.getInputStream());
 
         // Find duplicates for speaker names and for speaker names with company name
@@ -76,6 +81,7 @@ public class YamlUtils {
         // Link entities
         linkSpeakersToTalks(speakerMap, talks.getTalks());
         linkEventsToEventTypes(eventTypeMap, events.getEvents());
+        linkEventsToPlaces(placeMap, events.getEvents());
         linkTalksToEvents(talkMap, events.getEvents());
 
         return new SourceInformation(eventTypes.getEventTypes(), events.getEvents(), speakers.getSpeakers(), talks.getTalks());
@@ -163,18 +169,24 @@ public class YamlUtils {
     public static List<Event> readEvents() throws IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DESCRIPTIONS_DIRECTORY_NAME));
+        Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DESCRIPTIONS_DIRECTORY_NAME));
         Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DESCRIPTIONS_DIRECTORY_NAME));
 
         Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
+        Yaml placesYaml = new Yaml(new Constructor(Places.class));
         Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Events.class));
 
         // Read descriptions from YAML files
         EventTypes eventTypes = eventTypesYaml.load(eventTypesResource.getInputStream());
         Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
 
+        Places places = placesYaml.load(placesResource.getInputStream());
+        Map<Long, Place> placeMap = listToMap(places.getPlaces(), Place::getId);
+
         Events events = eventsYaml.load(eventsResource.getInputStream());
 
         // Link entities
+        linkEventsToPlaces(placeMap, events.getEvents());
         linkEventsToEventTypes(eventTypeMap, events.getEvents());
 
         return events.getEvents();
@@ -197,7 +209,7 @@ public class YamlUtils {
                 // Find speaker by id
                 Speaker speaker = speakers.get(speakerId);
                 Objects.requireNonNull(speaker,
-                        () -> String.format("Speaker id %d not found", speakerId));
+                        () -> String.format("Speaker id %d not found for talk %s", speakerId, talk.toString()));
                 talk.getSpeakers().add(speaker);
             }
         }
@@ -214,9 +226,25 @@ public class YamlUtils {
             // Find event type by id
             EventType eventType = eventTypes.get(event.getEventTypeId());
             Objects.requireNonNull(eventType,
-                    () -> String.format("EventType id %d not found", event.getEventTypeId()));
+                    () -> String.format("EventType id %d not found for event %s", event.getEventTypeId(), event.toString()));
             eventType.getEvents().add(event);
             event.setEventType(eventType);
+        }
+    }
+
+    /**
+     * Links events to places.
+     *
+     * @param places places
+     * @param events events
+     */
+    private static void linkEventsToPlaces(Map<Long, Place> places, List<Event> events) {
+        for (Event event : events) {
+            // Find place by id
+            Place place = places.get(event.getPlaceId());
+            Objects.requireNonNull(place,
+                    () -> String.format("Place id %d not found for event %s", event.getPlaceId(), event.toString()));
+            event.setPlace(place);
         }
     }
 
@@ -233,7 +261,7 @@ public class YamlUtils {
                 // Find talk by id
                 Talk talk = talks.get(talkId);
                 Objects.requireNonNull(talk,
-                        () -> String.format("Talk id %d not found", talkId));
+                        () -> String.format("Talk id %d not found for event %s", talkId, event.toString()));
                 event.getTalks().add(talk);
             }
         }

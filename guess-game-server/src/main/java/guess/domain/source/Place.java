@@ -12,6 +12,9 @@ public class Place {
     private List<LocaleItem> venueAddress;
     private String mapCoordinates;
 
+    public Place() {
+    }
+
     public Place(long id, List<LocaleItem> city, List<LocaleItem> venueAddress, String mapCoordinates) {
         this.id = id;
         this.city = city;
