@@ -138,15 +138,15 @@ public class PlaceAnalyzer {
         Map<CityVenueAddress, Place> placeMap = events.stream()
                 .collect(Collectors.toMap(
                         e -> new CityVenueAddress(
-                                LocalizationUtils.getString(e.getCity(), Language.RUSSIAN),
+                                LocalizationUtils.getString(e.getPlace().getCity(), Language.RUSSIAN),
                                 LocalizationUtils.getString(
-                                        fixVenueAddress(e.getCity(), e.getVenueAddress()),
+                                        fixVenueAddress(e.getPlace().getCity(), e.getPlace().getVenueAddress()),
                                         Language.RUSSIAN)),
                         e -> new Place(
                                 -1L,
-                                e.getCity(),
-                                fixVenueAddress(e.getCity(), e.getVenueAddress()),
-                                e.getMapCoordinates()),
+                                e.getPlace().getCity(),
+                                fixVenueAddress(e.getPlace().getCity(), e.getPlace().getVenueAddress()),
+                                e.getPlace().getMapCoordinates()),
                         (e1, e2) -> e1));
         List<Place> placesToAppend = placeMap.keySet().stream()
                 .sorted(Comparator.comparing(CityVenueAddress::getOrderNumber)

@@ -295,14 +295,16 @@ public class ContentfulUtils {
                             extractLocaleItems(
                                     (conferenceLink != null) ? conferenceLink.get(ENGLISH_LOCALE) : null,
                                     (conferenceLink != null) ? conferenceLink.get(RUSSIAN_LOCALE) : null),
-                            extractLocaleItems(
-                                    extractCity(eventCityLink, cityMap, entryErrorSet, ENGLISH_LOCALE, nameEn),
-                                    extractCity(eventCityLink, cityMap, entryErrorSet, RUSSIAN_LOCALE, nameEn)),
-                            extractLocaleItems(
-                                    (venueAddress != null) ? venueAddress.get(ENGLISH_LOCALE) : null,
-                                    (venueAddress != null) ? venueAddress.get(RUSSIAN_LOCALE) : null),
-                            (addressLink != null) ? getFirstMapValue(addressLink) : null,
                             (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null,
+                            new Place(
+                                    -1,
+                                    extractLocaleItems(
+                                            extractCity(eventCityLink, cityMap, entryErrorSet, ENGLISH_LOCALE, nameEn),
+                                            extractCity(eventCityLink, cityMap, entryErrorSet, RUSSIAN_LOCALE, nameEn)),
+                                    extractLocaleItems(
+                                            (venueAddress != null) ? venueAddress.get(ENGLISH_LOCALE) : null,
+                                            (venueAddress != null) ? venueAddress.get(RUSSIAN_LOCALE) : null),
+                                    (addressLink != null) ? getFirstMapValue(addressLink) : null),
                             Collections.emptyList());
                 })
                 .collect(Collectors.toList());
@@ -1010,14 +1012,16 @@ public class ContentfulUtils {
                     extractLocaleItems(
                             "https://dotnext-helsinki.com",
                             "https://dotnext-helsinki.com"),
-                    extractLocaleItems(
-                            "Helsinki",
-                            "Хельсинки"),
-                    extractLocaleItems(
-                            "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo",
-                            null),
-                    "60.1704769, 24.8279349",
                     "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5",
+                    new Place(
+                            15,
+                            extractLocaleItems(
+                                    "Helsinki",
+                                    "Хельсинки"),
+                            extractLocaleItems(
+                                    "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo",
+                                    null),
+                            "60.1704769, 24.8279349"),
                     Collections.emptyList());
         } else {
             return null;
@@ -1189,7 +1193,7 @@ public class ContentfulUtils {
                                 null,
                                 false,
                                 false
-                                );
+                        );
                     }
                 }
         );
@@ -1229,6 +1233,20 @@ public class ContentfulUtils {
                 equals(a.getFacebookLink(), b.getFacebookLink()) &&
                 equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
                 equals(a.getTelegramLink(), b.getTelegramLink()));
+    }
+
+    /**
+     * Indicates the need to update place.
+     *
+     * @param a first place
+     * @param b second place
+     * @return {@code true} if need to update, {@code false} otherwise
+     */
+    public static boolean needUpdate(Place a, Place b) {
+        return !((a.getId() == b.getId()) &&
+                equals(a.getCity(), b.getCity()) &&
+                equals(a.getVenueAddress(), b.getVenueAddress()) &&
+                equals(a.getMapCoordinates(), b.getMapCoordinates()));
     }
 
     /**
@@ -1280,10 +1298,8 @@ public class ContentfulUtils {
                 a.getStartDate().equals(b.getStartDate()) &&
                 a.getEndDate().equals(b.getEndDate()) &&
                 equals(a.getSiteLink(), b.getSiteLink()) &&
-                equals(a.getCity(), b.getCity()) &&
-                equals(a.getVenueAddress(), b.getVenueAddress()) &&
                 equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
-                equals(a.getMapCoordinates(), b.getMapCoordinates()) &&
+                (a.getPlaceId() == b.getPlaceId()) &&
                 equals(a.getTalkIds(), b.getTalkIds()));
     }
 

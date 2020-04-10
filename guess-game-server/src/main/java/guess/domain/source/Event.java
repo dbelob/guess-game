@@ -17,12 +17,9 @@ public class Event {
     private LocalDate startDate;
     private LocalDate endDate;
     private List<LocaleItem> siteLink;
-    private List<LocaleItem> city;
-    private List<LocaleItem> venueAddress;
-    private String mapCoordinates;
     private String youtubeLink;
 
-    private Long placeId;
+    private long placeId;
     private Place place;
 
     private List<Long> talkIds;
@@ -32,16 +29,17 @@ public class Event {
     }
 
     public Event(EventType eventType, List<LocaleItem> name, LocalDate startDate, LocalDate endDate, List<LocaleItem> siteLink,
-                 List<LocaleItem> city, List<LocaleItem> venueAddress, String mapCoordinates, String youtubeLink, List<Talk> talks) {
+                 String youtubeLink, Place place, List<Talk> talks) {
         this.eventType = eventType;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.siteLink = siteLink;
-        this.city = city;
-        this.venueAddress = venueAddress;
-        this.mapCoordinates = mapCoordinates;
         this.youtubeLink = youtubeLink;
+
+        this.place = place;
+        this.placeId = place.getId();
+
         this.talks = talks;
         this.talkIds = talks.stream()
                 .map(Talk::getId)
@@ -96,30 +94,6 @@ public class Event {
         this.siteLink = siteLink;
     }
 
-    public List<LocaleItem> getCity() {
-        return city;
-    }
-
-    public void setCity(List<LocaleItem> city) {
-        this.city = city;
-    }
-
-    public List<LocaleItem> getVenueAddress() {
-        return venueAddress;
-    }
-
-    public void setVenueAddress(List<LocaleItem> venueAddress) {
-        this.venueAddress = venueAddress;
-    }
-
-    public String getMapCoordinates() {
-        return mapCoordinates;
-    }
-
-    public void setMapCoordinates(String mapCoordinates) {
-        this.mapCoordinates = mapCoordinates;
-    }
-
     public String getYoutubeLink() {
         return youtubeLink;
     }
@@ -128,11 +102,11 @@ public class Event {
         this.youtubeLink = youtubeLink;
     }
 
-    public Long getPlaceId() {
+    public long getPlaceId() {
         return placeId;
     }
 
-    public void setPlaceId(Long placeId) {
+    public void setPlaceId(long placeId) {
         this.placeId = placeId;
     }
 
@@ -181,8 +155,7 @@ public class Event {
                 ", name=" + name +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", city=" + city +
-                ", venueAddress=" + venueAddress +
+                ", place=" + place +
                 ", talks=" + talks +
                 '}';
     }

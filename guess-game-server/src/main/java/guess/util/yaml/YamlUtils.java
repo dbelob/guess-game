@@ -84,7 +84,12 @@ public class YamlUtils {
         linkEventsToPlaces(placeMap, events.getEvents());
         linkTalksToEvents(talkMap, events.getEvents());
 
-        return new SourceInformation(eventTypes.getEventTypes(), events.getEvents(), speakers.getSpeakers(), talks.getTalks());
+        return new SourceInformation(
+                eventTypes.getEventTypes(),
+                places.getPlaces(),
+                events.getEvents(),
+                speakers.getSpeakers(),
+                talks.getTalks());
     }
 
     /**
@@ -369,8 +374,8 @@ public class YamlUtils {
                 new PropertyMatcher(Place.class,
                         List.of("id", "city", "venueAddress", "mapCoordinates")),
                 new PropertyMatcher(Event.class,
-                        List.of("eventTypeId", "name", "startDate", "endDate", "siteLink", "city", "venueAddress",
-                                "youtubeLink", "mapCoordinates", "talkIds")),
+                        List.of("eventTypeId", "name", "startDate", "endDate", "siteLink", "youtubeLink", "placeId",
+                                "talkIds")),
                 new PropertyMatcher(Talk.class,
                         List.of("id", "name", "shortDescription", "longDescription", "talkDay", "trackTime", "track",
                                 "language", "presentationLinks", "videoLinks", "speakerIds")),
