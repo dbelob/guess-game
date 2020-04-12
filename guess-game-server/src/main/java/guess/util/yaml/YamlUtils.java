@@ -446,6 +446,18 @@ public class YamlUtils {
     }
 
     /**
+     * Dumps place to file.
+     *
+     * @param place    place
+     * @param filename filename
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    public static void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
+        dump(new Places(Collections.singletonList(place)), filename);
+    }
+
+    /**
      * Dumps places to file.
      *
      * @param places   places
@@ -453,6 +465,7 @@ public class YamlUtils {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
+    //TODO: delete
     public static void dumpPlaces(List<Place> places, String filename) throws IOException, NoSuchFieldException {
         dump(new Places(places), filename);
     }

@@ -346,6 +346,46 @@ public class ConferenceDataLoader {
                     .collect(Collectors.toList());
         }
 
+        // Find place
+        Place placeToAppend = null;
+        Place placeToUpdate = null;
+        AtomicLong placeId = new AtomicLong(
+                resourceSourceInformation.getPlaces().stream()
+                        .map(Place::getId)
+                        .max(Long::compare)
+                        .orElse(-1L));
+        Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
+                .collect(Collectors.toMap(
+                        p -> new CityVenueAddress(
+                                LocalizationUtils.getString(p.getCity(), Language.RUSSIAN).trim(),
+                                LocalizationUtils.getString(p.getVenueAddress(), Language.RUSSIAN).trim()),
+                        p -> p
+                ));
+        Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
+                .collect(Collectors.toMap(
+                        p -> new CityVenueAddress(
+                                LocalizationUtils.getString(p.getCity(), Language.ENGLISH).trim(),
+                                LocalizationUtils.getString(p.getVenueAddress(), Language.ENGLISH).trim()),
+                        p -> p
+                ));
+        Place contentfulPlace = contentfulEvent.getPlace();
+        contentfulPlace.setVenueAddress(fixVenueAddress(contentfulPlace));
+        Place resourcePlace = findResourcePlace(contentfulPlace, resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces);
+
+        if (resourcePlace == null) {
+            // Place not exists
+            contentfulPlace.setId(placeId.incrementAndGet());
+            placeToAppend = contentfulPlace;
+        } else {
+            // Place exists
+            contentfulPlace.setId(resourcePlace.getId());
+
+            if (ContentfulUtils.needUpdate(resourcePlace, contentfulPlace)) {
+                placeToUpdate = contentfulPlace;
+            }
+        }
+        contentfulEvent.setPlaceId(contentfulPlace.getId());
+
         // Find event
         contentfulEvent.setEventType(resourceEventType);
         contentfulEvent.setEventTypeId(resourceEventType.getId());
@@ -364,33 +404,13 @@ public class ConferenceDataLoader {
             }
         }
 
-        // Find place
-        Place placeToAppend = null;
-        Place placeToUpdate = null;
-        Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
-                .collect(Collectors.toMap(
-                        p -> new CityVenueAddress(
-                                LocalizationUtils.getString(p.getCity(), Language.RUSSIAN).trim(),
-                                LocalizationUtils.getString(p.getVenueAddress(), Language.RUSSIAN).trim()),
-                        p -> p
-                ));
-        Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
-                .collect(Collectors.toMap(
-                        p -> new CityVenueAddress(
-                                LocalizationUtils.getString(p.getCity(), Language.ENGLISH).trim(),
-                                LocalizationUtils.getString(p.getVenueAddress(), Language.ENGLISH).trim()),
-                        p -> p
-                ));
-        Place resourcePlace = findResourcePlace(contentfulEvent.getPlace(), resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces);
-
-        //TODO: implement
-
         // Save files
         if (urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
                 speakersToAppend.isEmpty() && speakersToUpdate.isEmpty() &&
                 talksToDelete.isEmpty() && talksToAppend.isEmpty() && talksToUpdate.isEmpty() &&
-                (eventToAppend == null) && (eventToUpdate == null)) {
-            log.info("All speakers, talks and event are up-to-date");
+                (eventToAppend == null) && (eventToUpdate == null) &&
+                (placeToAppend == null) && (placeToUpdate == null)) {
+            log.info("All speakers, talks, place and event are up-to-date");
         } else {
             YamlUtils.clearDumpDirectory();
 
@@ -423,6 +443,14 @@ public class ConferenceDataLoader {
             if (!talksToUpdate.isEmpty()) {
                 talksToUpdate.sort(Comparator.comparing(Talk::getId));
                 logAndDumpTalks(talksToUpdate, "Talks (to update resource file): {}", "talks-to-update.yml");
+            }
+
+            if (placeToAppend != null) {
+                YamlUtils.dumpPlace(placeToAppend, "place-to-append.yml");
+            }
+
+            if (placeToUpdate != null) {
+                YamlUtils.dumpPlace(placeToUpdate, "place-to-update.yml");
             }
 
             if (eventToAppend != null) {
@@ -651,6 +679,14 @@ public class ConferenceDataLoader {
         return null;
     }
 
+    /**
+     * Finds resource talk by name.
+     *
+     * @param talk              talk
+     * @param resourceNameTalks map of name/talks
+     * @param language          language
+     * @return resource talk
+     */
     private static Talk findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language) {
         String talkName = LocalizationUtils.getString(talk.getName(), language);
         Set<Talk> resourceTalks = resourceNameTalks.get(talkName);
@@ -670,10 +706,67 @@ public class ConferenceDataLoader {
         return null;
     }
 
+    /**
+     * Finds resource place by pair of city, venue address.
+     *
+     * @param place                          place
+     * @param resourceCityVenueAddressPlaces map of (city, venue address)/place
+     * @param language                       language
+     * @return resource place
+     */
+    private static Place findResourcePlaceByCityVenueAddress(Place place, Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces, Language language) {
+        return resourceCityVenueAddressPlaces.get(
+                new CityVenueAddress(
+                        LocalizationUtils.getString(place.getCity(), language),
+                        LocalizationUtils.getString(place.getVenueAddress(), language)));
+    }
+
     private static Place findResourcePlace(Place place, Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
                                            Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
-        //TODO: implement
-        return null;
+        // Find in resource places by Russian (city, venue address) pair
+        Place resourcePlace = findResourcePlaceByCityVenueAddress(place, resourceRuCityVenueAddressPlaces, Language.RUSSIAN);
+        if (resourcePlace != null) {
+            return resourcePlace;
+        }
+
+        // Find in resource places by English (city, venue address) pair
+        return findResourcePlaceByCityVenueAddress(place, resourceEnCityVenueAddressPlaces, Language.ENGLISH);
+    }
+
+    private static String getFixedVenueAddress(String city, String venueAddress, List<PlaceAnalyzer.FixingVenueAddress> fixingVenueAddresses) {
+        for (PlaceAnalyzer.FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
+            if (fixingVenueAddress.getCity().equals(city) &&
+                    fixingVenueAddress.getInvalidVenueAddress().equals(venueAddress)) {
+                return fixingVenueAddress.getValidVenueAddress();
+            }
+        }
+
+        return venueAddress;
+    }
+
+    public static List<LocaleItem> fixVenueAddress(Place place) {
+        List<PlaceAnalyzer.FixingVenueAddress> enFixingVenueAddresses = List.of();
+        List<PlaceAnalyzer.FixingVenueAddress> ruFixingVenueAddresses = List.of(
+                new PlaceAnalyzer.FixingVenueAddress(
+                        "Санкт-Петербург",
+                        "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»",
+                        "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"),
+                new PlaceAnalyzer.FixingVenueAddress(
+                        "Москва",
+                        "Международная ул., 16, Красногорск, Московская обл.,, МВЦ «Крокус Экспо»",
+                        "Международная ул., 16, Красногорск, Московская обл., МВЦ «Крокус Экспо»")
+        );
+
+        String enVenueAddress = getFixedVenueAddress(
+                LocalizationUtils.getString(place.getCity(), Language.ENGLISH),
+                LocalizationUtils.getString(place.getVenueAddress(), Language.ENGLISH),
+                enFixingVenueAddresses);
+        String ruVenueAddress = getFixedVenueAddress(
+                LocalizationUtils.getString(place.getCity(), Language.RUSSIAN),
+                LocalizationUtils.getString(place.getVenueAddress(), Language.RUSSIAN),
+                ruFixingVenueAddresses);
+
+        return ContentfulUtils.extractLocaleItems(enVenueAddress, ruVenueAddress, true);
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {

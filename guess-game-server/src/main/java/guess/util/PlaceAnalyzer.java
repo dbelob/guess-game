@@ -96,42 +96,6 @@ public class PlaceAnalyzer {
         }
     }
 
-    private static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
-        for (FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
-            if (fixingVenueAddress.getCity().equals(city) &&
-                    fixingVenueAddress.getInvalidVenueAddress().equals(venueAddress)) {
-                return fixingVenueAddress.getValidVenueAddress();
-            }
-        }
-
-        return venueAddress;
-    }
-
-    private static List<LocaleItem> fixVenueAddress(List<LocaleItem> city, List<LocaleItem> venueAddress) {
-        List<FixingVenueAddress> enFixingVenueAddresses = List.of();
-        List<FixingVenueAddress> ruFixingVenueAddresses = List.of(
-                new FixingVenueAddress(
-                        "Санкт-Петербург",
-                        "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»",
-                        "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"),
-                new FixingVenueAddress(
-                        "Москва",
-                        "Международная ул., 16, Красногорск, Московская обл.,, МВЦ «Крокус Экспо»",
-                        "Международная ул., 16, Красногорск, Московская обл., МВЦ «Крокус Экспо»")
-        );
-
-        String enVenueAddress = getFixedVenueAddress(
-                LocalizationUtils.getString(city, Language.ENGLISH),
-                LocalizationUtils.getString(venueAddress, Language.ENGLISH),
-                enFixingVenueAddresses);
-        String ruVenueAddress = getFixedVenueAddress(
-                LocalizationUtils.getString(city, Language.RUSSIAN),
-                LocalizationUtils.getString(venueAddress, Language.RUSSIAN),
-                ruFixingVenueAddresses);
-
-        return ContentfulUtils.extractLocaleItems(enVenueAddress, ruVenueAddress, true);
-    }
-
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
         List<Event> events = resourceSourceInformation.getEvents();
@@ -140,12 +104,12 @@ public class PlaceAnalyzer {
                         e -> new CityVenueAddress(
                                 LocalizationUtils.getString(e.getPlace().getCity(), Language.RUSSIAN),
                                 LocalizationUtils.getString(
-                                        fixVenueAddress(e.getPlace().getCity(), e.getPlace().getVenueAddress()),
+                                        ConferenceDataLoader.fixVenueAddress(e.getPlace()),
                                         Language.RUSSIAN)),
                         e -> new Place(
                                 -1L,
                                 e.getPlace().getCity(),
-                                fixVenueAddress(e.getPlace().getCity(), e.getPlace().getVenueAddress()),
+                                ConferenceDataLoader.fixVenueAddress(e.getPlace()),
                                 e.getPlace().getMapCoordinates()),
                         (e1, e2) -> e1));
         List<Place> placesToAppend = placeMap.keySet().stream()
