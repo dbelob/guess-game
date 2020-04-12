@@ -1,8 +1,8 @@
 package guess.domain.source;
 
 public class NameCompany {
-    private String name;
-    private String company;
+    private final String name;
+    private final String company;
 
     public NameCompany(String name, String company) {
         this.name = name;

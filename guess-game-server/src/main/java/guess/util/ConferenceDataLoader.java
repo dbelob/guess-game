@@ -111,7 +111,7 @@ public class ConferenceDataLoader {
                                                Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
-        // Read event types, events, speakers, talks from resource files
+        // Read event types, places, events, speakers, talks from resource files
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
         Optional<EventType> resourceOptionalEventType = resourceSourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference().equals(conference))
@@ -181,7 +181,8 @@ public class ConferenceDataLoader {
         Map<Long, Speaker> resourceSpeakerIdsMap = resourceSourceInformation.getSpeakers().stream()
                 .collect(Collectors.toMap(
                         Speaker::getId,
-                        s -> s));
+                        s -> s
+                ));
         Map<NameCompany, Speaker> resourceRuNameCompanySpeakers = resourceSourceInformation.getSpeakers().stream()
                 .collect(Collectors.toMap(
                         s -> new NameCompany(
@@ -362,6 +363,27 @@ public class ConferenceDataLoader {
                 eventToUpdate = contentfulEvent;
             }
         }
+
+        // Find place
+        Place placeToAppend = null;
+        Place placeToUpdate = null;
+        Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
+                .collect(Collectors.toMap(
+                        p -> new CityVenueAddress(
+                                LocalizationUtils.getString(p.getCity(), Language.RUSSIAN).trim(),
+                                LocalizationUtils.getString(p.getVenueAddress(), Language.RUSSIAN).trim()),
+                        p -> p
+                ));
+        Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
+                .collect(Collectors.toMap(
+                        p -> new CityVenueAddress(
+                                LocalizationUtils.getString(p.getCity(), Language.ENGLISH).trim(),
+                                LocalizationUtils.getString(p.getVenueAddress(), Language.ENGLISH).trim()),
+                        p -> p
+                ));
+        Place resourcePlace = findResourcePlace(contentfulEvent.getPlace(), resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces);
+
+        //TODO: implement
 
         // Save files
         if (urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
@@ -645,6 +667,12 @@ public class ConferenceDataLoader {
             }
         }
 
+        return null;
+    }
+
+    private static Place findResourcePlace(Place place, Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
+                                           Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
+        //TODO: implement
         return null;
     }
 
