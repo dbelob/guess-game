@@ -360,14 +360,21 @@ eventTypes:
     logoFileName: jugmsk.jpg
     name:
       - {language: en, text: "JUG.MSK"}
-      - {language: ru, text: "JUG.MSK"}
+    description:
+      - language: en
+        text: "Moscow community of Java developers."
+      - language: ru
+        text: "Московское сообщество Java-разработчиков."
+    siteLink:
+      - {language: en, text: "http://jug.msk.ru"}
+    vkLink: https://vk.com/jugmsk
+    twitterLink: https://twitter.com/mskjug
+    youtubeLink: https://www.youtube.com/playlist?list=PLojTLDAO4jjIRjDPIQjc4iG7CfR6m8pfc
   - id: 14
     logoFileName: jugru.jpg
     name:
       - {language: en, text: "JUG.ru"}
-      - {language: ru, text: "JUG.ru"}
   - id: 15
     logoFileName: jugnsk.jpg
     name:
       - {language: en, text: "JUGNsk"}
-      - {language: ru, text: "JUGNsk"}
