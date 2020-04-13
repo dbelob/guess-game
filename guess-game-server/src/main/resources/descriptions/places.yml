@@ -6,6 +6,7 @@ places:
     venueAddress:
       - {language: en, text: "10th Krasnoarmeyskaya 22a, 2nd floor, Oracle office"}
       - {language: ru, text: "10я Красноармейская 22а, 2 этаж, Офис компании Oracle"}
+    mapCoordinates: "59.912017, 30.295117"
   - id: 1
     city:
       - {language: en, text: "Saint Petersburg"}
@@ -53,6 +54,7 @@ places:
     venueAddress:
       - {language: en, text: "Volochaevskaya st., 5 Bld.1, CROC office"}
       - {language: ru, text: "Волочаевская ул., 5, корп. 1, Офис компании КРОК"}
+    mapCoordinates: "55.753747, 37.681371"
   - id: 7
     city:
       - {language: en, text: Moscow}
@@ -100,6 +102,7 @@ places:
     venueAddress:
       - {language: en, text: "Nikolaev St., 11, 13th floor, Technopark of Novosibirsk Academgorodok, Boiling Point"}
       - {language: ru, text: "Николаева ул., 11, 13 этаж, Технопарк Новосибирского Академгородка, Точка кипения"}
+    mapCoordinates: "54.858025, 83.110567"
   - id: 13
     city:
       - {language: en, text: Novosibirsk}
