@@ -733,8 +733,8 @@ public class ConferenceDataLoader {
         return findResourcePlaceByCityVenueAddress(place, resourceEnCityVenueAddressPlaces, Language.ENGLISH);
     }
 
-    private static String getFixedVenueAddress(String city, String venueAddress, List<PlaceAnalyzer.FixingVenueAddress> fixingVenueAddresses) {
-        for (PlaceAnalyzer.FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
+    private static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
+        for (FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
             if (fixingVenueAddress.getCity().equals(city) &&
                     fixingVenueAddress.getInvalidVenueAddress().equals(venueAddress)) {
                 return fixingVenueAddress.getValidVenueAddress();
@@ -744,14 +744,14 @@ public class ConferenceDataLoader {
         return venueAddress;
     }
 
-    public static List<LocaleItem> fixVenueAddress(Place place) {
-        List<PlaceAnalyzer.FixingVenueAddress> enFixingVenueAddresses = List.of();
-        List<PlaceAnalyzer.FixingVenueAddress> ruFixingVenueAddresses = List.of(
-                new PlaceAnalyzer.FixingVenueAddress(
+    private static List<LocaleItem> fixVenueAddress(Place place) {
+        List<FixingVenueAddress> enFixingVenueAddresses = List.of();
+        List<FixingVenueAddress> ruFixingVenueAddresses = List.of(
+                new FixingVenueAddress(
                         "Санкт-Петербург",
                         "пл. Победы, 1 , Гостиница «Park Inn by Radisson Пулковская»",
                         "пл. Победы, 1, Гостиница «Park Inn by Radisson Пулковская»"),
-                new PlaceAnalyzer.FixingVenueAddress(
+                new FixingVenueAddress(
                         "Москва",
                         "Международная ул., 16, Красногорск, Московская обл.,, МВЦ «Крокус Экспо»",
                         "Международная ул., 16, Красногорск, Московская обл., МВЦ «Крокус Экспо»")
