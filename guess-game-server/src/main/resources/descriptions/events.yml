@@ -875,6 +875,20 @@ events:
     endDate: "2013-02-28"
     placeId: 6
     talkIds: [1919]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2013"}
+    startDate: "2013-09-19"
+    endDate: "2013-09-19"
+    placeId: 6
+    talkIds: [1920]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2013"}
+    startDate: "2013-12-02"
+    endDate: "2013-12-02"
+    placeId: 6
+    talkIds: [1921]
   # JUG.ru
   - eventTypeId: 14
     name:
