@@ -903,6 +903,27 @@ events:
     endDate: "2014-04-17"
     placeId: 6
     talkIds: [1923, 1924]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2014"}
+    startDate: "2014-09-11"
+    endDate: "2014-09-11"
+    placeId: 6
+    talkIds: [1925, 1926]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2014"}
+    startDate: "2014-11-13"
+    endDate: "2014-11-13"
+    placeId: 6
+    talkIds: [1927]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2014"}
+    startDate: "2014-12-18"
+    endDate: "2014-12-18"
+    placeId: 6
+    talkIds: [1928]
   # JUG.ru
   - eventTypeId: 14
     name:
