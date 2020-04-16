@@ -945,6 +945,20 @@ events:
     endDate: "2015-11-26"
     placeId: 6
     talkIds: [1932]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2016"}
+    startDate: "2016-01-20"
+    endDate: "2016-01-20"
+    placeId: 6
+    talkIds: [1933]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2016"}
+    startDate: "2016-03-17"
+    endDate: "2016-03-17"
+    placeId: 6
+    talkIds: [1934, 1935, 1936]
   # JUG.ru
   - eventTypeId: 14
     name:
