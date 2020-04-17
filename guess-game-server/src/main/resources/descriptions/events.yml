@@ -959,6 +959,41 @@ events:
     endDate: "2016-03-17"
     placeId: 6
     talkIds: [1934, 1935, 1936]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2016"}
+    startDate: "2016-05-04"
+    endDate: "2016-05-04"
+    placeId: 6
+    talkIds: [1937]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2016"}
+    startDate: "2016-08-30"
+    endDate: "2016-08-30"
+    placeId: 6
+    talkIds: [1938]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2016"}
+    startDate: "2016-09-08"
+    endDate: "2016-09-08"
+    placeId: 6
+    talkIds: [1939]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2016"}
+    startDate: "2016-11-14"
+    endDate: "2016-11-14"
+    placeId: 6
+    talkIds: [1940]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2016"}
+    startDate: "2016-12-15"
+    endDate: "2016-12-15"
+    placeId: 6
+    talkIds: [1941]
   # JUG.ru
   - eventTypeId: 14
     name:
