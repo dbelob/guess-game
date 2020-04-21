@@ -352,14 +352,14 @@ events:
     name:
       - {language: en, text: "Heisenbug 2020 SPb"}
       - {language: ru, text: "Heisenbug 2020 СПб"}
-    startDate: "2020-06-14"
-    endDate: "2020-06-15"
+    startDate: "2020-06-15"
+    endDate: "2020-06-18"
     siteLink:
       - {language: en, text: "https://heisenbug-piter.ru/en/"}
       - {language: ru, text: "https://heisenbug-piter.ru/"}
-    placeId: 2
-    talkIds: [1378, 1379, 1633, 1381, 1382, 1383, 1384, 1385, 1634, 1754, 1635, 1636, 1637, 1638, 1390, 1840, 1392, 1841,
-              1842, 1395, 1396, 1397, 1398, 1399, 1843, 1844]
+    placeId: 16
+    talkIds: [1379, 1633, 1383, 1385, 1381, 1382, 1384, 1392, 1754, 1840, 1399, 1841, 1378, 1638, 1637, 1843, 1396, 1397,
+              1844, 1636, 1635, 1395, 1390, 1398]
   # HolyJS
   - eventTypeId: 4
     name:
