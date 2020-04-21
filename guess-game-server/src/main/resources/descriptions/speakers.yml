@@ -9524,7 +9524,7 @@ speakers:
       - {language: ru, text: "Павел Черторогов"}
     company:
       - {language: en, text: PS.kz}
-      - {language: ru, text: ps.kz}
+      - {language: ru, text: Ps.kz}
     bio:
       - {language: en, text: "GraphQL rockstar, developer of Internet products, OSS maintainer. Since 2001 Pavel's main specialization\
             \ is web technologies. He has extensive practical knowledge on back-end/front-end development, administration,\
@@ -9638,7 +9638,8 @@ speakers:
     name:
       - {language: en, text: "Sergei Kriger"}
       - {language: ru, text: "Сергей Кригер"}
-    company: []
+    company:
+      - {language: en, text: Robotise}
     bio:
       - {language: en, text: "Sergei fell in love with web development back in high school. He got a degree in Information\
             \ Technologies at the University of Helsinki and has been spending his professional career working for web design\
@@ -16339,7 +16340,10 @@ speakers:
     company:
       - {language: en, text: Revolut}
     bio:
-      - {language: en, text: TBD}
+      - {language: en, text: "Oleg has been in the web development for 10+ years. He was a student-designer, made web sites\
+            \ and interfaces for routers in different companies. How he's disrupting banking in Revolut."}
+      - {language: ru, text: "В веб-разработке 10+ лет. Был и студентом-верстальщиком, и делал сайты под ключ, и делал инт\
+            ерфейсы для роутеров в разных компаниях. Дизраптит банкинг в Revolut."}
     twitter: o_obidin
   - id: 1153
     fileName: 1153.jpg
