@@ -11205,16 +11205,16 @@ speakers:
       - {language: ru, text: "Лаборатория Касперского"}
     bio:
       - language: en
-        text: "Android developer since 2012.\n\nSoftware expert at Kaspersky Lab.\n\nAuthor of talks and articles, takes part\
+        text: "Android developer since 2012.\nSoftware expert at Kaspersky Lab.\nAuthor of talks and articles, takes part\
             \ in podcasts about architecture, tests, Dagger2, RxJava, Firebase, processes, and simply about life. Eugene organizes\
             \ as well as participates in different activities: Kaspersky Android Night, Kaspersky Android Talks, Android Academy\
             \ Moscow. He even has an architectural CookBook.\n\nHe makes legacy projects get up off their knees (same with\
             \ himself at 5 AM)."
       - language: ru
-        text: "Занимается Android-разработкой с 2012 года.\n\nSoftware expert в Лаборатории Касперского.\n\nАвтор докладов\
-            \ и статей, участник подкастов про архитектуру, тесты, Dagger2, RxJava, Firebase, процессы и просто за жизнь.\
-            \ Организатор и соучастник различных движух (Kaspersky Android Night, Kaspersky Android Talks, Android Academy\
-            \ Moscow). Имеется даже архитектурный CookBook.\n\nПоднимает с колен легаси-проекты и себя в 5 утра."
+        text: "Занимается Android-разработкой с 2012 года.\nSoftware expert в Лаборатории Касперского.\nАвтор докладов и с\
+            татей, участник подкастов про архитектуру, тесты, Dagger2, RxJava, Firebase, процессы и просто за жизнь. Орган\
+            изатор и соучастник различных движух (Kaspersky Android Night, Kaspersky Android Talks, Android Academy Moscow).\
+            \ Имеется даже архитектурный CookBook.\n\nПоднимает с колен легаси-проекты и себя в 5 утра."
     twitter: e_matsyuk
   - id: 780
     fileName: 0780.jpg
@@ -11273,16 +11273,13 @@ speakers:
       - {language: en, text: "Konstantin Tskhovrebov"}
       - {language: ru, text: "Константин Цховребов"}
     company:
-      - {language: en, text: "Redmadrobot SPb"}
+      - {language: en, text: JetBrains}
     bio:
-      - language: en
-        text: "Android developer since 2010, Konstantin likes to inspire his developer team, build correct architecture and\
-            \ organize professional events.\n\nIn his free time, he contributes to open source, tinkers with C and works to\
-            \ join in the global community."
-      - language: ru
-        text: "С 2010 года занимается Android-разработкой. Любит вдохновлять команду разработчиков, выстраивать правильную\
-            \ архитектуру и устраивать профессиональные мероприятия.\n\nВ свободное время участвует в open source, ковыряе\
-            тся в Си и старается приобщиться к глобальному комьюнити."
+      - {language: en, text: "Konstantin was engaged in Android development from 2010 to 2020. Now he's in Kotlin Multiplatform\
+            \ team. Likes to inspire and teach the development team. build architecture and participate in professional events."}
+      - {language: ru, text: "С 2010-2020 год занимался Android-разработкой. Теперь в команде Kotlin Multiplatform. Любит\
+            \ вдохновлять и обучать команду разработчиков, выстраивать архитектуру и участвовать в профессиональных меропр\
+            иятиях."}
     twitter: terrakok
   - id: 784
     fileName: 0784.jpg
@@ -11995,9 +11992,9 @@ speakers:
       - {language: en, text: Odnoklassniki}
       - {language: ru, text: Одноклассники}
     bio:
-      - {language: en, text: "Odnoklassniki Android application developer. Graduated from St.Petersburg State University,\
-            \ where he studied computer vision and security. Is into Android development since his second year at university.\
-            \ Loves football, table tennis, roller blades, and snowboard."}
+      - {language: en, text: "Odnoklassniki Android application developer. He graduated from St.Petersburg State University,\
+            \ where he studied computer vision and security. Into Android development since his second year at university.\
+            \ Loves football, table tennis, rollerblades, and snowboard."}
       - {language: ru, text: "Разрабатывает Android-приложение Одноклассников. Закончил матмех СПбГУ, где занимался компью\
             терными зрением и безопасностью. Разработкой под Android занимается со второго курса. Любит футбол, настольный\
             \ теннис, ролики и сноуборд."}
@@ -12873,10 +12870,17 @@ speakers:
       - {language: en, text: "Matvey Malkov"}
       - {language: ru, text: "Матвей Мальков"}
     company:
-      - {language: en, text: Nexters}
+      - {language: en, text: Google}
+      - {language: ru, text: "Google UK"}
     bio:
-      - {language: ru, text: "Пишу на Scala под Android, люблю функциональщину и реактивщину. Довольно консервативен в\
-      \ плане выбора технологий и фреймворков. Раньше работал тимлидом Java-команды в 2GIS."}
+      - language: en
+        text: "Software Engineer from Novokuznetsk, Siberia. Matvey's whole career is dedicated to Android and he has no clue\
+            \ what's going on behind this wall. He previously spoke about RxJava and Scala a lot. \n\nWorked in 2GIS and a\
+            \ few Moscow startups, currently working in the Android Toolkit team at Google, in particular on Jetpack Compose."
+      - language: ru
+        text: "Разработчик из Новокузнецка, Сибирь. Всю карьеру занимается Андроид-разработкой и другой жизни не видел. Ра\
+            ссказывал людям про RxJava и Scala. \n\nРаботал в 2GIS и московских стартапах, а сейчас делает Jetpack Compose\
+            \ в Google."
     twitter: matveyka_jj
   - id: 889
     fileName: 0889.jpg
@@ -16369,3 +16373,190 @@ speakers:
             \ and [for pop culture and tech media](http://ratchetandthegeek.com). He's written a number of books and spoken\
             \ in person to almost a half million developers worldwide."}
     twitter: shanselman
+  - id: 1155
+    fileName: 1155.jpg
+    name:
+      - {language: en, text: "Aleksei Alekseev"}
+      - {language: ru, text: "Алексей Алексеев"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - language: en
+        text: "Alexey has been an iOS developer for about 3 years.\r\nCurrently involved in the creation of the voice assistant\
+            \ \"Maroussia\"."
+      - language: ru
+        text: "Разрабатывает под iOS около 3 лет.\r\nВ данный момент участвует в создании голосового помощника «Маруся»."
+  - id: 1156
+    fileName: 1156.jpg
+    name:
+      - {language: en, text: "Asya Sviridenko"}
+      - {language: ru, text: "Ася Свириденко"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Asya has been working in Yandex for the past 4 years and leads the iOS development team. She has been engaged\
+            \ in iOS development for so long that has already become an age question: asking is indecent. Asya is a controversial\
+            \ person: she loves Swift, but has warm feelings for Obj-C (it's like a Stockholm Syndrome) and wants to make\
+            \ a talk about work-life balance, but has no idea what to talk about.\r\nShe will never pass up St. Petersburg\
+            \ for some other city and can't live without wine and sport."
+      - language: ru
+        text: "Работает в Яндексе последние 4 года, руководит группой разработки iOS Почты. iOS-разработкой занимается нас\
+            только давно, что это уже перешло в раздел вопросов про возраст: спрашивать неприлично, да и так всё очевидно\
+            . Во всех отношениях противоречивый человек: любит Swift, при этом испытывает тёплые чувства к старичку Obj-C\
+            \ (кажется, это зовётся Стокгольмский синдром), хочет выступить с докладом про work–life balance, но не имеет\
+            \ никакого представления о чём говорить.\r\nНе променяет Петербург ни на один другой город, и не может жить бе\
+            з вина и спорта."
+    twitter: asyakononova
+  - id: 1157
+    fileName: 1157.jpg
+    name:
+      - {language: en, text: "Alexey Khaiminov"}
+      - {language: ru, text: "Алексей Хайминов"}
+    company:
+      - {language: en, text: Youla}
+      - {language: ru, text: Юла}
+    bio:
+      - language: en
+        text: "Alexey has been engaged in commercial Android development since 2013. Currently, he works as a Senior Android\
+            \ developer for \"Youla\". Major projects in his career have been \"OK.RU\", before this he took part in the development\
+            \ of banking applications until it has become mainstream.\r\nAlexey graduated from CMC MSU, where he estimated\
+            \ GPU-running DVM-programs execution time as a system programmer. Note: DVM is a technology similar to OpenMP\
+            \ and MPI.\r\nBeing a huge fan of Kotlin, DI and delegating, however, he's interested in Flutter/Dart success\
+            \ stories."
+      - language: ru
+        text: "Алексей с 2013 года занимается коммерческой разработкой под OC «Android». На данный момент он Senior Android\
+            \ devepoler в команде «Юлы». Работал в таких крупных проектах, как «Одноклассники», до этого принимал участие\
+            \ в разработке банковских клиентов, пока это не стало мэйнстримом.\r\nОкончил ВМК МГУ, где на кафедре системно\
+            го программирования оценивал время исполнения параллельных DVM-программ на GPU (DVM — технология, аналогичная\
+            \ OpenMP и MPI).\r\nФанат Kotlin, DI и делегирования, однако, факультативно с удовольствием слушает истории ус\
+            пеха Flutter/Dart."
+  - id: 1158
+    fileName: 1158.jpg
+    name:
+      - {language: en, text: "Aydar Mukhametzyanov"}
+      - {language: ru, text: "Айдар Мухаметзянов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - language: en
+        text: "Aydar had been developing iOS applications since iOS 5 in a mobile agency, in a large and cozy 2GIS, and Freeletics\
+            \ in Munich.\r\nHe currently works at JetBrains, AppCode team, but still remembers how it feels to be a mobile\
+            \ developer. Writes code in Kotlin/Java so that people are comfortable writing in Swift/Objective-C."
+      - language: ru
+        text: "Разрабатывал iOS-приложения со времен iOS 5 в мобильном агенстве, в небольшом стартапе, в большом и теплом\
+            \ 2GIS, и в мюнхенском Freeletics.\r\nСейчас работает в JetBrains в команде AppCode, но все еще помнит, каково\
+            \ это — быть мобильным разработчиком. Пишет код на Kotlin/Java, чтобы людям было удобно писать на Swift/Objective-C."
+    twitter: aydarmukh
+  - id: 1159
+    fileName: 1159.jpg
+    name:
+      - {language: en, text: "Dmitry Volkov"}
+      - {language: ru, text: "Дмитрий Волков"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Dmitry has been working in Yandex.Music for 5 years. He has been in mobile development for so\
+            \ long that he remembers Symbian but would like to forget about it. He likes to write in Swift but is always happy\
+            \ with Objective-C. In his free time, Dmitry bakes the most delicious eclairs in the world."}
+      - {language: ru, text: "Работает в Яндекс.Музыке уже пять лет. На родео мобильной разработки так давно, что помнит р\
+            азработку под Symbian, но хотел бы о ней забыть. Любит писать на Swift, но всегда рад собакам из Objective-C.\
+            \ В свободное время выпекает самые вкусные в мире эклеры."}
+  - id: 1160
+    fileName: 1160.jpg
+    name:
+      - {language: en, text: "Andrey Shikov"}
+      - {language: ru, text: "Андрей Шиков"}
+    company:
+      - {language: en, text: Badoo}
+    bio:
+      - {language: en, text: "Musician, engineer. Kotlin enthusiast since before traits were changed to interfaces."}
+      - {language: ru, text: "Музыкант, инженер. Пришел в Kotlin, когда интерфейсы были трейтами."}
+    twitter: shikasd_
+  - id: 1161
+    fileName: 1161.jpg
+    name:
+      - {language: en, text: "Roman Volkov"}
+      - {language: ru, text: "Роман Волков"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - language: en
+        text: "Graduated from Tyumen State University.\r\nBefore iOS Roman developed a backend for analytic and integration\
+            \ systems in the banking sector (.NET, Microsoft SQL, IBM WebSphere Message Broker), and then in the oil industry.\r\
+            \nFour years ago he retrained as an iOS developer. He managed to work on a freelance, remote (having lived in\
+            \ Montenegro at that time) developing an application for startups and brands (Rolls-Royce for example). In 2018\
+            \ he joined the Prisma team and participated in the launch and development of Lensa.\r\nIn 2019 Roman moved to\
+            \ Yandex to develop Yandex.Translator as an iOS developer and now hold the position of Translator mobile team\
+            \ leader."
+      - language: ru
+        text: "Закончил Тюменский государственный университет.\r\nДо iOS разрабатывал бэкенд аналитических и интеграционны\
+            х систем в банковской сфере (.NET, Microsoft SQL, IBM WebSphere Message Broker), а затем в нефтяной отрасли.\r\
+            \nЧетыре года назад переквалифицировался в iOS-разработчика. Успел поработать на фрилансе, удаленке (пожив в э\
+            то время в Черногории), разрабатывая приложения для стартапов и брендов (например, Rolls-Royce). В 2018 году п\
+            рисоединился к команде Prisma, участвовал в запуске и разработке Lensa.\r\nВ 2019 году перешел в Яндекс развив\
+            ать Яндекс.Переводчик в качестве iOS-разработчика, сейчас занимает должность тимлида мобильной команды Перевод\
+            чика."
+    twitter: volkovre
+  - id: 1162
+    fileName: 1162.jpg
+    name:
+      - {language: en, text: "Thomas Ezan"}
+    company:
+      - {language: en, text: Lyft}
+    bio:
+      - {language: en, text: "Thomas is an Android Engineer. For the past 5 years he has been in Lyft’s Growth team. He previously\
+            \ worked at Pocket and Eventbrite. He is currently based in Seattle, WA."}
+    twitter: lethargicpanda
+  - id: 1163
+    fileName: 1163.jpg
+    name:
+      - {language: en, text: "Murad Tataev"}
+      - {language: ru, text: "Мурад Татаев"}
+    company:
+      - {language: en, text: Yandex.Market}
+      - {language: ru, text: Яндекс.Маркет}
+    bio:
+      - language: en
+        text: "Murad has been developing for 5 years and 3 of them on iOS.\r\n\r\nHe started a career in Makhachkala and quickly\
+            \ realized that he needed to move to Moscow. In his free time, he learns something new. Once his choice fell on\
+            \ application hacking. Murad isn't a hacker but he would like to share some tricky parts."
+      - language: ru
+        text: "Разрабатывает уже 5 лет. Из них 3 года на iOS.\r\n\r\nНачинал свою карьеру в Махачкале и довольно быстро по\
+            нял, что нужно переезжать в Москву.\r\nВ свободное время изучает что-то новое. И вот однажды выбор пал на взло\
+            м приложений. Мурад ни в коем случае не хакер, однако есть фишечки, которыми он с удовольствием поделится."
+  - id: 1164
+    fileName: 1164.jpg
+    name:
+      - {language: en, text: "Andrey Kulikov"}
+      - {language: ru, text: "Андрей Куликов"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Andrey has been developing Android applications since 2012. He's the author of the popular Transitions-Everywhere\
+            \ library. having settled in Google he transferred all results from this library to the official AndroidX Transitions\
+            \ library. Currently working on Jetpack Compose."}
+      - {language: ru, text: "Разрабатывает Android приложения с 2012 года. Автор популярной библиотеки Transitions-Everywhere.\
+            \ Устроившись в Google, перенес все наработки из нее в официальную AndroidX Transitions-библиотеку. В данный м\
+            омент работает над Jetpack Compose."}
+  - id: 1165
+    fileName: 1165.jpg
+    name:
+      - {language: en, text: "Anastasia Soboleva"}
+      - {language: ru, text: "Анастасия Соболева"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - language: en
+        text: "Anastasia is an engineer at Google working on Jetpack Compose.\nPrior to that she worked on a few exciting\
+            \ projects at Amazon as a backend engineer and parallels as an iOS developer.\nWhen not working, Anastasia is\
+            \ doing a bit of everything like sketching, playing badminton, cycling or walking. And she is constantly learning\
+            \ new languages which she forgets pretty quickly, at the moment these are French and Mandarin."
+      - language: ru
+        text: "Анастасия работает в Google, где занимается разработкой Jetpack Compose.\nДо этого она работала в нескольки\
+            х проектах Amazon как бэкендер и параллельно как iOS-разработчик.\nВ свободное время Анастасия занимается всем\
+            \ понемногу: рисует эскизы, играет в бадминтон, катается на велосипеде и гуляет. Также она постоянно учит новы\
+            е языки, которые, к сожалению, быстро забывает. На данный момент это французский и мандаринский китайский."

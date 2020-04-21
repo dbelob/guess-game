@@ -806,6 +806,17 @@ events:
     placeId: 9
     talkIds: [254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275,
               276, 277, 278, 279, 280, 281, 282, 283]
+  - eventTypeId: 9
+    name:
+      - {language: en, text: "Mobius 2020 SPb"}
+      - {language: ru, text: "Mobius 2020 СПб"}
+    startDate: "2020-06-22"
+    endDate: "2020-06-25"
+    siteLink:
+      - {language: en, text: "https://mobius-piter.ru/en/"}
+      - {language: ru, text: "https://mobius-piter.ru/"}
+    placeId: 16
+    talkIds: [1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975]
   # SPTDC
   - eventTypeId: 10
     name:
