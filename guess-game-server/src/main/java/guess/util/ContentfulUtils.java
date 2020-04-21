@@ -1280,6 +1280,10 @@ public class ContentfulUtils {
                 equals(a.getName(), b.getName()) &&
                 equals(a.getShortDescription(), b.getShortDescription()) &&
                 equals(a.getLongDescription(), b.getLongDescription()) &&
+                equals(a.getTalkDay(), b.getTalkDay()) &&
+                equals(a.getTrackTime(), b.getTrackTime()) &&
+                equals(a.getTrack(), b.getTrack()) &&
+                equals(a.getLanguage(), b.getLanguage()) &&
                 equals(a.getPresentationLinks(), b.getPresentationLinks()) &&
                 equals(a.getVideoLinks(), b.getVideoLinks()) &&
                 equals(a.getSpeakerIds(), b.getSpeakerIds()));
@@ -1303,7 +1307,7 @@ public class ContentfulUtils {
                 equals(a.getTalkIds(), b.getTalkIds()));
     }
 
-    private static boolean equals(String a, String b) {
+    private static <T> boolean equals(T a, T b) {
         return Objects.equals(a, b);
     }
 

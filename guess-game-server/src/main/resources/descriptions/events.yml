@@ -250,14 +250,14 @@ events:
     name:
       - {language: en, text: "DotNext 2020 SPb"}
       - {language: ru, text: "DotNext 2020 СПб"}
-    startDate: "2020-06-18"
-    endDate: "2020-06-19"
+    startDate: "2020-06-15"
+    endDate: "2020-06-18"
     siteLink:
       - {language: en, text: "https://dotnext-piter.ru/en/"}
       - {language: ru, text: "https://dotnext-piter.ru/"}
-    placeId: 2
-    talkIds: [1347, 1348, 1349, 1350, 1351, 1352, 1353, 1360, 1355, 1356, 1357, 1358, 1359, 1913, 1371, 1361, 1362, 1366,
-              1367, 1375, 1369, 1845, 1374, 1372, 1632]
+    placeId: 16
+    talkIds: [1371, 1355, 1362, 1351, 1347, 1349, 1632, 1358, 1361, 1955, 1372, 1845, 1360, 1374, 1366, 1356, 1348, 1357,
+              1352, 1369, 1367, 1375, 1350, 1956, 1359, 1913]
   # Heisenbug
   - eventTypeId: 3
     name:

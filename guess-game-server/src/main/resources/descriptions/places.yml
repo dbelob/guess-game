@@ -126,3 +126,9 @@ places:
     venueAddress:
       - {language: en, text: "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo"}
     mapCoordinates: "60.1704769, 24.8279349"
+  - id: 16
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: Online}
