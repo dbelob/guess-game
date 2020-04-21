@@ -1061,6 +1061,41 @@ events:
     endDate: "2018-04-23"
     placeId: 6
     talkIds: [1954]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2018"}
+    startDate: "2018-06-07"
+    endDate: "2018-06-07"
+    placeId: 6
+    talkIds: [1976, 1977]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2018"}
+    startDate: "2018-07-12"
+    endDate: "2018-07-12"
+    placeId: 6
+    talkIds: [1978]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2018"}
+    startDate: "2018-10-04"
+    endDate: "2018-10-04"
+    placeId: 6
+    talkIds: [1979]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2018"}
+    startDate: "2018-11-01"
+    endDate: "2018-11-01"
+    placeId: 6
+    talkIds: [1980, 1981]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2018"}
+    startDate: "2018-12-13"
+    endDate: "2018-12-13"
+    placeId: 6
+    talkIds: [1982, 1983]
   # JUG.ru
   - eventTypeId: 14
     name:

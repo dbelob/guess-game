@@ -651,6 +651,14 @@ speakers:
     name:
       - {language: en, text: "Maxim Gramin"}
       - {language: ru, text: "Максим Грамин"}
+    company:
+      - {language: en, text: CROC}
+      - {language: ru, text: КРОК}
+    bio:
+      - {language: ru, text: "9+ лет работы на проектах с активным использованием различных СУБД (Postgres, Firebird,\
+      \ Oracle) в различных сферах (ритейл, гос. структуры, web). В данный момент является Java-разработчиком в компании\
+      \ КРОК, где работает с Apache Cassandra и Oracle. В течении этого времени у него появился собственный взгляд и\
+      \ подход к разработке и сопровождению БД."}
   - id: 38
     fileName: 0038.jpg
     name:
