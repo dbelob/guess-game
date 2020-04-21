@@ -16244,12 +16244,11 @@ speakers:
       - {language: en, text: "Yuriy Syrovetskiy"}
       - {language: ru, text: "Юрий Сыровецкий"}
     company:
-      - {language: en, text: "Kaspersky Lab"}
-      - {language: ru, text: "Лаборатория Касперского"}
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
     bio:
-      - {language: en, text: "Senior Haskell developer at Kaspersky Lab, RuHaskell activist, distributed systems enthusiast."}
-      - {language: ru, text: "Старший хаскелист в Лаборатории Касперского, активист сообщества RuHaskell, энтузиаст распре\
-            делённых систем."}
+      - {language: en, text: "Software developer at Yandex, RuHaskell activist, distributed systems enthusiast."}
+      - {language: ru, text: "Разработчик в Яндексе, активист сообщества RuHaskell, энтузиаст распределённых систем."}
     twitter: cblp_su
   - id: 1145
     fileName: 1145.jpg

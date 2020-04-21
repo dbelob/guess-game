@@ -29,14 +29,14 @@ events:
     name:
       - {language: en, text: "C++ Russia 2020 Msc"}
       - {language: ru, text: "C++ Russia 2020 Мск"}
-    startDate: "2020-07-14"
-    endDate: "2020-07-15"
+    startDate: "2020-06-29"
+    endDate: "2020-07-02"
     siteLink:
       - {language: en, text: "https://cppconf-moscow.ru/en/"}
       - {language: ru, text: "https://cppconf-moscow.ru/"}
-    placeId: 11
-    talkIds: [1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449, 1450, 1451, 1452, 1453, 1454, 1455,
-              1456, 1457, 1458, 1459, 1460, 1461, 1462, 1463, 1464]
+    placeId: 17
+    talkIds: [1438, 1440, 1448, 1449, 1458, 1451, 1460, 1454, 1444, 1442, 1447, 1446, 1461, 1441, 1456, 1450, 1455, 1443,
+              1445, 1452, 1457, 1459, 1462, 1453, 1463, 1464]
   # DevOops
   - eventTypeId: 1
     name:

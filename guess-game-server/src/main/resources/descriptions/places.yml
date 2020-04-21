@@ -132,3 +132,9 @@ places:
       - {language: ru, text: Санкт-Петербург}
     venueAddress:
       - {language: en, text: Online}
+  - id: 17
+    city:
+      - {language: en, text: Moscow}
+      - {language: ru, text: Москва}
+    venueAddress:
+      - {language: en, text: Online}

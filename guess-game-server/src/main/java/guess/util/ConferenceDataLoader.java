@@ -847,11 +847,11 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 15), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 6, 22), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 6, 22), "2020-spb");
-//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2020, 6, 26), "2020-jpoint");
+//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2020, 6, 29), "2020-jpoint");
+//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 6, 29), "2020-msk-cpp");
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc");
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 10), "2020-msk-hydra");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 7, 12), "2020-msk-devoops");
-//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 7, 14), "2020-msk-cpp");
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 8, 22), "2020-techtrain");    // valid date?
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 10, 7), "2020-spb-devoops");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 10, 9), "2020-spb-cpp");
