@@ -1642,16 +1642,14 @@ speakers:
       - {language: en, text: "Ivan Osipov"}
       - {language: ru, text: "Иван Осипов"}
     company:
-      - {language: en, text: Haulmont}
+      - {language: en, text: "Arrival Robotics"}
     bio:
-      - {language: en, text: "Developer at Haulmont since 2016. Works in the outsourcing projects department. Is mostly responsible\
-            \ for the development of a module for scheduling for educational institutions. More than 3 years is engaged in\
-            \ the development and support of resource planning systems. Enthusiast of Kotlin language and problem-oriented\
-            \ languages based on it."}
-      - {language: ru, text: "Разработчик в компании Haulmont с 2016 года. Работает в подразделении аутсорсинговых проекто\
-            в. Основная область ответственности — разработка модуля построения расписаний для образовательных учреждений.\
-            \ Более 3 лет занимается разработкой и поддержкой систем планирования ресурсов. Энтузиаст языка Kotlin и пробл\
-            емно-ориентированных языков на его основе."}
+      - {language: ru, text: "Всю свою карьеру Иван разрабатывает и развивает бекенды веб приложений. Разработка\
+      \ серверсайда начала приносить ему еще больше радости, когда он встретил Kotlin. С момента этой встречи его жизнь\
+      \ изменилась на все 360°.\n\nПоследние полтора года в составе Arrival Robotics Иван с командой строят облачное\
+      \ решение, которое с одной стороны объединяет дизайнеров электротранспорта, а с другой гибкую роботическую фабрику.\
+      \ В перерывах между генерацией spring boot приложений Иван пишет телеграм-блог\
+      \ <a href=\"https://t.me/from_junior_to_senior\" target=\"_blank\">@from_junior_to_senior</a>."}
   - id: 102
     fileName: 0102.jpg
     name:
@@ -3324,6 +3322,13 @@ speakers:
     name:
       - {language: en, text: "Andrey Belyaev"}
       - {language: ru, text: "Андрей Беляев"}
+    company:
+      - {language: en, text: Haulmont}
+    bio:
+      - {language: ru, text: "Закончил факультет ПММ в 2001 году, с Java начал плотно работать с 2006 года будучи\
+      \ разработчиком в компании РЕЛЭКС. Потом перешел в ДатаАрт, где попробовал себя почти во всех ролях, кроме,\
+      \ пожалуй, дизайнера. Был разработчиком, тимтехлидом, ПМом, архтектором. В настоящее время работаю над фреймворком\
+      \ CUBA в компании Haulmont — делаю RnD и представляю компанию на разных мероприятиях."}
   - id: 235
     fileName: 0235.jpg
     name:
