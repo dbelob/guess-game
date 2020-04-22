@@ -1096,6 +1096,20 @@ events:
     endDate: "2018-12-13"
     placeId: 6
     talkIds: [1982, 1983]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2019"}
+    startDate: "2019-02-14"
+    endDate: "2019-02-14"
+    placeId: 6
+    talkIds: [1984, 1985, 1986]
+  - eventTypeId: 13
+    name:
+      - {language: en, text: "JUG.MSK 2019"}
+    startDate: "2019-03-13"
+    endDate: "2019-03-13"
+    placeId: 6
+    talkIds: [1987, 1988]
   # JUG.ru
   - eventTypeId: 14
     name:
