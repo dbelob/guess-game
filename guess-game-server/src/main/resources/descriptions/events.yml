@@ -1176,9 +1176,25 @@ events:
   # JUG.ru
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru"}
+      - {language: en, text: "JUG.ru 2012"}
+    startDate: "2012-02-25"
+    endDate: "2012-02-25"
     placeId: 0
-    talkIds: []
+    talkIds: [2001]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2012"}
+    startDate: "2012-04-20"
+    endDate: "2012-04-20"
+    placeId: 0
+    talkIds: [2002]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2012"}
+    startDate: "2012-04-26"
+    endDate: "2012-04-26"
+    placeId: 0
+    talkIds: [2003]
   # JUGNsk
   - eventTypeId: 15
     name:
