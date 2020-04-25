@@ -3464,6 +3464,12 @@ speakers:
     name:
       - {language: en, text: "Artem Ananyev"}
       - {language: ru, text: "Артём Ананьев"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - {language: ru, text: "Старший инженер-программист в петербургском центре разработок компании Oracle. С 2004 года\
+      \ является членом клиентской команды JDK, принимал и продолжает принимать активное участие в таких проектах, как\
+      \ AWT, Swing, (J)WebPane, JavaFX."}
   - id: 248
     fileName: 0248.jpg
     name:
@@ -3487,6 +3493,12 @@ speakers:
     name:
       - {language: en, text: "Alexander Shlyannikov"}
       - {language: ru, text: "Александр Шлянников"}
+    company:
+      - {language: en, text: "Digital Zone"}
+    bio:
+      - {language: ru, text: "Акционер и ключевой сотрудник компании Digital Zone, преподаватель Казанского\
+      \ Государственного Университета, отвечает в компании за выбор технологических подходов, фреймворков и инструментария\
+      \ в Java-разработке."}
   - id: 253
     fileName: 0253.jpg
     name:
@@ -3509,6 +3521,11 @@ speakers:
     name:
       - {language: en, text: "Dmitry Cherepanov"}
       - {language: ru, text: "Дмитрий Черепанов"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - {language: ru, text: "Инженер-программист, работает в компании Oracle (Sun  Microsystems) с 2005. Большую часть\
+      \ времени участвовал в проектах AWT, JavaFX Glass. В настоящее время работает в группе Java Deployment."}
   - id: 255
     fileName: 0255.jpg
     name:

@@ -138,3 +138,11 @@ places:
       - {language: ru, text: Москва}
     venueAddress:
       - {language: en, text: Online}
+  - id: 18
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Piskarevsky Prospekt, 2, litera Shch, building 2"}
+      - {language: ru, text: "Пискаревский проспект, 2, литера Щ, корп.2"}
+    mapCoordinates: "59.958606, 30.405313"
