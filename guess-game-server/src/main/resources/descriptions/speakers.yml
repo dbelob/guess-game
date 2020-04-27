@@ -3467,13 +3467,15 @@ speakers:
     company:
       - {language: en, text: Oracle}
     bio:
-      - {language: ru, text: "Старший инженер-программист в петербургском центре разработок компании Oracle. С 2004 года\
-      \ является членом клиентской команды JDK, принимал и продолжает принимать активное участие в таких проектах, как\
-      \ AWT, Swing, (J)WebPane, JavaFX."}
+      - {language: ru, text: "Ведущий разрабочик петербургского центра разработок компании Oracle. С 2004 года является\
+      \ членом команды AWT/Swing. Принимал и продолжает принимать активное участие в проектах AWT, Swing, (J)WebPane и\
+      \ JavaFX."}
   - id: 248
     fileName: 0248.jpg
     name:
       - {language: en, text: "Georges Saab"}
+    company:
+      - {language: en, text: Oracle}
   - id: 249
     fileName: 0249.jpg
     name:
