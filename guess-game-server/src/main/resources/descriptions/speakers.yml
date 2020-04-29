@@ -3267,6 +3267,8 @@ speakers:
     name:
       - {language: en, text: "Vladimir Voskresensky"}
       - {language: ru, text: "Владимир Воскресенский"}
+    company:
+      - {language: en, text: Oracle}
   - id: 225
     fileName: 0225.jpg
     name:
@@ -3463,11 +3465,15 @@ speakers:
     name:
       - {language: en, text: "Lev Priyma"}
       - {language: ru, text: "Лев Прийма"}
+    company:
+      - {language: en, text: Oracle}
   - id: 245
     fileName: 0245.jpg
     name:
       - {language: en, text: "Dmitry Kozorez"}
       - {language: ru, text: "Дмитрий Козорез"}
+    company:
+      - {language: en, text: Oracle}
   - id: 246
     fileName: 0246.jpg
     name:
