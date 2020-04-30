@@ -146,3 +146,19 @@ places:
       - {language: en, text: "Piskarevsky Prospekt, 2, litera Shch, building 2"}
       - {language: ru, text: "Пискаревский проспект, 2, литера Щ, корп.2"}
     mapCoordinates: "59.958606, 30.405313"
+  - id: 19
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Sverdlovskaya nab., 44, litera Ya, Luxoft office"}
+      - {language: ru, text: "Свердловская наб., дом 44, литера Я, Офис компании Luxoft"}
+    mapCoordinates: "59.961674, 30.403121"
+  - id: 20
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "13th line of Vasilyevsky island, 14, T-Systems office"}
+      - {language: ru, text: "13-я линия Васильевского острова, 14, Офис компании T-Systems"}
+    mapCoordinates: "59.936106, 30.276118"
