@@ -1391,6 +1391,34 @@ events:
     endDate: "2014-07-24"
     placeId: 20
     talkIds: [2045]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2014"}
+    startDate: "2014-08-07"
+    endDate: "2014-08-07"
+    placeId: 19
+    talkIds: [2046, 2047]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2014"}
+    startDate: "2014-09-17"
+    endDate: "2014-09-17"
+    placeId: 0
+    talkIds: [2048]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2014"}
+    startDate: "2014-10-22"
+    endDate: "2014-10-22"
+    placeId: 4
+    talkIds: [2049]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2014"}
+    startDate: "2014-12-22"
+    endDate: "2014-12-22"
+    placeId: 0
+    talkIds: [2050]
   # JUGNsk
   - eventTypeId: 15
     name:
