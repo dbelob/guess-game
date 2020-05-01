@@ -1419,6 +1419,27 @@ events:
     endDate: "2014-12-22"
     placeId: 0
     talkIds: [2050]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-02-05"
+    endDate: "2015-02-05"
+    placeId: 19
+    talkIds: [2051]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-03-11"
+    endDate: "2015-03-11"
+    placeId: 0
+    talkIds: [2052]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-04-22"
+    endDate: "2015-04-22"
+    placeId: 19
+    talkIds: [2053]
   # JUGNsk
   - eventTypeId: 15
     name:
