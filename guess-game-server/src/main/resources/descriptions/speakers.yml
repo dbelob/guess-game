@@ -3407,6 +3407,12 @@ speakers:
     name:
       - {language: en, text: "Kirill Klensky"}
       - {language: ru, text: "Кирилл Кленский"}
+    company:
+      - {language: en, text: Codeborne}
+    bio:
+      - language: ru
+        text: "Разработчик в Codeborne. Спец по профилированию и нагрузочному тестированию. Фанат спортивного\
+        \ ориентирования. Может выбраться из любого леса без гугла. Автор vihm.ee"
   - id: 239
     fileName: 0239.jpg
     name:
