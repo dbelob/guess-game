@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.javaVersion>11</project.build.javaVersion>
 
-        <assembly.plugin.version>3.2.0</assembly.plugin.version>
+        <assembly.plugin.version>3.3.0</assembly.plugin.version>
         <clean.plugin.version>3.1.0</clean.plugin.version>
         <compiler.plugin.version>3.8.1</compiler.plugin.version>
         <frontend.plugin.version>1.9.1</frontend.plugin.version>
@@ -26,7 +26,7 @@
         <logback.version>1.2.3</logback.version>
         <sl4j.version>1.7.30</sl4j.version>
         <snakeyaml.version>1.26</snakeyaml.version>
-        <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
+        <spring.boot.version>2.2.6.RELEASE</spring.boot.version>
         <springfox.swagger>2.9.2</springfox.swagger>
 
         <ng.build.arguments>-- --prod=true</ng.build.arguments>
