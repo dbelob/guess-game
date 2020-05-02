@@ -3426,6 +3426,8 @@ speakers:
     name:
       - {language: en, text: "Petr Kudryavtsev"}
       - {language: ru, text: "Петр Кудрявцев"}
+    company:
+      - {language: en, text: Oracle}
   - id: 241
     fileName: 0241.jpg
     name:

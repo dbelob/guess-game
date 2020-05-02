@@ -1440,6 +1440,41 @@ events:
     endDate: "2015-04-22"
     placeId: 19
     talkIds: [2053]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-05-14"
+    endDate: "2015-05-14"
+    placeId: 20
+    talkIds: [2054]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-06-30"
+    endDate: "2015-06-30"
+    placeId: 0
+    talkIds: [2055, 2056, 2057, 2058, 2059]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-10-14"
+    endDate: "2015-10-14"
+    placeId: 0
+    talkIds: [2060]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-12-03"
+    endDate: "2015-12-03"
+    placeId: 0
+    talkIds: [2061]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-12-17"
+    endDate: "2015-12-17"
+    placeId: 19
+    talkIds: [2062]
   # JUGNsk
   - eventTypeId: 15
     name:
