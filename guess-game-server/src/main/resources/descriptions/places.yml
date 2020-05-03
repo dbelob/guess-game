@@ -162,3 +162,11 @@ places:
       - {language: en, text: "13th line of Vasilyevsky island, 14, T-Systems office"}
       - {language: ru, text: "13-я линия Васильевского острова, 14, Офис компании T-Systems"}
     mapCoordinates: "59.936106, 30.276118"
+  - id: 21
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Yakornaya St., 7, BC \"Anchor\", SEMrush office"}
+      - {language: ru, text: "ул. Якорная, дом 7, БЦ \"Анкор\", Офис компании SEMrush"}
+    mapCoordinates: "59.942475, 30.422094"

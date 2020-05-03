@@ -1482,6 +1482,69 @@ events:
     endDate: "2016-01-21"
     placeId: 20
     talkIds: [2063]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2016"}
+    startDate: "2016-02-26"
+    endDate: "2016-02-26"
+    placeId: 0
+    talkIds: [2064, 2065, 2066, 2067]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2016"}
+    startDate: "2016-05-26"
+    endDate: "2016-05-26"
+    placeId: 19
+    talkIds: [2068]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2016"}
+    startDate: "2016-06-30"
+    endDate: "2016-06-30"
+    placeId: 19
+    talkIds: [2069]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2016"}
+    startDate: "2016-07-06"
+    endDate: "2016-07-06"
+    placeId: 0
+    talkIds: [2070]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2016"}
+    startDate: "2016-08-31"
+    endDate: "2016-08-31"
+    placeId: 21
+    talkIds: [2071]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2016"}
+    startDate: "2016-09-14"
+    endDate: "2016-09-14"
+    placeId: 21
+    talkIds: [2072]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2016"}
+    startDate: "2016-10-12"
+    endDate: "2016-10-12"
+    placeId: 19
+    talkIds: [2073]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2016"}
+    startDate: "2016-12-01"
+    endDate: "2016-12-01"
+    placeId: 21
+    talkIds: [2074]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2016"}
+    startDate: "2016-12-22"
+    endDate: "2016-12-22"
+    placeId: 0
+    talkIds: [2075]
   # JUGNsk
   - eventTypeId: 15
     name:
