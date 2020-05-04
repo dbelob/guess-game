@@ -170,3 +170,11 @@ places:
       - {language: en, text: "Yakornaya St., 7, BC \"Anchor\", SEMrush office"}
       - {language: ru, text: "ул. Якорная, дом 7, БЦ \"Анкор\", Офис компании SEMrush"}
     mapCoordinates: "59.942475, 30.422094"
+  - id: 22
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Kronverksky Prospekt, 49, ITMO University"}
+      - {language: ru, text: "Кронверкский проспект, дом 49, Университет ИТМО"}
+    mapCoordinates: "59.956160, 30.309373"
