@@ -827,7 +827,7 @@ events:
       - {language: en, text: "https://sptdc.ru/"}
     youtubeLink: https://www.youtube.com/playlist?list=PL_5iU_mKtf3tVGo_x8XO0J8SEr32BxYjv
     placeId: 4
-    talkIds: [244, 1309, 245, 251, 246, 1310, 247, 1311, 248, 1312, 249, 1313, 250, 1314, 252, 1315, 253, 1316]
+    talkIds: [244, 245, 251, 246, 247, 248, 249, 250, 252, 253]
   # SmartData
   - eventTypeId: 11
     name:
