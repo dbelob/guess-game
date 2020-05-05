@@ -1615,6 +1615,48 @@ events:
     endDate: "2017-12-25"
     placeId: 0
     talkIds: [2087]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2018"}
+    startDate: "2018-02-28"
+    endDate: "2018-02-28"
+    placeId: 20
+    talkIds: [2088]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2018"}
+    startDate: "2018-04-11"
+    endDate: "2018-04-11"
+    placeId: 20
+    talkIds: [2089]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2018"}
+    startDate: "2018-05-15"
+    endDate: "2018-05-15"
+    placeId: 20
+    talkIds: [2090]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2018"}
+    startDate: "2018-06-05"
+    endDate: "2018-06-05"
+    placeId: 0
+    talkIds: [2091]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2018"}
+    startDate: "2018-08-09"
+    endDate: "2018-08-09"
+    placeId: 0
+    talkIds: [2092]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2018"}
+    startDate: "2018-10-18"
+    endDate: "2018-10-18"
+    placeId: 0
+    talkIds: [2093]
   # JUGNsk
   - eventTypeId: 15
     name:
