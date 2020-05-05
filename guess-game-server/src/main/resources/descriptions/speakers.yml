@@ -16666,3 +16666,101 @@ speakers:
       \ облась сметилась с бизнес-приложений на разработку инструментов для java-разработчиков и архитекторов — как\
       \ Together ControlCenter. В 2004 году перешел на работу в компанию Sun Microsystems, в последствии приобретённой\
       \ компанией Oracle."}
+  - id: 1167
+    fileName: 1167.jpg
+    name:
+      - {language: en, text: "Maksim Leykin"}
+      - {language: ru, text: "Максим Лейкин"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: TBD}
+  - id: 1168
+    fileName: 1168.jpg
+    name:
+      - {language: en, text: "Vladislav Fitz"}
+      - {language: ru, text: "Владислав Фиц"}
+    company:
+      - {language: en, text: Algolia}
+    bio:
+      - {language: en, text: "Passionate about iOS development since 2011. Graduated with a Masters's degree from the University\
+            \ of Paris, then decided to stay in France and continue his career in the start-up's environment. Joined Algolia\
+            \ team in 2018 where is working on the open-source tools for designing mobile search interfaces. Misses a lot\
+            \ his native city of Saint-Petersburg and visits it at every opportunity."}
+      - {language: ru, text: "В iOS-разработке с 2011 года. Закончил магистратуру в Париже, после чего решил обосноваться\
+            \ во Франции и продолжил карьеру в стартапах. В 2018 году присоединился к команде Algolia, где работает над open\
+            \ source-инструментами для реализации поисковых интерфейсов на мобильных платформах. Очень скучает по родному\
+            \ Петербургу и наведывается туда при каждом удобном случае."}
+    twitter: VladislavFitc
+  - id: 1169
+    fileName: 1169.jpg
+    name:
+      - {language: en, text: "Andrey Nemtsev"}
+      - {language: ru, text: "Андрей Немцев"}
+    company:
+      - {language: en, text: Usetech}
+    bio:
+      - language: en
+        text: "Mobile team lead at Usetech company.\nHas a 7 years background in mobile development for Android and iOS platforms."
+      - language: ru
+        text: "Руководитель мобильной практики компании Usetech.\nОпыт мобильной разработки 7 лет — от Xamarin до нативной\
+            \ разработки для Android и iOS."
+  - id: 1170
+    fileName: 1170.jpg
+    name:
+      - {language: en, text: "Olga Shkryaba"}
+      - {language: ru, text: "Ольга Шкряба"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Makes researches in development, security, and life. Leads the @paradiSEcurity channel in Telegram."}
+      - {language: ru, text: "Делает исследования в сфере разработки, безопасности и жизни. Ведет канал @paradiSEcurity в\
+            \ телеграм."}
+    twitter: OlgaShkryaba
+  - id: 1171
+    fileName: 1171.jpg
+    name:
+      - {language: en, text: "Mikhail Zinov"}
+      - {language: ru, text: "Михаил Зинов"}
+    company:
+      - {language: en, text: Grab}
+    bio:
+      - {language: en, text: "Mikhail has been developing iOS apps for 6 years. He writes various stuff in the Grab mobile\
+            \ platform team since 2019."}
+      - {language: ru, text: "6 лет разрабатывает приложения под iOS. C 2019 пишет на разном в команде мобильной платформы\
+            \ Grab."}
+    twitter: zinovmikhail
+  - id: 1172
+    fileName: 1172.jpg
+    name:
+      - {language: en, text: "Ruslan Gumennyi"}
+      - {language: ru, text: "Руслан Гуменный"}
+    company:
+      - {language: en, text: "Yandex.Classifieds Technology"}
+      - {language: ru, text: "Яндекс.Вертикали Технологии"}
+    bio:
+      - language: en
+        text: "In the last few years Ruslan has been working at Yandex.Classifieds.\r\nHe managed to work on such projects\
+            \ as \"Realty\" and \"Auto.ru\".\r\nA couple of years in the outsourcing company e-Legion under his belt."
+      - language: ru
+        text: "Последние несколько лет работает в Яндекс.Вертикали.\r\nУспел поработать над такими проектами, как «Недвижи\
+            мость» и «Auto.ru».\r\nЗа плечами пара лет в аутсорс-компании e-Legion."
+    twitter: fanruten
+  - id: 1173
+    fileName: 1173.jpg
+    name:
+      - {language: en, text: "Ruslan Kim"}
+      - {language: ru, text: "Руслан Ким"}
+    company:
+      - {language: en, text: Facebook}
+    bio:
+      - language: en
+        text: "Engineer with deep experience in Android applications' development. Was working on applications in Topface,\
+            \ Yandex, Bandlab, Gran & Lyft.\nRecently started to work at Facebook on the operating system for VR together\
+            \ with the Oculus team."
+      - language: ru
+        text: "Инженер с глубоким опытом в разработке Android-приложений. Работал над приложениями в Topface, Yandex, Bandlab,\
+            \ Grab и Lyft.\nС недавнего времени вместе с командой Oculus начал работать над операционной системой для VR в\
+            \ компании Facebook."
+    twitter: ikimruslan

@@ -815,8 +815,9 @@ events:
     siteLink:
       - {language: en, text: "https://mobius-piter.ru/en/"}
       - {language: ru, text: "https://mobius-piter.ru/"}
-    placeId: 16
-    talkIds: [1960, 1961, 1962, 1963, 1964, 1965, 1966, 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1974, 1975]
+    placeId: 24
+    talkIds: [2104, 1961, 1962, 1963, 1964, 1965, 1969, 1966, 1967, 1960, 1973, 1970, 1971, 1972, 2105, 2106, 2107, 2108,
+              1974, 2109, 2110]
   # SPTDC
   - eventTypeId: 10
     name:
