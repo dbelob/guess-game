@@ -1671,6 +1671,27 @@ events:
     endDate: "2019-03-21"
     placeId: 0
     talkIds: [2095, 2096]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2019"}
+    startDate: "2019-05-30"
+    endDate: "2019-05-30"
+    placeId: 0
+    talkIds: [2097]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2019"}
+    startDate: "2019-07-09"
+    endDate: "2019-07-09"
+    placeId: 4
+    talkIds: [2098]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2019"}
+    startDate: "2019-08-27"
+    endDate: "2019-08-27"
+    placeId: 0
+    talkIds: [2099]
   # JUGNsk
   - eventTypeId: 15
     name:
