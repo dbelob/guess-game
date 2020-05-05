@@ -84,8 +84,14 @@ public class ImageUtils {
      * @throws IOException if read error occurs
      */
     private static BufferedImage getImageByUrl(String sourceUrl) throws IOException {
-        URL url = new URL(String.format("%s?w=%d", sourceUrl, IMAGE_WIDTH));
-        return ImageIO.read(url);
+        String urlSpec = String.format("%s?w=%d", sourceUrl, IMAGE_WIDTH);
+        URL url = new URL(urlSpec);
+        try {
+            return ImageIO.read(url);
+        } catch(IOException e) {
+            log.error("Can't get image by URL {}", urlSpec);
+            throw e;
+        }
     }
 
     /**
