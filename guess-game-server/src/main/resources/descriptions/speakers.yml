@@ -4763,17 +4763,16 @@ speakers:
   - id: 331
     fileName: 0331.jpg
     name:
-      - {language: en, text: "Aleksei Milovidov"}
+      - {language: en, text: "Alexey Milovidov"}
       - {language: ru, text: "Алексей Миловидов"}
     company:
       - {language: en, text: Yandex}
       - {language: ru, text: Яндекс}
     bio:
       - language: en
-        text: "Education:\n- Moscow State University, department of Mechanics and Mathematics — specialist degree, mathematician\
-            \ (2003-2008);\n \nWork:\n[Yandex](https://yandex.com/company/) (2008-now):\n- software developer of [Yandex Metrica](https://metrica.yandex.com/)\
-            \ engine (2008-2012);\n- head of Yandex Metrica engine development team (2012-2015);\n- head of [ClickHouse](https://clickhouse.yandex/)\
-            \ development team (2015-now)."
+        text: "Education:\nMoscow State University, department of Mechanics and Mathematics — specialist degree, mathematician\
+            \ (2003-2008);\n \nWork:\n- Yandex (2008-now):\n- software developer of Yandex Metrica engine (2008-2012);\n-\
+            \ head of Yandex Metrica engine development team (2012-2015);\n- head of ClickHouse development team (2015-now)."
       - {language: ru, text: "Окончил МГУ им. Ломоносова. В Яндексе с 2008 года. Руководит группой разработки СУБД ClickHouse."}
   - id: 332
     fileName: 0332.jpg
@@ -16764,3 +16763,36 @@ speakers:
             \ Grab и Lyft.\nС недавнего времени вместе с командой Oculus начал работать над операционной системой для VR в\
             \ компании Facebook."
     twitter: ikimruslan
+  - id: 1174
+    fileName: 1174.jpg
+    name:
+      - {language: en, text: "Bjarne Stroustrup"}
+    company:
+      - {language: en, text: "Morgan Stanley"}
+    bio:
+      - {language: en, text: "Bjarne Stroustrup is the designer and original implementer of C++ as well as the author of The\
+            \ C++ Programming Language (Fourth Edition), A Tour of C++ (Second edition), Programming: Principles and Practice\
+            \ using C++ (Second Edition), and many popular and academic publications. Dr. Stroustrup is a Technical Fellow\
+            \ and a Managing Director in the technology division of Morgan Stanley in New York City as well as a visiting\
+            \ professor at Columbia University. He is a member of the US National Academy of Engineering, and an IEEE, ACM,\
+            \ and CHM fellow. He received the 2018 Charles Stark Draper Prize, the IEEE Computer Society's 2018 Computer Pioneer\
+            \ Award, and the 2017 IET Faraday Medal. His research interests include distributed systems, design, programming\
+            \ techniques, software development tools, and programming languages. He is actively involved in the ISO standardization\
+            \ of C++. He holds a masters in Mathematics from Aarhus University, where he is an honorary professor, and a PhD\
+            \ in Computer Science from Cambridge University, where he is an honorary fellow of Churchill College."}
+  - id: 1175
+    fileName: 1175.jpg
+    name:
+      - {language: en, text: "test test"}
+    company:
+      - {language: en, text: test}
+    bio: []
+  - id: 1176
+    fileName: 1176.jpg
+    name:
+      - {language: en, text: "Herb Sutter"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Herb Sutter is an author, chair of the C++ standards committee, and a programming language architect\
+            \ at Microsoft."}
