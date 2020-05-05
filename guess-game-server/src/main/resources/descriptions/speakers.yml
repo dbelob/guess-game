@@ -15092,17 +15092,18 @@ speakers:
       - {language: ru, text: "Сергей Махетов"}
     company:
       - {language: en, text: Kontur}
-      - {language: ru, text: Контур}
+      - {language: ru, text: "СКБ Контур"}
     bio:
-      - {language: en, text: "Leading tester at Kontur. In the field of software development for more than 10 years, in testing\
-            \ for more than 5. The main direction is the testing and operation of infrastructure solutions. Generally, it's\
-            \ a highly performance fault-tolerant integration buses based on various message brokers and information storage\
-            \ systems, as well as on NoSQL databases. Main Stack — Linux/JVM, favorite language — Scala and tools like Jmeter/Gatling."}
+      - {language: en, text: "Lead tester at Kontur. For more than 10 years in the field of software development, in testing\
+            \ for more than 5. The main direction is the testing and operation of infrastructure solutions. As a rule, these\
+            \ are highly loaded, fault-tolerant integration buses, based on various message brokers and information storage\
+            \ systems, as well as on NoSql databases. Main Stack - Linux / JVM, favorite language - Scala, tools - Jmeter\
+            \ / Gatling."}
       - {language: ru, text: "Ведущий тестировщик в компании Контур. В сфере разработки ПО более 10 лет, в тестировании бо\
             лее 5. Основное направление — тестирование и эксплуатация инфраструктурных решений. Как правило, это высоконаг\
             руженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения инфор\
-            мации, основанные как на реляционных, так и на NoSQL базах данных. Основной стек — Linux/JVM, предпочитаемый я\
-            зык — Scala и инструменты Jmeter/Gatling."}
+            мации, основанные как на реляционных, так и на NoSql базах данных. Основной стек — Linux/JVM, предпочитаемый я\
+            зык — Scala, инструменты Jmeter/Gatling."}
   - id: 1054
     fileName: 1054.jpg
     name:
