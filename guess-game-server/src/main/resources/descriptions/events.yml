@@ -1594,6 +1594,27 @@ events:
     endDate: "2017-10-25"
     placeId: 23
     talkIds: [2084]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2017"}
+    startDate: "2017-11-02"
+    endDate: "2017-11-02"
+    placeId: 23
+    talkIds: [2085]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2017"}
+    startDate: "2017-12-04"
+    endDate: "2017-12-04"
+    placeId: 0
+    talkIds: [2086]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2017"}
+    startDate: "2017-12-25"
+    endDate: "2017-12-25"
+    placeId: 0
+    talkIds: [2087]
   # JUGNsk
   - eventTypeId: 15
     name:
