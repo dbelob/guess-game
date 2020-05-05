@@ -616,19 +616,19 @@ speakers:
         text: "Baruch Sadogursky (a.k.a JBaruch) is the Head of Developer Relations and a Developer Advocate at JFrog. His\
             \ passion is speaking about technology. Well, speaking in general, but doing it about technology makes him look\
             \ smart, and 18 years of hi-tech experience sure helps. When he's not on stage (or on a plane to get there), he\
-            \ learns about technology, people and how they work, or more precisely, don't work together.\n\nHe is a CNCF ambassador,\
-            \ Developer Champion, and a professional conference speaker on DevOps, DevSecOps, Go, Java and many other topics,\
-            \ and is a regular at the industry's most prestigious events including DockerCon, GopherCon, Devoxx, DevOps Days,\
-            \ OSCON, Qcon, JavaOne and many others. You can see some of his talks at jfrog.com/shownotes"
+            \ learns about technology, people and how they work, or more precisely, don't work together.\r\n\r\nHe is a CNCF\
+            \ ambassador, Developer Champion, and a professional conference speaker on DevOps, DevSecOps, Go, Java and many\
+            \ other topics, and is a regular at the industry's most prestigious events including DockerCon, GopherCon, Devoxx,\
+            \ DevOps Days, OSCON, Qcon, JavaOne and many others. You can see some of his talks at jfrog.com/shownotes"
       - language: ru
         text: "Барух Садогурский (a.k.a. JBaruch) — Head of Developer Relations и Developer Advocate в компании JFrog. Бол\
             ьше всего любит рассказывать о технологиях — то есть просто поболтать любит, но человек, говорящий о технологи\
             ях, имеет умный вид, да и 18 лет опыта в сфере высоких технологий никуда не делись. Когда он не выступает (ну\
             , или не летит к месту следующего выступления), то изучает технологии, людей и то, как они работают, точнее, н\
-            е работают вместе.\n\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер по та\
-            ким темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, как Joker,\
-            \ JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Некоторые\
-            \ его доклады можно посмотреть здесь: jfrog.com/shownotes"
+            е работают вместе.\r\n\r\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер п\
+            о таким темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, к\
+            ак Joker, JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Не\
+            которые его доклады можно посмотреть здесь: jfrog.com/shownotes"
     twitter: jbaruch
   - id: 36
     fileName: 0036.jpg
@@ -1228,9 +1228,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
-            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
-            either by plane or motorbike."
+            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
+            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
+            — either by plane or motorbike."
     twitter: DaschnerS
     javaChampion: true
   - id: 75
@@ -5226,9 +5226,9 @@ speakers:
     name:
       - {language: en, text: "Paul Stack"}
     company:
-      - {language: en, text: "Samsung research"}
+      - {language: en, text: Pulumi}
     bio:
-      - {language: ru, text: "Paul Stack is an infrastructure coder who has spoken at various events throughout the world\
+      - {language: en, text: "Paul Stack is an infrastructure coder and has spoken at various events throughout the world\
             \ about his passion for continuous integration, continuous delivery and good operational procedures and why they\
             \ should be part of what developers and system administrators do on a day to day basis. He believes that reliably\
             \ delivering software is more important as its development. Paul’s passions are the DevOps and Continuous Delivery\
@@ -5384,11 +5384,11 @@ speakers:
       - {language: en, text: "Three years ago Evgeny came to 2GIS to organize its infrastructure. Since then he has changed\
             \ his broom to Kubernetes robotic vacuum cleaner. Now he helps his teams use the infrastructure correctly and\
             \ without causing any harm to the company's budget. Recently he has been leading an infrastructure engineer team\
-            \ and procrastinating on loads of meetings every week :)"}
+            \ and procrastinating on loads of meetings every week."}
       - {language: ru, text: "Три года назад пришел в 2ГИС наводить порядок в инфраструктуре. За это время сменил метёлку\
             \ на робот-пылесос марки Kubernetes. Теперь помогает командам использовать инфраструктуру правильно и без боли\
             \ для бюджета компании. С недавних времён руководит командой инфраструктурных инженеров и прокрастинирует на 100500\
-            \ встречах в неделю :)"}
+            \ встречах в неделю."}
   - id: 373
     fileName: 0373.jpg
     name:
@@ -9696,7 +9696,7 @@ speakers:
       - {language: en, text: "Vitaly Slobodin"}
       - {language: ru, text: "Виталий Слободин"}
     company:
-      - {language: en, text: "WIS Software"}
+      - {language: en, text: GitLab}
     bio:
       - {language: en, text: "Vitaly is a co-founder of IT61. He developed various projects with different platforms and frameworks.\
             \ He has experience with .NET, Node.js, and Ruby on Rails. He loves open source software and browsers. Vitaly\
@@ -13876,6 +13876,12 @@ speakers:
             \ roles at several well-known companies, including Sun Microsystems, Yahoo!, Cloudera and Pivotal Software. He\
             \ holds a master's degree in mathematics and computer science from St. Petersburg State University. He likes German\
             \ craft lagers and is fighting IPA invasion one seidla at a time."}
+      - {language: ru, text: "Роман — специалист по ПО с открытым исходным кодом, в настоящий момент входит в совет директ\
+            оров The Apache Software Foundation и LF Edge. Лично внес вклад во множество проектов с открытым кодом: от Linux\
+            \ Kernel до Hadoop и ffmpeg. Также он соучредителем и вице-президентом по продукту и стратегии в стартапе по edge\
+            \ virtualization, Zededa. На протяжении своей карьеры Роман занимал руководящие должности в таких известных ко\
+            мпаниях, как Sun Microsystems, Yahoo!, Cloudera и Pivotal Software. Имеет степень магистра по математике и инф\
+            орматики СПбГУ. Любит немецкий крафтовый лагер."}
     twitter: rhatr
   - id: 970
     fileName: 0970.jpg
@@ -16796,3 +16802,245 @@ speakers:
     bio:
       - {language: en, text: "Herb Sutter is an author, chair of the C++ standards committee, and a programming language architect\
             \ at Microsoft."}
+  - id: 1177
+    fileName: 1177.jpg
+    name:
+      - {language: en, text: "Valarie Regas"}
+    company:
+      - {language: en, text: "Airbus Defence and Space — Intelligence"}
+    bio:
+      - language: en
+        text: "Solutions oriented and highly motivated professional with over 10 years of experience managing people and resources.\n\
+            \nPassionate tech event speaker, seasoned trainer, and strong relationship builder with a talent for quickly learning\
+            \ new information, procedures, and technologies."
+    twitter: ValarieRegas
+  - id: 1178
+    fileName: 1178.jpg
+    name:
+      - {language: en, text: "Aleksandr Iziumov"}
+      - {language: ru, text: "Александр Изюмов"}
+    company:
+      - {language: en, text: AWS}
+    bio:
+      - language: en
+        text: "Cloud Solution Architect in AWS.\n\nManaged to setup the whole SDLC process from scratch for 10+ team.\nCreated\
+            \ Micro-services architecture with HA and scalability in mind for SaaS business application.\nDeveloped fully\
+            \ automated QA/provisioning/CI/CD process across the product.\nDrove all technical and process-oriented aspects\
+            \ of the system incl. security/high-availability/scalability/capacity.\n\nTechnical manager with extensive experience\
+            \ in SaaS cloud business applications, integration, product development across multiple platforms and technology\
+            \ stacks (Java, C#/.Net, MS Azure, DB: NoSql, MS SQL, Oracle)."
+      - language: ru
+        text: "Cloud Solution Architect в AWS.\n\nНастраивал весь SDLC-процесс с нуля для 10+ команд. Создавал доступные и\
+            \ масштабируемые микросервисные архитектуры для SaaS бизнес-приложений.\nРазрабатывал полностью автоматизирова\
+            нные QA/provisioning/CI/CD-процессы. Управлял всеми техническими и процессно-ориентированными аспектами систем\
+            ы, включая безопасность/доступность/масштабируемость/производительность.\n\nТехнический менеджер с большим опы\
+            том работы с облачными SaaS бизнес-приложениями, интеграцией, разработкой продукта на мультиплатформу и технол\
+            огическими стеками (Java, C#/.Net, MS Azure, DB: NoSql, MS SQL, Oracle)."
+  - id: 1179
+    fileName: 1179.jpg
+    name:
+      - {language: en, text: "Artem Semenov"}
+      - {language: ru, text: "Артём Семёнов"}
+    company:
+      - {language: en, text: "Align Technology Inc"}
+    bio:
+      - {language: en, text: "Artem is responsible for cloud infrastructure and software lifecycle tooling at Align Technologies\
+            \ — the company behind Invisalign system and iTero scanner. At Align Artem was also responsible for automatic\
+            \ testing platform implementation covering systems from 3D scanners to a web application. Before Align Artem was\
+            \ taking various software development positions and was a lecturer at MSU."}
+      - language: ru
+        text: "Артём занимается облачной инфраструктурой и инструментами поддержки жизненного цикла приложений в Align Technology,\
+            \ которые создали систему Invisalign и 3D-сканеры iTero. В Align Technology Артем также занимался созданием пл\
+            атформы автоматического тестирования для интегрированных программных систем — от 3D-сканера до веб-приложений\
+            .\nДо Align Артём занимал различные должности в области разработки, тестирования и администрирования и препода\
+            вал в МГУ."
+    twitter: artems5v
+  - id: 1180
+    fileName: 1180.jpg
+    name:
+      - {language: en, text: "Alan Scherger"}
+    company:
+      - {language: en, text: HpyDev}
+    bio:
+      - {language: en, text: "Alan has worked for companies like Expedia and Nike to automate and migrate their workloads\
+            \ across multiple data centers and providers. Now he's spending his time exploring and learning about the fundamentals\
+            \ of computing that we all take for granted."}
+    twitter: flyinprogrammer
+  - id: 1181
+    fileName: 1181.jpg
+    name:
+      - {language: en, text: "Priyanka Vergadia"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Priyanka Vergadia is currently a Developer Advocate at Google Cloud where she works with companies\
+            \ to build and architect their cloud platforms. She creates online content for the developer community, some of\
+            \ her shows including \"Get Cooking in Cloud\" and \"Deconstructing Chatbots\" can be found on youtube."}
+    twitter: pvergadia
+  - id: 1182
+    fileName: 1182.jpg
+    name:
+      - {language: en, text: "Viktor Danilov"}
+      - {language: ru, text: "Виктор Данилов"}
+    company:
+      - {language: en, text: Yandex.Cloud}
+      - {language: ru, text: Яндекс.Облако}
+    bio:
+      - {language: en, text: "Viktor has been in IT since 2003. At Naumen he participated in the development of an educational\
+            \ platform as a Python Developer, then he switched to Java and was engaged in electronic trading platforms for\
+            \ bulk purchase. He worked in TandemService, Competentum, and EPAM and everywhere he was engaged in versatile\
+            \ tasks: from developing a platform for video calls to a system of aggregation, processing, and publication of\
+            \ library content. Now he works in Yandex.Cloud as a Senior System Software Engineer where he's engaged in the\
+            \ service of creating functions."}
+      - language: ru
+        text: "В IT c 2003 года. В Naumen принимал участие в разработке образовательной платформы в качестве Python Developer,\
+            \ затем переключился на Java и занимался электронными торговыми площадками для гос. закупок. Работал в TandemService,\
+            \ Competentum и EPAM, и везде занимался разносторонними задачами: начиная с разработки платформы для видео-зво\
+            нков и заканчивая системой агрегации, процессинга и публикации библиотечного контента.\nСейчас работает в Янде\
+            кс.Облако на позиции Senior System Software Engineer, где занимается сервисом для создания функций."
+  - id: 1183
+    fileName: 1183.jpg
+    name:
+      - {language: en, text: "Konstantin Lepeshenkov"}
+      - {language: ru, text: "Константин Лепешенков"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - language: en
+        text: "Konstantin Lepeshenkov is a Cloud Solution Architect at Microsoft Norway, specializing in AppDev and DevOps\
+            \ and helping customers not to misuse Azure. He has decades of experience in software development and a long story\
+            \ of designing solutions for the cloud. He was always passionate about keeping things simple while making solutions\
+            \ elegant. Coding a lot, travelling a lot, playing tennis and obtaining skipper licenses – those are the things\
+            \ that help him to stay in a good shape. \nHis personal blog is here: https://scale-tone.github.io/"
+      - language: ru
+        text: "Константин Лепешенков работает Архитектором Облачных Решений в Microsoft Norway. На этой должности он ограж\
+            дает заказчиков от неправильного использования Microsoft Azure. До прихода в Microsoft он несколько лет прораб\
+            отал в Лаборатории Касперского, где спроектировал и зарелизил ряд облачных сервисов.\nНедавно отпраздновал 20-л\
+            етие трудовой деятельности, но продолжает писать много кода.\nОстальную часть времени проводит в походах, разъ\
+            ездах и перелетах, за игрой в теннис и получением шкиперских лицензий.\nЛичный блог (in English): https://scale-tone.github.io/"
+  - id: 1184
+    fileName: 1184.jpg
+    name:
+      - {language: en, text: "Daniel Stenberg"}
+    company:
+      - {language: en, text: wolfSSL}
+    bio:
+      - {language: en, text: "Daniel Stenberg is the founder and lead developer of the curl project. He has worked on HTTP\
+            \ implementations for over twenty years. He has been involved in the HTTPbis working group in IETF for ten years\
+            \ and he worked on the HTTP stack in Firefox for several years at Mozilla. He participates in the QUIC working\
+            \ group and is the author of the widely read documents \"HTTP2 explained\" and \"HTTP/3 explained\". Employed\
+            \ by wolfSSL."}
+    twitter: bagder
+  - id: 1185
+    fileName: 1185.jpg
+    name:
+      - {language: en, text: "Darko Meszaros"}
+    company:
+      - {language: en, text: AWS}
+    bio:
+      - language: en
+        text: "Darko is a Senior Technical Evangelist. He shares his passion and technological know-how with Engineers, Developers,\
+            \ and various communities across the world. If it can be automated, Darko tries to do so. Most of his focus is\
+            \ towards DevOps and Management Tools, where automation, pipelines, and efficient developer tools is the name\
+            \ of the game — click less and code more so you do not repeat yourself — is what he says!\n\nHe has a long IT\
+            \ career in various areas, from retail, to government, to even large telcos. In AWS, Darko has worked as a Premium\
+            \ Support Engineer and as a Solutions Architect, having first-hand experience with AWS customers and their AWS\
+            \ adventures, helping them learn the ways of the cloud!"
+    twitter: darkosubotica
+  - id: 1186
+    fileName: 1186.jpg
+    name:
+      - {language: en, text: "Matvey Kukui"}
+      - {language: ru, text: "Матвей Кукуй"}
+    company:
+      - {language: en, text: "Amixr Inc."}
+    bio:
+      - language: en
+        text: "CEO в Amixr Inc.\nUsed to be a DevOps and a Software Engineer. Ex. Kaspersky, Cisco, Constructor.IO."
+      - language: ru
+        text: "CEO в Amixr Inc., в прошлом — DevOps и Software Engineer.\nEx. Kaspersky, Cisco, Constructor.IO."
+    twitter: Mkukkk
+  - id: 1187
+    fileName: 1187.jpg
+    name:
+      - {language: en, text: "Kat Cosgrove"}
+    company:
+      - {language: en, text: JFrog}
+    bio:
+      - language: en
+        text: "Kat Cosgrove is a chronic early-adopter of new technologies and a real-life cyborg. Her professional engineering\
+            \ background is in web development, IoT, and programming education, but today she's a Developer Advocate for JFrog.\
+            \ She loves finding creative solutions for hard problems, especially if they're a little hacky.\n\nWhen she's\
+            \ not building demos or at a conference, she spends her time gaming, watching e-sports, and working on useless\
+            \ but entertaining side-projects. She also volunteers with area non-profits geared towards getting more women\
+            \ and other underrepresented minorities into tech."
+    twitter: Dixie3Flatline
+  - id: 1188
+    fileName: 1188.jpg
+    name:
+      - {language: en, text: "Danila Dyugurov"}
+      - {language: ru, text: "Данила Дюгуров"}
+    company:
+      - {language: en, text: Yandex.Cloud}
+      - {language: ru, text: Яндекс.Облако}
+    bio:
+      - {language: en, text: "Head of the Developer Platform at Yandex.Cloud. Graduated from the Faculty of Applied Mathematics\
+            \ and Control Processes of Saint-Petersburg State University. In Yandex since 2007."}
+      - {language: ru, text: "Руководитель Developer Platform в Яндекс.Облаке. Окончил факультет прикладной математики и п\
+            роцессов управления СПбГУ. В Яндексе с 2007 года."}
+  - id: 1189
+    fileName: 1189.jpg
+    name:
+      - {language: en, text: "Alexander Prendota"}
+      - {language: ru, text: "Александр Прендота"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "He's engaged in the development of Marketplace and the protocol for the interaction of plugins\
+            \ with IDE. Besides that writes code for the part of the new Space product. Suffered through Java, now workes\
+            \ with Kotlin. Leads an active lifestyle in the OSS community."}
+      - {language: ru, text: "Занимается в JetBrains разработкой Marketplace и протоколом взаимодействия плагинов с IDE. П\
+            омимо этого, пишет код для куска нового продукта Space. Переболел Java-ой, теперь занимается Kotlin. Ведет акт\
+            ивный образ жизни в OSS-сообществе."}
+  - id: 1190
+    fileName: 1190.jpg
+    name:
+      - {language: en, text: "Adrian Reber"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - {language: en, text: "Adrian is a Principal Software Engineer at Red Hat and is migrating processes at least since\
+            \ 2010. He started to migrate processes in a high performance computing environment and at some point he migrated\
+            \ so many processes that he got a PhD for that. Most of the time he is now migrating containers but occasionally\
+            \ he still migrates single processes."}
+    twitter: adrian__reber
+  - id: 1191
+    fileName: 1191.jpg
+    name:
+      - {language: en, text: "Viktor Farcic"}
+    company:
+      - {language: en, text: CloudBees}
+    bio:
+      - language: en
+        text: "Viktor Farcic is a Principal Software Delivery Strategist and Developer Advocate at CloudBees, a member of\
+            \ the Google Developer Experts and Docker Captains groups, and a published author.\n\nHis big passions are DevOps,\
+            \ Containers, Kubernetes, Microservices, Continuous Integration, Delivery and Deployment (CI/CD) and Test-Driven\
+            \ Development (TDD).\n\nHe often speaks at community gatherings and conferences.\n\nHe published [The DevOps Toolkit\
+            \ Series ](https://www.devopstoolkitseries.com/), [DevOps Paradox](https://amzn.to/2myrYYA) and [Test-Driven Java\
+            \ Development](http://www.amazon.com/Test-Driven-Java-Development-Viktor-Farcic-ebook/dp/B00YSIM3SC), as well\
+            \ as courses in [Udemy](https://www.udemy.com/user/viktor-farcic/).\n\nHis random thoughts and tutorials can be\
+            \ found in his blog TechnologyConversations.com.\n\nHe is a co-host of [DevOps Paradox](https://www.devopsparadox.com/)\
+            \ podcast."
+    twitter: vfarcic
+  - id: 1192
+    fileName: 1192.jpg
+    name:
+      - {language: en, text: "Ignat Korchagin"}
+    company:
+      - {language: en, text: Cloudflare}
+    bio:
+      - {language: en, text: "Ignat is a security engineer at Cloudflare working mostly on platform and hardware security.\
+            \ Ignat’s interests are cryptography, hacking, and low-level programming. Before Cloudflare, Ignat worked as a\
+            \ senior security engineer for Samsung Electronics’ Mobile Communications Division. His solutions may be found\
+            \ in many older Samsung smart phones and tablets."}
+    twitter: ignatkn

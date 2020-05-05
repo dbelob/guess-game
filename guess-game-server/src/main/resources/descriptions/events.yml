@@ -77,13 +77,14 @@ events:
     name:
       - {language: en, text: "DevOops 2020 Msc"}
       - {language: ru, text: "DevOops 2020 Мск"}
-    startDate: "2020-07-12"
-    endDate: "2020-07-13"
+    startDate: "2020-07-06"
+    endDate: "2020-07-09"
     siteLink:
       - {language: en, text: "https://devoops-moscow.ru/en/"}
       - {language: ru, text: "https://devoops-moscow.ru/"}
-    placeId: 11
-    talkIds: []
+    placeId: 24
+    talkIds: [2115, 2116, 2117, 2118, 2119, 2120, 2121, 2122, 2123, 2124, 2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132,
+              2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143]
   # DotNext
   - eventTypeId: 2
     name:
