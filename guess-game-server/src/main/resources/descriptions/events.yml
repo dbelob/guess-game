@@ -1664,6 +1664,13 @@ events:
     endDate: "2019-01-29"
     placeId: 0
     talkIds: [2094]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2019"}
+    startDate: "2019-03-21"
+    endDate: "2019-03-21"
+    placeId: 0
+    talkIds: [2095, 2096]
   # JUGNsk
   - eventTypeId: 15
     name:
