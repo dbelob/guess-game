@@ -187,5 +187,8 @@ places:
       - {language: ru, text: "Заставская ул., 22 к2, БЦ \"Мегапарк\", Офис компании SEMrush"}
     mapCoordinates: "59.888564, 30.327735"
   - id: 24
+    city:
+      - {language: en, text: Online}
+      - {language: ru, text: Онлайн}
     venueAddress:
       - {language: en, text: Online}
