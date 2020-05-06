@@ -3231,6 +3231,8 @@ speakers:
     name:
       - {language: en, text: "Evgeny Kozlov"}
       - {language: ru, text: "Евгений Козлов"}
+    company:
+      - {language: en, text: Axmor}
   - id: 220
     fileName: 0220.jpg
     name:

@@ -126,6 +126,14 @@ places:
     venueAddress:
       - {language: en, text: "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo"}
     mapCoordinates: "60.1704769, 24.8279349"
+  - id: 16
+    city:
+      - {language: en, text: Novosibirsk}
+      - {language: ru, text: Новосибирск}
+    venueAddress:
+      - {language: en, text: "Karl Marx Square, 7, Sun City, 2GIS office"}
+      - {language: ru, text: "площадь Карла Маркса, 7, Сан Сити, Офис компании 2ГИС"}
+    mapCoordinates: "54.980394, 82.897882"
   - id: 18
     city:
       - {language: en, text: "Saint Petersburg"}

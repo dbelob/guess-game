@@ -1704,6 +1704,22 @@ events:
   # JUGNsk
   - eventTypeId: 15
     name:
-      - {language: en, text: "JUGNsk"}
+      - {language: en, text: "JUGNsk 2018"}
+    startDate: "2018-05-24"
+    endDate: "2018-05-24"
     placeId: 12
-    talkIds: []
+    talkIds: [2144, 2145]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk 2018"}
+    startDate: "2018-06-21"
+    endDate: "2018-06-21"
+    placeId: 12
+    talkIds: [2146, 2147]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk 2018"}
+    startDate: "2018-08-23"
+    endDate: "2018-08-23"
+    placeId: 16
+    talkIds: [2148, 2149]
