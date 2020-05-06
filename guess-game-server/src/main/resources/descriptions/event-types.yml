@@ -374,7 +374,28 @@ eventTypes:
     logoFileName: jugru.jpg
     name:
       - {language: en, text: "JUG.ru"}
+    description:
+      - language: en
+        text: "Russian community of Java developers."
+      - language: ru
+        text: "Российское сообщество Java-разработчиков."
+    siteLink:
+      - {language: en, text: "https://jug.ru"}
+    vkLink: https://vk.com/jugru
+    twitterLink: https://twitter.com/jugru
+    youtubeLink: https://www.youtube.com/channel/UCYrGYT7BswsJGkmG7-IAF8g
   - id: 15
     logoFileName: jugnsk.jpg
     name:
       - {language: en, text: "JUGNsk"}
+    description:
+      - language: en
+        text: "Novosibirsk community of Java developers."
+      - language: ru
+        text: "Новосибирское сообщество Java-разработчиков."
+    siteLink:
+      - {language: en, text: "https://www.meetup.com/JUGNsk"}
+    vkLink: https://vk.com/jugnsk
+    twitterLink: https://twitter.com/jugnsk
+    youtubeLink: https://www.youtube.com/channel/UCTk5cqCKvU1B6qYU7X-0Qjg
+    telegramLink: https://t.me/jugnsk
