@@ -3267,11 +3267,15 @@ speakers:
     name:
       - {language: en, text: "Dmitry Rygalov"}
       - {language: ru, text: "Дмитрий Рыгалов"}
+    company:
+      - {language: en, text: "EastBanc Technologies"}
   - id: 223
     fileName: 0223.jpg
     name:
       - {language: en, text: "Pavel Dimitrjuk"}
       - {language: ru, text: "Павел Димитрюк"}
+    company:
+      - {language: en, text: Beeline}
   - id: 224
     fileName: 0224.jpg
     name:

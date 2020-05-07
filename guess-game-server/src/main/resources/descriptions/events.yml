@@ -1704,22 +1704,36 @@ events:
   # JUGNsk
   - eventTypeId: 15
     name:
-      - {language: en, text: "JUGNsk 2018"}
+      - {language: en, text: "JUGNsk Meetup #1"}
     startDate: "2018-05-24"
     endDate: "2018-05-24"
     placeId: 12
     talkIds: [2144, 2145]
   - eventTypeId: 15
     name:
-      - {language: en, text: "JUGNsk 2018"}
+      - {language: en, text: "JUGNsk Meetup #2"}
     startDate: "2018-06-21"
     endDate: "2018-06-21"
     placeId: 12
     talkIds: [2146, 2147]
   - eventTypeId: 15
     name:
-      - {language: en, text: "JUGNsk 2018"}
+      - {language: en, text: "JUGNsk Meetup #3"}
     startDate: "2018-08-23"
     endDate: "2018-08-23"
     placeId: 16
     talkIds: [2148, 2149]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #4"}
+    startDate: "2018-10-11"
+    endDate: "2018-10-11"
+    placeId: 12
+    talkIds: [2150, 2151]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #5"}
+    startDate: "2018-12-15"
+    endDate: "2018-12-15"
+    placeId: 12
+    talkIds: [2152, 2153, 2154, 2155]
