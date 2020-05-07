@@ -3268,7 +3268,7 @@ speakers:
       - {language: en, text: "Dmitry Rygalov"}
       - {language: ru, text: "Дмитрий Рыгалов"}
     company:
-      - {language: en, text: "EastBanc Technologies"}
+      - {language: en, text: "True Engineering"}
   - id: 223
     fileName: 0223.jpg
     name:
@@ -3288,21 +3288,29 @@ speakers:
     name:
       - {language: en, text: "Alexey Zotov"}
       - {language: ru, text: "Алексей Зотов"}
+    company:
+      - {language: en, text: "True Engineering"}
   - id: 226
     fileName: 0226.jpg
     name:
       - {language: en, text: "Dmitry Maksimenko"}
       - {language: ru, text: "Дмитрий Максименко"}
+    company:
+      - {language: en, text: ЦФТ}
   - id: 227
     fileName: 0227.jpg
     name:
       - {language: en, text: "Alexey Teterev"}
       - {language: ru, text: "Алексей Тетерев"}
+    company:
+      - {language: en, text: "S7 IT"}
   - id: 228
     fileName: 0228.jpg
     name:
       - {language: en, text: "Alexey Ignatenko"}
       - {language: ru, text: "Алексей Игнатенко"}
+    company:
+      - {language: en, text: "Azul Systems"}
   - id: 229
     fileName: 0229.jpg
     name:

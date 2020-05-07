@@ -1737,3 +1737,17 @@ events:
     endDate: "2018-12-15"
     placeId: 12
     talkIds: [2152, 2153, 2154, 2155]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #6"}
+    startDate: "2019-02-27"
+    endDate: "2019-02-27"
+    placeId: 12
+    talkIds: [2156, 2157, 2158, 2159]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #7"}
+    startDate: "2019-03-29"
+    endDate: "2019-03-29"
+    placeId: 16
+    talkIds: [2160, 2161]
