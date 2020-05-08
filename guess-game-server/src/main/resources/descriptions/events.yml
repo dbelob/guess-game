@@ -1751,3 +1751,31 @@ events:
     endDate: "2019-03-29"
     placeId: 16
     talkIds: [2160, 2161]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #8"}
+    startDate: "2019-05-16"
+    endDate: "2019-05-16"
+    placeId: 12
+    talkIds: [2162, 2163]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #9"}
+    startDate: "2019-06-13"
+    endDate: "2019-06-13"
+    placeId: 17
+    talkIds: [2164, 2165, 2166]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #10"}
+    startDate: "2019-08-27"
+    endDate: "2019-08-27"
+    placeId: 12
+    talkIds: [2167, 2168]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #11"}
+    startDate: "2019-10-29"
+    endDate: "2019-10-29"
+    placeId: 25
+    talkIds: [2169, 2170]

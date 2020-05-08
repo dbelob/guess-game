@@ -134,6 +134,14 @@ places:
       - {language: en, text: "Karl Marx Square, 7, Sun City, 2GIS office"}
       - {language: ru, text: "площадь Карла Маркса, 7, Сан Сити, Офис компании 2ГИС"}
     mapCoordinates: "54.980394, 82.897882"
+  - id: 17
+    city:
+      - {language: en, text: Novosibirsk}
+      - {language: ru, text: Новосибирск}
+    venueAddress:
+      - {language: en, text: "Deputatskaya St., 46, conference room «Potok»"}
+      - {language: ru, text: "Депутатская ул., 46, конференц-зал «Поток»"}
+    mapCoordinates: "55.028888, 82.926484"
   - id: 18
     city:
       - {language: en, text: "Saint Petersburg"}
@@ -188,3 +196,11 @@ places:
       - {language: ru, text: Онлайн}
     venueAddress:
       - {language: en, text: Online}
+  - id: 25
+    city:
+      - {language: en, text: Novosibirsk}
+      - {language: ru, text: Новосибирск}
+    venueAddress:
+      - {language: en, text: "Blucher St., 32, NSTU, Boiling Point"}
+      - {language: ru, text: "Блюхера ул., 32, НГТУ, Точка кипения"}
+    mapCoordinates: "54.989538, 82.900568"

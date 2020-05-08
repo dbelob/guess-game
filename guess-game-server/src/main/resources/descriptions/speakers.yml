@@ -3315,16 +3315,22 @@ speakers:
     fileName: 0229.jpg
     name:
       - {language: en, text: "Mads Opheim"}
+    company:
+      - {language: en, text: Сomputas}
   - id: 230
     fileName: 0230.jpg
     name:
       - {language: en, text: "Dmitry Pyshkin"}
       - {language: ru, text: "Дмитрий Пышкин"}
+    company:
+      - {language: en, text: "БКС-Технологии"}
   - id: 231
     fileName: 0231.jpg
     name:
       - {language: en, text: "Evgeny Gorbachev"}
       - {language: ru, text: "Евгений Горбачёв"}
+    company:
+      - {language: en, text: Ixtens}
   - id: 232
     fileName: 0232.jpg
     name:
@@ -17058,3 +17064,18 @@ speakers:
             \ senior security engineer for Samsung Electronics’ Mobile Communications Division. His solutions may be found\
             \ in many older Samsung smart phones and tablets."}
     twitter: ignatkn
+  - id: 1193
+    fileName: 1193.jpg
+    name:
+      - {language: en, text: "Alexander Filatov"}
+      - {language: ru, text: "Александр Филатов"}
+    company:
+      - {language: en, text: Huawei}
+  - id: 1194
+    fileName: 1194.jpg
+    name:
+      - {language: en, text: "Boris Bochkarev"}
+      - {language: ru, text: "Борис Бочкарев"}
+    company:
+      - {language: en, text: SibGUTI}
+      - {language: ru, text: СибГУТИ}
