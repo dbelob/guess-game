@@ -9,7 +9,6 @@ import guess.domain.source.*;
 import guess.util.FileUtils;
 import guess.util.LocalizationUtils;
 import guess.util.QuestionUtils;
-import guess.util.Unsafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
@@ -128,9 +127,6 @@ public class YamlUtils {
                     QuestionUtils.removeDuplicatesById(speakerQuestions),
                     QuestionUtils.removeDuplicatesById(talkQuestions)));
         }
-
-        //TODO: delete
-        Unsafe.replaceSpeakerQuestions(questionSets, sourceInformation.getSpeakers());
 
         return questionSets;
     }
@@ -281,7 +277,7 @@ public class YamlUtils {
      * @param <T>          Entity (map value) type
      * @return Map of entities, or IllegalStateException if duplicate entities are found
      */
-    public static <K, T> Map<K, T> listToMap(List<T> list, Function<? super T, ? extends K> keyExtractor) {
+    private static <K, T> Map<K, T> listToMap(List<T> list, Function<? super T, ? extends K> keyExtractor) {
         Map<K, T> map =
                 list.stream().collect(Collectors.toMap(keyExtractor, s -> s));
         if (map.size() != list.size()) {
@@ -355,7 +351,7 @@ public class YamlUtils {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    public static <T> void dump(T items, String filename) throws IOException, NoSuchFieldException {
+    private static <T> void dump(T items, String filename) throws IOException, NoSuchFieldException {
         File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
         FileUtils.checkAndCreateDirectory(file.getParentFile());
 
@@ -395,7 +391,6 @@ public class YamlUtils {
 
         log.info("File '{}' saved", file.getAbsolutePath());
     }
-
 
     /**
      * Dumps event types to file.

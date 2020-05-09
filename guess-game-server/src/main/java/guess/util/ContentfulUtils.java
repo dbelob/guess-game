@@ -520,32 +520,6 @@ public class ContentfulUtils {
     }
 
     /**
-     * Gets name, speaker map.
-     *
-     * @return name, speaker map
-     */
-    //TODO: delete
-    public static Map<String, Speaker> getNameSpeakerMap() {
-        Map<String, Speaker> result = new HashMap<>();
-
-        for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
-            List<Speaker> speakers = getSpeakers(conferenceSpaceInfo, null);
-
-            for (Speaker speaker : speakers) {
-                String englishName = LocalizationUtils.getString(speaker.getName(), Language.ENGLISH);
-                String russianName = LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN);
-
-                if ((englishName != null) && !englishName.isEmpty() &&
-                        (russianName != null) && !russianName.isEmpty()) {
-                    result.put(englishName.trim(), speaker);
-                }
-            }
-        }
-
-        return result;
-    }
-
-    /**
      * Creates speaker from Contentful information.
      *
      * @param contentfulSpeaker    Contentful speaker
