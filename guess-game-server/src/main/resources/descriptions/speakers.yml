@@ -17079,3 +17079,10 @@ speakers:
     company:
       - {language: en, text: SibGUTI}
       - {language: ru, text: СибГУТИ}
+  - id: 1195
+    fileName: 1195.jpg
+    name:
+      - {language: en, text: "Alexander Kolesnikov"}
+      - {language: ru, text: "Александр Колесников"}
+    company:
+      - {language: en, text: Wrike}
