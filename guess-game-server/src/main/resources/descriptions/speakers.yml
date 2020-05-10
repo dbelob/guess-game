@@ -3515,6 +3515,14 @@ speakers:
     name:
       - {language: en, text: "Oleg Pliss"}
       - {language: ru, text: "Олег Плисс"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - {language: ru, text: "Выпускник матмеха СПбГУ и бывший преподаватель кафедры системного программирования там же.\
+      \ Один из лучших в мире специалистов по «языковым» виртуальным машинам, управлению памятью и истории языков\
+      \ программирования. Ныне — сотрудник калифорнийского офиса компании Oracle, после приобретения последней компании\
+      \ Sun Microsystems. Больше 10 лет работает над JIT-компилятором и сборщиком мусора в\
+      \ <a href=\"http://en.wikibooks.org/wiki/J2ME_Programming/JVMs_in_MIDP#CLDC_HotSpot_Implementation_Virtual_Machine\" target=\"_blank\">CLDC HI JVM</a>."}
   - id: 247
     fileName: 0247.jpg
     name:
@@ -17086,3 +17094,32 @@ speakers:
       - {language: ru, text: "Александр Колесников"}
     company:
       - {language: en, text: Wrike}
+  - id: 1196
+    fileName: 1196.jpg
+    name:
+      - {language: en, text: "Rory O'Donnell"}
+    company:
+      - {language: en, text: Oracle}
+  - id: 1197
+    fileName: 1197.jpg
+    name:
+      - {language: en, text: "Eugene Tsopa"}
+      - {language: ru, text: "Евгений Цопа"}
+    company:
+      - {language: en, text: "Tune IT"}
+  - id: 1198
+    fileName: 1198.jpg
+    name:
+      - {language: en, text: "Evgeny Krivosheev"}
+      - {language: ru, text: "Евгений Кривошеев"}
+    company:
+      - {language: en, text: "ScrumTrek"}
+    bio:
+      - {language: ru, text: "Евгений Кривошеев консультирует компании TOP-50 из российского ИТ в направлении улучшения\
+      \ эффективности и гибкости ИТ-подразделений. Сторонник внедрения гибких процессов “снизу”, посредством\
+      \ распространения инженерных практик и осознанного подхода к проектированию.\n\nВ прошлом — архитектор в крупных\
+      \ коммерческих проектах. Имеет более чем семилетний опыт преподавания технологий на платформах J2SE, J2EE, BEA\
+      \ Systems, IBM и параллельной разработки. Отличительная черта – объединение широкого кругозора и практических\
+      \ приемов, полученных в реальных проектах. Способен донести сложные технологические знания самому широкому кругу\
+      \ слушателей.\n\nТренер компании ScrumTrek по направлению \"Гибкие методологии\". В настоящее время активно\
+      \ развивает проект SkillTrek."}
