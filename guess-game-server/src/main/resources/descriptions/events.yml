@@ -1343,7 +1343,7 @@ events:
     startDate: "2013-10-14"
     endDate: "2013-10-14"
     placeId: 5
-    talkIds: [2176, 2181, 2182]
+    talkIds: [2176, 2181, 2182, 2183, 2184, 2185]
   - eventTypeId: 14
     name:
       - {language: en, text: "JUG.ru 2013"}
@@ -1396,10 +1396,24 @@ events:
   - eventTypeId: 14
     name:
       - {language: en, text: "JUG.ru 2014"}
+    startDate: "2014-04-17"
+    endDate: "2014-04-17"
+    placeId: 11
+    talkIds: [2186, 2187]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2014"}
     startDate: "2014-06-05"
     endDate: "2014-06-05"
     placeId: 0
     talkIds: [2043]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2014"}
+    startDate: "2014-06-24"
+    endDate: "2014-06-25"
+    placeId: 26
+    talkIds: [2188, 2189]
   - eventTypeId: 14
     name:
       - {language: en, text: "JUG.ru 2014"}
@@ -1431,10 +1445,24 @@ events:
   - eventTypeId: 14
     name:
       - {language: en, text: "JUG.ru 2014"}
+    startDate: "2014-10-18"
+    endDate: "2014-10-19"
+    placeId: 4
+    talkIds: [2190]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2014"}
     startDate: "2014-10-22"
     endDate: "2014-10-22"
     placeId: 4
-    talkIds: [2049]
+    talkIds: [2191, 2049]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2014"}
+    startDate: "2014-10-23"
+    endDate: "2014-10-24"
+    placeId: 4
+    talkIds: [2192, 2193]
   - eventTypeId: 14
     name:
       - {language: en, text: "JUG.ru 2014"}
@@ -1484,6 +1512,20 @@ events:
     endDate: "2015-10-14"
     placeId: 0
     talkIds: [2060]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-10-14"
+    endDate: "2015-10-15"
+    placeId: 4
+    talkIds: [2194]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2015"}
+    startDate: "2015-10-18"
+    endDate: "2015-10-18"
+    placeId: 4
+    talkIds: [2195]
   - eventTypeId: 14
     name:
       - {language: en, text: "JUG.ru 2015"}
@@ -1717,11 +1759,25 @@ events:
     talkIds: [2099]
   - eventTypeId: 14
     name:
+      - {language: en, text: "JUG.ru 2019"}
+    startDate: "2019-09-05"
+    endDate: "2019-09-05"
+    placeId: 27
+    talkIds: [2196]
+  - eventTypeId: 14
+    name:
       - {language: en, text: "JUG.ru 2020"}
     startDate: "2020-04-17"
     endDate: "2020-04-17"
     placeId: 24
     talkIds: [2100]
+  - eventTypeId: 14
+    name:
+      - {language: en, text: "JUG.ru 2020"}
+    startDate: "2020-05-11"
+    endDate: "2020-05-11"
+    placeId: 24
+    talkIds: [2197]
   # JUGNsk
   - eventTypeId: 15
     name:

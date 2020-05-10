@@ -204,3 +204,19 @@ places:
       - {language: en, text: "Blucher St., 32, NSTU, Boiling Point"}
       - {language: ru, text: "Блюхера ул., 32, НГТУ, Точка кипения"}
     mapCoordinates: "54.989538, 82.900568"
+  - id: 26
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "Bataysky per., 3A"}
+      - {language: ru, text: "Батайский пер., 3А"}
+    mapCoordinates: "59.913541, 30.320638"
+  - id: 27
+    city:
+      - {language: en, text: "Saint Petersburg"}
+      - {language: ru, text: Санкт-Петербург}
+    venueAddress:
+      - {language: en, text: "9th line of Vasilyevsky island, 34, BC Magnus, office 303, JUG Ru Group office"}
+      - {language: ru, text: "9-я линия Васильевского острова, 34, БЦ Магнус, офис 303, Офис компании JUG Ru Group"}
+    mapCoordinates: "59.941087, 30.277097"

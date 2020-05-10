@@ -3084,6 +3084,17 @@ speakers:
       - {language: en, text: "Pawel Lipinski"}
     company:
       - {language: en, text: Pragmatists}
+    bio:
+      - language: en
+        text: "Programmer with over 14 years of professional experience, solution architect, team coach and trainer in\
+        \ agile processes and practices. Frequent speaker on Java and Agile conferences. Co-creator of\
+        \ <a href=\"http://agilewarsaw.com/\" target=\"_blank\">Agile Warsaw group</a>. Author of\
+        \ <a href=\"https://code.google.com/p/tumbler-glass/\" target=\"_blank\">tumbler-glass</a>, a BDD framework for\
+        \ Java and\
+        \ <a href=\"https://code.google.com/p/junitparams/\" target=\"_blank\">JUnitParams</a> library. Over 7 years of\
+        \ day-to-day TDD. For over 4 years owns a software company in Warsaw called\
+        \ <a href=\"http://www.pragmatists.pl/\" target=\"_blank\">Pragmatists</a>, this way he’s realising and proving\
+        \ true what he teaches."
   - id: 204
     fileName: 0204.jpg
     name:
