@@ -1766,6 +1766,13 @@ events:
     talkIds: [2196]
   - eventTypeId: 14
     name:
+      - {language: en, text: "JUG.ru 2019"}
+    startDate: "2019-10-23"
+    endDate: "2019-10-24"
+    placeId: 27
+    talkIds: [2198]
+  - eventTypeId: 14
+    name:
       - {language: en, text: "JUG.ru 2020"}
     startDate: "2020-04-17"
     endDate: "2020-04-17"
