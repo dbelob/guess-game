@@ -2,13 +2,9 @@ package guess.util.yaml;
 
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Language;
-import guess.domain.question.QuestionSet;
-import guess.domain.question.SpeakerQuestion;
-import guess.domain.question.TalkQuestion;
 import guess.domain.source.*;
 import guess.util.FileUtils;
 import guess.util.LocalizationUtils;
-import guess.util.QuestionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
@@ -89,108 +85,6 @@ public class YamlUtils {
                 events.getEvents(),
                 speakers.getSpeakers(),
                 talks.getTalks());
-    }
-
-    /**
-     * Reads question sets from resource files.
-     *
-     * @return question sets
-     * @throws IOException                if an I/O error occurs
-     * @throws SpeakerDuplicatedException if speaker duplicated
-     */
-    public static List<QuestionSet> readQuestionSets() throws IOException, SpeakerDuplicatedException {
-        SourceInformation sourceInformation = readSourceInformation();
-
-        // Create question sets
-        List<QuestionSet> questionSets = new ArrayList<>();
-        for (EventType eventType : sourceInformation.getEventTypes()) {
-            // Fill speaker and talk questions
-            List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
-            List<TalkQuestion> talkQuestions = new ArrayList<>();
-
-            for (Event event : eventType.getEvents()) {
-                for (Talk talk : event.getTalks()) {
-                    for (Speaker speaker : talk.getSpeakers()) {
-                        speakerQuestions.add(new SpeakerQuestion(speaker));
-                    }
-
-                    talkQuestions.add(new TalkQuestion(
-                            talk.getSpeakers(),
-                            talk));
-                }
-            }
-
-            questionSets.add(new QuestionSet(
-                    eventType.getId(),
-                    createEventTypeNameWithPrefix(eventType),
-                    eventType.getLogoFileName(),
-                    QuestionUtils.removeDuplicatesById(speakerQuestions),
-                    QuestionUtils.removeDuplicatesById(talkQuestions)));
-        }
-
-        return questionSets;
-    }
-
-    /**
-     * Creates name with prefix.
-     *
-     * @param eventType event type
-     * @return name with prefix
-     */
-    private static List<LocaleItem> createEventTypeNameWithPrefix(EventType eventType) {
-        final String CONFERENCES_EVENT_TYPE_PREFIX = "conferencesEventTypePrefix";
-        final String MEETUPS_EVENT_TYPE_PREFIX = "meetupsEventTypePrefix";
-
-        List<LocaleItem> localeItems = new ArrayList<>();
-        String resourceKey = (eventType.getConference() != null) ? CONFERENCES_EVENT_TYPE_PREFIX : MEETUPS_EVENT_TYPE_PREFIX;
-        String enText = LocalizationUtils.getString(eventType.getName(), Language.ENGLISH);
-        String ruText = LocalizationUtils.getString(eventType.getName(), Language.RUSSIAN);
-
-        if ((enText != null) && !enText.isEmpty()) {
-            localeItems.add(new LocaleItem(
-                    Language.ENGLISH.getCode(),
-                    String.format(LocalizationUtils.getResourceString(resourceKey, Language.ENGLISH), enText)));
-        }
-
-        if ((ruText != null) && !ruText.isEmpty()) {
-            localeItems.add(new LocaleItem(
-                    Language.RUSSIAN.getCode(),
-                    String.format(LocalizationUtils.getResourceString(resourceKey, Language.RUSSIAN), ruText)));
-        }
-
-        return localeItems;
-    }
-
-    /**
-     * Reads events from resource files.
-     *
-     * @return events
-     * @throws IOException if an I/O error occurs
-     */
-    public static List<Event> readEvents() throws IOException {
-        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DESCRIPTIONS_DIRECTORY_NAME));
-        Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DESCRIPTIONS_DIRECTORY_NAME));
-        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DESCRIPTIONS_DIRECTORY_NAME));
-
-        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
-        Yaml placesYaml = new Yaml(new Constructor(Places.class));
-        Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Events.class));
-
-        // Read descriptions from YAML files
-        EventTypes eventTypes = eventTypesYaml.load(eventTypesResource.getInputStream());
-        Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
-
-        Places places = placesYaml.load(placesResource.getInputStream());
-        Map<Long, Place> placeMap = listToMap(places.getPlaces(), Place::getId);
-
-        Events events = eventsYaml.load(eventsResource.getInputStream());
-
-        // Link entities
-        linkEventsToPlaces(placeMap, events.getEvents());
-        linkEventsToEventTypes(eventTypeMap, events.getEvents());
-
-        return events.getEvents();
     }
 
     /**
