@@ -1381,7 +1381,7 @@ events:
     talkIds: [2035]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "Java 8 Launch Party"}
     startDate: "2014-04-03"
     endDate: "2014-04-03"
     placeId: 0
@@ -1500,7 +1500,8 @@ events:
     talkIds: [2054]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "Java: 20 years of innovation"}
+      - {language: ru, text: "Java: 20 лет инноваций"}
     startDate: "2015-06-30"
     endDate: "2015-06-30"
     placeId: 0
