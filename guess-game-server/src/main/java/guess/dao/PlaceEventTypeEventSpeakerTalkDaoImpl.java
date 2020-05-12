@@ -12,10 +12,10 @@ import java.util.List;
  * Place, event type, event, speaker, talk DAO  implementation.
  */
 @Repository
-public class SourceDaoImpl implements PlaceDao, EventTypeDao, EventDao, SpeakerDao, TalkDao {
+public class PlaceEventTypeEventSpeakerTalkDaoImpl implements PlaceDao, EventTypeDao, EventDao, SpeakerDao, TalkDao {
     private final SourceInformation sourceInformation;
 
-    public SourceDaoImpl() throws IOException, SpeakerDuplicatedException {
+    public PlaceEventTypeEventSpeakerTalkDaoImpl() throws IOException, SpeakerDuplicatedException {
         this.sourceInformation = YamlUtils.readSourceInformation();
     }
 

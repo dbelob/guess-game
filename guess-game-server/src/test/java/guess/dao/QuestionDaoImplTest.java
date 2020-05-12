@@ -16,7 +16,7 @@ import static org.junit.Assert.assertTrue;
 public class QuestionDaoImplTest {
     @Test
     public void questionSetsImagesExistance() throws IOException, SpeakerDuplicatedException {
-        SourceDaoImpl sourceDao = new SourceDaoImpl();
+        PlaceEventTypeEventSpeakerTalkDaoImpl sourceDao = new PlaceEventTypeEventSpeakerTalkDaoImpl();
         QuestionDao questionDao = new QuestionDaoImpl(sourceDao, sourceDao);
         List<QuestionSet> questionSets = questionDao.getQuestionSets();
 
