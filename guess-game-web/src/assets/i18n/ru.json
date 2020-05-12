@@ -5,6 +5,7 @@
   "start": {
     "title": "Выберите вопросы",
     "eventTypeLabel": "Тип события:",
+    "eventLabel": "Событие:",
     "modeLabel": "Режим:",
     "quantityLabel": "Вопросов:",
     "guessNameLabel": "Угадать имя по фотографии",

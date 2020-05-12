@@ -12,8 +12,10 @@ import { GuessType } from "../../shared/models/guess-type.model";
 })
 export class StartComponent implements OnInit {
   public questionSets: QuestionSet[] = [];
+  public events = [{name: "One"}, {name: "Two"}, {name: "Three"}, {name: "Four"}, {name: "Five"}];
   public quantities: number[] = [];
   public selectedQuestionSets: QuestionSet[] = [];
+  public selectedEvents = [];
   public selectedQuantity: number;
   public selectedGuessType: GuessType = GuessType.GuessNameType;
   public guessType = GuessType;
@@ -47,6 +49,10 @@ export class StartComponent implements OnInit {
 
   onSetChange(questionSets: QuestionSet[]) {
     this.loadQuantities(questionSets, this.selectedGuessType);
+  }
+
+  onEventChange(events: any[]) {
+    //TODO: implements
   }
 
   onTypeChange(guessType: string) {
