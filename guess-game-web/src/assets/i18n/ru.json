@@ -4,9 +4,9 @@
   },
   "start": {
     "title": "Выберите вопросы",
-    "setLabel": "Набор:",
-    "typeLabel": "Тип:",
-    "quantityLabel": "Количество:",
+    "eventTypeLabel": "Тип события:",
+    "modeLabel": "Режим:",
+    "quantityLabel": "Вопросов:",
     "guessNameLabel": "Угадать имя по фотографии",
     "guessPictureLabel": "Угадать фотографию по имени",
     "guessTalkLabel": "Угадать доклад по спикеру",

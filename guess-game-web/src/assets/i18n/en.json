@@ -4,9 +4,9 @@
   },
   "start": {
     "title": "Select questions",
-    "setLabel": "Set:",
-    "typeLabel": "Type:",
-    "quantityLabel": "Quantity:",
+    "eventTypeLabel": "Event type:",
+    "modeLabel": "Mode:",
+    "quantityLabel": "Questions:",
     "guessNameLabel": "Guess name by photo",
     "guessPictureLabel": "Guess photo by name",
     "guessTalkLabel": "Guess talk by speaker",
