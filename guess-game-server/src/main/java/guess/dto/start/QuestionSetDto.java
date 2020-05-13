@@ -11,11 +11,8 @@ import java.util.stream.Collectors;
  * Question set DTO.
  */
 public class QuestionSetDto {
-    private long id;
-    private String name;
-
-    public QuestionSetDto() {
-    }
+    private final long id;
+    private final String name;
 
     private QuestionSetDto(long id, String name) {
         this.id = id;
@@ -26,16 +23,8 @@ public class QuestionSetDto {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public static List<QuestionSetDto> convertToDto(List<QuestionSet> questionSets, Language language) {

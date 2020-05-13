@@ -142,6 +142,10 @@ public class EventType {
         this.events = events;
     }
 
+    public boolean isEventTypeConference() {
+        return (this.conference != null);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

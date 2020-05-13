@@ -5,6 +5,7 @@ import { QuestionService } from "../../shared/services/question.service";
 import { StateService } from "../../shared/services/state.service";
 import { StartParameters } from "../../shared/models/start-parameters.model";
 import { GuessType } from "../../shared/models/guess-type.model";
+import { EventType } from "../../shared/models/event-type.model";
 
 @Component({
   selector: 'app-start',
@@ -12,9 +13,11 @@ import { GuessType } from "../../shared/models/guess-type.model";
 })
 export class StartComponent implements OnInit {
   public questionSets: QuestionSet[] = [];
+  public eventTypes: EventType[];
   public events = [{name: "One"}, {name: "Two"}, {name: "Three"}, {name: "Four"}, {name: "Five"}];
   public quantities: number[] = [];
   public selectedQuestionSets: QuestionSet[] = [];
+  public selectedEventTypes: EventType[] = [];
   public selectedEvents = [];
   public selectedQuantity: number;
   public selectedGuessType: GuessType = GuessType.GuessNameType;
@@ -25,6 +28,7 @@ export class StartComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadQuestionSets();
+    this.loadEventTypes();
   }
 
   loadQuestionSets() {
@@ -49,6 +53,22 @@ export class StartComponent implements OnInit {
 
   onSetChange(questionSets: QuestionSet[]) {
     this.loadQuantities(questionSets, this.selectedGuessType);
+  }
+
+  loadEventTypes() {
+    this.questionService.getEventTypes()
+      .subscribe(data => {
+        this.eventTypes = data;
+
+        if (this.eventTypes.length > 0) {
+          //TODO: change
+          this.selectedEventTypes = [this.eventTypes[0]];
+        }
+      });
+  }
+
+  onEventTypeChange(eventTypes: EventType[]) {
+    //TODO: implements
   }
 
   onEventChange(events: any[]) {

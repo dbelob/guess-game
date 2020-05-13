@@ -1,10 +1,12 @@
 package guess.service;
 
+import guess.dao.EventTypeDao;
 import guess.dao.QuestionDao;
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionSet;
+import guess.domain.source.EventType;
 import guess.util.QuestionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,10 +20,12 @@ import java.util.List;
 @Service
 public class QuestionServiceImpl implements QuestionService {
     private final QuestionDao questionDao;
+    private final EventTypeDao eventTypeDao;
 
     @Autowired
-    public QuestionServiceImpl(QuestionDao questionDao) {
+    public QuestionServiceImpl(QuestionDao questionDao, EventTypeDao eventTypeDao) {
         this.questionDao = questionDao;
+        this.eventTypeDao = eventTypeDao;
     }
 
     @Override
@@ -32,6 +36,11 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public Long getDefaultQuestionSetId(LocalDate date) {
         return questionDao.getDefaultQuestionSetId(date);
+    }
+
+    @Override
+    public List<EventType> getEventTypes() {
+        return eventTypeDao.getEventTypes();
     }
 
     @Override
