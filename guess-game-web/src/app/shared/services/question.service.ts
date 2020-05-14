@@ -5,6 +5,7 @@ import { MessageService } from "../../modules/message/message.service";
 import { QuestionSet } from "../models/question-set.model";
 import { Observable } from "rxjs";
 import { EventType } from "../models/event-type.model";
+import { Event } from "../models/event.model";
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,19 @@ export class QuestionService {
 
   getEventTypes(): Observable<EventType[]> {
     return this.http.get<EventType[]>(`${this.baseUrl}/event-types`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getEvents(eventTypeId: number): Observable<Event[]> {
+    let params = new HttpParams()
+      .set('eventTypeId', eventTypeId.toString());
+
+    return this.http.get<Event[]>(`${this.baseUrl}/events`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

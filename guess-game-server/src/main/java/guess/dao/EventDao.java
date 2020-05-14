@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface EventDao {
     List<Event> getEvents();
+
+    List<Event> getEvents(long eventTypeId);
 }

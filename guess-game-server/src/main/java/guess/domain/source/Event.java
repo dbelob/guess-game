@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
  * Event.
  */
 public class Event {
+    private long id;
+
     private long eventTypeId;
     private EventType eventType;
 
@@ -28,8 +30,9 @@ public class Event {
     public Event() {
     }
 
-    public Event(EventType eventType, List<LocaleItem> name, LocalDate startDate, LocalDate endDate, List<LocaleItem> siteLink,
-                 String youtubeLink, Place place, List<Talk> talks) {
+    public Event(long id, EventType eventType, List<LocaleItem> name, LocalDate startDate, LocalDate endDate,
+                 List<LocaleItem> siteLink, String youtubeLink, Place place, List<Talk> talks) {
+        this.id = id;
         this.eventType = eventType;
         this.name = name;
         this.startDate = startDate;
@@ -44,6 +47,14 @@ public class Event {
         this.talkIds = talks.stream()
                 .map(Talk::getId)
                 .collect(Collectors.toList());
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public long getEventTypeId() {

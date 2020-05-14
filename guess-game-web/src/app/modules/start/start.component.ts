@@ -6,6 +6,7 @@ import { StateService } from "../../shared/services/state.service";
 import { StartParameters } from "../../shared/models/start-parameters.model";
 import { GuessType } from "../../shared/models/guess-type.model";
 import { EventType } from "../../shared/models/event-type.model";
+import { Event } from "../../shared/models/event.model";
 
 @Component({
   selector: 'app-start',
@@ -13,15 +14,19 @@ import { EventType } from "../../shared/models/event-type.model";
 })
 export class StartComponent implements OnInit {
   public questionSets: QuestionSet[] = [];
-  public eventTypes: EventType[];
-  public events = [{name: "One"}, {name: "Two"}, {name: "Three"}, {name: "Four"}, {name: "Five"}];
-  public quantities: number[] = [];
   public selectedQuestionSets: QuestionSet[] = [];
+
+  public eventTypes: EventType[];
   public selectedEventTypes: EventType[] = [];
+
+  public events: Event[];
   public selectedEvents = [];
-  public selectedQuantity: number;
-  public selectedGuessType: GuessType = GuessType.GuessNameType;
+
   public guessType = GuessType;
+  public selectedGuessType: GuessType = GuessType.GuessNameType;
+
+  public quantities: number[] = [];
+  public selectedQuantity: number;
 
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
   }
@@ -63,15 +68,32 @@ export class StartComponent implements OnInit {
         if (this.eventTypes.length > 0) {
           //TODO: change
           this.selectedEventTypes = [this.eventTypes[0]];
+          this.loadEvent(this.selectedEventTypes);
         }
       });
   }
 
   onEventTypeChange(eventTypes: EventType[]) {
-    //TODO: implements
+    this.loadEvent(eventTypes);
   }
 
-  onEventChange(events: any[]) {
+  loadEvent(eventTypes: EventType[]) {
+    if ((eventTypes.length == 1) && eventTypes[0].conference) {
+      this.questionService.getEvents(eventTypes[0].id)
+        .subscribe(data => {
+          this.events = data;
+
+          if (this.events.length > 0) {
+            this.selectedEvents = [this.events[this.events.length - 1]];
+          }
+        });
+    } else {
+      this.events = [];
+      this.selectedEvents = [];
+    }
+  }
+
+  onEventChange(events: Event[]) {
     //TODO: implements
   }
 
@@ -104,6 +126,7 @@ export class StartComponent implements OnInit {
   }
 
   isStartDisabled(): boolean {
-    return (this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0)) || (this.selectedQuantity == 0);
+    return (this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0)) ||
+      (this.selectedQuantity == 0);
   }
 }

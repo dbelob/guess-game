@@ -21,7 +21,7 @@
     <div class="form-group row">
       <label for="event" class="col-sm-2">{{'start.eventLabel' | translate}}</label>
       <div class="col-sm-10">
-        <select multiple class="form-control" id="event" size="3" [(ngModel)]="selectedEvents"
+        <select multiple class="form-control" id="event" size="4" [(ngModel)]="selectedEvents"
                 (ngModelChange)="onEventChange($event)" name="event">
           <option *ngFor="let event of events" [ngValue]="event">
             {{event.name}}

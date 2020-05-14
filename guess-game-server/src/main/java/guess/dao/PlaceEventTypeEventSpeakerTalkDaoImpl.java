@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Place, event type, event, speaker, talk DAO  implementation.
@@ -22,6 +23,13 @@ public class PlaceEventTypeEventSpeakerTalkDaoImpl implements PlaceDao, EventTyp
     @Override
     public List<Event> getEvents() {
         return sourceInformation.getEvents();
+    }
+
+    @Override
+    public List<Event> getEvents(long eventTypeId) {
+        return sourceInformation.getEvents().stream()
+                .filter(e -> (e.getEventTypeId() == eventTypeId))
+                .collect(Collectors.toList());
     }
 
     @Override

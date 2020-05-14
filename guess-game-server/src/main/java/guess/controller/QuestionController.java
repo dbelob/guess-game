@@ -4,7 +4,9 @@ import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessType;
 import guess.domain.Language;
 import guess.domain.question.QuestionSet;
+import guess.domain.source.Event;
 import guess.domain.source.EventType;
+import guess.dto.start.EventDto;
 import guess.dto.start.EventTypeDto;
 import guess.dto.start.QuestionSetDto;
 import guess.service.LocaleService;
@@ -65,6 +67,17 @@ public class QuestionController {
         eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByName));
 
         return EventTypeDto.convertToDto(eventTypes, language);
+    }
+
+    @GetMapping("/events")
+    @ResponseBody
+    public List<EventDto> getEvents(@RequestParam long eventTypeId, HttpSession httpSession) {
+        List<Event> events = questionService.getEvents(eventTypeId);
+        Language language = localeService.getLanguage(httpSession);
+
+        events.sort(Comparator.comparing(Event::getStartDate));
+
+        return EventDto.convertToDto(events, language);
     }
 
     @GetMapping("/quantities")
