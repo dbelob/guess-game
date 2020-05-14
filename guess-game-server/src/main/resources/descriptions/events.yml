@@ -606,8 +606,8 @@ events:
   - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2020"}
-    startDate: "2020-06-26"
-    endDate: "2020-06-27"
+    startDate: "2020-06-29"
+    endDate: "2020-07-02"
     siteLink:
       - {language: en, text: "https://jpoint.ru/en/"}
       - {language: ru, text: "https://jpoint.ru/"}

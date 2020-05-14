@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { TranslateService } from "@ngx-translate/core";
 import { QuestionSet } from "../../shared/models/question-set.model";
 import { QuestionService } from "../../shared/services/question.service";
 import { StateService } from "../../shared/services/state.service";
@@ -28,7 +29,8 @@ export class StartComponent implements OnInit {
   public quantities: number[] = [];
   public selectedQuantity: number;
 
-  constructor(private questionService: QuestionService, private stateService: StateService, private router: Router) {
+  constructor(private questionService: QuestionService, private stateService: StateService, private router: Router,
+              public translateService: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -128,5 +130,21 @@ export class StartComponent implements OnInit {
   isStartDisabled(): boolean {
     return (this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0)) ||
       (this.selectedQuantity == 0);
+  }
+
+  isEventStartDateVisible(event: Event): boolean {
+    return !!event.startDate;
+  }
+
+  isEventEndDateVisible(event: Event): boolean {
+    return (event.startDate && event.endDate && (event.startDate !== event.endDate));
+  }
+
+  isEventDateParenthesesVisible(event: Event): boolean {
+    return (this.isEventStartDateVisible(event) || this.isEventEndDateVisible(event));
+  }
+
+  isEventHyphenVisible(event: Event): boolean {
+    return (this.isEventStartDateVisible(event) && this.isEventEndDateVisible(event));
   }
 }

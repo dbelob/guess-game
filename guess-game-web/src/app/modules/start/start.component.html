@@ -25,6 +25,9 @@
                 (ngModelChange)="onEventChange($event)" name="event">
           <option *ngFor="let event of events" [ngValue]="event">
             {{event.name}}
+            <span *ngIf="isEventDateParenthesesVisible(event)">(</span><span *ngIf="isEventStartDateVisible(event)">{{event.startDate | date:"shortDate":undefined:translateService.currentLang}}</span>
+            <span *ngIf="isEventHyphenVisible(event)"> – </span>
+            <span *ngIf="isEventEndDateVisible(event)">{{event.endDate | date:"shortDate":undefined:translateService.currentLang}}</span><span *ngIf="isEventDateParenthesesVisible(event)">)</span>
           </option>
         </select>
       </div>
@@ -65,7 +68,7 @@
     <div class="form-group row">
       <label for="quantity" class="col-sm-2">{{'start.quantityLabel' | translate}}</label>
       <div class="col-sm-10">
-        <select class="form-control" id="quantity" size="3" [(ngModel)]="selectedQuantity" name="quantity">
+        <select class="form-control" id="quantity" [(ngModel)]="selectedQuantity" name="quantity">
           <option *ngFor="let quantity of quantities" [ngValue]="quantity">
             {{quantity}}
           </option>
