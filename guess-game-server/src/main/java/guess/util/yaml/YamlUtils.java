@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -73,6 +74,9 @@ public class YamlUtils {
             throw new SpeakerDuplicatedException();
         }
 
+        // Set event identifiers
+        setEventIds(events.getEvents());
+
         // Link entities
         linkSpeakersToTalks(speakerMap, talks.getTalks());
         linkEventsToEventTypes(eventTypeMap, events.getEvents());
@@ -85,6 +89,17 @@ public class YamlUtils {
                 events.getEvents(),
                 speakers.getSpeakers(),
                 talks.getTalks());
+    }
+
+    /**
+     * Sets identifiers for events.
+     *
+     * @param events events
+     */
+    private static void setEventIds(List<Event> events) {
+        AtomicLong id = new AtomicLong(0);
+
+        events.forEach(e -> e.setId(id.getAndIncrement()));
     }
 
     /**
