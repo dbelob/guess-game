@@ -2845,6 +2845,9 @@ speakers:
     fileName: 0181.jpg
     name:
       - {language: en, text: "Dmytro Vyazelenko"}
+      - {language: ru, text: "Дмитрий Вязеленко"}
+    company:
+      - {language: en, text: "Sowatec AG"}
     bio:
       - language: en
         text: "Java developer with 10 years of professional experience interested in concurrency, performance and\
@@ -17124,7 +17127,7 @@ speakers:
       - {language: en, text: "Evgeny Krivosheev"}
       - {language: ru, text: "Евгений Кривошеев"}
     company:
-      - {language: en, text: "ScrumTrek"}
+      - {language: en, text: ScrumTrek}
     bio:
       - {language: ru, text: "Евгений Кривошеев консультирует компании TOP-50 из российского ИТ в направлении улучшения\
       \ эффективности и гибкости ИТ-подразделений. Сторонник внедрения гибких процессов “снизу”, посредством\
@@ -17134,3 +17137,25 @@ speakers:
       \ приемов, полученных в реальных проектах. Способен донести сложные технологические знания самому широкому кругу\
       \ слушателей.\n\nТренер компании ScrumTrek по направлению \"Гибкие методологии\". В настоящее время активно\
       \ развивает проект SkillTrek."}
+  - id: 1199
+    fileName: 1199.jpg
+    name:
+      - {language: en, text: "Vladimir Parfinenko"}
+      - {language: ru, text: "Владимир Парфиненко"}
+    company:
+      - {language: en, text: Excelsior}
+    bio:
+      - {language: ru, text: "Инженер компании Excelsior, выпускающей Excelsior JET, сертифицированную реализацию Java\
+      \ SE. Принимает активное участие в создании AOT и JIT компиляторов, входящих в состав Excelsior JET JVM. Один из\
+      \ архитекторов внутреннего представления последнего компилятора, написанного на Scala. Также читает лекции и ведет\
+      \ семинары в Новосибирском Государственном Университете, в свободное время читает книжки по Haskell."}
+  - id: 1200
+    fileName: 1200.jpg
+    name:
+      - {language: en, text: "Vyacheslav Kruglov"}
+      - {language: ru, text: "Вячеслав Круглов"}
+    company:
+      - {language: en, text: T-Systems}
+    bio:
+      - {language: ru, text: "Team-lead, Java разработчик в T-Systems."}
+    twitter: vv_kruglov
