@@ -569,6 +569,17 @@ events:
               1705, 1706, 1707, 1708, 1709, 1710, 1711, 1712, 1713, 1714, 1715, 1716, 1717]
   - eventTypeId: 7
     name:
+      - {language: en, text: "JPoint 2016 Student Day"}
+    startDate: "2016-04-24"
+    endDate: "2016-04-24"
+    siteLink:
+      - {language: en, text: "https://2016.jpoint.ru/en/"}
+      - {language: ru, text: "https://2016.jpoint.ru/"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b-Q2Rs5OxSzh15DttbIhJKk
+    placeId: 11
+    talkIds: []
+  - eventTypeId: 7
+    name:
       - {language: en, text: "JPoint 2017"}
     startDate: "2017-04-07"
     endDate: "2017-04-08"
@@ -664,6 +675,17 @@ events:
     placeId: 2
     talkIds: [285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306,
               307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327]
+  - eventTypeId: 8
+    name:
+      - {language: en, text: "Joker 2016 Student Edition"}
+    startDate: "2016-10-15"
+    endDate: "2016-10-15"
+    siteLink:
+      - {language: en, text: "https://2016.jokerconf.com/en/"}
+      - {language: ru, text: "https://2016.jokerconf.com/"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8IFOCtl2iP9djzjC7cbgNw
+    placeId: 2
+    talkIds: []
   - eventTypeId: 8
     name:
       - {language: en, text: "Joker 2017"}
