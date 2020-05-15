@@ -14,8 +14,8 @@ import { Event } from "../../shared/models/event.model";
   templateUrl: './start.component.html'
 })
 export class StartComponent implements OnInit {
-  public questionSets: QuestionSet[] = [];
-  public selectedQuestionSets: QuestionSet[] = [];
+  public questionSets: QuestionSet[] = [];          //TODO: delete
+  public selectedQuestionSets: QuestionSet[] = [];  //TODO: delete
 
   public eventTypes: EventType[];
   public selectedEventTypes: EventType[] = [];
@@ -34,10 +34,11 @@ export class StartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadQuestionSets();
+    this.loadQuestionSets();  //TODO: delete
     this.loadEventTypes();
   }
 
+  //TODO: delete
   loadQuestionSets() {
     this.questionService.getQuestionSets()
       .subscribe(data => {
@@ -58,6 +59,7 @@ export class StartComponent implements OnInit {
       });
   }
 
+  //TODO: delete
   onSetChange(questionSets: QuestionSet[]) {
     this.loadQuantities(questionSets, this.selectedGuessType);
   }
@@ -70,16 +72,19 @@ export class StartComponent implements OnInit {
         if (this.eventTypes.length > 0) {
           //TODO: change
           this.selectedEventTypes = [this.eventTypes[0]];
-          this.loadEvent(this.selectedEventTypes);
+          this.loadEvents(this.selectedEventTypes);
+        } else {
+          this.selectedEventTypes = [];
+          this.loadEvents(this.selectedEventTypes);
         }
       });
   }
 
   onEventTypeChange(eventTypes: EventType[]) {
-    this.loadEvent(eventTypes);
+    this.loadEvents(eventTypes);
   }
 
-  loadEvent(eventTypes: EventType[]) {
+  loadEvents(eventTypes: EventType[]) {
     if ((eventTypes.length == 1) && eventTypes[0].conference) {
       this.questionService.getEvents(eventTypes[0].id)
         .subscribe(data => {
@@ -87,6 +92,8 @@ export class StartComponent implements OnInit {
 
           if (this.events.length > 0) {
             this.selectedEvents = [this.events[this.events.length - 1]];
+          } else {
+            this.selectedEvents = [];
           }
         });
     } else {
@@ -99,10 +106,12 @@ export class StartComponent implements OnInit {
     //TODO: implements
   }
 
-  onTypeChange(guessType: string) {
-    this.loadQuantities(this.selectedQuestionSets, guessType);
+  onModeChange(guessType: string) {
+    this.loadQuantities(this.selectedQuestionSets, guessType);  //TODO: delete
+    this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, guessType);
   }
 
+  //TODO: delete
   loadQuantities(questionSets: QuestionSet[], guessType: string) {
     this.questionService.getQuantities(questionSets.map(s => s.id), guessType)
       .subscribe(data => {
@@ -114,6 +123,12 @@ export class StartComponent implements OnInit {
           this.selectedQuantity = 0;
         }
       });
+  }
+
+  //TODO: rename
+  loadQuantities2(eventTypes: EventType[], events: Event[], guessType) {
+    //TODO: implement
+    console.log('(loadQuantities) eventTypes: ' + JSON.stringify(eventTypes) + '; events: ' + JSON.stringify(events) + '; guessType: ' + guessType);
   }
 
   start() {
@@ -146,5 +161,10 @@ export class StartComponent implements OnInit {
 
   isEventHyphenVisible(event: Event): boolean {
     return (this.isEventStartDateVisible(event) && this.isEventEndDateVisible(event));
+  }
+
+  onLanguageChange() {
+    this.loadQuestionSets();
+    this.loadEventTypes();
   }
 }

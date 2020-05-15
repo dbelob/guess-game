@@ -6,9 +6,7 @@ import guess.domain.Language;
 import guess.domain.question.QuestionSet;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
-import guess.dto.start.EventDto;
-import guess.dto.start.EventTypeDto;
-import guess.dto.start.QuestionSetDto;
+import guess.dto.start.*;
 import guess.service.LocaleService;
 import guess.service.QuestionService;
 import guess.util.LocalizationUtils;
@@ -58,7 +56,7 @@ public class QuestionController {
 
     @GetMapping("/event-types")
     @ResponseBody
-    public List<EventTypeDto> getEventTypes(HttpSession httpSession) {
+    public List<EventTypeBriefDto> getEventTypes(HttpSession httpSession) {
         List<EventType> eventTypes = questionService.getEventTypes();
         Language language = localeService.getLanguage(httpSession);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(et -> !et.isEventTypeConference());
@@ -66,18 +64,18 @@ public class QuestionController {
 
         eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByName));
 
-        return EventTypeDto.convertToDto(eventTypes, language);
+        return EventTypeDto.convertToBriefDto(eventTypes, language);
     }
 
     @GetMapping("/events")
     @ResponseBody
-    public List<EventDto> getEvents(@RequestParam long eventTypeId, HttpSession httpSession) {
+    public List<EventBriefDto> getEvents(@RequestParam long eventTypeId, HttpSession httpSession) {
         List<Event> events = questionService.getEvents(eventTypeId);
         Language language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate));
 
-        return EventDto.convertToDto(events, language);
+        return EventDto.convertToBriefDto(events, language);
     }
 
     @GetMapping("/quantities")

@@ -10,10 +10,7 @@ import java.util.stream.Collectors;
 /**
  * Event type DTO.
  */
-public class EventTypeDto {
-    private final long id;
-    private final boolean conference;
-    private final String name;
+public class EventTypeDto extends EventTypeBriefDto {
     private final String description;
 
     private final String siteLink;
@@ -25,12 +22,11 @@ public class EventTypeDto {
 
     private final String logoFileName;
 
-    public EventTypeDto(long id, boolean conference, String name, String description, String siteLink,
+    public EventTypeDto(EventTypeBriefDto eventTypeBriefDto, String description, String siteLink,
                         String vkLink, String twitterLink, String facebookLink, String youtubeLink, String telegramLink,
                         String logoFileName) {
-        this.id = id;
-        this.conference = conference;
-        this.name = name;
+        super(eventTypeBriefDto.getId(), eventTypeBriefDto.isConference(), eventTypeBriefDto.getName());
+
         this.description = description;
         this.siteLink = siteLink;
         this.vkLink = vkLink;
@@ -39,18 +35,6 @@ public class EventTypeDto {
         this.youtubeLink = youtubeLink;
         this.telegramLink = telegramLink;
         this.logoFileName = logoFileName;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public boolean isConference() {
-        return conference;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getDescription() {
@@ -85,21 +69,22 @@ public class EventTypeDto {
         return logoFileName;
     }
 
+    public static EventTypeDto convertToDto(EventType eventType, Language language) {
+        return new EventTypeDto(
+                convertToBriefDto(eventType, language),
+                LocalizationUtils.getString(eventType.getDescription(), language),
+                LocalizationUtils.getString(eventType.getSiteLink(), language),
+                eventType.getVkLink(),
+                eventType.getTwitterLink(),
+                eventType.getFacebookLink(),
+                eventType.getYoutubeLink(),
+                eventType.getTelegramLink(),
+                eventType.getLogoFileName());
+    }
+
     public static List<EventTypeDto> convertToDto(List<EventType> eventTypes, Language language) {
         return eventTypes.stream()
-                .map(et -> new EventTypeDto(
-                        et.getId(),
-                        et.isEventTypeConference(),
-                        LocalizationUtils.getString(et.getName(), language),
-                        LocalizationUtils.getString(et.getDescription(), language),
-                        LocalizationUtils.getString(et.getSiteLink(), language),
-                        et.getVkLink(),
-                        et.getTwitterLink(),
-                        et.getFacebookLink(),
-                        et.getYoutubeLink(),
-                        et.getTelegramLink(),
-                        et.getLogoFileName()
-                ))
+                .map(et -> convertToDto(et, language))
                 .collect(Collectors.toList());
     }
 }
