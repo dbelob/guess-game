@@ -488,6 +488,15 @@ events:
     youtubeLink: https://www.youtube.com/playlist?list=PLC5OGTO4dWxYuuASJMj1xePLQjNg05HzT
     placeId: 4
     talkIds: [226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243]
+  - eventTypeId: 5
+    name:
+      - {language: en, text: "Hydra 2020"}
+    startDate: "2020-07-06"
+    endDate: "2020-07-09"
+    siteLink:
+      - {language: en, text: "https://hydraconf.com/"}
+    placeId: 24
+    talkIds: []
   # JBreak
   - eventTypeId: 6
     name:
@@ -860,6 +869,15 @@ events:
     youtubeLink: https://www.youtube.com/playlist?list=PL_5iU_mKtf3tVGo_x8XO0J8SEr32BxYjv
     placeId: 4
     talkIds: [244, 245, 251, 246, 247, 248, 249, 250, 252, 253]
+  - eventTypeId: 10
+    name:
+      - {language: en, text: "SPTDC 2020"}
+    startDate: "2020-07-06"
+    endDate: "2020-07-09"
+    siteLink:
+      - {language: en, text: "https://sptdc.ru/"}
+    placeId: 24
+    talkIds: [2214, 2215, 2216, 2217, 2218, 2219, 2220]
   # SmartData
   - eventTypeId: 11
     name:

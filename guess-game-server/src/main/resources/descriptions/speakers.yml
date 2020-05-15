@@ -5660,12 +5660,18 @@ speakers:
       - {language: en, text: "University of Rochester"}
     bio:
       - language: en
-        text: "Michael L. Scott is the Arthur Gould Yates Professor of Engineering and past chair of the Department of Computer\
-            \ Science at the University of Rochester, in Rochester, NY, USA. He is a Fellow of the ACM and the IEEE, and a\
-            \ recipient of the 2006 SIGACT/SIGOPS Edsger W. Dijkstra Prize.\r\n\r\nHis textbook on programming language design\
-            \ and implementation (Programming Language Pragmatics, 4th ed., Morgan Kauffman, 2016) is used at more than 200\
-            \ universities around the world.\r\n\r\nIn the java.util.concurrent library, he is a co-inventor of the ConcurrentLinkedQueue,\
-            \ Exchanger, and SynchronousQueue classes."
+        text: "Michael L. Scott is the Arthur Gould Yates Professor of Engineering and incoming Chair of the Department of\
+            \ Computer Science at the University of Rochester, in Rochester, NY, USA. A Fellow of the ACM and the IEEE, he\
+            \ is best known for work in synchronization and concurrent data structures, in recognition of which he shared\
+            \ the 2006 SIGACT/SIGOPS Edsger W. Dijkstra Prize. He is the author or co-author of more than 170 refereed publications,\
+            \ including Programming Language Pragmatics (4th ed., Morgan Kauffman, 2016), a textbook in use at more than 200\
+            \ schools around the world, and Shared Memory Synchronization (Morgan & Claypool, 2013), a standard reference\
+            \ in the field. He received the University of Rochester's Goergen Award for Distinguished Achievement and Artistry\
+            \ in Undergraduate Teaching in 2001 and the Lifetime Achievement Award of the Hajim School of Engineering and\
+            \ Applied Sciences in 2018.\nHis textbook on programming language design and implementation (Programming Language\
+            \ Pragmatics, 4th ed., Morgan Kauffman, 2016) is used at more than 200 universities around the world.\n\nIn the\
+            \ java.util.concurrent library, he is a co-inventor of the ConcurrentLinkedQueue, Exchanger, and SynchronousQueue\
+            \ classes."
   - id: 388
     fileName: 0388.jpg
     name:
@@ -17159,3 +17165,80 @@ speakers:
     bio:
       - {language: ru, text: "Team-lead, Java разработчик в T-Systems."}
     twitter: vv_kruglov
+  - id: 1201
+    fileName: 1201.jpg
+    name:
+      - {language: en, text: "Alexey Gotsman"}
+    company:
+      - {language: en, text: IMDEA}
+    bio:
+      - {language: en, text: "Alexey Gotsman is an Associate Research Professor at the IMDEA Software Institute in Madrid,\
+            \ Spain. Before joining IMDEA, Alexey was a postdoctoral fellow at the University of Cambridge, where he also\
+            \ got Ph.D. His research interests are at the intersection of software verification and distributed computing."}
+  - id: 1202
+    fileName: 1202.jpg
+    name:
+      - {language: en, text: "Christian Cachin"}
+    company:
+      - {language: en, text: "University of Bern"}
+    bio:
+      - language: en
+        text: "Christian Cachin is a professor of computer science at the University of Bern, where he leads the cryptology\
+            \ and data security research group since 2019. Prior to that he worked for IBM Research - Zurich during more than\
+            \ 20 years. He has held visiting positions at MIT and at EPFL and has taught at several universities during his\
+            \ career in industrial research. He graduated with a Ph.D. in Computer Science from ETH Zurich in 1997. He is\
+            \ an ACM Fellow, an IEEE Fellow, recipient of multiple IBM Outstanding Technical Achievement Awards, and has also\
+            \ served as the President of the International Association for Cryptologic Research (IACR) from 2014-2019.\n\n\
+            With a background in cryptography, he is interested in all aspects of security i n distributed systems and especially\
+            \ in cryptographic protocols, consistency, consensus, blockchains, and cloud-computing security. He has developed\
+            \ many cryptographic protocols, particularly for achieving consensus and for executing distributed cryptographic\
+            \ operations over the Internet. In the area of cloud computing, he has contributed to standards in storage security\
+            \ and developed protocols for key management.\n\nHe has co-authored a textbook on distributed computing titled\
+            \ Introduction to Reliable and Secure Distributed Programming. While at IBM Research he made essential contributions\
+            \ to the development of Hyperledger Fabric, a blockchain platform aimed business use."
+    twitter: cczurich
+  - id: 1203
+    fileName: 1203.jpg
+    name:
+      - {language: en, text: "Prasad Jayanti"}
+    company:
+      - {language: en, text: Dartmouth}
+    bio:
+      - {language: en, text: "Computer science professor Prasad Jayanti began his career studying mechanical engineering at\
+            \ the Indian Institute of Technology in Madras. While pursuing his master’s degree in the same field at the University\
+            \ of Delaware, Jayanti discovered a different calling: computer science, with an emphasis in concurrent algorithms.\
+            \ For over two decades, he has worked at the College, teaching nine different undergraduate courses. Currently\
+            \ Jayanti is teaching Computer Science 1, \"Introduction to Programming and Computing.\""}
+  - id: 1204
+    fileName: 1204.jpg
+    name:
+      - {language: en, text: "Idit Keidar"}
+    company:
+      - {language: en, text: Technion}
+    bio:
+      - {language: en, text: "Professor of electrical engineering and an author of more than 180 articles which gave her an\
+            \ h-index of 38 and were cited more than 5,000 times. Some of them were published in such journals as Journal\
+            \ of Parallel and Distributed Computing and SIAM Journal on Computing."}
+  - id: 1205
+    fileName: 1205.jpg
+    name:
+      - {language: en, text: "Rodrigo Miragaia Rodrigues"}
+    company:
+      - {language: en, text: IST}
+    bio:
+      - language: en
+        text: "A full professor (\"professor catedrático\") at IST, and a member of the INESC-ID research laboratory.\n\n\
+            Previously, he was an associate professor at the Universidade Nova de Lisboa, a tenure-track faculty at MPI-SWS,\
+            \ and a graduate student at MIT."
+  - id: 1206
+    fileName: 1206.jpg
+    name:
+      - {language: en, text: "Jing Chen"}
+    company:
+      - {language: en, text: Algorand}
+    bio:
+      - {language: en, text: "Jing Chen is Chief Scientist and Head of Theory Research at Algorand Inc. She is an Assistant\
+            \ Professor in the Computer Science Department at Stony Brook University, and an affiliated assistant professor\
+            \ at the Economics Department. Her main research interests are distributed ledgers, game theory, and algorithms.\
+            \ Jing received her bachelor's and master’s degrees in computer science from Tsinghua University, and her PhD\
+            \ in computer science from MIT. Jing received the NSF CAREER Award in 2016."}

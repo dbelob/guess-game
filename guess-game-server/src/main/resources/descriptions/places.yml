@@ -194,8 +194,7 @@ places:
     city:
       - {language: en, text: Online}
       - {language: ru, text: Онлайн}
-    venueAddress:
-      - {language: en, text: Online}
+    venueAddress: []
   - id: 25
     city:
       - {language: en, text: Novosibirsk}
