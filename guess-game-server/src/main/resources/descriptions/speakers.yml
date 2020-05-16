@@ -6856,7 +6856,8 @@ speakers:
     name:
       - {language: en, text: "Evgeny Peshkov"}
       - {language: ru, text: "Евгений Пешков"}
-    company: []
+    company:
+      - {language: en, text: JetBrains}
     bio:
       - {language: en, text: "Migrates Rider on .NET Core. Previously engaged in shared infrastructure at Kontur, a cloud-based\
             \ application hosting platform. He is interested in the inner structure of .NET and Windows and uses this knowledge\
@@ -6924,21 +6925,22 @@ speakers:
     name:
       - {language: en, text: "Andrey Akinshin"}
       - {language: ru, text: "Андрей Акиньшин"}
-    company: []
+    company:
+      - {language: en, text: JetBrains}
     bio:
       - {language: en, text: "Andrey's favorite topics are performance and micro-optimizations, and he is the maintainer of\
             \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is a frequent\
             \ speaker at various events for developers, and he is the program director of the DotNext conference. Andrey is\
-            \ also a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes\
-            \ to study science (his primary research interests are mathematical biology and bifurcation theory). Previously,\
-            \ he worked as a postdoctoral research fellow in the Weizmann Institute of Science and as a research scientist\
-            \ in the Sobolev Institute of Mathematics SB RAS."}
+            \ also a PhD in computer science, a silver medalist of ACM ICPC. In his free time, he likes to study science (his\
+            \ primary research interests are mathematical biology and bifurcation theory). Previously, he worked as a postdoctoral\
+            \ research fellow in the Weizmann Institute of Science and as a research scientist in the Sobolev Institute of\
+            \ Mathematics SB RAS."}
       - {language: ru, text: "Любимые темы Андрея — производительность и микрооптимизации, он также мейнтейнер проекта BenchmarkDotNet\
             \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — частый спикер на различны\
             х мероприятиях для разработчиков и председатель программного комитета конференции DotNext. Он также к.ф.-м.н.,\
-            \ Microsoft .NET MVP, серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научн\
-            ые интересы — математическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и\
-            \ научным сотрудником в Институте математики СО РАН."}
+            \ серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — матема\
+            тическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и научным сотрудником\
+            \ в Институте математики СО РАН."}
     twitter: andrey_akinshin
     mvp: true
   - id: 472

@@ -745,7 +745,12 @@ public class ConferenceDataLoader {
     }
 
     private static List<LocaleItem> fixVenueAddress(Place place) {
-        List<FixingVenueAddress> enFixingVenueAddresses = List.of();
+        List<FixingVenueAddress> enFixingVenueAddresses = List.of(
+                new FixingVenueAddress(
+                        "Online",
+                        "Online",
+                        "")
+        );
         List<FixingVenueAddress> ruFixingVenueAddresses = List.of(
                 new FixingVenueAddress(
                         "Санкт-Петербург",
@@ -754,7 +759,11 @@ public class ConferenceDataLoader {
                 new FixingVenueAddress(
                         "Москва",
                         "Международная ул., 16, Красногорск, Московская обл.,, МВЦ «Крокус Экспо»",
-                        "Международная ул., 16, Красногорск, Московская обл., МВЦ «Крокус Экспо»")
+                        "Международная ул., 16, Красногорск, Московская обл., МВЦ «Крокус Экспо»"),
+                new FixingVenueAddress(
+                        "Онлайн",
+                        "Online",
+                        "")
         );
 
         String enVenueAddress = getFixedVenueAddress(
