@@ -320,7 +320,7 @@ speakers:
   - id: 18
     fileName: 0018.jpg
     name:
-      - {language: en, text: "Andrei Pangin"}
+      - {language: en, text: "Andrey Pangin"}
       - {language: ru, text: "Андрей Паньгин"}
     company:
       - {language: en, text: Odnoklassniki}
@@ -507,19 +507,18 @@ speakers:
       - {language: en, text: Huawei}
     bio:
       - language: en
-        text: "Worked at Excelsior since 2011, was one of the Excelsior JET developers (Java SE certified implementation based\
-            \ on optimizing AOT compilation). \n\nBasically, worked with runtime: GC, class loading, concurrency maintenance,\
-            \ profiling and so on. Besides, supported one plugin for the JET-compiled applications' debugging in GDB and sometimes\
-            \ wrote for Excelsior JET Team Blog. \n\nAlso, he is co-founder and co-lead of JUGNsk — an official Java Users\
-            \ Group in Novosibirsk, helps to organize meetups about Java and JVM. \n\nIn his free time teaches C/C++ courses\
-            \ at Novosibirsk State University."
+        text: "Worked for Excelsior in Excelsior JET project (Java SE certified implementation based on optimizing AOT compilation).\
+            \ Now works for Huawei on JVMs, compilers and new programming languages. Basically, works with runtime: GC, class\
+            \ loading, concurrency maintenance, profiling and so on.\n\nAlso, he is co-founder and co-lead of JUGNsk — an\
+            \ official Java Users Group in Novosibirsk and Program Committee member of SnowOne conference.\n\nIn his free\
+            \ time teaches C/C++ courses at Novosibirsk State University."
       - language: ru
-        text: "Работал в компании Excelsior c 2011 года, являлся одним из разработчиков Excelsior JET: сертифицированной р\
-            еализации Java SE, основанной на оптимизирующей AOT-компиляции.\n\nВ основном занимался рантаймом: GC, загрузк\
-            а классов, поддержка многопоточности, профилирование и т. д. Кроме того, поддерживал плагин для отладки JET-compiled\
-            \ приложений в GDB и иногда писал посты в Excelsior JET Team Blog.\n\nТакже является одним из основателей и ли\
-            деров JUGNsk — официальной Java User Group в Новосибирске, организовывает Java-митапы и другие мероприятия.\n\n\
-            В качестве хобби преподает в НГУ курсы по C/C++."
+        text: "Работал в компании Excelsior c 2011 года, где являлся одним из разработчиков Excelsior JET: сертифицированн\
+            ой реализации Java SE, основанной на оптимизирующей AOT-компиляции. Сейчас работает в Huawei над компиляторами\
+            , JVM и новыми языками программирования.\n\nВ основном занимается рантаймом: GC, загрузка классов, поддержка м\
+            ногопоточности, профилирование и т. д.\n\nТакже является одним из основателей и лидеров JUGNsk — официальной Java\
+            \ User Group в Новосибирске, и членом программного комитета конференции SnowOne.\n\nВ качестве хобби преподает\
+            \ в НГУ курсы по C/C++."
     twitter: dbg_nsk
     gitHub: ugliansky
   - id: 30
@@ -582,15 +581,18 @@ speakers:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
     company:
-      - {language: en, text: Netifi}
+      - {language: en, text: "Netifi, Inc"}
     bio:
-      - {language: en, text: "Software engineer. Knows how to live with React both from the outside and inside. Java Champion.\
-            \ Co-author of the book on reactive programming in Spring. He mainly writes RSocket, helps Project Reactor and\
-            \ all related ecosystems. Talks much."}
-      - {language: ru, text: "Инженер ПО. Знает, как жить с реактивщиной как извне, так и внутри. Java Champion. Соавтор к\
-            ниги по реактивному программированию в Spring. В основном пишет RSocket, помогает Project Reactor и всем связа\
-            нным экосистемам. Много говорит."}
+      - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
+            \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
+            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+      - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
+            я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
+            \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
+            ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
+            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
     twitter: OlehDokuka
+    javaChampion: true
   - id: 34
     fileName: 0034.jpg
     name:
@@ -1091,11 +1093,12 @@ speakers:
       - {language: en, text: "Oleg Nizhnikov"}
       - {language: ru, text: "Олег Нижников"}
     company:
-      - {language: en, text: Tinkoff.ru}
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
     bio:
-      - {language: en, text: "Scala developer, architect, zealot of functional programming. 10 years of backend development\
+      - {language: en, text: "Scala developer, architect, zealot of functional programming. 11 years of backend development\
             \ experience."}
-      - {language: ru, text: "Скалист, архитектор, фанат функционального программирования. 10 лет бэкенд-разработки."}
+      - {language: ru, text: "Скалист, архитектор, фанат функционального программирования. 11 лет бэкенд-разработки."}
     twitter: odomontois
   - id: 67
     fileName: 0067.jpg
@@ -1228,9 +1231,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
-            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
-            either by plane or motorbike."
+            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
+            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
+            — either by plane or motorbike."
     twitter: DaschnerS
     javaChampion: true
   - id: 75
@@ -1541,19 +1544,17 @@ speakers:
   - id: 94
     fileName: 0094.jpg
     name:
-      - {language: en, text: "Sergei Tsypanov"}
+      - {language: en, text: "Sergey Tsypanov"}
       - {language: ru, text: "Сергей Цыпанов"}
     company:
-      - {language: en, text: Luxoft}
+      - {language: en, text: Levi9}
+      - {language: ru, text: Леви9}
     bio:
-      - language: en
-        text: "Since 2013 works as a developer at Luxoft.The responsibilities include development and support of existing\
-            \ solutions using enterprise technologies stack. \nThe main direction of professional development is the solution\
-            \ of performance-related tasks."
+      - {language: en, text: "Sergey is a Java developer in Levi9. The main direction of professional development is the solving\
+            \ of performance-related issues."}
       - language: ru
-        text: "С 2013 года трудится разработчиком в компании Luxoft. В круг его обязанностей входит разработка и поддержка\
-            \ существующих решений с использованием технологий enterprise-стека. \nОсновное направление профессионального\
-            \ развития — решение задач, связанных с производительностью."
+        text: "Работает в небольшой компании «Леви9» Java-разработчиком.\nОсновное направление профессионального развития\
+            \ — решение задач, связанных с производительностью."
   - id: 95
     fileName: 0095.jpg
     name:
@@ -1858,6 +1859,7 @@ speakers:
             \ Cay has written many books and articles on programming languages and computer science education, including the\
             \ international bestseller Core Java, with ten editions since 1996. He was named a Java Champion in 2005."
     twitter: cayhorstmann
+    javaChampion: true
   - id: 114
     fileName: 0114.jpg
     name:
@@ -2379,15 +2381,14 @@ speakers:
     name:
       - {language: en, text: "Martin Toshev"}
     company:
-      - {language: en, text: CoffeeCupConsulting}
+      - {language: en, text: "Resolve Systems"}
     bio:
-      - {language: en, text: "Martin is a Java enthusiast and one of the leads of the Bulgarian Java User group (BG JUG).\
-            \ He is a certified Java professional (SCJP6) and a certified IBM cloud computing solution advisor. His areas\
-            \ of interest include the wide range of Java-related technologies (such as Servlets, JSP, JAXB, JAXP, JMS, JMX,\
-            \ JAX-RS, JAX-WS, Hibernate, Spring Framework, Liferay Portal and Eclipse RCP), cloud computing technologies,\
-            \ cloud-based software architectures, enterprise application integration, relational and NoSQL databases. You\
-            \ can reach him for any Java and FOSS-related topics (especially Eclipse and the OpenJDK). Martin is a regular\
-            \ speaker at Java conferences and one of the organizers behind the [jPrime conference in Bulgaria](http://jprime.io/)."}
+      - {language: en, text: "Martin is an IT consultant, Java enthusiast and has been heavily involved in the activities\
+            \ of the Bulgarian Java User group (BG JUG). His areas of interest include the wide range of Java-related technologies\
+            \ (such as Servlets, JSP, JAXB, JAXP, JMS, JMX, JAX-RS, JAX-WS, Hibernate, Spring Framework, Liferay Portal and\
+            \ Eclipse RCP), cloud computing technologies, cloud-based software architectures, enterprise application integration,\
+            \ relational and NoSQL databases. He is also a regular speaker at Java conferences and helps with the organization\
+            \ of the [jPrime conference in Bulgaria](http://jprime.io/)."}
     twitter: martin_fmi
   - id: 149
     fileName: 0149.jpg
@@ -2582,12 +2583,18 @@ speakers:
       - {language: en, text: "Sergey Vladimirov"}
       - {language: ru, text: "Сергей Владимиров"}
     company:
-      - {language: en, text: Sberbank-Technology}
-      - {language: ru, text: Сбербанк-Технологии}
+      - {language: en, text: "NSPK JSC"}
+      - {language: ru, text: "АО «НСПК»"}
     bio:
-      - {language: ru, text: "Выпускник ФРТК МФТИ, кандидат физико-математических наук. Успел поработать в NetCracker\
-      \ Tech., Яндексе, Mail.Ru Одноклассниках, а теперь двигает большие данные в АО Сбербанк Технологии, преподавая на\
-      \ Физтехе науку о защите информации. Любит OpenSource и открытые стандарты, но очень не любит делать работу дважды."}
+      - {language: en, text: "Designed and developed high-performance systems in NetCracker, Odnoklassniki (mail.ru), Sberbank,\
+            \ lately at NSPK JST (MIR PS operator). Engaged in systems architecture, backend (Java) and even in frontend (ReactJS).\
+            \ Big fan of standard solutions and technology usage even in very non-standard situations. Lector (MIPT), coauthor\
+            \ of study-book and popularizer of cryptography and information security."}
+      - {language: ru, text: "Разрабатывал распределённые высоконагруженные сервисы в компаниях NetCracker, Одноклассники\
+            \ (mail.ru), Сбербанк, в последнее время — в АО «НСПК», операторе ПС «МИР». Занимается и архитектурой систем,\
+            \ и backend'ом (Java), и даже frontend'ом (ReactJS). Большой поклонник использования проверенных временем реше\
+            ний даже в самых нестандартных случаях. Лектор (МФТИ), соавтор пособия и популяризатор защиты информации и кри\
+            птографии."}
   - id: 162
     fileName: 0162.jpg
     name:
@@ -2868,12 +2875,14 @@ speakers:
     fileName: 0183.jpg
     name:
       - {language: en, text: "Ted Neward"}
+    company:
+      - {language: en, text: "Quicken Loans"}
     bio:
-      - language: en
-        text: "An independent consultant specializing in high-scale enterprise systems. He speaks on the conference\
-        \ circuit, discussing Java, .NET and XML service technologies, focusing on Java-.NET interoperability. He is\
-        \ author/co-author of Effective Enterprise Java, C# In a Nutshell, SSCLI Essentials, Server-Based Java Programming,\
-        \ and an Microsoft MVP Architect."
+      - {language: en, text: "Ted Neward is an industry professional of twenty years' experience. He speaks at conferences\
+            \ all over the world and writes regularly for a variety of publications across the Java, .NET, and other ecosystems.\
+            \ He currently resides in the Pacific Northwest with his wife, two sons, three cats, twelve laptops, seven tablets,\
+            \ nine phones, and a rather large utility bill."}
+    twitter: tedneward
   - id: 184
     fileName: 0184.jpg
     name:
@@ -9010,21 +9019,18 @@ speakers:
       - {language: en, text: "Vsevolod Brekelov"}
       - {language: ru, text: "Всеволод Брекелов"}
     company:
-      - {language: en, text: "Grid Dynamics"}
+      - {language: en, text: "JUG Ru Group"}
     bio:
       - language: en
-        text: "Over 5 years in software testing/test automation. Works as a Full Stack Developer/Tech Lead for one year now.\
-            \ \n\nHas experience in building test automation from scratch in mobile, desktop, web projects (especially for\
-            \ financial companies). Passionate about hackathons and fond of working with smart teammates. Conducted a lot\
-            \ of interviews (over 200 but stopped counting) for QAs, developers, analysts. Last couple of years works at Grid\
-            \ Dynamics. Right now lives in California working by the contract at Google."
+        text: "Vsevolod has more than 10 years in IT industry.\nHe tried his hands at different roles and directions. He worked\
+            \ with automated testing, fullstack development in different languages. Some time ago he lived in California and\
+            \ worked under contract at Google. Managed to work with various clients from financial sector. Worked at NEO SPCC\
+            \ startup where he was developing on Go."
       - language: ru
-        text: "Более 5 лет в тестировании программного обеспечения/автоматизации тестирования. Последний год работает Full\
-            \ Stack Developer/Tech Lead. \n\nОпыт построения автоматизации тестирования с нуля для mobile, desktop, веб-пр\
-            оектов (в основном для финансовых компаний). Любит участвовать в хакатонах и работать с умными коллегами. Пров\
-            ёл много собеседований (более 200, и уже перестал считать) для инженеров по автоматизации тестирования, разраб\
-            отчиков, аналитиков.\n\nПоследние несколько лет работает в компании Grid Dynamics. Сейчас проживает в Калифорн\
-            ии, работая по контракту в Google."
+        text: "Более 10 лет в ИТ.\nПопробовал себя в разных ролях и направлениях. Занимался автоматизированным тестировани\
+            ем, фулстэк разработкой на различных языках. Какое-то время жил в Калифорнии и работал по контракту в Google.\
+            \ Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где занимался разр\
+            аботкой на Go."
     twitter: brekelov
   - id: 619
     fileName: 0619.jpg
@@ -13709,7 +13715,7 @@ speakers:
     name:
       - {language: en, text: "Mark Heckler"}
     company:
-      - {language: en, text: Pivotal}
+      - {language: en, text: Pivotal/VMware}
     bio:
       - {language: en, text: "Mark Heckler is a Professional Problem Solver and Spring Developer & Advocate at Pivotal, conference\
             \ speaker, published author, & Java Champion focusing upon developing innovative production-ready software at\
@@ -13894,6 +13900,7 @@ speakers:
             \ yield the best experience to developers. At LINE+ corporation, the company behind \"LINE\" the top mobile messenger\
             \ in Japan, Taiwan and Thailand, he builds various open-source software, such as a microservice framework Armeria\
             \ and a distributed configuration repository Central Dogma, to facilitate the adoption of microservice architecture."}
+    twitter: trustin
   - id: 968
     fileName: 0968.jpg
     name:
@@ -17309,3 +17316,157 @@ speakers:
       - {language: ru, text: "Профессиональная деятельность Алексея связана с мобильной разработкой, он начинал j2me-разра\
             ботчиком в компании SPL. С 2011 года работает в онлайн-кинотеатре Okko. Разрабатывает приложения под iOS с вер\
             сии 1.1.4."}
+  - id: 1211
+    fileName: 1211.jpg
+    name:
+      - {language: en, text: "Mohammed Aboullaite"}
+    company:
+      - {language: en, text: xHUB}
+    bio:
+      - {language: en, text: "Mohammed is a community catalyst, a true open-source believer and has contributed to various\
+            \ open source projects. He currently works at Xhub, a DevOps software company, as Head Of Engineering."}
+    twitter: laytoun
+  - id: 1212
+    fileName: 1212.jpg
+    name:
+      - {language: en, text: "Graeme Rocher"}
+    company:
+      - {language: en, text: "Object Computing"}
+    bio:
+      - {language: en, text: "Graeme Rocher is the creator of several popular Open Source projects including [Grails](https://grails.org)\
+            \ and [Micronaut](https://Micronaut.io) and co-author of [\"The Definitive Guide to Grails\"](http://apress.com/book/view/1590599950).\
+            \ Graeme currently leads the Grails and Micronaut engineering teams at [OCI](http://www.objectcomputing.com).\
+            \ Graeme is a member of the Java Champions and 2018 was awarded the Groundbreaker award by [Oracle](https://developer.oracle.com/groundbreakers/)\
+            \ for his work on Open Source."}
+    twitter: graemerocher
+    javaChampion: true
+  - id: 1213
+    fileName: 1213.jpg
+    name:
+      - {language: en, text: "Akif Abasov"}
+      - {language: ru, text: "Акиф Абасов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Graduated from Moscow Power Engineering Institute with a degree in applied mathematics. In JetBrains\
+            \ he works with frontend. Before JetBrains, he worked at 1C on a web client for the platform at the same time."}
+      - {language: ru, text: "Закончил МЭИ по специальности прикладная математика. В JetBrains в основном занимается задач\
+            ами frontend. До JetBrains работал в том числе в компании 1С над веб-клиентом для одноименной платформы."}
+  - id: 1214
+    fileName: 1214.jpg
+    name:
+      - {language: en, text: "Adam Bien"}
+    company:
+      - {language: en, text: airhacks.live}
+    bio:
+      - language: en
+        text: "Adam Bien is working as a freelancer with Java since JDK 1.0, with Servlets/EJB since 1.0 and before the advent\
+            \ of J2EE in several large-scale applications. He's an architect and developer (with usually 20/80 distribution)\
+            \ in Java (SE/EE/FX) projects.\n\nHe has written several books about JavaFX, J2EE, and Java EE, and he's the author\
+            \ of Real World Java EE Patterns—Rethinking Best Practices and Real World Java EE Night Hacks—Dissecting the Business\
+            \ Tier. He's writing books and articles during travels and sometimes even unproductive meetings.\n\nIn Adam's\
+            \ leisure, he participates in the JCP as an Expert Group member for the Java EE 6 and 7, EJB 3.X, JAX-RS, CDI,\
+            \ and JPA 2.X JSRs."
+    twitter: AdamBien
+    javaChampion: true
+  - id: 1215
+    fileName: 1215.jpg
+    name:
+      - {language: en, text: "Marharyta Nedzelska"}
+      - {language: ru, text: "Маргарита Недзельская"}
+    company:
+      - {language: en, text: "Wix Engineering"}
+    bio:
+      - {language: en, text: "Marharyta is a Software Engineer at Wix and Kyiv Kotlin user group leader. She has experience\
+            \ in different programming languages and paradigms, likes new challenges and enjoys programming! She's also working\
+            \ on making Kotlin one more programming language for JVM at Wix and try to spread the light of Kotlin to other\
+            \ developers. Marharyta is very passionate about knowledge sharing, so she's involved in conferences such as Kotlin\
+            \ NIght Kyiv, Devoxx UA and one of the organizers of Rockstar Night dev club."}
+      - {language: ru, text: "Разработчик в Wix и организатор Kotlin-комьюнити в Киеве. Имеет опыт работы с разными языкам\
+            и программирования и парадигмами, любит новые и интересные задачи, и получает удовольствие от своей работы. Та\
+            кже работает над тем, чтобы сделать Kotlin еще одним языком программирования для JVM в Wix, и старается распро\
+            странить знания о нем на других разработчиков. Маргарита ценит важность обмена знаниями, поэтому участвует в т\
+            аких конференциях, как KotLand Kyiv, Devoxx UA. Является одним из организаторов Rockstar Night dev club."}
+    twitter: jMargaritaN
+  - id: 1216
+    fileName: 1216.jpg
+    name:
+      - {language: en, text: "James Gosling"}
+    company:
+      - {language: en, text: "Amazon Web Services"}
+    bio:
+      - {language: en, text: "The father of Java, distinguished engineer at Amazon Web Services."}
+    twitter: errcraft
+  - id: 1217
+    fileName: 1217.jpg
+    name:
+      - {language: en, text: "Jiří Holuša"}
+    company:
+      - {language: en, text: Hazelcast}
+    bio:
+      - {language: en, text: "Jiri is a devoted open-source software engineer that loves his work. Born in Red Hat, now being\
+            \ Quality Engineering team lead at Hazelcast, an in-memory computing platform open source company. Digging deep,\
+            \ never giving up on a problem until it's solved and enjoying this all the way, that's Jiri. Besides that, he\
+            \ loves any sport and as a true Czech person, he never refuses a pleasant conversation over a pint of beer."}
+    twitter: jholusa
+  - id: 1218
+    fileName: 1218.jpg
+    name:
+      - {language: en, text: "Jamie Coleman"}
+    company:
+      - {language: en, text: IBM}
+    bio:
+      - {language: en, text: "Jamie is a software developer and Advocate for Open Liberty, MicroProfile and Kabanero based\
+            \ at IBM’s R&D Laboratory in Hursley, UK. He is a subject matter expert in containerised solutions and takes a\
+            \ keen interest in emerging technologies with experience in Maven, git, Jenkins and microservice architecture.\
+            \ He fell in love with Java at University and has gone on to talk at many conferences about using Java with microservices.\
+            \ He has worked on a wide variety of projects such as modernising CICS mainframe testing infrastructure, creating\
+            \ and automating the creation of Docker images for IBM’s products, contributing to a DevOps pipeline offering\
+            \ and creating web applications for events at the Lab. His recent passion is around raising awareness about energy\
+            \ consumption of technology and discovering ways to help reduce technologies carbon footprint."}
+    twitter: Jamie_Lee_C
+  - id: 1219
+    fileName: 1219.jpg
+    name:
+      - {language: en, text: "Trisha Gee"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Trisha has developed Java applications for a range of industries, including finance, manufacturing,\
+            \ software and non-profit, for companies of all sizes. She has expertise in Java high performance systems, is\
+            \ passionate about enabling developer productivity, and dabbles with Open Source development. Trisha is a leader\
+            \ of the Sevilla Java User Group and a Java Champion, she believes healthy communities and sharing ideas help\
+            \ us to learn from mistakes and build on successes. As a Developer Advocate for JetBrains, she gets to share all\
+            \ the interesting things she’s constantly discovering."}
+    twitter: trisha_gee
+    javaChampion: true
+  - id: 1220
+    fileName: 1220.jpg
+    name:
+      - {language: en, text: "Dmitry Kornilov"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - language: en
+        text: "Senior Software Development Manager at Oracle.\nHelidon project lead.\nEclipse EE4J Project Management Committee\
+            \ member. Leading JSON Binding, JSON Processing, EclipseLink and Yasson projects.\nActive JCP member holding the\
+            \ \"Outstanding Spec Lead 2016\" award, JCP Star Spec Lead.\nOver 20 years of experience in design and implementation\
+            \ of complex software systems, defining systems architecture, team leading and project management.\nBachelor of\
+            \ Science in Applied Mathematics from Moscow Aircraft Institute (Technical University)."
+    twitter: m0mus
+  - id: 1221
+    fileName: 1221.jpg
+    name:
+      - {language: en, text: "Dmitry Bundin"}
+      - {language: ru, text: "Дмитрий Бундин"}
+    company:
+      - {language: en, text: "Grid Dynamics"}
+    bio:
+      - {language: en, text: "Dmitry has been in IT since 2014. Over the past few years he has been actively developing I/O\
+            \ intensive applications on Java, C/Linux and related performance issues. Prior to that he developed banking software\
+            \ and a data processing platform on Spark. He has experience on working with Scala, functional programming and\
+            \ typelevel stack. Currently works as Big Data developer at Grid Dynamics."}
+      - {language: ru, text: "Дмитрий в ИТ с 2014 года. В последние несколько лет активно занимается разработкой I/O интен\
+            сивных приложений на Java, C/Linux и связанных с ними вопросами производительности. До этого разрабатывал банк\
+            овский софт и платформу обработки данных на Spark в сфере рекламы. Имеет опыт работы со Scala, функциональным\
+            \ программированием и typelevel стеком. В настоящее время является старшим Big Data разработчиком в Grid Dynamics."}
