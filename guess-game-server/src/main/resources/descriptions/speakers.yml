@@ -3377,21 +3377,21 @@ speakers:
     bio:
       - language: en
         text: "Cliff Click was the CTO of Neurensic (now successfully exited) and CTO and Co-Founder of h2o.ai (formerly 0xdata),\
-            \ a firm dedicated to creating a new way to think about web-scale math and real-time analytics. \n\nHe wrote his\
-            \ first compiler when he was 15 (Pascal to TRS Z-80!), although his most famous compiler is the HotSpot Server\
+            \ a firm dedicated to creating a new way to think about web-scale math and real-time analytics. \r\n\r\nHe wrote\
+            \ his first compiler when he was 15 (Pascal to TRS Z-80!), although his most famous compiler is the HotSpot Server\
             \ Compiler (the Sea of Nodes IR). Cliff helped Azul Systems build an 864 core pure-Java mainframe that keeps GC\
             \ pauses on 500Gb heaps in the micro-second range, and worked on all aspects of that JVM. Before that he worked\
-            \ on HotSpot at Sun, and is at least partially responsible for bringing Java into the mainstream. \n\nCliff is\
-            \ invited to speak regularly at industry and academic conferences and holds a PhD in Computer Science and more\
+            \ on HotSpot at Sun, and is at least partially responsible for bringing Java into the mainstream. \r\n\r\nCliff\
+            \ is invited to speak regularly at industry and academic conferences and holds a PhD in Computer Science and more\
             \ than 20 patents."
       - language: ru
         text: "Cliff Click was the CTO of Neurensic (now successfully exited) and CTO and Co-Founder of h2o.ai (formerly 0xdata),\
-            \ a firm dedicated to creating a new way to think about web-scale math and real-time analytics.\n\nHe wrote his\
-            \ first compiler when he was 15 (Pascal to TRS Z-80!), although his most famous compiler is the HotSpot Server\
+            \ a firm dedicated to creating a new way to think about web-scale math and real-time analytics.\r\n\r\nHe wrote\
+            \ his first compiler when he was 15 (Pascal to TRS Z-80!), although his most famous compiler is the HotSpot Server\
             \ Compiler (the Sea of Nodes IR). Cliff helped Azul Systems build an 864 core pure-Java mainframe that keeps GC\
             \ pauses on 500Gb heaps in the micro-second range, and worked on all aspects of that JVM. Before that he worked\
-            \ on HotSpot at Sun, and is at least partially responsible for bringing Java into the mainstream.\n\nCliff is\
-            \ invited to speak regularly at industry and academic conferences and holds a PhD in Computer Science and more\
+            \ on HotSpot at Sun, and is at least partially responsible for bringing Java into the mainstream.\r\n\r\nCliff\
+            \ is invited to speak regularly at industry and academic conferences and holds a PhD in Computer Science and more\
             \ than 20 patents."
     twitter: cliff_click
   - id: 234
@@ -3426,6 +3426,7 @@ speakers:
       - {language: en, text: "Maurice Herlihy"}
     company:
       - {language: en, text: "Brown University Computer Science Dept"}
+      - {language: ru, text: "Brown University"}
     bio:
       - {language: en, text: "Maurice Herlihy has an A.B. in Mathematics from Harvard University, and a Ph.D. in Computer\
             \ Science from M.I.T. He has served on the faculty of Carnegie Mellon University and the staff of DEC Cambridge\
@@ -5756,8 +5757,7 @@ speakers:
     company: []
     bio:
       - {language: en, text: "Alex is data infrastructure engineer, database and storage systems enthusiast, Apache Cassandra\
-            \ committer and PMC member, interested in storage, distributed systems and algorithms. Currently writing the Database\
-            \ Internals books with O'Reilly."}
+            \ committer and PMC member, interested in storage, distributed systems and algorithms."}
     twitter: ifesdjeen
   - id: 394
     fileName: 0394.jpg
@@ -6852,7 +6852,7 @@ speakers:
       - {language: en, text: "Dmitry Ivanov"}
       - {language: ru, text: "Дмитрий Иванов"}
     company:
-      - {language: en, text: JetBrains}
+      - {language: en, text: Huawei}
     bio:
       - {language: en, text: "JetBrains Rider technical leader, ReSharper's Core developer: data structures, caches, concurrency.\
             \ JetBrains employee since 2011. Graduated from SPbSU in 2006."}
@@ -17485,3 +17485,114 @@ speakers:
             \ rid the world of bad presentations, Nate coauthored the book Presentation Patterns with Neal Ford and Matthew\
             \ McCullough. Nate recently published Thinking Architecturally available as a free download from Pivotal."}
     twitter: ntschutta
+  - id: 1223
+    fileName: 1223.jpg
+    name:
+      - {language: en, text: "Anton Podkopaev"}
+    company:
+      - {language: en, text: "MPI-SWS, JetBrains Research, NRU HSE"}
+    bio:
+      - language: en
+        text: "Anton Podkopaev is a postdoctoral researcher at MPI-SWS, a docent at NRU HSE, and a researcher at JetBrains\
+            \ Research. He did his PhD at St. Petersburg University.\nAnton's main area of research is weak memory concurrency."
+    twitter: inf_anlun
+  - id: 1224
+    fileName: 1224.jpg
+    name:
+      - {language: en, text: "Ed Huang"}
+    company:
+      - {language: en, text: PingCAP}
+    bio:
+      - {language: en, text: "Co-founder & CTO at PingCAP, a startup focus on distributed storage system and NewSQL database."}
+  - id: 1225
+    fileName: 1225.jpg
+    name:
+      - {language: en, text: "Ruslan Nikolaev"}
+    company:
+      - {language: en, text: "Virginia Tech"}
+    bio:
+      - {language: en, text: "Ruslan is a Research Assistant Professor with the Department of Electrical and Computer Engineering\
+            \ at Virginia Tech and work in the Systems Software Research Group, led by Prof. Binoy Ravindran. Prior to that,\
+            \ he worked as a Senior Software Engineer with Pure Storage, Inc. and as a Software Engineer with Microsoft Corporation.\
+            \ He completed a Ph.D. in Computer Science at Virginia Tech in 2013. His Ph.D. advisor was Prof. Godmar Back."}
+  - id: 1226
+    fileName: 1226.jpg
+    name:
+      - {language: en, text: "Cindy Sridharan"}
+    company: []
+    bio:
+      - {language: en, text: "Cindy Sridharan is a distributed systems engineer based out of San Francisco, California. She's\
+            \ the author of a book on Distributed Systems Observability (2018) and an upcoming book on distributed systems\
+            \ in the cloud (2022). She maintains a blog where she writes about building and maintaining reliable systems."}
+    twitter: copyconstruct
+  - id: 1227
+    fileName: 1227.jpg
+    name:
+      - {language: en, text: "Aishwarya Ganesan"}
+    company:
+      - {language: en, text: "University of Wisconsin - Madison"}
+    bio:
+      - {language: en, text: "Aishwarya Ganesan is a PhD candidate at the University of Wisconsin – Madison. She is broadly\
+            \ interested in distributed systems, storage systems, and operating systems. Her research explores how to build\
+            \ new protocols to improve the reliability of distributed systems without compromising performance. Her research\
+            \ has won best-paper awards at FAST '18 and FAST '20. She was selected for the Rising Stars in EECS ’18 workshop.\
+            \ She is a recipient of a Facebook PhD Fellowship in 2019."}
+    twitter: AishwaryaGanlat
+  - id: 1228
+    fileName: 1228.jpg
+    name:
+      - {language: en, text: "Anastasia Braginsky"}
+    company:
+      - {language: en, text: "Yahoo! Research"}
+    bio:
+      - {language: en, text: "Dr. Anastasia Braginsky is a member of the Scalable Search Systems Research team, part of Yahoo!\
+            \ Research Lab (part of VerizonMedia), based in Haifa, Israel. Her main research interests span parallel programming\
+            \ and concurrent data structures for multi-core architecture, scalable systems and platforms for big data processing,\
+            \ including scalable key-value stores. She contributes to open source projects (HBase, Oak) and publishes papers\
+            \ in academic conferences and journals. Anastasia received her B.A. (summa cum laude) and PhD (direct track) from\
+            \ the Faculty of Computer Science at Technion, Israel Institute of Technology in 2004 and 2015 respectively. Her\
+            \ PhD is in the field of distributed and parallel computing, and focuses on concurrent, non-blocking data structures\
+            \ and their memory management. Prior to her graduate studies (2002-2009) she was a CAD Tools developer at Intel\
+            \ and later a microcode developer in storage group at IBM Haifa Research Lab (HRL)."}
+  - id: 1229
+    fileName: 1229.jpg
+    name:
+      - {language: en, text: "Alberto Sonnino"}
+    company:
+      - {language: en, text: "Facebook Calibra"}
+    bio:
+      - {language: en, text: "A co-founder and researcher at <a href=\"https://chainspace.io/\" target=\"_blank\">chainspace.io</a>,\
+            \ which builds a scalable smart contract platform — now Alberto is a Research Scientist at Facebook Calibra, based\
+            \ in London. His research interests are in distributed systems, blockchains, and privacy enhancing technologies.\
+            \ He has a special interest in cryptography. In the past, Alberto worked on numerical calculations and simulations\
+            \ for physics-related problems (plasma physics, category theory, symmetry groups)."}
+    twitter: alberto_sonnino
+  - id: 1230
+    fileName: 1230.jpg
+    name:
+      - {language: en, text: "Karthik Ranganathan"}
+    company:
+      - {language: en, text: Yugabyte}
+    bio:
+      - {language: en, text: "Karthik received his BS and MS in CS from IIT-M and UT Austin. Karthik was one of the original\
+            \ database engineers at Facebook responsible for building distributed databases such as Cassandra and HBase. He\
+            \ is an Apache HBase committer, and also an early contributor to Cassandra, before it was open-sourced by Facebook.\
+            \ He is now a Co-Founder & the CTO at YugaByte, the company behind the open source YugaByte DB project that is\
+            \ bringing together NoSQL and SQL in a single globally distributed database."}
+    twitter: karthikr
+  - id: 1231
+    fileName: 1231.jpg
+    name:
+      - {language: en, text: "Nir Shavit"}
+    company:
+      - {language: en, text: MIT}
+    bio:
+      - language: en
+        text: "Nir Shavit received B.Sc. and M.Sc. degrees in Computer Science from the Technion - Israel Institute of Technology\
+            \ in 1984 and 1986, and a Ph.D. in Computer Science from the Hebrew University of Jerusalem in 1990. Shavit is\
+            \ a co-author of the book The Art of Multiprocessor Programming. He is a recipient of the 2004 Gödel Prize in\
+            \ theoretical computer science for his work on applying tools from algebraic topology to model shared memory computability\
+            \ and of the 2012 Dijkstra Prize in Distributed Computing for the introduction of Software Transactional Memory.\
+            \ He is a past program chair of the ACM Symposium on Principles of Distributed Computing (PODC) and the ACM Symposium\
+            \ on Parallelism in Algorithms and Architectures (SPAA).\n\nHis current research covers techniques for desinging\
+            \ scalable software for multiprocessors, in particular concurrent data structures for multicore machines."

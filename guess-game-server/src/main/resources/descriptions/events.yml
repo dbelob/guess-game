@@ -496,7 +496,7 @@ events:
     siteLink:
       - {language: en, text: "https://hydraconf.com/"}
     placeId: 24
-    talkIds: []
+    talkIds: [2266, 2267, 2268, 2269, 2270, 2271, 2272, 2273, 2274, 2275, 2276, 2277, 2278, 2279, 2280, 2281, 2282]
   # JBreak
   - eventTypeId: 6
     name:
