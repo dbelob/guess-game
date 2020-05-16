@@ -5200,7 +5200,7 @@ speakers:
     name:
       - {language: en, text: "John Willis"}
     company:
-      - {language: en, text: "SJ Technologies"}
+      - {language: en, text: "Red Hat"}
     bio:
       - {language: en, text: "John Willis has worked in the IT management industry for more than 35 years. Currently he is\
             \ Vice President of DevOps and Digital Practices at SJ Technologies. He was formerly Director of Ecosystem Development\
@@ -16873,7 +16873,7 @@ speakers:
     name:
       - {language: en, text: "Valarie Regas"}
     company:
-      - {language: en, text: "Airbus Defence and Space — Intelligence"}
+      - {language: en, text: Airbus}
     bio:
       - language: en
         text: "Solutions oriented and highly motivated professional with over 10 years of experience managing people and resources.\n\
@@ -17470,3 +17470,18 @@ speakers:
             сивных приложений на Java, C/Linux и связанных с ними вопросами производительности. До этого разрабатывал банк\
             овский софт и платформу обработки данных на Spark в сфере рекламы. Имеет опыт работы со Scala, функциональным\
             \ программированием и typelevel стеком. В настоящее время является старшим Big Data разработчиком в Grid Dynamics."}
+  - id: 1222
+    fileName: 1222.jpg
+    name:
+      - {language: en, text: "Nathaniel Schutta"}
+    company:
+      - {language: en, text: VMware}
+    bio:
+      - {language: en, text: "Nathaniel T. Schutta is a software architect focused on cloud computing and building usable\
+            \ applications. A proponent of polyglot programming, Nate has written multiple books and appeared in various videos.\
+            \ Nate is a seasoned speaker regularly presenting at conferences worldwide, [No Fluff Just Stuff](https://nofluffjuststuff.com/home/main)\
+            \ symposia, meetups, universities, and user groups. In addition to his day job, Nate is an adjunct professor at\
+            \ the University of Minnesota where he teaches students to embrace (and evaluate) technical change. Driven to\
+            \ rid the world of bad presentations, Nate coauthored the book Presentation Patterns with Neal Ford and Matthew\
+            \ McCullough. Nate recently published Thinking Architecturally available as a free download from Pivotal."}
+    twitter: ntschutta
