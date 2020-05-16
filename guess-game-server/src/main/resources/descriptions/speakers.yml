@@ -8238,12 +8238,9 @@ speakers:
     name:
       - {language: en, text: "Andrey Lushnikov"}
     company:
-      - {language: en, text: Google}
-      - {language: ru, text: Microsoft}
+      - {language: en, text: Microsoft}
     bio:
       - {language: en, text: "Former Chrome Puppeteer TL. Currently in Microsoft Playwright team."}
-      - language: ru
-        text: "- Former Chrome Puppeteer TL\n- Currently Microsoft Playwright team"
     twitter: aslushnikov
   - id: 568
     fileName: 0568.jpg
