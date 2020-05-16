@@ -1228,9 +1228,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
-            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
-            — either by plane or motorbike."
+            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
+            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
+            either by plane or motorbike."
     twitter: DaschnerS
     javaChampion: true
   - id: 75
@@ -8238,9 +8238,12 @@ speakers:
     name:
       - {language: en, text: "Andrey Lushnikov"}
     company:
-      - {language: en, text: Microsoft}
+      - {language: en, text: Google}
+      - {language: ru, text: Microsoft}
     bio:
       - {language: en, text: "Former Chrome Puppeteer TL. Currently in Microsoft Playwright team."}
+      - language: ru
+        text: "- Former Chrome Puppeteer TL\n- Currently Microsoft Playwright team"
     twitter: aslushnikov
   - id: 568
     fileName: 0568.jpg
@@ -17244,3 +17247,19 @@ speakers:
             \ at the Economics Department. Her main research interests are distributed ledgers, game theory, and algorithms.\
             \ Jing received her bachelor's and master’s degrees in computer science from Tsinghua University, and her PhD\
             \ in computer science from MIT. Jing received the NSF CAREER Award in 2016."}
+  - id: 1207
+    fileName: 1207.jpg
+    name:
+      - {language: en, text: "Kevlin Henney"}
+    company:
+      - {language: en, text: Curbralan}
+    bio:
+      - language: en
+        text: "Kevlin is an independent consultant, speaker, writer, and trainer. His software development interests are in\
+            \ patterns, programming, practice, and process.\r\n\r\nHe has been a columnist for various magazines and websites.\
+            \ He's a co-author of A Pattern Language for Distributed Computing and On Patterns and Pattern Languages, two\
+            \ volumes in the Pattern-Oriented Software Architecture series, and editor of 97 Things Every Programmer Should\
+            \ Know.\r\n\r\nI also write short fiction, with a particular emphasis on flash fiction, and perform it at spoken\
+            \ word events. I have helped organize the BristolFlash events for National Flash Fiction Day and the Bristol Festival\
+            \ of Literature."
+    twitter: kevlinhenney
