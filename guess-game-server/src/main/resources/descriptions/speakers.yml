@@ -11391,7 +11391,7 @@ speakers:
       - {language: en, text: "Stepan Goncharov"}
       - {language: ru, text: "Степан Гончаров"}
     company:
-      - {language: en, text: Grab}
+      - {language: en, text: Lyft}
     bio:
       - {language: en, text: "Engineering apps and games for Android since 2008. Has experience as QA, product manager, marketer,\
             \ blogger, consultant and much more. He was involved in development of apps that nobody uses and apps with millions\
@@ -11566,7 +11566,7 @@ speakers:
       - {language: en, text: "Pavel Strelchenko"}
       - {language: ru, text: "Павел Стрельченко"}
     company:
-      - {language: en, text: hh.ru}
+      - {language: en, text: HeadHunter}
     bio:
       - {language: en, text: "Android developer at hh.ru in Moscow. Pavel has been working with Android since 2015 and is\
             \ currently using his skills to support company's applications and developing internal automation tools. His interests\
@@ -16729,7 +16729,16 @@ speakers:
     company:
       - {language: en, text: EPAM}
     bio:
-      - {language: en, text: TBD}
+      - language: en
+        text: "Graduated from the faculty of the Lobachevsky University with a degree in computer science in 2000. He has\
+            \ been working in IT since 1998: sowtware developer, team leader, and project manager. Now he's a project manager\
+            \ of the EPAM mobile competence center.\n\nIn addition to the main work he lectures on the Java and Android mobile\
+            \ development."
+      - language: ru
+        text: "В 2000 году окончил факультет ВМК Нижегородского государственного университета по специальности «Информатик\
+            а». С 1998 года работает в сфере ИТ: программист-разработчик, руководитель группы, менеджер проектов. В настоя\
+            щее время — руководитель проектов центра мобильной компетенции компании «ЭПАМ».\n\nПомимо основной работы чита\
+            ет лекции по языку программирования Java и разработке мобильных приложений на платформе Android."
   - id: 1168
     fileName: 1168.jpg
     name:
@@ -17260,3 +17269,43 @@ speakers:
             \ word events. I have helped organize the BristolFlash events for National Flash Fiction Day and the Bristol Festival\
             \ of Literature."
     twitter: kevlinhenney
+  - id: 1208
+    fileName: 1208.jpg
+    name:
+      - {language: en, text: "Vladislav Usachev"}
+      - {language: ru, text: "Владислав Усачёв"}
+    company:
+      - {language: en, text: "Square meter"}
+      - {language: ru, text: "Квадратный метр"}
+    bio:
+      - {language: en, text: "iOS developer at \"Square meter\". Before he participated in feature development and acceleration\
+            \ of the development processes of the Sberbank Online."}
+      - {language: ru, text: "iOS-разработчик в компании «Квадратный метр». До этого участвовал в разработке фичей и ускор\
+            ения процессов разработки приложения Сбербанк-Онлайн."}
+    twitter: phoe3nixx
+  - id: 1209
+    fileName: 1209.jpg
+    name:
+      - {language: en, text: "Ash Furrow"}
+    company:
+      - {language: en, text: Artsy}
+    bio:
+      - {language: en, text: "Ash Furrow is a compassionate software developer from Canada, currently leading Artsy’s Mobile\
+            \ Experience team from New York. He has published a number of books, built many apps, and is a prolific contributor\
+            \ to open source software. On his blog, he writes about a range of topics, from interesting programming problems\
+            \ to explorations of music and the humanities."}
+    twitter: ashfurrow
+  - id: 1210
+    fileName: 1210.jpg
+    name:
+      - {language: en, text: "Aleksey Sukhov"}
+      - {language: ru, text: "Алексей Сухов"}
+    company:
+      - {language: en, text: Okko}
+    bio:
+      - {language: en, text: "Alexey's professional activity is related to mobile development, he started as a j2me developer\
+            \ at SPL. Since 2011 he has been working in the Okko online theater. He has been developing applications for iOS\
+            \ since 1.1.4. version."}
+      - {language: ru, text: "Профессиональная деятельность Алексея связана с мобильной разработкой, он начинал j2me-разра\
+            ботчиком в компании SPL. С 2011 года работает в онлайн-кинотеатре Okko. Разрабатывает приложения под iOS с вер\
+            сии 1.1.4."}
