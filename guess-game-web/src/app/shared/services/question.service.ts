@@ -59,6 +59,16 @@ export class QuestionService {
       );
   }
 
+  getDefaultEvent(): Observable<Event> {
+    return this.http.get<Event>(`${this.baseUrl}/default-event`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
   getQuantities(questionSetIds: number[], guessType: string): Observable<number[]> {
     let params = new HttpParams()
       .set('questionSetIds', questionSetIds.toString())

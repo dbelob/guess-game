@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 
@@ -76,6 +77,15 @@ public class QuestionController {
         events.sort(Comparator.comparing(Event::getStartDate));
 
         return EventDto.convertToBriefDto(events, language);
+    }
+
+    @GetMapping("/default-event")
+    @ResponseBody
+    public EventBriefDto getDefaultEvent(HttpSession httpSession) {
+        Event defaultEvent = questionService.getDefaultEvent(LocalDateTime.now());
+        Language language = localeService.getLanguage(httpSession);
+
+        return (defaultEvent != null) ? EventBriefDto.convertToBriefDto(defaultEvent, language) : null;
     }
 
     @GetMapping("/quantities")

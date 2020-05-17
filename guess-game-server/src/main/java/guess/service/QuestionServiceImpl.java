@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -50,6 +51,12 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public List<Event> getEvents(long eventTypeId) {
         return eventDao.getEvents(eventTypeId);
+    }
+
+    @Override
+    public Event getDefaultEvent(LocalDateTime dateTime) {
+        //TODO: implement
+        return null;
     }
 
     @Override

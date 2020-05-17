@@ -15,7 +15,7 @@ public class EventDto extends EventBriefDto {
     private final String youtubeLink;
 
     public EventDto(EventBriefDto eventBriefDto, String siteLink, String youtubeLink) {
-        super(eventBriefDto.getId(), eventBriefDto.getName(), eventBriefDto.getStartDate(), eventBriefDto.getEndDate());
+        super(eventBriefDto.getId(), eventBriefDto.getEventTypeId(), eventBriefDto.getName(), eventBriefDto.getStartDate(), eventBriefDto.getEndDate());
 
         this.siteLink = siteLink;
         this.youtubeLink = youtubeLink;

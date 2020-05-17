@@ -29,6 +29,8 @@ export class StartComponent implements OnInit {
   public quantities: number[] = [];
   public selectedQuantity: number;
 
+  private defaultEvent: Event;
+
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router,
               public translateService: TranslateService) {
   }
@@ -70,14 +72,39 @@ export class StartComponent implements OnInit {
         this.eventTypes = data;
 
         if (this.eventTypes.length > 0) {
-          //TODO: change
-          this.selectedEventTypes = [this.eventTypes[0]];
-          this.loadEvents(this.selectedEventTypes);
+          this.questionService.getDefaultEvent()
+            .subscribe(data => {
+              this.defaultEvent = data;
+
+              let selectedEventType = this.findEventTypeByDefaultEvent(this.defaultEvent);
+
+              if (selectedEventType) {
+                this.selectedEventTypes = [selectedEventType];
+              } else {
+                this.selectedEventTypes = [this.eventTypes[0]];
+              }
+
+              this.loadEvents(this.selectedEventTypes);
+            });
         } else {
           this.selectedEventTypes = [];
           this.loadEvents(this.selectedEventTypes);
         }
       });
+  }
+
+  findEventTypeByDefaultEvent(defaultEvent: Event): Event {
+    if (defaultEvent) {
+      for (let i = 0; i < this.eventTypes.length; i++) {
+        let eventType: EventType = this.eventTypes[i];
+
+        if (defaultEvent.eventTypeId === eventType.id) {
+          return eventType;
+        }
+      }
+    }
+
+    return null;
   }
 
   onEventTypeChange(eventTypes: EventType[]) {
@@ -91,19 +118,43 @@ export class StartComponent implements OnInit {
           this.events = data;
 
           if (this.events.length > 0) {
-            this.selectedEvents = [this.events[this.events.length - 1]];
+            let selectedEvent = this.findEventByDefaultEvent(this.defaultEvent);
+
+            if (selectedEvent) {
+              this.selectedEvents = [selectedEvent];
+            } else {
+              this.selectedEvents = [this.events[this.events.length - 1]];
+            }
           } else {
             this.selectedEvents = [];
           }
+
+          this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, this.selectedGuessType);
         });
     } else {
       this.events = [];
       this.selectedEvents = [];
+      this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, this.selectedGuessType);
     }
   }
 
+  findEventByDefaultEvent(defaultEvent: Event): Event {
+    if (defaultEvent) {
+      for (let i = 0; i < this.events.length; i++) {
+        let event: Event = this.events[i];
+
+        if (defaultEvent.id === event.id) {
+          return event;
+        }
+      }
+    }
+
+    return null;
+
+  }
+
   onEventChange(events: Event[]) {
-    //TODO: implements
+    this.loadQuantities2(this.selectedEventTypes, events, this.selectedGuessType);
   }
 
   onModeChange(guessType: string) {

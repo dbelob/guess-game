@@ -7,6 +7,7 @@ import guess.domain.source.Event;
 import guess.domain.source.EventType;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -20,6 +21,8 @@ public interface QuestionService {
     List<EventType> getEventTypes();
 
     List<Event> getEvents(long eventTypeId);
+
+    Event getDefaultEvent(LocalDateTime dateTime);
 
     List<Integer> getQuantities(List<Long> questionSetIds, GuessType guessType) throws QuestionSetNotExistsException;
 }
