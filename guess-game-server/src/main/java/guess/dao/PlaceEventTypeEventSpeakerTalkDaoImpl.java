@@ -6,6 +6,7 @@ import guess.util.yaml.YamlUtils;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +30,13 @@ public class PlaceEventTypeEventSpeakerTalkDaoImpl implements PlaceDao, EventTyp
     public List<Event> getEvents(long eventTypeId) {
         return sourceInformation.getEvents().stream()
                 .filter(e -> (e.getEventTypeId() == eventTypeId))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Event> getEventsFromDate(LocalDate date) {
+        return sourceInformation.getEvents().stream()
+                .filter(e -> !date.isAfter(e.getEndDate()))
                 .collect(Collectors.toList());
     }
 

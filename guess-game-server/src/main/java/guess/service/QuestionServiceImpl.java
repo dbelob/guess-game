@@ -15,7 +15,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Question service implementation.
@@ -55,8 +57,30 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Event getDefaultEvent(LocalDateTime dateTime) {
-        //TODO: implement
-        return null;
+        List<Event> eventsFromDate = eventDao.getEventsFromDate(dateTime.toLocalDate());
+
+        if (eventsFromDate.isEmpty()) {
+            return null;
+        } else {
+            // Sort by start date
+            eventsFromDate.sort(Comparator.comparing(Event::getStartDate));
+
+            // Find events for first start date
+            LocalDate firstStartDate = eventsFromDate.get(0).getStartDate();
+            List<Event> eventsForFirstStartDate = eventsFromDate.stream()
+                    .filter(e -> e.getStartDate().equals(firstStartDate))
+                    .collect(Collectors.toList());
+
+            if (eventsForFirstStartDate.size() > 1) {
+                //TODO: find event by their talks track times
+                return eventsForFirstStartDate.get(0);
+            } else if (eventsForFirstStartDate.size() == 1) {
+                // Single event
+                return eventsForFirstStartDate.get(0);
+            }
+
+            return null;
+        }
     }
 
     @Override
