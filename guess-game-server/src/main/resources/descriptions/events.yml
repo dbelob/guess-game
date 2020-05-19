@@ -586,7 +586,7 @@ events:
       - {language: ru, text: "https://2016.jpoint.ru/"}
     youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b-Q2Rs5OxSzh15DttbIhJKk
     placeId: 11
-    talkIds: [2283, 2284, 2285, 2286, 2287, 2288, 2289]
+    talkIds: [2283, 2284, 2285, 2286, 2287, 2288, 2289, 2290, 2291, 2292, 2293, 2294, 2295, 2296, 2297, 2298, 2299]
   - eventTypeId: 7
     name:
       - {language: en, text: "JPoint 2017"}

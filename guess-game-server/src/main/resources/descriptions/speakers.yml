@@ -17596,3 +17596,30 @@ speakers:
             \ He is a past program chair of the ACM Symposium on Principles of Distributed Computing (PODC) and the ACM Symposium\
             \ on Parallelism in Algorithms and Architectures (SPAA).\n\nHis current research covers techniques for desinging\
             \ scalable software for multiprocessors, in particular concurrent data structures for multicore machines."
+  - id: 1232
+    fileName: 1232.jpg
+    name:
+      - {language: en, text: "Idel Pivnitsky"}
+      - {language: ru, text: "Идель Пивницкий"}
+    company:
+      - {language: en, text: "National Research University Higher School of Economics"}
+      - {language: ru, text: "Национальный исследовательский университет «Высшая школа экономики»"}
+    bio:
+      - language: ru
+        text: "Студент-разработчик. Около 3х лет разрабатываю масштабируемые серверные приложения. Изучал\
+        \ высоконагруженные вычислительные системы и сети, сейчас получаю магистерскую степень по системам обработки\
+        \ больших данных в НИУ ВШЭ. В свободное от работы и учебы время занимаюсь Open Source проектами и участвую в\
+        \ различных программах для студентов. Любимые проекты: Netty project и AeroGear от JBoss Community."
+  - id: 1233
+    fileName: 1233.jpg
+    name:
+      - {language: en, text: "Mikhail Glukhikh"}
+      - {language: ru, text: "Михаил Глухих"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - language: ru
+        text: "Михаил Глухих – один из разработчиков языка программирования Kotlin в компании JetBrains. По совместительству\
+        \ читает лекции по программированию в Санкт-Петербургском политехническом университете. Кандидат технических\
+        \ наук, доцент. Области научных и практических интересов: статический анализ программ, языки программирования,\
+        \ моделирование аппаратных систем, надежные системы."
