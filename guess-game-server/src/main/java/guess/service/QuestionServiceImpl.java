@@ -84,8 +84,11 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public Event getDefaultEvent(LocalDateTime dateTime) {
+        LocalDate date = dateTime.toLocalDate();
+        LocalTime time = dateTime.toLocalTime();
+
         // Find current and future events
-        List<Event> eventsFromDate = eventDao.getEventsFromDate(dateTime.toLocalDate());
+        List<Event> eventsFromDate = eventDao.getEventsFromDate(date);
 
         // Only conferences
         List<Event> conferencesFromDate = eventsFromDate.stream()
@@ -97,36 +100,39 @@ public class QuestionServiceImpl implements QuestionService {
         } else {
             List<EventDateMinTrackTime> eventDateMinTrackTimeList = getConferenceDateMinTrackTimeList(conferencesFromDate);
 
-            //TODO: implement
-
-            // Sort by start date
-            conferencesFromDate.sort(Comparator.comparing(Event::getStartDate));
-
-            // Find first start date
-            LocalDate firstStartDate = conferencesFromDate.get(0).getStartDate();
-
-            if (dateTime.toLocalDate().isBefore(firstStartDate)) {
-                // No current events
-                //...
+            if (eventDateMinTrackTimeList.isEmpty()) {
+                return null;
             } else {
-                // Current events exist
-                //...
+                // Sort by date and minTrackTime
+                List<EventDateMinTrackTime> eventDateMinTrackTimeListFromDateOrdered = eventDateMinTrackTimeList.stream()
+                        .filter(e -> !e.getDate().isBefore(date))
+                        .sorted(Comparator.comparing(EventDateMinTrackTime::getDate).thenComparing(EventDateMinTrackTime::getMinTrackTime))
+                        .collect(Collectors.toList());
+
+                if (eventDateMinTrackTimeListFromDateOrdered.isEmpty()) {
+                    return null;
+                } else {
+                    // Find first date
+                    LocalDate firstDate = eventDateMinTrackTimeListFromDateOrdered.get(0).getDate();
+
+                    if (date.isBefore(firstDate)) {
+                        // No current day events
+                        return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
+                    } else {
+                        // Current day events exist
+                        List<EventDateMinTrackTime> eventDateMinTrackTimeListOnCurrentDate = eventDateMinTrackTimeListFromDateOrdered.stream()
+                                .filter(e -> (e.getDate().equals(date) && !e.getMinTrackTime().isAfter(time)))
+                                .sorted(Comparator.comparing(EventDateMinTrackTime::getMinTrackTime).reversed())
+                                .collect(Collectors.toList());
+
+                        if (eventDateMinTrackTimeListOnCurrentDate.isEmpty()) {
+                            return null;
+                        } else {
+                            return eventDateMinTrackTimeListOnCurrentDate.get(0).getEvent();
+                        }
+                    }
+                }
             }
-
-            // Find events for first start date
-            List<Event> eventsForFirstStartDate = conferencesFromDate.stream()
-                    .filter(e -> e.getStartDate().equals(firstStartDate))
-                    .collect(Collectors.toList());
-
-            if (eventsForFirstStartDate.size() > 1) {
-                //TODO: find event by their talks track times
-                return eventsForFirstStartDate.get(0);
-            } else if (eventsForFirstStartDate.size() == 1) {
-                // Single event
-                return eventsForFirstStartDate.get(0);
-            }
-
-            return null;
         }
     }
 
@@ -159,12 +165,12 @@ public class QuestionServiceImpl implements QuestionService {
                 Map<Long, Optional<LocalTime>> minTrackTimeInTalkDays = minTrackTimeInTalkDaysForConferences.get(event);
 
                 for (long i = 1; i <= days; i++) {
-                    LocalTime minTrackTime = LocalTime.of(0, 0, 0);
+                    LocalTime minTrackTime = LocalTime.of(0, 0);
 
                     if (minTrackTimeInTalkDays != null) {
                         Optional<LocalTime> minTrackTimeInTalkDay = minTrackTimeInTalkDays.get(i);
 
-                        if (minTrackTimeInTalkDay.isPresent()) {
+                        if ((minTrackTimeInTalkDay != null) && minTrackTimeInTalkDay.isPresent()) {
                             minTrackTime = minTrackTimeInTalkDay.get();
                         }
                     }
