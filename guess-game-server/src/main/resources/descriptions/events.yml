@@ -695,7 +695,7 @@ events:
       - {language: ru, text: "https://2016.jokerconf.com/"}
     youtubeLink: https://www.youtube.com/playlist?list=PLVe-2wcL84b8IFOCtl2iP9djzjC7cbgNw
     placeId: 2
-    talkIds: []
+    talkIds: [2300, 2301, 2302, 2303, 2304, 2305, 2306, 2307]
   - eventTypeId: 8
     name:
       - {language: en, text: "Joker 2017"}

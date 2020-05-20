@@ -2523,6 +2523,14 @@ speakers:
     fileName: 0157.jpg
     name:
       - {language: en, text: "Vojin Jovanovic"}
+    company:
+      - {language: en, text: "Oracle Labs"}
+    bio:
+      - {language: en, text: "Vojin does researches on compilers and virtual machines in Oracle Labs. Before Oracle, he\
+      \ did a PhD in the Scala Lab at EPFL on embedding DSLs. Vojin believes that programs can be written abstractly and\
+      \ yet execute as fast as their hand tuned counterparts. To this end, he is working on better dynamic compilation\
+      \ in multilingual environments. Vojin also developed a framework that allows effortless addition of domain-specific\
+      \ optimizations to existing libraries in Scala."}
   - id: 158
     fileName: 0158.jpg
     name:
@@ -2600,6 +2608,13 @@ speakers:
     name:
       - {language: en, text: "Max Syachin"}
       - {language: ru, text: "Максим Сячин"}
+    company:
+      - {language: en, text: Luxoft}
+    bio:
+      - {language: ru, text: "Максим работает в Luxoft Lead Java-разработчиком в проекте «Почта России». Помимо основных\
+      \ задач занимается продвижением микросервисной архитектуры и внедрением Continuous Delivery. За свою более чем\
+      \ десятилетнюю карьеру успел поучаствовать в разработке нескольких ГИС-платформ на С++ и Java, после чего с головой\
+      \ окунулся в разработку кровавого энтерпрайза. Уважает Scala, Kotlin и микросервисы."}
   - id: 163
     fileName: 0163.jpg
     name:
