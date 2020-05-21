@@ -27,7 +27,10 @@ import static java.time.temporal.ChronoUnit.DAYS;
  */
 @Service
 public class QuestionServiceImpl implements QuestionService {
-    class EventDateMinTrackTime {
+    /**
+     * Event, date, minimal track time.
+     */
+    static class EventDateMinTrackTime {
         private final Event event;
         private final LocalDate date;
         private final LocalTime minTrackTime;
@@ -90,12 +93,13 @@ public class QuestionServiceImpl implements QuestionService {
         // Find current and future events
         List<Event> eventsFromDate = eventDao.getEventsFromDate(date);
 
-        // Only conferences
+        // Select conferences only
         List<Event> conferencesFromDate = eventsFromDate.stream()
                 .filter(e -> e.getEventType().isEventTypeConference())
                 .collect(Collectors.toList());
 
         if (conferencesFromDate.isEmpty()) {
+            // Conferences not exist
             return null;
         } else {
             List<EventDateMinTrackTime> eventDateMinTrackTimeList = getConferenceDateMinTrackTimeList(conferencesFromDate);
@@ -103,7 +107,7 @@ public class QuestionServiceImpl implements QuestionService {
             if (eventDateMinTrackTimeList.isEmpty()) {
                 return null;
             } else {
-                // Sort by date and minTrackTime
+                // Find current and future event days, sort by date and minimal track time
                 List<EventDateMinTrackTime> eventDateMinTrackTimeListFromDateOrdered = eventDateMinTrackTimeList.stream()
                         .filter(e -> !e.getDate().isBefore(date))
                         .sorted(Comparator.comparing(EventDateMinTrackTime::getDate).thenComparing(EventDateMinTrackTime::getMinTrackTime))
@@ -116,10 +120,10 @@ public class QuestionServiceImpl implements QuestionService {
                     LocalDate firstDate = eventDateMinTrackTimeListFromDateOrdered.get(0).getDate();
 
                     if (date.isBefore(firstDate)) {
-                        // No current day events
+                        // No current day events, return nearest first event
                         return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
                     } else {
-                        // Current day events exist
+                        // Current day events exist, find happened time, sort by reversed minimal track time
                         List<EventDateMinTrackTime> eventDateMinTrackTimeListOnCurrentDate = eventDateMinTrackTimeListFromDateOrdered.stream()
                                 .filter(e -> (e.getDate().equals(date) && !e.getMinTrackTime().isAfter(time)))
                                 .sorted(Comparator.comparing(EventDateMinTrackTime::getMinTrackTime).reversed())
@@ -128,6 +132,7 @@ public class QuestionServiceImpl implements QuestionService {
                         if (eventDateMinTrackTimeListOnCurrentDate.isEmpty()) {
                             return null;
                         } else {
+                            // Return nearest last event
                             return eventDateMinTrackTimeListOnCurrentDate.get(0).getEvent();
                         }
                     }
@@ -136,6 +141,12 @@ public class QuestionServiceImpl implements QuestionService {
         }
     }
 
+    /**
+     * Gets list of (event, date, minimal track time) items.
+     *
+     * @param events events
+     * @return list of (event, date, minimal track time) items
+     */
     private List<EventDateMinTrackTime> getConferenceDateMinTrackTimeList(List<Event> events) {
         List<EventDateMinTrackTime> result = new ArrayList<>();
         Map<Event, Map<Long, Optional<LocalTime>>> minTrackTimeInTalkDaysForConferences = new HashMap<>();
