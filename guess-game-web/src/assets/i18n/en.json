@@ -8,6 +8,7 @@
     "conferencesEventTypePrefix": "Conferences – {{value0}}",
     "meetupsEventTypePrefix": "Meetups – {{value0}}",
     "eventLabel": "Event:",
+    "allEventsOptionText": "All events",
     "modeLabel": "Mode:",
     "quantityLabel": "Questions:",
     "guessNameLabel": "Guess name by photo",
