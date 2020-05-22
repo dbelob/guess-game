@@ -6,7 +6,8 @@ export class Event {
     public startDate?: Date,
     public endDate?: Date,
     public siteLink?: string,
-    public youtubeLink?: string
+    public youtubeLink?: string,
+    public displayName?: string
   ) {
   }
 }

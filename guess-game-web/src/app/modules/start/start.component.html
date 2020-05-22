@@ -23,12 +23,8 @@
       <div class="col-sm-10">
         <select multiple class="form-control" id="event" size="4" [(ngModel)]="selectedEvents"
                 (ngModelChange)="onEventChange($event)" name="event">
-          <option *ngIf="events.length == 0" value="" selected disabled>{{'start.allEventsOptionText' | translate}}</option>
           <option *ngFor="let event of events" [ngValue]="event">
-            {{event.name}}
-            <span *ngIf="isEventDateParenthesesVisible(event)">(</span><span *ngIf="isEventStartDateVisible(event)">{{event.startDate | date:"shortDate":undefined:translateService.currentLang}}</span>
-            <span *ngIf="isEventHyphenVisible(event)"> – </span>
-            <span *ngIf="isEventEndDateVisible(event)">{{event.endDate | date:"shortDate":undefined:translateService.currentLang}}</span><span *ngIf="isEventDateParenthesesVisible(event)">)</span>
+            {{event.displayName}}
           </option>
         </select>
       </div>

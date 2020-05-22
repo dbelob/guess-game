@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { formatDate } from "@angular/common";
 import { TranslateService } from "@ngx-translate/core";
 import { QuestionSet } from "../../shared/models/question-set.model";
 import { QuestionService } from "../../shared/services/question.service";
@@ -115,7 +116,7 @@ export class StartComponent implements OnInit {
     if ((eventTypes.length == 1) && eventTypes[0].conference) {
       this.questionService.getEvents(eventTypes[0].id)
         .subscribe(data => {
-          this.events = data;
+          this.events = this.getEventsWithDisplayName(data);
 
           if (this.events.length > 0) {
             let selectedEvent = this.findEventByDefaultEvent(this.defaultEvent);
@@ -138,6 +139,44 @@ export class StartComponent implements OnInit {
     }
   }
 
+  getEventsWithDisplayName(events: Event[]): Event[] {
+    if (events) {
+      for (let i = 0; i < events.length; i++) {
+        let event: Event = events[i];
+        let isEventDateParenthesesVisible = this.isEventDateParenthesesVisible(event);
+        let isEventStartDateVisible = this.isEventStartDateVisible(event);
+        let isEventHyphenVisible = this.isEventHyphenVisible(event);
+        let isEventEndDateVisible = this.isEventEndDateVisible(event);
+
+        let displayName = event.name;
+
+        if (isEventDateParenthesesVisible) {
+          displayName += ' (';
+        }
+
+        if (isEventStartDateVisible) {
+          displayName += formatDate(event.startDate, 'shortDate', this.translateService.currentLang, undefined);
+        }
+
+        if (isEventHyphenVisible) {
+          displayName += ' – ';
+        }
+
+        if (isEventEndDateVisible) {
+          displayName += formatDate(event.endDate, 'shortDate', this.translateService.currentLang, undefined);
+        }
+
+        if (isEventDateParenthesesVisible) {
+          displayName += ')';
+        }
+
+        event.displayName = displayName;
+      }
+    }
+
+    return events;
+  }
+
   findEventByDefaultEvent(defaultEvent: Event): Event {
     if (defaultEvent) {
       for (let i = 0; i < this.events.length; i++) {
@@ -150,7 +189,6 @@ export class StartComponent implements OnInit {
     }
 
     return null;
-
   }
 
   onEventChange(events: Event[]) {
