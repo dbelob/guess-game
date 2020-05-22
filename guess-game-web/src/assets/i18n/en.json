@@ -5,8 +5,8 @@
   "start": {
     "title": "Select questions",
     "eventTypeLabel": "Event type:",
-    "conferencesEventTypePrefix": "Conferences – {{value0}}",
-    "meetupsEventTypePrefix": "Meetups – {{value0}}",
+    "conferencesEventTypeText": "Conferences – {{value0}}",
+    "meetupsEventTypeText": "Meetups – {{value0}}",
     "eventLabel": "Event:",
     "allEventsOptionText": "All events",
     "modeLabel": "Mode:",

@@ -12,8 +12,7 @@
         <select multiple class="form-control" id="eventType" size="16" [(ngModel)]="selectedEventTypes"
                 (ngModelChange)="onEventTypeChange($event)" name="eventType">
           <option *ngFor="let eventType of eventTypes" [ngValue]="eventType">
-            <span *ngIf="eventType.conference" [translate]="'start.conferencesEventTypePrefix'" [translateParams]="{value0: eventType.name}"></span>
-            <span *ngIf="!eventType.conference" [translate]="'start.meetupsEventTypePrefix'" [translateParams]="{value0: eventType.name}"></span>
+            {{eventType.displayName}}
           </option>
         </select>
       </div>

@@ -5,8 +5,8 @@
   "start": {
     "title": "Выберите вопросы",
     "eventTypeLabel": "Тип события:",
-    "conferencesEventTypePrefix": "Конференции – {{value0}}",
-    "meetupsEventTypePrefix": "Митапы – {{value0}}",
+    "conferencesEventTypeText": "Конференции – {{value0}}",
+    "meetupsEventTypeText": "Митапы – {{value0}}",
     "eventLabel": "Событие:",
     "allEventsOptionText": "Все события",
     "modeLabel": "Режим:",
