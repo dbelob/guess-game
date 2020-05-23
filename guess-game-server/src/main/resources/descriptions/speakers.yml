@@ -17638,3 +17638,14 @@ speakers:
         \ читает лекции по программированию в Санкт-Петербургском политехническом университете. Кандидат технических\
         \ наук, доцент. Области научных и практических интересов: статический анализ программ, языки программирования,\
         \ моделирование аппаратных систем, надежные системы."
+  - id: 1234
+    fileName: 1234.jpg
+    name:
+      - {language: en, text: "Kendra Havens"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Kendra Havens is a program manager at Microsoft on the .NET and Visual Studio team. Her focus\
+            \ is .NET productivity and the testing experience in Visual Studio. You may recognize her from videos on .NET\
+            \ Core, VS Code, and Docker. In addition to an unruly enthusiasm for technology, Kendra loves reading and camping."}
+    twitter: gotheap
