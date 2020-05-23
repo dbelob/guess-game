@@ -581,14 +581,16 @@ speakers:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
     company:
-      - {language: en, text: Netifi}
+      - {language: en, text: "Netifi, Inc"}
     bio:
-      - {language: en, text: "Software engineer. Knows how to live with React both from the outside and inside. Java Champion.\
-            \ Co-author of the book on reactive programming in Spring. He mainly writes RSocket, helps Project Reactor and\
-            \ all related ecosystems. Talks much."}
-      - {language: ru, text: "Инженер ПО. Знает, как жить с реактивщиной как извне, так и внутри. Java Champion. Соавтор к\
-            ниги по реактивному программированию в Spring. В основном пишет RSocket, помогает Project Reactor и всем связа\
-            нным экосистемам. Много говорит."}
+      - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
+            \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
+            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+      - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
+            я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
+            \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
+            ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
+            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
     twitter: OlehDokuka
     javaChampion: true
   - id: 34
@@ -613,22 +615,23 @@ speakers:
       - {language: en, text: JFrog}
     bio:
       - language: en
-        text: "Baruch Sadogursky (a.k.a JBaruch) is the Head of Developer Relations and a Developer Advocate at JFrog. His\
-            \ passion is speaking about technology. Well, speaking in general, but doing it about technology makes him look\
-            \ smart, and 18 years of hi-tech experience sure helps. When he's not on stage (or on a plane to get there), he\
-            \ learns about technology, people and how they work, or more precisely, don't work together.\r\n\r\nHe is a CNCF\
-            \ ambassador, Developer Champion, and a professional conference speaker on DevOps, DevSecOps, Go, Java and many\
-            \ other topics, and is a regular at the industry's most prestigious events including DockerCon, GopherCon, Devoxx,\
-            \ DevOps Days, OSCON, Qcon, JavaOne and many others. You can see some of his talks at jfrog.com/shownotes"
+        text: "Baruch Sadogursky (a.k.a JBaruch) is the Head of DevOps Advocacy and a Developer Advocate at JFrog. His passion\
+            \ is speaking about technology. Well, speaking in general, but doing it about technology makes him look smart,\
+            \ and 19 years of hi-tech experience sure helps. When he’s not on stage (or on a plane to get there), he learns\
+            \ about technology, people and how they work, or more precisely, don’t work together.\n\nHe is a co-author of\
+            \ the Liquid Software book, a CNCF ambassador and a passionate conference speaker on DevOps, DevSecOps, digital\
+            \ transformation, containers and cloud-native, artifact management and other topics, and is a regular at the industry’\
+            s most prestigious events including DockerCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne and many others. You\
+            \ can see some of his talks at jfrog.com/shownotes"
       - language: ru
-        text: "Барух Садогурский (a.k.a. JBaruch) — Head of Developer Relations и Developer Advocate в компании JFrog. Бол\
-            ьше всего любит рассказывать о технологиях — то есть просто поболтать любит, но человек, говорящий о технологи\
-            ях, имеет умный вид, да и 18 лет опыта в сфере высоких технологий никуда не делись. Когда он не выступает (ну\
-            , или не летит к месту следующего выступления), то изучает технологии, людей и то, как они работают, точнее, н\
-            е работают вместе.\r\n\r\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер п\
-            о таким темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, к\
-            ак Joker, JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Не\
-            которые его доклады можно посмотреть здесь: jfrog.com/shownotes"
+        text: "Барух Садогурский (a.k.a. JBaruch) — Head of DevOps Advocacy и Developer Advocate в компании JFrog. Больше\
+            \ всего любит рассказывать о технологиях — то есть просто поболтать любит, но человек, говорящий о технологиях\
+            , имеет умный вид, да и 18 лет опыта в сфере высоких технологий никуда не делись. Когда он не выступает (ну, и\
+            ли не летит к месту следующего выступления), то изучает технологии, людей и то, как они работают, точнее, не р\
+            аботают вместе.\n\nБарух — соавтор книги «Liquid Software», CNCF ambassador и профессиональный спикер по таким\
+            \ темам, как DevOps, DevSecOps, Go, Java и др. Он регулярно выступает на таких известных конференциях, как Joker,\
+            \ JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Некоторые\
+            \ его доклады можно посмотреть здесь: jfrog.com/shownotes"
     twitter: jbaruch
   - id: 36
     fileName: 0036.jpg
@@ -1229,9 +1232,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
-            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
-            either by plane or motorbike."
+            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
+            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
+            — either by plane or motorbike."
     twitter: DaschnerS
     javaChampion: true
   - id: 75
@@ -17655,3 +17658,18 @@ speakers:
     company: []
     bio:
       - {language: en, text: TBD}
+  - id: 1236
+    fileName: 1236.jpg
+    name:
+      - {language: en, text: "Joel Spolsky"}
+    company: []
+    bio:
+      - language: en
+        text: "Joel Spolsky is a software developer in New York City.\n\nIn 2000 he co-founded Fog Creek Software, where lots\
+            \ of cool things like the FogBugz bug tracker, Trello, and Glitch were created. Joel also worked with Jeff Atwood\
+            \ to create Stack Overflow and served as CEO of Stack Overflow from 2010-2019.\n\nToday Joel serves as the chairman\
+            \ of the board for Stack Overflow, Glitch, and HASH.\n\nHe served as a paratrooper in the Israeli army, graduated\
+            \ from Yale University in 1991, and spent time on the Excel team at Microsoft where he was the program manager\
+            \ responsible for the launch of VBA in Excel 5.0. He has also written four books, do a lot of Arduino stuff, and\
+            \ talk too much about Barry’s Bootcamp and Burning Man."
+    twitter: spolsky

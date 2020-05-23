@@ -72,7 +72,7 @@ public class ImageUtils {
                 return false;
             }
         } catch (IOException e) {
-            throw new IOException(String.format("Can't read image file %s or '%s' URL", destinationFileName, sourceUrl), e);
+            throw new IOException(String.format("Can't read image file %s for '%s' URL", destinationFileName, sourceUrl), e);
         }
     }
 
