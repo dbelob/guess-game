@@ -17527,10 +17527,15 @@ speakers:
     company:
       - {language: en, text: "Virginia Tech"}
     bio:
-      - {language: en, text: "Ruslan is a Research Assistant Professor with the Department of Electrical and Computer Engineering\
-            \ at Virginia Tech and work in the Systems Software Research Group, led by Prof. Binoy Ravindran. Prior to that,\
-            \ he worked as a Senior Software Engineer with Pure Storage, Inc. and as a Software Engineer with Microsoft Corporation.\
-            \ He completed a Ph.D. in Computer Science at Virginia Tech in 2013. His Ph.D. advisor was Prof. Godmar Back."}
+      - language: en
+        text: "Ruslan Nikolaev completed a Ph.D. in Computer Science at Virginia Tech, the USA in 2013. His Ph.D. advisor\
+            \ was Prof. Godmar Back. His Ph.D. dissertation was \"Design and Implementation of the VirtuOS Operating System.\"\
+            \ He published research papers at various conference venues, including SOSP, VEE, PPoPP, PODC, and DISC.\n\nRuslan\
+            \ Nikolaev previously had Software Engineer internships with Microsoft and VMware, worked full time as a Software\
+            \ Engineer with Microsoft, and as a Senior Software Engineer with Pure Storage.\n\nHe presently holds the position\
+            \ of a Research Assistant Professor at Virginia Tech, Electrical, and Computer Engineering Department, where he\
+            \ works at Systems Software Research Group (SSRG), led by Prof. Binoy Ravindran. He currently mentors four Ph.D.\
+            \ students and works on different projects in systems and concurrency."
   - id: 1226
     fileName: 1226.jpg
     name:
@@ -17673,3 +17678,34 @@ speakers:
             \ responsible for the launch of VBA in Excel 5.0. He has also written four books, do a lot of Arduino stuff, and\
             \ talk too much about Barry’s Bootcamp and Burning Man."
     twitter: spolsky
+  - id: 1237
+    fileName: 1237.jpg
+    name:
+      - {language: en, text: "Maxim Babenko"}
+    company:
+      - {language: en, text: Yandex}
+    bio:
+      - language: en
+        text: "PhD, Associate Professor of Algorithms and Programming Technology at MIPT, head of the Yandex Faculty of Computer\
+            \ Science at HSE.\n\nTeaches the courses \"Algorithms and data structures\" and \"Algorithms in external memory\"\
+            \ at the Yandex School of Data Analysis. Creator of the Big Data Infrastructure academic program.\n\nCandidate\
+            \ of Sciences (PhD) in Mathematical Logic, Algebra and Number Theory, Associate Professor of Algorithms and Programming\
+            \ Technology at the Moscow Institute of Physics and Technology, and head of the Yandex Faculty of Computer Science\
+            \ at the Higher School of Economics National Research University. Leads development of the YT platform for distributed\
+            \ computing and data processing at Yandex.\n\nA long-standing organizer of computer science competitions for youth\
+            \ and students. Adept at explaining the most complex subject matter in clear and simple terms."
+  - id: 1238
+    fileName: 1238.jpg
+    name:
+      - {language: en, text: "Lena Hall"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Lena Hall is a Director of Engineering at Microsoft. She is leading a team and technical strategy\
+            \ for product improvement efforts across Big Data services at Microsoft, as a part of Cloud Advocacy in Azure\
+            \ Engineering. Lena has more than 10 years of experience in software engineering with a focus on distributed cloud\
+            \ programming, real-time system design, highly scalable and performant systems, big data analysis, data science,\
+            \ functional programming, and machine learning. Previously, she was a senior software engineer at Microsoft Research.\
+            \ She’s co-organizes a conference called ML4ALL, and is often an invited member of program committees for conferences\
+            \ like Kafka Summit, Lambda World, and others. Lena holds a Master’s degree in computer science."}
+    twitter: lenadroid
