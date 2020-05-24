@@ -46,6 +46,14 @@ public class PlaceEventTypeEventSpeakerTalkDaoImpl implements PlaceDao, EventTyp
     }
 
     @Override
+    public EventType getEventTypeById(long id) {
+        return sourceInformation.getEventTypes().stream()
+                .filter(et -> (et.getId() == id))
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
     public List<Place> getPlaces() {
         return sourceInformation.getPlaces();
     }

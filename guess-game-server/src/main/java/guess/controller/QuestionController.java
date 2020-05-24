@@ -70,8 +70,8 @@ public class QuestionController {
 
     @GetMapping("/events")
     @ResponseBody
-    public List<EventBriefDto> getEvents(@RequestParam long eventTypeId, HttpSession httpSession) {
-        List<Event> events = questionService.getEvents(eventTypeId);
+    public List<EventBriefDto> getEvents(@RequestParam List<Long> eventTypeIds, HttpSession httpSession) {
+        List<Event> events = questionService.getEvents(eventTypeIds);
         Language language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate));

@@ -46,9 +46,9 @@ export class QuestionService {
       );
   }
 
-  getEvents(eventTypeId: number): Observable<Event[]> {
+  getEvents(eventTypeIds: number[]): Observable<Event[]> {
     let params = new HttpParams()
-      .set('eventTypeId', eventTypeId.toString());
+      .set('eventTypeIds', eventTypeIds.toString());
 
     return this.http.get<Event[]>(`${this.baseUrl}/events`, {params: params})
       .pipe(

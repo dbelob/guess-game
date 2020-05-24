@@ -20,7 +20,7 @@ public interface QuestionService {
 
     List<EventType> getEventTypes();
 
-    List<Event> getEvents(long eventTypeId);
+    List<Event> getEvents(List<Long> eventTypeIds);
 
     Event getDefaultEvent(LocalDateTime dateTime);
 

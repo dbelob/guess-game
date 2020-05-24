@@ -113,30 +113,24 @@ export class StartComponent implements OnInit {
   }
 
   loadEvents(eventTypes: EventType[]) {
-    if ((eventTypes.length == 1) && eventTypes[0].conference) {
-      this.questionService.getEvents(eventTypes[0].id)
-        .subscribe(data => {
-          this.events = this.getEventsWithDisplayName(data);
+    this.questionService.getEvents(eventTypes.map(et => et.id))
+      .subscribe(data => {
+        this.events = this.getEventsWithDisplayName(data);
 
-          if (this.events.length > 0) {
-            let selectedEvent = this.findEventByDefaultEvent(this.defaultEvent);
+        if (this.events.length > 0) {
+          let selectedEvent = this.findEventByDefaultEvent(this.defaultEvent);
 
-            if (selectedEvent) {
-              this.selectedEvents = [selectedEvent];
-            } else {
-              this.selectedEvents = [this.events[this.events.length - 1]];
-            }
+          if (selectedEvent) {
+            this.selectedEvents = [selectedEvent];
           } else {
-            this.selectedEvents = [];
+            this.selectedEvents = [this.events[this.events.length - 1]];
           }
+        } else {
+          this.selectedEvents = [];
+        }
 
-          this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, this.selectedGuessType);
-        });
-    } else {
-      this.events = [];
-      this.selectedEvents = [];
-      this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, this.selectedGuessType);
-    }
+        this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, this.selectedGuessType);
+      });
   }
 
   getEventsWithDisplayName(events: Event[]): Event[] {
@@ -229,6 +223,11 @@ export class StartComponent implements OnInit {
       .subscribe(data => {
         this.router.navigateByUrl('/guess/name');
       });
+  }
+
+  isEventsDisabled(): boolean {
+    return (this.selectedEventTypes &&
+      ((this.selectedEventTypes.length > 1) || ((this.selectedEventTypes.length === 1) && !this.selectedEventTypes[0].conference)));
   }
 
   isStartDisabled(): boolean {
