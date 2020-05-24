@@ -14,14 +14,10 @@ export class LocaleService {
 
   constructor(private http: HttpClient, private messageService: MessageService,
               public translateService: TranslateService) {
-
     this.translateService.addLangs(['en', 'ru']);
     this.translateService.setDefaultLang('en');
 
-    this.getLanguage()
-      .subscribe(data => {
-        this.changeInterfaceLanguage(data);
-      });
+    this.getLanguageAndChangeInterfaceLanguage();
   }
 
   getLanguage(): Observable<Language> {
@@ -49,7 +45,13 @@ export class LocaleService {
       );
   }
 
-  changeInterfaceLanguage(language: Language) {
-    this.translateService.use(language === Language.Russian ? 'ru' : 'en');
+  async getLanguageAndChangeInterfaceLanguage() {
+    let language = await this.getLanguage().toPromise();
+
+    this.changeInterfaceLanguage(language);
+  }
+
+  async changeInterfaceLanguage(language: Language) {
+    await this.translateService.use(language === Language.Russian ? 'ru' : 'en').toPromise();
   }
 }

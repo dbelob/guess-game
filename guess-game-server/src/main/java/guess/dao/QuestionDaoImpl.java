@@ -68,7 +68,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             questionSets.add(new QuestionSet(
                     eventType.getId(),
-                    createEventTypeNameWithPrefix(eventType),
+                    createEventTypeDisplayName(eventType),
                     eventType.getLogoFileName(),
                     QuestionUtils.removeDuplicatesById(speakerQuestions),
                     QuestionUtils.removeDuplicatesById(talkQuestions)));
@@ -83,12 +83,12 @@ public class QuestionDaoImpl implements QuestionDao {
      * @param eventType event type
      * @return name with prefix
      */
-    private static List<LocaleItem> createEventTypeNameWithPrefix(EventType eventType) {
-        final String CONFERENCES_EVENT_TYPE_PREFIX = "conferencesEventTypePrefix";
-        final String MEETUPS_EVENT_TYPE_PREFIX = "meetupsEventTypePrefix";
+    private static List<LocaleItem> createEventTypeDisplayName(EventType eventType) {
+        final String CONFERENCES_EVENT_TYPE_TEXT = "conferencesEventTypeText";
+        final String MEETUPS_EVENT_TYPE_TEXT = "meetupsEventTypeText";
 
         List<LocaleItem> localeItems = new ArrayList<>();
-        String resourceKey = (eventType.getConference() != null) ? CONFERENCES_EVENT_TYPE_PREFIX : MEETUPS_EVENT_TYPE_PREFIX;
+        String resourceKey = (eventType.getConference() != null) ? CONFERENCES_EVENT_TYPE_TEXT : MEETUPS_EVENT_TYPE_TEXT;
         String enText = LocalizationUtils.getString(eventType.getName(), Language.ENGLISH);
         String ruText = LocalizationUtils.getString(eventType.getName(), Language.RUSSIAN);
 

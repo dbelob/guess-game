@@ -70,7 +70,7 @@ export class StartComponent implements OnInit {
   loadEventTypes() {
     this.questionService.getEventTypes()
       .subscribe(data => {
-        this.eventTypes = this.getEventTypesWithDisplayName(data);
+        this.eventTypes = data;
 
         if (this.eventTypes.length > 0) {
           this.questionService.getDefaultEvent()
@@ -92,20 +92,6 @@ export class StartComponent implements OnInit {
           this.loadEvents(this.selectedEventTypes);
         }
       });
-  }
-
-  getEventTypesWithDisplayName(eventTypes: EventType[]): EventType[] {
-    if (eventTypes) {
-      for (let i = 0; i < eventTypes.length; i++) {
-        let eventType: EventType = eventTypes[i];
-        let key = (eventType.conference) ? 'start.conferencesEventTypeText' : 'start.meetupsEventTypeText';
-        let param = {value0: eventType.name};
-
-        eventType.displayName = this.translateService.instant(key, param);
-      }
-    }
-
-    return eventTypes;
   }
 
   findEventTypeByDefaultEvent(defaultEvent: Event): Event {

@@ -14,11 +14,13 @@ public class EventTypeBriefDto {
     private final long id;
     private final boolean conference;
     private final String name;
+    private final String displayName;
 
-    public EventTypeBriefDto(long id, boolean conference, String name) {
+    public EventTypeBriefDto(long id, boolean conference, String name, String displayName) {
         this.id = id;
         this.conference = conference;
         this.name = name;
+        this.displayName = displayName;
     }
 
     public long getId() {
@@ -33,12 +35,23 @@ public class EventTypeBriefDto {
         return name;
     }
 
+    public String getDisplayName() {
+        return displayName;
+    }
 
     public static EventTypeBriefDto convertToBriefDto(EventType eventType, Language language) {
+        final String CONFERENCES_EVENT_TYPE_TEXT = "conferencesEventTypeText";
+        final String MEETUPS_EVENT_TYPE_TEXT = "meetupsEventTypeText";
+
+        String name = LocalizationUtils.getString(eventType.getName(), language);
+        String resourceKey = (eventType.isEventTypeConference()) ? CONFERENCES_EVENT_TYPE_TEXT : MEETUPS_EVENT_TYPE_TEXT;
+        String displayName = String.format(LocalizationUtils.getResourceString(resourceKey, language), name);
+
         return new EventTypeBriefDto(
                 eventType.getId(),
                 eventType.isEventTypeConference(),
-                LocalizationUtils.getString(eventType.getName(), language));
+                name,
+                displayName);
     }
 
     public static List<EventTypeBriefDto> convertToBriefDto(List<EventType> eventTypes, Language language) {

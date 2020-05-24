@@ -25,7 +25,7 @@ public class EventTypeDto extends EventTypeBriefDto {
     public EventTypeDto(EventTypeBriefDto eventTypeBriefDto, String description, String siteLink,
                         String vkLink, String twitterLink, String facebookLink, String youtubeLink, String telegramLink,
                         String logoFileName) {
-        super(eventTypeBriefDto.getId(), eventTypeBriefDto.isConference(), eventTypeBriefDto.getName());
+        super(eventTypeBriefDto.getId(), eventTypeBriefDto.isConference(), eventTypeBriefDto.getName(), eventTypeBriefDto.getDisplayName());
 
         this.description = description;
         this.siteLink = siteLink;
