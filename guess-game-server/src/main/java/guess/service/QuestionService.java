@@ -14,15 +14,11 @@ import java.util.List;
  * Question service.
  */
 public interface QuestionService {
-    List<QuestionSet> getQuestionSets();
-
-    Long getDefaultQuestionSetId(LocalDate date);
-
     List<EventType> getEventTypes();
 
     List<Event> getEvents(List<Long> eventTypeIds);
 
     Event getDefaultEvent(LocalDateTime dateTime);
 
-    List<Integer> getQuantities(List<Long> questionSetIds, GuessMode guessMode) throws QuestionSetNotExistsException;
+    List<Integer> getQuantities(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) throws QuestionSetNotExistsException;
 }

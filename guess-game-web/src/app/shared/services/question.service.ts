@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { catchError } from "rxjs/operators";
-import { MessageService } from "../../modules/message/message.service";
-import { QuestionSet } from "../models/question-set.model";
 import { Observable } from "rxjs";
+import { catchError } from "rxjs/operators";
 import { EventType } from "../models/event-type.model";
 import { Event } from "../models/event.model";
+import { MessageService } from "../../modules/message/message.service";
 
 @Injectable({
   providedIn: 'root'
@@ -14,26 +13,6 @@ export class QuestionService {
   private baseUrl = 'api/question';
 
   constructor(private http: HttpClient, private messageService: MessageService) {
-  }
-
-  getQuestionSets(): Observable<QuestionSet[]> {
-    return this.http.get<QuestionSet[]>(`${this.baseUrl}/sets`)
-      .pipe(
-        catchError((response: Response) => {
-          this.messageService.reportMessage(response);
-          throw response;
-        })
-      );
-  }
-
-  getDefaultQuestionSetId(): Observable<number> {
-    return this.http.get<number>(`${this.baseUrl}/default-set-id`)
-      .pipe(
-        catchError((response: Response) => {
-          this.messageService.reportMessage(response);
-          throw response;
-        })
-      );
   }
 
   getEventTypes(): Observable<EventType[]> {
@@ -69,9 +48,10 @@ export class QuestionService {
       );
   }
 
-  getQuantities(questionSetIds: number[], guessMode: string): Observable<number[]> {
+  getQuantities(eventTypeIds: number[], eventIds: number[], guessMode: string): Observable<number[]> {
     let params = new HttpParams()
-      .set('questionSetIds', questionSetIds.toString())
+      .set('eventTypeIds', eventTypeIds.toString())
+      .set('eventIds', eventIds.toString())
       .set('guessMode', guessMode);
 
     return this.http.get<number[]>(`${this.baseUrl}/quantities`, {params: params})

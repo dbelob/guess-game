@@ -9,33 +9,35 @@ import java.util.List;
  * Start parameters DTO
  */
 public class StartParametersDto {
-    private List<Long> questionSetIds;
-    private int quantity;
+    private List<Long> eventTypeIds;
+    private List<Long> eventIds;
     private String guessMode;
+    private int quantity;
 
     public StartParametersDto() {
     }
 
-    private StartParametersDto(List<Long> questionSetIds, int quantity, String guessMode) {
-        this.questionSetIds = questionSetIds;
-        this.quantity = quantity;
+    private StartParametersDto(List<Long> eventTypeIds, List<Long> eventIds, String guessMode, int quantity) {
+        this.eventTypeIds = eventTypeIds;
+        this.eventIds = eventIds;
         this.guessMode = guessMode;
-    }
-
-    public List<Long> getQuestionSetIds() {
-        return questionSetIds;
-    }
-
-    public void setQuestionSetIds(List<Long> questionSetIds) {
-        this.questionSetIds = questionSetIds;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public List<Long> getEventTypeIds() {
+        return eventTypeIds;
+    }
+
+    public void setEventTypeIds(List<Long> eventTypeIds) {
+        this.eventTypeIds = eventTypeIds;
+    }
+
+    public List<Long> getEventIds() {
+        return eventIds;
+    }
+
+    public void setEventIds(List<Long> eventIds) {
+        this.eventIds = eventIds;
     }
 
     public String getGuessMode() {
@@ -46,10 +48,19 @@ public class StartParametersDto {
         this.guessMode = guessMode;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public static StartParameters convertFromDto(StartParametersDto dto) {
         return new StartParameters(
-                dto.getQuestionSetIds(),
-                dto.getQuantity(),
-                GuessMode.valueOf(dto.getGuessMode()));
+                dto.getEventTypeIds(),
+                dto.getEventIds(),
+                GuessMode.valueOf(dto.getGuessMode()),
+                dto.getQuantity());
     }
 }

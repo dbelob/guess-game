@@ -1,14 +1,14 @@
 package guess.service;
 
-import guess.dao.AnswerDao;
-import guess.dao.QuestionDao;
-import guess.dao.StateDao;
+import guess.dao.*;
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.*;
 import guess.domain.answer.Answer;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
 import guess.domain.question.*;
+import guess.domain.source.Event;
+import guess.domain.source.EventType;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Talk;
 import guess.util.LocalizationUtils;
@@ -27,12 +27,16 @@ public class StateServiceImpl implements StateService {
     private final StateDao stateDao;
     private final QuestionDao questionDao;
     private final AnswerDao answerDao;
+    private final EventTypeDao eventTypeDao;
+    private final EventDao eventDao;
 
     @Autowired
-    public StateServiceImpl(StateDao stateDao, QuestionDao questionDao, AnswerDao answerDao) {
+    public StateServiceImpl(StateDao stateDao, QuestionDao questionDao, AnswerDao answerDao, EventTypeDao eventTypeDao, EventDao eventDao) {
         this.stateDao = stateDao;
         this.questionDao = questionDao;
         this.answerDao = answerDao;
+        this.eventTypeDao = eventTypeDao;
+        this.eventDao = eventDao;
     }
 
     @Override
@@ -73,7 +77,7 @@ public class StateServiceImpl implements StateService {
 
     private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
         // Find unique questions by ids
-        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds(), startParameters.getGuessMode());
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getEventTypeIds(), startParameters.getEventIds(), startParameters.getGuessMode());
 
         // Fill question and answers list
         List<QuestionAnswers> questionAnswersList = new ArrayList<>();
@@ -118,20 +122,32 @@ public class StateServiceImpl implements StateService {
         String logoFileName;
 
         // Set name and logo filename
-        if (startParameters.getQuestionSetIds().size() == 1) {
-            QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetIds().get(0));
-            name = questionSet.getName();
-            logoFileName = questionSet.getLogoFileName();
+        if (startParameters.getEventTypeIds().size() == 1) {
+            EventType eventType = eventTypeDao.getEventTypeById(startParameters.getEventTypeIds().get(0));
+
+            if (eventType.isEventTypeConference()) {
+                if (startParameters.getEventIds().size() == 1) {
+                    Event event = eventDao.getEventById(startParameters.getEventIds().get(0));
+
+                    name = (event != null) ? event.getName() : eventType.getName();
+                } else {
+                    name = eventType.getName();
+                }
+            } else {
+                name = eventType.getName();
+            }
+
+            logoFileName = eventType.getLogoFileName();
         } else {
-            final String SELECTED_SETS = "selectedSets";
+            final String SELECTED_EVENT_TYPES = "selectedEventTypes";
 
             name = Arrays.asList(
                     new LocaleItem(Language.ENGLISH.getCode(), String.format(
-                            LocalizationUtils.getResourceString(SELECTED_SETS, Language.ENGLISH),
-                            startParameters.getQuestionSetIds().size())),
+                            LocalizationUtils.getResourceString(SELECTED_EVENT_TYPES, Language.ENGLISH),
+                            startParameters.getEventTypeIds().size())),
                     new LocaleItem(Language.RUSSIAN.getCode(), String.format(
-                            LocalizationUtils.getResourceString(SELECTED_SETS, Language.RUSSIAN),
-                            startParameters.getQuestionSetIds().size())));
+                            LocalizationUtils.getResourceString(SELECTED_EVENT_TYPES, Language.RUSSIAN),
+                            startParameters.getEventTypeIds().size())));
             logoFileName = null;
         }
 

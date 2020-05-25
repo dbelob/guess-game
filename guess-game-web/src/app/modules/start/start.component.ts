@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { formatDate } from "@angular/common";
 import { TranslateService } from "@ngx-translate/core";
-import { QuestionSet } from "../../shared/models/question-set.model";
 import { StartParameters } from "../../shared/models/start-parameters.model";
 import { GuessMode } from "../../shared/models/guess-type.model";
 import { EventType } from "../../shared/models/event-type.model";
@@ -15,14 +14,11 @@ import { StateService } from "../../shared/services/state.service";
   templateUrl: './start.component.html'
 })
 export class StartComponent implements OnInit {
-  public questionSets: QuestionSet[] = [];          //TODO: delete
-  public selectedQuestionSets: QuestionSet[] = [];  //TODO: delete
-
-  public eventTypes: EventType[];
+  public eventTypes: EventType[] = [];
   public selectedEventTypes: EventType[] = [];
 
-  public events: Event[];
-  public selectedEvents = [];
+  public events: Event[] = [];
+  public selectedEvents: Event[] = [];
 
   public guessMode = GuessMode;
   public selectedGuessMode: GuessMode = GuessMode.GuessNameByPhotoMode;
@@ -37,34 +33,7 @@ export class StartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadQuestionSets();  //TODO: delete
     this.loadEventTypes();
-  }
-
-  //TODO: delete
-  loadQuestionSets() {
-    this.questionService.getQuestionSets()
-      .subscribe(data => {
-        this.questionSets = data;
-
-        if (this.questionSets.length > 0) {
-          this.questionService.getDefaultQuestionSetId()
-            .subscribe(data => {
-              let defaultQuestionSetId = data;
-              if ((defaultQuestionSetId < 0) || (defaultQuestionSetId >= this.questionSets.length)) {
-                defaultQuestionSetId = 0;
-              }
-
-              this.selectedQuestionSets = [this.questionSets[defaultQuestionSetId]];
-              this.loadQuantities(this.selectedQuestionSets, this.selectedGuessMode);
-            });
-        }
-      });
-  }
-
-  //TODO: delete
-  onSetChange(questionSets: QuestionSet[]) {
-    this.loadQuantities(questionSets, this.selectedGuessMode);
   }
 
   loadEventTypes() {
@@ -129,7 +98,7 @@ export class StartComponent implements OnInit {
           this.selectedEvents = [];
         }
 
-        this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, this.selectedGuessMode);
+        this.loadQuantities(this.selectedEventTypes, this.selectedEvents, this.selectedGuessMode);
       });
   }
 
@@ -186,17 +155,15 @@ export class StartComponent implements OnInit {
   }
 
   onEventChange(events: Event[]) {
-    this.loadQuantities2(this.selectedEventTypes, events, this.selectedGuessMode);
+    this.loadQuantities(this.selectedEventTypes, events, this.selectedGuessMode);
   }
 
   onModeChange(guessMode: string) {
-    this.loadQuantities(this.selectedQuestionSets, guessMode);  //TODO: delete
-    this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, guessMode);
+    this.loadQuantities(this.selectedEventTypes, this.selectedEvents, guessMode);
   }
 
-  //TODO: delete
-  loadQuantities(questionSets: QuestionSet[], guessMode: string) {
-    this.questionService.getQuantities(questionSets.map(s => s.id), guessMode)
+  loadQuantities(eventTypes: EventType[], events: Event[], guessMode) {
+    this.questionService.getQuantities(eventTypes.map(et => et.id), events.map(e => e.id), guessMode)
       .subscribe(data => {
         this.quantities = data;
 
@@ -208,18 +175,13 @@ export class StartComponent implements OnInit {
       });
   }
 
-  //TODO: rename
-  loadQuantities2(eventTypes: EventType[], events: Event[], guessMode) {
-    //TODO: implement
-    console.log('(loadQuantities) eventTypes: ' + JSON.stringify(eventTypes) + '; events: ' + JSON.stringify(events) + '; guessMode: ' + guessMode);
-  }
-
   start() {
     this.stateService.setStartParameters(
       new StartParameters(
-        this.selectedQuestionSets.map(s => s.id),
-        this.selectedQuantity,
-        this.selectedGuessMode))
+        this.selectedEventTypes.map(et => et.id),
+        this.selectedEvents.map(e => e.id),
+        this.selectedGuessMode,
+        this.selectedQuantity))
       .subscribe(data => {
         this.router.navigateByUrl('/guess/name');
       });
@@ -231,7 +193,9 @@ export class StartComponent implements OnInit {
   }
 
   isStartDisabled(): boolean {
-    return (this.selectedQuestionSets && (this.selectedQuestionSets.length <= 0)) ||
+    return (!this.selectedEventTypes) || (!this.selectedEvents) ||
+      (this.selectedEventTypes && (this.selectedEventTypes.length <= 0)) ||
+      (this.selectedEvents && (this.selectedEvents.length <= 0)) ||
       (this.selectedQuantity == 0);
   }
 
@@ -252,7 +216,6 @@ export class StartComponent implements OnInit {
   }
 
   onLanguageChange() {
-    this.loadQuestionSets();
     this.loadEventTypes();
   }
 }

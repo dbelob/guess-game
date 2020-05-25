@@ -1,8 +1,9 @@
 export class StartParameters {
   constructor(
-    public questionSetIds?: number[],
-    public quantity?: number,
-    public guessMode?: string
+    public eventTypeIds?: number[],
+    public eventIds?: number[],
+    public guessMode?: string,
+    public quantity?: number
   ) {
   }
 }

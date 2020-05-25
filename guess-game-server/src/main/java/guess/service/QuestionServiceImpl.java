@@ -66,16 +66,6 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<QuestionSet> getQuestionSets() {
-        return questionDao.getQuestionSets();
-    }
-
-    @Override
-    public Long getDefaultQuestionSetId(LocalDate date) {
-        return questionDao.getDefaultQuestionSetId(date);
-    }
-
-    @Override
     public List<EventType> getEventTypes() {
         return eventTypeDao.getEventTypes();
     }
@@ -247,8 +237,8 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<Integer> getQuantities(List<Long> questionSetIds, GuessMode guessMode) throws QuestionSetNotExistsException {
-        List<Question> uniqueQuestions = questionDao.getQuestionByIds(questionSetIds, guessMode);
+    public List<Integer> getQuantities(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) throws QuestionSetNotExistsException {
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(eventTypeIds, eventIds, guessMode);
 
         return QuestionUtils.getQuantities(uniqueQuestions.size());
     }

@@ -3,10 +3,12 @@ package guess.controller;
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessMode;
 import guess.domain.Language;
-import guess.domain.question.QuestionSet;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
-import guess.dto.start.*;
+import guess.dto.start.EventBriefDto;
+import guess.dto.start.EventDto;
+import guess.dto.start.EventTypeBriefDto;
+import guess.dto.start.EventTypeDto;
 import guess.service.LocaleService;
 import guess.service.QuestionService;
 import guess.util.LocalizationUtils;
@@ -18,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
@@ -36,23 +37,6 @@ public class QuestionController {
     public QuestionController(QuestionService questionService, LocaleService localeService) {
         this.questionService = questionService;
         this.localeService = localeService;
-    }
-
-    @GetMapping("/sets")
-    @ResponseBody
-    public List<QuestionSetDto> getQuestionSets(HttpSession httpSession) {
-        List<QuestionSet> questionSets = questionService.getQuestionSets();
-        Language language = localeService.getLanguage(httpSession);
-
-        questionSets.sort(Comparator.comparing(qs -> LocalizationUtils.getString(qs.getName(), language)));
-
-        return QuestionSetDto.convertToDto(questionSets, language);
-    }
-
-    @GetMapping("/default-set-id")
-    @ResponseBody
-    public Long getDefaultQuestionSetId() {
-        return questionService.getDefaultQuestionSetId(LocalDate.now());
     }
 
     @GetMapping("/event-types")
@@ -90,7 +74,8 @@ public class QuestionController {
 
     @GetMapping("/quantities")
     @ResponseBody
-    public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds, @RequestParam String guessMode) throws QuestionSetNotExistsException {
-        return questionService.getQuantities(questionSetIds, GuessMode.valueOf(guessMode));
+    public List<Integer> getQuantities(@RequestParam List<Long> eventTypeIds, @RequestParam List<Long> eventIds,
+                                       @RequestParam String guessMode) throws QuestionSetNotExistsException {
+        return questionService.getQuantities(eventTypeIds, eventIds, GuessMode.valueOf(guessMode));
     }
 }
