@@ -4,7 +4,7 @@ import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
 import guess.dao.QuestionDao;
 import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionSet;
@@ -247,8 +247,8 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<Integer> getQuantities(List<Long> questionSetIds, GuessType guessType) throws QuestionSetNotExistsException {
-        List<Question> uniqueQuestions = questionDao.getQuestionByIds(questionSetIds, guessType);
+    public List<Integer> getQuantities(List<Long> questionSetIds, GuessMode guessMode) throws QuestionSetNotExistsException {
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(questionSetIds, guessMode);
 
         return QuestionUtils.getQuantities(uniqueQuestions.size());
     }

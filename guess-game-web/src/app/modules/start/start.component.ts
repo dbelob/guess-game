@@ -3,12 +3,12 @@ import { Router } from "@angular/router";
 import { formatDate } from "@angular/common";
 import { TranslateService } from "@ngx-translate/core";
 import { QuestionSet } from "../../shared/models/question-set.model";
-import { QuestionService } from "../../shared/services/question.service";
-import { StateService } from "../../shared/services/state.service";
 import { StartParameters } from "../../shared/models/start-parameters.model";
-import { GuessType } from "../../shared/models/guess-type.model";
+import { GuessMode } from "../../shared/models/guess-type.model";
 import { EventType } from "../../shared/models/event-type.model";
 import { Event } from "../../shared/models/event.model";
+import { QuestionService } from "../../shared/services/question.service";
+import { StateService } from "../../shared/services/state.service";
 
 @Component({
   selector: 'app-start',
@@ -24,8 +24,8 @@ export class StartComponent implements OnInit {
   public events: Event[];
   public selectedEvents = [];
 
-  public guessType = GuessType;
-  public selectedGuessType: GuessType = GuessType.GuessNameType;
+  public guessMode = GuessMode;
+  public selectedGuessMode: GuessMode = GuessMode.GuessNameByPhotoMode;
 
   public quantities: number[] = [];
   public selectedQuantity: number;
@@ -56,7 +56,7 @@ export class StartComponent implements OnInit {
               }
 
               this.selectedQuestionSets = [this.questionSets[defaultQuestionSetId]];
-              this.loadQuantities(this.selectedQuestionSets, this.selectedGuessType);
+              this.loadQuantities(this.selectedQuestionSets, this.selectedGuessMode);
             });
         }
       });
@@ -64,7 +64,7 @@ export class StartComponent implements OnInit {
 
   //TODO: delete
   onSetChange(questionSets: QuestionSet[]) {
-    this.loadQuantities(questionSets, this.selectedGuessType);
+    this.loadQuantities(questionSets, this.selectedGuessMode);
   }
 
   loadEventTypes() {
@@ -129,7 +129,7 @@ export class StartComponent implements OnInit {
           this.selectedEvents = [];
         }
 
-        this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, this.selectedGuessType);
+        this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, this.selectedGuessMode);
       });
   }
 
@@ -186,17 +186,17 @@ export class StartComponent implements OnInit {
   }
 
   onEventChange(events: Event[]) {
-    this.loadQuantities2(this.selectedEventTypes, events, this.selectedGuessType);
+    this.loadQuantities2(this.selectedEventTypes, events, this.selectedGuessMode);
   }
 
-  onModeChange(guessType: string) {
-    this.loadQuantities(this.selectedQuestionSets, guessType);  //TODO: delete
-    this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, guessType);
+  onModeChange(guessMode: string) {
+    this.loadQuantities(this.selectedQuestionSets, guessMode);  //TODO: delete
+    this.loadQuantities2(this.selectedEventTypes, this.selectedEvents, guessMode);
   }
 
   //TODO: delete
-  loadQuantities(questionSets: QuestionSet[], guessType: string) {
-    this.questionService.getQuantities(questionSets.map(s => s.id), guessType)
+  loadQuantities(questionSets: QuestionSet[], guessMode: string) {
+    this.questionService.getQuantities(questionSets.map(s => s.id), guessMode)
       .subscribe(data => {
         this.quantities = data;
 
@@ -209,9 +209,9 @@ export class StartComponent implements OnInit {
   }
 
   //TODO: rename
-  loadQuantities2(eventTypes: EventType[], events: Event[], guessType) {
+  loadQuantities2(eventTypes: EventType[], events: Event[], guessMode) {
     //TODO: implement
-    console.log('(loadQuantities) eventTypes: ' + JSON.stringify(eventTypes) + '; events: ' + JSON.stringify(events) + '; guessType: ' + guessType);
+    console.log('(loadQuantities) eventTypes: ' + JSON.stringify(eventTypes) + '; events: ' + JSON.stringify(events) + '; guessMode: ' + guessMode);
   }
 
   start() {
@@ -219,7 +219,7 @@ export class StartComponent implements OnInit {
       new StartParameters(
         this.selectedQuestionSets.map(s => s.id),
         this.selectedQuantity,
-        this.selectedGuessType))
+        this.selectedGuessMode))
       .subscribe(data => {
         this.router.navigateByUrl('/guess/name');
       });

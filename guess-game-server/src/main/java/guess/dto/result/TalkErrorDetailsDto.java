@@ -1,6 +1,6 @@
 package guess.dto.result;
 
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.SpeakerAnswer;
@@ -19,9 +19,9 @@ import java.util.stream.Collectors;
  * Talk error details DTO.
  */
 public class TalkErrorDetailsDto {
-    private List<SpeakerPair> speakers;
-    private String talkName;
-    private List<SpeakerPair> yourAnswers;
+    private final List<SpeakerPair> speakers;
+    private final String talkName;
+    private final List<SpeakerPair> yourAnswers;
 
     private TalkErrorDetailsDto(List<SpeakerPair> speakers, String talkName, List<SpeakerPair> yourAnswers) {
         this.speakers = speakers;
@@ -41,8 +41,8 @@ public class TalkErrorDetailsDto {
         return yourAnswers;
     }
 
-    private static TalkErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType, Language language) {
-        List<Speaker> speakers = GuessType.GUESS_TALK_TYPE.equals(guessType) ?
+    private static TalkErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
+        List<Speaker> speakers = GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) ?
                 errorDetails.getAvailableAnswers().stream()
                         .map(a -> ((TalkAnswer) a).getTalk().getSpeakers())
                         .flatMap(Collection::stream)
@@ -58,10 +58,10 @@ public class TalkErrorDetailsDto {
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
 
-        if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
+        if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             List<Speaker> questionSpeakers = ((TalkQuestion) errorDetails.getQuestion()).getSpeakers();
 
-            if (GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
+            if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
                 // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
                 questionSpeakers = questionSpeakers.subList(
                         0,
@@ -75,7 +75,7 @@ public class TalkErrorDetailsDto {
                     .collect(Collectors.toList());
 
             List<SpeakerPair> yourAnswers = errorDetails.getYourAnswers().stream()
-                    .map(a -> GuessType.GUESS_TALK_TYPE.equals(guessType) ?
+                    .map(a -> GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) ?
                             new SpeakerPair(
                                     LocalizationUtils.getString(((TalkAnswer) a).getTalk().getName(), language),
                                     null) :
@@ -89,13 +89,13 @@ public class TalkErrorDetailsDto {
                     LocalizationUtils.getString(((TalkQuestion) errorDetails.getQuestion()).getTalk().getName(), language),
                     yourAnswers);
         } else {
-            throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
+            throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
     }
 
-    public static List<TalkErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessType guessType, Language language) {
+    public static List<TalkErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessMode guessMode, Language language) {
         return errorDetailsList.stream()
-                .map(e -> convertToDto(e, guessType, language))
+                .map(e -> convertToDto(e, guessMode, language))
                 .collect(Collectors.toList());
     }
 }

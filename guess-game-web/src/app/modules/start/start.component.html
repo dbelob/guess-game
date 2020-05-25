@@ -32,29 +32,29 @@
       <label for="type" class="col-sm-2">{{'start.modeLabel' | translate}}</label>
       <div class="col-sm-10">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessName" value="{{guessType.GuessNameType}}"
-                 [(ngModel)]="selectedGuessType" (ngModelChange)="onModeChange($event)">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessName" value="{{guessMode.GuessNameByPhotoMode}}"
+                 [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)">
           <label class="form-check-label" for="guessName">
             {{'start.guessNameLabel' | translate}}
           </label>
         </div>
         <div class="form-check" id="type">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessPicture" value="{{guessType.GuessPictureType}}"
-                 [(ngModel)]="selectedGuessType" (ngModelChange)="onModeChange($event)">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessPicture" value="{{guessMode.GuessPhotoByNameMode}}"
+                 [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)">
           <label class="form-check-label" for="guessPicture">
             {{'start.guessPictureLabel' | translate}}
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessTalk" value="{{guessType.GuessTalkType}}"
-                 [(ngModel)]="selectedGuessType" (ngModelChange)="onModeChange($event)">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessTalk" value="{{guessMode.GuessTalkBySpeakerMode}}"
+                 [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)">
           <label class="form-check-label" for="guessTalk">
             {{'start.guessTalkLabel' | translate}}
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessSpeaker" value="{{guessType.GuessSpeakerType}}"
-                 [(ngModel)]="selectedGuessType" (ngModelChange)="onModeChange($event)">
+          <input class="form-check-input" type="radio" name="typeRadios" id="guessSpeaker" value="{{guessMode.GuessSpeakerByTalkMode}}"
+                 [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)">
           <label class="form-check-label" for="guessSpeaker">
             {{'start.guessSpeakerLabel' | translate}}
           </label>

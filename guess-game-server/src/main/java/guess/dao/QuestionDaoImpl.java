@@ -2,7 +2,7 @@ package guess.dao;
 
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.dao.exception.SpeakerDuplicatedException;
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionSet;
@@ -135,10 +135,10 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
-    public List<Question> getQuestionByIds(List<Long> questionSetIds, GuessType guessType) throws QuestionSetNotExistsException {
+    public List<Question> getQuestionByIds(List<Long> questionSetIds, GuessMode guessMode) throws QuestionSetNotExistsException {
         List<Question> questions;
 
-        if (GuessType.GUESS_NAME_TYPE.equals(guessType) || GuessType.GUESS_PICTURE_TYPE.equals(guessType)) {
+        if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) || GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode)) {
             // Guess name by picture or picture by name
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
 
@@ -147,7 +147,7 @@ public class QuestionDaoImpl implements QuestionDao {
             }
 
             questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
-        } else if (GuessType.GUESS_TALK_TYPE.equals(guessType) || GuessType.GUESS_SPEAKER_TYPE.equals(guessType)) {
+        } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             // Guess talk by speaker or speaker by talk
             List<TalkQuestion> talkQuestions = new ArrayList<>();
 
@@ -157,7 +157,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(talkQuestions));
         } else {
-            throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
+            throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
 
         return questions;

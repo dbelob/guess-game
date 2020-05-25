@@ -1,6 +1,6 @@
 package guess.dto.start;
 
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 import guess.domain.StartParameters;
 
 import java.util.List;
@@ -11,15 +11,15 @@ import java.util.List;
 public class StartParametersDto {
     private List<Long> questionSetIds;
     private int quantity;
-    private String guessType;
+    private String guessMode;
 
     public StartParametersDto() {
     }
 
-    private StartParametersDto(List<Long> questionSetIds, int quantity, String guessType) {
+    private StartParametersDto(List<Long> questionSetIds, int quantity, String guessMode) {
         this.questionSetIds = questionSetIds;
         this.quantity = quantity;
-        this.guessType = guessType;
+        this.guessMode = guessMode;
     }
 
     public List<Long> getQuestionSetIds() {
@@ -38,18 +38,18 @@ public class StartParametersDto {
         this.quantity = quantity;
     }
 
-    public String getGuessType() {
-        return guessType;
+    public String getGuessMode() {
+        return guessMode;
     }
 
-    public void setGuessType(String guessType) {
-        this.guessType = guessType;
+    public void setGuessMode(String guessMode) {
+        this.guessMode = guessMode;
     }
 
     public static StartParameters convertFromDto(StartParametersDto dto) {
         return new StartParameters(
                 dto.getQuestionSetIds(),
                 dto.getQuantity(),
-                GuessType.valueOf(dto.getGuessType()));
+                GuessMode.valueOf(dto.getGuessMode()));
     }
 }

@@ -1,6 +1,6 @@
-export enum GuessType {
-  GuessNameType = 'GUESS_NAME_TYPE',
-  GuessPictureType = 'GUESS_PICTURE_TYPE',
-  GuessTalkType = 'GUESS_TALK_TYPE',
-  GuessSpeakerType = 'GUESS_SPEAKER_TYPE'
+export enum GuessMode {
+  GuessNameByPhotoMode = 'GUESS_NAME_BY_PHOTO_MODE',
+  GuessPhotoByNameMode = 'GUESS_PHOTO_BY_NAME_MODE',
+  GuessTalkBySpeakerMode = 'GUESS_TALK_BY_SPEAKER_MODE',
+  GuessSpeakerByTalkMode = 'GUESS_SPEAKER_BY_TALK_MODE'
 }

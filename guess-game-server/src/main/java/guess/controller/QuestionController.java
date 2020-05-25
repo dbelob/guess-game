@@ -1,7 +1,7 @@
 package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.QuestionSet;
 import guess.domain.source.Event;
@@ -90,7 +90,7 @@ public class QuestionController {
 
     @GetMapping("/quantities")
     @ResponseBody
-    public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds, @RequestParam String guessType) throws QuestionSetNotExistsException {
-        return questionService.getQuantities(questionSetIds, GuessType.valueOf(guessType));
+    public List<Integer> getQuantities(@RequestParam List<Long> questionSetIds, @RequestParam String guessMode) throws QuestionSetNotExistsException {
+        return questionService.getQuantities(questionSetIds, GuessMode.valueOf(guessMode));
     }
 }

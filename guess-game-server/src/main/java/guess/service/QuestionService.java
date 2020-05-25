@@ -1,7 +1,7 @@
 package guess.service;
 
 import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 import guess.domain.question.QuestionSet;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
@@ -24,5 +24,5 @@ public interface QuestionService {
 
     Event getDefaultEvent(LocalDateTime dateTime);
 
-    List<Integer> getQuantities(List<Long> questionSetIds, GuessType guessType) throws QuestionSetNotExistsException;
+    List<Integer> getQuantities(List<Long> questionSetIds, GuessMode guessMode) throws QuestionSetNotExistsException;
 }

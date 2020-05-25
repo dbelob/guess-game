@@ -46,11 +46,11 @@ public class StateServiceImpl implements StateService {
         stateDao.setState(
                 questionAnswersSet.getQuestionAnswersList().isEmpty() ?
                         State.RESULT_STATE :
-                        (GuessType.GUESS_NAME_TYPE.equals(startParameters.getGuessType()) ?
+                        (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(startParameters.getGuessMode()) ?
                                 State.GUESS_NAME_STATE :
-                                (GuessType.GUESS_PICTURE_TYPE.equals(startParameters.getGuessType()) ?
+                                (GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(startParameters.getGuessMode()) ?
                                         State.GUESS_PICTURE_STATE :
-                                        (GuessType.GUESS_TALK_TYPE.equals(startParameters.getGuessType()) ?
+                                        (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(startParameters.getGuessMode()) ?
                                                 State.GUESS_TALK_STATE :
                                                 State.GUESS_SPEAKER_STATE))),
                 httpSession);
@@ -73,7 +73,7 @@ public class StateServiceImpl implements StateService {
 
     private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
         // Find unique questions by ids
-        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds(), startParameters.getGuessType());
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds(), startParameters.getGuessMode());
 
         // Fill question and answers list
         List<QuestionAnswers> questionAnswersList = new ArrayList<>();
@@ -89,13 +89,13 @@ public class StateServiceImpl implements StateService {
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessType());
+                List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessMode());
 
                 // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
                 correctAnswers = correctAnswers.subList(
                         0,
                         Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, correctAnswers.size()));
-                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessType());
+                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessMode());
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
                 Collections.shuffle(shuffledAllAvailableAnswersWithoutCorrectAnswers);
@@ -138,30 +138,30 @@ public class StateServiceImpl implements StateService {
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    private List<Answer> getCorrectAnswers(Question question, GuessType guessType) {
-        switch (guessType) {
-            case GUESS_NAME_TYPE:
-            case GUESS_PICTURE_TYPE:
+    private List<Answer> getCorrectAnswers(Question question, GuessMode guessMode) {
+        switch (guessMode) {
+            case GUESS_NAME_BY_PHOTO_MODE:
+            case GUESS_PHOTO_BY_NAME_MODE:
                 return Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker()));
-            case GUESS_TALK_TYPE:
+            case GUESS_TALK_BY_SPEAKER_MODE:
                 return Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk()));
-            case GUESS_SPEAKER_TYPE:
+            case GUESS_SPEAKER_BY_TALK_MODE:
                 return ((TalkQuestion) question).getSpeakers().stream()
                         .map(SpeakerAnswer::new)
                         .collect(Collectors.toList());
             default:
-                throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
+                throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
     }
 
-    private List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessType guessType) {
-        switch (guessType) {
-            case GUESS_NAME_TYPE:
-            case GUESS_PICTURE_TYPE:
+    private List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessMode guessMode) {
+        switch (guessMode) {
+            case GUESS_NAME_BY_PHOTO_MODE:
+            case GUESS_PHOTO_BY_NAME_MODE:
                 return questions.stream()
                         .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
                         .collect(Collectors.toList());
-            case GUESS_TALK_TYPE:
+            case GUESS_TALK_BY_SPEAKER_MODE:
                 Talk correctAnswerTalk = ((TalkAnswer) correctAnswers.get(0)).getTalk();
 
                 return questions.stream()
@@ -169,7 +169,7 @@ public class StateServiceImpl implements StateService {
                         .filter(t -> (t.getId() == correctAnswerTalk.getId()) || !t.getSpeakerIds().containsAll(correctAnswerTalk.getSpeakerIds()))
                         .map(TalkAnswer::new)
                         .collect(Collectors.toList());
-            case GUESS_SPEAKER_TYPE:
+            case GUESS_SPEAKER_BY_TALK_MODE:
                 return questions.stream()
                         .map(q -> ((TalkQuestion) q).getTalk().getSpeakers())
                         .flatMap(Collection::stream)
@@ -177,7 +177,7 @@ public class StateServiceImpl implements StateService {
                         .map(SpeakerAnswer::new)
                         .collect(Collectors.toList());
             default:
-                throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
+                throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
     }
 }
