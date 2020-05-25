@@ -7,9 +7,9 @@ import { State } from "../../shared/models/state.model";
 
 @Component({
   selector: 'app-guess-speaker',
-  templateUrl: './guess-speaker.component.html'
+  templateUrl: './guess-speaker-by-talk.component.html'
 })
-export class GuessSpeakerComponent implements OnInit {
+export class GuessSpeakerByTalkComponent implements OnInit {
   private imageDirectory: string = 'assets/images';
   private eventsImageDirectory: string = `${this.imageDirectory}/events`;
   private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;

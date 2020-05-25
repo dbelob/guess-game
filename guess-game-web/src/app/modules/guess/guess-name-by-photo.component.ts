@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { SpeakersTalks } from "../../shared/models/speakers-talks.model";
+import { PictureNames } from "../../shared/models/picture-names.model";
 import { StateService } from "../../shared/services/state.service";
 import { AnswerService } from "../../shared/services/answer.service";
 import { State } from "../../shared/models/state.model";
 
 @Component({
-  selector: 'app-guess-talk',
-  templateUrl: './guess-talk.component.html'
+  selector: 'app-guess-name',
+  templateUrl: './guess-name-by-photo.component.html'
 })
-export class GuessTalkComponent implements OnInit {
+export class GuessNameByPhotoComponent implements OnInit {
   private imageDirectory: string = 'assets/images';
   private eventsImageDirectory: string = `${this.imageDirectory}/events`;
   private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
-  public speakerTalks: SpeakersTalks = new SpeakersTalks();
+  public pictureNames: PictureNames = new PictureNames();
   public title: string;
   public logoImageSource: string;
+  public imageSource: string;
 
   constructor(private stateService: StateService, private answerService: AnswerService, private router: Router) {
   }
@@ -25,14 +26,15 @@ export class GuessTalkComponent implements OnInit {
   }
 
   loadQuestion() {
-    this.stateService.getSpeakerTalks()
+    this.stateService.getPictureNames()
       .subscribe(data => {
           if (data) {
-            this.speakerTalks = data;
-            this.title = `${this.speakerTalks.questionSetName} (${this.speakerTalks.currentIndex + 1}/${this.speakerTalks.totalNumber})`;
+            this.pictureNames = data;
+            this.title = `${this.pictureNames.questionSetName} (${this.pictureNames.currentIndex + 1}/${this.pictureNames.totalNumber})`;
+            this.imageSource = `${this.speakersImageDirectory}/${this.pictureNames.fileName}`;
 
-            if (this.speakerTalks.logoFileName) {
-              this.logoImageSource = `${this.eventsImageDirectory}/${this.speakerTalks.logoFileName}`;
+            if (this.pictureNames.logoFileName) {
+              this.logoImageSource = `${this.eventsImageDirectory}/${this.pictureNames.logoFileName}`;
             }
           } else {
             this.result();
@@ -42,7 +44,7 @@ export class GuessTalkComponent implements OnInit {
   }
 
   answer(id: number) {
-    this.answerService.setAnswer(this.speakerTalks.currentIndex, id)
+    this.answerService.setAnswer(this.pictureNames.currentIndex, id)
       .subscribe(data => {
           this.loadQuestion();
         }

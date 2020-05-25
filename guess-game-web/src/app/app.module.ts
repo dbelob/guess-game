@@ -13,8 +13,10 @@ import { ResultModule } from "./modules/result/result.module";
 import { RouterModule, Routes } from "@angular/router";
 import { StartComponent } from "./modules/start/start.component";
 import { ResultComponent } from "./modules/result/result.component";
-import { GuessNameComponent } from "./modules/guess/guess-name.component";
-import { GuessPictureComponent } from "./modules/guess/guess-picture.component";
+import { GuessNameByPhotoComponent } from "./modules/guess/guess-name-by-photo.component";
+import { GuessPhotoByNameComponent } from "./modules/guess/guess-photo-by-name.component";
+import { GuessTalkBySpeakerComponent } from "./modules/guess/guess-talk-by-speaker.component";
+import { GuessSpeakerByTalkComponent } from "./modules/guess/guess-speaker-by-talk.component";
 import { UnknownModule } from "./modules/unknown/unknown.module";
 import { NotFoundComponent } from "./modules/unknown/not-found.component";
 import { MessageModule } from "./modules/message/message.module";
@@ -23,15 +25,13 @@ import { QuestionService } from "./shared/services/question.service";
 import { StateService } from "./shared/services/state.service";
 import { StateGuard } from "./shared/guards/state.guard";
 import { CancelGameComponent } from "./modules/guess/cancel-game.component";
-import { GuessTalkComponent } from "./modules/guess/guess-talk.component";
-import { GuessSpeakerComponent } from "./modules/guess/guess-speaker.component";
 
 const routes: Routes = [
   {path: 'start', component: StartComponent, canActivate: [StateGuard]},
-  {path: 'guess/name', component: GuessNameComponent, canActivate: [StateGuard]},
-  {path: 'guess/picture', component: GuessPictureComponent, canActivate: [StateGuard]},
-  {path: 'guess/talk', component: GuessTalkComponent, canActivate: [StateGuard]},
-  {path: 'guess/speaker', component: GuessSpeakerComponent, canActivate: [StateGuard]},
+  {path: 'guess/name', component: GuessNameByPhotoComponent, canActivate: [StateGuard]},
+  {path: 'guess/picture', component: GuessPhotoByNameComponent, canActivate: [StateGuard]},
+  {path: 'guess/talk', component: GuessTalkBySpeakerComponent, canActivate: [StateGuard]},
+  {path: 'guess/speaker', component: GuessSpeakerByTalkComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
   {path: '', pathMatch: 'full', redirectTo: 'start'},
