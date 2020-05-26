@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 public class YamlUtils {
     private static final Logger log = LoggerFactory.getLogger(YamlUtils.class);
 
-    private static final String DESCRIPTIONS_DIRECTORY_NAME = "descriptions";
+    private static final String DATA_DIRECTORY_NAME = "data";
     private static final String OUTPUT_DIRECTORY_NAME = "output";
 
     /**
@@ -42,11 +42,11 @@ public class YamlUtils {
      */
     public static SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", DESCRIPTIONS_DIRECTORY_NAME));
-        Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DESCRIPTIONS_DIRECTORY_NAME));
-        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DESCRIPTIONS_DIRECTORY_NAME));
-        Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DESCRIPTIONS_DIRECTORY_NAME));
-        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DESCRIPTIONS_DIRECTORY_NAME));
+        Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", DATA_DIRECTORY_NAME));
+        Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DATA_DIRECTORY_NAME));
+        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DATA_DIRECTORY_NAME));
+        Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DATA_DIRECTORY_NAME));
+        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DATA_DIRECTORY_NAME));
 
         Yaml speakersYaml = new Yaml(new Constructor(Speakers.class));
         Yaml talksYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Talks.class));
