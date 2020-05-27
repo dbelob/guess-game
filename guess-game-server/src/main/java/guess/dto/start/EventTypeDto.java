@@ -20,12 +20,10 @@ public class EventTypeDto extends EventTypeBriefDto {
     private final String youtubeLink;
     private final String telegramLink;
 
-    private final String logoFileName;
-
     public EventTypeDto(EventTypeBriefDto eventTypeBriefDto, String description, String siteLink,
-                        String vkLink, String twitterLink, String facebookLink, String youtubeLink, String telegramLink,
-                        String logoFileName) {
-        super(eventTypeBriefDto.getId(), eventTypeBriefDto.isConference(), eventTypeBriefDto.getName(), eventTypeBriefDto.getDisplayName());
+                        String vkLink, String twitterLink, String facebookLink, String youtubeLink, String telegramLink) {
+        super(eventTypeBriefDto.getId(), eventTypeBriefDto.isConference(), eventTypeBriefDto.getName(),
+                eventTypeBriefDto.getDisplayName(), eventTypeBriefDto.getLogoFileName());
 
         this.description = description;
         this.siteLink = siteLink;
@@ -34,7 +32,6 @@ public class EventTypeDto extends EventTypeBriefDto {
         this.facebookLink = facebookLink;
         this.youtubeLink = youtubeLink;
         this.telegramLink = telegramLink;
-        this.logoFileName = logoFileName;
     }
 
     public String getDescription() {
@@ -65,10 +62,6 @@ public class EventTypeDto extends EventTypeBriefDto {
         return telegramLink;
     }
 
-    public String getLogoFileName() {
-        return logoFileName;
-    }
-
     public static EventTypeDto convertToDto(EventType eventType, Language language) {
         return new EventTypeDto(
                 convertToBriefDto(eventType, language),
@@ -78,8 +71,7 @@ public class EventTypeDto extends EventTypeBriefDto {
                 eventType.getTwitterLink(),
                 eventType.getFacebookLink(),
                 eventType.getYoutubeLink(),
-                eventType.getTelegramLink(),
-                eventType.getLogoFileName());
+                eventType.getTelegramLink());
     }
 
     public static List<EventTypeDto> convertToDto(List<EventType> eventTypes, Language language) {
