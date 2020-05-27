@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~primeng/resources/themes/nova-light/theme.css';
+@import '~primeng/resources/primeng.min.css';
 
 .container-dialog {
   width: 100%;
@@ -111,6 +113,10 @@
     width: 200px;
     height: auto;
   }
+}
+
+.start-listbox.ui-listbox {
+  width: 100%;
 }
 
 input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {

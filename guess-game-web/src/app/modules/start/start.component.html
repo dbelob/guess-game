@@ -7,16 +7,24 @@
 
   <form role="form">
     <div class="form-group row">
-      <label for="eventType" class="col-sm-2">{{'start.eventTypeLabel' | translate}}</label>
-      <div class="col-sm-10">
-        <select multiple class="form-control" id="eventType" size="16" [(ngModel)]="selectedEventTypes"
-                (ngModelChange)="onEventTypeChange($event)" name="eventType">
-          <option *ngFor="let eventType of eventTypes" [ngValue]="eventType">
-            {{eventType.displayName}}
-          </option>
-        </select>
-      </div>
+        <label for="eventType" class="col-sm-2">{{'start.eventTypeLabel' | translate}}</label>
+        <div class="col-sm-10">
+          <p-listbox multiple="true" id="eventType" [options]="eventTypes" [(ngModel)]="selectedEventTypes"
+                     optionLabel="displayName" (onClick)="onEventTypeChange($event.value)" name="eventType"
+                     styleClass="start-listbox"></p-listbox>
+        </div>
     </div>
+<!--    <div class="form-group row">-->
+<!--      <label for="eventType" class="col-sm-2">{{'start.eventTypeLabel' | translate}}</label>-->
+<!--      <div class="col-sm-10">-->
+<!--        <select multiple class="form-control" id="eventType" size="16" [(ngModel)]="selectedEventTypes"-->
+<!--                (ngModelChange)="onEventTypeChange($event)" name="eventType">-->
+<!--          <option *ngFor="let eventType of eventTypes" [ngValue]="eventType">-->
+<!--            {{eventType.displayName}}-->
+<!--          </option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
     <div class="form-group row">
       <label for="event" class="col-sm-2">{{'start.eventLabel' | translate}}</label>
       <div class="col-sm-10">
