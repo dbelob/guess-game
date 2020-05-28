@@ -101,7 +101,7 @@ export class StartComponent implements OnInit {
           if (selectedEvent) {
             this.selectedEvents = [selectedEvent];
           } else {
-            this.selectedEvents = [this.events[this.events.length - 1]];
+            this.selectedEvents = [this.events[0]];
           }
         } else {
           this.selectedEvents = [];

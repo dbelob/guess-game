@@ -58,7 +58,7 @@ public class QuestionController {
         List<Event> events = questionService.getEvents(eventTypeIds);
         Language language = localeService.getLanguage(httpSession);
 
-        events.sort(Comparator.comparing(Event::getStartDate));
+        events.sort(Comparator.comparing(Event::getStartDate).reversed());
 
         return EventDto.convertToBriefDto(events, language);
     }
