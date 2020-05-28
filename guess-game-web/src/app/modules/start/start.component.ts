@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { formatDate } from "@angular/common";
 import { TranslateService } from "@ngx-translate/core";
+import { SelectItem } from "primeng/api";
 import { StartParameters } from "../../shared/models/start-parameters.model";
 import { GuessMode } from "../../shared/models/guess-type.model";
 import { EventType } from "../../shared/models/event-type.model";
@@ -14,8 +15,12 @@ import { StateService } from "../../shared/services/state.service";
   templateUrl: './start.component.html'
 })
 export class StartComponent implements OnInit {
+  private imageDirectory: string = 'assets/images';
+  public eventsImageDirectory: string = `${this.imageDirectory}/events`;
+
   public eventTypes: EventType[] = [];
   public selectedEventTypes: EventType[] = [];
+  public eventTypeSelectItems: SelectItem[] = [];
 
   public events: Event[] = [];
   public selectedEvents: Event[] = [];
@@ -40,6 +45,10 @@ export class StartComponent implements OnInit {
     this.questionService.getEventTypes()
       .subscribe(data => {
         this.eventTypes = data;
+        this.eventTypeSelectItems = this.eventTypes.map(et => {
+            return {label: et.displayName, value: et}
+          }
+        );
 
         if (this.eventTypes.length > 0) {
           this.questionService.getDefaultEvent()

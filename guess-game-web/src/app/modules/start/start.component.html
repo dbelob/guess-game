@@ -9,15 +9,18 @@
     <div class="form-group row">
         <label for="eventType" class="col-sm-2">{{'start.eventTypeLabel' | translate}}</label>
         <div class="col-sm-10">
-          <p-listbox [multiple]="true" id="eventType" [options]="eventTypes" [(ngModel)]="selectedEventTypes"
-                     optionLabel="displayName" (onClick)="onEventTypeChange($event.value)" name="eventType"
+          <p-listbox [multiple]="true" id="eventType" [options]="eventTypeSelectItems" [(ngModel)]="selectedEventTypes"
+                     (onClick)="onEventTypeChange($event.value)" name="eventType"
                      styleClass="start-listbox">
-<!--            <ng-template let-eventType pTemplate="item">-->
-<!--              <div class="ui-helper-clearfix">-->
-<!--                <img src="assets/images/events/{{eventType.logoFileName}}" style="display:inline-block;margin:5px 0 0 5px" width="48">-->
-<!--                <span style="float:right;margin:20px 10px 0 0">{{eventType.displayName}}</span>-->
-<!--              </div>-->
-<!--            </ng-template>-->
+            <ng-template let-eventType pTemplate="item">
+              <div class="ui-helper-clearfix">
+<!--                <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" style="display:inline-block;margin:5px 0 0 5px" width="48">-->
+<!--                <span style="float:right;margin:20px 10px 0 0">{{eventType.value.displayName}}</span>-->
+
+                <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" width="32">
+                <span style="margin:0 0 0 15px">{{eventType.value.displayName}}</span>
+              </div>
+            </ng-template>
           </p-listbox>
         </div>
     </div>
