@@ -30,6 +30,7 @@ export class StartComponent implements OnInit {
 
   public quantities: number[] = [];
   public selectedQuantity: number;
+  public quantitySelectItems: SelectItem[] = [];
 
   private defaultEvent: Event;
 
@@ -175,6 +176,10 @@ export class StartComponent implements OnInit {
     this.questionService.getQuantities(eventTypes.map(et => et.id), events.map(e => e.id), guessMode)
       .subscribe(data => {
         this.quantities = data;
+        this.quantitySelectItems = this.quantities.map(q => {
+            return {label: q.toString(), value: q}
+          }
+        );
 
         if (this.quantities.length > 0) {
           this.selectedQuantity = this.quantities[this.quantities.length - 1];
