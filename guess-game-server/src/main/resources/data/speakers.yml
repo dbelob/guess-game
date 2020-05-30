@@ -11431,8 +11431,10 @@ speakers:
     company:
       - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "Konstantin was engaged in Android development from 2010 to 2020. Now he's in Kotlin Multiplatform\
-            \ team. Likes to inspire and teach the development team. build architecture and participate in professional events."}
+      - language: en
+        text: "Android developer since 2010, Konstantin likes to inspire his developer team, build correct architecture and\
+            \ organize professional events.\r\n\r\nIn his free time, he contributes to open-source, tinkers with C and works\
+            \ to join in the global community."
       - {language: ru, text: "С 2010-2020 год занимался Android-разработкой. Теперь в команде Kotlin Multiplatform. Любит\
             \ вдохновлять и обучать команду разработчиков, выстраивать архитектуру и участвовать в профессиональных меропр\
             иятиях."}
@@ -12584,8 +12586,8 @@ speakers:
             \ of projects with audience of hundreds of thousands of people. Currently he's the team leader of Labirint Android,\
             \ the first team in Russia to implement Instant App; this team can boast having a 4,8 score app in Google Play."}
       - {language: ru, text: "Фанат мобильных технологий, хорошей архитектуры и программ раннего доступа. За спиной нескол\
-            ько проектов с аудиторией в сотни тысяч человек. В данный момент лидер команды Лабиринт Android, той самой, ко\
-            торая первой в России реализовала Instant App и может похвастаться приложением с оценкой 4,8 в Google Play."}
+            ько проектов с аудиторией в сотни тысяч человек. На данный момент лидер команды Лабиринт Android, той самой, к\
+            оторая первой в России реализовала Instant App и может похвастаться приложением с оценкой 4,8 в Google Play."}
     twitter: saturovv
   - id: 859
     fileName: 0859.jpg
@@ -16704,6 +16706,7 @@ speakers:
       - {language: ru, text: "Разрабатывает Android приложения с 2012 года. Автор популярной библиотеки Transitions-Everywhere.\
             \ Устроившись в Google, перенес все наработки из нее в официальную AndroidX Transitions-библиотеку. В данный м\
             омент работает над Jetpack Compose."}
+    twitter: and_kulikov
   - id: 1165
     fileName: 1165.jpg
     name:
@@ -17296,7 +17299,7 @@ speakers:
       - {language: ru, text: "Владислав Усачёв"}
     company:
       - {language: en, text: "Square meter"}
-      - {language: ru, text: "Квадратный метр"}
+      - {language: ru, text: "Метр квадратный"}
     bio:
       - {language: en, text: "iOS developer at \"Square meter\". Before he participated in feature development and acceleration\
             \ of the development processes of the Sberbank Online."}
