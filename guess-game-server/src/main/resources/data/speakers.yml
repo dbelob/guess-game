@@ -4925,7 +4925,7 @@ speakers:
   - id: 337
     fileName: 0337.jpg
     name:
-      - {language: en, text: "Alexander Granin"}
+      - {language: en, text: "Aleksandr Granin"}
       - {language: ru, text: "Александр Гранин"}
     company: []
     bio:
@@ -14373,19 +14373,19 @@ speakers:
       - language: en
         text: "Roman is a developer of compiler for neural networks in Russian Samsung R&D center. That compiler generates\
             \ code for NPU (Neural Processing Unit). Compiled neural networks are deployed in flagship phones as such Galaxy\
-            \ Note 10.\r\nAlso he worked as a developer of optimizing compiler for Elbrus and SPARC microprocessors from C,\
-            \ C++ and Fortran input languages. He has implemented:\r\n- architecture-independent and architecture-dependent\
-            \ optimizations;\r\n- C++ zero-cost exception handling in middle-end of optimizing compiler;\r\n- AddressSanitizer,\
-            \ MemorySanitizer and LeakSanitizer (https://github.com/google/sanitizers/wiki) in compiler as well as porting\
-            \ compiler-rt library (https://compiler-rt.llvm.org) for Elbrus platform."
+            \ Note 10.\nAlso he worked as a developer of optimizing compiler for Elbrus and SPARC microprocessors from C,\
+            \ C++ and Fortran input languages. He has implemented:\n- architecture-independent and architecture-dependent\
+            \ optimizations;\n- C++ zero-cost exception handling in middle-end of optimizing compiler;\n- [AddressSanitizer,\
+            \ MemorySanitizer and LeakSanitizer](https://github.com/google/sanitizers/wiki) in compiler as well as porting\
+            \ [compiler-rt](https://compiler-rt.llvm.org) library for Elbrus platform."
       - language: ru
         text: "Занимается разработкой компилятора нейронных сетей для NPU (Neural Processing Unit) в российском центре Samsung\
             \ R&D. Скомпилированные нейронные сети поставляются в составе флагманских телефонов Samsung, таких как Galaxy\
-            \ Note 10.\r\nИмеется опыт разработки оптимизирующего компилятора под VLIW-архитектуру «Эльбрус» и архитектуру\
-            \ SPARC с языков C, C++, Fortran. В процессе разработки оптимизирующего компилятора, занимался реализацией:\r\n\
-            - платформозависимых и платформонезависимых оптимизаций;\r\n- оптимальной обработки исключений С++ (zero-cost\
-            \ exception handling) в части middle-end компилятора;\r\n- санитайзеров (https://github.com/google/sanitizers/wiki):\
-            \ AddressSanitizer, MemorySanitizer, LeakSanitizer, включая портирование библиотеки compiler-rt (https://compiler-rt.llvm.org)\
+            \ Note 10.\nИмеется опыт разработки оптимизирующего компилятора под VLIW-архитектуру «Эльбрус» и архитектуру SPARC\
+            \ с языков C, C++, Fortran. В процессе разработки оптимизирующего компилятора, занимался реализацией:\n- платф\
+            ормозависимых и платформонезависимых оптимизаций;\n- оптимальной обработки исключений С++ (zero-cost exception\
+            \ handling) в части middle-end компилятора;\n- [санитайзеров](https://github.com/google/sanitizers/wiki): AddressSanitizer,\
+            \ MemorySanitizer, LeakSanitizer, включая портирование библиотеки [compiler-rt](https://compiler-rt.llvm.org)\
             \ на платформу «Эльбрус»."
   - id: 997
     fileName: 0997.jpg
@@ -16326,7 +16326,10 @@ speakers:
     company:
       - {language: en, text: "Samsung R&D Russia"}
     bio:
-      - {language: en, text: TBD}
+      - {language: en, text: "The developer of a compiler for neural networks in the Russian Samsung R&D center. He also worked\
+            \ as a toolchain developer for OS."}
+      - {language: ru, text: "Разработчик в отделе компиляторов для нейросетей в московском исследовательском центре Самун\
+            га. Работал в качестве разработчика тулчейна для операционных систем."}
   - id: 1138
     fileName: 1138.jpg
     name:
