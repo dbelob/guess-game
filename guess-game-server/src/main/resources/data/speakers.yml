@@ -4278,12 +4278,12 @@ speakers:
     company:
       - {language: en, text: Groupon}
     bio:
-      - {language: en, text: "Developer of the bioinformatics software with .NET, chemical with Java, financial with Haskell\
-            \ and some other interesting stuff. Roman likes to dive into new areas and languages and then talk about them\
-            \ at conferences and use them in production, if necessary."}
+      - {language: en, text: "The developer of the bioinformatics software with .NET, a chemical with Java, financial with\
+            \ Haskell, and some other interesting stuff. Roman likes to dive into new areas and languages and then talk about\
+            \ them at conferences and use them in production, if necessary."}
       - {language: ru, text: "Разработчик приложений для биоинформатиков на .NET, для химиков на Java, для финансистов на\
-            \ Haskell и множества других интересных вещей. Любит изучать новые области и языки, а потом рассказывать о них\
-            \ на конференциях и по необходимости использовать в продакшне."}
+            \ Haskell, и множества других интересных вещей. Любит изучать новые области и языки, а потом рассказывать о ни\
+            х на конференциях и по необходимости использовать в продакшне."}
     twitter: nevoroman
   - id: 296
     fileName: 0296.jpg
@@ -5997,12 +5997,12 @@ speakers:
     company:
       - {language: en, text: "Vevy Europe S.p.A."}
     bio:
-      - {language: en, text: "Raffaele Rialdi is a senior Software Architect working as a consultant, speaker and trainer.\
+      - {language: en, text: "Raffaele Rialdi is a senior Software Architect working as a consultant, speaker, and trainer.\
             \ Since 2003, he is a Microsoft MVP in the Developer Security category. His passion for the community brought\
-            \ him to be a member of the board of UGIdotNET, president of DotNetLiguria and co-founder of the Italian C++ user\
-            \ group. He is currently working as an architect and developer on the backend of an enterprise project with a\
-            \ specific focus on code generation and working on cross-platform mobile and IoT development in both C# and C++\
-            \ languages."}
+            \ him to be a member of the board of UGIdotNET, president of DotNetLiguria, and co-founder of the Italian C++\
+            \ user group. He is currently working as an architect and developer on the backend of an enterprise project with\
+            \ a specific focus on code generation and working on cross-platform mobile and IoT development in both C# and\
+            \ C++ languages."}
     twitter: raffaeler
     mvp: true
   - id: 410
@@ -6110,8 +6110,8 @@ speakers:
     bio:
       - {language: en, text: "Author of the Pro .NET Memory Management book. Programming for over a dozen years, solving performance\
             \ problems and architectural puzzles in the .NET world, speeding up web applications. Independent consultant,\
-            \ blogger, speaker and fan of Twitter. He also shares his passion as a trainer at Bottega IT Solutions in the\
-            \ area of .NET, especialy about application performance and diagnostics. Founder of the Warsaw Web Performance\
+            \ blogger, speaker, and fan of Twitter. He also shares his passion as a trainer at Bottega IT Solutions in the\
+            \ area of .NET, especially about application performance and diagnostics. Founder of the Warsaw Web Performance\
             \ group. Microsoft MVP in the Visual Studio and Development Tools category. Co-founder of <a href=\"https://dotnetos.org\"\
             \ target=\"_blank\">https://dotnetos.org</a> initiative."}
     twitter: konradkokosa
@@ -6963,9 +6963,9 @@ speakers:
       - {language: ru, text: "Любимые темы Андрея — производительность и микрооптимизации, он также мейнтейнер проекта BenchmarkDotNet\
             \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — частый спикер на различны\
             х мероприятиях для разработчиков и председатель программного комитета конференции DotNext. Он также к.ф.-м.н.,\
-            \ серебрянный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — матема\
-            тическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и научным сотрудником\
-            \ в Институте математики СО РАН."}
+            \ серебряный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — математ\
+            ическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и научным сотрудником в\
+            \ Институте математики СО РАН."}
     twitter: andrey_akinshin
     mvp: true
   - id: 472
@@ -7640,21 +7640,21 @@ speakers:
     bio:
       - language: en
         text: "Stanislav worked in many large companies, gaining development experience on the .NET platform. The speaker\
-            \ of many conferences, including .NEXT, SpbDotNet, the author and main speaker of the CLRium seminars. <br> <br>\n\
-            \_\_\_\_\nStanislav's interests for a long time lay in the field of memory management algorithms and techniques\
-            \ for manipulating the CLR runtime from unsafe code. But recently, the vector has been changed to a more practical\
-            \ part of development: multithreading, blocking and non-blocking algorithms <br> <br>\n\nHe is the author of the\
-            \ online book <a href=\"https://github.com/sidristij/dotnetbook\"> .NET Platform Architecture </a>, which is widely\
-            \ used due to its good translation into English and Chinese. The book is so easy to read that its <a href=\"https://anchor.fm/stanislav-sidristij\"\
-            >audio version</a> gradually began to be published."
+            \ of many conferences, including .NEXT, SpbDotNet, the author and main speaker of the CLRium seminars.\nStanislav's\
+            \ interests for a long time lay in the field of memory management algorithms and techniques for manipulating the\
+            \ CLR runtime from unsafe code. But recently, the vector has been changed to a more practical part of development:\
+            \ multithreading, blocking and non-blocking algorithms.\nHe is the author of the online book <a href=\"https://github.com/sidristij/dotnetbook\"\
+            > .NET Platform Architecture </a>, which is widely used due to its good translation into English and Chinese.\
+            \ The book is so easy to read that its <a href=\"https://anchor.fm/stanislav-sidristij\">audio version</a> gradually\
+            \ began to be published."
       - language: ru
         text: "Станислав работал во многих крупных компаниях, набирая опыт разработки на платформе .NET. Спикер многих кон\
-            ференций, в том числе .NEXT, SpbDotNet, автор и основной спикер семинаров CLRium. <br><br>\n    \nИнтересы Ста\
-            нислава долгое время лежали в области алгоритмов управления памятью и техник манимулирования рантаймом CLR из\
-            \ unsafe кода. Но в последнее время вектор изменен на более практичную часть разработки: многопоточность, блок\
-            ирующие и неблокирующие алгоритмы<br><br>\n\nЯвляется автором онлайн-книги <a href=\"https://github.com/sidristij/dotnetbook\"\
-            >.NET Platform Architecture</a>, получившей широкое распространение благодаря хорошему переводу на английский\
-            \ и китайский языки. Книга настолько легко читается, что понемногу начала выходить её <a href=\"https://anchor.fm/stanislav-sidristij\"\
+            ференций, в том числе .NEXT, SpbDotNet, автор и основной спикер семинаров CLRium. \nИнтересы Станислава долгое\
+            \ время лежали в области алгоритмов управления памятью и техник манимулирования рантаймом CLR из unsafe кода.\
+            \ Но в последнее время вектор изменен на более практичную часть разработки: многопоточность, блокирующие и неб\
+            локирующие алгоритмы.\nЯвляется автором онлайн-книги <a href=\"https://github.com/sidristij/dotnetbook\">.NET\
+            \ Platform Architecture</a>, получившей широкое распространение благодаря хорошему переводу на английский и ки\
+            тайский языки. Книга настолько легко читается, что понемногу начала выходить её <a href=\"https://anchor.fm/stanislav-sidristij\"\
             >аудиоверсия</a>"
     twitter: sidristij
   - id: 521
@@ -15544,13 +15544,13 @@ speakers:
       - {language: ru, text: ИнтелКон}
     bio:
       - language: en
-        text: "A developer with experience in refactoring an ancient legacy, introducing useful templates, technologies and\
+        text: "A developer with experience in refactoring an ancient legacy, introducing useful templates, technologies, and\
             \ practices in a bloody enterprise.\nNow he works for a small but ambitious company Intelcon.\nKirill considers\
             \ the savings on the quality of execution unprofitable.\nBelieves that optimizing the correct code is easier than\
             \ correcting the optimized one."
       - language: ru
         text: "Разработчик с опытом рефакторинга древнего легаси, внедрения полезных шаблонов, технологий и практик в кров\
-            авом энтерпрайзе.\nСейчас работает на маленькую, но амбициозную компанию Интелкон.\nСчитает экономию на качест\
+            авом энтерпрайзе.\nСейчас работает на маленькую, но амбициозную компанию ИнтелКон.\nСчитает экономию на качест\
             ве исполнения убыточной.\nПолагает, что оптимизировать корректный код проще, чем корректировать оптимизированн\
             ый."
   - id: 1081
@@ -15563,10 +15563,10 @@ speakers:
       - {language: en, text: "Johnny Hooyberghs is a consultant for Involved since 2014 focusing on .NET architecture and\
             \ backend development. Prior to joining Involved, he has had experience developing software for Corilus since\
             \ 2008. He has been passionate about .NET ever since it was released and his areas of expertise are C#, .NET (Core),\
-            \ WCF, WinForms, WPF, ASP.NET (Core), Entity Framework (Core), Azure and ALM using the Microsoft Stack. Every\
-            \ now and then he enjoys doing some web development using JavaScript. Since 2010, Johnny spends some of his free\
-            \ time teaching .NET and C# for the adult education institute CVO Antwerpen. When he's not working or teaching,\
-            \ he likes some casual gaming, scuba diving, learning to play the piano, traveling the world and visiting as many\
+            \ WCF, WinForms, WPF, ASP.NET (Core), Entity Framework (Core), Azure and ALM using the Microsoft Stack. Now and\
+            \ then he enjoys doing some web development using JavaScript. Since 2010, Johnny spends some of his free time\
+            \ teaching .NET and C# for the adult education institute CVO Antwerpen. When he's not working or teaching, he\
+            \ likes some casual gaming, scuba diving, learning to play the piano, traveling the world and visiting as many\
             \ theme parks as possible."}
     twitter: djohnnieke
   - id: 1082
@@ -15669,12 +15669,12 @@ speakers:
       - language: en
         text: "Jane is a developer of the product with 1.5 million active users in company Kontur. She pays attention to code\
             \ quality and performance. Right now she rewrites the product's infrastructure to .NET Core. She is the founder\
-            \ of meetup EkbDotNet in Yekaterinburg.\r\nJane teaches other developers not afraid to move to other products\
-            \ to find their dream team."
-      - {language: ru, text: "Женя пишет код в Контуре в продукте с полутора миллионами активных пользователей. Болеет за\
-            \ качество кода и его производительность, а прямо сейчас переводит сервисы в продукте на .NET Core. Стартовала\
-            \ митапы EkbDotNext в Екатеринбурге. Учит других разработчиков не бояться стажировок и смены продукта, чтобы н\
-            айти свою команду мечты."}
+            \ of meetup EkbDotNet in Yekaterinburg.\nJane teaches other developers not to be afraid of internships and product\
+            \ changes to find their dream team."
+      - {language: ru, text: "Женя пишет код в продукте с полутора миллионами активных пользователей в компании Контур. Бо\
+            леет за качество кода и его производительность, а прямо сейчас переводит сервисы в продукте на .NET Core. Стар\
+            товала митапы EkbDotNext в Екатеринбурге. Учит других разработчиков не бояться стажировок и смены продукта, чт\
+            обы найти свою команду мечты."}
   - id: 1089
     fileName: 1089.jpg
     name:
@@ -17709,3 +17709,22 @@ speakers:
             \ She’s co-organizes a conference called ML4ALL, and is often an invited member of program committees for conferences\
             \ like Kafka Summit, Lambda World, and others. Lena holds a Master’s degree in computer science."}
     twitter: lenadroid
+  - id: 1239
+    fileName: 1239.jpg
+    name:
+      - {language: en, text: "René Schulte"}
+    company:
+      - {language: en, text: "Valorem Reply"}
+    bio:
+      - language: en
+        text: "René Schulte is Director of Global Innovation at Valorem Reply working with teams across the globe on emerging\
+            \ technologies like the revolutionary 3D volumetric video telepresence solution HoloBeam and the AR Cloud enabling\
+            \ large, cross-platform user experiences with persistence.\nHe is a creative thought leader with passion for UX\
+            \ and deep technical knowledge from more than 10 years in VR/AR/MR/XR technology and 3D programming, developing\
+            \ for the Microsoft HoloLens since 2015, was featured on Forbes and is listed as VR/AR/MR dev influencer. He also\
+            \ coded AI deep learning neural networks before it was cool and is leveraging modern AI to empower humans.\nHe\
+            \ is a frequent (keynote) speaker and panelist at conferences like //build, Unite, Vision VR/AR Summit, VRDC (GDC),\
+            \ AWE, ESA, and more. Blogs about many topics. He also created popular open source libraries like WriteableBitmapEx\
+            \ and the AR library SLARToolKit.\nHe was honored several times for his dev community work with the Microsoft\
+            \ MVP award and recognized as Microsoft Regional Director."
+    twitter: rschu
