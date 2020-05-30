@@ -326,14 +326,14 @@ speakers:
       - {language: en, text: Odnoklassniki}
       - {language: ru, text: Одноклассники}
     bio:
-      - {language: en, text: "Leading software engineer at Odnoklassniki, specializes in the development of high-loaded Java\
-            \ servers. Due to the experience he got while working at Oracle in HotSpot team, knows JVM like the back of his\
-            \ hand and is fond of sharing his expertise during various conferences. Authors one-nio and async-profiler projects,\
-            \ leads in the #JVM category on Stack Overflow."}
-      - {language: ru, text: "Ведущий программист в компании «Одноклассники», специализирующийся на разработке высоконагру\
-            женных Java-серверов. Благодаря опыту работы в Oracle в команде HotSpot, знает JVM как свои пять пальцев и охо\
-            тно делится экспертизой на конференциях. Автор проектов one-nio, async-profiler, а также лидер по ответам в ка\
-            тегории #JVM на Stack Overflow."}
+      - {language: en, text: "Principal Software Engineer at Odnoklassniki, specializes in the development of high-loaded\
+            \ Java servers. Due to the experience he got while working at Oracle in HotSpot team, knows JVM like the back\
+            \ of his hand and is fond of sharing his expertise during various conferences. Authors one-nio and async-profiler\
+            \ projects, leads in the #JVM category on Stack Overflow."}
+      - {language: ru, text: "Главный инженер в компании «Одноклассники», специализирующийся на разработке высоконагруженн\
+            ых Java-серверов. Благодаря опыту работы в Oracle в команде HotSpot, знает JVM как свои пять пальцев и охотно\
+            \ делится экспертизой на конференциях. Автор проектов one-nio, async-profiler, а также лидер по ответам в кате\
+            гории #JVM на Stack Overflow."}
     twitter: AndreiPangin
   - id: 19
     fileName: 0019.jpg
@@ -432,6 +432,7 @@ speakers:
             ообществах, работающих над вопросами производительности и многопоточности. Перед тем как перейти в Red Hat, Ал\
             ексей работал над Apache Harmony в Intel, а затем перешёл в Sun Microsystems, которая была поглощена Oracle."}
     twitter: shipilev
+    javaChampion: true
   - id: 25
     fileName: 0025.jpg
     name:
@@ -581,14 +582,16 @@ speakers:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
     company:
-      - {language: en, text: Netifi}
+      - {language: en, text: "Netifi, Inc"}
     bio:
-      - {language: en, text: "Software engineer. Knows how to live with React both from the outside and inside. Java Champion.\
-            \ Co-author of the book on reactive programming in Spring. He mainly writes RSocket, helps Project Reactor and\
-            \ all related ecosystems. Talks much."}
-      - {language: ru, text: "Инженер ПО. Знает, как жить с реактивщиной как извне, так и внутри. Java Champion. Соавтор к\
-            ниги по реактивному программированию в Spring. В основном пишет RSocket, помогает Project Reactor и всем связа\
-            нным экосистемам. Много говорит."}
+      - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
+            \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
+            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+      - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
+            я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
+            \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
+            ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
+            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
     twitter: OlehDokuka
     javaChampion: true
   - id: 34
@@ -1230,9 +1233,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
-            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
-            either by plane or motorbike."
+            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
+            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
+            — either by plane or motorbike."
     twitter: DaschnerS
     javaChampion: true
   - id: 75
@@ -2890,7 +2893,7 @@ speakers:
     name:
       - {language: en, text: "Ted Neward"}
     company:
-      - {language: en, text: "Quicken Loans"}
+      - {language: en, text: "Neward & Associates, LLC"}
     bio:
       - {language: en, text: "Ted Neward is an industry professional of twenty years' experience. He speaks at conferences\
             \ all over the world and writes regularly for a variety of publications across the Java, .NET, and other ecosystems.\
