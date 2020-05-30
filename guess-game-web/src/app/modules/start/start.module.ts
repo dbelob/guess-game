@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TranslateModule } from "@ngx-translate/core";
 import { DropdownModule } from 'primeng/dropdown';
 import { ListboxModule } from "primeng/listbox";
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { StartComponent } from "./start.component";
 import { GeneralModule } from "../general/general.module";
 import { MessageModule } from "../message/message.module";
@@ -18,6 +19,7 @@ import { MessageModule } from "../message/message.module";
     BrowserAnimationsModule,
     DropdownModule,
     ListboxModule,
+    RadioButtonModule,
     TranslateModule,
     FormsModule,
     GeneralModule,

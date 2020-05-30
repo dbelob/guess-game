@@ -31,33 +31,33 @@
     <div class="form-group row">
       <label for="type" class="col-sm-2">{{'start.modeLabel' | translate}}</label>
       <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessName" value="{{guessMode.GuessNameByPhotoMode}}"
-                 [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)">
-          <label class="form-check-label" for="guessName">
-            {{'start.guessNameLabel' | translate}}
-          </label>
+        <div class="row">
+          <div class="col-sm-12">
+            <p-radioButton id="type" name="modeRadios" value="{{guessMode.GuessNameByPhotoMode}}" label="{{'start.guessNameLabel' | translate}}"
+                           [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
+                           inputId="opt1" styleClass="mode-radiobutton" labelStyleClass="mode-radiobutton"></p-radioButton>
+          </div>
         </div>
-        <div class="form-check" id="type">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessPicture" value="{{guessMode.GuessPhotoByNameMode}}"
-                 [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)">
-          <label class="form-check-label" for="guessPicture">
-            {{'start.guessPictureLabel' | translate}}
-          </label>
+        <div class="row">
+          <div class="col-sm-12">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessPhotoByNameMode}}" label="{{'start.guessPictureLabel' | translate}}"
+                            [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
+                            inputId="opt2" styleClass="mode-radiobutton" labelStyleClass="mode-radiobutton"></p-radioButton>
+          </div>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessTalk" value="{{guessMode.GuessTalkBySpeakerMode}}"
-                 [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)">
-          <label class="form-check-label" for="guessTalk">
-            {{'start.guessTalkLabel' | translate}}
-          </label>
+        <div class="row">
+          <div class="col-sm-12">
+              <p-radioButton name="modeRadios" value="{{guessMode.GuessTalkBySpeakerMode}}" label="{{'start.guessTalkLabel' | translate}}"
+                            [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
+                            inputId="opt3" styleClass="mode-radiobutton" labelStyleClass="mode-radiobutton"></p-radioButton>
+          </div>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="typeRadios" id="guessSpeaker" value="{{guessMode.GuessSpeakerByTalkMode}}"
-                 [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)">
-          <label class="form-check-label" for="guessSpeaker">
-            {{'start.guessSpeakerLabel' | translate}}
-          </label>
+        <div class="row">
+          <div class="col-sm-12">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessSpeakerByTalkMode}}" label="{{'start.guessSpeakerLabel' | translate}}"
+                            [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
+                            inputId="opt4" styleClass="mode-radiobutton" labelStyleClass="mode-radiobutton"></p-radioButton>
+          </div>
         </div>
       </div>
     </div>

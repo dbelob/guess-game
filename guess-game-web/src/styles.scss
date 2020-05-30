@@ -120,6 +120,10 @@
   width: 100%;
 }
 
+.mode-radiobutton.ui-radiobutton-box, .mode-radiobutton.ui-radiobutton-label {
+  padding: 7px 0 7px 0;
+}
+
 input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
   border: 2px solid #ff0000;
 }
