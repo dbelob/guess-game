@@ -17783,3 +17783,17 @@ speakers:
       - {language: ru, text: "Сооснователь, заместитель генерального директора Postgres Professional. В прошлом — техничес\
             кий директор социальной сети Мой Мир, заместитель директора по порталам ВШЭ, директор по разработкам Группы ко\
             мпаний Стек, доцент МГУ."}
+  - id: 1244
+    fileName: 1244.jpg
+    name:
+      - {language: en, text: "Alex Kogan"}
+    company:
+      - {language: en, text: "Oracle Labs"}
+    bio:
+      - {language: en, text: "Alex Kogan is a Principal Member of Technical Staff at Oracle Labs, Burlington, MA, where he\
+            \ works in the Scalable Synchronization group. His research interests are in the area of parallel computing, and\
+            \ especially, in exploring and boosting the performance of modern multi-core systems by devising efficient concurrent\
+            \ algorithms. He is also interested in other aspects of distributed computing, in particular, in the area of cloud\
+            \ computing. Prior to Oracle, Alex interned with IBM Research at Haifa, Israel and Microsoft Research at Redmond,\
+            \ WA. He received his Ph.D. (2012), M.Sc. (2008) and BA (Summa Cum Laude, 2002) from the Department of Computer\
+            \ Science, Technion, Israel."}
