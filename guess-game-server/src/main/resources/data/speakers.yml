@@ -10696,12 +10696,12 @@ speakers:
     name:
       - {language: en, text: "Minko Gechev"}
     company:
-      - {language: en, text: Rhyme.com}
+      - {language: en, text: Google}
     bio:
-      - {language: en, text: "Minko is a co-founder of Rhyme.com and has a big passion for open source. He loves to experiment\
-            \ with theoretical computer science concepts and apply them in practice. Minko teaches, speaks and writes about\
-            \ JavaScript and Angular. Some of the projects he works on are his books “Switching to Angular 2”, \"Getting started\
-            \ with Angular\", codelyzer, the official Angular style guide, angular-seed and many others."}
+      - {language: en, text: "Minko is an engineer in the Angular team at Google. He loves to experiment with abstract theoretical\
+            \ computer science concepts and transform them into robust industrial solutions. Minko's working on compilers,\
+            \ tools for static code analysis, and machine learning. Some of his projects are the book \"Switching to Angular\"\
+            , Guess.js, codelyzer, the official Angular style guide, the Go linter revive, and many others."}
     twitter: mgechev
     gitHub: mgechev
   - id: 731
@@ -17725,3 +17725,52 @@ speakers:
             \ and the AR library SLARToolKit.\nHe was honored several times for his dev community work with the Microsoft\
             \ MVP award and recognized as Microsoft Regional Director."
     twitter: rschu
+  - id: 1240
+    fileName: 1240.jpg
+    name:
+      - {language: en, text: "Ruslan Baigunussov"}
+      - {language: ru, text: "Руслан Байгунусов"}
+    company:
+      - {language: en, text: CSSSR}
+    bio:
+      - {language: en, text: "Увлекся программированием более 10 лет назад. Призер олимпиад различных уровней. В коммерчес\
+            кой разработке с 2015 года. Начинал с языка C и криптографии, затем занимался фулстек-разработкой на .NET и React.\
+            \ С недавнего времени Senior JavaScript Developer. Есть собственный проект в сфере развития спорта. Любит новы\
+            е технологии, быть в курсе последних новостей фронтенда. Активно использует GraphQL в процессе разработки, ста\
+            рается продвигать его в массы. Сторонник статической типизации и функционального программирования."}
+    twitter: oceandrama
+  - id: 1241
+    fileName: 1241.jpg
+    name:
+      - {language: en, text: "Margarita Roi"}
+    company:
+      - {language: en, text: Nitor}
+    bio:
+      - {language: en, text: "Margarita is a software engineer and international speaker on tools to improving software development\
+            \ processes. She is a consultant software engineer, who loves to find different ways to optimize project work."}
+    twitter: riittagirl
+  - id: 1242
+    fileName: 1242.jpg
+    name:
+      - {language: en, text: "Leonid Vinnichenko"}
+      - {language: ru, text: "Леонид Винниченко"}
+    company:
+      - {language: en, text: "Align Technology"}
+    bio:
+      - {language: en, text: "Занимаюсь разработкой 3D приложений в Align Technology. Мои основные языки Rust, Typescript\
+            \ и GLSL. В свободное время занимаюсь музыкой и бегом. Меня можно найти в Telegram - @vinneyto или по почте vinneyto@gmail.com"}
+  - id: 1243
+    fileName: 1243.jpg
+    name:
+      - {language: en, text: "Ivan Panchenko"}
+      - {language: ru, text: "Иван Панченко"}
+    company:
+      - {language: en, text: "Postgres Professional"}
+      - {language: ru, text: "Постгрес Профессиональный"}
+    bio:
+      - {language: en, text: "Postgres Professional co-founder and COO. Worked as Director of Technology for My Mir social\
+            \ network, Deputy Portal Director of Higher School of Economics, Development Director of Stack Group, Moscow State\
+            \ University Associate Professor."}
+      - {language: ru, text: "Сооснователь, заместитель генерального директора Postgres Professional. В прошлом — техничес\
+            кий директор социальной сети Мой Мир, заместитель директора по порталам ВШЭ, директор по разработкам Группы ко\
+            мпаний Стек, доцент МГУ."}

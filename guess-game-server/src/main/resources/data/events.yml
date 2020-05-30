@@ -470,13 +470,14 @@ events:
       - {language: en, text: "HolyJS 2020 SPb"}
       - {language: ru, text: "HolyJS 2020 СПб"}
     startDate: "2020-06-22"
-    endDate: "2020-06-25"
+    endDate: "2020-06-26"
     siteLink:
       - {language: en, text: "https://holyjs-piter.ru/en/"}
       - {language: ru, text: "https://holyjs-piter.ru"}
+    youtubeLink: https://www.youtube.com/playlist?list=PL8sJahqnzh8Kcwgsbyu7Z894llQjg_RJO
     placeId: 24
-    talkIds: [1957, 1419, 1432, 1409, 1434, 1435, 1420, 1415, 1427, 1406, 1757, 1418, 1428, 1421, 1414, 1426, 1405, 1959,
-              1433, 1643, 1412, 1640, 2103, 1430, 1642, 1756, 1410, 1755, 1403, 1422, 1413, 1416]
+    talkIds: [1957, 1432, 1434, 2345, 2346, 1756, 1433, 1409, 1415, 1757, 1405, 1414, 1428, 1435, 1419, 1959, 1426, 1643,
+              1422, 1640, 2103, 1406, 1421, 1410, 1412, 2347, 1420, 1413, 1755, 1403, 1430, 1416, 2348, 2349, 1640, 1427]
   # Hydra
   - eventTypeId: 5
     name:
