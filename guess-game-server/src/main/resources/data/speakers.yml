@@ -581,16 +581,14 @@ speakers:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
     company:
-      - {language: en, text: "Netifi, Inc"}
+      - {language: en, text: Netifi}
     bio:
-      - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
-            \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
-            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
-      - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
-            я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
-            \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
-            ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
-            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+      - {language: en, text: "Software engineer. Knows how to live with React both from the outside and inside. Java Champion.\
+            \ Co-author of the book on reactive programming in Spring. He mainly writes RSocket, helps Project Reactor and\
+            \ all related ecosystems. Talks much."}
+      - {language: ru, text: "Инженер ПО. Знает, как жить с реактивщиной как извне, так и внутри. Java Champion. Соавтор к\
+            ниги по реактивному программированию в Spring. В основном пишет RSocket, помогает Project Reactor и всем связа\
+            нным экосистемам. Много говорит."}
     twitter: OlehDokuka
     javaChampion: true
   - id: 34
@@ -1232,9 +1230,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
-            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
-            — either by plane or motorbike."
+            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
+            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
+            either by plane or motorbike."
     twitter: DaschnerS
     javaChampion: true
   - id: 75
@@ -7872,13 +7870,12 @@ speakers:
       - {language: en, text: Raiffeisenbank}
       - {language: ru, text: Райффайзенбанк}
     bio:
-      - {language: en, text: "Vyacheslav works in testing for 10 years; he's a performance testing expert. He was improving\
+      - {language: en, text: "Vyacheslav works in testing for 10 years, he's a performance testing expert. He was improving\
             \ quality in document flow, digital accounting, government services projects. Currently Vyacheslav is developing\
-            \ online banking channels for legal entities. Develops a community of performance testing engineers."}
-      - {language: ru, text: "Практикующий эксперт с 10 летним опытом в тестировании производительности. Участвовал в прое\
-            ктах по повышению качества производительности систем по документообороту, электронной отчётности, государствен\
-            ных и банковских проектах. Развивает сообщество инженеров по тестированию производительности. Спикер техническ\
-            их конференций."}
+            \ online banking channels for legal entities."}
+      - {language: ru, text: "Занимается тестированием 10 лет, хорошо разбирается в тестировании производительности. Повыш\
+            ал качество в проектах по документообороту, электронной отчётности, госуслугам. Сейчас развивает каналы дистан\
+            ционного банковского обслуживания для юридических лиц."}
   - id: 542
     fileName: 0542.jpg
     name:
@@ -15172,16 +15169,15 @@ speakers:
       - {language: en, text: Kontur}
       - {language: ru, text: "СКБ Контур"}
     bio:
-      - {language: en, text: "Lead tester at Kontur. For more than 10 years in the field of software development, in testing\
-            \ for more than 5. The main direction is the testing and operation of infrastructure solutions. As a rule, these\
-            \ are highly loaded, fault-tolerant integration buses, based on various message brokers and information storage\
-            \ systems, as well as on NoSql databases. Main Stack - Linux / JVM, favorite language - Scala, tools - Jmeter\
-            \ / Gatling."}
+      - {language: en, text: "Leading tester at Kontur. In the field of software development for more than 10 years, in testing\
+            \ for more than 5. The main direction is testing and operation of infrastructure solutions. As a rule, these are\
+            \ highly loaded, fault-tolerant integration buses, based on various message brokers and information storage systems,\
+            \ as well as on NoSql databases. Main Stack - Linux / JVM, Favorite language - Scala,tools - Jmeter / Gatling"}
       - {language: ru, text: "Ведущий тестировщик в компании Контур. В сфере разработки ПО более 10 лет, в тестировании бо\
-            лее 5. Основное направление — тестирование и эксплуатация инфраструктурных решений. Как правило, это высоконаг\
-            руженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения инфор\
-            мации, основанные как на реляционных, так и на NoSql базах данных. Основной стек — Linux/JVM, предпочитаемый я\
-            зык — Scala, инструменты Jmeter/Gatling."}
+            лее 5. Основное направление - тестирование и эксплуатация инфраструктурных решений. Как правило - это высокона\
+            груженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения инфо\
+            рмации, основанные как на реляционных, так и на NoSql базах данных. Основной стек - Linux/JVM, предпочитаемый\
+            \ язык -  Scala, инструменты Jmeter/Gatling"}
   - id: 1054
     fileName: 1054.jpg
     name:
@@ -17284,13 +17280,14 @@ speakers:
       - {language: en, text: Curbralan}
     bio:
       - language: en
-        text: "Kevlin is an independent consultant, speaker, writer, and trainer. His software development interests are in\
-            \ patterns, programming, practice, and process.\r\n\r\nHe has been a columnist for various magazines and websites.\
-            \ He's a co-author of A Pattern Language for Distributed Computing and On Patterns and Pattern Languages, two\
-            \ volumes in the Pattern-Oriented Software Architecture series, and editor of 97 Things Every Programmer Should\
-            \ Know.\r\n\r\nI also write short fiction, with a particular emphasis on flash fiction, and perform it at spoken\
-            \ word events. I have helped organize the BristolFlash events for National Flash Fiction Day and the Bristol Festival\
-            \ of Literature."
+        text: "Kevlin is an independent consultant, speaker, writer and trainer. His development interests include programming\
+            \ languages, software architecture and programming practices, with a particular emphasis on unit testing and reasoning\
+            \ about practices at the team level.\n\nKevlin loves to help and inspire others, share ideas and ask questions.\
+            \ He has helped many teams with their code, culture and practices, contributing code to companies and open source.\
+            \ He blogs on code and other things and has been a columnist for a number of magazines and sites and has been\
+            \ on far too many committees (it has been said that \"a committee is a cul-de-sac down which ideas are lured and\
+            \ then quietly strangled\"). He is co-author of two volumes in the Pattern-Oriented Software Architecture series,\
+            \ editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should Know."
     twitter: kevlinhenney
   - id: 1208
     fileName: 1208.jpg
