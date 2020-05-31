@@ -3,15 +3,15 @@
     "cancelLinkText": "Прервать"
   },
   "start": {
-    "title": "Выберите вопросы",
+    "title": "Угадай спикера",
     "eventTypeLabel": "Тип события:",
     "eventLabel": "Событие:",
     "modeLabel": "Режим:",
     "quantityLabel": "Вопросов:",
-    "guessNameLabel": "Угадать имя по фотографии",
-    "guessPictureLabel": "Угадать фотографию по имени",
-    "guessTalkLabel": "Угадать доклад по спикеру",
-    "guessSpeakerLabel": "Угадать спикера по докладу",
+    "guessNameByPhotoLabel": "Угадать имя по фотографии",
+    "guessPhotoByNameLabel": "Угадать фотографию по имени",
+    "guessTalkBySpeakerLabel": "Угадать доклад по спикеру",
+    "guessSpeakerByTalkLabel": "Угадать спикера по докладу",
     "startButtonText": "Начать"
   },
   "result":{
@@ -28,7 +28,7 @@
     }
   },
   "cancel": {
-    "title": "Прервать игру",
+    "title": "Прерывание игры",
     "text": "Вы уверены, что хотите прервать игру?",
     "yesButtonText": "Да",
     "noButtonText": "Нет"

@@ -3,15 +3,15 @@
     "cancelLinkText": "Cancel"
   },
   "start": {
-    "title": "Select questions",
+    "title": "Guess the Speaker",
     "eventTypeLabel": "Event type:",
     "eventLabel": "Event:",
     "modeLabel": "Mode:",
     "quantityLabel": "Questions:",
-    "guessNameLabel": "Guess name by photo",
-    "guessPictureLabel": "Guess photo by name",
-    "guessTalkLabel": "Guess talk by speaker",
-    "guessSpeakerLabel": "Guess speaker by talk",
+    "guessNameByPhotoLabel": "Guess name by photo",
+    "guessPhotoByNameLabel": "Guess photo by name",
+    "guessTalkBySpeakerLabel": "Guess talk by speaker",
+    "guessSpeakerByTalkLabel": "Guess speaker by talk",
     "startButtonText": "Start"
   },
   "result":{
@@ -28,7 +28,7 @@
     }
   },
   "cancel": {
-    "title": "Cancel game",
+    "title": "Game cancellation",
     "text": "Are you sure to cancel game?",
     "yesButtonText": "Yes",
     "noButtonText": "No"
