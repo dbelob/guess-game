@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from "@angular/router";
 import { formatDate } from "@angular/common";
 import { TranslateService } from "@ngx-translate/core";
@@ -34,6 +34,8 @@ export class StartComponent implements OnInit {
 
   private defaultEvent: Event;
 
+  @ViewChildren("eventTypeRow", {read: ElementRef}) rowElement: QueryList<ElementRef>;
+
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router,
               public translateService: TranslateService) {
   }
@@ -60,6 +62,10 @@ export class StartComponent implements OnInit {
 
               if (selectedEventType) {
                 this.selectedEventTypes = [selectedEventType];
+
+                if (selectedEventType !== this.eventTypes[0]) {
+                  this.scrollIntoSelectedEventType(selectedEventType);
+                }
               } else {
                 this.selectedEventTypes = [this.eventTypes[0]];
               }
@@ -73,7 +79,7 @@ export class StartComponent implements OnInit {
       });
   }
 
-  findEventTypeByDefaultEvent(defaultEvent: Event): Event {
+  findEventTypeByDefaultEvent(defaultEvent: Event): EventType {
     if (defaultEvent) {
       for (let i = 0; i < this.eventTypes.length; i++) {
         let eventType: EventType = this.eventTypes[i];
@@ -85,6 +91,14 @@ export class StartComponent implements OnInit {
     }
 
     return null;
+  }
+
+  scrollIntoSelectedEventType(eventType: EventType) {
+    const el = this.rowElement.find(r => r.nativeElement.getAttribute('id') == eventType.id);
+
+    if (el) {
+      el.nativeElement.scrollIntoView({behavior: 'smooth', inline: 'start', block: 'start'});
+    }
   }
 
   onEventTypeChange(eventTypes: EventType[]) {
