@@ -32,31 +32,31 @@
       <label for="type" class="col-sm-2">{{'start.modeLabel' | translate}}</label>
       <div class="col-sm-10">
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12 pb-1">
             <p-radioButton id="type" name="modeRadios" value="{{guessMode.GuessNameByPhotoMode}}" label="{{'start.guessNameLabel' | translate}}"
                            [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
-                           inputId="opt1" styleClass="mode-radiobutton" labelStyleClass="mode-radiobutton"></p-radioButton>
+                           inputId="opt1"></p-radioButton>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12 pt-1 pb-1">
             <p-radioButton name="modeRadios" value="{{guessMode.GuessPhotoByNameMode}}" label="{{'start.guessPictureLabel' | translate}}"
                             [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
-                            inputId="opt2" styleClass="mode-radiobutton" labelStyleClass="mode-radiobutton"></p-radioButton>
+                            inputId="opt2"></p-radioButton>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12 pt-1 pb-1">
               <p-radioButton name="modeRadios" value="{{guessMode.GuessTalkBySpeakerMode}}" label="{{'start.guessTalkLabel' | translate}}"
                             [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
-                            inputId="opt3" styleClass="mode-radiobutton" labelStyleClass="mode-radiobutton"></p-radioButton>
+                            inputId="opt3"></p-radioButton>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12">
+          <div class="col-sm-12 pt-1 pb-1">
             <p-radioButton name="modeRadios" value="{{guessMode.GuessSpeakerByTalkMode}}" label="{{'start.guessSpeakerLabel' | translate}}"
                             [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
-                            inputId="opt4" styleClass="mode-radiobutton" labelStyleClass="mode-radiobutton"></p-radioButton>
+                            inputId="opt4"></p-radioButton>
           </div>
         </div>
       </div>
