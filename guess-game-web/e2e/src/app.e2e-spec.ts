@@ -18,6 +18,6 @@ describe('App', () => {
     mockServer.get("/api/question/quantities").withQuery({"questionSetId":"0"}).thenReply(200, '[5,10]');
 
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Select questions');
+    expect(page.getTitleText()).toEqual('Guess the Speaker');
   });
 });
