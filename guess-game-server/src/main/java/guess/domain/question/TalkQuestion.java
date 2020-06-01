@@ -9,8 +9,8 @@ import java.util.List;
  * Question about talk.
  */
 public class TalkQuestion extends Question {
-    private List<Speaker> speakers;
-    private Talk talk;
+    private final List<Speaker> speakers;
+    private final Talk talk;
 
     public TalkQuestion(List<Speaker> speakers, Talk talk) {
         super(talk.getId());

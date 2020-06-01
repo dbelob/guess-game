@@ -4,7 +4,7 @@ import { formatDate } from "@angular/common";
 import { TranslateService } from "@ngx-translate/core";
 import { SelectItem } from "primeng/api";
 import { StartParameters } from "../../shared/models/start-parameters.model";
-import { GuessMode } from "../../shared/models/guess-type.model";
+import { GuessMode } from "../../shared/models/guess-mode.model";
 import { EventType } from "../../shared/models/event-type.model";
 import { Event } from "../../shared/models/event.model";
 import { QuestionService } from "../../shared/services/question.service";

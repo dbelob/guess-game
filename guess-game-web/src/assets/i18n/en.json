@@ -12,6 +12,8 @@
     "guessPhotoByNameLabel": "Guess photo by name",
     "guessTalkBySpeakerLabel": "Guess talk by speaker",
     "guessSpeakerByTalkLabel": "Guess speaker by talk",
+    "guessAccountsBySpeakerLabel": "Guess Twitter, GitHub by speaker",
+    "guessSpeakerByAccountsLabel": "Guess speaker by Twitter, GitHub",
     "startButtonText": "Start"
   },
   "result":{

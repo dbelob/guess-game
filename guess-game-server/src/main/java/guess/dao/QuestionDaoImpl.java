@@ -48,10 +48,20 @@ public class QuestionDaoImpl implements QuestionDao {
             // Fill speaker and talk questions
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
             List<TalkQuestion> talkQuestions = new ArrayList<>();
+            List<SpeakerQuestion> accountQuestions = new ArrayList<>();
 
             for (Talk talk : event.getTalks()) {
                 for (Speaker speaker : talk.getSpeakers()) {
-                    speakerQuestions.add(new SpeakerQuestion(speaker));
+                    SpeakerQuestion speakerQuestion = new SpeakerQuestion(speaker);
+                    speakerQuestions.add(speakerQuestion);
+
+                    String twitter = speaker.getTwitter();
+                    String gitHub = speaker.getGitHub();
+
+                    if (((twitter != null) && !twitter.isEmpty()) ||
+                            ((gitHub != null) && !gitHub.isEmpty())) {
+                        accountQuestions.add(speakerQuestion);
+                    }
                 }
 
                 talkQuestions.add(new TalkQuestion(
@@ -62,7 +72,8 @@ public class QuestionDaoImpl implements QuestionDao {
             questionSets.add(new QuestionSet(
                     event,
                     QuestionUtils.removeDuplicatesById(speakerQuestions),
-                    QuestionUtils.removeDuplicatesById(talkQuestions)));
+                    QuestionUtils.removeDuplicatesById(talkQuestions),
+                    QuestionUtils.removeDuplicatesById(accountQuestions)));
         }
 
         return questionSets;
@@ -81,7 +92,7 @@ public class QuestionDaoImpl implements QuestionDao {
         List<QuestionSet> subQuestionSets = getSubQuestionSets(eventTypeIds, eventIds);
 
         if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) || GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode)) {
-            // Guess name by picture or picture by name
+            // Guess name by photo or photo by name
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
 
             subQuestionSets.stream()
@@ -98,6 +109,15 @@ public class QuestionDaoImpl implements QuestionDao {
                     .forEach(talkQuestions::addAll);
 
             questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(talkQuestions));
+        } else if (GuessMode.GUESS_ACCOUNTS_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_ACCOUNTS_MODE.equals(guessMode)) {
+            // Guess accounts by speaker or speaker by accounts
+            List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
+
+            subQuestionSets.stream()
+                    .map(QuestionSet::getAccountQuestions)
+                    .forEach(speakerQuestions::addAll);
+
+            questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }

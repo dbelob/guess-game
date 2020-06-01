@@ -12,6 +12,8 @@
     "guessPhotoByNameLabel": "Угадать фотографию по имени",
     "guessTalkBySpeakerLabel": "Угадать доклад по спикеру",
     "guessSpeakerByTalkLabel": "Угадать спикера по докладу",
+    "guessAccountsBySpeakerLabel": "Угадать Twitter, GitHub по спикеру",
+    "guessSpeakerByAccountsLabel": "Угадать спикера по Twitter, GitHub",
     "startButtonText": "Начать"
   },
   "result":{

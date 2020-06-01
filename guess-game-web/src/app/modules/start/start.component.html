@@ -61,6 +61,20 @@
                             inputId="opt4"></p-radioButton>
           </div>
         </div>
+        <div class="row">
+          <div class="col-sm-12 pt-1 pb-1">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessAccountsBySpeakerMode}}" label="{{'start.guessAccountsBySpeakerLabel' | translate}}"
+                           [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
+                           inputId="opt5"></p-radioButton>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 pt-1 pb-1">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessSpeakerByAccountsMode}}" label="{{'start.guessSpeakerByAccountsLabel' | translate}}"
+                           [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
+                           inputId="opt6"></p-radioButton>
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group row">
