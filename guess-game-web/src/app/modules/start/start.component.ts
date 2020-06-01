@@ -62,10 +62,7 @@ export class StartComponent implements OnInit {
 
               if (selectedEventType) {
                 this.selectedEventTypes = [selectedEventType];
-
-                if (selectedEventType !== this.eventTypes[0]) {
-                  this.scrollIntoSelectedEventType(selectedEventType);
-                }
+                this.scrollIntoSelectedEventType(selectedEventType);
               } else {
                 this.selectedEventTypes = [this.eventTypes[0]];
               }
@@ -94,10 +91,10 @@ export class StartComponent implements OnInit {
   }
 
   scrollIntoSelectedEventType(eventType: EventType) {
-    const el = this.rowElement.find(r => r.nativeElement.getAttribute('id') == eventType.id);
+    const elementRef = this.rowElement.find(r => r.nativeElement.getAttribute('id') == eventType.id);
 
-    if (el) {
-      el.nativeElement.scrollIntoView({behavior: 'smooth', inline: 'start', block: 'start'});
+    if (elementRef) {
+      elementRef.nativeElement.scrollIntoView({behavior: 'auto', block: 'center', inline: 'nearest'});
     }
   }
 
