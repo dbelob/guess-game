@@ -763,6 +763,10 @@ public class ConferenceDataLoader {
                 new FixingVenueAddress(
                         "Онлайн",
                         "Online",
+                        ""),
+                new FixingVenueAddress(
+                        "Онлайн",
+                        "Онлайн",
                         "")
         );
 
@@ -852,6 +856,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2019, 12, 7), "2019msk");
 
         // 2020
+//        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 6, 6), "2020-spb-tt");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 6, 15), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 15), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 6, 22), "2020-spb");
@@ -862,7 +867,6 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
 //                Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L));
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc");
-//        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 8, 22), "2020-techtrain");    // valid date?
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 10, 7), "2020-spb-devoops");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 10, 9), "2020-spb-cpp");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 10, 23), "2020-joker");

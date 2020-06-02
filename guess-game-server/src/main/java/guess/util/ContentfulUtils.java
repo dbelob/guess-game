@@ -279,6 +279,11 @@ public class ContentfulUtils {
                         nameEn = nameRu;
                     }
 
+                    LocalDate eventStartDate = createMoscowLocalDate(getFirstMapValue(e.getFields().getEventStart()));
+                    LocalDate eventEndDate = (e.getFields().getEventEnd() != null) ?
+                            createMoscowLocalDate(getFirstMapValue(e.getFields().getEventEnd())) :
+                            eventStartDate;
+
                     ContentfulLink eventCityLink = getFirstMapValue(e.getFields().getEventCity());
                     Map<String, String> conferenceLink = e.getFields().getConferenceLink();
                     Map<String, String> venueAddress = e.getFields().getVenueAddress();
@@ -291,8 +296,8 @@ public class ContentfulUtils {
                             extractLocaleItems(
                                     extractEventName(nameEn, ENGLISH_LOCALE),
                                     extractEventName(nameRu, RUSSIAN_LOCALE)),
-                            createMoscowLocalDate(getFirstMapValue(e.getFields().getEventStart())),
-                            createMoscowLocalDate(getFirstMapValue(e.getFields().getEventEnd())),
+                            eventStartDate,
+                            eventEndDate,
                             extractLocaleItems(
                                     (conferenceLink != null) ? conferenceLink.get(ENGLISH_LOCALE) : null,
                                     (conferenceLink != null) ? conferenceLink.get(RUSSIAN_LOCALE) : null),

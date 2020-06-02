@@ -917,6 +917,16 @@ events:
     placeId: 2
     talkIds: [1317, 1318, 1319, 1320, 1321, 1322, 1323, 1324, 1325, 1326, 1327, 1328, 1329, 1330, 1331, 1332, 1333, 1334,
               1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344]
+  - eventTypeId: 12
+    name:
+      - {language: en, text: "TechTrain 2020"}
+    startDate: "2020-06-06"
+    endDate: "2020-06-06"
+    siteLink:
+      - {language: en, text: "https://techtrain.ru/en/"}
+      - {language: ru, text: "https://techtrain.ru/"}
+    placeId: 24
+    talkIds: [2373, 2374, 2375, 2376, 2377, 2378, 2379, 2380, 2381, 2382]
   # JUG.MSK
   - eventTypeId: 13
     name:

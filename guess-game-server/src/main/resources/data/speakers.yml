@@ -135,13 +135,13 @@ speakers:
       - {language: en, text: "Alexey Fyodorov"}
       - {language: ru, text: "Алексей Федоров"}
     company:
-      - {language: en, text: "JUG.ru Group"}
+      - {language: en, text: "JUG Ru Group"}
     bio:
-      - {language: en, text: "Director of JUG.ru Group, organizes the largest technological conferences for developers in\
-            \ Russia. In 5 years Alexey's team arranged more than 40 conferences. JUG.ru community leader, for several years\
+      - {language: en, text: "Director of JUG Ru Group, organizes the largest technological conferences for developers in\
+            \ Russia. In 7 years Alexey's team arranged more than 40 conferences. JUG.ru community leader, for several years\
             \ was creating HR brand at Odnoklassniki."}
-      - {language: ru, text: "Алексей Федоров – директор JUG.ru Group, организатор крупнейших в России технологических кон\
-            ференций для разработчиков. За 5 лет команда Алексея провела более 40 конференций. Лидер сообщества JUG.ru, не\
+      - {language: ru, text: "Алексей Федоров – директор JUG Ru Group, организатор крупнейших в России технологических кон\
+            ференций для разработчиков. За 7 лет команда Алексея провела более 40 конференций. Лидер сообщества JUG.ru, не\
             сколько лет занимался созданием HR-бренда в Одноклассниках."}
     twitter: 23derevo
     javaChampion: true
@@ -972,12 +972,12 @@ speakers:
     company:
       - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "Nikita works on algorithms for coroutines in the Kotlin team and has been getting a PhD at IST\
-            \ Austria. In addition, he teaches a course on concurrency programming at ITMO University and is interested in\
-            \ program analysis and verification."}
-      - {language: ru, text: "Никита разрабатывает алгоритмы для корутин в команде Kotlin и получает PhD в IST Austria. По\
-            мимо этого, преподает курс по многопоточному программированию в Университете ИТМО и интересуется верификацией\
-            \ и анализом программ."}
+      - {language: en, text: "Nikita is a researcher in the Kotlin team and has been getting a PhD in the field of concurrency.\
+            \ His primary research interests are, but not limited to, concurrent data structures and algorithms, their verification,\
+            \ and practically applicable code analysis. He is also a frequent speaker at JPoint and Joker conferences."}
+      - {language: ru, text: "Никита разрабатывает алгоритмы для корутин в команде Kotlin и получает Ph.D. в IST Austria.\
+            \ Помимо этого, преподает курс по многопоточному программированию в Университете ИТМО и интересуется верификац\
+            ией и анализом программ."}
     twitter: nkoval_
   - id: 59
     fileName: 0059.jpg
@@ -3023,10 +3023,11 @@ speakers:
     company:
       - {language: en, text: JetBrains}
     bio:
-      - language: ru
-        text: "Разработчик языка Kotlin в компании JetBrains c 2011 года. Любит рассказывать про Kotlin на конференциях.\
-        \ До присоединения к команде Kotlin была апологетом программирования на Scala. Любит концепты и идеи, а также\
-        \ кататься на горных лыжах."
+      - {language: en, text: "Kotlin developer at JetBrains since 2011. Speaks about Kotlin at conferences from time to time.\
+            \ Likes concepts and ideas, as well as skiing."}
+      - {language: ru, text: "Разработчик языка Kotlin в компании JetBrains c 2011 года. Время от времени рассказывает про\
+            \ Kotlin на конференциях. Любит концепты и идеи, а также кататься на горных лыжах."}
+    twitter: sveta_isakova
   - id: 196
     fileName: 0196.jpg
     name:
@@ -14957,18 +14958,17 @@ speakers:
       - {language: en, text: "Alexandra Kalinina"}
       - {language: ru, text: "Александра Калинина"}
     company:
-      - {language: en, text: "Valor Software"}
+      - {language: en, text: Nix}
     bio:
       - language: en
         text: "10+ years of programming experience.\nWell skilled in web development: figuring out a problem where the abstraction\
-            \ leaked.\nGreat experience in writing unit/integration/E2E/B2B tests using mocha/chai/sinon.\nStrong experience\
+            \ leaked.\nGreat experience in writing unit/integration/e2e/b2b tests using mocha/chai/sinon.\nStrong experience\
             \ in major web development technologies, design patterns, DB design, algorithms development and data structures.\n\
             Some experience in project specification and technical documentation development."
-      - language: ru
-        text: "Более 10 лет опыта в программировании.\nХорошо подкована в веб-разработке: решает проблемы с дырявыми абстр\
-            акциями.\nИмеет опыт в написании unit/integration/E2E/B2B-тестов, используя mocha/chai/sinon.\nБольшой опыт в\
-            \ технологиях веб-разработки, шаблонах проектирования, проектирования баз данных, разработки алгоритмов и стру\
-            ктуры данных.\nЕсть опыт в разработке проектных заданий и технической документации."
+      - {language: ru, text: "Более 10 лет опыта в программировании. Хорошо подкована в веб-разработке: решает проблемы с\
+            \ дырявыми абстракциями. Имеет опыт в написании unit/integration/E2E/B2B-тестов, используя mocha/chai/sinon. Б\
+            ольшой опыт в технологиях веб-разработки, шаблонах проектирования, проектирования баз данных, разработки алгор\
+            итмов и структуры данных. Есть опыт в разработке проектных заданий и технической документации."}
     twitter: korery
     gitHub: korel-san
   - id: 1040
@@ -17797,3 +17797,19 @@ speakers:
             \ computing. Prior to Oracle, Alex interned with IBM Research at Haifa, Israel and Microsoft Research at Redmond,\
             \ WA. He received his Ph.D. (2012), M.Sc. (2008) and BA (Summa Cum Laude, 2002) from the Department of Computer\
             \ Science, Technion, Israel."}
+  - id: 1245
+    fileName: 1245.jpg
+    name:
+      - {language: en, text: "Gleb Bahmutov"}
+      - {language: ru, text: "Глеб Бахмутов"}
+    company:
+      - {language: en, text: Cypress.io}
+    bio:
+      - {language: en, text: "Gleb Bahmutov is JavaScript ninja, image processing expert and software quality fanatic. During\
+            \ the day Gleb is making the web a better place as VP of Engineering at Cypress.io. At night he is fighting software\
+            \ bugs and blogs about it at glebbahmutov.com/blog."}
+      - {language: ru, text: "Кандидат наук и мастер JavaScript, Глеб работал и в больших компаниях и в только начинающих\
+            . Он выступал по всему миру на темы быстрого программирования, качественного софта и надежных приложений. Его\
+            \ блог (на английском языке) находится на glebbahmutov.com/blog и сотни проектов и другой информации на сайте\
+            \ glebbahmutov.com."}
+    twitter: bahmutov
