@@ -24,6 +24,7 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "bootstrap": "^4.4.1",
     "core-js": "^2.6.11",
+    "font-awesome": "^4.7.0",
     "primeicons": "^4.0.0-rc.2",
     "primeng": "^9.1.0",
     "rxjs": "^6.5.5",
