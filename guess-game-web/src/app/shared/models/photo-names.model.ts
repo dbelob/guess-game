@@ -1,6 +1,6 @@
 import { QuestionAnswers } from "./question-answers.model";
 
-export class PictureNames extends QuestionAnswers {
+export class PhotoNames extends QuestionAnswers {
   constructor(
     public fileName?: string,
     public name0?: string,

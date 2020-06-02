@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { PictureNames } from "../../shared/models/picture-names.model";
+import { PhotoNames } from "../../shared/models/photo-names.model";
 import { StateService } from "../../shared/services/state.service";
 import { AnswerService } from "../../shared/services/answer.service";
 import { State } from "../../shared/models/state.model";
@@ -13,7 +13,7 @@ export class GuessNameByPhotoComponent implements OnInit {
   private imageDirectory: string = 'assets/images';
   private eventsImageDirectory: string = `${this.imageDirectory}/events`;
   private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
-  public pictureNames: PictureNames = new PictureNames();
+  public photoNames: PhotoNames = new PhotoNames();
   public title: string;
   public logoImageSource: string;
   public imageSource: string;
@@ -26,15 +26,15 @@ export class GuessNameByPhotoComponent implements OnInit {
   }
 
   loadQuestion() {
-    this.stateService.getPictureNames()
+    this.stateService.getPhotoNames()
       .subscribe(data => {
           if (data) {
-            this.pictureNames = data;
-            this.title = `${this.pictureNames.questionSetName} (${this.pictureNames.currentIndex + 1}/${this.pictureNames.totalNumber})`;
-            this.imageSource = `${this.speakersImageDirectory}/${this.pictureNames.fileName}`;
+            this.photoNames = data;
+            this.title = `${this.photoNames.questionSetName} (${this.photoNames.currentIndex + 1}/${this.photoNames.totalNumber})`;
+            this.imageSource = `${this.speakersImageDirectory}/${this.photoNames.fileName}`;
 
-            if (this.pictureNames.logoFileName) {
-              this.logoImageSource = `${this.eventsImageDirectory}/${this.pictureNames.logoFileName}`;
+            if (this.photoNames.logoFileName) {
+              this.logoImageSource = `${this.eventsImageDirectory}/${this.photoNames.logoFileName}`;
             }
           } else {
             this.result();
@@ -44,7 +44,7 @@ export class GuessNameByPhotoComponent implements OnInit {
   }
 
   answer(id: number) {
-    this.answerService.setAnswer(this.pictureNames.currentIndex, id)
+    this.answerService.setAnswer(this.photoNames.currentIndex, id)
       .subscribe(data => {
           this.loadQuestion();
         }

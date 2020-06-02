@@ -77,16 +77,16 @@ public class StateController {
         }
     }
 
-    @GetMapping("/picture-names")
+    @GetMapping("/photo-names")
     @ResponseBody
-    public PictureNamesDto getPictureNames(HttpSession httpSession) {
-        return getDto(httpSession, PictureNamesDto::convertToDto);
+    public PhotoNamesDto getPhotoNames(HttpSession httpSession) {
+        return getDto(httpSession, PhotoNamesDto::convertToDto);
     }
 
-    @GetMapping("/name-pictures")
+    @GetMapping("/name-photos")
     @ResponseBody
-    public NamePicturesDto getNamePictures(HttpSession httpSession) {
-        return getDto(httpSession, NamePicturesDto::convertToDto);
+    public NamePhotosDto getNamePhotos(HttpSession httpSession) {
+        return getDto(httpSession, NamePhotosDto::convertToDto);
     }
 
     @GetMapping("/speaker-talks")

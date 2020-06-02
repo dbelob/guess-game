@@ -12,15 +12,15 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Name, pictures DTO.
+ * Name, photos DTO.
  */
-public class NamePicturesDto extends QuestionAnswersDto {
+public class NamePhotosDto extends QuestionAnswersDto {
     private final String name;
     private final Quadruple<String> fileNames;
 
-    public NamePicturesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                           Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                           String name, Quadruple<String> fileNames) {
+    public NamePhotosDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
+                         Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+                         String name, Quadruple<String> fileNames) {
         super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
 
         this.name = name;
@@ -47,9 +47,9 @@ public class NamePicturesDto extends QuestionAnswersDto {
         return fileNames.getFourth();
     }
 
-    public static NamePicturesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                                               Language language) {
+    public static NamePhotosDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
+                                             QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+                                             Language language) {
         Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
         Quadruple<Speaker> answerSpeakers =
                 questionAnswers.getAvailableAnswers().map(
@@ -62,7 +62,7 @@ public class NamePicturesDto extends QuestionAnswersDto {
                 s -> true);
         String questionName = LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates);
 
-        return new NamePicturesDto(questionSetName, currentIndex, totalNumber, logoFileName,
+        return new NamePhotosDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 answerSpeakers.map(Speaker::getId),
                 correctAnswerIds, yourAnswerIds,
                 questionName,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { NamePictures } from "../../shared/models/name-pictures.model";
+import { NamePhotos } from "../../shared/models/name-photos.model";
 import { StateService } from "../../shared/services/state.service";
 import { AnswerService } from "../../shared/services/answer.service";
 import { State } from "../../shared/models/state.model";
@@ -13,7 +13,7 @@ export class GuessPhotoByNameComponent implements OnInit {
   private imageDirectory: string = 'assets/images';
   private eventsImageDirectory: string = `${this.imageDirectory}/events`;
   private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
-  public namePictures: NamePictures = new NamePictures();
+  public namePhotos: NamePhotos = new NamePhotos();
   public title: string;
   public logoImageSource: string;
   public imageSource0: string;
@@ -29,18 +29,18 @@ export class GuessPhotoByNameComponent implements OnInit {
   }
 
   loadQuestion() {
-    this.stateService.getNamePictures()
+    this.stateService.getNamePhotos()
       .subscribe(data => {
           if (data) {
-            this.namePictures = data;
-            this.title = `${this.namePictures.questionSetName} (${this.namePictures.currentIndex + 1}/${this.namePictures.totalNumber})`;
-            this.imageSource0 = `${this.speakersImageDirectory}/${this.namePictures.fileName0}`;
-            this.imageSource1 = `${this.speakersImageDirectory}/${this.namePictures.fileName1}`;
-            this.imageSource2 = `${this.speakersImageDirectory}/${this.namePictures.fileName2}`;
-            this.imageSource3 = `${this.speakersImageDirectory}/${this.namePictures.fileName3}`;
+            this.namePhotos = data;
+            this.title = `${this.namePhotos.questionSetName} (${this.namePhotos.currentIndex + 1}/${this.namePhotos.totalNumber})`;
+            this.imageSource0 = `${this.speakersImageDirectory}/${this.namePhotos.fileName0}`;
+            this.imageSource1 = `${this.speakersImageDirectory}/${this.namePhotos.fileName1}`;
+            this.imageSource2 = `${this.speakersImageDirectory}/${this.namePhotos.fileName2}`;
+            this.imageSource3 = `${this.speakersImageDirectory}/${this.namePhotos.fileName3}`;
 
-            if (this.namePictures.logoFileName) {
-              this.logoImageSource = `${this.eventsImageDirectory}/${this.namePictures.logoFileName}`;
+            if (this.namePhotos.logoFileName) {
+              this.logoImageSource = `${this.eventsImageDirectory}/${this.namePhotos.logoFileName}`;
             }
           } else {
             this.result();
@@ -50,7 +50,7 @@ export class GuessPhotoByNameComponent implements OnInit {
   }
 
   answer(id: number) {
-    this.answerService.setAnswer(this.namePictures.currentIndex, id)
+    this.answerService.setAnswer(this.namePhotos.currentIndex, id)
       .subscribe(data => {
           this.loadQuestion();
         }
