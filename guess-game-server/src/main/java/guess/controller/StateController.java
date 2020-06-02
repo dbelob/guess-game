@@ -100,4 +100,10 @@ public class StateController {
     public TalkSpeakersDto getTalkSpeakers(HttpSession httpSession) {
         return getDto(httpSession, TalkSpeakersDto::convertToDto);
     }
+
+    @GetMapping("/speaker-accounts")
+    @ResponseBody
+    public SpeakerAccountsDto getSpeakerAccounts(HttpSession httpSession) {
+        return getDto(httpSession, SpeakerAccountsDto::convertToDto);
+    }
 }
