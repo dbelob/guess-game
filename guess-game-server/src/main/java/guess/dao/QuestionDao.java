@@ -1,6 +1,5 @@
 package guess.dao;
 
-import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessMode;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionSet;
@@ -13,5 +12,5 @@ import java.util.List;
 public interface QuestionDao {
     List<QuestionSet> getQuestionSets();
 
-    List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) throws QuestionSetNotExistsException;
+    List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode);
 }

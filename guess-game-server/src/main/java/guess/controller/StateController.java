@@ -1,6 +1,5 @@
 package guess.controller;
 
-import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.Language;
 import guess.domain.State;
 import guess.domain.question.QuestionAnswers;
@@ -38,7 +37,7 @@ public class StateController {
 
     @PostMapping("/parameters")
     @ResponseStatus(HttpStatus.OK)
-    public void setStartParameters(@RequestBody StartParametersDto startParameters, HttpSession httpSession) throws QuestionSetNotExistsException {
+    public void setStartParameters(@RequestBody StartParametersDto startParameters, HttpSession httpSession) {
         stateService.setStartParameters(StartParametersDto.convertFromDto(startParameters), httpSession);
     }
 

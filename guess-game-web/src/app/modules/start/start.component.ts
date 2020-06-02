@@ -15,6 +15,8 @@ import { StateService } from "../../shared/services/state.service";
   templateUrl: './start.component.html'
 })
 export class StartComponent implements OnInit {
+  private MIN_QUANTITY_VALUE = 4;
+
   private imageDirectory: string = 'assets/images';
   public eventsImageDirectory: string = `${this.imageDirectory}/events`;
 
@@ -208,7 +210,7 @@ export class StartComponent implements OnInit {
         this.selectedGuessMode,
         this.selectedQuantity))
       .subscribe(data => {
-        this.router.navigateByUrl('/guess/name');
+        this.router.navigateByUrl('/guess/name-by-photo');
       });
   }
 
@@ -221,7 +223,7 @@ export class StartComponent implements OnInit {
     return (!this.selectedEventTypes) || (!this.selectedEvents) ||
       (this.selectedEventTypes && (this.selectedEventTypes.length <= 0)) ||
       (this.selectedEvents && (this.selectedEvents.length <= 0)) ||
-      (this.selectedQuantity == 0);
+      (this.selectedQuantity < this.MIN_QUANTITY_VALUE);
   }
 
   isEventStartDateVisible(event: Event): boolean {

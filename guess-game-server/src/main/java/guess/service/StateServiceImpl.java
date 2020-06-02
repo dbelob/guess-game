@@ -1,7 +1,6 @@
 package guess.service;
 
 import guess.dao.*;
-import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.*;
 import guess.domain.answer.Answer;
 import guess.domain.answer.SpeakerAnswer;
@@ -40,7 +39,7 @@ public class StateServiceImpl implements StateService {
     }
 
     @Override
-    public void setStartParameters(StartParameters startParameters, HttpSession httpSession) throws QuestionSetNotExistsException {
+    public void setStartParameters(StartParameters startParameters, HttpSession httpSession) {
         stateDao.setStartParameters(startParameters, httpSession);
 
         QuestionAnswersSet questionAnswersSet = createQuestionAnswersSet(startParameters);
@@ -50,14 +49,25 @@ public class StateServiceImpl implements StateService {
         stateDao.setState(
                 questionAnswersSet.getQuestionAnswersList().isEmpty() ?
                         State.RESULT_STATE :
-                        (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(startParameters.getGuessMode()) ?
-                                State.GUESS_NAME_STATE :
-                                (GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(startParameters.getGuessMode()) ?
-                                        State.GUESS_PICTURE_STATE :
-                                        (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(startParameters.getGuessMode()) ?
-                                                State.GUESS_TALK_STATE :
-                                                State.GUESS_SPEAKER_STATE))),
+                        getStateByGuessMode(startParameters.getGuessMode()),
                 httpSession);
+    }
+
+    private State getStateByGuessMode(GuessMode guessMode) {
+        switch (guessMode) {
+            case GUESS_NAME_BY_PHOTO_MODE:
+                return State.GUESS_NAME_BY_PHOTO_STATE;
+            case GUESS_PHOTO_BY_NAME_MODE:
+                return State.GUESS_PHOTO_BY_NAME_STATE;
+            case GUESS_TALK_BY_SPEAKER_MODE:
+                return State.GUESS_TALK_BY_SPEAKER_STATE;
+            case GUESS_SPEAKER_BY_TALK_MODE:
+                return State.GUESS_SPEAKER_BY_TALK_STATE;
+            case GUESS_ACCOUNTS_BY_SPEAKER_MODE:
+                return State.GUESS_ACCOUNTS_BY_SPEAKER_STATE;
+            default:
+                return State.GUESS_SPEAKER_BY_ACCOUNTS_STATE;
+        }
     }
 
     @Override
@@ -75,7 +85,7 @@ public class StateServiceImpl implements StateService {
         return stateDao.getQuestionAnswersSet(httpSession);
     }
 
-    private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
+    private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
         // Find unique questions by ids
         List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getEventTypeIds(), startParameters.getEventIds(), startParameters.getGuessMode());
 
@@ -158,6 +168,8 @@ public class StateServiceImpl implements StateService {
         switch (guessMode) {
             case GUESS_NAME_BY_PHOTO_MODE:
             case GUESS_PHOTO_BY_NAME_MODE:
+            case GUESS_ACCOUNTS_BY_SPEAKER_MODE:
+            case GUESS_SPEAKER_BY_ACCOUNTS_MODE:
                 return Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker()));
             case GUESS_TALK_BY_SPEAKER_MODE:
                 return Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk()));
@@ -174,6 +186,8 @@ public class StateServiceImpl implements StateService {
         switch (guessMode) {
             case GUESS_NAME_BY_PHOTO_MODE:
             case GUESS_PHOTO_BY_NAME_MODE:
+            case GUESS_ACCOUNTS_BY_SPEAKER_MODE:
+            case GUESS_SPEAKER_BY_ACCOUNTS_MODE:
                 return questions.stream()
                         .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
                         .collect(Collectors.toList());

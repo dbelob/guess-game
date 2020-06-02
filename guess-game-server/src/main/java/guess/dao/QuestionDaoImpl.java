@@ -1,6 +1,5 @@
 package guess.dao;
 
-import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessMode;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionSet;
@@ -85,7 +84,7 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
-    public List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) throws QuestionSetNotExistsException {
+    public List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) {
         List<Question> questions;
 
         // Find sub question sets

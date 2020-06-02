@@ -23,20 +23,28 @@ export class StateGuard implements CanActivate {
                 expectedUrl = '/start';
                 break;
               }
-              case State.GuessNameState: {
-                expectedUrl = '/guess/name';
+              case State.GuessNameByPhotoState: {
+                expectedUrl = '/guess/name-by-photo';
                 break;
               }
-              case State.GuessPictureState: {
-                expectedUrl = '/guess/picture';
+              case State.GuessPhotoByNameState: {
+                expectedUrl = '/guess/photo-by-name';
                 break;
               }
-              case State.GuessTalkState: {
-                expectedUrl = '/guess/talk';
+              case State.GuessTalkBySpeakerState: {
+                expectedUrl = '/guess/talk-by-speaker';
                 break;
               }
-              case State.GuessSpeakerState: {
-                expectedUrl = '/guess/speaker';
+              case State.GuessSpeakerByTalkState: {
+                expectedUrl = '/guess/speaker-by-talk';
+                break;
+              }
+              case State.GuessAccountsBySpeakerState: {
+                expectedUrl = '/guess/accounts-by-speaker';
+                break;
+              }
+              case State.GuessSpeakerByAccountsState: {
+                expectedUrl = '/guess/speaker-by-accounts';
                 break;
               }
               case State.ResultState: {

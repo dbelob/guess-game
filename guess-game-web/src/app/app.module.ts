@@ -17,6 +17,8 @@ import { GuessNameByPhotoComponent } from "./modules/guess/guess-name-by-photo.c
 import { GuessPhotoByNameComponent } from "./modules/guess/guess-photo-by-name.component";
 import { GuessTalkBySpeakerComponent } from "./modules/guess/guess-talk-by-speaker.component";
 import { GuessSpeakerByTalkComponent } from "./modules/guess/guess-speaker-by-talk.component";
+import { GuessAccountsBySpeakerComponent } from './modules/guess/guess-accounts-by-speaker.component';
+import { GuessSpeakerByAccountsComponent } from './modules/guess/guess-speaker-by-accounts.component';
 import { UnknownModule } from "./modules/unknown/unknown.module";
 import { NotFoundComponent } from "./modules/unknown/not-found.component";
 import { MessageModule } from "./modules/message/message.module";
@@ -28,10 +30,12 @@ import { CancelGameComponent } from "./modules/guess/cancel-game.component";
 
 const routes: Routes = [
   {path: 'start', component: StartComponent, canActivate: [StateGuard]},
-  {path: 'guess/name', component: GuessNameByPhotoComponent, canActivate: [StateGuard]},
-  {path: 'guess/picture', component: GuessPhotoByNameComponent, canActivate: [StateGuard]},
-  {path: 'guess/talk', component: GuessTalkBySpeakerComponent, canActivate: [StateGuard]},
-  {path: 'guess/speaker', component: GuessSpeakerByTalkComponent, canActivate: [StateGuard]},
+  {path: 'guess/name-by-photo', component: GuessNameByPhotoComponent, canActivate: [StateGuard]},
+  {path: 'guess/photo-by-name', component: GuessPhotoByNameComponent, canActivate: [StateGuard]},
+  {path: 'guess/talk-by-speaker', component: GuessTalkBySpeakerComponent, canActivate: [StateGuard]},
+  {path: 'guess/speaker-by-talk', component: GuessSpeakerByTalkComponent, canActivate: [StateGuard]},
+  {path: 'guess/accounts-by-speaker', component: GuessAccountsBySpeakerComponent, canActivate: [StateGuard]},
+  {path: 'guess/speaker-by-accounts', component: GuessSpeakerByAccountsComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
   {path: '', pathMatch: 'full', redirectTo: 'start'},
