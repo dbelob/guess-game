@@ -12,16 +12,16 @@
 
   <p class="h3 text-center mt-3 mb-5">{{namePhotos.name}}</p>
   <div class="text-center">
-    <input type="image" alt="" class="img-thumbnail m-1 img-guess-picture"
+    <input type="image" alt="" class="img-thumbnail m-1 img-guess-photo-by-name"
            [class.btn-danger]="namePhotos.invalid0" [disabled]="namePhotos.invalid0"
            (click)="answer(namePhotos.id0)" src="{{imageSource0}}">
-    <input type="image" alt="" class="img-thumbnail m-1 img-guess-picture"
+    <input type="image" alt="" class="img-thumbnail m-1 img-guess-photo-by-name"
            [class.btn-danger]="namePhotos.invalid1" [disabled]="namePhotos.invalid1"
            (click)="answer(namePhotos.id1)" src="{{imageSource1}}">
-    <input type="image" alt="" class="img-thumbnail m-1 img-guess-picture"
+    <input type="image" alt="" class="img-thumbnail m-1 img-guess-photo-by-name"
            [class.btn-danger]="namePhotos.invalid2" [disabled]="namePhotos.invalid2"
            (click)="answer(namePhotos.id2)" src="{{imageSource2}}">
-    <input type="image" alt="" class="img-thumbnail m-1 img-guess-picture"
+    <input type="image" alt="" class="img-thumbnail m-1 img-guess-photo-by-name"
            [class.btn-danger]="namePhotos.invalid3" [disabled]="namePhotos.invalid3"
            (click)="answer(namePhotos.id3)" src="{{imageSource3}}">
   </div>
