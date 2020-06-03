@@ -15,7 +15,7 @@ import { StateService } from "../../shared/services/state.service";
   templateUrl: './start.component.html'
 })
 export class StartComponent implements OnInit {
-  private MIN_QUANTITY_VALUE = 4;
+  private readonly MIN_QUANTITY_VALUE = 4;
 
   private imageDirectory: string = 'assets/images';
   public eventsImageDirectory: string = `${this.imageDirectory}/events`;
