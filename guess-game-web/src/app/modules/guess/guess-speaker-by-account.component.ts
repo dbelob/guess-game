@@ -6,10 +6,10 @@ import { Router } from "@angular/router";
 import { State } from "../../shared/models/state.model";
 
 @Component({
-  selector: 'app-guess-speaker-by-accounts',
-  templateUrl: './guess-speaker-by-accounts.component.html'
+  selector: 'app-guess-speaker-by-account',
+  templateUrl: './guess-speaker-by-account.component.html'
 })
-export class GuessSpeakerByAccountsComponent implements OnInit {
+export class GuessSpeakerByAccountComponent implements OnInit {
   private imageDirectory: string = 'assets/images';
   private eventsImageDirectory: string = `${this.imageDirectory}/events`;
   public speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
