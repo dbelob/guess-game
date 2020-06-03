@@ -11,14 +11,32 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Place, event type, event, speaker, talk DAO  implementation.
+ * Source DAO implementation.
  */
 @Repository
-public class PlaceEventTypeEventSpeakerTalkDaoImpl implements PlaceDao, EventTypeDao, EventDao, SpeakerDao, TalkDao {
+public class SourceDaoImpl implements SourceDao {
     private final SourceInformation sourceInformation;
 
-    public PlaceEventTypeEventSpeakerTalkDaoImpl() throws IOException, SpeakerDuplicatedException {
+    public SourceDaoImpl() throws IOException, SpeakerDuplicatedException {
         this.sourceInformation = YamlUtils.readSourceInformation();
+    }
+
+    @Override
+    public List<Place> getPlaces() {
+        return sourceInformation.getPlaces();
+    }
+
+    @Override
+    public List<EventType> getEventTypes() {
+        return sourceInformation.getEventTypes();
+    }
+
+    @Override
+    public EventType getEventTypeById(long id) {
+        return sourceInformation.getEventTypes().stream()
+                .filter(et -> (et.getId() == id))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
@@ -46,24 +64,6 @@ public class PlaceEventTypeEventSpeakerTalkDaoImpl implements PlaceDao, EventTyp
         return sourceInformation.getEvents().stream()
                 .filter(e -> !date.isAfter(e.getEndDate()))
                 .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<EventType> getEventTypes() {
-        return sourceInformation.getEventTypes();
-    }
-
-    @Override
-    public EventType getEventTypeById(long id) {
-        return sourceInformation.getEventTypes().stream()
-                .filter(et -> (et.getId() == id))
-                .findFirst()
-                .orElse(null);
-    }
-
-    @Override
-    public List<Place> getPlaces() {
-        return sourceInformation.getPlaces();
     }
 
     @Override
