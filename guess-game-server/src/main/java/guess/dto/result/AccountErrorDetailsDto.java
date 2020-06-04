@@ -5,7 +5,6 @@ import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.question.SpeakerQuestion;
-import guess.domain.question.TalkQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
