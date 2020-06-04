@@ -96,7 +96,9 @@ export class StartComponent implements OnInit {
     const elementRef = this.rowElement.find(r => r.nativeElement.getAttribute('id') == eventType.id);
 
     if (elementRef) {
-      elementRef.nativeElement.scrollIntoView({behavior: 'auto', block: 'center', inline: 'nearest'});
+      setTimeout(function () {
+        elementRef.nativeElement.scrollIntoView({behavior: 'auto', block: 'center', inline: 'nearest'});
+      }, 300);
     }
   }
 
