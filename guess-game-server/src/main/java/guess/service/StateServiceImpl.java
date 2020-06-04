@@ -63,7 +63,7 @@ public class StateServiceImpl implements StateService {
                 return State.GUESS_TALK_BY_SPEAKER_STATE;
             case GUESS_SPEAKER_BY_TALK_MODE:
                 return State.GUESS_SPEAKER_BY_TALK_STATE;
-            case GUESS_ACCOUNTS_BY_SPEAKER_MODE:
+            case GUESS_ACCOUNT_BY_SPEAKER_MODE:
                 return State.GUESS_ACCOUNTS_BY_SPEAKER_STATE;
             default:
                 return State.GUESS_SPEAKER_BY_ACCOUNTS_STATE;
@@ -168,8 +168,8 @@ public class StateServiceImpl implements StateService {
         switch (guessMode) {
             case GUESS_NAME_BY_PHOTO_MODE:
             case GUESS_PHOTO_BY_NAME_MODE:
-            case GUESS_ACCOUNTS_BY_SPEAKER_MODE:
-            case GUESS_SPEAKER_BY_ACCOUNTS_MODE:
+            case GUESS_ACCOUNT_BY_SPEAKER_MODE:
+            case GUESS_SPEAKER_BY_ACCOUNT_MODE:
                 return Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker()));
             case GUESS_TALK_BY_SPEAKER_MODE:
                 return Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk()));
@@ -186,8 +186,8 @@ public class StateServiceImpl implements StateService {
         switch (guessMode) {
             case GUESS_NAME_BY_PHOTO_MODE:
             case GUESS_PHOTO_BY_NAME_MODE:
-            case GUESS_ACCOUNTS_BY_SPEAKER_MODE:
-            case GUESS_SPEAKER_BY_ACCOUNTS_MODE:
+            case GUESS_ACCOUNT_BY_SPEAKER_MODE:
+            case GUESS_SPEAKER_BY_ACCOUNT_MODE:
                 return questions.stream()
                         .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
                         .collect(Collectors.toList());

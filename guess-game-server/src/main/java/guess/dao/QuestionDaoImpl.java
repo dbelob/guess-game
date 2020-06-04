@@ -108,7 +108,7 @@ public class QuestionDaoImpl implements QuestionDao {
                     .forEach(talkQuestions::addAll);
 
             questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(talkQuestions));
-        } else if (GuessMode.GUESS_ACCOUNTS_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_ACCOUNTS_MODE.equals(guessMode)) {
+        } else if (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
             // Guess accounts by speaker or speaker by accounts
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
 
