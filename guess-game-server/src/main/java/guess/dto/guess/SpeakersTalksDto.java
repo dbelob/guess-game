@@ -7,7 +7,7 @@ import guess.domain.question.QuestionAnswers;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
-import guess.dto.result.SpeakerPair;
+import guess.dto.result.SpeakerPairDto;
 import guess.util.LocalizationUtils;
 
 import java.util.ArrayList;
@@ -20,12 +20,12 @@ import java.util.stream.Collectors;
  * Speakers, talks DTO.
  */
 public class SpeakersTalksDto extends QuestionAnswersDto {
-    private final List<SpeakerPair> speakers;
+    private final List<SpeakerPairDto> speakers;
     private final Quadruple<String> talkNames;
 
     public SpeakersTalksDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                             Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                            List<SpeakerPair> speakers,
+                            List<SpeakerPairDto> speakers,
                             Quadruple<String> talkNames) {
         super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
 
@@ -33,7 +33,7 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
         this.talkNames = talkNames;
     }
 
-    public List<SpeakerPair> getSpeakers() {
+    public List<SpeakerPairDto> getSpeakers() {
         return speakers;
     }
 
@@ -71,8 +71,8 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
                 language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
-        List<SpeakerPair> questionSpeakers = ((TalkQuestion) questionAnswers.getQuestion()).getSpeakers().stream()
-                .map(s -> new SpeakerPair(
+        List<SpeakerPairDto> questionSpeakers = ((TalkQuestion) questionAnswers.getQuestion()).getSpeakers().stream()
+                .map(s -> new SpeakerPairDto(
                         LocalizationUtils.getSpeakerName(s, language, speakerDuplicates),
                         s.getFileName()))
                 .collect(Collectors.toList());

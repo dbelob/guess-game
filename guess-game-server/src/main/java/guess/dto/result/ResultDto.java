@@ -21,11 +21,12 @@ public class ResultDto {
     private final GuessMode guessMode;
     private final List<SpeakerErrorDetailsDto> speakerErrorDetailsList;
     private final List<TalkErrorDetailsDto> talkErrorDetailsList;
+    private final List<AccountErrorDetailsDto> accountErrorDetailsList;
 
-    private ResultDto(long correctAnswers, long wrongAnswers, long skippedAnswers,
-                      float correctPercents, float wrongPercents, float skippedPercents,
-                      GuessMode guessMode, List<SpeakerErrorDetailsDto> errorDetailsList,
-                      List<TalkErrorDetailsDto> talkErrorDetailsList) {
+    private ResultDto(long correctAnswers, long wrongAnswers, long skippedAnswers, float correctPercents,
+                      float wrongPercents, float skippedPercents, GuessMode guessMode,
+                      List<SpeakerErrorDetailsDto> errorDetailsList, List<TalkErrorDetailsDto> talkErrorDetailsList,
+                      List<AccountErrorDetailsDto> accountErrorDetailsList) {
         this.correctAnswers = correctAnswers;
         this.wrongAnswers = wrongAnswers;
         this.skippedAnswers = skippedAnswers;
@@ -35,6 +36,7 @@ public class ResultDto {
         this.guessMode = guessMode;
         this.speakerErrorDetailsList = errorDetailsList;
         this.talkErrorDetailsList = talkErrorDetailsList;
+        this.accountErrorDetailsList = accountErrorDetailsList;
     }
 
     public long getCorrectAnswers() {
@@ -73,6 +75,10 @@ public class ResultDto {
         return talkErrorDetailsList;
     }
 
+    public List<AccountErrorDetailsDto> getAccountErrorDetailsList() {
+        return accountErrorDetailsList;
+    }
+
     public static ResultDto convertToDto(Result result, List<ErrorDetails> errorDetailsList, Language language) {
         List<SpeakerErrorDetailsDto> speakerErrorDetailsList =
                 (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(result.getGuessMode()) || GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(result.getGuessMode())) ?
@@ -88,6 +94,13 @@ public class ResultDto {
                                 result.getGuessMode(),
                                 language) :
                         Collections.emptyList();
+        List<AccountErrorDetailsDto> accountErrorDetailsList =
+                (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(result.getGuessMode()) || GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(result.getGuessMode())) ?
+                        AccountErrorDetailsDto.convertToDto(
+                                errorDetailsList,
+                                result.getGuessMode(),
+                                language) :
+                        Collections.emptyList();
 
         return new ResultDto(
                 result.getCorrectAnswers(),
@@ -98,6 +111,7 @@ public class ResultDto {
                 result.getSkippedPercents(),
                 result.getGuessMode(),
                 speakerErrorDetailsList,
-                talkErrorDetailsList);
+                talkErrorDetailsList,
+                accountErrorDetailsList);
     }
 }

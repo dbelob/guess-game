@@ -39,26 +39,28 @@ public class SpeakerErrorDetailsDto {
     }
 
     private static SpeakerErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
-        List<Speaker> speakers = errorDetails.getAvailableAnswers().stream()
-                .map(q -> ((SpeakerAnswer) q).getSpeaker())
-                .collect(Collectors.toList());
-
-        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
-                speakers,
-                language,
-                s -> LocalizationUtils.getString(s.getName(), language),
-                s -> true);
-
         if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) || GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode)) {
+            List<Speaker> speakers = errorDetails.getAvailableAnswers().stream()
+                    .map(q -> ((SpeakerAnswer) q).getSpeaker())
+                    .collect(Collectors.toList());
+
+            Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
+                    speakers,
+                    language,
+                    s -> LocalizationUtils.getString(s.getName(), language),
+                    s -> true);
+
             List<String> yourAnswers = errorDetails.getYourAnswers().stream()
                     .map(q -> GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ?
                             LocalizationUtils.getSpeakerName(((SpeakerAnswer) q).getSpeaker(), language, speakerDuplicates) :
                             ((SpeakerAnswer) q).getSpeaker().getFileName())
                     .collect(Collectors.toList());
 
+            Speaker questionSpeaker = ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker();
+
             return new SpeakerErrorDetailsDto(
-                    ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker().getFileName(),
-                    LocalizationUtils.getSpeakerName(((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker(), language, speakerDuplicates),
+                    questionSpeaker.getFileName(),
+                    LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates),
                     yourAnswers);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));

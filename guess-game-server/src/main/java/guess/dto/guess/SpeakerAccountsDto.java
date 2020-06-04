@@ -6,7 +6,7 @@ import guess.domain.answer.SpeakerAnswer;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.Speaker;
-import guess.dto.result.SpeakerPair;
+import guess.dto.result.SpeakerPairDto;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
@@ -15,13 +15,13 @@ import java.util.List;
  * Speaker, accounts DTO.
  */
 public class SpeakerAccountsDto extends QuestionAnswersDto {
-    private final SpeakerPair speaker;
+    private final SpeakerPairDto speaker;
     private final Quadruple<String> twitters;
     private final Quadruple<String> gitHubs;
 
     public SpeakerAccountsDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                               Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                              SpeakerPair speaker,
+                              SpeakerPairDto speaker,
                               Quadruple<String> twitters, Quadruple<String> gitHubs) {
         super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
 
@@ -30,7 +30,7 @@ public class SpeakerAccountsDto extends QuestionAnswersDto {
         this.gitHubs = gitHubs;
     }
 
-    public SpeakerPair getSpeaker() {
+    public SpeakerPairDto getSpeaker() {
         return speaker;
     }
 
@@ -78,7 +78,7 @@ public class SpeakerAccountsDto extends QuestionAnswersDto {
         return new SpeakerAccountsDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 speakers.map(Speaker::getId),
                 correctAnswerIds, yourAnswerIds,
-                new SpeakerPair(
+                new SpeakerPairDto(
                         LocalizationUtils.getString(questionSpeaker.getName(), language),
                         questionSpeaker.getFileName()),
                 speakers.map(Speaker::getTwitter),

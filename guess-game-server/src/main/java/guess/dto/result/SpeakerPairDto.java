@@ -1,10 +1,10 @@
 package guess.dto.result;
 
-public class SpeakerPair {
+public class SpeakerPairDto {
     private final String name;
     private final String fileName;
 
-    public SpeakerPair(String name, String fileName) {
+    public SpeakerPairDto(String name, String fileName) {
         this.name = name;
         this.fileName = fileName;
     }
