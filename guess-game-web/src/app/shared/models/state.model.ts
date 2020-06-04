@@ -4,7 +4,7 @@ export enum State {
   GuessPhotoByNameState = 'GUESS_PHOTO_BY_NAME_STATE',
   GuessTalkBySpeakerState = 'GUESS_TALK_BY_SPEAKER_STATE',
   GuessSpeakerByTalkState = 'GUESS_SPEAKER_BY_TALK_STATE',
-  GuessAccountsBySpeakerState = 'GUESS_ACCOUNTS_BY_SPEAKER_STATE',
-  GuessSpeakerByAccountsState = 'GUESS_SPEAKER_BY_ACCOUNTS_STATE',
+  GuessAccountBySpeakerState = 'GUESS_ACCOUNT_BY_SPEAKER_STATE',
+  GuessSpeakerByAccountState = 'GUESS_SPEAKER_BY_ACCOUNT_STATE',
   ResultState = 'RESULT_STATE'
 }

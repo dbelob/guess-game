@@ -64,9 +64,9 @@ public class StateServiceImpl implements StateService {
             case GUESS_SPEAKER_BY_TALK_MODE:
                 return State.GUESS_SPEAKER_BY_TALK_STATE;
             case GUESS_ACCOUNT_BY_SPEAKER_MODE:
-                return State.GUESS_ACCOUNTS_BY_SPEAKER_STATE;
+                return State.GUESS_ACCOUNT_BY_SPEAKER_STATE;
             default:
-                return State.GUESS_SPEAKER_BY_ACCOUNTS_STATE;
+                return State.GUESS_SPEAKER_BY_ACCOUNT_STATE;
         }
     }
 

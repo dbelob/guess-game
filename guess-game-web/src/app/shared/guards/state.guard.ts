@@ -39,11 +39,11 @@ export class StateGuard implements CanActivate {
                 expectedUrl = '/guess/speaker-by-talk';
                 break;
               }
-              case State.GuessAccountsBySpeakerState: {
+              case State.GuessAccountBySpeakerState: {
                 expectedUrl = '/guess/account-by-speaker';
                 break;
               }
-              case State.GuessSpeakerByAccountsState: {
+              case State.GuessSpeakerByAccountState: {
                 expectedUrl = '/guess/speaker-by-account';
                 break;
               }
