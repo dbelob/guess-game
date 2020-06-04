@@ -15,7 +15,7 @@
             <ng-template let-eventType pTemplate="item">
               <div #eventTypeRow [attr.id]="eventType.value.id">
                 <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" width="40">
-                <span style="margin:0 0 0 15px">{{eventType.value.displayName}}</span>
+                <span class="ml-3">{{eventType.value.displayName}}</span>
               </div>
             </ng-template>
           </p-listbox>
