@@ -11,7 +11,8 @@ export class EventType {
     public youtubeLink?: string,
     public telegramLink?: string,
     public logoFileName?: string,
-    public displayName?: string
+    public displayName?: string,
+    public inactive?: boolean
   ) {
   }
 }

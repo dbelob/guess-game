@@ -247,4 +247,12 @@ export class StartComponent implements OnInit {
   onLanguageChange() {
     this.loadEventTypes();
   }
+
+  isEventTypeInactiveNotSelected(eventType: EventType) {
+    if (eventType && eventType.inactive && this.selectedEventTypes) {
+      return (this.selectedEventTypes.indexOf(eventType) === -1);
+    } else {
+      return false;
+    }
+  }
 }

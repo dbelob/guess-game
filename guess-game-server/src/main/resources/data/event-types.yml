@@ -206,6 +206,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/jbreakconf/
     youtubeLink: https://www.youtube.com/channel/UCYrGYT7BswsJGkmG7-IAF8g
     telegramLink: https://telegram.me/jbreak
+    inactive: true
   - id: 8
     conference: JOKER
     logoFileName: jokerconf.jpg
@@ -313,6 +314,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/smartdataconf
     youtubeLink: https://www.youtube.com/channel/UCfCOJWNC_ipu34-LVvPUeCg
     telegramLink: https://t.me/smartdataconf
+    inactive: true
   - id: 10
     conference: SPTDC
     logoFileName: sptdc.jpg

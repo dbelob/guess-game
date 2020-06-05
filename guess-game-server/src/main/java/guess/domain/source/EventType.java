@@ -21,17 +21,16 @@ public class EventType {
     private String facebookLink;
     private String youtubeLink;
     private String telegramLink;
-
     private String logoFileName;
-
     private List<Event> events = new ArrayList<>();
+    private boolean inactive;
 
     public EventType() {
     }
 
     public EventType(long id, Conference conference, List<LocaleItem> name, String logoFileName, List<LocaleItem> description, List<LocaleItem> siteLink,
                      String vkLink, String twitterLink, String facebookLink, String youtubeLink, String telegramLink,
-                     List<Event> events) {
+                     List<Event> events, boolean inactive) {
         this.id = id;
         this.conference = conference;
         this.name = name;
@@ -44,6 +43,7 @@ public class EventType {
         this.telegramLink = telegramLink;
         this.logoFileName = logoFileName;
         this.events = events;
+        this.inactive = inactive;
     }
 
     public long getId() {
@@ -140,6 +140,14 @@ public class EventType {
 
     public void setEvents(List<Event> events) {
         this.events = events;
+    }
+
+    public boolean isInactive() {
+        return inactive;
+    }
+
+    public void setInactive(boolean inactive) {
+        this.inactive = inactive;
     }
 
     public boolean isEventTypeConference() {

@@ -217,7 +217,8 @@ public class ContentfulUtils {
                             (fbLink != null) ? getFirstMapValue(fbLink) : null,
                             (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
                             (telegramLink != null) ? getFirstMapValue(telegramLink) : null,
-                            Collections.emptyList());
+                            Collections.emptyList(),
+                            true);
                 })
                 .collect(Collectors.toList());
     }

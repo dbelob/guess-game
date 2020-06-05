@@ -44,10 +44,11 @@ public class QuestionController {
     public List<EventTypeBriefDto> getEventTypes(HttpSession httpSession) {
         List<EventType> eventTypes = questionService.getEventTypes();
         Language language = localeService.getLanguage(httpSession);
-        Comparator<EventType> comparatorByIsConference = Comparator.comparing(et -> !et.isEventTypeConference());
+        Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
+        Comparator<EventType> comparatorByInactive = Comparator.comparing(EventType::isInactive);
         Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language));
 
-        eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByName));
+        eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByInactive).thenComparing(comparatorByName));
 
         return EventTypeDto.convertToBriefDto(eventTypes, language);
     }

@@ -16,13 +16,16 @@ public class EventTypeBriefDto {
     private final String name;
     private final String displayName;
     private final String logoFileName;
+    private final boolean inactive;
 
-    public EventTypeBriefDto(long id, boolean conference, String name, String displayName, String logoFileName) {
+    public EventTypeBriefDto(long id, boolean conference, String name, String displayName, String logoFileName,
+                             boolean inactive) {
         this.id = id;
         this.conference = conference;
         this.name = name;
         this.displayName = displayName;
         this.logoFileName = logoFileName;
+        this.inactive = inactive;
     }
 
     public long getId() {
@@ -45,6 +48,10 @@ public class EventTypeBriefDto {
         return logoFileName;
     }
 
+    public boolean isInactive() {
+        return inactive;
+    }
+
     public static EventTypeBriefDto convertToBriefDto(EventType eventType, Language language) {
         final String CONFERENCES_EVENT_TYPE_TEXT = "conferencesEventTypeText";
         final String MEETUPS_EVENT_TYPE_TEXT = "meetupsEventTypeText";
@@ -58,7 +65,8 @@ public class EventTypeBriefDto {
                 eventType.isEventTypeConference(),
                 name,
                 displayName,
-                eventType.getLogoFileName());
+                eventType.getLogoFileName(),
+                eventType.isInactive());
     }
 
     public static List<EventTypeBriefDto> convertToBriefDto(List<EventType> eventTypes, Language language) {
