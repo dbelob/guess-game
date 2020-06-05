@@ -926,7 +926,7 @@ events:
       - {language: en, text: "https://techtrain.ru/en/"}
       - {language: ru, text: "https://techtrain.ru/"}
     placeId: 24
-    talkIds: [2373, 2374, 2375, 2376, 2377, 2383, 2378, 2379, 2380, 2384, 2382]
+    talkIds: [2374, 2375, 2376, 2377, 2383, 2378, 2379, 2380, 2384]
   # JUG.MSK
   - eventTypeId: 13
     name:
