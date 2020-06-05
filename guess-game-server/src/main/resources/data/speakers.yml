@@ -187,6 +187,7 @@ speakers:
             их международных конференций (JavaOne, Devoxx, OSCON, Qcon). Пишет в Twitter как @gamussa. Ведет канал про Kafka\
             \ в Telegram."
     twitter: gamussa
+    gitHub: gAmUssA
   - id: 10
     fileName: 0010.jpg
     name:
@@ -680,6 +681,7 @@ speakers:
             \ десятков других тулов. Пишет код, поддерживает ядро и плагины Jenkins, организует митапы в СПб и других горо\
             дах."}
     twitter: oleg_nenashev
+    gitHub: oleg-nenashev
   - id: 39
     fileName: 0039.jpg
     name:
@@ -980,6 +982,7 @@ speakers:
             енимый анализ кода, однако лишь этими темами Никита не ограничивается. Также он часто выступает на конференция\
             х JPoint и Joker."}
     twitter: nkoval_
+    gitHub: ndkoval
   - id: 59
     fileName: 0059.jpg
     name:
@@ -3031,6 +3034,7 @@ speakers:
             \ в JetBrains. Периодически рассказывает про Kotlin на конференциях, соавтор двух книг «Kotlin in Action» и «\
             AtomicKotlin», и видео курса «Kotlin for Java Developers» на Coursera."}
     twitter: sveta_isakova
+    gitHub: svtk
   - id: 196
     fileName: 0196.jpg
     name:
@@ -3761,6 +3765,7 @@ speakers:
             \ Books. В настоящее время занимает позицию главного редактора Smashing Magazine в прекрасном городе Фрайбург\
             , Германия."}
     twitter: smashingmag
+    gitHub: vitalyfriedman
   - id: 261
     fileName: 0261.jpg
     name:
@@ -5980,6 +5985,7 @@ speakers:
             \ parodies of classic rock songs \nall over the world as Dylan Beattie and the Linebreakers. He’s online at dylanbeattie.net\
             \ and on Twitter as @dylanbeattie."
     twitter: dylanbeattie
+    gitHub: dylanbeattie
   - id: 408
     fileName: 0408.jpg
     name:
@@ -17816,6 +17822,7 @@ speakers:
             \ блог (на английском языке) находится на glebbahmutov.com/blog и сотни проектов и другой информации на сайте\
             \ glebbahmutov.com."}
     twitter: bahmutov
+    gitHub: bahmutov
   - id: 1246
     fileName: 1246.jpg
     name:
@@ -17826,3 +17833,5 @@ speakers:
     bio:
       - {language: en, text: "Program Director of JUG Ru Group."}
       - {language: ru, text: "Программный директор JUG Ru Group."}
+    twitter: ruslan_jug
+    gitHub: Avaddon-tfa
