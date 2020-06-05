@@ -678,6 +678,7 @@ speakers:
       - {language: ru, text: "Инженер-программист из Одноклассников. За плечами Александра — более 11 лет разработки, в ос\
             новном на Java, более трех лет практики внедрения различного рода автоматизации. Имеет несколько open source-п\
             роектов, связанных со Spring Cloud на GitHub, ведет собственный блог, пишет статьи на Хабрахабр и DZone."}
+    twitter: aatarasoff
     gitHub: aatarasoff
   - id: 37
     fileName: 0037.jpg
@@ -2616,6 +2617,7 @@ speakers:
             \ Associate at the University of Cambridge Computer Laboratory and by night, he codes music for people to dance\
             \ to."}
     twitter: samaaron
+    gitHub: samaaron
   - id: 155
     fileName: 0155.jpg
     name:
@@ -2627,6 +2629,7 @@ speakers:
             \ low latency. From optimizing Java code to fine tuning of OS & hardware, the whole execution chain is analyzed\
             \ by him to save microseconds on order processing."}
     twitter: jpbempel
+    gitHub: jpbempel
   - id: 156
     fileName: 0156.jpg
     name:
@@ -2638,6 +2641,7 @@ speakers:
             \ talking about Elasticsearch in conferences like Devoxx (FR BE UK), JUGs, Web5, Agile France, Mix-IT, Javazone\
             \ or in companies (Brown Bag Lunches)."}
     twitter: dadoonet
+    gitHub: dadoonet
   - id: 157
     fileName: 0157.jpg
     name:
@@ -2650,6 +2654,7 @@ speakers:
       \ yet execute as fast as their hand tuned counterparts. To this end, he is working on better dynamic compilation\
       \ in multilingual environments. Vojin also developed a framework that allows effortless addition of domain-specific\
       \ optimizations to existing libraries in Scala."}
+    gitHub: vjovanov
   - id: 158
     fileName: 0158.jpg
     name:
@@ -2689,6 +2694,7 @@ speakers:
             же на полставки является ведущим аналитиком в социальной сети Одноклассники. Специалист по обработке больших д\
             анных и поведенческому анализу. Был докладчиком на Joker и SmartData."}
     twitter: khudobakhshov
+    gitHub: khud
   - id: 160
     fileName: 0160.jpg
     name:
@@ -2704,6 +2710,7 @@ speakers:
             \ За более чем десятилетний опыт разработал высокопроизводительные платформы рассылок и агрегации SMS-трафика\
             , а также популярное J2ME приложение."}
     twitter: absorbb
+    gitHub: absorbb
   - id: 161
     fileName: 0161.jpg
     name:
