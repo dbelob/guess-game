@@ -14,6 +14,7 @@ speakers:
             \ и IntelliJ IDEA. Программирует на Java и Kotlin. Профессиональные интересы связаны с языками программировани\
             я и средствами разработки ПО."}
     twitter: antonarhipov
+    gitHub: antonarhipov
     javaChampion: true
   - id: 1
     fileName: 0001.jpg
@@ -34,6 +35,7 @@ speakers:
             ов израильской армии, Spring — по WebEx для румын, Hibernate через GoToMeeting для канадцев, Troubleshooting и\
             \ Design Patterns для украинцев."}
     twitter: jekaborisov
+    gitHub: Jeka1978
   - id: 2
     fileName: 0002.jpg
     name:
@@ -67,6 +69,7 @@ speakers:
             щий Java-программист; создатель Cactoos, Takes Framework, JCabi и Rultor; филантроп, жертвующий ежегодно неско\
             лько тысяч долларов номинантам его собственной премии за самый качественный программный проект."}
     twitter: yegor256
+    gitHub: yegor256
   - id: 4
     fileName: 0004.jpg
     name:
@@ -83,6 +86,7 @@ speakers:
             \ сейчас занимается генерацией цен в Deutsche Bank. Как настоящий профессионал, предпочитает сразу писать код\
             \ без багов, но иногда подогревает свою самоуверенность тестами."}
     twitter: dj_begemot
+    gitHub: cheremin
   - id: 5
     fileName: 0005.jpg
     name:
@@ -110,6 +114,7 @@ speakers:
             разов для разных ОС и процессоров. Поэтому сейчас в фокусе внимания работа различных версий Java в контейнерах\
             \ на ARM и x86."
     twitter: dchuyko
+    gitHub: dchuyko
   - id: 6
     fileName: 0006.jpg
     name:
@@ -129,6 +134,7 @@ speakers:
             троение распределённых систем. Сейчас работает над высокодоступной системой аудио- и видео-конференций.\n\nАнд\
             рей окончил бакалавриат по специальности бизнес-информатика, магистратуру по специальности мат. методы в эконо\
             мике, интересуется биологией и биоинформатикой."
+    gitHub: andrershov
   - id: 7
     fileName: 0007.jpg
     name:
@@ -144,6 +150,7 @@ speakers:
             ференций для разработчиков. За 7 лет команда Алексея провела более 40 конференций. Лидер сообщества JUG.ru, не\
             сколько лет занимался созданием HR-бренда в Одноклассниках."}
     twitter: 23derevo
+    gitHub: 23derevo
     javaChampion: true
   - id: 8
     fileName: 0008.jpg
@@ -160,6 +167,7 @@ speakers:
             к и от технической поддержки до программирования и дата инжиниринга. Такая жизнь не могла не развить кругозор\
             \ и любознательность. Любит делиться тем, что нашёл и тем, что его заинтересовало."}
     twitter: asm0di0
+    gitHub: asm0dey
   - id: 9
     fileName: 0009.jpg
     name:
@@ -210,6 +218,7 @@ speakers:
             \ и всё, что вокруг них, поэтому работает со всей инфраструктурой (логи, CI/CD, оркестрация). В общем, DevOps\
             \ — наше все."
     twitter: gorelikoff
+    gitHub: gorelikov
   - id: 11
     fileName: 0011.jpg
     name:
@@ -225,6 +234,7 @@ speakers:
       \ оператора minicabs (такси) в Лондоне, предъявлявшего жесточайшие требования по производительности и отказоустойчивости\
       \ решения.\n\nВ данный момент занимается разработкой ядра платформы, вопросами модульности и отказоустойчивости\
       \ приложений, а также руководит созданием CUBA Studio — инструмента разработки на платформе."}
+    gitHub: knstvk
   - id: 12
     fileName: 0012.jpg
     name:
@@ -240,6 +250,7 @@ speakers:
             \ время развивает компиляторную инфраструктуру в виртуальной машине Zing в Azul Systems. Регулярный докладчик\
             \ на конференциях JUG.ru и других европейских Java-конференциях."}
     twitter: JohnWings
+    gitHub: ivankrylov
   - id: 13
     fileName: 0013.jpg
     name:
@@ -256,6 +267,7 @@ speakers:
             тке мобильных, клиентских, серверных приложений и виртуальных машин.\n\nПроизводительностью Java занимается c\
             \ 2005 года и в данный момент в Oracle занимается производительностью OracleJDK/OpenJDK."
     twitter: kuksenk0
+    gitHub: kuksenko
   - id: 14
     fileName: 0014.jpg
     name:
@@ -294,6 +306,7 @@ speakers:
             \ годы – в качестве лидера, правой руки и члена правления.\n\nОдин из основателей и организаторов Arctic IoT Challenge.\
             \ Главный инженер, competency network coordinator по IT-архитектуре и интеграции на работе.\n\nПродвигает сооб\
             щества, ведет курсы, выступает на конференциях. Java Champion."
+    gitHub: mehmandarov
   - id: 16
     fileName: 0016.jpg
     name:
@@ -304,6 +317,7 @@ speakers:
       - {language: en, text: "Charles works at Red Hat on JVM languages and has a great interest in making OpenJDK the best\
             \ free platform for language development."}
     twitter: headius
+    gitHub: headius
   - id: 17
     fileName: 0017.jpg
     name:
@@ -336,6 +350,7 @@ speakers:
             \ делится экспертизой на конференциях. Автор проектов one-nio, async-profiler, а также лидер по ответам в кате\
             гории #JVM на Stack Overflow."}
     twitter: AndreiPangin
+    gitHub: apangin
   - id: 19
     fileName: 0019.jpg
     name:
@@ -378,6 +393,7 @@ speakers:
             \ E-commerce и здравоохранение.\nС 2009 по 2011 возглавлял внедрение In-memory Data Grid решений в компании GridDynamics.\
             \ В октябре 2011 перешёл в Deutsche Bank, где является ведущим специалистом в области технологий распределённо\
             го кэширования."
+    gitHub: aragozin
   - id: 22
     fileName: 0022.jpg
     name:
@@ -397,6 +413,7 @@ speakers:
             \ собственный блог, три раза получал JavaOne RockStar и является активным спикером.\n\nБорец с неполадками, ра\
             зрушитель допущений, получает большое удовольствие от удаления устаревшего кода."
     twitter: iNikem
+    gitHub: iNikem
   - id: 23
     fileName: 0023.jpg
     name:
@@ -413,6 +430,7 @@ speakers:
             \ Tartu. В 2017 году стал Java Champion. Любит виртуальные машины, компиляторы, смотреть, как бегут бенчмарки\
             , почти все языки программирования и немного шахматы."}
     twitter: shelajev
+    gitHub: shelajev
     javaChampion: true
   - id: 24
     fileName: 0024.jpg
@@ -433,6 +451,7 @@ speakers:
             ообществах, работающих над вопросами производительности и многопоточности. Перед тем как перейти в Red Hat, Ал\
             ексей работал над Apache Harmony в Intel, а затем перешёл в Sun Microsystems, которая была поглощена Oracle."}
     twitter: shipilev
+    gitHub: shipilev
     javaChampion: true
   - id: 25
     fileName: 0025.jpg
@@ -451,6 +470,7 @@ speakers:
             осами производительности Java и Oracle Database. Автор более десятка улучшений производительности в официально\
             м PostgreSQL JDBC-драйвере."}
     twitter: VladimirSitnikv
+    gitHub: vlsi
   - id: 26
     fileName: 0026.jpg
     name:
@@ -469,6 +489,7 @@ speakers:
             ки Deutsche Bank. Последние два года работает в Plumbr, где разрабатывает state-of-the-art систему мониторинга\
             \ надёжности и производительности систем."}
     twitter: gvsmirnov
+    gitHub: gvsmirnov
   - id: 27
     fileName: 0027.jpg
     name:
@@ -500,6 +521,7 @@ speakers:
             \ поклонник Groovy, Gradle, Spring и стека технологий Netflix. Постоянный резидент подкаста «Разбор Полётов».\
             \ Методологию DevOps знает не понаслышке и имеет четырехлетний опыт её применения."}
     twitter: tolkv
+    gitHub: lavcraft
   - id: 29
     fileName: 0029.jpg
     name:
@@ -539,6 +561,8 @@ speakers:
             омпании, включая IntelliJ IDEA, PyCharm и Kotlin. В последнее время руководит командой, отвечающей за инструме\
             нты разработки на языке Kotlin (плагины к IDE и системы сборки). Кроме того, Дмитрий — один из соавторов книги\
             \ «Kotlin in Action» («Kotlin в действии»)."}
+    twitter: intelliyole
+    gitHub: yole
   - id: 31
     fileName: 0031.jpg
     name:
@@ -556,6 +580,7 @@ speakers:
             \ с 2012 года, форкается и пуллреквестит с 2014, рассказывает с 2015. Особенно любит текстовые данные и больши\
             е графы."}
     twitter: zaleslaw
+    gitHub: zaleslaw
   - id: 32
     fileName: 0032.jpg
     name:
@@ -594,6 +619,7 @@ speakers:
             ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
             ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
     twitter: OlehDokuka
+    gitHub: OlegDokuka
     javaChampion: true
   - id: 34
     fileName: 0034.jpg
@@ -635,6 +661,7 @@ speakers:
             \ JPoint, DevOops, Heisenbug, DockerCon, GopherCon, Devoxx, DevOps Days, OSCON, Qcon, JavaOne и др. Некоторые\
             \ его доклады можно посмотреть здесь: jfrog.com/shownotes"
     twitter: jbaruch
+    gitHub: jbaruch
   - id: 36
     fileName: 0036.jpg
     name:
@@ -651,6 +678,7 @@ speakers:
       - {language: ru, text: "Инженер-программист из Одноклассников. За плечами Александра — более 11 лет разработки, в ос\
             новном на Java, более трех лет практики внедрения различного рода автоматизации. Имеет несколько open source-п\
             роектов, связанных со Spring Cloud на GitHub, ведет собственный блог, пишет статьи на Хабрахабр и DZone."}
+    gitHub: aatarasoff
   - id: 37
     fileName: 0037.jpg
     name:
@@ -664,6 +692,8 @@ speakers:
       \ Oracle) в различных сферах (ритейл, гос. структуры, web). В данный момент является Java-разработчиком в компании\
       \ КРОК, где работает с Apache Cassandra и Oracle. В течении этого времени у него появился собственный взгляд и\
       \ подход к разработке и сопровождению БД."}
+    twitter: GraminMaksim
+    gitHub: mgramin
   - id: 38
     fileName: 0038.jpg
     name:
@@ -695,6 +725,8 @@ speakers:
       \ руководителя проектов и технического лидера участвовал в полном цикле разработки более десятка крупных и средних\
       \ систем, от этапа сбора требований до ввода в промышленную эксплуатацию. Руководил командой разработки в количестве\
       \ 50 и более человек. С конца 2014 года занял позицию директора по проектам в компании Haulmont."}
+    twitter: alekseystukalov
+    gitHub: aleksey-stukalov
   - id: 40
     fileName: 0040.jpg
     name:
@@ -709,6 +741,7 @@ speakers:
             \ award-winning book Practices of an Agile Developer (Pragmatic Bookshelf), and author of Programming Groovy (Pragmatic\
             \ Bookshelf)."}
     twitter: venkat_s
+    gitHub: venkat_s
     javaChampion: true
   - id: 41
     fileName: 0041.jpg
@@ -725,6 +758,7 @@ speakers:
             \ channel](https://youtube.com/c/codefx), and is a long-tail contributor to several open source projects. You\
             \ can [hire him](http://blog.codefx.org/hire-nicolai-parlog/) for all kinds of things."
     twitter: nipafx
+    gitHub: nipafx
     javaChampion: true
   - id: 42
     fileName: 0042.jpg
@@ -740,6 +774,7 @@ speakers:
             \ various conferences. He also co-authored a book about JVM technology. He holds an M.Sc. in Comp. Sci. & Engineering\
             \ from the Royal Institute of Technology in Stockholm."}
     twitter: hirt
+    gitHub: hirt
   - id: 43
     fileName: 0043.jpg
     name:
@@ -761,6 +796,7 @@ speakers:
             анию BellSoft, которая выпускает и поддерживает собственный Java-дистрибутив Liberica JDK для Linux x86, Linux\
             \ ARM, Windows, Mac и других, а также разрабатывает решения для анализа больших данных и IoT. Алексей получил\
             \ ученую степень кандидата физико-математических наук в Санкт-Петербургском государственном университете."}
+    gitHub: avoitylov
   - id: 44
     fileName: 0044.jpg
     name:
@@ -777,6 +813,7 @@ speakers:
         text: "Специализация: СУБД, языки программирования, распределённые и параллельные системы. \n\nРаботал в Digital Equipment,\
             \ TogetherSoft, Borland, НИИВЦ МГУ, SciDB. \n\nВ настоящий момент — ведущий разработчик в Postgres Professional.\
             \ \n\nАвтор open source-СУБД: Goods, GigaBASE, FastDB, JRacer..."
+    gitHub: knizhnik
   - id: 45
     fileName: 0045.jpg
     name:
@@ -801,6 +838,7 @@ speakers:
             \ the open source libraries cyclops-react (functional and reactive data structures) and micro-server (a plugin\
             \ in system for building micro services with Spring and Spring Boot)."}
     twitter: johnmcclean_ie
+    gitHub: johnmcclean
   - id: 47
     fileName: 0047.jpg
     name:
@@ -818,6 +856,7 @@ speakers:
             \ в Eclipse Foundation, интегрирующего JaCoCo в Eclipse IDE. В своей повседневной работе в SonarSource Евгений\
             \ занимается разработкой статических анализаторов кода для таких языков, как Java, C/C++, C#, JavaScript."}
     twitter: _Godin_
+    gitHub: Godin
   - id: 48
     fileName: 0048.jpg
     name:
@@ -846,6 +885,7 @@ speakers:
             \ и квик-фиксами. Также кидает патчики в OpenJDK и разрабатывает опенсорсную библиотеку StreamEx. Известен на\
             \ Хабре как lany, в Twitter — как @tagir_valeev."}
     twitter: tagir_valeev
+    gitHub: amaembo
   - id: 50
     fileName: 0050.jpg
     name:
@@ -879,6 +919,7 @@ speakers:
             \ supporting the whole API lifecycle. Worked also on developing part of Infobip's data pipeline and managing several\
             \ ElasticSearch clusters. Denis is quite eager about learning new stuff in both professional and private life.\
             \ The less he knows about it, the more interesting it is."}
+    gitHub: denis-cutic
   - id: 52
     fileName: 0052.jpg
     name:
@@ -925,6 +966,7 @@ speakers:
             \ the Java User Group Münster (Germany), is a JavaOne rockstar and Java Champion. He is a speaker at conferences\
             \ and user groups internationally and writes for several magazines."
     twitter: hansolo_
+    gitHub: HanSolo
     javaChampion: true
   - id: 55
     fileName: 0055.jpg
@@ -940,6 +982,7 @@ speakers:
             \ ranging from Sun's Java One to Java Dev Con. In 2008, he joined JP Morgan Chase and led the effort to integrate\
             \ Bear Stearns' institutional trading system for retail use. He is presently Head of Engineering for Chase's Commercial\
             \ Bank."}
+    gitHub: JavaDerek
   - id: 56
     fileName: 0056.jpg
     name:
@@ -954,6 +997,7 @@ speakers:
       - {language: ru, text: "Работает Scala-разработчиком в Tinkoff.ru. Специализируется на проектировании и разработке в\
             ысоконагруженных асинхронных приложений. Имеет опыт администрирования и работы в области информационной безопа\
             сности. Увлекается функциональным программированием и машинным обучением."}
+    gitHub: fit51
   - id: 57
     fileName: 0057.jpg
     name:
@@ -997,6 +1041,7 @@ speakers:
       - {language: ru, text: "Старший программист в компании Grid Dynamics, специализирующийся на обработке и анализе боль\
             ших данных. Являлся full-time контрибьютером в Apache Ignite, поэтому имеет хорошее представление о том, как р\
             аспределенные системы работают изнутри. Активно интересуется машинным обучением."}
+    gitHub: ashutakGG
   - id: 60
     fileName: 0060.jpg
     name:
@@ -1015,6 +1060,7 @@ speakers:
             \ высоконагруженные распределённые сервисы в Яндекс.Вертикалях. Эпизодически читает лекции по параллельным выч\
             ислениям и распределённым хранилищам данных."}
     twitter: incubos
+    gitHub: incubos
   - id: 61
     fileName: 0061.jpg
     name:
@@ -1027,6 +1073,7 @@ speakers:
             \ For his contributions to Java community he became a Java Champion in 2014. In his day job at mtrail Marc works\
             \ on Java-based solutions to control trains on European railroad networks."}
     twitter: marcandsweep
+    gitHub: marchof
     javaChampion: true
   - id: 62
     fileName: 0062.jpg
@@ -1044,6 +1091,7 @@ speakers:
             нковской и образовательной сферах, а также для госсектора. Основное направление деятельности — проектирование\
             \ распределенных систем и вопросы разделения доступа. Любит экспериментировать с реактивными подходами в Java,\
             \ со стеком Netflix, Event Sourcing и CQRS."}
+    gitHub: antlapit
   - id: 63
     fileName: 0063.jpg
     name:
@@ -1057,6 +1105,7 @@ speakers:
             \ with Spring Boot co-founder Phil Webb). He is also an open source contributor (Spring Boot, Spring Integration,\
             \ Spring Cloud, Activiti and Vaadin)."}
     twitter: starbuxman
+    gitHub: joshlong
     javaChampion: true
   - id: 64
     fileName: 0064.jpg
@@ -1145,6 +1194,7 @@ speakers:
             ю регулярные конференции по теме Agile. \n\nВ свободное время играет на гитаре и дарбуке, катается на мотоцикл\
             е и путешествует в отдалённые уголки мира."
     twitter: antonkeks
+    gitHub: angryziber
   - id: 69
     fileName: 0069.jpg
     name:
@@ -1162,6 +1212,7 @@ speakers:
             \ JavaOne and is a Java Champion. He currently represents Azul on the JCP Executive Committee and on the Java\
             \ SE Expert Group (JSR 379 and JSR 383)."
     twitter: speakjava
+    gitHub: speakjava
     javaChampion: true
   - id: 70
     fileName: 0070.jpg
@@ -1174,6 +1225,7 @@ speakers:
             \ OpenJ9 and Eclipse OMR projects. He has more than a decade of JVM development experience with a focus on memory\
             \ management and garbage collection. Recently, his focus has been on community growth for the OpenJ9 and OMR projects."}
     twitter: crgracie
+    gitHub: charliegracie
   - id: 71
     fileName: 0071.jpg
     name:
@@ -1191,6 +1243,7 @@ speakers:
             \ speaker, technical reviewer, runner. Claims that code not tested automatically is not a feature but just a rumour.\
             \ Wrote a book on RxJava for O'Reilly."
     twitter: tnurkiewicz
+    gitHub: nurkiewicz
     javaChampion: true
   - id: 72
     fileName: 0072.jpg
@@ -1209,6 +1262,7 @@ speakers:
             \ as CTO, Kohsuke was with Sun Microsystems and Oracle, where he worked on a variety of projects and initiated\
             \ the open source work that led to Jenkins."
     twitter: kohsukekawa
+    gitHub: kohsuke
   - id: 73
     fileName: 0073.jpg
     name:
@@ -1223,6 +1277,7 @@ speakers:
             \ hours of training and coaching for major players in enterprise Java development, Victor got to introspect a\
             \ huge variety of enterprise projects. His quest is to make you think deeply, learn to introspect your design."
     twitter: victorrentea
+    gitHub: victorrentea
   - id: 74
     fileName: 0074.jpg
     name:
@@ -1241,6 +1296,7 @@ speakers:
             \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
             — either by plane or motorbike."
     twitter: DaschnerS
+    gitHub: sdaschner
     javaChampion: true
   - id: 75
     fileName: 0075.jpg
@@ -1255,6 +1311,7 @@ speakers:
             \ compiler of V8 at Google, and the Maxine research virtual machine at Sun Microsystems. He received a PhD degree\
             \ from JKU Linz for his research about dynamic code evolution."}
     twitter: thomaswue
+    gitHub: thomaswue
   - id: 76
     fileName: 0076.jpg
     name:
@@ -1273,6 +1330,7 @@ speakers:
             \ and meetups and enjoys giving trainings to fellow developers and architects. Allard is also regularly found\
             \ in board rooms, explaining the concepts and values of DDD, CQRS and EDA to C-level executives."
     twitter: allardbz
+    gitHub: abuijze
   - id: 77
     fileName: 0077.jpg
     name:
@@ -1290,6 +1348,7 @@ speakers:
             \ architectures around distributed systems, microservices, domain-driven design, event-driven architecture and\
             \ reactive systems."
     twitter: berndruecker
+    gitHub: berndruecker
   - id: 78
     fileName: 0078.jpg
     name:
@@ -1327,6 +1386,7 @@ speakers:
             \ he's talking at different local user groups and international conferences. Earlier he shared his passion and\
             \ experience with bachelor students, lecturing on agile methodologies."
     twitter: breskeby
+    gitHub: breskeby
   - id: 80
     fileName: 0080.jpg
     name:
@@ -1384,6 +1444,7 @@ speakers:
             \ currently spends most of his time teaching, speaking at conferences all over the world and researching his favorite\
             \ topics around Java modularity, systems architecture and software craftsmanship."}
     twitter: milendyankov
+    gitHub: milendyankov
   - id: 84
     fileName: 0084.jpg
     name:
@@ -1406,6 +1467,7 @@ speakers:
             х над виртуальной машиной Java Hotspot, гипервизором VirtualBox, высокопроизводительными системами хранения, а\
             \ также браузерами Mozilla и Chrome.\n\nСфера научных и инженерных интересов: системы исполнения, компиляторы\
             , виртуальные машины, новые парадигмы организации конкурентных вычислений."
+    gitHub: olonho
   - id: 85
     fileName: 0085.jpg
     name:
@@ -1418,6 +1480,7 @@ speakers:
             \ & organises meetups to help others make better products. He currently works at Reality Games, where they are\
             \ building games based on big data."}
     twitter: miciek
+    gitHub: miciek
   - id: 86
     fileName: 0086.jpg
     name:
@@ -1455,6 +1518,7 @@ speakers:
             \ and has conducted robotics workshops at JCrete4Kids, JavaOne4Kids and Devoxx4Kids. In 2017, Nikhil was named\
             \ an Oracle Developer Champion."}
     twitter: NikhilNanivade
+    gitHub: nikhilnanivadekar
     javaChampion: true
   - id: 88
     fileName: 0088.jpg
@@ -1470,6 +1534,7 @@ speakers:
             \ on Byte Buddy, a library for simple runtime code generation for the Java virtual machine. For his work, Rafael\
             \ received a Duke's Choice award and was elected a Java Champion."}
     twitter: rafaelcodes
+    gitHub: raphw
     javaChampion: true
   - id: 89
     fileName: 0089.jpg
@@ -1489,6 +1554,7 @@ speakers:
             оративного ПО. В 2016 пришел в GridGain в R&D и там начал свою работу с native persistence store-модулем Apache\
             \ Ignite для хранения структур данных на диске. Основная специализация — распределенные системы, проблемы их п\
             роизводительности, отказоустойчивости и масштабирования."
+    gitHub: dgovorukhin
   - id: 90
     fileName: 0090.jpg
     name:
@@ -1509,6 +1575,7 @@ speakers:
             ботке высоконагруженных распределенных систем на Scala. Сейчас занимает позицию Solutions Architect в компании\
             \ 47 Degrees и сфокусирована на помощи клиентам в построении надежных систем на базе Scala и ФП."
     twitter: Oli_kitty
+    gitHub: oli-kitty
   - id: 91
     fileName: 0091.jpg
     name:
@@ -1522,6 +1589,7 @@ speakers:
             \ be a JavaONE Rockstar!). He is passionate about all things data, because science! In his spare time… cycling,\
             \ photography and books. And he is a Java Champion!"}
     twitter: ags313
+    gitHub: ags313
     javaChampion: true
   - id: 92
     fileName: 0092.jpg
@@ -1535,6 +1603,7 @@ speakers:
             \ responsible for Developer Relations and Engagement Strategy for Oracle Cloud, Fusion Middleware, Java, and related\
             \ technologies for application development. You can find him on Twitter @brunoborges."}
     twitter: brunoborges
+    gitHub: brunoborges
   - id: 93
     fileName: 0093.jpg
     name:
@@ -1547,6 +1616,7 @@ speakers:
             \ architect and consultant with outstanding expertise in code organization, transaction management and enterprise\
             \ messaging."}
     twitter: springjuergen
+    gitHub: jhoeller
   - id: 94
     fileName: 0094.jpg
     name:
@@ -1576,6 +1646,7 @@ speakers:
             \ multi-tenant incubator project and has investigated enhancements for Java application deployments on IBM cloud.\
             \ \n\nIn his spare time Tobi enjoys playing soccer and is an avid supporter of Arsenal F.C. Apart from sports\
             \ Tobi also enjoys listening to music and catching the odd live show."
+    gitHub: tajila
   - id: 96
     fileName: 0096.jpg
     name:
@@ -1595,6 +1666,7 @@ speakers:
             \ документооборота и автоматизации бизнес-процессов для ряда крупных российских компаний в роли ведущего разра\
             ботчика и архитектора. Преподает для студентов московских вузов курсы по основам разработки с применением Java-т\
             ехнологий. Основатель и организатор встреч московского сообщества Java-разработчиков [JUG.MSK](https://jug.msk.ru)."}
+    twitter: andrei_kogun
   - id: 97
     fileName: 0097.jpg
     name:
@@ -1605,6 +1677,7 @@ speakers:
     bio:
       - {language: en, text: "Окончил математико-механический факультет СПбГУ. В JetBrains занимается программированием IntelliJ\
             \ IDEA лет 10."}
+    gitHub: cdracm
   - id: 98
     fileName: 0098.jpg
     name:
@@ -1619,6 +1692,7 @@ speakers:
             \ Likes Scala, Java, the JVM, Akka, distributed databases, XP, TDD, pairing. Dislikes untested software and code\
             \ ownership. \nYou can check out his blog at: http://www.batey.info."
     twitter: chbatey
+    gitHub: chbatey
   - id: 99
     fileName: 0099.jpg
     name:
@@ -1635,6 +1709,7 @@ speakers:
             \ writing Java software based on Eclipse RCP. Rabea configures Continuous Integration servers and tries to automate\
             \ the deployments as much as possible. Sometimes she also does Javascript, C#, VBA or other languages she needs\
             \ to complete her current task."
+    gitHub: rgra
     javaChampion: true
   - id: 100
     fileName: 0100.jpg
@@ -1651,6 +1726,7 @@ speakers:
             \ behind Azul’s ReadyNow technology. \n\nNow, Douglas has the unique experience of having worked with JVMs both\
             \ as a Java developer and a JVM implementor — and continues working at Azul as a lead developer."
     twitter: dougqh
+    gitHub: dougqh
   - id: 101
     fileName: 0101.jpg
     name:
@@ -1665,6 +1741,7 @@ speakers:
       \ решение, которое с одной стороны объединяет дизайнеров электротранспорта, а с другой гибкую роботическую фабрику.\
       \ В перерывах между генерацией spring boot приложений Иван пишет телеграм-блог\
       \ <a href=\"https://t.me/from_junior_to_senior\" target=\"_blank\">@from_junior_to_senior</a>."}
+    gitHub: ivan-osipov
   - id: 102
     fileName: 0102.jpg
     name:
@@ -1754,6 +1831,7 @@ speakers:
             \ in Java and JVM, particularly in concurrency, real-time data processing, algorithms, and performance optimizations\
             \ for modern architectures."
     twitter: relizarov
+    gitHub: elizarov
     javaChampion: true
   - id: 107
     fileName: 0107.jpg
@@ -1767,6 +1845,7 @@ speakers:
             Java 9 Modularity\"](https://javamodularity.com) and an avid conference speaker. Sander loves sharing knowledge\
             \ through his blog at http://branchandbound.net, and also as a [Pluralsight instructor](https://bit.ly/sander-ps)."}
     twitter: Sander_Mak
+    gitHub: sandermak
   - id: 108
     fileName: 0108.jpg
     name:
@@ -1781,6 +1860,7 @@ speakers:
       - {language: ru, text: "Инженер-программист в Сбербанк-Технологии. Разрабатывает серверную часть для Сбербанк Онлайн\
             . В своих проектах внедряет решения, делающие жизнь инженеров веселее: ELK, Docker, Kubernetes, реактивное про\
             граммирование и т.д."}
+    gitHub: dzx912
   - id: 109
     fileName: 0109.jpg
     name:
@@ -1795,6 +1875,7 @@ speakers:
             \ jaxenter.com. On his website [Clean Code Academy](https://join.cleancodeacademy.com/), he offers comprehensive\
             \ online training for Java Clean Coding."}
     twitter: MarcusBiel
+    gitHub: MarcusBiel
   - id: 110
     fileName: 0110.jpg
     name:
@@ -1820,6 +1901,7 @@ speakers:
             вого сервера Flussonic и инфраструктуры для языков программирования на основе JVM для платформы operational intelligence\
             \ компании StarView."
     twitter: olegchir
+    gitHub: olegchir
   - id: 111
     fileName: 0111.jpg
     name:
@@ -1834,6 +1916,7 @@ speakers:
             \ Android Application Development, and Modern C++. His consulting work revolves mainly around distributed architecture,\
             \ production debugging and performance diagnostics, and mobile application development."}
     twitter: goldshtn
+    gitHub: goldshtn
     mvp: true
   - id: 112
     fileName: 0112.jpg
@@ -1850,6 +1933,7 @@ speakers:
             \ time, he tinkers with technologies such as home automation, electronics, pinballs, etc. But more importantly,\
             \ he enjoys playing video games with his daughter!"
     twitter: delabassee
+    gitHub: delabassee
   - id: 113
     fileName: 0113.jpg
     name:
@@ -1865,6 +1949,7 @@ speakers:
             \ Cay has written many books and articles on programming languages and computer science education, including the\
             \ international bestseller Core Java, with ten editions since 1996. He was named a Java Champion in 2005."
     twitter: cayhorstmann
+    gitHub: cayhorstmann
     javaChampion: true
   - id: 114
     fileName: 0114.jpg
@@ -1885,6 +1970,7 @@ speakers:
             митета конференций JEEConf и XP Days. Практик XP и TDD. Outsourcing-партнер шведской компании Hunter's Web в У\
             краине. Соавтор патента в классе электронного согласования."}
     twitter: flushdia
+    gitHub: vtsukur
   - id: 115
     fileName: 0115.jpg
     name:
@@ -1915,6 +2001,7 @@ speakers:
             \ JavaOne Rockstar and a regular speaker at many large international conferences including JavaOne, Devoxx, Jfokus,\
             \ JavaZone, QCon, JAX, etc."}
     twitter: axelfontaine
+    gitHub: axelfontaine
   - id: 117
     fileName: 0117.jpg
     name:
@@ -1928,6 +2015,7 @@ speakers:
             \ (importantly JCTools but a modest contributor to RxJava/Netty/Akka and others as well). \nWhen not plotting\
             \ world domination, Nitsan enjoys pinnacoladas and getting caught in the rain."
     twitter: nitsanw
+    gitHub: nitsanw
   - id: 118
     fileName: 0118.jpg
     name:
@@ -1949,6 +2037,7 @@ speakers:
             сания и запуска Java-приложений без контейнеров. В рабочее время Андрусь управляет замечательной IT-компанией\
             \ «ObjectStyle»."}
     twitter: andrus_a
+    gitHub: andrus
   - id: 119
     fileName: 0119.jpg
     name:
@@ -1981,6 +2070,7 @@ speakers:
             ается разработкой библиотек, где особое внимание уделяет контракту, удобству использования и гибкости инструме\
             нтов. Большой поклонник Groovy, а также ценитель других JVM-based языков программирования."}
     twitter: CryonixMe
+    gitHub: DNAlchemist
   - id: 121
     fileName: 0121.jpg
     name:
@@ -1994,6 +2084,7 @@ speakers:
             \ Software Foundation amongst other open source groups, contributing to several projects, such as Jenkins, Apache\
             \ Maven, or Puppet. He works at CloudBees scaling the Jenkins platform."}
     twitter: csanchez
+    gitHub: carlossg
   - id: 122
     fileName: 0122.jpg
     name:
@@ -2008,6 +2099,7 @@ speakers:
             \ as JavaZone and JavaZone Kids. He has spoken at numerous conferences and in 2015 received the JavaOne Rockstar\
             \ award for his talk about JavaScript powered robotics."
     twitter: markawest
+    gitHub: markwest1972
   - id: 123
     fileName: 0123.jpg
     name:
@@ -2027,6 +2119,7 @@ speakers:
             \ тренингового центра XP Injection. Организатор и идеолог конференций Selenium Camp, JEEConf, XP Days Ukraine\
             \ и IT Brunch. Основатель «Клуба анонимных разработчиков»."}
     twitter: xpinjection
+    gitHub: xpinjection
   - id: 124
     fileName: 0124.jpg
     name:
@@ -2046,6 +2139,8 @@ speakers:
             , транспорте. Работает главным инженером в Одноклассниках. В его обязанности входит разработка архитектур и ре\
             шений для высоконагруженных систем, больших хранилищ данных, решение проблем производительности и надежности п\
             ортала."}
+    twitter: m0nstermind
+    gitHub: m0nstermind
   - id: 125
     fileName: 0125.jpg
     name:
@@ -2065,6 +2160,7 @@ speakers:
             \ Science в Политехническом университете Монпелье. Анастасия — активный участник TechHub в Монпелье, она созда\
             ла и организовывает сообщества Big-Data-Montpellier и Functional-Programming-Montpellier."}
     twitter: lievAnastazia
+    gitHub: lanastazia
   - id: 126
     fileName: 0126.jpg
     name:
@@ -2076,6 +2172,7 @@ speakers:
             \ by Raiffeisen Bank International AG. He is also a regular speaker at software development conferences and meetups\
             \ around the world, delivering presentations, training courses and workshops."}
     twitter: ionutbalosin
+    gitHub: ionutbalosin
   - id: 127
     fileName: 0127.jpg
     name:
@@ -2116,6 +2213,7 @@ speakers:
             \ Germany. He is a long-time core committer and maintainer of JUnit and initiator of the JUnit Lambda crowdfunding\
             \ campaign that started what has become JUnit 5."}
     twitter: marcphilipp
+    gitHub: marcphilipp
   - id: 130
     fileName: 0130.jpg
     name:
@@ -2136,6 +2234,7 @@ speakers:
             иллионной пользовательской базой.\nНа данный момент занимается разработкой платформы для интернета вещей в Google.\
             \ Сторонник и практик идей чистого кода и разработки через тестирование."
     twitter: aiborisov
+    gitHub: alxbnet
   - id: 131
     fileName: 0131.jpg
     name:
@@ -2151,6 +2250,7 @@ speakers:
             т фиолетовым поясом в вопросах работы с командами и проектами, коричневым поясом в Java и XP-практиках и синим\
             \ поясом в вопросах архитектуры. Стремится в сторону Kaizen и Agile-мышления, хоть это и не всегда получается."}
     twitter: ssshogunnn
+    gitHub: sshogunn
   - id: 132
     fileName: 0132.jpg
     name:
@@ -2164,6 +2264,7 @@ speakers:
             \ runs on top of an RDBMS and is written in Java. \nHe is a passionate Java software developer and open source\
             \ advocate. Álvaro is a member of JavaSpecialists.eu and jCrete.org, and a frequent speaker at international conferences."
     twitter: ahachete
+    gitHub: ahachete
   - id: 133
     fileName: 0133.jpg
     name:
@@ -2212,6 +2313,7 @@ speakers:
       - {language: ru, text: "Я - ведущий разработчик из Альфа-Лаборатории. Занимаюсь внутренним API и инфраструктурой мик\
             росервисов. Провожу обучения внутри компании. Жертва DevOps с почти двухлетним стажем."}
     twitter: stereohorse
+    gitHub: stereohorse
   - id: 136
     fileName: 0136.jpg
     name:
@@ -2225,6 +2327,7 @@ speakers:
       - {language: ru, text: "Разрабатывает распределенные системы и базы данных. Инженер в компании Hazelcast. В прошлом\
             \ — разработчик Apache Ignite."}
     twitter: devozerov
+    gitHub: devozerov
   - id: 137
     fileName: 0137.jpg
     name:
@@ -2284,6 +2387,7 @@ speakers:
             кции от программиста до системного архитектора, является экспертом в области комплексной автоматизации в финан\
             совой сфере и телекоммуникациях. В настоящее время возглавляет разработку ядра платформы «Единая фронтальная с\
             истема»."}
+    gitHub: mikhail-peresypkin
   - id: 141
     fileName: 0141.jpg
     name:
@@ -2316,6 +2420,7 @@ speakers:
       - {language: ru, text: "Владимир более 10 лет в Java, занимается охотой на ошибки и troubleshooting в продакшене, ус\
             транением заморочек с перформансом и не только."}
     twitter: dolzhenko
+    gitHub: vladimirdolzhenko
   - id: 143
     fileName: 0143.jpg
     name:
@@ -2329,6 +2434,7 @@ speakers:
             \ constantly traveling Europe and beyond to speak and discuss open source software, search, databases, infrastructure,\
             \ and security."}
     twitter: xeraa
+    gitHub: xeraa
   - id: 144
     fileName: 0144.jpg
     name:
@@ -2343,6 +2449,7 @@ speakers:
             лизируется на JIT-компиляции и поддержке альтернативных языков на платформе Java. Работает над созданием новых\
             \ механизмов работы с native кодом и off-heap данными (Project Panama)."}
     twitter: iwan0www
+    gitHub: iwanowww
   - id: 145
     fileName: 0145.jpg
     name:
@@ -2356,6 +2463,7 @@ speakers:
       - {language: ru, text: "Java технический лидер в Infopulse Ukraine. Разрабатывает за деньги более 15 лет, львиную до\
             лю этого времени — на Java. Эксперт в Java и JavaScript. Много умничает."}
     twitter: alkovictor
+    gitHub: victor-cr
   - id: 146
     fileName: 0146.jpg
     name:
@@ -2368,6 +2476,7 @@ speakers:
             \ and s390x porting projects, a JDK reviewer and JCP Executive Committee representative for SAP. He's also a member\
             \ of the JCP JSR 379 (Java SE 9), JSR 383 (Java SE 10) and JSR 384 (Java SE 11) Expert Groups."}
     twitter: volker_simonis
+    gitHub: simonis
   - id: 147
     fileName: 0147.jpg
     name:
@@ -2382,6 +2491,7 @@ speakers:
             \ In past lives, he also designed and built operating systems, network switches, firewalls, and laser based mosquito\
             \ interception systems."}
     twitter: giltene
+    gitHub: giltene
   - id: 148
     fileName: 0148.jpg
     name:
@@ -2396,6 +2506,7 @@ speakers:
             \ relational and NoSQL databases. He is also a regular speaker at Java conferences and helps with the organization\
             \ of the [jPrime conference in Bulgaria](http://jprime.io/)."}
     twitter: martin_fmi
+    gitHub: martinfmi
   - id: 149
     fileName: 0149.jpg
     name:
@@ -2410,6 +2521,7 @@ speakers:
       - {language: ru, text: "Занимается портированием OpenJDK на архитектуру Эльбрус почти 4 года. Разрабатывает компилят\
             оры, интерпретаторы. Выступает на конференциях, где рассказывает про свою работу"}
     twitter: Rom_Art
+    gitHub: rartemev
   - id: 150
     fileName: 0150.jpg
     name:
@@ -2427,6 +2539,7 @@ speakers:
             \ You can find him on twitter too as [aalmiray](https://twitter.com/aalmiray). He likes to spend time with his\
             \ beloved wife, Ixchel, when not hacking around."
     twitter: aalmiray
+    gitHub: aalmiray
   - id: 151
     fileName: 0151.jpg
     name:
