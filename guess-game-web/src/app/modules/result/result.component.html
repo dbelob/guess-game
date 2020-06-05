@@ -144,7 +144,8 @@
           </div>
           <div *ngIf="!isQuestionImage">
             <span *ngIf="accountErrorDetails.twitter" class="text-primary"><i class="fa fa-twitter"></i>{{accountErrorDetails.twitter}}</span>
-            <span *ngIf="accountErrorDetails.gitHub" class="text-dark" [class.pl-2]="accountErrorDetails.twitter"><i class="fa fa-github"></i>{{accountErrorDetails.gitHub}}</span>
+            <br *ngIf="accountErrorDetails.twitter && accountErrorDetails.gitHub"/>
+            <span *ngIf="accountErrorDetails.gitHub" class="text-dark"><i class="fa fa-github"></i>{{accountErrorDetails.gitHub}}</span>
           </div>
         </td>
         <td>
@@ -156,7 +157,8 @@
           </div>
           <div *ngIf="isQuestionImage">
             <span *ngIf="accountErrorDetails.twitter" class="text-primary"><i class="fa fa-twitter"></i>{{accountErrorDetails.twitter}}</span>
-            <span *ngIf="accountErrorDetails.gitHub" class="text-dark" [class.pl-2]="accountErrorDetails.twitter"><i class="fa fa-github"></i>{{accountErrorDetails.gitHub}}</span>
+            <br *ngIf="accountErrorDetails.twitter && accountErrorDetails.gitHub"/>
+            <span *ngIf="accountErrorDetails.gitHub" class="text-dark"><i class="fa fa-github"></i>{{accountErrorDetails.gitHub}}</span>
           </div>
         </td>
         <td>
@@ -171,7 +173,8 @@
           <div *ngIf="isQuestionImage">
             <p *ngFor="let yourAnswer of accountErrorDetails.yourAnswers">
               <span *ngIf="yourAnswer.twitter" class="text-primary"><i class="fa fa-twitter"></i>{{yourAnswer.twitter}}</span>
-              <span *ngIf="yourAnswer.gitHub" class="text-dark" [class.pl-2]="yourAnswer.twitter"><i class="fa fa-github"></i>{{yourAnswer.gitHub}}</span>
+              <br *ngIf="yourAnswer.twitter && yourAnswer.gitHub"/>
+              <span *ngIf="yourAnswer.gitHub" class="text-dark"><i class="fa fa-github"></i>{{yourAnswer.gitHub}}</span>
             </p>
           </div>
         </td>
