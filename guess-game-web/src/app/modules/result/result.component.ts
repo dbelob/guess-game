@@ -14,7 +14,7 @@ import { StateService } from "../../shared/services/state.service";
 export class ResultComponent implements OnInit {
   public speakersImageDirectory: string = 'assets/images/speakers';
   public result = new Result();
-  public isQuestionPicture = true;
+  public isQuestionImage = true;
 
   constructor(private answerService: AnswerService, private stateService: StateService, private router: Router,
               public translateService: TranslateService) {
@@ -28,7 +28,7 @@ export class ResultComponent implements OnInit {
     this.answerService.getResult()
       .subscribe(data => {
         this.result = data;
-        this.isQuestionPicture = (GuessMode.GuessNameByPhotoMode === this.result.guessMode) ||
+        this.isQuestionImage = (GuessMode.GuessNameByPhotoMode === this.result.guessMode) ||
           (GuessMode.GuessTalkBySpeakerMode === this.result.guessMode) ||
           (GuessMode.GuessAccountBySpeakerMode === this.result.guessMode);
       })
