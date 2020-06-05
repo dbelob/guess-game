@@ -2621,7 +2621,7 @@ speakers:
   - id: 155
     fileName: 0155.jpg
     name:
-      - {language: en, text: "Jean-Philippe BEMPEL"}
+      - {language: en, text: "Jean-Philippe Bempel"}
     company:
       - {language: en, text: Ullink}
     bio:
