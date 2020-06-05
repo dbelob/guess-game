@@ -972,12 +972,13 @@ speakers:
     company:
       - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "Nikita is a researcher in the Kotlin team and has been getting a PhD in the field of concurrency.\
+      - {language: en, text: "Nikita is a researcher in the Kotlin team and has been getting a Ph.D. in the field of concurrency.\
             \ His primary research interests are, but not limited to, concurrent data structures and algorithms, their verification,\
             \ and practically applicable code analysis. He is also a frequent speaker at JPoint and Joker conferences."}
-      - {language: ru, text: "Никита разрабатывает алгоритмы для корутин в команде Kotlin и получает Ph.D. в IST Austria.\
-            \ Помимо этого, преподает курс по многопоточному программированию в Университете ИТМО и интересуется верификац\
-            ией и анализом программ."}
+      - {language: ru, text: "Никита — исследователь в команде Kotlin и получает Ph.D. по специальности «многопоточность»\
+            . В круг научных интересов входят параллельные структуры данных и алгоритмы, их верификации и практически прим\
+            енимый анализ кода, однако лишь этими темами Никита не ограничивается. Также он часто выступает на конференция\
+            х JPoint и Joker."}
     twitter: nkoval_
   - id: 59
     fileName: 0059.jpg
@@ -3023,10 +3024,12 @@ speakers:
     company:
       - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "Kotlin developer at JetBrains since 2011. Speaks about Kotlin at conferences from time to time.\
-            \ Likes concepts and ideas, as well as skiing."}
-      - {language: ru, text: "Разработчик языка Kotlin в компании JetBrains c 2011 года. Время от времени рассказывает про\
-            \ Kotlin на конференциях. Любит концепты и идеи, а также кататься на горных лыжах."}
+      - {language: en, text: "Kotlin developer at JetBrains since 2011, now she's a Developer Advocate. She periodically talks\
+            \ about Kotlin at conferences, co-author of two books \"Kotlin in Action\" and \"AtomicKotlin\" and a video \"\
+            Kotlin for Java Developers\" on Coursera."}
+      - {language: ru, text: "Светлана Исакова начинала разрабатывать Kotlin в 2011 году, а теперь она — Developer Advocate\
+            \ в JetBrains. Периодически рассказывает про Kotlin на конференциях, соавтор двух книг «Kotlin in Action» и «\
+            AtomicKotlin», и видео курса «Kotlin for Java Developers» на Coursera."}
     twitter: sveta_isakova
   - id: 196
     fileName: 0196.jpg
@@ -17813,3 +17816,13 @@ speakers:
             \ блог (на английском языке) находится на glebbahmutov.com/blog и сотни проектов и другой информации на сайте\
             \ glebbahmutov.com."}
     twitter: bahmutov
+  - id: 1246
+    fileName: 1246.jpg
+    name:
+      - {language: en, text: "Ruslan Akhmetzyanov"}
+      - {language: ru, text: "Руслан Ахметзянов"}
+    company:
+      - {language: en, text: "JUG Ru Group"}
+    bio:
+      - {language: en, text: "Program Director of JUG Ru Group."}
+      - {language: ru, text: "Программный директор JUG Ru Group."}
