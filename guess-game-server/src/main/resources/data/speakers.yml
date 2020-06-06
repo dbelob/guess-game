@@ -2729,6 +2729,7 @@ speakers:
             \ и backend'ом (Java), и даже frontend'ом (ReactJS). Большой поклонник использования проверенных временем реше\
             ний даже в самых нестандартных случаях. Лектор (МФТИ), соавтор пособия и популяризатор защиты информации и кри\
             птографии."}
+    gitHub: vlsergey
   - id: 162
     fileName: 0162.jpg
     name:
@@ -2741,6 +2742,7 @@ speakers:
       \ задач занимается продвижением микросервисной архитектуры и внедрением Continuous Delivery. За свою более чем\
       \ десятилетнюю карьеру успел поучаствовать в разработке нескольких ГИС-платформ на С++ и Java, после чего с головой\
       \ окунулся в разработку кровавого энтерпрайза. Уважает Scala, Kotlin и микросервисы."}
+    gitHub: finnetrolle
   - id: 163
     fileName: 0163.jpg
     name:
@@ -2769,6 +2771,7 @@ speakers:
       \ использует эти техники уже 8й год. Поэтому большинство примеров будут показываться в живую и на самом себе.\
       \ А также, Максим умеет объяснять сложные вещи простыми словами. Не будет слайдов с кучей печатного текста —\
       \ только карандашные человечки."}
+    twitter: cartmendum
   - id: 165
     fileName: 0165.jpg
     name:
@@ -2783,6 +2786,7 @@ speakers:
       \ <a href=\"http://www.kai-waehner.de/blog/\" target=\"_blank\">blog</a>. Find more details and references\
       \ (presentations, articles, blog posts) on his <a href=\"http://www.kai-waehner.de/\" target=\"_blank\">website</a>."}
     twitter: KaiWaehner
+    gitHub: kaiwaehner
   - id: 166
     fileName: 0166.jpg
     name:
@@ -2804,6 +2808,7 @@ speakers:
       \ Systems, and is the author of Gradle Beyond the Basics. He tweets as @tlberglund, blogs very occasionally at\
       \ http://timberglund.com, and lives in Littleton, CO, USA with the wife of his youth and their youngest child."}
     twitter: tlberglund
+    gitHub: tlberglund
   - id: 168
     fileName: 0168.jpg
     name:
@@ -2816,6 +2821,7 @@ speakers:
       \ дизайнера-неудачника до C++ => Java => Scala программиста, в процессе защитив диссертацию. Любит все распределенное\
       \ и отказоустойчивое. Активист воронежской Scala User Group."}
     twitter: public_void_grv
+    gitHub: shuttie
   - id: 169
     fileName: 0169.jpg
     name:
@@ -2891,6 +2897,7 @@ speakers:
         \ проводит обучение других разработчиков внутри компании. В свободное время разрабатывает вычислительное ядро\
         \ среды моделирования в Новосибирском Государственном Техническом Университете и делится результатами\
         \ научно-практических изысканий на международных конференциях. В минуты отдыха любит играть на фортепиано и укулеле."
+    gitHub: maria4j
   - id: 174
     fileName: 0174.jpg
     name:
@@ -2989,6 +2996,7 @@ speakers:
         \ <a href=\"http://mechanical-sympathy.blogspot.com\" target=\"_blank\">mechanical-sympathy.blogspot.com</a>, and\
         \ can be found giving training courses on performance and concurrency when he is not cutting code to make systems\
         \ better."
+    gitHub: mjpt777
   - id: 181
     fileName: 0181.jpg
     name:
@@ -3001,6 +3009,7 @@ speakers:
         text: "Java developer with 10 years of professional experience interested in concurrency, performance and\
         \ lock-free programming. Since 2008 working in Switzerland at Sowatec AG, where I'm responsible for development\
         \ of its key framework. I am a Chief Disorganizer for a <a href=\"http://www.jcrete.org/\" target=\"_blank\">JCrete unconference</a>."
+    gitHub: dvyazelenko
   - id: 182
     fileName: 0182.jpg
     name:
@@ -3012,6 +3021,7 @@ speakers:
       - language: ru
         text: "Full-stack Developer и тренер. Начинал с HTML-вёрстки и js-scripting`а в небольшой дизайн-студии. Работал\
         \ в сфере автоматизации журналистики, банковских CRM-систем, интегратором, а также системным аналитиком."
+    gitHub: Vyacheslav-Lapin
   - id: 183
     fileName: 0183.jpg
     name:
@@ -3024,6 +3034,7 @@ speakers:
             \ He currently resides in the Pacific Northwest with his wife, two sons, three cats, twelve laptops, seven tablets,\
             \ nine phones, and a rather large utility bill."}
     twitter: tedneward
+    gitHub: tedneward
   - id: 184
     fileName: 0184.jpg
     name:
@@ -3041,6 +3052,7 @@ speakers:
         text: "Закончил матмех СПбГУ, работает программистом с 1999 года в том числе в DataArt, Яндексе и лаборатории\
         \ алгоритмической биологии Академического университета. Сейчас работает в компании Sidenis."
     twitter: yakov_sirotkin
+    gitHub: YakovSirotkin
   - id: 186
     fileName: 0186.jpg
     name:
@@ -3053,6 +3065,7 @@ speakers:
         text: "За пять лет работы в Jetbrains успел приложить руку ко многим продуктам компании, включая IntelliJ IDEA\
         \ и AppCode. В данный момент времени принимает активное участие в разработке нового продукта UpSource. Кроме Java,\
         \ увлекается Clojure."
+    gitHub: zajac
   - id: 187
     fileName: 0187.jpg
     name:
@@ -3064,6 +3077,7 @@ speakers:
       - language: ru
         text: "Закончил матмех СПбГУ, вёл в СПбАУ РАН курс по программированию на Scala.\n\nПоследние несколько лет\
         \ руководит командой, отвечающей за поддержку Scala и Clojure в IntelliJ IDEA."
+    gitHub: Alefas
   - id: 188
     fileName: 0188.jpg
     name:
@@ -3075,6 +3089,7 @@ speakers:
         text: "Закончил направление прикладной математики МехМата ЮФУ. Прошел путь от начинающего до ведущего разработчика.\
         \ Последний год руководит разработкой финансовой платформы мобильных платежей в компании ДонРивер. В свободное от\
         \ работы время занимается саморазвитием и путешествует."
+    gitHub: m91snik
   - id: 189
     fileName: 0189.jpg
     name:
@@ -3087,6 +3102,7 @@ speakers:
         \ его книги будут опубликованы в этом году: второе издание «Java 24-Hour Trainer» (Wrox) и «Java For Kids»\
         \ (No Starch Press).\n\nЯков является лидером Princeton Java Users Group."
     twitter: yfain
+    gitHub: yfain
   - id: 190
     fileName: 0190.jpg
     name:
@@ -3097,6 +3113,8 @@ speakers:
         \ of web development started to get interested in the JVM internals and what makes a Java application fast and\
         \ memory efficient.\nNow is mostly helping companies making efficient and scalable architectures and so he’s\
         \ finally working for Hazelcast."
+    twitter: noctarius2k
+    gitHub: noctarius
   - id: 191
     fileName: 0191.jpg
     name:
@@ -3109,6 +3127,8 @@ speakers:
         \ answers.\nFounder of the Performance Java User's Group with 900 members. Lead developer of the OpenHFT project\
         \ which includes support for off heap memory such as embedded databases supporting billions of keys-values with 1\
         \ micro-second update latency, thread pinning and low latency persisted IPC (as low as 100 nano-seconds)"
+    twitter: peterlawrey
+    gitHub: peter-lawrey
   - id: 192
     fileName: 0192.jpg
     name:
@@ -3123,6 +3143,8 @@ speakers:
         \ EE related applications and solutions. Beside that he has always been a prolific blogger, writer and tech editor\
         \ for different Java EE related books. He is the Java Community leader of the German DOAG e.V. and it's representative\
         \ on the iJUG e.V. As a Java Champion and former ACE Director he is well known in the community."
+    twitter: myfear
+    gitHub: myfear
   - id: 193
     fileName: 0193.jpg
     name:
@@ -3181,6 +3203,8 @@ speakers:
         text: "A programmer and a teacher of programmers. He has been a developer, researcher and teacher in the software\
         \ industry for several decades. He is co-author of \"Java Generics and Collections\" (O'Reilly, 2006), and author\
         \ of \"Mastering Lambdas: Java Programming in a Multicore World\" (Oracle Press, forthcoming)."
+    twitter: MauriceNaftalin
+    gitHub: MauriceNaftalin
   - id: 198
     fileName: 0198.jpg
     name:
@@ -3197,6 +3221,8 @@ speakers:
         \ ideas like REST, JavaScript and NOSQL. Spent a lot of time exploring ideas like system thinking, system dynamics,\
         \ strange attractor and complexity theory. Trying to make a world a better place as member of SSEEP and\
         \ <a href=\"http://geekyprimitives.wordpress.com/\" target=\"_blank\">blog author</a>."
+    twitter: j_palka
+    gitHub: kcrimson
   - id: 199
     fileName: 0199.jpg
     name:
@@ -3228,6 +3254,8 @@ speakers:
       - {language: en, text: "Kirk Pepperdine"}
     company:
       - {language: en, text: "Kodewerk Ltd."}
+    twitter: kcpeppe
+    gitHub: kcpeppe
   - id: 202
     fileName: 0202.jpg
     name:
@@ -3235,6 +3263,7 @@ speakers:
       - {language: ru, text: "Александр Белоцерковский"}
     company:
       - {language: en, text: Microsoft}
+    twitter: ahriman_ru
   - id: 203
     fileName: 0203.jpg
     name:
