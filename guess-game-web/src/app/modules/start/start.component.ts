@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from "@angular/router";
 import { formatDate } from "@angular/common";
 import { TranslateService } from "@ngx-translate/core";
@@ -14,7 +14,7 @@ import { StateService } from "../../shared/services/state.service";
   selector: 'app-start',
   templateUrl: './start.component.html'
 })
-export class StartComponent implements OnInit {
+export class StartComponent implements OnInit, AfterViewChecked {
   private readonly MIN_QUANTITY_VALUE = 4;
 
   private imageDirectory: string = 'assets/images';
@@ -35,6 +35,8 @@ export class StartComponent implements OnInit {
   public quantitySelectItems: SelectItem[] = [];
 
   private defaultEvent: Event;
+
+  private selectedOptionUpdated: boolean = false;
 
   @ViewChildren("eventTypeRow", {read: ElementRef}) rowElement: QueryList<ElementRef>;
 
@@ -64,7 +66,7 @@ export class StartComponent implements OnInit {
 
               if (selectedEventType) {
                 this.selectedEventTypes = [selectedEventType];
-                this.scrollIntoSelectedEventType(selectedEventType);
+                this.selectedOptionUpdated = true;
               } else {
                 this.selectedEventTypes = [this.eventTypes[0]];
               }
@@ -92,13 +94,18 @@ export class StartComponent implements OnInit {
     return null;
   }
 
-  scrollIntoSelectedEventType(eventType: EventType) {
-    const elementRef = this.rowElement.find(r => r.nativeElement.getAttribute('id') == eventType.id);
+  ngAfterViewChecked() {
+    if (this.selectedOptionUpdated) {
+      if (this.selectedEventTypes && (this.selectedEventTypes.length > 0)) {
+        const eventType: EventType = this.selectedEventTypes[0];
+        const elementRef = this.rowElement.find(r => r.nativeElement.getAttribute('id') == eventType.id);
 
-    if (elementRef) {
-      setTimeout(function () {
-        elementRef.nativeElement.scrollIntoView({behavior: 'auto', block: 'center', inline: 'nearest'});
-      }, 300);
+        if (elementRef) {
+          elementRef.nativeElement.scrollIntoView({behavior: 'auto', block: 'center', inline: 'nearest'});
+        }
+      }
+
+      this.selectedOptionUpdated = false;
     }
   }
 
