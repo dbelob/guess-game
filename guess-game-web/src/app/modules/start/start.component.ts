@@ -36,7 +36,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
 
   private defaultEvent: Event;
 
-  private selectedOptionUpdated: boolean = false;
+  private selectedOptionsUpdated: boolean = false;
 
   @ViewChildren("eventTypeRow", {read: ElementRef}) rowElement: QueryList<ElementRef>;
 
@@ -66,7 +66,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
 
               if (selectedEventType) {
                 this.selectedEventTypes = [selectedEventType];
-                this.selectedOptionUpdated = true;
+                this.selectedOptionsUpdated = true;
               } else {
                 this.selectedEventTypes = [this.eventTypes[0]];
               }
@@ -95,7 +95,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    if (this.selectedOptionUpdated) {
+    if (this.selectedOptionsUpdated) {
       if (this.selectedEventTypes && (this.selectedEventTypes.length > 0)) {
         const eventType: EventType = this.selectedEventTypes[0];
         const elementRef = this.rowElement.find(r => r.nativeElement.getAttribute('id') == eventType.id);
@@ -105,7 +105,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
         }
       }
 
-      this.selectedOptionUpdated = false;
+      this.selectedOptionsUpdated = false;
     }
   }
 
