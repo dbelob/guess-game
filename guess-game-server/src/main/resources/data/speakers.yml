@@ -18013,3 +18013,16 @@ speakers:
             ивно использует методы анализа данных для разработки и внедрения методов машинного обучения в ИБ. До начала ка\
             рьеры разработчика занимался исследованиями в области радиофизики и преподаванием в высшей школе."}
     twitter: filonovpv
+  - id: 1248
+    fileName: 1248.jpg
+    name:
+      - {language: en, text: "Dan Alistarh"}
+    company:
+      - {language: en, text: "IST Austria"}
+    bio:
+      - language: en
+        text: "Dan Alistarh is an Assistant Professor at IST Austria. His research focuses on concurrent data structures and\
+            \ distributed algorithms, and spans from algorithms and lower bounds to practical implementations.\r\n\r\nBefore\
+            \ IST, Dan was affiliated with ETH Zurich and Microsoft Research, Cambridge, UK. Prior to that, he was a Postdoctoral\
+            \ Associate at MIT CSAIL, working with Prof. Nir Shavit. He received his PhD from the EPFL, under the guidance\
+            \ of Prof. Rachid Guerraoui.\r\n\r\nHis research is supported through a 2018 ERC Starting Grant."
