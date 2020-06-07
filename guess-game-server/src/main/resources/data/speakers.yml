@@ -4231,12 +4231,12 @@ speakers:
   - id: 282
     fileName: 0282.jpg
     name:
-      - {language: en, text: "Dmitri Nesteruk"}
+      - {language: en, text: "Dmitry Nesteruk"}
       - {language: ru, text: "Дмитрий Нестерук"}
     company: []
     bio:
-      - {language: en, text: "Dmitri is a quantitative analyst. He has authored multiple books and courses on development\
-            \ and design patterns. His interests include computation, quanitative finance and algorithmic trading. He works\
+      - {language: en, text: "Dmitry is a quantitative analyst. He has authored multiple books and courses on development\
+            \ and design patterns. His interests include computation, quantitative finance, and algorithmic trading. He works\
             \ with C# and C++ as well as HPC technologies such as CUDA and FPGAs."}
       - {language: ru, text: "Квант, разработчик и просто увлеченный человек. Автор нескольких книг и курсов по разработке\
             \ и паттернам проектирования. Интересуется разработкой в сфере вычислений, численных финансов и алгоритмическо\
@@ -6146,8 +6146,8 @@ speakers:
             \ developer and architect at large enterprises and small companies. He spends his time teaching other developers\
             \ the details of the Microsoft development platform and frameworks, and coaches architects to design and build\
             \ modern distributed applications at cloud scale. He has received the Microsoft Most Valuable Professional award\
-            \ for Visual Studio and Development Technologies 13 times. In his spare time Alex likes to participate in all\
-            \ kinds of sport, and loves playing and programming new and retro video games."}
+            \ for Visual Studio and Development Technologies 13 times. In his spare time, Alex likes to participate in all\
+            \ kinds of sport and loves playing and programming new and retro video games."}
     twitter: alexthissen
     mvp: true
   - id: 409
@@ -7377,9 +7377,9 @@ speakers:
     bio:
       - {language: en, text: "Adam is a software engineer focused on performance and reliability. He has spent much of his\
             \ professional life working on systems for energy producers and distributors. It included projects such: energy\
-            \ trading, production optimization, balance settlement and critical events detection. So far no blackouts! He’\
-            s an Open Source Contributor to BenchmarkDotNet and corefxlab. He is also an ex-MMA practitioner, AFOL, rabbit\
-            \ owner and a huge star wars fan."}
+            \ trading, production optimization, balance settlement, and critical events detection. So far no blackouts! He's\
+            \ an open source contributor to BenchmarkDotNet and corefxlab. He is also an ex-MMA practitioner, AFOL, rabbit\
+            \ owner and a huge Star Wars fan."}
     twitter: SitnikAdam
   - id: 486
     fileName: 0486.jpg
@@ -7553,9 +7553,9 @@ speakers:
             \ with passion for new technologies, new ideas and coding in general, creating lots of different pet projects\
             \ along the way."}
       - {language: ru, text: "Разработчик Fullstack с большим опытом работы над приложениями и распределенными системами.\
-            \ На данный момент работает в Hibernating Rhinos, член RavenDB Core Team. Участвует в разработке новой, cross-platform\
-            \ версии RavenDB. В свободное время любит экспериментировать, исследовать новые идеи и технологии - чем сложне\
-            е задача, тем интереснее."}
+            \ На данный момент член RavenDB Core Team. Участвует в разработке новой, кроссплатформенной версии RavenDB. В\
+            \ свободное время любит экспериментировать, исследовать новые идеи и технологии — чем сложнее задача, тем инте\
+            реснее."}
     twitter: Myarichuk
   - id: 497
     fileName: 0497.jpg
@@ -7579,7 +7579,7 @@ speakers:
     bio:
       - {language: en, text: "Vagif is a Russian/Norwegian developer working for a Norwegian company Miles. He has about three\
             \ decades of programming experience, currently focusing on building systems in F# and C#. Vagif is a frequent\
-            \ speaker on software conferences, contributor to some open source projects and maintainer of Simple.OData.Client."}
+            \ speaker on software conferences, a contributor to some open source projects, and maintainer of Simple.OData.Client."}
       - {language: ru, text: "Вагиф работает в норвежской компании Miles. Его опыт программирования насчитывает около трёх\
             \ десятилетий. В настоящее время он занимается разработками систем на F# и C#. Вагиф часто выступает на конфер\
             енциях, принимает участие в опенсорс-проектах и поддерживает Simple.OData.Client."}
@@ -7796,14 +7796,15 @@ speakers:
       - {language: en, text: "Stanislav Sidristy"}
       - {language: ru, text: "Станислав Сидристый"}
     company:
-      - {language: en, text: EPAM}
+      - {language: en, text: STC}
+      - {language: ru, text: ЦРТ}
     bio:
       - language: en
         text: "Stanislav worked in many large companies, gaining development experience on the .NET platform. The speaker\
-            \ of many conferences, including .NEXT, SpbDotNet, the author and main speaker of the CLRium seminars.\nStanislav's\
+            \ of many conferences, including .NEXT, SpbDotNet, the author, and main speaker of the CLRium seminars.\nStanislav's\
             \ interests for a long time lay in the field of memory management algorithms and techniques for manipulating the\
             \ CLR runtime from unsafe code. But recently, the vector has been changed to a more practical part of development:\
-            \ multithreading, blocking and non-blocking algorithms.\nHe is the author of the online book <a href=\"https://github.com/sidristij/dotnetbook\"\
+            \ multithreading, blocking, and non-blocking algorithms.\nHe is the author of the online book <a href=\"https://github.com/sidristij/dotnetbook\"\
             > .NET Platform Architecture </a>, which is widely used due to its good translation into English and Chinese.\
             \ The book is so easy to read that its <a href=\"https://anchor.fm/stanislav-sidristij\">audio version</a> gradually\
             \ began to be published."
@@ -7815,7 +7816,7 @@ speakers:
             локирующие алгоритмы.\nЯвляется автором онлайн-книги <a href=\"https://github.com/sidristij/dotnetbook\">.NET\
             \ Platform Architecture</a>, получившей широкое распространение благодаря хорошему переводу на английский и ки\
             тайский языки. Книга настолько легко читается, что понемногу начала выходить её <a href=\"https://anchor.fm/stanislav-sidristij\"\
-            >аудиоверсия</a>"
+            >аудиоверсия</a>."
     twitter: sidristij
   - id: 521
     fileName: 0521.jpg
@@ -14658,10 +14659,10 @@ speakers:
       - {language: en, text: Faithlife}
     bio:
       - language: en
-        text: "Stephen Cleary is a Christian, husband, and father who programs software in his spare time. :)\n\nHe is a Microsoft\
+        text: "Stephen Cleary is a Christian, husband, and father who programs software in his spare time.\n\nHe is a Microsoft\
             \ MVP and the author of \"Concurrency in C# Cookbook\" (O'Reilly) as well as several MSDN articles. He's also\
             \ the top answerer for async/await questions on Stack Overflow.\n\nHis work usually deals with asynchronous and\
-            \ multithreaded programming, but he finds any challenging subject interesting. These days he uses C#/TypeScript,\
+            \ multithreaded programming, but he finds any challenging subject interesting. These days he uses C#/TypeScript\
             \ but remains interested in many different languages."
     twitter: aSteveCleary
     mvp: true
@@ -15821,19 +15822,17 @@ speakers:
     name:
       - {language: en, text: "Jane Ryzhikova"}
       - {language: ru, text: "Женя Рыжикова"}
-    company:
-      - {language: en, text: Kontur}
-      - {language: ru, text: Контур}
+    company: []
     bio:
       - language: en
-        text: "Jane is a developer of the product with 1.5 million active users in company Kontur. She pays attention to code\
-            \ quality and performance. Right now she rewrites the product's infrastructure to .NET Core. She is the founder\
+        text: "Jane was a developer of the product with 1.5 million active users in company Kontur. She pays attention to\
+            \ code quality and performance. Right now she rewrites the product's infrastructure to .NET Core. She is the founder\
             \ of meetup EkbDotNet in Yekaterinburg.\nJane teaches other developers not to be afraid of internships and product\
             \ changes to find their dream team."
-      - {language: ru, text: "Женя пишет код в продукте с полутора миллионами активных пользователей в компании Контур. Бо\
-            леет за качество кода и его производительность, а прямо сейчас переводит сервисы в продукте на .NET Core. Стар\
-            товала митапы EkbDotNext в Екатеринбурге. Учит других разработчиков не бояться стажировок и смены продукта, чт\
-            обы найти свою команду мечты."}
+      - {language: ru, text: "Женя писала код в продукте с полутора миллионами активных пользователей в компании Контур. Б\
+            олеет за качество кода и его производительность, а прямо сейчас переводит сервисы в продукте на .NET Core. Ста\
+            ртовала митапы EkbDotNext в Екатеринбурге. Учит других разработчиков не бояться стажировок и смены продукта, ч\
+            тобы найти свою команду мечты."}
   - id: 1089
     fileName: 1089.jpg
     name:
@@ -15842,8 +15841,8 @@ speakers:
       - {language: en, text: Ditto}
     bio:
       - {language: en, text: "An Akka.NET (one of the core team members) and F# consultant. An advocate of OSS and remote\
-            \ work culture. Interested in distributed systems, functional programming and deep understanding of the goals,\
-            \ means and proposed solutions."}
+            \ work culture. Interested in distributed systems, functional programming, and deep understanding of the goals,\
+            \ means, and proposed solutions."}
     twitter: Horusiath
   - id: 1090
     fileName: 1090.jpg
