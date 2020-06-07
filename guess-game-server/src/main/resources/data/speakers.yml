@@ -18001,3 +18001,19 @@ speakers:
       - {language: ru, text: "Программный директор JUG Ru Group."}
     twitter: ruslan_jug
     gitHub: Avaddon-tfa
+  - id: 1247
+    fileName: 1247.jpg
+    name:
+      - {language: en, text: "Pavel Filonov"}
+      - {language: ru, text: "Павел Филонов"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "For more than 5 years Pavel is developing software in the IT security area. For more than 3\
+            \ years he is actively using data analysis methods to develop and implement machine learning techniques in IT\
+            \ security. Before starting his developer career, Pavel was a radiophysics researcher and a higher school teacher."}
+      - {language: ru, text: "Более 5 лет занимается разработкой ПО в области информационной безопасности. Более 3 лет акт\
+            ивно использует методы анализа данных для разработки и внедрения методов машинного обучения в ИБ. До начала ка\
+            рьеры разработчика занимался исследованиями в области радиофизики и преподаванием в высшей школе."}
+    twitter: filonovpv
