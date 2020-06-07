@@ -1670,14 +1670,22 @@ speakers:
   - id: 97
     fileName: 0097.jpg
     name:
-      - {language: en, text: "Alexey Kudravtsev"}
+      - {language: en, text: "Аlexey Kudryavtsev"}
       - {language: ru, text: "Алексей Кудрявцев"}
     company:
-      - {language: en, text: JetBrains}
+      - {language: en, text: Avito}
     bio:
-      - {language: en, text: "Окончил математико-механический факультет СПбГУ. В JetBrains занимается программированием IntelliJ\
-            \ IDEA лет 10."}
-    gitHub: cdracm
+      - language: en
+        text: "iOS performance engineer at Avito. He likes when users get results faster and beautiful. \n\nAn active member\
+            \ of Russian iOS community. Host of AppsCast podcast and cocoa_powder telegram channel. Mobius program committee\
+            \ member since 2018. Periodically make iOS development courses.\n\nAt the free time, he runs and plays on jembe."
+      - language: ru
+        text: "iOS performance engineer в Авито. Любит, чтобы пользователь получал нужный результат максимально быстро и к\
+            расиво.\n\nАктивный участник iOS-сообщества. Ведет подкаст AppsCast и телеграм-канал cocoa_powder. С 2018 года\
+            \ является членом ПК Mobius. Переодически проводит курсы по iOS-разработке.\n\nПомимо программирования занимае\
+            тся бегом, звукорежиссурой и поигрывает на джембе."
+    twitter: west0r
+    gitHub: west0r
   - id: 98
     fileName: 0098.jpg
     name:
@@ -11653,8 +11661,8 @@ speakers:
     bio:
       - {language: en, text: "Senior software engineer at EPAM, where except project work Anton is responsible for mobile\
             \ community's growth in St. Pete and globally at company."}
-      - {language: ru, text: "Старший iOS-разработчик в компании EPAM, где помимо проектной работы занимается развитием са\
-            нкт-петербургского и глобального мобильного сообщества в компании."}
+      - {language: ru, text: "Старший iOS-разработчик в компании EPAM, где помимо проектной работы занимается развитием пе\
+            тербургского и глобального мобильного сообщества в компании."}
     twitter: dydus0x14
   - id: 788
     fileName: 0788.jpg
@@ -12482,12 +12490,15 @@ speakers:
       - {language: en, text: "Nikolay Ashanin"}
       - {language: ru, text: "Николай Ашанин"}
     company:
-      - {language: en, text: EPAM}
+      - {language: en, text: CardsMobile}
+      - {language: ru, text: Кошелёк}
     bio:
-      - {language: en, text: "Lead software engineer in EPAM. More than 7 years of experience in mobile development, also\
-            \ interested in machine learning and Python. The author of a blog for Software Architects https://medium.com/@nvashanin."}
-      - {language: ru, text: "Lead software engineer в компании EPAM. Более 7 лет опыта в мобильной разработке, также имее\
-            т опыт в машинном обучении и Python. Ведет блог для начинающих Software Architects https://medium.com/@nvashanin."}
+      - {language: en, text: "Head of client-side development at CardsMobile. More than 10 years of experience in IT, primarily\
+            \ mobile, cloud & back-end systems experience. Author of a blog for newcomers in [Software Architects](https://medium.com/@nvashanin)."}
+      - {language: ru, text: "Руководитель клиентской разработки в компании Кошелёк. Более 10 лет опыта в IT, в основном в\
+            \ мобильной разработке, также имеет опыт в облачных технологиях и создании архитектуры комплексных систем. Вед\
+            ет блог для начинающих [Software Architects](https://medium.com/@nvashanin)."}
+    twitter: nikolay_ashanin
   - id: 842
     fileName: 0842.jpg
     name:
@@ -17478,7 +17489,7 @@ speakers:
     company:
       - {language: en, text: Artsy}
     bio:
-      - {language: en, text: "Ash Furrow is a compassionate software developer from Canada, currently leading Artsy’s Mobile\
+      - {language: en, text: "Ash Furrow is a compassionate software developer from Canada, currently leading Artsy's Mobile\
             \ Experience team from New York. He has published a number of books, built many apps, and is a prolific contributor\
             \ to open source software. On his blog, he writes about a range of topics, from interesting programming problems\
             \ to explorations of music and the humanities."}
