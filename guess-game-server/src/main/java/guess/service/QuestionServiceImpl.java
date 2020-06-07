@@ -195,6 +195,7 @@ public class QuestionServiceImpl implements QuestionService {
         for (Event event : events) {
             List<Talk> talks = event.getTalks();
             Map<Long, Optional<LocalTime>> minStartTimeInTalkDays = talks.stream()
+                    .filter(t -> (t.getTalkDay() != null))
                     .collect(
                             Collectors.groupingBy(
                                     Talk::getTalkDay,
