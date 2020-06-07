@@ -608,16 +608,14 @@ speakers:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
     company:
-      - {language: en, text: "Netifi, Inc"}
+      - {language: en, text: Netifi}
     bio:
-      - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
-            \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
-            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
-      - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
-            я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
-            \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
-            ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
-            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+      - {language: en, text: "Software engineer. Knows how to live with React both from the outside and inside. Java Champion.\
+            \ Co-author of the book on reactive programming in Spring. He mainly writes RSocket, helps Project Reactor and\
+            \ all related ecosystems. Talks much."}
+      - {language: ru, text: "Инженер ПО. Знает, как жить с реактивщиной как извне, так и внутри. Java Champion. Соавтор к\
+            ниги по реактивному программированию в Spring. В основном пишет RSocket, помогает Project Reactor и всем связа\
+            нным экосистемам. Много говорит."}
     twitter: OlehDokuka
     gitHub: OlegDokuka
     javaChampion: true
@@ -1283,6 +1281,7 @@ speakers:
     fileName: 0074.jpg
     name:
       - {language: en, text: "Sebastian Daschner"}
+      - {language: ru, text: "Себастьян Дашнер"}
     company:
       - {language: en, text: IBM}
     bio:
@@ -1293,9 +1292,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
-            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
-            — either by plane or motorbike."
+            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
+            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
+            either by plane or motorbike."
     twitter: DaschnerS
     gitHub: sdaschner
     javaChampion: true
@@ -3945,11 +3944,11 @@ speakers:
     company:
       - {language: en, text: "ABBYY, Max Planck Institute for Mathematics in the Sciences"}
     bio:
-      - {language: en, text: "Got PhD in applied mathematics at Brandenburg University of Technology (Cottbus, Germany). Is\
-            \ currently a research associate at Max Planck Institute (Leipzig, Germany) and an AI-evangelist at ABBYY. Ivan\
-            \ is studying new AI work principles which could help us to understand how our brain works."}
-      - {language: ru, text: "Получил PhD по прикладной математике в Бранденбургском Технологическом университете (Котбус\
-            , Германия). В данный момент — научный сотрудник Института Макса Планка (Лейпциг, Германия) и AI-евангелист ABBYY.\
+      - {language: en, text: "Got Ph.D. in applied mathematics at Brandenburg University of Technology (Cottbus, Germany).\
+            \ He is currently a research associate at Max Planck Institute (Leipzig, Germany) and an AI-evangelist at ABBYY.\
+            \ Ivan is studying new AI work principles which could help us to understand how our brain works."}
+      - {language: ru, text: "Получил Ph.D. по прикладной математике в Бранденбургском Технологическом университете (Котбу\
+            с, Германия). В данный момент — научный сотрудник Института Макса Планка (Лейпциг, Германия) и AI-евангелист ABBYY.\
             \ Иван исследует новые принципы работы искусственного интеллекта, которые могли бы помочь понять, как работает\
             \ наш мозг."}
     twitter: kr0niker
@@ -5229,7 +5228,8 @@ speakers:
     company:
       - {language: en, text: DINS}
     bio:
-      - {language: en, text: "Senior software developer in DINS. He develops and supports backend of cloud telephony system."}
+      - {language: en, text: "At DINS he's engaged in development, support and backend developing for the cloud telephony\
+            \ service. For a long time, he was engaged in embedded systems programming on C++."}
       - {language: ru, text: "В DINS занимается разработкой, поддержкой и развитием бэкенда для сервиса облачной телефонии\
             . Долгое время занимался программированием встраиваемых систем на C++."}
   - id: 348
@@ -8175,11 +8175,11 @@ speakers:
     bio:
       - {language: en, text: "Lead Software Test Automation Engineer at EPAM. An expert in the field of BDD, an adherent of\
             \ engineering and DevOps practices. Anna has strong experience in test automation frameworks development and building\
-            \ of test automation approaches and processes. One of the creators of the Self-Healing library Healenium and BDD\
+            \ of test automation approaches and processes. One of the creators of the self-healing library Healenium and BDD\
             \ library Akita."}
       - {language: ru, text: "Lead Software Test Automation Engineer в EPAM. Эксперт в области BDD, приверженец инженерных\
             \ и DevOps-практик. Имеет большой опыт в разработке тестовых фреймворков и построении процессов автоматизации\
-            \ тестирования. Одна из создателей Self-healing библиотеки Healenium и BDD-библиотеки Akita."}
+            \ тестирования. Одна из создателей self-healing библиотеки Healenium и BDD-библиотеки Akita."}
   - id: 551
     fileName: 0551.jpg
     name:
@@ -8230,7 +8230,7 @@ speakers:
       - {language: en, text: "Qameta Software"}
     bio:
       - {language: en, text: "Artem works in web app testing automation for more than 8 years. He has worked in different\
-            \ teams and occupied different positions up to the head of automation testing group. Artem has a vast experience\
+            \ teams and occupied different positions up to the head of the automation testing group. Artem has a vast experience\
             \ with popular tools (Selenium, HtmlElements, Allure, Jenkins). He codes mostly in Java and Groovy."}
       - {language: ru, text: "Более 8 лет занимается автоматизацией тестирования веб-приложений. За это время работал в ра\
             зных командах и в разных ролях: автоматизатор тестирования, менеджер команды разработки инструментов тестирова\
@@ -8358,7 +8358,7 @@ speakers:
       - {language: ru, text: "Анатолий работает Java-архитектором, активно использует TDD в повседневной работе. Пропаганд\
             ирует использование микросервисной архитектуры и является фанатом стека Netflix Spring Cloud. Также он ведет <a\
             \ href=\"http://antkorwin.com/\" target=\"_blank\">блог про Java-разработку</a>. В свободное время активно ком\
-            митит в open source проекты и выступает на Java-митапах."}
+            митит в open source-проекты и выступает на Java-митапах."}
     twitter: antkorwin
   - id: 563
     fileName: 0563.jpg
@@ -13422,11 +13422,12 @@ speakers:
       - {language: ru, text: Одноклассники}
     bio:
       - language: en
-        text: "Application security expert in OK.RU.\nStarted her career in IT as a Java developer, but then became interested\
-            \ in secure development and appsec. Has been specialising in web and mobile application security for 8 years now."
+        text: "An application security expert in OK.RU.\nShe started her career in IT as a Java developer but then became\
+            \ interested in secure development and app sec. Has been specializing in web and mobile application security for\
+            \ 8 years now."
       - language: ru
         text: "Эксперт по информационной безопасности в Одноклассниках. \nПуть в IT начинала как Java-разработчик, но свер\
-            нула не туда. Последние 8 лет занимается безопасностью веб и мобильных приложений."
+            нула не туда. Последние 8 лет занимается безопасностью веб- и мобильных приложений."
   - id: 912
     fileName: 0912.jpg
     name:
@@ -15334,14 +15335,14 @@ speakers:
       - {language: ru, text: "СКБ Контур"}
     bio:
       - {language: en, text: "Leading tester at Kontur. In the field of software development for more than 10 years, in testing\
-            \ for more than 5. The main direction is testing and operation of infrastructure solutions. As a rule, these are\
-            \ highly loaded, fault-tolerant integration buses, based on various message brokers and information storage systems,\
-            \ as well as on NoSql databases. Main Stack - Linux / JVM, Favorite language - Scala,tools - Jmeter / Gatling"}
+            \ for more than 5. The main direction is the testing and operation of infrastructure solutions. As a rule, these\
+            \ are highly performanced, fault tolerant integration buses, based on various message brokers and information\
+            \ storage systems, as well as on NoSQL databases. Main stack — Linux/JVM, favorite language — Scala, tools — Jmeter/Gatling."}
       - {language: ru, text: "Ведущий тестировщик в компании Контур. В сфере разработки ПО более 10 лет, в тестировании бо\
-            лее 5. Основное направление - тестирование и эксплуатация инфраструктурных решений. Как правило - это высокона\
-            груженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения инфо\
-            рмации, основанные как на реляционных, так и на NoSql базах данных. Основной стек - Linux/JVM, предпочитаемый\
-            \ язык -  Scala, инструменты Jmeter/Gatling"}
+            лее 5. Основное направление — тестирование и эксплуатация инфраструктурных решений. Как правило это высоконагр\
+            уженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения информ\
+            ации, основанные как на реляционных, так и на NoSQL базах данных. Основной стек - Linux/JVM, предпочитаемый яз\
+            ык — Scala, инструменты Jmeter/Gatling."}
   - id: 1054
     fileName: 1054.jpg
     name:
@@ -15853,7 +15854,7 @@ speakers:
       - {language: en, text: Tinkoff}
       - {language: ru, text: Тинькофф}
     bio:
-      - {language: en, text: "Senior Quality Assurance Engineer at Tinkoff. Seven years of experience as a tester, QA lead\
+      - {language: en, text: "Senior Quality Assurance Engineer at Tinkoff. Seven years of experience as a tester, QA lead,\
             \ and QA manager."}
       - {language: ru, text: "Старший инженер по обеспечению качества в привлечении Tinkoff. Семь лет опыта работы в качес\
             тве тестировщика, лида QA и QA-менеджера."}
@@ -15864,7 +15865,7 @@ speakers:
     company:
       - {language: en, text: Empear}
     bio:
-      - {language: en, text: "Adam is a programmer that combines degrees in engineering and psychology. He’s the founder of\
+      - {language: en, text: "Adam is a programmer that combines degrees in engineering and psychology. He's the founder of\
             \ Empear where he designs tools for software analysis. Adam is the author of \"Software Design X-Rays\", the best-selling\
             \ \"Your Code as a Crime Scene,\" \"Lisp for the Web\" and \"Patterns in C.\""}
     twitter: AdamTornhill
@@ -15883,7 +15884,7 @@ speakers:
             \ blog on automated testing."}
       - {language: ru, text: "Занимается автоматизацией с 2013 года в компании Яндекс. Успел позаниматься множеством проек\
             тов для тестирования REST API сервисов, а также сервисов, использующих протоколы прикладного уровня IMAP/POP3,\
-            \ web-интерфейсов и мобильных приложений. Является одним из основателей OpenAPI generator, а также автором swagger-coverage.\
+            \ веб-интерфейсов и мобильных приложений. Является одним из основателей OpenAPI generator, а также автором swagger-coverage.\
             \ Ведет свой блог по автоматизации тестирования."}
   - id: 1093
     fileName: 1093.jpg
@@ -15950,9 +15951,9 @@ speakers:
     company:
       - {language: en, text: Badoo}
     bio:
-      - {language: en, text: "Has been testing mobile applications for more than 5 years. For the last 2.5 years, Dmitry has\
+      - {language: en, text: "Has been testing mobile applications for more than 5 years. For the last 2,5 years, Dmitry has\
             \ been working as Android QA in Badoo, where he does both manual testing and test automation for Android applications."}
-      - {language: ru, text: "Тестирует мобильные приложения более 5 лет. Последние 2.5 года работает Android QA в Badoo,\
+      - {language: ru, text: "Тестирует мобильные приложения более 5 лет. Последние 2,5 года работает Android QA в Badoo,\
             \ где занимается как ручным тестированием, так и автоматизацией тестов для Андроид-приложения"}
   - id: 1098
     fileName: 1098.jpg
@@ -15963,7 +15964,7 @@ speakers:
     bio:
       - {language: en, text: "Sven is Developer Advocate (DevSecOps) at JFrog and working with Java since 1996 in industrial\
             \ projects. He was working over 15 years as a consultant worldwide in industries like Automotive, Space, Insurance,\
-            \ Banking, UN and WorldBank. During the last years before he joined JFrog, he was Head of R&D at a reply company\
+            \ Banking, UN, and WorldBank. During the last years before he joined JFrog, he was Head of R&D at a reply company\
             \ and Developer Advocate for Vaadin. Sven is working on Mutation Testing of Web apps and Distributed UnitTesting\
             \ besides his evergreen topic Core Java and DevSecOps."}
     twitter: SvenRuppert
@@ -16002,8 +16003,8 @@ speakers:
       - {language: en, text: Jobtoday.com}
     bio:
       - language: en
-        text: "Working in IT since 2007, started with WAP-sites for first mobile phones with internet.\nStanislav was backend-,\
-            \ frontend-developer, product-manager.\nIn love with QA since 2013, currently working as an engineer, consultant\
+        text: "Working in IT since 2007, started with WAP-sites for first mobile phones with internet.\nStanislav was backend,\
+            \ frontend developer, product manager.\nIn love with QA since 2013, currently working as an engineer, consultant,\
             \ and teacher in test automation.\n\nFounder of test automation community in [Telegram](https://t.me/qa_automation).\n\
             Organized QA conference in [Cyprus](https://qa.cyprusitforum.com/ru)."
       - language: ru
@@ -16021,9 +16022,9 @@ speakers:
     bio:
       - {language: en, text: "Passionate QA engineer with software development background. Experienced in all kinds of tests\
             \ — from the manual (functional/non-functional) to automated unit/integration/API/UI. During QA team leadership\
-            \ trained the skill to turn complex things into simple words. In Test in Modelus LLC software engineer."}
-      - {language: ru, text: "Увлечённый full-stack QA engineer с навыками разработки. Опыт во всех видах тестирования — о\
-            т ручного (функционального/нефункционального) до автоматизированного (unit/integration/API/UI). Во время руков\
+            \ trained the skill to turn complex things into simple words. Software Engineer In Test at Modelus LLC."}
+      - {language: ru, text: "Увлечённый fullstack QA engineer с навыками разработки. Опыт во всех видах тестирования — от\
+            \ ручного (функционального/нефункционального) до автоматизированного (unit/integration/API/UI). Во время руков\
             одства командой тестировщиков натренировала навык превращать сложные вещи в простые слова. Software Engineer In\
             \ Test в Modelus LLC."}
   - id: 1103
@@ -16037,7 +16038,7 @@ speakers:
             \ systems, in telecoms. He cares about improving the problem-solving process — not just solving the problem —\
             \ so he helps teams improve their software delivery process. He believes deeply in the power of community, and\
             \ so helps run AgileCrete.org and JCrete.org, along with other meet-ups on the (paradise) island of Crete. His\
-            \ day job finds him automating stuff, at Red Hat, the world’s open source leader."}
+            \ day job finds him automating stuff, at Red Hat, the world's open source leader."}
     twitter: gsaslis
   - id: 1104
     fileName: 1104.jpg
@@ -17446,14 +17447,15 @@ speakers:
       - {language: en, text: Curbralan}
     bio:
       - language: en
-        text: "Kevlin is an independent consultant, speaker, writer and trainer. His development interests include programming\
-            \ languages, software architecture and programming practices, with a particular emphasis on unit testing and reasoning\
-            \ about practices at the team level.\n\nKevlin loves to help and inspire others, share ideas and ask questions.\
-            \ He has helped many teams with their code, culture and practices, contributing code to companies and open source.\
-            \ He blogs on code and other things and has been a columnist for a number of magazines and sites and has been\
-            \ on far too many committees (it has been said that \"a committee is a cul-de-sac down which ideas are lured and\
-            \ then quietly strangled\"). He is co-author of two volumes in the Pattern-Oriented Software Architecture series,\
-            \ editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should Know."
+        text: "Kevlin is an independent consultant, speaker, writer, and trainer. His development interests include programming\
+            \ languages, software architecture, and programming practices, with a particular emphasis on unit testing and\
+            \ reasoning about practices at the team level.\nKevlin loves to help and inspire others, share ideas, and ask\
+            \ questions. He has helped many teams with their code, culture, and practices, contributing code to companies\
+            \ and open source. He blogs on code and other things and has been a columnist for a number of magazines and sites\
+            \ and has been on far too many committees (it has been said that \"a committee is a cul-de-sac down which ideas\
+            \ are lured and then quietly strangled\"). He is co-author of two volumes in the Pattern-Oriented Software Architecture\
+            \ series, editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should\
+            \ Know."
     twitter: kevlinhenney
   - id: 1208
     fileName: 1208.jpg
