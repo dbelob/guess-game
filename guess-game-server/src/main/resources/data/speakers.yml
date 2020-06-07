@@ -9821,7 +9821,7 @@ speakers:
     company:
       - {language: en, text: "Freelance — Posva Solutions"}
     bio:
-      - {language: en, text: "Eduardo is a JavaScript enthusiast who focuses on UI and likes game dev too. He's a member of\
+      - {language: en, text: "Eduardo is a JavaScript enthusiast who focuses on UI and likes gamedev too. He's a member of\
             \ the Vue.js core team and he organizes the Paris Vue.js Meetup. He helps daily to improve the Vue ecosystem."}
     twitter: posva
   - id: 659
@@ -9846,15 +9846,15 @@ speakers:
       - {language: ru, text: Ps.kz}
     bio:
       - {language: en, text: "GraphQL rockstar, developer of Internet products, OSS maintainer. Since 2001 Pavel's main specialization\
-            \ is web technologies. He has extensive practical knowledge on back-end/front-end development, administration,\
-            \ and architecture. Since the end of 2015, Pavel's main focus is on isomorphic applications. In summer 2016 he\
-            \ began the development of graphql-compose (GraphQL schema generator) in open source."}
+            \ is web technologies. He has extensive practical knowledge on backend/frontend development, administration, and\
+            \ architecture. Since the end of 2015, Pavel's main focus is on isomorphic applications. In summer 2016 he began\
+            \ the development of graphql-compose (GraphQL schema generator) in open source."}
       - language: ru
         text: "GraphQL-ниндзя, разработчик интернет-продуктов, опенсорс-мейнтейнер. С 2001 года основная специализация - в\
             еб-технологии. Обладает обширными практическими знаниями по бэкенду, фронтенду, администрированию и построению\
             \ архитектуры. С конца 2015 года делает основной упор на изоморфные приложения. Летом 2016 начал разработку graphql-compose\
-            \ (генератора GraphQL-схем) в опенсорсе. Написал достаточно много материала на русском про GraphQL – https://github.com/nodkz/conf-talks.\
-            \ В 2019 начал формировать best practice по дизайну GraphQL-схем – https://graphql-rules.com.\n\nTelegram — https://t.me/graphql_ru"
+            \ (генератора GraphQL-схем) в опенсорсе. Написал достаточно много материала на русском про [GraphQL](https://github.com/nodkz/conf-talks).\
+            \ В 2019 начал формировать best practice по дизайну [GraphQL-схем](https://graphql-rules.com).\n\nTelegram — https://t.me/graphql_ru"
     twitter: nodkz
     gitHub: nodkz
   - id: 661
@@ -16047,10 +16047,10 @@ speakers:
     company:
       - {language: en, text: Netlify}
     bio:
-      - {language: en, text: "Charlie is a senior frontend developer, Google Developer Expert and Mozilla Tech Speaker. She’\
-            s passionate about human-computer interaction and spends her personal time building interactive side projects\
+      - {language: en, text: "Charlie is a senior frontend developer, Google Developer Expert and Mozilla Tech Speaker. She's\
+            \ passionate about human-computer interaction and spends her personal time building interactive side projects\
             \ using creative coding, machine learning and hardware. She also loves giving back to the community by making\
-            \ all her prototypes open-source, mentoring, blogging and speaking at conferences."}
+            \ all her prototypes open source, mentoring, blogging and speaking at conferences."}
     twitter: devdevcharlie
   - id: 1105
     fileName: 1105.jpg
@@ -16061,7 +16061,7 @@ speakers:
     bio:
       - {language: en, text: "Damian is a Vue.js core team member, currently working as a lead frontend engineer at Coursedog.\
             \ Back in 2016, he co-founded the Official Vue.js Newsletter (news.vuejs.org). He also created several popular\
-            \ open source libraries: vue-multiselect, vuelidate and vue-global-events. In 2017, he co-organised the first\
+            \ open source libraries: vue-multiselect, vuelidate, and vue-global-events. In 2017, he co-organized the first\
             \ international VueConf. Since then, he has been coordinating multiple Vue meetups in Poland. When not coding,\
             \ he is probably practicing his latte art skills or playing with his camera."}
     twitter: DamianDulisz
@@ -16077,8 +16077,8 @@ speakers:
             \ Lead. He's a Ph.D. and Community Leader of Facebook Developer Circle: Moscow. Alexey is fond of the development\
             \ of Data-Driven Web Applications, Cyber Security, ML&AI."}
       - {language: ru, text: "Работал в компаниях Rambler Group, Raiffeisen Bank, Waves в роли старшего инженера-разработч\
-            ика/тимлида. Кандидат наук и лид сообщества Facebook Developer Circle: Moscow. Увлекается разработкой высокона\
-            груженных данными web-приложений, Cyber Security, ML&AI."}
+            ика/тимлида. Кандидат наук и лид сообщества Facebook Developer Circle: Moscow. Увлекается разработкой веб-прил\
+            ожений высоконагруженных данными, Cyber Security, ML&AI."}
   - id: 1107
     fileName: 1107.jpg
     name:
@@ -16092,9 +16092,9 @@ speakers:
             \ For almost 6 years she was a full-stack, frontend developer and DevOps a little. Now she develops business portals\
             \ for Internet banks."}
       - {language: ru, text: "Еще в школе вдохновилась историями успеха программистов, поступила в технический ВУЗ своей м\
-            ечты и ни разу не пожалела. Окончила магистратуру в СПб ИТМО по специальности Разработка корпоративных информа\
-            ционных систем. За почти 6 лет успела попробовать себя в роли фуллстека, фронтендера и немного девопса. Сейчас\
-            \ занимается разработкой бизнес-порталов для Интернет-банков."}
+            ечты и ни разу не пожалела. Окончила магистратуру в СПб ИТМО по специальности «Разработка корпоративных информ\
+            ационных систем». За почти 6 лет успела попробовать себя в роли фуллстека, фронтендера и немного девопса. Сейч\
+            ас занимается разработкой бизнес-порталов для Интернет-банков."}
     twitter: Marflenx
   - id: 1108
     fileName: 1108.jpg
@@ -16117,9 +16117,9 @@ speakers:
     bio:
       - {language: en, text: "Web Engineer. At different times he used different languages and directions, and in the last\
             \ few years, he has focused on JS. Sergey is interested in developing CG applications, actively contributes to\
-            \ Webpack, loves rare tasks such as analysis and work with AST, self-written bundlers, etc."}
+            \ webpack, loves rare tasks such as analysis and work with AST, self-written bundlers, etc."}
       - {language: ru, text: "Веб-инженер. В разное время использовал разные языки и направления, а в последние несколько\
-            \ лет сосредоточен на JS. Интересуется разработкой CG-приложений, активно контрибьютит в Webpack, любит редкие\
+            \ лет сосредоточен на JS. Интересуется разработкой CG-приложений, активно контрибьютит в webpack, любит редкие\
             \ задачки типа анализа и работы с AST, самописные сборщики, и т.п."}
     twitter: smelukov
   - id: 1110
@@ -16151,7 +16151,7 @@ speakers:
     company:
       - {language: en, text: Spotify}
     bio:
-      - {language: en, text: "Experienced JavaScript/Frontend Developer with several years experience working on large scale\
+      - {language: en, text: "Experienced JavaScript/frontend developer with several years experience working on large scale\
             \ web applications. Passionate about mobile, automated testing, and enabling teams to build great things through\
             \ great tools."}
     twitter: phenomnominal
@@ -16167,8 +16167,8 @@ speakers:
             \ the empowering properties of the web, he loves seeking out ingenuity and simplicity, especially in places where\
             \ over-engineering is common.\n\nAfter more than 20 years of building web applications for companies such as Google,\
             \ Apple, Nike, R/GA, and The London Stock Exchange, Phil has worked to challenge traditional technical architectures\
-            \ in favour of simplicity and effectiveness.\n\nPhil is co-author of “Modern Web Development on the JAMstack”\
-            \ (O’Reilly, 2019)"
+            \ in favour of simplicity and effectiveness.\n\nPhil is co-author of \"Modern Web Development on the JAMstack\"\
+            \ (O’Reilly, 2019)."
     twitter: philhawksworth
   - id: 1114
     fileName: 1114.jpg
@@ -16182,7 +16182,7 @@ speakers:
             \ then moved to startup. One of Frontend Youth podcast participants. Dan Abramov said that Aleksandr is a prominent\
             \ character."}
       - {language: ru, text: "12 лет в разработке. Бывший бэкендер. Работал в кровавом энтерпрайзе, ушёл в стартап. Ведущи\
-            й подкаста Фронтенд Юность. Дэн Абрамов сказал, что Александр — видный персонаж."}
+            й подкаста «Фронтенд Юность». Дэн Абрамов сказал, что Александр — видный персонаж."}
     twitter: rm_baad
   - id: 1115
     fileName: 1115.jpg
@@ -16216,7 +16216,7 @@ speakers:
       - {language: en, text: "Citadel Securities"}
     bio:
       - language: en
-        text: "Ken Wheeler is a passionate web developer, renowned and celebrated in the developer community: he’s been in\
+        text: "Ken Wheeler is a passionate web developer, renowned and celebrated in the developer community: he's been in\
             \ the web development business for over a decade, has written and contributed to multiple OSS projects, most notably\
             \ Slick Carousel and Webpack Dashboard. \nIn his free time, he cracks jokes on the Undefined podcast with one\
             \ of his all-time best buddies, Jared Palmer, takes care of his kids, and writes awesome music."
@@ -16237,9 +16237,9 @@ speakers:
     company:
       - {language: en, text: "Relex Oy"}
     bio:
-      - {language: en, text: "Alex (he/him) is a self-taught engineer with diverse background in development of learning resources,\
-            \ semantic web and domain-specific knowledge systems. He considers software development less of a job and more\
-            \ of a daily practice; curiosity and excitement being his driving force."}
+      - {language: en, text: "Alex (he/him) is a self-taught engineer with a diverse background in the development of learning\
+            \ resources, semantic web, and domain-specific knowledge systems. He considers software development less of a\
+            \ job and more of a daily practice; curiosity and excitement being his driving force."}
     twitter: AlexCulliere
   - id: 1120
     fileName: 1120.jpg
@@ -16264,7 +16264,7 @@ speakers:
       - {language: en, text: "Hugh Francis is a mechanical engineer and technical draftsperson by trade. During his studies\
             \ in Brisbane, Australia, he founded a boutique record label that led him to NYC, where he eventually turned UX\
             \ designer and software developer. He worked with various agencies in New York before starting Sanctuary Computer,\
-            \ a technology studio that he currently leads. He's an active contributor to open-source and has released many\
+            \ a technology studio that he currently leads. He's an active contributor to open source and has released many\
             \ of his own libraries."}
     twitter: _hhff
   - id: 1122
@@ -16314,7 +16314,7 @@ speakers:
       - {language: en, text: Multitracks.com}
     bio:
       - {language: en, text: "Web Developer with 15+ years on the web industry. Author of Puppeteer-Sharp and Playwright-Sharp.\
-            \ He is also a Puppeteer and Playwright contributor. Passionate about C#, the web, remote work, and the open-source\
+            \ He is also a Puppeteer and Playwright contributor. Passionate about C#, the web, remote work, and the open source\
             \ community."}
     twitter: hardkoded
   - id: 1126
@@ -17925,8 +17925,11 @@ speakers:
     company:
       - {language: en, text: "Align Technology"}
     bio:
-      - {language: en, text: "Занимаюсь разработкой 3D приложений в Align Technology. Мои основные языки Rust, Typescript\
-            \ и GLSL. В свободное время занимаюсь музыкой и бегом. Меня можно найти в Telegram - @vinneyto или по почте vinneyto@gmail.com"}
+      - {language: en, text: "Leonid is engaged in the development of 3D applications in Align Technology. His main languages\
+            \ are Rust, TypeScript, and GLSL. In his free time he's jogging and making music."}
+      - {language: ru, text: "Занимается разработкой 3D-приложений в Align Technology. Основные языки — Rust, TypeScript и\
+            \ GLSL. В свободное время занимается музыкой и бегом."}
+    twitter: vinneyto
   - id: 1243
     fileName: 1243.jpg
     name:
@@ -17936,12 +17939,12 @@ speakers:
       - {language: en, text: "Postgres Professional"}
       - {language: ru, text: "Постгрес Профессиональный"}
     bio:
-      - {language: en, text: "Postgres Professional co-founder and COO. Worked as Director of Technology for My Mir social\
+      - {language: en, text: "Postgres Professional co-founder and COO. Worked as Director of Technology for My World social\
             \ network, Deputy Portal Director of Higher School of Economics, Development Director of Stack Group, Moscow State\
             \ University Associate Professor."}
       - {language: ru, text: "Сооснователь, заместитель генерального директора Postgres Professional. В прошлом — техничес\
-            кий директор социальной сети Мой Мир, заместитель директора по порталам ВШЭ, директор по разработкам Группы ко\
-            мпаний Стек, доцент МГУ."}
+            кий директор социальной сети «Мой Мир», заместитель директора по порталам ВШЭ, директор по разработкам Группы\
+            \ компаний Стек, доцент МГУ."}
   - id: 1244
     fileName: 1244.jpg
     name:
