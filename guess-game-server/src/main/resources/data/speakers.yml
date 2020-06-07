@@ -5520,22 +5520,18 @@ speakers:
     name:
       - {language: en, text: "Leonid Igolnik"}
       - {language: ru, text: "Леонид Игольник"}
-    company:
-      - {language: en, text: SignalFx}
+    company: []
     bio:
-      - {language: en, text: "Leonid is a technologist blending product development, product management and product operations\
-            \ at scale. He has spent his entire professional career building online applications starting his career at one\
-            \ of the earliest internet service providers in Israel. Leonid first started building large scale applications\
-            \ in Java in 2002 while working for the 2nd largest domain registrar at the time at Tucows/OpenSRS where he led\
-            \ the platform team. Subsequently to that he held several technology leadership roles with companies in Canada\
-            \ and US. Most recently Leonid has been responsible for engineering teams at Taleo (acquired by Oracle) building\
-            \ applications that help millions of people find jobs that have propelled the company to a position of one of\
-            \ the 4 largest SaaS companies in the world."}
+      - {language: en, text: "Leonid is well acquainted with the development, management, and administration of large scale\
+            \ projects. Before the recent sale of SignalFx at Splunk he served as Executive Vice President of Engineering\
+            \ at SignalFx. He has been engaged in online applications throughout his career starting at one of Israel's first\
+            \ internet providers. His first experience with large scale Java applications was in 2002 when he worked in the\
+            \ second large domain registrar."}
       - {language: ru, text: "Леонид хорошо знаком и с разработкой, и с управлением, и с администрированием масштабных про\
-            ектов. Сейчас он занимает должность Executive Vice President of Engineering в SignalFx. Всю свою карьеру он за\
-            нимается онлайн-приложениями, начав её в одном из первых интернет-провайдеров Израиля. Первый опыт работы с ма\
-            сштабными приложениями на Java у него произошёл в 2002-м, когда он работал во втором по величине на тот момент\
-            \ доменном регистраторе."}
+            ектов. До недавней продажи SignalFx в Splunk он занимал должность Executive Vice President of Engineering в SignalFx.\
+            \ Всю свою карьеру он занимается онлайн-приложениями, начав её в одном из первых интернет-провайдеров Израиля\
+            . Первый опыт работы с масштабными приложениями на Java у него произошёл в 2002-м, когда он работал во втором\
+            \ по величине на тот момент доменном регистраторе."}
     twitter: ligolnik
   - id: 368
     fileName: 0368.jpg
