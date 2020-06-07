@@ -1,5 +1,7 @@
 {
   "common": {
+    "infoLinkText": "Info",
+    "gameLinkText": "Game",
     "cancelLinkText": "Cancel"
   },
   "start": {
@@ -34,6 +36,9 @@
     "text": "Are you sure to cancel game?",
     "yesButtonText": "Yes",
     "noButtonText": "No"
+  },
+  "statistics": {
+    "title": "Statistics"
   },
   "notFound": {
     "title": "Page not found",

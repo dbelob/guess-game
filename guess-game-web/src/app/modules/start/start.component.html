@@ -3,7 +3,12 @@
 
   <app-message></app-message>
 
-  <app-language-switcher (onReload)="onLanguageChange()"></app-language-switcher>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-link text-muted" (click)="info()"><small>{{'common.infoLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col"></app-language-switcher>
+  </div>
 
   <form role="form">
     <div class="form-group row">

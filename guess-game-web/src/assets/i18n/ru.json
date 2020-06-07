@@ -1,5 +1,7 @@
 {
   "common": {
+    "infoLinkText": "Инфо",
+    "gameLinkText": "Игра",
     "cancelLinkText": "Прервать"
   },
   "start": {
@@ -34,6 +36,9 @@
     "text": "Вы уверены, что хотите прервать игру?",
     "yesButtonText": "Да",
     "noButtonText": "Нет"
+  },
+  "statistics": {
+    "title": "Статистика"
   },
   "notFound": {
     "title": "Страница не найдена",

@@ -262,4 +262,8 @@ export class StartComponent implements OnInit, AfterViewChecked {
       return false;
     }
   }
+
+  info() {
+    this.router.navigateByUrl('/information');
+  }
 }

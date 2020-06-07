@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { RouterModule, Routes } from "@angular/router";
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
@@ -9,8 +10,10 @@ import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { AppComponent } from './app.component';
 import { StartModule } from "./modules/start/start.module";
 import { GuessModule } from "./modules/guess/guess.module";
+import { MessageModule } from "./modules/message/message.module";
 import { ResultModule } from "./modules/result/result.module";
-import { RouterModule, Routes } from "@angular/router";
+import { StatisticsModule } from "./modules/statistics/statistics.module";
+import { UnknownModule } from "./modules/unknown/unknown.module";
 import { StartComponent } from "./modules/start/start.component";
 import { ResultComponent } from "./modules/result/result.component";
 import { GuessNameByPhotoComponent } from "./modules/guess/guess-name-by-photo.component";
@@ -19,14 +22,13 @@ import { GuessTalkBySpeakerComponent } from "./modules/guess/guess-talk-by-speak
 import { GuessSpeakerByTalkComponent } from "./modules/guess/guess-speaker-by-talk.component";
 import { GuessAccountBySpeakerComponent } from './modules/guess/guess-account-by-speaker.component';
 import { GuessSpeakerByAccountComponent } from './modules/guess/guess-speaker-by-account.component';
-import { UnknownModule } from "./modules/unknown/unknown.module";
+import { CancelGameComponent } from "./modules/guess/cancel-game.component";
 import { NotFoundComponent } from "./modules/unknown/not-found.component";
-import { MessageModule } from "./modules/message/message.module";
+import { EventTypeStatisticsComponent } from "./modules/statistics/event-type-statistics.component";
 import { AnswerService } from "./shared/services/answer.service";
 import { QuestionService } from "./shared/services/question.service";
 import { StateService } from "./shared/services/state.service";
 import { StateGuard } from "./shared/guards/state.guard";
-import { CancelGameComponent } from "./modules/guess/cancel-game.component";
 
 const routes: Routes = [
   {path: 'start', component: StartComponent, canActivate: [StateGuard]},
@@ -38,6 +40,8 @@ const routes: Routes = [
   {path: 'guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
+  {path: 'information/statistics/event-type', component: EventTypeStatisticsComponent},
+  {path: 'information', redirectTo: 'information/statistics/event-type'},
   {path: '', pathMatch: 'full', redirectTo: 'start'},
   {path: "**", component: NotFoundComponent}
 ];
@@ -68,6 +72,7 @@ registerLocaleData(localeRu, 'ru');
     MessageModule,
     ResultModule,
     StartModule,
+    StatisticsModule,
     UnknownModule
   ],
   providers: [AnswerService, QuestionService, StateService, StateGuard],
