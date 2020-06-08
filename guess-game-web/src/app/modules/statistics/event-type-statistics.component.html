@@ -1,4 +1,4 @@
-<div class="container-dialog p-2">
+<div class="container p-2">
   <h3 class="bg-secondary p-1 text-white text-center rounded">{{'statistics.title' | translate}}</h3>
 
   <app-message></app-message>
@@ -12,16 +12,43 @@
 
   <form role="form">
     <div class="form-group row justify-content-center">
-        <div class="col-sm-auto">
-          <p-checkbox name="group1" value="ABC" label="{{'statistics.eventTypes.conferencesLabel' | translate}}"
-                      [(ngModel)]="conferences" binary="true"
-                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
-        </div>
-        <div class="col-sm-auto">
-          <p-checkbox name="group1" value="DEF" label="{{'statistics.eventTypes.meetupsLabel' | translate}}"
-                      [(ngModel)]="meetups" binary="true"
-                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
-        </div>
+      <div class="col-sm-auto">
+        <p-checkbox name="group1" value="ABC" label="{{'statistics.eventTypes.conferencesLabel' | translate}}"
+                    [(ngModel)]="conferences" binary="true"
+                    (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+      </div>
+      <div class="col-sm-auto">
+        <p-checkbox name="group1" value="DEF" label="{{'statistics.eventTypes.meetupsLabel' | translate}}"
+                    [(ngModel)]="meetups" binary="true"
+                    (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+      </div>
     </div>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col" class="text-center">#</th>
+        <th scope="col" class="text-center">{{'statistics.eventTypes.table.nameColumn' | translate}}</th>
+        <th scope="col" class="text-center">{{'statistics.eventTypes.table.startDateColumn' | translate}}</th>
+        <th scope="col" class="text-center">{{'statistics.eventTypes.table.ageColumn' | translate}}</th>
+        <th scope="col" class="text-center">{{'statistics.eventTypes.table.durationColumn' | translate}}</th>
+        <th scope="col" class="text-center">{{'statistics.eventTypes.table.eventsColumn' | translate}}</th>
+        <th scope="col" class="text-center">{{'statistics.eventTypes.table.talksColumn' | translate}}</th>
+        <th scope="col" class="text-center">{{'statistics.eventTypes.table.speakersColumn' | translate}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let eventTypeMetrics of eventTypeMetricsList; let i = index">
+        <td scope="row" class="text-center">{{i + 1}}</td>
+        <td>{{eventTypeMetrics.name}}</td>
+        <td class="text-center">{{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+        <td class="text-center">{{eventTypeMetrics.age | number:'1.0-0':translateService.currentLang}}</td>
+        <td class="text-center">{{eventTypeMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>
+        <td class="text-center">{{eventTypeMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        <td class="text-center">{{eventTypeMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        <td class="text-center">{{eventTypeMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+      </tr>
+      </tbody>
+    </table>
   </form>
 </div>

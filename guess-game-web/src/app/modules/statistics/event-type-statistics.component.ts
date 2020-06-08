@@ -11,7 +11,7 @@ import { StatisticsService } from '../../shared/services/statistics.service';
 export class EventTypeStatisticsComponent implements OnInit {
   public conferences = true;
   public meetups = true;
-  public eventTypeMetrics: EventTypeMetrics[] = [];
+  public eventTypeMetricsList: EventTypeMetrics[] = [];
 
   constructor(private statisticsService: StatisticsService, public translateService: TranslateService, private router: Router) {
   }
@@ -23,8 +23,7 @@ export class EventTypeStatisticsComponent implements OnInit {
   loadEventTypeStatistics() {
     this.statisticsService.getEventTypeMetrics(this.conferences, this.meetups)
       .subscribe(data => {
-          this.eventTypeMetrics = data;
-          console.log('eventTypeMetrics' + JSON.stringify(this.eventTypeMetrics));
+          this.eventTypeMetricsList = data;
         }
       );
   }

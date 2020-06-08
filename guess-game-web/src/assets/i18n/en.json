@@ -41,7 +41,16 @@
     "title": "Statistics",
     "eventTypes": {
       "conferencesLabel": "Conferences",
-      "meetupsLabel": "Meetups"
+      "meetupsLabel": "Meetups",
+      "table": {
+        "nameColumn": "Name",
+        "startDateColumn": "Start date",
+        "ageColumn": "Age, years",
+        "durationColumn": "Duration, days",
+        "eventsColumn": "Events",
+        "talksColumn": "Talks",
+        "speakersColumn": "Speakers"
+      }
     }
   },
   "notFound": {

@@ -41,7 +41,16 @@
     "title": "Статистика",
     "eventTypes": {
       "conferencesLabel": "Конференции",
-      "meetupsLabel": "Митапы"
+      "meetupsLabel": "Митапы",
+      "table": {
+        "nameColumn": "Наименование",
+        "startDateColumn": "Начальная дата",
+        "ageColumn": "Возраст, лет",
+        "durationColumn": "Продолжительность, дней",
+        "eventsColumn": "Событий",
+        "talksColumn": "Докладов",
+        "speakersColumn": "Спикеров"
+      }
     }
   },
   "notFound": {
