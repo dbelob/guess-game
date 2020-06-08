@@ -38,7 +38,11 @@
     "noButtonText": "No"
   },
   "statistics": {
-    "title": "Statistics"
+    "title": "Statistics",
+    "eventTypes": {
+      "conferencesLabel": "Conferences",
+      "meetupsLabel": "Meetups"
+    }
   },
   "notFound": {
     "title": "Page not found",

@@ -18,10 +18,10 @@ import { MessageModule } from "../message/message.module";
     CommonModule,
     BrowserAnimationsModule,
     DropdownModule,
+    FormsModule,
     ListboxModule,
     RadioButtonModule,
     TranslateModule,
-    FormsModule,
     GeneralModule,
     MessageModule
   ]

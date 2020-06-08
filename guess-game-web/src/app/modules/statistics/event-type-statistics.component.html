@@ -9,4 +9,19 @@
     </div>
     <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
   </div>
+
+  <form role="form">
+    <div class="form-group row justify-content-center">
+        <div class="col-sm-auto">
+          <p-checkbox name="group1" value="ABC" label="{{'statistics.eventTypes.conferencesLabel' | translate}}"
+                      [(ngModel)]="conference" binary="true"
+                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+        </div>
+        <div class="col-sm-auto">
+          <p-checkbox name="group1" value="DEF" label="{{'statistics.eventTypes.meetupsLabel' | translate}}"
+                      [(ngModel)]="meetup" binary="true"
+                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+        </div>
+    </div>
+  </form>
 </div>
