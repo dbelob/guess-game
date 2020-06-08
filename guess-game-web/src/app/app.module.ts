@@ -28,6 +28,7 @@ import { EventTypeStatisticsComponent } from './modules/statistics/event-type-st
 import { AnswerService } from './shared/services/answer.service';
 import { QuestionService } from './shared/services/question.service';
 import { StateService } from './shared/services/state.service';
+import { StatisticsService } from './shared/services/statistics.service';
 import { StateGuard } from './shared/guards/state.guard';
 
 const routes: Routes = [
@@ -75,7 +76,7 @@ registerLocaleData(localeRu, 'ru');
     StatisticsModule,
     UnknownModule
   ],
-  providers: [AnswerService, QuestionService, StateService, StateGuard],
+  providers: [AnswerService, QuestionService, StateService, StatisticsService, StateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -7,7 +7,6 @@ import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.Question;
-import guess.domain.question.QuestionSet;
 import guess.domain.source.*;
 import guess.util.LocalizationUtils;
 import guess.util.QuestionUtils;
@@ -17,10 +16,9 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static java.time.temporal.ChronoUnit.DAYS;
 
 /**
  * Question service implementation.
@@ -213,7 +211,7 @@ public class QuestionServiceImpl implements QuestionService {
         // Transform to (event, day, minTrackTime) list
         for (Event event : minTrackTimeInTalkDaysForConferences.keySet()) {
             if ((event.getStartDate() != null) && (event.getEndDate() != null) && (!event.getStartDate().isAfter(event.getEndDate()))) {
-                long days = DAYS.between(event.getStartDate(), event.getEndDate()) + 1;
+                long days = ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1;
                 Map<Long, Optional<LocalTime>> minTrackTimeInTalkDays = minTrackTimeInTalkDaysForConferences.get(event);
 
                 for (long i = 1; i <= days; i++) {

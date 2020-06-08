@@ -53,11 +53,8 @@ public class EventTypeBriefDto {
     }
 
     public static EventTypeBriefDto convertToBriefDto(EventType eventType, Language language) {
-        final String CONFERENCES_EVENT_TYPE_TEXT = "conferencesEventTypeText";
-        final String MEETUPS_EVENT_TYPE_TEXT = "meetupsEventTypeText";
-
         String name = LocalizationUtils.getString(eventType.getName(), language);
-        String resourceKey = (eventType.isEventTypeConference()) ? CONFERENCES_EVENT_TYPE_TEXT : MEETUPS_EVENT_TYPE_TEXT;
+        String resourceKey = (eventType.isEventTypeConference()) ? LocalizationUtils.CONFERENCES_EVENT_TYPE_TEXT : LocalizationUtils.MEETUPS_EVENT_TYPE_TEXT;
         String displayName = String.format(LocalizationUtils.getResourceString(resourceKey, language), name);
 
         return new EventTypeBriefDto(
