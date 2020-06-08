@@ -3,10 +3,10 @@
 
   <app-message></app-message>
 
-  <div class="row">
-    <div class="col">
+  <div class="row justify-content-end">
+    <div class="col-auto">
       <button class="btn btn-link text-muted" (click)="game()"><small>{{'common.gameLinkText' | translate}}</small></button>
     </div>
-    <app-language-switcher (onReload)="onLanguageChange()" class="col"></app-language-switcher>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
   </div>
 </div>
