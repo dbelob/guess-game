@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { TranslateService } from "@ngx-translate/core";
-import { Result } from "../../shared/models/result.model";
-import { State } from "../../shared/models/state.model";
-import { GuessMode } from "../../shared/models/guess-mode.model";
-import { AnswerService } from "../../shared/services/answer.service";
-import { StateService } from "../../shared/services/state.service";
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { Result } from '../../shared/models/result.model';
+import { State } from '../../shared/models/state.model';
+import { GuessMode } from '../../shared/models/guess-mode.model';
+import { AnswerService } from '../../shared/services/answer.service';
+import { StateService } from '../../shared/services/state.service';
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html'
 })
 export class ResultComponent implements OnInit {
-  public speakersImageDirectory: string = 'assets/images/speakers';
+  public speakersImageDirectory = 'assets/images/speakers';
   public result = new Result();
   public isQuestionImage = true;
 
@@ -31,7 +31,7 @@ export class ResultComponent implements OnInit {
         this.isQuestionImage = (GuessMode.GuessNameByPhotoMode === this.result.guessMode) ||
           (GuessMode.GuessTalkBySpeakerMode === this.result.guessMode) ||
           (GuessMode.GuessAccountBySpeakerMode === this.result.guessMode);
-      })
+      });
   }
 
   restart() {

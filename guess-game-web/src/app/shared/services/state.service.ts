@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { catchError } from "rxjs/operators";
-import { Observable } from "rxjs";
-import { MessageService } from "../../modules/message/message.service";
-import { StartParameters } from "../models/start-parameters.model";
-import { State } from "../models/state.model";
-import { PhotoNames } from "../models/photo-names.model";
-import { NamePhotos } from "../models/name-photos.model";
-import { SpeakersTalks } from "../models/speakers-talks.model";
-import { TalkSpeakers } from "../models/talk-speakers.model";
-import { SpeakerAccounts } from "../models/speaker-accounts.model";
-import { AccountSpeakers } from "../models/account-speakers.model";
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { MessageService } from '../../modules/message/message.service';
+import { StartParameters } from '../models/start-parameters.model';
+import { State } from '../models/state.model';
+import { PhotoNames } from '../models/photo-names.model';
+import { NamePhotos } from '../models/name-photos.model';
+import { SpeakersTalks } from '../models/speakers-talks.model';
+import { TalkSpeakers } from '../models/talk-speakers.model';
+import { SpeakerAccounts } from '../models/speaker-accounts.model';
+import { AccountSpeakers } from '../models/account-speakers.model';
 
 @Injectable({
   providedIn: 'root'

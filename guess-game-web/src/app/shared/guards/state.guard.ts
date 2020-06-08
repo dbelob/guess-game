@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { catchError, map } from "rxjs/operators";
-import { Observable, of } from "rxjs";
-import { StateService } from "../services/state.service";
-import { MessageService } from "../../modules/message/message.service";
-import { State } from "../models/state.model";
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { StateService } from '../services/state.service';
+import { MessageService } from '../../modules/message/message.service';
+import { State } from '../models/state.model';
 
 @Injectable()
 export class StateGuard implements CanActivate {
@@ -62,7 +62,7 @@ export class StateGuard implements CanActivate {
         ),
         catchError(response => {
             this.messageService.reportMessage(response);
-            return of(false)
+            return of(false);
           }
         )
       );

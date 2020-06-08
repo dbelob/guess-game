@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { SpeakersTalks } from "../../shared/models/speakers-talks.model";
-import { StateService } from "../../shared/services/state.service";
-import { AnswerService } from "../../shared/services/answer.service";
-import { State } from "../../shared/models/state.model";
+import { Router } from '@angular/router';
+import { SpeakersTalks } from '../../shared/models/speakers-talks.model';
+import { StateService } from '../../shared/services/state.service';
+import { AnswerService } from '../../shared/services/answer.service';
+import { State } from '../../shared/models/state.model';
 
 @Component({
   selector: 'app-guess-talk',
   templateUrl: './guess-talk-by-speaker.component.html'
 })
 export class GuessTalkBySpeakerComponent implements OnInit {
-  private imageDirectory: string = 'assets/images';
-  private eventsImageDirectory: string = `${this.imageDirectory}/events`;
-  public speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
+  private imageDirectory = 'assets/images';
+  private eventsImageDirectory = `${this.imageDirectory}/events`;
+  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
   public speakerTalks: SpeakersTalks = new SpeakersTalks();
   public title: string;
   public logoImageSource: string;

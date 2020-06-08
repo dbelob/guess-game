@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { PhotoNames } from "../../shared/models/photo-names.model";
-import { StateService } from "../../shared/services/state.service";
-import { AnswerService } from "../../shared/services/answer.service";
-import { State } from "../../shared/models/state.model";
+import { Router } from '@angular/router';
+import { PhotoNames } from '../../shared/models/photo-names.model';
+import { StateService } from '../../shared/services/state.service';
+import { AnswerService } from '../../shared/services/answer.service';
+import { State } from '../../shared/models/state.model';
 
 @Component({
   selector: 'app-guess-name',
   templateUrl: './guess-name-by-photo.component.html'
 })
 export class GuessNameByPhotoComponent implements OnInit {
-  private imageDirectory: string = 'assets/images';
-  private eventsImageDirectory: string = `${this.imageDirectory}/events`;
-  private speakersImageDirectory: string = `${this.imageDirectory}/speakers`;
+  private imageDirectory = 'assets/images';
+  private eventsImageDirectory = `${this.imageDirectory}/events`;
+  private speakersImageDirectory = `${this.imageDirectory}/speakers`;
   public photoNames: PhotoNames = new PhotoNames();
   public title: string;
   public logoImageSource: string;

@@ -1,5 +1,5 @@
-import { SpeakerPair } from "./speaker-pair.model";
-import { AccountAnswer } from "./account-answer.model";
+import { SpeakerPair } from './speaker-pair.model';
+import { AccountAnswer } from './account-answer.model';
 
 export class AccountErrorDetails {
   constructor(

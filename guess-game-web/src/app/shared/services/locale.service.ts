@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { MessageService } from "../../modules/message/message.service";
-import { Observable } from "rxjs";
-import { catchError, map } from "rxjs/operators";
-import { Language } from "../models/language.model";
-import { TranslateService } from "@ngx-translate/core";
+import { HttpClient } from '@angular/common/http';
+import { MessageService } from '../../modules/message/message.service';
+import { Observable } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+import { Language } from '../models/language.model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +46,7 @@ export class LocaleService {
   }
 
   async getLanguageAndChangeInterfaceLanguage() {
-    let language = await this.getLanguage().toPromise();
+    const language = await this.getLanguage().toPromise();
 
     this.changeInterfaceLanguage(language);
   }

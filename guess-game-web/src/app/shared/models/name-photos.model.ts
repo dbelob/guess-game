@@ -1,4 +1,4 @@
-import { QuestionAnswers } from "./question-answers.model";
+import { QuestionAnswers } from './question-answers.model';
 
 export class NamePhotos extends QuestionAnswers {
   constructor(

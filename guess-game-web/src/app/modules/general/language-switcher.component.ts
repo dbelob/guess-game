@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from "@angular/router";
-import { Language } from "../../shared/models/language.model";
-import { LocaleService } from "../../shared/services/locale.service";
+import { Router } from '@angular/router';
+import { Language } from '../../shared/models/language.model';
+import { LocaleService } from '../../shared/services/locale.service';
 
 @Component({
   selector: 'app-language-switcher',

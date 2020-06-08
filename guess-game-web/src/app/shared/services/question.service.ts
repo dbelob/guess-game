@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { catchError } from "rxjs/operators";
-import { EventType } from "../models/event-type.model";
-import { Event } from "../models/event.model";
-import { MessageService } from "../../modules/message/message.service";
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { EventType } from '../models/event-type.model';
+import { Event } from '../models/event.model';
+import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class QuestionService {
   }
 
   getEvents(eventTypeIds: number[]): Observable<Event[]> {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('eventTypeIds', eventTypeIds.toString());
 
     return this.http.get<Event[]>(`${this.baseUrl}/events`, {params: params})
@@ -49,7 +49,7 @@ export class QuestionService {
   }
 
   getQuantities(eventTypeIds: number[], eventIds: number[], guessMode: string): Observable<number[]> {
-    let params = new HttpParams()
+    const params = new HttpParams()
       .set('eventTypeIds', eventTypeIds.toString())
       .set('eventIds', eventIds.toString())
       .set('guessMode', guessMode);
