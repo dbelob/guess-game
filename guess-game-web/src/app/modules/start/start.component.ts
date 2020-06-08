@@ -1,14 +1,14 @@
 import { AfterViewChecked, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { Router } from "@angular/router";
-import { formatDate } from "@angular/common";
-import { TranslateService } from "@ngx-translate/core";
-import { SelectItem } from "primeng/api";
-import { StartParameters } from "../../shared/models/start-parameters.model";
-import { GuessMode } from "../../shared/models/guess-mode.model";
-import { EventType } from "../../shared/models/event-type.model";
-import { Event } from "../../shared/models/event.model";
-import { QuestionService } from "../../shared/services/question.service";
-import { StateService } from "../../shared/services/state.service";
+import { Router } from '@angular/router';
+import { formatDate } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { SelectItem } from 'primeng/api';
+import { StartParameters } from '../../shared/models/start-parameters.model';
+import { GuessMode } from '../../shared/models/guess-mode.model';
+import { EventType } from '../../shared/models/event-type.model';
+import { Event } from '../../shared/models/event.model';
+import { QuestionService } from '../../shared/services/question.service';
+import { StateService } from '../../shared/services/state.service';
 
 @Component({
   selector: 'app-start',
@@ -17,8 +17,8 @@ import { StateService } from "../../shared/services/state.service";
 export class StartComponent implements OnInit, AfterViewChecked {
   private readonly MIN_QUANTITY_VALUE = 4;
 
-  private imageDirectory: string = 'assets/images';
-  public eventsImageDirectory: string = `${this.imageDirectory}/events`;
+  private imageDirectory = 'assets/images';
+  public eventsImageDirectory = `${this.imageDirectory}/events`;
 
   public eventTypes: EventType[] = [];
   public selectedEventTypes: EventType[] = [];
@@ -36,9 +36,9 @@ export class StartComponent implements OnInit, AfterViewChecked {
 
   private defaultEvent: Event;
 
-  private selectedOptionsUpdated: boolean = false;
+  private selectedOptionsUpdated = false;
 
-  @ViewChildren("eventTypeRow", {read: ElementRef}) rowElement: QueryList<ElementRef>;
+  @ViewChildren('eventTypeRow', {read: ElementRef}) rowElement: QueryList<ElementRef>;
 
   constructor(private questionService: QuestionService, private stateService: StateService, private router: Router,
               public translateService: TranslateService) {
@@ -50,19 +50,19 @@ export class StartComponent implements OnInit, AfterViewChecked {
 
   loadEventTypes() {
     this.questionService.getEventTypes()
-      .subscribe(data => {
-        this.eventTypes = data;
+      .subscribe(eventTypesData => {
+        this.eventTypes = eventTypesData;
         this.eventTypeSelectItems = this.eventTypes.map(et => {
-            return {label: et.displayName, value: et}
+            return {label: et.displayName, value: et};
           }
         );
 
         if (this.eventTypes.length > 0) {
           this.questionService.getDefaultEvent()
-            .subscribe(data => {
-              this.defaultEvent = data;
+            .subscribe(defaultEventData => {
+              this.defaultEvent = defaultEventData;
 
-              let selectedEventType = this.findEventTypeByDefaultEvent(this.defaultEvent);
+              const selectedEventType = this.findEventTypeByDefaultEvent(this.defaultEvent);
 
               if (selectedEventType) {
                 this.selectedEventTypes = [selectedEventType];
@@ -83,7 +83,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
   findEventTypeByDefaultEvent(defaultEvent: Event): EventType {
     if (defaultEvent) {
       for (let i = 0; i < this.eventTypes.length; i++) {
-        let eventType: EventType = this.eventTypes[i];
+        const eventType: EventType = this.eventTypes[i];
 
         if (defaultEvent.eventTypeId === eventType.id) {
           return eventType;
@@ -98,7 +98,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
     if (this.selectedOptionsUpdated) {
       if (this.selectedEventTypes && (this.selectedEventTypes.length > 0)) {
         const eventType: EventType = this.selectedEventTypes[0];
-        const elementRef = this.rowElement.find(r => r.nativeElement.getAttribute('id') == eventType.id);
+        const elementRef = this.rowElement.find(r => r.nativeElement.getAttribute('id') === eventType.id.toString());
 
         if (elementRef) {
           elementRef.nativeElement.scrollIntoView({behavior: 'auto', block: 'center', inline: 'nearest'});
@@ -119,7 +119,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
         this.events = this.getEventsWithDisplayName(data);
 
         if (this.events.length > 0) {
-          let selectedEvent = this.findEventByDefaultEvent(this.defaultEvent);
+          const selectedEvent = this.findEventByDefaultEvent(this.defaultEvent);
 
           if (selectedEvent) {
             this.selectedEvents = [selectedEvent];
@@ -137,11 +137,11 @@ export class StartComponent implements OnInit, AfterViewChecked {
   getEventsWithDisplayName(events: Event[]): Event[] {
     if (events) {
       for (let i = 0; i < events.length; i++) {
-        let event: Event = events[i];
-        let isEventDateParenthesesVisible = this.isEventDateParenthesesVisible(event);
-        let isEventStartDateVisible = this.isEventStartDateVisible(event);
-        let isEventHyphenVisible = this.isEventHyphenVisible(event);
-        let isEventEndDateVisible = this.isEventEndDateVisible(event);
+        const event: Event = events[i];
+        const isEventDateParenthesesVisible = this.isEventDateParenthesesVisible(event);
+        const isEventStartDateVisible = this.isEventStartDateVisible(event);
+        const isEventHyphenVisible = this.isEventHyphenVisible(event);
+        const isEventEndDateVisible = this.isEventEndDateVisible(event);
 
         let displayName = event.name;
 
@@ -175,7 +175,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
   findEventByDefaultEvent(defaultEvent: Event): Event {
     if (defaultEvent) {
       for (let i = 0; i < this.events.length; i++) {
-        let event: Event = this.events[i];
+        const event: Event = this.events[i];
 
         if (defaultEvent.id === event.id) {
           return event;
@@ -199,7 +199,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
       .subscribe(data => {
         this.quantities = data;
         this.quantitySelectItems = this.quantities.map(q => {
-            return {label: q.toString(), value: q}
+            return {label: q.toString(), value: q};
           }
         );
 
