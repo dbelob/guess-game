@@ -5,7 +5,6 @@ import guess.domain.statistics.EventTypeMetrics;
 import guess.dto.statistics.EventTypeMetricsDto;
 import guess.service.LocaleService;
 import guess.service.StatisticsService;
-import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,12 +37,10 @@ public class StatisticsController {
                                                          HttpSession httpSession) {
         List<EventTypeMetrics> eventTypeMetrics = statisticsService.getEventTypeMetrics(conferences, meetups);
         Language language = localeService.getLanguage(httpSession);
-        Comparator<EventTypeMetrics> comparatorByIsConference = Comparator.comparing(etm -> !etm.getEventType().isEventTypeConference());
-        Comparator<EventTypeMetrics> comparatorByInactive = Comparator.comparing(etm -> etm.getEventType().isInactive());
-        Comparator<EventTypeMetrics> comparatorByName = Comparator.comparing(etm -> LocalizationUtils.getString(etm.getEventType().getName(), language));
+        List<EventTypeMetricsDto> eventTypeMetricsDtoList = EventTypeMetricsDto.convertToDto(eventTypeMetrics, language);
 
-        eventTypeMetrics.sort(comparatorByIsConference.thenComparing(comparatorByInactive).thenComparing(comparatorByName));
+        eventTypeMetricsDtoList.sort(Comparator.comparing(EventTypeMetricsDto::getSortName, String.CASE_INSENSITIVE_ORDER));
 
-        return EventTypeMetricsDto.convertToDto(eventTypeMetrics, language);
+        return eventTypeMetricsDtoList;
     }
 }

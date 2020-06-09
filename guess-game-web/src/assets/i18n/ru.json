@@ -2,7 +2,11 @@
   "common": {
     "infoLinkText": "Инфо",
     "gameLinkText": "Игра",
-    "cancelLinkText": "Прервать"
+    "cancelLinkText": "Прервать",
+    "eventTypeKind": {
+      "conference": "Конференция",
+      "meetup": "Митап"
+    }
   },
   "start": {
     "title": "Угадай спикера",
@@ -43,10 +47,11 @@
       "conferencesLabel": "Конференции",
       "meetupsLabel": "Митапы",
       "table": {
+        "kindColumn": "Вид",
         "nameColumn": "Наименование",
         "startDateColumn": "Начальная дата",
         "ageColumn": "Возраст, лет",
-        "durationColumn": "Продолжительность, дней",
+        "durationColumn": "Длительность, дней",
         "eventsColumn": "Событий",
         "talksColumn": "Докладов",
         "speakersColumn": "Спикеров"

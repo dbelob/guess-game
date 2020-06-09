@@ -12,47 +12,50 @@
 
   <form role="form">
     <div class="form-group row justify-content-center">
-      <div class="col-sm-auto">
+      <div class="col-auto">
         <p-checkbox name="group1" value="ABC" label="{{'statistics.eventTypes.conferencesLabel' | translate}}"
                     [(ngModel)]="conferences" binary="true"
                     (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
       </div>
-      <div class="col-sm-auto">
+      <div class="col-auto">
         <p-checkbox name="group1" value="DEF" label="{{'statistics.eventTypes.meetupsLabel' | translate}}"
                     [(ngModel)]="meetups" binary="true"
                     (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
       </div>
     </div>
 
-    <p-table [value]="eventTypeMetricsList">
+    <p-table [value]="eventTypeMetricsList" [resizableColumns]="true" [reorderableColumns]="true">
       <ng-template pTemplate="header" let-columns>
         <tr>
-          <th class="text-center">#</th>
-          <th class="text-center" [pSortableColumn]="'name'">
-            {{'statistics.eventTypes.table.nameColumn' | translate}}
-            <p-sortIcon [field]="'name'"></p-sortIcon>
+          <th class="text-center" pResizableColumn pReorderableColumn>#</th>
+          <th class="text-center" pResizableColumn pReorderableColumn>
+            {{'statistics.eventTypes.table.kindColumn' | translate}}
           </th>
-          <th class="text-center" [pSortableColumn]="'startDate'">
+          <th class="text-center" [pSortableColumn]="'sortName'" pResizableColumn pReorderableColumn>
+            {{'statistics.eventTypes.table.nameColumn' | translate}}
+            <p-sortIcon [field]="'sortName'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'startDate'" pResizableColumn pReorderableColumn>
             {{'statistics.eventTypes.table.startDateColumn' | translate}}
             <p-sortIcon [field]="'startDate'"></p-sortIcon>
           </th>
-          <th class="text-center" [pSortableColumn]="'age'">
+          <th class="text-center" [pSortableColumn]="'age'" pResizableColumn pReorderableColumn>
             {{'statistics.eventTypes.table.ageColumn' | translate}}
             <p-sortIcon [field]="'age'"></p-sortIcon>
           </th>
-          <th class="text-center" [pSortableColumn]="'duration'">
+          <th class="text-center" [pSortableColumn]="'duration'" pResizableColumn pReorderableColumn>
             {{'statistics.eventTypes.table.durationColumn' | translate}}
             <p-sortIcon [field]="'duration'"></p-sortIcon>
           </th>
-          <th class="text-center" [pSortableColumn]="'eventsQuantity'">
+          <th class="text-center" [pSortableColumn]="'eventsQuantity'" pResizableColumn pReorderableColumn>
             {{'statistics.eventTypes.table.eventsColumn' | translate}}
             <p-sortIcon [field]="'eventsQuantity'"></p-sortIcon>
           </th>
-          <th class="text-center" [pSortableColumn]="'talksQuantity'">
+          <th class="text-center" [pSortableColumn]="'talksQuantity'" pResizableColumn pReorderableColumn>
             {{'statistics.eventTypes.table.talksColumn' | translate}}
             <p-sortIcon [field]="'talksQuantity'"></p-sortIcon>
           </th>
-          <th class="text-center" [pSortableColumn]="'speakersQuantity'">
+          <th class="text-center" [pSortableColumn]="'speakersQuantity'" pResizableColumn pReorderableColumn>
             {{'statistics.eventTypes.table.speakersColumn' | translate}}
             <p-sortIcon [field]="'speakersQuantity'"></p-sortIcon>
           </th>
@@ -61,8 +64,24 @@
       <ng-template pTemplate="body" let-eventTypeMetrics let-i = "rowIndex">
         <tr>
           <td class="text-center">{{i + 1}}</td>
-          <td>{{eventTypeMetrics.name}}</td>
-          <td class="text-center">{{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+          <td>
+            <span *ngIf="eventTypeMetrics.conference" pTooltip="{{'common.eventTypeKind.conference' | translate}}" tooltipPosition="bottom">
+              {{'common.eventTypeKind.conference' | translate}}
+            </span>
+            <span *ngIf="!eventTypeMetrics.conference" pTooltip="{{'common.eventTypeKind.meetup' | translate}}" tooltipPosition="bottom">
+              {{'common.eventTypeKind.meetup' | translate}}
+            </span>
+          </td>
+          <td>
+            <span pTooltip="{{eventTypeMetrics.displayName}}" tooltipPosition="bottom">
+              {{eventTypeMetrics.displayName}}
+            </span>
+          </td>
+          <td class="text-center">
+            <span pTooltip="{{eventTypeMetrics.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
+              {{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}
+            </span>
+          </td>
           <td class="text-center">{{eventTypeMetrics.age | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>

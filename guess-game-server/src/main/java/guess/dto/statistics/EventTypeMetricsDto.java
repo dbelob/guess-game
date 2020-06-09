@@ -13,7 +13,9 @@ import java.util.stream.Collectors;
  * Event type metrics DTO.
  */
 public class EventTypeMetricsDto {
-    private final String name;
+    private final String displayName;
+    private final String sortName;
+    private final boolean conference;
     private final LocalDate startDate;
     private final long age;
     private final long duration;
@@ -21,8 +23,11 @@ public class EventTypeMetricsDto {
     private final long talksQuantity;
     private final long speakersQuantity;
 
-    public EventTypeMetricsDto(String name, LocalDate startDate, long age, long duration, long eventsQuantity, long talksQuantity, long speakersQuantity) {
-        this.name = name;
+    public EventTypeMetricsDto(String displayName, String sortName, boolean conference, LocalDate startDate, long age, long duration,
+                               long eventsQuantity, long talksQuantity, long speakersQuantity) {
+        this.displayName = displayName;
+        this.sortName = sortName;
+        this.conference = conference;
         this.startDate = startDate;
         this.age = age;
         this.duration = duration;
@@ -31,8 +36,16 @@ public class EventTypeMetricsDto {
         this.speakersQuantity = speakersQuantity;
     }
 
-    public String getName() {
-        return name;
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public String getSortName() {
+        return sortName;
+    }
+
+    public boolean isConference() {
+        return conference;
     }
 
     public LocalDate getStartDate() {
@@ -61,12 +74,14 @@ public class EventTypeMetricsDto {
 
     public static EventTypeMetricsDto convertToDto(EventTypeMetrics eventTypeMetrics, Language language) {
         EventType eventType = eventTypeMetrics.getEventType();
-        String name = LocalizationUtils.getString(eventType.getName(), language);
+        String displayName = LocalizationUtils.getString(eventType.getName(), language);
         String resourceKey = (eventType.isEventTypeConference()) ? LocalizationUtils.CONFERENCES_EVENT_TYPE_TEXT : LocalizationUtils.MEETUPS_EVENT_TYPE_TEXT;
-        String displayName = String.format(LocalizationUtils.getResourceString(resourceKey, language), name);
+        String sortName = String.format(LocalizationUtils.getResourceString(resourceKey, language), displayName);
 
         return new EventTypeMetricsDto(
                 displayName,
+                sortName,
+                eventType.isEventTypeConference(),
                 eventTypeMetrics.getStartDate(),
                 eventTypeMetrics.getAge(),
                 eventTypeMetrics.getDuration(),

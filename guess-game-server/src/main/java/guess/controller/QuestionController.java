@@ -46,7 +46,7 @@ public class QuestionController {
         Language language = localeService.getLanguage(httpSession);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
         Comparator<EventType> comparatorByInactive = Comparator.comparing(EventType::isInactive);
-        Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language));
+        Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);
 
         eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByInactive).thenComparing(comparatorByName));
 

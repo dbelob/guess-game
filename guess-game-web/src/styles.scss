@@ -129,3 +129,14 @@ input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
 input.ng-dirty.ng-valid, textarea.ng-dirty.ng-valid {
   border: 2px solid #6bc502;
 }
+
+.ui-table .ui-table-thead > tr > th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-table .ui-table-tbody > tr > td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

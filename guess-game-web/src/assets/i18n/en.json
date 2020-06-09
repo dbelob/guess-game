@@ -2,7 +2,11 @@
   "common": {
     "infoLinkText": "Info",
     "gameLinkText": "Game",
-    "cancelLinkText": "Cancel"
+    "cancelLinkText": "Cancel",
+    "eventTypeKind": {
+      "conference": "Conference",
+      "meetup": "Meetup"
+    }
   },
   "start": {
     "title": "Guess the Speaker",
@@ -43,6 +47,7 @@
       "conferencesLabel": "Conferences",
       "meetupsLabel": "Meetups",
       "table": {
+        "kindColumn": "Kind",
         "nameColumn": "Name",
         "startDateColumn": "Start date",
         "ageColumn": "Age, years",

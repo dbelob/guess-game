@@ -1,6 +1,8 @@
 export class EventTypeMetrics {
   constructor(
-    public name?: string,
+    public displayName?: string,
+    public sortName?: string,
+    public conference?: boolean,
     public startDate?: Date,
     public age?: number,
     public duration?: number,
