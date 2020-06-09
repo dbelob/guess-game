@@ -92,7 +92,7 @@
       </ng-template>
       <ng-template pTemplate="footer">
         <tr>
-          <td colspan="3" class="text-right">{{'common.totalsText' | translate}}</td>
+          <td colspan="3">{{'common.totalsText' | translate}}</td>
           <td class="text-center">
             <span pTooltip="{{eventTypeStatistics.totals?.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
               {{eventTypeStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}
