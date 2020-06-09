@@ -1,8 +1,9 @@
 package guess.controller;
 
 import guess.domain.Language;
-import guess.domain.statistics.EventTypeMetrics;
+import guess.domain.statistics.EventTypeStatistics;
 import guess.dto.statistics.EventTypeMetricsDto;
+import guess.dto.statistics.EventTypeStatisticsDto;
 import guess.service.LocaleService;
 import guess.service.StatisticsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
-import java.util.List;
 
 /**
  * Statistics controller.
@@ -33,14 +33,14 @@ public class StatisticsController {
 
     @GetMapping("/event-types")
     @ResponseBody
-    public List<EventTypeMetricsDto> getEventTypeMetrics(@RequestParam boolean conferences, @RequestParam boolean meetups,
+    public EventTypeStatisticsDto getEventTypeStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                          HttpSession httpSession) {
-        List<EventTypeMetrics> eventTypeMetrics = statisticsService.getEventTypeMetrics(conferences, meetups);
+        EventTypeStatistics eventTypeStatistics = statisticsService.getEventTypeStatistics(conferences, meetups);
         Language language = localeService.getLanguage(httpSession);
-        List<EventTypeMetricsDto> eventTypeMetricsDtoList = EventTypeMetricsDto.convertToDto(eventTypeMetrics, language);
+        EventTypeStatisticsDto eventTypeStatisticsDto = EventTypeStatisticsDto.convertToDto(eventTypeStatistics, language);
 
-        eventTypeMetricsDtoList.sort(Comparator.comparing(EventTypeMetricsDto::getSortName, String.CASE_INSENSITIVE_ORDER));
+        eventTypeStatisticsDto.getEventTypeMetricsList().sort(Comparator.comparing(EventTypeMetricsDto::getSortName, String.CASE_INSENSITIVE_ORDER));
 
-        return eventTypeMetricsDtoList;
+        return eventTypeStatisticsDto;
     }
 }

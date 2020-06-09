@@ -5,6 +5,7 @@ import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
 import guess.domain.statistics.EventTypeMetrics;
+import guess.domain.statistics.EventTypeStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,39 +30,64 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
     @Override
-    public List<EventTypeMetrics> getEventTypeMetrics(boolean isConferences, boolean isMeetups) {
+    public EventTypeStatistics getEventTypeStatistics(boolean isConferences, boolean isMeetups) {
         List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
                 .filter(et -> ((isConferences && et.isEventTypeConference() || (isMeetups && !et.isEventTypeConference()))))
                 .collect(Collectors.toList());
         List<EventTypeMetrics> eventTypeMetricsList = new ArrayList<>();
+        LocalDate currentDate = LocalDate.now();
+        LocalDate totalsStartDate = currentDate;
+        long totalsDuration = 0;
+        long totalsEventsQuantity = 0;
+        long totalsTalksQuantity = 0;
+        Set<Speaker> totalsSpeakers = new HashSet<>();
 
         for (EventType eventType : eventTypes) {
-            LocalDate currentDate = LocalDate.now();
-            LocalDate startDate = currentDate;
-            long duration = 0;
-            long talksQuantity = 0;
-            Set<Speaker> speakers = new HashSet<>();
+            // Event type metrics
+            LocalDate eventTypeStartDate = currentDate;
+            long eventTypeDuration = 0;
+            long eventTypeTalksQuantity = 0;
+            Set<Speaker> eventTypeSpeakers = new HashSet<>();
 
             for (Event event : eventType.getEvents()) {
-                if (event.getStartDate().isBefore(startDate)) {
-                    startDate = event.getStartDate();
+                if (event.getStartDate().isBefore(eventTypeStartDate)) {
+                    eventTypeStartDate = event.getStartDate();
                 }
 
-                duration += (ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1);
-                talksQuantity += event.getTalks().size();
-                event.getTalks().forEach(t -> speakers.addAll(t.getSpeakers()));
+                eventTypeDuration += (ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1);
+                eventTypeTalksQuantity += event.getTalks().size();
+                event.getTalks().forEach(t -> eventTypeSpeakers.addAll(t.getSpeakers()));
             }
 
             eventTypeMetricsList.add(new EventTypeMetrics(
                     eventType,
-                    startDate,
-                    ChronoUnit.YEARS.between(startDate, currentDate),
-                    duration,
+                    eventTypeStartDate,
+                    ChronoUnit.YEARS.between(eventTypeStartDate, currentDate),
+                    eventTypeDuration,
                     eventType.getEvents().size(),
-                    talksQuantity,
-                    speakers.size()));
+                    eventTypeTalksQuantity,
+                    eventTypeSpeakers.size()));
+
+            // Totals metrics
+            if (eventTypeStartDate.isBefore(totalsStartDate)) {
+                totalsStartDate = eventTypeStartDate;
+            }
+
+            totalsDuration += eventTypeDuration;
+            totalsEventsQuantity += eventType.getEvents().size();
+            totalsTalksQuantity += eventTypeTalksQuantity;
+            totalsSpeakers.addAll(eventTypeSpeakers);
         }
 
-        return eventTypeMetricsList;
+        return new EventTypeStatistics(
+                eventTypeMetricsList,
+                new EventTypeMetrics(
+                        new EventType(),
+                        totalsStartDate,
+                        ChronoUnit.YEARS.between(totalsStartDate, currentDate),
+                        totalsDuration,
+                        totalsEventsQuantity,
+                        totalsTalksQuantity,
+                        totalsSpeakers.size()));
     }
 }

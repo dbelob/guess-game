@@ -3,6 +3,7 @@
     "infoLinkText": "Инфо",
     "gameLinkText": "Игра",
     "cancelLinkText": "Прервать",
+    "totalsText": "Всего",
     "eventTypeKind": {
       "conference": "Конференция",
       "meetup": "Митап"

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
-import { EventTypeMetrics } from '../../shared/models/event-type-metrics.model';
+import { EventTypeStatistics } from '../../shared/models/event-type-statistics.model';
 import { StatisticsService } from '../../shared/services/statistics.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class EventTypeStatisticsComponent implements OnInit {
 
   public conferences = true;
   public meetups = true;
-  public eventTypeMetricsList: EventTypeMetrics[] = [];
+  public eventTypeStatistics = new EventTypeStatistics();
 
   constructor(private statisticsService: StatisticsService, public translateService: TranslateService, private router: Router) {
   }
@@ -24,9 +24,9 @@ export class EventTypeStatisticsComponent implements OnInit {
   }
 
   loadEventTypeStatistics() {
-    this.statisticsService.getEventTypeMetrics(this.conferences, this.meetups)
+    this.statisticsService.getEventTypeStatistics(this.conferences, this.meetups)
       .subscribe(data => {
-          this.eventTypeMetricsList = data;
+          this.eventTypeStatistics = data;
         }
       );
   }

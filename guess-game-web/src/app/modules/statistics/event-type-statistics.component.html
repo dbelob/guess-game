@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <p-table [value]="eventTypeMetricsList" [resizableColumns]="true" [autoLayout]="true">
+    <p-table [value]="eventTypeStatistics.eventTypeMetricsList" [resizableColumns]="true" [autoLayout]="true">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th class="text-center" pResizableColumn>#</th>
@@ -88,6 +88,21 @@
           <td class="text-center">{{eventTypeMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <tr>
+          <td colspan="3" class="text-right">{{'common.totalsText' | translate}}</td>
+          <td class="text-center">
+            <span pTooltip="{{eventTypeStatistics.totals?.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
+              {{eventTypeStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}
+            </span>
+          </td>
+          <td class="text-center">{{eventTypeStatistics.totals?.age | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.duration | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
         </tr>
       </ng-template>
     </p-table>

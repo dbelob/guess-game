@@ -3,6 +3,7 @@
     "infoLinkText": "Info",
     "gameLinkText": "Game",
     "cancelLinkText": "Cancel",
+    "totalsText": "Totals",
     "eventTypeKind": {
       "conference": "Conference",
       "meetup": "Meetup"
