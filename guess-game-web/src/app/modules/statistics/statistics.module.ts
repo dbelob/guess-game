@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
+import { TableModule } from 'primeng/table';
 import { TranslateModule } from '@ngx-translate/core';
 import { GeneralModule } from '../general/general.module';
 import { MessageModule } from '../message/message.module';
@@ -16,6 +17,7 @@ import { EventTypeStatisticsComponent } from './event-type-statistics.component'
     FormsModule,
     CheckboxModule,
     TranslateModule,
+    TableModule,
     GeneralModule,
     MessageModule
   ]

@@ -24,31 +24,52 @@
       </div>
     </div>
 
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col" class="text-center">#</th>
-        <th scope="col" class="text-center">{{'statistics.eventTypes.table.nameColumn' | translate}}</th>
-        <th scope="col" class="text-center">{{'statistics.eventTypes.table.startDateColumn' | translate}}</th>
-        <th scope="col" class="text-center">{{'statistics.eventTypes.table.ageColumn' | translate}}</th>
-        <th scope="col" class="text-center">{{'statistics.eventTypes.table.durationColumn' | translate}}</th>
-        <th scope="col" class="text-center">{{'statistics.eventTypes.table.eventsColumn' | translate}}</th>
-        <th scope="col" class="text-center">{{'statistics.eventTypes.table.talksColumn' | translate}}</th>
-        <th scope="col" class="text-center">{{'statistics.eventTypes.table.speakersColumn' | translate}}</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let eventTypeMetrics of eventTypeMetricsList; let i = index">
-        <td scope="row" class="text-center">{{i + 1}}</td>
-        <td>{{eventTypeMetrics.name}}</td>
-        <td class="text-center">{{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
-        <td class="text-center">{{eventTypeMetrics.age | number:'1.0-0':translateService.currentLang}}</td>
-        <td class="text-center">{{eventTypeMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>
-        <td class="text-center">{{eventTypeMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
-        <td class="text-center">{{eventTypeMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
-        <td class="text-center">{{eventTypeMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
-      </tr>
-      </tbody>
-    </table>
+    <p-table [value]="eventTypeMetricsList">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th class="text-center">#</th>
+          <th class="text-center" [pSortableColumn]="'name'">
+            {{'statistics.eventTypes.table.nameColumn' | translate}}
+            <p-sortIcon [field]="'name'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'startDate'">
+            {{'statistics.eventTypes.table.startDateColumn' | translate}}
+            <p-sortIcon [field]="'startDate'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'age'">
+            {{'statistics.eventTypes.table.ageColumn' | translate}}
+            <p-sortIcon [field]="'age'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'duration'">
+            {{'statistics.eventTypes.table.durationColumn' | translate}}
+            <p-sortIcon [field]="'duration'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'eventsQuantity'">
+            {{'statistics.eventTypes.table.eventsColumn' | translate}}
+            <p-sortIcon [field]="'eventsQuantity'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'talksQuantity'">
+            {{'statistics.eventTypes.table.talksColumn' | translate}}
+            <p-sortIcon [field]="'talksQuantity'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'speakersQuantity'">
+            {{'statistics.eventTypes.table.speakersColumn' | translate}}
+            <p-sortIcon [field]="'speakersQuantity'"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-eventTypeMetrics let-i = "rowIndex">
+        <tr>
+          <td class="text-center">{{i + 1}}</td>
+          <td>{{eventTypeMetrics.name}}</td>
+          <td class="text-center">{{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.age | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
   </form>
 </div>
