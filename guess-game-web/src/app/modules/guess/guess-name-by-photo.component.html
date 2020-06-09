@@ -5,13 +5,13 @@
 
   <div class="row">
     <div class="col">
-      <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="" class="img-guess-logo">
+      <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="logo" class="img-guess-logo"/>
     </div>
     <app-language-switcher (onReload)="loadQuestion()" class="col"></app-language-switcher>
   </div>
 
   <div class="text-center mb-4">
-    <img src="{{imageSource}}" alt="" class="img-thumbnail img-guess-name-by-photo">
+    <img src="{{imageSource}}" alt="photo" class="img-thumbnail img-guess-name-by-photo"/>
   </div>
   <div class="text-center">
     <button type="submit" class="btn btn-primary m-1" [class.btn-danger]="photoNames.invalid0" [disabled]="photoNames.invalid0"
