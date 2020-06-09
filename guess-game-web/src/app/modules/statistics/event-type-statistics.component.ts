@@ -9,6 +9,9 @@ import { StatisticsService } from '../../shared/services/statistics.service';
   templateUrl: './event-type-statistics.component.html'
 })
 export class EventTypeStatisticsComponent implements OnInit {
+  private imageDirectory = 'assets/images';
+  public eventsImageDirectory = `${this.imageDirectory}/events`;
+
   public conferences = true;
   public meetups = true;
   public eventTypeMetricsList: EventTypeMetrics[] = [];

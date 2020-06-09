@@ -16,6 +16,7 @@ public class EventTypeMetricsDto {
     private final String displayName;
     private final String sortName;
     private final boolean conference;
+    private final String logoFileName;
     private final LocalDate startDate;
     private final long age;
     private final long duration;
@@ -23,11 +24,13 @@ public class EventTypeMetricsDto {
     private final long talksQuantity;
     private final long speakersQuantity;
 
-    public EventTypeMetricsDto(String displayName, String sortName, boolean conference, LocalDate startDate, long age, long duration,
-                               long eventsQuantity, long talksQuantity, long speakersQuantity) {
+    public EventTypeMetricsDto(String displayName, String sortName, boolean conference, String logoFileName,
+                               LocalDate startDate, long age, long duration, long eventsQuantity, long talksQuantity,
+                               long speakersQuantity) {
         this.displayName = displayName;
         this.sortName = sortName;
         this.conference = conference;
+        this.logoFileName = logoFileName;
         this.startDate = startDate;
         this.age = age;
         this.duration = duration;
@@ -46,6 +49,10 @@ public class EventTypeMetricsDto {
 
     public boolean isConference() {
         return conference;
+    }
+
+    public String getLogoFileName() {
+        return logoFileName;
     }
 
     public LocalDate getStartDate() {
@@ -82,6 +89,7 @@ public class EventTypeMetricsDto {
                 displayName,
                 sortName,
                 eventType.isEventTypeConference(),
+                eventType.getLogoFileName(),
                 eventTypeMetrics.getStartDate(),
                 eventTypeMetrics.getAge(),
                 eventTypeMetrics.getDuration(),

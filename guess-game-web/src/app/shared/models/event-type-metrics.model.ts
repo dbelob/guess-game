@@ -3,6 +3,7 @@ export class EventTypeMetrics {
     public displayName?: string,
     public sortName?: string,
     public conference?: boolean,
+    public logoFileName?: string,
     public startDate?: Date,
     public age?: number,
     public duration?: number,
