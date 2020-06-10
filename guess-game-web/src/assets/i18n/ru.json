@@ -45,6 +45,7 @@
   "statistics": {
     "title": "Статистика",
     "eventTypes": {
+      "title": "Типы событий",
       "conferencesLabel": "Конференции",
       "meetupsLabel": "Митапы",
       "table": {
@@ -57,6 +58,9 @@
         "talksColumn": "Докладов",
         "speakersColumn": "Спикеров"
       }
+    },
+    "events" : {
+      "title": "События"
     }
   },
   "notFound": {

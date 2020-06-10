@@ -25,6 +25,7 @@ import { GuessSpeakerByAccountComponent } from './modules/guess/guess-speaker-by
 import { CancelGameComponent } from './modules/guess/cancel-game.component';
 import { NotFoundComponent } from './modules/unknown/not-found.component';
 import { EventTypeStatisticsComponent } from './modules/statistics/event-type-statistics.component';
+import { EventStatisticsComponent } from './modules/statistics/event-statistics.component';
 import { AnswerService } from './shared/services/answer.service';
 import { QuestionService } from './shared/services/question.service';
 import { StateService } from './shared/services/state.service';
@@ -41,8 +42,9 @@ const routes: Routes = [
   {path: 'guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
-  {path: 'information/statistics/event-type', component: EventTypeStatisticsComponent},
-  {path: 'information', redirectTo: 'information/statistics/event-type'},
+  {path: 'information/statistics/event-types', component: EventTypeStatisticsComponent},
+  {path: 'information/statistics/events', component: EventStatisticsComponent},
+  {path: 'information', redirectTo: 'information/statistics/event-types'},
   {path: '', pathMatch: 'full', redirectTo: 'start'},
   {path: '**', component: NotFoundComponent}
 ];

@@ -59,7 +59,7 @@ public class EventMetricsDto {
 
         return new EventMetricsDto(
                 LocalizationUtils.getString(event.getName(), language),
-                event.getEventType().getLogoFileName(),
+                (event.getEventType() != null) ? event.getEventType().getLogoFileName() : null,
                 eventMetrics.getStartDate(),
                 eventMetrics.getDuration(),
                 eventMetrics.getTalksQuantity(),

@@ -10,15 +10,17 @@
     <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
   </div>
 
+  <app-statistics-switcher [type]="'event-types'"></app-statistics-switcher>
+
   <form role="form">
     <div class="form-group row justify-content-center">
       <div class="col-auto">
-        <p-checkbox name="group1" value="ABC" label="{{'statistics.eventTypes.conferencesLabel' | translate}}"
+        <p-checkbox name="group1" value="conferences" label="{{'statistics.eventTypes.conferencesLabel' | translate}}"
                     [(ngModel)]="conferences" binary="true"
                     (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
       </div>
       <div class="col-auto">
-        <p-checkbox name="group1" value="DEF" label="{{'statistics.eventTypes.meetupsLabel' | translate}}"
+        <p-checkbox name="group1" value="meetups" label="{{'statistics.eventTypes.meetupsLabel' | translate}}"
                     [(ngModel)]="meetups" binary="true"
                     (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
       </div>

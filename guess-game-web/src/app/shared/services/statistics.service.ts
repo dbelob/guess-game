@@ -30,8 +30,10 @@ export class StatisticsService {
   }
 
   getEventStatistics(eventId: number): Observable<EventStatistics> {
-    const params = new HttpParams()
-      .set('eventId', (eventId) ? eventId.toString() : null);
+    const params = new HttpParams();
+    if (eventId) {
+      params.set('eventId', eventId.toString());
+    }
 
     return this.http.get<EventStatistics>(`${this.baseUrl}/events`, {params: params})
       .pipe(

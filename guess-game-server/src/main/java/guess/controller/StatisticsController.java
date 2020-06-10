@@ -49,7 +49,7 @@ public class StatisticsController {
 
     @GetMapping("/events")
     @ResponseBody
-    public EventStatisticsDto getEventStatistics(@RequestParam Long eventId, HttpSession httpSession) {
+    public EventStatisticsDto getEventStatistics(@RequestParam(required = false) Long eventId, HttpSession httpSession) {
         EventStatistics eventStatistics = statisticsService.getEventStatistics(eventId);
         Language language = localeService.getLanguage(httpSession);
         EventStatisticsDto eventStatisticsDto = EventStatisticsDto.convertToDto(eventStatistics, language);
