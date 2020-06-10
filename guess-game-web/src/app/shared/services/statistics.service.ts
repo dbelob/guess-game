@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { EventTypeStatistics } from '../models/event-type-statistics.model';
+import { EventStatistics } from '../models/event-statistics.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -20,6 +21,19 @@ export class StatisticsService {
       .set('meetups', meetups.toString());
 
     return this.http.get<EventTypeStatistics>(`${this.baseUrl}/event-types`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getEventStatistics(eventId: number): Observable<EventStatistics> {
+    const params = new HttpParams()
+      .set('eventId', (eventId) ? eventId.toString() : null);
+
+    return this.http.get<EventStatistics>(`${this.baseUrl}/events`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

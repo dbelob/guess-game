@@ -1,9 +1,12 @@
 package guess.service;
 
+import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
+import guess.domain.statistics.EventMetrics;
+import guess.domain.statistics.EventStatistics;
 import guess.domain.statistics.EventTypeMetrics;
 import guess.domain.statistics.EventTypeStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +26,12 @@ import java.util.stream.Collectors;
 @Service
 public class StatisticsServiceImpl implements StatisticsService {
     private final EventTypeDao eventTypeDao;
+    private final EventDao eventDao;
 
     @Autowired
-    public StatisticsServiceImpl(EventTypeDao eventTypeDao) {
+    public StatisticsServiceImpl(EventTypeDao eventTypeDao, EventDao eventDao) {
         this.eventTypeDao = eventTypeDao;
+        this.eventDao = eventDao;
     }
 
     @Override
@@ -87,6 +92,52 @@ public class StatisticsServiceImpl implements StatisticsService {
                         ChronoUnit.YEARS.between(totalsStartDate, currentDate),
                         totalsDuration,
                         totalsEventsQuantity,
+                        totalsTalksQuantity,
+                        totalsSpeakers.size()));
+    }
+
+    @Override
+    public EventStatistics getEventStatistics(Long eventId) {
+        List<Event> events = eventDao.getEvents().stream()
+                .filter(e -> ((eventId == null) || (e.getId() == eventId)))
+                .collect(Collectors.toList());
+        List<EventMetrics> eventMetricsList = new ArrayList<>();
+        LocalDate totalsStartDate = LocalDate.now();
+        long totalsDuration = 0;
+        long totalsTalksQuantity = 0;
+        Set<Speaker> totalsSpeakers = new HashSet<>();
+
+        for (Event event : events) {
+            // Event metrics
+            long eventDuration = (ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1);
+            long eventTalksQuantity = event.getTalks().size();
+            Set<Speaker> eventSpeakers = new HashSet<>();
+
+            event.getTalks().forEach(t -> eventSpeakers.addAll(t.getSpeakers()));
+
+            eventMetricsList.add(new EventMetrics(
+                    event,
+                    event.getStartDate(),
+                    eventDuration,
+                    eventTalksQuantity,
+                    eventSpeakers.size()));
+
+            // Totals metrics
+            if (event.getStartDate().isBefore(totalsStartDate)) {
+                totalsStartDate = event.getStartDate();
+            }
+
+            totalsDuration += eventDuration;
+            totalsTalksQuantity += eventTalksQuantity;
+            totalsSpeakers.addAll(eventSpeakers);
+        }
+
+        return new EventStatistics(
+                eventMetricsList,
+                new EventMetrics(
+                        new Event(),
+                        totalsStartDate,
+                        totalsDuration,
                         totalsTalksQuantity,
                         totalsSpeakers.size()));
     }

@@ -3,7 +3,7 @@ package guess.domain.statistics;
 import java.util.List;
 
 /**
- * Event type metrics.
+ * Event type statistics.
  */
 public class EventTypeStatistics {
     private final List<EventTypeMetrics> eventTypeMetricsList;
