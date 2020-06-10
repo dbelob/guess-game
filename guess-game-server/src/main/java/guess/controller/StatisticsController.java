@@ -1,8 +1,10 @@
 package guess.controller;
 
 import guess.domain.Language;
+import guess.domain.source.EventType;
 import guess.domain.statistics.EventStatistics;
 import guess.domain.statistics.EventTypeStatistics;
+import guess.dto.start.EventTypeBriefDto;
 import guess.dto.statistics.EventMetricsDto;
 import guess.dto.statistics.EventStatisticsDto;
 import guess.dto.statistics.EventTypeMetricsDto;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  * Statistics controller.
@@ -34,7 +37,7 @@ public class StatisticsController {
         this.localeService = localeService;
     }
 
-    @GetMapping("/event-types")
+    @GetMapping("/event-type-statistics")
     @ResponseBody
     public EventTypeStatisticsDto getEventTypeStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                          HttpSession httpSession) {
@@ -47,15 +50,27 @@ public class StatisticsController {
         return eventTypeStatisticsDto;
     }
 
-    @GetMapping("/events")
+    @GetMapping("/event-statistics")
     @ResponseBody
-    public EventStatisticsDto getEventStatistics(@RequestParam(required = false) Long eventId, HttpSession httpSession) {
-        EventStatistics eventStatistics = statisticsService.getEventStatistics(eventId);
+    public EventStatisticsDto getEventStatistics(@RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
+        EventStatistics eventStatistics = statisticsService.getEventStatistics(eventTypeId);
         Language language = localeService.getLanguage(httpSession);
         EventStatisticsDto eventStatisticsDto = EventStatisticsDto.convertToDto(eventStatistics, language);
 
         eventStatisticsDto.getEventMetricsList().sort(Comparator.comparing(EventMetricsDto::getName, String.CASE_INSENSITIVE_ORDER));
 
         return eventStatisticsDto;
+    }
+
+    @GetMapping("/conferences")
+    @ResponseBody
+    public List<EventTypeBriefDto> getConferences(HttpSession httpSession) {
+        List<EventType> eventTypes = statisticsService.getConferences();
+        Language language = localeService.getLanguage(httpSession);
+        List<EventTypeBriefDto> eventTypeBriefDtoList = EventTypeBriefDto.convertToBriefDto(eventTypes, language);
+
+        eventTypeBriefDtoList.sort(Comparator.comparing(EventTypeBriefDto::getName, String.CASE_INSENSITIVE_ORDER));
+
+        return eventTypeBriefDtoList;
     }
 }

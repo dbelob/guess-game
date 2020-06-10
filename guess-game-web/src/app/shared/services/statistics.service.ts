@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { EventTypeStatistics } from '../models/event-type-statistics.model';
 import { EventStatistics } from '../models/event-statistics.model';
 import { MessageService } from '../../modules/message/message.service';
+import { EventType } from "../models/event-type.model";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class StatisticsService {
       .set('conferences', conferences.toString())
       .set('meetups', meetups.toString());
 
-    return this.http.get<EventTypeStatistics>(`${this.baseUrl}/event-types`, {params: params})
+    return this.http.get<EventTypeStatistics>(`${this.baseUrl}/event-type-statistics`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
@@ -29,13 +30,23 @@ export class StatisticsService {
       );
   }
 
-  getEventStatistics(eventId: number): Observable<EventStatistics> {
+  getEventStatistics(eventTypeId: number): Observable<EventStatistics> {
     const params = new HttpParams();
-    if (eventId) {
-      params.set('eventId', eventId.toString());
+    if (eventTypeId) {
+      params.set('eventTypeId', eventTypeId.toString());
     }
 
-    return this.http.get<EventStatistics>(`${this.baseUrl}/events`, {params: params})
+    return this.http.get<EventStatistics>(`${this.baseUrl}/event-statistics`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getConferences(): Observable<EventType[]> {
+    return this.http.get<EventType[]>(`${this.baseUrl}/conferences`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

@@ -60,7 +60,9 @@
       }
     },
     "events" : {
-      "title": "События"
+      "title": "События",
+      "conferenceLabel": "Конференция:",
+      "conferencePlaceholder": "Все"
     }
   },
   "notFound": {

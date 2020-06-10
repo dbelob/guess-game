@@ -15,7 +15,7 @@
         <label for="eventType" class="col-sm-2">{{'start.eventTypeLabel' | translate}}</label>
         <div class="col-sm-10">
           <p-listbox [multiple]="true" id="eventType" [options]="eventTypeSelectItems" [(ngModel)]="selectedEventTypes"
-                     (onClick)="onEventTypeChange($event.value)" name="eventType"
+                     (onChange)="onEventTypeChange($event.value)" name="eventType"
                      styleClass="start-listbox" [listStyle]="{'height':'260px'}">
             <ng-template let-eventType pTemplate="item">
               <div #eventTypeRow [attr.id]="eventType.value.id">
@@ -30,7 +30,7 @@
       <label for="event" class="col-sm-2">{{'start.eventLabel' | translate}}</label>
       <div class="col-sm-10">
         <p-listbox [multiple]="true" id="event" [options]="events" [(ngModel)]="selectedEvents"
-                   optionLabel="displayName" (onClick)="onEventChange($event.value)" name="event"
+                   optionLabel="displayName" (onChange)="onEventChange($event.value)" name="event"
                    styleClass="start-listbox" [listStyle]="{'height':'105px'}"
                    [disabled]="isEventsDisabled()"></p-listbox>
       </div>

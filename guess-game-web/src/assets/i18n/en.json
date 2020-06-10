@@ -60,7 +60,9 @@
       }
     },
     "events" : {
-      "title": "Events"
+      "title": "Events",
+      "conferenceLabel": "Conference:",
+      "conferencePlaceholder": "All"
     }
   },
   "notFound": {

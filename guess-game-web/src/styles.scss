@@ -122,12 +122,8 @@
   width: 100%;
 }
 
-input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
-  border: 2px solid #ff0000;
-}
-
-input.ng-dirty.ng-valid, textarea.ng-dirty.ng-valid {
-  border: 2px solid #6bc502;
+.statistics-dropdown.ui-dropdown {
+  min-width: 15em;
 }
 
 .ui-table .ui-table-thead > tr > th {
@@ -139,4 +135,12 @@ input.ng-dirty.ng-valid, textarea.ng-dirty.ng-valid {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
+  border: 2px solid #ff0000;
+}
+
+input.ng-dirty.ng-valid, textarea.ng-dirty.ng-valid {
+  border: 2px solid #6bc502;
 }

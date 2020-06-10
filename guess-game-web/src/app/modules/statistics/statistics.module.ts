@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
+import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
@@ -22,6 +23,7 @@ import { StatisticsSwitcherComponent } from './statistics-switcher.component';
     CommonModule,
     FormsModule,
     CheckboxModule,
+    DropdownModule,
     RouterModule,
     TranslateModule,
     TableModule,
