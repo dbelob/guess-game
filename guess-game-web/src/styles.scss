@@ -5,7 +5,13 @@
 @import '~primeng/resources/primeng.min.css';
 @import '~font-awesome/css/font-awesome.min.css';
 
-.container-home, .container-dialog {
+.container-home {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 400px;
+}
+.container-dialog {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -13,7 +19,7 @@
   margin-left: auto;
 }
 .img-home-logo {
-  width: 400px;
+  width: 100%;
   height: auto;
 }
 .img-guess-logo {
@@ -34,9 +40,6 @@
 }
 
 @media (min-width: 576px) {
-  .container-home {
-    max-width: 400px;
-  }
   .container-dialog {
     max-width: 540px;
   }
@@ -59,9 +62,6 @@
 }
 
 @media (min-width: 768px) {
-  .container-home {
-    max-width: 400px;
-  }
   .container-dialog {
     max-width: 720px;
   }
@@ -84,9 +84,6 @@
 }
 
 @media (min-width: 992px) {
-  .container-home {
-    max-width: 400px;
-  }
   .container-dialog {
     max-width: 720px;
   }
@@ -109,9 +106,6 @@
 }
 
 @media (min-width: 1200px) {
-  .container-home {
-    max-width: 400px;
-  }
   .container-dialog {
     max-width: 720px;
   }
