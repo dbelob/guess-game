@@ -34,6 +34,14 @@ export class ResultComponent implements OnInit {
       });
   }
 
+  menu() {
+    this.stateService.setState(State.StartState)
+      .subscribe(data => {
+          this.router.navigateByUrl('/home');
+        }
+      );
+  }
+
   restart() {
     this.stateService.setState(State.StartState)
       .subscribe(data => {
