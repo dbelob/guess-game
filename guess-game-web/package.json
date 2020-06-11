@@ -23,7 +23,6 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "bootstrap": "^4.4.1",
-    "bootstrap-table": "^1.16.0",
     "core-js": "^2.6.11",
     "font-awesome": "^4.7.0",
     "primeicons": "^4.0.0-rc.2",
