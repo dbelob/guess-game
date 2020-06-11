@@ -62,7 +62,14 @@
     "events" : {
       "title": "События",
       "conferenceLabel": "Конференция:",
-      "conferencePlaceholder": "Все"
+      "conferencePlaceholder": "Все",
+      "table": {
+        "nameColumn": "Наименование",
+        "startDateColumn": "Начальная дата",
+        "durationColumn": "Длительность, дней",
+        "talksColumn": "Докладов",
+        "speakersColumn": "Спикеров"
+      }
     }
   },
   "notFound": {

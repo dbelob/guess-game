@@ -62,7 +62,14 @@
     "events" : {
       "title": "Events",
       "conferenceLabel": "Conference:",
-      "conferencePlaceholder": "All"
+      "conferencePlaceholder": "All",
+      "table": {
+        "nameColumn": "Name",
+        "startDateColumn": "Start date",
+        "durationColumn": "Duration, days",
+        "talksColumn": "Talks",
+        "speakersColumn": "Speakers"
+      }
     }
   },
   "notFound": {

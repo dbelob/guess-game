@@ -40,11 +40,11 @@ export class EventStatisticsComponent implements OnInit {
   }
 
   onConferenceChange(conference: EventType) {
-    this.loadConferences();
+    this.loadEventStatistics();
   }
 
   loadEventStatistics() {
-    this.statisticsService.getEventStatistics(this.selectedConference ? this.selectedConference.id : null)
+    this.statisticsService.getEventStatistics(this.selectedConference)
       .subscribe(data => {
           this.eventStatistics = data;
         }

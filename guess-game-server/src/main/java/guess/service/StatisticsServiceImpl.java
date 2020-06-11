@@ -99,7 +99,9 @@ public class StatisticsServiceImpl implements StatisticsService {
     @Override
     public EventStatistics getEventStatistics(Long eventTypeId) {
         List<Event> events = eventDao.getEvents().stream()
-                .filter(e -> ((eventTypeId == null) || (e.getEventType().getId() == eventTypeId)))
+                .filter(e ->
+                        (e.getEventType().isEventTypeConference() &&
+                                ((eventTypeId == null) || (e.getEventType().getId() == eventTypeId))))
                 .collect(Collectors.toList());
         List<EventMetrics> eventMetricsList = new ArrayList<>();
         LocalDate totalsStartDate = LocalDate.now();

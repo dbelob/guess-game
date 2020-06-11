@@ -30,10 +30,10 @@ export class StatisticsService {
       );
   }
 
-  getEventStatistics(eventTypeId: number): Observable<EventStatistics> {
-    const params = new HttpParams();
-    if (eventTypeId) {
-      params.set('eventTypeId', eventTypeId.toString());
+  getEventStatistics(eventType: EventType): Observable<EventStatistics> {
+    let params = new HttpParams();
+    if (eventType) {
+      params = params.set('eventTypeId', eventType.id.toString());
     }
 
     return this.http.get<EventStatistics>(`${this.baseUrl}/event-statistics`, {params: params})

@@ -26,5 +26,65 @@
         </p-dropdown>
       </div>
     </div>
+
+    <p-table [value]="eventStatistics.eventMetricsList" [resizableColumns]="true" [autoLayout]="true">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th class="text-center" pResizableColumn>#</th>
+          <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+            {{'statistics.events.table.nameColumn' | translate}}
+            <p-sortIcon [field]="'name'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'startDate'" pResizableColumn>
+            {{'statistics.events.table.startDateColumn' | translate}}
+            <p-sortIcon [field]="'startDate'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'duration'" pResizableColumn>
+            {{'statistics.events.table.durationColumn' | translate}}
+            <p-sortIcon [field]="'duration'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'talksQuantity'" pResizableColumn>
+            {{'statistics.events.table.talksColumn' | translate}}
+            <p-sortIcon [field]="'talksQuantity'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'speakersQuantity'" pResizableColumn>
+            {{'statistics.events.table.speakersColumn' | translate}}
+            <p-sortIcon [field]="'speakersQuantity'"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-eventMetrics let-i = "rowIndex">
+        <tr>
+          <td class="text-center">{{i + 1}}</td>
+          <td>
+            <span pTooltip="{{eventMetrics.name}}" tooltipPosition="bottom">
+              <img src="{{eventsImageDirectory}}/{{eventMetrics.logoFileName}}" height="24" alt="logo"/>
+              <span class="ml-2">{{eventMetrics.name}}</span>
+            </span>
+          </td>
+          <td class="text-center">
+            <span pTooltip="{{eventMetrics.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
+              {{eventMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}
+            </span>
+          </td>
+          <td class="text-center">{{eventMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <tr>
+          <td colspan="2">{{'common.totalsText' | translate}}</td>
+          <td class="text-center">
+            <span pTooltip="{{eventStatistics.totals?.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
+              {{eventStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}
+            </span>
+          </td>
+          <td class="text-center">{{eventStatistics.totals?.duration | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventStatistics.totals?.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventStatistics.totals?.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
   </form>
 </div>
