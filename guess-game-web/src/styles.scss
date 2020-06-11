@@ -126,6 +126,16 @@
   min-width: 15em;
 }
 
+.ui-paginator {
+  .ui-dropdown {
+    float: left;
+  }
+
+  .ui-paginator-current {
+    float: right;
+  }
+}
+
 .ui-table .ui-table-thead > tr > th {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -135,12 +145,4 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
-  border: 2px solid #ff0000;
-}
-
-input.ng-dirty.ng-valid, textarea.ng-dirty.ng-valid {
-  border: 2px solid #6bc502;
 }

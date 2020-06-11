@@ -7,6 +7,11 @@
     "eventTypeKind": {
       "conference": "Conference",
       "meetup": "Meetup"
+    },
+    "table": {
+      "paginator": {
+        "currentPageReportTemplate": "Showing {first} to {last} of {totalRecords} entries"
+      }
     }
   },
   "start": {

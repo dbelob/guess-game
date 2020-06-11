@@ -7,6 +7,11 @@
     "eventTypeKind": {
       "conference": "Конференция",
       "meetup": "Митап"
+    },
+    "table": {
+      "paginator": {
+        "currentPageReportTemplate": "Показаны записи с {first} по {last} из {totalRecords}"
+      }
     }
   },
   "start": {
