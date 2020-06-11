@@ -16,12 +16,12 @@
     <div class="form-group row justify-content-center">
       <div class="col-auto">
         <p-checkbox name="group1" value="conferences" label="{{'statistics.eventTypes.conferencesLabel' | translate}}"
-                    [(ngModel)]="conferences" binary="true"
+                    [(ngModel)]="isConferences" binary="true"
                     (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
       </div>
       <div class="col-auto">
         <p-checkbox name="group1" value="meetups" label="{{'statistics.eventTypes.meetupsLabel' | translate}}"
-                    [(ngModel)]="meetups" binary="true"
+                    [(ngModel)]="isMeetups" binary="true"
                     (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
       </div>
     </div>

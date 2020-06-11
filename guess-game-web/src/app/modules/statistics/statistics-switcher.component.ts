@@ -14,10 +14,14 @@ export class StatisticsSwitcherComponent implements OnInit {
   }
 
   isEventTypes(): boolean {
-    return 'event-types' === this.type;
+    return ('event-types' === this.type);
   }
 
   isEvents(): boolean {
-    return 'events' === this.type;
+    return ('events' === this.type);
+  }
+
+  isSpeakers(): boolean {
+    return ('speakers' === this.type);
   }
 }

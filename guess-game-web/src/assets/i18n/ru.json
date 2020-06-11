@@ -78,6 +78,13 @@
         "talksColumn": "Докладов",
         "speakersColumn": "Спикеров"
       }
+    },
+    "speakers": {
+      "title": "Спикеры",
+      "conferencesLabel": "Конференции",
+      "meetupsLabel": "Митапы",
+      "eventTypeLabel": "Тип события:",
+      "eventTypePlaceholder": "Все"
     }
   },
   "notFound": {

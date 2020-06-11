@@ -7,4 +7,8 @@
           [class.text-dark]="isEvents()" [class.font-weight-bold]="isEvents()" [disabled]="isEvents()">
     {{'statistics.events.title' | translate}}
   </button>
+  <button class="btn btn-link" routerLink="/information/statistics/speakers"
+          [class.text-dark]="isSpeakers()" [class.font-weight-bold]="isSpeakers()" [disabled]="isSpeakers()">
+    {{'statistics.speakers.title' | translate}}
+  </button>
 </div>

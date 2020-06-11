@@ -12,8 +12,8 @@ export class EventTypeStatisticsComponent implements OnInit {
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
 
-  public conferences = true;
-  public meetups = true;
+  public isConferences = true;
+  public isMeetups = true;
   public eventTypeStatistics = new EventTypeStatistics();
 
   constructor(private statisticsService: StatisticsService, public translateService: TranslateService, private router: Router) {
@@ -24,7 +24,7 @@ export class EventTypeStatisticsComponent implements OnInit {
   }
 
   loadEventTypeStatistics() {
-    this.statisticsService.getEventTypeStatistics(this.conferences, this.meetups)
+    this.statisticsService.getEventTypeStatistics(this.isConferences, this.isMeetups)
       .subscribe(data => {
           this.eventTypeStatistics = data;
         }

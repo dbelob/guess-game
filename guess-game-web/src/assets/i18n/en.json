@@ -15,7 +15,7 @@
   },
   "home": {
     "informationButtonText": "Conferences and meetups information",
-    "gameButtonText": "«Guess the Speaker» Game"
+    "gameButtonText": "«Guess the Speaker» game"
   },
   "start": {
     "title": "Guess the Speaker",
@@ -78,6 +78,13 @@
         "talksColumn": "Talks",
         "speakersColumn": "Speakers"
       }
+    },
+    "speakers": {
+      "title": "Speakers",
+      "conferencesLabel": "Conferences",
+      "meetupsLabel": "Meetups",
+      "eventTypeLabel": "Event type:",
+      "eventTypePlaceholder": "All"
     }
   },
   "notFound": {
