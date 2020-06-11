@@ -9,12 +9,14 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
+import { HomeModule } from './modules/home/home.module';
 import { StartModule } from './modules/start/start.module';
 import { GuessModule } from './modules/guess/guess.module';
 import { MessageModule } from './modules/message/message.module';
 import { ResultModule } from './modules/result/result.module';
 import { StatisticsModule } from './modules/statistics/statistics.module';
 import { UnknownModule } from './modules/unknown/unknown.module';
+import { HomeComponent } from './modules/home/home.component';
 import { StartComponent } from './modules/start/start.component';
 import { ResultComponent } from './modules/result/result.component';
 import { GuessNameByPhotoComponent } from './modules/guess/guess-name-by-photo.component';
@@ -34,6 +36,7 @@ import { StatisticsService } from './shared/services/statistics.service';
 import { StateGuard } from './shared/guards/state.guard';
 
 const routes: Routes = [
+  {path: 'home', component: HomeComponent},
   {path: 'start', component: StartComponent, canActivate: [StateGuard]},
   {path: 'guess/name-by-photo', component: GuessNameByPhotoComponent, canActivate: [StateGuard]},
   {path: 'guess/photo-by-name', component: GuessPhotoByNameComponent, canActivate: [StateGuard]},
@@ -46,7 +49,7 @@ const routes: Routes = [
   {path: 'information/statistics/event-types', component: EventTypeStatisticsComponent},
   {path: 'information/statistics/events', component: EventStatisticsComponent},
   {path: 'information', redirectTo: 'information/statistics/event-types'},
-  {path: '', pathMatch: 'full', redirectTo: 'start'},
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -73,6 +76,7 @@ registerLocaleData(localeRu, 'ru');
         deps: [HttpClient]
       }
     }),
+    HomeModule,
     GuessModule,
     MessageModule,
     ResultModule,

@@ -5,7 +5,7 @@
 
   <div class="row justify-content-end">
     <div class="col-auto">
-      <button class="btn btn-link text-muted" (click)="game()"><small>{{'common.gameLinkText' | translate}}</small></button>
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
     </div>
     <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
   </div>

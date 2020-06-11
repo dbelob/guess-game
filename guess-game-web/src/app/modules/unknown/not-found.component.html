@@ -1,7 +1,9 @@
 <div class="container-dialog p-2">
   <h3 class="bg-info p-1 text-white text-center rounded">{{'notFound.title' | translate}}</h3>
 
-  <app-language-switcher (onReload)="reload()"></app-language-switcher>
+  <app-message></app-message>
+
+  <app-language-switcher></app-language-switcher>
 
   <div class="text-center h5 mb-4">
     {{'notFound.text' | translate}} <a routerLink="/">{{'notFound.existingPageLinkText' | translate}}</a>

@@ -1,7 +1,6 @@
 {
   "common": {
-    "infoLinkText": "Info",
-    "gameLinkText": "Game",
+    "menuLinkText": "Menu",
     "cancelLinkText": "Cancel",
     "totalsText": "Totals",
     "eventTypeKind": {
@@ -13,6 +12,10 @@
         "currentPageReportTemplate": "Showing {first} to {last} of {totalRecords} entries"
       }
     }
+  },
+  "home": {
+    "informationButtonText": "Conferences and meetups information",
+    "gameButtonText": "«Guess the Speaker» Game"
   },
   "start": {
     "title": "Guess the Speaker",

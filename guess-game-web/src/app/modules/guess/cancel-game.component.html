@@ -3,13 +3,13 @@
 
   <app-message></app-message>
 
-  <app-language-switcher (onReload)="reload()"></app-language-switcher>
+  <app-language-switcher></app-language-switcher>
 
   <div class="alert text-center h5 mb-4">
     {{'cancel.text' | translate}}
   </div>
   <div class="text-center">
     <button class="btn btn-danger m-1" (click)="cancel()">{{'cancel.yesButtonText' | translate}}</button>
-    <button class="btn btn-secondary m-1" routerLink="/">{{'cancel.noButtonText' | translate}}</button>
+    <button class="btn btn-secondary m-1" routerLink="/start">{{'cancel.noButtonText' | translate}}</button>
   </div>
 </div>

@@ -86,8 +86,4 @@ export class EventStatisticsComponent implements OnInit {
   onLanguageChange() {
     this.loadEventStatistics(this.selectedConference);
   }
-
-  game() {
-    this.router.navigateByUrl('/start');
-  }
 }

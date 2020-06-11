@@ -38,8 +38,4 @@ export class EventTypeStatisticsComponent implements OnInit {
   onEventTypeKindChange(checked: boolean) {
     this.loadEventTypeStatistics();
   }
-
-  game() {
-    this.router.navigateByUrl('/start');
-  }
 }

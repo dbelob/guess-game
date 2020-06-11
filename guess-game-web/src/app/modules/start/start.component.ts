@@ -251,19 +251,11 @@ export class StartComponent implements OnInit, AfterViewChecked {
     return (this.isEventStartDateVisible(event) && this.isEventEndDateVisible(event));
   }
 
-  onLanguageChange() {
-    this.loadEventTypes();
-  }
-
   isEventTypeInactiveNotSelected(eventType: EventType) {
     if (eventType && eventType.inactive && this.selectedEventTypes) {
       return (this.selectedEventTypes.indexOf(eventType) === -1);
     } else {
       return false;
     }
-  }
-
-  info() {
-    this.router.navigateByUrl('/information');
   }
 }

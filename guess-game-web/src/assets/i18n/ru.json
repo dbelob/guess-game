@@ -1,7 +1,6 @@
 {
   "common": {
-    "infoLinkText": "Инфо",
-    "gameLinkText": "Игра",
+    "menuLinkText": "Меню",
     "cancelLinkText": "Прервать",
     "totalsText": "Всего",
     "eventTypeKind": {
@@ -13,6 +12,10 @@
         "currentPageReportTemplate": "Показаны записи с {first} по {last} из {totalRecords}"
       }
     }
+  },
+  "home": {
+    "informationButtonText": "Информация о конференциях и митапах",
+    "gameButtonText": "Игра «Угадай спикера»"
   },
   "start": {
     "title": "Угадай спикера",
