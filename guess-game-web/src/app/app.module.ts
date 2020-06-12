@@ -29,7 +29,7 @@ import { CancelGameComponent } from './modules/guess/cancel-game.component';
 import { NotFoundComponent } from './modules/unknown/not-found.component';
 import { EventTypeStatisticsComponent } from './modules/statistics/event-type-statistics.component';
 import { EventStatisticsComponent } from './modules/statistics/event-statistics.component';
-import { SpeakerStatisticsComponent } from './speaker-statistics.component';
+import { SpeakerStatisticsComponent } from './modules/statistics/speaker-statistics.component';
 import { AnswerService } from './shared/services/answer.service';
 import { QuestionService } from './shared/services/question.service';
 import { StateService } from './shared/services/state.service';

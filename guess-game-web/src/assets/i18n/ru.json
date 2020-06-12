@@ -84,7 +84,13 @@
       "conferencesLabel": "Конференции",
       "meetupsLabel": "Митапы",
       "eventTypeLabel": "Тип события:",
-      "eventTypePlaceholder": "Все"
+      "eventTypePlaceholder": "Все",
+      "table": {
+        "nameColumn": "Наименование",
+        "talksColumn": "Докладов",
+        "eventsColumn": "Событий",
+        "eventTypesColumn": "Типов событий"
+      }
     }
   },
   "notFound": {

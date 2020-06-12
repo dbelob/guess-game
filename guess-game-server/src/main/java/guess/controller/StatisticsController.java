@@ -69,8 +69,11 @@ public class StatisticsController {
         SpeakerStatistics speakerStatistics = statisticsService.getSpeakerStatistics(conferences, meetups, eventTypeId);
         Language language = localeService.getLanguage(httpSession);
         SpeakerStatisticsDto speakerStatisticsDto = SpeakerStatisticsDto.convertToDto(speakerStatistics, language);
+        Comparator<SpeakerMetricsDto> comparatorByTalksQuantity = Comparator.comparing(SpeakerMetricsDto::getTalksQuantity).reversed();
+        Comparator<SpeakerMetricsDto> comparatorByEventsQuantity = Comparator.comparing(SpeakerMetricsDto::getEventsQuantity).reversed();
+        Comparator<SpeakerMetricsDto> comparatorByEventTypesQuantity = Comparator.comparing(SpeakerMetricsDto::getEventTypesQuantity).reversed();
 
-        speakerStatisticsDto.getSpeakerMetricsList().sort(Comparator.comparing(SpeakerMetricsDto::getTalksQuantity).reversed());
+        speakerStatisticsDto.getSpeakerMetricsList().sort(comparatorByTalksQuantity.thenComparing(comparatorByEventsQuantity).thenComparing(comparatorByEventTypesQuantity));
 
         return speakerStatisticsDto;
     }

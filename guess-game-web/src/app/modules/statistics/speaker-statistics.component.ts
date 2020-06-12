@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
-import { EventType } from './shared/models/event-type.model';
-import { SpeakerStatistics } from './shared/models/speaker-statistics.model';
-import { StatisticsService } from './shared/services/statistics.service';
-import { QuestionService } from './shared/services/question.service';
-import { findEventTypeByDefaultEvent } from './modules/general/utility-functions';
+import { TranslateService } from '@ngx-translate/core';
+import { EventType } from '../../shared/models/event-type.model';
+import { SpeakerStatistics } from '../../shared/models/speaker-statistics.model';
+import { StatisticsService } from '../../shared/services/statistics.service';
+import { QuestionService } from '../../shared/services/question.service';
+import { findEventTypeByDefaultEvent } from '../general/utility-functions';
 
 @Component({
   selector: 'app-speaker-statistics',
@@ -13,6 +14,7 @@ import { findEventTypeByDefaultEvent } from './modules/general/utility-functions
 export class SpeakerStatisticsComponent implements OnInit {
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
+  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
 
   public isConferences = true;
   public isMeetups = true;
@@ -23,7 +25,8 @@ export class SpeakerStatisticsComponent implements OnInit {
 
   public speakerStatistics = new SpeakerStatistics();
 
-  constructor(private statisticsService: StatisticsService, private questionService: QuestionService) {
+  constructor(private statisticsService: StatisticsService, private questionService: QuestionService,
+              public translateService: TranslateService) {
   }
 
   ngOnInit(): void {

@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
 import { Language } from '../../shared/models/language.model';
 import { LocaleService } from '../../shared/services/locale.service';
 
@@ -12,7 +11,7 @@ export class LanguageSwitcherComponent implements OnInit {
   public language = Language;
   @Output() onReload: EventEmitter<any> = new EventEmitter();
 
-  constructor(private localeService: LocaleService, private router: Router) {
+  constructor(private localeService: LocaleService) {
   }
 
   ngOnInit(): void {

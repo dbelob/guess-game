@@ -11,7 +11,7 @@ import { GeneralModule } from '../general/general.module';
 import { MessageModule } from '../message/message.module';
 import { EventTypeStatisticsComponent } from './event-type-statistics.component';
 import { EventStatisticsComponent } from './event-statistics.component';
-import { SpeakerStatisticsComponent } from '../../speaker-statistics.component';
+import { SpeakerStatisticsComponent } from './speaker-statistics.component';
 import { StatisticsSwitcherComponent } from './statistics-switcher.component';
 
 @NgModule({

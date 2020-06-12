@@ -84,7 +84,13 @@
       "conferencesLabel": "Conferences",
       "meetupsLabel": "Meetups",
       "eventTypeLabel": "Event type:",
-      "eventTypePlaceholder": "All"
+      "eventTypePlaceholder": "All",
+      "table": {
+        "nameColumn": "Name",
+        "talksColumn": "Talks",
+        "eventsColumn": "Events",
+        "eventTypesColumn": "Event types"
+      }
     }
   },
   "notFound": {

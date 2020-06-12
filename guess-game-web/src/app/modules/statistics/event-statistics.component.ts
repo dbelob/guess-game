@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SelectItem } from 'primeng/api';
 import { EventType } from '../../shared/models/event-type.model';
@@ -23,7 +22,7 @@ export class EventStatisticsComponent implements OnInit {
   public eventStatistics = new EventStatistics();
 
   constructor(private statisticsService: StatisticsService, private questionService: QuestionService,
-              public translateService: TranslateService, private router: Router) {
+              public translateService: TranslateService) {
   }
 
   ngOnInit(): void {

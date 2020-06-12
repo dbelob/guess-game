@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Router } from '@angular/router';
 import { EventTypeStatistics } from '../../shared/models/event-type-statistics.model';
 import { StatisticsService } from '../../shared/services/statistics.service';
 
@@ -16,7 +15,7 @@ export class EventTypeStatisticsComponent implements OnInit {
   public isMeetups = true;
   public eventTypeStatistics = new EventTypeStatistics();
 
-  constructor(private statisticsService: StatisticsService, public translateService: TranslateService, private router: Router) {
+  constructor(private statisticsService: StatisticsService, public translateService: TranslateService) {
   }
 
   ngOnInit(): void {

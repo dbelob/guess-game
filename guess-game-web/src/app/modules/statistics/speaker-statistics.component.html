@@ -1,0 +1,91 @@
+<div class="container p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'statistics.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-statistics-switcher [type]="'speakers'"></app-statistics-switcher>
+
+  <form role="form">
+    <div class="form-group row justify-content-center">
+      <div class="col-auto">
+        <p-checkbox name="group1" value="conferences" label="{{'statistics.speakers.conferencesLabel' | translate}}"
+                    [(ngModel)]="isConferences" binary="true"
+                    (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+      </div>
+      <div class="col-auto">
+        <p-checkbox name="group1" value="meetups" label="{{'statistics.speakers.meetupsLabel' | translate}}"
+                    [(ngModel)]="isMeetups" binary="true"
+                    (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center">
+      <label for="conference" class="col-auto text-right">{{'statistics.speakers.eventTypeLabel' | translate}}</label>
+      <div class="col-auto">
+        <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
+                    placeholder="{{'statistics.speakers.eventTypePlaceholder' | translate}}" [showClear]="true"
+                    (onChange)="onEventTypeChange($event.value)" name="conference" styleClass="statistics-dropdown">
+          <ng-template let-eventType pTemplate="item">
+            <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" height="24" alt="logo"/>
+            <span class="ml-2">{{eventType.value.name}}</span>
+          </ng-template>
+        </p-dropdown>
+      </div>
+    </div>
+
+    <p-table [value]="speakerStatistics.speakerMetricsList" [resizableColumns]="true" [autoLayout]="true"
+             [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+             [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+             currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th class="text-center" pResizableColumn>#</th>
+          <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+            {{'statistics.speakers.table.nameColumn' | translate}}
+            <p-sortIcon [field]="'name'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'talksQuantity'" pResizableColumn>
+            {{'statistics.speakers.table.talksColumn' | translate}}
+            <p-sortIcon [field]="'talksQuantity'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'eventsQuantity'" pResizableColumn>
+            {{'statistics.speakers.table.eventsColumn' | translate}}
+            <p-sortIcon [field]="'eventsQuantity'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'eventTypesQuantity'" pResizableColumn>
+            {{'statistics.speakers.table.eventTypesColumn' | translate}}
+            <p-sortIcon [field]="'eventTypesQuantity'"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-speakerMetrics let-i = "rowIndex">
+        <tr>
+          <td class="text-center">{{i + 1}}</td>
+          <td>
+            <span pTooltip="{{speakerMetrics.name}}" tooltipPosition="bottom">
+              <img src="{{speakersImageDirectory}}/{{speakerMetrics.fileName}}" height="24" alt="logo"/>
+              <span class="ml-2">{{speakerMetrics.name}}</span>
+            </span>
+          </td>
+          <td class="text-center">{{speakerMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{speakerMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{speakerMetrics.eventTypesQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <tr>
+          <td colspan="2">{{'common.totalsText' | translate}}</td>
+          <td class="text-center">{{speakerStatistics.totals?.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{speakerStatistics.totals?.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{speakerStatistics.totals?.eventTypesQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </form>
+</div>
