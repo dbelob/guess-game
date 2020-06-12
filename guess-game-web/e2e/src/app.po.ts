@@ -5,7 +5,7 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getTitleText() {
-    return element(by.css('app-root h3')).getText();
+  getImgAltValue() {
+    return element(by.css('app-root img')).getAttribute('alt');
   }
 }
