@@ -4,9 +4,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { SelectItem } from 'primeng/api';
 import { EventType } from '../../shared/models/event-type.model';
 import { EventStatistics } from '../../shared/models/event-statistics.model';
-import { Event } from "../../shared/models/event.model";
 import { StatisticsService } from '../../shared/services/statistics.service';
-import { QuestionService } from "../../shared/services/question.service";
+import { QuestionService } from '../../shared/services/question.service';
+import { findEventTypeByDefaultEvent } from '../general/utility-functions';
 
 @Component({
   selector: 'app-event-statistics',
@@ -42,10 +42,12 @@ export class EventStatisticsComponent implements OnInit {
         if (this.conferences.length > 0) {
           this.questionService.getDefaultEvent()
             .subscribe(defaultEventData => {
-              const selectedConference = this.findConferenceByDefaultEvent(defaultEventData);
+              const selectedConference = findEventTypeByDefaultEvent(defaultEventData, this.conferences);
 
               if (selectedConference) {
                 this.selectedConference = selectedConference;
+              } else {
+                this.selectedConference = null;
               }
 
               this.loadEventStatistics(this.selectedConference);
@@ -57,30 +59,16 @@ export class EventStatisticsComponent implements OnInit {
       });
   }
 
-  findConferenceByDefaultEvent(defaultEvent: Event): EventType {
-    if (defaultEvent) {
-      for (let i = 0; i < this.conferences.length; i++) {
-        const eventType: EventType = this.conferences[i];
-
-        if (defaultEvent.eventTypeId === eventType.id) {
-          return eventType;
-        }
-      }
-    }
-
-    return null;
-  }
-
-  onConferenceChange(conference: EventType) {
-    this.loadEventStatistics(conference);
-  }
-
   loadEventStatistics(conference: EventType) {
     this.statisticsService.getEventStatistics(conference)
       .subscribe(data => {
           this.eventStatistics = data;
         }
       );
+  }
+
+  onConferenceChange(conference: EventType) {
+    this.loadEventStatistics(conference);
   }
 
   onLanguageChange() {

@@ -5,19 +5,14 @@ import guess.dao.EventTypeDao;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
-import guess.domain.statistics.EventMetrics;
-import guess.domain.statistics.EventStatistics;
-import guess.domain.statistics.EventTypeMetrics;
-import guess.domain.statistics.EventTypeStatistics;
+import guess.domain.source.Talk;
+import guess.domain.statistics.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -28,6 +23,24 @@ public class StatisticsServiceImpl implements StatisticsService {
     private final EventTypeDao eventTypeDao;
     private final EventDao eventDao;
 
+    static class SpeakerMetricsInternal {
+        private final Set<Talk> talks = new HashSet<>();
+        private final Set<Event> events = new HashSet<>();
+        private final Set<EventType> eventTypes = new HashSet<>();
+
+        public Set<Talk> getTalks() {
+            return talks;
+        }
+
+        public Set<Event> getEvents() {
+            return events;
+        }
+
+        public Set<EventType> getEventTypes() {
+            return eventTypes;
+        }
+    }
+
     @Autowired
     public StatisticsServiceImpl(EventTypeDao eventTypeDao, EventDao eventDao) {
         this.eventTypeDao = eventTypeDao;
@@ -37,7 +50,7 @@ public class StatisticsServiceImpl implements StatisticsService {
     @Override
     public EventTypeStatistics getEventTypeStatistics(boolean isConferences, boolean isMeetups) {
         List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
-                .filter(et -> ((isConferences && et.isEventTypeConference() || (isMeetups && !et.isEventTypeConference()))))
+                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())))
                 .collect(Collectors.toList());
         List<EventTypeMetrics> eventTypeMetricsList = new ArrayList<>();
         LocalDate currentDate = LocalDate.now();
@@ -145,9 +158,71 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
     @Override
+    public SpeakerStatistics getSpeakerStatistics(boolean isConferences, boolean isMeetups, Long eventTypeId) {
+        List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
+                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
+                        ((eventTypeId == null) || (et.getId() == eventTypeId)))
+                .collect(Collectors.toList());
+        Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new HashMap<>();
+        long totalsTalksQuantity = 0;
+        long totalsEventsQuantity = 0;
+
+        for (EventType eventType : eventTypes) {
+            for (Event event : eventType.getEvents()) {
+                for (Talk talk : event.getTalks()) {
+                    for (Speaker speaker : talk.getSpeakers()) {
+                        SpeakerMetricsInternal speakerMetricsInternal = speakerSpeakerMetricsMap.get(speaker);
+
+                        if (speakerMetricsInternal == null) {
+                            speakerMetricsInternal = new SpeakerMetricsInternal();
+                            speakerSpeakerMetricsMap.put(speaker, speakerMetricsInternal);
+                        }
+
+                        speakerMetricsInternal.getTalks().add(talk);
+                        speakerMetricsInternal.getEvents().add(event);
+                        speakerMetricsInternal.getEventTypes().add(eventType);
+                    }
+                }
+
+                totalsTalksQuantity += event.getTalks().size();
+            }
+
+            totalsEventsQuantity += eventType.getEvents().size();
+        }
+
+        List<SpeakerMetrics> speakerMetricsList = new ArrayList<>();
+
+        for (Speaker speaker : speakerSpeakerMetricsMap.keySet()) {
+            SpeakerMetricsInternal speakerMetricsInternal = speakerSpeakerMetricsMap.get(speaker);
+
+            speakerMetricsList.add(new SpeakerMetrics(
+                    speaker,
+                    speakerMetricsInternal.getTalks().size(),
+                    speakerMetricsInternal.getEvents().size(),
+                    speakerMetricsInternal.getEventTypes().size()));
+        }
+
+        return new SpeakerStatistics(
+                speakerMetricsList,
+                new SpeakerMetrics(
+                        new Speaker(),
+                        totalsTalksQuantity,
+                        totalsEventsQuantity,
+                        eventTypes.size())
+        );
+    }
+
+    @Override
     public List<EventType> getConferences() {
         return eventTypeDao.getEventTypes().stream()
                 .filter(EventType::isEventTypeConference)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<EventType> getEventTypes(boolean isConferences, boolean isMeetups) {
+        return eventTypeDao.getEventTypes().stream()
+                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())))
                 .collect(Collectors.toList());
     }
 }

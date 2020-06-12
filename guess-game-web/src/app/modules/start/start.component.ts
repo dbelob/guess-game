@@ -9,6 +9,7 @@ import { EventType } from '../../shared/models/event-type.model';
 import { Event } from '../../shared/models/event.model';
 import { QuestionService } from '../../shared/services/question.service';
 import { StateService } from '../../shared/services/state.service';
+import { findEventByDefaultEvent, findEventTypeByDefaultEvent } from '../general/utility-functions';
 
 @Component({
   selector: 'app-start',
@@ -62,7 +63,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
             .subscribe(defaultEventData => {
               this.defaultEvent = defaultEventData;
 
-              const selectedEventType = this.findEventTypeByDefaultEvent(this.defaultEvent);
+              const selectedEventType = findEventTypeByDefaultEvent(this.defaultEvent, this.eventTypes);
 
               if (selectedEventType) {
                 this.selectedEventTypes = [selectedEventType];
@@ -78,20 +79,6 @@ export class StartComponent implements OnInit, AfterViewChecked {
           this.loadEvents(this.selectedEventTypes);
         }
       });
-  }
-
-  findEventTypeByDefaultEvent(defaultEvent: Event): EventType {
-    if (defaultEvent) {
-      for (let i = 0; i < this.eventTypes.length; i++) {
-        const eventType: EventType = this.eventTypes[i];
-
-        if (defaultEvent.eventTypeId === eventType.id) {
-          return eventType;
-        }
-      }
-    }
-
-    return null;
   }
 
   ngAfterViewChecked() {
@@ -119,7 +106,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
         this.events = this.getEventsWithDisplayName(data);
 
         if (this.events.length > 0) {
-          const selectedEvent = this.findEventByDefaultEvent(this.defaultEvent);
+          const selectedEvent = findEventByDefaultEvent(this.defaultEvent, this.events);
 
           if (selectedEvent) {
             this.selectedEvents = [selectedEvent];
@@ -170,20 +157,6 @@ export class StartComponent implements OnInit, AfterViewChecked {
     }
 
     return events;
-  }
-
-  findEventByDefaultEvent(defaultEvent: Event): Event {
-    if (defaultEvent) {
-      for (let i = 0; i < this.events.length; i++) {
-        const event: Event = this.events[i];
-
-        if (defaultEvent.id === event.id) {
-          return event;
-        }
-      }
-    }
-
-    return null;
   }
 
   onEventChange(events: Event[]) {
