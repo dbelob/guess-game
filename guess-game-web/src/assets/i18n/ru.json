@@ -9,7 +9,7 @@
     },
     "table": {
       "paginator": {
-        "currentPageReportTemplate": "Показаны записи с {first} по {last} из {totalRecords}"
+        "currentPageReportTemplate": "{first} по {last} из {totalRecords}"
       }
     }
   },

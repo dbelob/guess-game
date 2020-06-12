@@ -9,7 +9,7 @@
     },
     "table": {
       "paginator": {
-        "currentPageReportTemplate": "Showing {first} to {last} of {totalRecords} entries"
+        "currentPageReportTemplate": "{first} to {last} of {totalRecords}"
       }
     }
   },
