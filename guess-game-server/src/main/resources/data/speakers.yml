@@ -11592,7 +11592,7 @@ speakers:
       - {language: en, text: "Stepan Goncharov"}
       - {language: ru, text: "Степан Гончаров"}
     company:
-      - {language: en, text: Lyft}
+      - {language: en, text: "Level 5"}
     bio:
       - {language: en, text: "Engineering apps and games for Android since 2008. Has experience as QA, product manager, marketer,\
             \ blogger, consultant and much more. He was involved in development of apps that nobody uses and apps with millions\
@@ -12767,12 +12767,15 @@ speakers:
     company:
       - {language: en, text: Surf}
     bio:
-      - {language: en, text: "Fan of mobile technologies, neat architecture and early access programs, Eugene has done a couple\
-            \ of projects with audience of hundreds of thousands of people. Currently he's the team leader of Labirint Android,\
-            \ the first team in Russia to implement Instant App; this team can boast having a 4,8 score app in Google Play."}
-      - {language: ru, text: "Фанат мобильных технологий, хорошей архитектуры и программ раннего доступа. За спиной нескол\
-            ько проектов с аудиторией в сотни тысяч человек. На данный момент лидер команды Лабиринт Android, той самой, к\
-            оторая первой в России реализовала Instant App и может похвастаться приложением с оценкой 4,8 в Google Play."}
+      - {language: en, text: "Originally an Android developer, but a year ago switched his career to Flutter and never regretted\
+            \ it. He was inspired to stay on the dark side of cross-platform technologies so much that he founded Flutter\
+            \ Dev Podcast (the only Russian podcast about Flutter). All the day painting widgets, moving slivers, filling\
+            \ scaffolds, and doing other things. Also, Evgeny is a member of the program committee of the largest mobile conference\
+            \ in Russia — Mobius and GDG Voronezh lead, active speaker."}
+      - {language: ru, text: "Провёл 4,5 года в Android-разработке, но год назад радикально поменял свою карьеру и впервые\
+            \ соприкоснулся с кроссплатформой. Вдохновился пребыванием на тёмной стороне настолько, что основал Flutter Dev\
+            \ Podcast и с тех пор является его бессменным ведущим. Крашит виджеты, двигает сливеры, заполняет скаффолды и\
+            \ делает другие вещи. PC Mobius member, GDG Voronezh lead и активный спикер."}
     twitter: saturovv
   - id: 859
     fileName: 0859.jpg
@@ -16754,18 +16757,16 @@ speakers:
     bio:
       - language: en
         text: "Alexey has been engaged in commercial Android development since 2013. Currently, he works as a Senior Android\
-            \ developer for \"Youla\". Major projects in his career have been \"OK.RU\", before this he took part in the development\
-            \ of banking applications until it has become mainstream.\r\nAlexey graduated from CMC MSU, where he estimated\
-            \ GPU-running DVM-programs execution time as a system programmer. Note: DVM is a technology similar to OpenMP\
-            \ and MPI.\r\nBeing a huge fan of Kotlin, DI and delegating, however, he's interested in Flutter/Dart success\
-            \ stories."
+            \ developer for Youla. Major projects in his career have been OK.RU, before this he took part in the development\
+            \ of banking applications until it has become mainstream.\nAlexey graduated from CMC MSU, where he estimated GPU-running\
+            \ DVM-programs execution time as a system programmer. Note: DVM is a technology similar to OpenMP and MPI.\nBeing\
+            \ a huge fan of Kotlin, DI and delegating, however, he's interested in Flutter/Dart success stories."
       - language: ru
-        text: "Алексей с 2013 года занимается коммерческой разработкой под OC «Android». На данный момент он Senior Android\
-            \ devepoler в команде «Юлы». Работал в таких крупных проектах, как «Одноклассники», до этого принимал участие\
-            \ в разработке банковских клиентов, пока это не стало мэйнстримом.\r\nОкончил ВМК МГУ, где на кафедре системно\
-            го программирования оценивал время исполнения параллельных DVM-программ на GPU (DVM — технология, аналогичная\
-            \ OpenMP и MPI).\r\nФанат Kotlin, DI и делегирования, однако, факультативно с удовольствием слушает истории ус\
-            пеха Flutter/Dart."
+        text: "Алексей с 2013 года занимается коммерческой разработкой под Android. На данный момент он Senior Android devepoler\
+            \ в команде Юлы. Работал в таких крупных проектах, как Одноклассники, до этого принимал участие в разработке б\
+            анковских клиентов, пока это не стало мэйнстримом.\nОкончил ВМК МГУ, где на кафедре системного программировани\
+            я оценивал время исполнения параллельных DVM-программ на GPU (DVM — технология, аналогичная OpenMP и MPI).\nФа\
+            нат Kotlin, DI и делегирования, однако, факультативно с удовольствием слушает истории успеха Flutter/Dart."
   - id: 1158
     fileName: 1158.jpg
     name:
@@ -16842,7 +16843,7 @@ speakers:
     company:
       - {language: en, text: Lyft}
     bio:
-      - {language: en, text: "Thomas is an Android Engineer. For the past 5 years he has been in Lyft’s Growth team. He previously\
+      - {language: en, text: "Thomas is an Android Engineer. For the past 5 years he has been in Lyft's Growth team. He previously\
             \ worked at Pocket and Eventbrite. He is currently based in Seattle, WA."}
     twitter: lethargicpanda
   - id: 1163
@@ -16873,7 +16874,7 @@ speakers:
       - {language: en, text: "Andrey has been developing Android applications since 2012. He's the author of the popular Transitions-Everywhere\
             \ library. having settled in Google he transferred all results from this library to the official AndroidX Transitions\
             \ library. Currently working on Jetpack Compose."}
-      - {language: ru, text: "Разрабатывает Android приложения с 2012 года. Автор популярной библиотеки Transitions-Everywhere.\
+      - {language: ru, text: "Разрабатывает Android-приложения с 2012 года. Автор популярной библиотеки Transitions-Everywhere.\
             \ Устроившись в Google, перенес все наработки из нее в официальную AndroidX Transitions-библиотеку. В данный м\
             омент работает над Jetpack Compose."}
     twitter: and_kulikov
@@ -18250,3 +18251,42 @@ speakers:
     bio:
       - {language: en, text: "Начальник отдела автоматизации тестирования в ВТБ, лид команды разработки единого фреймворка\
             . 10 лет в QA."}
+  - id: 1269
+    fileName: 1269.jpg
+    name:
+      - {language: en, text: "Ben Weiss"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - language: en
+        text: "Ben works as an Engineer in Android Developer Relations at Google.\nHis focus is on making applications compatible\
+            \ for the new app model.\nMuch of his time is spent navigating app modularization and dynamic features and structuring\
+            \ background work.\nNext to that he coordinates the Android GDE program."
+    twitter: keyboardsurfer
+  - id: 1270
+    fileName: 1270.jpg
+    name:
+      - {language: en, text: "Chet Haase"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "After years working on and leading the Android Toolkit team at Google, Chet has moved into the\
+            \ Android Developer Relations Team, where he is a Developer Advocate. He works on animations, UI, performance,\
+            \ ... and anything else that puts pixels on the screen. He's also been known to write and perform comedy."}
+    twitter: chethaase
+  - id: 1271
+    fileName: 1271.jpg
+    name:
+      - {language: en, text: "Annyce Davis"}
+    company:
+      - {language: en, text: Meetup}
+    bio:
+      - language: en
+        text: "Annyce Davis is specifically been focused on Android applications for the past several years. She's also an\
+            \ Android Google Developer Expert. \nAnnyce is currently a Director of Engineering at Meetup. At Meetup, she helps\
+            \ create the future of real community where people show up, do things, and actually talk to each other.\nPreviously,\
+            \ she was the Software Group Lead at a social impact startup, Zola Electric. She got to help impact the lives\
+            \ of people across Africa by developing a high-quality Android application that was used by the entire sales and\
+            \ service force.\nAnnyce also spent 7 years working at the Washington Post. One of her most exciting projects\
+            \ at the Post was working on the PostTV Android application."
+    twitter: brwngrldev
