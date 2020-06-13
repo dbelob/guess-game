@@ -16,13 +16,12 @@ export class SpeakerStatisticsComponent implements OnInit {
   public eventsImageDirectory = `${this.imageDirectory}/events`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
 
-  public isConferences = true;
-  public isMeetups = true;
-
   public eventTypes: EventType[] = [];
   public selectedEventType: EventType;
   public eventTypeSelectItems: SelectItem[] = [];
 
+  public isConferences = true;
+  public isMeetups = true;
   public speakerStatistics = new SpeakerStatistics();
 
   public multiSortMeta: any[] = [];

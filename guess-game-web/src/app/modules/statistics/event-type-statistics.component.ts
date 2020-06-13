@@ -15,7 +15,10 @@ export class EventTypeStatisticsComponent implements OnInit {
   public isMeetups = true;
   public eventTypeStatistics = new EventTypeStatistics();
 
+  public multiSortMeta: any[] = [];
+
   constructor(private statisticsService: StatisticsService, public translateService: TranslateService) {
+    this.multiSortMeta.push({field: 'sortName', order: 1});
   }
 
   ngOnInit(): void {

@@ -21,8 +21,11 @@ export class EventStatisticsComponent implements OnInit {
 
   public eventStatistics = new EventStatistics();
 
+  public multiSortMeta: any[] = [];
+
   constructor(private statisticsService: StatisticsService, private questionService: QuestionService,
               public translateService: TranslateService) {
+    this.multiSortMeta.push({field: 'name', order: 1});
   }
 
   ngOnInit(): void {
