@@ -7156,7 +7156,7 @@ speakers:
             ическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и научным сотрудником в\
             \ Институте математики СО РАН."}
     twitter: andrey_akinshin
-    mvp: true
+    mvpReconnect: true
   - id: 472
     fileName: 0472.jpg
     name:
@@ -15610,21 +15610,6 @@ speakers:
     bio:
       - {language: en, text: "Freelance designer, photographer, motorcycle traveler. Designer of Halide."}
     twitter: sdw
-  - id: 1072
-    fileName: 1072.jpg
-    name:
-      - {language: en, text: "Alexander Thissen"}
-    company:
-      - {language: en, text: Xpirit}
-    bio:
-      - {language: en, text: "Alex has been involved in application development since the late nineties and worked as a lead\
-            \ developer and architect at large enterprises and small companies. He spends his time teaching other developers\
-            \ the details of the Microsoft development platform and frameworks, and coaches architects to design and build\
-            \ modern distributed applications at cloud scale. He has received the Microsoft Most Valuable Professional award\
-            \ for Visual Studio and Development Technologies 13 times. In his spare time Alex likes to participate in all\
-            \ kinds of sport, and loves playing and programming new and retro video games."}
-    twitter: alexthissen
-    mvp: true
   - id: 1073
     fileName: 1073.jpg
     name:
