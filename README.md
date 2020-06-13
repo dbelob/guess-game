@@ -5,7 +5,13 @@
 
 ![Screenshot](/images/screenshot.png)
 
-Guess name by photo, photo by name, talk by speaker or speaker by talk.
+Available modes:
+* guess name by photo;
+* guess photo by name;
+* guess talk by speaker;
+* guess speaker by talk;
+* guess *Twitter*, *GitHub* by speaker;
+* guess speaker by *Twitter*, *GitHub*.
 
 ## Running
 
