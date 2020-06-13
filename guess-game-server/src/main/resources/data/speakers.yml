@@ -6301,7 +6301,8 @@ speakers:
             \ blogger, speaker, and fan of Twitter. He also shares his passion as a trainer at Bottega IT Solutions in the\
             \ area of .NET, especially about application performance and diagnostics. Founder of the Warsaw Web Performance\
             \ group. Microsoft MVP in the Visual Studio and Development Tools category. Co-founder of <a href=\"https://dotnetos.org\"\
-            \ target=\"_blank\">https://dotnetos.org</a> initiative."}
+            \ target=\"_blank\">https://dotnetos.org</a> initiative and [asyncexpert.com](https://asyncexpert.com/) course\
+            \ co-author."}
     twitter: konradkokosa
     mvp: true
   - id: 417
@@ -6820,19 +6821,17 @@ speakers:
       - {language: en, text: "Elizaveta Golenok"}
       - {language: ru, text: "Елизавета Голенок"}
     company:
-      - {language: en, text: "MTS IT"}
-      - {language: ru, text: "МТС ИТ"}
+      - {language: en, text: MTS}
+      - {language: ru, text: МТС}
     bio:
-      - language: en
-        text: "Elizaveta is a leading developer at MTS Information Technologies.\nHas got experience in developing and designing\
-            \ systems both in C/C++ and C# ASP.NET, Mono (from navigation systems to enterprise solutions).\nIs into route\
-            \ planning and multi-agent systems, compilation, LLVM, Clang, low-level debugging of applications, P/Invoke and\
-            \ Mono."
-      - language: ru
-        text: "Елизавета – ведущий разработчик в компании МТС Информационные Технологии. \nИмеет опыт разработки и проекти\
-            рования систем как на С/С++, так и на C# ASP.NET, Mono (от навигационных систем до enterprise-решений).\nОблас\
-            ть интересов — планирование маршрутов и многоагентные системы, компиляция, LLVM, Clang, низкоуровневая отладка\
-            \ приложений, P/Invoke и Mono."
+      - {language: en, text: "Elizaveta is a leading developer at MTS Information Technologies. She has got experience in\
+            \ developing and designing systems both in C/C++ and C# ASP.NET, Mono (from navigation systems to enterprise solutions).\
+            \ She's into route planning and multi-agent systems, compilation, LLVM, Clang, low-level debugging of applications."}
+      - {language: ru, text: "Елизавета — ведущий разработчик в компании «МТС Информационные Технологии». Имеет опыт разра\
+            ботки и проектирования систем как на С/С++, так и на C# ASP.NET, Mono (от навигационных систем до enterprise-р\
+            ешений). Область интересов — планирование маршрутов и многоагентные системы, компиляция, LLVM, Clang, низкоуро\
+            вневая отладка приложений."}
+    twitter: marmothetka
   - id: 452
     fileName: 0452.jpg
     name:
@@ -7618,8 +7617,7 @@ speakers:
       - {language: en, text: "Sergey Vasiliev"}
       - {language: ru, text: "Сергей Васильев"}
     company:
-      - {language: en, text: SiProVer}
-      - {language: ru, text: СиПроВер}
+      - {language: en, text: PVS-Studio}
     bio:
       - {language: en, text: "Leading developer at PVS-Studio. He was engaged in the development of C++ and C# parser cores.\
             \ Sergey is focused on the direction of the Tools & DevOps. Author of articles on the audit of open-source projects."}
@@ -18033,3 +18031,104 @@ speakers:
             \ IST, Dan was affiliated with ETH Zurich and Microsoft Research, Cambridge, UK. Prior to that, he was a Postdoctoral\
             \ Associate at MIT CSAIL, working with Prof. Nir Shavit. He received his PhD from the EPFL, under the guidance\
             \ of Prof. Rachid Guerraoui.\r\n\r\nHis research is supported through a 2018 ERC Starting Grant."
+  - id: 1249
+    fileName: 1249.jpg
+    name:
+      - {language: en, text: "Pavel Egorov"}
+      - {language: ru, text: "Павел Егоров"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: "Руководитель отдела обучения разработчиков в Контуре и преподаватель в Уральском федеральном\
+            \ университете. В прошлом разработчик, тимлид и менеджер разных проектов."}
+  - id: 1250
+    fileName: 1250.jpg
+    name:
+      - {language: en, text: "Boris Shimberev"}
+      - {language: ru, text: "Борис Шимберев"}
+    company:
+      - {language: en, text: Alfa-Bank}
+      - {language: ru, text: Альфа-Банк}
+    bio:
+      - {language: en, text: "Работает ведущим разработчиком в Альфа-Банке, занимался разработкой в банковском бизнесе и н\
+            а автомобильном сегменте рынка. Увлекается музыкой и волейболом."}
+      - {language: ru, text: "Работает ведущим разработчиком в Альфа-Банке, занимался разработкой в банковском бизнесе и н\
+            а автомобильном сегменте рынка. Увлекается музыкой и волейболом"}
+  - id: 1251
+    fileName: 1251.jpg
+    name:
+      - {language: en, text: "Andrey Tichinin"}
+      - {language: ru, text: "Андрей Тычинин"}
+    company:
+      - {language: en, text: Alfa-Bank}
+      - {language: ru, text: Альфа-Банк}
+    bio:
+      - {language: en, text: "Разработчик в Альфа-Банке, занимается фулл-стек разработкой (ReactJS, .NET, MSSQLS). В прошл\
+            ом имел дело с низкоуровневыми вещами (язык C для железок), мобильной разработкой (Cordova и Xamarin) и админи\
+            стрированием Linux-серверов"}
+  - id: 1252
+    fileName: 1252.jpg
+    name:
+      - {language: en, text: "Nikita Lipilin"}
+      - {language: ru, text: "Никита Липилин"}
+    company:
+      - {language: en, text: PVS-Studio}
+    bio: []
+  - id: 1253
+    fileName: 1253.jpg
+    name:
+      - {language: en, text: "Denis Uskov"}
+      - {language: ru, text: "Денис Усков"}
+    company:
+      - {language: en, text: Alfa-Bank}
+      - {language: ru, text: Альфа-Банк}
+    bio:
+      - {language: en, text: "Более 20 лет работал в Газпроме, сейчас руководит центром компетенций .NET в Альфа-Банке."}
+  - id: 1254
+    fileName: 1254.jpg
+    name:
+      - {language: en, text: "Andrey Ganin"}
+      - {language: ru, text: "Андрей Ганин"}
+    company:
+      - {language: en, text: "Alfa Bank"}
+      - {language: ru, text: Альфа-Банк}
+    bio:
+      - {language: en, text: "В автоматизацию перешёл из разработки, тяга к прекрасному пересилила. У Андрея богатый опыт\
+            \ построения автоматизации с нуля для backend- и UI-приложений. Руководит центром компетенций автотестирования\
+            \ в Альфа-Банке, является одним из создателей AFT.Core."}
+  - id: 1255
+    fileName: 1255.jpg
+    name:
+      - {language: en, text: "Vladimir Smirnov"}
+      - {language: ru, text: "Владимир Смирнов"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: "Владимир почти 4 года работает в компании СКБ Контур, где занимается разработкой продукта Ко\
+            нтур.Экстерн. Любит изучать разные направления разработки. Дважды принимал участие в RuCTF, а также закончил Ш\
+            АД."}
+  - id: 1256
+    fileName: 1256.jpg
+    name:
+      - {language: en, text: "Sergey Khrenov"}
+      - {language: ru, text: "Сергей Хренов"}
+    company:
+      - {language: en, text: PVS-Studio}
+    bio:
+      - {language: en, text: "Участвует в управлении внутренними проектами, координирует работу команд по методике Kanban,\
+            \ помогает улучшать soft skills в компании. Ранее занимался C#, участвовал в разработке ядра C#-анализатора, с\
+            оздавал диагностики и DevOps-утилиты. Автор статей о проверке open source-проектов."}
+  - id: 1257
+    fileName: 1257.jpg
+    name:
+      - {language: en, text: "Denis Tarasov"}
+      - {language: ru, text: "Денис Тарасов"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: "Денис — ведущий инженер-программист и тимлид в команде девопсов в компании Контур. Преподает\
+            \ студентам и новым сотрудникам хорошие практики бэкенд-разработки, любит говорить с людьми за чашечкой кофе в\
+            \ местной кофейне."}
