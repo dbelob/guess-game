@@ -25,8 +25,13 @@ export class SpeakerStatisticsComponent implements OnInit {
 
   public speakerStatistics = new SpeakerStatistics();
 
+  public multiSortMeta: any[] = [];
+
   constructor(private statisticsService: StatisticsService, private questionService: QuestionService,
               public translateService: TranslateService) {
+    this.multiSortMeta.push({field: 'talksQuantity', order: -1});
+    this.multiSortMeta.push({field: 'eventsQuantity', order: -1});
+    this.multiSortMeta.push({field: 'eventTypesQuantity', order: -1});
   }
 
   ngOnInit(): void {

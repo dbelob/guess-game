@@ -26,7 +26,8 @@
       </div>
     </div>
 
-    <p-table [value]="eventTypeStatistics.eventTypeMetricsList" [resizableColumns]="true" [autoLayout]="true">
+    <p-table [value]="eventTypeStatistics.eventTypeMetricsList" [resizableColumns]="true" [autoLayout]="true"
+             sortField="sortName">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th class="text-center" pResizableColumn>#</th>

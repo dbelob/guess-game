@@ -30,7 +30,8 @@
     <p-table [value]="eventStatistics.eventMetricsList" [resizableColumns]="true" [autoLayout]="true"
              [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
              [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
-             currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}">
+             currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+             sortField="name">
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th class="text-center" pResizableColumn>#</th>
