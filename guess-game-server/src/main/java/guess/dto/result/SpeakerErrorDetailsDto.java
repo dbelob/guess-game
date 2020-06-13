@@ -1,6 +1,6 @@
 package guess.dto.result;
 
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.SpeakerAnswer;
@@ -16,9 +16,9 @@ import java.util.stream.Collectors;
  * Speaker error details DTO.
  */
 public class SpeakerErrorDetailsDto {
-    private String fileName;
-    private String name;
-    private List<String> yourAnswers;
+    private final String fileName;
+    private final String name;
+    private final List<String> yourAnswers;
 
     private SpeakerErrorDetailsDto(String fileName, String name, List<String> yourAnswers) {
         this.fileName = fileName;
@@ -38,36 +38,38 @@ public class SpeakerErrorDetailsDto {
         return yourAnswers;
     }
 
-    private static SpeakerErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessType guessType, Language language) {
-        List<Speaker> speakers = errorDetails.getAvailableAnswers().stream()
-                .map(q -> ((SpeakerAnswer) q).getSpeaker())
-                .collect(Collectors.toList());
+    private static SpeakerErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
+        if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) || GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode)) {
+            List<Speaker> speakers = errorDetails.getAvailableAnswers().stream()
+                    .map(q -> ((SpeakerAnswer) q).getSpeaker())
+                    .collect(Collectors.toList());
 
-        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
-                speakers,
-                language,
-                s -> LocalizationUtils.getString(s.getName(), language),
-                s -> true);
+            Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
+                    speakers,
+                    language,
+                    s -> LocalizationUtils.getString(s.getName(), language),
+                    s -> true);
 
-        if (GuessType.GUESS_NAME_TYPE.equals(guessType) || GuessType.GUESS_PICTURE_TYPE.equals(guessType)) {
+            Speaker questionSpeaker = ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker();
+
             List<String> yourAnswers = errorDetails.getYourAnswers().stream()
-                    .map(q -> GuessType.GUESS_NAME_TYPE.equals(guessType) ?
+                    .map(q -> GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ?
                             LocalizationUtils.getSpeakerName(((SpeakerAnswer) q).getSpeaker(), language, speakerDuplicates) :
                             ((SpeakerAnswer) q).getSpeaker().getFileName())
                     .collect(Collectors.toList());
 
             return new SpeakerErrorDetailsDto(
-                    ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker().getFileName(),
-                    LocalizationUtils.getSpeakerName(((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker(), language, speakerDuplicates),
+                    questionSpeaker.getFileName(),
+                    LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates),
                     yourAnswers);
         } else {
-            throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
+            throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
     }
 
-    public static List<SpeakerErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessType guessType, Language language) {
+    public static List<SpeakerErrorDetailsDto> convertToDto(List<ErrorDetails> errorDetailsList, GuessMode guessMode, Language language) {
         return errorDetailsList.stream()
-                .map(e -> convertToDto(e, guessType, language))
+                .map(e -> convertToDto(e, guessMode, language))
                 .collect(Collectors.toList());
     }
 }

@@ -1,25 +1,28 @@
-import { Component, Input } from "@angular/core";
-import { MessageService } from "./message.service";
-import { Message } from "./message.model";
+import { Component, Input, OnInit } from '@angular/core';
+import { MessageService } from './message.service';
+import { Message } from './message.model';
 
 @Component({
-  selector: "app-message",
-  templateUrl: "message.component.html",
+  selector: 'app-message',
+  templateUrl: 'message.component.html',
 })
-export class MessageComponent {
-  private lastMessage: Message;
+export class MessageComponent implements OnInit {
+  public lastMessage: Message;
   @Input() private autoHide = false;
   @Input() private hidingTime = 10;
 
-  constructor(messageService: MessageService) {
-    messageService.messages.subscribe(m => this.lastMessage = m);
+  constructor(private messageService: MessageService) {
+  }
+
+  ngOnInit(): void {
+    this.messageService.messages.subscribe(m => this.lastMessage = m);
   }
 
   isVisible(): boolean {
     if (this.lastMessage) {
       if (this.autoHide) {
         if (this.lastMessage.date) {
-          let timeDifference = Date.now() - this.lastMessage.date.getTime();
+          const timeDifference = Date.now() - this.lastMessage.date.getTime();
 
           return timeDifference <= this.hidingTime * 1000;
         } else {

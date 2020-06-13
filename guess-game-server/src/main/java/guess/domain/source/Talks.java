@@ -8,6 +8,13 @@ import java.util.List;
 public class Talks {
     private List<Talk> talks;
 
+    public Talks() {
+    }
+
+    public Talks(List<Talk> talks) {
+        this.talks = talks;
+    }
+
     public List<Talk> getTalks() {
         return talks;
     }

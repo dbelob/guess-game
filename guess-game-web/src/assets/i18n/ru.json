@@ -1,16 +1,34 @@
 {
   "common": {
-    "cancelLinkText": "Прервать"
+    "menuLinkText": "Меню",
+    "cancelLinkText": "Прервать",
+    "totalsText": "Всего",
+    "eventTypeKind": {
+      "conference": "Конференция",
+      "meetup": "Митап"
+    },
+    "table": {
+      "paginator": {
+        "currentPageReportTemplate": "{first} по {last} из {totalRecords}"
+      }
+    }
+  },
+  "home": {
+    "informationButtonText": "Информация о конференциях и митапах",
+    "gameButtonText": "Игра «Угадай спикера»"
   },
   "start": {
-    "title": "Выберите вопросы",
-    "setLabel": "Набор:",
-    "typeLabel": "Тип:",
-    "quantityLabel": "Количество:",
-    "guessNameLabel": "Угадать имя по фотографии",
-    "guessPictureLabel": "Угадать фотографию по имени",
-    "guessTalkLabel": "Угадать доклад по спикеру",
-    "guessSpeakerLabel": "Угадать спикера по докладу",
+    "title": "Угадай спикера",
+    "eventTypeLabel": "Тип события:",
+    "eventLabel": "Событие:",
+    "modeLabel": "Режим:",
+    "quantityLabel": "Вопросов:",
+    "guessNameByPhotoLabel": "Угадать имя по фотографии",
+    "guessPhotoByNameLabel": "Угадать фотографию по имени",
+    "guessTalkBySpeakerLabel": "Угадать доклад по спикеру",
+    "guessSpeakerByTalkLabel": "Угадать спикера по докладу",
+    "guessAccountsBySpeakerLabel": "Угадать Twitter, GitHub по спикеру",
+    "guessSpeakerByAccountsLabel": "Угадать спикера по Twitter, GitHub",
     "startButtonText": "Начать"
   },
   "result":{
@@ -27,10 +45,59 @@
     }
   },
   "cancel": {
-    "title": "Прервать игру",
+    "title": "Прерывание игры",
     "text": "Вы уверены, что хотите прервать игру?",
     "yesButtonText": "Да",
     "noButtonText": "Нет"
+  },
+  "statistics": {
+    "title": "Статистика",
+    "eventTypes": {
+      "title": "Типы событий",
+      "conferencesLabel": "Конференции",
+      "meetupsLabel": "Митапы",
+      "table": {
+        "kindColumn": "Вид",
+        "nameColumn": "Наименование",
+        "startDateColumn": "Начальная дата",
+        "ageColumn": "Возраст, лет",
+        "durationColumn": "Длительность, дней",
+        "eventsColumn": "Событий",
+        "talksColumn": "Докладов",
+        "speakersColumn": "Спикеров",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
+      }
+    },
+    "events" : {
+      "title": "События",
+      "conferenceLabel": "Конференция:",
+      "conferencePlaceholder": "Все",
+      "table": {
+        "nameColumn": "Наименование",
+        "startDateColumn": "Начальная дата",
+        "durationColumn": "Длительность, дней",
+        "talksColumn": "Докладов",
+        "speakersColumn": "Спикеров",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
+      }
+    },
+    "speakers": {
+      "title": "Спикеры",
+      "conferencesLabel": "Конференции",
+      "meetupsLabel": "Митапы",
+      "eventTypeLabel": "Тип события:",
+      "eventTypePlaceholder": "Все",
+      "table": {
+        "nameColumn": "Имя",
+        "javaChampionColumn": "Java Champion",
+        "mvpColumn": "MVP",
+        "talksColumn": "Докладов",
+        "eventsColumn": "Событий",
+        "eventTypesColumn": "Типов событий"
+      }
+    }
   },
   "notFound": {
     "title": "Страница не найдена",

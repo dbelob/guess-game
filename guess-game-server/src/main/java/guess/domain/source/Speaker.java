@@ -10,15 +10,29 @@ public class Speaker {
     private String fileName;
     private List<LocaleItem> name;
     private List<LocaleItem> company;
+    private List<LocaleItem> bio;
+    private String twitter;
+    private String gitHub;
+    private boolean javaChampion;
+    private boolean mvp;
+    private boolean mvpReconnect;
 
     public Speaker() {
     }
 
-    public Speaker(long id, String fileName, List<LocaleItem> name, List<LocaleItem> company) {
+    public Speaker(long id, String fileName, List<LocaleItem> name, List<LocaleItem> company,
+                   List<LocaleItem> bio, String twitter, String gitHub, boolean javaChampion, boolean mvp,
+                   boolean mvpReconnect) {
         this.id = id;
         this.fileName = fileName;
         this.name = name;
         this.company = company;
+        this.bio = bio;
+        this.twitter = twitter;
+        this.gitHub = gitHub;
+        this.javaChampion = javaChampion;
+        this.mvp = mvp;
+        this.mvpReconnect = mvpReconnect;
     }
 
     public long getId() {
@@ -51,6 +65,58 @@ public class Speaker {
 
     public void setCompany(List<LocaleItem> company) {
         this.company = company;
+    }
+
+    public List<LocaleItem> getBio() {
+        return bio;
+    }
+
+    public void setBio(List<LocaleItem> bio) {
+        this.bio = bio;
+    }
+
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+
+    public String getGitHub() {
+        return gitHub;
+    }
+
+    public void setGitHub(String gitHub) {
+        this.gitHub = gitHub;
+    }
+
+    public boolean isJavaChampion() {
+        return javaChampion;
+    }
+
+    public void setJavaChampion(boolean javaChampion) {
+        this.javaChampion = javaChampion;
+    }
+
+    public boolean isMvp() {
+        return mvp;
+    }
+
+    public void setMvp(boolean mvp) {
+        this.mvp = mvp;
+    }
+
+    public boolean isMvpReconnect() {
+        return mvpReconnect;
+    }
+
+    public void setMvpReconnect(boolean mvpReconnect) {
+        this.mvpReconnect = mvpReconnect;
+    }
+
+    public boolean isAnyMvp() {
+        return (mvp || mvpReconnect);
     }
 
     @Override

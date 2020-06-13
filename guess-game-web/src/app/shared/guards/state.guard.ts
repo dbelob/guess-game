@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { catchError, map } from "rxjs/operators";
-import { Observable, of } from "rxjs";
-import { StateService } from "../services/state.service";
-import { MessageService } from "../../modules/message/message.service";
-import { State } from "../models/state.model";
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { StateService } from '../services/state.service';
+import { MessageService } from '../../modules/message/message.service';
+import { State } from '../models/state.model';
 
 @Injectable()
 export class StateGuard implements CanActivate {
@@ -23,20 +23,28 @@ export class StateGuard implements CanActivate {
                 expectedUrl = '/start';
                 break;
               }
-              case State.GuessNameState: {
-                expectedUrl = '/guess/name';
+              case State.GuessNameByPhotoState: {
+                expectedUrl = '/guess/name-by-photo';
                 break;
               }
-              case State.GuessPictureState: {
-                expectedUrl = '/guess/picture';
+              case State.GuessPhotoByNameState: {
+                expectedUrl = '/guess/photo-by-name';
                 break;
               }
-              case State.GuessTalkState: {
-                expectedUrl = '/guess/talk';
+              case State.GuessTalkBySpeakerState: {
+                expectedUrl = '/guess/talk-by-speaker';
                 break;
               }
-              case State.GuessSpeakerState: {
-                expectedUrl = '/guess/speaker';
+              case State.GuessSpeakerByTalkState: {
+                expectedUrl = '/guess/speaker-by-talk';
+                break;
+              }
+              case State.GuessAccountBySpeakerState: {
+                expectedUrl = '/guess/account-by-speaker';
+                break;
+              }
+              case State.GuessSpeakerByAccountState: {
+                expectedUrl = '/guess/speaker-by-account';
                 break;
               }
               case State.ResultState: {
@@ -54,7 +62,7 @@ export class StateGuard implements CanActivate {
         ),
         catchError(response => {
             this.messageService.reportMessage(response);
-            return of(false)
+            return of(false);
           }
         )
       );

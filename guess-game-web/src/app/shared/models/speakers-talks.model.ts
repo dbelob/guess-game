@@ -1,5 +1,5 @@
-import { QuestionAnswers } from "./question-answers.model";
-import { SpeakerPair } from "./speaker-pair.model";
+import { QuestionAnswers } from './question-answers.model';
+import { SpeakerPair } from './speaker-pair.model';
 
 export class SpeakersTalks extends QuestionAnswers {
   constructor(

@@ -1,11 +1,9 @@
 package guess.dao;
 
-import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.GuessType;
-import guess.domain.question.QuestionSet;
+import guess.domain.GuessMode;
 import guess.domain.question.Question;
+import guess.domain.question.QuestionSet;
 
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -14,9 +12,5 @@ import java.util.List;
 public interface QuestionDao {
     List<QuestionSet> getQuestionSets();
 
-    Long getDefaultQuestionSetId(LocalDate date);
-
-    QuestionSet getQuestionSetById(long id) throws QuestionSetNotExistsException;
-
-    List<Question> getQuestionByIds(List<Long> questionSetIds, GuessType guessType) throws QuestionSetNotExistsException;
+    List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode);
 }

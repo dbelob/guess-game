@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { catchError } from "rxjs/operators";
-import { Observable } from "rxjs";
-import { MessageService } from "../../modules/message/message.service";
-import { StartParameters } from "../models/start-parameters.model";
-import { State } from "../models/state.model";
-import { PictureNames } from "../models/picture-names.model";
-import { NamePictures } from "../models/name-pictures.model";
-import { SpeakersTalks } from "../models/speakers-talks.model";
-import { TalkSpeakers } from "../models/talk-speakers.model";
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { MessageService } from '../../modules/message/message.service';
+import { StartParameters } from '../models/start-parameters.model';
+import { State } from '../models/state.model';
+import { PhotoNames } from '../models/photo-names.model';
+import { NamePhotos } from '../models/name-photos.model';
+import { SpeakersTalks } from '../models/speakers-talks.model';
+import { TalkSpeakers } from '../models/talk-speakers.model';
+import { SpeakerAccounts } from '../models/speaker-accounts.model';
+import { AccountSpeakers } from '../models/account-speakers.model';
 
 @Injectable({
   providedIn: 'root'
@@ -49,8 +51,8 @@ export class StateService {
       );
   }
 
-  getPictureNames(): Observable<PictureNames> {
-    return this.http.get<PictureNames>(`${this.baseUrl}/picture-names`)
+  getPhotoNames(): Observable<PhotoNames> {
+    return this.http.get<PhotoNames>(`${this.baseUrl}/photo-names`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
@@ -59,8 +61,8 @@ export class StateService {
       );
   }
 
-  getNamePictures(): Observable<NamePictures> {
-    return this.http.get<NamePictures>(`${this.baseUrl}/name-pictures`)
+  getNamePhotos(): Observable<NamePhotos> {
+    return this.http.get<NamePhotos>(`${this.baseUrl}/name-photos`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
@@ -81,6 +83,26 @@ export class StateService {
 
   getTalkSpeakers(): Observable<TalkSpeakers> {
     return this.http.get<TalkSpeakers>(`${this.baseUrl}/talk-speakers`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getSpeakerAccounts(): Observable<SpeakerAccounts> {
+    return this.http.get<SpeakerAccounts>(`${this.baseUrl}/speaker-accounts`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getAccountSpeakers(): Observable<AccountSpeakers> {
+    return this.http.get<AccountSpeakers>(`${this.baseUrl}/account-speakers`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

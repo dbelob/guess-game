@@ -1,6 +1,8 @@
 package guess.domain.source.contentful.event;
 
-public class ContentfulEvent {
+import guess.domain.source.contentful.ContentfulEntity;
+
+public class ContentfulEvent extends ContentfulEntity {
     private ContentfulEventFields fields;
 
     public ContentfulEventFields getFields() {

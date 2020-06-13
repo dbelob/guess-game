@@ -3,4 +3,4 @@ export class Message {
               public date: Date,
               public error: boolean = false) {
   }
-}	
+}

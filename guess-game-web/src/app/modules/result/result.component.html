@@ -1,9 +1,14 @@
 <div class="container-dialog p-2">
-  <h3 class="bg-info p-1 text-white text-center">{{'result.title' | translate}}</h3>
+  <h3 class="bg-info p-1 text-white text-center rounded">{{'result.title' | translate}}</h3>
 
   <app-message></app-message>
 
-  <app-language-switcher (onReload)="loadResult()"></app-language-switcher>
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" (click)="menu()"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="loadResult()" class="col-auto"></app-language-switcher>
+  </div>
 
   <div class="mt-2 mb-4">
     <div class="form-row h6">
@@ -60,27 +65,27 @@
       <tr *ngFor="let speakerErrorDetails of result.speakerErrorDetailsList; let i = index">
         <td scope="row" class="text-center">{{i + 1}}</td>
         <td>
-          <div *ngIf="isQuestionPicture" class="text-center">
+          <div *ngIf="isQuestionImage" class="text-center">
             <img src="{{speakersImageDirectory}}/{{speakerErrorDetails.fileName}}"
-                 alt="" class="img-thumbnail img-guess-result">
+                 alt="photo" class="img-thumbnail img-guess-result"/>
           </div>
-          <span *ngIf="!isQuestionPicture">{{speakerErrorDetails.name}}</span>
+          <span *ngIf="!isQuestionImage">{{speakerErrorDetails.name}}</span>
         </td>
         <td>
-          <div *ngIf="!isQuestionPicture" class="text-center">
+          <div *ngIf="!isQuestionImage" class="text-center">
             <img src="{{speakersImageDirectory}}/{{speakerErrorDetails.fileName}}"
-                 alt="" class="img-thumbnail img-guess-result">
+                 alt="photo" class="img-thumbnail img-guess-result"/>
           </div>
-          <span *ngIf="isQuestionPicture">{{speakerErrorDetails.name}}</span>
+          <span *ngIf="isQuestionImage">{{speakerErrorDetails.name}}</span>
         </td>
         <td>
-          <div *ngIf="!isQuestionPicture" class="text-center">
+          <div *ngIf="!isQuestionImage" class="text-center">
             <p *ngFor="let yourAnswer of speakerErrorDetails.yourAnswers">
               <img src="{{speakersImageDirectory}}/{{yourAnswer}}"
-                   alt="" class="img-thumbnail img-guess-result">
+                   alt="photo" class="img-thumbnail img-guess-result"/>
             </p>
           </div>
-          <div *ngIf="isQuestionPicture">
+          <div *ngIf="isQuestionImage">
             <p *ngFor="let yourAnswer of speakerErrorDetails.yourAnswers">
               {{yourAnswer}}
             </p>
@@ -93,39 +98,88 @@
       <tr *ngFor="let talkErrorDetails of result.talkErrorDetailsList; let i = index">
         <td scope="row" class="text-center">{{i + 1}}</td>
         <td>
-          <div *ngIf="isQuestionPicture" class="text-center">
+          <div *ngIf="isQuestionImage" class="text-center">
             <p *ngFor="let speaker of talkErrorDetails.speakers">
               <figure class="figure">
-                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
+                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" alt="photo" class="figure-img img-thumbnail img-guess-result"/>
                 <figcaption class="figure-caption text-center">{{speaker.name}}</figcaption>
               </figure>
             </p>
           </div>
-          <span *ngIf="!isQuestionPicture">{{talkErrorDetails.talkName}}</span>
+          <span *ngIf="!isQuestionImage">{{talkErrorDetails.talkName}}</span>
         </td>
         <td>
-          <div *ngIf="!isQuestionPicture" class="text-center">
+          <div *ngIf="!isQuestionImage" class="text-center">
             <p *ngFor="let speaker of talkErrorDetails.speakers">
               <figure class="figure">
-                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
+                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" alt="photo" class="figure-img img-thumbnail img-guess-result"/>
                 <figcaption class="figure-caption text-center">{{speaker.name}}</figcaption>
               </figure>
             </p>
           </div>
-          <span *ngIf="isQuestionPicture">{{talkErrorDetails.talkName}}</span>
+          <span *ngIf="isQuestionImage">{{talkErrorDetails.talkName}}</span>
         </td>
         <td>
-          <div *ngIf="!isQuestionPicture" class="text-center">
+          <div *ngIf="!isQuestionImage" class="text-center">
             <p *ngFor="let yourAnswer of talkErrorDetails.yourAnswers">
               <figure class="figure">
-                <img src="{{speakersImageDirectory}}/{{yourAnswer.fileName}}" alt="" class="figure-img img-thumbnail img-guess-result">
+                <img src="{{speakersImageDirectory}}/{{yourAnswer.fileName}}" alt="photo" class="figure-img img-thumbnail img-guess-result"/>
                 <figcaption class="figure-caption text-center">{{yourAnswer.name}}</figcaption>
               </figure>
             </p>
           </div>
-          <div *ngIf="isQuestionPicture">
+          <div *ngIf="isQuestionImage">
             <p *ngFor="let yourAnswer of talkErrorDetails.yourAnswers">
               {{yourAnswer.name}}
+            </p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+      <!-- Account error details -->
+      <tbody *ngIf="isAccountErrorDetailsListVisible()">
+      <tr *ngFor="let accountErrorDetails of result.accountErrorDetailsList; let i = index">
+        <td scope="row" class="text-center">{{i + 1}}</td>
+        <td>
+          <div *ngIf="isQuestionImage" class="text-center">
+            <figure class="figure">
+              <img src="{{speakersImageDirectory}}/{{accountErrorDetails.speaker.fileName}}" alt="photo" class="figure-img img-thumbnail img-guess-result"/>
+              <figcaption class="figure-caption text-center">{{accountErrorDetails.speaker.name}}</figcaption>
+            </figure>
+          </div>
+          <div *ngIf="!isQuestionImage">
+            <span *ngIf="accountErrorDetails.twitter" class="text-primary"><i class="fa fa-twitter"></i>{{accountErrorDetails.twitter}}</span>
+            <br *ngIf="accountErrorDetails.twitter && accountErrorDetails.gitHub"/>
+            <span *ngIf="accountErrorDetails.gitHub" class="text-dark"><i class="fa fa-github"></i>{{accountErrorDetails.gitHub}}</span>
+          </div>
+        </td>
+        <td>
+          <div *ngIf="!isQuestionImage" class="text-center">
+            <figure class="figure">
+              <img src="{{speakersImageDirectory}}/{{accountErrorDetails.speaker.fileName}}" alt="photo" class="figure-img img-thumbnail img-guess-result"/>
+              <figcaption class="figure-caption text-center">{{accountErrorDetails.speaker.name}}</figcaption>
+            </figure>
+          </div>
+          <div *ngIf="isQuestionImage">
+            <span *ngIf="accountErrorDetails.twitter" class="text-primary"><i class="fa fa-twitter"></i>{{accountErrorDetails.twitter}}</span>
+            <br *ngIf="accountErrorDetails.twitter && accountErrorDetails.gitHub"/>
+            <span *ngIf="accountErrorDetails.gitHub" class="text-dark"><i class="fa fa-github"></i>{{accountErrorDetails.gitHub}}</span>
+          </div>
+        </td>
+        <td>
+          <div *ngIf="!isQuestionImage" class="text-center">
+            <p *ngFor="let yourAnswer of accountErrorDetails.yourAnswers">
+              <figure class="figure">
+                <img src="{{speakersImageDirectory}}/{{yourAnswer.speaker.fileName}}" alt="photo" class="figure-img img-thumbnail img-guess-result"/>
+                <figcaption class="figure-caption text-center">{{yourAnswer.speaker.name}}</figcaption>
+              </figure>
+            </p>
+          </div>
+          <div *ngIf="isQuestionImage">
+            <p *ngFor="let yourAnswer of accountErrorDetails.yourAnswers">
+              <span *ngIf="yourAnswer.twitter" class="text-primary"><i class="fa fa-twitter"></i>{{yourAnswer.twitter}}</span>
+              <br *ngIf="yourAnswer.twitter && yourAnswer.gitHub"/>
+              <span *ngIf="yourAnswer.gitHub" class="text-dark"><i class="fa fa-github"></i>{{yourAnswer.gitHub}}</span>
             </p>
           </div>
         </td>

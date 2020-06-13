@@ -1,4 +1,4 @@
-import { SpeakerPair } from "./speaker-pair.model";
+import { SpeakerPair } from './speaker-pair.model';
 
 export class TalkErrorDetails {
   constructor(

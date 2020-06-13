@@ -6,25 +6,31 @@ import java.util.List;
  * Start parameters.
  */
 public class StartParameters {
-    private List<Long> questionSetIds;
-    private int quantity;
-    private GuessType guessType;
+    private final List<Long> eventTypeIds;
+    private final List<Long> eventIds;
+    private final GuessMode guessMode;
+    private final int quantity;
 
-    public StartParameters(List<Long> questionSetIds, int quantity, GuessType guessType) {
-        this.questionSetIds = questionSetIds;
+    public StartParameters(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode, int quantity) {
+        this.eventTypeIds = eventTypeIds;
+        this.eventIds = eventIds;
+        this.guessMode = guessMode;
         this.quantity = quantity;
-        this.guessType = guessType;
     }
 
-    public List<Long> getQuestionSetIds() {
-        return questionSetIds;
+    public List<Long> getEventTypeIds() {
+        return eventTypeIds;
+    }
+
+    public List<Long> getEventIds() {
+        return eventIds;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public GuessType getGuessType() {
-        return guessType;
+    public GuessMode getGuessMode() {
+        return guessMode;
     }
 }

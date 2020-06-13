@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from "@angular/common/http";
-import { catchError } from "rxjs/operators";
-import { MessageService } from "../../modules/message/message.service";
-import { QuestionSet } from "../models/question-set.model";
-import { Observable } from "rxjs";
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { EventType } from '../models/event-type.model';
+import { Event } from '../models/event.model';
+import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class QuestionService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getQuestionSets(): Observable<QuestionSet[]> {
-    return this.http.get<QuestionSet[]>(`${this.baseUrl}/sets`)
+  getEventTypes(): Observable<EventType[]> {
+    return this.http.get<EventType[]>(`${this.baseUrl}/event-types`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
@@ -24,8 +25,11 @@ export class QuestionService {
       );
   }
 
-  getDefaultQuestionSetId(): Observable<number> {
-    return this.http.get<number>(`${this.baseUrl}/default-set-id`)
+  getEvents(eventTypeIds: number[]): Observable<Event[]> {
+    const params = new HttpParams()
+      .set('eventTypeIds', eventTypeIds.toString());
+
+    return this.http.get<Event[]>(`${this.baseUrl}/events`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
@@ -34,10 +38,21 @@ export class QuestionService {
       );
   }
 
-  getQuantities(questionSetIds: number[], guessType: string): Observable<number[]> {
-    let params = new HttpParams()
-      .set('questionSetIds', questionSetIds.toString())
-      .set('guessType', guessType);
+  getDefaultEvent(): Observable<Event> {
+    return this.http.get<Event>(`${this.baseUrl}/default-event`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getQuantities(eventTypeIds: number[], eventIds: number[], guessMode: string): Observable<number[]> {
+    const params = new HttpParams()
+      .set('eventTypeIds', eventTypeIds.toString())
+      .set('eventIds', eventIds.toString())
+      .set('guessMode', guessMode);
 
     return this.http.get<number[]>(`${this.baseUrl}/quantities`, {params: params})
       .pipe(

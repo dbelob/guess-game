@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from "@angular/router";
-import { TranslateModule } from "@ngx-translate/core";
-import { GuessNameComponent } from "./guess-name.component";
-import { GuessPictureComponent } from "./guess-picture.component";
-import { GuessTalkComponent } from "./guess-talk.component";
-import { GuessSpeakerComponent } from "./guess-speaker.component";
-import { CancelGameComponent } from "./cancel-game.component";
-import { GeneralModule } from "../general/general.module";
-import { MessageModule } from "../message/message.module";
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { GuessNameByPhotoComponent } from './guess-name-by-photo.component';
+import { GuessPhotoByNameComponent } from './guess-photo-by-name.component';
+import { GuessTalkBySpeakerComponent } from './guess-talk-by-speaker.component';
+import { GuessSpeakerByTalkComponent } from './guess-speaker-by-talk.component';
+import { GuessAccountBySpeakerComponent } from './guess-account-by-speaker.component';
+import { GuessSpeakerByAccountComponent } from './guess-speaker-by-account.component';
+import { CancelGameComponent } from './cancel-game.component';
+import { GeneralModule } from '../general/general.module';
+import { MessageModule } from '../message/message.module';
 
 @NgModule({
   declarations: [
     CancelGameComponent,
-    GuessNameComponent,
-    GuessPictureComponent,
-    GuessTalkComponent,
-    GuessSpeakerComponent
+    GuessNameByPhotoComponent,
+    GuessPhotoByNameComponent,
+    GuessTalkBySpeakerComponent,
+    GuessSpeakerByTalkComponent,
+    GuessAccountBySpeakerComponent,
+    GuessSpeakerByAccountComponent
   ],
   imports: [
     CommonModule,

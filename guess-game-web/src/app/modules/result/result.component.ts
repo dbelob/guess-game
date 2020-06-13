@@ -1,23 +1,26 @@
-import { Component } from '@angular/core';
-import { TranslateService } from "@ngx-translate/core";
-import { Result } from "../../shared/models/result.model";
-import { AnswerService } from "../../shared/services/answer.service";
-import { StateService } from "../../shared/services/state.service";
-import { State } from "../../shared/models/state.model";
-import { Router } from "@angular/router";
-import { GuessType } from "../../shared/models/guess-type.model";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { Result } from '../../shared/models/result.model';
+import { State } from '../../shared/models/state.model';
+import { GuessMode } from '../../shared/models/guess-mode.model';
+import { AnswerService } from '../../shared/services/answer.service';
+import { StateService } from '../../shared/services/state.service';
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html'
 })
-export class ResultComponent {
-  private speakersImageDirectory: string = 'assets/images/speakers';
+export class ResultComponent implements OnInit {
+  public speakersImageDirectory = 'assets/images/speakers';
   public result = new Result();
-  private isQuestionPicture = true;
+  public isQuestionImage = true;
 
   constructor(private answerService: AnswerService, private stateService: StateService, private router: Router,
               public translateService: TranslateService) {
+  }
+
+  ngOnInit(): void {
     this.loadResult();
   }
 
@@ -25,8 +28,18 @@ export class ResultComponent {
     this.answerService.getResult()
       .subscribe(data => {
         this.result = data;
-        this.isQuestionPicture = (GuessType.GuessNameType === this.result.guessType) || (GuessType.GuessTalkType === this.result.guessType);
-      })
+        this.isQuestionImage = (GuessMode.GuessNameByPhotoMode === this.result.guessMode) ||
+          (GuessMode.GuessTalkBySpeakerMode === this.result.guessMode) ||
+          (GuessMode.GuessAccountBySpeakerMode === this.result.guessMode);
+      });
+  }
+
+  menu() {
+    this.stateService.setState(State.StartState)
+      .subscribe(data => {
+          this.router.navigateByUrl('/home');
+        }
+      );
   }
 
   restart() {
@@ -49,7 +62,11 @@ export class ResultComponent {
     return this.result.talkErrorDetailsList && (this.result.talkErrorDetailsList.length > 0);
   }
 
+  isAccountErrorDetailsListVisible() {
+    return this.result.accountErrorDetailsList && (this.result.accountErrorDetailsList.length > 0);
+  }
+
   isErrorDetailsListVisible() {
-    return this.isSpeakerErrorDetailsListVisible() || this.isTalkErrorDetailsListVisible();
+    return this.isSpeakerErrorDetailsListVisible() || this.isTalkErrorDetailsListVisible() || this.isAccountErrorDetailsListVisible();
   }
 }

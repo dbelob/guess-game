@@ -1,0 +1,29 @@
+<div class="container p-2">
+  <h3 class="bg-info p-1 text-white text-center rounded">{{title}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row">
+    <div class="col">
+      <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="logo" class="img-guess-logo"/>
+    </div>
+    <app-language-switcher (onReload)="loadQuestion()" class="col"></app-language-switcher>
+  </div>
+
+  <div class="text-center mb-4">
+    <img src="{{imageSource}}" alt="photo" class="img-thumbnail img-guess-name-by-photo"/>
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary m-1" [class.btn-danger]="photoNames.invalid0" [disabled]="photoNames.invalid0"
+            (click)="answer(photoNames.id0)">{{photoNames.name0}}</button>
+    <button type="submit" class="btn btn-primary m-1" [class.btn-danger]="photoNames.invalid1" [disabled]="photoNames.invalid1"
+            (click)="answer(photoNames.id1)">{{photoNames.name1}}</button>
+    <button type="submit" class="btn btn-primary m-1" [class.btn-danger]="photoNames.invalid2" [disabled]="photoNames.invalid2"
+            (click)="answer(photoNames.id2)">{{photoNames.name2}}</button>
+    <button type="submit" class="btn btn-primary m-1" [class.btn-danger]="photoNames.invalid3" [disabled]="photoNames.invalid3"
+            (click)="answer(photoNames.id3)">{{photoNames.name3}}</button>
+  </div>
+  <div class="text-right mt-1">
+    <button class="btn btn-link text-muted" (click)="cancel()"><small>{{'common.cancelLinkText' | translate}}</small></button>
+  </div>
+</div>

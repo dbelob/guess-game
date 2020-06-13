@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/nova-light/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
 
+.container-home {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 400px;
+}
 .container-dialog {
   width: 100%;
   padding-right: 15px;
@@ -8,15 +18,19 @@
   margin-right: auto;
   margin-left: auto;
 }
+.img-home-logo {
+  width: 100%;
+  height: auto;
+}
 .img-guess-logo {
   width: 48px;
   height: auto;
 }
-.img-guess-name, .img-guess-talk-single {
+.img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
   width: 192px;
   height: auto;
 }
-.img-guess-picture, .img-guess-talk-many, .img-guess-speaker {
+.img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account {
   width: 120px;
   height: auto;
 }
@@ -33,11 +47,11 @@
     width: 48px;
     height: auto;
   }
-  .img-guess-name, .img-guess-talk-single {
+  .img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
     width: 192px;
     height: auto;
   }
-  .img-guess-picture, .img-guess-talk-many, .img-guess-speaker {
+  .img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account {
     width: 120px;
     height: auto;
   }
@@ -55,11 +69,11 @@
     width: 64px;
     height: auto;
   }
-  .img-guess-name, .img-guess-talk-single {
+  .img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
     width: 256px;
     height: auto;
   }
-  .img-guess-picture, .img-guess-talk-many, .img-guess-speaker {
+  .img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account {
     width: 160px;
     height: auto;
   }
@@ -77,11 +91,11 @@
     width: 82px;
     height: auto;
   }
-  .img-guess-name, .img-guess-talk-single {
+  .img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
     width: 330px;
     height: auto;
   }
-  .img-guess-picture, .img-guess-talk-many, .img-guess-speaker {
+  .img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account {
     width: 206px;
     height: auto;
   }
@@ -99,11 +113,11 @@
     width: 100px;
     height: auto;
   }
-  .img-guess-name, .img-guess-talk-single {
+  .img-guess-name-by-photo, .img-guess-talk-by-speaker-single, .img-guess-account-by-speaker {
     width: 400px;
     height: auto;
   }
-  .img-guess-picture, .img-guess-talk-many, .img-guess-speaker {
+  .img-guess-photo-by-name, .img-guess-talk-by-speaker-some, .img-guess-speaker-by-talk, .img-guess-speaker-by-account {
     width: 250px;
     height: auto;
   }
@@ -113,10 +127,32 @@
   }
 }
 
-input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
-  border: 2px solid #ff0000;
+.start-listbox.ui-listbox, .start-dropdown.ui-dropdown {
+  width: 100%;
 }
 
-input.ng-dirty.ng-valid, textarea.ng-dirty.ng-valid {
-  border: 2px solid #6bc502;
+.statistics-dropdown.ui-dropdown {
+  min-width: 15em;
+}
+
+.ui-paginator {
+  .ui-dropdown {
+    float: left;
+    line-height: normal;
+  }
+
+  .ui-paginator-current {
+    float: right;
+  }
+}
+
+.ui-table .ui-table-thead > tr > th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-table .ui-table-tbody > tr > td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

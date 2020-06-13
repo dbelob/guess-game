@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/api/locale")
 public class LocaleController {
-    private LocaleService localeService;
+    private final LocaleService localeService;
 
     @Autowired
     public LocaleController(LocaleService localeService) {

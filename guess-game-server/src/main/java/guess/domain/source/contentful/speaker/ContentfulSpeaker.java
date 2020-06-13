@@ -1,6 +1,8 @@
 package guess.domain.source.contentful.speaker;
 
-public class ContentfulSpeaker {
+import guess.domain.source.contentful.ContentfulEntity;
+
+public class ContentfulSpeaker extends ContentfulEntity {
     private ContentfulSpeakerFields fields;
 
     public ContentfulSpeakerFields getFields() {

@@ -1,0 +1,124 @@
+<div class="container p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'statistics.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-statistics-switcher [type]="'event-types'"></app-statistics-switcher>
+
+  <form role="form">
+    <div class="form-group row justify-content-center">
+      <div class="col-auto">
+        <p-checkbox name="group1" value="conferences" label="{{'statistics.eventTypes.conferencesLabel' | translate}}"
+                    [(ngModel)]="isConferences" binary="true"
+                    (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+      </div>
+      <div class="col-auto">
+        <p-checkbox name="group1" value="meetups" label="{{'statistics.eventTypes.meetupsLabel' | translate}}"
+                    [(ngModel)]="isMeetups" binary="true"
+                    (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+      </div>
+    </div>
+
+    <p-table [value]="eventTypeStatistics.eventTypeMetricsList" [resizableColumns]="true" [autoLayout]="true"
+             sortMode="multiple" [multiSortMeta]="multiSortMeta">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th class="text-center" pResizableColumn>#</th>
+          <th class="text-center" pResizableColumn>
+            {{'statistics.eventTypes.table.kindColumn' | translate}}
+          </th>
+          <th class="text-center" [pSortableColumn]="'sortName'" pResizableColumn>
+            {{'statistics.eventTypes.table.nameColumn' | translate}}
+            <p-sortIcon [field]="'sortName'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'startDate'" pResizableColumn>
+            {{'statistics.eventTypes.table.startDateColumn' | translate}}
+            <p-sortIcon [field]="'startDate'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'age'" pResizableColumn>
+            {{'statistics.eventTypes.table.ageColumn' | translate}}
+            <p-sortIcon [field]="'age'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'duration'" pResizableColumn>
+            {{'statistics.eventTypes.table.durationColumn' | translate}}
+            <p-sortIcon [field]="'duration'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'eventsQuantity'" pResizableColumn>
+            {{'statistics.eventTypes.table.eventsColumn' | translate}}
+            <p-sortIcon [field]="'eventsQuantity'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'talksQuantity'" pResizableColumn>
+            {{'statistics.eventTypes.table.talksColumn' | translate}}
+            <p-sortIcon [field]="'talksQuantity'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'speakersQuantity'" pResizableColumn>
+            {{'statistics.eventTypes.table.speakersColumn' | translate}}
+            <p-sortIcon [field]="'speakersQuantity'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'javaChampionsQuantity'" pResizableColumn>
+            {{'statistics.eventTypes.table.javaChampionsColumn' | translate}}
+            <p-sortIcon [field]="'javaChampionsQuantity'"></p-sortIcon>
+          <th class="text-center" [pSortableColumn]="'mvpsQuantity'" pResizableColumn>
+            {{'statistics.eventTypes.table.mvpsColumn' | translate}}
+            <p-sortIcon [field]="'mvpsQuantity'"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-eventTypeMetrics let-i = "rowIndex">
+        <tr>
+          <td class="text-center">{{i + 1}}</td>
+          <td>
+            <span *ngIf="eventTypeMetrics.conference" pTooltip="{{'common.eventTypeKind.conference' | translate}}" tooltipPosition="bottom">
+              {{'common.eventTypeKind.conference' | translate}}
+            </span>
+            <span *ngIf="!eventTypeMetrics.conference" pTooltip="{{'common.eventTypeKind.meetup' | translate}}" tooltipPosition="bottom">
+              {{'common.eventTypeKind.meetup' | translate}}
+            </span>
+          </td>
+          <td>
+            <span pTooltip="{{eventTypeMetrics.displayName}}" tooltipPosition="bottom">
+              <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" height="24" alt="logo"/>
+              <span class="ml-2">{{eventTypeMetrics.displayName}}</span>
+            </span>
+          </td>
+          <td class="text-center">
+            <span pTooltip="{{eventTypeMetrics.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
+              {{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}
+            </span>
+          </td>
+          <td class="text-center">{{eventTypeMetrics.age | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeMetrics.mvpsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <tr>
+          <td colspan="3">{{'common.totalsText' | translate}}</td>
+          <td class="text-center">
+            <span pTooltip="{{eventTypeStatistics.totals?.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
+              {{eventTypeStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}
+            </span>
+          </td>
+          <td class="text-center">{{eventTypeStatistics.totals?.age | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.duration | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventTypeStatistics.totals?.mvpsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </form>
+</div>

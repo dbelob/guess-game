@@ -8,6 +8,13 @@ import java.util.List;
 public class Speakers {
     private List<Speaker> speakers;
 
+    public Speakers() {
+    }
+
+    public Speakers(List<Speaker> speakers) {
+        this.speakers = speakers;
+    }
+
     public List<Speaker> getSpeakers() {
         return speakers;
     }

@@ -6,7 +6,7 @@ import guess.domain.source.Speaker;
  * Question about speaker.
  */
 public class SpeakerQuestion extends Question {
-    private Speaker speaker;
+    private final Speaker speaker;
 
     public SpeakerQuestion(Speaker speaker) {
         super(speaker.getId());

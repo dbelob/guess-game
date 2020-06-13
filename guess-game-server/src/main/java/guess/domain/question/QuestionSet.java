@@ -1,58 +1,36 @@
 package guess.domain.question;
 
-import guess.domain.source.LocaleItem;
+import guess.domain.source.Event;
 
 import java.util.List;
 
 public class QuestionSet {
-    private long id;
-    private List<LocaleItem> name;
-    private String logoFileName;
-    private List<SpeakerQuestion> speakerQuestions;
-    private List<TalkQuestion> talkQuestions;
+    private final Event event;
+    private final List<SpeakerQuestion> speakerQuestions;
+    private final List<TalkQuestion> talkQuestions;
+    private final List<SpeakerQuestion> accountQuestions;
 
-    public QuestionSet(long id, List<LocaleItem> name, String logoFileName, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions) {
-        this.id = id;
-        this.name = name;
-        this.logoFileName = logoFileName;
+    public QuestionSet(Event event, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions,
+                       List<SpeakerQuestion> accountQuestions) {
+        this.event = event;
         this.speakerQuestions = speakerQuestions;
         this.talkQuestions = talkQuestions;
+        this.accountQuestions = accountQuestions;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public List<LocaleItem> getName() {
-        return name;
-    }
-
-    public void setName(List<LocaleItem> name) {
-        this.name = name;
-    }
-
-    public String getLogoFileName() {
-        return logoFileName;
-    }
-
-    public void setLogoFileName(String logoFileName) {
-        this.logoFileName = logoFileName;
+    public Event getEvent() {
+        return event;
     }
 
     public List<SpeakerQuestion> getSpeakerQuestions() {
         return speakerQuestions;
     }
 
-    public void setSpeakerQuestions(List<SpeakerQuestion> speakerQuestions) {
-        this.speakerQuestions = speakerQuestions;
-    }
-
     public List<TalkQuestion> getTalkQuestions() {
         return talkQuestions;
     }
 
+    public List<SpeakerQuestion> getAccountQuestions() {
+        return accountQuestions;
+    }
 }

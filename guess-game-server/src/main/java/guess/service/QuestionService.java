@@ -1,19 +1,24 @@
 package guess.service;
 
 import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 import guess.domain.question.QuestionSet;
+import guess.domain.source.Event;
+import guess.domain.source.EventType;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
  * Question service.
  */
 public interface QuestionService {
-    List<QuestionSet> getQuestionSets();
+    List<EventType> getEventTypes();
 
-    Long getDefaultQuestionSetId(LocalDate date);
+    List<Event> getEvents(List<Long> eventTypeIds);
 
-    List<Integer> getQuantities(List<Long> questionSetIds, GuessType guessType) throws QuestionSetNotExistsException;
+    Event getDefaultEvent(LocalDateTime dateTime);
+
+    List<Integer> getQuantities(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) throws QuestionSetNotExistsException;
 }

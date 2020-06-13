@@ -1,13 +1,16 @@
 package guess.domain.source.contentful.talk;
 
-public class ContentfulTalk {
-    private ContentfulTalkFields fields;
+import guess.domain.source.contentful.ContentfulEntity;
+import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
 
-    public ContentfulTalkFields getFields() {
+public class ContentfulTalk<T extends ContentfulTalkFields> extends ContentfulEntity {
+    private T fields;
+
+    public T getFields() {
         return fields;
     }
 
-    public void setFields(ContentfulTalkFields fields) {
+    public void setFields(T fields) {
         this.fields = fields;
     }
 }

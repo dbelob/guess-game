@@ -1,6 +1,6 @@
 package guess.domain.answer;
 
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 
 /**
  * Result.
@@ -12,18 +12,18 @@ public class Result {
     private final float correctPercents;
     private final float wrongPercents;
     private final float skippedPercents;
-    private final GuessType guessType;
+    private final GuessMode guessMode;
 
     public Result(long correctAnswers, long wrongAnswers, long skippedAnswers,
                   float correctPercents, float wrongPercents, float skippedPercents,
-                  GuessType guessType) {
+                  GuessMode guessMode) {
         this.correctAnswers = correctAnswers;
         this.wrongAnswers = wrongAnswers;
         this.skippedAnswers = skippedAnswers;
         this.correctPercents = correctPercents;
         this.wrongPercents = wrongPercents;
         this.skippedPercents = skippedPercents;
-        this.guessType = guessType;
+        this.guessMode = guessMode;
     }
 
     public long getCorrectAnswers() {
@@ -50,7 +50,7 @@ public class Result {
         return skippedPercents;
     }
 
-    public GuessType getGuessType() {
-        return guessType;
+    public GuessMode getGuessMode() {
+        return guessMode;
     }
 }

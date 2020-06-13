@@ -1,16 +1,34 @@
 {
   "common": {
-    "cancelLinkText": "Cancel"
+    "menuLinkText": "Menu",
+    "cancelLinkText": "Cancel",
+    "totalsText": "Totals",
+    "eventTypeKind": {
+      "conference": "Conference",
+      "meetup": "Meetup"
+    },
+    "table": {
+      "paginator": {
+        "currentPageReportTemplate": "{first} to {last} of {totalRecords}"
+      }
+    }
+  },
+  "home": {
+    "informationButtonText": "Conferences and meetups information",
+    "gameButtonText": "«Guess the Speaker» game"
   },
   "start": {
-    "title": "Select questions",
-    "setLabel": "Set:",
-    "typeLabel": "Type:",
-    "quantityLabel": "Quantity:",
-    "guessNameLabel": "Guess name by photo",
-    "guessPictureLabel": "Guess photo by name",
-    "guessTalkLabel": "Guess talk by speaker",
-    "guessSpeakerLabel": "Guess speaker by talk",
+    "title": "Guess the Speaker",
+    "eventTypeLabel": "Event type:",
+    "eventLabel": "Event:",
+    "modeLabel": "Mode:",
+    "quantityLabel": "Questions:",
+    "guessNameByPhotoLabel": "Guess name by photo",
+    "guessPhotoByNameLabel": "Guess photo by name",
+    "guessTalkBySpeakerLabel": "Guess talk by speaker",
+    "guessSpeakerByTalkLabel": "Guess speaker by talk",
+    "guessAccountsBySpeakerLabel": "Guess Twitter, GitHub by speaker",
+    "guessSpeakerByAccountsLabel": "Guess speaker by Twitter, GitHub",
     "startButtonText": "Start"
   },
   "result":{
@@ -27,10 +45,59 @@
     }
   },
   "cancel": {
-    "title": "Cancel game",
+    "title": "Game cancellation",
     "text": "Are you sure to cancel game?",
     "yesButtonText": "Yes",
     "noButtonText": "No"
+  },
+  "statistics": {
+    "title": "Statistics",
+    "eventTypes": {
+      "title": "Event types",
+      "conferencesLabel": "Conferences",
+      "meetupsLabel": "Meetups",
+      "table": {
+        "kindColumn": "Kind",
+        "nameColumn": "Name",
+        "startDateColumn": "Start date",
+        "ageColumn": "Age, years",
+        "durationColumn": "Duration, days",
+        "eventsColumn": "Events",
+        "talksColumn": "Talks",
+        "speakersColumn": "Speakers",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
+      }
+    },
+    "events" : {
+      "title": "Events",
+      "conferenceLabel": "Conference:",
+      "conferencePlaceholder": "All",
+      "table": {
+        "nameColumn": "Name",
+        "startDateColumn": "Start date",
+        "durationColumn": "Duration, days",
+        "talksColumn": "Talks",
+        "speakersColumn": "Speakers",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
+      }
+    },
+    "speakers": {
+      "title": "Speakers",
+      "conferencesLabel": "Conferences",
+      "meetupsLabel": "Meetups",
+      "eventTypeLabel": "Event type:",
+      "eventTypePlaceholder": "All",
+      "table": {
+        "nameColumn": "Name",
+        "javaChampionColumn": "Java Champion",
+        "mvpColumn": "MVP",
+        "talksColumn": "Talks",
+        "eventsColumn": "Events",
+        "eventTypesColumn": "Event types"
+      }
+    }
   },
   "notFound": {
     "title": "Page not found",

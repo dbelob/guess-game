@@ -1,9 +1,8 @@
 package guess.service;
 
-import guess.dao.exception.QuestionSetNotExistsException;
-import guess.domain.question.QuestionAnswersSet;
 import guess.domain.StartParameters;
 import guess.domain.State;
+import guess.domain.question.QuestionAnswersSet;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpSession;
  * State service.
  */
 public interface StateService {
-    void setStartParameters(StartParameters startParameters, HttpSession httpSession) throws QuestionSetNotExistsException;
+    void setStartParameters(StartParameters startParameters, HttpSession httpSession);
 
     State getState(HttpSession httpSession);
 

@@ -1,14 +1,13 @@
 package guess.service;
 
-import guess.dao.AnswerDao;
-import guess.dao.QuestionDao;
-import guess.dao.StateDao;
-import guess.dao.exception.QuestionSetNotExistsException;
+import guess.dao.*;
 import guess.domain.*;
 import guess.domain.answer.Answer;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
 import guess.domain.question.*;
+import guess.domain.source.Event;
+import guess.domain.source.EventType;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Talk;
 import guess.util.LocalizationUtils;
@@ -24,19 +23,23 @@ import java.util.stream.Collectors;
  */
 @Service
 public class StateServiceImpl implements StateService {
-    private StateDao stateDao;
-    private QuestionDao questionDao;
-    private AnswerDao answerDao;
+    private final StateDao stateDao;
+    private final QuestionDao questionDao;
+    private final AnswerDao answerDao;
+    private final EventTypeDao eventTypeDao;
+    private final EventDao eventDao;
 
     @Autowired
-    public StateServiceImpl(StateDao stateDao, QuestionDao questionDao, AnswerDao answerDao) {
+    public StateServiceImpl(StateDao stateDao, QuestionDao questionDao, AnswerDao answerDao, EventTypeDao eventTypeDao, EventDao eventDao) {
         this.stateDao = stateDao;
         this.questionDao = questionDao;
         this.answerDao = answerDao;
+        this.eventTypeDao = eventTypeDao;
+        this.eventDao = eventDao;
     }
 
     @Override
-    public void setStartParameters(StartParameters startParameters, HttpSession httpSession) throws QuestionSetNotExistsException {
+    public void setStartParameters(StartParameters startParameters, HttpSession httpSession) {
         stateDao.setStartParameters(startParameters, httpSession);
 
         QuestionAnswersSet questionAnswersSet = createQuestionAnswersSet(startParameters);
@@ -46,14 +49,25 @@ public class StateServiceImpl implements StateService {
         stateDao.setState(
                 questionAnswersSet.getQuestionAnswersList().isEmpty() ?
                         State.RESULT_STATE :
-                        (GuessType.GUESS_NAME_TYPE.equals(startParameters.getGuessType()) ?
-                                State.GUESS_NAME_STATE :
-                                (GuessType.GUESS_PICTURE_TYPE.equals(startParameters.getGuessType()) ?
-                                        State.GUESS_PICTURE_STATE :
-                                        (GuessType.GUESS_TALK_TYPE.equals(startParameters.getGuessType()) ?
-                                                State.GUESS_TALK_STATE :
-                                                State.GUESS_SPEAKER_STATE))),
+                        getStateByGuessMode(startParameters.getGuessMode()),
                 httpSession);
+    }
+
+    private State getStateByGuessMode(GuessMode guessMode) {
+        switch (guessMode) {
+            case GUESS_NAME_BY_PHOTO_MODE:
+                return State.GUESS_NAME_BY_PHOTO_STATE;
+            case GUESS_PHOTO_BY_NAME_MODE:
+                return State.GUESS_PHOTO_BY_NAME_STATE;
+            case GUESS_TALK_BY_SPEAKER_MODE:
+                return State.GUESS_TALK_BY_SPEAKER_STATE;
+            case GUESS_SPEAKER_BY_TALK_MODE:
+                return State.GUESS_SPEAKER_BY_TALK_STATE;
+            case GUESS_ACCOUNT_BY_SPEAKER_MODE:
+                return State.GUESS_ACCOUNT_BY_SPEAKER_STATE;
+            default:
+                return State.GUESS_SPEAKER_BY_ACCOUNT_STATE;
+        }
     }
 
     @Override
@@ -71,9 +85,9 @@ public class StateServiceImpl implements StateService {
         return stateDao.getQuestionAnswersSet(httpSession);
     }
 
-    private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) throws QuestionSetNotExistsException {
+    private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
         // Find unique questions by ids
-        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getQuestionSetIds(), startParameters.getGuessType());
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getEventTypeIds(), startParameters.getEventIds(), startParameters.getGuessMode());
 
         // Fill question and answers list
         List<QuestionAnswers> questionAnswersList = new ArrayList<>();
@@ -89,13 +103,13 @@ public class StateServiceImpl implements StateService {
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessType());
+                List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessMode());
 
                 // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
                 correctAnswers = correctAnswers.subList(
                         0,
                         Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, correctAnswers.size()));
-                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessType());
+                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessMode());
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
                 Collections.shuffle(shuffledAllAvailableAnswersWithoutCorrectAnswers);
@@ -118,50 +132,66 @@ public class StateServiceImpl implements StateService {
         String logoFileName;
 
         // Set name and logo filename
-        if (startParameters.getQuestionSetIds().size() == 1) {
-            QuestionSet questionSet = questionDao.getQuestionSetById(startParameters.getQuestionSetIds().get(0));
-            name = questionSet.getName();
-            logoFileName = questionSet.getLogoFileName();
+        if (startParameters.getEventTypeIds().size() == 1) {
+            EventType eventType = eventTypeDao.getEventTypeById(startParameters.getEventTypeIds().get(0));
+
+            if (eventType.isEventTypeConference()) {
+                if (startParameters.getEventIds().size() == 1) {
+                    Event event = eventDao.getEventById(startParameters.getEventIds().get(0));
+
+                    name = (event != null) ? event.getName() : eventType.getName();
+                } else {
+                    name = eventType.getName();
+                }
+            } else {
+                name = eventType.getName();
+            }
+
+            logoFileName = eventType.getLogoFileName();
         } else {
-            final String SELECTED_SETS = "selectedSets";
+            final String SELECTED_EVENT_TYPES = "selectedEventTypes";
 
             name = Arrays.asList(
                     new LocaleItem(Language.ENGLISH.getCode(), String.format(
-                            LocalizationUtils.getResourceString(SELECTED_SETS, Language.ENGLISH),
-                            startParameters.getQuestionSetIds().size())),
+                            LocalizationUtils.getResourceString(SELECTED_EVENT_TYPES, Language.ENGLISH),
+                            startParameters.getEventTypeIds().size())),
                     new LocaleItem(Language.RUSSIAN.getCode(), String.format(
-                            LocalizationUtils.getResourceString(SELECTED_SETS, Language.RUSSIAN),
-                            startParameters.getQuestionSetIds().size())));
+                            LocalizationUtils.getResourceString(SELECTED_EVENT_TYPES, Language.RUSSIAN),
+                            startParameters.getEventTypeIds().size())));
             logoFileName = null;
         }
 
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    private List<Answer> getCorrectAnswers(Question question, GuessType guessType) {
-        switch (guessType) {
-            case GUESS_NAME_TYPE:
-            case GUESS_PICTURE_TYPE:
+    private List<Answer> getCorrectAnswers(Question question, GuessMode guessMode) {
+        switch (guessMode) {
+            case GUESS_NAME_BY_PHOTO_MODE:
+            case GUESS_PHOTO_BY_NAME_MODE:
+            case GUESS_ACCOUNT_BY_SPEAKER_MODE:
+            case GUESS_SPEAKER_BY_ACCOUNT_MODE:
                 return Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker()));
-            case GUESS_TALK_TYPE:
+            case GUESS_TALK_BY_SPEAKER_MODE:
                 return Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk()));
-            case GUESS_SPEAKER_TYPE:
+            case GUESS_SPEAKER_BY_TALK_MODE:
                 return ((TalkQuestion) question).getSpeakers().stream()
                         .map(SpeakerAnswer::new)
                         .collect(Collectors.toList());
             default:
-                throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
+                throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
     }
 
-    private List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessType guessType) {
-        switch (guessType) {
-            case GUESS_NAME_TYPE:
-            case GUESS_PICTURE_TYPE:
+    private List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessMode guessMode) {
+        switch (guessMode) {
+            case GUESS_NAME_BY_PHOTO_MODE:
+            case GUESS_PHOTO_BY_NAME_MODE:
+            case GUESS_ACCOUNT_BY_SPEAKER_MODE:
+            case GUESS_SPEAKER_BY_ACCOUNT_MODE:
                 return questions.stream()
                         .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
                         .collect(Collectors.toList());
-            case GUESS_TALK_TYPE:
+            case GUESS_TALK_BY_SPEAKER_MODE:
                 Talk correctAnswerTalk = ((TalkAnswer) correctAnswers.get(0)).getTalk();
 
                 return questions.stream()
@@ -169,7 +199,7 @@ public class StateServiceImpl implements StateService {
                         .filter(t -> (t.getId() == correctAnswerTalk.getId()) || !t.getSpeakerIds().containsAll(correctAnswerTalk.getSpeakerIds()))
                         .map(TalkAnswer::new)
                         .collect(Collectors.toList());
-            case GUESS_SPEAKER_TYPE:
+            case GUESS_SPEAKER_BY_TALK_MODE:
                 return questions.stream()
                         .map(q -> ((TalkQuestion) q).getTalk().getSpeakers())
                         .flatMap(Collection::stream)
@@ -177,7 +207,7 @@ public class StateServiceImpl implements StateService {
                         .map(SpeakerAnswer::new)
                         .collect(Collectors.toList());
             default:
-                throw new IllegalArgumentException(String.format("Unknown guess type: %s", guessType));
+                throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
     }
 }

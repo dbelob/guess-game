@@ -1,0 +1,50 @@
+<div class="container p-2">
+  <h3 class="bg-info p-1 text-white text-center rounded">{{title}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row">
+    <div class="col">
+      <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="logo" class="img-guess-logo"/>
+    </div>
+    <app-language-switcher (onReload)="loadQuestion()" class="col"></app-language-switcher>
+  </div>
+
+  <p class="h3 text-center mt-3 mb-4">
+    <span *ngIf="accountSpeakers.twitter" class="text-primary"><i class="fa fa-twitter"></i>{{accountSpeakers.twitter}}</span>
+    <span *ngIf="accountSpeakers.gitHub" class="text-dark" [class.pl-3]="accountSpeakers.twitter"><i class="fa fa-github"></i>{{accountSpeakers.gitHub}}</span>
+  </p>
+  <div class="text-center">
+    <figure class="figure m-1">
+      <input type="image" alt="photo1" class="img-thumbnail img-guess-speaker-by-account"
+             [class.btn-danger]="accountSpeakers.invalid0" [class.btn-success]="accountSpeakers.valid0"
+             [disabled]="accountSpeakers.invalid0 || accountSpeakers.valid0"
+             (click)="answer(accountSpeakers.id0)" src="{{imageSource0}}"/>
+      <figcaption class="figure-caption text-center">{{accountSpeakers.speakerName0}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="photo2" class="img-thumbnail img-guess-speaker-by-account"
+             [class.btn-danger]="accountSpeakers.invalid1" [class.btn-success]="accountSpeakers.valid1"
+             [disabled]="accountSpeakers.invalid1 || accountSpeakers.valid1"
+             (click)="answer(accountSpeakers.id1)" src="{{imageSource1}}"/>
+      <figcaption class="figure-caption text-center">{{accountSpeakers.speakerName1}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="photo3" class="img-thumbnail img-guess-speaker-by-account"
+             [class.btn-danger]="accountSpeakers.invalid2" [class.btn-success]="accountSpeakers.valid2"
+             [disabled]="accountSpeakers.invalid2 || accountSpeakers.valid2"
+             (click)="answer(accountSpeakers.id2)" src="{{imageSource2}}"/>
+      <figcaption class="figure-caption text-center">{{accountSpeakers.speakerName2}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="photo4" class="img-thumbnail img-guess-speaker-by-account"
+             [class.btn-danger]="accountSpeakers.invalid3" [class.btn-success]="accountSpeakers.valid3"
+             [disabled]="accountSpeakers.invalid3 || accountSpeakers.valid3"
+             (click)="answer(accountSpeakers.id3)" src="{{imageSource3}}"/>
+      <figcaption class="figure-caption text-center">{{accountSpeakers.speakerName3}}</figcaption>
+    </figure>
+  </div>
+  <div class="text-right mt-1">
+    <button class="btn btn-link text-muted" (click)="cancel()"><small>{{'common.cancelLinkText' | translate}}</small></button>
+  </div>
+</div>

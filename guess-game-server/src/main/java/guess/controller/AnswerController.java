@@ -20,8 +20,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/answer")
 public class AnswerController {
-    private AnswerService answerService;
-    private LocaleService localeService;
+    private final AnswerService answerService;
+    private final LocaleService localeService;
 
     @Autowired
     public AnswerController(AnswerService answerService, LocaleService localeService) {

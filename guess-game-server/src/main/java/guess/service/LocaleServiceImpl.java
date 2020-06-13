@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
  */
 @Service
 public class LocaleServiceImpl implements LocaleService {
-    private LocaleDao localeDao;
+    private final LocaleDao localeDao;
 
     @Autowired
     public LocaleServiceImpl(LocaleDao localeDao) {

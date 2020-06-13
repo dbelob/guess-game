@@ -1,6 +1,5 @@
 package guess.controller;
 
-import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.Language;
 import guess.domain.State;
 import guess.domain.question.QuestionAnswers;
@@ -25,9 +24,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/api/state")
 public class StateController {
-    private StateService stateService;
-    private AnswerService answerService;
-    private LocaleService localeService;
+    private final StateService stateService;
+    private final AnswerService answerService;
+    private final LocaleService localeService;
 
     @Autowired
     public StateController(StateService stateService, AnswerService answerService, LocaleService localeService) {
@@ -38,7 +37,7 @@ public class StateController {
 
     @PostMapping("/parameters")
     @ResponseStatus(HttpStatus.OK)
-    public void setStartParameters(@RequestBody StartParametersDto startParameters, HttpSession httpSession) throws QuestionSetNotExistsException {
+    public void setStartParameters(@RequestBody StartParametersDto startParameters, HttpSession httpSession) {
         stateService.setStartParameters(StartParametersDto.convertFromDto(startParameters), httpSession);
     }
 
@@ -78,16 +77,16 @@ public class StateController {
         }
     }
 
-    @GetMapping("/picture-names")
+    @GetMapping("/photo-names")
     @ResponseBody
-    public PictureNamesDto getPictureNames(HttpSession httpSession) {
-        return getDto(httpSession, PictureNamesDto::convertToDto);
+    public PhotoNamesDto getPhotoNames(HttpSession httpSession) {
+        return getDto(httpSession, PhotoNamesDto::convertToDto);
     }
 
-    @GetMapping("/name-pictures")
+    @GetMapping("/name-photos")
     @ResponseBody
-    public NamePicturesDto getNamePictures(HttpSession httpSession) {
-        return getDto(httpSession, NamePicturesDto::convertToDto);
+    public NamePhotosDto getNamePhotos(HttpSession httpSession) {
+        return getDto(httpSession, NamePhotosDto::convertToDto);
     }
 
     @GetMapping("/speaker-talks")
@@ -100,5 +99,17 @@ public class StateController {
     @ResponseBody
     public TalkSpeakersDto getTalkSpeakers(HttpSession httpSession) {
         return getDto(httpSession, TalkSpeakersDto::convertToDto);
+    }
+
+    @GetMapping("/speaker-accounts")
+    @ResponseBody
+    public SpeakerAccountsDto getSpeakerAccounts(HttpSession httpSession) {
+        return getDto(httpSession, SpeakerAccountsDto::convertToDto);
+    }
+
+    @GetMapping("/account-speakers")
+    @ResponseBody
+    public AccountSpeakersDto getAccountSpeakers(HttpSession httpSession) {
+        return getDto(httpSession, AccountSpeakersDto::convertToDto);
     }
 }

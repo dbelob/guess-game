@@ -2,7 +2,7 @@ package guess.service;
 
 import guess.dao.AnswerDao;
 import guess.dao.StateDao;
-import guess.domain.GuessType;
+import guess.domain.GuessMode;
 import guess.domain.Identifiable;
 import guess.domain.StartParameters;
 import guess.domain.answer.Answer;
@@ -26,8 +26,8 @@ import java.util.stream.Collectors;
  */
 @Service
 public class AnswerServiceImpl implements AnswerService {
-    private AnswerDao answerDao;
-    private StateDao stateDao;
+    private final AnswerDao answerDao;
+    private final StateDao stateDao;
 
     @Autowired
     public AnswerServiceImpl(AnswerDao answerDao, StateDao stateDao) {
@@ -118,7 +118,7 @@ public class AnswerServiceImpl implements AnswerService {
     public Result getResult(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
         StartParameters startParameters = stateDao.getStartParameters(httpSession);
-        GuessType guessType = (startParameters != null) ? startParameters.getGuessType() : GuessType.GUESS_NAME_TYPE;
+        GuessMode guessMode = (startParameters != null) ? startParameters.getGuessMode() : GuessMode.GUESS_NAME_BY_PHOTO_MODE;
 
         long correctAnswers = answerSets.stream()
                 .filter(AnswerSet::isSuccess)
@@ -135,7 +135,7 @@ public class AnswerServiceImpl implements AnswerService {
 
         return new Result(correctAnswers, wrongAnswers, skippedAnswers,
                 correctPercents, wrongPercents, skippedPercents,
-                guessType);
+                guessMode);
     }
 
     @Override
