@@ -60,7 +60,7 @@ public class ContentfulUtils {
                 "fields.presentation", ContentfulTalkResponseHolyJs.class),                             // fields.presentation is single value
         // DotNext
         DOT_NEXT_SPACE_INFO("9n3x4rtjlya6", "14e1427f8fbee9e5a089cd634fc60189c7aff2814b496fb0ad957b867a59503b",
-                "fields.speaker", "fields.conference", "fields.mvp",
+                "fields.speaker", "fields.conference", "fields.mvp,fields.mvpReconnect",
                 "fields.talksPresentation,fields.presentation", ContentfulTalkResponseDotNext.class),   // fields.talksPresentation is list, fields.presentation is single value
         // Heisenbug
         HEISENBUG_SPACE_INFO("ut4a3ciohj8i", "e7edd5951d844b80ef41166e30cb9645e4f89d11c8ac9eecdadb2a38c061b980",
@@ -547,7 +547,8 @@ public class ContentfulUtils {
                 extractTwitter(contentfulSpeaker.getFields().getTwitter()),
                 extractGitHub(contentfulSpeaker.getFields().getGitHub()),
                 extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
-                extractBoolean(contentfulSpeaker.getFields().getMvp())
+                extractBoolean(contentfulSpeaker.getFields().getMvp()),
+                extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
         );
     }
 
@@ -1058,6 +1059,7 @@ public class ContentfulUtils {
                                 "steveonjava",
                                 "steveonjava",
                                 true,
+                                false,
                                 false
                         );
                     }
@@ -1085,6 +1087,7 @@ public class ContentfulUtils {
                                         "Сергей работает в компании Pivotal в команде Project Reactor. Он является активным участником open source-сообщества, членом Apache Software Foundation, одним из главных разработчиков проекта Testcontainers и контрибьютором в разного рода проектах (Apache Groovy, Testcontainers, Spring Boot, JBoss Modules и не только)."),
                                 "bsideup",
                                 "bsideup",
+                                true,
                                 false,
                                 false
                         );
@@ -1108,6 +1111,7 @@ public class ContentfulUtils {
                                 "arungupta",
                                 "arun-gupta",
                                 true,
+                                false,
                                 false
                         );
                     }
@@ -1129,6 +1133,7 @@ public class ContentfulUtils {
                                         null),
                                 "rhatr",
                                 null,
+                                false,
                                 false,
                                 false
                         );
@@ -1152,6 +1157,7 @@ public class ContentfulUtils {
                                 "_lrlna",
                                 "lrlna",
                                 false,
+                                false,
                                 false
                         );
                     }
@@ -1173,6 +1179,7 @@ public class ContentfulUtils {
                                         "Заболел веб-разработкой еще в школе (Windows 95, IE6, табличная верстка). Окончил Хельсинкский университет по специальности Information Technology, в настоящее время работает в Мюнхене фронтенд-разработчиком."),
                                 "_sergeikriger",
                                 null,
+                                false,
                                 false,
                                 false
                         );
@@ -1247,7 +1254,8 @@ public class ContentfulUtils {
                 equals(a.getTwitter(), b.getTwitter()) &&
                 equals(a.getGitHub(), b.getGitHub()) &&
                 (a.isJavaChampion() == b.isJavaChampion()) &&
-                (a.isMvp() == b.isMvp()));
+                (a.isMvp() == b.isMvp()) &&
+                (a.isMvpReconnect() == b.isMvpReconnect()));
     }
 
     /**

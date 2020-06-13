@@ -15,12 +15,14 @@ public class Speaker {
     private String gitHub;
     private boolean javaChampion;
     private boolean mvp;
+    private boolean mvpReconnect;
 
     public Speaker() {
     }
 
     public Speaker(long id, String fileName, List<LocaleItem> name, List<LocaleItem> company,
-                   List<LocaleItem> bio, String twitter, String gitHub, boolean javaChampion, boolean mvp) {
+                   List<LocaleItem> bio, String twitter, String gitHub, boolean javaChampion, boolean mvp,
+                   boolean mvpReconnect) {
         this.id = id;
         this.fileName = fileName;
         this.name = name;
@@ -30,6 +32,7 @@ public class Speaker {
         this.gitHub = gitHub;
         this.javaChampion = javaChampion;
         this.mvp = mvp;
+        this.mvpReconnect = mvpReconnect;
     }
 
     public long getId() {
@@ -102,6 +105,18 @@ public class Speaker {
 
     public void setMvp(boolean mvp) {
         this.mvp = mvp;
+    }
+
+    public boolean isMvpReconnect() {
+        return mvpReconnect;
+    }
+
+    public void setMvpReconnect(boolean mvpReconnect) {
+        this.mvpReconnect = mvpReconnect;
+    }
+
+    public boolean isAnyMvp() {
+        return (mvp || mvpReconnect);
     }
 
     @Override

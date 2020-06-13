@@ -14,6 +14,7 @@ public class ContentfulSpeakerFields {
     private String gitHub;
     private Boolean javaChampion;
     private Boolean mvp;
+    private Boolean mvpReconnect;
 
     public String getName() {
         return name;
@@ -101,5 +102,13 @@ public class ContentfulSpeakerFields {
 
     public void setMvp(Boolean mvp) {
         this.mvp = mvp;
+    }
+
+    public Boolean getMvpReconnect() {
+        return mvpReconnect;
+    }
+
+    public void setMvpReconnect(Boolean mvpReconnect) {
+        this.mvpReconnect = mvpReconnect;
     }
 }

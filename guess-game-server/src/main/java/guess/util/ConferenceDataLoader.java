@@ -255,8 +255,21 @@ public class ConferenceDataLoader {
                     s.setJavaChampion(true);
                 }
 
-                if (resourceSpeaker.isMvp() && !s.isMvp()) {
-                    s.setMvp(true);
+                if (s.isMvpReconnect()) {
+                    s.setMvp(false);
+                } else {
+                    if (s.isMvp()) {
+                        s.setMvpReconnect(false);
+                    } else {
+                        // Neither "MVP" nor "MVP Reconnect" in Contentful
+                        if (resourceSpeaker.isMvpReconnect()) {
+                            s.setMvpReconnect(true);
+                            s.setMvp(false);
+                        } else if (resourceSpeaker.isMvp()) {
+                            s.setMvp(true);
+                            s.setMvpReconnect(false);
+                        }
+                    }
                 }
 
                 if (ImageUtils.needUpdate(sourceUrl, destinationFileName)) {
