@@ -925,6 +925,7 @@ events:
     siteLink:
       - {language: en, text: "https://techtrain.ru/en/"}
       - {language: ru, text: "https://techtrain.ru/"}
+    youtubeLink: https://live.jugru.org/online/100081r10004282
     placeId: 24
     talkIds: [2385, 2374, 2375, 2376, 2377, 2386, 2378, 2379, 2380, 2384, 2387]
   # JUG.MSK
