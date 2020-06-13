@@ -199,8 +199,17 @@ public class StatisticsServiceImpl implements StatisticsService {
                     speaker,
                     speakerMetricsInternal.getTalks().size(),
                     speakerMetricsInternal.getEvents().size(),
-                    speakerMetricsInternal.getEventTypes().size()));
+                    speakerMetricsInternal.getEventTypes().size(),
+                    speaker.isJavaChampion() ? 1 : 0,
+                    speaker.isAnyMvp() ? 1 : 0));
         }
+
+        long totalsJavaChampionsQuantity = speakerSpeakerMetricsMap.keySet().stream()
+                .filter(Speaker::isJavaChampion)
+                .count();
+        long totalsMvpsQuantity = speakerSpeakerMetricsMap.keySet().stream()
+                .filter(Speaker::isAnyMvp)
+                .count();
 
         return new SpeakerStatistics(
                 speakerMetricsList,
@@ -208,7 +217,9 @@ public class StatisticsServiceImpl implements StatisticsService {
                         new Speaker(),
                         totalsTalksQuantity,
                         totalsEventsQuantity,
-                        eventTypes.size())
+                        eventTypes.size(),
+                        totalsJavaChampionsQuantity,
+                        totalsMvpsQuantity)
         );
     }
 

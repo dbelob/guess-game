@@ -87,6 +87,8 @@
       "eventTypePlaceholder": "All",
       "table": {
         "nameColumn": "Name",
+        "javaChampionColumn": "Java Champion",
+        "mvpColumn": "MVP",
         "talksColumn": "Talks",
         "eventsColumn": "Events",
         "eventTypesColumn": "Event types"

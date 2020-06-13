@@ -86,7 +86,9 @@
       "eventTypeLabel": "Тип события:",
       "eventTypePlaceholder": "Все",
       "table": {
-        "nameColumn": "Наименование",
+        "nameColumn": "Имя",
+        "javaChampionColumn": "Java Champion",
+        "mvpColumn": "MVP",
         "talksColumn": "Докладов",
         "eventsColumn": "Событий",
         "eventTypesColumn": "Типов событий"

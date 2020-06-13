@@ -14,6 +14,7 @@ import { findEventTypeByDefaultEvent } from '../general/utility-functions';
 export class SpeakerStatisticsComponent implements OnInit {
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
+  public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
 
   public eventTypes: EventType[] = [];

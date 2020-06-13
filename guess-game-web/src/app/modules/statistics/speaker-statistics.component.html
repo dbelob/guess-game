@@ -63,6 +63,14 @@
             {{'statistics.speakers.table.eventTypesColumn' | translate}}
             <p-sortIcon [field]="'eventTypesQuantity'"></p-sortIcon>
           </th>
+          <th class="text-center" [pSortableColumn]="'javaChampion'" pResizableColumn>
+            {{'statistics.speakers.table.javaChampionColumn' | translate}}
+            <p-sortIcon [field]="'javaChampion'"></p-sortIcon>
+          </th>
+          <th class="text-center" [pSortableColumn]="'anyMvp'" pResizableColumn>
+            {{'statistics.speakers.table.mvpColumn' | translate}}
+            <p-sortIcon [field]="'anyMvp'"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-speakerMetrics let-i = "rowIndex">
@@ -77,6 +85,13 @@
           <td class="text-center">{{speakerMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{speakerMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{speakerMetrics.eventTypesQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">
+            <img *ngIf="speakerMetrics.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" height="24" alt="java-champion"/>
+          </td>
+          <td class="text-center">
+            <img *ngIf="speakerMetrics.mvp" src="{{degreesImageDirectory}}/mvp.png" height="24" alt="mvp"/>
+            <img *ngIf="speakerMetrics.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
+          </td>
         </tr>
       </ng-template>
       <ng-template pTemplate="footer">
@@ -85,6 +100,8 @@
           <td class="text-center">{{speakerStatistics.totals?.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{speakerStatistics.totals?.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{speakerStatistics.totals?.eventTypesQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{speakerStatistics.totals?.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{speakerStatistics.totals?.mvpsQuantity | number:'1.0-0':translateService.currentLang}}</td>
         </tr>
       </ng-template>
     </p-table>
