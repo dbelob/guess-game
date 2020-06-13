@@ -19,15 +19,19 @@ public class EventMetricsDto {
     private final long duration;
     private final long talksQuantity;
     private final long speakersQuantity;
+    private final long javaChampionsQuantity;
+    private final long mvpsQuantity;
 
     public EventMetricsDto(String name, String logoFileName, LocalDate startDate, long duration, long talksQuantity,
-                           long speakersQuantity) {
+                           long speakersQuantity, long javaChampionsQuantity, long mvpsQuantity) {
         this.name = name;
         this.logoFileName = logoFileName;
         this.startDate = startDate;
         this.duration = duration;
         this.talksQuantity = talksQuantity;
         this.speakersQuantity = speakersQuantity;
+        this.javaChampionsQuantity = javaChampionsQuantity;
+        this.mvpsQuantity = mvpsQuantity;
     }
 
     public String getName() {
@@ -54,6 +58,14 @@ public class EventMetricsDto {
         return speakersQuantity;
     }
 
+    public long getJavaChampionsQuantity() {
+        return javaChampionsQuantity;
+    }
+
+    public long getMvpsQuantity() {
+        return mvpsQuantity;
+    }
+
     public static EventMetricsDto convertToDto(EventMetrics eventMetrics, Language language) {
         Event event = eventMetrics.getEvent();
 
@@ -63,7 +75,9 @@ public class EventMetricsDto {
                 eventMetrics.getStartDate(),
                 eventMetrics.getDuration(),
                 eventMetrics.getTalksQuantity(),
-                eventMetrics.getSpeakersQuantity());
+                eventMetrics.getSpeakersQuantity(),
+                eventMetrics.getJavaChampionsQuantity(),
+                eventMetrics.getMvpsQuantity());
     }
 
     public static List<EventMetricsDto> convertToDto(List<EventMetrics> eventMetricsList, Language language) {

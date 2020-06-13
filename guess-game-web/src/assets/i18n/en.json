@@ -76,7 +76,9 @@
         "startDateColumn": "Start date",
         "durationColumn": "Duration, days",
         "talksColumn": "Talks",
-        "speakersColumn": "Speakers"
+        "speakersColumn": "Speakers",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
       }
     },
     "speakers": {

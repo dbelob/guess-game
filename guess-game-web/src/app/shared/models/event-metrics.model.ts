@@ -5,7 +5,9 @@ export class EventMetrics {
     public startDate?: Date,
     public duration?: number,
     public talksQuantity?: number,
-    public speakersQuantity?: number
+    public speakersQuantity?: number,
+    public javaChampionsQuantity?: number,
+    public mvpsQuantity?: number
   ) {
   }
 }

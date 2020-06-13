@@ -76,7 +76,9 @@
         "startDateColumn": "Начальная дата",
         "durationColumn": "Длительность, дней",
         "talksColumn": "Докладов",
-        "speakersColumn": "Спикеров"
+        "speakersColumn": "Спикеров",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
       }
     },
     "speakers": {

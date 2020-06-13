@@ -130,12 +130,21 @@ public class StatisticsServiceImpl implements StatisticsService {
 
             event.getTalks().forEach(t -> eventSpeakers.addAll(t.getSpeakers()));
 
+            long eventJavaChampionsQuantity = eventSpeakers.stream()
+                    .filter(Speaker::isJavaChampion)
+                    .count();
+            long eventMvpsQuantity = eventSpeakers.stream()
+                    .filter(Speaker::isAnyMvp)
+                    .count();
+
             eventMetricsList.add(new EventMetrics(
                     event,
                     event.getStartDate(),
                     eventDuration,
                     eventTalksQuantity,
-                    eventSpeakers.size()));
+                    eventSpeakers.size(),
+                    eventJavaChampionsQuantity,
+                    eventMvpsQuantity));
 
             // Totals metrics
             if (event.getStartDate().isBefore(totalsStartDate)) {
@@ -147,6 +156,13 @@ public class StatisticsServiceImpl implements StatisticsService {
             totalsSpeakers.addAll(eventSpeakers);
         }
 
+        long totalsJavaChampionsQuantity = totalsSpeakers.stream()
+                .filter(Speaker::isJavaChampion)
+                .count();
+        long totalsMvpsQuantity = totalsSpeakers.stream()
+                .filter(Speaker::isAnyMvp)
+                .count();
+
         return new EventStatistics(
                 eventMetricsList,
                 new EventMetrics(
@@ -154,7 +170,9 @@ public class StatisticsServiceImpl implements StatisticsService {
                         totalsStartDate,
                         totalsDuration,
                         totalsTalksQuantity,
-                        totalsSpeakers.size()));
+                        totalsSpeakers.size(),
+                        totalsJavaChampionsQuantity,
+                        totalsMvpsQuantity));
     }
 
     @Override
@@ -173,6 +191,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                     for (Speaker speaker : talk.getSpeakers()) {
                         SpeakerMetricsInternal speakerMetricsInternal = speakerSpeakerMetricsMap.get(speaker);
 
+                        // Speaker metrics
                         if (speakerMetricsInternal == null) {
                             speakerMetricsInternal = new SpeakerMetricsInternal();
                             speakerSpeakerMetricsMap.put(speaker, speakerMetricsInternal);
@@ -204,6 +223,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                     speaker.isAnyMvp() ? 1 : 0));
         }
 
+        // Totals metrics
         long totalsJavaChampionsQuantity = speakerSpeakerMetricsMap.keySet().stream()
                 .filter(Speaker::isJavaChampion)
                 .count();

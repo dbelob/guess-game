@@ -55,6 +55,13 @@
             {{'statistics.events.table.speakersColumn' | translate}}
             <p-sortIcon [field]="'speakersQuantity'"></p-sortIcon>
           </th>
+          <th class="text-center" [pSortableColumn]="'javaChampionsQuantity'" pResizableColumn>
+            {{'statistics.events.table.javaChampionsColumn' | translate}}
+            <p-sortIcon [field]="'javaChampionsQuantity'"></p-sortIcon>
+          <th class="text-center" [pSortableColumn]="'mvpsQuantity'" pResizableColumn>
+            {{'statistics.events.table.mvpsColumn' | translate}}
+            <p-sortIcon [field]="'mvpsQuantity'"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-eventMetrics let-i = "rowIndex">
@@ -74,6 +81,8 @@
           <td class="text-center">{{eventMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventMetrics.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventMetrics.mvpsQuantity | number:'1.0-0':translateService.currentLang}}</td>
         </tr>
       </ng-template>
       <ng-template pTemplate="footer">
@@ -87,6 +96,8 @@
           <td class="text-center">{{eventStatistics.totals?.duration | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventStatistics.totals?.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventStatistics.totals?.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventStatistics.totals?.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          <td class="text-center">{{eventStatistics.totals?.mvpsQuantity | number:'1.0-0':translateService.currentLang}}</td>
         </tr>
       </ng-template>
     </p-table>
