@@ -3976,11 +3976,11 @@ speakers:
     company:
       - {language: en, text: "ABBYY, Max Planck Institute for Mathematics in the Sciences"}
     bio:
-      - {language: en, text: "Got Ph.D. in applied mathematics at Brandenburg University of Technology (Cottbus, Germany).\
-            \ He is currently a research associate at Max Planck Institute (Leipzig, Germany) and an AI-evangelist at ABBYY.\
-            \ Ivan is studying new AI work principles which could help us to understand how our brain works."}
-      - {language: ru, text: "Получил Ph.D. по прикладной математике в Бранденбургском Технологическом университете (Котбу\
-            с, Германия). В данный момент — научный сотрудник Института Макса Планка (Лейпциг, Германия) и AI-евангелист ABBYY.\
+      - {language: en, text: "Got PhD in applied mathematics at Brandenburg University of Technology (Cottbus, Germany). Is\
+            \ currently a research associate at Max Planck Institute (Leipzig, Germany) and an AI-evangelist at ABBYY. Ivan\
+            \ is studying new AI work principles which could help us to understand how our brain works."}
+      - {language: ru, text: "Получил PhD по прикладной математике в Бранденбургском Технологическом университете (Котбус\
+            , Германия). В данный момент — научный сотрудник Института Макса Планка (Лейпциг, Германия) и AI-евангелист ABBYY.\
             \ Иван исследует новые принципы работы искусственного интеллекта, которые могли бы помочь понять, как работает\
             \ наш мозг."}
     twitter: kr0niker
@@ -4234,17 +4234,12 @@ speakers:
       - {language: en, text: "Dmitriy Yakin"}
       - {language: ru, text: "Дмитрий Якин"}
     company:
+      - {language: en, text: Kontur}
       - {language: ru, text: Контур}
     bio:
-      - language: ru
-        text: "Обучался в Уральском федеральном университете. По образованию инженер-физик, специализирующийся на контроле\
-            \ качества физических объектов. \n\n4,5 года занимается тестированием. \n\nТестировал государственные веб-серв\
-            исы в компании «Центр ИТ». \nУчаствовал в разработке ПО для Евразийской экономической комиссии, Министерства о\
-            бразования, Федерального дорожного агентства. \n\nВ «Контур» пришел заниматься тестированием интеграций. Начин\
-            ал с тестирования интеграции сервиса Контур.Бухгалтерия с банками Альфа-Банк, УБРиР, Точка. \nПерешел в другой\
-            \ продукт Контур.Маркет и занимается тестированием кассового ПО. \nСпециализируется на интеграции веб-сервиса\
-            \ с десктопным и мобильным приложениями и интеграции десктопного и мобильного приложений с прикассовым «железо\
-            м» (принтер чеков, терминал оплаты, прикассовые весы)."
+      - {language: en, text: "Работает тестировщиком в Контуре, занимался тестированием интеграций, мобильным тестирование\
+            м. Параллельно с работой тестировщика занимается техническим пиаром профессии, читает лекции в университете и\
+            \ преподаёт на курсе по тестированию."}
   - id: 281
     fileName: 0281.jpg
     name:
@@ -8056,8 +8051,8 @@ speakers:
       - {language: en, text: "Vyacheslav Smirnov"}
       - {language: ru, text: "Вячеслав Смирнов"}
     company:
-      - {language: en, text: Raiffeisenbank}
-      - {language: ru, text: Райффайзенбанк}
+      - {language: en, text: VTB}
+      - {language: ru, text: ВТБ}
     bio:
       - {language: en, text: "Vyacheslav works in testing for 10 years, he's a performance testing expert. He was improving\
             \ quality in document flow, digital accounting, government services projects. Currently Vyacheslav is developing\
@@ -8448,10 +8443,12 @@ speakers:
     fileName: 0567.jpg
     name:
       - {language: en, text: "Andrey Lushnikov"}
+      - {language: ru, text: "Андрей Лушников"}
     company:
       - {language: en, text: Microsoft}
     bio:
       - {language: en, text: "Former Chrome Puppeteer TL. Currently in Microsoft Playwright team."}
+      - {language: ru, text: "Бывший технический руководитель проекта Chrome Puppeteer. Член команды Microsoft Playwright"}
     twitter: aslushnikov
   - id: 568
     fileName: 0568.jpg
@@ -9042,16 +9039,12 @@ speakers:
       - {language: en, text: "Igor Balagurov"}
       - {language: ru, text: "Игорь Балагуров"}
     company:
-      - {language: en, text: Uptick}
+      - {language: en, text: VKontakte}
+      - {language: ru, text: ВКонтакте}
     bio:
-      - {language: en, text: "During the last year, Igor works with automated testing in the Uptick startup. Mainly writes\
-            \ tests using Python for UI (Web + Mobile) and API (REST + GraphQL), a little bit .NET for Component and Integration\
-            \ tests. Before that Igor worked in New Cloud Technologies, where he gained experience in writing and supporting\
-            \ over one thousand web tests on Ruby, Watir, Cucumber."}
-      - {language: ru, text: "Последний год Игорь занимается автоматизированным тестированием в стартапе Uptick. В основно\
-            м пишет тесты на Python для UI (Web + Mobile) и API (REST + GraphQL) и немного на .NET (Component и Integration-т\
-            есты). До этого работал в Новых облачных технологиях, где получил опыт написания и поддержки более тысячи веб\
-            -тестов на Ruby, Watir, Cucumber."}
+      - {language: en, text: "Игорь работает во ВКонтакте, в команде инфраструктуры. Занимается автоматизаций тестирования\
+            \ и не только. Предпочитает писать тесты на Python, борется с рутиной, ищет заковыристые баги и готов поделить\
+            ся опытом написания API автотестов для VK Pay, где чуть больше чем за год появилось 2000 тестов."}
   - id: 608
     fileName: 0608.jpg
     name:
@@ -15378,8 +15371,8 @@ speakers:
       - {language: en, text: "Alexey Tyurin"}
       - {language: ru, text: "Алексей Тюрин"}
     company:
-      - {language: en, text: VKontakte}
-      - {language: ru, text: ВКонтакте}
+      - {language: en, text: "Computer Vision Systems"}
+      - {language: ru, text: "Системы компьютерного зрения"}
     bio:
       - {language: en, text: "Engaged in testing automation for over 7 years. Started from automation of banking platform\
             \ on a C-like language. Developed web application autotests on Selenium and Java. Has been engaged in testing\
@@ -15950,12 +15943,10 @@ speakers:
     company:
       - {language: en, text: Google}
     bio:
-      - {language: en, text: "Elliotte Rusty Harold is originally from New Orleans to which he returns periodically in search\
-            \ of a decent bowl of gumbo. However, he currently resides in the Prospect Heights neighborhood of Brooklyn with\
-            \ his wife Beth and dog Thor. He’s the current maintainer of the Jaxen XPath library, a committer in the Apache\
-            \ Maven project, and the creator of the XOM library for processing XML with Java. His books include Java I/O,\
-            \ Java Network Programming, XML in a Nutshell, and Refactoring HTML. He's currently tech lead for Google’s Cloud\
-            \ Tools for Eclipse."}
+      - {language: en, text: "Elliotte Rusty Harold is the current maintainer of the Jaxen XPath library, a committer in the\
+            \ Apache Maven project, and the creator of the XOM library for processing XML with Java. His books include Java\
+            \ I/O, Java Network Programming, XML in a Nutshell, and Refactoring HTML. He's currently tech lead for Google’\
+            s Cloud Tools for Eclipse."}
     twitter: elharo
   - id: 1097
     fileName: 1097.jpg
@@ -16014,18 +16005,19 @@ speakers:
       - {language: en, text: "Stanislav Vasenkov"}
       - {language: ru, text: "Станислав Васенков"}
     company:
-      - {language: en, text: Jobtoday.com}
+      - {language: en, text: performance-lab.ru}
     bio:
       - language: en
         text: "Working in IT since 2007, started with WAP-sites for first mobile phones with internet.\nStanislav was backend,\
-            \ frontend developer, product manager.\nIn love with QA since 2013, currently working as an engineer, consultant,\
-            \ and teacher in test automation.\n\nFounder of test automation community in [Telegram](https://t.me/qa_automation).\n\
-            Organized QA conference in [Cyprus](https://qa.cyprusitforum.com/ru)."
+            \ frontend developer, product manager.\nIn love with QA since 2013, currently working as a head АТ at Performance-lab.\n\
+            \nFounder of automated testing [community](https://t.me/qa_automation) in Telegram. \nFounder of [QA school](https://qa.guru).\n\
+            Organizer of [QA conference](https://qa.cyprusitforum.com/ru)."
       - language: ru
         text: "В IT с 2007 года, начинал с написания черно-белых WAP-сайтов для первых мобильных телефонов с интернетом.\n\
             Был backend-, frontend-разработчиком, product-менеджером.\nЗанимается QA с 2013 года, в настоящий момент работ\
-            ает как инженер, консультант и преподаватель по автоматизации тестирования.\n\nОснователь комьюнити по автомат\
-            изации тестирования в [Телеграме](https://t.me/qa_automation).\nОрганизовывал конференцию по [QA](https://qa.cyprusitforum.com/ru)."
+            ает руководителем направления АТ в Performance-lab.\n\nОснователь [комьюнити](https://t.me/qa_automation) по а\
+            втоматизации тестирования в телеграмме.\nОснователь [QA школы](https://qa.guru).\nОрганизовывал [конференцию](https://qa.cyprusitforum.com/ru)\
+            \ по QA."
   - id: 1102
     fileName: 1102.jpg
     name:
@@ -18132,3 +18124,129 @@ speakers:
       - {language: en, text: "Денис — ведущий инженер-программист и тимлид в команде девопсов в компании Контур. Преподает\
             \ студентам и новым сотрудникам хорошие практики бэкенд-разработки, любит говорить с людьми за чашечкой кофе в\
             \ местной кофейне."}
+  - id: 1258
+    fileName: 1258.jpg
+    name:
+      - {language: en, text: "Dmitriy Sichev"}
+      - {language: ru, text: "Дмитрий Сычев"}
+    company:
+      - {language: en, text: Wargaming}
+    bio:
+      - {language: en, text: "Lead QA Automation. Дмитрий занимается тестированием более 7 лет (5 лет автоматизации), зани\
+            мается разработкой универсального фреймворка для автоматизации, ранее занимался автоматизацией SCADA-системы."}
+  - id: 1259
+    fileName: 1259.jpg
+    name:
+      - {language: en, text: "Yuliya Gaysina"}
+      - {language: ru, text: "Юлия Гайсина"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: "Юлия помогает командам в Контуре делать продукты качественнее, развивая процессы безопасной\
+            \ разработки (SDLC): обучение команд, аудит продуктов, автоматизированный поиск уязвимостей и программы bug bounty.\
+            \ Занимается безопасностью более 7 лет в разных направлениях, от защиты нефтегазовых корпораций до разработки\
+            \ ПО."}
+  - id: 1260
+    fileName: 1260.jpg
+    name:
+      - {language: en, text: "Roman Romanyuk"}
+      - {language: ru, text: "Роман Романюк"}
+    company:
+      - {language: en, text: Wargaming}
+    bio:
+      - {language: en, text: "QA Automation Tech lead. Роман в тестировании уже 10 лет. В автоматизации — 8. На третьем ку\
+            рсе универа, решил попробовать себя в роли тестировщика — зашло. Уже 5 лет в Wargaming."}
+  - id: 1261
+    fileName: 1261.jpg
+    name:
+      - {language: en, text: "Sofia Selezneva"}
+      - {language: ru, text: "Софья Селезнева"}
+    company:
+      - {language: en, text: ABBYY}
+    bio:
+      - {language: en, text: "Sofia has been testing for more than three years. At ABBYY she is responsible for testing the\
+            \ TimelinePI product."}
+      - {language: ru, text: "Занимается тестированием более трех лет. В ABBYY отвечает за тестирование продукта TimelinePI."}
+  - id: 1262
+    fileName: 1262.jpg
+    name:
+      - {language: en, text: "Nikolay Konovalov"}
+      - {language: ru, text: "Николай Коновалов"}
+    company:
+      - {language: en, text: VKontakte}
+      - {language: ru, text: ВКонтакте}
+    bio:
+      - {language: en, text: "Николай работает ВКонтакте c 2017 года. Занимается тестированием раздела сообщений на платфо\
+            рмах iOS и Android. Разрабатывает утилиты для тестирования и пишет автотесты."}
+  - id: 1263
+    fileName: 1263.jpg
+    name:
+      - {language: en, text: "Sergey Belesev"}
+      - {language: ru, text: "Сергей Белесев"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Начал писать на C# в 2012 году. В прошлом разрабатывал софт для автоматизации ресторанов и с\
+            истемы лояльности. Сейчас в Лаборатории Касперского является тимлидом в команде, разрабатывающей автотестовый\
+            \ конвейер."}
+  - id: 1264
+    fileName: 1264.jpg
+    name:
+      - {language: en, text: "Andrey Kuzmin"}
+      - {language: ru, text: "Андрей Кузьмин"}
+    company:
+      - {language: en, text: Space307}
+    bio:
+      - {language: en, text: "В тестировании 13 лет. Занимался автоматизацией тестирования бэкенда, мобильных и веб прилож\
+            ений. Сейчас развивает направление автоматизации тестирования в ~/.space307. Параллельно с этим участвует в со\
+            здании проекта интернатуры в компании."}
+  - id: 1265
+    fileName: 1265.jpg
+    name:
+      - {language: en, text: "Alexey Stepanov"}
+      - {language: ru, text: "Алексей Степанов"}
+    company:
+      - {language: en, text: Space307}
+    bio:
+      - {language: en, text: "QA Automation Engineer в Space307. В тестировании более 7 лет, занимается автоматизацией око\
+            ло 5 лет. Специализация — UI-автоматизация на стеке Java + Selenide + maven/gradle. Активно занимается вопроса\
+            ми оптимизации и ускорения тестов за счет параллельного подхода к запуску сценариев."}
+  - id: 1266
+    fileName: 1266.jpg
+    name:
+      - {language: en, text: "Oleg Voronov"}
+      - {language: ru, text: "Олег Воронов"}
+    company:
+      - {language: en, text: VTB}
+      - {language: ru, text: ВТБ}
+    bio:
+      - language: en
+        text: "Опыт работы в области разработки ПО более 10 лет, начинал обычным разработчиком.\r\nВ область профессиональ\
+            ных интересов входит системный анализ, разработка программного обеспечения и управление проектами."
+  - id: 1267
+    fileName: 1267.jpg
+    name:
+      - {language: en, text: "Igor Shvakov"}
+      - {language: ru, text: "Игорь Шваков"}
+    company:
+      - {language: en, text: VTB}
+      - {language: ru, text: ВТБ}
+    bio:
+      - language: en
+        text: "Более десяти лет опыта в банковском IT. Прошел путь от функционального тестировщика до руководителя управле\
+            ния. За годы своего профессионального опыта сформировал подразделение ручного функционального, автоматизирован\
+            ного, нагрузочного тестирования для нескольких крупных банков.\nСейчас руководит центром экспертизы по DevOps\
+            \ и автоматизации тестирования, занимается стримовыми разработками."
+  - id: 1268
+    fileName: 1268.jpg
+    name:
+      - {language: en, text: "Stanislav Ivanov"}
+      - {language: ru, text: "Станислав Иванов"}
+    company:
+      - {language: en, text: VTB}
+      - {language: ru, text: ВТБ}
+    bio:
+      - {language: en, text: "Начальник отдела автоматизации тестирования в ВТБ, лид команды разработки единого фреймворка\
+            . 10 лет в QA."}
