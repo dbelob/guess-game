@@ -5467,13 +5467,12 @@ speakers:
     company:
       - {language: en, text: "Otomato Software"}
     bio:
-      - {language: en, text: "The co-owner of Otomato Software technological consulting, has got over 15 years of experience\
-            \ in cutting-edge technologies. An expert in technical coaching, the initiator and co-author of the first Israeli\
-            \ DevOps certification course. Anton takes part in international conferences and is known as a great speaker."}
-      - {language: ru, text: "Совладелец технологического консалтинга Otomato Software, обладатель более чем 15-летнего оп\
-            ыта в области высоких технологий. Является экспертом по техническому преподаванию, инициатором и соавтором пер\
-            вого в Израиле курса DevOps-сертификации. Антон участвует в международных конференциях и известен как крутой д\
-            окладчик."}
+      - {language: en, text: "The founder of Otomato Software, has got over 20 years of experience in cutting-edge technologies.\
+            \ An expert in technical coaching, the initiator and co-author of the first Israeli DevOps certification course.\
+            \ Anton takes part in international conferences and is known as a great speaker."}
+      - {language: ru, text: "Основатель Otomato Software, обладатель более чем 20-летнего опыта в области высоких техноло\
+            гий. Является экспертом по техническому преподаванию, инициатором и соавтором первого в Израиле курса DevOps-с\
+            ертификации. Антон участвует в международных конференциях и известен как крутой докладчик."}
     twitter: antweiss
   - id: 363
     fileName: 0363.jpg
