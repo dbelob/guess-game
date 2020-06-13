@@ -15697,9 +15697,9 @@ speakers:
     bio:
       - language: en
         text: "Rajat is a Senior Software Engineer at Netflix and is passionate about building products. He enjoys writing\
-            \ code in Javascript because he believes Javascript has its complexities and imperfections that mimic the real\
+            \ code in JavaScript because he believes JavaScript has its complexities and imperfections that mimic the real\
             \ world.\n\nRajat has been involved in several engineering challenges at Netflix, including Conditional Runtime\
-            \ Bundler called Codex, Netflix’s NodeJS PaaS called NodeQuark. \n\nHe also maintains and is a core contributor\
+            \ Bundler called Codex, Netflix's NodeJS PaaS called NodeQuark. \n\nHe also maintains and is a core contributor\
             \ to <a href=\"http://restify.com\" target=\"_blank\">Restify</a>."
     twitter: rajatkumar
   - id: 1080
