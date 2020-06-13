@@ -77,6 +77,13 @@ public class StatisticsServiceImpl implements StatisticsService {
                 event.getTalks().forEach(t -> eventTypeSpeakers.addAll(t.getSpeakers()));
             }
 
+            long eventTypeJavaChampionsQuantity = eventTypeSpeakers.stream()
+                    .filter(Speaker::isJavaChampion)
+                    .count();
+            long eventTypeMvpsQuantity = eventTypeSpeakers.stream()
+                    .filter(Speaker::isAnyMvp)
+                    .count();
+
             eventTypeMetricsList.add(new EventTypeMetrics(
                     eventType,
                     eventTypeStartDate,
@@ -84,7 +91,9 @@ public class StatisticsServiceImpl implements StatisticsService {
                     eventTypeDuration,
                     eventType.getEvents().size(),
                     eventTypeTalksQuantity,
-                    eventTypeSpeakers.size()));
+                    eventTypeSpeakers.size(),
+                    eventTypeJavaChampionsQuantity,
+                    eventTypeMvpsQuantity));
 
             // Totals metrics
             if (eventTypeStartDate.isBefore(totalsStartDate)) {
@@ -97,6 +106,13 @@ public class StatisticsServiceImpl implements StatisticsService {
             totalsSpeakers.addAll(eventTypeSpeakers);
         }
 
+        long totalsJavaChampionsQuantity = totalsSpeakers.stream()
+                .filter(Speaker::isJavaChampion)
+                .count();
+        long totalsMvpsQuantity = totalsSpeakers.stream()
+                .filter(Speaker::isAnyMvp)
+                .count();
+
         return new EventTypeStatistics(
                 eventTypeMetricsList,
                 new EventTypeMetrics(
@@ -106,7 +122,9 @@ public class StatisticsServiceImpl implements StatisticsService {
                         totalsDuration,
                         totalsEventsQuantity,
                         totalsTalksQuantity,
-                        totalsSpeakers.size()));
+                        totalsSpeakers.size(),
+                        totalsJavaChampionsQuantity,
+                        totalsMvpsQuantity));
     }
 
     @Override

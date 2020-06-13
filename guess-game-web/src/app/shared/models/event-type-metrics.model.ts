@@ -9,7 +9,9 @@ export class EventTypeMetrics {
     public duration?: number,
     public eventsQuantity?: number,
     public talksQuantity?: number,
-    public speakersQuantity?: number
+    public speakersQuantity?: number,
+    public javaChampionsQuantity?: number,
+    public mvpsQuantity?: number
   ) {
   }
 }
