@@ -15373,8 +15373,8 @@ speakers:
       - {language: en, text: "Alexey Tyurin"}
       - {language: ru, text: "Алексей Тюрин"}
     company:
-      - {language: en, text: "Computer Vision Systems"}
-      - {language: ru, text: "Системы компьютерного зрения"}
+      - {language: en, text: VKontakte}
+      - {language: ru, text: ВКонтакте}
     bio:
       - {language: en, text: "Engaged in testing automation for over 7 years. Started from automation of banking platform\
             \ on a C-like language. Developed web application autotests on Selenium and Java. Has been engaged in testing\
@@ -18292,3 +18292,46 @@ speakers:
             \ service force.\nAnnyce also spent 7 years working at the Washington Post. One of her most exciting projects\
             \ at the Post was working on the PostTV Android application."
     twitter: brwngrldev
+  - id: 1272
+    fileName: 1272.jpg
+    name:
+      - {language: en, text: "Roman Oderov"}
+      - {language: ru, text: "Роман Одеров"}
+    company:
+      - {language: en, text: "Dell Technologies"}
+    bio:
+      - {language: en, text: "Закончил мех-мат., занимался performance engineering'ом, QA, автоматизацией. Сейчас работает\
+            \ над СХД PowerStore."}
+  - id: 1273
+    fileName: 1273.jpg
+    name:
+      - {language: en, text: "Michael Saravaysky"}
+      - {language: ru, text: "Михаил Саравайский"}
+    company:
+      - {language: en, text: "Dell Technologies"}
+    bio:
+      - {language: en, text: "Закончил матмех, писал на Java, .NET, сменил вид деятельности и уже пятый год занимается про\
+            изводительностью систем хранения данных. Возит в багажнике лонгборд."}
+  - id: 1274
+    fileName: 1274.jpg
+    name:
+      - {language: en, text: "Kirill Vasilev"}
+      - {language: ru, text: "Кирилл Васильев"}
+    company:
+      - {language: en, text: Luxoft}
+    bio:
+      - {language: en, text: "Кирилл работает на позиции Project Manager Automotive последние 2 года. 6 завершенных проект\
+            ов для различных OEMs и Tier 1 поставщиков. Большинство успешно вышли в серию, катаются по дорогам разных стра\
+            н, либо будут включены в новый модельный ряд автомобилей. Более 7 лет опыта работы в тестировании, из них 3 в\
+            \ рамках автомобильной индустрии."}
+  - id: 1275
+    fileName: 1275.jpg
+    name:
+      - {language: en, text: "Veronika Samohina"}
+      - {language: ru, text: "Вероника Самохина"}
+    company:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+    bio:
+      - {language: en, text: "Вероника — ведущий инженер-программист и преподаватель фронтенда в компании Контур. Любит со\
+            ревноваться и организовывать соревнования."}
