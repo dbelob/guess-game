@@ -3779,6 +3779,7 @@ speakers:
     name:
       - {language: en, text: "Dmitry Naydanov"}
       - {language: ru, text: "Дмитрий Найданов"}
+    gitHub: Lugzan
   - id: 251
     fileName: 0251.jpg
     name:
@@ -3788,6 +3789,8 @@ speakers:
     bio:
       - {language: en, text: "Partner Manager, General Vaadin Specialist. Working with the web and user interfaces since\
       \ the 20th century. Still concerned about end-user experience, simple APIs and web security."}
+    twitter: samiekblad
+    gitHub: samie
   - id: 252
     fileName: 0252.jpg
     name:
@@ -3826,6 +3829,7 @@ speakers:
     bio:
       - {language: ru, text: "Инженер-программист, работает в компании Oracle (Sun  Microsystems) с 2005. Большую часть\
       \ времени участвовал в проектах AWT, JavaFX Glass. В настоящее время работает в группе Java Deployment."}
+    gitHub: dimitryc
   - id: 255
     fileName: 0255.jpg
     name:
@@ -3842,6 +3846,7 @@ speakers:
       - {language: ru, text: "Тимлид QA/Release команды в Azul Systems, отвечающей за Zulu OpenJDK. До этого долгое время\
             \ проработал в Oracle, где занимался QA JavaFX и Java2D. Любит делиться своим опытом на конференциях и stackoverflow.com"}
     twitter: SergeyGrinev
+    gitHub: sgrinev
   - id: 256
     fileName: 0256.jpg
     name:
@@ -3863,6 +3868,8 @@ speakers:
             и российских сегментов сети Интернет (Релком) и Фидонет. Издавал онлайн-журнал «dz online». Предпринимательски\
             й опыт — 15 лет. \n\nВ 2006 году создал компанию Digital Zone, которая объявила о начале разработки уникальной\
             \ (то есть — не являющейся концептуальной копией Unix/Windows) операционной системы Фантом."
+    twitter: dzavalishin
+    gitHub: dzavalishin
   - id: 257
     fileName: 0257.jpg
     name:
@@ -3897,6 +3904,7 @@ speakers:
             да» за книгу «Бизнес как игра» (в соавторстве с Д. Кибкало и Д. Борисовым). Учредитель пиар-агентства Loft. Ко\
             нсультировал ряд компаний из Топ-20 российского рынка. Премии «Лучшая маркетинговая компания года» и «Лучший к\
             лиентский опыт»."}
+    twitter: milfgard
   - id: 259
     fileName: 0259.jpg
     name:
@@ -3924,6 +3932,8 @@ speakers:
             \ и использованием информационных технологий, в частности, баз данных, в астрономии. Начал использовать PostgreSQL\
             \ в 1995 году при решении астрономических задач. Первым его вкладом в проект стала работа по локализации PostgreSQL\
             \ в 1997 году, которая сделала Постгрес более доступным для неанглоязычных пользователей."
+    twitter: obartunov
+    gitHub: obartunov
   - id: 260
     fileName: 0260.jpg
     name:
