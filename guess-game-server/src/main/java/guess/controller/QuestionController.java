@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 
@@ -67,7 +66,7 @@ public class QuestionController {
     @GetMapping("/default-event")
     @ResponseBody
     public EventBriefDto getDefaultEvent(HttpSession httpSession) {
-        Event defaultEvent = questionService.getDefaultEvent(LocalDateTime.now());
+        Event defaultEvent = questionService.getDefaultEvent();
         Language language = localeService.getLanguage(httpSession);
 
         return (defaultEvent != null) ? EventBriefDto.convertToBriefDto(defaultEvent, language) : null;
