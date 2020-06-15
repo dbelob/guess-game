@@ -3978,6 +3978,7 @@ speakers:
             а. В полнолуние превращается в нудного ботана: его интересует возможность докопаться до сути вещей и процессов\
             , с которыми он работает."}
     twitter: mishunov
+    gitHub: mishunov
   - id: 262
     fileName: 0262.jpg
     name:
@@ -4028,6 +4029,7 @@ speakers:
             инга видео. Более 6 лет профессионально учит людей (в двух вузах и на собственных курсах), кандидат технически\
             х наук. Сейчас занимается фронтом в GitLab."}
     twitter: xanf_ua
+    gitHub: xanf
   - id: 265
     fileName: 0265.jpg
     name:
@@ -4098,6 +4100,7 @@ speakers:
     name:
       - {language: en, text: "Kirill Karmakulov"}
       - {language: ru, text: "Кирилл Кармакулов"}
+    gitHub: kkarmakul
   - id: 270
     fileName: 0270.jpg
     name:
@@ -4142,6 +4145,7 @@ speakers:
             никами агильной разработки. Активный спикер и участник технических конференций Европы и России. В свободное вр\
             емя — фотограф, музыкант и сумасшедший путешественник."}
     twitter: filippkeks
+    gitHub: taphos
   - id: 273
     fileName: 0273.jpg
     name:
@@ -4178,6 +4182,7 @@ speakers:
             \ 2011.\n\nВ последние годы отвечал за работу с рядом ключевых партнеров Microsoft по разработке в регионе и з\
             анимался выпуском популярных игр и приложений."
     twitter: zdebskiy
+    gitHub: rzdebskiy
   - id: 275
     fileName: 0275.jpg
     name:
@@ -4224,6 +4229,7 @@ speakers:
             ужбе из всех виденных им — 2ГИС. Эта компания разрабатывает цифровые карты и путеводители по городам. Когда Ро\
             ман не пишет код, он поет в рок-группе. Он играет на гитаре, пианино и немного на барабанах."}
     twitter: rayproud
+    gitHub: RayProud
   - id: 279
     fileName: 0279.jpg
     name:
@@ -4278,6 +4284,7 @@ speakers:
             \ и паттернам проектирования. Интересуется разработкой в сфере вычислений, численных финансов и алгоритмическо\
             й торговли. Интересуется C# и C++, а также технологиями высокопроизводительных вычислений, такими как CUDA и FPGA."}
     twitter: dnesteruk
+    gitHub: nesteruk
   - id: 283
     fileName: 0283.jpg
     name:
@@ -4313,6 +4320,7 @@ speakers:
             о государственного технического университета. Также он является генеральным директором небольшой ИТ-компании,\
             \ которая решает проблемы коммуникации людей, предлагая самые лучшие в сегменте сервисы."}
     twitter: RomaGordeev
+    gitHub: rgordeev
   - id: 285
     fileName: 0285.jpg
     name:
@@ -4337,6 +4345,7 @@ speakers:
             \ Days, Agile Days, IT Week, IT Subbotnik и EuroStar. Автор нескольких open source-фреймворков для автоматизир\
             ованного тестирования: VIQA, JDI UI, JDI Light, JDI Dark, FlashPages. Роман старается улучшить мир вокруг, пом\
             очь коллегам в проектах научиться тестировать в удовольствие: быстро, дешево, качественно."}
+    gitHub: epam-roman-iovlev
   - id: 287
     fileName: 0287.jpg
     name:
@@ -4365,6 +4374,7 @@ speakers:
             ых и интересных проектов, общей архитектурой и инфраструктурой. В основном мультимедиа-бэкендом — фото, аудио\
             , видео, upload и подобные смежные области. Активный участник сообщества GolangRU."}
     twitter: AterCattus
+    gitHub: atercattus
   - id: 289
     fileName: 0289.jpg
     name:
@@ -4465,6 +4475,7 @@ speakers:
             \ contributor) ядра WordPress и других компонентов экосистемы. Участник всех конференций WordCamp в России с 2013\
             \ года и многих WordPress-митапов в разных городах."}
     twitter: soulseekah
+    gitHub: soulseekah
   - id: 295
     fileName: 0295.jpg
     name:
@@ -4480,6 +4491,7 @@ speakers:
             \ Haskell, и множества других интересных вещей. Любит изучать новые области и языки, а потом рассказывать о ни\
             х на конференциях и по необходимости использовать в продакшне."}
     twitter: nevoroman
+    gitHub: nevoroman
   - id: 296
     fileName: 0296.jpg
     name:
@@ -4497,6 +4509,7 @@ speakers:
             ревается в организации Kotlin User Group в Питере и школ Android Academy в Питере и Москве, был замечен в проп\
             аганде Kotlin и Android."}
     twitter: colriot
+    gitHub: colriot
   - id: 297
     fileName: 0297.jpg
     name:
@@ -4511,6 +4524,7 @@ speakers:
             \ than it had ever been. Now he is focused on helping others to discover the significant advantages and joys of\
             \ building responsive, resilient, elastic, message-driven applications."}
     twitter: mckeeh3
+    gitHub: mckeeh3
   - id: 298
     fileName: 0298.jpg
     name:
@@ -4523,6 +4537,7 @@ speakers:
             \ with the CACAO and GNU Classpath projects, the focus shifted to OpenJDK as soon as Sun Microsystems made the\
             \ JDK open-source. Ever since Chris has worked on the HotSpot JVM at Sun, Oracle and now at Twitter."}
     twitter: christhalinger
+    gitHub: christhalinger
     javaChampion: true
   - id: 299
     fileName: 0299.jpg
@@ -4686,6 +4701,7 @@ speakers:
     bio:
       - {language: ru, text: "Руководит компанией EmDev, партнером Liferay в России, которая занимается разработкой и\
       \ внедрением порталов на Liferay."}
+    gitHub: akakunin
   - id: 309
     fileName: 0309.jpg
     name:
@@ -4694,6 +4710,7 @@ speakers:
       - {language: en, text: "I’m a quality maniac with passion about Java, Groovy, JVM and fancy tools that help to test\
       \ code in smart, fluent and expressive way. I love bringing feedback loops to the micro-level. my main area of\
       \ interest is Agile Testing."}
+    gitHub: mkordas
   - id: 310
     fileName: 0310.jpg
     name:
@@ -4707,6 +4724,7 @@ speakers:
       \ compiler и Intel Compiler Perfomance Team. Проходил стажировку в Microsoft в команде Phoenix compiler infrastructure\
       \ и LLILC (LLVM based MSIL Compiler). Последние 2 года работает в компании Унипро над проектом JVM для Эльбруса.\
       \ Разрабатывает и поддерживает внутри- и межблоковое планирование инструкций."}
+    gitHub: sandreenko
   - id: 311
     fileName: 0311.jpg
     name:
@@ -4875,6 +4893,7 @@ speakers:
             ному федеральному округу, в Юго-Западном банке Сбербанка России, ведущим разработчиком веб-студии QSoft и глав\
             ой отдела разработки компании Софтлайн Интернет Трейд."
     twitter: AlexSerbul
+    gitHub: AlexanderSerbul
   - id: 322
     fileName: 0322.jpg
     name:
@@ -15905,6 +15924,7 @@ speakers:
             тов для тестирования REST API сервисов, а также сервисов, использующих протоколы прикладного уровня IMAP/POP3,\
             \ веб-интерфейсов и мобильных приложений. Является одним из основателей OpenAPI generator, а также автором swagger-coverage.\
             \ Ведет свой блог по автоматизации тестирования."}
+    gitHub: viclovsky
   - id: 1093
     fileName: 1093.jpg
     name:
