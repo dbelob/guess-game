@@ -7047,15 +7047,15 @@ speakers:
       - {language: en, text: "Nikita Tsukanov"}
       - {language: ru, text: "Никита Цуканов"}
     company:
-      - {language: en, text: "ANNA Systems"}
+      - {language: en, text: "Avalonia OÜ"}
     bio:
       - {language: en, text: "Nikita has a vast experience developing for a broad spectrum of platforms (starting with WinCE)\
             \ using a whole zoo of technologies and is happy to share that experience."}
       - {language: ru, text: "Начинал в Навителе с разработки под WinCE/Mobile на C/C++. В дальнейшем занимался разработко\
             й VPN-сервиса с кросс-платформенным клиентом на GTK#, торговой площадки Promarket, мейнтейнил Mono для Nokia N900,\
-            \ делал инструментарий для чип-тюнинга автомобилей, мобильный мессенджер с End2End-шифрованием, платёжную сист\
-            ему и ещё кучу всякого по мелочи. Имеет обширный опыт разработки подо всё подряд на зоопарке технологий, котор\
-            ым рад поделиться."}
+            \ делал инструментарий для чип-тюнинга автомобилей, мобильный мессенджер с end-to-end-шифрованием, платёжную с\
+            истему и ещё кучу всякого по мелочи. Имеет обширный опыт разработки подо всё подряд на зоопарке технологий, ко\
+            торым рад поделиться."}
     twitter: kekekeks
   - id: 464
     fileName: 0464.jpg
