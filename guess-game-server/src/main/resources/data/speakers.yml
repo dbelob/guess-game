@@ -7177,6 +7177,7 @@ speakers:
             ическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и научным сотрудником в\
             \ Институте математики СО РАН."}
     twitter: andrey_akinshin
+    gitHub: AndreyAkinshin
     mvpReconnect: true
   - id: 472
     fileName: 0472.jpg
@@ -18330,8 +18331,8 @@ speakers:
     company:
       - {language: en, text: "Dell Technologies"}
     bio:
-      - {language: en, text: "Закончил мех-мат., занимался performance engineering'ом, QA, автоматизацией. Сейчас работает\
-            \ над СХД PowerStore."}
+      - {language: en, text: "Закончил Мат-Мех СПбГУ, занимался performance engineering'ом, QA, автоматизацией. Сейчас раб\
+            отает над СХД PowerStore."}
   - id: 1273
     fileName: 1273.jpg
     name:
@@ -18340,8 +18341,8 @@ speakers:
     company:
       - {language: en, text: "Dell Technologies"}
     bio:
-      - {language: en, text: "Закончил матмех, писал на Java, .NET, сменил вид деятельности и уже пятый год занимается про\
-            изводительностью систем хранения данных. Возит в багажнике лонгборд."}
+      - {language: en, text: "Закончил Мат-Мех СПбГУ, писал на Java, .NET, сменил вид деятельности и уже пятый год занимае\
+            тся производительностью систем хранения данных. Возит в багажнике лонгборд."}
   - id: 1274
     fileName: 1274.jpg
     name:
