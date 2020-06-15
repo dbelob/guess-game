@@ -280,9 +280,9 @@ public class ContentfulUtils {
                         nameEn = nameRu;
                     }
 
-                    LocalDate eventStartDate = createMoscowLocalDate(getFirstMapValue(e.getFields().getEventStart()));
+                    LocalDate eventStartDate = createEventLocalDate(getFirstMapValue(e.getFields().getEventStart()));
                     LocalDate eventEndDate = (e.getFields().getEventEnd() != null) ?
-                            createMoscowLocalDate(getFirstMapValue(e.getFields().getEventEnd())) :
+                            createEventLocalDate(getFirstMapValue(e.getFields().getEventEnd())) :
                             eventStartDate;
 
                     ContentfulLink eventCityLink = getFirstMapValue(e.getFields().getEventCity());
@@ -318,7 +318,7 @@ public class ContentfulUtils {
     }
 
     /**
-     * Creates Europe/Moscow zoned date time without offset (UTC).
+     * Creates event zoned date time without offset (UTC).
      *
      * @param localDate date
      * @return zoned date time
@@ -328,20 +328,20 @@ public class ContentfulUtils {
                 ZonedDateTime.of(
                         localDate,
                         LocalTime.of(0, 0, 0),
-                        ZoneId.of("Europe/Moscow")).toInstant(),
+                        ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID)).toInstant(),
                 ZoneId.of("UTC"));
     }
 
     /**
-     * Creates Europe/Moscow local date from zoned date time string.
+     * Creates event local date from zoned date time string.
      *
      * @param zonedDateTimeString zoned date time string
-     * @return Europe/Moscow local date
+     * @return event local date
      */
-    private static LocalDate createMoscowLocalDate(String zonedDateTimeString) {
+    private static LocalDate createEventLocalDate(String zonedDateTimeString) {
         return ZonedDateTime.ofInstant(
                 ZonedDateTime.parse(zonedDateTimeString).toInstant(),
-                ZoneId.of("Europe/Moscow"))
+                ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID))
                 .toLocalDate();
     }
 

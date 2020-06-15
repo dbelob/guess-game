@@ -8,6 +8,7 @@ import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.Question;
 import guess.domain.source.*;
+import guess.util.DateTimeUtils;
 import guess.util.LocalizationUtils;
 import guess.util.QuestionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -124,7 +126,8 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Event getDefaultEvent(LocalDateTime dateTime) {
+    public Event getDefaultEvent() {
+        LocalDateTime dateTime = LocalDateTime.now(ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID));
         LocalDate date = dateTime.toLocalDate();
         LocalTime time = dateTime.toLocalTime();
 
@@ -168,7 +171,8 @@ public class QuestionServiceImpl implements QuestionService {
                                 .collect(Collectors.toList());
 
                         if (eventDateMinTrackTimeListOnCurrentDate.isEmpty()) {
-                            return null;
+                            // No happened day events, return nearest first event
+                            return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
                         } else {
                             // Return nearest last event
                             return eventDateMinTrackTimeListOnCurrentDate.get(0).getEvent();
