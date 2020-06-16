@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { State } from '../../shared/models/state.model';
-import { StateService } from '../../shared/services/state.service';
+import { State } from '../../../shared/models/state.model';
+import { StateService } from '../../../shared/services/state.service';
 import { Router } from '@angular/router';
 
 @Component({

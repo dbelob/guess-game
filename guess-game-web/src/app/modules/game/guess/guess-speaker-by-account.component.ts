@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountSpeakers } from '../../shared/models/account-speakers.model';
-import { StateService } from '../../shared/services/state.service';
-import { AnswerService } from '../../shared/services/answer.service';
+import { AccountSpeakers } from '../../../shared/models/account-speakers.model';
+import { StateService } from '../../../shared/services/state.service';
+import { AnswerService } from '../../../shared/services/answer.service';
 import { Router } from '@angular/router';
-import { State } from '../../shared/models/state.model';
+import { State } from '../../../shared/models/state.model';
 
 @Component({
   selector: 'app-guess-speaker-by-account',

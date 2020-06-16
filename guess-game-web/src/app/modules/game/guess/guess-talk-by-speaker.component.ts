@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SpeakersTalks } from '../../shared/models/speakers-talks.model';
-import { StateService } from '../../shared/services/state.service';
-import { AnswerService } from '../../shared/services/answer.service';
-import { State } from '../../shared/models/state.model';
+import { SpeakersTalks } from '../../../shared/models/speakers-talks.model';
+import { StateService } from '../../../shared/services/state.service';
+import { AnswerService } from '../../../shared/services/answer.service';
+import { State } from '../../../shared/models/state.model';
 
 @Component({
   selector: 'app-guess-talk',

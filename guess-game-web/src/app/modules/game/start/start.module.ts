@@ -7,8 +7,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ListboxModule } from 'primeng/listbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { StartComponent } from './start.component';
-import { GeneralModule } from '../general/general.module';
-import { MessageModule } from '../message/message.module';
+import { GeneralModule } from '../../general/general.module';
+import { MessageModule } from '../../message/message.module';
 
 @NgModule({
   declarations: [

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SelectItem } from 'primeng/api';
-import { EventType } from '../../shared/models/event-type.model';
-import { EventStatistics } from '../../shared/models/event-statistics.model';
-import { StatisticsService } from '../../shared/services/statistics.service';
-import { QuestionService } from '../../shared/services/question.service';
-import { findEventTypeByDefaultEvent } from '../general/utility-functions';
+import { EventType } from '../../../shared/models/event-type.model';
+import { EventStatistics } from '../../../shared/models/event-statistics.model';
+import { StatisticsService } from '../../../shared/services/statistics.service';
+import { QuestionService } from '../../../shared/services/question.service';
+import { findEventTypeByDefaultEvent } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-event-statistics',

@@ -9,8 +9,8 @@ import { GuessSpeakerByTalkComponent } from './guess-speaker-by-talk.component';
 import { GuessAccountBySpeakerComponent } from './guess-account-by-speaker.component';
 import { GuessSpeakerByAccountComponent } from './guess-speaker-by-account.component';
 import { CancelGameComponent } from './cancel-game.component';
-import { GeneralModule } from '../general/general.module';
-import { MessageModule } from '../message/message.module';
+import { GeneralModule } from '../../general/general.module';
+import { MessageModule } from '../../message/message.module';
 
 @NgModule({
   declarations: [
