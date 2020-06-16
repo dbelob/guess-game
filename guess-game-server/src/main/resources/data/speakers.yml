@@ -5732,7 +5732,7 @@ speakers:
   - id: 377
     fileName: 0377.jpg
     name:
-      - {language: en, text: "Ray Тsang"}
+      - {language: en, text: "Ray Tsang"}
     company:
       - {language: en, text: Google}
     bio:
