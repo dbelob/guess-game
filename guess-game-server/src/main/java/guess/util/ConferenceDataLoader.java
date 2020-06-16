@@ -298,6 +298,9 @@ public class ConferenceDataLoader {
                         .max(Long::compare)
                         .orElse(-1L));
 
+        // Delete talk duplicates
+        contentfulTalks = deleteTalkDuplicates(contentfulTalks);
+
         if (resourceEvent == null) {
             // Event not exists
             contentfulTalks.forEach(
@@ -474,6 +477,46 @@ public class ConferenceDataLoader {
                 YamlUtils.dumpEvent(eventToUpdate, "event-to-update.yml");
             }
         }
+    }
+
+    /**
+     * Deletes talk duplicates (with more talk day, track, track time).
+     *
+     * @param talks talks
+     * @return talks without duplicates
+     */
+    private static List<Talk> deleteTalkDuplicates(List<Talk> talks) {
+        Map<String, Talk> ruNameMap = new HashMap<>();
+
+        for (Talk talk : talks) {
+            String ruName = LocalizationUtils.getString(talk.getName(), Language.RUSSIAN);
+            Talk existingTalk = ruNameMap.get(ruName);
+
+            if (existingTalk == null) {
+                ruNameMap.put(ruName, talk);
+            } else {
+                if (talk.getTalkDay() < existingTalk.getTalkDay()) {
+                    // Less day
+                    ruNameMap.put(ruName, talk);
+                } else if (talk.getTalkDay().equals(existingTalk.getTalkDay())) {
+                    // Equal day
+                    if (talk.getTrack() < existingTalk.getTrack()) {
+                        // Less track
+                        ruNameMap.put(ruName, talk);
+                    } else if (talk.getTrack().equals(existingTalk.getTrack())) {
+                        // Equal track
+                        if (talk.getTrackTime().isBefore(existingTalk.getTrackTime())) {
+                            // Less track time
+                            ruNameMap.put(ruName, talk);
+                        }
+                    }
+                }
+            }
+        }
+
+        return talks.stream()
+                .filter(t -> t.equals(ruNameMap.get(LocalizationUtils.getString(t.getName(), Language.RUSSIAN))))
+                .collect(Collectors.toList());
     }
 
     /**
@@ -876,7 +919,7 @@ public class ConferenceDataLoader {
 
         // 2020
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 6, 6), "2020-spb-tt");
-//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 6, 15), "2020-spb");
+        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 6, 15), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 15), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 6, 22), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 6, 22), "2020-spb");
