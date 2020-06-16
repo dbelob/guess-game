@@ -11,6 +11,9 @@ export class SpeakersListComponent implements OnInit {
   private readonly DEFAULT_LETTER = 'A';
   private readonly RUSSIAN_LANG = 'ru';
 
+  private imageDirectory = 'assets/images';
+  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
+
   public enLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
     'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   public ruLetters: string[] = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р',
@@ -38,10 +41,6 @@ export class SpeakersListComponent implements OnInit {
     this.loadSpeakers(this.DEFAULT_LETTER);
   }
 
-  isRuLettersVisible(): boolean {
-    return (this.translateService.currentLang === this.RUSSIAN_LANG);
-  }
-
   isCurrentLetter(letter: string) {
     return (this.selectedLetter === letter);
   }
@@ -49,5 +48,13 @@ export class SpeakersListComponent implements OnInit {
   changeLetter(letter: string) {
     this.selectedLetter = letter;
     this.loadSpeakers(letter);
+  }
+
+  isRuLettersVisible(): boolean {
+    return (this.translateService.currentLang === this.RUSSIAN_LANG);
+  }
+
+  isSpeakersLisVisible() {
+    return (this.speakers.length > 0);
   }
 }

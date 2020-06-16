@@ -52,6 +52,7 @@
   },
   "speakers": {
     "title": "Speakers",
+    "noSpeakersFoundText": "No speakers found",
     "list": {
       "title": "List"
     },

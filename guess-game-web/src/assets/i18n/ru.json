@@ -52,6 +52,7 @@
   },
   "speakers": {
     "title": "Спикеры",
+    "noSpeakersFoundText": "Спикеры не найдены",
     "list": {
       "title": "Список"
     },

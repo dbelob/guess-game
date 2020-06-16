@@ -14,20 +14,41 @@
 
   <app-speakers-switcher [type]="'list'"></app-speakers-switcher>
 
-  <div>
-    <button class="btn btn-link font-weight-bold" *ngFor="let enLetter of enLetters"
-            (click)="changeLetter(enLetter)"
-            [class.text-dark]="isCurrentLetter(enLetter)" [class.font-weight-bold]="isCurrentLetter(enLetter)"
-            [disabled]="isCurrentLetter(enLetter)">
-      {{enLetter}}
-    </button>
-  </div>
-  <div *ngIf="isRuLettersVisible()">
-    <button class="btn btn-link font-weight-bold" *ngFor="let ruLetter of ruLetters"
-            (click)="changeLetter(ruLetter)"
-            [class.text-dark]="isCurrentLetter(ruLetter)" [class.font-weight-bold]="isCurrentLetter(ruLetter)"
-            [disabled]="isCurrentLetter(ruLetter)">
-      {{ruLetter}}
-    </button>
+  <div class="m-1">
+    <div>
+      <button class="btn btn-link font-weight-bold" *ngFor="let enLetter of enLetters"
+              (click)="changeLetter(enLetter)"
+              [class.text-dark]="isCurrentLetter(enLetter)" [class.font-weight-bold]="isCurrentLetter(enLetter)"
+              [disabled]="isCurrentLetter(enLetter)">
+        {{enLetter}}
+      </button>
+    </div>
+    <div *ngIf="isRuLettersVisible()">
+      <button class="btn btn-link font-weight-bold" *ngFor="let ruLetter of ruLetters"
+              (click)="changeLetter(ruLetter)"
+              [class.text-dark]="isCurrentLetter(ruLetter)" [class.font-weight-bold]="isCurrentLetter(ruLetter)"
+              [disabled]="isCurrentLetter(ruLetter)">
+        {{ruLetter}}
+      </button>
+    </div>
+
+    <div *ngIf="!isSpeakersLisVisible()" class="alert text-center m-2">
+      {{'speakers.noSpeakersFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isSpeakersLisVisible()" class="m-2">
+      <table class="table-sm">
+        <tbody>
+        <tr *ngFor="let speaker of speakers">
+          <td>
+            <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" height="36" alt="photo"/>
+          </td>
+          <td>
+            {{speaker.displayName}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
