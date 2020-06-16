@@ -56,7 +56,6 @@ public class PhotoNamesDto extends QuestionAnswersDto {
                 );
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers.asList(),
-                language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
         Quadruple<String> names =

@@ -109,7 +109,6 @@ public class SpeakerMetricsDto {
                 .collect(Collectors.toList());
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers,
-                language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
 

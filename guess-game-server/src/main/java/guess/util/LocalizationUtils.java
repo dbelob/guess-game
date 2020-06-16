@@ -121,13 +121,11 @@ public class LocalizationUtils {
      * Gets speaker duplicates by name.
      *
      * @param speakers         speakers
-     * @param language         language
      * @param groupingFunction grouping function
      * @param filterPredicate  filter predicate
      * @return speaker duplicates
      */
-    public static Set<Speaker> getSpeakerDuplicates(List<Speaker> speakers, Language language,
-                                                    Function<Speaker, String> groupingFunction,
+    public static Set<Speaker> getSpeakerDuplicates(List<Speaker> speakers, Function<Speaker, String> groupingFunction,
                                                     Predicate<Speaker> filterPredicate) {
         return speakers.stream()
                 .collect(Collectors.groupingBy(groupingFunction))

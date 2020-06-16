@@ -53,7 +53,6 @@ public class AccountErrorDetailsDto {
 
             Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    language,
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 

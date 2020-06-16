@@ -68,7 +68,6 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
         }};
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 new ArrayList<>(talkSpeakers),
-                language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
         List<SpeakerPairDto> questionSpeakers = ((TalkQuestion) questionAnswers.getQuestion()).getSpeakers().stream()

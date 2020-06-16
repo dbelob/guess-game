@@ -207,7 +207,6 @@ public class YamlUtils {
         for (Language language : Language.values()) {
             speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    language,
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> {
                         // Without company
@@ -224,7 +223,6 @@ public class YamlUtils {
         for (Language language : Language.values()) {
             speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    language,
                     s -> LocalizationUtils.getSpeakerNameWithCompany(s, language),
                     s -> true));
         }
