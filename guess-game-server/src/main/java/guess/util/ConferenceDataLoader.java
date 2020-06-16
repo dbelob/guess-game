@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
@@ -495,17 +496,24 @@ public class ConferenceDataLoader {
             if (existingTalk == null) {
                 ruNameMap.put(ruName, talk);
             } else {
-                if (talk.getTalkDay() < existingTalk.getTalkDay()) {
+                long newTalkDay = (talk.getTalkDay() != null) ? talk.getTalkDay() : 0;
+                long existingTalkDay = (existingTalk.getTalkDay() != null) ? existingTalk.getTalkDay() : 0;
+                long newTalkTrack = (talk.getTrack() != null) ? talk.getTrack() : 0;
+                long existingTalkTrack = (existingTalk.getTrack() != null) ? existingTalk.getTrack() : 0;
+                LocalTime newTalkTrackTime = (talk.getTrackTime() != null) ? talk.getTrackTime() : LocalTime.of(0, 0);
+                LocalTime existingTalkTrackTime = (existingTalk.getTrackTime() != null) ? existingTalk.getTrackTime() : LocalTime.of(0, 0);
+
+                if (newTalkDay < existingTalkDay) {
                     // Less day
                     ruNameMap.put(ruName, talk);
-                } else if (talk.getTalkDay().equals(existingTalk.getTalkDay())) {
+                } else if (newTalkDay == existingTalkDay) {
                     // Equal day
-                    if (talk.getTrack() < existingTalk.getTrack()) {
+                    if (newTalkTrack < existingTalkTrack) {
                         // Less track
                         ruNameMap.put(ruName, talk);
-                    } else if (talk.getTrack().equals(existingTalk.getTrack())) {
+                    } else if (newTalkTrack == existingTalkTrack) {
                         // Equal track
-                        if (talk.getTrackTime().isBefore(existingTalk.getTrackTime())) {
+                        if (newTalkTrackTime.isBefore(existingTalkTrackTime)) {
                             // Less track time
                             ruNameMap.put(ruName, talk);
                         }
@@ -919,7 +927,7 @@ public class ConferenceDataLoader {
 
         // 2020
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 6, 6), "2020-spb-tt");
-        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 6, 15), "2020-spb");
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 6, 15), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 15), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 6, 22), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 6, 22), "2020-spb");
