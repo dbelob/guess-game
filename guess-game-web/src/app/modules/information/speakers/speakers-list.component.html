@@ -13,4 +13,21 @@
   <app-information-switcher [type]="'speakers'"></app-information-switcher>
 
   <app-speakers-switcher [type]="'list'"></app-speakers-switcher>
+
+  <div>
+    <button class="btn btn-link font-weight-bold" *ngFor="let enLetter of enLetters"
+            (click)="changeLetter(enLetter)"
+            [class.text-dark]="isCurrentLetter(enLetter)" [class.font-weight-bold]="isCurrentLetter(enLetter)"
+            [disabled]="isCurrentLetter(enLetter)">
+      {{enLetter}}
+    </button>
+  </div>
+  <div *ngIf="isRuLettersVisible()">
+    <button class="btn btn-link font-weight-bold" *ngFor="let ruLetter of ruLetters"
+            (click)="changeLetter(ruLetter)"
+            [class.text-dark]="isCurrentLetter(ruLetter)" [class.font-weight-bold]="isCurrentLetter(ruLetter)"
+            [disabled]="isCurrentLetter(ruLetter)">
+      {{ruLetter}}
+    </button>
+  </div>
 </div>

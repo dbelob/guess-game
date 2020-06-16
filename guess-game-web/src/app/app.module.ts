@@ -37,6 +37,7 @@ import { SpeakerStatisticsComponent } from './modules/information/statistics/spe
 import { AnswerService } from './shared/services/answer.service';
 import { QuestionService } from './shared/services/question.service';
 import { StateService } from './shared/services/state.service';
+import { SpeakerService } from './shared/services/speaker.service';
 import { StatisticsService } from './shared/services/statistics.service';
 import { StateGuard } from './shared/guards/state.guard';
 
@@ -96,7 +97,7 @@ registerLocaleData(localeRu, 'ru');
     StatisticsModule,
     UnknownModule
   ],
-  providers: [AnswerService, QuestionService, StateService, StatisticsService, StateGuard],
+  providers: [AnswerService, QuestionService, StateService, SpeakerService, StatisticsService, StateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
