@@ -7596,17 +7596,17 @@ speakers:
     name:
       - {language: en, text: "Mikhail Yarichuk"}
       - {language: ru, text: "Михаил Ярийчук"}
-    company: []
+    company:
+      - {language: en, text: Gigya-SAP}
     bio:
-      - {language: en, text: "Michael is an experienced full-stack developer with background in development of applications\
-            \ and distributed systems. By day, as member of RavenDB Core Team he works mostly on the server side of things,\
-            \ currently participates in development of a new, cross-platform version of RavenDB. By night he becomes a tinkerer\
-            \ with passion for new technologies, new ideas and coding in general, creating lots of different pet projects\
-            \ along the way."}
-      - {language: ru, text: "Разработчик Fullstack с большим опытом работы над приложениями и распределенными системами.\
-            \ На данный момент член RavenDB Core Team. Участвует в разработке новой, кроссплатформенной версии RavenDB. В\
-            \ свободное время любит экспериментировать, исследовать новые идеи и технологии — чем сложнее задача, тем инте\
-            реснее."}
+      - {language: en, text: "Michael is an experienced full-stack developer with a background in the development of applications\
+            \ and distributed systems. By day, he works at Gigya-SAP on a large scale distributed system. By night he becomes\
+            \ a tinkerer with a passion for new technologies, new ideas, and coding in general, creating lots of different\
+            \ pet projects along the way."}
+      - language: ru
+        text: "Fullstack-разработчик с большим опытом работы над приложениями и распределенными системами. На данный работ\
+            ает в компании Gigya-SAP над масштабной распределенной системой.\n\nВ свободное время любит экспериментировать\
+            , исследовать новые идеи и технологии — чем сложнее задача, тем интереснее."
     twitter: Myarichuk
   - id: 497
     fileName: 0497.jpg
@@ -7638,15 +7638,15 @@ speakers:
   - id: 499
     fileName: 0499.jpg
     name:
-      - {language: en, text: "Sergey Vasiliev"}
+      - {language: en, text: "Sergey Vasilev"}
       - {language: ru, text: "Сергей Васильев"}
     company:
       - {language: en, text: PVS-Studio}
     bio:
-      - {language: en, text: "Leading developer at PVS-Studio. He was engaged in the development of C++ and C# parser cores.\
-            \ Sergey is focused on the direction of the Tools & DevOps. Author of articles on the audit of open-source projects."}
-      - {language: ru, text: "Ведущий разработчик в PVS-Studio. Занимался разработкой С++ и C# ядер анализатора. Сосредото\
-            чен на направлении Tools & DevOps. Автор статей о проверке open-source проектов."}
+      - {language: en, text: "Тимлид направления разработки C# анализатора в команде PVS-Studio. В недалёком прошлом – тим\
+            лид команды Tools & DevOps, в более отдалённом - участвовал в разработке и поддержке C# и C++ анализаторов. Пе\
+            риодически пишет статьи (в том числе о проверке проектов, например – исходного кода библиотек .NET Core) и выс\
+            тупает на конференциях с докладами, где также проводит митапы."}
     twitter: CPP_Coder
   - id: 500
     fileName: 0500.jpg

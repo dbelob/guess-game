@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
@@ -298,6 +299,9 @@ public class ConferenceDataLoader {
                         .max(Long::compare)
                         .orElse(-1L));
 
+        // Delete talk duplicates
+        contentfulTalks = deleteTalkDuplicates(contentfulTalks);
+
         if (resourceEvent == null) {
             // Event not exists
             contentfulTalks.forEach(
@@ -474,6 +478,53 @@ public class ConferenceDataLoader {
                 YamlUtils.dumpEvent(eventToUpdate, "event-to-update.yml");
             }
         }
+    }
+
+    /**
+     * Deletes talk duplicates (with more talk day, track, track time).
+     *
+     * @param talks talks
+     * @return talks without duplicates
+     */
+    private static List<Talk> deleteTalkDuplicates(List<Talk> talks) {
+        Map<String, Talk> ruNameMap = new HashMap<>();
+
+        for (Talk talk : talks) {
+            String ruName = LocalizationUtils.getString(talk.getName(), Language.RUSSIAN);
+            Talk existingTalk = ruNameMap.get(ruName);
+
+            if (existingTalk == null) {
+                ruNameMap.put(ruName, talk);
+            } else {
+                long newTalkDay = (talk.getTalkDay() != null) ? talk.getTalkDay() : 0;
+                long existingTalkDay = (existingTalk.getTalkDay() != null) ? existingTalk.getTalkDay() : 0;
+                long newTalkTrack = (talk.getTrack() != null) ? talk.getTrack() : 0;
+                long existingTalkTrack = (existingTalk.getTrack() != null) ? existingTalk.getTrack() : 0;
+                LocalTime newTalkTrackTime = (talk.getTrackTime() != null) ? talk.getTrackTime() : LocalTime.of(0, 0);
+                LocalTime existingTalkTrackTime = (existingTalk.getTrackTime() != null) ? existingTalk.getTrackTime() : LocalTime.of(0, 0);
+
+                if (newTalkDay < existingTalkDay) {
+                    // Less day
+                    ruNameMap.put(ruName, talk);
+                } else if (newTalkDay == existingTalkDay) {
+                    // Equal day
+                    if (newTalkTrack < existingTalkTrack) {
+                        // Less track
+                        ruNameMap.put(ruName, talk);
+                    } else if (newTalkTrack == existingTalkTrack) {
+                        // Equal track
+                        if (newTalkTrackTime.isBefore(existingTalkTrackTime)) {
+                            // Less track time
+                            ruNameMap.put(ruName, talk);
+                        }
+                    }
+                }
+            }
+        }
+
+        return talks.stream()
+                .filter(t -> t.equals(ruNameMap.get(LocalizationUtils.getString(t.getName(), Language.RUSSIAN))))
+                .collect(Collectors.toList());
     }
 
     /**
