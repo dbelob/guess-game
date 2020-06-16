@@ -1,5 +1,9 @@
 package guess.domain.source;
 
+import guess.domain.Language;
+import guess.util.LocalizationUtils;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -117,6 +121,36 @@ public class Speaker {
 
     public boolean isAnyMvp() {
         return (mvp || mvpReconnect);
+    }
+
+    public List<LocaleItem> getNameWithLastNameFirst() {
+        if (name == null) {
+            return name;
+        }
+
+        List<LocaleItem> result = new ArrayList<>();
+
+        for (LocaleItem localeItem : name) {
+            Language language = Language.getLanguageByCode(localeItem.getLanguage());
+
+            if (language != null) {
+                String localeName = LocalizationUtils.getString(name, language).trim();
+                int lastIndex = localeName.lastIndexOf(' ');
+                String resultLocaleName;
+
+                if ((lastIndex >= 0) && ((lastIndex + 1) <= localeName.length())) {
+                    resultLocaleName = localeName.substring(lastIndex + 1) + ' ' + localeName.substring(0, lastIndex);
+                } else {
+                    resultLocaleName = localeName;
+                }
+
+                result.add(new LocaleItem(localeItem.getLanguage(), resultLocaleName));
+            } else {
+                result.add(localeItem);
+            }
+        }
+
+        return result;
     }
 
     @Override

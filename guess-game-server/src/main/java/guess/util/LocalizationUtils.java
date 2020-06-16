@@ -102,6 +102,22 @@ public class LocalizationUtils {
     }
 
     /**
+     * Gets speaker name with last name first with company name.
+     *
+     * @param speaker  speaker
+     * @param language language
+     * @return speaker name with company name
+     */
+    public static String getSpeakerNameWithLastNameFirstWithCompany(Speaker speaker, Language language) {
+        String name = LocalizationUtils.getString(speaker.getNameWithLastNameFirst(), language);
+        String company = LocalizationUtils.getString(speaker.getCompany(), language);
+
+        return ((company != null) && !company.isEmpty()) ?
+                String.format("%s (%s)", name, company) :
+                name;
+    }
+
+    /**
      * Gets speaker duplicates by name.
      *
      * @param speakers         speakers
@@ -134,5 +150,19 @@ public class LocalizationUtils {
         return speakerDuplicates.contains(speaker) ?
                 LocalizationUtils.getSpeakerNameWithCompany(speaker, language) :
                 LocalizationUtils.getString(speaker.getName(), language);
+    }
+
+    /**
+     * Gets speaker name with last name first.
+     *
+     * @param speaker           speaker
+     * @param language          language
+     * @param speakerDuplicates speaker duplicates
+     * @return speaker name
+     */
+    public static String getSpeakerNameWithLastNameFirst(Speaker speaker, Language language, Set<Speaker> speakerDuplicates) {
+        return speakerDuplicates.contains(speaker) ?
+                LocalizationUtils.getSpeakerNameWithLastNameFirstWithCompany(speaker, language) :
+                LocalizationUtils.getString(speaker.getNameWithLastNameFirst(), language);
     }
 }
