@@ -8,6 +8,7 @@ import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
 import { GeneralModule } from '../general/general.module';
+import { InformationModule } from '../information/information.module';
 import { MessageModule } from '../message/message.module';
 import { EventTypeStatisticsComponent } from './event-type-statistics.component';
 import { EventStatisticsComponent } from './event-statistics.component';
@@ -27,11 +28,12 @@ import { StatisticsSwitcherComponent } from './statistics-switcher.component';
     CheckboxModule,
     DropdownModule,
     RouterModule,
-    TranslateModule,
     TableModule,
     TooltipModule,
     GeneralModule,
-    MessageModule
+    InformationModule,
+    MessageModule,
+    TranslateModule
   ]
 })
 export class StatisticsModule {

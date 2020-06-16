@@ -1,0 +1,10 @@
+<div>
+  <button class="btn btn-link font-weight-bold" routerLink="/information/speakers/list"
+          [class.text-dark]="isList()" [class.font-weight-bold]="isList()" [disabled]="isList()">
+    {{'speakers.list.title' | translate}}
+  </button>
+  <button class="btn btn-link" routerLink="/information/speakers/search"
+          [class.text-dark]="isSearch()" [class.font-weight-bold]="isSearch()" [disabled]="isSearch()">
+    {{'speakers.search.title' | translate}}
+  </button>
+</div>

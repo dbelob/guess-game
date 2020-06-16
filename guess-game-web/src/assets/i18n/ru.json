@@ -50,6 +50,15 @@
     "yesButtonText": "Да",
     "noButtonText": "Нет"
   },
+  "speakers": {
+    "title": "Спикеры",
+    "list": {
+      "title": "Список"
+    },
+    "search": {
+      "title": "Поиск"
+    }
+  },
   "statistics": {
     "title": "Статистика",
     "eventTypes": {

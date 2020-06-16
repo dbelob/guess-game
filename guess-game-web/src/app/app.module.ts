@@ -10,10 +10,12 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
-import { StartModule } from './modules/start/start.module';
+import { InformationModule } from './modules/information/information.module';
 import { GuessModule } from './modules/guess/guess.module';
 import { MessageModule } from './modules/message/message.module';
 import { ResultModule } from './modules/result/result.module';
+import { StartModule } from './modules/start/start.module';
+import { SpeakersModule } from './modules/speakers/speakers.module';
 import { StatisticsModule } from './modules/statistics/statistics.module';
 import { UnknownModule } from './modules/unknown/unknown.module';
 import { HomeComponent } from './modules/home/home.component';
@@ -27,6 +29,8 @@ import { GuessAccountBySpeakerComponent } from './modules/guess/guess-account-by
 import { GuessSpeakerByAccountComponent } from './modules/guess/guess-speaker-by-account.component';
 import { CancelGameComponent } from './modules/guess/cancel-game.component';
 import { NotFoundComponent } from './modules/unknown/not-found.component';
+import { SpeakersListComponent } from './modules/speakers/speakers-list.component';
+import { SpeakersSearchComponent } from './modules/speakers/speakers-search.component';
 import { EventTypeStatisticsComponent } from './modules/statistics/event-type-statistics.component';
 import { EventStatisticsComponent } from './modules/statistics/event-statistics.component';
 import { SpeakerStatisticsComponent } from './modules/statistics/speaker-statistics.component';
@@ -47,9 +51,13 @@ const routes: Routes = [
   {path: 'guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
+  {path: 'information/speakers/list', component: SpeakersListComponent},
+  {path: 'information/speakers/search', component: SpeakersSearchComponent},
   {path: 'information/statistics/event-types', component: EventTypeStatisticsComponent},
   {path: 'information/statistics/events', component: EventStatisticsComponent},
   {path: 'information/statistics/speakers', component: SpeakerStatisticsComponent},
+  {path: 'information/speakers', redirectTo: 'information/speakers/list'},
+  {path: 'information/statistics', redirectTo: 'information/statistics/event-types'},
   {path: 'information', redirectTo: 'information/statistics/event-types'},
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '**', component: NotFoundComponent}
@@ -79,10 +87,12 @@ registerLocaleData(localeRu, 'ru');
       }
     }),
     HomeModule,
+    InformationModule,
     GuessModule,
     MessageModule,
     ResultModule,
     StartModule,
+    SpeakersModule,
     StatisticsModule,
     UnknownModule
   ],

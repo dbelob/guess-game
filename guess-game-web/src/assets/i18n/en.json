@@ -50,6 +50,15 @@
     "yesButtonText": "Yes",
     "noButtonText": "No"
   },
+  "speakers": {
+    "title": "Speakers",
+    "list": {
+      "title": "List"
+    },
+    "search": {
+      "title": "Search"
+    }
+  },
   "statistics": {
     "title": "Statistics",
     "eventTypes": {
