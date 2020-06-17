@@ -54,7 +54,13 @@
     "title": "Speakers",
     "noSpeakersFoundText": "No speakers found",
     "list": {
-      "title": "List"
+      "title": "List",
+      "table": {
+        "nameColumn": "Name",
+        "companyColumn": "Company",
+        "javaChampionColumn": "Java Champion",
+        "mvpColumn": "MVP"
+      }
     },
     "search": {
       "title": "Search"

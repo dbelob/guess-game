@@ -37,18 +37,45 @@
     </div>
 
     <div *ngIf="isSpeakersLisVisible()" class="m-2">
-      <table class="table-sm">
-        <tbody>
-        <tr *ngFor="let speaker of speakers">
-          <td>
-            <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" height="36" alt="photo"/>
-          </td>
-          <td>
-            {{speaker.displayName}}
-          </td>
-        </tr>
-        </tbody>
-      </table>
+      <p-table [value]="speakers" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.list.table.nameColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.list.table.companyColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.list.table.javaChampionColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.list.table.mvpColumn' | translate}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-speaker let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" height="24" alt="photo"/>
+              <span class="ml-2">{{speaker.displayName}}</span>
+            </td>
+            <td>{{speaker.company}}</td>
+            <td class="text-center">
+              <img *ngIf="speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" height="24" alt="java-champion"/>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" height="24" alt="mvp"/>
+              <img *ngIf="speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
   </div>
 </div>

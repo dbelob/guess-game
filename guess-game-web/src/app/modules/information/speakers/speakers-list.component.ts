@@ -12,6 +12,7 @@ export class SpeakersListComponent implements OnInit {
   private readonly RUSSIAN_LANG = 'ru';
 
   private imageDirectory = 'assets/images';
+  public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
 
   public enLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',

@@ -32,8 +32,8 @@ public class SpeakerMetricsDto {
         this.fileName = fileName;
         this.javaChampion = javaChampion;
         this.mvp = mvp;
-        this.anyMvp = anyMvp;
         this.mvpReconnect = mvpReconnect;
+        this.anyMvp = anyMvp;
         this.talksQuantity = talksQuantity;
         this.eventsQuantity = eventsQuantity;
         this.eventTypesQuantity = eventTypesQuantity;
