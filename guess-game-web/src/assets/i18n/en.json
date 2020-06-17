@@ -63,7 +63,15 @@
       }
     },
     "search": {
-      "title": "Search"
+      "title": "Search",
+      "nameLabel": "Name:",
+      "companyLabel": "Company:",
+      "twitterLabel": "Twitter:",
+      "gitHubLabel": "GitHub:",
+      "javaChampionLabel": "Java Champion",
+      "mvpLabel": "MVP",
+      "searchButtonText": "Search",
+      "clearButtonText": "Clear"
     }
   },
   "statistics": {

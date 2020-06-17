@@ -63,7 +63,15 @@
       }
     },
     "search": {
-      "title": "Поиск"
+      "title": "Поиск",
+      "nameLabel": "Имя:",
+      "companyLabel": "Компания:",
+      "twitterLabel": "Twitter:",
+      "gitHubLabel": "GitHub:",
+      "javaChampionLabel": "Java Champion",
+      "mvpLabel": "MVP",
+      "searchButtonText": "Поиск",
+      "clearButtonText": "Очистить"
     }
   },
   "statistics": {

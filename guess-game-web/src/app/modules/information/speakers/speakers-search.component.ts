@@ -5,6 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './speakers-search.component.html'
 })
 export class SpeakersSearchComponent implements OnInit {
+  public name: string;
+  public company: string;
+  public twitter: string;
+  public gitHub: string;
+  public isJavaChampion = false;
+  public isMvp = false;
+
   constructor() {
   }
 
@@ -12,6 +19,22 @@ export class SpeakersSearchComponent implements OnInit {
   }
 
   onLanguageChange() {
+    // TODO: implement
+  }
+
+  onJavaChampionChange(checked: boolean) {
+    // TODO: implement
+  }
+
+  onMvpChange(checked: boolean) {
+    // TODO: implement
+  }
+
+  search() {
+    // TODO: implement
+  }
+
+  clear() {
     // TODO: implement
   }
 }
