@@ -28,7 +28,15 @@ public class SpeakerServiceImpl implements SpeakerService {
         return speakerDao.getSpeakers().stream()
                 .filter(s -> {
                     String name = LocalizationUtils.getString(s.getNameWithLastNameFirst(), language);
-                    String nameFirstLetter = ((name != null) && (name.length() > 0)) ? name.substring(0, 1) : null;
+                    String nameFirstLetter;
+
+                    if (name != null) {
+                        String trimmedName = name.trim();
+
+                        nameFirstLetter = (trimmedName.length() > 0) ? trimmedName.substring(0, 1) : null;
+                    } else {
+                        nameFirstLetter = null;
+                    }
 
                     return firstLetter.equalsIgnoreCase(nameFirstLetter);
                 })
@@ -41,26 +49,31 @@ public class SpeakerServiceImpl implements SpeakerService {
         String trimmedLowerCasedCompany = trimAndLowerCase(company);
         String trimmedLowerCasedTwitter = trimAndLowerCase(twitter);
         String trimmedLowerCasedGitHub = trimAndLowerCase(gitHub);
+        boolean isNameSet = isStringSet(trimmedLowerCasedName);
+        boolean isCompanySet = isStringSet(trimmedLowerCasedCompany);
+        boolean isTwitterSet = isStringSet(trimmedLowerCasedTwitter);
+        boolean isGitHubSet = isStringSet(trimmedLowerCasedGitHub);
 
         return speakerDao.getSpeakers().stream()
-                .filter(s -> {
-                    return (isSubstringFound(trimmedLowerCasedName, s.getName()) ||
-                            isSubstringFound(trimmedLowerCasedCompany, s.getCompany()) ||
-                            isSubstringFound(trimmedLowerCasedTwitter, s.getTwitter()) ||
-                            isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub()) ||
-                            (isJavaChampion && s.isJavaChampion()) ||
-                            (isMvp && s.isAnyMvp()));
-                })
+                .filter(s -> ((!isNameSet || isSubstringFound(trimmedLowerCasedName, s.getName())) &&
+                        (!isCompanySet || isSubstringFound(trimmedLowerCasedCompany, s.getCompany())) &&
+                        (!isTwitterSet || isSubstringFound(trimmedLowerCasedTwitter, s.getTwitter())) &&
+                        (!isGitHubSet || isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub())) &&
+                        (!isJavaChampion || s.isJavaChampion()) &&
+                        (!isMvp || s.isAnyMvp())))
                 .collect(Collectors.toList());
-
     }
 
     private String trimAndLowerCase(String value) {
         return (value != null) ? value.trim().toLowerCase() : null;
     }
 
+    private boolean isStringSet(String string) {
+        return ((string != null) && !string.isEmpty());
+    }
+
     private boolean isSubstringFound(String trimmedLowerCasedSubstring, List<LocaleItem> localeItems) {
-        if ((trimmedLowerCasedSubstring == null) || trimmedLowerCasedSubstring.isEmpty()) {
+        if (!isStringSet(trimmedLowerCasedSubstring) || (localeItems == null)) {
             return false;
         }
 
@@ -74,13 +87,13 @@ public class SpeakerServiceImpl implements SpeakerService {
     }
 
     private boolean isSubstringFound(String trimmedLowerCasedSubstring, String item) {
-        if ((trimmedLowerCasedSubstring == null) || trimmedLowerCasedSubstring.isEmpty()) {
+        if (!isStringSet(trimmedLowerCasedSubstring)) {
             return false;
         }
 
         String trimmedLowerCasedItem = trimAndLowerCase(item);
 
-        if ((trimmedLowerCasedItem == null) || trimmedLowerCasedItem.isEmpty()) {
+        if (!isStringSet(trimmedLowerCasedItem)) {
             return false;
         }
 
