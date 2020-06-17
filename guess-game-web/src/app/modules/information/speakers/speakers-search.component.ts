@@ -23,6 +23,8 @@ export class SpeakersSearchComponent implements OnInit {
 
   public speakers: Speaker[] = [];
 
+  private searched = false;
+
   constructor(public speakerService: SpeakerService, public translateService: TranslateService) {
   }
 
@@ -33,30 +35,53 @@ export class SpeakersSearchComponent implements OnInit {
     this.speakerService.getSpeakers(name, company, twitter, gitHub, isJavaChampion, isMvp)
       .subscribe(data => {
         this.speakers = data;
+        this.searched = true;
       });
   }
 
   onLanguageChange() {
-    this.loadSpeakers(this.name, this.company, this.twitter, this.gitHub, this.isJavaChampion, this.isMvp);
+    this.search();
   }
 
-  onJavaChampionChange(checked: boolean) {
-    // TODO: implement
-  }
-
-  onMvpChange(checked: boolean) {
-    // TODO: implement
+  onFilterChange(value: any) {
+    this.searched = false;
   }
 
   search() {
-    this.loadSpeakers(this.name, this.company, this.twitter, this.gitHub, this.isJavaChampion, this.isMvp);
+    if (!this.isSearchDisabled()) {
+      this.loadSpeakers(this.name, this.company, this.twitter, this.gitHub, this.isJavaChampion, this.isMvp);
+    }
   }
 
   clear() {
-    // TODO: implement
+    this.name = undefined;
+    this.company = undefined;
+    this.twitter = undefined;
+    this.gitHub = undefined;
+    this.isJavaChampion = false;
+    this.isMvp = false;
+    this.speakers = [];
+    this.searched = false;
+  }
+
+  isSearchDisabled(): boolean {
+    return this.isStringEmpty(this.name) &&
+      this.isStringEmpty(this.company) &&
+      this.isStringEmpty(this.twitter) &&
+      this.isStringEmpty(this.gitHub) &&
+      (!this.isJavaChampion) &&
+      (!this.isMvp);
+  }
+
+  isStringEmpty(value: string): boolean {
+    return (!value || (value.trim().length <= 0));
+  }
+
+  isNoSpeakersFoundVisible() {
+    return (this.searched && (this.speakers.length === 0));
   }
 
   isSpeakersListVisible() {
-    return (this.speakers.length > 0);
+    return (this.searched && (this.speakers.length > 0));
   }
 }

@@ -8,6 +8,7 @@ import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,14 +55,18 @@ public class SpeakerServiceImpl implements SpeakerService {
         boolean isTwitterSet = isStringSet(trimmedLowerCasedTwitter);
         boolean isGitHubSet = isStringSet(trimmedLowerCasedGitHub);
 
-        return speakerDao.getSpeakers().stream()
-                .filter(s -> ((!isNameSet || isSubstringFound(trimmedLowerCasedName, s.getName())) &&
-                        (!isCompanySet || isSubstringFound(trimmedLowerCasedCompany, s.getCompany())) &&
-                        (!isTwitterSet || isSubstringFound(trimmedLowerCasedTwitter, s.getTwitter())) &&
-                        (!isGitHubSet || isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub())) &&
-                        (!isJavaChampion || s.isJavaChampion()) &&
-                        (!isMvp || s.isAnyMvp())))
-                .collect(Collectors.toList());
+        if (!isNameSet && !isCompanySet && !isTwitterSet && !isGitHubSet && !isJavaChampion && !isMvp) {
+            return Collections.emptyList();
+        } else {
+            return speakerDao.getSpeakers().stream()
+                    .filter(s -> ((!isNameSet || isSubstringFound(trimmedLowerCasedName, s.getName())) &&
+                            (!isCompanySet || isSubstringFound(trimmedLowerCasedCompany, s.getCompany())) &&
+                            (!isTwitterSet || isSubstringFound(trimmedLowerCasedTwitter, s.getTwitter())) &&
+                            (!isGitHubSet || isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub())) &&
+                            (!isJavaChampion || s.isJavaChampion()) &&
+                            (!isMvp || s.isAnyMvp())))
+                    .collect(Collectors.toList());
+        }
     }
 
     private String trimAndLowerCase(String value) {
