@@ -32,11 +32,11 @@
       </button>
     </div>
 
-    <div *ngIf="!isSpeakersLisVisible()" class="alert text-center m-2">
+    <div *ngIf="!isSpeakersListVisible()" class="alert text-center m-2">
       {{'speakers.noSpeakersFoundText' | translate}}
     </div>
 
-    <div *ngIf="isSpeakersLisVisible()" class="m-2">
+    <div *ngIf="isSpeakersListVisible()" class="m-2">
       <p-table [value]="speakers" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"

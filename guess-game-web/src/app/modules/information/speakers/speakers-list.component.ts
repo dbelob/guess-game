@@ -55,7 +55,7 @@ export class SpeakersListComponent implements OnInit {
     return (this.translateService.currentLang === this.RUSSIAN_LANG);
   }
 
-  isSpeakersLisVisible() {
+  isSpeakersListVisible() {
     return (this.speakers.length > 0);
   }
 }

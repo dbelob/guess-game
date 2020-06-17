@@ -26,4 +26,30 @@ export class SpeakerService {
         })
       );
   }
+
+  getSpeakers(name: string, company: string, twitter: string, gitHub: string, javaChampion: boolean, mvp: boolean): Observable<Speaker[]> {
+    let params = new HttpParams()
+      .set('javaChampion', javaChampion.toString())
+      .set('mvp', mvp.toString());
+    if (name) {
+      params = params.set('name', name.toString());
+    }
+    if (company) {
+      params = params.set('company', company.toString());
+    }
+    if (twitter) {
+      params = params.set('twitter', twitter.toString());
+    }
+    if (gitHub) {
+      params = params.set('gitHub', gitHub.toString());
+    }
+
+    return this.http.get<Speaker[]>(`${this.baseUrl}/speakers`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
 }

@@ -14,42 +14,90 @@
 
   <app-speakers-switcher [type]="'search'"></app-speakers-switcher>
 
-  <form role="form" class="m-3">
-    <div class="form-group row justify-content-center">
-      <label for="name" class="col-sm-2">{{'speakers.search.nameLabel' | translate}}</label>
-      <div class="col-sm-4">
-        <input type="text" id="name" pInputText class="form-control" [(ngModel)]="name" name="name"/>
+  <div class="m-1">
+    <form role="form" class="m-2">
+      <div class="form-group row justify-content-center">
+        <label for="name" class="col-sm-2">{{'speakers.search.nameLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="name" pInputText class="form-control" [(ngModel)]="name" name="name"/>
+        </div>
+        <label for="company" class="col-sm-2">{{'speakers.search.companyLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="company" pInputText class="form-control" [(ngModel)]="company" name="company"/>
+        </div>
       </div>
-      <label for="company" class="col-sm-2">{{'speakers.search.companyLabel' | translate}}</label>
-      <div class="col-sm-4">
-        <input type="text" id="company" pInputText class="form-control" [(ngModel)]="company" name="company"/>
+      <div class="form-group row justify-content-center">
+        <label for="twitter" class="col-sm-2">{{'speakers.search.twitterLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="twitter" pInputText class="form-control" [(ngModel)]="twitter" name="twitter"/>
+        </div>
+        <label for="gitHub" class="col-sm-2">{{'speakers.search.gitHubLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="gitHub" pInputText class="form-control" [(ngModel)]="gitHub" name="gitHub"/>
+        </div>
       </div>
+      <div class="form-group row justify-content-center">
+        <div class="col-auto">
+          <p-checkbox name="group1" value="conferences" label="{{'speakers.search.javaChampionLabel' | translate}}"
+                      [(ngModel)]="isJavaChampion" binary="true"
+                      (onChange)="onJavaChampionChange($event.checked)"></p-checkbox>
+        </div>
+        <div class="col-auto">
+          <p-checkbox name="group1" value="meetups" label="{{'speakers.search.mvpLabel' | translate}}"
+                      [(ngModel)]="isMvp" binary="true"
+                      (onChange)="onMvpChange($event.checked)"></p-checkbox>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary m-1" (click)="search()">{{'speakers.search.searchButtonText' | translate}}</button>
+        <button class="btn btn-secondary m-1" (click)="clear()">{{'speakers.search.clearButtonText' | translate}}</button>
+      </div>
+    </form>
+
+    <div *ngIf="!isSpeakersListVisible()" class="alert text-center m-2">
+      {{'speakers.noSpeakersFoundText' | translate}}
     </div>
-    <div class="form-group row justify-content-center">
-      <label for="twitter" class="col-sm-2">{{'speakers.search.twitterLabel' | translate}}</label>
-      <div class="col-sm-4">
-        <input type="text" id="twitter" pInputText class="form-control" [(ngModel)]="twitter" name="twitter"/>
-      </div>
-      <label for="gitHub" class="col-sm-2">{{'speakers.search.gitHubLabel' | translate}}</label>
-      <div class="col-sm-4">
-        <input type="text" id="gitHub" pInputText class="form-control" [(ngModel)]="gitHub" name="gitHub"/>
-      </div>
+
+    <div *ngIf="isSpeakersListVisible()" class="ml-2 mr-2 mb-2 mt-3">
+      <p-table [value]="speakers" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.list.table.nameColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.list.table.companyColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.list.table.javaChampionColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.list.table.mvpColumn' | translate}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-speaker let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" height="24" alt="photo"/>
+              <span class="ml-2">{{speaker.displayName}}</span>
+            </td>
+            <td>{{speaker.company}}</td>
+            <td class="text-center">
+              <img *ngIf="speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" height="24" alt="java-champion"/>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" height="24" alt="mvp"/>
+              <img *ngIf="speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
-    <div class="form-group row justify-content-center">
-      <div class="col-auto">
-        <p-checkbox name="group1" value="conferences" label="{{'speakers.search.javaChampionLabel' | translate}}"
-                    [(ngModel)]="isJavaChampion" binary="true"
-                    (onChange)="onJavaChampionChange($event.checked)"></p-checkbox>
-      </div>
-      <div class="col-auto">
-        <p-checkbox name="group1" value="meetups" label="{{'speakers.search.mvpLabel' | translate}}"
-                    [(ngModel)]="isMvp" binary="true"
-                    (onChange)="onMvpChange($event.checked)"></p-checkbox>
-      </div>
-    </div>
-    <div class="text-center">
-      <button class="btn btn-primary m-1" (click)="search()">{{'speakers.search.searchButtonText' | translate}}</button>
-      <button class="btn btn-secondary m-1" (click)="clear()">{{'speakers.search.clearButtonText' | translate}}</button>
-    </div>
-  </form>
+  </div>
 </div>

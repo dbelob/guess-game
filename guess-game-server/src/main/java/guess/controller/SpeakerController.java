@@ -36,6 +36,23 @@ public class SpeakerController {
     public List<SpeakerBriefDto> getSpeakersByFirstLetter(@RequestParam String firstLetter, HttpSession httpSession) {
         Language language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetter(firstLetter, language);
+
+        return convertToBriefDtoAndSort(speakers, language);
+    }
+
+    @GetMapping("/speakers")
+    @ResponseBody
+    public List<SpeakerBriefDto> getSpeakers(@RequestParam(required = false) String name, @RequestParam(required = false) String company,
+                                             @RequestParam(required = false) String twitter, @RequestParam(required = false) String gitHub,
+                                             @RequestParam boolean javaChampion, @RequestParam boolean mvp,
+                                             HttpSession httpSession) {
+        Language language = localeService.getLanguage(httpSession);
+        List<Speaker> speakers = speakerService.getSpeakers(name, company, twitter, gitHub, javaChampion, mvp);
+
+        return convertToBriefDtoAndSort(speakers, language);
+    }
+
+    private List<SpeakerBriefDto> convertToBriefDtoAndSort(List<Speaker> speakers, Language language) {
         List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language);
 
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);

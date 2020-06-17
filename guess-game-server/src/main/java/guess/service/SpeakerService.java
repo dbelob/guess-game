@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface SpeakerService {
     List<Speaker> getSpeakersByFirstLetter(String firstLetter, Language language);
+
+    List<Speaker> getSpeakers(String name, String company, String twitter, String gitHub, boolean isJavaChampion, boolean isMvp);
 }
