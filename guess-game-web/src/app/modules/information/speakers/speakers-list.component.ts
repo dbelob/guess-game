@@ -14,6 +14,8 @@ export class SpeakersListComponent implements OnInit {
   private imageDirectory = 'assets/images';
   public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
+  public twitterUrlPrefix = 'https://twitter.com';
+  public gitHubUrlPrefix = 'https://github.com';
 
   public enLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
     'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];

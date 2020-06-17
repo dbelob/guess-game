@@ -53,14 +53,16 @@
   "speakers": {
     "title": "Speakers",
     "noSpeakersFoundText": "No speakers found",
+    "table": {
+      "nameColumn": "Name",
+      "companyColumn": "Company",
+      "twitterColumn": "Twitter",
+      "gitHubColumn": "GitHub",
+      "javaChampionColumn": "Java Champion",
+      "mvpColumn": "MVP"
+    },
     "list": {
-      "title": "List",
-      "table": {
-        "nameColumn": "Name",
-        "companyColumn": "Company",
-        "javaChampionColumn": "Java Champion",
-        "mvpColumn": "MVP"
-      }
+      "title": "List"
     },
     "search": {
       "title": "Search",

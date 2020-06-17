@@ -11,6 +11,8 @@ export class SpeakersSearchComponent implements OnInit {
   private imageDirectory = 'assets/images';
   public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
+  public twitterUrlPrefix = 'https://twitter.com';
+  public gitHubUrlPrefix = 'https://github.com';
 
   public name: string;
   public company: string;

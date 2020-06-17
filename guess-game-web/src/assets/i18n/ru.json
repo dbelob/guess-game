@@ -53,14 +53,16 @@
   "speakers": {
     "title": "Спикеры",
     "noSpeakersFoundText": "Спикеры не найдены",
+    "table": {
+      "nameColumn": "Имя",
+      "companyColumn": "Компания",
+      "twitterColumn": "Twitter",
+      "gitHubColumn": "GitHub",
+      "javaChampionColumn": "Java Champion",
+      "mvpColumn": "MVP"
+    },
     "list": {
-      "title": "Список",
-      "table": {
-        "nameColumn": "Имя",
-        "companyColumn": "Компания",
-        "javaChampionColumn": "Java Champion",
-        "mvpColumn": "MVP"
-      }
+      "title": "Список"
     },
     "search": {
       "title": "Поиск",

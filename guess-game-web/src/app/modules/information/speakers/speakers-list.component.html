@@ -45,16 +45,22 @@
           <tr>
             <th class="text-center" pResizableColumn>#</th>
             <th class="text-center" pResizableColumn>
-              {{'speakers.list.table.nameColumn' | translate}}
+              {{'speakers.table.nameColumn' | translate}}
             </th>
             <th class="text-center" pResizableColumn>
-              {{'speakers.list.table.companyColumn' | translate}}
+              {{'speakers.table.companyColumn' | translate}}
             </th>
             <th class="text-center" pResizableColumn>
-              {{'speakers.list.table.javaChampionColumn' | translate}}
+              {{'speakers.table.twitterColumn' | translate}}
             </th>
             <th class="text-center" pResizableColumn>
-              {{'speakers.list.table.mvpColumn' | translate}}
+              {{'speakers.table.gitHubColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.table.javaChampionColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.table.mvpColumn' | translate}}
             </th>
           </tr>
         </ng-template>
@@ -66,6 +72,16 @@
               <span class="ml-2">{{speaker.displayName}}</span>
             </td>
             <td>{{speaker.company}}</td>
+            <td>
+              <a *ngIf="speaker.twitter" href="{{twitterUrlPrefix}}/{{speaker.twitter}}" class="text-primary">
+                <i class="fa fa-twitter"></i>{{speaker.twitter}}
+              </a>
+            </td>
+            <td>
+              <a *ngIf="speaker.gitHub" href="{{gitHubUrlPrefix}}/{{speaker.gitHub}}" class="text-dark">
+                <i class="fa fa-github"></i>{{speaker.gitHub}}
+              </a>
+            </td>
             <td class="text-center">
               <img *ngIf="speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" height="24" alt="java-champion"/>
             </td>
