@@ -373,6 +373,9 @@ speakers:
     name:
       - {language: en, text: "Nikolay Potashnikov"}
       - {language: ru, text: "Николай Поташников"}
+    company:
+      - {language: en, text: KURS}
+      - {language: ru, text: КУРС}
   - id: 21
     fileName: 0021.jpg
     name:
