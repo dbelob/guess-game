@@ -25,7 +25,12 @@ public class SpeakerServiceImpl implements SpeakerService {
     @Override
     public List<Speaker> getSpeakersByFirstLetter(String firstLetter, Language language) {
         return speakerDao.getSpeakers().stream()
-                .filter(s -> LocalizationUtils.getString(s.getNameWithLastNameFirst(), language).startsWith(firstLetter))
+                .filter(s -> {
+                    String name = LocalizationUtils.getString(s.getNameWithLastNameFirst(), language);
+                    String nameFirstLetter = ((name != null) && (name.length() > 0)) ? name.substring(0, 1) : null;
+
+                    return firstLetter.equalsIgnoreCase(nameFirstLetter);
+                })
                 .collect(Collectors.toList());
     }
 }

@@ -38,7 +38,10 @@ public class SpeakerController {
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetter(firstLetter, language);
         List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language);
 
-        speakerBriefDtoList.sort(Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER));
+        Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
+        Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(SpeakerBriefDto::getCompany, String.CASE_INSENSITIVE_ORDER);
+
+        speakerBriefDtoList.sort(comparatorByName.thenComparing(comparatorByCompany));
 
         return speakerBriefDtoList;
     }
