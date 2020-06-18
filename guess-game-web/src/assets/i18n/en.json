@@ -53,6 +53,7 @@
   "speaker": {
     "title": "Speaker",
     "table": {
+      "title": "Talks",
       "eventColumn": "Event",
       "talkDateColumn": "Talk date",
       "nameColumn": "Name"

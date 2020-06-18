@@ -10,7 +10,11 @@ import { SpeakerService } from '../../../shared/services/speaker.service';
 })
 export class SpeakerComponent implements OnInit {
   private imageDirectory = 'assets/images';
+  public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public eventsImageDirectory = `${this.imageDirectory}/events`;
+  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
+  public twitterUrlPrefix = 'https://twitter.com';
+  public gitHubUrlPrefix = 'https://github.com';
 
   private id: number;
   public speakerDetails: SpeakerDetails = new SpeakerDetails();

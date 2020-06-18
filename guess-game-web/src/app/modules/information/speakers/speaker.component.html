@@ -15,9 +15,32 @@
   <app-speakers-switcher></app-speakers-switcher>
 
   <div class="m-1">
-    <div class="m-2">{{speakerDetails.speaker.name}}</div>
+    <div class="m-2">
+      <h3>{{speakerDetails.speaker.name}}</h3>
+      <p class="font-italic">{{speakerDetails.speaker.company}}</p>
+      <img src="{{speakersImageDirectory}}/{{speakerDetails.speaker.fileName}}" alt="photo">
+      <div>
+        <a *ngIf="speakerDetails.speaker.twitter" href="{{twitterUrlPrefix}}/{{speakerDetails.speaker.twitter}}" class="text-primary">
+          <i class="fa fa-twitter"></i>{{speakerDetails.speaker.twitter}}
+        </a>
+      </div>
+      <div>
+        <a *ngIf="speakerDetails.speaker.gitHub" href="{{gitHubUrlPrefix}}/{{speakerDetails.speaker.gitHub}}" class="text-dark">
+          <i class="fa fa-github"></i>{{speakerDetails.speaker.gitHub}}
+        </a>
+      </div>
+      <div>
+        <img *ngIf="speakerDetails.speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" height="36" alt="java-champion"/>
+      </div>
+      <div>
+        <img *ngIf="speakerDetails.speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" height="36" alt="mvp"/>
+        <img *ngIf="speakerDetails.speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
+      </div>
+      <p>{{speakerDetails.speaker.bio}}</p>
+    </div>
 
     <div *ngIf="isTalksListVisible()" class="m-2">
+      <h4>{{'speaker.table.title' | translate}}</h4>
       <p-table [value]="speakerDetails.talks" [resizableColumns]="true" [autoLayout]="true"
                [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"

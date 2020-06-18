@@ -53,6 +53,7 @@
   "speaker": {
     "title": "Спикер",
     "table": {
+      "title": "Доклады",
       "eventColumn": "Событие",
       "talkDateColumn": "Дата доклада",
       "nameColumn": "Наименование"
