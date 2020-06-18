@@ -77,24 +77,18 @@
         <tr>
           <td class="text-center">{{i + 1}}</td>
           <td>
-            <span *ngIf="eventTypeMetrics.conference" pTooltip="{{'common.eventTypeKind.conference' | translate}}" tooltipPosition="bottom">
+            <span *ngIf="eventTypeMetrics.conference">
               {{'common.eventTypeKind.conference' | translate}}
             </span>
-            <span *ngIf="!eventTypeMetrics.conference" pTooltip="{{'common.eventTypeKind.meetup' | translate}}" tooltipPosition="bottom">
+            <span *ngIf="!eventTypeMetrics.conference">
               {{'common.eventTypeKind.meetup' | translate}}
             </span>
           </td>
           <td>
-            <span pTooltip="{{eventTypeMetrics.displayName}}" tooltipPosition="bottom">
-              <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" height="24" alt="logo"/>
-              <span class="ml-2">{{eventTypeMetrics.displayName}}</span>
-            </span>
+            <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" height="24" alt="logo"/>
+            <span class="ml-2">{{eventTypeMetrics.displayName}}</span>
           </td>
-          <td class="text-center">
-            <span pTooltip="{{eventTypeMetrics.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
-              {{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}
-            </span>
-          </td>
+          <td class="text-center">{{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeMetrics.age | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
@@ -107,11 +101,7 @@
       <ng-template pTemplate="footer">
         <tr>
           <td colspan="3">{{'common.totalsText' | translate}}</td>
-          <td class="text-center">
-            <span pTooltip="{{eventTypeStatistics.totals?.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
-              {{eventTypeStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}
-            </span>
-          </td>
+          <td class="text-center">{{eventTypeStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeStatistics.totals?.age | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeStatistics.totals?.duration | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventTypeStatistics.totals?.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>

@@ -70,16 +70,10 @@
         <tr>
           <td class="text-center">{{i + 1}}</td>
           <td>
-            <span pTooltip="{{eventMetrics.name}}" tooltipPosition="bottom">
-              <img src="{{eventsImageDirectory}}/{{eventMetrics.logoFileName}}" height="24" alt="logo"/>
-              <span class="ml-2">{{eventMetrics.name}}</span>
-            </span>
+            <img src="{{eventsImageDirectory}}/{{eventMetrics.logoFileName}}" height="24" alt="logo"/>
+            <span class="ml-2">{{eventMetrics.name}}</span>
           </td>
-          <td class="text-center">
-            <span pTooltip="{{eventMetrics.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
-              {{eventMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}
-            </span>
-          </td>
+          <td class="text-center">{{eventMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
           <td class="text-center">{{eventMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
@@ -90,11 +84,7 @@
       <ng-template pTemplate="footer">
         <tr>
           <td colspan="2">{{'common.totalsText' | translate}}</td>
-          <td class="text-center">
-            <span pTooltip="{{eventStatistics.totals?.startDate | date:'shortDate':undefined:translateService.currentLang}}" tooltipPosition="bottom">
-              {{eventStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}
-            </span>
-          </td>
+          <td class="text-center">{{eventStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
           <td class="text-center">{{eventStatistics.totals?.duration | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventStatistics.totals?.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventStatistics.totals?.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
