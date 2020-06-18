@@ -1,5 +1,6 @@
 export class SpeakerMetrics {
   constructor(
+    public id?: number,
     public name?: string,
     public fileName?: string,
     public javaChampion?: boolean,

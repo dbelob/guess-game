@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
  * Speaker metrics DTO.
  */
 public class SpeakerMetricsDto {
+    private final long id;
     private final String name;
     private final String fileName;
     private final boolean javaChampion;
@@ -25,9 +26,10 @@ public class SpeakerMetricsDto {
     private final long javaChampionsQuantity;
     private final long mvpsQuantity;
 
-    public SpeakerMetricsDto(String name, String fileName, boolean javaChampion, boolean mvp, boolean mvpReconnect,
+    public SpeakerMetricsDto(long id, String name, String fileName, boolean javaChampion, boolean mvp, boolean mvpReconnect,
                              boolean anyMvp, long talksQuantity, long eventsQuantity, long eventTypesQuantity,
                              long javaChampionsQuantity, long mvpsQuantity) {
+        this.id = id;
         this.name = name;
         this.fileName = fileName;
         this.javaChampion = javaChampion;
@@ -39,6 +41,10 @@ public class SpeakerMetricsDto {
         this.eventTypesQuantity = eventTypesQuantity;
         this.javaChampionsQuantity = javaChampionsQuantity;
         this.mvpsQuantity = mvpsQuantity;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getName() {
@@ -90,6 +96,7 @@ public class SpeakerMetricsDto {
         String name = LocalizationUtils.getSpeakerNameWithLastNameFirst(speaker, language, speakerDuplicates);
 
         return new SpeakerMetricsDto(
+                speaker.getId(),
                 name,
                 speaker.getFileName(),
                 speaker.isJavaChampion(),

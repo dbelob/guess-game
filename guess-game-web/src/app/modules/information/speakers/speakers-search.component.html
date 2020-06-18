@@ -94,8 +94,10 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" height="24" alt="photo"/>
-              <span class="ml-2">{{speaker.displayName}}</span>
+              <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
+                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" height="24" alt="photo"/>
+                <span class="ml-2">{{speaker.displayName}}</span>
+              </a>
             </td>
             <td>{{speaker.company}}</td>
             <td>
