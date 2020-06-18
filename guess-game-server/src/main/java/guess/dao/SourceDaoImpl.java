@@ -36,7 +36,16 @@ public class SourceDaoImpl implements SourceDao {
         return sourceInformation.getEventTypes().stream()
                 .filter(et -> (et.getId() == id))
                 .findFirst()
-                .orElse(null);
+                .orElseThrow();
+    }
+
+    @Override
+    public EventType getEventTypeByEvent(Event event) {
+        return sourceInformation.getEventTypes().stream()
+                .filter(et -> et.getEvents().stream()
+                        .anyMatch(e -> e.equals(event)))
+                .findFirst()
+                .orElseThrow();
     }
 
     @Override
@@ -49,7 +58,7 @@ public class SourceDaoImpl implements SourceDao {
         return sourceInformation.getEvents().stream()
                 .filter(e -> (e.getId() == id))
                 .findFirst()
-                .orElse(null);
+                .orElseThrow();
     }
 
     @Override
@@ -67,12 +76,37 @@ public class SourceDaoImpl implements SourceDao {
     }
 
     @Override
+    public Event getEventByTalk(Talk talk) {
+        return sourceInformation.getEvents().stream()
+                .filter(e -> e.getTalks().stream()
+                        .anyMatch(t -> t.equals(talk)))
+                .findFirst()
+                .orElseThrow();
+    }
+
+    @Override
     public List<Speaker> getSpeakers() {
         return sourceInformation.getSpeakers();
     }
 
     @Override
+    public Speaker getSpeakerById(long id) {
+        return sourceInformation.getSpeakers().stream()
+                .filter(s -> (s.getId() == id))
+                .findFirst()
+                .orElseThrow();
+    }
+
+    @Override
     public List<Talk> getTalks() {
         return sourceInformation.getTalks();
+    }
+
+    @Override
+    public List<Talk> getTalksBySpeaker(Speaker speaker) {
+        return sourceInformation.getTalks().stream()
+                .filter(t -> (t.getSpeakers().stream()
+                        .anyMatch(s -> s.equals(speaker))))
+                .collect(Collectors.toList());
     }
 }

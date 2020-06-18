@@ -104,4 +104,9 @@ public class SpeakerServiceImpl implements SpeakerService {
 
         return trimmedLowerCasedItem.contains(trimmedLowerCasedSubstring);
     }
+
+    @Override
+    public Speaker getSpeakerById(long id) {
+        return speakerDao.getSpeakerById(id);
+    }
 }

@@ -2,15 +2,14 @@ package guess.controller;
 
 import guess.domain.Language;
 import guess.domain.source.Speaker;
+import guess.domain.source.Talk;
 import guess.dto.speaker.SpeakerBriefDto;
-import guess.service.LocaleService;
-import guess.service.SpeakerService;
+import guess.dto.speaker.SpeakerDetailsDto;
+import guess.dto.talk.TalkBriefDto;
+import guess.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
@@ -23,11 +22,18 @@ import java.util.List;
 @RequestMapping("/api/speaker")
 public class SpeakerController {
     private final SpeakerService speakerService;
+    private final TalkService talkService;
+    private final EventService eventService;
+    private final EventTypeService eventTypeService;
     private final LocaleService localeService;
 
     @Autowired
-    public SpeakerController(SpeakerService speakerService, LocaleService localeService) {
+    public SpeakerController(SpeakerService speakerService, TalkService talkService, EventService eventService,
+                             EventTypeService eventTypeService, LocaleService localeService) {
         this.speakerService = speakerService;
+        this.talkService = talkService;
+        this.eventService = eventService;
+        this.eventTypeService = eventTypeService;
         this.localeService = localeService;
     }
 
@@ -61,5 +67,19 @@ public class SpeakerController {
         speakerBriefDtoList.sort(comparatorByName.thenComparing(comparatorByCompany));
 
         return speakerBriefDtoList;
+    }
+
+    @GetMapping("/speaker/{id}")
+    @ResponseBody
+    public SpeakerDetailsDto getSpeaker(@PathVariable long id, HttpSession httpSession) {
+        Speaker speaker = speakerService.getSpeakerById(id);
+        List<Talk> talks = talkService.getTalksBySpeaker(speaker);
+        Language language = localeService.getLanguage(httpSession);
+        SpeakerDetailsDto speakerDetailsDto = SpeakerDetailsDto.convertToDto(speaker, talks, eventService::getEventByTalk,
+                eventTypeService::getEventTypeByEvent, language);
+
+        speakerDetailsDto.getTalks().sort(Comparator.comparing(TalkBriefDto::getName, String.CASE_INSENSITIVE_ORDER));
+
+        return speakerDetailsDto;
     }
 }

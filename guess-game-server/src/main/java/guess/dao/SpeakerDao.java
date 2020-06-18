@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface SpeakerDao {
     List<Speaker> getSpeakers();
+
+    Speaker getSpeakerById(long id);
 }

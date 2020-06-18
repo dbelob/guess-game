@@ -1,4 +1,4 @@
-package guess.dao;
+package guess.service;
 
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
@@ -6,10 +6,8 @@ import guess.domain.source.Talk;
 import java.util.List;
 
 /**
- * Talk DAO.
+ * Talk service.
  */
-public interface TalkDao {
-    List<Talk> getTalks();
-
+public interface TalkService {
     List<Talk> getTalksBySpeaker(Speaker speaker);
 }
