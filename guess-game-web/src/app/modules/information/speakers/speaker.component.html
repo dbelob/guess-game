@@ -1,1 +1,57 @@
-<p>speaker works!</p>
+<div class="container p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'speaker.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'speakers'"></app-information-switcher>
+
+  <app-speakers-switcher></app-speakers-switcher>
+
+  <div class="m-1">
+    <div class="m-2">{{speakerDetails.speaker.name}}</div>
+
+    <div *ngIf="isTalksListVisible()" class="m-2">
+      <p-table [value]="speakerDetails.talks" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'eventName'" pResizableColumn>
+              {{'speaker.table.eventColumn' | translate}}
+              <p-sortIcon [field]="'eventName'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'talkDate'" pResizableColumn>
+              {{'speaker.table.talkDateColumn' | translate}}
+              <p-sortIcon [field]="'talkDate'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+              {{'speaker.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'name'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-talk let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" height="24" alt="logo"/>
+              <span class="ml-2">{{talk.eventName}}</span>
+            </td>
+            <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+            <td>{{talk.name}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

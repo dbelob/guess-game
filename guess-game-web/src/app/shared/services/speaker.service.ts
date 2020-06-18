@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Speaker } from '../models/speaker.model';
+import { SpeakerDetails } from '../models/speaker-details.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -27,7 +28,8 @@ export class SpeakerService {
       );
   }
 
-  getSpeakers(name: string, company: string, twitter: string, gitHub: string, javaChampion: boolean, mvp: boolean): Observable<Speaker[]> {
+  getSpeakers(name: string, company: string, twitter: string, gitHub: string, javaChampion: boolean,
+              mvp: boolean): Observable<Speaker[]> {
     let params = new HttpParams()
       .set('javaChampion', javaChampion.toString())
       .set('mvp', mvp.toString());
@@ -45,6 +47,16 @@ export class SpeakerService {
     }
 
     return this.http.get<Speaker[]>(`${this.baseUrl}/speakers`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getSpeaker(id: number): Observable<SpeakerDetails> {
+    return this.http.get<SpeakerDetails>(`${this.baseUrl}/speaker/${id}`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

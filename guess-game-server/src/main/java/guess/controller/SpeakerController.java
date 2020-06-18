@@ -78,7 +78,7 @@ public class SpeakerController {
         SpeakerDetailsDto speakerDetailsDto = SpeakerDetailsDto.convertToDto(speaker, talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
 
-        speakerDetailsDto.getTalks().sort(Comparator.comparing(TalkBriefDto::getName, String.CASE_INSENSITIVE_ORDER));
+        speakerDetailsDto.getTalks().sort(Comparator.comparing(TalkBriefDto::getTalkDate).reversed());
 
         return speakerDetailsDto;
     }

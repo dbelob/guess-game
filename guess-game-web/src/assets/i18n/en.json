@@ -50,6 +50,14 @@
     "yesButtonText": "Yes",
     "noButtonText": "No"
   },
+  "speaker": {
+    "title": "Speaker",
+    "table": {
+      "eventColumn": "Event",
+      "talkDateColumn": "Talk date",
+      "nameColumn": "Name"
+    }
+  },
   "speakers": {
     "title": "Speakers",
     "noSpeakersFoundText": "No speakers found",

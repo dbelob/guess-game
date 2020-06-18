@@ -50,6 +50,14 @@
     "yesButtonText": "Да",
     "noButtonText": "Нет"
   },
+  "speaker": {
+    "title": "Спикер",
+    "table": {
+      "eventColumn": "Событие",
+      "talkDateColumn": "Дата доклада",
+      "nameColumn": "Наименование"
+    }
+  },
   "speakers": {
     "title": "Спикеры",
     "noSpeakersFoundText": "Спикеры не найдены",

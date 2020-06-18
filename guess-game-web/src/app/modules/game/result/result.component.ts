@@ -51,22 +51,22 @@ export class ResultComponent implements OnInit {
   }
 
   isSkippedVisible() {
-    return this.result.skippedAnswers > 0;
+    return (this.result.skippedAnswers > 0);
   }
 
   isSpeakerErrorDetailsListVisible() {
-    return this.result.speakerErrorDetailsList && (this.result.speakerErrorDetailsList.length > 0);
+    return (this.result.speakerErrorDetailsList && (this.result.speakerErrorDetailsList.length > 0));
   }
 
   isTalkErrorDetailsListVisible() {
-    return this.result.talkErrorDetailsList && (this.result.talkErrorDetailsList.length > 0);
+    return (this.result.talkErrorDetailsList && (this.result.talkErrorDetailsList.length > 0));
   }
 
   isAccountErrorDetailsListVisible() {
-    return this.result.accountErrorDetailsList && (this.result.accountErrorDetailsList.length > 0);
+    return (this.result.accountErrorDetailsList && (this.result.accountErrorDetailsList.length > 0));
   }
 
   isErrorDetailsListVisible() {
-    return this.isSpeakerErrorDetailsListVisible() || this.isTalkErrorDetailsListVisible() || this.isAccountErrorDetailsListVisible();
+    return (this.isSpeakerErrorDetailsListVisible() || this.isTalkErrorDetailsListVisible() || this.isAccountErrorDetailsListVisible());
   }
 }
