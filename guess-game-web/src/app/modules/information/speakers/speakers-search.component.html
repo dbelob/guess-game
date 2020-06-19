@@ -66,27 +66,34 @@
       <p-table [value]="speakers" [resizableColumns]="true" [autoLayout]="true"
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
-               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}">
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'displayName'" pResizableColumn>
               {{'speakers.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'displayName'"></p-sortIcon>
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'company'" pResizableColumn>
               {{'speakers.table.companyColumn' | translate}}
+              <p-sortIcon [field]="'company'"></p-sortIcon>
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'twitter'" pResizableColumn>
               {{'speakers.table.twitterColumn' | translate}}
+              <p-sortIcon [field]="'twitter'"></p-sortIcon>
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'gitHub'" pResizableColumn>
               {{'speakers.table.gitHubColumn' | translate}}
+              <p-sortIcon [field]="'gitHub'"></p-sortIcon>
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'javaChampion'" pResizableColumn>
               {{'speakers.table.javaChampionColumn' | translate}}
+              <p-sortIcon [field]="'javaChampion'"></p-sortIcon>
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'anyMvp'" pResizableColumn>
               {{'speakers.table.mvpColumn' | translate}}
+              <p-sortIcon [field]="'anyMvp'"></p-sortIcon>
             </th>
           </tr>
         </ng-template>

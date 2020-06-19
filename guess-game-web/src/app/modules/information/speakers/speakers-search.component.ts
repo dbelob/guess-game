@@ -24,8 +24,11 @@ export class SpeakersSearchComponent implements OnInit {
   public speakers: Speaker[] = [];
 
   private searched = false;
+  public multiSortMeta: any[] = [];
 
   constructor(public speakerService: SpeakerService, public translateService: TranslateService) {
+    this.multiSortMeta.push({field: 'displayName', order: 1});
+    this.multiSortMeta.push({field: 'company', order: 1});
   }
 
   ngOnInit(): void {
