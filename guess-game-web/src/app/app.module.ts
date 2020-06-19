@@ -18,6 +18,7 @@ import { ResultModule } from './modules/game/result/result.module';
 import { StartModule } from './modules/game/start/start.module';
 import { SpeakersModule } from './modules/information/speakers/speakers.module';
 import { StatisticsModule } from './modules/information/statistics/statistics.module';
+import { TalksModule } from './modules/information/talks/talks.module';
 import { UnknownModule } from './modules/unknown/unknown.module';
 import { HomeComponent } from './modules/home/home.component';
 import { StartComponent } from './modules/game/start/start.component';
@@ -30,6 +31,7 @@ import { GuessAccountBySpeakerComponent } from './modules/game/guess/guess-accou
 import { GuessSpeakerByAccountComponent } from './modules/game/guess/guess-speaker-by-account.component';
 import { CancelGameComponent } from './modules/game/guess/cancel-game.component';
 import { NotFoundComponent } from './modules/unknown/not-found.component';
+import { TalksSearchComponent } from './modules/information/talks/talks-search.component';
 import { SpeakerComponent } from './modules/information/speakers/speaker.component';
 import { SpeakersListComponent } from './modules/information/speakers/speakers-list.component';
 import { SpeakersSearchComponent } from './modules/information/speakers/speakers-search.component';
@@ -54,12 +56,14 @@ const routes: Routes = [
   {path: 'guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
+  {path: 'information/talks/search', component: TalksSearchComponent},
   {path: 'information/speaker/:id', component: SpeakerComponent},
   {path: 'information/speakers/list', component: SpeakersListComponent},
   {path: 'information/speakers/search', component: SpeakersSearchComponent},
   {path: 'information/statistics/event-types', component: EventTypeStatisticsComponent},
   {path: 'information/statistics/events', component: EventStatisticsComponent},
   {path: 'information/statistics/speakers', component: SpeakerStatisticsComponent},
+  {path: 'information/talks', redirectTo: 'information/talks/search'},
   {path: 'information/speakers', redirectTo: 'information/speakers/list'},
   {path: 'information/statistics', redirectTo: 'information/statistics/event-types'},
   {path: 'information', redirectTo: 'information/statistics/event-types'},
@@ -101,6 +105,7 @@ registerLocaleData(localeRu, 'ru');
     StartModule,
     SpeakersModule,
     StatisticsModule,
+    TalksModule,
     UnknownModule
   ],
   providers: [AnswerService, QuestionService, StateService, SpeakerService, StatisticsService, StateGuard],

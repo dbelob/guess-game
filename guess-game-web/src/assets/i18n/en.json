@@ -3,6 +3,8 @@
     "menuLinkText": "Menu",
     "cancelLinkText": "Cancel",
     "totalsText": "Totals",
+    "searchButtonText": "Search",
+    "clearButtonText": "Clear",
     "eventTypeKind": {
       "conference": "Conference",
       "meetup": "Meetup"
@@ -50,6 +52,21 @@
     "yesButtonText": "Yes",
     "noButtonText": "No"
   },
+  "talk": {
+    "title": "Talk"
+  },
+  "talks": {
+    "title": "Talks",
+    "search": {
+      "title": "Search",
+      "eventTypeLabel": "Event type:",
+      "eventTypePlaceholder": "All",
+      "eventLabel": "Event:",
+      "eventPlaceholder": "All",
+      "nameLabel": "Name:",
+      "speakerLabel": "Speaker:"
+    }
+  },
   "speaker": {
     "title": "Speaker",
     "table": {
@@ -80,9 +97,7 @@
       "twitterLabel": "Twitter:",
       "gitHubLabel": "GitHub:",
       "javaChampionLabel": "Java Champion",
-      "mvpLabel": "Most Valuable Professional",
-      "searchButtonText": "Search",
-      "clearButtonText": "Clear"
+      "mvpLabel": "Most Valuable Professional"
     }
   },
   "statistics": {

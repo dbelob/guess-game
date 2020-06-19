@@ -1,0 +1,62 @@
+<div class="container p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'talks.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'talks'"></app-information-switcher>
+
+  <app-talks-switcher [type]="'search'"></app-talks-switcher>
+
+  <div class="m-1">
+    <form role="form" class="m-2">
+      <div class="form-group row justify-content-center">
+        <label for="eventType" class="col-sm-2">{{'talks.search.eventTypeLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="eventType"
+                      placeholder="{{'talks.search.eventTypePlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onEventTypeChange($event.value)" name="eventType" styleClass="search-dropdown">
+            <ng-template let-eventType pTemplate="item">
+              <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" height="24" alt="logo"/>
+              <span class="ml-2">{{eventType.value.name}}</span>
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <label for="event" class="col-sm-2">{{'talks.search.eventLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <p-dropdown [options]="eventSelectItems" [(ngModel)]="selectedEvent" id="event"
+                      placeholder="{{'talks.search.eventPlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onEventChange($event.value)" name="event" styleClass="search-dropdown">
+            <ng-template let-event pTemplate="item">
+              {{event.value.displayName}}
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="talkName" class="col-sm-2">{{'talks.search.nameLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="talkName" pInputText class="form-control" [(ngModel)]="talkName" name="talkName" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+        <label for="speakerName" class="col-sm-2">{{'talks.search.speakerLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="speakerName" pInputText class="form-control" [(ngModel)]="speakerName" name="speakerName" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary m-1" (click)="search()" [class.btn-secondary]="isSearchDisabled()" [disabled]="isSearchDisabled()">
+          {{'common.searchButtonText' | translate}}
+        </button>
+        <button class="btn btn-primary m-1" (click)="clear()">
+          {{'common.clearButtonText' | translate}}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
