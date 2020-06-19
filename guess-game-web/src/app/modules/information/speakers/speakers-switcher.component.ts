@@ -20,4 +20,8 @@ export class SpeakersSwitcherComponent implements OnInit {
   isSearch(): boolean {
     return ('search' === this.type);
   }
+
+  isSpeaker(): boolean {
+    return ('speaker' === this.type);
+  }
 }

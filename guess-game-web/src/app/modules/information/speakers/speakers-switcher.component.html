@@ -7,4 +7,8 @@
           [class.text-dark]="isSearch()" [class.font-weight-bold]="isSearch()" [disabled]="isSearch()">
     {{'speakers.search.title' | translate}}
   </button>
+  <button *ngIf="isSpeaker()" class="btn btn-link text-dark font-weight-bold" routerLink="/information/speakers"
+          [disabled]="true">
+    {{'speaker.title' | translate}}
+  </button>
 </div>
