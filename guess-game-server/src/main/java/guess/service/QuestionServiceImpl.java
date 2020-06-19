@@ -66,11 +66,6 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public List<EventType> getEventTypes() {
-        return eventTypeDao.getEventTypes();
-    }
-
-    @Override
     public List<Event> getEvents(List<Long> eventTypeIds) {
         final String ALL_EVENTS_OPTION_TEXT = "allEventsOptionText";
 

@@ -39,6 +39,7 @@ import { EventTypeStatisticsComponent } from './modules/information/statistics/e
 import { EventStatisticsComponent } from './modules/information/statistics/event-statistics.component';
 import { SpeakerStatisticsComponent } from './modules/information/statistics/speaker-statistics.component';
 import { AnswerService } from './shared/services/answer.service';
+import { EventTypeService } from './shared/services/event-type.service';
 import { QuestionService } from './shared/services/question.service';
 import { StateService } from './shared/services/state.service';
 import { SpeakerService } from './shared/services/speaker.service';
@@ -108,7 +109,15 @@ registerLocaleData(localeRu, 'ru');
     TalksModule,
     UnknownModule
   ],
-  providers: [AnswerService, QuestionService, StateService, SpeakerService, StatisticsService, StateGuard],
+  providers: [
+    AnswerService,
+    EventTypeService,
+    QuestionService,
+    StateService,
+    SpeakerService,
+    StatisticsService,
+    StateGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

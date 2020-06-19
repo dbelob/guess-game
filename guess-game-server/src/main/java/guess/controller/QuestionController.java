@@ -9,6 +9,7 @@ import guess.dto.start.EventBriefDto;
 import guess.dto.start.EventDto;
 import guess.dto.start.EventTypeBriefDto;
 import guess.dto.start.EventTypeDto;
+import guess.service.EventTypeService;
 import guess.service.LocaleService;
 import guess.service.QuestionService;
 import guess.util.LocalizationUtils;
@@ -30,18 +31,20 @@ import java.util.List;
 @RequestMapping("/api/question")
 public class QuestionController {
     private final QuestionService questionService;
+    private final EventTypeService eventTypeService;
     private final LocaleService localeService;
 
     @Autowired
-    public QuestionController(QuestionService questionService, LocaleService localeService) {
+    public QuestionController(QuestionService questionService, EventTypeService eventTypeService, LocaleService localeService) {
         this.questionService = questionService;
+        this.eventTypeService = eventTypeService;
         this.localeService = localeService;
     }
 
     @GetMapping("/event-types")
     @ResponseBody
     public List<EventTypeBriefDto> getEventTypes(HttpSession httpSession) {
-        List<EventType> eventTypes = questionService.getEventTypes();
+        List<EventType> eventTypes = eventTypeService.getEventTypes();
         Language language = localeService.getLanguage(httpSession);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
         Comparator<EventType> comparatorByInactive = Comparator.comparing(EventType::isInactive);
