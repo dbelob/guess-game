@@ -7,6 +7,7 @@ import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './modules/home/home.module';
@@ -82,6 +83,9 @@ registerLocaleData(localeRu, 'ru');
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MarkdownModule.forRoot({
+      loader: HttpClient
+    }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

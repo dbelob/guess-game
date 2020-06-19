@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { MarkdownModule } from 'ngx-markdown';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
@@ -25,6 +26,7 @@ import { SpeakersSwitcherComponent } from './speakers-switcher.component';
     CheckboxModule,
     FormsModule,
     InputTextModule,
+    MarkdownModule,
     RouterModule,
     TableModule,
     GeneralModule,

@@ -27,7 +27,7 @@
                class="img-speaker">
         </div>
         <div *ngIf="speakerDetails.speaker.bio" class="col-12 col-sm-6 col-md-8 mt-1">
-          {{speakerDetails.speaker.bio}}
+          <markdown [data]='speakerDetails.speaker.bio'></markdown>
         </div>
       </div>
 
