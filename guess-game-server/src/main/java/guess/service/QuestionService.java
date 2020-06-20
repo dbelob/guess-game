@@ -12,7 +12,5 @@ import java.util.List;
 public interface QuestionService {
     List<Event> getEvents(List<Long> eventTypeIds);
 
-    Event getDefaultEvent();
-
     List<Integer> getQuantities(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) throws QuestionSetNotExistsException;
 }

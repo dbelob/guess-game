@@ -66,15 +66,6 @@ public class QuestionController {
         return EventDto.convertToBriefDto(events, language);
     }
 
-    @GetMapping("/default-event")
-    @ResponseBody
-    public EventBriefDto getDefaultEvent(HttpSession httpSession) {
-        Event defaultEvent = questionService.getDefaultEvent();
-        Language language = localeService.getLanguage(httpSession);
-
-        return (defaultEvent != null) ? EventBriefDto.convertToBriefDto(defaultEvent, language) : null;
-    }
-
     @GetMapping("/quantities")
     @ResponseBody
     public List<Integer> getQuantities(@RequestParam List<Long> eventTypeIds, @RequestParam List<Long> eventIds,

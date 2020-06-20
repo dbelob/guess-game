@@ -39,6 +39,7 @@ import { EventTypeStatisticsComponent } from './modules/information/statistics/e
 import { EventStatisticsComponent } from './modules/information/statistics/event-statistics.component';
 import { SpeakerStatisticsComponent } from './modules/information/statistics/speaker-statistics.component';
 import { AnswerService } from './shared/services/answer.service';
+import { EventService } from './shared/services/event.service';
 import { EventTypeService } from './shared/services/event-type.service';
 import { QuestionService } from './shared/services/question.service';
 import { StateService } from './shared/services/state.service';
@@ -111,6 +112,7 @@ registerLocaleData(localeRu, 'ru');
   ],
   providers: [
     AnswerService,
+    EventService,
     EventTypeService,
     QuestionService,
     StateService,

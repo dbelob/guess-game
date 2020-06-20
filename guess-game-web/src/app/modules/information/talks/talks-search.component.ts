@@ -3,6 +3,8 @@ import { SelectItem } from 'primeng/api';
 import { EventType } from '../../../shared/models/event-type.model';
 import { Event } from '../../../shared/models/event.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
+import { EventService } from '../../../shared/services/event.service';
+import { findEventTypeByDefaultEvent } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-talks-search',
@@ -20,12 +22,14 @@ export class TalksSearchComponent implements OnInit {
   public selectedEvent: Event;
   public eventSelectItems: SelectItem[] = [];
 
+  private defaultEvent: Event;
+
   public talkName: string;
   public speakerName: string;
 
   private searched = false;
 
-  constructor(private eventTypeService: EventTypeService) {
+  constructor(private eventTypeService: EventTypeService, private eventService: EventService) {
   }
 
   ngOnInit(): void {
@@ -37,17 +41,34 @@ export class TalksSearchComponent implements OnInit {
       .subscribe(eventTypesData => {
         this.eventTypes = eventTypesData;
         this.eventTypeSelectItems = this.eventTypes.map(et => {
-            return {label: et.displayName, value: et};
+            return {label: et.name, value: et};
           }
         );
 
         if (this.eventTypes.length > 0) {
-          // TODO: implement
+          this.eventService.getDefaultEvent()
+            .subscribe(defaultEventData => {
+              this.defaultEvent = defaultEventData;
+
+              const selectedEventType = findEventTypeByDefaultEvent(this.defaultEvent, this.eventTypes);
+
+              if (selectedEventType) {
+                this.selectedEventType = selectedEventType;
+              } else {
+                this.selectedEventType = this.eventTypes[0];
+              }
+
+              this.loadEvents(this.selectedEventType);
+            });
         } else {
           this.selectedEventType = null;
           this.loadEvents(this.selectedEventType);
         }
       });
+  }
+
+  onEventTypeChange(eventType: EventType) {
+    this.loadEvents(eventType);
   }
 
   loadEvents(eventType: EventType) {
@@ -56,10 +77,6 @@ export class TalksSearchComponent implements OnInit {
 
   onLanguageChange() {
     this.search();
-  }
-
-  onEventTypeChange(eventType: EventType) {
-    // TODO: implement
   }
 
   onEventChange(event: Event) {

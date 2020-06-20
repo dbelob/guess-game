@@ -7,6 +7,7 @@ import { StartParameters } from '../../../shared/models/start-parameters.model';
 import { GuessMode } from '../../../shared/models/guess-mode.model';
 import { EventType } from '../../../shared/models/event-type.model';
 import { Event } from '../../../shared/models/event.model';
+import { EventService } from '../../../shared/services/event.service';
 import { QuestionService } from '../../../shared/services/question.service';
 import { StateService } from '../../../shared/services/state.service';
 import { findEventByDefaultEvent, findEventTypeByDefaultEvent } from '../../general/utility-functions';
@@ -41,8 +42,8 @@ export class StartComponent implements OnInit, AfterViewChecked {
 
   @ViewChildren('eventTypeRow', {read: ElementRef}) rowElement: QueryList<ElementRef>;
 
-  constructor(private questionService: QuestionService, private stateService: StateService, private router: Router,
-              public translateService: TranslateService) {
+  constructor(private questionService: QuestionService, private stateService: StateService, private eventService: EventService,
+              private router: Router, public translateService: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -59,7 +60,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
         );
 
         if (this.eventTypes.length > 0) {
-          this.questionService.getDefaultEvent()
+          this.eventService.getDefaultEvent()
             .subscribe(defaultEventData => {
               this.defaultEvent = defaultEventData;
 

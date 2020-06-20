@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SelectItem } from 'primeng/api';
 import { EventType } from '../../../shared/models/event-type.model';
+import { EventService } from '../../../shared/services/event.service';
 import { EventStatistics } from '../../../shared/models/event-statistics.model';
-import { StatisticsService } from '../../../shared/services/statistics.service';
 import { QuestionService } from '../../../shared/services/question.service';
+import { StatisticsService } from '../../../shared/services/statistics.service';
 import { findEventTypeByDefaultEvent } from '../../general/utility-functions';
 
 @Component({
@@ -24,7 +25,7 @@ export class EventStatisticsComponent implements OnInit {
   public multiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private questionService: QuestionService,
-              public translateService: TranslateService) {
+              private eventService: EventService, public translateService: TranslateService) {
     this.multiSortMeta.push({field: 'name', order: 1});
   }
 
@@ -42,7 +43,7 @@ export class EventStatisticsComponent implements OnInit {
         );
 
         if (this.conferences.length > 0) {
-          this.questionService.getDefaultEvent()
+          this.eventService.getDefaultEvent()
             .subscribe(defaultEventData => {
               const selectedConference = findEventTypeByDefaultEvent(defaultEventData, this.conferences);
 
