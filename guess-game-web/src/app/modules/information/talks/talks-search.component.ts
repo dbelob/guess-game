@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { SelectItem } from 'primeng/api';
 import { EventType } from '../../../shared/models/event-type.model';
 import { Event } from '../../../shared/models/event.model';
+import { Talk } from '../../../shared/models/talk.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
-import { findEventTypeByDefaultEvent } from '../../general/utility-functions';
+import {
+  findEventByDefaultEvent,
+  findEventTypeByDefaultEvent,
+  getEventsWithDisplayName,
+  isStringEmpty
+} from '../../general/utility-functions';
 
 @Component({
   selector: 'app-talks-search',
@@ -27,9 +34,12 @@ export class TalksSearchComponent implements OnInit {
   public talkName: string;
   public speakerName: string;
 
+  public talks: Talk[] = [];
+
   private searched = false;
 
-  constructor(private eventTypeService: EventTypeService, private eventService: EventService) {
+  constructor(private eventTypeService: EventTypeService, private eventService: EventService,
+              public translateService: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -69,18 +79,54 @@ export class TalksSearchComponent implements OnInit {
 
   onEventTypeChange(eventType: EventType) {
     this.loadEvents(eventType);
+    this.searched = false;
   }
 
   loadEvents(eventType: EventType) {
-    // TODO: implement
-  }
+    if (eventType) {
+      this.eventService.getEvents(eventType.id)
+        .subscribe(data => {
+          this.events = getEventsWithDisplayName(data, this.translateService);
+          this.eventSelectItems = this.events.map(e => {
+            return {label: e.displayName, value: e};
+          });
 
-  onLanguageChange() {
-    this.search();
+          if (this.events.length > 0) {
+            const selectedEvent = findEventByDefaultEvent(this.defaultEvent, this.events);
+
+            if (selectedEvent) {
+              this.selectedEvent = selectedEvent;
+            } else {
+              this.selectedEvent = this.events[0];
+            }
+          } else {
+            this.selectedEvent = null;
+          }
+        });
+    } else {
+      this.events = [];
+      this.eventSelectItems = [];
+      this.selectedEvent = undefined;
+    }
   }
 
   onEventChange(event: Event) {
+    this.searched = false;
+  }
+
+  loadTalks(eventType: EventType, event: Event, talkName: string, speakerName: string) {
     // TODO: implement
+    console.log('eventType: ' + eventType + ', event: ' + event, ', talkName: ' + talkName + ', speakerName: ' + speakerName);
+    this.searched = true;
+  }
+
+  onLanguageChange() {
+    this.loadEventTypes();
+
+    this.talkName = undefined;
+    this.speakerName = undefined;
+
+    this.searched = false;
   }
 
   onFilterChange(value: any) {
@@ -88,15 +134,34 @@ export class TalksSearchComponent implements OnInit {
   }
 
   search() {
-    // TODO: implement
+    if (!this.isSearchDisabled()) {
+      this.loadTalks(this.selectedEventType, this.selectedEvent, this.talkName, this.speakerName);
+    }
   }
 
   clear() {
-    // TODO: implement
+    this.selectedEventType = undefined;
+    this.events = [];
+    this.eventSelectItems = [];
+    this.selectedEvent = undefined;
+    this.talkName = undefined;
+    this.speakerName = undefined;
+
+    this.searched = false;
   }
 
   isSearchDisabled(): boolean {
-    // TODO: implement
-    return false;
+    return (!this.selectedEventType &&
+      !this.selectedEvent &&
+      isStringEmpty(this.talkName) &&
+      isStringEmpty(this.speakerName));
+  }
+
+  isNoTalksFoundVisible() {
+    return (this.searched && (this.talks.length === 0));
+  }
+
+  isTalksListVisible() {
+    return (this.searched && (this.talks.length > 0));
   }
 }

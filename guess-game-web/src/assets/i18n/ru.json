@@ -57,6 +57,7 @@
   },
   "talks": {
     "title": "Доклады",
+    "noTalksFoundText": "Доклады не найдены",
     "search": {
       "title": "Поиск",
       "eventTypeLabel": "Тип события:",

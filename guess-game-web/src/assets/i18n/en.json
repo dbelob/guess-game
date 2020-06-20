@@ -57,6 +57,7 @@
   },
   "talks": {
     "title": "Talks",
+    "noTalksFoundText": "No talks found",
     "search": {
       "title": "Search",
       "eventTypeLabel": "Event type:",

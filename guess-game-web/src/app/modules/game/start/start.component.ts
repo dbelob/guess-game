@@ -1,6 +1,5 @@
 import { AfterViewChecked, Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
-import { formatDate } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { SelectItem } from 'primeng/api';
 import { StartParameters } from '../../../shared/models/start-parameters.model';
@@ -10,7 +9,11 @@ import { Event } from '../../../shared/models/event.model';
 import { EventService } from '../../../shared/services/event.service';
 import { QuestionService } from '../../../shared/services/question.service';
 import { StateService } from '../../../shared/services/state.service';
-import { findEventByDefaultEvent, findEventTypeByDefaultEvent } from '../../general/utility-functions';
+import {
+  findEventByDefaultEvent,
+  findEventTypeByDefaultEvent,
+  getEventsWithDisplayName
+} from '../../general/utility-functions';
 
 @Component({
   selector: 'app-start',
@@ -104,7 +107,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
   loadEvents(eventTypes: EventType[]) {
     this.questionService.getEvents(eventTypes.map(et => et.id))
       .subscribe(data => {
-        this.events = this.getEventsWithDisplayName(data);
+        this.events = getEventsWithDisplayName(data, this.translateService);
 
         if (this.events.length > 0) {
           const selectedEvent = findEventByDefaultEvent(this.defaultEvent, this.events);
@@ -120,44 +123,6 @@ export class StartComponent implements OnInit, AfterViewChecked {
 
         this.loadQuantities(this.selectedEventTypes, this.selectedEvents, this.selectedGuessMode);
       });
-  }
-
-  getEventsWithDisplayName(events: Event[]): Event[] {
-    if (events) {
-      for (let i = 0; i < events.length; i++) {
-        const event: Event = events[i];
-        const isEventDateParenthesesVisible = this.isEventDateParenthesesVisible(event);
-        const isEventStartDateVisible = this.isEventStartDateVisible(event);
-        const isEventHyphenVisible = this.isEventHyphenVisible(event);
-        const isEventEndDateVisible = this.isEventEndDateVisible(event);
-
-        let displayName = event.name;
-
-        if (isEventDateParenthesesVisible) {
-          displayName += ' (';
-        }
-
-        if (isEventStartDateVisible) {
-          displayName += formatDate(event.startDate, 'shortDate', this.translateService.currentLang, undefined);
-        }
-
-        if (isEventHyphenVisible) {
-          displayName += ' – ';
-        }
-
-        if (isEventEndDateVisible) {
-          displayName += formatDate(event.endDate, 'shortDate', this.translateService.currentLang, undefined);
-        }
-
-        if (isEventDateParenthesesVisible) {
-          displayName += ')';
-        }
-
-        event.displayName = displayName;
-      }
-    }
-
-    return events;
   }
 
   onEventChange(events: Event[]) {
@@ -185,6 +150,10 @@ export class StartComponent implements OnInit, AfterViewChecked {
       });
   }
 
+  onLanguageChange() {
+    this.loadEventTypes();
+  }
+
   start() {
     this.stateService.setStartParameters(
       new StartParameters(
@@ -207,22 +176,6 @@ export class StartComponent implements OnInit, AfterViewChecked {
       (this.selectedEventTypes && (this.selectedEventTypes.length <= 0)) ||
       (this.selectedEvents && (this.selectedEvents.length <= 0)) ||
       (this.selectedQuantity < this.MIN_QUANTITY_VALUE);
-  }
-
-  isEventStartDateVisible(event: Event): boolean {
-    return !!event.startDate;
-  }
-
-  isEventEndDateVisible(event: Event): boolean {
-    return (event.startDate && event.endDate && (event.startDate !== event.endDate));
-  }
-
-  isEventDateParenthesesVisible(event: Event): boolean {
-    return (this.isEventStartDateVisible(event) || this.isEventEndDateVisible(event));
-  }
-
-  isEventHyphenVisible(event: Event): boolean {
-    return (this.isEventStartDateVisible(event) && this.isEventEndDateVisible(event));
   }
 
   isEventTypeInactiveNotSelected(eventType: EventType) {

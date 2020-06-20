@@ -28,6 +28,11 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
+    public List<Event> getEvents(long eventTypeId) {
+        return eventDao.getEvents(eventTypeId);
+    }
+
+    @Override
     public Event getDefaultEvent() {
         LocalDateTime dateTime = LocalDateTime.now(ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID));
         LocalDate date = dateTime.toLocalDate();

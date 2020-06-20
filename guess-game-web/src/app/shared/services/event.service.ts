@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Event } from '../models/event.model';
@@ -12,6 +12,19 @@ export class EventService {
   private baseUrl = 'api/event';
 
   constructor(private http: HttpClient, private messageService: MessageService) {
+  }
+
+  getEvents(eventTypeId: number): Observable<Event[]> {
+    const params = new HttpParams()
+      .set('eventTypeId', eventTypeId.toString());
+
+    return this.http.get<Event[]>(`${this.baseUrl}/events`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
   }
 
   getDefaultEvent(): Observable<Event> {

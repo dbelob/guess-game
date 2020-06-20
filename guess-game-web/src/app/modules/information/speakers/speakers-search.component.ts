@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Speaker } from '../../../shared/models/speaker.model';
 import { SpeakerService } from '../../../shared/services/speaker.service';
+import { isStringEmpty } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-speakers-search',
@@ -64,20 +65,17 @@ export class SpeakersSearchComponent implements OnInit {
     this.isJavaChampion = false;
     this.isMvp = false;
     this.speakers = [];
+
     this.searched = false;
   }
 
   isSearchDisabled(): boolean {
-    return this.isStringEmpty(this.name) &&
-      this.isStringEmpty(this.company) &&
-      this.isStringEmpty(this.twitter) &&
-      this.isStringEmpty(this.gitHub) &&
+    return (isStringEmpty(this.name) &&
+      isStringEmpty(this.company) &&
+      isStringEmpty(this.twitter) &&
+      isStringEmpty(this.gitHub) &&
       (!this.isJavaChampion) &&
-      (!this.isMvp);
-  }
-
-  isStringEmpty(value: string): boolean {
-    return (!value || (value.trim().length <= 0));
+      (!this.isMvp));
   }
 
   isNoSpeakersFoundVisible() {
