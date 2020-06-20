@@ -9,5 +9,7 @@ import java.util.List;
  * Talk service.
  */
 public interface TalkService {
+    List<Talk> getTalks(Long eventTypeId, Long eventId, String talkName, String speakerName);
+
     List<Talk> getTalksBySpeaker(Speaker speaker);
 }

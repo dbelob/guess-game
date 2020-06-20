@@ -58,6 +58,12 @@
   "talks": {
     "title": "Talks",
     "noTalksFoundText": "No talks found",
+    "table": {
+      "title": "Talks",
+      "eventColumn": "Event",
+      "talkDateColumn": "Talk date",
+      "nameColumn": "Name"
+    },
     "search": {
       "title": "Search",
       "eventTypeLabel": "Event type:",
@@ -69,13 +75,7 @@
     }
   },
   "speaker": {
-    "title": "Speaker",
-    "table": {
-      "title": "Talks",
-      "eventColumn": "Event",
-      "talkDateColumn": "Talk date",
-      "nameColumn": "Name"
-    }
+    "title": "Speaker"
   },
   "speakers": {
     "title": "Speakers",

@@ -24,6 +24,7 @@ export class SpeakerComponent implements OnInit {
   constructor(public speakerService: SpeakerService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
     this.multiSortMeta.push({field: 'talkDate', order: -1});
+    this.multiSortMeta.push({field: 'name', order: 1});
   }
 
   ngOnInit(): void {

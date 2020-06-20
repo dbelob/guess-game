@@ -6,6 +6,7 @@ import { Event } from '../../../shared/models/event.model';
 import { Talk } from '../../../shared/models/talk.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
+import { TalkService } from '../../../shared/services/talk.service';
 import {
   findEventByDefaultEvent,
   findEventTypeByDefaultEvent,
@@ -37,9 +38,13 @@ export class TalksSearchComponent implements OnInit {
   public talks: Talk[] = [];
 
   private searched = false;
+  public multiSortMeta: any[] = [];
 
   constructor(private eventTypeService: EventTypeService, private eventService: EventService,
-              public translateService: TranslateService) {
+              private talkService: TalkService, public translateService: TranslateService) {
+    this.multiSortMeta.push({field: 'eventName', order: 1});
+    this.multiSortMeta.push({field: 'talkDate', order: 1});
+    this.multiSortMeta.push({field: 'name', order: 1});
   }
 
   ngOnInit(): void {
@@ -115,9 +120,11 @@ export class TalksSearchComponent implements OnInit {
   }
 
   loadTalks(eventType: EventType, event: Event, talkName: string, speakerName: string) {
-    // TODO: implement
-    console.log('eventType: ' + eventType + ', event: ' + event, ', talkName: ' + talkName + ', speakerName: ' + speakerName);
-    this.searched = true;
+    this.talkService.getTalks(eventType, event, talkName, speakerName)
+      .subscribe(data => {
+        this.talks = data;
+        this.searched = true;
+      });
   }
 
   onLanguageChange() {

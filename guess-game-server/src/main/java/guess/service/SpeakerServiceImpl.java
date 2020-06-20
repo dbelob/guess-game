@@ -2,9 +2,9 @@ package guess.service;
 
 import guess.dao.SpeakerDao;
 import guess.domain.Language;
-import guess.domain.source.LocaleItem;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
+import guess.util.SearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,63 +46,27 @@ public class SpeakerServiceImpl implements SpeakerService {
 
     @Override
     public List<Speaker> getSpeakers(String name, String company, String twitter, String gitHub, boolean isJavaChampion, boolean isMvp) {
-        String trimmedLowerCasedName = trimAndLowerCase(name);
-        String trimmedLowerCasedCompany = trimAndLowerCase(company);
-        String trimmedLowerCasedTwitter = trimAndLowerCase(twitter);
-        String trimmedLowerCasedGitHub = trimAndLowerCase(gitHub);
-        boolean isNameSet = isStringSet(trimmedLowerCasedName);
-        boolean isCompanySet = isStringSet(trimmedLowerCasedCompany);
-        boolean isTwitterSet = isStringSet(trimmedLowerCasedTwitter);
-        boolean isGitHubSet = isStringSet(trimmedLowerCasedGitHub);
+        String trimmedLowerCasedName = SearchUtils.trimAndLowerCase(name);
+        String trimmedLowerCasedCompany = SearchUtils.trimAndLowerCase(company);
+        String trimmedLowerCasedTwitter = SearchUtils.trimAndLowerCase(twitter);
+        String trimmedLowerCasedGitHub = SearchUtils.trimAndLowerCase(gitHub);
+        boolean isNameSet = SearchUtils.isStringSet(trimmedLowerCasedName);
+        boolean isCompanySet = SearchUtils.isStringSet(trimmedLowerCasedCompany);
+        boolean isTwitterSet = SearchUtils.isStringSet(trimmedLowerCasedTwitter);
+        boolean isGitHubSet = SearchUtils.isStringSet(trimmedLowerCasedGitHub);
 
         if (!isNameSet && !isCompanySet && !isTwitterSet && !isGitHubSet && !isJavaChampion && !isMvp) {
             return Collections.emptyList();
         } else {
             return speakerDao.getSpeakers().stream()
-                    .filter(s -> ((!isNameSet || isSubstringFound(trimmedLowerCasedName, s.getName())) &&
-                            (!isCompanySet || isSubstringFound(trimmedLowerCasedCompany, s.getCompany())) &&
-                            (!isTwitterSet || isSubstringFound(trimmedLowerCasedTwitter, s.getTwitter())) &&
-                            (!isGitHubSet || isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub())) &&
+                    .filter(s -> ((!isNameSet || SearchUtils.isSubstringFound(trimmedLowerCasedName, s.getName())) &&
+                            (!isCompanySet || SearchUtils.isSubstringFound(trimmedLowerCasedCompany, s.getCompany())) &&
+                            (!isTwitterSet || SearchUtils.isSubstringFound(trimmedLowerCasedTwitter, s.getTwitter())) &&
+                            (!isGitHubSet || SearchUtils.isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub())) &&
                             (!isJavaChampion || s.isJavaChampion()) &&
                             (!isMvp || s.isAnyMvp())))
                     .collect(Collectors.toList());
         }
-    }
-
-    private String trimAndLowerCase(String value) {
-        return (value != null) ? value.trim().toLowerCase() : null;
-    }
-
-    private boolean isStringSet(String string) {
-        return ((string != null) && !string.isEmpty());
-    }
-
-    private boolean isSubstringFound(String trimmedLowerCasedSubstring, List<LocaleItem> localeItems) {
-        if (!isStringSet(trimmedLowerCasedSubstring) || (localeItems == null)) {
-            return false;
-        }
-
-        for (LocaleItem localeItem : localeItems) {
-            if (isSubstringFound(trimmedLowerCasedSubstring, localeItem.getText())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private boolean isSubstringFound(String trimmedLowerCasedSubstring, String item) {
-        if (!isStringSet(trimmedLowerCasedSubstring)) {
-            return false;
-        }
-
-        String trimmedLowerCasedItem = trimAndLowerCase(item);
-
-        if (!isStringSet(trimmedLowerCasedItem)) {
-            return false;
-        }
-
-        return trimmedLowerCasedItem.contains(trimmedLowerCasedSubstring);
     }
 
     @Override

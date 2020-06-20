@@ -54,7 +54,7 @@
     </div>
 
     <div *ngIf="isTalksListVisible()" class="m-2">
-      <h4>{{'speaker.table.title' | translate}}</h4>
+      <h4>{{'talks.table.title' | translate}}</h4>
       <p-table [value]="speakerDetails.talks" [resizableColumns]="true" [autoLayout]="true"
                [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
@@ -64,15 +64,15 @@
           <tr>
             <th class="text-center" pResizableColumn>#</th>
             <th class="text-center" [pSortableColumn]="'eventName'" pResizableColumn>
-              {{'speaker.table.eventColumn' | translate}}
+              {{'talks.table.eventColumn' | translate}}
               <p-sortIcon [field]="'eventName'"></p-sortIcon>
             </th>
             <th class="text-center" [pSortableColumn]="'talkDate'" pResizableColumn>
-              {{'speaker.table.talkDateColumn' | translate}}
+              {{'talks.table.talkDateColumn' | translate}}
               <p-sortIcon [field]="'talkDate'"></p-sortIcon>
             </th>
             <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
-              {{'speaker.table.nameColumn' | translate}}
+              {{'talks.table.nameColumn' | translate}}
               <p-sortIcon [field]="'name'"></p-sortIcon>
             </th>
           </tr>

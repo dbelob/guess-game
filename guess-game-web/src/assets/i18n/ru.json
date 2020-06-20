@@ -58,6 +58,12 @@
   "talks": {
     "title": "Доклады",
     "noTalksFoundText": "Доклады не найдены",
+    "table": {
+      "title": "Доклады",
+      "eventColumn": "Событие",
+      "talkDateColumn": "Дата доклада",
+      "nameColumn": "Наименование"
+    },
     "search": {
       "title": "Поиск",
       "eventTypeLabel": "Тип события:",
@@ -69,13 +75,7 @@
     }
   },
   "speaker": {
-    "title": "Спикер",
-    "table": {
-      "title": "Доклады",
-      "eventColumn": "Событие",
-      "talkDateColumn": "Дата доклада",
-      "nameColumn": "Наименование"
-    }
+    "title": "Спикер"
   },
   "speakers": {
     "title": "Спикеры",

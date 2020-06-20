@@ -45,6 +45,7 @@ import { QuestionService } from './shared/services/question.service';
 import { StateService } from './shared/services/state.service';
 import { SpeakerService } from './shared/services/speaker.service';
 import { StatisticsService } from './shared/services/statistics.service';
+import { TalkService } from './shared/services/talk.service';
 import { StateGuard } from './shared/guards/state.guard';
 
 const routes: Routes = [
@@ -118,6 +119,7 @@ registerLocaleData(localeRu, 'ru');
     StateService,
     SpeakerService,
     StatisticsService,
+    TalkService,
     StateGuard
   ],
   bootstrap: [AppComponent]
