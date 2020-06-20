@@ -71,6 +71,10 @@
               {{'talks.table.talkDateColumn' | translate}}
               <p-sortIcon [field]="'talkDate'"></p-sortIcon>
             </th>
+            <th class="text-center" [pSortableColumn]="'language'" pResizableColumn>
+              {{'talks.table.languageColumn' | translate}}
+              <p-sortIcon [field]="'language'"></p-sortIcon>
+            </th>
             <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
               {{'talks.table.nameColumn' | translate}}
               <p-sortIcon [field]="'name'"></p-sortIcon>
@@ -85,6 +89,7 @@
               <span class="ml-2">{{talk.eventName}}</span>
             </td>
             <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+            <td class="text-center">{{talk.language | uppercase}}</td>
             <td>{{talk.name}}</td>
           </tr>
         </ng-template>

@@ -3,6 +3,7 @@ export class Talk {
     public id?: string,
     public name?: string,
     public talkDate?: Date,
+    public language?: string,
     public eventId?: number,
     public eventName?: string,
     public eventTypeLogoFileName?: string
