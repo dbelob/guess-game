@@ -89,7 +89,9 @@
               <span class="ml-2">{{talk.eventName}}</span>
             </td>
             <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>
-            <td>{{talk.name}}</td>
+            <td>
+              <a [routerLink]="['/information', 'talk', talk.id]" class="text-dark">{{talk.name}}</a>
+            </td>
             <td>
               <span *ngFor="let speaker of talk.speakers; let i = index">
                 <span *ngIf="i > 0">, </span><a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">{{speaker.displayName}}</a>

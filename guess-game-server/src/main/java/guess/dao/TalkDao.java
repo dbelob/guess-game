@@ -11,5 +11,7 @@ import java.util.List;
 public interface TalkDao {
     List<Talk> getTalks();
 
+    Talk getTalkById(long id);
+
     List<Talk> getTalksBySpeaker(Speaker speaker);
 }

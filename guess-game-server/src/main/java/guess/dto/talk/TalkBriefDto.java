@@ -63,7 +63,11 @@ public class TalkBriefDto {
         return speakers;
     }
 
-    public static TalkBriefDto convertToDto(Talk talk, Event event, EventType eventType, Language language) {
+    public static TalkBriefDto convertToBriefDto(Talk talk, Function<Talk, Event> talkEventFunction,
+                                                 Function<Event, EventType> eventEventTypeFunction, Language language) {
+        Event event = talkEventFunction.apply(talk);
+        EventType eventType = eventEventTypeFunction.apply(event);
+
         LocalDate eventStartDate = (event != null) ? event.getStartDate() : null;
         Long talkDay = talk.getTalkDay();
         LocalDate talkDate = (eventStartDate != null) ?
@@ -84,16 +88,11 @@ public class TalkBriefDto {
                 speakers);
     }
 
-    public static List<TalkBriefDto> convertToDto(List<Talk> talks, Function<Talk, Event> talkEventFunction,
-                                                  Function<Event, EventType> eventEventTypeFunction,
-                                                  Language language) {
+    public static List<TalkBriefDto> convertToBriefDto(List<Talk> talks, Function<Talk, Event> talkEventFunction,
+                                                       Function<Event, EventType> eventEventTypeFunction,
+                                                       Language language) {
         return talks.stream()
-                .map(t -> {
-                    Event event = talkEventFunction.apply(t);
-                    EventType eventType = eventEventTypeFunction.apply(event);
-
-                    return convertToDto(t, event, eventType, language);
-                })
+                .map(t -> convertToBriefDto(t, talkEventFunction, eventEventTypeFunction, language))
                 .collect(Collectors.toList());
     }
 }

@@ -34,6 +34,6 @@ public class SpeakerDetailsDto {
                                                  Function<Event, EventType> eventEventTypeFunction, Language language) {
         return new SpeakerDetailsDto(
                 SpeakerDto.convertToDto(speaker, language),
-                TalkBriefDto.convertToDto(talks, talkEventFunction, eventEventTypeFunction, language));
+                TalkBriefDto.convertToBriefDto(talks, talkEventFunction, eventEventTypeFunction, language));
     }
 }

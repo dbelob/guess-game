@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { EventType } from '../models/event-type.model';
 import { Event } from '../models/event.model';
 import { Talk } from '../models/talk.model';
+import { TalkDetails } from '../models/talk-details.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -32,6 +33,16 @@ export class TalkService {
     }
 
     return this.http.get<Talk[]>(`${this.baseUrl}/talks`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getTalk(id: number): Observable<TalkDetails> {
+    return this.http.get<TalkDetails>(`${this.baseUrl}/talk/${id}`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

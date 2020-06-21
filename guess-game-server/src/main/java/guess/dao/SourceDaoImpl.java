@@ -103,6 +103,14 @@ public class SourceDaoImpl implements SourceDao {
     }
 
     @Override
+    public Talk getTalkById(long id) {
+        return sourceInformation.getTalks().stream()
+                .filter(t -> (t.getId() == id))
+                .findFirst()
+                .orElseThrow();
+    }
+
+    @Override
     public List<Talk> getTalksBySpeaker(Speaker speaker) {
         return sourceInformation.getTalks().stream()
                 .filter(t -> (t.getSpeakers().stream()

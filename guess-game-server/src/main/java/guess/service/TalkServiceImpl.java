@@ -31,6 +31,11 @@ public class TalkServiceImpl implements TalkService {
     }
 
     @Override
+    public Talk getTalkById(long id) {
+        return talkDao.getTalkById(id);
+    }
+
+    @Override
     public List<Talk> getTalks(Long eventTypeId, Long eventId, String talkName, String speakerName) {
         String trimmedLowerCasedTalkName = SearchUtils.trimAndLowerCase(talkName);
         String trimmedLowerCasedSpeakerName = SearchUtils.trimAndLowerCase(speakerName);

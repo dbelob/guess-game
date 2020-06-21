@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SpeakerDetails } from '../../../shared/models/speaker-details.model';
 import { SpeakerService } from '../../../shared/services/speaker.service';
-import { getTalksWithSpeakersString } from "../../general/utility-functions";
+import { getTalksWithSpeakersString } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-speaker',

@@ -3,16 +3,14 @@ package guess.controller;
 import guess.domain.Language;
 import guess.domain.source.Talk;
 import guess.dto.talk.TalkBriefDto;
+import guess.dto.talk.TalkDetailsDto;
 import guess.service.EventService;
 import guess.service.EventTypeService;
 import guess.service.LocaleService;
 import guess.service.TalkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
@@ -46,11 +44,21 @@ public class TalkController {
                                        HttpSession httpSession) {
         List<Talk> talks = talkService.getTalks(eventTypeId, eventId, talkName, speakerName);
         Language language = localeService.getLanguage(httpSession);
-        List<TalkBriefDto> talkBriefDtoList = TalkBriefDto.convertToDto(talks, eventService::getEventByTalk,
+        List<TalkBriefDto> talkBriefDtoList = TalkBriefDto.convertToBriefDto(talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
 
         talkBriefDtoList.sort(Comparator.comparing(TalkBriefDto::getEventName).thenComparing(TalkBriefDto::getName));
 
         return talkBriefDtoList;
+    }
+
+    @GetMapping("/talk/{id}")
+    @ResponseBody
+    public TalkDetailsDto getTalk(@PathVariable long id, HttpSession httpSession) {
+        Talk talk = talkService.getTalkById(id);
+        Language language = localeService.getLanguage(httpSession);
+
+        return TalkDetailsDto.convertToDto(talk, eventService::getEventByTalk,
+                eventTypeService::getEventTypeByEvent, language);
     }
 }

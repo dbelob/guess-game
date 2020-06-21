@@ -25,6 +25,11 @@ public class SpeakerServiceImpl implements SpeakerService {
     }
 
     @Override
+    public Speaker getSpeakerById(long id) {
+        return speakerDao.getSpeakerById(id);
+    }
+
+    @Override
     public List<Speaker> getSpeakersByFirstLetter(String firstLetter, Language language) {
         return speakerDao.getSpeakers().stream()
                 .filter(s -> {
@@ -67,10 +72,5 @@ public class SpeakerServiceImpl implements SpeakerService {
                             (!isMvp || s.isAnyMvp())))
                     .collect(Collectors.toList());
         }
-    }
-
-    @Override
-    public Speaker getSpeakerById(long id) {
-        return speakerDao.getSpeakerById(id);
     }
 }
