@@ -2,7 +2,7 @@ import { formatDate } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { Event } from '../../shared/models/event.model';
 import { EventType } from '../../shared/models/event-type.model';
-import { Talk } from "../../shared/models/talk.model";
+import { Talk } from '../../shared/models/talk.model';
 
 export function isStringEmpty(value: string): boolean {
   return (!value || (value.trim().length <= 0));

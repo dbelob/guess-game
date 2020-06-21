@@ -19,18 +19,16 @@ public class TalkBriefDto {
     private final long id;
     private final String name;
     private final LocalDate talkDate;
-    private final String language;
     private final Long eventId;
     private final String eventName;
     private final String eventTypeLogoFileName;
     private final List<SpeakerSuperBriefDto> speakers;
 
-    public TalkBriefDto(long id, String name, LocalDate talkDate, String language, Long eventId, String eventName,
+    public TalkBriefDto(long id, String name, LocalDate talkDate, Long eventId, String eventName,
                         String eventTypeLogoFileName, List<SpeakerSuperBriefDto> speakers) {
         this.id = id;
         this.name = name;
         this.talkDate = talkDate;
-        this.language = language;
         this.eventId = eventId;
         this.eventName = eventName;
         this.eventTypeLogoFileName = eventTypeLogoFileName;
@@ -47,10 +45,6 @@ public class TalkBriefDto {
 
     public LocalDate getTalkDate() {
         return talkDate;
-    }
-
-    public String getLanguage() {
-        return language;
     }
 
     public Long getEventId() {
@@ -84,7 +78,6 @@ public class TalkBriefDto {
                 talk.getId(),
                 LocalizationUtils.getString(talk.getName(), language),
                 talkDate,
-                talk.getLanguage(),
                 eventId,
                 eventName,
                 eventTypeLogoFileName,

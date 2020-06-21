@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SpeakerDetails } from '../../../shared/models/speaker-details.model';
 import { SpeakerService } from '../../../shared/services/speaker.service';
+import { getTalksWithSpeakersString } from "../../general/utility-functions";
 
 @Component({
   selector: 'app-speaker',
@@ -34,20 +35,21 @@ export class SpeakerComponent implements OnInit {
 
       if (!isNaN(idNumber)) {
         this.id = idNumber;
-        this.loadSpeakers(this.id);
+        this.loadSpeaker(this.id);
       }
     });
   }
 
-  loadSpeakers(id: number) {
+  loadSpeaker(id: number) {
     this.speakerService.getSpeaker(id)
       .subscribe(data => {
         this.speakerDetails = data;
+        this.speakerDetails.talks = getTalksWithSpeakersString(this.speakerDetails.talks);
       });
   }
 
   onLanguageChange() {
-    this.loadSpeakers(this.id);
+    this.loadSpeaker(this.id);
   }
 
   isTalksListVisible() {

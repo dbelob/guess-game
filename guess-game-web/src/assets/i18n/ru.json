@@ -62,7 +62,6 @@
       "title": "Доклады",
       "eventColumn": "Событие",
       "talkDateColumn": "Дата доклада",
-      "languageColumn": "Язык",
       "nameColumn": "Наименование",
       "speakersColumn": "Спикеры"
     },
