@@ -6,7 +6,7 @@ import { SpeakerStatistics } from '../../../shared/models/speaker-statistics.mod
 import { EventService } from '../../../shared/services/event.service';
 import { StatisticsService } from '../../../shared/services/statistics.service';
 import { QuestionService } from '../../../shared/services/question.service';
-import { findEventTypeByDefaultEvent } from '../../general/utility-functions';
+import { findEventTypeById } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-speaker-statistics',
@@ -51,7 +51,7 @@ export class SpeakerStatisticsComponent implements OnInit {
         if (this.eventTypes.length > 0) {
           this.eventService.getDefaultEvent()
             .subscribe(defaultEventData => {
-              const selectedEventType = findEventTypeByDefaultEvent(defaultEventData, this.eventTypes);
+              const selectedEventType = findEventTypeById(defaultEventData?.eventTypeId, this.eventTypes);
 
               if (selectedEventType) {
                 this.selectedEventType = selectedEventType;

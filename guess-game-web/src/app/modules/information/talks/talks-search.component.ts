@@ -8,8 +8,8 @@ import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { TalkService } from '../../../shared/services/talk.service';
 import {
-  findEventByDefaultEvent, findEventById,
-  findEventTypeByDefaultEvent, findEventTypeById,
+  findEventById,
+  findEventTypeById,
   getEventsWithDisplayName,
   isStringEmpty
 } from '../../general/utility-functions';
@@ -65,7 +65,7 @@ export class TalksSearchComponent implements OnInit {
             .subscribe(defaultEventData => {
               this.defaultEvent = defaultEventData;
 
-              const selectedEventType = findEventTypeByDefaultEvent(this.defaultEvent, this.eventTypes);
+              const selectedEventType = findEventTypeById(this.defaultEvent?.eventTypeId, this.eventTypes);
 
               if (selectedEventType) {
                 this.selectedEventType = selectedEventType;
@@ -97,7 +97,7 @@ export class TalksSearchComponent implements OnInit {
           });
 
           if (this.events.length > 0) {
-            const selectedEvent = findEventByDefaultEvent(this.defaultEvent, this.events);
+            const selectedEvent = findEventById(this.defaultEvent?.id, this.events);
 
             if (selectedEvent) {
               this.selectedEvent = selectedEvent;

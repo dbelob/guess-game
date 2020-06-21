@@ -6,7 +6,7 @@ import { EventService } from '../../../shared/services/event.service';
 import { EventStatistics } from '../../../shared/models/event-statistics.model';
 import { QuestionService } from '../../../shared/services/question.service';
 import { StatisticsService } from '../../../shared/services/statistics.service';
-import { findEventTypeByDefaultEvent } from '../../general/utility-functions';
+import { findEventTypeById } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-event-statistics',
@@ -45,7 +45,7 @@ export class EventStatisticsComponent implements OnInit {
         if (this.conferences.length > 0) {
           this.eventService.getDefaultEvent()
             .subscribe(defaultEventData => {
-              const selectedConference = findEventTypeByDefaultEvent(defaultEventData, this.conferences);
+              const selectedConference = findEventTypeById(defaultEventData?.eventTypeId, this.conferences);
 
               if (selectedConference) {
                 this.selectedConference = selectedConference;

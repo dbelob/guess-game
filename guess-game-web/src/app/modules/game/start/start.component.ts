@@ -9,11 +9,7 @@ import { Event } from '../../../shared/models/event.model';
 import { EventService } from '../../../shared/services/event.service';
 import { QuestionService } from '../../../shared/services/question.service';
 import { StateService } from '../../../shared/services/state.service';
-import {
-  findEventByDefaultEvent,
-  findEventTypeByDefaultEvent,
-  getEventsWithDisplayName
-} from '../../general/utility-functions';
+import { findEventById, findEventTypeById, getEventsWithDisplayName } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-start',
@@ -67,7 +63,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
             .subscribe(defaultEventData => {
               this.defaultEvent = defaultEventData;
 
-              const selectedEventType = findEventTypeByDefaultEvent(this.defaultEvent, this.eventTypes);
+              const selectedEventType = findEventTypeById(this.defaultEvent?.eventTypeId, this.eventTypes);
 
               if (selectedEventType) {
                 this.selectedEventTypes = [selectedEventType];
@@ -110,7 +106,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
         this.events = getEventsWithDisplayName(data, this.translateService);
 
         if (this.events.length > 0) {
-          const selectedEvent = findEventByDefaultEvent(this.defaultEvent, this.events);
+          const selectedEvent = findEventById(this.defaultEvent?.id, this.events);
 
           if (selectedEvent) {
             this.selectedEvents = [selectedEvent];
