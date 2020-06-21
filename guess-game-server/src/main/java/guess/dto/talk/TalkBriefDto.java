@@ -4,6 +4,7 @@ import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Talk;
+import guess.dto.speaker.SpeakerSuperBriefDto;
 import guess.util.LocalizationUtils;
 
 import java.time.LocalDate;
@@ -22,9 +23,10 @@ public class TalkBriefDto {
     private final Long eventId;
     private final String eventName;
     private final String eventTypeLogoFileName;
+    private final List<SpeakerSuperBriefDto> speakers;
 
     public TalkBriefDto(long id, String name, LocalDate talkDate, String language, Long eventId, String eventName,
-                        String eventTypeLogoFileName) {
+                        String eventTypeLogoFileName, List<SpeakerSuperBriefDto> speakers) {
         this.id = id;
         this.name = name;
         this.talkDate = talkDate;
@@ -32,6 +34,7 @@ public class TalkBriefDto {
         this.eventId = eventId;
         this.eventName = eventName;
         this.eventTypeLogoFileName = eventTypeLogoFileName;
+        this.speakers = speakers;
     }
 
     public long getId() {
@@ -62,6 +65,10 @@ public class TalkBriefDto {
         return eventTypeLogoFileName;
     }
 
+    public List<SpeakerSuperBriefDto> getSpeakers() {
+        return speakers;
+    }
+
     public static TalkBriefDto convertToDto(Talk talk, Event event, EventType eventType, Language language) {
         LocalDate eventStartDate = (event != null) ? event.getStartDate() : null;
         Long talkDay = talk.getTalkDay();
@@ -71,6 +78,7 @@ public class TalkBriefDto {
         Long eventId = (event != null) ? event.getId() : null;
         String eventName = (event != null) ? LocalizationUtils.getString(event.getName(), language) : null;
         String eventTypeLogoFileName = (eventType != null) ? eventType.getLogoFileName() : null;
+        List<SpeakerSuperBriefDto> speakers = SpeakerSuperBriefDto.convertToSuperBriefDto(talk.getSpeakers(), language);
 
         return new TalkBriefDto(
                 talk.getId(),
@@ -79,7 +87,8 @@ public class TalkBriefDto {
                 talk.getLanguage(),
                 eventId,
                 eventName,
-                eventTypeLogoFileName);
+                eventTypeLogoFileName,
+                speakers);
     }
 
     public static List<TalkBriefDto> convertToDto(List<Talk> talks, Function<Talk, Event> talkEventFunction,

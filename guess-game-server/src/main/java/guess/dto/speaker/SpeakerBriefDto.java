@@ -10,10 +10,8 @@ import java.util.stream.Collectors;
 /**
  * Speaker DTO (brief).
  */
-public class SpeakerBriefDto {
-    private final long id;
+public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     private final String fileName;
-    private final String displayName;
     private final String company;
     private final String twitter;
     private final String gitHub;
@@ -22,11 +20,11 @@ public class SpeakerBriefDto {
     private final boolean mvpReconnect;
     private final boolean anyMvp;
 
-    public SpeakerBriefDto(long id, String fileName, String displayName, String company, String twitter, String gitHub,
+    public SpeakerBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, String fileName, String company, String twitter, String gitHub,
                            boolean javaChampion, boolean mvp, boolean mvpReconnect, boolean anyMvp) {
-        this.id = id;
+        super(speakerSuperBriefDto.getId(), speakerSuperBriefDto.getDisplayName());
+
         this.fileName = fileName;
-        this.displayName = displayName;
         this.company = company;
         this.twitter = twitter;
         this.gitHub = gitHub;
@@ -36,16 +34,8 @@ public class SpeakerBriefDto {
         this.anyMvp = anyMvp;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public String getFileName() {
         return fileName;
-    }
-
-    public String getDisplayName() {
-        return displayName;
     }
 
     public String getCompany() {
@@ -76,11 +66,23 @@ public class SpeakerBriefDto {
         return anyMvp;
     }
 
+    public static SpeakerBriefDto convertToBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, Speaker speaker, Language language) {
+        return new SpeakerBriefDto(
+                speakerSuperBriefDto,
+                speaker.getFileName(),
+                LocalizationUtils.getString(speaker.getCompany(), language),
+                speaker.getTwitter(),
+                speaker.getGitHub(),
+                speaker.isJavaChampion(),
+                speaker.isMvp(),
+                speaker.isMvpReconnect(),
+                speaker.isAnyMvp());
+    }
+
     public static SpeakerBriefDto convertToBriefDto(Speaker speaker, Language language) {
         return new SpeakerBriefDto(
-                speaker.getId(),
+                convertToSuperBriefDto(speaker, language),
                 speaker.getFileName(),
-                LocalizationUtils.getString(speaker.getNameWithLastNameFirst(), language),
                 LocalizationUtils.getString(speaker.getCompany(), language),
                 speaker.getTwitter(),
                 speaker.getGitHub(),

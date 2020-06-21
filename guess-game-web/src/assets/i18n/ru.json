@@ -63,7 +63,8 @@
       "eventColumn": "Событие",
       "talkDateColumn": "Дата доклада",
       "languageColumn": "Язык",
-      "nameColumn": "Наименование"
+      "nameColumn": "Наименование",
+      "speakersColumn": "Спикеры"
     },
     "search": {
       "title": "Поиск",

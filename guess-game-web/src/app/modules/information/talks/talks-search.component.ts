@@ -11,6 +11,7 @@ import {
   findEventById,
   findEventTypeById,
   getEventsWithDisplayName,
+  getTalksWithSpeakersString,
   isStringEmpty
 } from '../../general/utility-functions';
 
@@ -122,7 +123,7 @@ export class TalksSearchComponent implements OnInit {
   loadTalks(eventType: EventType, event: Event, talkName: string, speakerName: string) {
     this.talkService.getTalks(eventType, event, talkName, speakerName)
       .subscribe(data => {
-        this.talks = data;
+        this.talks = getTalksWithSpeakersString(data);
         this.searched = true;
       });
   }

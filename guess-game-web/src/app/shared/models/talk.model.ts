@@ -1,3 +1,5 @@
+import { Speaker } from './speaker.model';
+
 export class Talk {
   constructor(
     public id?: string,
@@ -6,7 +8,9 @@ export class Talk {
     public language?: string,
     public eventId?: number,
     public eventName?: string,
-    public eventTypeLogoFileName?: string
+    public eventTypeLogoFileName?: string,
+    public speakers?: Speaker[],
+    public speakersString?: string
   ) {
   }
 }

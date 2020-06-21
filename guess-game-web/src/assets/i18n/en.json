@@ -63,7 +63,8 @@
       "eventColumn": "Event",
       "talkDateColumn": "Talk date",
       "languageColumn": "Language",
-      "nameColumn": "Name"
+      "nameColumn": "Name",
+      "speakersColumn": "Speakers"
     },
     "search": {
       "title": "Search",

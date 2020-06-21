@@ -91,6 +91,10 @@
               {{'talks.table.nameColumn' | translate}}
               <p-sortIcon [field]="'name'"></p-sortIcon>
             </th>
+            <th class="text-center" [pSortableColumn]="'speakersString'" pResizableColumn>
+              {{'talks.table.speakersColumn' | translate}}
+              <p-sortIcon [field]="'speakersString'"></p-sortIcon>
+            </th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-talk let-i = "rowIndex">
@@ -103,6 +107,11 @@
             <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td class="text-center">{{talk.language | uppercase}}</td>
             <td>{{talk.name}}</td>
+            <td>
+              <span *ngFor="let speaker of talk.speakers; let i = index">
+                <span *ngIf="i > 0">, </span><a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">{{speaker.displayName}}</a>
+              </span>
+            </td>
           </tr>
         </ng-template>
       </p-table>
