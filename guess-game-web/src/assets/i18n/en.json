@@ -54,7 +54,8 @@
   },
   "talk": {
     "title": "Talk",
-    "dayLabel": "Day"
+    "dayLabel": "Day",
+    "trackLabel": "Track"
   },
   "talks": {
     "title": "Talks",

@@ -12,7 +12,7 @@ export class Talk {
     public speakersString?: string,
     public description?: string,
     public talkDay?: number,
-    public trackTime?: string,
+    public talkTime?: Date,
     public track?: number,
     public language?: string,
     public presentationLinks?: string[],

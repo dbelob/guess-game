@@ -65,8 +65,9 @@ public class TalkBriefDto {
 
         LocalDate eventStartDate = (event != null) ? event.getStartDate() : null;
         Long talkDay = talk.getTalkDay();
+        long safeTalkDay = (talkDay != null) ? talkDay : 1;
         LocalDate talkDate = (eventStartDate != null) ?
-                ((talkDay != null) ? eventStartDate.plusDays(talkDay - 1) : eventStartDate) :
+                ((talkDay != null) ? eventStartDate.plusDays(safeTalkDay - 1) : eventStartDate) :
                 null;
         EventBriefDto eventBriefDto = (event != null) ? EventBriefDto.convertToBriefDto(event, language) : null;
         String eventTypeLogoFileName = (eventType != null) ? eventType.getLogoFileName() : null;

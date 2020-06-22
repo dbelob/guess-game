@@ -6,7 +6,8 @@ import guess.domain.source.EventType;
 import guess.domain.source.Talk;
 import guess.util.LocalizationUtils;
 
-import java.time.LocalTime;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -17,20 +18,20 @@ import java.util.stream.Collectors;
 public class TalkDto extends TalkBriefDto {
     private final String description;
     private final Long talkDay;
-    private final LocalTime trackTime;
+    private final LocalDateTime talkTime;
     private final Long track;
     private final String language;
     private final List<String> presentationLinks;
     private final List<String> videoLinks;
 
-    public TalkDto(TalkBriefDto talkBriefDto, String description, Long talkDay, LocalTime trackTime, Long track,
+    public TalkDto(TalkBriefDto talkBriefDto, String description, Long talkDay, LocalDateTime talkTime, Long track,
                    String language, List<String> presentationLinks, List<String> videoLinks) {
         super(talkBriefDto.getId(), talkBriefDto.getName(), talkBriefDto.getTalkDate(), talkBriefDto.getEvent(),
                 talkBriefDto.getEventTypeLogoFileName(), talkBriefDto.getSpeakers());
 
         this.description = description;
         this.talkDay = talkDay;
-        this.trackTime = trackTime;
+        this.talkTime = talkTime;
         this.track = track;
         this.language = language;
         this.presentationLinks = presentationLinks;
@@ -45,8 +46,8 @@ public class TalkDto extends TalkBriefDto {
         return talkDay;
     }
 
-    public LocalTime getTrackTime() {
-        return trackTime;
+    public LocalDateTime getTalkTime() {
+        return talkTime;
     }
 
     public Long getTrack() {
@@ -73,11 +74,16 @@ public class TalkDto extends TalkBriefDto {
             description = LocalizationUtils.getString(talk.getShortDescription(), language);
         }
 
+        TalkBriefDto talkBriefDto = convertToBriefDto(talk, talkEventFunction, eventEventTypeFunction, language);
+        LocalDate talkDate = talkBriefDto.getTalkDate();
+        LocalDate safeLocalDate = (talkDate != null) ? talkDate : LocalDate.now();
+        LocalDateTime talkTime = (talk.getTrackTime() != null) ? LocalDateTime.of(safeLocalDate, talk.getTrackTime()) : null;
+
         return new TalkDto(
-                convertToBriefDto(talk, talkEventFunction, eventEventTypeFunction, language),
+                talkBriefDto,
                 description,
                 talk.getTalkDay(),
-                talk.getTrackTime(),
+                talkTime,
                 talk.getTrack(),
                 talk.getLanguage(),
                 talk.getPresentationLinks(),

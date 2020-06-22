@@ -54,7 +54,8 @@
   },
   "talk": {
     "title": "Доклад",
-    "dayLabel": "День"
+    "dayLabel": "День",
+    "trackLabel": "Зал"
   },
   "talks": {
     "title": "Доклады",

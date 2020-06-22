@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TalkDetails } from '../../../shared/models/talk-details.model';
 import { TalkService } from '../../../shared/services/talk.service';
-import { getEventDisplayName, getTalksWithSpeakersString } from '../../general/utility-functions';
+import { getEventDisplayName } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-talk',
