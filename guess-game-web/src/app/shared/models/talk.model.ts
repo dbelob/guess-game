@@ -6,13 +6,17 @@ export class Talk {
     public id?: string,
     public name?: string,
     public talkDate?: Date,
-    public language?: string,
-    public eventId?: number,
     public event?: Event,
     public eventTypeLogoFileName?: string,
     public speakers?: Speaker[],
     public speakersString?: string,
-    public displayName?: string
+    public description?: string,
+    public talkDay?: number,
+    public trackTime?: Date,
+    public track?: number,
+    public language?: string,
+    public presentationLinks?: string[],
+    public videoLinks?: string[]
   ) {
   }
 }

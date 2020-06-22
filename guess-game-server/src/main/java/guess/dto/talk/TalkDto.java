@@ -25,8 +25,8 @@ public class TalkDto extends TalkBriefDto {
 
     public TalkDto(TalkBriefDto talkBriefDto, String description, Long talkDay, LocalTime trackTime, Long track,
                    String language, List<String> presentationLinks, List<String> videoLinks) {
-        super(talkBriefDto.getId(), talkBriefDto.getName(), talkBriefDto.getTalkDate(), talkBriefDto.getEventId(),
-                talkBriefDto.getEvent(), talkBriefDto.getEventTypeLogoFileName(), talkBriefDto.getSpeakers());
+        super(talkBriefDto.getId(), talkBriefDto.getName(), talkBriefDto.getTalkDate(), talkBriefDto.getEvent(),
+                talkBriefDto.getEventTypeLogoFileName(), talkBriefDto.getSpeakers());
 
         this.description = description;
         this.talkDay = talkDay;

@@ -20,17 +20,15 @@ public class TalkBriefDto {
     private final long id;
     private final String name;
     private final LocalDate talkDate;
-    private final Long eventId;
     private final EventBriefDto event;
     private final String eventTypeLogoFileName;
     private final List<SpeakerSuperBriefDto> speakers;
 
-    public TalkBriefDto(long id, String name, LocalDate talkDate, Long eventId, EventBriefDto event,
-                        String eventTypeLogoFileName, List<SpeakerSuperBriefDto> speakers) {
+    public TalkBriefDto(long id, String name, LocalDate talkDate, EventBriefDto event, String eventTypeLogoFileName,
+                        List<SpeakerSuperBriefDto> speakers) {
         this.id = id;
         this.name = name;
         this.talkDate = talkDate;
-        this.eventId = eventId;
         this.event = event;
         this.eventTypeLogoFileName = eventTypeLogoFileName;
         this.speakers = speakers;
@@ -46,10 +44,6 @@ public class TalkBriefDto {
 
     public LocalDate getTalkDate() {
         return talkDate;
-    }
-
-    public Long getEventId() {
-        return eventId;
     }
 
     public EventBriefDto getEvent() {
@@ -74,7 +68,6 @@ public class TalkBriefDto {
         LocalDate talkDate = (eventStartDate != null) ?
                 ((talkDay != null) ? eventStartDate.plusDays(talkDay - 1) : eventStartDate) :
                 null;
-        Long eventId = (event != null) ? event.getId() : null;
         EventBriefDto eventBriefDto = (event != null) ? EventBriefDto.convertToBriefDto(event, language) : null;
         String eventTypeLogoFileName = (eventType != null) ? eventType.getLogoFileName() : null;
         List<SpeakerSuperBriefDto> speakers = SpeakerSuperBriefDto.convertToSuperBriefDto(talk.getSpeakers(), language);
@@ -83,7 +76,6 @@ public class TalkBriefDto {
                 talk.getId(),
                 LocalizationUtils.getString(talk.getName(), language),
                 talkDate,
-                eventId,
                 eventBriefDto,
                 eventTypeLogoFileName,
                 speakers);
