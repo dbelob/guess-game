@@ -12,11 +12,12 @@ export class Talk {
     public speakersString?: string,
     public description?: string,
     public talkDay?: number,
-    public trackTime?: Date,
+    public trackTime?: string,
     public track?: number,
     public language?: string,
     public presentationLinks?: string[],
-    public videoLinks?: string[]
+    public videoLinks?: string[],
+    public trackTimeDate?: Date,
   ) {
   }
 }

@@ -2,7 +2,6 @@
   "common": {
     "menuLinkText": "Menu",
     "cancelLinkText": "Cancel",
-    "totalsText": "Totals",
     "searchButtonText": "Search",
     "clearButtonText": "Clear",
     "eventTypeKind": {
@@ -10,6 +9,7 @@
       "meetup": "Meetup"
     },
     "table": {
+      "totalsText": "Totals",
       "paginator": {
         "currentPageReportTemplate": "{first} to {last} of {totalRecords}"
       }
@@ -53,7 +53,8 @@
     "noButtonText": "No"
   },
   "talk": {
-    "title": "Talk"
+    "title": "Talk",
+    "dayLabel": "Day"
   },
   "talks": {
     "title": "Talks",

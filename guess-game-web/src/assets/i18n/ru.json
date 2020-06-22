@@ -2,7 +2,6 @@
   "common": {
     "menuLinkText": "Меню",
     "cancelLinkText": "Прервать",
-    "totalsText": "Всего",
     "searchButtonText": "Поиск",
     "clearButtonText": "Очистить",
     "eventTypeKind": {
@@ -10,6 +9,7 @@
       "meetup": "Митап"
     },
     "table": {
+      "totalsText": "Всего",
       "paginator": {
         "currentPageReportTemplate": "{first} по {last} из {totalRecords}"
       }
@@ -53,7 +53,8 @@
     "noButtonText": "Нет"
   },
   "talk": {
-    "title": "Доклад"
+    "title": "Доклад",
+    "dayLabel": "День"
   },
   "talks": {
     "title": "Доклады",

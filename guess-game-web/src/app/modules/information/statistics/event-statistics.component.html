@@ -83,7 +83,7 @@
       </ng-template>
       <ng-template pTemplate="footer">
         <tr>
-          <td colspan="2">{{'common.totalsText' | translate}}</td>
+          <td colspan="2">{{'common.table.totalsText' | translate}}</td>
           <td class="text-center">{{eventStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
           <td class="text-center">{{eventStatistics.totals?.duration | number:'1.0-0':translateService.currentLang}}</td>
           <td class="text-center">{{eventStatistics.totals?.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>

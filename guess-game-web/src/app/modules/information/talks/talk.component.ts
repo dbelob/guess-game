@@ -44,6 +44,10 @@ export class TalkComponent implements OnInit {
       talkDetails.talk.event.displayName = getEventDisplayName(talkDetails.talk.event, this.translateService);
     }
 
+    if (talkDetails?.talk?.trackTime) {
+      talkDetails.talk.trackTimeDate = new Date(talkDetails.talk.trackTime);
+    }
+
     return talkDetails;
   }
 
