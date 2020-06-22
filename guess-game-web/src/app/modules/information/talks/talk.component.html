@@ -22,15 +22,25 @@
         <div class="col-auto mt-1">
           <img src="{{eventsImageDirectory}}/{{talkDetails.talk?.eventTypeLogoFileName}}" height="24" alt="logo"/>
           <span class="ml-2">{{talkDetails.talk?.event?.displayName}}</span>
-          <span *ngIf="talkDetails.talk?.talkDay"> / <i class="fa fa-calendar"></i> {{'talk.dayLabel' | translate}} {{talkDetails.talk?.talkDay}}</span>
-          <span *ngIf="talkDetails.talk?.talkTime"> / <i class="fa fa-clock-o"></i> {{talkDetails.talk?.talkTime | date:"HH:mm":undefined:translateService.currentLang}}</span>
-          <span *ngIf="talkDetails.talk?.track"> / <i class="fa fa-location-arrow"></i> {{'talk.trackLabel' | translate}} {{talkDetails.talk?.track}}</span>
-          <span *ngIf="talkDetails.talk?.language"> / <i class="fa fa-globe"></i> {{talkDetails.talk?.language | uppercase}}</span>
+          <span *ngIf="talkDetails.talk?.talkDay"> / <i class="fa fa-calendar"></i> {{'talk.dayLabel' | translate}} {{talkDetails.talk.talkDay}}</span>
+          <span *ngIf="talkDetails.talk?.talkTime"> / <i class="fa fa-clock-o"></i> {{talkDetails.talk.talkTime | date:"HH:mm":undefined:translateService.currentLang}}</span>
+          <span *ngIf="talkDetails.talk?.track"> / <i class="fa fa-location-arrow"></i> {{'talk.trackLabel' | translate}} {{talkDetails.talk.track}}</span>
+          <span *ngIf="talkDetails.talk?.language"> / <i class="fa fa-globe"></i> {{talkDetails.talk.language | uppercase}}</span>
         </div>
       </div>
 
       <div *ngIf="talkDetails.talk?.description" class="mt-3">
-        <markdown [data]='talkDetails.talk?.description'></markdown>
+        <markdown [data]='talkDetails.talk.description'></markdown>
+      </div>
+
+      <div *ngIf="talkDetails.talk?.presentationLinks" class="mt-3">
+        <span *ngFor="let presentationLink of talkDetails.talk.presentationLinks"><i class="fa fa-file-pdf-o"></i> Download presentation</span>
+      </div>
+
+      <div *ngIf="talkDetails.talk?.videoLinksVideoIds">
+        <div *ngFor="let videoId of talkDetails.talk.videoLinksVideoIds" class="mt-3">
+          <youtube-player videoId="{{videoId}}"></youtube-player>
+        </div>
       </div>
     </div>
   </div>

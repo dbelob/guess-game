@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownModule } from 'ngx-markdown';
 import { DropdownModule } from 'primeng/dropdown';
@@ -28,6 +29,7 @@ import { TalksSwitcherComponent } from './talks-switcher.component';
     MarkdownModule,
     RouterModule,
     TableModule,
+    YouTubePlayerModule,
     GeneralModule,
     InformationModule,
     MessageModule,
