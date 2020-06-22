@@ -3,12 +3,16 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TalkDetails } from '../../../shared/models/talk-details.model';
 import { TalkService } from '../../../shared/services/talk.service';
+import { getEventDisplayName, getTalksWithSpeakersString } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-talk',
   templateUrl: './talk.component.html'
 })
 export class TalkComponent implements OnInit {
+  private imageDirectory = 'assets/images';
+  public eventsImageDirectory = `${this.imageDirectory}/events`;
+
   private id: number;
   public talkDetails: TalkDetails = new TalkDetails();
 
@@ -31,11 +35,23 @@ export class TalkComponent implements OnInit {
   loadTalk(id: number) {
     this.talkService.getTalk(id)
       .subscribe(data => {
-        this.talkDetails = data;
+        this.talkDetails = this.getTalkDetailsWithTalkWithDisplayName(data);
       });
+  }
+
+  getTalkDetailsWithTalkWithDisplayName(talkDetails: TalkDetails): TalkDetails {
+    if (talkDetails?.talk?.event) {
+      talkDetails.talk.event.displayName = getEventDisplayName(talkDetails.talk.event, this.translateService);
+    }
+
+    return talkDetails;
   }
 
   onLanguageChange() {
     this.loadTalk(this.id);
+  }
+
+  isSpeakersListVisible() {
+    // TODO: implement
   }
 }

@@ -75,9 +75,9 @@
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>
-            <th class="text-center" [pSortableColumn]="'eventName'" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'event.name'" pResizableColumn>
               {{'talks.table.eventColumn' | translate}}
-              <p-sortIcon [field]="'eventName'"></p-sortIcon>
+              <p-sortIcon [field]="'event.name'"></p-sortIcon>
             </th>
             <th class="text-center" [pSortableColumn]="'talkDate'" pResizableColumn>
               {{'talks.table.talkDateColumn' | translate}}
@@ -98,7 +98,7 @@
             <td class="text-center">{{i + 1}}</td>
             <td>
               <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" height="24" alt="logo"/>
-              <span class="ml-2">{{talk.eventName}}</span>
+              <span class="ml-2">{{talk.event?.name}}</span>
             </td>
             <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td>

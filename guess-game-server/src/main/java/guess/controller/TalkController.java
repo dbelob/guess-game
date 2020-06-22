@@ -47,7 +47,10 @@ public class TalkController {
         List<TalkBriefDto> talkBriefDtoList = TalkBriefDto.convertToBriefDto(talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
 
-        talkBriefDtoList.sort(Comparator.comparing(TalkBriefDto::getEventName).thenComparing(TalkBriefDto::getName));
+        Comparator<TalkBriefDto> comparatorByEventName = Comparator.comparing(t -> (t != null) ? t.getEvent().getName() : null);
+        Comparator<TalkBriefDto> comparatorByName = Comparator.comparing(TalkBriefDto::getName);
+
+        talkBriefDtoList.sort(comparatorByEventName.thenComparing(comparatorByName));
 
         return talkBriefDtoList;
     }

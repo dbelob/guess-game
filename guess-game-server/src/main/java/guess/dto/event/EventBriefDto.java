@@ -1,4 +1,4 @@
-package guess.dto.start;
+package guess.dto.event;
 
 import guess.domain.Language;
 import guess.domain.source.Event;

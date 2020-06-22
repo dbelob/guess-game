@@ -2,8 +2,8 @@ package guess.controller;
 
 import guess.domain.Language;
 import guess.domain.source.Event;
-import guess.dto.start.EventBriefDto;
-import guess.dto.start.EventDto;
+import guess.dto.event.EventBriefDto;
+import guess.dto.event.EventDto;
 import guess.service.EventService;
 import guess.service.LocaleService;
 import org.springframework.beans.factory.annotation.Autowired;

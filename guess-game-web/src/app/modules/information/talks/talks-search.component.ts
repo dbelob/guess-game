@@ -43,7 +43,7 @@ export class TalksSearchComponent implements OnInit {
 
   constructor(private eventTypeService: EventTypeService, private eventService: EventService,
               private talkService: TalkService, public translateService: TranslateService) {
-    this.multiSortMeta.push({field: 'eventName', order: 1});
+    this.multiSortMeta.push({field: 'event.name', order: 1});
     this.multiSortMeta.push({field: 'talkDate', order: 1});
     this.multiSortMeta.push({field: 'name', order: 1});
   }

@@ -52,38 +52,41 @@ export function isEventHyphenVisible(event: Event): boolean {
   return (isEventStartDateVisible(event) && isEventEndDateVisible(event));
 }
 
+export function getEventDisplayName(event: Event, translateService: TranslateService): string {
+  const isEventDateParenthesesVisibleFlag = isEventDateParenthesesVisible(event);
+  const isEventStartDateVisibleFlag = isEventStartDateVisible(event);
+  const isEventHyphenVisibleFlag = isEventHyphenVisible(event);
+  const isEventEndDateVisibleFlag = isEventEndDateVisible(event);
+
+  let displayName = event.name;
+
+  if (isEventDateParenthesesVisibleFlag) {
+    displayName += ' (';
+  }
+
+  if (isEventStartDateVisibleFlag) {
+    displayName += formatDate(event.startDate, 'shortDate', translateService.currentLang, undefined);
+  }
+
+  if (isEventHyphenVisibleFlag) {
+    displayName += ' – ';
+  }
+
+  if (isEventEndDateVisibleFlag) {
+    displayName += formatDate(event.endDate, 'shortDate', translateService.currentLang, undefined);
+  }
+
+  if (isEventDateParenthesesVisibleFlag) {
+    displayName += ')';
+  }
+
+  return displayName;
+}
+
 export function getEventsWithDisplayName(events: Event[], translateService: TranslateService): Event[] {
   if (events) {
     for (let i = 0; i < events.length; i++) {
-      const event: Event = events[i];
-      const isEventDateParenthesesVisibleFlag = isEventDateParenthesesVisible(event);
-      const isEventStartDateVisibleFlag = isEventStartDateVisible(event);
-      const isEventHyphenVisibleFlag = isEventHyphenVisible(event);
-      const isEventEndDateVisibleFlag = isEventEndDateVisible(event);
-
-      let displayName = event.name;
-
-      if (isEventDateParenthesesVisibleFlag) {
-        displayName += ' (';
-      }
-
-      if (isEventStartDateVisibleFlag) {
-        displayName += formatDate(event.startDate, 'shortDate', translateService.currentLang, undefined);
-      }
-
-      if (isEventHyphenVisibleFlag) {
-        displayName += ' – ';
-      }
-
-      if (isEventEndDateVisibleFlag) {
-        displayName += formatDate(event.endDate, 'shortDate', translateService.currentLang, undefined);
-      }
-
-      if (isEventDateParenthesesVisibleFlag) {
-        displayName += ')';
-      }
-
-      event.displayName = displayName;
+      events[i].displayName = getEventDisplayName(events[i], translateService);
     }
   }
 

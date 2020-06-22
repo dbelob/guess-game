@@ -47,7 +47,7 @@ export class SpeakerComponent implements OnInit {
       });
   }
 
-  getSpeakerDetailsWithTalksWithSpeakersString(speakerDetails: SpeakerDetails) {
+  getSpeakerDetailsWithTalksWithSpeakersString(speakerDetails: SpeakerDetails): SpeakerDetails {
     speakerDetails.talks = getTalksWithSpeakersString(speakerDetails.talks);
 
     return speakerDetails;

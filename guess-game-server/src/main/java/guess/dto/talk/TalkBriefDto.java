@@ -4,6 +4,7 @@ import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Talk;
+import guess.dto.event.EventBriefDto;
 import guess.dto.speaker.SpeakerSuperBriefDto;
 import guess.util.LocalizationUtils;
 
@@ -20,17 +21,17 @@ public class TalkBriefDto {
     private final String name;
     private final LocalDate talkDate;
     private final Long eventId;
-    private final String eventName;
+    private final EventBriefDto event;
     private final String eventTypeLogoFileName;
     private final List<SpeakerSuperBriefDto> speakers;
 
-    public TalkBriefDto(long id, String name, LocalDate talkDate, Long eventId, String eventName,
+    public TalkBriefDto(long id, String name, LocalDate talkDate, Long eventId, EventBriefDto event,
                         String eventTypeLogoFileName, List<SpeakerSuperBriefDto> speakers) {
         this.id = id;
         this.name = name;
         this.talkDate = talkDate;
         this.eventId = eventId;
-        this.eventName = eventName;
+        this.event = event;
         this.eventTypeLogoFileName = eventTypeLogoFileName;
         this.speakers = speakers;
     }
@@ -51,8 +52,8 @@ public class TalkBriefDto {
         return eventId;
     }
 
-    public String getEventName() {
-        return eventName;
+    public EventBriefDto getEvent() {
+        return event;
     }
 
     public String getEventTypeLogoFileName() {
@@ -74,7 +75,7 @@ public class TalkBriefDto {
                 ((talkDay != null) ? eventStartDate.plusDays(talkDay - 1) : eventStartDate) :
                 null;
         Long eventId = (event != null) ? event.getId() : null;
-        String eventName = (event != null) ? LocalizationUtils.getString(event.getName(), language) : null;
+        EventBriefDto eventBriefDto = (event != null) ? EventBriefDto.convertToBriefDto(event, language) : null;
         String eventTypeLogoFileName = (eventType != null) ? eventType.getLogoFileName() : null;
         List<SpeakerSuperBriefDto> speakers = SpeakerSuperBriefDto.convertToSuperBriefDto(talk.getSpeakers(), language);
 
@@ -83,7 +84,7 @@ public class TalkBriefDto {
                 LocalizationUtils.getString(talk.getName(), language),
                 talkDate,
                 eventId,
-                eventName,
+                eventBriefDto,
                 eventTypeLogoFileName,
                 speakers);
     }
