@@ -16,8 +16,7 @@ export class Talk {
     public track?: number,
     public language?: string,
     public presentationLinks?: string[],
-    public videoLinks?: string[],
-    public trackTimeDate?: Date,
+    public videoLinks?: string[]
   ) {
   }
 }
