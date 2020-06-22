@@ -43,9 +43,14 @@ export class SpeakerComponent implements OnInit {
   loadSpeaker(id: number) {
     this.speakerService.getSpeaker(id)
       .subscribe(data => {
-        this.speakerDetails = data;
-        this.speakerDetails.talks = getTalksWithSpeakersString(this.speakerDetails.talks);
+        this.speakerDetails = this.getSpeakerDetailsWithTalksWithSpeakersString(data);
       });
+  }
+
+  getSpeakerDetailsWithTalksWithSpeakersString(speakerDetails: SpeakerDetails) {
+    speakerDetails.talks = getTalksWithSpeakersString(speakerDetails.talks);
+
+    return speakerDetails;
   }
 
   onLanguageChange() {
