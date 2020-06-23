@@ -3,6 +3,7 @@ import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
 import { EventType } from '../../../shared/models/event-type.model';
 import { SpeakerStatistics } from '../../../shared/models/speaker-statistics.model';
+import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { StatisticsService } from '../../../shared/services/statistics.service';
 import { QuestionService } from '../../../shared/services/question.service';
@@ -29,7 +30,8 @@ export class SpeakerStatisticsComponent implements OnInit {
   public multiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private questionService: QuestionService,
-              private eventService: EventService, public translateService: TranslateService) {
+              private eventTypeService: EventTypeService, private eventService: EventService,
+              public translateService: TranslateService) {
     this.multiSortMeta.push({field: 'talksQuantity', order: -1});
     this.multiSortMeta.push({field: 'eventsQuantity', order: -1});
     this.multiSortMeta.push({field: 'eventTypesQuantity', order: -1});
@@ -40,7 +42,7 @@ export class SpeakerStatisticsComponent implements OnInit {
   }
 
   loadEventTypes(isConferences: boolean, isMeetups: boolean) {
-    this.statisticsService.getEventTypes(isConferences, isMeetups)
+    this.eventTypeService.getFilterEventTypes(isConferences, isMeetups)
       .subscribe(eventTypesData => {
         this.eventTypes = eventTypesData;
         this.eventTypeSelectItems = this.eventTypes.map(et => {

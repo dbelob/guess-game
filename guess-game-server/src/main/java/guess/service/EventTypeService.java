@@ -11,5 +11,7 @@ import java.util.List;
 public interface EventTypeService {
     List<EventType> getEventTypes();
 
+    List<EventType> getEventTypes(boolean isConferences, boolean isMeetups);
+
     EventType getEventTypeByEvent(Event event);
 }
