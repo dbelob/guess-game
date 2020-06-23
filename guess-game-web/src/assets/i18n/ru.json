@@ -55,7 +55,8 @@
   "talk": {
     "title": "Доклад",
     "dayLabel": "День",
-    "trackLabel": "Зал"
+    "trackLabel": "Зал",
+    "presentationLinkText": "Презентация"
   },
   "talks": {
     "title": "Доклады",

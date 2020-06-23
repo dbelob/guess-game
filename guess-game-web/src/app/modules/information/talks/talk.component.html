@@ -33,11 +33,15 @@
         <markdown [data]='talkDetails.talk.description'></markdown>
       </div>
 
-      <div *ngIf="talkDetails.talk?.presentationLinks" class="mt-3">
-        <span *ngFor="let presentationLink of talkDetails.talk.presentationLinks"><i class="fa fa-file-pdf-o"></i> Download presentation</span>
+      <div *ngIf="isPresentationLinksListVisible()" class="row mt-3">
+        <span *ngFor="let presentationLink of talkDetails.talk.presentationLinks; let i = index" class="col-auto">
+          <a href="{{presentationLink}}" class="text-dark">
+            <i class="fa fa-file-pdf-o"></i> {{'talk.presentationLinkText' | translate}}<span *ngIf="talkDetails.talk.presentationLinks.length > 1"> {{i + 1}}</span>
+          </a>
+        </span>
       </div>
 
-      <div *ngIf="talkDetails.talk?.videoLinksVideoIds">
+      <div *ngIf="isVideoLinksVideoIdsListVisible()">
         <div *ngFor="let videoId of talkDetails.talk.videoLinksVideoIds" class="mt-3">
           <youtube-player videoId="{{videoId}}"></youtube-player>
         </div>

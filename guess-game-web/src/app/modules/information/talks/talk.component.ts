@@ -81,6 +81,14 @@ export class TalkComponent implements OnInit {
     this.loadTalk(this.id);
   }
 
+  isPresentationLinksListVisible() {
+    return ((this.talkDetails.talk?.presentationLinks) && (this.talkDetails.talk.presentationLinks.length > 0));
+  }
+
+  isVideoLinksVideoIdsListVisible() {
+    return ((this.talkDetails.talk?.videoLinksVideoIds) && (this.talkDetails.talk.videoLinksVideoIds.length > 0));
+  }
+
   isSpeakersListVisible() {
     // TODO: implement
   }

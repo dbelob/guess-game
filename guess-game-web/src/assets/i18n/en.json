@@ -55,7 +55,8 @@
   "talk": {
     "title": "Talk",
     "dayLabel": "Day",
-    "trackLabel": "Track"
+    "trackLabel": "Track",
+    "presentationLinkText": "Presentation"
   },
   "talks": {
     "title": "Talks",
