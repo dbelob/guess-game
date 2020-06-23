@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { SelectItem } from 'primeng/api';
 import { EventType } from '../../../shared/models/event-type.model';
 import { Event } from '../../../shared/models/event.model';
@@ -22,8 +23,11 @@ export class EventsSearchComponent implements OnInit {
   public eventTypeSelectItems: SelectItem[] = [];
 
   public events: Event[] = [];
+  public multiSortMeta: any[] = [];
 
-  constructor(private eventTypeService: EventTypeService, private eventService: EventService) {
+  constructor(private eventTypeService: EventTypeService, private eventService: EventService,
+              public translateService: TranslateService) {
+    this.multiSortMeta.push({field: 'name', order: 1});
   }
 
   ngOnInit(): void {
@@ -60,8 +64,10 @@ export class EventsSearchComponent implements OnInit {
   }
 
   loadEvents(eventType: EventType) {
-    // TODO: implement
-    console.log('eventType: ' + JSON.stringify(eventType));
+    this.eventService.getEvents(eventType, this.isConferences, this.isMeetups)
+      .subscribe(data => {
+        this.events = data;
+      });
   }
 
   onEventTypeChange(eventType: EventType) {

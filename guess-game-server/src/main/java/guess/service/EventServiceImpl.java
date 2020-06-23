@@ -1,6 +1,7 @@
 package guess.service;
 
 import guess.dao.EventDao;
+import guess.dao.EventTypeDao;
 import guess.domain.source.Event;
 import guess.domain.source.Talk;
 import guess.util.DateTimeUtils;
@@ -21,15 +22,21 @@ import java.util.stream.Collectors;
 @Service
 public class EventServiceImpl implements EventService {
     private final EventDao eventDao;
+    private final EventTypeDao eventTypeDao;
 
     @Autowired
-    public EventServiceImpl(EventDao eventDao) {
+    public EventServiceImpl(EventDao eventDao, EventTypeDao eventTypeDao) {
         this.eventDao = eventDao;
+        this.eventTypeDao = eventTypeDao;
     }
 
     @Override
-    public List<Event> getEvents(long eventTypeId) {
-        return eventDao.getEvents(eventTypeId);
+    public List<Event> getEvents(boolean isConferences, boolean isMeetups, Long eventTypeId) {
+        return eventTypeDao.getEventTypes().stream()
+                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
+                        ((eventTypeId == null) || (et.getId() == eventTypeId)))
+                .flatMap(et -> et.getEvents().stream())
+                .collect(Collectors.toList());
     }
 
     @Override

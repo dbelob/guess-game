@@ -21,7 +21,6 @@ export class EventStatisticsComponent implements OnInit {
   public conferenceSelectItems: SelectItem[] = [];
 
   public eventStatistics = new EventStatistics();
-
   public multiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private questionService: QuestionService,

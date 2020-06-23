@@ -62,6 +62,14 @@
   },
   "events":{
     "title": "События",
+    "table": {
+      "nameColumn": "Наименование",
+      "startDateColumn": "Начальная дата",
+      "endDateColumn": "Конечная дата",
+      "durationColumn": "Длительность, дней",
+      "cityColumn": "Город",
+      "addressColumn": "Адрес"
+    },
     "search": {
       "title": "Поиск"
     }

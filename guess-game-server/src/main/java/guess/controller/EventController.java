@@ -34,13 +34,14 @@ public class EventController {
 
     @GetMapping("/events")
     @ResponseBody
-    public List<EventBriefDto> getEvents(@RequestParam Long eventTypeId, HttpSession httpSession) {
-        List<Event> events = eventService.getEvents(eventTypeId);
+    public List<EventDto> getEvents(@RequestParam boolean conferences, @RequestParam boolean meetups,
+                                    @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
+        List<Event> events = eventService.getEvents(conferences, meetups, eventTypeId);
         Language language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate).reversed());
 
-        return EventDto.convertToBriefDto(events, language);
+        return EventDto.convertToDto(events, language);
     }
 
     @GetMapping("/default-event")

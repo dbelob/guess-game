@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
+import { TableModule } from 'primeng/table';
 import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
@@ -22,6 +23,7 @@ import { EventsSwitcherComponent } from './events-switcher.component';
     CheckboxModule,
     DropdownModule,
     RouterModule,
+    TableModule,
     GeneralModule,
     InformationModule,
     MessageModule,

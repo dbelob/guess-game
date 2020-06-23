@@ -9,7 +9,7 @@ import java.util.List;
  * Event service.
  */
 public interface EventService {
-    List<Event> getEvents(long eventTypeId);
+    List<Event> getEvents(boolean isConferences, boolean isMeetups, Long eventTypeId);
 
     Event getDefaultEvent();
 

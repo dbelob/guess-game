@@ -7,6 +7,11 @@ export class Event {
     public endDate?: Date,
     public siteLink?: string,
     public youtubeLink?: string,
+    public placeCity?: string,
+    public placeVenueAddress?: string,
+    public mapCoordinates?: string,
+    public logoFileName?: string,
+    public duration?: number,
     public displayName?: string
   ) {
   }

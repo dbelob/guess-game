@@ -62,6 +62,14 @@
   },
   "events":{
     "title": "Events",
+    "table": {
+      "nameColumn": "Name",
+      "startDateColumn": "Start date",
+      "endDateColumn": "End date",
+      "durationColumn": "Duration, days",
+      "cityColumn": "City",
+      "addressColumn": "Address"
+    },
     "search": {
       "title": "Search"
     }

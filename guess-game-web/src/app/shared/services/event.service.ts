@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Event } from '../models/event.model';
+import { EventType } from '../models/event-type.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -14,9 +15,13 @@ export class EventService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getEvents(eventTypeId: number): Observable<Event[]> {
-    const params = new HttpParams()
-      .set('eventTypeId', eventTypeId.toString());
+  getEvents(eventType: EventType, isConferences?: boolean, isMeetups?: boolean): Observable<Event[]> {
+    let params = new HttpParams()
+      .set('conferences', ((isConferences) ? isConferences : true).toString())
+      .set('meetups', ((isMeetups) ? isMeetups : true).toString());
+    if (eventType?.id) {
+      params = params.set('eventTypeId', eventType.id.toString());
+    }
 
     return this.http.get<Event[]>(`${this.baseUrl}/events`, {params: params})
       .pipe(
