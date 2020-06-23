@@ -12,7 +12,11 @@ import getVideoId from 'get-video-id';
 })
 export class TalkComponent implements OnInit {
   private imageDirectory = 'assets/images';
+  public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public eventsImageDirectory = `${this.imageDirectory}/events`;
+  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
+  public twitterUrlPrefix = 'https://twitter.com';
+  public gitHubUrlPrefix = 'https://github.com';
 
   private id: number;
   public talkDetails: TalkDetails = new TalkDetails();
@@ -90,6 +94,6 @@ export class TalkComponent implements OnInit {
   }
 
   isSpeakersListVisible() {
-    // TODO: implement
+    return ((this.talkDetails.speakers) && (this.talkDetails.speakers.length > 0));
   }
 }

@@ -47,5 +47,73 @@
         </div>
       </div>
     </div>
+
+    <div *ngIf="isSpeakersListVisible()" class="m-2">
+      <h4>{{'speakers.table.title' | translate}}</h4>
+      <p-table [value]="talkDetails.speakers" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'displayName'" pResizableColumn>
+              {{'speakers.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'displayName'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'company'" pResizableColumn>
+              {{'speakers.table.companyColumn' | translate}}
+              <p-sortIcon [field]="'company'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'twitter'" pResizableColumn>
+              {{'speakers.table.twitterColumn' | translate}}
+              <p-sortIcon [field]="'twitter'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'gitHub'" pResizableColumn>
+              {{'speakers.table.gitHubColumn' | translate}}
+              <p-sortIcon [field]="'gitHub'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'javaChampion'" pResizableColumn>
+              {{'speakers.table.javaChampionColumn' | translate}}
+              <p-sortIcon [field]="'javaChampion'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'anyMvp'" pResizableColumn>
+              {{'speakers.table.mvpColumn' | translate}}
+              <p-sortIcon [field]="'anyMvp'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-speaker let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
+                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" height="24" alt="photo"/>
+                <span class="ml-2">{{speaker.displayName}}</span>
+              </a>
+            </td>
+            <td>{{speaker.company}}</td>
+            <td>
+              <a *ngIf="speaker.twitter" href="{{twitterUrlPrefix}}/{{speaker.twitter}}" class="text-primary">
+                <i class="fa fa-twitter"></i>{{speaker.twitter}}
+              </a>
+            </td>
+            <td>
+              <a *ngIf="speaker.gitHub" href="{{gitHubUrlPrefix}}/{{speaker.gitHub}}" class="text-dark">
+                <i class="fa fa-github"></i>{{speaker.gitHub}}
+              </a>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" height="24" alt="java-champion"/>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" height="24" alt="mvp"/>
+              <img *ngIf="speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
   </div>
 </div>

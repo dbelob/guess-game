@@ -85,6 +85,7 @@
     "title": "Спикеры",
     "noSpeakersFoundText": "Спикеры не найдены",
     "table": {
+      "title": "Спикеры",
       "nameColumn": "Имя",
       "companyColumn": "Компания",
       "twitterColumn": "Twitter",

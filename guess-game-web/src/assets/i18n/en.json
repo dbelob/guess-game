@@ -85,6 +85,7 @@
     "title": "Speakers",
     "noSpeakersFoundText": "No speakers found",
     "table": {
+      "title": "Speakers",
       "nameColumn": "Name",
       "companyColumn": "Company",
       "twitterColumn": "Twitter",

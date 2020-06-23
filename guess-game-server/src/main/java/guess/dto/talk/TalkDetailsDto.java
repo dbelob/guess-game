@@ -4,7 +4,7 @@ import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Talk;
-import guess.dto.speaker.SpeakerSuperBriefDto;
+import guess.dto.speaker.SpeakerBriefDto;
 
 import java.util.List;
 import java.util.function.Function;
@@ -14,9 +14,9 @@ import java.util.function.Function;
  */
 public class TalkDetailsDto {
     private final TalkDto talk;
-    private final List<SpeakerSuperBriefDto> speakers;
+    private final List<SpeakerBriefDto> speakers;
 
-    public TalkDetailsDto(TalkDto talk, List<SpeakerSuperBriefDto> speakers) {
+    public TalkDetailsDto(TalkDto talk, List<SpeakerBriefDto> speakers) {
         this.talk = talk;
         this.speakers = speakers;
     }
@@ -25,7 +25,7 @@ public class TalkDetailsDto {
         return talk;
     }
 
-    public List<SpeakerSuperBriefDto> getSpeakers() {
+    public List<SpeakerBriefDto> getSpeakers() {
         return speakers;
     }
 
@@ -33,6 +33,6 @@ public class TalkDetailsDto {
                                               Function<Event, EventType> eventEventTypeFunction, Language language) {
         return new TalkDetailsDto(
                 TalkDto.convertToDto(talk, talkEventFunction, eventEventTypeFunction, language),
-                SpeakerSuperBriefDto.convertToSuperBriefDto(talk.getSpeakers(), language));
+                SpeakerBriefDto.convertToBriefDto(talk.getSpeakers(), language));
     }
 }
