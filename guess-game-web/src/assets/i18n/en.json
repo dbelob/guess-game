@@ -124,8 +124,6 @@
     "title": "Statistics",
     "eventTypes": {
       "title": "Event types",
-      "conferencesLabel": "Conferences",
-      "meetupsLabel": "Meetups",
       "table": {
         "kindColumn": "Kind",
         "nameColumn": "Name",
@@ -155,8 +153,6 @@
     },
     "speakers": {
       "title": "Speakers",
-      "conferencesLabel": "Conferences",
-      "meetupsLabel": "Meetups",
       "eventTypeLabel": "Event type:",
       "eventTypePlaceholder": "All",
       "table": {

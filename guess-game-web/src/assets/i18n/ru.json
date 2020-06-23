@@ -124,8 +124,6 @@
     "title": "Статистика",
     "eventTypes": {
       "title": "Типы событий",
-      "conferencesLabel": "Конференции",
-      "meetupsLabel": "Митапы",
       "table": {
         "kindColumn": "Вид",
         "nameColumn": "Наименование",
@@ -155,8 +153,6 @@
     },
     "speakers": {
       "title": "Спикеры",
-      "conferencesLabel": "Конференции",
-      "meetupsLabel": "Митапы",
       "eventTypeLabel": "Тип события:",
       "eventTypePlaceholder": "Все",
       "table": {
