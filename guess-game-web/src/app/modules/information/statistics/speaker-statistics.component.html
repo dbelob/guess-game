@@ -28,10 +28,10 @@
       </div>
     </div>
     <div class="form-group row justify-content-center">
-      <label for="conference" class="col-auto text-right">{{'statistics.speakers.eventTypeLabel' | translate}}</label>
+      <label for="conference" class="col-auto text-right">{{'common.list.eventTypeLabel' | translate}}</label>
       <div class="col-auto">
         <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
-                    placeholder="{{'statistics.speakers.eventTypePlaceholder' | translate}}" [showClear]="true"
+                    placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
                     (onChange)="onEventTypeChange($event.value)" name="conference">
           <ng-template let-eventType pTemplate="item">
             <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" height="24" alt="logo"/>

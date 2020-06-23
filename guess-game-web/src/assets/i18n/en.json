@@ -12,9 +12,11 @@
       "conferencesLabel": "Conferences",
       "meetupsLabel": "Meetups"
     },
-    "dropdown": {
+    "list": {
       "eventTypeLabel": "Event type:",
-      "eventTypePlaceholder": "All"
+      "eventLabel": "Event:",
+      "eventTypePlaceholder": "All",
+      "eventPlaceholder": "All"
     },
     "table": {
       "totalsText": "Totals",
@@ -29,8 +31,6 @@
   },
   "start": {
     "title": "Guess the Speaker",
-    "eventTypeLabel": "Event type:",
-    "eventLabel": "Event:",
     "modeLabel": "Mode:",
     "quantityLabel": "Questions:",
     "guessNameByPhotoLabel": "Guess name by photo",
@@ -84,10 +84,6 @@
     },
     "search": {
       "title": "Search",
-      "eventTypeLabel": "Event type:",
-      "eventTypePlaceholder": "All",
-      "eventLabel": "Event:",
-      "eventPlaceholder": "All",
       "nameLabel": "Name:",
       "speakerLabel": "Speaker:"
     }
@@ -153,8 +149,6 @@
     },
     "speakers": {
       "title": "Speakers",
-      "eventTypeLabel": "Event type:",
-      "eventTypePlaceholder": "All",
       "table": {
         "nameColumn": "Name",
         "javaChampionColumn": "Java Champion",

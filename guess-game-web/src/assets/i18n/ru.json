@@ -12,9 +12,11 @@
       "conferencesLabel": "Конференции",
       "meetupsLabel": "Митапы"
     },
-    "dropdown": {
+    "list": {
       "eventTypeLabel": "Тип события:",
-      "eventTypePlaceholder": "Все"
+      "eventLabel": "Событие:",
+      "eventTypePlaceholder": "Все",
+      "eventPlaceholder": "Все"
     },
     "table": {
       "totalsText": "Всего",
@@ -29,8 +31,6 @@
   },
   "start": {
     "title": "Угадай спикера",
-    "eventTypeLabel": "Тип события:",
-    "eventLabel": "Событие:",
     "modeLabel": "Режим:",
     "quantityLabel": "Вопросов:",
     "guessNameByPhotoLabel": "Угадать имя по фотографии",
@@ -84,10 +84,6 @@
     },
     "search": {
       "title": "Поиск",
-      "eventTypeLabel": "Тип события:",
-      "eventTypePlaceholder": "Все",
-      "eventLabel": "Событие:",
-      "eventPlaceholder": "Все",
       "nameLabel": "Наименование:",
       "speakerLabel": "Спикер:"
     }
@@ -153,8 +149,6 @@
     },
     "speakers": {
       "title": "Спикеры",
-      "eventTypeLabel": "Тип события:",
-      "eventTypePlaceholder": "Все",
       "table": {
         "nameColumn": "Имя",
         "javaChampionColumn": "Java Champion",
