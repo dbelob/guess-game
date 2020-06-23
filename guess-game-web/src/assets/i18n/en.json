@@ -8,6 +8,14 @@
       "conference": "Conference",
       "meetup": "Meetup"
     },
+    "checkbox": {
+      "conferencesLabel": "Conferences",
+      "meetupsLabel": "Meetups"
+    },
+    "dropdown": {
+      "eventTypeLabel": "Event type:",
+      "eventTypePlaceholder": "All"
+    },
     "table": {
       "totalsText": "Totals",
       "paginator": {

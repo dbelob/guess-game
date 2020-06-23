@@ -13,4 +13,32 @@
   <app-information-switcher [type]="'events'"></app-information-switcher>
 
   <app-events-switcher [type]="'search'"></app-events-switcher>
+
+  <form role="form">
+    <div class="form-group row justify-content-center">
+      <div class="col-auto">
+        <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
+                    [(ngModel)]="isConferences" binary="true"
+                    (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+      </div>
+      <div class="col-auto">
+        <p-checkbox name="group1" value="meetups" label="{{'common.checkbox.meetupsLabel' | translate}}"
+                    [(ngModel)]="isMeetups" binary="true"
+                    (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center">
+      <label for="conference" class="col-auto text-right">{{'common.dropdown.eventTypeLabel' | translate}}</label>
+      <div class="col-auto">
+        <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
+                    placeholder="{{'common.dropdown.eventTypePlaceholder' | translate}}" [showClear]="true"
+                    (onChange)="onEventTypeChange($event.value)" name="conference">
+          <ng-template let-eventType pTemplate="item">
+            <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" height="24" alt="logo"/>
+            <span class="ml-2">{{eventType.value.name}}</span>
+          </ng-template>
+        </p-dropdown>
+      </div>
+    </div>
+  </form>
 </div>

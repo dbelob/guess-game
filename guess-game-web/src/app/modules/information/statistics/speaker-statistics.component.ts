@@ -18,14 +18,14 @@ export class SpeakerStatisticsComponent implements OnInit {
   public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
 
+  public isConferences = true;
+  public isMeetups = true;
+
   public eventTypes: EventType[] = [];
   public selectedEventType: EventType;
   public eventTypeSelectItems: SelectItem[] = [];
 
-  public isConferences = true;
-  public isMeetups = true;
   public speakerStatistics = new SpeakerStatistics();
-
   public multiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private questionService: QuestionService,
@@ -80,11 +80,11 @@ export class SpeakerStatisticsComponent implements OnInit {
     this.loadSpeakerStatistics(eventType);
   }
 
-  onLanguageChange() {
-    this.loadSpeakerStatistics(this.selectedEventType);
-  }
-
   onEventTypeKindChange(checked: boolean) {
     this.loadEventTypes(this.isConferences, this.isMeetups);
+  }
+
+  onLanguageChange() {
+    this.loadSpeakerStatistics(this.selectedEventType);
   }
 }

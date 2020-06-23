@@ -8,6 +8,14 @@
       "conference": "Конференция",
       "meetup": "Митап"
     },
+    "checkbox": {
+      "conferencesLabel": "Конференции",
+      "meetupsLabel": "Митапы"
+    },
+    "dropdown": {
+      "eventTypeLabel": "Тип события:",
+      "eventTypePlaceholder": "Все"
+    },
     "table": {
       "totalsText": "Всего",
       "paginator": {
