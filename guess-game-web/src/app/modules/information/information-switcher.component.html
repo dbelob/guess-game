@@ -1,4 +1,8 @@
 <div>
+  <button class="btn btn-link font-weight-bold" routerLink="/information/events"
+          [class.text-dark]="isEvents()" [class.font-weight-bold]="isEvents()" [disabled]="isEvents()">
+    {{'events.title' | translate}}
+  </button>
   <button class="btn btn-link font-weight-bold" routerLink="/information/talks"
           [class.text-dark]="isTalks()" [class.font-weight-bold]="isTalks()" [disabled]="isTalks()">
     {{'talks.title' | translate}}

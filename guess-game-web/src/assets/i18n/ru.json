@@ -52,6 +52,12 @@
     "yesButtonText": "Да",
     "noButtonText": "Нет"
   },
+  "events":{
+    "title": "События",
+    "search": {
+      "title": "Поиск"
+    }
+  },
   "talk": {
     "title": "Доклад",
     "dayLabel": "День",

@@ -13,6 +13,10 @@ export class InformationSwitcherComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isEvents(): boolean {
+    return ('events' === this.type);
+  }
+
   isTalks(): boolean {
     return ('talks' === this.type);
   }

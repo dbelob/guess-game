@@ -52,6 +52,12 @@
     "yesButtonText": "Yes",
     "noButtonText": "No"
   },
+  "events":{
+    "title": "Events",
+    "search": {
+      "title": "Search"
+    }
+  },
   "talk": {
     "title": "Talk",
     "dayLabel": "Day",
