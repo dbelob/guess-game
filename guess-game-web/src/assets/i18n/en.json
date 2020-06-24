@@ -61,7 +61,8 @@
     "noButtonText": "No"
   },
   "event": {
-    "title": "Event"
+    "title": "Event",
+    "siteLinkText": "Site"
   },
   "events":{
     "title": "Events",

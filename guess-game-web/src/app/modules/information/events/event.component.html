@@ -16,11 +16,98 @@
 
   <div class="m-1">
     <div class="m-2">
-      <img src="{{eventsImageDirectory}}/{{eventDetails.event?.logoFileName}}" height="72" alt="logo"
+      <img *ngIf="eventDetails.event?.logoFileName"
+           src="{{eventsImageDirectory}}/{{eventDetails.event?.logoFileName}}" height="72" alt="logo"
            class="align-middle"/>
       <span class="h3 ml-2 align-middle">{{eventDetails.event?.displayName}}</span>
 
-      <div>42</div>
+      <div *ngIf="eventDetails.event?.placeCity || eventDetails.event?.placeVenueAddress"
+           class="row mt-1">
+        <span *ngIf="eventDetails.event?.placeCity" class="col-auto">{{eventDetails.event.placeCity}}</span>
+        <span *ngIf="eventDetails.event?.placeVenueAddress" class="col-auto">{{eventDetails.event.placeVenueAddress}}</span>
+      </div>
+
+      <div *ngIf="eventDetails.event?.siteLink || eventDetails.event?.youtubeLink"
+           class="row mt-2">
+        <div *ngIf="eventDetails.event?.siteLink" class="col-auto">
+          <a href="{{eventDetails.event.siteLink}}" class="text-dark">
+            <i class="fa fa-globe"></i><span> {{'event.siteLinkText' | translate}}</span>
+          </a>
+        </div>
+        <div *ngIf="eventDetails.event?.youtubeLink" class="col-auto">
+          <a href="{{eventDetails.event.youtubeLink}}" class="text-dark">
+            <i class="fa fa-youtube"></i><span> YouTube</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isSpeakersListVisible()" class="m-2">
+      <h4>{{'speakers.table.title' | translate}}</h4>
+      <p-table [value]="eventDetails.speakers" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="speakersMultiSortMeta">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'displayName'" pResizableColumn>
+              {{'speakers.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'displayName'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'company'" pResizableColumn>
+              {{'speakers.table.companyColumn' | translate}}
+              <p-sortIcon [field]="'company'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'twitter'" pResizableColumn>
+              {{'speakers.table.twitterColumn' | translate}}
+              <p-sortIcon [field]="'twitter'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'gitHub'" pResizableColumn>
+              {{'speakers.table.gitHubColumn' | translate}}
+              <p-sortIcon [field]="'gitHub'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'javaChampion'" pResizableColumn>
+              {{'speakers.table.javaChampionColumn' | translate}}
+              <p-sortIcon [field]="'javaChampion'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'anyMvp'" pResizableColumn>
+              {{'speakers.table.mvpColumn' | translate}}
+              <p-sortIcon [field]="'anyMvp'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-speaker let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
+                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" height="24" alt="photo"/>
+                <span class="ml-2">{{speaker.displayName}}</span>
+              </a>
+            </td>
+            <td>{{speaker.company}}</td>
+            <td>
+              <a *ngIf="speaker.twitter" href="{{twitterUrlPrefix}}/{{speaker.twitter}}" class="text-primary">
+                <i class="fa fa-twitter"></i>{{speaker.twitter}}
+              </a>
+            </td>
+            <td>
+              <a *ngIf="speaker.gitHub" href="{{gitHubUrlPrefix}}/{{speaker.gitHub}}" class="text-dark">
+                <i class="fa fa-github"></i>{{speaker.gitHub}}
+              </a>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" height="24" alt="java-champion"/>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" height="24" alt="mvp"/>
+              <img *ngIf="speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
   </div>
 </div>

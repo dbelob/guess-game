@@ -19,7 +19,6 @@ export class SpeakerComponent implements OnInit {
 
   private id: number;
   public speakerDetails: SpeakerDetails = new SpeakerDetails();
-
   public multiSortMeta: any[] = [];
 
   constructor(public speakerService: SpeakerService, public translateService: TranslateService,

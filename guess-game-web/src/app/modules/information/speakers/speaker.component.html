@@ -17,35 +17,36 @@
   <div class="m-1">
     <div class="m-2">
       <div class="row align-items-center">
-        <span class="col-auto h3">{{speakerDetails.speaker.name}}</span>
-        <span class="col-auto font-italic">{{speakerDetails.speaker.company}}</span>
+        <span class="col-auto h3">{{speakerDetails.speaker?.name}}</span>
+        <span class="col-auto font-italic">{{speakerDetails.speaker?.company}}</span>
       </div>
 
       <div class="row">
         <div class="col-12 col-sm-6 col-md-4 mt-1">
-          <img src="{{speakersImageDirectory}}/{{speakerDetails.speaker.fileName}}" alt="{{speakerDetails.speaker.name}}"
+          <img *ngIf="speakerDetails.speaker?.fileName"
+               src="{{speakersImageDirectory}}/{{speakerDetails.speaker?.fileName}}" alt="{{speakerDetails.speaker?.name}}"
                class="img-speaker">
         </div>
-        <div *ngIf="speakerDetails.speaker.bio" class="col-12 col-sm-6 col-md-8 mt-1">
+        <div *ngIf="speakerDetails.speaker?.bio" class="col-12 col-sm-6 col-md-8 mt-1">
           <markdown [data]='speakerDetails.speaker.bio'></markdown>
         </div>
       </div>
 
-      <div *ngIf="speakerDetails.speaker.javaChampion || speakerDetails.speaker.anyMvp || speakerDetails.speaker.twitter || speakerDetails.speaker.gitHub"
+      <div *ngIf="speakerDetails.speaker?.javaChampion || speakerDetails.speaker?.anyMvp || speakerDetails.speaker?.twitter || speakerDetails.speaker?.gitHub"
            class="row align-items-center mt-1">
-        <div *ngIf="speakerDetails.speaker.javaChampion" class="col-auto">
+        <div *ngIf="speakerDetails.speaker?.javaChampion" class="col-auto">
           <img src="{{degreesImageDirectory}}/java-champion.png" height="36" alt="java-champion"/>
         </div>
-        <div *ngIf="speakerDetails.speaker.anyMvp" class="col-auto">
-          <img *ngIf="speakerDetails.speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" height="36" alt="mvp"/>
-          <img *ngIf="speakerDetails.speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
+        <div *ngIf="speakerDetails.speaker?.anyMvp" class="col-auto">
+          <img *ngIf="speakerDetails.speaker?.mvp" src="{{degreesImageDirectory}}/mvp.png" height="36" alt="mvp"/>
+          <img *ngIf="speakerDetails.speaker?.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
         </div>
-        <div *ngIf="speakerDetails.speaker.twitter" class="col-auto">
+        <div *ngIf="speakerDetails.speaker?.twitter" class="col-auto">
           <a href="{{twitterUrlPrefix}}/{{speakerDetails.speaker.twitter}}" class="text-primary">
             <i class="fa fa-twitter"></i>{{speakerDetails.speaker.twitter}}
           </a>
         </div>
-        <div *ngIf="speakerDetails.speaker.gitHub" class="col-auto">
+        <div *ngIf="speakerDetails.speaker?.gitHub" class="col-auto">
           <a href="{{gitHubUrlPrefix}}/{{speakerDetails.speaker.gitHub}}" class="text-dark">
             <i class="fa fa-github"></i>{{speakerDetails.speaker.gitHub}}
           </a>

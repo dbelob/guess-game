@@ -20,7 +20,8 @@
 
       <div class="mt-1">
         <a [routerLink]="['/information', 'event', talkDetails.talk?.event?.id]" class="text-dark">
-          <img src="{{eventsImageDirectory}}/{{talkDetails.talk?.eventTypeLogoFileName}}" height="24" alt="logo"/>
+          <img *ngIf="talkDetails.talk?.eventTypeLogoFileName"
+               src="{{eventsImageDirectory}}/{{talkDetails.talk?.eventTypeLogoFileName}}" height="24" alt="logo"/>
           <span class="ml-2">{{talkDetails.talk?.event?.displayName}}</span>
         </a>
         <span *ngIf="talkDetails.talk?.talkDay"> / <i class="fa fa-calendar"></i> {{'talk.dayLabel' | translate}} {{talkDetails.talk.talkDay}}</span>

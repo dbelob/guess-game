@@ -61,7 +61,8 @@
     "noButtonText": "Нет"
   },
   "event": {
-    "title": "Событие"
+    "title": "Событие",
+    "siteLinkText": "Сайт"
   },
   "events":{
     "title": "События",

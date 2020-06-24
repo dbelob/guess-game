@@ -7,6 +7,7 @@ import guess.domain.source.Talk;
 import guess.dto.event.EventBriefDto;
 import guess.dto.event.EventDetailsDto;
 import guess.dto.event.EventSuperBriefDto;
+import guess.dto.speaker.SpeakerBriefDto;
 import guess.service.EventService;
 import guess.service.EventTypeService;
 import guess.service.LocaleService;
@@ -66,10 +67,15 @@ public class EventController {
         List<Speaker> speakers = talks.stream()
                 .flatMap(t -> t.getSpeakers().stream())
                 .collect(Collectors.toList());
-
-        // TODO: sort speakers and talks
-
-        return EventDetailsDto.convertToDto(event, speakers, talks, eventService::getEventByTalk,
+        EventDetailsDto eventDetailsDto = EventDetailsDto.convertToDto(event, speakers, talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
+
+        Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
+        Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(SpeakerBriefDto::getCompany, String.CASE_INSENSITIVE_ORDER);
+        eventDetailsDto.getSpeakers().sort(comparatorByName.thenComparing(comparatorByCompany));
+
+        // TODO: sort talks
+
+        return eventDetailsDto;
     }
 }

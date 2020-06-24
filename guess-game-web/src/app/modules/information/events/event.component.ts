@@ -11,13 +11,20 @@ import { getEventDisplayName } from '../../general/utility-functions';
 })
 export class EventComponent implements OnInit {
   private imageDirectory = 'assets/images';
+  public degreesImageDirectory = `${this.imageDirectory}/degrees`;
   public eventsImageDirectory = `${this.imageDirectory}/events`;
+  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
+  public twitterUrlPrefix = 'https://twitter.com';
+  public gitHubUrlPrefix = 'https://github.com';
 
   private id: number;
-  public eventDetails: EventDetails;
+  public eventDetails: EventDetails = new EventDetails();
+  public speakersMultiSortMeta: any[] = [];
 
   constructor(private eventService: EventService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
+    this.speakersMultiSortMeta.push({field: 'displayName', order: 1});
+    this.speakersMultiSortMeta.push({field: 'company', order: 1});
   }
 
   ngOnInit(): void {
@@ -49,5 +56,13 @@ export class EventComponent implements OnInit {
 
   onLanguageChange() {
     this.loadEvent(this.id);
+  }
+
+  isSpeakersListVisible() {
+    return ((this.eventDetails.speakers) && (this.eventDetails.speakers.length > 0));
+  }
+
+  isTalksListVisible() {
+    return ((this.eventDetails.talks) && (this.eventDetails.talks.length > 0));
   }
 }
