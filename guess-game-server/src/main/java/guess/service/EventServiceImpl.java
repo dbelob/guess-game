@@ -31,6 +31,11 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
+    public Event getEventById(long id) {
+        return eventDao.getEventById(id);
+    }
+
+    @Override
     public List<Event> getEvents(boolean isConferences, boolean isMeetups, Long eventTypeId) {
         return eventTypeDao.getEventTypes().stream()
                 .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&

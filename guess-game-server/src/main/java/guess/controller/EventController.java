@@ -2,20 +2,22 @@ package guess.controller;
 
 import guess.domain.Language;
 import guess.domain.source.Event;
+import guess.domain.source.Speaker;
+import guess.domain.source.Talk;
 import guess.dto.event.EventBriefDto;
+import guess.dto.event.EventDetailsDto;
 import guess.dto.event.EventSuperBriefDto;
 import guess.service.EventService;
+import guess.service.EventTypeService;
 import guess.service.LocaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Event controller.
@@ -24,11 +26,13 @@ import java.util.List;
 @RequestMapping("/api/event")
 public class EventController {
     private final EventService eventService;
+    private final EventTypeService eventTypeService;
     private final LocaleService localeService;
 
     @Autowired
-    public EventController(EventService eventService, LocaleService localeService) {
+    public EventController(EventService eventService, EventTypeService eventTypeService, LocaleService localeService) {
         this.eventService = eventService;
+        this.eventTypeService = eventTypeService;
         this.localeService = localeService;
     }
 
@@ -51,5 +55,21 @@ public class EventController {
         Language language = localeService.getLanguage(httpSession);
 
         return (defaultEvent != null) ? EventSuperBriefDto.convertToSuperBriefDto(defaultEvent, language) : null;
+    }
+
+    @GetMapping("/event/{id}")
+    @ResponseBody
+    public EventDetailsDto getEvent(@PathVariable long id, HttpSession httpSession) {
+        Event event = eventService.getEventById(id);
+        Language language = localeService.getLanguage(httpSession);
+        List<Talk> talks = event.getTalks();
+        List<Speaker> speakers = talks.stream()
+                .flatMap(t -> t.getSpeakers().stream())
+                .collect(Collectors.toList());
+
+        // TODO: sort speakers and talks
+
+        return EventDetailsDto.convertToDto(event, speakers, talks, eventService::getEventByTalk,
+                eventTypeService::getEventTypeByEvent, language);
     }
 }

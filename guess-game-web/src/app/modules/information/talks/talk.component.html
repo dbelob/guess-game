@@ -18,17 +18,15 @@
     <div class="m-2">
       <h3>{{talkDetails.talk?.name}}</h3>
 
-      <div class="row align-items-center">
-        <div class="col-auto mt-1">
-          <a [routerLink]="['/information', 'event', talkDetails.talk?.event?.id]" class="text-dark">
-            <img src="{{eventsImageDirectory}}/{{talkDetails.talk?.eventTypeLogoFileName}}" height="24" alt="logo"/>
-            <span class="ml-2">{{talkDetails.talk?.event?.displayName}}</span>
-          </a>
-          <span *ngIf="talkDetails.talk?.talkDay"> / <i class="fa fa-calendar"></i> {{'talk.dayLabel' | translate}} {{talkDetails.talk.talkDay}}</span>
-          <span *ngIf="talkDetails.talk?.talkTime"> / <i class="fa fa-clock-o"></i> {{talkDetails.talk.talkTime | date:"HH:mm":undefined:translateService.currentLang}}</span>
-          <span *ngIf="talkDetails.talk?.track"> / <i class="fa fa-location-arrow"></i> {{'talk.trackLabel' | translate}} {{talkDetails.talk.track}}</span>
-          <span *ngIf="talkDetails.talk?.language"> / <i class="fa fa-globe"></i> {{talkDetails.talk.language | uppercase}}</span>
-        </div>
+      <div class="mt-1">
+        <a [routerLink]="['/information', 'event', talkDetails.talk?.event?.id]" class="text-dark">
+          <img src="{{eventsImageDirectory}}/{{talkDetails.talk?.eventTypeLogoFileName}}" height="24" alt="logo"/>
+          <span class="ml-2">{{talkDetails.talk?.event?.displayName}}</span>
+        </a>
+        <span *ngIf="talkDetails.talk?.talkDay"> / <i class="fa fa-calendar"></i> {{'talk.dayLabel' | translate}} {{talkDetails.talk.talkDay}}</span>
+        <span *ngIf="talkDetails.talk?.talkTime"> / <i class="fa fa-clock-o"></i> {{talkDetails.talk.talkTime | date:"HH:mm":undefined:translateService.currentLang}}</span>
+        <span *ngIf="talkDetails.talk?.track"> / <i class="fa fa-location-arrow"></i> {{'talk.trackLabel' | translate}} {{talkDetails.talk.track}}</span>
+        <span *ngIf="talkDetails.talk?.language"> / <i class="fa fa-globe"></i> {{talkDetails.talk.language | uppercase}}</span>
       </div>
 
       <div *ngIf="talkDetails.talk?.description" class="mt-3">

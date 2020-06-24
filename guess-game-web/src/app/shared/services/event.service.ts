@@ -4,6 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Event } from '../models/event.model';
 import { EventType } from '../models/event-type.model';
+import { EventDetails } from '../models/event-details.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -34,6 +35,16 @@ export class EventService {
 
   getDefaultEvent(): Observable<Event> {
     return this.http.get<Event>(`${this.baseUrl}/default-event`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getEvent(id: number): Observable<EventDetails> {
+    return this.http.get<EventDetails>(`${this.baseUrl}/event/${id}`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

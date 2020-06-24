@@ -21,7 +21,7 @@ export class TalkComponent implements OnInit {
   private id: number;
   public talkDetails: TalkDetails = new TalkDetails();
 
-  constructor(public talkService: TalkService, public translateService: TranslateService,
+  constructor(private talkService: TalkService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
   }
 

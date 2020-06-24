@@ -6,8 +6,6 @@ import guess.domain.source.EventType;
 import guess.domain.source.Talk;
 import guess.util.LocalizationUtils;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -17,22 +15,17 @@ import java.util.stream.Collectors;
  */
 public class TalkDto extends TalkBriefDto {
     private final String description;
-    private final Long talkDay;
-    private final LocalDateTime talkTime;
-    private final Long track;
     private final String language;
     private final List<String> presentationLinks;
     private final List<String> videoLinks;
 
-    public TalkDto(TalkBriefDto talkBriefDto, String description, Long talkDay, LocalDateTime talkTime, Long track,
-                   String language, List<String> presentationLinks, List<String> videoLinks) {
-        super(talkBriefDto.getId(), talkBriefDto.getName(), talkBriefDto.getTalkDate(), talkBriefDto.getEvent(),
+    public TalkDto(TalkBriefDto talkBriefDto, String description, String language, List<String> presentationLinks,
+                   List<String> videoLinks) {
+        super(talkBriefDto.getId(), talkBriefDto.getName(), talkBriefDto.getTalkDate(), talkBriefDto.getTalkDay(),
+                talkBriefDto.getTalkTime(), talkBriefDto.getTrack(), talkBriefDto.getEvent(),
                 talkBriefDto.getEventTypeLogoFileName(), talkBriefDto.getSpeakers());
 
         this.description = description;
-        this.talkDay = talkDay;
-        this.talkTime = talkTime;
-        this.track = track;
         this.language = language;
         this.presentationLinks = presentationLinks;
         this.videoLinks = videoLinks;
@@ -40,18 +33,6 @@ public class TalkDto extends TalkBriefDto {
 
     public String getDescription() {
         return description;
-    }
-
-    public Long getTalkDay() {
-        return talkDay;
-    }
-
-    public LocalDateTime getTalkTime() {
-        return talkTime;
-    }
-
-    public Long getTrack() {
-        return track;
     }
 
     public String getLanguage() {
@@ -74,17 +55,9 @@ public class TalkDto extends TalkBriefDto {
             description = LocalizationUtils.getString(talk.getShortDescription(), language);
         }
 
-        TalkBriefDto talkBriefDto = convertToBriefDto(talk, talkEventFunction, eventEventTypeFunction, language);
-        LocalDate talkDate = talkBriefDto.getTalkDate();
-        LocalDate safeLocalDate = (talkDate != null) ? talkDate : LocalDate.now();
-        LocalDateTime talkTime = (talk.getTrackTime() != null) ? LocalDateTime.of(safeLocalDate, talk.getTrackTime()) : null;
-
         return new TalkDto(
-                talkBriefDto,
+                convertToBriefDto(talk, talkEventFunction, eventEventTypeFunction, language),
                 description,
-                talk.getTalkDay(),
-                talkTime,
-                talk.getTrack(),
                 talk.getLanguage(),
                 talk.getPresentationLinks(),
                 talk.getVideoLinks());
