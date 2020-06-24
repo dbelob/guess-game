@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * Event DTO.
  */
-public class EventDto extends EventBriefDto {
+public class EventDto extends EventSuperBriefDto {
     private final String siteLink;
     private final String youtubeLink;
 
@@ -23,10 +23,10 @@ public class EventDto extends EventBriefDto {
     private final String logoFileName;
     private final long duration;
 
-    public EventDto(EventBriefDto eventBriefDto, String siteLink, String youtubeLink, String placeCity, String placeVenueAddress,
+    public EventDto(EventSuperBriefDto eventSuperBriefDto, String siteLink, String youtubeLink, String placeCity, String placeVenueAddress,
                     String mapCoordinates, String logoFileName, long duration) {
-        super(eventBriefDto.getId(), eventBriefDto.getEventTypeId(), eventBriefDto.getName(), eventBriefDto.getStartDate(),
-                eventBriefDto.getEndDate());
+        super(eventSuperBriefDto.getId(), eventSuperBriefDto.getEventTypeId(), eventSuperBriefDto.getName(), eventSuperBriefDto.getStartDate(),
+                eventSuperBriefDto.getEndDate());
 
         this.siteLink = siteLink;
         this.youtubeLink = youtubeLink;
@@ -74,7 +74,7 @@ public class EventDto extends EventBriefDto {
         long duration = (ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1);
 
         return new EventDto(
-                convertToBriefDto(event, language),
+                convertToSuperBriefDto(event, language),
                 LocalizationUtils.getString(event.getSiteLink(), language),
                 event.getYoutubeLink(),
                 placeCity,

@@ -4,7 +4,7 @@ import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Talk;
-import guess.dto.event.EventBriefDto;
+import guess.dto.event.EventSuperBriefDto;
 import guess.dto.speaker.SpeakerSuperBriefDto;
 import guess.util.LocalizationUtils;
 
@@ -20,11 +20,11 @@ public class TalkBriefDto {
     private final long id;
     private final String name;
     private final LocalDate talkDate;
-    private final EventBriefDto event;
+    private final EventSuperBriefDto event;
     private final String eventTypeLogoFileName;
     private final List<SpeakerSuperBriefDto> speakers;
 
-    public TalkBriefDto(long id, String name, LocalDate talkDate, EventBriefDto event, String eventTypeLogoFileName,
+    public TalkBriefDto(long id, String name, LocalDate talkDate, EventSuperBriefDto event, String eventTypeLogoFileName,
                         List<SpeakerSuperBriefDto> speakers) {
         this.id = id;
         this.name = name;
@@ -46,7 +46,7 @@ public class TalkBriefDto {
         return talkDate;
     }
 
-    public EventBriefDto getEvent() {
+    public EventSuperBriefDto getEvent() {
         return event;
     }
 
@@ -69,7 +69,7 @@ public class TalkBriefDto {
         LocalDate talkDate = (eventStartDate != null) ?
                 ((talkDay != null) ? eventStartDate.plusDays(safeTalkDay - 1) : eventStartDate) :
                 null;
-        EventBriefDto eventBriefDto = (event != null) ? EventBriefDto.convertToBriefDto(event, language) : null;
+        EventSuperBriefDto eventSuperBriefDto = (event != null) ? EventSuperBriefDto.convertToSuperBriefDto(event, language) : null;
         String eventTypeLogoFileName = (eventType != null) ? eventType.getLogoFileName() : null;
         List<SpeakerSuperBriefDto> speakers = SpeakerSuperBriefDto.convertToSuperBriefDto(talk.getSpeakers(), language);
 
@@ -77,7 +77,7 @@ public class TalkBriefDto {
                 talk.getId(),
                 LocalizationUtils.getString(talk.getName(), language),
                 talkDate,
-                eventBriefDto,
+                eventSuperBriefDto,
                 eventTypeLogoFileName,
                 speakers);
     }

@@ -2,7 +2,7 @@ package guess.controller;
 
 import guess.domain.Language;
 import guess.domain.source.Event;
-import guess.dto.event.EventBriefDto;
+import guess.dto.event.EventSuperBriefDto;
 import guess.dto.event.EventDto;
 import guess.service.EventService;
 import guess.service.LocaleService;
@@ -46,10 +46,10 @@ public class EventController {
 
     @GetMapping("/default-event")
     @ResponseBody
-    public EventBriefDto getDefaultEvent(HttpSession httpSession) {
+    public EventSuperBriefDto getDefaultEvent(HttpSession httpSession) {
         Event defaultEvent = eventService.getDefaultEvent();
         Language language = localeService.getLanguage(httpSession);
 
-        return (defaultEvent != null) ? EventBriefDto.convertToBriefDto(defaultEvent, language) : null;
+        return (defaultEvent != null) ? EventSuperBriefDto.convertToSuperBriefDto(defaultEvent, language) : null;
     }
 }

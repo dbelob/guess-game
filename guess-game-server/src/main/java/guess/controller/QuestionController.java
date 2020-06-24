@@ -5,7 +5,7 @@ import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
-import guess.dto.event.EventBriefDto;
+import guess.dto.event.EventSuperBriefDto;
 import guess.dto.event.EventDto;
 import guess.dto.start.EventTypeBriefDto;
 import guess.dto.start.EventTypeDto;
@@ -57,13 +57,13 @@ public class QuestionController {
 
     @GetMapping("/events")
     @ResponseBody
-    public List<EventBriefDto> getEvents(@RequestParam List<Long> eventTypeIds, HttpSession httpSession) {
+    public List<EventSuperBriefDto> getEvents(@RequestParam List<Long> eventTypeIds, HttpSession httpSession) {
         List<Event> events = questionService.getEvents(eventTypeIds);
         Language language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate).reversed());
 
-        return EventDto.convertToBriefDto(events, language);
+        return EventDto.convertToSuperBriefDto(events, language);
     }
 
     @GetMapping("/quantities")

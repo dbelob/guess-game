@@ -9,16 +9,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Event DTO (brief).
+ * Event DTO (super brief).
  */
-public class EventBriefDto {
+public class EventSuperBriefDto {
     private final long id;
     private final long eventTypeId;
     private final String name;
     private final LocalDate startDate;
     private final LocalDate endDate;
 
-    public EventBriefDto(long id, long eventTypeId, String name, LocalDate startDate, LocalDate endDate) {
+    public EventSuperBriefDto(long id, long eventTypeId, String name, LocalDate startDate, LocalDate endDate) {
         this.id = id;
         this.eventTypeId = eventTypeId;
         this.name = name;
@@ -46,8 +46,8 @@ public class EventBriefDto {
         return endDate;
     }
 
-    public static EventBriefDto convertToBriefDto(Event event, Language language) {
-        return new EventBriefDto(
+    public static EventSuperBriefDto convertToSuperBriefDto(Event event, Language language) {
+        return new EventSuperBriefDto(
                 event.getId(),
                 event.getEventTypeId(),
                 LocalizationUtils.getString(event.getName(), language),
@@ -55,9 +55,9 @@ public class EventBriefDto {
                 event.getEndDate());
     }
 
-    public static List<EventBriefDto> convertToBriefDto(List<Event> events, Language language) {
+    public static List<EventSuperBriefDto> convertToSuperBriefDto(List<Event> events, Language language) {
         return events.stream()
-                .map(e -> convertToBriefDto(e, language))
+                .map(e -> convertToSuperBriefDto(e, language))
                 .collect(Collectors.toList());
     }
 }
