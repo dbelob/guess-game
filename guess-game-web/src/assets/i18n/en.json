@@ -60,6 +60,9 @@
     "yesButtonText": "Yes",
     "noButtonText": "No"
   },
+  "event": {
+    "title": "Event"
+  },
   "events":{
     "title": "Events",
     "table": {

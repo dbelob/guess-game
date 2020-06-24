@@ -85,8 +85,10 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" height="24" alt="logo"/>
-              <span class="ml-2">{{talk.event?.name}}</span>
+              <a [routerLink]="['/information', 'event', talk.event?.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" height="24" alt="logo"/>
+                <span class="ml-2">{{talk.event?.name}}</span>
+              </a>
             </td>
             <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td>

@@ -73,8 +73,10 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <img src="{{eventsImageDirectory}}/{{eventMetrics.logoFileName}}" height="24" alt="logo"/>
-              <span class="ml-2">{{eventMetrics.name}}</span>
+              <a [routerLink]="['/information', 'event', eventMetrics.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{eventMetrics.logoFileName}}" height="24" alt="logo"/>
+                <span class="ml-2">{{eventMetrics.name}}</span>
+              </a>
             </td>
             <td class="text-center">{{eventMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td class="text-center">{{eventMetrics.duration | number:'1.0-0':translateService.currentLang}}</td>

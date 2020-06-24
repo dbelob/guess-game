@@ -82,8 +82,10 @@
           <tr>
             <td class="text-center">{{i + 1}}</td>
             <td>
-              <img src="{{eventsImageDirectory}}/{{event.logoFileName}}" height="24" alt="logo"/>
-              <span class="ml-2">{{event.name}}</span>
+              <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{event.logoFileName}}" height="24" alt="logo"/>
+                <span class="ml-2">{{event.name}}</span>
+              </a>
             </td>
             <td class="text-center">{{event.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td class="text-center">{{event.endDate | date:"shortDate":undefined:translateService.currentLang}}</td>

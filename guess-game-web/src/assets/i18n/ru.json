@@ -60,6 +60,9 @@
     "yesButtonText": "Да",
     "noButtonText": "Нет"
   },
+  "event": {
+    "title": "Событие"
+  },
   "events":{
     "title": "События",
     "table": {
