@@ -5,36 +5,25 @@ import guess.domain.source.Event;
 import guess.domain.source.Place;
 import guess.util.LocalizationUtils;
 
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
 
 /**
  * Event DTO.
  */
-public class EventDto extends EventSuperBriefDto {
+public class EventDto extends EventBriefDto {
     private final String siteLink;
     private final String youtubeLink;
-
-    private final String placeCity;
-    private final String placeVenueAddress;
     private final String mapCoordinates;
 
-    private final String logoFileName;
-    private final long duration;
-
-    public EventDto(EventSuperBriefDto eventSuperBriefDto, String siteLink, String youtubeLink, String placeCity, String placeVenueAddress,
-                    String mapCoordinates, String logoFileName, long duration) {
-        super(eventSuperBriefDto.getId(), eventSuperBriefDto.getEventTypeId(), eventSuperBriefDto.getName(), eventSuperBriefDto.getStartDate(),
-                eventSuperBriefDto.getEndDate());
+    public EventDto(EventSuperBriefDto eventSuperBriefDto, EventBriefDto eventBriefDto, String siteLink,
+                    String youtubeLink, String mapCoordinates) {
+        super(eventSuperBriefDto, eventBriefDto.getDuration(), eventBriefDto.getPlaceCity(), eventBriefDto.getPlaceVenueAddress(),
+                eventBriefDto.getLogoFileName());
 
         this.siteLink = siteLink;
         this.youtubeLink = youtubeLink;
-        this.placeCity = placeCity;
-        this.placeVenueAddress = placeVenueAddress;
         this.mapCoordinates = mapCoordinates;
-        this.logoFileName = logoFileName;
-        this.duration = duration;
     }
 
     public String getSiteLink() {
@@ -45,43 +34,21 @@ public class EventDto extends EventSuperBriefDto {
         return youtubeLink;
     }
 
-    public String getPlaceCity() {
-        return placeCity;
-    }
-
-    public String getPlaceVenueAddress() {
-        return placeVenueAddress;
-    }
-
     public String getMapCoordinates() {
         return mapCoordinates;
     }
 
-    public String getLogoFileName() {
-        return logoFileName;
-    }
-
-    public long getDuration() {
-        return duration;
-    }
-
     public static EventDto convertToDto(Event event, Language language) {
+        EventSuperBriefDto eventSuperBriefDto = convertToSuperBriefDto(event, language);
         Place place = event.getPlace();
-        String placeCity = (place != null) ? LocalizationUtils.getString(place.getCity(), language) : null;
-        String placeVenueAddress = (place != null) ? LocalizationUtils.getString(place.getVenueAddress(), language) : null;
         String mapCoordinates = (place != null) ? place.getMapCoordinates() : null;
-        String logoFileName = (event.getEventType() != null) ? event.getEventType().getLogoFileName() : null;
-        long duration = (ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1);
 
         return new EventDto(
                 convertToSuperBriefDto(event, language),
+                convertToBriefDto(eventSuperBriefDto, event, language),
                 LocalizationUtils.getString(event.getSiteLink(), language),
                 event.getYoutubeLink(),
-                placeCity,
-                placeVenueAddress,
-                mapCoordinates,
-                logoFileName,
-                duration);
+                mapCoordinates);
     }
 
     public static List<EventDto> convertToDto(List<Event> events, Language language) {

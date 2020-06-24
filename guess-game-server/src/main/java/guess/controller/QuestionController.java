@@ -52,7 +52,7 @@ public class QuestionController {
 
         eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByInactive).thenComparing(comparatorByName));
 
-        return EventTypeDto.convertToBriefDto(eventTypes, language);
+        return EventTypeBriefDto.convertToBriefDto(eventTypes, language);
     }
 
     @GetMapping("/events")
@@ -63,7 +63,7 @@ public class QuestionController {
 
         events.sort(Comparator.comparing(Event::getStartDate).reversed());
 
-        return EventDto.convertToSuperBriefDto(events, language);
+        return EventSuperBriefDto.convertToSuperBriefDto(events, language);
     }
 
     @GetMapping("/quantities")

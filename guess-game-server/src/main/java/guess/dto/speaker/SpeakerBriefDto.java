@@ -80,16 +80,7 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     }
 
     public static SpeakerBriefDto convertToBriefDto(Speaker speaker, Language language) {
-        return new SpeakerBriefDto(
-                convertToSuperBriefDto(speaker, language),
-                speaker.getFileName(),
-                LocalizationUtils.getString(speaker.getCompany(), language),
-                speaker.getTwitter(),
-                speaker.getGitHub(),
-                speaker.isJavaChampion(),
-                speaker.isMvp(),
-                speaker.isMvpReconnect(),
-                speaker.isAnyMvp());
+        return convertToBriefDto(convertToSuperBriefDto(speaker, language), speaker, language);
     }
 
     public static List<SpeakerBriefDto> convertToBriefDto(List<Speaker> speakers, Language language) {

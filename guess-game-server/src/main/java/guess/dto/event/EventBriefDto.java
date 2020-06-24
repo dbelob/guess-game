@@ -1,0 +1,71 @@
+package guess.dto.event;
+
+import guess.domain.Language;
+import guess.domain.source.Event;
+import guess.domain.source.Place;
+import guess.util.LocalizationUtils;
+
+import java.time.temporal.ChronoUnit;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * Event DTO (brief).
+ */
+public class EventBriefDto extends EventSuperBriefDto {
+    private final long duration;
+    private final String placeCity;
+    private final String placeVenueAddress;
+    private final String logoFileName;
+
+    public EventBriefDto(EventSuperBriefDto eventSuperBriefDto, long duration, String placeCity, String placeVenueAddress,
+                         String logoFileName) {
+        super(eventSuperBriefDto.getId(), eventSuperBriefDto.getEventTypeId(), eventSuperBriefDto.getName(),
+                eventSuperBriefDto.getStartDate(), eventSuperBriefDto.getEndDate());
+        this.duration = duration;
+        this.placeCity = placeCity;
+        this.placeVenueAddress = placeVenueAddress;
+        this.logoFileName = logoFileName;
+    }
+
+    public long getDuration() {
+        return duration;
+    }
+
+    public String getPlaceCity() {
+        return placeCity;
+    }
+
+    public String getPlaceVenueAddress() {
+        return placeVenueAddress;
+    }
+
+    public String getLogoFileName() {
+        return logoFileName;
+    }
+
+    public static EventBriefDto convertToBriefDto(EventSuperBriefDto eventSuperBriefDto, Event event, Language language) {
+        long duration = (ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1);
+        Place place = event.getPlace();
+        String placeCity = (place != null) ? LocalizationUtils.getString(place.getCity(), language) : null;
+        String placeVenueAddress = (place != null) ? LocalizationUtils.getString(place.getVenueAddress(), language) : null;
+        String logoFileName = (event.getEventType() != null) ? event.getEventType().getLogoFileName() : null;
+
+        return new EventBriefDto(
+                convertToSuperBriefDto(event, language),
+                duration,
+                placeCity,
+                placeVenueAddress,
+                logoFileName);
+    }
+
+    public static EventBriefDto convertToBriefDto(Event event, Language language) {
+        return convertToBriefDto(convertToSuperBriefDto(event, language), event, language);
+    }
+
+    public static List<EventBriefDto> convertToBriefDto(List<Event> events, Language language) {
+        return events.stream()
+                .map(e -> convertToBriefDto(e, language))
+                .collect(Collectors.toList());
+    }
+}

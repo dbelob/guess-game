@@ -2,8 +2,8 @@ package guess.controller;
 
 import guess.domain.Language;
 import guess.domain.source.Event;
+import guess.dto.event.EventBriefDto;
 import guess.dto.event.EventSuperBriefDto;
-import guess.dto.event.EventDto;
 import guess.service.EventService;
 import guess.service.LocaleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,14 +34,14 @@ public class EventController {
 
     @GetMapping("/events")
     @ResponseBody
-    public List<EventDto> getEvents(@RequestParam boolean conferences, @RequestParam boolean meetups,
-                                    @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
+    public List<EventBriefDto> getEvents(@RequestParam boolean conferences, @RequestParam boolean meetups,
+                                         @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
         List<Event> events = eventService.getEvents(conferences, meetups, eventTypeId);
         Language language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate).reversed());
 
-        return EventDto.convertToDto(events, language);
+        return EventBriefDto.convertToBriefDto(events, language);
     }
 
     @GetMapping("/default-event")
