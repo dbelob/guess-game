@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { EventDetails } from '../../../shared/models/event-details.model';
 import { EventService } from '../../../shared/services/event.service';
-import { getEventDisplayName } from '../../general/utility-functions';
+import { getEventDisplayName, getTalksWithSpeakersString } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-event',
@@ -20,11 +20,16 @@ export class EventComponent implements OnInit {
   private id: number;
   public eventDetails: EventDetails = new EventDetails();
   public speakersMultiSortMeta: any[] = [];
+  public talksMultiSortMeta: any[] = [];
 
   constructor(private eventService: EventService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
     this.speakersMultiSortMeta.push({field: 'displayName', order: 1});
     this.speakersMultiSortMeta.push({field: 'company', order: 1});
+
+    this.talksMultiSortMeta.push({field: 'talkDay', order: 1});
+    this.talksMultiSortMeta.push({field: 'talkTime', order: 1});
+    this.talksMultiSortMeta.push({field: 'track', order: 1});
   }
 
   ngOnInit(): void {
@@ -42,13 +47,17 @@ export class EventComponent implements OnInit {
   loadEvent(id: number) {
     this.eventService.getEvent(id)
       .subscribe(data => {
-        this.eventDetails = this.getEventDetailsWithEventDisplayName(data);
+        this.eventDetails = this.getEventDetailsWithFilledAttributes(data);
       });
   }
 
-  getEventDetailsWithEventDisplayName(eventDetails: EventDetails): EventDetails {
+  getEventDetailsWithFilledAttributes(eventDetails: EventDetails): EventDetails {
     if (eventDetails?.event) {
       eventDetails.event.displayName = getEventDisplayName(eventDetails.event, this.translateService);
+    }
+
+    if (eventDetails?.talks) {
+      eventDetails.talks = getTalksWithSpeakersString(eventDetails.talks);
     }
 
     return eventDetails;

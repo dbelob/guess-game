@@ -8,6 +8,7 @@ import guess.dto.event.EventBriefDto;
 import guess.dto.event.EventDetailsDto;
 import guess.dto.event.EventSuperBriefDto;
 import guess.dto.speaker.SpeakerBriefDto;
+import guess.dto.talk.TalkBriefDto;
 import guess.service.EventService;
 import guess.service.EventTypeService;
 import guess.service.LocaleService;
@@ -74,7 +75,19 @@ public class EventController {
         Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(SpeakerBriefDto::getCompany, String.CASE_INSENSITIVE_ORDER);
         eventDetailsDto.getSpeakers().sort(comparatorByName.thenComparing(comparatorByCompany));
 
-        // TODO: sort talks
+        Comparator<TalkBriefDto> comparatorByTalkDate = Comparator.nullsLast(
+                Comparator.comparing(
+                        TalkBriefDto::getTalkDay,
+                        Comparator.nullsLast(Comparator.naturalOrder())));
+        Comparator<TalkBriefDto> comparatorByTalkTime = Comparator.nullsLast(
+                Comparator.comparing(
+                        TalkBriefDto::getTalkTime,
+                        Comparator.nullsLast(Comparator.naturalOrder())));
+        Comparator<TalkBriefDto> comparatorByTrack = Comparator.nullsLast(
+                Comparator.comparing(
+                        TalkBriefDto::getTrack,
+                        Comparator.nullsLast(Comparator.naturalOrder())));
+        eventDetailsDto.getTalks().sort(comparatorByTalkDate.thenComparing(comparatorByTalkTime).thenComparing(comparatorByTrack));
 
         return eventDetailsDto;
     }

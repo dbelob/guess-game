@@ -42,12 +42,14 @@ export class SpeakerComponent implements OnInit {
   loadSpeaker(id: number) {
     this.speakerService.getSpeaker(id)
       .subscribe(data => {
-        this.speakerDetails = this.getSpeakerDetailsWithTalksWithSpeakersString(data);
+        this.speakerDetails = this.getSpeakerDetailsWithTalksWithFilledAttributes(data);
       });
   }
 
-  getSpeakerDetailsWithTalksWithSpeakersString(speakerDetails: SpeakerDetails): SpeakerDetails {
-    speakerDetails.talks = getTalksWithSpeakersString(speakerDetails.talks);
+  getSpeakerDetailsWithTalksWithFilledAttributes(speakerDetails: SpeakerDetails): SpeakerDetails {
+    if (speakerDetails?.talks) {
+      speakerDetails.talks = getTalksWithSpeakersString(speakerDetails.talks);
+    }
 
     return speakerDetails;
   }

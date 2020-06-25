@@ -91,6 +91,9 @@
       "title": "Talks",
       "eventColumn": "Event",
       "talkDateColumn": "Talk date",
+      "talkDayColumn": "Day",
+      "talkTimeColumn": "Time",
+      "trackColumn": "Track",
       "nameColumn": "Name",
       "speakersColumn": "Speakers"
     },

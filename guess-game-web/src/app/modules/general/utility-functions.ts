@@ -94,9 +94,11 @@ export function getEventsWithDisplayName(events: Event[], translateService: Tran
 }
 
 export function getTalksWithSpeakersString(talks: Talk[]): Talk[] {
-  talks.forEach(t => {
-    t.speakersString = t.speakers.map(s => s.displayName).join(', ');
-  });
+  if (talks) {
+    talks.forEach(t => {
+      t.speakersString = t.speakers.map(s => s.displayName).join(', ');
+    });
+  }
 
   return talks;
 }
