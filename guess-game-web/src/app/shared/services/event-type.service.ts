@@ -14,8 +14,12 @@ export class EventTypeService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getEventTypes(): Observable<EventType[]> {
-    return this.http.get<EventType[]>(`${this.baseUrl}/event-types`)
+  getEventTypes(isConferences: boolean, isMeetups: boolean): Observable<EventType[]> {
+    const params = new HttpParams()
+      .set('conferences', isConferences.toString())
+      .set('meetups', isMeetups.toString());
+
+    return this.http.get<EventType[]>(`${this.baseUrl}/event-types`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

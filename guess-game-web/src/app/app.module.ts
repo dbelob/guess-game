@@ -10,6 +10,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
+import { EventTypesModule } from './modules/information/event-types/event-types.module';
 import { EventsModule } from './modules/information/events/events.module';
 import { HomeModule } from './modules/home/home.module';
 import { InformationModule } from './modules/information/information.module';
@@ -32,6 +33,7 @@ import { GuessAccountBySpeakerComponent } from './modules/game/guess/guess-accou
 import { GuessSpeakerByAccountComponent } from './modules/game/guess/guess-speaker-by-account.component';
 import { CancelGameComponent } from './modules/game/guess/cancel-game.component';
 import { NotFoundComponent } from './modules/unknown/not-found.component';
+import { EventTypesSearchComponent } from './modules/information/event-types/event-types-search.component';
 import { EventComponent } from './modules/information/events/event.component';
 import { EventsSearchComponent } from './modules/information/events/events-search.component';
 import { TalkComponent } from './modules/information/talks/talk.component';
@@ -63,6 +65,7 @@ const routes: Routes = [
   {path: 'guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
+  {path: 'information/event-types/search', component: EventTypesSearchComponent},
   {path: 'information/event/:id', component: EventComponent},
   {path: 'information/events/search', component: EventsSearchComponent},
   {path: 'information/talk/:id', component: TalkComponent},
@@ -73,6 +76,7 @@ const routes: Routes = [
   {path: 'information/statistics/event-types', component: EventTypeStatisticsComponent},
   {path: 'information/statistics/events', component: EventStatisticsComponent},
   {path: 'information/statistics/speakers', component: SpeakerStatisticsComponent},
+  {path: 'information/event-types', redirectTo: 'information/event-types/search'},
   {path: 'information/events', redirectTo: 'information/events/search'},
   {path: 'information/talks', redirectTo: 'information/talks/search'},
   {path: 'information/speakers', redirectTo: 'information/speakers/list'},
@@ -109,6 +113,7 @@ registerLocaleData(localeRu, 'ru');
       }
     }),
     EventsModule,
+    EventTypesModule,
     HomeModule,
     InformationModule,
     GuessModule,

@@ -35,28 +35,31 @@ public class EventTypeController {
 
     @GetMapping("/event-types")
     @ResponseBody
-    public List<EventTypeBriefDto> getEventTypes(HttpSession httpSession) {
-        List<EventType> eventTypes = eventTypeService.getEventTypes();
+    public List<EventTypeDto> getEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
+                                            HttpSession httpSession) {
         Language language = localeService.getLanguage(httpSession);
-        Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
-        Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);
+        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, language);
 
-        eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByName));
-
-        return EventTypeDto.convertToBriefDto(eventTypes, language);
+        return EventTypeDto.convertToDto(eventTypes, language);
     }
 
     @GetMapping("/filter-event-types")
     @ResponseBody
     public List<EventTypeBriefDto> getFilterEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                        HttpSession httpSession) {
-        List<EventType> eventTypes = eventTypeService.getEventTypes(conferences, meetups);
         Language language = localeService.getLanguage(httpSession);
+        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, language);
+
+        return EventTypeBriefDto.convertToBriefDto(eventTypes, language);
+    }
+
+    private List<EventType> getEventTypesAndSort(boolean isConferences, boolean isMeetups, Language language) {
+        List<EventType> eventTypes = eventTypeService.getEventTypes(isConferences, isMeetups);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
         Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);
 
         eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByName));
 
-        return EventTypeDto.convertToBriefDto(eventTypes, language);
+        return eventTypes;
     }
 }

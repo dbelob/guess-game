@@ -54,24 +54,24 @@ export class EventsSearchComponent implements OnInit {
                 this.selectedEventType = null;
               }
 
-              this.loadEvents(this.selectedEventType);
+              this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
             });
         } else {
           this.selectedEventType = null;
-          this.loadEvents(this.selectedEventType);
+          this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
         }
       });
   }
 
-  loadEvents(eventType: EventType) {
-    this.eventService.getEvents(eventType, this.isConferences, this.isMeetups)
+  loadEvents(eventType: EventType, isConferences: boolean, isMeetups: boolean) {
+    this.eventService.getEvents(eventType, isConferences, isMeetups)
       .subscribe(data => {
         this.events = data;
       });
   }
 
   onEventTypeChange(eventType: EventType) {
-    this.loadEvents(eventType);
+    this.loadEvents(eventType, this.isConferences, this.isMeetups);
   }
 
   onEventTypeKindChange(checked: boolean) {
@@ -79,6 +79,6 @@ export class EventsSearchComponent implements OnInit {
   }
 
   onLanguageChange() {
-    this.loadEvents(this.selectedEventType);
+    this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
   }
 }

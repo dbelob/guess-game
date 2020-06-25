@@ -60,6 +60,15 @@
     "yesButtonText": "Yes",
     "noButtonText": "No"
   },
+  "eventType": {
+    "title": "Event type"
+  },
+  "eventTypes":{
+    "title": "Event types",
+    "search": {
+      "title": "Search"
+    }
+  },
   "event": {
     "title": "Event",
     "siteLinkText": "Site",

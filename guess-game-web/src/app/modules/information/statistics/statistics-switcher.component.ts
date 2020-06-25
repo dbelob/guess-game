@@ -14,7 +14,7 @@ export class StatisticsSwitcherComponent implements OnInit {
   }
 
   isEventTypes(): boolean {
-    return ('event-types' === this.type);
+    return ('eventTypes' === this.type);
   }
 
   isEvents(): boolean {

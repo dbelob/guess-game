@@ -60,6 +60,15 @@
     "yesButtonText": "Да",
     "noButtonText": "Нет"
   },
+  "eventType": {
+    "title": "Тип события"
+  },
+  "eventTypes":{
+    "title": "Типы событий",
+    "search": {
+      "title": "Поиск"
+    }
+  },
   "event": {
     "title": "Событие",
     "siteLinkText": "Сайт",

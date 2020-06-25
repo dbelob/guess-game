@@ -16,10 +16,11 @@ export class EventService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getEvents(eventType: EventType, isConferences?: boolean, isMeetups?: boolean): Observable<Event[]> {
+  getEvents(eventType: EventType, isConferences: boolean, isMeetups: boolean): Observable<Event[]> {
     let params = new HttpParams()
-      .set('conferences', ((isConferences) ? isConferences : true).toString())
-      .set('meetups', ((isMeetups) ? isMeetups : true).toString());
+      .set('conferences', isConferences.toString())
+      .set('meetups', isMeetups.toString());
+
     if (eventType?.id) {
       params = params.set('eventTypeId', eventType.id.toString());
     }
