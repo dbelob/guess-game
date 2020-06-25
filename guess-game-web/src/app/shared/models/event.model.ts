@@ -10,7 +10,7 @@ export class Event {
     public placeCity?: string,
     public placeVenueAddress?: string,
     public mapCoordinates?: string,
-    public logoFileName?: string,
+    public eventTypeLogoFileName?: string,
     public duration?: number,
     public displayName?: string
   ) {

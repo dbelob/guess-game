@@ -19,7 +19,7 @@ public class EventDto extends EventBriefDto {
     public EventDto(EventSuperBriefDto eventSuperBriefDto, EventBriefDto eventBriefDto, String siteLink,
                     String youtubeLink, String mapCoordinates) {
         super(eventSuperBriefDto, eventBriefDto.getDuration(), eventBriefDto.getPlaceCity(), eventBriefDto.getPlaceVenueAddress(),
-                eventBriefDto.getLogoFileName());
+                eventBriefDto.getEventTypeLogoFileName());
 
         this.siteLink = siteLink;
         this.youtubeLink = youtubeLink;

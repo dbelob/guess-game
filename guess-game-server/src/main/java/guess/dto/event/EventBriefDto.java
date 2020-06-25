@@ -16,16 +16,16 @@ public class EventBriefDto extends EventSuperBriefDto {
     private final long duration;
     private final String placeCity;
     private final String placeVenueAddress;
-    private final String logoFileName;
+    private final String eventTypeLogoFileName;
 
     public EventBriefDto(EventSuperBriefDto eventSuperBriefDto, long duration, String placeCity, String placeVenueAddress,
-                         String logoFileName) {
+                         String eventTypeLogoFileName) {
         super(eventSuperBriefDto.getId(), eventSuperBriefDto.getEventTypeId(), eventSuperBriefDto.getName(),
                 eventSuperBriefDto.getStartDate(), eventSuperBriefDto.getEndDate());
         this.duration = duration;
         this.placeCity = placeCity;
         this.placeVenueAddress = placeVenueAddress;
-        this.logoFileName = logoFileName;
+        this.eventTypeLogoFileName = eventTypeLogoFileName;
     }
 
     public long getDuration() {
@@ -40,8 +40,8 @@ public class EventBriefDto extends EventSuperBriefDto {
         return placeVenueAddress;
     }
 
-    public String getLogoFileName() {
-        return logoFileName;
+    public String getEventTypeLogoFileName() {
+        return eventTypeLogoFileName;
     }
 
     public static EventBriefDto convertToBriefDto(EventSuperBriefDto eventSuperBriefDto, Event event, Language language) {

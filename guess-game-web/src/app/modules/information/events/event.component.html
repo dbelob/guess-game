@@ -16,8 +16,8 @@
 
   <div class="m-1">
     <div class="m-2">
-      <img *ngIf="eventDetails.event?.logoFileName"
-           src="{{eventsImageDirectory}}/{{eventDetails.event?.logoFileName}}" height="72" alt="logo"
+      <img *ngIf="eventDetails.event?.eventTypeLogoFileName"
+           src="{{eventsImageDirectory}}/{{eventDetails.event?.eventTypeLogoFileName}}" height="72" alt="logo"
            class="align-middle"/>
       <span class="h3 ml-2 align-middle">{{eventDetails.event?.displayName}}</span>
 
