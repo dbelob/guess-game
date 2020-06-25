@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { EventDetails } from '../../../shared/models/event-details.model';
+import { Event } from '../../../shared/models/event.model';
 import { EventService } from '../../../shared/services/event.service';
 import { getEventDisplayName, getTalksWithSpeakersString } from '../../general/utility-functions';
 
@@ -16,6 +17,7 @@ export class EventComponent implements OnInit {
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
   public twitterUrlPrefix = 'https://twitter.com';
   public gitHubUrlPrefix = 'https://github.com';
+  public googleMapsUrlPrefix = 'https://www.google.com/maps/place';
 
   private id: number;
   public eventDetails: EventDetails = new EventDetails();
@@ -54,6 +56,7 @@ export class EventComponent implements OnInit {
   getEventDetailsWithFilledAttributes(eventDetails: EventDetails): EventDetails {
     if (eventDetails?.event) {
       eventDetails.event.displayName = getEventDisplayName(eventDetails.event, this.translateService);
+      eventDetails.event.displayPlace = this.getDisplayPlace(eventDetails.event);
     }
 
     if (eventDetails?.talks) {
@@ -67,11 +70,33 @@ export class EventComponent implements OnInit {
     this.loadEvent(this.id);
   }
 
+  isDisplayPlaceVisible() {
+    return ((this.eventDetails.event?.displayPlace) && (this.eventDetails.event.displayPlace.length > 0));
+  }
+
   isSpeakersListVisible() {
     return ((this.eventDetails.speakers) && (this.eventDetails.speakers.length > 0));
   }
 
   isTalksListVisible() {
     return ((this.eventDetails.talks) && (this.eventDetails.talks.length > 0));
+  }
+
+  getDisplayPlace(event: Event): string {
+    let place = '';
+
+    if (event?.placeCity && (event.placeCity.length > 0)) {
+      place += event?.placeCity;
+    }
+
+    if (place && (place.length > 0) && event?.placeVenueAddress && (event.placeVenueAddress.length > 0)) {
+      place += ', ';
+    }
+
+    if (event?.placeVenueAddress && (event.placeVenueAddress.length > 0)) {
+      place += event?.placeVenueAddress;
+    }
+
+    return place;
   }
 }

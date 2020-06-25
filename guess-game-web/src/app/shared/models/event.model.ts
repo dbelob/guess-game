@@ -12,7 +12,8 @@ export class Event {
     public mapCoordinates?: string,
     public eventTypeLogoFileName?: string,
     public duration?: number,
-    public displayName?: string
+    public displayName?: string,
+    public displayPlace?: string
   ) {
   }
 }

@@ -21,14 +21,14 @@
            class="align-middle"/>
       <span class="h3 ml-2 align-middle">{{eventDetails.event?.displayName}}</span>
 
-      <div *ngIf="eventDetails.event?.placeCity || eventDetails.event?.placeVenueAddress"
-           class="row mt-1">
-        <span *ngIf="eventDetails.event?.placeCity" class="col-auto">{{eventDetails.event.placeCity}}</span>
-        <span *ngIf="eventDetails.event?.placeVenueAddress" class="col-auto">{{eventDetails.event.placeVenueAddress}}</span>
+      <div *ngIf="isDisplayPlaceVisible()" class="mt-1">
+        <a *ngIf="eventDetails.event?.mapCoordinates" href="{{googleMapsUrlPrefix}}/{{eventDetails.event.mapCoordinates}}" class="text-dark">
+          {{eventDetails.event.displayPlace}}
+        </a>
+        <span *ngIf="!eventDetails.event?.mapCoordinates">{{eventDetails.event.displayPlace}}</span>
       </div>
 
-      <div *ngIf="eventDetails.event?.siteLink || eventDetails.event?.youtubeLink"
-           class="row mt-2">
+      <div *ngIf="eventDetails.event?.siteLink || eventDetails.event?.youtubeLink" class="row mt-2">
         <div *ngIf="eventDetails.event?.siteLink" class="col-auto">
           <a href="{{eventDetails.event.siteLink}}" class="text-dark">
             <i class="fa fa-globe"></i><span> {{'event.siteLinkText' | translate}}</span>
