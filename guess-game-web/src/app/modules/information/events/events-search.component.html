@@ -35,7 +35,7 @@
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
                       (onChange)="onEventTypeChange($event.value)" name="conference">
             <ng-template let-eventType pTemplate="item">
-              <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" height="24" alt="logo"/>
+              <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>
             </ng-template>
           </p-dropdown>
@@ -83,7 +83,7 @@
             <td class="text-center">{{i + 1}}</td>
             <td>
               <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
-                <img src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" height="24" alt="logo"/>
+                <img src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ml-2">{{event.name}}</span>
               </a>
             </td>

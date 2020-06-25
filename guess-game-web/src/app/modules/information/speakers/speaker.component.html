@@ -23,9 +23,8 @@
 
       <div class="row">
         <div class="col-12 col-sm-6 col-md-4 mt-1">
-          <img *ngIf="speakerDetails.speaker?.fileName"
-               src="{{speakersImageDirectory}}/{{speakerDetails.speaker?.fileName}}" alt="{{speakerDetails.speaker?.name}}"
-               class="img-speaker">
+          <img *ngIf="speakerDetails.speaker?.fileName" class="img-speaker-photo"
+               src="{{speakersImageDirectory}}/{{speakerDetails.speaker?.fileName}}" alt="{{speakerDetails.speaker?.name}}">
         </div>
         <div *ngIf="speakerDetails.speaker?.bio" class="col-12 col-sm-6 col-md-8 mt-1">
           <markdown [data]='speakerDetails.speaker.bio'></markdown>
@@ -35,11 +34,11 @@
       <div *ngIf="speakerDetails.speaker?.javaChampion || speakerDetails.speaker?.anyMvp || speakerDetails.speaker?.twitter || speakerDetails.speaker?.gitHub"
            class="row align-items-center mt-1">
         <div *ngIf="speakerDetails.speaker?.javaChampion" class="col-auto">
-          <img src="{{degreesImageDirectory}}/java-champion.png" height="36" alt="java-champion"/>
+          <img src="{{degreesImageDirectory}}/java-champion.png" class="img-speaker-degree" alt="java-champion"/>
         </div>
         <div *ngIf="speakerDetails.speaker?.anyMvp" class="col-auto">
-          <img *ngIf="speakerDetails.speaker?.mvp" src="{{degreesImageDirectory}}/mvp.png" height="36" alt="mvp"/>
-          <img *ngIf="speakerDetails.speaker?.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
+          <img *ngIf="speakerDetails.speaker?.mvp" src="{{degreesImageDirectory}}/mvp.png" class="img-speaker-degree" alt="mvp"/>
+          <img *ngIf="speakerDetails.speaker?.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" class="img-speaker-degree" alt="mvp-reconnect"/>
         </div>
         <div *ngIf="speakerDetails.speaker?.twitter" class="col-auto">
           <a href="{{twitterUrlPrefix}}/{{speakerDetails.speaker.twitter}}" class="text-primary">
@@ -87,7 +86,7 @@
             <td class="text-center">{{i + 1}}</td>
             <td>
               <a [routerLink]="['/information', 'event', talk.event?.id]" class="text-dark">
-                <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" height="24" alt="logo"/>
+                <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
                 <span class="ml-2">{{talk.event?.name}}</span>
               </a>
             </td>

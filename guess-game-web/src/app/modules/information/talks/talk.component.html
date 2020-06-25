@@ -20,8 +20,8 @@
 
       <div class="mt-1">
         <a [routerLink]="['/information', 'event', talkDetails.talk?.event?.id]" class="text-dark">
-          <img *ngIf="talkDetails.talk?.eventTypeLogoFileName"
-               src="{{eventsImageDirectory}}/{{talkDetails.talk?.eventTypeLogoFileName}}" height="24" alt="logo"/>
+          <img *ngIf="talkDetails.talk?.eventTypeLogoFileName" class="img-event-type-logo-talk"
+               src="{{eventsImageDirectory}}/{{talkDetails.talk?.eventTypeLogoFileName}}" alt="logo"/>
           <span class="ml-2">{{talkDetails.talk?.event?.displayName}}</span>
         </a>
         <span *ngIf="talkDetails.talk?.talkDay"> / <i class="fa fa-calendar"></i> {{'talk.dayLabel' | translate}} {{talkDetails.talk.talkDay}}</span>
@@ -90,7 +90,7 @@
             <td class="text-center">{{i + 1}}</td>
             <td>
               <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
-                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" height="24" alt="photo"/>
+                <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" class="img-speaker-photo-table" alt="photo"/>
                 <span class="ml-2">{{speaker.displayName}}</span>
               </a>
             </td>
@@ -106,11 +106,11 @@
               </a>
             </td>
             <td class="text-center">
-              <img *ngIf="speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" height="24" alt="java-champion"/>
+              <img *ngIf="speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" class="img-speaker-degree-table" alt="java-champion"/>
             </td>
             <td class="text-center">
-              <img *ngIf="speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" height="24" alt="mvp"/>
-              <img *ngIf="speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" height="24" alt="mvp-reconnect"/>
+              <img *ngIf="speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" class="img-speaker-degree-table" alt="mvp"/>
+              <img *ngIf="speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" class="img-speaker-degree-table" alt="mvp-reconnect"/>
             </td>
           </tr>
         </ng-template>

@@ -22,10 +22,22 @@
   width: 100%;
   height: auto;
 }
-.img-speaker {
+.img-event-type-logo {
+  height: 72px;
+}
+.img-event-type-logo-talk {
+  height: 30px;
+}
+.img-speaker-photo {
   max-width: 400px;
   width: 100%;
   height: auto;
+}
+.img-event-type-logo-list, .img-event-type-logo-table, .img-speaker-photo-table, .img-speaker-degree-table {
+  height: 24px;
+}
+.img-speaker-degree {
+  height: 30px;
 }
 .img-guess-logo {
   width: 48px;
