@@ -28,15 +28,35 @@
         <span *ngIf="!eventDetails.event?.mapCoordinates">{{eventDetails.event.displayPlace}}</span>
       </div>
 
-      <div *ngIf="eventDetails.event?.siteLink || eventDetails.event?.youtubeLink" class="row mt-2">
+      <div *ngIf="eventDetails.event?.siteLink || eventDetails.event?.facebookLink || eventDetails.event?.vkLink || eventDetails.event?.twitterLink || eventDetails.event?.youtubeLink || eventDetails.event?.telegramLink" class="row mt-2">
         <div *ngIf="eventDetails.event?.siteLink" class="col-auto">
           <a href="{{eventDetails.event.siteLink}}" class="text-dark">
             <i class="fa fa-globe"></i><span> {{'event.siteLinkText' | translate}}</span>
           </a>
         </div>
+        <div *ngIf="eventDetails.event?.facebookLink" class="col-auto">
+          <a href="{{eventDetails.event.facebookLink}}" class="text-dark">
+            <i class="fa fa-facebook"></i><span> Facebook</span>
+          </a>
+        </div>
+        <div *ngIf="eventDetails.event?.vkLink" class="col-auto">
+          <a href="{{eventDetails.event.vkLink}}" class="text-dark">
+            <i class="fa fa-vk"></i><span> {{'event.vkLinkText' | translate}}</span>
+          </a>
+        </div>
+        <div *ngIf="eventDetails.event?.twitterLink" class="col-auto">
+          <a href="{{eventDetails.event.twitterLink}}" class="text-dark">
+            <i class="fa fa-twitter"></i><span> Twitter</span>
+          </a>
+        </div>
         <div *ngIf="eventDetails.event?.youtubeLink" class="col-auto">
           <a href="{{eventDetails.event.youtubeLink}}" class="text-dark">
             <i class="fa fa-youtube"></i><span> YouTube</span>
+          </a>
+        </div>
+        <div *ngIf="eventDetails.event?.telegramLink" class="col-auto">
+          <a href="{{eventDetails.event.telegramLink}}" class="text-dark">
+            <i class="fa fa-telegram"></i><span> Telegram</span>
           </a>
         </div>
       </div>

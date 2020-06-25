@@ -62,7 +62,8 @@
   },
   "event": {
     "title": "Событие",
-    "siteLinkText": "Сайт"
+    "siteLinkText": "Сайт",
+    "vkLinkText": "ВКонтакте"
   },
   "events":{
     "title": "События",

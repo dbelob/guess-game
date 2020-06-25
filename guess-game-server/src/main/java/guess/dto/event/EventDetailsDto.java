@@ -41,7 +41,7 @@ public class EventDetailsDto {
                                                Function<Talk, Event> talkEventFunction,
                                                Function<Event, EventType> eventEventTypeFunction, Language language) {
         return new EventDetailsDto(
-                EventDto.convertToDto(event, language),
+                EventDto.convertToDto(event, eventEventTypeFunction, language),
                 SpeakerBriefDto.convertToBriefDto(speakers, language),
                 TalkBriefDto.convertToBriefDto(talks, talkEventFunction, eventEventTypeFunction, language)
         );
