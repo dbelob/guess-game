@@ -27,8 +27,7 @@ export class EventsSearchComponent implements OnInit {
 
   constructor(private eventTypeService: EventTypeService, private eventService: EventService,
               public translateService: TranslateService) {
-    this.multiSortMeta.push({field: 'name', order: 1});
-    this.multiSortMeta.push({field: 'startDate', order: 1});
+    this.multiSortMeta.push({field: 'startDate', order: -1});
   }
 
   ngOnInit(): void {
