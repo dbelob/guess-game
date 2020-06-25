@@ -81,7 +81,7 @@ const routes: Routes = [
   {path: 'information/talks', redirectTo: 'information/talks/search'},
   {path: 'information/speakers', redirectTo: 'information/speakers/list'},
   {path: 'information/statistics', redirectTo: 'information/statistics/event-types'},
-  {path: 'information', redirectTo: 'information/statistics/event-types'},
+  {path: 'information', redirectTo: 'information/event-types/search'},
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '**', component: NotFoundComponent}
 ];
