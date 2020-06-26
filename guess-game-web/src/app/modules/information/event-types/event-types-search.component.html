@@ -65,8 +65,10 @@
               </span>
             </td>
             <td>
-              <img src="{{eventsImageDirectory}}/{{eventType.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-              <span class="ml-2">{{eventType.name}}</span>
+              <a [routerLink]="['/information', 'event-type', eventType.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{eventType.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
+                <span class="ml-2">{{eventType.name}}</span>
+              </a>
             </td>
             <td>{{eventType.shortDescription}}</td>
           </tr>

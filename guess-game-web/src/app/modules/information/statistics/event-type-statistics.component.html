@@ -92,8 +92,10 @@
               </span>
             </td>
             <td>
-              <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
-              <span class="ml-2">{{eventTypeMetrics.displayName}}</span>
+              <a [routerLink]="['/information', 'event-type', eventTypeMetrics.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
+                <span class="ml-2">{{eventTypeMetrics.displayName}}</span>
+              </a>
             </td>
             <td class="text-center">{{eventTypeMetrics.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td class="text-center">{{eventTypeMetrics.age | number:'1.0-0':translateService.currentLang}}</td>

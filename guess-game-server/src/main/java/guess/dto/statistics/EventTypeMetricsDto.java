@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
  * Event type metrics DTO.
  */
 public class EventTypeMetricsDto {
+    private final long id;
     private final String displayName;
     private final String sortName;
     private final boolean conference;
@@ -26,9 +27,10 @@ public class EventTypeMetricsDto {
     private final long javaChampionsQuantity;
     private final long mvpsQuantity;
 
-    public EventTypeMetricsDto(String displayName, String sortName, boolean conference, String logoFileName,
+    public EventTypeMetricsDto(long id, String displayName, String sortName, boolean conference, String logoFileName,
                                LocalDate startDate, long age, long duration, long eventsQuantity, long talksQuantity,
                                long speakersQuantity, long javaChampionsQuantity, long mvpsQuantity) {
+        this.id = id;
         this.displayName = displayName;
         this.sortName = sortName;
         this.conference = conference;
@@ -41,6 +43,10 @@ public class EventTypeMetricsDto {
         this.speakersQuantity = speakersQuantity;
         this.javaChampionsQuantity = javaChampionsQuantity;
         this.mvpsQuantity = mvpsQuantity;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getDisplayName() {
@@ -98,6 +104,7 @@ public class EventTypeMetricsDto {
         String sortName = String.format(LocalizationUtils.getResourceString(resourceKey, language), displayName);
 
         return new EventTypeMetricsDto(
+                eventType.getId(),
                 displayName,
                 sortName,
                 eventType.isEventTypeConference(),
