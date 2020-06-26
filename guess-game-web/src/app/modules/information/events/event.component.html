@@ -17,7 +17,7 @@
   <div class="m-1">
     <div class="m-2">
       <img *ngIf="eventDetails.event?.eventTypeLogoFileName" class="align-middle img-event-type-logo"
-           src="{{eventsImageDirectory}}/{{eventDetails.event?.eventTypeLogoFileName}}" alt="logo"/>
+           src="{{eventsImageDirectory}}/{{eventDetails.event.eventTypeLogoFileName}}" alt="logo"/>
       <span class="h3 ml-2 align-middle">{{eventDetails.event?.displayName}}</span>
 
       <div *ngIf="isDisplayPlaceVisible()" class="mt-1">

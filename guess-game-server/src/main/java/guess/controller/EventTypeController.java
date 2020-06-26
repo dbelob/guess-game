@@ -2,17 +2,16 @@ package guess.controller;
 
 import guess.domain.Language;
 import guess.domain.source.EventType;
+import guess.dto.event.EventBriefDto;
 import guess.dto.eventtype.EventTypeBriefDto;
+import guess.dto.eventtype.EventTypeDetailsDto;
 import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.service.EventTypeService;
 import guess.service.LocaleService;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
@@ -61,5 +60,17 @@ public class EventTypeController {
         eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByName));
 
         return eventTypes;
+    }
+
+    @GetMapping("/event-type/{id}")
+    @ResponseBody
+    public EventTypeDetailsDto getEventType(@PathVariable long id, HttpSession httpSession) {
+        EventType eventType = eventTypeService.getEventTypeById(id);
+        Language language = localeService.getLanguage(httpSession);
+        EventTypeDetailsDto eventTypeDetailsDto = EventTypeDetailsDto.convertToDto(eventType, eventType.getEvents(), language);
+
+        eventTypeDetailsDto.getEvents().sort(Comparator.comparing(EventBriefDto::getStartDate).reversed());
+
+        return eventTypeDetailsDto;
     }
 }

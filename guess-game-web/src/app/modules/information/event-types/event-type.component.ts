@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { EventTypeDetails } from '../../../shared/models/event-type-details.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 
 @Component({
@@ -8,8 +9,11 @@ import { EventTypeService } from '../../../shared/services/event-type.service';
   templateUrl: './event-type.component.html'
 })
 export class EventTypeComponent implements OnInit {
-  // TODO: change to private
-  public id: number;
+  private imageDirectory = 'assets/images';
+  public eventsImageDirectory = `${this.imageDirectory}/events`;
+
+  private id: number;
+  public eventTypeDetails: EventTypeDetails = new EventTypeDetails();
 
   constructor(private eventTypeService: EventTypeService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
@@ -28,7 +32,10 @@ export class EventTypeComponent implements OnInit {
   }
 
   loadEventType(id: number) {
-    // TODO: implement
+    this.eventTypeService.getEventType(id)
+      .subscribe(data => {
+        this.eventTypeDetails = data;
+      });
   }
 
   onLanguageChange() {

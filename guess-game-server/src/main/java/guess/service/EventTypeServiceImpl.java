@@ -22,6 +22,11 @@ public class EventTypeServiceImpl implements EventTypeService {
     }
 
     @Override
+    public EventType getEventTypeById(long id) {
+        return eventTypeDao.getEventTypeById(id);
+    }
+
+    @Override
     public List<EventType> getEventTypes() {
         return eventTypeDao.getEventTypes();
     }

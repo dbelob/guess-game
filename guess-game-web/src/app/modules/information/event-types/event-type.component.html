@@ -16,7 +16,9 @@
 
   <div class="m-1">
     <div class="m-2">
-      {{id}}
+      <img *ngIf="eventTypeDetails.eventType?.logoFileName" class="align-middle img-event-type-logo"
+           src="{{eventsImageDirectory}}/{{eventTypeDetails.eventType.logoFileName}}" alt="logo"/>
+      <span class="h3 ml-2 align-middle">{{eventTypeDetails.eventType?.name}}</span>
     </div>
   </div>
 </div>
