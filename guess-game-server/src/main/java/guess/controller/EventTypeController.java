@@ -2,8 +2,8 @@ package guess.controller;
 
 import guess.domain.Language;
 import guess.domain.source.EventType;
-import guess.dto.start.EventTypeBriefDto;
-import guess.dto.start.EventTypeDto;
+import guess.dto.eventtype.EventTypeBriefDto;
+import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.service.EventTypeService;
 import guess.service.LocaleService;
 import guess.util.LocalizationUtils;
@@ -35,22 +35,22 @@ public class EventTypeController {
 
     @GetMapping("/event-types")
     @ResponseBody
-    public List<EventTypeDto> getEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
-                                            HttpSession httpSession) {
-        Language language = localeService.getLanguage(httpSession);
-        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, language);
-
-        return EventTypeDto.convertToDto(eventTypes, language);
-    }
-
-    @GetMapping("/filter-event-types")
-    @ResponseBody
-    public List<EventTypeBriefDto> getFilterEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
-                                                       HttpSession httpSession) {
+    public List<EventTypeBriefDto> getEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
+                                                 HttpSession httpSession) {
         Language language = localeService.getLanguage(httpSession);
         List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, language);
 
         return EventTypeBriefDto.convertToBriefDto(eventTypes, language);
+    }
+
+    @GetMapping("/filter-event-types")
+    @ResponseBody
+    public List<EventTypeSuperBriefDto> getFilterEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
+                                                            HttpSession httpSession) {
+        Language language = localeService.getLanguage(httpSession);
+        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, language);
+
+        return EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
     }
 
     private List<EventType> getEventTypesAndSort(boolean isConferences, boolean isMeetups, Language language) {

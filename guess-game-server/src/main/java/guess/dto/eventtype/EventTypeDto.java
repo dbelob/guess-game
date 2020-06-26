@@ -1,4 +1,4 @@
-package guess.dto.start;
+package guess.dto.eventtype;
 
 import guess.domain.Language;
 import guess.domain.source.EventType;
@@ -20,10 +20,10 @@ public class EventTypeDto extends EventTypeBriefDto {
     private final String youtubeLink;
     private final String telegramLink;
 
-    public EventTypeDto(EventTypeBriefDto eventTypeBriefDto, String description, String siteLink,
-                        String vkLink, String twitterLink, String facebookLink, String youtubeLink, String telegramLink) {
-        super(eventTypeBriefDto.getId(), eventTypeBriefDto.isConference(), eventTypeBriefDto.getName(),
-                eventTypeBriefDto.getDisplayName(), eventTypeBriefDto.getLogoFileName(), eventTypeBriefDto.isInactive());
+    public EventTypeDto(EventTypeSuperBriefDto eventTypeSuperBriefDto, EventTypeBriefDto eventTypeBriefDto, String description,
+                        String siteLink, String vkLink, String twitterLink, String facebookLink, String youtubeLink,
+                        String telegramLink) {
+        super(eventTypeSuperBriefDto, eventTypeBriefDto.getShortDescription());
 
         this.description = description;
         this.siteLink = siteLink;
@@ -63,9 +63,17 @@ public class EventTypeDto extends EventTypeBriefDto {
     }
 
     public static EventTypeDto convertToDto(EventType eventType, Language language) {
+        EventTypeSuperBriefDto eventTypeSuperBriefDto = convertToSuperBriefDto(eventType, language);
+        String description = LocalizationUtils.getString(eventType.getLongDescription(), language);
+
+        if ((description == null) || description.isEmpty()) {
+            description = LocalizationUtils.getString(eventType.getShortDescription(), language);
+        }
+
         return new EventTypeDto(
-                convertToBriefDto(eventType, language),
-                LocalizationUtils.getString(eventType.getLongDescription(), language),
+                eventTypeSuperBriefDto,
+                convertToBriefDto(eventTypeSuperBriefDto, eventType, language),
+                description,
                 LocalizationUtils.getString(eventType.getSiteLink(), language),
                 eventType.getVkLink(),
                 eventType.getTwitterLink(),

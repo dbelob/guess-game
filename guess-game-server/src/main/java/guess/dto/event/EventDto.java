@@ -81,7 +81,7 @@ public class EventDto extends EventBriefDto {
         String eventTypeTelegramLink = (eventType != null) ? eventType.getTelegramLink() : null;
 
         return new EventDto(
-                convertToSuperBriefDto(event, language),
+                eventSuperBriefDto,
                 convertToBriefDto(eventSuperBriefDto, event, language),
                 ((eventSiteLink != null) && !eventSiteLink.isEmpty()) ? eventSiteLink : eventTypeSiteLink,
                 ((eventYoutubeLink != null) && !eventYoutubeLink.isEmpty()) ? eventYoutubeLink : eventTypeYoutubeLink,

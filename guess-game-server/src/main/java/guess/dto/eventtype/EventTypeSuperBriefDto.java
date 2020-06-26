@@ -1,4 +1,4 @@
-package guess.dto.start;
+package guess.dto.eventtype;
 
 import guess.domain.Language;
 import guess.domain.source.EventType;
@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Event type DTO.
+ * Event type DTO (super brief).
  */
-public class EventTypeBriefDto {
+public class EventTypeSuperBriefDto {
     private final long id;
     private final boolean conference;
     private final String name;
@@ -18,8 +18,8 @@ public class EventTypeBriefDto {
     private final String logoFileName;
     private final boolean inactive;
 
-    public EventTypeBriefDto(long id, boolean conference, String name, String displayName, String logoFileName,
-                             boolean inactive) {
+    public EventTypeSuperBriefDto(long id, boolean conference, String name, String displayName, String logoFileName,
+                                  boolean inactive) {
         this.id = id;
         this.conference = conference;
         this.name = name;
@@ -52,12 +52,12 @@ public class EventTypeBriefDto {
         return inactive;
     }
 
-    public static EventTypeBriefDto convertToBriefDto(EventType eventType, Language language) {
+    public static EventTypeSuperBriefDto convertToSuperBriefDto(EventType eventType, Language language) {
         String name = LocalizationUtils.getString(eventType.getName(), language);
         String resourceKey = (eventType.isEventTypeConference()) ? LocalizationUtils.CONFERENCES_EVENT_TYPE_TEXT : LocalizationUtils.MEETUPS_EVENT_TYPE_TEXT;
         String displayName = String.format(LocalizationUtils.getResourceString(resourceKey, language), name);
 
-        return new EventTypeBriefDto(
+        return new EventTypeSuperBriefDto(
                 eventType.getId(),
                 eventType.isEventTypeConference(),
                 name,
@@ -66,9 +66,9 @@ public class EventTypeBriefDto {
                 eventType.isInactive());
     }
 
-    public static List<EventTypeBriefDto> convertToBriefDto(List<EventType> eventTypes, Language language) {
+    public static List<EventTypeSuperBriefDto> convertToSuperBriefDto(List<EventType> eventTypes, Language language) {
         return eventTypes.stream()
-                .map(et -> convertToBriefDto(et, language))
+                .map(et -> convertToSuperBriefDto(et, language))
                 .collect(Collectors.toList());
     }
 }

@@ -52,7 +52,7 @@ public class EventBriefDto extends EventSuperBriefDto {
         String logoFileName = (event.getEventType() != null) ? event.getEventType().getLogoFileName() : null;
 
         return new EventBriefDto(
-                convertToSuperBriefDto(event, language),
+                eventSuperBriefDto,
                 duration,
                 placeCity,
                 placeVenueAddress,

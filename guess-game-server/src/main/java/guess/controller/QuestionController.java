@@ -6,9 +6,7 @@ import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.dto.event.EventSuperBriefDto;
-import guess.dto.event.EventDto;
-import guess.dto.start.EventTypeBriefDto;
-import guess.dto.start.EventTypeDto;
+import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.service.EventTypeService;
 import guess.service.LocaleService;
 import guess.service.QuestionService;
@@ -43,7 +41,7 @@ public class QuestionController {
 
     @GetMapping("/event-types")
     @ResponseBody
-    public List<EventTypeBriefDto> getEventTypes(HttpSession httpSession) {
+    public List<EventTypeSuperBriefDto> getEventTypes(HttpSession httpSession) {
         List<EventType> eventTypes = eventTypeService.getEventTypes();
         Language language = localeService.getLanguage(httpSession);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
@@ -52,7 +50,7 @@ public class QuestionController {
 
         eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByInactive).thenComparing(comparatorByName));
 
-        return EventTypeBriefDto.convertToBriefDto(eventTypes, language);
+        return EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
     }
 
     @GetMapping("/events")

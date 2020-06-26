@@ -5,7 +5,7 @@ import guess.domain.source.EventType;
 import guess.domain.statistics.EventStatistics;
 import guess.domain.statistics.EventTypeStatistics;
 import guess.domain.statistics.SpeakerStatistics;
-import guess.dto.start.EventTypeBriefDto;
+import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
 import guess.service.LocaleService;
 import guess.service.StatisticsService;
@@ -78,13 +78,13 @@ public class StatisticsController {
 
     @GetMapping("/conferences")
     @ResponseBody
-    public List<EventTypeBriefDto> getConferences(HttpSession httpSession) {
+    public List<EventTypeSuperBriefDto> getConferences(HttpSession httpSession) {
         List<EventType> eventTypes = statisticsService.getConferences();
         Language language = localeService.getLanguage(httpSession);
-        List<EventTypeBriefDto> eventTypeBriefDtoList = EventTypeBriefDto.convertToBriefDto(eventTypes, language);
+        List<EventTypeSuperBriefDto> eventTypeSuperBriefDtoList = EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
 
-        eventTypeBriefDtoList.sort(Comparator.comparing(EventTypeBriefDto::getName, String.CASE_INSENSITIVE_ORDER));
+        eventTypeSuperBriefDtoList.sort(Comparator.comparing(EventTypeSuperBriefDto::getName, String.CASE_INSENSITIVE_ORDER));
 
-        return eventTypeBriefDtoList;
+        return eventTypeSuperBriefDtoList;
     }
 }
