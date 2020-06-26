@@ -1,0 +1,22 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'eventType.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'eventTypes'"></app-information-switcher>
+
+  <app-event-types-switcher [type]="'eventType'"></app-event-types-switcher>
+
+  <div class="m-1">
+    <div class="m-2">
+      {{id}}
+    </div>
+  </div>
+</div>

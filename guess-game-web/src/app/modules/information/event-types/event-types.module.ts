@@ -8,11 +8,13 @@ import { TableModule } from 'primeng/table';
 import { GeneralModule } from '../../general/general.module';
 import { InformationModule } from '../information.module';
 import { MessageModule } from '../../message/message.module';
+import { EventTypeComponent } from './event-type.component';
 import { EventTypesSearchComponent } from './event-types-search.component';
 import { EventTypesSwitcherComponent } from './event-types-switcher.component';
 
 @NgModule({
   declarations: [
+    EventTypeComponent,
     EventTypesSearchComponent,
     EventTypesSwitcherComponent
   ],

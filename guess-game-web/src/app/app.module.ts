@@ -33,6 +33,7 @@ import { GuessAccountBySpeakerComponent } from './modules/game/guess/guess-accou
 import { GuessSpeakerByAccountComponent } from './modules/game/guess/guess-speaker-by-account.component';
 import { CancelGameComponent } from './modules/game/guess/cancel-game.component';
 import { NotFoundComponent } from './modules/unknown/not-found.component';
+import { EventTypeComponent } from './modules/information/event-types/event-type.component';
 import { EventTypesSearchComponent } from './modules/information/event-types/event-types-search.component';
 import { EventComponent } from './modules/information/events/event.component';
 import { EventsSearchComponent } from './modules/information/events/events-search.component';
@@ -65,6 +66,7 @@ const routes: Routes = [
   {path: 'guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
+  {path: 'information/event-type/:id', component: EventTypeComponent},
   {path: 'information/event-types/search', component: EventTypesSearchComponent},
   {path: 'information/event/:id', component: EventComponent},
   {path: 'information/events/search', component: EventsSearchComponent},
