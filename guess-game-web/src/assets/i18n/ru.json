@@ -65,6 +65,7 @@
   },
   "eventTypes":{
     "title": "Типы событий",
+    "noEventTypesFoundText": "Типы событий не найдены",
     "table": {
       "kindColumn": "Вид",
       "nameColumn": "Наименование",
@@ -81,6 +82,7 @@
   },
   "events":{
     "title": "События",
+    "noEventsFoundText": "События не найдены",
     "table": {
       "nameColumn": "Наименование",
       "startDateColumn": "Начальная дата",
@@ -150,6 +152,7 @@
     "title": "Статистика",
     "eventTypes": {
       "title": "Типы событий",
+      "noEventTypesFoundText": "Типы событий не найдены",
       "table": {
         "kindColumn": "Вид",
         "nameColumn": "Наименование",
@@ -167,6 +170,7 @@
       "title": "События",
       "conferenceLabel": "Конференция:",
       "conferencePlaceholder": "Все",
+      "noEventsFoundText": "События не найдены",
       "table": {
         "nameColumn": "Наименование",
         "startDateColumn": "Начальная дата",
@@ -179,6 +183,7 @@
     },
     "speakers": {
       "title": "Спикеры",
+      "noSpeakersFoundText": "Спикеры не найдены",
       "table": {
         "nameColumn": "Имя",
         "javaChampionColumn": "Java Champion",

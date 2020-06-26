@@ -76,4 +76,12 @@ export class EventStatisticsComponent implements OnInit {
   onLanguageChange() {
     this.loadEventStatistics(this.selectedConference);
   }
+
+  isNoEventsFoundVisible() {
+    return (this.eventStatistics?.eventMetricsList && (this.eventStatistics.eventMetricsList.length === 0));
+  }
+
+  isEventsListVisible() {
+    return (this.eventStatistics?.eventMetricsList && (this.eventStatistics.eventMetricsList.length > 0));
+  }
 }

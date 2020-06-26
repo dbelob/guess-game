@@ -33,11 +33,19 @@ export class EventTypeStatisticsComponent implements OnInit {
       );
   }
 
+  onEventTypeKindChange(checked: boolean) {
+    this.loadEventTypeStatistics();
+  }
+
   onLanguageChange() {
     this.loadEventTypeStatistics();
   }
 
-  onEventTypeKindChange(checked: boolean) {
-    this.loadEventTypeStatistics();
+  isNoEventTypesFoundVisible() {
+    return (this.eventTypeStatistics?.eventTypeMetricsList && (this.eventTypeStatistics.eventTypeMetricsList.length === 0));
+  }
+
+  isEventTypesListVisible() {
+    return (this.eventTypeStatistics?.eventTypeMetricsList && (this.eventTypeStatistics.eventTypeMetricsList.length > 0));
   }
 }

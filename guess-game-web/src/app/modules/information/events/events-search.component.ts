@@ -81,4 +81,12 @@ export class EventsSearchComponent implements OnInit {
   onLanguageChange() {
     this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
   }
+
+  isNoEventsFoundVisible() {
+    return (this.events && (this.events.length === 0));
+  }
+
+  isEventsListVisible() {
+    return (this.events && (this.events.length > 0));
+  }
 }

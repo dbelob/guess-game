@@ -65,6 +65,7 @@
   },
   "eventTypes":{
     "title": "Event types",
+    "noEventTypesFoundText": "No event types found",
     "table": {
       "kindColumn": "Kind",
       "nameColumn": "Name",
@@ -81,6 +82,7 @@
   },
   "events":{
     "title": "Events",
+    "noEventsFoundText": "No events found",
     "table": {
       "nameColumn": "Name",
       "startDateColumn": "Start date",
@@ -150,6 +152,7 @@
     "title": "Statistics",
     "eventTypes": {
       "title": "Event types",
+      "noEventTypesFoundText": "No event types found",
       "table": {
         "kindColumn": "Kind",
         "nameColumn": "Name",
@@ -167,6 +170,7 @@
       "title": "Events",
       "conferenceLabel": "Conference:",
       "conferencePlaceholder": "All",
+      "noEventsFoundText": "No events found",
       "table": {
         "nameColumn": "Name",
         "startDateColumn": "Start date",
@@ -179,6 +183,7 @@
     },
     "speakers": {
       "title": "Speakers",
+      "noSpeakersFoundText": "No speakers found",
       "table": {
         "nameColumn": "Name",
         "javaChampionColumn": "Java Champion",

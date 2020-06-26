@@ -30,7 +30,11 @@
       </div>
     </form>
 
-    <div class="m-2">
+    <div *ngIf="isNoEventTypesFoundVisible()" class="alert text-center m-2">
+      {{'statistics.eventTypes.noEventTypesFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isEventTypesListVisible()" class="m-2">
       <p-table [value]="eventTypeStatistics.eventTypeMetricsList" [resizableColumns]="true" [autoLayout]="true"
                sortMode="multiple" [multiSortMeta]="multiSortMeta">
         <ng-template pTemplate="header" let-columns>

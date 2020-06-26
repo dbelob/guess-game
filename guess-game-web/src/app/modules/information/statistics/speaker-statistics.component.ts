@@ -89,4 +89,12 @@ export class SpeakerStatisticsComponent implements OnInit {
   onLanguageChange() {
     this.loadSpeakerStatistics(this.selectedEventType);
   }
+
+  isNoSpeakersFoundVisible() {
+    return (this.speakerStatistics?.speakerMetricsList && (this.speakerStatistics.speakerMetricsList.length === 0));
+  }
+
+  isSpeakersListVisible() {
+    return (this.speakerStatistics?.speakerMetricsList && (this.speakerStatistics.speakerMetricsList.length > 0));
+  }
 }
