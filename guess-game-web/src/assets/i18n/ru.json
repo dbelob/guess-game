@@ -65,6 +65,11 @@
   },
   "eventTypes":{
     "title": "Типы событий",
+    "table": {
+      "kindColumn": "Вид",
+      "nameColumn": "Наименование",
+      "shortDescriptionColumn": "Описание"
+    },
     "search": {
       "title": "Поиск"
     }

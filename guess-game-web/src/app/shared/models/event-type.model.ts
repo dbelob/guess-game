@@ -3,6 +3,7 @@ export class EventType {
     public id?: number,
     public conference?: boolean,
     public name?: string,
+    public shortDescription?: string,
     public description?: string,
     public siteLink?: string,
     public vkLink?: string,

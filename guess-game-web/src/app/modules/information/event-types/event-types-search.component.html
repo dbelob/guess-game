@@ -31,7 +31,43 @@
     </form>
 
     <div class="m-2">
-      42
+      <p-table [value]="eventTypes" [resizableColumns]="true" [autoLayout]="true"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" pResizableColumn>
+              {{'eventTypes.table.kindColumn' | translate}}
+            </th>
+            <th class="text-center" [pSortableColumn]="'displayName'" pResizableColumn>
+              {{'eventTypes.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'displayName'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'shortDescription'" pResizableColumn>
+              {{'eventTypes.table.shortDescriptionColumn' | translate}}
+              <p-sortIcon [field]="'shortDescription'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-eventType let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <span *ngIf="eventType.conference">
+                {{'common.eventTypeKind.conference' | translate}}
+              </span>
+              <span *ngIf="!eventType.conference">
+                {{'common.eventTypeKind.meetup' | translate}}
+              </span>
+            </td>
+            <td>
+              <img src="{{eventsImageDirectory}}/{{eventType.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
+              <span class="ml-2">{{eventType.name}}</span>
+            </td>
+            <td>{{eventType.shortDescription}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
   </div>
 </div>

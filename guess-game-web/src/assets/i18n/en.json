@@ -65,6 +65,11 @@
   },
   "eventTypes":{
     "title": "Event types",
+    "table": {
+      "kindColumn": "Kind",
+      "nameColumn": "Name",
+      "shortDescriptionColumn": "Description"
+    },
     "search": {
       "title": "Search"
     }
