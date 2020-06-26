@@ -65,7 +65,7 @@ public class EventTypeDto extends EventTypeBriefDto {
     public static EventTypeDto convertToDto(EventType eventType, Language language) {
         return new EventTypeDto(
                 convertToBriefDto(eventType, language),
-                LocalizationUtils.getString(eventType.getDescription(), language),
+                LocalizationUtils.getString(eventType.getLongDescription(), language),
                 LocalizationUtils.getString(eventType.getSiteLink(), language),
                 eventType.getVkLink(),
                 eventType.getTwitterLink(),

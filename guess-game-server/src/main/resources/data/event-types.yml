@@ -4,7 +4,12 @@ eventTypes:
     logoFileName: cpprussia.jpg
     name:
       - {language: en, text: "C++ Russia"}
-    description:
+    shortDescription:
+      - language: en
+        text: "Conference for C++ developers"
+      - language: ru
+        text: "Конференция для C++-разработчиков"
+    longDescription:
       - language: en
         text: "C++ Russia is a two-day conference with several tracks of in-depth technical talks devoted to C++: concurrency,\
             \ performance, architecture and infrastructure solutions — all you need to make your code more concise and productive.\n\
@@ -31,7 +36,12 @@ eventTypes:
     logoFileName: devoops.jpg
     name:
       - {language: en, text: DevOops}
-    description:
+    shortDescription:
+      - language: en
+        text: "DevOps conference"
+      - language: ru
+        text: "Конференция, посвящённая инженерным DevOps-решениям"
+    longDescription:
       - language: en
         text: "DevOops is a conference devoted to DevOps solutions. It is about developers' pain, complex scenarios in production,\
             \ modern tools and the culture that allows you to release often, fix issues reliably and be right at home in the\
@@ -69,7 +79,12 @@ eventTypes:
     logoFileName: dotnext.jpg
     name:
       - {language: en, text: DotNext}
-    description:
+    shortDescription:
+      - language: en
+        text: "Conference for .NET developers"
+      - language: ru
+        text: "Конференция для .NET-разработчиков"
+    longDescription:
       - language: en
         text: "DotNext is the largest conference for .NET developers in Russia. It's two days, over 1000 attendees, and three\
             \ dozens of talks held by the world's leading experts, such as:\n- Jeffrey Richter (Microsoft);\n- Andrey Akinshin\
@@ -97,7 +112,12 @@ eventTypes:
     logoFileName: heisenbug.jpg
     name:
       - {language: en, text: Heisenbug}
-    description:
+    shortDescription:
+      - language: en
+        text: "Software testing conference"
+      - language: ru
+        text: "Большая техническая конференция по тестированию"
+    longDescription:
       - language: en
         text: "Heisenbug is a large technical conference that brings together more than 900 professionals in the field of\
             \ quality assurance.These professionals are testers, programmers developing tests for their code, engineers in\
@@ -128,7 +148,12 @@ eventTypes:
     logoFileName: holyjs.jpg
     name:
       - {language: en, text: HolyJS}
-    description:
+    shortDescription:
+      - language: en
+        text: "Conference for JavaScript developers"
+      - language: ru
+        text: "Большая конференция для JavaScript-разработчиков"
+    longDescription:
       - language: en
         text: "HolyJS is the only major conference in Russia devoted to JavaScript world. Technical talks picked out exactly\
             \ for the professional audience of Senior / Middle JS developers.\n\nWithin the program there are only technical\
@@ -156,7 +181,12 @@ eventTypes:
     logoFileName: hydra.jpg
     name:
       - {language: en, text: Hydra}
-    description:
+    shortDescription:
+      - language: en
+        text: "Distributed computing conference"
+      - language: ru
+        text: "Конференция по параллельным и распределенным системам"
+    longDescription:
       - language: en
         text: "Hydra conference focuses on distributed systems and computing. The conference program includes talks held by\
             \ the creators of distributed systems theories and engineers working with these systems in production.\n\nHydra\
@@ -189,7 +219,12 @@ eventTypes:
     logoFileName: jbreak.jpg
     name:
       - {language: en, text: JBreak}
-    description:
+    shortDescription:
+      - language: en
+        text: "The Java Conference in Siberia"
+      - language: ru
+        text: "Java‑конференция в Сибири"
+    longDescription:
       - {language: en, text: "JBreak is the only Siberian Java-conference. It was held in 2016 for the first time and gathered\
             \ together more than 300 experienced Senior / Middle developers and team leads. The main feature of JBreak is\
             \ pure technical hardcore. Key topics : (/are) performance, concurrency, testing, distributed systems and high\
@@ -212,7 +247,12 @@ eventTypes:
     logoFileName: jokerconf.jpg
     name:
       - {language: en, text: Joker}
-    description:
+    shortDescription:
+      - language: en
+        text: "The largest Java conference in Russia"
+      - language: ru
+        text: "Международная Java-конференция для опытных разработчиков"
+    longDescription:
       - language: en
         text: "Joker (St. Petersburg) is a deeply technical Java conference for experienced Senior / Regular developers and\
             \ teamleads.\n\nJoker passes within two days and guarantees you a lot of strong and technically complex reports\
@@ -246,7 +286,12 @@ eventTypes:
     logoFileName: jpoint.jpg
     name:
       - {language: en, text: JPoint}
-    description:
+    shortDescription:
+      - language: en
+        text: "The largest Java conference in Russia"
+      - language: ru
+        text: "Международная Java-конференция для опытных разработчиков"
+    longDescription:
       - language: en
         text: "JPoint (Moscow) is hardcore technical Java-conference only for experienced Java-developers and only about R&D.\n\
             \nEvery year the conference last for 2 days and gathers more than 1000 participants. In general the program holds\
@@ -276,7 +321,12 @@ eventTypes:
     logoFileName: mobius.jpg
     name:
       - {language: en, text: Mobius}
-    description:
+    shortDescription:
+      - language: en
+        text: "Conference for professional mobile developers"
+      - language: ru
+        text: "Конференция для мобильных разработчиков"
+    longDescription:
       - language: en
         text: "Mobius is a conference for mobile apps developers, which takes place in Moscow and St. Petersburg, gathering\
             \ more than 500 attendees each time.\n\nThe audience of the conference consists of Middle and Senior developers,\
@@ -301,7 +351,12 @@ eventTypes:
     logoFileName: smartdata.jpg
     name:
       - {language: en, text: SmartData}
-    description:
+    shortDescription:
+      - language: en
+        text: "The conference is devoted to Big Data world and technical aspects of data processing"
+      - language: ru
+        text: "Конференция, посвящённая техническим вопросам из мира Big Data и обработки данных"
+    longDescription:
       - {language: en, text: "SmartData is a technical conference for those involved with the world of machine learning, analysis\
             \ and data processing."}
       - {language: ru, text: "SmartData — техническая конференция для тех, кто погружен в мир машинного обучения, анализа\
@@ -320,7 +375,10 @@ eventTypes:
     logoFileName: sptdc.jpg
     name:
       - {language: en, text: SPTDC}
-    description:
+    shortDescription:
+      - language: en
+        text: "The summer school on practice and theory of distributed computing"
+    longDescription:
       - {language: en, text: "The school offers courses on a wide range of practical and theoretical aspects of distributed\
             \ systems given by renowned experts in the field."}
     siteLink:
@@ -330,7 +388,12 @@ eventTypes:
     logoFileName: techtrain.jpg
     name:
       - {language: en, text: TechTrain}
-    description:
+    shortDescription:
+      - language: en
+        text: "IT - Festival"
+      - language: ru
+        text: "IT - Фестиваль"
+    longDescription:
       - language: en
         text: "TechTrain is a big festival for developers, engineers and those interested in IT. The festival brings together\
             \ everyone who loves software development as much as we do.\n\nWhether you are totally into OOP or functionality,\
@@ -362,11 +425,11 @@ eventTypes:
     logoFileName: jugmsk.jpg
     name:
       - {language: en, text: "JUG.MSK"}
-    description:
+    shortDescription:
       - language: en
-        text: "Moscow community of Java developers."
+        text: "Moscow community of Java developers"
       - language: ru
-        text: "Московское сообщество Java-разработчиков."
+        text: "Московское сообщество Java-разработчиков"
     siteLink:
       - {language: en, text: "http://jug.msk.ru"}
     vkLink: https://vk.com/jugmsk
@@ -376,11 +439,11 @@ eventTypes:
     logoFileName: jugru.jpg
     name:
       - {language: en, text: "JUG.ru"}
-    description:
+    shortDescription:
       - language: en
-        text: "Russian community of Java developers."
+        text: "Russian community of Java developers"
       - language: ru
-        text: "Российское сообщество Java-разработчиков."
+        text: "Российское сообщество Java-разработчиков"
     siteLink:
       - {language: en, text: "https://jug.ru"}
     vkLink: https://vk.com/jugru
@@ -390,11 +453,11 @@ eventTypes:
     logoFileName: jugnsk.jpg
     name:
       - {language: en, text: "JUGNsk"}
-    description:
+    shortDescription:
       - language: en
-        text: "Novosibirsk community of Java developers."
+        text: "Novosibirsk community of Java developers"
       - language: ru
-        text: "Новосибирское сообщество Java-разработчиков."
+        text: "Новосибирское сообщество Java-разработчиков"
     siteLink:
       - {language: en, text: "https://www.meetup.com/JUGNsk"}
     vkLink: https://vk.com/jugnsk

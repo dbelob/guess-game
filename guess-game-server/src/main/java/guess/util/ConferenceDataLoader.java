@@ -68,6 +68,7 @@ public class ConferenceDataLoader {
                     } else {
                         // Event type exists
                         et.setId(resourceEventType.getId());
+                        et.setShortDescription(resourceEventType.getShortDescription());
                         et.setLogoFileName(resourceEventType.getLogoFileName());
 
                         if (ContentfulUtils.needUpdate(resourceEventType, et)) {
