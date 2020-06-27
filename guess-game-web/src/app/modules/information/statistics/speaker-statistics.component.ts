@@ -53,7 +53,7 @@ export class SpeakerStatisticsComponent implements OnInit {
         if (this.eventTypes.length > 0) {
           this.eventService.getDefaultEvent()
             .subscribe(defaultEventData => {
-              const selectedEventType = findEventTypeById(defaultEventData?.eventTypeId, this.eventTypes);
+              const selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
 
               if (selectedEventType) {
                 this.selectedEventType = selectedEventType;

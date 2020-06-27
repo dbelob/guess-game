@@ -63,7 +63,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
             .subscribe(defaultEventData => {
               this.defaultEvent = defaultEventData;
 
-              const selectedEventType = findEventTypeById(this.defaultEvent?.eventTypeId, this.eventTypes);
+              const selectedEventType = (this.defaultEvent) ? findEventTypeById(this.defaultEvent.eventTypeId, this.eventTypes) : null;
 
               if (selectedEventType) {
                 this.selectedEventTypes = [selectedEventType];
@@ -106,7 +106,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
         this.events = getEventsWithDisplayName(data, this.translateService);
 
         if (this.events.length > 0) {
-          const selectedEvent = findEventById(this.defaultEvent?.id, this.events);
+          const selectedEvent = (this.defaultEvent) ? findEventById(this.defaultEvent.id, this.events) : null;
 
           if (selectedEvent) {
             this.selectedEvents = [selectedEvent];

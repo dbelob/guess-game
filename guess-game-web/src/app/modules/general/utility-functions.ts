@@ -9,13 +9,11 @@ export function isStringEmpty(value: string): boolean {
 }
 
 export function findEventTypeById(id: number, eventTypes: EventType[]): EventType {
-  if (id) {
-    for (let i = 0; i < eventTypes.length; i++) {
-      const eventType: EventType = eventTypes[i];
+  for (let i = 0; i < eventTypes.length; i++) {
+    const eventType: EventType = eventTypes[i];
 
-      if (id === eventType.id) {
-        return eventType;
-      }
+    if (id === eventType.id) {
+      return eventType;
     }
   }
 
@@ -23,13 +21,11 @@ export function findEventTypeById(id: number, eventTypes: EventType[]): EventTyp
 }
 
 export function findEventById(id: number, events: Event[]): Event {
-  if (id) {
-    for (let i = 0; i < events.length; i++) {
-      const event: Event = events[i];
+  for (let i = 0; i < events.length; i++) {
+    const event: Event = events[i];
 
-      if (id === event.id) {
-        return event;
-      }
+    if (id === event.id) {
+      return event;
     }
   }
 
