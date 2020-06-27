@@ -512,8 +512,7 @@ speakers:
       - {language: en, text: "Kirill Tolkachev"}
       - {language: ru, text: "Кирилл Толкачёв"}
     company:
-      - {language: en, text: CIAN}
-      - {language: ru, text: ЦИАН}
+      - {language: en, text: "JUG Ru Group"}
     bio:
       - {language: en, text: "Up until recently Kirill was a lead developer at Alfa-Lab. He was developing different banking\
             \ APIs, forming principles and tools related to microservice architecture. He is a fan of Groovy, Gradle, Spring\
@@ -587,23 +586,15 @@ speakers:
   - id: 32
     photoFileName: 0032.jpg
     name:
-      - {language: en, text: "Alexander Belokrylov"}
+      - {language: en, text: "Aleksandr Belokrilov"}
       - {language: ru, text: "Александр Белокрылов"}
     company:
       - {language: en, text: BellSoft}
     bio:
-      - language: en
-        text: "Works in IT for more than 15 years, having gone from an engineer to a manager. At Oracle Alexander led the\
-            \ Java ME Embedded development and later one of the Oracle IoT Cloud Service components development. In 2017 together\
-            \ with like-minded fellows he founded BellSoft company which releases and supports OpenJDK binary distribution\
-            \ for variety of platforms called Liberica JDK and makes Big Data and IoT solutions. \n\nHas previously spoken\
-            \ on JPoint, Joker, JavaOne, JEEConf and many other events."
-      - language: ru
-        text: "Работает в индустрии IT более 15 лет, прошел путь от инженера до руководителя. В компании Oracle руководил\
-            \ развитием продукта Java ME Embedded, а позднее одного из компонентов Oracle IoT Cloud Service. В 2017 с груп\
-            пой единомышленников основал компанию BellSoft, которая выпускает и поддерживает собственный Java-дистрибутив\
-            \ Liberica JDK для Linux x86, Linux ARM, Windows, Mac и других, а также разрабатывает решения для анализа боль\
-            ших данных и IoT. \n\nНеоднократный участник конференций JPoint, Joker, JavaOne, JEEConf и многих других."
+      - {language: en, text: "До создания своей компании, Александр более 13 лет работал в Sun Microsystems и Oracle, и вн\
+            ёс значительный вклад в развитие и внедрение Java. Сегодня он возглавляет компанию, входящую в ТОП-5 контрибью\
+            торов OpenJDK, создавшую свой дистрибутив Liberica JDK. Александр отвечает за стратегическое руководство и реа\
+            лизацию концепции BellSoft."}
     twitter: gigabel
   - id: 33
     photoFileName: 0033.jpg
@@ -2732,9 +2723,9 @@ speakers:
       - {language: ru, text: "АО «НСПК»"}
     bio:
       - {language: en, text: "Designed and developed high-performance systems in NetCracker, Odnoklassniki (mail.ru), Sberbank,\
-            \ lately at NSPK JST (MIR PS operator). Engaged in systems architecture, backend (Java) and even in frontend (ReactJS).\
-            \ Big fan of standard solutions and technology usage even in very non-standard situations. Lector (MIPT), coauthor\
-            \ of study-book and popularizer of cryptography and information security."}
+            \ lately at NSPK JST (MIR PS operator). Engaged in systems architecture, backend (Java), and even in frontend\
+            \ (ReactJS). Big fan of standard solutions and technology usage even in very non-standard situations. Lector (MIPT),\
+            \ coauthor of study-book and popularizer of cryptography and information security."}
       - {language: ru, text: "Разрабатывал распределённые высоконагруженные сервисы в компаниях NetCracker, Одноклассники\
             \ (mail.ru), Сбербанк, в последнее время — в АО «НСПК», операторе ПС «МИР». Занимается и архитектурой систем,\
             \ и backend'ом (Java), и даже frontend'ом (ReactJS). Большой поклонник использования проверенных временем реше\
@@ -3041,7 +3032,7 @@ speakers:
       - {language: en, text: "Neward & Associates, LLC"}
     bio:
       - {language: en, text: "Ted Neward is an industry professional of twenty years' experience. He speaks at conferences\
-            \ all over the world and writes regularly for a variety of publications across the Java, .NET, and other ecosystems.\
+            \ all over the world and writes regularly for a variety of publications across Java, .NET, and other ecosystems.\
             \ He currently resides in the Pacific Northwest with his wife, two sons, three cats, twelve laptops, seven tablets,\
             \ nine phones, and a rather large utility bill."}
     twitter: tedneward
@@ -4580,19 +4571,20 @@ speakers:
       - {language: en, text: "Dmitry Bugaychenko"}
       - {language: ru, text: "Дмитрий Бугайченко"}
     company:
-      - {language: en, text: Odnoklassniki}
-      - {language: ru, text: Одноклассники}
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
     bio:
       - {language: en, text: "Graduated from St. Petersburg State University in 2004, got a PhD degree in the field of the\
             \ formal logical methods in 2007. Spent almost 9 years in outsourcing without losing contact with the university\
             \ and research community. Big data analysis at Odnoklassniki became for Dmitry an unique chance to combine theoretical\
             \ knowledge and scientific foundation with the development of real and popular products. And this chance he gladly\
-            \ took advantage of by coming there in 2011."}
+            \ took advantage of by coming there in 2011. Joined Sberbank team in 2019."}
       - {language: ru, text: "Закончил Санкт-Петербургский государственный университет в 2004 году, там же защитил кандида\
             тскую по формально-логическим методам в 2007. Почти 9 лет проработал в аутсорсинге, не теряя контакта с универ\
             ситетом и научной средой. Анализ больших данных в Одноклассниках стал для Дмитрия уникальным шансом совместить\
             \ теоретическую подготовку и научный фундамент с разработкой реальных, востребованных продуктов. И этим шансом\
-            \ он с радостью воспользовался, придя туда пять лет назад."}
+            \ он с радостью воспользовался, придя туда пять лет назад. С 2019-го года присоединился к дружной команде Сбер\
+            банка."}
   - id: 302
     photoFileName: 0302.jpg
     name:
@@ -9248,14 +9240,16 @@ speakers:
     company:
       - {language: en, text: "JUG Ru Group"}
     bio:
-      - {language: en, text: "Vsevolod has more than 10 years in IT industry. He tried his hands at different roles and directions.\
-            \ He worked with automated testing, fullstack development in different languages. Some time ago he lived in California\
-            \ and worked under contract at Google. Managed to work with various clients from financial sector. Worked at NEO\
-            \ SPCC startup where he was developing on Go."}
-      - {language: ru, text: "Более 10 лет в ИТ. Попробовал себя в разных ролях и направлениях. Занимался автоматизированн\
-            ым тестированием, фулстэк разработкой на различных языках. Какое-то время жил в Калифорнии и работал по контра\
-            кту в Google. Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где за\
-            нимался разработкой на Go."}
+      - language: en
+        text: "Vsevolod has more than 10 years in IT industry.\nHe tried his hands at different roles and directions. He worked\
+            \ with automated testing, fullstack development in different languages. Some time ago he lived in California and\
+            \ worked under contract at Google. Managed to work with various clients from financial sector. Worked at NEO SPCC\
+            \ startup where he was developing on Go."
+      - language: ru
+        text: "Более 10 лет в ИТ.\nПопробовал себя в разных ролях и направлениях. Занимался автоматизированным тестировани\
+            ем, фулстэк разработкой на различных языках. Какое-то время жил в Калифорнии и работал по контракту в Google.\
+            \ Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где занимался разр\
+            аботкой на Go."
     twitter: brekelov
   - id: 619
     photoFileName: 0619.jpg
@@ -17556,11 +17550,11 @@ speakers:
     company:
       - {language: en, text: "Object Computing"}
     bio:
-      - {language: en, text: "Graeme Rocher is the creator of several popular Open Source projects including [Grails](https://grails.org)\
+      - {language: en, text: "Graeme Rocher is the creator of several popular open source projects including [Grails](https://grails.org)\
             \ and [Micronaut](https://Micronaut.io) and co-author of [\"The Definitive Guide to Grails\"](http://apress.com/book/view/1590599950).\
             \ Graeme currently leads the Grails and Micronaut engineering teams at [OCI](http://www.objectcomputing.com).\
             \ Graeme is a member of the Java Champions and 2018 was awarded the Groundbreaker award by [Oracle](https://developer.oracle.com/groundbreakers/)\
-            \ for his work on Open Source."}
+            \ for his work on open source."}
     twitter: graemerocher
     javaChampion: true
   - id: 1213
@@ -17627,7 +17621,7 @@ speakers:
     company:
       - {language: en, text: Hazelcast}
     bio:
-      - {language: en, text: "Jiri is a devoted open-source software engineer that loves his work. Born in Red Hat, now being\
+      - {language: en, text: "Jiri is a devoted open source software engineer that loves his work. Born in Red Hat, now being\
             \ Quality Engineering team lead at Hazelcast, an in-memory computing platform open source company. Digging deep,\
             \ never giving up on a problem until it's solved and enjoying this all the way, that's Jiri. Besides that, he\
             \ loves any sport and as a true Czech person, he never refuses a pleasant conversation over a pint of beer."}
@@ -17639,14 +17633,14 @@ speakers:
     company:
       - {language: en, text: IBM}
     bio:
-      - {language: en, text: "Jamie is a software developer and Advocate for Open Liberty, MicroProfile and Kabanero based\
-            \ at IBM’s R&D Laboratory in Hursley, UK. He is a subject matter expert in containerised solutions and takes a\
-            \ keen interest in emerging technologies with experience in Maven, git, Jenkins and microservice architecture.\
+      - {language: en, text: "Jamie is a software developer and Advocate for Open Liberty, MicroProfile, and Kabanero based\
+            \ at IBM’s R&D Laboratory in Hursley, UK. He is a subject matter expert in containerized solutions and takes a\
+            \ keen interest in emerging technologies with experience in Maven, git, Jenkins, and microservice architecture.\
             \ He fell in love with Java at University and has gone on to talk at many conferences about using Java with microservices.\
-            \ He has worked on a wide variety of projects such as modernising CICS mainframe testing infrastructure, creating\
-            \ and automating the creation of Docker images for IBM’s products, contributing to a DevOps pipeline offering\
-            \ and creating web applications for events at the Lab. His recent passion is around raising awareness about energy\
-            \ consumption of technology and discovering ways to help reduce technologies carbon footprint."}
+            \ He has worked on a wide variety of projects such as modernizing CICS mainframe testing infrastructure, creating\
+            \ and automating the creation of Docker images for IBM’s products, contributing to a DevOps pipeline offering,\
+            \ and creating web applications for events at the Lab. His recent passion is around raising awareness about the\
+            \ energy consumption of technology and discovering ways to help reduce technologies' carbon footprint."}
     twitter: Jamie_Lee_C
   - id: 1219
     photoFileName: 1219.jpg
@@ -17667,6 +17661,7 @@ speakers:
     photoFileName: 1220.jpg
     name:
       - {language: en, text: "Dmitry Kornilov"}
+      - {language: ru, text: "Дмитрий Корнилов"}
     company:
       - {language: en, text: Oracle}
     bio:
@@ -17676,6 +17671,11 @@ speakers:
             \ \"Outstanding Spec Lead 2016\" award, JCP Star Spec Lead.\nOver 20 years of experience in design and implementation\
             \ of complex software systems, defining systems architecture, team leading and project management.\nBachelor of\
             \ Science in Applied Mathematics from Moscow Aircraft Institute (Technical University)."
+      - {language: ru, text: "Дмитрий работает в компании Oracle, где руководит разработкой проекта Helidon, нескольких Jakarta\
+            \ EE спецификаций и таких проектов, как Jersey, EclipseLink и Yasson. Он активно участвует в жизни сообществ,\
+            \ принимает участие в проектах с открытым исходным кодом и выступает на международных конференциях. Дмитрий с\
+            \ самого начала работал над переносом Java EE в Eclipse Foundation и по сей день примимает участие в работе не\
+            скольких Jakarta EE комитетов."}
     twitter: m0mus
   - id: 1221
     photoFileName: 1221.jpg
@@ -17692,7 +17692,7 @@ speakers:
       - {language: ru, text: "Дмитрий в ИТ с 2014 года. В последние несколько лет активно занимается разработкой I/O интен\
             сивных приложений на Java, C/Linux и связанных с ними вопросами производительности. До этого разрабатывал банк\
             овский софт и платформу обработки данных на Spark в сфере рекламы. Имеет опыт работы со Scala, функциональным\
-            \ программированием и typelevel стеком. В настоящее время является старшим Big Data разработчиком в Grid Dynamics."}
+            \ программированием и typelevel-стеком. В настоящее время является старшим Big Data-разработчиком в Grid Dynamics."}
   - id: 1222
     photoFileName: 1222.jpg
     name:
@@ -18662,3 +18662,157 @@ speakers:
       - {language: ru, text: "В мобильной разработке с 2016 года. Занимается организацией сообществ GDG и KUG в Петербурге\
             , а также участвует в проекте Android Academy SPb."}
     twitter: Semper_Viventem
+  - id: 1299
+    photoFileName: 1299.jpg
+    name:
+      - {language: en, text: "Dmitriy Vdovin"}
+      - {language: ru, text: "Дмитрий Вдовин"}
+    company:
+      - {language: en, text: "Raiffeisen Bank"}
+      - {language: ru, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: Backend-разработчик.}
+  - id: 1300
+    photoFileName: 1300.jpg
+    name:
+      - {language: en, text: "Denis Tishkov"}
+      - {language: ru, text: "Денис Тишков"}
+    company:
+      - {language: en, text: "Deutsche Bank"}
+    bio:
+      - language: en
+        text: "Около двух лет занимается разработкой low latency-приложения для оценки кредитных рисков в Deutsche Bank на\
+            \ Java. До этого около 3 лет занимался разработкой системы полнотекстового поиска для 1С на C++, еще раньше за\
+            нимался разработкой учетных систем для производственных организаций.\r\nПрофессиональные интересы: высокопроиз\
+            водительные, высоконагруженные системы."
+  - id: 1301
+    photoFileName: 1301.jpg
+    name:
+      - {language: en, text: "Evgeny Nesterov"}
+      - {language: ru, text: "Евгений Нестеров"}
+    company:
+      - {language: en, text: М.Видео}
+    bio:
+      - {language: en, text: "Начал карьеру программиста в 2004 году, а уже в 2010 году присоединился к команде М.Видео. С\
+            \ 2012 Евгений перешел на разработку на Java, до этого программировал на Python. С 2015 года активно участвует\
+            \ в профильных конференциях и делится своим опытом работы в сложной многоуровневой IT-системе."}
+  - id: 1302
+    photoFileName: 1302.jpg
+    name:
+      - {language: en, text: "Alexander Zelenyuk"}
+      - {language: ru, text: "Александр Зеленюк"}
+    company:
+      - {language: en, text: М.Видео}
+    bio:
+      - {language: en, text: "Стал разработчиком в 2008 году, ещё учась в МАИ. Уже в 2011 году пришел в компанию М.Видео,\
+            \ где и познакомился с Java. В 2014 году создал в компании отдел Java-разработки, а в 2015 году здесь начали р\
+            азрабатывать первые микросервисы. Александр со своей командой вовлекает в микросервисный мир всё больше подраз\
+            делений в ИТ, пробует и применяет реактивные подходы, и придерживается общемировых трендов в разработке."}
+  - id: 1303
+    photoFileName: 1303.jpg
+    name:
+      - {language: en, text: "JPoint team"}
+    company: []
+    bio: []
+  - id: 1304
+    photoFileName: 1304.jpg
+    name:
+      - {language: en, text: "Yuriy Milyutin"}
+      - {language: ru, text: "Юрий Милютин"}
+    company:
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
+    bio:
+      - {language: en, text: "Юрий руководит разработкой крупнейшего сервиса Эквайринга в Европе. 5 лет в Сбербанке, 10 в\
+            \ Java-разработке. Спасает мир, сдерживает хаос, нанимает лучших представителей человечества."}
+  - id: 1305
+    photoFileName: 1305.jpg
+    name:
+      - {language: en, text: "Ivan Glushnev"}
+      - {language: ru, text: "Иван Глушнев"}
+    company:
+      - {language: en, text: "Sportmaster Lab"}
+    bio:
+      - {language: en, text: "Иван в Спортмастере с 2017 года и прошел пусть от разработчика до руководителя направления."}
+  - id: 1306
+    photoFileName: 1306.jpg
+    name:
+      - {language: en, text: "Aleksandr Utemov"}
+      - {language: ru, text: "Александр Утёмов"}
+    company:
+      - {language: en, text: "Мир Plat.Form"}
+    bio:
+      - {language: en, text: "Работает в банковской сфере с 2001 года. Занимается тестированием ПО и программированием, в\
+            \ том числе на весьма необычных языках: COBOL, TAL и др. С 2015 года перешел в компанию НСПК, где принял участ\
+            ие в разработке нескольких важных модулей для российской платежной системы «Мир» на языке программирования Java\
+            \ Core. Увлекается криптографией: разрабатывает методики шифрования и проверки чувствительных данных клиентов."}
+  - id: 1307
+    photoFileName: 1307.jpg
+    name:
+      - {language: en, text: "Igor Kirichuk"}
+      - {language: ru, text: "Игорь Киричук"}
+    company:
+      - {language: en, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: "Java Community Lead, занимается разработкой на Java уже 10 лет."}
+  - id: 1308
+    photoFileName: 1308.jpg
+    name:
+      - {language: en, text: "Alex Soto Bueno"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - {language: en, text: "Alex is a Software Engineer at Red Hat in the Developers group. He is passionate about the Java\
+            \ world and software automation, and he believes in the open source software model. Alex is the creator of the\
+            \ NoSQLUnit project and a member of the JSR 374 (Java API for JSON processing) Expert Group. He has co-authored\
+            \ Testing Java Microservices for Manning and the Istio Refcard and is a contributor to several open source projects.\
+            \ He has been a Java champion since 2017 and is an international speaker, speaking on new testing techniques for\
+            \ microservices, continuous delivery in the 21st century, and Java."}
+  - id: 1309
+    photoFileName: 1309.jpg
+    name:
+      - {language: en, text: "Mikhail Tartanov"}
+      - {language: ru, text: "Михаил Тартанов"}
+    company:
+      - {language: en, text: VTB}
+      - {language: ru, text: ВТБ}
+    bio:
+      - {language: en, text: "10+ лет опыта работы с Java/Spring и экосистемой, опыт работы с MSA с 2014 года в роли разра\
+            ботчика и архитектора, текущая специализация и область интересов — управление распределенными командами 100+ ч\
+            еловек."}
+  - id: 1310
+    photoFileName: 1310.jpg
+    name:
+      - {language: en, text: "Pavel Derendyaev"}
+      - {language: ru, text: "Павел Дерендяев"}
+    company:
+      - {language: en, text: Альфа-Банк}
+    bio:
+      - {language: en, text: "Свою карьеру в IT начинал как системный администратор и сетевой инженер в различных телеком\
+            -компаниях. Основными языками программирования были Perl и Bash (и PHP!). В 2010 переключился на Java-разработ\
+            ку. В Альфе-Банке сначала занимался разработкой микросервисов для корпоративного Интернет-банка и инфраструкту\
+            рой Mesos/Marathon-кластера. С 2017 года — руководитель Центра компетенций Java в Альфа-Банке."}
+  - id: 1311
+    photoFileName: 1311.jpg
+    name:
+      - {language: en, text: "Sergey Kolesnikov"}
+      - {language: ru, text: "Сергей Колесников"}
+    company:
+      - {language: en, text: "Sportmaster Lab"}
+    bio:
+      - language: en
+        text: "Сергей работает начальником отдела эксплуатации online-сервисов.\nЗанимается сопровождением приложений от у\
+            ровня аппаратного обеспечения до бизнес-функционала.\nРазрабатывает систему мониторинга и сервисы для оптимиза\
+            ции процессов эксплуатации."
+  - id: 1312
+    photoFileName: 1312.jpg
+    name:
+      - {language: en, text: "Sergey Orlov"}
+      - {language: ru, text: "Сергей Орлов"}
+    company:
+      - {language: en, text: "Sportmaster Lab"}
+    bio:
+      - language: en
+        text: "Руководитель Центра Компетенций веб и мобильной разработки в SMLab.\nСпециалист с семнадцатилетним опытом р\
+            азработки программного обеспечения на самых разных языках и платформах.\nСейчас Сергей помогает компании в опр\
+            еделении направлений технологического развития и проектировании архитектур информационных систем."
