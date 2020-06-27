@@ -1,11 +1,22 @@
 [![Build Status](https://travis-ci.org/jugrugroup/guess-game.svg?branch=master)](https://travis-ci.org/jugrugroup/guess-game)
 [![Dependabot Status](https://badgen.net/dependabot/JugruGroup/guess-game)](https://dependabot.com)
 
-# Guess Game
+# Find, See, Guess the Speakers
 
-![Screenshot](/images/screenshot.png)
+![Home](/images/home.png)
 
-Available modes:
+There are two parts of the program:
+1. Search and view information about conferences, meetings, talks and speakers
+
+1. «Guess the Speaker» game
+
+![Information](/images/information.png)
+
+Information and statistics of conferences, meetups, talks, speakers
+
+![Game](/images/game.png)
+
+Game available modes:
 * guess name by photo;
 * guess photo by name;
 * guess talk by speaker;
@@ -26,7 +37,7 @@ https://jugspeakers.online
 1. Extract files from ZIP, for example:
 
     `unzip guess-game-<version>.zip`
-    
+
 1. Change directory:
 
     `cd guess-game-<version>`
@@ -52,12 +63,12 @@ https://jugspeakers.online
 
 1. Install [Java SE 11](https://www.oracle.com/technetwork/java/javase/downloads/index.html) or higher (*JDK*)
 
-1. Install [Apache Maven 3.5.0](https://maven.apache.org/download.cgi) or higher 
+1. Install [Apache Maven 3.5.0](https://maven.apache.org/download.cgi) or higher
 
 1. From the command line with *Maven* (in the root directory):
 
     `mvn clean package -DskipTests`
-    
+
 1. Change directory:
 
     `cd guess-game-distrib/target`
