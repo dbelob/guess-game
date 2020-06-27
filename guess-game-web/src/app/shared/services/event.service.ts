@@ -21,7 +21,7 @@ export class EventService {
       .set('conferences', isConferences.toString())
       .set('meetups', isMeetups.toString());
 
-    if (eventType?.id) {
+    if (eventType) {
       params = params.set('eventTypeId', eventType.id.toString());
     }
 
