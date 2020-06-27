@@ -67,6 +67,7 @@ public class EventController {
         List<Talk> talks = event.getTalks();
         List<Speaker> speakers = talks.stream()
                 .flatMap(t -> t.getSpeakers().stream())
+                .distinct()
                 .collect(Collectors.toList());
         EventDetailsDto eventDetailsDto = EventDetailsDto.convertToDto(event, speakers, talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
