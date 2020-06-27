@@ -3618,8 +3618,7 @@ speakers:
     name:
       - {language: en, text: "Maurice Herlihy"}
     company:
-      - {language: en, text: "Brown University Computer Science Dept"}
-      - {language: ru, text: "Brown University"}
+      - {language: en, text: "Brown University"}
     bio:
       - {language: en, text: "Maurice Herlihy has an A.B. in Mathematics from Harvard University, and a Ph.D. in Computer\
             \ Science from M.I.T. He has served on the faculty of Carnegie Mellon University and the staff of DEC Cambridge\
@@ -17993,13 +17992,13 @@ speakers:
     company:
       - {language: en, text: "Oracle Labs"}
     bio:
-      - {language: en, text: "Alex Kogan is a Principal Member of Technical Staff at Oracle Labs, Burlington, MA, where he\
-            \ works in the Scalable Synchronization group. His research interests are in the area of parallel computing, and\
-            \ especially, in exploring and boosting the performance of modern multi-core systems by devising efficient concurrent\
-            \ algorithms. He is also interested in other aspects of distributed computing, in particular, in the area of cloud\
-            \ computing. Prior to Oracle, Alex interned with IBM Research at Haifa, Israel and Microsoft Research at Redmond,\
-            \ WA. He received his Ph.D. (2012), M.Sc. (2008) and BA (Summa Cum Laude, 2002) from the Department of Computer\
-            \ Science, Technion, Israel."}
+      - language: en
+        text: "Alex Kogan is a research scientist at Oracle Labs where he works in the Distributed Systems Group. \nHe is\
+            \ interested in the systems aspects of parallel and distributed computing, optimizing the performance of modern\
+            \ systems through the efficient utilization of available resources. \nHe has experience working with complex systems,\
+            \ such as databases, operating system kernels, machine learning frameworks, and cloud computing services.\nPrior\
+            \ to Oracle, Alex interned with IBM Research at Haifa, Israel, and Microsoft Research at Redmond, WA. \nHe received\
+            \ his Ph.D. from the Department of Computer Science, Technion, Israel."
   - id: 1245
     photoFileName: 1245.jpg
     name:
@@ -18932,3 +18931,20 @@ speakers:
     bio:
       - {language: en, text: "Опыт работы в игровой сфере — 7 лет, участвовал в качестве спикера в конференции CoreHard Autumn\
             \ 2019. В компании Wargaming занимается разработкой кросс-платформенного ММО-экшена World of Tanks Blitz."}
+  - id: 1323
+    photoFileName: 1323.jpg
+    name:
+      - {language: en, text: "Hydra team"}
+    company: []
+    bio: []
+  - id: 1324
+    photoFileName: 1324.jpg
+    name:
+      - {language: en, text: "Rachid Guerraoui"}
+    company:
+      - {language: en, text: EPFL}
+    bio:
+      - {language: en, text: "Rachid Guerraoui is a professor in computer science at EPFL where he leads the Laboratory of\
+            \ Distributed Computing. He worked in the past with Ecole des Mines de Paris, CEA Saclay, HP Labs in Palo Alto,\
+            \ and MIT. He has been elected ACM fellow and professor of the College de France. He was awarded a Senior ERC\
+            \ Grant and a Google Focused Award."}
