@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Speaker {
     private long id;
-    private String fileName;
+    private String photoFileName;
     private List<LocaleItem> name;
     private List<LocaleItem> company;
     private List<LocaleItem> bio;
@@ -24,11 +24,11 @@ public class Speaker {
     public Speaker() {
     }
 
-    public Speaker(long id, String fileName, List<LocaleItem> name, List<LocaleItem> company,
+    public Speaker(long id, String photoFileName, List<LocaleItem> name, List<LocaleItem> company,
                    List<LocaleItem> bio, String twitter, String gitHub, boolean javaChampion, boolean mvp,
                    boolean mvpReconnect) {
         this.id = id;
-        this.fileName = fileName;
+        this.photoFileName = photoFileName;
         this.name = name;
         this.company = company;
         this.bio = bio;
@@ -47,12 +47,12 @@ public class Speaker {
         this.id = id;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getPhotoFileName() {
+        return photoFileName;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setPhotoFileName(String photoFileName) {
+        this.photoFileName = photoFileName;
     }
 
     public List<LocaleItem> getName() {
@@ -172,7 +172,7 @@ public class Speaker {
     public String toString() {
         return "Speaker{" +
                 "id=" + id +
-                ", fileName='" + fileName + '\'' +
+                ", fileName='" + photoFileName + '\'' +
                 ", name=" + name +
                 ", company=" + company +
                 '}';

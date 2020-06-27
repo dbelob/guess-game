@@ -66,7 +66,7 @@ public class PhotoNamesDto extends QuestionAnswersDto {
         return new PhotoNamesDto(questionSetName, currentIndex, totalNumber, logoFileName,
                 speakers.map(Speaker::getId),
                 correctAnswerIds, yourAnswerIds,
-                ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getFileName(),
+                ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getPhotoFileName(),
                 names);
     }
 }

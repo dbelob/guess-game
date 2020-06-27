@@ -65,6 +65,6 @@ public class NamePhotosDto extends QuestionAnswersDto {
                 answerSpeakers.map(Speaker::getId),
                 correctAnswerIds, yourAnswerIds,
                 questionName,
-                answerSpeakers.map(Speaker::getFileName));
+                answerSpeakers.map(Speaker::getPhotoFileName));
     }
 }

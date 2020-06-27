@@ -86,7 +86,7 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
                 speakers.map(Speaker::getId),
                 correctAnswerIds, yourAnswerIds,
                 LocalizationUtils.getString(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language),
-                speakers.map(Speaker::getFileName),
+                speakers.map(Speaker::getPhotoFileName),
                 names);
     }
 }

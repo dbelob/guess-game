@@ -227,21 +227,21 @@ public class ConferenceDataLoader {
             if (resourceSpeaker == null) {
                 // Speaker not exists
                 long id = speakerId.incrementAndGet();
-                String sourceUrl = s.getFileName();
+                String sourceUrl = s.getPhotoFileName();
                 String destinationFileName = String.format("%04d.jpg", id);
 
                 s.setId(id);
 
                 urlFilenamesToAppend.add(new UrlFilename(sourceUrl, destinationFileName));
-                s.setFileName(destinationFileName);
+                s.setPhotoFileName(destinationFileName);
 
                 speakersToAppend.add(s);
             } else {
                 // Speaker exists
                 s.setId(resourceSpeaker.getId());
-                String sourceUrl = s.getFileName();
-                String destinationFileName = resourceSpeaker.getFileName();
-                s.setFileName(destinationFileName);
+                String sourceUrl = s.getPhotoFileName();
+                String destinationFileName = resourceSpeaker.getPhotoFileName();
+                s.setPhotoFileName(destinationFileName);
 
                 if ((resourceSpeaker.getTwitter() != null) && !resourceSpeaker.getTwitter().isEmpty() &&
                         ((s.getTwitter() == null) || s.getTwitter().isEmpty())) {

@@ -73,7 +73,7 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
         List<SpeakerPairDto> questionSpeakers = ((TalkQuestion) questionAnswers.getQuestion()).getSpeakers().stream()
                 .map(s -> new SpeakerPairDto(
                         LocalizationUtils.getSpeakerName(s, language, speakerDuplicates),
-                        s.getFileName()))
+                        s.getPhotoFileName()))
                 .collect(Collectors.toList());
 
         return new SpeakersTalksDto(questionSetName, currentIndex, totalNumber, logoFileName,

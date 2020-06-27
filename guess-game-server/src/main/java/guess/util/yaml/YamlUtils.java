@@ -283,8 +283,8 @@ public class YamlUtils {
                         List.of("id", "name", "shortDescription", "longDescription", "talkDay", "trackTime", "track",
                                 "language", "presentationLinks", "videoLinks", "speakerIds")),
                 new PropertyMatcher(Speaker.class,
-                        List.of("id", "fileName", "name", "company", "bio", "twitter", "gitHub", "javaChampion", "mvp",
-                                "mvpReconnect")),
+                        List.of("id", "photoFileName", "name", "company", "bio", "twitter", "gitHub", "javaChampion",
+                                "mvp", "mvpReconnect")),
                 new PropertyMatcher(LocaleItem.class,
                         List.of("language", "text"))
         );

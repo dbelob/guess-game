@@ -94,7 +94,7 @@ public class AccountSpeakersDto extends QuestionAnswersDto {
                 correctAnswerIds, yourAnswerIds,
                 questionSpeaker.getTwitter(),
                 questionSpeaker.getGitHub(),
-                speakers.map(Speaker::getFileName),
+                speakers.map(Speaker::getPhotoFileName),
                 names);
     }
 }

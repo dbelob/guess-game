@@ -1249,7 +1249,7 @@ public class ContentfulUtils {
      */
     public static boolean needUpdate(Speaker a, Speaker b) {
         return !((a.getId() == b.getId()) &&
-                equals(a.getFileName(), b.getFileName()) &&
+                equals(a.getPhotoFileName(), b.getPhotoFileName()) &&
                 equals(a.getName(), b.getName()) &&
                 equals(a.getCompany(), b.getCompany()) &&
                 equals(a.getBio(), b.getBio()) &&

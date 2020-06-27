@@ -69,7 +69,7 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     public static SpeakerBriefDto convertToBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, Speaker speaker, Language language) {
         return new SpeakerBriefDto(
                 speakerSuperBriefDto,
-                speaker.getFileName(),
+                speaker.getPhotoFileName(),
                 LocalizationUtils.getString(speaker.getCompany(), language),
                 speaker.getTwitter(),
                 speaker.getGitHub(),

@@ -98,7 +98,7 @@ public class SpeakerMetricsDto {
         return new SpeakerMetricsDto(
                 speaker.getId(),
                 name,
-                speaker.getFileName(),
+                speaker.getPhotoFileName(),
                 speaker.isJavaChampion(),
                 speaker.isMvp(),
                 speaker.isMvpReconnect(),
