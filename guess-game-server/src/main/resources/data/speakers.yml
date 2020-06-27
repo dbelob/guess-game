@@ -11895,6 +11895,7 @@ speakers:
       - language: ru
         text: "В Android-разработке с 2010 года. Участвовал в разработке проектов от мультимедийных до финтеха.\n\nКатаетс\
             я на сноуборде, любит пухляк и высокие трамплины. Меломан, играет на гитаре."
+    twitter: mike_emelyanov
   - id: 800
     photoFileName: 0800.jpg
     name:
@@ -15685,20 +15686,18 @@ speakers:
       - {language: en, text: "Andrey Dmitriev"}
       - {language: ru, text: "Андрей Дмитриев"}
     company:
-      - {language: en, text: "JUG.ru Group"}
+      - {language: en, text: "JUG Ru Group"}
     bio:
       - language: en
         text: "Andrey graduated from SPbU \"Mathematics and Mechanics\" faculty. He was developing a graphical stack of JDK\
-            \ libraries (AWT / Swing / JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in\
-            \ QuickOffice, was responsible for the functionality QuickPoint component, worked as a manager of load testing\
-            \ group in NetCracker.\n\nCurrently, Andrey is the program director and organizer of JUG.ru Group conferences,\
-            \ Java conferences JPoint, Joker and JBreak, JUG.ru and CodeFreeze community meetings in St. Petersburg and Moscow."
+            \ libraries (AWT/Swing/JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in QuickOffice,\
+            \ was responsible for the functionality QuickPoint component, worked as a manager of load testing group in NetCracker.\n\
+            \nCurrently, Andrey is the production department lead at JUG Ru Group."
       - language: ru
         text: "Закончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
             \ Oracle. Руководил группой разработки в компании QuickOffice, отвечал за функциональность компонента QuickPoint.\
-            \ Работал менеджером группы нагрузочного тестирования в компании NetCracker.\n\nНа данный момент Андрей — прог\
-            раммный директор и организатор конференций команды JUG.ru Group, Java-конференций JPoint, Joker и JBreak, встр\
-            еч JUG.ru и сообщества CodeFreeze в Петербурге и Москве."
+            \ Работал менеджером группы нагрузочного тестирования в компании NetCracker.\n\nНа данный момент Андрей — дире\
+            ктор департамента производства в JUG Ru Group."
     twitter: it_improve
   - id: 1077
     photoFileName: 1077.jpg
@@ -18543,3 +18542,123 @@ speakers:
             й, включая системы принятия решений, управления процессами производства и микробиологических исследований. Опе\
             нсорс контрибьютор, консультант и разработчик инструментов для разработчиков. Организатор российского Ember.js-с\
             ообщества. Любит JavaScript, DOM API, AST."}
+  - id: 1290
+    photoFileName: 1290.jpg
+    name:
+      - {language: en, text: "Peter Tretyakov"}
+      - {language: ru, text: "Петр Третьяков"}
+    company:
+      - {language: en, text: Redmadrobot}
+    bio:
+      - {language: en, text: "Peter started his developer way from web apps on Ruby on Rails. When Apple finally introduced\
+            \ Swift as alternative for mess of opening and closing brackets of different types (yes, this means Objective-C),\
+            \ Peter switched from cozy Ruby to strictly typed Swift. He enjoys working with UI, prefers to have less lines\
+            \ in Cartfile and implement features by himself. He loves AppCode. At off-work time he develops his own iOS project\
+            \ with backend on Rails, which has more than 6K rates in AppStore with average rate of 4.8."}
+      - {language: ru, text: "Начал свой путь разработчика с персональных web-проектов на Ruby on Rails. Когда Apple предс\
+            тавила альтернативу мешанине из всех видов открывающих и закрывающих скобок (читай: Objective-C) в виде Swift,\
+            \ понял, что мобильной разработкой наконец можно заниматься, и сменил уютненький Ruby на строго типизированный\
+            \ Swift. Любит работать с UI, предпочитает не захламлять Cartfile тем, что можно легко реализовать самому. Люб\
+            ит AppCode. В свободное время развивает собственный iOS-проект с бэком на Rails, у которого больше 6К оценок в\
+            \ App Store со средней оценкой в 4.8."}
+    twitter: petertretyakov
+  - id: 1291
+    photoFileName: 1291.jpg
+    name:
+      - {language: en, text: "Maksim Turaev"}
+      - {language: ru, text: "Максим Тураев"}
+    company:
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
+    bio:
+      - {language: en, text: "В Android-разработке Максим с 2014 года. Последние 2 года работает в платформенной команде С\
+            бербанк Онлайн."}
+  - id: 1292
+    photoFileName: 1292.jpg
+    name:
+      - {language: en, text: "Aleksandr Finoshin"}
+      - {language: ru, text: "Александр Финошин"}
+    company:
+      - {language: en, text: PSB}
+      - {language: ru, text: ПСБ}
+    bio:
+      - {language: en, text: "Прошел путь от разработчика до начальника отдела Android-разработки в ПСБ. В свободное от ра\
+            боты время занимается футболом."}
+  - id: 1293
+    photoFileName: 1293.jpg
+    name:
+      - {language: en, text: "Anton Kolichev"}
+      - {language: ru, text: "Антон Колычев"}
+    company:
+      - {language: en, text: PSB}
+      - {language: ru, text: ПСБ}
+    bio:
+      - {language: en, text: "В мобильной разработке с 2011 года. С 2016 iOS-разработчик мобильного приложения PSB-Mobile\
+            \ для физических лиц клиентов ПСБ. С 2017 Антон руководит отделом мобильной разработки в ПСБ."}
+  - id: 1294
+    photoFileName: 1294.jpg
+    name:
+      - {language: en, text: "Alexander Chernyy"}
+      - {language: ru, text: "Александр Черный"}
+    company:
+      - {language: en, text: Motify}
+    bio:
+      - {language: en, text: "Head of mobile development, a founder of MBLTdev Digest, sometimes he speaks in specialized\
+            \ conferences and podcasts."}
+      - {language: ru, text: "Руководит мобильной разработкой, основал MDLTDev Digest, иногда участвует в профильных конфе\
+            ренциях и подкастах."}
+    twitter: alexchernyy
+  - id: 1295
+    photoFileName: 1295.jpg
+    name:
+      - {language: en, text: "Aleksey Levanov"}
+      - {language: ru, text: "Алексей Леванов"}
+    company:
+      - {language: en, text: Sberbank}
+      - {language: ru, text: Сбербанк}
+    bio:
+      - {language: en, text: "Леванов Алексей — TeamLead и PO платформенной iOS-команды Сбербанк Инвестор, лидер Школ Разр\
+            аботки Сбербанка. Работает в Сбербанке с 2014 года."}
+  - id: 1296
+    photoFileName: 1296.jpg
+    name:
+      - {language: en, text: "Petr Kozlov"}
+      - {language: ru, text: "Петр Козлов"}
+    company:
+      - {language: en, text: Redmadrobot}
+    bio:
+      - {language: en, text: "Android developer and project lead in Redmadrobot. In Android development since 2016: started\
+            \ from bankrupted startups with HTTP requests from Activity to Clean Architecture and top mobile outsourcer in\
+            \ Russia."}
+      - {language: ru, text: "Android-разработчик и лид на проекте в Redmadrobot. В Android-разработке с 2016 года: начина\
+            л с разработки в разваливающихся стартапах и запросов из Activity, пришёл к Clean-архитектуре и топовому мобил\
+            ьному аутсорсеру в стране."}
+    twitter: xd720p
+  - id: 1297
+    photoFileName: 1297.jpg
+    name:
+      - {language: en, text: "Wesnie Marcelin"}
+    company:
+      - {language: en, text: iHeartRadio}
+    bio:
+      - language: en
+        text: "After completing her degree in Economics, Wesnie quickly realized that her interests were gravitating towards\
+            \ tech. Eager to learn more, she began attending different meetups, before discovering a coding bootcamp, where\
+            \ she would learn her foundations in Android development.  \nToday, she is currently in her 3rd year working on\
+            \ the Android development team at iHeartRadio helping to enhance the way users currently listen to music, podcasts,\
+            \ and the radio. In her spare time she dives deeper into learning more about iOT and robotics and contributes\
+            \ to a codebase at a startup called SpookyRobotics as well as creates videos for her Youtube channels called HackQueen,\
+            \ and Life With W and J. She also enjoys learning about other cultures/languages, travelling and watersports."
+  - id: 1298
+    photoFileName: 1298.jpg
+    name:
+      - {language: en, text: "Konstantin Kulikov"}
+      - {language: ru, text: "Константин Куликов"}
+    company:
+      - {language: en, text: Revolut}
+    bio:
+      - {language: en, text: "In mobile development since 2016. Organizer of the GDG and KUG communities in St. Petersburg,\
+            \ and also participates in the Android Academy SPb project."}
+      - {language: ru, text: "В мобильной разработке с 2016 года. Занимается организацией сообществ GDG и KUG в Петербурге\
+            , а также участвует в проекте Android Academy SPb."}
+    twitter: Semper_Viventem
