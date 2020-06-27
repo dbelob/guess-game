@@ -5279,8 +5279,7 @@ speakers:
     company:
       - {language: en, text: DINS}
     bio:
-      - {language: en, text: "At DINS he's engaged in development, support and backend developing for the cloud telephony\
-            \ service. For a long time, he was engaged in embedded systems programming on C++."}
+      - {language: en, text: "Senior software developer in DINS. He develops and supports backend of cloud telephony system."}
       - {language: ru, text: "В DINS занимается разработкой, поддержкой и развитием бэкенда для сервиса облачной телефонии\
             . Долгое время занимался программированием встраиваемых систем на C++."}
   - id: 348
@@ -13748,12 +13747,12 @@ speakers:
             \ algorithms and embedded programming and believes in good tooling. With all her love for C++, she is now the\
             \ Product Marketing Manager on the JetBrains C++ tools and .NET marketing teams. Besides, Anastasia runs a C++\
             \ user group in Saint-Petersburg, Russia (https://www.meetup.com/St-Petersburg-CPP-User-Group/)."}
-      - {language: ru, text: "Имеет опыт более 8 лет в коммерческой разработке на C и C++. В прошлом занималась встроенным\
-            и система и задачами управления сетевым трафиком, стажировалась в лаборатории Microsoft Research по направлени\
-            ю Сетевой трафик и участвовала в запуске сетей поколения 4G в компании Yota. Анастасия уверена в том, что разр\
-            аботка — процесс творческий, а рутинные задачи должны быть переданы «умным» инструментам. Поэтому сейчас она я\
-            вляется частью команды JetBrains и работает менеджером по продуктовому маркетингу продуктов для разработки на\
-            \ C++ и .NET. Уже несколько лет занимается организацией встреч питерского сообщества C++ разработчиков (St. Petersburg\
+      - {language: ru, text: "Более 8 лет в коммерческой разработке на C и C++. В прошлом занималась встроенными система и\
+            \ задачами управления сетевым трафиком, стажировалась в лаборатории Microsoft Research по направлению Сетевой\
+            \ трафик и участвовала в запуске сетей поколения 4G в компании Yota. Анастасия уверена в том, что разработка —\
+            \ процесс творческий, а рутинные задачи должны быть переданы «умным» инструментам. Поэтому сейчас она является\
+            \ частью команды JetBrains и работает менеджером по продуктовому маркетингу продуктов для разработки на C++ и\
+            \ .NET. Уже несколько лет занимается организацией встреч питерского сообщества C++ разработчиков (St. Petersburg\
             \ C++ User Group)."}
     twitter: anastasiak2512
   - id: 931
@@ -16435,7 +16434,7 @@ speakers:
       - {language: en, text: "Anton Kvyatkovsky"}
       - {language: ru, text: "Антон Квятковский"}
     company:
-      - {language: en, text: Dins}
+      - {language: en, text: DINS}
     bio:
       - {language: en, text: "Software Engineer at Dins. has passion for metaprogramming and stuff described as \"hardcore\"\
             . Active member of SPb C++ community."}
@@ -16473,7 +16472,7 @@ speakers:
     name:
       - {language: en, text: "Evgeny Pats"}
     company:
-      - {language: en, text: Fuzzit}
+      - {language: en, text: "GitLab (Previously Fuzzit)"}
     bio:
       - language: en
         text: "Security enthusiast. Israeli cyber-security intelligence veteran. Polyglot (Computer) & Serial entrepreneur.\r\
@@ -16491,7 +16490,7 @@ speakers:
         text: "C++ developer at Align Technology.\nGraduated from MMF NSU.\n\nParticipated in Intel MKL, 2GIS mobile/core\
             \ and Yandex.Browser development as C/C++ engineer."
       - {language: ru, text: "С++ инженер в Align Technology. Окончил ММФ НГУ. Волей судьбы удалось познакомиться с С/С++\
-            \ в Intel MKL, мобильной/core разработке 2ГИС и Я.Браузере."}
+            \ в Intel MKL, мобильной/core-разработке 2ГИС и Я.Браузере."}
     twitter: ivafanas
   - id: 1136
     photoFileName: 1136.jpg
@@ -16521,8 +16520,8 @@ speakers:
     bio:
       - {language: en, text: "The developer of a compiler for neural networks in the Russian Samsung R&D center. He also worked\
             \ as a toolchain developer for OS."}
-      - {language: ru, text: "Разработчик в отделе компиляторов для нейросетей в московском исследовательском центре Самун\
-            га. Работал в качестве разработчика тулчейна для операционных систем."}
+      - {language: ru, text: "Разработчик в отделе компиляторов для нейросетей в московском исследовательском центре Самсу\
+            нга. Также работал в качестве разработчика тулчейна для операционных систем."}
   - id: 1138
     photoFileName: 1138.jpg
     name:
@@ -18810,3 +18809,126 @@ speakers:
         text: "Руководитель Центра Компетенций веб и мобильной разработки в SMLab.\nСпециалист с семнадцатилетним опытом р\
             азработки программного обеспечения на самых разных языках и платформах.\nСейчас Сергей помогает компании в опр\
             еделении направлений технологического развития и проектировании архитектур информационных систем."
+  - id: 1313
+    photoFileName: 1313.jpg
+    name:
+      - {language: en, text: "Vyacheslav Borilin"}
+      - {language: ru, text: "Вячеслав Борилин"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - language: en
+        text: "Стремится, чтобы каждая программа была не только свободна от ошибок, но и защищена от злоумышленников.\n25\
+            \ лет занимается развитием ИТ-продуктов (компьютерное зрение, офисный софт, аналитические системы, ВКС, обучаю\
+            щие платформы и т.д.). Программист, переквалифицировавшийся в продакта. Участвует в работах по стандартизации\
+            \ в IETF, ITU, NIST, ISA."
+  - id: 1314
+    photoFileName: 1314.jpg
+    name:
+      - {language: en, text: "Georgiy  Gribkov"}
+      - {language: ru, text: "Георгий  Грибков"}
+    company:
+      - {language: en, text: PVS-Studio}
+    bio:
+      - {language: en, text: "C++ программист. Является одним из разработчиков статического анализатора PVS-Studio, занима\
+            ется разработкой ядра, новых диагностических правил, а также поддержкой пользователей. Внедрил PVS-Studio в он\
+            лайн-компилятор godbolt.org. Автор нескольких статей на Habr."}
+  - id: 1315
+    photoFileName: 1315.jpg
+    name:
+      - {language: en, text: "Yulia Golovchanskaya"}
+      - {language: ru, text: "Юлия Головчанская"}
+    company:
+      - {language: en, text: "Computer Vision Systems"}
+      - {language: ru, text: "Системы компьютерного зрения"}
+    bio:
+      - {language: en, text: "Graduated from the Faculty of Mathematics and Mechanics of St. Petersburg State University with\
+            \ a degree in General Mathematics and Informatics. She has been working as C++ programmer for 2 years, she's engaged\
+            \ in the computer vision tasks."}
+      - {language: ru, text: "Закончила математико-механический факультет СПбГУ по направлению «Прикладная математика и ин\
+            форматика». Работает C++ программистом 2 года, занимается задачами компьютерного зрения."}
+  - id: 1316
+    photoFileName: 1316.jpg
+    name:
+      - {language: en, text: "Maksim Zvyagintsev"}
+      - {language: ru, text: "Максим Звягинцев"}
+    company:
+      - {language: en, text: PVS-Studio}
+    bio:
+      - {language: en, text: "C++ программист. Участвует в разработке статического анализатора PVS-Studio, а точнее, его я\
+            дра и диагностических правил. Помимо программирования увлекается философией и музыкой."}
+  - id: 1317
+    photoFileName: 1317.jpg
+    name:
+      - {language: en, text: "Evgeny Strokov"}
+      - {language: ru, text: "Евгений Строков"}
+    company:
+      - {language: en, text: Wargaming}
+    bio:
+      - {language: en, text: "Опыт работы в геймдеве — с начала 2000-х. До того как попасть в Wargaming, работал как в неб\
+            ольших, так и в достаточно крупных компаниях (Crytek или Snapchat). Некоторое время жил в Лондоне, Берлине, Си\
+            днее. Занимался разработкой шутеров и MMO-игр (в их число входит один из проектов компании Mail.ru), нескольки\
+            х игровых движков (графика, core-системы, tools, network) и игрового бэкенда для PC, консолей и мобильных плат\
+            форм. Особая страсть — компьютерные игры: стратегии, RPG, а также настольные RPG."}
+  - id: 1318
+    photoFileName: 1318.jpg
+    name:
+      - {language: en, text: "Evgeny Erokhin"}
+      - {language: ru, text: "Евгений Ерохин"}
+    company:
+      - {language: en, text: DINS}
+    bio:
+      - language: en
+        text: "Senior Software Developer in DINO Systems. In the present moment he's busy with the development of real-time\
+            \ video service.\nHis background is more than 10 years in Paragon Software on the position of team lead where\
+            \ he developed filesystem drivers for macOS, worked on filesystem implementation, snapshot system for block-devices\
+            \ (disk subsystem), boot loader, reverse-engineering, and many low-level things.\nIn his free time Evgeny research\
+            \ operation-systems internals, and microprocessor architectures."
+      - language: ru
+        text: "Старший разработчик в компании DINO Systems. В данный момент занимается разработкой сервиса передачи видео\
+            \ в реальном времени.\nЗа плечами более 10 лет опыта работы в Paragon Software на позиции ведущего разработчик\
+            а. Разрабатывал драйвера файловых систем под macOS, занимался имплементацией файловых систем, системы снепшоти\
+            нга блочных (дисковых) устройств, boot-загрузчика, реверс-инженирингом, и другими низкоуровневыми задачами.\n\n\
+            В свободное время занимается изучением устройства операционных систем и процессорных архитектур."
+  - id: 1319
+    photoFileName: 1319.jpg
+    name:
+      - {language: en, text: "Sergey Kozlov"}
+      - {language: ru, text: "Сергей Козлов"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - language: en
+        text: "Пишет на С++ уже почти четверть века. За это время довелось заниматься многими разноплановыми проектами: ви\
+            деонаблюдением, IP-телефонией, видео-конференциями.\nПоследние 10 лет посвящены работе в Лаборатории. Не прочь\
+            \ покопаться в crash дампах или взять в руки дизассемблер.\nВ свободное время предпочитает путешествовать с се\
+            мьёй или мучать ардуинки."
+  - id: 1320
+    photoFileName: 1320.jpg
+    name:
+      - {language: en, text: "Evgeny Alekseev"}
+      - {language: ru, text: "Евгений Алексеев"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Работает в ЛК десять с лишним лет. Начинал будучи еще стажером. Задачи бывали разные, но в о\
+            сновном разрабатывал базовые компоненты для продуктов, естественно, на C++."}
+  - id: 1321
+    photoFileName: 1321.jpg
+    name:
+      - {language: en, text: "C++ Russia team"}
+    company: []
+    bio: []
+  - id: 1322
+    photoFileName: 1322.jpg
+    name:
+      - {language: en, text: "Evgeny Zaharov"}
+      - {language: ru, text: "Евгений Захаров"}
+    company:
+      - {language: en, text: Wargaming}
+    bio:
+      - {language: en, text: "Опыт работы в игровой сфере — 7 лет, участвовал в качестве спикера в конференции CoreHard Autumn\
+            \ 2019. В компании Wargaming занимается разработкой кросс-платформенного ММО-экшена World of Tanks Blitz."}
