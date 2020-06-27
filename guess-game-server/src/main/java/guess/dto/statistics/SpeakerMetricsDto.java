@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class SpeakerMetricsDto {
     private final long id;
     private final String name;
-    private final String fileName;
+    private final String photoFileName;
     private final boolean javaChampion;
     private final boolean mvp;
     private final boolean mvpReconnect;
@@ -26,12 +26,12 @@ public class SpeakerMetricsDto {
     private final long javaChampionsQuantity;
     private final long mvpsQuantity;
 
-    public SpeakerMetricsDto(long id, String name, String fileName, boolean javaChampion, boolean mvp, boolean mvpReconnect,
+    public SpeakerMetricsDto(long id, String name, String photoFileName, boolean javaChampion, boolean mvp, boolean mvpReconnect,
                              boolean anyMvp, long talksQuantity, long eventsQuantity, long eventTypesQuantity,
                              long javaChampionsQuantity, long mvpsQuantity) {
         this.id = id;
         this.name = name;
-        this.fileName = fileName;
+        this.photoFileName = photoFileName;
         this.javaChampion = javaChampion;
         this.mvp = mvp;
         this.mvpReconnect = mvpReconnect;
@@ -51,8 +51,8 @@ public class SpeakerMetricsDto {
         return name;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getPhotoFileName() {
+        return photoFileName;
     }
 
     public boolean isJavaChampion() {

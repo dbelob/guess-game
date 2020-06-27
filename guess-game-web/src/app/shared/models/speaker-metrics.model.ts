@@ -2,7 +2,7 @@ export class SpeakerMetrics {
   constructor(
     public id?: number,
     public name?: string,
-    public fileName?: string,
+    public photoFileName?: string,
     public javaChampion?: boolean,
     public mvp?: boolean,
     public mvpReconnect?: boolean,

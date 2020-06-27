@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * Speaker DTO (brief).
  */
 public class SpeakerBriefDto extends SpeakerSuperBriefDto {
-    private final String fileName;
+    private final String photoFileName;
     private final String company;
     private final String twitter;
     private final String gitHub;
@@ -20,11 +20,11 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     private final boolean mvpReconnect;
     private final boolean anyMvp;
 
-    public SpeakerBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, String fileName, String company, String twitter, String gitHub,
+    public SpeakerBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, String photoFileName, String company, String twitter, String gitHub,
                            boolean javaChampion, boolean mvp, boolean mvpReconnect, boolean anyMvp) {
         super(speakerSuperBriefDto.getId(), speakerSuperBriefDto.getDisplayName());
 
-        this.fileName = fileName;
+        this.photoFileName = photoFileName;
         this.company = company;
         this.twitter = twitter;
         this.gitHub = gitHub;
@@ -34,8 +34,8 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
         this.anyMvp = anyMvp;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getPhotoFileName() {
+        return photoFileName;
     }
 
     public String getCompany() {
