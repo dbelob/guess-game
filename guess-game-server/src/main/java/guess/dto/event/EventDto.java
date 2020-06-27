@@ -17,14 +17,15 @@ public class EventDto extends EventBriefDto {
     private final String siteLink;
     private final String youtubeLink;
     private final String mapCoordinates;
-
     private final String vkLink;
     private final String twitterLink;
     private final String facebookLink;
     private final String telegramLink;
+    private final String description;
 
     public EventDto(EventSuperBriefDto eventSuperBriefDto, EventBriefDto eventBriefDto, String siteLink, String youtubeLink,
-                    String mapCoordinates, String vkLink, String twitterLink, String facebookLink, String telegramLink) {
+                    String mapCoordinates, String vkLink, String twitterLink, String facebookLink, String telegramLink,
+                    String description) {
         super(eventSuperBriefDto, eventBriefDto.getDuration(), eventBriefDto.getPlaceCity(), eventBriefDto.getPlaceVenueAddress(),
                 eventBriefDto.getEventTypeLogoFileName());
 
@@ -35,6 +36,7 @@ public class EventDto extends EventBriefDto {
         this.twitterLink = twitterLink;
         this.facebookLink = facebookLink;
         this.telegramLink = telegramLink;
+        this.description = description;
     }
 
     public String getSiteLink() {
@@ -65,6 +67,10 @@ public class EventDto extends EventBriefDto {
         return telegramLink;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public static EventDto convertToDto(Event event, Function<Event, EventType> eventEventTypeFunction, Language language) {
         EventSuperBriefDto eventSuperBriefDto = convertToSuperBriefDto(event, language);
         Place place = event.getPlace();
@@ -79,6 +85,7 @@ public class EventDto extends EventBriefDto {
         String eventTypeTwitterLink = (eventType != null) ? eventType.getTwitterLink() : null;
         String eventTypeFacebookLink = (eventType != null) ? eventType.getFacebookLink() : null;
         String eventTypeTelegramLink = (eventType != null) ? eventType.getTelegramLink() : null;
+        String description = LocalizationUtils.getString(eventType.getShortDescription(), language);
 
         return new EventDto(
                 eventSuperBriefDto,
@@ -89,7 +96,8 @@ public class EventDto extends EventBriefDto {
                 eventTypeVkLink,
                 eventTypeTwitterLink,
                 eventTypeFacebookLink,
-                eventTypeTelegramLink);
+                eventTypeTelegramLink,
+                description);
     }
 
     public static List<EventDto> convertToDto(List<Event> events, Function<Event, EventType> eventEventTypeFunction, Language language) {
