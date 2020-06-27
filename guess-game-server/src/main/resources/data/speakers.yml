@@ -143,12 +143,12 @@ speakers:
     company:
       - {language: en, text: "JUG Ru Group"}
     bio:
-      - {language: en, text: "Producer of JUG Ru Group, organizes the largest technological conferences for developers in\
-            \ Russia. JUG.ru community leader in Saint Petersburg, Java Champion, he has a [Telegram channel](https://t.me/channel_23derevo)\
-            \ about conference organization and [twitter](https://twitter.com/23derevo)."}
-      - {language: ru, text: "Алексей Федоров — продюсер в JUG Ru Group, организатор конференций для программистов и сочув\
-            ствующих. Лидер питерского Java-сообщества JUG.ru, Java Champion, ведёт [телеграм-канал](https://t.me/channel_23derevo)\
-            \ про организацию конференций и [твиттер](https://twitter.com/23derevo)."}
+      - {language: en, text: "Producer @ JUG Ru Group, organizes the largest conferences for developers in Russia. In the\
+            \ last 6 years Alexey's team arranged more than 50 conferences. Alexey has a very different background: from Software\
+            \ Engineer @ Oracle (JCK, Java Platform Group) to DevRel @ Odnoklassiniki."}
+      - {language: ru, text: "Алексей Федоров — продюсер в JUG Ru Group, организатор крупнейших в России технологических к\
+            онференций для разработчиков. За 6 лет команда Алексея провела более 50 конференций. В прошлом работал инженер\
+            ом в Oracle (JCK, Java Platform Team) и деврелом в Одноклассниках."}
     twitter: 23derevo
     gitHub: 23derevo
     javaChampion: true
