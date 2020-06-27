@@ -2,6 +2,8 @@
   "common": {
     "menuLinkText": "Menu",
     "cancelLinkText": "Cancel",
+    "siteLinkText": "Site",
+    "vkLinkText": "VK",
     "searchButtonText": "Search",
     "clearButtonText": "Clear",
     "eventTypeKind": {
@@ -76,9 +78,7 @@
     }
   },
   "event": {
-    "title": "Event",
-    "siteLinkText": "Site",
-    "vkLinkText": "VK"
+    "title": "Event"
   },
   "events":{
     "title": "Events",

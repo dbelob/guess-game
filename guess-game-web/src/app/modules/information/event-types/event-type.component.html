@@ -19,6 +19,43 @@
       <img *ngIf="eventTypeDetails.eventType?.logoFileName" class="align-middle img-event-type-logo"
            src="{{eventsImageDirectory}}/{{eventTypeDetails.eventType.logoFileName}}" alt="logo"/>
       <span class="h3 ml-2 align-middle">{{eventTypeDetails.eventType?.name}}</span>
+
+      <div *ngIf="eventTypeDetails.eventType?.siteLink || eventTypeDetails.eventType?.facebookLink || eventTypeDetails.eventType?.vkLink || eventTypeDetails.eventType?.twitterLink || eventTypeDetails.eventType?.youtubeLink || eventTypeDetails.eventType?.telegramLink" class="row mt-2">
+        <div *ngIf="eventTypeDetails.eventType?.siteLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.siteLink}}" class="text-dark">
+            <i class="fa fa-globe"></i><span> {{'common.siteLinkText' | translate}}</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.facebookLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.facebookLink}}" class="text-dark">
+            <i class="fa fa-facebook"></i><span> Facebook</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.vkLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.vkLink}}" class="text-dark">
+            <i class="fa fa-vk"></i><span> {{'common.vkLinkText' | translate}}</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.twitterLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.twitterLink}}" class="text-dark">
+            <i class="fa fa-twitter"></i><span> Twitter</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.youtubeLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.youtubeLink}}" class="text-dark">
+            <i class="fa fa-youtube"></i><span> YouTube</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.telegramLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.telegramLink}}" class="text-dark">
+            <i class="fa fa-telegram"></i><span> Telegram</span>
+          </a>
+        </div>
+      </div>
+
+      <div *ngIf="eventTypeDetails.eventType?.description" class="mt-3">
+        <markdown [data]='eventTypeDetails.eventType.description'></markdown>
+      </div>
     </div>
   </div>
 </div>

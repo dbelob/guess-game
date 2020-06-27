@@ -32,7 +32,7 @@
       <div *ngIf="eventDetails.event?.siteLink || eventDetails.event?.facebookLink || eventDetails.event?.vkLink || eventDetails.event?.twitterLink || eventDetails.event?.youtubeLink || eventDetails.event?.telegramLink" class="row mt-2">
         <div *ngIf="eventDetails.event?.siteLink" class="col-auto">
           <a href="{{eventDetails.event.siteLink}}" class="text-dark">
-            <i class="fa fa-globe"></i><span> {{'event.siteLinkText' | translate}}</span>
+            <i class="fa fa-globe"></i><span> {{'common.siteLinkText' | translate}}</span>
           </a>
         </div>
         <div *ngIf="eventDetails.event?.facebookLink" class="col-auto">
@@ -42,7 +42,7 @@
         </div>
         <div *ngIf="eventDetails.event?.vkLink" class="col-auto">
           <a href="{{eventDetails.event.vkLink}}" class="text-dark">
-            <i class="fa fa-vk"></i><span> {{'event.vkLinkText' | translate}}</span>
+            <i class="fa fa-vk"></i><span> {{'common.vkLinkText' | translate}}</span>
           </a>
         </div>
         <div *ngIf="eventDetails.event?.twitterLink" class="col-auto">
