@@ -84,6 +84,7 @@
     "title": "События",
     "noEventsFoundText": "События не найдены",
     "table": {
+      "title": "События",
       "nameColumn": "Наименование",
       "startDateColumn": "Начальная дата",
       "endDateColumn": "Конечная дата",

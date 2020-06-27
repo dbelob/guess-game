@@ -84,6 +84,7 @@
     "title": "Events",
     "noEventsFoundText": "No events found",
     "table": {
+      "title": "Events",
       "nameColumn": "Name",
       "startDateColumn": "Start date",
       "endDateColumn": "End date",

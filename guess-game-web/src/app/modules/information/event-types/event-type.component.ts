@@ -14,9 +14,11 @@ export class EventTypeComponent implements OnInit {
 
   private id: number;
   public eventTypeDetails: EventTypeDetails = new EventTypeDetails();
+  public multiSortMeta: any[] = [];
 
   constructor(private eventTypeService: EventTypeService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
+    this.multiSortMeta.push({field: 'startDate', order: -1});
   }
 
   ngOnInit(): void {
@@ -40,5 +42,9 @@ export class EventTypeComponent implements OnInit {
 
   onLanguageChange() {
     this.loadEventType(this.id);
+  }
+
+  isEventsListVisible() {
+    return ((this.eventTypeDetails.events) && (this.eventTypeDetails.events.length > 0));
   }
 }
