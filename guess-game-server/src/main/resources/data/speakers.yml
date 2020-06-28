@@ -24,16 +24,13 @@ speakers:
     company:
       - {language: en, text: EPAM}
     bio:
-      - {language: en, text: "Evgeny is developing on Java since 2001 and took part in a large number of enterprise projects.\
-            \ He went all the way from a simple programmer to an architect, got tired of the routine and became a free artist.\
-            \ Currently, Eugene writes and conducts courses, seminars and workshops for different audiences: live-courses\
-            \ on J2EE for Israeli army officers, Spring — for WebEx for Romanians, Hibernate through GoToMeeting for Canadians,\
-            \ Troubleshooting and Design Patterns for Ukrainians."}
-      - {language: ru, text: "Евгений пишет на Java с 2001 года и принял участие в большом количестве энтерпрайз-проектов\
-            . Пройдя путь от простого программиста до архитектора и устав от рутины, он ушел в свободные художники. Сегодн\
-            я Женя пишет и проводит курсы, семинары и мастер-классы для различной аудитории: live-курсы по J2EE для офицер\
-            ов израильской армии, Spring — по WebEx для румын, Hibernate через GoToMeeting для канадцев, Troubleshooting и\
-            \ Design Patterns для украинцев."}
+      - language: en
+        text: "Evgeny is developing on Java almost 20 years. Over the years he participated in a lot of enterprise projects,\
+            \ several\nyears he was a consiltant, opened his startup, lead thousands of trainings and dozens of talks, now\
+            \ he's the lead of the EPAM Israeli development department."
+      - {language: ru, text: "Евгений пишет на Java почти 20 лет. За эти годы он принял участие в большом количестве энтер\
+            прайз-проектов, несколько лет был свободным консультантом, открыл свой стартап, провёл сотни тренингов и десят\
+            ки докладов, а сегодня возглавляет израильский отдел разработки в EPAM."}
     twitter: jekaborisov
     gitHub: Jeka1978
   - id: 2
@@ -15682,9 +15679,9 @@ speakers:
     bio:
       - language: en
         text: "Andrey graduated from SPbU \"Mathematics and Mechanics\" faculty. He was developing a graphical stack of JDK\
-            \ libraries (AWT/Swing/JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in QuickOffice,\
-            \ was responsible for the functionality QuickPoint component, worked as a manager of load testing group in NetCracker.\n\
-            \nCurrently, Andrey is the production department lead at JUG Ru Group."
+            \ libraries (AWT / Swing / JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in\
+            \ QuickOffice, was responsible for the functionality QuickPoint component, worked as a manager of load testing\
+            \ group in NetCracker.\n\nCurrently, Andrey is the production department lead at JUG Ru Group."
       - language: ru
         text: "Закончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
             \ Oracle. Руководил группой разработки в компании QuickOffice, отвечал за функциональность компонента QuickPoint.\
