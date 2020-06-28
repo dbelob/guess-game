@@ -3,8 +3,6 @@
 
 # Find, See, Guess the Speakers
 
-![Home](/images/home.png)
-
 There are two parts of the program:
 1. Search and view information about conferences, meetings, talks and speakers
 
@@ -12,17 +10,11 @@ There are two parts of the program:
 
 ![Information](/images/information.png)
 
-Information and statistics of conferences, meetups, talks, speakers
+Information and statistics of conferences, meetups, talks, speakers.
 
 ![Game](/images/game.png)
 
-Game available modes:
-* guess name by photo;
-* guess photo by name;
-* guess talk by speaker;
-* guess speaker by talk;
-* guess *Twitter*, *GitHub* by speaker;
-* guess speaker by *Twitter*, *GitHub*.
+In the game you need to guess the speaker or talk.
 
 ## Running
 
