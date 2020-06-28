@@ -6,7 +6,7 @@
 There are two parts of the program:
 1. Search and view information about conferences, meetings, talks and speakers
 
-1. «Guess the Speaker» game
+1. **Guess the Speaker** game
 
 ![Information](/images/information.png)
 
