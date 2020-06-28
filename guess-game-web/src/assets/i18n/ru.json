@@ -2,12 +2,26 @@
   "common": {
     "menuLinkText": "Меню",
     "cancelLinkText": "Прервать",
-    "totalsText": "Всего",
+    "siteLinkText": "Сайт",
+    "vkLinkText": "ВКонтакте",
+    "searchButtonText": "Поиск",
+    "clearButtonText": "Очистить",
     "eventTypeKind": {
       "conference": "Конференция",
       "meetup": "Митап"
     },
+    "checkbox": {
+      "conferencesLabel": "Конференции",
+      "meetupsLabel": "Митапы"
+    },
+    "list": {
+      "eventTypeLabel": "Тип события:",
+      "eventLabel": "Событие:",
+      "eventTypePlaceholder": "Все",
+      "eventPlaceholder": "Все"
+    },
     "table": {
+      "totalsText": "Всего",
       "paginator": {
         "currentPageReportTemplate": "{first} по {last} из {totalRecords}"
       }
@@ -19,8 +33,6 @@
   },
   "start": {
     "title": "Угадай спикера",
-    "eventTypeLabel": "Тип события:",
-    "eventLabel": "Событие:",
     "modeLabel": "Режим:",
     "quantityLabel": "Вопросов:",
     "guessNameByPhotoLabel": "Угадать имя по фотографии",
@@ -50,12 +62,98 @@
     "yesButtonText": "Да",
     "noButtonText": "Нет"
   },
+  "eventType": {
+    "title": "Тип события"
+  },
+  "eventTypes":{
+    "title": "Типы событий",
+    "noEventTypesFoundText": "Типы событий не найдены",
+    "table": {
+      "kindColumn": "Вид",
+      "nameColumn": "Наименование",
+      "shortDescriptionColumn": "Описание"
+    },
+    "search": {
+      "title": "Поиск"
+    }
+  },
+  "event": {
+    "title": "Событие"
+  },
+  "events":{
+    "title": "События",
+    "noEventsFoundText": "События не найдены",
+    "table": {
+      "title": "События",
+      "nameColumn": "Наименование",
+      "startDateColumn": "Начальная дата",
+      "endDateColumn": "Конечная дата",
+      "durationColumn": "Длительность, дней",
+      "cityColumn": "Город",
+      "addressColumn": "Адрес"
+    },
+    "search": {
+      "title": "Поиск"
+    }
+  },
+  "talk": {
+    "title": "Доклад",
+    "dayLabel": "День",
+    "trackLabel": "Зал",
+    "presentationLinkText": "Презентация"
+  },
+  "talks": {
+    "title": "Доклады",
+    "noTalksFoundText": "Доклады не найдены",
+    "table": {
+      "title": "Доклады",
+      "eventColumn": "Событие",
+      "talkDateColumn": "Дата доклада",
+      "talkDayColumn": "День",
+      "talkTimeColumn": "Время",
+      "trackColumn": "Зал",
+      "nameColumn": "Наименование",
+      "speakersColumn": "Спикеры"
+    },
+    "search": {
+      "title": "Поиск",
+      "nameLabel": "Наименование:",
+      "speakerLabel": "Спикер:"
+    }
+  },
+  "speaker": {
+    "title": "Спикер"
+  },
+  "speakers": {
+    "title": "Спикеры",
+    "noSpeakersFoundText": "Спикеры не найдены",
+    "table": {
+      "title": "Спикеры",
+      "nameColumn": "Имя",
+      "companyColumn": "Компания",
+      "twitterColumn": "Twitter",
+      "gitHubColumn": "GitHub",
+      "javaChampionColumn": "Java Champion",
+      "mvpColumn": "MVP"
+    },
+    "list": {
+      "title": "Список"
+    },
+    "search": {
+      "title": "Поиск",
+      "nameLabel": "Имя:",
+      "companyLabel": "Компания:",
+      "twitterLabel": "Twitter:",
+      "gitHubLabel": "GitHub:",
+      "javaChampionLabel": "Java Champion",
+      "mvpLabel": "Most Valuable Professional"
+    }
+  },
   "statistics": {
     "title": "Статистика",
     "eventTypes": {
       "title": "Типы событий",
-      "conferencesLabel": "Конференции",
-      "meetupsLabel": "Митапы",
+      "noEventTypesFoundText": "Типы событий не найдены",
       "table": {
         "kindColumn": "Вид",
         "nameColumn": "Наименование",
@@ -73,6 +171,7 @@
       "title": "События",
       "conferenceLabel": "Конференция:",
       "conferencePlaceholder": "Все",
+      "noEventsFoundText": "События не найдены",
       "table": {
         "nameColumn": "Наименование",
         "startDateColumn": "Начальная дата",
@@ -85,10 +184,7 @@
     },
     "speakers": {
       "title": "Спикеры",
-      "conferencesLabel": "Конференции",
-      "meetupsLabel": "Митапы",
-      "eventTypeLabel": "Тип события:",
-      "eventTypePlaceholder": "Все",
+      "noSpeakersFoundText": "Спикеры не найдены",
       "table": {
         "nameColumn": "Имя",
         "javaChampionColumn": "Java Champion",

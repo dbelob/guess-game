@@ -2,12 +2,26 @@
   "common": {
     "menuLinkText": "Menu",
     "cancelLinkText": "Cancel",
-    "totalsText": "Totals",
+    "siteLinkText": "Site",
+    "vkLinkText": "VK",
+    "searchButtonText": "Search",
+    "clearButtonText": "Clear",
     "eventTypeKind": {
       "conference": "Conference",
       "meetup": "Meetup"
     },
+    "checkbox": {
+      "conferencesLabel": "Conferences",
+      "meetupsLabel": "Meetups"
+    },
+    "list": {
+      "eventTypeLabel": "Event type:",
+      "eventLabel": "Event:",
+      "eventTypePlaceholder": "All",
+      "eventPlaceholder": "All"
+    },
     "table": {
+      "totalsText": "Totals",
       "paginator": {
         "currentPageReportTemplate": "{first} to {last} of {totalRecords}"
       }
@@ -19,8 +33,6 @@
   },
   "start": {
     "title": "Guess the Speaker",
-    "eventTypeLabel": "Event type:",
-    "eventLabel": "Event:",
     "modeLabel": "Mode:",
     "quantityLabel": "Questions:",
     "guessNameByPhotoLabel": "Guess name by photo",
@@ -50,12 +62,98 @@
     "yesButtonText": "Yes",
     "noButtonText": "No"
   },
+  "eventType": {
+    "title": "Event type"
+  },
+  "eventTypes":{
+    "title": "Event types",
+    "noEventTypesFoundText": "No event types found",
+    "table": {
+      "kindColumn": "Kind",
+      "nameColumn": "Name",
+      "shortDescriptionColumn": "Description"
+    },
+    "search": {
+      "title": "Search"
+    }
+  },
+  "event": {
+    "title": "Event"
+  },
+  "events":{
+    "title": "Events",
+    "noEventsFoundText": "No events found",
+    "table": {
+      "title": "Events",
+      "nameColumn": "Name",
+      "startDateColumn": "Start date",
+      "endDateColumn": "End date",
+      "durationColumn": "Duration, days",
+      "cityColumn": "City",
+      "addressColumn": "Address"
+    },
+    "search": {
+      "title": "Search"
+    }
+  },
+  "talk": {
+    "title": "Talk",
+    "dayLabel": "Day",
+    "trackLabel": "Track",
+    "presentationLinkText": "Presentation"
+  },
+  "talks": {
+    "title": "Talks",
+    "noTalksFoundText": "No talks found",
+    "table": {
+      "title": "Talks",
+      "eventColumn": "Event",
+      "talkDateColumn": "Talk date",
+      "talkDayColumn": "Day",
+      "talkTimeColumn": "Time",
+      "trackColumn": "Track",
+      "nameColumn": "Name",
+      "speakersColumn": "Speakers"
+    },
+    "search": {
+      "title": "Search",
+      "nameLabel": "Name:",
+      "speakerLabel": "Speaker:"
+    }
+  },
+  "speaker": {
+    "title": "Speaker"
+  },
+  "speakers": {
+    "title": "Speakers",
+    "noSpeakersFoundText": "No speakers found",
+    "table": {
+      "title": "Speakers",
+      "nameColumn": "Name",
+      "companyColumn": "Company",
+      "twitterColumn": "Twitter",
+      "gitHubColumn": "GitHub",
+      "javaChampionColumn": "Java Champion",
+      "mvpColumn": "MVP"
+    },
+    "list": {
+      "title": "List"
+    },
+    "search": {
+      "title": "Search",
+      "nameLabel": "Name:",
+      "companyLabel": "Company:",
+      "twitterLabel": "Twitter:",
+      "gitHubLabel": "GitHub:",
+      "javaChampionLabel": "Java Champion",
+      "mvpLabel": "Most Valuable Professional"
+    }
+  },
   "statistics": {
     "title": "Statistics",
     "eventTypes": {
       "title": "Event types",
-      "conferencesLabel": "Conferences",
-      "meetupsLabel": "Meetups",
+      "noEventTypesFoundText": "No event types found",
       "table": {
         "kindColumn": "Kind",
         "nameColumn": "Name",
@@ -73,6 +171,7 @@
       "title": "Events",
       "conferenceLabel": "Conference:",
       "conferencePlaceholder": "All",
+      "noEventsFoundText": "No events found",
       "table": {
         "nameColumn": "Name",
         "startDateColumn": "Start date",
@@ -85,10 +184,7 @@
     },
     "speakers": {
       "title": "Speakers",
-      "conferencesLabel": "Conferences",
-      "meetupsLabel": "Meetups",
-      "eventTypeLabel": "Event type:",
-      "eventTypePlaceholder": "All",
+      "noSpeakersFoundText": "No speakers found",
       "table": {
         "nameColumn": "Name",
         "javaChampionColumn": "Java Champion",

@@ -95,9 +95,9 @@ public class LocalizationUtilsTest {
             });
         }
 
-        private Speaker speaker;
-        private Language language;
-        private String expected;
+        private final Speaker speaker;
+        private final Language language;
+        private final String expected;
 
         public GetSpeakerNameWithCompanyTest(Speaker speaker, Language language, String expected) {
             this.speaker = speaker;

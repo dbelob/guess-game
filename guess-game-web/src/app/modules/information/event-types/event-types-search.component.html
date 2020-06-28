@@ -1,0 +1,79 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'eventTypes.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'eventTypes'"></app-information-switcher>
+
+  <app-event-types-switcher [type]="'search'"></app-event-types-switcher>
+
+  <div class="m-1">
+    <form role="form" class="m-2">
+      <div class="form-group row justify-content-center">
+        <div class="col-auto">
+          <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
+                      [(ngModel)]="isConferences" binary="true"
+                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+        </div>
+        <div class="col-auto">
+          <p-checkbox name="group1" value="meetups" label="{{'common.checkbox.meetupsLabel' | translate}}"
+                      [(ngModel)]="isMeetups" binary="true"
+                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+        </div>
+      </div>
+    </form>
+
+    <div *ngIf="isNoEventTypesFoundVisible()" class="alert text-center m-2">
+      {{'eventTypes.noEventTypesFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isEventTypesListVisible()" class="m-2">
+      <p-table [value]="eventTypes" [resizableColumns]="true" [autoLayout]="true"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" pResizableColumn>
+              {{'eventTypes.table.kindColumn' | translate}}
+            </th>
+            <th class="text-center" [pSortableColumn]="'displayName'" pResizableColumn>
+              {{'eventTypes.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'displayName'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'shortDescription'" pResizableColumn>
+              {{'eventTypes.table.shortDescriptionColumn' | translate}}
+              <p-sortIcon [field]="'shortDescription'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-eventType let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <span *ngIf="eventType.conference">
+                {{'common.eventTypeKind.conference' | translate}}
+              </span>
+              <span *ngIf="!eventType.conference">
+                {{'common.eventTypeKind.meetup' | translate}}
+              </span>
+            </td>
+            <td>
+              <a [routerLink]="['/information', 'event-type', eventType.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{eventType.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
+                <span class="ml-2">{{eventType.name}}</span>
+              </a>
+            </td>
+            <td>{{eventType.shortDescription}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

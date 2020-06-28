@@ -1,0 +1,132 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'speakers.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'speakers'"></app-information-switcher>
+
+  <app-speakers-switcher [type]="'search'"></app-speakers-switcher>
+
+  <div class="m-1">
+    <form role="form" class="m-2">
+      <div class="form-group row justify-content-center">
+        <label for="name" class="col-sm-2">{{'speakers.search.nameLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="name" pInputText class="form-control" [(ngModel)]="name" name="name" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+        <label for="company" class="col-sm-2">{{'speakers.search.companyLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="company" pInputText class="form-control" [(ngModel)]="company" name="company" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="twitter" class="col-sm-2">{{'speakers.search.twitterLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="twitter" pInputText class="form-control" [(ngModel)]="twitter" name="twitter" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+        <label for="gitHub" class="col-sm-2">{{'speakers.search.gitHubLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="gitHub" pInputText class="form-control" [(ngModel)]="gitHub" name="gitHub" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <div class="col-auto">
+          <p-checkbox name="group1" value="conferences" label="{{'speakers.search.javaChampionLabel' | translate}}"
+                      [(ngModel)]="isJavaChampion" binary="true"
+                      (onChange)="onFilterChange($event.checked)"></p-checkbox>
+        </div>
+        <div class="col-auto">
+          <p-checkbox name="group1" value="meetups" label="{{'speakers.search.mvpLabel' | translate}}"
+                      [(ngModel)]="isMvp" binary="true"
+                      (onChange)="onFilterChange($event.checked)"></p-checkbox>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary m-1" (click)="search()" [class.btn-secondary]="isSearchDisabled()" [disabled]="isSearchDisabled()">
+          {{'common.searchButtonText' | translate}}
+        </button>
+        <button class="btn btn-primary m-1" (click)="clear()">
+          {{'common.clearButtonText' | translate}}
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="isNoSpeakersFoundVisible()" class="alert text-center m-2">
+      {{'speakers.noSpeakersFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isSpeakersListVisible()" class="ml-2 mr-2 mb-2 mt-3">
+      <p-table [value]="speakers" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'displayName'" pResizableColumn>
+              {{'speakers.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'displayName'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'company'" pResizableColumn>
+              {{'speakers.table.companyColumn' | translate}}
+              <p-sortIcon [field]="'company'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'twitter'" pResizableColumn>
+              {{'speakers.table.twitterColumn' | translate}}
+              <p-sortIcon [field]="'twitter'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'gitHub'" pResizableColumn>
+              {{'speakers.table.gitHubColumn' | translate}}
+              <p-sortIcon [field]="'gitHub'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'javaChampion'" pResizableColumn>
+              {{'speakers.table.javaChampionColumn' | translate}}
+              <p-sortIcon [field]="'javaChampion'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'anyMvp'" pResizableColumn>
+              {{'speakers.table.mvpColumn' | translate}}
+              <p-sortIcon [field]="'anyMvp'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-speaker let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
+                <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
+                <span class="ml-2">{{speaker.displayName}}</span>
+              </a>
+            </td>
+            <td>{{speaker.company}}</td>
+            <td>
+              <a *ngIf="speaker.twitter" href="{{twitterUrlPrefix}}/{{speaker.twitter}}" class="text-primary">
+                <i class="fa fa-twitter"></i>{{speaker.twitter}}
+              </a>
+            </td>
+            <td>
+              <a *ngIf="speaker.gitHub" href="{{gitHubUrlPrefix}}/{{speaker.gitHub}}" class="text-dark">
+                <i class="fa fa-github"></i>{{speaker.gitHub}}
+              </a>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" class="img-speaker-degree-table" alt="java-champion"/>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" class="img-speaker-degree-table" alt="mvp"/>
+              <img *ngIf="speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" class="img-speaker-degree-table" alt="mvp-reconnect"/>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

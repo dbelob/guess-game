@@ -11,7 +11,7 @@
   margin-left: auto;
   max-width: 400px;
 }
-.container-dialog {
+.container-dialog, .container-information {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -21,6 +21,23 @@
 .img-home-logo {
   width: 100%;
   height: auto;
+}
+.img-event-type-logo {
+  height: 72px;
+}
+.img-event-type-logo-talk {
+  height: 30px;
+}
+.img-speaker-photo {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+.img-event-type-logo-list, .img-event-type-logo-table, .img-speaker-photo-table, .img-speaker-degree-table {
+  height: 24px;
+}
+.img-speaker-degree {
+  height: 30px;
 }
 .img-guess-logo {
   width: 48px;
@@ -40,7 +57,7 @@
 }
 
 @media (min-width: 576px) {
-  .container-dialog {
+  .container-dialog, .container-information {
     max-width: 540px;
   }
   .img-guess-logo {
@@ -62,7 +79,7 @@
 }
 
 @media (min-width: 768px) {
-  .container-dialog {
+  .container-dialog, .container-information {
     max-width: 720px;
   }
   .img-guess-logo {
@@ -87,6 +104,9 @@
   .container-dialog {
     max-width: 720px;
   }
+  .container-information {
+    max-width: 960px;
+  }
   .img-guess-logo {
     width: 82px;
     height: auto;
@@ -109,6 +129,9 @@
   .container-dialog {
     max-width: 720px;
   }
+  .container-information {
+    max-width: 1140px;
+  }
   .img-guess-logo {
     width: 100px;
     height: auto;
@@ -127,7 +150,19 @@
   }
 }
 
-.start-listbox.ui-listbox, .start-dropdown.ui-dropdown {
+@media (min-width: 1400px) {
+  .container-information {
+    max-width: 1150px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container-information {
+    max-width: 1300px;
+  }
+}
+
+.start-listbox.ui-listbox, .start-dropdown.ui-dropdown, .search-dropdown.ui-dropdown {
   width: 100%;
 }
 

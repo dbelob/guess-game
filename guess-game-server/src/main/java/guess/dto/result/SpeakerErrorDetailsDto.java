@@ -46,7 +46,6 @@ public class SpeakerErrorDetailsDto {
 
             Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    language,
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 
@@ -55,11 +54,11 @@ public class SpeakerErrorDetailsDto {
             List<String> yourAnswers = errorDetails.getYourAnswers().stream()
                     .map(q -> GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ?
                             LocalizationUtils.getSpeakerName(((SpeakerAnswer) q).getSpeaker(), language, speakerDuplicates) :
-                            ((SpeakerAnswer) q).getSpeaker().getFileName())
+                            ((SpeakerAnswer) q).getSpeaker().getPhotoFileName())
                     .collect(Collectors.toList());
 
             return new SpeakerErrorDetailsDto(
-                    questionSpeaker.getFileName(),
+                    questionSpeaker.getPhotoFileName(),
                     LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates),
                     yourAnswers);
         } else {

@@ -55,7 +55,6 @@ public class TalkErrorDetailsDto {
 
             Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    language,
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 
@@ -71,7 +70,7 @@ public class TalkErrorDetailsDto {
             List<SpeakerPairDto> questionSpeakerPairs = questionSpeakers.stream()
                     .map(s -> new SpeakerPairDto(
                             LocalizationUtils.getSpeakerName(s, language, speakerDuplicates),
-                            s.getFileName()))
+                            s.getPhotoFileName()))
                     .collect(Collectors.toList());
 
             List<SpeakerPairDto> yourAnswers = errorDetails.getYourAnswers().stream()
@@ -81,7 +80,7 @@ public class TalkErrorDetailsDto {
                                     null) :
                             new SpeakerPairDto(
                                     LocalizationUtils.getSpeakerName(((SpeakerAnswer) a).getSpeaker(), language, speakerDuplicates),
-                                    ((SpeakerAnswer) a).getSpeaker().getFileName()))
+                                    ((SpeakerAnswer) a).getSpeaker().getPhotoFileName()))
                     .collect(Collectors.toList());
 
             return new TalkErrorDetailsDto(

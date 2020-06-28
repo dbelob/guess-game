@@ -57,7 +57,6 @@ public class NamePhotosDto extends QuestionAnswersDto {
                 );
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 answerSpeakers.asList(),
-                language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
         String questionName = LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates);
@@ -66,6 +65,6 @@ public class NamePhotosDto extends QuestionAnswersDto {
                 answerSpeakers.map(Speaker::getId),
                 correctAnswerIds, yourAnswerIds,
                 questionName,
-                answerSpeakers.map(Speaker::getFileName));
+                answerSpeakers.map(Speaker::getPhotoFileName));
     }
 }

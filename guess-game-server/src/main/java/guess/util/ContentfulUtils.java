@@ -206,6 +206,7 @@ public class ContentfulUtils {
                                     extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
                                     extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
                             null,
+                            null,
                             extractLocaleItems(
                                     extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
                                     extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE))),
@@ -1215,7 +1216,8 @@ public class ContentfulUtils {
                 (a.getConference() == b.getConference()) &&
                 equals(a.getLogoFileName(), b.getLogoFileName()) &&
                 equals(a.getName(), b.getName()) &&
-                equals(a.getDescription(), b.getDescription()) &&
+                equals(a.getShortDescription(), b.getShortDescription()) &&
+                equals(a.getLongDescription(), b.getLongDescription()) &&
                 equals(a.getSiteLink(), b.getSiteLink()) &&
                 equals(a.getVkLink(), b.getVkLink()) &&
                 equals(a.getTwitterLink(), b.getTwitterLink()) &&
@@ -1247,7 +1249,7 @@ public class ContentfulUtils {
      */
     public static boolean needUpdate(Speaker a, Speaker b) {
         return !((a.getId() == b.getId()) &&
-                equals(a.getFileName(), b.getFileName()) &&
+                equals(a.getPhotoFileName(), b.getPhotoFileName()) &&
                 equals(a.getName(), b.getName()) &&
                 equals(a.getCompany(), b.getCompany()) &&
                 equals(a.getBio(), b.getBio()) &&

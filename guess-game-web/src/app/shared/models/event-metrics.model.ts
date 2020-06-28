@@ -1,7 +1,8 @@
 export class EventMetrics {
   constructor(
+    public id?: number,
     public name?: string,
-    public logoFileName?: string,
+    public eventTypeLogoFileName?: string,
     public startDate?: Date,
     public duration?: number,
     public talksQuantity?: number,

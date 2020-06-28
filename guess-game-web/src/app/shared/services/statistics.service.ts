@@ -72,18 +72,4 @@ export class StatisticsService {
         })
       );
   }
-
-  getEventTypes(isConferences: boolean, isMeetups: boolean): Observable<EventType[]> {
-    const params = new HttpParams()
-      .set('conferences', isConferences.toString())
-      .set('meetups', isMeetups.toString());
-
-    return this.http.get<EventType[]>(`${this.baseUrl}/event-types`, {params: params})
-      .pipe(
-        catchError((response: Response) => {
-          this.messageService.reportMessage(response);
-          throw response;
-        })
-      );
-  }
 }

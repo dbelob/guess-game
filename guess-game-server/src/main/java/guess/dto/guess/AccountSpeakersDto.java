@@ -81,7 +81,6 @@ public class AccountSpeakersDto extends QuestionAnswersDto {
                 );
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers.asList(),
-                language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
         Quadruple<String> names =
@@ -95,7 +94,7 @@ public class AccountSpeakersDto extends QuestionAnswersDto {
                 correctAnswerIds, yourAnswerIds,
                 questionSpeaker.getTwitter(),
                 questionSpeaker.getGitHub(),
-                speakers.map(Speaker::getFileName),
+                speakers.map(Speaker::getPhotoFileName),
                 names);
     }
 }

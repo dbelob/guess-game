@@ -1,0 +1,116 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'eventType.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'eventTypes'"></app-information-switcher>
+
+  <app-event-types-switcher [type]="'eventType'"></app-event-types-switcher>
+
+  <div class="m-1">
+    <div class="m-2">
+      <img *ngIf="eventTypeDetails.eventType?.logoFileName" class="align-middle img-event-type-logo"
+           src="{{eventsImageDirectory}}/{{eventTypeDetails.eventType.logoFileName}}" alt="logo"/>
+      <span class="h3 ml-2 align-middle">{{eventTypeDetails.eventType?.name}}</span>
+
+      <div *ngIf="eventTypeDetails.eventType?.siteLink || eventTypeDetails.eventType?.facebookLink || eventTypeDetails.eventType?.vkLink || eventTypeDetails.eventType?.twitterLink || eventTypeDetails.eventType?.youtubeLink || eventTypeDetails.eventType?.telegramLink" class="row mt-2">
+        <div *ngIf="eventTypeDetails.eventType?.siteLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.siteLink}}" class="text-dark">
+            <i class="fa fa-globe"></i><span> {{'common.siteLinkText' | translate}}</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.facebookLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.facebookLink}}" class="text-dark">
+            <i class="fa fa-facebook"></i><span> Facebook</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.vkLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.vkLink}}" class="text-dark">
+            <i class="fa fa-vk"></i><span> {{'common.vkLinkText' | translate}}</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.twitterLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.twitterLink}}" class="text-dark">
+            <i class="fa fa-twitter"></i><span> Twitter</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.youtubeLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.youtubeLink}}" class="text-dark">
+            <i class="fa fa-youtube"></i><span> YouTube</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.telegramLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.telegramLink}}" class="text-dark">
+            <i class="fa fa-telegram"></i><span> Telegram</span>
+          </a>
+        </div>
+      </div>
+
+      <div *ngIf="eventTypeDetails.eventType?.description" class="mt-3">
+        <markdown [data]='eventTypeDetails.eventType.description'></markdown>
+      </div>
+    </div>
+
+    <div *ngIf="isEventsListVisible()" class="m-2">
+      <h4>{{'events.table.title' | translate}}</h4>
+      <p-table [value]="eventTypeDetails.events" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+              {{'events.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'name'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'startDate'" pResizableColumn>
+              {{'events.table.startDateColumn' | translate}}
+              <p-sortIcon [field]="'startDate'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'endDate'" pResizableColumn>
+              {{'events.table.endDateColumn' | translate}}
+              <p-sortIcon [field]="'endDate'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'duration'" pResizableColumn>
+              {{'events.table.durationColumn' | translate}}
+              <p-sortIcon [field]="'duration'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'placeCity'" pResizableColumn>
+              {{'events.table.cityColumn' | translate}}
+              <p-sortIcon [field]="'placeCity'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'placeVenueAddress'" pResizableColumn>
+              {{'events.table.addressColumn' | translate}}
+              <p-sortIcon [field]="'placeVenueAddress'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-event let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
+                <span class="ml-2">{{event.name}}</span>
+              </a>
+            </td>
+            <td class="text-center">{{event.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+            <td class="text-center">{{event.endDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+            <td class="text-center">{{event.duration | number:'1.0-0':translateService.currentLang}}</td>
+            <td>{{event.placeCity}}</td>
+            <td>{{event.placeVenueAddress}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

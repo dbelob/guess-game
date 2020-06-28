@@ -1,0 +1,99 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'speakers.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'speakers'"></app-information-switcher>
+
+  <app-speakers-switcher [type]="'list'"></app-speakers-switcher>
+
+  <div class="m-1">
+    <div>
+      <button class="btn btn-link font-weight-bold" *ngFor="let enLetter of enLetters"
+              (click)="changeLetter(enLetter)"
+              [class.text-dark]="isCurrentLetter(enLetter)" [class.font-weight-bold]="isCurrentLetter(enLetter)"
+              [disabled]="isCurrentLetter(enLetter)">
+        {{enLetter}}
+      </button>
+    </div>
+    <div *ngIf="isRuLettersVisible()">
+      <button class="btn btn-link font-weight-bold" *ngFor="let ruLetter of ruLetters"
+              (click)="changeLetter(ruLetter)"
+              [class.text-dark]="isCurrentLetter(ruLetter)" [class.font-weight-bold]="isCurrentLetter(ruLetter)"
+              [disabled]="isCurrentLetter(ruLetter)">
+        {{ruLetter}}
+      </button>
+    </div>
+
+    <div *ngIf="!isSpeakersListVisible()" class="alert text-center m-2">
+      {{'speakers.noSpeakersFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isSpeakersListVisible()" class="m-2">
+      <p-table [value]="speakers" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.table.nameColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.table.companyColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.table.twitterColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.table.gitHubColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.table.javaChampionColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'speakers.table.mvpColumn' | translate}}
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-speaker let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">
+                <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" class="img-speaker-photo-table" alt="photo"/>
+                <span class="ml-2">{{speaker.displayName}}</span>
+              </a>
+            </td>
+            <td>{{speaker.company}}</td>
+            <td>
+              <a *ngIf="speaker.twitter" href="{{twitterUrlPrefix}}/{{speaker.twitter}}" class="text-primary">
+                <i class="fa fa-twitter"></i>{{speaker.twitter}}
+              </a>
+            </td>
+            <td>
+              <a *ngIf="speaker.gitHub" href="{{gitHubUrlPrefix}}/{{speaker.gitHub}}" class="text-dark">
+                <i class="fa fa-github"></i>{{speaker.gitHub}}
+              </a>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.javaChampion" src="{{degreesImageDirectory}}/java-champion.png" class="img-speaker-degree-table" alt="java-champion"/>
+            </td>
+            <td class="text-center">
+              <img *ngIf="speaker.mvp" src="{{degreesImageDirectory}}/mvp.png" class="img-speaker-degree-table" alt="mvp"/>
+              <img *ngIf="speaker.mvpReconnect" src="{{degreesImageDirectory}}/mvp-reconnect.png" class="img-speaker-degree-table" alt="mvp-reconnect"/>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

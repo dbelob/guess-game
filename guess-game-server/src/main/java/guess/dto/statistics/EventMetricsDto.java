@@ -13,8 +13,9 @@ import java.util.stream.Collectors;
  * Event metrics DTO.
  */
 public class EventMetricsDto {
+    private final long id;
     private final String name;
-    private final String logoFileName;
+    private final String eventTypeLogoFileName;
     private final LocalDate startDate;
     private final long duration;
     private final long talksQuantity;
@@ -22,10 +23,11 @@ public class EventMetricsDto {
     private final long javaChampionsQuantity;
     private final long mvpsQuantity;
 
-    public EventMetricsDto(String name, String logoFileName, LocalDate startDate, long duration, long talksQuantity,
+    public EventMetricsDto(long id, String name, String eventTypeLogoFileName, LocalDate startDate, long duration, long talksQuantity,
                            long speakersQuantity, long javaChampionsQuantity, long mvpsQuantity) {
+        this.id = id;
         this.name = name;
-        this.logoFileName = logoFileName;
+        this.eventTypeLogoFileName = eventTypeLogoFileName;
         this.startDate = startDate;
         this.duration = duration;
         this.talksQuantity = talksQuantity;
@@ -34,12 +36,16 @@ public class EventMetricsDto {
         this.mvpsQuantity = mvpsQuantity;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
 
-    public String getLogoFileName() {
-        return logoFileName;
+    public String getEventTypeLogoFileName() {
+        return eventTypeLogoFileName;
     }
 
     public LocalDate getStartDate() {
@@ -70,6 +76,7 @@ public class EventMetricsDto {
         Event event = eventMetrics.getEvent();
 
         return new EventMetricsDto(
+                event.getId(),
                 LocalizationUtils.getString(event.getName(), language),
                 (event.getEventType() != null) ? event.getEventType().getLogoFileName() : null,
                 eventMetrics.getStartDate(),

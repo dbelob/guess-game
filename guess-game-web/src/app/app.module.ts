@@ -7,33 +7,52 @@ import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
+import { EventTypesModule } from './modules/information/event-types/event-types.module';
+import { EventsModule } from './modules/information/events/events.module';
 import { HomeModule } from './modules/home/home.module';
-import { StartModule } from './modules/start/start.module';
-import { GuessModule } from './modules/guess/guess.module';
+import { InformationModule } from './modules/information/information.module';
+import { GuessModule } from './modules/game/guess/guess.module';
 import { MessageModule } from './modules/message/message.module';
-import { ResultModule } from './modules/result/result.module';
-import { StatisticsModule } from './modules/statistics/statistics.module';
+import { ResultModule } from './modules/game/result/result.module';
+import { StartModule } from './modules/game/start/start.module';
+import { SpeakersModule } from './modules/information/speakers/speakers.module';
+import { StatisticsModule } from './modules/information/statistics/statistics.module';
+import { TalksModule } from './modules/information/talks/talks.module';
 import { UnknownModule } from './modules/unknown/unknown.module';
 import { HomeComponent } from './modules/home/home.component';
-import { StartComponent } from './modules/start/start.component';
-import { ResultComponent } from './modules/result/result.component';
-import { GuessNameByPhotoComponent } from './modules/guess/guess-name-by-photo.component';
-import { GuessPhotoByNameComponent } from './modules/guess/guess-photo-by-name.component';
-import { GuessTalkBySpeakerComponent } from './modules/guess/guess-talk-by-speaker.component';
-import { GuessSpeakerByTalkComponent } from './modules/guess/guess-speaker-by-talk.component';
-import { GuessAccountBySpeakerComponent } from './modules/guess/guess-account-by-speaker.component';
-import { GuessSpeakerByAccountComponent } from './modules/guess/guess-speaker-by-account.component';
-import { CancelGameComponent } from './modules/guess/cancel-game.component';
+import { StartComponent } from './modules/game/start/start.component';
+import { ResultComponent } from './modules/game/result/result.component';
+import { GuessNameByPhotoComponent } from './modules/game/guess/guess-name-by-photo.component';
+import { GuessPhotoByNameComponent } from './modules/game/guess/guess-photo-by-name.component';
+import { GuessTalkBySpeakerComponent } from './modules/game/guess/guess-talk-by-speaker.component';
+import { GuessSpeakerByTalkComponent } from './modules/game/guess/guess-speaker-by-talk.component';
+import { GuessAccountBySpeakerComponent } from './modules/game/guess/guess-account-by-speaker.component';
+import { GuessSpeakerByAccountComponent } from './modules/game/guess/guess-speaker-by-account.component';
+import { CancelGameComponent } from './modules/game/guess/cancel-game.component';
 import { NotFoundComponent } from './modules/unknown/not-found.component';
-import { EventTypeStatisticsComponent } from './modules/statistics/event-type-statistics.component';
-import { EventStatisticsComponent } from './modules/statistics/event-statistics.component';
-import { SpeakerStatisticsComponent } from './modules/statistics/speaker-statistics.component';
+import { EventTypeComponent } from './modules/information/event-types/event-type.component';
+import { EventTypesSearchComponent } from './modules/information/event-types/event-types-search.component';
+import { EventComponent } from './modules/information/events/event.component';
+import { EventsSearchComponent } from './modules/information/events/events-search.component';
+import { TalkComponent } from './modules/information/talks/talk.component';
+import { TalksSearchComponent } from './modules/information/talks/talks-search.component';
+import { SpeakerComponent } from './modules/information/speakers/speaker.component';
+import { SpeakersListComponent } from './modules/information/speakers/speakers-list.component';
+import { SpeakersSearchComponent } from './modules/information/speakers/speakers-search.component';
+import { EventTypeStatisticsComponent } from './modules/information/statistics/event-type-statistics.component';
+import { EventStatisticsComponent } from './modules/information/statistics/event-statistics.component';
+import { SpeakerStatisticsComponent } from './modules/information/statistics/speaker-statistics.component';
 import { AnswerService } from './shared/services/answer.service';
+import { EventService } from './shared/services/event.service';
+import { EventTypeService } from './shared/services/event-type.service';
 import { QuestionService } from './shared/services/question.service';
 import { StateService } from './shared/services/state.service';
+import { SpeakerService } from './shared/services/speaker.service';
 import { StatisticsService } from './shared/services/statistics.service';
+import { TalkService } from './shared/services/talk.service';
 import { StateGuard } from './shared/guards/state.guard';
 
 const routes: Routes = [
@@ -47,10 +66,24 @@ const routes: Routes = [
   {path: 'guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [StateGuard]},
   {path: 'result', component: ResultComponent, canActivate: [StateGuard]},
   {path: 'cancel', component: CancelGameComponent},
+  {path: 'information/event-type/:id', component: EventTypeComponent},
+  {path: 'information/event-types/search', component: EventTypesSearchComponent},
+  {path: 'information/event/:id', component: EventComponent},
+  {path: 'information/events/search', component: EventsSearchComponent},
+  {path: 'information/talk/:id', component: TalkComponent},
+  {path: 'information/talks/search', component: TalksSearchComponent},
+  {path: 'information/speaker/:id', component: SpeakerComponent},
+  {path: 'information/speakers/list', component: SpeakersListComponent},
+  {path: 'information/speakers/search', component: SpeakersSearchComponent},
   {path: 'information/statistics/event-types', component: EventTypeStatisticsComponent},
   {path: 'information/statistics/events', component: EventStatisticsComponent},
   {path: 'information/statistics/speakers', component: SpeakerStatisticsComponent},
-  {path: 'information', redirectTo: 'information/statistics/event-types'},
+  {path: 'information/event-types', redirectTo: 'information/event-types/search'},
+  {path: 'information/events', redirectTo: 'information/events/search'},
+  {path: 'information/talks', redirectTo: 'information/talks/search'},
+  {path: 'information/speakers', redirectTo: 'information/speakers/list'},
+  {path: 'information/statistics', redirectTo: 'information/statistics/event-types'},
+  {path: 'information', redirectTo: 'information/event-types/search'},
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '**', component: NotFoundComponent}
 ];
@@ -71,6 +104,9 @@ registerLocaleData(localeRu, 'ru');
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MarkdownModule.forRoot({
+      loader: HttpClient
+    }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -78,15 +114,30 @@ registerLocaleData(localeRu, 'ru');
         deps: [HttpClient]
       }
     }),
+    EventsModule,
+    EventTypesModule,
     HomeModule,
+    InformationModule,
     GuessModule,
     MessageModule,
     ResultModule,
     StartModule,
+    SpeakersModule,
     StatisticsModule,
+    TalksModule,
     UnknownModule
   ],
-  providers: [AnswerService, QuestionService, StateService, StatisticsService, StateGuard],
+  providers: [
+    AnswerService,
+    EventService,
+    EventTypeService,
+    QuestionService,
+    StateService,
+    SpeakerService,
+    StatisticsService,
+    TalkService,
+    StateGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

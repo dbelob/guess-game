@@ -53,7 +53,6 @@ public class AccountErrorDetailsDto {
 
             Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    language,
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 
@@ -68,7 +67,7 @@ public class AccountErrorDetailsDto {
                             new AccountAnswerDto(
                                     new SpeakerPairDto(
                                             LocalizationUtils.getSpeakerName(((SpeakerAnswer) a).getSpeaker(), language, speakerDuplicates),
-                                            ((SpeakerAnswer) a).getSpeaker().getFileName()),
+                                            ((SpeakerAnswer) a).getSpeaker().getPhotoFileName()),
                                     null,
                                     null))
                     .collect(Collectors.toList());
@@ -76,7 +75,7 @@ public class AccountErrorDetailsDto {
             return new AccountErrorDetailsDto(
                     new SpeakerPairDto(
                             LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates),
-                            questionSpeaker.getFileName()),
+                            questionSpeaker.getPhotoFileName()),
                     questionSpeaker.getTwitter(),
                     questionSpeaker.getGitHub(),
                     yourAnswers);

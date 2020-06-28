@@ -1,0 +1,104 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'events.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'events'"></app-information-switcher>
+
+  <app-events-switcher [type]="'search'"></app-events-switcher>
+
+  <div class="m-1">
+    <form role="form" class="m-2">
+      <div class="form-group row justify-content-center">
+        <div class="col-auto">
+          <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
+                      [(ngModel)]="isConferences" binary="true"
+                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+        </div>
+        <div class="col-auto">
+          <p-checkbox name="group1" value="meetups" label="{{'common.checkbox.meetupsLabel' | translate}}"
+                      [(ngModel)]="isMeetups" binary="true"
+                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="conference" class="col-auto text-right">{{'common.list.eventTypeLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
+                      placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onEventTypeChange($event.value)" name="conference">
+            <ng-template let-eventType pTemplate="item">
+              <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
+              <span class="ml-2">{{eventType.value.name}}</span>
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
+    </form>
+
+    <div *ngIf="isNoEventsFoundVisible()" class="alert text-center m-2">
+      {{'events.noEventsFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isEventsListVisible()" class="m-2">
+      <p-table [value]="events" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+              {{'events.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'name'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'startDate'" pResizableColumn>
+              {{'events.table.startDateColumn' | translate}}
+              <p-sortIcon [field]="'startDate'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'endDate'" pResizableColumn>
+              {{'events.table.endDateColumn' | translate}}
+              <p-sortIcon [field]="'endDate'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'duration'" pResizableColumn>
+              {{'events.table.durationColumn' | translate}}
+              <p-sortIcon [field]="'duration'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'placeCity'" pResizableColumn>
+              {{'events.table.cityColumn' | translate}}
+              <p-sortIcon [field]="'placeCity'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'placeVenueAddress'" pResizableColumn>
+              {{'events.table.addressColumn' | translate}}
+              <p-sortIcon [field]="'placeVenueAddress'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-event let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
+                <span class="ml-2">{{event.name}}</span>
+              </a>
+            </td>
+            <td class="text-center">{{event.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+            <td class="text-center">{{event.endDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+            <td class="text-center">{{event.duration | number:'1.0-0':translateService.currentLang}}</td>
+            <td>{{event.placeCity}}</td>
+            <td>{{event.placeVenueAddress}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

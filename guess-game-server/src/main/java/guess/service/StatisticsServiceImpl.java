@@ -267,11 +267,4 @@ public class StatisticsServiceImpl implements StatisticsService {
                 .filter(EventType::isEventTypeConference)
                 .collect(Collectors.toList());
     }
-
-    @Override
-    public List<EventType> getEventTypes(boolean isConferences, boolean isMeetups) {
-        return eventTypeDao.getEventTypes().stream()
-                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())))
-                .collect(Collectors.toList());
-    }
 }

@@ -7,7 +7,18 @@ export class Event {
     public endDate?: Date,
     public siteLink?: string,
     public youtubeLink?: string,
-    public displayName?: string
+    public placeCity?: string,
+    public placeVenueAddress?: string,
+    public mapCoordinates?: string,
+    public eventTypeLogoFileName?: string,
+    public duration?: number,
+    public displayName?: string,
+    public displayPlace?: string,
+    public vkLink?: string,
+    public twitterLink?: string,
+    public facebookLink?: string,
+    public telegramLink?: string,
+    public description?: string
   ) {
   }
 }

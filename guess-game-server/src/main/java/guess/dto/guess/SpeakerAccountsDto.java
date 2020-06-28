@@ -80,7 +80,7 @@ public class SpeakerAccountsDto extends QuestionAnswersDto {
                 correctAnswerIds, yourAnswerIds,
                 new SpeakerPairDto(
                         LocalizationUtils.getString(questionSpeaker.getName(), language),
-                        questionSpeaker.getFileName()),
+                        questionSpeaker.getPhotoFileName()),
                 speakers.map(Speaker::getTwitter),
                 speakers.map(Speaker::getGitHub));
     }

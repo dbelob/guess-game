@@ -13,8 +13,9 @@ import java.util.stream.Collectors;
  * Speaker metrics DTO.
  */
 public class SpeakerMetricsDto {
+    private final long id;
     private final String name;
-    private final String fileName;
+    private final String photoFileName;
     private final boolean javaChampion;
     private final boolean mvp;
     private final boolean mvpReconnect;
@@ -25,15 +26,16 @@ public class SpeakerMetricsDto {
     private final long javaChampionsQuantity;
     private final long mvpsQuantity;
 
-    public SpeakerMetricsDto(String name, String fileName, boolean javaChampion, boolean mvp, boolean mvpReconnect,
+    public SpeakerMetricsDto(long id, String name, String photoFileName, boolean javaChampion, boolean mvp, boolean mvpReconnect,
                              boolean anyMvp, long talksQuantity, long eventsQuantity, long eventTypesQuantity,
                              long javaChampionsQuantity, long mvpsQuantity) {
+        this.id = id;
         this.name = name;
-        this.fileName = fileName;
+        this.photoFileName = photoFileName;
         this.javaChampion = javaChampion;
         this.mvp = mvp;
-        this.anyMvp = anyMvp;
         this.mvpReconnect = mvpReconnect;
+        this.anyMvp = anyMvp;
         this.talksQuantity = talksQuantity;
         this.eventsQuantity = eventsQuantity;
         this.eventTypesQuantity = eventTypesQuantity;
@@ -41,12 +43,16 @@ public class SpeakerMetricsDto {
         this.mvpsQuantity = mvpsQuantity;
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getPhotoFileName() {
+        return photoFileName;
     }
 
     public boolean isJavaChampion() {
@@ -87,11 +93,12 @@ public class SpeakerMetricsDto {
 
     public static SpeakerMetricsDto convertToDto(SpeakerMetrics speakerMetrics, Language language, Set<Speaker> speakerDuplicates) {
         Speaker speaker = speakerMetrics.getSpeaker();
-        String name = LocalizationUtils.getSpeakerName(speaker, language, speakerDuplicates);
+        String name = LocalizationUtils.getSpeakerNameWithLastNameFirst(speaker, language, speakerDuplicates);
 
         return new SpeakerMetricsDto(
+                speaker.getId(),
                 name,
-                speaker.getFileName(),
+                speaker.getPhotoFileName(),
                 speaker.isJavaChampion(),
                 speaker.isMvp(),
                 speaker.isMvpReconnect(),
@@ -109,7 +116,6 @@ public class SpeakerMetricsDto {
                 .collect(Collectors.toList());
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers,
-                language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
 

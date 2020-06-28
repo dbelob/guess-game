@@ -1,0 +1,119 @@
+<div class="container-information p-2">
+  <h3 class="bg-secondary p-1 text-white text-center rounded">{{'talks.title' | translate}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <button class="btn btn-link text-muted" routerLink="/home"><small>{{'common.menuLinkText' | translate}}</small></button>
+    </div>
+    <app-language-switcher (onReload)="onLanguageChange()" class="col-auto"></app-language-switcher>
+  </div>
+
+  <app-information-switcher [type]="'talks'"></app-information-switcher>
+
+  <app-talks-switcher [type]="'search'"></app-talks-switcher>
+
+  <div class="m-1">
+    <form role="form" class="m-2">
+      <div class="form-group row justify-content-center">
+        <label for="eventType" class="col-sm-2">{{'common.list.eventTypeLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="eventType"
+                      placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onEventTypeChange($event.value)" name="eventType" styleClass="search-dropdown">
+            <ng-template let-eventType pTemplate="item">
+              <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
+              <span class="ml-2">{{eventType.value.name}}</span>
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <label for="event" class="col-sm-2">{{'common.list.eventLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <p-dropdown [options]="eventSelectItems" [(ngModel)]="selectedEvent" id="event"
+                      placeholder="{{'common.list.eventPlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onEventChange($event.value)" name="event" styleClass="search-dropdown">
+            <ng-template let-event pTemplate="selectedItem">
+              {{event.value.name}}
+            </ng-template>
+            <ng-template let-event pTemplate="item">
+              {{event.value.displayName}}
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="talkName" class="col-sm-2">{{'talks.search.nameLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="talkName" pInputText class="form-control" [(ngModel)]="talkName" name="talkName" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+        <label for="speakerName" class="col-sm-2">{{'talks.search.speakerLabel' | translate}}</label>
+        <div class="col-sm-4">
+          <input type="text" id="speakerName" pInputText class="form-control" [(ngModel)]="speakerName" name="speakerName" (ngModelChange)="onFilterChange($event)"/>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary m-1" (click)="search()" [class.btn-secondary]="isSearchDisabled()" [disabled]="isSearchDisabled()">
+          {{'common.searchButtonText' | translate}}
+        </button>
+        <button class="btn btn-primary m-1" (click)="clear()">
+          {{'common.clearButtonText' | translate}}
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="isNoTalksFoundVisible()" class="alert text-center m-2">
+      {{'talks.noTalksFoundText' | translate}}
+    </div>
+
+    <div *ngIf="isTalksListVisible()" class="ml-2 mr-2 mb-2 mt-3">
+      <p-table [value]="talks" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="10" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'event.name'" pResizableColumn>
+              {{'talks.table.eventColumn' | translate}}
+              <p-sortIcon [field]="'event.name'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'talkDate'" pResizableColumn>
+              {{'talks.table.talkDateColumn' | translate}}
+              <p-sortIcon [field]="'talkDate'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+              {{'talks.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'name'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'speakersString'" pResizableColumn>
+              {{'talks.table.speakersColumn' | translate}}
+              <p-sortIcon [field]="'speakersString'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-talk let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>
+              <a [routerLink]="['/information', 'event', talk.event?.id]" class="text-dark">
+                <img src="{{eventsImageDirectory}}/{{talk.eventTypeLogoFileName}}" class="img-event-type-logo-table" alt="logo"/>
+                <span class="ml-2">{{talk.event?.name}}</span>
+              </a>
+            </td>
+            <td class="text-center">{{talk.talkDate | date:"shortDate":undefined:translateService.currentLang}}</td>
+            <td>
+              <a [routerLink]="['/information', 'talk', talk.id]" class="text-dark">{{talk.name}}</a>
+            </td>
+            <td>
+              <span *ngFor="let speaker of talk.speakers; let i = index">
+                <span *ngIf="i > 0">, </span><a [routerLink]="['/information', 'speaker', speaker.id]" class="text-dark">{{speaker.displayName}}</a>
+              </span>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

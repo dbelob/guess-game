@@ -5,12 +5,10 @@ import guess.domain.source.EventType;
 import guess.domain.statistics.EventStatistics;
 import guess.domain.statistics.EventTypeStatistics;
 import guess.domain.statistics.SpeakerStatistics;
-import guess.dto.start.EventTypeBriefDto;
-import guess.dto.start.EventTypeDto;
+import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
 import guess.service.LocaleService;
 import guess.service.StatisticsService;
-import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -80,27 +78,13 @@ public class StatisticsController {
 
     @GetMapping("/conferences")
     @ResponseBody
-    public List<EventTypeBriefDto> getConferences(HttpSession httpSession) {
+    public List<EventTypeSuperBriefDto> getConferences(HttpSession httpSession) {
         List<EventType> eventTypes = statisticsService.getConferences();
         Language language = localeService.getLanguage(httpSession);
-        List<EventTypeBriefDto> eventTypeBriefDtoList = EventTypeBriefDto.convertToBriefDto(eventTypes, language);
+        List<EventTypeSuperBriefDto> eventTypeSuperBriefDtoList = EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
 
-        eventTypeBriefDtoList.sort(Comparator.comparing(EventTypeBriefDto::getName, String.CASE_INSENSITIVE_ORDER));
+        eventTypeSuperBriefDtoList.sort(Comparator.comparing(EventTypeSuperBriefDto::getName, String.CASE_INSENSITIVE_ORDER));
 
-        return eventTypeBriefDtoList;
-    }
-
-    @GetMapping("/event-types")
-    @ResponseBody
-    public List<EventTypeBriefDto> getEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
-                                                 HttpSession httpSession) {
-        List<EventType> eventTypes = statisticsService.getEventTypes(conferences, meetups);
-        Language language = localeService.getLanguage(httpSession);
-        Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
-        Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);
-
-        eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByName));
-
-        return EventTypeDto.convertToBriefDto(eventTypes, language);
+        return eventTypeSuperBriefDtoList;
     }
 }

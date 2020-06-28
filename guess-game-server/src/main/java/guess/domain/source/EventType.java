@@ -13,7 +13,8 @@ public class EventType {
     private long id;
     private Conference conference;
     private List<LocaleItem> name;
-    private List<LocaleItem> description;
+    private List<LocaleItem> shortDescription;
+    private List<LocaleItem> longDescription;
 
     private List<LocaleItem> siteLink;
     private String vkLink;
@@ -28,13 +29,14 @@ public class EventType {
     public EventType() {
     }
 
-    public EventType(long id, Conference conference, List<LocaleItem> name, String logoFileName, List<LocaleItem> description, List<LocaleItem> siteLink,
-                     String vkLink, String twitterLink, String facebookLink, String youtubeLink, String telegramLink,
-                     List<Event> events, boolean inactive) {
+    public EventType(long id, Conference conference, List<LocaleItem> name, String logoFileName, List<LocaleItem> shortDescription,
+                     List<LocaleItem> longDescription, List<LocaleItem> siteLink, String vkLink, String twitterLink,
+                     String facebookLink, String youtubeLink, String telegramLink, List<Event> events, boolean inactive) {
         this.id = id;
         this.conference = conference;
         this.name = name;
-        this.description = description;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
         this.siteLink = siteLink;
         this.vkLink = vkLink;
         this.twitterLink = twitterLink;
@@ -70,12 +72,20 @@ public class EventType {
         this.name = name;
     }
 
-    public List<LocaleItem> getDescription() {
-        return description;
+    public List<LocaleItem> getShortDescription() {
+        return shortDescription;
     }
 
-    public void setDescription(List<LocaleItem> description) {
-        this.description = description;
+    public void setShortDescription(List<LocaleItem> shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public List<LocaleItem> getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(List<LocaleItem> longDescription) {
+        this.longDescription = longDescription;
     }
 
     public List<LocaleItem> getSiteLink() {

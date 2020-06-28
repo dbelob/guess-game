@@ -75,7 +75,6 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
                 );
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers.asList(),
-                language,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
         Quadruple<String> names =
@@ -87,7 +86,7 @@ public class TalkSpeakersDto extends QuestionAnswersDto {
                 speakers.map(Speaker::getId),
                 correctAnswerIds, yourAnswerIds,
                 LocalizationUtils.getString(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language),
-                speakers.map(Speaker::getFileName),
+                speakers.map(Speaker::getPhotoFileName),
                 names);
     }
 }

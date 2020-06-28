@@ -207,7 +207,6 @@ public class YamlUtils {
         for (Language language : Language.values()) {
             speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    language,
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> {
                         // Without company
@@ -224,7 +223,6 @@ public class YamlUtils {
         for (Language language : Language.values()) {
             speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    language,
                     s -> LocalizationUtils.getSpeakerNameWithCompany(s, language),
                     s -> true));
         }
@@ -274,8 +272,8 @@ public class YamlUtils {
 
         List<PropertyMatcher> propertyMatchers = List.of(
                 new PropertyMatcher(EventType.class,
-                        List.of("id", "conference", "logoFileName", "name", "description", "siteLink", "vkLink",
-                                "twitterLink", "facebookLink", "youtubeLink", "telegramLink")),
+                        List.of("id", "conference", "logoFileName", "name", "shortDescription", "longDescription",
+                                "siteLink", "vkLink", "twitterLink", "facebookLink", "youtubeLink", "telegramLink")),
                 new PropertyMatcher(Place.class,
                         List.of("id", "city", "venueAddress", "mapCoordinates")),
                 new PropertyMatcher(Event.class,
@@ -285,8 +283,8 @@ public class YamlUtils {
                         List.of("id", "name", "shortDescription", "longDescription", "talkDay", "trackTime", "track",
                                 "language", "presentationLinks", "videoLinks", "speakerIds")),
                 new PropertyMatcher(Speaker.class,
-                        List.of("id", "fileName", "name", "company", "bio", "twitter", "gitHub", "javaChampion", "mvp",
-                                "mvpReconnect")),
+                        List.of("id", "photoFileName", "name", "company", "bio", "twitter", "gitHub", "javaChampion",
+                                "mvp", "mvpReconnect")),
                 new PropertyMatcher(LocaleItem.class,
                         List.of("language", "text"))
         );

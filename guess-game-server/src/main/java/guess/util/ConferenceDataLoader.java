@@ -68,6 +68,7 @@ public class ConferenceDataLoader {
                     } else {
                         // Event type exists
                         et.setId(resourceEventType.getId());
+                        et.setShortDescription(resourceEventType.getShortDescription());
                         et.setLogoFileName(resourceEventType.getLogoFileName());
 
                         if (ContentfulUtils.needUpdate(resourceEventType, et)) {
@@ -226,21 +227,21 @@ public class ConferenceDataLoader {
             if (resourceSpeaker == null) {
                 // Speaker not exists
                 long id = speakerId.incrementAndGet();
-                String sourceUrl = s.getFileName();
+                String sourceUrl = s.getPhotoFileName();
                 String destinationFileName = String.format("%04d.jpg", id);
 
                 s.setId(id);
 
                 urlFilenamesToAppend.add(new UrlFilename(sourceUrl, destinationFileName));
-                s.setFileName(destinationFileName);
+                s.setPhotoFileName(destinationFileName);
 
                 speakersToAppend.add(s);
             } else {
                 // Speaker exists
                 s.setId(resourceSpeaker.getId());
-                String sourceUrl = s.getFileName();
-                String destinationFileName = resourceSpeaker.getFileName();
-                s.setFileName(destinationFileName);
+                String sourceUrl = s.getPhotoFileName();
+                String destinationFileName = resourceSpeaker.getPhotoFileName();
+                s.setPhotoFileName(destinationFileName);
 
                 if ((resourceSpeaker.getTwitter() != null) && !resourceSpeaker.getTwitter().isEmpty() &&
                         ((s.getTwitter() == null) || s.getTwitter().isEmpty())) {
@@ -873,7 +874,8 @@ public class ConferenceDataLoader {
 //                Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2017, 6, 2), "2017spb");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2017, 6, 4), "2017spb");
-//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2017, 10, 20), "2017DevOops");
+//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2017, 10, 20), "2017DevOops",
+//                Map.of(new NameCompany("Ray Тsang", "Google"), 377L));
 //        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2017, 10, 21), "2017smartdata");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2017, 11, 3), "2017Joker");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2017, 11, 11), "2017msk",
