@@ -2717,7 +2717,7 @@ speakers:
       - {language: ru, text: "Сергей Владимиров"}
     company:
       - {language: en, text: "NSPK JSC"}
-      - {language: ru, text: "АО «НСПК»"}
+      - {language: ru, text: "Мир Plat.Form (АО НСПК)"}
     bio:
       - {language: en, text: "Designed and developed high-performance systems in NetCracker, Odnoklassniki (mail.ru), Sberbank,\
             \ lately at NSPK JST (MIR PS operator). Engaged in systems architecture, backend (Java), and even in frontend\
@@ -9236,14 +9236,16 @@ speakers:
     company:
       - {language: en, text: "JUG Ru Group"}
     bio:
-      - {language: en, text: "Vsevolod has more than 10 years in IT industry. He tried his hands at different roles and directions.\
-            \ He worked with automated testing, fullstack development in different languages. Some time ago he lived in California\
-            \ and worked under contract at Google. Managed to work with various clients from financial sector. Worked at NEO\
-            \ SPCC startup where he was developing on Go."}
-      - {language: ru, text: "Более 10 лет в ИТ. Попробовал себя в разных ролях и направлениях. Занимался автоматизированн\
-            ым тестированием, фулстэк разработкой на различных языках. Какое-то время жил в Калифорнии и работал по контра\
-            кту в Google. Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где за\
-            нимался разработкой на Go."}
+      - language: en
+        text: "Vsevolod has more than 10 years in IT industry.\nHe tried his hands at different roles and directions. He worked\
+            \ with automated testing, fullstack development in different languages. Some time ago he lived in California and\
+            \ worked under contract at Google. Managed to work with various clients from financial sector. Worked at NEO SPCC\
+            \ startup where he was developing on Go."
+      - language: ru
+        text: "Более 10 лет в ИТ.\nПопробовал себя в разных ролях и направлениях. Занимался автоматизированным тестировани\
+            ем, фулстэк разработкой на различных языках. Какое-то время жил в Калифорнии и работал по контракту в Google.\
+            \ Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где занимался разр\
+            аботкой на Go."
     twitter: brekelov
   - id: 619
     photoFileName: 0619.jpg
@@ -15678,9 +15680,9 @@ speakers:
     bio:
       - language: en
         text: "Andrey graduated from SPbU \"Mathematics and Mechanics\" faculty. He was developing a graphical stack of JDK\
-            \ libraries (AWT/Swing/JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in QuickOffice,\
-            \ was responsible for the functionality QuickPoint component, worked as a manager of load testing group in NetCracker.\n\
-            \nCurrently, Andrey is the production department lead at JUG Ru Group."
+            \ libraries (AWT / Swing / JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in\
+            \ QuickOffice, was responsible for the functionality QuickPoint component, worked as a manager of load testing\
+            \ group in NetCracker.\n\nCurrently, Andrey is the production department lead at JUG Ru Group."
       - language: ru
         text: "Закончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
             \ Oracle. Руководил группой разработки в компании QuickOffice, отвечал за функциональность компонента QuickPoint.\
@@ -18728,7 +18730,7 @@ speakers:
       - {language: en, text: "Aleksandr Utemov"}
       - {language: ru, text: "Александр Утёмов"}
     company:
-      - {language: en, text: "Мир Plat.Form"}
+      - {language: en, text: "Мир Plat.Form (АО НСПК)"}
     bio:
       - {language: en, text: "Работает в банковской сфере с 2001 года. Занимается тестированием ПО и программированием, в\
             \ том числе на весьма необычных языках: COBOL, TAL и др. С 2015 года перешел в компанию НСПК, где принял участ\
@@ -18944,3 +18946,14 @@ speakers:
             \ Distributed Computing. He worked in the past with Ecole des Mines de Paris, CEA Saclay, HP Labs in Palo Alto,\
             \ and MIT. He has been elected ACM fellow and professor of the College de France. He was awarded a Senior ERC\
             \ Grant and a Google Focused Award."}
+  - id: 1325
+    photoFileName: 1325.jpg
+    name:
+      - {language: en, text: "Nikita Solovev"}
+      - {language: ru, text: "Никита Соловьев"}
+    company:
+      - {language: en, text: Luxoft}
+    bio:
+      - {language: en, text: "Team Lead Java в компании Luxoft, специализируется на разработке Java-решений вот уже более\
+            \ 5 лет, в последнее время участвует в разработке банковских проектов, работал как фулстек-фрилансер, периодич\
+            ески занимается DevOps-практиками на своих проектах."}
