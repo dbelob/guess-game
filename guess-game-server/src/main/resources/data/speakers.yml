@@ -15678,9 +15678,9 @@ speakers:
     bio:
       - language: en
         text: "Andrey graduated from SPbU \"Mathematics and Mechanics\" faculty. He was developing a graphical stack of JDK\
-            \ libraries (AWT / Swing / JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in\
-            \ QuickOffice, was responsible for the functionality QuickPoint component, worked as a manager of load testing\
-            \ group in NetCracker.\n\nCurrently, Andrey is the production department lead at JUG Ru Group."
+            \ libraries (AWT/Swing/JavaFX) for few years in Sun and Oracle. Andrey supervised the development team in QuickOffice,\
+            \ was responsible for the functionality QuickPoint component, worked as a manager of load testing group in NetCracker.\n\
+            \nCurrently, Andrey is the production department lead at JUG Ru Group."
       - language: ru
         text: "Закончил матмех СПбГУ. Несколько лет разрабатывал графический стек библиотек JDK (AWT/Swing/JavaFX) в Sun и\
             \ Oracle. Руководил группой разработки в компании QuickOffice, отвечал за функциональность компонента QuickPoint.\
