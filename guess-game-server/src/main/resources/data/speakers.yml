@@ -5275,7 +5275,8 @@ speakers:
     company:
       - {language: en, text: DINS}
     bio:
-      - {language: en, text: "Senior software developer in DINS. He develops and supports backend of cloud telephony system."}
+      - {language: en, text: "At DINS he's engaged in development, support and backend developing for the cloud telephony\
+            \ service. For a long time, he was engaged in embedded systems programming on C++."}
       - {language: ru, text: "В DINS занимается разработкой, поддержкой и развитием бэкенда для сервиса облачной телефонии\
             . Долгое время занимался программированием встраиваемых систем на C++."}
   - id: 348
