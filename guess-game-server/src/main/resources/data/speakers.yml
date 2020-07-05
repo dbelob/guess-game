@@ -7085,11 +7085,11 @@ speakers:
     company:
       - {language: en, text: Huawei}
     bio:
-      - {language: en, text: "JetBrains Rider technical leader, ReSharper's Core developer: data structures, caches, concurrency.\
-            \ JetBrains employee since 2011. Graduated from SPbSU in 2006."}
-      - {language: ru, text: "Техлид JetBrains Rider, разработчик ядра ReSharper: структур данных, кэшей, многопоточности\
-            . В компании JetBrains с 2011 года, до этого руководил разработкой серверных решений в Yota. Окончил матмех СП\
-            бГУ в 2006 году. Регулярный спикер DotNext."}
+      - {language: en, text: "Former JetBrains Rider technical leader, ReSharper's Core developer: data structures, caches,\
+            \ concurrency. Worked at JetBrains since 2011. Graduated from SPbSU in 2006."}
+      - {language: ru, text: "Бывший техлид JetBrains Rider, разработчик ядра ReSharper: структур данных, кэшей, многопото\
+            чности. Работал в компании JetBrains с 2011 года, до этого руководил разработкой серверных решений в Yota. Око\
+            нчил матмех СПбГУ в 2006 году. Регулярный спикер DotNext."}
     twitter: korifey_ad
   - id: 466
     photoFileName: 0466.jpg
@@ -19086,3 +19086,13 @@ speakers:
       - {language: en, text: "Product Manager @ TeamCity Cloud. Senior Java Developer @ TeamCity. Знает TeamCity вдоль и п\
             оперёк, а в последнее время тащит его в облака. Уже больше 10 лет занимается программированием на Java, любит\
             \ IT, технологии и науку."}
+  - id: 1335
+    photoFileName: 1335.jpg
+    name:
+      - {language: en, text: "Hillel Wayne"}
+    company:
+      - {language: en, text: "Windy Coast Consulting"}
+    bio:
+      - {language: en, text: "Hillel is a software consultant in Chicago who specializes in formal methods. He is the author\
+            \ of Learn TLA+ (learntla.com) and Practical TLA+ (Apress, est Dec 2018), is on the Alloy board, and teaches workshops\
+            \ on both of these languages. In his free time, he juggles and makes candy."}
