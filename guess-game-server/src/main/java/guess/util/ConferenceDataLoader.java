@@ -300,6 +300,9 @@ public class ConferenceDataLoader {
                         .max(Long::compare)
                         .orElse(-1L));
 
+        // Delete opening and closing talks
+        contentfulTalks = deleteOpeningAndClosingTalks(contentfulTalks);
+
         // Delete talk duplicates
         contentfulTalks = deleteTalkDuplicates(contentfulTalks);
 
@@ -479,6 +482,33 @@ public class ConferenceDataLoader {
                 YamlUtils.dumpEvent(eventToUpdate, "event-to-update.yml");
             }
         }
+    }
+
+    /**
+     * Deletes opening and closing talks.
+     *
+     * @param talks talks
+     * @return talks without opening and closing
+     */
+    private static List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
+        final String CONFERENCE_OPENING = "Conference opening";
+        final String CONFERENCE_CLOSING = "Conference closing";
+
+        return talks.stream()
+                .filter(t -> {
+                    String enName = LocalizationUtils.getString(t.getName(), Language.ENGLISH).trim();
+                    String ruName = LocalizationUtils.getString(t.getName(), Language.RUSSIAN).trim();
+
+                    if (CONFERENCE_OPENING.equals(enName) || CONFERENCE_CLOSING.equals(enName)) {
+                        log.warn("Conference opening or closing talk is deleted, name: '{}', '{}', talkDay: {}, trackTime: {}, track: {}, language: {}",
+                                enName, ruName, t.getTalkDay(), t.getTrackTime(), t.getTrack(), t.getLanguage());
+
+                        return false;
+                    } else {
+                        return true;
+                    }
+                })
+                .collect(Collectors.toList());
     }
 
     /**

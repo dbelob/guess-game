@@ -155,14 +155,21 @@ speakers:
       - {language: en, text: "Pasha Finkelstein"}
       - {language: ru, text: "Паша Финкельштейн"}
     company:
-      - {language: en, text: Lamoda}
+      - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "IT guy with psychological background — he has tried everything from humanitarian to exact science\
-            \ and from technical support to programming and data engineering. Such life inevitably develops a wide outlook\
-            \ and curiosity. He likes to share things he has learned."}
-      - {language: ru, text: "Айтишник с психологическим бэкграундом — Павел попробовал всё: от гуманитарных до точных нау\
-            к и от технической поддержки до программирования и дата инжиниринга. Такая жизнь не могла не развить кругозор\
-            \ и любознательность. Любит делиться тем, что нашёл и тем, что его заинтересовало."}
+      - language: en
+        text: "Despite his education in psychology, for 14 years Pasha managed to work in a lot of IT areas — system administration,\
+            \ development, management, data engineering, in general, touched almost everything that exists in IT. More than\
+            \ 10 years ago he started practicing DevOps and never focused on just one thing.\nNow Pasha works at JetBrains\
+            \ on Big Data Tools – tools to make data engineer's life easier.\nVery sociable, loves, and understands people\
+            \ and is always happy to answer any questions."
+      - language: ru
+        text: "Несмотря на психологическое образование, за 14 лет Паша успел поработать в куче сфер в IT — системное админ\
+            истрирование, разработка, менеджмент разных уровней, дата инжиниринг, в общем, так или иначе, касался почти вс\
+            его, что в IT существует. Начал практиковать DevOps-практики больше 10 лет назад и никогда не концентрировался\
+            \ на чём-то одном.\n\nСейчас Паша работает в компании JetBrains над разработкой Big Data Tools — инструментами\
+            \ для того, чтобы делать жизнь дата инженеров проще.\n\nОчень общительный, любит и понимает людей, и всегда ра\
+            д ответить на любые вопросы."
     twitter: asm0di0
     gitHub: asm0dey
   - id: 9
@@ -2717,7 +2724,7 @@ speakers:
       - {language: ru, text: "Сергей Владимиров"}
     company:
       - {language: en, text: "NSPK JSC"}
-      - {language: ru, text: "АО «НСПК»"}
+      - {language: ru, text: "Мир Plat.Form (АО НСПК)"}
     bio:
       - {language: en, text: "Designed and developed high-performance systems in NetCracker, Odnoklassniki (mail.ru), Sberbank,\
             \ lately at NSPK JST (MIR PS operator). Engaged in systems architecture, backend (Java), and even in frontend\
@@ -3430,6 +3437,13 @@ speakers:
     name:
       - {language: en, text: "Anton Chernousov"}
       - {language: ru, text: "Антон Черноусов"}
+    company:
+      - {language: en, text: Yandex.Cloud}
+      - {language: ru, text: Яндекс.Облако}
+    bio:
+      - {language: en, text: "До перехода в Облако занимался разработкой автоматизированных систем предоставления хостинг\
+            -услуг на базе виртуализации, внедрял Agile-процессы и занимался организацией сообществ разработчиков. Ведет п\
+            одкаст [«The Art Of Programming».](http://bit.ly/TAOPiTunes)"}
     twitter: golodnyj
     gitHub: golodnyj
   - id: 219
@@ -5275,7 +5289,8 @@ speakers:
     company:
       - {language: en, text: DINS}
     bio:
-      - {language: en, text: "Senior software developer in DINS. He develops and supports backend of cloud telephony system."}
+      - {language: en, text: "At DINS he's engaged in development, support and backend developing for the cloud telephony\
+            \ service. For a long time, he was engaged in embedded systems programming on C++."}
       - {language: ru, text: "В DINS занимается разработкой, поддержкой и развитием бэкенда для сервиса облачной телефонии\
             . Долгое время занимался программированием встраиваемых систем на C++."}
   - id: 348
@@ -7070,11 +7085,11 @@ speakers:
     company:
       - {language: en, text: Huawei}
     bio:
-      - {language: en, text: "JetBrains Rider technical leader, ReSharper's Core developer: data structures, caches, concurrency.\
-            \ JetBrains employee since 2011. Graduated from SPbSU in 2006."}
-      - {language: ru, text: "Техлид JetBrains Rider, разработчик ядра ReSharper: структур данных, кэшей, многопоточности\
-            . В компании JetBrains с 2011 года, до этого руководил разработкой серверных решений в Yota. Окончил матмех СП\
-            бГУ в 2006 году. Регулярный спикер DotNext."}
+      - {language: en, text: "Former JetBrains Rider technical leader, ReSharper's Core developer: data structures, caches,\
+            \ concurrency. Worked at JetBrains since 2011. Graduated from SPbSU in 2006."}
+      - {language: ru, text: "Бывший техлид JetBrains Rider, разработчик ядра ReSharper: структур данных, кэшей, многопото\
+            чности. Работал в компании JetBrains с 2011 года, до этого руководил разработкой серверных решений в Yota. Око\
+            нчил матмех СПбГУ в 2006 году. Регулярный спикер DotNext."}
     twitter: korifey_ad
   - id: 466
     photoFileName: 0466.jpg
@@ -18729,7 +18744,7 @@ speakers:
       - {language: en, text: "Aleksandr Utemov"}
       - {language: ru, text: "Александр Утёмов"}
     company:
-      - {language: en, text: "Мир Plat.Form"}
+      - {language: en, text: "Мир Plat.Form (АО НСПК)"}
     bio:
       - {language: en, text: "Работает в банковской сфере с 2001 года. Занимается тестированием ПО и программированием, в\
             \ том числе на весьма необычных языках: COBOL, TAL и др. С 2015 года перешел в компанию НСПК, где принял участ\
@@ -18945,3 +18960,139 @@ speakers:
             \ Distributed Computing. He worked in the past with Ecole des Mines de Paris, CEA Saclay, HP Labs in Palo Alto,\
             \ and MIT. He has been elected ACM fellow and professor of the College de France. He was awarded a Senior ERC\
             \ Grant and a Google Focused Award."}
+  - id: 1325
+    photoFileName: 1325.jpg
+    name:
+      - {language: en, text: "Nikita Solovev"}
+      - {language: ru, text: "Никита Соловьев"}
+    company:
+      - {language: en, text: Luxoft}
+    bio:
+      - {language: en, text: "Team Lead Java в компании Luxoft, специализируется на разработке Java-решений вот уже более\
+            \ 5 лет, в последнее время участвует в разработке банковских проектов, работал как фулстек-фрилансер, периодич\
+            ески занимается DevOps-практиками на своих проектах."}
+  - id: 1326
+    photoFileName: 1326.jpg
+    name:
+      - {language: en, text: "Sergey Pechenko"}
+      - {language: ru, text: "Сергей Печенко"}
+    company:
+      - {language: en, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: "Инженер, программист, переводчик и издатель, практикует DevOps-подход уже 6 лет."}
+  - id: 1327
+    photoFileName: 1327.jpg
+    name:
+      - {language: en, text: "Aleksey Baranov"}
+      - {language: ru, text: "Алексей Баранов"}
+    company:
+      - {language: en, text: Yandex.Cloud}
+      - {language: ru, text: Яндекс.Облако}
+    bio:
+      - {language: en, text: "Руководит разработкой сервиса Yandex Managed Service for Kubernetes и DevTools: public API,\
+            \ SDK, CLI, Terraform. Занимался сетевым стеком, networking performance и serverside в браузере. Работал с сет\
+            евыми протоколами разного уровня и системами, обслуживающими высокие объемы трафика."}
+  - id: 1328
+    photoFileName: 1328.jpg
+    name:
+      - {language: en, text: "Anton Rykov"}
+      - {language: ru, text: "Антон Рыков"}
+    company:
+      - {language: en, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: "Антон работает в индустрии более 10 лет, работал в таких компаниях, как Luxoft, Kaspersky Lab.\
+            \ Руководит командой, занимающейся продвижением DevOps-культуры в банке, а также развитием инструментов для ра\
+            зработчиков."}
+  - id: 1329
+    photoFileName: 1329.jpg
+    name:
+      - {language: en, text: "Edson Yanaga"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - language: en
+        text: "Edson Yanaga, Red Hat's Director of Developer Experience, is a Java Champion and a Microsoft MVP. He is also\
+            \ a published author and a frequent speaker at international conferences, discussing Java, Microservices, Cloud\
+            \ Computing, DevOps, and Software Craftsmanship.\n\nYanaga considers himself a software craftsman and is convinced\
+            \ that we all can create a better world for people with better software. His life's purpose is to deliver and\
+            \ help developers worldwide to deliver better software faster and safely - and he can even call that a job!"
+      - language: ru
+        text: "Эдсон Янага — Director of Developer Experience в Red Hat, Java-чемпион и Microsoft MVP. Является автором мн\
+            огих книг и частым спикером на международных конференциях, посвященных Java, микросервисам, облачным вычислени\
+            ям, DevOps и профессиональной разработке программного обеспечения.\n\nЯнага считает себя мастером программного\
+            \ обеспечения и убежден в том, что все мы можем создать лучший мир с лучшим ПО. Цель его жизни — помочь разраб\
+            отчикам доставить лучшее ПО быстро и безопасно, и это даже можно назвать работой!"
+    javaChampion: true
+  - id: 1330
+    photoFileName: 1330.jpg
+    name:
+      - {language: en, text: "Evgeniya Fedotova"}
+      - {language: ru, text: "Евгения Федотова"}
+    company:
+      - {language: en, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: "Разработчик в команде Dev-to-dev, занимающейся созданием и поддержкой инструментов для разра\
+            ботчиков."}
+  - id: 1331
+    photoFileName: 1331.jpg
+    name:
+      - {language: en, text: "Gleb Borisov"}
+      - {language: ru, text: "Глеб Борисов"}
+    company:
+      - {language: en, text: Yandex.Cloud}
+      - {language: ru, text: Яндекс.Облако}
+    bio:
+      - {language: en, text: "До перехода в Облако занимался системой управления кластером внутреннего облака Яндекса, вне\
+            дрял автоматизацию процессов и DevOps-культуру. Разбирается во многих сферах — от frontend-разработки до систе\
+            много программирования и администрирования больших кластеров."}
+  - id: 1332
+    photoFileName: 1332.jpg
+    name:
+      - {language: en, text: "Aleksey Churbanov"}
+      - {language: ru, text: "Алексей Чурбанов"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - language: en
+        text: "Вошёл в IT как инженер технической поддержки 12 лет назад. С тех пор успел побывать в роли специалиста подд\
+            ержки системы биллинга, QA-инженера в различных компаниях и проектах, лида в команде автоматизаторов. Сейчас р\
+            уководит группой разработки из нескольких команд, отвечающих за часть CI/CD-сервисов в Лаборатории Касперского\
+            .\nС миром DevOps начал активно соприкасаться в 2014 году в роли релиз-мастера CRM-системы одной из крупных Но\
+            восибирских IT-компаний. Уже тогда Алексей понял, что задачи по подготовке релизных конфигов и мерджа нужных б\
+            ранчей в master стоит держать подальше от людей."
+  - id: 1333
+    photoFileName: 1333.jpg
+    name:
+      - {language: en, text: "Vladimir Dzalbo"}
+      - {language: ru, text: "Владимир Дзалбо"}
+    company:
+      - {language: en, text: GitLab}
+    bio:
+      - {language: en, text: "За более чем 15 лет в области IT Владимир успел поработать разработчиком программного обеспе\
+            чения, консультантом, техническим менеджером и архитектором. Большую часть своей карьеры он провел работая в р\
+            аспределенных командах, занимающихся вопросами оптимизации процессов: индустриальных, логистических и коммерче\
+            ских при помощи технических и программных решений. С 2019 года Владимир работает в компании GitLab архитекторо\
+            м решений, где он помогает клиентам реализовать лучшие практики и принципы DevOps для оптимизации жизненного ц\
+            икла разработки ПО."}
+  - id: 1334
+    photoFileName: 1334.jpg
+    name:
+      - {language: en, text: "Andrey Titov"}
+      - {language: ru, text: "Андрей Титов"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Product Manager @ TeamCity Cloud. Senior Java Developer @ TeamCity. Знает TeamCity вдоль и п\
+            оперёк, а в последнее время тащит его в облака. Уже больше 10 лет занимается программированием на Java, любит\
+            \ IT, технологии и науку."}
+  - id: 1335
+    photoFileName: 1335.jpg
+    name:
+      - {language: en, text: "Hillel Wayne"}
+    company:
+      - {language: en, text: "Windy Coast Consulting"}
+    bio:
+      - {language: en, text: "Hillel is a software consultant in Chicago who specializes in formal methods. He is the author\
+            \ of Learn TLA+ (learntla.com) and Practical TLA+ (Apress, est Dec 2018), is on the Alloy board, and teaches workshops\
+            \ on both of these languages. In his free time, he juggles and makes candy."}
