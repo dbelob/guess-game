@@ -891,7 +891,7 @@ events:
     siteLink:
       - {language: en, text: "https://sptdc.ru/"}
     placeId: 24
-    talkIds: [2367, 2538, 2368, 2369, 2370, 2371, 2539, 2220, 2540, 2541]
+    talkIds: [2565, 2367, 2538, 2368, 2369, 2370, 2371, 2539, 2566, 2567]
   # SmartData
   - eventTypeId: 11
     name:
