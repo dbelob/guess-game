@@ -942,308 +942,308 @@ events:
   # JUG.MSK
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2012"}
+      - {language: en, text: "JUG.MSK Meetup #1"}
     startDate: "2012-12-13"
     endDate: "2012-12-13"
     placeId: 6
     talkIds: [1914]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2013"}
+      - {language: en, text: "JUG.MSK Meetup #2"}
     startDate: "2013-01-25"
     endDate: "2013-01-25"
     placeId: 6
     talkIds: [1915, 1916, 1917, 1918]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2013"}
+      - {language: en, text: "JUG.MSK Meetup #3"}
     startDate: "2013-02-28"
     endDate: "2013-02-28"
     placeId: 6
     talkIds: [1919]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2013"}
+      - {language: en, text: "JUG.MSK Meetup #4"}
     startDate: "2013-09-19"
     endDate: "2013-09-19"
     placeId: 6
     talkIds: [1920]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2013"}
+      - {language: en, text: "JUG.MSK Meetup #5"}
     startDate: "2013-12-02"
     endDate: "2013-12-02"
     placeId: 6
     talkIds: [1921]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2014"}
+      - {language: en, text: "JUG.MSK Meetup #6"}
     startDate: "2014-01-30"
     endDate: "2014-01-30"
     placeId: 6
     talkIds: [1922]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2014"}
+      - {language: en, text: "JUG.MSK Meetup #7"}
     startDate: "2014-04-17"
     endDate: "2014-04-17"
     placeId: 6
     talkIds: [1923, 1924]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2014"}
+      - {language: en, text: "JUG.MSK Meetup #8"}
     startDate: "2014-09-11"
     endDate: "2014-09-11"
     placeId: 6
     talkIds: [1925, 1926]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2014"}
+      - {language: en, text: "JUG.MSK Meetup #9"}
     startDate: "2014-11-13"
     endDate: "2014-11-13"
     placeId: 6
     talkIds: [1927]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2014"}
+      - {language: en, text: "JUG.MSK Meetup #10"}
     startDate: "2014-12-18"
     endDate: "2014-12-18"
     placeId: 6
     talkIds: [1928]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2015"}
+      - {language: en, text: "JUG.MSK Meetup #11"}
     startDate: "2015-06-04"
     endDate: "2015-06-04"
     placeId: 6
     talkIds: [1929, 1930]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2015"}
+      - {language: en, text: "JUG.MSK Meetup #12"}
     startDate: "2015-09-24"
     endDate: "2015-09-24"
     placeId: 6
     talkIds: [1931]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2015"}
+      - {language: en, text: "JUG.MSK Meetup #13"}
     startDate: "2015-11-26"
     endDate: "2015-11-26"
     placeId: 6
     talkIds: [1932]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2016"}
+      - {language: en, text: "JUG.MSK Meetup #14"}
     startDate: "2016-01-20"
     endDate: "2016-01-20"
     placeId: 6
     talkIds: [1933]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2016"}
+      - {language: en, text: "JUG.MSK Meetup #15"}
     startDate: "2016-03-17"
     endDate: "2016-03-17"
     placeId: 6
     talkIds: [1934, 1935, 1936]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2016"}
+      - {language: en, text: "JUG.MSK Meetup #16"}
     startDate: "2016-05-04"
     endDate: "2016-05-04"
     placeId: 6
     talkIds: [1937]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2016"}
+      - {language: en, text: "JUG.MSK Meetup #17"}
     startDate: "2016-08-30"
     endDate: "2016-08-30"
     placeId: 6
     talkIds: [1938]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2016"}
+      - {language: en, text: "JUG.MSK Meetup #18"}
     startDate: "2016-09-08"
     endDate: "2016-09-08"
     placeId: 6
     talkIds: [1939]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2016"}
+      - {language: en, text: "JUG.MSK Meetup #19"}
     startDate: "2016-11-14"
     endDate: "2016-11-14"
     placeId: 6
     talkIds: [1940]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2016"}
+      - {language: en, text: "JUG.MSK Meetup #20"}
     startDate: "2016-12-15"
     endDate: "2016-12-15"
     placeId: 6
     talkIds: [1941]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2017"}
+      - {language: en, text: "JUG.MSK Meetup #21"}
     startDate: "2017-05-22"
     endDate: "2017-05-22"
     placeId: 6
     talkIds: [1942, 1943]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2017"}
+      - {language: en, text: "JUG.MSK Meetup #22"}
     startDate: "2017-06-29"
     endDate: "2017-06-29"
     placeId: 6
     talkIds: [1944, 1945]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2017"}
+      - {language: en, text: "JUG.MSK Meetup #23"}
     startDate: "2017-07-27"
     endDate: "2017-07-27"
     placeId: 6
     talkIds: [1946, 1947]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2017"}
+      - {language: en, text: "JUG.MSK Meetup #24"}
     startDate: "2017-08-31"
     endDate: "2017-08-31"
     placeId: 6
     talkIds: [1948]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2017"}
+      - {language: en, text: "JUG.MSK Meetup #25"}
     startDate: "2017-09-21"
     endDate: "2017-09-21"
     placeId: 6
     talkIds: [1949, 1950]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2018"}
+      - {language: en, text: "JUG.MSK Meetup #26"}
     startDate: "2018-03-13"
     endDate: "2018-03-13"
     placeId: 6
     talkIds: [1951]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2018"}
+      - {language: en, text: "JUG.MSK Meetup #27"}
     startDate: "2018-04-05"
     endDate: "2018-04-05"
     placeId: 6
     talkIds: [1952, 1953]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2018"}
+      - {language: en, text: "JUG.MSK Meetup #28"}
     startDate: "2018-04-23"
     endDate: "2018-04-23"
     placeId: 6
     talkIds: [1954]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2018"}
+      - {language: en, text: "JUG.MSK Meetup #29"}
     startDate: "2018-06-07"
     endDate: "2018-06-07"
     placeId: 6
     talkIds: [1976, 1977]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2018"}
+      - {language: en, text: "JUG.MSK Meetup #30"}
     startDate: "2018-07-12"
     endDate: "2018-07-12"
     placeId: 6
     talkIds: [1978]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2018"}
+      - {language: en, text: "JUG.MSK Meetup #31"}
     startDate: "2018-10-04"
     endDate: "2018-10-04"
     placeId: 6
     talkIds: [1979]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2018"}
+      - {language: en, text: "JUG.MSK Meetup #32"}
     startDate: "2018-11-01"
     endDate: "2018-11-01"
     placeId: 6
     talkIds: [1980, 1981]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2018"}
+      - {language: en, text: "JUG.MSK Meetup #33"}
     startDate: "2018-12-13"
     endDate: "2018-12-13"
     placeId: 6
     talkIds: [1982, 1983]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #34"}
     startDate: "2019-02-14"
     endDate: "2019-02-14"
     placeId: 6
     talkIds: [1984, 1985, 1986]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #35"}
     startDate: "2019-03-13"
     endDate: "2019-03-13"
     placeId: 6
     talkIds: [1987, 1988]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #36"}
     startDate: "2019-04-04"
     endDate: "2019-04-04"
     placeId: 6
     talkIds: [1989]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #37"}
     startDate: "2019-05-08"
     endDate: "2019-05-08"
     placeId: 6
     talkIds: [1990]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #38"}
     startDate: "2019-05-30"
     endDate: "2019-05-30"
     placeId: 6
     talkIds: [1991, 1992]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #39"}
     startDate: "2019-06-28"
     endDate: "2019-06-28"
     placeId: 6
     talkIds: [1993]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #40"}
     startDate: "2019-07-25"
     endDate: "2019-07-25"
     placeId: 6
     talkIds: [1994]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #41"}
     startDate: "2019-09-26"
     endDate: "2019-09-26"
     placeId: 6
     talkIds: [1995]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #42"}
     startDate: "2019-10-23"
     endDate: "2019-10-23"
     placeId: 6
     talkIds: [1996, 1997]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #43"}
     startDate: "2019-11-14"
     endDate: "2019-11-14"
     placeId: 6
     talkIds: [1998, 1999]
   - eventTypeId: 13
     name:
-      - {language: en, text: "JUG.MSK 2019"}
+      - {language: en, text: "JUG.MSK Meetup #44"}
     startDate: "2019-12-12"
     endDate: "2019-12-12"
     placeId: 6
