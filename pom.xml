@@ -27,7 +27,7 @@
         <sl4j.version>1.7.30</sl4j.version>
         <snakeyaml.version>1.26</snakeyaml.version>
         <spring.boot.version>2.3.1.RELEASE</spring.boot.version>
-        <springfox.swagger>2.10.5</springfox.swagger>
+        <springfox.swagger>3.0.0</springfox.swagger>
 
         <ng.build.arguments>-- --prod=true</ng.build.arguments>
     </properties>
