@@ -1,0 +1,32 @@
+name: Health Check
+
+on:
+  schedule:
+    - cron:  '*/15 * * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl actuator
+        id: ping
+        run: |
+          echo "::set-output name=status::$(curl https://${{ secrets.DEPLOY_HOST }}/api/actuator/health)"
+      - name: Health check
+        run: |
+          if [[ ${{ steps.ping.outputs.status }} != *"UP"* ]]; then
+            echo "Health check is failed"
+            exit 1
+          fi
+          echo "It's OK"
+      - name: Send alert in telegram
+        if: ${{ failure() }}
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            Health check of the
+            https://${{ secrets.DEPLOY_HOST }}/api/actuator/health
+            failed with the result:
+            ${{ steps.ping.outputs.status }}
