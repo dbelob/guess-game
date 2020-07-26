@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/jugrugroup/guess-game.svg?branch=master)](https://travis-ci.org/jugrugroup/guess-game)
+<a href="https://github.com/JugruGroup/guess-game/actions"><img alt="GitHub Actions status" src="https://github.com/JugruGroup/guess-game/workflows/Build/badge.svg"></a>
 [![Dependabot Status](https://badgen.net/dependabot/JugruGroup/guess-game)](https://dependabot.com)
+[![codecov](https://codecov.io/gh/JugruGroup/guess-game/branch/master/graph/badge.svg)](https://codecov.io/gh/JugruGroup/guess-game)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JugruGroup_guess-game&metric=alert_status)](https://sonarcloud.io/dashboard?id=JugruGroup_guess-game)
 
 # Find, See, Guess the Speakers
 
