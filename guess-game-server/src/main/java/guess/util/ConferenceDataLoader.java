@@ -491,15 +491,14 @@ public class ConferenceDataLoader {
      * @return talks without opening and closing
      */
     private static List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
-        final String CONFERENCE_OPENING = "Conference opening";
-        final String CONFERENCE_CLOSING = "Conference closing";
+        Set<String> deletedTalks = Set.of("Conference opening", "Conference closing", "School opening", "School closing");
 
         return talks.stream()
                 .filter(t -> {
                     String enName = LocalizationUtils.getString(t.getName(), Language.ENGLISH).trim();
                     String ruName = LocalizationUtils.getString(t.getName(), Language.RUSSIAN).trim();
 
-                    if (CONFERENCE_OPENING.equals(enName) || CONFERENCE_CLOSING.equals(enName)) {
+                    if (deletedTalks.contains(enName)) {
                         log.warn("Conference opening or closing talk is deleted, name: '{}', '{}', talkDay: {}, trackTime: {}, track: {}, language: {}",
                                 enName, ruName, t.getTalkDay(), t.getTrackTime(), t.getTrack(), t.getLanguage());
 
