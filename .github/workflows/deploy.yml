@@ -1,0 +1,60 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[maven-release-plugin]')"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Release with Maven
+        uses: qcastel/github-actions-maven-release@master
+        with:
+          release-branch-name: "master"
+          maven-args: "-Dmaven.javadoc.skip=true -DskipTests -DskipITs -Ddockerfile.skip -DdockerCompose.skip"
+          git-release-bot-name: "release-bot"
+          git-release-bot-email: "release-bot@github.com"
+          access-token: ${{ secrets.RELEASE_TOKEN }}
+          skip-perform: true
+      - name: Copy file via SSH
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          passphrase: ${{ secrets.DEPLOY_PASSPHRASE }}
+          source: "guess-game-server/target/guess-game.war"
+          target: "/opt/guess-game"
+          strip_components: 2
+      - name: Execute remote commands via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          port: ${{ secrets.DEPLOY_PORT }}
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          passphrase: ${{ secrets.DEPLOY_PASSPHRASE }}
+          script: |
+            mv /opt/guess-game/guess-game.war /opt/guess-game/guess-game-${{ github.run_number }}.war
+            chmod 755 /opt/guess-game/guess-game-${{ github.run_number }}.war
+            sudo service guess-game stop
+            sudo ln -sf /opt/guess-game/guess-game-${{ github.run_number }}.war /etc/init.d/guess-game
+            sudo systemctl daemon-reload
+            sudo service guess-game start
