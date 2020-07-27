@@ -2667,19 +2667,19 @@ speakers:
       - {language: en, text: "Vladimir Krasilschik"}
       - {language: ru, text: "Владимир Красильщик"}
     company:
-      - {language: en, text: Yandex}
-      - {language: ru, text: Яндекс}
+      - {language: en, text: "JUG Ru Group"}
     bio:
       - {language: en, text: "Vladimir graduated with honors from St. Petersburg Electrotechnical University \"LETI\" and\
             \ has been developing software for governmental, educational and financial establishments, along with automobile\
-            \ and telecommunication concerns for 14 years. He is currently working as a Yandex.Market developer in St. Petersburg.\
-            \ Vladimir is a resident of Russian Java developers community JUG.ru and is a speaker at such conferences as JPoint,\
-            \ Joker, JBreak and PGDay."}
-      - {language: ru, text: "Владимир с отличием окончил кафедру Математического Обеспечения СПбГЭТУ «ЛЭТИ» и уже более 14\
+            \ and telecommunication concerns for 17 years. Worked as a Yandex.Market developer in St. Petersburg. Vladimir\
+            \ is a resident of Russian Java developers community JUG.ru and is a speaker at such conferences as JPoint, Joker,\
+            \ JBreak and PGDay. Now he's a backend developer at JUG Ru Group."}
+      - {language: ru, text: "Владимир с отличием окончил кафедру Математического Обеспечения СПбГЭТУ «ЛЭТИ» и уже более 17\
             \ лет разрабатывает программное обеспечение для государственных, образовательных и финансовых учреждений, а та\
-            кже автомобильных и телекоммуникационных концернов. Работает в Санкт-Петербургском филиале компании Яндекс раз\
-            работчиком Яндекс.Маркет. Владимир является резидентом российского сообщества Java-разработчиков JUG.ru и выст\
-            упает на таких отраслевых конференциях, как JPoint, Joker, JBreak и PGDay."}
+            кже автомобильных и телекоммуникационных концернов. Работал в Санкт-Петербургском филиале компании Яндекс разр\
+            аботчиком Яндекс.Маркет. Владимир является резидентом российского сообщества Java-разработчиков JUG.ru и высту\
+            пает на таких отраслевых конференциях, как JPoint, Joker, JBreak и PGDay. Сейчас он бэкенд-разработчик в JUG Ru\
+            \ Group."}
     twitter: dyer_the
   - id: 159
     photoFileName: 0159.jpg
@@ -6112,8 +6112,10 @@ speakers:
       - {language: en, text: "Professor, Telecom Paris, Institut Polytechnique Paris"}
     bio:
       - language: en
-        text: "Research interests: \n- Distributed systems and algorithms; \n- Synchronization and failure detection; \n-\
-            \ Algebraic topology and distributed computing; \n- Distributed aspects in networking."
+        text: "Petr Kuznetsov is a Professor of Computer Science at Télécom Paris,\nInstitut Polytechnique Paris, France.\
+            \ Before joining Télécom Paris, he\nhas received his PhD from École Polytechnique Fédérale de Lausanne\n(EPFL),\
+            \ has worked at Max Planck Institute for Software Systems and\nTechnical University of Berlin. His research interests\
+            \ concern\ntheoretical and practical aspects of concurrency and fault-tolerant\ndistributed computing."
   - id: 403
     photoFileName: 0403.jpg
     name:
@@ -13887,10 +13889,11 @@ speakers:
     company:
       - {language: en, text: "JUG Ru Group"}
     bio:
-      - {language: en, text: "Fullstack developer on .NET and JavaScript platforms. Maintainer of Flurl project. Sticks to\
-            \ the TDD and BDD development principles."}
-      - {language: ru, text: "Fullstack-разработчик на платформах .NET и JavaScript. Ментейнер проекта Flurl. Придерживает\
-            ся принципов разработки TDD и BDD."}
+      - {language: en, text: "Head of the JUG Ru Group development team. Worked at Alfa-Bank and LaNetroZed. Fullstack developer\
+            \ on .NET and JavaScript platforms. Maintainer of Flurl project. Sticks to the TDD and BDD development principles."}
+      - {language: ru, text: "Руководитель разработки JUG Ru Group. Ранее работал в Альфа-Банке и телекоммуникационной ком\
+            пании LaNetroZed. Фуллстэк-разработчик на платформах .NET и JavaScript. Ментейнер проекта Flurl. Придерживаетс\
+            я принципов разработки TDD и BDD."}
   - id: 947
     photoFileName: 0947.jpg
     name:
@@ -19096,3 +19099,30 @@ speakers:
       - {language: en, text: "Hillel is a software consultant in Chicago who specializes in formal methods. He is the author\
             \ of Learn TLA+ (learntla.com) and Practical TLA+ (Apress, est Dec 2018), is on the Alloy board, and teaches workshops\
             \ on both of these languages. In his free time, he juggles and makes candy."}
+  - id: 1336
+    photoFileName: 1336.jpg
+    name:
+      - {language: en, text: "Konstantin Lisichnikov"}
+      - {language: ru, text: "Константин Лисичников"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: TBD}
+  - id: 1337
+    photoFileName: 1337.jpg
+    name:
+      - {language: en, text: "Aleksey Karpov"}
+      - {language: ru, text: "Алексей Карпов"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Старший разработчик в Лаборатории Касперского, занимается разработкой систем автоматического\
+            \ обнаружения новых видов вредоносного ПО."}
+  - id: 1338
+    photoFileName: 1338.jpg
+    name:
+      - {language: en, text: "Члены ПК DevOops"}
+    company: []
+    bio: []

@@ -83,10 +83,11 @@ events:
     siteLink:
       - {language: en, text: "https://devoops-moscow.ru/en/"}
       - {language: ru, text: "https://devoops-moscow.ru/"}
+    youtubeLink: https://live.jugru.org/online/100068r10004323/
     placeId: 24
-    talkIds: [2119, 2115, 2116, 2548, 2549, 2550, 2551, 2118, 2131, 2552, 2122, 2553, 2125, 2554, 2555, 2128, 2556, 2127,
-              2130, 2117, 2143, 2557, 2558, 2559, 2402, 2135, 2133, 2138, 2357, 2139, 2560, 2561, 2126, 2141, 2142, 2129, 2140,
-              2562, 2563, 2262, 2532]
+    talkIds: [2119, 2115, 2116, 2548, 2549, 2550, 2551, 2118, 2131, 2552, 2122, 2553, 2125, 2554, 2567, 2555, 2568, 2128,
+              2556, 2127, 2130, 2117, 2143, 2557, 2558, 2559, 2402, 2135, 2133, 2138, 2357, 2139, 2560, 2561, 2126, 2141, 2142,
+              2129, 2569, 2140, 2562, 2262, 2532, 2570]
   # DotNext
   - eventTypeId: 2
     name:
@@ -503,6 +504,7 @@ events:
     endDate: "2020-07-09"
     siteLink:
       - {language: en, text: "https://hydraconf.com/"}
+    youtubeLink: https://live.jugru.org/online/100070r10004451/
     placeId: 24
     talkIds: [2445, 2266, 2282, 2407, 2277, 2362, 2359, 2271, 2444, 2321, 2536, 2564, 2447, 2319, 2275, 2269, 2537, 2278,
               2535, 2364, 2409, 2274, 2281, 2410, 2366]
@@ -890,8 +892,9 @@ events:
     endDate: "2020-07-09"
     siteLink:
       - {language: en, text: "https://sptdc.ru/"}
+    youtubeLink: https://live.jugru.org/online/100078r10004705/
     placeId: 24
-    talkIds: [2565, 2367, 2538, 2368, 2369, 2370, 2371, 2539, 2566, 2567]
+    talkIds: [2367, 2538, 2368, 2369, 2370, 2371, 2539, 2566]
   # SmartData
   - eventTypeId: 11
     name:
@@ -1965,3 +1968,10 @@ events:
     endDate: "2020-04-24"
     placeId: 24
     talkIds: [2174]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #15"}
+    startDate: "2020-07-17"
+    endDate: "2020-07-17"
+    placeId: 24
+    talkIds: [2571]
