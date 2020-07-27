@@ -1968,3 +1968,10 @@ events:
     endDate: "2020-04-24"
     placeId: 24
     talkIds: [2174]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #15"}
+    startDate: "2020-07-17"
+    endDate: "2020-07-17"
+    placeId: 24
+    talkIds: [2571]
