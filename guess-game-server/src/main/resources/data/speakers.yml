@@ -1282,7 +1282,6 @@ speakers:
     photoFileName: 0074.jpg
     name:
       - {language: en, text: "Sebastian Daschner"}
-      - {language: ru, text: "Себастиан Дашнер"}
     company:
       - {language: en, text: IBM}
     bio:
@@ -1293,9 +1292,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
-            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
-            either by plane or motorbike."
+            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
+            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
+            — either by plane or motorbike."
     twitter: DaschnerS
     gitHub: sdaschner
     javaChampion: true
