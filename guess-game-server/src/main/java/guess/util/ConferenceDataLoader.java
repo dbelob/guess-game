@@ -167,6 +167,12 @@ public class ConferenceDataLoader {
             );
         }
 
+        // Delete opening and closing talks
+        contentfulTalks = deleteOpeningAndClosingTalks(contentfulTalks);
+
+        // Delete talk duplicates
+        contentfulTalks = deleteTalkDuplicates(contentfulTalks);
+
         // Order speakers with talk order
         List<Speaker> contentfulSpeakers = contentfulTalks.stream()
                 .flatMap(t -> t.getSpeakers().stream())
@@ -299,12 +305,6 @@ public class ConferenceDataLoader {
                         .map(Talk::getId)
                         .max(Long::compare)
                         .orElse(-1L));
-
-        // Delete opening and closing talks
-        contentfulTalks = deleteOpeningAndClosingTalks(contentfulTalks);
-
-        // Delete talk duplicates
-        contentfulTalks = deleteTalkDuplicates(contentfulTalks);
 
         if (resourceEvent == null) {
             // Event not exists
