@@ -22,7 +22,7 @@ In the game you need to guess the speaker or talk.
 
 ### Online
 
-https://jugspeakers.online
+https://jugspeakers.info
 
 ### Offline
 
