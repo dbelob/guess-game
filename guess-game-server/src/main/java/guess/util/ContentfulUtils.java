@@ -99,50 +99,48 @@ public class ContentfulUtils {
     private static final String ENGLISH_LOCALE = "en";
     private static final String RUSSIAN_LOCALE = "ru-RU";
 
-    private static final Map<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new HashMap<>() {{
-        put(Conference.JOKER, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.JPOINT, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.JBREAK, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.TECH_TRAIN, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.CPP_RUSSIA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.HYDRA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.SPTDC, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.DEV_OOPS, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.SMART_DATA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
-        put(Conference.HOLY_JS, ConferenceSpaceInfo.HOLY_JS_SPACE_INFO);
-        put(Conference.DOT_NEXT, ConferenceSpaceInfo.DOT_NEXT_SPACE_INFO);
-        put(Conference.HEISENBUG, ConferenceSpaceInfo.HEISENBUG_SPACE_INFO);
-        put(Conference.MOBIUS, ConferenceSpaceInfo.MOBIUS_SPACE_INFO);
-    }};
-
-    private static final Map<Conference, String> CONFERENCE_EVENT_TYPE_NAME_MAP = new HashMap<>() {{
-        put(Conference.JOKER, "Joker");
-        put(Conference.JPOINT, "JPoint");
-        put(Conference.JBREAK, "JBreak");
-        put(Conference.TECH_TRAIN, "TechTrain");
-        put(Conference.CPP_RUSSIA, "C++ Russia");
-        put(Conference.HYDRA, "Hydra");
-        put(Conference.SPTDC, "SPTDC");
-        put(Conference.DEV_OOPS, "DevOops");
-        put(Conference.SMART_DATA, "SmartData");
-        put(Conference.HOLY_JS, "HolyJS");
-        put(Conference.DOT_NEXT, "DotNext");
-        put(Conference.HEISENBUG, "Heisenbug");
-        put(Conference.MOBIUS, "Mobius");
-    }};
-
+    private static final EnumMap<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new EnumMap<>(Conference.class);
+    private static final EnumMap<Conference, String> CONFERENCE_EVENT_TYPE_NAME_MAP = new EnumMap<>(Conference.class);
     private static final Map<String, Conference> EVENT_TYPE_NAME_CONFERENCE_MAP;
 
     private static final RestTemplate restTemplate;
 
     static {
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.JOKER, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.JPOINT, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.JBREAK, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.TECH_TRAIN, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.CPP_RUSSIA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.HYDRA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.SPTDC, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.DEV_OOPS, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.SMART_DATA, ConferenceSpaceInfo.COMMON_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.HOLY_JS, ConferenceSpaceInfo.HOLY_JS_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.DOT_NEXT, ConferenceSpaceInfo.DOT_NEXT_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.HEISENBUG, ConferenceSpaceInfo.HEISENBUG_SPACE_INFO);
+        CONFERENCE_SPACE_INFO_MAP.put(Conference.MOBIUS, ConferenceSpaceInfo.MOBIUS_SPACE_INFO);
+
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.JOKER, "Joker");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.JPOINT, "JPoint");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.JBREAK, "JBreak");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.TECH_TRAIN, "TechTrain");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.CPP_RUSSIA, "C++ Russia");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.HYDRA, "Hydra");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.SPTDC, "SPTDC");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.DEV_OOPS, "DevOops");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.SMART_DATA, "SmartData");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.HOLY_JS, "HolyJS");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.DOT_NEXT, "DotNext");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.HEISENBUG, "Heisenbug");
+        CONFERENCE_EVENT_TYPE_NAME_MAP.put(Conference.MOBIUS, "Mobius");
+
         EVENT_TYPE_NAME_CONFERENCE_MAP = CONFERENCE_EVENT_TYPE_NAME_MAP.entrySet().stream()
                 .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
 
-        List<HttpMessageConverter<?>> converters = new ArrayList<>() {{
-            add(new StringHttpMessageConverter(StandardCharsets.UTF_8));
-            add(new MappingJackson2HttpMessageConverter());
-        }};
+        List<HttpMessageConverter<?>> converters = new ArrayList<>();
+        converters.add(new StringHttpMessageConverter(StandardCharsets.UTF_8));
+        converters.add(new MappingJackson2HttpMessageConverter());
+
         restTemplate = new RestTemplate(converters);
     }
 

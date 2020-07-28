@@ -1,11 +1,12 @@
 package guess.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Start parameters.
  */
-public class StartParameters {
+public class StartParameters implements Serializable {
     private final List<Long> eventTypeIds;
     private final List<Long> eventIds;
     private final GuessMode guessMode;

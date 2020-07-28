@@ -143,7 +143,7 @@ public class EventServiceImpl implements EventService {
                     if (minTrackTimeInTalkDays != null) {
                         Optional<LocalTime> minTrackTimeInTalkDay = minTrackTimeInTalkDays.get(i);
 
-                        if ((minTrackTimeInTalkDay != null) && minTrackTimeInTalkDay.isPresent()) {
+                        if (minTrackTimeInTalkDay.isPresent()) {
                             minTrackTime = minTrackTimeInTalkDay.get();
                         }
                     }

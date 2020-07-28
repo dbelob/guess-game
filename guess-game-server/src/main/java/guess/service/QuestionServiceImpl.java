@@ -90,14 +90,13 @@ public class QuestionServiceImpl implements QuestionService {
                 }
             }
 
-            List<LocaleItem> name = new ArrayList<>() {{
-                add(new LocaleItem(
-                        Language.ENGLISH.getCode(),
-                        LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.ENGLISH)));
-                add(new LocaleItem(
-                        Language.RUSSIAN.getCode(),
-                        LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.RUSSIAN)));
-            }};
+            List<LocaleItem> name = new ArrayList<>();
+            name.add(new LocaleItem(
+                    Language.ENGLISH.getCode(),
+                    LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.ENGLISH)));
+            name.add(new LocaleItem(
+                    Language.RUSSIAN.getCode(),
+                    LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.RUSSIAN)));
 
             return Collections.singletonList(
                     new Event(
