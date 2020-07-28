@@ -60,12 +60,13 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
                 questionAnswers.getAvailableAnswers().map(
                         a -> ((TalkAnswer) a).getTalk()
                 );
-        Set<Speaker> talkSpeakers = new HashSet<>() {{
-            addAll(talks.getFirst().getSpeakers());
-            addAll(talks.getSecond().getSpeakers());
-            addAll(talks.getThird().getSpeakers());
-            addAll(talks.getFourth().getSpeakers());
-        }};
+
+        Set<Speaker> talkSpeakers = new HashSet<>();
+        talkSpeakers.addAll(talks.getFirst().getSpeakers());
+        talkSpeakers.addAll(talks.getSecond().getSpeakers());
+        talkSpeakers.addAll(talks.getThird().getSpeakers());
+        talkSpeakers.addAll(talks.getFourth().getSpeakers());
+
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 new ArrayList<>(talkSpeakers),
                 s -> LocalizationUtils.getString(s.getName(), language),

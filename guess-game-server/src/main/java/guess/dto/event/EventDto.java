@@ -85,7 +85,7 @@ public class EventDto extends EventBriefDto {
         String eventTypeTwitterLink = (eventType != null) ? eventType.getTwitterLink() : null;
         String eventTypeFacebookLink = (eventType != null) ? eventType.getFacebookLink() : null;
         String eventTypeTelegramLink = (eventType != null) ? eventType.getTelegramLink() : null;
-        String description = LocalizationUtils.getString(eventType.getShortDescription(), language);
+        String description = (eventType != null) ? LocalizationUtils.getString(eventType.getShortDescription(), language) : null;
 
         return new EventDto(
                 eventSuperBriefDto,

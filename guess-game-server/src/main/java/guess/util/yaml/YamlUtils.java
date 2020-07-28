@@ -23,6 +23,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * YAML utility methods.
@@ -244,9 +245,11 @@ public class YamlUtils {
         Path directoryPath = Path.of(OUTPUT_DIRECTORY_NAME);
 
         if (Files.exists(directoryPath) && Files.isDirectory(directoryPath)) {
-            Files.walk(directoryPath)
-                    .map(Path::toFile)
-                    .forEach(File::delete);
+            try (Stream<Path> pathStream = Files.walk(directoryPath)) {
+                pathStream
+                        .map(Path::toFile)
+                        .forEach(File::delete);
+            }
         }
     }
 

@@ -2,12 +2,13 @@ package guess.domain.question;
 
 import guess.domain.source.LocaleItem;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Question and answers set.
  */
-public class QuestionAnswersSet {
+public class QuestionAnswersSet implements Serializable {
     public static final int QUESTION_ANSWERS_LIST_SIZE = 4;
 
     final private List<QuestionAnswers> questionAnswersList;

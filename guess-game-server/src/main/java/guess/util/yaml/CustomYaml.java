@@ -41,10 +41,10 @@ public class CustomYaml extends Yaml {
     public void dump(Object data, Writer output) {
         List<Object> list = new ArrayList<>(1);
         list.add(data);
-        dumpAll(list.iterator(), output, null);
+        customDumpAll(list.iterator(), output, null);
     }
 
-    private void dumpAll(Iterator<?> data, Writer output, Tag rootTag) {
+    private void customDumpAll(Iterator<?> data, Writer output, Tag rootTag) {
         Serializer serializer = new Serializer(new CustomEmitter(output, dumperOptions), resolver,
                 dumperOptions, rootTag);
         try {

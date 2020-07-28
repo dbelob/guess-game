@@ -1,11 +1,12 @@
 package guess.domain.answer;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Answer set.
  */
-public class AnswerSet {
+public class AnswerSet implements Serializable {
     private final List<Long> correctAnswerIds;
     private final List<Long> yourAnswerIds;
     private boolean isSuccess;
