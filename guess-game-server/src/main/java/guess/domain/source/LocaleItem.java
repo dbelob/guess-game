@@ -1,9 +1,11 @@
 package guess.domain.source;
 
+import java.io.Serializable;
+
 /**
  * Locale item.
  */
-public class LocaleItem {
+public class LocaleItem implements Serializable {
     private String language;
     private String text;
 

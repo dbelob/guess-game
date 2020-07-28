@@ -3,13 +3,14 @@ package guess.domain.question;
 import guess.domain.Quadruple;
 import guess.domain.answer.Answer;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * Question and answers.
  */
-public class QuestionAnswers {
+public class QuestionAnswers implements Serializable {
     private final Question question;
     private final List<Answer> correctAnswers;
     private final Quadruple<Answer> availableAnswers;

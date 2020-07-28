@@ -99,8 +99,8 @@ public class ContentfulUtils {
     private static final String ENGLISH_LOCALE = "en";
     private static final String RUSSIAN_LOCALE = "ru-RU";
 
-    private static final Map<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new HashMap<>();
-    private static final Map<Conference, String> CONFERENCE_EVENT_TYPE_NAME_MAP = new HashMap<>();
+    private static final EnumMap<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new EnumMap<>(Conference.class);
+    private static final EnumMap<Conference, String> CONFERENCE_EVENT_TYPE_NAME_MAP = new EnumMap<>(Conference.class);
     private static final Map<String, Conference> EVENT_TYPE_NAME_CONFERENCE_MAP;
 
     private static final RestTemplate restTemplate;
