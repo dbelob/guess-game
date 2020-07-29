@@ -22,7 +22,6 @@ public class ImageUtils {
     private static final int IMAGE_WIDTH = 400;
 
     private ImageUtils() {
-        throw new IllegalStateException("Utility class");
     }
 
     /**
