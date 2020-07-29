@@ -8,15 +8,19 @@ import java.util.*;
  * Question utility methods.
  */
 public class QuestionUtils {
+    private QuestionUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static <T extends Identifiable> List<T> removeDuplicatesById(List<T> items) {
         List<T> result = new ArrayList<>();
         Set<Long> ids = new HashSet<>();
 
         if (items != null) {
-            for (T question : items) {
-                if (!ids.contains(question.getId())) {
-                    result.add(question);
-                    ids.add(question.getId());
+            for (T item : items) {
+                if (!ids.contains(item.getId())) {
+                    result.add(item);
+                    ids.add(item.getId());
                 }
             }
         }

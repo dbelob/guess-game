@@ -8,6 +8,10 @@ import java.util.List;
  * Search methods.
  */
 public class SearchUtils {
+    private SearchUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static String trimAndLowerCase(String value) {
         return (value != null) ? value.trim().toLowerCase() : null;
     }

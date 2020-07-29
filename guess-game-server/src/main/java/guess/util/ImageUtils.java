@@ -21,6 +21,10 @@ public class ImageUtils {
     private static final String OUTPUT_DIRECTORY_NAME = "output";
     private static final int IMAGE_WIDTH = 400;
 
+    private ImageUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * Creates image file from URL.
      *
@@ -88,7 +92,7 @@ public class ImageUtils {
         URL url = new URL(urlSpec);
         try {
             return ImageIO.read(url);
-        } catch(IOException e) {
+        } catch (IOException e) {
             log.error("Can't get image by URL {}", urlSpec);
             throw e;
         }

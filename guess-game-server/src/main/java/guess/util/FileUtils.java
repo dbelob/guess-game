@@ -7,6 +7,10 @@ import java.io.IOException;
  * File utility methods.
  */
 public class FileUtils {
+    private FileUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * Checks existence and creates directory.
      *
