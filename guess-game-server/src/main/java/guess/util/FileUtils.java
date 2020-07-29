@@ -8,7 +8,6 @@ import java.io.IOException;
  */
 public class FileUtils {
     private FileUtils() {
-        throw new IllegalStateException("Utility class");
     }
 
     /**

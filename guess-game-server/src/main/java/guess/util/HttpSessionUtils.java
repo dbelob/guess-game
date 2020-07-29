@@ -21,7 +21,6 @@ public class HttpSessionUtils {
     private static final String LANGUAGE_ATTRIBUTE_NAME = "language";
 
     private HttpSessionUtils() {
-        throw new IllegalStateException("Utility class");
     }
 
     public static State getState(HttpSession httpSession) {

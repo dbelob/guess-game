@@ -145,7 +145,6 @@ public class ContentfulUtils {
     }
 
     private ContentfulUtils() {
-        throw new IllegalStateException("Utility class");
     }
 
     /**

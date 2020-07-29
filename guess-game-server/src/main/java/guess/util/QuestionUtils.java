@@ -9,7 +9,6 @@ import java.util.*;
  */
 public class QuestionUtils {
     private QuestionUtils() {
-        throw new IllegalStateException("Utility class");
     }
 
     public static <T extends Identifiable> List<T> removeDuplicatesById(List<T> items) {

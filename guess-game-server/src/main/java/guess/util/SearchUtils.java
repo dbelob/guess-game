@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class SearchUtils {
     private SearchUtils() {
-        throw new IllegalStateException("Utility class");
     }
 
     public static String trimAndLowerCase(String value) {
