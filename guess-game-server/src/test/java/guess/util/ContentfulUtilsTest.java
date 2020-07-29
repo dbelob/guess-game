@@ -32,8 +32,8 @@ public class ContentfulUtilsTest {
             });
         }
 
-        private String value;
-        private String expected;
+        private final String value;
+        private final String expected;
 
         public ExtractTwitterTest(String value, String expected) {
             this.value = value;
@@ -68,8 +68,8 @@ public class ContentfulUtilsTest {
             });
         }
 
-        private String value;
-        private String expected;
+        private final String value;
+        private final String expected;
 
         public ExtractGitHubTest(String value, String expected) {
             this.value = value;
@@ -99,8 +99,8 @@ public class ContentfulUtilsTest {
             });
         }
 
-        private String value;
-        private String expected;
+        private final String value;
+        private final String expected;
 
         public ExtractAssetUrlTest(String value, String expected) {
             this.value = value;
