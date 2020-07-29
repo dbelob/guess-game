@@ -144,6 +144,10 @@ public class ContentfulUtils {
         restTemplate = new RestTemplate(converters);
     }
 
+    private ContentfulUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * Gets locale codes.
      *

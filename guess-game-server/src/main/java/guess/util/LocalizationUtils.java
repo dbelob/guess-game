@@ -17,6 +17,10 @@ public class LocalizationUtils {
     public static final String CONFERENCES_EVENT_TYPE_TEXT = "conferencesEventTypeText";
     public static final String MEETUPS_EVENT_TYPE_TEXT = "meetupsEventTypeText";
 
+    private LocalizationUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * Gets string for language (internal implementation).
      *

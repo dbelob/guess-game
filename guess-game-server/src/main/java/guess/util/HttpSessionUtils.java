@@ -20,6 +20,10 @@ public class HttpSessionUtils {
     private static final String ANSWER_SETS_ATTRIBUTE_NAME = "answerSets";
     private static final String LANGUAGE_ATTRIBUTE_NAME = "language";
 
+    private HttpSessionUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static State getState(HttpSession httpSession) {
         Object stateObject = httpSession.getAttribute(STATE_ATTRIBUTE_NAME);
 

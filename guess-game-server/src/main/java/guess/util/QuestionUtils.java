@@ -8,6 +8,10 @@ import java.util.*;
  * Question utility methods.
  */
 public class QuestionUtils {
+    private QuestionUtils() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static <T extends Identifiable> List<T> removeDuplicatesById(List<T> items) {
         List<T> result = new ArrayList<>();
         Set<Long> ids = new HashSet<>();
