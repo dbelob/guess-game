@@ -34,6 +34,9 @@ public class YamlUtils {
     private static final String DATA_DIRECTORY_NAME = "data";
     private static final String OUTPUT_DIRECTORY_NAME = "output";
 
+    private YamlUtils() {
+    }
+
     /**
      * Reads source information from resource files.
      *

@@ -41,7 +41,7 @@ public class QuestionDaoImpl implements QuestionDao {
      */
     public List<QuestionSet> readQuestionSets() {
         // Create question sets
-        List<QuestionSet> questionSets = new ArrayList<>();
+        List<QuestionSet> localQuestionSets = new ArrayList<>();
 
         for (Event event : eventDao.getEvents()) {
             // Fill speaker and talk questions
@@ -68,14 +68,14 @@ public class QuestionDaoImpl implements QuestionDao {
                         talk));
             }
 
-            questionSets.add(new QuestionSet(
+            localQuestionSets.add(new QuestionSet(
                     event,
                     QuestionUtils.removeDuplicatesById(speakerQuestions),
                     QuestionUtils.removeDuplicatesById(talkQuestions),
                     QuestionUtils.removeDuplicatesById(accountQuestions)));
         }
 
-        return questionSets;
+        return localQuestionSets;
     }
 
     @Override
