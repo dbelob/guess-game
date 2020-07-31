@@ -49,10 +49,27 @@ public class ContentfulUtils {
     private static final String MAIN_SPACE_ID = "2jxgmeypnru5";
     private static final String MAIN_ACCESS_TOKEN = "08f9e9e80ee347bd9f6017bf76f0a290c2ff0c28000946f7079f94a78974f090";
 
+    private static final String FIELDS_SPEAKER_FIELD_NAME = "fields.speaker";
+    private static final String FIELDS_CONFERENCES_FIELD_NAME = "fields.conferences";
+
+    private static final String ACCESS_TOKEN_PARAM_NAME = "access_token";
+    private static final String LOCALE_PARAM_NAME = "locale";
+    private static final String CONTENT_TYPE_PARAM_NAME = "content_type";
+    private static final String SELECT_PARAM_NAME = "select";
+    private static final String ORDER_PARAM_NAME = "order";
+    private static final String LIMIT_PARAM_NAME = "limit";
+
+    private static final String ENTRIES_VARIABLE_VALUE = "entries";
+
+    private static final int MAXIMUM_LIMIT = 1000;
+
+    private static final String ENGLISH_LOCALE = "en";
+    private static final String RUSSIAN_LOCALE = "ru-RU";
+
     private enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
-                "fields.speaker", "fields.conferences", "fields.javaChampion",
+                FIELDS_SPEAKER_FIELD_NAME, FIELDS_CONFERENCES_FIELD_NAME, "fields.javaChampion",
                 "fields.talksPresentation", ContentfulTalkResponseCommon.class),                        // fields.talksPresentation is list
         // HolyJS
         HOLY_JS_SPACE_INFO("nn534z2fqr9f", "1ca5b5d059930cd6681083617578e5a61187d1a71cbd75d4e0059cca3dc85f8c",
@@ -60,15 +77,15 @@ public class ContentfulUtils {
                 "fields.presentation", ContentfulTalkResponseHolyJs.class),                             // fields.presentation is single value
         // DotNext
         DOT_NEXT_SPACE_INFO("9n3x4rtjlya6", "14e1427f8fbee9e5a089cd634fc60189c7aff2814b496fb0ad957b867a59503b",
-                "fields.speaker", "fields.conference", "fields.mvp,fields.mvpReconnect",
+                FIELDS_SPEAKER_FIELD_NAME, "fields.conference", "fields.mvp,fields.mvpReconnect",
                 "fields.talksPresentation,fields.presentation", ContentfulTalkResponseDotNext.class),   // fields.talksPresentation is list, fields.presentation is single value
         // Heisenbug
         HEISENBUG_SPACE_INFO("ut4a3ciohj8i", "e7edd5951d844b80ef41166e30cb9645e4f89d11c8ac9eecdadb2a38c061b980",
-                "fields.speaker", "fields.conferences", null,
+                FIELDS_SPEAKER_FIELD_NAME, FIELDS_CONFERENCES_FIELD_NAME, null,
                 "fields.talksPresentation", ContentfulTalkResponseHeisenbug.class),                     // talksPresentation is single value
         // Mobius
         MOBIUS_SPACE_INFO("2grufn031spf", "d0c680ed11f68287348b6b8481d3313fde8c2d23cc8ce24a2b0ae254dd779e6d",
-                "fields.speaker", "fields.conferences", null,
+                FIELDS_SPEAKER_FIELD_NAME, FIELDS_CONFERENCES_FIELD_NAME, null,
                 "fields.talkPresentation", ContentfulTalkResponseMobius.class);                         // talkPresentation is list
 
         private final String spaceId;
@@ -93,11 +110,6 @@ public class ContentfulUtils {
             this.talkResponseClass = talkResponseClass;
         }
     }
-
-    private static final int MAXIMUM_LIMIT = 1000;
-
-    private static final String ENGLISH_LOCALE = "en";
-    private static final String RUSSIAN_LOCALE = "ru-RU";
 
     private static final EnumMap<Conference, ConferenceSpaceInfo> CONFERENCE_SPACE_INFO_MAP = new EnumMap<>(Conference.class);
     private static final EnumMap<Conference, String> CONFERENCE_EVENT_TYPE_NAME_MAP = new EnumMap<>(Conference.class);
@@ -156,7 +168,7 @@ public class ContentfulUtils {
         // https://cdn.contentful.com/spaces/{spaceId}/locales?access_token={accessToken}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
-                .queryParam("access_token", MAIN_ACCESS_TOKEN);
+                .queryParam(ACCESS_TOKEN_PARAM_NAME, MAIN_ACCESS_TOKEN);
         URI uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, "locales")
                 .encode()
@@ -178,14 +190,14 @@ public class ContentfulUtils {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsList&select={fields}&order={fields}&limit=1000
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
-                .queryParam("access_token", MAIN_ACCESS_TOKEN)
-                .queryParam("locale", "*")
-                .queryParam("content_type", "eventsList")
-                .queryParam("select", "fields.eventName,fields.eventDescriptions,fields.siteLink,fields.vkLink,fields.twLink,fields.fbLink,fields.youtubeLink,fields.telegramLink")
-                .queryParam("order", "fields.eventName")
-                .queryParam("limit", MAXIMUM_LIMIT);
+                .queryParam(ACCESS_TOKEN_PARAM_NAME, MAIN_ACCESS_TOKEN)
+                .queryParam(LOCALE_PARAM_NAME, "*")
+                .queryParam(CONTENT_TYPE_PARAM_NAME, "eventsList")
+                .queryParam(SELECT_PARAM_NAME, "fields.eventName,fields.eventDescriptions,fields.siteLink,fields.vkLink,fields.twLink,fields.fbLink,fields.youtubeLink,fields.telegramLink")
+                .queryParam(ORDER_PARAM_NAME, "fields.eventName")
+                .queryParam(LIMIT_PARAM_NAME, MAXIMUM_LIMIT);
         URI uri = builder
-                .buildAndExpand(MAIN_SPACE_ID, "entries")
+                .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
         ContentfulEventTypeResponse response = restTemplate.getForObject(uri, ContentfulEventTypeResponse.class);
@@ -233,7 +245,7 @@ public class ContentfulUtils {
      * @param <S> value type
      * @return first map value
      */
-    private static <T, S> S getFirstMapValue(Map<T, S> map) {
+    public static <T, S> S getFirstMapValue(Map<T, S> map) {
         Map.Entry<T, S> entry = map.entrySet().iterator().next();
 
         return entry.getValue();
@@ -250,11 +262,11 @@ public class ContentfulUtils {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsCalendar&select={fields}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
-                .queryParam("access_token", MAIN_ACCESS_TOKEN)
-                .queryParam("locale", "*")
-                .queryParam("content_type", "eventsCalendar")
-                .queryParam("select", "fields.conferenceName,fields.eventStart,fields.eventEnd,fields.conferenceLink,fields.eventCity,fields.youtubePlayList,fields.venueAddress,fields.addressLink")
-                .queryParam("limit", MAXIMUM_LIMIT);
+                .queryParam(ACCESS_TOKEN_PARAM_NAME, MAIN_ACCESS_TOKEN)
+                .queryParam(LOCALE_PARAM_NAME, "*")
+                .queryParam(CONTENT_TYPE_PARAM_NAME, "eventsCalendar")
+                .queryParam(SELECT_PARAM_NAME, "fields.conferenceName,fields.eventStart,fields.eventEnd,fields.conferenceLink,fields.eventCity,fields.youtubePlayList,fields.venueAddress,fields.addressLink")
+                .queryParam(LIMIT_PARAM_NAME, MAXIMUM_LIMIT);
 
         if ((eventName != null) && !eventName.isEmpty()) {
             builder.queryParam("fields.eventPage.sys.contentType.sys.id", "eventsList");
@@ -267,7 +279,7 @@ public class ContentfulUtils {
         }
 
         URI uri = builder
-                .buildAndExpand(MAIN_SPACE_ID, "entries")
+                .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
         ContentfulEventResponse response = restTemplate.getForObject(uri, ContentfulEventResponse.class);
@@ -394,18 +406,18 @@ public class ContentfulUtils {
 
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
-                .queryParam("access_token", conferenceSpaceInfo.accessToken)
-                .queryParam("content_type", "people")
-                .queryParam("select", selectingFields.toString())
+                .queryParam(ACCESS_TOKEN_PARAM_NAME, conferenceSpaceInfo.accessToken)
+                .queryParam(CONTENT_TYPE_PARAM_NAME, "people")
+                .queryParam(SELECT_PARAM_NAME, selectingFields.toString())
                 .queryParam(conferenceSpaceInfo.speakerFlagFieldName, "true")   // only speakers
-                .queryParam("limit", MAXIMUM_LIMIT);
+                .queryParam(LIMIT_PARAM_NAME, MAXIMUM_LIMIT);
 
         if ((conferenceCode != null) && !conferenceCode.isEmpty()) {
             builder.queryParam(conferenceSpaceInfo.conferenceFieldName, conferenceCode);
         }
 
         URI uri = builder
-                .buildAndExpand(conferenceSpaceInfo.spaceId, "entries")
+                .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
@@ -450,18 +462,18 @@ public class ContentfulUtils {
 
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
-                .queryParam("access_token", conferenceSpaceInfo.accessToken)
-                .queryParam("content_type", "talks")
-                .queryParam("select", selectingFields.toString())
-                .queryParam("order", "fields.talkDay,fields.trackTime,fields.track")
-                .queryParam("limit", MAXIMUM_LIMIT);
+                .queryParam(ACCESS_TOKEN_PARAM_NAME, conferenceSpaceInfo.accessToken)
+                .queryParam(CONTENT_TYPE_PARAM_NAME, "talks")
+                .queryParam(SELECT_PARAM_NAME, selectingFields.toString())
+                .queryParam(ORDER_PARAM_NAME, "fields.talkDay,fields.trackTime,fields.track")
+                .queryParam(LIMIT_PARAM_NAME, MAXIMUM_LIMIT);
 
         if ((conferenceCode != null) && !conferenceCode.isEmpty()) {
             builder.queryParam(conferenceSpaceInfo.conferenceFieldName, conferenceCode);
         }
 
         URI uri = builder
-                .buildAndExpand(conferenceSpaceInfo.spaceId, "entries")
+                .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
@@ -679,8 +691,8 @@ public class ContentfulUtils {
      * @param value source value
      * @return extracted boolean
      */
-    private static boolean extractBoolean(Boolean value) {
-        return (value != null) ? value : false;
+    public static boolean extractBoolean(Boolean value) {
+        return (value != null) && value;
     }
 
     /**

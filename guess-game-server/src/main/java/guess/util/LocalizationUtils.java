@@ -99,7 +99,7 @@ public class LocalizationUtils {
         String name = LocalizationUtils.getString(speaker.getName(), language);
         String company = LocalizationUtils.getString(speaker.getCompany(), language);
 
-        return ((company != null) && !company.isEmpty()) ?
+        return (!company.isEmpty()) ?
                 String.format("%s (%s)", name, company) :
                 name;
     }
@@ -115,7 +115,7 @@ public class LocalizationUtils {
         String name = LocalizationUtils.getString(speaker.getNameWithLastNameFirst(), language);
         String company = LocalizationUtils.getString(speaker.getCompany(), language);
 
-        return ((company != null) && !company.isEmpty()) ?
+        return (!company.isEmpty()) ?
                 String.format("%s (%s)", name, company) :
                 name;
     }
