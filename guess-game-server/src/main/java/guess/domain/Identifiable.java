@@ -1,11 +1,12 @@
 package guess.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Identifiable.
  */
-public abstract class Identifiable {
+public abstract class Identifiable implements Serializable {
     private final long id;
 
     public Identifiable(long id) {
