@@ -8,11 +8,73 @@ import org.junit.runners.Parameterized.Parameters;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 
 @RunWith(Enclosed.class)
 public class ContentfulUtilsTest {
+    @RunWith(Parameterized.class)
+    public static class GetFirstMapValueTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            Map<String, String> map0 = Map.of("key1", "value1");
+
+            Map<String, String> map1 = new LinkedHashMap<>();
+            map1.put("key1", "value1");
+            map1.put("key2", "value2");
+
+            Map<String, String> map2 = new LinkedHashMap<>();
+            map2.put("key2", "value2");
+            map2.put("key1", "value1");
+
+            return Arrays.asList(new Object[][]{
+                    {map0, "value1"},
+                    {map1, "value1"},
+                    {map2, "value2"}
+            });
+        }
+
+        private final Map<String, String> map;
+        private final String expected;
+
+        public GetFirstMapValueTest(Map<String, String> map, String expected) {
+            this.map = map;
+            this.expected = expected;
+        }
+
+        @Test
+        public void getFirstMapValue() {
+            assertEquals(expected, ContentfulUtils.getFirstMapValue(map));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class ExtractBooleanTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {null, false},
+                    {Boolean.TRUE, true},
+                    {Boolean.FALSE, false}
+            });
+        }
+
+        private final Boolean value;
+        private final boolean expected;
+
+        public ExtractBooleanTest(Boolean value, boolean expected) {
+            this.value = value;
+            this.expected = expected;
+        }
+
+        @Test
+        public void extractBoolean() {
+            assertEquals(expected, ContentfulUtils.extractBoolean(value));
+        }
+    }
+
     @RunWith(Parameterized.class)
     public static class ExtractTwitterTest {
         @Parameters
