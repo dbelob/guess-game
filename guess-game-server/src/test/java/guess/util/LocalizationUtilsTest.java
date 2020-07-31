@@ -30,11 +30,14 @@ public class LocalizationUtilsTest {
             return Arrays.asList(new Object[][]{
                     {null, null, null, ""},
                     {null, null, Language.ENGLISH, ""},
+                    {null, Language.ENGLISH, null, ""},
                     {null, Language.ENGLISH, Language.ENGLISH, ""},
 
                     {STANDARD_LOCALE_ITEMS, Language.ENGLISH, Language.ENGLISH, "Text"},
                     {STANDARD_LOCALE_ITEMS, Language.RUSSIAN, Language.ENGLISH, "Текст"},
                     {STANDARD_LOCALE_ITEMS, null, Language.ENGLISH, "Text"},
+                    {STANDARD_LOCALE_ITEMS, Language.ENGLISH, null, "Text"},
+                    {STANDARD_LOCALE_ITEMS, null, null, ""},
 
                     {EMPTY_LOCALE_ITEMS, Language.ENGLISH, Language.ENGLISH, ""},
                     {EMPTY_LOCALE_ITEMS, Language.RUSSIAN, Language.ENGLISH, ""},
