@@ -245,7 +245,7 @@ public class ContentfulUtils {
      * @param <S> value type
      * @return first map value
      */
-    public static <T, S> S getFirstMapValue(Map<T, S> map) {
+    static <T, S> S getFirstMapValue(Map<T, S> map) {
         Map.Entry<T, S> entry = map.entrySet().iterator().next();
 
         return entry.getValue();
@@ -337,7 +337,7 @@ public class ContentfulUtils {
      * @param localDate date
      * @return zoned date time
      */
-    private static ZonedDateTime createUtcZonedDateTime(LocalDate localDate) {
+    static ZonedDateTime createUtcZonedDateTime(LocalDate localDate) {
         return ZonedDateTime.ofInstant(
                 ZonedDateTime.of(
                         localDate,
@@ -352,7 +352,7 @@ public class ContentfulUtils {
      * @param zonedDateTimeString zoned date time string
      * @return event local date
      */
-    private static LocalDate createEventLocalDate(String zonedDateTimeString) {
+    static LocalDate createEventLocalDate(String zonedDateTimeString) {
         return ZonedDateTime.ofInstant(
                 ZonedDateTime.parse(zonedDateTimeString).toInstant(),
                 ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID))
@@ -681,7 +681,7 @@ public class ContentfulUtils {
      * @param value source value
      * @return extracted string
      */
-    private static String extractString(String value) {
+    static String extractString(String value) {
         return (value != null) ? value.trim() : null;
     }
 
@@ -691,7 +691,7 @@ public class ContentfulUtils {
      * @param value source value
      * @return extracted boolean
      */
-    public static boolean extractBoolean(Boolean value) {
+    static boolean extractBoolean(Boolean value) {
         return (value != null) && value;
     }
 
@@ -762,10 +762,12 @@ public class ContentfulUtils {
      * @param language {@code true} if Russian, {@code false} otherwise
      * @return talk language
      */
-    public static String extractLanguage(Boolean language) {
-        return (language != null) ?
-                (language ? Language.RUSSIAN.getCode() : Language.ENGLISH.getCode()) :
-                null;
+    static String extractLanguage(Boolean language) {
+        if (language != null) {
+            return Boolean.TRUE.equals(language) ? Language.RUSSIAN.getCode() : Language.ENGLISH.getCode();
+        } else {
+            return null;
+        }
     }
 
     /**
