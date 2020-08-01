@@ -6,7 +6,7 @@
 # Find, See, Guess the Speakers
 
 There are two parts of the program:
-1. Search and view information about conferences, meetings, talks and speakers
+1. Search and view information about conferences, meetups, talks and speakers
 
 1. **Guess the Speaker** game
 
@@ -47,7 +47,7 @@ https://jugspeakers.info
 
 ## Download
 
-1. Open [Releases](https://github.com/dbelob/guess-game/releases) page
+1. Open [Releases](https://github.com/JugruGroup/guess-game/releases) page
 
 1. Choose latest version
 

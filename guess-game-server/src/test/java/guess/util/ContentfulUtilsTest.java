@@ -1,11 +1,15 @@
 package guess.util;
 
+import guess.domain.Language;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -51,6 +55,81 @@ public class ContentfulUtilsTest {
     }
 
     @RunWith(Parameterized.class)
+    public static class CreateUtcZonedDateTimeTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {LocalDate.of(2020, 1, 1), ZonedDateTime.of(2019, 12, 31, 21, 0, 0, 0, ZoneId.of("UTC"))},
+                    {LocalDate.of(2020, 12, 31), ZonedDateTime.of(2020, 12, 30, 21, 0, 0, 0, ZoneId.of("UTC"))}
+            });
+        }
+
+        private final LocalDate localDate;
+        private final ZonedDateTime expected;
+
+        public CreateUtcZonedDateTimeTest(LocalDate localDate, ZonedDateTime expected) {
+            this.localDate = localDate;
+            this.expected = expected;
+        }
+
+        @Test
+        public void createUtcZonedDateTime() {
+            assertEquals(expected, ContentfulUtils.createUtcZonedDateTime(localDate));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class CreateEventLocalDateTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {"2020-01-01T00:00+03:00", LocalDate.of(2020, 1, 1)},
+                    {"2020-12-31T00:00+03:00", LocalDate.of(2020, 12, 31)}
+            });
+        }
+
+        private final String zonedDateTimeString;
+        private final LocalDate expected;
+
+        public CreateEventLocalDateTest(String zonedDateTimeString, LocalDate expected) {
+            this.zonedDateTimeString = zonedDateTimeString;
+            this.expected = expected;
+        }
+
+        @Test
+        public void createUtcZonedDateTime() {
+            assertEquals(expected, ContentfulUtils.createEventLocalDate(zonedDateTimeString));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class ExtractStringTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {null, null},
+                    {"", ""},
+                    {" value0", "value0"},
+                    {"value1 ", "value1"},
+                    {" value2 ", "value2"}
+            });
+        }
+
+        private final String value;
+        private final String expected;
+
+        public ExtractStringTest(String value, String expected) {
+            this.value = value;
+            this.expected = expected;
+        }
+
+        @Test
+        public void extractBoolean() {
+            assertEquals(expected, ContentfulUtils.extractString(value));
+        }
+    }
+
+    @RunWith(Parameterized.class)
     public static class ExtractBooleanTest {
         @Parameters
         public static Collection<Object[]> data() {
@@ -90,7 +169,9 @@ public class ContentfulUtilsTest {
                     {"tagir_valeev", "tagir_valeev"},
                     {"kuksenk0", "kuksenk0"},
                     {"DaschnerS", "DaschnerS"},
-                    {"@dougqh", "dougqh"}
+                    {"@dougqh", "dougqh"},
+                    {"42", "42"},
+                    {"@42", "42"}
             });
         }
 
@@ -105,6 +186,31 @@ public class ContentfulUtilsTest {
         @Test
         public void extractTwitter() {
             assertEquals(expected, ContentfulUtils.extractTwitter(value));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class ExtractTwitterWithExceptionTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {"%"},
+                    {"%42"},
+                    {"%dougqh"},
+                    {"dougqh%"},
+                    {"dou%gqh"}
+            });
+        }
+
+        private final String value;
+
+        public ExtractTwitterWithExceptionTest(String value) {
+            this.value = value;
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void extractTwitterWithException() {
+            ContentfulUtils.extractTwitter(value);
         }
     }
 
@@ -145,6 +251,56 @@ public class ContentfulUtilsTest {
     }
 
     @RunWith(Parameterized.class)
+    public static class ExtractGitHubWithExceptionTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {"%"},
+                    {"%42"},
+                    {"%dougqh"},
+                    {"dougqh%"},
+                    {"dou%gqh"}
+            });
+        }
+
+        private final String value;
+
+        public ExtractGitHubWithExceptionTest(String value) {
+            this.value = value;
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void extractGitHubWithException() {
+            ContentfulUtils.extractGitHub(value);
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class ExtractLanguageTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {null, null},
+                    {Boolean.TRUE, Language.RUSSIAN.getCode()},
+                    {Boolean.FALSE, Language.ENGLISH.getCode()}
+            });
+        }
+
+        private final Boolean value;
+        private final String expected;
+
+        public ExtractLanguageTest(Boolean value, String expected) {
+            this.value = value;
+            this.expected = expected;
+        }
+
+        @Test
+        public void extractLanguage() {
+            assertEquals(expected, ContentfulUtils.extractLanguage(value));
+        }
+    }
+
+    @RunWith(Parameterized.class)
     public static class ExtractAssetUrlTest {
         @Parameters
         public static Collection<Object[]> data() {
@@ -173,6 +329,5 @@ public class ContentfulUtilsTest {
         public void extractAssetUrl() {
             assertEquals(expected, ContentfulUtils.extractAssetUrl(value));
         }
-
     }
 }
