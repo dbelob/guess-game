@@ -18,6 +18,8 @@ import guess.domain.source.contentful.speaker.ContentfulSpeaker;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
 import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
 import guess.domain.source.contentful.talk.response.*;
+import guess.domain.source.extract.ExtractPair;
+import guess.domain.source.extract.ExtractSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -696,12 +698,13 @@ public class ContentfulUtils {
     }
 
     /**
-     * Extracts Twitter username.
+     * Extracts value.
      *
-     * @param value source value
-     * @return extracted Twitter username
+     * @param value      source value
+     * @param extractSet extract set
+     * @return property
      */
-    public static String extractTwitter(String value) {
+    public static String extractProperty(String value, ExtractSet extractSet) {
         if (value == null) {
             return null;
         }
@@ -712,14 +715,27 @@ public class ContentfulUtils {
             return value;
         }
 
-        Pattern pattern = Pattern.compile("^[\\s]*[@]?(\\w{1,15})[\\s]*$");
-        Matcher matcher = pattern.matcher(value);
-
-        if (matcher.matches()) {
-            return matcher.group(1);
-        } else {
-            throw new IllegalArgumentException(String.format("Invalid Twitter username: %s (change regular expression and rerun)", value));
+        for (ExtractPair extractPair : extractSet.getPairs()) {
+            Pattern pattern = Pattern.compile(extractPair.getPatternRegex());
+            Matcher matcher = pattern.matcher(value);
+            if (matcher.matches()) {
+                return matcher.group(extractPair.getGroupIndex());
+            }
         }
+
+        throw new IllegalArgumentException(String.format(extractSet.getExceptionMessage(), value));
+    }
+
+    /**
+     * Extracts Twitter username.
+     *
+     * @param value source value
+     * @return extracted Twitter username
+     */
+    public static String extractTwitter(String value) {
+        return extractProperty(value, new ExtractSet(
+                List.of(new ExtractPair("^[\\s]*[@]?(\\w{1,15})[\\s]*$", 1)),
+                "Invalid Twitter username: %s (change regular expression and rerun)"));
     }
 
     /**
@@ -729,31 +745,11 @@ public class ContentfulUtils {
      * @return extracted GitHub username
      */
     public static String extractGitHub(String value) {
-        if (value == null) {
-            return null;
-        }
-
-        value = value.trim();
-
-        if (value.isEmpty()) {
-            return value;
-        }
-
-        Pattern pattern = Pattern.compile("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)(/)?[\\s]*$");
-        Matcher matcher = pattern.matcher(value);
-
-        if (matcher.matches()) {
-            return matcher.group(4);
-        } else {
-            pattern = Pattern.compile("^[\\s]*(http(s)?://)?([a-zA-Z0-9\\-]+).github.io/blog(/)?[\\s]*$");
-            matcher = pattern.matcher(value);
-
-            if (matcher.matches()) {
-                return matcher.group(3);
-            } else {
-                throw new IllegalArgumentException(String.format("Invalid GitHub username: %s (change regular expressions and rerun)", value));
-            }
-        }
+        return extractProperty(value, new ExtractSet(
+                List.of(
+                        new ExtractPair("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)(/)?[\\s]*$", 4),
+                        new ExtractPair("^[\\s]*(http(s)?://)?([a-zA-Z0-9\\-]+).github.io/blog(/)?[\\s]*$", 3)),
+                "Invalid GitHub username: %s (change regular expressions and rerun)"));
     }
 
     /**
@@ -777,7 +773,7 @@ public class ContentfulUtils {
      * @param presentation  presentation
      * @return combined links
      */
-    private static List<ContentfulLink> combineContentfulLinks(List<ContentfulLink> presentations, ContentfulLink presentation) {
+    static List<ContentfulLink> combineContentfulLinks(List<ContentfulLink> presentations, ContentfulLink presentation) {
         List<ContentfulLink> contentfulLinks = new ArrayList<>();
 
         if (presentations != null) {
@@ -834,7 +830,7 @@ public class ContentfulUtils {
      * @param videoLink video link
      * @return video links
      */
-    private static List<String> extractVideoLinks(String videoLink) {
+    static List<String> extractVideoLinks(String videoLink) {
         List<String> videoLinks = new ArrayList<>();
 
         if (videoLink != null) {
@@ -876,23 +872,14 @@ public class ContentfulUtils {
      * @return URL with protocol
      */
     public static String extractAssetUrl(String value) {
-        if (value == null) {
-            return null;
-        }
+        String property = extractProperty(value, new ExtractSet(
+                List.of(new ExtractPair("^[\\s]*(http(s)?:)?//(.+)[\\s]*$", 3)),
+                "Invalid asset URL: %s (change regular expression and rerun)"));
 
-        value = value.trim();
-
-        if (value.isEmpty()) {
-            return value;
-        }
-
-        Pattern pattern = Pattern.compile("^[\\s]*(http(s)?:)?//(.+)[\\s]*$");
-        Matcher matcher = pattern.matcher(value);
-
-        if (matcher.matches()) {
-            return String.format("https://%s", matcher.group(3));
+        if ((property == null) || property.isEmpty()) {
+            return property;
         } else {
-            throw new IllegalArgumentException(String.format("Invalid asset URL: %s  (change regular expression and rerun)", value));
+            return String.format("https://%s", property);
         }
     }
 
@@ -904,7 +891,7 @@ public class ContentfulUtils {
      * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
      * @return local items
      */
-    public static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
+    static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
         enText = extractString(enText);
         ruText = extractString(ruText);
 
@@ -942,7 +929,7 @@ public class ContentfulUtils {
      * @param ruText russian text
      * @return local items
      */
-    private static List<LocaleItem> extractLocaleItems(String enText, String ruText) {
+    static List<LocaleItem> extractLocaleItems(String enText, String ruText) {
         return extractLocaleItems(enText, ruText, true);
     }
 
@@ -979,7 +966,7 @@ public class ContentfulUtils {
      * @param locale locale
      * @return event name
      */
-    private static String extractEventName(String name, String locale) {
+    static String extractEventName(String name, String locale) {
         if (name == null) {
             return null;
         }
@@ -994,7 +981,7 @@ public class ContentfulUtils {
                         .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Мск")
                         .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " СПб");
             default:
-                throw new IllegalArgumentException(String.format("Unknown locale: %s  (add new locale, change method and rerun)", locale));
+                throw new IllegalArgumentException(String.format("Unknown locale: %s (add new locale, change method and rerun)", locale));
         }
     }
 
