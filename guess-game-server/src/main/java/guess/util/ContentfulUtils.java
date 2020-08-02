@@ -891,7 +891,7 @@ public class ContentfulUtils {
      * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
      * @return local items
      */
-    public static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
+    static List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
         enText = extractString(enText);
         ruText = extractString(ruText);
 
@@ -929,7 +929,7 @@ public class ContentfulUtils {
      * @param ruText russian text
      * @return local items
      */
-    private static List<LocaleItem> extractLocaleItems(String enText, String ruText) {
+    static List<LocaleItem> extractLocaleItems(String enText, String ruText) {
         return extractLocaleItems(enText, ruText, true);
     }
 
@@ -966,7 +966,7 @@ public class ContentfulUtils {
      * @param locale locale
      * @return event name
      */
-    private static String extractEventName(String name, String locale) {
+    static String extractEventName(String name, String locale) {
         if (name == null) {
             return null;
         }
@@ -981,7 +981,7 @@ public class ContentfulUtils {
                         .replaceAll("[\\s]*[.]*(Moscow){1}[\\s]*$", " Мск")
                         .replaceAll("[\\s]*[.]*(Piter){1}[\\s]*$", " СПб");
             default:
-                throw new IllegalArgumentException(String.format("Unknown locale: %s  (add new locale, change method and rerun)", locale));
+                throw new IllegalArgumentException(String.format("Unknown locale: %s (add new locale, change method and rerun)", locale));
         }
     }
 
