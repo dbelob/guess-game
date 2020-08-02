@@ -1,6 +1,8 @@
 package guess.util;
 
 import guess.domain.Language;
+import guess.domain.source.contentful.ContentfulLink;
+import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
 import org.junit.Test;
@@ -381,6 +383,77 @@ public class ContentfulUtilsTest {
     }
 
     @RunWith(Parameterized.class)
+    public static class CombineContentfulLinksTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            ContentfulSys contentfulSys0 = new ContentfulSys();
+            contentfulSys0.setId("a");
+            ContentfulLink contentfulLink0 = new ContentfulLink();
+            contentfulLink0.setSys(contentfulSys0);
+
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("b");
+            ContentfulLink contentfulLink1 = new ContentfulLink();
+            contentfulLink1.setSys(contentfulSys1);
+
+            ContentfulSys contentfulSys2 = new ContentfulSys();
+            contentfulSys2.setId("c");
+            ContentfulLink contentfulLink2 = new ContentfulLink();
+            contentfulLink2.setSys(contentfulSys2);
+
+            return Arrays.asList(new Object[][]{
+                    {null, null, Collections.emptyList()},
+                    {Collections.emptyList(), null, Collections.emptyList()},
+                    {List.of(contentfulLink0), null, List.of(contentfulLink0)},
+                    {List.of(contentfulLink0, contentfulLink1), null, List.of(contentfulLink0, contentfulLink1)},
+                    {List.of(contentfulLink0), contentfulLink1, List.of(contentfulLink0, contentfulLink1)},
+                    {List.of(contentfulLink0), contentfulLink0, List.of(contentfulLink0)},
+                    {List.of(contentfulLink0, contentfulLink1), contentfulLink2, List.of(contentfulLink0, contentfulLink1, contentfulLink2)},
+                    {List.of(contentfulLink0, contentfulLink0), contentfulLink0, List.of(contentfulLink0)}
+            });
+        }
+
+        private final List<ContentfulLink> presentations;
+        private final ContentfulLink presentation;
+        private final List<ContentfulLink> expected;
+
+        public CombineContentfulLinksTest(List<ContentfulLink> presentations, ContentfulLink presentation, List<ContentfulLink> expected) {
+            this.presentations = presentations;
+            this.presentation = presentation;
+            this.expected = expected;
+        }
+
+        @Test
+        public void combineContentfulLinks() {
+            assertEquals(expected, ContentfulUtils.combineContentfulLinks(presentations, presentation));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class ExtractVideoLinksTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {null, Collections.emptyList()},
+                    {"value", List.of("value")}
+            });
+        }
+
+        private final String videoLink;
+        private final List<String> expected;
+
+        public ExtractVideoLinksTest(String videoLink, List<String> expected) {
+            this.videoLink = videoLink;
+            this.expected = expected;
+        }
+
+        @Test
+        public void extractVideoLinks() {
+            assertEquals(expected, ContentfulUtils.extractVideoLinks(videoLink));
+        }
+    }
+
+    @RunWith(Parameterized.class)
     public static class ExtractAssetUrlTest {
         @Parameters
         public static Collection<Object[]> data() {
@@ -408,6 +481,28 @@ public class ContentfulUtilsTest {
         @Test
         public void extractAssetUrl() {
             assertEquals(expected, ContentfulUtils.extractAssetUrl(value));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class ExtractAssetUrlWithExceptionTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {"abc"},
+                    {"42"}
+            });
+        }
+
+        private final String value;
+
+        public ExtractAssetUrlWithExceptionTest(String value) {
+            this.value = value;
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void extractAssetUrl() {
+            ContentfulUtils.extractAssetUrl(value);
         }
     }
 }

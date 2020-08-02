@@ -773,7 +773,7 @@ public class ContentfulUtils {
      * @param presentation  presentation
      * @return combined links
      */
-    private static List<ContentfulLink> combineContentfulLinks(List<ContentfulLink> presentations, ContentfulLink presentation) {
+    static List<ContentfulLink> combineContentfulLinks(List<ContentfulLink> presentations, ContentfulLink presentation) {
         List<ContentfulLink> contentfulLinks = new ArrayList<>();
 
         if (presentations != null) {
@@ -830,7 +830,7 @@ public class ContentfulUtils {
      * @param videoLink video link
      * @return video links
      */
-    private static List<String> extractVideoLinks(String videoLink) {
+    static List<String> extractVideoLinks(String videoLink) {
         List<String> videoLinks = new ArrayList<>();
 
         if (videoLink != null) {
@@ -872,23 +872,14 @@ public class ContentfulUtils {
      * @return URL with protocol
      */
     public static String extractAssetUrl(String value) {
-        if (value == null) {
-            return null;
-        }
+        String property = extractProperty(value, new ExtractSet(
+                List.of(new ExtractPair("^[\\s]*(http(s)?:)?//(.+)[\\s]*$", 3)),
+                "Invalid asset URL: %s (change regular expression and rerun)"));
 
-        value = value.trim();
-
-        if (value.isEmpty()) {
-            return value;
-        }
-
-        Pattern pattern = Pattern.compile("^[\\s]*(http(s)?:)?//(.+)[\\s]*$");
-        Matcher matcher = pattern.matcher(value);
-
-        if (matcher.matches()) {
-            return String.format("https://%s", matcher.group(3));
+        if ((property == null) || property.isEmpty()) {
+            return property;
         } else {
-            throw new IllegalArgumentException(String.format("Invalid asset URL: %s  (change regular expression and rerun)", value));
+            return String.format("https://%s", property);
         }
     }
 
