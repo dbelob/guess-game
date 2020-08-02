@@ -1,6 +1,8 @@
 package guess.util;
 
 import guess.domain.Language;
+import guess.domain.source.extract.ExtractPair;
+import guess.domain.source.extract.ExtractSet;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -10,10 +12,7 @@ import org.junit.runners.Parameterized.Parameters;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -155,6 +154,87 @@ public class ContentfulUtilsTest {
     }
 
     @RunWith(Parameterized.class)
+    public static class ExtractPropertyTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {"abc", new ExtractSet(
+                            List.of(new ExtractPair("([a-z]+)", 1)),
+                            "Invalid property: %s"),
+                            "abc"},
+                    {"abc", new ExtractSet(
+                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                            "Invalid property: %s"),
+                            "abc"},
+                    {" abc", new ExtractSet(
+                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                            "Invalid property: %s"),
+                            "abc"},
+                    {"abc ", new ExtractSet(
+                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                            "Invalid property: %s"),
+                            "abc"},
+                    {" abc ", new ExtractSet(
+                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                            "Invalid property: %s"),
+                            "abc"}
+            });
+        }
+
+        private final String value;
+        private final ExtractSet extractSet;
+        private final String expected;
+
+        public ExtractPropertyTest(String value, ExtractSet extractSet, String expected) {
+            this.value = value;
+            this.extractSet = extractSet;
+            this.expected = expected;
+        }
+
+        @Test
+        public void extractProperty() {
+            assertEquals(expected, ContentfulUtils.extractProperty(value, extractSet));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class ExtractPropertyWithExceptionTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {"42", new ExtractSet(
+                            List.of(new ExtractPair("([a-z]+)", 1)),
+                            "Invalid property: %s")},
+                    {"42", new ExtractSet(
+                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                            "Invalid property: %s")},
+                    {" 42", new ExtractSet(
+                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                            "Invalid property: %s")},
+                    {"42 ", new ExtractSet(
+                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                            "Invalid property: %s")},
+                    {" 42 ", new ExtractSet(
+                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                            "Invalid property: %s")}
+            });
+        }
+
+        private final String value;
+        private final ExtractSet extractSet;
+
+        public ExtractPropertyWithExceptionTest(String value, ExtractSet extractSet) {
+            this.value = value;
+            this.extractSet = extractSet;
+        }
+
+        @Test(expected = IllegalArgumentException.class)
+        public void extractProperty() {
+            ContentfulUtils.extractProperty(value, extractSet);
+        }
+    }
+
+    @RunWith(Parameterized.class)
     public static class ExtractTwitterTest {
         @Parameters
         public static Collection<Object[]> data() {
@@ -209,7 +289,7 @@ public class ContentfulUtilsTest {
         }
 
         @Test(expected = IllegalArgumentException.class)
-        public void extractTwitterWithException() {
+        public void extractTwitter() {
             ContentfulUtils.extractTwitter(value);
         }
     }
@@ -270,7 +350,7 @@ public class ContentfulUtilsTest {
         }
 
         @Test(expected = IllegalArgumentException.class)
-        public void extractGitHubWithException() {
+        public void extractGitHub() {
             ContentfulUtils.extractGitHub(value);
         }
     }
