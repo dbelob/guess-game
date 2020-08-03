@@ -15,8 +15,8 @@ public class SearchUtils {
         return (value != null) ? value.trim().toLowerCase() : null;
     }
 
-    public static boolean isStringSet(String string) {
-        return ((string != null) && !string.isEmpty());
+    public static boolean isStringSet(String value) {
+        return ((value != null) && !value.isEmpty());
     }
 
     public static boolean isSubstringFound(String trimmedLowerCasedSubstring, List<LocaleItem> localeItems) {
