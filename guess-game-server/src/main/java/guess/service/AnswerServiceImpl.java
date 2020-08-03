@@ -77,7 +77,7 @@ public class AnswerServiceImpl implements AnswerService {
     public int getCurrentQuestionIndex(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
-        if (answerSets.size() <= 0) {
+        if (answerSets.isEmpty()) {
             return 0;
         } else {
             AnswerSet lastAnswerSet = answerSets.get(answerSets.size() - 1);
