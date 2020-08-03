@@ -7,20 +7,20 @@ import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.Question;
-import guess.domain.source.*;
-import guess.util.DateTimeUtils;
+import guess.domain.source.Event;
+import guess.domain.source.EventType;
+import guess.domain.source.LocaleItem;
+import guess.domain.source.Place;
 import guess.util.LocalizationUtils;
 import guess.util.QuestionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.temporal.ChronoUnit;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Question service implementation.

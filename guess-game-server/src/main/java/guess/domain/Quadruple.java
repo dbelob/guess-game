@@ -1,9 +1,10 @@
 package guess.domain;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.function.Function;
 
-public class Quadruple<T> {
+public class Quadruple<T> implements Serializable {
     private final T first;
     private final T second;
     private final T third;

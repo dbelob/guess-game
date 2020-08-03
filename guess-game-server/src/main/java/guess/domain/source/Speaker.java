@@ -3,13 +3,14 @@ package guess.domain.source;
 import guess.domain.Language;
 import guess.util.LocalizationUtils;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Speaker.
  */
-public class Speaker {
+public class Speaker implements Serializable {
     private long id;
     private String photoFileName;
     private List<LocaleItem> name;
