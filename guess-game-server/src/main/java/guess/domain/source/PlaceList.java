@@ -3,15 +3,15 @@ package guess.domain.source;
 import java.util.List;
 
 /**
- * Places.
+ * Place list.
  */
-public class Places {
+public class PlaceList {
     private List<Place> places;
 
-    public Places() {
+    public PlaceList() {
     }
 
-    public Places(List<Place> places) {
+    public PlaceList(List<Place> places) {
         this.places = places;
     }
 

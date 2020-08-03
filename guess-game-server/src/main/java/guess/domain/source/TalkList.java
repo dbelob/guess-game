@@ -3,15 +3,15 @@ package guess.domain.source;
 import java.util.List;
 
 /**
- * Talks.
+ * Talk list.
  */
-public class Talks {
+public class TalkList {
     private List<Talk> talks;
 
-    public Talks() {
+    public TalkList() {
     }
 
-    public Talks(List<Talk> talks) {
+    public TalkList(List<Talk> talks) {
         this.talks = talks;
     }
 
