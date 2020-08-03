@@ -1305,7 +1305,7 @@ public class ContentfulUtils {
         return Objects.equals(a, b);
     }
 
-    private static <T> boolean equals(List<T> a, List<T> b) {
+    static <T> boolean equals(List<T> a, List<T> b) {
         if (a != null) {
             if (b != null) {
                 return (a.containsAll(b) && b.containsAll(a));

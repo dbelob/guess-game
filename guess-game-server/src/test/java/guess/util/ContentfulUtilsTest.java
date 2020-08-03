@@ -4,6 +4,7 @@ import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.EventType;
 import guess.domain.source.LocaleItem;
+import guess.domain.source.Place;
 import guess.domain.source.contentful.ContentfulLink;
 import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.extract.ExtractPair;
@@ -689,6 +690,7 @@ public class ContentfulUtilsTest {
             EventType eventType0 = new EventType();
             eventType0.setId(0);
             eventType0.setConference(Conference.JPOINT);
+            eventType0.setLogoFileName("logoFileName0");
             eventType0.setName(List.of(new LocaleItem("en", "name0")));
             eventType0.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
             eventType0.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
@@ -709,74 +711,75 @@ public class ContentfulUtilsTest {
             EventType eventType3 = new EventType();
             eventType3.setId(0);
             eventType3.setConference(Conference.JPOINT);
-            eventType3.setName(List.of(new LocaleItem("en", "name3")));
+            eventType3.setLogoFileName("logoFileName3");
 
             EventType eventType4 = new EventType();
             eventType4.setId(0);
             eventType4.setConference(Conference.JPOINT);
-            eventType4.setName(List.of(new LocaleItem("en", "name0")));
-            eventType4.setShortDescription(List.of(new LocaleItem("en", "shortDescription4")));
+            eventType4.setLogoFileName("logoFileName0");
+            eventType4.setName(List.of(new LocaleItem("en", "name4")));
 
             EventType eventType5 = new EventType();
             eventType5.setId(0);
             eventType5.setConference(Conference.JPOINT);
+            eventType5.setLogoFileName("logoFileName0");
             eventType5.setName(List.of(new LocaleItem("en", "name0")));
-            eventType5.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
-            eventType5.setLongDescription(List.of(new LocaleItem("en", "longDescription5")));
+            eventType5.setShortDescription(List.of(new LocaleItem("en", "shortDescription5")));
 
             EventType eventType6 = new EventType();
             eventType6.setId(0);
             eventType6.setConference(Conference.JPOINT);
+            eventType6.setLogoFileName("logoFileName0");
             eventType6.setName(List.of(new LocaleItem("en", "name0")));
             eventType6.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
-            eventType6.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
-            eventType6.setSiteLink(List.of(new LocaleItem("en", "siteLink5")));
+            eventType6.setLongDescription(List.of(new LocaleItem("en", "longDescription6")));
 
             EventType eventType7 = new EventType();
             eventType7.setId(0);
             eventType7.setConference(Conference.JPOINT);
+            eventType7.setLogoFileName("logoFileName0");
             eventType7.setName(List.of(new LocaleItem("en", "name0")));
             eventType7.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
             eventType7.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
-            eventType7.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
-            eventType7.setVkLink("vkLink7");
+            eventType7.setSiteLink(List.of(new LocaleItem("en", "siteLink7")));
 
             EventType eventType8 = new EventType();
             eventType8.setId(0);
             eventType8.setConference(Conference.JPOINT);
+            eventType8.setLogoFileName("logoFileName0");
             eventType8.setName(List.of(new LocaleItem("en", "name0")));
             eventType8.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
             eventType8.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
             eventType8.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
-            eventType8.setVkLink("vkLink0");
-            eventType8.setTwitterLink("twitterLink8");
+            eventType8.setVkLink("vkLink8");
 
             EventType eventType9 = new EventType();
             eventType9.setId(0);
             eventType9.setConference(Conference.JPOINT);
+            eventType9.setLogoFileName("logoFileName0");
             eventType9.setName(List.of(new LocaleItem("en", "name0")));
             eventType9.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
             eventType9.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
             eventType9.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
             eventType9.setVkLink("vkLink0");
-            eventType9.setTwitterLink("twitterLink0");
-            eventType9.setFacebookLink("facebookLink9");
+            eventType9.setTwitterLink("twitterLink9");
 
             EventType eventType10 = new EventType();
             eventType10.setId(0);
             eventType10.setConference(Conference.JPOINT);
+            eventType10.setLogoFileName("logoFileName0");
             eventType10.setName(List.of(new LocaleItem("en", "name0")));
             eventType10.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
             eventType10.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
             eventType10.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
             eventType10.setVkLink("vkLink0");
             eventType10.setTwitterLink("twitterLink0");
-            eventType10.setFacebookLink("facebookLink0");
-            eventType10.setYoutubeLink("youtubeLink10");
+            eventType10.setFacebookLink("facebookLink10");
 
             EventType eventType11 = new EventType();
             eventType11.setId(0);
             eventType11.setConference(Conference.JPOINT);
+            eventType11.setLogoFileName("logoFileName0");
             eventType11.setName(List.of(new LocaleItem("en", "name0")));
             eventType11.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
             eventType11.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
@@ -784,8 +787,21 @@ public class ContentfulUtilsTest {
             eventType11.setVkLink("vkLink0");
             eventType11.setTwitterLink("twitterLink0");
             eventType11.setFacebookLink("facebookLink0");
-            eventType11.setYoutubeLink("youtubeLink0");
-            eventType11.setTelegramLink("telegramLink11");
+            eventType11.setYoutubeLink("youtubeLink11");
+
+            EventType eventType12 = new EventType();
+            eventType12.setId(0);
+            eventType12.setConference(Conference.JPOINT);
+            eventType12.setLogoFileName("logoFileName0");
+            eventType12.setName(List.of(new LocaleItem("en", "name0")));
+            eventType12.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            eventType12.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            eventType12.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
+            eventType12.setVkLink("vkLink0");
+            eventType12.setTwitterLink("twitterLink0");
+            eventType12.setFacebookLink("facebookLink0");
+            eventType12.setYoutubeLink("youtubeLink0");
+            eventType12.setTelegramLink("telegramLink12");
 
             return Arrays.asList(new Object[][]{
                     {eventType0, eventType0, false},
@@ -799,7 +815,8 @@ public class ContentfulUtilsTest {
                     {eventType0, eventType8, true},
                     {eventType0, eventType9, true},
                     {eventType0, eventType10, true},
-                    {eventType0, eventType11, true}
+                    {eventType0, eventType11, true},
+                    {eventType0, eventType12, true}
             });
         }
 
@@ -816,6 +833,94 @@ public class ContentfulUtilsTest {
         @Test
         public void needUpdate() {
             assertEquals(expected, ContentfulUtils.needUpdate(a, b));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class NeedUpdatePlaceTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            Place place0 = new Place();
+            place0.setId(0);
+            place0.setCity(List.of(new LocaleItem("en", "city0")));
+            place0.setVenueAddress(List.of(new LocaleItem("en", "venueAddress0")));
+            place0.setMapCoordinates("mapCoordinates0");
+
+            Place place1 = new Place();
+            place1.setId(1);
+
+            Place place2 = new Place();
+            place2.setId(0);
+            place2.setCity(List.of(new LocaleItem("en", "city2")));
+
+            Place place3 = new Place();
+            place3.setId(0);
+            place3.setCity(List.of(new LocaleItem("en", "city0")));
+            place3.setVenueAddress(List.of(new LocaleItem("en", "venueAddress3")));
+
+            Place place4 = new Place();
+            place4.setId(0);
+            place4.setCity(List.of(new LocaleItem("en", "city0")));
+            place4.setVenueAddress(List.of(new LocaleItem("en", "venueAddress0")));
+            place4.setMapCoordinates("mapCoordinates4");
+
+            return Arrays.asList(new Object[][]{
+                    {place0, place0, false},
+                    {place0, place1, true},
+                    {place0, place2, true},
+                    {place0, place3, true},
+                    {place0, place4, true}
+            });
+        }
+
+        private final Place a;
+        private final Place b;
+        private final boolean expected;
+
+        public NeedUpdatePlaceTest(Place a, Place b, boolean expected) {
+            this.a = a;
+            this.b = b;
+            this.expected = expected;
+        }
+
+        @Test
+        public void needUpdate() {
+            assertEquals(expected, ContentfulUtils.needUpdate(a, b));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class EqualsTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {null, null, true},
+                    {null, List.of(""), false},
+                    {List.of(""), null, false},
+                    {List.of(""), List.of(""), true},
+                    {List.of(""), List.of("a"), false},
+                    {List.of("a"), List.of(""), false},
+                    {List.of("a"), List.of("a"), true},
+                    {List.of("a"), List.of("b"), false},
+                    {List.of("a", "b"), List.of("a", "b"), true},
+                    {List.of("a"), List.of("a", "b"), false},
+                    {List.of("a", "b"), List.of("a"), false}
+            });
+        }
+
+        private final List<String> a;
+        private final List<String> b;
+        private final boolean expected;
+
+        public EqualsTest(List<String> a, List<String> b, boolean expected) {
+            this.a = a;
+            this.b = b;
+            this.expected = expected;
+        }
+
+        @Test
+        public void needUpdate() {
+            assertEquals(expected, ContentfulUtils.equals(a, b));
         }
     }
 }
