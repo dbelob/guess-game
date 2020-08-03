@@ -14,9 +14,6 @@ public class StartParametersDto {
     private String guessMode;
     private int quantity;
 
-    public StartParametersDto() {
-    }
-
     private StartParametersDto(List<Long> eventTypeIds, List<Long> eventIds, String guessMode, int quantity) {
         this.eventTypeIds = eventTypeIds;
         this.eventIds = eventIds;

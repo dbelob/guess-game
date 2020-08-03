@@ -19,6 +19,7 @@ class LocalDateLocalTimeYamlConstructor extends Constructor {
     }
 
     private class LocalDateLocalTimeConstructor extends ConstructScalar {
+        @Override
         public Object construct(Node node) {
             if (node.getType().equals(LocalDate.class)) {
                 return LocalDate.parse(((ScalarNode) node).getValue());

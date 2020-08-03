@@ -752,7 +752,7 @@ public class ConferenceDataLoader {
         Set<Speaker> resourceSpeakers = resourceNameSpeakers.get(speakerName);
 
         if (resourceSpeakers != null) {
-            if (resourceSpeakers.size() == 0) {
+            if (resourceSpeakers.isEmpty()) {
                 throw new IllegalStateException(String.format("No speakers found in set for speaker name '%s'", speakerName));
             } else if (resourceSpeakers.size() > 1) {
                 log.warn("More than one speaker found by name '{}', new speaker will be created (may be necessary to add a known speaker to the method parameters and restart loading)", speakerName);
@@ -786,7 +786,7 @@ public class ConferenceDataLoader {
         Set<Talk> resourceTalks = resourceNameTalks.get(talkName);
 
         if (resourceTalks != null) {
-            if (resourceTalks.size() == 0) {
+            if (resourceTalks.isEmpty()) {
                 throw new IllegalStateException(String.format("No talks found in set for talk name '%s'", talkName));
             } else if (resourceTalks.size() > 1) {
                 log.warn("More than one talk found by name '{}', new talk will be created", talkName);
@@ -839,10 +839,13 @@ public class ConferenceDataLoader {
     }
 
     private static List<LocaleItem> fixVenueAddress(Place place) {
+        final String ONLINE_ENGLISH = "Online";
+        final String ONLINE_RUSSIAN = "Онлайн";
+
         List<FixingVenueAddress> enFixingVenueAddresses = List.of(
                 new FixingVenueAddress(
-                        "Online",
-                        "Online",
+                        ONLINE_ENGLISH,
+                        ONLINE_ENGLISH,
                         "")
         );
         List<FixingVenueAddress> ruFixingVenueAddresses = List.of(
@@ -855,12 +858,12 @@ public class ConferenceDataLoader {
                         "Международная ул., 16, Красногорск, Московская обл.,, МВЦ «Крокус Экспо»",
                         "Международная ул., 16, Красногорск, Московская обл., МВЦ «Крокус Экспо»"),
                 new FixingVenueAddress(
-                        "Онлайн",
-                        "Online",
+                        ONLINE_RUSSIAN,
+                        ONLINE_ENGLISH,
                         ""),
                 new FixingVenueAddress(
-                        "Онлайн",
-                        "Онлайн",
+                        ONLINE_RUSSIAN,
+                        ONLINE_RUSSIAN,
                         "")
         );
 

@@ -3,15 +3,15 @@ package guess.domain.source;
 import java.util.List;
 
 /**
- * Events.
+ * Event list.
  */
-public class Events {
+public class EventList {
     private List<Event> events;
 
-    public Events() {
+    public EventList() {
     }
 
-    public Events(List<Event> events) {
+    public EventList(List<Event> events) {
         this.events = events;
     }
 

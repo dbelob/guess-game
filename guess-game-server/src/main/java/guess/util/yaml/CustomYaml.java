@@ -38,6 +38,7 @@ public class CustomYaml extends Yaml {
      * @param data   Java object to be serialized to YAML
      * @param output stream to write to
      */
+    @Override
     public void dump(Object data, Writer output) {
         List<Object> list = new ArrayList<>(1);
         list.add(data);

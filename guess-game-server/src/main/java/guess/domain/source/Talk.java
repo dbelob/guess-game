@@ -1,5 +1,6 @@
 package guess.domain.source;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * Talk.
  */
-public class Talk {
+public class Talk implements Serializable {
     private long id;
     private List<LocaleItem> name;
     private List<LocaleItem> shortDescription;

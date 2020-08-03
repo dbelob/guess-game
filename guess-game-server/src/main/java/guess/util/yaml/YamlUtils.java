@@ -52,47 +52,47 @@ public class YamlUtils {
         Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DATA_DIRECTORY_NAME));
         Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DATA_DIRECTORY_NAME));
 
-        Yaml speakersYaml = new Yaml(new Constructor(Speakers.class));
-        Yaml talksYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Talks.class));
-        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypes.class));
-        Yaml placesYaml = new Yaml(new Constructor(Places.class));
-        Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(Events.class));
+        Yaml speakersYaml = new Yaml(new Constructor(SpeakerList.class));
+        Yaml talksYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(TalkList.class));
+        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypeList.class));
+        Yaml placesYaml = new Yaml(new Constructor(PlaceList.class));
+        Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(EventList.class));
 
         // Read descriptions from YAML files
-        Speakers speakers = speakersYaml.load(speakersResource.getInputStream());
-        Map<Long, Speaker> speakerMap = listToMap(speakers.getSpeakers(), Speaker::getId);
+        SpeakerList speakerList = speakersYaml.load(speakersResource.getInputStream());
+        Map<Long, Speaker> speakerMap = listToMap(speakerList.getSpeakers(), Speaker::getId);
 
-        Talks talks = talksYaml.load(talksResource.getInputStream());
-        Map<Long, Talk> talkMap = listToMap(talks.getTalks(), Talk::getId);
+        TalkList talkList = talksYaml.load(talksResource.getInputStream());
+        Map<Long, Talk> talkMap = listToMap(talkList.getTalks(), Talk::getId);
 
-        EventTypes eventTypes = eventTypesYaml.load(eventTypesResource.getInputStream());
-        Map<Long, EventType> eventTypeMap = listToMap(eventTypes.getEventTypes(), EventType::getId);
+        EventTypeList eventTypeList = eventTypesYaml.load(eventTypesResource.getInputStream());
+        Map<Long, EventType> eventTypeMap = listToMap(eventTypeList.getEventTypes(), EventType::getId);
 
-        Places places = placesYaml.load(placesResource.getInputStream());
-        Map<Long, Place> placeMap = listToMap(places.getPlaces(), Place::getId);
+        PlaceList placeList = placesYaml.load(placesResource.getInputStream());
+        Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
 
-        Events events = eventsYaml.load(eventsResource.getInputStream());
+        EventList eventList = eventsYaml.load(eventsResource.getInputStream());
 
         // Find duplicates for speaker names and for speaker names with company name
-        if (findSpeakerDuplicates(speakers.getSpeakers())) {
+        if (findSpeakerDuplicates(speakerList.getSpeakers())) {
             throw new SpeakerDuplicatedException();
         }
 
         // Set event identifiers
-        setEventIds(events.getEvents());
+        setEventIds(eventList.getEvents());
 
         // Link entities
-        linkSpeakersToTalks(speakerMap, talks.getTalks());
-        linkEventsToEventTypes(eventTypeMap, events.getEvents());
-        linkEventsToPlaces(placeMap, events.getEvents());
-        linkTalksToEvents(talkMap, events.getEvents());
+        linkSpeakersToTalks(speakerMap, talkList.getTalks());
+        linkEventsToEventTypes(eventTypeMap, eventList.getEvents());
+        linkEventsToPlaces(placeMap, eventList.getEvents());
+        linkTalksToEvents(talkMap, eventList.getEvents());
 
         return new SourceInformation(
-                eventTypes.getEventTypes(),
-                places.getPlaces(),
-                events.getEvents(),
-                speakers.getSpeakers(),
-                talks.getTalks());
+                eventTypeList.getEventTypes(),
+                placeList.getPlaces(),
+                eventList.getEvents(),
+                speakerList.getSpeakers(),
+                talkList.getTalks());
     }
 
     /**
@@ -315,7 +315,7 @@ public class YamlUtils {
      * @throws NoSuchFieldException if field name is invalid
      */
     public static void dumpEventTypes(List<EventType> eventTypes, String filename) throws IOException, NoSuchFieldException {
-        dump(new EventTypes(eventTypes), filename);
+        dump(new EventTypeList(eventTypes), filename);
     }
 
     /**
@@ -327,7 +327,7 @@ public class YamlUtils {
      * @throws NoSuchFieldException if field name is invalid
      */
     public static void dumpSpeakers(List<Speaker> speakers, String filename) throws IOException, NoSuchFieldException {
-        dump(new Speakers(speakers), filename);
+        dump(new SpeakerList(speakers), filename);
     }
 
     /**
@@ -339,7 +339,7 @@ public class YamlUtils {
      * @throws NoSuchFieldException if field name is invalid
      */
     public static void dumpTalks(List<Talk> talks, String filename) throws IOException, NoSuchFieldException {
-        dump(new Talks(talks), filename);
+        dump(new TalkList(talks), filename);
     }
 
     /**
@@ -351,7 +351,7 @@ public class YamlUtils {
      * @throws NoSuchFieldException if field name is invalid
      */
     public static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
-        dump(new Events(Collections.singletonList(event)), filename);
+        dump(new EventList(Collections.singletonList(event)), filename);
     }
 
     /**
@@ -363,6 +363,6 @@ public class YamlUtils {
      * @throws NoSuchFieldException if field name is invalid
      */
     public static void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
-        dump(new Places(Collections.singletonList(place)), filename);
+        dump(new PlaceList(Collections.singletonList(place)), filename);
     }
 }

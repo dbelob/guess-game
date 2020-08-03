@@ -3,15 +3,15 @@ package guess.domain.source;
 import java.util.List;
 
 /**
- * Event types.
+ * Event type list.
  */
-public class EventTypes {
+public class EventTypeList {
     private List<EventType> eventTypes;
 
-    public EventTypes() {
+    public EventTypeList() {
     }
 
-    public EventTypes(List<EventType> eventTypes) {
+    public EventTypeList(List<EventType> eventTypes) {
         this.eventTypes = eventTypes;
     }
 
