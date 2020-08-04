@@ -19,20 +19,6 @@ public class SearchUtils {
         return ((value != null) && !value.isEmpty());
     }
 
-    public static boolean isSubstringFound(String trimmedLowerCasedSubstring, List<LocaleItem> localeItems) {
-        if (!isStringSet(trimmedLowerCasedSubstring) || (localeItems == null)) {
-            return false;
-        }
-
-        for (LocaleItem localeItem : localeItems) {
-            if (isSubstringFound(trimmedLowerCasedSubstring, localeItem.getText())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     public static boolean isSubstringFound(String trimmedLowerCasedSubstring, String item) {
         if (!isStringSet(trimmedLowerCasedSubstring)) {
             return false;
@@ -45,5 +31,19 @@ public class SearchUtils {
         }
 
         return trimmedLowerCasedItem.contains(trimmedLowerCasedSubstring);
+    }
+
+    public static boolean isSubstringFound(String trimmedLowerCasedSubstring, List<LocaleItem> localeItems) {
+        if (!isStringSet(trimmedLowerCasedSubstring) || (localeItems == null)) {
+            return false;
+        }
+
+        for (LocaleItem localeItem : localeItems) {
+            if (isSubstringFound(trimmedLowerCasedSubstring, localeItem.getText())) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

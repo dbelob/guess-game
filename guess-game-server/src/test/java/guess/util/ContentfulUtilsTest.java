@@ -5,6 +5,7 @@ import guess.domain.Language;
 import guess.domain.source.EventType;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Place;
+import guess.domain.source.Speaker;
 import guess.domain.source.contentful.ContentfulLink;
 import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.extract.ExtractPair;
@@ -878,6 +879,128 @@ public class ContentfulUtilsTest {
         private final boolean expected;
 
         public NeedUpdatePlaceTest(Place a, Place b, boolean expected) {
+            this.a = a;
+            this.b = b;
+            this.expected = expected;
+        }
+
+        @Test
+        public void needUpdate() {
+            assertEquals(expected, ContentfulUtils.needUpdate(a, b));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class NeedUpdateSpeakerTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setPhotoFileName("photoFileName0");
+            speaker0.setName(List.of(new LocaleItem("en", "name0")));
+            speaker0.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker0.setBio(List.of(new LocaleItem("en", "bio0")));
+            speaker0.setTwitter("twitter0");
+            speaker0.setGitHub("gitHub0");
+            speaker0.setJavaChampion(true);
+            speaker0.setMvp(true);
+            speaker0.setMvpReconnect(true);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(0);
+            speaker2.setPhotoFileName("photoFileName2");
+
+            Speaker speaker3 = new Speaker();
+            speaker3.setId(0);
+            speaker3.setPhotoFileName("photoFileName0");
+            speaker3.setName(List.of(new LocaleItem("en", "name3")));
+
+            Speaker speaker4 = new Speaker();
+            speaker4.setId(0);
+            speaker4.setPhotoFileName("photoFileName0");
+            speaker4.setName(List.of(new LocaleItem("en", "name0")));
+            speaker4.setCompany(List.of(new LocaleItem("en", "company4")));
+
+            Speaker speaker5 = new Speaker();
+            speaker5.setId(0);
+            speaker5.setPhotoFileName("photoFileName0");
+            speaker5.setName(List.of(new LocaleItem("en", "name0")));
+            speaker5.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker5.setBio(List.of(new LocaleItem("en", "bio5")));
+
+            Speaker speaker6 = new Speaker();
+            speaker6.setId(0);
+            speaker6.setPhotoFileName("photoFileName0");
+            speaker6.setName(List.of(new LocaleItem("en", "name0")));
+            speaker6.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker6.setBio(List.of(new LocaleItem("en", "bio0")));
+            speaker6.setTwitter("twitter6");
+
+            Speaker speaker7 = new Speaker();
+            speaker7.setId(0);
+            speaker7.setPhotoFileName("photoFileName0");
+            speaker7.setName(List.of(new LocaleItem("en", "name0")));
+            speaker7.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker7.setBio(List.of(new LocaleItem("en", "bio0")));
+            speaker7.setTwitter("twitter0");
+            speaker7.setGitHub("gitHub7");
+
+            Speaker speaker8 = new Speaker();
+            speaker8.setId(0);
+            speaker8.setPhotoFileName("photoFileName0");
+            speaker8.setName(List.of(new LocaleItem("en", "name0")));
+            speaker8.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker8.setBio(List.of(new LocaleItem("en", "bio0")));
+            speaker8.setTwitter("twitter0");
+            speaker8.setGitHub("gitHub0");
+            speaker8.setJavaChampion(false);
+
+            Speaker speaker9 = new Speaker();
+            speaker9.setId(0);
+            speaker9.setPhotoFileName("photoFileName0");
+            speaker9.setName(List.of(new LocaleItem("en", "name0")));
+            speaker9.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker9.setBio(List.of(new LocaleItem("en", "bio0")));
+            speaker9.setTwitter("twitter0");
+            speaker9.setGitHub("gitHub0");
+            speaker9.setJavaChampion(true);
+            speaker9.setMvp(false);
+
+            Speaker speaker10 = new Speaker();
+            speaker10.setId(0);
+            speaker10.setPhotoFileName("photoFileName0");
+            speaker10.setName(List.of(new LocaleItem("en", "name0")));
+            speaker10.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker10.setBio(List.of(new LocaleItem("en", "bio0")));
+            speaker10.setTwitter("twitter0");
+            speaker10.setGitHub("gitHub0");
+            speaker10.setJavaChampion(true);
+            speaker10.setMvp(true);
+            speaker10.setMvpReconnect(false);
+
+            return Arrays.asList(new Object[][]{
+                    {speaker0, speaker0, false},
+                    {speaker0, speaker1, true},
+                    {speaker0, speaker2, true},
+                    {speaker0, speaker3, true},
+                    {speaker0, speaker4, true},
+                    {speaker0, speaker5, true},
+                    {speaker0, speaker6, true},
+                    {speaker0, speaker7, true},
+                    {speaker0, speaker8, true},
+                    {speaker0, speaker9, true},
+                    {speaker0, speaker10, true}
+            });
+        }
+
+        private final Speaker a;
+        private final Speaker b;
+        private final boolean expected;
+
+        public NeedUpdateSpeakerTest(Speaker a, Speaker b, boolean expected) {
             this.a = a;
             this.b = b;
             this.expected = expected;
