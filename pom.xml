@@ -93,6 +93,7 @@
                     <excludes>
                         <exclude>guess/domain/**/*</exclude>
                         <exclude>guess/dto/**/*</exclude>
+                        <exclude>org/yaml/snakeyaml/**/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
