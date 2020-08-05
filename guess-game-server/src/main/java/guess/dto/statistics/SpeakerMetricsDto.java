@@ -2,6 +2,7 @@ package guess.dto.statistics;
 
 import guess.domain.Language;
 import guess.domain.source.Speaker;
+import guess.domain.statistics.AbstractSpeakerMetrics;
 import guess.domain.statistics.SpeakerMetrics;
 import guess.util.LocalizationUtils;
 
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 /**
  * Speaker metrics DTO.
  */
-public class SpeakerMetricsDto {
+public class SpeakerMetricsDto extends AbstractSpeakerMetrics {
     private final long id;
     private final String name;
     private final String photoFileName;
@@ -20,15 +21,12 @@ public class SpeakerMetricsDto {
     private final boolean mvp;
     private final boolean mvpReconnect;
     private final boolean anyMvp;
-    private final long talksQuantity;
-    private final long eventsQuantity;
-    private final long eventTypesQuantity;
-    private final long javaChampionsQuantity;
-    private final long mvpsQuantity;
 
     public SpeakerMetricsDto(long id, String name, String photoFileName, boolean javaChampion, boolean mvp, boolean mvpReconnect,
-                             boolean anyMvp, long talksQuantity, long eventsQuantity, long eventTypesQuantity,
-                             long javaChampionsQuantity, long mvpsQuantity) {
+                             boolean anyMvp, AbstractSpeakerMetrics speakerMetrics) {
+        super(speakerMetrics.getTalksQuantity(), speakerMetrics.getEventsQuantity(), speakerMetrics.getEventTypesQuantity(),
+                speakerMetrics.getJavaChampionsQuantity(), speakerMetrics.getMvpsQuantity());
+
         this.id = id;
         this.name = name;
         this.photoFileName = photoFileName;
@@ -36,11 +34,6 @@ public class SpeakerMetricsDto {
         this.mvp = mvp;
         this.mvpReconnect = mvpReconnect;
         this.anyMvp = anyMvp;
-        this.talksQuantity = talksQuantity;
-        this.eventsQuantity = eventsQuantity;
-        this.eventTypesQuantity = eventTypesQuantity;
-        this.javaChampionsQuantity = javaChampionsQuantity;
-        this.mvpsQuantity = mvpsQuantity;
     }
 
     public long getId() {
@@ -71,26 +64,6 @@ public class SpeakerMetricsDto {
         return anyMvp;
     }
 
-    public long getTalksQuantity() {
-        return talksQuantity;
-    }
-
-    public long getEventsQuantity() {
-        return eventsQuantity;
-    }
-
-    public long getEventTypesQuantity() {
-        return eventTypesQuantity;
-    }
-
-    public long getJavaChampionsQuantity() {
-        return javaChampionsQuantity;
-    }
-
-    public long getMvpsQuantity() {
-        return mvpsQuantity;
-    }
-
     public static SpeakerMetricsDto convertToDto(SpeakerMetrics speakerMetrics, Language language, Set<Speaker> speakerDuplicates) {
         Speaker speaker = speakerMetrics.getSpeaker();
         String name = LocalizationUtils.getSpeakerNameWithLastNameFirst(speaker, language, speakerDuplicates);
@@ -103,11 +76,7 @@ public class SpeakerMetricsDto {
                 speaker.isMvp(),
                 speaker.isMvpReconnect(),
                 speaker.isAnyMvp(),
-                speakerMetrics.getTalksQuantity(),
-                speakerMetrics.getEventsQuantity(),
-                speakerMetrics.getEventTypesQuantity(),
-                speakerMetrics.getJavaChampionsQuantity(),
-                speakerMetrics.getMvpsQuantity());
+                speakerMetrics);
     }
 
     public static List<SpeakerMetricsDto> convertToDto(List<SpeakerMetrics> speakerMetricsList, Language language) {
