@@ -2,10 +2,7 @@ package guess.util;
 
 import guess.domain.Conference;
 import guess.domain.Language;
-import guess.domain.source.EventType;
-import guess.domain.source.LocaleItem;
-import guess.domain.source.Place;
-import guess.domain.source.Speaker;
+import guess.domain.source.*;
 import guess.domain.source.contentful.ContentfulLink;
 import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.extract.ExtractPair;
@@ -17,6 +14,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.*;
@@ -1001,6 +999,238 @@ public class ContentfulUtilsTest {
         private final boolean expected;
 
         public NeedUpdateSpeakerTest(Speaker a, Speaker b, boolean expected) {
+            this.a = a;
+            this.b = b;
+            this.expected = expected;
+        }
+
+        @Test
+        public void needUpdate() {
+            assertEquals(expected, ContentfulUtils.needUpdate(a, b));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class NeedUpdateTalkTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            Talk talk0 = new Talk();
+            talk0.setId(0);
+            talk0.setName(List.of(new LocaleItem("en", "name0")));
+            talk0.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk0.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            talk0.setTalkDay(1L);
+            talk0.setTrackTime(LocalTime.of(10, 0));
+            talk0.setTrack(1L);
+            talk0.setLanguage("en");
+            talk0.setPresentationLinks(List.of("presentationLink0"));
+            talk0.setVideoLinks(List.of("videoLink0"));
+            talk0.setSpeakerIds(List.of(0L));
+
+            Talk talk1 = new Talk();
+            talk1.setId(1);
+
+            Talk talk2 = new Talk();
+            talk2.setId(0);
+            talk2.setName(List.of(new LocaleItem("en", "name2")));
+
+            Talk talk3 = new Talk();
+            talk3.setId(0);
+            talk3.setName(List.of(new LocaleItem("en", "name0")));
+            talk3.setShortDescription(List.of(new LocaleItem("en", "shortDescription3")));
+
+            Talk talk4 = new Talk();
+            talk4.setId(0);
+            talk4.setName(List.of(new LocaleItem("en", "name0")));
+            talk4.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk4.setLongDescription(List.of(new LocaleItem("en", "longDescription4")));
+
+            Talk talk5 = new Talk();
+            talk5.setId(0);
+            talk5.setName(List.of(new LocaleItem("en", "name0")));
+            talk5.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk5.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            talk5.setTalkDay(2L);
+
+            Talk talk6 = new Talk();
+            talk6.setId(0);
+            talk6.setName(List.of(new LocaleItem("en", "name0")));
+            talk6.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk6.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            talk6.setTalkDay(1L);
+            talk6.setTrackTime(LocalTime.of(10, 30));
+
+            Talk talk7 = new Talk();
+            talk7.setId(0);
+            talk7.setName(List.of(new LocaleItem("en", "name0")));
+            talk7.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk7.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            talk7.setTalkDay(1L);
+            talk7.setTrackTime(LocalTime.of(10, 0));
+            talk7.setTrack(2L);
+
+            Talk talk8 = new Talk();
+            talk8.setId(0);
+            talk8.setName(List.of(new LocaleItem("en", "name0")));
+            talk8.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk8.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            talk8.setTalkDay(1L);
+            talk8.setTrackTime(LocalTime.of(10, 0));
+            talk8.setTrack(1L);
+            talk8.setLanguage("ru");
+
+            Talk talk9 = new Talk();
+            talk9.setId(0);
+            talk9.setName(List.of(new LocaleItem("en", "name0")));
+            talk9.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk9.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            talk9.setTalkDay(1L);
+            talk9.setTrackTime(LocalTime.of(10, 0));
+            talk9.setTrack(1L);
+            talk9.setLanguage("en");
+            talk9.setPresentationLinks(List.of("presentationLink9"));
+
+            Talk talk10 = new Talk();
+            talk10.setId(0);
+            talk10.setName(List.of(new LocaleItem("en", "name0")));
+            talk10.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk10.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            talk10.setTalkDay(1L);
+            talk10.setTrackTime(LocalTime.of(10, 0));
+            talk10.setTrack(1L);
+            talk10.setLanguage("en");
+            talk10.setPresentationLinks(List.of("presentationLink0"));
+            talk10.setVideoLinks(List.of("videoLink10"));
+
+            Talk talk11 = new Talk();
+            talk11.setId(0);
+            talk11.setName(List.of(new LocaleItem("en", "name0")));
+            talk11.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk11.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            talk11.setTalkDay(1L);
+            talk11.setTrackTime(LocalTime.of(10, 0));
+            talk11.setTrack(1L);
+            talk11.setLanguage("en");
+            talk11.setPresentationLinks(List.of("presentationLink0"));
+            talk11.setVideoLinks(List.of("videoLink0"));
+            talk11.setSpeakerIds(List.of(1L));
+
+            return Arrays.asList(new Object[][]{
+                    {talk0, talk0, false},
+                    {talk0, talk1, true},
+                    {talk0, talk2, true},
+                    {talk0, talk3, true},
+                    {talk0, talk4, true},
+                    {talk0, talk5, true},
+                    {talk0, talk6, true},
+                    {talk0, talk7, true},
+                    {talk0, talk8, true},
+                    {talk0, talk9, true},
+                    {talk0, talk10, true},
+                    {talk0, talk11, true}
+            });
+        }
+
+        private final Talk a;
+        private final Talk b;
+        private final boolean expected;
+
+        public NeedUpdateTalkTest(Talk a, Talk b, boolean expected) {
+            this.a = a;
+            this.b = b;
+            this.expected = expected;
+        }
+
+        @Test
+        public void needUpdate() {
+            assertEquals(expected, ContentfulUtils.needUpdate(a, b));
+        }
+    }
+
+    @RunWith(Parameterized.class)
+    public static class NeedUpdateEventTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            Event event0 = new Event();
+            event0.setEventTypeId(0);
+            event0.setName(List.of(new LocaleItem("en", "name0")));
+            event0.setStartDate(LocalDate.of(2020, 8, 5));
+            event0.setEndDate(LocalDate.of(2020, 8, 6));
+            event0.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
+            event0.setYoutubeLink("youtubeLink0");
+            event0.setPlaceId(0);
+            event0.setTalkIds(List.of(0L));
+
+            Event event1 = new Event();
+            event1.setEventTypeId(1);
+
+            Event event2 = new Event();
+            event2.setEventTypeId(0);
+            event2.setName(List.of(new LocaleItem("en", "name2")));
+
+            Event event3 = new Event();
+            event3.setEventTypeId(0);
+            event3.setName(List.of(new LocaleItem("en", "name0")));
+            event3.setStartDate(LocalDate.of(2020, 8, 6));
+
+            Event event4 = new Event();
+            event4.setEventTypeId(0);
+            event4.setName(List.of(new LocaleItem("en", "name0")));
+            event4.setStartDate(LocalDate.of(2020, 8, 5));
+            event4.setEndDate(LocalDate.of(2020, 8, 7));
+
+            Event event5 = new Event();
+            event5.setEventTypeId(0);
+            event5.setName(List.of(new LocaleItem("en", "name0")));
+            event5.setStartDate(LocalDate.of(2020, 8, 5));
+            event5.setEndDate(LocalDate.of(2020, 8, 6));
+            event5.setSiteLink(List.of(new LocaleItem("en", "siteLink5")));
+
+            Event event6 = new Event();
+            event6.setEventTypeId(0);
+            event6.setName(List.of(new LocaleItem("en", "name0")));
+            event6.setStartDate(LocalDate.of(2020, 8, 5));
+            event6.setEndDate(LocalDate.of(2020, 8, 6));
+            event6.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
+            event6.setYoutubeLink("youtubeLink6");
+
+            Event event7 = new Event();
+            event7.setEventTypeId(0);
+            event7.setName(List.of(new LocaleItem("en", "name0")));
+            event7.setStartDate(LocalDate.of(2020, 8, 5));
+            event7.setEndDate(LocalDate.of(2020, 8, 6));
+            event7.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
+            event7.setYoutubeLink("youtubeLink0");
+            event7.setPlaceId(7);
+
+            Event event8 = new Event();
+            event8.setEventTypeId(0);
+            event8.setName(List.of(new LocaleItem("en", "name0")));
+            event8.setStartDate(LocalDate.of(2020, 8, 5));
+            event8.setEndDate(LocalDate.of(2020, 8, 6));
+            event8.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
+            event8.setYoutubeLink("youtubeLink0");
+            event8.setPlaceId(0);
+            event8.setTalkIds(List.of(8L));
+
+            return Arrays.asList(new Object[][]{
+                    {event0, event0, false},
+                    {event0, event1, true},
+                    {event0, event2, true},
+                    {event0, event3, true},
+                    {event0, event4, true},
+                    {event0, event5, true},
+                    {event0, event6, true},
+                    {event0, event7, true},
+                    {event0, event8, true}
+            });
+        }
+
+        private final Event a;
+        private final Event b;
+        private final boolean expected;
+
+        public NeedUpdateEventTest(Event a, Event b, boolean expected) {
             this.a = a;
             this.b = b;
             this.expected = expected;
