@@ -9,12 +9,9 @@ import java.util.Objects;
 /**
  * Event type.
  */
-public class EventType {
+public class EventType extends Nameable {
     private long id;
     private Conference conference;
-    private List<LocaleItem> name;
-    private List<LocaleItem> shortDescription;
-    private List<LocaleItem> longDescription;
 
     private List<LocaleItem> siteLink;
     private String vkLink;
@@ -32,11 +29,10 @@ public class EventType {
     public EventType(long id, Conference conference, List<LocaleItem> name, String logoFileName, List<LocaleItem> shortDescription,
                      List<LocaleItem> longDescription, List<LocaleItem> siteLink, String vkLink, String twitterLink,
                      String facebookLink, String youtubeLink, String telegramLink, List<Event> events, boolean inactive) {
+        super(name, shortDescription, longDescription);
+
         this.id = id;
         this.conference = conference;
-        this.name = name;
-        this.shortDescription = shortDescription;
-        this.longDescription = longDescription;
         this.siteLink = siteLink;
         this.vkLink = vkLink;
         this.twitterLink = twitterLink;
@@ -62,30 +58,6 @@ public class EventType {
 
     public void setConference(Conference conference) {
         this.conference = conference;
-    }
-
-    public List<LocaleItem> getName() {
-        return name;
-    }
-
-    public void setName(List<LocaleItem> name) {
-        this.name = name;
-    }
-
-    public List<LocaleItem> getShortDescription() {
-        return shortDescription;
-    }
-
-    public void setShortDescription(List<LocaleItem> shortDescription) {
-        this.shortDescription = shortDescription;
-    }
-
-    public List<LocaleItem> getLongDescription() {
-        return longDescription;
-    }
-
-    public void setLongDescription(List<LocaleItem> longDescription) {
-        this.longDescription = longDescription;
     }
 
     public List<LocaleItem> getSiteLink() {
@@ -182,7 +154,7 @@ public class EventType {
         return "EventType{" +
                 "id=" + id +
                 ", conference=" + conference +
-                ", name=" + name +
+                ", name=" + getName() +
                 ", logoFileName='" + logoFileName + '\'' +
                 '}';
     }

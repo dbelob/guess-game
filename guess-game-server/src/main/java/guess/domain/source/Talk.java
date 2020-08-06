@@ -9,11 +9,8 @@ import java.util.stream.Collectors;
 /**
  * Talk.
  */
-public class Talk implements Serializable {
+public class Talk extends Nameable implements Serializable {
     private long id;
-    private List<LocaleItem> name;
-    private List<LocaleItem> shortDescription;
-    private List<LocaleItem> longDescription;
     private Long talkDay;
     private LocalTime trackTime;
     private Long track;
@@ -30,10 +27,9 @@ public class Talk implements Serializable {
     public Talk(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription,
                 Long talkDay, LocalTime trackTime, Long track, String language, List<String> presentationLinks,
                 List<String> videoLinks, List<Speaker> speakers) {
+        super(name, shortDescription, longDescription);
+
         this.id = id;
-        this.name = name;
-        this.shortDescription = shortDescription;
-        this.longDescription = longDescription;
         this.talkDay = talkDay;
         this.trackTime = trackTime;
         this.track = track;
@@ -52,30 +48,6 @@ public class Talk implements Serializable {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public List<LocaleItem> getName() {
-        return name;
-    }
-
-    public void setName(List<LocaleItem> name) {
-        this.name = name;
-    }
-
-    public List<LocaleItem> getShortDescription() {
-        return shortDescription;
-    }
-
-    public void setShortDescription(List<LocaleItem> shortDescription) {
-        this.shortDescription = shortDescription;
-    }
-
-    public List<LocaleItem> getLongDescription() {
-        return longDescription;
-    }
-
-    public void setLongDescription(List<LocaleItem> longDescription) {
-        this.longDescription = longDescription;
     }
 
     public Long getTalkDay() {
@@ -161,7 +133,7 @@ public class Talk implements Serializable {
     public String toString() {
         return "Talk{" +
                 "id=" + id +
-                ", name=" + name +
+                ", name=" + getName() +
                 '}';
     }
 }
