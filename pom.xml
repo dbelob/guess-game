@@ -91,9 +91,11 @@
                 <version>${jacoco.plugin.version}</version>
                 <configuration>
                     <excludes>
+                        <exclude>guess/config/**/*</exclude>
                         <exclude>guess/domain/**/*</exclude>
                         <exclude>guess/dto/**/*</exclude>
                         <exclude>org/yaml/snakeyaml/**/*</exclude>
+                        <exclude>**/*Exception.java</exclude>
                     </excludes>
                 </configuration>
                 <executions>
