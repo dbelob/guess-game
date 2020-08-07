@@ -112,7 +112,7 @@ public class YamlUtils {
      * @param speakers speakers
      * @param talks    talks
      */
-    private static void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks) {
+    static void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks) {
         for (Talk talk : talks) {
             if (talk.getSpeakerIds().isEmpty()) {
                 throw new IllegalStateException(String.format("No speakers found for talk %s", talk.getName()));

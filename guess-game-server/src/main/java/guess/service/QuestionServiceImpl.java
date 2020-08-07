@@ -8,7 +8,6 @@ import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.Question;
 import guess.domain.source.Event;
-import guess.domain.source.EventType;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Place;
 import guess.util.LocalizationUtils;
@@ -67,56 +66,38 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public List<Event> getEvents(List<Long> eventTypeIds) {
-        final String ALL_EVENTS_OPTION_TEXT = "allEventsOptionText";
+        return eventTypeDao.getItemsByEventTypeIds(eventTypeIds,
+                eventDao::getEvents,
+                v -> {
+                    final String ALL_EVENTS_OPTION_TEXT = "allEventsOptionText";
 
-        if (eventTypeIds.isEmpty()) {
-            return Collections.emptyList();
-        } else {
-            if (eventTypeIds.size() == 1) {
-                Long eventTypeId = eventTypeIds.get(0);
+                    List<LocaleItem> name = new ArrayList<>();
+                    name.add(new LocaleItem(
+                            Language.ENGLISH.getCode(),
+                            LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.ENGLISH)));
+                    name.add(new LocaleItem(
+                            Language.RUSSIAN.getCode(),
+                            LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.RUSSIAN)));
 
-                if (eventTypeId == null) {
-                    return Collections.emptyList();
-                }
-
-                EventType eventType = eventTypeDao.getEventTypeById(eventTypeId);
-
-                if (eventType == null) {
-                    return Collections.emptyList();
-                }
-
-                if (eventType.isEventTypeConference()) {
-                    return eventDao.getEvents(eventTypeId);
-                }
-            }
-
-            List<LocaleItem> name = new ArrayList<>();
-            name.add(new LocaleItem(
-                    Language.ENGLISH.getCode(),
-                    LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.ENGLISH)));
-            name.add(new LocaleItem(
-                    Language.RUSSIAN.getCode(),
-                    LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.RUSSIAN)));
-
-            return Collections.singletonList(
-                    new Event(
-                            -1L,
-                            null,
-                            name,
-                            null,
-                            null,
-                            null,
-                            null,
-                            new Place(
+                    return Collections.singletonList(
+                            new Event(
                                     -1L,
                                     null,
+                                    name,
                                     null,
-                                    null
-                            ),
-                            Collections.emptyList()
-                    )
-            );
-        }
+                                    null,
+                                    null,
+                                    null,
+                                    new Place(
+                                            -1L,
+                                            null,
+                                            null,
+                                            null
+                                    ),
+                                    Collections.emptyList()
+                            )
+                    );
+                });
     }
 
     @Override
