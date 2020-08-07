@@ -7,7 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -46,6 +48,35 @@ public class SourceDaoImpl implements SourceDao {
                         .anyMatch(e -> e.equals(event)))
                 .findFirst()
                 .orElseThrow();
+    }
+
+    @Override
+    public <T> List<T> getItemsByEventTypeIds(List<Long> eventTypeIds,
+                                              Function<Long, List<T>> eventTypeConferenceFunction,
+                                              Function<Void, List<T>> resultFunction) {
+        if (eventTypeIds.isEmpty()) {
+            return Collections.emptyList();
+        } else {
+            if (eventTypeIds.size() == 1) {
+                Long eventTypeId = eventTypeIds.get(0);
+
+                if (eventTypeId == null) {
+                    return Collections.emptyList();
+                }
+
+                EventType eventType = getEventTypeById(eventTypeId);
+
+                if (eventType == null) {
+                    return Collections.emptyList();
+                }
+
+                if (eventType.isEventTypeConference()) {
+                    return eventTypeConferenceFunction.apply(eventTypeId);
+                }
+            }
+
+            return resultFunction.apply(null);
+        }
     }
 
     @Override

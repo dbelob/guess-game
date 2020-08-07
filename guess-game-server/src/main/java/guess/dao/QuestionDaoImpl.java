@@ -6,7 +6,6 @@ import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.Event;
-import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 import guess.util.QuestionUtils;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -125,32 +123,12 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     private List<QuestionSet> getSubQuestionSets(List<Long> eventTypeIds, List<Long> eventIds) {
-        if (eventTypeIds.isEmpty()) {
-            return Collections.emptyList();
-        } else {
-            if (eventTypeIds.size() == 1) {
-                Long eventTypeId = eventTypeIds.get(0);
-
-                if (eventTypeId == null) {
-                    return Collections.emptyList();
-                }
-
-                EventType eventType = eventTypeDao.getEventTypeById(eventTypeId);
-
-                if (eventType == null) {
-                    return Collections.emptyList();
-                }
-
-                if (eventType.isEventTypeConference()) {
-                    return questionSets.stream()
-                            .filter(s -> ((s.getEvent().getEventType().getId() == eventTypeId) && eventIds.contains(s.getEvent().getId())))
-                            .collect(Collectors.toList());
-                }
-            }
-
-            return questionSets.stream()
-                    .filter(s -> eventTypeIds.contains(s.getEvent().getEventType().getId()))
-                    .collect(Collectors.toList());
-        }
+        return eventTypeDao.getItemsByEventTypeIds(eventTypeIds,
+                eventTypeId -> questionSets.stream()
+                        .filter(s -> ((s.getEvent().getEventType().getId() == eventTypeId) && eventIds.contains(s.getEvent().getId())))
+                        .collect(Collectors.toList()),
+                v -> questionSets.stream()
+                        .filter(s -> eventTypeIds.contains(s.getEvent().getEventType().getId()))
+                        .collect(Collectors.toList()));
     }
 }
