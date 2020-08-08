@@ -32,6 +32,14 @@
         <springfox.swagger>3.0.0</springfox.swagger>
 
         <ng.build.arguments>-- --prod=true</ng.build.arguments>
+
+        <sonar.coverage.exclusions>
+            **/guess/config/**/*,
+            **/guess/domain/**/*,
+            **/guess/dto/**/*,
+            **/*Exception.java
+        </sonar.coverage.exclusions>
+        <sonar.exclusions>**/org/yaml/snakeyaml/**/*</sonar.exclusions>
     </properties>
 
     <modules>
