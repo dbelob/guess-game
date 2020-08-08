@@ -180,7 +180,7 @@ public class CustomEmitter implements Emitable {
         this.maxSimpleKeyLength = opts.getMaxSimpleKeyLength();
 
         // Tag prefixes.
-        this.tagPrefixes = new LinkedHashMap<String, String>();
+        this.tagPrefixes = new LinkedHashMap<>();
 
         // Prepared anchor and tag.
         this.preparedAnchor = null;
