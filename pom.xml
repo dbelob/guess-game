@@ -39,6 +39,7 @@
             **/guess/dto/**/*,
             **/*Exception.java
         </sonar.coverage.exclusions>
+        <sonar.cpd.exclusions>**/guess/domain/source/contentful/**/*Fields*.java</sonar.cpd.exclusions>
         <sonar.exclusions>**/org/yaml/snakeyaml/**/*</sonar.exclusions>
     </properties>
 

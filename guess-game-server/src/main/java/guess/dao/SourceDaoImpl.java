@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.LongFunction;
 import java.util.stream.Collectors;
 
 /**
@@ -52,7 +53,7 @@ public class SourceDaoImpl implements SourceDao {
 
     @Override
     public <T> List<T> getItemsByEventTypeIds(List<Long> eventTypeIds,
-                                              Function<Long, List<T>> eventTypeConferenceFunction,
+                                              LongFunction<List<T>> eventTypeConferenceFunction,
                                               Function<Void, List<T>> resultFunction) {
         if (eventTypeIds.isEmpty()) {
             return Collections.emptyList();

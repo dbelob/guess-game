@@ -18,13 +18,6 @@ public class StartParametersDto {
         super();
     }
 
-    private StartParametersDto(List<Long> eventTypeIds, List<Long> eventIds, String guessMode, int quantity) {
-        this.eventTypeIds = eventTypeIds;
-        this.eventIds = eventIds;
-        this.guessMode = guessMode;
-        this.quantity = quantity;
-    }
-
     public List<Long> getEventTypeIds() {
         return eventTypeIds;
     }

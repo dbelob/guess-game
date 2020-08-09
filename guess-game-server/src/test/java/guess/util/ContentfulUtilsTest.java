@@ -107,6 +107,56 @@ public class ContentfulUtilsTest {
     }
 
     @RunWith(Parameterized.class)
+    public static class GetEventTest {
+        @Parameters
+        public static Collection<Object[]> data() {
+            return Arrays.asList(new Object[][]{
+                    {Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), new Event(
+                            -1L,
+                            null,
+                            List.of(
+                                    new LocaleItem("en", "DotNext 2016 Helsinki"),
+                                    new LocaleItem("ru", "DotNext 2016 Хельсинки")),
+                            LocalDate.of(2016, 12, 7),
+                            LocalDate.of(2016, 12, 7),
+                            List.of(
+                                    new LocaleItem("en", "https://dotnext-helsinki.com"),
+                                    new LocaleItem("ru", "https://dotnext-helsinki.com")),
+                            "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5",
+                            new Place(
+                                    15,
+                                    List.of(
+                                            new LocaleItem("en", "Helsinki"),
+                                            new LocaleItem("ru", "Хельсинки")),
+                                    List.of(
+                                            new LocaleItem("en", "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo")),
+                                    "60.1704769, 24.8279349"),
+                            Collections.emptyList())}
+            });
+        }
+
+        private final Conference conference;
+        private final LocalDate startDate;
+        private final Event expected;
+
+        public GetEventTest(Conference conference, LocalDate startDate, Event expected) {
+            this.conference = conference;
+            this.startDate = startDate;
+            this.expected = expected;
+        }
+
+        @Test
+        public void getEvent() {
+            Event event = ContentfulUtils.getEvent(conference, startDate);
+
+            assertEquals(expected, event);
+            assertEquals(expected.getName(), event.getName());
+            assertEquals(expected.getStartDate(), event.getStartDate());
+            assertEquals(expected.getEndDate(), event.getEndDate());
+        }
+    }
+
+    @RunWith(Parameterized.class)
     public static class ExtractStringTest {
         @Parameters
         public static Collection<Object[]> data() {

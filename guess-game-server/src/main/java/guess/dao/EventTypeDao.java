@@ -5,6 +5,7 @@ import guess.domain.source.EventType;
 
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.LongFunction;
 
 /**
  * Event type DAO.
@@ -17,6 +18,6 @@ public interface EventTypeDao {
     EventType getEventTypeByEvent(Event event);
 
     <T> List<T> getItemsByEventTypeIds(List<Long> eventTypeIds,
-                                       Function<Long, List<T>> eventTypeConferenceFunction,
+                                       LongFunction<List<T>> eventTypeConferenceFunction,
                                        Function<Void, List<T>> resultFunction);
 }
