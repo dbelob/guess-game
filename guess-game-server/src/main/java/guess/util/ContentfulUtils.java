@@ -378,8 +378,8 @@ public class ContentfulUtils {
         List<Event> events = getEvents(eventName, startDate);
 
         if (events.isEmpty()) {
-            throw new IllegalStateException(String.format("No events found for conference %s and start date %s, events: %d (change conference and/or start date and rerun)",
-                    conference, startDate, events.size()));
+            throw new IllegalStateException(String.format("No events found for conference %s and start date %s (change conference and/or start date and rerun)",
+                    conference, startDate));
         }
 
         if (events.size() > 1) {
