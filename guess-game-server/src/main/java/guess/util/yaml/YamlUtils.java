@@ -135,7 +135,7 @@ public class YamlUtils {
      * @param eventTypes event types
      * @param events     events
      */
-    private static void linkEventsToEventTypes(Map<Long, EventType> eventTypes, List<Event> events) {
+    static void linkEventsToEventTypes(Map<Long, EventType> eventTypes, List<Event> events) {
         for (Event event : events) {
             // Find event type by id
             EventType eventType = eventTypes.get(event.getEventTypeId());
@@ -152,7 +152,7 @@ public class YamlUtils {
      * @param places places
      * @param events events
      */
-    private static void linkEventsToPlaces(Map<Long, Place> places, List<Event> events) {
+    static void linkEventsToPlaces(Map<Long, Place> places, List<Event> events) {
         for (Event event : events) {
             // Find place by id
             Place place = places.get(event.getPlaceId());
@@ -168,7 +168,7 @@ public class YamlUtils {
      * @param talks  talks
      * @param events events
      */
-    private static void linkTalksToEvents(Map<Long, Talk> talks, List<Event> events) {
+    static void linkTalksToEvents(Map<Long, Talk> talks, List<Event> events) {
         for (Event event : events) {
             // For any talkId
             for (Long talkId : event.getTalkIds()) {
@@ -184,18 +184,20 @@ public class YamlUtils {
     /**
      * Converts list of entities into map, throwing the IllegalStateException in case duplicate entities are found.
      *
-     * @param list         Input list
-     * @param keyExtractor Map key extractor for given entity class
-     * @param <K>          Map key type
-     * @param <T>          Entity (map value) type
-     * @return Map of entities, or IllegalStateException if duplicate entities are found
+     * @param list         input list
+     * @param keyExtractor map key extractor for given entity class
+     * @param <K>          map key type
+     * @param <T>          entity (map value) type
+     * @return map of entities, or IllegalStateException if duplicate entities are found
      */
-    private static <K, T> Map<K, T> listToMap(List<T> list, Function<? super T, ? extends K> keyExtractor) {
-        Map<K, T> map =
-                list.stream().collect(Collectors.toMap(keyExtractor, s -> s));
+    static <K, T> Map<K, T> listToMap(List<T> list, Function<? super T, ? extends K> keyExtractor) {
+        Map<K, T> map = list.stream()
+                .collect(Collectors.toMap(keyExtractor, s -> s));
+
         if (map.size() != list.size()) {
             throw new IllegalStateException("Entities with duplicate ids found");
         }
+
         return map;
     }
 
@@ -205,7 +207,7 @@ public class YamlUtils {
      * @param speakers speakers
      * @return {@code true} if duplicates found, {@code false} otherwise
      */
-    private static boolean findSpeakerDuplicates(List<Speaker> speakers) {
+    static boolean findSpeakerDuplicates(List<Speaker> speakers) {
         Set<Speaker> speakerDuplicates = new TreeSet<>(Comparator.comparingLong(Speaker::getId));
 
         for (Language language : Language.values()) {
