@@ -985,7 +985,7 @@ public class ContentfulUtils {
         }
     }
 
-    private static Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
+    static Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
         if (Conference.DOT_NEXT.equals(conference) && LocalDate.of(2016, 12, 7).equals(startDate)) {
             return new Event(
                     -1L,

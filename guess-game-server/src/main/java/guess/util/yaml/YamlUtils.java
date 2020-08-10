@@ -192,6 +192,7 @@ public class YamlUtils {
      */
     static <K, T> Map<K, T> listToMap(List<T> list, Function<? super T, ? extends K> keyExtractor) {
         Map<K, T> map = list.stream()
+                .distinct()
                 .collect(Collectors.toMap(keyExtractor, s -> s));
 
         if (map.size() != list.size()) {

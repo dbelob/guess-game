@@ -26,4 +26,9 @@ public class TalkQuestion extends Question {
     public Talk getTalk() {
         return talk;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
 }

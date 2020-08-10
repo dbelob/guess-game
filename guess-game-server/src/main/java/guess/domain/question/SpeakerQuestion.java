@@ -17,4 +17,9 @@ public class SpeakerQuestion extends Question {
     public Speaker getSpeaker() {
         return speaker;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
 }
