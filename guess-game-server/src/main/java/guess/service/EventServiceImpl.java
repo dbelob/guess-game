@@ -132,10 +132,12 @@ public class EventServiceImpl implements EventService {
         }
 
         // Transform to (event, day, minTrackTime) list
-        for (Event event : minTrackTimeInTalkDaysForConferences.keySet()) {
+        for (Map.Entry<Event, Map<Long, Optional<LocalTime>>> entry : minTrackTimeInTalkDaysForConferences.entrySet()) {
+            Event event = entry.getKey();
+
             if ((event.getStartDate() != null) && (event.getEndDate() != null) && (!event.getStartDate().isAfter(event.getEndDate()))) {
                 long days = ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1;
-                Map<Long, Optional<LocalTime>> minTrackTimeInTalkDays = minTrackTimeInTalkDaysForConferences.get(event);
+                Map<Long, Optional<LocalTime>> minTrackTimeInTalkDays = entry.getValue();
 
                 for (long i = 1; i <= days; i++) {
                     LocalTime minTrackTime = LocalTime.of(0, 0);

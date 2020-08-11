@@ -86,9 +86,13 @@ public class TalkBriefDto {
         LocalDate eventStartDate = (event != null) ? event.getStartDate() : null;
         Long talkDay = talk.getTalkDay();
         long safeTalkDay = (talkDay != null) ? talkDay : 1;
-        LocalDate talkDate = (eventStartDate != null) ?
-                ((talkDay != null) ? eventStartDate.plusDays(safeTalkDay - 1) : eventStartDate) :
-                null;
+
+        LocalDate talkDate;
+        if (eventStartDate != null) {
+            talkDate = (talkDay != null) ? eventStartDate.plusDays(safeTalkDay - 1) : eventStartDate;
+        } else {
+            talkDate = null;
+        }
 
         LocalDate safeLocalDate = (talkDate != null) ? talkDate : LocalDate.now();
         LocalDateTime talkTime = (talk.getTrackTime() != null) ? LocalDateTime.of(safeLocalDate, talk.getTrackTime()) : null;

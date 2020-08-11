@@ -541,12 +541,9 @@ public class ConferenceDataLoader {
                     if (newTalkTrack < existingTalkTrack) {
                         // Less track
                         ruNameMap.put(ruName, talk);
-                    } else if (newTalkTrack == existingTalkTrack) {
-                        // Equal track
-                        if (newTalkTrackTime.isBefore(existingTalkTrackTime)) {
-                            // Less track time
-                            ruNameMap.put(ruName, talk);
-                        }
+                    } else if ((newTalkTrack == existingTalkTrack) && newTalkTrackTime.isBefore(existingTalkTrackTime)) {
+                        // Equal track and less track time
+                        ruNameMap.put(ruName, talk);
                     }
                 }
             }
