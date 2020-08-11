@@ -490,7 +490,7 @@ public class ConferenceDataLoader {
      * @param talks talks
      * @return talks without opening and closing
      */
-    private static List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
+    static List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
         Set<String> deletedTalks = Set.of("Conference opening", "Conference closing", "School opening", "School closing");
 
         return talks.stream()
