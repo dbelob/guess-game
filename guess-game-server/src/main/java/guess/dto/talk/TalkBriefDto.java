@@ -11,6 +11,7 @@ import guess.util.LocalizationUtils;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -85,12 +86,16 @@ public class TalkBriefDto {
 
         LocalDate eventStartDate = (event != null) ? event.getStartDate() : null;
         Long talkDay = talk.getTalkDay();
-        long safeTalkDay = (talkDay != null) ? talkDay : 1;
-        LocalDate talkDate = (eventStartDate != null) ?
-                ((talkDay != null) ? eventStartDate.plusDays(safeTalkDay - 1) : eventStartDate) :
-                null;
+        long safeTalkDay = Optional.ofNullable(talkDay).orElse(1L);
 
-        LocalDate safeLocalDate = (talkDate != null) ? talkDate : LocalDate.now();
+        LocalDate talkDate;
+        if (eventStartDate != null) {
+            talkDate = (talkDay != null) ? eventStartDate.plusDays(safeTalkDay - 1) : eventStartDate;
+        } else {
+            talkDate = null;
+        }
+
+        LocalDate safeLocalDate = Optional.ofNullable(talkDate).orElse(LocalDate.now());
         LocalDateTime talkTime = (talk.getTrackTime() != null) ? LocalDateTime.of(safeLocalDate, talk.getTrackTime()) : null;
 
         EventSuperBriefDto eventSuperBriefDto = (event != null) ? EventSuperBriefDto.convertToSuperBriefDto(event, language) : null;

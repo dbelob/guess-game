@@ -229,8 +229,9 @@ public class StatisticsServiceImpl implements StatisticsService {
 
         List<SpeakerMetrics> speakerMetricsList = new ArrayList<>();
 
-        for (Speaker speaker : speakerSpeakerMetricsMap.keySet()) {
-            SpeakerMetricsInternal speakerMetricsInternal = speakerSpeakerMetricsMap.get(speaker);
+        for (Map.Entry<Speaker, SpeakerMetricsInternal> entry : speakerSpeakerMetricsMap.entrySet()) {
+            Speaker speaker = entry.getKey();
+            SpeakerMetricsInternal speakerMetricsInternal = entry.getValue();
 
             speakerMetricsList.add(new SpeakerMetrics(
                     speaker,

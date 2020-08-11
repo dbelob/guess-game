@@ -490,7 +490,7 @@ public class ConferenceDataLoader {
      * @param talks talks
      * @return talks without opening and closing
      */
-    private static List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
+    static List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
         Set<String> deletedTalks = Set.of("Conference opening", "Conference closing", "School opening", "School closing");
 
         return talks.stream()
@@ -516,7 +516,7 @@ public class ConferenceDataLoader {
      * @param talks talks
      * @return talks without duplicates
      */
-    private static List<Talk> deleteTalkDuplicates(List<Talk> talks) {
+    static List<Talk> deleteTalkDuplicates(List<Talk> talks) {
         Map<String, Talk> ruNameMap = new HashMap<>();
 
         for (Talk talk : talks) {
@@ -526,28 +526,20 @@ public class ConferenceDataLoader {
             if (existingTalk == null) {
                 ruNameMap.put(ruName, talk);
             } else {
-                long newTalkDay = (talk.getTalkDay() != null) ? talk.getTalkDay() : 0;
-                long existingTalkDay = (existingTalk.getTalkDay() != null) ? existingTalk.getTalkDay() : 0;
-                long newTalkTrack = (talk.getTrack() != null) ? talk.getTrack() : 0;
-                long existingTalkTrack = (existingTalk.getTrack() != null) ? existingTalk.getTrack() : 0;
-                LocalTime newTalkTrackTime = (talk.getTrackTime() != null) ? talk.getTrackTime() : LocalTime.of(0, 0);
-                LocalTime existingTalkTrackTime = (existingTalk.getTrackTime() != null) ? existingTalk.getTrackTime() : LocalTime.of(0, 0);
+                long newTalkDay = Optional.ofNullable(talk.getTalkDay()).orElse(0L);
+                long existingTalkDay = Optional.ofNullable(existingTalk.getTalkDay()).orElse(0L);
+                long newTalkTrack = Optional.ofNullable(talk.getTrack()).orElse(0L);
+                long existingTalkTrack = Optional.ofNullable(existingTalk.getTrack()).orElse(0L);
+                LocalTime newTalkTrackTime = Optional.ofNullable(talk.getTrackTime()).orElse(LocalTime.of(0, 0));
+                LocalTime existingTalkTrackTime = Optional.ofNullable(existingTalk.getTrackTime()).orElse(LocalTime.of(0, 0));
 
-                if (newTalkDay < existingTalkDay) {
-                    // Less day
+                if ((newTalkDay < existingTalkDay) ||
+                        ((newTalkDay == existingTalkDay) &&
+                                ((newTalkTrack < existingTalkTrack) ||
+                                        ((newTalkTrack == existingTalkTrack) && newTalkTrackTime.isBefore(existingTalkTrackTime))))) {
+                    // (Less day) or
+                    // (Equal day) and ((Less track) or ((Equal track) and (Less track time)))
                     ruNameMap.put(ruName, talk);
-                } else if (newTalkDay == existingTalkDay) {
-                    // Equal day
-                    if (newTalkTrack < existingTalkTrack) {
-                        // Less track
-                        ruNameMap.put(ruName, talk);
-                    } else if (newTalkTrack == existingTalkTrack) {
-                        // Equal track
-                        if (newTalkTrackTime.isBefore(existingTalkTrackTime)) {
-                            // Less track time
-                            ruNameMap.put(ruName, talk);
-                        }
-                    }
                 }
             }
         }
