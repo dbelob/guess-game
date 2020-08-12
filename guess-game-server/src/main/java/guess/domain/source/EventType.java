@@ -4,13 +4,11 @@ import guess.domain.Conference;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Event type.
  */
 public class EventType extends Nameable {
-    private long id;
     private Conference conference;
 
     private List<LocaleItem> siteLink;
@@ -29,9 +27,8 @@ public class EventType extends Nameable {
     public EventType(long id, Conference conference, List<LocaleItem> name, String logoFileName, List<LocaleItem> shortDescription,
                      List<LocaleItem> longDescription, List<LocaleItem> siteLink, String vkLink, String twitterLink,
                      String facebookLink, String youtubeLink, String telegramLink, List<Event> events, boolean inactive) {
-        super(name, shortDescription, longDescription);
+        super(id, name, shortDescription, longDescription);
 
-        this.id = id;
         this.conference = conference;
         this.siteLink = siteLink;
         this.vkLink = vkLink;
@@ -42,14 +39,6 @@ public class EventType extends Nameable {
         this.logoFileName = logoFileName;
         this.events = events;
         this.inactive = inactive;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public Conference getConference() {
@@ -137,22 +126,9 @@ public class EventType extends Nameable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EventType eventType = (EventType) o;
-        return id == eventType.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
     public String toString() {
         return "EventType{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", conference=" + conference +
                 ", name=" + getName() +
                 ", logoFileName='" + logoFileName + '\'' +

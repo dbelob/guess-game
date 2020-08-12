@@ -5,26 +5,12 @@ import guess.domain.source.Speaker;
 /**
  * Question about speaker.
  */
-public class SpeakerQuestion extends Question {
-    private final Speaker speaker;
-
+public class SpeakerQuestion extends Question<Speaker> {
     public SpeakerQuestion(Speaker speaker) {
-        super(speaker.getId());
-
-        this.speaker = speaker;
+        super(speaker);
     }
 
     public Speaker getSpeaker() {
-        return speaker;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+        return getEntity();
     }
 }

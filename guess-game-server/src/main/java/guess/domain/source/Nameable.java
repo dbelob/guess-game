@@ -1,8 +1,10 @@
 package guess.domain.source;
 
+import guess.domain.Identifiable;
+
 import java.util.List;
 
-public abstract class Nameable {
+public abstract class Nameable extends Identifiable {
     private List<LocaleItem> name;
     private List<LocaleItem> shortDescription;
     private List<LocaleItem> longDescription;
@@ -10,7 +12,9 @@ public abstract class Nameable {
     public Nameable() {
     }
 
-    public Nameable(List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription) {
+    public Nameable(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription) {
+        super(id);
+
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;

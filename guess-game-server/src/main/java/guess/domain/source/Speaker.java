@@ -1,17 +1,16 @@
 package guess.domain.source;
 
+import guess.domain.Identifiable;
 import guess.domain.Language;
 import guess.util.LocalizationUtils;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Speaker.
  */
-public class Speaker implements Serializable {
-    private long id;
+public class Speaker extends Identifiable {
     private String photoFileName;
     private List<LocaleItem> name;
     private List<LocaleItem> company;
@@ -28,7 +27,8 @@ public class Speaker implements Serializable {
     public Speaker(long id, String photoFileName, List<LocaleItem> name, List<LocaleItem> company,
                    List<LocaleItem> bio, String twitter, String gitHub, boolean javaChampion, boolean mvp,
                    boolean mvpReconnect) {
-        this.id = id;
+        super(id);
+
         this.photoFileName = photoFileName;
         this.name = name;
         this.company = company;
@@ -38,14 +38,6 @@ public class Speaker implements Serializable {
         this.javaChampion = javaChampion;
         this.mvp = mvp;
         this.mvpReconnect = mvpReconnect;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getPhotoFileName() {
@@ -155,24 +147,9 @@ public class Speaker implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Speaker speaker = (Speaker) o;
-
-        return id == speaker.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return (int) (id ^ (id >>> 32));
-    }
-
-    @Override
     public String toString() {
         return "Speaker{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", fileName='" + photoFileName + '\'' +
                 ", name=" + name +
                 ", company=" + company +

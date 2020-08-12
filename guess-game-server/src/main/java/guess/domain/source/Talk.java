@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
  * Talk.
  */
 public class Talk extends Nameable implements Serializable {
-    private long id;
     private Long talkDay;
     private LocalTime trackTime;
     private Long track;
@@ -27,9 +26,8 @@ public class Talk extends Nameable implements Serializable {
     public Talk(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription,
                 Long talkDay, LocalTime trackTime, Long track, String language, List<String> presentationLinks,
                 List<String> videoLinks, List<Speaker> speakers) {
-        super(name, shortDescription, longDescription);
+        super(id, name, shortDescription, longDescription);
 
-        this.id = id;
         this.talkDay = talkDay;
         this.trackTime = trackTime;
         this.track = track;
@@ -40,14 +38,6 @@ public class Talk extends Nameable implements Serializable {
         this.speakerIds = speakers.stream()
                 .map(Speaker::getId)
                 .collect(Collectors.toList());
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public Long getTalkDay() {
@@ -115,24 +105,9 @@ public class Talk extends Nameable implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Talk talk = (Talk) o;
-
-        return id == talk.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return (int) (id ^ (id >>> 32));
-    }
-
-    @Override
     public String toString() {
         return "Talk{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", name=" + getName() +
                 '}';
     }
