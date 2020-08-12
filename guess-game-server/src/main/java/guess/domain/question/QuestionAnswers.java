@@ -11,29 +11,29 @@ import java.util.List;
  * Question and answers.
  */
 public class QuestionAnswers implements Serializable {
-    private final Question question;
-    private final List<Answer> correctAnswers;
-    private final Quadruple<Answer> availableAnswers;
+    private final Question<?> question;
+    private final List<Answer<?>> correctAnswers;
+    private final Quadruple<Answer<?>> availableAnswers;
 
-    public QuestionAnswers(Question question, List<Answer> correctAnswers, Quadruple<Answer> availableAnswers) {
+    public QuestionAnswers(Question<?> question, List<Answer<?>> correctAnswers, Quadruple<Answer<?>> availableAnswers) {
         this.question = question;
         this.correctAnswers = correctAnswers;
         this.availableAnswers = availableAnswers;
     }
 
-    public Question getQuestion() {
+    public Question<?> getQuestion() {
         return question;
     }
 
-    public List<Answer> getCorrectAnswers() {
+    public List<Answer<?>> getCorrectAnswers() {
         return correctAnswers;
     }
 
-    public Quadruple<Answer> getAvailableAnswers() {
+    public Quadruple<Answer<?>> getAvailableAnswers() {
         return availableAnswers;
     }
 
-    public List<Answer> getAvailableAnswersAsList() {
+    public List<Answer<?>> getAvailableAnswersAsList() {
         return Arrays.asList(
                 availableAnswers.getFirst(),
                 availableAnswers.getSecond(),

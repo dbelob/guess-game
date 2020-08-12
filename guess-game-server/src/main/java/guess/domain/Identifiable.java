@@ -7,7 +7,10 @@ import java.util.Objects;
  * Identifiable.
  */
 public abstract class Identifiable implements Serializable {
-    private final long id;
+    private long id;
+
+    public Identifiable() {
+    }
 
     public Identifiable(long id) {
         this.id = id;
@@ -15,6 +18,10 @@ public abstract class Identifiable implements Serializable {
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     @Override

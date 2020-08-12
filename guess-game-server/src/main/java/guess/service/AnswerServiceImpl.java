@@ -151,9 +151,9 @@ public class AnswerServiceImpl implements AnswerService {
             if (!answerSet.isSuccess()) {
                 List<Long> yourAnswersIds = new ArrayList<>(answerSet.getYourAnswerIds());
 
-                List<Answer> yourAnswers = new ArrayList<>();
+                List<Answer<?>> yourAnswers = new ArrayList<>();
                 for (long yourAnswersId : yourAnswersIds) {
-                    Optional<Answer> optionalWrongAnswer = questionAnswersList.get(i).getAvailableAnswersAsList().stream()
+                    Optional<Answer<?>> optionalWrongAnswer = questionAnswersList.get(i).getAvailableAnswersAsList().stream()
                             .filter(a -> a.getId() == yourAnswersId)
                             .findFirst();
 

@@ -8,15 +8,13 @@ import java.util.List;
 /**
  * Question about talk.
  */
-public class TalkQuestion extends Question {
+public class TalkQuestion extends Question<Talk> {
     private final List<Speaker> speakers;
-    private final Talk talk;
 
     public TalkQuestion(List<Speaker> speakers, Talk talk) {
-        super(talk.getId());
+        super(talk);
 
         this.speakers = speakers;
-        this.talk = talk;
     }
 
     public List<Speaker> getSpeakers() {
@@ -24,16 +22,6 @@ public class TalkQuestion extends Question {
     }
 
     public Talk getTalk() {
-        return talk;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        return super.equals(o);
-    }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
+        return getEntity();
     }
 }

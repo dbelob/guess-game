@@ -3,7 +3,7 @@ package guess.dao;
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,11 +11,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class QuestionDaoImplTest {
     @Test
-    public void questionSetsImagesExistance() throws IOException, SpeakerDuplicatedException {
+    public void questionSetsImagesExistence() throws IOException, SpeakerDuplicatedException {
         SourceDao dao = new SourceDaoImpl();
         QuestionDao questionDao = new QuestionDaoImpl(dao, dao);
         List<QuestionSet> questionSets = questionDao.getQuestionSets();
@@ -34,7 +34,7 @@ public class QuestionDaoImplTest {
 
     private void assertFileExistence(String fileName) {
         Path path = Paths.get(String.format("../guess-game-web/src/assets/images/%s", fileName));
-        assertTrue(String.format("Image file %s does not exist", path.toString()),
-                Files.exists(path) && Files.isRegularFile(path));
+        assertTrue(Files.exists(path) && Files.isRegularFile(path),
+                String.format("Image file %s does not exist", path.toString()));
     }
 }
