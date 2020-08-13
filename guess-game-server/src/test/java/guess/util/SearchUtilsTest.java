@@ -44,7 +44,7 @@ public class SearchUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void trimAndLowerCase(String value, String expected) {
+        void trimAndLowerCase(String value, String expected) {
             assertEquals(expected, SearchUtils.trimAndLowerCase(value));
         }
     }
@@ -63,7 +63,7 @@ public class SearchUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void isStringSet(String value, boolean expected) {
+        void isStringSet(String value, boolean expected) {
             assertEquals(expected, SearchUtils.isStringSet(value));
         }
     }
@@ -100,7 +100,7 @@ public class SearchUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void isSubstringFound(String trimmedLowerCasedSubstring, String item, boolean expected) {
+        void isSubstringFound(String trimmedLowerCasedSubstring, String item, boolean expected) {
             assertEquals(expected, SearchUtils.isSubstringFound(trimmedLowerCasedSubstring, item));
         }
     }
@@ -146,7 +146,7 @@ public class SearchUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void isSubstringFound(String trimmedLowerCasedSubstring, List<LocaleItem> localeItems, boolean expected) {
+        void isSubstringFound(String trimmedLowerCasedSubstring, List<LocaleItem> localeItems, boolean expected) {
             assertEquals(expected, SearchUtils.isSubstringFound(trimmedLowerCasedSubstring, localeItems));
         }
     }

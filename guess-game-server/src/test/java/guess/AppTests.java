@@ -9,9 +9,9 @@ import static junit.framework.TestCase.assertTrue;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class AppTests {
+class AppTests {
     @Test
-    public void contextLoads() {
+    void contextLoads() {
         assertTrue(true);
     }
 }

@@ -13,9 +13,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class QuestionDaoImplTest {
+class QuestionDaoImplTest {
     @Test
-    public void questionSetsImagesExistence() throws IOException, SpeakerDuplicatedException {
+    void questionSetsImagesExistence() throws IOException, SpeakerDuplicatedException {
         SourceDao dao = new SourceDaoImpl();
         QuestionDao questionDao = new QuestionDaoImpl(dao, dao);
         List<QuestionSet> questionSets = questionDao.getQuestionSets();

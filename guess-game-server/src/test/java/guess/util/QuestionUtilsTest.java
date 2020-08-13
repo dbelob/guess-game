@@ -52,7 +52,7 @@ public class QuestionUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void removeDuplicatesById(List<? extends Identifiable> items, List<? extends Identifiable> expected) {
+        void removeDuplicatesById(List<? extends Identifiable> items, List<? extends Identifiable> expected) {
             assertEquals(expected, QuestionUtils.removeDuplicatesById(items));
         }
     }
@@ -88,7 +88,7 @@ public class QuestionUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void getQuantities(int count, List<Integer> expected) {
+        void getQuantities(int count, List<Integer> expected) {
             assertEquals(expected, QuestionUtils.getQuantities(count));
         }
     }
