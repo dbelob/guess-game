@@ -88,8 +88,8 @@ public class YamlUtils {
         linkTalksToEvents(talkMap, eventList.getEvents());
 
         return new SourceInformation(
-                eventTypeList.getEventTypes(),
                 placeList.getPlaces(),
+                eventTypeList.getEventTypes(),
                 eventList.getEvents(),
                 speakerList.getSpeakers(),
                 talkList.getTalks());
