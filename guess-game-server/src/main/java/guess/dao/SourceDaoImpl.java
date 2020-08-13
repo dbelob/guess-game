@@ -24,6 +24,10 @@ public class SourceDaoImpl implements SourceDao {
         this.sourceInformation = YamlUtils.readSourceInformation();
     }
 
+    SourceDaoImpl(SourceInformation sourceInformation) {
+        this.sourceInformation = sourceInformation;
+    }
+
     @Override
     public List<Place> getPlaces() {
         return sourceInformation.getPlaces();
@@ -94,7 +98,7 @@ public class SourceDaoImpl implements SourceDao {
     }
 
     @Override
-    public List<Event> getEvents(long eventTypeId) {
+    public List<Event> getEventsByEventTypeId(long eventTypeId) {
         return sourceInformation.getEvents().stream()
                 .filter(e -> (e.getEventTypeId() == eventTypeId))
                 .collect(Collectors.toList());

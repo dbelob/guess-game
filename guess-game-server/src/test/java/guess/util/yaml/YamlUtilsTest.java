@@ -48,7 +48,7 @@ public class YamlUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks, Class<? extends Exception> expected) {
+        void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks, Class<? extends Exception> expected) {
             assertThrows(expected, () -> YamlUtils.linkSpeakersToTalks(speakers, talks));
         }
     }
@@ -77,7 +77,7 @@ public class YamlUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void linkSpeakersToTalks(Map<Long, EventType> eventTypes, List<Event> events, Class<? extends Exception> expected) {
+        void linkSpeakersToTalks(Map<Long, EventType> eventTypes, List<Event> events, Class<? extends Exception> expected) {
             assertThrows(expected, () -> YamlUtils.linkEventsToEventTypes(eventTypes, events));
         }
     }
@@ -106,7 +106,7 @@ public class YamlUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void linkSpeakersToTalks(Map<Long, Place> places, List<Event> events, Class<? extends Exception> expected) {
+        void linkSpeakersToTalks(Map<Long, Place> places, List<Event> events, Class<? extends Exception> expected) {
             assertThrows(expected, () -> YamlUtils.linkEventsToPlaces(places, events));
         }
     }
@@ -137,7 +137,7 @@ public class YamlUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void linkSpeakersToTalks(Map<Long, Talk> talks, List<Event> events, Class<? extends Exception> expected) {
+        void linkSpeakersToTalks(Map<Long, Talk> talks, List<Event> events, Class<? extends Exception> expected) {
             assertThrows(expected, () -> YamlUtils.linkTalksToEvents(talks, events));
         }
     }
@@ -164,7 +164,7 @@ public class YamlUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void listToMap(List<Speaker> speakers, Function<? super Speaker, ? extends Long> keyExtractor, Class<? extends Exception> expected) {
+        void listToMap(List<Speaker> speakers, Function<? super Speaker, ? extends Long> keyExtractor, Class<? extends Exception> expected) {
             assertThrows(expected, () -> YamlUtils.listToMap(speakers, keyExtractor));
         }
     }
@@ -209,7 +209,7 @@ public class YamlUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        public void listToMap(List<Speaker> speakers, boolean expected) {
+        void listToMap(List<Speaker> speakers, boolean expected) {
             assertEquals(expected, YamlUtils.findSpeakerDuplicates(speakers));
         }
     }

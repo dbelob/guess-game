@@ -14,7 +14,7 @@ public interface EventDao {
 
     Event getEventById(long id);
 
-    List<Event> getEvents(long eventTypeId);
+    List<Event> getEventsByEventTypeId(long eventTypeId);
 
     List<Event> getEventsFromDate(LocalDate date);
 
