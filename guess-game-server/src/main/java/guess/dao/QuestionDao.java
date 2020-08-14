@@ -12,5 +12,5 @@ import java.util.List;
 public interface QuestionDao {
     List<QuestionSet> getQuestionSets();
 
-    List<Question<?>> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode);
+    List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode);
 }

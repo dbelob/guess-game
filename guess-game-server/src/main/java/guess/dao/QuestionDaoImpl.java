@@ -82,8 +82,8 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
-    public List<Question<?>> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) {
-        List<Question<?>> questions;
+    public List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) {
+        List<Question> questions;
 
         // Find sub question sets
         List<QuestionSet> subQuestionSets = getSubQuestionSets(eventTypeIds, eventIds);

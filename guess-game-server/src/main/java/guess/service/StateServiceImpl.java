@@ -87,35 +87,35 @@ public class StateServiceImpl implements StateService {
 
     private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
         // Find unique questions by ids
-        List<Question<?>> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getEventTypeIds(), startParameters.getEventIds(), startParameters.getGuessMode());
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getEventTypeIds(), startParameters.getEventIds(), startParameters.getGuessMode());
 
         // Fill question and answers list
         List<QuestionAnswers> questionAnswersList = new ArrayList<>();
         if (uniqueQuestions.size() >= QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE) {
             // Shuffle questions
-            List<Question<?>> shuffledQuestions = new ArrayList<>(uniqueQuestions);
+            List<Question> shuffledQuestions = new ArrayList<>(uniqueQuestions);
             Collections.shuffle(shuffledQuestions);
 
             // Select first "quantity" elements
-            List<Question<?>> selectedShuffledQuestions = shuffledQuestions.subList(
+            List<Question> selectedShuffledQuestions = shuffledQuestions.subList(
                     0,
                     Math.min(startParameters.getQuantity(), shuffledQuestions.size()));
 
             // Create question/answers list
-            for (Question<?> question : selectedShuffledQuestions) {
-                List<Answer<?>> correctAnswers = getCorrectAnswers(question, startParameters.getGuessMode());
+            for (Question question : selectedShuffledQuestions) {
+                List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessMode());
 
                 // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
                 correctAnswers = correctAnswers.subList(
                         0,
                         Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, correctAnswers.size()));
-                List<Answer<?>> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessMode());
+                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessMode());
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
                 Collections.shuffle(shuffledAllAvailableAnswersWithoutCorrectAnswers);
 
                 // Select (QUESTION_ANSWERS_LIST_SIZE - correctAnswers.size()) first elements, add correct answers, shuffle
-                List<Answer<?>> availableAnswers = shuffledAllAvailableAnswersWithoutCorrectAnswers.subList(
+                List<Answer> availableAnswers = shuffledAllAvailableAnswersWithoutCorrectAnswers.subList(
                         0,
                         Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - correctAnswers.size(), shuffledAllAvailableAnswersWithoutCorrectAnswers.size()));
                 availableAnswers.addAll(correctAnswers);
@@ -164,7 +164,7 @@ public class StateServiceImpl implements StateService {
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    private List<Answer<?>> getCorrectAnswers(Question<?> question, GuessMode guessMode) {
+    private List<Answer> getCorrectAnswers(Question question, GuessMode guessMode) {
         switch (guessMode) {
             case GUESS_NAME_BY_PHOTO_MODE:
             case GUESS_PHOTO_BY_NAME_MODE:
@@ -182,7 +182,7 @@ public class StateServiceImpl implements StateService {
         }
     }
 
-    private List<Answer<?>> getAllAvailableAnswers(List<Question<?>> questions, List<Answer<?>> correctAnswers, GuessMode guessMode) {
+    private List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessMode guessMode) {
         switch (guessMode) {
             case GUESS_NAME_BY_PHOTO_MODE:
             case GUESS_PHOTO_BY_NAME_MODE:

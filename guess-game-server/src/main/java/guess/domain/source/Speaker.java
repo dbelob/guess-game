@@ -1,6 +1,6 @@
 package guess.domain.source;
 
-import guess.domain.Identifiable;
+import guess.domain.Identifier;
 import guess.domain.Language;
 import guess.util.LocalizationUtils;
 
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Speaker.
  */
-public class Speaker extends Identifiable {
+public class Speaker extends Identifier {
     private String photoFileName;
     private List<LocaleItem> name;
     private List<LocaleItem> company;
