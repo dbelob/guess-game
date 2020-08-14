@@ -102,7 +102,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public List<Integer> getQuantities(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) throws QuestionSetNotExistsException {
-        List<Question<?>> uniqueQuestions = questionDao.getQuestionByIds(eventTypeIds, eventIds, guessMode);
+        List<Question> uniqueQuestions = questionDao.getQuestionByIds(eventTypeIds, eventIds, guessMode);
 
         return QuestionUtils.getQuantities(uniqueQuestions.size());
     }

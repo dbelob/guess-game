@@ -1,12 +1,12 @@
 package guess.dao;
 
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.Place;
-import guess.domain.source.SourceInformation;
+import guess.domain.Conference;
+import guess.domain.source.*;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -14,6 +14,7 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@DisplayName("SourceDao class tests")
 class SourceDaoImplTest {
     private static Place place0;
     private static Place place1;
@@ -27,6 +28,18 @@ class SourceDaoImplTest {
     private static Event event1;
     private static Event event2;
     private static Event event3;
+
+    private static Talk talk0;
+    private static Talk talk1;
+    private static Talk talk2;
+    private static Talk talk3;
+
+    private static Speaker speaker0;
+    private static Speaker speaker1;
+    private static Speaker speaker2;
+    private static Speaker speaker3;
+    private static Speaker speaker4;
+    private static Speaker speaker5;
 
     private static SourceDao sourceDao;
 
@@ -43,6 +56,7 @@ class SourceDaoImplTest {
 
         eventType0 = new EventType();
         eventType0.setId(0);
+        eventType0.setConference(Conference.JPOINT);
 
         eventType1 = new EventType();
         eventType1.setId(1);
@@ -50,33 +64,85 @@ class SourceDaoImplTest {
         eventType2 = new EventType();
         eventType2.setId(2);
 
+        speaker0 = new Speaker();
+        speaker0.setId(0);
+
+        speaker1 = new Speaker();
+        speaker1.setId(1);
+
+        speaker2 = new Speaker();
+        speaker2.setId(2);
+
+        speaker3 = new Speaker();
+        speaker3.setId(3);
+
+        speaker4 = new Speaker();
+        speaker4.setId(4);
+
+        speaker5 = new Speaker();
+        speaker5.setId(5);
+
+        talk0 = new Talk();
+        talk0.setId(0);
+        talk0.setSpeakerIds(List.of(0L));
+        talk0.setSpeakers(List.of(speaker0));
+
+        talk1 = new Talk();
+        talk1.setId(1);
+        talk1.setSpeakerIds(List.of(1L, 2L));
+        talk1.setSpeakers(List.of(speaker1, speaker2));
+
+        talk2 = new Talk();
+        talk2.setId(2);
+        talk2.setSpeakerIds(List.of(2L, 2L));
+        talk2.setSpeakers(List.of(speaker2, speaker3));
+
+        talk3 = new Talk();
+        talk3.setId(3);
+        talk3.setSpeakerIds(List.of(4L));
+        talk3.setSpeakers(List.of(speaker4));
+
         event0 = new Event();
         event0.setId(0);
         event0.setEventTypeId(eventType0.getId());
         event0.setEventType(eventType0);
         eventType0.setEvents(List.of(event0));
+        event0.setStartDate(LocalDate.of(2020, 1, 1));
+        event0.setEndDate(LocalDate.of(2020, 1, 2));
+        event0.setTalkIds(List.of(0L));
+        event0.setTalks(List.of(talk0));
 
         event1 = new Event();
         event1.setId(1);
         event1.setEventTypeId(eventType1.getId());
         event1.setEventType(eventType1);
         eventType1.setEvents(List.of(event1));
+        event1.setStartDate(LocalDate.of(2020, 2, 1));
+        event1.setEndDate(LocalDate.of(2020, 2, 2));
+        event1.setTalkIds(List.of(1L));
+        event1.setTalks(List.of(talk1));
 
         event2 = new Event();
         event2.setId(2);
         event2.setEventTypeId(eventType2.getId());
         event2.setEventType(eventType2);
         eventType2.setEvents(List.of(event2));
+        event2.setStartDate(LocalDate.of(2020, 3, 1));
+        event2.setEndDate(LocalDate.of(2020, 3, 2));
+        event2.setTalkIds(List.of(2L));
+        event2.setTalks(List.of(talk2));
 
         event3 = new Event();
         event3.setId(3);
+        event3.setStartDate(LocalDate.of(2020, 4, 1));
+        event3.setEndDate(LocalDate.of(2020, 4, 2));
 
         SourceInformation sourceInformation = new SourceInformation(
                 List.of(place0, place1, place2),
                 List.of(eventType0, eventType1, eventType2),
                 List.of(event0, event1, event2),
-                Collections.emptyList(),
-                Collections.emptyList());
+                List.of(speaker0, speaker1, speaker2, speaker3),
+                List.of(talk0, talk1, talk2));
         sourceDao = new SourceDaoImpl(sourceInformation);
     }
 
@@ -95,7 +161,7 @@ class SourceDaoImplTest {
         assertEquals(eventType0, sourceDao.getEventTypeById(0));
         assertEquals(eventType1, sourceDao.getEventTypeById(1));
         assertEquals(eventType2, sourceDao.getEventTypeById(2));
-        assertThrows(NoSuchElementException.class, () -> sourceDao.getEventTypeById(4));
+        assertThrows(NoSuchElementException.class, () -> sourceDao.getEventTypeById(3));
     }
 
     @Test
@@ -106,9 +172,34 @@ class SourceDaoImplTest {
         assertThrows(NoSuchElementException.class, () -> sourceDao.getEventTypeByEvent(event3));
     }
 
-//    @Test
-//    void getItemsByEventTypeIds() {
-//    }
+    @Test
+    void getItemsByEventTypeIds() {
+        assertEquals(Collections.emptyList(), sourceDao.getItemsByEventTypeIds(
+                Collections.emptyList(),
+                value -> Collections.singletonList(event2),
+                v -> Collections.singletonList(event3)
+        ));
+        assertEquals(Collections.emptyList(), sourceDao.getItemsByEventTypeIds(
+                Collections.singletonList(null),
+                value -> Collections.singletonList(event2),
+                v -> Collections.singletonList(event3)
+        ));
+        assertEquals(Collections.singletonList(event2), sourceDao.getItemsByEventTypeIds(
+                List.of(0L),
+                value -> Collections.singletonList(event2),
+                v -> Collections.singletonList(event3)
+        ));
+        assertEquals(Collections.singletonList(event3), sourceDao.getItemsByEventTypeIds(
+                List.of(1L),
+                value -> Collections.singletonList(event2),
+                v -> Collections.singletonList(event3)
+        ));
+        assertEquals(Collections.singletonList(event3), sourceDao.getItemsByEventTypeIds(
+                List.of(0L, 1L),
+                value -> Collections.singletonList(event2),
+                v -> Collections.singletonList(event3)
+        ));
+    }
 
     @Test
     void getEvents() {
@@ -120,7 +211,7 @@ class SourceDaoImplTest {
         assertEquals(event0, sourceDao.getEventById(0));
         assertEquals(event1, sourceDao.getEventById(1));
         assertEquals(event2, sourceDao.getEventById(2));
-        assertThrows(NoSuchElementException.class, () -> sourceDao.getEventById(4));
+        assertThrows(NoSuchElementException.class, () -> sourceDao.getEventById(3));
     }
 
     @Test
@@ -131,31 +222,57 @@ class SourceDaoImplTest {
         assertEquals(Collections.emptyList(), sourceDao.getEventsByEventTypeId(3));
     }
 
-//    @Test
-//    void getEventsFromDate() {
-//    }
+    @Test
+    void getEventsFromDate() {
+        assertEquals(List.of(event0, event1, event2), sourceDao.getEventsFromDate(LocalDate.of(2020, 1, 1)));
+        assertEquals(List.of(event1, event2), sourceDao.getEventsFromDate(LocalDate.of(2020, 2, 2)));
+        assertEquals(List.of(event2), sourceDao.getEventsFromDate(LocalDate.of(2020, 3, 2)));
+        assertEquals(Collections.emptyList(), sourceDao.getEventsFromDate(LocalDate.of(2020, 4, 2)));
+    }
 
-//    @Test
-//    void getEventByTalk() {
-//    }
+    @Test
+    void getEventByTalk() {
+        assertEquals(event0, sourceDao.getEventByTalk(talk0));
+        assertEquals(event1, sourceDao.getEventByTalk(talk1));
+        assertEquals(event2, sourceDao.getEventByTalk(talk2));
+        assertThrows(NoSuchElementException.class, () -> sourceDao.getEventByTalk(talk3));
+    }
 
-//    @Test
-//    void getSpeakers() {
-//    }
+    @Test
+    void getSpeakers() {
+        assertEquals(List.of(speaker0, speaker1, speaker2, speaker3), sourceDao.getSpeakers());
+    }
 
-//    @Test
-//    void getSpeakerById() {
-//    }
+    @Test
+    void getSpeakerById() {
+        assertEquals(speaker0, sourceDao.getSpeakerById(0));
+        assertEquals(speaker1, sourceDao.getSpeakerById(1));
+        assertEquals(speaker2, sourceDao.getSpeakerById(2));
+        assertEquals(speaker3, sourceDao.getSpeakerById(3));
+        assertThrows(NoSuchElementException.class, () -> sourceDao.getSpeakerById(4));
+        assertThrows(NoSuchElementException.class, () -> sourceDao.getSpeakerById(5));
+    }
 
-//    @Test
-//    void getTalks() {
-//    }
+    @Test
+    void getTalks() {
+        assertEquals(List.of(talk0, talk1, talk2), sourceDao.getTalks());
+    }
 
-//    @Test
-//    void getTalkById() {
-//    }
+    @Test
+    void getTalkById() {
+        assertEquals(talk0, sourceDao.getTalkById(0));
+        assertEquals(talk1, sourceDao.getTalkById(1));
+        assertEquals(talk2, sourceDao.getTalkById(2));
+        assertThrows(NoSuchElementException.class, () -> sourceDao.getTalkById(3));
+    }
 
-//    @Test
-//    void getTalksBySpeaker() {
-//    }
+    @Test
+    void getTalksBySpeaker() {
+        assertEquals(List.of(talk0), sourceDao.getTalksBySpeaker(speaker0));
+        assertEquals(List.of(talk1), sourceDao.getTalksBySpeaker(speaker1));
+        assertEquals(List.of(talk1, talk2), sourceDao.getTalksBySpeaker(speaker2));
+        assertEquals(List.of(talk2), sourceDao.getTalksBySpeaker(speaker3));
+        assertEquals(Collections.emptyList(), sourceDao.getTalksBySpeaker(speaker4));
+        assertEquals(Collections.emptyList(), sourceDao.getTalksBySpeaker(speaker5));
+    }
 }

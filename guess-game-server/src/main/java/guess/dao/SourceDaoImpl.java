@@ -71,10 +71,6 @@ public class SourceDaoImpl implements SourceDao {
 
                 EventType eventType = getEventTypeById(eventTypeId);
 
-                if (eventType == null) {
-                    return Collections.emptyList();
-                }
-
                 if (eventType.isEventTypeConference()) {
                     return eventTypeConferenceFunction.apply(eventTypeId);
                 }

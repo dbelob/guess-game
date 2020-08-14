@@ -1,6 +1,6 @@
 package guess.domain;
 
-public abstract class QuestionAnswer<T extends Identifiable> extends Identifiable {
+public abstract class QuestionAnswer<T extends Identifiable> extends Identifier {
     private final T entity;
 
     public QuestionAnswer(T entity) {
