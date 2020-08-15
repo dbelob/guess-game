@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
  * Talk.
  */
-public class Talk extends Nameable implements Serializable {
+public class Talk extends Nameable {
     private Long talkDay;
     private LocalTime trackTime;
     private Long track;
