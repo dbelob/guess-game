@@ -14,7 +14,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("QuestionDao class tests")
+@DisplayName("QuestionDaoImpl class tests")
 class QuestionDaoImplTest {
     @Test
     void questionSetsImagesExistence() throws IOException, SpeakerDuplicatedException {

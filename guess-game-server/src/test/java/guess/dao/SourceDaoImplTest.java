@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@DisplayName("SourceDao class tests")
+@DisplayName("SourceDaoImpl class tests")
 class SourceDaoImplTest {
     private static Place place0;
     private static Place place1;

@@ -7,26 +7,31 @@ import guess.domain.source.contentful.ContentfulLink;
 import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
-import org.junit.Test;
-import org.junit.experimental.runners.Enclosed;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.*;
+import java.util.stream.Stream;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-@RunWith(Enclosed.class)
+@DisplayName("ContentfulUtils class tests")
 public class ContentfulUtilsTest {
-    @RunWith(Parameterized.class)
-    public static class GetFirstMapValueTest {
-        @Parameters
-        public static Collection<Object[]> data() {
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getFirstMapValue method tests")
+    class GetFirstMapValueTest {
+        private Stream<Arguments> data() {
             Map<String, String> map0 = Map.of("key1", "value1");
 
             Map<String, String> map1 = new LinkedHashMap<>();
@@ -37,81 +42,63 @@ public class ContentfulUtilsTest {
             map2.put("key2", "value2");
             map2.put("key1", "value1");
 
-            return Arrays.asList(new Object[][]{
-                    {map0, "value1"},
-                    {map1, "value1"},
-                    {map2, "value2"}
-            });
+            return Stream.of(
+                    arguments(map0, "value1"),
+                    arguments(map1, "value1"),
+                    arguments(map2, "value2")
+            );
         }
 
-        private final Map<String, String> map;
-        private final String expected;
-
-        public GetFirstMapValueTest(Map<String, String> map, String expected) {
-            this.map = map;
-            this.expected = expected;
-        }
-
-        @Test
-        public void getFirstMapValue() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void getFirstMapValue(Map<String, String> map, String expected) {
             assertEquals(expected, ContentfulUtils.getFirstMapValue(map));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class CreateUtcZonedDateTimeTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {LocalDate.of(2020, 1, 1), ZonedDateTime.of(2019, 12, 31, 21, 0, 0, 0, ZoneId.of("UTC"))},
-                    {LocalDate.of(2020, 12, 31), ZonedDateTime.of(2020, 12, 30, 21, 0, 0, 0, ZoneId.of("UTC"))}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("createUtcZonedDateTime method tests")
+    class CreateUtcZonedDateTimeTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(LocalDate.of(2020, 1, 1), ZonedDateTime.of(2019, 12, 31, 21, 0, 0, 0, ZoneId.of("UTC"))),
+                    arguments(LocalDate.of(2020, 12, 31), ZonedDateTime.of(2020, 12, 30, 21, 0, 0, 0, ZoneId.of("UTC")))
+            );
         }
 
-        private final LocalDate localDate;
-        private final ZonedDateTime expected;
-
-        public CreateUtcZonedDateTimeTest(LocalDate localDate, ZonedDateTime expected) {
-            this.localDate = localDate;
-            this.expected = expected;
-        }
-
-        @Test
-        public void createUtcZonedDateTime() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void createUtcZonedDateTime(LocalDate localDate, ZonedDateTime expected) {
             assertEquals(expected, ContentfulUtils.createUtcZonedDateTime(localDate));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class CreateEventLocalDateTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"2020-01-01T00:00+03:00", LocalDate.of(2020, 1, 1)},
-                    {"2020-12-31T00:00+03:00", LocalDate.of(2020, 12, 31)}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("createEventLocalDate method tests")
+    class CreateEventLocalDateTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments("2020-01-01T00:00+03:00", LocalDate.of(2020, 1, 1)),
+                    arguments("2020-12-31T00:00+03:00", LocalDate.of(2020, 12, 31))
+            );
         }
 
-        private final String zonedDateTimeString;
-        private final LocalDate expected;
-
-        public CreateEventLocalDateTest(String zonedDateTimeString, LocalDate expected) {
-            this.zonedDateTimeString = zonedDateTimeString;
-            this.expected = expected;
-        }
-
-        @Test
-        public void createUtcZonedDateTime() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void createUtcZonedDateTime(String zonedDateTimeString, LocalDate expected) {
             assertEquals(expected, ContentfulUtils.createEventLocalDate(zonedDateTimeString));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class GetEventTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), new Event(
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getEvent method tests")
+    class GetEventTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), new Event(
                             -1L,
                             null,
                             List.of(
@@ -131,22 +118,13 @@ public class ContentfulUtilsTest {
                                     List.of(
                                             new LocaleItem("en", "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo")),
                                     "60.1704769, 24.8279349"),
-                            Collections.emptyList())}
-            });
+                            Collections.emptyList()))
+            );
         }
 
-        private final Conference conference;
-        private final LocalDate startDate;
-        private final Event expected;
-
-        public GetEventTest(Conference conference, LocalDate startDate, Event expected) {
-            this.conference = conference;
-            this.startDate = startDate;
-            this.expected = expected;
-        }
-
-        @Test
-        public void getEvent() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void getEvent(Conference conference, LocalDate startDate, Event expected) {
             Event event = ContentfulUtils.getEvent(conference, startDate);
 
             assertEquals(expected, event);
@@ -156,289 +134,238 @@ public class ContentfulUtilsTest {
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractStringTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, null},
-                    {"", ""},
-                    {" value0", "value0"},
-                    {"value1 ", "value1"},
-                    {" value2 ", "value2"}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractString method tests")
+    class ExtractStringTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("", ""),
+                    arguments(" value0", "value0"),
+                    arguments("value1 ", "value1"),
+                    arguments(" value2 ", "value2")
+            );
         }
 
-        private final String value;
-        private final String expected;
-
-        public ExtractStringTest(String value, String expected) {
-            this.value = value;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractBoolean() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractBoolean(String value, String expected) {
             assertEquals(expected, ContentfulUtils.extractString(value));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractBooleanTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, false},
-                    {Boolean.TRUE, true},
-                    {Boolean.FALSE, false}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractBoolean method tests")
+    class ExtractBooleanTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, false),
+                    arguments(Boolean.TRUE, true),
+                    arguments(Boolean.FALSE, false)
+            );
         }
 
-        private final Boolean value;
-        private final boolean expected;
-
-        public ExtractBooleanTest(Boolean value, boolean expected) {
-            this.value = value;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractBoolean() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractBoolean(Boolean value, boolean expected) {
             assertEquals(expected, ContentfulUtils.extractBoolean(value));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractPropertyTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"abc", new ExtractSet(
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractProperty method tests")
+    class ExtractPropertyTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments("abc", new ExtractSet(
                             List.of(new ExtractPair("([a-z]+)", 1)),
                             "Invalid property: %s"),
-                            "abc"},
-                    {"abc", new ExtractSet(
+                            "abc"),
+                    arguments("abc", new ExtractSet(
                             List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
                             "Invalid property: %s"),
-                            "abc"},
-                    {" abc", new ExtractSet(
+                            "abc"),
+                    arguments(" abc", new ExtractSet(
                             List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
                             "Invalid property: %s"),
-                            "abc"},
-                    {"abc ", new ExtractSet(
+                            "abc"),
+                    arguments("abc ", new ExtractSet(
                             List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
                             "Invalid property: %s"),
-                            "abc"},
-                    {" abc ", new ExtractSet(
+                            "abc"),
+                    arguments(" abc ", new ExtractSet(
                             List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
                             "Invalid property: %s"),
-                            "abc"}
-            });
+                            "abc")
+            );
         }
 
-        private final String value;
-        private final ExtractSet extractSet;
-        private final String expected;
-
-        public ExtractPropertyTest(String value, ExtractSet extractSet, String expected) {
-            this.value = value;
-            this.extractSet = extractSet;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractProperty() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractProperty(String value, ExtractSet extractSet, String expected) {
             assertEquals(expected, ContentfulUtils.extractProperty(value, extractSet));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractPropertyWithExceptionTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"42", new ExtractSet(
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractProperty method tests (with exception)")
+    class ExtractPropertyWithExceptionTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments("42", new ExtractSet(
                             List.of(new ExtractPair("([a-z]+)", 1)),
-                            "Invalid property: %s")},
-                    {"42", new ExtractSet(
+                            "Invalid property: %s")),
+                    arguments("42", new ExtractSet(
                             List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s")},
-                    {" 42", new ExtractSet(
+                            "Invalid property: %s")),
+                    arguments(" 42", new ExtractSet(
                             List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s")},
-                    {"42 ", new ExtractSet(
+                            "Invalid property: %s")),
+                    arguments("42 ", new ExtractSet(
                             List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s")},
-                    {" 42 ", new ExtractSet(
+                            "Invalid property: %s")),
+                    arguments(" 42 ", new ExtractSet(
                             List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s")}
-            });
+                            "Invalid property: %s"))
+            );
         }
 
-        private final String value;
-        private final ExtractSet extractSet;
-
-        public ExtractPropertyWithExceptionTest(String value, ExtractSet extractSet) {
-            this.value = value;
-            this.extractSet = extractSet;
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void extractProperty() {
-            ContentfulUtils.extractProperty(value, extractSet);
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractProperty(String value, ExtractSet extractSet) {
+            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractProperty(value, extractSet));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractTwitterTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, null},
-                    {"", ""},
-                    {" ", ""},
-                    {"arungupta", "arungupta"},
-                    {" arungupta", "arungupta"},
-                    {"arungupta ", "arungupta"},
-                    {" arungupta ", "arungupta"},
-                    {"tagir_valeev", "tagir_valeev"},
-                    {"kuksenk0", "kuksenk0"},
-                    {"DaschnerS", "DaschnerS"},
-                    {"@dougqh", "dougqh"},
-                    {"42", "42"},
-                    {"@42", "42"}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractTwitter method tests")
+    class ExtractTwitterTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("", ""),
+                    arguments(" ", ""),
+                    arguments("arungupta", "arungupta"),
+                    arguments(" arungupta", "arungupta"),
+                    arguments("arungupta ", "arungupta"),
+                    arguments(" arungupta ", "arungupta"),
+                    arguments("tagir_valeev", "tagir_valeev"),
+                    arguments("kuksenk0", "kuksenk0"),
+                    arguments("DaschnerS", "DaschnerS"),
+                    arguments("@dougqh", "dougqh"),
+                    arguments("42", "42"),
+                    arguments("@42", "42")
+            );
         }
 
-        private final String value;
-        private final String expected;
-
-        public ExtractTwitterTest(String value, String expected) {
-            this.value = value;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractTwitter() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractTwitter(String value, String expected) {
             assertEquals(expected, ContentfulUtils.extractTwitter(value));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractTwitterWithExceptionTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"%"},
-                    {"%42"},
-                    {"%dougqh"},
-                    {"dougqh%"},
-                    {"dou%gqh"}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractTwitter method tests (with exception)")
+    class ExtractTwitterWithExceptionTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments("%"),
+                    arguments("%42"),
+                    arguments("%dougqh"),
+                    arguments("dougqh%"),
+                    arguments("dou%gqh")
+            );
         }
 
-        private final String value;
-
-        public ExtractTwitterWithExceptionTest(String value) {
-            this.value = value;
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void extractTwitter() {
-            ContentfulUtils.extractTwitter(value);
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractTwitter(String value) {
+            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractTwitter(value));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractGitHubTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, null},
-                    {"", ""},
-                    {" ", ""},
-                    {"cloudkserg", "cloudkserg"},
-                    {" cloudkserg", "cloudkserg"},
-                    {"cloudkserg ", "cloudkserg"},
-                    {" cloudkserg ", "cloudkserg"},
-                    {"pjBooms", "pjBooms"},
-                    {"andre487", "andre487"},
-                    {"Marina-Miranovich", "Marina-Miranovich"},
-                    {"https://github.com/inponomarev", "inponomarev"},
-                    {"http://github.com/inponomarev", "inponomarev"},
-                    {"https://niquola.github.io/blog/", "niquola"},
-                    {"http://niquola.github.io/blog/", "niquola"}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractGitHub method tests")
+    class ExtractGitHubTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("", ""),
+                    arguments(" ", ""),
+                    arguments("cloudkserg", "cloudkserg"),
+                    arguments(" cloudkserg", "cloudkserg"),
+                    arguments("cloudkserg ", "cloudkserg"),
+                    arguments(" cloudkserg ", "cloudkserg"),
+                    arguments("pjBooms", "pjBooms"),
+                    arguments("andre487", "andre487"),
+                    arguments("Marina-Miranovich", "Marina-Miranovich"),
+                    arguments("https://github.com/inponomarev", "inponomarev"),
+                    arguments("http://github.com/inponomarev", "inponomarev"),
+                    arguments("https://niquola.github.io/blog/", "niquola"),
+                    arguments("http://niquola.github.io/blog/", "niquola")
+            );
         }
 
-        private final String value;
-        private final String expected;
-
-        public ExtractGitHubTest(String value, String expected) {
-            this.value = value;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractGitHub() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractGitHub(String value, String expected) {
             assertEquals(expected, ContentfulUtils.extractGitHub(value));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractGitHubWithExceptionTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"%"},
-                    {"%42"},
-                    {"%dougqh"},
-                    {"dougqh%"},
-                    {"dou%gqh"}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractGitHub method tests (with exception)")
+    class ExtractGitHubWithExceptionTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments("%"),
+                    arguments("%42"),
+                    arguments("%dougqh"),
+                    arguments("dougqh%"),
+                    arguments("dou%gqh")
+            );
         }
 
-        private final String value;
-
-        public ExtractGitHubWithExceptionTest(String value) {
-            this.value = value;
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void extractGitHub() {
-            ContentfulUtils.extractGitHub(value);
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractGitHub(String value) {
+            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractGitHub(value));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractLanguageTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, null},
-                    {Boolean.TRUE, Language.RUSSIAN.getCode()},
-                    {Boolean.FALSE, Language.ENGLISH.getCode()}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractLanguage method tests")
+    class ExtractLanguageTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments(Boolean.TRUE, Language.RUSSIAN.getCode()),
+                    arguments(Boolean.FALSE, Language.ENGLISH.getCode())
+            );
         }
 
-        private final Boolean value;
-        private final String expected;
-
-        public ExtractLanguageTest(Boolean value, String expected) {
-            this.value = value;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractLanguage() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractLanguage(Boolean value, String expected) {
             assertEquals(expected, ContentfulUtils.extractLanguage(value));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class CombineContentfulLinksTest {
-        @Parameters
-        public static Collection<Object[]> data() {
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("combineContentfulLinks method tests")
+    class CombineContentfulLinksTest {
+        private Stream<Arguments> data() {
             ContentfulSys contentfulSys0 = new ContentfulSys();
             contentfulSys0.setId("a");
             ContentfulLink contentfulLink0 = new ContentfulLink();
@@ -454,295 +381,247 @@ public class ContentfulUtilsTest {
             ContentfulLink contentfulLink2 = new ContentfulLink();
             contentfulLink2.setSys(contentfulSys2);
 
-            return Arrays.asList(new Object[][]{
-                    {null, null, Collections.emptyList()},
-                    {Collections.emptyList(), null, Collections.emptyList()},
-                    {List.of(contentfulLink0), null, List.of(contentfulLink0)},
-                    {List.of(contentfulLink0, contentfulLink1), null, List.of(contentfulLink0, contentfulLink1)},
-                    {List.of(contentfulLink0), contentfulLink1, List.of(contentfulLink0, contentfulLink1)},
-                    {List.of(contentfulLink0), contentfulLink0, List.of(contentfulLink0)},
-                    {List.of(contentfulLink0, contentfulLink1), contentfulLink2, List.of(contentfulLink0, contentfulLink1, contentfulLink2)},
-                    {List.of(contentfulLink0, contentfulLink0), contentfulLink0, List.of(contentfulLink0)}
-            });
+            return Stream.of(
+                    arguments(null, null, Collections.emptyList()),
+                    arguments(Collections.emptyList(), null, Collections.emptyList()),
+                    arguments(List.of(contentfulLink0), null, List.of(contentfulLink0)),
+                    arguments(List.of(contentfulLink0, contentfulLink1), null, List.of(contentfulLink0, contentfulLink1)),
+                    arguments(List.of(contentfulLink0), contentfulLink1, List.of(contentfulLink0, contentfulLink1)),
+                    arguments(List.of(contentfulLink0), contentfulLink0, List.of(contentfulLink0)),
+                    arguments(List.of(contentfulLink0, contentfulLink1), contentfulLink2, List.of(contentfulLink0, contentfulLink1, contentfulLink2)),
+                    arguments(List.of(contentfulLink0, contentfulLink0), contentfulLink0, List.of(contentfulLink0))
+            );
         }
 
-        private final List<ContentfulLink> presentations;
-        private final ContentfulLink presentation;
-        private final List<ContentfulLink> expected;
-
-        public CombineContentfulLinksTest(List<ContentfulLink> presentations, ContentfulLink presentation, List<ContentfulLink> expected) {
-            this.presentations = presentations;
-            this.presentation = presentation;
-            this.expected = expected;
-        }
-
-        @Test
-        public void combineContentfulLinks() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void combineContentfulLinks(List<ContentfulLink> presentations, ContentfulLink presentation, List<ContentfulLink> expected) {
             assertEquals(expected, ContentfulUtils.combineContentfulLinks(presentations, presentation));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractVideoLinksTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, Collections.emptyList()},
-                    {"value", List.of("value")}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractVideoLinks method tests")
+    class ExtractVideoLinksTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, Collections.emptyList()),
+                    arguments("value", List.of("value"))
+            );
         }
 
-        private final String videoLink;
-        private final List<String> expected;
-
-        public ExtractVideoLinksTest(String videoLink, List<String> expected) {
-            this.videoLink = videoLink;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractVideoLinks() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractVideoLinks(String videoLink, List<String> expected) {
             assertEquals(expected, ContentfulUtils.extractVideoLinks(videoLink));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractAssetUrlTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, null},
-                    {"", ""},
-                    {" ", ""},
-                    {"//assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"},
-                    {" //assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"},
-                    {"//assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf ", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"},
-                    {" //assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf ", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"},
-                    {"http://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"},
-                    {"https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractAssetUrl method tests")
+    class ExtractAssetUrlTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("", ""),
+                    arguments(" ", ""),
+                    arguments("//assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments(" //assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments("//assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf ", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments(" //assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf ", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments("http://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments("https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf")
+            );
         }
 
-        private final String value;
-        private final String expected;
-
-        public ExtractAssetUrlTest(String value, String expected) {
-            this.value = value;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractAssetUrl() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractAssetUrl(String value, String expected) {
             assertEquals(expected, ContentfulUtils.extractAssetUrl(value));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractAssetUrlWithExceptionTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"abc"},
-                    {"42"}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractAssetUrl method tests (with exception)")
+    class ExtractAssetUrlWithExceptionTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments("abc"),
+                    arguments("42")
+            );
         }
 
-        private final String value;
-
-        public ExtractAssetUrlWithExceptionTest(String value) {
-            this.value = value;
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void extractAssetUrl() {
-            ContentfulUtils.extractAssetUrl(value);
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractAssetUrl(String value) {
+            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractAssetUrl(value));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractLocaleItemsTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, null, true, Collections.emptyList()},
-                    {null, "", true, Collections.emptyList()},
-                    {"", null, true, Collections.emptyList()},
-                    {"", "", true, Collections.emptyList()},
-                    {"value0", null, true, List.of(
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractLocaleItems method tests")
+    class ExtractLocaleItemsTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null, true, Collections.emptyList()),
+                    arguments(null, "", true, Collections.emptyList()),
+                    arguments("", null, true, Collections.emptyList()),
+                    arguments("", "", true, Collections.emptyList()),
+                    arguments("value0", null, true, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
-                                    "value0"))},
-                    {"value0", "", true, List.of(
+                                    "value0"))),
+                    arguments("value0", "", true, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
-                                    "value0"))},
-                    {"value0", "value0", true, List.of(
+                                    "value0"))),
+                    arguments("value0", "value0", true, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
-                                    "value0"))},
-                    {"value0", "value1", true, List.of(
-                            new LocaleItem(
-                                    Language.ENGLISH.getCode(),
-                                    "value0"),
-                            new LocaleItem(
-                                    Language.RUSSIAN.getCode(),
-                                    "value1"))},
-                    {null, "value1", true, List.of(
-                            new LocaleItem(
-                                    Language.RUSSIAN.getCode(),
-                                    "value1"))},
-                    {"", "value1", true, List.of(
-                            new LocaleItem(
-                                    Language.RUSSIAN.getCode(),
-                                    "value1"))},
-                    {null, null, false, Collections.emptyList()},
-                    {null, "", false, Collections.emptyList()},
-                    {"", null, false, Collections.emptyList()},
-                    {"", "", false, Collections.emptyList()},
-                    {"value0", null, false, List.of(
-                            new LocaleItem(
-                                    Language.ENGLISH.getCode(),
-                                    "value0"))},
-                    {"value0", "", false, List.of(
-                            new LocaleItem(
-                                    Language.ENGLISH.getCode(),
-                                    "value0"))},
-                    {"value0", "value0", false, List.of(
-                            new LocaleItem(
-                                    Language.ENGLISH.getCode(),
-                                    "value0"))},
-                    {"value0", "value1", false, List.of(
+                                    "value0"))),
+                    arguments("value0", "value1", true, List.of(
                             new LocaleItem(
                                     Language.ENGLISH.getCode(),
                                     "value0"),
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
-                                    "value1"))},
-                    {null, "value1", false, List.of(
+                                    "value1"))),
+                    arguments(null, "value1", true, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
-                                    "value1"))},
-                    {"", "value1", false, List.of(
+                                    "value1"))),
+                    arguments("", "value1", true, List.of(
                             new LocaleItem(
                                     Language.RUSSIAN.getCode(),
-                                    "value1"))}
-            });
+                                    "value1"))),
+                    arguments(null, null, false, Collections.emptyList()),
+                    arguments(null, "", false, Collections.emptyList()),
+                    arguments("", null, false, Collections.emptyList()),
+                    arguments("", "", false, Collections.emptyList()),
+                    arguments("value0", null, false, List.of(
+                            new LocaleItem(
+                                    Language.ENGLISH.getCode(),
+                                    "value0"))),
+                    arguments("value0", "", false, List.of(
+                            new LocaleItem(
+                                    Language.ENGLISH.getCode(),
+                                    "value0"))),
+                    arguments("value0", "value0", false, List.of(
+                            new LocaleItem(
+                                    Language.ENGLISH.getCode(),
+                                    "value0"))),
+                    arguments("value0", "value1", false, List.of(
+                            new LocaleItem(
+                                    Language.ENGLISH.getCode(),
+                                    "value0"),
+                            new LocaleItem(
+                                    Language.RUSSIAN.getCode(),
+                                    "value1"))),
+                    arguments(null, "value1", false, List.of(
+                            new LocaleItem(
+                                    Language.RUSSIAN.getCode(),
+                                    "value1"))),
+                    arguments("", "value1", false, List.of(
+                            new LocaleItem(
+                                    Language.RUSSIAN.getCode(),
+                                    "value1")))
+            );
         }
 
-        private final String enText;
-        private final String ruText;
-        private final boolean checkEnTextExistence;
-        private final List<LocaleItem> expected;
-
-        public ExtractLocaleItemsTest(String enText, String ruText, boolean checkEnTextExistence, List<LocaleItem> expected) {
-            this.enText = enText;
-            this.ruText = ruText;
-            this.checkEnTextExistence = checkEnTextExistence;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractLocaleItems() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence, List<LocaleItem> expected) {
             assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText, checkEnTextExistence));
             assertEquals(expected, ContentfulUtils.extractLocaleItems(enText, ruText));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractEventNameTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, null, null},
-                    {null, "", null},
-                    {null, "abc", null},
-                    {"abc", "en", "abc"},
-                    {"Moscow", "en", " Msc"},
-                    {"Moscow ", "en", " Msc"},
-                    {" Moscow ", "en", " Msc"},
-                    {"abc Moscow", "en", "abc Msc"},
-                    {"abc Moscow ", "en", "abc Msc"},
-                    {"Moscow cde", "en", "Moscow cde"},
-                    {" Moscow cde", "en", " Moscow cde"},
-                    {"abc Moscow cde", "en", "abc Moscow cde"},
-                    {"Piter", "en", " SPb"},
-                    {"Piter ", "en", " SPb"},
-                    {" Piter ", "en", " SPb"},
-                    {"abc Piter", "en", "abc SPb"},
-                    {"abc Piter ", "en", "abc SPb"},
-                    {"Piter cde", "en", "Piter cde"},
-                    {" Piter cde", "en", " Piter cde"},
-                    {"abc Piter cde", "en", "abc Piter cde"},
-                    {"Moscow", "ru-RU", " Мск"},
-                    {"Moscow ", "ru-RU", " Мск"},
-                    {" Moscow ", "ru-RU", " Мск"},
-                    {"abc Moscow", "ru-RU", "abc Мск"},
-                    {"abc Moscow ", "ru-RU", "abc Мск"},
-                    {"Moscow cde", "ru-RU", "Moscow cde"},
-                    {" Moscow cde", "ru-RU", " Moscow cde"},
-                    {"abc Moscow cde", "ru-RU", "abc Moscow cde"},
-                    {"Piter", "ru-RU", " СПб"},
-                    {"Piter ", "ru-RU", " СПб"},
-                    {" Piter ", "ru-RU", " СПб"},
-                    {"abc Piter", "ru-RU", "abc СПб"},
-                    {"abc Piter ", "ru-RU", "abc СПб"},
-                    {"Piter cde", "ru-RU", "Piter cde"},
-                    {" Piter cde", "ru-RU", " Piter cde"},
-                    {"abc Piter cde", "ru-RU", "abc Piter cde"}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractEventName method tests")
+    class ExtractEventNameTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null, null),
+                    arguments(null, "", null),
+                    arguments(null, "abc", null),
+                    arguments("abc", "en", "abc"),
+                    arguments("Moscow", "en", " Msc"),
+                    arguments("Moscow ", "en", " Msc"),
+                    arguments(" Moscow ", "en", " Msc"),
+                    arguments("abc Moscow", "en", "abc Msc"),
+                    arguments("abc Moscow ", "en", "abc Msc"),
+                    arguments("Moscow cde", "en", "Moscow cde"),
+                    arguments(" Moscow cde", "en", " Moscow cde"),
+                    arguments("abc Moscow cde", "en", "abc Moscow cde"),
+                    arguments("Piter", "en", " SPb"),
+                    arguments("Piter ", "en", " SPb"),
+                    arguments(" Piter ", "en", " SPb"),
+                    arguments("abc Piter", "en", "abc SPb"),
+                    arguments("abc Piter ", "en", "abc SPb"),
+                    arguments("Piter cde", "en", "Piter cde"),
+                    arguments(" Piter cde", "en", " Piter cde"),
+                    arguments("abc Piter cde", "en", "abc Piter cde"),
+                    arguments("Moscow", "ru-RU", " Мск"),
+                    arguments("Moscow ", "ru-RU", " Мск"),
+                    arguments(" Moscow ", "ru-RU", " Мск"),
+                    arguments("abc Moscow", "ru-RU", "abc Мск"),
+                    arguments("abc Moscow ", "ru-RU", "abc Мск"),
+                    arguments("Moscow cde", "ru-RU", "Moscow cde"),
+                    arguments(" Moscow cde", "ru-RU", " Moscow cde"),
+                    arguments("abc Moscow cde", "ru-RU", "abc Moscow cde"),
+                    arguments("Piter", "ru-RU", " СПб"),
+                    arguments("Piter ", "ru-RU", " СПб"),
+                    arguments(" Piter ", "ru-RU", " СПб"),
+                    arguments("abc Piter", "ru-RU", "abc СПб"),
+                    arguments("abc Piter ", "ru-RU", "abc СПб"),
+                    arguments("Piter cde", "ru-RU", "Piter cde"),
+                    arguments(" Piter cde", "ru-RU", " Piter cde"),
+                    arguments("abc Piter cde", "ru-RU", "abc Piter cde")
+            );
         }
 
-        private final String name;
-        private final String locale;
-        private final String expected;
-
-        public ExtractEventNameTest(String name, String locale, String expected) {
-            this.name = name;
-            this.locale = locale;
-            this.expected = expected;
-        }
-
-        @Test
-        public void extractEventName() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractEventName(String name, String locale, String expected) {
             assertEquals(expected, ContentfulUtils.extractEventName(name, locale));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class ExtractEventNameWithExceptionTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {"abc", ""},
-                    {"abc", "unknown"}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractEventName method tests")
+    class ExtractEventNameWithExceptionTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments("abc", ""),
+                    arguments("abc", "unknown")
+            );
         }
 
-        private final String name;
-        private final String locale;
-
-        public ExtractEventNameWithExceptionTest(String name, String locale) {
-            this.name = name;
-            this.locale = locale;
-        }
-
-        @Test(expected = IllegalArgumentException.class)
-        public void extractEventName() {
-            ContentfulUtils.extractEventName(name, locale);
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractEventName(String name, String locale) {
+            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractEventName(name, locale));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class FixNonexistentEventErrorTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, null, null},
-                    {null, LocalDate.of(2016, 12, 7), null},
-                    {Conference.DOT_NEXT, null, null},
-                    {Conference.JPOINT, LocalDate.of(2016, 12, 7), null},
-                    {Conference.DOT_NEXT, LocalDate.of(2016, 12, 8), null},
-                    {Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), new Event(
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fixNonexistentEventError method tests")
+    class FixNonexistentEventErrorTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null, null),
+                    arguments(null, LocalDate.of(2016, 12, 7), null),
+                    arguments(Conference.DOT_NEXT, null, null),
+                    arguments(Conference.JPOINT, LocalDate.of(2016, 12, 7), null),
+                    arguments(Conference.DOT_NEXT, LocalDate.of(2016, 12, 8), null),
+                    arguments(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), new Event(
                             -1L,
                             null,
                             List.of(
@@ -762,22 +641,13 @@ public class ContentfulUtilsTest {
                                     List.of(
                                             new LocaleItem("en", "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo")),
                                     "60.1704769, 24.8279349"),
-                            Collections.emptyList())}
-            });
+                            Collections.emptyList()))
+            );
         }
 
-        private final Conference conference;
-        private final LocalDate startDate;
-        private final Event expected;
-
-        public FixNonexistentEventErrorTest(Conference conference, LocalDate startDate, Event expected) {
-            this.conference = conference;
-            this.startDate = startDate;
-            this.expected = expected;
-        }
-
-        @Test
-        public void fixNonexistentEventError() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void fixNonexistentEventError(Conference conference, LocalDate startDate, Event expected) {
             Event event = ContentfulUtils.fixNonexistentEventError(conference, startDate);
 
             assertEquals(expected, event);
@@ -790,10 +660,11 @@ public class ContentfulUtilsTest {
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class NeedUpdateEventTypeTest {
-        @Parameters
-        public static Collection<Object[]> data() {
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("needUpdate method tests (EventType)")
+    class NeedUpdateEventTypeTest {
+        private Stream<Arguments> data() {
             EventType eventType0 = new EventType();
             eventType0.setId(0);
             eventType0.setConference(Conference.JPOINT);
@@ -910,43 +781,35 @@ public class ContentfulUtilsTest {
             eventType12.setYoutubeLink("youtubeLink0");
             eventType12.setTelegramLink("telegramLink12");
 
-            return Arrays.asList(new Object[][]{
-                    {eventType0, eventType0, false},
-                    {eventType0, eventType1, true},
-                    {eventType0, eventType2, true},
-                    {eventType0, eventType3, true},
-                    {eventType0, eventType4, true},
-                    {eventType0, eventType5, true},
-                    {eventType0, eventType6, true},
-                    {eventType0, eventType7, true},
-                    {eventType0, eventType8, true},
-                    {eventType0, eventType9, true},
-                    {eventType0, eventType10, true},
-                    {eventType0, eventType11, true},
-                    {eventType0, eventType12, true}
-            });
+            return Stream.of(
+                    arguments(eventType0, eventType0, false),
+                    arguments(eventType0, eventType1, true),
+                    arguments(eventType0, eventType2, true),
+                    arguments(eventType0, eventType3, true),
+                    arguments(eventType0, eventType4, true),
+                    arguments(eventType0, eventType5, true),
+                    arguments(eventType0, eventType6, true),
+                    arguments(eventType0, eventType7, true),
+                    arguments(eventType0, eventType8, true),
+                    arguments(eventType0, eventType9, true),
+                    arguments(eventType0, eventType10, true),
+                    arguments(eventType0, eventType11, true),
+                    arguments(eventType0, eventType12, true)
+            );
         }
 
-        private final EventType a;
-        private final EventType b;
-        private final boolean expected;
-
-        public NeedUpdateEventTypeTest(EventType a, EventType b, boolean expected) {
-            this.a = a;
-            this.b = b;
-            this.expected = expected;
-        }
-
-        @Test
-        public void needUpdate() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void needUpdate(EventType a, EventType b, boolean expected) {
             assertEquals(expected, ContentfulUtils.needUpdate(a, b));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class NeedUpdatePlaceTest {
-        @Parameters
-        public static Collection<Object[]> data() {
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("needUpdate method tests (Place)")
+    class NeedUpdatePlaceTest {
+        private Stream<Arguments> data() {
             Place place0 = new Place();
             place0.setId(0);
             place0.setCity(List.of(new LocaleItem("en", "city0")));
@@ -971,35 +834,27 @@ public class ContentfulUtilsTest {
             place4.setVenueAddress(List.of(new LocaleItem("en", "venueAddress0")));
             place4.setMapCoordinates("mapCoordinates4");
 
-            return Arrays.asList(new Object[][]{
-                    {place0, place0, false},
-                    {place0, place1, true},
-                    {place0, place2, true},
-                    {place0, place3, true},
-                    {place0, place4, true}
-            });
+            return Stream.of(
+                    arguments(place0, place0, false),
+                    arguments(place0, place1, true),
+                    arguments(place0, place2, true),
+                    arguments(place0, place3, true),
+                    arguments(place0, place4, true)
+            );
         }
 
-        private final Place a;
-        private final Place b;
-        private final boolean expected;
-
-        public NeedUpdatePlaceTest(Place a, Place b, boolean expected) {
-            this.a = a;
-            this.b = b;
-            this.expected = expected;
-        }
-
-        @Test
-        public void needUpdate() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void needUpdate(Place a, Place b, boolean expected) {
             assertEquals(expected, ContentfulUtils.needUpdate(a, b));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class NeedUpdateSpeakerTest {
-        @Parameters
-        public static Collection<Object[]> data() {
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("needUpdate method tests (Speaker)")
+    class NeedUpdateSpeakerTest {
+        private Stream<Arguments> data() {
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
             speaker0.setPhotoFileName("photoFileName0");
@@ -1087,41 +942,33 @@ public class ContentfulUtilsTest {
             speaker10.setMvp(true);
             speaker10.setMvpReconnect(false);
 
-            return Arrays.asList(new Object[][]{
-                    {speaker0, speaker0, false},
-                    {speaker0, speaker1, true},
-                    {speaker0, speaker2, true},
-                    {speaker0, speaker3, true},
-                    {speaker0, speaker4, true},
-                    {speaker0, speaker5, true},
-                    {speaker0, speaker6, true},
-                    {speaker0, speaker7, true},
-                    {speaker0, speaker8, true},
-                    {speaker0, speaker9, true},
-                    {speaker0, speaker10, true}
-            });
+            return Stream.of(
+                    arguments(speaker0, speaker0, false),
+                    arguments(speaker0, speaker1, true),
+                    arguments(speaker0, speaker2, true),
+                    arguments(speaker0, speaker3, true),
+                    arguments(speaker0, speaker4, true),
+                    arguments(speaker0, speaker5, true),
+                    arguments(speaker0, speaker6, true),
+                    arguments(speaker0, speaker7, true),
+                    arguments(speaker0, speaker8, true),
+                    arguments(speaker0, speaker9, true),
+                    arguments(speaker0, speaker10, true)
+            );
         }
 
-        private final Speaker a;
-        private final Speaker b;
-        private final boolean expected;
-
-        public NeedUpdateSpeakerTest(Speaker a, Speaker b, boolean expected) {
-            this.a = a;
-            this.b = b;
-            this.expected = expected;
-        }
-
-        @Test
-        public void needUpdate() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void needUpdate(Speaker a, Speaker b, boolean expected) {
             assertEquals(expected, ContentfulUtils.needUpdate(a, b));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class NeedUpdateTalkTest {
-        @Parameters
-        public static Collection<Object[]> data() {
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("needUpdate method tests (Talk)")
+    class NeedUpdateTalkTest {
+        private Stream<Arguments> data() {
             Talk talk0 = new Talk();
             talk0.setId(0);
             talk0.setName(List.of(new LocaleItem("en", "name0")));
@@ -1223,42 +1070,34 @@ public class ContentfulUtilsTest {
             talk11.setVideoLinks(List.of("videoLink0"));
             talk11.setSpeakerIds(List.of(1L));
 
-            return Arrays.asList(new Object[][]{
-                    {talk0, talk0, false},
-                    {talk0, talk1, true},
-                    {talk0, talk2, true},
-                    {talk0, talk3, true},
-                    {talk0, talk4, true},
-                    {talk0, talk5, true},
-                    {talk0, talk6, true},
-                    {talk0, talk7, true},
-                    {talk0, talk8, true},
-                    {talk0, talk9, true},
-                    {talk0, talk10, true},
-                    {talk0, talk11, true}
-            });
+            return Stream.of(
+                    arguments(talk0, talk0, false),
+                    arguments(talk0, talk1, true),
+                    arguments(talk0, talk2, true),
+                    arguments(talk0, talk3, true),
+                    arguments(talk0, talk4, true),
+                    arguments(talk0, talk5, true),
+                    arguments(talk0, talk6, true),
+                    arguments(talk0, talk7, true),
+                    arguments(talk0, talk8, true),
+                    arguments(talk0, talk9, true),
+                    arguments(talk0, talk10, true),
+                    arguments(talk0, talk11, true)
+            );
         }
 
-        private final Talk a;
-        private final Talk b;
-        private final boolean expected;
-
-        public NeedUpdateTalkTest(Talk a, Talk b, boolean expected) {
-            this.a = a;
-            this.b = b;
-            this.expected = expected;
-        }
-
-        @Test
-        public void needUpdate() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void needUpdate(Talk a, Talk b, boolean expected) {
             assertEquals(expected, ContentfulUtils.needUpdate(a, b));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class NeedUpdateEventTest {
-        @Parameters
-        public static Collection<Object[]> data() {
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("needUpdate method tests (Event)")
+    class NeedUpdateEventTest {
+        private Stream<Arguments> data() {
             Event event0 = new Event();
             event0.setEventTypeId(0);
             event0.setName(List.of(new LocaleItem("en", "name0")));
@@ -1321,66 +1160,49 @@ public class ContentfulUtilsTest {
             event8.setPlaceId(0);
             event8.setTalkIds(List.of(8L));
 
-            return Arrays.asList(new Object[][]{
-                    {event0, event0, false},
-                    {event0, event1, true},
-                    {event0, event2, true},
-                    {event0, event3, true},
-                    {event0, event4, true},
-                    {event0, event5, true},
-                    {event0, event6, true},
-                    {event0, event7, true},
-                    {event0, event8, true}
-            });
+            return Stream.of(
+                    arguments(event0, event0, false),
+                    arguments(event0, event1, true),
+                    arguments(event0, event2, true),
+                    arguments(event0, event3, true),
+                    arguments(event0, event4, true),
+                    arguments(event0, event5, true),
+                    arguments(event0, event6, true),
+                    arguments(event0, event7, true),
+                    arguments(event0, event8, true)
+            );
         }
 
-        private final Event a;
-        private final Event b;
-        private final boolean expected;
-
-        public NeedUpdateEventTest(Event a, Event b, boolean expected) {
-            this.a = a;
-            this.b = b;
-            this.expected = expected;
-        }
-
-        @Test
-        public void needUpdate() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void needUpdate(Event a, Event b, boolean expected) {
             assertEquals(expected, ContentfulUtils.needUpdate(a, b));
         }
     }
 
-    @RunWith(Parameterized.class)
-    public static class EqualsTest {
-        @Parameters
-        public static Collection<Object[]> data() {
-            return Arrays.asList(new Object[][]{
-                    {null, null, true},
-                    {null, List.of(""), false},
-                    {List.of(""), null, false},
-                    {List.of(""), List.of(""), true},
-                    {List.of(""), List.of("a"), false},
-                    {List.of("a"), List.of(""), false},
-                    {List.of("a"), List.of("a"), true},
-                    {List.of("a"), List.of("b"), false},
-                    {List.of("a", "b"), List.of("a", "b"), true},
-                    {List.of("a"), List.of("a", "b"), false},
-                    {List.of("a", "b"), List.of("a"), false}
-            });
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("equals method tests")
+    class EqualsTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null, true),
+                    arguments(null, List.of(""), false),
+                    arguments(List.of(""), null, false),
+                    arguments(List.of(""), List.of(""), true),
+                    arguments(List.of(""), List.of("a"), false),
+                    arguments(List.of("a"), List.of(""), false),
+                    arguments(List.of("a"), List.of("a"), true),
+                    arguments(List.of("a"), List.of("b"), false),
+                    arguments(List.of("a", "b"), List.of("a", "b"), true),
+                    arguments(List.of("a"), List.of("a", "b"), false),
+                    arguments(List.of("a", "b"), List.of("a"), false)
+            );
         }
 
-        private final List<String> a;
-        private final List<String> b;
-        private final boolean expected;
-
-        public EqualsTest(List<String> a, List<String> b, boolean expected) {
-            this.a = a;
-            this.b = b;
-            this.expected = expected;
-        }
-
-        @Test
-        public void needUpdate() {
+        @ParameterizedTest
+        @MethodSource("data")
+        void needUpdate(List<String> a, List<String> b, boolean expected) {
             assertEquals(expected, ContentfulUtils.equals(a, b));
         }
     }

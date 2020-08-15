@@ -147,6 +147,16 @@ public class Speaker extends Identifier {
     }
 
     @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
     public String toString() {
         return "Speaker{" +
                 "id=" + getId() +

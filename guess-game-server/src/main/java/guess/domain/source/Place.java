@@ -1,13 +1,13 @@
 package guess.domain.source;
 
+import guess.domain.Identifier;
+
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Place.
  */
-public class Place {
-    private long id;
+public class Place extends Identifier {
     private List<LocaleItem> city;
     private List<LocaleItem> venueAddress;
     private String mapCoordinates;
@@ -16,18 +16,11 @@ public class Place {
     }
 
     public Place(long id, List<LocaleItem> city, List<LocaleItem> venueAddress, String mapCoordinates) {
-        this.id = id;
+        super(id);
+
         this.city = city;
         this.venueAddress = venueAddress;
         this.mapCoordinates = mapCoordinates;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public List<LocaleItem> getCity() {
@@ -56,21 +49,18 @@ public class Place {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Place place = (Place) o;
-        return id == place.id;
+        return super.equals(o);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return super.hashCode();
     }
 
     @Override
     public String toString() {
         return "Place{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", city=" + city +
                 ", venueAddress=" + venueAddress +
                 ", mapCoordinates='" + mapCoordinates + '\'' +

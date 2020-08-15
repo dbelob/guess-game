@@ -43,4 +43,14 @@ public abstract class Nameable extends Identifier {
     public void setLongDescription(List<LocaleItem> longDescription) {
         this.longDescription = longDescription;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

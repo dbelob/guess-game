@@ -1,5 +1,7 @@
 package guess.domain.source;
 
+import guess.domain.Identifier;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +11,7 @@ import java.util.stream.Collectors;
 /**
  * Event.
  */
-public class Event {
-    private long id;
-
+public class Event extends Identifier {
     private long eventTypeId;
     private EventType eventType;
 
@@ -32,7 +32,8 @@ public class Event {
 
     public Event(long id, EventType eventType, List<LocaleItem> name, LocalDate startDate, LocalDate endDate,
                  List<LocaleItem> siteLink, String youtubeLink, Place place, List<Talk> talks) {
-        this.id = id;
+        super(id);
+
         this.eventType = eventType;
         this.name = name;
         this.startDate = startDate;
@@ -47,14 +48,6 @@ public class Event {
         this.talkIds = talks.stream()
                 .map(Talk::getId)
                 .collect(Collectors.toList());
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public long getEventTypeId() {
@@ -162,7 +155,7 @@ public class Event {
     @Override
     public String toString() {
         return "Event{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", eventType=" + eventType +
                 ", name=" + name +
                 ", startDate=" + startDate +

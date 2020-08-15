@@ -1,6 +1,5 @@
 package guess.domain.source;
 
-import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.stream.Collectors;
 /**
  * Talk.
  */
-public class Talk extends Nameable implements Serializable {
+public class Talk extends Nameable {
     private Long talkDay;
     private LocalTime trackTime;
     private Long track;
@@ -102,6 +101,16 @@ public class Talk extends Nameable implements Serializable {
 
     public void setSpeakers(List<Speaker> speakers) {
         this.speakers = speakers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 
     @Override
