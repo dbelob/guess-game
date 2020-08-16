@@ -134,15 +134,12 @@ public class StateServiceImpl implements StateService {
         // Set name and logo filename
         if (startParameters.getEventTypeIds().size() == 1) {
             EventType eventType = eventTypeDao.getEventTypeById(startParameters.getEventTypeIds().get(0));
+            Event event;
 
-            if (eventType.isEventTypeConference()) {
-                if (startParameters.getEventIds().size() == 1) {
-                    Event event = eventDao.getEventById(startParameters.getEventIds().get(0));
-
-                    name = (event != null) ? event.getName() : eventType.getName();
-                } else {
-                    name = eventType.getName();
-                }
+            if (eventType.isEventTypeConference() &&
+                    (startParameters.getEventIds().size() == 1) &&
+                    ((event = eventDao.getEventById(startParameters.getEventIds().get(0))) != null)) {
+                name = event.getName();
             } else {
                 name = eventType.getName();
             }

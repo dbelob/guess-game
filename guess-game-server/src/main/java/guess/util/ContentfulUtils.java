@@ -316,8 +316,8 @@ public class ContentfulUtils {
                             eventStartDate,
                             eventEndDate,
                             extractLocaleItems(
-                                    (conferenceLink != null) ? conferenceLink.get(ENGLISH_LOCALE) : null,
-                                    (conferenceLink != null) ? conferenceLink.get(RUSSIAN_LOCALE) : null),
+                                    extractLocaleValue(conferenceLink, ENGLISH_LOCALE),
+                                    extractLocaleValue(conferenceLink, RUSSIAN_LOCALE)),
                             (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null,
                             new Place(
                                     -1,
@@ -325,8 +325,8 @@ public class ContentfulUtils {
                                             extractCity(eventCityLink, cityMap, entryErrorSet, ENGLISH_LOCALE, nameEn),
                                             extractCity(eventCityLink, cityMap, entryErrorSet, RUSSIAN_LOCALE, nameEn)),
                                     extractLocaleItems(
-                                            (venueAddress != null) ? venueAddress.get(ENGLISH_LOCALE) : null,
-                                            (venueAddress != null) ? venueAddress.get(RUSSIAN_LOCALE) : null),
+                                            extractLocaleValue(venueAddress, ENGLISH_LOCALE),
+                                            extractLocaleValue(venueAddress, RUSSIAN_LOCALE)),
                                     (addressLink != null) ? getFirstMapValue(addressLink) : null),
                             Collections.emptyList());
                 })
@@ -934,32 +934,6 @@ public class ContentfulUtils {
     }
 
     /**
-     * Extracts city name.
-     *
-     * @param link          link
-     * @param cityMap       map id/city
-     * @param entryErrorSet set with error entries
-     * @param locale        locale
-     * @param eventName     event name
-     * @return city name
-     */
-    private static String extractCity(ContentfulLink link, Map<String, ContentfulCity> cityMap,
-                                      Set<String> entryErrorSet, String locale, String eventName) {
-        String entryId = link.getSys().getId();
-        boolean isErrorAsset = entryErrorSet.contains(entryId);
-
-        if (isErrorAsset) {
-            log.warn("Entry (city name) id {} not resolvable for '{}' event", entryId, eventName);
-            return null;
-        }
-
-        ContentfulCity city = cityMap.get(entryId);
-        return Objects.requireNonNull(city,
-                () -> String.format("Entry (city name) id %s not found for '%s' event", entryId, eventName))
-                .getFields().getCityName().get(locale);
-    }
-
-    /**
      * Extracts event name.
      *
      * @param name   name
@@ -983,6 +957,43 @@ public class ContentfulUtils {
             default:
                 throw new IllegalArgumentException(String.format("Unknown locale: %s (add new locale, change method and rerun)", locale));
         }
+    }
+
+    /**
+     * Extracts value from map by locale.
+     *
+     * @param map    map
+     * @param locale locale
+     * @return attribute value
+     */
+    private static String extractLocaleValue(Map<String, String> map, String locale) {
+        return (map != null) ? map.get(locale) : null;
+    }
+
+    /**
+     * Extracts city name.
+     *
+     * @param link          link
+     * @param cityMap       map id/city
+     * @param entryErrorSet set with error entries
+     * @param locale        locale
+     * @param eventName     event name
+     * @return city name
+     */
+    private static String extractCity(ContentfulLink link, Map<String, ContentfulCity> cityMap,
+                                      Set<String> entryErrorSet, String locale, String eventName) {
+        String entryId = link.getSys().getId();
+        boolean isErrorAsset = entryErrorSet.contains(entryId);
+
+        if (isErrorAsset) {
+            log.warn("Entry (city name) id {} not resolvable for '{}' event", entryId, eventName);
+            return null;
+        }
+
+        ContentfulCity city = cityMap.get(entryId);
+        return Objects.requireNonNull(city,
+                () -> String.format("Entry (city name) id %s not found for '%s' event", entryId, eventName))
+                .getFields().getCityName().get(locale);
     }
 
     static Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
