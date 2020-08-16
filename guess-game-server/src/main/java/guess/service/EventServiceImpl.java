@@ -138,15 +138,8 @@ public class EventServiceImpl implements EventService {
                 Map<Long, Optional<LocalTime>> minTrackTimeInTalkDays = entry.getValue();
 
                 for (long i = 1; i <= days; i++) {
-                    LocalTime minTrackTime;
-
-                    if ((minTrackTimeInTalkDays != null) && minTrackTimeInTalkDays.get(i).isPresent()) {
-                        minTrackTime = minTrackTimeInTalkDays.get(i).get();
-                    } else {
-                        minTrackTime = LocalTime.of(0, 0);
-                    }
-
                     LocalDate date = event.getStartDate().plusDays(i - 1);
+                    LocalTime minTrackTime = minTrackTimeInTalkDays.get(i).orElse(LocalTime.of(0, 0));
 
                     result.add(new QuestionServiceImpl.EventDateMinTrackTime(event, date, minTrackTime));
                 }
