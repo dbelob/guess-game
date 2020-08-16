@@ -139,11 +139,9 @@ public class EventServiceImpl implements EventService {
 
                 for (long i = 1; i <= days; i++) {
                     LocalTime minTrackTime;
-                    Optional<LocalTime> minTrackTimeInTalkDay;
 
-                    if ((minTrackTimeInTalkDays != null) &&
-                            ((minTrackTimeInTalkDay = minTrackTimeInTalkDays.get(i)).isPresent())) {
-                        minTrackTime = minTrackTimeInTalkDay.get();
+                    if ((minTrackTimeInTalkDays != null) && minTrackTimeInTalkDays.get(i).isPresent()) {
+                        minTrackTime = minTrackTimeInTalkDays.get(i).get();
                     } else {
                         minTrackTime = LocalTime.of(0, 0);
                     }
