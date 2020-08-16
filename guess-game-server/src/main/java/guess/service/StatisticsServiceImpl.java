@@ -207,13 +207,9 @@ public class StatisticsServiceImpl implements StatisticsService {
             for (Event event : eventType.getEvents()) {
                 for (Talk talk : event.getTalks()) {
                     for (Speaker speaker : talk.getSpeakers()) {
-                        SpeakerMetricsInternal speakerMetricsInternal = speakerSpeakerMetricsMap.get(speaker);
-
                         // Speaker metrics
-                        if (speakerMetricsInternal == null) {
-                            speakerMetricsInternal = new SpeakerMetricsInternal();
-                            speakerSpeakerMetricsMap.put(speaker, speakerMetricsInternal);
-                        }
+                        SpeakerMetricsInternal speakerMetricsInternal =
+                                speakerSpeakerMetricsMap.computeIfAbsent(speaker, k -> new SpeakerMetricsInternal());
 
                         speakerMetricsInternal.getTalks().add(talk);
                         speakerMetricsInternal.getEvents().add(event);

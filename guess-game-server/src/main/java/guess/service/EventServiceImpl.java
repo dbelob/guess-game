@@ -57,47 +57,45 @@ public class EventServiceImpl implements EventService {
         List<Event> conferencesFromDate = eventsFromDate.stream()
                 .filter(e -> e.getEventType().isEventTypeConference())
                 .collect(Collectors.toList());
-
         if (conferencesFromDate.isEmpty()) {
             // Conferences not exist
             return null;
+        }
+
+        // Find (event, date, minimal track time) items
+        List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeList = getConferenceDateMinTrackTimeList(conferencesFromDate);
+        if (eventDateMinTrackTimeList.isEmpty()) {
+            return null;
+        }
+
+        // Find current and future event days, sort by date and minimal track time
+        List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeListFromDateOrdered = eventDateMinTrackTimeList.stream()
+                .filter(e -> !e.getDate().isBefore(date))
+                .sorted(Comparator.comparing(QuestionServiceImpl.EventDateMinTrackTime::getDate).thenComparing(QuestionServiceImpl.EventDateMinTrackTime::getMinTrackTime))
+                .collect(Collectors.toList());
+        if (eventDateMinTrackTimeListFromDateOrdered.isEmpty()) {
+            return null;
+        }
+
+        // Find first date
+        LocalDate firstDate = eventDateMinTrackTimeListFromDateOrdered.get(0).getDate();
+
+        if (date.isBefore(firstDate)) {
+            // No current day events, return nearest first event
+            return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
         } else {
-            List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeList = getConferenceDateMinTrackTimeList(conferencesFromDate);
+            // Current day events exist, find happened time, sort by reversed minimal track time
+            List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeListOnCurrentDate = eventDateMinTrackTimeListFromDateOrdered.stream()
+                    .filter(e -> (e.getDate().equals(date) && !e.getMinTrackTime().isAfter(time)))
+                    .sorted(Comparator.comparing(QuestionServiceImpl.EventDateMinTrackTime::getMinTrackTime).reversed())
+                    .collect(Collectors.toList());
 
-            if (eventDateMinTrackTimeList.isEmpty()) {
-                return null;
+            if (eventDateMinTrackTimeListOnCurrentDate.isEmpty()) {
+                // No happened day events, return nearest first event
+                return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
             } else {
-                // Find current and future event days, sort by date and minimal track time
-                List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeListFromDateOrdered = eventDateMinTrackTimeList.stream()
-                        .filter(e -> !e.getDate().isBefore(date))
-                        .sorted(Comparator.comparing(QuestionServiceImpl.EventDateMinTrackTime::getDate).thenComparing(QuestionServiceImpl.EventDateMinTrackTime::getMinTrackTime))
-                        .collect(Collectors.toList());
-
-                if (eventDateMinTrackTimeListFromDateOrdered.isEmpty()) {
-                    return null;
-                } else {
-                    // Find first date
-                    LocalDate firstDate = eventDateMinTrackTimeListFromDateOrdered.get(0).getDate();
-
-                    if (date.isBefore(firstDate)) {
-                        // No current day events, return nearest first event
-                        return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
-                    } else {
-                        // Current day events exist, find happened time, sort by reversed minimal track time
-                        List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeListOnCurrentDate = eventDateMinTrackTimeListFromDateOrdered.stream()
-                                .filter(e -> (e.getDate().equals(date) && !e.getMinTrackTime().isAfter(time)))
-                                .sorted(Comparator.comparing(QuestionServiceImpl.EventDateMinTrackTime::getMinTrackTime).reversed())
-                                .collect(Collectors.toList());
-
-                        if (eventDateMinTrackTimeListOnCurrentDate.isEmpty()) {
-                            // No happened day events, return nearest first event
-                            return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
-                        } else {
-                            // Return nearest last event
-                            return eventDateMinTrackTimeListOnCurrentDate.get(0).getEvent();
-                        }
-                    }
-                }
+                // Return nearest last event
+                return eventDateMinTrackTimeListOnCurrentDate.get(0).getEvent();
             }
         }
     }
@@ -140,14 +138,14 @@ public class EventServiceImpl implements EventService {
                 Map<Long, Optional<LocalTime>> minTrackTimeInTalkDays = entry.getValue();
 
                 for (long i = 1; i <= days; i++) {
-                    LocalTime minTrackTime = LocalTime.of(0, 0);
+                    LocalTime minTrackTime;
+                    Optional<LocalTime> minTrackTimeInTalkDay;
 
-                    if (minTrackTimeInTalkDays != null) {
-                        Optional<LocalTime> minTrackTimeInTalkDay = minTrackTimeInTalkDays.get(i);
-
-                        if (minTrackTimeInTalkDay.isPresent()) {
-                            minTrackTime = minTrackTimeInTalkDay.get();
-                        }
+                    if ((minTrackTimeInTalkDays != null) &&
+                            ((minTrackTimeInTalkDay = minTrackTimeInTalkDays.get(i)).isPresent())) {
+                        minTrackTime = minTrackTimeInTalkDay.get();
+                    } else {
+                        minTrackTime = LocalTime.of(0, 0);
                     }
 
                     LocalDate date = event.getStartDate().plusDays(i - 1);
