@@ -10,6 +10,8 @@ import java.util.List;
  * Question DAO.
  */
 public interface QuestionDao {
+    List<QuestionSet> readQuestionSets();
+
     List<QuestionSet> getQuestionSets();
 
     List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode);

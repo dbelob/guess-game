@@ -206,15 +206,14 @@ public class StatisticsServiceImpl implements StatisticsService {
         for (EventType eventType : eventTypes) {
             for (Event event : eventType.getEvents()) {
                 for (Talk talk : event.getTalks()) {
-                    for (Speaker speaker : talk.getSpeakers()) {
-                        // Speaker metrics
-                        SpeakerMetricsInternal speakerMetricsInternal =
-                                speakerSpeakerMetricsMap.computeIfAbsent(speaker, k -> new SpeakerMetricsInternal());
-
-                        speakerMetricsInternal.getTalks().add(talk);
-                        speakerMetricsInternal.getEvents().add(event);
-                        speakerMetricsInternal.getEventTypes().add(eventType);
-                    }
+                    // Speaker metrics
+                    talk.getSpeakers().stream()
+                            .map(s -> speakerSpeakerMetricsMap.computeIfAbsent(s, k -> new SpeakerMetricsInternal()))
+                            .forEach(smi -> {
+                        smi.getTalks().add(talk);
+                        smi.getEvents().add(event);
+                        smi.getEventTypes().add(eventType);
+                    });
                 }
 
                 totalsTalksQuantity += event.getTalks().size();
