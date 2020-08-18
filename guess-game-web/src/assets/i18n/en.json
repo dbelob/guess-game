@@ -33,14 +33,14 @@
   },
   "start": {
     "title": "Guess the Speaker",
-    "modeLabel": "Mode:",
+    "guessLabel": "Guess:",
     "quantityLabel": "Questions:",
-    "guessNameByPhotoLabel": "Guess name by photo",
-    "guessPhotoByNameLabel": "Guess photo by name",
-    "guessTalkBySpeakerLabel": "Guess talk by speaker",
-    "guessSpeakerByTalkLabel": "Guess speaker by talk",
-    "guessAccountsBySpeakerLabel": "Guess Twitter, GitHub by speaker",
-    "guessSpeakerByAccountsLabel": "Guess speaker by Twitter, GitHub",
+    "nameByPhotoLabel": "Name by photo",
+    "photoByNameLabel": "Photo by name",
+    "talkBySpeakerLabel": "Talk by speaker",
+    "speakerByTalkLabel": "Speaker by talk",
+    "accountsBySpeakerLabel": "Twitter, GitHub by speaker",
+    "speakerByAccountsLabel": "Speaker by Twitter, GitHub",
     "startButtonText": "Start"
   },
   "result":{

@@ -33,14 +33,14 @@
   },
   "start": {
     "title": "Угадай спикера",
-    "modeLabel": "Режим:",
+    "guessLabel": "Угадать:",
     "quantityLabel": "Вопросов:",
-    "guessNameByPhotoLabel": "Угадать имя по фотографии",
-    "guessPhotoByNameLabel": "Угадать фотографию по имени",
-    "guessTalkBySpeakerLabel": "Угадать доклад по спикеру",
-    "guessSpeakerByTalkLabel": "Угадать спикера по докладу",
-    "guessAccountsBySpeakerLabel": "Угадать Twitter, GitHub по спикеру",
-    "guessSpeakerByAccountsLabel": "Угадать спикера по Twitter, GitHub",
+    "nameByPhotoLabel": "Имя по фотографии",
+    "photoByNameLabel": "Фотографию по имени",
+    "talkBySpeakerLabel": "Доклад по спикеру",
+    "speakerByTalkLabel": "Спикера по докладу",
+    "accountsBySpeakerLabel": "Twitter, GitHub по спикеру",
+    "speakerByAccountsLabel": "Спикера по Twitter, GitHub",
     "startButtonText": "Начать"
   },
   "result":{
