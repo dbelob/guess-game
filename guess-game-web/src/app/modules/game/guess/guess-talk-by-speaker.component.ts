@@ -52,12 +52,12 @@ export class GuessTalkBySpeakerComponent implements OnInit {
   result() {
     this.stateService.setState(State.ResultState)
       .subscribe(data => {
-          this.router.navigateByUrl('/result');
+          this.router.navigateByUrl('/game/result');
         }
       );
   }
 
   cancel() {
-    this.router.navigateByUrl('/cancel');
+    this.router.navigateByUrl('/game/cancel');
   }
 }

@@ -14,7 +14,7 @@ export class CancelGameComponent {
   cancel() {
     this.stateService.setState(State.ResultState)
       .subscribe(data => {
-          this.router.navigateByUrl('/result');
+          this.router.navigateByUrl('/game/result');
         }
       );
   }

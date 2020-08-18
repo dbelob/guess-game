@@ -11,7 +11,8 @@ export class StateGuard implements CanActivate {
   constructor(public stateService: StateService, private messageService: MessageService, private router: Router) {
   }
 
-  canActivate(routeSnapshot: ActivatedRouteSnapshot, stateSnapshot: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  canActivate(routeSnapshot: ActivatedRouteSnapshot, stateSnapshot: RouterStateSnapshot):
+    Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.stateService.getState()
       .pipe(
         map(state => {
@@ -20,35 +21,35 @@ export class StateGuard implements CanActivate {
 
             switch (state) {
               case State.StartState: {
-                expectedUrl = '/start';
+                expectedUrl = '/game/start';
                 break;
               }
               case State.GuessNameByPhotoState: {
-                expectedUrl = '/guess/name-by-photo';
+                expectedUrl = '/game/guess/name-by-photo';
                 break;
               }
               case State.GuessPhotoByNameState: {
-                expectedUrl = '/guess/photo-by-name';
+                expectedUrl = '/game/guess/photo-by-name';
                 break;
               }
               case State.GuessTalkBySpeakerState: {
-                expectedUrl = '/guess/talk-by-speaker';
+                expectedUrl = '/game/guess/talk-by-speaker';
                 break;
               }
               case State.GuessSpeakerByTalkState: {
-                expectedUrl = '/guess/speaker-by-talk';
+                expectedUrl = '/game/guess/speaker-by-talk';
                 break;
               }
               case State.GuessAccountBySpeakerState: {
-                expectedUrl = '/guess/account-by-speaker';
+                expectedUrl = '/game/guess/account-by-speaker';
                 break;
               }
               case State.GuessSpeakerByAccountState: {
-                expectedUrl = '/guess/speaker-by-account';
+                expectedUrl = '/game/guess/speaker-by-account';
                 break;
               }
               case State.ResultState: {
-                expectedUrl = '/result';
+                expectedUrl = '/game/result';
                 break;
               }
             }
