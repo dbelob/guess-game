@@ -1,13 +1,14 @@
 package guess.dao;
 
 import guess.dao.exception.SpeakerDuplicatedException;
+import guess.domain.Conference;
 import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.Event;
+import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -41,6 +42,9 @@ class QuestionDaoImplTest {
 
         @Bean
         public QuestionDao questionDao() {
+            Mockito.when(eventTypeDao.getEventTypeById(0)).thenReturn(eventType0);
+            Mockito.when(eventDao.getEvents()).thenReturn(List.of(event0, event1, event2));
+
             return new QuestionDaoImpl(eventTypeDao, eventDao);
         }
     }
@@ -54,18 +58,21 @@ class QuestionDaoImplTest {
     @Autowired
     private QuestionDao questionDao;
 
-    private Speaker speaker0;
-    private Speaker speaker1;
-    private Speaker speaker2;
-    private Talk talk0;
-    private Talk talk1;
-    private Talk talk2;
-    private Event event0;
-    private Event event1;
-    private Event event2;
+    private static final Speaker speaker0;
+    private static final Speaker speaker1;
+    private static final Speaker speaker2;
+    private static final Speaker speaker3;
+    private static final Talk talk0;
+    private static final Talk talk1;
+    private static final Talk talk2;
+    private static final Event event0;
+    private static final Event event1;
+    private static final Event event2;
+    private static final EventType eventType0;
+    private static final EventType eventType1;
+    private static final EventType eventType2;
 
-    @BeforeEach
-    public void setUp() {
+    static {
         speaker0 = new Speaker();
         speaker0.setId(0);
 
@@ -78,6 +85,11 @@ class QuestionDaoImplTest {
         speaker2.setId(2);
         speaker2.setTwitter("");
         speaker2.setGitHub("gitHub2");
+
+        speaker3 = new Speaker();
+        speaker3.setId(3);
+        speaker3.setTwitter("");
+        speaker3.setGitHub("");
 
         talk0 = new Talk();
         talk0.setId(0);
@@ -92,7 +104,7 @@ class QuestionDaoImplTest {
         talk2 = new Talk();
         talk2.setId(2);
         talk2.setSpeakerIds(List.of(2L));
-        talk2.setSpeakers(List.of(speaker2));
+        talk2.setSpeakers(List.of(speaker2, speaker3));
 
         event0 = new Event();
         event0.setId(0);
@@ -109,7 +121,24 @@ class QuestionDaoImplTest {
         event2.setTalkIds(List.of(2L));
         event2.setTalks(List.of(talk2));
 
-        Mockito.when(eventDao.getEvents()).thenReturn(List.of(event0, event1, event2));
+        eventType0 = new EventType();
+        eventType0.setId(0);
+        eventType0.setEvents(List.of(event0));
+        eventType0.setConference(Conference.JPOINT);
+        event0.setEventTypeId(0);
+        event0.setEventType(eventType0);
+
+        eventType1 = new EventType();
+        eventType1.setId(1);
+        eventType1.setEvents(List.of(event1));
+        event1.setEventTypeId(1);
+        event1.setEventType(eventType1);
+
+        eventType2 = new EventType();
+        eventType2.setId(2);
+        eventType2.setEvents(List.of(event2));
+        event2.setEventTypeId(2);
+        event2.setEventType(eventType2);
     }
 
     @Test
@@ -138,15 +167,41 @@ class QuestionDaoImplTest {
                         new QuestionSet(
                                 event2,
                                 List.of(
-                                        new SpeakerQuestion(speaker2)
+                                        new SpeakerQuestion(speaker2),
+                                        new SpeakerQuestion(speaker3)
                                 ),
                                 List.of(
-                                        new TalkQuestion(List.of(speaker2), talk2)
+                                        new TalkQuestion(List.of(speaker2, speaker3), talk2)
                                 ),
                                 List.of(new SpeakerQuestion(speaker2))
                         )
                 ),
                 questionDao.readQuestionSets());
+    }
+
+    @Test
+    void getSubQuestionSets() {
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getSubQuestionSets(
+                        Collections.emptyList(),
+                        Collections.emptyList()
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getSubQuestionSets(
+                        Collections.singletonList(null),
+                        Collections.emptyList()
+                )
+        );
+//        assertEquals(
+//                Collections.emptyList(),
+//                questionDao.getSubQuestionSets(
+//                        Collections.singletonList(0L),
+//                        Collections.singletonList(0L)
+//                )
+//        );
     }
 
     @Test

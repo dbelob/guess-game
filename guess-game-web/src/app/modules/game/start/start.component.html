@@ -36,46 +36,40 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="type" class="col-sm-2">{{'start.modeLabel' | translate}}</label>
+      <label for="type" class="col-sm-2">{{'start.guessLabel' | translate}}</label>
       <div class="col-sm-10">
         <div class="row">
-          <div class="col-sm-12 pb-1">
-            <p-radioButton id="type" name="modeRadios" value="{{guessMode.GuessNameByPhotoMode}}" label="{{'start.guessNameByPhotoLabel' | translate}}"
+          <div class="col-sm-12 col-md-6 pt-1 pb-1">
+            <p-radioButton id="type" name="modeRadios" value="{{guessMode.GuessNameByPhotoMode}}" label="{{'start.nameByPhotoLabel' | translate}}"
                            [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
                            inputId="opt1"></p-radioButton>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 pt-1 pb-1">
-            <p-radioButton name="modeRadios" value="{{guessMode.GuessPhotoByNameMode}}" label="{{'start.guessPhotoByNameLabel' | translate}}"
+          <div class="col-sm-12 col-md-6 pt-1 pb-1">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessPhotoByNameMode}}" label="{{'start.photoByNameLabel' | translate}}"
                             [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
                             inputId="opt2"></p-radioButton>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 pt-1 pb-1">
-              <p-radioButton name="modeRadios" value="{{guessMode.GuessTalkBySpeakerMode}}" label="{{'start.guessTalkBySpeakerLabel' | translate}}"
+          <div class="col-sm-12 col-md-6 pt-1 pb-1">
+              <p-radioButton name="modeRadios" value="{{guessMode.GuessTalkBySpeakerMode}}" label="{{'start.talkBySpeakerLabel' | translate}}"
                             [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
                             inputId="opt3"></p-radioButton>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 pt-1 pb-1">
-            <p-radioButton name="modeRadios" value="{{guessMode.GuessSpeakerByTalkMode}}" label="{{'start.guessSpeakerByTalkLabel' | translate}}"
+          <div class="col-sm-12 col-md-6 pt-1 pb-1">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessSpeakerByTalkMode}}" label="{{'start.speakerByTalkLabel' | translate}}"
                             [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
                             inputId="opt4"></p-radioButton>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 pt-1 pb-1">
-            <p-radioButton name="modeRadios" value="{{guessMode.GuessAccountBySpeakerMode}}" label="{{'start.guessAccountsBySpeakerLabel' | translate}}"
+          <div class="col-sm-12 col-md-6 pt-1 pb-1">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessAccountBySpeakerMode}}" label="{{'start.accountsBySpeakerLabel' | translate}}"
                            [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
                            inputId="opt5"></p-radioButton>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 pt-1 pb-1">
-            <p-radioButton name="modeRadios" value="{{guessMode.GuessSpeakerByAccountMode}}" label="{{'start.guessSpeakerByAccountsLabel' | translate}}"
+          <div class="col-sm-12 col-md-6 pt-1 pb-1">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessSpeakerByAccountMode}}" label="{{'start.speakerByAccountsLabel' | translate}}"
                            [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
                            inputId="opt6"></p-radioButton>
           </div>

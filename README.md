@@ -10,11 +10,11 @@ There are two parts of the program:
 
 1. **Guess the Speaker** game
 
-![Information](/images/information.png)
+![Information](/documents/images/information.png)
 
 Information and statistics of conferences, meetups, talks, speakers.
 
-![Game](/images/game.png)
+![Game](/documents/images/game.png)
 
 In the game you need to guess the speaker or talk.
 

@@ -30,7 +30,8 @@ export class GuessAccountBySpeakerComponent implements OnInit {
           if (data) {
             console.log('speakerAccounts: ' + JSON.stringify(data));
             this.speakerAccounts = data;
-            this.title = `${this.speakerAccounts.questionSetName} (${this.speakerAccounts.currentIndex + 1}/${this.speakerAccounts.totalNumber})`;
+            this.title =
+              `${this.speakerAccounts.questionSetName} (${this.speakerAccounts.currentIndex + 1}/${this.speakerAccounts.totalNumber})`;
 
             if (this.speakerAccounts.logoFileName) {
               this.logoImageSource = `${this.eventsImageDirectory}/${this.speakerAccounts.logoFileName}`;
@@ -53,12 +54,12 @@ export class GuessAccountBySpeakerComponent implements OnInit {
   result() {
     this.stateService.setState(State.ResultState)
       .subscribe(data => {
-          this.router.navigateByUrl('/result');
+          this.router.navigateByUrl('/game/result');
         }
       );
   }
 
   cancel() {
-    this.router.navigateByUrl('/cancel');
+    this.router.navigateByUrl('/game/cancel');
   }
 }

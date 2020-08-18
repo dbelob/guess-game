@@ -45,7 +45,7 @@ export class ResultComponent implements OnInit {
   restart() {
     this.stateService.setState(State.StartState)
       .subscribe(data => {
-          this.router.navigateByUrl('/start');
+          this.router.navigateByUrl('/game/start');
         }
       );
   }

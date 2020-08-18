@@ -158,7 +158,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
         this.selectedGuessMode,
         this.selectedQuantity))
       .subscribe(data => {
-        this.router.navigateByUrl('/guess/name-by-photo');
+        this.router.navigateByUrl('/game/guess/name-by-photo');
       });
   }
 
