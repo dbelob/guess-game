@@ -123,7 +123,8 @@ public class QuestionDaoImpl implements QuestionDao {
         return questions;
     }
 
-    private List<QuestionSet> getSubQuestionSets(List<Long> eventTypeIds, List<Long> eventIds) {
+    @Override
+    public List<QuestionSet> getSubQuestionSets(List<Long> eventTypeIds, List<Long> eventIds) {
         return eventTypeDao.getItemsByEventTypeIds(eventTypeIds,
                 eventTypeId -> questionSets.stream()
                         .filter(s -> ((s.getEvent().getEventType().getId() == eventTypeId) && eventIds.contains(s.getEvent().getId())))
