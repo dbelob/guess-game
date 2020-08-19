@@ -19,10 +19,10 @@ public class TalkSpeakersDto extends EntitySpeakersDto {
 
     public TalkSpeakersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                            Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                           Quadruple<String> speakerFileNames, Quadruple<String> speakerNames,
+                           Quadruple<String> speakerPhotoFileNames, Quadruple<String> speakerNames,
                            String talkName) {
         super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds,
-                speakerFileNames, speakerNames);
+                speakerPhotoFileNames, speakerNames);
 
         this.talkName = talkName;
     }
