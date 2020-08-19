@@ -3,10 +3,10 @@ import { QuestionAnswers } from './question-answers.model';
 export class NamePhotos extends QuestionAnswers {
   constructor(
     public name?: string,
-    public fileName0?: string,
-    public fileName1?: string,
-    public fileName2?: string,
-    public fileName3?: string
+    public filePhotoName0?: string,
+    public filePhotoName1?: string,
+    public filePhotoName2?: string,
+    public filePhotoName3?: string
   ) {
     super();
   }

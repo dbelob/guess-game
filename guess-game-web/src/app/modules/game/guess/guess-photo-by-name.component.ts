@@ -34,10 +34,10 @@ export class GuessPhotoByNameComponent implements OnInit {
           if (data) {
             this.namePhotos = data;
             this.title = `${this.namePhotos.questionSetName} (${this.namePhotos.currentIndex + 1}/${this.namePhotos.totalNumber})`;
-            this.imageSource0 = `${this.speakersImageDirectory}/${this.namePhotos.fileName0}`;
-            this.imageSource1 = `${this.speakersImageDirectory}/${this.namePhotos.fileName1}`;
-            this.imageSource2 = `${this.speakersImageDirectory}/${this.namePhotos.fileName2}`;
-            this.imageSource3 = `${this.speakersImageDirectory}/${this.namePhotos.fileName3}`;
+            this.imageSource0 = `${this.speakersImageDirectory}/${this.namePhotos.filePhotoName0}`;
+            this.imageSource1 = `${this.speakersImageDirectory}/${this.namePhotos.filePhotoName1}`;
+            this.imageSource2 = `${this.speakersImageDirectory}/${this.namePhotos.filePhotoName2}`;
+            this.imageSource3 = `${this.speakersImageDirectory}/${this.namePhotos.filePhotoName3}`;
 
             if (this.namePhotos.logoFileName) {
               this.logoImageSource = `${this.eventsImageDirectory}/${this.namePhotos.logoFileName}`;
