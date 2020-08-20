@@ -15,20 +15,20 @@ import java.util.Set;
  * Photo, names DTO.
  */
 public class PhotoNamesDto extends QuestionAnswersDto {
-    private final String fileName;
+    private final String photoFileName;
     private final Quadruple<String> names;
 
     public PhotoNamesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                          Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                         String fileName, Quadruple<String> names) {
+                         String photoFileName, Quadruple<String> names) {
         super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
 
-        this.fileName = fileName;
+        this.photoFileName = photoFileName;
         this.names = names;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getPhotoFileName() {
+        return photoFileName;
     }
 
     public String getName0() {

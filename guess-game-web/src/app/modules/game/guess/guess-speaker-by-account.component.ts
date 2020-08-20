@@ -33,11 +33,12 @@ export class GuessSpeakerByAccountComponent implements OnInit {
       .subscribe(data => {
           if (data) {
             this.accountSpeakers = data;
-            this.title = `${this.accountSpeakers.questionSetName} (${this.accountSpeakers.currentIndex + 1}/${this.accountSpeakers.totalNumber})`;
-            this.imageSource0 = `${this.speakersImageDirectory}/${this.accountSpeakers.speakerFileName0}`;
-            this.imageSource1 = `${this.speakersImageDirectory}/${this.accountSpeakers.speakerFileName1}`;
-            this.imageSource2 = `${this.speakersImageDirectory}/${this.accountSpeakers.speakerFileName2}`;
-            this.imageSource3 = `${this.speakersImageDirectory}/${this.accountSpeakers.speakerFileName3}`;
+            this.title =
+              `${this.accountSpeakers.questionSetName} (${this.accountSpeakers.currentIndex + 1}/${this.accountSpeakers.totalNumber})`;
+            this.imageSource0 = `${this.speakersImageDirectory}/${this.accountSpeakers.speakerPhotoFileName0}`;
+            this.imageSource1 = `${this.speakersImageDirectory}/${this.accountSpeakers.speakerPhotoFileName1}`;
+            this.imageSource2 = `${this.speakersImageDirectory}/${this.accountSpeakers.speakerPhotoFileName2}`;
+            this.imageSource3 = `${this.speakersImageDirectory}/${this.accountSpeakers.speakerPhotoFileName3}`;
 
             if (this.accountSpeakers.logoFileName) {
               this.logoImageSource = `${this.eventsImageDirectory}/${this.accountSpeakers.logoFileName}`;

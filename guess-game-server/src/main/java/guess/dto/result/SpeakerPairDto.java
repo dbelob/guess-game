@@ -2,18 +2,18 @@ package guess.dto.result;
 
 public class SpeakerPairDto {
     private final String name;
-    private final String fileName;
+    private final String photoFileName;
 
-    public SpeakerPairDto(String name, String fileName) {
+    public SpeakerPairDto(String name, String photoFileName) {
         this.name = name;
-        this.fileName = fileName;
+        this.photoFileName = photoFileName;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getPhotoFileName() {
+        return photoFileName;
     }
 }

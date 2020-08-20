@@ -16,35 +16,35 @@ import java.util.Set;
  */
 public class NamePhotosDto extends QuestionAnswersDto {
     private final String name;
-    private final Quadruple<String> fileNames;
+    private final Quadruple<String> photoFileNames;
 
     public NamePhotosDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
                          Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                         String name, Quadruple<String> fileNames) {
+                         String name, Quadruple<String> photoFileNames) {
         super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
 
         this.name = name;
-        this.fileNames = fileNames;
+        this.photoFileNames = photoFileNames;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getFileName0() {
-        return fileNames.getFirst();
+    public String getPhotoFileName0() {
+        return photoFileNames.getFirst();
     }
 
-    public String getFileName1() {
-        return fileNames.getSecond();
+    public String getPhotoFileName1() {
+        return photoFileNames.getSecond();
     }
 
-    public String getFileName2() {
-        return fileNames.getThird();
+    public String getPhotoFileName2() {
+        return photoFileNames.getThird();
     }
 
-    public String getFileName3() {
-        return fileNames.getFourth();
+    public String getPhotoFileName3() {
+        return photoFileNames.getFourth();
     }
 
     public static NamePhotosDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,

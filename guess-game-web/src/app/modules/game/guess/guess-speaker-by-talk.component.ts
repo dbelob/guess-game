@@ -34,10 +34,10 @@ export class GuessSpeakerByTalkComponent implements OnInit {
           if (data) {
             this.talkSpeakers = data;
             this.title = `${this.talkSpeakers.questionSetName} (${this.talkSpeakers.currentIndex + 1}/${this.talkSpeakers.totalNumber})`;
-            this.imageSource0 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerFileName0}`;
-            this.imageSource1 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerFileName1}`;
-            this.imageSource2 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerFileName2}`;
-            this.imageSource3 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerFileName3}`;
+            this.imageSource0 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerPhotoFileName0}`;
+            this.imageSource1 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerPhotoFileName1}`;
+            this.imageSource2 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerPhotoFileName2}`;
+            this.imageSource3 = `${this.speakersImageDirectory}/${this.talkSpeakers.speakerPhotoFileName3}`;
 
             if (this.talkSpeakers.logoFileName) {
               this.logoImageSource = `${this.eventsImageDirectory}/${this.talkSpeakers.logoFileName}`;

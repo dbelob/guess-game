@@ -83,6 +83,17 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
+    public List<QuestionSet> getSubQuestionSets(List<Long> eventTypeIds, List<Long> eventIds) {
+        return eventTypeDao.getItemsByEventTypeIds(eventTypeIds,
+                eventTypeId -> questionSets.stream()
+                        .filter(s -> ((s.getEvent().getEventType().getId() == eventTypeId) && eventIds.contains(s.getEvent().getId())))
+                        .collect(Collectors.toList()),
+                v -> questionSets.stream()
+                        .filter(s -> eventTypeIds.contains(s.getEvent().getEventType().getId()))
+                        .collect(Collectors.toList()));
+    }
+
+    @Override
     public List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) {
         List<Question> questions;
 
@@ -121,16 +132,5 @@ public class QuestionDaoImpl implements QuestionDao {
         }
 
         return questions;
-    }
-
-    @Override
-    public List<QuestionSet> getSubQuestionSets(List<Long> eventTypeIds, List<Long> eventIds) {
-        return eventTypeDao.getItemsByEventTypeIds(eventTypeIds,
-                eventTypeId -> questionSets.stream()
-                        .filter(s -> ((s.getEvent().getEventType().getId() == eventTypeId) && eventIds.contains(s.getEvent().getId())))
-                        .collect(Collectors.toList()),
-                v -> questionSets.stream()
-                        .filter(s -> eventTypeIds.contains(s.getEvent().getEventType().getId()))
-                        .collect(Collectors.toList()));
     }
 }

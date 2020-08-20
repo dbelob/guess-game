@@ -12,9 +12,9 @@
 
   <div class="text-center mb-1">
     <figure class="figure ml-1 mr-1" *ngFor="let speaker of speakerTalks.speakers">
-      <img src="{{speakersImageDirectory}}/{{speaker.fileName}}" alt="photo" class="figure-img img-thumbnail"
-        [class.img-guess-talk-by-speaker-single]="speakerTalks.speakers.length == 1"
-        [class.img-guess-talk-by-speaker-some]="speakerTalks.speakers.length > 1"/>
+      <img src="{{speakersImageDirectory}}/{{speaker.photoFileName}}" alt="photo" class="figure-img img-thumbnail"
+           [class.img-guess-talk-by-speaker-single]="speakerTalks.speakers.length == 1"
+           [class.img-guess-talk-by-speaker-some]="speakerTalks.speakers.length > 1"/>
       <figcaption class="figure-caption text-center">{{speaker.name}}</figcaption>
     </figure>
   </div>

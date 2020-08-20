@@ -1,6 +1,6 @@
 export class SpeakerErrorDetails {
   constructor(
-    public fileName?: string,
+    public photoFileName?: string,
     public name?: string,
     public yourAnswers?: String[]
   ) {
