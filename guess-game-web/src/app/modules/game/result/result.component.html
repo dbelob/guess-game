@@ -66,14 +66,14 @@
         <td scope="row" class="text-center">{{i + 1}}</td>
         <td>
           <div *ngIf="isQuestionImage" class="text-center">
-            <img src="{{speakersImageDirectory}}/{{speakerErrorDetails.fileName}}"
+            <img src="{{speakersImageDirectory}}/{{speakerErrorDetails.photoFileName}}"
                  alt="photo" class="img-thumbnail img-guess-result"/>
           </div>
           <span *ngIf="!isQuestionImage">{{speakerErrorDetails.name}}</span>
         </td>
         <td>
           <div *ngIf="!isQuestionImage" class="text-center">
-            <img src="{{speakersImageDirectory}}/{{speakerErrorDetails.fileName}}"
+            <img src="{{speakersImageDirectory}}/{{speakerErrorDetails.photoFileName}}"
                  alt="photo" class="img-thumbnail img-guess-result"/>
           </div>
           <span *ngIf="isQuestionImage">{{speakerErrorDetails.name}}</span>

@@ -16,18 +16,18 @@ import java.util.stream.Collectors;
  * Speaker error details DTO.
  */
 public class SpeakerErrorDetailsDto {
-    private final String fileName;
+    private final String photoFileName;
     private final String name;
     private final List<String> yourAnswers;
 
-    private SpeakerErrorDetailsDto(String fileName, String name, List<String> yourAnswers) {
-        this.fileName = fileName;
+    private SpeakerErrorDetailsDto(String photoFileName, String name, List<String> yourAnswers) {
+        this.photoFileName = photoFileName;
         this.name = name;
         this.yourAnswers = yourAnswers;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getPhotoFileName() {
+        return photoFileName;
     }
 
     public String getName() {
