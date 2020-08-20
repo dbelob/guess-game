@@ -2,6 +2,7 @@ package guess.dao;
 
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
+import guess.domain.GuessMode;
 import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
@@ -253,6 +254,126 @@ class QuestionDaoImplTest {
                 questionDao.getSubQuestionSets(
                         List.of(1L, 2L),
                         Collections.emptyList()
+                )
+        );
+    }
+
+    @Test
+    void getQuestionByIds() {
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_NAME_BY_PHOTO_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_PHOTO_BY_NAME_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_TALK_BY_SPEAKER_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_SPEAKER_BY_TALK_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE
+                )
+        );
+        assertEquals(
+                List.of(
+                        new SpeakerQuestion(speaker1),
+                        new SpeakerQuestion(speaker2),
+                        new SpeakerQuestion(speaker3)
+                ),
+                questionDao.getQuestionByIds(
+                        List.of(1L, 2L),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_NAME_BY_PHOTO_MODE
+                )
+        );
+        assertEquals(
+                List.of(
+                        new SpeakerQuestion(speaker1),
+                        new SpeakerQuestion(speaker2),
+                        new SpeakerQuestion(speaker3)
+                ),
+                questionDao.getQuestionByIds(
+                        List.of(1L, 2L),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_PHOTO_BY_NAME_MODE
+                )
+        );
+        assertEquals(
+                List.of(
+                        new TalkQuestion(List.of(speaker1), talk1),
+                        new TalkQuestion(List.of(speaker2, speaker3), talk2)
+                ),
+                questionDao.getQuestionByIds(
+                        List.of(1L, 2L),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_TALK_BY_SPEAKER_MODE
+                )
+        );
+        assertEquals(
+                List.of(
+                        new TalkQuestion(List.of(speaker1), talk1),
+                        new TalkQuestion(List.of(speaker2, speaker3), talk2)
+                ),
+                questionDao.getQuestionByIds(
+                        List.of(1L, 2L),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_SPEAKER_BY_TALK_MODE
+                )
+        );
+        assertEquals(
+                List.of(
+                        new SpeakerQuestion(speaker1),
+                        new SpeakerQuestion(speaker2)
+                ),
+                questionDao.getQuestionByIds(
+                        List.of(1L, 2L),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE
+                )
+        );
+        assertEquals(
+                List.of(
+                        new SpeakerQuestion(speaker1),
+                        new SpeakerQuestion(speaker2)
+                ),
+                questionDao.getQuestionByIds(
+                        List.of(1L, 2L),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE
                 )
         );
     }
