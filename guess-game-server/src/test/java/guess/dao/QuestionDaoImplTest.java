@@ -18,8 +18,7 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("QuestionDaoImpl class tests")
 class QuestionDaoImplTest {
@@ -376,6 +375,11 @@ class QuestionDaoImplTest {
                         GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE
                 )
         );
+        assertThrows(IllegalArgumentException.class, () -> questionDao.getQuestionByIds(
+                Collections.emptyList(),
+                Collections.emptyList(),
+                null
+        ));
     }
 
     @Test
