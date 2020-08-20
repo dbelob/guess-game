@@ -6,13 +6,9 @@ import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.*;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,43 +21,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("QuestionDaoImpl class tests")
-@ExtendWith(SpringExtension.class)
 class QuestionDaoImplTest {
-    @TestConfiguration
-    static class QuestionDaoImplTestContextConfiguration {
-        @Bean
-        public QuestionDao questionDao() {
-            SourceInformation sourceInformation = new SourceInformation(
-                    Collections.emptyList(),
-                    List.of(eventType0, eventType1, eventType2),
-                    List.of(event0, event1, event2, event3),
-                    List.of(speaker0, speaker1, speaker2, speaker3),
-                    List.of(talk0, talk1, talk2));
-            SourceDao sourceDao = new SourceDaoImpl(sourceInformation);
+    private static Speaker speaker0;
+    private static Speaker speaker1;
+    private static Speaker speaker2;
+    private static Speaker speaker3;
 
-            return new QuestionDaoImpl(sourceDao, sourceDao);
-        }
-    }
+    private static Talk talk0;
+    private static Talk talk1;
+    private static Talk talk2;
 
-    @Autowired
-    private QuestionDao questionDao;
+    private static Event event0;
+    private static Event event1;
+    private static Event event2;
+    private static Event event3;
 
-    private static final Speaker speaker0;
-    private static final Speaker speaker1;
-    private static final Speaker speaker2;
-    private static final Speaker speaker3;
-    private static final Talk talk0;
-    private static final Talk talk1;
-    private static final Talk talk2;
-    private static final Event event0;
-    private static final Event event1;
-    private static final Event event2;
-    private static final Event event3;
-    private static final EventType eventType0;
-    private static final EventType eventType1;
-    private static final EventType eventType2;
+    private static QuestionDao questionDao;
 
-    static {
+    @BeforeAll
+    static void init() {
         speaker0 = new Speaker();
         speaker0.setId(0);
 
@@ -113,7 +91,7 @@ class QuestionDaoImplTest {
         event3 = new Event();
         event3.setId(3);
 
-        eventType0 = new EventType();
+        EventType eventType0 = new EventType();
         eventType0.setId(0);
         eventType0.setConference(Conference.JPOINT);
         eventType0.setEvents(List.of(event0, event3));
@@ -122,17 +100,27 @@ class QuestionDaoImplTest {
         event3.setEventTypeId(0);
         event3.setEventType(eventType0);
 
-        eventType1 = new EventType();
+        EventType eventType1 = new EventType();
         eventType1.setId(1);
         eventType1.setEvents(List.of(event1));
         event1.setEventTypeId(1);
         event1.setEventType(eventType1);
 
-        eventType2 = new EventType();
+        EventType eventType2 = new EventType();
         eventType2.setId(2);
         eventType2.setEvents(List.of(event2));
         event2.setEventTypeId(2);
         event2.setEventType(eventType2);
+
+        SourceInformation sourceInformation = new SourceInformation(
+                Collections.emptyList(),
+                List.of(eventType0, eventType1, eventType2),
+                List.of(event0, event1, event2, event3),
+                List.of(speaker0, speaker1, speaker2, speaker3),
+                List.of(talk0, talk1, talk2));
+        SourceDao sourceDao = new SourceDaoImpl(sourceInformation);
+
+        questionDao = new QuestionDaoImpl(sourceDao, sourceDao);
     }
 
     @Test
