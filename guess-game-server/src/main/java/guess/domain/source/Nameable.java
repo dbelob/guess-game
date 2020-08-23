@@ -4,7 +4,7 @@ import guess.domain.Identifier;
 
 import java.util.List;
 
-public abstract class Nameable extends Identifier {
+public class Nameable extends Identifier {
     private List<LocaleItem> name;
     private List<LocaleItem> shortDescription;
     private List<LocaleItem> longDescription;

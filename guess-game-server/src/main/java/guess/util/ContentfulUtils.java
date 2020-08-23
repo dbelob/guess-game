@@ -215,24 +215,28 @@ public class ContentfulUtils {
                     Map<String, String> telegramLink = et.getFields().getTelegramLink();
 
                     return new EventType(
-                            id.getAndDecrement(),
+                            new Nameable(
+                                    id.getAndDecrement(),
+                                    extractLocaleItems(
+                                            extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
+                                            extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
+                                    null,
+                                    extractLocaleItems(
+                                            extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
+                                            extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE)))
+                            ),
                             EVENT_TYPE_NAME_CONFERENCE_MAP.get(getFirstMapValue(et.getFields().getEventName()).trim()),
-                            extractLocaleItems(
-                                    extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
-                                    extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
                             null,
-                            null,
-                            extractLocaleItems(
-                                    extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
-                                    extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE))),
-                            extractLocaleItems(
-                                    extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
-                                    extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
-                            (vkLink != null) ? getFirstMapValue(vkLink) : null,
-                            (twLink != null) ? getFirstMapValue(twLink) : null,
-                            (fbLink != null) ? getFirstMapValue(fbLink) : null,
-                            (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
-                            (telegramLink != null) ? getFirstMapValue(telegramLink) : null,
+                            new EventType.EventTypeLinks(
+                                    extractLocaleItems(
+                                            extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
+                                            extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
+                                    (vkLink != null) ? getFirstMapValue(vkLink) : null,
+                                    (twLink != null) ? getFirstMapValue(twLink) : null,
+                                    (fbLink != null) ? getFirstMapValue(fbLink) : null,
+                                    (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
+                                    (telegramLink != null) ? getFirstMapValue(telegramLink) : null
+                            ),
                             Collections.emptyList(),
                             true);
                 })
@@ -313,12 +317,16 @@ public class ContentfulUtils {
                             extractLocaleItems(
                                     extractEventName(nameEn, ENGLISH_LOCALE),
                                     extractEventName(nameRu, RUSSIAN_LOCALE)),
-                            eventStartDate,
-                            eventEndDate,
-                            extractLocaleItems(
-                                    extractLocaleValue(conferenceLink, ENGLISH_LOCALE),
-                                    extractLocaleValue(conferenceLink, RUSSIAN_LOCALE)),
-                            (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null,
+                            new Event.EventDates(
+                                    eventStartDate,
+                                    eventEndDate
+                            ),
+                            new Event.EventLinks(
+                                    extractLocaleItems(
+                                            extractLocaleValue(conferenceLink, ENGLISH_LOCALE),
+                                            extractLocaleValue(conferenceLink, RUSSIAN_LOCALE)),
+                                    (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null
+                            ),
                             new Place(
                                     -1,
                                     extractLocaleItems(
@@ -512,18 +520,22 @@ public class ContentfulUtils {
                             .collect(Collectors.toList());
 
                     return new Talk(
-                            id.getAndDecrement(),
-                            extractLocaleItems(t.getFields().getNameEn(), t.getFields().getName()),
-                            extractLocaleItems(t.getFields().getShortEn(), t.getFields().getShortRu()),
-                            extractLocaleItems(t.getFields().getLongEn(), t.getFields().getLongRu()),
+                            new Nameable(
+                                    id.getAndDecrement(),
+                                    extractLocaleItems(t.getFields().getNameEn(), t.getFields().getName()),
+                                    extractLocaleItems(t.getFields().getShortEn(), t.getFields().getShortRu()),
+                                    extractLocaleItems(t.getFields().getLongEn(), t.getFields().getLongRu())
+                            ),
                             t.getFields().getTalkDay(),
                             t.getFields().getTrackTime(),
                             t.getFields().getTrack(),
                             extractLanguage(t.getFields().getLanguage()),
-                            extractPresentationLinks(
-                                    combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
-                                    assetMap, assetErrorSet, t.getFields().getNameEn()),
-                            extractVideoLinks(t.getFields().getVideo()),
+                            new Talk.TalkLinks(
+                                    extractPresentationLinks(
+                                            combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
+                                            assetMap, assetErrorSet, t.getFields().getNameEn()),
+                                    extractVideoLinks(t.getFields().getVideo())
+                            ),
                             speakers);
                 })
                 .collect(Collectors.toList());
@@ -1004,12 +1016,16 @@ public class ContentfulUtils {
                     extractLocaleItems(
                             "DotNext 2016 Helsinki",
                             "DotNext 2016 Хельсинки"),
-                    LocalDate.of(2016, 12, 7),
-                    LocalDate.of(2016, 12, 7),
-                    extractLocaleItems(
-                            "https://dotnext-helsinki.com",
-                            "https://dotnext-helsinki.com"),
-                    "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5",
+                    new Event.EventDates(
+                            LocalDate.of(2016, 12, 7),
+                            LocalDate.of(2016, 12, 7)
+                    ),
+                    new Event.EventLinks(
+                            extractLocaleItems(
+                                    "https://dotnext-helsinki.com",
+                                    "https://dotnext-helsinki.com"),
+                            "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5"
+                    ),
                     new Place(
                             15,
                             extractLocaleItems(

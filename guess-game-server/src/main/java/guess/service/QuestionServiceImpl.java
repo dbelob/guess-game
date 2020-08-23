@@ -84,10 +84,14 @@ public class QuestionServiceImpl implements QuestionService {
                                     -1L,
                                     null,
                                     name,
-                                    null,
-                                    null,
-                                    null,
-                                    null,
+                                    new Event.EventDates(
+                                            null,
+                                            null
+                                    ),
+                                    new Event.EventLinks(
+                                            null,
+                                            null
+                                    ),
                                     new Place(
                                             -1L,
                                             null,

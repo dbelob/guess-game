@@ -12,6 +12,26 @@ import java.util.stream.Collectors;
  * Event.
  */
 public class Event extends Identifier {
+    public static class EventDates {
+        private final LocalDate startDate;
+        private final LocalDate endDate;
+
+        public EventDates(LocalDate startDate, LocalDate endDate) {
+            this.startDate = startDate;
+            this.endDate = endDate;
+        }
+    }
+
+    public static class EventLinks {
+        private final List<LocaleItem> siteLink;
+        private final String youtubeLink;
+
+        public EventLinks(List<LocaleItem> siteLink, String youtubeLink) {
+            this.siteLink = siteLink;
+            this.youtubeLink = youtubeLink;
+        }
+    }
+
     private long eventTypeId;
     private EventType eventType;
 
@@ -30,16 +50,16 @@ public class Event extends Identifier {
     public Event() {
     }
 
-    public Event(long id, EventType eventType, List<LocaleItem> name, LocalDate startDate, LocalDate endDate,
-                 List<LocaleItem> siteLink, String youtubeLink, Place place, List<Talk> talks) {
+    public Event(long id, EventType eventType, List<LocaleItem> name, EventDates dates, EventLinks links, Place place,
+                 List<Talk> talks) {
         super(id);
 
         this.eventType = eventType;
         this.name = name;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.siteLink = siteLink;
-        this.youtubeLink = youtubeLink;
+        this.startDate = dates.startDate;
+        this.endDate = dates.endDate;
+        this.siteLink = links.siteLink;
+        this.youtubeLink = links.youtubeLink;
 
         this.place = place;
         this.placeId = place.getId();
