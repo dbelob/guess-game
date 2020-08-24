@@ -90,10 +90,9 @@ public class StatisticsServiceImpl implements StatisticsService {
                     ChronoUnit.YEARS.between(eventTypeStartDate, currentDate),
                     eventTypeDuration,
                     eventType.getEvents().size(),
-                    eventTypeTalksQuantity,
                     eventTypeSpeakers.size(),
-                    eventTypeJavaChampionsQuantity,
-                    eventTypeMvpsQuantity));
+                    new Metrics(eventTypeTalksQuantity, eventTypeJavaChampionsQuantity, eventTypeMvpsQuantity)
+            ));
 
             // Totals metrics
             if (eventTypeStartDate.isBefore(totalsStartDate)) {
@@ -121,10 +120,9 @@ public class StatisticsServiceImpl implements StatisticsService {
                         ChronoUnit.YEARS.between(totalsStartDate, currentDate),
                         totalsDuration,
                         totalsEventsQuantity,
-                        totalsTalksQuantity,
                         totalsSpeakers.size(),
-                        totalsJavaChampionsQuantity,
-                        totalsMvpsQuantity));
+                        new Metrics(totalsTalksQuantity, totalsJavaChampionsQuantity, totalsMvpsQuantity)
+                ));
     }
 
     @Override
@@ -210,10 +208,10 @@ public class StatisticsServiceImpl implements StatisticsService {
                     talk.getSpeakers().stream()
                             .map(s -> speakerSpeakerMetricsMap.computeIfAbsent(s, k -> new SpeakerMetricsInternal()))
                             .forEach(smi -> {
-                        smi.getTalks().add(talk);
-                        smi.getEvents().add(event);
-                        smi.getEventTypes().add(eventType);
-                    });
+                                smi.getTalks().add(talk);
+                                smi.getEvents().add(event);
+                                smi.getEventTypes().add(eventType);
+                            });
                 }
 
                 totalsTalksQuantity += event.getTalks().size();

@@ -215,24 +215,28 @@ public class ContentfulUtils {
                     Map<String, String> telegramLink = et.getFields().getTelegramLink();
 
                     return new EventType(
-                            id.getAndDecrement(),
+                            new Nameable(
+                                    id.getAndDecrement(),
+                                    extractLocaleItems(
+                                            extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
+                                            extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
+                                    null,
+                                    extractLocaleItems(
+                                            extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
+                                            extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE)))
+                            ),
                             EVENT_TYPE_NAME_CONFERENCE_MAP.get(getFirstMapValue(et.getFields().getEventName()).trim()),
-                            extractLocaleItems(
-                                    extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
-                                    extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
                             null,
-                            null,
-                            extractLocaleItems(
-                                    extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
-                                    extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE))),
-                            extractLocaleItems(
-                                    extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
-                                    extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
-                            (vkLink != null) ? getFirstMapValue(vkLink) : null,
-                            (twLink != null) ? getFirstMapValue(twLink) : null,
-                            (fbLink != null) ? getFirstMapValue(fbLink) : null,
-                            (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
-                            (telegramLink != null) ? getFirstMapValue(telegramLink) : null,
+                            new EventType.EventTypeLinks(
+                                    extractLocaleItems(
+                                            extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
+                                            extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
+                                    (vkLink != null) ? getFirstMapValue(vkLink) : null,
+                                    (twLink != null) ? getFirstMapValue(twLink) : null,
+                                    (fbLink != null) ? getFirstMapValue(fbLink) : null,
+                                    (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
+                                    (telegramLink != null) ? getFirstMapValue(telegramLink) : null
+                            ),
                             Collections.emptyList(),
                             true);
                 })
@@ -313,12 +317,16 @@ public class ContentfulUtils {
                             extractLocaleItems(
                                     extractEventName(nameEn, ENGLISH_LOCALE),
                                     extractEventName(nameRu, RUSSIAN_LOCALE)),
-                            eventStartDate,
-                            eventEndDate,
-                            extractLocaleItems(
-                                    extractLocaleValue(conferenceLink, ENGLISH_LOCALE),
-                                    extractLocaleValue(conferenceLink, RUSSIAN_LOCALE)),
-                            (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null,
+                            new Event.EventDates(
+                                    eventStartDate,
+                                    eventEndDate
+                            ),
+                            new Event.EventLinks(
+                                    extractLocaleItems(
+                                            extractLocaleValue(conferenceLink, ENGLISH_LOCALE),
+                                            extractLocaleValue(conferenceLink, RUSSIAN_LOCALE)),
+                                    (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null
+                            ),
                             new Place(
                                     -1,
                                     extractLocaleItems(
@@ -512,18 +520,22 @@ public class ContentfulUtils {
                             .collect(Collectors.toList());
 
                     return new Talk(
-                            id.getAndDecrement(),
-                            extractLocaleItems(t.getFields().getNameEn(), t.getFields().getName()),
-                            extractLocaleItems(t.getFields().getShortEn(), t.getFields().getShortRu()),
-                            extractLocaleItems(t.getFields().getLongEn(), t.getFields().getLongRu()),
+                            new Nameable(
+                                    id.getAndDecrement(),
+                                    extractLocaleItems(t.getFields().getNameEn(), t.getFields().getName()),
+                                    extractLocaleItems(t.getFields().getShortEn(), t.getFields().getShortRu()),
+                                    extractLocaleItems(t.getFields().getLongEn(), t.getFields().getLongRu())
+                            ),
                             t.getFields().getTalkDay(),
                             t.getFields().getTrackTime(),
                             t.getFields().getTrack(),
                             extractLanguage(t.getFields().getLanguage()),
-                            extractPresentationLinks(
-                                    combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
-                                    assetMap, assetErrorSet, t.getFields().getNameEn()),
-                            extractVideoLinks(t.getFields().getVideo()),
+                            new Talk.TalkLinks(
+                                    extractPresentationLinks(
+                                            combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
+                                            assetMap, assetErrorSet, t.getFields().getNameEn()),
+                                    extractVideoLinks(t.getFields().getVideo())
+                            ),
                             speakers);
                 })
                 .collect(Collectors.toList());
@@ -560,11 +572,15 @@ public class ContentfulUtils {
                 extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
-                extractTwitter(contentfulSpeaker.getFields().getTwitter()),
-                extractGitHub(contentfulSpeaker.getFields().getGitHub()),
-                extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
-                extractBoolean(contentfulSpeaker.getFields().getMvp()),
-                extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
+                new Speaker.SpeakerSocials(
+                        extractTwitter(contentfulSpeaker.getFields().getTwitter()),
+                        extractGitHub(contentfulSpeaker.getFields().getGitHub())
+                ),
+                new Speaker.SpeakerDegrees(
+                        extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
+                        extractBoolean(contentfulSpeaker.getFields().getMvp()),
+                        extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
+                )
         );
     }
 
@@ -1004,12 +1020,16 @@ public class ContentfulUtils {
                     extractLocaleItems(
                             "DotNext 2016 Helsinki",
                             "DotNext 2016 Хельсинки"),
-                    LocalDate.of(2016, 12, 7),
-                    LocalDate.of(2016, 12, 7),
-                    extractLocaleItems(
-                            "https://dotnext-helsinki.com",
-                            "https://dotnext-helsinki.com"),
-                    "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5",
+                    new Event.EventDates(
+                            LocalDate.of(2016, 12, 7),
+                            LocalDate.of(2016, 12, 7)
+                    ),
+                    new Event.EventLinks(
+                            extractLocaleItems(
+                                    "https://dotnext-helsinki.com",
+                                    "https://dotnext-helsinki.com"),
+                            "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5"
+                    ),
                     new Place(
                             15,
                             extractLocaleItems(
@@ -1070,11 +1090,15 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Stephen Chin is Senior Director of Developer Relations at JFrog, author of Raspberry Pi with Java, The Definitive Guide to Modern Client Development, and Pro JavaFX Platform. He has keynoted numerous Java conferences around the world including Oracle Code One (formerly JavaOne), where he is an 8-time Rock Star Award recipient. Stephen is an avid motorcyclist who has done evangelism tours in Europe, Japan, and Brazil, interviewing hackers in their natural habitat and posting the videos on <a href=\"http://nighthacking.com/\" target=\"_blank\">http://nighthacking.com/</a>. When he is not traveling, he enjoys teaching kids how to do embedded and robot programming together with his teenage daughter.",
                                         null),
-                                "steveonjava",
-                                "steveonjava",
-                                true,
-                                false,
-                                false
+                                new Speaker.SpeakerSocials(
+                                        "steveonjava",
+                                        "steveonjava"
+                                ),
+                                new Speaker.SpeakerDegrees(
+                                        true,
+                                        false,
+                                        false
+                                )
                         );
                     }
                 },
@@ -1099,11 +1123,15 @@ public class ContentfulUtils {
                                                 "\n" +
                                                 "Before Pivotal, he was working at Vivy, N26, Zalando, ZeroTurnaround, TransferWise, and other startups.\n",
                                         "Сергей работает в компании Pivotal в команде Project Reactor. Он является активным участником open source-сообщества, членом Apache Software Foundation, одним из главных разработчиков проекта Testcontainers и контрибьютором в разного рода проектах (Apache Groovy, Testcontainers, Spring Boot, JBoss Modules и не только)."),
-                                "bsideup",
-                                "bsideup",
-                                true,
-                                false,
-                                false
+                                new Speaker.SpeakerSocials(
+                                        "bsideup",
+                                        "bsideup"
+                                ),
+                                new Speaker.SpeakerDegrees(
+                                        true,
+                                        false,
+                                        false
+                                )
                         );
                     }
                 },
@@ -1122,11 +1150,15 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Arun Gupta is the vice president of developer advocacy at Couchbase. He has been built and led developer communities for 10+ years at Sun, Oracle, and Red Hat. He has deep expertise in leading cross-functional teams to develop and execute strategy, planning, and execution of content, marketing campaigns, and programs. Prior to that he led engineering teams at Sun and is a founding member of the Java EE team. Gupta has authored more than 2,000 blog posts on technology. He has extensive speaking experience in more than 40 countries on myriad topics and is a JavaOne Rock Star for three years in a row. Gupta also founded the Devoxx4Kids chapter in the US and continues to promote technology education among children. An author of a best-selling book, an avid runner, a globe trotter, a Java Champion, a JUG leader, and a Docker Captain, he is easily accessible at @arungupta.",
                                         null),
-                                "arungupta",
-                                "arun-gupta",
-                                true,
-                                false,
-                                false
+                                new Speaker.SpeakerSocials(
+                                        "arungupta",
+                                        "arun-gupta"
+                                ),
+                                new Speaker.SpeakerDegrees(
+                                        true,
+                                        false,
+                                        false
+                                )
                         );
                     }
                 },
@@ -1145,11 +1177,15 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Roman is an open source software expert, currently serving on the board of directors for both The Apache Software Foundation and LF Edge. He has personally contributed to a variety of open source projects ranging from the Linux Kernel to Hadoop and ffmpeg. He is a co-founder and the vice president of product and strategy for Zededa, an edge virtualization startup. Throughout his career, Roman has held technical leadership roles at several well-known companies, including Sun Microsystems, Yahoo!, Cloudera and Pivotal Software. He holds a master's degree in mathematics and computer science from St. Petersburg State University. He likes German craft lagers and is fighting IPA invasion one seidla at a time.",
                                         null),
-                                "rhatr",
-                                null,
-                                false,
-                                false,
-                                false
+                                new Speaker.SpeakerSocials(
+                                        "rhatr",
+                                        null
+                                ),
+                                new Speaker.SpeakerDegrees(
+                                        false,
+                                        false,
+                                        false
+                                )
                         );
                     }
                 },
@@ -1168,11 +1204,15 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.",
                                         null),
-                                "_lrlna",
-                                "lrlna",
-                                false,
-                                false,
-                                false
+                                new Speaker.SpeakerSocials(
+                                        "_lrlna",
+                                        "lrlna"
+                                ),
+                                new Speaker.SpeakerDegrees(
+                                        false,
+                                        false,
+                                        false
+                                )
                         );
                     }
                 },
@@ -1191,11 +1231,15 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Sergei fell in love with web development back in high school. He got a degree in Information Technologies at the University of Helsinki and has been spending his professional career working for web design studios in Helsinki and Munich. Sergei's focus areas are JavaScript development, UX and accessibility.",
                                         "Заболел веб-разработкой еще в школе (Windows 95, IE6, табличная верстка). Окончил Хельсинкский университет по специальности Information Technology, в настоящее время работает в Мюнхене фронтенд-разработчиком."),
-                                "_sergeikriger",
-                                null,
-                                false,
-                                false,
-                                false
+                                new Speaker.SpeakerSocials(
+                                        "_sergeikriger",
+                                        null
+                                ),
+                                new Speaker.SpeakerDegrees(
+                                        false,
+                                        false,
+                                        false
+                                )
                         );
                     }
                 }

@@ -14,26 +14,33 @@ import java.util.stream.Collectors;
  * Speaker metrics DTO.
  */
 public class SpeakerMetricsDto extends AbstractSpeakerMetrics {
+    public static class SpeakerMetricsDtoDegrees {
+        private final boolean javaChampion;
+        private final boolean mvp;
+        private final boolean mvpReconnect;
+        private final boolean anyMvp;
+
+        public SpeakerMetricsDtoDegrees(boolean javaChampion, boolean mvp, boolean mvpReconnect, boolean anyMvp) {
+            this.javaChampion = javaChampion;
+            this.mvp = mvp;
+            this.mvpReconnect = mvpReconnect;
+            this.anyMvp = anyMvp;
+        }
+    }
+
     private final long id;
     private final String name;
     private final String photoFileName;
-    private final boolean javaChampion;
-    private final boolean mvp;
-    private final boolean mvpReconnect;
-    private final boolean anyMvp;
+    private final SpeakerMetricsDtoDegrees degrees;
 
-    public SpeakerMetricsDto(long id, String name, String photoFileName, boolean javaChampion, boolean mvp, boolean mvpReconnect,
-                             boolean anyMvp, AbstractSpeakerMetrics speakerMetrics) {
+    public SpeakerMetricsDto(long id, String name, String photoFileName, SpeakerMetricsDtoDegrees degrees, AbstractSpeakerMetrics speakerMetrics) {
         super(speakerMetrics.getTalksQuantity(), speakerMetrics.getEventsQuantity(), speakerMetrics.getEventTypesQuantity(),
                 speakerMetrics.getJavaChampionsQuantity(), speakerMetrics.getMvpsQuantity());
 
         this.id = id;
         this.name = name;
         this.photoFileName = photoFileName;
-        this.javaChampion = javaChampion;
-        this.mvp = mvp;
-        this.mvpReconnect = mvpReconnect;
-        this.anyMvp = anyMvp;
+        this.degrees = degrees;
     }
 
     public long getId() {
@@ -49,19 +56,19 @@ public class SpeakerMetricsDto extends AbstractSpeakerMetrics {
     }
 
     public boolean isJavaChampion() {
-        return javaChampion;
+        return degrees.javaChampion;
     }
 
     public boolean isMvp() {
-        return mvp;
+        return degrees.mvp;
     }
 
     public boolean isMvpReconnect() {
-        return mvpReconnect;
+        return degrees.mvpReconnect;
     }
 
     public boolean isAnyMvp() {
-        return anyMvp;
+        return degrees.anyMvp;
     }
 
     public static SpeakerMetricsDto convertToDto(SpeakerMetrics speakerMetrics, Language language, Set<Speaker> speakerDuplicates) {
@@ -72,10 +79,12 @@ public class SpeakerMetricsDto extends AbstractSpeakerMetrics {
                 speaker.getId(),
                 name,
                 speaker.getPhotoFileName(),
-                speaker.isJavaChampion(),
-                speaker.isMvp(),
-                speaker.isMvpReconnect(),
-                speaker.isAnyMvp(),
+                new SpeakerMetricsDtoDegrees(
+                        speaker.isJavaChampion(),
+                        speaker.isMvp(),
+                        speaker.isMvpReconnect(),
+                        speaker.isAnyMvp()
+                ),
                 speakerMetrics);
     }
 

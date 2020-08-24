@@ -9,6 +9,16 @@ import java.util.stream.Collectors;
  * Talk.
  */
 public class Talk extends Nameable {
+    public static class TalkLinks {
+        private final List<String> presentationLinks;
+        private final List<String> videoLinks;
+
+        public TalkLinks(List<String> presentationLinks, List<String> videoLinks) {
+            this.presentationLinks = presentationLinks;
+            this.videoLinks = videoLinks;
+        }
+    }
+
     private Long talkDay;
     private LocalTime trackTime;
     private Long track;
@@ -22,17 +32,16 @@ public class Talk extends Nameable {
     public Talk() {
     }
 
-    public Talk(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription,
-                Long talkDay, LocalTime trackTime, Long track, String language, List<String> presentationLinks,
-                List<String> videoLinks, List<Speaker> speakers) {
-        super(id, name, shortDescription, longDescription);
+    public Talk(Nameable nameable, Long talkDay, LocalTime trackTime, Long track, String language, TalkLinks links,
+                List<Speaker> speakers) {
+        super(nameable.getId(), nameable.getName(), nameable.getShortDescription(), nameable.getLongDescription());
 
         this.talkDay = talkDay;
         this.trackTime = trackTime;
         this.track = track;
         this.language = language;
-        this.presentationLinks = presentationLinks;
-        this.videoLinks = videoLinks;
+        this.presentationLinks = links.presentationLinks;
+        this.videoLinks = links.videoLinks;
         this.speakers = speakers;
         this.speakerIds = speakers.stream()
                 .map(Speaker::getId)

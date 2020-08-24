@@ -1,14 +1,14 @@
 package guess.domain.statistics;
 
 /**
- * Abstract metrics.
+ * Metrics.
  */
-public class AbstractMetrics {
+public class Metrics {
     private final long talksQuantity;
     private final long javaChampionsQuantity;
     private final long mvpsQuantity;
 
-    public AbstractMetrics(long talksQuantity, long javaChampionsQuantity, long mvpsQuantity) {
+    public Metrics(long talksQuantity, long javaChampionsQuantity, long mvpsQuantity) {
         this.talksQuantity = talksQuantity;
         this.javaChampionsQuantity = javaChampionsQuantity;
         this.mvpsQuantity = mvpsQuantity;

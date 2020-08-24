@@ -4,6 +4,7 @@ import guess.domain.Language;
 import guess.domain.source.EventType;
 import guess.domain.statistics.AbstractEventTypeMetrics;
 import guess.domain.statistics.EventTypeMetrics;
+import guess.domain.statistics.Metrics;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
@@ -22,9 +23,8 @@ public class EventTypeMetricsDto extends AbstractEventTypeMetrics {
     public EventTypeMetricsDto(long id, String displayName, String sortName, boolean conference, String logoFileName,
                                AbstractEventTypeMetrics eventTypeMetrics) {
         super(eventTypeMetrics.getStartDate(), eventTypeMetrics.getAge(), eventTypeMetrics.getDuration(),
-                eventTypeMetrics.getEventsQuantity(), eventTypeMetrics.getTalksQuantity(),
-                eventTypeMetrics.getSpeakersQuantity(), eventTypeMetrics.getJavaChampionsQuantity(),
-                eventTypeMetrics.getMvpsQuantity());
+                eventTypeMetrics.getEventsQuantity(), eventTypeMetrics.getSpeakersQuantity(),
+                new Metrics(eventTypeMetrics.getTalksQuantity(), eventTypeMetrics.getJavaChampionsQuantity(), eventTypeMetrics.getMvpsQuantity()));
 
         this.id = id;
         this.displayName = displayName;

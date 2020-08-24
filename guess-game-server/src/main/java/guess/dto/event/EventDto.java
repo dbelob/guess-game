@@ -14,37 +14,46 @@ import java.util.stream.Collectors;
  * Event DTO.
  */
 public class EventDto extends EventBriefDto {
-    private final String siteLink;
-    private final String youtubeLink;
+    public static class EventDtoLinks {
+        private final String siteLink;
+        private final String youtubeLink;
+
+        private final String vkLink;
+        private final String twitterLink;
+        private final String facebookLink;
+        private final String telegramLink;
+
+        public EventDtoLinks(String siteLink, String youtubeLink, String vkLink, String twitterLink, String facebookLink,
+                             String telegramLink) {
+            this.siteLink = siteLink;
+            this.youtubeLink = youtubeLink;
+            this.vkLink = vkLink;
+            this.twitterLink = twitterLink;
+            this.facebookLink = facebookLink;
+            this.telegramLink = telegramLink;
+        }
+    }
+
+    private final EventDtoLinks links;
     private final String mapCoordinates;
-    private final String vkLink;
-    private final String twitterLink;
-    private final String facebookLink;
-    private final String telegramLink;
     private final String description;
 
-    public EventDto(EventSuperBriefDto eventSuperBriefDto, EventBriefDto eventBriefDto, String siteLink, String youtubeLink,
-                    String mapCoordinates, String vkLink, String twitterLink, String facebookLink, String telegramLink,
-                    String description) {
+    public EventDto(EventSuperBriefDto eventSuperBriefDto, EventBriefDto eventBriefDto, EventDtoLinks links,
+                    String mapCoordinates, String description) {
         super(eventSuperBriefDto, eventBriefDto.getDuration(), eventBriefDto.getPlaceCity(), eventBriefDto.getPlaceVenueAddress(),
                 eventBriefDto.getEventTypeLogoFileName());
 
-        this.siteLink = siteLink;
-        this.youtubeLink = youtubeLink;
+        this.links = links;
         this.mapCoordinates = mapCoordinates;
-        this.vkLink = vkLink;
-        this.twitterLink = twitterLink;
-        this.facebookLink = facebookLink;
-        this.telegramLink = telegramLink;
         this.description = description;
     }
 
     public String getSiteLink() {
-        return siteLink;
+        return links.siteLink;
     }
 
     public String getYoutubeLink() {
-        return youtubeLink;
+        return links.youtubeLink;
     }
 
     public String getMapCoordinates() {
@@ -52,19 +61,19 @@ public class EventDto extends EventBriefDto {
     }
 
     public String getVkLink() {
-        return vkLink;
+        return links.vkLink;
     }
 
     public String getTwitterLink() {
-        return twitterLink;
+        return links.twitterLink;
     }
 
     public String getFacebookLink() {
-        return facebookLink;
+        return links.facebookLink;
     }
 
     public String getTelegramLink() {
-        return telegramLink;
+        return links.telegramLink;
     }
 
     public String getDescription() {
@@ -90,13 +99,15 @@ public class EventDto extends EventBriefDto {
         return new EventDto(
                 eventSuperBriefDto,
                 convertToBriefDto(eventSuperBriefDto, event, language),
-                ((eventSiteLink != null) && !eventSiteLink.isEmpty()) ? eventSiteLink : eventTypeSiteLink,
-                ((eventYoutubeLink != null) && !eventYoutubeLink.isEmpty()) ? eventYoutubeLink : eventTypeYoutubeLink,
+                new EventDtoLinks(
+                        ((eventSiteLink != null) && !eventSiteLink.isEmpty()) ? eventSiteLink : eventTypeSiteLink,
+                        ((eventYoutubeLink != null) && !eventYoutubeLink.isEmpty()) ? eventYoutubeLink : eventTypeYoutubeLink,
+                        eventTypeVkLink,
+                        eventTypeTwitterLink,
+                        eventTypeFacebookLink,
+                        eventTypeTelegramLink
+                ),
                 mapCoordinates,
-                eventTypeVkLink,
-                eventTypeTwitterLink,
-                eventTypeFacebookLink,
-                eventTypeTelegramLink,
                 description);
     }
 

@@ -9,6 +9,24 @@ import java.util.List;
  * Event type.
  */
 public class EventType extends Nameable {
+    public static class EventTypeLinks {
+        private final List<LocaleItem> siteLink;
+        private final String vkLink;
+        private final String twitterLink;
+        private final String facebookLink;
+        private final String youtubeLink;
+        private final String telegramLink;
+
+        public EventTypeLinks(List<LocaleItem> siteLink, String vkLink, String twitterLink, String facebookLink, String youtubeLink, String telegramLink) {
+            this.siteLink = siteLink;
+            this.vkLink = vkLink;
+            this.twitterLink = twitterLink;
+            this.facebookLink = facebookLink;
+            this.youtubeLink = youtubeLink;
+            this.telegramLink = telegramLink;
+        }
+    }
+
     private Conference conference;
 
     private List<LocaleItem> siteLink;
@@ -24,18 +42,17 @@ public class EventType extends Nameable {
     public EventType() {
     }
 
-    public EventType(long id, Conference conference, List<LocaleItem> name, String logoFileName, List<LocaleItem> shortDescription,
-                     List<LocaleItem> longDescription, List<LocaleItem> siteLink, String vkLink, String twitterLink,
-                     String facebookLink, String youtubeLink, String telegramLink, List<Event> events, boolean inactive) {
-        super(id, name, shortDescription, longDescription);
+    public EventType(Nameable nameable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
+                     boolean inactive) {
+        super(nameable.getId(), nameable.getName(), nameable.getShortDescription(), nameable.getLongDescription());
 
         this.conference = conference;
-        this.siteLink = siteLink;
-        this.vkLink = vkLink;
-        this.twitterLink = twitterLink;
-        this.facebookLink = facebookLink;
-        this.youtubeLink = youtubeLink;
-        this.telegramLink = telegramLink;
+        this.siteLink = links.siteLink;
+        this.vkLink = links.vkLink;
+        this.twitterLink = links.twitterLink;
+        this.facebookLink = links.facebookLink;
+        this.youtubeLink = links.youtubeLink;
+        this.telegramLink = links.telegramLink;
         this.logoFileName = logoFileName;
         this.events = events;
         this.inactive = inactive;

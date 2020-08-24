@@ -104,12 +104,16 @@ public class ContentfulUtilsTest {
                             List.of(
                                     new LocaleItem("en", "DotNext 2016 Helsinki"),
                                     new LocaleItem("ru", "DotNext 2016 Хельсинки")),
-                            LocalDate.of(2016, 12, 7),
-                            LocalDate.of(2016, 12, 7),
-                            List.of(
-                                    new LocaleItem("en", "https://dotnext-helsinki.com"),
-                                    new LocaleItem("ru", "https://dotnext-helsinki.com")),
-                            "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5",
+                            new Event.EventDates(
+                                    LocalDate.of(2016, 12, 7),
+                                    LocalDate.of(2016, 12, 7)
+                            ),
+                            new Event.EventLinks(
+                                    List.of(
+                                            new LocaleItem("en", "https://dotnext-helsinki.com"),
+                                            new LocaleItem("ru", "https://dotnext-helsinki.com")),
+                                    "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5"
+                            ),
                             new Place(
                                     15,
                                     List.of(
@@ -181,24 +185,24 @@ public class ContentfulUtilsTest {
         private Stream<Arguments> data() {
             return Stream.of(
                     arguments("abc", new ExtractSet(
-                            List.of(new ExtractPair("([a-z]+)", 1)),
-                            "Invalid property: %s"),
+                                    List.of(new ExtractPair("([a-z]+)", 1)),
+                                    "Invalid property: %s"),
                             "abc"),
                     arguments("abc", new ExtractSet(
-                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s"),
+                                    List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                                    "Invalid property: %s"),
                             "abc"),
                     arguments(" abc", new ExtractSet(
-                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s"),
+                                    List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                                    "Invalid property: %s"),
                             "abc"),
                     arguments("abc ", new ExtractSet(
-                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s"),
+                                    List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                                    "Invalid property: %s"),
                             "abc"),
                     arguments(" abc ", new ExtractSet(
-                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s"),
+                                    List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                                    "Invalid property: %s"),
                             "abc")
             );
         }
@@ -627,12 +631,16 @@ public class ContentfulUtilsTest {
                             List.of(
                                     new LocaleItem("en", "DotNext 2016 Helsinki"),
                                     new LocaleItem("ru", "DotNext 2016 Хельсинки")),
-                            LocalDate.of(2016, 12, 7),
-                            LocalDate.of(2016, 12, 7),
-                            List.of(
-                                    new LocaleItem("en", "https://dotnext-helsinki.com"),
-                                    new LocaleItem("ru", "https://dotnext-helsinki.com")),
-                            "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5",
+                            new Event.EventDates(
+                                    LocalDate.of(2016, 12, 7),
+                                    LocalDate.of(2016, 12, 7)
+                            ),
+                            new Event.EventLinks(
+                                    List.of(
+                                            new LocaleItem("en", "https://dotnext-helsinki.com"),
+                                            new LocaleItem("ru", "https://dotnext-helsinki.com")),
+                                    "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5"
+                            ),
                             new Place(
                                     15,
                                     List.of(

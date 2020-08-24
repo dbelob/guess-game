@@ -5,16 +5,16 @@ import java.time.LocalDate;
 /**
  * Abstract event type metrics.
  */
-public abstract class AbstractEventTypeMetrics extends AbstractMetrics {
+public abstract class AbstractEventTypeMetrics extends Metrics {
     private final LocalDate startDate;
     private final long age;
     private final long duration;
     private final long eventsQuantity;
     private final long speakersQuantity;
 
-    public AbstractEventTypeMetrics(LocalDate startDate, long age, long duration, long eventsQuantity, long talksQuantity,
-                                    long speakersQuantity, long javaChampionsQuantity, long mvpsQuantity) {
-        super(talksQuantity, javaChampionsQuantity, mvpsQuantity);
+    public AbstractEventTypeMetrics(LocalDate startDate, long age, long duration, long eventsQuantity,
+                                    long speakersQuantity, Metrics metrics) {
+        super(metrics.getTalksQuantity(), metrics.getJavaChampionsQuantity(), metrics.getMvpsQuantity());
 
         this.startDate = startDate;
         this.age = age;
