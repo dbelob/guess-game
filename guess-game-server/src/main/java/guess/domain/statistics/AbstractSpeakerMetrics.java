@@ -3,7 +3,7 @@ package guess.domain.statistics;
 /**
  * Abstract speaker metrics.
  */
-public abstract class AbstractSpeakerMetrics extends AbstractMetrics {
+public abstract class AbstractSpeakerMetrics extends Metrics {
     private final long eventsQuantity;
     private final long eventTypesQuantity;
 

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 /**
  * Abstract event metrics.
  */
-public abstract class AbstractEventMetrics extends AbstractMetrics {
+public abstract class AbstractEventMetrics extends Metrics {
     private final LocalDate startDate;
     private final long duration;
     private final long speakersQuantity;
