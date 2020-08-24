@@ -106,17 +106,183 @@ public class LocalizationUtilsTest {
                     new LocaleItem(Language.ENGLISH.getCode(), "Company"));
 
             return Stream.of(
-                    arguments(new Speaker(0L, "0000.jpg", null, null, null, null, null, false, false, false), Language.ENGLISH, ""),
-                    arguments(new Speaker(0L, "0000.jpg", null, null, null, null, null, false, false, false), Language.RUSSIAN, ""),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, null, null, null, null, false, false, false), Language.ENGLISH, "Name"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, null, null, null, null, false, false, false), Language.RUSSIAN, "Имя"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, EMPTY_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.ENGLISH, "Name"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, EMPTY_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "Имя"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.ENGLISH, "Name (Company)"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "Имя (Компания)"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, ENGLISH_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "Имя (Company)"),
-                    arguments(new Speaker(0L, "0000.jpg", ENGLISH_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "Name (Компания)"),
-                    arguments(new Speaker(0L, "0000.jpg", ENGLISH_NAME_LOCALE_ITEMS, ENGLISH_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "Name (Company)")
+                    arguments(new Speaker(
+                                    0L,
+                                    "0000.jpg",
+                                    null,
+                                    null,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.ENGLISH, ""),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    null,
+                                    null,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, ""),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    null,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.ENGLISH, "Name"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    null,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Имя"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    EMPTY_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.ENGLISH, "Name"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    EMPTY_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Имя"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    FULL_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.ENGLISH, "Name (Company)"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    FULL_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Имя (Компания)"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    ENGLISH_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Имя (Company)"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    ENGLISH_NAME_LOCALE_ITEMS,
+                                    FULL_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Name (Компания)"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    ENGLISH_NAME_LOCALE_ITEMS,
+                                    ENGLISH_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Name (Company)")
             );
         }
 
@@ -146,17 +312,182 @@ public class LocalizationUtilsTest {
                     new LocaleItem(Language.ENGLISH.getCode(), "Company"));
 
             return Stream.of(
-                    arguments(new Speaker(0L, "0000.jpg", null, null, null, null, null, false, false, false), Language.ENGLISH, ""),
-                    arguments(new Speaker(0L, "0000.jpg", null, null, null, null, null, false, false, false), Language.RUSSIAN, ""),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, null, null, null, null, false, false, false), Language.ENGLISH, "LastName FirstName"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, null, null, null, null, false, false, false), Language.RUSSIAN, "Фамилия Имя"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, EMPTY_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.ENGLISH, "LastName FirstName"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, EMPTY_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "Фамилия Имя"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.ENGLISH, "LastName FirstName (Company)"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "Фамилия Имя (Компания)"),
-                    arguments(new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, ENGLISH_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "Фамилия Имя (Company)"),
-                    arguments(new Speaker(0L, "0000.jpg", ENGLISH_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "LastName FirstName (Компания)"),
-                    arguments(new Speaker(0L, "0000.jpg", ENGLISH_NAME_LOCALE_ITEMS, ENGLISH_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false), Language.RUSSIAN, "LastName FirstName (Company)")
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    null,
+                                    null,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.ENGLISH, ""),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    null,
+                                    null,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, ""),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    null,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.ENGLISH, "LastName FirstName"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    null,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Фамилия Имя"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    EMPTY_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.ENGLISH, "LastName FirstName"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    EMPTY_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Фамилия Имя"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    FULL_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.ENGLISH, "LastName FirstName (Company)"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    FULL_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Фамилия Имя (Компания)"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    FULL_NAME_LOCALE_ITEMS,
+                                    ENGLISH_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "Фамилия Имя (Company)"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    ENGLISH_NAME_LOCALE_ITEMS,
+                                    FULL_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "LastName FirstName (Компания)"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    ENGLISH_NAME_LOCALE_ITEMS,
+                                    ENGLISH_COMPANY_LOCALE_ITEMS,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.RUSSIAN, "LastName FirstName (Company)")
             );
         }
 
@@ -179,7 +510,22 @@ public class LocalizationUtilsTest {
                     new LocaleItem(Language.ENGLISH.getCode(), "Company"),
                     new LocaleItem(Language.RUSSIAN.getCode(), "Компания"));
 
-            Speaker speaker0 = new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false);
+            Speaker speaker0 = new Speaker(
+                    0L,
+                    "0000.jpg",
+                    FULL_NAME_LOCALE_ITEMS,
+                    FULL_COMPANY_LOCALE_ITEMS,
+                    null,
+                    new Speaker.SpeakerSocials(
+                            null,
+                            null
+                    ),
+                    new Speaker.SpeakerDegrees(
+                            false,
+                            false,
+                            false
+                    )
+            );
 
             Set<Speaker> EMPTY_SPEAKER_DUPLICATES = Collections.emptySet();
             Set<Speaker> FULL_SPEAKER_DUPLICATES = Set.of(speaker0);
@@ -209,7 +555,21 @@ public class LocalizationUtilsTest {
                     new LocaleItem(Language.ENGLISH.getCode(), "Company"),
                     new LocaleItem(Language.RUSSIAN.getCode(), "Компания"));
 
-            Speaker speaker0 = new Speaker(0L, "0000.jpg", FULL_NAME_LOCALE_ITEMS, FULL_COMPANY_LOCALE_ITEMS, null, null, null, false, false, false);
+            Speaker speaker0 = new Speaker(0L,
+                    "0000.jpg",
+                    FULL_NAME_LOCALE_ITEMS,
+                    FULL_COMPANY_LOCALE_ITEMS,
+                    null,
+                    new Speaker.SpeakerSocials(
+                            null,
+                            null
+                    ),
+                    new Speaker.SpeakerDegrees(
+                            false,
+                            false,
+                            false
+                    )
+            );
 
             Set<Speaker> EMPTY_SPEAKER_DUPLICATES = Collections.emptySet();
             Set<Speaker> FULL_SPEAKER_DUPLICATES = Set.of(speaker0);

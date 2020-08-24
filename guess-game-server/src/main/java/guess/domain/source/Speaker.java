@@ -11,6 +11,28 @@ import java.util.List;
  * Speaker.
  */
 public class Speaker extends Identifier {
+    public static class SpeakerSocials {
+        private final String twitter;
+        private final String gitHub;
+
+        public SpeakerSocials(String twitter, String gitHub) {
+            this.twitter = twitter;
+            this.gitHub = gitHub;
+        }
+    }
+
+    public static class SpeakerDegrees {
+        private final boolean javaChampion;
+        private final boolean mvp;
+        private final boolean mvpReconnect;
+
+        public SpeakerDegrees(boolean javaChampion, boolean mvp, boolean mvpReconnect) {
+            this.javaChampion = javaChampion;
+            this.mvp = mvp;
+            this.mvpReconnect = mvpReconnect;
+        }
+    }
+
     private String photoFileName;
     private List<LocaleItem> name;
     private List<LocaleItem> company;
@@ -25,19 +47,18 @@ public class Speaker extends Identifier {
     }
 
     public Speaker(long id, String photoFileName, List<LocaleItem> name, List<LocaleItem> company,
-                   List<LocaleItem> bio, String twitter, String gitHub, boolean javaChampion, boolean mvp,
-                   boolean mvpReconnect) {
+                   List<LocaleItem> bio, SpeakerSocials socials, SpeakerDegrees degrees) {
         super(id);
 
         this.photoFileName = photoFileName;
         this.name = name;
         this.company = company;
         this.bio = bio;
-        this.twitter = twitter;
-        this.gitHub = gitHub;
-        this.javaChampion = javaChampion;
-        this.mvp = mvp;
-        this.mvpReconnect = mvpReconnect;
+        this.twitter = socials.twitter;
+        this.gitHub = socials.gitHub;
+        this.javaChampion = degrees.javaChampion;
+        this.mvp = degrees.mvp;
+        this.mvpReconnect = degrees.mvpReconnect;
     }
 
     public String getPhotoFileName() {
