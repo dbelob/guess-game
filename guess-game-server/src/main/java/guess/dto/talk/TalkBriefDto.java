@@ -19,28 +19,35 @@ import java.util.stream.Collectors;
  * Talk DTO (brief).
  */
 public class TalkBriefDto {
+    public static class TalkBriefDtoDetails {
+        private final EventSuperBriefDto event;
+        private final String eventTypeLogoFileName;
+        private final List<SpeakerSuperBriefDto> speakers;
+
+        public TalkBriefDtoDetails(EventSuperBriefDto event, String eventTypeLogoFileName, List<SpeakerSuperBriefDto> speakers) {
+            this.event = event;
+            this.eventTypeLogoFileName = eventTypeLogoFileName;
+            this.speakers = speakers;
+        }
+    }
+
     private final long id;
     private final String name;
     private final LocalDate talkDate;
     private final Long talkDay;
     private final LocalDateTime talkTime;
     private final Long track;
-
-    private final EventSuperBriefDto event;
-    private final String eventTypeLogoFileName;
-    private final List<SpeakerSuperBriefDto> speakers;
+    private final TalkBriefDtoDetails details;
 
     public TalkBriefDto(long id, String name, LocalDate talkDate, Long talkDay, LocalDateTime talkTime, Long track,
-                        EventSuperBriefDto event, String eventTypeLogoFileName, List<SpeakerSuperBriefDto> speakers) {
+                        TalkBriefDtoDetails details) {
         this.id = id;
         this.name = name;
         this.talkDate = talkDate;
         this.talkDay = talkDay;
         this.talkTime = talkTime;
         this.track = track;
-        this.event = event;
-        this.eventTypeLogoFileName = eventTypeLogoFileName;
-        this.speakers = speakers;
+        this.details = details;
     }
 
     public long getId() {
@@ -68,15 +75,15 @@ public class TalkBriefDto {
     }
 
     public EventSuperBriefDto getEvent() {
-        return event;
+        return details.event;
     }
 
     public String getEventTypeLogoFileName() {
-        return eventTypeLogoFileName;
+        return details.eventTypeLogoFileName;
     }
 
     public List<SpeakerSuperBriefDto> getSpeakers() {
-        return speakers;
+        return details.speakers;
     }
 
     public static TalkBriefDto convertToBriefDto(Talk talk, Function<Talk, Event> talkEventFunction,
@@ -109,9 +116,12 @@ public class TalkBriefDto {
                 talk.getTalkDay(),
                 talkTime,
                 talk.getTrack(),
-                eventSuperBriefDto,
-                eventTypeLogoFileName,
-                speakers);
+                new TalkBriefDtoDetails(
+                        eventSuperBriefDto,
+                        eventTypeLogoFileName,
+                        speakers
+                )
+        );
     }
 
     public static List<TalkBriefDto> convertToBriefDto(List<Talk> talks, Function<Talk, Event> talkEventFunction,

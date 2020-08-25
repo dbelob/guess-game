@@ -2,8 +2,6 @@ package guess.dto.guess;
 
 import guess.domain.Quadruple;
 
-import java.util.List;
-
 /**
  * Entity, speakers DTO.
  */
@@ -11,10 +9,9 @@ public abstract class EntitySpeakersDto extends QuestionAnswersDto {
     private final Quadruple<String> speakerPhotoFileNames;
     private final Quadruple<String> speakerNames;
 
-    public EntitySpeakersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                             Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                             Quadruple<String> speakerPhotoFileNames, Quadruple<String> speakerNames) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
+    public EntitySpeakersDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids, Quadruple<String> speakerPhotoFileNames,
+                             Quadruple<String> speakerNames) {
+        super(sourceDto, ids);
 
         this.speakerPhotoFileNames = speakerPhotoFileNames;
         this.speakerNames = speakerNames;

@@ -17,15 +17,14 @@ public abstract class QuestionAnswersDto {
     private final Quadruple<Boolean> invalid;
     private final Quadruple<Boolean> valid;
 
-    public QuestionAnswersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                              Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds) {
-        this.questionSetName = questionSetName;
-        this.currentIndex = currentIndex;
-        this.totalNumber = totalNumber;
-        this.logoFileName = logoFileName;
+    public QuestionAnswersDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids) {
+        this.questionSetName = sourceDto.getQuestionSetName();
+        this.currentIndex = sourceDto.getCurrentIndex();
+        this.totalNumber = sourceDto.getTotalNumber();
+        this.logoFileName = sourceDto.getLogoFileName();
         this.ids = ids;
-        this.invalid = ids.map(id -> isInvalid(correctAnswerIds, yourAnswerIds, id));
-        this.valid = ids.map(id -> isValid(correctAnswerIds, yourAnswerIds, id));
+        this.invalid = ids.map(id -> isInvalid(sourceDto.getCorrectAnswerIds(), sourceDto.getYourAnswerIds(), id));
+        this.valid = ids.map(id -> isValid(sourceDto.getCorrectAnswerIds(), sourceDto.getYourAnswerIds(), id));
     }
 
     private boolean isInvalid(List<Long> correctAnswerIds, List<Long> yourAnswerIds, long id) {

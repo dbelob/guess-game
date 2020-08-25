@@ -62,15 +62,18 @@ public class StateController {
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
             QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
             Language language = localeService.getLanguage(httpSession);
-
-            return dtoFunction.apply(
+            QuestionAnswersSourceDto sourceDto = new QuestionAnswersSourceDto(
                     LocalizationUtils.getString(questionAnswersSet.getName(), language),
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),
                     questionAnswersSet.getLogoFileName(),
-                    questionAnswers,
                     correctAnswerIds,
-                    yourAnswerIds,
+                    yourAnswerIds
+            );
+
+            return dtoFunction.apply(
+                    sourceDto,
+                    questionAnswers,
                     language);
         } else {
             return null;

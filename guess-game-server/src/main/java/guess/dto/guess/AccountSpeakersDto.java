@@ -8,7 +8,6 @@ import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,12 +17,10 @@ public class AccountSpeakersDto extends EntitySpeakersDto {
     private final String twitter;
     private final String gitHub;
 
-    public AccountSpeakersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                              Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+    public AccountSpeakersDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids,
                               Quadruple<String> speakerPhotoFileNames, Quadruple<String> speakerNames,
                               String twitter, String gitHub) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds,
-                speakerPhotoFileNames, speakerNames);
+        super(sourceDto, ids, speakerPhotoFileNames, speakerNames);
 
         this.twitter = twitter;
         this.gitHub = gitHub;
@@ -37,8 +34,7 @@ public class AccountSpeakersDto extends EntitySpeakersDto {
         return gitHub;
     }
 
-    public static AccountSpeakersDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                                  QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+    public static AccountSpeakersDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                   Language language) {
         Quadruple<Speaker> speakers =
                 questionAnswers.getAvailableAnswers().map(
@@ -54,9 +50,9 @@ public class AccountSpeakersDto extends EntitySpeakersDto {
                 );
         Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
 
-        return new AccountSpeakersDto(questionSetName, currentIndex, totalNumber, logoFileName,
+        return new AccountSpeakersDto(
+                sourceDto,
                 speakers.map(Speaker::getId),
-                correctAnswerIds, yourAnswerIds,
                 speakers.map(Speaker::getPhotoFileName),
                 names,
                 questionSpeaker.getTwitter(),

@@ -9,8 +9,6 @@ import guess.domain.source.Speaker;
 import guess.dto.result.SpeakerPairDto;
 import guess.util.LocalizationUtils;
 
-import java.util.List;
-
 /**
  * Speaker, accounts DTO.
  */
@@ -19,11 +17,9 @@ public class SpeakerAccountsDto extends QuestionAnswersDto {
     private final Quadruple<String> twitters;
     private final Quadruple<String> gitHubs;
 
-    public SpeakerAccountsDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                              Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                              SpeakerPairDto speaker,
+    public SpeakerAccountsDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids, SpeakerPairDto speaker,
                               Quadruple<String> twitters, Quadruple<String> gitHubs) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
+        super(sourceDto, ids);
 
         this.speaker = speaker;
         this.twitters = twitters;
@@ -66,8 +62,7 @@ public class SpeakerAccountsDto extends QuestionAnswersDto {
         return gitHubs.getFourth();
     }
 
-    public static SpeakerAccountsDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                                  QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+    public static SpeakerAccountsDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                   Language language) {
         Quadruple<Speaker> speakers =
                 questionAnswers.getAvailableAnswers().map(
@@ -75,9 +70,9 @@ public class SpeakerAccountsDto extends QuestionAnswersDto {
                 );
         Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
 
-        return new SpeakerAccountsDto(questionSetName, currentIndex, totalNumber, logoFileName,
+        return new SpeakerAccountsDto(
+                sourceDto,
                 speakers.map(Speaker::getId),
-                correctAnswerIds, yourAnswerIds,
                 new SpeakerPairDto(
                         LocalizationUtils.getString(questionSpeaker.getName(), language),
                         questionSpeaker.getPhotoFileName()),
