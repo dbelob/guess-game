@@ -3,8 +3,6 @@ package guess.dto.guess;
 import guess.domain.Language;
 import guess.domain.question.QuestionAnswers;
 
-import java.util.List;
-
 /**
  * DTO function.
  */
