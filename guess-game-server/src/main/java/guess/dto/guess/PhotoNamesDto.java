@@ -8,7 +8,6 @@ import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,10 +17,8 @@ public class PhotoNamesDto extends QuestionAnswersDto {
     private final String photoFileName;
     private final Quadruple<String> names;
 
-    public PhotoNamesDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                         Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                         String photoFileName, Quadruple<String> names) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
+    public PhotoNamesDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids, String photoFileName, Quadruple<String> names) {
+        super(sourceDto, ids);
 
         this.photoFileName = photoFileName;
         this.names = names;
@@ -47,8 +44,7 @@ public class PhotoNamesDto extends QuestionAnswersDto {
         return names.getFourth();
     }
 
-    public static PhotoNamesDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                             QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+    public static PhotoNamesDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                              Language language) {
         Quadruple<Speaker> speakers =
                 questionAnswers.getAvailableAnswers().map(
@@ -63,9 +59,9 @@ public class PhotoNamesDto extends QuestionAnswersDto {
                         s -> LocalizationUtils.getSpeakerName(s, language, speakerDuplicates)
                 );
 
-        return new PhotoNamesDto(questionSetName, currentIndex, totalNumber, logoFileName,
+        return new PhotoNamesDto(
+                sourceDto,
                 speakers.map(Speaker::getId),
-                correctAnswerIds, yourAnswerIds,
                 ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker().getPhotoFileName(),
                 names);
     }

@@ -10,6 +10,5 @@ import java.util.List;
  */
 @FunctionalInterface
 public interface DtoFunction<T> {
-    T apply(String questionSetName, int currentIndex, int totalNumber, String logoFileName, QuestionAnswers questionAnswers,
-            List<Long> correctAnswerIds, List<Long> yourAnswerIds, Language language);
+    T apply(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers, Language language);
 }

@@ -11,6 +11,20 @@ import java.util.stream.Collectors;
  * Speaker DTO (brief).
  */
 public class SpeakerBriefDto extends SpeakerSuperBriefDto {
+    public static class SpeakerBriefDtoDegrees {
+        private final boolean javaChampion;
+        private final boolean mvp;
+        private final boolean mvpReconnect;
+        private final boolean anyMvp;
+
+        public SpeakerBriefDtoDegrees(boolean javaChampion, boolean mvp, boolean mvpReconnect, boolean anyMvp) {
+            this.javaChampion = javaChampion;
+            this.mvp = mvp;
+            this.mvpReconnect = mvpReconnect;
+            this.anyMvp = anyMvp;
+        }
+    }
+
     private final String photoFileName;
     private final String company;
     private final String twitter;
@@ -21,17 +35,17 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     private final boolean anyMvp;
 
     public SpeakerBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, String photoFileName, String company, String twitter, String gitHub,
-                           boolean javaChampion, boolean mvp, boolean mvpReconnect, boolean anyMvp) {
+                           SpeakerBriefDtoDegrees degrees) {
         super(speakerSuperBriefDto.getId(), speakerSuperBriefDto.getDisplayName());
 
         this.photoFileName = photoFileName;
         this.company = company;
         this.twitter = twitter;
         this.gitHub = gitHub;
-        this.javaChampion = javaChampion;
-        this.mvp = mvp;
-        this.mvpReconnect = mvpReconnect;
-        this.anyMvp = anyMvp;
+        this.javaChampion = degrees.javaChampion;
+        this.mvp = degrees.mvp;
+        this.mvpReconnect = degrees.mvpReconnect;
+        this.anyMvp = degrees.anyMvp;
     }
 
     public String getPhotoFileName() {
@@ -73,10 +87,12 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
                 LocalizationUtils.getString(speaker.getCompany(), language),
                 speaker.getTwitter(),
                 speaker.getGitHub(),
-                speaker.isJavaChampion(),
-                speaker.isMvp(),
-                speaker.isMvpReconnect(),
-                speaker.isAnyMvp());
+                new SpeakerBriefDtoDegrees(
+                        speaker.isJavaChampion(),
+                        speaker.isMvp(),
+                        speaker.isMvpReconnect(),
+                        speaker.isAnyMvp()
+                ));
     }
 
     public static SpeakerBriefDto convertToBriefDto(Speaker speaker, Language language) {

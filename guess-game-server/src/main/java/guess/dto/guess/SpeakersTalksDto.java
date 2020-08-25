@@ -23,11 +23,9 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
     private final List<SpeakerPairDto> speakers;
     private final Quadruple<String> talkNames;
 
-    public SpeakersTalksDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                            Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                            List<SpeakerPairDto> speakers,
+    public SpeakersTalksDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids, List<SpeakerPairDto> speakers,
                             Quadruple<String> talkNames) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
+        super(sourceDto, ids);
 
         this.speakers = speakers;
         this.talkNames = talkNames;
@@ -53,8 +51,7 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
         return talkNames.getFourth();
     }
 
-    public static SpeakersTalksDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                                QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+    public static SpeakersTalksDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                 Language language) {
         Quadruple<Talk> talks =
                 questionAnswers.getAvailableAnswers().map(
@@ -77,9 +74,9 @@ public class SpeakersTalksDto extends QuestionAnswersDto {
                         s.getPhotoFileName()))
                 .collect(Collectors.toList());
 
-        return new SpeakersTalksDto(questionSetName, currentIndex, totalNumber, logoFileName,
+        return new SpeakersTalksDto(
+                sourceDto,
                 talks.map(Talk::getId),
-                correctAnswerIds, yourAnswerIds,
                 questionSpeakers,
                 talks.map(t -> LocalizationUtils.getString(t.getName(), language)));
     }

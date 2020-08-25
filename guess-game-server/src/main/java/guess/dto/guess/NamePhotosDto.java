@@ -8,7 +8,6 @@ import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,10 +17,8 @@ public class NamePhotosDto extends QuestionAnswersDto {
     private final String name;
     private final Quadruple<String> photoFileNames;
 
-    public NamePhotosDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                         Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
-                         String name, Quadruple<String> photoFileNames) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds);
+    public NamePhotosDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids, String name, Quadruple<String> photoFileNames) {
+        super(sourceDto, ids);
 
         this.name = name;
         this.photoFileNames = photoFileNames;
@@ -47,8 +44,7 @@ public class NamePhotosDto extends QuestionAnswersDto {
         return photoFileNames.getFourth();
     }
 
-    public static NamePhotosDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                             QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+    public static NamePhotosDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                              Language language) {
         Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
         Quadruple<Speaker> answerSpeakers =
@@ -61,9 +57,9 @@ public class NamePhotosDto extends QuestionAnswersDto {
                 s -> true);
         String questionName = LocalizationUtils.getSpeakerName(questionSpeaker, language, speakerDuplicates);
 
-        return new NamePhotosDto(questionSetName, currentIndex, totalNumber, logoFileName,
+        return new NamePhotosDto(
+                sourceDto,
                 answerSpeakers.map(Speaker::getId),
-                correctAnswerIds, yourAnswerIds,
                 questionName,
                 answerSpeakers.map(Speaker::getPhotoFileName));
     }

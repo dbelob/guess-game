@@ -16,8 +16,14 @@ public class SpeakerDto extends SpeakerBriefDto {
 
     public SpeakerDto(SpeakerSuperBriefDto speakerSuperBriefDto, SpeakerBriefDto speakerBriefDto, String name, String bio) {
         super(speakerSuperBriefDto, speakerBriefDto.getPhotoFileName(), speakerBriefDto.getCompany(),
-                speakerBriefDto.getTwitter(), speakerBriefDto.getGitHub(), speakerBriefDto.isJavaChampion(),
-                speakerBriefDto.isMvp(), speakerBriefDto.isMvpReconnect(), speakerBriefDto.isAnyMvp());
+                speakerBriefDto.getTwitter(), speakerBriefDto.getGitHub(),
+                new SpeakerBriefDtoDegrees(
+                        speakerBriefDto.isJavaChampion(),
+                        speakerBriefDto.isMvp(),
+                        speakerBriefDto.isMvpReconnect(),
+                        speakerBriefDto.isAnyMvp()
+                )
+        );
 
         this.name = name;
         this.bio = bio;

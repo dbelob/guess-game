@@ -8,7 +8,6 @@ import guess.domain.question.TalkQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -17,12 +16,10 @@ import java.util.Set;
 public class TalkSpeakersDto extends EntitySpeakersDto {
     private final String talkName;
 
-    public TalkSpeakersDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                           Quadruple<Long> ids, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+    public TalkSpeakersDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids,
                            Quadruple<String> speakerPhotoFileNames, Quadruple<String> speakerNames,
                            String talkName) {
-        super(questionSetName, currentIndex, totalNumber, logoFileName, ids, correctAnswerIds, yourAnswerIds,
-                speakerPhotoFileNames, speakerNames);
+        super(sourceDto, ids, speakerPhotoFileNames, speakerNames);
 
         this.talkName = talkName;
     }
@@ -31,8 +28,7 @@ public class TalkSpeakersDto extends EntitySpeakersDto {
         return talkName;
     }
 
-    public static TalkSpeakersDto convertToDto(String questionSetName, int currentIndex, int totalNumber, String logoFileName,
-                                               QuestionAnswers questionAnswers, List<Long> correctAnswerIds, List<Long> yourAnswerIds,
+    public static TalkSpeakersDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                                Language language) {
         Quadruple<Speaker> speakers =
                 questionAnswers.getAvailableAnswers().map(
@@ -47,9 +43,9 @@ public class TalkSpeakersDto extends EntitySpeakersDto {
                         s -> LocalizationUtils.getSpeakerName(s, language, speakerDuplicates)
                 );
 
-        return new TalkSpeakersDto(questionSetName, currentIndex, totalNumber, logoFileName,
+        return new TalkSpeakersDto(
+                sourceDto,
                 speakers.map(Speaker::getId),
-                correctAnswerIds, yourAnswerIds,
                 speakers.map(Speaker::getPhotoFileName),
                 names,
                 LocalizationUtils.getString(((TalkQuestion) questionAnswers.getQuestion()).getTalk().getName(), language));
