@@ -219,18 +219,8 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
         );
 
-        // Fix talks
-        if (!invalidTalksSet.isEmpty()) {
-            contentfulTalks = contentfulTalks.stream()
-                    .filter(t -> !invalidTalksSet.contains(LocalizationUtils.getString(t.getName(), Language.RUSSIAN)))
-                    .collect(Collectors.toList());
-            log.info("Fixed talks (in Contentful): {}", contentfulTalks.size());
-            contentfulTalks.forEach(
-                    t -> log.trace("Fixed talk: nameEn: '{}', name: '{}'",
-                            LocalizationUtils.getString(t.getName(), Language.ENGLISH),
-                            LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
-            );
-        }
+        // Delete invalid talks
+        contentfulTalks = deleteInvalidTalks(contentfulTalks, invalidTalksSet);
 
         // Delete opening and closing talks
         contentfulTalks = deleteOpeningAndClosingTalks(contentfulTalks);
@@ -239,10 +229,7 @@ public class ConferenceDataLoader {
         contentfulTalks = deleteTalkDuplicates(contentfulTalks);
 
         // Order speakers with talk order
-        List<Speaker> contentfulSpeakers = contentfulTalks.stream()
-                .flatMap(t -> t.getSpeakers().stream())
-                .distinct()
-                .collect(Collectors.toList());
+        List<Speaker> contentfulSpeakers = getTalkSpeakers(contentfulTalks);
         log.info("Speakers (in Contentful): {}", contentfulSpeakers.size());
         contentfulSpeakers.forEach(
                 s -> log.trace("Speaker: nameEn: '{}', name: '{}'",
@@ -550,6 +537,63 @@ public class ConferenceDataLoader {
     }
 
     /**
+     * Loads talks, speakers, event information.
+     *
+     * @param conference         conference
+     * @param startDate          start date
+     * @param conferenceCode     conference code
+     * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
+     * @throws IOException                if resource files could not be opened
+     * @throws SpeakerDuplicatedException if speakers duplicated
+     * @throws NoSuchFieldException       if field name is invalid
+     */
+    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode, Map<NameCompany, Long> knownSpeakerIdsMap)
+            throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+        loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, Collections.emptySet());
+    }
+
+    /**
+     * Loads talks, speakers, event information.
+     *
+     * @param conference     conference
+     * @param startDate      start date
+     * @param conferenceCode conference code
+     * @throws IOException                if resource files could not be opened
+     * @throws SpeakerDuplicatedException if speakers duplicated
+     * @throws NoSuchFieldException       if field name is invalid
+     */
+    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode)
+            throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap(), Collections.emptySet());
+    }
+
+    /**
+     * Deletes invalid talks.
+     *
+     * @param talks           talks
+     * @param invalidTalksSet invalid talk name set
+     * @return talks without invalid talks
+     */
+    static List<Talk> deleteInvalidTalks(List<Talk> talks, Set<String> invalidTalksSet) {
+        if (invalidTalksSet.isEmpty()) {
+            return talks;
+        } else {
+            List<Talk> fixedTalks = talks.stream()
+                    .filter(t -> !invalidTalksSet.contains(LocalizationUtils.getString(t.getName(), Language.RUSSIAN)))
+                    .collect(Collectors.toList());
+
+            log.info("Fixed talks (in Contentful): {}", fixedTalks.size());
+            fixedTalks.forEach(
+                    t -> log.trace("Fixed talk: nameEn: '{}', name: '{}'",
+                            LocalizationUtils.getString(t.getName(), Language.ENGLISH),
+                            LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
+            );
+
+            return fixedTalks;
+        }
+    }
+
+    /**
      * Deletes opening and closing talks.
      *
      * @param talks talks
@@ -615,34 +659,16 @@ public class ConferenceDataLoader {
     }
 
     /**
-     * Loads talks, speakers, event information.
+     * Gets talk speakers.
      *
-     * @param conference         conference
-     * @param startDate          start date
-     * @param conferenceCode     conference code
-     * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
-     * @throws IOException                if resource files could not be opened
-     * @throws SpeakerDuplicatedException if speakers duplicated
-     * @throws NoSuchFieldException       if field name is invalid
+     * @param talks talks
+     * @return talk speakers
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode, Map<NameCompany, Long> knownSpeakerIdsMap)
-            throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-        loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, Collections.emptySet());
-    }
-
-    /**
-     * Loads talks, speakers, event information.
-     *
-     * @param conference     conference
-     * @param startDate      start date
-     * @param conferenceCode conference code
-     * @throws IOException                if resource files could not be opened
-     * @throws SpeakerDuplicatedException if speakers duplicated
-     * @throws NoSuchFieldException       if field name is invalid
-     */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode)
-            throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap(), Collections.emptySet());
+    static List<Speaker> getTalkSpeakers(List<Talk> talks) {
+        return talks.stream()
+                .flatMap(t -> t.getSpeakers().stream())
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     /**
