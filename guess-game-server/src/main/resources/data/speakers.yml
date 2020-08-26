@@ -16663,19 +16663,6 @@ speakers:
       \ настоящий момент Олег — признанный российский эксперт в области высоких интернет-нагрузок. А также является\
       \ организатором ведущих в России профессиональных конференций для веб-разработчиков HighLoad++, «Российские\
       \ интернет-технологии» (РИТ++) и Whale Rider."}
-  - id: 1148
-    photoFileName: 1148.jpg
-    name:
-      - {language: en, text: "Stepan Pilshchikov"}
-      - {language: ru, text: "Степан Пильщиков"}
-    company:
-      - {language: en, text: "GridGain Systems"}
-    bio:
-      - {language: en, text: "QA Automation Engineer в GridGain Systems. Over 4 years of experience in test automation for\
-            \ banking, security and distributed systems. Develops and integrates tools for efficient tests execution and analysis."}
-      - {language: ru, text: "QA Automation Engineer в GridGain Systems. Четыре года работал с автоматизацией тестирования\
-            \ банкинга, систем компьютерной безопасности и платформ для распределенного хранения и вычисления. В GridGain\
-            \ занимается созданием и интеграцией инструментов для увеличения эффективности тестирования."}
   - id: 1149
     photoFileName: 1149.jpg
     name:
@@ -17080,13 +17067,6 @@ speakers:
             \ techniques, software development tools, and programming languages. He is actively involved in the ISO standardization\
             \ of C++. He holds a masters in Mathematics from Aarhus University, where he is an honorary professor, and a PhD\
             \ in Computer Science from Cambridge University, where he is an honorary fellow of Churchill College."}
-  - id: 1175
-    photoFileName: 1175.jpg
-    name:
-      - {language: en, text: "test test"}
-    company:
-      - {language: en, text: test}
-    bio: []
   - id: 1176
     photoFileName: 1176.jpg
     name:
