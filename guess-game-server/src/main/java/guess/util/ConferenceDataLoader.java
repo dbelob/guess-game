@@ -22,9 +22,23 @@ import java.util.stream.Collectors;
 public class ConferenceDataLoader {
     private static final Logger log = LoggerFactory.getLogger(ConferenceDataLoader.class);
 
+    static class LoadResult<T> {
+        private final List<T> itemsToDelete;
+        private final List<T> itemsToAppend;
+        private final List<T> itemsToUpdate;
+
+        public LoadResult(List<T> itemsToDelete, List<T> itemsToAppend, List<T> itemsToUpdate) {
+            this.itemsToDelete = itemsToDelete;
+            this.itemsToAppend = itemsToAppend;
+            this.itemsToUpdate = itemsToUpdate;
+        }
+    }
+
     /**
      * Loads all conference event types.
      *
+     * @throws IOException                if file creation error occurs
+     * @throws SpeakerDuplicatedException if speaker duplicated
      * @throws IOException                if file creation error occurs
      * @throws SpeakerDuplicatedException if speaker duplicated
      * @throws NoSuchFieldException       if field name is invalid
@@ -44,21 +58,56 @@ public class ConferenceDataLoader {
         log.info("Event types (in Contentful): {}", contentfulEventTypes.size());
 
         // Find event types
-        Map<Conference, EventType> resourceEventTypeMap = resourceEventTypes.stream()
+        Map<Conference, EventType> resourceEventTypeMap = getResourceEventTypeMap(resourceEventTypes);
+        AtomicLong lastEventTypeId = new AtomicLong(getLastEventTypeId(resourceSourceInformation));
+        LoadResult<EventType> loadResult = getEventTypeLoadResult(contentfulEventTypes, resourceEventTypeMap, lastEventTypeId);
+
+        // Save files
+        saveEventTypes(loadResult);
+    }
+
+    /**
+     * Creates conference map.
+     *
+     * @param eventTypes event types
+     * @return conference map
+     */
+    static Map<Conference, EventType> getResourceEventTypeMap(List<EventType> eventTypes) {
+        return eventTypes.stream()
                 .collect(Collectors.toMap(
                         EventType::getConference,
                         et -> et));
-        AtomicLong id = new AtomicLong(
-                resourceSourceInformation.getEventTypes().stream()
-                        .map(EventType::getId)
-                        .max(Long::compare)
-                        .orElse(-1L));
+    }
+
+    /**
+     * Gets identifier of last event type.
+     *
+     * @param sourceInformation source information
+     * @return identifier
+     */
+    static long getLastEventTypeId(SourceInformation sourceInformation) {
+        return sourceInformation.getEventTypes().stream()
+                .map(EventType::getId)
+                .max(Long::compare)
+                .orElse(-1L);
+    }
+
+    /**
+     * Gets load result for event types.
+     *
+     * @param eventTypes   event types
+     * @param eventTypeMap event type map
+     * @param id           identifier of last event type
+     * @return load result for event types
+     */
+    static LoadResult<EventType> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference,
+            EventType> eventTypeMap, AtomicLong id) {
         List<EventType> eventTypesToAppend = new ArrayList<>();
         List<EventType> eventTypesToUpdate = new ArrayList<>();
 
-        contentfulEventTypes.forEach(
+        eventTypes.forEach(
                 et -> {
-                    EventType resourceEventType = resourceEventTypeMap.get(et.getConference());
+                    EventType resourceEventType = eventTypeMap.get(et.getConference());
 
                     if (resourceEventType == null) {
                         // Event type not exists
@@ -79,7 +128,23 @@ public class ConferenceDataLoader {
                 }
         );
 
-        // Save files
+        return new LoadResult<>(
+                Collections.emptyList(),
+                eventTypesToAppend,
+                eventTypesToUpdate);
+    }
+
+    /**
+     * Saves event types.
+     *
+     * @param loadResult load result
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void saveEventTypes(LoadResult<EventType> loadResult) throws IOException, NoSuchFieldException {
+        List<EventType> eventTypesToAppend = loadResult.itemsToAppend;
+        List<EventType> eventTypesToUpdate = loadResult.itemsToUpdate;
+
         if (eventTypesToAppend.isEmpty() && eventTypesToUpdate.isEmpty()) {
             log.info("All event types are up-to-date");
         } else {
