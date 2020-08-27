@@ -2,6 +2,7 @@ package guess.util;
 
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
+import guess.domain.Identifier;
 import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.image.UrlFilename;
@@ -32,6 +33,36 @@ public class ConferenceDataLoader {
             this.itemsToAppend = itemsToAppend;
             this.itemsToUpdate = itemsToUpdate;
         }
+
+        public List<T> getItemsToDelete() {
+            return itemsToDelete;
+        }
+
+        public List<T> getItemsToAppend() {
+            return itemsToAppend;
+        }
+
+        public List<T> getItemsToUpdate() {
+            return itemsToUpdate;
+        }
+    }
+
+    static class SpeakerLoadResultPair {
+        private final LoadResult<Speaker> speakers;
+        private final LoadResult<UrlFilename> urlFilenames;
+
+        public SpeakerLoadResultPair(LoadResult<Speaker> speakers, LoadResult<UrlFilename> urlFilenames) {
+            this.speakers = speakers;
+            this.urlFilenames = urlFilenames;
+        }
+
+        public LoadResult<Speaker> getSpeakers() {
+            return speakers;
+        }
+
+        public LoadResult<UrlFilename> getUrlFilenames() {
+            return urlFilenames;
+        }
     }
 
     /**
@@ -46,24 +77,32 @@ public class ConferenceDataLoader {
     private static void loadEventTypes() throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         // Read event types from resource files
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
-        List<EventType> resourceEventTypes = resourceSourceInformation.getEventTypes().stream()
-                .filter(et -> et.getConference() != null)
-                .collect(Collectors.toList());
+        List<EventType> resourceEventTypes = getConferences(resourceSourceInformation.getEventTypes());
         log.info("Event types (in resource files): {}", resourceEventTypes.size());
 
         // Read event types from Contentful
-        List<EventType> contentfulEventTypes = ContentfulUtils.getEventTypes().stream()
-                .filter(et -> et.getConference() != null)
-                .collect(Collectors.toList());
+        List<EventType> contentfulEventTypes = getConferences(ContentfulUtils.getEventTypes());
         log.info("Event types (in Contentful): {}", contentfulEventTypes.size());
 
         // Find event types
         Map<Conference, EventType> resourceEventTypeMap = getResourceEventTypeMap(resourceEventTypes);
-        AtomicLong lastEventTypeId = new AtomicLong(getLastEventTypeId(resourceSourceInformation));
+        AtomicLong lastEventTypeId = new AtomicLong(getLastId(resourceSourceInformation.getEventTypes()));
         LoadResult<EventType> loadResult = getEventTypeLoadResult(contentfulEventTypes, resourceEventTypeMap, lastEventTypeId);
 
         // Save files
         saveEventTypes(loadResult);
+    }
+
+    /**
+     * Gets conferences.
+     *
+     * @param eventTypes event types
+     * @return conferences
+     */
+    static List<EventType> getConferences(List<EventType> eventTypes) {
+        return eventTypes.stream()
+                .filter(et -> et.getConference() != null)
+                .collect(Collectors.toList());
     }
 
     /**
@@ -80,14 +119,14 @@ public class ConferenceDataLoader {
     }
 
     /**
-     * Gets identifier of last event type.
+     * Gets last identifier.
      *
-     * @param sourceInformation source information
+     * @param entities entities
      * @return identifier
      */
-    static long getLastEventTypeId(SourceInformation sourceInformation) {
-        return sourceInformation.getEventTypes().stream()
-                .map(EventType::getId)
+    static <T extends Identifier> long getLastId(List<T> entities) {
+        return entities.stream()
+                .map(Identifier::getId)
                 .max(Long::compare)
                 .orElse(-1L);
     }
@@ -95,13 +134,13 @@ public class ConferenceDataLoader {
     /**
      * Gets load result for event types.
      *
-     * @param eventTypes   event types
-     * @param eventTypeMap event type map
-     * @param id           identifier of last event type
+     * @param eventTypes      event types
+     * @param eventTypeMap    event type map
+     * @param lastEventTypeId identifier of last event type
      * @return load result for event types
      */
     static LoadResult<EventType> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference,
-            EventType> eventTypeMap, AtomicLong id) {
+            EventType> eventTypeMap, AtomicLong lastEventTypeId) {
         List<EventType> eventTypesToAppend = new ArrayList<>();
         List<EventType> eventTypesToUpdate = new ArrayList<>();
 
@@ -111,7 +150,7 @@ public class ConferenceDataLoader {
 
                     if (resourceEventType == null) {
                         // Event type not exists
-                        et.setId(id.incrementAndGet());
+                        et.setId(lastEventTypeId.incrementAndGet());
 
                         eventTypesToAppend.add(et);
                     } else {
@@ -142,8 +181,8 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     private static void saveEventTypes(LoadResult<EventType> loadResult) throws IOException, NoSuchFieldException {
-        List<EventType> eventTypesToAppend = loadResult.itemsToAppend;
-        List<EventType> eventTypesToUpdate = loadResult.itemsToUpdate;
+        List<EventType> eventTypesToAppend = loadResult.getItemsToAppend();
+        List<EventType> eventTypesToUpdate = loadResult.getItemsToUpdate();
 
         if (eventTypesToAppend.isEmpty() && eventTypesToUpdate.isEmpty()) {
             log.info("All event types are up-to-date");
@@ -267,80 +306,10 @@ public class ConferenceDataLoader {
                         s -> LocalizationUtils.getString(s.getName(), Language.ENGLISH).trim(),
                         Collectors.toSet()
                 ));
-        AtomicLong speakerId = new AtomicLong(
-                resourceSourceInformation.getSpeakers().stream()
-                        .map(Speaker::getId)
-                        .max(Long::compare)
-                        .orElse(-1L));
-        List<Speaker> speakersToAppend = new ArrayList<>();
-        List<Speaker> speakersToUpdate = new ArrayList<>();
-        List<UrlFilename> urlFilenamesToAppend = new ArrayList<>();
-        List<UrlFilename> urlFilenamesToUpdate = new ArrayList<>();
-
-        for (Speaker s : contentfulSpeakers) {
-            Speaker resourceSpeaker = findResourceSpeaker(s, knownSpeakerIdsMap, resourceSpeakerIdsMap,
-                    resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
-                    resourceRuNameSpeakers, resourceEnNameSpeakers);
-
-            if (resourceSpeaker == null) {
-                // Speaker not exists
-                long id = speakerId.incrementAndGet();
-                String sourceUrl = s.getPhotoFileName();
-                String destinationFileName = String.format("%04d.jpg", id);
-
-                s.setId(id);
-
-                urlFilenamesToAppend.add(new UrlFilename(sourceUrl, destinationFileName));
-                s.setPhotoFileName(destinationFileName);
-
-                speakersToAppend.add(s);
-            } else {
-                // Speaker exists
-                s.setId(resourceSpeaker.getId());
-                String sourceUrl = s.getPhotoFileName();
-                String destinationFileName = resourceSpeaker.getPhotoFileName();
-                s.setPhotoFileName(destinationFileName);
-
-                if ((resourceSpeaker.getTwitter() != null) && !resourceSpeaker.getTwitter().isEmpty() &&
-                        ((s.getTwitter() == null) || s.getTwitter().isEmpty())) {
-                    s.setTwitter(resourceSpeaker.getTwitter());
-                }
-
-                if ((resourceSpeaker.getGitHub() != null) && !resourceSpeaker.getGitHub().isEmpty() &&
-                        ((s.getGitHub() == null) || s.getGitHub().isEmpty())) {
-                    s.setGitHub(resourceSpeaker.getGitHub());
-                }
-
-                if (resourceSpeaker.isJavaChampion() && !s.isJavaChampion()) {
-                    s.setJavaChampion(true);
-                }
-
-                if (s.isMvpReconnect()) {
-                    s.setMvp(false);
-                } else {
-                    if (s.isMvp()) {
-                        s.setMvpReconnect(false);
-                    } else {
-                        // Neither "MVP" nor "MVP Reconnect" in Contentful
-                        if (resourceSpeaker.isMvpReconnect()) {
-                            s.setMvpReconnect(true);
-                            s.setMvp(false);
-                        } else if (resourceSpeaker.isMvp()) {
-                            s.setMvp(true);
-                            s.setMvpReconnect(false);
-                        }
-                    }
-                }
-
-                if (ImageUtils.needUpdate(sourceUrl, destinationFileName)) {
-                    urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
-                }
-
-                if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
-                    speakersToUpdate.add(s);
-                }
-            }
-        }
+        AtomicLong lastSpeakerId = new AtomicLong(getLastId(resourceSourceInformation.getSpeakers()));
+        SpeakerLoadResultPair speakerLoadResult = getSpeakerLoadResult(contentfulSpeakers, knownSpeakerIdsMap,
+                resourceSpeakerIdsMap, resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
+                resourceRuNameSpeakers, resourceEnNameSpeakers, lastSpeakerId);
 
         // Find talks
         contentfulTalks.forEach(
@@ -478,6 +447,11 @@ public class ConferenceDataLoader {
         }
 
         // Save files
+        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemsToAppend();
+        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemsToUpdate();
+        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().getItemsToAppend();
+        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().getItemsToUpdate();
+
         if (urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
                 speakersToAppend.isEmpty() && speakersToUpdate.isEmpty() &&
                 talksToDelete.isEmpty() && talksToAppend.isEmpty() && talksToUpdate.isEmpty() &&
@@ -669,6 +643,112 @@ public class ConferenceDataLoader {
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets load result for speakers.
+     *
+     * @param speakers                      speakers
+     * @param knownSpeakerIdsMap            (name, company), id map
+     * @param resourceSpeakerIdsMap         id, speaker map
+     * @param resourceRuNameCompanySpeakers russian (name, company), speaker map
+     * @param resourceEnNameCompanySpeakers english (name, company), speaker map
+     * @param resourceRuNameSpeakers        russian name, speakers map
+     * @param resourceEnNameSpeakers        english name, speakers map
+     * @param lastSpeakerId                 identifier of last speaker
+     * @return load result for speakers
+     * @throws IOException if read error occurs
+     */
+    static SpeakerLoadResultPair getSpeakerLoadResult(List<Speaker> speakers,
+                                                      Map<NameCompany, Long> knownSpeakerIdsMap,
+                                                      Map<Long, Speaker> resourceSpeakerIdsMap,
+                                                      Map<NameCompany, Speaker> resourceRuNameCompanySpeakers,
+                                                      Map<NameCompany, Speaker> resourceEnNameCompanySpeakers,
+                                                      Map<String, Set<Speaker>> resourceRuNameSpeakers,
+                                                      Map<String, Set<Speaker>> resourceEnNameSpeakers,
+                                                      AtomicLong lastSpeakerId) throws IOException {
+        List<Speaker> speakersToAppend = new ArrayList<>();
+        List<Speaker> speakersToUpdate = new ArrayList<>();
+        List<UrlFilename> urlFilenamesToAppend = new ArrayList<>();
+        List<UrlFilename> urlFilenamesToUpdate = new ArrayList<>();
+
+        for (Speaker s : speakers) {
+            Speaker resourceSpeaker = findResourceSpeaker(s, knownSpeakerIdsMap, resourceSpeakerIdsMap,
+                    resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
+                    resourceRuNameSpeakers, resourceEnNameSpeakers);
+
+            if (resourceSpeaker == null) {
+                // Speaker not exists
+                long id = lastSpeakerId.incrementAndGet();
+                String sourceUrl = s.getPhotoFileName();
+                String destinationFileName = String.format("%04d.jpg", id);
+
+                s.setId(id);
+
+                urlFilenamesToAppend.add(new UrlFilename(sourceUrl, destinationFileName));
+                s.setPhotoFileName(destinationFileName);
+
+                speakersToAppend.add(s);
+            } else {
+                // Speaker exists
+                s.setId(resourceSpeaker.getId());
+                String sourceUrl = s.getPhotoFileName();
+                String destinationFileName = resourceSpeaker.getPhotoFileName();
+                s.setPhotoFileName(destinationFileName);
+
+                if ((resourceSpeaker.getTwitter() != null) && !resourceSpeaker.getTwitter().isEmpty() &&
+                        ((s.getTwitter() == null) || s.getTwitter().isEmpty())) {
+                    s.setTwitter(resourceSpeaker.getTwitter());
+                }
+
+                if ((resourceSpeaker.getGitHub() != null) && !resourceSpeaker.getGitHub().isEmpty() &&
+                        ((s.getGitHub() == null) || s.getGitHub().isEmpty())) {
+                    s.setGitHub(resourceSpeaker.getGitHub());
+                }
+
+                if (resourceSpeaker.isJavaChampion() && !s.isJavaChampion()) {
+                    s.setJavaChampion(true);
+                }
+
+                if (s.isMvpReconnect()) {
+                    s.setMvp(false);
+                } else {
+                    if (s.isMvp()) {
+                        s.setMvpReconnect(false);
+                    } else {
+                        // Neither "MVP" nor "MVP Reconnect" in Contentful
+                        if (resourceSpeaker.isMvpReconnect()) {
+                            s.setMvpReconnect(true);
+                            s.setMvp(false);
+                        } else if (resourceSpeaker.isMvp()) {
+                            s.setMvp(true);
+                            s.setMvpReconnect(false);
+                        }
+                    }
+                }
+
+                if (ImageUtils.needUpdate(sourceUrl, destinationFileName)) {
+                    urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
+                }
+
+                if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
+                    speakersToUpdate.add(s);
+                }
+            }
+        }
+
+        return new SpeakerLoadResultPair(
+                new LoadResult<>(
+                        Collections.emptyList(),
+                        speakersToAppend,
+                        speakersToUpdate
+                ),
+                new LoadResult<>(
+                        Collections.emptyList(),
+                        urlFilenamesToAppend,
+                        urlFilenamesToUpdate
+                )
+        );
     }
 
     /**
