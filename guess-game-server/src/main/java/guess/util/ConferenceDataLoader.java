@@ -280,90 +280,19 @@ public class ConferenceDataLoader {
                 lastSpeakerId);
 
         // Find talks
-        contentfulTalks.forEach(
-                t -> t.setSpeakerIds(t.getSpeakers().stream()
-                        .map(Speaker::getId)
-                        .collect(Collectors.toList())
-                )
-        );
-        List<Talk> talksToDelete = new ArrayList<>();
-        List<Talk> talksToAppend = new ArrayList<>();
-        List<Talk> talksToUpdate = new ArrayList<>();
-        AtomicLong talksId = new AtomicLong(
-                resourceSourceInformation.getTalks().stream()
-                        .map(Talk::getId)
-                        .max(Long::compare)
-                        .orElse(-1L));
+        fillSpeakerIds(contentfulTalks);
 
-        if (resourceEvent == null) {
-            // Event not exists
-            contentfulTalks.forEach(
-                    t -> {
-                        t.setId(talksId.incrementAndGet());
-                        talksToAppend.add(t);
-                    }
-            );
-        } else {
-            // Event exists
-            Map<String, Set<Talk>> resourceRuNameTalks = resourceEvent.getTalks().stream()
-                    .collect(Collectors.groupingBy(
-                            t -> LocalizationUtils.getString(t.getName(), Language.RUSSIAN).trim(),
-                            Collectors.toSet()
-                    ));
-            Map<String, Set<Talk>> resourceEnNameTalks = resourceEvent.getTalks().stream()
-                    .collect(Collectors.groupingBy(
-                            t -> LocalizationUtils.getString(t.getName(), Language.ENGLISH).trim(),
-                            Collectors.toSet()
-                    ));
-            contentfulTalks.forEach(
-                    t -> {
-                        Talk resourceTalk = findResourceTalk(t, resourceRuNameTalks, resourceEnNameTalks);
-
-                        if (resourceTalk == null) {
-                            // Talk not exists
-                            t.setId(talksId.incrementAndGet());
-                            talksToAppend.add(t);
-                        } else {
-                            // Talk exists
-                            t.setId(resourceTalk.getId());
-
-                            if (ContentfulUtils.needUpdate(resourceTalk, t)) {
-                                talksToUpdate.add(t);
-                            }
-                        }
-                    }
-            );
-
-            List<Talk> finalContentfulTalks = contentfulTalks;
-            talksToDelete = resourceEvent.getTalks().stream()
-                    .filter(dt -> {
-                        if (finalContentfulTalks.contains(dt)) {
-                            return false;
-                        } else {
-                            boolean talkExistsInAnyOtherEvent = resourceSourceInformation.getEvents().stream()
-                                    .filter(e -> !e.equals(resourceEvent))
-                                    .flatMap(e -> e.getTalks().stream())
-                                    .anyMatch(rt -> rt.equals(dt));
-
-                            if (talkExistsInAnyOtherEvent) {
-                                log.warn("Deleting '{}' talk exists in other events and can't be deleted",
-                                        LocalizationUtils.getString(dt.getName(), Language.ENGLISH));
-                            }
-
-                            return !talkExistsInAnyOtherEvent;
-                        }
-                    })
-                    .collect(Collectors.toList());
-        }
+        AtomicLong lasTalksId = new AtomicLong(getLastId(resourceSourceInformation.getTalks()));
+        LoadResult<Talk> talkLoadResult = getTalkLoadResult(
+                contentfulTalks,
+                resourceEvent,
+                resourceSourceInformation.getEvents(),
+                lasTalksId);
 
         // Find place
         Place placeToAppend = null;
         Place placeToUpdate = null;
-        AtomicLong placeId = new AtomicLong(
-                resourceSourceInformation.getPlaces().stream()
-                        .map(Place::getId)
-                        .max(Long::compare)
-                        .orElse(-1L));
+        AtomicLong lastPlaceId = new AtomicLong(getLastId(resourceSourceInformation.getPlaces()));
         Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
                 .collect(Collectors.toMap(
                         p -> new CityVenueAddress(
@@ -384,7 +313,7 @@ public class ConferenceDataLoader {
 
         if (resourcePlace == null) {
             // Place not exists
-            contentfulPlace.setId(placeId.incrementAndGet());
+            contentfulPlace.setId(lastPlaceId.incrementAndGet());
             placeToAppend = contentfulPlace;
         } else {
             // Place exists
@@ -417,8 +346,13 @@ public class ConferenceDataLoader {
         // Save files
         List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemsToAppend();
         List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemsToUpdate();
+
         List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().getItemsToAppend();
         List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().getItemsToUpdate();
+
+        List<Talk> talksToDelete = talkLoadResult.getItemsToDelete();
+        List<Talk> talksToAppend = talkLoadResult.getItemsToAppend();
+        List<Talk> talksToUpdate = talkLoadResult.getItemsToUpdate();
 
         if (urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
                 speakersToAppend.isEmpty() && speakersToUpdate.isEmpty() &&
@@ -652,36 +586,10 @@ public class ConferenceDataLoader {
                 String destinationFileName = resourceSpeaker.getPhotoFileName();
                 s.setPhotoFileName(destinationFileName);
 
-                if ((resourceSpeaker.getTwitter() != null) && !resourceSpeaker.getTwitter().isEmpty() &&
-                        ((s.getTwitter() == null) || s.getTwitter().isEmpty())) {
-                    s.setTwitter(resourceSpeaker.getTwitter());
-                }
-
-                if ((resourceSpeaker.getGitHub() != null) && !resourceSpeaker.getGitHub().isEmpty() &&
-                        ((s.getGitHub() == null) || s.getGitHub().isEmpty())) {
-                    s.setGitHub(resourceSpeaker.getGitHub());
-                }
-
-                if (resourceSpeaker.isJavaChampion() && !s.isJavaChampion()) {
-                    s.setJavaChampion(true);
-                }
-
-                if (s.isMvpReconnect()) {
-                    s.setMvp(false);
-                } else {
-                    if (s.isMvp()) {
-                        s.setMvpReconnect(false);
-                    } else {
-                        // Neither "MVP" nor "MVP Reconnect" in Contentful
-                        if (resourceSpeaker.isMvpReconnect()) {
-                            s.setMvpReconnect(true);
-                            s.setMvp(false);
-                        } else if (resourceSpeaker.isMvp()) {
-                            s.setMvp(true);
-                            s.setMvpReconnect(false);
-                        }
-                    }
-                }
+                fillSpeakerTwitter(s, resourceSpeaker);
+                fillSpeakerGitHub(s, resourceSpeaker);
+                fillSpeakerJavaChampion(s, resourceSpeaker);
+                fillSpeakerMvp(s, resourceSpeaker);
 
                 if (ImageUtils.needUpdate(sourceUrl, destinationFileName)) {
                     urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
@@ -704,6 +612,165 @@ public class ConferenceDataLoader {
                         urlFilenamesToAppend,
                         urlFilenamesToUpdate
                 )
+        );
+    }
+
+    /**
+     * Fills speaker Twitter.
+     *
+     * @param targetSpeaker   target speaker
+     * @param resourceSpeaker resource speaker
+     */
+    static void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker) {
+        if ((resourceSpeaker.getGitHub() != null) && !resourceSpeaker.getGitHub().isEmpty() &&
+                ((targetSpeaker.getGitHub() == null) || targetSpeaker.getGitHub().isEmpty())) {
+            targetSpeaker.setGitHub(resourceSpeaker.getGitHub());
+        }
+    }
+
+    /**
+     * Fills speaker GitHub.
+     *
+     * @param targetSpeaker   target speaker
+     * @param resourceSpeaker resource speaker
+     */
+    static void fillSpeakerGitHub(Speaker targetSpeaker, Speaker resourceSpeaker) {
+        if ((resourceSpeaker.getGitHub() != null) && !resourceSpeaker.getGitHub().isEmpty() &&
+                ((targetSpeaker.getGitHub() == null) || targetSpeaker.getGitHub().isEmpty())) {
+            targetSpeaker.setGitHub(resourceSpeaker.getGitHub());
+        }
+    }
+
+    /**
+     * Fills speaker Java Champion.
+     *
+     * @param targetSpeaker   target speaker
+     * @param resourceSpeaker resource speaker
+     */
+    static void fillSpeakerJavaChampion(Speaker targetSpeaker, Speaker resourceSpeaker) {
+        if (resourceSpeaker.isJavaChampion() && !targetSpeaker.isJavaChampion()) {
+            targetSpeaker.setJavaChampion(true);
+        }
+    }
+
+    /**
+     * Fills speaker MVP.
+     *
+     * @param targetSpeaker   target speaker
+     * @param resourceSpeaker resource speaker
+     */
+    static void fillSpeakerMvp(Speaker targetSpeaker, Speaker resourceSpeaker) {
+        if (targetSpeaker.isMvpReconnect()) {
+            targetSpeaker.setMvp(false);
+        } else {
+            if (targetSpeaker.isMvp()) {
+                targetSpeaker.setMvpReconnect(false);
+            } else {
+                // Neither "MVP" nor "MVP Reconnect" in Contentful
+                if (resourceSpeaker.isMvpReconnect()) {
+                    targetSpeaker.setMvpReconnect(true);
+                    targetSpeaker.setMvp(false);
+                } else if (resourceSpeaker.isMvp()) {
+                    targetSpeaker.setMvp(true);
+                    targetSpeaker.setMvpReconnect(false);
+                }
+            }
+        }
+    }
+
+    /**
+     * Fills speaker identifiers in talks.
+     *
+     * @param talks talks
+     */
+    static void fillSpeakerIds(List<Talk> talks) {
+        talks.forEach(
+                t -> t.setSpeakerIds(t.getSpeakers().stream()
+                        .map(Speaker::getId)
+                        .collect(Collectors.toList())
+                )
+        );
+    }
+
+    /**
+     * Gets talk load result.
+     *
+     * @param talks          talks
+     * @param resourceEvent  resource event of talks
+     * @param resourceEvents all resource events
+     * @param lasTalksId     identifier of last talk
+     * @return talk load result
+     */
+    static LoadResult<Talk> getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
+                                              AtomicLong lasTalksId) {
+        List<Talk> talksToDelete = new ArrayList<>();
+        List<Talk> talksToAppend = new ArrayList<>();
+        List<Talk> talksToUpdate = new ArrayList<>();
+
+        if (resourceEvent == null) {
+            // Event not exists
+            talks.forEach(
+                    t -> {
+                        t.setId(lasTalksId.incrementAndGet());
+                        talksToAppend.add(t);
+                    }
+            );
+        } else {
+            // Event exists
+            Map<String, Set<Talk>> resourceRuNameTalks = resourceEvent.getTalks().stream()
+                    .collect(Collectors.groupingBy(
+                            t -> LocalizationUtils.getString(t.getName(), Language.RUSSIAN).trim(),
+                            Collectors.toSet()
+                    ));
+            Map<String, Set<Talk>> resourceEnNameTalks = resourceEvent.getTalks().stream()
+                    .collect(Collectors.groupingBy(
+                            t -> LocalizationUtils.getString(t.getName(), Language.ENGLISH).trim(),
+                            Collectors.toSet()
+                    ));
+            talks.forEach(
+                    t -> {
+                        Talk resourceTalk = findResourceTalk(t, resourceRuNameTalks, resourceEnNameTalks);
+
+                        if (resourceTalk == null) {
+                            // Talk not exists
+                            t.setId(lasTalksId.incrementAndGet());
+                            talksToAppend.add(t);
+                        } else {
+                            // Talk exists
+                            t.setId(resourceTalk.getId());
+
+                            if (ContentfulUtils.needUpdate(resourceTalk, t)) {
+                                talksToUpdate.add(t);
+                            }
+                        }
+                    }
+            );
+
+            talksToDelete = resourceEvent.getTalks().stream()
+                    .filter(dt -> {
+                        if (talks.contains(dt)) {
+                            return false;
+                        } else {
+                            boolean talkExistsInAnyOtherEvent = resourceEvents.stream()
+                                    .filter(e -> !e.equals(resourceEvent))
+                                    .flatMap(e -> e.getTalks().stream())
+                                    .anyMatch(rt -> rt.equals(dt));
+
+                            if (talkExistsInAnyOtherEvent) {
+                                log.warn("Deleting '{}' talk exists in other events and can't be deleted",
+                                        LocalizationUtils.getString(dt.getName(), Language.ENGLISH));
+                            }
+
+                            return !talkExistsInAnyOtherEvent;
+                        }
+                    })
+                    .collect(Collectors.toList());
+        }
+
+        return new LoadResult<>(
+                talksToDelete,
+                talksToAppend,
+                talksToUpdate
         );
     }
 
