@@ -6,6 +6,9 @@ import guess.domain.Identifier;
 import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.image.UrlFilename;
+import guess.domain.source.load.LoadResult;
+import guess.domain.source.load.SpeakerLoadMaps;
+import guess.domain.source.load.SpeakerLoadResultPair;
 import guess.util.yaml.YamlUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,48 +25,6 @@ import java.util.stream.Collectors;
  */
 public class ConferenceDataLoader {
     private static final Logger log = LoggerFactory.getLogger(ConferenceDataLoader.class);
-
-    static class LoadResult<T> {
-        private final List<T> itemsToDelete;
-        private final List<T> itemsToAppend;
-        private final List<T> itemsToUpdate;
-
-        public LoadResult(List<T> itemsToDelete, List<T> itemsToAppend, List<T> itemsToUpdate) {
-            this.itemsToDelete = itemsToDelete;
-            this.itemsToAppend = itemsToAppend;
-            this.itemsToUpdate = itemsToUpdate;
-        }
-
-        public List<T> getItemsToDelete() {
-            return itemsToDelete;
-        }
-
-        public List<T> getItemsToAppend() {
-            return itemsToAppend;
-        }
-
-        public List<T> getItemsToUpdate() {
-            return itemsToUpdate;
-        }
-    }
-
-    static class SpeakerLoadResultPair {
-        private final LoadResult<Speaker> speakers;
-        private final LoadResult<UrlFilename> urlFilenames;
-
-        public SpeakerLoadResultPair(LoadResult<Speaker> speakers, LoadResult<UrlFilename> urlFilenames) {
-            this.speakers = speakers;
-            this.urlFilenames = urlFilenames;
-        }
-
-        public LoadResult<Speaker> getSpeakers() {
-            return speakers;
-        }
-
-        public LoadResult<UrlFilename> getUrlFilenames() {
-            return urlFilenames;
-        }
-    }
 
     /**
      * Loads all conference event types.
@@ -307,9 +268,16 @@ public class ConferenceDataLoader {
                         Collectors.toSet()
                 ));
         AtomicLong lastSpeakerId = new AtomicLong(getLastId(resourceSourceInformation.getSpeakers()));
-        SpeakerLoadResultPair speakerLoadResult = getSpeakerLoadResult(contentfulSpeakers, knownSpeakerIdsMap,
-                resourceSpeakerIdsMap, resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
-                resourceRuNameSpeakers, resourceEnNameSpeakers, lastSpeakerId);
+        SpeakerLoadResultPair speakerLoadResult = getSpeakerLoadResult(
+                contentfulSpeakers,
+                new SpeakerLoadMaps(
+                        knownSpeakerIdsMap,
+                        resourceSpeakerIdsMap,
+                        resourceRuNameCompanySpeakers,
+                        resourceEnNameCompanySpeakers,
+                        resourceRuNameSpeakers,
+                        resourceEnNameSpeakers),
+                lastSpeakerId);
 
         // Find talks
         contentfulTalks.forEach(
@@ -648,24 +616,14 @@ public class ConferenceDataLoader {
     /**
      * Gets load result for speakers.
      *
-     * @param speakers                      speakers
-     * @param knownSpeakerIdsMap            (name, company), id map
-     * @param resourceSpeakerIdsMap         id, speaker map
-     * @param resourceRuNameCompanySpeakers russian (name, company), speaker map
-     * @param resourceEnNameCompanySpeakers english (name, company), speaker map
-     * @param resourceRuNameSpeakers        russian name, speakers map
-     * @param resourceEnNameSpeakers        english name, speakers map
-     * @param lastSpeakerId                 identifier of last speaker
+     * @param speakers        speakers
+     * @param speakerLoadMaps speaker load maps
+     * @param lastSpeakerId   identifier of last speaker
      * @return load result for speakers
      * @throws IOException if read error occurs
      */
     static SpeakerLoadResultPair getSpeakerLoadResult(List<Speaker> speakers,
-                                                      Map<NameCompany, Long> knownSpeakerIdsMap,
-                                                      Map<Long, Speaker> resourceSpeakerIdsMap,
-                                                      Map<NameCompany, Speaker> resourceRuNameCompanySpeakers,
-                                                      Map<NameCompany, Speaker> resourceEnNameCompanySpeakers,
-                                                      Map<String, Set<Speaker>> resourceRuNameSpeakers,
-                                                      Map<String, Set<Speaker>> resourceEnNameSpeakers,
+                                                      SpeakerLoadMaps speakerLoadMaps,
                                                       AtomicLong lastSpeakerId) throws IOException {
         List<Speaker> speakersToAppend = new ArrayList<>();
         List<Speaker> speakersToUpdate = new ArrayList<>();
@@ -673,9 +631,7 @@ public class ConferenceDataLoader {
         List<UrlFilename> urlFilenamesToUpdate = new ArrayList<>();
 
         for (Speaker s : speakers) {
-            Speaker resourceSpeaker = findResourceSpeaker(s, knownSpeakerIdsMap, resourceSpeakerIdsMap,
-                    resourceRuNameCompanySpeakers, resourceEnNameCompanySpeakers,
-                    resourceRuNameSpeakers, resourceEnNameSpeakers);
+            Speaker resourceSpeaker = findResourceSpeaker(s, speakerLoadMaps);
 
             if (resourceSpeaker == null) {
                 // Speaker not exists
@@ -829,21 +785,23 @@ public class ConferenceDataLoader {
         YamlUtils.dumpTalks(talks, filename);
     }
 
-    private static Speaker findResourceSpeaker(Speaker speaker, Map<NameCompany, Long> knownSpeakerIdsMap,
-                                               Map<Long, Speaker> resourceSpeakerIdsMap,
-                                               Map<NameCompany, Speaker> resourceRuNameCompanySpeakers,
-                                               Map<NameCompany, Speaker> resourceEnNameCompanySpeakers,
-                                               Map<String, Set<Speaker>> resourceRuNameSpeakers,
-                                               Map<String, Set<Speaker>> resourceEnNameSpeakers) {
+    /**
+     * Finds resource speaker.
+     *
+     * @param speaker         speaker
+     * @param speakerLoadMaps speaker load maps
+     * @return resource speaker
+     */
+    private static Speaker findResourceSpeaker(Speaker speaker, SpeakerLoadMaps speakerLoadMaps) {
         // Find in known speakers by (name, company) pair because
         // - speaker could change his/her last name (for example, woman got married);
         // - speaker (with non-unique pair of name, company) could change his/her company.
-        Long resourceSpeakerId = knownSpeakerIdsMap.get(
+        Long resourceSpeakerId = speakerLoadMaps.getKnownSpeakerIdsMap().get(
                 new NameCompany(
                         LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
                         LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN)));
         if (resourceSpeakerId != null) {
-            Speaker resourceSpeaker = resourceSpeakerIdsMap.get(resourceSpeakerId);
+            Speaker resourceSpeaker = speakerLoadMaps.getResourceSpeakerIdsMap().get(resourceSpeakerId);
 
             return Objects.requireNonNull(resourceSpeaker,
                     () -> String.format("Resource speaker id %d not found (change id of known speaker '%s' and company '%s' in method parameters and rerun loading)",
@@ -853,25 +811,25 @@ public class ConferenceDataLoader {
         }
 
         // Find in resource speakers by Russian (name, company) pair
-        Speaker resourceSpeaker = findResourceSpeakerByNameCompany(speaker, resourceRuNameCompanySpeakers, Language.RUSSIAN);
+        Speaker resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceRuNameCompanySpeakers(), Language.RUSSIAN);
         if (resourceSpeaker != null) {
             return resourceSpeaker;
         }
 
         // Find in resource speakers by English (name, company) pair
-        resourceSpeaker = findResourceSpeakerByNameCompany(speaker, resourceEnNameCompanySpeakers, Language.ENGLISH);
+        resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceEnNameCompanySpeakers(), Language.ENGLISH);
         if (resourceSpeaker != null) {
             return resourceSpeaker;
         }
 
         // Find in resource speakers by Russian name
-        resourceSpeaker = findResourceSpeakerByName(speaker, resourceRuNameSpeakers, Language.RUSSIAN);
+        resourceSpeaker = findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceRuNameSpeakers(), Language.RUSSIAN);
         if (resourceSpeaker != null) {
             return resourceSpeaker;
         }
 
         // Find in resource speakers by English name
-        return findResourceSpeakerByName(speaker, resourceEnNameSpeakers, Language.ENGLISH);
+        return findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceEnNameSpeakers(), Language.ENGLISH);
     }
 
     private static Talk findResourceTalk(Talk talk,
