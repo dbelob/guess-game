@@ -747,23 +747,7 @@ public class ConferenceDataLoader {
             );
 
             talksToDelete = resourceEvent.getTalks().stream()
-                    .filter(dt -> {
-                        if (talks.contains(dt)) {
-                            return false;
-                        } else {
-                            boolean talkExistsInAnyOtherEvent = resourceEvents.stream()
-                                    .filter(e -> !e.equals(resourceEvent))
-                                    .flatMap(e -> e.getTalks().stream())
-                                    .anyMatch(rt -> rt.equals(dt));
-
-                            if (talkExistsInAnyOtherEvent) {
-                                log.warn("Deleting '{}' talk exists in other events and can't be deleted",
-                                        LocalizationUtils.getString(dt.getName(), Language.ENGLISH));
-                            }
-
-                            return !talkExistsInAnyOtherEvent;
-                        }
-                    })
+                    .filter(dt -> needDeleteTalk(talks, dt, resourceEvents, resourceEvent))
                     .collect(Collectors.toList());
         }
 
@@ -772,6 +756,33 @@ public class ConferenceDataLoader {
                 talksToAppend,
                 talksToUpdate
         );
+    }
+
+    /**
+     * Indicates the need to delete talk.
+     *
+     * @param talks          talks
+     * @param resourceTalk   resource talk
+     * @param resourceEvents resource events
+     * @param resourceEvent  resource event
+     * @return need to delete talk
+     */
+    static boolean needDeleteTalk(List<Talk> talks, Talk resourceTalk, List<Event> resourceEvents, Event resourceEvent) {
+        if (talks.contains(resourceTalk)) {
+            return false;
+        } else {
+            boolean talkExistsInAnyOtherEvent = resourceEvents.stream()
+                    .filter(e -> !e.equals(resourceEvent))
+                    .flatMap(e -> e.getTalks().stream())
+                    .anyMatch(rt -> rt.equals(resourceTalk));
+
+            if (talkExistsInAnyOtherEvent) {
+                log.warn("Deleting '{}' talk exists in other events and can't be deleted",
+                        LocalizationUtils.getString(resourceTalk.getName(), Language.ENGLISH));
+            }
+
+            return !talkExistsInAnyOtherEvent;
+        }
     }
 
     /**
@@ -1026,6 +1037,12 @@ public class ConferenceDataLoader {
         return venueAddress;
     }
 
+    /**
+     * Fixes place venue address.
+     *
+     * @param place place
+     * @return fixed place
+     */
     private static List<LocaleItem> fixVenueAddress(Place place) {
         final String ONLINE_ENGLISH = "Online";
         final String ONLINE_RUSSIAN = "Онлайн";
