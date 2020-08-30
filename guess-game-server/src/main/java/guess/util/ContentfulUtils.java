@@ -902,8 +902,8 @@ public class ContentfulUtils {
     /**
      * Extracts local items.
      *
-     * @param enText               english text
-     * @param ruText               russian text
+     * @param enText               English text
+     * @param ruText               Russian text
      * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
      * @return local items
      */
@@ -941,8 +941,8 @@ public class ContentfulUtils {
     /**
      * Extracts local items.
      *
-     * @param enText english text
-     * @param ruText russian text
+     * @param enText English text
+     * @param ruText Russian text
      * @return local items
      */
     static List<LocaleItem> extractLocaleItems(String enText, String ruText) {

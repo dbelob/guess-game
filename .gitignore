@@ -4,10 +4,6 @@ target/
 !**/src/main/**
 !**/src/test/**
 
-### Private SSH Key ###
-deploy_rsa
-/key.bin
-
 ### STS ###
 .apt_generated
 .classpath
