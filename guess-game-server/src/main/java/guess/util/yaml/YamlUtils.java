@@ -267,7 +267,7 @@ public class YamlUtils {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static <T> void dump(T items, String filename) throws IOException, NoSuchFieldException {
+    public static <T> void dump(T items, String filename) throws IOException, NoSuchFieldException {
         File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
         FileUtils.checkAndCreateDirectory(file.getParentFile());
 
@@ -307,65 +307,5 @@ public class YamlUtils {
         eventTypesYaml.dump(items, writer);
 
         log.info("File '{}' saved", file.getAbsolutePath());
-    }
-
-    /**
-     * Dumps event types to file.
-     *
-     * @param eventTypes event types
-     * @param filename   filename
-     * @throws IOException          if file creation error occurs
-     * @throws NoSuchFieldException if field name is invalid
-     */
-    public static void dumpEventTypes(List<EventType> eventTypes, String filename) throws IOException, NoSuchFieldException {
-        dump(new EventTypeList(eventTypes), filename);
-    }
-
-    /**
-     * Dumps speakers to file.
-     *
-     * @param speakers speakers
-     * @param filename filename
-     * @throws IOException          if file creation error occurs
-     * @throws NoSuchFieldException if field name is invalid
-     */
-    public static void dumpSpeakers(List<Speaker> speakers, String filename) throws IOException, NoSuchFieldException {
-        dump(new SpeakerList(speakers), filename);
-    }
-
-    /**
-     * Dumps talks to file.
-     *
-     * @param talks    talks
-     * @param filename filename
-     * @throws IOException          if file creation error occurs
-     * @throws NoSuchFieldException if field name is invalid
-     */
-    public static void dumpTalks(List<Talk> talks, String filename) throws IOException, NoSuchFieldException {
-        dump(new TalkList(talks), filename);
-    }
-
-    /**
-     * Dumps event to file.
-     *
-     * @param event    event
-     * @param filename filename
-     * @throws IOException          if file creation error occurs
-     * @throws NoSuchFieldException if field name is invalid
-     */
-    public static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
-        dump(new EventList(Collections.singletonList(event)), filename);
-    }
-
-    /**
-     * Dumps place to file.
-     *
-     * @param place    place
-     * @param filename filename
-     * @throws IOException          if file creation error occurs
-     * @throws NoSuchFieldException if field name is invalid
-     */
-    public static void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
-        dump(new PlaceList(Collections.singletonList(place)), filename);
     }
 }

@@ -875,11 +875,11 @@ public class ConferenceDataLoader {
         Place placeToUpdate = placeLoadResult.getItemToUpdate();
 
         if (placeToAppend != null) {
-            YamlUtils.dumpPlace(placeToAppend, "place-to-append.yml");
+            dumpPlace(placeToAppend, "place-to-append.yml");
         }
 
         if (placeToUpdate != null) {
-            YamlUtils.dumpPlace(placeToUpdate, "place-to-update.yml");
+            dumpPlace(placeToUpdate, "place-to-update.yml");
         }
     }
 
@@ -895,11 +895,11 @@ public class ConferenceDataLoader {
         Event eventToUpdate = eventLoadResult.getItemToUpdate();
 
         if (eventToAppend != null) {
-            YamlUtils.dumpEvent(eventToAppend, "event-to-append.yml");
+            dumpEvent(eventToAppend, "event-to-append.yml");
         }
 
         if (eventToUpdate != null) {
-            YamlUtils.dumpEvent(eventToUpdate, "event-to-update.yml");
+            dumpEvent(eventToUpdate, "event-to-update.yml");
         }
     }
 
@@ -923,7 +923,7 @@ public class ConferenceDataLoader {
                 )
         );
 
-        YamlUtils.dumpEventTypes(eventTypes, filename);
+        YamlUtils.dump(new EventTypeList(eventTypes), filename);
     }
 
     /**
@@ -957,7 +957,7 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
 
-        YamlUtils.dumpSpeakers(speakers, filename);
+        YamlUtils.dump(new SpeakerList(speakers), filename);
 
     }
 
@@ -978,7 +978,31 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
         );
 
-        YamlUtils.dumpTalks(talks, filename);
+        YamlUtils.dump(new TalkList(talks), filename);
+    }
+
+    /**
+     * Dumps place to file.
+     *
+     * @param place    place
+     * @param filename filename
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
+        YamlUtils.dump(new PlaceList(Collections.singletonList(place)), filename);
+    }
+
+    /**
+     * Dumps event to file.
+     *
+     * @param event    event
+     * @param filename filename
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
+        YamlUtils.dump(new EventList(Collections.singletonList(event)), filename);
     }
 
     /**
