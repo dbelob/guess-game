@@ -8,7 +8,7 @@ import guess.domain.source.*;
 import guess.domain.source.image.UrlFilename;
 import guess.domain.source.load.LoadResult;
 import guess.domain.source.load.SpeakerLoadMaps;
-import guess.domain.source.load.SpeakerLoadResultPair;
+import guess.domain.source.load.SpeakerLoadResult;
 import guess.util.yaml.YamlUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,7 +48,7 @@ public class ConferenceDataLoader {
         // Find event types
         Map<Conference, EventType> resourceEventTypeMap = getResourceEventTypeMap(resourceEventTypes);
         AtomicLong lastEventTypeId = new AtomicLong(getLastId(resourceSourceInformation.getEventTypes()));
-        LoadResult<EventType> loadResult = getEventTypeLoadResult(contentfulEventTypes, resourceEventTypeMap, lastEventTypeId);
+        LoadResult<List<EventType>> loadResult = getEventTypeLoadResult(contentfulEventTypes, resourceEventTypeMap, lastEventTypeId);
 
         // Save files
         saveEventTypes(loadResult);
@@ -100,7 +100,7 @@ public class ConferenceDataLoader {
      * @param lastEventTypeId identifier of last event type
      * @return load result for event types
      */
-    static LoadResult<EventType> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference,
+    static LoadResult<List<EventType>> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference,
             EventType> eventTypeMap, AtomicLong lastEventTypeId) {
         List<EventType> eventTypesToAppend = new ArrayList<>();
         List<EventType> eventTypesToUpdate = new ArrayList<>();
@@ -141,9 +141,9 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveEventTypes(LoadResult<EventType> loadResult) throws IOException, NoSuchFieldException {
-        List<EventType> eventTypesToAppend = loadResult.getItemsToAppend();
-        List<EventType> eventTypesToUpdate = loadResult.getItemsToUpdate();
+    private static void saveEventTypes(LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
+        List<EventType> eventTypesToAppend = loadResult.getItemToAppend();
+        List<EventType> eventTypesToUpdate = loadResult.getItemToUpdate();
 
         if (eventTypesToAppend.isEmpty() && eventTypesToUpdate.isEmpty()) {
             log.info("All event types are up-to-date");
@@ -268,7 +268,7 @@ public class ConferenceDataLoader {
                         Collectors.toSet()
                 ));
         AtomicLong lastSpeakerId = new AtomicLong(getLastId(resourceSourceInformation.getSpeakers()));
-        SpeakerLoadResultPair speakerLoadResult = getSpeakerLoadResult(
+        SpeakerLoadResult speakerLoadResult = getSpeakerLoadResult(
                 contentfulSpeakers,
                 new SpeakerLoadMaps(
                         knownSpeakerIdsMap,
@@ -283,16 +283,13 @@ public class ConferenceDataLoader {
         fillSpeakerIds(contentfulTalks);
 
         AtomicLong lasTalksId = new AtomicLong(getLastId(resourceSourceInformation.getTalks()));
-        LoadResult<Talk> talkLoadResult = getTalkLoadResult(
+        LoadResult<List<Talk>> talkLoadResult = getTalkLoadResult(
                 contentfulTalks,
                 resourceEvent,
                 resourceSourceInformation.getEvents(),
                 lasTalksId);
 
         // Find place
-        Place placeToAppend = null;
-        Place placeToUpdate = null;
-        AtomicLong lastPlaceId = new AtomicLong(getLastId(resourceSourceInformation.getPlaces()));
         Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
                 .collect(Collectors.toMap(
                         p -> new CityVenueAddress(
@@ -310,19 +307,9 @@ public class ConferenceDataLoader {
         Place contentfulPlace = contentfulEvent.getPlace();
         contentfulPlace.setVenueAddress(fixVenueAddress(contentfulPlace));
         Place resourcePlace = findResourcePlace(contentfulPlace, resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces);
+        AtomicLong lastPlaceId = new AtomicLong(getLastId(resourceSourceInformation.getPlaces()));
+        LoadResult<Place> placeLoadResult = getPlaceLoadResult(contentfulPlace, resourcePlace, lastPlaceId);
 
-        if (resourcePlace == null) {
-            // Place not exists
-            contentfulPlace.setId(lastPlaceId.incrementAndGet());
-            placeToAppend = contentfulPlace;
-        } else {
-            // Place exists
-            contentfulPlace.setId(resourcePlace.getId());
-
-            if (ContentfulUtils.needUpdate(resourcePlace, contentfulPlace)) {
-                placeToUpdate = contentfulPlace;
-            }
-        }
         contentfulEvent.setPlaceId(contentfulPlace.getId());
 
         // Find event
@@ -332,84 +319,11 @@ public class ConferenceDataLoader {
         contentfulEvent.setTalkIds(contentfulTalks.stream()
                 .map(Talk::getId)
                 .collect(Collectors.toList()));
-        Event eventToAppend = null;
-        Event eventToUpdate = null;
 
-        if (resourceEvent == null) {
-            eventToAppend = contentfulEvent;
-        } else {
-            if (ContentfulUtils.needUpdate(resourceEvent, contentfulEvent)) {
-                eventToUpdate = contentfulEvent;
-            }
-        }
+        LoadResult<Event> eventLoadResult = getEventLoadResult(contentfulEvent, resourceEvent);
 
         // Save files
-        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemsToAppend();
-        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemsToUpdate();
-
-        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().getItemsToAppend();
-        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().getItemsToUpdate();
-
-        List<Talk> talksToDelete = talkLoadResult.getItemsToDelete();
-        List<Talk> talksToAppend = talkLoadResult.getItemsToAppend();
-        List<Talk> talksToUpdate = talkLoadResult.getItemsToUpdate();
-
-        if (urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
-                speakersToAppend.isEmpty() && speakersToUpdate.isEmpty() &&
-                talksToDelete.isEmpty() && talksToAppend.isEmpty() && talksToUpdate.isEmpty() &&
-                (eventToAppend == null) && (eventToUpdate == null) &&
-                (placeToAppend == null) && (placeToUpdate == null)) {
-            log.info("All speakers, talks, place and event are up-to-date");
-        } else {
-            YamlUtils.clearDumpDirectory();
-
-            if (!urlFilenamesToAppend.isEmpty()) {
-                logAndCreateSpeakerImages(urlFilenamesToAppend, "Speaker images (to append): {}");
-            }
-
-            if (!urlFilenamesToUpdate.isEmpty()) {
-                logAndCreateSpeakerImages(urlFilenamesToUpdate, "Speaker images (to update): {}");
-            }
-
-            if (!speakersToAppend.isEmpty()) {
-                logAndDumpSpeakers(speakersToAppend, "Speakers (to append resource file): {}", "speakers-to-append.yml");
-            }
-
-            if (!speakersToUpdate.isEmpty()) {
-                speakersToUpdate.sort(Comparator.comparing(Speaker::getId));
-                logAndDumpSpeakers(speakersToUpdate, "Speakers (to update resource file): {}", "speakers-to-update.yml");
-            }
-
-            if (!talksToDelete.isEmpty()) {
-                talksToDelete.sort(Comparator.comparing(Talk::getId));
-                logAndDumpTalks(talksToDelete, "Talks (to delete in resource file): {}", "talks-to-delete.yml");
-            }
-
-            if (!talksToAppend.isEmpty()) {
-                logAndDumpTalks(talksToAppend, "Talks (to append resource file): {}", "talks-to-append.yml");
-            }
-
-            if (!talksToUpdate.isEmpty()) {
-                talksToUpdate.sort(Comparator.comparing(Talk::getId));
-                logAndDumpTalks(talksToUpdate, "Talks (to update resource file): {}", "talks-to-update.yml");
-            }
-
-            if (placeToAppend != null) {
-                YamlUtils.dumpPlace(placeToAppend, "place-to-append.yml");
-            }
-
-            if (placeToUpdate != null) {
-                YamlUtils.dumpPlace(placeToUpdate, "place-to-update.yml");
-            }
-
-            if (eventToAppend != null) {
-                YamlUtils.dumpEvent(eventToAppend, "event-to-append.yml");
-            }
-
-            if (eventToUpdate != null) {
-                YamlUtils.dumpEvent(eventToUpdate, "event-to-update.yml");
-            }
-        }
+        saveFiles(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult);
     }
 
     /**
@@ -556,9 +470,9 @@ public class ConferenceDataLoader {
      * @return load result for speakers
      * @throws IOException if read error occurs
      */
-    static SpeakerLoadResultPair getSpeakerLoadResult(List<Speaker> speakers,
-                                                      SpeakerLoadMaps speakerLoadMaps,
-                                                      AtomicLong lastSpeakerId) throws IOException {
+    static SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
+                                                  SpeakerLoadMaps speakerLoadMaps,
+                                                  AtomicLong lastSpeakerId) throws IOException {
         List<Speaker> speakersToAppend = new ArrayList<>();
         List<Speaker> speakersToUpdate = new ArrayList<>();
         List<UrlFilename> urlFilenamesToAppend = new ArrayList<>();
@@ -601,18 +515,15 @@ public class ConferenceDataLoader {
             }
         }
 
-        return new SpeakerLoadResultPair(
+        return new SpeakerLoadResult(
                 new LoadResult<>(
                         Collections.emptyList(),
                         speakersToAppend,
-                        speakersToUpdate
-                ),
+                        speakersToUpdate),
                 new LoadResult<>(
                         Collections.emptyList(),
                         urlFilenamesToAppend,
-                        urlFilenamesToUpdate
-                )
-        );
+                        urlFilenamesToUpdate));
     }
 
     /**
@@ -701,8 +612,8 @@ public class ConferenceDataLoader {
      * @param lasTalksId     identifier of last talk
      * @return talk load result
      */
-    static LoadResult<Talk> getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
-                                              AtomicLong lasTalksId) {
+    static LoadResult<List<Talk>> getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
+                                                    AtomicLong lasTalksId) {
         List<Talk> talksToDelete = new ArrayList<>();
         List<Talk> talksToAppend = new ArrayList<>();
         List<Talk> talksToUpdate = new ArrayList<>();
@@ -754,8 +665,7 @@ public class ConferenceDataLoader {
         return new LoadResult<>(
                 talksToDelete,
                 talksToAppend,
-                talksToUpdate
-        );
+                talksToUpdate);
     }
 
     /**
@@ -782,6 +692,214 @@ public class ConferenceDataLoader {
             }
 
             return !talkExistsInAnyOtherEvent;
+        }
+    }
+
+    /**
+     * Gets place load result.
+     *
+     * @param place         place
+     * @param resourcePlace resource place
+     * @param lastPlaceId   identifier of last place
+     * @return place load result
+     */
+    static LoadResult<Place> getPlaceLoadResult(Place place, Place resourcePlace, AtomicLong lastPlaceId) {
+        Place placeToAppend = null;
+        Place placeToUpdate = null;
+
+        if (resourcePlace == null) {
+            // Place not exists
+            place.setId(lastPlaceId.incrementAndGet());
+            placeToAppend = place;
+        } else {
+            // Place exists
+            place.setId(resourcePlace.getId());
+
+            if (ContentfulUtils.needUpdate(resourcePlace, place)) {
+                placeToUpdate = place;
+            }
+        }
+
+        return new LoadResult<>(
+                null,
+                placeToAppend,
+                placeToUpdate);
+    }
+
+    /**
+     * Gets event load result.
+     *
+     * @param event         event
+     * @param resourceEvent resource event
+     * @return event load result
+     */
+    static LoadResult<Event> getEventLoadResult(Event event, Event resourceEvent) {
+        Event eventToAppend = null;
+        Event eventToUpdate = null;
+
+        if (resourceEvent == null) {
+            eventToAppend = event;
+        } else {
+            if (ContentfulUtils.needUpdate(resourceEvent, event)) {
+                eventToUpdate = event;
+            }
+        }
+
+        return new LoadResult<>(
+                null,
+                eventToAppend,
+                eventToUpdate);
+    }
+
+    /**
+     * Saves files.
+     *
+     * @param speakerLoadResult speaker load result
+     * @param talkLoadResult    talk load result
+     * @param placeLoadResult   place load result
+     * @param eventLoadResult   event load result
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+                                  LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
+        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
+
+        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().getItemToAppend();
+        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().getItemToUpdate();
+
+        List<Talk> talksToDelete = talkLoadResult.getItemToDelete();
+        List<Talk> talksToAppend = talkLoadResult.getItemToAppend();
+        List<Talk> talksToUpdate = talkLoadResult.getItemToUpdate();
+
+        Place placeToAppend = placeLoadResult.getItemToAppend();
+        Place placeToUpdate = placeLoadResult.getItemToUpdate();
+
+        Event eventToAppend = eventLoadResult.getItemToAppend();
+        Event eventToUpdate = eventLoadResult.getItemToUpdate();
+
+        if (urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
+                speakersToAppend.isEmpty() && speakersToUpdate.isEmpty() &&
+                talksToDelete.isEmpty() && talksToAppend.isEmpty() && talksToUpdate.isEmpty() &&
+                (eventToAppend == null) && (eventToUpdate == null) &&
+                (placeToAppend == null) && (placeToUpdate == null)) {
+            log.info("All speakers, talks, place and event are up-to-date");
+        } else {
+            YamlUtils.clearDumpDirectory();
+
+            saveImages(speakerLoadResult);
+            saveSpeakers(speakerLoadResult);
+            saveTalks(talkLoadResult);
+            savePlaces(placeLoadResult);
+            saveEvents(eventLoadResult);
+        }
+    }
+
+    /**
+     * Saves images.
+     *
+     * @param speakerLoadResult speaker load result
+     * @throws IOException if file creation error occurs
+     */
+    private static void saveImages(SpeakerLoadResult speakerLoadResult) throws IOException {
+        List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().getItemToAppend();
+        List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().getItemToUpdate();
+
+        if (!urlFilenamesToAppend.isEmpty()) {
+            logAndCreateSpeakerImages(urlFilenamesToAppend, "Speaker images (to append): {}");
+        }
+
+        if (!urlFilenamesToUpdate.isEmpty()) {
+            logAndCreateSpeakerImages(urlFilenamesToUpdate, "Speaker images (to update): {}");
+        }
+    }
+
+    /**
+     * Saves speakers.
+     *
+     * @param speakerLoadResult speaker load result
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void saveSpeakers(SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
+        List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
+        List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
+
+        if (!speakersToAppend.isEmpty()) {
+            logAndDumpSpeakers(speakersToAppend, "Speakers (to append resource file): {}", "speakers-to-append.yml");
+        }
+
+        if (!speakersToUpdate.isEmpty()) {
+            speakersToUpdate.sort(Comparator.comparing(Speaker::getId));
+            logAndDumpSpeakers(speakersToUpdate, "Speakers (to update resource file): {}", "speakers-to-update.yml");
+        }
+    }
+
+    /**
+     * Saves talks.
+     *
+     * @param talkLoadResult talk load result
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void saveTalks(LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
+        List<Talk> talksToDelete = talkLoadResult.getItemToDelete();
+        List<Talk> talksToAppend = talkLoadResult.getItemToAppend();
+        List<Talk> talksToUpdate = talkLoadResult.getItemToUpdate();
+
+        if (!talksToDelete.isEmpty()) {
+            talksToDelete.sort(Comparator.comparing(Talk::getId));
+            logAndDumpTalks(talksToDelete, "Talks (to delete in resource file): {}", "talks-to-delete.yml");
+        }
+
+        if (!talksToAppend.isEmpty()) {
+            logAndDumpTalks(talksToAppend, "Talks (to append resource file): {}", "talks-to-append.yml");
+        }
+
+        if (!talksToUpdate.isEmpty()) {
+            talksToUpdate.sort(Comparator.comparing(Talk::getId));
+            logAndDumpTalks(talksToUpdate, "Talks (to update resource file): {}", "talks-to-update.yml");
+        }
+    }
+
+    /**
+     * Saves places.
+     *
+     * @param placeLoadResult place load result
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void savePlaces(LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
+        Place placeToAppend = placeLoadResult.getItemToAppend();
+        Place placeToUpdate = placeLoadResult.getItemToUpdate();
+
+        if (placeToAppend != null) {
+            YamlUtils.dumpPlace(placeToAppend, "place-to-append.yml");
+        }
+
+        if (placeToUpdate != null) {
+            YamlUtils.dumpPlace(placeToUpdate, "place-to-update.yml");
+        }
+    }
+
+    /**
+     * Saves event.
+     *
+     * @param eventLoadResult event load result
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    private static void saveEvents(LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+        Event eventToAppend = eventLoadResult.getItemToAppend();
+        Event eventToUpdate = eventLoadResult.getItemToUpdate();
+
+        if (eventToAppend != null) {
+            YamlUtils.dumpEvent(eventToAppend, "event-to-append.yml");
+        }
+
+        if (eventToUpdate != null) {
+            YamlUtils.dumpEvent(eventToUpdate, "event-to-update.yml");
         }
     }
 
@@ -1007,14 +1125,25 @@ public class ConferenceDataLoader {
      * @param language                       language
      * @return resource place
      */
-    private static Place findResourcePlaceByCityVenueAddress(Place place, Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces, Language language) {
+    private static Place findResourcePlaceByCityVenueAddress(Place place,
+                                                             Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces,
+                                                             Language language) {
         return resourceCityVenueAddressPlaces.get(
                 new CityVenueAddress(
                         LocalizationUtils.getString(place.getCity(), language),
                         LocalizationUtils.getString(place.getVenueAddress(), language)));
     }
 
-    private static Place findResourcePlace(Place place, Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
+    /**
+     * Finds resource place by pair of city, venue address.
+     *
+     * @param place                            place
+     * @param resourceRuCityVenueAddressPlaces map of (city, venue address)/place in Russian
+     * @param resourceEnCityVenueAddressPlaces map of (city, venue address)/place in English
+     * @return resource place
+     */
+    private static Place findResourcePlace(Place place,
+                                           Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
                                            Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
         // Find in resource places by Russian (city, venue address) pair
         Place resourcePlace = findResourcePlaceByCityVenueAddress(place, resourceRuCityVenueAddressPlaces, Language.RUSSIAN);
@@ -1024,17 +1153,6 @@ public class ConferenceDataLoader {
 
         // Find in resource places by English (city, venue address) pair
         return findResourcePlaceByCityVenueAddress(place, resourceEnCityVenueAddressPlaces, Language.ENGLISH);
-    }
-
-    private static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
-        for (FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
-            if (fixingVenueAddress.getCity().equals(city) &&
-                    fixingVenueAddress.getInvalidVenueAddress().equals(venueAddress)) {
-                return fixingVenueAddress.getValidVenueAddress();
-            }
-        }
-
-        return venueAddress;
     }
 
     /**
@@ -1082,6 +1200,25 @@ public class ConferenceDataLoader {
                 ruFixingVenueAddresses);
 
         return ContentfulUtils.extractLocaleItems(enVenueAddress, ruVenueAddress, true);
+    }
+
+    /**
+     * Gets place venue address.
+     *
+     * @param city                 city
+     * @param venueAddress         original venue address
+     * @param fixingVenueAddresses fixing venue addresses
+     * @return resulting venue address
+     */
+    private static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
+        for (FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
+            if (fixingVenueAddress.getCity().equals(city) &&
+                    fixingVenueAddress.getInvalidVenueAddress().equals(venueAddress)) {
+                return fixingVenueAddress.getValidVenueAddress();
+            }
+        }
+
+        return venueAddress;
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {

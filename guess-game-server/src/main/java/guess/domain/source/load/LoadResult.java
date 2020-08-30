@@ -1,32 +1,30 @@
 package guess.domain.source.load;
 
-import java.util.List;
-
 /**
  * Load result.
  *
  * @param <T> type
  */
 public class LoadResult<T> {
-    private final List<T> itemsToDelete;
-    private final List<T> itemsToAppend;
-    private final List<T> itemsToUpdate;
+    private final T itemToDelete;
+    private final T itemToAppend;
+    private final T itemToUpdate;
 
-    public LoadResult(List<T> itemsToDelete, List<T> itemsToAppend, List<T> itemsToUpdate) {
-        this.itemsToDelete = itemsToDelete;
-        this.itemsToAppend = itemsToAppend;
-        this.itemsToUpdate = itemsToUpdate;
+    public LoadResult(T itemToDelete, T itemToAppend, T itemToUpdate) {
+        this.itemToDelete = itemToDelete;
+        this.itemToAppend = itemToAppend;
+        this.itemToUpdate = itemToUpdate;
     }
 
-    public List<T> getItemsToDelete() {
-        return itemsToDelete;
+    public T getItemToDelete() {
+        return itemToDelete;
     }
 
-    public List<T> getItemsToAppend() {
-        return itemsToAppend;
+    public T getItemToAppend() {
+        return itemToAppend;
     }
 
-    public List<T> getItemsToUpdate() {
-        return itemsToUpdate;
+    public T getItemToUpdate() {
+        return itemToUpdate;
     }
 }
