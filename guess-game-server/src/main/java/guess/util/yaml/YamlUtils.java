@@ -58,25 +58,38 @@ public class YamlUtils {
         Yaml placesYaml = new Yaml(new Constructor(PlaceList.class));
         Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(EventList.class));
 
-        // Read descriptions from YAML files
-        SpeakerList speakerList = speakersYaml.load(speakersResource.getInputStream());
-        Map<Long, Speaker> speakerMap = listToMap(speakerList.getSpeakers(), Speaker::getId);
-
-        TalkList talkList = talksYaml.load(talksResource.getInputStream());
-        Map<Long, Talk> talkMap = listToMap(talkList.getTalks(), Talk::getId);
-
-        EventTypeList eventTypeList = eventTypesYaml.load(eventTypesResource.getInputStream());
-        Map<Long, EventType> eventTypeMap = listToMap(eventTypeList.getEventTypes(), EventType::getId);
-
+        // Read from YAML files
         PlaceList placeList = placesYaml.load(placesResource.getInputStream());
-        Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
-
+        EventTypeList eventTypeList = eventTypesYaml.load(eventTypesResource.getInputStream());
         EventList eventList = eventsYaml.load(eventsResource.getInputStream());
+        SpeakerList speakerList = speakersYaml.load(speakersResource.getInputStream());
+        TalkList talkList = talksYaml.load(talksResource.getInputStream());
 
+        return getSourceInformation(placeList, eventTypeList, eventList, speakerList, talkList);
+    }
+
+    /**
+     * Gets source information from resource lists.
+     *
+     * @param placeList     places
+     * @param eventTypeList event types
+     * @param eventList     events
+     * @param speakerList   speakers
+     * @param talkList      talks
+     * @return source information
+     * @throws SpeakerDuplicatedException if speaker duplicated
+     */
+    static SourceInformation getSourceInformation(PlaceList placeList, EventTypeList eventTypeList, EventList eventList,
+                                                  SpeakerList speakerList, TalkList talkList) throws SpeakerDuplicatedException {
         // Find duplicates for speaker names and for speaker names with company name
         if (findSpeakerDuplicates(speakerList.getSpeakers())) {
             throw new SpeakerDuplicatedException();
         }
+
+        Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
+        Map<Long, Speaker> speakerMap = listToMap(speakerList.getSpeakers(), Speaker::getId);
+        Map<Long, EventType> eventTypeMap = listToMap(eventTypeList.getEventTypes(), EventType::getId);
+        Map<Long, Talk> talkMap = listToMap(talkList.getTalks(), Talk::getId);
 
         // Set event identifiers
         setEventIds(eventList.getEvents());

@@ -1,6 +1,7 @@
 package guess.domain.source;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Source information.
@@ -38,5 +39,33 @@ public class SourceInformation {
 
     public List<Talk> getTalks() {
         return talks;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SourceInformation that = (SourceInformation) o;
+        return Objects.equals(places, that.places) &&
+                Objects.equals(eventTypes, that.eventTypes) &&
+                Objects.equals(events, that.events) &&
+                Objects.equals(speakers, that.speakers) &&
+                Objects.equals(talks, that.talks);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(places, eventTypes, events, speakers, talks);
+    }
+
+    @Override
+    public String toString() {
+        return "SourceInformation{" +
+                "places=" + places +
+                ", eventTypes=" + eventTypes +
+                ", events=" + events +
+                ", speakers=" + speakers +
+                ", talks=" + talks +
+                '}';
     }
 }

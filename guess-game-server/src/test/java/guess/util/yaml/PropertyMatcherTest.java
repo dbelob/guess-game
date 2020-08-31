@@ -91,4 +91,42 @@ class PropertyMatcherTest {
             }
         }
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getClazz method tests")
+    class GetClazzTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(Identifiable.class, Collections.emptyList(), Identifiable.class),
+                    arguments(Identifier.class, Collections.emptyList(), Identifier.class),
+                    arguments(Nameable.class, List.of("id"), Nameable.class)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getClazz(Class<?> clazz, List<String> propertyNames, Class<?> expected) throws NoSuchFieldException {
+            assertEquals(expected, new PropertyMatcher(clazz, propertyNames).getClazz());
+        }
+
+        @Nested
+        @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+        @DisplayName("getPropertyNames method tests")
+        class GetPropertyNamesTest {
+            private Stream<Arguments> data() {
+                return Stream.of(
+                        arguments(Identifiable.class, Collections.emptyList(), Collections.emptyList()),
+                        arguments(Identifier.class, List.of("id"), List.of("id")),
+                        arguments(Nameable.class, List.of("id", "name"), List.of("id", "name"))
+                );
+            }
+
+            @ParameterizedTest
+            @MethodSource("data")
+            void getPropertyNames(Class<?> clazz, List<String> propertyNames, List<String> expected) throws NoSuchFieldException {
+                assertEquals(expected, new PropertyMatcher(clazz, propertyNames).getPropertyNames());
+            }
+        }
+    }
 }

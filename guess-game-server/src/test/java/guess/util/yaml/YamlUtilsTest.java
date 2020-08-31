@@ -1,5 +1,6 @@
 package guess.util.yaml;
 
+import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.source.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -20,6 +21,64 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("YamlUtils class tests")
 public class YamlUtilsTest {
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSourceInformation method tests (with exception)")
+    class GetSourceInformationTest {
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem("en", "name0")));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setName(List.of(new LocaleItem("en", "name0")));
+
+            PlaceList placeList = new PlaceList();
+            placeList.setPlaces(Collections.emptyList());
+
+            EventTypeList eventTypeList = new EventTypeList();
+            eventTypeList.setEventTypes(Collections.emptyList());
+
+            EventList eventList = new EventList();
+            eventList.setEvents(Collections.emptyList());
+
+            SpeakerList speakerList0 = new SpeakerList();
+            speakerList0.setSpeakers(List.of(speaker0));
+
+            SpeakerList speakerList1 = new SpeakerList();
+            speakerList1.setSpeakers(List.of(speaker0, speaker1));
+
+            TalkList talkList = new TalkList();
+            talkList.setTalks(Collections.emptyList());
+
+            return Stream.of(
+                    arguments(placeList, eventTypeList, eventList, speakerList0, talkList,
+                            new SourceInformation(
+                                    Collections.emptyList(),
+                                    Collections.emptyList(),
+                                    Collections.emptyList(),
+                                    List.of(speaker0),
+                                    Collections.emptyList()
+                            ),
+                            null),
+                    arguments(placeList, eventTypeList, eventList, speakerList1, talkList, null, SpeakerDuplicatedException.class)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSourceInformation(PlaceList placeList, EventTypeList eventTypeList, EventList eventList,
+                                  SpeakerList speakerList, TalkList talkList, SourceInformation expectedResult,
+                                  Class<? extends Exception> expectedException) throws SpeakerDuplicatedException {
+            if (expectedException == null) {
+                assertEquals(expectedResult, YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, speakerList, talkList));
+            } else {
+                assertThrows(expectedException, () -> YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, speakerList, talkList));
+            }
+        }
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("linkSpeakersToTalks method tests (with exception)")
