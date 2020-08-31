@@ -121,7 +121,7 @@ public class LocalizationUtils {
     }
 
     /**
-     * Gets speaker duplicates by name.
+     * Gets speaker duplicates.
      *
      * @param speakers         speakers
      * @param groupingFunction grouping function
