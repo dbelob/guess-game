@@ -32,7 +32,7 @@ public class YamlUtils {
     private static final Logger log = LoggerFactory.getLogger(YamlUtils.class);
 
     private static final String DATA_DIRECTORY_NAME = "data";
-    private static final String OUTPUT_DIRECTORY_NAME = "output";
+    public static final String OUTPUT_DIRECTORY_NAME = "output";
 
     private YamlUtils() {
     }
@@ -266,6 +266,7 @@ public class YamlUtils {
         if (Files.exists(directoryPath) && Files.isDirectory(directoryPath)) {
             try (Stream<Path> pathStream = Files.walk(directoryPath)) {
                 pathStream
+                        .sorted(Comparator.reverseOrder())
                         .map(Path::toFile)
                         .forEach(File::delete);
             }
