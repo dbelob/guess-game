@@ -22,7 +22,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("YamlUtils class tests")
 @TestMethodOrder(OrderAnnotation.class)
-public class YamlUtilsTest {
+class YamlUtilsTest {
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getSourceInformation method tests (with exception)")
