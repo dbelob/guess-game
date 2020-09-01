@@ -263,7 +263,7 @@ public class YamlUtils {
     public static void clearDumpDirectory() throws IOException {
         Path directoryPath = Path.of(OUTPUT_DIRECTORY_NAME);
 
-        if (Files.exists(directoryPath) && Files.isDirectory(directoryPath)) {
+        if (Files.exists(directoryPath)) {
             try (Stream<Path> pathStream = Files.walk(directoryPath)) {
                 pathStream
                         .sorted(Comparator.reverseOrder())

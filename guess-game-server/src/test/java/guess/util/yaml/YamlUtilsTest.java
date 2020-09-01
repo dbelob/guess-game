@@ -291,6 +291,7 @@ class YamlUtilsTest {
         Path directoryPath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME);
         Path filePath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME + "/file.ext");
 
+        // Delete directory
         assertFalse(Files.exists(filePath));
         assertFalse(Files.exists(directoryPath));
 
@@ -303,6 +304,15 @@ class YamlUtilsTest {
         YamlUtils.clearDumpDirectory();
 
         assertFalse(Files.exists(filePath));
+        assertFalse(Files.exists(directoryPath));
+
+        // Delete file
+        Files.createFile(directoryPath);
+
+        assertTrue(Files.exists(directoryPath) && !Files.isDirectory(directoryPath));
+
+        YamlUtils.clearDumpDirectory();
+
         assertFalse(Files.exists(directoryPath));
     }
 
