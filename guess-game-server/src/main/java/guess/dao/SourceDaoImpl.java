@@ -7,10 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Collections;
 import java.util.List;
-import java.util.function.Function;
-import java.util.function.LongFunction;
 import java.util.stream.Collectors;
 
 /**
