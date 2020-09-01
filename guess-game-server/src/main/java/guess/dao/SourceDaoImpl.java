@@ -56,31 +56,6 @@ public class SourceDaoImpl implements SourceDao {
     }
 
     @Override
-    public <T> List<T> getItemsByEventTypeIds(List<Long> eventTypeIds,
-                                              LongFunction<List<T>> eventTypeConferenceFunction,
-                                              Function<Void, List<T>> resultFunction) {
-        if (eventTypeIds.isEmpty()) {
-            return Collections.emptyList();
-        } else {
-            if (eventTypeIds.size() == 1) {
-                Long eventTypeId = eventTypeIds.get(0);
-
-                if (eventTypeId == null) {
-                    return Collections.emptyList();
-                }
-
-                EventType eventType = getEventTypeById(eventTypeId);
-
-                if (eventType.isEventTypeConference()) {
-                    return eventTypeConferenceFunction.apply(eventTypeId);
-                }
-            }
-
-            return resultFunction.apply(null);
-        }
-    }
-
-    @Override
     public List<Event> getEvents() {
         return sourceInformation.getEvents();
     }

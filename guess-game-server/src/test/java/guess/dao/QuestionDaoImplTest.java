@@ -1,24 +1,24 @@
 package guess.dao;
 
-import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.GuessMode;
 import guess.domain.question.QuestionSet;
 import guess.domain.question.SpeakerQuestion;
 import guess.domain.question.TalkQuestion;
-import guess.domain.source.*;
+import guess.domain.source.Event;
+import guess.domain.source.EventType;
+import guess.domain.source.Speaker;
+import guess.domain.source.Talk;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("QuestionDaoImpl class tests")
 class QuestionDaoImplTest {
@@ -112,15 +112,14 @@ class QuestionDaoImplTest {
         event2.setEventTypeId(2);
         event2.setEventType(eventType2);
 
-        SourceInformation sourceInformation = new SourceInformation(
-                Collections.emptyList(),
-                List.of(eventType0, eventType1, eventType2),
-                List.of(event0, event1, event2, event3),
-                List.of(speaker0, speaker1, speaker2, speaker3),
-                List.of(talk0, talk1, talk2));
-        SourceDao sourceDao = new SourceDaoImpl(sourceInformation);
+        EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+        Mockito.when(eventTypeDao.getEventTypeById(0)).thenReturn(eventType0);
+        Mockito.when(eventTypeDao.getEventTypeById(1)).thenReturn(eventType1);
 
-        questionDao = new QuestionDaoImpl(sourceDao, sourceDao);
+        EventDao eventDao = Mockito.mock(EventDao.class);
+        Mockito.when(eventDao.getEvents()).thenReturn(List.of(event0, event1, event2, event3));
+
+        questionDao = new QuestionDaoImpl(eventTypeDao, eventDao);
     }
 
     @Test
@@ -384,29 +383,5 @@ class QuestionDaoImplTest {
                 emptyEventIds,
                 null
         ));
-    }
-
-    @Test
-    void questionSetsImagesExistence() throws IOException, SpeakerDuplicatedException {
-        SourceDao dao = new SourceDaoImpl();
-        QuestionDao questionDao = new QuestionDaoImpl(dao, dao);
-        List<QuestionSet> questionSets = questionDao.getQuestionSets();
-
-        // All question sets
-        for (QuestionSet questionSet : questionSets) {
-            List<SpeakerQuestion> speakerQuestions = questionSet.getSpeakerQuestions();
-            assertTrue(speakerQuestions.size() > 0);
-            // All questions
-            for (SpeakerQuestion speakerQuestion : speakerQuestions) {
-                assertFileExistence("speakers/" + speakerQuestion.getSpeaker().getPhotoFileName());
-            }
-            assertFileExistence("events/" + questionSet.getEvent().getEventType().getLogoFileName());
-        }
-    }
-
-    private void assertFileExistence(String fileName) {
-        Path path = Paths.get(String.format("../guess-game-web/src/assets/images/%s", fileName));
-        assertTrue(Files.exists(path) && Files.isRegularFile(path),
-                String.format("Image file %s does not exist", path.toString()));
     }
 }
