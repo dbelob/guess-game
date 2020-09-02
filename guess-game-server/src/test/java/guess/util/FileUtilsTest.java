@@ -71,6 +71,11 @@ class FileUtilsTest {
 
         assertTrue(directory.exists() && directory.isDirectory());
 
+        // Try create directory again
+        FileUtils.checkAndCreateDirectory(directory);
+
+        assertTrue(directory.exists() && directory.isDirectory());
+
         FileUtils.deleteDirectory(DIRECTORY_NAME1);
 
         assertFalse(directory.exists());
