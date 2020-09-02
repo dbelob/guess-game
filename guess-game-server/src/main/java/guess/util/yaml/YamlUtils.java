@@ -17,13 +17,10 @@ import org.yaml.snakeyaml.nodes.Tag;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * YAML utility methods.
@@ -261,16 +258,7 @@ public class YamlUtils {
      * @throws IOException if file iteration occurs
      */
     public static void clearDumpDirectory() throws IOException {
-        Path directoryPath = Path.of(OUTPUT_DIRECTORY_NAME);
-
-        if (Files.exists(directoryPath)) {
-            try (Stream<Path> pathStream = Files.walk(directoryPath)) {
-                pathStream
-                        .sorted(Comparator.reverseOrder())
-                        .map(Path::toFile)
-                        .forEach(File::delete);
-            }
-        }
+        FileUtils.deleteDirectory(OUTPUT_DIRECTORY_NAME);
     }
 
     /**
@@ -278,7 +266,7 @@ public class YamlUtils {
      *
      * @param items    items
      * @param filename filename
-     * @throws IOException          if file creation error occurs
+     * @throws IOException          if deletion error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
     public static <T> void dump(T items, String filename) throws IOException, NoSuchFieldException {
