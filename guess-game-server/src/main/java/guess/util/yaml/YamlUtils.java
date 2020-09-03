@@ -29,7 +29,7 @@ public class YamlUtils {
     private static final Logger log = LoggerFactory.getLogger(YamlUtils.class);
 
     private static final String DATA_DIRECTORY_NAME = "data";
-    public static final String OUTPUT_DIRECTORY_NAME = "output";
+    static final String OUTPUT_DIRECTORY_NAME = "output";
 
     private YamlUtils() {
     }

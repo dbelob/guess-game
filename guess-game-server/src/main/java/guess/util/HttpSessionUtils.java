@@ -14,11 +14,11 @@ import java.util.List;
  * HttpSession utility methods.
  */
 public class HttpSessionUtils {
-    private static final String STATE_ATTRIBUTE_NAME = "state";
-    private static final String START_PARAMETERS_ATTRIBUTE_NAME = "startParameters";
-    private static final String QUESTION_ANSWERS_SET_ATTRIBUTE_NAME = "questionAnswersSet";
-    private static final String ANSWER_SETS_ATTRIBUTE_NAME = "answerSets";
-    private static final String LANGUAGE_ATTRIBUTE_NAME = "language";
+    static final String STATE_ATTRIBUTE_NAME = "state";
+    static final String START_PARAMETERS_ATTRIBUTE_NAME = "startParameters";
+    static final String QUESTION_ANSWERS_SET_ATTRIBUTE_NAME = "questionAnswersSet";
+    static final String ANSWER_SETS_ATTRIBUTE_NAME = "answerSets";
+    static final String LANGUAGE_ATTRIBUTE_NAME = "language";
 
     private HttpSessionUtils() {
     }
@@ -103,10 +103,6 @@ public class HttpSessionUtils {
         }
     }
 
-    public static void setLanguage(Language language, HttpSession httpSession) {
-        httpSession.setAttribute(LANGUAGE_ATTRIBUTE_NAME, language);
-    }
-
     public static Language getLanguage(HttpSession httpSession) {
         Object languageObject = httpSession.getAttribute(LANGUAGE_ATTRIBUTE_NAME);
 
@@ -115,5 +111,9 @@ public class HttpSessionUtils {
         } else {
             return Language.ENGLISH;
         }
+    }
+
+    public static void setLanguage(Language language, HttpSession httpSession) {
+        httpSession.setAttribute(LANGUAGE_ATTRIBUTE_NAME, language);
     }
 }
