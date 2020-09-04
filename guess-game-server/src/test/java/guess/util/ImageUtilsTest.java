@@ -7,6 +7,8 @@ import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
+import org.powermock.modules.junit4.PowerMockRunnerDelegate;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -18,6 +20,7 @@ import static org.junit.Assert.*;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest(ImageUtils.class)
+@PowerMockRunnerDelegate(SpringRunner.class)
 public class ImageUtilsTest {
     private static final String VALID_IMAGE_PATH = "../guess-game-web/src/assets/images/speakers/0000.jpg";
     private static final String INVALID_IMAGE_PATH = "../guess-game-web/src/assets/images/speakers/invalid.jpg";
