@@ -19,7 +19,7 @@ public class ImageUtils {
     private static final Logger log = LoggerFactory.getLogger(ImageUtils.class);
 
     private static final String OUTPUT_DIRECTORY_NAME = "output";
-    private static final int IMAGE_WIDTH = 400;
+    static final int IMAGE_WIDTH = 400;
 
     private ImageUtils() {
     }
@@ -35,8 +35,8 @@ public class ImageUtils {
         File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, destinationFileName));
         FileUtils.checkAndCreateDirectory(file.getParentFile());
 
-        BufferedImage image = getImageByUrl(sourceUrl);
-        ImageFormat imageFormat = getImageFormatByUrl(sourceUrl);
+        BufferedImage image = getImageByUrlString(sourceUrl);
+        ImageFormat imageFormat = getImageFormatByUrlString(sourceUrl);
 
         switch (imageFormat) {
             case JPG:
@@ -68,7 +68,7 @@ public class ImageUtils {
             BufferedImage fileImage = ImageIO.read(file);
 
             if (fileImage.getWidth() < IMAGE_WIDTH) {
-                BufferedImage urlImage = getImageByUrl(sourceUrl);
+                BufferedImage urlImage = getImageByUrlString(sourceUrl);
 
                 return (fileImage.getWidth() < urlImage.getWidth());
             } else {
@@ -82,28 +82,40 @@ public class ImageUtils {
     /**
      * Gets image by URL.
      *
-     * @param sourceUrl source URL
+     * @param url source URL
      * @return image
      * @throws IOException if read error occurs
      */
-    private static BufferedImage getImageByUrl(String sourceUrl) throws IOException {
-        String urlSpec = String.format("%s?w=%d", sourceUrl, IMAGE_WIDTH);
-        URL url = new URL(urlSpec);
+    static BufferedImage getImageByUrl(URL url) throws IOException {
         try {
             return ImageIO.read(url);
         } catch (IOException e) {
-            log.error("Can't get image by URL {}", urlSpec);
+            log.error("Can't get image by URL {}", url);
             throw e;
         }
     }
 
     /**
-     * Gets image format from URL.
+     * Gets image by URL string.
      *
-     * @param sourceUrl source URL
+     * @param urlString source URL string
+     * @return image
+     * @throws IOException if read error occurs
+     */
+    static BufferedImage getImageByUrlString(String urlString) throws IOException {
+        String urlSpec = String.format("%s?w=%d", urlString, IMAGE_WIDTH);
+        URL url = new URL(urlSpec);
+
+        return getImageByUrl(url);
+    }
+
+    /**
+     * Gets image format from URL string.
+     *
+     * @param sourceUrl source URL string
      * @return image format
      */
-    private static ImageFormat getImageFormatByUrl(String sourceUrl) {
+    static ImageFormat getImageFormatByUrlString(String sourceUrl) {
         int index = sourceUrl.lastIndexOf(".");
 
         if (index > 0) {
@@ -123,7 +135,7 @@ public class ImageUtils {
      * @param image PNG image
      * @return JPG image
      */
-    private static BufferedImage convertPngToJpg(BufferedImage image) {
+    static BufferedImage convertPngToJpg(BufferedImage image) {
         BufferedImage newImage = new BufferedImage(
                 image.getWidth(),
                 image.getHeight(),
