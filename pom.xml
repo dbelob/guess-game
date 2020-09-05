@@ -25,8 +25,8 @@
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <war.plugin.version>3.3.1</war.plugin.version>
 
+        <jmockit.version>1.49</jmockit.version>
         <logback.version>1.2.3</logback.version>
-        <powermock.version>2.0.7</powermock.version>
         <sl4j.version>1.7.30</sl4j.version>
         <snakeyaml.version>1.26</snakeyaml.version>
         <spring.boot.version>2.3.3.RELEASE</spring.boot.version>
@@ -132,6 +132,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
                 <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}"/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
+                    </argLine>
                     <reportFormat>plain</reportFormat>
                     <includes>
                         <include>**/*Test*.java</include>
@@ -174,15 +177,9 @@
 
             <!-- Tests -->
             <dependency>
-                <groupId>org.powermock</groupId>
-                <artifactId>powermock-api-mockito2</artifactId>
-                <version>${powermock.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.powermock</groupId>
-                <artifactId>powermock-module-junit4</artifactId>
-                <version>${powermock.version}</version>
+                <groupId>org.jmockit</groupId>
+                <artifactId>jmockit</artifactId>
+                <version>${jmockit.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>

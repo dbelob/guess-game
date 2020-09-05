@@ -1,14 +1,10 @@
 package guess.util;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-import org.powermock.modules.junit4.PowerMockRunnerDelegate;
-import org.springframework.test.context.junit4.SpringRunner;
+import mockit.Mock;
+import mockit.MockUp;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -16,18 +12,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Paths;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-@RunWith(PowerMockRunner.class)
-@PrepareForTest(ImageUtils.class)
-@PowerMockRunnerDelegate(SpringRunner.class)
+@DisplayName("ImageUtils class tests")
 public class ImageUtilsTest {
     private static final String VALID_IMAGE_PATH = "../guess-game-web/src/assets/images/speakers/0000.jpg";
     private static final String INVALID_IMAGE_PATH = "../guess-game-web/src/assets/images/speakers/invalid.jpg";
     private static URL validUrl;
     private static URL invalidUrl;
 
-    @BeforeClass
+    @BeforeAll
     public static void init() throws MalformedURLException {
         validUrl = Paths.get(VALID_IMAGE_PATH).toUri().toURL();
         invalidUrl = Paths.get(INVALID_IMAGE_PATH).toUri().toURL();
@@ -50,10 +44,16 @@ public class ImageUtilsTest {
                 1,
                 BufferedImage.TYPE_INT_RGB);
 
-        PowerMockito.mockStatic(ImageUtils.class);
-        Mockito.when(ImageUtils.getImageByUrlString(Mockito.anyString())).thenCallRealMethod();
-        Mockito.when(ImageUtils.getImageByUrl(validUrlWithParameters)).thenReturn(expected);
-        Mockito.when(ImageUtils.getImageByUrl(invalidUrlWithParameters)).thenThrow(IOException.class);
+        new MockUp<ImageUtils>() {
+            @Mock
+            BufferedImage getImageByUrl(URL url) throws IOException {
+                if (url.equals(validUrlWithParameters)) {
+                    return expected;
+                } else {
+                    throw new IOException();
+                }
+            }
+        };
 
         assertEquals(expected, ImageUtils.getImageByUrlString(validHttpUrlString));
         assertThrows(IOException.class, () -> ImageUtils.getImageByUrlString(invalidHttpUrlString));
