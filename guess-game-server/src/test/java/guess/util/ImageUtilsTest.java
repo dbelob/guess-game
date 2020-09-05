@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("ImageUtils class tests")
-public class ImageUtilsTest {
+class ImageUtilsTest {
     private static final String VALID_IMAGE_PATH = "../guess-game-web/src/assets/images/speakers/0000.jpg";
     private static final String INVALID_IMAGE_PATH = "../guess-game-web/src/assets/images/speakers/invalid.jpg";
     private static URL validUrl;
@@ -28,17 +28,16 @@ public class ImageUtilsTest {
     }
 
     @Test
-    public void getImageByUrl() throws IOException {
+    void getImageByUrl() throws IOException {
         assertNotNull(ImageUtils.getImageByUrl(validUrl));
         assertThrows(IOException.class, () -> ImageUtils.getImageByUrl(invalidUrl));
     }
 
     @Test
-    public void getImageByUrlString() throws IOException {
+    void getImageByUrlString() throws IOException {
         String validHttpUrlString = "http://valid.com";
         String invalidHttpUrlString = "http://invalid.com";
         URL validUrlWithParameters = new URL(String.format("%s?w=%d", validHttpUrlString, ImageUtils.IMAGE_WIDTH));
-        URL invalidUrlWithParameters = new URL(String.format("%s?w=%d", invalidHttpUrlString, ImageUtils.IMAGE_WIDTH));
         BufferedImage expected = new BufferedImage(
                 1,
                 1,
