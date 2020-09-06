@@ -3,6 +3,7 @@ package guess.dao;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.LongFunction;
@@ -17,7 +18,28 @@ public interface EventTypeDao {
 
     EventType getEventTypeByEvent(Event event);
 
-    <T> List<T> getItemsByEventTypeIds(List<Long> eventTypeIds,
-                                       LongFunction<List<T>> eventTypeConferenceFunction,
-                                       Function<Void, List<T>> resultFunction);
+    static <T> List<T> getItemsByEventTypeIds(List<Long> eventTypeIds,
+                                              LongFunction<List<T>> eventTypeConferenceFunction,
+                                              Function<Void, List<T>> resultFunction,
+                                              EventTypeDao eventTypeDao) {
+        if (eventTypeIds.isEmpty()) {
+            return Collections.emptyList();
+        } else {
+            if (eventTypeIds.size() == 1) {
+                Long eventTypeId = eventTypeIds.get(0);
+
+                if (eventTypeId == null) {
+                    return Collections.emptyList();
+                }
+
+                EventType eventType = eventTypeDao.getEventTypeById(eventTypeId);
+
+                if (eventType.isEventTypeConference()) {
+                    return eventTypeConferenceFunction.apply(eventTypeId);
+                }
+            }
+
+            return resultFunction.apply(null);
+        }
+    }
 }

@@ -1,18 +1,24 @@
 package guess.dao;
 
+import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
+import guess.domain.question.QuestionSet;
+import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("SourceDaoImpl class tests")
 class SourceDaoImplTest {
@@ -173,35 +179,6 @@ class SourceDaoImplTest {
     }
 
     @Test
-    void getItemsByEventTypeIds() {
-        assertEquals(Collections.emptyList(), sourceDao.getItemsByEventTypeIds(
-                Collections.emptyList(),
-                value -> Collections.singletonList(event2),
-                v -> Collections.singletonList(event3)
-        ));
-        assertEquals(Collections.emptyList(), sourceDao.getItemsByEventTypeIds(
-                Collections.singletonList(null),
-                value -> Collections.singletonList(event2),
-                v -> Collections.singletonList(event3)
-        ));
-        assertEquals(Collections.singletonList(event2), sourceDao.getItemsByEventTypeIds(
-                List.of(0L),
-                value -> Collections.singletonList(event2),
-                v -> Collections.singletonList(event3)
-        ));
-        assertEquals(Collections.singletonList(event3), sourceDao.getItemsByEventTypeIds(
-                List.of(1L),
-                value -> Collections.singletonList(event2),
-                v -> Collections.singletonList(event3)
-        ));
-        assertEquals(Collections.singletonList(event3), sourceDao.getItemsByEventTypeIds(
-                List.of(0L, 1L),
-                value -> Collections.singletonList(event2),
-                v -> Collections.singletonList(event3)
-        ));
-    }
-
-    @Test
     void getEvents() {
         assertEquals(List.of(event0, event1, event2), sourceDao.getEvents());
     }
@@ -274,5 +251,29 @@ class SourceDaoImplTest {
         assertEquals(List.of(talk2), sourceDao.getTalksBySpeaker(speaker3));
         assertEquals(Collections.emptyList(), sourceDao.getTalksBySpeaker(speaker4));
         assertEquals(Collections.emptyList(), sourceDao.getTalksBySpeaker(speaker5));
+    }
+
+    @Test
+    void questionSetsImagesExistence() throws IOException, SpeakerDuplicatedException {
+        SourceDao dao = new SourceDaoImpl();
+        QuestionDao questionDao = new QuestionDaoImpl(dao, dao);
+        List<QuestionSet> questionSets = questionDao.getQuestionSets();
+
+        // All question sets
+        for (QuestionSet questionSet : questionSets) {
+            List<SpeakerQuestion> speakerQuestions = questionSet.getSpeakerQuestions();
+            assertTrue(speakerQuestions.size() > 0);
+            // All questions
+            for (SpeakerQuestion speakerQuestion : speakerQuestions) {
+                assertFileExistence("speakers/" + speakerQuestion.getSpeaker().getPhotoFileName());
+            }
+            assertFileExistence("events/" + questionSet.getEvent().getEventType().getLogoFileName());
+        }
+    }
+
+    private void assertFileExistence(String fileName) {
+        Path path = Paths.get(String.format("../guess-game-web/src/assets/images/%s", fileName));
+        assertTrue(Files.exists(path) && Files.isRegularFile(path),
+                String.format("Image file %s does not exist", path.toString()));
     }
 }

@@ -2,25 +2,27 @@ package guess.util.yaml;
 
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.source.*;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("YamlUtils class tests")
-public class YamlUtilsTest {
+@TestMethodOrder(OrderAnnotation.class)
+class YamlUtilsTest {
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getSourceInformation method tests (with exception)")
@@ -271,5 +273,61 @@ public class YamlUtilsTest {
         void listToMap(List<Speaker> speakers, boolean expected) {
             assertEquals(expected, YamlUtils.findSpeakerDuplicates(speakers));
         }
+    }
+
+    @BeforeEach
+    void setUp() throws IOException {
+        YamlUtils.clearDumpDirectory();
+    }
+
+    @AfterEach
+    void tearDown() throws IOException {
+        YamlUtils.clearDumpDirectory();
+    }
+
+    @Test
+    @Order(1)
+    void clearDumpDirectory() throws IOException {
+        Path directoryPath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME);
+        Path filePath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME + "/file.ext");
+
+        // Delete directory
+        assertFalse(Files.exists(filePath));
+        assertFalse(Files.exists(directoryPath));
+
+        Files.createDirectory(directoryPath);
+        Files.createFile(filePath);
+
+        assertTrue(Files.exists(directoryPath) && Files.isDirectory(directoryPath));
+        assertTrue(Files.exists(filePath) && !Files.isDirectory(filePath));
+
+        YamlUtils.clearDumpDirectory();
+
+        assertFalse(Files.exists(filePath));
+        assertFalse(Files.exists(directoryPath));
+
+        // Delete file
+        Files.createFile(directoryPath);
+
+        assertTrue(Files.exists(directoryPath) && !Files.isDirectory(directoryPath));
+
+        YamlUtils.clearDumpDirectory();
+
+        assertFalse(Files.exists(directoryPath));
+    }
+
+    @Test
+    @Order(2)
+    void dump() throws IOException, NoSuchFieldException {
+        Path directoryPath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME);
+        Path filePath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME + "/event-types.yml");
+
+        assertFalse(Files.exists(filePath));
+        assertFalse(Files.exists(directoryPath));
+
+        YamlUtils.dump(new EventTypeList(Collections.emptyList()), "event-types.yml");
+
+        assertTrue(Files.exists(directoryPath) && Files.isDirectory(directoryPath));
+        assertTrue(Files.exists(filePath) && !Files.isDirectory(filePath));
     }
 }

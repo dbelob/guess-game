@@ -18,40 +18,40 @@ import java.util.Objects;
 public class ImageUtils {
     private static final Logger log = LoggerFactory.getLogger(ImageUtils.class);
 
-    private static final String OUTPUT_DIRECTORY_NAME = "output";
-    private static final int IMAGE_WIDTH = 400;
+    static final String OUTPUT_DIRECTORY_NAME = "output";
+    static final int IMAGE_WIDTH = 400;
 
     private ImageUtils() {
     }
 
     /**
-     * Creates image file from URL.
+     * Gets image by URL.
      *
-     * @param sourceUrl           source URL
-     * @param destinationFileName destination file name
-     * @throws IOException if file creation error occurs
+     * @param url source URL
+     * @return image
+     * @throws IOException if read error occurs
      */
-    public static void create(String sourceUrl, String destinationFileName) throws IOException {
-        File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, destinationFileName));
-        FileUtils.checkAndCreateDirectory(file.getParentFile());
-
-        BufferedImage image = getImageByUrl(sourceUrl);
-        ImageFormat imageFormat = getImageFormatByUrl(sourceUrl);
-
-        switch (imageFormat) {
-            case JPG:
-                // Nothing
-                break;
-            case PNG:
-                image = convertPngToJpg(image);
-                break;
-            default:
-                throw new IllegalStateException(String.format("Invalid image format %s for '%s' URL", imageFormat, sourceUrl));
+    static BufferedImage getImageByUrl(URL url) throws IOException {
+        try {
+            return ImageIO.read(url);
+        } catch (IOException e) {
+            log.error("Can't get image by URL {}", url);
+            throw e;
         }
+    }
 
-        if (!ImageIO.write(image, "jpg", file)) {
-            throw new IOException(String.format("Creation error for '%s' URL and '%s' file name", sourceUrl, destinationFileName));
-        }
+    /**
+     * Gets image by URL string.
+     *
+     * @param urlString source URL string
+     * @return image
+     * @throws IOException if read error occurs
+     */
+    static BufferedImage getImageByUrlString(String urlString) throws IOException {
+        String urlSpec = String.format("%s?w=%d", urlString, IMAGE_WIDTH);
+        URL url = new URL(urlSpec);
+
+        return getImageByUrl(url);
     }
 
     /**
@@ -63,47 +63,24 @@ public class ImageUtils {
      * @throws IOException if read error occurs
      */
     public static boolean needUpdate(String sourceUrl, String destinationFileName) throws IOException {
-        try {
-            File file = new File(String.format("guess-game-web/src/assets/images/speakers/%s", destinationFileName));
-            BufferedImage fileImage = ImageIO.read(file);
+        BufferedImage fileImage = getImageByUrl(new File(destinationFileName).toURI().toURL());
 
-            if (fileImage.getWidth() < IMAGE_WIDTH) {
-                BufferedImage urlImage = getImageByUrl(sourceUrl);
+        if (fileImage.getWidth() < IMAGE_WIDTH) {
+            BufferedImage urlImage = getImageByUrlString(sourceUrl);
 
-                return (fileImage.getWidth() < urlImage.getWidth());
-            } else {
-                return false;
-            }
-        } catch (IOException e) {
-            throw new IOException(String.format("Can't read image file %s for '%s' URL", destinationFileName, sourceUrl), e);
+            return (fileImage.getWidth() < urlImage.getWidth());
+        } else {
+            return false;
         }
     }
 
     /**
-     * Gets image by URL.
+     * Gets image format from URL string.
      *
-     * @param sourceUrl source URL
-     * @return image
-     * @throws IOException if read error occurs
-     */
-    private static BufferedImage getImageByUrl(String sourceUrl) throws IOException {
-        String urlSpec = String.format("%s?w=%d", sourceUrl, IMAGE_WIDTH);
-        URL url = new URL(urlSpec);
-        try {
-            return ImageIO.read(url);
-        } catch (IOException e) {
-            log.error("Can't get image by URL {}", urlSpec);
-            throw e;
-        }
-    }
-
-    /**
-     * Gets image format from URL.
-     *
-     * @param sourceUrl source URL
+     * @param sourceUrl source URL string
      * @return image format
      */
-    private static ImageFormat getImageFormatByUrl(String sourceUrl) {
+    static ImageFormat getImageFormatByUrlString(String sourceUrl) {
         int index = sourceUrl.lastIndexOf(".");
 
         if (index > 0) {
@@ -123,7 +100,7 @@ public class ImageUtils {
      * @param image PNG image
      * @return JPG image
      */
-    private static BufferedImage convertPngToJpg(BufferedImage image) {
+    static BufferedImage convertPngToJpg(BufferedImage image) {
         BufferedImage newImage = new BufferedImage(
                 image.getWidth(),
                 image.getHeight(),
@@ -131,5 +108,32 @@ public class ImageUtils {
         newImage.createGraphics().drawImage(image, 0, 0, Color.WHITE, null);
 
         return newImage;
+    }
+
+    /**
+     * Creates image file from URL.
+     *
+     * @param sourceUrl           source URL
+     * @param destinationFileName destination file name
+     * @throws IOException if file creation error occurs
+     */
+    public static void create(String sourceUrl, String destinationFileName) throws IOException {
+        File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, destinationFileName));
+        FileUtils.checkAndCreateDirectory(file.getParentFile());
+
+        BufferedImage image = getImageByUrlString(sourceUrl);
+        ImageFormat imageFormat = getImageFormatByUrlString(sourceUrl);
+
+        if (!ImageFormat.JPG.equals(imageFormat)) {
+            if (ImageFormat.PNG.equals(imageFormat)) {
+                image = convertPngToJpg(image);
+            } else {
+                throw new IllegalStateException(String.format("Invalid image format %s for '%s' URL", imageFormat, sourceUrl));
+            }
+        }
+
+        if (!ImageIO.write(image, "jpg", file)) {
+            throw new IOException(String.format("Creation error for '%s' URL and '%s' file name", sourceUrl, destinationFileName));
+        }
     }
 }

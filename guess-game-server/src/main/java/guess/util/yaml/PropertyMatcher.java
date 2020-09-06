@@ -22,6 +22,7 @@ public class PropertyMatcher {
     static Set<String> getClassFieldNames(Class<?> clazz) {
         List<Field> fields = Arrays.asList(clazz.getDeclaredFields());
         Set<String> result = fields.stream()
+                .filter(f -> !f.isSynthetic())
                 .map(Field::getName)
                 .collect(Collectors.toCollection(HashSet::new));
 

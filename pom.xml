@@ -18,13 +18,14 @@
         <clean.plugin.version>3.1.0</clean.plugin.version>
         <compiler.plugin.version>3.8.1</compiler.plugin.version>
         <frontend.plugin.version>1.10.0</frontend.plugin.version>
-        <jacoco.plugin.version>0.8.5</jacoco.plugin.version>
+        <jacoco.plugin.version>0.8.3</jacoco.plugin.version>
         <release.plugin.version>2.5.3</release.plugin.version>
         <resources.plugin.version>3.2.0</resources.plugin.version>
         <sonar.plugin.version>3.7.0.1746</sonar.plugin.version>
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <war.plugin.version>3.3.1</war.plugin.version>
 
+        <jmockit.version>1.49</jmockit.version>
         <logback.version>1.2.3</logback.version>
         <sl4j.version>1.7.30</sl4j.version>
         <snakeyaml.version>1.26</snakeyaml.version>
@@ -37,10 +38,10 @@
             **/guess/config/**/*,
             **/guess/domain/**/*,
             **/guess/dto/**/*,
-            **/guess/util/yaml/Custom*.java,
-            **/*Exception.java
+            **/guess/util/yaml/Custom*.*,
+            **/*Exception.*
         </sonar.coverage.exclusions>
-        <sonar.cpd.exclusions>**/guess/domain/source/contentful/**/*Fields*.java</sonar.cpd.exclusions>
+        <sonar.cpd.exclusions>**/guess/domain/source/contentful/**/*Fields*.*</sonar.cpd.exclusions>
         <sonar.exclusions>**/org/yaml/snakeyaml/**/*</sonar.exclusions>
     </properties>
 
@@ -104,9 +105,9 @@
                         <exclude>guess/config/**/*</exclude>
                         <exclude>guess/domain/**/*</exclude>
                         <exclude>guess/dto/**/*</exclude>
-                        <exclude>guess/util/yaml/Custom*.java</exclude>
+                        <exclude>guess/util/yaml/Custom*.*</exclude>
                         <exclude>org/yaml/snakeyaml/**/*</exclude>
-                        <exclude>**/*Exception.java</exclude>
+                        <exclude>**/*Exception.*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -131,6 +132,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire.plugin.version}</version>
                 <configuration>
+                    <argLine>
+                        @{argLine}
+                        -javaagent:"${settings.localRepository}"/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
+                    </argLine>
                     <reportFormat>plain</reportFormat>
                     <includes>
                         <include>**/*Test*.java</include>
@@ -169,6 +174,14 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>jul-to-slf4j</artifactId>
                 <version>${sl4j.version}</version>
+            </dependency>
+
+            <!-- Tests -->
+            <dependency>
+                <groupId>org.jmockit</groupId>
+                <artifactId>jmockit</artifactId>
+                <version>${jmockit.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

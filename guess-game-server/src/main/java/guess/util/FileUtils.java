@@ -2,12 +2,35 @@ package guess.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Comparator;
+import java.util.stream.Stream;
 
 /**
  * File utility methods.
  */
 public class FileUtils {
     private FileUtils() {
+    }
+
+    /**
+     * Deletes directory.
+     *
+     * @param directoryName directory name
+     * @throws IOException if file iteration occurs
+     */
+    public static void deleteDirectory(String directoryName) throws IOException {
+        Path directoryPath = Path.of(directoryName);
+
+        if (Files.exists(directoryPath)) {
+            try (Stream<Path> pathStream = Files.walk(directoryPath)) {
+                pathStream
+                        .sorted(Comparator.reverseOrder())
+                        .map(Path::toFile)
+                        .forEach(File::delete);
+            }
+        }
     }
 
     /**

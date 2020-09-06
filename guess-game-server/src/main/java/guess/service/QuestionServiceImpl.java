@@ -66,7 +66,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public List<Event> getEvents(List<Long> eventTypeIds) {
-        return eventTypeDao.getItemsByEventTypeIds(eventTypeIds,
+        return EventTypeDao.getItemsByEventTypeIds(eventTypeIds,
                 eventDao::getEventsByEventTypeId,
                 v -> {
                     final String ALL_EVENTS_OPTION_TEXT = "allEventsOptionText";
@@ -101,7 +101,8 @@ public class QuestionServiceImpl implements QuestionService {
                                     Collections.emptyList()
                             )
                     );
-                });
+                },
+                eventTypeDao);
     }
 
     @Override

@@ -2,6 +2,7 @@ package guess.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Start parameters.
@@ -33,5 +34,21 @@ public class StartParameters implements Serializable {
 
     public GuessMode getGuessMode() {
         return guessMode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StartParameters that = (StartParameters) o;
+        return quantity == that.quantity &&
+                Objects.equals(eventTypeIds, that.eventTypeIds) &&
+                Objects.equals(eventIds, that.eventIds) &&
+                guessMode == that.guessMode;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eventTypeIds, eventIds, guessMode, quantity);
     }
 }
