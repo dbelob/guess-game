@@ -38,10 +38,10 @@
             **/guess/config/**/*,
             **/guess/domain/**/*,
             **/guess/dto/**/*,
-            **/guess/util/yaml/Custom*.java,
-            **/*Exception.java
+            **/guess/util/yaml/Custom*.*,
+            **/*Exception.*
         </sonar.coverage.exclusions>
-        <sonar.cpd.exclusions>**/guess/domain/source/contentful/**/*Fields*.java</sonar.cpd.exclusions>
+        <sonar.cpd.exclusions>**/guess/domain/source/contentful/**/*Fields*.*</sonar.cpd.exclusions>
         <sonar.exclusions>**/org/yaml/snakeyaml/**/*</sonar.exclusions>
     </properties>
 
@@ -105,9 +105,9 @@
                         <exclude>guess/config/**/*</exclude>
                         <exclude>guess/domain/**/*</exclude>
                         <exclude>guess/dto/**/*</exclude>
-                        <exclude>guess/util/yaml/Custom*.java</exclude>
+                        <exclude>guess/util/yaml/Custom*.*</exclude>
                         <exclude>org/yaml/snakeyaml/**/*</exclude>
-                        <exclude>**/*Exception.java</exclude>
+                        <exclude>**/*Exception.*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
