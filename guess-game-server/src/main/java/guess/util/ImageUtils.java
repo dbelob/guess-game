@@ -18,65 +18,10 @@ import java.util.Objects;
 public class ImageUtils {
     private static final Logger log = LoggerFactory.getLogger(ImageUtils.class);
 
-    private static final String OUTPUT_DIRECTORY_NAME = "output";
+    static final String OUTPUT_DIRECTORY_NAME = "output";
     static final int IMAGE_WIDTH = 400;
 
     private ImageUtils() {
-    }
-
-    /**
-     * Creates image file from URL.
-     *
-     * @param sourceUrl           source URL
-     * @param destinationFileName destination file name
-     * @throws IOException if file creation error occurs
-     */
-    public static void create(String sourceUrl, String destinationFileName) throws IOException {
-        File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, destinationFileName));
-        FileUtils.checkAndCreateDirectory(file.getParentFile());
-
-        BufferedImage image = getImageByUrlString(sourceUrl);
-        ImageFormat imageFormat = getImageFormatByUrlString(sourceUrl);
-
-        switch (imageFormat) {
-            case JPG:
-                // Nothing
-                break;
-            case PNG:
-                image = convertPngToJpg(image);
-                break;
-            default:
-                throw new IllegalStateException(String.format("Invalid image format %s for '%s' URL", imageFormat, sourceUrl));
-        }
-
-        if (!ImageIO.write(image, "jpg", file)) {
-            throw new IOException(String.format("Creation error for '%s' URL and '%s' file name", sourceUrl, destinationFileName));
-        }
-    }
-
-    /**
-     * Checks for need to update file.
-     *
-     * @param sourceUrl           source URL
-     * @param destinationFileName destination file name
-     * @return {@code true} if need to update, {@code false} otherwise
-     * @throws IOException if read error occurs
-     */
-    public static boolean needUpdate(String sourceUrl, String destinationFileName) throws IOException {
-        try {
-            File file = new File(String.format("guess-game-web/src/assets/images/speakers/%s", destinationFileName));
-            BufferedImage fileImage = ImageIO.read(file);
-
-            if (fileImage.getWidth() < IMAGE_WIDTH) {
-                BufferedImage urlImage = getImageByUrlString(sourceUrl);
-
-                return (fileImage.getWidth() < urlImage.getWidth());
-            } else {
-                return false;
-            }
-        } catch (IOException e) {
-            throw new IOException(String.format("Can't read image file %s for '%s' URL", destinationFileName, sourceUrl), e);
-        }
     }
 
     /**
@@ -107,6 +52,26 @@ public class ImageUtils {
         URL url = new URL(urlSpec);
 
         return getImageByUrl(url);
+    }
+
+    /**
+     * Checks for need to update file.
+     *
+     * @param sourceUrl           source URL
+     * @param destinationFileName destination file name
+     * @return {@code true} if need to update, {@code false} otherwise
+     * @throws IOException if read error occurs
+     */
+    public static boolean needUpdate(String sourceUrl, String destinationFileName) throws IOException {
+        BufferedImage fileImage = getImageByUrl(new File(destinationFileName).toURI().toURL());
+
+        if (fileImage.getWidth() < IMAGE_WIDTH) {
+            BufferedImage urlImage = getImageByUrlString(sourceUrl);
+
+            return (fileImage.getWidth() < urlImage.getWidth());
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -143,5 +108,32 @@ public class ImageUtils {
         newImage.createGraphics().drawImage(image, 0, 0, Color.WHITE, null);
 
         return newImage;
+    }
+
+    /**
+     * Creates image file from URL.
+     *
+     * @param sourceUrl           source URL
+     * @param destinationFileName destination file name
+     * @throws IOException if file creation error occurs
+     */
+    public static void create(String sourceUrl, String destinationFileName) throws IOException {
+        File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, destinationFileName));
+        FileUtils.checkAndCreateDirectory(file.getParentFile());
+
+        BufferedImage image = getImageByUrlString(sourceUrl);
+        ImageFormat imageFormat = getImageFormatByUrlString(sourceUrl);
+
+        if (!ImageFormat.JPG.equals(imageFormat)) {
+            if (ImageFormat.PNG.equals(imageFormat)) {
+                image = convertPngToJpg(image);
+            } else {
+                throw new IllegalStateException(String.format("Invalid image format %s for '%s' URL", imageFormat, sourceUrl));
+            }
+        }
+
+        if (!ImageIO.write(image, "jpg", file)) {
+            throw new IOException(String.format("Creation error for '%s' URL and '%s' file name", sourceUrl, destinationFileName));
+        }
     }
 }

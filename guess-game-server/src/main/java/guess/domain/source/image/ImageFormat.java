@@ -7,7 +7,7 @@ public enum ImageFormat {
     JPG(List.of("jpg", "jpeg", "00_jpg_srz")),
     PNG(List.of("png"));
 
-    private List<String> fileExtensions;
+    private final List<String> fileExtensions;
 
     ImageFormat(List<String> fileExtensions) {
         this.fileExtensions = fileExtensions;

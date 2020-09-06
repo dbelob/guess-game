@@ -505,7 +505,7 @@ public class ConferenceDataLoader {
                 fillSpeakerJavaChampion(s, resourceSpeaker);
                 fillSpeakerMvp(s, resourceSpeaker);
 
-                if (ImageUtils.needUpdate(sourceUrl, destinationFileName)) {
+                if (ImageUtils.needUpdate(sourceUrl, String.format("guess-game-web/src/assets/images/speakers/%s", destinationFileName))) {
                     urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
                 }
 
