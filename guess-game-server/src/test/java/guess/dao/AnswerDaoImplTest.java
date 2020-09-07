@@ -66,7 +66,7 @@ class AnswerDaoImplTest {
             HttpSessionUtils.addAnswerSet(capturedAnswerSet = withCapture(), capturedHttpSession = withCapture());
             times = 1;
 
-            assertEquals(capturedAnswerSet, capturedAnswerSet);
+            assertEquals(answerSet, capturedAnswerSet);
             assertEquals(httpSession, capturedHttpSession);
         }};
     }
