@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("LocaleDaoImplTest class tests")
+@DisplayName("LocaleDaoImpl class tests")
 class LocaleDaoImplTest {
     private final static LocaleDao localeDao = new LocaleDaoImpl();
 
