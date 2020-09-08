@@ -8,7 +8,7 @@ updates:
       # Ignore JaCoCo updates until bug fixes in JMockit
       - dependency-name: "org.jacoco:jacoco-maven-plugin"
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/guess-game-web"
     schedule:
       interval: "daily"
   - package-ecosystem: "github-actions"
