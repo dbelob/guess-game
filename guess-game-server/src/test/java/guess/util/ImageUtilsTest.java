@@ -3,8 +3,8 @@ package guess.util;
 import guess.domain.source.image.ImageFormat;
 import mockit.Mock;
 import mockit.MockUp;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -37,13 +37,13 @@ class ImageUtilsTest {
         return new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
     }
 
-    @BeforeEach
-    void setUp() throws IOException {
+    @BeforeAll
+    static void setUp() throws IOException {
         FileUtils.deleteDirectory(ImageUtils.OUTPUT_DIRECTORY_NAME);
     }
 
-    @AfterEach
-    void tearDown() throws IOException {
+    @AfterAll
+    static void tearDown() throws IOException {
         FileUtils.deleteDirectory(ImageUtils.OUTPUT_DIRECTORY_NAME);
     }
 
