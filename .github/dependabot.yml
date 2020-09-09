@@ -11,10 +11,10 @@ updates:
     directory: "/guess-game-web"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "primeicons"
+      - dependency-name: "primeng"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "primeicons"
-      - dependency-name: "primeng"
