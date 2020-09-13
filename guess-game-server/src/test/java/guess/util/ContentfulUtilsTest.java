@@ -5,20 +5,35 @@ import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.contentful.ContentfulLink;
 import guess.domain.source.contentful.ContentfulSys;
+import guess.domain.source.contentful.eventtype.ContentfulEventType;
+import guess.domain.source.contentful.eventtype.ContentfulEventTypeFields;
+import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
+import guess.domain.source.contentful.locale.ContentfulLocale;
+import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
+import mockit.Expectations;
+import mockit.MockUp;
+import mockit.Mocked;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.springframework.web.client.RestTemplate;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,6 +42,68 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("ContentfulUtils class tests")
 public class ContentfulUtilsTest {
+    @Test
+    void getLocales(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
+        new Expectations() {{
+            ContentfulLocale locale0 = new ContentfulLocale();
+            locale0.setCode("en");
+
+            ContentfulLocale locale1 = new ContentfulLocale();
+            locale1.setCode("ru-RU");
+
+            ContentfulLocaleResponse response = new ContentfulLocaleResponse();
+            response.setItems(List.of(locale0, locale1));
+
+            restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulLocaleResponse.class);
+            result = response;
+        }};
+
+        new MockUp<ContentfulUtils>() {
+            RestTemplate getRestTemplate() {
+                return restTemplateMock;
+            }
+        };
+
+        assertEquals(List.of("en", "ru-RU"), ContentfulUtils.getLocales());
+    }
+
+    @Test
+    void getEventTypes(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
+        new Expectations() {{
+            ContentfulEventTypeFields contentfulEventTypeFields0 = new ContentfulEventTypeFields();
+            contentfulEventTypeFields0.setEventName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Name0"));
+            contentfulEventTypeFields0.setEventDescriptions(Collections.emptyMap());
+            contentfulEventTypeFields0.setSiteLink(Collections.emptyMap());
+
+            ContentfulEventTypeFields contentfulEventTypeFields1 = new ContentfulEventTypeFields();
+            contentfulEventTypeFields1.setEventName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Name1"));
+            contentfulEventTypeFields1.setEventDescriptions(Collections.emptyMap());
+            contentfulEventTypeFields1.setSiteLink(Collections.emptyMap());
+
+            ContentfulEventType eventType0 = new ContentfulEventType();
+            eventType0.setFields(contentfulEventTypeFields0);
+
+            ContentfulEventType eventType1 = new ContentfulEventType();
+            eventType1.setFields(contentfulEventTypeFields1);
+
+            ContentfulEventTypeResponse response = new ContentfulEventTypeResponse();
+            response.setItems(List.of(eventType0, eventType1));
+
+            restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulEventTypeResponse.class);
+            result = response;
+        }};
+
+        new MockUp<ContentfulUtils>() {
+            RestTemplate getRestTemplate() {
+                return restTemplateMock;
+            }
+        };
+
+        assertEquals(2, ContentfulUtils.getEventTypes().size());
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getFirstMapValue method tests")

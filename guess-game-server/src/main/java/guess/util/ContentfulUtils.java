@@ -11,6 +11,7 @@ import guess.domain.source.contentful.asset.ContentfulAsset;
 import guess.domain.source.contentful.city.ContentfulCity;
 import guess.domain.source.contentful.error.ContentfulErrorDetails;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
+import guess.domain.source.contentful.eventtype.ContentfulEventType;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
 import guess.domain.source.contentful.locale.ContentfulLocale;
 import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
@@ -65,8 +66,8 @@ public class ContentfulUtils {
 
     private static final int MAXIMUM_LIMIT = 1000;
 
-    private static final String ENGLISH_LOCALE = "en";
-    private static final String RUSSIAN_LOCALE = "ru-RU";
+    static final String ENGLISH_LOCALE = "en";
+    static final String RUSSIAN_LOCALE = "ru-RU";
 
     private enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
@@ -161,12 +162,16 @@ public class ContentfulUtils {
     private ContentfulUtils() {
     }
 
+    private static RestTemplate getRestTemplate() {
+        return restTemplate;
+    }
+
     /**
      * Gets locale codes.
      *
      * @return locale codes
      */
-    private static List<String> getLocales() {
+    static List<String> getLocales() {
         // https://cdn.contentful.com/spaces/{spaceId}/locales?access_token={accessToken}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -175,7 +180,7 @@ public class ContentfulUtils {
                 .buildAndExpand(MAIN_SPACE_ID, "locales")
                 .encode()
                 .toUri();
-        ContentfulLocaleResponse response = restTemplate.getForObject(uri, ContentfulLocaleResponse.class);
+        ContentfulLocaleResponse response = getRestTemplate().getForObject(uri, ContentfulLocaleResponse.class);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
@@ -202,45 +207,47 @@ public class ContentfulUtils {
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulEventTypeResponse response = restTemplate.getForObject(uri, ContentfulEventTypeResponse.class);
+        ContentfulEventTypeResponse response = getRestTemplate().getForObject(uri, ContentfulEventTypeResponse.class);
         AtomicLong id = new AtomicLong(-1);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .map(et -> {
-                    Map<String, String> vkLink = et.getFields().getVkLink();
-                    Map<String, String> twLink = et.getFields().getTwLink();
-                    Map<String, String> fbLink = et.getFields().getFbLink();
-                    Map<String, String> youtubeLink = et.getFields().getYoutubeLink();
-                    Map<String, String> telegramLink = et.getFields().getTelegramLink();
-
-                    return new EventType(
-                            new Nameable(
-                                    id.getAndDecrement(),
-                                    extractLocaleItems(
-                                            extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
-                                            extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
-                                    null,
-                                    extractLocaleItems(
-                                            extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
-                                            extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE)))
-                            ),
-                            EVENT_TYPE_NAME_CONFERENCE_MAP.get(getFirstMapValue(et.getFields().getEventName()).trim()),
-                            null,
-                            new EventType.EventTypeLinks(
-                                    extractLocaleItems(
-                                            extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
-                                            extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
-                                    (vkLink != null) ? getFirstMapValue(vkLink) : null,
-                                    (twLink != null) ? getFirstMapValue(twLink) : null,
-                                    (fbLink != null) ? getFirstMapValue(fbLink) : null,
-                                    (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
-                                    (telegramLink != null) ? getFirstMapValue(telegramLink) : null
-                            ),
-                            Collections.emptyList(),
-                            true);
-                })
+                .map(et -> createEventType(et, id))
                 .collect(Collectors.toList());
+    }
+
+    static EventType createEventType(ContentfulEventType et, AtomicLong id) {
+        Map<String, String> vkLink = et.getFields().getVkLink();
+        Map<String, String> twLink = et.getFields().getTwLink();
+        Map<String, String> fbLink = et.getFields().getFbLink();
+        Map<String, String> youtubeLink = et.getFields().getYoutubeLink();
+        Map<String, String> telegramLink = et.getFields().getTelegramLink();
+
+        return new EventType(
+                new Nameable(
+                        id.getAndDecrement(),
+                        extractLocaleItems(
+                                extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
+                                extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
+                        null,
+                        extractLocaleItems(
+                                extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
+                                extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE)))
+                ),
+                EVENT_TYPE_NAME_CONFERENCE_MAP.get(getFirstMapValue(et.getFields().getEventName()).trim()),
+                null,
+                new EventType.EventTypeLinks(
+                        extractLocaleItems(
+                                extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
+                                extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
+                        (vkLink != null) ? getFirstMapValue(vkLink) : null,
+                        (twLink != null) ? getFirstMapValue(twLink) : null,
+                        (fbLink != null) ? getFirstMapValue(fbLink) : null,
+                        (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
+                        (telegramLink != null) ? getFirstMapValue(telegramLink) : null
+                ),
+                Collections.emptyList(),
+                true);
     }
 
     /**
@@ -288,7 +295,7 @@ public class ContentfulUtils {
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulEventResponse response = restTemplate.getForObject(uri, ContentfulEventResponse.class);
+        ContentfulEventResponse response = getRestTemplate().getForObject(uri, ContentfulEventResponse.class);
         Map<String, ContentfulCity> cityMap = getCityMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getEntryErrorSet(response);
 
@@ -430,7 +437,7 @@ public class ContentfulUtils {
                 .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
+        ContentfulSpeakerResponse response = getRestTemplate().getForObject(uri, ContentfulSpeakerResponse.class);
         AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> assetErrorSet = getAssetErrorSet(response);
@@ -486,7 +493,7 @@ public class ContentfulUtils {
                 .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
+        ContentfulTalkResponse<? extends ContentfulTalkFields> response = getRestTemplate().getForObject(uri, conferenceSpaceInfo.talkResponseClass);
         AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getEntryErrorSet(response);
