@@ -41,7 +41,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("ContentfulUtils class tests")
-public class ContentfulUtilsTest {
+class ContentfulUtilsTest {
     @Test
     void getLocales(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
         new Expectations() {{
