@@ -2,14 +2,9 @@ package org.yaml.snakeyaml.emitter;
 
 import java.io.IOException;
 import java.io.Writer;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.yaml.snakeyaml.DumperOptions;
@@ -38,12 +33,23 @@ import org.yaml.snakeyaml.util.ArrayStack;
  * Custom SnakeYAML Emitter class.
  */
 public class CustomEmitter implements Emitable {
-    private static final Map<Character, String> ESCAPE_REPLACEMENTS = new HashMap<>();
     public static final int MIN_INDENT = 1;
     public static final int MAX_INDENT = 10;
+    private static final char[] SPACE = {' '};
 
-    private static final char[] SPACE = { ' ' };
+    private static final Pattern SPACES_PATTERN = Pattern.compile("\\s");
+    private static final Set<Character> INVALID_ANCHOR = new HashSet();
+    static {
+        INVALID_ANCHOR.add('[');
+        INVALID_ANCHOR.add(']');
+        INVALID_ANCHOR.add('{');
+        INVALID_ANCHOR.add('}');
+        INVALID_ANCHOR.add(',');
+        INVALID_ANCHOR.add('*');
+        INVALID_ANCHOR.add('&');
+    }
 
+    private static final Map<Character, String> ESCAPE_REPLACEMENTS = new HashMap<Character, String>();
     static {
         ESCAPE_REPLACEMENTS.put('\0', "0");
         ESCAPE_REPLACEMENTS.put('\u0007', "a");
@@ -62,7 +68,7 @@ public class CustomEmitter implements Emitable {
         ESCAPE_REPLACEMENTS.put('\u2029', "P");
     }
 
-    private static final Map<String, String> DEFAULT_TAG_PREFIXES = new LinkedHashMap<>();
+    private final static Map<String, String> DEFAULT_TAG_PREFIXES = new LinkedHashMap<String, String>();
     static {
         DEFAULT_TAG_PREFIXES.put("!", "!");
         DEFAULT_TAG_PREFIXES.put(Tag.PREFIX, "!!");
@@ -70,7 +76,7 @@ public class CustomEmitter implements Emitable {
     // The stream should have the methods `write` and possibly `flush`.
     private final Writer stream;
 
-    // Encoding is defined by Writer (cannot be overriden by STREAM-START.)
+    // Encoding is defined by Writer (cannot be overridden by STREAM-START.)
     // private Charset encoding;
 
     // Emitter is a state machine with a stack of states to handle nested
@@ -107,17 +113,18 @@ public class CustomEmitter implements Emitable {
     private boolean openEnded;
 
     // Formatting details.
-    private Boolean canonical;
+    private final Boolean canonical;
     // pretty print flow by adding extra line breaks
-    private Boolean prettyFlow;
+    private final Boolean prettyFlow;
 
-    private boolean allowUnicode;
+    private final boolean allowUnicode;
     private int bestIndent;
-    private int indicatorIndent;
+    private final int indicatorIndent;
+    private final boolean indentWithIndicator;
     private int bestWidth;
-    private char[] bestLineBreak;
-    private boolean splitLines;
-    private int maxSimpleKeyLength;
+    private final char[] bestLineBreak;
+    private final boolean splitLines;
+    private final int maxSimpleKeyLength;
 
     // Tag prefixes.
     private Map<String, String> tagPrefixes;
@@ -135,13 +142,13 @@ public class CustomEmitter implements Emitable {
         this.stream = stream;
         // Emitter is a state machine with a stack of states to handle nested
         // structures.
-        this.states = new ArrayStack<>(100);
+        this.states = new ArrayStack<EmitterState>(100);
         this.state = new CustomEmitter.ExpectStreamStart();
         // Current event and the event queue.
-        this.events = new ArrayBlockingQueue<>(100);
+        this.events = new ArrayBlockingQueue<Event>(100);
         this.event = null;
         // The current indentation level and the stack of previous indents.
-        this.indents = new ArrayStack<>(10);
+        this.indents = new ArrayStack<Integer>(10);
         this.indent = null;
         // Flow level.
         this.flowLevel = 0;
@@ -171,6 +178,7 @@ public class CustomEmitter implements Emitable {
             this.bestIndent = opts.getIndent();
         }
         this.indicatorIndent = opts.getIndicatorIndent();
+        this.indentWithIndicator = opts.getIndentWithIndicator();
         this.bestWidth = 80;
         if (opts.getWidth() > this.bestIndent * 2) {
             this.bestWidth = opts.getWidth();
@@ -180,7 +188,7 @@ public class CustomEmitter implements Emitable {
         this.maxSimpleKeyLength = opts.getMaxSimpleKeyLength();
 
         // Tag prefixes.
-        this.tagPrefixes = new LinkedHashMap<>();
+        this.tagPrefixes = new LinkedHashMap<String, String>();
 
         // Prepared anchor and tag.
         this.preparedAnchor = null;
@@ -281,7 +289,7 @@ public class CustomEmitter implements Emitable {
     }
 
     private class ExpectDocumentStart implements EmitterState {
-        private boolean first;
+        private final boolean first;
 
         public ExpectDocumentStart(boolean first) {
             this.first = first;
@@ -298,9 +306,9 @@ public class CustomEmitter implements Emitable {
                     String versionText = prepareVersion(ev.getVersion());
                     writeVersionDirective(versionText);
                 }
-                tagPrefixes = new LinkedHashMap<>(DEFAULT_TAG_PREFIXES);
+                tagPrefixes = new LinkedHashMap<String, String>(DEFAULT_TAG_PREFIXES);
                 if (ev.getTags() != null) {
-                    Set<String> handles = new TreeSet<>(ev.getTags().keySet());
+                    Set<String> handles = new TreeSet<String>(ev.getTags().keySet());
                     for (String handle : handles) {
                         String prefix = ev.getTags().get(handle);
                         tagPrefixes.put(prefix, handle);
@@ -316,7 +324,7 @@ public class CustomEmitter implements Emitable {
                 if (!implicit) {
                     writeIndent();
                     writeIndicator("---", true, false, false);
-                    if (Boolean.TRUE.equals(canonical)) {
+                    if (canonical) {
                         writeIndent();
                     }
                 }
@@ -372,14 +380,14 @@ public class CustomEmitter implements Emitable {
             if (event instanceof ScalarEvent) {
                 expectScalar();
             } else if (event instanceof SequenceStartEvent) {
-                if (flowLevel != 0 || Boolean.TRUE.equals(canonical) || ((SequenceStartEvent) event).isFlow()
+                if (flowLevel != 0 || canonical || ((SequenceStartEvent) event).isFlow()
                         || checkEmptySequence()) {
                     expectFlowSequence();
                 } else {
                     expectBlockSequence();
                 }
             } else {// MappingStartEvent
-                if (flowLevel != 0 || Boolean.TRUE.equals(canonical) || ((MappingStartEvent) event).isFlow()
+                if (flowLevel != 0 || canonical || ((MappingStartEvent) event).isFlow()
                         || checkEmptyMapping()) {
                     expectFlowMapping();
                 } else {
@@ -412,7 +420,7 @@ public class CustomEmitter implements Emitable {
         writeIndicator("[", true, true, false);
         flowLevel++;
         increaseIndent(true, false);
-        if (Boolean.TRUE.equals(prettyFlow)) {
+        if (prettyFlow) {
             writeIndent();
         }
         state = new CustomEmitter.ExpectFirstFlowSequenceItem();
@@ -426,7 +434,7 @@ public class CustomEmitter implements Emitable {
                 writeIndicator("]", false, false, false);
                 state = states.pop();
             } else {
-                if (canonical || (column > bestWidth && splitLines) || Boolean.TRUE.equals(prettyFlow)) {
+                if (canonical || (column > bestWidth && splitLines) || prettyFlow) {
                     writeIndent();
                 }
                 states.push(new CustomEmitter.ExpectFlowSequenceItem());
@@ -440,18 +448,18 @@ public class CustomEmitter implements Emitable {
             if (event instanceof SequenceEndEvent) {
                 indent = indents.pop();
                 flowLevel--;
-                if (Boolean.TRUE.equals(canonical)) {
+                if (canonical) {
                     writeIndicator(",", false, false, false);
                     writeIndent();
                 }
                 writeIndicator("]", false, false, false);
-                if (Boolean.TRUE.equals(prettyFlow)) {
+                if (prettyFlow) {
                     writeIndent();
                 }
                 state = states.pop();
             } else {
                 writeIndicator(",", false, false, false);
-                if (canonical || (column > bestWidth && splitLines) || Boolean.TRUE.equals(prettyFlow)) {
+                if (canonical || (column > bestWidth && splitLines) || prettyFlow) {
                     writeIndent();
                 }
                 states.push(new CustomEmitter.ExpectFlowSequenceItem());
@@ -466,7 +474,7 @@ public class CustomEmitter implements Emitable {
         writeIndicator("{", true, true, false);
         flowLevel++;
         increaseIndent(true, false);
-        if (Boolean.TRUE.equals(prettyFlow)) {
+        if (prettyFlow) {
             writeIndent();
         }
         state = new CustomEmitter.ExpectFirstFlowMappingKey();
@@ -480,10 +488,10 @@ public class CustomEmitter implements Emitable {
                 writeIndicator("}", false, false, false);
                 state = states.pop();
             } else {
-                if (canonical || (column > bestWidth && splitLines) || Boolean.TRUE.equals(prettyFlow)) {
+                if (canonical || (column > bestWidth && splitLines) || prettyFlow) {
                     writeIndent();
                 }
-                if (!Boolean.TRUE.equals(canonical) && checkSimpleKey()) {
+                if (!canonical && checkSimpleKey()) {
                     states.push(new CustomEmitter.ExpectFlowMappingSimpleValue());
                     expectNode(false, true, true);
                 } else {
@@ -500,21 +508,21 @@ public class CustomEmitter implements Emitable {
             if (event instanceof MappingEndEvent) {
                 indent = indents.pop();
                 flowLevel--;
-                if (Boolean.TRUE.equals(canonical)) {
+                if (canonical) {
                     writeIndicator(",", false, false, false);
                     writeIndent();
                 }
-                if (Boolean.TRUE.equals(prettyFlow)) {
+                if (prettyFlow) {
                     writeIndent();
                 }
                 writeIndicator("}", false, false, false);
                 state = states.pop();
             } else {
                 writeIndicator(",", false, false, false);
-                if (canonical || (column > bestWidth && splitLines) || Boolean.TRUE.equals(prettyFlow)) {
+                if (canonical || (column > bestWidth && splitLines) || prettyFlow) {
                     writeIndent();
                 }
-                if (!Boolean.TRUE.equals(canonical) && checkSimpleKey()) {
+                if (!canonical && checkSimpleKey()) {
                     states.push(new CustomEmitter.ExpectFlowMappingSimpleValue());
                     expectNode(false, true, true);
                 } else {
@@ -536,7 +544,7 @@ public class CustomEmitter implements Emitable {
 
     private class ExpectFlowMappingValue implements EmitterState {
         public void expect() throws IOException {
-            if (canonical || (column > bestWidth) || Boolean.TRUE.equals(prettyFlow)) {
+            if (canonical || (column > bestWidth) || prettyFlow) {
                 writeIndent();
             }
             writeIndicator(":", true, false, false);
@@ -547,7 +555,7 @@ public class CustomEmitter implements Emitable {
 
     // Block sequence handlers.
 
-    private void expectBlockSequence() {
+    private void expectBlockSequence() throws IOException {
         boolean indentless = mappingContext && !indention;
         increaseIndent(false, indentless);
         state = new CustomEmitter.ExpectFirstBlockSequenceItem();
@@ -560,7 +568,7 @@ public class CustomEmitter implements Emitable {
     }
 
     private class ExpectBlockSequenceItem implements EmitterState {
-        private boolean first;
+        private final boolean first;
 
         public ExpectBlockSequenceItem(boolean first) {
             this.first = first;
@@ -572,8 +580,13 @@ public class CustomEmitter implements Emitable {
                 state = states.pop();
             } else {
                 writeIndent();
-                writeWhitespace(indicatorIndent);
+                if (!indentWithIndicator || this.first) {
+                    writeWhitespace(indicatorIndent);
+                }
                 writeIndicator("-", true, false, true);
+                if (indentWithIndicator && this.first) {
+                    indent += indicatorIndent;
+                }
                 states.push(new CustomEmitter.ExpectBlockSequenceItem(false));
                 expectNode(false, false, false);
             }
@@ -581,7 +594,7 @@ public class CustomEmitter implements Emitable {
     }
 
     // Block mapping handlers.
-    private void expectBlockMapping() {
+    private void expectBlockMapping() throws IOException {
         increaseIndent(false, false);
         state = new CustomEmitter.ExpectFirstBlockMappingKey();
     }
@@ -593,7 +606,7 @@ public class CustomEmitter implements Emitable {
     }
 
     private class ExpectBlockMappingKey implements EmitterState {
-        private boolean first;
+        private final boolean first;
 
         public ExpectBlockMappingKey(boolean first) {
             this.first = first;
@@ -744,7 +757,7 @@ public class CustomEmitter implements Emitable {
         if (analysis == null) {
             analysis = analyzeScalar(ev.getValue());
         }
-        if (!ev.isPlain() && ev.getScalarStyle() == DumperOptions.ScalarStyle.DOUBLE_QUOTED || Boolean.TRUE.equals(this.canonical)) {
+        if (!ev.isPlain() && ev.getScalarStyle() == DumperOptions.ScalarStyle.DOUBLE_QUOTED || this.canonical) {
             return DumperOptions.ScalarStyle.DOUBLE_QUOTED;
         }
         if (ev.isPlain() && ev.getImplicit().canOmitTagInPlainScalar()) {
@@ -813,7 +826,7 @@ public class CustomEmitter implements Emitable {
         return version.getRepresentation();
     }
 
-    private static final Pattern HANDLE_FORMAT = Pattern.compile("^![-_\\w]*!$");
+    private final static Pattern HANDLE_FORMAT = Pattern.compile("^![-_\\w]*!$");
 
     private String prepareTagHandle(String handle) {
         if (handle.length() == 0) {
@@ -840,7 +853,7 @@ public class CustomEmitter implements Emitable {
             end++;
         }
         if (start < end) {
-            chunks.append(prefix.substring(start, end));
+            chunks.append(prefix, start, end);
         }
         return chunks.toString();
     }
@@ -874,14 +887,18 @@ public class CustomEmitter implements Emitable {
         return "!<" + suffixText + ">";
     }
 
-    private static final Pattern ANCHOR_FORMAT = Pattern.compile("^[-_\\w]*$");
-
     static String prepareAnchor(String anchor) {
         if (anchor.length() == 0) {
             throw new EmitterException("anchor must not be empty");
         }
-        if (!ANCHOR_FORMAT.matcher(anchor).matches()) {
-            throw new EmitterException("invalid character in the anchor: " + anchor);
+        for (Character invalid : INVALID_ANCHOR) {
+            if (anchor.indexOf(invalid) > -1) {
+                throw new EmitterException("Invalid character '" + invalid + "' in the anchor: " + anchor);
+            }
+        }
+        Matcher matcher = SPACES_PATTERN.matcher(anchor);
+        if (matcher.find()) {
+            throw new EmitterException("Anchor may not contain spaces: " + anchor);
         }
         return anchor;
     }
@@ -926,7 +943,7 @@ public class CustomEmitter implements Emitable {
             // Check for indicators.
             if (index == 0) {
                 // Leading indicators are special characters.
-                if ("#,[]{}&*!|>\'\"%@`".indexOf(c) != -1) {
+                if ("#,[]{}&*!|>'\"%@`".indexOf(c) != -1) {
                     flowIndicators = true;
                     blockIndicators = true;
                 }
@@ -1142,8 +1159,7 @@ public class CustomEmitter implements Emitable {
         writeIndicator("'", true, false, false);
         boolean spaces = false;
         boolean breaks = false;
-        int start = 0;
-        int end = 0;
+        int start = 0, end = 0;
         char ch;
         while (end <= text.length()) {
             ch = 0;
@@ -1179,7 +1195,7 @@ public class CustomEmitter implements Emitable {
                     start = end;
                 }
             } else {
-                if (Constant.LINEBR.has(ch, "\0 \'")) {
+                if (Constant.LINEBR.has(ch, "\0 '")) {
                     if (start < end) {
                         int len = end - start;
                         this.column += len;
@@ -1301,8 +1317,7 @@ public class CustomEmitter implements Emitable {
         boolean leadingSpace = true;
         boolean spaces = false;
         boolean breaks = true;
-        int start = 0;
-        int end = 0;
+        int start = 0, end = 0;
         while (end <= text.length()) {
             char ch = 0;
             if (end < text.length()) {
@@ -1365,8 +1380,7 @@ public class CustomEmitter implements Emitable {
         }
         writeLineBreak(null);
         boolean breaks = true;
-        int start = 0;
-        int end = 0;
+        int start = 0, end = 0;
         while (end <= text.length()) {
             char ch = 0;
             if (end < text.length()) {
@@ -1418,8 +1432,7 @@ public class CustomEmitter implements Emitable {
         this.indention = false;
         boolean spaces = false;
         boolean breaks = false;
-        int start = 0;
-        int end = 0;
+        int start = 0, end = 0;
         while (end <= text.length()) {
             char ch = 0;
             if (end < text.length()) {
