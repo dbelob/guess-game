@@ -5,6 +5,12 @@ import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.contentful.ContentfulLink;
 import guess.domain.source.contentful.ContentfulSys;
+import guess.domain.source.contentful.city.ContentfulCity;
+import guess.domain.source.contentful.city.ContentfulCityFields;
+import guess.domain.source.contentful.event.ContentfulEvent;
+import guess.domain.source.contentful.event.ContentfulEventFields;
+import guess.domain.source.contentful.event.ContentfulEventIncludes;
+import guess.domain.source.contentful.event.ContentfulEventResponse;
 import guess.domain.source.contentful.eventtype.ContentfulEventType;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeFields;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
@@ -96,12 +102,6 @@ class ContentfulUtilsTest {
             result = response;
         }};
 
-        new MockUp<ContentfulUtils>() {
-            RestTemplate getRestTemplate() {
-                return restTemplateMock;
-            }
-        };
-
         assertEquals(2, ContentfulUtils.getEventTypes().size());
     }
 
@@ -110,6 +110,12 @@ class ContentfulUtilsTest {
     @DisplayName("createEventType method tests")
     class CreateEventTypeTest {
         private Stream<Arguments> data() {
+            final String VK_LINK = "https://vk.com";
+            final String TWITTER_LINK = "https://twitter.com";
+            final String FACEBOOK_LINK = "https://twitter.com";
+            final String YOUTUBE_LINK = "https://youtube.com";
+            final String TELEGRAM_LINK = "https://telegram.org";
+
             ContentfulEventTypeFields contentfulEventTypeFields0 = new ContentfulEventTypeFields();
             contentfulEventTypeFields0.setEventName(Map.of(
                     ContentfulUtils.ENGLISH_LOCALE, "Name0"));
@@ -122,7 +128,7 @@ class ContentfulUtilsTest {
             contentfulEventTypeFields1.setEventDescriptions(Collections.emptyMap());
             contentfulEventTypeFields1.setSiteLink(Collections.emptyMap());
             contentfulEventTypeFields1.setVkLink(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "https://vk.com"));
+                    ContentfulUtils.ENGLISH_LOCALE, VK_LINK));
 
             ContentfulEventTypeFields contentfulEventTypeFields2 = new ContentfulEventTypeFields();
             contentfulEventTypeFields2.setEventName(Map.of(
@@ -130,7 +136,7 @@ class ContentfulUtilsTest {
             contentfulEventTypeFields2.setEventDescriptions(Collections.emptyMap());
             contentfulEventTypeFields2.setSiteLink(Collections.emptyMap());
             contentfulEventTypeFields2.setTwLink(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "https://twitter.com"));
+                    ContentfulUtils.ENGLISH_LOCALE, TWITTER_LINK));
 
             ContentfulEventTypeFields contentfulEventTypeFields3 = new ContentfulEventTypeFields();
             contentfulEventTypeFields3.setEventName(Map.of(
@@ -138,7 +144,7 @@ class ContentfulUtilsTest {
             contentfulEventTypeFields3.setEventDescriptions(Collections.emptyMap());
             contentfulEventTypeFields3.setSiteLink(Collections.emptyMap());
             contentfulEventTypeFields3.setFbLink(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "https://facebook.com"));
+                    ContentfulUtils.ENGLISH_LOCALE, FACEBOOK_LINK));
 
             ContentfulEventTypeFields contentfulEventTypeFields4 = new ContentfulEventTypeFields();
             contentfulEventTypeFields4.setEventName(Map.of(
@@ -146,7 +152,7 @@ class ContentfulUtilsTest {
             contentfulEventTypeFields4.setEventDescriptions(Collections.emptyMap());
             contentfulEventTypeFields4.setSiteLink(Collections.emptyMap());
             contentfulEventTypeFields4.setYoutubeLink(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "https://youtube.com"));
+                    ContentfulUtils.ENGLISH_LOCALE, YOUTUBE_LINK));
 
             ContentfulEventTypeFields contentfulEventTypeFields5 = new ContentfulEventTypeFields();
             contentfulEventTypeFields5.setEventName(Map.of(
@@ -154,7 +160,7 @@ class ContentfulUtilsTest {
             contentfulEventTypeFields5.setEventDescriptions(Collections.emptyMap());
             contentfulEventTypeFields5.setSiteLink(Collections.emptyMap());
             contentfulEventTypeFields5.setTelegramLink(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "https://telegram.org"));
+                    ContentfulUtils.ENGLISH_LOCALE, TELEGRAM_LINK));
 
             ContentfulEventType contentfulEventType0 = new ContentfulEventType();
             contentfulEventType0.setFields(contentfulEventTypeFields0);
@@ -179,23 +185,23 @@ class ContentfulUtilsTest {
 
             EventType eventType1 = new EventType();
             eventType1.setId(-1);
-            eventType1.setVkLink("https://vk.com");
+            eventType1.setVkLink(VK_LINK);
 
             EventType eventType2 = new EventType();
             eventType2.setId(-1);
-            eventType2.setTwitterLink("https://twitter.com");
+            eventType2.setTwitterLink(TWITTER_LINK);
 
             EventType eventType3 = new EventType();
             eventType3.setId(-1);
-            eventType3.setFacebookLink("https://facebook.com");
+            eventType3.setFacebookLink(FACEBOOK_LINK);
 
             EventType eventType4 = new EventType();
             eventType4.setId(-1);
-            eventType4.setYoutubeLink("https://youtube.com");
+            eventType4.setYoutubeLink(YOUTUBE_LINK);
 
             EventType eventType5 = new EventType();
             eventType5.setId(-1);
-            eventType5.setTelegramLink("https://telegram.org");
+            eventType5.setTelegramLink(TELEGRAM_LINK);
 
             return Stream.of(
                     arguments(contentfulEventType0, new AtomicLong(-1), eventType0),
@@ -248,6 +254,75 @@ class ContentfulUtilsTest {
         void getFirstMapValue(Map<String, String> map, String expected) {
             assertEquals(expected, ContentfulUtils.getFirstMapValue(map));
         }
+    }
+
+    @Test
+    void getEvents(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
+        new Expectations() {{
+            ContentfulSys contentfulSys0 = new ContentfulSys();
+            contentfulSys0.setId("sys0");
+
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("sys1");
+
+            ContentfulLink contentfulLink0 = new ContentfulLink();
+            contentfulLink0.setSys(contentfulSys0);
+
+            ContentfulLink contentfulLink1 = new ContentfulLink();
+            contentfulLink1.setSys(contentfulSys1);
+
+            ContentfulEventFields contentfulEventFields0 = new ContentfulEventFields();
+            contentfulEventFields0.setConferenceName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Event Name0"));
+            contentfulEventFields0.setEventStart(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-01T00:00+03:00"));
+            contentfulEventFields0.setEventCity(Map.of(ContentfulUtils.ENGLISH_LOCALE, contentfulLink0));
+
+            ContentfulEventFields contentfulEventFields1 = new ContentfulEventFields();
+            contentfulEventFields1.setConferenceName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Event Name1"));
+            contentfulEventFields1.setEventStart(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-01T00:00+03:00"));
+            contentfulEventFields1.setEventCity(Map.of(ContentfulUtils.ENGLISH_LOCALE, contentfulLink1));
+
+            ContentfulEvent event0 = new ContentfulEvent();
+            event0.setFields(contentfulEventFields0);
+
+            ContentfulEvent event1 = new ContentfulEvent();
+            event1.setFields(contentfulEventFields1);
+
+            // Events
+            ContentfulEventResponse response = new ContentfulEventResponse();
+            response.setItems(List.of(event0, event1));
+
+            // Cities
+            ContentfulCityFields contentfulCityFields0 = new ContentfulCityFields();
+            contentfulCityFields0.setCityName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "City Name0"));
+
+            ContentfulCityFields contentfulCityFields1 = new ContentfulCityFields();
+            contentfulCityFields1.setCityName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "City Name1"));
+
+            ContentfulCity contentfulCity0 = new ContentfulCity();
+            contentfulCity0.setSys(contentfulSys0);
+            contentfulCity0.setFields(contentfulCityFields0);
+
+            ContentfulCity contentfulCity1 = new ContentfulCity();
+            contentfulCity1.setSys(contentfulSys1);
+            contentfulCity1.setFields(contentfulCityFields1);
+
+            ContentfulEventIncludes contentfulEventIncludes = new ContentfulEventIncludes();
+            contentfulEventIncludes.setEntry(List.of(contentfulCity0, contentfulCity1));
+
+            response.setIncludes(contentfulEventIncludes);
+
+            restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulEventResponse.class);
+            result = response;
+        }};
+
+        assertEquals(2, ContentfulUtils.getEvents("JPoint", LocalDate.of(2020, 6, 29)).size());
+        assertEquals(2, ContentfulUtils.getEvents(null, LocalDate.of(2020, 6, 29)).size());
+        assertEquals(2, ContentfulUtils.getEvents("", LocalDate.of(2020, 6, 29)).size());
+        assertEquals(2, ContentfulUtils.getEvents("JPoint", null).size());
     }
 
     @Nested

@@ -10,6 +10,7 @@ import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.contentful.asset.ContentfulAsset;
 import guess.domain.source.contentful.city.ContentfulCity;
 import guess.domain.source.contentful.error.ContentfulErrorDetails;
+import guess.domain.source.contentful.event.ContentfulEvent;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
 import guess.domain.source.contentful.eventtype.ContentfulEventType;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
@@ -162,10 +163,6 @@ public class ContentfulUtils {
     private ContentfulUtils() {
     }
 
-    private static RestTemplate getRestTemplate() {
-        return restTemplate;
-    }
-
     /**
      * Gets locale codes.
      *
@@ -180,7 +177,7 @@ public class ContentfulUtils {
                 .buildAndExpand(MAIN_SPACE_ID, "locales")
                 .encode()
                 .toUri();
-        ContentfulLocaleResponse response = getRestTemplate().getForObject(uri, ContentfulLocaleResponse.class);
+        ContentfulLocaleResponse response = restTemplate.getForObject(uri, ContentfulLocaleResponse.class);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
@@ -207,7 +204,7 @@ public class ContentfulUtils {
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulEventTypeResponse response = getRestTemplate().getForObject(uri, ContentfulEventTypeResponse.class);
+        ContentfulEventTypeResponse response = restTemplate.getForObject(uri, ContentfulEventTypeResponse.class);
         AtomicLong id = new AtomicLong(-1);
 
         return Objects.requireNonNull(response)
@@ -271,7 +268,7 @@ public class ContentfulUtils {
      * @param startDate start date
      * @return events
      */
-    private static List<Event> getEvents(String eventName, LocalDate startDate) {
+    static List<Event> getEvents(String eventName, LocalDate startDate) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsCalendar&select={fields}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -295,56 +292,12 @@ public class ContentfulUtils {
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulEventResponse response = getRestTemplate().getForObject(uri, ContentfulEventResponse.class);
+        ContentfulEventResponse response = restTemplate.getForObject(uri, ContentfulEventResponse.class);
         Map<String, ContentfulCity> cityMap = getCityMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getEntryErrorSet(response);
 
         return response.getItems().stream()
-                .map(e -> {
-                    String nameEn = e.getFields().getConferenceName().get(ENGLISH_LOCALE);
-                    String nameRu = e.getFields().getConferenceName().get(RUSSIAN_LOCALE);
-                    if (nameEn == null) {
-                        nameEn = nameRu;
-                    }
-
-                    LocalDate eventStartDate = createEventLocalDate(getFirstMapValue(e.getFields().getEventStart()));
-                    LocalDate eventEndDate = (e.getFields().getEventEnd() != null) ?
-                            createEventLocalDate(getFirstMapValue(e.getFields().getEventEnd())) :
-                            eventStartDate;
-
-                    ContentfulLink eventCityLink = getFirstMapValue(e.getFields().getEventCity());
-                    Map<String, String> conferenceLink = e.getFields().getConferenceLink();
-                    Map<String, String> venueAddress = e.getFields().getVenueAddress();
-                    Map<String, String> youtubePlayList = e.getFields().getYoutubePlayList();
-                    Map<String, String> addressLink = e.getFields().getAddressLink();
-
-                    return new Event(
-                            -1L,
-                            null,
-                            extractLocaleItems(
-                                    extractEventName(nameEn, ENGLISH_LOCALE),
-                                    extractEventName(nameRu, RUSSIAN_LOCALE)),
-                            new Event.EventDates(
-                                    eventStartDate,
-                                    eventEndDate
-                            ),
-                            new Event.EventLinks(
-                                    extractLocaleItems(
-                                            extractLocaleValue(conferenceLink, ENGLISH_LOCALE),
-                                            extractLocaleValue(conferenceLink, RUSSIAN_LOCALE)),
-                                    (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null
-                            ),
-                            new Place(
-                                    -1,
-                                    extractLocaleItems(
-                                            extractCity(eventCityLink, cityMap, entryErrorSet, ENGLISH_LOCALE, nameEn),
-                                            extractCity(eventCityLink, cityMap, entryErrorSet, RUSSIAN_LOCALE, nameEn)),
-                                    extractLocaleItems(
-                                            extractLocaleValue(venueAddress, ENGLISH_LOCALE),
-                                            extractLocaleValue(venueAddress, RUSSIAN_LOCALE)),
-                                    (addressLink != null) ? getFirstMapValue(addressLink) : null),
-                            Collections.emptyList());
-                })
+                .map(e -> createEvent(e, cityMap, entryErrorSet))
                 .collect(Collectors.toList());
     }
 
@@ -361,6 +314,52 @@ public class ContentfulUtils {
                         LocalTime.of(0, 0, 0),
                         ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID)).toInstant(),
                 ZoneId.of("UTC"));
+    }
+
+    static Event createEvent(ContentfulEvent e, Map<String, ContentfulCity> cityMap, Set<String> entryErrorSet) {
+        String nameEn = e.getFields().getConferenceName().get(ENGLISH_LOCALE);
+        String nameRu = e.getFields().getConferenceName().get(RUSSIAN_LOCALE);
+        if (nameEn == null) {
+            nameEn = nameRu;
+        }
+
+        LocalDate eventStartDate = createEventLocalDate(getFirstMapValue(e.getFields().getEventStart()));
+        LocalDate eventEndDate = (e.getFields().getEventEnd() != null) ?
+                createEventLocalDate(getFirstMapValue(e.getFields().getEventEnd())) :
+                eventStartDate;
+
+        ContentfulLink eventCityLink = getFirstMapValue(e.getFields().getEventCity());
+        Map<String, String> conferenceLink = e.getFields().getConferenceLink();
+        Map<String, String> venueAddress = e.getFields().getVenueAddress();
+        Map<String, String> youtubePlayList = e.getFields().getYoutubePlayList();
+        Map<String, String> addressLink = e.getFields().getAddressLink();
+
+        return new Event(
+                -1L,
+                null,
+                extractLocaleItems(
+                        extractEventName(nameEn, ENGLISH_LOCALE),
+                        extractEventName(nameRu, RUSSIAN_LOCALE)),
+                new Event.EventDates(
+                        eventStartDate,
+                        eventEndDate
+                ),
+                new Event.EventLinks(
+                        extractLocaleItems(
+                                extractLocaleValue(conferenceLink, ENGLISH_LOCALE),
+                                extractLocaleValue(conferenceLink, RUSSIAN_LOCALE)),
+                        (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null
+                ),
+                new Place(
+                        -1,
+                        extractLocaleItems(
+                                extractCity(eventCityLink, cityMap, entryErrorSet, ENGLISH_LOCALE, nameEn),
+                                extractCity(eventCityLink, cityMap, entryErrorSet, RUSSIAN_LOCALE, nameEn)),
+                        extractLocaleItems(
+                                extractLocaleValue(venueAddress, ENGLISH_LOCALE),
+                                extractLocaleValue(venueAddress, RUSSIAN_LOCALE)),
+                        (addressLink != null) ? getFirstMapValue(addressLink) : null),
+                Collections.emptyList());
     }
 
     /**
@@ -437,7 +436,7 @@ public class ContentfulUtils {
                 .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulSpeakerResponse response = getRestTemplate().getForObject(uri, ContentfulSpeakerResponse.class);
+        ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
         AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> assetErrorSet = getAssetErrorSet(response);
@@ -493,7 +492,7 @@ public class ContentfulUtils {
                 .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulTalkResponse<? extends ContentfulTalkFields> response = getRestTemplate().getForObject(uri, conferenceSpaceInfo.talkResponseClass);
+        ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
         AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getEntryErrorSet(response);
