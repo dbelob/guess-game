@@ -34,6 +34,7 @@ import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -102,6 +103,122 @@ class ContentfulUtilsTest {
         };
 
         assertEquals(2, ContentfulUtils.getEventTypes().size());
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("createEventType method tests")
+    class CreateEventTypeTest {
+        private Stream<Arguments> data() {
+            ContentfulEventTypeFields contentfulEventTypeFields0 = new ContentfulEventTypeFields();
+            contentfulEventTypeFields0.setEventName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Name0"));
+            contentfulEventTypeFields0.setEventDescriptions(Collections.emptyMap());
+            contentfulEventTypeFields0.setSiteLink(Collections.emptyMap());
+
+            ContentfulEventTypeFields contentfulEventTypeFields1 = new ContentfulEventTypeFields();
+            contentfulEventTypeFields1.setEventName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Name1"));
+            contentfulEventTypeFields1.setEventDescriptions(Collections.emptyMap());
+            contentfulEventTypeFields1.setSiteLink(Collections.emptyMap());
+            contentfulEventTypeFields1.setVkLink(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "https://vk.com"));
+
+            ContentfulEventTypeFields contentfulEventTypeFields2 = new ContentfulEventTypeFields();
+            contentfulEventTypeFields2.setEventName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Name2"));
+            contentfulEventTypeFields2.setEventDescriptions(Collections.emptyMap());
+            contentfulEventTypeFields2.setSiteLink(Collections.emptyMap());
+            contentfulEventTypeFields2.setTwLink(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "https://twitter.com"));
+
+            ContentfulEventTypeFields contentfulEventTypeFields3 = new ContentfulEventTypeFields();
+            contentfulEventTypeFields3.setEventName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Name3"));
+            contentfulEventTypeFields3.setEventDescriptions(Collections.emptyMap());
+            contentfulEventTypeFields3.setSiteLink(Collections.emptyMap());
+            contentfulEventTypeFields3.setFbLink(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "https://facebook.com"));
+
+            ContentfulEventTypeFields contentfulEventTypeFields4 = new ContentfulEventTypeFields();
+            contentfulEventTypeFields4.setEventName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Name3"));
+            contentfulEventTypeFields4.setEventDescriptions(Collections.emptyMap());
+            contentfulEventTypeFields4.setSiteLink(Collections.emptyMap());
+            contentfulEventTypeFields4.setYoutubeLink(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "https://youtube.com"));
+
+            ContentfulEventTypeFields contentfulEventTypeFields5 = new ContentfulEventTypeFields();
+            contentfulEventTypeFields5.setEventName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Name3"));
+            contentfulEventTypeFields5.setEventDescriptions(Collections.emptyMap());
+            contentfulEventTypeFields5.setSiteLink(Collections.emptyMap());
+            contentfulEventTypeFields5.setTelegramLink(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "https://telegram.org"));
+
+            ContentfulEventType contentfulEventType0 = new ContentfulEventType();
+            contentfulEventType0.setFields(contentfulEventTypeFields0);
+
+            ContentfulEventType contentfulEventType1 = new ContentfulEventType();
+            contentfulEventType1.setFields(contentfulEventTypeFields1);
+
+            ContentfulEventType contentfulEventType2 = new ContentfulEventType();
+            contentfulEventType2.setFields(contentfulEventTypeFields2);
+
+            ContentfulEventType contentfulEventType3 = new ContentfulEventType();
+            contentfulEventType3.setFields(contentfulEventTypeFields3);
+
+            ContentfulEventType contentfulEventType4 = new ContentfulEventType();
+            contentfulEventType4.setFields(contentfulEventTypeFields4);
+
+            ContentfulEventType contentfulEventType5 = new ContentfulEventType();
+            contentfulEventType5.setFields(contentfulEventTypeFields5);
+
+            EventType eventType0 = new EventType();
+            eventType0.setId(-1);
+
+            EventType eventType1 = new EventType();
+            eventType1.setId(-1);
+            eventType1.setVkLink("https://vk.com");
+
+            EventType eventType2 = new EventType();
+            eventType2.setId(-1);
+            eventType2.setTwitterLink("https://twitter.com");
+
+            EventType eventType3 = new EventType();
+            eventType3.setId(-1);
+            eventType3.setFacebookLink("https://facebook.com");
+
+            EventType eventType4 = new EventType();
+            eventType4.setId(-1);
+            eventType4.setYoutubeLink("https://youtube.com");
+
+            EventType eventType5 = new EventType();
+            eventType5.setId(-1);
+            eventType5.setTelegramLink("https://telegram.org");
+
+            return Stream.of(
+                    arguments(contentfulEventType0, new AtomicLong(-1), eventType0),
+                    arguments(contentfulEventType1, new AtomicLong(-1), eventType1),
+                    arguments(contentfulEventType2, new AtomicLong(-1), eventType2),
+                    arguments(contentfulEventType3, new AtomicLong(-1), eventType3),
+                    arguments(contentfulEventType4, new AtomicLong(-1), eventType4),
+                    arguments(contentfulEventType5, new AtomicLong(-1), eventType5)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void createEventType(ContentfulEventType contentfulEventType, AtomicLong id, EventType expected) {
+            EventType actual = ContentfulUtils.createEventType(contentfulEventType, id);
+
+            assertEquals(expected, actual);
+            assertEquals(expected.getVkLink(), actual.getVkLink());
+            assertEquals(expected.getTwitterLink(), actual.getTwitterLink());
+            assertEquals(expected.getFacebookLink(), actual.getFacebookLink());
+            assertEquals(expected.getYoutubeLink(), actual.getYoutubeLink());
+            assertEquals(expected.getTelegramLink(), actual.getTelegramLink());
+        }
     }
 
     @Nested
