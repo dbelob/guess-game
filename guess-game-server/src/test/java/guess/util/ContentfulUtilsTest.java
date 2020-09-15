@@ -36,10 +36,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
@@ -340,6 +337,198 @@ class ContentfulUtilsTest {
         @MethodSource("data")
         void createUtcZonedDateTime(LocalDate localDate, ZonedDateTime expected) {
             assertEquals(expected, ContentfulUtils.createUtcZonedDateTime(localDate));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("createEvent method tests")
+    class CreateEventTest {
+        private Stream<Arguments> data() {
+            final String YOUTUBE_PLAY_LIST = "https://youtube.com";
+            final String MAP_COORDINATES = "59.762236, 30.356121";
+
+            ContentfulSys contentfulSys0 = new ContentfulSys();
+            contentfulSys0.setId("sys0");
+
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("sys1");
+
+            ContentfulSys contentfulSys2 = new ContentfulSys();
+            contentfulSys2.setId("sys2");
+
+            ContentfulSys contentfulSys3 = new ContentfulSys();
+            contentfulSys3.setId("sys3");
+
+            ContentfulSys contentfulSys4 = new ContentfulSys();
+            contentfulSys4.setId("sys4");
+
+            ContentfulLink contentfulLink0 = new ContentfulLink();
+            contentfulLink0.setSys(contentfulSys0);
+
+            ContentfulLink contentfulLink1 = new ContentfulLink();
+            contentfulLink1.setSys(contentfulSys1);
+
+            ContentfulLink contentfulLink2 = new ContentfulLink();
+            contentfulLink2.setSys(contentfulSys2);
+
+            ContentfulLink contentfulLink3 = new ContentfulLink();
+            contentfulLink3.setSys(contentfulSys3);
+
+            ContentfulLink contentfulLink4 = new ContentfulLink();
+            contentfulLink4.setSys(contentfulSys4);
+
+            ContentfulEventFields contentfulEventFields0 = new ContentfulEventFields();
+            contentfulEventFields0.setConferenceName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Event Name0"));
+            contentfulEventFields0.setEventStart(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-01T00:00+03:00"));
+            contentfulEventFields0.setEventCity(Map.of(ContentfulUtils.ENGLISH_LOCALE, contentfulLink0));
+
+            ContentfulEventFields contentfulEventFields1 = new ContentfulEventFields();
+            contentfulEventFields1.setConferenceName(Map.of(
+                    ContentfulUtils.RUSSIAN_LOCALE, "Наименование события1"));
+            contentfulEventFields1.setEventStart(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-01T00:00+03:00"));
+            contentfulEventFields1.setEventCity(Map.of(ContentfulUtils.ENGLISH_LOCALE, contentfulLink1));
+
+            ContentfulEventFields contentfulEventFields2 = new ContentfulEventFields();
+            contentfulEventFields2.setConferenceName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Event Name2"));
+            contentfulEventFields2.setEventStart(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-01T00:00+03:00"));
+            contentfulEventFields2.setEventEnd(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-02T00:00+03:00"));
+            contentfulEventFields2.setEventCity(Map.of(ContentfulUtils.ENGLISH_LOCALE, contentfulLink2));
+
+            ContentfulEventFields contentfulEventFields3 = new ContentfulEventFields();
+            contentfulEventFields3.setConferenceName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Event Name3"));
+            contentfulEventFields3.setEventStart(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-01T00:00+03:00"));
+            contentfulEventFields3.setEventCity(Map.of(ContentfulUtils.ENGLISH_LOCALE, contentfulLink3));
+            contentfulEventFields3.setYoutubePlayList(Map.of(ContentfulUtils.ENGLISH_LOCALE, YOUTUBE_PLAY_LIST));
+
+            ContentfulEventFields contentfulEventFields4 = new ContentfulEventFields();
+            contentfulEventFields4.setConferenceName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "Event Name4"));
+            contentfulEventFields4.setEventStart(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-01T00:00+03:00"));
+            contentfulEventFields4.setEventCity(Map.of(ContentfulUtils.ENGLISH_LOCALE, contentfulLink4));
+            contentfulEventFields4.setAddressLink(Map.of(ContentfulUtils.ENGLISH_LOCALE, MAP_COORDINATES));
+
+            ContentfulEvent contentfulEvent0 = new ContentfulEvent();
+            contentfulEvent0.setFields(contentfulEventFields0);
+
+            ContentfulEvent contentfulEvent1 = new ContentfulEvent();
+            contentfulEvent1.setFields(contentfulEventFields1);
+
+            ContentfulEvent contentfulEvent2 = new ContentfulEvent();
+            contentfulEvent2.setFields(contentfulEventFields2);
+
+            ContentfulEvent contentfulEvent3 = new ContentfulEvent();
+            contentfulEvent3.setFields(contentfulEventFields3);
+
+            ContentfulEvent contentfulEvent4 = new ContentfulEvent();
+            contentfulEvent4.setFields(contentfulEventFields4);
+
+            // Events
+            Event event0 = new Event();
+            event0.setId(-1);
+            event0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Event Name0")));
+            event0.setStartDate(LocalDate.of(2020, 1, 1));
+            event0.setEndDate(LocalDate.of(2020, 1, 1));
+
+            Event event1 = new Event();
+            event1.setId(-1);
+            event1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Наименование события1")));
+            event1.setStartDate(LocalDate.of(2020, 1, 1));
+            event1.setEndDate(LocalDate.of(2020, 1, 1));
+
+            Event event2 = new Event();
+            event2.setId(-1);
+            event2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Event Name2")));
+            event2.setStartDate(LocalDate.of(2020, 1, 1));
+            event2.setEndDate(LocalDate.of(2020, 1, 2));
+
+            Event event3 = new Event();
+            event3.setId(-1);
+            event3.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Event Name3")));
+            event3.setStartDate(LocalDate.of(2020, 1, 1));
+            event3.setEndDate(LocalDate.of(2020, 1, 1));
+            event3.setYoutubeLink(YOUTUBE_PLAY_LIST);
+
+            Place place4 = new Place();
+            place4.setMapCoordinates(MAP_COORDINATES);
+
+            Event event4 = new Event();
+            event4.setId(-1);
+            event4.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Event Name4")));
+            event4.setStartDate(LocalDate.of(2020, 1, 1));
+            event4.setEndDate(LocalDate.of(2020, 1, 1));
+            event4.setPlace(place4);
+
+            // Cities
+            ContentfulCityFields contentfulCityFields0 = new ContentfulCityFields();
+            contentfulCityFields0.setCityName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "City Name0"));
+
+            ContentfulCityFields contentfulCityFields1 = new ContentfulCityFields();
+            contentfulCityFields1.setCityName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "City Name1"));
+
+            ContentfulCityFields contentfulCityFields2 = new ContentfulCityFields();
+            contentfulCityFields2.setCityName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "City Name2"));
+
+            ContentfulCityFields contentfulCityFields3 = new ContentfulCityFields();
+            contentfulCityFields3.setCityName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "City Name3"));
+
+            ContentfulCityFields contentfulCityFields4 = new ContentfulCityFields();
+            contentfulCityFields4.setCityName(Map.of(
+                    ContentfulUtils.ENGLISH_LOCALE, "City Name4"));
+
+            ContentfulCity contentfulCity0 = new ContentfulCity();
+            contentfulCity0.setSys(contentfulSys0);
+            contentfulCity0.setFields(contentfulCityFields0);
+
+            ContentfulCity contentfulCity1 = new ContentfulCity();
+            contentfulCity1.setSys(contentfulSys1);
+            contentfulCity1.setFields(contentfulCityFields1);
+
+            ContentfulCity contentfulCity2 = new ContentfulCity();
+            contentfulCity2.setSys(contentfulSys1);
+            contentfulCity2.setFields(contentfulCityFields2);
+
+            ContentfulCity contentfulCity3 = new ContentfulCity();
+            contentfulCity3.setSys(contentfulSys1);
+            contentfulCity3.setFields(contentfulCityFields3);
+
+            ContentfulCity contentfulCity4 = new ContentfulCity();
+            contentfulCity4.setSys(contentfulSys1);
+            contentfulCity4.setFields(contentfulCityFields4);
+
+            Map<String, ContentfulCity> cityMap = Map.of("sys0", contentfulCity0, "sys1", contentfulCity1,
+                    "sys2", contentfulCity2, "sys3", contentfulCity3, "sys4", contentfulCity4);
+            Set<String> entryErrorSet = Collections.emptySet();
+
+            return Stream.of(
+                    arguments(contentfulEvent0, cityMap, entryErrorSet, event0),
+                    arguments(contentfulEvent1, cityMap, entryErrorSet, event1),
+                    arguments(contentfulEvent2, cityMap, entryErrorSet, event2),
+                    arguments(contentfulEvent3, cityMap, entryErrorSet, event3),
+                    arguments(contentfulEvent4, cityMap, entryErrorSet, event4)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void createEvent(ContentfulEvent contentfulEvent, Map<String, ContentfulCity> cityMap, Set<String> entryErrorSet, Event expected) {
+            Event actual = ContentfulUtils.createEvent(contentfulEvent, cityMap, entryErrorSet);
+
+            assertEquals(expected, actual);
+            assertEquals(expected.getName(), actual.getName());
+            assertEquals(expected.getEndDate(), actual.getEndDate());
+            assertEquals(expected.getYoutubeLink(), actual.getYoutubeLink());
+
+            String expectedMapCoordinates = (expected.getPlace() != null) ? expected.getPlace().getMapCoordinates() : null;
+            String actualMapCoordinates = (actual.getPlace() != null) ? actual.getPlace().getMapCoordinates() : null;
+            assertEquals(expectedMapCoordinates, actualMapCoordinates);
         }
     }
 
