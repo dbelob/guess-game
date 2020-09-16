@@ -18,9 +18,7 @@ import guess.domain.source.contentful.locale.ContentfulLocale;
 import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
-import mockit.Expectations;
-import mockit.MockUp;
-import mockit.Mocked;
+import mockit.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -61,12 +59,6 @@ class ContentfulUtilsTest {
             restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulLocaleResponse.class);
             result = response;
         }};
-
-        new MockUp<ContentfulUtils>() {
-            RestTemplate getRestTemplate() {
-                return restTemplateMock;
-            }
-        };
 
         assertEquals(List.of("en", "ru-RU"), ContentfulUtils.getLocales());
     }
@@ -555,44 +547,88 @@ class ContentfulUtilsTest {
     @DisplayName("getEvent method tests")
     class GetEventTest {
         private Stream<Arguments> data() {
+            Event event0 = new Event(
+                    -1L,
+                    null,
+                    List.of(
+                            new LocaleItem(Language.ENGLISH.getCode(), "Event Name0"),
+                            new LocaleItem(Language.RUSSIAN.getCode(), "Наименование события0")),
+                    new Event.EventDates(
+                            LocalDate.of(2016, 12, 7),
+                            LocalDate.of(2016, 12, 7)
+                    ),
+                    new Event.EventLinks(Collections.emptyList(), null),
+                    new Place(),
+                    Collections.emptyList());
+
+            Event event1 = new Event(
+                    -1L,
+                    null,
+                    List.of(
+                            new LocaleItem(Language.ENGLISH.getCode(), "Event Name1"),
+                            new LocaleItem(Language.RUSSIAN.getCode(), "Наименование события1")),
+                    new Event.EventDates(
+                            LocalDate.of(2017, 12, 7),
+                            LocalDate.of(2017, 12, 7)
+                    ),
+                    new Event.EventLinks(Collections.emptyList(), null),
+                    new Place(),
+                    Collections.emptyList());
+
             return Stream.of(
-                    arguments(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), new Event(
-                            -1L,
-                            null,
-                            List.of(
-                                    new LocaleItem("en", "DotNext 2016 Helsinki"),
-                                    new LocaleItem("ru", "DotNext 2016 Хельсинки")),
-                            new Event.EventDates(
-                                    LocalDate.of(2016, 12, 7),
-                                    LocalDate.of(2016, 12, 7)
-                            ),
-                            new Event.EventLinks(
-                                    List.of(
-                                            new LocaleItem("en", "https://dotnext-helsinki.com"),
-                                            new LocaleItem("ru", "https://dotnext-helsinki.com")),
-                                    "https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5"
-                            ),
-                            new Place(
-                                    15,
-                                    List.of(
-                                            new LocaleItem("en", "Helsinki"),
-                                            new LocaleItem("ru", "Хельсинки")),
-                                    List.of(
-                                            new LocaleItem("en", "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo")),
-                                    "60.1704769, 24.8279349"),
-                            Collections.emptyList()))
+                    arguments(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), Collections.emptyList(), null, event0),
+                    arguments(Conference.DOT_NEXT, LocalDate.of(2017, 12, 7), Collections.emptyList(), IllegalStateException.class, null),
+                    arguments(Conference.DOT_NEXT, LocalDate.of(2017, 12, 7), List.of(event0, event1), IllegalStateException.class, null),
+                    arguments(Conference.DOT_NEXT, LocalDate.of(2017, 12, 7), List.of(event0), null, event0)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void getEvent(Conference conference, LocalDate startDate, Event expected) {
-            Event event = ContentfulUtils.getEvent(conference, startDate);
+        void getEvent(Conference conference, LocalDate startDate, List<Event> events, Class<? extends Throwable> expectedException, Event expectedEvent) {
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                List<Event> getEvents(String eventName, LocalDate startDate) {
+                    return events;
+                }
 
-            assertEquals(expected, event);
-            assertEquals(expected.getName(), event.getName());
-            assertEquals(expected.getStartDate(), event.getStartDate());
-            assertEquals(expected.getEndDate(), event.getEndDate());
+                @Mock
+                Event getEvent(Invocation invocation, Conference conference, LocalDate startDate) {
+                    return invocation.proceed(conference, startDate);
+                }
+
+                @Mock
+                Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
+                    if (Conference.DOT_NEXT.equals(conference) && LocalDate.of(2016, 12, 7).equals(startDate)) {
+                        return new Event(
+                                -1L,
+                                null,
+                                List.of(
+                                        new LocaleItem("en", "Event Name0"),
+                                        new LocaleItem("ru", "Наименование события0")),
+                                new Event.EventDates(
+                                        LocalDate.of(2016, 12, 7),
+                                        LocalDate.of(2016, 12, 7)
+                                ),
+                                new Event.EventLinks(Collections.emptyList(), null),
+                                new Place(),
+                                Collections.emptyList());
+                    } else {
+                        return null;
+                    }
+                }
+            };
+
+            if (expectedException == null) {
+                Event event = ContentfulUtils.getEvent(conference, startDate);
+
+                assertEquals(expectedEvent, event);
+                assertEquals(expectedEvent.getName(), event.getName());
+                assertEquals(expectedEvent.getStartDate(), event.getStartDate());
+                assertEquals(expectedEvent.getEndDate(), event.getEndDate());
+            } else {
+                assertThrows(expectedException, () -> ContentfulUtils.getEvent(conference, startDate));
+            }
         }
     }
 
