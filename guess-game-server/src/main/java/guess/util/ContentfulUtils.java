@@ -70,7 +70,7 @@ public class ContentfulUtils {
     static final String ENGLISH_LOCALE = "en";
     static final String RUSSIAN_LOCALE = "ru-RU";
 
-    private enum ConferenceSpaceInfo {
+    enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
                 FIELDS_SPEAKER_FIELD_NAME, FIELDS_CONFERENCES_FIELD_NAME, "fields.javaChampion",
@@ -411,12 +411,12 @@ public class ContentfulUtils {
      * @param conferenceCode      conference code
      * @return speakers
      */
-    private static List<Speaker> getSpeakers(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+    static List<Speaker> getSpeakers(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000&fields.conferences={conferenceCode}
         StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.photo,fields.twitter,fields.gitHub");
         String additionalFieldNames = conferenceSpaceInfo.speakerAdditionalFieldNames;
 
-        if ((additionalFieldNames != null) && !additionalFieldNames.isEmpty()) {
+        if (additionalFieldNames != null) {
             selectingFields.append(",").append(additionalFieldNames);
         }
 
@@ -448,6 +448,50 @@ public class ContentfulUtils {
     }
 
     /**
+     * Creates speaker from Contentful information.
+     *
+     * @param contentfulSpeaker Contentful speaker
+     * @param assetMap          map id/asset
+     * @param assetErrorSet     set with error assets
+     * @param id                atomic identifier
+     * @return speaker
+     */
+    static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
+                                 Set<String> assetErrorSet, AtomicLong id) {
+        return createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, id, true);
+    }
+
+    /**
+     * Creates speaker from Contentful information.
+     *
+     * @param contentfulSpeaker    Contentful speaker
+     * @param assetMap             map id/asset
+     * @param assetErrorSet        set with error assets
+     * @param id                   atomic identifier
+     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
+     * @return speaker
+     */
+    static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
+                                 Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+        return new Speaker(
+                id.getAndDecrement(),
+                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
+                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
+                extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence),
+                extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
+                new Speaker.SpeakerSocials(
+                        extractTwitter(contentfulSpeaker.getFields().getTwitter()),
+                        extractGitHub(contentfulSpeaker.getFields().getGitHub())
+                ),
+                new Speaker.SpeakerDegrees(
+                        extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
+                        extractBoolean(contentfulSpeaker.getFields().getMvp()),
+                        extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
+                )
+        );
+    }
+
+    /**
      * Gets speakers.
      *
      * @param conference     conference
@@ -472,7 +516,7 @@ public class ContentfulUtils {
         StringBuilder selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.talkDay,fields.trackTime,fields.track,fields.language,fields.video,fields.sdTrack,fields.demoStage");
         String additionalFieldNames = conferenceSpaceInfo.talkAdditionalFieldNames;
 
-        if ((additionalFieldNames != null) && !additionalFieldNames.isEmpty()) {
+        if (additionalFieldNames != null) {
             selectingFields.append(",").append(additionalFieldNames);
         }
 
@@ -561,50 +605,6 @@ public class ContentfulUtils {
     }
 
     /**
-     * Creates speaker from Contentful information.
-     *
-     * @param contentfulSpeaker    Contentful speaker
-     * @param assetMap             map id/asset
-     * @param assetErrorSet        set with error assets
-     * @param id                   atomic identifier
-     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
-     * @return speaker
-     */
-    private static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                         Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
-        return new Speaker(
-                id.getAndDecrement(),
-                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
-                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
-                extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence),
-                extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
-                new Speaker.SpeakerSocials(
-                        extractTwitter(contentfulSpeaker.getFields().getTwitter()),
-                        extractGitHub(contentfulSpeaker.getFields().getGitHub())
-                ),
-                new Speaker.SpeakerDegrees(
-                        extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
-                        extractBoolean(contentfulSpeaker.getFields().getMvp()),
-                        extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
-                )
-        );
-    }
-
-    /**
-     * Creates speaker from Contentful information.
-     *
-     * @param contentfulSpeaker Contentful speaker
-     * @param assetMap          map id/asset
-     * @param assetErrorSet     set with error assets
-     * @param id                atomic identifier
-     * @return speaker
-     */
-    private static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                         Set<String> assetErrorSet, AtomicLong id) {
-        return createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, id, true);
-    }
-
-    /**
      * Gets map id/speaker.
      *
      * @param response      response
@@ -631,7 +631,7 @@ public class ContentfulUtils {
      * @param response response
      * @return map id/asset
      */
-    private static Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+    static Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
         return (response.getIncludes() == null) ?
                 Collections.emptyMap() :
                 response.getIncludes().getAsset().stream()
@@ -647,7 +647,7 @@ public class ContentfulUtils {
      * @param response response
      * @return map id/city
      */
-    private static Map<String, ContentfulCity> getCityMap(ContentfulEventResponse response) {
+    static Map<String, ContentfulCity> getCityMap(ContentfulEventResponse response) {
         return (response.getIncludes() == null) ?
                 Collections.emptyMap() :
                 response.getIncludes().getEntry().stream()
@@ -685,7 +685,7 @@ public class ContentfulUtils {
      * @param response response
      * @return error set
      */
-    private static Set<String> getEntryErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+    static Set<String> getEntryErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
         return getErrorSet(response, "Entry");
     }
 
@@ -695,7 +695,7 @@ public class ContentfulUtils {
      * @param response response
      * @return error set
      */
-    private static Set<String> getAssetErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+    static Set<String> getAssetErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
         return getErrorSet(response, "Asset");
     }
 

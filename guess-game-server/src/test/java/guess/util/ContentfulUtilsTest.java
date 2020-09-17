@@ -3,8 +3,11 @@ package guess.util;
 import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.*;
+import guess.domain.source.contentful.ContentfulIncludes;
 import guess.domain.source.contentful.ContentfulLink;
+import guess.domain.source.contentful.ContentfulResponse;
 import guess.domain.source.contentful.ContentfulSys;
+import guess.domain.source.contentful.asset.ContentfulAsset;
 import guess.domain.source.contentful.city.ContentfulCity;
 import guess.domain.source.contentful.city.ContentfulCityFields;
 import guess.domain.source.contentful.event.ContentfulEvent;
@@ -16,6 +19,8 @@ import guess.domain.source.contentful.eventtype.ContentfulEventTypeFields;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
 import guess.domain.source.contentful.locale.ContentfulLocale;
 import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
+import guess.domain.source.contentful.speaker.ContentfulSpeaker;
+import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
 import mockit.*;
@@ -66,30 +71,24 @@ class ContentfulUtilsTest {
     @Test
     void getEventTypes(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
         new Expectations() {{
-            ContentfulEventTypeFields contentfulEventTypeFields0 = new ContentfulEventTypeFields();
-            contentfulEventTypeFields0.setEventName(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "Name0"));
-            contentfulEventTypeFields0.setEventDescriptions(Collections.emptyMap());
-            contentfulEventTypeFields0.setSiteLink(Collections.emptyMap());
-
-            ContentfulEventTypeFields contentfulEventTypeFields1 = new ContentfulEventTypeFields();
-            contentfulEventTypeFields1.setEventName(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "Name1"));
-            contentfulEventTypeFields1.setEventDescriptions(Collections.emptyMap());
-            contentfulEventTypeFields1.setSiteLink(Collections.emptyMap());
-
-            ContentfulEventType eventType0 = new ContentfulEventType();
-            eventType0.setFields(contentfulEventTypeFields0);
-
-            ContentfulEventType eventType1 = new ContentfulEventType();
-            eventType1.setFields(contentfulEventTypeFields1);
-
             ContentfulEventTypeResponse response = new ContentfulEventTypeResponse();
-            response.setItems(List.of(eventType0, eventType1));
+            response.setItems(List.of(new ContentfulEventType(), new ContentfulEventType()));
 
             restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulEventTypeResponse.class);
             result = response;
         }};
+
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            List<EventType> getEventTypes(Invocation invocation) {
+                return invocation.proceed();
+            }
+
+            @Mock
+            EventType createEventType(ContentfulEventType contentfulEventType, AtomicLong id) {
+                return new EventType();
+            }
+        };
 
         assertEquals(2, ContentfulUtils.getEventTypes().size());
     }
@@ -248,65 +247,34 @@ class ContentfulUtilsTest {
     @Test
     void getEvents(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
         new Expectations() {{
-            ContentfulSys contentfulSys0 = new ContentfulSys();
-            contentfulSys0.setId("sys0");
-
-            ContentfulSys contentfulSys1 = new ContentfulSys();
-            contentfulSys1.setId("sys1");
-
-            ContentfulLink contentfulLink0 = new ContentfulLink();
-            contentfulLink0.setSys(contentfulSys0);
-
-            ContentfulLink contentfulLink1 = new ContentfulLink();
-            contentfulLink1.setSys(contentfulSys1);
-
-            ContentfulEventFields contentfulEventFields0 = new ContentfulEventFields();
-            contentfulEventFields0.setConferenceName(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "Event Name0"));
-            contentfulEventFields0.setEventStart(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-01T00:00+03:00"));
-            contentfulEventFields0.setEventCity(Map.of(ContentfulUtils.ENGLISH_LOCALE, contentfulLink0));
-
-            ContentfulEventFields contentfulEventFields1 = new ContentfulEventFields();
-            contentfulEventFields1.setConferenceName(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "Event Name1"));
-            contentfulEventFields1.setEventStart(Map.of(ContentfulUtils.ENGLISH_LOCALE, "2020-01-01T00:00+03:00"));
-            contentfulEventFields1.setEventCity(Map.of(ContentfulUtils.ENGLISH_LOCALE, contentfulLink1));
-
-            ContentfulEvent event0 = new ContentfulEvent();
-            event0.setFields(contentfulEventFields0);
-
-            ContentfulEvent event1 = new ContentfulEvent();
-            event1.setFields(contentfulEventFields1);
-
-            // Events
             ContentfulEventResponse response = new ContentfulEventResponse();
-            response.setItems(List.of(event0, event1));
-
-            // Cities
-            ContentfulCityFields contentfulCityFields0 = new ContentfulCityFields();
-            contentfulCityFields0.setCityName(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "City Name0"));
-
-            ContentfulCityFields contentfulCityFields1 = new ContentfulCityFields();
-            contentfulCityFields1.setCityName(Map.of(
-                    ContentfulUtils.ENGLISH_LOCALE, "City Name1"));
-
-            ContentfulCity contentfulCity0 = new ContentfulCity();
-            contentfulCity0.setSys(contentfulSys0);
-            contentfulCity0.setFields(contentfulCityFields0);
-
-            ContentfulCity contentfulCity1 = new ContentfulCity();
-            contentfulCity1.setSys(contentfulSys1);
-            contentfulCity1.setFields(contentfulCityFields1);
-
-            ContentfulEventIncludes contentfulEventIncludes = new ContentfulEventIncludes();
-            contentfulEventIncludes.setEntry(List.of(contentfulCity0, contentfulCity1));
-
-            response.setIncludes(contentfulEventIncludes);
+            response.setItems(List.of(new ContentfulEvent(), new ContentfulEvent()));
 
             restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulEventResponse.class);
             result = response;
         }};
+
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            List<Event> getEvents(Invocation invocation, String eventName, LocalDate startDate) {
+                return invocation.proceed(eventName, startDate);
+            }
+
+            @Mock
+            Event createEvent(ContentfulEvent e, Map<String, ContentfulCity> cityMap, Set<String> entryErrorSet) {
+                return new Event();
+            }
+
+            @Mock
+            Map<String, ContentfulCity> getCityMap(ContentfulEventResponse response) {
+                return Collections.emptyMap();
+            }
+
+            @Mock
+            Set<String> getEntryErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+                return Collections.emptySet();
+            }
+        };
 
         assertEquals(2, ContentfulUtils.getEvents("JPoint", LocalDate.of(2020, 6, 29)).size());
         assertEquals(2, ContentfulUtils.getEvents(null, LocalDate.of(2020, 6, 29)).size());
@@ -630,6 +598,45 @@ class ContentfulUtilsTest {
                 assertThrows(expectedException, () -> ContentfulUtils.getEvent(conference, startDate));
             }
         }
+    }
+
+    @Test
+    void getSpeakers(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
+        new Expectations() {{
+            ContentfulSpeakerResponse response = new ContentfulSpeakerResponse();
+            response.setItems(List.of(new ContentfulSpeaker(), new ContentfulSpeaker()));
+
+            restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulSpeakerResponse.class);
+            result = response;
+        }};
+
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            List<Speaker> getSpeakers(Invocation invocation, ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+                return invocation.proceed(conferenceSpaceInfo, conferenceCode);
+            }
+
+            @Mock
+            Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
+                                  Set<String> assetErrorSet, AtomicLong id) {
+                return new Speaker();
+            }
+
+            @Mock
+            Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+                return Collections.emptyMap();
+            }
+
+            @Mock
+            Set<String> getAssetErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+                return Collections.emptySet();
+            }
+        };
+
+        assertEquals(2, ContentfulUtils.getSpeakers(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code").size());
+        assertEquals(2, ContentfulUtils.getSpeakers(ContentfulUtils.ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "code").size());
+        assertEquals(2, ContentfulUtils.getSpeakers(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null).size());
+        assertEquals(2, ContentfulUtils.getSpeakers(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "").size());
     }
 
     @Nested
