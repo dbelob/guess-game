@@ -12,7 +12,6 @@ import guess.domain.source.contentful.city.ContentfulCity;
 import guess.domain.source.contentful.city.ContentfulCityFields;
 import guess.domain.source.contentful.event.ContentfulEvent;
 import guess.domain.source.contentful.event.ContentfulEventFields;
-import guess.domain.source.contentful.event.ContentfulEventIncludes;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
 import guess.domain.source.contentful.eventtype.ContentfulEventType;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeFields;
@@ -20,6 +19,7 @@ import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
 import guess.domain.source.contentful.locale.ContentfulLocale;
 import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
 import guess.domain.source.contentful.speaker.ContentfulSpeaker;
+import guess.domain.source.contentful.speaker.ContentfulSpeakerFields;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
@@ -618,7 +618,7 @@ class ContentfulUtilsTest {
 
             @Mock
             Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                  Set<String> assetErrorSet, AtomicLong id) {
+                                  Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
                 return new Speaker();
             }
 
@@ -637,6 +637,156 @@ class ContentfulUtilsTest {
         assertEquals(2, ContentfulUtils.getSpeakers(ContentfulUtils.ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "code").size());
         assertEquals(2, ContentfulUtils.getSpeakers(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null).size());
         assertEquals(2, ContentfulUtils.getSpeakers(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "").size());
+    }
+
+    @Test
+    void createSpeaker() {
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            Speaker createSpeaker(Invocation invocation, ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
+                                  Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+                return invocation.proceed(contentfulSpeaker, assetMap, assetErrorSet, id, checkEnTextExistence);
+            }
+
+            @Mock
+            String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                                Set<String> assetErrorSet, String speakerNameEn) {
+                return null;
+            }
+
+            @Mock
+            String extractTwitter(String value) {
+                return null;
+            }
+
+            @Mock
+            String extractGitHub(String value) {
+                return null;
+            }
+
+            @Mock
+            boolean extractBoolean(Boolean value) {
+                return true;
+            }
+
+            @Mock
+            List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
+                return Collections.emptyList();
+            }
+        };
+
+        ContentfulSpeaker contentfulSpeaker = new ContentfulSpeaker();
+        contentfulSpeaker.setFields(new ContentfulSpeakerFields());
+
+        Map<String, ContentfulAsset> assetMap = Collections.emptyMap();
+        Set<String> assetErrorSet = Collections.emptySet();
+        AtomicLong id = new AtomicLong(42);
+
+        Speaker speaker = new Speaker();
+        speaker.setId(42);
+
+        assertEquals(42, ContentfulUtils.createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, id, true).getId());
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractTwitter method tests")
+    class ExtractTwitterTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("", ""),
+                    arguments(" ", ""),
+                    arguments("arungupta", "arungupta"),
+                    arguments(" arungupta", "arungupta"),
+                    arguments("arungupta ", "arungupta"),
+                    arguments(" arungupta ", "arungupta"),
+                    arguments("tagir_valeev", "tagir_valeev"),
+                    arguments("kuksenk0", "kuksenk0"),
+                    arguments("DaschnerS", "DaschnerS"),
+                    arguments("@dougqh", "dougqh"),
+                    arguments("42", "42"),
+                    arguments("@42", "42")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractTwitter(String value, String expected) {
+            assertEquals(expected, ContentfulUtils.extractTwitter(value));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractTwitter method tests (with exception)")
+    class ExtractTwitterWithExceptionTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments("%"),
+                    arguments("%42"),
+                    arguments("%dougqh"),
+                    arguments("dougqh%"),
+                    arguments("dou%gqh")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractTwitter(String value) {
+            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractTwitter(value));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractGitHub method tests")
+    class ExtractGitHubTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("", ""),
+                    arguments(" ", ""),
+                    arguments("cloudkserg", "cloudkserg"),
+                    arguments(" cloudkserg", "cloudkserg"),
+                    arguments("cloudkserg ", "cloudkserg"),
+                    arguments(" cloudkserg ", "cloudkserg"),
+                    arguments("pjBooms", "pjBooms"),
+                    arguments("andre487", "andre487"),
+                    arguments("Marina-Miranovich", "Marina-Miranovich"),
+                    arguments("https://github.com/inponomarev", "inponomarev"),
+                    arguments("http://github.com/inponomarev", "inponomarev"),
+                    arguments("https://niquola.github.io/blog/", "niquola"),
+                    arguments("http://niquola.github.io/blog/", "niquola")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractGitHub(String value, String expected) {
+            assertEquals(expected, ContentfulUtils.extractGitHub(value));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractGitHub method tests (with exception)")
+    class ExtractGitHubWithExceptionTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments("%"),
+                    arguments("%42"),
+                    arguments("%dougqh"),
+                    arguments("dougqh%"),
+                    arguments("dou%gqh")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractGitHub(String value) {
+            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractGitHub(value));
+        }
     }
 
     @Nested
@@ -743,107 +893,6 @@ class ContentfulUtilsTest {
         @MethodSource("data")
         void extractProperty(String value, ExtractSet extractSet) {
             assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractProperty(value, extractSet));
-        }
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("extractTwitter method tests")
-    class ExtractTwitterTest {
-        private Stream<Arguments> data() {
-            return Stream.of(
-                    arguments(null, null),
-                    arguments("", ""),
-                    arguments(" ", ""),
-                    arguments("arungupta", "arungupta"),
-                    arguments(" arungupta", "arungupta"),
-                    arguments("arungupta ", "arungupta"),
-                    arguments(" arungupta ", "arungupta"),
-                    arguments("tagir_valeev", "tagir_valeev"),
-                    arguments("kuksenk0", "kuksenk0"),
-                    arguments("DaschnerS", "DaschnerS"),
-                    arguments("@dougqh", "dougqh"),
-                    arguments("42", "42"),
-                    arguments("@42", "42")
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void extractTwitter(String value, String expected) {
-            assertEquals(expected, ContentfulUtils.extractTwitter(value));
-        }
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("extractTwitter method tests (with exception)")
-    class ExtractTwitterWithExceptionTest {
-        private Stream<Arguments> data() {
-            return Stream.of(
-                    arguments("%"),
-                    arguments("%42"),
-                    arguments("%dougqh"),
-                    arguments("dougqh%"),
-                    arguments("dou%gqh")
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void extractTwitter(String value) {
-            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractTwitter(value));
-        }
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("extractGitHub method tests")
-    class ExtractGitHubTest {
-        private Stream<Arguments> data() {
-            return Stream.of(
-                    arguments(null, null),
-                    arguments("", ""),
-                    arguments(" ", ""),
-                    arguments("cloudkserg", "cloudkserg"),
-                    arguments(" cloudkserg", "cloudkserg"),
-                    arguments("cloudkserg ", "cloudkserg"),
-                    arguments(" cloudkserg ", "cloudkserg"),
-                    arguments("pjBooms", "pjBooms"),
-                    arguments("andre487", "andre487"),
-                    arguments("Marina-Miranovich", "Marina-Miranovich"),
-                    arguments("https://github.com/inponomarev", "inponomarev"),
-                    arguments("http://github.com/inponomarev", "inponomarev"),
-                    arguments("https://niquola.github.io/blog/", "niquola"),
-                    arguments("http://niquola.github.io/blog/", "niquola")
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void extractGitHub(String value, String expected) {
-            assertEquals(expected, ContentfulUtils.extractGitHub(value));
-        }
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("extractGitHub method tests (with exception)")
-    class ExtractGitHubWithExceptionTest {
-        private Stream<Arguments> data() {
-            return Stream.of(
-                    arguments("%"),
-                    arguments("%42"),
-                    arguments("%dougqh"),
-                    arguments("dougqh%"),
-                    arguments("dou%gqh")
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void extractGitHub(String value) {
-            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractGitHub(value));
         }
     }
 

@@ -443,22 +443,8 @@ public class ContentfulUtils {
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .map(s -> createSpeaker(s, assetMap, assetErrorSet, id))
+                .map(s -> createSpeaker(s, assetMap, assetErrorSet, id, true))
                 .collect(Collectors.toList());
-    }
-
-    /**
-     * Creates speaker from Contentful information.
-     *
-     * @param contentfulSpeaker Contentful speaker
-     * @param assetMap          map id/asset
-     * @param assetErrorSet     set with error assets
-     * @param id                atomic identifier
-     * @return speaker
-     */
-    static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                 Set<String> assetErrorSet, AtomicLong id) {
-        return createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, id, true);
     }
 
     /**
@@ -489,6 +475,57 @@ public class ContentfulUtils {
                         extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
                 )
         );
+    }
+
+    /**
+     * Extracts photo.
+     *
+     * @param link          link
+     * @param assetMap      map id/asset
+     * @param assetErrorSet set with error assets
+     * @param speakerNameEn speaker name
+     * @return photo URL
+     */
+    static String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                               Set<String> assetErrorSet, String speakerNameEn) {
+        String assetId = link.getSys().getId();
+        boolean isErrorAsset = assetErrorSet.contains(assetId);
+
+        if (isErrorAsset) {
+            log.warn("Asset (photo) id {} not resolvable for '{}' speaker", assetId, speakerNameEn);
+            return null;
+        }
+
+        ContentfulAsset asset = assetMap.get(assetId);
+        return extractAssetUrl(Objects.requireNonNull(asset,
+                () -> String.format("Asset (photo) id %s not found for '%s' speaker", assetId, speakerNameEn))
+                .getFields().getFile().getUrl());
+    }
+
+    /**
+     * Extracts Twitter username.
+     *
+     * @param value source value
+     * @return extracted Twitter username
+     */
+    static String extractTwitter(String value) {
+        return extractProperty(value, new ExtractSet(
+                List.of(new ExtractPair("^[\\s]*[@]?(\\w{1,15})[\\s]*$", 1)),
+                "Invalid Twitter username: %s (change regular expression and rerun)"));
+    }
+
+    /**
+     * Extracts GitHub username.
+     *
+     * @param value source value
+     * @return extracted GitHub username
+     */
+    public static String extractGitHub(String value) {
+        return extractProperty(value, new ExtractSet(
+                List.of(
+                        new ExtractPair("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)(/)?[\\s]*$", 4),
+                        new ExtractPair("^[\\s]*(http(s)?://)?([a-zA-Z0-9\\-]+).github.io/blog(/)?[\\s]*$", 3)),
+                "Invalid GitHub username: %s (change regular expressions and rerun)"));
     }
 
     /**
@@ -749,32 +786,6 @@ public class ContentfulUtils {
     }
 
     /**
-     * Extracts Twitter username.
-     *
-     * @param value source value
-     * @return extracted Twitter username
-     */
-    public static String extractTwitter(String value) {
-        return extractProperty(value, new ExtractSet(
-                List.of(new ExtractPair("^[\\s]*[@]?(\\w{1,15})[\\s]*$", 1)),
-                "Invalid Twitter username: %s (change regular expression and rerun)"));
-    }
-
-    /**
-     * Extracts GitHub username.
-     *
-     * @param value source value
-     * @return extracted GitHub username
-     */
-    public static String extractGitHub(String value) {
-        return extractProperty(value, new ExtractSet(
-                List.of(
-                        new ExtractPair("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)(/)?[\\s]*$", 4),
-                        new ExtractPair("^[\\s]*(http(s)?://)?([a-zA-Z0-9\\-]+).github.io/blog(/)?[\\s]*$", 3)),
-                "Invalid GitHub username: %s (change regular expressions and rerun)"));
-    }
-
-    /**
      * Extracts talk language.
      *
      * @param language {@code true} if Russian, {@code false} otherwise
@@ -860,31 +871,6 @@ public class ContentfulUtils {
         }
 
         return videoLinks;
-    }
-
-    /**
-     * Extracts photo.
-     *
-     * @param link          link
-     * @param assetMap      map id/asset
-     * @param assetErrorSet set with error assets
-     * @param speakerNameEn speaker name
-     * @return photo URL
-     */
-    private static String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
-                                       Set<String> assetErrorSet, String speakerNameEn) {
-        String assetId = link.getSys().getId();
-        boolean isErrorAsset = assetErrorSet.contains(assetId);
-
-        if (isErrorAsset) {
-            log.warn("Asset (photo) id {} not resolvable for '{}' speaker", assetId, speakerNameEn);
-            return null;
-        }
-
-        ContentfulAsset asset = assetMap.get(assetId);
-        return extractAssetUrl(Objects.requireNonNull(asset,
-                () -> String.format("Asset (photo) id %s not found for '%s' speaker", assetId, speakerNameEn))
-                .getFields().getFile().getUrl());
     }
 
     /**
