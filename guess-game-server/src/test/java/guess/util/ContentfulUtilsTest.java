@@ -8,6 +8,8 @@ import guess.domain.source.contentful.ContentfulLink;
 import guess.domain.source.contentful.ContentfulResponse;
 import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.contentful.asset.ContentfulAsset;
+import guess.domain.source.contentful.asset.ContentfulAssetFields;
+import guess.domain.source.contentful.asset.ContentfulAssetFieldsFile;
 import guess.domain.source.contentful.city.ContentfulCity;
 import guess.domain.source.contentful.city.ContentfulCityFields;
 import guess.domain.source.contentful.event.ContentfulEvent;
@@ -686,6 +688,71 @@ class ContentfulUtilsTest {
         speaker.setId(42);
 
         assertEquals(42, ContentfulUtils.createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, id, true).getId());
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractPhoto method tests")
+    class ExtractPhotoTest {
+        private static final String ASSET_URL = "https://valid.com";
+
+        private Stream<Arguments> data() {
+            ContentfulSys contentfulSys0 = new ContentfulSys();
+            contentfulSys0.setId("id0");
+
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("id1");
+
+            ContentfulSys contentfulSys2 = new ContentfulSys();
+            contentfulSys2.setId("id2");
+
+            ContentfulAssetFields contentfulAssetFields2 = new ContentfulAssetFields();
+            contentfulAssetFields2.setFile(new ContentfulAssetFieldsFile());
+
+            ContentfulAsset contentfulAsset2 = new ContentfulAsset();
+            contentfulAsset2.setFields(contentfulAssetFields2);
+
+            Map<String, ContentfulAsset> assetMap2 = Map.of("id2", contentfulAsset2);
+
+            ContentfulLink link0 = new ContentfulLink();
+            link0.setSys(contentfulSys0);
+
+            ContentfulLink link1 = new ContentfulLink();
+            link1.setSys(contentfulSys1);
+
+            ContentfulLink link2 = new ContentfulLink();
+            link2.setSys(contentfulSys2);
+
+            return Stream.of(
+                    arguments(link0, Collections.emptyMap(), Set.of("id0"), "Name0", null, null),
+                    arguments(link1, Collections.emptyMap(), Collections.emptySet(), "Name1", NullPointerException.class, null),
+                    arguments(link2, assetMap2, Collections.emptySet(), "Name2", null, ASSET_URL)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet,
+                          String speakerNameEn, Class<? extends Throwable> expectedException, String expectedValue) {
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                String extractPhoto(Invocation invocation, ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                                    Set<String> assetErrorSet, String speakerNameEn) {
+                    return invocation.proceed(link, assetMap, assetErrorSet, speakerNameEn);
+                }
+
+                @Mock
+                String extractAssetUrl(String value) {
+                    return ASSET_URL;
+                }
+            };
+
+            if (expectedException == null) {
+                assertEquals(expectedValue, ContentfulUtils.extractPhoto(link, assetMap, assetErrorSet, speakerNameEn));
+            } else {
+                assertThrows(expectedException, () -> ContentfulUtils.extractPhoto(link, assetMap, assetErrorSet, speakerNameEn));
+            }
+        }
     }
 
     @Nested
