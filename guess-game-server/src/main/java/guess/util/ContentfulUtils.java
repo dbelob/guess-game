@@ -18,6 +18,7 @@ import guess.domain.source.contentful.locale.ContentfulLocale;
 import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
 import guess.domain.source.contentful.speaker.ContentfulSpeaker;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
+import guess.domain.source.contentful.talk.ContentfulTalk;
 import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
 import guess.domain.source.contentful.talk.response.*;
 import guess.domain.source.extract.ExtractPair;
@@ -548,7 +549,7 @@ public class ContentfulUtils {
      * @param conferenceCode      conference code
      * @return talks
      */
-    private static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+    static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select={fields}&order={fields}&limit=1000&fields.conferences={conferenceCode}
         StringBuilder selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.talkDay,fields.trackTime,fields.track,fields.language,fields.video,fields.sdTrack,fields.demoStage");
         String additionalFieldNames = conferenceSpaceInfo.talkAdditionalFieldNames;
@@ -587,45 +588,59 @@ public class ContentfulUtils {
                 .getItems().stream()
                 .filter(t -> ((t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack()) &&
                         ((t.getFields().getDemoStage() == null) || !t.getFields().getDemoStage()))   // not demo stage
-                .map(t -> {
-                    List<Speaker> speakers = t.getFields().getSpeakers().stream()
-                            .filter(s -> {
-                                String speakerId = s.getSys().getId();
-                                boolean isErrorAsset = entryErrorSet.contains(speakerId);
-                                if (isErrorAsset) {
-                                    throw new IllegalArgumentException(String.format("Speaker id %s not resolvable for '%s' talk (change ContentfulUtils:fixEntryNotResolvableError() method and rerun)", speakerId, t.getFields().getNameEn()));
-                                }
+                .map(t -> createTalk(t, assetMap, entryErrorSet, assetErrorSet, speakerMap, id))
+                .collect(Collectors.toList());
+    }
 
-                                return true;
-                            })
-                            .map(s -> {
-                                String speakerId = s.getSys().getId();
-                                Speaker speaker = speakerMap.get(speakerId);
-                                return Objects.requireNonNull(speaker,
-                                        () -> String.format("Speaker id %s not found for '%s' talk", speakerId, t.getFields().getNameEn()));
-                            })
-                            .collect(Collectors.toList());
+    /**
+     * Creates talk from Contentful information.
+     *
+     * @param contentfulTalk Contentful talk
+     * @param assetMap       map id/asset
+     * @param entryErrorSet  set with error entries
+     * @param assetErrorSet  set with error assets
+     * @param speakerMap     speaker map
+     * @param id             atomic identifier
+     * @return talk
+     */
+    static Talk createTalk(ContentfulTalk<? extends ContentfulTalkFields> contentfulTalk, Map<String, ContentfulAsset> assetMap,
+                           Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong id) {
+        List<Speaker> speakers = contentfulTalk.getFields().getSpeakers().stream()
+                .filter(s -> {
+                    String speakerId = s.getSys().getId();
+                    boolean isErrorAsset = entryErrorSet.contains(speakerId);
+                    if (isErrorAsset) {
+                        throw new IllegalArgumentException(String.format("Speaker id %s not resolvable for '%s' talk (change ContentfulUtils:fixEntryNotResolvableError() method and rerun)", speakerId, contentfulTalk.getFields().getNameEn()));
+                    }
 
-                    return new Talk(
-                            new Nameable(
-                                    id.getAndDecrement(),
-                                    extractLocaleItems(t.getFields().getNameEn(), t.getFields().getName()),
-                                    extractLocaleItems(t.getFields().getShortEn(), t.getFields().getShortRu()),
-                                    extractLocaleItems(t.getFields().getLongEn(), t.getFields().getLongRu())
-                            ),
-                            t.getFields().getTalkDay(),
-                            t.getFields().getTrackTime(),
-                            t.getFields().getTrack(),
-                            extractLanguage(t.getFields().getLanguage()),
-                            new Talk.TalkLinks(
-                                    extractPresentationLinks(
-                                            combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
-                                            assetMap, assetErrorSet, t.getFields().getNameEn()),
-                                    extractVideoLinks(t.getFields().getVideo())
-                            ),
-                            speakers);
+                    return true;
+                })
+                .map(s -> {
+                    String speakerId = s.getSys().getId();
+                    Speaker speaker = speakerMap.get(speakerId);
+                    return Objects.requireNonNull(speaker,
+                            () -> String.format("Speaker id %s not found for '%s' talk", speakerId, contentfulTalk.getFields().getNameEn()));
                 })
                 .collect(Collectors.toList());
+
+        return new Talk(
+                new Nameable(
+                        id.getAndDecrement(),
+                        extractLocaleItems(contentfulTalk.getFields().getNameEn(), contentfulTalk.getFields().getName()),
+                        extractLocaleItems(contentfulTalk.getFields().getShortEn(), contentfulTalk.getFields().getShortRu()),
+                        extractLocaleItems(contentfulTalk.getFields().getLongEn(), contentfulTalk.getFields().getLongRu())
+                ),
+                contentfulTalk.getFields().getTalkDay(),
+                contentfulTalk.getFields().getTrackTime(),
+                contentfulTalk.getFields().getTrack(),
+                extractLanguage(contentfulTalk.getFields().getLanguage()),
+                new Talk.TalkLinks(
+                        extractPresentationLinks(
+                                combineContentfulLinks(contentfulTalk.getFields().getPresentations(), contentfulTalk.getFields().getPresentation()),
+                                assetMap, assetErrorSet, contentfulTalk.getFields().getNameEn()),
+                        extractVideoLinks(contentfulTalk.getFields().getVideo())
+                ),
+                speakers);
     }
 
     /**
@@ -649,8 +664,8 @@ public class ContentfulUtils {
      * @param assetErrorSet set with error assets
      * @return map id/speaker
      */
-    private static Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
-                                                      Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
+    static Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
+                                              Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
         AtomicLong id = new AtomicLong(-1);
 
         return (response.getIncludes() == null) ?
@@ -1044,8 +1059,8 @@ public class ContentfulUtils {
      * @param entryErrorSet       entry error set
      * @param speakerMap          map id/speaker
      */
-    private static void fixEntryNotResolvableError(ConferenceSpaceInfo conferenceSpaceInfo,
-                                                   Set<String> entryErrorSet, Map<String, Speaker> speakerMap) {
+    static void fixEntryNotResolvableError(ConferenceSpaceInfo conferenceSpaceInfo,
+                                           Set<String> entryErrorSet, Map<String, Speaker> speakerMap) {
         abstract class NotResolvableSpeaker {
             private final ConferenceSpaceInfo conferenceSpaceInfo;
             private final String entryId;

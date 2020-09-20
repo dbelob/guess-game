@@ -23,6 +23,11 @@ import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
 import guess.domain.source.contentful.speaker.ContentfulSpeaker;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerFields;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
+import guess.domain.source.contentful.talk.ContentfulTalk;
+import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
+import guess.domain.source.contentful.talk.fields.ContentfulTalkFieldsCommon;
+import guess.domain.source.contentful.talk.response.ContentfulTalkResponse;
+import guess.domain.source.contentful.talk.response.ContentfulTalkResponseCommon;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
 import mockit.*;
@@ -844,7 +849,7 @@ class ContentfulUtilsTest {
     }
 
     @Test
-    void getSpeakers(@Mocked ContentfulUtils mock) {
+    void getSpeakers() {
         new MockUp<ContentfulUtils>() {
             @Mock
             List<Speaker> getSpeakers(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
@@ -858,6 +863,64 @@ class ContentfulUtilsTest {
         };
 
         assertDoesNotThrow(() -> ContentfulUtils.getSpeakers(Conference.JPOINT, "code"));
+    }
+
+    @Test
+    void getTalks(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
+        new Expectations() {{
+            ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk0 = new ContentfulTalk<>();
+            contentfulTalk0.setFields(new ContentfulTalkFieldsCommon());
+
+            ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk1 = new ContentfulTalk<>();
+            contentfulTalk1.setFields(new ContentfulTalkFieldsCommon());
+
+            ContentfulTalkResponse<ContentfulTalkFieldsCommon> response = new ContentfulTalkResponseCommon();
+            response.setItems(List.of(contentfulTalk0, contentfulTalk1));
+
+            restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulTalkResponseCommon.class);
+            result = response;
+        }};
+
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            List<Talk> getTalks(Invocation invocation, ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+                return invocation.proceed(conferenceSpaceInfo, conferenceCode);
+            }
+
+            @Mock
+            Talk createTalk(ContentfulTalk<? extends ContentfulTalkFields> contentfulTalk, Map<String, ContentfulAsset> assetMap,
+                            Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong id) {
+                return new Talk();
+            }
+
+            @Mock
+            Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
+                                               Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
+                return Collections.emptyMap();
+            }
+
+            @Mock
+            Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+                return Collections.emptyMap();
+            }
+
+            @Mock
+            Set<String> getEntryErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+                return Collections.emptySet();
+            }
+
+            @Mock
+            Set<String> getAssetErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+                return Collections.emptySet();
+            }
+
+            @Mock
+            void fixEntryNotResolvableError(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo,
+                                            Set<String> entryErrorSet, Map<String, Speaker> speakerMap) {
+            }
+        };
+
+        assertEquals(2, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code").size());
     }
 
     @Nested
