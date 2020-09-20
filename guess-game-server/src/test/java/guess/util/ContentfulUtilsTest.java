@@ -45,8 +45,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("ContentfulUtils class tests")
@@ -811,49 +810,54 @@ class ContentfulUtilsTest {
     class ExtractGitHubTest {
         private Stream<Arguments> data() {
             return Stream.of(
-                    arguments(null, null),
-                    arguments("", ""),
-                    arguments(" ", ""),
-                    arguments("cloudkserg", "cloudkserg"),
-                    arguments(" cloudkserg", "cloudkserg"),
-                    arguments("cloudkserg ", "cloudkserg"),
-                    arguments(" cloudkserg ", "cloudkserg"),
-                    arguments("pjBooms", "pjBooms"),
-                    arguments("andre487", "andre487"),
-                    arguments("Marina-Miranovich", "Marina-Miranovich"),
-                    arguments("https://github.com/inponomarev", "inponomarev"),
-                    arguments("http://github.com/inponomarev", "inponomarev"),
-                    arguments("https://niquola.github.io/blog/", "niquola"),
-                    arguments("http://niquola.github.io/blog/", "niquola")
+                    arguments(null, null, null),
+                    arguments("", null, ""),
+                    arguments(" ", null, ""),
+                    arguments("cloudkserg", null, "cloudkserg"),
+                    arguments(" cloudkserg", null, "cloudkserg"),
+                    arguments("cloudkserg ", null, "cloudkserg"),
+                    arguments(" cloudkserg ", null, "cloudkserg"),
+                    arguments("pjBooms", null, "pjBooms"),
+                    arguments("andre487", null, "andre487"),
+                    arguments("Marina-Miranovich", null, "Marina-Miranovich"),
+                    arguments("https://github.com/inponomarev", null, "inponomarev"),
+                    arguments("http://github.com/inponomarev", null, "inponomarev"),
+                    arguments("https://niquola.github.io/blog/", null, "niquola"),
+                    arguments("http://niquola.github.io/blog/", null, "niquola"),
+                    arguments("%", IllegalArgumentException.class, null),
+                    arguments("%42", IllegalArgumentException.class, null),
+                    arguments("%dougqh", IllegalArgumentException.class, null),
+                    arguments("dougqh%", IllegalArgumentException.class, null),
+                    arguments("dou%gqh", IllegalArgumentException.class, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void extractGitHub(String value, String expected) {
-            assertEquals(expected, ContentfulUtils.extractGitHub(value));
+        void extractGitHub(String value, Class<? extends Throwable> expectedException, String expectedValue) {
+            if (expectedException == null) {
+                assertEquals(expectedValue, ContentfulUtils.extractGitHub(value));
+            } else {
+                assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractGitHub(value));
+            }
         }
     }
 
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("extractGitHub method tests (with exception)")
-    class ExtractGitHubWithExceptionTest {
-        private Stream<Arguments> data() {
-            return Stream.of(
-                    arguments("%"),
-                    arguments("%42"),
-                    arguments("%dougqh"),
-                    arguments("dougqh%"),
-                    arguments("dou%gqh")
-            );
-        }
+    @Test
+    void getSpeakers(@Mocked ContentfulUtils mock) {
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            List<Speaker> getSpeakers(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+                return Collections.emptyList();
+            }
 
-        @ParameterizedTest
-        @MethodSource("data")
-        void extractGitHub(String value) {
-            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractGitHub(value));
-        }
+            @Mock
+            List<Speaker> getSpeakers(Invocation invocation, Conference conference, String conferenceCode) {
+                return invocation.proceed(conference, conferenceCode);
+            }
+        };
+
+        assertDoesNotThrow(() -> ContentfulUtils.getSpeakers(Conference.JPOINT, "code"));
     }
 
     @Nested
