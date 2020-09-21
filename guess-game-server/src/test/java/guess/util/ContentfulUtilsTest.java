@@ -865,17 +865,32 @@ class ContentfulUtilsTest {
         assertDoesNotThrow(() -> ContentfulUtils.getSpeakers(Conference.JPOINT, "code"));
     }
 
+    private static ContentfulTalk<ContentfulTalkFieldsCommon> createContentfulTalk(Boolean sdTrack, Boolean demoStage) {
+        ContentfulTalkFieldsCommon contentfulTalkFieldsCommon = new ContentfulTalkFieldsCommon();
+        contentfulTalkFieldsCommon.setSdTrack(sdTrack);
+        contentfulTalkFieldsCommon.setDemoStage(demoStage);
+
+        ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk = new ContentfulTalk<>();
+        contentfulTalk.setFields(contentfulTalkFieldsCommon);
+
+        return contentfulTalk;
+    }
+
     @Test
     void getTalks(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
         new Expectations() {{
-            ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk0 = new ContentfulTalk<>();
-            contentfulTalk0.setFields(new ContentfulTalkFieldsCommon());
-
-            ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk1 = new ContentfulTalk<>();
-            contentfulTalk1.setFields(new ContentfulTalkFieldsCommon());
-
             ContentfulTalkResponse<ContentfulTalkFieldsCommon> response = new ContentfulTalkResponseCommon();
-            response.setItems(List.of(contentfulTalk0, contentfulTalk1));
+            response.setItems(List.of(
+                    createContentfulTalk(null, null),
+                    createContentfulTalk(null, Boolean.TRUE),
+                    createContentfulTalk(null, Boolean.FALSE),
+                    createContentfulTalk(Boolean.TRUE, null),
+                    createContentfulTalk(Boolean.TRUE, Boolean.TRUE),
+                    createContentfulTalk(Boolean.TRUE, Boolean.FALSE),
+                    createContentfulTalk(Boolean.FALSE, null),
+                    createContentfulTalk(Boolean.FALSE, Boolean.TRUE),
+                    createContentfulTalk(Boolean.FALSE, Boolean.FALSE)
+            ));
 
             restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulTalkResponseCommon.class);
             result = response;
@@ -920,7 +935,9 @@ class ContentfulUtilsTest {
             }
         };
 
-        assertEquals(2, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code").size());
+        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code").size());
+        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null).size());
+        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "").size());
     }
 
     @Nested

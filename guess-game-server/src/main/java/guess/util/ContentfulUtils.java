@@ -554,9 +554,8 @@ public class ContentfulUtils {
         StringBuilder selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.talkDay,fields.trackTime,fields.track,fields.language,fields.video,fields.sdTrack,fields.demoStage");
         String additionalFieldNames = conferenceSpaceInfo.talkAdditionalFieldNames;
 
-        if (additionalFieldNames != null) {
-            selectingFields.append(",").append(additionalFieldNames);
-        }
+        Objects.requireNonNull(additionalFieldNames);
+        selectingFields.append(",").append(additionalFieldNames);
 
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
