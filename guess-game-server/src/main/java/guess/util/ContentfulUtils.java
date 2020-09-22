@@ -845,8 +845,8 @@ public class ContentfulUtils {
      * @param talkNameEn    talk name
      * @return presentation link URLs
      */
-    private static List<String> extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
-                                                         Set<String> assetErrorSet, String talkNameEn) {
+    static List<String> extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
+                                                 Set<String> assetErrorSet, String talkNameEn) {
         if (links == null) {
             return Collections.emptyList();
         }

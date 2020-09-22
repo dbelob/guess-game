@@ -940,6 +940,92 @@ class ContentfulUtilsTest {
         assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "").size());
     }
 
+    @Test
+    void createTalk() {
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            Talk createTalk(Invocation invocation, ContentfulTalk<? extends ContentfulTalkFields> contentfulTalk, Map<String, ContentfulAsset> assetMap,
+                            Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong id) {
+                return invocation.proceed(contentfulTalk, assetMap, entryErrorSet, assetErrorSet, speakerMap, id);
+            }
+
+            @Mock
+            List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            String extractLanguage(Boolean language) {
+                return null;
+            }
+
+            @Mock
+            List<String> extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
+                                                  Set<String> assetErrorSet, String talkNameEn) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            List<ContentfulLink> combineContentfulLinks(List<ContentfulLink> presentations, ContentfulLink presentation) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            List<String> extractVideoLinks(String videoLink) {
+                return Collections.emptyList();
+            }
+        };
+
+        ContentfulSys contentfulSys0 = new ContentfulSys();
+        contentfulSys0.setId("id0");
+
+        ContentfulSys contentfulSys1 = new ContentfulSys();
+        contentfulSys1.setId("id1");
+
+        ContentfulSys contentfulSys2 = new ContentfulSys();
+        contentfulSys2.setId("id2");
+
+        ContentfulLink contentfulLink0 = new ContentfulLink();
+        contentfulLink0.setSys(contentfulSys0);
+
+        ContentfulLink contentfulLink1 = new ContentfulLink();
+        contentfulLink1.setSys(contentfulSys1);
+
+        ContentfulLink contentfulLink2 = new ContentfulLink();
+        contentfulLink2.setSys(contentfulSys2);
+
+        ContentfulTalkFieldsCommon contentfulTalkFieldsCommon0 = new ContentfulTalkFieldsCommon();
+        contentfulTalkFieldsCommon0.setSpeakers(List.of(contentfulLink0));
+
+        ContentfulTalkFieldsCommon contentfulTalkFieldsCommon1 = new ContentfulTalkFieldsCommon();
+        contentfulTalkFieldsCommon1.setSpeakers(List.of(contentfulLink1));
+
+        ContentfulTalkFieldsCommon contentfulTalkFieldsCommon2 = new ContentfulTalkFieldsCommon();
+        contentfulTalkFieldsCommon2.setSpeakers(List.of(contentfulLink2));
+
+        ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk0 = new ContentfulTalk<>();
+        contentfulTalk0.setFields(contentfulTalkFieldsCommon0);
+
+        ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk1 = new ContentfulTalk<>();
+        contentfulTalk1.setFields(contentfulTalkFieldsCommon1);
+
+        ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk2 = new ContentfulTalk<>();
+        contentfulTalk2.setFields(contentfulTalkFieldsCommon2);
+
+        Map<String, ContentfulAsset> assetMap = Collections.emptyMap();
+        Set<String> entryErrorSet = Set.of("id0");
+        Set<String> assetErrorSet = Collections.emptySet();
+        Map<String, Speaker> speakerMap = Map.of("id2", new Speaker());
+
+        AtomicLong id0 = new AtomicLong(42);
+        AtomicLong id1 = new AtomicLong(43);
+        AtomicLong id2 = new AtomicLong(44);
+
+        assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.createTalk(contentfulTalk0, assetMap, entryErrorSet, assetErrorSet, speakerMap, id0));
+        assertThrows(NullPointerException.class, () -> ContentfulUtils.createTalk(contentfulTalk1, assetMap, entryErrorSet, assetErrorSet, speakerMap, id1).getId());
+        assertEquals(44, ContentfulUtils.createTalk(contentfulTalk2, assetMap, entryErrorSet, assetErrorSet, speakerMap, id2).getId());
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("extractString method tests")
