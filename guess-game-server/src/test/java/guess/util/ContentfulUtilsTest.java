@@ -24,6 +24,7 @@ import guess.domain.source.contentful.speaker.ContentfulSpeaker;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerFields;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
 import guess.domain.source.contentful.talk.ContentfulTalk;
+import guess.domain.source.contentful.talk.ContentfulTalkIncludes;
 import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
 import guess.domain.source.contentful.talk.fields.ContentfulTalkFieldsCommon;
 import guess.domain.source.contentful.talk.response.ContentfulTalkResponse;
@@ -1024,6 +1025,78 @@ class ContentfulUtilsTest {
         assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.createTalk(contentfulTalk0, assetMap, entryErrorSet, assetErrorSet, speakerMap, id0));
         assertThrows(NullPointerException.class, () -> ContentfulUtils.createTalk(contentfulTalk1, assetMap, entryErrorSet, assetErrorSet, speakerMap, id1));
         assertEquals(44, ContentfulUtils.createTalk(contentfulTalk2, assetMap, entryErrorSet, assetErrorSet, speakerMap, id2).getId());
+    }
+
+    @Test
+    void testGetTalks() {
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            List<Talk> getTalks(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            List<Talk> getTalks(Invocation invocation, Conference conference, String conferenceCode) {
+                return invocation.proceed(conference, conferenceCode);
+            }
+        };
+
+        assertDoesNotThrow(() -> ContentfulUtils.getTalks(Conference.JPOINT, "code"));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakerMap method tests")
+    class GetSpeakerMapTest {
+        private final Speaker speaker;
+
+        public GetSpeakerMapTest() {
+            speaker = new Speaker();
+            speaker.setId(42);
+        }
+
+        private Stream<Arguments> data() {
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("id1");
+
+            ContentfulSpeaker contentfulSpeaker1 = new ContentfulSpeaker();
+            contentfulSpeaker1.setSys(contentfulSys1);
+
+            ContentfulTalkIncludes contentfulTalkIncludes1 = new ContentfulTalkIncludes();
+            contentfulTalkIncludes1.setEntry(List.of(contentfulSpeaker1));
+
+            ContentfulTalkResponseCommon contentfulTalkResponseCommon0 = new ContentfulTalkResponseCommon();
+
+            ContentfulTalkResponseCommon contentfulTalkResponseCommon1 = new ContentfulTalkResponseCommon();
+            contentfulTalkResponseCommon1.setIncludes(contentfulTalkIncludes1);
+
+            return Stream.of(
+                    arguments(contentfulTalkResponseCommon0, null, null, Collections.emptyMap()),
+                    arguments(contentfulTalkResponseCommon1, null, null, Map.of("id1", speaker))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
+                           Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet,
+                           Map<String, Speaker> expected) {
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
+                                      Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+                    return speaker;
+                }
+
+                @Mock
+                Map<String, Speaker> getSpeakerMap(Invocation invocation, ContentfulTalkResponse<? extends ContentfulTalkFields> response,
+                                                   Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
+                    return invocation.proceed(response, assetMap, assetErrorSet);
+                }
+            };
+
+            assertEquals(expected, ContentfulUtils.getSpeakerMap(response, assetMap, assetErrorSet));
+        }
     }
 
     @Nested
