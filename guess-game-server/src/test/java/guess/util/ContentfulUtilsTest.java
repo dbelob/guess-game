@@ -1101,6 +1101,39 @@ class ContentfulUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getAssetMap method tests")
+    class GetAssetMapTest {
+        private Stream<Arguments> data() {
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("id1");
+
+            ContentfulAsset contentfulAsset1 = new ContentfulAsset();
+            contentfulAsset1.setSys(contentfulSys1);
+
+            ContentfulIncludes contentfulIncludes1 = new ContentfulIncludes();
+            contentfulIncludes1.setAsset(List.of(contentfulAsset1));
+
+            ContentfulSpeakerResponse response0 = new ContentfulSpeakerResponse();
+
+            ContentfulSpeakerResponse response1 = new ContentfulSpeakerResponse();
+            response1.setIncludes(contentfulIncludes1);
+
+            return Stream.of(
+                    arguments(response0, Collections.emptyMap()),
+                    arguments(response1, Map.of("id1", contentfulAsset1))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response,
+                         Map<String, ContentfulAsset> expected) {
+            assertEquals(expected, ContentfulUtils.getAssetMap(response));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("extractString method tests")
     class ExtractStringTest {
         private Stream<Arguments> data() {
