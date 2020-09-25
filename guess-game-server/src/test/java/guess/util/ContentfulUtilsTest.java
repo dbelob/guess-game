@@ -281,7 +281,7 @@ class ContentfulUtilsTest {
             }
 
             @Mock
-            Set<String> getEntryErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+            Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
                 return Collections.emptySet();
             }
         };
@@ -638,7 +638,7 @@ class ContentfulUtilsTest {
             }
 
             @Mock
-            Set<String> getAssetErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+            Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
                 return Collections.emptySet();
             }
         };
@@ -924,12 +924,7 @@ class ContentfulUtilsTest {
             }
 
             @Mock
-            Set<String> getEntryErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
-                return Collections.emptySet();
-            }
-
-            @Mock
-            Set<String> getAssetErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+            Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
                 return Collections.emptySet();
             }
 
