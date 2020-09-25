@@ -71,6 +71,9 @@ public class ContentfulUtils {
     static final String ENGLISH_LOCALE = "en";
     static final String RUSSIAN_LOCALE = "ru-RU";
 
+    static final String ENTRY_LINK_TYPE = "Entry";
+    static final String ASSET_LINK_TYPE = "Asset";
+
     enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
@@ -295,7 +298,7 @@ public class ContentfulUtils {
                 .toUri();
         ContentfulEventResponse response = restTemplate.getForObject(uri, ContentfulEventResponse.class);
         Map<String, ContentfulCity> cityMap = getCityMap(Objects.requireNonNull(response));
-        Set<String> entryErrorSet = getEntryErrorSet(response);
+        Set<String> entryErrorSet = getErrorSet(response, ENTRY_LINK_TYPE);
 
         return response.getItems().stream()
                 .map(e -> createEvent(e, cityMap, entryErrorSet))
@@ -440,7 +443,7 @@ public class ContentfulUtils {
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
         AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
-        Set<String> assetErrorSet = getAssetErrorSet(response);
+        Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
@@ -576,8 +579,8 @@ public class ContentfulUtils {
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
         AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
-        Set<String> entryErrorSet = getEntryErrorSet(response);
-        Set<String> assetErrorSet = getAssetErrorSet(response);
+        Set<String> entryErrorSet = getErrorSet(response, ENTRY_LINK_TYPE);
+        Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
         Map<String, Speaker> speakerMap = getSpeakerMap(response, assetMap, assetErrorSet);
 
         // Fix Contentful "notResolvable" error for one entry
@@ -715,7 +718,7 @@ public class ContentfulUtils {
      * @param linkType link type
      * @return error set
      */
-    private static Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
+    static Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
         return (response.getErrors() == null) ?
                 Collections.emptySet() :
                 response.getErrors().stream()
@@ -728,26 +731,6 @@ public class ContentfulUtils {
                         })
                         .map(e -> e.getDetails().getId())
                         .collect(Collectors.toSet());
-    }
-
-    /**
-     * Gets entry error set.
-     *
-     * @param response response
-     * @return error set
-     */
-    static Set<String> getEntryErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
-        return getErrorSet(response, "Entry");
-    }
-
-    /**
-     * Gets asset error set.
-     *
-     * @param response response
-     * @return error set
-     */
-    static Set<String> getAssetErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
-        return getErrorSet(response, "Asset");
     }
 
     /**

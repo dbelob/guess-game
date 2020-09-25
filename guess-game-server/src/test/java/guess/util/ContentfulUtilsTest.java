@@ -12,8 +12,11 @@ import guess.domain.source.contentful.asset.ContentfulAssetFields;
 import guess.domain.source.contentful.asset.ContentfulAssetFieldsFile;
 import guess.domain.source.contentful.city.ContentfulCity;
 import guess.domain.source.contentful.city.ContentfulCityFields;
+import guess.domain.source.contentful.error.ContentfulError;
+import guess.domain.source.contentful.error.ContentfulErrorDetails;
 import guess.domain.source.contentful.event.ContentfulEvent;
 import guess.domain.source.contentful.event.ContentfulEventFields;
+import guess.domain.source.contentful.event.ContentfulEventIncludes;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
 import guess.domain.source.contentful.eventtype.ContentfulEventType;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeFields;
@@ -1129,6 +1132,98 @@ class ContentfulUtilsTest {
         void getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response,
                          Map<String, ContentfulAsset> expected) {
             assertEquals(expected, ContentfulUtils.getAssetMap(response));
+        }
+    }
+
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getCityMap method tests")
+    class GetCityMapTest {
+        private Stream<Arguments> data() {
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("id1");
+
+            ContentfulCity contentfulCity1 = new ContentfulCity();
+            contentfulCity1.setSys(contentfulSys1);
+
+            ContentfulEventIncludes contentfulIncludes1 = new ContentfulEventIncludes();
+            contentfulIncludes1.setEntry(List.of(contentfulCity1));
+
+            ContentfulEventResponse response0 = new ContentfulEventResponse();
+
+            ContentfulEventResponse response1 = new ContentfulEventResponse();
+            response1.setIncludes(contentfulIncludes1);
+
+            return Stream.of(
+                    arguments(response0, Collections.emptyMap()),
+                    arguments(response1, Map.of("id1", contentfulCity1))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getCityMap(ContentfulEventResponse response, Map<String, ContentfulCity> expected) {
+            assertEquals(expected, ContentfulUtils.getCityMap(response));
+        }
+    }
+
+    private static ContentfulError createContentfulError(boolean isSysNotNull, boolean isDetailsNotNull, String sysId,
+                                                         String sysType, String detailsType, String detailsLinkType, String detailsId) {
+        ContentfulError contentfulError = new ContentfulError();
+
+        if (isSysNotNull) {
+            ContentfulSys sys = new ContentfulSys();
+            sys.setId(sysId);
+            sys.setType(sysType);
+
+            contentfulError.setSys(sys);
+        }
+
+        if (isDetailsNotNull) {
+            ContentfulErrorDetails details = new ContentfulErrorDetails();
+            details.setType(detailsType);
+            details.setLinkType(detailsLinkType);
+            details.setId(detailsId);
+
+            contentfulError.setDetails(details);
+        }
+
+        return contentfulError;
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getErrorSet method tests")
+    class GetErrorSetTest {
+        private final String DETAILS_ID = "id42";
+
+        private Stream<Arguments> data() {
+            ContentfulEventResponse response0 = new ContentfulEventResponse();
+
+            ContentfulEventResponse response1 = new ContentfulEventResponse();
+            response1.setErrors(List.of(
+                    createContentfulError(false, false, null, null, null, null, DETAILS_ID),
+                    createContentfulError(true, false, null, null, null, null, DETAILS_ID),
+                    createContentfulError(true, false, "notResolvable", null, null, null, DETAILS_ID),
+                    createContentfulError(true, false, null, "error", null, null, DETAILS_ID),
+                    createContentfulError(false, true, null, null, null, null, DETAILS_ID),
+                    createContentfulError(false, true, null, null, "Link", null, DETAILS_ID),
+                    createContentfulError(false, true, null, null, null, ContentfulUtils.ENTRY_LINK_TYPE, DETAILS_ID),
+                    createContentfulError(true, true, "notResolvable", "error", "Link", ContentfulUtils.ENTRY_LINK_TYPE, DETAILS_ID)
+            ));
+
+            return Stream.of(
+                    arguments(response0, null, Collections.emptySet()),
+                    arguments(response1, "", Collections.emptySet()),
+                    arguments(response1, ContentfulUtils.ENTRY_LINK_TYPE, Set.of(DETAILS_ID))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType, Set<String> expected) {
+            assertEquals(expected, ContentfulUtils.getErrorSet(response, linkType));
         }
     }
 
