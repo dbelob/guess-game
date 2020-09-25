@@ -1191,27 +1191,28 @@ class ContentfulUtilsTest {
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getErrorSet method tests")
     class GetErrorSetTest {
-        private final String DETAILS_ID = "id42";
 
         private Stream<Arguments> data() {
             ContentfulEventResponse response0 = new ContentfulEventResponse();
 
             ContentfulEventResponse response1 = new ContentfulEventResponse();
             response1.setErrors(List.of(
-                    createContentfulError(false, false, null, null, null, null, DETAILS_ID),
-                    createContentfulError(true, false, null, null, null, null, DETAILS_ID),
-                    createContentfulError(true, false, "notResolvable", null, null, null, DETAILS_ID),
-                    createContentfulError(true, false, null, "error", null, null, DETAILS_ID),
-                    createContentfulError(false, true, null, null, null, null, DETAILS_ID),
-                    createContentfulError(false, true, null, null, "Link", null, DETAILS_ID),
-                    createContentfulError(false, true, null, null, null, ContentfulUtils.ENTRY_LINK_TYPE, DETAILS_ID),
-                    createContentfulError(true, true, "notResolvable", "error", "Link", ContentfulUtils.ENTRY_LINK_TYPE, DETAILS_ID)
+                    createContentfulError(false, false, null, null, null, null, "id0"),
+                    createContentfulError(true, false, null, null, null, null, "id1"),
+                    createContentfulError(true, false, "notResolvable", null, null, null, "id2"),
+                    createContentfulError(true, false, null, "error", null, null, "id3"),
+                    createContentfulError(true, false, "notResolvable", "error", null, null, "id4"),
+                    createContentfulError(false, true, null, null, null, null, "id5"),
+                    createContentfulError(false, true, null, null, "Link", null, "id6"),
+                    createContentfulError(false, true, null, null, null, ContentfulUtils.ENTRY_LINK_TYPE, "id7"),
+                    createContentfulError(false, true, null, null, "Link", ContentfulUtils.ENTRY_LINK_TYPE, "id8"),
+                    createContentfulError(true, true, "notResolvable", "error", "Link", ContentfulUtils.ENTRY_LINK_TYPE, "id9")
             ));
 
             return Stream.of(
                     arguments(response0, null, Collections.emptySet()),
                     arguments(response1, "", Collections.emptySet()),
-                    arguments(response1, ContentfulUtils.ENTRY_LINK_TYPE, Set.of(DETAILS_ID))
+                    arguments(response1, ContentfulUtils.ENTRY_LINK_TYPE, Set.of("id9"))
             );
         }
 
