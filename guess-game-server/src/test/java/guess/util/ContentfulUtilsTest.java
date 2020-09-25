@@ -1206,13 +1206,28 @@ class ContentfulUtilsTest {
                     createContentfulError(false, true, null, null, "Link", null, "id6"),
                     createContentfulError(false, true, null, null, null, ContentfulUtils.ENTRY_LINK_TYPE, "id7"),
                     createContentfulError(false, true, null, null, "Link", ContentfulUtils.ENTRY_LINK_TYPE, "id8"),
-                    createContentfulError(true, true, "notResolvable", "error", "Link", ContentfulUtils.ENTRY_LINK_TYPE, "id9")
+                    createContentfulError(true, true, null, null, null, null, "id10"),
+                    createContentfulError(true, true, null, null, null, ContentfulUtils.ENTRY_LINK_TYPE, "id10"),
+                    createContentfulError(true, true, null, null, "Link", null, "id11"),
+                    createContentfulError(true, true, null, null, "Link", ContentfulUtils.ENTRY_LINK_TYPE, "id12"),
+                    createContentfulError(true, true, null, "error", null, null, "id13"),
+                    createContentfulError(true, true, null, "error", null, ContentfulUtils.ENTRY_LINK_TYPE, "id14"),
+                    createContentfulError(true, true, null, "error", "Link", null, "id15"),
+                    createContentfulError(true, true, null, "error", "Link", ContentfulUtils.ENTRY_LINK_TYPE, "id16"),
+                    createContentfulError(true, true, "notResolvable", null, null, null, "id17"),
+                    createContentfulError(true, true, "notResolvable", null, null, ContentfulUtils.ENTRY_LINK_TYPE, "id18"),
+                    createContentfulError(true, true, "notResolvable", null, "Link", null, "id19"),
+                    createContentfulError(true, true, "notResolvable", null, "Link", ContentfulUtils.ENTRY_LINK_TYPE, "id20"),
+                    createContentfulError(true, true, "notResolvable", "error", null, null, "id21"),
+                    createContentfulError(true, true, "notResolvable", "error", null, ContentfulUtils.ENTRY_LINK_TYPE, "id22"),
+                    createContentfulError(true, true, "notResolvable", "error", "Link", null, "id23"),
+                    createContentfulError(true, true, "notResolvable", "error", "Link", ContentfulUtils.ENTRY_LINK_TYPE, "id24")
             ));
 
             return Stream.of(
                     arguments(response0, null, Collections.emptySet()),
                     arguments(response1, "", Collections.emptySet()),
-                    arguments(response1, ContentfulUtils.ENTRY_LINK_TYPE, Set.of("id9"))
+                    arguments(response1, ContentfulUtils.ENTRY_LINK_TYPE, Set.of("id24"))
             );
         }
 
