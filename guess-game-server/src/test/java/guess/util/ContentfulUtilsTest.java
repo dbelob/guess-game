@@ -1396,6 +1396,63 @@ class ContentfulUtilsTest {
         }
     }
 
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractPresentationLinks method tests")
+    class ExtractPresentationLinksTest {
+        private static final String ASSET_URL = "https://valid.com";
+
+        private Stream<Arguments> data() {
+            ContentfulSys contentfulSys0 = new ContentfulSys();
+            contentfulSys0.setId("id0");
+
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("id1");
+
+            ContentfulLink contentfulLink0 = new ContentfulLink();
+            contentfulLink0.setSys(contentfulSys0);
+
+            ContentfulLink contentfulLink1 = new ContentfulLink();
+            contentfulLink1.setSys(contentfulSys1);
+
+            ContentfulAssetFields contentfulAssetFields1 = new ContentfulAssetFields();
+            contentfulAssetFields1.setFile(new ContentfulAssetFieldsFile());
+
+            ContentfulAsset contentfulAsset1 = new ContentfulAsset();
+            contentfulAsset1.setFields(contentfulAssetFields1);
+
+            Map<String, ContentfulAsset> assetMap1 = Map.of("id1", contentfulAsset1);
+            Set<String> assetErrorSet1 = Set.of("id0");
+
+            return Stream.of(
+                    arguments(null, null, null, null, Collections.emptyList()),
+                    arguments(List.of(contentfulLink0, contentfulLink1), assetMap1, assetErrorSet1, "talkNameEn", List.of(ASSET_URL))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
+                                      Set<String> assetErrorSet, String talkNameEn, List<String> expected) {
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                List<String> extractPresentationLinks(Invocation invocation, List<ContentfulLink> links,
+                                                      Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet,
+                                                      String talkNameEn) {
+                    return invocation.proceed(links, assetMap, assetErrorSet, talkNameEn);
+                }
+
+                @Mock
+                String extractAssetUrl(String value) {
+                    return ASSET_URL;
+                }
+            };
+
+            assertEquals(expected, ContentfulUtils.extractPresentationLinks(links, assetMap, assetErrorSet, talkNameEn));
+        }
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("extractVideoLinks method tests")
