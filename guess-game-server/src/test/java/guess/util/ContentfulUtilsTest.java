@@ -1398,11 +1398,17 @@ class ContentfulUtilsTest {
             ContentfulSys contentfulSys1 = new ContentfulSys();
             contentfulSys1.setId("id1");
 
+            ContentfulSys contentfulSys2 = new ContentfulSys();
+            contentfulSys2.setId("id2");
+
             ContentfulLink contentfulLink0 = new ContentfulLink();
             contentfulLink0.setSys(contentfulSys0);
 
             ContentfulLink contentfulLink1 = new ContentfulLink();
             contentfulLink1.setSys(contentfulSys1);
+
+            ContentfulLink contentfulLink2 = new ContentfulLink();
+            contentfulLink2.setSys(contentfulSys2);
 
             ContentfulAssetFields contentfulAssetFields1 = new ContentfulAssetFields();
             contentfulAssetFields1.setFile(new ContentfulAssetFieldsFile());
@@ -1410,19 +1416,21 @@ class ContentfulUtilsTest {
             ContentfulAsset contentfulAsset1 = new ContentfulAsset();
             contentfulAsset1.setFields(contentfulAssetFields1);
 
-            Map<String, ContentfulAsset> assetMap1 = Map.of("id1", contentfulAsset1);
-            Set<String> assetErrorSet1 = Set.of("id0");
+            Map<String, ContentfulAsset> assetMap = Map.of("id1", contentfulAsset1);
+            Set<String> assetErrorSet = Set.of("id0");
 
             return Stream.of(
-                    arguments(null, null, null, null, Collections.emptyList()),
-                    arguments(List.of(contentfulLink0, contentfulLink1), assetMap1, assetErrorSet1, "talkNameEn", List.of(ASSET_URL))
+                    arguments(null, null, null, null, null, Collections.emptyList()),
+                    arguments(List.of(contentfulLink0, contentfulLink1), assetMap, assetErrorSet, "talkNameEn", null, List.of(ASSET_URL)),
+                    arguments(List.of(contentfulLink2), assetMap, assetErrorSet, "talkNameEn", NullPointerException.class, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
         void extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
-                                      Set<String> assetErrorSet, String talkNameEn, List<String> expected) {
+                                      Set<String> assetErrorSet, String talkNameEn, Class<? extends Throwable> expectedException,
+                                      List<String> expectedValue) {
             new MockUp<ContentfulUtils>() {
                 @Mock
                 List<String> extractPresentationLinks(Invocation invocation, List<ContentfulLink> links,
@@ -1437,7 +1445,11 @@ class ContentfulUtilsTest {
                 }
             };
 
-            assertEquals(expected, ContentfulUtils.extractPresentationLinks(links, assetMap, assetErrorSet, talkNameEn));
+            if (expectedException == null) {
+                assertEquals(expectedValue, ContentfulUtils.extractPresentationLinks(links, assetMap, assetErrorSet, talkNameEn));
+            } else {
+                assertThrows(expectedException, () -> ContentfulUtils.extractPresentationLinks(links, assetMap, assetErrorSet, talkNameEn));
+            }
         }
     }
 
