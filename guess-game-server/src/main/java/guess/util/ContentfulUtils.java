@@ -971,7 +971,7 @@ public class ContentfulUtils {
      * @param locale locale
      * @return attribute value
      */
-    private static String extractLocaleValue(Map<String, String> map, String locale) {
+    static String extractLocaleValue(Map<String, String> map, String locale) {
         return (map != null) ? map.get(locale) : null;
     }
 
@@ -985,8 +985,8 @@ public class ContentfulUtils {
      * @param eventName     event name
      * @return city name
      */
-    private static String extractCity(ContentfulLink link, Map<String, ContentfulCity> cityMap,
-                                      Set<String> entryErrorSet, String locale, String eventName) {
+    static String extractCity(ContentfulLink link, Map<String, ContentfulCity> cityMap,
+                              Set<String> entryErrorSet, String locale, String eventName) {
         String entryId = link.getSys().getId();
         boolean isErrorAsset = entryErrorSet.contains(entryId);
 
@@ -1001,6 +1001,13 @@ public class ContentfulUtils {
                 .getFields().getCityName().get(locale);
     }
 
+    /**
+     * Fixes nonexistent event error.
+     *
+     * @param conference conference
+     * @param startDate  start date
+     * @return fixed event
+     */
     static Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
         if (Conference.DOT_NEXT.equals(conference) && LocalDate.of(2016, 12, 7).equals(startDate)) {
             return new Event(

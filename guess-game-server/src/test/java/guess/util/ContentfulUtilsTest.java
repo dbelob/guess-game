@@ -1647,6 +1647,76 @@ class ContentfulUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractLocaleValue method tests")
+    class ExtractLocaleValueTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null, null),
+                    arguments(Map.of("en", "value"), "en", "value"),
+                    arguments(Map.of("en", "value"), "ru", null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractLocaleValue(Map<String, String> map, String locale, String expected) {
+            assertEquals(expected, ContentfulUtils.extractLocaleValue(map, locale));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractCity method tests")
+    class ExtractCityTest {
+        private Stream<Arguments> data() {
+            ContentfulSys contentfulSys0 = new ContentfulSys();
+            contentfulSys0.setId("id0");
+
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("id1");
+
+            ContentfulSys contentfulSys2 = new ContentfulSys();
+            contentfulSys2.setId("id2");
+
+            ContentfulLink contentfulLink0 = new ContentfulLink();
+            contentfulLink0.setSys(contentfulSys0);
+
+            ContentfulLink contentfulLink1 = new ContentfulLink();
+            contentfulLink1.setSys(contentfulSys1);
+
+            ContentfulLink contentfulLink2 = new ContentfulLink();
+            contentfulLink2.setSys(contentfulSys2);
+
+            ContentfulCityFields contentfulCityFields1 = new ContentfulCityFields();
+            contentfulCityFields1.setCityName(Map.of("en", "Name1"));
+
+            ContentfulCity contentfulCity1 = new ContentfulCity();
+            contentfulCity1.setFields(contentfulCityFields1);
+
+            Map<String, ContentfulCity> cityMap = Map.of("id1", contentfulCity1);
+            Set<String> entryErrorSet = Set.of("id0");
+
+            return Stream.of(
+                    arguments(contentfulLink0, cityMap, entryErrorSet, null, "eventName", null, null),
+                    arguments(contentfulLink1, cityMap, entryErrorSet, "en", "eventName", null, "Name1"),
+                    arguments(contentfulLink2, cityMap, entryErrorSet, null, "eventName", NullPointerException.class, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractCity(ContentfulLink link, Map<String, ContentfulCity> cityMap, Set<String> entryErrorSet, String locale,
+                         String eventName, Class<? extends Throwable> expectedException, String expectedValue) {
+            if (expectedException == null) {
+                assertEquals(expectedValue, ContentfulUtils.extractCity(link, cityMap, entryErrorSet, locale, eventName));
+            } else {
+                assertThrows(expectedException, () -> ContentfulUtils.extractCity(link, cityMap, entryErrorSet, locale, eventName));
+            }
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("fixNonexistentEventError method tests")
     class FixNonexistentEventErrorTest {
         private Stream<Arguments> data() {
