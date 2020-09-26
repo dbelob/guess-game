@@ -1287,61 +1287,54 @@ class ContentfulUtilsTest {
                     arguments("abc", new ExtractSet(
                                     List.of(new ExtractPair("([a-z]+)", 1)),
                                     "Invalid property: %s"),
-                            "abc"),
+                            null, "abc"),
                     arguments("abc", new ExtractSet(
                                     List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
                                     "Invalid property: %s"),
-                            "abc"),
+                            null, "abc"),
                     arguments(" abc", new ExtractSet(
                                     List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
                                     "Invalid property: %s"),
-                            "abc"),
+                            null, "abc"),
                     arguments("abc ", new ExtractSet(
                                     List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
                                     "Invalid property: %s"),
-                            "abc"),
+                            null, "abc"),
                     arguments(" abc ", new ExtractSet(
                                     List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
                                     "Invalid property: %s"),
-                            "abc")
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void extractProperty(String value, ExtractSet extractSet, String expected) {
-            assertEquals(expected, ContentfulUtils.extractProperty(value, extractSet));
-        }
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("extractProperty method tests (with exception)")
-    class ExtractPropertyWithExceptionTest {
-        private Stream<Arguments> data() {
-            return Stream.of(
+                            null, "abc"),
                     arguments("42", new ExtractSet(
-                            List.of(new ExtractPair("([a-z]+)", 1)),
-                            "Invalid property: %s")),
+                                    List.of(new ExtractPair("([a-z]+)", 1)),
+                                    "Invalid property: %s"),
+                            IllegalArgumentException.class, null),
                     arguments("42", new ExtractSet(
-                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s")),
+                                    List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                                    "Invalid property: %s"),
+                            IllegalArgumentException.class, null),
                     arguments(" 42", new ExtractSet(
-                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s")),
+                                    List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                                    "Invalid property: %s"),
+                            IllegalArgumentException.class, null),
                     arguments("42 ", new ExtractSet(
-                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s")),
+                                    List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                                    "Invalid property: %s"),
+                            IllegalArgumentException.class, null),
                     arguments(" 42 ", new ExtractSet(
-                            List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
-                            "Invalid property: %s"))
+                                    List.of(new ExtractPair("^[\\s]*([a-z]+)[\\s]*$", 1)),
+                                    "Invalid property: %s"),
+                            IllegalArgumentException.class, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void extractProperty(String value, ExtractSet extractSet) {
-            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractProperty(value, extractSet));
+        void extractProperty(String value, ExtractSet extractSet, Class<? extends Throwable> expectedException, String expectedValue) {
+            if (expectedException == null) {
+                assertEquals(expectedValue, ContentfulUtils.extractProperty(value, extractSet));
+            } else {
+                assertThrows(expectedException, () -> ContentfulUtils.extractProperty(value, extractSet));
+            }
         }
     }
 
