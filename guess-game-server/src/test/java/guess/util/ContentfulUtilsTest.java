@@ -2315,4 +2315,41 @@ class ContentfulUtilsTest {
             assertEquals(expected, ContentfulUtils.equals(a, b));
         }
     }
+
+    @Test
+    void iterateAllEntities() {
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            List<String> getLocales() {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            List<EventType> getEventTypes() {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            List<Event> getEvents(String eventName, LocalDate startDate) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            List<Speaker> getSpeakers(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            List<Talk> getTalks(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            void iterateAllEntities(Invocation invocation) {
+                invocation.proceed();
+            }
+        };
+
+        assertDoesNotThrow(ContentfulUtils::iterateAllEntities);
+    }
 }

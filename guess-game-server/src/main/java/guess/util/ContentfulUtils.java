@@ -1368,7 +1368,7 @@ public class ContentfulUtils {
         }
     }
 
-    public static void main(String[] args) {
+    static void iterateAllEntities() {
         List<String> locales = getLocales();
         log.info("Locales: {}, {}", locales.size(), locales);
 
