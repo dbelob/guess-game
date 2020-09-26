@@ -769,47 +769,35 @@ class ContentfulUtilsTest {
     class ExtractTwitterTest {
         private Stream<Arguments> data() {
             return Stream.of(
-                    arguments(null, null),
-                    arguments("", ""),
-                    arguments(" ", ""),
-                    arguments("arungupta", "arungupta"),
-                    arguments(" arungupta", "arungupta"),
-                    arguments("arungupta ", "arungupta"),
-                    arguments(" arungupta ", "arungupta"),
-                    arguments("tagir_valeev", "tagir_valeev"),
-                    arguments("kuksenk0", "kuksenk0"),
-                    arguments("DaschnerS", "DaschnerS"),
-                    arguments("@dougqh", "dougqh"),
-                    arguments("42", "42"),
-                    arguments("@42", "42")
+                    arguments(null, null, null),
+                    arguments("", null, ""),
+                    arguments(" ", null, ""),
+                    arguments("arungupta", null, "arungupta"),
+                    arguments(" arungupta", null, "arungupta"),
+                    arguments("arungupta ", null, "arungupta"),
+                    arguments(" arungupta ", null, "arungupta"),
+                    arguments("tagir_valeev", null, "tagir_valeev"),
+                    arguments("kuksenk0", null, "kuksenk0"),
+                    arguments("DaschnerS", null, "DaschnerS"),
+                    arguments("@dougqh", null, "dougqh"),
+                    arguments("42", null, "42"),
+                    arguments("@42", null, "42"),
+                    arguments("%", IllegalArgumentException.class, null),
+                    arguments("%42", IllegalArgumentException.class, null),
+                    arguments("%dougqh", IllegalArgumentException.class, null),
+                    arguments("dougqh%", IllegalArgumentException.class, null),
+                    arguments("dou%gqh", IllegalArgumentException.class, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void extractTwitter(String value, String expected) {
-            assertEquals(expected, ContentfulUtils.extractTwitter(value));
-        }
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("extractTwitter method tests (with exception)")
-    class ExtractTwitterWithExceptionTest {
-        private Stream<Arguments> data() {
-            return Stream.of(
-                    arguments("%"),
-                    arguments("%42"),
-                    arguments("%dougqh"),
-                    arguments("dougqh%"),
-                    arguments("dou%gqh")
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void extractTwitter(String value) {
-            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractTwitter(value));
+        void extractTwitter(String value, Class<? extends Throwable> expectedException, String expectedValue) {
+            if (expectedException == null) {
+                assertEquals(expectedValue, ContentfulUtils.extractTwitter(value));
+            } else {
+                assertThrows(expectedException, () -> ContentfulUtils.extractTwitter(value));
+            }
         }
     }
 
@@ -1477,40 +1465,34 @@ class ContentfulUtilsTest {
     class ExtractAssetUrlTest {
         private Stream<Arguments> data() {
             return Stream.of(
-                    arguments(null, null),
-                    arguments("", ""),
-                    arguments(" ", ""),
-                    arguments("//assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
-                    arguments(" //assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
-                    arguments("//assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf ", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
-                    arguments(" //assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf ", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
-                    arguments("http://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
-                    arguments("https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf", "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf")
+                    arguments(null, null, null),
+                    arguments("", null, ""),
+                    arguments(" ", null, ""),
+                    arguments("//assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf",
+                            null, "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments(" //assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf",
+                            null, "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments("//assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf ",
+                            null, "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments(" //assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf ",
+                            null, "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments("http://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf",
+                            null, "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments("https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf",
+                            null, "https://assets.ctfassets.net/oxjq45e8ilak/6sKzieda7fGIQrNXZsR0cZ/bf48435803b5cac81cb4e3c729a581d6/2019_Azul_HTM.pdf"),
+                    arguments("abc", IllegalArgumentException.class, null),
+                    arguments("42", IllegalArgumentException.class, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void extractAssetUrl(String value, String expected) {
-            assertEquals(expected, ContentfulUtils.extractAssetUrl(value));
-        }
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("extractAssetUrl method tests (with exception)")
-    class ExtractAssetUrlWithExceptionTest {
-        private Stream<Arguments> data() {
-            return Stream.of(
-                    arguments("abc"),
-                    arguments("42")
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void extractAssetUrl(String value) {
-            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractAssetUrl(value));
+        void extractAssetUrl(String value, Class<? extends Throwable> expectedException, String expectedValue) {
+            if (expectedException == null) {
+                assertEquals(expectedValue, ContentfulUtils.extractAssetUrl(value));
+            } else {
+                assertThrows(expectedException, () -> ContentfulUtils.extractAssetUrl(value));
+            }
         }
     }
 
@@ -1599,67 +1581,55 @@ class ContentfulUtilsTest {
     class ExtractEventNameTest {
         private Stream<Arguments> data() {
             return Stream.of(
-                    arguments(null, null, null),
-                    arguments(null, "", null),
-                    arguments(null, "abc", null),
-                    arguments("abc", "en", "abc"),
-                    arguments("Moscow", "en", " Msc"),
-                    arguments("Moscow ", "en", " Msc"),
-                    arguments(" Moscow ", "en", " Msc"),
-                    arguments("abc Moscow", "en", "abc Msc"),
-                    arguments("abc Moscow ", "en", "abc Msc"),
-                    arguments("Moscow cde", "en", "Moscow cde"),
-                    arguments(" Moscow cde", "en", " Moscow cde"),
-                    arguments("abc Moscow cde", "en", "abc Moscow cde"),
-                    arguments("Piter", "en", " SPb"),
-                    arguments("Piter ", "en", " SPb"),
-                    arguments(" Piter ", "en", " SPb"),
-                    arguments("abc Piter", "en", "abc SPb"),
-                    arguments("abc Piter ", "en", "abc SPb"),
-                    arguments("Piter cde", "en", "Piter cde"),
-                    arguments(" Piter cde", "en", " Piter cde"),
-                    arguments("abc Piter cde", "en", "abc Piter cde"),
-                    arguments("Moscow", "ru-RU", " Мск"),
-                    arguments("Moscow ", "ru-RU", " Мск"),
-                    arguments(" Moscow ", "ru-RU", " Мск"),
-                    arguments("abc Moscow", "ru-RU", "abc Мск"),
-                    arguments("abc Moscow ", "ru-RU", "abc Мск"),
-                    arguments("Moscow cde", "ru-RU", "Moscow cde"),
-                    arguments(" Moscow cde", "ru-RU", " Moscow cde"),
-                    arguments("abc Moscow cde", "ru-RU", "abc Moscow cde"),
-                    arguments("Piter", "ru-RU", " СПб"),
-                    arguments("Piter ", "ru-RU", " СПб"),
-                    arguments(" Piter ", "ru-RU", " СПб"),
-                    arguments("abc Piter", "ru-RU", "abc СПб"),
-                    arguments("abc Piter ", "ru-RU", "abc СПб"),
-                    arguments("Piter cde", "ru-RU", "Piter cde"),
-                    arguments(" Piter cde", "ru-RU", " Piter cde"),
-                    arguments("abc Piter cde", "ru-RU", "abc Piter cde")
+                    arguments(null, null, null, null),
+                    arguments(null, "", null, null),
+                    arguments(null, "abc", null, null),
+                    arguments("abc", "en", null, "abc"),
+                    arguments("Moscow", "en", null, " Msc"),
+                    arguments("Moscow ", "en", null, " Msc"),
+                    arguments(" Moscow ", "en", null, " Msc"),
+                    arguments("abc Moscow", "en", null, "abc Msc"),
+                    arguments("abc Moscow ", "en", null, "abc Msc"),
+                    arguments("Moscow cde", "en", null, "Moscow cde"),
+                    arguments(" Moscow cde", "en", null, " Moscow cde"),
+                    arguments("abc Moscow cde", "en", null, "abc Moscow cde"),
+                    arguments("Piter", "en", null, " SPb"),
+                    arguments("Piter ", "en", null, " SPb"),
+                    arguments(" Piter ", "en", null, " SPb"),
+                    arguments("abc Piter", "en", null, "abc SPb"),
+                    arguments("abc Piter ", "en", null, "abc SPb"),
+                    arguments("Piter cde", "en", null, "Piter cde"),
+                    arguments(" Piter cde", "en", null, " Piter cde"),
+                    arguments("abc Piter cde", "en", null, "abc Piter cde"),
+                    arguments("Moscow", "ru-RU", null, " Мск"),
+                    arguments("Moscow ", "ru-RU", null, " Мск"),
+                    arguments(" Moscow ", "ru-RU", null, " Мск"),
+                    arguments("abc Moscow", "ru-RU", null, "abc Мск"),
+                    arguments("abc Moscow ", "ru-RU", null, "abc Мск"),
+                    arguments("Moscow cde", "ru-RU", null, "Moscow cde"),
+                    arguments(" Moscow cde", "ru-RU", null, " Moscow cde"),
+                    arguments("abc Moscow cde", "ru-RU", null, "abc Moscow cde"),
+                    arguments("Piter", "ru-RU", null, " СПб"),
+                    arguments("Piter ", "ru-RU", null, " СПб"),
+                    arguments(" Piter ", "ru-RU", null, " СПб"),
+                    arguments("abc Piter", "ru-RU", null, "abc СПб"),
+                    arguments("abc Piter ", "ru-RU", null, "abc СПб"),
+                    arguments("Piter cde", "ru-RU", null, "Piter cde"),
+                    arguments(" Piter cde", "ru-RU", null, " Piter cde"),
+                    arguments("abc Piter cde", "ru-RU", null, "abc Piter cde"),
+                    arguments("abc", "", IllegalArgumentException.class, null),
+                    arguments("abc", "unknown", IllegalArgumentException.class, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void extractEventName(String name, String locale, String expected) {
-            assertEquals(expected, ContentfulUtils.extractEventName(name, locale));
-        }
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("extractEventName method tests")
-    class ExtractEventNameWithExceptionTest {
-        private Stream<Arguments> data() {
-            return Stream.of(
-                    arguments("abc", ""),
-                    arguments("abc", "unknown")
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void extractEventName(String name, String locale) {
-            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.extractEventName(name, locale));
+        void extractEventName(String name, String locale, Class<? extends Throwable> expectedException, String expectedValue) {
+            if (expectedException == null) {
+                assertEquals(expectedValue, ContentfulUtils.extractEventName(name, locale));
+            } else {
+                assertThrows(expectedException, () -> ContentfulUtils.extractEventName(name, locale));
+            }
         }
     }
 
