@@ -18,6 +18,7 @@ import guess.domain.source.contentful.locale.ContentfulLocale;
 import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
 import guess.domain.source.contentful.speaker.ContentfulSpeaker;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
+import guess.domain.source.contentful.speaker.NotResolvableSpeaker;
 import guess.domain.source.contentful.talk.ContentfulTalk;
 import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
 import guess.domain.source.contentful.talk.response.*;
@@ -74,7 +75,7 @@ public class ContentfulUtils {
     static final String ENTRY_LINK_TYPE = "Entry";
     static final String ASSET_LINK_TYPE = "Asset";
 
-    enum ConferenceSpaceInfo {
+    public enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
                 FIELDS_SPEAKER_FIELD_NAME, FIELDS_CONFERENCES_FIELD_NAME, "fields.javaChampion",
@@ -1048,28 +1049,8 @@ public class ContentfulUtils {
      * @param entryErrorSet       entry error set
      * @param speakerMap          map id/speaker
      */
-    static void fixEntryNotResolvableError(ConferenceSpaceInfo conferenceSpaceInfo,
-                                           Set<String> entryErrorSet, Map<String, Speaker> speakerMap) {
-        abstract class NotResolvableSpeaker {
-            private final ConferenceSpaceInfo conferenceSpaceInfo;
-            private final String entryId;
-
-            public NotResolvableSpeaker(ConferenceSpaceInfo conferenceSpaceInfo, String entryId) {
-                this.conferenceSpaceInfo = conferenceSpaceInfo;
-                this.entryId = entryId;
-            }
-
-            public ConferenceSpaceInfo getConferenceSpaceInfo() {
-                return conferenceSpaceInfo;
-            }
-
-            public String getEntryId() {
-                return entryId;
-            }
-
-            public abstract Speaker createSpeaker(long id);
-        }
-
+    static void fixEntryNotResolvableError(ConferenceSpaceInfo conferenceSpaceInfo, Set<String> entryErrorSet,
+                                           Map<String, Speaker> speakerMap) {
         List<NotResolvableSpeaker> notResolvableSpeakers = List.of(
                 new NotResolvableSpeaker(ConferenceSpaceInfo.COMMON_SPACE_INFO, "6yIC7EpG1EhejCEJDEsuqA") {
                     @Override

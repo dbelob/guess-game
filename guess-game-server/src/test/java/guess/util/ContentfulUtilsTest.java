@@ -1771,6 +1771,83 @@ class ContentfulUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fixEntryNotResolvableError method tests")
+    class FixEntryNotResolvableErrorTest {
+        private Stream<Arguments> data() {
+            final ContentfulUtils.ConferenceSpaceInfo EXISTING_CONFERENCE_SPACE_INFO = ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO;
+            final String EXISTING_ENTRY_ID = "6yIC7EpG1EhejCEJDEsuqA";
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(-1);
+
+            return Stream.of(
+                    arguments(
+                            null,
+                            new HashSet<>(),
+                            new HashMap<>(),
+                            Collections.emptySet(),
+                            Collections.emptyMap()),
+                    arguments(
+                            null,
+                            new HashSet<>(),
+                            new HashMap<>(Map.of(EXISTING_ENTRY_ID, speaker0)),
+                            Collections.emptySet(),
+                            Map.of(EXISTING_ENTRY_ID, speaker0)),
+                    arguments(
+                            null,
+                            new HashSet<>(Set.of(EXISTING_ENTRY_ID)),
+                            new HashMap<>(),
+                            Set.of(EXISTING_ENTRY_ID),
+                            Collections.emptyMap()),
+                    arguments(
+                            null,
+                            new HashSet<>(Set.of(EXISTING_ENTRY_ID)),
+                            new HashMap<>(Map.of(EXISTING_ENTRY_ID, speaker0)),
+                            Set.of(EXISTING_ENTRY_ID),
+                            Map.of(EXISTING_ENTRY_ID, speaker0)),
+                    arguments(
+                            EXISTING_CONFERENCE_SPACE_INFO,
+                            new HashSet<>(),
+                            new HashMap<>(),
+                            Collections.emptySet(),
+                            Collections.emptyMap()),
+                    arguments(
+                            EXISTING_CONFERENCE_SPACE_INFO,
+                            new HashSet<>(),
+                            new HashMap<>(Map.of(EXISTING_ENTRY_ID, speaker0)),
+                            Collections.emptySet(),
+                            Map.of(EXISTING_ENTRY_ID, speaker0)),
+                    arguments(
+                            EXISTING_CONFERENCE_SPACE_INFO,
+                            new HashSet<>(Set.of(EXISTING_ENTRY_ID)),
+                            new HashMap<>(),
+                            Collections.emptySet(),
+                            Map.of(EXISTING_ENTRY_ID, speaker1)),
+                    arguments(
+                            EXISTING_CONFERENCE_SPACE_INFO,
+                            new HashSet<>(Set.of(EXISTING_ENTRY_ID)),
+                            new HashMap<>(Map.of(EXISTING_ENTRY_ID, speaker0)),
+                            Set.of(EXISTING_ENTRY_ID),
+                            Map.of(EXISTING_ENTRY_ID, speaker0))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fixEntryNotResolvableError(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo,
+                                        Set<String> entryErrorSet, Map<String, Speaker> speakerMap,
+                                        Set<String> expectedEntryErrorSet, Map<String, Speaker> expectedSpeakerMap) {
+            assertDoesNotThrow(() -> ContentfulUtils.fixEntryNotResolvableError(conferenceSpaceInfo, entryErrorSet, speakerMap));
+            assertEquals(expectedEntryErrorSet, entryErrorSet);
+            assertEquals(expectedSpeakerMap, speakerMap);
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("needUpdate method tests (EventType)")
     class NeedUpdateEventTypeTest {
         private Stream<Arguments> data() {
