@@ -1773,10 +1773,7 @@ class ContentfulUtilsTest {
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("fixEntryNotResolvableError method tests")
     class FixEntryNotResolvableErrorTest {
-        private Stream<Arguments> data() {
-            final ContentfulUtils.ConferenceSpaceInfo EXISTING_CONFERENCE_SPACE_INFO = ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO;
-            final String EXISTING_ENTRY_ID = "6yIC7EpG1EhejCEJDEsuqA";
-
+        private Stream<Arguments> createStream(ContentfulUtils.ConferenceSpaceInfo existingConferenceSpaceInfo, String existingEntryId) {
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
 
@@ -1793,45 +1790,64 @@ class ContentfulUtilsTest {
                     arguments(
                             null,
                             new HashSet<>(),
-                            new HashMap<>(Map.of(EXISTING_ENTRY_ID, speaker0)),
+                            new HashMap<>(Map.of(existingEntryId, speaker0)),
                             Collections.emptySet(),
-                            Map.of(EXISTING_ENTRY_ID, speaker0)),
+                            Map.of(existingEntryId, speaker0)),
                     arguments(
                             null,
-                            new HashSet<>(Set.of(EXISTING_ENTRY_ID)),
+                            new HashSet<>(Set.of(existingEntryId)),
                             new HashMap<>(),
-                            Set.of(EXISTING_ENTRY_ID),
+                            Set.of(existingEntryId),
                             Collections.emptyMap()),
                     arguments(
                             null,
-                            new HashSet<>(Set.of(EXISTING_ENTRY_ID)),
-                            new HashMap<>(Map.of(EXISTING_ENTRY_ID, speaker0)),
-                            Set.of(EXISTING_ENTRY_ID),
-                            Map.of(EXISTING_ENTRY_ID, speaker0)),
+                            new HashSet<>(Set.of(existingEntryId)),
+                            new HashMap<>(Map.of(existingEntryId, speaker0)),
+                            Set.of(existingEntryId),
+                            Map.of(existingEntryId, speaker0)),
                     arguments(
-                            EXISTING_CONFERENCE_SPACE_INFO,
+                            existingConferenceSpaceInfo,
                             new HashSet<>(),
                             new HashMap<>(),
                             Collections.emptySet(),
                             Collections.emptyMap()),
                     arguments(
-                            EXISTING_CONFERENCE_SPACE_INFO,
+                            existingConferenceSpaceInfo,
                             new HashSet<>(),
-                            new HashMap<>(Map.of(EXISTING_ENTRY_ID, speaker0)),
+                            new HashMap<>(Map.of(existingEntryId, speaker0)),
                             Collections.emptySet(),
-                            Map.of(EXISTING_ENTRY_ID, speaker0)),
+                            Map.of(existingEntryId, speaker0)),
                     arguments(
-                            EXISTING_CONFERENCE_SPACE_INFO,
-                            new HashSet<>(Set.of(EXISTING_ENTRY_ID)),
+                            existingConferenceSpaceInfo,
+                            new HashSet<>(Set.of(existingEntryId)),
                             new HashMap<>(),
                             Collections.emptySet(),
-                            Map.of(EXISTING_ENTRY_ID, speaker1)),
+                            Map.of(existingEntryId, speaker1)),
                     arguments(
-                            EXISTING_CONFERENCE_SPACE_INFO,
-                            new HashSet<>(Set.of(EXISTING_ENTRY_ID)),
-                            new HashMap<>(Map.of(EXISTING_ENTRY_ID, speaker0)),
-                            Set.of(EXISTING_ENTRY_ID),
-                            Map.of(EXISTING_ENTRY_ID, speaker0))
+                            existingConferenceSpaceInfo,
+                            new HashSet<>(Set.of(existingEntryId)),
+                            new HashMap<>(Map.of(existingEntryId, speaker0)),
+                            Set.of(existingEntryId),
+                            Map.of(existingEntryId, speaker0))
+            );
+        }
+
+        private Stream<Arguments> data() {
+            return Stream.concat(
+                    Stream.concat(
+                            Stream.concat(
+                                    Stream.concat(
+                                            Stream.concat(
+                                                    createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "6yIC7EpG1EhejCEJDEsuqA"),
+                                                    createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "2i2OfmHelyMCiK2sCUoGsS")
+                                            ),
+                                            createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "1FDbCMYfsEkiQG6s8CWQwS")
+                                    ),
+                                    createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "MPZSTxFNbbjBdf5M5uoOZ")
+                            ),
+                            createStream(ContentfulUtils.ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "3YSoYRePW0OIeaAAkaweE6")
+                    ),
+                    createStream(ContentfulUtils.ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "2UddvLNyXmy4YaukAuE4Ao")
             );
         }
 
