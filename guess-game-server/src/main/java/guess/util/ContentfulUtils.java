@@ -10,12 +10,16 @@ import guess.domain.source.contentful.ContentfulSys;
 import guess.domain.source.contentful.asset.ContentfulAsset;
 import guess.domain.source.contentful.city.ContentfulCity;
 import guess.domain.source.contentful.error.ContentfulErrorDetails;
+import guess.domain.source.contentful.event.ContentfulEvent;
 import guess.domain.source.contentful.event.ContentfulEventResponse;
+import guess.domain.source.contentful.eventtype.ContentfulEventType;
 import guess.domain.source.contentful.eventtype.ContentfulEventTypeResponse;
 import guess.domain.source.contentful.locale.ContentfulLocale;
 import guess.domain.source.contentful.locale.ContentfulLocaleResponse;
 import guess.domain.source.contentful.speaker.ContentfulSpeaker;
 import guess.domain.source.contentful.speaker.ContentfulSpeakerResponse;
+import guess.domain.source.contentful.speaker.NotResolvableSpeaker;
+import guess.domain.source.contentful.talk.ContentfulTalk;
 import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
 import guess.domain.source.contentful.talk.response.*;
 import guess.domain.source.extract.ExtractPair;
@@ -65,10 +69,13 @@ public class ContentfulUtils {
 
     private static final int MAXIMUM_LIMIT = 1000;
 
-    private static final String ENGLISH_LOCALE = "en";
-    private static final String RUSSIAN_LOCALE = "ru-RU";
+    static final String ENGLISH_LOCALE = "en";
+    static final String RUSSIAN_LOCALE = "ru-RU";
 
-    private enum ConferenceSpaceInfo {
+    static final String ENTRY_LINK_TYPE = "Entry";
+    static final String ASSET_LINK_TYPE = "Asset";
+
+    public enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
                 FIELDS_SPEAKER_FIELD_NAME, FIELDS_CONFERENCES_FIELD_NAME, "fields.javaChampion",
@@ -166,7 +173,7 @@ public class ContentfulUtils {
      *
      * @return locale codes
      */
-    private static List<String> getLocales() {
+    static List<String> getLocales() {
         // https://cdn.contentful.com/spaces/{spaceId}/locales?access_token={accessToken}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -207,40 +214,42 @@ public class ContentfulUtils {
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .map(et -> {
-                    Map<String, String> vkLink = et.getFields().getVkLink();
-                    Map<String, String> twLink = et.getFields().getTwLink();
-                    Map<String, String> fbLink = et.getFields().getFbLink();
-                    Map<String, String> youtubeLink = et.getFields().getYoutubeLink();
-                    Map<String, String> telegramLink = et.getFields().getTelegramLink();
-
-                    return new EventType(
-                            new Nameable(
-                                    id.getAndDecrement(),
-                                    extractLocaleItems(
-                                            extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
-                                            extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
-                                    null,
-                                    extractLocaleItems(
-                                            extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
-                                            extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE)))
-                            ),
-                            EVENT_TYPE_NAME_CONFERENCE_MAP.get(getFirstMapValue(et.getFields().getEventName()).trim()),
-                            null,
-                            new EventType.EventTypeLinks(
-                                    extractLocaleItems(
-                                            extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
-                                            extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
-                                    (vkLink != null) ? getFirstMapValue(vkLink) : null,
-                                    (twLink != null) ? getFirstMapValue(twLink) : null,
-                                    (fbLink != null) ? getFirstMapValue(fbLink) : null,
-                                    (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
-                                    (telegramLink != null) ? getFirstMapValue(telegramLink) : null
-                            ),
-                            Collections.emptyList(),
-                            true);
-                })
+                .map(et -> createEventType(et, id))
                 .collect(Collectors.toList());
+    }
+
+    static EventType createEventType(ContentfulEventType et, AtomicLong id) {
+        Map<String, String> vkLink = et.getFields().getVkLink();
+        Map<String, String> twLink = et.getFields().getTwLink();
+        Map<String, String> fbLink = et.getFields().getFbLink();
+        Map<String, String> youtubeLink = et.getFields().getYoutubeLink();
+        Map<String, String> telegramLink = et.getFields().getTelegramLink();
+
+        return new EventType(
+                new Nameable(
+                        id.getAndDecrement(),
+                        extractLocaleItems(
+                                extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
+                                extractString(et.getFields().getEventName().get(RUSSIAN_LOCALE))),
+                        null,
+                        extractLocaleItems(
+                                extractString(et.getFields().getEventDescriptions().get(ENGLISH_LOCALE)),
+                                extractString(et.getFields().getEventDescriptions().get(RUSSIAN_LOCALE)))
+                ),
+                EVENT_TYPE_NAME_CONFERENCE_MAP.get(getFirstMapValue(et.getFields().getEventName()).trim()),
+                null,
+                new EventType.EventTypeLinks(
+                        extractLocaleItems(
+                                extractString(et.getFields().getSiteLink().get(ENGLISH_LOCALE)),
+                                extractString(et.getFields().getSiteLink().get(RUSSIAN_LOCALE))),
+                        (vkLink != null) ? getFirstMapValue(vkLink) : null,
+                        (twLink != null) ? getFirstMapValue(twLink) : null,
+                        (fbLink != null) ? getFirstMapValue(fbLink) : null,
+                        (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
+                        (telegramLink != null) ? getFirstMapValue(telegramLink) : null
+                ),
+                Collections.emptyList(),
+                true);
     }
 
     /**
@@ -264,7 +273,7 @@ public class ContentfulUtils {
      * @param startDate start date
      * @return events
      */
-    private static List<Event> getEvents(String eventName, LocalDate startDate) {
+    static List<Event> getEvents(String eventName, LocalDate startDate) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&locale={locale}&content_type=eventsCalendar&select={fields}
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -290,54 +299,10 @@ public class ContentfulUtils {
                 .toUri();
         ContentfulEventResponse response = restTemplate.getForObject(uri, ContentfulEventResponse.class);
         Map<String, ContentfulCity> cityMap = getCityMap(Objects.requireNonNull(response));
-        Set<String> entryErrorSet = getEntryErrorSet(response);
+        Set<String> entryErrorSet = getErrorSet(response, ENTRY_LINK_TYPE);
 
         return response.getItems().stream()
-                .map(e -> {
-                    String nameEn = e.getFields().getConferenceName().get(ENGLISH_LOCALE);
-                    String nameRu = e.getFields().getConferenceName().get(RUSSIAN_LOCALE);
-                    if (nameEn == null) {
-                        nameEn = nameRu;
-                    }
-
-                    LocalDate eventStartDate = createEventLocalDate(getFirstMapValue(e.getFields().getEventStart()));
-                    LocalDate eventEndDate = (e.getFields().getEventEnd() != null) ?
-                            createEventLocalDate(getFirstMapValue(e.getFields().getEventEnd())) :
-                            eventStartDate;
-
-                    ContentfulLink eventCityLink = getFirstMapValue(e.getFields().getEventCity());
-                    Map<String, String> conferenceLink = e.getFields().getConferenceLink();
-                    Map<String, String> venueAddress = e.getFields().getVenueAddress();
-                    Map<String, String> youtubePlayList = e.getFields().getYoutubePlayList();
-                    Map<String, String> addressLink = e.getFields().getAddressLink();
-
-                    return new Event(
-                            -1L,
-                            null,
-                            extractLocaleItems(
-                                    extractEventName(nameEn, ENGLISH_LOCALE),
-                                    extractEventName(nameRu, RUSSIAN_LOCALE)),
-                            new Event.EventDates(
-                                    eventStartDate,
-                                    eventEndDate
-                            ),
-                            new Event.EventLinks(
-                                    extractLocaleItems(
-                                            extractLocaleValue(conferenceLink, ENGLISH_LOCALE),
-                                            extractLocaleValue(conferenceLink, RUSSIAN_LOCALE)),
-                                    (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null
-                            ),
-                            new Place(
-                                    -1,
-                                    extractLocaleItems(
-                                            extractCity(eventCityLink, cityMap, entryErrorSet, ENGLISH_LOCALE, nameEn),
-                                            extractCity(eventCityLink, cityMap, entryErrorSet, RUSSIAN_LOCALE, nameEn)),
-                                    extractLocaleItems(
-                                            extractLocaleValue(venueAddress, ENGLISH_LOCALE),
-                                            extractLocaleValue(venueAddress, RUSSIAN_LOCALE)),
-                                    (addressLink != null) ? getFirstMapValue(addressLink) : null),
-                            Collections.emptyList());
-                })
+                .map(e -> createEvent(e, cityMap, entryErrorSet))
                 .collect(Collectors.toList());
     }
 
@@ -354,6 +319,52 @@ public class ContentfulUtils {
                         LocalTime.of(0, 0, 0),
                         ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID)).toInstant(),
                 ZoneId.of("UTC"));
+    }
+
+    static Event createEvent(ContentfulEvent e, Map<String, ContentfulCity> cityMap, Set<String> entryErrorSet) {
+        String nameEn = e.getFields().getConferenceName().get(ENGLISH_LOCALE);
+        String nameRu = e.getFields().getConferenceName().get(RUSSIAN_LOCALE);
+        if (nameEn == null) {
+            nameEn = nameRu;
+        }
+
+        LocalDate eventStartDate = createEventLocalDate(getFirstMapValue(e.getFields().getEventStart()));
+        LocalDate eventEndDate = (e.getFields().getEventEnd() != null) ?
+                createEventLocalDate(getFirstMapValue(e.getFields().getEventEnd())) :
+                eventStartDate;
+
+        ContentfulLink eventCityLink = getFirstMapValue(e.getFields().getEventCity());
+        Map<String, String> conferenceLink = e.getFields().getConferenceLink();
+        Map<String, String> venueAddress = e.getFields().getVenueAddress();
+        Map<String, String> youtubePlayList = e.getFields().getYoutubePlayList();
+        Map<String, String> addressLink = e.getFields().getAddressLink();
+
+        return new Event(
+                -1L,
+                null,
+                extractLocaleItems(
+                        extractEventName(nameEn, ENGLISH_LOCALE),
+                        extractEventName(nameRu, RUSSIAN_LOCALE)),
+                new Event.EventDates(
+                        eventStartDate,
+                        eventEndDate
+                ),
+                new Event.EventLinks(
+                        extractLocaleItems(
+                                extractLocaleValue(conferenceLink, ENGLISH_LOCALE),
+                                extractLocaleValue(conferenceLink, RUSSIAN_LOCALE)),
+                        (youtubePlayList != null) ? getFirstMapValue(youtubePlayList) : null
+                ),
+                new Place(
+                        -1,
+                        extractLocaleItems(
+                                extractCity(eventCityLink, cityMap, entryErrorSet, ENGLISH_LOCALE, nameEn),
+                                extractCity(eventCityLink, cityMap, entryErrorSet, RUSSIAN_LOCALE, nameEn)),
+                        extractLocaleItems(
+                                extractLocaleValue(venueAddress, ENGLISH_LOCALE),
+                                extractLocaleValue(venueAddress, RUSSIAN_LOCALE)),
+                        (addressLink != null) ? getFirstMapValue(addressLink) : null),
+                Collections.emptyList());
     }
 
     /**
@@ -405,12 +416,12 @@ public class ContentfulUtils {
      * @param conferenceCode      conference code
      * @return speakers
      */
-    private static List<Speaker> getSpeakers(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+    static List<Speaker> getSpeakers(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000&fields.conferences={conferenceCode}
         StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.photo,fields.twitter,fields.gitHub");
         String additionalFieldNames = conferenceSpaceInfo.speakerAdditionalFieldNames;
 
-        if ((additionalFieldNames != null) && !additionalFieldNames.isEmpty()) {
+        if (additionalFieldNames != null) {
             selectingFields.append(",").append(additionalFieldNames);
         }
 
@@ -433,12 +444,93 @@ public class ContentfulUtils {
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
         AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
-        Set<String> assetErrorSet = getAssetErrorSet(response);
+        Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .map(s -> createSpeaker(s, assetMap, assetErrorSet, id))
+                .map(s -> createSpeaker(s, assetMap, assetErrorSet, id, true))
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Creates speaker from Contentful information.
+     *
+     * @param contentfulSpeaker    Contentful speaker
+     * @param assetMap             map id/asset
+     * @param assetErrorSet        set with error assets
+     * @param id                   atomic identifier
+     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
+     * @return speaker
+     */
+    static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
+                                 Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+        return new Speaker(
+                id.getAndDecrement(),
+                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
+                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
+                extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence),
+                extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
+                new Speaker.SpeakerSocials(
+                        extractTwitter(contentfulSpeaker.getFields().getTwitter()),
+                        extractGitHub(contentfulSpeaker.getFields().getGitHub())
+                ),
+                new Speaker.SpeakerDegrees(
+                        extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
+                        extractBoolean(contentfulSpeaker.getFields().getMvp()),
+                        extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
+                )
+        );
+    }
+
+    /**
+     * Extracts photo.
+     *
+     * @param link          link
+     * @param assetMap      map id/asset
+     * @param assetErrorSet set with error assets
+     * @param speakerNameEn speaker name
+     * @return photo URL
+     */
+    static String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                               Set<String> assetErrorSet, String speakerNameEn) {
+        String assetId = link.getSys().getId();
+        boolean isErrorAsset = assetErrorSet.contains(assetId);
+
+        if (isErrorAsset) {
+            log.warn("Asset (photo) id {} not resolvable for '{}' speaker", assetId, speakerNameEn);
+            return null;
+        }
+
+        ContentfulAsset asset = assetMap.get(assetId);
+        return extractAssetUrl(Objects.requireNonNull(asset,
+                () -> String.format("Asset (photo) id %s not found for '%s' speaker", assetId, speakerNameEn))
+                .getFields().getFile().getUrl());
+    }
+
+    /**
+     * Extracts Twitter username.
+     *
+     * @param value source value
+     * @return extracted Twitter username
+     */
+    static String extractTwitter(String value) {
+        return extractProperty(value, new ExtractSet(
+                List.of(new ExtractPair("^[\\s]*[@]?(\\w{1,15})[\\s]*$", 1)),
+                "Invalid Twitter username: %s (change regular expression and rerun)"));
+    }
+
+    /**
+     * Extracts GitHub username.
+     *
+     * @param value source value
+     * @return extracted GitHub username
+     */
+    public static String extractGitHub(String value) {
+        return extractProperty(value, new ExtractSet(
+                List.of(
+                        new ExtractPair("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)(/)?[\\s]*$", 4),
+                        new ExtractPair("^[\\s]*(http(s)?://)?([a-zA-Z0-9\\-]+).github.io/blog(/)?[\\s]*$", 3)),
+                "Invalid GitHub username: %s (change regular expressions and rerun)"));
     }
 
     /**
@@ -461,14 +553,13 @@ public class ContentfulUtils {
      * @param conferenceCode      conference code
      * @return talks
      */
-    private static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+    static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select={fields}&order={fields}&limit=1000&fields.conferences={conferenceCode}
         StringBuilder selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.talkDay,fields.trackTime,fields.track,fields.language,fields.video,fields.sdTrack,fields.demoStage");
         String additionalFieldNames = conferenceSpaceInfo.talkAdditionalFieldNames;
 
-        if ((additionalFieldNames != null) && !additionalFieldNames.isEmpty()) {
-            selectingFields.append(",").append(additionalFieldNames);
-        }
+        Objects.requireNonNull(additionalFieldNames);
+        selectingFields.append(",").append(additionalFieldNames);
 
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
@@ -489,8 +580,8 @@ public class ContentfulUtils {
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
         AtomicLong id = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
-        Set<String> entryErrorSet = getEntryErrorSet(response);
-        Set<String> assetErrorSet = getAssetErrorSet(response);
+        Set<String> entryErrorSet = getErrorSet(response, ENTRY_LINK_TYPE);
+        Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
         Map<String, Speaker> speakerMap = getSpeakerMap(response, assetMap, assetErrorSet);
 
         // Fix Contentful "notResolvable" error for one entry
@@ -500,45 +591,59 @@ public class ContentfulUtils {
                 .getItems().stream()
                 .filter(t -> ((t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack()) &&
                         ((t.getFields().getDemoStage() == null) || !t.getFields().getDemoStage()))   // not demo stage
-                .map(t -> {
-                    List<Speaker> speakers = t.getFields().getSpeakers().stream()
-                            .filter(s -> {
-                                String speakerId = s.getSys().getId();
-                                boolean isErrorAsset = entryErrorSet.contains(speakerId);
-                                if (isErrorAsset) {
-                                    throw new IllegalArgumentException(String.format("Speaker id %s not resolvable for '%s' talk (change ContentfulUtils:fixEntryNotResolvableError() method and rerun)", speakerId, t.getFields().getNameEn()));
-                                }
+                .map(t -> createTalk(t, assetMap, entryErrorSet, assetErrorSet, speakerMap, id))
+                .collect(Collectors.toList());
+    }
 
-                                return true;
-                            })
-                            .map(s -> {
-                                String speakerId = s.getSys().getId();
-                                Speaker speaker = speakerMap.get(speakerId);
-                                return Objects.requireNonNull(speaker,
-                                        () -> String.format("Speaker id %s not found for '%s' talk", speakerId, t.getFields().getNameEn()));
-                            })
-                            .collect(Collectors.toList());
+    /**
+     * Creates talk from Contentful information.
+     *
+     * @param contentfulTalk Contentful talk
+     * @param assetMap       map id/asset
+     * @param entryErrorSet  set with error entries
+     * @param assetErrorSet  set with error assets
+     * @param speakerMap     speaker map
+     * @param id             atomic identifier
+     * @return talk
+     */
+    static Talk createTalk(ContentfulTalk<? extends ContentfulTalkFields> contentfulTalk, Map<String, ContentfulAsset> assetMap,
+                           Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong id) {
+        List<Speaker> speakers = contentfulTalk.getFields().getSpeakers().stream()
+                .filter(s -> {
+                    String speakerId = s.getSys().getId();
+                    boolean isErrorAsset = entryErrorSet.contains(speakerId);
+                    if (isErrorAsset) {
+                        throw new IllegalArgumentException(String.format("Speaker id %s not resolvable for '%s' talk (change ContentfulUtils:fixEntryNotResolvableError() method and rerun)", speakerId, contentfulTalk.getFields().getNameEn()));
+                    }
 
-                    return new Talk(
-                            new Nameable(
-                                    id.getAndDecrement(),
-                                    extractLocaleItems(t.getFields().getNameEn(), t.getFields().getName()),
-                                    extractLocaleItems(t.getFields().getShortEn(), t.getFields().getShortRu()),
-                                    extractLocaleItems(t.getFields().getLongEn(), t.getFields().getLongRu())
-                            ),
-                            t.getFields().getTalkDay(),
-                            t.getFields().getTrackTime(),
-                            t.getFields().getTrack(),
-                            extractLanguage(t.getFields().getLanguage()),
-                            new Talk.TalkLinks(
-                                    extractPresentationLinks(
-                                            combineContentfulLinks(t.getFields().getPresentations(), t.getFields().getPresentation()),
-                                            assetMap, assetErrorSet, t.getFields().getNameEn()),
-                                    extractVideoLinks(t.getFields().getVideo())
-                            ),
-                            speakers);
+                    return true;
+                })
+                .map(s -> {
+                    String speakerId = s.getSys().getId();
+                    Speaker speaker = speakerMap.get(speakerId);
+                    return Objects.requireNonNull(speaker,
+                            () -> String.format("Speaker id %s not found for '%s' talk", speakerId, contentfulTalk.getFields().getNameEn()));
                 })
                 .collect(Collectors.toList());
+
+        return new Talk(
+                new Nameable(
+                        id.getAndDecrement(),
+                        extractLocaleItems(contentfulTalk.getFields().getNameEn(), contentfulTalk.getFields().getName()),
+                        extractLocaleItems(contentfulTalk.getFields().getShortEn(), contentfulTalk.getFields().getShortRu()),
+                        extractLocaleItems(contentfulTalk.getFields().getLongEn(), contentfulTalk.getFields().getLongRu())
+                ),
+                contentfulTalk.getFields().getTalkDay(),
+                contentfulTalk.getFields().getTrackTime(),
+                contentfulTalk.getFields().getTrack(),
+                extractLanguage(contentfulTalk.getFields().getLanguage()),
+                new Talk.TalkLinks(
+                        extractPresentationLinks(
+                                combineContentfulLinks(contentfulTalk.getFields().getPresentations(), contentfulTalk.getFields().getPresentation()),
+                                assetMap, assetErrorSet, contentfulTalk.getFields().getNameEn()),
+                        extractVideoLinks(contentfulTalk.getFields().getVideo())
+                ),
+                speakers);
     }
 
     /**
@@ -555,50 +660,6 @@ public class ContentfulUtils {
     }
 
     /**
-     * Creates speaker from Contentful information.
-     *
-     * @param contentfulSpeaker    Contentful speaker
-     * @param assetMap             map id/asset
-     * @param assetErrorSet        set with error assets
-     * @param id                   atomic identifier
-     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
-     * @return speaker
-     */
-    private static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                         Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
-        return new Speaker(
-                id.getAndDecrement(),
-                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
-                extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
-                extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence),
-                extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
-                new Speaker.SpeakerSocials(
-                        extractTwitter(contentfulSpeaker.getFields().getTwitter()),
-                        extractGitHub(contentfulSpeaker.getFields().getGitHub())
-                ),
-                new Speaker.SpeakerDegrees(
-                        extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
-                        extractBoolean(contentfulSpeaker.getFields().getMvp()),
-                        extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
-                )
-        );
-    }
-
-    /**
-     * Creates speaker from Contentful information.
-     *
-     * @param contentfulSpeaker Contentful speaker
-     * @param assetMap          map id/asset
-     * @param assetErrorSet     set with error assets
-     * @param id                atomic identifier
-     * @return speaker
-     */
-    private static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                         Set<String> assetErrorSet, AtomicLong id) {
-        return createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, id, true);
-    }
-
-    /**
      * Gets map id/speaker.
      *
      * @param response      response
@@ -606,8 +667,8 @@ public class ContentfulUtils {
      * @param assetErrorSet set with error assets
      * @return map id/speaker
      */
-    private static Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
-                                                      Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
+    static Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
+                                              Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
         AtomicLong id = new AtomicLong(-1);
 
         return (response.getIncludes() == null) ?
@@ -625,7 +686,7 @@ public class ContentfulUtils {
      * @param response response
      * @return map id/asset
      */
-    private static Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
+    static Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
         return (response.getIncludes() == null) ?
                 Collections.emptyMap() :
                 response.getIncludes().getAsset().stream()
@@ -641,7 +702,7 @@ public class ContentfulUtils {
      * @param response response
      * @return map id/city
      */
-    private static Map<String, ContentfulCity> getCityMap(ContentfulEventResponse response) {
+    static Map<String, ContentfulCity> getCityMap(ContentfulEventResponse response) {
         return (response.getIncludes() == null) ?
                 Collections.emptyMap() :
                 response.getIncludes().getEntry().stream()
@@ -658,7 +719,7 @@ public class ContentfulUtils {
      * @param linkType link type
      * @return error set
      */
-    private static Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
+    static Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
         return (response.getErrors() == null) ?
                 Collections.emptySet() :
                 response.getErrors().stream()
@@ -671,26 +732,6 @@ public class ContentfulUtils {
                         })
                         .map(e -> e.getDetails().getId())
                         .collect(Collectors.toSet());
-    }
-
-    /**
-     * Gets entry error set.
-     *
-     * @param response response
-     * @return error set
-     */
-    private static Set<String> getEntryErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
-        return getErrorSet(response, "Entry");
-    }
-
-    /**
-     * Gets asset error set.
-     *
-     * @param response response
-     * @return error set
-     */
-    private static Set<String> getAssetErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
-        return getErrorSet(response, "Asset");
     }
 
     /**
@@ -743,32 +784,6 @@ public class ContentfulUtils {
     }
 
     /**
-     * Extracts Twitter username.
-     *
-     * @param value source value
-     * @return extracted Twitter username
-     */
-    public static String extractTwitter(String value) {
-        return extractProperty(value, new ExtractSet(
-                List.of(new ExtractPair("^[\\s]*[@]?(\\w{1,15})[\\s]*$", 1)),
-                "Invalid Twitter username: %s (change regular expression and rerun)"));
-    }
-
-    /**
-     * Extracts GitHub username.
-     *
-     * @param value source value
-     * @return extracted GitHub username
-     */
-    public static String extractGitHub(String value) {
-        return extractProperty(value, new ExtractSet(
-                List.of(
-                        new ExtractPair("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)(/)?[\\s]*$", 4),
-                        new ExtractPair("^[\\s]*(http(s)?://)?([a-zA-Z0-9\\-]+).github.io/blog(/)?[\\s]*$", 3)),
-                "Invalid GitHub username: %s (change regular expressions and rerun)"));
-    }
-
-    /**
      * Extracts talk language.
      *
      * @param language {@code true} if Russian, {@code false} otherwise
@@ -814,8 +829,8 @@ public class ContentfulUtils {
      * @param talkNameEn    talk name
      * @return presentation link URLs
      */
-    private static List<String> extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
-                                                         Set<String> assetErrorSet, String talkNameEn) {
+    static List<String> extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
+                                                 Set<String> assetErrorSet, String talkNameEn) {
         if (links == null) {
             return Collections.emptyList();
         }
@@ -854,31 +869,6 @@ public class ContentfulUtils {
         }
 
         return videoLinks;
-    }
-
-    /**
-     * Extracts photo.
-     *
-     * @param link          link
-     * @param assetMap      map id/asset
-     * @param assetErrorSet set with error assets
-     * @param speakerNameEn speaker name
-     * @return photo URL
-     */
-    private static String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
-                                       Set<String> assetErrorSet, String speakerNameEn) {
-        String assetId = link.getSys().getId();
-        boolean isErrorAsset = assetErrorSet.contains(assetId);
-
-        if (isErrorAsset) {
-            log.warn("Asset (photo) id {} not resolvable for '{}' speaker", assetId, speakerNameEn);
-            return null;
-        }
-
-        ContentfulAsset asset = assetMap.get(assetId);
-        return extractAssetUrl(Objects.requireNonNull(asset,
-                () -> String.format("Asset (photo) id %s not found for '%s' speaker", assetId, speakerNameEn))
-                .getFields().getFile().getUrl());
     }
 
     /**
@@ -982,7 +972,7 @@ public class ContentfulUtils {
      * @param locale locale
      * @return attribute value
      */
-    private static String extractLocaleValue(Map<String, String> map, String locale) {
+    static String extractLocaleValue(Map<String, String> map, String locale) {
         return (map != null) ? map.get(locale) : null;
     }
 
@@ -996,8 +986,8 @@ public class ContentfulUtils {
      * @param eventName     event name
      * @return city name
      */
-    private static String extractCity(ContentfulLink link, Map<String, ContentfulCity> cityMap,
-                                      Set<String> entryErrorSet, String locale, String eventName) {
+    static String extractCity(ContentfulLink link, Map<String, ContentfulCity> cityMap,
+                              Set<String> entryErrorSet, String locale, String eventName) {
         String entryId = link.getSys().getId();
         boolean isErrorAsset = entryErrorSet.contains(entryId);
 
@@ -1012,6 +1002,13 @@ public class ContentfulUtils {
                 .getFields().getCityName().get(locale);
     }
 
+    /**
+     * Fixes nonexistent event error.
+     *
+     * @param conference conference
+     * @param startDate  start date
+     * @return fixed event
+     */
     static Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
         if (Conference.DOT_NEXT.equals(conference) && LocalDate.of(2016, 12, 7).equals(startDate)) {
             return new Event(
@@ -1052,28 +1049,8 @@ public class ContentfulUtils {
      * @param entryErrorSet       entry error set
      * @param speakerMap          map id/speaker
      */
-    private static void fixEntryNotResolvableError(ConferenceSpaceInfo conferenceSpaceInfo,
-                                                   Set<String> entryErrorSet, Map<String, Speaker> speakerMap) {
-        abstract class NotResolvableSpeaker {
-            private final ConferenceSpaceInfo conferenceSpaceInfo;
-            private final String entryId;
-
-            public NotResolvableSpeaker(ConferenceSpaceInfo conferenceSpaceInfo, String entryId) {
-                this.conferenceSpaceInfo = conferenceSpaceInfo;
-                this.entryId = entryId;
-            }
-
-            public ConferenceSpaceInfo getConferenceSpaceInfo() {
-                return conferenceSpaceInfo;
-            }
-
-            public String getEntryId() {
-                return entryId;
-            }
-
-            public abstract Speaker createSpeaker(long id);
-        }
-
+    static void fixEntryNotResolvableError(ConferenceSpaceInfo conferenceSpaceInfo, Set<String> entryErrorSet,
+                                           Map<String, Speaker> speakerMap) {
         List<NotResolvableSpeaker> notResolvableSpeakers = List.of(
                 new NotResolvableSpeaker(ConferenceSpaceInfo.COMMON_SPACE_INFO, "6yIC7EpG1EhejCEJDEsuqA") {
                     @Override
@@ -1372,7 +1349,7 @@ public class ContentfulUtils {
         }
     }
 
-    public static void main(String[] args) {
+    static void iterateAllEntities() {
         List<String> locales = getLocales();
         log.info("Locales: {}, {}", locales.size(), locales);
 

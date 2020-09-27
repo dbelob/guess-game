@@ -123,7 +123,7 @@ class ImageUtilsTest {
     }
 
     @Test
-    void create() throws IOException {
+    void create() {
         final String JPG_IMAGE_400X400_URL_STRING = "https://valid.com/fileName0.jpg";
         final String PNG_IMAGE_400X400_URL_STRING = "https://valid.com/fileName1.png";
 

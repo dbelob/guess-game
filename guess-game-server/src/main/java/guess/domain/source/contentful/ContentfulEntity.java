@@ -1,5 +1,7 @@
 package guess.domain.source.contentful;
 
+import java.util.Objects;
+
 public class ContentfulEntity {
     private ContentfulSys sys;
 
@@ -18,7 +20,7 @@ public class ContentfulEntity {
 
         ContentfulEntity that = (ContentfulEntity) o;
 
-        return sys != null ? sys.equals(that.sys) : that.sys == null;
+        return Objects.equals(sys, that.sys);
     }
 
     @Override
