@@ -1,24 +1,162 @@
 package guess.util;
 
+import guess.dao.exception.SpeakerDuplicatedException;
+import guess.domain.Conference;
+import guess.domain.Identifier;
+import guess.domain.source.EventType;
 import guess.domain.source.LocaleItem;
+import guess.domain.source.SourceInformation;
 import guess.domain.source.Talk;
+import guess.domain.source.load.LoadResult;
+import guess.util.yaml.YamlUtils;
+import mockit.Invocation;
+import mockit.Mock;
+import mockit.MockUp;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.io.IOException;
 import java.time.LocalTime;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("ConferenceDataLoader class tests")
 public class ConferenceDataLoaderTest {
+    @Test
+    void loadEventTypes() {
+        new MockUp<YamlUtils>() {
+            @Mock
+            SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
+                return new SourceInformation(Collections.emptyList(), Collections.emptyList(),
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
+                );
+            }
+        };
+
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            List<EventType> getEventTypes() {
+                return Collections.emptyList();
+            }
+        };
+
+        new MockUp<ConferenceDataLoader>() {
+            @Mock
+            void loadEventTypes(Invocation invocation) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                invocation.proceed();
+            }
+
+            @Mock
+            List<EventType> getConferences(List<EventType> eventTypes) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            Map<Conference, EventType> getResourceEventTypeMap(List<EventType> eventTypes) {
+                return Collections.emptyMap();
+            }
+
+            @Mock
+            <T extends Identifier> long getLastId(List<T> entities) {
+                return 42;
+            }
+
+            @Mock
+            LoadResult<List<EventType>> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference,
+                    EventType> eventTypeMap, AtomicLong lastEventTypeId) {
+                return new LoadResult<>(Collections.emptyList(), Collections.emptyList(), Collections.emptyList());
+            }
+
+            @Mock
+            void saveEventTypes(LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
+                // Nothing
+            }
+        };
+
+        assertDoesNotThrow(ConferenceDataLoader::loadEventTypes);
+    }
+
+    @Test
+    void getConferences() {
+        EventType eventType0 = new EventType();
+        eventType0.setId(0);
+        eventType0.setConference(Conference.JPOINT);
+
+        EventType eventType1 = new EventType();
+        eventType1.setId(1);
+
+        EventType eventType2 = new EventType();
+        eventType2.setId(2);
+        eventType2.setConference(Conference.JOKER);
+
+        assertEquals(List.of(eventType0, eventType2), ConferenceDataLoader.getConferences(List.of(eventType0, eventType1, eventType2)));
+    }
+
+    @Test
+    void getResourceEventTypeMap() {
+        EventType eventType0 = new EventType();
+        eventType0.setId(0);
+        eventType0.setConference(Conference.JPOINT);
+
+        EventType eventType1 = new EventType();
+        eventType1.setId(1);
+
+        EventType eventType2 = new EventType();
+        eventType2.setId(2);
+        eventType2.setConference(Conference.JOKER);
+
+        Map<Conference, EventType> expected = new HashMap<>();
+        expected.put(Conference.JPOINT, eventType0);
+        expected.put(null, eventType1);
+        expected.put(Conference.JOKER, eventType2);
+
+        assertEquals(expected, ConferenceDataLoader.getResourceEventTypeMap(List.of(eventType0, eventType1, eventType2)));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getLastId method tests")
+    class GetLastIdTalksTest {
+        private Stream<Arguments> data() {
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
+
+            EventType eventType1 = new EventType();
+            eventType1.setId(1);
+
+            EventType eventType2 = new EventType();
+            eventType2.setId(2);
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), -1),
+                    arguments(List.of(eventType0), 0),
+                    arguments(List.of(eventType0, eventType1), 1),
+                    arguments(List.of(eventType0, eventType1, eventType2), 2),
+                    arguments(List.of(eventType1, eventType0), 1),
+                    arguments(List.of(eventType1, eventType0, eventType2), 2)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getLastId(List<EventType> entities, long expected) {
+            assertEquals(expected, ConferenceDataLoader.getLastId(entities));
+        }
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("deleteOpeningAndClosingTalks method tests")

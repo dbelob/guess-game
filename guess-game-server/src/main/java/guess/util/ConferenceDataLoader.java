@@ -35,7 +35,7 @@ public class ConferenceDataLoader {
      * @throws SpeakerDuplicatedException if speaker duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
-    private static void loadEventTypes() throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+    static void loadEventTypes() throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         // Read event types from resource files
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
         List<EventType> resourceEventTypes = getConferences(resourceSourceInformation.getEventTypes());
@@ -100,8 +100,8 @@ public class ConferenceDataLoader {
      * @param lastEventTypeId identifier of last event type
      * @return load result for event types
      */
-    static LoadResult<List<EventType>> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference,
-            EventType> eventTypeMap, AtomicLong lastEventTypeId) {
+    static LoadResult<List<EventType>> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference, EventType> eventTypeMap,
+                                                              AtomicLong lastEventTypeId) {
         List<EventType> eventTypesToAppend = new ArrayList<>();
         List<EventType> eventTypesToUpdate = new ArrayList<>();
 
@@ -141,7 +141,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveEventTypes(LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
+    static void saveEventTypes(LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
         List<EventType> eventTypesToAppend = loadResult.getItemToAppend();
         List<EventType> eventTypesToUpdate = loadResult.getItemToUpdate();
 
