@@ -175,7 +175,7 @@ class ConferenceDataLoaderTest {
         eventType2.setId(2);
         eventType2.setConference(Conference.JPOINT);
 
-        Map<Conference, EventType> eventTypeMap = Map.of(Conference.JPOINT, new EventType());
+        Map<Conference, EventType> eventTypeMap = new HashMap<>(Map.of(Conference.JPOINT, new EventType()));
 
         LoadResult<List<EventType>> expected = new LoadResult<>(
                 Collections.emptyList(),
