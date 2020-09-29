@@ -173,9 +173,9 @@ public class ConferenceDataLoader {
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                               Map<NameCompany, Long> knownSpeakerIdsMap,
-                                               Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+    static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
+                                       Map<NameCompany, Long> knownSpeakerIdsMap,
+                                       Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, places, events, speakers, talks from resource files
@@ -761,8 +761,8 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
-                                  LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+    static void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+                          LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
         List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
         List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
 
@@ -1166,9 +1166,9 @@ public class ConferenceDataLoader {
      * @param resourceEnCityVenueAddressPlaces map of (city, venue address)/place in English
      * @return resource place
      */
-    private static Place findResourcePlace(Place place,
-                                           Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
-                                           Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
+    static Place findResourcePlace(Place place,
+                                   Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
+                                   Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
         // Find in resource places by Russian (city, venue address) pair
         Place resourcePlace = findResourcePlaceByCityVenueAddress(place, resourceRuCityVenueAddressPlaces, Language.RUSSIAN);
         if (resourcePlace != null) {
@@ -1185,7 +1185,7 @@ public class ConferenceDataLoader {
      * @param place place
      * @return fixed place
      */
-    private static List<LocaleItem> fixVenueAddress(Place place) {
+    static List<LocaleItem> fixVenueAddress(Place place) {
         final String ONLINE_ENGLISH = "Online";
         final String ONLINE_RUSSIAN = "Онлайн";
 

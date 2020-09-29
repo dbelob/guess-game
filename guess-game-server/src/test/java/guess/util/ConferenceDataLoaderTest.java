@@ -3,11 +3,11 @@ package guess.util;
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Identifier;
-import guess.domain.source.EventType;
-import guess.domain.source.LocaleItem;
-import guess.domain.source.SourceInformation;
-import guess.domain.source.Talk;
+import guess.domain.Language;
+import guess.domain.source.*;
 import guess.domain.source.load.LoadResult;
+import guess.domain.source.load.SpeakerLoadMaps;
+import guess.domain.source.load.SpeakerLoadResult;
 import guess.util.yaml.YamlUtils;
 import mockit.Invocation;
 import mockit.Mock;
@@ -22,6 +22,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
@@ -160,7 +161,7 @@ class ConferenceDataLoaderTest {
         new MockUp<ContentfulUtils>() {
             @Mock
             boolean needUpdate(EventType a, EventType b) {
-                return true;
+                return (Conference.JPOINT.equals(a.getConference()) && Conference.JPOINT.equals(b.getConference()));
             }
         };
 
@@ -175,7 +176,12 @@ class ConferenceDataLoaderTest {
         eventType2.setId(2);
         eventType2.setConference(Conference.JPOINT);
 
-        Map<Conference, EventType> eventTypeMap = new HashMap<>(Map.of(Conference.JPOINT, new EventType()));
+        EventType eventType3 = new EventType();
+        eventType3.setId(3);
+        eventType3.setConference(Conference.DOT_NEXT);
+
+        Map<Conference, EventType> eventTypeMap = new HashMap<>(Map.of(Conference.JPOINT, eventType2,
+                Conference.DOT_NEXT, eventType3));
 
         LoadResult<List<EventType>> expected = new LoadResult<>(
                 Collections.emptyList(),
@@ -183,7 +189,7 @@ class ConferenceDataLoaderTest {
                 List.of(eventType2));
 
         assertEquals(expected, ConferenceDataLoader.getEventTypeLoadResult(
-                List.of(eventType0, eventType1, eventType2),
+                List.of(eventType0, eventType1, eventType2, eventType3),
                 eventTypeMap,
                 new AtomicLong(-1)));
     }
@@ -230,6 +236,156 @@ class ConferenceDataLoaderTest {
 
             assertDoesNotThrow(() -> ConferenceDataLoader.saveEventTypes(loadResult));
         }
+    }
+
+    @Test
+    void loadTalksSpeakersEvent() {
+        final Conference JPOINT_CONFERENCE = Conference.JPOINT;
+        final LocalDate EVENT_DATE = LocalDate.of(2020, 6, 29);
+        final String EVENT_CODE = "2020-jpoint";
+
+        Place place0 = new Place();
+
+        Event event0 = new Event();
+        event0.setId(0);
+        event0.setStartDate(EVENT_DATE);
+        event0.setPlace(place0);
+
+        EventType eventType0 = new EventType();
+        eventType0.setId(0);
+        eventType0.setConference(JPOINT_CONFERENCE);
+        eventType0.setEvents(List.of(event0));
+
+        new MockUp<YamlUtils>() {
+            @Mock
+            SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
+                return new SourceInformation(
+                        Collections.emptyList(),
+                        List.of(eventType0),
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        Collections.emptyList());
+            }
+        };
+
+        new MockUp<LocalizationUtils>() {
+            @Mock
+            String getString(List<LocaleItem> localeItems, Language language) {
+                return "";
+            }
+        };
+
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            Event getEvent(Conference conference, LocalDate startDate) {
+                return event0;
+            }
+
+            @Mock
+            List<Talk> getTalks(Conference conference, String conferenceCode) {
+                return Collections.emptyList();
+            }
+        };
+
+        new MockUp<ConferenceDataLoader>() {
+            @Mock
+            void loadTalksSpeakersEvent(Invocation invocation, Conference conference, LocalDate startDate, String conferenceCode,
+                                        Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                invocation.proceed(conference, startDate, conferenceCode, knownSpeakerIdsMap, invalidTalksSet);
+            }
+
+            @Mock
+            List<Talk> deleteInvalidTalks(List<Talk> talks, Set<String> invalidTalksSet) {
+                return talks;
+            }
+
+            @Mock
+            List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
+                return talks;
+            }
+
+            @Mock
+            List<Talk> deleteTalkDuplicates(List<Talk> talks) {
+                return talks;
+            }
+
+            @Mock
+            List<Speaker> getTalkSpeakers(List<Talk> talks) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
+                                                   SpeakerLoadMaps speakerLoadMaps,
+                                                   AtomicLong lastSpeakerId) throws IOException {
+                return new SpeakerLoadResult(
+                        new LoadResult<>(
+                                Collections.emptyList(),
+                                Collections.emptyList(),
+                                Collections.emptyList()),
+                        new LoadResult<>(
+                                Collections.emptyList(),
+                                Collections.emptyList(),
+                                Collections.emptyList()));
+            }
+
+            @Mock
+            void fillSpeakerIds(List<Talk> talks) {
+                // Nothing
+            }
+
+            @Mock
+            <T extends Identifier> long getLastId(List<T> entities) {
+                return 42;
+            }
+
+            @Mock
+            LoadResult<List<Talk>> getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
+                                                     AtomicLong lasTalksId) {
+                return new LoadResult<>(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        Collections.emptyList());
+            }
+
+            @Mock
+            List<LocaleItem> fixVenueAddress(Place place) {
+                return Collections.emptyList();
+            }
+
+            @Mock
+            Place findResourcePlace(Place place,
+                                    Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
+                                    Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
+                return place;
+            }
+
+            @Mock
+            LoadResult<Place> getPlaceLoadResult(Place place, Place resourcePlace, AtomicLong lastPlaceId) {
+                return new LoadResult<>(
+                        null,
+                        null,
+                        null);
+            }
+
+            @Mock
+            LoadResult<Event> getEventLoadResult(Event event, Event resourceEvent) {
+                return new LoadResult<>(
+                        null,
+                        null,
+                        null);
+            }
+
+            @Mock
+            void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+                           LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+                // Nothing
+            }
+        };
+
+        assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(
+                JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE,
+                Collections.emptyMap(), Collections.emptySet()));
     }
 
     @Nested
