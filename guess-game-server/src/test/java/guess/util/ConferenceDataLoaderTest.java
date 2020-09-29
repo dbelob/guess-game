@@ -12,6 +12,7 @@ import guess.util.yaml.YamlUtils;
 import mockit.Invocation;
 import mockit.Mock;
 import mockit.MockUp;
+import mockit.Mocked;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -22,10 +23,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.IOException;
 import java.time.LocalTime;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
@@ -129,7 +127,7 @@ class ConferenceDataLoaderTest {
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getLastId method tests")
-    class GetLastIdTalksTest {
+    class GetLastIdTest {
         private Stream<Arguments> data() {
             EventType eventType0 = new EventType();
             eventType0.setId(0);
@@ -154,6 +152,83 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void getLastId(List<EventType> entities, long expected) {
             assertEquals(expected, ConferenceDataLoader.getLastId(entities));
+        }
+    }
+
+    @Test
+    void getEventTypeLoadResult() {
+        new MockUp<ContentfulUtils>() {
+            @Mock
+            boolean needUpdate(EventType a, EventType b) {
+                return true;
+            }
+        };
+
+        EventType eventType0 = new EventType();
+        eventType0.setId(0);
+
+        EventType eventType1 = new EventType();
+        eventType1.setId(1);
+        eventType1.setConference(Conference.JOKER);
+
+        EventType eventType2 = new EventType();
+        eventType2.setId(2);
+        eventType2.setConference(Conference.JPOINT);
+
+        Map<Conference, EventType> eventTypeMap = Map.of(Conference.JPOINT, new EventType());
+
+        LoadResult<List<EventType>> expected = new LoadResult<>(
+                Collections.emptyList(),
+                List.of(eventType0, eventType1),
+                List.of(eventType2));
+
+        assertEquals(expected, ConferenceDataLoader.getEventTypeLoadResult(
+                List.of(eventType0, eventType1, eventType2),
+                eventTypeMap,
+                new AtomicLong(-1)));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("saveEventTypes method tests")
+    class SaveEventTypesTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList())),
+                    arguments(new LoadResult<>(
+                            Collections.emptyList(),
+                            List.of(new EventType()),
+                            Collections.emptyList())),
+                    arguments(new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            new ArrayList<>(List.of(new EventType())))),
+                    arguments(new LoadResult<>(
+                            Collections.emptyList(),
+                            List.of(new EventType()),
+                            new ArrayList<>(List.of(new EventType()))))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void saveEventTypes(LoadResult<List<EventType>> loadResult, @Mocked YamlUtils yamlUtilsMock) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                void saveEventTypes(Invocation invocation, LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
+                    invocation.proceed(loadResult);
+                }
+
+                @Mock
+                void logAndDumpEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveEventTypes(loadResult));
         }
     }
 

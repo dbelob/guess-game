@@ -912,7 +912,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void logAndDumpEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndDumpEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, eventTypes.size());
         eventTypes.forEach(
                 et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}",

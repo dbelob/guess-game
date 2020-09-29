@@ -1,5 +1,7 @@
 package guess.domain.source.load;
 
+import java.util.Objects;
+
 /**
  * Load result.
  *
@@ -26,5 +28,20 @@ public class LoadResult<T> {
 
     public T getItemToUpdate() {
         return itemToUpdate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LoadResult<?> that = (LoadResult<?>) o;
+        return Objects.equals(itemToDelete, that.itemToDelete) &&
+                Objects.equals(itemToAppend, that.itemToAppend) &&
+                Objects.equals(itemToUpdate, that.itemToUpdate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(itemToDelete, itemToAppend, itemToUpdate);
     }
 }
