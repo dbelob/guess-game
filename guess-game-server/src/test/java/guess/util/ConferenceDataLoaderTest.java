@@ -474,11 +474,11 @@ class ConferenceDataLoaderTest {
         private Stream<Arguments> data() {
             Talk talk0 = new Talk();
             talk0.setId(0);
-            talk0.setName(Collections.emptyList());
+            talk0.setName(List.of(new LocaleItem("en", "Name0")));
 
             Talk talk1 = new Talk();
             talk1.setId(1);
-            talk1.setName(List.of(new LocaleItem("en", "Text")));
+            talk1.setName(List.of(new LocaleItem("en", "Name1")));
 
             return Stream.of(
                     arguments(List.of(talk0, talk1), Collections.emptySet(), List.of(talk0, talk1)),
@@ -492,7 +492,7 @@ class ConferenceDataLoaderTest {
             new MockUp<LocalizationUtils>() {
                 @Mock
                 String getString(List<LocaleItem> localeItems, Language language) {
-                    return String.format("Name%d", localeItems.size());
+                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
                 }
             };
 
