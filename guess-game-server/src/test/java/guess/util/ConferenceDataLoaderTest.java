@@ -238,154 +238,165 @@ class ConferenceDataLoaderTest {
         }
     }
 
-    @Test
-    void loadTalksSpeakersEvent() {
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("loadTalksSpeakersEvent method tests")
+    class LoadTalksSpeakersEventTest {
         final Conference JPOINT_CONFERENCE = Conference.JPOINT;
         final LocalDate EVENT_DATE = LocalDate.of(2020, 6, 29);
         final String EVENT_CODE = "2020-jpoint";
 
-        Place place0 = new Place();
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE, Collections.emptyMap(), Collections.emptySet())
+            );
+        }
 
-        Event event0 = new Event();
-        event0.setId(0);
-        event0.setStartDate(EVENT_DATE);
-        event0.setPlace(place0);
+        @ParameterizedTest
+        @MethodSource("data")
+        void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
+                                    Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet) {
+            Place place0 = new Place();
 
-        EventType eventType0 = new EventType();
-        eventType0.setId(0);
-        eventType0.setConference(JPOINT_CONFERENCE);
-        eventType0.setEvents(List.of(event0));
+            Event event0 = new Event();
+            event0.setId(0);
+            event0.setStartDate(EVENT_DATE);
+            event0.setPlace(place0);
 
-        new MockUp<YamlUtils>() {
-            @Mock
-            SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
-                return new SourceInformation(
-                        Collections.emptyList(),
-                        List.of(eventType0),
-                        Collections.emptyList(),
-                        Collections.emptyList(),
-                        Collections.emptyList());
-            }
-        };
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
+            eventType0.setConference(JPOINT_CONFERENCE);
+            eventType0.setEvents(List.of(event0));
 
-        new MockUp<LocalizationUtils>() {
-            @Mock
-            String getString(List<LocaleItem> localeItems, Language language) {
-                return "";
-            }
-        };
+            new MockUp<YamlUtils>() {
+                @Mock
+                SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
+                    return new SourceInformation(
+                            Collections.emptyList(),
+                            List.of(eventType0),
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList());
+                }
+            };
 
-        new MockUp<ContentfulUtils>() {
-            @Mock
-            Event getEvent(Conference conference, LocalDate startDate) {
-                return event0;
-            }
+            new MockUp<LocalizationUtils>() {
+                @Mock
+                String getString(List<LocaleItem> localeItems, Language language) {
+                    return "";
+                }
+            };
 
-            @Mock
-            List<Talk> getTalks(Conference conference, String conferenceCode) {
-                return Collections.emptyList();
-            }
-        };
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                Event getEvent(Conference conference, LocalDate startDate) {
+                    return event0;
+                }
 
-        new MockUp<ConferenceDataLoader>() {
-            @Mock
-            void loadTalksSpeakersEvent(Invocation invocation, Conference conference, LocalDate startDate, String conferenceCode,
-                                        Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-                invocation.proceed(conference, startDate, conferenceCode, knownSpeakerIdsMap, invalidTalksSet);
-            }
+                @Mock
+                List<Talk> getTalks(Conference conference, String conferenceCode) {
+                    return Collections.emptyList();
+                }
+            };
 
-            @Mock
-            List<Talk> deleteInvalidTalks(List<Talk> talks, Set<String> invalidTalksSet) {
-                return talks;
-            }
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                void loadTalksSpeakersEvent(Invocation invocation, Conference conference, LocalDate startDate, String conferenceCode,
+                                            Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                    invocation.proceed(conference, startDate, conferenceCode, knownSpeakerIdsMap, invalidTalksSet);
+                }
 
-            @Mock
-            List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
-                return talks;
-            }
+                @Mock
+                List<Talk> deleteInvalidTalks(List<Talk> talks, Set<String> invalidTalksSet) {
+                    return talks;
+                }
 
-            @Mock
-            List<Talk> deleteTalkDuplicates(List<Talk> talks) {
-                return talks;
-            }
+                @Mock
+                List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
+                    return talks;
+                }
 
-            @Mock
-            List<Speaker> getTalkSpeakers(List<Talk> talks) {
-                return Collections.emptyList();
-            }
+                @Mock
+                List<Talk> deleteTalkDuplicates(List<Talk> talks) {
+                    return talks;
+                }
 
-            @Mock
-            SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
-                                                   SpeakerLoadMaps speakerLoadMaps,
-                                                   AtomicLong lastSpeakerId) throws IOException {
-                return new SpeakerLoadResult(
-                        new LoadResult<>(
-                                Collections.emptyList(),
-                                Collections.emptyList(),
-                                Collections.emptyList()),
-                        new LoadResult<>(
-                                Collections.emptyList(),
-                                Collections.emptyList(),
-                                Collections.emptyList()));
-            }
+                @Mock
+                List<Speaker> getTalkSpeakers(List<Talk> talks) {
+                    return Collections.emptyList();
+                }
 
-            @Mock
-            void fillSpeakerIds(List<Talk> talks) {
-                // Nothing
-            }
+                @Mock
+                SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
+                                                       SpeakerLoadMaps speakerLoadMaps,
+                                                       AtomicLong lastSpeakerId) throws IOException {
+                    return new SpeakerLoadResult(
+                            new LoadResult<>(
+                                    Collections.emptyList(),
+                                    Collections.emptyList(),
+                                    Collections.emptyList()),
+                            new LoadResult<>(
+                                    Collections.emptyList(),
+                                    Collections.emptyList(),
+                                    Collections.emptyList()));
+                }
 
-            @Mock
-            <T extends Identifier> long getLastId(List<T> entities) {
-                return 42;
-            }
+                @Mock
+                void fillSpeakerIds(List<Talk> talks) {
+                    // Nothing
+                }
 
-            @Mock
-            LoadResult<List<Talk>> getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
-                                                     AtomicLong lasTalksId) {
-                return new LoadResult<>(
-                        Collections.emptyList(),
-                        Collections.emptyList(),
-                        Collections.emptyList());
-            }
+                @Mock
+                <T extends Identifier> long getLastId(List<T> entities) {
+                    return 42;
+                }
 
-            @Mock
-            List<LocaleItem> fixVenueAddress(Place place) {
-                return Collections.emptyList();
-            }
+                @Mock
+                LoadResult<List<Talk>> getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
+                                                         AtomicLong lasTalksId) {
+                    return new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList());
+                }
 
-            @Mock
-            Place findResourcePlace(Place place,
-                                    Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
-                                    Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
-                return place;
-            }
+                @Mock
+                List<LocaleItem> fixVenueAddress(Place place) {
+                    return Collections.emptyList();
+                }
 
-            @Mock
-            LoadResult<Place> getPlaceLoadResult(Place place, Place resourcePlace, AtomicLong lastPlaceId) {
-                return new LoadResult<>(
-                        null,
-                        null,
-                        null);
-            }
+                @Mock
+                Place findResourcePlace(Place place,
+                                        Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
+                                        Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
+                    return place;
+                }
 
-            @Mock
-            LoadResult<Event> getEventLoadResult(Event event, Event resourceEvent) {
-                return new LoadResult<>(
-                        null,
-                        null,
-                        null);
-            }
+                @Mock
+                LoadResult<Place> getPlaceLoadResult(Place place, Place resourcePlace, AtomicLong lastPlaceId) {
+                    return new LoadResult<>(
+                            null,
+                            null,
+                            null);
+                }
 
-            @Mock
-            void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
-                           LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
-                // Nothing
-            }
-        };
+                @Mock
+                LoadResult<Event> getEventLoadResult(Event event, Event resourceEvent) {
+                    return new LoadResult<>(
+                            null,
+                            null,
+                            null);
+                }
 
-        assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(
-                JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE,
-                Collections.emptyMap(), Collections.emptySet()));
+                @Mock
+                void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+                               LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, invalidTalksSet));
+        }
     }
 
     @Nested
