@@ -421,24 +421,108 @@ class ConferenceDataLoaderTest {
         }
     }
 
+    @Test
+    void loadTalksSpeakersEventWithoutInvalidTalksSet() {
+        new MockUp<ConferenceDataLoader>() {
+            @Mock
+            void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
+                                        Map<NameCompany, Long> knownSpeakerIdsMap,
+                                        Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                // Nothing
+            }
+
+            @Mock
+            void loadTalksSpeakersEvent(Invocation invocation, Conference conference, LocalDate startDate, String conferenceCode,
+                                        Map<NameCompany, Long> knownSpeakerIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                invocation.proceed(conference, startDate, conferenceCode, knownSpeakerIdsMap);
+            }
+        };
+
+        assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(
+                Conference.JPOINT,
+                LocalDate.of(2020, 6, 29),
+                "2020-jpoint",
+                Collections.emptyMap()));
+    }
+
+    @Test
+    void loadTalksSpeakersEventWithoutInvalidTalksSetAndKnownSpeakerIdsMap() {
+        new MockUp<ConferenceDataLoader>() {
+            @Mock
+            void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
+                                        Map<NameCompany, Long> knownSpeakerIdsMap,
+                                        Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                // Nothing
+            }
+
+            @Mock
+            void loadTalksSpeakersEvent(Invocation invocation, Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                invocation.proceed(conference, startDate, conferenceCode);
+            }
+        };
+
+        assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(
+                Conference.JPOINT,
+                LocalDate.of(2020, 6, 29),
+                "2020-jpoint"));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("deleteInvalidTalks method tests")
+    class DeleteInvalidTalksTest {
+        private Stream<Arguments> data() {
+            Talk talk0 = new Talk();
+            talk0.setId(0);
+            talk0.setName(Collections.emptyList());
+
+            Talk talk1 = new Talk();
+            talk1.setId(1);
+            talk1.setName(List.of(new LocaleItem("en", "Text")));
+
+            return Stream.of(
+                    arguments(List.of(talk0, talk1), Collections.emptySet(), List.of(talk0, talk1)),
+                    arguments(List.of(talk0, talk1), Set.of("Name0"), List.of(talk1))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void deleteInvalidTalks(List<Talk> talks, Set<String> invalidTalksSet, List<Talk> expected) {
+            new MockUp<LocalizationUtils>() {
+                @Mock
+                String getString(List<LocaleItem> localeItems, Language language) {
+                    return String.format("Name%d", localeItems.size());
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.deleteInvalidTalks(talks, invalidTalksSet));
+        }
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("deleteOpeningAndClosingTalks method tests")
     class DeleteOpeningAndClosingTalksTest {
         private Stream<Arguments> data() {
             Talk talk0 = new Talk();
+            talk0.setId(0);
             talk0.setName(List.of(new LocaleItem("en", "Conference opening")));
 
             Talk talk1 = new Talk();
+            talk1.setId(1);
             talk1.setName(List.of(new LocaleItem("en", "Conference closing")));
 
             Talk talk2 = new Talk();
+            talk2.setId(2);
             talk2.setName(List.of(new LocaleItem("en", "School opening")));
 
             Talk talk3 = new Talk();
+            talk3.setId(3);
             talk3.setName(List.of(new LocaleItem("en", "School closing")));
 
             Talk talk4 = new Talk();
+            talk4.setId(4);
             talk4.setName(List.of(new LocaleItem("en", "name4")));
 
             return Stream.of(

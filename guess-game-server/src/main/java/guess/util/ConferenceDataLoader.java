@@ -337,7 +337,7 @@ public class ConferenceDataLoader {
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode, Map<NameCompany, Long> knownSpeakerIdsMap)
+    static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode, Map<NameCompany, Long> knownSpeakerIdsMap)
             throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, Collections.emptySet());
     }
@@ -352,7 +352,7 @@ public class ConferenceDataLoader {
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode)
+    static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode)
             throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap(), Collections.emptySet());
     }
