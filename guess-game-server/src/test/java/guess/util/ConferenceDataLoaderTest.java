@@ -242,20 +242,11 @@ class ConferenceDataLoaderTest {
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("loadTalksSpeakersEvent method tests")
     class LoadTalksSpeakersEventTest {
-        final Conference JPOINT_CONFERENCE = Conference.JPOINT;
-        final LocalDate EVENT_DATE = LocalDate.of(2020, 6, 29);
-        final String EVENT_CODE = "2020-jpoint";
-
         private Stream<Arguments> data() {
-            return Stream.of(
-                    arguments(JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE, Collections.emptyMap(), Collections.emptySet())
-            );
-        }
+            final Conference JPOINT_CONFERENCE = Conference.JPOINT;
+            final LocalDate EVENT_DATE = LocalDate.of(2020, 6, 29);
+            final String EVENT_CODE = "2020-jpoint";
 
-        @ParameterizedTest
-        @MethodSource("data")
-        void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                    Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet) {
             Place place0 = new Place();
 
             Event event0 = new Event();
@@ -268,15 +259,46 @@ class ConferenceDataLoaderTest {
             eventType0.setConference(JPOINT_CONFERENCE);
             eventType0.setEvents(List.of(event0));
 
+            Talk talk0 = new Talk();
+            talk0.setId(0);
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            return Stream.of(
+                    arguments(JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE, Collections.emptyMap(), Collections.emptySet(),
+                            new SourceInformation(
+                                    List.of(place0),
+                                    List.of(eventType0),
+                                    Collections.emptyList(),
+                                    List.of(speaker0),
+                                    Collections.emptyList()),
+                            event0,
+                            List.of(talk0),
+                            List.of(speaker0)),
+                    arguments(JPOINT_CONFERENCE, LocalDate.of(2020, 6, 30), EVENT_CODE, Collections.emptyMap(), Collections.emptySet(),
+                            new SourceInformation(
+                                    List.of(place0),
+                                    List.of(eventType0),
+                                    Collections.emptyList(),
+                                    List.of(speaker0),
+                                    Collections.emptyList()),
+                            event0,
+                            List.of(talk0),
+                            List.of(speaker0))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
+                                    Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet,
+                                    SourceInformation sourceInformation, Event contentfulEvent,
+                                    List<Talk> contentfulTalks, List<Speaker> talkSpeakers) {
             new MockUp<YamlUtils>() {
                 @Mock
                 SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
-                    return new SourceInformation(
-                            Collections.emptyList(),
-                            List.of(eventType0),
-                            Collections.emptyList(),
-                            Collections.emptyList(),
-                            Collections.emptyList());
+                    return sourceInformation;
                 }
             };
 
@@ -290,12 +312,12 @@ class ConferenceDataLoaderTest {
             new MockUp<ContentfulUtils>() {
                 @Mock
                 Event getEvent(Conference conference, LocalDate startDate) {
-                    return event0;
+                    return contentfulEvent;
                 }
 
                 @Mock
                 List<Talk> getTalks(Conference conference, String conferenceCode) {
-                    return Collections.emptyList();
+                    return contentfulTalks;
                 }
             };
 
@@ -323,7 +345,7 @@ class ConferenceDataLoaderTest {
 
                 @Mock
                 List<Speaker> getTalkSpeakers(List<Talk> talks) {
-                    return Collections.emptyList();
+                    return talkSpeakers;
                 }
 
                 @Mock
