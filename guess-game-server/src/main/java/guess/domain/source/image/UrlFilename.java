@@ -1,11 +1,13 @@
 package guess.domain.source.image;
 
+import java.util.Objects;
+
 /**
  * URL, filename pair.
  */
 public class UrlFilename {
-    private String url;
-    private String filename;
+    private final String url;
+    private final String filename;
 
     public UrlFilename(String url, String filename) {
         this.url = url;
@@ -18,5 +20,27 @@ public class UrlFilename {
 
     public String getFilename() {
         return filename;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UrlFilename that = (UrlFilename) o;
+        return Objects.equals(url, that.url) &&
+                Objects.equals(filename, that.filename);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(url, filename);
+    }
+
+    @Override
+    public String toString() {
+        return "UrlFilename{" +
+                "url='" + url + '\'' +
+                ", filename='" + filename + '\'' +
+                '}';
     }
 }

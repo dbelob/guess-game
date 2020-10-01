@@ -470,8 +470,7 @@ public class ConferenceDataLoader {
      * @return load result for speakers
      * @throws IOException if read error occurs
      */
-    static SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
-                                                  SpeakerLoadMaps speakerLoadMaps,
+    static SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers, SpeakerLoadMaps speakerLoadMaps,
                                                   AtomicLong lastSpeakerId) throws IOException {
         List<Speaker> speakersToAppend = new ArrayList<>();
         List<Speaker> speakersToUpdate = new ArrayList<>();
@@ -1012,7 +1011,7 @@ public class ConferenceDataLoader {
      * @param speakerLoadMaps speaker load maps
      * @return resource speaker
      */
-    private static Speaker findResourceSpeaker(Speaker speaker, SpeakerLoadMaps speakerLoadMaps) {
+    static Speaker findResourceSpeaker(Speaker speaker, SpeakerLoadMaps speakerLoadMaps) {
         // Find in known speakers by (name, company) pair because
         // - speaker could change his/her last name (for example, woman got married);
         // - speaker (with non-unique pair of name, company) could change his/her company.

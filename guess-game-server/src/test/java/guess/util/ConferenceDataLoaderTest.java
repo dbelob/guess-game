@@ -5,6 +5,7 @@ import guess.domain.Conference;
 import guess.domain.Identifier;
 import guess.domain.Language;
 import guess.domain.source.*;
+import guess.domain.source.image.UrlFilename;
 import guess.domain.source.load.LoadResult;
 import guess.domain.source.load.SpeakerLoadMaps;
 import guess.domain.source.load.SpeakerLoadResult;
@@ -608,6 +609,218 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void deleteTalkDuplicates(List<Talk> talks, List<Talk> expected) {
             assertEquals(expected, ConferenceDataLoader.deleteTalkDuplicates(talks));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getTalkSpeakers method tests")
+    class GetTalkSpeakersTest {
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+
+            Talk talk0 = new Talk();
+            talk0.setSpeakers(List.of(speaker0));
+
+            Talk talk1 = new Talk();
+            talk1.setSpeakers(List.of(speaker0, speaker1));
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyList()),
+                    arguments(List.of(talk0), List.of(speaker0)),
+                    arguments(List.of(talk1), List.of(speaker0, speaker1)),
+                    arguments(List.of(talk0, talk1), List.of(speaker0, speaker1))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getTalkSpeakers(List<Talk> talks, List<Speaker> expected) {
+            assertEquals(expected, ConferenceDataLoader.getTalkSpeakers(talks));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakerLoadResult method tests")
+    class GetSpeakerLoadResultTest {
+        final String PHOTO_FILE_NAME0 = "0000.jpg";
+        final String PHOTO_FILE_NAME1 = "0001.jpg";
+        final String PHOTO_FILE_NAME2 = "http://valid.com/2.jpg";
+        final String DESTINATION_FILE_NAME0 = "guess-game-web/src/assets/images/speakers/0000.jpg";
+
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setPhotoFileName(PHOTO_FILE_NAME0);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setPhotoFileName(PHOTO_FILE_NAME1);
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+            speaker2.setPhotoFileName(PHOTO_FILE_NAME2);
+
+            SpeakerLoadMaps speakerLoadMaps = new SpeakerLoadMaps(
+                    Collections.emptyMap(),
+                    Collections.emptyMap(),
+                    Collections.emptyMap(),
+                    Collections.emptyMap(),
+                    Collections.emptyMap(),
+                    Collections.emptyMap());
+
+            SpeakerLoadResult speakerLoadResult0 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()));
+
+            SpeakerLoadResult speakerLoadResult1 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            List.of(speaker2),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            List.of(new UrlFilename(PHOTO_FILE_NAME2, "0000.jpg")),
+                            Collections.emptyList()));
+
+            SpeakerLoadResult speakerLoadResult2 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            List.of(speaker0)),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            List.of(new UrlFilename(PHOTO_FILE_NAME0, PHOTO_FILE_NAME0))));
+
+            SpeakerLoadResult speakerLoadResult3 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()));
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), speakerLoadMaps, new AtomicLong(-1), speakerLoadResult0),
+                    arguments(List.of(speaker2), speakerLoadMaps, new AtomicLong(-1), speakerLoadResult1),
+                    arguments(List.of(speaker0), speakerLoadMaps, new AtomicLong(-1), speakerLoadResult2),
+                    arguments(List.of(speaker1), speakerLoadMaps, new AtomicLong(-1), speakerLoadResult3)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSpeakerLoadResult(List<Speaker> speakers, SpeakerLoadMaps speakerLoadMaps, AtomicLong lastSpeakerId,
+                                  SpeakerLoadResult expected) throws IOException {
+            new MockUp<ImageUtils>() {
+                @Mock
+                boolean needUpdate(String sourceUrl, String destinationFileName) throws IOException {
+                    return DESTINATION_FILE_NAME0.equals(destinationFileName);
+                }
+            };
+
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                boolean needUpdate(Speaker a, Speaker b) {
+                    return ((a.getId() == 0) && (b.getId() == 0));
+                }
+            };
+
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                SpeakerLoadResult getSpeakerLoadResult(Invocation invocation, List<Speaker> speakers, SpeakerLoadMaps speakerLoadMaps,
+                                                       AtomicLong lastSpeakerId) throws IOException {
+                    return invocation.proceed(speakers, speakerLoadMaps, lastSpeakerId);
+                }
+
+                @Mock
+                Speaker findResourceSpeaker(Speaker speaker, SpeakerLoadMaps speakerLoadMaps) {
+                    return ((speaker.getId() == 0) || (speaker.getId() == 1)) ? speaker : null;
+                }
+
+                @Mock
+                void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker) {
+                    // Nothing
+                }
+
+                @Mock
+                void fillSpeakerGitHub(Speaker targetSpeaker, Speaker resourceSpeaker) {
+                    // Nothing
+                }
+
+                @Mock
+                void fillSpeakerJavaChampion(Speaker targetSpeaker, Speaker resourceSpeaker) {
+                    // Nothing
+                }
+
+                @Mock
+                void fillSpeakerMvp(Speaker targetSpeaker, Speaker resourceSpeaker) {
+                    // Nothing
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.getSpeakerLoadResult(speakers, speakerLoadMaps, lastSpeakerId));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillSpeakerTwitter method tests")
+    class FillSpeakerTwitterTest {
+        private Stream<Arguments> data() {
+            final String RESOURCE_SPEAKER_GIT_HUB = "resourceSpeakerGitHub";
+            final String TARGET_SPEAKER_GIT_HUB = "targetSpeakerGitHub";
+
+            Speaker resourceSpeaker0 = new Speaker();
+
+            Speaker resourceSpeaker1 = new Speaker();
+            resourceSpeaker1.setGitHub("");
+
+            Speaker resourceSpeaker2 = new Speaker();
+            resourceSpeaker2.setGitHub(RESOURCE_SPEAKER_GIT_HUB);
+
+            Speaker targetSpeaker0 = new Speaker();
+
+            Speaker targetSpeaker1 = new Speaker();
+            targetSpeaker1.setGitHub("");
+
+            Speaker targetSpeaker2 = new Speaker();
+            targetSpeaker2.setGitHub(TARGET_SPEAKER_GIT_HUB);
+
+            return Stream.of(
+                    arguments(targetSpeaker0, resourceSpeaker0, null),
+                    arguments(targetSpeaker1, resourceSpeaker0, ""),
+                    arguments(targetSpeaker2, resourceSpeaker0, TARGET_SPEAKER_GIT_HUB),
+                    arguments(targetSpeaker0, resourceSpeaker1, null),
+                    arguments(targetSpeaker1, resourceSpeaker1, ""),
+                    arguments(targetSpeaker2, resourceSpeaker1, TARGET_SPEAKER_GIT_HUB),
+                    arguments(targetSpeaker0, resourceSpeaker2, RESOURCE_SPEAKER_GIT_HUB),
+                    arguments(targetSpeaker1, resourceSpeaker2, RESOURCE_SPEAKER_GIT_HUB),
+                    arguments(targetSpeaker2, resourceSpeaker2, TARGET_SPEAKER_GIT_HUB)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker,
+                                String expected) {
+            ConferenceDataLoader.fillSpeakerTwitter(targetSpeaker, resourceSpeaker);
+
+            assertEquals(expected, targetSpeaker.getGitHub());
         }
     }
 }

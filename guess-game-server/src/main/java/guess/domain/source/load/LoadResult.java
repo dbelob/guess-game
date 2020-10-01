@@ -44,4 +44,13 @@ public class LoadResult<T> {
     public int hashCode() {
         return Objects.hash(itemToDelete, itemToAppend, itemToUpdate);
     }
+
+    @Override
+    public String toString() {
+        return "LoadResult{" +
+                "itemToDelete=" + itemToDelete +
+                ", itemToAppend=" + itemToAppend +
+                ", itemToUpdate=" + itemToUpdate +
+                '}';
+    }
 }
