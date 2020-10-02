@@ -781,36 +781,27 @@ class ConferenceDataLoaderTest {
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("fillSpeakerTwitter method tests")
     class FillSpeakerTwitterTest {
+        private Speaker createSpeaker(String twitter) {
+            Speaker speaker = new Speaker();
+            speaker.setTwitter(twitter);
+
+            return speaker;
+        }
+
         private Stream<Arguments> data() {
             final String RESOURCE_SPEAKER_TWITTER = "resourceSpeakerTwitter";
             final String TARGET_SPEAKER_TWITTER = "targetSpeakerTwitter";
 
-            Speaker resourceSpeaker0 = new Speaker();
-
-            Speaker resourceSpeaker1 = new Speaker();
-            resourceSpeaker1.setTwitter("");
-
-            Speaker resourceSpeaker2 = new Speaker();
-            resourceSpeaker2.setTwitter(RESOURCE_SPEAKER_TWITTER);
-
-            Speaker targetSpeaker0 = new Speaker();
-
-            Speaker targetSpeaker1 = new Speaker();
-            targetSpeaker1.setTwitter("");
-
-            Speaker targetSpeaker2 = new Speaker();
-            targetSpeaker2.setTwitter(TARGET_SPEAKER_TWITTER);
-
             return Stream.of(
-                    arguments(targetSpeaker0, resourceSpeaker0, null),
-                    arguments(targetSpeaker1, resourceSpeaker0, ""),
-                    arguments(targetSpeaker2, resourceSpeaker0, TARGET_SPEAKER_TWITTER),
-                    arguments(targetSpeaker0, resourceSpeaker1, null),
-                    arguments(targetSpeaker1, resourceSpeaker1, ""),
-                    arguments(targetSpeaker2, resourceSpeaker1, TARGET_SPEAKER_TWITTER),
-                    arguments(targetSpeaker0, resourceSpeaker2, RESOURCE_SPEAKER_TWITTER),
-                    arguments(targetSpeaker1, resourceSpeaker2, RESOURCE_SPEAKER_TWITTER),
-                    arguments(targetSpeaker2, resourceSpeaker2, TARGET_SPEAKER_TWITTER)
+                    arguments(createSpeaker(null), createSpeaker(null), null),
+                    arguments(createSpeaker(""), createSpeaker(null), ""),
+                    arguments(createSpeaker(TARGET_SPEAKER_TWITTER), createSpeaker(null), TARGET_SPEAKER_TWITTER),
+                    arguments(createSpeaker(null), createSpeaker(""), null),
+                    arguments(createSpeaker(""), createSpeaker(""), ""),
+                    arguments(createSpeaker(TARGET_SPEAKER_TWITTER), createSpeaker(""), TARGET_SPEAKER_TWITTER),
+                    arguments(createSpeaker(null), createSpeaker(RESOURCE_SPEAKER_TWITTER), RESOURCE_SPEAKER_TWITTER),
+                    arguments(createSpeaker(""), createSpeaker(RESOURCE_SPEAKER_TWITTER), RESOURCE_SPEAKER_TWITTER),
+                    arguments(createSpeaker(TARGET_SPEAKER_TWITTER), createSpeaker(RESOURCE_SPEAKER_TWITTER), TARGET_SPEAKER_TWITTER)
             );
         }
 
@@ -828,36 +819,27 @@ class ConferenceDataLoaderTest {
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("fillSpeakerGitHub method tests")
     class FillSpeakerGitHubTest {
+        private Speaker createSpeaker(String gitHub) {
+            Speaker speaker = new Speaker();
+            speaker.setGitHub(gitHub);
+
+            return speaker;
+        }
+
         private Stream<Arguments> data() {
             final String RESOURCE_SPEAKER_GIT_HUB = "resourceSpeakerGitHub";
             final String TARGET_SPEAKER_GIT_HUB = "targetSpeakerGitHub";
 
-            Speaker resourceSpeaker0 = new Speaker();
-
-            Speaker resourceSpeaker1 = new Speaker();
-            resourceSpeaker1.setGitHub("");
-
-            Speaker resourceSpeaker2 = new Speaker();
-            resourceSpeaker2.setGitHub(RESOURCE_SPEAKER_GIT_HUB);
-
-            Speaker targetSpeaker0 = new Speaker();
-
-            Speaker targetSpeaker1 = new Speaker();
-            targetSpeaker1.setGitHub("");
-
-            Speaker targetSpeaker2 = new Speaker();
-            targetSpeaker2.setGitHub(TARGET_SPEAKER_GIT_HUB);
-
             return Stream.of(
-                    arguments(targetSpeaker0, resourceSpeaker0, null),
-                    arguments(targetSpeaker1, resourceSpeaker0, ""),
-                    arguments(targetSpeaker2, resourceSpeaker0, TARGET_SPEAKER_GIT_HUB),
-                    arguments(targetSpeaker0, resourceSpeaker1, null),
-                    arguments(targetSpeaker1, resourceSpeaker1, ""),
-                    arguments(targetSpeaker2, resourceSpeaker1, TARGET_SPEAKER_GIT_HUB),
-                    arguments(targetSpeaker0, resourceSpeaker2, RESOURCE_SPEAKER_GIT_HUB),
-                    arguments(targetSpeaker1, resourceSpeaker2, RESOURCE_SPEAKER_GIT_HUB),
-                    arguments(targetSpeaker2, resourceSpeaker2, TARGET_SPEAKER_GIT_HUB)
+                    arguments(createSpeaker(null), createSpeaker(null), null),
+                    arguments(createSpeaker(""), createSpeaker(null), ""),
+                    arguments(createSpeaker(TARGET_SPEAKER_GIT_HUB), createSpeaker(null), TARGET_SPEAKER_GIT_HUB),
+                    arguments(createSpeaker(null), createSpeaker(""), null),
+                    arguments(createSpeaker(""), createSpeaker(""), ""),
+                    arguments(createSpeaker(TARGET_SPEAKER_GIT_HUB), createSpeaker(""), TARGET_SPEAKER_GIT_HUB),
+                    arguments(createSpeaker(null), createSpeaker(RESOURCE_SPEAKER_GIT_HUB), RESOURCE_SPEAKER_GIT_HUB),
+                    arguments(createSpeaker(""), createSpeaker(RESOURCE_SPEAKER_GIT_HUB), RESOURCE_SPEAKER_GIT_HUB),
+                    arguments(createSpeaker(TARGET_SPEAKER_GIT_HUB), createSpeaker(RESOURCE_SPEAKER_GIT_HUB), TARGET_SPEAKER_GIT_HUB)
             );
         }
 
@@ -875,24 +857,19 @@ class ConferenceDataLoaderTest {
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("fillSpeakerJavaChampion method tests")
     class FillSpeakerJavaChampionTest {
+        private Speaker createSpeaker(boolean javaChampion) {
+            Speaker speaker = new Speaker();
+            speaker.setJavaChampion(javaChampion);
+
+            return speaker;
+        }
+
         private Stream<Arguments> data() {
-            Speaker resourceSpeaker0 = new Speaker();
-            resourceSpeaker0.setJavaChampion(false);
-
-            Speaker resourceSpeaker1 = new Speaker();
-            resourceSpeaker1.setJavaChampion(true);
-
-            Speaker targetSpeaker0 = new Speaker();
-            targetSpeaker0.setJavaChampion(false);
-
-            Speaker targetSpeaker1 = new Speaker();
-            targetSpeaker1.setJavaChampion(true);
-
             return Stream.of(
-                    arguments(targetSpeaker0, resourceSpeaker0, false),
-                    arguments(targetSpeaker1, resourceSpeaker0, true),
-                    arguments(targetSpeaker0, resourceSpeaker1, true),
-                    arguments(targetSpeaker1, resourceSpeaker1, true)
+                    arguments(createSpeaker(false), createSpeaker(false), false),
+                    arguments(createSpeaker(true), createSpeaker(false), true),
+                    arguments(createSpeaker(false), createSpeaker(true), true),
+                    arguments(createSpeaker(true), createSpeaker(true), true)
             );
         }
 
@@ -903,6 +880,113 @@ class ConferenceDataLoaderTest {
             ConferenceDataLoader.fillSpeakerJavaChampion(targetSpeaker, resourceSpeaker);
 
             assertEquals(expected, targetSpeaker.isJavaChampion());
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillSpeakerMvp method tests")
+    class FillSpeakerMvpTest {
+        private Speaker createSpeaker(boolean mvp, boolean mvpReconnect) {
+            Speaker speaker = new Speaker();
+            speaker.setMvp(mvp);
+            speaker.setMvpReconnect(mvpReconnect);
+
+            return speaker;
+        }
+
+        private Speaker createSpeaker0() {
+            return createSpeaker(false, false);
+        }
+
+        private Speaker createSpeaker1() {
+            return createSpeaker(false, true);
+        }
+
+        private Speaker createSpeaker2() {
+            return createSpeaker(true, false);
+        }
+
+        private Speaker createSpeaker3() {
+            return createSpeaker(true, true);
+        }
+
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(createSpeaker0(), createSpeaker0(), false, false),
+                    arguments(createSpeaker1(), createSpeaker0(), false, true),
+                    arguments(createSpeaker2(), createSpeaker0(), true, false),
+                    arguments(createSpeaker3(), createSpeaker0(), false, true),
+                    arguments(createSpeaker0(), createSpeaker1(), false, true),
+                    arguments(createSpeaker1(), createSpeaker1(), false, true),
+                    arguments(createSpeaker2(), createSpeaker1(), true, false),
+                    arguments(createSpeaker3(), createSpeaker1(), false, true),
+                    arguments(createSpeaker0(), createSpeaker2(), true, false),
+                    arguments(createSpeaker1(), createSpeaker2(), false, true),
+                    arguments(createSpeaker2(), createSpeaker2(), true, false),
+                    arguments(createSpeaker3(), createSpeaker2(), false, true),
+                    arguments(createSpeaker0(), createSpeaker3(), false, true),
+                    arguments(createSpeaker1(), createSpeaker3(), false, true),
+                    arguments(createSpeaker2(), createSpeaker3(), true, false),
+                    arguments(createSpeaker3(), createSpeaker3(), false, true)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillSpeakerMvp(Speaker targetSpeaker, Speaker resourceSpeaker,
+                            boolean mvpExpected, boolean mvpReconnectExpected) {
+            ConferenceDataLoader.fillSpeakerMvp(targetSpeaker, resourceSpeaker);
+
+            assertEquals(mvpExpected, targetSpeaker.isMvp());
+            assertEquals(mvpReconnectExpected, targetSpeaker.isMvpReconnect());
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillSpeakerIds method tests")
+    class FillSpeakerIdsTest {
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+
+            Speaker speaker3 = new Speaker();
+            speaker3.setId(3);
+
+            Talk talk0 = new Talk();
+            talk0.setSpeakers(List.of(speaker0));
+
+            Talk talk1 = new Talk();
+            talk1.setSpeakers(List.of(speaker1, speaker2));
+
+            Talk talk2 = new Talk();
+            talk2.setSpeakers(List.of(speaker3));
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyList()),
+                    arguments(List.of(talk0), List.of(List.of(0L))),
+                    arguments(List.of(talk1), List.of(List.of(1L, 2L))),
+                    arguments(List.of(talk1, talk2), List.of(List.of(1L, 2L), List.of(3L)))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillSpeakerIds(List<Talk> talks, List<List<Long>> expected) {
+            ConferenceDataLoader.fillSpeakerIds(talks);
+
+            for (int i = 0; i < talks.size(); i++) {
+                assertEquals(
+                        expected.get(i),
+                        talks.get(i).getSpeakerIds());
+            }
         }
     }
 }
