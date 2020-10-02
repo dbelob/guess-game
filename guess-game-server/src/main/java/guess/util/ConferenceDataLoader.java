@@ -532,9 +532,9 @@ public class ConferenceDataLoader {
      * @param resourceSpeaker resource speaker
      */
     static void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker) {
-        if ((resourceSpeaker.getGitHub() != null) && !resourceSpeaker.getGitHub().isEmpty() &&
-                ((targetSpeaker.getGitHub() == null) || targetSpeaker.getGitHub().isEmpty())) {
-            targetSpeaker.setGitHub(resourceSpeaker.getGitHub());
+        if ((resourceSpeaker.getTwitter() != null) && !resourceSpeaker.getTwitter().isEmpty() &&
+                ((targetSpeaker.getTwitter() == null) || targetSpeaker.getTwitter().isEmpty())) {
+            targetSpeaker.setTwitter(resourceSpeaker.getTwitter());
         }
     }
 

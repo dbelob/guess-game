@@ -782,6 +782,53 @@ class ConferenceDataLoaderTest {
     @DisplayName("fillSpeakerTwitter method tests")
     class FillSpeakerTwitterTest {
         private Stream<Arguments> data() {
+            final String RESOURCE_SPEAKER_TWITTER = "resourceSpeakerTwitter";
+            final String TARGET_SPEAKER_TWITTER = "targetSpeakerTwitter";
+
+            Speaker resourceSpeaker0 = new Speaker();
+
+            Speaker resourceSpeaker1 = new Speaker();
+            resourceSpeaker1.setTwitter("");
+
+            Speaker resourceSpeaker2 = new Speaker();
+            resourceSpeaker2.setTwitter(RESOURCE_SPEAKER_TWITTER);
+
+            Speaker targetSpeaker0 = new Speaker();
+
+            Speaker targetSpeaker1 = new Speaker();
+            targetSpeaker1.setTwitter("");
+
+            Speaker targetSpeaker2 = new Speaker();
+            targetSpeaker2.setTwitter(TARGET_SPEAKER_TWITTER);
+
+            return Stream.of(
+                    arguments(targetSpeaker0, resourceSpeaker0, null),
+                    arguments(targetSpeaker1, resourceSpeaker0, ""),
+                    arguments(targetSpeaker2, resourceSpeaker0, TARGET_SPEAKER_TWITTER),
+                    arguments(targetSpeaker0, resourceSpeaker1, null),
+                    arguments(targetSpeaker1, resourceSpeaker1, ""),
+                    arguments(targetSpeaker2, resourceSpeaker1, TARGET_SPEAKER_TWITTER),
+                    arguments(targetSpeaker0, resourceSpeaker2, RESOURCE_SPEAKER_TWITTER),
+                    arguments(targetSpeaker1, resourceSpeaker2, RESOURCE_SPEAKER_TWITTER),
+                    arguments(targetSpeaker2, resourceSpeaker2, TARGET_SPEAKER_TWITTER)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker,
+                                String expected) {
+            ConferenceDataLoader.fillSpeakerTwitter(targetSpeaker, resourceSpeaker);
+
+            assertEquals(expected, targetSpeaker.getTwitter());
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillSpeakerGitHub method tests")
+    class FillSpeakerGitHubTest {
+        private Stream<Arguments> data() {
             final String RESOURCE_SPEAKER_GIT_HUB = "resourceSpeakerGitHub";
             final String TARGET_SPEAKER_GIT_HUB = "targetSpeakerGitHub";
 
@@ -818,9 +865,44 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker,
                                 String expected) {
-            ConferenceDataLoader.fillSpeakerTwitter(targetSpeaker, resourceSpeaker);
+            ConferenceDataLoader.fillSpeakerGitHub(targetSpeaker, resourceSpeaker);
 
             assertEquals(expected, targetSpeaker.getGitHub());
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillSpeakerJavaChampion method tests")
+    class FillSpeakerJavaChampionTest {
+        private Stream<Arguments> data() {
+            Speaker resourceSpeaker0 = new Speaker();
+            resourceSpeaker0.setJavaChampion(false);
+
+            Speaker resourceSpeaker1 = new Speaker();
+            resourceSpeaker1.setJavaChampion(true);
+
+            Speaker targetSpeaker0 = new Speaker();
+            targetSpeaker0.setJavaChampion(false);
+
+            Speaker targetSpeaker1 = new Speaker();
+            targetSpeaker1.setJavaChampion(true);
+
+            return Stream.of(
+                    arguments(targetSpeaker0, resourceSpeaker0, false),
+                    arguments(targetSpeaker1, resourceSpeaker0, true),
+                    arguments(targetSpeaker0, resourceSpeaker1, true),
+                    arguments(targetSpeaker1, resourceSpeaker1, true)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillSpeakerJavaChampion(Speaker targetSpeaker, Speaker resourceSpeaker,
+                                     boolean expected) {
+            ConferenceDataLoader.fillSpeakerJavaChampion(targetSpeaker, resourceSpeaker);
+
+            assertEquals(expected, targetSpeaker.isJavaChampion());
         }
     }
 }
