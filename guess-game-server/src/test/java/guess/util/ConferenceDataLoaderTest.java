@@ -1077,4 +1077,52 @@ class ConferenceDataLoaderTest {
             assertEquals(expected, ConferenceDataLoader.getTalkLoadResult(talks, resourceEvent, resourceEvents, lasTalksId));
         }
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("needDeleteTalk method tests")
+    class NeedDeleteTalkTest {
+        private Stream<Arguments> data() {
+            Talk talk0 = new Talk();
+            talk0.setId(0);
+
+            Talk talk1 = new Talk();
+            talk1.setId(1);
+
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
+
+            EventType eventType1 = new EventType();
+            eventType1.setId(1);
+
+            Event event0 = new Event();
+            event0.setEventType(eventType0);
+            event0.setStartDate(LocalDate.of(2020, 10, 3));
+            event0.setTalks(List.of(talk0));
+
+            Event event1 = new Event();
+            event1.setEventType(eventType1);
+            event1.setStartDate(LocalDate.of(2020, 10, 3));
+
+            return Stream.of(
+                    arguments(List.of(talk0), talk0, Collections.emptyList(), null, false),
+                    arguments(Collections.emptyList(), talk0, List.of(event0), event0, true),
+                    arguments(Collections.emptyList(), talk0, List.of(event0), event1, false)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void needDeleteTalk(List<Talk> talks, Talk resourceTalk, List<Event> resourceEvents, Event resourceEvent,
+                            boolean expected) {
+            new MockUp<LocalizationUtils>() {
+                @Mock
+                String getString(List<LocaleItem> localeItems, Language language) {
+                    return "";
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.needDeleteTalk(talks, resourceTalk, resourceEvents, resourceEvent));
+        }
+    }
 }
