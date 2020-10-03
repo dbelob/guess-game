@@ -282,12 +282,12 @@ public class ConferenceDataLoader {
         // Find talks
         fillSpeakerIds(contentfulTalks);
 
-        AtomicLong lasTalksId = new AtomicLong(getLastId(resourceSourceInformation.getTalks()));
+        AtomicLong lastTalksId = new AtomicLong(getLastId(resourceSourceInformation.getTalks()));
         LoadResult<List<Talk>> talkLoadResult = getTalkLoadResult(
                 contentfulTalks,
                 resourceEvent,
                 resourceSourceInformation.getEvents(),
-                lasTalksId);
+                lastTalksId);
 
         // Find place
         Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
@@ -608,11 +608,11 @@ public class ConferenceDataLoader {
      * @param talks          talks
      * @param resourceEvent  resource event of talks
      * @param resourceEvents all resource events
-     * @param lasTalksId     identifier of last talk
+     * @param lastTalksId    identifier of last talk
      * @return talk load result
      */
     static LoadResult<List<Talk>> getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
-                                                    AtomicLong lasTalksId) {
+                                                    AtomicLong lastTalksId) {
         List<Talk> talksToDelete = new ArrayList<>();
         List<Talk> talksToAppend = new ArrayList<>();
         List<Talk> talksToUpdate = new ArrayList<>();
@@ -621,7 +621,7 @@ public class ConferenceDataLoader {
             // Event not exists
             talks.forEach(
                     t -> {
-                        t.setId(lasTalksId.incrementAndGet());
+                        t.setId(lastTalksId.incrementAndGet());
                         talksToAppend.add(t);
                     }
             );
@@ -643,7 +643,7 @@ public class ConferenceDataLoader {
 
                         if (resourceTalk == null) {
                             // Talk not exists
-                            t.setId(lasTalksId.incrementAndGet());
+                            t.setId(lastTalksId.incrementAndGet());
                             talksToAppend.add(t);
                         } else {
                             // Talk exists
@@ -1051,9 +1051,9 @@ public class ConferenceDataLoader {
         return findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceEnNameSpeakers(), Language.ENGLISH);
     }
 
-    private static Talk findResourceTalk(Talk talk,
-                                         Map<String, Set<Talk>> resourceRuNameTalks,
-                                         Map<String, Set<Talk>> resourceEnNameTalks) {
+    static Talk findResourceTalk(Talk talk,
+                                 Map<String, Set<Talk>> resourceRuNameTalks,
+                                 Map<String, Set<Talk>> resourceEnNameTalks) {
         // Find in resource talks by Russian name
         Talk resourceTalk = findResourceTalkByName(talk, resourceRuNameTalks, Language.RUSSIAN);
         if (resourceTalk != null) {

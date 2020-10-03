@@ -989,4 +989,92 @@ class ConferenceDataLoaderTest {
             }
         }
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getTalkLoadResult method tests")
+    class GetTalkLoadResultTest {
+        private Stream<Arguments> data() {
+            Talk talk0 = new Talk();
+            talk0.setId(0);
+
+            Talk talk1 = new Talk();
+            talk1.setId(1);
+            talk1.setName(List.of(
+                    new LocaleItem(Language.RUSSIAN.getCode(), "Наименование1"),
+                    new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
+            Talk talk2 = new Talk();
+            talk2.setId(2);
+            talk2.setName(List.of(
+                    new LocaleItem(Language.RUSSIAN.getCode(), "Наименование2"),
+                    new LocaleItem(Language.ENGLISH.getCode(), "Name2")));
+
+            Event resourceEvent = new Event();
+            resourceEvent.setTalks(List.of(talk1, talk2));
+
+            List<Event> resourceEvents = Collections.emptyList();
+
+            LoadResult<List<Talk>> talkLoadResult0 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    Collections.emptyList());
+
+            LoadResult<List<Talk>> talkLoadResult1 = new LoadResult<>(
+                    Collections.emptyList(),
+                    List.of(talk0),
+                    Collections.emptyList());
+
+            LoadResult<List<Talk>> talkLoadResult2 = new LoadResult<>(
+                    List.of(talk1, talk2),
+                    List.of(talk2),
+                    Collections.emptyList());
+
+            LoadResult<List<Talk>> talkLoadResult3 = new LoadResult<>(
+                    List.of(talk1, talk2),
+                    Collections.emptyList(),
+                    List.of(talk0));
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), null, resourceEvents, new AtomicLong(-1), talkLoadResult0),
+                    arguments(List.of(talk0), null, resourceEvents, new AtomicLong(-1), talkLoadResult1),
+                    arguments(List.of(talk2), resourceEvent, resourceEvents, new AtomicLong(-1), talkLoadResult2),
+                    arguments(List.of(talk0, talk1), resourceEvent, resourceEvents, new AtomicLong(-1), talkLoadResult3)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
+                               AtomicLong lasTalksId, LoadResult<List<Talk>> expected) {
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                boolean needUpdate(Talk a, Talk b) {
+                    return ((a.getId() == 0) && (b.getId() == 0));
+                }
+            };
+
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                LoadResult<List<Talk>> getTalkLoadResult(Invocation invocation, List<Talk> talks, Event resourceEvent,
+                                                         List<Event> resourceEvents, AtomicLong lastTalksId) {
+                    return invocation.proceed(talks, resourceEvent, resourceEvents, lastTalksId);
+                }
+
+                @Mock
+                Talk findResourceTalk(Talk talk,
+                                      Map<String, Set<Talk>> resourceRuNameTalks,
+                                      Map<String, Set<Talk>> resourceEnNameTalks) {
+                    return ((talk.getId() == 0) || (talk.getId() == 1)) ? talk : null;
+                }
+
+                @Mock
+                boolean needDeleteTalk(List<Talk> talks, Talk resourceTalk, List<Event> resourceEvents, Event resourceEvent) {
+                    return true;
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.getTalkLoadResult(talks, resourceEvent, resourceEvents, lasTalksId));
+        }
+    }
 }
