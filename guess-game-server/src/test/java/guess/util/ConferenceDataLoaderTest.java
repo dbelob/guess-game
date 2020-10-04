@@ -1226,7 +1226,10 @@ class ConferenceDataLoaderTest {
     class SaveFilesTest {
         private Stream<Arguments> data() {
             Speaker speaker0 = new Speaker();
-            speaker0.setId(0);
+            UrlFilename urlFilename0 = new UrlFilename("url0", "filename0");
+            Talk talk0 = new Talk();
+            Place place0 = new Place();
+            Event event0 = new Event();
 
             SpeakerLoadResult speakerLoadResult0 = new SpeakerLoadResult(
                     new LoadResult<>(
@@ -1248,25 +1251,99 @@ class ConferenceDataLoaderTest {
                             Collections.emptyList(),
                             Collections.emptyList()));
 
+            SpeakerLoadResult speakerLoadResult2 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            List.of(speaker0)),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()));
+
+            SpeakerLoadResult speakerLoadResult3 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            List.of(urlFilename0),
+                            Collections.emptyList()));
+
+            SpeakerLoadResult speakerLoadResult4 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            List.of(urlFilename0)));
+
             LoadResult<List<Talk>> talkLoadResult0 = new LoadResult<>(
                     Collections.emptyList(),
                     Collections.emptyList(),
                     Collections.emptyList());
+
+            LoadResult<List<Talk>> talkLoadResult1 = new LoadResult<>(
+                    List.of(talk0),
+                    Collections.emptyList(),
+                    Collections.emptyList());
+
+            LoadResult<List<Talk>> talkLoadResult2 = new LoadResult<>(
+                    Collections.emptyList(),
+                    List.of(talk0),
+                    Collections.emptyList());
+
+            LoadResult<List<Talk>> talkLoadResult3 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    List.of(talk0));
 
             LoadResult<Place> placeLoadResult0 = new LoadResult<>(
                     null,
                     null,
                     null);
 
+            LoadResult<Place> placeLoadResult1 = new LoadResult<>(
+                    null,
+                    place0,
+                    null);
+
+            LoadResult<Place> placeLoadResult2 = new LoadResult<>(
+                    null,
+                    null,
+                    place0);
+
             LoadResult<Event> eventLoadResult0 = new LoadResult<>(
                     null,
                     null,
                     null);
 
-            return Stream.of(
-                    arguments(speakerLoadResult0, talkLoadResult0, placeLoadResult0, eventLoadResult0),
-                    arguments(speakerLoadResult1, talkLoadResult0, placeLoadResult0, eventLoadResult0)
-            );
+            LoadResult<Event> eventLoadResult1 = new LoadResult<>(
+                    null,
+                    event0,
+                    null);
+
+            LoadResult<Event> eventLoadResult2 = new LoadResult<>(
+                    null,
+                    null,
+                    event0);
+
+            List<Arguments> argumentsList = new ArrayList<>();
+
+            for (LoadResult<Event> eventLoadResult : List.of(eventLoadResult0, eventLoadResult1, eventLoadResult2)) {
+                for (LoadResult<Place> placeLoadResult : List.of(placeLoadResult0, placeLoadResult1, placeLoadResult2)) {
+                    for (LoadResult<List<Talk>> talkLoadResult : List.of(talkLoadResult0, talkLoadResult1, talkLoadResult2, talkLoadResult3)) {
+                        for (SpeakerLoadResult speakerLoadResult : List.of(speakerLoadResult0, speakerLoadResult1, speakerLoadResult2, speakerLoadResult3, speakerLoadResult4)) {
+                            argumentsList.add(arguments(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+                        }
+                    }
+                }
+            }
+
+            return Stream.of(argumentsList.toArray(new Arguments[0]));
         }
 
         @ParameterizedTest
@@ -1307,6 +1384,59 @@ class ConferenceDataLoaderTest {
             };
 
             assertDoesNotThrow(() -> ConferenceDataLoader.saveFiles(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("saveImages method tests")
+    class SaveImagesTest {
+        private Stream<Arguments> data() {
+            UrlFilename urlFilename0 = new UrlFilename("url0", "filename0");
+            UrlFilename urlFilename1 = new UrlFilename("url1", "filename1");
+
+            SpeakerLoadResult speakerLoadResult0 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()));
+
+            SpeakerLoadResult speakerLoadResult1 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            List.of(urlFilename0),
+                            List.of(urlFilename1)));
+
+            return Stream.of(
+                    arguments(speakerLoadResult0),
+                    arguments(speakerLoadResult1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void saveImages(SpeakerLoadResult speakerLoadResult) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                void saveImages(Invocation invocation, SpeakerLoadResult speakerLoadResult) throws IOException {
+                    invocation.proceed(speakerLoadResult);
+                }
+
+                @Mock
+                void logAndCreateSpeakerImages(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveImages(speakerLoadResult));
         }
     }
 }

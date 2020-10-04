@@ -932,7 +932,7 @@ public class ConferenceDataLoader {
      * @param logMessage   log message
      * @throws IOException if file creation error occurs
      */
-    private static void logAndCreateSpeakerImages(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
+    static void logAndCreateSpeakerImages(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
         log.info(logMessage, urlFilenames.size());
         for (UrlFilename urlFilename : urlFilenames) {
             ImageUtils.create(urlFilename.getUrl(), urlFilename.getFilename());
