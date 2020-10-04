@@ -801,7 +801,7 @@ public class ConferenceDataLoader {
      * @param speakerLoadResult speaker load result
      * @throws IOException if file creation error occurs
      */
-    private static void saveImages(SpeakerLoadResult speakerLoadResult) throws IOException {
+    static void saveImages(SpeakerLoadResult speakerLoadResult) throws IOException {
         List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().getItemToAppend();
         List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().getItemToUpdate();
 
@@ -821,7 +821,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveSpeakers(SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
+    static void saveSpeakers(SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
         List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
         List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
 
@@ -842,7 +842,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveTalks(LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
+    static void saveTalks(LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
         List<Talk> talksToDelete = talkLoadResult.getItemToDelete();
         List<Talk> talksToAppend = talkLoadResult.getItemToAppend();
         List<Talk> talksToUpdate = talkLoadResult.getItemToUpdate();
@@ -869,7 +869,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void savePlaces(LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
+    static void savePlaces(LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
         Place placeToAppend = placeLoadResult.getItemToAppend();
         Place placeToUpdate = placeLoadResult.getItemToUpdate();
 
@@ -889,7 +889,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveEvents(LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+    static void saveEvents(LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
         Event eventToAppend = eventLoadResult.getItemToAppend();
         Event eventToUpdate = eventLoadResult.getItemToUpdate();
 

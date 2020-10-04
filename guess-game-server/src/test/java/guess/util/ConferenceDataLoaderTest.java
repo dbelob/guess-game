@@ -1219,4 +1219,94 @@ class ConferenceDataLoaderTest {
             assertEquals(expected, ConferenceDataLoader.getEventLoadResult(event, resourceEvent));
         }
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("saveFiles method tests")
+    class SaveFilesTest {
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            SpeakerLoadResult speakerLoadResult0 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()));
+
+            SpeakerLoadResult speakerLoadResult1 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            List.of(speaker0),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()));
+
+            LoadResult<List<Talk>> talkLoadResult0 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    Collections.emptyList());
+
+            LoadResult<Place> placeLoadResult0 = new LoadResult<>(
+                    null,
+                    null,
+                    null);
+
+            LoadResult<Event> eventLoadResult0 = new LoadResult<>(
+                    null,
+                    null,
+                    null);
+
+            return Stream.of(
+                    arguments(speakerLoadResult0, talkLoadResult0, placeLoadResult0, eventLoadResult0),
+                    arguments(speakerLoadResult1, talkLoadResult0, placeLoadResult0, eventLoadResult0)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+                       LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                void saveFiles(Invocation invocation, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+                               LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+                    invocation.proceed(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult);
+                }
+
+                @Mock
+                void saveImages(SpeakerLoadResult speakerLoadResult) throws IOException {
+                    // Nothing
+                }
+
+                @Mock
+                void saveSpeakers(SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+
+                @Mock
+                void saveTalks(LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+
+                @Mock
+                void savePlaces(LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+
+                @Mock
+                void saveEvents(LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveFiles(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+        }
+    }
 }
