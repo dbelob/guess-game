@@ -1125,4 +1125,98 @@ class ConferenceDataLoaderTest {
             assertEquals(expected, ConferenceDataLoader.needDeleteTalk(talks, resourceTalk, resourceEvents, resourceEvent));
         }
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getPlaceLoadResult method tests")
+    class GetPlaceLoadResultTest {
+        private Stream<Arguments> data() {
+            Place place0 = new Place();
+            place0.setId(0);
+
+            Place place1 = new Place();
+            place1.setId(1);
+
+            LoadResult<Place> placeLoadResult0 = new LoadResult<>(
+                    null,
+                    place0,
+                    null);
+
+            LoadResult<Place> placeLoadResult1 = new LoadResult<>(
+                    null,
+                    null,
+                    place0);
+
+            LoadResult<Place> placeLoadResult2 = new LoadResult<>(
+                    null,
+                    null,
+                    null);
+
+            return Stream.of(
+                    arguments(place0, null, new AtomicLong(-1), placeLoadResult0),
+                    arguments(place0, place0, new AtomicLong(-1), placeLoadResult1),
+                    arguments(place0, place1, new AtomicLong(-1), placeLoadResult2)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getPlaceLoadResult(Place place, Place resourcePlace, AtomicLong lastPlaceId, LoadResult<Place> expected) {
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                boolean needUpdate(Place a, Place b) {
+                    return ((a.getId() == 0) && (b.getId() == 0));
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.getPlaceLoadResult(place, resourcePlace, lastPlaceId));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getEventLoadResult method tests")
+    class GetEventLoadResultTest {
+        private Stream<Arguments> data() {
+            Event event0 = new Event();
+            event0.setId(0);
+
+            Event event1 = new Event();
+            event1.setId(1);
+
+            LoadResult<Event> eventLoadResult0 = new LoadResult<>(
+                    null,
+                    event0,
+                    null);
+
+            LoadResult<Event> eventLoadResult1 = new LoadResult<>(
+                    null,
+                    null,
+                    event0);
+
+            LoadResult<Event> eventLoadResult2 = new LoadResult<>(
+                    null,
+                    null,
+                    null);
+
+            return Stream.of(
+                    arguments(event0, null, eventLoadResult0),
+                    arguments(event0, event0, eventLoadResult1),
+                    arguments(event0, event1, eventLoadResult2)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getEventLoadResult(Event event, Event resourceEvent, LoadResult<Event> expected) {
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                boolean needUpdate(Event a, Event b) {
+                    return ((a.getId() == 0) && (b.getId() == 0));
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.getEventLoadResult(event, resourceEvent));
+        }
+    }
 }
