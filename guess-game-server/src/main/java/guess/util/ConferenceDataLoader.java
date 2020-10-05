@@ -948,7 +948,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, speakers.size());
         speakers.forEach(
                 s -> log.trace("Speaker: nameEn: '{}', name: '{}'",
@@ -969,7 +969,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, talks.size());
         talks.forEach(
                 t -> log.trace("Talk: nameEn: '{}', name: '{}'",
@@ -988,7 +988,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
+    static void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
         YamlUtils.dump(new PlaceList(Collections.singletonList(place)), filename);
     }
 
@@ -1000,7 +1000,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
+    static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
         YamlUtils.dump(new EventList(Collections.singletonList(event)), filename);
     }
 

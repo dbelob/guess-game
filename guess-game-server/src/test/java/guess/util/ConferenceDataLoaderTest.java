@@ -1439,4 +1439,187 @@ class ConferenceDataLoaderTest {
             assertDoesNotThrow(() -> ConferenceDataLoader.saveImages(speakerLoadResult));
         }
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("saveSpeakers method tests")
+    class SaveSpeakersTest {
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            Speaker speaker1 = new Speaker();
+
+            SpeakerLoadResult speakerLoadResult0 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()));
+
+            SpeakerLoadResult speakerLoadResult1 = new SpeakerLoadResult(
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            new ArrayList<>(List.of(speaker0)),
+                            new ArrayList<>(List.of(speaker1))),
+                    new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList()));
+
+            return Stream.of(
+                    arguments(speakerLoadResult0),
+                    arguments(speakerLoadResult1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void saveSpeakers(SpeakerLoadResult speakerLoadResult) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                void saveSpeakers(Invocation invocation, SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
+                    invocation.proceed(speakerLoadResult);
+                }
+
+                @Mock
+                void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveSpeakers(speakerLoadResult));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("saveTalks method tests")
+    class SaveTalksTest {
+        private Stream<Arguments> data() {
+            Talk talk0 = new Talk();
+            Talk talk1 = new Talk();
+            Talk talk2 = new Talk();
+
+            LoadResult<List<Talk>> talkLoadResult0 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    Collections.emptyList());
+
+            LoadResult<List<Talk>> talkLoadResult1 = new LoadResult<>(
+                    new ArrayList<>(List.of(talk0)),
+                    new ArrayList<>(List.of(talk1)),
+                    new ArrayList<>(List.of(talk2)));
+
+            return Stream.of(
+                    arguments(talkLoadResult0),
+                    arguments(talkLoadResult1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void saveTalks(LoadResult<List<Talk>> talkLoadResult) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                void saveTalks(Invocation invocation, LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
+                    invocation.proceed(talkLoadResult);
+                }
+
+                @Mock
+                void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveTalks(talkLoadResult));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("savePlaces method tests")
+    class SavePlacesTest {
+        private Stream<Arguments> data() {
+            Place place0 = new Place();
+            Place place1 = new Place();
+
+            LoadResult<Place> placeLoadResult0 = new LoadResult<>(
+                    null,
+                    null,
+                    null);
+
+            LoadResult<Place> placeLoadResult1 = new LoadResult<>(
+                    null,
+                    place0,
+                    place1);
+
+            return Stream.of(
+                    arguments(placeLoadResult0),
+                    arguments(placeLoadResult1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void savePlaces(LoadResult<Place> placeLoadResult) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                void savePlaces(Invocation invocation, LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
+                    invocation.proceed(placeLoadResult);
+                }
+
+                @Mock
+                void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.savePlaces(placeLoadResult));
+        }
+
+        @Nested
+        @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+        @DisplayName("saveEvents method tests")
+        class SaveEventsTest {
+            private Stream<Arguments> data() {
+                Event event0 = new Event();
+                Event event1 = new Event();
+
+                LoadResult<Event> eventLoadResult0 = new LoadResult<>(
+                        null,
+                        null,
+                        null);
+
+                LoadResult<Event> eventLoadResult1 = new LoadResult<>(
+                        null,
+                        event0,
+                        event1);
+
+                return Stream.of(
+                        arguments(eventLoadResult0),
+                        arguments(eventLoadResult1)
+                );
+            }
+
+            @ParameterizedTest
+            @MethodSource("data")
+            void saveEvents(LoadResult<Event> eventLoadResult) {
+                new MockUp<ConferenceDataLoader>() {
+                    @Mock
+                    void saveEvents(Invocation invocation, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+                        invocation.proceed(eventLoadResult);
+                    }
+
+                    @Mock
+                    void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
+                        // Nothing
+                    }
+                };
+
+                assertDoesNotThrow(() -> ConferenceDataLoader.saveEvents(eventLoadResult));
+            }
+        }
+    }
 }
