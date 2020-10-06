@@ -1120,7 +1120,7 @@ public class ConferenceDataLoader {
      * @param language          language
      * @return resource talk
      */
-    private static Talk findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language) {
+    static Talk findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language) {
         String talkName = LocalizationUtils.getString(talk.getName(), language);
         Set<Talk> resourceTalks = resourceNameTalks.get(talkName);
 
