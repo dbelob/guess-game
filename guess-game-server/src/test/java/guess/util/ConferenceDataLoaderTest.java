@@ -1652,4 +1652,97 @@ class ConferenceDataLoaderTest {
     void dumpEvent(@Mocked YamlUtils yamlUtilsMock) {
         assertDoesNotThrow(() -> ConferenceDataLoader.dumpEvent(new Event(), "filename"));
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("findResourceSpeaker method tests")
+    class FindResourceSpeakerTest {
+        private Stream<Arguments> data() {
+            final String SPEAKER_NAME0 = "Имя0";
+            final String SPEAKER_NAME1 = "Имя1";
+            final String SPEAKER_NAME2 = "Имя2";
+            final String SPEAKER_NAME3 = "Имя3";
+            final String SPEAKER_NAME4 = "Имя4";
+            final String COMPANY_NAME0 = "Компания0";
+            final String COMPANY_NAME1 = "Компания1";
+            final String COMPANY_NAME2 = "Компания2";
+            final String COMPANY_NAME3 = "Компания3";
+            final String COMPANY_NAME4 = "Компания4";
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME0)));
+            speaker0.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME0)));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME1)));
+            speaker1.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME1)));
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+            speaker2.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME2)));
+            speaker2.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME2)));
+
+            Speaker speaker3 = new Speaker();
+            speaker3.setId(3);
+            speaker3.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME3)));
+            speaker3.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME3)));
+
+            Speaker speaker4 = new Speaker();
+            speaker4.setId(4);
+            speaker4.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME4)));
+            speaker4.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME4)));
+
+            NameCompany nameCompany0 = new NameCompany(SPEAKER_NAME0, COMPANY_NAME0);
+
+            SpeakerLoadMaps speakerLoadMaps = new SpeakerLoadMaps(
+                    Map.of(nameCompany0, 0L),
+                    Map.of(0L, speaker0),
+                    Collections.emptyMap(),
+                    Collections.emptyMap(),
+                    Collections.emptyMap(),
+                    Collections.emptyMap());
+
+            return Stream.of(
+                    arguments(speaker0, speakerLoadMaps),
+                    arguments(speaker1, speakerLoadMaps),
+                    arguments(speaker2, speakerLoadMaps),
+                    arguments(speaker3, speakerLoadMaps),
+                    arguments(speaker4, speakerLoadMaps)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void findResourceSpeaker(Speaker speaker, SpeakerLoadMaps speakerLoadMaps) {
+            new MockUp<LocalizationUtils>() {
+                @Mock
+                String getString(List<LocaleItem> localeItems, Language language) {
+                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
+                }
+            };
+
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                Speaker findResourceSpeaker(Invocation invocation, Speaker speaker, SpeakerLoadMaps speakerLoadMaps) {
+                    return invocation.proceed(speaker, speakerLoadMaps);
+                }
+
+                @Mock
+                Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
+                    return (((speaker.getId() == 1) && Language.ENGLISH.equals(language)) ||
+                            ((speaker.getId() == 2) && Language.RUSSIAN.equals(language))) ? speaker : null;
+                }
+
+                @Mock
+                Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
+                    return (((speaker.getId() == 3) && Language.ENGLISH.equals(language) ||
+                            (speaker.getId() == 4) && Language.RUSSIAN.equals(language))) ? speaker : null;
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.findResourceSpeaker(speaker, speakerLoadMaps));
+        }
+    }
 }

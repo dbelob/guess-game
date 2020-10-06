@@ -1071,7 +1071,7 @@ public class ConferenceDataLoader {
      * @param language                    language
      * @return resource speaker
      */
-    private static Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
+    static Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
         return resourceNameCompanySpeakers.get(
                 new NameCompany(
                         LocalizationUtils.getString(speaker.getName(), language),
@@ -1086,7 +1086,7 @@ public class ConferenceDataLoader {
      * @param language             language
      * @return resource speaker
      */
-    private static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
+    static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
         String speakerName = LocalizationUtils.getString(speaker.getName(), language);
         Set<Speaker> resourceSpeakers = resourceNameSpeakers.get(speakerName);
 
