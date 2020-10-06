@@ -957,7 +957,6 @@ public class ConferenceDataLoader {
         );
 
         YamlUtils.dump(new SpeakerList(speakers), filename);
-
     }
 
     /**

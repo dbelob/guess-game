@@ -1622,4 +1622,34 @@ class ConferenceDataLoaderTest {
             }
         }
     }
+
+    @Test
+    void logAndDumpEventTypes(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpEventTypes(List.of(new EventType()), "{}", "filename"));
+    }
+
+    @Test
+    void logAndCreateSpeakerImages(@Mocked ImageUtils imageUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndCreateSpeakerImages(List.of(new UrlFilename("url", "filename")), "{}"));
+    }
+
+    @Test
+    void logAndDumpSpeakers(@Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpSpeakers(List.of(new Speaker()), "{}", "filename"));
+    }
+
+    @Test
+    void logAndDumpTalks(@Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpTalks(List.of(new Talk()), "{}", "filename"));
+    }
+
+    @Test
+    void dumpPlace(@Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.dumpPlace(new Place(), "filename"));
+    }
+
+    @Test
+    void dumpEvent(@Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.dumpEvent(new Event(), "filename"));
+    }
 }
