@@ -1796,4 +1796,9 @@ class ConferenceDataLoaderTest {
             assertEquals(expected, ConferenceDataLoader.findResourceTalk(talk, resourceRuNameTalks, resourceEnNameTalks));
         }
     }
+
+    @Test
+    void main() {
+        assertDoesNotThrow(() -> ConferenceDataLoader.main(new String[]{}));
+    }
 }
