@@ -1798,6 +1798,143 @@ class ConferenceDataLoaderTest {
     }
 
     @Test
+    void findResourceSpeakerByNameCompany() {
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        speaker0.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+
+        NameCompany nameCompany0 = new NameCompany("Name0", "Company0");
+
+        Map<NameCompany, Speaker> resourceNameCompanySpeakers0 = Map.of(nameCompany0, speaker0);
+
+        new MockUp<LocalizationUtils>() {
+            @Mock
+            String getString(List<LocaleItem> localeItems, Language language) {
+                return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
+            }
+        };
+
+        assertEquals(speaker0, ConferenceDataLoader.findResourceSpeakerByNameCompany(speaker0, resourceNameCompanySpeakers0, Language.ENGLISH));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("findResourceSpeakerByName method tests")
+    class FindResourceSpeakerByNameTest {
+        private Stream<Arguments> data() {
+            final String SPEAKER_NAME0 = "Name0";
+            final String SPEAKER_NAME1 = "Name1";
+            final String SPEAKER_NAME2 = "Name2";
+            final String SPEAKER_NAME3 = "Name3";
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME0)));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME1)));
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+            speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME2)));
+
+            Speaker speaker3 = new Speaker();
+            speaker3.setId(3);
+            speaker3.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME3)));
+
+            Map<String, Set<Speaker>> resourceNameSpeakers0 = new HashMap<>();
+            resourceNameSpeakers0.put(SPEAKER_NAME0, Set.of(speaker0));
+            resourceNameSpeakers0.put(SPEAKER_NAME2, Collections.emptySet());
+            resourceNameSpeakers0.put(SPEAKER_NAME3, Set.of(speaker0, speaker3));
+
+            return Stream.of(
+                    arguments(speaker1, resourceNameSpeakers0, Language.ENGLISH, null, null),
+                    arguments(speaker2, resourceNameSpeakers0, Language.ENGLISH, null, IllegalStateException.class),
+                    arguments(speaker3, resourceNameSpeakers0, Language.ENGLISH, null, null),
+                    arguments(speaker0, resourceNameSpeakers0, Language.ENGLISH, speaker0, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language,
+                                       Speaker expected, Class<? extends Throwable> expectedException) {
+            new MockUp<LocalizationUtils>() {
+                @Mock
+                String getString(List<LocaleItem> localeItems, Language language) {
+                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
+                }
+            };
+
+            if (expectedException == null) {
+                assertEquals(expected, ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers, language));
+            } else {
+                assertThrows(expectedException, () -> ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers, language));
+            }
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("findResourceTalkByName method tests")
+    class FindResourceTalkByNameTest {
+        final String TALK_NAME0 = "Name0";
+        final String TALK_NAME1 = "Name1";
+        final String TALK_NAME2 = "Name2";
+        final String TALK_NAME3 = "Name3";
+
+        private Stream<Arguments> data() {
+            Talk talk0 = new Talk();
+            talk0.setId(0);
+            talk0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), TALK_NAME0)));
+
+            Talk talk1 = new Talk();
+            talk1.setId(1);
+            talk1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), TALK_NAME1)));
+
+            Talk talk2 = new Talk();
+            talk2.setId(2);
+            talk2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), TALK_NAME2)));
+
+            Talk talk3 = new Talk();
+            talk3.setId(3);
+            talk3.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), TALK_NAME3)));
+
+            Map<String, Set<Talk>> resourceNameTalks0 = new HashMap<>();
+            resourceNameTalks0.put(TALK_NAME0, Set.of(talk0));
+            resourceNameTalks0.put(TALK_NAME2, Collections.emptySet());
+            resourceNameTalks0.put(TALK_NAME3, Set.of(talk0, talk3));
+
+            return Stream.of(
+                    arguments(talk1, resourceNameTalks0, Language.ENGLISH, null, null),
+                    arguments(talk2, resourceNameTalks0, Language.ENGLISH, null, IllegalStateException.class),
+                    arguments(talk3, resourceNameTalks0, Language.ENGLISH, null, null),
+                    arguments(talk0, resourceNameTalks0, Language.ENGLISH, talk0, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language,
+                                    Talk expected, Class<? extends Throwable> expectedException) {
+            new MockUp<LocalizationUtils>() {
+                @Mock
+                String getString(List<LocaleItem> localeItems, Language language) {
+                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
+                }
+            };
+
+            if (expectedException == null) {
+                assertEquals(expected, ConferenceDataLoader.findResourceTalkByName(talk, resourceNameTalks, language));
+            } else {
+                assertThrows(expectedException, () -> ConferenceDataLoader.findResourceTalkByName(talk, resourceNameTalks, language));
+            }
+        }
+    }
+
+    @Test
     void main() {
         assertDoesNotThrow(() -> ConferenceDataLoader.main(new String[]{}));
     }
