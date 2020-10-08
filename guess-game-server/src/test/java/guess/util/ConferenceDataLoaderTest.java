@@ -2086,4 +2086,9 @@ class ConferenceDataLoaderTest {
     void main() {
         assertDoesNotThrow(() -> ConferenceDataLoader.main(new String[]{}));
     }
+
+    @Test
+    void classDeclaration() {
+        assertDoesNotThrow(ConferenceDataLoader::new);
+    }
 }
