@@ -1147,9 +1147,9 @@ public class ConferenceDataLoader {
      * @param language                       language
      * @return resource place
      */
-    private static Place findResourcePlaceByCityVenueAddress(Place place,
-                                                             Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces,
-                                                             Language language) {
+    static Place findResourcePlaceByCityVenueAddress(Place place,
+                                                     Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces,
+                                                     Language language) {
         return resourceCityVenueAddressPlaces.get(
                 new CityVenueAddress(
                         LocalizationUtils.getString(place.getCity(), language),
@@ -1232,7 +1232,7 @@ public class ConferenceDataLoader {
      * @param fixingVenueAddresses fixing venue addresses
      * @return resulting venue address
      */
-    private static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
+    static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
         for (FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
             if (fixingVenueAddress.getCity().equals(city) &&
                     fixingVenueAddress.getInvalidVenueAddress().equals(venueAddress)) {

@@ -1934,6 +1934,116 @@ class ConferenceDataLoaderTest {
         }
     }
 
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("findResourcePlaceByCityVenueAddress method tests")
+    class FindResourcePlaceByCityVenueAddressTest {
+        final String CITY0 = "City0";
+        final String CITY1 = "City1";
+        final String VENUE_ADDRESS0 = "Venue Address0";
+        final String VENUE_ADDRESS1 = "Venue Address1";
+
+        private Stream<Arguments> data() {
+            Place place0 = new Place();
+            place0.setId(0);
+            place0.setCity(List.of(new LocaleItem(Language.ENGLISH.getCode(), CITY0)));
+            place0.setVenueAddress(List.of(new LocaleItem(Language.ENGLISH.getCode(), VENUE_ADDRESS0)));
+
+            Place place1 = new Place();
+            place1.setId(1);
+            place1.setCity(List.of(new LocaleItem(Language.ENGLISH.getCode(), CITY1)));
+            place1.setVenueAddress(List.of(new LocaleItem(Language.ENGLISH.getCode(), VENUE_ADDRESS1)));
+
+            Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces0 = Map.of(
+                    new CityVenueAddress(CITY0, VENUE_ADDRESS0), place0);
+
+            return Stream.of(
+                    arguments(place0, resourceCityVenueAddressPlaces0, Language.ENGLISH, place0),
+                    arguments(place1, resourceCityVenueAddressPlaces0, Language.ENGLISH, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void findResourcePlaceByCityVenueAddress(Place place, Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces,
+                                                 Language language, Place expected) {
+            new MockUp<LocalizationUtils>() {
+                @Mock
+                String getString(List<LocaleItem> localeItems, Language language) {
+                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.findResourcePlaceByCityVenueAddress(place, resourceCityVenueAddressPlaces, language));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("findResourcePlace method tests")
+    class FindResourcePlaceTest {
+        private final Place place0;
+        private final Place place1;
+
+        public FindResourcePlaceTest() {
+            place0 = new Place();
+            place0.setId(0);
+
+            place1 = new Place();
+            place1.setId(1);
+        }
+
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(place0, Collections.emptyMap(), Collections.emptyMap(), place0),
+                    arguments(place1, Collections.emptyMap(), Collections.emptyMap(), null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void findResourcePlace(Place place, Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
+                               Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces, Place expected) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                Place findResourcePlace(Invocation invocation, Place place,
+                                        Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
+                                        Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
+                    return invocation.proceed(place, resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces);
+                }
+
+                @Mock
+                Place findResourcePlaceByCityVenueAddress(Place place, Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces,
+                                                          Language language) {
+                    if (place != null) {
+                        return (place.getId() == 0) ? place : null;
+                    } else {
+                        return null;
+                    }
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.findResourcePlace(place, resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces));
+        }
+    }
+
+    @Test
+    void fixVenueAddress() {
+        new MockUp<ConferenceDataLoader>() {
+            @Mock
+            List<LocaleItem> fixVenueAddress(Invocation invocation, Place place) {
+                return invocation.proceed(place);
+            }
+
+            @Mock
+            String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
+                return "";
+            }
+        };
+
+        assertDoesNotThrow(() -> ConferenceDataLoader.fixVenueAddress(new Place()));
+    }
+
     @Test
     void main() {
         assertDoesNotThrow(() -> ConferenceDataLoader.main(new String[]{}));
