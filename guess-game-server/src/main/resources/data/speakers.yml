@@ -7196,11 +7196,14 @@ speakers:
       - language: en
         text: "Dmitry is a technology evangelist of Microsoft company, promotes modern software development technologies among\
             \ beginner developers: pupils, students, startups. Specializes in the Internet of things, Windows universal applications\
-            \ development, functional programming, and platform .NET (F#, Roslyn).\r\nHas personally done dozens of hackathons\
+            \ development, functional programming, and platform .NET (F#, Roslyn).\nHas personally done dozens of hackathons\
             \ all around Russia, helped many students' startups to start their projects in various fields. Associate Professor,\
-            \ Candidate of Physical and Mathematical Sciences, teaches at MIPT and MAI, member of Russian Association for\
-            \ Artificial Intelligence, during summer time — lead of the department of computer technologies of the children\
-            \ camp JUNIO-R. In his spare time is into technological magic, does Chinese tea ceremony, Gong Fu Cha."
+            \ Candidate of Physical and Mathematical Sciences, teaches at MIPT and MAI, a member of the Russian Association\
+            \ for Artificial Intelligence, during summertime — a lead of the department of computer technologies of the children\
+            \ camp JUNIO-R. In his spare time is into technological magic, does Chinese tea ceremony, Gong Fu Cha\n\nYou will\
+            \ leave this talk with enough knowledge to use TCP/IP sockets to communicate with any custom device in a fully\
+            \ reliable manner. You will also be empowered to evaluate custom protocols used by devices, identify their defects,\
+            \ and provide workarounds if necessary."
       - language: ru
         text: "Дмитрий Сошников — технологический евангелист компании Майкрософт, занимается популяризацией современных те\
             хнологий разработки программного обеспечения среди начинающих разработчиков: школьников, студентов, начинающих\
@@ -7852,8 +7855,7 @@ speakers:
       - {language: en, text: "Stanislav Sidristy"}
       - {language: ru, text: "Станислав Сидристый"}
     company:
-      - {language: en, text: STC}
-      - {language: ru, text: ЦРТ}
+      - {language: en, text: "Speech Technology Center"}
     bio:
       - language: en
         text: "Stanislav worked in many large companies, gaining development experience on the .NET platform. The speaker\
