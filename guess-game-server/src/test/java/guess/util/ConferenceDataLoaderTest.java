@@ -2044,6 +2044,44 @@ class ConferenceDataLoaderTest {
         assertDoesNotThrow(() -> ConferenceDataLoader.fixVenueAddress(new Place()));
     }
 
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getFixedVenueAddress method tests")
+    class GetFixedVenueAddressTest {
+        private Stream<Arguments> data() {
+            final String CITY = "City";
+            final String VENUE_ADDRESS = "Venue Address";
+            final String VALID_VENUE_ADDRESS = "Valid Venue Address";
+
+            List<FixingVenueAddress> fixingVenueAddresses0 = List.of(
+                    new FixingVenueAddress("", "", VALID_VENUE_ADDRESS));
+
+            List<FixingVenueAddress> fixingVenueAddresses1 = List.of(
+                    new FixingVenueAddress(CITY, "", VALID_VENUE_ADDRESS));
+
+            List<FixingVenueAddress> fixingVenueAddresses2 = List.of(
+                    new FixingVenueAddress("", VENUE_ADDRESS, VALID_VENUE_ADDRESS));
+
+            List<FixingVenueAddress> fixingVenueAddresses3 = List.of(
+                    new FixingVenueAddress(CITY, VENUE_ADDRESS, VALID_VENUE_ADDRESS));
+
+            return Stream.of(
+                    arguments(CITY, VENUE_ADDRESS, Collections.emptyList(), VENUE_ADDRESS),
+                    arguments(CITY, VENUE_ADDRESS, fixingVenueAddresses0, VENUE_ADDRESS),
+                    arguments(CITY, VENUE_ADDRESS, fixingVenueAddresses1, VENUE_ADDRESS),
+                    arguments(CITY, VENUE_ADDRESS, fixingVenueAddresses2, VENUE_ADDRESS),
+                    arguments(CITY, VENUE_ADDRESS, fixingVenueAddresses3, VALID_VENUE_ADDRESS)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses,
+                                  String expected) {
+            assertEquals(expected, ConferenceDataLoader.getFixedVenueAddress(city, venueAddress, fixingVenueAddresses));
+        }
+    }
+
     @Test
     void main() {
         assertDoesNotThrow(() -> ConferenceDataLoader.main(new String[]{}));
