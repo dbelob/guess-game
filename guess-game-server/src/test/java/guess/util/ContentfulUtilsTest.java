@@ -1838,16 +1838,19 @@ class ContentfulUtilsTest {
                             Stream.concat(
                                     Stream.concat(
                                             Stream.concat(
-                                                    createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "6yIC7EpG1EhejCEJDEsuqA"),
-                                                    createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "2i2OfmHelyMCiK2sCUoGsS")
+                                                    Stream.concat(
+                                                            createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "6yIC7EpG1EhejCEJDEsuqA"),
+                                                            createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "2i2OfmHelyMCiK2sCUoGsS")
+                                                    ),
+                                                    createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "1FDbCMYfsEkiQG6s8CWQwS")
                                             ),
-                                            createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "1FDbCMYfsEkiQG6s8CWQwS")
+                                            createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "MPZSTxFNbbjBdf5M5uoOZ")
                                     ),
-                                    createStream(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "MPZSTxFNbbjBdf5M5uoOZ")
+                                    createStream(ContentfulUtils.ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "3YSoYRePW0OIeaAAkaweE6")
                             ),
-                            createStream(ContentfulUtils.ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "3YSoYRePW0OIeaAAkaweE6")
+                            createStream(ContentfulUtils.ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "2UddvLNyXmy4YaukAuE4Ao")
                     ),
-                    createStream(ContentfulUtils.ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, "2UddvLNyXmy4YaukAuE4Ao")
+                    createStream(ContentfulUtils.ConferenceSpaceInfo.MOBIUS_SPACE_INFO, "33qzWXnXYsgyCsSiwK0EOy")
             );
         }
 
