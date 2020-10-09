@@ -1343,7 +1343,13 @@ public class ConferenceDataLoader {
 //                        "A standard audio API for C++",
 //                        "Coroutine X-rays and other magical superpowers",
 //                        "Компьютерные игры: Как загрузить все ядра CPU"));
-//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 7, 6), "2020-msk-devoops");
+//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 7, 6), "2020-msk-devoops",
+//                Collections.emptyMap(),
+//                Set.of("Title will be announced soon", "Context based access with Google’s BeyondCorp",
+//                        "Применяем dogfooding: От Ops к Dev в Яндекс.Облако", "Kubernetes service discovery",
+//                        "Event Gateways: Что? Зачем? Как?", "Continuously delivering infrastructure",
+//                        "The lifecycle of a service", "Безопасность и Kubernetes",
+//                        "Edge Computing: А trojan horse of DevOps tribe infiltrating the IoT industry"));
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
 //                Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L));
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc");
