@@ -11631,7 +11631,7 @@ speakers:
       - {language: en, text: "Stepan Goncharov"}
       - {language: ru, text: "Степан Гончаров"}
     company:
-      - {language: en, text: "Level 5"}
+      - {language: en, text: Lyft}
     bio:
       - {language: en, text: "Engineering apps and games for Android since 2008. Has experience as QA, product manager, marketer,\
             \ blogger, consultant and much more. He was involved in development of apps that nobody uses and apps with millions\
@@ -11817,6 +11817,7 @@ speakers:
       - {language: ru, text: "Разрабатывает под Android с 2015 года. В hh.ru занимается поддержкой основных приложений, а\
             \ также разработкой внутренних инструментов. Интересуется разработкой плагинов под Android Studio, вопросами а\
             рхитектуры приложений, нейронными сетями. Участвовал в Android Academy MSK в качестве ментора и лектора."}
+    twitter: StrelZtrel
   - id: 794
     photoFileName: 0794.jpg
     name:
@@ -17003,7 +17004,7 @@ speakers:
     bio:
       - {language: en, text: "Makes researches in development, security, and life. Leads the @paradiSEcurity channel in Telegram."}
       - {language: ru, text: "Делает исследования в сфере разработки, безопасности и жизни. Ведет канал @paradiSEcurity в\
-            \ телеграм."}
+            \ Телеграме."}
     twitter: OlgaShkryaba
   - id: 1171
     photoFileName: 1171.jpg
@@ -18614,8 +18615,10 @@ speakers:
       - {language: en, text: Sberbank}
       - {language: ru, text: Сбербанк}
     bio:
-      - {language: en, text: "Леванов Алексей — TeamLead и PO платформенной iOS-команды Сбербанк Инвестор, лидер Школ Разр\
-            аботки Сбербанка. Работает в Сбербанке с 2014 года."}
+      - {language: en, text: "Alexey is a team lead and project owner of the Sberbank Investor iOS platform team, leader of\
+            \ Sberbank Development School. He has been working in Sberbank since 2014."}
+      - {language: ru, text: "Леванов Алексей — team lead и PO платформенной iOS-команды Сбербанк Инвестор, лидер Школ Раз\
+            работки Сбербанка. Работает в Сбербанке с 2014 года."}
   - id: 1296
     photoFileName: 1296.jpg
     name:
