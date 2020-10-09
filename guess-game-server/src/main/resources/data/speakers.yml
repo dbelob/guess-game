@@ -93,23 +93,20 @@ speakers:
       - {language: en, text: BellSoft}
     bio:
       - language: en
-        text: "Dmitry Chuyko is a performance engineer at BellSoft, which is among the top 5 contributors to OpenJDK. Before\
-            \ joining BellSoft, Dmitry programmed in Java, and then worked on Hotspot JVM in Oracle. After all, previous experience\
-            \ with Java has shown that the most interesting problems in applications get their solutions in the base platform.\
-            \ Currently Dmitry mostly optimizes OpenJDK for ARM64, the company even implemented its own JEP 315 on Java 11\
-            \ on this topic.\n\nBellSoft releases and supports Liberica JDK — a verified distribution of OpenJDK. Liberica\
-            \ is available in the form of binary assemblies, installers and container images for different operating systems\
-            \ and processors. Therefore, now the focus of attention is the work of various versions of Java in containers\
-            \ on ARM and x86."
+        text: "Dmitry Chuyko is a performance engineer at BellSoft, one of the most active corporate OpenJDK developers. Before\
+            \ joining BellSoft, Dmitry worked on Hotspot JVM in Oracle. His previous experience with Java showed that the\
+            \ most interesting problems in applications find their solutions in the underlying platform. Dmitry is currently\
+            \ mainly optimizing OpenJDK for x86 and ARM, and also contributing to the development of JEP 386 to make the smallest\
+            \ Java containers even better.\nDmitry speaks at large conferences such as Joker, JPoint, Oracle Code One, Devoxx,\
+            \ or GeeCON, as well as at JUG meetups in different countries."
       - language: ru
-        text: "Дмитрий Чуйко — инженер по производительности в компании BellSoft, которая входит в топ-5 контрибьютеров OpenJDK.\
-            \ До того как присоединиться к BellSoft, Дмитрий программировал на Java, а затем работал над Hotspot JVM в Oracle.\
-            \ Ведь предыдущий опыт работы с Java показал, что наиболее интересные проблемы в приложениях получают свои реш\
-            ения в базовой платформе. В настоящее время Дмитрий в основном оптимизирует OpenJDK для ARM64, компания даже р\
-            еализовала на эту тему собственный JEP 315 в Java 11.\n\nBellSoft выпускает и поддерживает Liberica JDK — вери\
-            фицированный дистрибутив OpenJDK. Liberica выпускается в виде бинарных сборок, инсталляторов и контейнерных об\
-            разов для разных ОС и процессоров. Поэтому сейчас в фокусе внимания работа различных версий Java в контейнерах\
-            \ на ARM и x86."
+        text: "Дмитрий Чуйко работает инженером по производительности в российской компании BellSoft, одном из ведущих уча\
+            стников сообщества OpenJDK. До того, как присоединиться к BellSoft, Дмитрий уже работал над Hotspot JVM в комп\
+            ании Oracle. Его предыдущий опыт разработки на Java показал, что наиболее интересные проблемы приложений решаю\
+            тся на уровне базовой платформы. В настоящее время Дмитрий занимается оптимизациями OpenJDK для архитектур x86\
+            \ и ARM, а также участвует в разработке JEP 386, чтобы самые маленькие Java-контейнеры были ещё лучше.\nДмитри\
+            й регулярно выступает как на крупных конференциях, таких как Joker, JPoint, Oracle Code One, Devoxx, и GeeCON,\
+            \ так и на встречах разработчиков в разных странах."
     twitter: dchuyko
     gitHub: dchuyko
   - id: 6
@@ -13961,13 +13958,13 @@ speakers:
     name:
       - {language: en, text: "Mark Heckler"}
     company:
-      - {language: en, text: Pivotal/VMware}
+      - {language: en, text: VMware}
     bio:
-      - {language: en, text: "Mark Heckler is a Professional Problem Solver and Spring Developer & Advocate at Pivotal, conference\
-            \ speaker, published author, & Java Champion focusing upon developing innovative production-ready software at\
-            \ velocity for the Cloud. He has worked with key players in the manufacturing, retail, medical, scientific, telecom,\
-            \ and financial industries and various public sector organizations to develop and deliver critical capabilities\
-            \ on time and on budget. Mark is an open source contributor and author/curator of a <a href=\"https://thehecklers.com\"\
+      - {language: en, text: "Mark Heckler is a Spring Developer Advocate and a Software Developer at VMware, conference speaker,\
+            \ published author, & Java Champion focusing upon developing innovative production-ready software at velocity\
+            \ for the Cloud. He has worked with key players in the manufacturing, retail, medical, scientific, telecom, and\
+            \ financial industries and various public sector organizations to develop and deliver critical capabilities on\
+            \ time and on budget. Mark is an open source contributor and author/curator of a <a href=\"https://thehecklers.com\"\
             \ target=\"_blank\">developer-focused blog</a> and an occasionally interesting Twitter account (@mkheck)."}
     twitter: MkHeck
     javaChampion: true
