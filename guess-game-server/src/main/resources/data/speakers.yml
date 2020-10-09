@@ -3984,7 +3984,7 @@ speakers:
       - {language: en, text: "Ivan Yamshchikov"}
       - {language: ru, text: "Иван Ямщиков"}
     company:
-      - {language: en, text: "ABBYY, Max Planck Institute for Mathematics in the Sciences"}
+      - {language: en, text: ABBYY}
     bio:
       - {language: en, text: "Got PhD in applied mathematics at Brandenburg University of Technology (Cottbus, Germany). Is\
             \ currently a research associate at Max Planck Institute (Leipzig, Germany) and an AI-evangelist at ABBYY. Ivan\
@@ -19300,3 +19300,49 @@ speakers:
             \ a creative and passionate leader and sought after speaker and author. Of his five books, two have been Jolt\
             \ Award finalists."
     twitter: docjamesw
+  - id: 1350
+    photoFileName: 1350.jpg
+    name:
+      - {language: en, text: "Sergey Chepkasov"}
+      - {language: ru, text: "Сергей Чепкасов"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Performance Engineer at Tinkoff with over 2 years of experience in performance testing. As part\
+            \ of the team, Sergey is engaged in Tinkoff Business projects and internal development projects. Participates\
+            \ in the development of the testing service, helps product teams learn how to conduct testing on projects, trains\
+            \ specialists in the preparation of testing tools, develops general tools/templates that reduce the threshold\
+            \ for new specialists to enter the load."}
+      - language: ru
+        text: "Инженер по производительности в Тинькофф, опыт в тестировании производительности более 2 лет.\nВ составе ко\
+            манды занимается проектами Тинькофф Бизнес и проектами внутренней разработки.\nУчаствует в развитии сервиса те\
+            стирования, помогает продуктовым командам самостоятельно научиться проводить тестирование на проектах, обучает\
+            \ специалистов подготовке средств тестирования, разрабатывает общие инструменты/шаблоны снижающие порог входа\
+            \ новых специалистов в нагрузку."
+  - id: 1351
+    photoFileName: 1351.jpg
+    name:
+      - {language: en, text: "Daria Manuhina"}
+      - {language: ru, text: "Дарья Манухина"}
+    company:
+      - {language: en, text: "Kaluga Astral"}
+      - {language: ru, text: "Калуга Астрал"}
+    bio:
+      - {language: en, text: "The first time Daria faced software testing was during her research. In 2010 she became Ph.D.\
+            \ Her research allows for improving tester’s skills every day. After that, she started a career as Sharepoint\
+            \ specialist but continued research at Moscow Bauman State Technical University. One time she decided to change\
+            \ her life, to change mindset and she found out the amazing world of software testing. Here she faced a lot of\
+            \ problems. Daria started the way from an understanding of the objectives, structure, approaches of testing, based\
+            \ on the structural and risk-oriented approach. She's passionate about testing, investigation of new approaches.\
+            \ She tries through continuous improvement of the testing process improve not only the products but also the process\
+            \ of its development. Now she's Product Owner, so testing as early as possible: she's testing ideas!"}
+      - {language: ru, text: "Впервые столкнулась с тестированием в аспирантуре, когда занималась мат. моделированием физи\
+            ческих процессов. Защитив кандидатскую, продолжила исследовательскую работу в МГТУ им. Баумана, а также начала\
+            \ более плотно работать в IТ сфере как Sharepoint-специалист. Позже открыла для себя удивительный мир тестиров\
+            ания. Придя в эту отрасль, столкнулась со множеством проблем. Свой путь Дарья начала с понимания целей, структ\
+            уры, подходов к тестированию, основываясь на структурном и рискоориентированном подходах. Пройдя путь от рядов\
+            ого тестировщика до QA Lead, старается через непрерывное улучшение процесса тестирования улучшать не только ра\
+            зрабатываемый продукт, но и сам процесс его создания. Сейчас работает PO и теперь тестирует как можно раньше:\
+            \ тестирует идеи."}
+    twitter: ManukhinaDarya
