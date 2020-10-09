@@ -9,8 +9,8 @@ public abstract class EntitySpeakersDto extends QuestionAnswersDto {
     private final Quadruple<String> speakerPhotoFileNames;
     private final Quadruple<String> speakerNames;
 
-    public EntitySpeakersDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids, Quadruple<String> speakerPhotoFileNames,
-                             Quadruple<String> speakerNames) {
+    protected EntitySpeakersDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids, Quadruple<String> speakerPhotoFileNames,
+                                Quadruple<String> speakerNames) {
         super(sourceDto, ids);
 
         this.speakerPhotoFileNames = speakerPhotoFileNames;

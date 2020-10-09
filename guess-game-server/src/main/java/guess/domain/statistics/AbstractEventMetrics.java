@@ -10,8 +10,8 @@ public abstract class AbstractEventMetrics extends Metrics {
     private final long duration;
     private final long speakersQuantity;
 
-    public AbstractEventMetrics(LocalDate startDate, long duration, long talksQuantity, long speakersQuantity,
-                                long javaChampionsQuantity, long mvpsQuantity) {
+    protected AbstractEventMetrics(LocalDate startDate, long duration, long talksQuantity, long speakersQuantity,
+                                   long javaChampionsQuantity, long mvpsQuantity) {
         super(talksQuantity, javaChampionsQuantity, mvpsQuantity);
 
         this.startDate = startDate;

@@ -17,7 +17,7 @@ public abstract class QuestionAnswersDto {
     private final Quadruple<Boolean> invalid;
     private final Quadruple<Boolean> valid;
 
-    public QuestionAnswersDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids) {
+    protected QuestionAnswersDto(QuestionAnswersSourceDto sourceDto, Quadruple<Long> ids) {
         this.questionSetName = sourceDto.getQuestionSetName();
         this.currentIndex = sourceDto.getCurrentIndex();
         this.totalNumber = sourceDto.getTotalNumber();

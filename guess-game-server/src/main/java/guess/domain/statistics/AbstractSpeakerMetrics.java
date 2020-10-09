@@ -7,8 +7,8 @@ public abstract class AbstractSpeakerMetrics extends Metrics {
     private final long eventsQuantity;
     private final long eventTypesQuantity;
 
-    public AbstractSpeakerMetrics(long talksQuantity, long eventsQuantity, long eventTypesQuantity, long javaChampionsQuantity,
-                                  long mvpsQuantity) {
+    protected AbstractSpeakerMetrics(long talksQuantity, long eventsQuantity, long eventTypesQuantity, long javaChampionsQuantity,
+                                     long mvpsQuantity) {
         super(talksQuantity, javaChampionsQuantity, mvpsQuantity);
 
         this.eventsQuantity = eventsQuantity;
