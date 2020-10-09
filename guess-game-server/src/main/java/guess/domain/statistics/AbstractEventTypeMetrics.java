@@ -12,8 +12,8 @@ public abstract class AbstractEventTypeMetrics extends Metrics {
     private final long eventsQuantity;
     private final long speakersQuantity;
 
-    public AbstractEventTypeMetrics(LocalDate startDate, long age, long duration, long eventsQuantity,
-                                    long speakersQuantity, Metrics metrics) {
+    protected AbstractEventTypeMetrics(LocalDate startDate, long age, long duration, long eventsQuantity,
+                                       long speakersQuantity, Metrics metrics) {
         super(metrics.getTalksQuantity(), metrics.getJavaChampionsQuantity(), metrics.getMvpsQuantity());
 
         this.startDate = startDate;

@@ -7,7 +7,7 @@ public abstract class NotResolvableSpeaker {
     private final ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo;
     private final String entryId;
 
-    public NotResolvableSpeaker(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String entryId) {
+    protected NotResolvableSpeaker(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String entryId) {
         this.conferenceSpaceInfo = conferenceSpaceInfo;
         this.entryId = entryId;
     }

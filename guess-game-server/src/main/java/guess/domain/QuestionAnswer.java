@@ -3,7 +3,7 @@ package guess.domain;
 public abstract class QuestionAnswer<T extends Identifiable> extends Identifier {
     private final T entity;
 
-    public QuestionAnswer(T entity) {
+    protected QuestionAnswer(T entity) {
         super(entity.getId());
 
         this.entity = entity;

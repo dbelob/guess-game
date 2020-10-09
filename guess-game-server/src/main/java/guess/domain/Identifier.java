@@ -8,10 +8,10 @@ import java.util.Objects;
 public abstract class Identifier implements Identifiable {
     private long id;
 
-    public Identifier() {
+    protected Identifier() {
     }
 
-    public Identifier(long id) {
+    protected Identifier(long id) {
         this.id = id;
     }
 
