@@ -1336,7 +1336,13 @@ public class ConferenceDataLoader {
 //                Collections.emptyMap(),
 //                Set.of("Monorepo. Стоит ли игра свеч?", "ТестирUI правильно"));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2020, 6, 29), "2020-jpoint");
-//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 6, 29), "2020-msk-cpp");
+//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 6, 29), "2020-msk-cpp",
+//                Collections.emptyMap(),
+//                Set.of("Сопрограммы в С++20. Прошлое, настоящее и будущее",
+//                        "Use-After-Free Busters: C++ Garbage Collector in Chrome",
+//                        "A standard audio API for C++",
+//                        "Coroutine X-rays and other magical superpowers",
+//                        "Компьютерные игры: Как загрузить все ядра CPU"));
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 7, 6), "2020-msk-devoops");
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
 //                Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L));
