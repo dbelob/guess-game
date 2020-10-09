@@ -1282,9 +1282,9 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2017, 12, 10), "2017msk");
 
         // 2018
-//        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2018, 3, 4), "2018JBreak",
-//                Collections.emptyMap(),
-//                Set.of("Верхом на реактивных стримах"));
+        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2018, 3, 4), "2018JBreak",
+                Collections.emptyMap(),
+                Set.of("Верхом на реактивных стримах"));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2018, 4, 6), "2018JPoint");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2018, 4, 20), "2018spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 4, 22), "2018spb",
@@ -1326,7 +1326,11 @@ public class ConferenceDataLoader {
         // 2020
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 6, 6), "2020-spb-tt");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 6, 15), "2020-spb");
-//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 15), "2020-spb");
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 15), "2020-spb",
+//                Collections.emptyMap(),
+//                Set.of("Комбинаторный подход к тестированию распределенной системы", "Автотесты на страже качества IDE",
+//                        "Тестирование безопасности для SQA", "Процесс тестирования производительности в геймдеве",
+//                        "Производительность iOS-приложений и техники ее тестирования"));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 6, 22), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 6, 22), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2020, 6, 29), "2020-jpoint");

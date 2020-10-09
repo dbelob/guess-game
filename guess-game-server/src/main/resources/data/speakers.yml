@@ -15405,10 +15405,10 @@ speakers:
             \ are highly performanced, fault tolerant integration buses, based on various message brokers and information\
             \ storage systems, as well as on NoSQL databases. Main stack — Linux/JVM, favorite language — Scala, tools — Jmeter/Gatling."}
       - {language: ru, text: "Ведущий тестировщик в компании Контур. В сфере разработки ПО более 10 лет, в тестировании бо\
-            лее 5. Основное направление — тестирование и эксплуатация инфраструктурных решений. Как правило это высоконагр\
-            уженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения информ\
-            ации, основанные как на реляционных, так и на NoSQL базах данных. Основной стек - Linux/JVM, предпочитаемый яз\
-            ык — Scala, инструменты Jmeter/Gatling."}
+            лее 5. Основное направление — тестирование и эксплуатация инфраструктурных решений. Как правило, это высоконаг\
+            руженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения инфор\
+            мации, основанные как на реляционных, так и на NoSQL базах данных. Основной стек — Linux/JVM, предпочитаемый я\
+            зык — Scala, инструменты Jmeter/Gatling."}
   - id: 1054
     photoFileName: 1054.jpg
     name:
@@ -16002,7 +16002,7 @@ speakers:
       - {language: en, text: "Has been testing mobile applications for more than 5 years. For the last 2,5 years, Dmitry has\
             \ been working as Android QA in Badoo, where he does both manual testing and test automation for Android applications."}
       - {language: ru, text: "Тестирует мобильные приложения более 5 лет. Последние 2,5 года работает Android QA в Badoo,\
-            \ где занимается как ручным тестированием, так и автоматизацией тестов для Андроид-приложения"}
+            \ где занимается как ручным тестированием, так и автоматизацией тестов для Андроид-приложения."}
   - id: 1098
     photoFileName: 1098.jpg
     name:
@@ -18188,8 +18188,11 @@ speakers:
     company:
       - {language: en, text: Wargaming}
     bio:
-      - {language: en, text: "QA Automation Tech lead. Роман в тестировании уже 10 лет. В автоматизации — 8. На третьем ку\
-            рсе универа, решил попробовать себя в роли тестировщика — зашло. Уже 5 лет в Wargaming."}
+      - {language: en, text: "QA Automation Tech lead. Roman has been in testing for 10 years. In automation — 8 years. In\
+            \ his third year of university, he decided to try himself in the role of a tester. He has been at Wargaming for\
+            \ 5 years."}
+      - {language: ru, text: "QA Automation Tech lead. Роман в тестировании уже 10 лет. В автоматизации — 8. На третьем ку\
+            рсе универа решил попробовать себя в роли тестировщика — зашло. Уже 5 лет в Wargaming."}
   - id: 1261
     photoFileName: 1261.jpg
     name:
