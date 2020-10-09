@@ -369,7 +369,6 @@ eventTypes:
     facebookLink: https://www.facebook.com/smartdataconf
     youtubeLink: https://www.youtube.com/channel/UCfCOJWNC_ipu34-LVvPUeCg
     telegramLink: https://t.me/smartdataconf
-    inactive: true
   - id: 10
     conference: SPTDC
     logoFileName: sptdc.jpg

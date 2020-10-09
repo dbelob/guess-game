@@ -1219,6 +1219,27 @@ public class ContentfulUtils {
                                 )
                         );
                     }
+                },
+                new NotResolvableSpeaker(ConferenceSpaceInfo.MOBIUS_SPACE_INFO, "33qzWXnXYsgyCsSiwK0EOy") {
+                    @Override
+                    public Speaker createSpeaker(long id) {
+                        return new Speaker(
+                                id,
+                                "",
+                                Collections.emptyList(),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
+                                new Speaker.SpeakerSocials(
+                                        null,
+                                        null
+                                ),
+                                new Speaker.SpeakerDegrees(
+                                        false,
+                                        false,
+                                        false
+                                )
+                        );
+                    }
                 }
         );
 

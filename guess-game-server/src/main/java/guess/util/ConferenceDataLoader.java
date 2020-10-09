@@ -35,7 +35,7 @@ public class ConferenceDataLoader {
      * @throws SpeakerDuplicatedException if speaker duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
-    private static void loadEventTypes() throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+    static void loadEventTypes() throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         // Read event types from resource files
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
         List<EventType> resourceEventTypes = getConferences(resourceSourceInformation.getEventTypes());
@@ -100,8 +100,8 @@ public class ConferenceDataLoader {
      * @param lastEventTypeId identifier of last event type
      * @return load result for event types
      */
-    static LoadResult<List<EventType>> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference,
-            EventType> eventTypeMap, AtomicLong lastEventTypeId) {
+    static LoadResult<List<EventType>> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference, EventType> eventTypeMap,
+                                                              AtomicLong lastEventTypeId) {
         List<EventType> eventTypesToAppend = new ArrayList<>();
         List<EventType> eventTypesToUpdate = new ArrayList<>();
 
@@ -141,7 +141,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveEventTypes(LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
+    static void saveEventTypes(LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
         List<EventType> eventTypesToAppend = loadResult.getItemToAppend();
         List<EventType> eventTypesToUpdate = loadResult.getItemToUpdate();
 
@@ -173,9 +173,9 @@ public class ConferenceDataLoader {
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                               Map<NameCompany, Long> knownSpeakerIdsMap,
-                                               Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+    static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
+                                       Map<NameCompany, Long> knownSpeakerIdsMap,
+                                       Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, places, events, speakers, talks from resource files
@@ -282,12 +282,12 @@ public class ConferenceDataLoader {
         // Find talks
         fillSpeakerIds(contentfulTalks);
 
-        AtomicLong lasTalksId = new AtomicLong(getLastId(resourceSourceInformation.getTalks()));
+        AtomicLong lastTalksId = new AtomicLong(getLastId(resourceSourceInformation.getTalks()));
         LoadResult<List<Talk>> talkLoadResult = getTalkLoadResult(
                 contentfulTalks,
                 resourceEvent,
                 resourceSourceInformation.getEvents(),
-                lasTalksId);
+                lastTalksId);
 
         // Find place
         Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces = resourceSourceInformation.getPlaces().stream()
@@ -337,7 +337,7 @@ public class ConferenceDataLoader {
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode, Map<NameCompany, Long> knownSpeakerIdsMap)
+    static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode, Map<NameCompany, Long> knownSpeakerIdsMap)
             throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, Collections.emptySet());
     }
@@ -352,7 +352,7 @@ public class ConferenceDataLoader {
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
-    private static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode)
+    static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode)
             throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap(), Collections.emptySet());
     }
@@ -470,8 +470,7 @@ public class ConferenceDataLoader {
      * @return load result for speakers
      * @throws IOException if read error occurs
      */
-    static SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
-                                                  SpeakerLoadMaps speakerLoadMaps,
+    static SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers, SpeakerLoadMaps speakerLoadMaps,
                                                   AtomicLong lastSpeakerId) throws IOException {
         List<Speaker> speakersToAppend = new ArrayList<>();
         List<Speaker> speakersToUpdate = new ArrayList<>();
@@ -533,9 +532,9 @@ public class ConferenceDataLoader {
      * @param resourceSpeaker resource speaker
      */
     static void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker) {
-        if ((resourceSpeaker.getGitHub() != null) && !resourceSpeaker.getGitHub().isEmpty() &&
-                ((targetSpeaker.getGitHub() == null) || targetSpeaker.getGitHub().isEmpty())) {
-            targetSpeaker.setGitHub(resourceSpeaker.getGitHub());
+        if ((resourceSpeaker.getTwitter() != null) && !resourceSpeaker.getTwitter().isEmpty() &&
+                ((targetSpeaker.getTwitter() == null) || targetSpeaker.getTwitter().isEmpty())) {
+            targetSpeaker.setTwitter(resourceSpeaker.getTwitter());
         }
     }
 
@@ -609,11 +608,11 @@ public class ConferenceDataLoader {
      * @param talks          talks
      * @param resourceEvent  resource event of talks
      * @param resourceEvents all resource events
-     * @param lasTalksId     identifier of last talk
+     * @param lastTalksId    identifier of last talk
      * @return talk load result
      */
     static LoadResult<List<Talk>> getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
-                                                    AtomicLong lasTalksId) {
+                                                    AtomicLong lastTalksId) {
         List<Talk> talksToDelete = new ArrayList<>();
         List<Talk> talksToAppend = new ArrayList<>();
         List<Talk> talksToUpdate = new ArrayList<>();
@@ -622,7 +621,7 @@ public class ConferenceDataLoader {
             // Event not exists
             talks.forEach(
                     t -> {
-                        t.setId(lasTalksId.incrementAndGet());
+                        t.setId(lastTalksId.incrementAndGet());
                         talksToAppend.add(t);
                     }
             );
@@ -644,7 +643,7 @@ public class ConferenceDataLoader {
 
                         if (resourceTalk == null) {
                             // Talk not exists
-                            t.setId(lasTalksId.incrementAndGet());
+                            t.setId(lastTalksId.incrementAndGet());
                             talksToAppend.add(t);
                         } else {
                             // Talk exists
@@ -761,8 +760,8 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
-                                  LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+    static void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+                          LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
         List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
         List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
 
@@ -802,7 +801,7 @@ public class ConferenceDataLoader {
      * @param speakerLoadResult speaker load result
      * @throws IOException if file creation error occurs
      */
-    private static void saveImages(SpeakerLoadResult speakerLoadResult) throws IOException {
+    static void saveImages(SpeakerLoadResult speakerLoadResult) throws IOException {
         List<UrlFilename> urlFilenamesToAppend = speakerLoadResult.getUrlFilenames().getItemToAppend();
         List<UrlFilename> urlFilenamesToUpdate = speakerLoadResult.getUrlFilenames().getItemToUpdate();
 
@@ -822,7 +821,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveSpeakers(SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
+    static void saveSpeakers(SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
         List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
         List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
 
@@ -843,7 +842,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveTalks(LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
+    static void saveTalks(LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
         List<Talk> talksToDelete = talkLoadResult.getItemToDelete();
         List<Talk> talksToAppend = talkLoadResult.getItemToAppend();
         List<Talk> talksToUpdate = talkLoadResult.getItemToUpdate();
@@ -870,7 +869,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void savePlaces(LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
+    static void savePlaces(LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
         Place placeToAppend = placeLoadResult.getItemToAppend();
         Place placeToUpdate = placeLoadResult.getItemToUpdate();
 
@@ -890,7 +889,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void saveEvents(LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+    static void saveEvents(LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
         Event eventToAppend = eventLoadResult.getItemToAppend();
         Event eventToUpdate = eventLoadResult.getItemToUpdate();
 
@@ -912,7 +911,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void logAndDumpEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndDumpEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, eventTypes.size());
         eventTypes.forEach(
                 et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}",
@@ -933,7 +932,7 @@ public class ConferenceDataLoader {
      * @param logMessage   log message
      * @throws IOException if file creation error occurs
      */
-    private static void logAndCreateSpeakerImages(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
+    static void logAndCreateSpeakerImages(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
         log.info(logMessage, urlFilenames.size());
         for (UrlFilename urlFilename : urlFilenames) {
             ImageUtils.create(urlFilename.getUrl(), urlFilename.getFilename());
@@ -949,7 +948,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, speakers.size());
         speakers.forEach(
                 s -> log.trace("Speaker: nameEn: '{}', name: '{}'",
@@ -958,7 +957,6 @@ public class ConferenceDataLoader {
         );
 
         YamlUtils.dump(new SpeakerList(speakers), filename);
-
     }
 
     /**
@@ -970,7 +968,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, talks.size());
         talks.forEach(
                 t -> log.trace("Talk: nameEn: '{}', name: '{}'",
@@ -989,7 +987,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
+    static void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
         YamlUtils.dump(new PlaceList(Collections.singletonList(place)), filename);
     }
 
@@ -1001,7 +999,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    private static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
+    static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
         YamlUtils.dump(new EventList(Collections.singletonList(event)), filename);
     }
 
@@ -1012,7 +1010,7 @@ public class ConferenceDataLoader {
      * @param speakerLoadMaps speaker load maps
      * @return resource speaker
      */
-    private static Speaker findResourceSpeaker(Speaker speaker, SpeakerLoadMaps speakerLoadMaps) {
+    static Speaker findResourceSpeaker(Speaker speaker, SpeakerLoadMaps speakerLoadMaps) {
         // Find in known speakers by (name, company) pair because
         // - speaker could change his/her last name (for example, woman got married);
         // - speaker (with non-unique pair of name, company) could change his/her company.
@@ -1052,9 +1050,9 @@ public class ConferenceDataLoader {
         return findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceEnNameSpeakers(), Language.ENGLISH);
     }
 
-    private static Talk findResourceTalk(Talk talk,
-                                         Map<String, Set<Talk>> resourceRuNameTalks,
-                                         Map<String, Set<Talk>> resourceEnNameTalks) {
+    static Talk findResourceTalk(Talk talk,
+                                 Map<String, Set<Talk>> resourceRuNameTalks,
+                                 Map<String, Set<Talk>> resourceEnNameTalks) {
         // Find in resource talks by Russian name
         Talk resourceTalk = findResourceTalkByName(talk, resourceRuNameTalks, Language.RUSSIAN);
         if (resourceTalk != null) {
@@ -1073,7 +1071,7 @@ public class ConferenceDataLoader {
      * @param language                    language
      * @return resource speaker
      */
-    private static Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
+    static Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
         return resourceNameCompanySpeakers.get(
                 new NameCompany(
                         LocalizationUtils.getString(speaker.getName(), language),
@@ -1088,7 +1086,7 @@ public class ConferenceDataLoader {
      * @param language             language
      * @return resource speaker
      */
-    private static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
+    static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
         String speakerName = LocalizationUtils.getString(speaker.getName(), language);
         Set<Speaker> resourceSpeakers = resourceNameSpeakers.get(speakerName);
 
@@ -1122,7 +1120,7 @@ public class ConferenceDataLoader {
      * @param language          language
      * @return resource talk
      */
-    private static Talk findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language) {
+    static Talk findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language) {
         String talkName = LocalizationUtils.getString(talk.getName(), language);
         Set<Talk> resourceTalks = resourceNameTalks.get(talkName);
 
@@ -1149,9 +1147,9 @@ public class ConferenceDataLoader {
      * @param language                       language
      * @return resource place
      */
-    private static Place findResourcePlaceByCityVenueAddress(Place place,
-                                                             Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces,
-                                                             Language language) {
+    static Place findResourcePlaceByCityVenueAddress(Place place,
+                                                     Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces,
+                                                     Language language) {
         return resourceCityVenueAddressPlaces.get(
                 new CityVenueAddress(
                         LocalizationUtils.getString(place.getCity(), language),
@@ -1166,9 +1164,9 @@ public class ConferenceDataLoader {
      * @param resourceEnCityVenueAddressPlaces map of (city, venue address)/place in English
      * @return resource place
      */
-    private static Place findResourcePlace(Place place,
-                                           Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
-                                           Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
+    static Place findResourcePlace(Place place,
+                                   Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
+                                   Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
         // Find in resource places by Russian (city, venue address) pair
         Place resourcePlace = findResourcePlaceByCityVenueAddress(place, resourceRuCityVenueAddressPlaces, Language.RUSSIAN);
         if (resourcePlace != null) {
@@ -1185,7 +1183,7 @@ public class ConferenceDataLoader {
      * @param place place
      * @return fixed place
      */
-    private static List<LocaleItem> fixVenueAddress(Place place) {
+    static List<LocaleItem> fixVenueAddress(Place place) {
         final String ONLINE_ENGLISH = "Online";
         final String ONLINE_RUSSIAN = "Онлайн";
 
@@ -1234,7 +1232,7 @@ public class ConferenceDataLoader {
      * @param fixingVenueAddresses fixing venue addresses
      * @return resulting venue address
      */
-    private static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
+    static String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
         for (FixingVenueAddress fixingVenueAddress : fixingVenueAddresses) {
             if (fixingVenueAddress.getCity().equals(city) &&
                     fixingVenueAddress.getInvalidVenueAddress().equals(venueAddress)) {
@@ -1328,21 +1326,42 @@ public class ConferenceDataLoader {
         // 2020
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 6, 6), "2020-spb-tt");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 6, 15), "2020-spb");
-//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 15), "2020-spb");
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 15), "2020-spb",
+//                Collections.emptyMap(),
+//                Set.of("Комбинаторный подход к тестированию распределенной системы", "Автотесты на страже качества IDE",
+//                        "Тестирование безопасности для SQA", "Процесс тестирования производительности в геймдеве",
+//                        "Производительность iOS-приложений и техники ее тестирования"));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 6, 22), "2020-spb");
-//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 6, 22), "2020-spb");
+//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 6, 22), "2020-spb",
+//                Collections.emptyMap(),
+//                Set.of("Monorepo. Стоит ли игра свеч?", "ТестирUI правильно"));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2020, 6, 29), "2020-jpoint");
-//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 6, 29), "2020-msk-cpp");
-//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 7, 6), "2020-msk-devoops");
+//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 6, 29), "2020-msk-cpp",
+//                Collections.emptyMap(),
+//                Set.of("Сопрограммы в С++20. Прошлое, настоящее и будущее",
+//                        "Use-After-Free Busters: C++ Garbage Collector in Chrome",
+//                        "A standard audio API for C++",
+//                        "Coroutine X-rays and other magical superpowers",
+//                        "Компьютерные игры: Как загрузить все ядра CPU"));
+//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 7, 6), "2020-msk-devoops",
+//                Collections.emptyMap(),
+//                Set.of("Title will be announced soon", "Context based access with Google’s BeyondCorp",
+//                        "Применяем dogfooding: От Ops к Dev в Яндекс.Облако", "Kubernetes service discovery",
+//                        "Event Gateways: Что? Зачем? Как?", "Continuously delivering infrastructure",
+//                        "The lifecycle of a service", "Безопасность и Kubernetes",
+//                        "Edge Computing: А trojan horse of DevOps tribe infiltrating the IoT industry"));
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
 //                Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L));
-//        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc");
-//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 10, 7), "2020-spb-devoops");
-//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 10, 9), "2020-spb-cpp");
-//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 10, 23), "2020-joker");
-//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 11, 2), "2020-msk");
-//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 4), "2020-msk");
-//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 7), "2020-msk");
-//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 9), "2020-msk");
+//        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
+//                Collections.emptyMap(),
+//                Set.of("Doctoral workshop", "Title will be announced soon"));
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 4), "2020msk");
+//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 11), "2020msk");
+//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 11, 11), "2020spbcpp");
+//        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 11, 25), "2020joker");
+//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 25), "2020msk");
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 12, 2), "2020msk");
+//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 12, 2), "2020spbdevoops");
+//        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2020, 12, 9), "2020smartdata");
     }
 }

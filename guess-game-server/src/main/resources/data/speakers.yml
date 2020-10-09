@@ -93,23 +93,20 @@ speakers:
       - {language: en, text: BellSoft}
     bio:
       - language: en
-        text: "Dmitry Chuyko is a performance engineer at BellSoft, which is among the top 5 contributors to OpenJDK. Before\
-            \ joining BellSoft, Dmitry programmed in Java, and then worked on Hotspot JVM in Oracle. After all, previous experience\
-            \ with Java has shown that the most interesting problems in applications get their solutions in the base platform.\
-            \ Currently Dmitry mostly optimizes OpenJDK for ARM64, the company even implemented its own JEP 315 on Java 11\
-            \ on this topic.\n\nBellSoft releases and supports Liberica JDK — a verified distribution of OpenJDK. Liberica\
-            \ is available in the form of binary assemblies, installers and container images for different operating systems\
-            \ and processors. Therefore, now the focus of attention is the work of various versions of Java in containers\
-            \ on ARM and x86."
+        text: "Dmitry Chuyko is a performance engineer at BellSoft, one of the most active corporate OpenJDK developers. Before\
+            \ joining BellSoft, Dmitry worked on Hotspot JVM in Oracle. His previous experience with Java showed that the\
+            \ most interesting problems in applications find their solutions in the underlying platform. Dmitry is currently\
+            \ mainly optimizing OpenJDK for x86 and ARM, and also contributing to the development of JEP 386 to make the smallest\
+            \ Java containers even better.\nDmitry speaks at large conferences such as Joker, JPoint, Oracle Code One, Devoxx,\
+            \ or GeeCON, as well as at JUG meetups in different countries."
       - language: ru
-        text: "Дмитрий Чуйко — инженер по производительности в компании BellSoft, которая входит в топ-5 контрибьютеров OpenJDK.\
-            \ До того как присоединиться к BellSoft, Дмитрий программировал на Java, а затем работал над Hotspot JVM в Oracle.\
-            \ Ведь предыдущий опыт работы с Java показал, что наиболее интересные проблемы в приложениях получают свои реш\
-            ения в базовой платформе. В настоящее время Дмитрий в основном оптимизирует OpenJDK для ARM64, компания даже р\
-            еализовала на эту тему собственный JEP 315 в Java 11.\n\nBellSoft выпускает и поддерживает Liberica JDK — вери\
-            фицированный дистрибутив OpenJDK. Liberica выпускается в виде бинарных сборок, инсталляторов и контейнерных об\
-            разов для разных ОС и процессоров. Поэтому сейчас в фокусе внимания работа различных версий Java в контейнерах\
-            \ на ARM и x86."
+        text: "Дмитрий Чуйко работает инженером по производительности в российской компании BellSoft, одном из ведущих уча\
+            стников сообщества OpenJDK. До того, как присоединиться к BellSoft, Дмитрий уже работал над Hotspot JVM в комп\
+            ании Oracle. Его предыдущий опыт разработки на Java показал, что наиболее интересные проблемы приложений решаю\
+            тся на уровне базовой платформы. В настоящее время Дмитрий занимается оптимизациями OpenJDK для архитектур x86\
+            \ и ARM, а также участвует в разработке JEP 386, чтобы самые маленькие Java-контейнеры были ещё лучше.\nДмитри\
+            й регулярно выступает как на крупных конференциях, таких как Joker, JPoint, Oracle Code One, Devoxx, и GeeCON,\
+            \ так и на встречах разработчиков в разных странах."
     twitter: dchuyko
     gitHub: dchuyko
   - id: 6
@@ -849,12 +846,12 @@ speakers:
       - {language: en, text: "Evgeny is a contributor to various open source projects and a speaker at international conferences\
             \ and JUGs. He is one of the lead developers of JaCoCo project, and also the project lead of the award-winning\
             \ EclEmma project at the Eclipse Foundation that integrates JaCoCo into Eclipse IDE. In his day job at SonarSource\
-            \ Evgeny develops SonarQube's static source code analysis for languages such as Java, C/C++, C#, JavaScript."}
-      - {language: ru, text: "Евгений участвует в различных проектах с открытым исходным кодом и выступает на международны\
-            х конференциях и JUG-ах. Он является одним из ведущих разработчиков JaCoCo, а также руководителем проекта EclEmma\
-            \ в Eclipse Foundation, интегрирующего JaCoCo в Eclipse IDE. В своей повседневной работе в SonarSource Евгений\
-            \ занимается разработкой статических анализаторов кода для таких языков, как Java, C/C++, C#, JavaScript."}
-    twitter: _Godin_
+            \ Evgeny develops SonarQube’s static source code analysis for languages such as Java, C/C++, C#, JavaScript."}
+      - {language: ru, text: "Евгений — участник проектов с открытым исходным кодом и спикер на международных и JUG'овских\
+            \ конференциях. Он является ведущим разработчиком в JaCoCo project и лидом в отмеченном наградами проекте — EclEmma,\
+            \ который интегрирует JaCoCo в Eclipse IDE. В SonarSource Евгений разрабатывает статический анализ исходного к\
+            ода для таких языков, как Java, C/C++, C#, JavaScript."}
+    twitter: _godin_
     gitHub: Godin
   - id: 48
     photoFileName: 0048.jpg
@@ -1358,16 +1355,15 @@ speakers:
       - {language: en, text: JetBrains}
     bio:
       - language: en
-        text: "For the last few years Yuriy have played an integral role in the CUBA Platform development team and contributed\
-            \ a lot to the platform architecture design, specializing in front end technologies. As part of my academic activities,\
-            \ he mentored applied math students from the Samara University.\n\nCurrently, working at IntelliJ IDEA Team of\
-            \ JetBrains and trying to bring new useful tools to developers daily routine."
+        text: "For the last 10 years Yuri have been developing libraries, frameworks and tools for developers. As part of\
+            \ academic activities, he mentored applied math students from the Samara University.\n\nCurrently, working at\
+            \ IntelliJ IDEA Team of JetBrains and trying to bring new useful tools to developers daily routine. Author of\
+            \ Selenium UI Testing plugin and maintainer of Gauge support for IntelliJ IDEA."
       - language: ru
-        text: "До недавнего времени Юрий занимался разработкой открытого фреймворка CUBA Platform, где посвятил много врем\
-            ени архитектуре и фронтенд технологиям. Преподавал курсы разработки мобильных приложений и основы UI/UX для ст\
-            удентов магистратуры Самарского Университета.\n\nСейчас работает в команде IntelliJ IDEA, стараясь улучшить жи\
-            знь разработчиков при помощи различных инструментов. Обожает реализовывать безумные идеи с лозунгом «Почему бы\
-            \ и нет?»."
+        text: "Более 10 лет разрабатывает Java-фреймворки и инструменты для разработчиков. Преподавал курсы разработки моб\
+            ильных приложений и основы UI/UX для студентов магистратуры Самарского Университета.\n\nСейчас работает в кома\
+            нде IntelliJ IDEA, стараясь улучшить жизнь разработчиков при помощи различных инструментов. Автор Selenium UI\
+            \ Testing плагина и мейнтейнер поддержки Gauge для IntelliJ IDEA."
     twitter: Yuriy_Artamonov
     gitHub: jreznot
   - id: 79
@@ -3654,9 +3650,9 @@ speakers:
             \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
             \ Testing Days, TopConf, DevConFu, Devoxx."
       - language: ru
-        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллиннского\
-            \ Devclub, частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматически\
-            х тестов, парного программирования и чистого кода."
+        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
+            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
+            , парного программирования и чистого кода."
     twitter: asolntsev
     gitHub: asolntsev
   - id: 238
@@ -3950,14 +3946,13 @@ speakers:
             \ Minsk, Belarus, he studied computer science and mathematics in Germany where he has discovered his passion for\
             \ typography, writing and design. After working as a freelancing designer and developer for 6 years, he co-founded\
             \ Smashing Magazine, one of the largest online magazines dedicated to web design and development. Vitaly is the\
-            \ writer, co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine\
-            \ in the lovely city of Germany, Freiburg."}
+            \ writer, co-author and editor of both Smashing Books. He is now working as the creative lead of Smashing Magazine\
+            \ somewhere in Europe."}
       - {language: ru, text: "Виталий Фридман любит красивый контент и никогда просто так не сдаётся. Родом из Минска, Бел\
             арусь, Виталий изучал информатику и математику в Германии, где обнаружил интерес к типографии, письму и дизайн\
             у. Проработав в качестве фрилансера дизайнером и разработчиком в течение шести лет, он основал Smashing Magazine,\
             \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
-            \ Books. В настоящее время занимает позицию главного редактора Smashing Magazine в прекрасном городе Фрайбург\
-            , Германия."}
+            \ Books. В настоящее время работает в Smashing Magazine где-то в Европе."}
     twitter: smashingmag
     gitHub: vitalyfriedman
   - id: 261
@@ -3989,7 +3984,7 @@ speakers:
       - {language: en, text: "Ivan Yamshchikov"}
       - {language: ru, text: "Иван Ямщиков"}
     company:
-      - {language: en, text: "ABBYY, Max Planck Institute for Mathematics in the Sciences"}
+      - {language: en, text: ABBYY}
     bio:
       - {language: en, text: "Got PhD in applied mathematics at Brandenburg University of Technology (Cottbus, Germany). Is\
             \ currently a research associate at Max Planck Institute (Leipzig, Germany) and an AI-evangelist at ABBYY. Ivan\
@@ -5347,6 +5342,7 @@ speakers:
       - language: ru
         text: "Выпускник МГТУ имени Н.Э. Баумана (ракетостроение).\n\nЛюбит C++ и умеет его готовить.\n\nЛюбитель метапрог\
             раммирования, многопоточного и асинхронного программирования, энтузиаст распространения корутин."
+    twitter: cpp_ape
   - id: 352
     photoFileName: 0352.jpg
     name:
@@ -7197,11 +7193,14 @@ speakers:
       - language: en
         text: "Dmitry is a technology evangelist of Microsoft company, promotes modern software development technologies among\
             \ beginner developers: pupils, students, startups. Specializes in the Internet of things, Windows universal applications\
-            \ development, functional programming, and platform .NET (F#, Roslyn).\r\nHas personally done dozens of hackathons\
+            \ development, functional programming, and platform .NET (F#, Roslyn).\nHas personally done dozens of hackathons\
             \ all around Russia, helped many students' startups to start their projects in various fields. Associate Professor,\
-            \ Candidate of Physical and Mathematical Sciences, teaches at MIPT and MAI, member of Russian Association for\
-            \ Artificial Intelligence, during summer time — lead of the department of computer technologies of the children\
-            \ camp JUNIO-R. In his spare time is into technological magic, does Chinese tea ceremony, Gong Fu Cha."
+            \ Candidate of Physical and Mathematical Sciences, teaches at MIPT and MAI, a member of the Russian Association\
+            \ for Artificial Intelligence, during summertime — a lead of the department of computer technologies of the children\
+            \ camp JUNIO-R. In his spare time is into technological magic, does Chinese tea ceremony, Gong Fu Cha\n\nYou will\
+            \ leave this talk with enough knowledge to use TCP/IP sockets to communicate with any custom device in a fully\
+            \ reliable manner. You will also be empowered to evaluate custom protocols used by devices, identify their defects,\
+            \ and provide workarounds if necessary."
       - language: ru
         text: "Дмитрий Сошников — технологический евангелист компании Майкрософт, занимается популяризацией современных те\
             хнологий разработки программного обеспечения среди начинающих разработчиков: школьников, студентов, начинающих\
@@ -7853,8 +7852,7 @@ speakers:
       - {language: en, text: "Stanislav Sidristy"}
       - {language: ru, text: "Станислав Сидристый"}
     company:
-      - {language: en, text: STC}
-      - {language: ru, text: ЦРТ}
+      - {language: en, text: "Speech Technology Center"}
     bio:
       - language: en
         text: "Stanislav worked in many large companies, gaining development experience on the .NET platform. The speaker\
@@ -8101,12 +8099,11 @@ speakers:
     name:
       - {language: en, text: "Jack Vanlightly"}
     company:
-      - {language: en, text: "SII Concatel"}
+      - {language: en, text: Splunk}
     bio:
-      - {language: en, text: "Jack Vanlightly is a software architect and engineer with a focus on distributed systems, messaging\
-            \ systems and automation. He usually can be found working on projects related to event-driven architectures, systems\
-            \ reliability, test strategy and automation. He is active in the open source world, especially in the arena of\
-            \ messaging systems."}
+      - {language: en, text: "Jack Vanlightly is a distributed systems engineer and tester that has focused on messaging systems\
+            \ and distributed system testing. He has worked as a member of the RabbitMQ core team at VMware and is now a principal\
+            \ software engineer at Splunk working on the Apache Pulsar/BookKeeper messaging stack."}
     twitter: vanlightly
   - id: 543
     photoFileName: 0543.jpg
@@ -10003,10 +10000,10 @@ speakers:
     company:
       - {language: en, text: Igalia}
     bio:
-      - {language: en, text: "Ujjwal is an undergrad student, an open source software fanatic and an active member of the\
-            \ JavaScript ecosystem. A Node.js core collaborator, Electron maintainer, Google Summer of Code mentor and ex-student,\
+      - {language: en, text: "Ujjwal is an undergrad student, an open source software fanatic, and an active member of the\
+            \ JavaScript ecosystem. A Node.js core collaborator, Electron maintainer, Google Summer of Code mentor, and ex-student,\
             \ he has been working with the V8 team and the TC39 committee to help make JavaScript better, one commit at a\
-            \ time. He loves to talk about open source software, DevOps, JavaScript, Web Standards and the Open Web."}
+            \ time. He loves to talk about open source software, DevOps, JavaScript, Web Standards, and the Open Web."}
     twitter: ryzokuken
   - id: 667
     photoFileName: 0667.jpg
@@ -11630,7 +11627,7 @@ speakers:
       - {language: en, text: "Stepan Goncharov"}
       - {language: ru, text: "Степан Гончаров"}
     company:
-      - {language: en, text: "Level 5"}
+      - {language: en, text: Lyft}
     bio:
       - {language: en, text: "Engineering apps and games for Android since 2008. Has experience as QA, product manager, marketer,\
             \ blogger, consultant and much more. He was involved in development of apps that nobody uses and apps with millions\
@@ -11816,6 +11813,7 @@ speakers:
       - {language: ru, text: "Разрабатывает под Android с 2015 года. В hh.ru занимается поддержкой основных приложений, а\
             \ также разработкой внутренних инструментов. Интересуется разработкой плагинов под Android Studio, вопросами а\
             рхитектуры приложений, нейронными сетями. Участвовал в Android Academy MSK в качестве ментора и лектора."}
+    twitter: StrelZtrel
   - id: 794
     photoFileName: 0794.jpg
     name:
@@ -13959,13 +13957,13 @@ speakers:
     name:
       - {language: en, text: "Mark Heckler"}
     company:
-      - {language: en, text: Pivotal/VMware}
+      - {language: en, text: VMware}
     bio:
-      - {language: en, text: "Mark Heckler is a Professional Problem Solver and Spring Developer & Advocate at Pivotal, conference\
-            \ speaker, published author, & Java Champion focusing upon developing innovative production-ready software at\
-            \ velocity for the Cloud. He has worked with key players in the manufacturing, retail, medical, scientific, telecom,\
-            \ and financial industries and various public sector organizations to develop and deliver critical capabilities\
-            \ on time and on budget. Mark is an open source contributor and author/curator of a <a href=\"https://thehecklers.com\"\
+      - {language: en, text: "Mark Heckler is a Spring Developer Advocate and a Software Developer at VMware, conference speaker,\
+            \ published author, & Java Champion focusing upon developing innovative production-ready software at velocity\
+            \ for the Cloud. He has worked with key players in the manufacturing, retail, medical, scientific, telecom, and\
+            \ financial industries and various public sector organizations to develop and deliver critical capabilities on\
+            \ time and on budget. Mark is an open source contributor and author/curator of a <a href=\"https://thehecklers.com\"\
             \ target=\"_blank\">developer-focused blog</a> and an occasionally interesting Twitter account (@mkheck)."}
     twitter: MkHeck
     javaChampion: true
@@ -15404,10 +15402,10 @@ speakers:
             \ are highly performanced, fault tolerant integration buses, based on various message brokers and information\
             \ storage systems, as well as on NoSQL databases. Main stack — Linux/JVM, favorite language — Scala, tools — Jmeter/Gatling."}
       - {language: ru, text: "Ведущий тестировщик в компании Контур. В сфере разработки ПО более 10 лет, в тестировании бо\
-            лее 5. Основное направление — тестирование и эксплуатация инфраструктурных решений. Как правило это высоконагр\
-            уженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения информ\
-            ации, основанные как на реляционных, так и на NoSQL базах данных. Основной стек - Linux/JVM, предпочитаемый яз\
-            ык — Scala, инструменты Jmeter/Gatling."}
+            лее 5. Основное направление — тестирование и эксплуатация инфраструктурных решений. Как правило, это высоконаг\
+            руженные отказоустойчивые интеграционные шины на основе различных брокеров сообщений, и системы хранения инфор\
+            мации, основанные как на реляционных, так и на NoSQL базах данных. Основной стек — Linux/JVM, предпочитаемый я\
+            зык — Scala, инструменты Jmeter/Gatling."}
   - id: 1054
     photoFileName: 1054.jpg
     name:
@@ -16001,7 +15999,7 @@ speakers:
       - {language: en, text: "Has been testing mobile applications for more than 5 years. For the last 2,5 years, Dmitry has\
             \ been working as Android QA in Badoo, where he does both manual testing and test automation for Android applications."}
       - {language: ru, text: "Тестирует мобильные приложения более 5 лет. Последние 2,5 года работает Android QA в Badoo,\
-            \ где занимается как ручным тестированием, так и автоматизацией тестов для Андроид-приложения"}
+            \ где занимается как ручным тестированием, так и автоматизацией тестов для Андроид-приложения."}
   - id: 1098
     photoFileName: 1098.jpg
     name:
@@ -16561,7 +16559,7 @@ speakers:
       - {language: en, text: "Shepherd's Oasis"}
     bio:
       - language: en
-        text: "JeanHeyd \"ThePhD\" is a Software Engineering at Columbia University in New York. His largest open-source contribution\
+        text: "JeanHeyd \"ThePhD\" is a Software Engineer at Columbia University in New York. His largest open-source contribution\
             \ — sol2 — is used across many industries. He is currently working towards earning his own nickname, climbing\
             \ the academic ladder while spending as much time as possible contributing to C++ standardization and development.\n\
             \nHe very much loves dogs and hopes to have his own in a year or so. He also likes Vulf's \"Tee Time\" from the\
@@ -17002,7 +17000,7 @@ speakers:
     bio:
       - {language: en, text: "Makes researches in development, security, and life. Leads the @paradiSEcurity channel in Telegram."}
       - {language: ru, text: "Делает исследования в сфере разработки, безопасности и жизни. Ведет канал @paradiSEcurity в\
-            \ телеграм."}
+            \ Телеграме."}
     twitter: OlgaShkryaba
   - id: 1171
     photoFileName: 1171.jpg
@@ -18187,8 +18185,11 @@ speakers:
     company:
       - {language: en, text: Wargaming}
     bio:
-      - {language: en, text: "QA Automation Tech lead. Роман в тестировании уже 10 лет. В автоматизации — 8. На третьем ку\
-            рсе универа, решил попробовать себя в роли тестировщика — зашло. Уже 5 лет в Wargaming."}
+      - {language: en, text: "QA Automation Tech lead. Roman has been in testing for 10 years. In automation — 8 years. In\
+            \ his third year of university, he decided to try himself in the role of a tester. He has been at Wargaming for\
+            \ 5 years."}
+      - {language: ru, text: "QA Automation Tech lead. Роман в тестировании уже 10 лет. В автоматизации — 8. На третьем ку\
+            рсе универа решил попробовать себя в роли тестировщика — зашло. Уже 5 лет в Wargaming."}
   - id: 1261
     photoFileName: 1261.jpg
     name:
@@ -18610,8 +18611,10 @@ speakers:
       - {language: en, text: Sberbank}
       - {language: ru, text: Сбербанк}
     bio:
-      - {language: en, text: "Леванов Алексей — TeamLead и PO платформенной iOS-команды Сбербанк Инвестор, лидер Школ Разр\
-            аботки Сбербанка. Работает в Сбербанке с 2014 года."}
+      - {language: en, text: "Alexey is a team lead and project owner of the Sberbank Investor iOS platform team, leader of\
+            \ Sberbank Development School. He has been working in Sberbank since 2014."}
+      - {language: ru, text: "Леванов Алексей — team lead и PO платформенной iOS-команды Сбербанк Инвестор, лидер Школ Раз\
+            работки Сбербанка. Работает в Сбербанке с 2014 года."}
   - id: 1296
     photoFileName: 1296.jpg
     name:
@@ -18871,20 +18874,18 @@ speakers:
       - {language: en, text: "Evgeny Erokhin"}
       - {language: ru, text: "Евгений Ерохин"}
     company:
-      - {language: en, text: DINS}
+      - {language: en, text: HyperIntegrate}
     bio:
       - language: en
-        text: "Senior Software Developer in DINO Systems. In the present moment he's busy with the development of real-time\
-            \ video service.\nHis background is more than 10 years in Paragon Software on the position of team lead where\
-            \ he developed filesystem drivers for macOS, worked on filesystem implementation, snapshot system for block-devices\
-            \ (disk subsystem), boot loader, reverse-engineering, and many low-level things.\nIn his free time Evgeny research\
-            \ operation-systems internals, and microprocessor architectures."
+        text: "His background is more than 10 years in Paragon Software on the position of team lead where he developed filesystem\
+            \ drivers for macOS, worked on filesystem implementation, snapshot system for block-devices (disk subsystem),\
+            \ boot loader, reverse-engineering, and many low-level things.\nIn his free time Evgeny research operation-systems\
+            \ internals, and microprocessor architectures."
       - language: ru
-        text: "Старший разработчик в компании DINO Systems. В данный момент занимается разработкой сервиса передачи видео\
-            \ в реальном времени.\nЗа плечами более 10 лет опыта работы в Paragon Software на позиции ведущего разработчик\
-            а. Разрабатывал драйвера файловых систем под macOS, занимался имплементацией файловых систем, системы снепшоти\
-            нга блочных (дисковых) устройств, boot-загрузчика, реверс-инженирингом, и другими низкоуровневыми задачами.\n\n\
-            В свободное время занимается изучением устройства операционных систем и процессорных архитектур."
+        text: "За плечами более 10 лет опыта работы в Paragon Software на позиции ведущего разработчика. Разрабатывал драй\
+            вера файловых систем под macOS, занимался имплементацией файловых систем, системы снепшотинга блочных (дисковы\
+            х) устройств, boot-загрузчика, реверс-инженирингом, и другими низкоуровневыми задачами.\n\nВ свободное время з\
+            анимается изучением устройства операционных систем и процессорных архитектур."
   - id: 1319
     photoFileName: 1319.jpg
     name:
@@ -19106,3 +19107,242 @@ speakers:
       - {language: en, text: "Члены ПК DevOops"}
     company: []
     bio: []
+  - id: 1339
+    photoFileName: 1339.jpg
+    name:
+      - {language: en, text: "Pavel Strunkin"}
+      - {language: ru, text: "Павел Стрункин"}
+    company:
+      - {language: en, text: Ciklum}
+    bio:
+      - {language: en, text: "QA Engineer Automation at Ciklum — Software test automation. Development of automation testing\
+            \ projects for web application of different complexity. Such projects include several levels of testing from unit\
+            \ testing, API testing till automatic browser testing on all systems (Windows, Mac, Linux) using Ruby and Java."}
+      - {language: ru, text: "Инженер автоматизированного тестирования в Ciklum. Разрабатывает проекты по автоматизированн\
+            ому тестированию для веб-приложений разной степени сложности. Некоторые проекты включают в себя несколько уров\
+            ней от модульного и API тестирования до автоматического тестирования браузера на всех системах (Windows, Mac,\
+            \ Linux) с использованием Ruby и Java."}
+    twitter: VisualReTracker
+  - id: 1340
+    photoFileName: 1340.jpg
+    name:
+      - {language: en, text: "Nikolay Golubyev"}
+      - {language: ru, text: "Николай Голубев"}
+    company:
+      - {language: en, text: "Citadel Securities"}
+    bio:
+      - {language: en, text: "Nikolay is a Software Engineer at Citadel Securities creating solutions for Quantitative Researchers.\
+            \ Most of his career he was working in FinTech improving the experience of traders, researchers, developers, and\
+            \ support staff. Nikolay likes to participate in multiple layers of software development — backend, frontend,\
+            \ automated testing, documentation, and release."}
+      - {language: ru, text: "Николай — программист в Citadel Securities, создает решения для Quantitative Researchers. Бо\
+            льшую часть своей карьеры проработал в финтехе, улучшая опыт трейдеров, исследователей, разработчиков и специа\
+            листов поддержки. Николаю нравится участвовать сразу на нескольких уровнях разработки — бэкенд, фронтенд, авто\
+            матизированное тестирование, документация и релиз."}
+    twitter: mgolubyev
+  - id: 1341
+    photoFileName: 1341.jpg
+    name:
+      - {language: en, text: "Anton Potsyus"}
+      - {language: ru, text: "Антон Поцюс"}
+    company:
+      - {language: en, text: "IT Territory/My.Games"}
+    bio:
+      - language: en
+        text: "Winner of the \"Team Lead — Anarchist 2020\" award.\nBass guitarist and Java programmer rolled into one.\n\
+            10 years in the gaming development as a backend developer."
+      - language: ru
+        text: "Обладатель премии «Team Lead — Анархист 2020».\nБас-гитарист и Java-программист в одном лице.\n10 лет в игр\
+            овом бизнесе в качестве backend-разработчика."
+  - id: 1342
+    photoFileName: 1342.jpg
+    name:
+      - {language: en, text: "Shweta Sharma"}
+    company:
+      - {language: en, text: "Axelerant Technologies Pvt. Ltd."}
+    bio:
+      - {language: en, text: "Experienced Quality Assurance Engineer with a demonstrated history of working in the internet\
+            \ industry. Strong quality assurance professional skilled in Requirements Analysis, Test Cases, Agile Methodologies,\
+            \ automated functional and visual regression testing using Behat, Selenium WebDriver, Wraith, Phantomcss, and\
+            \ Shoov on various platforms such as Unix and Windows."}
+    twitter: shwetasharma84
+  - id: 1343
+    photoFileName: 1343.jpg
+    name:
+      - {language: en, text: "Oleksandr Khotemskyi"}
+      - {language: ru, text: "Александр Хотемской"}
+    company:
+      - {language: en, text: "Independent contractor"}
+      - {language: ru, text: "Независимый консультант"}
+    bio:
+      - {language: en, text: "Huge experience in Web, API, Desktop, Mobile, Gamedev using JavaScript, TypeScript, Java, Python.\
+            \ The main specialization is the functional automation of testing at different levels. Trainer in Start-IT in\
+            \ 3 areas: WEB, API, Test Infrastructure. Winner and judge of the Ukrainian Dev Challenge. Speaker at many conferences:\
+            \ QA Fest, Selenium Camp, Simplicity Days, JS fest, and others."}
+      - {language: ru, text: "Огромный опыт в Web, API, Desktop, Mobile, Gamedev с применением JavaScript, TypeScript, Java,\
+            \ Python. Основная специализация — функциональная автоматизация тестирования на разных уровнях. Тренер в Start-IT\
+            \ по 3 направлениям: WEB, API, Test Infrastructure. Участник, победитель и судья Ukrainian Dev Challenge. Докл\
+            адчик на множестве конференций: QA Fest, Selenium Camp, Simplicity Days, JS fest и других."}
+    twitter: xotabu4
+    gitHub: xotabu4
+  - id: 1344
+    photoFileName: 1344.jpg
+    name:
+      - {language: en, text: "Evgeny Chentsov"}
+      - {language: ru, text: "Евгений Ченцов"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - language: en
+        text: "Born and lived most of his live in Krasnoyarsk. In 2012 he graduated from Siberian Federal University with\
+            \ a degree in applied mathematics and computer science.\r\n\r\nHe started his professional career in a small company's\
+            \ support while doing research in the field of mathematical modeling. Despite a wide range of interests, programming\
+            \ has grown into a profession — he has been developing server components on the Allods Online since march 2019."
+      - language: ru
+        text: "Родился и прожил большую часть жизни в Красноярске.\r\nВ 2012 году окончил с отличием Сибирский Федеральный\
+            \ Университет (Институт математики) по специальности «прикладная математика и информатика».\r\n\r\nНачал свой\
+            \ профессиональный путь с работы в поддержке в небольшой компании, параллельно занимаясь научными исследования\
+            ми в области математического моделирования сплошных сред. \r\nНесмотря на широкий круг интересов, именно прогр\
+            аммирование переросло в профессию — с марта 2019 года занимается развитием серверных компонент на проекте «Алл\
+            оды Онлайн» в Mail.Ru Group."
+  - id: 1345
+    photoFileName: 1345.jpg
+    name:
+      - {language: en, text: "Evgeny Krutskikh"}
+      - {language: ru, text: "Евгений Крутских"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - language: en
+        text: "Graduated from Voronezh State Technical University in 2012 with a degree in Information technologies in education.\
+            \ In his last year, Evgeny registered services for Gosuslugi.\nAfter graduation, he was looking for work in game\
+            \ dev and got a job as a QA at Mail.ru. Evgeny worked on the \"Allods Online\" project, then \"Pirates\", after\
+            \ — \"HAWK: Freedom squadron\".\nUntil recently Evgeny worked on the Space Justice project and is currently engaged\
+            \ in a new project."
+      - language: ru
+        text: "Окончил Воронежский Государственный Технический Университет в 2012 году по специальности «Информационные те\
+            хнологии в образовании». На последнем курсе регистрировал сервисы для Госуслуг. \nПосле окончания учебы искал\
+            \ работу в геймдеве и устроился QA в Mail.ru. Работал на проекте «Аллоды Онлайн», затем были «Пираты: Штурм не\
+            бес», после — «HAWK: Freedom squadron». \nДо недавнего времени работал на проекте Space Justice, а в текущий м\
+            омент занимается новым, пока не анонсированным проектом."
+  - id: 1346
+    photoFileName: 1346.jpg
+    name:
+      - {language: en, text: "Vyacheslav Lukashevich"}
+      - {language: ru, text: "Вячеслав Лукашевич"}
+    company:
+      - {language: en, text: "Evolution Gaming Latvia SIA"}
+    bio:
+      - language: en
+        text: "Fan of testing and automation testing from Riga.\nHas a vast experience in testing and building technical solutions\
+            \ for QA in insurance, finance, and gaming projects.\nNow he works at Evolution Gaming Engineering, where he's\
+            \ currently engaged in setting up modern test automation and Continuous Delivery processes.\nOne of the organizers\
+            \ of Riga Test Automation Club."
+      - language: ru
+        text: "Фанат тестирования и автоматизации тестирования из города Рига.\nЗа плечами много опыта в тестировании и по\
+            строении технических решений для QA в страховых, финансовых и игровых проектах.\nСейчас работает в Evolution Gaming\
+            \ Engineering, где на данный момент занимается налаживанием процессов современной автоматизации тестирования и\
+            \ Continuous Delivery.\nОдин из организаторов Riga Test Automation Club."
+  - id: 1347
+    photoFileName: 1347.jpg
+    name:
+      - {language: en, text: "Maksim Rogozhnikov"}
+      - {language: ru, text: "Максим Рогожников"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Team lead of load testing team. Maksim has been in performance testing for more than 5 years,\
+            \ during this time he has worked on projects in banking, telecom, retail, and public services."}
+      - {language: ru, text: "Team lead команды нагрузочного тестирования. В тестировании производительности более 5 лет,\
+            \ за это время поработал над проектами в банковской сфере, телекоме, ретейле и госуслугах."}
+  - id: 1348
+    photoFileName: 1348.jpg
+    name:
+      - {language: en, text: "Igor Goldshmidt"}
+      - {language: ru, text: "Игорь Гольдшмидт"}
+    company:
+      - {language: en, text: Moovit}
+    bio:
+      - language: en
+        text: "Igor has been involved in software testing and quality improvement for the last 7 years. He started his way\
+            \ in testing with web applications of banking systems. Then he fought for the quality of desktop and browser extensions\
+            \ at AVG (Antivirus) and a mobile application at Gett (Gettaxi). \nAlso, he managed to be in the role of head\
+            \ of the testing department in the French-Israeli startup SweetInn. Today Igor is a Senior Quality Assurance Engineer\
+            \ at Moovit (Israel). As a passionate fan of testing and quality, he is passionate about researching SQA methodologies,\
+            \ an innovator and architect of test solutions. Igor is the 2018 Israeli Software Testing Champion. Activist of\
+            \ TestIL, the largest testing community in Israel. International speaker and blogger."
+      - language: ru
+        text: "Игорь последние 7 лет занимается тестированием программного обеспечения и повышением качества. Начал свой п\
+            уть в тестировании с веб-приложений банковских систем. Затем вел бои за качество десктопных и браузерных расши\
+            рений в компании AVG (Antivirus) и мобильного приложения в компании Gett (Gettaxi). \n\nУспел побывать в роли\
+            \ главы отдела тестирования во франко-израильском стартапе SweetInn. Сегодня Игорь является старшим инженером\
+            \ по обеспечению качества в компании Moovit (Израиль). Как настоящий страстный фанат тестирования и качества,\
+            \ он увлекается исследованием методологий SQA, инноватор и архитектор тестовых решений. \nЧемпион Израиля по т\
+            естированию программного обеспечения 2018 года. Активист TestIL, крупнейшего сообщества тестирования в Израиле\
+            . Международный спикер и блогер."
+    twitter: IgorGolds
+  - id: 1349
+    photoFileName: 1349.jpg
+    name:
+      - {language: en, text: "James Whittaker"}
+    company:
+      - {language: en, text: "DefinedCrowd Corp."}
+    bio:
+      - language: en
+        text: "James Whittaker's career spans academia, start-ups, and top tech companies and starts in 1986 as the first\
+            \ computer science graduate hired by the FBI. James then worked as a freelance developer, most notably for IBM,\
+            \ Ericsson, SAP, Cisco, and Microsoft, specializing in test automation. He joined the faculty at the Florida Institute\
+            \ of Technology where he continued his prolific publication record in software testing and security. In 2002 his\
+            \ security work was spun off by the university into a startup that was later acquired by Raytheon.\nJames' first\
+            \ stint at Microsoft was in Trustworthy Computing and Visual Studio. He then joined Google as an engineering director\
+            \ and led teams working on Chrome, Maps, and Google+. In 2012 James rejoined Microsoft.\nJames is known for being\
+            \ a creative and passionate leader and sought after speaker and author. Of his five books, two have been Jolt\
+            \ Award finalists."
+    twitter: docjamesw
+  - id: 1350
+    photoFileName: 1350.jpg
+    name:
+      - {language: en, text: "Sergey Chepkasov"}
+      - {language: ru, text: "Сергей Чепкасов"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Performance Engineer at Tinkoff with over 2 years of experience in performance testing. As part\
+            \ of the team, Sergey is engaged in Tinkoff Business projects and internal development projects. Participates\
+            \ in the development of the testing service, helps product teams learn how to conduct testing on projects, trains\
+            \ specialists in the preparation of testing tools, develops general tools/templates that reduce the threshold\
+            \ for new specialists to enter the load."}
+      - language: ru
+        text: "Инженер по производительности в Тинькофф, опыт в тестировании производительности более 2 лет.\nВ составе ко\
+            манды занимается проектами Тинькофф Бизнес и проектами внутренней разработки.\nУчаствует в развитии сервиса те\
+            стирования, помогает продуктовым командам самостоятельно научиться проводить тестирование на проектах, обучает\
+            \ специалистов подготовке средств тестирования, разрабатывает общие инструменты/шаблоны снижающие порог входа\
+            \ новых специалистов в нагрузку."
+  - id: 1351
+    photoFileName: 1351.jpg
+    name:
+      - {language: en, text: "Daria Manuhina"}
+      - {language: ru, text: "Дарья Манухина"}
+    company:
+      - {language: en, text: "Kaluga Astral"}
+      - {language: ru, text: "Калуга Астрал"}
+    bio:
+      - {language: en, text: "The first time Daria faced software testing was during her research. In 2010 she became Ph.D.\
+            \ Her research allows for improving tester’s skills every day. After that, she started a career as Sharepoint\
+            \ specialist but continued research at Moscow Bauman State Technical University. One time she decided to change\
+            \ her life, to change mindset and she found out the amazing world of software testing. Here she faced a lot of\
+            \ problems. Daria started the way from an understanding of the objectives, structure, approaches of testing, based\
+            \ on the structural and risk-oriented approach. She's passionate about testing, investigation of new approaches.\
+            \ She tries through continuous improvement of the testing process improve not only the products but also the process\
+            \ of its development. Now she's Product Owner, so testing as early as possible: she's testing ideas!"}
+      - {language: ru, text: "Впервые столкнулась с тестированием в аспирантуре, когда занималась мат. моделированием физи\
+            ческих процессов. Защитив кандидатскую, продолжила исследовательскую работу в МГТУ им. Баумана, а также начала\
+            \ более плотно работать в IТ сфере как Sharepoint-специалист. Позже открыла для себя удивительный мир тестиров\
+            ания. Придя в эту отрасль, столкнулась со множеством проблем. Свой путь Дарья начала с понимания целей, структ\
+            уры, подходов к тестированию, основываясь на структурном и рискоориентированном подходах. Пройдя путь от рядов\
+            ого тестировщика до QA Lead, старается через непрерывное улучшение процесса тестирования улучшать не только ра\
+            зрабатываемый продукт, но и сам процесс его создания. Сейчас работает PO и теперь тестирует как можно раньше:\
+            \ тестирует идеи."}
+    twitter: ManukhinaDarya
