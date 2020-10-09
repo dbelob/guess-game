@@ -10004,10 +10004,10 @@ speakers:
     company:
       - {language: en, text: Igalia}
     bio:
-      - {language: en, text: "Ujjwal is an undergrad student, an open source software fanatic and an active member of the\
-            \ JavaScript ecosystem. A Node.js core collaborator, Electron maintainer, Google Summer of Code mentor and ex-student,\
+      - {language: en, text: "Ujjwal is an undergrad student, an open source software fanatic, and an active member of the\
+            \ JavaScript ecosystem. A Node.js core collaborator, Electron maintainer, Google Summer of Code mentor, and ex-student,\
             \ he has been working with the V8 team and the TC39 committee to help make JavaScript better, one commit at a\
-            \ time. He loves to talk about open source software, DevOps, JavaScript, Web Standards and the Open Web."}
+            \ time. He loves to talk about open source software, DevOps, JavaScript, Web Standards, and the Open Web."}
     twitter: ryzokuken
   - id: 667
     photoFileName: 0667.jpg
