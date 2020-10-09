@@ -1355,12 +1355,13 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
 //                Collections.emptyMap(),
 //                Set.of("Doctoral workshop", "Title will be announced soon"));
-//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 10, 7), "2020-spb-devoops");
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 4), "2020-msk");
+//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 9), "2020-msk");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 10, 9), "2020-spb-cpp");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 10, 23), "2020-joker");
-//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 11, 2), "2020-msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 4), "2020-msk");
-//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 7), "2020-msk");
-//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 9), "2020-msk");
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 11, 2), "2020-msk");
+//        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 10, 7), "2020-spb-devoops");
+//        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2017, 10, 21), "2017smartdata");
     }
 }

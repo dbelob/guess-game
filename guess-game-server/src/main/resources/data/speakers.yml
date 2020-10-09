@@ -846,12 +846,12 @@ speakers:
       - {language: en, text: "Evgeny is a contributor to various open source projects and a speaker at international conferences\
             \ and JUGs. He is one of the lead developers of JaCoCo project, and also the project lead of the award-winning\
             \ EclEmma project at the Eclipse Foundation that integrates JaCoCo into Eclipse IDE. In his day job at SonarSource\
-            \ Evgeny develops SonarQube's static source code analysis for languages such as Java, C/C++, C#, JavaScript."}
-      - {language: ru, text: "Евгений участвует в различных проектах с открытым исходным кодом и выступает на международны\
-            х конференциях и JUG-ах. Он является одним из ведущих разработчиков JaCoCo, а также руководителем проекта EclEmma\
-            \ в Eclipse Foundation, интегрирующего JaCoCo в Eclipse IDE. В своей повседневной работе в SonarSource Евгений\
-            \ занимается разработкой статических анализаторов кода для таких языков, как Java, C/C++, C#, JavaScript."}
-    twitter: _Godin_
+            \ Evgeny develops SonarQube’s static source code analysis for languages such as Java, C/C++, C#, JavaScript."}
+      - {language: ru, text: "Евгений — участник проектов с открытым исходным кодом и спикер на международных и JUG'овских\
+            \ конференциях. Он является ведущим разработчиком в JaCoCo project и лидом в отмеченном наградами проекте — EclEmma,\
+            \ который интегрирует JaCoCo в Eclipse IDE. В SonarSource Евгений разрабатывает статический анализ исходного к\
+            ода для таких языков, как Java, C/C++, C#, JavaScript."}
+    twitter: _godin_
     gitHub: Godin
   - id: 48
     photoFileName: 0048.jpg
@@ -1355,16 +1355,15 @@ speakers:
       - {language: en, text: JetBrains}
     bio:
       - language: en
-        text: "For the last few years Yuriy have played an integral role in the CUBA Platform development team and contributed\
-            \ a lot to the platform architecture design, specializing in front end technologies. As part of my academic activities,\
-            \ he mentored applied math students from the Samara University.\n\nCurrently, working at IntelliJ IDEA Team of\
-            \ JetBrains and trying to bring new useful tools to developers daily routine."
+        text: "For the last 10 years Yuri have been developing libraries, frameworks and tools for developers. As part of\
+            \ academic activities, he mentored applied math students from the Samara University.\n\nCurrently, working at\
+            \ IntelliJ IDEA Team of JetBrains and trying to bring new useful tools to developers daily routine. Author of\
+            \ Selenium UI Testing plugin and maintainer of Gauge support for IntelliJ IDEA."
       - language: ru
-        text: "До недавнего времени Юрий занимался разработкой открытого фреймворка CUBA Platform, где посвятил много врем\
-            ени архитектуре и фронтенд технологиям. Преподавал курсы разработки мобильных приложений и основы UI/UX для ст\
-            удентов магистратуры Самарского Университета.\n\nСейчас работает в команде IntelliJ IDEA, стараясь улучшить жи\
-            знь разработчиков при помощи различных инструментов. Обожает реализовывать безумные идеи с лозунгом «Почему бы\
-            \ и нет?»."
+        text: "Более 10 лет разрабатывает Java-фреймворки и инструменты для разработчиков. Преподавал курсы разработки моб\
+            ильных приложений и основы UI/UX для студентов магистратуры Самарского Университета.\n\nСейчас работает в кома\
+            нде IntelliJ IDEA, стараясь улучшить жизнь разработчиков при помощи различных инструментов. Автор Selenium UI\
+            \ Testing плагина и мейнтейнер поддержки Gauge для IntelliJ IDEA."
     twitter: Yuriy_Artamonov
     gitHub: jreznot
   - id: 79
@@ -3651,9 +3650,9 @@ speakers:
             \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
             \ Testing Days, TopConf, DevConFu, Devoxx."
       - language: ru
-        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллиннского\
-            \ Devclub, частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматически\
-            х тестов, парного программирования и чистого кода."
+        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
+            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
+            , парного программирования и чистого кода."
     twitter: asolntsev
     gitHub: asolntsev
   - id: 238
@@ -8100,12 +8099,11 @@ speakers:
     name:
       - {language: en, text: "Jack Vanlightly"}
     company:
-      - {language: en, text: "SII Concatel"}
+      - {language: en, text: Splunk}
     bio:
-      - {language: en, text: "Jack Vanlightly is a software architect and engineer with a focus on distributed systems, messaging\
-            \ systems and automation. He usually can be found working on projects related to event-driven architectures, systems\
-            \ reliability, test strategy and automation. He is active in the open source world, especially in the arena of\
-            \ messaging systems."}
+      - {language: en, text: "Jack Vanlightly is a distributed systems engineer and tester that has focused on messaging systems\
+            \ and distributed system testing. He has worked as a member of the RabbitMQ core team at VMware and is now a principal\
+            \ software engineer at Splunk working on the Apache Pulsar/BookKeeper messaging stack."}
     twitter: vanlightly
   - id: 543
     photoFileName: 0543.jpg
@@ -19109,3 +19107,196 @@ speakers:
       - {language: en, text: "Члены ПК DevOops"}
     company: []
     bio: []
+  - id: 1339
+    photoFileName: 1339.jpg
+    name:
+      - {language: en, text: "Pavel Strunkin"}
+      - {language: ru, text: "Павел Стрункин"}
+    company:
+      - {language: en, text: Ciklum}
+    bio:
+      - {language: en, text: "QA Engineer Automation at Ciklum — Software test automation. Development of automation testing\
+            \ projects for web application of different complexity. Such projects include several levels of testing from unit\
+            \ testing, API testing till automatic browser testing on all systems (Windows, Mac, Linux) using Ruby and Java."}
+      - {language: ru, text: "Инженер автоматизированного тестирования в Ciklum. Разрабатывает проекты по автоматизированн\
+            ому тестированию для веб-приложений разной степени сложности. Некоторые проекты включают в себя несколько уров\
+            ней от модульного и API тестирования до автоматического тестирования браузера на всех системах (Windows, Mac,\
+            \ Linux) с использованием Ruby и Java."}
+    twitter: VisualReTracker
+  - id: 1340
+    photoFileName: 1340.jpg
+    name:
+      - {language: en, text: "Nikolay Golubyev"}
+      - {language: ru, text: "Николай Голубев"}
+    company:
+      - {language: en, text: "Citadel Securities"}
+    bio:
+      - {language: en, text: "Nikolay is a Software Engineer at Citadel Securities creating solutions for Quantitative Researchers.\
+            \ Most of his career he was working in FinTech improving the experience of traders, researchers, developers, and\
+            \ support staff. Nikolay likes to participate in multiple layers of software development — backend, frontend,\
+            \ automated testing, documentation, and release."}
+      - {language: ru, text: "Николай — программист в Citadel Securities, создает решения для Quantitative Researchers. Бо\
+            льшую часть своей карьеры проработал в финтехе, улучшая опыт трейдеров, исследователей, разработчиков и специа\
+            листов поддержки. Николаю нравится участвовать сразу на нескольких уровнях разработки — бэкенд, фронтенд, авто\
+            матизированное тестирование, документация и релиз."}
+    twitter: mgolubyev
+  - id: 1341
+    photoFileName: 1341.jpg
+    name:
+      - {language: en, text: "Anton Potsyus"}
+      - {language: ru, text: "Антон Поцюс"}
+    company:
+      - {language: en, text: "IT Territory/My.Games"}
+    bio:
+      - language: en
+        text: "Winner of the \"Team Lead — Anarchist 2020\" award.\nBass guitarist and Java programmer rolled into one.\n\
+            10 years in the gaming development as a backend developer."
+      - language: ru
+        text: "Обладатель премии «Team Lead — Анархист 2020».\nБас-гитарист и Java-программист в одном лице.\n10 лет в игр\
+            овом бизнесе в качестве backend-разработчика."
+  - id: 1342
+    photoFileName: 1342.jpg
+    name:
+      - {language: en, text: "Shweta Sharma"}
+    company:
+      - {language: en, text: "Axelerant Technologies Pvt. Ltd."}
+    bio:
+      - {language: en, text: "Experienced Quality Assurance Engineer with a demonstrated history of working in the internet\
+            \ industry. Strong quality assurance professional skilled in Requirements Analysis, Test Cases, Agile Methodologies,\
+            \ automated functional and visual regression testing using Behat, Selenium WebDriver, Wraith, Phantomcss, and\
+            \ Shoov on various platforms such as Unix and Windows."}
+    twitter: shwetasharma84
+  - id: 1343
+    photoFileName: 1343.jpg
+    name:
+      - {language: en, text: "Oleksandr Khotemskyi"}
+      - {language: ru, text: "Александр Хотемской"}
+    company:
+      - {language: en, text: "Independent contractor"}
+      - {language: ru, text: "Независимый консультант"}
+    bio:
+      - {language: en, text: "Huge experience in Web, API, Desktop, Mobile, Gamedev using JavaScript, TypeScript, Java, Python.\
+            \ The main specialization is the functional automation of testing at different levels. Trainer in Start-IT in\
+            \ 3 areas: WEB, API, Test Infrastructure. Winner and judge of the Ukrainian Dev Challenge. Speaker at many conferences:\
+            \ QA Fest, Selenium Camp, Simplicity Days, JS fest, and others."}
+      - {language: ru, text: "Огромный опыт в Web, API, Desktop, Mobile, Gamedev с применением JavaScript, TypeScript, Java,\
+            \ Python. Основная специализация — функциональная автоматизация тестирования на разных уровнях. Тренер в Start-IT\
+            \ по 3 направлениям: WEB, API, Test Infrastructure. Участник, победитель и судья Ukrainian Dev Challenge. Докл\
+            адчик на множестве конференций: QA Fest, Selenium Camp, Simplicity Days, JS fest и других."}
+    twitter: xotabu4
+    gitHub: xotabu4
+  - id: 1344
+    photoFileName: 1344.jpg
+    name:
+      - {language: en, text: "Evgeny Chentsov"}
+      - {language: ru, text: "Евгений Ченцов"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - language: en
+        text: "Born and lived most of his live in Krasnoyarsk. In 2012 he graduated from Siberian Federal University with\
+            \ a degree in applied mathematics and computer science.\r\n\r\nHe started his professional career in a small company's\
+            \ support while doing research in the field of mathematical modeling. Despite a wide range of interests, programming\
+            \ has grown into a profession — he has been developing server components on the Allods Online since march 2019."
+      - language: ru
+        text: "Родился и прожил большую часть жизни в Красноярске.\r\nВ 2012 году окончил с отличием Сибирский Федеральный\
+            \ Университет (Институт математики) по специальности «прикладная математика и информатика».\r\n\r\nНачал свой\
+            \ профессиональный путь с работы в поддержке в небольшой компании, параллельно занимаясь научными исследования\
+            ми в области математического моделирования сплошных сред. \r\nНесмотря на широкий круг интересов, именно прогр\
+            аммирование переросло в профессию — с марта 2019 года занимается развитием серверных компонент на проекте «Алл\
+            оды Онлайн» в Mail.Ru Group."
+  - id: 1345
+    photoFileName: 1345.jpg
+    name:
+      - {language: en, text: "Evgeny Krutskikh"}
+      - {language: ru, text: "Евгений Крутских"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - language: en
+        text: "Graduated from Voronezh State Technical University in 2012 with a degree in Information technologies in education.\
+            \ In his last year, Evgeny registered services for Gosuslugi.\nAfter graduation, he was looking for work in game\
+            \ dev and got a job as a QA at Mail.ru. Evgeny worked on the \"Allods Online\" project, then \"Pirates\", after\
+            \ — \"HAWK: Freedom squadron\".\nUntil recently Evgeny worked on the Space Justice project and is currently engaged\
+            \ in a new project."
+      - language: ru
+        text: "Окончил Воронежский Государственный Технический Университет в 2012 году по специальности «Информационные те\
+            хнологии в образовании». На последнем курсе регистрировал сервисы для Госуслуг. \nПосле окончания учебы искал\
+            \ работу в геймдеве и устроился QA в Mail.ru. Работал на проекте «Аллоды Онлайн», затем были «Пираты: Штурм не\
+            бес», после — «HAWK: Freedom squadron». \nДо недавнего времени работал на проекте Space Justice, а в текущий м\
+            омент занимается новым, пока не анонсированным проектом."
+  - id: 1346
+    photoFileName: 1346.jpg
+    name:
+      - {language: en, text: "Vyacheslav Lukashevich"}
+      - {language: ru, text: "Вячеслав Лукашевич"}
+    company:
+      - {language: en, text: "Evolution Gaming Latvia SIA"}
+    bio:
+      - language: en
+        text: "Fan of testing and automation testing from Riga.\nHas a vast experience in testing and building technical solutions\
+            \ for QA in insurance, finance, and gaming projects.\nNow he works at Evolution Gaming Engineering, where he's\
+            \ currently engaged in setting up modern test automation and Continuous Delivery processes.\nOne of the organizers\
+            \ of Riga Test Automation Club."
+      - language: ru
+        text: "Фанат тестирования и автоматизации тестирования из города Рига.\nЗа плечами много опыта в тестировании и по\
+            строении технических решений для QA в страховых, финансовых и игровых проектах.\nСейчас работает в Evolution Gaming\
+            \ Engineering, где на данный момент занимается налаживанием процессов современной автоматизации тестирования и\
+            \ Continuous Delivery.\nОдин из организаторов Riga Test Automation Club."
+  - id: 1347
+    photoFileName: 1347.jpg
+    name:
+      - {language: en, text: "Maksim Rogozhnikov"}
+      - {language: ru, text: "Максим Рогожников"}
+    company:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+    bio:
+      - {language: en, text: "Team lead of load testing team. Maksim has been in performance testing for more than 5 years,\
+            \ during this time he has worked on projects in banking, telecom, retail, and public services."}
+      - {language: ru, text: "Team lead команды нагрузочного тестирования. В тестировании производительности более 5 лет,\
+            \ за это время поработал над проектами в банковской сфере, телекоме, ретейле и госуслугах."}
+  - id: 1348
+    photoFileName: 1348.jpg
+    name:
+      - {language: en, text: "Igor Goldshmidt"}
+      - {language: ru, text: "Игорь Гольдшмидт"}
+    company:
+      - {language: en, text: Moovit}
+    bio:
+      - language: en
+        text: "Igor has been involved in software testing and quality improvement for the last 7 years. He started his way\
+            \ in testing with web applications of banking systems. Then he fought for the quality of desktop and browser extensions\
+            \ at AVG (Antivirus) and a mobile application at Gett (Gettaxi). \nAlso, he managed to be in the role of head\
+            \ of the testing department in the French-Israeli startup SweetInn. Today Igor is a Senior Quality Assurance Engineer\
+            \ at Moovit (Israel). As a passionate fan of testing and quality, he is passionate about researching SQA methodologies,\
+            \ an innovator and architect of test solutions. Igor is the 2018 Israeli Software Testing Champion. Activist of\
+            \ TestIL, the largest testing community in Israel. International speaker and blogger."
+      - language: ru
+        text: "Игорь последние 7 лет занимается тестированием программного обеспечения и повышением качества. Начал свой п\
+            уть в тестировании с веб-приложений банковских систем. Затем вел бои за качество десктопных и браузерных расши\
+            рений в компании AVG (Antivirus) и мобильного приложения в компании Gett (Gettaxi). \n\nУспел побывать в роли\
+            \ главы отдела тестирования во франко-израильском стартапе SweetInn. Сегодня Игорь является старшим инженером\
+            \ по обеспечению качества в компании Moovit (Израиль). Как настоящий страстный фанат тестирования и качества,\
+            \ он увлекается исследованием методологий SQA, инноватор и архитектор тестовых решений. \nЧемпион Израиля по т\
+            естированию программного обеспечения 2018 года. Активист TestIL, крупнейшего сообщества тестирования в Израиле\
+            . Международный спикер и блогер."
+    twitter: IgorGolds
+  - id: 1349
+    photoFileName: 1349.jpg
+    name:
+      - {language: en, text: "James Whittaker"}
+    company:
+      - {language: en, text: "DefinedCrowd Corp."}
+    bio:
+      - language: en
+        text: "James Whittaker's career spans academia, start-ups, and top tech companies and starts in 1986 as the first\
+            \ computer science graduate hired by the FBI. James then worked as a freelance developer, most notably for IBM,\
+            \ Ericsson, SAP, Cisco, and Microsoft, specializing in test automation. He joined the faculty at the Florida Institute\
+            \ of Technology where he continued his prolific publication record in software testing and security. In 2002 his\
+            \ security work was spun off by the university into a startup that was later acquired by Raytheon.\nJames' first\
+            \ stint at Microsoft was in Trustworthy Computing and Visual Studio. He then joined Google as an engineering director\
+            \ and led teams working on Chrome, Maps, and Google+. In 2012 James rejoined Microsoft.\nJames is known for being\
+            \ a creative and passionate leader and sought after speaker and author. Of his five books, two have been Jolt\
+            \ Award finalists."
+    twitter: docjamesw
