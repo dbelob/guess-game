@@ -1352,7 +1352,9 @@ public class ConferenceDataLoader {
 //                        "Edge Computing: А trojan horse of DevOps tribe infiltrating the IoT industry"));
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
 //                Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L));
-//        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc");
+//        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
+//                Collections.emptyMap(),
+//                Set.of("Doctoral workshop", "Title will be announced soon"));
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 10, 7), "2020-spb-devoops");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 10, 9), "2020-spb-cpp");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 10, 23), "2020-joker");
