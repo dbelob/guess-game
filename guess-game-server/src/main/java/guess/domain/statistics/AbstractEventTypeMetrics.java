@@ -61,4 +61,15 @@ public abstract class AbstractEventTypeMetrics extends Metrics {
     public int hashCode() {
         return Objects.hash(super.hashCode(), startDate, age, duration, eventsQuantity, speakersQuantity);
     }
+
+    @Override
+    public String toString() {
+        return "AbstractEventTypeMetrics{" +
+                "startDate=" + startDate +
+                ", age=" + age +
+                ", duration=" + duration +
+                ", eventsQuantity=" + eventsQuantity +
+                ", speakersQuantity=" + speakersQuantity +
+                '}';
+    }
 }

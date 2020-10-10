@@ -32,14 +32,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("StatisticsServiceImpl class tests")
 @ExtendWith(SpringExtension.class)
 class StatisticsServiceImplTest {
-    private static final LocalDate EVENT_START_DATE0 = LocalDate.of(2020, 1, 1);
-    private static final LocalDate EVENT_END_DATE0 = LocalDate.of(2020, 1, 2);
+    private static final LocalDate NOW_DATE;
 
-    private static final LocalDate EVENT_START_DATE1 = LocalDate.of(2020, 9, 3);
-    private static final LocalDate EVENT_END_DATE1 = LocalDate.of(2020, 9, 3);
+    private static final LocalDate EVENT_START_DATE0;
+    private static final LocalDate EVENT_END_DATE0;
+
+    private static final LocalDate EVENT_START_DATE1;
+    private static final LocalDate EVENT_END_DATE1;
 
     private static EventType eventType0;
     private static EventType eventType1;
+
+    static {
+        NOW_DATE = LocalDate.now();
+
+        EVENT_START_DATE0 = NOW_DATE.minus(3, ChronoUnit.DAYS);
+        EVENT_END_DATE0 = EVENT_START_DATE0.plus(1, ChronoUnit.DAYS);
+
+        EVENT_START_DATE1 = NOW_DATE.plus(3, ChronoUnit.DAYS);
+        EVENT_END_DATE1 = EVENT_START_DATE1;
+    }
 
     @TestConfiguration
     static class TestContextConfiguration {
@@ -112,12 +124,10 @@ class StatisticsServiceImplTest {
 
     @Test
     void getEventTypeStatistics() {
-        LocalDate now = LocalDate.now();
-
         EventTypeMetrics eventTypeMetrics0 = new EventTypeMetrics(
                 eventType0,
                 EVENT_START_DATE0,
-                ChronoUnit.YEARS.between(EVENT_START_DATE0, now),
+                ChronoUnit.YEARS.between(EVENT_START_DATE0, NOW_DATE),
                 2,
                 1,
                 1,
@@ -125,8 +135,8 @@ class StatisticsServiceImplTest {
         );
         EventTypeMetrics eventTypeMetrics1 = new EventTypeMetrics(
                 eventType1,
-                EVENT_START_DATE1,
-                ChronoUnit.YEARS.between(EVENT_START_DATE1, now),
+                NOW_DATE,
+                ChronoUnit.YEARS.between(EVENT_START_DATE1, NOW_DATE),
                 1,
                 1,
                 1,
@@ -137,8 +147,8 @@ class StatisticsServiceImplTest {
                 List.of(eventTypeMetrics1),
                 new EventTypeMetrics(
                         new EventType(),
-                        EVENT_START_DATE1,
-                        ChronoUnit.YEARS.between(EVENT_START_DATE1, now),
+                        NOW_DATE,
+                        ChronoUnit.YEARS.between(EVENT_START_DATE1, NOW_DATE),
                         1,
                         1,
                         1,
@@ -150,7 +160,7 @@ class StatisticsServiceImplTest {
                 new EventTypeMetrics(
                         new EventType(),
                         EVENT_START_DATE0,
-                        ChronoUnit.YEARS.between(EVENT_START_DATE0, now),
+                        ChronoUnit.YEARS.between(EVENT_START_DATE0, NOW_DATE),
                         2,
                         1,
                         1,
@@ -162,7 +172,7 @@ class StatisticsServiceImplTest {
                 new EventTypeMetrics(
                         new EventType(),
                         EVENT_START_DATE0,
-                        ChronoUnit.YEARS.between(EVENT_START_DATE0, now),
+                        ChronoUnit.YEARS.between(EVENT_START_DATE0, NOW_DATE),
                         3,
                         2,
                         2,
