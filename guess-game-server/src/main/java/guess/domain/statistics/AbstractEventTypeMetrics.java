@@ -1,6 +1,7 @@
 package guess.domain.statistics;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * Abstract event type metrics.
@@ -41,5 +42,23 @@ public abstract class AbstractEventTypeMetrics extends Metrics {
 
     public long getSpeakersQuantity() {
         return speakersQuantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AbstractEventTypeMetrics)) return false;
+        if (!super.equals(o)) return false;
+        AbstractEventTypeMetrics that = (AbstractEventTypeMetrics) o;
+        return age == that.age &&
+                duration == that.duration &&
+                eventsQuantity == that.eventsQuantity &&
+                speakersQuantity == that.speakersQuantity &&
+                Objects.equals(startDate, that.startDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), startDate, age, duration, eventsQuantity, speakersQuantity);
     }
 }
