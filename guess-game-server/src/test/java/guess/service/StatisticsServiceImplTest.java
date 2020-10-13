@@ -47,6 +47,9 @@ class StatisticsServiceImplTest {
     private static Event event0;
     private static Event event1;
     private static Event event2;
+    private static Speaker speaker0;
+    private static Speaker speaker1;
+    private static Speaker speaker2;
 
     static {
         NOW_DATE = LocalDate.now();
@@ -97,15 +100,15 @@ class StatisticsServiceImplTest {
         eventType2.setId(2);
         eventType2.setConference(Conference.JOKER);
 
-        Speaker speaker0 = new Speaker();
+        speaker0 = new Speaker();
         speaker0.setId(0);
         speaker0.setJavaChampion(true);
 
-        Speaker speaker1 = new Speaker();
+        speaker1 = new Speaker();
         speaker1.setId(1);
         speaker1.setMvp(true);
 
-        Speaker speaker2 = new Speaker();
+        speaker2 = new Speaker();
         speaker2.setId(2);
 
         Talk talk0 = new Talk();
@@ -346,6 +349,191 @@ class StatisticsServiceImplTest {
                 0
         );
         assertEquals(expected4, actual4);
+    }
+
+    private SpeakerStatistics createSpeakerStatistics(List<SpeakerMetrics> speakerMetricsList, Speaker speaker,
+                                                      long talksQuantity, long eventsQuantity, long eventTypesQuantity,
+                                                      long javaChampionsQuantity, long mvpsQuantity) {
+        return new SpeakerStatistics(
+                speakerMetricsList,
+                new SpeakerMetrics(
+                        speaker,
+                        talksQuantity,
+                        eventsQuantity,
+                        eventTypesQuantity,
+                        javaChampionsQuantity,
+                        mvpsQuantity)
+        );
+    }
+
+    @Test
+    void getSpeakerStatistics() {
+        SpeakerMetrics speakerMetrics0 = new SpeakerMetrics(
+                speaker0,
+                1,
+                1,
+                1,
+                1,
+                0);
+        SpeakerMetrics speakerMetrics1 = new SpeakerMetrics(
+                speaker1,
+                1,
+                1,
+                1,
+                0,
+                1);
+        SpeakerMetrics speakerMetrics2 = new SpeakerMetrics(
+                speaker2,
+                1,
+                1,
+                1,
+                0,
+                0);
+
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(false, false, null));
+        assertEquals(
+                createSpeakerStatistics(
+                        List.of(speakerMetrics1),
+                        new Speaker(),
+                        1, 1, 1, 0, 1
+                ),
+                statisticsService.getSpeakerStatistics(false, true, null));
+        assertEquals(
+                createSpeakerStatistics(
+                        List.of(speakerMetrics0, speakerMetrics2),
+                        new Speaker(),
+                        2, 2, 2, 1, 0
+                ),
+                statisticsService.getSpeakerStatistics(true, false, null));
+        assertEquals(
+                createSpeakerStatistics(
+                        List.of(speakerMetrics0, speakerMetrics1, speakerMetrics2),
+                        new Speaker(),
+                        3, 3, 3, 1, 1
+                ),
+                statisticsService.getSpeakerStatistics(true, true, null));
+
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(false, false, 0L));
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(false, true, 0L));
+        assertEquals(
+                createSpeakerStatistics(
+                        List.of(speakerMetrics0),
+                        new Speaker(),
+                        1, 1, 1, 1, 0
+                ),
+                statisticsService.getSpeakerStatistics(true, false, 0L));
+        assertEquals(
+                createSpeakerStatistics(
+                        List.of(speakerMetrics0),
+                        new Speaker(),
+                        1, 1, 1, 1, 0
+                ),
+                statisticsService.getSpeakerStatistics(true, true, 0L));
+
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(false, false, 1L));
+        assertEquals(
+                createSpeakerStatistics(
+                        List.of(speakerMetrics1),
+                        new Speaker(),
+                        1, 1, 1, 0, 1
+                ),
+                statisticsService.getSpeakerStatistics(false, true, 1L));
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(true, false, 1L));
+        assertEquals(
+                createSpeakerStatistics(
+                        List.of(speakerMetrics1),
+                        new Speaker(),
+                        1, 1, 1, 0, 1
+                ),
+                statisticsService.getSpeakerStatistics(true, true, 1L));
+
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(false, false, 2L));
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(false, true, 2L));
+        assertEquals(
+                createSpeakerStatistics(
+                        List.of(speakerMetrics2),
+                        new Speaker(),
+                        1, 1, 1, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(true, false, 2L));
+        assertEquals(
+                createSpeakerStatistics(
+                        List.of(speakerMetrics2),
+                        new Speaker(),
+                        1, 1, 1, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(true, true, 2L));
+
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(false, false, 3L));
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(false, true, 3L));
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(true, false, 3L));
+        assertEquals(
+                createSpeakerStatistics(
+                        Collections.emptyList(),
+                        new Speaker(),
+                        0, 0, 0, 0, 0
+                ),
+                statisticsService.getSpeakerStatistics(true, true, 3L));
     }
 
     @Test

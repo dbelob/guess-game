@@ -1,6 +1,7 @@
 package guess.domain.statistics;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Speaker statistics.
@@ -20,5 +21,27 @@ public class SpeakerStatistics {
 
     public SpeakerMetrics getTotals() {
         return totals;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SpeakerStatistics)) return false;
+        SpeakerStatistics that = (SpeakerStatistics) o;
+        return Objects.equals(speakerMetricsList, that.speakerMetricsList) &&
+                Objects.equals(totals, that.totals);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(speakerMetricsList, totals);
+    }
+
+    @Override
+    public String toString() {
+        return "SpeakerStatistics{" +
+                "speakerMetricsList=" + speakerMetricsList +
+                ", totals=" + totals +
+                '}';
     }
 }

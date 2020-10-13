@@ -179,7 +179,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
                         ((eventTypeId == null) || (et.getId() == eventTypeId)))
                 .collect(Collectors.toList());
-        Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new HashMap<>();
+        Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new LinkedHashMap<>();
         long totalsTalksQuantity = 0;
         long totalsEventsQuantity = 0;
 
