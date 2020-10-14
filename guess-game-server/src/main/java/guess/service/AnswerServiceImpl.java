@@ -69,7 +69,7 @@ public class AnswerServiceImpl implements AnswerService {
         }
     }
 
-    private boolean isSuccess(List<Long> correctAnswerIds, List<Long> yourAnswerIds) {
+    static boolean isSuccess(List<Long> correctAnswerIds, List<Long> yourAnswerIds) {
         return yourAnswerIds.containsAll(correctAnswerIds) && correctAnswerIds.containsAll(yourAnswerIds);
     }
 
