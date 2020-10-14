@@ -23,6 +23,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
@@ -80,7 +81,7 @@ class AnswerServiceImplTest {
             Mockito.when(answerDao.getAnswerSets(Mockito.any())).thenReturn(answerSets);
             Mockito.when(stateDao.getQuestionAnswersSet(Mockito.any())).thenReturn(questionAnswersSet);
 
-            answerService.setAnswer(questionIndex, answerId, httpSession);
+            assertDoesNotThrow(() -> answerService.setAnswer(questionIndex, answerId, httpSession));
         }
     }
 
