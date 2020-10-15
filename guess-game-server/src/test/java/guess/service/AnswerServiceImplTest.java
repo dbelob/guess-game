@@ -109,4 +109,56 @@ class AnswerServiceImplTest {
             assertEquals(expected, AnswerServiceImpl.isSuccess(correctAnswerIds, yourAnswerIds));
         }
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getCurrentQuestionIndex method tests")
+    class GetCurrentQuestionIndexTest {
+        private Stream<Arguments> data() {
+            AnswerSet answerSet0 = new AnswerSet(
+                    List.of(0L),
+                    List.of(1L),
+                    false
+            );
+
+            AnswerSet answerSet1 = new AnswerSet(
+                    List.of(0L),
+                    List.of(0L),
+                    false
+            );
+
+            AnswerSet answerSet2 = new AnswerSet(
+                    List.of(0L),
+                    List.of(1L),
+                    true
+            );
+
+            AnswerSet answerSet3 = new AnswerSet(
+                    List.of(0L),
+                    List.of(0L),
+                    true
+            );
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), 0),
+                    arguments(List.of(answerSet0), 0),
+                    arguments(List.of(answerSet1), 1),
+                    arguments(List.of(answerSet2), 1),
+                    arguments(List.of(answerSet3), 1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void isSuccess(List<AnswerSet> answerSets, int expected) {
+            AnswerDao answerDao = Mockito.mock(AnswerDao.class);
+            StateDao stateDao = Mockito.mock(StateDao.class);
+            AnswerService answerService = new AnswerServiceImpl(answerDao, stateDao);
+            HttpSession httpSession = new MockHttpSession();
+
+            Mockito.when(answerDao.getAnswerSets(Mockito.any())).thenReturn(answerSets);
+
+            assertEquals(expected, answerService.getCurrentQuestionIndex(httpSession));
+        }
+    }
 }
