@@ -161,4 +161,66 @@ class AnswerServiceImplTest {
             assertEquals(expected, answerService.getCurrentQuestionIndex(httpSession));
         }
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getCorrectAnswerIds method tests")
+    class GetCorrectAnswerIdsTest {
+        private Stream<Arguments> data() {
+            AnswerSet answerSet0 = new AnswerSet(
+                    List.of(0L),
+                    List.of(1L),
+                    false
+            );
+
+            return Stream.of(
+                    arguments(0, List.of(answerSet0), List.of(0L)),
+                    arguments(1, List.of(answerSet0), Collections.emptyList())
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getCorrectAnswerIds(int questionIndex, List<AnswerSet> answerSets, List<Long> expected) {
+            AnswerDao answerDao = Mockito.mock(AnswerDao.class);
+            StateDao stateDao = Mockito.mock(StateDao.class);
+            AnswerService answerService = new AnswerServiceImpl(answerDao, stateDao);
+            HttpSession httpSession = new MockHttpSession();
+
+            Mockito.when(answerDao.getAnswerSets(Mockito.any())).thenReturn(answerSets);
+
+            assertEquals(expected, answerService.getCorrectAnswerIds(questionIndex, httpSession));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getYourAnswerIds method tests")
+    class GetYourAnswerIdsTest {
+        private Stream<Arguments> data() {
+            AnswerSet answerSet0 = new AnswerSet(
+                    List.of(0L),
+                    List.of(1L),
+                    false
+            );
+
+            return Stream.of(
+                    arguments(0, List.of(answerSet0), List.of(1L)),
+                    arguments(1, List.of(answerSet0), Collections.emptyList())
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getYourAnswerIds(int questionIndex, List<AnswerSet> answerSets, List<Long> expected) {
+            AnswerDao answerDao = Mockito.mock(AnswerDao.class);
+            StateDao stateDao = Mockito.mock(StateDao.class);
+            AnswerService answerService = new AnswerServiceImpl(answerDao, stateDao);
+            HttpSession httpSession = new MockHttpSession();
+
+            Mockito.when(answerDao.getAnswerSets(Mockito.any())).thenReturn(answerSets);
+
+            assertEquals(expected, answerService.getYourAnswerIds(questionIndex, httpSession));
+        }
+    }
 }
