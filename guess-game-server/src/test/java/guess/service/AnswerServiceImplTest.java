@@ -2,9 +2,14 @@ package guess.service;
 
 import guess.dao.AnswerDao;
 import guess.dao.StateDao;
+import guess.domain.GuessMode;
+import guess.domain.Quadruple;
+import guess.domain.StartParameters;
 import guess.domain.answer.Answer;
 import guess.domain.answer.AnswerSet;
+import guess.domain.answer.Result;
 import guess.domain.answer.SpeakerAnswer;
+import guess.domain.question.Question;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
 import guess.domain.source.Speaker;
@@ -221,6 +226,174 @@ class AnswerServiceImplTest {
             Mockito.when(answerDao.getAnswerSets(Mockito.any())).thenReturn(answerSets);
 
             assertEquals(expected, answerService.getYourAnswerIds(questionIndex, httpSession));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getResult method tests")
+    class GetResultTest {
+        private Stream<Arguments> data() {
+            AnswerSet answerSet0 = new AnswerSet(
+                    List.of(0L),
+                    List.of(1L),
+                    false
+            );
+
+            AnswerSet answerSet1 = new AnswerSet(
+                    List.of(0L),
+                    List.of(0L),
+                    true
+            );
+
+            StartParameters startParameters0 = new StartParameters(
+                    List.of(0L),
+                    List.of(0L),
+                    GuessMode.GUESS_PHOTO_BY_NAME_MODE,
+                    7
+            );
+
+            Question question0 = new Question() {
+                @Override
+                public long getId() {
+                    return 0;
+                }
+
+                @Override
+                public void setId(long id) {
+                    // Nothing
+                }
+            };
+
+            Question question1 = new Question() {
+                @Override
+                public long getId() {
+                    return 1;
+                }
+
+                @Override
+                public void setId(long id) {
+                    // Nothing
+                }
+            };
+
+            Answer answer0 = new Answer() {
+                @Override
+                public long getId() {
+                    return 0;
+                }
+
+                @Override
+                public void setId(long id) {
+                    // Nothing
+                }
+            };
+
+            Answer answer1 = new Answer() {
+                @Override
+                public long getId() {
+                    return 1;
+                }
+
+                @Override
+                public void setId(long id) {
+                    // Nothing
+                }
+            };
+
+            Answer answer2 = new Answer() {
+                @Override
+                public long getId() {
+                    return 2;
+                }
+
+                @Override
+                public void setId(long id) {
+                    // Nothing
+                }
+            };
+
+            Answer answer3 = new Answer() {
+                @Override
+                public long getId() {
+                    return 3;
+                }
+
+                @Override
+                public void setId(long id) {
+                    // Nothing
+                }
+            };
+
+            QuestionAnswers questionAnswers0 = new QuestionAnswers(
+                    question0,
+                    List.of(answer0),
+                    new Quadruple<>(answer0, answer1, answer2, answer3)
+            );
+
+            QuestionAnswers questionAnswers1 = new QuestionAnswers(
+                    question1,
+                    List.of(answer1),
+                    new Quadruple<>(answer0, answer1, answer2, answer3)
+            );
+
+            QuestionAnswersSet questionAnswersSet0 = new QuestionAnswersSet(
+                    Collections.emptyList(),
+                    "",
+                    List.of(questionAnswers0, questionAnswers1)
+            );
+
+            Result result0 = new Result(
+                    1,
+                    1,
+                    0,
+                    0.5F,
+                    0.5F,
+                    0,
+                    GuessMode.GUESS_NAME_BY_PHOTO_MODE
+            );
+
+            Result result1 = new Result(
+                    1,
+                    1,
+                    0,
+                    0.5F,
+                    0.5F,
+                    0,
+                    GuessMode.GUESS_PHOTO_BY_NAME_MODE
+            );
+
+            Result result2 = new Result(
+                    1,
+                    1,
+                    -2,
+                    0,
+                    0,
+                    0,
+                    GuessMode.GUESS_PHOTO_BY_NAME_MODE
+            );
+
+            return Stream.of(
+                    arguments(List.of(answerSet0, answerSet1), null, questionAnswersSet0, result0),
+                    arguments(List.of(answerSet0, answerSet1), startParameters0, questionAnswersSet0, result1),
+                    arguments(List.of(answerSet0, answerSet1), startParameters0, null, result2)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getResult(List<AnswerSet> answerSets, StartParameters startParameters, QuestionAnswersSet questionAnswersSet,
+                       Result expected) {
+            AnswerDao answerDao = Mockito.mock(AnswerDao.class);
+            StateDao stateDao = Mockito.mock(StateDao.class);
+            AnswerService answerService = new AnswerServiceImpl(answerDao, stateDao);
+            HttpSession httpSession = new MockHttpSession();
+
+            Mockito.when(answerDao.getAnswerSets(Mockito.any())).thenReturn(answerSets);
+            Mockito.when(stateDao.getStartParameters(Mockito.any())).thenReturn(startParameters);
+            Mockito.when(stateDao.getQuestionAnswersSet(Mockito.any())).thenReturn(questionAnswersSet);
+
+            assertEquals(expected, answerService.getResult(httpSession));
         }
     }
 }
