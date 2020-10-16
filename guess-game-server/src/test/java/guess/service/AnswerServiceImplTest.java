@@ -5,10 +5,7 @@ import guess.dao.StateDao;
 import guess.domain.GuessMode;
 import guess.domain.Quadruple;
 import guess.domain.StartParameters;
-import guess.domain.answer.Answer;
-import guess.domain.answer.AnswerSet;
-import guess.domain.answer.Result;
-import guess.domain.answer.SpeakerAnswer;
+import guess.domain.answer.*;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
@@ -394,6 +391,115 @@ class AnswerServiceImplTest {
             Mockito.when(stateDao.getQuestionAnswersSet(Mockito.any())).thenReturn(questionAnswersSet);
 
             assertEquals(expected, answerService.getResult(httpSession));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getErrorDetailsList method tests")
+    class GetErrorDetailsListTest {
+        private Stream<Arguments> data() {
+            AnswerSet answerSet0 = new AnswerSet(
+                    List.of(0L),
+                    List.of(1L),
+                    false
+            );
+
+            AnswerSet answerSet1 = new AnswerSet(
+                    List.of(0L),
+                    List.of(0L),
+                    true
+            );
+
+            AnswerSet answerSet2 = new AnswerSet(
+                    List.of(0L),
+                    Collections.emptyList(),
+                    false
+            );
+
+            Question question0 = new Question() {
+                @Override
+                public long getId() {
+                    return 0;
+                }
+
+                @Override
+                public void setId(long id) {
+                    // Nothing
+                }
+            };
+
+            Question question1 = new Question() {
+                @Override
+                public long getId() {
+                    return 1;
+                }
+
+                @Override
+                public void setId(long id) {
+                    // Nothing
+                }
+            };
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+
+            Speaker speaker3 = new Speaker();
+            speaker3.setId(3);
+
+            Answer answer0 = new SpeakerAnswer(speaker0);
+            Answer answer1 = new SpeakerAnswer(speaker1);
+            Answer answer2 = new SpeakerAnswer(speaker2);
+            Answer answer3 = new SpeakerAnswer(speaker3);
+
+            QuestionAnswers questionAnswers0 = new QuestionAnswers(
+                    question0,
+                    List.of(answer0),
+                    new Quadruple<>(answer0, answer1, answer2, answer3)
+            );
+
+            QuestionAnswers questionAnswers1 = new QuestionAnswers(
+                    question1,
+                    List.of(answer1),
+                    new Quadruple<>(answer0, answer1, answer2, answer3)
+            );
+
+            QuestionAnswersSet questionAnswersSet0 = new QuestionAnswersSet(
+                    Collections.emptyList(),
+                    "",
+                    List.of(questionAnswers0, questionAnswers1)
+            );
+
+            ErrorDetails errorDetails0 = new ErrorDetails(
+                    question0,
+                    List.of(answer0, answer1, answer2, answer3),
+                    List.of(answer1)
+            );
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), null, Collections.emptyList()),
+                    arguments(List.of(answerSet0, answerSet1, answerSet2), questionAnswersSet0, List.of(errorDetails0))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getErrorDetailsList(List<AnswerSet> answerSets, QuestionAnswersSet questionAnswersSet, List<ErrorDetails> expected) {
+            AnswerDao answerDao = Mockito.mock(AnswerDao.class);
+            StateDao stateDao = Mockito.mock(StateDao.class);
+            AnswerService answerService = new AnswerServiceImpl(answerDao, stateDao);
+            HttpSession httpSession = new MockHttpSession();
+
+            Mockito.when(answerDao.getAnswerSets(Mockito.any())).thenReturn(answerSets);
+            Mockito.when(stateDao.getQuestionAnswersSet(Mockito.any())).thenReturn(questionAnswersSet);
+
+            assertEquals(expected, answerService.getErrorDetailsList(httpSession));
         }
     }
 }
