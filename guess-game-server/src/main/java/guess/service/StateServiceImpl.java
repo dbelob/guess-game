@@ -85,7 +85,7 @@ public class StateServiceImpl implements StateService {
         return stateDao.getQuestionAnswersSet(httpSession);
     }
 
-    private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
+    public QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
         // Find unique questions by ids
         List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getEventTypeIds(), startParameters.getEventIds(), startParameters.getGuessMode());
 

@@ -17,4 +17,6 @@ public interface StateService {
     void setState(State state, HttpSession httpSession);
 
     QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession);
+
+    QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters);
 }
