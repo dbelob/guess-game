@@ -100,7 +100,7 @@ class StateServiceImplTest {
             AnswerDao answerDao = Mockito.mock(AnswerDao.class);
             EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
             EventDao eventDao = Mockito.mock(EventDao.class);
-            StateServiceImpl stateService = Mockito.mock(StateServiceImpl.class, Mockito.withSettings().useConstructor(stateDao, questionDao, answerDao, eventTypeDao, eventDao));
+            StateService stateService = Mockito.mock(StateServiceImpl.class, Mockito.withSettings().useConstructor(stateDao, questionDao, answerDao, eventTypeDao, eventDao));
             HttpSession httpSession = new MockHttpSession();
 
             Mockito.when(stateService.createQuestionAnswersSet(Mockito.any())).thenReturn(questionAnswersSet);
