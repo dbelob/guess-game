@@ -53,7 +53,7 @@ public class StateServiceImpl implements StateService {
                 httpSession);
     }
 
-    private State getStateByGuessMode(GuessMode guessMode) {
+    State getStateByGuessMode(GuessMode guessMode) {
         switch (guessMode) {
             case GUESS_NAME_BY_PHOTO_MODE:
                 return State.GUESS_NAME_BY_PHOTO_STATE;
@@ -85,7 +85,7 @@ public class StateServiceImpl implements StateService {
         return stateDao.getQuestionAnswersSet(httpSession);
     }
 
-    public QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
+    QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
         // Find unique questions by ids
         List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getEventTypeIds(), startParameters.getEventIds(), startParameters.getGuessMode());
 
@@ -161,7 +161,7 @@ public class StateServiceImpl implements StateService {
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    private List<Answer> getCorrectAnswers(Question question, GuessMode guessMode) {
+    List<Answer> getCorrectAnswers(Question question, GuessMode guessMode) {
         switch (guessMode) {
             case GUESS_NAME_BY_PHOTO_MODE:
             case GUESS_PHOTO_BY_NAME_MODE:
@@ -179,7 +179,7 @@ public class StateServiceImpl implements StateService {
         }
     }
 
-    private List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessMode guessMode) {
+    List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessMode guessMode) {
         switch (guessMode) {
             case GUESS_NAME_BY_PHOTO_MODE:
             case GUESS_PHOTO_BY_NAME_MODE:
