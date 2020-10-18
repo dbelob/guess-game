@@ -1,16 +1,15 @@
 package guess.service;
 
 import guess.dao.*;
-import guess.domain.GuessMode;
-import guess.domain.Quadruple;
-import guess.domain.StartParameters;
-import guess.domain.State;
+import guess.domain.*;
 import guess.domain.answer.Answer;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.question.Question;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
 import guess.domain.question.SpeakerQuestion;
+import guess.domain.source.Event;
+import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -24,6 +23,8 @@ import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.mock.web.MockHttpSession;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
@@ -118,7 +119,6 @@ class StateServiceImplTest {
     @DisplayName("getStateByGuessMode method tests")
     class GetStateByGuessModeTest {
         private Stream<Arguments> data() {
-
             return Stream.of(
                     arguments(GuessMode.GUESS_NAME_BY_PHOTO_MODE, null, State.GUESS_NAME_BY_PHOTO_STATE),
                     arguments(GuessMode.GUESS_PHOTO_BY_NAME_MODE, null, State.GUESS_PHOTO_BY_NAME_STATE),
@@ -188,5 +188,112 @@ class StateServiceImplTest {
         stateService.getQuestionAnswersSet(httpSession);
         Mockito.verify(stateDao, VerificationModeFactory.times(1)).getQuestionAnswersSet(httpSession);
         Mockito.verifyNoMoreInteractions(stateDao);
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("createQuestionAnswersSet method tests")
+    class CreateQuestionAnswersSetTest {
+        private Stream<Arguments> data() {
+            StartParameters startParameters0 = new StartParameters(
+                    List.of(0L),
+                    List.of(0L),
+                    GuessMode.GUESS_PHOTO_BY_NAME_MODE,
+                    42
+            );
+
+            StartParameters startParameters1 = new StartParameters(
+                    List.of(0L),
+                    List.of(0L, 1L),
+                    GuessMode.GUESS_PHOTO_BY_NAME_MODE,
+                    42
+            );
+
+            StartParameters startParameters2 = new StartParameters(
+                    List.of(0L, 1L),
+                    List.of(0L),
+                    GuessMode.GUESS_PHOTO_BY_NAME_MODE,
+                    42
+            );
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+
+            Speaker speaker3 = new Speaker();
+            speaker3.setId(3);
+
+            Question question0 = new SpeakerQuestion(speaker0);
+            Question question1 = new SpeakerQuestion(speaker1);
+            Question question2 = new SpeakerQuestion(speaker2);
+            Question question3 = new SpeakerQuestion(speaker3);
+
+            Answer answer0 = new SpeakerAnswer(speaker0);
+            Answer answer1 = new SpeakerAnswer(speaker1);
+            Answer answer2 = new SpeakerAnswer(speaker2);
+            Answer answer3 = new SpeakerAnswer(speaker3);
+
+            EventType eventType0 = new EventType();
+            eventType0.setConference(Conference.JPOINT);
+
+            EventType eventType1 = new EventType();
+
+            Event event0 = new Event();
+
+            List<Arguments> argumentsList = new ArrayList<>();
+
+            for (StartParameters startParameters : List.of(startParameters0, startParameters1)) {
+                for (EventType eventType : List.of(eventType0, eventType1)) {
+                    for (Event event : Arrays.asList(event0, null)) {
+                        argumentsList.add(arguments(
+                                startParameters,
+                                List.of(question0, question1, question2, question3),
+                                List.of(answer0),
+                                new ArrayList<>(List.of(answer0, answer1, answer2, answer3)),
+                                eventType,
+                                event
+                        ));
+                    }
+                }
+            }
+
+            argumentsList.add(arguments(
+                    startParameters2,
+                    List.of(question0, question1, question2),
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    null,
+                    null
+            ));
+
+            return Stream.of(argumentsList.toArray(new Arguments[0]));
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void createQuestionAnswersSet(StartParameters startParameters, List<Question> uniqueQuestions, List<Answer> correctAnswers,
+                                      List<Answer> allAvailableAnswers, EventType eventType, Event event) {
+            StateDao stateDao = Mockito.mock(StateDao.class);
+            QuestionDao questionDao = Mockito.mock(QuestionDao.class);
+            AnswerDao answerDao = Mockito.mock(AnswerDao.class);
+            EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+            EventDao eventDao = Mockito.mock(EventDao.class);
+            StateServiceImpl stateService = Mockito.mock(StateServiceImpl.class, Mockito.withSettings().useConstructor(stateDao, questionDao, answerDao, eventTypeDao, eventDao));
+
+            Mockito.when(questionDao.getQuestionByIds(Mockito.anyList(), Mockito.anyList(), Mockito.any())).thenReturn(uniqueQuestions);
+            Mockito.when(eventTypeDao.getEventTypeById(Mockito.anyLong())).thenReturn(eventType);
+            Mockito.when(eventDao.getEventById(Mockito.anyLong())).thenReturn(event);
+
+            Mockito.doCallRealMethod().when(stateService).createQuestionAnswersSet(Mockito.any(StartParameters.class));
+            Mockito.when(stateService.getCorrectAnswers(Mockito.any(), Mockito.any())).thenReturn(correctAnswers);
+            Mockito.when(stateService.getAllAvailableAnswers(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(allAvailableAnswers);
+
+            assertDoesNotThrow(() -> stateService.createQuestionAnswersSet(startParameters));
+        }
     }
 }
