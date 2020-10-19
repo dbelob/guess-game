@@ -4,13 +4,12 @@ import guess.dao.*;
 import guess.domain.*;
 import guess.domain.answer.Answer;
 import guess.domain.answer.SpeakerAnswer;
-import guess.domain.question.Question;
-import guess.domain.question.QuestionAnswers;
-import guess.domain.question.QuestionAnswersSet;
-import guess.domain.question.SpeakerQuestion;
+import guess.domain.answer.TalkAnswer;
+import guess.domain.question.*;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
+import guess.domain.source.Talk;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -126,7 +125,7 @@ class StateServiceImplTest {
                     arguments(GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, State.GUESS_SPEAKER_BY_TALK_STATE),
                     arguments(GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, State.GUESS_ACCOUNT_BY_SPEAKER_STATE),
                     arguments(GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, State.GUESS_SPEAKER_BY_ACCOUNT_STATE),
-                    arguments(null, NullPointerException.class, null)
+                    arguments(null, IllegalArgumentException.class, null)
             );
         }
 
@@ -294,6 +293,117 @@ class StateServiceImplTest {
             Mockito.when(stateService.getAllAvailableAnswers(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(allAvailableAnswers);
 
             assertDoesNotThrow(() -> stateService.createQuestionAnswersSet(startParameters));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getCorrectAnswers method tests")
+    class GetCorrectAnswersTest {
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+
+            Talk talk0 = new Talk();
+            talk0.setId(0);
+
+            Question question0 = new SpeakerQuestion(speaker0);
+            Question question1 = new TalkQuestion(List.of(speaker0, speaker1), talk0);
+
+            return Stream.of(
+                    arguments(question0, GuessMode.GUESS_NAME_BY_PHOTO_MODE, null, List.of(new SpeakerAnswer((speaker0)))),
+                    arguments(question0, GuessMode.GUESS_PHOTO_BY_NAME_MODE, null, List.of(new SpeakerAnswer((speaker0)))),
+                    arguments(question0, GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, List.of(new SpeakerAnswer((speaker0)))),
+                    arguments(question0, GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, List.of(new SpeakerAnswer((speaker0)))),
+                    arguments(question1, GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, List.of(new TalkAnswer(talk0))),
+                    arguments(question1, GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, List.of(new SpeakerAnswer((speaker0)), new SpeakerAnswer((speaker1)))),
+                    arguments(null, null, IllegalArgumentException.class, null),
+                    arguments(question0, null, IllegalArgumentException.class, null),
+                    arguments(question1, null, IllegalArgumentException.class, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getCorrectAnswers(Question question, GuessMode guessMode, Class<? extends Throwable> expectedException, List<Answer> expectedValue) {
+            StateServiceImpl stateService = Mockito.mock(StateServiceImpl.class);
+
+            Mockito.when(stateService.getCorrectAnswers(Mockito.any(), Mockito.any())).thenCallRealMethod();
+
+            if (expectedException == null) {
+                assertEquals(expectedValue, stateService.getCorrectAnswers(question, guessMode));
+            } else {
+                assertThrows(expectedException, () -> stateService.getCorrectAnswers(question, guessMode));
+            }
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getAllAvailableAnswers method tests")
+    class GetAllAvailableAnswersTest {
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+
+            Talk talk0 = new Talk();
+            talk0.setId(0);
+            talk0.setSpeakerIds(List.of(0L));
+            talk0.setSpeakers(List.of(speaker0));
+
+            Talk talk1 = new Talk();
+            talk1.setId(1);
+            talk1.setSpeakerIds(List.of(1L));
+            talk1.setSpeakers(List.of(speaker1));
+
+            Talk talk2 = new Talk();
+            talk2.setId(2);
+            talk2.setSpeakerIds(List.of(0L));
+            talk2.setSpeakers(List.of(speaker0));
+
+            Question question0 = new SpeakerQuestion(speaker0);
+            Question question1 = new TalkQuestion(List.of(speaker0, speaker1), talk0);
+
+            Answer answer0 = new TalkAnswer(talk0);
+            Answer answer1 = new TalkAnswer(talk1);
+            Answer answer2 = new TalkAnswer(talk2);
+
+            return Stream.of(
+                    arguments(List.of(question0), null, GuessMode.GUESS_NAME_BY_PHOTO_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(List.of(question0), null, GuessMode.GUESS_PHOTO_BY_NAME_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(List.of(question0), null, GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(List.of(question0), null, GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(List.of(question1), List.of(answer0), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, List.of(new TalkAnswer(talk0))),
+                    arguments(List.of(question1), List.of(answer1), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, List.of(new TalkAnswer(talk0))),
+                    arguments(List.of(question1), List.of(answer2), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, Collections.emptyList()),
+                    arguments(List.of(question1), null, GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(null, null, null, IllegalArgumentException.class, null),
+                    arguments(List.of(question0), null, null, IllegalArgumentException.class, null),
+                    arguments(List.of(question1), null, null, IllegalArgumentException.class, null),
+                    arguments(List.of(question1), List.of(answer0), null, IllegalArgumentException.class, null),
+                    arguments(List.of(question1), List.of(answer1), null, IllegalArgumentException.class, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessMode guessMode,
+                                    Class<? extends Throwable> expectedException, List<Answer> expectedValue) {
+            StateServiceImpl stateService = Mockito.mock(StateServiceImpl.class);
+
+            Mockito.when(stateService.getAllAvailableAnswers(Mockito.any(), Mockito.any(), Mockito.any())).thenCallRealMethod();
+
+            if (expectedException == null) {
+                assertEquals(expectedValue, stateService.getAllAvailableAnswers(questions, correctAnswers, guessMode));
+            } else {
+                assertThrows(expectedException, () -> stateService.getAllAvailableAnswers(questions, correctAnswers, guessMode));
+            }
         }
     }
 }
