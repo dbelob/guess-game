@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
  */
 @Service
 public class StateServiceImpl implements StateService {
-    private final static String UNKNOWN_GUESS_MODE_TEXT = "Unknown guess mode: %s";
+    private static final String UNKNOWN_GUESS_MODE_TEXT = "Unknown guess mode: %s";
 
     private final StateDao stateDao;
     private final QuestionDao questionDao;
