@@ -23,6 +23,8 @@ import java.util.stream.Collectors;
  */
 @Service
 public class StateServiceImpl implements StateService {
+    private final String UNKNOWN_GUESS_MODE_TEXT = "Unknown guess mode: %s";
+
     private final StateDao stateDao;
     private final QuestionDao questionDao;
     private final AnswerDao answerDao;
@@ -67,7 +69,7 @@ public class StateServiceImpl implements StateService {
         } else if (GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
             return State.GUESS_SPEAKER_BY_ACCOUNT_STATE;
         } else {
-            throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
+            throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
     }
 
@@ -175,7 +177,7 @@ public class StateServiceImpl implements StateService {
                     .map(SpeakerAnswer::new)
                     .collect(Collectors.toList());
         } else {
-            throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
+            throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
     }
 
@@ -203,7 +205,7 @@ public class StateServiceImpl implements StateService {
                     .map(SpeakerAnswer::new)
                     .collect(Collectors.toList());
         } else {
-            throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
+            throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
     }
 }
