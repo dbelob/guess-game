@@ -2,9 +2,6 @@ package guess.service;
 
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
-import guess.domain.Conference;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
 import guess.domain.source.Talk;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,8 +15,6 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.util.List;
 
 @DisplayName("EventServiceImpl class tests")
 @ExtendWith(SpringExtension.class)
