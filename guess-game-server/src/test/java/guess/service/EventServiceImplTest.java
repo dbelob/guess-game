@@ -6,11 +6,11 @@ import guess.domain.Conference;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Talk;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +20,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("EventServiceImpl class tests")
 @ExtendWith(SpringExtension.class)
@@ -96,20 +99,36 @@ class EventServiceImplTest {
         eventType2.setId(2);
         eventType2.setConference(Conference.JOKER);
 
+        Talk talk0 = new Talk();
+        talk0.setId(0);
+
+        Talk talk1 = new Talk();
+        talk1.setId(1);
+        talk1.setTalkDay(1L);
+        talk1.setTrackTime(LocalTime.of(9, 0));
+
+        Talk talk2 = new Talk();
+        talk2.setId(2);
+        talk2.setTalkDay(1L);
+        talk2.setTrackTime(LocalTime.of(11, 30));
+
         event0 = new Event();
         event0.setEventType(eventType0);
         event0.setStartDate(EVENT_START_DATE0);
         event0.setEndDate(EVENT_END_DATE0);
+        event0.setTalks(List.of(talk0));
 
         event1 = new Event();
         event1.setEventType(eventType1);
         event1.setStartDate(EVENT_START_DATE1);
         event1.setEndDate(EVENT_END_DATE1);
+        event1.setTalks(List.of(talk1));
 
         event2 = new Event();
         event2.setEventType(eventType2);
         event2.setStartDate(EVENT_START_DATE2);
         event2.setEndDate(EVENT_END_DATE2);
+        event2.setTalks(List.of(talk2));
 
         eventType0.setEvents(List.of(event0));
         eventType1.setEvents(List.of(event1));
@@ -154,6 +173,42 @@ class EventServiceImplTest {
         assertEquals(Collections.emptyList(), eventService.getEvents(false, true, 3L));
         assertEquals(Collections.emptyList(), eventService.getEvents(true, false, 3L));
         assertEquals(Collections.emptyList(), eventService.getEvents(true, true, 3L));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getConferenceDateMinTrackTimeList method tests")
+    class GetConferenceDateMinTrackTimeListTest {
+        private Stream<Arguments> data() {
+            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime0 = new QuestionServiceImpl.EventDateMinTrackTime(
+                    event0,
+                    EVENT_START_DATE0,
+                    LocalTime.of(0, 0)
+            );
+
+            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime1 = new QuestionServiceImpl.EventDateMinTrackTime(
+                    event0,
+                    EVENT_START_DATE0.plus(1, ChronoUnit.DAYS),
+                    LocalTime.of(0, 0)
+            );
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyList()),
+                    arguments(List.of(event0), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1))
+//                    arguments(List.of(event0, event1), Collections.emptyList()),
+//                    arguments(List.of(event0, event1, event2), Collections.emptyList())
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getConferenceDateMinTrackTimeList(List<Event> events, List<QuestionServiceImpl.EventDateMinTrackTime> expected) {
+            EventDao eventDao = Mockito.mock(EventDao.class);
+            EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+            EventServiceImpl eventService = new EventServiceImpl(eventDao, eventTypeDao);
+
+            assertEquals(expected, eventService.getConferenceDateMinTrackTimeList(events));
+        }
     }
 
     @Test

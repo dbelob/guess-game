@@ -106,7 +106,7 @@ public class EventServiceImpl implements EventService {
      * @param events events
      * @return list of (event, date, minimal track time) items
      */
-    private List<QuestionServiceImpl.EventDateMinTrackTime> getConferenceDateMinTrackTimeList(List<Event> events) {
+    List<QuestionServiceImpl.EventDateMinTrackTime> getConferenceDateMinTrackTimeList(List<Event> events) {
         List<QuestionServiceImpl.EventDateMinTrackTime> result = new ArrayList<>();
         Map<Event, Map<Long, Optional<LocalTime>>> minTrackTimeInTalkDaysForConferences = new HashMap<>();
 
@@ -139,7 +139,15 @@ public class EventServiceImpl implements EventService {
 
                 for (long i = 1; i <= days; i++) {
                     LocalDate date = event.getStartDate().plusDays(i - 1);
-                    LocalTime minTrackTime = minTrackTimeInTalkDays.get(i).orElse(LocalTime.of(0, 0));
+
+                    Optional<LocalTime> localTimeOptional;
+                    if (minTrackTimeInTalkDays.containsKey(i)) {
+                        localTimeOptional = minTrackTimeInTalkDays.get(i);
+                    } else {
+                        localTimeOptional = Optional.empty();
+                    }
+
+                    LocalTime minTrackTime = localTimeOptional.orElse(LocalTime.of(0, 0));
 
                     result.add(new QuestionServiceImpl.EventDateMinTrackTime(event, date, minTrackTime));
                 }

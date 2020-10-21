@@ -20,6 +20,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Question service implementation.
@@ -50,6 +51,30 @@ public class QuestionServiceImpl implements QuestionService {
 
         public LocalTime getMinTrackTime() {
             return minTrackTime;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof EventDateMinTrackTime)) return false;
+            EventDateMinTrackTime that = (EventDateMinTrackTime) o;
+            return Objects.equals(event, that.event) &&
+                    Objects.equals(date, that.date) &&
+                    Objects.equals(minTrackTime, that.minTrackTime);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(event, date, minTrackTime);
+        }
+
+        @Override
+        public String toString() {
+            return "EventDateMinTrackTime{" +
+                    "event=" + event +
+                    ", date=" + date +
+                    ", minTrackTime=" + minTrackTime +
+                    '}';
         }
     }
 
