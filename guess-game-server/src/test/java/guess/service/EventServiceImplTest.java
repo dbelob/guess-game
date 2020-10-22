@@ -43,6 +43,13 @@ class EventServiceImplTest {
     private static final LocalDate EVENT_START_DATE2;
     private static final LocalDate EVENT_END_DATE2;
 
+    private static final LocalDate EVENT_START_DATE4;
+
+    private static final LocalDate EVENT_END_DATE5;
+
+    private static final LocalDate EVENT_START_DATE6;
+    private static final LocalDate EVENT_END_DATE6;
+
     private static final LocalTime TALK_TRACK_TIME1;
     private static final LocalTime TALK_TRACK_TIME2;
 
@@ -52,6 +59,10 @@ class EventServiceImplTest {
     private static Event event0;
     private static Event event1;
     private static Event event2;
+    private static Event event3;
+    private static Event event4;
+    private static Event event5;
+    private static Event event6;
 
     static {
         NOW_DATE = LocalDate.now();
@@ -64,6 +75,13 @@ class EventServiceImplTest {
 
         EVENT_START_DATE2 = NOW_DATE.plus(7, ChronoUnit.DAYS);
         EVENT_END_DATE2 = EVENT_START_DATE2;
+
+        EVENT_START_DATE4 = NOW_DATE.plus(8, ChronoUnit.DAYS);
+
+        EVENT_END_DATE5 = EVENT_START_DATE4;
+
+        EVENT_START_DATE6 = NOW_DATE.plus(8, ChronoUnit.DAYS);
+        EVENT_END_DATE6 = EVENT_START_DATE6.minus(1, ChronoUnit.DAYS);
 
         TALK_TRACK_TIME1 = LocalTime.of(9, 0);
         TALK_TRACK_TIME2 = LocalTime.of(11, 30);
@@ -138,6 +156,26 @@ class EventServiceImplTest {
         event2.setStartDate(EVENT_START_DATE2);
         event2.setEndDate(EVENT_END_DATE2);
         event2.setTalks(List.of(talk2));
+
+        event3 = new Event();
+        event3.setId(3);
+        event3.setTalks(List.of(talk2));
+
+        event4 = new Event();
+        event4.setId(4);
+        event4.setStartDate(EVENT_START_DATE4);
+        event4.setTalks(List.of(talk2));
+
+        event5 = new Event();
+        event5.setId(5);
+        event5.setEndDate(EVENT_END_DATE5);
+        event5.setTalks(List.of(talk2));
+
+        event6 = new Event();
+        event6.setId(6);
+        event6.setStartDate(EVENT_START_DATE6);
+        event6.setEndDate(EVENT_END_DATE6);
+        event6.setTalks(List.of(talk2));
 
         eventType0.setEvents(List.of(event0));
         eventType1.setEvents(List.of(event1));
@@ -217,7 +255,8 @@ class EventServiceImplTest {
                     arguments(Collections.emptyList(), Collections.emptyList()),
                     arguments(List.of(event0), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1)),
                     arguments(List.of(event0, event1), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2)),
-                    arguments(List.of(event0, event1, event2), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3))
+                    arguments(List.of(event0, event1, event2), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3)),
+                    arguments(List.of(event0, event1, event2, event3, event4, event5, event6), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3))
             );
         }
 
