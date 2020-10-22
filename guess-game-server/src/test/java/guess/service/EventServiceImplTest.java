@@ -80,7 +80,7 @@ class EventServiceImplTest {
 
         EVENT_END_DATE5 = EVENT_START_DATE4;
 
-        EVENT_START_DATE6 = NOW_DATE.plus(8, ChronoUnit.DAYS);
+        EVENT_START_DATE6 = NOW_DATE.plus(10, ChronoUnit.DAYS);
         EVENT_END_DATE6 = EVENT_START_DATE6.minus(1, ChronoUnit.DAYS);
 
         TALK_TRACK_TIME1 = LocalTime.of(9, 0);
@@ -123,6 +123,22 @@ class EventServiceImplTest {
         eventType2.setId(2);
         eventType2.setConference(Conference.JOKER);
 
+        EventType eventType3 = new EventType();
+        eventType3.setId(3);
+        eventType3.setConference(Conference.HEISENBUG);
+
+        EventType eventType4 = new EventType();
+        eventType4.setId(4);
+        eventType4.setConference(Conference.DOT_NEXT);
+
+        EventType eventType5 = new EventType();
+        eventType5.setId(2);
+        eventType5.setConference(Conference.HOLY_JS);
+
+        EventType eventType6 = new EventType();
+        eventType6.setId(6);
+        eventType6.setConference(Conference.CPP_RUSSIA);
+
         Talk talk0 = new Talk();
         talk0.setId(0);
 
@@ -159,20 +175,24 @@ class EventServiceImplTest {
 
         event3 = new Event();
         event3.setId(3);
+        event3.setEventType(eventType3);
         event3.setTalks(List.of(talk2));
 
         event4 = new Event();
         event4.setId(4);
+        event4.setEventType(eventType4);
         event4.setStartDate(EVENT_START_DATE4);
         event4.setTalks(List.of(talk2));
 
         event5 = new Event();
         event5.setId(5);
+        event5.setEventType(eventType5);
         event5.setEndDate(EVENT_END_DATE5);
         event5.setTalks(List.of(talk2));
 
         event6 = new Event();
         event6.setId(6);
+        event6.setEventType(eventType6);
         event6.setStartDate(EVENT_START_DATE6);
         event6.setEndDate(EVENT_END_DATE6);
         event6.setTalks(List.of(talk2));
@@ -256,6 +276,7 @@ class EventServiceImplTest {
                     arguments(List.of(event0), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1)),
                     arguments(List.of(event0, event1), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2)),
                     arguments(List.of(event0, event1, event2), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3)),
+                    arguments(List.of(event3, event4, event5, event6), Collections.emptyList()),
                     arguments(List.of(event0, event1, event2, event3, event4, event5, event6), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3))
             );
         }
