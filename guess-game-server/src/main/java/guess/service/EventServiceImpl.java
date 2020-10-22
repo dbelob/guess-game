@@ -108,7 +108,7 @@ public class EventServiceImpl implements EventService {
      */
     List<QuestionServiceImpl.EventDateMinTrackTime> getConferenceDateMinTrackTimeList(List<Event> events) {
         List<QuestionServiceImpl.EventDateMinTrackTime> result = new ArrayList<>();
-        Map<Event, Map<Long, Optional<LocalTime>>> minTrackTimeInTalkDaysForConferences = new HashMap<>();
+        Map<Event, Map<Long, Optional<LocalTime>>> minTrackTimeInTalkDaysForConferences = new LinkedHashMap<>();
 
         // Calculate start time minimum for each days of each event
         for (Event event : events) {

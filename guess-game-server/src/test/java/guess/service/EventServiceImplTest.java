@@ -43,6 +43,9 @@ class EventServiceImplTest {
     private static final LocalDate EVENT_START_DATE2;
     private static final LocalDate EVENT_END_DATE2;
 
+    private static final LocalTime TALK_TRACK_TIME1;
+    private static final LocalTime TALK_TRACK_TIME2;
+
     private static EventType eventType0;
     private static EventType eventType1;
     private static EventType eventType2;
@@ -61,6 +64,9 @@ class EventServiceImplTest {
 
         EVENT_START_DATE2 = NOW_DATE.plus(7, ChronoUnit.DAYS);
         EVENT_END_DATE2 = EVENT_START_DATE2;
+
+        TALK_TRACK_TIME1 = LocalTime.of(9, 0);
+        TALK_TRACK_TIME2 = LocalTime.of(11, 30);
     }
 
     @TestConfiguration
@@ -105,26 +111,29 @@ class EventServiceImplTest {
         Talk talk1 = new Talk();
         talk1.setId(1);
         talk1.setTalkDay(1L);
-        talk1.setTrackTime(LocalTime.of(9, 0));
+        talk1.setTrackTime(TALK_TRACK_TIME1);
 
         Talk talk2 = new Talk();
         talk2.setId(2);
         talk2.setTalkDay(1L);
-        talk2.setTrackTime(LocalTime.of(11, 30));
+        talk2.setTrackTime(TALK_TRACK_TIME2);
 
         event0 = new Event();
+        event0.setId(0);
         event0.setEventType(eventType0);
         event0.setStartDate(EVENT_START_DATE0);
         event0.setEndDate(EVENT_END_DATE0);
         event0.setTalks(List.of(talk0));
 
         event1 = new Event();
+        event1.setId(1);
         event1.setEventType(eventType1);
         event1.setStartDate(EVENT_START_DATE1);
         event1.setEndDate(EVENT_END_DATE1);
         event1.setTalks(List.of(talk1));
 
         event2 = new Event();
+        event2.setId(2);
         event2.setEventType(eventType2);
         event2.setStartDate(EVENT_START_DATE2);
         event2.setEndDate(EVENT_END_DATE2);
@@ -192,11 +201,23 @@ class EventServiceImplTest {
                     LocalTime.of(0, 0)
             );
 
+            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime2 = new QuestionServiceImpl.EventDateMinTrackTime(
+                    event1,
+                    EVENT_START_DATE1,
+                    TALK_TRACK_TIME1
+            );
+
+            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime3 = new QuestionServiceImpl.EventDateMinTrackTime(
+                    event2,
+                    EVENT_START_DATE2,
+                    TALK_TRACK_TIME2
+            );
+
             return Stream.of(
                     arguments(Collections.emptyList(), Collections.emptyList()),
-                    arguments(List.of(event0), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1))
-//                    arguments(List.of(event0, event1), Collections.emptyList()),
-//                    arguments(List.of(event0, event1, event2), Collections.emptyList())
+                    arguments(List.of(event0), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1)),
+                    arguments(List.of(event0, event1), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2)),
+                    arguments(List.of(event0, event1, event2), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3))
             );
         }
 
