@@ -7,6 +7,7 @@ import guess.domain.answer.Result;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Result DTO.
@@ -67,5 +68,21 @@ public class ResultDto extends Result {
                 speakerErrorDetailsList,
                 talkErrorDetailsList,
                 accountErrorDetailsList);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ResultDto)) return false;
+        if (!super.equals(o)) return false;
+        ResultDto resultDto = (ResultDto) o;
+        return Objects.equals(speakerErrorDetailsList, resultDto.speakerErrorDetailsList) &&
+                Objects.equals(talkErrorDetailsList, resultDto.talkErrorDetailsList) &&
+                Objects.equals(accountErrorDetailsList, resultDto.accountErrorDetailsList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), speakerErrorDetailsList, talkErrorDetailsList, accountErrorDetailsList);
     }
 }

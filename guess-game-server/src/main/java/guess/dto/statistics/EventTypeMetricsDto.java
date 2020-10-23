@@ -8,6 +8,7 @@ import guess.domain.statistics.Metrics;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -72,5 +73,23 @@ public class EventTypeMetricsDto extends AbstractEventTypeMetrics {
         return eventTypeMetricsList.stream()
                 .map(etm -> convertToDto(etm, language))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof EventTypeMetricsDto)) return false;
+        if (!super.equals(o)) return false;
+        EventTypeMetricsDto that = (EventTypeMetricsDto) o;
+        return id == that.id &&
+                conference == that.conference &&
+                Objects.equals(displayName, that.displayName) &&
+                Objects.equals(sortName, that.sortName) &&
+                Objects.equals(logoFileName, that.logoFileName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id, displayName, sortName, conference, logoFileName);
     }
 }
