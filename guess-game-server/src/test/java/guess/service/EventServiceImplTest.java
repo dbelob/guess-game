@@ -13,10 +13,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
@@ -86,29 +82,6 @@ class EventServiceImplTest {
         TALK_TRACK_TIME1 = LocalTime.of(9, 0);
         TALK_TRACK_TIME2 = LocalTime.of(11, 30);
     }
-
-    @TestConfiguration
-    static class EventServiceImplTestConfiguration {
-        @MockBean
-        EventDao eventDao;
-
-        @MockBean
-        EventTypeDao eventTypeDao;
-
-        @Bean
-        EventService eventService() {
-            return new EventServiceImpl(eventDao, eventTypeDao);
-        }
-    }
-
-    @Autowired
-    EventDao eventDao;
-
-    @Autowired
-    EventTypeDao eventTypeDao;
-
-    @Autowired
-    EventService eventService;
 
     @BeforeAll
     static void init() {
@@ -202,44 +175,61 @@ class EventServiceImplTest {
         eventType2.setEvents(List.of(event2));
     }
 
-    @BeforeEach
-    void setUp() {
-        Mockito.when(eventTypeDao.getEventTypes()).thenReturn(List.of(eventType0, eventType1, eventType2));
-    }
-
     @Test
     void getEventById() {
+        EventDao eventDao = Mockito.mock(EventDao.class);
+        EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+        EventService eventService = new EventServiceImpl(eventDao, eventTypeDao);
+
         eventService.getEventById(0);
         Mockito.verify(eventDao, VerificationModeFactory.times(1)).getEventById(0);
         Mockito.verifyNoMoreInteractions(eventDao);
     }
 
-    @Test
-    void getEvents() {
-        assertEquals(Collections.emptyList(), eventService.getEvents(false, false, null));
-        assertEquals(List.of(event1), eventService.getEvents(false, true, null));
-        assertEquals(List.of(event0, event2), eventService.getEvents(true, false, null));
-        assertEquals(List.of(event0, event1, event2), eventService.getEvents(true, true, null));
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getEvents method tests")
+    class GetEventsTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(false, false, null, Collections.emptyList()),
+                    arguments(false, true, null, List.of(event1)),
+                    arguments(true, false, null, List.of(event0, event2)),
+                    arguments(true, true, null, List.of(event0, event1, event2)),
 
-        assertEquals(Collections.emptyList(), eventService.getEvents(false, false, 0L));
-        assertEquals(Collections.emptyList(), eventService.getEvents(false, true, 0L));
-        assertEquals(List.of(event0), eventService.getEvents(true, false, 0L));
-        assertEquals(List.of(event0), eventService.getEvents(true, true, 0L));
+                    arguments(false, false, 0L, Collections.emptyList()),
+                    arguments(false, true, 0L, Collections.emptyList()),
+                    arguments(true, false, 0L, List.of(event0)),
+                    arguments(true, true, 0L, List.of(event0)),
 
-        assertEquals(Collections.emptyList(), eventService.getEvents(false, false, 1L));
-        assertEquals(List.of(event1), eventService.getEvents(false, true, 1L));
-        assertEquals(Collections.emptyList(), eventService.getEvents(true, false, 1L));
-        assertEquals(List.of(event1), eventService.getEvents(true, true, 1L));
+                    arguments(false, false, 1L, Collections.emptyList()),
+                    arguments(false, true, 1L, List.of(event1)),
+                    arguments(true, false, 1L, Collections.emptyList()),
+                    arguments(true, true, 1L, List.of(event1)),
 
-        assertEquals(Collections.emptyList(), eventService.getEvents(false, false, 2L));
-        assertEquals(Collections.emptyList(), eventService.getEvents(false, true, 2L));
-        assertEquals(List.of(event2), eventService.getEvents(true, false, 2L));
-        assertEquals(List.of(event2), eventService.getEvents(true, true, 2L));
+                    arguments(false, false, 2L, Collections.emptyList()),
+                    arguments(false, true, 2L, Collections.emptyList()),
+                    arguments(true, false, 2L, List.of(event2)),
+                    arguments(true, true, 2L, List.of(event2)),
 
-        assertEquals(Collections.emptyList(), eventService.getEvents(false, false, 3L));
-        assertEquals(Collections.emptyList(), eventService.getEvents(false, true, 3L));
-        assertEquals(Collections.emptyList(), eventService.getEvents(true, false, 3L));
-        assertEquals(Collections.emptyList(), eventService.getEvents(true, true, 3L));
+                    arguments(false, false, 3L, Collections.emptyList()),
+                    arguments(false, true, 3L, Collections.emptyList()),
+                    arguments(true, false, 3L, Collections.emptyList()),
+                    arguments(true, true, 3L, Collections.emptyList())
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getEvents(boolean isConferences, boolean isMeetups, Long eventTypeId, List<Event> expected) {
+            EventDao eventDao = Mockito.mock(EventDao.class);
+            EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+            EventService eventService = new EventServiceImpl(eventDao, eventTypeDao);
+
+            Mockito.when(eventTypeDao.getEventTypes()).thenReturn(List.of(eventType0, eventType1, eventType2));
+
+            assertEquals(expected, eventService.getEvents(isConferences, isMeetups, eventTypeId));
+        }
     }
 
     @Nested
@@ -296,6 +286,10 @@ class EventServiceImplTest {
     void getEventByTalk() {
         Talk talk0 = new Talk();
         talk0.setId(0);
+
+        EventDao eventDao = Mockito.mock(EventDao.class);
+        EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+        EventService eventService = new EventServiceImpl(eventDao, eventTypeDao);
 
         eventService.getEventByTalk(talk0);
         Mockito.verify(eventDao, VerificationModeFactory.times(1)).getEventByTalk(talk0);
