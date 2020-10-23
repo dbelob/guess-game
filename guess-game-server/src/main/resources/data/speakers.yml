@@ -117,17 +117,16 @@ speakers:
     company:
       - {language: en, text: "Dino Systems"}
     bio:
-      - {language: en, text: "Andrey — project lead and an architect in Dino Systems. Programs in Java for seven years. Has\
-            \ an experience in development of different kinds of apps: desktop, mobile, server. He's mostly interested in\
-            \ concurrent programming and distributed systems. He's currently working on a high availability system for audio/video\
-            \ conferences."}
+      - language: en
+        text: "Andrey is a software architect in Genestack, where he works on the storage and search system for biological\
+            \ data. Prior to Genestack, Andrey worked on a new consensus algorithm and other distributed things in Elastic.\
+            \ He's mostly interested in concurrent programming and distributed systems.\nAndrey has a bachelor degree in business\
+            \ informatics and master degree in mathematical methods in economics."
       - language: ru
-        text: "Андрей — руководитель проектов и архитектор в компании Dino Systems. Занимается программированием на Java 7\
-            \ лет. Имеет опыт разработки приложений различного масштаба: настольных, мобильных, корпоративных, а также сер\
-            верных приложений с большим количеством пользователей. Основные интересы — конкурентное программирование и пос\
-            троение распределённых систем. Сейчас работает над высокодоступной системой аудио- и видео-конференций.\n\nАнд\
-            рей окончил бакалавриат по специальности бизнес-информатика, магистратуру по специальности мат. методы в эконо\
-            мике, интересуется биологией и биоинформатикой."
+        text: "Андрей работает архитектором в компании Genestack над продуктом для поиска и хранения биологических данных\
+            .\_До этого работал над алгоритмом консенсуса и другими распределенными задачами в Elastic. Основные интересы\
+            \ — конкурентное программирование и построение распределённых систем.\nАндрей окончил бакалавриат по специальн\
+            ости бизнес-информатика, магистратуру по специальности мат. методы в экономике."
     gitHub: andrershov
   - id: 7
     photoFileName: 0007.jpg
@@ -3639,18 +3638,20 @@ speakers:
   - id: 237
     photoFileName: 0237.jpg
     name:
-      - {language: en, text: "Andrei Solntsev"}
+      - {language: en, text: "Andrey Solntsev"}
       - {language: ru, text: "Андрей Солнцев"}
     company:
       - {language: en, text: Codeborne}
     bio:
-      - {language: en, text: "Software craftsman at Codeborne (Tallinn, Estonia). Aggressive fan of extreme programming, autotests,\
-            \ pair programming and clean code. Creator of Selenide — an open-source library for UI tests in Java. Organizer\
-            \ of devclub.eu. Frequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
-            \ Testing Days, TopConf, DevConFu, Devoxx."}
-      - {language: ru, text: "Андрей — разработчик в эстонской компании Codeborne. Автор фреймворка Selenide, организатор\
-            \ таллинского Devclub, частый докладчик на конференциях. Ярый приверженец экстремального программирования, авт\
-            оматических тестов, парного программирования и чистого кода."}
+      - language: en
+        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
+            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
+            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."
+      - language: ru
+        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
+            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
+            , парного программирования и чистого кода."
     twitter: asolntsev
     gitHub: asolntsev
   - id: 238
@@ -8384,17 +8385,17 @@ speakers:
   - id: 561
     photoFileName: 0561.jpg
     name:
-      - {language: en, text: "Viktar Karanevich"}
+      - {language: en, text: "Viktor Koronevich"}
       - {language: ru, text: "Виктор Короневич"}
     company:
       - {language: en, text: Badoo}
     bio:
-      - {language: en, text: "Senior Software Test Automation Engineer, Badoo, London, UK. 10+ years experience in automation\
-            \ of mobile apps. Viktar writes tests on Java / Ruby. He likes to explore the world, investigate issues with Fault\
+      - {language: en, text: "Senior Software Test Automation Engineer at Badoo, UK. 10+ years experience in automation of\
+            \ mobile apps. Viktor writes tests on Java/Ruby. He likes to explore the world, investigate issues with Fault\
             \ Fail и Fault Pass tests."}
-      - {language: ru, text: "Senior Software Test Automation Engineer, Badoo, Лондон, Великобритания. 10+ лет опыта в авт\
-            оматизации тестирования мобильных приложений. Пишет тесты на Java / Ruby. Любит исследовать мир, разбираться с\
-            \ Fault Fail- и Fault Pass-тестами."}
+      - {language: ru, text: "Senior Software Test Automation Engineer в Badoo, Великобритания. 10+ лет опыта в автоматиза\
+            ции тестирования мобильных приложений. Пишет тесты на Java/Ruby. Любит исследовать мир, разбираться с Fault Fail-\
+            \ и Fault Pass-тестами."}
   - id: 562
     photoFileName: 0562.jpg
     name:
@@ -16006,10 +16007,11 @@ speakers:
     company:
       - {language: en, text: Badoo}
     bio:
-      - {language: en, text: "Has been testing mobile applications for more than 5 years. For the last 2,5 years, Dmitry has\
-            \ been working as Android QA in Badoo, where he does both manual testing and test automation for Android applications."}
-      - {language: ru, text: "Тестирует мобильные приложения более 5 лет. Последние 2,5 года работает Android QA в Badoo,\
-            \ где занимается как ручным тестированием, так и автоматизацией тестов для Андроид-приложения."}
+      - {language: en, text: "Has been testing mobile applications for more than 5 years. For the last 3 years, Dmitry has\
+            \ been working as Mobile QA at Badoo, where he does both manual testing and test automation for Android and iOS\
+            \ applications."}
+      - {language: ru, text: "Тестирует мобильные приложения более 5 лет. Последние 3 года работает Mobile QA в Badoo, где\
+            \ занимается как ручным тестированием, так и автоматизацией тестов для Android и iOS приложений."}
   - id: 1098
     photoFileName: 1098.jpg
     name:
@@ -19122,15 +19124,14 @@ speakers:
     name:
       - {language: en, text: "Pavel Strunkin"}
       - {language: ru, text: "Павел Стрункин"}
-    company:
-      - {language: en, text: Ciklum}
+    company: []
     bio:
       - {language: en, text: "QA Engineer Automation at Ciklum — Software test automation. Development of automation testing\
             \ projects for web application of different complexity. Such projects include several levels of testing from unit\
             \ testing, API testing till automatic browser testing on all systems (Windows, Mac, Linux) using Ruby and Java."}
       - {language: ru, text: "Инженер автоматизированного тестирования в Ciklum. Разрабатывает проекты по автоматизированн\
             ому тестированию для веб-приложений разной степени сложности. Некоторые проекты включают в себя несколько уров\
-            ней от модульного и API тестирования до автоматического тестирования браузера на всех системах (Windows, Mac,\
+            ней: от модульного и API-тестирования — до автоматического тестирования браузера на всех системах (Windows, Mac,\
             \ Linux) с использованием Ruby и Java."}
     twitter: VisualReTracker
   - id: 1340
@@ -19171,11 +19172,16 @@ speakers:
     company:
       - {language: en, text: "Axelerant Technologies Pvt. Ltd."}
     bio:
-      - {language: en, text: "Experienced Quality Assurance Engineer with a demonstrated history of working in the internet\
-            \ industry. Strong quality assurance professional skilled in Requirements Analysis, Test Cases, Agile Methodologies,\
-            \ automated functional and visual regression testing using Behat, Selenium WebDriver, Wraith, Phantomcss, and\
-            \ Shoov on various platforms such as Unix and Windows."}
+      - language: en
+        text: "Shweta is a QA professional with over twelve years of experience in agile environments. At Axelerant, she leads\
+            \ the entire QA team and her work responsibilities involve Onboarding new joiners, training them in the Drupal\
+            \ admin interface. She also plays a vital role in architecting the Test Automation on various projects at Axelerant.\
+            \ She is also the track chair for QA Automation, CI/CD track for DrupalCon Minneapolis 2020, DrupalCamp Goa, and\
+            \ DrupalCamp Delhi 2019 along with being a committee member of the Training proposals at DrupalCon Minneapolis\
+            \ 2020.\n\nShe believes in empowering the underrepresented/unprivileged people from society and contributes to\
+            \ their growth in her own small way."
     twitter: shwetasharma84
+    gitHub: shwetaneelsharma
   - id: 1343
     photoFileName: 1343.jpg
     name:
@@ -19201,7 +19207,7 @@ speakers:
       - {language: en, text: "Evgeny Chentsov"}
       - {language: ru, text: "Евгений Ченцов"}
     company:
-      - {language: en, text: "Mail.Ru Group"}
+      - {language: en, text: "IT Territory/MyGames"}
     bio:
       - language: en
         text: "Born and lived most of his live in Krasnoyarsk. In 2012 he graduated from Siberian Federal University with\
@@ -19221,7 +19227,7 @@ speakers:
       - {language: en, text: "Evgeny Krutskikh"}
       - {language: ru, text: "Евгений Крутских"}
     company:
-      - {language: en, text: "Mail.Ru Group"}
+      - {language: en, text: "IT Territory/MyGames"}
     bio:
       - language: en
         text: "Graduated from Voronezh State Technical University in 2012 with a degree in Information technologies in education.\
@@ -19241,7 +19247,7 @@ speakers:
       - {language: en, text: "Vyacheslav Lukashevich"}
       - {language: ru, text: "Вячеслав Лукашевич"}
     company:
-      - {language: en, text: "Evolution Gaming Latvia SIA"}
+      - {language: en, text: "Evolution Engineering"}
     bio:
       - language: en
         text: "Fan of testing and automation testing from Riga.\nHas a vast experience in testing and building technical solutions\
