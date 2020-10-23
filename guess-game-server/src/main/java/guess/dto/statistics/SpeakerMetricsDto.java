@@ -7,6 +7,7 @@ import guess.domain.statistics.SpeakerMetrics;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -100,5 +101,22 @@ public class SpeakerMetricsDto extends AbstractSpeakerMetrics {
         return speakerMetricsList.stream()
                 .map(sm -> convertToDto(sm, language, speakerDuplicates))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SpeakerMetricsDto)) return false;
+        if (!super.equals(o)) return false;
+        SpeakerMetricsDto that = (SpeakerMetricsDto) o;
+        return id == that.id &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(photoFileName, that.photoFileName) &&
+                Objects.equals(degrees, that.degrees);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id, name, photoFileName, degrees);
     }
 }
