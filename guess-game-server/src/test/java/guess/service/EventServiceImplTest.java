@@ -16,6 +16,7 @@ import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
@@ -229,6 +230,77 @@ class EventServiceImplTest {
             Mockito.when(eventTypeDao.getEventTypes()).thenReturn(List.of(eventType0, eventType1, eventType2));
 
             assertEquals(expected, eventService.getEvents(isConferences, isMeetups, eventTypeId));
+        }
+    }
+
+    @Test
+    void getDefaultEvent() {
+        EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class);
+
+        Mockito.doCallRealMethod().when(eventService).getDefaultEvent();
+
+        eventService.getDefaultEvent();
+        Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent();
+        Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(Mockito.any(LocalDateTime.class));
+        Mockito.verifyNoMoreInteractions(eventService);
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getDefaultEvent method tests")
+    class GetDefaultEventTest {
+        private Stream<Arguments> data() {
+            LocalDateTime dateTime = LocalDateTime.of(2020, 10, 23, 9, 0);
+            LocalDate date = dateTime.toLocalDate();
+
+            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime0 = new QuestionServiceImpl.EventDateMinTrackTime(
+                    event0,
+                    date.minus(1, ChronoUnit.DAYS),
+                    LocalTime.of(9, 0)
+            );
+
+            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime1 = new QuestionServiceImpl.EventDateMinTrackTime(
+                    event0,
+                    date.plus(1, ChronoUnit.DAYS),
+                    LocalTime.of(9, 0)
+            );
+
+            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime2 = new QuestionServiceImpl.EventDateMinTrackTime(
+                    event2,
+                    date,
+                    LocalTime.of(9, 0)
+            );
+
+            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime3 = new QuestionServiceImpl.EventDateMinTrackTime(
+                    event0,
+                    date,
+                    LocalTime.of(10, 0)
+            );
+
+            return Stream.of(
+                    arguments(dateTime, Collections.emptyList(), null, null),
+                    arguments(dateTime, List.of(event1), null, null),
+                    arguments(dateTime, List.of(event0), Collections.emptyList(), null),
+                    arguments(dateTime, List.of(event0), List.of(eventDateMinTrackTime0), null),
+                    arguments(dateTime, List.of(event0), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1), event0),
+                    arguments(dateTime, List.of(event0), List.of(eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3), event2),
+                    arguments(dateTime, List.of(event0), List.of(eventDateMinTrackTime1, eventDateMinTrackTime3), event0)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getDefaultEvent(LocalDateTime dateTime, List<Event> events, List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeList, Event expected) {
+            EventDao eventDao = Mockito.mock(EventDao.class);
+            EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+            EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class, Mockito.withSettings().useConstructor(eventDao, eventTypeDao));
+
+            Mockito.when(eventDao.getEventsFromDate(Mockito.any())).thenReturn(events);
+
+            Mockito.doCallRealMethod().when(eventService).getDefaultEvent(Mockito.any());
+            Mockito.when(eventService.getConferenceDateMinTrackTimeList(Mockito.any())).thenReturn(eventDateMinTrackTimeList);
+
+            assertEquals(expected, eventService.getDefaultEvent(dateTime));
         }
     }
 

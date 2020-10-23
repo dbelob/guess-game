@@ -46,7 +46,10 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Event getDefaultEvent() {
-        LocalDateTime dateTime = LocalDateTime.now(ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID));
+        return getDefaultEvent(LocalDateTime.now(ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID)));
+    }
+
+    Event getDefaultEvent(LocalDateTime dateTime) {
         LocalDate date = dateTime.toLocalDate();
         LocalTime time = dateTime.toLocalTime();
 
