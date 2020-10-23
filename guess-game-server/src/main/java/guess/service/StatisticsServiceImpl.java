@@ -23,24 +23,6 @@ public class StatisticsServiceImpl implements StatisticsService {
     private final EventTypeDao eventTypeDao;
     private final EventDao eventDao;
 
-    static class SpeakerMetricsInternal {
-        private final Set<Talk> talks = new HashSet<>();
-        private final Set<Event> events = new HashSet<>();
-        private final Set<EventType> eventTypes = new HashSet<>();
-
-        public Set<Talk> getTalks() {
-            return talks;
-        }
-
-        public Set<Event> getEvents() {
-            return events;
-        }
-
-        public Set<EventType> getEventTypes() {
-            return eventTypes;
-        }
-    }
-
     @Autowired
     public StatisticsServiceImpl(EventTypeDao eventTypeDao, EventDao eventDao) {
         this.eventTypeDao = eventTypeDao;
@@ -197,7 +179,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
                         ((eventTypeId == null) || (et.getId() == eventTypeId)))
                 .collect(Collectors.toList());
-        Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new HashMap<>();
+        Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new LinkedHashMap<>();
         long totalsTalksQuantity = 0;
         long totalsEventsQuantity = 0;
 

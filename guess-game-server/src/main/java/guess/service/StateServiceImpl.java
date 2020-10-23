@@ -23,6 +23,8 @@ import java.util.stream.Collectors;
  */
 @Service
 public class StateServiceImpl implements StateService {
+    private static final String UNKNOWN_GUESS_MODE_TEXT = "Unknown guess mode: %s";
+
     private final StateDao stateDao;
     private final QuestionDao questionDao;
     private final AnswerDao answerDao;
@@ -53,20 +55,21 @@ public class StateServiceImpl implements StateService {
                 httpSession);
     }
 
-    private State getStateByGuessMode(GuessMode guessMode) {
-        switch (guessMode) {
-            case GUESS_NAME_BY_PHOTO_MODE:
-                return State.GUESS_NAME_BY_PHOTO_STATE;
-            case GUESS_PHOTO_BY_NAME_MODE:
-                return State.GUESS_PHOTO_BY_NAME_STATE;
-            case GUESS_TALK_BY_SPEAKER_MODE:
-                return State.GUESS_TALK_BY_SPEAKER_STATE;
-            case GUESS_SPEAKER_BY_TALK_MODE:
-                return State.GUESS_SPEAKER_BY_TALK_STATE;
-            case GUESS_ACCOUNT_BY_SPEAKER_MODE:
-                return State.GUESS_ACCOUNT_BY_SPEAKER_STATE;
-            default:
-                return State.GUESS_SPEAKER_BY_ACCOUNT_STATE;
+    State getStateByGuessMode(GuessMode guessMode) {
+        if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode)) {
+            return State.GUESS_NAME_BY_PHOTO_STATE;
+        } else if (GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode)) {
+            return State.GUESS_PHOTO_BY_NAME_STATE;
+        } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
+            return State.GUESS_TALK_BY_SPEAKER_STATE;
+        } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
+            return State.GUESS_SPEAKER_BY_TALK_STATE;
+        } else if (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode)) {
+            return State.GUESS_ACCOUNT_BY_SPEAKER_STATE;
+        } else if (GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
+            return State.GUESS_SPEAKER_BY_ACCOUNT_STATE;
+        } else {
+            throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
     }
 
@@ -85,7 +88,7 @@ public class StateServiceImpl implements StateService {
         return stateDao.getQuestionAnswersSet(httpSession);
     }
 
-    private QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
+    QuestionAnswersSet createQuestionAnswersSet(StartParameters startParameters) {
         // Find unique questions by ids
         List<Question> uniqueQuestions = questionDao.getQuestionByIds(startParameters.getEventTypeIds(), startParameters.getEventIds(), startParameters.getGuessMode());
 
@@ -161,50 +164,48 @@ public class StateServiceImpl implements StateService {
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    private List<Answer> getCorrectAnswers(Question question, GuessMode guessMode) {
-        switch (guessMode) {
-            case GUESS_NAME_BY_PHOTO_MODE:
-            case GUESS_PHOTO_BY_NAME_MODE:
-            case GUESS_ACCOUNT_BY_SPEAKER_MODE:
-            case GUESS_SPEAKER_BY_ACCOUNT_MODE:
-                return Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker()));
-            case GUESS_TALK_BY_SPEAKER_MODE:
-                return Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk()));
-            case GUESS_SPEAKER_BY_TALK_MODE:
-                return ((TalkQuestion) question).getSpeakers().stream()
-                        .map(SpeakerAnswer::new)
-                        .collect(Collectors.toList());
-            default:
-                throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
+    List<Answer> getCorrectAnswers(Question question, GuessMode guessMode) {
+        if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ||
+                GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode) ||
+                GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ||
+                GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
+            return Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker()));
+        } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
+            return Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk()));
+        } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
+            return ((TalkQuestion) question).getSpeakers().stream()
+                    .map(SpeakerAnswer::new)
+                    .collect(Collectors.toList());
+        } else {
+            throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
     }
 
-    private List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessMode guessMode) {
-        switch (guessMode) {
-            case GUESS_NAME_BY_PHOTO_MODE:
-            case GUESS_PHOTO_BY_NAME_MODE:
-            case GUESS_ACCOUNT_BY_SPEAKER_MODE:
-            case GUESS_SPEAKER_BY_ACCOUNT_MODE:
-                return questions.stream()
-                        .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
-                        .collect(Collectors.toList());
-            case GUESS_TALK_BY_SPEAKER_MODE:
-                Talk correctAnswerTalk = ((TalkAnswer) correctAnswers.get(0)).getTalk();
+    List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessMode guessMode) {
+        if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ||
+                GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode) ||
+                GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ||
+                GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
+            return questions.stream()
+                    .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
+                    .collect(Collectors.toList());
+        } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
+            Talk correctAnswerTalk = ((TalkAnswer) correctAnswers.get(0)).getTalk();
 
-                return questions.stream()
-                        .map(q -> ((TalkQuestion) q).getTalk())
-                        .filter(t -> (t.getId() == correctAnswerTalk.getId()) || !t.getSpeakerIds().containsAll(correctAnswerTalk.getSpeakerIds()))
-                        .map(TalkAnswer::new)
-                        .collect(Collectors.toList());
-            case GUESS_SPEAKER_BY_TALK_MODE:
-                return questions.stream()
-                        .map(q -> ((TalkQuestion) q).getTalk().getSpeakers())
-                        .flatMap(Collection::stream)
-                        .distinct()
-                        .map(SpeakerAnswer::new)
-                        .collect(Collectors.toList());
-            default:
-                throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
+            return questions.stream()
+                    .map(q -> ((TalkQuestion) q).getTalk())
+                    .filter(t -> (t.getId() == correctAnswerTalk.getId()) || !t.getSpeakerIds().containsAll(correctAnswerTalk.getSpeakerIds()))
+                    .map(TalkAnswer::new)
+                    .collect(Collectors.toList());
+        } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
+            return questions.stream()
+                    .map(q -> ((TalkQuestion) q).getTalk().getSpeakers())
+                    .flatMap(Collection::stream)
+                    .distinct()
+                    .map(SpeakerAnswer::new)
+                    .collect(Collectors.toList());
+        } else {
+            throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
     }
 }

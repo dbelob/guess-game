@@ -223,7 +223,7 @@
         <td>2020&nbsp;Spb<br>(2020-spb)</td>
         <td rowspan="2">2020<br>(2020-msk-sptdc)</td>
         <td rowspan="2">2020<br>(2020smartdata)</td>
-        <td rowspan="2">2020<br>(2020-spb-tt)</td>
+        <td>2020&nbsp;Summer<br>(2020-spb-tt)</td>
         <td rowspan="2">2020</td>
         <td rowspan="2">2020</td>
         <td rowspan="2">2020</td>
@@ -235,5 +235,6 @@
         <td>2020&nbsp;Msk<br>(2020msk)</td>
         <td>2020&nbsp;Msk<br>(2020msk)</td>
         <td>2020&nbsp;Msk<br>(2020msk)</td>
+        <td>2020&nbsp;Autumn<br>(2020techtrainautumn)</td>
     </tr>
 </table>

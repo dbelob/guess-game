@@ -248,10 +248,8 @@ eventTypes:
     name:
       - {language: en, text: Joker}
     shortDescription:
-      - language: en
-        text: "The largest Java conference in Russia"
-      - language: ru
-        text: "Международная Java-конференция для опытных разработчиков"
+      - {language: en, text: "The largest Java conference in Russia"}
+      - {language: ru, text: "Международная Java-конференция для опытных разработчиков"}
     longDescription:
       - language: en
         text: "Joker (St. Petersburg) is a deeply technical Java conference for experienced Senior / Regular developers and\
@@ -271,8 +269,7 @@ eventTypes:
             оработать за легендарным Apple Lisa и другими винтажными гаджетами.\n\nКонференция ориентируется на участников\
             , которые хорошо разбираются в Java. Сильные и технически сложные доклады гарантируют высокое качество аудитор\
             ии. Широкий охват целевой аудитории и высокий профессиональный уровень участников будут обеспечены богатым орг\
-            анизаторским опытом, тщательным отбором докладов, направлением конференции на обучение конкретным вещам.\n\nПе\
-            рейти на сайт Joker"
+            анизаторским опытом, тщательным отбором докладов, направлением конференции на обучение конкретным вещам."
     siteLink:
       - {language: en, text: "https://jokerconf.com/en/"}
       - {language: ru, text: "https://jokerconf.com/"}
@@ -353,9 +350,9 @@ eventTypes:
       - {language: en, text: SmartData}
     shortDescription:
       - language: en
-        text: "The conference is devoted to Big Data world and technical aspects of data processing"
+        text: "Data Engineering conference"
       - language: ru
-        text: "Конференция, посвящённая техническим вопросам из мира Big Data и обработки данных"
+        text: "Конференция по Data Engineering"
     longDescription:
       - {language: en, text: "SmartData is a technical conference for those involved with the world of machine learning, analysis\
             \ and data processing."}
@@ -389,7 +386,7 @@ eventTypes:
       - {language: en, text: TechTrain}
     shortDescription:
       - language: en
-        text: "IT - Festival"
+        text: "IT festival"
       - language: ru
         text: "IT - Фестиваль"
     longDescription:

@@ -2,6 +2,8 @@ package guess.domain.answer;
 
 import guess.domain.GuessMode;
 
+import java.util.Objects;
+
 /**
  * Result.
  */
@@ -52,5 +54,37 @@ public class Result {
 
     public GuessMode getGuessMode() {
         return guessMode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Result)) return false;
+        Result result = (Result) o;
+        return correctAnswers == result.correctAnswers &&
+                wrongAnswers == result.wrongAnswers &&
+                skippedAnswers == result.skippedAnswers &&
+                Float.compare(result.correctPercents, correctPercents) == 0 &&
+                Float.compare(result.wrongPercents, wrongPercents) == 0 &&
+                Float.compare(result.skippedPercents, skippedPercents) == 0 &&
+                guessMode == result.guessMode;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(correctAnswers, wrongAnswers, skippedAnswers, correctPercents, wrongPercents, skippedPercents, guessMode);
+    }
+
+    @Override
+    public String toString() {
+        return "Result{" +
+                "correctAnswers=" + correctAnswers +
+                ", wrongAnswers=" + wrongAnswers +
+                ", skippedAnswers=" + skippedAnswers +
+                ", correctPercents=" + correctPercents +
+                ", wrongPercents=" + wrongPercents +
+                ", skippedPercents=" + skippedPercents +
+                ", guessMode=" + guessMode +
+                '}';
     }
 }

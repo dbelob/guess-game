@@ -377,7 +377,7 @@ events:
     siteLink:
       - {language: ru, text: "https://heisenbug-moscow.ru/"}
     placeId: 24
-    talkIds: [2595, 2575, 2576, 2577, 2578, 2579, 2580, 2581, 2582, 2583, 2584, 2585, 2586, 2587, 2596, 2588, 2589, 2590,
+    talkIds: [2595, 2575, 2576, 2577, 2578, 2579, 2607, 2581, 2582, 2583, 2608, 2588, 2586, 2587, 2596, 2585, 2589, 2590,
               2591, 2592, 2593, 2597, 2594]
   # HolyJS
   - eventTypeId: 4
@@ -945,7 +945,7 @@ events:
               1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344]
   - eventTypeId: 12
     name:
-      - {language: en, text: "TechTrain 2020"}
+      - {language: en, text: "TechTrain 2020 Summer"}
     startDate: "2020-06-06"
     endDate: "2020-06-06"
     siteLink:
@@ -954,6 +954,16 @@ events:
     youtubeLink: https://live.jugru.org/online/100081r10004282
     placeId: 24
     talkIds: [2374, 2375, 2376, 2377, 2386, 2378, 2379, 2380, 2384]
+  - eventTypeId: 12
+    name:
+      - {language: en, text: "TechTrain 2020 Autumn"}
+    startDate: "2020-10-24"
+    endDate: "2020-10-24"
+    siteLink:
+      - {language: ru, text: "https://techtrain.ru/"}
+    youtubeLink: https://live.jugru.org/events/techtrain
+    placeId: 24
+    talkIds: [2598, 2599, 2600, 2601, 2602, 2603, 2604, 2605, 2606]
   # JUG.MSK
   - eventTypeId: 13
     name:
