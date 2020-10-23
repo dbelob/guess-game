@@ -390,7 +390,8 @@ public class ConferenceDataLoader {
      * @return talks without opening and closing
      */
     static List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
-        Set<String> deletedTalks = Set.of("Conference opening", "Conference closing", "School opening", "School closing");
+        Set<String> deletedTalks = Set.of("Conference opening", "Conference closing", "School opening", "School closing",
+                "Открытие", "Закрытие");
 
         return talks.stream()
                 .filter(t -> {
@@ -1355,6 +1356,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
 //                Collections.emptyMap(),
 //                Set.of("Doctoral workshop", "Title will be announced soon"));
+//        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 4), "2020msk");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 11), "2020msk");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 11, 11), "2020spbcpp");

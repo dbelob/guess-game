@@ -2685,12 +2685,12 @@ speakers:
     company:
       - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "I was born in 1979 in St.-Petersburg (Leningrad) and graduated from Physics Department of St.-Petersburg\
-            \ State University. My experience with Java dates back from the version 1.1. For many years I was an assistant\
-            \ professor in St.-Petersburg State University and taught computer science and mathematics courses. From 2015\
-            \ I am a senior analyst in OK.ru, where I deal with various aspects of data mining and machine learning. I have\
-            \ been involved with functional programming for many years and outside of the main job and Java stack I am also\
-            \ a Haskell programmer. For data mining purposes I use both Spark/Scala and R programming language.rnrn"}
+      - {language: en, text: "Was born in 1979 in St.Petersburg (Leningrad) and graduated from Physics Department of St.Petersburg\
+            \ State University. His experience with Java dates back from the version 1.1. For many years Vitaly was an assistant\
+            \ professor in St.Petersburg State University and taught computer science and mathematics courses. From 2015 is\
+            \ a senior analyst in Odnoklassniki, where he deals with various aspects of data mining and machine learning.\
+            \ Has been involved with functional programming for many years and outside of the main job and Java stack is also\
+            \ a Haskell programmer. For data mining purposes uses both Spark/Scala and R programming language."}
       - {language: ru, text: "Закончил физический факультет СПбГУ, последние 16 лет преподает с некоторыми незначительными\
             \ перерывами, сейчас на матмехе СПбГУ и в ВШЭ. В JetBrains занимается развитием Data Science-инструментов. Так\
             же на полставки является ведущим аналитиком в социальной сети Одноклассники. Специалист по обработке больших д\
@@ -3639,20 +3639,18 @@ speakers:
   - id: 237
     photoFileName: 0237.jpg
     name:
-      - {language: en, text: "Andrey Solntsev"}
+      - {language: en, text: "Andrei Solntsev"}
       - {language: ru, text: "Андрей Солнцев"}
     company:
       - {language: en, text: Codeborne}
     bio:
-      - language: en
-        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
-            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
-            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
-            \ Testing Days, TopConf, DevConFu, Devoxx."
-      - language: ru
-        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
-            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
-            , парного программирования и чистого кода."
+      - {language: en, text: "Software craftsman at Codeborne (Tallinn, Estonia). Aggressive fan of extreme programming, autotests,\
+            \ pair programming and clean code. Creator of Selenide — an open-source library for UI tests in Java. Organizer\
+            \ of devclub.eu. Frequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."}
+      - {language: ru, text: "Андрей — разработчик в эстонской компании Codeborne. Автор фреймворка Selenide, организатор\
+            \ таллинского Devclub, частый докладчик на конференциях. Ярый приверженец экстремального программирования, авт\
+            оматических тестов, парного программирования и чистого кода."}
     twitter: asolntsev
     gitHub: asolntsev
   - id: 238
@@ -4023,7 +4021,7 @@ speakers:
     bio:
       - {language: en, text: "15 years of JS everywhere: from microcontrollers to rendering video in the cloud. More than\
             \ 6 years of educational experience (at two universities and Illya's own courses), Ph.D. in Computer Science (field\
-            \ of interest: System Analysis and Theory of optimal decisions). Now works as front-end developer in GitLab."}
+            \ of interest: System Analysis and Theory of optimal decisions). Now works as frontend developer in GitLab."}
       - {language: ru, text: "15 лет программирует на JS во всех его проявлениях: от микроконтроллеров до облачного рендер\
             инга видео. Более 6 лет профессионально учит людей (в двух вузах и на собственных курсах), кандидат технически\
             х наук. Сейчас занимается фронтом в GitLab."}
@@ -12799,7 +12797,7 @@ speakers:
   - id: 858
     photoFileName: 0858.jpg
     name:
-      - {language: en, text: "Eugene Saturov"}
+      - {language: en, text: "Evgeny Saturov"}
       - {language: ru, text: "Евгений Сатуров"}
     company:
       - {language: en, text: Surf}
@@ -13708,6 +13706,18 @@ speakers:
     name:
       - {language: en, text: "Evgeny Kot"}
       - {language: ru, text: "Евгений Кот"}
+    company:
+      - {language: en, text: Wrike}
+    bio:
+      - {language: en, text: "Evgeny used to work on .NET, Microsoft stack for quite a long time. He worked at Quest Software,\
+            \ after that he moved to Dell to work on frontend. He worked his way from CoffeeScript + Angular 1.0 to Dart +\
+            \ Angular 2.0. Currently Evgeny works at Wrike, a high-load SaaS application with very rich client code. Wrike\
+            \ team uses Dart and Angular 2.0 and aspires to be up-to-date with all modern trends in the web world."}
+      - {language: ru, text: "Долгое время занимался .NET, Microsoft stack. Работал в Quest Software, после этого в Dell,\
+            \ где начал заниматься фронтендом. Прошёл путь от CoffeeScript + Angular 1.0 до Dart + Angular 2.0. На данный\
+            \ момент трудится во Wrike в высоконагруженном SaaS-приложении с очень богатым клиентским кодом. Команда Wrike\
+            \ пишет на Dart и Angular 2.0 и стремится быть up-to-date со всеми современными течениями в мире веб."}
+    twitter: bunopus
   - id: 927
     photoFileName: 0927.jpg
     name:
@@ -19346,3 +19356,28 @@ speakers:
             зрабатываемый продукт, но и сам процесс его создания. Сейчас работает PO и теперь тестирует как можно раньше:\
             \ тестирует идеи."}
     twitter: ManukhinaDarya
+  - id: 1352
+    photoFileName: 1352.jpg
+    name:
+      - {language: en, text: "Ksenia Tomak"}
+      - {language: ru, text: "Ксения Томак"}
+    company:
+      - {language: en, text: "Dodo Engineering"}
+    bio:
+      - {language: en, text: "Former C# developer, for the last 6 years she has been worked with various data storage. Now\
+            \ she's a Data Engineering Tech Lead at Dodo Engineering and co-organizer of DE or DIE meetup. Focus: database\
+            \ engines, data processing optimization, data modeling."}
+      - {language: ru, text: "В прошлом разработчик C#, последние 6 лет занимается различными хранилищами. Сейчас является\
+            \ техлидом Data Engineering в Dodo Engineering, а также соорганизатором DE or DIE meetup. Сфера интересов: дви\
+            жки баз данных, оптимизация обработки данных, моделирование данных."}
+  - id: 1353
+    photoFileName: 1353.jpg
+    name:
+      - {language: en, text: "Sergey Platonov"}
+      - {language: ru, text: "Сергей Платонов"}
+    company:
+      - {language: en, text: gapfruit}
+    bio:
+      - {language: en, text: "C++ developer, organizer of C++ Siberia."}
+      - {language: ru, text: "C++ программист. Организатор C++ Siberia."}
+    twitter: sermp
