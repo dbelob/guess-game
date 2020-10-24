@@ -7,6 +7,7 @@ import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.image.UrlFilename;
 import guess.domain.source.load.LoadResult;
+import guess.domain.source.load.LoadSettings;
 import guess.domain.source.load.SpeakerLoadMaps;
 import guess.domain.source.load.SpeakerLoadResult;
 import guess.util.yaml.YamlUtils;
@@ -164,18 +165,16 @@ public class ConferenceDataLoader {
     /**
      * Loads talks, speakers, event information.
      *
-     * @param conference         conference
-     * @param startDate          start date
-     * @param conferenceCode     conference code
-     * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
-     * @param invalidTalksSet    invalid talk name set
+     * @param conference     conference
+     * @param startDate      start date
+     * @param conferenceCode conference code
+     * @param loadSettings   load settings
      * @throws IOException                if resource files could not be opened
      * @throws SpeakerDuplicatedException if speakers duplicated
      * @throws NoSuchFieldException       if field name is invalid
      */
     static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                       Map<NameCompany, Long> knownSpeakerIdsMap,
-                                       Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                                       LoadSettings loadSettings) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, places, events, speakers, talks from resource files
@@ -211,7 +210,7 @@ public class ConferenceDataLoader {
                 contentfulEvent.getStartDate(), contentfulEvent.getEndDate());
 
         // Read talks from Contentful
-        List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode);
+        List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode, loadSettings.isIgnoreDemoStage());
         log.info("Talks (in Contentful): {}", contentfulTalks.size());
         contentfulTalks.forEach(
                 t -> log.trace("Talk: nameEn: '{}', name: '{}'",
@@ -220,7 +219,7 @@ public class ConferenceDataLoader {
         );
 
         // Delete invalid talks
-        contentfulTalks = deleteInvalidTalks(contentfulTalks, invalidTalksSet);
+        contentfulTalks = deleteInvalidTalks(contentfulTalks, loadSettings.getInvalidTalksSet());
 
         // Delete opening and closing talks
         contentfulTalks = deleteOpeningAndClosingTalks(contentfulTalks);
@@ -271,7 +270,7 @@ public class ConferenceDataLoader {
         SpeakerLoadResult speakerLoadResult = getSpeakerLoadResult(
                 contentfulSpeakers,
                 new SpeakerLoadMaps(
-                        knownSpeakerIdsMap,
+                        loadSettings.getKnownSpeakerIdsMap(),
                         resourceSpeakerIdsMap,
                         resourceRuNameCompanySpeakers,
                         resourceEnNameCompanySpeakers,
@@ -329,22 +328,6 @@ public class ConferenceDataLoader {
     /**
      * Loads talks, speakers, event information.
      *
-     * @param conference         conference
-     * @param startDate          start date
-     * @param conferenceCode     conference code
-     * @param knownSpeakerIdsMap (name, company)/(speaker id) map for known speakers
-     * @throws IOException                if resource files could not be opened
-     * @throws SpeakerDuplicatedException if speakers duplicated
-     * @throws NoSuchFieldException       if field name is invalid
-     */
-    static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode, Map<NameCompany, Long> knownSpeakerIdsMap)
-            throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-        loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, Collections.emptySet());
-    }
-
-    /**
-     * Loads talks, speakers, event information.
-     *
      * @param conference     conference
      * @param startDate      start date
      * @param conferenceCode conference code
@@ -354,7 +337,7 @@ public class ConferenceDataLoader {
      */
     static void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode)
             throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-        loadTalksSpeakersEvent(conference, startDate, conferenceCode, Collections.emptyMap(), Collections.emptySet());
+        loadTalksSpeakersEvent(conference, startDate, conferenceCode, LoadSettings.defaultSettings());
     }
 
     /**
@@ -1253,50 +1236,50 @@ public class ConferenceDataLoader {
         // Load talks, speaker and event
         // 2016
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker",
-//                Map.of(new NameCompany("Jean-Philippe BEMPEL", "Ullink"), 155L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Jean-Philippe BEMPEL", "Ullink"), 155L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel",
-//                Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk",
-//                Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2016, 12, 10), "2016msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2016, 12, 11), "2016msk");
 
         // 2017
 //        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2017, 4, 4), "2017JBreak",
-//                Collections.emptyMap(), Set.of("Верхом на реактивных стримах"));
+//                LoadSettings.invalidTalksSet(Set.of("Верхом на реактивных стримах")));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2017, 4, 7), "2017JPoint",
-//                Map.of(new NameCompany("Владимир Озеров", "GridGain Systems"), 28L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Озеров", "GridGain Systems"), 28L)));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2017, 4, 21), "2017spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2017, 5, 19), "2017spb",
-//                Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2017, 6, 2), "2017spb");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2017, 6, 4), "2017spb");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2017, 10, 20), "2017DevOops",
-//                Map.of(new NameCompany("Ray Тsang", "Google"), 377L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Ray Тsang", "Google"), 377L)));
 //        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2017, 10, 21), "2017smartdata");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2017, 11, 3), "2017Joker");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2017, 11, 11), "2017msk",
-//                Map.of(new NameCompany("Владимир Иванов", "EPAM Systems"), 852L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Иванов", "EPAM Systems"), 852L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2017, 11, 12), "2017msk",
-//                Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2017, 12, 8), "2017msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2017, 12, 10), "2017msk");
 
         // 2018
 //        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2018, 3, 4), "2018JBreak",
-//                Collections.emptyMap(),
-//                Set.of("Верхом на реактивных стримах"));
+//                LoadSettings.invalidTalksSet(Set.of("Верхом на реактивных стримах")));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2018, 4, 6), "2018JPoint");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2018, 4, 20), "2018spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 4, 22), "2018spb",
-//                Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2018, 5, 17), "2018spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2018, 5, 19), "2018spb");
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2018, 9, 1), "2018tt");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2018, 10, 14), "2018DevOops");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2018, 10, 19), "2018Joker",
-//                Map.of(new NameCompany("Алексей Федоров", "JUG.ru Group"), 7L,
-//                        new NameCompany("Павел Финкельштейн", "lamoda"), 8L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(
+//                        new NameCompany("Алексей Федоров", "JUG.ru Group"), 7L,
+//                        new NameCompany("Павел Финкельштейн", "lamoda"), 8L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 11, 22), "2018msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2018, 11, 24), "2018msk");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2018, 12, 6), "2018msk");
@@ -1304,11 +1287,11 @@ public class ConferenceDataLoader {
 
         // 2019
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2019, 4, 5), "2019jpoint",
-//                Map.of(new NameCompany("Паша Финкельштейн", "Lamoda"), 8L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Паша Финкельштейн", "Lamoda"), 8L)));
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2019, 4, 19), "2019cpp",
-//                Map.of(new NameCompany("Павел Новиков", "Align Technology"), 351L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Павел Новиков", "Align Technology"), 351L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2019, 5, 15), "2019spb",
-//                Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2019, 5, 17), "2019spb");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2019, 5, 22), "2019spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2019, 5, 24), "2019spb");
@@ -1320,7 +1303,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2019, 10, 31), "2019-spb-cpp");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2019, 11, 6), "2019msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2019, 11, 8), "2019msk",
-//                Map.of(new NameCompany("Lucas Fernandes da Costa", "Converge"), 659L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Lucas Fernandes da Costa", "Converge"), 659L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2019, 12, 5), "2019msk");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2019, 12, 7), "2019msk");
 
@@ -1328,36 +1311,32 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 6, 6), "2020-spb-tt");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 6, 15), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 6, 15), "2020-spb",
-//                Collections.emptyMap(),
-//                Set.of("Комбинаторный подход к тестированию распределенной системы", "Автотесты на страже качества IDE",
+//                LoadSettings.invalidTalksSet(Set.of("Комбинаторный подход к тестированию распределенной системы", "Автотесты на страже качества IDE",
 //                        "Тестирование безопасности для SQA", "Процесс тестирования производительности в геймдеве",
-//                        "Производительность iOS-приложений и техники ее тестирования"));
+//                        "Производительность iOS-приложений и техники ее тестирования")));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 6, 22), "2020-spb");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 6, 22), "2020-spb",
-//                Collections.emptyMap(),
-//                Set.of("Monorepo. Стоит ли игра свеч?", "ТестирUI правильно"));
+//                LoadSettings.invalidTalksSet(Set.of("Monorepo. Стоит ли игра свеч?", "ТестирUI правильно")));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2020, 6, 29), "2020-jpoint");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 6, 29), "2020-msk-cpp",
-//                Collections.emptyMap(),
-//                Set.of("Сопрограммы в С++20. Прошлое, настоящее и будущее",
+//                LoadSettings.invalidTalksSet(Set.of("Сопрограммы в С++20. Прошлое, настоящее и будущее",
 //                        "Use-After-Free Busters: C++ Garbage Collector in Chrome",
 //                        "A standard audio API for C++",
 //                        "Coroutine X-rays and other magical superpowers",
-//                        "Компьютерные игры: Как загрузить все ядра CPU"));
+//                        "Компьютерные игры: Как загрузить все ядра CPU")));
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 7, 6), "2020-msk-devoops",
-//                Collections.emptyMap(),
-//                Set.of("Title will be announced soon", "Context based access with Google’s BeyondCorp",
+//                LoadSettings.invalidTalksSet(Set.of("Title will be announced soon", "Context based access with Google’s BeyondCorp",
 //                        "Применяем dogfooding: От Ops к Dev в Яндекс.Облако", "Kubernetes service discovery",
 //                        "Event Gateways: Что? Зачем? Как?", "Continuously delivering infrastructure",
 //                        "The lifecycle of a service", "Безопасность и Kubernetes",
-//                        "Edge Computing: А trojan horse of DevOps tribe infiltrating the IoT industry"));
+//                        "Edge Computing: А trojan horse of DevOps tribe infiltrating the IoT industry")));
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
-//                Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L)));
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
-//                Collections.emptyMap(),
-//                Set.of("Doctoral workshop", "Title will be announced soon"));
+//                LoadSettings.invalidTalksSet(Set.of("Doctoral workshop", "Title will be announced soon")));
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn");
-//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 4), "2020msk");
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 4), "2020msk",
+//                LoadSettings.ignoreDemoStage(false));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 11), "2020msk");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 11, 11), "2020spbcpp");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 11, 25), "2020joker");

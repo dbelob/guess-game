@@ -7,6 +7,7 @@ import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.image.UrlFilename;
 import guess.domain.source.load.LoadResult;
+import guess.domain.source.load.LoadSettings;
 import guess.domain.source.load.SpeakerLoadMaps;
 import guess.domain.source.load.SpeakerLoadResult;
 import guess.util.yaml.YamlUtils;
@@ -266,7 +267,7 @@ class ConferenceDataLoaderTest {
             speaker0.setId(0);
 
             return Stream.of(
-                    arguments(JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE, Collections.emptyMap(), Collections.emptySet(),
+                    arguments(JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE, LoadSettings.defaultSettings(),
                             new SourceInformation(
                                     List.of(place0),
                                     List.of(eventType0),
@@ -276,7 +277,7 @@ class ConferenceDataLoaderTest {
                             event0,
                             List.of(talk0),
                             List.of(speaker0)),
-                    arguments(JPOINT_CONFERENCE, LocalDate.of(2020, 6, 30), EVENT_CODE, Collections.emptyMap(), Collections.emptySet(),
+                    arguments(JPOINT_CONFERENCE, LocalDate.of(2020, 6, 30), EVENT_CODE, LoadSettings.defaultSettings(),
                             new SourceInformation(
                                     List.of(place0),
                                     List.of(eventType0),
@@ -292,8 +293,7 @@ class ConferenceDataLoaderTest {
         @ParameterizedTest
         @MethodSource("data")
         void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                    Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet,
-                                    SourceInformation sourceInformation, Event contentfulEvent,
+                                    LoadSettings loadSettings, SourceInformation sourceInformation, Event contentfulEvent,
                                     List<Talk> contentfulTalks, List<Speaker> talkSpeakers) {
             new MockUp<YamlUtils>() {
                 @Mock
@@ -324,8 +324,8 @@ class ConferenceDataLoaderTest {
             new MockUp<ConferenceDataLoader>() {
                 @Mock
                 void loadTalksSpeakersEvent(Invocation invocation, Conference conference, LocalDate startDate, String conferenceCode,
-                                            Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-                    invocation.proceed(conference, startDate, conferenceCode, knownSpeakerIdsMap, invalidTalksSet);
+                                            LoadSettings loadSettings) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                    invocation.proceed(conference, startDate, conferenceCode, loadSettings);
                 }
 
                 @Mock
@@ -417,32 +417,8 @@ class ConferenceDataLoaderTest {
                 }
             };
 
-            assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(conference, startDate, conferenceCode, knownSpeakerIdsMap, invalidTalksSet));
+            assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(conference, startDate, conferenceCode, loadSettings));
         }
-    }
-
-    @Test
-    void loadTalksSpeakersEventWithoutInvalidTalksSet() {
-        new MockUp<ConferenceDataLoader>() {
-            @Mock
-            void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                        Map<NameCompany, Long> knownSpeakerIdsMap,
-                                        Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-                // Nothing
-            }
-
-            @Mock
-            void loadTalksSpeakersEvent(Invocation invocation, Conference conference, LocalDate startDate, String conferenceCode,
-                                        Map<NameCompany, Long> knownSpeakerIdsMap) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-                invocation.proceed(conference, startDate, conferenceCode, knownSpeakerIdsMap);
-            }
-        };
-
-        assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(
-                Conference.JPOINT,
-                LocalDate.of(2020, 6, 29),
-                "2020-jpoint",
-                Collections.emptyMap()));
     }
 
     @Test
@@ -450,8 +426,7 @@ class ConferenceDataLoaderTest {
         new MockUp<ConferenceDataLoader>() {
             @Mock
             void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                        Map<NameCompany, Long> knownSpeakerIdsMap,
-                                        Set<String> invalidTalksSet) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
+                                        LoadSettings loadSettings) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
                 // Nothing
             }
 
