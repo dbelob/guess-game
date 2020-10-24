@@ -890,8 +890,9 @@ class ContentfulUtilsTest {
 
         new MockUp<ContentfulUtils>() {
             @Mock
-            List<Talk> getTalks(Invocation invocation, ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
-                return invocation.proceed(conferenceSpaceInfo, conferenceCode);
+            List<Talk> getTalks(Invocation invocation, ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo,
+                                String conferenceCode, boolean ignoreDemoStage) {
+                return invocation.proceed(conferenceSpaceInfo, conferenceCode, ignoreDemoStage);
             }
 
             @Mock
@@ -922,9 +923,13 @@ class ContentfulUtilsTest {
             }
         };
 
-        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code").size());
-        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null).size());
-        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "").size());
+        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code", true).size());
+        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null, true).size());
+        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "", true).size());
+
+        assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code", false).size());
+        assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null, false).size());
+        assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "", false).size());
     }
 
     @Test
@@ -1017,17 +1022,18 @@ class ContentfulUtilsTest {
     void testGetTalks() {
         new MockUp<ContentfulUtils>() {
             @Mock
-            List<Talk> getTalks(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+            List<Talk> getTalks(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode, boolean ignoreDemoStage) {
                 return Collections.emptyList();
             }
 
             @Mock
-            List<Talk> getTalks(Invocation invocation, Conference conference, String conferenceCode) {
-                return invocation.proceed(conference, conferenceCode);
+            List<Talk> getTalks(Invocation invocation, Conference conference, String conferenceCode, boolean ignoreDemoStage) {
+                return invocation.proceed(conference, conferenceCode, ignoreDemoStage);
             }
         };
 
-        assertDoesNotThrow(() -> ContentfulUtils.getTalks(Conference.JPOINT, "code"));
+        assertDoesNotThrow(() -> ContentfulUtils.getTalks(Conference.JPOINT, "code", true));
+        assertDoesNotThrow(() -> ContentfulUtils.getTalks(Conference.JPOINT, "code", false));
     }
 
     @Nested
@@ -2436,7 +2442,7 @@ class ContentfulUtilsTest {
             }
 
             @Mock
-            List<Talk> getTalks(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+            List<Talk> getTalks(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode, boolean ignoreDemoStage) {
                 return Collections.emptyList();
             }
 

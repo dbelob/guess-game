@@ -551,9 +551,10 @@ public class ContentfulUtils {
      *
      * @param conferenceSpaceInfo conference space info
      * @param conferenceCode      conference code
+     * @param ignoreDemoStage     ignore demo stage talks
      * @return talks
      */
-    static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
+    static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode, boolean ignoreDemoStage) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select={fields}&order={fields}&limit=1000&fields.conferences={conferenceCode}
         StringBuilder selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.talkDay,fields.trackTime,fields.track,fields.language,fields.video,fields.sdTrack,fields.demoStage");
         String additionalFieldNames = conferenceSpaceInfo.talkAdditionalFieldNames;
@@ -589,8 +590,9 @@ public class ContentfulUtils {
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .filter(t -> ((t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack()) &&
-                        ((t.getFields().getDemoStage() == null) || !t.getFields().getDemoStage()))   // not demo stage
+                .filter(t -> !ignoreDemoStage ||
+                        (((t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack()) &&
+                                ((t.getFields().getDemoStage() == null) || !t.getFields().getDemoStage())))
                 .map(t -> createTalk(t, assetMap, entryErrorSet, assetErrorSet, speakerMap, id))
                 .collect(Collectors.toList());
     }
@@ -649,14 +651,15 @@ public class ContentfulUtils {
     /**
      * Gets talks
      *
-     * @param conference     conference
-     * @param conferenceCode conference code
+     * @param conference      conference
+     * @param conferenceCode  conference code
+     * @param ignoreDemoStage ignore demo stage talks
      * @return talks
      */
-    public static List<Talk> getTalks(Conference conference, String conferenceCode) {
+    public static List<Talk> getTalks(Conference conference, String conferenceCode, boolean ignoreDemoStage) {
         ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
 
-        return getTalks(conferenceSpaceInfo, conferenceCode);
+        return getTalks(conferenceSpaceInfo, conferenceCode, ignoreDemoStage);
     }
 
     /**
@@ -1386,7 +1389,7 @@ public class ContentfulUtils {
             List<Speaker> speakers = getSpeakers(conferenceSpaceInfo, null);
             log.info("Speakers: {}, {}", speakers.size(), speakers);
 
-            List<Talk> talks = getTalks(conferenceSpaceInfo, null);
+            List<Talk> talks = getTalks(conferenceSpaceInfo, null, true);
             log.info("Talks: {}, {}", talks.size(), talks);
         }
     }

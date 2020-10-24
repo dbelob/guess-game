@@ -210,7 +210,7 @@ public class ConferenceDataLoader {
                 contentfulEvent.getStartDate(), contentfulEvent.getEndDate());
 
         // Read talks from Contentful
-        List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode);
+        List<Talk> contentfulTalks = ContentfulUtils.getTalks(conference, conferenceCode, loadSettings.isIgnoreDemoStage());
         log.info("Talks (in Contentful): {}", contentfulTalks.size());
         contentfulTalks.forEach(
                 t -> log.trace("Talk: nameEn: '{}', name: '{}'",
@@ -1334,7 +1334,8 @@ public class ConferenceDataLoader {
 //                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L)));
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
 //                LoadSettings.invalidTalksSet(Set.of("Doctoral workshop", "Title will be announced soon")));
-//        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn");
+        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn",
+                LoadSettings.ignoreDemoStage(false));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 4), "2020msk");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 11), "2020msk");
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 11, 11), "2020spbcpp");

@@ -36,20 +36,27 @@ public class LoadSettings {
         return new LoadSettings(
                 Collections.emptyMap(),
                 Collections.emptySet(),
-                false);
+                true);
     }
 
     public static LoadSettings knownSpeakerIdsMap(Map<NameCompany, Long> knownSpeakerIdsMap) {
         return new LoadSettings(
                 knownSpeakerIdsMap,
                 Collections.emptySet(),
-                false);
+                true);
     }
 
     public static LoadSettings invalidTalksSet(Set<String> invalidTalksSet) {
         return new LoadSettings(
                 Collections.emptyMap(),
                 invalidTalksSet,
-                false);
+                true);
+    }
+
+    public static LoadSettings ignoreDemoStage(boolean ignoreDemoStage) {
+        return new LoadSettings(
+                Collections.emptyMap(),
+                Collections.emptySet(),
+                ignoreDemoStage);
     }
 }
