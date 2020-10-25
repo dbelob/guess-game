@@ -3,6 +3,7 @@ package guess.service;
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
 import guess.domain.Conference;
+import guess.domain.EventDateMinTrackTime;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Talk;
@@ -253,25 +254,25 @@ class EventServiceImplTest {
             LocalDateTime dateTime = LocalDateTime.of(2020, 10, 23, 9, 0);
             LocalDate date = dateTime.toLocalDate();
 
-            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime0 = new QuestionServiceImpl.EventDateMinTrackTime(
+            EventDateMinTrackTime eventDateMinTrackTime0 = new EventDateMinTrackTime(
                     event0,
                     date.minus(1, ChronoUnit.DAYS),
                     LocalTime.of(9, 0)
             );
 
-            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime1 = new QuestionServiceImpl.EventDateMinTrackTime(
+            EventDateMinTrackTime eventDateMinTrackTime1 = new EventDateMinTrackTime(
                     event0,
                     date.plus(1, ChronoUnit.DAYS),
                     LocalTime.of(9, 0)
             );
 
-            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime2 = new QuestionServiceImpl.EventDateMinTrackTime(
+            EventDateMinTrackTime eventDateMinTrackTime2 = new EventDateMinTrackTime(
                     event2,
                     date,
                     LocalTime.of(9, 0)
             );
 
-            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime3 = new QuestionServiceImpl.EventDateMinTrackTime(
+            EventDateMinTrackTime eventDateMinTrackTime3 = new EventDateMinTrackTime(
                     event0,
                     date,
                     LocalTime.of(10, 0)
@@ -290,7 +291,7 @@ class EventServiceImplTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void getDefaultEvent(LocalDateTime dateTime, List<Event> events, List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeList, Event expected) {
+        void getDefaultEvent(LocalDateTime dateTime, List<Event> events, List<EventDateMinTrackTime> eventDateMinTrackTimeList, Event expected) {
             EventDao eventDao = Mockito.mock(EventDao.class);
             EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
             EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class, Mockito.withSettings().useConstructor(eventDao, eventTypeDao));
@@ -309,25 +310,25 @@ class EventServiceImplTest {
     @DisplayName("getConferenceDateMinTrackTimeList method tests")
     class GetConferenceDateMinTrackTimeListTest {
         private Stream<Arguments> data() {
-            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime0 = new QuestionServiceImpl.EventDateMinTrackTime(
+            EventDateMinTrackTime eventDateMinTrackTime0 = new EventDateMinTrackTime(
                     event0,
                     EVENT_START_DATE0,
                     LocalTime.of(0, 0)
             );
 
-            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime1 = new QuestionServiceImpl.EventDateMinTrackTime(
+            EventDateMinTrackTime eventDateMinTrackTime1 = new EventDateMinTrackTime(
                     event0,
                     EVENT_START_DATE0.plus(1, ChronoUnit.DAYS),
                     LocalTime.of(0, 0)
             );
 
-            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime2 = new QuestionServiceImpl.EventDateMinTrackTime(
+            EventDateMinTrackTime eventDateMinTrackTime2 = new EventDateMinTrackTime(
                     event1,
                     EVENT_START_DATE1,
                     TALK_TRACK_TIME1
             );
 
-            QuestionServiceImpl.EventDateMinTrackTime eventDateMinTrackTime3 = new QuestionServiceImpl.EventDateMinTrackTime(
+            EventDateMinTrackTime eventDateMinTrackTime3 = new EventDateMinTrackTime(
                     event2,
                     EVENT_START_DATE2,
                     TALK_TRACK_TIME2
@@ -345,7 +346,7 @@ class EventServiceImplTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void getConferenceDateMinTrackTimeList(List<Event> events, List<QuestionServiceImpl.EventDateMinTrackTime> expected) {
+        void getConferenceDateMinTrackTimeList(List<Event> events, List<EventDateMinTrackTime> expected) {
             EventDao eventDao = Mockito.mock(EventDao.class);
             EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
             EventServiceImpl eventService = new EventServiceImpl(eventDao, eventTypeDao);
