@@ -36,13 +36,26 @@ class SpeakerServiceImplTest {
     static void init() {
         speaker0 = new Speaker();
         speaker0.setId(0);
-        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name")));
+        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        speaker0.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+        speaker0.setTwitter("twitter0");
+        speaker0.setGitHub("github0");
 
         speaker1 = new Speaker();
         speaker1.setId(1);
+        speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+        speaker1.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
+        speaker1.setTwitter("twitter1");
+        speaker1.setGitHub("github1");
+        speaker1.setJavaChampion(true);
 
         speaker2 = new Speaker();
         speaker2.setId(2);
+        speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name2")));
+        speaker2.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company2")));
+        speaker2.setTwitter("twitter2");
+        speaker2.setGitHub("github2");
+        speaker2.setMvp(true);
     }
 
     @Test
@@ -94,8 +107,44 @@ class SpeakerServiceImplTest {
         }
     }
 
-    @Test
-    void getSpeakers() {
-        //TODO: implement
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakers method tests")
+    class GetSpeakersTest {
+        private Stream<Arguments> data() {
+            List<Speaker> speakers = List.of(speaker0, speaker1, speaker2);
+
+            return Stream.of(
+                    arguments(null, null, null, null, false, false, Collections.emptyList(), Collections.emptyList()),
+                    arguments(null, null, null, null, false, false, speakers, Collections.emptyList()),
+                    arguments("0", null, null, null, false, false, speakers, List.of(speaker0)),
+                    arguments("7", null, null, null, false, false, speakers, Collections.emptyList()),
+                    arguments(null, "0", null, null, false, false, speakers, List.of(speaker0)),
+                    arguments(null, "7", null, null, false, false, speakers, Collections.emptyList()),
+                    arguments(null, null, "0", null, false, false, speakers, List.of(speaker0)),
+                    arguments(null, null, "7", null, false, false, speakers, Collections.emptyList()),
+                    arguments(null, null, null, "0", false, false, speakers, List.of(speaker0)),
+                    arguments(null, null, null, "7", false, false, speakers, Collections.emptyList()),
+                    arguments(null, null, null, null, true, false, speakers, List.of(speaker1)),
+                    arguments(null, null, null, null, false, true, speakers, List.of(speaker2)),
+                    arguments(null, null, null, null, true, true, speakers, Collections.emptyList()),
+                    arguments("0", "0", "0", "0", false, false, speakers, List.of(speaker0)),
+                    arguments(null, null, "1", null, true, false, speakers, List.of(speaker1)),
+                    arguments(null, null, null, "2", false, true, speakers, List.of(speaker2)),
+                    arguments("name", null, null, null, false, false, speakers, List.of(speaker0, speaker1, speaker2))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSpeakers(String name, String company, String twitter, String gitHub, boolean isJavaChampion, boolean isMvp,
+                         List<Speaker> speakers, List<Speaker> expected) {
+            SpeakerDao speakerDao = Mockito.mock(SpeakerDao.class);
+            SpeakerService speakerService = new SpeakerServiceImpl(speakerDao);
+
+            Mockito.when(speakerDao.getSpeakers()).thenReturn(speakers);
+
+            assertEquals(expected, speakerService.getSpeakers(name, company, twitter, gitHub, isJavaChampion, isMvp));
+        }
     }
 }
