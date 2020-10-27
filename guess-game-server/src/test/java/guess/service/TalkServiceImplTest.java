@@ -170,7 +170,18 @@ class TalkServiceImplTest {
                     arguments(null, null, null, "7", Collections.emptyList()),
                     arguments(null, null, "2", "0", List.of(talk2)),
                     arguments(null, null, "0", "0", List.of(talk0)),
-                    arguments(null, null, "1", "0", Collections.emptyList())
+                    arguments(null, null, "1", "0", Collections.emptyList()),
+                    arguments(null, 0L, null, null, List.of(talk0, talk1, talk2)),
+                    arguments(null, 0L, null, "0", List.of(talk0, talk2)),
+                    arguments(null, 0L, "0", null, List.of(talk0)),
+                    arguments(null, 0L, "0", "0", List.of(talk0)),
+                    arguments(0L, null, null, "0", List.of(talk0)),
+                    arguments(0L, null, "0", null, List.of(talk0)),
+                    arguments(0L, null, "0", "0", List.of(talk0)),
+                    arguments(0L, 0L, null, null, List.of(talk0)),
+                    arguments(0L, 0L, null, "0", List.of(talk0)),
+                    arguments(0L, 0L, "0", null, List.of(talk0)),
+                    arguments(0L, 0L, "0", "0", List.of(talk0))
             );
         }
 
