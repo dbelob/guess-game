@@ -7,7 +7,7 @@
     <div class="col">
       <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="logo" class="img-guess-logo"/>
     </div>
-    <app-language-switcher (onReload)="loadQuestion()" class="col"></app-language-switcher>
+    <app-language-switcher (reload)="loadQuestion()" class="col"></app-language-switcher>
   </div>
 
   <p class="h3 text-center mt-3 mb-4">{{namePhotos.name}}</p>
