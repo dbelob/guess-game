@@ -79,13 +79,13 @@ class StatisticsServiceImplTest {
     }
 
     @Autowired
-    EventTypeDao eventTypeDao;
+    private EventTypeDao eventTypeDao;
 
     @Autowired
-    EventDao eventDao;
+    private EventDao eventDao;
 
     @Autowired
-    StatisticsService statisticsService;
+    private StatisticsService statisticsService;
 
     @BeforeAll
     static void init() {

@@ -31,7 +31,7 @@ class LocaleServiceImplTest {
     }
 
     @Autowired
-    LocaleDao localeDao;
+    private LocaleDao localeDao;
 
     @Autowired
     private LocaleService localeService;
