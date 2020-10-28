@@ -41,7 +41,6 @@ class LocaleControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", is("ENGLISH")));
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
-        Mockito.reset(localeService);
     }
 
     @Test
@@ -55,6 +54,5 @@ class LocaleControllerTest {
                 .session(httpSession))
                 .andExpect(status().isOk());
         Mockito.verify(localeService, VerificationModeFactory.times(1)).setLanguage(language, httpSession);
-        Mockito.reset(localeService);
     }
 }

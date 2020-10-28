@@ -50,7 +50,6 @@ class AnswerControllerTest {
                 .session(httpSession))
                 .andExpect(status().isOk());
         Mockito.verify(answerService, VerificationModeFactory.times(1)).setAnswer(0, 1, httpSession);
-        Mockito.reset(localeService);
     }
 
     @Test
@@ -80,8 +79,5 @@ class AnswerControllerTest {
         Mockito.verify(answerService, VerificationModeFactory.times(1)).getResult(httpSession);
         Mockito.verify(answerService, VerificationModeFactory.times(1)).getErrorDetailsList(httpSession);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
-
-        Mockito.reset(answerService);
-        Mockito.reset(localeService);
     }
 }
