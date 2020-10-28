@@ -4,7 +4,7 @@
 
     <groupId>guess-game</groupId>
     <artifactId>guess-game-parent</artifactId>
-    <version>1.1.107</version>
+    <version>1.1.108-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>GuessGame Parent</name>
 
@@ -191,6 +191,6 @@
     <scm>
         <connection>scm:git:https://github.com/JugruGroup/guess-game</connection>
         <developerConnection>scm:git:https://github.com/JugruGroup/guess-game</developerConnection>
-        <tag>v1.1.107</tag>
+        <tag>HEAD</tag>
     </scm>
 </project>
