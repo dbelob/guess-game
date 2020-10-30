@@ -52,7 +52,7 @@ public class EventTypeController {
         return EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
     }
 
-    private List<EventType> getEventTypesAndSort(boolean isConferences, boolean isMeetups, Language language) {
+    List<EventType> getEventTypesAndSort(boolean isConferences, boolean isMeetups, Language language) {
         List<EventType> eventTypes = eventTypeService.getEventTypes(isConferences, isMeetups);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
         Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);
