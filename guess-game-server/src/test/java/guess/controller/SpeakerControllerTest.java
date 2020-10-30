@@ -1,10 +1,7 @@
 package guess.controller;
 
 import guess.domain.Language;
-import guess.domain.source.Event;
-import guess.domain.source.LocaleItem;
-import guess.domain.source.Speaker;
-import guess.domain.source.Talk;
+import guess.domain.source.*;
 import guess.dto.speaker.SpeakerBriefDto;
 import guess.service.*;
 import org.junit.jupiter.api.DisplayName;
@@ -139,6 +136,9 @@ class SpeakerControllerTest {
     void getSpeaker() throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 
+        EventType eventType = new EventType();
+        eventType.setId(0);
+
         Event event = new Event();
         event.setId(0);
         event.setStartDate(LocalDate.of(2020, 10, 30));
@@ -159,6 +159,7 @@ class SpeakerControllerTest {
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
         given(eventService.getEventByTalk(talk0)).willReturn(event);
         given(eventService.getEventByTalk(talk1)).willReturn(event);
+        given(eventTypeService.getEventTypeByEvent(event)).willReturn(eventType);
 
         mvc.perform(get("/api/speaker/speaker/0")
                 .contentType(MediaType.APPLICATION_JSON)
