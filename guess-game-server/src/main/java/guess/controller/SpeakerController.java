@@ -58,7 +58,7 @@ public class SpeakerController {
         return convertToBriefDtoAndSort(speakers, language);
     }
 
-    private List<SpeakerBriefDto> convertToBriefDtoAndSort(List<Speaker> speakers, Language language) {
+    List<SpeakerBriefDto> convertToBriefDtoAndSort(List<Speaker> speakers, Language language) {
         List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language);
 
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);

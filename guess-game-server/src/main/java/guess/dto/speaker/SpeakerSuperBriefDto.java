@@ -5,6 +5,7 @@ import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -37,5 +38,18 @@ public class SpeakerSuperBriefDto {
         return speakers.stream()
                 .map(s -> convertToSuperBriefDto(s, language))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SpeakerSuperBriefDto)) return false;
+        SpeakerSuperBriefDto that = (SpeakerSuperBriefDto) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
