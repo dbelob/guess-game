@@ -53,7 +53,7 @@ public class StateController {
         stateService.setState(State.valueOf(state), httpSession);
     }
 
-    private <T> T getDto(HttpSession httpSession, DtoFunction<T> dtoFunction) {
+    <T> T getDto(HttpSession httpSession, DtoFunction<T> dtoFunction) {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
         QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
         List<Long> correctAnswerIds = answerService.getCorrectAnswerIds(currentQuestionIndex, httpSession);
