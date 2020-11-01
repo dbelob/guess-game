@@ -3638,20 +3638,18 @@ speakers:
   - id: 237
     photoFileName: 0237.jpg
     name:
-      - {language: en, text: "Andrey Solntsev"}
+      - {language: en, text: "Andrei Solntsev"}
       - {language: ru, text: "Андрей Солнцев"}
     company:
       - {language: en, text: Codeborne}
     bio:
-      - language: en
-        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
-            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
-            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
-            \ Testing Days, TopConf, DevConFu, Devoxx."
-      - language: ru
-        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
-            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
-            , парного программирования и чистого кода."
+      - {language: en, text: "Software craftsman at Codeborne (Tallinn, Estonia). Aggressive fan of extreme programming, autotests,\
+            \ pair programming and clean code. Creator of Selenide — an open-source library for UI tests in Java. Organizer\
+            \ of devclub.eu. Frequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."}
+      - {language: ru, text: "Андрей — разработчик в эстонской компании Codeborne. Автор фреймворка Selenide, организатор\
+            \ таллинского Devclub, частый докладчик на конференциях. Ярый приверженец экстремального программирования, авт\
+            оматических тестов, парного программирования и чистого кода."}
     twitter: asolntsev
     gitHub: asolntsev
   - id: 238
@@ -12795,7 +12793,7 @@ speakers:
   - id: 858
     photoFileName: 0858.jpg
     name:
-      - {language: en, text: "Eugene Saturov"}
+      - {language: en, text: "Evgeny Saturov"}
       - {language: ru, text: "Евгений Сатуров"}
     company:
       - {language: en, text: Surf}
