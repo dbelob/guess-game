@@ -15406,7 +15406,7 @@ speakers:
       - {language: ru, text: "Сергей Махетов"}
     company:
       - {language: en, text: Kontur}
-      - {language: ru, text: "СКБ Контур"}
+      - {language: ru, text: Контур}
     bio:
       - {language: en, text: "Leading tester at Kontur. In the field of software development for more than 10 years, in testing\
             \ for more than 5. The main direction is the testing and operation of infrastructure solutions. As a rule, these\
