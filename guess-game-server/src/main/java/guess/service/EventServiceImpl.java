@@ -2,6 +2,7 @@ package guess.service;
 
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
+import guess.domain.EventDateMinTrackTime;
 import guess.domain.source.Event;
 import guess.domain.source.Talk;
 import guess.util.DateTimeUtils;
@@ -66,15 +67,15 @@ public class EventServiceImpl implements EventService {
         }
 
         // Find (event, date, minimal track time) items
-        List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeList = getConferenceDateMinTrackTimeList(conferencesFromDate);
+        List<EventDateMinTrackTime> eventDateMinTrackTimeList = getConferenceDateMinTrackTimeList(conferencesFromDate);
         if (eventDateMinTrackTimeList.isEmpty()) {
             return null;
         }
 
         // Find current and future event days, sort by date and minimal track time
-        List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeListFromDateOrdered = eventDateMinTrackTimeList.stream()
+        List<EventDateMinTrackTime> eventDateMinTrackTimeListFromDateOrdered = eventDateMinTrackTimeList.stream()
                 .filter(e -> !e.getDate().isBefore(date))
-                .sorted(Comparator.comparing(QuestionServiceImpl.EventDateMinTrackTime::getDate).thenComparing(QuestionServiceImpl.EventDateMinTrackTime::getMinTrackTime))
+                .sorted(Comparator.comparing(EventDateMinTrackTime::getDate).thenComparing(EventDateMinTrackTime::getMinTrackTime))
                 .collect(Collectors.toList());
         if (eventDateMinTrackTimeListFromDateOrdered.isEmpty()) {
             return null;
@@ -88,9 +89,9 @@ public class EventServiceImpl implements EventService {
             return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
         } else {
             // Current day events exist, find happened time, sort by reversed minimal track time
-            List<QuestionServiceImpl.EventDateMinTrackTime> eventDateMinTrackTimeListOnCurrentDate = eventDateMinTrackTimeListFromDateOrdered.stream()
+            List<EventDateMinTrackTime> eventDateMinTrackTimeListOnCurrentDate = eventDateMinTrackTimeListFromDateOrdered.stream()
                     .filter(e -> (e.getDate().equals(date) && !e.getMinTrackTime().isAfter(time)))
-                    .sorted(Comparator.comparing(QuestionServiceImpl.EventDateMinTrackTime::getMinTrackTime).reversed())
+                    .sorted(Comparator.comparing(EventDateMinTrackTime::getMinTrackTime).reversed())
                     .collect(Collectors.toList());
 
             if (eventDateMinTrackTimeListOnCurrentDate.isEmpty()) {
@@ -109,8 +110,8 @@ public class EventServiceImpl implements EventService {
      * @param events events
      * @return list of (event, date, minimal track time) items
      */
-    List<QuestionServiceImpl.EventDateMinTrackTime> getConferenceDateMinTrackTimeList(List<Event> events) {
-        List<QuestionServiceImpl.EventDateMinTrackTime> result = new ArrayList<>();
+    List<EventDateMinTrackTime> getConferenceDateMinTrackTimeList(List<Event> events) {
+        List<EventDateMinTrackTime> result = new ArrayList<>();
         Map<Event, Map<Long, Optional<LocalTime>>> minTrackTimeInTalkDaysForConferences = new LinkedHashMap<>();
 
         // Calculate start time minimum for each days of each event
@@ -152,7 +153,7 @@ public class EventServiceImpl implements EventService {
 
                     LocalTime minTrackTime = localTimeOptional.orElse(LocalTime.of(0, 0));
 
-                    result.add(new QuestionServiceImpl.EventDateMinTrackTime(event, date, minTrackTime));
+                    result.add(new EventDateMinTrackTime(event, date, minTrackTime));
                 }
             }
         }

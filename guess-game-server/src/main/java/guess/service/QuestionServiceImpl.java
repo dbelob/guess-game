@@ -15,69 +15,15 @@ import guess.util.QuestionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Question service implementation.
  */
 @Service
 public class QuestionServiceImpl implements QuestionService {
-    /**
-     * Event, date, minimal track time.
-     */
-    static class EventDateMinTrackTime {
-        private final Event event;
-        private final LocalDate date;
-        private final LocalTime minTrackTime;
-
-        public EventDateMinTrackTime(Event event, LocalDate date, LocalTime minTrackTime) {
-            this.event = event;
-            this.date = date;
-            this.minTrackTime = minTrackTime;
-        }
-
-        public Event getEvent() {
-            return event;
-        }
-
-        public LocalDate getDate() {
-            return date;
-        }
-
-        public LocalTime getMinTrackTime() {
-            return minTrackTime;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof EventDateMinTrackTime)) return false;
-            EventDateMinTrackTime that = (EventDateMinTrackTime) o;
-            return Objects.equals(event, that.event) &&
-                    Objects.equals(date, that.date) &&
-                    Objects.equals(minTrackTime, that.minTrackTime);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(event, date, minTrackTime);
-        }
-
-        @Override
-        public String toString() {
-            return "EventDateMinTrackTime{" +
-                    "event=" + event +
-                    ", date=" + date +
-                    ", minTrackTime=" + minTrackTime +
-                    '}';
-        }
-    }
-
     private final QuestionDao questionDao;
     private final EventTypeDao eventTypeDao;
     private final EventDao eventDao;

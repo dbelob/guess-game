@@ -94,14 +94,14 @@ speakers:
     bio:
       - language: en
         text: "Dmitry Chuyko is a performance engineer at BellSoft, one of the most active corporate OpenJDK developers. Before\
-            \ joining BellSoft, Dmitry worked on Hotspot JVM in Oracle. His previous experience with Java showed that the\
+            \ joining BellSoft, Dmitry worked on HotSpot JVM in Oracle. His previous experience with Java showed that the\
             \ most interesting problems in applications find their solutions in the underlying platform. Dmitry is currently\
             \ mainly optimizing OpenJDK for x86 and ARM, and also contributing to the development of JEP 386 to make the smallest\
             \ Java containers even better.\nDmitry speaks at large conferences such as Joker, JPoint, Oracle Code One, Devoxx,\
             \ or GeeCON, as well as at JUG meetups in different countries."
       - language: ru
         text: "Дмитрий Чуйко работает инженером по производительности в российской компании BellSoft, одном из ведущих уча\
-            стников сообщества OpenJDK. До того, как присоединиться к BellSoft, Дмитрий уже работал над Hotspot JVM в комп\
+            стников сообщества OpenJDK. До того, как присоединиться к BellSoft, Дмитрий уже работал над HotSpot JVM в комп\
             ании Oracle. Его предыдущий опыт разработки на Java показал, что наиболее интересные проблемы приложений решаю\
             тся на уровне базовой платформы. В настоящее время Дмитрий занимается оптимизациями OpenJDK для архитектур x86\
             \ и ARM, а также участвует в разработке JEP 386, чтобы самые маленькие Java-контейнеры были ещё лучше.\nДмитри\
@@ -115,7 +115,7 @@ speakers:
       - {language: en, text: "Andrey Ershov"}
       - {language: ru, text: "Андрей Ершов"}
     company:
-      - {language: en, text: "Dino Systems"}
+      - {language: en, text: Genestack}
     bio:
       - language: en
         text: "Andrey is a software architect in Genestack, where he works on the storage and search system for biological\
@@ -5080,21 +5080,22 @@ speakers:
     name:
       - {language: en, text: "Mikhail Matrosov"}
       - {language: ru, text: "Михаил Матросов"}
-    company:
-      - {language: en, text: "Align Technology"}
+    company: []
     bio:
       - language: en
-        text: "Mikhail is an expert software engineer in the Moscow R&D office of Align Technology. He develops a specialized\
-            \ 3D CAD system for designing orthodontic appliances.\n\nFrequent speaker on numerous conferences: CppCon, C++\
-            \ Russia, SECR, CoreHard, SECON. Co-author of the courses \"Основы разработки на С++: коричневый пояс\" and \"\
-            Основы разработки на С++: чёрный пояс\" on Coursera, which were developed jointly with Yandex."
+        text: "MSU graduate. Mikhail worked there in the laboratory of computer graphics and multimedia. He did image processing,\
+            \ computer vision, and color theory.\nMikhail was an expert software engineer in the Moscow R&D office of Align\
+            \ Technology. He developed a specialized 3D CAD system for designing orthodontic appliances.\nFrequent speaker\
+            \ on numerous conferences: CppCon, C++ Russia, SECR, CoreHard, SECON. Co-author of the courses \"Основы разраб\
+            отки на С++: коричневый пояс\" and \"Основы разработки на С++: чёрный пояс\" on Coursera, which were developed\
+            \ jointly with Yandex.\nMikhail teaches at the Higher School of Economics."
       - language: ru
         text: "Выпускник ВМК МГУ. Работал там же в лаборатории компьютерной графики и мультимедиа. Занимался обработкой из\
-            ображений, компьютерным зрением и теорией цвета.\n\nВ настоящий момент — разработчик-эксперт в московском R&D-о\
-            фисе компании Align Technology. Развивает специализированную 3D CAD-систему для дизайна ортодонтических приспо\
-            соблений.\n\nПостоянный докладчик на конференциях: CppCon, C++ Russia, SECR, CoreHard, SECON. Соавтор курсов «\
-            Основы разработки на С++: коричневый пояс» и «Основы разработки на С++: чёрный пояс» на курсере, разработанных\
-            \ совместно с Яндексом."
+            ображений, компьютерным зрением и теорией цвета.\nРаботал разработчиком-экспертом в московском R&D-офисе компа\
+            нии Align Technology. Развивал специализированную 3D CAD-систему для дизайна ортодонтических приспособлений.\n\
+            Постоянный докладчик на конференциях: CppCon, C++ Russia, SECR, CoreHard, SECON. Соавтор курсов «Основы разраб\
+            отки на С+: коричневый пояс» и «Основы разработки на С+: чёрный пояс» на курсере, разработанных совместно с Ян\
+            дексом.\nПреподаёт в ВШЭ на ФКН."
     twitter: cppjedi
   - id: 334
     photoFileName: 0334.jpg
@@ -7602,7 +7603,7 @@ speakers:
       - {language: en, text: "Mikhail Yarichuk"}
       - {language: ru, text: "Михаил Ярийчук"}
     company:
-      - {language: en, text: Gigya-SAP}
+      - {language: en, text: SAP/Gigya}
     bio:
       - {language: en, text: "Michael is an experienced full-stack developer with a background in the development of applications\
             \ and distributed systems. By day, he works at Gigya-SAP on a large scale distributed system. By night he becomes\
@@ -9902,11 +9903,11 @@ speakers:
             \ architecture. Since the end of 2015, Pavel's main focus is on isomorphic applications. In summer 2016 he began\
             \ the development of graphql-compose (GraphQL schema generator) in open source."}
       - language: ru
-        text: "GraphQL-ниндзя, разработчик интернет-продуктов, опенсорс-мейнтейнер. С 2001 года основная специализация - в\
-            еб-технологии. Обладает обширными практическими знаниями по бэкенду, фронтенду, администрированию и построению\
-            \ архитектуры. С конца 2015 года делает основной упор на изоморфные приложения. Летом 2016 начал разработку graphql-compose\
-            \ (генератора GraphQL-схем) в опенсорсе. Написал достаточно много материала на русском про [GraphQL](https://github.com/nodkz/conf-talks).\
-            \ В 2019 начал формировать best practice по дизайну [GraphQL-схем](https://graphql-rules.com).\n\nTelegram — https://t.me/graphql_ru"
+        text: "Архитектор информационных систем, опенсорс-мейнтейнер. Сделал более 15 докладов о GraphQL. Обладает обширны\
+            ми практическими знаниями по бэкенду, фронтенду, администрированию и построению архитектуры. В 2016 начал разр\
+            аботку graphql-compose (генератора GraphQL-схем). Написал много материала о GraphQL на русском – <https://github.com/nodkz/conf-talks>.\
+            \ В 2019 начал формировать best practice по дизайну GraphQL-схем – <https://graphql-rules.com>.\n\nTelegram –\
+            \ https://t.me/graphql_ru"
     twitter: nodkz
     gitHub: nodkz
   - id: 661
@@ -10953,15 +10954,15 @@ speakers:
       - {language: en, text: "Alexey Zolotykh"}
       - {language: ru, text: "Алексей Золотых"}
     company:
-      - {language: en, text: Infobip}
+      - {language: en, text: EPAM}
     bio:
       - {language: en, text: "Alexey codes in JavaScript since 2007. Previously he worked as a typesetter (more than 100 sites\
             \ on his list). He used jQuery, Backbone.js, Angular 1, Angular 2, React, Ext JS, PolymerJS. He likes user interfaces\
             \ and coffee."}
       - {language: ru, text: "Первый компьютер у Алексея появился на 2 курсе университета. Уже через 2 года он сверстал пе\
             рвый сайт, работающий в том числе и под IE6. Прошел путь от верстальщика до архитектора. В настоящее время тим\
-            лид, спикер. Захватывает мир вместе с Infobip — глобальной коммуникационной платформой для бизнеса. Пока вы эт\
-            о читали, через платформу Infobip прошло ≈ 300.000 сообщений."}
+            лид, спикер. До недавнего времени захватывал мир вместе с Infobip — глобальной коммуникационной платформой для\
+            \ бизнеса. Сейчас работает в EPAM."}
     twitter: zolotyh
   - id: 734
     photoFileName: 0734.jpg
@@ -11628,15 +11629,11 @@ speakers:
     company:
       - {language: en, text: Lyft}
     bio:
-      - {language: en, text: "Engineering apps and games for Android since 2008. Has experience as QA, product manager, marketer,\
-            \ blogger, consultant and much more. He was involved in development of apps that nobody uses and apps with millions\
-            \ of users worldwide. Currently works at Grab, leading Kotlin Singapore User Group, actively uses Rx, and spends\
-            \ more and more time contributing to OSS."}
-      - {language: ru, text: "Разрабатывает приложения и игры под Android c 2008 года, за свою карьеру успел побывать в ро\
-            ли QA, менеджера, маркетолога, блогера, аналитика, советника и многих других. Участвовал в разработке как нико\
-            му неизвестных приложений, так и приложений с миллионами пользователей по всему миру. В настоящее время работа\
-            ет в Grab, является лидером Kotlin Singapore User Group, активно использует Rx и все больше времени посвящает\
-            \ OSS."}
+      - {language: en, text: "After 10 years in mobile development, Stepan shifted his carrier to DevOps and Build Systems.\
+            \ Works on self-driving cars by day, in the free time, shares his experience with the community through talks\
+            \ and OSS projects."}
+      - {language: ru, text: "После 10 лет в мобильной разработки ушел в DevOps и билд-системы. По будням работает над сам\
+            оуправляемыми машинами, а в свободное время делится своим опытом через доклады и OSS."}
     twitter: stepango
     gitHub: stepango
   - id: 783
@@ -15406,7 +15403,7 @@ speakers:
       - {language: ru, text: "Сергей Махетов"}
     company:
       - {language: en, text: Kontur}
-      - {language: ru, text: "СКБ Контур"}
+      - {language: ru, text: Контур}
     bio:
       - {language: en, text: "Leading tester at Kontur. In the field of software development for more than 10 years, in testing\
             \ for more than 5. The main direction is the testing and operation of infrastructure solutions. As a rule, these\
@@ -16441,6 +16438,7 @@ speakers:
             му сбора и обработки данных для self driving car. Участвовал в проекте Squid-proxy.\n\nВ область интересов вхо\
             дят вопросы надежности ПО, компиляторостроения, системного программирования.\n\nВсегда старается докопаться до\
             \ инстины."
+    twitter: _valexey_
   - id: 1130
     photoFileName: 1130.jpg
     name:
@@ -18889,15 +18887,20 @@ speakers:
       - {language: en, text: HyperIntegrate}
     bio:
       - language: en
-        text: "His background is more than 10 years in Paragon Software on the position of team lead where he developed filesystem\
-            \ drivers for macOS, worked on filesystem implementation, snapshot system for block-devices (disk subsystem),\
-            \ boot loader, reverse-engineering, and many low-level things.\nIn his free time Evgeny research operation-systems\
+        text: "Founder of startup HyperIntegrate where he created a product that lets you connect Android as a filesystem\
+            \ on macOS.\nFor over 2 years he was a senior developer at DINO Systems and developed a real-time video transmission\
+            \ service.\nHis background is more than 10 years in Paragon Software on the position of team lead where he developed\
+            \ filesystem drivers for macOS, worked on filesystem implementation, snapshot system for block-devices (disk subsystem),\
+            \ boot loader, reverse-engineering, and many low-level things.\n\nIn his free time Evgeny research operation-systems\
             \ internals, and microprocessor architectures."
       - language: ru
-        text: "За плечами более 10 лет опыта работы в Paragon Software на позиции ведущего разработчика. Разрабатывал драй\
-            вера файловых систем под macOS, занимался имплементацией файловых систем, системы снепшотинга блочных (дисковы\
-            х) устройств, boot-загрузчика, реверс-инженирингом, и другими низкоуровневыми задачами.\n\nВ свободное время з\
-            анимается изучением устройства операционных систем и процессорных архитектур."
+        text: "Основатель стартапа HyperIntegrate, где создал продукт, позволяющий подключать Android как файловую систему\
+            \ на macOS.\nБольше 2 лет был старшим разработчиком в компании DINO Systems. Занимался разработкой сервиса пер\
+            едачи видео в реальном времени.\nЗа плечами более 10 лет опыта работы в Paragon Software, на позиции ведущего\
+            \ разработчика. Разрабатывал драйвера файловых систем под macOS, занимался имплементацией файловых систем, сис\
+            темы снепшотинга блочных (дисковых) устройств, boot загрузчика, реверс-инженирингом, и другими низкоуровневыми\
+            \ задачами.\n\nВ свободное время занимается изучением устройства операционных систем и процессорных архитектур\
+            ."
   - id: 1319
     photoFileName: 1319.jpg
     name:

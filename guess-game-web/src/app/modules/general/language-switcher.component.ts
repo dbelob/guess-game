@@ -9,7 +9,7 @@ import { LocaleService } from '../../shared/services/locale.service';
 export class LanguageSwitcherComponent implements OnInit {
   public selectedLanguage: Language;
   public language = Language;
-  @Output() onReload: EventEmitter<any> = new EventEmitter();
+  @Output() reload: EventEmitter<any> = new EventEmitter();
 
   constructor(private localeService: LocaleService) {
   }
@@ -24,7 +24,7 @@ export class LanguageSwitcherComponent implements OnInit {
   onLanguageChange(language: Language) {
     this.localeService.setLanguage(language)
       .subscribe(data => {
-          this.onReload.emit();
+          this.reload.emit();
         }
       );
   }
