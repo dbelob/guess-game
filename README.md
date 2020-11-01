@@ -1,5 +1,4 @@
 <a href="https://github.com/JugruGroup/guess-game/actions"><img alt="GitHub Actions status" src="https://github.com/JugruGroup/guess-game/workflows/Build/badge.svg"></a>
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=JugruGroup/guess-game)](https://github.com/JugruGroup/guess-game/network/updates)
 [![codecov](https://codecov.io/gh/JugruGroup/guess-game/branch/master/graph/badge.svg)](https://codecov.io/gh/JugruGroup/guess-game)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=JugruGroup_guess-game&metric=alert_status)](https://sonarcloud.io/dashboard?id=JugruGroup_guess-game)
 
