@@ -94,14 +94,14 @@ speakers:
     bio:
       - language: en
         text: "Dmitry Chuyko is a performance engineer at BellSoft, one of the most active corporate OpenJDK developers. Before\
-            \ joining BellSoft, Dmitry worked on Hotspot JVM in Oracle. His previous experience with Java showed that the\
+            \ joining BellSoft, Dmitry worked on HotSpot JVM in Oracle. His previous experience with Java showed that the\
             \ most interesting problems in applications find their solutions in the underlying platform. Dmitry is currently\
             \ mainly optimizing OpenJDK for x86 and ARM, and also contributing to the development of JEP 386 to make the smallest\
             \ Java containers even better.\nDmitry speaks at large conferences such as Joker, JPoint, Oracle Code One, Devoxx,\
             \ or GeeCON, as well as at JUG meetups in different countries."
       - language: ru
         text: "Дмитрий Чуйко работает инженером по производительности в российской компании BellSoft, одном из ведущих уча\
-            стников сообщества OpenJDK. До того, как присоединиться к BellSoft, Дмитрий уже работал над Hotspot JVM в комп\
+            стников сообщества OpenJDK. До того, как присоединиться к BellSoft, Дмитрий уже работал над HotSpot JVM в комп\
             ании Oracle. Его предыдущий опыт разработки на Java показал, что наиболее интересные проблемы приложений решаю\
             тся на уровне базовой платформы. В настоящее время Дмитрий занимается оптимизациями OpenJDK для архитектур x86\
             \ и ARM, а также участвует в разработке JEP 386, чтобы самые маленькие Java-контейнеры были ещё лучше.\nДмитри\
@@ -845,12 +845,12 @@ speakers:
       - {language: en, text: "Evgeny is a contributor to various open source projects and a speaker at international conferences\
             \ and JUGs. He is one of the lead developers of JaCoCo project, and also the project lead of the award-winning\
             \ EclEmma project at the Eclipse Foundation that integrates JaCoCo into Eclipse IDE. In his day job at SonarSource\
-            \ Evgeny develops SonarQube’s static source code analysis for languages such as Java, C/C++, C#, JavaScript."}
-      - {language: ru, text: "Евгений — участник проектов с открытым исходным кодом и спикер на международных и JUG'овских\
-            \ конференциях. Он является ведущим разработчиком в JaCoCo project и лидом в отмеченном наградами проекте — EclEmma,\
-            \ который интегрирует JaCoCo в Eclipse IDE. В SonarSource Евгений разрабатывает статический анализ исходного к\
-            ода для таких языков, как Java, C/C++, C#, JavaScript."}
-    twitter: _godin_
+            \ Evgeny develops SonarQube's static source code analysis for languages such as Java, C/C++, C#, JavaScript."}
+      - {language: ru, text: "Евгений участвует в различных проектах с открытым исходным кодом и выступает на международны\
+            х конференциях и JUG-ах. Он является одним из ведущих разработчиков JaCoCo, а также руководителем проекта EclEmma\
+            \ в Eclipse Foundation, интегрирующего JaCoCo в Eclipse IDE. В своей повседневной работе в SonarSource Евгений\
+            \ занимается разработкой статических анализаторов кода для таких языков, как Java, C/C++, C#, JavaScript."}
+    twitter: _Godin_
     gitHub: Godin
   - id: 48
     photoFileName: 0048.jpg
