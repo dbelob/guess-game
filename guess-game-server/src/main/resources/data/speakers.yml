@@ -9902,11 +9902,11 @@ speakers:
             \ architecture. Since the end of 2015, Pavel's main focus is on isomorphic applications. In summer 2016 he began\
             \ the development of graphql-compose (GraphQL schema generator) in open source."}
       - language: ru
-        text: "GraphQL-ниндзя, разработчик интернет-продуктов, опенсорс-мейнтейнер. С 2001 года основная специализация - в\
-            еб-технологии. Обладает обширными практическими знаниями по бэкенду, фронтенду, администрированию и построению\
-            \ архитектуры. С конца 2015 года делает основной упор на изоморфные приложения. Летом 2016 начал разработку graphql-compose\
-            \ (генератора GraphQL-схем) в опенсорсе. Написал достаточно много материала на русском про [GraphQL](https://github.com/nodkz/conf-talks).\
-            \ В 2019 начал формировать best practice по дизайну [GraphQL-схем](https://graphql-rules.com).\n\nTelegram — https://t.me/graphql_ru"
+        text: "Архитектор информационных систем, опенсорс-мейнтейнер. Сделал более 15 докладов о GraphQL. Обладает обширны\
+            ми практическими знаниями по бэкенду, фронтенду, администрированию и построению архитектуры. В 2016 начал разр\
+            аботку graphql-compose (генератора GraphQL-схем). Написал много материала о GraphQL на русском – <https://github.com/nodkz/conf-talks>.\
+            \ В 2019 начал формировать best practice по дизайну GraphQL-схем – <https://graphql-rules.com>.\n\nTelegram –\
+            \ https://t.me/graphql_ru"
     twitter: nodkz
     gitHub: nodkz
   - id: 661
@@ -10953,15 +10953,15 @@ speakers:
       - {language: en, text: "Alexey Zolotykh"}
       - {language: ru, text: "Алексей Золотых"}
     company:
-      - {language: en, text: Infobip}
+      - {language: en, text: EPAM}
     bio:
       - {language: en, text: "Alexey codes in JavaScript since 2007. Previously he worked as a typesetter (more than 100 sites\
             \ on his list). He used jQuery, Backbone.js, Angular 1, Angular 2, React, Ext JS, PolymerJS. He likes user interfaces\
             \ and coffee."}
       - {language: ru, text: "Первый компьютер у Алексея появился на 2 курсе университета. Уже через 2 года он сверстал пе\
             рвый сайт, работающий в том числе и под IE6. Прошел путь от верстальщика до архитектора. В настоящее время тим\
-            лид, спикер. Захватывает мир вместе с Infobip — глобальной коммуникационной платформой для бизнеса. Пока вы эт\
-            о читали, через платформу Infobip прошло ≈ 300.000 сообщений."}
+            лид, спикер. До недавнего времени захватывал мир вместе с Infobip — глобальной коммуникационной платформой для\
+            \ бизнеса. Сейчас работает в EPAM."}
     twitter: zolotyh
   - id: 734
     photoFileName: 0734.jpg
