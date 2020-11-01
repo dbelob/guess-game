@@ -5080,21 +5080,22 @@ speakers:
     name:
       - {language: en, text: "Mikhail Matrosov"}
       - {language: ru, text: "Михаил Матросов"}
-    company:
-      - {language: en, text: "Align Technology"}
+    company: []
     bio:
       - language: en
-        text: "Mikhail is an expert software engineer in the Moscow R&D office of Align Technology. He develops a specialized\
-            \ 3D CAD system for designing orthodontic appliances.\n\nFrequent speaker on numerous conferences: CppCon, C++\
-            \ Russia, SECR, CoreHard, SECON. Co-author of the courses \"Основы разработки на С++: коричневый пояс\" and \"\
-            Основы разработки на С++: чёрный пояс\" on Coursera, which were developed jointly with Yandex."
+        text: "MSU graduate. Mikhail worked there in the laboratory of computer graphics and multimedia. He did image processing,\
+            \ computer vision, and color theory.\nMikhail was an expert software engineer in the Moscow R&D office of Align\
+            \ Technology. He developed a specialized 3D CAD system for designing orthodontic appliances.\nFrequent speaker\
+            \ on numerous conferences: CppCon, C++ Russia, SECR, CoreHard, SECON. Co-author of the courses \"Основы разраб\
+            отки на С++: коричневый пояс\" and \"Основы разработки на С++: чёрный пояс\" on Coursera, which were developed\
+            \ jointly with Yandex.\nMikhail teaches at the Higher School of Economics."
       - language: ru
         text: "Выпускник ВМК МГУ. Работал там же в лаборатории компьютерной графики и мультимедиа. Занимался обработкой из\
-            ображений, компьютерным зрением и теорией цвета.\n\nВ настоящий момент — разработчик-эксперт в московском R&D-о\
-            фисе компании Align Technology. Развивает специализированную 3D CAD-систему для дизайна ортодонтических приспо\
-            соблений.\n\nПостоянный докладчик на конференциях: CppCon, C++ Russia, SECR, CoreHard, SECON. Соавтор курсов «\
-            Основы разработки на С++: коричневый пояс» и «Основы разработки на С++: чёрный пояс» на курсере, разработанных\
-            \ совместно с Яндексом."
+            ображений, компьютерным зрением и теорией цвета.\nРаботал разработчиком-экспертом в московском R&D-офисе компа\
+            нии Align Technology. Развивал специализированную 3D CAD-систему для дизайна ортодонтических приспособлений.\n\
+            Постоянный докладчик на конференциях: CppCon, C++ Russia, SECR, CoreHard, SECON. Соавтор курсов «Основы разраб\
+            отки на С+: коричневый пояс» и «Основы разработки на С+: чёрный пояс» на курсере, разработанных совместно с Ян\
+            дексом.\nПреподаёт в ВШЭ на ФКН."
     twitter: cppjedi
   - id: 334
     photoFileName: 0334.jpg
@@ -16437,6 +16438,7 @@ speakers:
             му сбора и обработки данных для self driving car. Участвовал в проекте Squid-proxy.\n\nВ область интересов вхо\
             дят вопросы надежности ПО, компиляторостроения, системного программирования.\n\nВсегда старается докопаться до\
             \ инстины."
+    twitter: _valexey_
   - id: 1130
     photoFileName: 1130.jpg
     name:
@@ -18885,15 +18887,20 @@ speakers:
       - {language: en, text: HyperIntegrate}
     bio:
       - language: en
-        text: "His background is more than 10 years in Paragon Software on the position of team lead where he developed filesystem\
-            \ drivers for macOS, worked on filesystem implementation, snapshot system for block-devices (disk subsystem),\
-            \ boot loader, reverse-engineering, and many low-level things.\nIn his free time Evgeny research operation-systems\
+        text: "Founder of startup HyperIntegrate where he created a product that lets you connect Android as a filesystem\
+            \ on macOS.\nFor over 2 years he was a senior developer at DINO Systems and developed a real-time video transmission\
+            \ service.\nHis background is more than 10 years in Paragon Software on the position of team lead where he developed\
+            \ filesystem drivers for macOS, worked on filesystem implementation, snapshot system for block-devices (disk subsystem),\
+            \ boot loader, reverse-engineering, and many low-level things.\n\nIn his free time Evgeny research operation-systems\
             \ internals, and microprocessor architectures."
       - language: ru
-        text: "За плечами более 10 лет опыта работы в Paragon Software на позиции ведущего разработчика. Разрабатывал драй\
-            вера файловых систем под macOS, занимался имплементацией файловых систем, системы снепшотинга блочных (дисковы\
-            х) устройств, boot-загрузчика, реверс-инженирингом, и другими низкоуровневыми задачами.\n\nВ свободное время з\
-            анимается изучением устройства операционных систем и процессорных архитектур."
+        text: "Основатель стартапа HyperIntegrate, где создал продукт, позволяющий подключать Android как файловую систему\
+            \ на macOS.\nБольше 2 лет был старшим разработчиком в компании DINO Systems. Занимался разработкой сервиса пер\
+            едачи видео в реальном времени.\nЗа плечами более 10 лет опыта работы в Paragon Software, на позиции ведущего\
+            \ разработчика. Разрабатывал драйвера файловых систем под macOS, занимался имплементацией файловых систем, сис\
+            темы снепшотинга блочных (дисковых) устройств, boot загрузчика, реверс-инженирингом, и другими низкоуровневыми\
+            \ задачами.\n\nВ свободное время занимается изучением устройства операционных систем и процессорных архитектур\
+            ."
   - id: 1319
     photoFileName: 1319.jpg
     name:
