@@ -54,11 +54,11 @@ class EventControllerTest {
 
     @Test
     void getEvents() throws Exception {
-        final boolean CONFERENCES = true;
-        final boolean MEETUPS = true;
-        final Long EVENT_TYPE_ID = 0L;
-
         MockHttpSession httpSession = new MockHttpSession();
+
+        boolean conferences = true;
+        boolean meetups = true;
+        Long eventTypeId = 0L;
 
         Event event0 = new Event();
         event0.setId(0);
@@ -75,13 +75,13 @@ class EventControllerTest {
         event2.setStartDate(LocalDate.of(2020, 10, 31));
         event2.setEndDate(LocalDate.of(2020, 10, 31));
 
-        given(eventService.getEvents(CONFERENCES, MEETUPS, EVENT_TYPE_ID)).willReturn(new ArrayList<>(List.of(event0, event1, event2)));
+        given(eventService.getEvents(conferences, meetups, eventTypeId)).willReturn(new ArrayList<>(List.of(event0, event1, event2)));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/event/events")
                 .contentType(MediaType.APPLICATION_JSON)
-                .param("conferences", Boolean.toString(CONFERENCES))
-                .param("meetups", Boolean.toString(MEETUPS))
+                .param("conferences", Boolean.toString(conferences))
+                .param("meetups", Boolean.toString(meetups))
                 .param("eventTypeId", "0")
                 .session(httpSession))
                 .andExpect(status().isOk())
@@ -89,7 +89,7 @@ class EventControllerTest {
                 .andExpect(jsonPath("$[0].id", is(2)))
                 .andExpect(jsonPath("$[1].id", is(0)))
                 .andExpect(jsonPath("$[2].id", is(1)));
-        Mockito.verify(eventService, VerificationModeFactory.times(1)).getEvents(CONFERENCES, MEETUPS, EVENT_TYPE_ID);
+        Mockito.verify(eventService, VerificationModeFactory.times(1)).getEvents(conferences, meetups, eventTypeId);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
     }
 
