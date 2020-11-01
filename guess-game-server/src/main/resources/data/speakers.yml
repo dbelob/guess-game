@@ -7602,7 +7602,7 @@ speakers:
       - {language: en, text: "Mikhail Yarichuk"}
       - {language: ru, text: "Михаил Ярийчук"}
     company:
-      - {language: en, text: Gigya-SAP}
+      - {language: en, text: SAP/Gigya}
     bio:
       - {language: en, text: "Michael is an experienced full-stack developer with a background in the development of applications\
             \ and distributed systems. By day, he works at Gigya-SAP on a large scale distributed system. By night he becomes\
