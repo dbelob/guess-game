@@ -20,6 +20,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -194,61 +195,12 @@ class StateControllerTest {
         }
     }
 
-    @Test
-    void getPhotoNames() throws Exception {
+    @ParameterizedTest
+    @ValueSource(strings = {"photo-names", "name-photos", "speaker-talks", "talk-speakers", "speaker-accounts", "account-speakers"})
+    void getTest(String urlSuffix) throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 
-        mvc.perform(get("/api/state/photo-names")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void getNamePhotos() throws Exception {
-        MockHttpSession httpSession = new MockHttpSession();
-
-        mvc.perform(get("/api/state/name-photos")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void getSpeakerTalks() throws Exception {
-        MockHttpSession httpSession = new MockHttpSession();
-
-        mvc.perform(get("/api/state/speaker-talks")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void getTalkSpeakers() throws Exception {
-        MockHttpSession httpSession = new MockHttpSession();
-
-        mvc.perform(get("/api/state/talk-speakers")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void getSpeakerAccounts() throws Exception {
-        MockHttpSession httpSession = new MockHttpSession();
-
-        mvc.perform(get("/api/state/speaker-accounts")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void getAccountSpeakers() throws Exception {
-        MockHttpSession httpSession = new MockHttpSession();
-
-        mvc.perform(get("/api/state/account-speakers")
+        mvc.perform(get(String.format("/api/state/%s", urlSuffix))
                 .contentType(MediaType.APPLICATION_JSON)
                 .session(httpSession))
                 .andExpect(status().isOk());
