@@ -104,4 +104,14 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
                 .map(s -> convertToBriefDto(s, language))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }

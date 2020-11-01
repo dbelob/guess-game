@@ -52,4 +52,14 @@ public class SpeakerDto extends SpeakerBriefDto {
                 .map(s -> convertToDto(s, language))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
