@@ -11628,15 +11628,11 @@ speakers:
     company:
       - {language: en, text: Lyft}
     bio:
-      - {language: en, text: "Engineering apps and games for Android since 2008. Has experience as QA, product manager, marketer,\
-            \ blogger, consultant and much more. He was involved in development of apps that nobody uses and apps with millions\
-            \ of users worldwide. Currently works at Grab, leading Kotlin Singapore User Group, actively uses Rx, and spends\
-            \ more and more time contributing to OSS."}
-      - {language: ru, text: "Разрабатывает приложения и игры под Android c 2008 года, за свою карьеру успел побывать в ро\
-            ли QA, менеджера, маркетолога, блогера, аналитика, советника и многих других. Участвовал в разработке как нико\
-            му неизвестных приложений, так и приложений с миллионами пользователей по всему миру. В настоящее время работа\
-            ет в Grab, является лидером Kotlin Singapore User Group, активно использует Rx и все больше времени посвящает\
-            \ OSS."}
+      - {language: en, text: "After 10 years in mobile development, Stepan shifted his carrier to DevOps and Build Systems.\
+            \ Works on self-driving cars by day, in the free time, shares his experience with the community through talks\
+            \ and OSS projects."}
+      - {language: ru, text: "После 10 лет в мобильной разработки ушел в DevOps и билд-системы. По будням работает над сам\
+            оуправляемыми машинами, а в свободное время делится своим опытом через доклады и OSS."}
     twitter: stepango
     gitHub: stepango
   - id: 783
@@ -12798,7 +12794,7 @@ speakers:
   - id: 858
     photoFileName: 0858.jpg
     name:
-      - {language: en, text: "Evgeny Saturov"}
+      - {language: en, text: "Eugene Saturov"}
       - {language: ru, text: "Евгений Сатуров"}
     company:
       - {language: en, text: Surf}
