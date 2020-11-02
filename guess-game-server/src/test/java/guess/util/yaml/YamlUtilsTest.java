@@ -45,6 +45,9 @@ class YamlUtilsTest {
             EventList eventList = new EventList();
             eventList.setEvents(Collections.emptyList());
 
+            CompanyList companyList = new CompanyList();
+            companyList.setCompanies(Collections.emptyList());
+
             SpeakerList speakerList0 = new SpeakerList();
             speakerList0.setSpeakers(List.of(speaker0));
 
@@ -55,8 +58,9 @@ class YamlUtilsTest {
             talkList.setTalks(Collections.emptyList());
 
             return Stream.of(
-                    arguments(placeList, eventTypeList, eventList, speakerList0, talkList,
+                    arguments(placeList, eventTypeList, eventList, companyList, speakerList0, talkList,
                             new SourceInformation(
+                                    Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
@@ -64,19 +68,19 @@ class YamlUtilsTest {
                                     Collections.emptyList()
                             ),
                             null),
-                    arguments(placeList, eventTypeList, eventList, speakerList1, talkList, null, SpeakerDuplicatedException.class)
+                    arguments(placeList, eventTypeList, eventList, companyList, speakerList1, talkList, null, SpeakerDuplicatedException.class)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void getSourceInformation(PlaceList placeList, EventTypeList eventTypeList, EventList eventList,
+        void getSourceInformation(PlaceList placeList, EventTypeList eventTypeList, EventList eventList, CompanyList companyList,
                                   SpeakerList speakerList, TalkList talkList, SourceInformation expectedResult,
                                   Class<? extends Exception> expectedException) throws SpeakerDuplicatedException {
             if (expectedException == null) {
-                assertEquals(expectedResult, YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, speakerList, talkList));
+                assertEquals(expectedResult, YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, companyList, speakerList, talkList));
             } else {
-                assertThrows(expectedException, () -> YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, speakerList, talkList));
+                assertThrows(expectedException, () -> YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, companyList, speakerList, talkList));
             }
         }
     }

@@ -5,7 +5,9 @@ import guess.domain.Language;
 import guess.util.LocalizationUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Speaker.
@@ -35,7 +37,7 @@ public class Speaker extends Identifier {
 
     private String photoFileName;
     private List<LocaleItem> name;
-    private List<LocaleItem> company;
+    private List<LocaleItem> company;   //TODO: delete
     private List<LocaleItem> bio;
     private String twitter;
     private String gitHub;
@@ -43,7 +45,11 @@ public class Speaker extends Identifier {
     private boolean mvp;
     private boolean mvpReconnect;
 
+    private List<Long> companyIds;
+    private List<Company> companies = new ArrayList<>();
+
     public Speaker() {
+        this.companyIds = Collections.emptyList();
     }
 
     public Speaker(long id, String photoFileName, List<LocaleItem> name, List<LocaleItem> company,
@@ -59,6 +65,9 @@ public class Speaker extends Identifier {
         this.javaChampion = degrees.javaChampion;
         this.mvp = degrees.mvp;
         this.mvpReconnect = degrees.mvpReconnect;
+        this.companyIds = companies.stream()
+                .map(Company::getId)
+                .collect(Collectors.toList());
     }
 
     public String getPhotoFileName() {
@@ -135,6 +144,22 @@ public class Speaker extends Identifier {
 
     public boolean isAnyMvp() {
         return (mvp || mvpReconnect);
+    }
+
+    public List<Long> getCompanyIds() {
+        return companyIds;
+    }
+
+    public void setCompanyIds(List<Long> companyIds) {
+        this.companyIds = companyIds;
+    }
+
+    public List<Company> getCompanies() {
+        return companies;
+    }
+
+    public void setCompanies(List<Company> companies) {
+        this.companies = companies;
     }
 
     public List<LocaleItem> getNameWithLastNameFirst() {

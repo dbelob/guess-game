@@ -43,26 +43,29 @@ public class YamlUtils {
      */
     public static SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DATA_DIRECTORY_NAME));
+        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DATA_DIRECTORY_NAME));
+        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DATA_DIRECTORY_NAME));
+        Resource companiesResource = resolver.getResource(String.format("classpath:%s/companies.yml", DATA_DIRECTORY_NAME));
         Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", DATA_DIRECTORY_NAME));
         Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DATA_DIRECTORY_NAME));
-        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DATA_DIRECTORY_NAME));
-        Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DATA_DIRECTORY_NAME));
-        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DATA_DIRECTORY_NAME));
 
+        Yaml placesYaml = new Yaml(new Constructor(PlaceList.class));
+        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypeList.class));
+        Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(EventList.class));
+        Yaml companiesYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(CompanyList.class));
         Yaml speakersYaml = new Yaml(new Constructor(SpeakerList.class));
         Yaml talksYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(TalkList.class));
-        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypeList.class));
-        Yaml placesYaml = new Yaml(new Constructor(PlaceList.class));
-        Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(EventList.class));
 
         // Read from YAML files
         PlaceList placeList = placesYaml.load(placesResource.getInputStream());
         EventTypeList eventTypeList = eventTypesYaml.load(eventTypesResource.getInputStream());
         EventList eventList = eventsYaml.load(eventsResource.getInputStream());
+        CompanyList companyList = companiesYaml.load(companiesResource.getInputStream());
         SpeakerList speakerList = speakersYaml.load(speakersResource.getInputStream());
         TalkList talkList = talksYaml.load(talksResource.getInputStream());
 
-        return getSourceInformation(placeList, eventTypeList, eventList, speakerList, talkList);
+        return getSourceInformation(placeList, eventTypeList, eventList, companyList, speakerList, talkList);
     }
 
     /**
@@ -77,32 +80,49 @@ public class YamlUtils {
      * @throws SpeakerDuplicatedException if speaker duplicated
      */
     static SourceInformation getSourceInformation(PlaceList placeList, EventTypeList eventTypeList, EventList eventList,
-                                                  SpeakerList speakerList, TalkList talkList) throws SpeakerDuplicatedException {
+                                                  CompanyList companyList, SpeakerList speakerList, TalkList talkList)
+            throws SpeakerDuplicatedException {
         // Find duplicates for speaker names and for speaker names with company name
         if (findSpeakerDuplicates(speakerList.getSpeakers())) {
             throw new SpeakerDuplicatedException();
         }
 
+        //TODO: delete
+        companyList.setCompanies(createCompaniesFromSpeakersAndFillSpeaker(speakerList.getSpeakers()));
+
         Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
-        Map<Long, Speaker> speakerMap = listToMap(speakerList.getSpeakers(), Speaker::getId);
         Map<Long, EventType> eventTypeMap = listToMap(eventTypeList.getEventTypes(), EventType::getId);
+        Map<Long, Company> companyMap = listToMap(companyList.getCompanies(), Company::getId);
+        Map<Long, Speaker> speakerMap = listToMap(speakerList.getSpeakers(), Speaker::getId);
         Map<Long, Talk> talkMap = listToMap(talkList.getTalks(), Talk::getId);
 
         // Set event identifiers
         setEventIds(eventList.getEvents());
 
         // Link entities
-        linkSpeakersToTalks(speakerMap, talkList.getTalks());
         linkEventsToEventTypes(eventTypeMap, eventList.getEvents());
         linkEventsToPlaces(placeMap, eventList.getEvents());
         linkTalksToEvents(talkMap, eventList.getEvents());
+        linkSpeakersToCompanies(companyMap, speakerList.getSpeakers());
+        linkSpeakersToTalks(speakerMap, talkList.getTalks());
 
         return new SourceInformation(
                 placeList.getPlaces(),
                 eventTypeList.getEventTypes(),
                 eventList.getEvents(),
+                companyList.getCompanies(),
                 speakerList.getSpeakers(),
                 talkList.getTalks());
+    }
+
+    //TODO: delete
+    static List<Company> createCompaniesFromSpeakersAndFillSpeaker(List<Speaker> speakers) {
+        List<Company> companies = new ArrayList<>();
+        Set<String> companyNames = new HashSet<>();
+
+        //TODO: implement
+
+        return companies;
     }
 
     /**
@@ -188,6 +208,28 @@ public class YamlUtils {
                         () -> String.format("Talk id %d not found for event %s", talkId, event.toString()));
                 event.getTalks().add(talk);
             }
+        }
+    }
+
+    /**
+     * Links speakers to companies.
+     *
+     * @param companies companies
+     * @param speakers  speakers
+     */
+    static void linkSpeakersToCompanies(Map<Long, Company> companies, List<Speaker> speakers) {
+        for (Speaker speaker : speakers) {
+            List<Company> speakerCompanies = new ArrayList<>();
+
+            // Find companies by id
+            for (Long companyId : speaker.getCompanyIds()) {
+                Company company = companies.get(companyId);
+                Objects.requireNonNull(company,
+                        () -> String.format("Company id %d not found for speaker %s", companyId, speaker.toString()));
+                speakerCompanies.add(company);
+            }
+
+            speaker.setCompanies(speakerCompanies);
         }
     }
 
