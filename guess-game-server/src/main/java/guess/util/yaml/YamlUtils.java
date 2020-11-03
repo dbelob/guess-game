@@ -118,9 +118,59 @@ public class YamlUtils {
     //TODO: delete
     static List<Company> createCompaniesFromSpeakersAndFillSpeaker(List<Speaker> speakers) {
         List<Company> companies = new ArrayList<>();
-        Set<String> companyNames = new HashSet<>();
+        Map<String, Company> companyMap = new HashMap<>();
+        AtomicLong id = new AtomicLong(0);
 
-        //TODO: implement
+        // Fill companies
+        for (Speaker speaker : speakers) {
+            if ((speaker.getCompany() == null) || speaker.getCompany().isEmpty()) {
+                continue;
+            }
+
+            boolean isFound = false;
+
+            for (LocaleItem localItem : speaker.getCompany()) {
+                if (companyMap.containsKey(localItem.getText())) {
+                    isFound = true;
+                    break;
+                }
+            }
+
+            if (!isFound) {
+                Company company = new Company(id.getAndIncrement(), speaker.getCompany());
+
+                companies.add(company);
+
+                for (LocaleItem localItem : speaker.getCompany()) {
+                    companyMap.put(localItem.getText(), company);
+                }
+            }
+        }
+
+        // Fill company in speaker
+        for (Speaker speaker : speakers) {
+            if (speaker.getCompany() == null) {
+                continue;
+            }
+
+            for (LocaleItem localItem : speaker.getCompany()) {
+                if (companyMap.containsKey(localItem.getText())) {
+                    Company company = companyMap.get(localItem.getText());
+
+                    Objects.requireNonNull(speaker,
+                            () -> String.format("Company %s not found for speaker %s", localItem.getText(), speaker.toString()));
+
+                    speaker.setCompanyIds(List.of(company.getId()));
+                    break;
+                }
+            }
+        }
+
+        companies.sort(Comparator.comparing(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN)));
+        companies.forEach(c -> log.info("id: {}, en: {}, ru: {}",
+                c.getId(),
+                LocalizationUtils.getString(c.getName(), Language.ENGLISH),
+                LocalizationUtils.getString(c.getName(), Language.RUSSIAN)));
 
         return companies;
     }
