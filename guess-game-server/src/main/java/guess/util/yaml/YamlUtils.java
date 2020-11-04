@@ -119,14 +119,13 @@ public class YamlUtils {
     static List<Company> createCompaniesFromSpeakersAndFillSpeaker(List<Speaker> speakers) {
         List<Company> companies = new ArrayList<>();
         Map<String, Company> companyMap = new HashMap<>();
-        AtomicLong id = new AtomicLong(0);
+        List<Speaker> filteredOrderedSpeakers = speakers.stream()
+                .filter(s -> ((s.getCompany() != null) && !s.getCompany().isEmpty()))
+                .sorted(Comparator.comparing((Function<Speaker, Integer>) speaker -> speaker.getCompany().size()).reversed())
+                .collect(Collectors.toList());
 
         // Fill companies
-        for (Speaker speaker : speakers) {
-            if ((speaker.getCompany() == null) || speaker.getCompany().isEmpty()) {
-                continue;
-            }
-
+        for (Speaker speaker : filteredOrderedSpeakers) {
             boolean isFound = false;
 
             for (LocaleItem localItem : speaker.getCompany()) {
@@ -137,7 +136,7 @@ public class YamlUtils {
             }
 
             if (!isFound) {
-                Company company = new Company(id.getAndIncrement(), speaker.getCompany());
+                Company company = new Company(-1, speaker.getCompany());
 
                 companies.add(company);
 
@@ -147,9 +146,20 @@ public class YamlUtils {
             }
         }
 
+        AtomicLong id = new AtomicLong(0);
+
+        companies.sort(Comparator.comparing(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN)));
+        companies.forEach(c -> {
+            c.setId(id.getAndIncrement());
+            log.info("id: {}, en: '{}', ru: '{}'",
+                    c.getId(),
+                    LocalizationUtils.getString(c.getName(), Language.ENGLISH),
+                    LocalizationUtils.getString(c.getName(), Language.RUSSIAN, Language.RUSSIAN));
+        });
+
         // Fill company in speaker
         for (Speaker speaker : speakers) {
-            if (speaker.getCompany() == null) {
+            if ((speaker.getCompany() == null) || speaker.getCompany().isEmpty()) {
                 continue;
             }
 
@@ -165,12 +175,6 @@ public class YamlUtils {
                 }
             }
         }
-
-        companies.sort(Comparator.comparing(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN)));
-        companies.forEach(c -> log.info("id: {}, en: {}, ru: {}",
-                c.getId(),
-                LocalizationUtils.getString(c.getName(), Language.ENGLISH),
-                LocalizationUtils.getString(c.getName(), Language.RUSSIAN)));
 
         return companies;
     }
