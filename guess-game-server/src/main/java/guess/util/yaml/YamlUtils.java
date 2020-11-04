@@ -47,6 +47,7 @@ public class YamlUtils {
         Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DATA_DIRECTORY_NAME));
         Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DATA_DIRECTORY_NAME));
         Resource companiesResource = resolver.getResource(String.format("classpath:%s/companies.yml", DATA_DIRECTORY_NAME));
+        Resource companySynonymsResource = resolver.getResource(String.format("classpath:%s/company-synonyms.yml", DATA_DIRECTORY_NAME));
         Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", DATA_DIRECTORY_NAME));
         Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DATA_DIRECTORY_NAME));
 
@@ -54,6 +55,7 @@ public class YamlUtils {
         Yaml eventTypesYaml = new Yaml(new Constructor(EventTypeList.class));
         Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(EventList.class));
         Yaml companiesYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(CompanyList.class));
+        Yaml companySynonymsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(CompanySynonymsList.class));
         Yaml speakersYaml = new Yaml(new Constructor(SpeakerList.class));
         Yaml talksYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(TalkList.class));
 
@@ -62,25 +64,29 @@ public class YamlUtils {
         EventTypeList eventTypeList = eventTypesYaml.load(eventTypesResource.getInputStream());
         EventList eventList = eventsYaml.load(eventsResource.getInputStream());
         CompanyList companyList = companiesYaml.load(companiesResource.getInputStream());
+        CompanySynonymsList companySynonymsList = companySynonymsYaml.load(companySynonymsResource.getInputStream());
         SpeakerList speakerList = speakersYaml.load(speakersResource.getInputStream());
         TalkList talkList = talksYaml.load(talksResource.getInputStream());
 
-        return getSourceInformation(placeList, eventTypeList, eventList, companyList, speakerList, talkList);
+        return getSourceInformation(placeList, eventTypeList, eventList, companyList, companySynonymsList, speakerList, talkList);
     }
 
     /**
      * Gets source information from resource lists.
      *
-     * @param placeList     places
-     * @param eventTypeList event types
-     * @param eventList     events
-     * @param speakerList   speakers
-     * @param talkList      talks
+     * @param placeList           places
+     * @param eventTypeList       event types
+     * @param eventList           events
+     * @param companyList         companies
+     * @param companySynonymsList company synonyms
+     * @param speakerList         speakers
+     * @param talkList            talks
      * @return source information
      * @throws SpeakerDuplicatedException if speaker duplicated
      */
     static SourceInformation getSourceInformation(PlaceList placeList, EventTypeList eventTypeList, EventList eventList,
-                                                  CompanyList companyList, SpeakerList speakerList, TalkList talkList)
+                                                  CompanyList companyList, CompanySynonymsList companySynonymsList,
+                                                  SpeakerList speakerList, TalkList talkList)
             throws SpeakerDuplicatedException {
         // Find duplicates for speaker names and for speaker names with company name
         if (findSpeakerDuplicates(speakerList.getSpeakers())) {
@@ -88,7 +94,7 @@ public class YamlUtils {
         }
 
         //TODO: delete
-        companyList.setCompanies(createCompaniesFromSpeakersAndFillSpeaker(speakerList.getSpeakers()));
+        companyList.setCompanies(createCompaniesFromSpeakersAndFillSpeaker(speakerList.getSpeakers(), companySynonymsList.getCompanySynonyms()));
 
         Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
         Map<Long, EventType> eventTypeMap = listToMap(eventTypeList.getEventTypes(), EventType::getId);
@@ -116,7 +122,7 @@ public class YamlUtils {
     }
 
     //TODO: delete
-    static List<Company> createCompaniesFromSpeakersAndFillSpeaker(List<Speaker> speakers) {
+    static List<Company> createCompaniesFromSpeakersAndFillSpeaker(List<Speaker> speakers, List<CompanySynonyms> companySynonymsList) {
         List<Company> companies = new ArrayList<>();
         Map<String, Company> companyMap = new HashMap<>();
         List<Speaker> filteredOrderedSpeakers = speakers.stream()
@@ -146,16 +152,23 @@ public class YamlUtils {
             }
         }
 
+        // Bind synonym to main company
+        for (CompanySynonyms companySynonyms : companySynonymsList) {
+            if (companyMap.containsKey(companySynonyms.getName())) {
+                Company company = companyMap.get(companySynonyms.getName());
+
+                for (String synonym : companySynonyms.getSynonyms()) {
+                    companies.removeIf(c -> c.getName().stream().anyMatch(li -> synonym.equals(li.getText())));
+                    companyMap.put(synonym, company);
+                }
+            }
+        }
+
         AtomicLong id = new AtomicLong(0);
 
+        // Sort and fill id
         companies.sort(Comparator.comparing(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN)));
-        companies.forEach(c -> {
-            c.setId(id.getAndIncrement());
-            log.info("id: {}, en: '{}', ru: '{}'",
-                    c.getId(),
-                    LocalizationUtils.getString(c.getName(), Language.ENGLISH),
-                    LocalizationUtils.getString(c.getName(), Language.RUSSIAN, Language.RUSSIAN));
-        });
+        companies.forEach(c -> c.setId(id.getAndIncrement()));
 
         // Fill company in speaker
         for (Speaker speaker : speakers) {

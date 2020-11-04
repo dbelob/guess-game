@@ -1,0 +1,91 @@
+companySynonyms:
+  - name: "Alfa-Lab"
+    synonyms: [
+        "Альфа-Банк: Альфа-Лаборатория"
+    ]
+  - name: "Amazon Web Services"
+    synonyms: [
+        "AWS"
+    ]
+  - name: "Align Technology"
+    synonyms: [
+        "Align Technology Inc"
+    ]
+  - name: Badoo
+    synonyms: [
+        "Badoo Limited"
+    ]
+  - name: "Bloomberg L.P."
+    synonyms: [
+        "Bloomberg LP"
+    ]
+  - name: "Elastic"
+    synonyms: [
+        "elastic"
+    ]
+  - name: "EPAM Systems"
+    synonyms: [
+        "EPAM",
+        "Epam Systems"
+    ]
+  - name: "Grid Dynamics"
+    synonyms: [
+        "GridDynamics"
+    ]
+  - name: "GridGain Systems"
+    synonyms: [
+        "GridGain"
+    ]
+  - name: "HeadHunter"
+    synonyms: [
+        "hh.ru"
+    ]
+  - name: "IT Territory/My.Games"
+    synonyms: [
+        "IT Territory/MyGames"
+    ]
+  - name: "Independent Consultant"
+    synonyms: [
+        "Independent consultant"
+    ]
+  - name: Intel
+    synonyms: [
+        "Intel Corporation"
+    ]
+  - name: "JUG Ru Group"
+    synonyms: [
+        "JUG.ru Group"
+    ]
+  - name: "Mail.ru Group"
+    synonyms: [
+        "Mail.Ru Group",
+        "Mail.ru"
+    ]
+  - name: Netflix
+    synonyms: [
+        "Netflix Inc."
+    ]
+  - name: "Object Computing"
+    synonyms: [
+        "Object Computing, Inc."
+    ]
+  - name: "Postgres Professional"
+    synonyms: [
+        "PostgresPro"
+    ]
+  - name: "Red Hat"
+    synonyms: [
+        "Red Hat, Inc."
+    ]
+  - name: "Tune IT"
+    synonyms: [
+        "Tune-IT"
+    ]
+  - name: "Uber Technologies"
+    synonyms: [
+        "Uber"
+    ]
+  - name: "ZeptoLab LLC"
+    synonyms: [
+        "Zeptolab"
+    ]
