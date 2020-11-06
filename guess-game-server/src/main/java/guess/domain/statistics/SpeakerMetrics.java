@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * Speaker metrics.
  */
-public class SpeakerMetrics extends AbstractSpeakerMetrics {
+public class SpeakerMetrics extends AbstractSpeakerCompanyMetrics {
     private final Speaker speaker;
 
     public SpeakerMetrics(Speaker speaker, long talksQuantity, long eventsQuantity, long eventTypesQuantity,

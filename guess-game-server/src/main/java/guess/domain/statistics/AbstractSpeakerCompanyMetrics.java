@@ -5,12 +5,12 @@ import java.util.Objects;
 /**
  * Abstract speaker metrics.
  */
-public abstract class AbstractSpeakerMetrics extends Metrics {
+public abstract class AbstractSpeakerCompanyMetrics extends Metrics {
     private final long eventsQuantity;
     private final long eventTypesQuantity;
 
-    protected AbstractSpeakerMetrics(long talksQuantity, long eventsQuantity, long eventTypesQuantity, long javaChampionsQuantity,
-                                     long mvpsQuantity) {
+    protected AbstractSpeakerCompanyMetrics(long talksQuantity, long eventsQuantity, long eventTypesQuantity, long javaChampionsQuantity,
+                                            long mvpsQuantity) {
         super(talksQuantity, javaChampionsQuantity, mvpsQuantity);
 
         this.eventsQuantity = eventsQuantity;
@@ -28,9 +28,9 @@ public abstract class AbstractSpeakerMetrics extends Metrics {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AbstractSpeakerMetrics)) return false;
+        if (!(o instanceof AbstractSpeakerCompanyMetrics)) return false;
         if (!super.equals(o)) return false;
-        AbstractSpeakerMetrics that = (AbstractSpeakerMetrics) o;
+        AbstractSpeakerCompanyMetrics that = (AbstractSpeakerCompanyMetrics) o;
         return eventsQuantity == that.eventsQuantity &&
                 eventTypesQuantity == that.eventTypesQuantity;
     }
@@ -42,7 +42,7 @@ public abstract class AbstractSpeakerMetrics extends Metrics {
 
     @Override
     public String toString() {
-        return "AbstractSpeakerMetrics{" +
+        return "AbstractSpeakerCompanyMetrics{" +
                 "eventsQuantity=" + eventsQuantity +
                 ", eventTypesQuantity=" + eventTypesQuantity +
                 '}';

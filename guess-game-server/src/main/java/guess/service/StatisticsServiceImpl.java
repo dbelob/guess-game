@@ -2,10 +2,8 @@ package guess.service;
 
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.Speaker;
-import guess.domain.source.Talk;
+import guess.domain.Language;
+import guess.domain.source.*;
 import guess.domain.statistics.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -234,6 +232,41 @@ public class StatisticsServiceImpl implements StatisticsService {
                         eventTypes.size(),
                         totalsJavaChampionsQuantity,
                         totalsMvpsQuantity)
+        );
+    }
+
+    @Override
+    public CompanyStatistics getCompanyStatistics(boolean isConferences, boolean isMeetups, Long eventTypeId) {
+        List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
+                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
+                        ((eventTypeId == null) || (et.getId() == eventTypeId)))
+                .collect(Collectors.toList());
+        Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new LinkedHashMap<>();
+        long totalsTalksQuantity = 0;
+        long totalsEventsQuantity = 0;
+
+        //TODO: implement
+
+        Company company0 = new Company();
+        company0.setId(0);
+        company0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "JetBrains")));
+
+        Company company1 = new Company();
+        company1.setId(1);
+        company1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "EPAM Systems")));
+
+        CompanyMetrics companyMetrics0 = new CompanyMetrics(
+                company0, 52, 20, 12, 7, 10, 5);
+
+        CompanyMetrics companyMetrics1 = new CompanyMetrics(
+                company1, 32, 10, 5, 4, 5, 2);
+
+        return new CompanyStatistics(
+                List.of(companyMetrics0, companyMetrics1),
+                new CompanyMetrics(
+                        new Company(),
+                        80, 25, 17, 8, 15, 7
+                )
         );
     }
 
