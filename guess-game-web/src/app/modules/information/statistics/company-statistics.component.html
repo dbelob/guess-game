@@ -43,11 +43,73 @@
       </div>
     </form>
 
-    <div *ngIf="isNoSpeakersFoundVisible()" class="alert text-center m-2">
+    <div *ngIf="isNoCompaniesFoundVisible()" class="alert text-center m-2">
       {{'statistics.speakers.noSpeakersFoundText' | translate}}
     </div>
 
-    <div *ngIf="isSpeakersListVisible()" class="m-2">
+    <div *ngIf="isCompaniesListVisible()" class="m-2">
+      <p-table [value]="companyStatistics.companyMetricsList" [resizableColumns]="true" [autoLayout]="true"
+               [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
+               [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
+               currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th class="text-center" pResizableColumn>#</th>
+            <th class="text-center" [pSortableColumn]="'name'" pResizableColumn>
+              {{'statistics.companies.table.companyColumn' | translate}}
+              <p-sortIcon [field]="'name'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'speakersQuantity'" pResizableColumn>
+              {{'statistics.companies.table.speakersColumn' | translate}}
+              <p-sortIcon [field]="'speakersQuantity'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'talksQuantity'" pResizableColumn>
+              {{'statistics.companies.table.talksColumn' | translate}}
+              <p-sortIcon [field]="'talksQuantity'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'eventsQuantity'" pResizableColumn>
+              {{'statistics.companies.table.eventsColumn' | translate}}
+              <p-sortIcon [field]="'eventsQuantity'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'eventTypesQuantity'" pResizableColumn>
+              {{'statistics.companies.table.eventTypesColumn' | translate}}
+              <p-sortIcon [field]="'eventTypesQuantity'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'javaChampion'" pResizableColumn>
+              {{'statistics.companies.table.javaChampionsColumn' | translate}}
+              <p-sortIcon [field]="'javaChampionsQuantity'"></p-sortIcon>
+            </th>
+            <th class="text-center" [pSortableColumn]="'anyMvp'" pResizableColumn>
+              {{'statistics.companies.table.mvpsColumn' | translate}}
+              <p-sortIcon [field]="'mvpsQuantity'"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-companyMetrics let-i = "rowIndex">
+          <tr>
+            <td class="text-center">{{i + 1}}</td>
+            <td>{{companyMetrics.name}}</td>
+            <td class="text-center">{{companyMetrics.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyMetrics.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyMetrics.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyMetrics.eventTypesQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyMetrics.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyMetrics.mvpsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="footer">
+          <tr>
+            <td colspan="2">{{'common.table.totalsText' | translate}}</td>
+            <td class="text-center">{{companyStatistics.totals?.speakersQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyStatistics.totals?.talksQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyStatistics.totals?.eventsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyStatistics.totals?.eventTypesQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyStatistics.totals?.javaChampionsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+            <td class="text-center">{{companyStatistics.totals?.mvpsQuantity | number:'1.0-0':translateService.currentLang}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
   </div>
 </div>

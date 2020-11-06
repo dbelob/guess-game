@@ -187,16 +187,25 @@
       "noSpeakersFoundText": "Спикеры не найдены",
       "table": {
         "nameColumn": "Имя",
-        "javaChampionColumn": "Java Champion",
-        "mvpColumn": "MVP",
         "talksColumn": "Докладов",
         "eventsColumn": "Событий",
-        "eventTypesColumn": "Типов событий"
+        "eventTypesColumn": "Типов событий",
+        "javaChampionColumn": "Java Champion",
+        "mvpColumn": "MVP"
       }
     },
     "companies": {
       "title": "Компании",
-      "noCompaniesFoundText": "Компании не найдены"
+      "noCompaniesFoundText": "Компании не найдены",
+      "table": {
+        "companyColumn": "Компания",
+        "speakersColumn": "Спикеров",
+        "talksColumn": "Докладов",
+        "eventsColumn": "Событий",
+        "eventTypesColumn": "Типов событий",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
+      }
     }
   },
   "notFound": {

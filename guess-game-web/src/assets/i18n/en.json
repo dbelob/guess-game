@@ -187,16 +187,25 @@
       "noSpeakersFoundText": "No speakers found",
       "table": {
         "nameColumn": "Name",
-        "javaChampionColumn": "Java Champion",
-        "mvpColumn": "MVP",
         "talksColumn": "Talks",
         "eventsColumn": "Events",
-        "eventTypesColumn": "Event types"
+        "eventTypesColumn": "Event types",
+        "javaChampionColumn": "Java Champion",
+        "mvpColumn": "MVP"
       }
     },
     "companies": {
       "title": "Companies",
-      "noCompaniesFoundText": "No companies found"
+      "noCompaniesFoundText": "No companies found",
+      "table": {
+        "companyColumn": "Company",
+        "speakersColumn": "Speakers",
+        "talksColumn": "Talks",
+        "eventsColumn": "Events",
+        "eventTypesColumn": "Event types",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
+      }
     }
   },
   "notFound": {

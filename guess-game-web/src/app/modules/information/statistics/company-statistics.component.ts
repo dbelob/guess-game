@@ -86,11 +86,11 @@ export class CompanyStatisticsComponent implements OnInit {
     this.loadCompanyStatistics(this.selectedEventType);
   }
 
-  isNoSpeakersFoundVisible() {
+  isNoCompaniesFoundVisible() {
     return (this.companyStatistics?.companyMetricsList && (this.companyStatistics.companyMetricsList.length === 0));
   }
 
-  isSpeakersListVisible() {
+  isCompaniesListVisible() {
     return (this.companyStatistics?.companyMetricsList && (this.companyStatistics.companyMetricsList.length > 0));
   }
 }
