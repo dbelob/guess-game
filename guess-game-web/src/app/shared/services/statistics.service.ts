@@ -6,6 +6,7 @@ import { EventType } from '../models/event-type.model';
 import { EventTypeStatistics } from '../models/event-type-statistics.model';
 import { EventStatistics } from '../models/event-statistics.model';
 import { SpeakerStatistics } from '../models/speaker-statistics.model';
+import { CompanyStatistics } from '../models/company-statistics.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -55,6 +56,23 @@ export class StatisticsService {
     }
 
     return this.http.get<SpeakerStatistics>(`${this.baseUrl}/speaker-statistics`, {params: params})
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getCompanyStatistics(conferences: boolean, meetups: boolean, eventType: EventType): Observable<CompanyStatistics> {
+    let params = new HttpParams()
+      .set('conferences', conferences.toString())
+      .set('meetups', meetups.toString());
+    if (eventType) {
+      params = params.set('eventTypeId', eventType.id.toString());
+    }
+
+    return this.http.get<CompanyStatistics>(`${this.baseUrl}/company-statistics`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

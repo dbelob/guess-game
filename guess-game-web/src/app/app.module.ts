@@ -45,6 +45,7 @@ import { SpeakersSearchComponent } from './modules/information/speakers/speakers
 import { EventTypeStatisticsComponent } from './modules/information/statistics/event-type-statistics.component';
 import { EventStatisticsComponent } from './modules/information/statistics/event-statistics.component';
 import { SpeakerStatisticsComponent } from './modules/information/statistics/speaker-statistics.component';
+import { CompanyStatisticsComponent } from './modules/information/statistics/company-statistics.component';
 import { AnswerService } from './shared/services/answer.service';
 import { EventService } from './shared/services/event.service';
 import { EventTypeService } from './shared/services/event-type.service';
@@ -78,6 +79,7 @@ const routes: Routes = [
   {path: 'information/statistics/event-types', component: EventTypeStatisticsComponent},
   {path: 'information/statistics/events', component: EventStatisticsComponent},
   {path: 'information/statistics/speakers', component: SpeakerStatisticsComponent},
+  {path: 'information/statistics/companies', component: CompanyStatisticsComponent},
   {path: 'information/event-types', redirectTo: 'information/event-types/search'},
   {path: 'information/events', redirectTo: 'information/events/search'},
   {path: 'information/talks', redirectTo: 'information/talks/search'},

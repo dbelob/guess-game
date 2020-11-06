@@ -193,6 +193,10 @@
         "eventsColumn": "Событий",
         "eventTypesColumn": "Типов событий"
       }
+    },
+    "companies": {
+      "title": "Компании",
+      "noCompaniesFoundText": "Компании не найдены"
     }
   },
   "notFound": {

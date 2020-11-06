@@ -193,6 +193,10 @@
         "eventsColumn": "Events",
         "eventTypesColumn": "Event types"
       }
+    },
+    "companies": {
+      "title": "Companies",
+      "noCompaniesFoundText": "No companies found"
     }
   },
   "notFound": {

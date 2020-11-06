@@ -11,4 +11,8 @@
           [class.text-dark]="isSpeakers()" [class.font-weight-bold]="isSpeakers()" [disabled]="isSpeakers()">
     {{'statistics.speakers.title' | translate}}
   </button>
+  <button class="btn btn-link" routerLink="/information/statistics/companies"
+          [class.text-dark]="isCompanies()" [class.font-weight-bold]="isCompanies()" [disabled]="isCompanies()">
+    {{'statistics.companies.title' | translate}}
+  </button>
 </div>

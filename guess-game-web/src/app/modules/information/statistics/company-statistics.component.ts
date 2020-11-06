@@ -2,21 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
 import { EventType } from '../../../shared/models/event-type.model';
-import { SpeakerStatistics } from '../../../shared/models/speaker-statistics.model';
+import { CompanyStatistics } from '../../../shared/models/company-statistics.model';
 import { StatisticsService } from '../../../shared/services/statistics.service';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { findEventTypeById } from '../../general/utility-functions';
 
 @Component({
-  selector: 'app-speaker-statistics',
-  templateUrl: './speaker-statistics.component.html'
+  selector: 'app-company-statistics',
+  templateUrl: './company-statistics.component.html'
 })
-export class SpeakerStatisticsComponent implements OnInit {
+export class CompanyStatisticsComponent implements OnInit {
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
-  public degreesImageDirectory = `${this.imageDirectory}/degrees`;
-  public speakersImageDirectory = `${this.imageDirectory}/speakers`;
 
   public isConferences = true;
   public isMeetups = true;
@@ -25,7 +23,7 @@ export class SpeakerStatisticsComponent implements OnInit {
   public selectedEventType: EventType;
   public eventTypeSelectItems: SelectItem[] = [];
 
-  public speakerStatistics = new SpeakerStatistics();
+  public companyStatistics = new CompanyStatistics();
   public multiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
@@ -59,25 +57,25 @@ export class SpeakerStatisticsComponent implements OnInit {
                 this.selectedEventType = null;
               }
 
-              this.loadSpeakerStatistics(this.selectedEventType);
+              this.loadCompanyStatistics(this.selectedEventType);
             });
         } else {
           this.selectedEventType = null;
-          this.loadSpeakerStatistics(this.selectedEventType);
+          this.loadCompanyStatistics(this.selectedEventType);
         }
       });
   }
 
-  loadSpeakerStatistics(eventType: EventType) {
-    this.statisticsService.getSpeakerStatistics(this.isConferences, this.isMeetups, eventType)
+  loadCompanyStatistics(eventType: EventType) {
+    this.statisticsService.getCompanyStatistics(this.isConferences, this.isMeetups, eventType)
       .subscribe(data => {
-          this.speakerStatistics = data;
+          this.companyStatistics = data;
         }
       );
   }
 
   onEventTypeChange(eventType: EventType) {
-    this.loadSpeakerStatistics(eventType);
+    this.loadCompanyStatistics(eventType);
   }
 
   onEventTypeKindChange(checked: boolean) {
@@ -85,14 +83,14 @@ export class SpeakerStatisticsComponent implements OnInit {
   }
 
   onLanguageChange() {
-    this.loadSpeakerStatistics(this.selectedEventType);
+    this.loadCompanyStatistics(this.selectedEventType);
   }
 
   isNoSpeakersFoundVisible() {
-    return (this.speakerStatistics?.speakerMetricsList && (this.speakerStatistics.speakerMetricsList.length === 0));
+    return (this.companyStatistics?.companyMetricsList && (this.companyStatistics.companyMetricsList.length === 0));
   }
 
   isSpeakersListVisible() {
-    return (this.speakerStatistics?.speakerMetricsList && (this.speakerStatistics.speakerMetricsList.length > 0));
+    return (this.companyStatistics?.companyMetricsList && (this.companyStatistics.companyMetricsList.length > 0));
   }
 }
