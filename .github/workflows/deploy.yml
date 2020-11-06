@@ -52,6 +52,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           passphrase: ${{ secrets.DEPLOY_PASSPHRASE }}
           script: |
+            ls -t /opt/guess-game/guess-game-*.war | sed '1d' | xargs rm
             mv /opt/guess-game/guess-game.war /opt/guess-game/guess-game-${{ github.run_number }}.war
             chmod 755 /opt/guess-game/guess-game-${{ github.run_number }}.war
             sudo service guess-game stop
