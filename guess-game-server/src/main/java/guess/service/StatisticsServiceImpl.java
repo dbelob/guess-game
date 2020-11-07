@@ -2,7 +2,6 @@ package guess.service;
 
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
-import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.statistics.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -241,31 +240,76 @@ public class StatisticsServiceImpl implements StatisticsService {
                 .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
                         ((eventTypeId == null) || (et.getId() == eventTypeId)))
                 .collect(Collectors.toList());
-        Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new LinkedHashMap<>();
-        long totalsTalksQuantity = 0;
-        long totalsEventsQuantity = 0;
+        Map<Company, CompanyMetricsInternal> companySpeakerMetricsMap = new LinkedHashMap<>();
 
-        //TODO: implement
+        for (EventType eventType : eventTypes) {
+            for (Event event : eventType.getEvents()) {
+                for (Talk talk : event.getTalks()) {
+                    for (Speaker speaker : talk.getSpeakers()) {
+                        // Company metrics
+                        speaker.getCompanies().stream()
+                                .map(c -> companySpeakerMetricsMap.computeIfAbsent(c, k -> new CompanyMetricsInternal()))
+                                .forEach(cmi -> {
+                                    cmi.getSpeakers().add(speaker);
+                                    cmi.getTalks().add(talk);
+                                    cmi.getEvents().add(event);
+                                    cmi.getEventTypes().add(eventType);
+                                });
+                    }
+                }
+            }
+        }
 
-        Company company0 = new Company();
-        company0.setId(0);
-        company0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "JetBrains")));
+        List<CompanyMetrics> companyMetricsList = new ArrayList<>();
+        Set<Speaker> speakerMap = new HashSet<>();
+        Set<Talk> talkMap = new HashSet<>();
+        Set<Event> eventMap = new HashSet<>();
+        Set<EventType> eventTypeMap = new HashSet<>();
 
-        Company company1 = new Company();
-        company1.setId(1);
-        company1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "EPAM Systems")));
+        for (Map.Entry<Company, CompanyMetricsInternal> entry : companySpeakerMetricsMap.entrySet()) {
+            Company company = entry.getKey();
+            CompanyMetricsInternal companyMetricsInternal = entry.getValue();
+            long javaChampionsQuantity = companyMetricsInternal.getSpeakers().stream()
+                    .filter(Speaker::isJavaChampion)
+                    .count();
+            long mvpsQuantity = companyMetricsInternal.getSpeakers().stream()
+                    .filter(Speaker::isAnyMvp)
+                    .count();
 
-        CompanyMetrics companyMetrics0 = new CompanyMetrics(
-                company0, 52, 20, 12, 7, 10, 5);
+            companyMetricsList.add(new CompanyMetrics(
+                    company,
+                    companyMetricsInternal.getSpeakers().size(),
+                    companyMetricsInternal.getTalks().size(),
+                    companyMetricsInternal.getEvents().size(),
+                    companyMetricsInternal.getEventTypes().size(),
+                    javaChampionsQuantity,
+                    mvpsQuantity
+            ));
 
-        CompanyMetrics companyMetrics1 = new CompanyMetrics(
-                company1, 32, 10, 5, 4, 5, 2);
+            speakerMap.addAll(companyMetricsInternal.getSpeakers());
+            talkMap.addAll(companyMetricsInternal.getTalks());
+            eventMap.addAll(companyMetricsInternal.getEvents());
+            eventTypeMap.addAll(companyMetricsInternal.getEventTypes());
+        }
+
+        // Totals metrics
+        long totalsJavaChampionsQuantity = speakerMap.stream()
+                .filter(Speaker::isJavaChampion)
+                .count();
+        long totalsMvpsQuantity = speakerMap.stream()
+                .filter(Speaker::isAnyMvp)
+                .count();
 
         return new CompanyStatistics(
-                List.of(companyMetrics0, companyMetrics1),
+                companyMetricsList,
                 new CompanyMetrics(
                         new Company(),
-                        80, 25, 17, 8, 15, 7
+                        speakerMap.size(),
+                        talkMap.size(),
+                        eventMap.size(),
+                        eventTypeMap.size(),
+                        totalsJavaChampionsQuantity,
+                        totalsMvpsQuantity
                 )
         );
     }
