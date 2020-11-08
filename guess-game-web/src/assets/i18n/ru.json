@@ -39,6 +39,8 @@
     "photoByNameLabel": "Фотографию по имени",
     "talkBySpeakerLabel": "Доклад по спикеру",
     "speakerByTalkLabel": "Спикера по докладу",
+    "companyBySpeakerLabel": "Компанию по спикеру",
+    "speakerByCompanyLabel": "Спикера по компании",
     "accountsBySpeakerLabel": "Twitter, GitHub по спикеру",
     "speakerByAccountsLabel": "Спикера по Twitter, GitHub",
     "startButtonText": "Начать"

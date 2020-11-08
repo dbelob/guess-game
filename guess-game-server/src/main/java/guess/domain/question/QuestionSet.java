@@ -9,13 +9,19 @@ public class QuestionSet {
     private final Event event;
     private final List<SpeakerQuestion> speakerQuestions;
     private final List<TalkQuestion> talkQuestions;
+    private final List<CompanyBySpeakerQuestion> companyBySpeakerQuestions;
+    private final List<SpeakerByCompanyQuestion> speakerByCompanyQuestions;
     private final List<SpeakerQuestion> accountQuestions;
 
     public QuestionSet(Event event, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions,
+                       List<CompanyBySpeakerQuestion> companyBySpeakerQuestions,
+                       List<SpeakerByCompanyQuestion> speakerByCompanyQuestions,
                        List<SpeakerQuestion> accountQuestions) {
         this.event = event;
         this.speakerQuestions = speakerQuestions;
         this.talkQuestions = talkQuestions;
+        this.companyBySpeakerQuestions = companyBySpeakerQuestions;
+        this.speakerByCompanyQuestions = speakerByCompanyQuestions;
         this.accountQuestions = accountQuestions;
     }
 
@@ -31,6 +37,14 @@ public class QuestionSet {
         return talkQuestions;
     }
 
+    public List<CompanyBySpeakerQuestion> getCompanyBySpeakerQuestions() {
+        return companyBySpeakerQuestions;
+    }
+
+    public List<SpeakerByCompanyQuestion> getSpeakerByCompanyQuestions() {
+        return speakerByCompanyQuestions;
+    }
+
     public List<SpeakerQuestion> getAccountQuestions() {
         return accountQuestions;
     }
@@ -43,6 +57,8 @@ public class QuestionSet {
         return Objects.equals(event, that.event) &&
                 Objects.equals(speakerQuestions, that.speakerQuestions) &&
                 Objects.equals(talkQuestions, that.talkQuestions) &&
+                Objects.equals(companyBySpeakerQuestions, that.companyBySpeakerQuestions) &&
+                Objects.equals(speakerByCompanyQuestions, that.speakerByCompanyQuestions) &&
                 Objects.equals(accountQuestions, that.accountQuestions);
     }
 
@@ -57,6 +73,8 @@ public class QuestionSet {
                 "event=" + event +
                 ", speakerQuestions=" + speakerQuestions +
                 ", talkQuestions=" + talkQuestions +
+                ", companyBySpeakerQuestions=" + companyBySpeakerQuestions +
+                ", speakerByCompanyQuestions=" + speakerByCompanyQuestions +
                 ", accountQuestions=" + accountQuestions +
                 '}';
     }

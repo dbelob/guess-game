@@ -1,10 +1,8 @@
 package guess.dao;
 
 import guess.domain.GuessMode;
-import guess.domain.question.Question;
-import guess.domain.question.QuestionSet;
-import guess.domain.question.SpeakerQuestion;
-import guess.domain.question.TalkQuestion;
+import guess.domain.question.*;
+import guess.domain.source.Company;
 import guess.domain.source.Event;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
@@ -12,8 +10,7 @@ import guess.util.QuestionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -43,10 +40,13 @@ public class QuestionDaoImpl implements QuestionDao {
         List<QuestionSet> localQuestionSets = new ArrayList<>();
 
         for (Event event : eventDao.getEvents()) {
-            // Fill speaker and talk questions
+            // Fill questions
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
             List<TalkQuestion> talkQuestions = new ArrayList<>();
             List<SpeakerQuestion> accountQuestions = new ArrayList<>();
+
+            Set<Speaker> speakerSet = new HashSet<>();
+            Map<Company, List<Speaker>> companySpeakersMap = new HashMap<>();
 
             for (Talk talk : event.getTalks()) {
                 for (Speaker speaker : talk.getSpeakers()) {
@@ -60,6 +60,20 @@ public class QuestionDaoImpl implements QuestionDao {
                             ((gitHub != null) && !gitHub.isEmpty())) {
                         accountQuestions.add(speakerQuestion);
                     }
+
+                    if (!speaker.getCompanies().isEmpty()) {
+                        // Fill speakers with companies set
+                        speakerSet.add(speaker);
+
+                        // Fill company to speakers map
+                        for (Company company : speaker.getCompanies()) {
+                            if (!companySpeakersMap.containsKey(company)) {
+                                companySpeakersMap.put(company, new ArrayList<>());
+                            }
+
+                            companySpeakersMap.get(company).add(speaker);
+                        }
+                    }
                 }
 
                 talkQuestions.add(new TalkQuestion(
@@ -67,10 +81,20 @@ public class QuestionDaoImpl implements QuestionDao {
                         talk));
             }
 
+            List<CompanyBySpeakerQuestion> companyBySpeakerQuestions = speakerSet.stream()
+                    .map(s -> new CompanyBySpeakerQuestion(s.getCompanies(), s))
+                    .collect(Collectors.toList());
+
+            List<SpeakerByCompanyQuestion> speakerByCompanyQuestions = companySpeakersMap.keySet().stream()
+                    .map(c -> new SpeakerByCompanyQuestion(companySpeakersMap.get(c), c))
+                    .collect(Collectors.toList());
+
             localQuestionSets.add(new QuestionSet(
                     event,
                     QuestionUtils.removeDuplicatesById(speakerQuestions),
                     QuestionUtils.removeDuplicatesById(talkQuestions),
+                    companyBySpeakerQuestions,
+                    speakerByCompanyQuestions,
                     QuestionUtils.removeDuplicatesById(accountQuestions)));
         }
 
@@ -96,8 +120,6 @@ public class QuestionDaoImpl implements QuestionDao {
 
     @Override
     public List<Question> getQuestionByIds(List<Long> eventTypeIds, List<Long> eventIds, GuessMode guessMode) {
-        List<Question> questions;
-
         // Find sub question sets
         List<QuestionSet> subQuestionSets = getSubQuestionSets(eventTypeIds, eventIds);
 
@@ -109,7 +131,7 @@ public class QuestionDaoImpl implements QuestionDao {
                     .map(QuestionSet::getSpeakerQuestions)
                     .forEach(speakerQuestions::addAll);
 
-            questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
+            return new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
         } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             // Guess talk by speaker or speaker by talk
             List<TalkQuestion> talkQuestions = new ArrayList<>();
@@ -118,7 +140,33 @@ public class QuestionDaoImpl implements QuestionDao {
                     .map(QuestionSet::getTalkQuestions)
                     .forEach(talkQuestions::addAll);
 
-            questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(talkQuestions));
+            return new ArrayList<>(QuestionUtils.removeDuplicatesById(talkQuestions));
+        } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
+            // Guess company by speaker
+            List<CompanyBySpeakerQuestion> companyBySpeakerQuestions = new ArrayList<>();
+
+            subQuestionSets.stream()
+                    .map(QuestionSet::getCompanyBySpeakerQuestions)
+                    .forEach(companyBySpeakerQuestions::addAll);
+
+            return new ArrayList<>(QuestionUtils.removeDuplicatesById(companyBySpeakerQuestions));
+        } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
+            // Guess speaker by company
+            Map<Company, List<Speaker>> companySpeakersMap = new HashMap<>();
+
+            for (QuestionSet questionSet : subQuestionSets) {
+                for (SpeakerByCompanyQuestion question : questionSet.getSpeakerByCompanyQuestions()) {
+                    if (companySpeakersMap.containsKey(question.getCompany())) {
+                        companySpeakersMap.get(question.getCompany()).addAll(question.getSpeakers());
+                    } else {
+                        companySpeakersMap.put(question.getCompany(), new ArrayList<>(question.getSpeakers()));
+                    }
+                }
+            }
+
+            return companySpeakersMap.keySet().stream()
+                    .map(c -> new SpeakerByCompanyQuestion(companySpeakersMap.get(c), c))
+                    .collect(Collectors.toList());
         } else if (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
             // Guess accounts by speaker or speaker by accounts
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
@@ -127,11 +175,9 @@ public class QuestionDaoImpl implements QuestionDao {
                     .map(QuestionSet::getAccountQuestions)
                     .forEach(speakerQuestions::addAll);
 
-            questions = new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
+            return new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
-
-        return questions;
     }
 }

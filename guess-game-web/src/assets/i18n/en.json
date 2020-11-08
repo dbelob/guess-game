@@ -39,6 +39,8 @@
     "photoByNameLabel": "Photo by name",
     "talkBySpeakerLabel": "Talk by speaker",
     "speakerByTalkLabel": "Speaker by talk",
+    "companyBySpeakerLabel": "Company by speaker",
+    "speakerByCompanyLabel": "Speaker by company",
     "accountsBySpeakerLabel": "Twitter, GitHub by speaker",
     "speakerByAccountsLabel": "Speaker by Twitter, GitHub",
     "startButtonText": "Start"

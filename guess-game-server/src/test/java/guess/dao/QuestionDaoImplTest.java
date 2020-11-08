@@ -133,6 +133,8 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker0), talk0)
                                 ),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 Collections.emptyList()
                         ),
                         new QuestionSet(
@@ -143,6 +145,8 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker1), talk1)
                                 ),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker1))
                         ),
                         new QuestionSet(
@@ -154,10 +158,14 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker2, speaker3), talk2)
                                 ),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker2))
                         ),
                         new QuestionSet(
                                 event3,
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
                                 Collections.emptyList()
@@ -191,6 +199,8 @@ class QuestionDaoImplTest {
                         List.of(
                                 new TalkQuestion(List.of(speaker0), talk0)
                         ),
+                        Collections.emptyList(),
+                        Collections.emptyList(),
                         Collections.emptyList()
                 )),
                 questionDao.getSubQuestionSets(
@@ -201,6 +211,8 @@ class QuestionDaoImplTest {
         assertEquals(
                 List.of(new QuestionSet(
                         event3,
+                        Collections.emptyList(),
+                        Collections.emptyList(),
                         Collections.emptyList(),
                         Collections.emptyList(),
                         Collections.emptyList()
@@ -219,6 +231,8 @@ class QuestionDaoImplTest {
                         List.of(
                                 new TalkQuestion(List.of(speaker1), talk1)
                         ),
+                        Collections.emptyList(),
+                        Collections.emptyList(),
                         List.of(new SpeakerQuestion(speaker1))
                 )),
                 questionDao.getSubQuestionSets(
@@ -235,6 +249,8 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker1), talk1)
                                 ),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker1))
                         ),
                         new QuestionSet(
@@ -246,6 +262,8 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker2, speaker3), talk2)
                                 ),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker2))
                         )
                 ),
