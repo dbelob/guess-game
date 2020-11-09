@@ -6,6 +6,8 @@ import { GuessNameByPhotoComponent } from './guess-name-by-photo.component';
 import { GuessPhotoByNameComponent } from './guess-photo-by-name.component';
 import { GuessTalkBySpeakerComponent } from './guess-talk-by-speaker.component';
 import { GuessSpeakerByTalkComponent } from './guess-speaker-by-talk.component';
+import { GuessCompanyBySpeakerComponent } from './guess-company-by-speaker.component';
+import { GuessSpeakerByCompanyComponent } from './guess-speaker-by-company.component';
 import { GuessAccountBySpeakerComponent } from './guess-account-by-speaker.component';
 import { GuessSpeakerByAccountComponent } from './guess-speaker-by-account.component';
 import { CancelGameComponent } from './cancel-game.component';
@@ -19,6 +21,8 @@ import { MessageModule } from '../../message/message.module';
     GuessPhotoByNameComponent,
     GuessTalkBySpeakerComponent,
     GuessSpeakerByTalkComponent,
+    GuessCompanyBySpeakerComponent,
+    GuessSpeakerByCompanyComponent,
     GuessAccountBySpeakerComponent,
     GuessSpeakerByAccountComponent
   ],
