@@ -11,6 +11,7 @@ import { SpeakersTalks } from '../models/speakers-talks.model';
 import { TalkSpeakers } from '../models/talk-speakers.model';
 import { SpeakerAccounts } from '../models/speaker-accounts.model';
 import { AccountSpeakers } from '../models/account-speakers.model';
+import { SpeakerCompanies } from "../models/speaker-companies.model";
 
 @Injectable({
   providedIn: 'root'
@@ -83,6 +84,16 @@ export class StateService {
 
   getTalkSpeakers(): Observable<TalkSpeakers> {
     return this.http.get<TalkSpeakers>(`${this.baseUrl}/talk-speakers`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getSpeakerCompanies(): Observable<SpeakerCompanies> {
+    return this.http.get<SpeakerCompanies>(`${this.baseUrl}/speaker-companies`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

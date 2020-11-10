@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SpeakersTalks } from '../../../shared/models/speakers-talks.model';
+import { State } from '../../../shared/models/state.model';
 import { StateService } from '../../../shared/services/state.service';
 import { AnswerService } from '../../../shared/services/answer.service';
-import { State } from '../../../shared/models/state.model';
 
 @Component({
-  selector: 'app-guess-talk',
+  selector: 'app-guess-talk-by-speaker',
   templateUrl: './guess-talk-by-speaker.component.html'
 })
 export class GuessTalkBySpeakerComponent implements OnInit {
