@@ -13,7 +13,7 @@ export class GuessTalkBySpeakerComponent implements OnInit {
   private imageDirectory = 'assets/images';
   private eventsImageDirectory = `${this.imageDirectory}/events`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
-  public speakerTalks: SpeakersTalks = new SpeakersTalks();
+  public speakersTalks: SpeakersTalks = new SpeakersTalks();
   public title: string;
   public logoImageSource: string;
 
@@ -28,11 +28,11 @@ export class GuessTalkBySpeakerComponent implements OnInit {
     this.stateService.getSpeakerTalks()
       .subscribe(data => {
           if (data) {
-            this.speakerTalks = data;
-            this.title = `${this.speakerTalks.questionSetName} (${this.speakerTalks.currentIndex + 1}/${this.speakerTalks.totalNumber})`;
+            this.speakersTalks = data;
+            this.title = `${this.speakersTalks.questionSetName} (${this.speakersTalks.currentIndex + 1}/${this.speakersTalks.totalNumber})`;
 
-            if (this.speakerTalks.logoFileName) {
-              this.logoImageSource = `${this.eventsImageDirectory}/${this.speakerTalks.logoFileName}`;
+            if (this.speakersTalks.logoFileName) {
+              this.logoImageSource = `${this.eventsImageDirectory}/${this.speakersTalks.logoFileName}`;
             }
           } else {
             this.result();
@@ -42,7 +42,7 @@ export class GuessTalkBySpeakerComponent implements OnInit {
   }
 
   answer(id: number) {
-    this.answerService.setAnswer(this.speakerTalks.currentIndex, id)
+    this.answerService.setAnswer(this.speakersTalks.currentIndex, id)
       .subscribe(data => {
           this.loadQuestion();
         }
