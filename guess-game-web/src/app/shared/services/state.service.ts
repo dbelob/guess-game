@@ -11,7 +11,7 @@ import { SpeakersTalks } from '../models/speakers-talks.model';
 import { TalkSpeakers } from '../models/talk-speakers.model';
 import { SpeakerAccounts } from '../models/speaker-accounts.model';
 import { AccountSpeakers } from '../models/account-speakers.model';
-import { SpeakerCompanies } from "../models/speaker-companies.model";
+import { SpeakerCompanies } from '../models/speaker-companies.model';
 
 @Injectable({
   providedIn: 'root'
