@@ -590,11 +590,26 @@ public class ContentfulUtils {
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .filter(t -> !ignoreDemoStage ||
-                        (((t.getFields().getSdTrack() == null) || !t.getFields().getSdTrack()) &&
-                                ((t.getFields().getDemoStage() == null) || !t.getFields().getDemoStage())))
+                .filter(t -> isValidTalk(t, ignoreDemoStage))
                 .map(t -> createTalk(t, assetMap, entryErrorSet, assetErrorSet, speakerMap, id))
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Checks talk validity.
+     *
+     * @param talk            talk
+     * @param ignoreDemoStage {@code true} if ignore demo stage, otherwise {@code false}
+     * @return talk validity
+     */
+    static boolean isValidTalk(ContentfulTalk<? extends ContentfulTalkFields> talk, boolean ignoreDemoStage) {
+        if (talk.getFields().getTalkDay() == null) {
+            return false;
+        }
+
+        return !ignoreDemoStage ||
+                (((talk.getFields().getSdTrack() == null) || !talk.getFields().getSdTrack()) &&
+                        ((talk.getFields().getDemoStage() == null) || !talk.getFields().getDemoStage()));
     }
 
     /**
