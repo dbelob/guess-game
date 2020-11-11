@@ -14628,7 +14628,7 @@ speakers:
       - {language: en, text: "Alexander Ganyukhin"}
       - {language: ru, text: "Александр Ганюхин"}
     company:
-      - {language: en, text: MERA}
+      - {language: en, text: "Orion Innovation"}
     bio:
       - {language: en, text: "Has been working as a C++ programmer for over 8 years, mostly in mobile communications and car\
             \ industry. Recently he became interested in metaprogramming and developing tools in C++ to make life of colleagues\
@@ -14640,12 +14640,19 @@ speakers:
     photoFileName: 0998.jpg
     name:
       - {language: en, text: "Ashot Vardanian"}
+      - {language: ru, text: "Ашот Варданян"}
     company:
       - {language: en, text: UNUM}
     bio:
-      - {language: en, text: "Ashot is a computer scientist with a background in astrophysics, who works primarily on scalable\
-            \ AI systems and computational complexity issues. He has been using C++ almost exclusively for the past four years\
-            \ for everything, including data science, web & user interfaces."}
+      - language: en
+        text: "Ashot grew up in St. Petersburg, studied Astrophysics in SPbSTU, and does programming since 2005. These days\
+            \ he designs new algorithms and software products and invests in tech companies worldwide.\n\nHis interests include\
+            \ neuro-symbolic machine learning models, low-level software, and formal languages."
+      - language: ru
+        text: "Ашот вырос в Санкт-Петербурге, изучал Астрофизику в СПБГПУ, а программирует с 2005 года. С 2015 года он изо\
+            бретает новые алгоритмы, создает высокопроизводительные продукты на их основе и инвестирует в технологические\
+            \ компании по всему миру.\n\nЕго области интересов: нейро-символьные модели машинного обучения, низкоуровневый\
+            \ софт и формальные языки."
     twitter: ashvardanian
   - id: 999
     photoFileName: 0999.jpg
@@ -17492,12 +17499,12 @@ speakers:
       - language: en
         text: "Kevlin is an independent consultant, speaker, writer, and trainer. His development interests include programming\
             \ languages, software architecture, and programming practices, with a particular emphasis on unit testing and\
-            \ reasoning about practices at the team level.\nKevlin loves to help and inspire others, share ideas, and ask\
+            \ reasoning about practices at the team level.\n\nKevlin loves to help and inspire others, share ideas, and ask\
             \ questions. He has helped many teams with their code, culture, and practices, contributing code to companies\
-            \ and open source. He blogs on code and other things and has been a columnist for a number of magazines and sites\
+            \ and open source. He blogs on code and other things and has been a columnist for several magazines and sites\
             \ and has been on far too many committees (it has been said that \"a committee is a cul-de-sac down which ideas\
             \ are lured and then quietly strangled\"). He is co-author of two volumes in the Pattern-Oriented Software Architecture\
-            \ series, editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should\
+            \ series, editor of 97 Things Every Programmer Should Know, and co-editor of 97 Things Every Java Programmer Should\
             \ Know."
     twitter: kevlinhenney
   - id: 1208
@@ -19867,3 +19874,198 @@ speakers:
       - {language: en, text: "Program Coordinator of Mobius Conference."}
       - {language: ru, text: "Программный координатор конференции \"Mobius\"."}
     twitter: OksMiro
+  - id: 1385
+    photoFileName: 1385.jpg
+    name:
+      - {language: en, text: "Igor Vorobtsov"}
+      - {language: ru, text: "Игорь Воробцов"}
+    company:
+      - {language: en, text: Intel}
+    bio:
+      - {language: en, text: "Igor Vorobtsov has more than 12 years of experience in the areas of C/C++ and Fortran compilers,\
+            \ application tuning, and developer support. Igor got a Master of Science degree in Applied Mathematics. Since\
+            \ joining Intel in 2008, Igor has worked as a Technical Consulting Engineer supporting software developers throughout\
+            \ EMEA region. Igor has a broad array of application experience, including enterprise applications and high-performance\
+            \ computing environments."}
+      - {language: ru, text: "Игорь Воробцов имеет более чем 12-летний опыт работы в области высокооптимизированных компил\
+            яторов C/C++ и Fortran, оптимизации производительности приложений и поддержки разработчиков. Игорь получил сте\
+            пень магистра прикладной математики. С момента прихода в Intel в 2008 году Игорь работал инженером-консультант\
+            ом по поддержке разработчиков программного обеспечения в Европе и мире. Он имеет большой опыт в оптимизации HPC\
+            \ и enterprise-приложений."}
+  - id: 1386
+    photoFileName: 1386.jpg
+    name:
+      - {language: en, text: "Denis Yaroshevskiy"}
+      - {language: ru, text: "Денис Ярошевский"}
+    company:
+      - {language: en, text: Bloomberg}
+    bio:
+      - {language: en, text: "Workes at Bloomberg. Semi-active in the C++ community. Mostly interested in fast algorithms\
+            \ and low-level optimizations. You can find a bit of Denis' code in libc++ and Chromium base library."}
+      - {language: ru, text: "Работает в Bloomberg. Активничает в С++ сообществе. В основном увлекается быстрыми алгоритма\
+            ми и низкоуровневыми оптимизациями. Немного кода Дениса можно найти в libc++ и в Chromium base library."}
+    twitter: dyaroshev
+  - id: 1387
+    photoFileName: 1387.jpg
+    name:
+      - {language: en, text: "Mikhail Belyaev"}
+      - {language: ru, text: "Михаил Беляев"}
+    company:
+      - {language: en, text: Prosoft-Systems}
+      - {language: ru, text: Прософт-Системы}
+    bio:
+      - {language: en, text: "Mikhail is a team leader at Prosoft-Systems. He has been developing embedded software for industrial\
+            \ controllers (ARIS) for over 8 years. The controllers work under the control of QNX OS and are used to monitoring\
+            \ and control power systems and substations. He controls the development of a metering subsystem and he is the\
+            \ main developer of a redundancy system and an embedded cross-platform information security module. He has been\
+            \ using C and C++ for more than 15 years."}
+      - language: ru
+        text: "Руководитель группы в Прософт-Системы, более 8 лет занимается разработкой встроенного программного обеспече\
+            ния для промышленных контроллеров ARIS, которые работают под управлением QNX OS и применяются для автоматизаци\
+            и энергосистем и подстанций. \nВ настоящий момент курирует разработку подсистемы устройства сбора и передачи д\
+            анных, и является ведущим разработчиком системы резервирования и встраиваемого кроссплатформенного модуля инфо\
+            рмационной безопасности. Более 15 лет использует C и C++."
+    twitter: belyaev_ms
+  - id: 1388
+    photoFileName: 1388.jpg
+    name:
+      - {language: en, text: "Evgeny Zouev"}
+      - {language: ru, text: "Евгений Зуев"}
+    company:
+      - {language: en, text: "Innopolis University"}
+      - {language: ru, text: "Университет Иннополис"}
+    bio:
+      - {language: en, text: "Eugene Zouev has graduated from the Computer Science Department, Moscow State University, and\
+            \ got the PhD degree there in 1999. He has been working in a defence research center in Russia, in Moscow State\
+            \ University and in a number of technical universities in Europe including ETH Zurich and EPFL Lausanne. Among\
+            \ his major achievements are the full ISO-compliant C++ front end compiler, the Zonnon language compiler and many\
+            \ others. The area of his research interests is programming languages' semantics and compiler construction."}
+      - {language: ru, text: "Выпускник Факультета Вычислительной Математики и Кибернетики МГУ им. М. В. Ломоносова. Там ж\
+            е получил степень кандидата физико-математических наук (1999). Работал в оборонных научно-исследовательских це\
+            нтрах, в НИВЦ МГУ. Преподавал и проводил исследования в МГУ и в престижных технических университетах Европы —\
+            \ ETH Zurich (с 2000 по 2006 годы) и EPFL Lausanne (с 2009 по 2010 годы). Руководил несколькими успешными иссл\
+            едовательскими и промышленными проектами по разработке ПО: языки и системы имитационного моделирования, компил\
+            яторы С++ и Zonnon и др. В настоящее время — профессор университета Иннополис (Россия). Область исследований —\
+            \ семантика языков программирования, проектирование и разработка компиляторов ЯП."}
+  - id: 1389
+    photoFileName: 1389.jpg
+    name:
+      - {language: en, text: "Patricia Aas"}
+    company:
+      - {language: en, text: TurtleSec}
+    bio:
+      - language: en
+        text: "Patricia is a programmer who has worked mostly in C++ and Java. She has spent her career continuously delivering\
+            \ from the same code-base to a large user base, from working on two browsers (Opera and Vivaldi) to working on\
+            \ embedded telepresence endpoints for Cisco. She is focused on the maintainability and flexibility of software\
+            \ architecture, and how to extend it to provide cutting edge user experiences.\n\nHer focus on the end-users has\
+            \ led her to work more and more toward privacy and security, and she has recently started her own company, TurtleSec,\
+            \ hoping to contribute positively to the infosec and C++ communities. She is also involved in the #include organization\
+            \ hoping to improve diversity and inclusion in the C++ community."
+    twitter: pati_gallardo
+  - id: 1390
+    photoFileName: 1390.jpg
+    name:
+      - {language: en, text: "Filipp Gelman"}
+    company:
+      - {language: en, text: "Bloomberg LP"}
+    bio:
+      - {language: en, text: "At Bloomberg LP since 2016, Filipp enjoys exploring the obscure, arcane, and esoteric corners\
+            \ of the C++ language. He is known among his coworkers for heavy use of templates, emphasis on compile time computation,\
+            \ and abusing language features for nefarious purposes."}
+  - id: 1391
+    photoFileName: 1391.jpg
+    name:
+      - {language: en, text: "Program committee"}
+      - {language: ru, text: "Программный комитет"}
+    company:
+      - {language: en, text: "С++ Russia"}
+    bio:
+      - {language: en, text: TBD}
+  - id: 1392
+    photoFileName: 1392.jpg
+    name:
+      - {language: en, text: "Konstantine Serebryaniy"}
+      - {language: ru, text: "Константин Серебряный"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Konstantine works as a software engineer at Google. His team develops and deploys dynamic testing\
+            \ tools such as AddressSanitizer and ThreadSanitizer."}
+      - {language: ru, text: "Константин работает инженером-программистом в Google. Его команда разрабатывает и развертыва\
+            ет динамические инструменты тестирования, такие как AddressSanitizer и ThreadSanitizer."}
+    twitter: kayseesee
+  - id: 1393
+    photoFileName: 1393.jpg
+    name:
+      - {language: en, text: "Titus Winters"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Titus is a Senior Staff Software Engineer at Google, where he has worked since 2010. He founded\
+            \ Abseil, Google's open source C++ library that underpins more than 250M lines of Google code with 12K+ active\
+            \ internal users. He is one of the four arbiters for Google's official C++ style guidelines. For the last 9 years,\
+            \ Titus has been organizing, maintaining, and evolving the foundational components of Google’s C++ codebase using\
+            \ modern automation and tooling. Titus is the former chair for the Library Evolution Working Group (LEWG) in WG21.\
+            \ He is also the lead author for the book \"Software Engineering at Google.\""}
+    twitter: tituswinters
+  - id: 1394
+    photoFileName: 1394.jpg
+    name:
+      - {language: en, text: "Ilya Shishkov"}
+      - {language: ru, text: "Илья Шишков"}
+    company:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+    bio:
+      - {language: en, text: "Yandex Senior Developer, co-author of the Coursera online specialization \"The art of development\
+            \ on modern C++\"."}
+      - {language: ru, text: "Старший разработчик компании Яндекс, соавтор онлайн-специализации на Coursera «Искусство раз\
+            работки на современном C++»."}
+  - id: 1395
+    photoFileName: 1395.jpg
+    name:
+      - {language: en, text: "Sebastian Theophil"}
+    company:
+      - {language: en, text: think-cell}
+    bio:
+      - {language: en, text: "Sebastian Theophil studied Computer Science in Berlin and Toulouse and holds a Ph.D. in Computer\
+            \ Science from the Humboldt University of Berlin. He has been working at think-cell Software since its founding\
+            \ in 2002 and has recently been working on porting think-cell to the Mac."}
+  - id: 1396
+    photoFileName: 1396.jpg
+    name:
+      - {language: en, text: "Andrey Aksenov"}
+      - {language: ru, text: "Андрей Аксенов"}
+    company:
+      - {language: en, text: Avito}
+      - {language: ru, text: Авито}
+    bio:
+      - {language: en, text: "Writes code on everything shows others how. On good days, the code can be demolished, Andrei\
+            \ necessarily shows others and makes \"the same\" three times stronger. Throughout all life, different engines\
+            \ have come out of this, like some kind of curse."}
+      - {language: ru, text: "Пишет код на всём подряд, показывает другим как. В удачные дни код удается сносить, это обяз\
+            ательно показывает другим и заставляет «точно так же» втрое сильнее. Всю сознательную жизнь из этого выходят р\
+            азные движки, прямо проклятие какое-то."}
+  - id: 1397
+    photoFileName: 1397.jpg
+    name:
+      - {language: en, text: "Conor Hoekstra"}
+    company:
+      - {language: en, text: NVIDIA}
+    bio:
+      - {language: en, text: "Conor is a Senior Library Software Engineer at NVIDIA working on the RAPIDS team. He is extremely\
+            \ passionate about programming languages, algorithms and beautiful code."}
+    twitter: code_report
+  - id: 1398
+    photoFileName: 1398.jpg
+    name:
+      - {language: en, text: "Matt Godbolt"}
+    company:
+      - {language: en, text: "Aquatic Capital Management"}
+    bio:
+      - {language: en, text: "Matt Godbolt is the creator of the Compiler Explorer website. He is passionate about writing\
+            \ efficient code. He has previously worked at a trading firm, on mobile apps at Google, run his own C++ tools\
+            \ company and spent more than a decade making console games. When he's not hacking on Compiler Explorer, Matt\
+            \ enjoys writing emulators for old 8-bit computer hardware."}
+    twitter: mattgodbolt
