@@ -81,16 +81,22 @@ public class ImageUtils {
      * @return image format
      */
     static ImageFormat getImageFormatByUrlString(String sourceUrl) {
-        int index = sourceUrl.lastIndexOf(".");
+        if ((sourceUrl == null) || sourceUrl.isEmpty()) {
+            throw new IllegalArgumentException(String.format("Unknown image format, for URL: '%s'", sourceUrl));
+        }
 
-        if (index > 0) {
-            String extension = sourceUrl.substring(index + 1);
+        int slashIndex = sourceUrl.lastIndexOf("/");
+        String sourceUrlSuffix = (slashIndex >= 0) ? sourceUrl.substring(slashIndex + 1) : sourceUrl;
+        int dotIndex = sourceUrlSuffix.lastIndexOf(".");
+
+        if (dotIndex > 0) {
+            String extension = sourceUrlSuffix.substring(dotIndex + 1);
             ImageFormat imageFormat = ImageFormat.getImageFormatByExtension(extension);
 
             return Objects.requireNonNull(imageFormat,
                     () -> String.format("Image format not found for '%s' extension", extension));
         } else {
-            throw new IllegalArgumentException(String.format("Unknown image format, for URL: '%s'", sourceUrl));
+            return ImageFormat.JPG;
         }
     }
 
