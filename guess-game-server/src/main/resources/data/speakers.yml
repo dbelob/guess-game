@@ -19129,13 +19129,12 @@ speakers:
       - {language: ru, text: "Павел Стрункин"}
     company: []
     bio:
-      - {language: en, text: "QA Engineer Automation at Ciklum — Software test automation. Development of automation testing\
-            \ projects for web application of different complexity. Such projects include several levels of testing from unit\
-            \ testing, API testing till automatic browser testing on all systems (Windows, Mac, Linux) using Ruby and Java."}
-      - {language: ru, text: "Инженер автоматизированного тестирования в Ciklum. Разрабатывает проекты по автоматизированн\
-            ому тестированию для веб-приложений разной степени сложности. Некоторые проекты включают в себя несколько уров\
-            ней: от модульного и API-тестирования — до автоматического тестирования браузера на всех системах (Windows, Mac,\
-            \ Linux) с использованием Ruby и Java."}
+      - {language: en, text: "Working as QA since 2012. Most of the time was involved in web automation using Java and C#.\
+            \ Interested in AI/ML, learning JavaScript/Typescript, and developing open source service for visual testing Visual\
+            \ Regression Tracker."}
+      - {language: ru, text: "В тестировании с 2012 года. В большей степени занимался автоматизацией веб-приложений с испо\
+            льзованием Java и C#. Интересуется машинным обучением, изучает JavaScript/TypeScript и разрабатывает сервис с\
+            \ открытым кодом для визуального тестирования интерфейсов Visual Regression Tracker."}
     twitter: VisualReTracker
   - id: 1340
     photoFileName: 1340.jpg
@@ -19390,3 +19389,108 @@ speakers:
       - {language: en, text: "C++ developer, organizer of C++ Siberia."}
       - {language: ru, text: "C++ программист. Организатор C++ Siberia."}
     twitter: sermp
+  - id: 1354
+    photoFileName: 1354.jpg
+    name:
+      - {language: en, text: "Mikhail Rogov"}
+      - {language: ru, text: "Михаил Рогов"}
+    company:
+      - {language: en, text: Sber}
+      - {language: ru, text: Сбер}
+    bio:
+      - language: en
+        text: "For the last ten years, he has been involved in the development of various software products as a tester, developer,\
+            \ and team leader.\nCurrently, he has concentrated his interests in the field of quality assurance of the PFM\
+            \ product group of Sberbank."
+      - language: ru
+        text: "Последние десять лет участвовал в разработке различных программных продуктов на позициях тестировщика, разр\
+            аботчика, руководителя группы.\nНа текущий момент сконцентрировал свои интересы в области обеспечения качества\
+            \ группы продуктов PFM Сбербанка."
+  - id: 1355
+    photoFileName: 1355.jpg
+    name:
+      - {language: en, text: "Ivan Kravtsov"}
+      - {language: ru, text: "Иван Кравцов"}
+    company:
+      - {language: en, text: Sber}
+      - {language: ru, text: Сбер}
+    bio:
+      - {language: en, text: "Ivan has been involved in QA since 2001. He tested and implemented Web and VAS products at CBOSS.\
+            \ And also developed testing department and regional teams at NetCracker. At Deutsche Bank, he tested global trading\
+            \ platforms and risk calculation systems, built and developed a QA organization. At Sber, he manages the Test\
+            \ Methodology and Tools cluster in the SberWorks division. Likes catch & release fishing and basketball."}
+      - {language: ru, text: "Занимается QA с 2001 года. Тестировал и внедрял Web и VAS-продукты в CBOSS. Развивал отдел т\
+            естирования и региональные команды в NetCracker. В Deutsche Bank занимался тестированием платформ для торговли\
+            \ на глобальных рынках и систем расчета рисков. Строил и развивал QA-организацию. В Сбере руководит кластером\
+            \ Методология и Инструменты Тестирования в дивизионе SberWorks. Увлекается сatch & release рыбалкой и баскетбо\
+            лом."}
+  - id: 1356
+    photoFileName: 1356.jpg
+    name:
+      - {language: en, text: "Anastasia Mladshova"}
+      - {language: ru, text: "Анастасия Младшова"}
+    company:
+      - {language: en, text: "Deutsche Bank Technology Center"}
+      - {language: ru, text: "ТехЦентр Дойче Банка"}
+    bio:
+      - {language: en, text: "Since 2003, she has tested mobiles, antivirus, streaming services, and more using Ruby, Python,\
+            \ TypeScript, Java, and more. She has been working in Deutsche Bank Tech Center's dream team for 7 years — coordinates\
+            \ QA and CI/CD in the banking platform."}
+      - {language: ru, text: "С 2003 года успела потестировать мобильники, антивирусник, стриминговые сервисы и не только\
+            , покодив на Ruby, Python, TypeScript, Java и не только. 7 лет работает в команде мечты в ТехЦентре Дойче Банк\
+            а — координирует QA и CI/CD банковской платформы."}
+  - id: 1357
+    photoFileName: 1357.jpg
+    name:
+      - {language: en, text: "Sergey Razuvaev"}
+      - {language: ru, text: "Сергей Разуваев"}
+    company:
+      - {language: en, text: Sber}
+      - {language: ru, text: Сбер}
+    bio:
+      - {language: en, text: "QA Lead and team lead at Sber on the SberBusiness project. Has been in test automation for about\
+            \ 5 years, writes in Java, and a little in JS. More than 12 years in IT. Came to QA from development."}
+      - {language: ru, text: "QA Lead и тимлид в компании Сбер на проекте СберБизнес. Занимается автоматизацией тестирован\
+            ия около 5 лет, пишет на Java и немного на JS. Более 12 лет в IT. Пришел в QA из разработки."}
+  - id: 1358
+    photoFileName: 1358.jpg
+    name:
+      - {language: en, text: "Valeriy Bogdanov"}
+      - {language: ru, text: "Валерий Богданов"}
+    company:
+      - {language: en, text: "Mir Plat.Form (НСПК)"}
+      - {language: ru, text: "Мир Plat.Form (НСПК)"}
+    bio:
+      - language: en
+        text: "Developer with over twelve years of experience.\nNSPK employee since 2015, he currently leads a testing group\
+            \ within the Mobile Payments team.\nPreferred development stream — complex algorithms/backend."
+      - language: ru
+        text: "Окончил НИУ МИЭТ по специальности микрорадиотехника, а также закончил обучение в аспирантуре МФТИ по специа\
+            льности системный анализ. Более 12 лет в разработке.\nС 2015 года работает в АО НСПК.\nЛюбимое направление раз\
+            работки: сложные алгоритмы/бэкенд.\nХобби: игра на гитаре фингерстайлом, космология."
+  - id: 1359
+    photoFileName: 1359.jpg
+    name:
+      - {language: en, text: "Tatiana Belskaya"}
+      - {language: ru, text: "Татьяна Бельская"}
+    company:
+      - {language: en, text: PSB}
+      - {language: ru, text: ПСБ}
+    bio:
+      - {language: en, text: "Graduated from the Physics Department of Moscow State University with a degree in geophysics,\
+            \ statistical processing of atmospheric processes. She ran her educational business for 15 years. In 2014 she\
+            \ started her IT career, using her technical education and process management skills. More than 6 years of experience\
+            \ in testing."}
+      - language: ru
+        text: "Закончила физический факультет МГУ по специальности геофизика, статистическая обработка атмосферных процесс\
+            ов. \n15 лет вела свой образовательный бизнес.\nВ 2014 году начала карьеру в IT, используя свое техническое об\
+            разование и навыки управления процессами. Более 6 лет работает в направлении тестирования."
+  - id: 1360
+    photoFileName: 1360.jpg
+    name:
+      - {language: en, text: "Anastasia Kryazheva"}
+      - {language: ru, text: "Анастасия Кряжева"}
+    company:
+      - {language: en, text: "JUG Ru Group"}
+    bio: []
+    twitter: ankryazh
