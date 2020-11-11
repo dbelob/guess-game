@@ -887,6 +887,19 @@ events:
     talkIds: [2393, 2489, 1965, 1972, 2490, 2491, 2437, 2492, 2104, 2109, 2394, 1973, 2350, 2493, 2494, 2495, 2438, 2496,
               1971, 1964, 2395, 1961, 2107, 2108, 2497, 2396, 1967, 1966, 2105, 2227, 1974, 2226, 1969, 2498, 2499, 2500, 2352,
               1962, 2229, 2110, 2439]
+  - eventTypeId: 9
+    name:
+      - {language: en, text: "Mobius 2020 Msc"}
+      - {language: ru, text: "Mobius 2020 Мск"}
+    startDate: "2020-11-11"
+    endDate: "2020-11-14"
+    siteLink:
+      - {language: en, text: "https://mobius-moscow.ru/en/"}
+      - {language: ru, text: "https://mobius-moscow.ru/"}
+    youtubeLink: https://live.jugru.org/events/mobius
+    placeId: 24
+    talkIds: [2627, 2628, 2629, 2630, 2631, 2632, 2633, 2634, 2635, 2636, 2637, 2638, 2639, 2640, 2641, 2642, 2643, 2644,
+              2645, 2646, 2647, 2648, 2649, 2650, 2651, 2652, 2653, 2654, 2655, 2656, 2657, 2658]
   # SPTDC
   - eventTypeId: 10
     name:
