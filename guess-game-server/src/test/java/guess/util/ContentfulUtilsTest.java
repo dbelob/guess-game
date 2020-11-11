@@ -972,10 +972,6 @@ class ContentfulUtilsTest {
     }
 
     @Test
-    void isValidTalk() {
-    }
-
-    @Test
     void createTalk() {
         new MockUp<ContentfulUtils>() {
             @Mock
