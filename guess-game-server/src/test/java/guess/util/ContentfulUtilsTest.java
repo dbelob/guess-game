@@ -857,8 +857,9 @@ class ContentfulUtilsTest {
         assertDoesNotThrow(() -> ContentfulUtils.getSpeakers(Conference.JPOINT, "code"));
     }
 
-    private static ContentfulTalk<ContentfulTalkFieldsCommon> createContentfulTalk(Boolean sdTrack, Boolean demoStage) {
+    private static ContentfulTalk<ContentfulTalkFieldsCommon> createContentfulTalk(Long talkDay, Boolean sdTrack, Boolean demoStage) {
         ContentfulTalkFieldsCommon contentfulTalkFieldsCommon = new ContentfulTalkFieldsCommon();
+        contentfulTalkFieldsCommon.setTalkDay(talkDay);
         contentfulTalkFieldsCommon.setSdTrack(sdTrack);
         contentfulTalkFieldsCommon.setDemoStage(demoStage);
 
@@ -873,15 +874,15 @@ class ContentfulUtilsTest {
         new Expectations() {{
             ContentfulTalkResponse<ContentfulTalkFieldsCommon> response = new ContentfulTalkResponseCommon();
             response.setItems(List.of(
-                    createContentfulTalk(null, null),
-                    createContentfulTalk(null, Boolean.TRUE),
-                    createContentfulTalk(null, Boolean.FALSE),
-                    createContentfulTalk(Boolean.TRUE, null),
-                    createContentfulTalk(Boolean.TRUE, Boolean.TRUE),
-                    createContentfulTalk(Boolean.TRUE, Boolean.FALSE),
-                    createContentfulTalk(Boolean.FALSE, null),
-                    createContentfulTalk(Boolean.FALSE, Boolean.TRUE),
-                    createContentfulTalk(Boolean.FALSE, Boolean.FALSE)
+                    createContentfulTalk(1L, null, null),
+                    createContentfulTalk(1L, null, Boolean.TRUE),
+                    createContentfulTalk(1L, null, Boolean.FALSE),
+                    createContentfulTalk(1L, Boolean.TRUE, null),
+                    createContentfulTalk(1L, Boolean.TRUE, Boolean.TRUE),
+                    createContentfulTalk(1L, Boolean.TRUE, Boolean.FALSE),
+                    createContentfulTalk(1L, Boolean.FALSE, null),
+                    createContentfulTalk(1L, Boolean.FALSE, Boolean.TRUE),
+                    createContentfulTalk(1L, Boolean.FALSE, Boolean.FALSE)
             ));
 
             restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulTalkResponseCommon.class);
@@ -930,6 +931,44 @@ class ContentfulUtilsTest {
         assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code", false).size());
         assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null, false).size());
         assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "", false).size());
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("isValidTalk method tests")
+    class IsValidTalkTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(createContentfulTalk(null, null, null), false, false),
+                    arguments(createContentfulTalk(null, null, null), true, false),
+
+                    arguments(createContentfulTalk(1L, null, null), false, true),
+                    arguments(createContentfulTalk(1L, null, Boolean.TRUE), false, true),
+                    arguments(createContentfulTalk(1L, null, Boolean.FALSE), false, true),
+                    arguments(createContentfulTalk(1L, Boolean.TRUE, null), false, true),
+                    arguments(createContentfulTalk(1L, Boolean.TRUE, Boolean.TRUE), false, true),
+                    arguments(createContentfulTalk(1L, Boolean.TRUE, Boolean.FALSE), false, true),
+                    arguments(createContentfulTalk(1L, Boolean.FALSE, null), false, true),
+                    arguments(createContentfulTalk(1L, Boolean.FALSE, Boolean.TRUE), false, true),
+                    arguments(createContentfulTalk(1L, Boolean.FALSE, Boolean.FALSE), false, true),
+
+                    arguments(createContentfulTalk(1L, null, null), true, true),
+                    arguments(createContentfulTalk(1L, null, Boolean.TRUE), true, false),
+                    arguments(createContentfulTalk(1L, null, Boolean.FALSE), true, true),
+                    arguments(createContentfulTalk(1L, Boolean.TRUE, null), true, false),
+                    arguments(createContentfulTalk(1L, Boolean.TRUE, Boolean.TRUE), true, false),
+                    arguments(createContentfulTalk(1L, Boolean.TRUE, Boolean.FALSE), true, false),
+                    arguments(createContentfulTalk(1L, Boolean.FALSE, null), true, true),
+                    arguments(createContentfulTalk(1L, Boolean.FALSE, Boolean.TRUE), true, false),
+                    arguments(createContentfulTalk(1L, Boolean.FALSE, Boolean.FALSE), true, true)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void isValidTalk(ContentfulTalk<? extends ContentfulTalkFields> talk, boolean ignoreDemoStage, boolean expected) {
+            assertEquals(expected, ContentfulUtils.isValidTalk(talk, ignoreDemoStage));
+        }
     }
 
     @Test
