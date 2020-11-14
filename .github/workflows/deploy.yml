@@ -32,8 +32,6 @@ jobs:
           git-release-bot-email: "release-bot@github.com"
           access-token: ${{ secrets.RELEASE_TOKEN }}
           skip-perform: true
-        env:
-          JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
       - name: Copy file via SSH
         uses: appleboy/scp-action@master
         with:
