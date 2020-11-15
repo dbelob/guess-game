@@ -55,4 +55,3 @@ jobs:
             sudo ln -sf /opt/guess-game/guess-game-${{ github.run_number }}.war /etc/init.d/guess-game
             sudo systemctl daemon-reload
             sudo service guess-game start
-
