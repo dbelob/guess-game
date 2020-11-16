@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { EventType } from '../models/event-type.model';
-import { EventTypeStatistics } from '../models/event-type-statistics.model';
-import { EventStatistics } from '../models/event-statistics.model';
-import { SpeakerStatistics } from '../models/speaker-statistics.model';
-import { CompanyStatistics } from '../models/company-statistics.model';
+import { EventType } from '../models/event-type/event-type.model';
+import { EventTypeStatistics } from '../models/statistics/event-type-statistics.model';
+import { EventStatistics } from '../models/statistics/event-statistics.model';
+import { SpeakerStatistics } from '../models/statistics/speaker-statistics.model';
+import { CompanyStatistics } from '../models/statistics/company-statistics.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({

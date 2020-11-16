@@ -1,4 +1,4 @@
-import { GuessMode } from './guess-mode.model';
+import { GuessMode } from '../guess-mode.model';
 import { SpeakerErrorDetails } from './speaker-error-details.model';
 import { TalkErrorDetails } from './talk-error-details.model';
 import { AccountErrorDetails } from './account-error-details.model';

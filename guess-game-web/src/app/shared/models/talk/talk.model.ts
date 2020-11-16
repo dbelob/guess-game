@@ -1,5 +1,5 @@
-import { Event } from './event.model';
-import { Speaker } from './speaker.model';
+import { Event } from '../event/event.model';
+import { Speaker } from '../speaker/speaker.model';
 
 export class Talk {
   constructor(

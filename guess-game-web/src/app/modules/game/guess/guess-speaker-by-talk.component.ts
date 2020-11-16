@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TalkSpeakers } from '../../../shared/models/talk-speakers.model';
+import { TalkSpeakers } from '../../../shared/models/guess/talk-speakers.model';
 import { State } from '../../../shared/models/state.model';
 import { StateService } from '../../../shared/services/state.service';
 import { AnswerService } from '../../../shared/services/answer.service';

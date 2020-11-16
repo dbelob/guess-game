@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { EventDetails } from '../../../shared/models/event-details.model';
-import { Event } from '../../../shared/models/event.model';
+import { EventDetails } from '../../../shared/models/event/event-details.model';
+import { Event } from '../../../shared/models/event/event.model';
 import { EventService } from '../../../shared/services/event.service';
 import { getEventDisplayName, getTalksWithSpeakersString } from '../../general/utility-functions';
 

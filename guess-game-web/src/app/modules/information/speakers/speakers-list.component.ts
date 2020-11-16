@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Speaker } from '../../../shared/models/speaker.model';
+import { Speaker } from '../../../shared/models/speaker/speaker.model';
 import { SpeakerService } from '../../../shared/services/speaker.service';
 
 @Component({

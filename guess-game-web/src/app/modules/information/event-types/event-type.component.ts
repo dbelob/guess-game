@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { EventTypeDetails } from '../../../shared/models/event-type-details.model';
+import { EventTypeDetails } from '../../../shared/models/event-type/event-type-details.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 
 @Component({

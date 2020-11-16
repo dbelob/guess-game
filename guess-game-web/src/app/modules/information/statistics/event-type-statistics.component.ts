@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { EventTypeStatistics } from '../../../shared/models/event-type-statistics.model';
+import { EventTypeStatistics } from '../../../shared/models/statistics/event-type-statistics.model';
 import { StatisticsService } from '../../../shared/services/statistics.service';
 
 @Component({

@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { EventType } from '../models/event-type.model';
-import { Event } from '../models/event.model';
-import { Talk } from '../models/talk.model';
-import { TalkDetails } from '../models/talk-details.model';
+import { EventType } from '../models/event-type/event-type.model';
+import { Event } from '../models/event/event.model';
+import { Talk } from '../models/talk/talk.model';
+import { TalkDetails } from '../models/talk/talk-details.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({

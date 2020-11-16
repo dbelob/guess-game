@@ -1,5 +1,5 @@
 import { Speaker } from './speaker.model';
-import { Talk } from './talk.model';
+import { Talk } from '../talk/talk.model';
 
 export class SpeakerDetails {
   constructor(

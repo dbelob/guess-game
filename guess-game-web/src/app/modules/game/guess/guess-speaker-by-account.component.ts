@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountSpeakers } from '../../../shared/models/account-speakers.model';
+import { AccountSpeakers } from '../../../shared/models/guess/account-speakers.model';
 import { StateService } from '../../../shared/services/state.service';
 import { AnswerService } from '../../../shared/services/answer.service';
 import { Router } from '@angular/router';
