@@ -9,9 +9,10 @@ import { PhotoNames } from '../models/photo-names.model';
 import { NamePhotos } from '../models/name-photos.model';
 import { SpeakersTalks } from '../models/speakers-talks.model';
 import { TalkSpeakers } from '../models/talk-speakers.model';
+import { SpeakerCompanies } from '../models/speaker-companies.model';
+import { CompanySpeakers } from '../models/company-speakers.model';
 import { SpeakerAccounts } from '../models/speaker-accounts.model';
 import { AccountSpeakers } from '../models/account-speakers.model';
-import { SpeakerCompanies } from '../models/speaker-companies.model';
 
 @Injectable({
   providedIn: 'root'
@@ -94,6 +95,16 @@ export class StateService {
 
   getSpeakerCompanies(): Observable<SpeakerCompanies> {
     return this.http.get<SpeakerCompanies>(`${this.baseUrl}/speaker-companies`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getCompanySpeakers(): Observable<CompanySpeakers> {
+    return this.http.get<CompanySpeakers>(`${this.baseUrl}/company-speakers`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

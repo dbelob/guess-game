@@ -110,6 +110,12 @@ public class StateController {
         return getDto(httpSession, SpeakerCompaniesDto::convertToDto);
     }
 
+    @GetMapping("/company-speakers")
+    @ResponseBody
+    public CompanySpeakersDto getCompanySpeakers(HttpSession httpSession) {
+        return getDto(httpSession, CompanySpeakersDto::convertToDto);
+    }
+
     @GetMapping("/speaker-accounts")
     @ResponseBody
     public SpeakerAccountsDto getSpeakerAccounts(HttpSession httpSession) {

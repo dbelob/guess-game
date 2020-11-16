@@ -1,1 +1,47 @@
-<p>guess-speaker-by-company works!</p>
+<div class="container p-2">
+  <h3 class="bg-info p-1 text-white text-center rounded">{{title}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row">
+    <div class="col">
+      <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="logo" class="img-guess-logo"/>
+    </div>
+    <app-language-switcher (reload)="loadQuestion()" class="col"></app-language-switcher>
+  </div>
+
+  <p class="h3 text-center mt-3 mb-4">{{companySpeakers.companyName}}</p>
+  <div class="text-center">
+    <figure class="figure m-1">
+      <input type="image" alt="photo1" class="img-thumbnail img-guess-speaker-by-talk"
+             [class.btn-danger]="companySpeakers.invalid0" [class.btn-success]="companySpeakers.valid0"
+             [disabled]="companySpeakers.invalid0 || companySpeakers.valid0"
+             (click)="answer(companySpeakers.id0)" src="{{imageSource0}}"/>
+      <figcaption class="figure-caption text-center">{{companySpeakers.speakerName0}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="photo2" class="img-thumbnail img-guess-speaker-by-talk"
+             [class.btn-danger]="companySpeakers.invalid1" [class.btn-success]="companySpeakers.valid1"
+             [disabled]="companySpeakers.invalid1 || companySpeakers.valid1"
+             (click)="answer(companySpeakers.id1)" src="{{imageSource1}}"/>
+      <figcaption class="figure-caption text-center">{{companySpeakers.speakerName1}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="photo3" class="img-thumbnail img-guess-speaker-by-talk"
+             [class.btn-danger]="companySpeakers.invalid2" [class.btn-success]="companySpeakers.valid2"
+             [disabled]="companySpeakers.invalid2 || companySpeakers.valid2"
+             (click)="answer(companySpeakers.id2)" src="{{imageSource2}}"/>
+      <figcaption class="figure-caption text-center">{{companySpeakers.speakerName2}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="photo4" class="img-thumbnail img-guess-speaker-by-talk"
+             [class.btn-danger]="companySpeakers.invalid3" [class.btn-success]="companySpeakers.valid3"
+             [disabled]="companySpeakers.invalid3 || companySpeakers.valid3"
+             (click)="answer(companySpeakers.id3)" src="{{imageSource3}}"/>
+      <figcaption class="figure-caption text-center">{{companySpeakers.speakerName3}}</figcaption>
+    </figure>
+  </div>
+  <div class="text-right mt-1">
+    <button class="btn btn-link text-muted" (click)="cancel()"><small>{{'common.cancelLinkText' | translate}}</small></button>
+  </div>
+</div>

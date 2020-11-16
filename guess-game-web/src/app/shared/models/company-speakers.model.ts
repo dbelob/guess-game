@@ -1,8 +1,8 @@
 import { EntitySpeakers } from './entity-speakers.model';
 
-export class TalkSpeakers extends EntitySpeakers {
+export class CompanySpeakers extends EntitySpeakers {
   constructor(
-    public talkName?: string
+    public companyName?: string
   ) {
     super();
   }

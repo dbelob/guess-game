@@ -1,17 +1,9 @@
-import { QuestionAnswers } from './question-answers.model';
+import { EntitySpeakers } from './entity-speakers.model';
 
-export class AccountSpeakers extends QuestionAnswers {
+export class AccountSpeakers extends EntitySpeakers {
   constructor(
     public twitter?: string,
-    public gitHub?: string,
-    public speakerPhotoFileName0?: string,
-    public speakerName0?: string,
-    public speakerPhotoFileName1?: string,
-    public speakerName1?: string,
-    public speakerPhotoFileName2?: string,
-    public speakerName2?: string,
-    public speakerPhotoFileName3?: string,
-    public speakerName3?: string
+    public gitHub?: string
   ) {
     super();
   }
