@@ -15,16 +15,18 @@ import java.util.Objects;
 public class ResultDto extends Result {
     private final List<SpeakerErrorDetailsDto> speakerErrorDetailsList;
     private final List<TalkErrorDetailsDto> talkErrorDetailsList;
+    private final List<CompanyErrorDetailsDto> companyErrorDetailsList;
     private final List<AccountErrorDetailsDto> accountErrorDetailsList;
 
-    private ResultDto(Result result, List<SpeakerErrorDetailsDto> errorDetailsList,
-                      List<TalkErrorDetailsDto> talkErrorDetailsList, List<AccountErrorDetailsDto> accountErrorDetailsList) {
+    private ResultDto(Result result, List<SpeakerErrorDetailsDto> errorDetailsList, List<TalkErrorDetailsDto> talkErrorDetailsList,
+                      List<CompanyErrorDetailsDto> companyErrorDetailsList, List<AccountErrorDetailsDto> accountErrorDetailsList) {
         super(result.getCorrectAnswers(), result.getWrongAnswers(), result.getSkippedAnswers(),
                 result.getCorrectPercents(), result.getWrongPercents(), result.getSkippedPercents(),
                 result.getGuessMode());
 
         this.speakerErrorDetailsList = errorDetailsList;
         this.talkErrorDetailsList = talkErrorDetailsList;
+        this.companyErrorDetailsList = companyErrorDetailsList;
         this.accountErrorDetailsList = accountErrorDetailsList;
     }
 
@@ -34,6 +36,10 @@ public class ResultDto extends Result {
 
     public List<TalkErrorDetailsDto> getTalkErrorDetailsList() {
         return talkErrorDetailsList;
+    }
+
+    public List<CompanyErrorDetailsDto> getCompanyErrorDetailsList() {
+        return companyErrorDetailsList;
     }
 
     public List<AccountErrorDetailsDto> getAccountErrorDetailsList() {
@@ -55,6 +61,13 @@ public class ResultDto extends Result {
                                 result.getGuessMode(),
                                 language) :
                         Collections.emptyList();
+        List<CompanyErrorDetailsDto> companyErrorDetailsList =
+                (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(result.getGuessMode()) || GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(result.getGuessMode())) ?
+                        CompanyErrorDetailsDto.convertToDto(
+                                errorDetailsList,
+                                result.getGuessMode(),
+                                language) :
+                        Collections.emptyList();
         List<AccountErrorDetailsDto> accountErrorDetailsList =
                 (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(result.getGuessMode()) || GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(result.getGuessMode())) ?
                         AccountErrorDetailsDto.convertToDto(
@@ -67,6 +80,7 @@ public class ResultDto extends Result {
                 result,
                 speakerErrorDetailsList,
                 talkErrorDetailsList,
+                companyErrorDetailsList,
                 accountErrorDetailsList);
     }
 
@@ -78,11 +92,13 @@ public class ResultDto extends Result {
         ResultDto resultDto = (ResultDto) o;
         return Objects.equals(speakerErrorDetailsList, resultDto.speakerErrorDetailsList) &&
                 Objects.equals(talkErrorDetailsList, resultDto.talkErrorDetailsList) &&
+                Objects.equals(companyErrorDetailsList, resultDto.companyErrorDetailsList) &&
                 Objects.equals(accountErrorDetailsList, resultDto.accountErrorDetailsList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), speakerErrorDetailsList, talkErrorDetailsList, accountErrorDetailsList);
+        return Objects.hash(super.hashCode(), speakerErrorDetailsList, talkErrorDetailsList, companyErrorDetailsList,
+                accountErrorDetailsList);
     }
 }

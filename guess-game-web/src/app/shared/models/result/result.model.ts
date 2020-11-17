@@ -1,6 +1,7 @@
 import { GuessMode } from '../guess-mode.model';
 import { SpeakerErrorDetails } from './speaker-error-details.model';
 import { TalkErrorDetails } from './talk-error-details.model';
+import { CompanyErrorDetails } from './company-error-details.model';
 import { AccountErrorDetails } from './account-error-details.model';
 
 export class Result {
@@ -14,6 +15,7 @@ export class Result {
     public guessMode?: GuessMode,
     public speakerErrorDetailsList?: SpeakerErrorDetails[],
     public talkErrorDetailsList?: TalkErrorDetails[],
+    public companyErrorDetailsList?: CompanyErrorDetails[],
     public accountErrorDetailsList?: AccountErrorDetails[]
   ) {
   }
