@@ -46,7 +46,7 @@ public class QuestionDaoImpl implements QuestionDao {
             List<SpeakerQuestion> accountQuestions = new ArrayList<>();
 
             Set<Speaker> speakerSet = new HashSet<>();
-            Map<Company, List<Speaker>> companySpeakersMap = new HashMap<>();
+            Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
 
             for (Talk talk : event.getTalks()) {
                 for (Speaker speaker : talk.getSpeakers()) {
@@ -68,7 +68,7 @@ public class QuestionDaoImpl implements QuestionDao {
                         // Fill company to speakers map
                         for (Company company : speaker.getCompanies()) {
                             if (!companySpeakersMap.containsKey(company)) {
-                                companySpeakersMap.put(company, new ArrayList<>());
+                                companySpeakersMap.put(company, new HashSet<>());
                             }
 
                             companySpeakersMap.get(company).add(speaker);
@@ -86,7 +86,7 @@ public class QuestionDaoImpl implements QuestionDao {
                     .collect(Collectors.toList());
 
             List<SpeakerByCompanyQuestion> speakerByCompanyQuestions = companySpeakersMap.keySet().stream()
-                    .map(c -> new SpeakerByCompanyQuestion(companySpeakersMap.get(c), c))
+                    .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
                     .collect(Collectors.toList());
 
             localQuestionSets.add(new QuestionSet(
@@ -152,20 +152,20 @@ public class QuestionDaoImpl implements QuestionDao {
             return new ArrayList<>(QuestionUtils.removeDuplicatesById(companyBySpeakerQuestions));
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
             // Guess speaker by company
-            Map<Company, List<Speaker>> companySpeakersMap = new HashMap<>();
+            Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
 
             for (QuestionSet questionSet : subQuestionSets) {
                 for (SpeakerByCompanyQuestion question : questionSet.getSpeakerByCompanyQuestions()) {
-                    if (companySpeakersMap.containsKey(question.getCompany())) {
-                        companySpeakersMap.get(question.getCompany()).addAll(question.getSpeakers());
-                    } else {
-                        companySpeakersMap.put(question.getCompany(), new ArrayList<>(question.getSpeakers()));
+                    if (!companySpeakersMap.containsKey(question.getCompany())) {
+                        companySpeakersMap.put(question.getCompany(), new HashSet<>());
                     }
+
+                    companySpeakersMap.get(question.getCompany()).addAll(question.getSpeakers());
                 }
             }
 
             return companySpeakersMap.keySet().stream()
-                    .map(c -> new SpeakerByCompanyQuestion(companySpeakersMap.get(c), c))
+                    .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
             // Guess accounts by speaker or speaker by accounts
