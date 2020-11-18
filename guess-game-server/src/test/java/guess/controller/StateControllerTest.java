@@ -196,7 +196,8 @@ class StateControllerTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"photo-names", "name-photos", "speaker-talks", "talk-speakers", "speaker-accounts", "account-speakers"})
+    @ValueSource(strings = {"photo-names", "name-photos", "speaker-talks", "talk-speakers", "speaker-companies", "company-speakers",
+            "speaker-accounts", "account-speakers"})
     void getTest(String urlSuffix) throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 
