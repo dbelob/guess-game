@@ -149,7 +149,11 @@
               </figure>
             </p>
           </div>
-          <span *ngIf="!isQuestionImage">{{companyErrorDetails.companyName}}</span>
+          <div *ngIf="!isQuestionImage">
+            <p *ngFor="let companyName of companyErrorDetails.companyNames">
+              {{companyName}}
+            </p>
+          </div>
         </td>
         <td>
           <div *ngIf="!isQuestionImage" class="text-center">

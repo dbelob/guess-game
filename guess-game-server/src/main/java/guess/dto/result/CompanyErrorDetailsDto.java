@@ -21,24 +21,17 @@ import java.util.stream.Collectors;
  */
 public class CompanyErrorDetailsDto {
     private final List<SpeakerPairDto> speakers;
-    private final String companyName;
     private final List<String> companyNames;
     private final List<SpeakerPairDto> yourAnswers;
 
-    private CompanyErrorDetailsDto(List<SpeakerPairDto> speakers, String companyName, List<String> companyNames,
-                                   List<SpeakerPairDto> yourAnswers) {
+    private CompanyErrorDetailsDto(List<SpeakerPairDto> speakers, List<String> companyNames, List<SpeakerPairDto> yourAnswers) {
         this.speakers = speakers;
-        this.companyName = companyName;
         this.companyNames = companyNames;
         this.yourAnswers = yourAnswers;
     }
 
     public List<SpeakerPairDto> getSpeakers() {
         return speakers;
-    }
-
-    public String getCompanyName() {
-        return companyName;
     }
 
     public List<String> getCompanyNames() {
@@ -79,15 +72,11 @@ public class CompanyErrorDetailsDto {
                             s.getPhotoFileName()))
                     .collect(Collectors.toList());
 
-            String companyName = GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode) ?
-                    LocalizationUtils.getString(((SpeakerByCompanyQuestion) errorDetails.getQuestion()).getCompany().getName(), language) :
-                    null;
-
             List<String> companyNames = GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode) ?
                     ((CompanyBySpeakerQuestion) errorDetails.getQuestion()).getCompanies().stream()
                             .map(c -> LocalizationUtils.getString(c.getName(), language))
                             .collect(Collectors.toList()) :
-                    Collections.emptyList();
+                    Collections.singletonList(LocalizationUtils.getString(((SpeakerByCompanyQuestion) errorDetails.getQuestion()).getCompany().getName(), language));
 
             List<SpeakerPairDto> yourAnswers = errorDetails.getYourAnswers().stream()
                     .map(a -> GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode) ?
@@ -101,7 +90,6 @@ public class CompanyErrorDetailsDto {
 
             return new CompanyErrorDetailsDto(
                     questionSpeakerPairs,
-                    companyName,
                     companyNames,
                     yourAnswers);
         } else {
