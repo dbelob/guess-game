@@ -62,17 +62,7 @@ public class QuestionDaoImpl implements QuestionDao {
                     }
 
                     if (!speaker.getCompanies().isEmpty()) {
-                        // Fill speakers with companies set
-                        speakerSet.add(speaker);
-
-                        // Fill company to speakers map
-                        for (Company company : speaker.getCompanies()) {
-                            if (!companySpeakersMap.containsKey(company)) {
-                                companySpeakersMap.put(company, new HashSet<>());
-                            }
-
-                            companySpeakersMap.get(company).add(speaker);
-                        }
+                        fillCompanyInformation(speaker, speakerSet, companySpeakersMap);
                     }
                 }
 
@@ -99,6 +89,27 @@ public class QuestionDaoImpl implements QuestionDao {
         }
 
         return localQuestionSets;
+    }
+
+    /**
+     * Fills company information from speaker.
+     *
+     * @param speaker            speaker
+     * @param speakerSet         speaker set
+     * @param companySpeakersMap company speakers map
+     */
+    static void fillCompanyInformation(Speaker speaker, Set<Speaker> speakerSet, Map<Company, Set<Speaker>> companySpeakersMap) {
+        // Fill speakers with companies set
+        speakerSet.add(speaker);
+
+        // Fill company to speakers map
+        for (Company company : speaker.getCompanies()) {
+            if (!companySpeakersMap.containsKey(company)) {
+                companySpeakersMap.put(company, new HashSet<>());
+            }
+
+            companySpeakersMap.get(company).add(speaker);
+        }
     }
 
     @Override
