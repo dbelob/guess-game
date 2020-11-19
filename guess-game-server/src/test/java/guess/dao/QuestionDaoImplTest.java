@@ -454,9 +454,13 @@ class QuestionDaoImplTest {
                         GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE
                 )
         );
+
+        List<Long> emptyEventTypeIds = Collections.emptyList();
+        List<Long> emptyEventIds = Collections.emptyList();
+
         assertThrows(IllegalArgumentException.class, () -> questionDao.getQuestionByIds(
-                Collections.emptyList(),
-                Collections.emptyList(),
+                emptyEventTypeIds,
+                emptyEventIds,
                 null
         ));
     }
