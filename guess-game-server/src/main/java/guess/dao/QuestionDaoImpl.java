@@ -61,9 +61,7 @@ public class QuestionDaoImpl implements QuestionDao {
                         accountQuestions.add(speakerQuestion);
                     }
 
-                    if (!speaker.getCompanies().isEmpty()) {
-                        fillCompanyInformation(speaker, speakerSet, companySpeakersMap);
-                    }
+                    fillCompanyInformation(speaker, speakerSet, companySpeakersMap);
                 }
 
                 talkQuestions.add(new TalkQuestion(
@@ -99,16 +97,18 @@ public class QuestionDaoImpl implements QuestionDao {
      * @param companySpeakersMap company speakers map
      */
     static void fillCompanyInformation(Speaker speaker, Set<Speaker> speakerSet, Map<Company, Set<Speaker>> companySpeakersMap) {
-        // Fill speakers with companies set
-        speakerSet.add(speaker);
+        if (!speaker.getCompanies().isEmpty()) {
+            // Fill speakers with companies set
+            speakerSet.add(speaker);
 
-        // Fill company to speakers map
-        for (Company company : speaker.getCompanies()) {
-            if (!companySpeakersMap.containsKey(company)) {
-                companySpeakersMap.put(company, new HashSet<>());
+            // Fill company to speakers map
+            for (Company company : speaker.getCompanies()) {
+                if (!companySpeakersMap.containsKey(company)) {
+                    companySpeakersMap.put(company, new HashSet<>());
+                }
+
+                companySpeakersMap.get(company).add(speaker);
             }
-
-            companySpeakersMap.get(company).add(speaker);
         }
     }
 

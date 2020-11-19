@@ -5,14 +5,18 @@ import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.*;
 import guess.domain.source.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
 
 import java.util.*;
+import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("QuestionDaoImpl class tests")
 class QuestionDaoImplTest {
@@ -177,19 +181,28 @@ class QuestionDaoImplTest {
                 questionDao.readQuestionSets());
     }
 
-    @Test
-    void fillCompanyInformation() {
-        Set<Speaker> speakerSet = new HashSet<>();
-        Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillCompanyInformation method tests")
+    class fillCompanyInformationTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(speaker0, Set.of(speaker0), Map.of(company0, Set.of(speaker0))),
+                    arguments(speaker1, Collections.emptySet(), Collections.emptyMap())
+            );
+        }
 
-        QuestionDaoImpl.fillCompanyInformation(speaker0, speakerSet, companySpeakersMap);
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillCompanyInformation(Speaker speaker, Set<Speaker> expectedSpeakerSet, Map<Company, Set<Speaker>> expectedCompanySpeakersMap) {
+            Set<Speaker> speakerSet = new HashSet<>();
+            Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
 
-        assertTrue(speakerSet.contains(speaker0));
+            QuestionDaoImpl.fillCompanyInformation(speaker, speakerSet, companySpeakersMap);
 
-        Set<Speaker> speakers = companySpeakersMap.get(company0);
-
-        assertNotNull(speakers);
-        assertTrue(speakerSet.contains(speaker0));
+            assertEquals(expectedSpeakerSet, speakerSet);
+            assertEquals(expectedCompanySpeakersMap, companySpeakersMap);
+        }
     }
 
     @Test
