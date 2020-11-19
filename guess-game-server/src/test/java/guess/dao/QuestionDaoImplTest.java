@@ -14,13 +14,13 @@ import org.mockito.Mockito;
 import java.util.*;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("QuestionDaoImpl class tests")
 class QuestionDaoImplTest {
     private static Company company0;
+    private static Company company1;
 
     private static Speaker speaker0;
     private static Speaker speaker1;
@@ -41,6 +41,7 @@ class QuestionDaoImplTest {
     @BeforeAll
     static void init() {
         company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
 
         speaker0 = new Speaker();
         speaker0.setId(0);
@@ -348,6 +349,22 @@ class QuestionDaoImplTest {
                 questionDao.getQuestionByIds(
                         Collections.emptyList(),
                         Collections.emptyList(),
+                        GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
                         GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE
                 )
         );
@@ -407,6 +424,16 @@ class QuestionDaoImplTest {
         );
         assertEquals(
                 List.of(
+                        new CompanyBySpeakerQuestion(List.of(company0), speaker0)
+                ),
+                questionDao.getQuestionByIds(
+                        List.of(0L, 0L),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE
+                )
+        );
+        assertEquals(
+                List.of(
                         new SpeakerQuestion(speaker1),
                         new SpeakerQuestion(speaker2)
                 ),
@@ -427,14 +454,30 @@ class QuestionDaoImplTest {
                         GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE
                 )
         );
-
-        List<Long> emptyEventTypeIds = Collections.emptyList();
-        List<Long> emptyEventIds = Collections.emptyList();
-
         assertThrows(IllegalArgumentException.class, () -> questionDao.getQuestionByIds(
-                emptyEventTypeIds,
-                emptyEventIds,
+                Collections.emptyList(),
+                Collections.emptyList(),
                 null
         ));
+    }
+
+    @Test
+    void getSpeakerByCompanyQuestions() {
+        SpeakerByCompanyQuestion speakerByCompanyQuestion0 = new SpeakerByCompanyQuestion(List.of(speaker0), company0);
+        SpeakerByCompanyQuestion speakerByCompanyQuestion1 = new SpeakerByCompanyQuestion(List.of(speaker1), company0);
+        SpeakerByCompanyQuestion speakerByCompanyQuestion2 = new SpeakerByCompanyQuestion(List.of(speaker2), company1);
+        QuestionSet questionSet = new QuestionSet(
+                null,
+                null,
+                null,
+                null,
+                List.of(speakerByCompanyQuestion0, speakerByCompanyQuestion1, speakerByCompanyQuestion2),
+                null);
+        List<Question> expected = List.of(
+                new SpeakerByCompanyQuestion(List.of(speaker0, speaker1), company0),
+                new SpeakerByCompanyQuestion(List.of(speaker2), company1));
+        List<Question> actual = QuestionDaoImpl.getSpeakerByCompanyQuestions(List.of(questionSet));
+
+        assertTrue(expected.containsAll(actual) && actual.containsAll(expected));
     }
 }

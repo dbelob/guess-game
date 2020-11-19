@@ -162,22 +162,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             return new ArrayList<>(QuestionUtils.removeDuplicatesById(companyBySpeakerQuestions));
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
-            // Guess speaker by company
-            Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
-
-            for (QuestionSet questionSet : subQuestionSets) {
-                for (SpeakerByCompanyQuestion question : questionSet.getSpeakerByCompanyQuestions()) {
-                    if (!companySpeakersMap.containsKey(question.getCompany())) {
-                        companySpeakersMap.put(question.getCompany(), new HashSet<>());
-                    }
-
-                    companySpeakersMap.get(question.getCompany()).addAll(question.getSpeakers());
-                }
-            }
-
-            return companySpeakersMap.keySet().stream()
-                    .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
-                    .collect(Collectors.toList());
+            return getSpeakerByCompanyQuestions(subQuestionSets);
         } else if (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
             // Guess accounts by speaker or speaker by accounts
             List<SpeakerQuestion> speakerQuestions = new ArrayList<>();
@@ -190,5 +175,30 @@ public class QuestionDaoImpl implements QuestionDao {
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
+    }
+
+    /**
+     * Gets speaker by company questions.
+     *
+     * @param questionSets question sets
+     * @return speaker by company questions
+     */
+    static List<Question> getSpeakerByCompanyQuestions(List<QuestionSet> questionSets) {
+        // Guess speaker by company
+        Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
+
+        for (QuestionSet questionSet : questionSets) {
+            for (SpeakerByCompanyQuestion question : questionSet.getSpeakerByCompanyQuestions()) {
+                if (!companySpeakersMap.containsKey(question.getCompany())) {
+                    companySpeakersMap.put(question.getCompany(), new HashSet<>());
+                }
+
+                companySpeakersMap.get(question.getCompany()).addAll(question.getSpeakers());
+            }
+        }
+
+        return companySpeakersMap.keySet().stream()
+                .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
+                .collect(Collectors.toList());
     }
 }
