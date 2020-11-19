@@ -93,7 +93,7 @@ public class YamlUtils {
             throw new SpeakerDuplicatedException();
         }
 
-        //TODO: delete
+        //TODO: delete after load change
         companyList.setCompanies(createCompaniesFromSpeakersAndFillSpeaker(speakerList.getSpeakers(), companySynonymsList.getCompanySynonyms()));
 
         Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
@@ -121,7 +121,7 @@ public class YamlUtils {
                 talkList.getTalks());
     }
 
-    //TODO: delete
+    //TODO: delete after load change
     static List<Company> createCompaniesFromSpeakersAndFillSpeaker(List<Speaker> speakers, List<CompanySynonyms> companySynonymsList) {
         List<Company> companies = new ArrayList<>();
         Map<String, Company> companyMap = new HashMap<>();
