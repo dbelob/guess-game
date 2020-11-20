@@ -15,8 +15,9 @@ companySynonyms:
     synonyms: [
         "Badoo Limited"
     ]
-  - name: "Bloomberg L.P."
+  - name: "Bloomberg"
     synonyms: [
+        "Bloomberg L.P.",
         "Bloomberg LP"
     ]
   - name: "Elastic"
@@ -27,6 +28,10 @@ companySynonyms:
     synonyms: [
         "EPAM",
         "Epam Systems"
+    ]
+  - name: "GitLab"
+    synonyms: [
+        "GitLab (Previously Fuzzit)"
     ]
   - name: "Grid Dynamics"
     synonyms: [
@@ -39,6 +44,10 @@ companySynonyms:
   - name: "HeadHunter"
     synonyms: [
         "hh.ru"
+    ]
+  - name: "IBM"
+    synonyms: [
+        "IBM Canada"
     ]
   - name: "IT Territory/My.Games"
     synonyms: [

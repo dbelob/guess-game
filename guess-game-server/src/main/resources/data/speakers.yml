@@ -274,7 +274,7 @@ speakers:
       - {language: en, text: "Nikita Lipsky"}
       - {language: ru, text: "Никита Липский"}
     company:
-      - {language: en, text: Excelsior}
+      - {language: en, text: Huawei}
     bio:
       - {language: en, text: "Nikita is an initiator and a product lead of Excelsior JET project — complete Java SE implementation\
             \ (JVM) with AOT compiler developed by Excelsior LLC. Working on the project since 1997 he took part in almost\
@@ -3341,7 +3341,7 @@ speakers:
       - {language: en, text: "Pavel Pavlov"}
       - {language: ru, text: "Павел Павлов"}
     company:
-      - {language: en, text: Excelsior}
+      - {language: en, text: Huawei}
     bio:
       - {language: ru, text: "Павел более 15 лет занимается разработкой оптимизирующих компиляторов, виртуальных машин\
       \ и сред исполнения. Главный объект приложения сил на протяжении всего этого времени: Excelsior JET — JVM со\
@@ -17397,7 +17397,7 @@ speakers:
       - {language: en, text: "Vladimir Parfinenko"}
       - {language: ru, text: "Владимир Парфиненко"}
     company:
-      - {language: en, text: Excelsior}
+      - {language: en, text: Huawei}
     bio:
       - {language: ru, text: "Инженер компании Excelsior, выпускающей Excelsior JET, сертифицированную реализацию Java\
       \ SE. Принимает активное участие в создании AOT и JIT компиляторов, входящих в состав Excelsior JET JVM. Один из\
