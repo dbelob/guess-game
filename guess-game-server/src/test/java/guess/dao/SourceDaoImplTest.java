@@ -230,6 +230,11 @@ class SourceDaoImplTest {
     }
 
     @Test
+    void getCompanies() {
+        assertEquals(List.of(company0, company1, company2), sourceDao.getCompanies());
+    }
+
+    @Test
     void getSpeakers() {
         assertEquals(List.of(speaker0, speaker1, speaker2, speaker3), sourceDao.getSpeakers());
     }
