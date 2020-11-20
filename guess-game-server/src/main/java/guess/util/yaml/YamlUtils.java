@@ -152,7 +152,21 @@ public class YamlUtils {
             }
         }
 
-        // Bind synonym to main company
+        bindSynonymToMainCompany(companySynonymsList, companies, companyMap);
+
+        AtomicLong id = new AtomicLong(0);
+
+        // Sort and fill id
+        companies.sort(Comparator.comparing(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN), String.CASE_INSENSITIVE_ORDER));
+        companies.forEach(c -> c.setId(id.getAndIncrement()));
+
+        fillCompaniesInSpeakers(speakers, companyMap);
+
+        return companies;
+    }
+
+    //TODO: delete after load change
+    static void bindSynonymToMainCompany(List<CompanySynonyms> companySynonymsList, List<Company> companies, Map<String, Company> companyMap) {
         for (CompanySynonyms companySynonyms : companySynonymsList) {
             if (companyMap.containsKey(companySynonyms.getName())) {
                 Company company = companyMap.get(companySynonyms.getName());
@@ -163,14 +177,10 @@ public class YamlUtils {
                 }
             }
         }
+    }
 
-        AtomicLong id = new AtomicLong(0);
-
-        // Sort and fill id
-        companies.sort(Comparator.comparing(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN)));
-        companies.forEach(c -> c.setId(id.getAndIncrement()));
-
-        // Fill company in speaker
+    //TODO: delete after load change
+    static void fillCompaniesInSpeakers(List<Speaker> speakers, Map<String, Company> companyMap) {
         for (Speaker speaker : speakers) {
             if ((speaker.getCompany() == null) || speaker.getCompany().isEmpty()) {
                 continue;
@@ -188,8 +198,6 @@ public class YamlUtils {
                 }
             }
         }
-
-        return companies;
     }
 
     /**
