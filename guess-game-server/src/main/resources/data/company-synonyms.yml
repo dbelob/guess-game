@@ -7,6 +7,10 @@ companySynonyms:
     synonyms: [
         "AWS"
     ]
+  - name: "Alfa-Lab"
+    synonyms: [
+        "Alpha Laboratory"
+    ]
   - name: "Align Technology"
     synonyms: [
         "Align Technology Inc"
@@ -19,6 +23,14 @@ companySynonyms:
     synonyms: [
         "Bloomberg L.P.",
         "Bloomberg LP"
+    ]
+  - name: CFT
+    synonyms: [
+        СFT
+    ]
+  - name: CROC
+    synonyms: [
+        KROK
     ]
   - name: "Elastic"
     synonyms: [
@@ -78,9 +90,17 @@ companySynonyms:
     synonyms: [
         "Object Computing, Inc."
     ]
+  - name: "OK.RU"
+    synonyms: [
+        Odnoklassniki
+    ]
   - name: "Postgres Professional"
     synonyms: [
         "PostgresPro"
+    ]
+  - name: RaiffeisenBank
+    synonyms: [
+        Raiffeisenbank
     ]
   - name: "Red Hat"
     synonyms: [
@@ -93,6 +113,10 @@ companySynonyms:
   - name: "Uber Technologies"
     synonyms: [
         "Uber"
+    ]
+  - name: VK
+    synonyms: [
+        VKontakte
     ]
   - name: "ZeptoLab LLC"
     synonyms: [

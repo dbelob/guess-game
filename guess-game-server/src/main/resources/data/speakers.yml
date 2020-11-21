@@ -4035,7 +4035,7 @@ speakers:
       - {language: en, text: "Konstantin Goldstein"}
       - {language: ru, text: "Константин Гольдштейн"}
     company:
-      - {language: ru, text: Microsoft}
+      - {language: en, text: Microsoft}
     bio:
       - {language: en, text: "Technology expert, business consultant with 16 years of experience in IT industry of Israel,\
             \ the USA and Europe. He was developing and promoting products that are used by the companies from the Fortune\
@@ -4169,7 +4169,7 @@ speakers:
       - {language: en, text: "Romuald Zdebskiy"}
       - {language: ru, text: "Ромуальд Здебский"}
     company:
-      - {language: ru, text: Microsoft}
+      - {language: en, text: Microsoft}
     bio:
       - language: ru
         text: "Ромуальд отвечает за работу по совместным проектам и разработкам с ведущими партнерами и клиентами Microsoft\
@@ -8374,7 +8374,7 @@ speakers:
       - {language: en, text: "Alisa Kokoreva"}
       - {language: ru, text: "Алиса Кокорева"}
     company:
-      - {language: en, text: "Alfa Bank"}
+      - {language: en, text: "Alfa-Bank"}
       - {language: ru, text: Альфа-Банк}
     bio:
       - {language: en, text: "Alisa went from manual functional testing expert to leading Java developer. In Alfa Bank, she\
@@ -13253,7 +13253,6 @@ speakers:
       - {language: ru, text: "Матвей Мальков"}
     company:
       - {language: en, text: Google}
-      - {language: ru, text: "Google UK"}
     bio:
       - language: en
         text: "Software Engineer from Novokuznetsk, Siberia. Matvey's whole career is dedicated to Android and he has no clue\
@@ -18137,7 +18136,7 @@ speakers:
       - {language: en, text: "Andrey Ganin"}
       - {language: ru, text: "Андрей Ганин"}
     company:
-      - {language: en, text: "Alfa Bank"}
+      - {language: en, text: "Alfa-Bank"}
       - {language: ru, text: Альфа-Банк}
     bio:
       - {language: en, text: "В автоматизацию перешёл из разработки, тяга к прекрасному пересилила. У Андрея богатый опыт\
@@ -18688,7 +18687,7 @@ speakers:
       - {language: en, text: "Dmitriy Vdovin"}
       - {language: ru, text: "Дмитрий Вдовин"}
     company:
-      - {language: en, text: "Raiffeisen Bank"}
+      - {language: en, text: "Raiffeisenbank"}
       - {language: ru, text: Райффайзенбанк}
     bio:
       - {language: en, text: Backend-разработчик.}
