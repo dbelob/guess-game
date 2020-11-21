@@ -889,7 +889,7 @@ speakers:
       - {language: en, text: "Dmitry Aleksandrov"}
       - {language: ru, text: "Дмитрий Александров"}
     company:
-      - {language: en, text: T-Systems}
+      - {language: en, text: Oracle}
     bio:
       - language: en
         text: "Principal Programmer / Architect at T-Systems, co-leader of the Bulgarian Java User Group. In addition to work,\
@@ -1885,7 +1885,7 @@ speakers:
       - {language: en, text: "Oleg Chirukhin"}
       - {language: ru, text: "Олег Чирухин"}
     company:
-      - {language: en, text: "JUG.ru Group"}
+      - {language: en, text: JetBrains}
     bio:
       - language: en
         text: "Oleg works on enterprise Java web apps for 9 years already, his primary specialization is E-Government information\
