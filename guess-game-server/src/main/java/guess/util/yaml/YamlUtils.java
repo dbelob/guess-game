@@ -189,15 +189,13 @@ public class YamlUtils {
                 continue;
             }
 
-            for (LocaleItem localItem : speaker.getCompany()) {
-                Company company = companyMap.get(localItem.getText());
+            LocaleItem localItem = speaker.getCompany().get(0);
+            Company company = companyMap.get(localItem.getText());
 
-                Objects.requireNonNull(company,
-                        () -> String.format("Company %s not found for speaker %s", localItem.getText(), speaker.toString()));
+            Objects.requireNonNull(company,
+                    () -> String.format("Company %s not found for speaker %s", localItem.getText(), speaker.toString()));
 
-                speaker.setCompanyIds(List.of(company.getId()));
-                break;
-            }
+            speaker.setCompanyIds(List.of(company.getId()));
         }
     }
 
