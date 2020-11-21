@@ -123,11 +123,14 @@ public class YamlUtils {
 
     //TODO: delete after load change
     static List<Company> createCompaniesFromSpeakersAndFillSpeaker(List<Speaker> speakers, List<CompanySynonyms> companySynonymsList) {
+        Comparator<Speaker> comparatorByCompanyItemSize = Comparator.comparing((Function<Speaker, Integer>) s -> s.getCompany().size()).reversed();
+        Comparator<Speaker> comparatorByEnglishName = Comparator.comparing(s -> LocalizationUtils.getString(s.getCompany(), Language.ENGLISH));
+
         List<Company> companies = new ArrayList<>();
         Map<String, Company> companyMap = new HashMap<>();
         List<Speaker> filteredOrderedSpeakers = speakers.stream()
                 .filter(s -> ((s.getCompany() != null) && !s.getCompany().isEmpty()))
-                .sorted(Comparator.comparing((Function<Speaker, Integer>) speaker -> speaker.getCompany().size()).reversed())
+                .sorted(comparatorByCompanyItemSize.thenComparing(comparatorByEnglishName))
                 .collect(Collectors.toList());
 
         // Fill companies
@@ -187,15 +190,13 @@ public class YamlUtils {
             }
 
             for (LocaleItem localItem : speaker.getCompany()) {
-                if (companyMap.containsKey(localItem.getText())) {
-                    Company company = companyMap.get(localItem.getText());
+                Company company = companyMap.get(localItem.getText());
 
-                    Objects.requireNonNull(speaker,
-                            () -> String.format("Company %s not found for speaker %s", localItem.getText(), speaker.toString()));
+                Objects.requireNonNull(company,
+                        () -> String.format("Company %s not found for speaker %s", localItem.getText(), speaker.toString()));
 
-                    speaker.setCompanyIds(List.of(company.getId()));
-                    break;
-                }
+                speaker.setCompanyIds(List.of(company.getId()));
+                break;
             }
         }
     }
