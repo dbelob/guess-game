@@ -298,6 +298,38 @@ class YamlUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("linkSpeakersToCompanies method tests (with exception)")
+    class LinkSpeakersToCompaniesTest {
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setCompanyIds(List.of(0L));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setCompanyIds(List.of(1L));
+
+            Company company0 = new Company();
+            company0.setId(0);
+
+            return Stream.of(
+                    arguments(Collections.emptyMap(), List.of(speaker0), NullPointerException.class),
+                    arguments(Map.of(0L, company0), List.of(speaker1), NullPointerException.class),
+                    arguments(Map.of(0L, company0), List.of(speaker0, speaker1), NullPointerException.class),
+                    arguments(Map.of(0L, company0), List.of(speaker1, speaker0), NullPointerException.class)
+            );
+        }
+
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void linkSpeakersToCompanies(Map<Long, Company> companies, List<Speaker> speakers, Class<? extends Exception> expected) {
+            assertThrows(expected, () -> YamlUtils.linkSpeakersToCompanies(companies, speakers));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("listToMap method tests (with exception)")
     class ListToMapTest {
         private Stream<Arguments> data() {
