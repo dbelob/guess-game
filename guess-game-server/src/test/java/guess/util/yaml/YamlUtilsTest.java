@@ -114,6 +114,10 @@ class YamlUtilsTest {
         companySynonyms0.setName("CROC");
         companySynonyms0.setSynonyms(List.of("KROK", "КРОК"));
 
+        CompanySynonyms companySynonyms1 = new CompanySynonyms();
+        companySynonyms1.setName("EPAM Systems");
+        companySynonyms1.setSynonyms(List.of("EPAM"));
+
         Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "CROC")));
         Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "KROK")));
         List<Company> actualCompanies = new ArrayList<>(List.of(company0, company1));
@@ -121,7 +125,7 @@ class YamlUtilsTest {
         Map<String, Company> actualCompanyMap = new HashMap<>();
         actualCompanyMap.put("CROC", company0);
 
-        YamlUtils.bindSynonymToMainCompany(List.of(companySynonyms0), actualCompanies, actualCompanyMap);
+        YamlUtils.bindSynonymToMainCompany(List.of(companySynonyms0, companySynonyms1), actualCompanies, actualCompanyMap);
 
         List<Company> expectedCompanies = List.of(company0);
         Map<String, Company> expectedCompanyMap = Map.of("CROC", company0, "KROK", company0, "КРОК", company0);
