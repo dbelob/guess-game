@@ -3,13 +3,11 @@ package guess.service;
 import guess.dao.*;
 import guess.domain.*;
 import guess.domain.answer.Answer;
+import guess.domain.answer.CompanyAnswer;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
 import guess.domain.question.*;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.Speaker;
-import guess.domain.source.Talk;
+import guess.domain.source.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -123,6 +121,8 @@ class StateServiceImplTest {
                     arguments(GuessMode.GUESS_PHOTO_BY_NAME_MODE, null, State.GUESS_PHOTO_BY_NAME_STATE),
                     arguments(GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, State.GUESS_TALK_BY_SPEAKER_STATE),
                     arguments(GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, State.GUESS_SPEAKER_BY_TALK_STATE),
+                    arguments(GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, State.GUESS_COMPANY_BY_SPEAKER_STATE),
+                    arguments(GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, State.GUESS_SPEAKER_BY_COMPANY_STATE),
                     arguments(GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, State.GUESS_ACCOUNT_BY_SPEAKER_STATE),
                     arguments(GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, State.GUESS_SPEAKER_BY_ACCOUNT_STATE),
                     arguments(null, IllegalArgumentException.class, null)
@@ -310,16 +310,26 @@ class StateServiceImplTest {
             Talk talk0 = new Talk();
             talk0.setId(0);
 
+            Company company0 = new Company();
+            company0.setId(0);
+
+            Company company1 = new Company();
+            company1.setId(1);
+
             Question question0 = new SpeakerQuestion(speaker0);
             Question question1 = new TalkQuestion(List.of(speaker0, speaker1), talk0);
+            Question question2 = new CompanyBySpeakerQuestion(List.of(company0, company1), speaker0);
+            Question question3 = new SpeakerByCompanyQuestion(List.of(speaker0, speaker1), company0);
 
             return Stream.of(
-                    arguments(question0, GuessMode.GUESS_NAME_BY_PHOTO_MODE, null, List.of(new SpeakerAnswer((speaker0)))),
-                    arguments(question0, GuessMode.GUESS_PHOTO_BY_NAME_MODE, null, List.of(new SpeakerAnswer((speaker0)))),
-                    arguments(question0, GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, List.of(new SpeakerAnswer((speaker0)))),
-                    arguments(question0, GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, List.of(new SpeakerAnswer((speaker0)))),
+                    arguments(question0, GuessMode.GUESS_NAME_BY_PHOTO_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(question0, GuessMode.GUESS_PHOTO_BY_NAME_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(question0, GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(question0, GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, List.of(new SpeakerAnswer(speaker0))),
                     arguments(question1, GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, List.of(new TalkAnswer(talk0))),
-                    arguments(question1, GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, List.of(new SpeakerAnswer((speaker0)), new SpeakerAnswer((speaker1)))),
+                    arguments(question1, GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, List.of(new SpeakerAnswer((speaker0)), new SpeakerAnswer(speaker1))),
+                    arguments(question2, GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, List.of(new CompanyAnswer(company0), new CompanyAnswer(company1))),
+                    arguments(question3, GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, List.of(new SpeakerAnswer(speaker0), new SpeakerAnswer(speaker1))),
                     arguments(null, null, IllegalArgumentException.class, null),
                     arguments(question0, null, IllegalArgumentException.class, null),
                     arguments(question1, null, IllegalArgumentException.class, null)
@@ -367,8 +377,16 @@ class StateServiceImplTest {
             talk2.setSpeakerIds(List.of(0L));
             talk2.setSpeakers(List.of(speaker0));
 
+            Company company0 = new Company();
+            company0.setId(0);
+
+            Company company1 = new Company();
+            company1.setId(1);
+
             Question question0 = new SpeakerQuestion(speaker0);
             Question question1 = new TalkQuestion(List.of(speaker0, speaker1), talk0);
+            Question question2 = new CompanyBySpeakerQuestion(List.of(company0, company1), speaker0);
+            Question question3 = new SpeakerByCompanyQuestion(List.of(speaker0, speaker1), company0);
 
             Answer answer0 = new TalkAnswer(talk0);
             Answer answer1 = new TalkAnswer(talk1);
@@ -383,6 +401,8 @@ class StateServiceImplTest {
                     arguments(List.of(question1), List.of(answer1), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, List.of(new TalkAnswer(talk0))),
                     arguments(List.of(question1), List.of(answer2), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, Collections.emptyList()),
                     arguments(List.of(question1), null, GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(List.of(question2), null, GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, List.of(new CompanyAnswer(company0), new CompanyAnswer(company1))),
+                    arguments(List.of(question3), null, GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, List.of(new SpeakerAnswer(speaker0), new SpeakerAnswer(speaker1))),
                     arguments(null, null, null, IllegalArgumentException.class, null),
                     arguments(List.of(question0), null, null, IllegalArgumentException.class, null),
                     arguments(List.of(question1), null, null, IllegalArgumentException.class, null),
