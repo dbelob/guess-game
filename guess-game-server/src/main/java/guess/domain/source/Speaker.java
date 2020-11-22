@@ -37,7 +37,7 @@ public class Speaker extends Identifier {
 
     private String photoFileName;
     private List<LocaleItem> name;
-    private List<LocaleItem> company;   //TODO: delete after load change
+    private List<LocaleItem> company;
     private List<LocaleItem> bio;
     private String twitter;
     private String gitHub;
