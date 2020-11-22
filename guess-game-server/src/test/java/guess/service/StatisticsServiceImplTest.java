@@ -3,10 +3,7 @@ package guess.service;
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
 import guess.domain.Conference;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.Speaker;
-import guess.domain.source.Talk;
+import guess.domain.source.*;
 import guess.domain.statistics.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -47,6 +44,9 @@ class StatisticsServiceImplTest {
     private static Event event0;
     private static Event event1;
     private static Event event2;
+    private static Company company0;
+    private static Company company1;
+    private static Company company2;
     private static Speaker speaker0;
     private static Speaker speaker1;
     private static Speaker speaker2;
@@ -100,16 +100,28 @@ class StatisticsServiceImplTest {
         eventType2.setId(2);
         eventType2.setConference(Conference.JOKER);
 
+        company0 = new Company();
+        company0.setId(0);
+
+        company1 = new Company();
+        company1.setId(1);
+
+        company2 = new Company();
+        company2.setId(2);
+
         speaker0 = new Speaker();
         speaker0.setId(0);
         speaker0.setJavaChampion(true);
+        speaker0.setCompanies(List.of(company0));
 
         speaker1 = new Speaker();
         speaker1.setId(1);
         speaker1.setMvp(true);
+        speaker1.setCompanies(List.of(company1));
 
         speaker2 = new Speaker();
         speaker2.setId(2);
+        speaker2.setCompanies(List.of(company2));
 
         Talk talk0 = new Talk();
         talk0.setId(0);
@@ -534,6 +546,195 @@ class StatisticsServiceImplTest {
                         0, 0, 0, 0, 0
                 ),
                 statisticsService.getSpeakerStatistics(true, true, 3L));
+    }
+
+    private CompanyStatistics createCompanyStatistics(List<CompanyMetrics> companyMetricsList, Company company,
+                                                      long speakersQuantity, long talksQuantity, long eventsQuantity,
+                                                      long eventTypesQuantity, long javaChampionsQuantity, long mvpsQuantity) {
+        return new CompanyStatistics(
+                companyMetricsList,
+                new CompanyMetrics(
+                        company,
+                        speakersQuantity,
+                        talksQuantity,
+                        eventsQuantity,
+                        eventTypesQuantity,
+                        javaChampionsQuantity,
+                        mvpsQuantity)
+        );
+    }
+
+    @Test
+    void getCompanyStatistics() {
+        CompanyMetrics companyMetrics0 = new CompanyMetrics(
+                company0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0);
+        CompanyMetrics companyMetrics1 = new CompanyMetrics(
+                company1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1);
+        CompanyMetrics companyMetrics2 = new CompanyMetrics(
+                company2,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0);
+
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(false, false, null));
+        assertEquals(
+                createCompanyStatistics(
+                        List.of(companyMetrics1),
+                        new Company(),
+                        1, 1, 1, 1, 0, 1
+                ),
+                statisticsService.getCompanyStatistics(false, true, null));
+        assertEquals(
+                createCompanyStatistics(
+                        List.of(companyMetrics0, companyMetrics2),
+                        new Company(),
+                        2, 2, 2, 2, 1, 0
+                ),
+                statisticsService.getCompanyStatistics(true, false, null));
+        assertEquals(
+                createCompanyStatistics(
+                        List.of(companyMetrics0, companyMetrics1, companyMetrics2),
+                        new Company(),
+                        3, 3, 3, 3, 1, 1
+                ),
+                statisticsService.getCompanyStatistics(true, true, null));
+
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(false, false, 0L));
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(false, true, 0L));
+        assertEquals(
+                createCompanyStatistics(
+                        List.of(companyMetrics0),
+                        new Company(),
+                        1, 1, 1, 1, 1, 0
+                ),
+                statisticsService.getCompanyStatistics(true, false, 0L));
+        assertEquals(
+                createCompanyStatistics(
+                        List.of(companyMetrics0),
+                        new Company(),
+                        1, 1, 1, 1, 1, 0
+                ),
+                statisticsService.getCompanyStatistics(true, true, 0L));
+
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(false, false, 1L));
+        assertEquals(
+                createCompanyStatistics(
+                        List.of(companyMetrics1),
+                        new Company(),
+                        1, 1, 1, 1, 0, 1
+                ),
+                statisticsService.getCompanyStatistics(false, true, 1L));
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(true, false, 1L));
+        assertEquals(
+                createCompanyStatistics(
+                        List.of(companyMetrics1),
+                        new Company(),
+                        1, 1, 1, 1, 0, 1
+                ),
+                statisticsService.getCompanyStatistics(true, true, 1L));
+
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(false, false, 2L));
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(false, true, 2L));
+        assertEquals(
+                createCompanyStatistics(
+                        List.of(companyMetrics2),
+                        new Company(),
+                        1, 1, 1, 1, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(true, false, 2L));
+        assertEquals(
+                createCompanyStatistics(
+                        List.of(companyMetrics2),
+                        new Company(),
+                        1, 1, 1, 1, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(true, true, 2L));
+
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(false, false, 3L));
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(false, true, 3L));
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(true, false, 3L));
+        assertEquals(
+                createCompanyStatistics(
+                        Collections.emptyList(),
+                        new Company(),
+                        0, 0, 0, 0, 0, 0
+                ),
+                statisticsService.getCompanyStatistics(true, true, 3L));
     }
 
     @Test
