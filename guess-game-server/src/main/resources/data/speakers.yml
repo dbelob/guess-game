@@ -1487,18 +1487,18 @@ speakers:
       - {language: ru, text: ЦФТ}
     bio:
       - {language: en, text: "Since his school days Vladimir was enthusiastic about programming and from then on has managed\
-            \ to code everything: from Soviet programmable calculators to modern SCADA systems in production. For the last\
-            \ several years he has been involved in backend development of Internet banking and other follow-up services at\
-            \ CFT (Center of Financial Technologies), where he actively stands for microservices and other popular things.\
-            \ Constantly bothers with ideas about optimization of difficult development/server software testing tasks, nurtures\
+            \ to code everything: from Soviet programmable calculators to modern CNC tools in production. For the last 8+\
+            \ years he has been involved in Java backend development of Internet banking at CFT (Center of Financial Technologies).\
+            \ Constantly bothers with ideas about optimization of day-to-day tasks in software development and testing, nurtures\
             \ solutions for them while jogging or swimming and then puts them into life, experimenting shamelessly on his\
-            \ colleagues."}
-      - {language: ru, text: "Владимир со школьной скамьи болеет программированием и с тех пор успел покодировать на много\
-            м: от советских программируемых калькуляторов до промышленных SCADA-систем на заводах. Но последние несколько\
-            \ лет погружен в разработку бэкенда интернет-банков и сопутствующих сервисов в ЦФТ, где активно топит за микро\
-            сервисы и прочие модные штуки. Кроме этого, регулярно заморачивается идеями оптимизации сложных задач разработ\
-            ки/тестирования серверного ПО, вынашивает для них решения на пробежках и в бассейне, а затем воплощает их в жи\
-            знь, бессовестно испытывая на собственных коллегах."}
+            \ colleagues. Periodically writes articles and makes talks on Java as well as takes part in organizing SnowOne\
+            \ – Siberian community-driven Java conference."}
+      - {language: ru, text: "Владимир со школьной скамьи увлечён программированием и с тех пор успел покодировать на мног\
+            ом: от советских программируемых калькуляторов до современных станков с ЧПУ. Однако последние 8+ лет погружен\
+            \ в разработку бэкенда на Java для интернет-банков в ЦФТ (преимущественно на Spring). Регулярно заморачивается\
+            \ идеями оптимизации повседневных задач разработки/тестирования бэкенда, вынашивает для них решения на пробежк\
+            ах и в бассейне, а затем воплощает в жизнь, бессовестно испытывая на собственных коллегах. Периодически пишет\
+            \ статьи и выступает с докладами по Java, да и сам причастен к организации сибирской Java-конференции SnowOne."}
     twitter: toparvion
     gitHub: Toparvion
   - id: 87
@@ -1822,17 +1822,25 @@ speakers:
       - {language: en, text: JetBrains}
     bio:
       - language: en
-        text: "Roman Elizarov works at JetBrains as Team Lead for Kotlin Libraries team, where he is focused on development\
-            \ and maintenance of multi-platform foundational libraries for Kotlin programming language. His main contribution\
-            \ in this role is design of Kotlin coroutines and development of Kotlin coroutines library.\n\nIn 2000 Roman Elizarov\
-            \ had graduated from St. Petersburg ITMO and started his career as a professional software developer. During his\
-            \ undergraduate study he participated in International Collegiate Programming Contests (ICPC). Since 1997 and\
-            \ until now Roman serves as a Chief Judge of Northern Eurasia Region of ICPC. He also maintains his academic ties\
-            \ and now teaches a course on concurrent and distributed programming at ITMO. Roman Elizarov had worked for most\
-            \ of his career at Devexperts, where he designed and developed high-performance trading software for leading brokerage\
-            \ firms and market data delivery services that routinely handle millions of events per second. He is an expert\
-            \ in Java and JVM, particularly in concurrency, real-time data processing, algorithms, and performance optimizations\
-            \ for modern architectures."
+        text: "Roman Elizarov is Project Lead for Kotlin at JetBrains, where he is focused on future Kotlin language features.\
+            \ His main contribution is the design of Kotlin coroutines and development of Kotlin coroutines library.\n\nIn\
+            \ 2000 Roman Elizarov had graduated from St. Petersburg ITMO and started his career as a professional software\
+            \ developer. During his undergraduate study he participated in International Collegiate Programming Contests (ICPC).\
+            \ Since 1997 and until now Roman serves as a Chief Judge of Northern Eurasia Region of ICPC. He also maintains\
+            \ his academic ties and now teaches a course on concurrent and distributed programming at ITMO. Roman Elizarov\
+            \ had worked for most of his career at Devexperts, where he designed and developed high-performance trading software\
+            \ for leading brokerage firms and market data delivery services that routinely handle millions of events per second.\
+            \ He is an expert in Java and JVM, particularly in concurrency, real-time data processing, algorithms, and performance\
+            \ optimizations for modern architectures."
+      - language: ru
+        text: "Роман Елизаров — Project lead проекта Kotlin в JetBrains, занимается разработкой будущих фичей Kotlin. Его\
+            \ главный вклад — дизайн Kotlin корутин и разработка библиотек для Kotlin корутин.\n\nВ 2000 году Роман выпуст\
+            ился из ИТМО и начал свою карьеру в разработке ПО. На бакалавриате он принимал участие в Международной студенч\
+            еской олимпиаде по программированию. С 1997 по настоящее время Роман является главным судьей северного евразий\
+            ского региона этой олимпиады. Он поддерживает академические связи и преподает курс по параллельному и распреде\
+            ленному программированию в ИТМО. Большую часть своей карьеры проработал в Devexperts, где создал и разработал\
+            \ высокопроизводительное торговое ПО для брокерских фирм и служб доставки рыночных данных. Роман — эксперт в Java\
+            \ и JVM, особенно в многопоточности и оптимизации производительности для современных архитектур."
     twitter: relizarov
     gitHub: elizarov
     javaChampion: true
@@ -2325,10 +2333,14 @@ speakers:
     company:
       - {language: en, text: Hazelcast}
     bio:
-      - {language: en, text: "Vladimir is developing distributed systems and databases. He's also an engineer at Hazelcast.\
-            \ In the past — developer at Apache Ignite."}
-      - {language: ru, text: "Разрабатывает распределенные системы и базы данных. Инженер в компании Hazelcast. В прошлом\
-            \ — разработчик Apache Ignite."}
+      - {language: en, text: "Vladimir is a Software Engineer at Hazelcast leading the implementation of Hazelcast Mustang,\
+            \ a distributed SQL engine. Before that he spent 6 years at GridGain, building various parts of the Apache Ignite\
+            \ IMDG, including data processing pipelines, transactions, a JDBC driver, and clients for different programming\
+            \ languages."}
+      - {language: ru, text: "Владимир работает Software Engineer в компании Hazelcast, где отвечает за разработку распред\
+            еленного SQL-движка Hazelcast Mustang. До этого он 6 лет работал в компании GridGain, где разрабатывал компоне\
+            нты Apache Ignite IMDG, включая подсистемы параллельной обработки данных, транзакции, JDBC-драйвер и клиенты д\
+            ля раличных языков программирования."}
     twitter: devozerov
     gitHub: devozerov
   - id: 137
@@ -3121,16 +3133,15 @@ speakers:
     photoFileName: 0191.jpg
     name:
       - {language: en, text: "Peter Lawrey"}
+    company:
+      - {language: en, text: "Chronicle Software Ltd"}
     bio:
       - language: en
-        text: "Likes to inspire developers to improve the craftmanship of their solutions, engineer their systems for\
-        \ simplicity and performance, and enjoy their work more by being creative and innovative. Has a popular blog\
-        \ \"Vanilla Java\" which has had over 3 million page views, is 3rd on StackOverflow.com for Java with over 10K\
-        \ answers.\nFounder of the Performance Java User's Group with 900 members. Lead developer of the OpenHFT project\
-        \ which includes support for off heap memory such as embedded databases supporting billions of keys-values with 1\
-        \ micro-second update latency, thread pinning and low latency persisted IPC (as low as 100 nano-seconds)"
+        text: "Most answers on Stackoverflow for Java and the JVM.\nArchitect of the OpenHFT libraries downloaded 20M times.\n\
+            Java Champion."
     twitter: peterlawrey
     gitHub: peter-lawrey
+    javaChampion: true
   - id: 192
     photoFileName: 0192.jpg
     name:
@@ -14037,13 +14048,14 @@ speakers:
     name:
       - {language: en, text: "Gunnar Morling"}
     company:
-      - {language: en, text: "Red Hat, Inc."}
+      - {language: en, text: "Red Hat"}
     bio:
       - {language: en, text: "Gunnar Morling is a software engineer and open-source enthusiast by heart. He is leading the\
             \ Debezium project, a tool for change data capture (CDC). He is a Java Champion, the spec lead for Bean Validation\
             \ 2.0 (JSR 380) and has founded multiple open source projects such as Deptective and MapStruct. Prior to joining\
             \ Red Hat, Gunnar worked on a wide range of Java EE projects in the logistics and retail industries. He's based\
             \ in Hamburg, Germany."}
+    twitter: gunnarmorling
   - id: 960
     photoFileName: 0960.jpg
     name:
@@ -17840,17 +17852,27 @@ speakers:
   - id: 1232
     photoFileName: 1232.jpg
     name:
-      - {language: en, text: "Idel Pivnitsky"}
+      - {language: en, text: "Idel Pivnitskiy"}
       - {language: ru, text: "Идель Пивницкий"}
     company:
-      - {language: en, text: "National Research University Higher School of Economics"}
-      - {language: ru, text: "Национальный исследовательский университет «Высшая школа экономики»"}
+      - {language: en, text: ServiceTalk}
     bio:
+      - language: en
+        text: "Idel Pivnitskiy is working on a JVM network application framework ServiceTalk.io. He is responsible for the\
+            \ performance and observability of the framework, works on transport level, and user-facing API for protocols.\n\
+            \nIdel develops server-side network applications for more than 6 years with various scalability, reliability,\
+            \ and performance requirements. Currently focused on server-side infrastructure, developing network frameworks,\
+            \ and libraries for the JVM platform. Open source fan. ServiceTalk, Netty & AeroGear projects contributor. Participated\
+            \ in the development of a new protocol for push-notifications RFC 8030 - Generic Event Delivery Using HTTP Push."
       - language: ru
-        text: "Студент-разработчик. Около 3х лет разрабатываю масштабируемые серверные приложения. Изучал\
-        \ высоконагруженные вычислительные системы и сети, сейчас получаю магистерскую степень по системам обработки\
-        \ больших данных в НИУ ВШЭ. В свободное от работы и учебы время занимаюсь Open Source проектами и участвую в\
-        \ различных программах для студентов. Любимые проекты: Netty project и AeroGear от JBoss Community."
+        text: "Идель Пивницкий работает над фреймворком для разработки сетевых JVM-приложений ServiceTalk.io. Он отвечает\
+            \ за производительность и прозрачность фреймворка, а также работает над транспортным уровнем и пользовательски\
+            м API для протоколов.\n\nИдель разрабатывает сетевые приложения более 6 лет, отвечающие различным требованиям\
+            \ по масштабированию и нагрузке. В данный момент фокусируется на разработке инфраструктуры для серверных прило\
+            жений, работая над фреймворками и библиотеками для платформы JVM. Фанат open source. Контрибьютор проектов ServiceTalk,\
+            \ Netty и AeroGear. Участвовал в разработке интернет-протокола для доставки пуш-уведомлений RFC8030 — Generic\
+            \ Event Delivery Using HTTP Push."
+    twitter: idelpivnitskiy
   - id: 1233
     photoFileName: 1233.jpg
     name:
@@ -20087,3 +20109,400 @@ speakers:
             \ company and spent more than a decade making console games. When he's not hacking on Compiler Explorer, Matt\
             \ enjoys writing emulators for old 8-bit computer hardware."}
     twitter: mattgodbolt
+  - id: 1399
+    photoFileName: 1399.jpg
+    name:
+      - {language: en, text: "Alexey Nesterov"}
+      - {language: ru, text: "Алексей Нестеров"}
+    company:
+      - {language: en, text: VMware}
+    bio:
+      - {language: en, text: "Software engineer from Spring Cloud Commercial team, Pivotal Labs alumni, a fan of Test-Driven\
+            \ Development and lean software development approach, open source enthusiast, author, and co-host of a weekly\
+            \ hi-tech podcast Radio-T."}
+      - {language: ru, text: "Разработчик в команде Spring Cloud Commerical, ранее Pivotal Labs, фанат Test-Driven Development\
+            \ и lean-подхода к разработке; фанат open source, автор и тот самый Алексей из еженедельного Hi-Tech подкаста\
+            \ Radio-T."}
+    twitter: alek_sys
+  - id: 1400
+    photoFileName: 1400.jpg
+    name:
+      - {language: en, text: "Otavio Santana"}
+    company:
+      - {language: en, text: Platform.sh/SouJava}
+    bio:
+      - language: en
+        text: "Empowering developers worldwide to deliver better software faster, scalable in the Cloud. Otavio is a passionate\
+            \ software engineer focused on Cloud and Java technology. He has experience mainly in persistence polyglot and\
+            \ high-performance applications in finances, social media, and e-commerce.\nOtavio is a member of both Expert\
+            \ Groups and Expert Leader in several JSRs and JCP executive committee. He is working on several Apache and Eclipse\
+            \ Foundation projects such as Apache Tamaya, MicroProfile, Jakarta EE, where he is leading the first specification\
+            \ at Jakarta EE with Jakarta NoSQL. A JUG leader and global speaker at JavaOne and Devoxx conferences.  Otavio\
+            \ has received recognition for his OSS contributions such as the JCP Outstanding Award, Member of the year and\
+            \ innovative JSR, Duke’s Choice Award, and Java Champion Award, to name a few."
+    twitter: otaviojava
+    javaChampion: true
+  - id: 1401
+    photoFileName: 1401.jpg
+    name:
+      - {language: en, text: "Karina Varela"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - language: en
+        text: "Karina M. Varela is a Senior Technical Marketing Manager at Red Hat and an expert on the matter of Business\
+            \ Automation. She brings a solid background in development, architecting delivering, and troubleshooting critical\
+            \ software in enterprise environments of different sectors around the world.\nShe's a coordinator of the SouJava\
+            \ community, and in her free time, enjoys contributing to the open-source community by writing, speaking and promoting\
+            \ tech events."
+    twitter: kvarel4
+    gitHub: kmacedovarela
+  - id: 1402
+    photoFileName: 1402.jpg
+    name:
+      - {language: en, text: "Ilya Ermolin"}
+      - {language: ru, text: "Илья Ермолин"}
+    company:
+      - {language: en, text: "RT Labs"}
+      - {language: ru, text: "РТ Лабс"}
+    bio:
+      - {language: en, text: "Ilya has worked in IT for more than 15 years as an engineer, QA, developer, and architect. He\
+            \ is interested in high and low-level Java application optimization."}
+      - {language: ru, text: "Работает в IT сфере более 15 лет: был инженером, тестировщиком, разработчиком и архитектором\
+            . Интересуется оптимизацией Java-приложений как на высоком, так и на низком уровне."}
+  - id: 1403
+    photoFileName: 1403.jpg
+    name:
+      - {language: en, text: "Andrey Damintcev"}
+      - {language: ru, text: "Андрей Даминцев"}
+    company:
+      - {language: en, text: "Deutsche Telekom IT Solutions"}
+    bio:
+      - {language: en, text: "Andrey has been working in IT since 2011. He worked as a frontend and backend developer and\
+            \ a team lead at Sigma-IT, Return on Intelligence (ex ExigenServices), Grid Dynamics. He joined the Deutsche Telekom\
+            \ IT Solutions team in 2018."}
+      - {language: ru, text: "Работает в ИТ с 2011 года. За это время он успел поработать фронтенд и бэкенд-разработчиком\
+            , тимлидом в компаниях Sigma-IT, Return on Intelligence (ex ExigenServices), Grid Dynamics. В 2018 году присое\
+            динился к команде Deutsche Telecom IT Solutions."}
+    twitter: Minimbl
+  - id: 1404
+    photoFileName: 1404.jpg
+    name:
+      - {language: en, text: "Kirill Timofeev"}
+      - {language: ru, text: "Кирилл Тимофеев"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Graduated from the Computer Technologies Department at ITMO. Worked at Yandex. For the last\
+            \ three years, he has been working at JetBrains to support profiling tools in IntelliJ IDEA."}
+      - {language: ru, text: "Закончил кафедру КТ в ИТМО. Успел немного поработать в Яндексе. Последние три года работает\
+            \ в JetBrains над поддержкой инструментов профилирования в IntelliJ IDEA."}
+    twitter: Kirill_Tim_
+  - id: 1405
+    photoFileName: 1405.jpg
+    name:
+      - {language: en, text: "Pavel Petroshenko"}
+      - {language: ru, text: "Павел Петрошенко"}
+    company:
+      - {language: en, text: "Azul Systems"}
+    bio:
+      - {language: en, text: "Pavel Petroshenko is Senior Director Product Management, Azul Systems, Inc. Pavel is based in\
+            \ California, and in his current role, he is focusing on the product strategy, requirements, and priorities for\
+            \ Azul Zulu builds of OpenJDK and related products. At various engineering roles, Pavel worked on Java platform\
+            \ implementations, including Java ME Virtual Machine for many years at Sun and then at Oracle. Throughout his\
+            \ career, Pavel co-founded and participated in several successful software startups in Russia and the United States."}
+      - {language: ru, text: "Павел — Senior Director Product Management в Azul. Живет в Калифорнии, занимается продуктово\
+            й стратегией, требованиях и приоритетах для Azul Zulu сборок OpenJDK и смежных продуктов. На различных инженер\
+            ных должностях в Sun и Oracle Павел работал над реализациями Java-платформы, включая Java ME Virtual Machine.\
+            \ На протяжении своей карьеры Павел был соучредителем и участвовал в нескольких успешных стартапах по разработ\
+            ке ПО в России и США."}
+    twitter: ppetroshenko
+  - id: 1406
+    photoFileName: 1406.jpg
+    name:
+      - {language: en, text: "Ivan Zemlyansky"}
+      - {language: ru, text: "Иван Землянский"}
+    company:
+      - {language: en, text: Luxoft}
+    bio:
+      - {language: en, text: "Ivan has over 8 years of experience working with Java and started as a C++ developer. For the\
+            \ last 5 years he has been working with in the field of financial markets, previously worked for Otkritie Broker\
+            \ where he was involved in the development of a risk assessment system."}
+      - {language: ru, text: "Иван имеет более чем 8-летний опыт работы с Java, начинал как C++ разработчик. Последние 5 л\
+            ет он работает в сфере финансовых рынков, ранее работал в «Открытие Брокер», где занимался разработкой системы\
+            \ оценки рисков. Сейчас Иван возглавляет инфраструктурную команду в одном из самых крупных хедж-фондов США."}
+  - id: 1407
+    photoFileName: 1407.jpg
+    name:
+      - {language: en, text: "Artem Seleznev"}
+      - {language: ru, text: "Артем Селезнев"}
+    company:
+      - {language: en, text: Sber}
+      - {language: ru, text: Сбер}
+    bio:
+      - {language: en, text: "Artem works on a project to assess technical risks for a company and project risks into the\
+            \ monetary equivalent. Promotes Test Driven/Data-driven Development. Artem is fond of maps and the output of models\
+            \ in prod."}
+      - {language: ru, text: "Работает на проекте по оценке технических рисков для компании и проекции рисков в денежный э\
+            квивалент. Продвигает методологии разработки Test Driven/Data-driven Development. Увлекается MLOps и выводом м\
+            оделей в прод."}
+  - id: 1408
+    photoFileName: 1408.jpg
+    name:
+      - {language: en, text: "Heinz Kabutz"}
+    company:
+      - {language: en, text: JavaSpecialists.eu}
+    bio:
+      - language: en
+        text: "Heinz is the mastermind behind The Java Specialists' Newsletter. He has a PhD in Computer Science. Heinz has\
+            \ programmed significant portions of several large Java applications and has taught Java to thousands of professional\
+            \ programmers. He is a regular speaker at all the major Java conferences.\n\nHeinz was chosen as a Java Champion\
+            \ by Sun Microsystems, the inventors of Java, for his work in advancing Java.\n\nHeinz presents Java training\
+            \ courses anywhere in the world, either in person or via remote teaching technologies. He is the author of many\
+            \ courses, including Java Specialist Master, Design Patterns, and Concurrency Specialist Courses."
+    twitter: heinzkabutz
+    javaChampion: true
+  - id: 1409
+    photoFileName: 1409.jpg
+    name:
+      - {language: en, text: "John Green"}
+    company:
+      - {language: en, text: JavaSpecialists.eu}
+    bio:
+      - {language: en, text: "John Green is a lifelong learner, polyglot, and lover of mathematics. He delights in trawling\
+            \ through code, trying to deduce what the author really wanted it to do. If he could figure out how to set the\
+            \ good stuff to music, he would write a grand symphony entitled \"In Fondo alla Coda\"."}
+    twitter: _johnsgp
+  - id: 1410
+    photoFileName: 1410.jpg
+    name:
+      - {language: en, text: "Alexey Kuzin"}
+      - {language: ru, text: "Алексей Кузин"}
+    company:
+      - {language: en, text: Tarantool}
+    bio:
+      - language: en
+        text: "Alexey has been involved in the development of high-performance projects, mission-critical business data storage,\
+            \ and processing systems for more than 5 years.\r\nHe develops Tarantool based services for the largest companies\
+            \ in Russia."
+      - language: ru
+        text: "Больше 5 лет участвует в разработке высоконагруженных проектов, mission critical бизнес-систем хранения и о\
+            бработки данных.\r\nЗанимается разработкой сервисов на базе Tarantool для крупнейших компаний России."
+  - id: 1411
+    photoFileName: 1411.jpg
+    name:
+      - {language: en, text: "David Denton"}
+    company: []
+    bio:
+      - {language: en, text: "A London-based Engineering Lead; passionate about building simple, Test-Driven products and\
+            \ the teams to deliver them. Oh, and also about building the simple, Test-Driven, Open Source tools to power them.\
+            \ Active as a speaker at various international technology conferences and have also enjoyed developing and delivered\
+            \ Coding Dojos and full Training Courses, both in the UK and around the world."}
+    gitHub: daviddenton
+  - id: 1412
+    photoFileName: 1412.jpg
+    name:
+      - {language: en, text: "Ivan Sanchez"}
+    company: []
+    bio:
+      - {language: en, text: "Ivan Sanchez is a developer and coach with over 15 years of commercial experience. Over the\
+            \ last decade, he has worked in a variety of industries and has been an advocate of Agile and eXtreme Programming\
+            \ practices such as TDD and Pair Programming. A considerable portion of his experience is in Java, and he's switched\
+            \ to Kotlin as his primary language of choice in the past years. He's the co-author of http4k: a lightweight HTTP\
+            \ library for Kotlin."}
+    twitter: s4nchez
+  - id: 1413
+    photoFileName: 1413.jpg
+    name:
+      - {language: en, text: "Emil Ibragimov"}
+      - {language: ru, text: "Эмиль Ибрагимов"}
+    company:
+      - {language: en, text: Yandex.Cloud}
+      - {language: ru, text: Яндекс.Облако}
+    bio:
+      - language: en
+        text: "Graduating from the CT department at ITMO, before coming to Yandex had a bit of commercial experience with\
+            \ Spring Boot and the other things around it. \r\nAt Yandex works in the serverless team, mostly on Cloud Functions.\
+            \ Emil is quite obsessed with serverless computing and wants to share this love with people around him."
+      - language: ru
+        text: "Заканчивает кафедру КТ в ИТМО, до перехода в Яндекс имел небольшой коммерческий опыт работы со Spring Boot\
+            \ и окружающим его миром. \r\nВ Яндексе работает в команде serverless, занимается, по большей части, облачными\
+            \ функциями. Проникся бессерверными вычислениями и полюбил их, о чем и хочет поведать миру."
+  - id: 1414
+    photoFileName: 1414.jpg
+    name:
+      - {language: en, text: "Alan Bateman"}
+    company:
+      - {language: en, text: Oracle}
+    bio:
+      - {language: en, text: "Alan Bateman is an engineer in the Java Platform Group in Oracle. Alan has worked on many areas\
+            \ of the JDK including the Java Module System, the modularization of the JDK itself, and the core libraries and\
+            \ APIs. He previously worked on many of the tool and profiling APIs including the JSR-163 implementation and other\
+            \ serviceability features. He is currently focused on Project Loom with the aim to reduce the effort of writing,\
+            \ maintaining, and observing high-throughput concurrent applications."}
+  - id: 1415
+    photoFileName: 1415.jpg
+    name:
+      - {language: en, text: "Simon Ogorodnik"}
+      - {language: ru, text: "Семен Огородник"}
+    company:
+      - {language: en, text: JetBrains}
+    bio:
+      - {language: en, text: "Simon Ogorodnik works on Kotlin at JetBrains, initially joined the Kotlin IDE team at age of\
+            \ 18, now works for New Compiler Frontend. In IDE team started New J2K (Java2Kotlin converter), maintained Dokka,\
+            \ and implemented various performance optimizations."}
+      - {language: ru, text: "Семен работает над Kotlin в JetBrains, изначально присоединился к команде Kotlin IDE в 18 ле\
+            т, сейчас работает с фронтендом нового компилятора. В команде IDE начал New J2K, поддерживал Dokka и реализовы\
+            вал различные оптимизации производительности."}
+  - id: 1416
+    photoFileName: 1416.jpg
+    name:
+      - {language: en, text: "Yuriy Babak"}
+      - {language: ru, text: "Юрий Бабак"}
+    company:
+      - {language: en, text: "Mir Plat.Form"}
+      - {language: ru, text: "Мир Plat.Form"}
+    bio:
+      - language: en
+        text: "Yuri has over ten years of experience in Java development.\r\nHe took part in the development of ERP, E-Commerce,\
+            \ as well as other enterprise systems.\r\nHe was also involved in the development of open source platforms for\
+            \ in-memory computing and machine learning.\r\nCurrently, Yuri leads the front-office solutions team at NSPK."
+      - {language: ru, text: "Юрий имеет более чем 10-летний опыт разработки на Java. Участвовал в разработке ERP, E-Commerce\
+            \ и других enterprise-систем. Также занимался разработкой open source-платформ для in-memory computing и машин\
+            ного обучения. Сейчас Юрий возглавляет команду разработки фронт-офисных решений в НСПК."}
+  - id: 1417
+    photoFileName: 1417.jpg
+    name:
+      - {language: en, text: "Evgeny Trifonov"}
+      - {language: ru, text: "Евгений Трифонов"}
+    company:
+      - {language: en, text: "JUG Ru Group"}
+    bio:
+      - {language: en, text: "Writes about tech his whole life pretending he understands it. Tried Kotlin on Android before\
+            \ it was cool. Has a \"Legend\" badge on Habr (as if it means a thing). Unironically uses ChromeOS. Works remotely\
+            \ his whole life and has no idea how people manage to work in offices."}
+      - {language: ru, text: "Всю жизнь пишет тексты про IT, делая вид, что в этом что-то понимает. Пробовал Kotlin на Android\
+            \ до того, как это стало модным. Обладатель значка «Легенда» на Хабре (как будто это что-то значит). Всерьёз п\
+            ользуется ChromeOS. Удалёнщик по убеждениям."}
+  - id: 1418
+    photoFileName: 1418.jpg
+    name:
+      - {language: en, text: "Maximilian Novikov"}
+      - {language: ru, text: "Максимилиан Новиков"}
+    company:
+      - {language: en, text: "Deutsche Bank Technology Center"}
+      - {language: ru, text: "ТехЦентр Дойче Банка"}
+    bio:
+      - language: en
+        text: "Max is an IT professional with 15 years of experience in the fields of software engineering, development, and\
+            \ testing.\nHe works as a lead engineer on a large forex platform at Deutsche Bank Technology Center and mainly\
+            \ responsible for DevOps."
+      - language: ru
+        text: "Макс в IT уже 15 лет, успел поработать и в тестировании, и в разработке.\r\nСейчас работает ведущим инженер\
+            ом в большой трейдинговой платформе для валютно-обменных операций в Технологическом Центре Дойче Банка, в осно\
+            вном занимается DevOps."
+  - id: 1419
+    photoFileName: 1419.jpg
+    name:
+      - {language: en, text: "Monica Beckwith"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - language: en
+        text: "Java Champion, Monica Beckwith has several published articles and gets regular invitations to give talks on\
+            \ JVM/JIT Compilation/Garbage Collection (GC). She is also a JavaOne Rock Star.\n\nMonica has co-authored the\
+            \ \"Java Performance Companion\" book and is currently working on a book titled \"JVM Performance Engineering:\
+            \ Inside the OpenJDK HotSpot VM\".\n\nMonica is considered one of the influential women in Java and Scala."
+    twitter: mon_beck
+    gitHub: mo-beck
+    javaChampion: true
+  - id: 1420
+    photoFileName: 1420.jpg
+    name:
+      - {language: en, text: "John Roesler"}
+    company:
+      - {language: en, text: "Confluent, Inc."}
+    bio:
+      - {language: en, text: "John Roesler is an Apache Kafka committer and PMC member and a software engineer at Confluent.\
+            \ He focuses on Kafka Streams. Before that, he spent eight years at Bazaarvoice, building their massive-scale,\
+            \ high-throughput stream processing platform."}
+  - id: 1421
+    photoFileName: 1421.jpg
+    name:
+      - {language: en, text: "Jendrik Johannes"}
+    company:
+      - {language: en, text: "Gradle Inc."}
+    bio:
+      - {language: en, text: "Jendrik has been involved in Java and Android development for over a decade. For four years\
+            \ he is a developer on the popular open-source build tool Gradle, where we worked on, among other things, build\
+            \ performance, dependency-management, and the support for JVM languages. Jendrik is working for Gradle, which\
+            \ has been a distributed company since ever, from his home in Hamburg, Germany."}
+    twitter: jeoj
+  - id: 1422
+    photoFileName: 1422.jpg
+    name:
+      - {language: en, text: "Mario Fusco"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - {language: en, text: "Mario Fusco is a Java Champion and works at Red Hat as principal software engineer and Drools\
+            \ project lead. He is also a frequent speaker, the coordinator of JUG Milano and the co-author of \"Modern Java\
+            \ in Action\" published by Manning."}
+    javaChampion: true
+  - id: 1423
+    photoFileName: 1423.jpg
+    name:
+      - {language: en, text: "Edoardo Vacchi"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - {language: en, text: "Edoardo Vacchi, during his Ph.D., researched language design and implementation at the University\
+            \ of Milan. After three years at UniCredit Bank's R&D department, he joined Red Hat working on the Drools rule\
+            \ engine, the jBPM platform, and the Kogito project."}
+  - id: 1424
+    photoFileName: 1424.jpg
+    name:
+      - {language: en, text: "Sébastien Deleuze"}
+    company:
+      - {language: en, text: VMware}
+    bio:
+      - {language: en, text: "Sébastien is a Spring Framework committer at VMware. He works on Kotlin and GraalVM native support\
+            \ across Spring portfolio, and created the Spring Fu experimental project which introduces KoFu and JaFu DSLs\
+            \ to configure Spring Boot in a functional way."}
+    twitter: sdeleuze
+  - id: 1425
+    photoFileName: 1425.jpg
+    name:
+      - {language: en, text: "Anton Kozlov"}
+      - {language: ru, text: "Антон Козлов"}
+    company:
+      - {language: en, text: Azul}
+    bio:
+      - {language: en, text: "Engineer at Azul. In the company, Anton works on OpenJDK-based projects. Previously contributed\
+            \ to ARM32, PPC32 ports. Now he does various things, specializing in startup and warm-up optimizations."}
+      - {language: ru, text: "Инженер в Azul. В компании работает над проектами на основе OpenJDK. Принимал активное участ\
+            ие в портах JDK на ARM32, PPC32. Сейчас занимается всем подряд, особенно активно оптимизациями для ускорения з\
+            апуска и достижения производительности."}
+  - id: 1426
+    photoFileName: 1426.jpg
+    name:
+      - {language: en, text: "Jason Tatton"}
+    company:
+      - {language: en, text: "Amazon Web Services"}
+    bio:
+      - {language: en, text: "Jason is the creator of the Concurnas Programming Language and the founder of Concurnas Ltd.\
+            \ He wrote his first computer program aged 9 and has been coding ever since for over 25 years. Jason has written\
+            \ and led teams developing algorithmic trading systems for some of the world's most prestigious investment banks\
+            \ including Bank of America Merrill Lynch, Deutsche Bank and J.P. Morgan. He is passionate about technology, programming\
+            \ and making Concurnas the best programming language it can be. When not building Concurnas he enjoys spending\
+            \ time with his family. He's also a Senior Software Engineer at AWS."}
+    twitter: concurnas
+  - id: 1427
+    photoFileName: 1427.jpg
+    name:
+      - {language: en, text: "Sofia Naimushina"}
+      - {language: ru, text: "София Наймушина"}
+    company:
+      - {language: en, text: "JUG Ru Group"}
+    bio: []
+    twitter: Sofi_Nai
