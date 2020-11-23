@@ -20493,15 +20493,6 @@ speakers:
             \ and making Concurnas the best programming language it can be. When not building Concurnas he enjoys spending\
             \ time with his family. He's also a Senior Software Engineer at AWS."}
     twitter: concurnas
-  - id: 1427
-    photoFileName: 1427.jpg
-    name:
-      - {language: en, text: "Sofia Naimushina"}
-      - {language: ru, text: "София Наймушина"}
-    company:
-      - {language: en, text: "JUG Ru Group"}
-    bio: []
-    twitter: Sofi_Nai
   - id: 1428
     photoFileName: 1428.jpg
     name:
