@@ -15,7 +15,7 @@ Information and statistics of conferences, meetups, talks, speakers.
 
 ![Game](/documents/images/game.png)
 
-In the game you need to guess the speaker or talk.
+In the game you need to guess the speaker, talk or company.
 
 ## Running
 
