@@ -19891,17 +19891,6 @@ speakers:
       - {language: ru, text: "Долгое время работал бэкенд-разработчиком (.NET), после перекатился на кроссплатформенную мо\
             бильную разработку на Xamarin, а когда наелся ей сполна, ушел в iOS, где занимается созданием крутейших и поле\
             знейших приложений последние лет 5."}
-  - id: 1384
-    photoFileName: 1384.jpg
-    name:
-      - {language: en, text: "Oksana Miroshnichenko"}
-      - {language: ru, text: "Оксана Мирошниченко"}
-    company:
-      - {language: en, text: "JUG Ru Group"}
-    bio:
-      - {language: en, text: "Program Coordinator of Mobius Conference."}
-      - {language: ru, text: "Программный координатор конференции \"Mobius\"."}
-    twitter: OksMiro
   - id: 1385
     photoFileName: 1385.jpg
     name:

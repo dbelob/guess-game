@@ -1336,8 +1336,12 @@ public class ConferenceDataLoader {
 //                LoadSettings.invalidTalksSet(Set.of("Doctoral workshop", "Title will be announced soon")));
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 4), "2020msk",
-//                LoadSettings.ignoreDemoStage(false));
-//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 11), "2020msk");
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("Heisenbug 2020 Moscow Virtual Afterparty"),
+//                        false));
+//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 11), "2020msk",
+//                LoadSettings.invalidTalksSet(Set.of("Mobius 2020 Moscow Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 11, 11), "2020spbcpp",
 //                LoadSettings.invalidTalksSet(Set.of("Lightning talks", "C++ Russia 2020 Piter Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 11, 25), "2020joker");
