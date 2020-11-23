@@ -2,6 +2,7 @@ package guess.controller;
 
 import guess.domain.Conference;
 import guess.domain.Language;
+import guess.domain.source.Company;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Speaker;
@@ -186,6 +187,52 @@ class StatisticsControllerTest {
                 .andExpect(jsonPath("$.speakerMetricsList[1].id", is(0)))
                 .andExpect(jsonPath("$.totals.talksQuantity", is(82)));
         Mockito.verify(statisticsService, VerificationModeFactory.times(1)).getSpeakerStatistics(conferences, meetups, eventTypeId);
+        Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
+    }
+
+    @Test
+    void getCompanyStatistics() throws Exception {
+        MockHttpSession httpSession = new MockHttpSession();
+
+        boolean conferences = true;
+        boolean meetups = false;
+        Long eventTypeId = 0L;
+
+        Company company0 = new Company();
+        company0.setId(0);
+
+        Company company1 = new Company();
+        company1.setId(1);
+
+        CompanyMetrics companyMetrics0 = new CompanyMetrics(
+                company0, 20, 21, 15, 10, 1, 0);
+
+        CompanyMetrics companyMetrics1 = new CompanyMetrics(
+                company1, 42, 61, 20, 15, 0, 1);
+
+        CompanyMetrics companyMetricsTotals = new CompanyMetrics(
+                new Company(),
+                60, 82, 35, 25, 1, 1);
+
+        CompanyStatistics companyStatistics = new CompanyStatistics(
+                List.of(companyMetrics0, companyMetrics1),
+                companyMetricsTotals);
+
+        given(statisticsService.getCompanyStatistics(conferences, meetups, eventTypeId)).willReturn(companyStatistics);
+        given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
+
+        mvc.perform(get("/api/statistics/company-statistics")
+                .contentType(MediaType.APPLICATION_JSON)
+                .param("conferences", Boolean.toString(conferences))
+                .param("meetups", Boolean.toString(meetups))
+                .param("eventTypeId", Long.toString(eventTypeId))
+                .session(httpSession))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.companyMetricsList", hasSize(2)))
+                .andExpect(jsonPath("$.companyMetricsList[0].id", is(1)))
+                .andExpect(jsonPath("$.companyMetricsList[1].id", is(0)))
+                .andExpect(jsonPath("$.totals.speakersQuantity", is(60)));
+        Mockito.verify(statisticsService, VerificationModeFactory.times(1)).getCompanyStatistics(conferences, meetups, eventTypeId);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
     }
 
