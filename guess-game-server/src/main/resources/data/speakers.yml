@@ -17499,12 +17499,12 @@ speakers:
       - language: en
         text: "Kevlin is an independent consultant, speaker, writer, and trainer. His development interests include programming\
             \ languages, software architecture, and programming practices, with a particular emphasis on unit testing and\
-            \ reasoning about practices at the team level.\n\nKevlin loves to help and inspire others, share ideas, and ask\
+            \ reasoning about practices at the team level.\nKevlin loves to help and inspire others, share ideas, and ask\
             \ questions. He has helped many teams with their code, culture, and practices, contributing code to companies\
-            \ and open source. He blogs on code and other things and has been a columnist for several magazines and sites\
+            \ and open source. He blogs on code and other things and has been a columnist for a number of magazines and sites\
             \ and has been on far too many committees (it has been said that \"a committee is a cul-de-sac down which ideas\
             \ are lured and then quietly strangled\"). He is co-author of two volumes in the Pattern-Oriented Software Architecture\
-            \ series, editor of 97 Things Every Programmer Should Know, and co-editor of 97 Things Every Java Programmer Should\
+            \ series, editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should\
             \ Know."
     twitter: kevlinhenney
   - id: 1208
