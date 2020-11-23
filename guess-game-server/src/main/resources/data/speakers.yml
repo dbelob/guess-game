@@ -3953,17 +3953,18 @@ speakers:
     company:
       - {language: en, text: "Smashing Magazine"}
     bio:
-      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn't like to give in easily. Originally from\
+      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn’t like to give in easily. Originally from\
             \ Minsk, Belarus, he studied computer science and mathematics in Germany where he has discovered his passion for\
             \ typography, writing and design. After working as a freelancing designer and developer for 6 years, he co-founded\
-            \ Smashing Magazine, one of the largest online magazines dedicated to web design and development. Vitaly is the\
-            \ writer, co-author and editor of both Smashing Books. He is now working as the creative lead of Smashing Magazine\
-            \ somewhere in Europe."}
+            \ Smashing Magazine, one of the largest online magazines dedicated to Web design and development. Vitaly is writer,\
+            \ co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine in\
+            \ the lovely city of Germany, Freiburg."}
       - {language: ru, text: "Виталий Фридман любит красивый контент и никогда просто так не сдаётся. Родом из Минска, Бел\
             арусь, Виталий изучал информатику и математику в Германии, где обнаружил интерес к типографии, письму и дизайн\
             у. Проработав в качестве фрилансера дизайнером и разработчиком в течение шести лет, он основал Smashing Magazine,\
             \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
-            \ Books. В настоящее время работает в Smashing Magazine где-то в Европе."}
+            \ Books. В настоящее время занимает позицию креативного лида Smashing Magazine, и обычно обитает где-то между\
+            \ Брюсселем, Нью-Йорком, Будапештом, Дюссельдорфом и Вильнюсом."}
     twitter: smashingmag
     gitHub: vitalyfriedman
   - id: 261
@@ -9822,12 +9823,13 @@ speakers:
       - {language: en, text: Google}
     bio:
       - language: en
-        text: "Martin is open source contributor and web evangelist by heart from Zurich \nwith a decade experience from the\
-            \ trenches of software engineering in multiple fields. \n\nHe works as a Webmasters Trends Analyst / Developer\
-            \ Advocate at Google for Search & web ecosystem. He helps people building applications or publishing content on\
-            \ the web to be successful, productive and visible. \n\nMartin believes in the web platform and is working with\
-            \ bleeding edge technologies that will allow the web to prosper."
+        text: "Martin is open source contributor and web evangelist by heart from Zurich\nwith a decade experience from the\
+            \ trenches of software engineering in multiple fields.\n\nHe works as a Developer Advocate at Google for the Search\
+            \ Relations team. He helps people building applications or publishing content on the web to be successful, productive\
+            \ and visible.\n\nMartin believes in the web platform and is working with bleeding edge technologies that will\
+            \ allow the web to prosper."
     twitter: g33konaut
+    gitHub: avgp
   - id: 655
     photoFileName: 0655.jpg
     name:
@@ -9929,12 +9931,12 @@ speakers:
     company:
       - {language: en, text: Mustlab}
     bio:
-      - {language: en, text: "Experienced full-stack developer, project manager, and entrepreneur. Speaker at the most popular\
+      - {language: en, text: "Experienced fullstack developer, project manager, and entrepreneur. Speaker at the most popular\
             \ conferences and meetups. IT evangelist and CIS countries SvelteJS community leader. Prefers to work on interesting\
             \ projects as a technical leader and solve complex tasks using various technologies and approaches."}
-      - {language: ru, text: "Опытный full-stack разработчик и руководитель разработки. Спикер конференций и митапов по фр\
-            онтенду. ИТ-евангелист и организатор сообщества фреймворка SvelteJS в СНГ. Предпочитает работать над интересны\
-            ми проектами в качестве технического лидера и решать сложные задачи, используя различные технологии и подходы."}
+      - {language: ru, text: "Опытный fullstack-разработчик и руководитель разработки. Спикер конференций и митапов по фро\
+            нтенду. ИТ-евангелист и организатор сообщества фреймворка SvelteJS в СНГ. Предпочитает работать над интересным\
+            и проектами в качестве технического лидера и решать сложные задачи, используя различные технологии и подходы."}
     twitter: PaulMaly
   - id: 662
     photoFileName: 0662.jpg
@@ -10724,16 +10726,16 @@ speakers:
   - id: 717
     photoFileName: 0717.jpg
     name:
-      - {language: en, text: "Dmitry Karlovsky"}
+      - {language: en, text: "Dmitriy Karlovskiy"}
       - {language: ru, text: "Дмитрий Карловский"}
-    company: []
+    company:
+      - {language: en, text: HyOO}
     bio:
-      - {language: en, text: "In my childhood I had a computer but didn’t have any toys. So I had to invent them myself. So\
-            \ I became a programmer. I used to work in Yandex, Wrike, Saprun, Gazprom. I created a few startups. Including\
-            \ a web framework that was ahead of its time."}
-      - {language: ru, text: "В детстве был компьютер, но не было игрушек. Приходилось писать их себе самому. Так я и стал\
-            \ программистом. С тех пор успел поработать в Яндексе, Райке, Сапране, Газпроме и поднять несколько стартапов\
-            . В том числе веб-фреймворк, обогнавший время."}
+      - {language: en, text: "For more than 5 years he has been professionally engaged in virtual rendering with browsers.\
+            \ Dmitriy has made task managers, document editors and even a framework where virtualization works under the hood."}
+      - {language: ru, text: "Более 5 лет профессионально занимается виртом с браузерами. Пилил менеджеры задач, редакторы\
+            \ документов и даже фреймворк, где виртуализация работает под капотом."}
+    twitter: _jin_nin_
     gitHub: nin-jin
   - id: 718
     photoFileName: 0718.jpg
@@ -10999,17 +11001,16 @@ speakers:
   - id: 735
     photoFileName: 0735.jpg
     name:
-      - {language: en, text: "Michael Bashurov"}
+      - {language: en, text: "Mikhail Bashurov"}
       - {language: ru, text: "Михаил Башуров"}
     company:
-      - {language: en, text: "EPAM Systems"}
+      - {language: en, text: WiseBits}
     bio:
-      - {language: en, text: "JS/.NET full stack developer. Fancies cool new stuff and sometimes allows himself to get a little\
-            \ ride on a hype train. Loves React, usable and pretty UI, code transpiling and, of course, to dig deep into the\
-            \ details."}
-      - {language: ru, text: "Full stack-разработчик на JS и .NET. Обожает всякие новые штуки и иногда позволяет себе немн\
-            ого похайпить. Любит React, удобный и приятный глазу UI, транспиляцию кода и, конечно же, покопаться в кишочка\
-            х."}
+      - {language: en, text: "Fullstack JS/.NET Ronin, Typescript & ReasonML enthusiast. Type theory & compilers wannabe.\
+            \ Speaker & @HolyJSConf program committee. He/him."}
+      - {language: ru, text: "Фулстек на JS/.NET, фанат TypeScript и ReasonML. Пытается в теорию типов и компиляторов, отб\
+            ирает доклады в ПК HolyJS."}
+    twitter: saitonakamura
   - id: 736
     photoFileName: 0736.jpg
     name:
@@ -14998,7 +14999,11 @@ speakers:
     photoFileName: 1023.jpg
     name:
       - {language: en, text: "Ivan Akulov"}
-      - {language: ru, text: "Иван Акулов"}
+    company:
+      - {language: en, text: PerfPerfPerf}
+    bio:
+      - {language: en, text: "Google Developer Expert in web technologies. Founder of PerfPerfPerf which helps other companies\
+            \ earn more money by making web applications faster. Acts on the stage and writes articles."}
   - id: 1024
     photoFileName: 1024.jpg
     name:
@@ -15036,6 +15041,7 @@ speakers:
         text: "Иван помогает всем желающим с Canvas 2d/WebGL проектами, из-за этого знает много практических кейсов.\n\nЗа\
             нимается играми на HTML5 с 2012 года (gameofbombs.com), состоит в ядре команды PixiJS с 2015. Учился на мехмат\
             е МГУ, участвовал в алгоритмических соревнованиях, таких как финал ICPC."
+    twitter: ivanpopelyshev
   - id: 1027
     photoFileName: 1027.jpg
     name:
@@ -15235,17 +15241,18 @@ speakers:
         text: "Andrey's been involved in design and development of various web apps and systems for many years and always\
             \ enjoyed it. Came a long road from a greenhorn junior developer in a small product team to a solution architect\
             \ in a large outsourcing company. Some time ago joined Hazelcast engineering team and started working on the company's\
-            \ products, including Node.js client library.\r\n\r\nFirst met and fell in love with Node.js during the good old\
-            \ v0.12.0 era. Enjoys non-trivial technical challenges that require a deep dive. Has a personal blog, maintains\
-            \ several open source libraries. Constantly learns new stuff from others and shares his experience with the community."
+            \ products, including Node.js client library. Moreover, some time ago joined Node.js core team as a collaborator.\n\
+            \nFirst met and fell in love with Node.js during the good old v0.12.0 era. Enjoys non-trivial technical challenges\
+            \ that require a deep dive. Has a personal blog, maintains several open source libraries. Constantly learns new\
+            \ stuff from others and shares his experience with the community."
       - language: ru
         text: "Давно и с удовольствием занимается проектированием и разработкой разнообразных веб-приложений и систем. Про\
             шел путь от зеленого джуниора в небольшой продуктовой команде до solution architect в крупной аутсорсинговой к\
             омпании. Некоторое время назад присоединился к инженерной команде Hazelcast и работает над различными продукта\
-            ми компании, включая клиентскую Node.js-библиотеку.\r\n\r\nС Node.js познакомился и полюбил в далекие времена\
-            \ версии 0.12.x. Любит нетривиальные технические задачи, требующие глубокого погружения. Ведет свой персональн\
-            ый блог и поддерживает несколько open source-библиотек. Постоянно учится у других и старается делиться своим о\
-            пытом с сообществом."
+            ми компании, включая клиентскую Node.js-библиотеку. Кроме того, некоторое время назад присоединился к команде\
+            \ Node.js core в качестве collaborator.\n\nС Node.js познакомился и полюбил в далекие времена версии 0.12.x. Л\
+            юбит нетривиальные технические задачи, требующие глубокого погружения. Ведет блог и поддерживает несколько open\
+            \ source-библиотек. Постоянно учится у других и старается делиться своим опытом с сообществом."
     twitter: AndreyPechkurov
   - id: 1041
     photoFileName: 1041.jpg
@@ -20506,3 +20513,245 @@ speakers:
       - {language: en, text: "JUG Ru Group"}
     bio: []
     twitter: Sofi_Nai
+  - id: 1428
+    photoFileName: 1428.jpg
+    name:
+      - {language: en, text: "Semyon Levenson"}
+    company:
+      - {language: en, text: Yandex}
+    bio:
+      - {language: en, text: "Frontend developer since 2013. Semyon managed to work in a startup, state projects (Platon,\
+            \ Rosguard, Roscosmos), on the service for entrepreneurs Potok as team lead, developed a useful program for HR\
+            \ Huntflow. Now he does Yandex.Zen."}
+  - id: 1429
+    photoFileName: 1429.jpg
+    name:
+      - {language: en, text: "Yaroslav Losev"}
+      - {language: ru, text: "Ярослав Лосев"}
+    company:
+      - {language: en, text: "Redis creative agency"}
+      - {language: ru, text: "Креативное агентство Redis"}
+    bio:
+      - {language: en, text: "Frontend engineer. Core contributor of React Figma. Yaroslav has been dealing with development\
+            \ since school and has written his first UI using Delphi. Passionate about React."}
+      - {language: ru, text: "Фронтенд-инженер. Контрибьютор проекта React Figma. Занимается разработкой еще со школы, а с\
+            вой первый UI написал на Delphi. В настоящее время без ума от React."}
+  - id: 1430
+    photoFileName: 1430.jpg
+    name:
+      - {language: en, text: "Ilya Chertorylsky"}
+      - {language: ru, text: "Илья  Черторыльский"}
+    company:
+      - {language: en, text: Raiffeisenbank}
+      - {language: ru, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: "Ilya started with the development of the firmware for chemical equipment and interfaces to it,\
+            \ later devoted most of the time to the interfaces, then discovered endless possibilities of JS. He's engaged\
+            \ in it now."}
+      - {language: ru, text: "Начинал с разработки прошивок к химическому оборудованию и интерфейсов к нему, со временем и\
+            нтерфейсы заняли большую часть времени, далее в жизнь вошел JS со своими безграничными возможностями и красото\
+            й. И не выходит из нее до сих пор."}
+  - id: 1431
+    photoFileName: 1431.jpg
+    name:
+      - {language: en, text: "Zhukova Elena"}
+      - {language: ru, text: "Елена Жукова"}
+    company:
+      - {language: en, text: "Rambler Group"}
+    bio:
+      - {language: en, text: "Elena Zhukova is a frontend developer in the Afisha.ru of Rambler Group. She has more than five\
+            \ years of work experience. She is a creative person and likes TypeScript but doesn’t forget about JS."}
+      - {language: ru, text: "Фронтенд-разработчик на проекте «Афиша» в Rambler Group, в разработке более 5 лет, творческа\
+            я личность. Любит TypeScript, но и про ванильку не забывает."}
+  - id: 1432
+    photoFileName: 1432.jpg
+    name:
+      - {language: en, text: "Daniel Ehrenberg"}
+    company:
+      - {language: en, text: Igalia}
+    bio:
+      - {language: en, text: "Daniel is an engineer at Igalia, a free software cooperative, participates in TC39, the JavaScript\
+            \ standards committee, and has dabbled in WebAssembly and web standards. He's also worked on V8, the JavaScript\
+            \ engine in Chrome."}
+    twitter: littledan
+    gitHub: littledan
+  - id: 1433
+    photoFileName: 1433.jpg
+    name:
+      - {language: en, text: "Natalia Venditto"}
+    company:
+      - {language: en, text: Netcentric}
+    bio:
+      - {language: en, text: "Natalia works in the role of Frontend Architect/Principal Software Engineer for enterprise-scale\
+            \ web software platforms. She is also a Google Developer Expert for web technologies and Angular."}
+    twitter: AnfibiaCreativa
+    gitHub: anfibiacreativa
+  - id: 1434
+    photoFileName: 1434.jpg
+    name:
+      - {language: en, text: "Elizabeth Sweeny"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Elizabeth is a product manager on the Google Chrome Web Platform team, working to ensure that\
+            \ developers have all they need to create fantastic experiences on the web. Her portfolio includes products such\
+            \ as Lighthouse, PageSpeed Insights, Chrome User Experience Report (CrUX), and web.dev. Elizabeth has a background\
+            \ in humanitarian technology, and she's delighted to be working on a platform that champions open access to information\
+            \ and utility for all."}
+    twitter: egsweeny
+  - id: 1435
+    photoFileName: 1435.jpg
+    name:
+      - {language: en, text: "Ilya Lesik"}
+      - {language: ru, text: "Илья Лесик"}
+    company:
+      - {language: en, text: lessmess.agency}
+    bio:
+      - {language: en, text: "Software engineer, scientist (applied mathematics), IT Entrepreneur, OSS enthusiast."}
+      - {language: ru, text: "Инженер ПО, ученый (прикладная математика), IT-предприниматель, энтузиаст OSS."}
+    twitter: ilialesik
+  - id: 1436
+    photoFileName: 1436.jpg
+    name:
+      - {language: en, text: "Georgi Kukushin"}
+      - {language: ru, text: "Георгий Кукушин"}
+    company:
+      - {language: en, text: MTS}
+      - {language: ru, text: МТС}
+    bio:
+      - {language: en, text: "Ведущий разработчик в МТС. Любит делать сложные вещи простыми. Сторонник ментального програм\
+            мирования. Адепт Svelte."}
+  - id: 1437
+    photoFileName: 1437.jpg
+    name:
+      - {language: en, text: "Leo Balter"}
+    company:
+      - {language: en, text: Salesforce}
+    bio:
+      - {language: en, text: "Standards Liaison for the UI Platform team at Salesforce. Helping to push ECMAScript and Web\
+            \ Components forward and testing JS on the way through Test262. Editor of the ECMAScript Internationalization\
+            \ specs. Raised in Rio de Janeiro, Brazil, hobbies include building and maintaining electric guitars and playing\
+            \ video games, mostly Super Mario Maker."}
+    twitter: leobalter
+    gitHub: leobalter
+  - id: 1438
+    photoFileName: 1438.jpg
+    name:
+      - {language: en, text: "Diana Suvorova"}
+      - {language: ru, text: "Диана Суворова"}
+    company:
+      - {language: en, text: Uber}
+    bio:
+      - {language: en, text: "Originally from Moscow, Russia. Diana graduated from Bauman MSTU. Diana spent the last 12 years\
+            \ building software in Silicon valley. Currently with Uber primarily focusing on the frontend, but contributing\
+            \ full-stack to systematically introduce GraphQL into established microservices architecture."}
+      - language: ru
+        text: "Диана из Москвы, закончила МГТУ им. Н.Э. Баумана. Последние 12 лет живет и работает программистом в Кремние\
+            вой долине в районе Сан-Франциско.\n\nВ настоящее время работает в Uber и систематично добавляет GraphQL в мик\
+            росервисную архитектуру."
+    twitter: DianaSuvorova
+  - id: 1439
+    photoFileName: 1439.jpg
+    name:
+      - {language: en, text: "Michael Hladky"}
+    company:
+      - {language: en, text: "Hladky IT"}
+    bio:
+      - {language: en, text: "Michael Hladky is a Google Developer Expert (GDE), Microsoft MVP, trainer, and consultant with\
+            \ a focus on Angular and RxJS. For years he has helped companies and developers to set up scalable architectures\
+            \ and performant processes enabling teams to keep up with the state of the art development. A vibrant member of\
+            \ the tech community, he organizes multiple community events and workshops each year to give back."}
+    twitter: Michael_Hladky
+  - id: 1440
+    photoFileName: 1440.jpg
+    name:
+      - {language: en, text: "Roman Pyatakov"}
+      - {language: ru, text: "Роман Пятаков"}
+    company:
+      - {language: en, text: Lamoda}
+    bio:
+      - {language: en, text: "Has been writing on JS for almost 5 years. Serves humanity through the orator skill."}
+      - {language: ru, text: "Пишет на JS уже почти 5 лет. Служит человечеству мастерством оратора."}
+    twitter: romankipper
+  - id: 1441
+    photoFileName: 1441.jpg
+    name:
+      - {language: en, text: "Dmitriy Kovalenko"}
+      - {language: ru, text: "Дмитрий Коваленко"}
+    company:
+      - {language: en, text: Cypress.io}
+    bio:
+      - language: en
+        text: "Actively propagating web application safety. Love testing and works at Cypress.io for the second time. Material-UI\
+            \ core team member. Active (or not really) open source contributor. \n\nLove chihuahua, volleyball, OCaml, and\
+            \ cooking."
+      - language: ru
+        text: "Пропагандирует надежность веб-приложений. Работает в Cypress.io уже во второй раз. Автор идеи компонентного\
+            \ тестирования в Cypress. Состоит в Material-UI core team. Активный (или не очень) опенсорсер. \n\nЛюбит чихуа\
+            хуа, волейбол, OCaml и готовить."
+    twitter: dmtrKovalenko
+  - id: 1442
+    photoFileName: 1442.jpg
+    name:
+      - {language: en, text: "Gusztáv Szikszai"}
+    company:
+      - {language: en, text: "Digital Natives"}
+    bio:
+      - {language: en, text: "A self-taught programmer has been writing code since he was a teenager. Lately, Gusztáv has\
+            \ been focusing on the Mint programming language outside of work."}
+    twitter: gdotdesign
+  - id: 1443
+    photoFileName: 1443.jpg
+    name:
+      - {language: en, text: "Ivan Zatravkin"}
+      - {language: ru, text: "Иван Затравкин"}
+    company: []
+    bio:
+      - language: en
+        text: "Fullstack-developer, IT meetups speaker. Loves creating simple to use solutions for complex problems. Switched\
+            \ to web development from HPC and CUDA, which he studied at Peter the Great St.Petersburg Polytechnic University.\n\
+            \nCurrently develops an online multiplayer strategy game in his startup."
+      - language: ru
+        text: "Фуллстэк-разработчик, спикер, любитель находить простые в использовании решения для сложных проблем. Пришёл\
+            \ в веб-разработку из мира CUDA и high-performance computing, которыми занимался в студенческие годы. \n\nВ на\
+            стоящее время занимается разработкой в собственном стартапе."
+  - id: 1444
+    photoFileName: 1444.jpg
+    name:
+      - {language: en, text: "Thomas Steiner"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Thomas Steiner is a Developer Advocate at Google Hamburg, focused on making the Web a better\
+            \ place through standardization, creating and sharing best practices, and doing research. He blogs at https://blog.tomayac.com/\
+            \ and tweets as @tomayac."}
+    twitter: tomayac
+    gitHub: tomayac
+  - id: 1445
+    photoFileName: 1445.jpg
+    name:
+      - {language: en, text: "Dan Abramov"}
+      - {language: ru, text: "Дэн Абрамов"}
+    company: []
+    bio:
+      - {language: en, text: "Dan works on React."}
+      - {language: ru, text: "Дэн работает над React."}
+    twitter: dan_abramov
+  - id: 1446
+    photoFileName: 1446.jpg
+    name:
+      - {language: en, text: "Yuriy Karadzhov"}
+      - {language: ru, text: "Юрий Караджов"}
+    company:
+      - {language: en, text: Bolt}
+    bio:
+      - language: en
+        text: "Fifteen years of experience in the design and development of large-scale web applications in an Agile environment.\
+            \ Strong knowledge of cutting edge technologies for rich graphical applications — WebGL/Canvas. Full-stack development.\
+            \ High-performance optimization both on client and server sides.\nWorked for Wargaming and Apple. Ph.D. in Applied\
+            \ math. President prize for achievement in science. Startup experience. Game dev experience. Management experience."
+      - language: ru
+        text: "Пятнадцать лет в дизайне и разработке высоконагруженных веб-приложений. Глубокие знания графического стека\
+            \ — WebGL/Canvas. Разработка полного цикла. Оптимизация производительности сервера и клиента. \nРаботал в Wargaming\
+            \ и Apple. Кандидат наук по прикладной математике. Президентский приз за достижения в науке. Опыт со стартапом\
+            , в игровой индустрии и в менеджменте."
