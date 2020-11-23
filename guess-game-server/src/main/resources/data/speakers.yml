@@ -17498,12 +17498,12 @@ speakers:
       - language: en
         text: "Kevlin is an independent consultant, speaker, writer, and trainer. His development interests include programming\
             \ languages, software architecture, and programming practices, with a particular emphasis on unit testing and\
-            \ reasoning about practices at the team level.\nKevlin loves to help and inspire others, share ideas, and ask\
+            \ reasoning about practices at the team level.\n\nKevlin loves to help and inspire others, share ideas, and ask\
             \ questions. He has helped many teams with their code, culture, and practices, contributing code to companies\
-            \ and open source. He blogs on code and other things and has been a columnist for a number of magazines and sites\
+            \ and open source. He blogs on code and other things and has been a columnist for several magazines and sites\
             \ and has been on far too many committees (it has been said that \"a committee is a cul-de-sac down which ideas\
             \ are lured and then quietly strangled\"). He is co-author of two volumes in the Pattern-Oriented Software Architecture\
-            \ series, editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should\
+            \ series, editor of 97 Things Every Programmer Should Know, and co-editor of 97 Things Every Java Programmer Should\
             \ Know."
     twitter: kevlinhenney
   - id: 1208
@@ -19899,8 +19899,8 @@ speakers:
     company:
       - {language: en, text: Bloomberg}
     bio:
-      - {language: en, text: "Workes at Bloomberg. Semi-active in the C++ community. Mostly interested in fast algorithms\
-            \ and low-level optimizations. You can find a bit of Denis' code in libc++ and Chromium base library."}
+      - {language: en, text: "Works at Bloomberg. Semi-active in the C++ community. Mostly interested in fast algorithms and\
+            \ low-level optimizations. You can find a bit of Denis' code in libc++ and Chromium base library."}
       - {language: ru, text: "Работает в Bloomberg. Активничает в С++ сообществе. В основном увлекается быстрыми алгоритма\
             ми и низкоуровневыми оптимизациями. Немного кода Дениса можно найти в libc++ и в Chromium base library."}
     twitter: dyaroshev
@@ -19980,7 +19980,26 @@ speakers:
     company:
       - {language: en, text: "С++ Russia"}
     bio:
-      - {language: en, text: TBD}
+      - language: en
+        text: "__Sergey Platonov__\nC++ developer, organizer of C++ Siberia.\n\n__Alexey Veselovsky__\nSenior C++ developer\
+            \ at Align Technology. Alexey is engaged in the development of common system components and the framework of the\
+            \ specialized 3D CAD system.\n\n__Pavel Filonov__\nFor more than 5 years Pavel is developing software in the IT\
+            \ security area. For more than 3 years he is actively using data analysis methods to develop and implement machine\
+            \ learning techniques in IT security.\n\n__Anton Naumovich__\nSenior manager in SolarWinds company.\nOrganizer\
+            \ of C++ community CoreHard and QA community COMAQA.\n\n__Anastasia Kazakova__\nAs a C and C++ software developer,\
+            \ Anastasia Kazakova created real-time nix-based systems and pushed them to production for 8 years. She worked\
+            \ as an intern in Microsoft Research, Networking department, and launched the first 4G network in Russia being\
+            \ a part of the Yota operator team."
+      - language: ru
+        text: "__Сергей Платонов__\nC++ программист. Организатор C++ Siberia.\n\n__Алексей Веселовский__\nСтарший С++ разр\
+            аботчик в Align Technology. Занимается разработкой общих системных компонентов и фреймворка специализированной\
+            \ 3D CAD-системы.\n\n__Павел Филонов__\nБолее 5 лет занимается разработкой ПО в области информационной безопас\
+            ности. Более 3 лет активно использует методы анализа данных для разработки и внедрения методов машинного обуче\
+            ния в ИБ.\n\n__Антон Наумович__\nСтарший менеджер в компании SolarWinds.\nОрганизатор С++ сообщества CoreHard\
+            \ и сообщества тестировщиков-автоматизаторов COMAQA.\n\n__Анастасия Казакова__\nБолее 8 лет в коммерческой раз\
+            работке на C и C++. В прошлом занималась встроенными системами и задачами управления сетевым трафиком, стажиро\
+            валась в лаборатории Microsoft Research по направлению Сетевой трафик и участвовала в запуске сетей поколения\
+            \ 4G в компании Yota."
   - id: 1392
     photoFileName: 1392.jpg
     name:
