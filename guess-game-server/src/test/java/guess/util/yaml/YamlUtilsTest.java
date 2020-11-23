@@ -1,6 +1,7 @@
 package guess.util.yaml;
 
 import guess.dao.exception.SpeakerDuplicatedException;
+import guess.domain.Language;
 import guess.domain.source.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
@@ -11,9 +12,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -45,6 +44,12 @@ class YamlUtilsTest {
             EventList eventList = new EventList();
             eventList.setEvents(Collections.emptyList());
 
+            CompanyList companyList = new CompanyList();
+            companyList.setCompanies(Collections.emptyList());
+
+            CompanySynonymsList companySynonymsList = new CompanySynonymsList();
+            companySynonymsList.setCompanySynonyms(Collections.emptyList());
+
             SpeakerList speakerList0 = new SpeakerList();
             speakerList0.setSpeakers(List.of(speaker0));
 
@@ -55,8 +60,9 @@ class YamlUtilsTest {
             talkList.setTalks(Collections.emptyList());
 
             return Stream.of(
-                    arguments(placeList, eventTypeList, eventList, speakerList0, talkList,
+                    arguments(placeList, eventTypeList, eventList, companyList, companySynonymsList, speakerList0, talkList,
                             new SourceInformation(
+                                    Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
@@ -64,19 +70,110 @@ class YamlUtilsTest {
                                     Collections.emptyList()
                             ),
                             null),
-                    arguments(placeList, eventTypeList, eventList, speakerList1, talkList, null, SpeakerDuplicatedException.class)
+                    arguments(placeList, eventTypeList, eventList, companyList, companySynonymsList, speakerList1, talkList, null, SpeakerDuplicatedException.class)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void getSourceInformation(PlaceList placeList, EventTypeList eventTypeList, EventList eventList,
-                                  SpeakerList speakerList, TalkList talkList, SourceInformation expectedResult,
-                                  Class<? extends Exception> expectedException) throws SpeakerDuplicatedException {
+        void getSourceInformation(PlaceList placeList, EventTypeList eventTypeList, EventList eventList, CompanyList companyList,
+                                  CompanySynonymsList companySynonymsList, SpeakerList speakerList, TalkList talkList,
+                                  SourceInformation expectedResult, Class<? extends Exception> expectedException) throws SpeakerDuplicatedException {
             if (expectedException == null) {
-                assertEquals(expectedResult, YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, speakerList, talkList));
+                assertEquals(expectedResult, YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, companyList, companySynonymsList, speakerList, talkList));
             } else {
-                assertThrows(expectedException, () -> YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, speakerList, talkList));
+                assertThrows(expectedException, () -> YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, companyList, companySynonymsList, speakerList, talkList));
+            }
+        }
+    }
+
+    @Test
+    void createCompaniesFromSpeakersAndFillSpeaker() {
+        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+
+        Speaker speaker1 = new Speaker();
+        speaker1.setId(1);
+        speaker1.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
+        List<CompanySynonyms> companySynonymsList = new ArrayList<>();
+
+        List<Company> expectedCompanies = List.of(company0, company1);
+        List<Company> actualCompanies = YamlUtils.createCompaniesFromSpeakersAndFillSpeaker(List.of(speaker0, speaker1), companySynonymsList);
+
+        assertTrue(expectedCompanies.containsAll(actualCompanies) && actualCompanies.containsAll(expectedCompanies));
+    }
+
+    @Test
+    void bindSynonymToMainCompany() {
+        CompanySynonyms companySynonyms0 = new CompanySynonyms();
+        companySynonyms0.setName("CROC");
+        companySynonyms0.setSynonyms(List.of("KROK", "КРОК"));
+
+        CompanySynonyms companySynonyms1 = new CompanySynonyms();
+        companySynonyms1.setName("EPAM Systems");
+        companySynonyms1.setSynonyms(List.of("EPAM"));
+
+        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "CROC")));
+        Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "KROK")));
+        List<Company> actualCompanies = new ArrayList<>(List.of(company0, company1));
+
+        Map<String, Company> actualCompanyMap = new HashMap<>();
+        actualCompanyMap.put("CROC", company0);
+
+        YamlUtils.bindSynonymToMainCompany(List.of(companySynonyms0, companySynonyms1), actualCompanies, actualCompanyMap);
+
+        List<Company> expectedCompanies = List.of(company0);
+        Map<String, Company> expectedCompanyMap = Map.of("CROC", company0, "KROK", company0, "КРОК", company0);
+
+        assertTrue(expectedCompanies.containsAll(actualCompanies) && actualCompanies.containsAll(expectedCompanies));
+        assertEquals(expectedCompanyMap, actualCompanyMap);
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillCompaniesInSpeakers method tests (with exception)")
+    class FillCompaniesInSpeakersTest {
+        private Stream<Arguments> data() {
+            Company company0 = new Company();
+            company0.setId(0);
+            company0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setCompany(Collections.emptyList());
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+            speaker2.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+
+            Speaker speaker3 = new Speaker();
+            speaker3.setId(3);
+            speaker3.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
+
+            Map<String, Company> companyMap = new HashMap<>();
+            companyMap.put("Company0", company0);
+
+            return Stream.of(
+                    arguments(List.of(speaker0, speaker1, speaker2), companyMap, null),
+                    arguments(List.of(speaker0, speaker1, speaker2, speaker3), companyMap, NullPointerException.class)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillCompaniesInSpeakers(List<Speaker> speakers, Map<String, Company> companyMap, Class<? extends Exception> expected) {
+            if (expected == null) {
+                assertDoesNotThrow(() -> YamlUtils.fillCompaniesInSpeakers(speakers, companyMap));
+            } else {
+                assertThrows(expected, () -> YamlUtils.fillCompaniesInSpeakers(speakers, companyMap));
             }
         }
     }
@@ -200,6 +297,38 @@ class YamlUtilsTest {
         @MethodSource("data")
         void linkSpeakersToTalks(Map<Long, Talk> talks, List<Event> events, Class<? extends Exception> expected) {
             assertThrows(expected, () -> YamlUtils.linkTalksToEvents(talks, events));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("linkSpeakersToCompanies method tests (with exception)")
+    class LinkSpeakersToCompaniesTest {
+        private Stream<Arguments> data() {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setCompanyIds(List.of(0L));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setCompanyIds(List.of(1L));
+
+            Company company0 = new Company();
+            company0.setId(0);
+
+            return Stream.of(
+                    arguments(Collections.emptyMap(), List.of(speaker0), NullPointerException.class),
+                    arguments(Map.of(0L, company0), List.of(speaker1), NullPointerException.class),
+                    arguments(Map.of(0L, company0), List.of(speaker0, speaker1), NullPointerException.class),
+                    arguments(Map.of(0L, company0), List.of(speaker1, speaker0), NullPointerException.class)
+            );
+        }
+
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void linkSpeakersToCompanies(Map<Long, Company> companies, List<Speaker> speakers, Class<? extends Exception> expected) {
+            assertThrows(expected, () -> YamlUtils.linkSpeakersToCompanies(companies, speakers));
         }
     }
 

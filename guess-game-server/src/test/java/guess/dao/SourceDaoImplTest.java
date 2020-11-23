@@ -40,6 +40,10 @@ class SourceDaoImplTest {
     private static Talk talk2;
     private static Talk talk3;
 
+    private static Company company0;
+    private static Company company1;
+    private static Company company2;
+
     private static Speaker speaker0;
     private static Speaker speaker1;
     private static Speaker speaker2;
@@ -69,6 +73,15 @@ class SourceDaoImplTest {
 
         eventType2 = new EventType();
         eventType2.setId(2);
+
+        company0 = new Company();
+        company0.setId(0);
+
+        company1 = new Company();
+        company1.setId(1);
+
+        company2 = new Company();
+        company2.setId(2);
 
         speaker0 = new Speaker();
         speaker0.setId(0);
@@ -147,6 +160,7 @@ class SourceDaoImplTest {
                 List.of(place0, place1, place2),
                 List.of(eventType0, eventType1, eventType2),
                 List.of(event0, event1, event2),
+                List.of(company0, company1, company2),
                 List.of(speaker0, speaker1, speaker2, speaker3),
                 List.of(talk0, talk1, talk2));
         sourceDao = new SourceDaoImpl(sourceInformation);
@@ -213,6 +227,11 @@ class SourceDaoImplTest {
         assertEquals(event1, sourceDao.getEventByTalk(talk1));
         assertEquals(event2, sourceDao.getEventByTalk(talk2));
         assertThrows(NoSuchElementException.class, () -> sourceDao.getEventByTalk(talk3));
+    }
+
+    @Test
+    void getCompanies() {
+        assertEquals(List.of(company0, company1, company2), sourceDao.getCompanies());
     }
 
     @Test

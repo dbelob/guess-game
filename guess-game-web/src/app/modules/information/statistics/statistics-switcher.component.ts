@@ -24,4 +24,8 @@ export class StatisticsSwitcherComponent implements OnInit {
   isSpeakers(): boolean {
     return ('speakers' === this.type);
   }
+
+  isCompanies(): boolean {
+    return ('companies' === this.type);
+  }
 }

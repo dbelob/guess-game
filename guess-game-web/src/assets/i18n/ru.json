@@ -39,6 +39,8 @@
     "photoByNameLabel": "Фотографию по имени",
     "talkBySpeakerLabel": "Доклад по спикеру",
     "speakerByTalkLabel": "Спикера по докладу",
+    "companyBySpeakerLabel": "Компанию по спикеру",
+    "speakerByCompanyLabel": "Спикера по компании",
     "accountsBySpeakerLabel": "Twitter, GitHub по спикеру",
     "speakerByAccountsLabel": "Спикера по Twitter, GitHub",
     "startButtonText": "Начать"
@@ -187,11 +189,24 @@
       "noSpeakersFoundText": "Спикеры не найдены",
       "table": {
         "nameColumn": "Имя",
-        "javaChampionColumn": "Java Champion",
-        "mvpColumn": "MVP",
         "talksColumn": "Докладов",
         "eventsColumn": "Событий",
-        "eventTypesColumn": "Типов событий"
+        "eventTypesColumn": "Типов событий",
+        "javaChampionColumn": "Java Champion",
+        "mvpColumn": "MVP"
+      }
+    },
+    "companies": {
+      "title": "Компании",
+      "noCompaniesFoundText": "Компании не найдены",
+      "table": {
+        "companyColumn": "Компания",
+        "speakersColumn": "Спикеров",
+        "talksColumn": "Докладов",
+        "eventsColumn": "Событий",
+        "eventTypesColumn": "Типов событий",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
       }
     }
   },

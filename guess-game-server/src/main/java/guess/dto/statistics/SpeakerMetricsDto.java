@@ -2,7 +2,7 @@ package guess.dto.statistics;
 
 import guess.domain.Language;
 import guess.domain.source.Speaker;
-import guess.domain.statistics.AbstractSpeakerMetrics;
+import guess.domain.statistics.AbstractSpeakerCompanyMetrics;
 import guess.domain.statistics.SpeakerMetrics;
 import guess.util.LocalizationUtils;
 
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 /**
  * Speaker metrics DTO.
  */
-public class SpeakerMetricsDto extends AbstractSpeakerMetrics {
+public class SpeakerMetricsDto extends AbstractSpeakerCompanyMetrics {
     public static class SpeakerMetricsDtoDegrees {
         private final boolean javaChampion;
         private final boolean mvp;
@@ -34,7 +34,7 @@ public class SpeakerMetricsDto extends AbstractSpeakerMetrics {
     private final String photoFileName;
     private final SpeakerMetricsDtoDegrees degrees;
 
-    public SpeakerMetricsDto(long id, String name, String photoFileName, SpeakerMetricsDtoDegrees degrees, AbstractSpeakerMetrics speakerMetrics) {
+    public SpeakerMetricsDto(long id, String name, String photoFileName, SpeakerMetricsDtoDegrees degrees, AbstractSpeakerCompanyMetrics speakerMetrics) {
         super(speakerMetrics.getTalksQuantity(), speakerMetrics.getEventsQuantity(), speakerMetrics.getEventTypesQuantity(),
                 speakerMetrics.getJavaChampionsQuantity(), speakerMetrics.getMvpsQuantity());
 

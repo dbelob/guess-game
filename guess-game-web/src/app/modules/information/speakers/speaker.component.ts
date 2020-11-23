@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { SpeakerDetails } from '../../../shared/models/speaker-details.model';
+import { SpeakerDetails } from '../../../shared/models/speaker/speaker-details.model';
 import { SpeakerService } from '../../../shared/services/speaker.service';
 import { getTalksWithSpeakersString } from '../../general/utility-functions';
 

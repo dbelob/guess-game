@@ -104,6 +104,18 @@ public class StateController {
         return getDto(httpSession, TalkSpeakersDto::convertToDto);
     }
 
+    @GetMapping("/speaker-companies")
+    @ResponseBody
+    public SpeakerCompaniesDto getSpeakerCompanies(HttpSession httpSession) {
+        return getDto(httpSession, SpeakerCompaniesDto::convertToDto);
+    }
+
+    @GetMapping("/company-speakers")
+    @ResponseBody
+    public CompanySpeakersDto getCompanySpeakers(HttpSession httpSession) {
+        return getDto(httpSession, CompanySpeakersDto::convertToDto);
+    }
+
     @GetMapping("/speaker-accounts")
     @ResponseBody
     public SpeakerAccountsDto getSpeakerAccounts(HttpSession httpSession) {

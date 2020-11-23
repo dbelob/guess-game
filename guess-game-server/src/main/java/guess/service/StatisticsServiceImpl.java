@@ -2,10 +2,7 @@ package guess.service;
 
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.Speaker;
-import guess.domain.source.Talk;
+import guess.domain.source.*;
 import guess.domain.statistics.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -234,6 +231,86 @@ public class StatisticsServiceImpl implements StatisticsService {
                         eventTypes.size(),
                         totalsJavaChampionsQuantity,
                         totalsMvpsQuantity)
+        );
+    }
+
+    @Override
+    public CompanyStatistics getCompanyStatistics(boolean isConferences, boolean isMeetups, Long eventTypeId) {
+        List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
+                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
+                        ((eventTypeId == null) || (et.getId() == eventTypeId)))
+                .collect(Collectors.toList());
+        Map<Company, CompanyMetricsInternal> companySpeakerMetricsMap = new LinkedHashMap<>();
+
+        for (EventType eventType : eventTypes) {
+            for (Event event : eventType.getEvents()) {
+                for (Talk talk : event.getTalks()) {
+                    for (Speaker speaker : talk.getSpeakers()) {
+                        // Company metrics
+                        speaker.getCompanies().stream()
+                                .map(c -> companySpeakerMetricsMap.computeIfAbsent(c, k -> new CompanyMetricsInternal()))
+                                .forEach(cmi -> {
+                                    cmi.getSpeakers().add(speaker);
+                                    cmi.getTalks().add(talk);
+                                    cmi.getEvents().add(event);
+                                    cmi.getEventTypes().add(eventType);
+                                });
+                    }
+                }
+            }
+        }
+
+        List<CompanyMetrics> companyMetricsList = new ArrayList<>();
+        Set<Speaker> speakerMap = new HashSet<>();
+        Set<Talk> talkMap = new HashSet<>();
+        Set<Event> eventMap = new HashSet<>();
+        Set<EventType> eventTypeMap = new HashSet<>();
+
+        for (Map.Entry<Company, CompanyMetricsInternal> entry : companySpeakerMetricsMap.entrySet()) {
+            Company company = entry.getKey();
+            CompanyMetricsInternal companyMetricsInternal = entry.getValue();
+            long javaChampionsQuantity = companyMetricsInternal.getSpeakers().stream()
+                    .filter(Speaker::isJavaChampion)
+                    .count();
+            long mvpsQuantity = companyMetricsInternal.getSpeakers().stream()
+                    .filter(Speaker::isAnyMvp)
+                    .count();
+
+            companyMetricsList.add(new CompanyMetrics(
+                    company,
+                    companyMetricsInternal.getSpeakers().size(),
+                    companyMetricsInternal.getTalks().size(),
+                    companyMetricsInternal.getEvents().size(),
+                    companyMetricsInternal.getEventTypes().size(),
+                    javaChampionsQuantity,
+                    mvpsQuantity
+            ));
+
+            speakerMap.addAll(companyMetricsInternal.getSpeakers());
+            talkMap.addAll(companyMetricsInternal.getTalks());
+            eventMap.addAll(companyMetricsInternal.getEvents());
+            eventTypeMap.addAll(companyMetricsInternal.getEventTypes());
+        }
+
+        // Totals metrics
+        long totalsJavaChampionsQuantity = speakerMap.stream()
+                .filter(Speaker::isJavaChampion)
+                .count();
+        long totalsMvpsQuantity = speakerMap.stream()
+                .filter(Speaker::isAnyMvp)
+                .count();
+
+        return new CompanyStatistics(
+                companyMetricsList,
+                new CompanyMetrics(
+                        new Company(),
+                        speakerMap.size(),
+                        talkMap.size(),
+                        eventMap.size(),
+                        eventTypeMap.size(),
+                        totalsJavaChampionsQuantity,
+                        totalsMvpsQuantity
+                )
         );
     }
 

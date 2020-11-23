@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NamePhotos } from '../../../shared/models/name-photos.model';
+import { NamePhotos } from '../../../shared/models/guess/name-photos.model';
 import { StateService } from '../../../shared/services/state.service';
 import { AnswerService } from '../../../shared/services/answer.service';
 import { State } from '../../../shared/models/state.model';

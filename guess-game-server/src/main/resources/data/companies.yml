@@ -1,0 +1,4 @@
+companies:
+  - id: 0
+    name:
+      - {language: en, text: JetBrains}

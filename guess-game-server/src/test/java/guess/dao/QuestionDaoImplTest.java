@@ -2,26 +2,26 @@ package guess.dao;
 
 import guess.domain.Conference;
 import guess.domain.GuessMode;
-import guess.domain.question.QuestionSet;
-import guess.domain.question.SpeakerQuestion;
-import guess.domain.question.TalkQuestion;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.Speaker;
-import guess.domain.source.Talk;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import guess.domain.Language;
+import guess.domain.question.*;
+import guess.domain.source.*;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("QuestionDaoImpl class tests")
 class QuestionDaoImplTest {
+    private static Company company0;
+    private static Company company1;
+
     private static Speaker speaker0;
     private static Speaker speaker1;
     private static Speaker speaker2;
@@ -40,8 +40,12 @@ class QuestionDaoImplTest {
 
     @BeforeAll
     static void init() {
+        company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
         speaker0 = new Speaker();
         speaker0.setId(0);
+        speaker0.setCompanies(List.of(company0));
 
         speaker1 = new Speaker();
         speaker1.setId(1);
@@ -133,6 +137,12 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker0), talk0)
                                 ),
+                                List.of(
+                                        new CompanyBySpeakerQuestion(List.of(company0), speaker0)
+                                ),
+                                List.of(
+                                        new SpeakerByCompanyQuestion(List.of(speaker0), company0)
+                                ),
                                 Collections.emptyList()
                         ),
                         new QuestionSet(
@@ -143,6 +153,8 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker1), talk1)
                                 ),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker1))
                         ),
                         new QuestionSet(
@@ -154,16 +166,44 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker2, speaker3), talk2)
                                 ),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker2))
                         ),
                         new QuestionSet(
                                 event3,
                                 Collections.emptyList(),
                                 Collections.emptyList(),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 Collections.emptyList()
                         )
                 ),
                 questionDao.readQuestionSets());
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillCompanyInformation method tests")
+    class fillCompanyInformationTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(speaker0, Set.of(speaker0), Map.of(company0, Set.of(speaker0))),
+                    arguments(speaker1, Collections.emptySet(), Collections.emptyMap())
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillCompanyInformation(Speaker speaker, Set<Speaker> expectedSpeakerSet, Map<Company, Set<Speaker>> expectedCompanySpeakersMap) {
+            Set<Speaker> speakerSet = new HashSet<>();
+            Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
+
+            QuestionDaoImpl.fillCompanyInformation(speaker, speakerSet, companySpeakersMap);
+
+            assertEquals(expectedSpeakerSet, speakerSet);
+            assertEquals(expectedCompanySpeakersMap, companySpeakersMap);
+        }
     }
 
     @Test
@@ -191,6 +231,12 @@ class QuestionDaoImplTest {
                         List.of(
                                 new TalkQuestion(List.of(speaker0), talk0)
                         ),
+                        List.of(
+                                new CompanyBySpeakerQuestion(List.of(company0), speaker0)
+                        ),
+                        List.of(
+                                new SpeakerByCompanyQuestion(List.of(speaker0), company0)
+                        ),
                         Collections.emptyList()
                 )),
                 questionDao.getSubQuestionSets(
@@ -201,6 +247,8 @@ class QuestionDaoImplTest {
         assertEquals(
                 List.of(new QuestionSet(
                         event3,
+                        Collections.emptyList(),
+                        Collections.emptyList(),
                         Collections.emptyList(),
                         Collections.emptyList(),
                         Collections.emptyList()
@@ -219,6 +267,8 @@ class QuestionDaoImplTest {
                         List.of(
                                 new TalkQuestion(List.of(speaker1), talk1)
                         ),
+                        Collections.emptyList(),
+                        Collections.emptyList(),
                         List.of(new SpeakerQuestion(speaker1))
                 )),
                 questionDao.getSubQuestionSets(
@@ -235,6 +285,8 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker1), talk1)
                                 ),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker1))
                         ),
                         new QuestionSet(
@@ -246,6 +298,8 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new TalkQuestion(List.of(speaker2, speaker3), talk2)
                                 ),
+                                Collections.emptyList(),
+                                Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker2))
                         )
                 ),
@@ -295,6 +349,22 @@ class QuestionDaoImplTest {
                 questionDao.getQuestionByIds(
                         Collections.emptyList(),
                         Collections.emptyList(),
+                        GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
                         GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE
                 )
         );
@@ -354,6 +424,16 @@ class QuestionDaoImplTest {
         );
         assertEquals(
                 List.of(
+                        new CompanyBySpeakerQuestion(List.of(company0), speaker0)
+                ),
+                questionDao.getQuestionByIds(
+                        List.of(0L, 0L),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE
+                )
+        );
+        assertEquals(
+                List.of(
                         new SpeakerQuestion(speaker1),
                         new SpeakerQuestion(speaker2)
                 ),
@@ -383,5 +463,25 @@ class QuestionDaoImplTest {
                 emptyEventIds,
                 null
         ));
+    }
+
+    @Test
+    void getSpeakerByCompanyQuestions() {
+        SpeakerByCompanyQuestion speakerByCompanyQuestion0 = new SpeakerByCompanyQuestion(List.of(speaker0), company0);
+        SpeakerByCompanyQuestion speakerByCompanyQuestion1 = new SpeakerByCompanyQuestion(List.of(speaker1), company0);
+        SpeakerByCompanyQuestion speakerByCompanyQuestion2 = new SpeakerByCompanyQuestion(List.of(speaker2), company1);
+        QuestionSet questionSet = new QuestionSet(
+                null,
+                null,
+                null,
+                null,
+                List.of(speakerByCompanyQuestion0, speakerByCompanyQuestion1, speakerByCompanyQuestion2),
+                null);
+        List<Question> expected = List.of(
+                new SpeakerByCompanyQuestion(List.of(speaker0, speaker1), company0),
+                new SpeakerByCompanyQuestion(List.of(speaker2), company1));
+        List<Question> actual = QuestionDaoImpl.getSpeakerByCompanyQuestions(List.of(questionSet));
+
+        assertTrue(expected.containsAll(actual) && actual.containsAll(expected));
     }
 }

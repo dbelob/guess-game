@@ -2,6 +2,7 @@ package guess.controller;
 
 import guess.domain.Language;
 import guess.domain.source.EventType;
+import guess.domain.statistics.CompanyStatistics;
 import guess.domain.statistics.EventStatistics;
 import guess.domain.statistics.EventTypeStatistics;
 import guess.domain.statistics.SpeakerStatistics;
@@ -74,6 +75,22 @@ public class StatisticsController {
         speakerStatisticsDto.getSpeakerMetricsList().sort(comparatorByTalksQuantity.thenComparing(comparatorByEventsQuantity).thenComparing(comparatorByEventTypesQuantity));
 
         return speakerStatisticsDto;
+    }
+
+    @GetMapping("/company-statistics")
+    @ResponseBody
+    public CompanyStatisticsDto getCompanyStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
+                                                     @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
+        CompanyStatistics companyStatistics = statisticsService.getCompanyStatistics(conferences, meetups, eventTypeId);
+        Language language = localeService.getLanguage(httpSession);
+        CompanyStatisticsDto companyStatisticsDto = CompanyStatisticsDto.convertToDto(companyStatistics, language);
+        Comparator<CompanyMetricsDto> comparatorByTalksQuantity = Comparator.comparing(CompanyMetricsDto::getTalksQuantity).reversed();
+        Comparator<CompanyMetricsDto> comparatorByEventsQuantity = Comparator.comparing(CompanyMetricsDto::getEventsQuantity).reversed();
+        Comparator<CompanyMetricsDto> comparatorByEventTypesQuantity = Comparator.comparing(CompanyMetricsDto::getEventTypesQuantity).reversed();
+
+        companyStatisticsDto.getCompanyMetricsList().sort(comparatorByTalksQuantity.thenComparing(comparatorByEventsQuantity).thenComparing(comparatorByEventTypesQuantity));
+
+        return companyStatisticsDto;
     }
 
     @GetMapping("/conferences")

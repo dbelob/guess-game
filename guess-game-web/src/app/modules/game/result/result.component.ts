@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { Result } from '../../../shared/models/result.model';
+import { Result } from '../../../shared/models/result/result.model';
 import { State } from '../../../shared/models/state.model';
 import { GuessMode } from '../../../shared/models/guess-mode.model';
 import { AnswerService } from '../../../shared/services/answer.service';
@@ -30,6 +30,7 @@ export class ResultComponent implements OnInit {
         this.result = data;
         this.isQuestionImage = (GuessMode.GuessNameByPhotoMode === this.result.guessMode) ||
           (GuessMode.GuessTalkBySpeakerMode === this.result.guessMode) ||
+          (GuessMode.GuessCompanyBySpeakerMode === this.result.guessMode) ||
           (GuessMode.GuessAccountBySpeakerMode === this.result.guessMode);
       });
   }
@@ -62,11 +63,16 @@ export class ResultComponent implements OnInit {
     return (this.result.talkErrorDetailsList && (this.result.talkErrorDetailsList.length > 0));
   }
 
+  isCompanyErrorDetailsListVisible() {
+    return (this.result.companyErrorDetailsList && (this.result.companyErrorDetailsList.length > 0));
+  }
+
   isAccountErrorDetailsListVisible() {
     return (this.result.accountErrorDetailsList && (this.result.accountErrorDetailsList.length > 0));
   }
 
   isErrorDetailsListVisible() {
-    return (this.isSpeakerErrorDetailsListVisible() || this.isTalkErrorDetailsListVisible() || this.isAccountErrorDetailsListVisible());
+    return (this.isSpeakerErrorDetailsListVisible() || this.isTalkErrorDetailsListVisible() ||
+      this.isCompanyErrorDetailsListVisible() || this.isAccountErrorDetailsListVisible());
   }
 }

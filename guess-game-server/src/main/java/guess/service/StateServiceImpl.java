@@ -3,6 +3,7 @@ package guess.service;
 import guess.dao.*;
 import guess.domain.*;
 import guess.domain.answer.Answer;
+import guess.domain.answer.CompanyAnswer;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
 import guess.domain.question.*;
@@ -64,6 +65,10 @@ public class StateServiceImpl implements StateService {
             return State.GUESS_TALK_BY_SPEAKER_STATE;
         } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             return State.GUESS_SPEAKER_BY_TALK_STATE;
+        } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
+            return State.GUESS_COMPANY_BY_SPEAKER_STATE;
+        } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
+            return State.GUESS_SPEAKER_BY_COMPANY_STATE;
         } else if (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode)) {
             return State.GUESS_ACCOUNT_BY_SPEAKER_STATE;
         } else if (GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
@@ -106,13 +111,14 @@ public class StateServiceImpl implements StateService {
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                List<Answer> correctAnswers = getCorrectAnswers(question, startParameters.getGuessMode());
+                List<Answer> correctAnswers = new ArrayList<>(getCorrectAnswers(question, startParameters.getGuessMode()));
+                Collections.shuffle(correctAnswers);
 
                 // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
                 correctAnswers = correctAnswers.subList(
                         0,
                         Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, correctAnswers.size()));
-                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessMode());
+                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = new ArrayList<>(getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessMode()));
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
                 Collections.shuffle(shuffledAllAvailableAnswersWithoutCorrectAnswers);
@@ -176,6 +182,14 @@ public class StateServiceImpl implements StateService {
             return ((TalkQuestion) question).getSpeakers().stream()
                     .map(SpeakerAnswer::new)
                     .collect(Collectors.toList());
+        } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
+            return ((CompanyBySpeakerQuestion) question).getCompanies().stream()
+                    .map(CompanyAnswer::new)
+                    .collect(Collectors.toList());
+        } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
+            return ((SpeakerByCompanyQuestion) question).getSpeakers().stream()
+                    .map(SpeakerAnswer::new)
+                    .collect(Collectors.toList());
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
@@ -200,6 +214,20 @@ public class StateServiceImpl implements StateService {
         } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             return questions.stream()
                     .map(q -> ((TalkQuestion) q).getTalk().getSpeakers())
+                    .flatMap(Collection::stream)
+                    .distinct()
+                    .map(SpeakerAnswer::new)
+                    .collect(Collectors.toList());
+        } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
+            return questions.stream()
+                    .map(q -> ((CompanyBySpeakerQuestion) q).getCompanies())
+                    .flatMap(Collection::stream)
+                    .distinct()
+                    .map(CompanyAnswer::new)
+                    .collect(Collectors.toList());
+        } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
+            return questions.stream()
+                    .map(q -> ((SpeakerByCompanyQuestion) q).getSpeakers())
                     .flatMap(Collection::stream)
                     .distinct()
                     .map(SpeakerAnswer::new)

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Event } from '../models/event.model';
-import { EventType } from '../models/event-type.model';
-import { EventDetails } from '../models/event-details.model';
+import { Event } from '../models/event/event.model';
+import { EventType } from '../models/event-type/event-type.model';
+import { EventDetails } from '../models/event/event-details.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({

@@ -89,6 +89,11 @@ public class SourceDaoImpl implements SourceDao {
     }
 
     @Override
+    public List<Company> getCompanies() {
+        return sourceInformation.getCompanies();
+    }
+
+    @Override
     public List<Speaker> getSpeakers() {
         return sourceInformation.getSpeakers();
     }

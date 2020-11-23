@@ -39,6 +39,8 @@
     "photoByNameLabel": "Photo by name",
     "talkBySpeakerLabel": "Talk by speaker",
     "speakerByTalkLabel": "Speaker by talk",
+    "companyBySpeakerLabel": "Company by speaker",
+    "speakerByCompanyLabel": "Speaker by company",
     "accountsBySpeakerLabel": "Twitter, GitHub by speaker",
     "speakerByAccountsLabel": "Speaker by Twitter, GitHub",
     "startButtonText": "Start"
@@ -187,11 +189,24 @@
       "noSpeakersFoundText": "No speakers found",
       "table": {
         "nameColumn": "Name",
-        "javaChampionColumn": "Java Champion",
-        "mvpColumn": "MVP",
         "talksColumn": "Talks",
         "eventsColumn": "Events",
-        "eventTypesColumn": "Event types"
+        "eventTypesColumn": "Event types",
+        "javaChampionColumn": "Java Champion",
+        "mvpColumn": "MVP"
+      }
+    },
+    "companies": {
+      "title": "Companies",
+      "noCompaniesFoundText": "No companies found",
+      "table": {
+        "companyColumn": "Company",
+        "speakersColumn": "Speakers",
+        "talksColumn": "Talks",
+        "eventsColumn": "Events",
+        "eventTypesColumn": "Event types",
+        "javaChampionsColumn": "Java Champions",
+        "mvpsColumn": "MVPs"
       }
     }
   },

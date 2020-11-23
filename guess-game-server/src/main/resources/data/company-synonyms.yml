@@ -1,0 +1,128 @@
+companySynonyms:
+  - name: "Alfa-Lab"
+    synonyms: [
+        "Альфа-Банк: Альфа-Лаборатория"
+    ]
+  - name: "Amazon Web Services"
+    synonyms: [
+        "AWS"
+    ]
+  - name: "Alfa-Lab"
+    synonyms: [
+        "Alpha Laboratory"
+    ]
+  - name: "Align Technology"
+    synonyms: [
+        "Align Technology Inc"
+    ]
+  - name: "Azul Systems"
+    synonyms: [
+        Azul
+    ]
+  - name: Badoo
+    synonyms: [
+        "Badoo Limited"
+    ]
+  - name: "Bloomberg"
+    synonyms: [
+        "Bloomberg L.P.",
+        "Bloomberg LP"
+    ]
+  - name: CFT
+    synonyms: [
+        СFT
+    ]
+  - name: CROC
+    synonyms: [
+        KROK
+    ]
+  - name: "Elastic"
+    synonyms: [
+        "elastic"
+    ]
+  - name: "EPAM Systems"
+    synonyms: [
+        "EPAM",
+        "Epam Systems"
+    ]
+  - name: "GitLab"
+    synonyms: [
+        "GitLab (Previously Fuzzit)"
+    ]
+  - name: "Grid Dynamics"
+    synonyms: [
+        "GridDynamics"
+    ]
+  - name: "GridGain Systems"
+    synonyms: [
+        "GridGain"
+    ]
+  - name: "HeadHunter"
+    synonyms: [
+        "hh.ru"
+    ]
+  - name: "IBM"
+    synonyms: [
+        "IBM Canada"
+    ]
+  - name: "IT Territory/My.Games"
+    synonyms: [
+        "IT Territory/MyGames"
+    ]
+  - name: "Independent Consultant"
+    synonyms: [
+        "Independent consultant"
+    ]
+  - name: Intel
+    synonyms: [
+        "Intel Corporation"
+    ]
+  - name: "JUG Ru Group"
+    synonyms: [
+        "JUG.ru Group"
+    ]
+  - name: "Mail.ru Group"
+    synonyms: [
+        "Mail.Ru Group",
+        "Mail.ru"
+    ]
+  - name: Netflix
+    synonyms: [
+        "Netflix Inc."
+    ]
+  - name: "Object Computing"
+    synonyms: [
+        "Object Computing, Inc."
+    ]
+  - name: "OK.RU"
+    synonyms: [
+        Odnoklassniki
+    ]
+  - name: "Postgres Professional"
+    synonyms: [
+        "PostgresPro"
+    ]
+  - name: RaiffeisenBank
+    synonyms: [
+        Raiffeisenbank
+    ]
+  - name: "Red Hat"
+    synonyms: [
+        "Red Hat, Inc."
+    ]
+  - name: "Tune IT"
+    synonyms: [
+        "Tune-IT"
+    ]
+  - name: "Uber Technologies"
+    synonyms: [
+        "Uber"
+    ]
+  - name: VK
+    synonyms: [
+        VKontakte
+    ]
+  - name: "ZeptoLab LLC"
+    synonyms: [
+        "Zeptolab"
+    ]

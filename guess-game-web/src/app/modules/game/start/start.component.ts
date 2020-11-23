@@ -2,10 +2,10 @@ import { AfterViewChecked, Component, ElementRef, OnInit, QueryList, ViewChildre
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SelectItem } from 'primeng/api';
-import { StartParameters } from '../../../shared/models/start-parameters.model';
+import { StartParameters } from '../../../shared/models/start/start-parameters.model';
 import { GuessMode } from '../../../shared/models/guess-mode.model';
-import { EventType } from '../../../shared/models/event-type.model';
-import { Event } from '../../../shared/models/event.model';
+import { EventType } from '../../../shared/models/event-type/event-type.model';
+import { Event } from '../../../shared/models/event/event.model';
 import { EventService } from '../../../shared/services/event.service';
 import { QuestionService } from '../../../shared/services/question.service';
 import { StateService } from '../../../shared/services/state.service';

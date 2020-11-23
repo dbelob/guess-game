@@ -29,6 +29,8 @@ import { GuessNameByPhotoComponent } from './modules/game/guess/guess-name-by-ph
 import { GuessPhotoByNameComponent } from './modules/game/guess/guess-photo-by-name.component';
 import { GuessTalkBySpeakerComponent } from './modules/game/guess/guess-talk-by-speaker.component';
 import { GuessSpeakerByTalkComponent } from './modules/game/guess/guess-speaker-by-talk.component';
+import { GuessCompanyBySpeakerComponent } from './modules/game/guess/guess-company-by-speaker.component';
+import { GuessSpeakerByCompanyComponent } from './modules/game/guess/guess-speaker-by-company.component';
 import { GuessAccountBySpeakerComponent } from './modules/game/guess/guess-account-by-speaker.component';
 import { GuessSpeakerByAccountComponent } from './modules/game/guess/guess-speaker-by-account.component';
 import { CancelGameComponent } from './modules/game/guess/cancel-game.component';
@@ -45,6 +47,7 @@ import { SpeakersSearchComponent } from './modules/information/speakers/speakers
 import { EventTypeStatisticsComponent } from './modules/information/statistics/event-type-statistics.component';
 import { EventStatisticsComponent } from './modules/information/statistics/event-statistics.component';
 import { SpeakerStatisticsComponent } from './modules/information/statistics/speaker-statistics.component';
+import { CompanyStatisticsComponent } from './modules/information/statistics/company-statistics.component';
 import { AnswerService } from './shared/services/answer.service';
 import { EventService } from './shared/services/event.service';
 import { EventTypeService } from './shared/services/event-type.service';
@@ -62,6 +65,8 @@ const routes: Routes = [
   {path: 'game/guess/photo-by-name', component: GuessPhotoByNameComponent, canActivate: [StateGuard]},
   {path: 'game/guess/talk-by-speaker', component: GuessTalkBySpeakerComponent, canActivate: [StateGuard]},
   {path: 'game/guess/speaker-by-talk', component: GuessSpeakerByTalkComponent, canActivate: [StateGuard]},
+  {path: 'game/guess/company-by-speaker', component: GuessCompanyBySpeakerComponent, canActivate: [StateGuard]},
+  {path: 'game/guess/speaker-by-company', component: GuessSpeakerByCompanyComponent, canActivate: [StateGuard]},
   {path: 'game/guess/account-by-speaker', component: GuessAccountBySpeakerComponent, canActivate: [StateGuard]},
   {path: 'game/guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [StateGuard]},
   {path: 'game/result', component: ResultComponent, canActivate: [StateGuard]},
@@ -78,6 +83,7 @@ const routes: Routes = [
   {path: 'information/statistics/event-types', component: EventTypeStatisticsComponent},
   {path: 'information/statistics/events', component: EventStatisticsComponent},
   {path: 'information/statistics/speakers', component: SpeakerStatisticsComponent},
+  {path: 'information/statistics/companies', component: CompanyStatisticsComponent},
   {path: 'information/event-types', redirectTo: 'information/event-types/search'},
   {path: 'information/events', redirectTo: 'information/events/search'},
   {path: 'information/talks', redirectTo: 'information/talks/search'},

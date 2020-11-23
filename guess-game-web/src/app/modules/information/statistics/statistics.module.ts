@@ -13,6 +13,7 @@ import { MessageModule } from '../../message/message.module';
 import { EventTypeStatisticsComponent } from './event-type-statistics.component';
 import { EventStatisticsComponent } from './event-statistics.component';
 import { SpeakerStatisticsComponent } from './speaker-statistics.component';
+import { CompanyStatisticsComponent } from './company-statistics.component';
 import { StatisticsSwitcherComponent } from './statistics-switcher.component';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { StatisticsSwitcherComponent } from './statistics-switcher.component';
     EventTypeStatisticsComponent,
     EventStatisticsComponent,
     SpeakerStatisticsComponent,
+    CompanyStatisticsComponent,
     StatisticsSwitcherComponent
   ],
   imports: [
