@@ -14,7 +14,7 @@ public class LoadSettings {
     private final Set<String> invalidTalksSet;
     private final boolean ignoreDemoStage;
 
-    private LoadSettings(Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet, boolean ignoreDemoStage) {
+    public LoadSettings(Map<NameCompany, Long> knownSpeakerIdsMap, Set<String> invalidTalksSet, boolean ignoreDemoStage) {
         this.knownSpeakerIdsMap = knownSpeakerIdsMap;
         this.invalidTalksSet = invalidTalksSet;
         this.ignoreDemoStage = ignoreDemoStage;
