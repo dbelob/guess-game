@@ -12522,8 +12522,7 @@ speakers:
       - {language: en, text: "Anton Dudakov"}
       - {language: ru, text: "Антон Дудаков"}
     company:
-      - {language: en, text: Sber}
-      - {language: ru, text: Сбер}
+      - {language: en, text: SberDevices}
     bio:
       - {language: en, text: "Anton worked at a startup Storia.me as a team lead for an Android application. Then he was the\
             \ team lead of the Android part of Yandex.Avto project. Now in SberDevices, he is responsible for embedded Android\
@@ -12798,7 +12797,7 @@ speakers:
   - id: 858
     photoFileName: 0858.jpg
     name:
-      - {language: en, text: "Evgeny Saturov"}
+      - {language: en, text: "Eugene Saturov"}
       - {language: ru, text: "Евгений Сатуров"}
     company:
       - {language: en, text: Surf}
