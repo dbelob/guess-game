@@ -110,6 +110,10 @@ companySynonyms:
     synonyms: [
         "Red Hat, Inc."
     ]
+  - name: Sber
+    synonyms: [
+        Sberbank
+    ]
   - name: "Tune IT"
     synonyms: [
         "Tune-IT"
