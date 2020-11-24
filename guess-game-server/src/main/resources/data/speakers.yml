@@ -2333,11 +2333,11 @@ speakers:
     company:
       - {language: en, text: Hazelcast}
     bio:
-      - {language: en, text: "Vladimir is a Software Engineer at Hazelcast leading the implementation of Hazelcast Mustang,\
+      - {language: en, text: "Vladimir is a Software Engineer at Hazelcast working on the implementation of Hazelcast Mustang,\
             \ a distributed SQL engine. Before that he spent 6 years at GridGain, building various parts of the Apache Ignite\
             \ IMDG, including data processing pipelines, transactions, a JDBC driver, and clients for different programming\
             \ languages."}
-      - {language: ru, text: "Владимир работает Software Engineer в компании Hazelcast, где отвечает за разработку распред\
+      - {language: ru, text: "Владимир работает Software Engineer в компании Hazelcast, где занимается разработкой распред\
             еленного SQL-движка Hazelcast Mustang. До этого он 6 лет работал в компании GridGain, где разрабатывал компоне\
             нты Apache Ignite IMDG, включая подсистемы параллельной обработки данных, транзакции, JDBC-драйвер и клиенты д\
             ля раличных языков программирования."}
@@ -18761,8 +18761,8 @@ speakers:
       - {language: en, text: "Yuriy Milyutin"}
       - {language: ru, text: "Юрий Милютин"}
     company:
-      - {language: en, text: Sberbank}
-      - {language: ru, text: Сбербанк}
+      - {language: en, text: Sber}
+      - {language: ru, text: Сбер}
     bio:
       - {language: en, text: "Юрий руководит разработкой крупнейшего сервиса Эквайринга в Европе. 5 лет в Сбербанке, 10 в\
             \ Java-разработке. Спасает мир, сдерживает хаос, нанимает лучших представителей человечества."}
