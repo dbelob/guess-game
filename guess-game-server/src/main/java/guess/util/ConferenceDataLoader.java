@@ -1335,6 +1335,8 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
 //                LoadSettings.invalidTalksSet(Set.of("Doctoral workshop", "Title will be announced soon")));
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn");
+//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 11, 11), "2020spbcpp",
+//                LoadSettings.invalidTalksSet(Set.of("Lightning talks", "C++ Russia 2020 Piter Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2020, 11, 4), "2020msk",
 //                new LoadSettings(
 //                        Collections.emptyMap(),
@@ -1342,13 +1344,11 @@ public class ConferenceDataLoader {
 //                        false));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 11), "2020msk",
 //                LoadSettings.invalidTalksSet(Set.of("Mobius 2020 Moscow Virtual Afterparty")));
-//        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2020, 11, 11), "2020spbcpp",
-//                LoadSettings.invalidTalksSet(Set.of("Lightning talks", "C++ Russia 2020 Piter Virtual Afterparty")));
+//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 25), "2020msk");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 11, 25), "2020joker",
 //                LoadSettings.invalidTalksSet(Set.of("Joker 2020 Virtual Afterparty")));
-//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 25), "2020msk");
-//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 12, 2), "2020msk");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 12, 2), "2020spbdevoops");
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 12, 2), "2020msk");
 //        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2020, 12, 9), "2020smartdata");
     }
 }

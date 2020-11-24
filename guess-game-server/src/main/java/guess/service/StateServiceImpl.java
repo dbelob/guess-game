@@ -7,10 +7,7 @@ import guess.domain.answer.CompanyAnswer;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
 import guess.domain.question.*;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.LocaleItem;
-import guess.domain.source.Talk;
+import guess.domain.source.*;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -118,7 +115,7 @@ public class StateServiceImpl implements StateService {
                 correctAnswers = correctAnswers.subList(
                         0,
                         Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, correctAnswers.size()));
-                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = new ArrayList<>(getAllAvailableAnswers(shuffledQuestions, correctAnswers, startParameters.getGuessMode()));
+                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = new ArrayList<>(getAllAvailableAnswers(shuffledQuestions, question, correctAnswers, startParameters.getGuessMode()));
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
                 Collections.shuffle(shuffledAllAvailableAnswersWithoutCorrectAnswers);
@@ -195,7 +192,7 @@ public class StateServiceImpl implements StateService {
         }
     }
 
-    List<Answer> getAllAvailableAnswers(List<Question> questions, List<Answer> correctAnswers, GuessMode guessMode) {
+    List<Answer> getAllAvailableAnswers(List<Question> questions, Question question, List<Answer> correctAnswers, GuessMode guessMode) {
         if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ||
                 GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode) ||
                 GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ||
@@ -226,10 +223,16 @@ public class StateServiceImpl implements StateService {
                     .map(CompanyAnswer::new)
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
+            Company company = ((SpeakerByCompanyQuestion) question).getCompany();
+            Set<Speaker> correctAnswerSpeakers = correctAnswers.stream()
+                    .map(a -> ((SpeakerAnswer) a).getSpeaker())
+                    .collect(Collectors.toSet());
+
             return questions.stream()
                     .map(q -> ((SpeakerByCompanyQuestion) q).getSpeakers())
                     .flatMap(Collection::stream)
                     .distinct()
+                    .filter(s -> (correctAnswerSpeakers.contains(s) || !s.getCompanies().contains(company)))
                     .map(SpeakerAnswer::new)
                     .collect(Collectors.toList());
         } else {
