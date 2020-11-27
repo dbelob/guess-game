@@ -362,6 +362,9 @@ class StateServiceImplTest {
             Company company1 = new Company();
             company1.setId(1);
 
+            Company company2 = new Company();
+            company2.setId(2);
+
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
             speaker0.setCompanies(List.of(company0));
@@ -377,7 +380,7 @@ class StateServiceImplTest {
             Talk talk0 = new Talk();
             talk0.setId(0);
             talk0.setSpeakerIds(List.of(0L));
-            talk0.setSpeakers(List.of(speaker0));
+            talk0.setSpeakers(List.of(speaker0, speaker1));
 
             Talk talk1 = new Talk();
             talk1.setId(1);
@@ -391,25 +394,35 @@ class StateServiceImplTest {
 
             Question question0 = new SpeakerQuestion(speaker0);
             Question question1 = new TalkQuestion(List.of(speaker0, speaker1), talk0);
-            Question question2 = new CompanyBySpeakerQuestion(List.of(company0, company1), speaker0);
-            Question question3 = new SpeakerByCompanyQuestion(List.of(speaker0, speaker2), company0);
-            Question question4 = new SpeakerByCompanyQuestion(List.of(speaker1), company1);
+            Question question2 = new TalkQuestion(List.of(speaker1), talk1);
+            Question question3 = new CompanyBySpeakerQuestion(List.of(company0, company1), speaker0);
+            Question question4 = new SpeakerByCompanyQuestion(List.of(speaker0, speaker2), company0);
+            Question question5 = new SpeakerByCompanyQuestion(List.of(speaker1), company1);
 
             Answer answer0 = new TalkAnswer(talk0);
             Answer answer1 = new TalkAnswer(talk1);
             Answer answer2 = new TalkAnswer(talk2);
+            Answer answer3 = new SpeakerAnswer(speaker0);
+            Answer answer4 = new SpeakerAnswer(speaker1);
+            Answer answer5 = new SpeakerAnswer(speaker2);
+            Answer answer6 = new CompanyAnswer(company0);
+            Answer answer7 = new CompanyAnswer(company1);
+            Answer answer8 = new CompanyAnswer(company2);
 
             return Stream.of(
                     arguments(List.of(question0), null, null, GuessMode.GUESS_NAME_BY_PHOTO_MODE, null, List.of(new SpeakerAnswer(speaker0))),
                     arguments(List.of(question0), null, null, GuessMode.GUESS_PHOTO_BY_NAME_MODE, null, List.of(new SpeakerAnswer(speaker0))),
                     arguments(List.of(question0), null, null, GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, List.of(new SpeakerAnswer(speaker0))),
                     arguments(List.of(question0), null, null, GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, List.of(new SpeakerAnswer(speaker0))),
-                    arguments(List.of(question1), null, List.of(answer0), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, List.of(new TalkAnswer(talk0))),
-                    arguments(List.of(question1), null, List.of(answer1), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, List.of(new TalkAnswer(talk0))),
-                    arguments(List.of(question1), null, List.of(answer2), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, Collections.emptyList()),
-                    arguments(List.of(question1), null, null, GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, List.of(new SpeakerAnswer(speaker0))),
-                    arguments(List.of(question2), null, null, GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, List.of(new CompanyAnswer(company0), new CompanyAnswer(company1))),
-                    arguments(List.of(question3, question4), question3, List.of(new SpeakerAnswer(speaker0)), GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, List.of(new SpeakerAnswer(speaker0), new SpeakerAnswer(speaker1))),
+                    arguments(List.of(question1), question1, List.of(answer0), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, List.of(new TalkAnswer(talk0))),
+                    arguments(List.of(question1, question2), question1, List.of(answer1), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, List.of(new TalkAnswer(talk1))),
+                    arguments(List.of(question1), question1, List.of(answer2), GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, Collections.emptyList()),
+                    arguments(List.of(question1), question1, List.of(answer3), GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, List.of(new SpeakerAnswer(speaker0))),
+                    arguments(List.of(question1), question1, List.of(answer4), GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, List.of(new SpeakerAnswer(speaker1))),
+                    arguments(List.of(question1), question1, List.of(answer5), GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, Collections.emptyList()),
+                    arguments(List.of(question3), question3, List.of(answer6, answer7), GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, List.of(new CompanyAnswer(company0), new CompanyAnswer(company1))),
+                    arguments(List.of(question3), question3, List.of(answer8), GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, Collections.emptyList()),
+                    arguments(List.of(question4, question5), question4, List.of(new SpeakerAnswer(speaker0)), GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, List.of(new SpeakerAnswer(speaker0), new SpeakerAnswer(speaker1))),
                     arguments(null, null, null, null, IllegalArgumentException.class, null),
                     arguments(List.of(question0), null, null, null, IllegalArgumentException.class, null),
                     arguments(List.of(question1), null, null, null, IllegalArgumentException.class, null),
