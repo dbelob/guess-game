@@ -20686,16 +20686,17 @@ speakers:
     name:
       - {language: en, text: "Ivan Zatravkin"}
       - {language: ru, text: "Иван Затравкин"}
-    company: []
+    company:
+      - {language: en, text: Quantori}
     bio:
       - language: en
-        text: "Fullstack-developer, IT meetups speaker. Loves creating simple to use solutions for complex problems. Switched\
-            \ to web development from HPC and CUDA, which he studied at Peter the Great St.Petersburg Polytechnic University.\n\
-            \nCurrently develops an online multiplayer strategy game in his startup."
+        text: "Software Engineer at Quantori, IT meetups speaker. Loves creating simple to use solutions for complex problems.\
+            \ Switched to web development from HPC and CUDA, which he studied at Peter the Great St.Petersburg Polytechnic\
+            \ University.\n\nAdditionally, he develops online multiplayer strategy game in his own startup."
       - language: ru
-        text: "Фуллстэк-разработчик, спикер, любитель находить простые в использовании решения для сложных проблем. Пришёл\
-            \ в веб-разработку из мира CUDA и high-performance computing, которыми занимался в студенческие годы. \n\nВ на\
-            стоящее время занимается разработкой в собственном стартапе."
+        text: "Software Engineer в Quantori, спикер, любитель находить простые решения для сложных проблем. Пришёл в веб-р\
+            азработку из мира CUDA и high-performance computing, которыми занимался в студенческие годы.\n\nПараллельно с\
+            \ основной работой занимается разработкой онлайн игры в собственном стартапе."
   - id: 1444
     photoFileName: 1444.jpg
     name:
@@ -20736,3 +20737,12 @@ speakers:
             \ — WebGL/Canvas. Разработка полного цикла. Оптимизация производительности сервера и клиента. \nРаботал в Wargaming\
             \ и Apple. Кандидат наук по прикладной математике. Президентский приз за достижения в науке. Опыт со стартапом\
             , в игровой индустрии и в менеджменте."
+  - id: 1447
+    photoFileName: 1447.jpg
+    name:
+      - {language: en, text: "Tanya Denisyuk"}
+      - {language: ru, text: "Таня Денисюк"}
+    company:
+      - {language: en, text: "JUG Ru Group"}
+    bio: []
+    twitter: deni_deniskina

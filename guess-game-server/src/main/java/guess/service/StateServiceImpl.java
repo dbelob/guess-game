@@ -201,25 +201,38 @@ public class StateServiceImpl implements StateService {
                     .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
+            List<Speaker> questionSpeakers = ((TalkQuestion) question).getSpeakers();
             Talk correctAnswerTalk = ((TalkAnswer) correctAnswers.get(0)).getTalk();
 
             return questions.stream()
                     .map(q -> ((TalkQuestion) q).getTalk())
-                    .filter(t -> (t.getId() == correctAnswerTalk.getId()) || !t.getSpeakerIds().containsAll(correctAnswerTalk.getSpeakerIds()))
+                    .filter(t -> (t.getId() == correctAnswerTalk.getId()) || !t.getSpeakers().containsAll(questionSpeakers))
                     .map(TalkAnswer::new)
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
+            Set<Speaker> questionSpeakers = new HashSet<>(((TalkQuestion) question).getSpeakers());
+            Set<Speaker> correctAnswerSpeakers = correctAnswers.stream()
+                    .map(a -> ((SpeakerAnswer) a).getSpeaker())
+                    .collect(Collectors.toSet());
+
             return questions.stream()
                     .map(q -> ((TalkQuestion) q).getTalk().getSpeakers())
                     .flatMap(Collection::stream)
                     .distinct()
+                    .filter(s -> (correctAnswerSpeakers.contains(s) || !questionSpeakers.contains(s)))
                     .map(SpeakerAnswer::new)
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
+            Set<Company> questionCompanies = new HashSet<>(((CompanyBySpeakerQuestion) question).getCompanies());
+            Set<Company> correctAnswerCompanies = correctAnswers.stream()
+                    .map(a -> ((CompanyAnswer) a).getCompany())
+                    .collect(Collectors.toSet());
+
             return questions.stream()
                     .map(q -> ((CompanyBySpeakerQuestion) q).getCompanies())
                     .flatMap(Collection::stream)
                     .distinct()
+                    .filter(c -> (correctAnswerCompanies.contains(c) || !questionCompanies.contains(c)))
                     .map(CompanyAnswer::new)
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
