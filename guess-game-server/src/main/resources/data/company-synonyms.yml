@@ -1,15 +1,12 @@
 companySynonyms:
-  - name: "Alfa-Lab"
+  - name: Alfa-Lab
     synonyms: [
+        "Alpha Laboratory",
         "Альфа-Банк: Альфа-Лаборатория"
     ]
   - name: "Amazon Web Services"
     synonyms: [
-        "AWS"
-    ]
-  - name: "Alfa-Lab"
-    synonyms: [
-        "Alpha Laboratory"
+        AWS
     ]
   - name: "Align Technology"
     synonyms: [
@@ -23,7 +20,7 @@ companySynonyms:
     synonyms: [
         "Badoo Limited"
     ]
-  - name: "Bloomberg"
+  - name: Bloomberg
     synonyms: [
         "Bloomberg L.P.",
         "Bloomberg LP"
@@ -36,32 +33,36 @@ companySynonyms:
     synonyms: [
         KROK
     ]
-  - name: "Elastic"
+  - name: "Deutsche Telekom IT Solutions"
     synonyms: [
-        "elastic"
+        T-Systems
+    ]
+  - name: Elastic
+    synonyms: [
+        elastic
     ]
   - name: "EPAM Systems"
     synonyms: [
         "EPAM",
         "Epam Systems"
     ]
-  - name: "GitLab"
+  - name: GitLab
     synonyms: [
         "GitLab (Previously Fuzzit)"
     ]
   - name: "Grid Dynamics"
     synonyms: [
-        "GridDynamics"
+        GridDynamics
     ]
   - name: "GridGain Systems"
     synonyms: [
-        "GridGain"
+        GridGain
     ]
-  - name: "HeadHunter"
+  - name: HeadHunter
     synonyms: [
-        "hh.ru"
+        hh.ru
     ]
-  - name: "IBM"
+  - name: IBM
     synonyms: [
         "IBM Canada"
     ]
@@ -94,13 +95,13 @@ companySynonyms:
     synonyms: [
         "Object Computing, Inc."
     ]
-  - name: "OK.RU"
+  - name: OK.RU
     synonyms: [
         Odnoklassniki
     ]
   - name: "Postgres Professional"
     synonyms: [
-        "PostgresPro"
+        PostgresPro
     ]
   - name: RaiffeisenBank
     synonyms: [
@@ -116,11 +117,11 @@ companySynonyms:
     ]
   - name: "Tune IT"
     synonyms: [
-        "Tune-IT"
+        Tune-IT
     ]
   - name: "Uber Technologies"
     synonyms: [
-        "Uber"
+        Uber
     ]
   - name: VK
     synonyms: [
@@ -128,5 +129,5 @@ companySynonyms:
     ]
   - name: "ZeptoLab LLC"
     synonyms: [
-        "Zeptolab"
+        Zeptolab
     ]
