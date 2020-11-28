@@ -6,7 +6,6 @@ import guess.domain.answer.CompanyAnswer;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.question.CompanyBySpeakerQuestion;
-import guess.domain.question.QuestionAnswersSet;
 import guess.domain.question.SpeakerByCompanyQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
@@ -57,14 +56,9 @@ public class CompanyErrorDetailsDto {
 
             List<Speaker> questionSpeakers = GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode) ?
                     Collections.singletonList(((CompanyBySpeakerQuestion) errorDetails.getQuestion()).getSpeaker()) :
-                    ((SpeakerByCompanyQuestion) errorDetails.getQuestion()).getSpeakers();
-
-            if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
-                // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
-                questionSpeakers = questionSpeakers.subList(
-                        0,
-                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, questionSpeakers.size()));
-            }
+                    errorDetails.getCorrectAnswers().stream()
+                            .map(a -> ((SpeakerAnswer) a).getSpeaker())
+                            .collect(Collectors.toList());
 
             List<SpeakerPairDto> questionSpeakerPairs = questionSpeakers.stream()
                     .map(s -> new SpeakerPairDto(

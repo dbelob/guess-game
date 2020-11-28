@@ -478,6 +478,7 @@ class AnswerServiceImplTest {
 
             ErrorDetails errorDetails0 = new ErrorDetails(
                     question0,
+                    List.of(answer0),
                     List.of(answer0, answer1, answer2, answer3),
                     List.of(answer1)
             );
