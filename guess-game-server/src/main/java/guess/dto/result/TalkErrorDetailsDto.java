@@ -5,7 +5,6 @@ import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.answer.TalkAnswer;
-import guess.domain.question.QuestionAnswersSet;
 import guess.domain.question.TalkQuestion;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
@@ -58,14 +57,11 @@ public class TalkErrorDetailsDto {
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 
-            List<Speaker> questionSpeakers = ((TalkQuestion) errorDetails.getQuestion()).getSpeakers();
-
-            if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
-                // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
-                questionSpeakers = questionSpeakers.subList(
-                        0,
-                        Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, questionSpeakers.size()));
-            }
+            List<Speaker> questionSpeakers = GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode) ?
+                    ((TalkQuestion) errorDetails.getQuestion()).getSpeakers() :
+                    errorDetails.getCorrectAnswers().stream()
+                            .map(a -> ((SpeakerAnswer) a).getSpeaker())
+                            .collect(Collectors.toList());
 
             List<SpeakerPairDto> questionSpeakerPairs = questionSpeakers.stream()
                     .map(s -> new SpeakerPairDto(
