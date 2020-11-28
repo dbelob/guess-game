@@ -1344,7 +1344,8 @@ public class ConferenceDataLoader {
 //                        false));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 11), "2020msk",
 //                LoadSettings.invalidTalksSet(Set.of("Mobius 2020 Moscow Virtual Afterparty")));
-//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 25), "2020msk");
+//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 25), "2020msk",
+//                LoadSettings.invalidTalksSet(Set.of("HolyJS 2020 Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 11, 25), "2020joker",
 //                LoadSettings.invalidTalksSet(Set.of("Joker 2020 Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 12, 2), "2020spbdevoops");
