@@ -24,6 +24,7 @@ export class SpeakersListComponent implements OnInit {
   public selectedLetter = this.DEFAULT_LETTER;
 
   public speakers: Speaker[] = [];
+  public paginatorFirst = 0;
 
   constructor(public speakerService: SpeakerService, public translateService: TranslateService) {
   }
@@ -40,8 +41,7 @@ export class SpeakersListComponent implements OnInit {
   }
 
   onLanguageChange() {
-    this.selectedLetter = this.DEFAULT_LETTER;
-    this.loadSpeakers(this.DEFAULT_LETTER);
+    this.changeLetter(this.DEFAULT_LETTER);
   }
 
   isCurrentLetter(letter: string) {
@@ -50,6 +50,9 @@ export class SpeakersListComponent implements OnInit {
 
   changeLetter(letter: string) {
     this.selectedLetter = letter;
+
+    this.paginatorFirst = 0;
+
     this.loadSpeakers(letter);
   }
 
