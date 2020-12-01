@@ -3953,18 +3953,17 @@ speakers:
     company:
       - {language: en, text: "Smashing Magazine"}
     bio:
-      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn’t like to give in easily. Originally from\
+      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn't like to give in easily. Originally from\
             \ Minsk, Belarus, he studied computer science and mathematics in Germany where he has discovered his passion for\
             \ typography, writing and design. After working as a freelancing designer and developer for 6 years, he co-founded\
-            \ Smashing Magazine, one of the largest online magazines dedicated to Web design and development. Vitaly is writer,\
-            \ co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine in\
-            \ the lovely city of Germany, Freiburg."}
+            \ Smashing Magazine, one of the largest online magazines dedicated to web design and development. Vitaly is the\
+            \ writer, co-author and editor of both Smashing Books. He is now working as the creative lead of Smashing Magazine\
+            \ somewhere in Europe."}
       - {language: ru, text: "Виталий Фридман любит красивый контент и никогда просто так не сдаётся. Родом из Минска, Бел\
             арусь, Виталий изучал информатику и математику в Германии, где обнаружил интерес к типографии, письму и дизайн\
             у. Проработав в качестве фрилансера дизайнером и разработчиком в течение шести лет, он основал Smashing Magazine,\
             \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
-            \ Books. В настоящее время занимает позицию креативного лида Smashing Magazine, и обычно обитает где-то между\
-            \ Брюсселем, Нью-Йорком, Будапештом, Дюссельдорфом и Вильнюсом."}
+            \ Books. В настоящее время работает в Smashing Magazine где-то в Европе."}
     twitter: smashingmag
     gitHub: vitalyfriedman
   - id: 261
@@ -14408,9 +14407,12 @@ speakers:
     company:
       - {language: en, text: HashiCorp}
     bio:
-      - {language: en, text: "Erik has over 15 years experience working with cloud and infrastructure.  Before joining HashiCorp\
-            \ he worked as a consultant at Xebia and also founded Instruqt, a hands-on learning platform that uses real infrastructure\
-            \ to teach cloud and DevOps tooling."}
+      - {language: en, text: "Erik Veld divides his time between developing software and teaching others about technology\
+            \ and modern development practices. He has over a decade of experience working as a developer, operator, and IT\
+            \ consultant for various global companies and startups. The lessons learned and scars accumulated from this time\
+            \ prepared him well for his current love of demoing cutting edge technologies live on stage. He also founded Instruqt,\
+            \ a hands-on learning platform. When he is not doing something with computers, you can find him in the kitchen\
+            \ or renovating his house."}
     twitter: erikveld
   - id: 982
     photoFileName: 0982.jpg
@@ -17349,13 +17351,18 @@ speakers:
     photoFileName: 1192.jpg
     name:
       - {language: en, text: "Ignat Korchagin"}
+      - {language: ru, text: "Игнат Корчагин"}
     company:
       - {language: en, text: Cloudflare}
     bio:
       - {language: en, text: "Ignat is a security engineer at Cloudflare working mostly on platform and hardware security.\
-            \ Ignat’s interests are cryptography, hacking, and low-level programming. Before Cloudflare, Ignat worked as a\
-            \ senior security engineer for Samsung Electronics’ Mobile Communications Division. His solutions may be found\
+            \ Ignat's interests are cryptography, hacking, and low-level programming. Before Cloudflare, Ignat worked as a\
+            \ senior security engineer for Samsung Electronics' Mobile Communications Division. His solutions may be found\
             \ in many older Samsung smart phones and tablets."}
+      - {language: ru, text: "Игнат — инженер по безопасности в Cloudflare, который в основном занимается безопасностью пл\
+            атформы и оборудования. Интересы Игната включают в себя криптографию, взлом и низкоуровневое программирование\
+            . До Cloudflare работал старшим инженером безопасности в Samsung Electronics' Mobile Communications Division.\
+            \ Его работу до сих пор можно найти в старых моделях смартфонов Samsung и планшетах."}
     twitter: ignatkn
   - id: 1193
     photoFileName: 1193.jpg
@@ -18853,7 +18860,10 @@ speakers:
     company:
       - {language: en, text: "Sportmaster Lab"}
     bio:
-      - language: en
+      - {language: en, text: "Head of the Competence Center for Web and Mobile Development at SMLab. A specialist with seventeen\
+            \ years of experience in software development in a wide variety of languages and platforms. Now Sergey is helping\
+            \ the company in determining the directions of technological development and designing information systems architectures."}
+      - language: ru
         text: "Руководитель Центра Компетенций веб и мобильной разработки в SMLab.\nСпециалист с семнадцатилетним опытом р\
             азработки программного обеспечения на самых разных языках и платформах.\nСейчас Сергей помогает компании в опр\
             еделении направлений технологического развития и проектировании архитектур информационных систем."
@@ -20746,3 +20756,461 @@ speakers:
       - {language: en, text: "JUG Ru Group"}
     bio: []
     twitter: deni_deniskina
+  - id: 1448
+    photoFileName: 1448.jpg
+    name:
+      - {language: en, text: "Vitaliy Dmitriev"}
+      - {language: ru, text: "Виталий Дмитриев"}
+    company:
+      - {language: en, text: Liptsoft}
+      - {language: ru, text: Липтсофт}
+    bio:
+      - language: en
+        text: "CTO with experience in implementing DevOps practices. 15 years in IT. Experienced in FE, BE, Ops. Studied many\
+            \ programming languages, programming paradigms and engineering practices.\nFormer CEO of a small outsourcing company\
+            \ operating in the Northwestern Federal District. In 2017 came up with a reactive approach to frontend development\
+            \ using the patterns of МОМ, State Management, Reactive Streams, Mediator, Observer which he talked about at various\
+            \ external conferences for a year. For more than a year, he has been actively implementing DevOps in different\
+            \ conditions and has increased development efficiency from 10 to 96 times. Vitaliy also studied and applied game\
+            \ theory, constraint theory, queuing theory, TQM, and many other effective approaches."
+      - language: ru
+        text: "CTO с опытом внедрения DevOps-практик. 15 лет опыта работы в IT. Опыт FE, BE, Ops. Изучал множество языков\
+            \ программирования, парадигм программирования и инженерных практик. \nБывший CEO небольшой аутсорс-компании, р\
+            аботавшей по СЗФО. В 2017 году придумал реактивный подход к разработке фронтенда с использованием паттернов МО\
+            М, State Management, Reactive Streams, Mediator, Observer, о которой год рассказывал на разных внешних конфере\
+            нциях. Более года активно внедрял DevOps в разных условиях, благодаря чему повысил эффективность разработки от\
+            \ 10 до 96 раз. Также изучал и применял теорию игр, теорию ограничений, теорию очередей, TQM и множество други\
+            х эффективных подходов."
+    twitter: vdvision
+  - id: 1449
+    photoFileName: 1449.jpg
+    name:
+      - {language: en, text: "Viktor Erpylev"}
+      - {language: ru, text: "Виктор Ерпылев"}
+    company:
+      - {language: en, text: Plesk}
+    bio:
+      - {language: en, text: "TechLead from Plesk. For the last 4 years, he has been studying and implementing DevOps practices.\
+            \ The organizer of DevOps guild for exchange of experience between teams."}
+      - {language: ru, text: "Техлид из Plesk. Последние 4 года изучает и внедряет DevOps-практики. Организатор DevOps-гил\
+            ьдии для обмена опытом между командами."}
+  - id: 1450
+    photoFileName: 1450.jpg
+    name:
+      - {language: en, text: "Sergey Khrapov"}
+      - {language: ru, text: "Сергей Храпов"}
+    company:
+      - {language: en, text: Sber}
+      - {language: ru, text: Сбер}
+    bio:
+      - language: en
+        text: "Responsible for methodology and DevOps tools at Sber. Leader of the professional DevOps engineers community.\n\
+            Sergey participated in the technological transformation of Sber in terms of building and applying DevOps practices\
+            \ on the entire perimeter of automated systems."
+      - language: ru
+        text: "Отвечает за методологию, инструменты DevOps в Сбере. Является лидером профессионального сообщества DevOps-и\
+            нженеров в Банке.\nУчаствовал в технологической трансформации Сбера в части выстраивания и применении практик\
+            \ DevOps на всем периметре автоматизированных систем."
+  - id: 1451
+    photoFileName: 1451.jpg
+    name:
+      - {language: en, text: "Federico Fregosi"}
+    company:
+      - {language: en, text: Contino}
+    bio:
+      - language: en
+        text: "Experienced engineering leader with a strong interest in distributed, highly-scalable and cloud-based systems.\n\
+            Currently at Contino as Principal Consultant, responsible for the swift completion, mentorship and technical leadership\
+            \ of transformation projects in large, regulated enterprises.\nWorked for years in DevOps/SRE Lead roles, focused\
+            \ on infrastructure management and Cloud on the 3 major public cloud providers. Experienced in the finance sector,\
+            \ specifically on high-performance payment platforms and systems compliance.\nRegular speaker at conferences and\
+            \ meetups.\nFederico holds an MSc in Software Engineering from City University London."
+  - id: 1452
+    photoFileName: 1452.jpg
+    name:
+      - {language: en, text: "Victoria Almazova"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - language: en
+        text: "Security girl in Microsoft Norway with an experience of more than 14 years in security. She spends all her\
+            \ time working closely with developers and architects to make security built-in from the design level. She is\
+            \ a big supporter of making security as culture and shifting security to the left. Victoria believes that empowering\
+            \ developers and architects in security tasks by helping with education will increase the security level without\
+            \ increasing additional workload.\n\nDuring her free time, she deep dives into cloud security, development, identity,\
+            \ and access management."
+    twitter: texnokot
+  - id: 1453
+    photoFileName: 1453.jpg
+    name:
+      - {language: en, text: "Patrick Debois"}
+    company:
+      - {language: en, text: "Snyk Ltd."}
+    bio:
+      - {language: en, text: "DevOps and media enthusiast with an open mind. Released DevOps on to the world by starting devopsdays.\
+            \ Now working in the field of media in the race to make video truely interactive."}
+    twitter: patrickdebois
+  - id: 1454
+    photoFileName: 1454.jpg
+    name:
+      - {language: en, text: "Cobus Bernard"}
+    company:
+      - {language: en, text: AWS}
+    bio:
+      - language: en
+        text: "Cobus is a Senior Developer Advocate at AWS empowering developers to learn and understand how best to use AWS.\
+            \ His primary interests are in security, containers, and DevOps.\n\nBefore joining AWS, he was a customer for\
+            \ 8 years building in the FinTech, HealthCare, and Online Gaming space. In his 14 years of software development\
+            \ experience, he has worked on C."
+  - id: 1455
+    photoFileName: 1455.jpg
+    name:
+      - {language: en, text: "Andrey Devyatkin"}
+      - {language: ru, text: "Андрей Девяткин"}
+    company:
+      - {language: en, text: FivexL}
+    bio:
+      - language: en
+        text: "Andrey is a co-founder of the FivexL consulting agency and a consultant specializing in building cloud-native\
+            \ application delivery platforms in the AWS cloud using HashiCorp tools. \n\nBefore that, he worked as Executive\
+            \ Director and Senior Consultant for Continuous Delivery at Praqma Sweden, and also as Continuous Integration\
+            \ and Architect at Ericsson.\nIn his free time, Andrey organizes meetups (HashiCorp User Group Stockholm, Jenkins\
+            \ User Group Stockholm, Continuous Delivery Users Stockholm, Cloud Native Las Palmas de Gran Canaria) and speaks\
+            \ at conferences (HashiConf EU 2020, DevOps Pro EU 2020, DevOpsDays Madrid 2020). He also records the DevSecOps\
+            \ Talks podcast."
+      - language: ru
+        text: "Андрей является со-основателем консалтинг-агенства FivexL и консультантом, специализирующимся на построении\
+            \ cloud-native платформ доставки приложений в облаке AWS с применением инструментов HashiCorp. \n\nДо этого ра\
+            ботал исполнительным директором и старшим консультантом по Continuous Delivery в Praqma Sweden, а также Continuous\
+            \ Integration и Architect в Ericsson. \nВ свободное от работы время Андрей организует митапы (HashiCorp User Group\
+            \ Stockholm, Jenkins User Group Stockholm, Continuous Delivery Users Stockholm, Cloud Native Las Palmas de Gran\
+            \ Canaria) и выступает на конференциях (последние выступления на HashiConf EU 2020, DevOps Pro EU 2020, DevOpsDays\
+            \ Madrid 2020), а также записывает подкаст DevSecOps Talks."
+    twitter: andrey9kin
+  - id: 1456
+    photoFileName: 1456.jpg
+    name:
+      - {language: en, text: "Anatoliy Soldatov"}
+      - {language: ru, text: "Анатолий Солдатов"}
+    company:
+      - {language: en, text: Avito}
+      - {language: ru, text: Авито}
+    bio:
+      - {language: en, text: "Responsible for NoSQL databases and data stores in Avito."}
+      - {language: ru, text: "Занимается NoSQL БД и хранилищами в Авито."}
+  - id: 1457
+    photoFileName: 1457.jpg
+    name:
+      - {language: en, text: "Sasha Rosenbaum"}
+      - {language: ru, text: "Саша Розенбаум"}
+    company:
+      - {language: en, text: GitHub}
+    bio:
+      - language: en
+        text: "Sasha is a Product Manager at GitHub, focused on helping engineers be successful with using GitHub for work\
+            \ as well as for open source.\n\nIn her career, Sasha has worked in development, operations, consulting, and cloud\
+            \ architecture. Sasha is an organizer of DevOpsDays Chicago, a chair of DeliveryConf, and a published author."
+      - language: ru
+        text: "Саша — product manager в GitHub, помогает инженерам удачно использовать GitHub для работы и опенсорса.\n\nЗ\
+            а время своей карьеры Саша поработала в разработке, операциях, консультировании и в облачной архитектуре. Саша\
+            \ также организатор DevOpsDay в Чикаго, председатель DeliveryConf и автор различных публикаций."
+    twitter: DivineOps
+  - id: 1458
+    photoFileName: 1458.jpg
+    name:
+      - {language: en, text: "Chris Kim"}
+    company:
+      - {language: en, text: "Rancher Labs"}
+    bio:
+      - {language: en, text: "Chris Kim is a Technical Product Manager at Rancher Labs. Chris originally developed HobbyFarm\
+            \ as an interactive, on-premise hosted learning tool to help deliver efficient cloud native training courses to\
+            \ students, in reaction to a lack of suitable tools available during the time. In addition, Chris developed Submariner,\
+            \ an open source project to facilitate cross cluster network connectivity while helping customers architect Kubernetes\
+            \ based solutions. He is an active contributor to Kubernetes-based open source projects such as Rancher, HobbyFarm,\
+            \ and Submariner."}
+    twitter: badcodeguy
+  - id: 1459
+    photoFileName: 1459.jpg
+    name:
+      - {language: en, text: "Eamon Bauman"}
+    company:
+      - {language: en, text: "Rancher Labs"}
+    bio:
+      - {language: en, text: "Eamon Bauman is a developer and systems engineer with 10+ years in the industry. He has worked\
+            \ in telecommunications, software development, higher education, and now the cloud-native field, where he is a\
+            \ field engineer at Rancher Labs."}
+    twitter: eamonb
+  - id: 1460
+    photoFileName: 1460.jpg
+    name:
+      - {language: en, text: "Heidi Waterhouse"}
+    company:
+      - {language: en, text: LaunchDarkly}
+    bio:
+      - {language: en, text: "Heidi is a developer advocate with LaunchDarkly. She delights in working at the intersection\
+            \ of usability, risk reduction, and cutting-edge technology. One of her favorite hobbies is talking to developers\
+            \ about things they already knew but had never thought of that way before. She sews all her conference dresses\
+            \ so that she's sure there is a pocket for the mic."}
+    twitter: wiredferret
+    gitHub: wiredferret
+  - id: 1461
+    photoFileName: 1461.jpg
+    name:
+      - {language: en, text: "Ana Margarita Medina"}
+    company:
+      - {language: en, text: Gremlin}
+    bio:
+      - {language: en, text: "Ana Margarita is currently working as a Senior Chaos Engineer at Gremlin, helping companies\
+            \ avoid outages by running proactive chaos engineering experiments. Before Gremlin, she has worked at various-sized\
+            \ companies including Google, Uber, SFEFCU, and Miami-based startup. Ana is an internationally recognized speaker\
+            \ and has spoken at: AWS re:Invent, KubeCon, DockerCon, DevOpDays, AllDayDevOps, Write/Speak/Code, and many others.\
+            \ Catch her tweeting at @Ana_M_Medina about traveling, diversity in tech, and mental health."}
+    twitter: Ana_M_Medina
+  - id: 1462
+    photoFileName: 1462.jpg
+    name:
+      - {language: en, text: "Roman Boiko"}
+      - {language: ru, text: "Роман Бойко"}
+    company:
+      - {language: en, text: AWS}
+    bio:
+      - language: en
+        text: "Roman works as Solutions Architect at AWS, where he helps customers solve technical challenges and build effective\
+            \ solutions on their platform.\nBefore AWS, Roman worked for other well-known companies and has vast experience\
+            \ in software development."
+      - language: ru
+        text: "Работает Solutions Architect в AWS, где помогает своим заказчикам решать различные технические задачи и стр\
+            оить эффективные решения на их платформе.\nДо AWS работал в других известных компаниях и имеет богатый опыт в\
+            \ разработке ПО."
+  - id: 1463
+    photoFileName: 1463.jpg
+    name:
+      - {language: en, text: "Dmitry Shitov"}
+      - {language: ru, text: "Дмитрий Шитов"}
+    company:
+      - {language: en, text: "1C Rarus"}
+      - {language: ru, text: 1С-Рарус}
+    bio:
+      - {language: en, text: "For more than 20 years Dmitry has been developing and implementing corporate systems on the\
+            \ 1C: Enterprise platform at 1C-Rarus. For the past three years, he has been managing projects in Vietnam and\
+            \ developing solutions for international markets."}
+      - {language: ru, text: "Более 20 лет занимается разработкой и внедрением корпоративных систем на платформе 1С: Предп\
+            риятие в компании 1С-Рарус. В течение последних трех лет руководит портфелем проектов во Вьетнаме и развивает\
+            \ решения для международных рынков."}
+  - id: 1464
+    photoFileName: 1464.jpg
+    name:
+      - {language: en, text: "Mikhail Maryfich"}
+      - {language: ru, text: "Михаил Марюфич"}
+    company:
+      - {language: en, text: "Mail.Ru Group"}
+    bio:
+      - {language: en, text: "Machine Learning Engineer at Mail.Ru Group, specializes in Deep Learning. Mikhail has been engaged\
+            \ in machine learning for over 4 years, solves E2E problems, from problem formulation to rolling out into industrial\
+            \ operation and further system support. In his professional career, he values the reproducibility of results and\
+            \ good development processes above all."}
+      - {language: ru, text: "Machine Learning Engineer в Mail.Ru Group, специализируется на Deep Learning. Занимается маш\
+            инным обучением более 4 лет, решает задачи E2E, от формулировки проблемы до выкатки в промышленную эксплуатаци\
+            ю и дальнейшей поддержки системы. В профессиональной деятельности превыше всего ценит воспроизводимость резуль\
+            татов и хорошие процессы разработки."}
+    twitter: mikhailmar
+  - id: 1465
+    photoFileName: 1465.jpg
+    name:
+      - {language: en, text: "Garri Dadayan"}
+      - {language: ru, text: "Гарри Дадаян"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Works as a system engineer at Kaspersky Lab. The knight of the pillow and the thunderstorm of\
+            \ all cookies, considers the sphere to be an ideal figure and strive for it."}
+      - {language: ru, text: "Работает системным инженером в Лаборатории Касперского. Рыцарь подушки и гроза всех печенек\
+            , считает сферу идеальной фигурой и стремится к ней."}
+  - id: 1466
+    photoFileName: 1466.jpg
+    name:
+      - {language: en, text: "Sofya Tsiguro"}
+      - {language: ru, text: "Софья Цигуро"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Bachelor of \"Information Security\" at MPEI. Sofya completed an internship at Kaspersky and\
+            \ moved to a full-time position in the DevOps engineering team. Deals with the support of a distributed data processing\
+            \ system."}
+      - {language: ru, text: "Выпускница НИУ «МЭИ», направление «Информационная безопасность». Прошла стажировку в Лаборат\
+            ории Касперского и перешла на штатную должность в команде DevOps-инженеров. Занимается поддержкой распределенн\
+            ой системы вычислений."}
+  - id: 1467
+    photoFileName: 1467.jpg
+    name:
+      - {language: en, text: "Phil Laszkowicz"}
+    company:
+      - {language: en, text: Futurice}
+    bio:
+      - {language: en, text: "Experienced creative technologist delivering over two decades of mobile, web, cloud, and edge\
+            \ solutions, focused on neural network/deep learning technologies, with leading organizations including ARM, Audi,\
+            \ Citigroup, Nvidia, Oracle, Porsche, Sony, and United Nations. YC Combinator alumni, and co-author of several\
+            \ books on software development and machine learning."}
+  - id: 1468
+    photoFileName: 1468.jpg
+    name:
+      - {language: en, text: "Nic Jackson"}
+    company:
+      - {language: en, text: HashiCorp}
+    bio:
+      - {language: en, text: "Nic Jackson is a developer advocate at HashiCorp and the author of \"Building Microservices\
+            \ in Go,\" a book that examines the best patterns and practices for building microservices with the Go programming\
+            \ language. When not working, you can find Nic contributing to the open source developer tool Shipyard and teaching\
+            \ application development on YouTube."}
+  - id: 1469
+    photoFileName: 1469.jpg
+    name:
+      - {language: en, text: "Artem Zhelezov"}
+      - {language: ru, text: "Артем Железов"}
+    company:
+      - {language: en, text: FivexL}
+    bio:
+      - {language: en, text: "An engineer-physicist by education, for 8 years he was engaged in computer modeling of various\
+            \ physical processes. In his free time, Artem was fond of studying the Python programming language and was interested\
+            \ in cloud technologies. Eventually, he got an opportunity to join a startup company to pursue his passion for\
+            \ building software systems. Thus, over the past 3 years, he managed to participate in many projects. With the\
+            \ last of them, he already works independently."}
+      - {language: ru, text: "Инженер-физик по образованию, в течение 8 лет занимался компьютерным моделированием различны\
+            х физических процессов. В свободное время увлекался изучением языка программирования Python, интересовался обл\
+            ачными технологиями. В какой-то момент начал помогать команде системных инженеров развивать облачную инфрастру\
+            ктуру. Таким образом, за последние 3 года успел поучаствовать в многих проектах. С последним из них работает у\
+            же самостоятельно."}
+  - id: 1470
+    photoFileName: 1470.jpg
+    name:
+      - {language: en, text: "Mikhail Bizhan"}
+      - {language: ru, text: "Михаил Бижан"}
+    company:
+      - {language: en, text: "OTP Bank Russia"}
+      - {language: ru, text: "ОТП Банк"}
+    bio:
+      - language: en
+        text: "Responsible for product development, automation and enterprise architecture at OTP Bank Russia.\n\nPreviously\
+            \ - Director of Automation and leader of digital transformation at Raiffeisenbank. Also Mikhail took part at technological\
+            \ transformation of Sberbank."
+      - language: ru
+        text: "Отвечает за продуктовую разработку, автоматизацию и корпоративную архитектуру в ОТП Банке.\nРанее — директо\
+            р по автоматизации и лидер Digital-трансформации Райффайзенбанка. До этого принимал участие в технологической\
+            \ трансформации Сбербанка."
+  - id: 1471
+    photoFileName: 1471.jpg
+    name:
+      - {language: en, text: "Kris Buytaert"}
+    company:
+      - {language: en, text: Inuits}
+    bio:
+      - language: en
+        text: "Kris Buytaert is a long time Linux and open source Consultant. He's one of the instigators of the DevOps movement,\
+            \ currently working for Inuits.\n\nHe is frequently speaking at, or organizing different international conferences\
+            \ and has written about the same subjects in different Books, Papers, and Articles.\n\nHe spends most of his time\
+            \ working on bridging the gap between developers and operations with a strong focus on High Availability, Scalability,\
+            \ Virtualisation, and Large Infrastructure Management projects hence trying to build infrastructures that can\
+            \ survive the 10th-floor test, better known today as the cloud while actively promoting the DevOps idea !\n\n\
+            His blog titled \"Everything is a Freaking DNS Problem\" can be found at http://www.krisbuytaert.be/blog/"
+    twitter: KrisBuytaert
+  - id: 1472
+    photoFileName: 1472.jpg
+    name:
+      - {language: en, text: "Mark Smalley"}
+    company:
+      - {language: en, text: Smalley.IT}
+    bio:
+      - {language: en, text: "Mark is a writer, speaker, trainer, and bridge-builder. He is Content Architect at Giarte, IT\
+            \ Management Consultant at Smalley.IT, and Master Trainer for GamingWorks' The Phoenix Project business simulation.\
+            \ He has contributed to many bodies of IT knowledge and was Global Ambassador for the DevOps Agile Skills Association.\
+            \ He was Lead Editor of ITIL 4 High-velocity IT. Mark has spoken at hundreds of events in more than thirty countries."}
+    twitter: marksmalley
+  - id: 1473
+    photoFileName: 1473.jpg
+    name:
+      - {language: en, text: "Oleg Skrynnik"}
+    company:
+      - {language: en, text: Cleverics}
+    bio:
+      - {language: en, text: "Oleg Skrynnik is a managing partner at Cleverics. Oleg has worked in IT for more than twenty\
+            \ years, mainly in management positions. He is experienced in establishing and transforming IT departments in\
+            \ large companies. He applies his professional experience in consulting projects and shares the lessons learned\
+            \ with attendees of his training, masterclasses and business simulations. Oleg co-founded itSMF Russia and is\
+            \ a recognized speaker and author. He won first prize at ITSM in Russia in 2014 and 2017 for his articles and\
+            \ wrote the book DevOps — A Business Perspective, on which the EXIN DevOps Foundation exam is based."}
+  - id: 1474
+    photoFileName: 1474.jpg
+    name:
+      - {language: en, text: "Juraci Paixão Kröhling"}
+    company:
+      - {language: en, text: "Red Hat"}
+    bio:
+      - {language: en, text: "Juraci Paixão Kröhling is a software engineer at Red Hat working in the Distributed Tracing\
+            \ team. He's a maintainer on the Jaeger project and contributor to the OpenTelemetry project and has talked about\
+            \ distributed tracing at conferences like KubeCon, OpenSource Summit, FOSDEM, Devoxx, JavaLand, GIDS, among others."}
+    twitter: jpkrohling
+    gitHub: jpkrohling
+  - id: 1475
+    photoFileName: 1475.jpg
+    name:
+      - {language: en, text: "Dan Lüdtke"}
+    company:
+      - {language: en, text: Google}
+    bio:
+      - {language: en, text: "Dan served his country, worked as a security consultant, once wrote a book about IPv6, contributes\
+            \ to open source software projects, helps to organize large hacker events, runs an autonomous system for fun,\
+            \ and dreams of space travel. He works at Google Stadia as a Site Reliability Engineering Manager."}
+    twitter: danrl_com
+  - id: 1476
+    photoFileName: 1476.jpg
+    name:
+      - {language: en, text: "Charity Majors"}
+    company:
+      - {language: en, text: Honeycomb}
+    bio:
+      - {language: en, text: "Co-founder/CTO of Honeycomb, Ops engineer, formerly of Parse, Facebook, and Linden Lab. Co-author\
+            \ of Database Reliability Engineering."}
+    twitter: mipsytipsy
+  - id: 1477
+    photoFileName: 1477.jpg
+    name:
+      - {language: en, text: "Tim Hinrichs"}
+    company:
+      - {language: en, text: "Styra, Inc."}
+    bio:
+      - {language: en, text: "Tim Hinrichs is a co-creator of the Open Policy Agent project and the CTO and co-founder of\
+            \ Styra. Before that, he was a PTL in OpenStack and was a software engineer at VMware. Tim spent the last 20 years\
+            \ developing declarative languages for different domains such as cloud-computing, software-defined networking,\
+            \ configuration management, web security, and access-control. He received his PhD in Computer Science from Stanford\
+            \ University in 2008."}
+    twitter: tlhinrichs
+    gitHub: timothyhinrichs
+  - id: 1478
+    photoFileName: 1478.jpg
+    name:
+      - {language: en, text: "Eric Beard"}
+    company:
+      - {language: en, text: AWS}
+    bio:
+      - {language: en, text: "Eric Z. Beard is a Software Development Manager at Amazon Web Services in Seattle, Washington.\
+            \ His technology career spans two decades, preceded by service in the United States Marine Corps as a Russian\
+            \ interpreter and arms control inspector. Before Amazon, Eric was the Chief Technology Officer at AutoLoop, a\
+            \ leading automotive software company."}
+      - {language: ru, text: "Eric Z. Beard is a Software Development Manager at Amazon Web Services in Seattle, Washington.\
+            \ His technology career  spans two decades, preceded by service in the United States Marine Corps as a Russian\
+            \ interpreter and arms control inspector. Prior to Amazon, Eric was the Chief Technology Officer at AutoLoop,\
+            \ a leading automotive software company."}
+    twitter: ericzbeard
+  - id: 1479
+    photoFileName: 1479.jpg
+    name:
+      - {language: en, text: "Rico Huijbers"}
+    company:
+      - {language: en, text: AWS}
+    bio:
+      - {language: en, text: "Rico has always loved building tools for developers: scratching your itch is just so satisfying,\
+            \ and why SHOULDN'T programming be easier? He now gets to work on the AWS Cloud Development Kit to make it trivial\
+            \ for thousands of developers across the world to deploy to AWS."}
+    twitter: rix0rrr
