@@ -100,6 +100,19 @@ events:
     talkIds: [2119, 2115, 2116, 2548, 2549, 2550, 2551, 2118, 2131, 2552, 2122, 2553, 2125, 2554, 2567, 2555, 2568, 2128,
               2556, 2127, 2130, 2117, 2143, 2557, 2558, 2559, 2402, 2135, 2133, 2138, 2357, 2139, 2560, 2561, 2126, 2142, 2569,
               2129, 2140, 2562, 2262, 2532, 2570]
+  - eventTypeId: 1
+    name:
+      - {language: en, text: "DevOops 2020 SPb"}
+      - {language: ru, text: "DevOops 2020 СПб"}
+    startDate: "2020-12-02"
+    endDate: "2020-12-05"
+    siteLink:
+      - {language: en, text: "https://devoops-piter.ru/en/"}
+      - {language: ru, text: "https://devoops-piter.ru/"}
+    youtubeLink: https://live.jugru.org/events/devoops
+    placeId: 24
+    talkIds: [2761, 2762, 2763, 2764, 2765, 2766, 2767, 2768, 2769, 2770, 2771, 2772, 2773, 2774, 2775, 2776, 2777, 2778,
+              2779, 2780, 2781, 2782, 2783, 2784, 2785, 2786, 2787, 2788, 2789, 2790, 2791, 2792, 2793, 2794, 2795, 2796, 2797]
   # DotNext
   - eventTypeId: 2
     name:
@@ -276,6 +289,18 @@ events:
     talkIds: [1371, 1632, 1362, 2221, 2411, 2412, 2309, 1349, 1352, 1358, 1347, 1374, 1361, 2413, 2414, 2415, 2339, 1845,
               1351, 1366, 1348, 1356, 1350, 2574, 2454, 2416, 2417, 2418, 2422, 1367, 1375, 2419, 2420, 1359, 1355, 1369, 2421,
               1913]
+  - eventTypeId: 2
+    name:
+      - {language: en, text: "DotNext 2020 Msc"}
+      - {language: ru, text: "DotNext 2020 Мск"}
+    startDate: "2020-12-02"
+    endDate: "2020-12-05"
+    siteLink:
+      - {language: ru, text: "https://dotnext-moscow.ru/"}
+    youtubeLink: https://live.jugru.org/events/dotnext
+    placeId: 24
+    talkIds: [2798, 2799, 2800, 2801, 2802, 2803, 2804, 2805, 2807, 2808, 2809, 2810, 2811, 2812, 2813, 2814, 2815, 2816,
+              2817, 2818, 2819, 2820, 2821, 2822, 2823, 2824, 2825, 2826, 2827, 2828, 2829, 2830]
   # Heisenbug
   - eventTypeId: 3
     name:

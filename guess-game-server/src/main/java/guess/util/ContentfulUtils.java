@@ -603,7 +603,7 @@ public class ContentfulUtils {
      * @return talk validity
      */
     static boolean isValidTalk(ContentfulTalk<? extends ContentfulTalkFields> talk, boolean ignoreDemoStage) {
-        if (talk.getFields().getTalkDay() == null) {
+        if ((talk.getFields().getTalkDay() == null) || (talk.getFields().getTrackTime() == null) || (talk.getFields().getTrack() == null)) {
             return false;
         }
 
