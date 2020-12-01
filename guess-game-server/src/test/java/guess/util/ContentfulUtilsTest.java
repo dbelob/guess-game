@@ -857,9 +857,12 @@ class ContentfulUtilsTest {
         assertDoesNotThrow(() -> ContentfulUtils.getSpeakers(Conference.JPOINT, "code"));
     }
 
-    private static ContentfulTalk<ContentfulTalkFieldsCommon> createContentfulTalk(Long talkDay, Boolean sdTrack, Boolean demoStage) {
+    private static ContentfulTalk<ContentfulTalkFieldsCommon> createContentfulTalk(Long talkDay, LocalTime trackTime,
+                                                                                   Long track, Boolean sdTrack, Boolean demoStage) {
         ContentfulTalkFieldsCommon contentfulTalkFieldsCommon = new ContentfulTalkFieldsCommon();
         contentfulTalkFieldsCommon.setTalkDay(talkDay);
+        contentfulTalkFieldsCommon.setTrackTime(trackTime);
+        contentfulTalkFieldsCommon.setTrack(track);
         contentfulTalkFieldsCommon.setSdTrack(sdTrack);
         contentfulTalkFieldsCommon.setDemoStage(demoStage);
 
@@ -872,17 +875,21 @@ class ContentfulUtilsTest {
     @Test
     void getTalks(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
         new Expectations() {{
+            final Long TALK_DAY = 1L;
+            final LocalTime TRACK_TIME = LocalTime.now();
+            final Long TRACK = 1L;
+
             ContentfulTalkResponse<ContentfulTalkFieldsCommon> response = new ContentfulTalkResponseCommon();
             response.setItems(List.of(
-                    createContentfulTalk(1L, null, null),
-                    createContentfulTalk(1L, null, Boolean.TRUE),
-                    createContentfulTalk(1L, null, Boolean.FALSE),
-                    createContentfulTalk(1L, Boolean.TRUE, null),
-                    createContentfulTalk(1L, Boolean.TRUE, Boolean.TRUE),
-                    createContentfulTalk(1L, Boolean.TRUE, Boolean.FALSE),
-                    createContentfulTalk(1L, Boolean.FALSE, null),
-                    createContentfulTalk(1L, Boolean.FALSE, Boolean.TRUE),
-                    createContentfulTalk(1L, Boolean.FALSE, Boolean.FALSE)
+                    createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, null, null),
+                    createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, null, Boolean.TRUE),
+                    createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, null, Boolean.FALSE),
+                    createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.TRUE, null),
+                    createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.TRUE, Boolean.TRUE),
+                    createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.TRUE, Boolean.FALSE),
+                    createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, null),
+                    createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, Boolean.TRUE),
+                    createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, Boolean.FALSE)
             ));
 
             restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulTalkResponseCommon.class);
@@ -938,29 +945,37 @@ class ContentfulUtilsTest {
     @DisplayName("isValidTalk method tests")
     class IsValidTalkTest {
         private Stream<Arguments> data() {
+            final Long TALK_DAY = 1L;
+            final LocalTime TRACK_TIME = LocalTime.now();
+            final Long TRACK = 1L;
+
             return Stream.of(
-                    arguments(createContentfulTalk(null, null, null), false, false),
-                    arguments(createContentfulTalk(null, null, null), true, false),
+                    arguments(createContentfulTalk(null, TRACK_TIME, TRACK, null, null), false, false),
+                    arguments(createContentfulTalk(null, TRACK_TIME, TRACK, null, null), true, false),
+                    arguments(createContentfulTalk(TALK_DAY, null, TRACK, null, null), false, false),
+                    arguments(createContentfulTalk(TALK_DAY, null, TRACK, null, null), true, false),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, null, null, null), false, false),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, null, null, null), true, false),
 
-                    arguments(createContentfulTalk(1L, null, null), false, true),
-                    arguments(createContentfulTalk(1L, null, Boolean.TRUE), false, true),
-                    arguments(createContentfulTalk(1L, null, Boolean.FALSE), false, true),
-                    arguments(createContentfulTalk(1L, Boolean.TRUE, null), false, true),
-                    arguments(createContentfulTalk(1L, Boolean.TRUE, Boolean.TRUE), false, true),
-                    arguments(createContentfulTalk(1L, Boolean.TRUE, Boolean.FALSE), false, true),
-                    arguments(createContentfulTalk(1L, Boolean.FALSE, null), false, true),
-                    arguments(createContentfulTalk(1L, Boolean.FALSE, Boolean.TRUE), false, true),
-                    arguments(createContentfulTalk(1L, Boolean.FALSE, Boolean.FALSE), false, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, null, null), false, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, null, Boolean.TRUE), false, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, null, Boolean.FALSE), false, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.TRUE, null), false, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.TRUE, Boolean.TRUE), false, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.TRUE, Boolean.FALSE), false, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, null), false, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, Boolean.TRUE), false, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, Boolean.FALSE), false, true),
 
-                    arguments(createContentfulTalk(1L, null, null), true, true),
-                    arguments(createContentfulTalk(1L, null, Boolean.TRUE), true, false),
-                    arguments(createContentfulTalk(1L, null, Boolean.FALSE), true, true),
-                    arguments(createContentfulTalk(1L, Boolean.TRUE, null), true, false),
-                    arguments(createContentfulTalk(1L, Boolean.TRUE, Boolean.TRUE), true, false),
-                    arguments(createContentfulTalk(1L, Boolean.TRUE, Boolean.FALSE), true, false),
-                    arguments(createContentfulTalk(1L, Boolean.FALSE, null), true, true),
-                    arguments(createContentfulTalk(1L, Boolean.FALSE, Boolean.TRUE), true, false),
-                    arguments(createContentfulTalk(1L, Boolean.FALSE, Boolean.FALSE), true, true)
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, null, null), true, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, null, Boolean.TRUE), true, false),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, null, Boolean.FALSE), true, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.TRUE, null), true, false),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.TRUE, Boolean.TRUE), true, false),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.TRUE, Boolean.FALSE), true, false),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, null), true, true),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, Boolean.TRUE), true, false),
+                    arguments(createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, Boolean.FALSE), true, true)
             );
         }
 
