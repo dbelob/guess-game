@@ -289,6 +289,18 @@ events:
     talkIds: [1371, 1632, 1362, 2221, 2411, 2412, 2309, 1349, 1352, 1358, 1347, 1374, 1361, 2413, 2414, 2415, 2339, 1845,
               1351, 1366, 1348, 1356, 1350, 2574, 2454, 2416, 2417, 2418, 2422, 1367, 1375, 2419, 2420, 1359, 1355, 1369, 2421,
               1913]
+  - eventTypeId: 2
+    name:
+      - {language: en, text: "DotNext 2020 Msc"}
+      - {language: ru, text: "DotNext 2020 Мск"}
+    startDate: "2020-12-02"
+    endDate: "2020-12-05"
+    siteLink:
+      - {language: ru, text: "https://dotnext-moscow.ru/"}
+    youtubeLink: https://live.jugru.org/events/dotnext
+    placeId: 24
+    talkIds: [2798, 2799, 2800, 2801, 2802, 2803, 2804, 2805, 2806, 2807, 2808, 2809, 2810, 2811, 2812, 2813, 2814, 2815,
+              2816, 2817, 2818, 2819, 2820, 2821, 2822, 2823, 2824, 2825, 2826, 2827, 2828, 2829, 2830]
   # Heisenbug
   - eventTypeId: 3
     name:

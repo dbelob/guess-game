@@ -6575,12 +6575,17 @@ speakers:
     photoFileName: 0432.jpg
     name:
       - {language: en, text: "Vladimir Khorikov"}
-    company: []
+      - {language: ru, text: "Владимир Хориков"}
+    company:
+      - {language: en, text: "Enterprise Craftsmanship LLC"}
     bio:
       - {language: en, text: "Vladimir Khorikov is a Microsoft MVP and has been professionally involved in software development\
             \ for more than 10 years. Nowadays he specializes in rescuing legacy code bases and helping teams with large enterprise\
             \ applications. He practices clean code, domain-driven design, functional programming, and other techniques that\
             \ help him on this path."}
+      - {language: ru, text: "Владимир Хориков — автор серии курсов на Pluralsight на тему Domain-driven design. Также нед\
+            авно опубликовал книгу [Unit Testing Principles, Practices, and Patterns](https://amzn.to/2QXS2ch), перевод ко\
+            торой на русский выйдет в декабре 2020 года."}
     twitter: vkhorikov
     mvp: true
   - id: 433
@@ -6771,18 +6776,14 @@ speakers:
       - {language: en, text: "Sergey Bykov"}
       - {language: ru, text: "Сергей Быков"}
     company:
-      - {language: en, text: Microsoft}
+      - {language: en, text: "Temporal Technologies"}
     bio:
-      - {language: en, text: "Sergey Bykov is one of the Orleans project founders at Microsoft Research and continues to lead\
-            \ its open source development now in the Xbox division. Before joining Research Sergey worked in several Microsoft\
-            \ groups, from BizTalk and Host Integration Server to embedded operating systems for POS terminals and Bing. The\
-            \ mediocre state of developer tools for cloud services and distributed systems at the time prompted him to join\
-            \ the Orleans project in order to improve developers' productivity in this field."}
-      - {language: ru, text: "Сергей Быков начинал проект Orleans в Microsoft Research и продолжает руководить его разрабо\
-            ткой в open source в подразделении Xbox. До прихода в Research Сергей проработал в различных группах Microsoft,\
-            \ от BizTalk и Host Integration Server до встроенных операционных систем для кассовых терминалов и Bing. Удруч\
-            ающая ситуация со средствами разработки для облачных сервисов и распределённых систем побудила его заняться пр\
-            оектом Orleans с целью качественно повысить производительность труда программистов в этой сфере."}
+      - {language: en, text: "Sergey Bykov was one of the founders of the Orleans project at Microsoft Research and continued\
+            \ to lead its development for over a decade. Before joining Research Sergey had worked in several Microsoft product\
+            \ groups, from BizTalk and Host Integration Server to embedded operating systems for Point of Sale terminals to\
+            \ Bing. The mediocre state of developer tools for cloud services and distributed systems at the time inspired\
+            \ him to join the Orleans project to qualitatively improve developer productivity in that area. Recently Sergey\
+            \ joined Temporal Technologies to continue his quest to liberate developers from writing mundane code."}
     twitter: sergeybykov
   - id: 446
     photoFileName: 0446.jpg
@@ -6926,10 +6927,11 @@ speakers:
     bio:
       - {language: en, text: "Maarten Balliauw loves building web and cloud apps. His main interests are in ASP.NET MVC, C#,\
             \ Microsoft Azure, PHP and application performance. He co-founded MyGet and is a Developer Advocate at JetBrains.\
-            \ He’s an ASP Insider and a former MVP for Microsoft Azure. Maarten is a frequent speaker at various national\
+            \ He's an ASP Insider and a former MVP for Microsoft Azure. Maarten is a frequent speaker at various national\
             \ and international events and organizes Azure User Group events in Belgium. In his free time, he likes brewing\
-            \ his own beer. Maarten’s blog can be found at http://blog.maartenballiauw.be"}
+            \ his own beer. Maarten's blog can be found at http://blog.maartenballiauw.be"}
     twitter: maartenballiauw
+    gitHub: maartenba
     mvp: true
   - id: 456
     photoFileName: 0456.jpg
@@ -7426,17 +7428,18 @@ speakers:
       - {language: en, text: "Igor Labutin"}
       - {language: ru, text: "Игорь Лабутин"}
     company:
-      - {language: en, text: Lanit-Terkom}
+      - {language: en, text: Lanit-Tercom}
       - {language: ru, text: Ланит-Терком}
     bio:
-      - {language: en, text: "An architect. Started career as a developer 16 years ago in the land of C++. Igor has been developing\
-            \ for Windows, Linux, QNX in the wide variety of areas: from video processing to network card drivers with company's\
-            \ own TCP/IP implementation. 9 years ago he entered .NET/C# world and also devoted himself to software architecture\
-            \ and performance issues. And special attention was focused on challenges in the interprocess communications."}
-      - {language: ru, text: "Архитектор. Начал 16 лет назад программистом на С++, разрабатывал под Windows, Linux, QNX в\
-            \ областях начиная от обработки видео до драйверов сетевых карт с полноценной реализацией TCP/IP стека. 9 лет\
-            \ назад пришёл в мир .NET/C# и стал, кроме кодирования, заниматься архитектурой, вопросами производительности\
-            , особое внимание уделяя вопросам взаимодействия приложений."}
+      - {language: en, text: "An architect. 16 years ago Igor started as a C++ developer, worked with Win, Linux, QNX in areas\
+            \ ranging from video processing to network card drivers with a full implementation of the TCP/IP stack. He switched\
+            \ to C# since 2009 and started dealing with architecture as well. His special focus is on the challenges of apps\
+            \ interaction, performance problems, as well as the convenience of developers working on complex projects."}
+      - {language: ru, text: "Архитектор. Начинал программистом на С++, писал под Windows, Linux, QNX в областях от обрабо\
+            тки видео до драйверов сетевых карт с полноценной реализацией TCP/IP-стека. С 2009 года пишет на C# и, помимо\
+            \ кодирования, стал заниматься архитектурой. Особое внимание уделяет проблемам взаимодействия приложений, проб\
+            лемам производительности, а также удобству разработчиков при работе над сложными проектами."}
+    twitter: ilabutin
   - id: 485
     photoFileName: 0485.jpg
     name:
@@ -7512,7 +7515,7 @@ speakers:
       - {language: en, text: "Works at the Rider IDE project in JetBrains. During spare time likes to fix bugs in open source\
             \ projects — such as mono and MSBuild."}
       - {language: ru, text: "Работает в компании JetBrains в проекте Rider. В свободное время любит разбираться и фиксить\
-            \ баги в open source проектах — таких, как mono и MSBuild."}
+            \ баги в open source-проектах — таких, как mono и MSBuild."}
     twitter: filippovma
   - id: 490
     photoFileName: 0490.jpg
@@ -7848,6 +7851,10 @@ speakers:
       - {language: ru, text: "Юлия Цисык"}
     company:
       - {language: en, text: CUSTIS}
+    bio:
+      - {language: en, text: "Moscow .NET community leader."}
+      - {language: ru, text: "Лидер московского сообщества .NET-разработчиков MskDotNet."}
+    twitter: YuliaFast
   - id: 518
     photoFileName: 0518.jpg
     name:
@@ -7864,7 +7871,8 @@ speakers:
       - {language: en, text: "Stanislav Sidristy"}
       - {language: ru, text: "Станислав Сидристый"}
     company:
-      - {language: en, text: "Speech Technology Center"}
+      - {language: en, text: STC}
+      - {language: ru, text: ЦРТ}
     bio:
       - language: en
         text: "Stanislav worked in many large companies, gaining development experience on the .NET platform. The speaker\
@@ -14847,15 +14855,18 @@ speakers:
     name:
       - {language: en, text: "Marco De Sanctis"}
     company:
-      - {language: en, text: Freelance}
+      - {language: en, text: "Cloud Consult London Ltd"}
     bio:
       - language: en
         text: "Marco has an incredible passion for technology which he had the privilege to turn into a job. He has been working\
-            \ with .NET since the first beta, focusing on ASP.NET and, more generally, anything that is web-related. Also,\
-            \ he has been an early adopter of Microsoft Azure and, since its introduction, Cloud technologies have represented\
-            \ the core of his professional interest.\n\nNow he's working as a freelance Solutions Architect in London, focusing\
-            \ on Cloud transformation. .NET and Azure community is a key aspect of his profession. Has been awarded as a Microsoft\
-            \ MVP for the last 9 years in a row."
+            \ with .NET since the first beta, focusing on ASP.NET and, more generally, anything that is web-related. He has\
+            \ been an early adopter of Microsoft Azure and, since its introduction, Cloud technologies have represented the\
+            \ core of Marco's professional interest.\n\nToday he works as a freelance Solutions Architect in beautiful London,\
+            \ focusing on Cloud transformation. Getting involved in the .NET and Azure community is also a key aspect of Marco's\
+            \ profession: he's convinced that knowledge sharing is one of the best ways to improve our professional skills,\
+            \ and therefore he tries to dedicate as much time as he can to activities such as writing articles or speaking\
+            \ at conferences and meetups. Thanks to that, he has been awarded as a Microsoft MVP for the last 11 years in\
+            \ a row."
     twitter: crad77
   - id: 1013
     photoFileName: 1013.jpg
@@ -21214,3 +21225,229 @@ speakers:
             \ and why SHOULDN'T programming be easier? He now gets to work on the AWS Cloud Development Kit to make it trivial\
             \ for thousands of developers across the world to deploy to AWS."}
     twitter: rix0rrr
+  - id: 1480
+    photoFileName: 1480.jpg
+    name:
+      - {language: en, text: "Miguel de Icaza"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Miguel de Icaza is best known for starting the GNOME and Mono projects. He is also the co-founder\
+            \ of Xamarin, a company that built a .NET runtime for Android and iOS, and co-founder of Ximian a company that\
+            \ built Linux desktop products."}
+    twitter: migueldeicaza
+    gitHub: migueldeicaza
+  - id: 1481
+    photoFileName: 1481.jpg
+    name:
+      - {language: en, text: "Bjørn Einar Bjartnes"}
+    company:
+      - {language: en, text: NRK}
+    bio:
+      - language: en
+        text: ".NET Backend Developer/Architect at NRK TV, NRKs streaming service (tv.nrk.no)\nIn the last few years, Bjø\
+            rn has had an interest in domain-driven design its relation to building resilient services."
+    twitter: bjartnes
+  - id: 1482
+    photoFileName: 1482.jpg
+    name:
+      - {language: en, text: "Pavel Kulbida"}
+      - {language: ru, text: "Павел Кульбида"}
+    company:
+      - {language: en, text: Raiffeisenbank}
+      - {language: ru, text: Райффайзенбанк}
+    bio:
+      - {language: en, text: "Works at Raiffeisenbank. C# developer from 2007, wrote on C++ for 9 years. Has Microsoft statuses\
+            \ like MCPD, MCTS, MCITP, MCP. Likes to create and develop desktop, web, and mobile projects. OmsDotNet organizer."}
+      - {language: ru, text: "Работает в компании Raiffeisenbank. Разработчик С# с 2007 года, до этого 9 лет на C++. Облад\
+            атель статусов Microsoft: MCPD, MCTS, MCITP, MCP. Любит создавать и развивать desktop, web, mobile проекты. Ор\
+            ганизатор OmsDotNet — сообщества .NET-разработчиков в Омске."}
+  - id: 1483
+    photoFileName: 1483.jpg
+    name:
+      - {language: en, text: "Aaron Stannard"}
+    company:
+      - {language: en, text: Petabridge}
+    bio:
+      - {language: en, text: "Founder and CEO of Petabridge, a company dedicated to helping .NET developers build high-performance,\
+            \ large-scale, and real-time software systems. Founder and maintainer of the Akka.NET project."}
+    twitter: Aaronontheweb
+  - id: 1484
+    photoFileName: 1484.jpg
+    name:
+      - {language: en, text: "Jared Parsons"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Developer on the C# compiler and member of the C# language design team. Have a strong passion\
+            \ for developer tools and infrastructure."}
+    twitter: jaredpar
+    gitHub: jaredpar
+  - id: 1485
+    photoFileName: 1485.jpg
+    name:
+      - {language: en, text: "Artem Akulyakov"}
+      - {language: ru, text: "Артём Акуляков"}
+    company:
+      - {language: en, text: OCS.LAB}
+    bio:
+      - {language: en, text: "For more than ten years he has been developing professionally in .NET. During this time Artem\
+            \ went from junior to an architect. He worked in a bank, in IT departments of industrial companies, in startups.\
+            \ Artem and his friends also organized the Krasnoyarsk IT community Dev2Dev."}
+      - {language: ru, text: "Более десяти лет занимается разработкой на .NET профессионально. За это время прошел путь от\
+            \ джуна до архитектора. Работал в банке, в ИТ-отделах промышленных компаний, в стартапах. Организовал с товари\
+            щами красноярское  ИТ-сообщество Dev2Dev."}
+  - id: 1486
+    photoFileName: 1486.jpg
+    name:
+      - {language: en, text: "Maoni Stephens"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Maoni Stephens is the architect and main developer for the .NET GC in Microsoft. Maoni loves\
+            \ working on #dotnet #dotnetcore GC and other perf stuff"}
+    twitter: maoni0
+  - id: 1487
+    photoFileName: 1487.jpg
+    name:
+      - {language: en, text: "Rustam Salimzibarov"}
+      - {language: ru, text: "Рустам Салимзибаров"}
+    company:
+      - {language: en, text: Macroscop}
+    bio:
+      - {language: en, text: "Head of the Development at Macroscop. Over the 11 years of work he has grown from a developer\
+            \ to a head of the development."}
+      - {language: ru, text: "Директор по разработкам в Macroscop. За 11 лет работы в компании вырос от разработчика до ди\
+            ректора по разработкам, все это время разрабатывал на .NET."}
+  - id: 1488
+    photoFileName: 1488.jpg
+    name:
+      - {language: en, text: "Aleksey Pozdeev"}
+      - {language: ru, text: "Алексей Поздеев"}
+    company:
+      - {language: en, text: Macroscop}
+    bio:
+      - {language: en, text: "Alexey has been working at Macroscop for over 5 years and has grown from a developer to a backend\
+            \ team lead. During his work he managed to participate in product porting to different platforms: Mono, Arm, and\
+            \ .NET Core, and will gladly share his experience with other developers."}
+      - {language: ru, text: "Работает в Macroscop более 5 лет и вырос от разработчика до тимлида команды backend. За врем\
+            я своей работы успел поучаствовать в портировании продукта на разные платформы: Mono, Arm и .NET Core, и с рад\
+            остью поделится своим опытом с другими разработчиками."}
+  - id: 1489
+    photoFileName: 1489.jpg
+    name:
+      - {language: en, text: "Bartosz Adamczewski"}
+    company:
+      - {language: en, text: "SDI Media"}
+    bio:
+      - language: en
+        text: "A performance and data-oriented design freak, concurrency researcher, and machine learning practitioner that\
+            \ creates robust systems for over ten years.\n\nCurrently employed as Research and Innovation Director at SDI\
+            \ Media, where Bartosz is lead computer and data science teams."
+    twitter: badamczewski01
+  - id: 1490
+    photoFileName: 1490.jpg
+    name:
+      - {language: en, text: "Andrey Tsvettsikh"}
+      - {language: ru, text: "Андрей Цветцих"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Andrey has been developing corporate applications for over 10 years. He was involved in both\
+            \ the creation of new applications and the support and refactoring of existing ones. The main area of interest\
+            \ is the application of architectures and design patterns in practice."}
+      - {language: ru, text: "Более 10 лет занимается разработкой корпоративных приложений. Занимался как созданием новых\
+            \ приложений, так и поддержкой и рефакторингом существующих. Основная область интересов — применение архитекту\
+            р и паттернов проектирования на практике."}
+  - id: 1491
+    photoFileName: 1491.jpg
+    name:
+      - {language: en, text: "Mads Torgersen"}
+    company:
+      - {language: en, text: Microsoft}
+    bio:
+      - {language: en, text: "Mads is the lead designer of the C# programming language and a program manager at Microsoft."}
+    twitter: MadsTorgersen
+  - id: 1492
+    photoFileName: 1492.jpg
+    name:
+      - {language: en, text: "Martin Ullrich"}
+    company:
+      - {language: en, text: "Tieto Austria GmbH"}
+    bio:
+      - language: en
+        text: "A software engineer working on diverse tech stacks but focusing mostly on .NET in C#, Web Technologies, and\
+            \ iOS/Swift.\n\nA technology enthusiast who always works on improving development and DevOps processes at the\
+            \ company to make life easier for developers and help deliver high. Martin was awarded Microsoft MVP for community\
+            \ and open source workaround .NET Core."
+    twitter: dasmulli
+    gitHub: dasMulli
+    mvp: true
+  - id: 1493
+    photoFileName: 1493.jpg
+    name:
+      - {language: en, text: "Aleksey Zimarev"}
+      - {language: ru, text: "Алексей Зимарев"}
+    company:
+      - {language: en, text: "Ubiquitous AS"}
+    bio:
+      - language: en
+        text: "Alexey is CEO of Ubiquitous AS and the author of the \"Hands-on Domain-Driven Design with .NET Core\" book.\r\
+            \n\r\nHis particular interests are in event driven architectures, domain driven design, distributed systems, and\
+            \ event sourcing. Alexey contributes to open source software as a member of MassTransit and Proto.Actor projects,\
+            \ and a maintainer of RestSharp. He manages the Domain-Driven Design Norway meetup group and speaks at technical\
+            \ conferences."
+      - language: ru
+        text: "Алексей — CEO в Ubiquitous AS и автор книги «Hands-on Domain-Driven Design with .NET Core».\r\n\r\nЕго инте\
+            ресы включают в себя событийно-ориентированную архитектуру, предметно-ориентированное проектирование и порожде\
+            ние событий. Алексей участвует в разработке ПО с открытым исходным кодом как член проектов MassTransit и Proto.Actor,\
+            \ и поддерживает RestSharp. Также он руководит группой митапа Domain-Driven Design Norway и выступает на техни\
+            ческих конференциях."
+    twitter: Zimareff
+  - id: 1494
+    photoFileName: 1494.jpg
+    name:
+      - {language: en, text: "Rival Abdrakhmanov"}
+      - {language: ru, text: "Риваль Абдрахманов"}
+    company:
+      - {language: en, text: "Positive Technologies"}
+    bio:
+      - {language: en, text: "Developer at Positive Technologies. He is interested in distributed systems, information security\
+            \ and reads about functional programming in his spare time."}
+      - {language: ru, text: "Разработчик в компании Positive Technologies. Интересуется распределёнными системами, информ\
+            ационной безопасностью и в свободное время почитывает про функциональное программирование."}
+    twitter: rafaelldi
+  - id: 1495
+    photoFileName: 1495.jpg
+    name:
+      - {language: en, text: "Alexey Chirkin"}
+      - {language: ru, text: "Алексей Чиркин"}
+    company:
+      - {language: en, text: EPAM}
+    bio:
+      - {language: en, text: "Information technology engineer-teacher. 8 years in IT. Alexey went from 1C development to .NET.\
+            \ Worked at Delovye linii, Yandex.Money, now he has been at EPAM for over a year and a half. A fan of paper books,\
+            \ performance, platform internals, and evolution of programming languages. Founder of SamDotNet Community."}
+      - {language: ru, text: "Инженер-педагог в области информационных технологий по образованию. 8 лет в IT. Прошёл путь\
+            \ от 1С-разработки до .NET. Работал в «Деловых Линиях», «Яндекс.Деньги», уже более полутора лет в EPAM. Яростн\
+            ый поклонник «бумажных» книг, перформанса и «кишочков» платформы, а также эволюции языков программирования. Ос\
+            нователь SamDotNet Community."}
+  - id: 1496
+    photoFileName: 1496.jpg
+    name:
+      - {language: en, text: "Sergey Buyanov"}
+      - {language: ru, text: "Сергей Буянов"}
+    company:
+      - {language: en, text: Infotecs}
+    bio:
+      - language: en
+        text: "Architect at Infotecs. Started the development path by studying the first versions of Fortran, then the main\
+            \ language was C++, for the last 10 years it has been C #. Sergey tries to learn and, if possible, implement approaches\
+            \ that help improve the code and development process.\nCurrently working in the field of information security.\
+            \ Interests: DDD, microservices, high performance, and distributed systems."
+      - language: ru
+        text: "Архитектор в компании Infotecs.\nСвой путь разработчика начинал с изучения первых версий Fortran, затем осн\
+            овным языком был C++, последние 10 лет — это C#.\nСтарается изучать и по возможности внедрять подходы, которые\
+            \ помогают улучшить код и процесс разработки.\nНа данный момент работает в сфере информационной безопасности.\
+            \ Интересы: DDD, микросервисы, высоконагруженные и распределенные системы."
+    mvp: true
