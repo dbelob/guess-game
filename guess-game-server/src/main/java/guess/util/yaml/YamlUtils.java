@@ -93,6 +93,7 @@ public class YamlUtils {
             throw new SpeakerDuplicatedException();
         }
 
+        //TODO: delete after load change
         companyList.setCompanies(createCompaniesFromSpeakersAndFillSpeaker(speakerList.getSpeakers(), companySynonymsList.getCompanySynonyms()));
 
         Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
@@ -120,6 +121,7 @@ public class YamlUtils {
                 talkList.getTalks());
     }
 
+    //TODO: delete after load change
     static List<Company> createCompaniesFromSpeakersAndFillSpeaker(List<Speaker> speakers, List<CompanySynonyms> companySynonymsList) {
         Comparator<Speaker> comparatorByCompanyItemSize = Comparator.comparing((Function<Speaker, Integer>) s -> s.getCompany().size()).reversed();
         Comparator<Speaker> comparatorByEnglishName = Comparator.comparing(s -> LocalizationUtils.getString(s.getCompany(), Language.ENGLISH));
@@ -166,6 +168,7 @@ public class YamlUtils {
         return companies;
     }
 
+    //TODO: delete after load change
     static void bindSynonymToMainCompany(List<CompanySynonyms> companySynonymsList, List<Company> companies, Map<String, Company> companyMap) {
         for (CompanySynonyms companySynonyms : companySynonymsList) {
             if (companyMap.containsKey(companySynonyms.getName())) {
@@ -179,6 +182,7 @@ public class YamlUtils {
         }
     }
 
+    //TODO: delete after load change
     static void fillCompaniesInSpeakers(List<Speaker> speakers, Map<String, Company> companyMap) {
         for (Speaker speaker : speakers) {
             if ((speaker.getCompany() == null) || speaker.getCompany().isEmpty()) {
