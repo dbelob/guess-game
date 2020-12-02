@@ -1343,7 +1343,10 @@ public class ConferenceDataLoader {
 //                        Set.of("Heisenbug 2020 Moscow Virtual Afterparty"),
 //                        false));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2020, 11, 11), "2020msk",
-//                LoadSettings.invalidTalksSet(Set.of("Mobius 2020 Moscow Virtual Afterparty")));
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("Mobius 2020 Moscow Virtual Afterparty"),
+//                        false));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2020, 11, 25), "2020msk",
 //                LoadSettings.invalidTalksSet(Set.of("HolyJS 2020 Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 11, 25), "2020joker",
