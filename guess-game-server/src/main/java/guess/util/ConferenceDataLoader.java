@@ -1349,7 +1349,11 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2020, 11, 25), "2020joker",
 //                LoadSettings.invalidTalksSet(Set.of("Joker 2020 Virtual Afterparty")));
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2020, 12, 2), "2020spbdevoops");
-//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 12, 2), "2020msk");
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 12, 2), "2020msk",
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("DotNext 2020 Virtual Afterparty"),
+//                        false));
 //        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2020, 12, 9), "2020smartdata");
     }
 }

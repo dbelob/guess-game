@@ -4492,7 +4492,8 @@ speakers:
       - {language: en, text: "Roman Nevolin"}
       - {language: ru, text: "Роман Неволин"}
     company:
-      - {language: en, text: Groupon}
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
     bio:
       - {language: en, text: "The developer of the bioinformatics software with .NET, a chemical with Java, financial with\
             \ Haskell, and some other interesting stuff. Roman likes to dive into new areas and languages and then talk about\
@@ -6494,14 +6495,14 @@ speakers:
     company:
       - {language: en, text: JetBrains}
     bio:
-      - {language: en, text: "Andrey works at JetBrains for 3,5 years, being in charge of C# support in ReSharper/Rider from\
+      - {language: en, text: "Andrey works at JetBrains for 5 years, being in charge of C# support in ReSharper/Rider from\
             \ parser implementation to static analysis and refactoring. He started his way to programming from SCADA systems\
             \ and automation of industrial equipment — magnetron splattering and plasma-chemical etching sets. Andrey is passionate\
             \ about static analysis, type theory, and metaprogramming."}
-      - {language: ru, text: "Работает в JetBrains вот уже 3,5 года, занимается поддержкой языка C# в ReSharper/Rider от р\
-            еализации парсера до статических анализов и рефакторингов. Начинал свой путь к программированию со SCADA-систе\
-            м и автоматизации промышленного оборудования — установок магнетронного напыления и плазмохимического травления\
-            . Интересуется статическим анализом кода, теорией типов и метапрограммированием."}
+      - {language: ru, text: "Работает в JetBrains вот уже 5 лет, занимается поддержкой языка C# в ReSharper/Rider от реал\
+            изации парсера до статических анализов и рефакторингов. Начинал свой путь к программированию со SCADA-систем и\
+            \ автоматизации промышленного оборудования — установок магнетронного напыления и плазмохимического травления.\
+            \ Интересуется статическим анализом кода, теорией типов и метапрограммированием."}
     twitter: a_tessenr
   - id: 427
     photoFileName: 0427.jpg
@@ -6774,7 +6775,6 @@ speakers:
     photoFileName: 0445.jpg
     name:
       - {language: en, text: "Sergey Bykov"}
-      - {language: ru, text: "Сергей Быков"}
     company:
       - {language: en, text: "Temporal Technologies"}
     bio:
@@ -21451,3 +21451,21 @@ speakers:
             \ помогают улучшить код и процесс разработки.\nНа данный момент работает в сфере информационной безопасности.\
             \ Интересы: DDD, микросервисы, высоконагруженные и распределенные системы."
     mvp: true
+  - id: 1497
+    photoFileName: 1497.jpg
+    name:
+      - {language: en, text: "Maxim Sustretov"}
+      - {language: ru, text: "Максим Сустретов"}
+    company:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+    bio:
+      - {language: en, text: "Developer at Kaspersky Lab. Started the journey in the Java world, but quickly switched to .NET,\
+            \ since then Maxim has been here for about 8 years. He is also interested in free software and nix, the depths\
+            \ of memory management in .NET, a functional approach to programming, as well as regularly learning new languages:\
+            \ both human and computer."}
+      - {language: ru, text: "Разработчик в Лаборатории Касперского. Начинал свой путь в Java-мире, но быстро переметнулся\
+            \ на .NET, с тех пор уже около 8 лет здесь. Интересуется свободным ПО и nix, недрами управления памятью в .NET,\
+            \ функциональным подходом к программированию, а также регулярным изучением новых языков: как человеческих, так\
+            \ и компьютерных."}
+    twitter: waynesayonara
