@@ -20840,6 +20840,7 @@ speakers:
     photoFileName: 1452.jpg
     name:
       - {language: en, text: "Victoria Almazova"}
+      - {language: ru, text: "Виктория Алмазова"}
     company:
       - {language: en, text: Microsoft}
     bio:
@@ -20850,6 +20851,12 @@ speakers:
             \ developers and architects in security tasks by helping with education will increase the security level without\
             \ increasing additional workload.\n\nDuring her free time, she deep dives into cloud security, development, identity,\
             \ and access management."
+      - language: ru
+        text: "Специалист по безопасности в Microsoft Норвегия с более чем 14 годами опыта в сфере безопасности. Тесно раб\
+            отает с программистами и архитекторами, чтобы встраивать безопасность с самых первых уровней разработки. Викто\
+            рия считает, что предоставление разработчикам и архитекторам возможности решать задачи безопасности через обуч\
+            ение, повысит уровень безопасности без увеличения рабочей нагрузки.\n\nВ свободное время глубоко погружается в\
+            \ облачную безопасность, разработку, управление идентификацией и доступом."
     twitter: texnokot
   - id: 1453
     photoFileName: 1453.jpg
@@ -21469,3 +21476,38 @@ speakers:
             \ функциональным подходом к программированию, а также регулярным изучением новых языков: как человеческих, так\
             \ и компьютерных."}
     twitter: waynesayonara
+  - id: 1498
+    photoFileName: 1498.jpg
+    name:
+      - {language: en, text: "Rashid Galiev"}
+      - {language: ru, text: "Рашид Галиев"}
+    company:
+      - {language: en, text: Sber}
+      - {language: ru, text: Сбер}
+    bio:
+      - {language: en, text: "Works at SberWorks tribe as a team leader for the development of DevOps methodology and implementation\
+            \ of CI/CD engineering practices. Previously at Raiffeisenbank, Rashid was involved in technology transformation\
+            \ as an expert on DevOps methodology, engineering practices, and data visualization tools. Before that, he took\
+            \ part in the project of implementing DevOps CI/CD engineering practices in the production cycle of more than\
+            \ 300 automated systems of Sber."}
+      - {language: ru, text: "В Сбере работает в Трайбе SberWorks руководителем группы развития методологии DevOps и внедр\
+            ения инженерных практик CI/CD. Ранее в Raiffeisenbank участвовал в технологической трансформации в качестве эк\
+            сперта по методологии DevOps, инженерным практикам и инструментам визуализации данных. До этого участвовал в п\
+            роекте внедрения DevOps CI/CD инженерных практик в производственный цикл более 300 автоматизированных систем С\
+            бербанка."}
+  - id: 1499
+    photoFileName: 1499.jpg
+    name:
+      - {language: en, text: "Pavel Kuznetsov"}
+      - {language: ru, text: "Павел Кузнецов"}
+    company:
+      - {language: en, text: Sber}
+      - {language: ru, text: Сбер}
+    bio:
+      - {language: en, text: "Pavel works in the SberWorks tribe as a lead engineer for support of the DevOps methodology\
+            \ development group and the implementation of CI/CD engineering practices. He's also engaged in the development\
+            \ of a DevOps engineers community — SberAcceleration. Before joining the bank, he worked in strategic planning\
+            \ at a media agency."}
+      - {language: ru, text: "В Сбере работает в Трайбе SberWorks ведущим инженером по сопровождению группы развития метод\
+            ологии DevOps и внедрения инженерных практик CI/CD, занимается развитием профильного сообщества DevOps-инженер\
+            ов – SberAcceleration. До прихода в банк занимался стратегическим планированием в медийном агентстве."}
