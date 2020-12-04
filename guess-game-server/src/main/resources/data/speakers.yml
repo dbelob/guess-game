@@ -21387,11 +21387,11 @@ speakers:
             \ and a maintainer of RestSharp. He manages the Domain-Driven Design Norway meetup group and speaks at technical\
             \ conferences."
       - language: ru
-        text: "Алексей — CEO в Ubiquitous AS и автор книги «Hands-on Domain-Driven Design with .NET Core».\r\n\r\nЕго инте\
-            ресы включают в себя событийно-ориентированную архитектуру, предметно-ориентированное проектирование и порожде\
-            ние событий. Алексей участвует в разработке ПО с открытым исходным кодом как член проектов MassTransit и Proto.Actor,\
-            \ и поддерживает RestSharp. Также он руководит группой митапа Domain-Driven Design Norway и выступает на техни\
-            ческих конференциях."
+        text: "Алексей — Developer Advocate в Event Store, Chief Architect в ABAX и автор книги «Hands-on Domain-Driven Design\
+            \ with .NET Core».\n\nЕго интересы включают в себя событийно-ориентированную архитектуру, предметно-ориентиров\
+            анное проектирование и порождение событий. Алексей участвует в разработке ПО с открытым исходным кодом как чле\
+            н проектов MassTransit и Proto.Actor, и поддерживает RestSharp. Также он руководит группой митапа Domain-Driven\
+            \ Design Norway и выступает на технических конференциях."
     twitter: Zimareff
   - id: 1494
     photoFileName: 1494.jpg
