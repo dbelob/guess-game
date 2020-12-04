@@ -12726,16 +12726,12 @@ speakers:
       - {language: en, text: "Vladimir Ivanov"}
       - {language: ru, text: "Владимир Иванов"}
     company:
-      - {language: en, text: "EPAM Systems"}
+      - {language: en, text: EPAM}
     bio:
-      - {language: en, text: "Vladimir Ivanov is now a lead software engineer in EPAM Systems. Started as a Java EE engineer,\
-            \ but got interested in mobile technologies. For the last 7 years, Vladimir mostly develops Android apps, but\
-            \ looks around and comprehends nearby technologies like React Native, iOS app development, web development, etc.\
-            \ Vladimir is passionate about sharing his knowledge."}
-      - {language: ru, text: "Владимир Иванов — ведущий разработчик в EPAM Systems. Начинал как Java EE-инженер, но увлекс\
-            я мобильными технологиями. Последние 7 лет разрабатывает приложения под Android, но этим не ограничивается, по\
-            \ ходу осваивая смежные технологии, такие как React Native, разработку под iOS, Web и прочее. Увлеченно делитс\
-            я знаниями с коллегами."}
+      - {language: en, text: "Vladimir Ivanov is a lead software engineer in EPAM and a Solution Architect. Accomplished Android\
+            \ developer, React Native expert, Certified Google Cloud Architect, mentor and speaker."}
+      - {language: ru, text: "Lead software engineer в EPAM, Solution Architect. Опытный Android-разработчик, эксперт по React\
+            \ Native, Certified Google Cloud Architect, ментор и спикер."}
     twitter: vvsevolodovich
     gitHub: vlivanov
   - id: 853
@@ -19585,20 +19581,6 @@ speakers:
       - {language: ru, text: "Застал мобильную разработку ещё во времена обычных телефонов и Java ME. Освоил Android в 2010\
             \ году и с тех пор поучаствовал во многих проектах. Сейчас эксперт по разработке в Райффайзен, всегда в поиске\
             \ новых подходов для применения их на благо."}
-  - id: 1363
-    photoFileName: 1363.jpg
-    name:
-      - {language: en, text: "Vladimir Ivanov"}
-      - {language: ru, text: "Владимир Иванов"}
-    company:
-      - {language: en, text: EPAM}
-    bio:
-      - {language: en, text: "Vladimir Ivanov is a lead software engineer in EPAM and a Solution Architect. Accomplished Android\
-            \ developer, React Native expert, Certified Google Cloud Architect, mentor and speaker."}
-      - {language: ru, text: "Lead software engineer в EPAM, Solution Architect. Опытный Android-разработчик, эксперт по React\
-            \ Native, Certified Google Cloud Architect, ментор и спикер."}
-    twitter: vvsevolodovich
-    gitHub: vlivanov
   - id: 1364
     photoFileName: 1364.jpg
     name:
