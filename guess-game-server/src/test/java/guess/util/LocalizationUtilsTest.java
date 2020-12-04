@@ -109,6 +109,7 @@ public class LocalizationUtilsTest {
             final List<Company> FULL_LANGUAGE_COMPANY_LIST = List.of(company0);
             final List<Company> ENGLISH_LANGUAGE_COMPANY_LIST = List.of(company1);
             final List<Company> SOME_COMPANY_LIST = List.of(company0, company1);
+            final List<Company> SOME_COMPANY_REVERSE_LIST = List.of(company1, company0);
 
             return Stream.of(
                     arguments(new Speaker(
@@ -304,6 +305,23 @@ public class LocalizationUtilsTest {
                                     ENGLISH_NAME_LOCALE_ITEMS,
                                     null,
                                     SOME_COMPANY_LIST,
+                                    null,
+                                    new Speaker.SpeakerSocials(
+                                            null,
+                                            null
+                                    ),
+                                    new Speaker.SpeakerDegrees(
+                                            false,
+                                            false,
+                                            false
+                                    )
+                            ),
+                            Language.ENGLISH, "Name (Company0, Company1)"),
+                    arguments(new Speaker(0L,
+                                    "0000.jpg",
+                                    ENGLISH_NAME_LOCALE_ITEMS,
+                                    null,
+                                    SOME_COMPANY_REVERSE_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,

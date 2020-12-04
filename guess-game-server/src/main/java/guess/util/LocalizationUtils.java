@@ -99,6 +99,7 @@ public class LocalizationUtils {
         String name = LocalizationUtils.getString(speaker.getName(), language);
         String companies = speaker.getCompanies().stream()
                 .map(c -> LocalizationUtils.getString(c.getName(), language))
+                .sorted()
                 .collect(Collectors.joining(", "));
 
         return (!companies.isEmpty()) ?
