@@ -469,6 +469,7 @@ public class ContentfulUtils {
                 extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
                 extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence),
+                Collections.emptyList(),
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
                 new Speaker.SpeakerSocials(
                         extractTwitter(contentfulSpeaker.getFields().getTwitter()),
@@ -1082,6 +1083,7 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "JFrog",
                                         null),
+                                Collections.emptyList(),
                                 extractLocaleItems(
                                         "Stephen Chin is Senior Director of Developer Relations at JFrog, author of Raspberry Pi with Java, The Definitive Guide to Modern Client Development, and Pro JavaFX Platform. He has keynoted numerous Java conferences around the world including Oracle Code One (formerly JavaOne), where he is an 8-time Rock Star Award recipient. Stephen is an avid motorcyclist who has done evangelism tours in Europe, Japan, and Brazil, interviewing hackers in their natural habitat and posting the videos on <a href=\"http://nighthacking.com/\" target=\"_blank\">http://nighthacking.com/</a>. When he is not traveling, he enjoys teaching kids how to do embedded and robot programming together with his teenage daughter.",
                                         null),
@@ -1109,6 +1111,7 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Pivotal",
                                         null),
+                                Collections.emptyList(),
                                 extractLocaleItems(
                                         "Sergei works at Pivotal on Project Reactor in Berlin, Germany.\n" +
                                                 "\n" +
@@ -1142,6 +1145,7 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Couchbase",
                                         null),
+                                Collections.emptyList(),
                                 extractLocaleItems(
                                         "Arun Gupta is the vice president of developer advocacy at Couchbase. He has been built and led developer communities for 10+ years at Sun, Oracle, and Red Hat. He has deep expertise in leading cross-functional teams to develop and execute strategy, planning, and execution of content, marketing campaigns, and programs. Prior to that he led engineering teams at Sun and is a founding member of the Java EE team. Gupta has authored more than 2,000 blog posts on technology. He has extensive speaking experience in more than 40 countries on myriad topics and is a JavaOne Rock Star for three years in a row. Gupta also founded the Devoxx4Kids chapter in the US and continues to promote technology education among children. An author of a best-selling book, an avid runner, a globe trotter, a Java Champion, a JUG leader, and a Docker Captain, he is easily accessible at @arungupta.",
                                         null),
@@ -1169,6 +1173,7 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "ZEDEDA Inc.",
                                         null),
+                                Collections.emptyList(),
                                 extractLocaleItems(
                                         "Roman is an open source software expert, currently serving on the board of directors for both The Apache Software Foundation and LF Edge. He has personally contributed to a variety of open source projects ranging from the Linux Kernel to Hadoop and ffmpeg. He is a co-founder and the vice president of product and strategy for Zededa, an edge virtualization startup. Throughout his career, Roman has held technical leadership roles at several well-known companies, including Sun Microsystems, Yahoo!, Cloudera and Pivotal Software. He holds a master's degree in mathematics and computer science from St. Petersburg State University. He likes German craft lagers and is fighting IPA invasion one seidla at a time.",
                                         null),
@@ -1196,6 +1201,7 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         null,
                                         null),
+                                Collections.emptyList(),
                                 extractLocaleItems(
                                         "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.",
                                         null),
@@ -1223,6 +1229,7 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         null,
                                         null),
+                                Collections.emptyList(),
                                 extractLocaleItems(
                                         "Sergei fell in love with web development back in high school. He got a degree in Information Technologies at the University of Helsinki and has been spending his professional career working for web design studios in Helsinki and Munich. Sergei's focus areas are JavaScript development, UX and accessibility.",
                                         "Заболел веб-разработкой еще в школе (Windows 95, IE6, табличная верстка). Окончил Хельсинкский университет по специальности Information Technology, в настоящее время работает в Мюнхене фронтенд-разработчиком."),
@@ -1244,6 +1251,7 @@ public class ContentfulUtils {
                         return new Speaker(
                                 id,
                                 "",
+                                Collections.emptyList(),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
                                 Collections.emptyList(),

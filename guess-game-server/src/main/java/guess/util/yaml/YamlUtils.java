@@ -356,7 +356,7 @@ public class YamlUtils {
         for (Language language : Language.values()) {
             speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    s -> LocalizationUtils.getSpeakerNameWithCompany(s, language),
+                    s -> LocalizationUtils.getSpeakerNameWithCompanies(s, language),
                     s -> true));
         }
 

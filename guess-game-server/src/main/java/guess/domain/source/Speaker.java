@@ -52,7 +52,7 @@ public class Speaker extends Identifier {
         this.companyIds = Collections.emptyList();
     }
 
-    public Speaker(long id, String photoFileName, List<LocaleItem> name, List<LocaleItem> company,
+    public Speaker(long id, String photoFileName, List<LocaleItem> name, List<LocaleItem> company, List<Company> companies,
                    List<LocaleItem> bio, SpeakerSocials socials, SpeakerDegrees degrees) {
         super(id);
 
@@ -65,6 +65,7 @@ public class Speaker extends Identifier {
         this.javaChampion = degrees.javaChampion;
         this.mvp = degrees.mvp;
         this.mvpReconnect = degrees.mvpReconnect;
+        this.companies = companies;
         this.companyIds = companies.stream()
                 .map(Company::getId)
                 .collect(Collectors.toList());
