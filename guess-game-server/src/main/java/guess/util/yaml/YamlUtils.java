@@ -88,11 +88,6 @@ public class YamlUtils {
                                                   CompanyList companyList, CompanySynonymsList companySynonymsList,
                                                   SpeakerList speakerList, TalkList talkList)
             throws SpeakerDuplicatedException {
-        // Find duplicates for speaker names and for speaker names with company name
-        if (findSpeakerDuplicates(speakerList.getSpeakers())) {
-            throw new SpeakerDuplicatedException();
-        }
-
         //TODO: delete after load change
         companyList.setCompanies(createCompaniesFromSpeakersAndFillSpeaker(speakerList.getSpeakers(), companySynonymsList.getCompanySynonyms()));
 
@@ -111,6 +106,11 @@ public class YamlUtils {
         linkTalksToEvents(talkMap, eventList.getEvents());
         linkSpeakersToCompanies(companyMap, speakerList.getSpeakers());
         linkSpeakersToTalks(speakerMap, talkList.getTalks());
+
+        // Find duplicates for speaker names and for speaker names with company name
+        if (findSpeakerDuplicates(speakerList.getSpeakers())) {
+            throw new SpeakerDuplicatedException();
+        }
 
         return new SourceInformation(
                 placeList.getPlaces(),
