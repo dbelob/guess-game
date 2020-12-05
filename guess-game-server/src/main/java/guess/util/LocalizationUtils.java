@@ -119,15 +119,15 @@ public class LocalizationUtils {
     }
 
     /**
-     * Gets speaker name with last name first with company name.
+     * Gets speaker name with last name first with company names.
      *
      * @param speaker  speaker
      * @param language language
      * @return speaker name with company name
      */
-    public static String getSpeakerNameWithLastNameFirstWithCompany(Speaker speaker, Language language) {
+    public static String getSpeakerNameWithLastNameFirstWithCompanies(Speaker speaker, Language language) {
         String name = LocalizationUtils.getString(speaker.getNameWithLastNameFirst(), language);
-        String company = LocalizationUtils.getString(speaker.getCompany(), language);
+        String company = getSpeakerCompanies(speaker, language);
 
         return (!company.isEmpty()) ?
                 String.format("%s (%s)", name, company) :
@@ -177,7 +177,7 @@ public class LocalizationUtils {
      */
     public static String getSpeakerNameWithLastNameFirst(Speaker speaker, Language language, Set<Speaker> speakerDuplicates) {
         return speakerDuplicates.contains(speaker) ?
-                LocalizationUtils.getSpeakerNameWithLastNameFirstWithCompany(speaker, language) :
+                LocalizationUtils.getSpeakerNameWithLastNameFirstWithCompanies(speaker, language) :
                 LocalizationUtils.getString(speaker.getNameWithLastNameFirst(), language);
     }
 }
