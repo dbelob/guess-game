@@ -90,6 +90,47 @@ public class LocalizationUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakerCompanies method tests")
+    class GetSpeakerCompaniesTest {
+        private Stream<Arguments> data() {
+            Company company0 = new Company(0, List.of(
+                    new LocaleItem(Language.ENGLISH.getCode(), "Company0"),
+                    new LocaleItem(Language.RUSSIAN.getCode(), "Компания0")));
+            Company company1 = new Company(1, List.of(
+                    new LocaleItem(Language.ENGLISH.getCode(), "Company1"),
+                    new LocaleItem(Language.RUSSIAN.getCode(), "Компания1")
+            ));
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setCompanies(Collections.emptyList());
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setCompanies(List.of(company0));
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+            speaker2.setCompanies(List.of(company0, company1));
+
+            return Stream.of(
+                    arguments(speaker0, Language.ENGLISH, ""),
+                    arguments(speaker1, Language.ENGLISH, "Company0"),
+                    arguments(speaker1, Language.RUSSIAN, "Компания0"),
+                    arguments(speaker2, Language.ENGLISH, "Company0, Company1"),
+                    arguments(speaker2, Language.RUSSIAN, "Компания0, Компания1")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSpeakerCompanies(Speaker speaker, Language language, String expected) {
+            assertEquals(expected, LocalizationUtils.getSpeakerCompanies(speaker, language));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getSpeakerNameWithCompanies method tests")
     class GetSpeakerNameWithCompaniesTest {
         private Stream<Arguments> data() {

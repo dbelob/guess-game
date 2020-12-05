@@ -89,6 +89,20 @@ public class LocalizationUtils {
     }
 
     /**
+     * Gets speaker companies as string.
+     *
+     * @param speaker  speaker
+     * @param language language
+     * @return speaker companies as string
+     */
+    public static String getSpeakerCompanies(Speaker speaker, Language language) {
+        return speaker.getCompanies().stream()
+                .map(c -> LocalizationUtils.getString(c.getName(), language))
+                .sorted()
+                .collect(Collectors.joining(", "));
+    }
+
+    /**
      * Gets speaker name with company names.
      *
      * @param speaker  speaker
@@ -97,10 +111,7 @@ public class LocalizationUtils {
      */
     public static String getSpeakerNameWithCompanies(Speaker speaker, Language language) {
         String name = LocalizationUtils.getString(speaker.getName(), language);
-        String companies = speaker.getCompanies().stream()
-                .map(c -> LocalizationUtils.getString(c.getName(), language))
-                .sorted()
-                .collect(Collectors.joining(", "));
+        String companies = getSpeakerCompanies(speaker, language);
 
         return (!companies.isEmpty()) ?
                 String.format("%s (%s)", name, companies) :
