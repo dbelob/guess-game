@@ -4,6 +4,7 @@ import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
+import guess.dto.company.CompanyDto;
 import guess.dto.event.EventBriefDto;
 import guess.dto.event.EventDetailsDto;
 import guess.dto.event.EventSuperBriefDto;
@@ -73,7 +74,10 @@ public class EventController {
                 eventTypeService::getEventTypeByEvent, language);
 
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
-        Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(SpeakerBriefDto::getCompany, String.CASE_INSENSITIVE_ORDER);
+        Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(
+                s -> s.getCompanies().stream()
+                        .map(CompanyDto::getName)
+                        .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
         eventDetailsDto.getSpeakers().sort(comparatorByName.thenComparing(comparatorByCompany));
 
         Comparator<TalkBriefDto> comparatorByTalkDate = Comparator.nullsLast(

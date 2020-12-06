@@ -6,7 +6,6 @@ export class Speaker {
     public photoFileName?: string,
     public displayName?: string,
     public name?: string,
-    public company?: string,      // TODO: delete after load change
     public companies?: Company[],
     public companiesString?: string,
     public bio?: string,
