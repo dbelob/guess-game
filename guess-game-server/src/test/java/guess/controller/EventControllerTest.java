@@ -129,28 +129,36 @@ class EventControllerTest {
     void getEvent() throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 
+        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+        Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
+
         EventType eventType = new EventType();
         eventType.setId(0);
 
         Speaker speaker0 = new Speaker();
         speaker0.setId(0);
         speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        speaker0.setCompanies(List.of(company0));
 
         Speaker speaker1 = new Speaker();
         speaker1.setId(1);
         speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+        speaker1.setCompanies(List.of(company1));
+
+        Speaker speaker2 = new Speaker();
+        speaker2.setId(2);
+        speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        speaker2.setCompanies(List.of(company1));
 
         Talk talk0 = new Talk();
         talk0.setId(0);
-        talk0.setTalkDay(1L);
-        talk0.setSpeakers(List.of(speaker1));
         talk0.setTalkDay(2L);
+        talk0.setSpeakers(List.of(speaker1));
 
         Talk talk1 = new Talk();
         talk1.setId(1);
-        talk1.setTalkDay(2L);
-        talk1.setSpeakers(List.of(speaker0));
         talk1.setTalkDay(1L);
+        talk1.setSpeakers(List.of(speaker0, speaker2));
 
         Event event = new Event();
         event.setId(0);
@@ -169,9 +177,10 @@ class EventControllerTest {
                 .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.event.id", is(0)))
-                .andExpect(jsonPath("$.speakers", hasSize(2)))
+                .andExpect(jsonPath("$.speakers", hasSize(3)))
                 .andExpect(jsonPath("$.speakers[0].id", is(0)))
-                .andExpect(jsonPath("$.speakers[1].id", is(1)))
+                .andExpect(jsonPath("$.speakers[1].id", is(2)))
+                .andExpect(jsonPath("$.speakers[2].id", is(1)))
                 .andExpect(jsonPath("$.talks", hasSize(2)))
                 .andExpect(jsonPath("$.talks[0].id", is(1)))
                 .andExpect(jsonPath("$.talks[1].id", is(0)));
