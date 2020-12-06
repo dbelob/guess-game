@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TalkDetails } from '../../../shared/models/talk/talk-details.model';
 import { TalkService } from '../../../shared/services/talk.service';
-import { getEventDisplayName } from '../../general/utility-functions';
+import { getEventDisplayName, getSpeakersWithCompaniesString } from '../../general/utility-functions';
 import getVideoId from 'get-video-id';
 
 @Component({
@@ -67,6 +67,11 @@ export class TalkComponent implements OnInit {
       );
 
       talkDetails.talk.videoLinksVideoIds = videoLinksVideoIds;
+    }
+
+    // Company names of speakers
+    if (talkDetails?.speakers) {
+      talkDetails.speakers = getSpeakersWithCompaniesString(talkDetails.speakers);
     }
 
     return talkDetails;

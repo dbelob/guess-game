@@ -8,6 +8,7 @@ export class Speaker {
     public name?: string,
     public company?: string,      // TODO: delete after load change
     public companies?: Company[],
+    public companiesString?: string,
     public bio?: string,
     public twitter?: string,
     public gitHub?: string,

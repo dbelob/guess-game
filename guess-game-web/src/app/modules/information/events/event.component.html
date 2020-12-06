@@ -81,9 +81,9 @@
               {{'speakers.table.nameColumn' | translate}}
               <p-sortIcon [field]="'displayName'"></p-sortIcon>
             </th>
-            <th class="text-center" [pSortableColumn]="'company'" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'companiesString'" pResizableColumn>
               {{'speakers.table.companyColumn' | translate}}
-              <p-sortIcon [field]="'company'"></p-sortIcon>
+              <p-sortIcon [field]="'companiesString'"></p-sortIcon>
             </th>
             <th class="text-center" [pSortableColumn]="'twitter'" pResizableColumn>
               {{'speakers.table.twitterColumn' | translate}}
@@ -112,7 +112,11 @@
                 <span class="ml-2">{{speaker.displayName}}</span>
               </a>
             </td>
-            <td>{{speaker.company}}</td>
+            <td>
+              <span *ngFor="let company of speaker.companies; let i = index">
+                <span *ngIf="i > 0">, </span>{{company.name}}
+              </span>
+            </td>
             <td>
               <a *ngIf="speaker.twitter" href="{{twitterUrlPrefix}}/{{speaker.twitter}}" class="text-primary">
                 <i class="fa fa-twitter"></i>{{speaker.twitter}}
