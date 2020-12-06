@@ -5,7 +5,12 @@ import guess.domain.source.*;
 import guess.dto.speaker.SpeakerBriefDto;
 import guess.service.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +23,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -112,24 +119,46 @@ class SpeakerControllerTest {
         Mockito.verify(speakerService, VerificationModeFactory.times(1)).getSpeakers(NAME, COMPANY, TWITTER, GITHUB, JAVA_CHAMPION, MVP);
     }
 
-    @Test
-    void convertToBriefDtoAndSort() {
-        final Language LANGUAGE = Language.ENGLISH;
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("convertToBriefDtoAndSort method tests")
+    class ConvertToBriefDtoAndSortTest {
+        private Stream<Arguments> data() {
+            final Language LANGUAGE = Language.ENGLISH;
 
-        Speaker speaker0 = new Speaker();
-        speaker0.setId(0);
-        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
-        speaker0.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
 
-        Speaker speaker1 = new Speaker();
-        speaker1.setId(1);
-        speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
-        speaker1.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+            speaker0.setCompanies(List.of(company0));
 
-        SpeakerBriefDto speakerBriefDto0 = SpeakerBriefDto.convertToBriefDto(speaker0, LANGUAGE);
-        SpeakerBriefDto speakerBriefDto1 = SpeakerBriefDto.convertToBriefDto(speaker1, LANGUAGE);
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+            speaker1.setCompanies(List.of(company1));
 
-        assertEquals(List.of(speakerBriefDto0, speakerBriefDto1), speakerController.convertToBriefDtoAndSort(new ArrayList<>(List.of(speaker1, speaker0)), LANGUAGE));
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+            speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+            speaker2.setCompanies(List.of(company1));
+
+            SpeakerBriefDto speakerBriefDto0 = SpeakerBriefDto.convertToBriefDto(speaker0, LANGUAGE);
+            SpeakerBriefDto speakerBriefDto1 = SpeakerBriefDto.convertToBriefDto(speaker1, LANGUAGE);
+            SpeakerBriefDto speakerBriefDto2 = SpeakerBriefDto.convertToBriefDto(speaker2, LANGUAGE);
+
+            return Stream.of(
+                    arguments(new ArrayList<>(List.of(speaker1, speaker0)), LANGUAGE, List.of(speakerBriefDto0, speakerBriefDto1)),
+                    arguments(new ArrayList<>(List.of(speaker2, speaker0)), LANGUAGE, List.of(speakerBriefDto0, speakerBriefDto2))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void convertToBriefDtoAndSort(List<Speaker> speakers, Language language, List<SpeakerBriefDto> expected) {
+            assertEquals(expected, speakerController.convertToBriefDtoAndSort(speakers, language));
+        }
     }
 
     @Test
