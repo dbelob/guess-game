@@ -341,11 +341,7 @@ public class YamlUtils {
             speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
                     speakers,
                     s -> LocalizationUtils.getString(s.getName(), language),
-                    s -> {
-                        // Without company
-                        String company = LocalizationUtils.getString(s.getCompany(), language);
-                        return ((company == null) || company.isEmpty());
-                    }));
+                    s -> s.getCompanies().isEmpty()));
         }
 
         if (!speakerDuplicates.isEmpty()) {

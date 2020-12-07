@@ -364,6 +364,8 @@ class YamlUtilsTest {
     @DisplayName("findSpeakerDuplicates method tests")
     class FindSpeakerDuplicatesTest {
         private Stream<Arguments> data() {
+            Company company0 = new Company(0, List.of(new LocaleItem("en", "company0")));
+
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
             speaker0.setName(List.of(new LocaleItem("en", "name0")));
@@ -371,29 +373,21 @@ class YamlUtilsTest {
             Speaker speaker1 = new Speaker();
             speaker1.setId(1);
             speaker1.setName(List.of(new LocaleItem("en", "name0")));
-            speaker1.setCompany(List.of(new LocaleItem("en", null)));
 
             Speaker speaker2 = new Speaker();
             speaker2.setId(2);
-            speaker2.setName(List.of(new LocaleItem("en", "name0")));
-            speaker2.setCompany(List.of(new LocaleItem("en", "")));
+            speaker2.setName(List.of(new LocaleItem("en", "name2")));
+            speaker2.setCompanies(List.of(company0));
 
             Speaker speaker3 = new Speaker();
             speaker3.setId(3);
-            speaker3.setName(List.of(new LocaleItem("en", "name3")));
-            speaker3.setCompany(List.of(new LocaleItem("en", "company3")));
-
-            Speaker speaker4 = new Speaker();
-            speaker4.setId(4);
-            speaker4.setName(List.of(new LocaleItem("en", "name3")));
-            speaker4.setCompany(List.of(new LocaleItem("en", "company3")));
+            speaker3.setName(List.of(new LocaleItem("en", "name2")));
+            speaker3.setCompanies(List.of(company0));
 
             return Stream.of(
                     arguments(Collections.emptyList(), false),
                     arguments(List.of(speaker0, speaker1), true),
-                    arguments(List.of(speaker0, speaker2), true),
-                    arguments(List.of(speaker0, speaker1, speaker2), true),
-                    arguments(List.of(speaker3, speaker4), true)
+                    arguments(List.of(speaker2, speaker3), true)
             );
         }
 
