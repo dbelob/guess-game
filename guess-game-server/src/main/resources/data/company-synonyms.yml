@@ -33,6 +33,10 @@ companySynonyms:
     synonyms: [
         KROK
     ]
+  - name: "Deutsche Bank Technology Center"
+    synonyms: [
+        "Russian Tech Centre Deutsche Bank"
+    ]
   - name: "Deutsche Telekom IT Solutions"
     synonyms: [
         T-Systems
