@@ -782,6 +782,7 @@ class ContentfulUtilsTest {
                     arguments("@dougqh", null, "dougqh"),
                     arguments("42", null, "42"),
                     arguments("@42", null, "42"),
+                    arguments("https://twitter.com/_bravit", null, "_bravit"),
                     arguments("%", IllegalArgumentException.class, null),
                     arguments("%42", IllegalArgumentException.class, null),
                     arguments("%dougqh", IllegalArgumentException.class, null),
