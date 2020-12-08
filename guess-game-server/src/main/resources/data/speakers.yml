@@ -21803,10 +21803,10 @@ speakers:
       - {language: en, text: "Jacek Laskowski"}
     company: []
     bio:
-      - {language: en, text: "Jacek Laskowski is a Seasoned IT Professional specializing in Apache Spark, Delta Lake, Apache\
-            \ Kafka and Kafka Streams (with brief forays into a wider data engineering space). Jacek offers software development\
-            \ and consultancy services with very hands-on in-depth workshops and mentoring. He is best known by his online\
-            \ books available free of charge at https://books.japila.pl/."}
+      - {language: en, text: "Jacek is an IT freelancer specializing in Apache Spark, Delta Lake, Apache Kafka and Kafka Streams\
+            \ (with brief forays into a wider data engineering space, e.g. Presto). Jacek offers software development and\
+            \ consultancy services with very hands-on in-depth workshops and mentoring. He is best known by his online books\
+            \ available free of charge at https://books.japila.pl/."}
     twitter: jaceklaskowski
   - id: 1521
     photoFileName: 1521.jpg
@@ -21849,7 +21849,16 @@ speakers:
     company:
       - {language: en, text: Tazeros}
     bio:
-      - {language: en, text: TBD}
+      - {language: en, text: "In 2014, Arthur created SocialDataHub, which knows everything about you and us: your favorite\
+            \ bar, the breed of cat, the car, and even the secret dream of learning French. SocialDataHub algorithms download\
+            \ open information from social networks, blogs, forums, and media around the clock. Chaotic and endless data blocks\
+            \ are connected and analyzed at the request of customers: brands want to target advertising and guess the desires\
+            \ of customers, journalists want to conduct investigations, government agencies want to find criminals."}
+      - {language: ru, text: "В 2014 году Артур создал SocialDataHub, который знает о вас и нас всё: любимый бар, породу к\
+            ота, марку автомобиля и даже тайную мечту выучить французский. Алгоритмы SocialDataHub круглосуточно скачивают\
+            \ открытую информацию из соцсетей, блогов, форумов и медиа. Хаотичные и бесконечные массивы данных связывают и\
+            \ анализируют по заказу клиентов: бренды хотят прицельно таргетировать рекламу и угадывать желания клиентов, ж\
+            урналисты — проводить расследования, госорганы — находить преступников."}
   - id: 1524
     photoFileName: 1524.jpg
     name:
