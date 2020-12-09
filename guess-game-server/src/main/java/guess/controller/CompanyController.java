@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
@@ -30,11 +31,11 @@ public class CompanyController {
         this.localeService = localeService;
     }
 
-    @GetMapping("/company-names")
+    @GetMapping("/first-letters-company-names")
     @ResponseBody
-    public List<String> getCompanyNames(HttpSession httpSession) {
+    public List<String> getCompaniesByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         Language language = localeService.getLanguage(httpSession);
-        List<Company> companies = companyService.getCompanies();
+        List<Company> companies = companyService.getCompaniesByFirstLetters(firstLetters, language);
 
         return companies.stream()
                 .map(c -> LocalizationUtils.getString(c.getName(), language))

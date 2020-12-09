@@ -40,24 +40,28 @@ class CompanyControllerTest {
 
     @Test
     void getCompanyNames() throws Exception {
+        final Language LANGUAGE = Language.ENGLISH;
+        final String FIRST_LETTERS = "c";
+
         MockHttpSession httpSession = new MockHttpSession();
 
-        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
-        Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
-        Company company2 = new Company(2, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company2")));
+        Company company0 = new Company(0, List.of(new LocaleItem(LANGUAGE.getCode(), "Company0")));
+        Company company1 = new Company(1, List.of(new LocaleItem(LANGUAGE.getCode(), "Company1")));
+        Company company2 = new Company(2, List.of(new LocaleItem(LANGUAGE.getCode(), "Company2")));
 
-        given(companyService.getCompanies()).willReturn(new ArrayList<>(List.of(company2, company1, company0)));
-        given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
+        given(companyService.getCompaniesByFirstLetters(FIRST_LETTERS, LANGUAGE)).willReturn(new ArrayList<>(List.of(company2, company1, company0)));
+        given(localeService.getLanguage(httpSession)).willReturn(LANGUAGE);
 
-        mvc.perform(get("/api/company/company-names")
+        mvc.perform(get("/api/company/first-letters-company-names")
                 .contentType(MediaType.APPLICATION_JSON)
+                .param("firstLetters", FIRST_LETTERS)
                 .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
                 .andExpect(jsonPath("$[0]", is("Company0")))
                 .andExpect(jsonPath("$[1]", is("Company1")))
                 .andExpect(jsonPath("$[2]", is("Company2")));
-        Mockito.verify(companyService, VerificationModeFactory.times(1)).getCompanies();
+        Mockito.verify(companyService, VerificationModeFactory.times(1)).getCompaniesByFirstLetters(FIRST_LETTERS, LANGUAGE);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
     }
 }
