@@ -29,7 +29,7 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public List<Company> getCompaniesByFirstLetters(String firstLetters, Language language) {
-        String lowerCaseFirstLetters = firstLetters.toLowerCase();
+        String lowerCaseFirstLetters = (firstLetters != null) ? firstLetters.toLowerCase() : "";
 
         return companyDao.getCompanies().stream()
                 .filter(c -> LocalizationUtils.getString(c.getName(), language).toLowerCase().indexOf(lowerCaseFirstLetters) == 0)
