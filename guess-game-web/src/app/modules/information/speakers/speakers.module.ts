@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { MarkdownModule } from 'ngx-markdown';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
@@ -22,6 +23,7 @@ import { SpeakersSwitcherComponent } from './speakers-switcher.component';
     SpeakersSearchComponent,
     SpeakersSwitcherComponent],
   imports: [
+    AutoCompleteModule,
     CommonModule,
     CheckboxModule,
     FormsModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Speaker } from '../../../shared/models/speaker/speaker.model';
 import { SpeakerService } from '../../../shared/services/speaker.service';
+import { CompanyService } from '../../../shared/services/company.service';
 import { getSpeakersWithCompaniesString, isStringEmpty } from '../../general/utility-functions';
 
 @Component({
@@ -27,7 +28,9 @@ export class SpeakersSearchComponent implements OnInit {
   private searched = false;
   public multiSortMeta: any[] = [];
 
-  constructor(public speakerService: SpeakerService, public translateService: TranslateService) {
+  public companySuggestions: string[];
+
+  constructor(public speakerService: SpeakerService, public translateService: TranslateService, public companyService: CompanyService) {
     this.multiSortMeta.push({field: 'displayName', order: 1});
     this.multiSortMeta.push({field: 'companiesString', order: 1});
   }
@@ -84,5 +87,13 @@ export class SpeakersSearchComponent implements OnInit {
 
   isSpeakersListVisible() {
     return (this.searched && (this.speakers.length > 0));
+  }
+
+  companySearch(event) {
+    this.companyService.getCompanyNamesByFirstLetters(event.query)
+      .subscribe(data => {
+          this.companySuggestions = data;
+        }
+      );
   }
 }

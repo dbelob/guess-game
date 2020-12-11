@@ -33,7 +33,7 @@ public class CompanyController {
 
     @GetMapping("/first-letters-company-names")
     @ResponseBody
-    public List<String> getCompaniesByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
+    public List<String> getCompanyNamesByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         Language language = localeService.getLanguage(httpSession);
         List<Company> companies = companyService.getCompaniesByFirstLetters(firstLetters, language);
 
