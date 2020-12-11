@@ -39,7 +39,7 @@ public class CompanyController {
 
         return companies.stream()
                 .map(c -> LocalizationUtils.getString(c.getName(), language))
-                .sorted()
+                .sorted(String.CASE_INSENSITIVE_ORDER)
                 .collect(Collectors.toList());
     }
 }
