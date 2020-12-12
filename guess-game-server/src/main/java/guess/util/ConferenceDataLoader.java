@@ -177,7 +177,7 @@ public class ConferenceDataLoader {
                                        LoadSettings loadSettings) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
-        // Read event types, places, events, speakers, talks from resource files
+        // Read event types, places, events, companies, speakers, talks from resource files
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
         Optional<EventType> resourceOptionalEventType = resourceSourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference().equals(conference))
@@ -235,6 +235,14 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(s.getName(), Language.ENGLISH),
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
+
+        // Find companies
+        Map<String, Company> resourceCompanyMap = getResourceCompanyMap(resourceSourceInformation.getCompanies());
+        AtomicLong lastCompanyId = new AtomicLong(getLastId(resourceSourceInformation.getCompanies()));
+//        LoadResult<List<Company>> companyLoadResult = getCompanyLoadResult(
+//                resourceCompanyMap,
+//                lastCompanyId);
+        //TODO: implement
 
         // Find speakers
         Map<Long, Speaker> resourceSpeakerIdsMap = resourceSourceInformation.getSpeakers().stream()
@@ -443,6 +451,24 @@ public class ConferenceDataLoader {
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets resource name/company map.
+     *
+     * @param companies companies
+     * @return name/company map
+     */
+    static Map<String, Company> getResourceCompanyMap(List<Company> companies) {
+        Map<String, Company> companyMap = new HashMap<>();
+
+        for (Company company : companies) {
+            for (LocaleItem localItem : company.getName()) {
+                companyMap.put(localItem.getText(), company);
+            }
+        }
+
+        return companyMap;
     }
 
     /**
@@ -985,6 +1011,11 @@ public class ConferenceDataLoader {
      */
     static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
         YamlUtils.dump(new EventList(Collections.singletonList(event)), filename);
+    }
+
+    static Company findResourceCompany() {
+        //TODO: implement
+        return null;
     }
 
     /**
