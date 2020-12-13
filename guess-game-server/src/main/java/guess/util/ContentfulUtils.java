@@ -442,13 +442,14 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
-        AtomicLong id = new AtomicLong(-1);
+        AtomicLong speakerId = new AtomicLong(-1);
+        AtomicLong companyId = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .map(s -> createSpeaker(s, assetMap, assetErrorSet, id, true))
+                .map(s -> createSpeaker(s, assetMap, assetErrorSet, speakerId, companyId, true))
                 .collect(Collectors.toList());
     }
 
@@ -458,19 +459,20 @@ public class ContentfulUtils {
      * @param contentfulSpeaker    Contentful speaker
      * @param assetMap             map id/asset
      * @param assetErrorSet        set with error assets
-     * @param id                   atomic identifier
+     * @param speakerId            atomic speaker identifier
+     * @param companyId            atomic company identifier
      * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
      * @return speaker
      */
     static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                 Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+                                 Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
         return new Speaker(
-                id.getAndDecrement(),
+                speakerId.getAndDecrement(),
                 extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
                 extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence), //TODO: delete
                 List.of(new Company(
-                        -1,
+                        companyId.getAndDecrement(),
                         extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence)
                 )),
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
@@ -585,7 +587,7 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
-        AtomicLong id = new AtomicLong(-1);
+        AtomicLong talkId = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getErrorSet(response, ENTRY_LINK_TYPE);
         Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
@@ -597,7 +599,7 @@ public class ContentfulUtils {
         return Objects.requireNonNull(response)
                 .getItems().stream()
                 .filter(t -> isValidTalk(t, ignoreDemoStage))
-                .map(t -> createTalk(t, assetMap, entryErrorSet, assetErrorSet, speakerMap, id))
+                .map(t -> createTalk(t, assetMap, entryErrorSet, assetErrorSet, speakerMap, talkId))
                 .collect(Collectors.toList());
     }
 
@@ -626,11 +628,11 @@ public class ContentfulUtils {
      * @param entryErrorSet  set with error entries
      * @param assetErrorSet  set with error assets
      * @param speakerMap     speaker map
-     * @param id             atomic identifier
+     * @param talkId         atomic talk identifier
      * @return talk
      */
     static Talk createTalk(ContentfulTalk<? extends ContentfulTalkFields> contentfulTalk, Map<String, ContentfulAsset> assetMap,
-                           Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong id) {
+                           Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong talkId) {
         List<Speaker> speakers = contentfulTalk.getFields().getSpeakers().stream()
                 .filter(s -> {
                     String speakerId = s.getSys().getId();
@@ -651,7 +653,7 @@ public class ContentfulUtils {
 
         return new Talk(
                 new Nameable(
-                        id.getAndDecrement(),
+                        talkId.getAndDecrement(),
                         extractLocaleItems(contentfulTalk.getFields().getNameEn(), contentfulTalk.getFields().getName()),
                         extractLocaleItems(contentfulTalk.getFields().getShortEn(), contentfulTalk.getFields().getShortRu()),
                         extractLocaleItems(contentfulTalk.getFields().getLongEn(), contentfulTalk.getFields().getLongRu())
@@ -693,14 +695,15 @@ public class ContentfulUtils {
      */
     static Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
                                               Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
-        AtomicLong id = new AtomicLong(-1);
+        AtomicLong speakerId = new AtomicLong(-1);
+        AtomicLong companyId = new AtomicLong(-1);
 
         return (response.getIncludes() == null) ?
                 Collections.emptyMap() :
                 response.getIncludes().getEntry().stream()
                         .collect(Collectors.toMap(
                                 s -> s.getSys().getId(),
-                                s -> createSpeaker(s, assetMap, assetErrorSet, id, false)
+                                s -> createSpeaker(s, assetMap, assetErrorSet, speakerId, companyId, false)
                         ));
     }
 

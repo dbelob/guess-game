@@ -41,7 +41,7 @@ class ConferenceDataLoaderTest {
             @Mock
             SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
                 return new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
             }
         };
@@ -273,6 +273,7 @@ class ConferenceDataLoaderTest {
                                     List.of(eventType0),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
+                                    Collections.emptyList(),
                                     List.of(speaker0),
                                     Collections.emptyList()),
                             event0,
@@ -282,6 +283,7 @@ class ConferenceDataLoaderTest {
                             new SourceInformation(
                                     List.of(place0),
                                     List.of(eventType0),
+                                    Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     List.of(speaker0),

@@ -11,15 +11,17 @@ public class SourceInformation {
     private final List<EventType> eventTypes;
     private final List<Event> events;
     private final List<Company> companies;
+    private final List<CompanySynonyms> companySynonyms;
     private final List<Speaker> speakers;
     private final List<Talk> talks;
 
     public SourceInformation(List<Place> places, List<EventType> eventTypes, List<Event> events, List<Company> companies,
-                             List<Speaker> speakers, List<Talk> talks) {
+                             List<CompanySynonyms> companySynonyms, List<Speaker> speakers, List<Talk> talks) {
         this.eventTypes = eventTypes;
         this.places = places;
         this.events = events;
         this.companies = companies;
+        this.companySynonyms = companySynonyms;
         this.speakers = speakers;
         this.talks = talks;
     }
@@ -40,6 +42,10 @@ public class SourceInformation {
         return companies;
     }
 
+    public List<CompanySynonyms> getCompanySynonyms() {
+        return companySynonyms;
+    }
+
     public List<Speaker> getSpeakers() {
         return speakers;
     }
@@ -57,13 +63,14 @@ public class SourceInformation {
                 Objects.equals(eventTypes, that.eventTypes) &&
                 Objects.equals(events, that.events) &&
                 Objects.equals(companies, that.companies) &&
+                Objects.equals(companySynonyms, that.companySynonyms) &&
                 Objects.equals(speakers, that.speakers) &&
                 Objects.equals(talks, that.talks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(places, eventTypes, events, companies, speakers, talks);
+        return Objects.hash(places, eventTypes, events, companies, companySynonyms, speakers, talks);
     }
 
     @Override
@@ -73,6 +80,7 @@ public class SourceInformation {
                 ", eventTypes=" + eventTypes +
                 ", events=" + events +
                 ", companies=" + companies +
+                ", companySynonyms=" + companySynonyms +
                 ", speakers=" + speakers +
                 ", talks=" + talks +
                 '}';

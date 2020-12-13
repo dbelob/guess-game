@@ -117,6 +117,7 @@ public class YamlUtils {
                 eventTypeList.getEventTypes(),
                 eventList.getEvents(),
                 companyList.getCompanies(),
+                companySynonymsList.getCompanySynonyms(),
                 speakerList.getSpeakers(),
                 talkList.getTalks());
     }

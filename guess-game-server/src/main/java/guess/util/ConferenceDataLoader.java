@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -236,12 +237,23 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
 
+        // Order company with talk order
+        List<Company> contentfulCompanies = getSpeakerCompanies(contentfulSpeakers);
+        log.info("Companies (in Contentful): {}", contentfulCompanies.size());
+        contentfulCompanies.forEach(
+                c -> log.trace("Company: nameEn: '{}', name: '{}'",
+                        LocalizationUtils.getString(c.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
+        );
+
         // Find companies
-        Map<String, Company> resourceCompanyMap = getResourceCompanyMap(resourceSourceInformation.getCompanies());
+        Map<String, Company> resourceCompanyMap = getResourceEntityMap(resourceSourceInformation.getCompanies(), Company::getName);
+        addSynonymsToCompanyMap(resourceSourceInformation.getCompanySynonyms(), resourceCompanyMap);
         AtomicLong lastCompanyId = new AtomicLong(getLastId(resourceSourceInformation.getCompanies()));
-//        LoadResult<List<Company>> companyLoadResult = getCompanyLoadResult(
-//                resourceCompanyMap,
-//                lastCompanyId);
+        LoadResult<List<Company>> companyLoadResult = getCompanyLoadResult(
+                contentfulCompanies,
+                resourceCompanyMap,
+                lastCompanyId);
         //TODO: implement
 
         // Find speakers
@@ -454,21 +466,88 @@ public class ConferenceDataLoader {
     }
 
     /**
-     * Gets resource name/company map.
+     * Gets speaker companies.
      *
-     * @param companies companies
-     * @return name/company map
+     * @param speakers speakers
+     * @return speaker companies
      */
-    static Map<String, Company> getResourceCompanyMap(List<Company> companies) {
-        Map<String, Company> companyMap = new HashMap<>();
+    static List<Company> getSpeakerCompanies(List<Speaker> speakers) {
+        return speakers.stream()
+                .flatMap(s -> s.getCompanies().stream())
+                .distinct()
+                .collect(Collectors.toList());
+    }
 
-        for (Company company : companies) {
-            for (LocaleItem localItem : company.getName()) {
-                companyMap.put(localItem.getText(), company);
+    /**
+     * Gets resource name/entity map.
+     *
+     * @param entities            entities
+     * @param localeItemsFunction function to convert from entity to local items
+     * @param <T>                 entity type
+     * @return name/entity map
+     */
+    static <T> Map<String, T> getResourceEntityMap(List<T> entities, Function<T, List<LocaleItem>> localeItemsFunction) {
+        Map<String, T> entityMap = new HashMap<>();
+
+        for (T entity : entities) {
+            for (LocaleItem localItem : localeItemsFunction.apply(entity)) {
+                entityMap.put(localItem.getText(), entity);
             }
         }
 
-        return companyMap;
+        return entityMap;
+    }
+
+    /**
+     * Adds synonyms to company map.
+     *
+     * @param companySynonymsList company synonyms list
+     * @param companyMap          company map
+     */
+    static void addSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap) {
+        for (CompanySynonyms companySynonyms : companySynonymsList) {
+            if (companyMap.containsKey(companySynonyms.getName())) {
+                Company company = companyMap.get(companySynonyms.getName());
+
+                for (String synonym : companySynonyms.getSynonyms()) {
+                    companyMap.put(synonym, company);
+                }
+            }
+        }
+    }
+
+    /**
+     * Gets load result for companies.
+     *
+     * @param companies          companies
+     * @param resourceCompanyMap resource company map
+     * @param lastCompanyId      identifier of last company
+     * @return load result for companies
+     */
+    static LoadResult<List<Company>> getCompanyLoadResult(List<Company> companies, Map<String, Company> resourceCompanyMap,
+                                                          AtomicLong lastCompanyId) {
+        List<Company> companiesToAppend = new ArrayList<>();
+
+        for (Company c : companies) {
+            if (!c.getName().isEmpty()) {
+                Company resourceCompany = findResourceCompany(c, resourceCompanyMap);
+
+                if (resourceCompany == null) {
+                    // Company not exists
+                    c.setId(lastCompanyId.incrementAndGet());
+
+                    companiesToAppend.add(c);
+                } else {
+                    // Company exists
+                    c.setId(resourceCompany.getId());
+                }
+            }
+        }
+
+        return new LoadResult<>(
+                Collections.emptyList(),
+                companiesToAppend,
+                Collections.emptyList());
     }
 
     /**
@@ -1013,8 +1092,22 @@ public class ConferenceDataLoader {
         YamlUtils.dump(new EventList(Collections.singletonList(event)), filename);
     }
 
-    static Company findResourceCompany() {
-        //TODO: implement
+    /**
+     * Finds resource company.
+     *
+     * @param company            company
+     * @param resourceCompanyMap resource company map
+     * @return resource company
+     */
+    static Company findResourceCompany(Company company, Map<String, Company> resourceCompanyMap) {
+        for (LocaleItem localItem : company.getName()) {
+            Company resourceCompany = resourceCompanyMap.get(localItem.getText());
+
+            if (resourceCompany != null) {
+                return resourceCompany;
+            }
+        }
+
         return null;
     }
 

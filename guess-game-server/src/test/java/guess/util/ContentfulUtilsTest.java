@@ -628,7 +628,7 @@ class ContentfulUtilsTest {
 
             @Mock
             Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                  Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+                                  Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
                 return new Speaker();
             }
 
@@ -654,8 +654,8 @@ class ContentfulUtilsTest {
         new MockUp<ContentfulUtils>() {
             @Mock
             Speaker createSpeaker(Invocation invocation, ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                  Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
-                return invocation.proceed(contentfulSpeaker, assetMap, assetErrorSet, id, checkEnTextExistence);
+                                  Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
+                return invocation.proceed(contentfulSpeaker, assetMap, assetErrorSet, speakerId, companyId, checkEnTextExistence);
             }
 
             @Mock
@@ -690,12 +690,13 @@ class ContentfulUtilsTest {
 
         Map<String, ContentfulAsset> assetMap = Collections.emptyMap();
         Set<String> assetErrorSet = Collections.emptySet();
-        AtomicLong id = new AtomicLong(42);
+        AtomicLong speakerId = new AtomicLong(42);
+        AtomicLong companyId = new AtomicLong(42);
 
         Speaker speaker = new Speaker();
         speaker.setId(42);
 
-        assertEquals(42, ContentfulUtils.createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, id, true).getId());
+        assertEquals(42, ContentfulUtils.createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, speakerId, companyId, true).getId());
     }
 
     @Nested
@@ -1131,7 +1132,7 @@ class ContentfulUtilsTest {
             new MockUp<ContentfulUtils>() {
                 @Mock
                 Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                      Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+                                      Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
                     return speaker;
                 }
 

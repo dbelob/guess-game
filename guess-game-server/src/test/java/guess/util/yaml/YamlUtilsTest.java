@@ -66,6 +66,7 @@ class YamlUtilsTest {
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
+                                    Collections.emptyList(),
                                     List.of(speaker0),
                                     Collections.emptyList()
                             ),
