@@ -249,14 +249,16 @@ public class ConferenceDataLoader {
         // Find companies
         Map<String, Company> resourceCompanyMap = getResourceEntityMap(resourceSourceInformation.getCompanies(), Company::getName);
         addSynonymsToCompanyMap(resourceSourceInformation.getCompanySynonyms(), resourceCompanyMap);
+
         AtomicLong lastCompanyId = new AtomicLong(getLastId(resourceSourceInformation.getCompanies()));
         LoadResult<List<Company>> companyLoadResult = getCompanyLoadResult(
                 contentfulCompanies,
                 resourceCompanyMap,
                 lastCompanyId);
-        //TODO: implement
 
         // Find speakers
+        fillCompanyIds(contentfulSpeakers);
+
         Map<Long, Speaker> resourceSpeakerIdsMap = resourceSourceInformation.getSpeakers().stream()
                 .collect(Collectors.toMap(
                         Speaker::getId,
@@ -548,6 +550,20 @@ public class ConferenceDataLoader {
                 Collections.emptyList(),
                 companiesToAppend,
                 Collections.emptyList());
+    }
+
+    /**
+     * Fills company identifiers in speakers.
+     *
+     * @param speakers speakers
+     */
+    static void fillCompanyIds(List<Speaker> speakers) {
+        speakers.forEach(
+                s -> s.setCompanyIds(s.getCompanies().stream()
+                        .map(Company::getId)
+                        .collect(Collectors.toList())
+                )
+        );
     }
 
     /**
