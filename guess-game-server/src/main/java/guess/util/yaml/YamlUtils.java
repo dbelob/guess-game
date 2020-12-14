@@ -405,6 +405,9 @@ public class YamlUtils {
                     new PropertyMatcher(Talk.class,
                             List.of("id", "name", "shortDescription", "longDescription", "talkDay", "trackTime", "track",
                                     "language", "presentationLinks", "videoLinks", "speakerIds")),
+                    new PropertyMatcher(Company.class,
+                            List.of("id", "name")),
+                    // TODO: change from "company" to "companyIds"
                     new PropertyMatcher(Speaker.class,
                             List.of("id", "photoFileName", "name", "company", "bio", "twitter", "gitHub", "javaChampion",
                                     "mvp", "mvpReconnect")),

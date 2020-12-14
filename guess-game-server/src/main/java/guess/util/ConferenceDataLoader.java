@@ -344,7 +344,7 @@ public class ConferenceDataLoader {
         LoadResult<Event> eventLoadResult = getEventLoadResult(contentfulEvent, resourceEvent);
 
         // Save files
-        saveFiles(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult);
+        saveFiles(companyLoadResult, speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult);
     }
 
     /**
@@ -858,6 +858,7 @@ public class ConferenceDataLoader {
     /**
      * Saves files.
      *
+     * @param companyLoadResult company load result
      * @param speakerLoadResult speaker load result
      * @param talkLoadResult    talk load result
      * @param placeLoadResult   place load result
@@ -865,8 +866,10 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    static void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+    static void saveFiles(LoadResult<List<Company>> companyLoadResult, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
                           LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+        List<Company> companiesToAppend = companyLoadResult.getItemToAppend();
+
         List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
         List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
 
@@ -883,20 +886,37 @@ public class ConferenceDataLoader {
         Event eventToAppend = eventLoadResult.getItemToAppend();
         Event eventToUpdate = eventLoadResult.getItemToUpdate();
 
-        if (urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
+        if (companiesToAppend.isEmpty() &&
+                urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
                 speakersToAppend.isEmpty() && speakersToUpdate.isEmpty() &&
                 talksToDelete.isEmpty() && talksToAppend.isEmpty() && talksToUpdate.isEmpty() &&
                 (eventToAppend == null) && (eventToUpdate == null) &&
                 (placeToAppend == null) && (placeToUpdate == null)) {
-            log.info("All speakers, talks, place and event are up-to-date");
+            log.info("All companies, speakers, talks, place and event are up-to-date");
         } else {
             YamlUtils.clearDumpDirectory();
 
+            saveCompanies(companyLoadResult);
             saveImages(speakerLoadResult);
             saveSpeakers(speakerLoadResult);
             saveTalks(talkLoadResult);
             savePlaces(placeLoadResult);
             saveEvents(eventLoadResult);
+        }
+    }
+
+    /**
+     * Saves companies.
+     *
+     * @param companyLoadResult company load result
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    static void saveCompanies(LoadResult<List<Company>> companyLoadResult) throws IOException, NoSuchFieldException {
+        List<Company> companiesToAppend = companyLoadResult.getItemToAppend();
+
+        if (!companiesToAppend.isEmpty()) {
+            logAndDumpCompanies(companiesToAppend, "Companies (to append resource file): {}", "companies-to-append.yml");
         }
     }
 
@@ -1028,6 +1048,27 @@ public class ConferenceDataLoader {
         );
 
         YamlUtils.dump(new EventTypeList(eventTypes), filename);
+    }
+
+    /**
+     * Logs and dumps companies.
+     *
+     * @param companies  companies
+     * @param logMessage log message
+     * @param filename   filename
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    static void logAndDumpCompanies(List<Company> companies, String logMessage, String filename) throws IOException, NoSuchFieldException {
+        log.info(logMessage, companies.size());
+        companies.forEach(
+                c -> log.trace("Company: nameEn: '{}', name: '{}'",
+                        LocalizationUtils.getString(c.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
+        );
+
+        YamlUtils.dump(new CompanyList(companies), filename);
+
     }
 
     /**

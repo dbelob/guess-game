@@ -1203,11 +1203,22 @@ class ConferenceDataLoaderTest {
     @DisplayName("saveFiles method tests")
     class SaveFilesTest {
         private Stream<Arguments> data() {
+            Company company0 = new Company();
             Speaker speaker0 = new Speaker();
             UrlFilename urlFilename0 = new UrlFilename("url0", "filename0");
             Talk talk0 = new Talk();
             Place place0 = new Place();
             Event event0 = new Event();
+
+            LoadResult<List<Company>> companyLoadResult0 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    Collections.emptyList());
+
+            LoadResult<List<Company>> companyLoadResult1 = new LoadResult<>(
+                    Collections.emptyList(),
+                    List.of(company0),
+                    Collections.emptyList());
 
             SpeakerLoadResult speakerLoadResult0 = new SpeakerLoadResult(
                     new LoadResult<>(
@@ -1315,7 +1326,9 @@ class ConferenceDataLoaderTest {
                 for (LoadResult<Place> placeLoadResult : List.of(placeLoadResult0, placeLoadResult1, placeLoadResult2)) {
                     for (LoadResult<List<Talk>> talkLoadResult : List.of(talkLoadResult0, talkLoadResult1, talkLoadResult2, talkLoadResult3)) {
                         for (SpeakerLoadResult speakerLoadResult : List.of(speakerLoadResult0, speakerLoadResult1, speakerLoadResult2, speakerLoadResult3, speakerLoadResult4)) {
-                            argumentsList.add(arguments(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+                            for (LoadResult<List<Company>> companyLoadResult : List.of(companyLoadResult0, companyLoadResult1)) {
+                                argumentsList.add(arguments(companyLoadResult, speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+                            }
                         }
                     }
                 }
@@ -1326,13 +1339,18 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+        void saveFiles(LoadResult<List<Company>> companyLoadResult, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
                        LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) {
             new MockUp<ConferenceDataLoader>() {
                 @Mock
                 void saveFiles(Invocation invocation, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
                                LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
                     invocation.proceed(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult);
+                }
+
+                @Mock
+                void saveCompanies(LoadResult<List<Company>> companyLoadResult) throws IOException, NoSuchFieldException {
+                    // Nothing
                 }
 
                 @Mock
@@ -1361,7 +1379,7 @@ class ConferenceDataLoaderTest {
                 }
             };
 
-            assertDoesNotThrow(() -> ConferenceDataLoader.saveFiles(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveFiles(companyLoadResult, speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
         }
     }
 
