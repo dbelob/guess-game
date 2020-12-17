@@ -103,10 +103,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             // Fill company to speakers map
             for (Company company : speaker.getCompanies()) {
-                if (!companySpeakersMap.containsKey(company)) {
-                    companySpeakersMap.put(company, new HashSet<>());
-                }
-
+                companySpeakersMap.computeIfAbsent(company, k -> new HashSet<>());
                 companySpeakersMap.get(company).add(speaker);
             }
         }
