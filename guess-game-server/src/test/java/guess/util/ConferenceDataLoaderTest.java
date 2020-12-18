@@ -353,6 +353,18 @@ class ConferenceDataLoaderTest {
                 }
 
                 @Mock
+                List<Company> getSpeakerCompanies(List<Speaker> speakers) {
+                    //TODO: add parameter
+                    return Collections.emptyList();
+                }
+
+                @Mock
+                Map<NameCompany, Speaker> getResourceNameCompanySpeakerMap(List<Speaker> speakers) {
+                    //TODO: add parameter
+                    return Collections.emptyMap();
+                }
+
+                @Mock
                 SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
                                                        SpeakerLoadMaps speakerLoadMaps,
                                                        AtomicLong lastSpeakerId) throws IOException {
@@ -645,7 +657,6 @@ class ConferenceDataLoaderTest {
             speaker2.setPhotoFileName(PHOTO_FILE_NAME2);
 
             SpeakerLoadMaps speakerLoadMaps = new SpeakerLoadMaps(
-                    Collections.emptyMap(),
                     Collections.emptyMap(),
                     Collections.emptyMap(),
                     Collections.emptyMap(),
@@ -1667,43 +1678,49 @@ class ConferenceDataLoaderTest {
             final String COMPANY_NAME4 = "Компания4";
             final String COMPANY_NAME5 = "Компания5";
 
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME0)));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME1)));
+            Company company2 = new Company(2, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME2)));
+            Company company3 = new Company(3, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME3)));
+            Company company4 = new Company(4, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME4)));
+            Company company5 = new Company(5, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME5)));
+
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
             speaker0.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME0)));
-            speaker0.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME0)));
+            speaker0.setCompanies(List.of(company0));
 
             Speaker speaker1 = new Speaker();
             speaker1.setId(1);
             speaker1.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME1)));
-            speaker1.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME1)));
+            speaker1.setCompanies(List.of(company1));
 
             Speaker speaker2 = new Speaker();
             speaker2.setId(2);
             speaker2.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME2)));
-            speaker2.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME2)));
+            speaker2.setCompanies(List.of(company2));
 
             Speaker speaker3 = new Speaker();
             speaker3.setId(3);
             speaker3.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME3)));
-            speaker3.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME3)));
+            speaker3.setCompanies(List.of(company3));
 
             Speaker speaker4 = new Speaker();
             speaker4.setId(4);
             speaker4.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME4)));
-            speaker4.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME4)));
+            speaker4.setCompanies(List.of(company4));
 
             Speaker speaker5 = new Speaker();
             speaker5.setId(5);
             speaker5.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME5)));
-            speaker5.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME5)));
+            speaker5.setCompanies(List.of(company5));
 
-            NameCompany nameCompany0 = new NameCompany(SPEAKER_NAME0, COMPANY_NAME0);
-            NameCompany nameCompany1 = new NameCompany(SPEAKER_NAME1, COMPANY_NAME1);
+            NameCompany nameCompany0 = new NameCompany(SPEAKER_NAME0, company0);
+            NameCompany nameCompany1 = new NameCompany(SPEAKER_NAME1, company1);
 
             SpeakerLoadMaps speakerLoadMaps = new SpeakerLoadMaps(
                     Map.of(nameCompany0, 0L, nameCompany1, 1L),
                     Map.of(0L, speaker0),
-                    Collections.emptyMap(),
                     Collections.emptyMap(),
                     Collections.emptyMap(),
                     Collections.emptyMap());
@@ -1796,12 +1813,13 @@ class ConferenceDataLoaderTest {
 
     @Test
     void findResourceSpeakerByNameCompany() {
+        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
         Speaker speaker0 = new Speaker();
         speaker0.setId(0);
         speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
-        speaker0.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+        speaker0.setCompanies(List.of(company0));
 
-        NameCompany nameCompany0 = new NameCompany("Name0", "Company0");
+        NameCompany nameCompany0 = new NameCompany("Name0", company0);
 
         Map<NameCompany, Speaker> resourceNameCompanySpeakers0 = Map.of(nameCompany0, speaker0);
 

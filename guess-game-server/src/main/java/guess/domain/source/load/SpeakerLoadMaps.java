@@ -12,21 +12,18 @@ import java.util.Set;
 public class SpeakerLoadMaps {
     private final Map<NameCompany, Long> knownSpeakerIdsMap;
     private final Map<Long, Speaker> resourceSpeakerIdsMap;
-    private final Map<NameCompany, Speaker> resourceRuNameCompanySpeakers;
-    private final Map<NameCompany, Speaker> resourceEnNameCompanySpeakers;
+    private final Map<NameCompany, Speaker> resourceNameCompanySpeakers;
     private final Map<String, Set<Speaker>> resourceRuNameSpeakers;
     private final Map<String, Set<Speaker>> resourceEnNameSpeakers;
 
     public SpeakerLoadMaps(Map<NameCompany, Long> knownSpeakerIdsMap,
                            Map<Long, Speaker> resourceSpeakerIdsMap,
-                           Map<NameCompany, Speaker> resourceRuNameCompanySpeakers,
-                           Map<NameCompany, Speaker> resourceEnNameCompanySpeakers,
+                           Map<NameCompany, Speaker> resourceNameCompanySpeakers,
                            Map<String, Set<Speaker>> resourceRuNameSpeakers,
                            Map<String, Set<Speaker>> resourceEnNameSpeakers) {
         this.knownSpeakerIdsMap = knownSpeakerIdsMap;
         this.resourceSpeakerIdsMap = resourceSpeakerIdsMap;
-        this.resourceRuNameCompanySpeakers = resourceRuNameCompanySpeakers;
-        this.resourceEnNameCompanySpeakers = resourceEnNameCompanySpeakers;
+        this.resourceNameCompanySpeakers = resourceNameCompanySpeakers;
         this.resourceRuNameSpeakers = resourceRuNameSpeakers;
         this.resourceEnNameSpeakers = resourceEnNameSpeakers;
     }
@@ -39,12 +36,8 @@ public class SpeakerLoadMaps {
         return resourceSpeakerIdsMap;
     }
 
-    public Map<NameCompany, Speaker> getResourceRuNameCompanySpeakers() {
-        return resourceRuNameCompanySpeakers;
-    }
-
-    public Map<NameCompany, Speaker> getResourceEnNameCompanySpeakers() {
-        return resourceEnNameCompanySpeakers;
+    public Map<NameCompany, Speaker> getResourceNameCompanySpeakers() {
+        return resourceNameCompanySpeakers;
     }
 
     public Map<String, Set<Speaker>> getResourceRuNameSpeakers() {
