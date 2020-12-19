@@ -1195,12 +1195,16 @@ public class ConferenceDataLoader {
         // - speaker could change his/her last name (for example, woman got married);
         // - speaker (with non-unique pair of name, company) could change his/her company.
         Long resourceSpeakerId = null;
+        Company speakerCompany = null;
+
         for (Company company : speaker.getCompanies()) {
             resourceSpeakerId = speakerLoadMaps.getKnownSpeakerIdsMap().get(
                     new NameCompany(
                             LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
                             company));
+
             if (resourceSpeakerId != null) {
+                speakerCompany = company;
                 break;
             }
         }
@@ -1209,11 +1213,13 @@ public class ConferenceDataLoader {
             Speaker resourceSpeaker = speakerLoadMaps.getResourceSpeakerIdsMap().get(resourceSpeakerId);
 
             Long finalResourceSpeakerId = resourceSpeakerId;
+            Company finalSpeakerCompany = speakerCompany;
+
             return Objects.requireNonNull(resourceSpeaker,
                     () -> String.format("Resource speaker id %d not found (change id of known speaker '%s' and company '%s' in method parameters and rerun loading)",
                             finalResourceSpeakerId,
                             LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
-                            LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN)));
+                            (finalSpeakerCompany != null) ? LocalizationUtils.getString(finalSpeakerCompany.getName(), Language.RUSSIAN) : null));
         }
 
         // Find in resource speakers by (name, company) pair
@@ -1294,11 +1300,15 @@ public class ConferenceDataLoader {
                 return null;
             } else {
                 Speaker resourceSpeaker = resourceSpeakers.iterator().next();
+                String resourceSpeakerCompanies = resourceSpeaker.getCompanies().stream()
+                        .map(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
+                        .collect(Collectors.joining(", "));
+                String speakerCompanies = speaker.getCompanies().stream()
+                        .map(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
+                        .collect(Collectors.joining(", "));
 
                 log.warn("Speaker found only by name '{}', speaker company (in resource files): '{}', speaker company (in Contentful): '{}')",
-                        speakerName,
-                        LocalizationUtils.getString(resourceSpeaker.getCompany(), Language.RUSSIAN),
-                        LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN));
+                        speakerName, resourceSpeakerCompanies, speakerCompanies);
 
                 return resourceSpeaker;
             }
