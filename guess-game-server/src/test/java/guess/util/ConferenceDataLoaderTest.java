@@ -365,6 +365,12 @@ class ConferenceDataLoaderTest {
                 }
 
                 @Mock
+                Map<String, Set<Speaker>> getResourceNameSpeakersMap(List<Speaker> speakers) {
+                    //TODO: add parameter
+                    return Collections.emptyMap();
+                }
+
+                @Mock
                 SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
                                                        SpeakerLoadMaps speakerLoadMaps,
                                                        AtomicLong lastSpeakerId) throws IOException {
@@ -657,7 +663,6 @@ class ConferenceDataLoaderTest {
             speaker2.setPhotoFileName(PHOTO_FILE_NAME2);
 
             SpeakerLoadMaps speakerLoadMaps = new SpeakerLoadMaps(
-                    Collections.emptyMap(),
                     Collections.emptyMap(),
                     Collections.emptyMap(),
                     Collections.emptyMap(),
@@ -1722,7 +1727,6 @@ class ConferenceDataLoaderTest {
                     Map.of(nameCompany0, 0L, nameCompany1, 1L),
                     Map.of(0L, speaker0),
                     Collections.emptyMap(),
-                    Collections.emptyMap(),
                     Collections.emptyMap());
 
             return Stream.of(
@@ -1752,15 +1756,13 @@ class ConferenceDataLoaderTest {
                 }
 
                 @Mock
-                Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
-                    return (((speaker.getId() == 2) && Language.ENGLISH.equals(language)) ||
-                            ((speaker.getId() == 3) && Language.RUSSIAN.equals(language))) ? speaker : null;
+                Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers) {
+                    return ((speaker.getId() == 2) || (speaker.getId() == 3)) ? speaker : null;
                 }
 
                 @Mock
-                Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
-                    return (((speaker.getId() == 4) && Language.ENGLISH.equals(language) ||
-                            (speaker.getId() == 5) && Language.RUSSIAN.equals(language))) ? speaker : null;
+                Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers) {
+                    return ((speaker.getId() == 4) || (speaker.getId() == 5)) ? speaker : null;
                 }
             };
 
@@ -1814,23 +1816,16 @@ class ConferenceDataLoaderTest {
     @Test
     void findResourceSpeakerByNameCompany() {
         Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+
         Speaker speaker0 = new Speaker();
         speaker0.setId(0);
         speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
         speaker0.setCompanies(List.of(company0));
 
         NameCompany nameCompany0 = new NameCompany("Name0", company0);
-
         Map<NameCompany, Speaker> resourceNameCompanySpeakers0 = Map.of(nameCompany0, speaker0);
 
-        new MockUp<LocalizationUtils>() {
-            @Mock
-            String getString(List<LocaleItem> localeItems, Language language) {
-                return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
-            }
-        };
-
-        assertEquals(speaker0, ConferenceDataLoader.findResourceSpeakerByNameCompany(speaker0, resourceNameCompanySpeakers0, Language.ENGLISH));
+        assertEquals(speaker0, ConferenceDataLoader.findResourceSpeakerByNameCompany(speaker0, resourceNameCompanySpeakers0));
     }
 
     @Nested
@@ -1865,16 +1860,16 @@ class ConferenceDataLoaderTest {
             resourceNameSpeakers0.put(SPEAKER_NAME3, Set.of(speaker0, speaker3));
 
             return Stream.of(
-                    arguments(speaker1, resourceNameSpeakers0, Language.ENGLISH, null, null),
-                    arguments(speaker2, resourceNameSpeakers0, Language.ENGLISH, null, IllegalStateException.class),
-                    arguments(speaker3, resourceNameSpeakers0, Language.ENGLISH, null, null),
-                    arguments(speaker0, resourceNameSpeakers0, Language.ENGLISH, speaker0, null)
+                    arguments(speaker1, resourceNameSpeakers0, null, null),
+                    arguments(speaker2, resourceNameSpeakers0, null, IllegalStateException.class),
+                    arguments(speaker3, resourceNameSpeakers0, null, null),
+                    arguments(speaker0, resourceNameSpeakers0, speaker0, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language,
+        void findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers,
                                        Speaker expected, Class<? extends Throwable> expectedException) {
             new MockUp<LocalizationUtils>() {
                 @Mock
@@ -1884,9 +1879,9 @@ class ConferenceDataLoaderTest {
             };
 
             if (expectedException == null) {
-                assertEquals(expected, ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers, language));
+                assertEquals(expected, ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers));
             } else {
-                assertThrows(expectedException, () -> ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers, language));
+                assertThrows(expectedException, () -> ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers));
             }
         }
     }

@@ -265,16 +265,7 @@ public class ConferenceDataLoader {
                         s -> s
                 ));
         Map<NameCompany, Speaker> resourceNameCompanySpeakers = getResourceNameCompanySpeakerMap(resourceSourceInformation.getSpeakers());
-        Map<String, Set<Speaker>> resourceRuNameSpeakers = resourceSourceInformation.getSpeakers().stream()
-                .collect(Collectors.groupingBy(
-                        s -> LocalizationUtils.getString(s.getName(), Language.RUSSIAN).trim(),
-                        Collectors.toSet()
-                ));
-        Map<String, Set<Speaker>> resourceEnNameSpeakers = resourceSourceInformation.getSpeakers().stream()
-                .collect(Collectors.groupingBy(
-                        s -> LocalizationUtils.getString(s.getName(), Language.ENGLISH).trim(),
-                        Collectors.toSet()
-                ));
+        Map<String, Set<Speaker>> resourceNameSpeakers = getResourceNameSpeakersMap(resourceSourceInformation.getSpeakers());
         AtomicLong lastSpeakerId = new AtomicLong(getLastId(resourceSourceInformation.getSpeakers()));
         SpeakerLoadResult speakerLoadResult = getSpeakerLoadResult(
                 contentfulSpeakers,
@@ -282,8 +273,7 @@ public class ConferenceDataLoader {
                         loadSettings.getKnownSpeakerIdsMap(),
                         resourceSpeakerIdsMap,
                         resourceNameCompanySpeakers,
-                        resourceRuNameSpeakers,
-                        resourceEnNameSpeakers),
+                        resourceNameSpeakers),
                 lastSpeakerId);
 
         // Find talks
@@ -566,6 +556,25 @@ public class ConferenceDataLoader {
                 for (Company company : speaker.getCompanies()) {
                     map.put(new NameCompany(localeItem.getText(), company), speaker);
                 }
+            }
+        }
+
+        return map;
+    }
+
+    /**
+     * Gets resource name/speakers map.
+     *
+     * @param speakers speakers
+     * @return name/speakers map
+     */
+    static Map<String, Set<Speaker>> getResourceNameSpeakersMap(List<Speaker> speakers) {
+        Map<String, Set<Speaker>> map = new HashMap<>();
+
+        for (Speaker speaker : speakers) {
+            for (LocaleItem localeItem : speaker.getName()) {
+                map.computeIfAbsent(localeItem.getText(), k -> new HashSet<>());
+                map.get(localeItem.getText()).add(speaker);
             }
         }
 
@@ -1207,26 +1216,14 @@ public class ConferenceDataLoader {
                             LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN)));
         }
 
-        // Find in resource speakers by Russian (name, company) pair
-        Speaker resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceNameCompanySpeakers(), Language.RUSSIAN);
+        // Find in resource speakers by (name, company) pair
+        Speaker resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceNameCompanySpeakers());
         if (resourceSpeaker != null) {
             return resourceSpeaker;
         }
 
-        // Find in resource speakers by English (name, company) pair
-        resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceNameCompanySpeakers(), Language.ENGLISH);
-        if (resourceSpeaker != null) {
-            return resourceSpeaker;
-        }
-
-        // Find in resource speakers by Russian name
-        resourceSpeaker = findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceRuNameSpeakers(), Language.RUSSIAN);
-        if (resourceSpeaker != null) {
-            return resourceSpeaker;
-        }
-
-        // Find in resource speakers by English name
-        return findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceEnNameSpeakers(), Language.ENGLISH);
+        // Find in resource speakers by name
+        return findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceNameSpeakers());
     }
 
     static Talk findResourceTalk(Talk talk,
@@ -1247,19 +1244,21 @@ public class ConferenceDataLoader {
      *
      * @param speaker                     speaker
      * @param resourceNameCompanySpeakers map of (name, company)/speaker
-     * @param language                    language
      * @return resource speaker
      */
-    static Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
+    static Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers) {
         Speaker result = null;
 
-        for (Company company : speaker.getCompanies()) {
-            result = resourceNameCompanySpeakers.get(
-                    new NameCompany(
-                            LocalizationUtils.getString(speaker.getName(), language),
-                            company));
-            if (result != null) {
-                break;
+        for (LocaleItem localeItem : speaker.getName()) {
+            for (Company company : speaker.getCompanies()) {
+                result = resourceNameCompanySpeakers.get(
+                        new NameCompany(
+                                localeItem.getText(),
+                                company));
+
+                if (result != null) {
+                    break;
+                }
             }
         }
 
@@ -1271,12 +1270,20 @@ public class ConferenceDataLoader {
      *
      * @param speaker              speaker
      * @param resourceNameSpeakers map of name/speakers
-     * @param language             language
      * @return resource speaker
      */
-    static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
-        String speakerName = LocalizationUtils.getString(speaker.getName(), language);
-        Set<Speaker> resourceSpeakers = resourceNameSpeakers.get(speakerName);
+    static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers) {
+        Set<Speaker> resourceSpeakers = null;
+        String speakerName = null;
+
+        for (LocaleItem localeItem : speaker.getName()) {
+            speakerName = localeItem.getText();
+            resourceSpeakers = resourceNameSpeakers.get(speakerName);
+
+            if (resourceSpeakers != null) {
+                break;
+            }
+        }
 
         if (resourceSpeakers != null) {
             if (resourceSpeakers.isEmpty()) {
@@ -1290,8 +1297,8 @@ public class ConferenceDataLoader {
 
                 log.warn("Speaker found only by name '{}', speaker company (in resource files): '{}', speaker company (in Contentful): '{}')",
                         speakerName,
-                        LocalizationUtils.getString(resourceSpeaker.getCompany(), language),
-                        LocalizationUtils.getString(speaker.getCompany(), language));
+                        LocalizationUtils.getString(resourceSpeaker.getCompany(), Language.RUSSIAN),
+                        LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN));
 
                 return resourceSpeaker;
             }
