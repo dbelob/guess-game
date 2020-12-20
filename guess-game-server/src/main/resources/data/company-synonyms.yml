@@ -18,7 +18,8 @@ companySynonyms:
     ]
   - name: Badoo
     synonyms: [
-        "Badoo Limited"
+        "Badoo Limited",
+        "Badoo (by MagicLab)"
     ]
   - name: Bloomberg
     synonyms: [
@@ -29,9 +30,21 @@ companySynonyms:
     synonyms: [
         СFT
     ]
+  - name: Computas
+    synonyms: [
+        Сomputas
+    ]
+  - name: Confluent
+    synonyms: [
+        "Confluent, Inc."
+    ]
   - name: CROC
     synonyms: [
         KROK
+    ]
+  - name: "C++ Russia"
+    synonyms: [
+        "С++ Russia"
     ]
   - name: "Deutsche Bank Technology Center"
     synonyms: [
@@ -41,14 +54,9 @@ companySynonyms:
     synonyms: [
         T-Systems
     ]
-  - name: Elastic
-    synonyms: [
-        elastic
-    ]
   - name: "EPAM Systems"
     synonyms: [
-        "EPAM",
-        "Epam Systems"
+        "EPAM"
     ]
   - name: GitLab
     synonyms: [
@@ -74,10 +82,6 @@ companySynonyms:
     synonyms: [
         "IT Territory/MyGames"
     ]
-  - name: "Independent Consultant"
-    synonyms: [
-        "Independent consultant"
-    ]
   - name: Intel
     synonyms: [
         "Intel Corporation"
@@ -88,7 +92,6 @@ companySynonyms:
     ]
   - name: "Mail.ru Group"
     synonyms: [
-        "Mail.Ru Group",
         "Mail.ru"
     ]
   - name: Netflix
@@ -107,9 +110,9 @@ companySynonyms:
     synonyms: [
         PostgresPro
     ]
-  - name: RaiffeisenBank
+  - name: "Rambler Group"
     synonyms: [
-        Raiffeisenbank
+        "Rambler&Co"
     ]
   - name: "Red Hat"
     synonyms: [

@@ -1083,7 +1083,6 @@ public class ConferenceDataLoader {
         );
 
         YamlUtils.dump(new CompanyList(companies), filename);
-
     }
 
     /**

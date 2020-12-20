@@ -139,7 +139,7 @@ public class YamlUtils {
             boolean isFound = false;
 
             for (LocaleItem localItem : speaker.getCompany()) {
-                if (companyMap.containsKey(localItem.getText())) {
+                if (companyMap.containsKey(localItem.getText().toLowerCase())) {
                     isFound = true;
                     break;
                 }
@@ -151,7 +151,7 @@ public class YamlUtils {
                 companies.add(company);
 
                 for (LocaleItem localItem : speaker.getCompany()) {
-                    companyMap.put(localItem.getText(), company);
+                    companyMap.put(localItem.getText().toLowerCase(), company);
                 }
             }
         }
@@ -166,18 +166,24 @@ public class YamlUtils {
 
         fillCompaniesInSpeakers(speakers, companyMap);
 
+        try {
+            YamlUtils.dump(new CompanyList(companies), "companies-to-append.yml");
+        } catch (IOException | NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+
         return companies;
     }
 
     //TODO: delete after load change
     static void bindSynonymToMainCompany(List<CompanySynonyms> companySynonymsList, List<Company> companies, Map<String, Company> companyMap) {
         for (CompanySynonyms companySynonyms : companySynonymsList) {
-            if (companyMap.containsKey(companySynonyms.getName())) {
-                Company company = companyMap.get(companySynonyms.getName());
+            if (companyMap.containsKey(companySynonyms.getName().toLowerCase())) {
+                Company company = companyMap.get(companySynonyms.getName().toLowerCase());
 
                 for (String synonym : companySynonyms.getSynonyms()) {
-                    companies.removeIf(c -> c.getName().stream().anyMatch(li -> synonym.equals(li.getText())));
-                    companyMap.put(synonym, company);
+                    companies.removeIf(c -> c.getName().stream().anyMatch(li -> synonym.equalsIgnoreCase(li.getText())));
+                    companyMap.put(synonym.toLowerCase(), company);
                 }
             }
         }
@@ -191,7 +197,7 @@ public class YamlUtils {
             }
 
             LocaleItem localItem = speaker.getCompany().get(0);
-            Company company = companyMap.get(localItem.getText());
+            Company company = companyMap.get(localItem.getText().toLowerCase());
 
             Objects.requireNonNull(company,
                     () -> String.format("Company %s not found for speaker %s", localItem.getText(), speaker.toString()));

@@ -3089,7 +3089,9 @@ speakers:
       - {language: en, text: "Nikolay Garbuzov"}
       - {language: ru, text: "Николай Гарбузов"}
     company:
-      - {language: en, text: ДонРивер}
+      - {language: en, text: DonRiver}
+      - {language: ru, text: ДонРивер}
+    bio:
       - language: ru
         text: "Закончил направление прикладной математики МехМата ЮФУ. Прошел путь от начинающего до ведущего разработчика.\
         \ Последний год руководит разработкой финансовой платформы мобильных платежей в компании ДонРивер. В свободное от\
@@ -3536,7 +3538,7 @@ speakers:
     name:
       - {language: en, text: "Mads Opheim"}
     company:
-      - {language: en, text: Сomputas}
+      - {language: en, text: Computas}
     twitter: madsopheim
     gitHub: madsop
   - id: 230
@@ -3545,7 +3547,8 @@ speakers:
       - {language: en, text: "Dmitry Pyshkin"}
       - {language: ru, text: "Дмитрий Пышкин"}
     company:
-      - {language: en, text: "БКС-Технологии"}
+      - {language: en, text: "BKS-Technologies"}
+      - {language: ru, text: "БКС-Технологии"}
   - id: 231
     photoFileName: 0231.jpg
     name:
@@ -3878,7 +3881,7 @@ speakers:
       - {language: en, text: "Dmitriy Puchkov"}
       - {language: ru, text: "Дмитрий Пучков"}
     company:
-      - {language: ru, text: Oper.ru}
+      - {language: en, text: Oper.ru}
     bio:
       - {language: ru, text: "Российский переводчик, писатель, публицист и локализатор, известный под творческим псевдоним\
             ом «старший оперуполномоченный Goblin». Основатель и ведущий таких проектов, как oper.ru, Синий Фил, Опергейме\
@@ -4091,7 +4094,7 @@ speakers:
       - {language: en, text: "Mikhail Druzhinin"}
       - {language: ru, text: "Михаил Дружинин"}
     company:
-      - {language: ru, text: DataArt}
+      - {language: en, text: DataArt}
     bio:
       - {language: ru, text: "Архитектор в компании DataArt. Много и часто разбирался с архитектурами различных систем, ос\
             обенно когда они оказывались в состоянии, близком к «нужно всё переписать». Неравнодушен к обеспечению того, ч\
@@ -4135,7 +4138,7 @@ speakers:
       - {language: en, text: "Filipp Keks"}
       - {language: ru, text: "Филипп Кекс"}
     company:
-      - {language: ru, text: Derivco}
+      - {language: en, text: Derivco}
     bio:
       - {language: en, text: "Filipp has a wide experience in mobile software development: from enterprise applications to\
             \ graphically intensive video games. He is an active participant of young mobile gamedev community trying to bring\
@@ -4237,7 +4240,7 @@ speakers:
       - {language: en, text: "Anton Semenchenko"}
       - {language: ru, text: "Антон Семенченко"}
     company:
-      - {language: ru, text: "DPI.Solutions, EPAM"}
+      - {language: en, text: "DPI.Solutions, EPAM"}
     bio:
       - {language: ru, text: "Активист сообщества специалистов в области автоматизации тестирования COMAQA.by, активист со\
             общества суровых разработчиков на С/С++ и ниже COREHard.by, сообщества IT-специалистов, переехавших в Беларусь\
@@ -4340,7 +4343,7 @@ speakers:
       - {language: en, text: "Roman Iovlev"}
       - {language: ru, text: "Роман Иовлев"}
     company:
-      - {language: ru, text: "JDI Team"}
+      - {language: en, text: "JDI Team"}
     bio:
       - {language: ru, text: "Chief QA Automation и евангелист JDI в компании EPAM. Участвовал в различных конференциях: SQA\
             \ Days, Agile Days, IT Week, IT Subbotnik и EuroStar. Автор нескольких open source-фреймворков для автоматизир\
@@ -4401,7 +4404,7 @@ speakers:
       - {language: en, text: "Aleksey Zhukov"}
       - {language: ru, text: "Алексей Жуков"}
     company:
-      - {language: ru, text: "Positive Technologies"}
+      - {language: en, text: "Positive Technologies"}
     bio:
       - language: ru
         text: "Эксперт отдела систем защиты приложений Positive Technologies.\r\n\r\nРодился в 1975 году. Окончил Московск\
@@ -4436,7 +4439,7 @@ speakers:
       - {language: en, text: "Аleksandr Khoroshavin"}
       - {language: ru, text: "Александр Хорошавин"}
     company:
-      - {language: ru, text: "Independent Developer"}
+      - {language: en, text: "Independent Developer"}
     bio:
       - language: ru
         text: "Независимый соло-фулстек-разработчик игр, преподаватель Unity и C# в Digital Banana. Куратор образовательно\
@@ -4465,7 +4468,7 @@ speakers:
       - {language: en, text: "Gennady Kovshenin"}
       - {language: ru, text: "Геннадий Ковшенин"}
     company:
-      - {language: ru, text: Pressjitsu}
+      - {language: en, text: Pressjitsu}
     bio:
       - {language: en, text: "An independent (freelance) backend and systems developer. Does things with C, Rust, Java, PHP,\
             \ Python. CTO of Pressjitsu, a WordPress managed hosting platform. Started working with WordPress over 10 years\
@@ -7725,7 +7728,8 @@ speakers:
       - {language: en, text: "Vladimir Koshelev"}
       - {language: ru, text: "Владимир Кошелев"}
     company:
-      - {language: en, text: "ИСП РАН"}
+      - {language: en, text: "ISP RAS"}
+      - {language: ru, text: "ИСП РАН"}
     bio:
       - {language: ru, text: "Эксперт в области статического анализа и компиляторных технологий. Последние годы занимаюсь\
       \ разработкой статических анализаторов для C/C++/Java/C#. В настоящее время разрабатываю статический анализатор на\
@@ -9906,7 +9910,6 @@ speakers:
       - {language: ru, text: "Павел Черторогов"}
     company:
       - {language: en, text: PS.kz}
-      - {language: ru, text: Ps.kz}
     bio:
       - {language: en, text: "GraphQL rockstar, developer of Internet products, OSS maintainer. Since 2001 Pavel's main specialization\
             \ is web technologies. He has extensive practical knowledge on backend/frontend development, administration, and\
@@ -15120,7 +15123,7 @@ speakers:
     name:
       - {language: en, text: "Eliran Eliassy"}
     company:
-      - {language: ru, text: e-square.io}
+      - {language: en, text: e-square.io}
     bio:
       - language: en
         text: "Eliran is an experienced FE developer, specialized in B2C applications\nFounder and developer @ e-square.io\n\
@@ -18728,7 +18731,8 @@ speakers:
       - {language: en, text: "Evgeny Nesterov"}
       - {language: ru, text: "Евгений Нестеров"}
     company:
-      - {language: en, text: М.Видео}
+      - {language: en, text: M.Video}
+      - {language: ru, text: М.Видео}
     bio:
       - {language: en, text: "Начал карьеру программиста в 2004 году, а уже в 2010 году присоединился к команде М.Видео. С\
             \ 2012 Евгений перешел на разработку на Java, до этого программировал на Python. С 2015 года активно участвует\
@@ -18739,7 +18743,8 @@ speakers:
       - {language: en, text: "Alexander Zelenyuk"}
       - {language: ru, text: "Александр Зеленюк"}
     company:
-      - {language: en, text: М.Видео}
+      - {language: en, text: M.Video}
+      - {language: ru, text: М.Видео}
     bio:
       - {language: en, text: "Стал разработчиком в 2008 году, ещё учась в МАИ. Уже в 2011 году пришел в компанию М.Видео,\
             \ где и познакомился с Java. В 2014 году создал в компании отдел Java-разработки, а в 2015 году здесь начали р\
@@ -19492,7 +19497,7 @@ speakers:
       - {language: en, text: "Valeriy Bogdanov"}
       - {language: ru, text: "Валерий Богданов"}
     company:
-      - {language: en, text: "Mir Plat.Form (НСПК)"}
+      - {language: en, text: "Mir Plat.Form (NSPK)"}
       - {language: ru, text: "Мир Plat.Form (НСПК)"}
     bio:
       - language: en
@@ -19975,7 +19980,7 @@ speakers:
       - {language: en, text: "Program committee"}
       - {language: ru, text: "Программный комитет"}
     company:
-      - {language: en, text: "С++ Russia"}
+      - {language: en, text: "C++ Russia"}
     bio:
       - language: en
         text: "__Sergey Platonov__\nC++ developer, organizer of C++ Siberia.\n\n__Alexey Veselovsky__\nSenior C++ developer\

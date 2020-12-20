@@ -1,4 +1,2182 @@
 companies:
   - id: 0
     name:
+      - {language: en, text: "10up Inc"}
+  - id: 1
+    name:
+      - {language: en, text: 1C-Bitrix}
+      - {language: ru, text: 1С-Битрикс}
+  - id: 2
+    name:
+      - {language: en, text: "1C Rarus"}
+      - {language: ru, text: 1С-Рарус}
+  - id: 3
+    name:
+      - {language: en, text: 2GIS}
+      - {language: ru, text: 2ГИС}
+  - id: 4
+    name:
+      - {language: en, text: "47 Degrees"}
+  - id: 5
+    name:
+      - {language: en, text: 65apps}
+  - id: 6
+    name:
+      - {language: en, text: ABBYY}
+  - id: 7
+    name:
+      - {language: en, text: "ABL - The Problem Solver"}
+  - id: 8
+    name:
+      - {language: en, text: "Acme Corp"}
+  - id: 9
+    name:
+      - {language: en, text: Acumatica}
+  - id: 10
+    name:
+      - {language: en, text: Adevinta}
+  - id: 11
+    name:
+      - {language: en, text: Adform}
+  - id: 12
+    name:
+      - {language: en, text: Adobe}
+  - id: 13
+    name:
+      - {language: en, text: Advantum}
+  - id: 14
+    name:
+      - {language: en, text: Adviqo}
+  - id: 15
+    name:
+      - {language: en, text: Aerokube}
+  - id: 16
+    name:
+      - {language: en, text: "Agile Developer, Inc."}
+  - id: 17
+    name:
+      - {language: en, text: AGIMA}
+  - id: 18
+    name:
+      - {language: en, text: Airbus}
+  - id: 19
+    name:
+      - {language: en, text: airhacks.live}
+  - id: 20
+    name:
+      - {language: en, text: Akelius}
+  - id: 21
+    name:
+      - {language: en, text: AKQA}
+  - id: 22
+    name:
+      - {language: en, text: Akvelon}
+  - id: 23
+    name:
+      - {language: en, text: Algolia}
+  - id: 24
+    name:
+      - {language: en, text: Algorand}
+  - id: 25
+    name:
+      - {language: en, text: Alibaba}
+  - id: 26
+    name:
+      - {language: en, text: "Alibaba Group"}
+  - id: 27
+    name:
+      - {language: en, text: "Align Technology"}
+  - id: 28
+    name:
+      - {language: en, text: "Aligned Research Group"}
+  - id: 29
+    name:
+      - {language: en, text: Allegro}
+  - id: 30
+    name:
+      - {language: en, text: "ALM Works"}
+  - id: 31
+    name:
+      - {language: en, text: alwaysdata}
+  - id: 32
+    name:
+      - {language: en, text: Amazon}
+  - id: 33
+    name:
+      - {language: en, text: "Amazon Robotics"}
+  - id: 34
+    name:
+      - {language: en, text: "Amazon Web Services"}
+  - id: 35
+    name:
+      - {language: en, text: "Amixr Inc."}
+  - id: 36
+    name:
+      - {language: en, text: angular-academy.com}
+  - id: 37
+    name:
+      - {language: en, text: AngularZone}
+  - id: 38
+    name:
+      - {language: en, text: "Apache Ignite Committer"}
+  - id: 39
+    name:
+      - {language: en, text: "App in the Air"}
+  - id: 40
+    name:
+      - {language: en, text: Appium}
+  - id: 41
+    name:
+      - {language: en, text: Applause}
+  - id: 42
+    name:
+      - {language: en, text: Apple}
+  - id: 43
+    name:
+      - {language: en, text: Applitools}
+  - id: 44
+    name:
+      - {language: en, text: "Aqua Security"}
+  - id: 45
+    name:
+      - {language: en, text: "Aquatic Capital Management"}
+  - id: 46
+    name:
+      - {language: en, text: Arcadia}
+  - id: 47
+    name:
+      - {language: en, text: "Arello Mobile"}
+  - id: 48
+    name:
+      - {language: en, text: Arenadata}
+  - id: 49
+    name:
+      - {language: en, text: "Arrival Ltd"}
+  - id: 50
+    name:
+      - {language: en, text: "Arrival Robotics"}
+  - id: 51
+    name:
+      - {language: en, text: "Artec 3D"}
+  - id: 52
+    name:
+      - {language: en, text: Artsy}
+  - id: 53
+    name:
+      - {language: en, text: audio++}
+  - id: 54
+    name:
+      - {language: en, text: "Australia Post"}
+  - id: 55
+    name:
+      - {language: en, text: "Author of the \"Windows Internals\" book"}
+  - id: 56
+    name:
+      - {language: en, text: "Author of the book \"Domain Modeling Made Functional\""}
+  - id: 57
+    name:
+      - {language: en, text: AVA}
+  - id: 58
+    name:
+      - {language: en, text: "Avalonia OÜ"}
+  - id: 59
+    name:
+      - {language: en, text: AVAST}
+  - id: 60
+    name:
+      - {language: en, text: "Axelerant Technologies Pvt. Ltd."}
+  - id: 61
+    name:
+      - {language: en, text: Axmor}
+  - id: 62
+    name:
+      - {language: en, text: AxonIQ}
+  - id: 63
+    name:
+      - {language: en, text: "Azul Systems"}
+  - id: 64
+    name:
+      - {language: en, text: Babel}
+  - id: 65
+    name:
+      - {language: en, text: Badoo}
+  - id: 66
+    name:
+      - {language: en, text: BANKEX}
+  - id: 67
+    name:
+      - {language: en, text: BaxEnergy}
+  - id: 68
+    name:
+      - {language: en, text: BellSoft}
+  - id: 69
+    name:
+      - {language: en, text: "Ben-Gurion University of the Negev"}
+  - id: 70
+    name:
+      - {language: en, text: Betajob}
+  - id: 71
+    name:
+      - {language: en, text: "Big Fish Games"}
+  - id: 72
+    name:
+      - {language: en, text: Bitfury}
+  - id: 73
+    name:
+      - {language: en, text: BlackBuck}
+  - id: 74
+    name:
+      - {language: en, text: blog.ploeh.dk}
+  - id: 75
+    name:
+      - {language: en, text: Bloomberg}
+  - id: 76
+    name:
+      - {language: en, text: Bolt}
+  - id: 77
+    name:
+      - {language: en, text: Bouvet}
+  - id: 78
+    name:
+      - {language: en, text: "Boxfuse GmbH"}
+  - id: 79
+    name:
+      - {language: en, text: BrainGarden}
+  - id: 80
+    name:
+      - {language: en, text: Broadridge}
+  - id: 81
+    name:
+      - {language: en, text: "Brown University"}
+  - id: 82
+    name:
+      - {language: en, text: "C++ Alliance"}
+  - id: 83
+    name:
+      - {language: en, text: "C++ Russia"}
+  - id: 84
+    name:
+      - {language: en, text: "CaixaBank \"Silk\""}
+  - id: 85
+    name:
+      - {language: en, text: Camunda}
+  - id: 86
+    name:
+      - {language: en, text: "Canoo Engineering AG"}
+  - id: 87
+    name:
+      - {language: en, text: ChilliCream}
+  - id: 88
+    name:
+      - {language: en, text: "Chronicle Software"}
+  - id: 89
+    name:
+      - {language: en, text: "Chronicle Software Ltd"}
+  - id: 90
+    name:
+      - {language: en, text: "Cirrus Labs"}
+  - id: 91
+    name:
+      - {language: en, text: "Cisco Systems"}
+  - id: 92
+    name:
+      - {language: en, text: "Citadel Securities"}
+  - id: 93
+    name:
+      - {language: en, text: "Clean Code Craftsman"}
+  - id: 94
+    name:
+      - {language: en, text: Cleverics}
+  - id: 95
+    name:
+      - {language: en, text: "Cloud Consult London Ltd"}
+  - id: 96
+    name:
+      - {language: en, text: "Cloud Horizon"}
+  - id: 97
+    name:
+      - {language: en, text: CloudBees}
+  - id: 98
+    name:
+      - {language: en, text: Cloudflare}
+  - id: 99
+    name:
+      - {language: en, text: "Code Hipsters"}
+  - id: 100
+    name:
+      - {language: en, text: Codeborne}
+  - id: 101
+    name:
+      - {language: en, text: "codecentric AG"}
+  - id: 102
+    name:
+      - {language: en, text: CodeFX}
+  - id: 103
+    name:
+      - {language: en, text: CodeValue}
+  - id: 104
+    name:
+      - {language: en, text: CommodiTrader}
+  - id: 105
+    name:
+      - {language: en, text: Component-Driven}
+  - id: 106
+    name:
+      - {language: en, text: Computas}
+  - id: 107
+    name:
+      - {language: en, text: "Computas AS"}
+  - id: 108
+    name:
+      - {language: en, text: Confluent}
+  - id: 109
+    name:
+      - {language: en, text: Consultant}
+  - id: 110
+    name:
+      - {language: en, text: "Consultant / Author / Solution Architect"}
+  - id: 111
+    name:
+      - {language: en, text: Contino}
+  - id: 112
+    name:
+      - {language: en, text: Converge}
+  - id: 113
+    name:
+      - {language: en, text: Corvalius}
+  - id: 114
+    name:
+      - {language: en, text: Couchbase}
+  - id: 115
+    name:
+      - {language: en, text: "Count-Zero Ltd"}
+  - id: 116
+    name:
+      - {language: en, text: CountMyCrypto}
+  - id: 117
+    name:
+      - {language: en, text: Coursedog}
+  - id: 118
+    name:
+      - {language: en, text: CRATUS}
+  - id: 119
+    name:
+      - {language: en, text: "Crazy Panda"}
+  - id: 120
+    name:
+      - {language: en, text: "Creative Assembly"}
+  - id: 121
+    name:
+      - {language: en, text: Criteo}
+  - id: 122
+    name:
+      - {language: en, text: "Crossover (GFI)"}
+  - id: 123
+    name:
+      - {language: en, text: CSSSR}
+  - id: 124
+    name:
+      - {language: en, text: Curbralan}
+  - id: 125
+    name:
+      - {language: en, text: CUSTIS}
+  - id: 126
+    name:
+      - {language: en, text: Cypress.io}
+  - id: 127
+    name:
+      - {language: en, text: Dailymotion}
+  - id: 128
+    name:
+      - {language: en, text: Dartmouth}
+  - id: 129
+    name:
+      - {language: en, text: Dat}
+  - id: 130
+    name:
+      - {language: en, text: DataArt}
+  - id: 131
+    name:
+      - {language: en, text: DataStax}
+  - id: 132
+    name:
+      - {language: en, text: dbeaver}
+  - id: 133
+    name:
+      - {language: en, text: "DefinedCrowd Corp."}
+  - id: 134
+    name:
+      - {language: en, text: "Dejavoo Systems"}
+  - id: 135
+    name:
+      - {language: en, text: Delightex}
+  - id: 136
+    name:
+      - {language: en, text: "Delivery club"}
+  - id: 137
+    name:
+      - {language: en, text: "Delivery Club Tech"}
+  - id: 138
+    name:
+      - {language: en, text: "Dell EMC"}
+  - id: 139
+    name:
+      - {language: en, text: "Dell Technologies"}
+  - id: 140
+    name:
+      - {language: en, text: Derivco}
+  - id: 141
+    name:
+      - {language: en, text: "Deutsche Bank"}
+  - id: 142
+    name:
+      - {language: en, text: "Deutsche Bank Technology Centre"}
+  - id: 143
+    name:
+      - {language: en, text: "Deutsche Telekom"}
+  - id: 144
+    name:
+      - {language: en, text: "Deutsche Telekom IT Solutions"}
+  - id: 145
+    name:
+      - {language: en, text: Devbridge}
+  - id: 146
+    name:
+      - {language: en, text: DevelopSense}
+  - id: 147
+    name:
+      - {language: en, text: Devexperts}
+  - id: 148
+    name:
+      - {language: en, text: DevExpress}
+  - id: 149
+    name:
+      - {language: en, text: Devim}
+  - id: 150
+    name:
+      - {language: en, text: "diconium digital solutions"}
+  - id: 151
+    name:
+      - {language: en, text: "Digital Natives"}
+  - id: 152
+    name:
+      - {language: en, text: "Digital Nomad & Freelancer"}
+  - id: 153
+    name:
+      - {language: en, text: "Digital Security"}
+  - id: 154
+    name:
+      - {language: en, text: "Digital Zone"}
+  - id: 155
+    name:
+      - {language: en, text: "DINO Systems"}
+  - id: 156
+    name:
+      - {language: en, text: DINS}
+  - id: 157
+    name:
+      - {language: en, text: Directual}
+  - id: 158
+    name:
+      - {language: en, text: Ditto}
+  - id: 159
+    name:
+      - {language: en, text: DM}
+  - id: 160
+    name:
+      - {language: en, text: "DM Labs, Arktur, Open Data Science"}
+  - id: 161
+    name:
+      - {language: en, text: "Dodo Engineering"}
+  - id: 162
+    name:
+      - {language: en, text: Dostavista}
+  - id: 163
+    name:
+      - {language: en, text: DotControl}
+  - id: 164
+    name:
+      - {language: en, text: dotmailer}
+  - id: 165
+    name:
+      - {language: en, text: DotNetRu}
+  - id: 166
+    name:
+      - {language: en, text: "DPI.Solutions, EPAM"}
+  - id: 167
+    name:
+      - {language: en, text: "Droids On Roids"}
+  - id: 168
+    name:
+      - {language: en, text: "DZ Systems"}
+  - id: 169
+    name:
+      - {language: en, text: e-square.io}
+  - id: 170
+    name:
+      - {language: en, text: "Eagle Labs"}
+  - id: 171
+    name:
+      - {language: en, text: eBay}
+  - id: 172
+    name:
+      - {language: en, text: Ecmanauten}
+  - id: 173
+    name:
+      - {language: en, text: "Editor, lastweekinaws.com"}
+  - id: 174
+    name:
+      - {language: en, text: Effective}
+  - id: 175
+    name:
+      - {language: en, text: Elastic}
+  - id: 176
+    name:
+      - {language: en, text: "Element34 Solutions GmbH"}
+  - id: 177
+    name:
+      - {language: en, text: Embox}
+  - id: 178
+    name:
+      - {language: en, text: EmDev}
+  - id: 179
+    name:
+      - {language: en, text: "Emirates Airline"}
+  - id: 180
+    name:
+      - {language: en, text: Empear}
+  - id: 181
+    name:
+      - {language: en, text: EngineerSpock}
+  - id: 182
+    name:
+      - {language: en, text: "Enterprise Craftsmanship LLC"}
+  - id: 183
+    name:
+      - {language: en, text: "EPAM Systems"}
+  - id: 184
+    name:
+      - {language: en, text: "ePayments Technologies"}
+  - id: 185
+    name:
+      - {language: en, text: EPFL}
+  - id: 186
+    name:
+      - {language: en, text: "Epic Games"}
+  - id: 187
+    name:
+      - {language: en, text: "Evil Martians"}
+  - id: 188
+    name:
+      - {language: en, text: "Evolution Engineering"}
+  - id: 189
+    name:
+      - {language: en, text: "Evolution Gaming"}
+  - id: 190
+    name:
+      - {language: en, text: Exadel}
+  - id: 191
+    name:
+      - {language: en, text: Exness}
+  - id: 192
+    name:
+      - {language: en, text: "Exonum, the Bitfury Group"}
+  - id: 193
+    name:
+      - {language: en, text: Expload}
+  - id: 194
+    name:
+      - {language: en, text: Facebook}
+  - id: 195
+    name:
+      - {language: en, text: "Facebook Calibra"}
+  - id: 196
+    name:
+      - {language: en, text: Faithlife}
+  - id: 197
+    name:
+      - {language: en, text: Fandom}
+  - id: 198
+    name:
+      - {language: en, text: Findify}
+  - id: 199
+    name:
+      - {language: en, text: "Five Agency"}
+  - id: 200
+    name:
+      - {language: en, text: FivexL}
+  - id: 201
+    name:
+      - {language: en, text: "Focus Reactive"}
+  - id: 202
+    name:
+      - {language: en, text: ForgeRock}
+  - id: 203
+    name:
+      - {language: en, text: Freelance}
+  - id: 204
+    name:
+      - {language: en, text: "Freelance Software Architect"}
+  - id: 205
+    name:
+      - {language: en, text: "Freelance — Posva Solutions"}
+  - id: 206
+    name:
+      - {language: en, text: Freeletics}
+  - id: 207
+    name:
+      - {language: en, text: FunCorp}
+  - id: 208
+    name:
+      - {language: en, text: Futurice}
+  - id: 209
+    name:
+      - {language: en, text: gapfruit}
+  - id: 210
+    name:
+      - {language: en, text: "GDG Riga"}
+  - id: 211
+    name:
+      - {language: en, text: Genestack}
+  - id: 212
+    name:
+      - {language: en, text: GetIntent}
+  - id: 213
+    name:
+      - {language: en, text: GitHub}
+  - id: 214
+    name:
+      - {language: en, text: GitLab}
+  - id: 215
+    name:
+      - {language: en, text: "Go SPb"}
+  - id: 216
+    name:
+      - {language: en, text: "Godel Technologies"}
+  - id: 217
+    name:
+      - {language: en, text: Google}
+  - id: 218
+    name:
+      - {language: en, text: "Google Developer Expert for Android / Egeniq"}
+  - id: 219
+    name:
+      - {language: en, text: "GP Solutions"}
+  - id: 220
+    name:
+      - {language: en, text: Grab}
+  - id: 221
+    name:
+      - {language: en, text: "Gradle Inc."}
+  - id: 222
+    name:
+      - {language: en, text: Gremlin}
+  - id: 223
+    name:
+      - {language: en, text: "Grid Dynamics"}
+  - id: 224
+    name:
+      - {language: en, text: "GridGain Systems"}
+  - id: 225
+    name:
+      - {language: en, text: Gritstep/Dotnetos}
+  - id: 226
+    name:
+      - {language: en, text: Groupon}
+  - id: 227
+    name:
+      - {language: en, text: "Guidepost Systems"}
+  - id: 228
+    name:
+      - {language: en, text: "Hacking with Swift"}
+  - id: 229
+    name:
+      - {language: en, text: Halide}
+  - id: 230
+    name:
+      - {language: en, text: HashiCorp}
+  - id: 231
+    name:
+      - {language: en, text: Hasura}
+  - id: 232
+    name:
+      - {language: en, text: Haulmont}
+  - id: 233
+    name:
+      - {language: en, text: Hazelcast}
+  - id: 234
+    name:
+      - {language: en, text: HeadHunter}
+  - id: 235
+    name:
+      - {language: en, text: "Health Samurai"}
+  - id: 236
+    name:
+      - {language: en, text: "Hladky IT"}
+  - id: 237
+    name:
+      - {language: en, text: Honeycomb}
+  - id: 238
+    name:
+      - {language: en, text: "Horsdal Consult"}
+  - id: 239
+    name:
+      - {language: en, text: "House of Test GmbH"}
+  - id: 240
+    name:
+      - {language: en, text: HpyDev}
+  - id: 241
+    name:
+      - {language: en, text: "HTML Academy"}
+  - id: 242
+    name:
+      - {language: en, text: Huawei}
+  - id: 243
+    name:
+      - {language: en, text: Huddle}
+  - id: 244
+    name:
+      - {language: en, text: HUMANS}
+  - id: 245
+    name:
+      - {language: en, text: hybris}
+  - id: 246
+    name:
+      - {language: en, text: HyOO}
+  - id: 247
+    name:
+      - {language: en, text: Hyper}
+  - id: 248
+    name:
+      - {language: en, text: HyperIntegrate}
+  - id: 249
+    name:
+      - {language: en, text: hypothes.is}
+  - id: 250
+    name:
+      - {language: en, text: IBM}
+  - id: 251
+    name:
+      - {language: en, text: IG}
+  - id: 252
+    name:
+      - {language: en, text: Igalia}
+  - id: 253
+    name:
+      - {language: en, text: iHeartRadio}
+  - id: 254
+    name:
+      - {language: en, text: "IHS Markit"}
+  - id: 255
+    name:
+      - {language: en, text: IMDEA}
+  - id: 256
+    name:
+      - {language: en, text: Independent}
+  - id: 257
+    name:
+      - {language: en, text: "Independent Consultant"}
+  - id: 258
+    name:
+      - {language: en, text: "Independent Developer"}
+  - id: 259
+    name:
+      - {language: en, text: "Independent Trainer"}
+  - id: 260
+    name:
+      - {language: en, text: Indie}
+  - id: 261
+    name:
+      - {language: en, text: "Info Support"}
+  - id: 262
+    name:
+      - {language: en, text: Infobip}
+  - id: 263
+    name:
+      - {language: en, text: "Infopulse Ukraine"}
+  - id: 264
+    name:
+      - {language: en, text: Infotecs}
+  - id: 265
+    name:
+      - {language: en, text: ING}
+  - id: 266
+    name:
+      - {language: en, text: Insolar}
+  - id: 267
+    name:
+      - {language: en, text: Intel}
+  - id: 268
+    name:
+      - {language: en, text: Intermedia}
+  - id: 269
+    name:
+      - {language: en, text: Inuits}
+  - id: 270
+    name:
+      - {language: en, text: Invitae}
+  - id: 271
+    name:
+      - {language: en, text: Involved}
+  - id: 272
+    name:
+      - {language: en, text: IPONWEB}
+  - id: 273
+    name:
+      - {language: en, text: Isovalent}
+  - id: 274
+    name:
+      - {language: en, text: iSpring}
+  - id: 275
+    name:
+      - {language: en, text: IST}
+  - id: 276
+    name:
+      - {language: en, text: "IST Austria"}
+  - id: 277
+    name:
+      - {language: en, text: "IT HR"}
+  - id: 278
+    name:
+      - {language: en, text: "IT Territory/My.Games"}
+  - id: 279
+    name:
+      - {language: en, text: "ITMO University"}
+  - id: 280
+    name:
+      - {language: en, text: ivi}
+  - id: 281
+    name:
+      - {language: en, text: Ixtens}
+  - id: 282
+    name:
+      - {language: en, text: JavaSpecialists.eu}
+  - id: 283
+    name:
+      - {language: en, text: "JDI Team"}
+  - id: 284
+    name:
+      - {language: en, text: Jelastic}
+  - id: 285
+    name:
+      - {language: en, text: Jet.com}
+  - id: 286
+    name:
       - {language: en, text: JetBrains}
+  - id: 287
+    name:
+      - {language: en, text: JFrog}
+  - id: 288
+    name:
+      - {language: en, text: JFrog/Conan}
+  - id: 289
+    name:
+      - {language: en, text: Jinnius}
+  - id: 290
+    name:
+      - {language: en, text: "JP Morgan Chase"}
+  - id: 291
+    name:
+      - {language: en, text: "JUG Ru Group"}
+  - id: 292
+    name:
+      - {language: en, text: Juno}
+  - id: 293
+    name:
+      - {language: en, text: "Karakun AG"}
+  - id: 294
+    name:
+      - {language: en, text: KDE}
+  - id: 295
+    name:
+      - {language: en, text: KeepSolid}
+  - id: 296
+    name:
+      - {language: en, text: King}
+  - id: 297
+    name:
+      - {language: en, text: "Kitab Sawti"}
+  - id: 298
+    name:
+      - {language: en, text: Klarna}
+  - id: 299
+    name:
+      - {language: en, text: "Kodewerk Ltd."}
+  - id: 300
+    name:
+      - {language: en, text: Kt.Academy}
+  - id: 301
+    name:
+      - {language: en, text: "KTH Royal Institute of Technology"}
+  - id: 302
+    name:
+      - {language: en, text: Lamoda}
+  - id: 303
+    name:
+      - {language: en, text: LaunchDarkly}
+  - id: 304
+    name:
+      - {language: en, text: "LEDGR Inc"}
+  - id: 305
+    name:
+      - {language: en, text: lessmess.agency}
+  - id: 306
+    name:
+      - {language: en, text: "LG Russia R&D Lab"}
+  - id: 307
+    name:
+      - {language: en, text: "Liberty Associates"}
+  - id: 308
+    name:
+      - {language: en, text: "Licel Corporation"}
+  - id: 309
+    name:
+      - {language: en, text: Liferay}
+  - id: 310
+    name:
+      - {language: en, text: Lightbend}
+  - id: 311
+    name:
+      - {language: en, text: "LINE+ Corporation"}
+  - id: 312
+    name:
+      - {language: en, text: LINKIT}
+  - id: 313
+    name:
+      - {language: en, text: linkmeup}
+  - id: 314
+    name:
+      - {language: en, text: LogMeIn}
+  - id: 315
+    name:
+      - {language: en, text: LOWL}
+  - id: 316
+    name:
+      - {language: en, text: "Luminis Technologies"}
+  - id: 317
+    name:
+      - {language: en, text: "Lux Optics"}
+  - id: 318
+    name:
+      - {language: en, text: Luxoft}
+  - id: 319
+    name:
+      - {language: en, text: Lyft}
+  - id: 320
+    name:
+      - {language: en, text: Macroscop}
+  - id: 321
+    name:
+      - {language: en, text: "Mail.Ru Group"}
+  - id: 322
+    name:
+      - {language: en, text: ManyChat}
+  - id: 323
+    name:
+      - {language: en, text: Meetup}
+  - id: 324
+    name:
+      - {language: en, text: MEKOS}
+  - id: 325
+    name:
+      - {language: en, text: MERA}
+  - id: 326
+    name:
+      - {language: en, text: michel.codes}
+  - id: 327
+    name:
+      - {language: en, text: Micromata}
+  - id: 328
+    name:
+      - {language: en, text: Microsoft}
+  - id: 329
+    name:
+      - {language: en, text: Midrive}
+  - id: 330
+    name:
+      - {language: en, text: Miles}
+  - id: 331
+    name:
+      - {language: en, text: Miro}
+  - id: 332
+    name:
+      - {language: en, text: MIT}
+  - id: 333
+    name:
+      - {language: en, text: mnogosdelal.ru}
+  - id: 334
+    name:
+      - {language: en, text: "Mobile People Talks"}
+  - id: 335
+    name:
+      - {language: en, text: "Modelus LLC"}
+  - id: 336
+    name:
+      - {language: en, text: "Modernes C++"}
+  - id: 337
+    name:
+      - {language: en, text: Monday.com}
+  - id: 338
+    name:
+      - {language: en, text: MongoDB}
+  - id: 339
+    name:
+      - {language: en, text: Moovit}
+  - id: 340
+    name:
+      - {language: en, text: "Morgan Stanley"}
+  - id: 341
+    name:
+      - {language: en, text: "Morningside Light Ltd."}
+  - id: 342
+    name:
+      - {language: en, text: Motify}
+  - id: 343
+    name:
+      - {language: en, text: Mozilla}
+  - id: 344
+    name:
+      - {language: en, text: "MPI-SWS, JetBrains Research, NRU HSE"}
+  - id: 345
+    name:
+      - {language: en, text: "msu solutions GmbH"}
+  - id: 346
+    name:
+      - {language: en, text: "mtrail GmbH"}
+  - id: 347
+    name:
+      - {language: en, text: Multitracks.com}
+  - id: 348
+    name:
+      - {language: en, text: "Murano Software"}
+  - id: 349
+    name:
+      - {language: en, text: Mustlab}
+  - id: 350
+    name:
+      - {language: en, text: mytaxi}
+  - id: 351
+    name:
+      - {language: en, text: "NEO Saint Petersburg Competence Center"}
+  - id: 352
+    name:
+      - {language: en, text: NestJS}
+  - id: 353
+    name:
+      - {language: en, text: "Net Insight"}
+  - id: 354
+    name:
+      - {language: en, text: Net2Phone}
+  - id: 355
+    name:
+      - {language: en, text: Netcentric}
+  - id: 356
+    name:
+      - {language: en, text: Netcetera}
+  - id: 357
+    name:
+      - {language: en, text: Netcracker}
+  - id: 358
+    name:
+      - {language: en, text: Netflix}
+  - id: 359
+    name:
+      - {language: en, text: "Netifi, Inc"}
+  - id: 360
+    name:
+      - {language: en, text: Netlify}
+  - id: 361
+    name:
+      - {language: en, text: Neurosity}
+  - id: 362
+    name:
+      - {language: en, text: "New York Times"}
+  - id: 363
+    name:
+      - {language: en, text: "Neward & Associates, LLC"}
+  - id: 364
+    name:
+      - {language: en, text: Nitor}
+  - id: 365
+    name:
+      - {language: en, text: Nix}
+  - id: 366
+    name:
+      - {language: en, text: "Node University"}
+  - id: 367
+    name:
+      - {language: en, text: Nokia}
+  - id: 368
+    name:
+      - {language: en, text: NowSecure}
+  - id: 369
+    name:
+      - {language: en, text: NRK}
+  - id: 370
+    name:
+      - {language: en, text: NVIDIA}
+  - id: 371
+    name:
+      - {language: en, text: "NWTN Berlin"}
+  - id: 372
+    name:
+      - {language: en, text: Oath}
+  - id: 373
+    name:
+      - {language: en, text: "Object Computing"}
+  - id: 374
+    name:
+      - {language: en, text: "ObjectStyle LLC"}
+  - id: 375
+    name:
+      - {language: en, text: "Ocado Technology"}
+  - id: 376
+    name:
+      - {language: en, text: OCS.LAB}
+  - id: 377
+    name:
+      - {language: en, text: Okko}
+  - id: 378
+    name:
+      - {language: en, text: "One Systems"}
+  - id: 379
+    name:
+      - {language: en, text: onqtam.com}
+  - id: 380
+    name:
+      - {language: en, text: "OOO ИТИС"}
+  - id: 381
+    name:
+      - {language: en, text: Opbeat}
+  - id: 382
+    name:
+      - {language: en, text: Oper.ru}
+  - id: 383
+    name:
+      - {language: en, text: Oracle}
+  - id: 384
+    name:
+      - {language: en, text: "Oracle Labs"}
+  - id: 385
+    name:
+      - {language: en, text: ORION}
+  - id: 386
+    name:
+      - {language: en, text: "Orion Innovation"}
+  - id: 387
+    name:
+      - {language: en, text: "Otomato Software"}
+  - id: 388
+    name:
+      - {language: en, text: "OTS Lab / odgAssist"}
+  - id: 389
+    name:
+      - {language: en, text: Otus}
+  - id: 390
+    name:
+      - {language: en, text: OZON}
+  - id: 391
+    name:
+      - {language: en, text: "Paladyne Systems"}
+  - id: 392
+    name:
+      - {language: en, text: "Particular Software"}
+  - id: 393
+    name:
+      - {language: en, text: Paysystem.tech}
+  - id: 394
+    name:
+      - {language: en, text: "Peculiar Ventures"}
+  - id: 395
+    name:
+      - {language: en, text: Percona}
+  - id: 396
+    name:
+      - {language: en, text: performance-lab.ru}
+  - id: 397
+    name:
+      - {language: en, text: PerfPerfPerf}
+  - id: 398
+    name:
+      - {language: en, text: Petabridge}
+  - id: 399
+    name:
+      - {language: en, text: Pinect}
+  - id: 400
+    name:
+      - {language: en, text: PingCAP}
+  - id: 401
+    name:
+      - {language: en, text: Pinterest}
+  - id: 402
+    name:
+      - {language: en, text: PiterJS}
+  - id: 403
+    name:
+      - {language: en, text: Pivotal}
+  - id: 404
+    name:
+      - {language: en, text: Pixplicity}
+  - id: 405
+    name:
+      - {language: en, text: Plarium}
+  - id: 406
+    name:
+      - {language: en, text: Platform.sh/SouJava}
+  - id: 407
+    name:
+      - {language: en, text: Plesk}
+  - id: 408
+    name:
+      - {language: en, text: Plumbr}
+  - id: 409
+    name:
+      - {language: en, text: "Point API"}
+  - id: 410
+    name:
+      - {language: en, text: "Positive Technologies"}
+  - id: 411
+    name:
+      - {language: en, text: "PostgreSQL Russia"}
+  - id: 412
+    name:
+      - {language: en, text: Postmates}
+  - id: 413
+    name:
+      - {language: en, text: "PostSharp Technologies"}
+  - id: 414
+    name:
+      - {language: en, text: Pragmatists}
+  - id: 415
+    name:
+      - {language: en, text: Pressjitsu}
+  - id: 416
+    name:
+      - {language: en, text: "Prisma AI"}
+  - id: 417
+    name:
+      - {language: en, text: "Professor, Telecom Paris, Institut Polytechnique Paris"}
+  - id: 418
+    name:
+      - {language: en, text: Progress}
+  - id: 419
+    name:
+      - {language: en, text: "Progress Software"}
+  - id: 420
+    name:
+      - {language: en, text: PropellerAds}
+  - id: 421
+    name:
+      - {language: en, text: PS.kz}
+  - id: 422
+    name:
+      - {language: en, text: "PSPDFKit GmbH"}
+  - id: 423
+    name:
+      - {language: en, text: Pulumi}
+  - id: 424
+    name:
+      - {language: en, text: PVS-Studio}
+  - id: 425
+    name:
+      - {language: en, text: "Qameta Software"}
+  - id: 426
+    name:
+      - {language: en, text: qiwi.ru}
+  - id: 427
+    name:
+      - {language: en, text: Quantori}
+  - id: 428
+    name:
+      - {language: en, text: "R.M.G. Holding B.V."}
+  - id: 429
+    name:
+      - {language: en, text: "Raiffeisen Bank International AG"}
+  - id: 430
+    name:
+      - {language: en, text: "Rambler Digital Solutions"}
+  - id: 431
+    name:
+      - {language: en, text: "Rambler Group"}
+  - id: 432
+    name:
+      - {language: en, text: "Rancher Labs"}
+  - id: 433
+    name:
+      - {language: en, text: "Ray Wenderlich"}
+  - id: 434
+    name:
+      - {language: en, text: RBCS}
+  - id: 435
+    name:
+      - {language: en, text: RealAdvisor}
+  - id: 436
+    name:
+      - {language: en, text: Realdolmen}
+  - id: 437
+    name:
+      - {language: en, text: "Reality Games"}
+  - id: 438
+    name:
+      - {language: en, text: "Red Hat"}
+  - id: 439
+    name:
+      - {language: en, text: "Red Hat / Kiwi TCMS"}
+  - id: 440
+    name:
+      - {language: en, text: Redmadrobot}
+  - id: 441
+    name:
+      - {language: en, text: Reindex}
+  - id: 442
+    name:
+      - {language: en, text: "Relex Oy"}
+  - id: 443
+    name:
+      - {language: en, text: Replika.ai}
+  - id: 444
+    name:
+      - {language: en, text: "Resolve Systems"}
+  - id: 445
+    name:
+      - {language: en, text: "Resume.io / Code Hipsters"}
+  - id: 446
+    name:
+      - {language: en, text: Retable}
+  - id: 447
+    name:
+      - {language: en, text: Revolut}
+  - id: 448
+    name:
+      - {language: en, text: "Riga Dev Days"}
+  - id: 449
+    name:
+      - {language: en, text: RIGANTI}
+  - id: 450
+    name:
+      - {language: en, text: RoboQA}
+  - id: 451
+    name:
+      - {language: en, text: Robotise}
+  - id: 452
+    name:
+      - {language: en, text: "Romero Games"}
+  - id: 453
+    name:
+      - {language: en, text: "Roox Solutions"}
+  - id: 454
+    name:
+      - {language: en, text: "S7 IT"}
+  - id: 455
+    name:
+      - {language: en, text: "S7 Techlab"}
+      - {language: ru, text: "S7 Техлаб"}
+  - id: 456
+    name:
+      - {language: en, text: Salesforce}
+  - id: 457
+    name:
+      - {language: en, text: Samsung}
+  - id: 458
+    name:
+      - {language: en, text: "Samsung NEXT/GDE"}
+  - id: 459
+    name:
+      - {language: en, text: "Samsung R&D Russia"}
+  - id: 460
+    name:
+      - {language: en, text: "San José State University"}
+  - id: 461
+    name:
+      - {language: en, text: "Sanctuary Computer"}
+  - id: 462
+    name:
+      - {language: en, text: SAP}
+  - id: 463
+    name:
+      - {language: en, text: SAP/Gigya}
+  - id: 464
+    name:
+      - {language: en, text: SauceLabs}
+  - id: 465
+    name:
+      - {language: en, text: SberDevices}
+  - id: 466
+    name:
+      - {language: en, text: "Scienta AS"}
+  - id: 467
+    name:
+      - {language: en, text: Scrapinghub}
+  - id: 468
+    name:
+      - {language: en, text: ScrumTrek}
+  - id: 469
+    name:
+      - {language: en, text: "SDI Media"}
+  - id: 470
+    name:
+      - {language: en, text: "Sela Group"}
+  - id: 471
+    name:
+      - {language: en, text: SEMrush}
+  - id: 472
+    name:
+      - {language: en, text: Serverless}
+  - id: 473
+    name:
+      - {language: en, text: ServiceTalk}
+  - id: 474
+    name:
+      - {language: en, text: "Shepherd's Oasis"}
+  - id: 475
+    name:
+      - {language: en, text: Sidenis}
+  - id: 476
+    name:
+      - {language: en, text: "Sigma Software"}
+  - id: 477
+    name:
+      - {language: en, text: Signavio}
+  - id: 478
+    name:
+      - {language: en, text: Simudyne}
+  - id: 479
+    name:
+      - {language: en, text: SinnerSchrader}
+  - id: 480
+    name:
+      - {language: en, text: Smalley.IT}
+  - id: 481
+    name:
+      - {language: en, text: smartHelios}
+  - id: 482
+    name:
+      - {language: en, text: "Smashing Magazine"}
+  - id: 483
+    name:
+      - {language: en, text: Snaptortoise}
+  - id: 484
+    name:
+      - {language: en, text: "Snyk Ltd."}
+  - id: 485
+    name:
+      - {language: en, text: Software-Testing.Ru}
+  - id: 486
+    name:
+      - {language: en, text: SoftwareMill}
+  - id: 487
+    name:
+      - {language: en, text: Solanteq}
+  - id: 488
+    name:
+      - {language: en, text: "SolarWinds MSP"}
+  - id: 489
+    name:
+      - {language: en, text: SonarSource}
+  - id: 490
+    name:
+      - {language: en, text: Sonova}
+  - id: 491
+    name:
+      - {language: en, text: Soundbrenner}
+  - id: 492
+    name:
+      - {language: en, text: SourceGear}
+  - id: 493
+    name:
+      - {language: en, text: Sourcegrounds}
+  - id: 494
+    name:
+      - {language: en, text: "Sowatec AG"}
+  - id: 495
+    name:
+      - {language: en, text: Space307}
+  - id: 496
+    name:
+      - {language: en, text: "Spiral Code Studio"}
+  - id: 497
+    name:
+      - {language: en, text: Splunk}
+  - id: 498
+    name:
+      - {language: en, text: "Sportmaster Lab"}
+  - id: 499
+    name:
+      - {language: en, text: sporttotal.tv}
+  - id: 500
+    name:
+      - {language: en, text: Spotify}
+  - id: 501
+    name:
+      - {language: en, text: Square}
+  - id: 502
+    name:
+      - {language: en, text: Squerist}
+  - id: 503
+    name:
+      - {language: en, text: "Stack Overflow"}
+  - id: 504
+    name:
+      - {language: en, text: "Staroid, Inc."}
+  - id: 505
+    name:
+      - {language: en, text: "Styra, Inc."}
+  - id: 506
+    name:
+      - {language: en, text: Surf}
+  - id: 507
+    name:
+      - {language: en, text: Sweatcoin}
+  - id: 508
+    name:
+      - {language: en, text: Symentis}
+  - id: 509
+    name:
+      - {language: en, text: TabMo}
+  - id: 510
+    name:
+      - {language: en, text: Talkdesk}
+  - id: 511
+    name:
+      - {language: en, text: Tarantool}
+  - id: 512
+    name:
+      - {language: en, text: Targetprocess}
+  - id: 513
+    name:
+      - {language: en, text: Tazeros}
+  - id: 514
+    name:
+      - {language: en, text: teachcode.org}
+  - id: 515
+    name:
+      - {language: en, text: Technion}
+  - id: 516
+    name:
+      - {language: en, text: "Tel Aviv University"}
+  - id: 517
+    name:
+      - {language: en, text: "Temporal Technologies"}
+  - id: 518
+    name:
+      - {language: en, text: "The App Business"}
+  - id: 519
+    name:
+      - {language: en, text: "The Atlantic Systems Guild Inc., co-author of the \"Peopleware: Productive Projects and Teams\""}
+  - id: 520
+    name:
+      - {language: en, text: "The D Language Foundation"}
+  - id: 521
+    name:
+      - {language: en, text: "The Selenium Project"}
+  - id: 522
+    name:
+      - {language: en, text: "The University of Manchester"}
+  - id: 523
+    name:
+      - {language: en, text: TheWhite}
+  - id: 524
+    name:
+      - {language: en, text: think-cell}
+  - id: 525
+    name:
+      - {language: en, text: Thinkmill}
+  - id: 526
+    name:
+      - {language: en, text: ThoughtWorks}
+  - id: 527
+    name:
+      - {language: en, text: TIBCO}
+  - id: 528
+    name:
+      - {language: en, text: "Tieto Austria GmbH"}
+  - id: 529
+    name:
+      - {language: en, text: Tinkoff.ru}
+  - id: 530
+    name:
+      - {language: en, text: Toothpic}
+  - id: 531
+    name:
+      - {language: en, text: Toptal}
+  - id: 532
+    name:
+      - {language: en, text: ToroDB}
+  - id: 533
+    name:
+      - {language: en, text: "Toughbyte Ltd"}
+  - id: 534
+    name:
+      - {language: en, text: TradingView}
+  - id: 535
+    name:
+      - {language: en, text: TransCrypt}
+  - id: 536
+    name:
+      - {language: en, text: TransferWise}
+  - id: 537
+    name:
+      - {language: en, text: "Trinity Digital"}
+  - id: 538
+    name:
+      - {language: en, text: "True Engineering"}
+  - id: 539
+    name:
+      - {language: en, text: "TTNR Labs"}
+  - id: 540
+    name:
+      - {language: en, text: "Tune IT"}
+  - id: 541
+    name:
+      - {language: en, text: TurtleSec}
+  - id: 542
+    name:
+      - {language: en, text: Tver.IO}
+  - id: 543
+    name:
+      - {language: en, text: Twitter}
+  - id: 544
+    name:
+      - {language: en, text: TYME}
+  - id: 545
+    name:
+      - {language: en, text: "Uber Technologies"}
+  - id: 546
+    name:
+      - {language: en, text: "Uberchord GmbH"}
+  - id: 547
+    name:
+      - {language: en, text: Ubilabs}
+  - id: 548
+    name:
+      - {language: en, text: "Ubiquitous AS"}
+  - id: 549
+    name:
+      - {language: en, text: "UCB BioPharma"}
+  - id: 550
+    name:
+      - {language: en, text: UCLA}
+  - id: 551
+    name:
+      - {language: en, text: UiPath}
+  - id: 552
+    name:
+      - {language: en, text: "uKit Group"}
+  - id: 553
+    name:
+      - {language: en, text: Ullink}
+  - id: 554
+    name:
+      - {language: en, text: "Uncle Bob Consulting LLC"}
+  - id: 555
+    name:
+      - {language: en, text: Unity}
+  - id: 556
+    name:
+      - {language: en, text: "Unity Technologies"}
+  - id: 557
+    name:
+      - {language: en, text: "University of Bern"}
+  - id: 558
+    name:
+      - {language: en, text: "University of Cambridge"}
+  - id: 559
+    name:
+      - {language: en, text: "University of Nantes"}
+  - id: 560
+    name:
+      - {language: en, text: "University of Rochester"}
+  - id: 561
+    name:
+      - {language: en, text: "University of Texas at Austin"}
+  - id: 562
+    name:
+      - {language: en, text: "University of Waterloo"}
+  - id: 563
+    name:
+      - {language: en, text: "University of Wisconsin - Madison"}
+  - id: 564
+    name:
+      - {language: en, text: "University Paris East Marne la Vallee"}
+  - id: 565
+    name:
+      - {language: en, text: UNUM}
+  - id: 566
+    name:
+      - {language: en, text: "Ursatile Ltd"}
+  - id: 567
+    name:
+      - {language: en, text: Usetech}
+  - id: 568
+    name:
+      - {language: en, text: "Vaadin Ltd."}
+  - id: 569
+    name:
+      - {language: en, text: "Valorem Reply"}
+  - id: 570
+    name:
+      - {language: en, text: Variti}
+  - id: 571
+    name:
+      - {language: en, text: "VAS Experts"}
+  - id: 572
+    name:
+      - {language: en, text: "Vevy Europe S.p.A."}
+  - id: 573
+    name:
+      - {language: en, text: "Vinogradov IT-Beratung"}
+  - id: 574
+    name:
+      - {language: en, text: "Virginia Tech"}
+  - id: 575
+    name:
+      - {language: en, text: VirtualHealth}
+  - id: 576
+    name:
+      - {language: en, text: Vivy}
+  - id: 577
+    name:
+      - {language: en, text: VMware}
+  - id: 578
+    name:
+      - {language: en, text: "Volosoft Computer and Technology"}
+  - id: 579
+    name:
+      - {language: en, text: vvvv}
+  - id: 580
+    name:
+      - {language: en, text: Vyng}
+  - id: 581
+    name:
+      - {language: en, text: "Wallaroo Labs"}
+  - id: 582
+    name:
+      - {language: en, text: Wargaming}
+  - id: 583
+    name:
+      - {language: en, text: WaveRoll.io}
+  - id: 584
+    name:
+      - {language: en, text: Waves}
+  - id: 585
+    name:
+      - {language: en, text: Webtide}
+  - id: 586
+    name:
+      - {language: en, text: wemake.services}
+  - id: 587
+    name:
+      - {language: en, text: willhaben}
+  - id: 588
+    name:
+      - {language: en, text: "Windy Coast Consulting"}
+  - id: 589
+    name:
+      - {language: en, text: Wintellect}
+  - id: 590
+    name:
+      - {language: en, text: WiseBits}
+  - id: 591
+    name:
+      - {language: en, text: Wix}
+  - id: 592
+    name:
+      - {language: en, text: "Wix Engineering"}
+  - id: 593
+    name:
+      - {language: en, text: wolfSSL}
+  - id: 594
+    name:
+      - {language: en, text: Work&Co}
+  - id: 595
+    name:
+      - {language: en, text: Workable}
+  - id: 596
+    name:
+      - {language: en, text: Wrike}
+  - id: 597
+    name:
+      - {language: en, text: www.looc.io}
+  - id: 598
+    name:
+      - {language: en, text: "XB Software"}
+  - id: 599
+    name:
+      - {language: en, text: xHUB}
+  - id: 600
+    name:
+      - {language: en, text: "XP Injection"}
+  - id: 601
+    name:
+      - {language: en, text: Xpirit}
+  - id: 602
+    name:
+      - {language: en, text: "Yahoo! Research"}
+  - id: 603
+    name:
+      - {language: en, text: Yota}
+  - id: 604
+    name:
+      - {language: en, text: Yugabyte}
+  - id: 605
+    name:
+      - {language: en, text: Zalando}
+  - id: 606
+    name:
+      - {language: en, text: "ZEDEDA Inc."}
+  - id: 607
+    name:
+      - {language: en, text: ZEIT}
+  - id: 608
+    name:
+      - {language: en, text: "ZeptoLab LLC"}
+  - id: 609
+    name:
+      - {language: en, text: Zerocracy}
+  - id: 610
+    name:
+      - {language: en, text: ÜberResearch}
+  - id: 611
+    name:
+      - {language: en, text: Avito}
+      - {language: ru, text: Авито}
+  - id: 612
+    name:
+      - {language: en, text: "Author of \"The C++ Standard Library\" and \"C++ Templates\""}
+      - {language: ru, text: "Автор книг «The C++ Standard Library» и «C++ Templates»"}
+  - id: 613
+    name:
+      - {language: en, text: Alfa-Bank}
+      - {language: ru, text: Альфа-Банк}
+  - id: 614
+    name:
+      - {language: en, text: Alfa-Lab}
+      - {language: ru, text: Альфа-Лаборатория}
+  - id: 615
+    name:
+      - {language: en, text: Amperka}
+      - {language: ru, text: Амперка}
+  - id: 616
+    name:
+      - {language: en, text: Bazis-Center}
+      - {language: ru, text: Базис-Центр}
+  - id: 617
+    name:
+      - {language: en, text: "BARS Group"}
+      - {language: ru, text: "БАРС Груп"}
+  - id: 618
+    name:
+      - {language: en, text: Beeline}
+      - {language: ru, text: Билайн}
+  - id: 619
+    name:
+      - {language: en, text: BKS-Technologies}
+      - {language: ru, text: БКС-Технологии}
+  - id: 620
+    name:
+      - {language: en, text: VK}
+      - {language: ru, text: ВКонтакте}
+  - id: 621
+    name:
+      - {language: en, text: VTB}
+      - {language: ru, text: ВТБ}
+  - id: 622
+    name:
+      - {language: en, text: "Dodo Pizza"}
+      - {language: ru, text: "Додо Пицца"}
+  - id: 623
+    name:
+      - {language: en, text: DonRiver}
+      - {language: ru, text: ДонРивер}
+  - id: 624
+    name:
+      - {language: en, text: "Zolotaya Korona"}
+      - {language: ru, text: "Золотая Корона"}
+  - id: 625
+    name:
+      - {language: en, text: Inetra}
+      - {language: ru, text: Инетра}
+  - id: 626
+    name:
+      - {language: en, text: Intelkon}
+      - {language: ru, text: ИнтелКон}
+  - id: 627
+    name:
+      - {language: en, text: "ISP RAS"}
+      - {language: ru, text: "ИСП РАН"}
+  - id: 628
+    name:
+      - {language: en, text: ITMO}
+      - {language: ru, text: ИТМО}
+  - id: 629
+    name:
+      - {language: en, text: "Kaluga Astral"}
+      - {language: ru, text: "Калуга Астрал"}
+  - id: 630
+    name:
+      - {language: en, text: Kontur}
+      - {language: ru, text: Контур}
+  - id: 631
+    name:
+      - {language: en, text: CardsMobile}
+      - {language: ru, text: Кошелёк}
+  - id: 632
+    name:
+      - {language: en, text: "Redis creative agency"}
+      - {language: ru, text: "Креативное агентство Redis"}
+  - id: 633
+    name:
+      - {language: en, text: CROC}
+      - {language: ru, text: КРОК}
+  - id: 634
+    name:
+      - {language: en, text: KURS}
+      - {language: ru, text: КУРС}
+  - id: 635
+    name:
+      - {language: en, text: "Kaspersky Lab"}
+      - {language: ru, text: "Лаборатория Касперского"}
+  - id: 636
+    name:
+      - {language: en, text: Lanit-Tercom}
+      - {language: ru, text: Ланит-Терком}
+  - id: 637
+    name:
+      - {language: en, text: Levi9}
+      - {language: ru, text: Леви9}
+  - id: 638
+    name:
+      - {language: en, text: Liptsoft}
+      - {language: ru, text: Липтсофт}
+  - id: 639
+    name:
+      - {language: en, text: M.Video}
+      - {language: ru, text: М.Видео}
+  - id: 640
+    name:
+      - {language: en, text: Mamba}
+      - {language: ru, text: Мамба}
+  - id: 641
+    name:
+      - {language: en, text: MegaFon}
+      - {language: ru, text: МегаФон}
+  - id: 642
+    name:
+      - {language: en, text: "Square meter"}
+      - {language: ru, text: "Метр квадратный"}
+  - id: 643
+    name:
+      - {language: en, text: "Mir Plat.Form"}
+      - {language: ru, text: "Мир Plat.Form"}
+  - id: 644
+    name:
+      - {language: en, text: "NSPK JSC"}
+      - {language: ru, text: "Мир Plat.Form (АО НСПК)"}
+  - id: 645
+    name:
+      - {language: en, text: "Mir Plat.Form (NSPK)"}
+      - {language: ru, text: "Мир Plat.Form (НСПК)"}
+  - id: 646
+    name:
+      - {language: en, text: MyOffice}
+      - {language: ru, text: МойОфис}
+  - id: 647
+    name:
+      - {language: en, text: Mosigra}
+      - {language: ru, text: Мосигра}
+  - id: 648
+    name:
+      - {language: en, text: MTS}
+      - {language: ru, text: МТС}
+  - id: 649
+    name:
+      - {language: en, text: "MTS IT"}
+      - {language: ru, text: "МТС ИТ"}
+  - id: 650
+    name:
+      - {language: en, text: "National Research University Higher School of Economics"}
+      - {language: ru, text: "Национальный исследовательский университет «Высшая школа экономики»"}
+  - id: 651
+    name:
+      - {language: en, text: "Independent contractor"}
+      - {language: ru, text: "Независимый консультант"}
+  - id: 652
+    name:
+      - {language: en, text: Notissimus}
+      - {language: ru, text: Нотиссимус}
+  - id: 653
+    name:
+      - {language: en, text: OK.RU}
+      - {language: ru, text: Одноклассники}
+  - id: 654
+    name:
+      - {language: en, text: Ontiko}
+      - {language: ru, text: Онтико}
+  - id: 655
+    name:
+      - {language: en, text: "OTP Bank Russia"}
+      - {language: ru, text: "ОТП Банк"}
+  - id: 656
+    name:
+      - {language: en, text: Peleng}
+      - {language: ru, text: Пеленг}
+  - id: 657
+    name:
+      - {language: en, text: "PDMI RAS"}
+      - {language: ru, text: "ПОМИ РАН"}
+  - id: 658
+    name:
+      - {language: en, text: "Space popularizer, Zelenyikot blogger"}
+      - {language: ru, text: "Популяризатор космонавтики, блогер Zelenyikot"}
+  - id: 659
+    name:
+      - {language: en, text: "Postgres Professional"}
+      - {language: ru, text: "Постгрес Профессиональный"}
+  - id: 660
+    name:
+      - {language: en, text: Prosoft-Systems}
+      - {language: ru, text: Прософт-Системы}
+  - id: 661
+    name:
+      - {language: en, text: PSB}
+      - {language: ru, text: ПСБ}
+  - id: 662
+    name:
+      - {language: en, text: RaiffeisenBank}
+      - {language: ru, text: Райффайзенбанк}
+  - id: 663
+    name:
+      - {language: en, text: Rosatom}
+      - {language: ru, text: Росатом}
+  - id: 664
+    name:
+      - {language: en, text: "RT Labs"}
+      - {language: ru, text: "РТ Лабс"}
+  - id: 665
+    name:
+      - {language: en, text: Sber}
+      - {language: ru, text: Сбер}
+  - id: 666
+    name:
+      - {language: en, text: Sberbank-Technology}
+      - {language: ru, text: Сбербанк-Технологии}
+  - id: 667
+    name:
+      - {language: en, text: SibGUTI}
+      - {language: ru, text: СибГУТИ}
+  - id: 668
+    name:
+      - {language: en, text: "Computer Vision Systems"}
+      - {language: ru, text: "Системы компьютерного зрения"}
+  - id: 669
+    name:
+      - {language: en, text: "SKB Contur"}
+      - {language: ru, text: "СКБ Контур"}
+  - id: 670
+    name:
+      - {language: en, text: Startup}
+      - {language: ru, text: Стартап}
+  - id: 671
+    name:
+      - {language: en, text: Tamtek}
+      - {language: ru, text: Тамтек}
+  - id: 672
+    name:
+      - {language: en, text: Tensor}
+      - {language: ru, text: Тензор}
+  - id: 673
+    name:
+      - {language: en, text: "Deutsche Bank Technology Center"}
+      - {language: ru, text: "ТехЦентр Дойче Банка"}
+  - id: 674
+    name:
+      - {language: en, text: Tinkoff}
+      - {language: ru, text: Тинькофф}
+  - id: 675
+    name:
+      - {language: en, text: "TCS Bank"}
+      - {language: ru, text: "ТКС Банк"}
+  - id: 676
+    name:
+      - {language: en, text: Tutu.ru}
+      - {language: ru, text: Туту.ру}
+  - id: 677
+    name:
+      - {language: en, text: "University Of Dmitry Pozharsky"}
+      - {language: ru, text: "Университет Дмитрия Пожарского"}
+  - id: 678
+    name:
+      - {language: en, text: "Innopolis University"}
+      - {language: ru, text: "Университет Иннополис"}
+  - id: 679
+    name:
+      - {language: en, text: Unipro}
+      - {language: ru, text: Унипро}
+  - id: 680
+    name:
+      - {language: en, text: "Fast Reports"}
+      - {language: ru, text: "Фаст Репортс"}
+  - id: 681
+    name:
+      - {language: en, text: Flant}
+      - {language: ru, text: Флант}
+  - id: 682
+    name:
+      - {language: en, text: "HighTech Group"}
+      - {language: ru, text: "Хайтек Груп"}
+  - id: 683
+    name:
+      - {language: en, text: CIAN}
+      - {language: ru, text: ЦИАН}
+  - id: 684
+    name:
+      - {language: en, text: "CPR RTSoft"}
+      - {language: ru, text: "ЦПР РТСофт"}
+  - id: 685
+    name:
+      - {language: en, text: STC}
+      - {language: ru, text: ЦРТ}
+  - id: 686
+    name:
+      - {language: en, text: CFT}
+      - {language: ru, text: ЦФТ}
+  - id: 687
+    name:
+      - {language: en, text: "Express 42"}
+      - {language: ru, text: "Экспресс 42"}
+  - id: 688
+    name:
+      - {language: en, text: Youla}
+      - {language: ru, text: Юла}
+  - id: 689
+    name:
+      - {language: en, text: Yandex}
+      - {language: ru, text: Яндекс}
+  - id: 690
+    name:
+      - {language: en, text: Yandex.Go}
+      - {language: ru, text: Яндекс.Go}
+  - id: 691
+    name:
+      - {language: en, text: "Yandex.Classifieds Technology"}
+      - {language: ru, text: "Яндекс.Вертикали Технологии"}
+  - id: 692
+    name:
+      - {language: en, text: Yandex.Money}
+      - {language: ru, text: Яндекс.Деньги}
+  - id: 693
+    name:
+      - {language: en, text: Yandex.Drive}
+      - {language: ru, text: Яндекс.Драйв}
+  - id: 694
+    name:
+      - {language: en, text: Yandex.Market}
+      - {language: ru, text: Яндекс.Маркет}
+  - id: 695
+    name:
+      - {language: en, text: Yandex.Cloud}
+      - {language: ru, text: Яндекс.Облако}
+  - id: 696
+    name:
+      - {language: en, text: Yandex.Taxi}
+      - {language: ru, text: Яндекс.Такси}
