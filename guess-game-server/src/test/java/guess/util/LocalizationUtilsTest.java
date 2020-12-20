@@ -11,10 +11,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -157,8 +154,7 @@ public class LocalizationUtilsTest {
                                     0L,
                                     "0000.jpg",
                                     null,
-                                    null,
-                                    Collections.emptyList(),
+                                    new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
@@ -174,8 +170,7 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     null,
-                                    null,
-                                    Collections.emptyList(),
+                                    new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
@@ -191,8 +186,7 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
-                                    Collections.emptyList(),
+                                    new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
@@ -208,8 +202,7 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
-                                    Collections.emptyList(),
+                                    new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
@@ -225,7 +218,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     EMPTY_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -242,7 +234,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     EMPTY_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -259,7 +250,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -276,7 +266,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -293,7 +282,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -310,7 +298,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     ENGLISH_NAME_LOCALE_ITEMS,
-                                    null,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -327,7 +314,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     ENGLISH_NAME_LOCALE_ITEMS,
-                                    null,
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -344,7 +330,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     ENGLISH_NAME_LOCALE_ITEMS,
-                                    null,
                                     SOME_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -361,7 +346,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     ENGLISH_NAME_LOCALE_ITEMS,
-                                    null,
                                     SOME_COMPANY_REVERSE_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -412,8 +396,7 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     null,
-                                    null,
-                                    Collections.emptyList(),
+                                    new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
@@ -429,8 +412,7 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     null,
-                                    null,
-                                    Collections.emptyList(),
+                                    new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
@@ -446,8 +428,7 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
-                                    Collections.emptyList(),
+                                    new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
@@ -463,8 +444,7 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
-                                    Collections.emptyList(),
+                                    new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
@@ -480,7 +460,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     EMPTY_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -497,7 +476,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     EMPTY_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -514,7 +492,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -531,7 +508,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -548,7 +524,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     FULL_NAME_LOCALE_ITEMS,
-                                    null,
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -565,7 +540,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     ENGLISH_NAME_LOCALE_ITEMS,
-                                    null,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -582,7 +556,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     ENGLISH_NAME_LOCALE_ITEMS,
-                                    null,
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -599,7 +572,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     ENGLISH_NAME_LOCALE_ITEMS,
-                                    null,
                                     SOME_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -616,7 +588,6 @@ public class LocalizationUtilsTest {
                     arguments(new Speaker(0L,
                                     "0000.jpg",
                                     ENGLISH_NAME_LOCALE_ITEMS,
-                                    null,
                                     SOME_COMPANY_REVERSE_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
@@ -657,7 +628,6 @@ public class LocalizationUtilsTest {
                     0L,
                     "0000.jpg",
                     FULL_NAME_LOCALE_ITEMS,
-                    null,
                     List.of(company),
                     null,
                     new Speaker.SpeakerSocials(
@@ -703,7 +673,6 @@ public class LocalizationUtilsTest {
             Speaker speaker0 = new Speaker(0L,
                     "0000.jpg",
                     FULL_NAME_LOCALE_ITEMS,
-                    null,
                     List.of(company0),
                     null,
                     new Speaker.SpeakerSocials(

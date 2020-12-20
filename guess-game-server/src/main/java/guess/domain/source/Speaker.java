@@ -36,7 +36,6 @@ public class Speaker extends Identifier {
 
     private String photoFileName;
     private List<LocaleItem> name;
-    private List<LocaleItem> company;   //TODO: delete after load change
     private List<LocaleItem> bio;
     private String twitter;
     private String gitHub;
@@ -51,13 +50,12 @@ public class Speaker extends Identifier {
         this.companyIds = new ArrayList<>();
     }
 
-    public Speaker(long id, String photoFileName, List<LocaleItem> name, List<LocaleItem> company, List<Company> companies,
+    public Speaker(long id, String photoFileName, List<LocaleItem> name, List<Company> companies,
                    List<LocaleItem> bio, SpeakerSocials socials, SpeakerDegrees degrees) {
         super(id);
 
         this.photoFileName = photoFileName;
         this.name = name;
-        this.company = company;
         this.bio = bio;
         this.twitter = socials.twitter;
         this.gitHub = socials.gitHub;
@@ -84,14 +82,6 @@ public class Speaker extends Identifier {
 
     public void setName(List<LocaleItem> name) {
         this.name = name;
-    }
-
-    public List<LocaleItem> getCompany() {
-        return company;
-    }
-
-    public void setCompany(List<LocaleItem> company) {
-        this.company = company;
     }
 
     public List<LocaleItem> getBio() {
@@ -208,7 +198,6 @@ public class Speaker extends Identifier {
                 "id=" + getId() +
                 ", fileName='" + photoFileName + '\'' +
                 ", name=" + name +
-                ", company=" + company +
                 '}';
     }
 }
