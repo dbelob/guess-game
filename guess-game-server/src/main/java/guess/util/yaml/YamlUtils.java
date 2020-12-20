@@ -89,7 +89,7 @@ public class YamlUtils {
                                                   SpeakerList speakerList, TalkList talkList)
             throws SpeakerDuplicatedException {
         //TODO: delete after load change
-        companyList.setCompanies(createCompaniesFromSpeakersAndFillSpeaker(speakerList.getSpeakers(), companySynonymsList.getCompanySynonyms()));
+//        companyList.setCompanies(createCompaniesFromSpeakersAndFillSpeaker(speakerList.getSpeakers(), companySynonymsList.getCompanySynonyms()));
 
         Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
         Map<Long, EventType> eventTypeMap = listToMap(eventTypeList.getEventTypes(), EventType::getId);
@@ -165,12 +165,6 @@ public class YamlUtils {
         companies.forEach(c -> c.setId(id.getAndIncrement()));
 
         fillCompaniesInSpeakers(speakers, companyMap);
-
-        try {
-            YamlUtils.dump(new CompanyList(companies), "companies-to-append.yml");
-        } catch (IOException | NoSuchFieldException e) {
-            e.printStackTrace();
-        }
 
         return companies;
     }
@@ -413,9 +407,8 @@ public class YamlUtils {
                                     "language", "presentationLinks", "videoLinks", "speakerIds")),
                     new PropertyMatcher(Company.class,
                             List.of("id", "name")),
-                    // TODO: change from "company" to "companyIds"
                     new PropertyMatcher(Speaker.class,
-                            List.of("id", "photoFileName", "name", "company", "bio", "twitter", "gitHub", "javaChampion",
+                            List.of("id", "photoFileName", "name", "companyIds", "bio", "twitter", "gitHub", "javaChampion",
                                     "mvp", "mvpReconnect")),
                     new PropertyMatcher(LocaleItem.class,
                             List.of("language", "text"))

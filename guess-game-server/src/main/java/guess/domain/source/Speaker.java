@@ -5,7 +5,6 @@ import guess.domain.Language;
 import guess.util.LocalizationUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,7 +48,7 @@ public class Speaker extends Identifier {
     private List<Company> companies = new ArrayList<>();
 
     public Speaker() {
-        this.companyIds = Collections.emptyList();
+        this.companyIds = new ArrayList<>();
     }
 
     public Speaker(long id, String photoFileName, List<LocaleItem> name, List<LocaleItem> company, List<Company> companies,
