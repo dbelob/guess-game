@@ -19,7 +19,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -247,8 +246,8 @@ public class ConferenceDataLoader {
         );
 
         // Find companies
-        Map<String, Company> resourceCompanyMap = getResourceEntityMap(resourceSourceInformation.getCompanies(), Company::getName);
-        addSynonymsToCompanyMap(resourceSourceInformation.getCompanySynonyms(), resourceCompanyMap);
+        Map<String, Company> resourceCompanyMap = getResourceLowerNameCompanyMap(resourceSourceInformation.getCompanies());
+        addLowerSynonymsToCompanyMap(resourceSourceInformation.getCompanySynonyms(), resourceCompanyMap);
 
         AtomicLong lastCompanyId = new AtomicLong(getLastId(resourceSourceInformation.getCompanies()));
         LoadResult<List<Company>> companyLoadResult = getCompanyLoadResult(
@@ -457,39 +456,41 @@ public class ConferenceDataLoader {
     }
 
     /**
-     * Gets resource name/entity map.
+     * Gets resource lower name/company map.
      *
-     * @param entities            entities
-     * @param localeItemsFunction function to convert from entity to local items
-     * @param <T>                 entity type
-     * @return name/entity map
+     * @param companies companies
+     * @return lower name/company map
      */
-    static <T> Map<String, T> getResourceEntityMap(List<T> entities, Function<T, List<LocaleItem>> localeItemsFunction) {
-        Map<String, T> entityMap = new HashMap<>();
+    static Map<String, Company> getResourceLowerNameCompanyMap(List<Company> companies) {
+        Map<String, Company> map = new HashMap<>();
 
-        for (T entity : entities) {
-            for (LocaleItem localItem : localeItemsFunction.apply(entity)) {
-                entityMap.put(localItem.getText(), entity);
+        for (Company company : companies) {
+            for (LocaleItem localItem : company.getName()) {
+                map.put(localItem.getText().toLowerCase(), company);
             }
         }
 
-        return entityMap;
+        return map;
     }
 
     /**
-     * Adds synonyms to company map.
+     * Adds lower synonyms to company map.
      *
      * @param companySynonymsList company synonyms list
      * @param companyMap          company map
      */
-    static void addSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap) {
+    static void addLowerSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap) {
         for (CompanySynonyms companySynonyms : companySynonymsList) {
-            if (companyMap.containsKey(companySynonyms.getName())) {
-                Company company = companyMap.get(companySynonyms.getName());
+            String lowerName = companySynonyms.getName().toLowerCase();
+            Company company = companyMap.get(lowerName);
 
-                for (String synonym : companySynonyms.getSynonyms()) {
-                    companyMap.put(synonym, company);
-                }
+            Objects.requireNonNull(company,
+                    () -> String.format("Resource company with lower name '%s' not found (change name '%s' of synonyms in company-synonyms.yml file and rerun loading)",
+                            lowerName,
+                            companySynonyms.getName()));
+
+            for (String synonym : companySynonyms.getSynonyms()) {
+                companyMap.put(synonym.toLowerCase(), company);
             }
         }
     }
@@ -1172,7 +1173,7 @@ public class ConferenceDataLoader {
      */
     static Company findResourceCompany(Company company, Map<String, Company> resourceCompanyMap) {
         for (LocaleItem localItem : company.getName()) {
-            Company resourceCompany = resourceCompanyMap.get(localItem.getText());
+            Company resourceCompany = resourceCompanyMap.get(localItem.getText().toLowerCase());
 
             if (resourceCompany != null) {
                 return resourceCompany;
