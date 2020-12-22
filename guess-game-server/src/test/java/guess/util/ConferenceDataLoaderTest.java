@@ -263,8 +263,11 @@ class ConferenceDataLoaderTest {
             Talk talk0 = new Talk();
             talk0.setId(0);
 
+            Company company0 = new Company(0, "Name0");
+
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
+            speaker0.setCompanies(List.of(company0));
 
             return Stream.of(
                     arguments(JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE, LoadSettings.defaultSettings(),
@@ -278,7 +281,8 @@ class ConferenceDataLoaderTest {
                                     Collections.emptyList()),
                             event0,
                             List.of(talk0),
-                            List.of(speaker0)),
+                            List.of(speaker0),
+                            List.of(company0)),
                     arguments(JPOINT_CONFERENCE, LocalDate.of(2020, 6, 30), EVENT_CODE, LoadSettings.defaultSettings(),
                             new SourceInformation(
                                     List.of(place0),
@@ -290,7 +294,8 @@ class ConferenceDataLoaderTest {
                                     Collections.emptyList()),
                             event0,
                             List.of(talk0),
-                            List.of(speaker0))
+                            List.of(speaker0),
+                            List.of(company0))
             );
         }
 
@@ -298,7 +303,7 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
                                     LoadSettings loadSettings, SourceInformation sourceInformation, Event contentfulEvent,
-                                    List<Talk> contentfulTalks, List<Speaker> talkSpeakers) {
+                                    List<Talk> contentfulTalks, List<Speaker> talkSpeakers, List<Company> speakerCompanies) {
             new MockUp<YamlUtils>() {
                 @Mock
                 SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
@@ -354,8 +359,7 @@ class ConferenceDataLoaderTest {
 
                 @Mock
                 List<Company> getSpeakerCompanies(List<Speaker> speakers) {
-                    //TODO: add parameter
-                    return Collections.emptyList();
+                    return speakerCompanies;
                 }
 
                 @Mock
