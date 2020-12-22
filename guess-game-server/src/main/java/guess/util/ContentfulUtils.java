@@ -470,10 +470,7 @@ public class ContentfulUtils {
                 speakerId.getAndDecrement(),
                 extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
                 extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
-                List.of(new Company(
-                        companyId.getAndDecrement(),
-                        extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence)
-                )),
+                createCompanies(contentfulSpeaker, companyId, checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
                 new Speaker.SpeakerSocials(
                         extractTwitter(contentfulSpeaker.getFields().getTwitter()),
@@ -485,6 +482,29 @@ public class ContentfulUtils {
                         extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
                 )
         );
+    }
+
+    /**
+     * Creates company list.
+     *
+     * @param contentfulSpeaker    Contentful speaker
+     * @param companyId            company identifier
+     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
+     * @return company list
+     */
+    static List<Company> createCompanies(ContentfulSpeaker contentfulSpeaker, AtomicLong companyId, boolean checkEnTextExistence) {
+        String enName = contentfulSpeaker.getFields().getCompanyEn();
+        String ruName = contentfulSpeaker.getFields().getCompany();
+
+        if (((enName != null) && !enName.isEmpty()) ||
+                ((ruName != null) && !ruName.isEmpty())) {
+            return List.of(new Company(
+                    companyId.getAndDecrement(),
+                    extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence)
+            ));
+        } else {
+            return new ArrayList<>();
+        }
     }
 
     /**

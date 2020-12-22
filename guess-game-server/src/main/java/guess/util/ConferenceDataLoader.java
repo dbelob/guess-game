@@ -1591,10 +1591,10 @@ public class ConferenceDataLoader {
 //                        Collections.emptyMap(),
 //                        Set.of("DotNext 2020 Virtual Afterparty"),
 //                        false));
-        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2020, 12, 9), "2020spbsmartdata",
-                new LoadSettings(
-                        Collections.emptyMap(),
-                        Set.of("SmartData 2020 Virtual Afterparty"),
-                        false));
+//        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2020, 12, 9), "2020spbsmartdata",
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("SmartData 2020 Virtual Afterparty"),
+//                        false));
     }
 }
