@@ -490,6 +490,12 @@ public class ConferenceDataLoader {
                             companySynonyms.getName()));
 
             for (String synonym : companySynonyms.getSynonyms()) {
+                if (companySynonyms.getName().equals(synonym)) {
+                    throw new IllegalArgumentException(String.format(
+                            "Company name matches the synonym '%s' (change synonym '%s' for name '%s' in company-synonyms.yml file and rerun loading)",
+                            synonym, synonym, companySynonyms.getName()));
+                }
+
                 companyMap.put(synonym.toLowerCase(), company);
             }
         }
@@ -1585,10 +1591,10 @@ public class ConferenceDataLoader {
 //                        Collections.emptyMap(),
 //                        Set.of("DotNext 2020 Virtual Afterparty"),
 //                        false));
-//        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2020, 12, 9), "2020spbsmartdata",
-//                new LoadSettings(
-//                        Collections.emptyMap(),
-//                        Set.of("SmartData 2020 Virtual Afterparty"),
-//                        false));
+        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2020, 12, 9), "2020spbsmartdata",
+                new LoadSettings(
+                        Collections.emptyMap(),
+                        Set.of("SmartData 2020 Virtual Afterparty"),
+                        false));
     }
 }
