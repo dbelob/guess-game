@@ -1463,11 +1463,11 @@ public class ConferenceDataLoader {
         // Load talks, speaker and event
         // 2016
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Jean-Philippe BEMPEL", "Ullink"), 155L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Jean-Philippe BEMPEL", new Company(553, "Ullink")), 155L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2016, 12, 10), "2016msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2016, 12, 11), "2016msk");
 
@@ -1475,20 +1475,20 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2017, 4, 4), "2017JBreak",
 //                LoadSettings.invalidTalksSet(Set.of("Верхом на реактивных стримах")));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2017, 4, 7), "2017JPoint",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Озеров", "GridGain Systems"), 28L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Озеров", new Company(224, "GridGain Systems")), 28L)));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2017, 4, 21), "2017spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2017, 5, 19), "2017spb",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2017, 6, 2), "2017spb");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2017, 6, 4), "2017spb");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2017, 10, 20), "2017DevOops",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Ray Тsang", "Google"), 377L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Ray Тsang", new Company(217, "Google")), 377L)));
 //        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2017, 10, 21), "2017smartdata");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2017, 11, 3), "2017Joker");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2017, 11, 11), "2017msk",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Иванов", "EPAM Systems"), 852L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Иванов", new Company(183, "EPAM Systems")), 852L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2017, 11, 12), "2017msk",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2017, 12, 8), "2017msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2017, 12, 10), "2017msk");
 
@@ -1498,15 +1498,15 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2018, 4, 6), "2018JPoint");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2018, 4, 20), "2018spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 4, 22), "2018spb",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2018, 5, 17), "2018spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2018, 5, 19), "2018spb");
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2018, 9, 1), "2018tt");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2018, 10, 14), "2018DevOops");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2018, 10, 19), "2018Joker",
 //                LoadSettings.knownSpeakerIdsMap(Map.of(
-//                        new NameCompany("Алексей Федоров", "JUG.ru Group"), 7L,
-//                        new NameCompany("Павел Финкельштейн", "lamoda"), 8L)));
+//                        new NameCompany("Алексей Федоров", new Company(291, "JUG Ru Group")), 7L,
+//                        new NameCompany("Павел Финкельштейн", new Company(302, "Lamoda")), 8L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 11, 22), "2018msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2018, 11, 24), "2018msk");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2018, 12, 6), "2018msk");
@@ -1514,11 +1514,11 @@ public class ConferenceDataLoader {
 
         // 2019
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2019, 4, 5), "2019jpoint",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Паша Финкельштейн", "Lamoda"), 8L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Паша Финкельштейн", new Company(302, "Lamoda")), 8L)));
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2019, 4, 19), "2019cpp",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Павел Новиков", "Align Technology"), 351L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Павел Новиков", new Company(27, "Align Technology")), 351L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2019, 5, 15), "2019spb",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2019, 5, 17), "2019spb");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2019, 5, 22), "2019spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2019, 5, 24), "2019spb");
@@ -1530,7 +1530,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2019, 10, 31), "2019-spb-cpp");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2019, 11, 6), "2019msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2019, 11, 8), "2019msk",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Lucas Fernandes da Costa", "Converge"), 659L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Lucas Fernandes da Costa", new Company(112, "Converge")), 659L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2019, 12, 5), "2019msk");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2019, 12, 7), "2019msk");
 
@@ -1558,7 +1558,7 @@ public class ConferenceDataLoader {
 //                        "The lifecycle of a service", "Безопасность и Kubernetes",
 //                        "Edge Computing: А trojan horse of DevOps tribe infiltrating the IoT industry")));
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Oleg Anastasyev", new Company(653, "OK.RU")), 124L)));
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
 //                LoadSettings.invalidTalksSet(Set.of("Doctoral workshop", "Title will be announced soon")));
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn");

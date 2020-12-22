@@ -1,6 +1,7 @@
 package guess.domain.source;
 
 import guess.domain.Identifier;
+import guess.domain.Language;
 
 import java.util.List;
 
@@ -17,6 +18,10 @@ public class Company extends Identifier {
         super(id);
 
         this.name = name;
+    }
+
+    public Company(long id, String enName) {
+        this(id, List.of(new LocaleItem(Language.ENGLISH.getCode(), enName)));
     }
 
     public List<LocaleItem> getName() {
