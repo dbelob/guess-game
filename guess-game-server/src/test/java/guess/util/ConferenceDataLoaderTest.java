@@ -263,10 +263,11 @@ class ConferenceDataLoaderTest {
             Talk talk0 = new Talk();
             talk0.setId(0);
 
-            Company company0 = new Company(0, "Name0");
+            Company company0 = new Company(0, "Company0");
 
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
             speaker0.setCompanies(List.of(company0));
 
             return Stream.of(
@@ -282,7 +283,8 @@ class ConferenceDataLoaderTest {
                             event0,
                             List.of(talk0),
                             List.of(speaker0),
-                            List.of(company0)),
+                            List.of(company0),
+                            Map.of("name0", company0)),
                     arguments(JPOINT_CONFERENCE, LocalDate.of(2020, 6, 30), EVENT_CODE, LoadSettings.defaultSettings(),
                             new SourceInformation(
                                     List.of(place0),
@@ -295,7 +297,8 @@ class ConferenceDataLoaderTest {
                             event0,
                             List.of(talk0),
                             List.of(speaker0),
-                            List.of(company0))
+                            List.of(company0),
+                            Map.of("name0", company0))
             );
         }
 
@@ -303,7 +306,8 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
                                     LoadSettings loadSettings, SourceInformation sourceInformation, Event contentfulEvent,
-                                    List<Talk> contentfulTalks, List<Speaker> talkSpeakers, List<Company> speakerCompanies) {
+                                    List<Talk> contentfulTalks, List<Speaker> talkSpeakers, List<Company> speakerCompanies,
+                                    Map<String, Company> resourceLowerNameCompanyMap) {
             new MockUp<YamlUtils>() {
                 @Mock
                 SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
@@ -363,14 +367,36 @@ class ConferenceDataLoaderTest {
                 }
 
                 @Mock
+                Map<String, Company> getResourceLowerNameCompanyMap(List<Company> companies) {
+                    return resourceLowerNameCompanyMap;
+                }
+
+                @Mock
+                void addLowerSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap) {
+                    // Nothing
+                }
+
+                @Mock
+                LoadResult<List<Company>> getCompanyLoadResult(List<Company> companies, Map<String, Company> resourceCompanyMap,
+                                                               AtomicLong lastCompanyId) {
+                    return new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList());
+                }
+
+                @Mock
+                void fillCompanyIds(List<Speaker> speakers) {
+                    // Nothing
+                }
+
+                @Mock
                 Map<NameCompany, Speaker> getResourceNameCompanySpeakerMap(List<Speaker> speakers) {
-                    //TODO: add parameter
                     return Collections.emptyMap();
                 }
 
                 @Mock
                 Map<String, Set<Speaker>> getResourceNameSpeakersMap(List<Speaker> speakers) {
-                    //TODO: add parameter
                     return Collections.emptyMap();
                 }
 

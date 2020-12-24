@@ -699,6 +699,58 @@ class ContentfulUtilsTest {
         assertEquals(42, ContentfulUtils.createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, speakerId, companyId, true).getId());
     }
 
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("createCompanies method tests")
+    class CreateCompaniesTest {
+        ContentfulSpeaker createContentfulSpeaker(String companyEn, String company) {
+            ContentfulSpeakerFields contentfulSpeakerFields = new ContentfulSpeakerFields();
+            contentfulSpeakerFields.setCompanyEn(companyEn);
+            contentfulSpeakerFields.setCompany(company);
+
+            ContentfulSpeaker contentfulSpeaker = new ContentfulSpeaker();
+            contentfulSpeaker.setFields(contentfulSpeakerFields);
+
+            return contentfulSpeaker;
+        }
+
+        Company company0 = new Company(0, Collections.emptyList());
+
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(createContentfulSpeaker(null, null), new AtomicLong(), false, Collections.emptyList()),
+                    arguments(createContentfulSpeaker(null, ""), new AtomicLong(), false, Collections.emptyList()),
+                    arguments(createContentfulSpeaker("", null), new AtomicLong(), false, Collections.emptyList()),
+                    arguments(createContentfulSpeaker("", ""), new AtomicLong(), false, Collections.emptyList()),
+                    arguments(createContentfulSpeaker("Company", null), new AtomicLong(), false, List.of(company0)),
+                    arguments(createContentfulSpeaker("Company", ""), new AtomicLong(), false, List.of(company0)),
+                    arguments(createContentfulSpeaker(null, "Компания"), new AtomicLong(), false, List.of(company0)),
+                    arguments(createContentfulSpeaker("", "Компания"), new AtomicLong(), false, List.of(company0)),
+                    arguments(createContentfulSpeaker("Company", "Компания"), new AtomicLong(), false, List.of(company0))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void createCompanies(ContentfulSpeaker contentfulSpeaker, AtomicLong companyId, boolean checkEnTextExistence,
+                             List<Company> expected) {
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                List<Company> createCompanies(Invocation invocation, ContentfulSpeaker contentfulSpeaker, AtomicLong companyId, boolean checkEnTextExistence) {
+                    return invocation.proceed(contentfulSpeaker, companyId, checkEnTextExistence);
+                }
+
+                @Mock
+                List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
+                    return Collections.emptyList();
+                }
+            };
+
+            assertEquals(expected, ContentfulUtils.createCompanies(contentfulSpeaker, companyId, checkEnTextExistence));
+        }
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("extractPhoto method tests")
