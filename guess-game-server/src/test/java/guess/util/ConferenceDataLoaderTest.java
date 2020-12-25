@@ -377,6 +377,11 @@ class ConferenceDataLoaderTest {
                 }
 
                 @Mock
+                <T extends Identifier> long getLastId(List<T> entities) {
+                    return 42;
+                }
+
+                @Mock
                 LoadResult<List<Company>> getCompanyLoadResult(List<Company> companies, Map<String, Company> resourceCompanyMap,
                                                                AtomicLong lastCompanyId) {
                     return new LoadResult<>(
@@ -418,11 +423,6 @@ class ConferenceDataLoaderTest {
                 @Mock
                 void fillSpeakerIds(List<Talk> talks) {
                     // Nothing
-                }
-
-                @Mock
-                <T extends Identifier> long getLastId(List<T> entities) {
-                    return 42;
                 }
 
                 @Mock
@@ -667,6 +667,71 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void getTalkSpeakers(List<Talk> talks, List<Speaker> expected) {
             assertEquals(expected, ConferenceDataLoader.getTalkSpeakers(talks));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakerCompanies method tests")
+    class GetSpeakerCompaniesTest {
+        private Stream<Arguments> data() {
+            Company company0 = new Company(0, Collections.emptyList());
+            Company company1 = new Company(1, Collections.emptyList());
+            Company company2 = new Company(2, Collections.emptyList());
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setCompanies(List.of(company0, company1));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setCompanies(List.of(company0, company2));
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyList()),
+                    arguments(List.of(speaker0), List.of(company0, company1)),
+                    arguments(List.of(speaker1), List.of(company0, company2)),
+                    arguments(List.of(speaker0, speaker1), List.of(company0, company1, company2))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSpeakerCompanies(List<Speaker> speakers, List<Company> expected) {
+            List<Company> actual = ConferenceDataLoader.getSpeakerCompanies(speakers);
+
+            assertTrue(expected.containsAll(actual) && actual.containsAll(expected));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getResourceLowerNameCompanyMap method tests")
+    class GetResourceLowerNameCompanyMapTest {
+        private Stream<Arguments> data() {
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
+            Company company2 = new Company(2, List.of(new LocaleItem(Language.RUSSIAN.getCode(), "КОМПАНИЯ2")));
+            Company company3 = new Company(3, List.of(
+                    new LocaleItem(Language.ENGLISH.getCode(), "company3"),
+                    new LocaleItem(Language.RUSSIAN.getCode(), "Компания3")
+            ));
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyMap()),
+                    arguments(List.of(company0), Map.of("company0", company0)),
+                    arguments(List.of(company1), Map.of("company1", company1)),
+                    arguments(List.of(company0, company1), Map.of("company0", company0, "company1", company1)),
+                    arguments(List.of(company2), Map.of("компания2", company2)),
+                    arguments(List.of(company3), Map.of("company3", company3, "компания3", company3)),
+                    arguments(List.of(company2, company3), Map.of("компания2", company2, "company3", company3, "компания3", company3))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getResourceLowerNameCompanyMap(List<Company> companies, Map<String, Company> expected) {
+            assertEquals(expected, ConferenceDataLoader.getResourceLowerNameCompanyMap(companies));
         }
     }
 
