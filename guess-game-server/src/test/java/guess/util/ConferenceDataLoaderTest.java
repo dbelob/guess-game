@@ -810,6 +810,7 @@ class ConferenceDataLoaderTest {
         private Stream<Arguments> data() {
             final String COMPANY_NAME0 = "EPAM Systems";
             final String COMPANY_NAME1 = "CROC";
+            final String COMPANY_NAME2 = "";
 
             Map<String, Company> resourceCompanyMap0 = new HashMap<>();
             resourceCompanyMap0.put(COMPANY_NAME0.toLowerCase(), createCompany(0, COMPANY_NAME0));
@@ -836,7 +837,8 @@ class ConferenceDataLoaderTest {
                             resourceCompanyMap0, new AtomicLong(0), loadResult1),
                     arguments(List.of(
                             createCompany(-1, COMPANY_NAME0),
-                            createCompany(-2, COMPANY_NAME1)),
+                            createCompany(-2, COMPANY_NAME1),
+                            new Company(-3, Collections.emptyList())),
                             resourceCompanyMap0, new AtomicLong(0), loadResult1)
             );
         }
