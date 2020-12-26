@@ -56,7 +56,7 @@ companySynonyms:
     ]
   - name: "EPAM Systems"
     synonyms: [
-        "EPAM"
+        EPAM
     ]
   - name: GitLab
     synonyms: [

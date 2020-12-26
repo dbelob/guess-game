@@ -737,6 +737,134 @@ class ConferenceDataLoaderTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("addLowerSynonymsToCompanyMap method tests")
+    class AddLowerSynonymsToCompanyMapTest {
+        private Stream<Arguments> data() {
+            final String COMPANY_NAME0 = "EPAM Systems";
+            final String COMPANY_NAME1 = "CROC";
+
+            final String SYNONYM0 = "EPAM";
+            final String SYNONYM1 = "KROK";
+
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME0)));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME1)));
+
+            CompanySynonyms companySynonyms0 = new CompanySynonyms();
+            companySynonyms0.setName(COMPANY_NAME0);
+            companySynonyms0.setSynonyms(List.of(SYNONYM0));
+
+            CompanySynonyms companySynonyms1 = new CompanySynonyms();
+            companySynonyms1.setName(COMPANY_NAME1);
+            companySynonyms1.setSynonyms(List.of(SYNONYM1));
+
+            CompanySynonyms companySynonyms2 = new CompanySynonyms();
+            companySynonyms2.setName(COMPANY_NAME1);
+            companySynonyms2.setSynonyms(List.of(COMPANY_NAME1));
+
+            Map<String, Company> companyMap0 = new HashMap<>();
+            companyMap0.put(COMPANY_NAME0.toLowerCase(), company0);
+            companyMap0.put(COMPANY_NAME1.toLowerCase(), company1);
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyMap(), null, Collections.emptyMap()),
+                    arguments(List.of(companySynonyms0), new HashMap<>(companyMap0), null, Map.of(
+                            COMPANY_NAME0.toLowerCase(), company0,
+                            COMPANY_NAME1.toLowerCase(), company1,
+                            SYNONYM0.toLowerCase(), company0)),
+                    arguments(List.of(companySynonyms1), new HashMap<>(companyMap0), null, Map.of(
+                            COMPANY_NAME0.toLowerCase(), company0,
+                            COMPANY_NAME1.toLowerCase(), company1,
+                            SYNONYM1.toLowerCase(), company1)),
+                    arguments(List.of(companySynonyms0, companySynonyms1), new HashMap<>(companyMap0), null, Map.of(
+                            COMPANY_NAME0.toLowerCase(), company0,
+                            COMPANY_NAME1.toLowerCase(), company1,
+                            SYNONYM1.toLowerCase(), company1,
+                            SYNONYM0.toLowerCase(), company0)),
+                    arguments(List.of(companySynonyms0), Collections.emptyMap(), NullPointerException.class, null),
+                    arguments(List.of(companySynonyms2), new HashMap<>(companyMap0), IllegalArgumentException.class, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void addLowerSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap,
+                                          Class<? extends Throwable> expectedException, Map<String, Company> expectedValue) {
+            if (expectedException == null) {
+                ConferenceDataLoader.addLowerSynonymsToCompanyMap(companySynonymsList, companyMap);
+
+                assertEquals(expectedValue, companyMap);
+            } else {
+                assertThrows(expectedException, () -> ConferenceDataLoader.addLowerSynonymsToCompanyMap(companySynonymsList, companyMap));
+            }
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getCompanyLoadResult method tests")
+    class GetCompanyLoadResultTest {
+        Company createCompany(long id, String name) {
+            return new Company(id, List.of(new LocaleItem(Language.ENGLISH.getCode(), name)));
+        }
+
+        private Stream<Arguments> data() {
+            final String COMPANY_NAME0 = "EPAM Systems";
+            final String COMPANY_NAME1 = "CROC";
+
+            Map<String, Company> resourceCompanyMap0 = new HashMap<>();
+            resourceCompanyMap0.put(COMPANY_NAME0.toLowerCase(), createCompany(0, COMPANY_NAME0));
+
+            LoadResult<List<Company>> loadResult0 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    Collections.emptyList()
+            );
+
+            LoadResult<List<Company>> loadResult1 = new LoadResult<>(
+                    Collections.emptyList(),
+                    List.of(createCompany(1, COMPANY_NAME1)),
+                    Collections.emptyList()
+            );
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyMap(), new AtomicLong(-1), loadResult0),
+                    arguments(List.of(
+                            createCompany(-1, COMPANY_NAME0)),
+                            resourceCompanyMap0, new AtomicLong(0), loadResult0),
+                    arguments(List.of(
+                            createCompany(-2, COMPANY_NAME1)),
+                            resourceCompanyMap0, new AtomicLong(0), loadResult1),
+                    arguments(List.of(
+                            createCompany(-1, COMPANY_NAME0),
+                            createCompany(-2, COMPANY_NAME1)),
+                            resourceCompanyMap0, new AtomicLong(0), loadResult1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getCompanyLoadResult(List<Company> companies, Map<String, Company> resourceCompanyMap, AtomicLong lastCompanyId,
+                                  LoadResult<List<Company>> expected) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                LoadResult<List<Company>> getCompanyLoadResult(Invocation invocation, List<Company> companies,
+                                                               Map<String, Company> resourceCompanyMap,
+                                                               AtomicLong lastCompanyId) {
+                    return invocation.proceed(companies, resourceCompanyMap, lastCompanyId);
+                }
+
+                @Mock
+                Company findResourceCompany(Company company, Map<String, Company> resourceCompanyMap) {
+                    return (company.getId() == -1) ? company : null;
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.getCompanyLoadResult(companies, resourceCompanyMap, lastCompanyId));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getSpeakerLoadResult method tests")
     class GetSpeakerLoadResultTest {
         final String PHOTO_FILE_NAME0 = "0000.jpg";
