@@ -865,6 +865,100 @@ class ConferenceDataLoaderTest {
         }
     }
 
+    @Test
+    void fillCompanyIds() {
+        Company company0 = new Company();
+        company0.setId(0);
+
+        Company company1 = new Company();
+        company1.setId(1);
+
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setCompanies(List.of(company0));
+
+        Speaker speaker1 = new Speaker();
+        speaker1.setId(1);
+        speaker1.setCompanies(List.of(company0, company1));
+
+        Speaker speaker2 = new Speaker();
+        speaker1.setId(2);
+
+        List<Long> expectedCompanyIds0 = List.of(0L);
+        List<Long> expectedCompanyIds1 = List.of(0L, 1L);
+
+        assertTrue(speaker0.getCompanyIds().isEmpty());
+        assertTrue(speaker1.getCompanyIds().isEmpty());
+        assertTrue(speaker2.getCompanyIds().isEmpty());
+
+        ConferenceDataLoader.fillCompanyIds(List.of(speaker0, speaker1));
+
+        List<Long> actualCompanyIds0 = speaker0.getCompanyIds();
+        List<Long> actualCompanyIds1 = speaker1.getCompanyIds();
+
+        assertTrue(expectedCompanyIds0.containsAll(actualCompanyIds0) && actualCompanyIds0.containsAll(expectedCompanyIds0));
+        assertTrue(expectedCompanyIds1.containsAll(actualCompanyIds1) && actualCompanyIds1.containsAll(expectedCompanyIds1));
+        assertTrue(speaker2.getCompanyIds().isEmpty());
+    }
+
+    @Test
+    void getResourceNameCompanySpeakerMap() {
+        final String SPEAKER_NAME0 = "Name0";
+        final String SPEAKER_NAME1 = "Name1";
+        final String SPEAKER_NAME2 = "Name2";
+
+        final String COMPANY_NAME0 = "EPAM Systems";
+        final String COMPANY_NAME1 = "CROC";
+
+        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME0)));
+        Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME1)));
+
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME0)));
+        speaker0.setCompanies(List.of(company0));
+
+        Speaker speaker1 = new Speaker();
+        speaker1.setId(1);
+        speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME1)));
+        speaker1.setCompanies(List.of(company0, company1));
+
+        Speaker speaker2 = new Speaker();
+        speaker2.setId(2);
+        speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME2)));
+
+        Map<NameCompany, Speaker> expected = new HashMap<>();
+        expected.put(new NameCompany(SPEAKER_NAME0, company0), speaker0);
+        expected.put(new NameCompany(SPEAKER_NAME1, company0), speaker1);
+        expected.put(new NameCompany(SPEAKER_NAME1, company1), speaker1);
+
+        assertEquals(expected, ConferenceDataLoader.getResourceNameCompanySpeakerMap(List.of(speaker0, speaker1, speaker2)));
+    }
+
+    @Test
+    void getResourceNameSpeakersMap() {
+        final String SPEAKER_NAME0 = "Name0";
+        final String SPEAKER_NAME1 = "Name1";
+
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME0)));
+
+        Speaker speaker1 = new Speaker();
+        speaker1.setId(1);
+        speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME1)));
+
+        Speaker speaker2 = new Speaker();
+        speaker2.setId(2);
+        speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME1)));
+
+        Map<String, Set<Speaker>> expected = new HashMap<>();
+        expected.put(SPEAKER_NAME0, Set.of(speaker0));
+        expected.put(SPEAKER_NAME1, Set.of(speaker1, speaker2));
+
+        assertEquals(expected, ConferenceDataLoader.getResourceNameSpeakersMap(List.of(speaker0, speaker1, speaker2)));
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getSpeakerLoadResult method tests")
