@@ -2517,16 +2517,13 @@ speakers:
       - {language: ru, text: "Виталий Худобахшов"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Was born in 1979 in St.Petersburg (Leningrad) and graduated from Physics Department of St.Petersburg\
-            \ State University. His experience with Java dates back from the version 1.1. For many years Vitaly was an assistant\
-            \ professor in St.Petersburg State University and taught computer science and mathematics courses. From 2015 is\
-            \ a senior analyst in Odnoklassniki, where he deals with various aspects of data mining and machine learning.\
-            \ Has been involved with functional programming for many years and outside of the main job and Java stack is also\
-            \ a Haskell programmer. For data mining purposes uses both Spark/Scala and R programming language."}
-      - {language: ru, text: "Закончил физический факультет СПбГУ, последние 16 лет преподает с некоторыми незначительными\
-            \ перерывами, сейчас на матмехе СПбГУ и в ВШЭ. В JetBrains занимается развитием Data Science-инструментов. Так\
-            же на полставки является ведущим аналитиком в социальной сети Одноклассники. Специалист по обработке больших д\
-            анных и поведенческому анализу. Был докладчиком на Joker и SmartData."}
+      - {language: en, text: "Vitaly graduated from the Faculty of Physics of St. Petersburg State University. He taught at\
+            \ various universities, including St. Petersburg State University, HSE, and ITMO, for more than 15 years before\
+            \ going to work at Odnoklassniki, where he worked on big data analysis. In 2017, he joined JetBrains to create\
+            \ tools that help data engineers in their daily work. He was a speaker on Joker and SmartData."}
+      - {language: ru, text: "Закончил физический факультет СПбГУ, более 15 лет преподавал в различных университетах, вклю\
+            чая СПбГУ, ВШЭ и ИТМО. Затем занимался анализом больших данных в Одноклассниках. А в 2017 году пришел в JetBrains,\
+            \ где начал создавать инструменты для дата-инженеров. Выступал на Joker и SmartData."}
     twitter: khudobakhshov
     gitHub: khud
   - id: 160
@@ -4251,13 +4248,12 @@ speakers:
             \ formal logical methods in 2007. Spent almost 9 years in outsourcing without losing contact with the university\
             \ and research community. Big data analysis at Odnoklassniki became for Dmitry an unique chance to combine theoretical\
             \ knowledge and scientific foundation with the development of real and popular products. And this chance he gladly\
-            \ took advantage of by coming there in 2011. Joined Sberbank team in 2019."}
+            \ took advantage of by coming there in 2011. Joined Sber team in 2019."}
       - {language: ru, text: "Закончил Санкт-Петербургский государственный университет в 2004 году, там же защитил кандида\
             тскую по формально-логическим методам в 2007. Почти 9 лет проработал в аутсорсинге, не теряя контакта с универ\
             ситетом и научной средой. Анализ больших данных в Одноклассниках стал для Дмитрия уникальным шансом совместить\
             \ теоретическую подготовку и научный фундамент с разработкой реальных, востребованных продуктов. И этим шансом\
-            \ он с радостью воспользовался, придя туда пять лет назад. С 2019-го года присоединился к дружной команде Сбер\
-            банка."}
+            \ он с радостью воспользовался, придя туда пять лет назад. С 2019 года присоединился к дружной команде Сбера."}
   - id: 302
     photoFileName: 0302.jpg
     name:
@@ -13850,12 +13846,13 @@ speakers:
       - {language: ru, text: "Виталий Брагилевский"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Vitaly is a professor of functional programming, programming language theory and computation\
-            \ theory, a member of the Haskell programming language standardization committee and the Haskell GHC compiler\
-            \ development supervisory committee, the author of the book \"Haskell in Depth\" (Manning Publications)."}
-      - {language: ru, text: "Преподаватель функционального программирования, теории языков программирования и теории вычи\
-            слений, член комитета по стандартизации языка программирования Haskell и наблюдательного комитета по разработк\
-            е компилятора GHC языка Haskell, автор книги «Haskell in Depth» (Manning Publications)."}
+      - {language: en, text: "Vitaly is a professor of functional programming, programming language theory, and computation\
+            \ theory. He is a member of the Haskell programming language standardization committee and the Haskell GHC compiler\
+            \ development supervisory committee, as well as the author of the book \"Haskell in Depth\" (Manning Publications)."}
+      - {language: ru, text: "Виталий Брагилевский — преподаватель функционального программирования, теории языков програм\
+            мирования и теории вычислений, член комитета по стандартизации языка программирования Haskell и наблюдательног\
+            о комитета по разработке компилятора GHC для языка Haskell, автор книги «Haskell in Depth» (издательство «Manning\
+            \ Publications»)."}
     twitter: _bravit
   - id: 1019
     photoFileName: 1019.jpg
