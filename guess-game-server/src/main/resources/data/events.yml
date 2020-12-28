@@ -1365,617 +1365,617 @@ events:
   # JUG.ru
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #1"}
     startDate: "2012-02-25"
     endDate: "2012-02-25"
     placeId: 0
     talkIds: [2001]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #2"}
     startDate: "2012-04-20"
     endDate: "2012-04-20"
     placeId: 0
     talkIds: [2002]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #3"}
     startDate: "2012-04-26"
     endDate: "2012-04-26"
     placeId: 0
     talkIds: [2003]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #4"}
     startDate: "2012-05-31"
     endDate: "2012-05-31"
     placeId: 0
     talkIds: [2004]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #5"}
     startDate: "2012-06-14"
     endDate: "2012-06-14"
     placeId: 0
     talkIds: [2005]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #6"}
     startDate: "2012-07-25"
     endDate: "2012-07-25"
     placeId: 0
     talkIds: [2006]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #7"}
     startDate: "2012-08-23"
     endDate: "2012-08-23"
     placeId: 0
     talkIds: [2007, 2008, 2009]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #8"}
     startDate: "2012-09-11"
     endDate: "2012-09-11"
     placeId: 0
     talkIds: [2010]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #9"}
     startDate: "2012-09-29"
     endDate: "2012-09-29"
     placeId: 18
     talkIds: [2011]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #10"}
     startDate: "2012-10-17"
     endDate: "2012-10-17"
     placeId: 0
     talkIds: [2012]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #11"}
     startDate: "2012-11-22"
     endDate: "2012-11-22"
     placeId: 0
     talkIds: [2013]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2012"}
+      - {language: en, text: "JUG.ru Meetup #12"}
     startDate: "2012-12-24"
     endDate: "2012-12-24"
     placeId: 0
     talkIds: [2014]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #13"}
     startDate: "2013-01-24"
     endDate: "2013-01-24"
     placeId: 0
     talkIds: [2015]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #14"}
     startDate: "2013-02-28"
     endDate: "2013-02-28"
     placeId: 0
     talkIds: [2016]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #15"}
     startDate: "2013-03-28"
     endDate: "2013-03-28"
     placeId: 0
     talkIds: [2017, 2018, 2019]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #16"}
     startDate: "2013-04-16"
     endDate: "2013-04-16"
     placeId: 0
     talkIds: [2020]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #17"}
     startDate: "2013-05-30"
     endDate: "2013-05-30"
     placeId: 0
     talkIds: [2021]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #18"}
     startDate: "2013-06-27"
     endDate: "2013-06-27"
     placeId: 0
     talkIds: [2022]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #19"}
     startDate: "2013-07-11"
     endDate: "2013-07-11"
     placeId: 0
     talkIds: [2023, 2024]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #20"}
     startDate: "2013-08-07"
     endDate: "2013-08-07"
     placeId: 0
     talkIds: [2025]
   - eventTypeId: 14
     name:
-      - {language: en, text: "OpenJDK TestFest Russia 2013"}
+      - {language: en, text: "OpenJDK TestFest Russia 2013 (#21)"}
     startDate: "2013-08-17"
     endDate: "2013-08-17"
     placeId: 0
     talkIds: [2177, 2178, 2179, 2180]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #22"}
     startDate: "2013-08-31"
     endDate: "2013-08-31"
     placeId: 1
     talkIds: [2026, 2027, 2028, 2029]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #23"}
     startDate: "2013-09-02"
     endDate: "2013-09-05"
     placeId: 0
     talkIds: [2175]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #24"}
     startDate: "2013-10-14"
     endDate: "2013-10-14"
     placeId: 5
     talkIds: [2176, 2181, 2182, 2183, 2184, 2185]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #25"}
     startDate: "2013-10-17"
     endDate: "2013-10-17"
     placeId: 0
     talkIds: [2030]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #26"}
     startDate: "2013-11-20"
     endDate: "2013-11-20"
     placeId: 0
     talkIds: [2031]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2013"}
+      - {language: en, text: "JUG.ru Meetup #27"}
     startDate: "2013-12-12"
     endDate: "2013-12-12"
     placeId: 0
     talkIds: [2032, 2033]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #28"}
     startDate: "2014-02-06"
     endDate: "2014-02-06"
     placeId: 0
     talkIds: [2034]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #29"}
     startDate: "2014-02-26"
     endDate: "2014-02-26"
     placeId: 0
     talkIds: [2035]
   - eventTypeId: 14
     name:
-      - {language: en, text: "Java 8 Launch Party"}
+      - {language: en, text: "Java 8 Launch Party (#30)"}
     startDate: "2014-04-03"
     endDate: "2014-04-03"
     placeId: 0
     talkIds: [2036, 2037, 2038, 2039, 2040, 2041]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #31"}
     startDate: "2014-04-10"
     endDate: "2014-04-10"
     placeId: 0
     talkIds: [2042]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #32"}
     startDate: "2014-04-17"
     endDate: "2014-04-17"
     placeId: 11
     talkIds: [2186, 2187]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #33"}
     startDate: "2014-06-05"
     endDate: "2014-06-05"
     placeId: 0
     talkIds: [2043]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #34"}
     startDate: "2014-06-24"
     endDate: "2014-06-25"
     placeId: 26
     talkIds: [2188, 2189]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #35"}
     startDate: "2014-06-26"
     endDate: "2014-06-26"
     placeId: 19
     talkIds: [2044]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #36"}
     startDate: "2014-07-24"
     endDate: "2014-07-24"
     placeId: 20
     talkIds: [2045]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #37"}
     startDate: "2014-08-07"
     endDate: "2014-08-07"
     placeId: 19
     talkIds: [2046, 2047]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #38"}
     startDate: "2014-09-17"
     endDate: "2014-09-17"
     placeId: 0
     talkIds: [2048]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #39"}
     startDate: "2014-10-18"
     endDate: "2014-10-19"
     placeId: 4
     talkIds: [2190]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #40"}
     startDate: "2014-10-22"
     endDate: "2014-10-22"
     placeId: 4
     talkIds: [2191, 2049]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #41"}
     startDate: "2014-10-23"
     endDate: "2014-10-24"
     placeId: 4
     talkIds: [2192, 2193]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2014"}
+      - {language: en, text: "JUG.ru Meetup #42"}
     startDate: "2014-12-22"
     endDate: "2014-12-22"
     placeId: 0
     talkIds: [2050]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "JUG.ru Meetup #43"}
     startDate: "2015-02-05"
     endDate: "2015-02-05"
     placeId: 19
     talkIds: [2051]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "JUG.ru Meetup #44"}
     startDate: "2015-03-11"
     endDate: "2015-03-11"
     placeId: 0
     talkIds: [2052]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "JUG.ru Meetup #45"}
     startDate: "2015-04-22"
     endDate: "2015-04-22"
     placeId: 19
     talkIds: [2053]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "JUG.ru Meetup #46"}
     startDate: "2015-05-14"
     endDate: "2015-05-14"
     placeId: 20
     talkIds: [2054]
   - eventTypeId: 14
     name:
-      - {language: en, text: "Java: 20 years of innovation"}
-      - {language: ru, text: "Java: 20 лет инноваций"}
+      - {language: en, text: "Java: 20 years of innovation (#47)"}
+      - {language: ru, text: "Java: 20 лет инноваций (#47)"}
     startDate: "2015-06-30"
     endDate: "2015-06-30"
     placeId: 0
     talkIds: [2055, 2056, 2057, 2058, 2059]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "JUG.ru Meetup #48"}
     startDate: "2015-10-14"
     endDate: "2015-10-14"
     placeId: 0
     talkIds: [2060]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "JUG.ru Meetup #49"}
     startDate: "2015-10-14"
     endDate: "2015-10-15"
     placeId: 4
     talkIds: [2194]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "JUG.ru Meetup #50"}
     startDate: "2015-10-18"
     endDate: "2015-10-18"
     placeId: 4
     talkIds: [2195]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "JUG.ru Meetup #51"}
     startDate: "2015-12-03"
     endDate: "2015-12-03"
     placeId: 0
     talkIds: [2061]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2015"}
+      - {language: en, text: "JUG.ru Meetup #52"}
     startDate: "2015-12-17"
     endDate: "2015-12-17"
     placeId: 19
     talkIds: [2062]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #53"}
     startDate: "2016-01-21"
     endDate: "2016-01-21"
     placeId: 20
     talkIds: [2063]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #54"}
     startDate: "2016-02-26"
     endDate: "2016-02-26"
     placeId: 0
     talkIds: [2064, 2065, 2066, 2067]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #55"}
     startDate: "2016-05-26"
     endDate: "2016-05-26"
     placeId: 19
     talkIds: [2068]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #56"}
     startDate: "2016-06-30"
     endDate: "2016-06-30"
     placeId: 19
     talkIds: [2069]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #57"}
     startDate: "2016-07-06"
     endDate: "2016-07-06"
     placeId: 0
     talkIds: [2070]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #58"}
     startDate: "2016-08-31"
     endDate: "2016-08-31"
     placeId: 21
     talkIds: [2071]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #59"}
     startDate: "2016-09-14"
     endDate: "2016-09-14"
     placeId: 21
     talkIds: [2072]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #60"}
     startDate: "2016-10-12"
     endDate: "2016-10-12"
     placeId: 19
     talkIds: [2073]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #61"}
     startDate: "2016-12-01"
     endDate: "2016-12-01"
     placeId: 21
     talkIds: [2074]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2016"}
+      - {language: en, text: "JUG.ru Meetup #62"}
     startDate: "2016-12-22"
     endDate: "2016-12-22"
     placeId: 0
     talkIds: [2075]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #63"}
     startDate: "2017-02-25"
     endDate: "2017-02-25"
     placeId: 0
     talkIds: [2076, 2077, 2078]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #64"}
     startDate: "2017-04-19"
     endDate: "2017-04-19"
     placeId: 0
     talkIds: [2079]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #65"}
     startDate: "2017-07-06"
     endDate: "2017-07-06"
     placeId: 22
     talkIds: [2080]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #66"}
     startDate: "2017-08-02"
     endDate: "2017-08-02"
     placeId: 21
     talkIds: [2081]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #67"}
     startDate: "2017-08-30"
     endDate: "2017-08-30"
     placeId: 0
     talkIds: [2082]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #68"}
     startDate: "2017-10-11"
     endDate: "2017-10-11"
     placeId: 0
     talkIds: [2083]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #69"}
     startDate: "2017-10-25"
     endDate: "2017-10-25"
     placeId: 23
     talkIds: [2084]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #70"}
     startDate: "2017-11-02"
     endDate: "2017-11-02"
     placeId: 23
     talkIds: [2085]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #71"}
     startDate: "2017-12-04"
     endDate: "2017-12-04"
     placeId: 0
     talkIds: [2086]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2017"}
+      - {language: en, text: "JUG.ru Meetup #72"}
     startDate: "2017-12-25"
     endDate: "2017-12-25"
     placeId: 0
     talkIds: [2087]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2018"}
+      - {language: en, text: "JUG.ru Meetup #73"}
     startDate: "2018-02-28"
     endDate: "2018-02-28"
     placeId: 20
     talkIds: [2088]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2018"}
+      - {language: en, text: "JUG.ru Meetup #74"}
     startDate: "2018-04-11"
     endDate: "2018-04-11"
     placeId: 20
     talkIds: [2089]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2018"}
+      - {language: en, text: "JUG.ru Meetup #75"}
     startDate: "2018-05-15"
     endDate: "2018-05-15"
     placeId: 20
     talkIds: [2090]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2018"}
+      - {language: en, text: "JUG.ru Meetup #76"}
     startDate: "2018-06-05"
     endDate: "2018-06-05"
     placeId: 0
     talkIds: [2091]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2018"}
+      - {language: en, text: "JUG.ru Meetup #77"}
     startDate: "2018-08-09"
     endDate: "2018-08-09"
     placeId: 0
     talkIds: [2092]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2018"}
+      - {language: en, text: "JUG.ru Meetup #78"}
     startDate: "2018-10-18"
     endDate: "2018-10-18"
     placeId: 0
     talkIds: [2093]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2019"}
+      - {language: en, text: "JUG.ru Meetup #79"}
     startDate: "2019-01-29"
     endDate: "2019-01-29"
     placeId: 0
     talkIds: [2094]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2019"}
+      - {language: en, text: "JUG.ru Meetup #80"}
     startDate: "2019-03-21"
     endDate: "2019-03-21"
     placeId: 0
     talkIds: [2095, 2096]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2019"}
+      - {language: en, text: "JUG.ru Meetup #81"}
     startDate: "2019-05-30"
     endDate: "2019-05-30"
     placeId: 0
     talkIds: [2097]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2019"}
+      - {language: en, text: "JUG.ru Meetup #82"}
     startDate: "2019-07-09"
     endDate: "2019-07-09"
     placeId: 4
     talkIds: [2098]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2019"}
+      - {language: en, text: "JUG.ru Meetup #83"}
     startDate: "2019-08-27"
     endDate: "2019-08-27"
     placeId: 0
     talkIds: [2099]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2019"}
+      - {language: en, text: "JUG.ru Meetup #84"}
     startDate: "2019-09-05"
     endDate: "2019-09-05"
     placeId: 27
     talkIds: [2196]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2019"}
+      - {language: en, text: "JUG.ru Meetup #85"}
     startDate: "2019-10-23"
     endDate: "2019-10-24"
     placeId: 27
     talkIds: [2198]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2020"}
+      - {language: en, text: "JUG.ru Meetup #86"}
     startDate: "2020-04-17"
     endDate: "2020-04-17"
     placeId: 24
     talkIds: [2100]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2020"}
+      - {language: en, text: "JUG.ru Meetup #87"}
     startDate: "2020-05-11"
     endDate: "2020-05-11"
     placeId: 24
     talkIds: [2197]
   - eventTypeId: 14
     name:
-      - {language: en, text: "JUG.ru 2020"}
+      - {language: en, text: "JUG.ru Meetup #88"}
     startDate: "2020-05-22"
     endDate: "2020-05-22"
     placeId: 24
