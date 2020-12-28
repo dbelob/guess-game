@@ -144,13 +144,19 @@ speakers:
       - {language: ru, text: "Паша Финкельштейн"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Pasha is a speaker and developer for the Big Data Tools team at JetBrains and the author of\
-            \ the Kotlin API for Apache Spark. In the past, he has worked in almost every IT position, from tech support to\
-            \ manager and data engineer. He loves talking to people about anything, but particularly he loves talking about\
-            \ IT. He's a Kotlin fan."}
-      - {language: ru, text: "Паша — серийный спикер и разработчик Big Data Tools в JetBrains. Автор Kotlin API for Apache\
-            \ Spark. В прошлом успел позаниматься почти всем в сфере IT: от поддержки и системного администрирования до ме\
-            неджмента и дата инжиниринга. Очень любит людей и разговаривать. Обо всём, особенно об IT. Фанат Котлина."}
+      - language: en
+        text: "Despite his education in psychology, for 14 years Pasha managed to work in a lot of IT areas — system administration,\
+            \ development, management, data engineering, in general, touched almost everything that exists in IT. More than\
+            \ 10 years ago he started practicing DevOps and never focused on just one thing.\nNow Pasha works at JetBrains\
+            \ on Big Data Tools – tools to make data engineer's life easier.\nVery sociable, loves, and understands people\
+            \ and is always happy to answer any questions."
+      - language: ru
+        text: "Несмотря на психологическое образование, за 14 лет Паша успел поработать в куче сфер в IT — системное админ\
+            истрирование, разработка, менеджмент разных уровней, дата инжиниринг, в общем, так или иначе, касался почти вс\
+            его, что в IT существует. Начал практиковать DevOps-практики больше 10 лет назад и никогда не концентрировался\
+            \ на чём-то одном.\n\nСейчас Паша работает в компании JetBrains над разработкой Big Data Tools — инструментами\
+            \ для того, чтобы делать жизнь дата инженеров проще.\n\nОчень общительный, любит и понимает людей, и всегда ра\
+            д ответить на любые вопросы."
     twitter: asm0di0
     gitHub: asm0dey
   - id: 9
