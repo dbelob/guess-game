@@ -19,6 +19,7 @@ export class EventTypeComponent implements OnInit {
   constructor(private eventTypeService: EventTypeService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
     this.multiSortMeta.push({field: 'startDate', order: -1});
+    this.multiSortMeta.push({field: 'endDate', order: -1});
   }
 
   ngOnInit(): void {
