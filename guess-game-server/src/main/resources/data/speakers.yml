@@ -3375,17 +3375,19 @@ speakers:
   - id: 237
     photoFileName: 0237.jpg
     name:
-      - {language: en, text: "Andrei Solntsev"}
+      - {language: en, text: "Andrey Solntsev"}
       - {language: ru, text: "Андрей Солнцев"}
     companyIds: [100]
     bio:
-      - {language: en, text: "Software craftsman at Codeborne (Tallinn, Estonia). Aggressive fan of extreme programming, autotests,\
-            \ pair programming and clean code. Creator of Selenide — an open-source library for UI tests in Java. Organizer\
-            \ of devclub.eu. Frequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
-            \ Testing Days, TopConf, DevConFu, Devoxx."}
-      - {language: ru, text: "Андрей — разработчик в эстонской компании Codeborne. Автор фреймворка Selenide, организатор\
-            \ таллинского Devclub, частый докладчик на конференциях. Ярый приверженец экстремального программирования, авт\
-            оматических тестов, парного программирования и чистого кода."}
+      - language: en
+        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
+            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
+            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."
+      - language: ru
+        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
+            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
+            , парного программирования и чистого кода."
     twitter: asolntsev
     gitHub: asolntsev
   - id: 238
@@ -13848,13 +13850,12 @@ speakers:
       - {language: ru, text: "Виталий Брагилевский"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Vitaly is a professor of functional programming, programming language theory, and computation\
-            \ theory. He is a member of the Haskell programming language standardization committee and the Haskell GHC compiler\
-            \ development supervisory committee, as well as the author of the book \"Haskell in Depth\" (Manning Publications)."}
-      - {language: ru, text: "Виталий Брагилевский — преподаватель функционального программирования, теории языков програм\
-            мирования и теории вычислений, член комитета по стандартизации языка программирования Haskell и наблюдательног\
-            о комитета по разработке компилятора GHC для языка Haskell, автор книги «Haskell in Depth» (издательство «Manning\
-            \ Publications»)."}
+      - {language: en, text: "Vitaly is a professor of functional programming, programming language theory and computation\
+            \ theory, a member of the Haskell programming language standardization committee and the Haskell GHC compiler\
+            \ development supervisory committee, the author of the book \"Haskell in Depth\" (Manning Publications)."}
+      - {language: ru, text: "Преподаватель функционального программирования, теории языков программирования и теории вычи\
+            слений, член комитета по стандартизации языка программирования Haskell и наблюдательного комитета по разработк\
+            е компилятора GHC языка Haskell, автор книги «Haskell in Depth» (Manning Publications)."}
     twitter: _bravit
   - id: 1019
     photoFileName: 1019.jpg
