@@ -1720,6 +1720,51 @@ class ConferenceDataLoaderTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("saveCompanies method tests")
+    class SaveCompaniesTest {
+        private Stream<Arguments> data() {
+            Company company0 = new Company(0, Collections.emptyList());
+            Company company1 = new Company(1, Collections.emptyList());
+
+            LoadResult<List<Company>> companyLoadResult0 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    Collections.emptyList()
+            );
+
+            LoadResult<List<Company>> companyLoadResult1 = new LoadResult<>(
+                    Collections.emptyList(),
+                    List.of(company0, company1),
+                    Collections.emptyList()
+            );
+
+            return Stream.of(
+                    arguments(companyLoadResult0),
+                    arguments(companyLoadResult1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void saveSpeakers(LoadResult<List<Company>> companyLoadResult) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                void saveCompanies(Invocation invocation, LoadResult<List<Company>> companyLoadResult) throws IOException, NoSuchFieldException {
+                    invocation.proceed(companyLoadResult);
+                }
+
+                @Mock
+                void logAndDumpCompanies(List<Company> companies, String logMessage, String filename) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveCompanies(companyLoadResult));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("saveImages method tests")
     class SaveImagesTest {
         private Stream<Arguments> data() {
@@ -1957,6 +2002,11 @@ class ConferenceDataLoaderTest {
     @Test
     void logAndDumpEventTypes(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
         assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpEventTypes(List.of(new EventType()), "{}", "filename"));
+    }
+
+    @Test
+    void logAndDumpCompanies(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpCompanies(List.of(new Company()), "{}", "filename"));
     }
 
     @Test
