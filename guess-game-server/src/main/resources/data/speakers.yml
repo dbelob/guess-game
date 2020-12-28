@@ -11855,7 +11855,7 @@ speakers:
   - id: 858
     photoFileName: 0858.jpg
     name:
-      - {language: en, text: "Evgeny Saturov"}
+      - {language: en, text: "Eugene Saturov"}
       - {language: ru, text: "Евгений Сатуров"}
     companyIds: [506]
     bio:
