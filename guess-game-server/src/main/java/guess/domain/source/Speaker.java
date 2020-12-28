@@ -5,7 +5,6 @@ import guess.domain.Language;
 import guess.util.LocalizationUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,7 +36,6 @@ public class Speaker extends Identifier {
 
     private String photoFileName;
     private List<LocaleItem> name;
-    private List<LocaleItem> company;
     private List<LocaleItem> bio;
     private String twitter;
     private String gitHub;
@@ -49,22 +47,22 @@ public class Speaker extends Identifier {
     private List<Company> companies = new ArrayList<>();
 
     public Speaker() {
-        this.companyIds = Collections.emptyList();
+        this.companyIds = new ArrayList<>();
     }
 
-    public Speaker(long id, String photoFileName, List<LocaleItem> name, List<LocaleItem> company,
+    public Speaker(long id, String photoFileName, List<LocaleItem> name, List<Company> companies,
                    List<LocaleItem> bio, SpeakerSocials socials, SpeakerDegrees degrees) {
         super(id);
 
         this.photoFileName = photoFileName;
         this.name = name;
-        this.company = company;
         this.bio = bio;
         this.twitter = socials.twitter;
         this.gitHub = socials.gitHub;
         this.javaChampion = degrees.javaChampion;
         this.mvp = degrees.mvp;
         this.mvpReconnect = degrees.mvpReconnect;
+        this.companies = companies;
         this.companyIds = companies.stream()
                 .map(Company::getId)
                 .collect(Collectors.toList());
@@ -84,14 +82,6 @@ public class Speaker extends Identifier {
 
     public void setName(List<LocaleItem> name) {
         this.name = name;
-    }
-
-    public List<LocaleItem> getCompany() {
-        return company;
-    }
-
-    public void setCompany(List<LocaleItem> company) {
-        this.company = company;
     }
 
     public List<LocaleItem> getBio() {
@@ -208,7 +198,6 @@ public class Speaker extends Identifier {
                 "id=" + getId() +
                 ", fileName='" + photoFileName + '\'' +
                 ", name=" + name +
-                ", company=" + company +
                 '}';
     }
 }

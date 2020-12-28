@@ -161,6 +161,7 @@ class SourceDaoImplTest {
                 List.of(eventType0, eventType1, eventType2),
                 List.of(event0, event1, event2),
                 List.of(company0, company1, company2),
+                Collections.emptyList(),
                 List.of(speaker0, speaker1, speaker2, speaker3),
                 List.of(talk0, talk1, talk2));
         sourceDao = new SourceDaoImpl(sourceInformation);

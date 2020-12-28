@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Speaker } from '../../../shared/models/speaker/speaker.model';
 import { SpeakerService } from '../../../shared/services/speaker.service';
-import { isStringEmpty } from '../../general/utility-functions';
+import { CompanyService } from '../../../shared/services/company.service';
+import { getSpeakersWithCompaniesString, isStringEmpty } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-speakers-search',
@@ -27,9 +28,11 @@ export class SpeakersSearchComponent implements OnInit {
   private searched = false;
   public multiSortMeta: any[] = [];
 
-  constructor(public speakerService: SpeakerService, public translateService: TranslateService) {
+  public companySuggestions: string[];
+
+  constructor(public speakerService: SpeakerService, public translateService: TranslateService, public companyService: CompanyService) {
     this.multiSortMeta.push({field: 'displayName', order: 1});
-    this.multiSortMeta.push({field: 'company', order: 1});
+    this.multiSortMeta.push({field: 'companiesString', order: 1});
   }
 
   ngOnInit(): void {
@@ -38,7 +41,7 @@ export class SpeakersSearchComponent implements OnInit {
   loadSpeakers(name: string, company: string, twitter: string, gitHub: string, isJavaChampion: boolean, isMvp: boolean) {
     this.speakerService.getSpeakers(name, company, twitter, gitHub, isJavaChampion, isMvp)
       .subscribe(data => {
-        this.speakers = data;
+        this.speakers = getSpeakersWithCompaniesString(data);
         this.searched = true;
       });
   }
@@ -84,5 +87,13 @@ export class SpeakersSearchComponent implements OnInit {
 
   isSpeakersListVisible() {
     return (this.searched && (this.speakers.length > 0));
+  }
+
+  companySearch(event) {
+    this.companyService.getCompanyNamesByFirstLetters(event.query)
+      .subscribe(data => {
+          this.companySuggestions = data;
+        }
+      );
   }
 }

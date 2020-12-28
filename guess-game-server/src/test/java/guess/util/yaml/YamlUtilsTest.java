@@ -1,7 +1,6 @@
 package guess.util.yaml;
 
 import guess.dao.exception.SpeakerDuplicatedException;
-import guess.domain.Language;
 import guess.domain.source.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
@@ -12,7 +11,9 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -66,6 +67,7 @@ class YamlUtilsTest {
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
+                                    Collections.emptyList(),
                                     List.of(speaker0),
                                     Collections.emptyList()
                             ),
@@ -83,97 +85,6 @@ class YamlUtilsTest {
                 assertEquals(expectedResult, YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, companyList, companySynonymsList, speakerList, talkList));
             } else {
                 assertThrows(expectedException, () -> YamlUtils.getSourceInformation(placeList, eventTypeList, eventList, companyList, companySynonymsList, speakerList, talkList));
-            }
-        }
-    }
-
-    @Test
-    void createCompaniesFromSpeakersAndFillSpeaker() {
-        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
-        Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
-
-        Speaker speaker0 = new Speaker();
-        speaker0.setId(0);
-        speaker0.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
-
-        Speaker speaker1 = new Speaker();
-        speaker1.setId(1);
-        speaker1.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
-
-        List<CompanySynonyms> companySynonymsList = new ArrayList<>();
-
-        List<Company> expectedCompanies = List.of(company0, company1);
-        List<Company> actualCompanies = YamlUtils.createCompaniesFromSpeakersAndFillSpeaker(List.of(speaker0, speaker1), companySynonymsList);
-
-        assertTrue(expectedCompanies.containsAll(actualCompanies) && actualCompanies.containsAll(expectedCompanies));
-    }
-
-    @Test
-    void bindSynonymToMainCompany() {
-        CompanySynonyms companySynonyms0 = new CompanySynonyms();
-        companySynonyms0.setName("CROC");
-        companySynonyms0.setSynonyms(List.of("KROK", "КРОК"));
-
-        CompanySynonyms companySynonyms1 = new CompanySynonyms();
-        companySynonyms1.setName("EPAM Systems");
-        companySynonyms1.setSynonyms(List.of("EPAM"));
-
-        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "CROC")));
-        Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "KROK")));
-        List<Company> actualCompanies = new ArrayList<>(List.of(company0, company1));
-
-        Map<String, Company> actualCompanyMap = new HashMap<>();
-        actualCompanyMap.put("CROC", company0);
-
-        YamlUtils.bindSynonymToMainCompany(List.of(companySynonyms0, companySynonyms1), actualCompanies, actualCompanyMap);
-
-        List<Company> expectedCompanies = List.of(company0);
-        Map<String, Company> expectedCompanyMap = Map.of("CROC", company0, "KROK", company0, "КРОК", company0);
-
-        assertTrue(expectedCompanies.containsAll(actualCompanies) && actualCompanies.containsAll(expectedCompanies));
-        assertEquals(expectedCompanyMap, actualCompanyMap);
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("fillCompaniesInSpeakers method tests (with exception)")
-    class FillCompaniesInSpeakersTest {
-        private Stream<Arguments> data() {
-            Company company0 = new Company();
-            company0.setId(0);
-            company0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
-
-            Speaker speaker0 = new Speaker();
-            speaker0.setId(0);
-
-            Speaker speaker1 = new Speaker();
-            speaker1.setId(1);
-            speaker1.setCompany(Collections.emptyList());
-
-            Speaker speaker2 = new Speaker();
-            speaker2.setId(2);
-            speaker2.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
-
-            Speaker speaker3 = new Speaker();
-            speaker3.setId(3);
-            speaker3.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
-
-            Map<String, Company> companyMap = new HashMap<>();
-            companyMap.put("Company0", company0);
-
-            return Stream.of(
-                    arguments(List.of(speaker0, speaker1, speaker2), companyMap, null),
-                    arguments(List.of(speaker0, speaker1, speaker2, speaker3), companyMap, NullPointerException.class)
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void fillCompaniesInSpeakers(List<Speaker> speakers, Map<String, Company> companyMap, Class<? extends Exception> expected) {
-            if (expected == null) {
-                assertDoesNotThrow(() -> YamlUtils.fillCompaniesInSpeakers(speakers, companyMap));
-            } else {
-                assertThrows(expected, () -> YamlUtils.fillCompaniesInSpeakers(speakers, companyMap));
             }
         }
     }
@@ -364,6 +275,8 @@ class YamlUtilsTest {
     @DisplayName("findSpeakerDuplicates method tests")
     class FindSpeakerDuplicatesTest {
         private Stream<Arguments> data() {
+            Company company0 = new Company(0, List.of(new LocaleItem("en", "company0")));
+
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
             speaker0.setName(List.of(new LocaleItem("en", "name0")));
@@ -371,29 +284,21 @@ class YamlUtilsTest {
             Speaker speaker1 = new Speaker();
             speaker1.setId(1);
             speaker1.setName(List.of(new LocaleItem("en", "name0")));
-            speaker1.setCompany(List.of(new LocaleItem("en", null)));
 
             Speaker speaker2 = new Speaker();
             speaker2.setId(2);
-            speaker2.setName(List.of(new LocaleItem("en", "name0")));
-            speaker2.setCompany(List.of(new LocaleItem("en", "")));
+            speaker2.setName(List.of(new LocaleItem("en", "name2")));
+            speaker2.setCompanies(List.of(company0));
 
             Speaker speaker3 = new Speaker();
             speaker3.setId(3);
-            speaker3.setName(List.of(new LocaleItem("en", "name3")));
-            speaker3.setCompany(List.of(new LocaleItem("en", "company3")));
-
-            Speaker speaker4 = new Speaker();
-            speaker4.setId(4);
-            speaker4.setName(List.of(new LocaleItem("en", "name3")));
-            speaker4.setCompany(List.of(new LocaleItem("en", "company3")));
+            speaker3.setName(List.of(new LocaleItem("en", "name2")));
+            speaker3.setCompanies(List.of(company0));
 
             return Stream.of(
                     arguments(Collections.emptyList(), false),
                     arguments(List.of(speaker0, speaker1), true),
-                    arguments(List.of(speaker0, speaker2), true),
-                    arguments(List.of(speaker0, speaker1, speaker2), true),
-                    arguments(List.of(speaker3, speaker4), true)
+                    arguments(List.of(speaker2, speaker3), true)
             );
         }
 

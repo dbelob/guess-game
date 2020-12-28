@@ -41,7 +41,7 @@ class ConferenceDataLoaderTest {
             @Mock
             SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
                 return new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
                 );
             }
         };
@@ -263,8 +263,12 @@ class ConferenceDataLoaderTest {
             Talk talk0 = new Talk();
             talk0.setId(0);
 
+            Company company0 = new Company(0, "Company0");
+
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+            speaker0.setCompanies(List.of(company0));
 
             return Stream.of(
                     arguments(JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE, LoadSettings.defaultSettings(),
@@ -273,22 +277,28 @@ class ConferenceDataLoaderTest {
                                     List.of(eventType0),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
+                                    Collections.emptyList(),
                                     List.of(speaker0),
                                     Collections.emptyList()),
                             event0,
                             List.of(talk0),
-                            List.of(speaker0)),
+                            List.of(speaker0),
+                            List.of(company0),
+                            Map.of("name0", company0)),
                     arguments(JPOINT_CONFERENCE, LocalDate.of(2020, 6, 30), EVENT_CODE, LoadSettings.defaultSettings(),
                             new SourceInformation(
                                     List.of(place0),
                                     List.of(eventType0),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
+                                    Collections.emptyList(),
                                     List.of(speaker0),
                                     Collections.emptyList()),
                             event0,
                             List.of(talk0),
-                            List.of(speaker0))
+                            List.of(speaker0),
+                            List.of(company0),
+                            Map.of("name0", company0))
             );
         }
 
@@ -296,7 +306,8 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
                                     LoadSettings loadSettings, SourceInformation sourceInformation, Event contentfulEvent,
-                                    List<Talk> contentfulTalks, List<Speaker> talkSpeakers) {
+                                    List<Talk> contentfulTalks, List<Speaker> talkSpeakers, List<Company> speakerCompanies,
+                                    Map<String, Company> resourceLowerNameCompanyMap) {
             new MockUp<YamlUtils>() {
                 @Mock
                 SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
@@ -351,6 +362,50 @@ class ConferenceDataLoaderTest {
                 }
 
                 @Mock
+                List<Company> getSpeakerCompanies(List<Speaker> speakers) {
+                    return speakerCompanies;
+                }
+
+                @Mock
+                Map<String, Company> getResourceLowerNameCompanyMap(List<Company> companies) {
+                    return resourceLowerNameCompanyMap;
+                }
+
+                @Mock
+                void addLowerSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap) {
+                    // Nothing
+                }
+
+                @Mock
+                <T extends Identifier> long getLastId(List<T> entities) {
+                    return 42;
+                }
+
+                @Mock
+                LoadResult<List<Company>> getCompanyLoadResult(List<Company> companies, Map<String, Company> resourceCompanyMap,
+                                                               AtomicLong lastCompanyId) {
+                    return new LoadResult<>(
+                            Collections.emptyList(),
+                            Collections.emptyList(),
+                            Collections.emptyList());
+                }
+
+                @Mock
+                void fillCompanyIds(List<Speaker> speakers) {
+                    // Nothing
+                }
+
+                @Mock
+                Map<NameCompany, Speaker> getResourceNameCompanySpeakerMap(List<Speaker> speakers) {
+                    return Collections.emptyMap();
+                }
+
+                @Mock
+                Map<String, Set<Speaker>> getResourceNameSpeakersMap(List<Speaker> speakers) {
+                    return Collections.emptyMap();
+                }
+
+                @Mock
                 SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
                                                        SpeakerLoadMaps speakerLoadMaps,
                                                        AtomicLong lastSpeakerId) throws IOException {
@@ -368,11 +423,6 @@ class ConferenceDataLoaderTest {
                 @Mock
                 void fillSpeakerIds(List<Talk> talks) {
                     // Nothing
-                }
-
-                @Mock
-                <T extends Identifier> long getLastId(List<T> entities) {
-                    return 42;
                 }
 
                 @Mock
@@ -622,6 +672,295 @@ class ConferenceDataLoaderTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakerCompanies method tests")
+    class GetSpeakerCompaniesTest {
+        private Stream<Arguments> data() {
+            Company company0 = new Company(0, Collections.emptyList());
+            Company company1 = new Company(1, Collections.emptyList());
+            Company company2 = new Company(2, Collections.emptyList());
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setCompanies(List.of(company0, company1));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setCompanies(List.of(company0, company2));
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyList()),
+                    arguments(List.of(speaker0), List.of(company0, company1)),
+                    arguments(List.of(speaker1), List.of(company0, company2)),
+                    arguments(List.of(speaker0, speaker1), List.of(company0, company1, company2))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSpeakerCompanies(List<Speaker> speakers, List<Company> expected) {
+            List<Company> actual = ConferenceDataLoader.getSpeakerCompanies(speakers);
+
+            assertTrue(expected.containsAll(actual) && actual.containsAll(expected));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getResourceLowerNameCompanyMap method tests")
+    class GetResourceLowerNameCompanyMapTest {
+        private Stream<Arguments> data() {
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
+            Company company2 = new Company(2, List.of(new LocaleItem(Language.RUSSIAN.getCode(), "КОМПАНИЯ2")));
+            Company company3 = new Company(3, List.of(
+                    new LocaleItem(Language.ENGLISH.getCode(), "company3"),
+                    new LocaleItem(Language.RUSSIAN.getCode(), "Компания3")
+            ));
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyMap()),
+                    arguments(List.of(company0), Map.of("company0", company0)),
+                    arguments(List.of(company1), Map.of("company1", company1)),
+                    arguments(List.of(company0, company1), Map.of("company0", company0, "company1", company1)),
+                    arguments(List.of(company2), Map.of("компания2", company2)),
+                    arguments(List.of(company3), Map.of("company3", company3, "компания3", company3)),
+                    arguments(List.of(company2, company3), Map.of("компания2", company2, "company3", company3, "компания3", company3))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getResourceLowerNameCompanyMap(List<Company> companies, Map<String, Company> expected) {
+            assertEquals(expected, ConferenceDataLoader.getResourceLowerNameCompanyMap(companies));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("addLowerSynonymsToCompanyMap method tests")
+    class AddLowerSynonymsToCompanyMapTest {
+        private Stream<Arguments> data() {
+            final String COMPANY_NAME0 = "EPAM Systems";
+            final String COMPANY_NAME1 = "CROC";
+
+            final String SYNONYM0 = "EPAM";
+            final String SYNONYM1 = "KROK";
+
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME0)));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME1)));
+
+            CompanySynonyms companySynonyms0 = new CompanySynonyms();
+            companySynonyms0.setName(COMPANY_NAME0);
+            companySynonyms0.setSynonyms(List.of(SYNONYM0));
+
+            CompanySynonyms companySynonyms1 = new CompanySynonyms();
+            companySynonyms1.setName(COMPANY_NAME1);
+            companySynonyms1.setSynonyms(List.of(SYNONYM1));
+
+            CompanySynonyms companySynonyms2 = new CompanySynonyms();
+            companySynonyms2.setName(COMPANY_NAME1);
+            companySynonyms2.setSynonyms(List.of(COMPANY_NAME1));
+
+            Map<String, Company> companyMap0 = new HashMap<>();
+            companyMap0.put(COMPANY_NAME0.toLowerCase(), company0);
+            companyMap0.put(COMPANY_NAME1.toLowerCase(), company1);
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyMap(), null, Collections.emptyMap()),
+                    arguments(List.of(companySynonyms0), new HashMap<>(companyMap0), null, Map.of(
+                            COMPANY_NAME0.toLowerCase(), company0,
+                            COMPANY_NAME1.toLowerCase(), company1,
+                            SYNONYM0.toLowerCase(), company0)),
+                    arguments(List.of(companySynonyms1), new HashMap<>(companyMap0), null, Map.of(
+                            COMPANY_NAME0.toLowerCase(), company0,
+                            COMPANY_NAME1.toLowerCase(), company1,
+                            SYNONYM1.toLowerCase(), company1)),
+                    arguments(List.of(companySynonyms0, companySynonyms1), new HashMap<>(companyMap0), null, Map.of(
+                            COMPANY_NAME0.toLowerCase(), company0,
+                            COMPANY_NAME1.toLowerCase(), company1,
+                            SYNONYM1.toLowerCase(), company1,
+                            SYNONYM0.toLowerCase(), company0)),
+                    arguments(List.of(companySynonyms0), Collections.emptyMap(), NullPointerException.class, null),
+                    arguments(List.of(companySynonyms2), new HashMap<>(companyMap0), IllegalArgumentException.class, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void addLowerSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap,
+                                          Class<? extends Throwable> expectedException, Map<String, Company> expectedValue) {
+            if (expectedException == null) {
+                ConferenceDataLoader.addLowerSynonymsToCompanyMap(companySynonymsList, companyMap);
+
+                assertEquals(expectedValue, companyMap);
+            } else {
+                assertThrows(expectedException, () -> ConferenceDataLoader.addLowerSynonymsToCompanyMap(companySynonymsList, companyMap));
+            }
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getCompanyLoadResult method tests")
+    class GetCompanyLoadResultTest {
+        Company createCompany(long id, String name) {
+            return new Company(id, List.of(new LocaleItem(Language.ENGLISH.getCode(), name)));
+        }
+
+        private Stream<Arguments> data() {
+            final String COMPANY_NAME0 = "EPAM Systems";
+            final String COMPANY_NAME1 = "CROC";
+            final String COMPANY_NAME2 = "";
+
+            Map<String, Company> resourceCompanyMap0 = new HashMap<>();
+            resourceCompanyMap0.put(COMPANY_NAME0.toLowerCase(), createCompany(0, COMPANY_NAME0));
+
+            LoadResult<List<Company>> loadResult0 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    Collections.emptyList()
+            );
+
+            LoadResult<List<Company>> loadResult1 = new LoadResult<>(
+                    Collections.emptyList(),
+                    List.of(createCompany(1, COMPANY_NAME1)),
+                    Collections.emptyList()
+            );
+
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyMap(), new AtomicLong(-1), loadResult0),
+                    arguments(List.of(
+                            createCompany(-1, COMPANY_NAME0)),
+                            resourceCompanyMap0, new AtomicLong(0), loadResult0),
+                    arguments(List.of(
+                            createCompany(-2, COMPANY_NAME1)),
+                            resourceCompanyMap0, new AtomicLong(0), loadResult1),
+                    arguments(List.of(
+                            createCompany(-1, COMPANY_NAME0),
+                            createCompany(-2, COMPANY_NAME1),
+                            new Company(-3, Collections.emptyList())),
+                            resourceCompanyMap0, new AtomicLong(0), loadResult1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getCompanyLoadResult(List<Company> companies, Map<String, Company> resourceCompanyMap, AtomicLong lastCompanyId,
+                                  LoadResult<List<Company>> expected) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                LoadResult<List<Company>> getCompanyLoadResult(Invocation invocation, List<Company> companies,
+                                                               Map<String, Company> resourceCompanyMap,
+                                                               AtomicLong lastCompanyId) {
+                    return invocation.proceed(companies, resourceCompanyMap, lastCompanyId);
+                }
+
+                @Mock
+                Company findResourceCompany(Company company, Map<String, Company> resourceCompanyMap) {
+                    return (company.getId() == -1) ? company : null;
+                }
+            };
+
+            assertEquals(expected, ConferenceDataLoader.getCompanyLoadResult(companies, resourceCompanyMap, lastCompanyId));
+        }
+    }
+
+    @Test
+    void fillCompanyIds() {
+        Company company0 = new Company();
+        company0.setId(0);
+
+        Company company1 = new Company();
+        company1.setId(1);
+
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setCompanies(List.of(company0));
+
+        Speaker speaker1 = new Speaker();
+        speaker1.setId(1);
+        speaker1.setCompanies(List.of(company0, company1));
+
+        Speaker speaker2 = new Speaker();
+        speaker1.setId(2);
+
+        List<Long> expectedCompanyIds0 = List.of(0L);
+        List<Long> expectedCompanyIds1 = List.of(0L, 1L);
+
+        assertTrue(speaker0.getCompanyIds().isEmpty());
+        assertTrue(speaker1.getCompanyIds().isEmpty());
+        assertTrue(speaker2.getCompanyIds().isEmpty());
+
+        ConferenceDataLoader.fillCompanyIds(List.of(speaker0, speaker1));
+
+        List<Long> actualCompanyIds0 = speaker0.getCompanyIds();
+        List<Long> actualCompanyIds1 = speaker1.getCompanyIds();
+
+        assertTrue(expectedCompanyIds0.containsAll(actualCompanyIds0) && actualCompanyIds0.containsAll(expectedCompanyIds0));
+        assertTrue(expectedCompanyIds1.containsAll(actualCompanyIds1) && actualCompanyIds1.containsAll(expectedCompanyIds1));
+        assertTrue(speaker2.getCompanyIds().isEmpty());
+    }
+
+    @Test
+    void getResourceNameCompanySpeakerMap() {
+        final String SPEAKER_NAME0 = "Name0";
+        final String SPEAKER_NAME1 = "Name1";
+        final String SPEAKER_NAME2 = "Name2";
+
+        final String COMPANY_NAME0 = "EPAM Systems";
+        final String COMPANY_NAME1 = "CROC";
+
+        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME0)));
+        Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME1)));
+
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME0)));
+        speaker0.setCompanies(List.of(company0));
+
+        Speaker speaker1 = new Speaker();
+        speaker1.setId(1);
+        speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME1)));
+        speaker1.setCompanies(List.of(company0, company1));
+
+        Speaker speaker2 = new Speaker();
+        speaker2.setId(2);
+        speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME2)));
+
+        Map<NameCompany, Speaker> expected = new HashMap<>();
+        expected.put(new NameCompany(SPEAKER_NAME0, company0), speaker0);
+        expected.put(new NameCompany(SPEAKER_NAME1, company0), speaker1);
+        expected.put(new NameCompany(SPEAKER_NAME1, company1), speaker1);
+
+        assertEquals(expected, ConferenceDataLoader.getResourceNameCompanySpeakerMap(List.of(speaker0, speaker1, speaker2)));
+    }
+
+    @Test
+    void getResourceNameSpeakersMap() {
+        final String SPEAKER_NAME0 = "Name0";
+        final String SPEAKER_NAME1 = "Name1";
+
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME0)));
+
+        Speaker speaker1 = new Speaker();
+        speaker1.setId(1);
+        speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME1)));
+
+        Speaker speaker2 = new Speaker();
+        speaker2.setId(2);
+        speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), SPEAKER_NAME1)));
+
+        Map<String, Set<Speaker>> expected = new HashMap<>();
+        expected.put(SPEAKER_NAME0, Set.of(speaker0));
+        expected.put(SPEAKER_NAME1, Set.of(speaker1, speaker2));
+
+        assertEquals(expected, ConferenceDataLoader.getResourceNameSpeakersMap(List.of(speaker0, speaker1, speaker2)));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getSpeakerLoadResult method tests")
     class GetSpeakerLoadResultTest {
         final String PHOTO_FILE_NAME0 = "0000.jpg";
@@ -643,8 +982,6 @@ class ConferenceDataLoaderTest {
             speaker2.setPhotoFileName(PHOTO_FILE_NAME2);
 
             SpeakerLoadMaps speakerLoadMaps = new SpeakerLoadMaps(
-                    Collections.emptyMap(),
-                    Collections.emptyMap(),
                     Collections.emptyMap(),
                     Collections.emptyMap(),
                     Collections.emptyMap(),
@@ -1201,11 +1538,22 @@ class ConferenceDataLoaderTest {
     @DisplayName("saveFiles method tests")
     class SaveFilesTest {
         private Stream<Arguments> data() {
+            Company company0 = new Company();
             Speaker speaker0 = new Speaker();
             UrlFilename urlFilename0 = new UrlFilename("url0", "filename0");
             Talk talk0 = new Talk();
             Place place0 = new Place();
             Event event0 = new Event();
+
+            LoadResult<List<Company>> companyLoadResult0 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    Collections.emptyList());
+
+            LoadResult<List<Company>> companyLoadResult1 = new LoadResult<>(
+                    Collections.emptyList(),
+                    List.of(company0),
+                    Collections.emptyList());
 
             SpeakerLoadResult speakerLoadResult0 = new SpeakerLoadResult(
                     new LoadResult<>(
@@ -1313,7 +1661,9 @@ class ConferenceDataLoaderTest {
                 for (LoadResult<Place> placeLoadResult : List.of(placeLoadResult0, placeLoadResult1, placeLoadResult2)) {
                     for (LoadResult<List<Talk>> talkLoadResult : List.of(talkLoadResult0, talkLoadResult1, talkLoadResult2, talkLoadResult3)) {
                         for (SpeakerLoadResult speakerLoadResult : List.of(speakerLoadResult0, speakerLoadResult1, speakerLoadResult2, speakerLoadResult3, speakerLoadResult4)) {
-                            argumentsList.add(arguments(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+                            for (LoadResult<List<Company>> companyLoadResult : List.of(companyLoadResult0, companyLoadResult1)) {
+                                argumentsList.add(arguments(companyLoadResult, speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+                            }
                         }
                     }
                 }
@@ -1324,13 +1674,18 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+        void saveFiles(LoadResult<List<Company>> companyLoadResult, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
                        LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) {
             new MockUp<ConferenceDataLoader>() {
                 @Mock
                 void saveFiles(Invocation invocation, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
                                LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
                     invocation.proceed(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult);
+                }
+
+                @Mock
+                void saveCompanies(LoadResult<List<Company>> companyLoadResult) throws IOException, NoSuchFieldException {
+                    // Nothing
                 }
 
                 @Mock
@@ -1359,7 +1714,52 @@ class ConferenceDataLoaderTest {
                 }
             };
 
-            assertDoesNotThrow(() -> ConferenceDataLoader.saveFiles(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveFiles(companyLoadResult, speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("saveCompanies method tests")
+    class SaveCompaniesTest {
+        private Stream<Arguments> data() {
+            Company company0 = new Company(0, Collections.emptyList());
+            Company company1 = new Company(1, Collections.emptyList());
+
+            LoadResult<List<Company>> companyLoadResult0 = new LoadResult<>(
+                    Collections.emptyList(),
+                    Collections.emptyList(),
+                    Collections.emptyList()
+            );
+
+            LoadResult<List<Company>> companyLoadResult1 = new LoadResult<>(
+                    Collections.emptyList(),
+                    List.of(company0, company1),
+                    Collections.emptyList()
+            );
+
+            return Stream.of(
+                    arguments(companyLoadResult0),
+                    arguments(companyLoadResult1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void saveSpeakers(LoadResult<List<Company>> companyLoadResult) {
+            new MockUp<ConferenceDataLoader>() {
+                @Mock
+                void saveCompanies(Invocation invocation, LoadResult<List<Company>> companyLoadResult) throws IOException, NoSuchFieldException {
+                    invocation.proceed(companyLoadResult);
+                }
+
+                @Mock
+                void logAndDumpCompanies(List<Company> companies, String logMessage, String filename) throws IOException, NoSuchFieldException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveCompanies(companyLoadResult));
         }
     }
 
@@ -1605,6 +2005,11 @@ class ConferenceDataLoaderTest {
     }
 
     @Test
+    void logAndDumpCompanies(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpCompanies(List.of(new Company()), "{}", "filename"));
+    }
+
+    @Test
     void logAndCreateSpeakerImages(@Mocked ImageUtils imageUtilsMock) {
         assertDoesNotThrow(() -> ConferenceDataLoader.logAndCreateSpeakerImages(List.of(new UrlFilename("url", "filename")), "{}"));
     }
@@ -1631,6 +2036,32 @@ class ConferenceDataLoaderTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("findResourceCompany method tests")
+    class FindResourceCompanyTest {
+        private Stream<Arguments> data() {
+            final String COMPANY_NAME0 = "Company0";
+            final String COMPANY_NAME1 = "Company1";
+
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME0)));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME1)));
+
+            Map<String, Company> resourceCompanyMap = Map.of(COMPANY_NAME0.toLowerCase(), company0);
+
+            return Stream.of(
+                    arguments(company0, resourceCompanyMap, company0),
+                    arguments(company1, resourceCompanyMap, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void findResourceCompany(Company company, Map<String, Company> resourceCompanyMap, Company expected) {
+            assertEquals(expected, ConferenceDataLoader.findResourceCompany(company, resourceCompanyMap));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("findResourceSpeaker method tests")
     class FindResourceSpeakerTest {
         private Stream<Arguments> data() {
@@ -1640,6 +2071,7 @@ class ConferenceDataLoaderTest {
             final String SPEAKER_NAME3 = "Имя3";
             final String SPEAKER_NAME4 = "Имя4";
             final String SPEAKER_NAME5 = "Имя5";
+            final String SPEAKER_NAME6 = "Имя6";
             final String COMPANY_NAME0 = "Компания0";
             final String COMPANY_NAME1 = "Компания1";
             final String COMPANY_NAME2 = "Компания2";
@@ -1647,44 +2079,55 @@ class ConferenceDataLoaderTest {
             final String COMPANY_NAME4 = "Компания4";
             final String COMPANY_NAME5 = "Компания5";
 
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME0)));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME1)));
+            Company company2 = new Company(2, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME2)));
+            Company company3 = new Company(3, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME3)));
+            Company company4 = new Company(4, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME4)));
+            Company company5 = new Company(5, List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME5)));
+
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
             speaker0.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME0)));
-            speaker0.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME0)));
+            speaker0.setCompanies(List.of(company0));
 
             Speaker speaker1 = new Speaker();
             speaker1.setId(1);
             speaker1.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME1)));
-            speaker1.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME1)));
+            speaker1.setCompanies(List.of(company1));
 
             Speaker speaker2 = new Speaker();
             speaker2.setId(2);
             speaker2.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME2)));
-            speaker2.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME2)));
+            speaker2.setCompanies(List.of(company2));
 
             Speaker speaker3 = new Speaker();
             speaker3.setId(3);
             speaker3.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME3)));
-            speaker3.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME3)));
+            speaker3.setCompanies(List.of(company3));
 
             Speaker speaker4 = new Speaker();
             speaker4.setId(4);
             speaker4.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME4)));
-            speaker4.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME4)));
+            speaker4.setCompanies(List.of(company4));
 
             Speaker speaker5 = new Speaker();
             speaker5.setId(5);
             speaker5.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME5)));
-            speaker5.setCompany(List.of(new LocaleItem(Language.RUSSIAN.getCode(), COMPANY_NAME5)));
+            speaker5.setCompanies(List.of(company5));
 
-            NameCompany nameCompany0 = new NameCompany(SPEAKER_NAME0, COMPANY_NAME0);
-            NameCompany nameCompany1 = new NameCompany(SPEAKER_NAME1, COMPANY_NAME1);
+            Speaker speaker6 = new Speaker();
+            speaker6.setId(6);
+            speaker6.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), SPEAKER_NAME6)));
+            speaker6.setCompanies(Collections.singletonList(null));
+
+            NameCompany nameCompany0 = new NameCompany(SPEAKER_NAME0, company0);
+            NameCompany nameCompany1 = new NameCompany(SPEAKER_NAME1, company1);
+            NameCompany nameCompany6 = new NameCompany(SPEAKER_NAME6, null);
 
             SpeakerLoadMaps speakerLoadMaps = new SpeakerLoadMaps(
-                    Map.of(nameCompany0, 0L, nameCompany1, 1L),
+                    Map.of(nameCompany0, 0L, nameCompany1, 1L, nameCompany6, 6L),
                     Map.of(0L, speaker0),
-                    Collections.emptyMap(),
-                    Collections.emptyMap(),
                     Collections.emptyMap(),
                     Collections.emptyMap());
 
@@ -1694,7 +2137,8 @@ class ConferenceDataLoaderTest {
                     arguments(speaker2, speakerLoadMaps, null),
                     arguments(speaker3, speakerLoadMaps, null),
                     arguments(speaker4, speakerLoadMaps, null),
-                    arguments(speaker5, speakerLoadMaps, null)
+                    arguments(speaker5, speakerLoadMaps, null),
+                    arguments(speaker6, speakerLoadMaps, NullPointerException.class)
             );
         }
 
@@ -1715,15 +2159,13 @@ class ConferenceDataLoaderTest {
                 }
 
                 @Mock
-                Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
-                    return (((speaker.getId() == 2) && Language.ENGLISH.equals(language)) ||
-                            ((speaker.getId() == 3) && Language.RUSSIAN.equals(language))) ? speaker : null;
+                Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers) {
+                    return ((speaker.getId() == 2) || (speaker.getId() == 3)) ? speaker : null;
                 }
 
                 @Mock
-                Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
-                    return (((speaker.getId() == 4) && Language.ENGLISH.equals(language) ||
-                            (speaker.getId() == 5) && Language.RUSSIAN.equals(language))) ? speaker : null;
+                Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers) {
+                    return ((speaker.getId() == 4) || (speaker.getId() == 5)) ? speaker : null;
                 }
             };
 
@@ -1774,25 +2216,44 @@ class ConferenceDataLoaderTest {
         }
     }
 
-    @Test
-    void findResourceSpeakerByNameCompany() {
-        Speaker speaker0 = new Speaker();
-        speaker0.setId(0);
-        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
-        speaker0.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("findResourceSpeakerByNameCompany method tests")
+    class FindResourceSpeakerByNameCompanyTest {
+        private Stream<Arguments> data() {
+            Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
 
-        NameCompany nameCompany0 = new NameCompany("Name0", "Company0");
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+            speaker0.setCompanies(List.of(company0));
 
-        Map<NameCompany, Speaker> resourceNameCompanySpeakers0 = Map.of(nameCompany0, speaker0);
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+            speaker1.setCompanies(List.of(company1));
 
-        new MockUp<LocalizationUtils>() {
-            @Mock
-            String getString(List<LocaleItem> localeItems, Language language) {
-                return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
-            }
-        };
+            Speaker speaker2 = new Speaker();
+            speaker2.setId(2);
+            speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name2")));
 
-        assertEquals(speaker0, ConferenceDataLoader.findResourceSpeakerByNameCompany(speaker0, resourceNameCompanySpeakers0, Language.ENGLISH));
+            NameCompany nameCompany0 = new NameCompany("Name0", company0);
+            Map<NameCompany, Speaker> resourceNameCompanySpeakers0 = Map.of(nameCompany0, speaker0);
+
+            return Stream.of(
+                    arguments(speaker0, resourceNameCompanySpeakers0, speaker0),
+                    arguments(speaker1, resourceNameCompanySpeakers0, null),
+                    arguments(speaker2, resourceNameCompanySpeakers0, null)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers,
+                                              Speaker expected) {
+            assertEquals(expected, ConferenceDataLoader.findResourceSpeakerByNameCompany(speaker, resourceNameCompanySpeakers));
+        }
     }
 
     @Nested
@@ -1827,16 +2288,16 @@ class ConferenceDataLoaderTest {
             resourceNameSpeakers0.put(SPEAKER_NAME3, Set.of(speaker0, speaker3));
 
             return Stream.of(
-                    arguments(speaker1, resourceNameSpeakers0, Language.ENGLISH, null, null),
-                    arguments(speaker2, resourceNameSpeakers0, Language.ENGLISH, null, IllegalStateException.class),
-                    arguments(speaker3, resourceNameSpeakers0, Language.ENGLISH, null, null),
-                    arguments(speaker0, resourceNameSpeakers0, Language.ENGLISH, speaker0, null)
+                    arguments(speaker1, resourceNameSpeakers0, null, null),
+                    arguments(speaker2, resourceNameSpeakers0, null, IllegalStateException.class),
+                    arguments(speaker3, resourceNameSpeakers0, null, null),
+                    arguments(speaker0, resourceNameSpeakers0, speaker0, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language,
+        void findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers,
                                        Speaker expected, Class<? extends Throwable> expectedException) {
             new MockUp<LocalizationUtils>() {
                 @Mock
@@ -1846,9 +2307,9 @@ class ConferenceDataLoaderTest {
             };
 
             if (expectedException == null) {
-                assertEquals(expected, ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers, language));
+                assertEquals(expected, ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers));
             } else {
-                assertThrows(expectedException, () -> ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers, language));
+                assertThrows(expectedException, () -> ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers));
             }
         }
     }

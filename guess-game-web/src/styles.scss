@@ -162,7 +162,8 @@
   }
 }
 
-.start-listbox.ui-listbox, .start-dropdown.ui-dropdown, .search-dropdown.ui-dropdown {
+.start-listbox.ui-listbox, .start-dropdown.ui-dropdown, .search-dropdown.ui-dropdown, .search-autocomplete.ui-autocomplete,
+.search-autocomplete .ui-autocomplete-input {
   width: 100%;
 }
 

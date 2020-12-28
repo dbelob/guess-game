@@ -65,12 +65,17 @@ public class SpeakerServiceImpl implements SpeakerService {
         } else {
             return speakerDao.getSpeakers().stream()
                     .filter(s -> ((!isNameSet || SearchUtils.isSubstringFound(trimmedLowerCasedName, s.getName())) &&
-                            (!isCompanySet || SearchUtils.isSubstringFound(trimmedLowerCasedCompany, s.getCompany())) &&
+                            (!isCompanySet || isSpeakerCompanyFound(s, trimmedLowerCasedCompany)) &&
                             (!isTwitterSet || SearchUtils.isSubstringFound(trimmedLowerCasedTwitter, s.getTwitter())) &&
                             (!isGitHubSet || SearchUtils.isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub())) &&
                             (!isJavaChampion || s.isJavaChampion()) &&
                             (!isMvp || s.isAnyMvp())))
                     .collect(Collectors.toList());
         }
+    }
+
+    static boolean isSpeakerCompanyFound(Speaker speaker, String trimmedLowerCasedCompany) {
+        return speaker.getCompanies().stream()
+                .anyMatch(c -> SearchUtils.isSubstringFound(trimmedLowerCasedCompany, c.getName()));
     }
 }

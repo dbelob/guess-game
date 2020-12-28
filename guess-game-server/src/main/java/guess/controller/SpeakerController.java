@@ -3,6 +3,7 @@ package guess.controller;
 import guess.domain.Language;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
+import guess.dto.company.CompanyDto;
 import guess.dto.speaker.SpeakerBriefDto;
 import guess.dto.speaker.SpeakerDetailsDto;
 import guess.dto.talk.TalkBriefDto;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Speaker controller.
@@ -62,7 +64,10 @@ public class SpeakerController {
         List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language);
 
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
-        Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(SpeakerBriefDto::getCompany, String.CASE_INSENSITIVE_ORDER);
+        Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(
+                s -> s.getCompanies().stream()
+                        .map(CompanyDto::getName)
+                        .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
 
         speakerBriefDtoList.sort(comparatorByName.thenComparing(comparatorByCompany));
 

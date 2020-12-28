@@ -23,7 +23,8 @@
         </div>
         <label for="company" class="col-sm-2">{{'speakers.search.companyLabel' | translate}}</label>
         <div class="col-sm-4">
-          <input type="text" id="company" pInputText class="form-control" [(ngModel)]="company" name="company" (ngModelChange)="onFilterChange($event)"/>
+          <p-autoComplete id="company" [(ngModel)]="company" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
+                          name="company" styleClass="search-autocomplete"></p-autoComplete>
         </div>
       </div>
       <div class="form-group row justify-content-center">
@@ -75,9 +76,9 @@
               {{'speakers.table.nameColumn' | translate}}
               <p-sortIcon [field]="'displayName'"></p-sortIcon>
             </th>
-            <th class="text-center" [pSortableColumn]="'company'" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'companiesString'" pResizableColumn>
               {{'speakers.table.companyColumn' | translate}}
-              <p-sortIcon [field]="'company'"></p-sortIcon>
+              <p-sortIcon [field]="'companiesString'"></p-sortIcon>
             </th>
             <th class="text-center" [pSortableColumn]="'twitter'" pResizableColumn>
               {{'speakers.table.twitterColumn' | translate}}
@@ -106,7 +107,11 @@
                 <span class="ml-2">{{speaker.displayName}}</span>
               </a>
             </td>
-            <td>{{speaker.company}}</td>
+            <td>
+              <span *ngFor="let company of speaker.companies; let i = index">
+                <span *ngIf="i > 0">, </span>{{company.name}}
+              </span>
+            </td>
             <td>
               <a *ngIf="speaker.twitter" href="{{twitterUrlPrefix}}/{{speaker.twitter}}" class="text-primary">
                 <i class="fa fa-twitter"></i>{{speaker.twitter}}

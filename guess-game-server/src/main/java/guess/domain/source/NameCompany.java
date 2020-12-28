@@ -1,10 +1,12 @@
 package guess.domain.source;
 
+import java.util.Objects;
+
 public class NameCompany {
     private final String name;
-    private final String company;
+    private final Company company;
 
-    public NameCompany(String name, String company) {
+    public NameCompany(String name, Company company) {
         this.name = name;
         this.company = company;
     }
@@ -13,25 +15,20 @@ public class NameCompany {
         return name;
     }
 
-    public String getCompany() {
+    public Company getCompany() {
         return company;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if (!(o instanceof NameCompany)) return false;
         NameCompany that = (NameCompany) o;
-
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        return company != null ? company.equals(that.company) : that.company == null;
+        return Objects.equals(name, that.name) && Objects.equals(company, that.company);
     }
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (company != null ? company.hashCode() : 0);
-        return result;
+        return Objects.hash(name, company);
     }
 }

@@ -177,7 +177,7 @@ public class ConferenceDataLoader {
                                        LoadSettings loadSettings) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
-        // Read event types, places, events, speakers, talks from resource files
+        // Read event types, places, events, companies, speakers, talks from resource files
         SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
         Optional<EventType> resourceOptionalEventType = resourceSourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference().equals(conference))
@@ -236,46 +236,43 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
 
+        // Order company with talk order
+        List<Company> contentfulCompanies = getSpeakerCompanies(contentfulSpeakers);
+        log.info("Companies (in Contentful): {}", contentfulCompanies.size());
+        contentfulCompanies.forEach(
+                c -> log.trace("Company: nameEn: '{}', name: '{}'",
+                        LocalizationUtils.getString(c.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
+        );
+
+        // Find companies
+        Map<String, Company> resourceCompanyMap = getResourceLowerNameCompanyMap(resourceSourceInformation.getCompanies());
+        addLowerSynonymsToCompanyMap(resourceSourceInformation.getCompanySynonyms(), resourceCompanyMap);
+
+        AtomicLong lastCompanyId = new AtomicLong(getLastId(resourceSourceInformation.getCompanies()));
+        LoadResult<List<Company>> companyLoadResult = getCompanyLoadResult(
+                contentfulCompanies,
+                resourceCompanyMap,
+                lastCompanyId);
+
         // Find speakers
+        fillCompanyIds(contentfulSpeakers);
+
         Map<Long, Speaker> resourceSpeakerIdsMap = resourceSourceInformation.getSpeakers().stream()
                 .collect(Collectors.toMap(
                         Speaker::getId,
                         s -> s
                 ));
-        Map<NameCompany, Speaker> resourceRuNameCompanySpeakers = resourceSourceInformation.getSpeakers().stream()
-                .collect(Collectors.toMap(
-                        s -> new NameCompany(
-                                LocalizationUtils.getString(s.getName(), Language.RUSSIAN).trim(),
-                                LocalizationUtils.getString(s.getCompany(), Language.RUSSIAN).trim()),
-                        s -> s
-                ));
-        Map<NameCompany, Speaker> resourceEnNameCompanySpeakers = resourceSourceInformation.getSpeakers().stream()
-                .collect(Collectors.toMap(
-                        s -> new NameCompany(
-                                LocalizationUtils.getString(s.getName(), Language.ENGLISH).trim(),
-                                LocalizationUtils.getString(s.getCompany(), Language.ENGLISH).trim()),
-                        s -> s
-                ));
-        Map<String, Set<Speaker>> resourceRuNameSpeakers = resourceSourceInformation.getSpeakers().stream()
-                .collect(Collectors.groupingBy(
-                        s -> LocalizationUtils.getString(s.getName(), Language.RUSSIAN).trim(),
-                        Collectors.toSet()
-                ));
-        Map<String, Set<Speaker>> resourceEnNameSpeakers = resourceSourceInformation.getSpeakers().stream()
-                .collect(Collectors.groupingBy(
-                        s -> LocalizationUtils.getString(s.getName(), Language.ENGLISH).trim(),
-                        Collectors.toSet()
-                ));
+        Map<NameCompany, Speaker> resourceNameCompanySpeakers = getResourceNameCompanySpeakerMap(resourceSourceInformation.getSpeakers());
+        Map<String, Set<Speaker>> resourceNameSpeakers = getResourceNameSpeakersMap(resourceSourceInformation.getSpeakers());
         AtomicLong lastSpeakerId = new AtomicLong(getLastId(resourceSourceInformation.getSpeakers()));
         SpeakerLoadResult speakerLoadResult = getSpeakerLoadResult(
                 contentfulSpeakers,
                 new SpeakerLoadMaps(
                         loadSettings.getKnownSpeakerIdsMap(),
                         resourceSpeakerIdsMap,
-                        resourceRuNameCompanySpeakers,
-                        resourceEnNameCompanySpeakers,
-                        resourceRuNameSpeakers,
-                        resourceEnNameSpeakers),
+                        resourceNameCompanySpeakers,
+                        resourceNameSpeakers),
                 lastSpeakerId);
 
         // Find talks
@@ -322,7 +319,7 @@ public class ConferenceDataLoader {
         LoadResult<Event> eventLoadResult = getEventLoadResult(contentfulEvent, resourceEvent);
 
         // Save files
-        saveFiles(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult);
+        saveFiles(companyLoadResult, speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult);
     }
 
     /**
@@ -443,6 +440,152 @@ public class ConferenceDataLoader {
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets speaker companies.
+     *
+     * @param speakers speakers
+     * @return speaker companies
+     */
+    static List<Company> getSpeakerCompanies(List<Speaker> speakers) {
+        return speakers.stream()
+                .flatMap(s -> s.getCompanies().stream())
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets resource lower name/company map.
+     *
+     * @param companies companies
+     * @return lower name/company map
+     */
+    static Map<String, Company> getResourceLowerNameCompanyMap(List<Company> companies) {
+        Map<String, Company> map = new HashMap<>();
+
+        for (Company company : companies) {
+            for (LocaleItem localItem : company.getName()) {
+                map.put(localItem.getText().toLowerCase(), company);
+            }
+        }
+
+        return map;
+    }
+
+    /**
+     * Adds lower synonyms to company map.
+     *
+     * @param companySynonymsList company synonyms list
+     * @param companyMap          company map
+     */
+    static void addLowerSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap) {
+        for (CompanySynonyms companySynonyms : companySynonymsList) {
+            String lowerName = companySynonyms.getName().toLowerCase();
+            Company company = companyMap.get(lowerName);
+
+            Objects.requireNonNull(company,
+                    () -> String.format("Resource company with lower name '%s' not found (change name '%s' of synonyms in company-synonyms.yml file and rerun loading)",
+                            lowerName,
+                            companySynonyms.getName()));
+
+            for (String synonym : companySynonyms.getSynonyms()) {
+                if (companySynonyms.getName().equals(synonym)) {
+                    throw new IllegalArgumentException(String.format(
+                            "Company name matches the synonym '%s' (change synonym '%s' for name '%s' in company-synonyms.yml file and rerun loading)",
+                            synonym, synonym, companySynonyms.getName()));
+                }
+
+                companyMap.put(synonym.toLowerCase(), company);
+            }
+        }
+    }
+
+    /**
+     * Gets load result for companies.
+     *
+     * @param companies          companies
+     * @param resourceCompanyMap resource company map
+     * @param lastCompanyId      identifier of last company
+     * @return load result for companies
+     */
+    static LoadResult<List<Company>> getCompanyLoadResult(List<Company> companies, Map<String, Company> resourceCompanyMap,
+                                                          AtomicLong lastCompanyId) {
+        List<Company> companiesToAppend = new ArrayList<>();
+
+        for (Company c : companies) {
+            if (!c.getName().isEmpty()) {
+                Company resourceCompany = findResourceCompany(c, resourceCompanyMap);
+
+                if (resourceCompany == null) {
+                    // Company not exists
+                    c.setId(lastCompanyId.incrementAndGet());
+
+                    companiesToAppend.add(c);
+                } else {
+                    // Company exists
+                    c.setId(resourceCompany.getId());
+                }
+            }
+        }
+
+        return new LoadResult<>(
+                Collections.emptyList(),
+                companiesToAppend,
+                Collections.emptyList());
+    }
+
+    /**
+     * Fills company identifiers in speakers.
+     *
+     * @param speakers speakers
+     */
+    static void fillCompanyIds(List<Speaker> speakers) {
+        speakers.forEach(
+                s -> s.setCompanyIds(s.getCompanies().stream()
+                        .map(Company::getId)
+                        .collect(Collectors.toList())
+                )
+        );
+    }
+
+    /**
+     * Gets resource name, company/speaker map.
+     *
+     * @param speakers speakers
+     * @return name, company/speaker map
+     */
+    static Map<NameCompany, Speaker> getResourceNameCompanySpeakerMap(List<Speaker> speakers) {
+        Map<NameCompany, Speaker> map = new HashMap<>();
+
+        for (Speaker speaker : speakers) {
+            for (LocaleItem localeItem : speaker.getName()) {
+                for (Company company : speaker.getCompanies()) {
+                    map.put(new NameCompany(localeItem.getText(), company), speaker);
+                }
+            }
+        }
+
+        return map;
+    }
+
+    /**
+     * Gets resource name/speakers map.
+     *
+     * @param speakers speakers
+     * @return name/speakers map
+     */
+    static Map<String, Set<Speaker>> getResourceNameSpeakersMap(List<Speaker> speakers) {
+        Map<String, Set<Speaker>> map = new HashMap<>();
+
+        for (Speaker speaker : speakers) {
+            for (LocaleItem localeItem : speaker.getName()) {
+                map.computeIfAbsent(localeItem.getText(), k -> new HashSet<>());
+                map.get(localeItem.getText()).add(speaker);
+            }
+        }
+
+        return map;
     }
 
     /**
@@ -737,6 +880,7 @@ public class ConferenceDataLoader {
     /**
      * Saves files.
      *
+     * @param companyLoadResult company load result
      * @param speakerLoadResult speaker load result
      * @param talkLoadResult    talk load result
      * @param placeLoadResult   place load result
@@ -744,8 +888,10 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    static void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
+    static void saveFiles(LoadResult<List<Company>> companyLoadResult, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
                           LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
+        List<Company> companiesToAppend = companyLoadResult.getItemToAppend();
+
         List<Speaker> speakersToAppend = speakerLoadResult.getSpeakers().getItemToAppend();
         List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
 
@@ -762,20 +908,37 @@ public class ConferenceDataLoader {
         Event eventToAppend = eventLoadResult.getItemToAppend();
         Event eventToUpdate = eventLoadResult.getItemToUpdate();
 
-        if (urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
+        if (companiesToAppend.isEmpty() &&
+                urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
                 speakersToAppend.isEmpty() && speakersToUpdate.isEmpty() &&
                 talksToDelete.isEmpty() && talksToAppend.isEmpty() && talksToUpdate.isEmpty() &&
                 (eventToAppend == null) && (eventToUpdate == null) &&
                 (placeToAppend == null) && (placeToUpdate == null)) {
-            log.info("All speakers, talks, place and event are up-to-date");
+            log.info("All companies, speakers, talks, place and event are up-to-date");
         } else {
             YamlUtils.clearDumpDirectory();
 
+            saveCompanies(companyLoadResult);
             saveImages(speakerLoadResult);
             saveSpeakers(speakerLoadResult);
             saveTalks(talkLoadResult);
             savePlaces(placeLoadResult);
             saveEvents(eventLoadResult);
+        }
+    }
+
+    /**
+     * Saves companies.
+     *
+     * @param companyLoadResult company load result
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    static void saveCompanies(LoadResult<List<Company>> companyLoadResult) throws IOException, NoSuchFieldException {
+        List<Company> companiesToAppend = companyLoadResult.getItemToAppend();
+
+        if (!companiesToAppend.isEmpty()) {
+            logAndDumpCompanies(companiesToAppend, "Companies (to append resource file): {}", "companies-to-append.yml");
         }
     }
 
@@ -910,6 +1073,26 @@ public class ConferenceDataLoader {
     }
 
     /**
+     * Logs and dumps companies.
+     *
+     * @param companies  companies
+     * @param logMessage log message
+     * @param filename   filename
+     * @throws IOException          if file creation error occurs
+     * @throws NoSuchFieldException if field name is invalid
+     */
+    static void logAndDumpCompanies(List<Company> companies, String logMessage, String filename) throws IOException, NoSuchFieldException {
+        log.info(logMessage, companies.size());
+        companies.forEach(
+                c -> log.trace("Company: nameEn: '{}', name: '{}'",
+                        LocalizationUtils.getString(c.getName(), Language.ENGLISH),
+                        LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
+        );
+
+        YamlUtils.dump(new CompanyList(companies), filename);
+    }
+
+    /**
      * Logs and creates speaker images.
      *
      * @param urlFilenames url, filenames pairs
@@ -988,6 +1171,25 @@ public class ConferenceDataLoader {
     }
 
     /**
+     * Finds resource company.
+     *
+     * @param company            company
+     * @param resourceCompanyMap resource company map
+     * @return resource company
+     */
+    static Company findResourceCompany(Company company, Map<String, Company> resourceCompanyMap) {
+        for (LocaleItem localItem : company.getName()) {
+            Company resourceCompany = resourceCompanyMap.get(localItem.getText().toLowerCase());
+
+            if (resourceCompany != null) {
+                return resourceCompany;
+            }
+        }
+
+        return null;
+    }
+
+    /**
      * Finds resource speaker.
      *
      * @param speaker         speaker
@@ -998,40 +1200,42 @@ public class ConferenceDataLoader {
         // Find in known speakers by (name, company) pair because
         // - speaker could change his/her last name (for example, woman got married);
         // - speaker (with non-unique pair of name, company) could change his/her company.
-        Long resourceSpeakerId = speakerLoadMaps.getKnownSpeakerIdsMap().get(
-                new NameCompany(
-                        LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
-                        LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN)));
+        Long resourceSpeakerId = null;
+        Company speakerCompany = null;
+
+        for (Company company : speaker.getCompanies()) {
+            resourceSpeakerId = speakerLoadMaps.getKnownSpeakerIdsMap().get(
+                    new NameCompany(
+                            LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
+                            company));
+
+            if (resourceSpeakerId != null) {
+                speakerCompany = company;
+                break;
+            }
+        }
+
         if (resourceSpeakerId != null) {
             Speaker resourceSpeaker = speakerLoadMaps.getResourceSpeakerIdsMap().get(resourceSpeakerId);
 
+            Long finalResourceSpeakerId = resourceSpeakerId;
+            Company finalSpeakerCompany = speakerCompany;
+
             return Objects.requireNonNull(resourceSpeaker,
                     () -> String.format("Resource speaker id %d not found (change id of known speaker '%s' and company '%s' in method parameters and rerun loading)",
-                            resourceSpeakerId,
+                            finalResourceSpeakerId,
                             LocalizationUtils.getString(speaker.getName(), Language.RUSSIAN),
-                            LocalizationUtils.getString(speaker.getCompany(), Language.RUSSIAN)));
+                            (finalSpeakerCompany != null) ? LocalizationUtils.getString(finalSpeakerCompany.getName(), Language.RUSSIAN) : null));
         }
 
-        // Find in resource speakers by Russian (name, company) pair
-        Speaker resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceRuNameCompanySpeakers(), Language.RUSSIAN);
+        // Find in resource speakers by (name, company) pair
+        Speaker resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceNameCompanySpeakers());
         if (resourceSpeaker != null) {
             return resourceSpeaker;
         }
 
-        // Find in resource speakers by English (name, company) pair
-        resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceEnNameCompanySpeakers(), Language.ENGLISH);
-        if (resourceSpeaker != null) {
-            return resourceSpeaker;
-        }
-
-        // Find in resource speakers by Russian name
-        resourceSpeaker = findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceRuNameSpeakers(), Language.RUSSIAN);
-        if (resourceSpeaker != null) {
-            return resourceSpeaker;
-        }
-
-        // Find in resource speakers by English name
-        return findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceEnNameSpeakers(), Language.ENGLISH);
+        // Find in resource speakers by name
+        return findResourceSpeakerByName(speaker, speakerLoadMaps.getResourceNameSpeakers());
     }
 
     static Talk findResourceTalk(Talk talk,
@@ -1052,14 +1256,25 @@ public class ConferenceDataLoader {
      *
      * @param speaker                     speaker
      * @param resourceNameCompanySpeakers map of (name, company)/speaker
-     * @param language                    language
      * @return resource speaker
      */
-    static Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers, Language language) {
-        return resourceNameCompanySpeakers.get(
-                new NameCompany(
-                        LocalizationUtils.getString(speaker.getName(), language),
-                        LocalizationUtils.getString(speaker.getCompany(), language)));
+    static Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers) {
+        Speaker result = null;
+
+        for (LocaleItem localeItem : speaker.getName()) {
+            for (Company company : speaker.getCompanies()) {
+                result = resourceNameCompanySpeakers.get(
+                        new NameCompany(
+                                localeItem.getText(),
+                                company));
+
+                if (result != null) {
+                    break;
+                }
+            }
+        }
+
+        return result;
     }
 
     /**
@@ -1067,12 +1282,20 @@ public class ConferenceDataLoader {
      *
      * @param speaker              speaker
      * @param resourceNameSpeakers map of name/speakers
-     * @param language             language
      * @return resource speaker
      */
-    static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers, Language language) {
-        String speakerName = LocalizationUtils.getString(speaker.getName(), language);
-        Set<Speaker> resourceSpeakers = resourceNameSpeakers.get(speakerName);
+    static Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers) {
+        Set<Speaker> resourceSpeakers = null;
+        String speakerName = null;
+
+        for (LocaleItem localeItem : speaker.getName()) {
+            speakerName = localeItem.getText();
+            resourceSpeakers = resourceNameSpeakers.get(speakerName);
+
+            if (resourceSpeakers != null) {
+                break;
+            }
+        }
 
         if (resourceSpeakers != null) {
             if (resourceSpeakers.isEmpty()) {
@@ -1083,11 +1306,15 @@ public class ConferenceDataLoader {
                 return null;
             } else {
                 Speaker resourceSpeaker = resourceSpeakers.iterator().next();
+                String resourceSpeakerCompanies = resourceSpeaker.getCompanies().stream()
+                        .map(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
+                        .collect(Collectors.joining(", "));
+                String speakerCompanies = speaker.getCompanies().stream()
+                        .map(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
+                        .collect(Collectors.joining(", "));
 
                 log.warn("Speaker found only by name '{}', speaker company (in resource files): '{}', speaker company (in Contentful): '{}')",
-                        speakerName,
-                        LocalizationUtils.getString(resourceSpeaker.getCompany(), language),
-                        LocalizationUtils.getString(speaker.getCompany(), language));
+                        speakerName, resourceSpeakerCompanies, speakerCompanies);
 
                 return resourceSpeaker;
             }
@@ -1236,11 +1463,11 @@ public class ConferenceDataLoader {
         // Load talks, speaker and event
         // 2016
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2016, 10, 14), "2016Joker",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Jean-Philippe BEMPEL", "Ullink"), 155L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Jean-Philippe BEMPEL", new Company(553, "Ullink")), 155L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), "2016hel",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2016, 12, 9), "2016msk",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2016, 12, 10), "2016msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2016, 12, 11), "2016msk");
 
@@ -1248,20 +1475,20 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.JBREAK, LocalDate.of(2017, 4, 4), "2017JBreak",
 //                LoadSettings.invalidTalksSet(Set.of("Верхом на реактивных стримах")));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2017, 4, 7), "2017JPoint",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Озеров", "GridGain Systems"), 28L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Озеров", new Company(224, "GridGain Systems")), 28L)));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2017, 4, 21), "2017spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2017, 5, 19), "2017spb",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2017, 6, 2), "2017spb");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2017, 6, 4), "2017spb");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2017, 10, 20), "2017DevOops",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Ray Тsang", "Google"), 377L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Ray Тsang", new Company(217, "Google")), 377L)));
 //        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2017, 10, 21), "2017smartdata");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2017, 11, 3), "2017Joker");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2017, 11, 11), "2017msk",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Иванов", "EPAM Systems"), 852L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Иванов", new Company(183, "EPAM Systems")), 852L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2017, 11, 12), "2017msk",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2017, 12, 8), "2017msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2017, 12, 10), "2017msk");
 
@@ -1271,15 +1498,15 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2018, 4, 6), "2018JPoint");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2018, 4, 20), "2018spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 4, 22), "2018spb",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2018, 5, 17), "2018spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2018, 5, 19), "2018spb");
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2018, 9, 1), "2018tt");
 //        loadTalksSpeakersEvent(Conference.DEV_OOPS, LocalDate.of(2018, 10, 14), "2018DevOops");
 //        loadTalksSpeakersEvent(Conference.JOKER, LocalDate.of(2018, 10, 19), "2018Joker",
 //                LoadSettings.knownSpeakerIdsMap(Map.of(
-//                        new NameCompany("Алексей Федоров", "JUG.ru Group"), 7L,
-//                        new NameCompany("Павел Финкельштейн", "lamoda"), 8L)));
+//                        new NameCompany("Алексей Федоров", new Company(291, "JUG Ru Group")), 7L,
+//                        new NameCompany("Павел Финкельштейн", new Company(302, "Lamoda")), 8L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2018, 11, 22), "2018msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2018, 11, 24), "2018msk");
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2018, 12, 6), "2018msk");
@@ -1287,11 +1514,11 @@ public class ConferenceDataLoader {
 
         // 2019
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2019, 4, 5), "2019jpoint",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Паша Финкельштейн", "Lamoda"), 8L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Паша Финкельштейн", new Company(302, "Lamoda")), 8L)));
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2019, 4, 19), "2019cpp",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Павел Новиков", "Align Technology"), 351L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Павел Новиков", new Company(27, "Align Technology")), 351L)));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2019, 5, 15), "2019spb",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", "Xpirit"), 408L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Alexander Thissen", new Company(601, "Xpirit")), 408L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2019, 5, 17), "2019spb");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2019, 5, 22), "2019spb");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2019, 5, 24), "2019spb");
@@ -1303,7 +1530,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.CPP_RUSSIA, LocalDate.of(2019, 10, 31), "2019-spb-cpp");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2019, 11, 6), "2019msk");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2019, 11, 8), "2019msk",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Lucas Fernandes da Costa", "Converge"), 659L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Lucas Fernandes da Costa", new Company(112, "Converge")), 659L)));
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2019, 12, 5), "2019msk");
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2019, 12, 7), "2019msk");
 
@@ -1331,7 +1558,7 @@ public class ConferenceDataLoader {
 //                        "The lifecycle of a service", "Безопасность и Kubernetes",
 //                        "Edge Computing: А trojan horse of DevOps tribe infiltrating the IoT industry")));
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Oleg Anastasyev", "Odnoklassniki"), 124L)));
+//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Oleg Anastasyev", new Company(653, "OK.RU")), 124L)));
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
 //                LoadSettings.invalidTalksSet(Set.of("Doctoral workshop", "Title will be announced soon")));
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn");

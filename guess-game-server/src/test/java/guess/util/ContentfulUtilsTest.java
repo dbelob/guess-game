@@ -628,7 +628,7 @@ class ContentfulUtilsTest {
 
             @Mock
             Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                  Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+                                  Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
                 return new Speaker();
             }
 
@@ -654,8 +654,8 @@ class ContentfulUtilsTest {
         new MockUp<ContentfulUtils>() {
             @Mock
             Speaker createSpeaker(Invocation invocation, ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                  Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
-                return invocation.proceed(contentfulSpeaker, assetMap, assetErrorSet, id, checkEnTextExistence);
+                                  Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
+                return invocation.proceed(contentfulSpeaker, assetMap, assetErrorSet, speakerId, companyId, checkEnTextExistence);
             }
 
             @Mock
@@ -690,12 +690,65 @@ class ContentfulUtilsTest {
 
         Map<String, ContentfulAsset> assetMap = Collections.emptyMap();
         Set<String> assetErrorSet = Collections.emptySet();
-        AtomicLong id = new AtomicLong(42);
+        AtomicLong speakerId = new AtomicLong(42);
+        AtomicLong companyId = new AtomicLong(42);
 
         Speaker speaker = new Speaker();
         speaker.setId(42);
 
-        assertEquals(42, ContentfulUtils.createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, id, true).getId());
+        assertEquals(42, ContentfulUtils.createSpeaker(contentfulSpeaker, assetMap, assetErrorSet, speakerId, companyId, true).getId());
+    }
+
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("createCompanies method tests")
+    class CreateCompaniesTest {
+        ContentfulSpeaker createContentfulSpeaker(String companyEn, String company) {
+            ContentfulSpeakerFields contentfulSpeakerFields = new ContentfulSpeakerFields();
+            contentfulSpeakerFields.setCompanyEn(companyEn);
+            contentfulSpeakerFields.setCompany(company);
+
+            ContentfulSpeaker contentfulSpeaker = new ContentfulSpeaker();
+            contentfulSpeaker.setFields(contentfulSpeakerFields);
+
+            return contentfulSpeaker;
+        }
+
+        Company company0 = new Company(0, Collections.emptyList());
+
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(createContentfulSpeaker(null, null), new AtomicLong(), false, Collections.emptyList()),
+                    arguments(createContentfulSpeaker(null, ""), new AtomicLong(), false, Collections.emptyList()),
+                    arguments(createContentfulSpeaker("", null), new AtomicLong(), false, Collections.emptyList()),
+                    arguments(createContentfulSpeaker("", ""), new AtomicLong(), false, Collections.emptyList()),
+                    arguments(createContentfulSpeaker("Company", null), new AtomicLong(), false, List.of(company0)),
+                    arguments(createContentfulSpeaker("Company", ""), new AtomicLong(), false, List.of(company0)),
+                    arguments(createContentfulSpeaker(null, "Компания"), new AtomicLong(), false, List.of(company0)),
+                    arguments(createContentfulSpeaker("", "Компания"), new AtomicLong(), false, List.of(company0)),
+                    arguments(createContentfulSpeaker("Company", "Компания"), new AtomicLong(), false, List.of(company0))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void createCompanies(ContentfulSpeaker contentfulSpeaker, AtomicLong companyId, boolean checkEnTextExistence,
+                             List<Company> expected) {
+            new MockUp<ContentfulUtils>() {
+                @Mock
+                List<Company> createCompanies(Invocation invocation, ContentfulSpeaker contentfulSpeaker, AtomicLong companyId, boolean checkEnTextExistence) {
+                    return invocation.proceed(contentfulSpeaker, companyId, checkEnTextExistence);
+                }
+
+                @Mock
+                List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
+                    return Collections.emptyList();
+                }
+            };
+
+            assertEquals(expected, ContentfulUtils.createCompanies(contentfulSpeaker, companyId, checkEnTextExistence));
+        }
     }
 
     @Nested
@@ -1131,7 +1184,7 @@ class ContentfulUtilsTest {
             new MockUp<ContentfulUtils>() {
                 @Mock
                 Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                      Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+                                      Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
                     return speaker;
                 }
 
@@ -2121,11 +2174,14 @@ class ContentfulUtilsTest {
     @DisplayName("needUpdate method tests (Speaker)")
     class NeedUpdateSpeakerTest {
         private Stream<Arguments> data() {
+            Company company0 = new Company(0, List.of(new LocaleItem("en", "company0")));
+            Company company4 = new Company(4, List.of(new LocaleItem("en", "company4")));
+
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
             speaker0.setPhotoFileName("photoFileName0");
             speaker0.setName(List.of(new LocaleItem("en", "name0")));
-            speaker0.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker0.setCompanies(List.of(company0));
             speaker0.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker0.setTwitter("twitter0");
             speaker0.setGitHub("gitHub0");
@@ -2149,20 +2205,20 @@ class ContentfulUtilsTest {
             speaker4.setId(0);
             speaker4.setPhotoFileName("photoFileName0");
             speaker4.setName(List.of(new LocaleItem("en", "name0")));
-            speaker4.setCompany(List.of(new LocaleItem("en", "company4")));
+            speaker4.setCompanies(List.of(company4));
 
             Speaker speaker5 = new Speaker();
             speaker5.setId(0);
             speaker5.setPhotoFileName("photoFileName0");
             speaker5.setName(List.of(new LocaleItem("en", "name0")));
-            speaker5.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker5.setCompanies(List.of(company0));
             speaker5.setBio(List.of(new LocaleItem("en", "bio5")));
 
             Speaker speaker6 = new Speaker();
             speaker6.setId(0);
             speaker6.setPhotoFileName("photoFileName0");
             speaker6.setName(List.of(new LocaleItem("en", "name0")));
-            speaker6.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker6.setCompanies(List.of(company0));
             speaker6.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker6.setTwitter("twitter6");
 
@@ -2170,7 +2226,7 @@ class ContentfulUtilsTest {
             speaker7.setId(0);
             speaker7.setPhotoFileName("photoFileName0");
             speaker7.setName(List.of(new LocaleItem("en", "name0")));
-            speaker7.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker7.setCompanies(List.of(company0));
             speaker7.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker7.setTwitter("twitter0");
             speaker7.setGitHub("gitHub7");
@@ -2179,7 +2235,7 @@ class ContentfulUtilsTest {
             speaker8.setId(0);
             speaker8.setPhotoFileName("photoFileName0");
             speaker8.setName(List.of(new LocaleItem("en", "name0")));
-            speaker8.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker8.setCompanies(List.of(company0));
             speaker8.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker8.setTwitter("twitter0");
             speaker8.setGitHub("gitHub0");
@@ -2189,7 +2245,7 @@ class ContentfulUtilsTest {
             speaker9.setId(0);
             speaker9.setPhotoFileName("photoFileName0");
             speaker9.setName(List.of(new LocaleItem("en", "name0")));
-            speaker9.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker9.setCompanies(List.of(company0));
             speaker9.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker9.setTwitter("twitter0");
             speaker9.setGitHub("gitHub0");
@@ -2200,7 +2256,7 @@ class ContentfulUtilsTest {
             speaker10.setId(0);
             speaker10.setPhotoFileName("photoFileName0");
             speaker10.setName(List.of(new LocaleItem("en", "name0")));
-            speaker10.setCompany(List.of(new LocaleItem("en", "company0")));
+            speaker10.setCompanies(List.of(company0));
             speaker10.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker10.setTwitter("twitter0");
             speaker10.setGitHub("gitHub0");

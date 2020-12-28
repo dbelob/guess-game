@@ -2,6 +2,7 @@ package guess.service;
 
 import guess.dao.SpeakerDao;
 import guess.domain.Language;
+import guess.domain.source.Company;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
@@ -34,17 +35,21 @@ class SpeakerServiceImplTest {
 
     @BeforeAll
     static void init() {
+        Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+        Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
+        Company company2 = new Company(2, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company2")));
+
         speaker0 = new Speaker();
         speaker0.setId(0);
         speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
-        speaker0.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company0")));
+        speaker0.setCompanies(List.of(company0));
         speaker0.setTwitter("twitter0");
         speaker0.setGitHub("github0");
 
         speaker1 = new Speaker();
         speaker1.setId(1);
         speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
-        speaker1.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company1")));
+        speaker1.setCompanies(List.of(company1));
         speaker1.setTwitter("twitter1");
         speaker1.setGitHub("github1");
         speaker1.setJavaChampion(true);
@@ -52,7 +57,7 @@ class SpeakerServiceImplTest {
         speaker2 = new Speaker();
         speaker2.setId(2);
         speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name2")));
-        speaker2.setCompany(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Company2")));
+        speaker2.setCompanies(List.of(company2));
         speaker2.setTwitter("twitter2");
         speaker2.setGitHub("github2");
         speaker2.setMvp(true);
@@ -145,6 +150,26 @@ class SpeakerServiceImplTest {
             Mockito.when(speakerDao.getSpeakers()).thenReturn(speakers);
 
             assertEquals(expected, speakerService.getSpeakers(name, company, twitter, gitHub, isJavaChampion, isMvp));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("isSpeakerCompanyFound method tests")
+    class IsSpeakerCompanyFoundTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(speaker0, "company0", true),
+                    arguments(speaker0, "company", true),
+                    arguments(speaker0, "0", true),
+                    arguments(speaker0, "1", false)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void isSpeakerCompanyFound(Speaker speaker, String trimmedLowerCasedCompany, boolean expected) {
+            assertEquals(expected, SpeakerServiceImpl.isSpeakerCompanyFound(speaker, trimmedLowerCasedCompany));
         }
     }
 }

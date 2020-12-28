@@ -442,13 +442,14 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
-        AtomicLong id = new AtomicLong(-1);
+        AtomicLong speakerId = new AtomicLong(-1);
+        AtomicLong companyId = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
-                .map(s -> createSpeaker(s, assetMap, assetErrorSet, id, true))
+                .map(s -> createSpeaker(s, assetMap, assetErrorSet, speakerId, companyId, true))
                 .collect(Collectors.toList());
     }
 
@@ -458,17 +459,18 @@ public class ContentfulUtils {
      * @param contentfulSpeaker    Contentful speaker
      * @param assetMap             map id/asset
      * @param assetErrorSet        set with error assets
-     * @param id                   atomic identifier
+     * @param speakerId            atomic speaker identifier
+     * @param companyId            atomic company identifier
      * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
      * @return speaker
      */
     static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
-                                 Set<String> assetErrorSet, AtomicLong id, boolean checkEnTextExistence) {
+                                 Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
         return new Speaker(
-                id.getAndDecrement(),
+                speakerId.getAndDecrement(),
                 extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
                 extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
-                extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence),
+                createCompanies(contentfulSpeaker, companyId, checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
                 new Speaker.SpeakerSocials(
                         extractTwitter(contentfulSpeaker.getFields().getTwitter()),
@@ -480,6 +482,29 @@ public class ContentfulUtils {
                         extractBoolean(contentfulSpeaker.getFields().getMvpReconnect())
                 )
         );
+    }
+
+    /**
+     * Creates company list.
+     *
+     * @param contentfulSpeaker    Contentful speaker
+     * @param companyId            company identifier
+     * @param checkEnTextExistence {@code true} if need to check English text existence, {@code false} otherwise
+     * @return company list
+     */
+    static List<Company> createCompanies(ContentfulSpeaker contentfulSpeaker, AtomicLong companyId, boolean checkEnTextExistence) {
+        String enName = contentfulSpeaker.getFields().getCompanyEn();
+        String ruName = contentfulSpeaker.getFields().getCompany();
+
+        if (((enName != null) && !enName.isEmpty()) ||
+                ((ruName != null) && !ruName.isEmpty())) {
+            return List.of(new Company(
+                    companyId.getAndDecrement(),
+                    extractLocaleItems(contentfulSpeaker.getFields().getCompanyEn(), contentfulSpeaker.getFields().getCompany(), checkEnTextExistence)
+            ));
+        } else {
+            return new ArrayList<>();
+        }
     }
 
     /**
@@ -581,7 +606,7 @@ public class ContentfulUtils {
                 .encode()
                 .toUri();
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
-        AtomicLong id = new AtomicLong(-1);
+        AtomicLong talkId = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getErrorSet(response, ENTRY_LINK_TYPE);
         Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
@@ -593,7 +618,7 @@ public class ContentfulUtils {
         return Objects.requireNonNull(response)
                 .getItems().stream()
                 .filter(t -> isValidTalk(t, ignoreDemoStage))
-                .map(t -> createTalk(t, assetMap, entryErrorSet, assetErrorSet, speakerMap, id))
+                .map(t -> createTalk(t, assetMap, entryErrorSet, assetErrorSet, speakerMap, talkId))
                 .collect(Collectors.toList());
     }
 
@@ -622,11 +647,11 @@ public class ContentfulUtils {
      * @param entryErrorSet  set with error entries
      * @param assetErrorSet  set with error assets
      * @param speakerMap     speaker map
-     * @param id             atomic identifier
+     * @param talkId         atomic talk identifier
      * @return talk
      */
     static Talk createTalk(ContentfulTalk<? extends ContentfulTalkFields> contentfulTalk, Map<String, ContentfulAsset> assetMap,
-                           Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong id) {
+                           Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong talkId) {
         List<Speaker> speakers = contentfulTalk.getFields().getSpeakers().stream()
                 .filter(s -> {
                     String speakerId = s.getSys().getId();
@@ -647,7 +672,7 @@ public class ContentfulUtils {
 
         return new Talk(
                 new Nameable(
-                        id.getAndDecrement(),
+                        talkId.getAndDecrement(),
                         extractLocaleItems(contentfulTalk.getFields().getNameEn(), contentfulTalk.getFields().getName()),
                         extractLocaleItems(contentfulTalk.getFields().getShortEn(), contentfulTalk.getFields().getShortRu()),
                         extractLocaleItems(contentfulTalk.getFields().getLongEn(), contentfulTalk.getFields().getLongRu())
@@ -689,14 +714,15 @@ public class ContentfulUtils {
      */
     static Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
                                               Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
-        AtomicLong id = new AtomicLong(-1);
+        AtomicLong speakerId = new AtomicLong(-1);
+        AtomicLong companyId = new AtomicLong(-1);
 
         return (response.getIncludes() == null) ?
                 Collections.emptyMap() :
                 response.getIncludes().getEntry().stream()
                         .collect(Collectors.toMap(
                                 s -> s.getSys().getId(),
-                                s -> createSpeaker(s, assetMap, assetErrorSet, id, false)
+                                s -> createSpeaker(s, assetMap, assetErrorSet, speakerId, companyId, false)
                         ));
     }
 
@@ -1081,9 +1107,11 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Stephen Chin",
                                         null),
-                                extractLocaleItems(
-                                        "JFrog",
-                                        null),
+                                List.of(new Company(
+                                        287,
+                                        extractLocaleItems(
+                                                "JFrog",
+                                                null))),
                                 extractLocaleItems(
                                         "Stephen Chin is Senior Director of Developer Relations at JFrog, author of Raspberry Pi with Java, The Definitive Guide to Modern Client Development, and Pro JavaFX Platform. He has keynoted numerous Java conferences around the world including Oracle Code One (formerly JavaOne), where he is an 8-time Rock Star Award recipient. Stephen is an avid motorcyclist who has done evangelism tours in Europe, Japan, and Brazil, interviewing hackers in their natural habitat and posting the videos on <a href=\"http://nighthacking.com/\" target=\"_blank\">http://nighthacking.com/</a>. When he is not traveling, he enjoys teaching kids how to do embedded and robot programming together with his teenage daughter.",
                                         null),
@@ -1108,9 +1136,11 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Sergey Egorov",
                                         "Сергей Егоров"),
-                                extractLocaleItems(
-                                        "Pivotal",
-                                        null),
+                                List.of(new Company(
+                                        403,
+                                        extractLocaleItems(
+                                                "Pivotal",
+                                                null))),
                                 extractLocaleItems(
                                         "Sergei works at Pivotal on Project Reactor in Berlin, Germany.\n" +
                                                 "\n" +
@@ -1141,9 +1171,11 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Arun Gupta",
                                         null),
-                                extractLocaleItems(
-                                        "Couchbase",
-                                        null),
+                                List.of(new Company(
+                                        114,
+                                        extractLocaleItems(
+                                                "Couchbase",
+                                                null))),
                                 extractLocaleItems(
                                         "Arun Gupta is the vice president of developer advocacy at Couchbase. He has been built and led developer communities for 10+ years at Sun, Oracle, and Red Hat. He has deep expertise in leading cross-functional teams to develop and execute strategy, planning, and execution of content, marketing campaigns, and programs. Prior to that he led engineering teams at Sun and is a founding member of the Java EE team. Gupta has authored more than 2,000 blog posts on technology. He has extensive speaking experience in more than 40 countries on myriad topics and is a JavaOne Rock Star for three years in a row. Gupta also founded the Devoxx4Kids chapter in the US and continues to promote technology education among children. An author of a best-selling book, an avid runner, a globe trotter, a Java Champion, a JUG leader, and a Docker Captain, he is easily accessible at @arungupta.",
                                         null),
@@ -1168,9 +1200,11 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Roman Shaposhnik",
                                         "Роман Шапошник"),
-                                extractLocaleItems(
-                                        "ZEDEDA Inc.",
-                                        null),
+                                List.of(new Company(
+                                        606,
+                                        extractLocaleItems(
+                                                "ZEDEDA Inc.",
+                                                null))),
                                 extractLocaleItems(
                                         "Roman is an open source software expert, currently serving on the board of directors for both The Apache Software Foundation and LF Edge. He has personally contributed to a variety of open source projects ranging from the Linux Kernel to Hadoop and ffmpeg. He is a co-founder and the vice president of product and strategy for Zededa, an edge virtualization startup. Throughout his career, Roman has held technical leadership roles at several well-known companies, including Sun Microsystems, Yahoo!, Cloudera and Pivotal Software. He holds a master's degree in mathematics and computer science from St. Petersburg State University. He likes German craft lagers and is fighting IPA invasion one seidla at a time.",
                                         null),
@@ -1195,9 +1229,7 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Irina Shestak",
                                         null),
-                                extractLocaleItems(
-                                        null,
-                                        null),
+                                new ArrayList<>(),
                                 extractLocaleItems(
                                         "tl;dr javascript, wombats and hot takes. Irina is a London via Vancouver software developer. She spends quite a bit of her time exploring the outdoors, gushing over trains, and reading some Beatniks.",
                                         null),
@@ -1222,9 +1254,7 @@ public class ContentfulUtils {
                                 extractLocaleItems(
                                         "Sergei Kriger",
                                         "Сергей Кригер"),
-                                extractLocaleItems(
-                                        null,
-                                        null),
+                                new ArrayList<>(),
                                 extractLocaleItems(
                                         "Sergei fell in love with web development back in high school. He got a degree in Information Technologies at the University of Helsinki and has been spending his professional career working for web design studios in Helsinki and Munich. Sergei's focus areas are JavaScript development, UX and accessibility.",
                                         "Заболел веб-разработкой еще в школе (Windows 95, IE6, табличная верстка). Окончил Хельсинкский университет по специальности Information Technology, в настоящее время работает в Мюнхене фронтенд-разработчиком."),
@@ -1246,9 +1276,9 @@ public class ContentfulUtils {
                         return new Speaker(
                                 id,
                                 "",
-                                Collections.emptyList(),
-                                Collections.emptyList(),
-                                Collections.emptyList(),
+                                new ArrayList<>(),
+                                new ArrayList<>(),
+                                new ArrayList<>(),
                                 new Speaker.SpeakerSocials(
                                         null,
                                         null
@@ -1326,7 +1356,7 @@ public class ContentfulUtils {
         return !((a.getId() == b.getId()) &&
                 equals(a.getPhotoFileName(), b.getPhotoFileName()) &&
                 equals(a.getName(), b.getName()) &&
-                equals(a.getCompany(), b.getCompany()) &&
+                equals(a.getCompanies(), b.getCompanies()) &&
                 equals(a.getBio(), b.getBio()) &&
                 equals(a.getTwitter(), b.getTwitter()) &&
                 equals(a.getGitHub(), b.getGitHub()) &&

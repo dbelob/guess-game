@@ -2,7 +2,7 @@ package guess.dto.speaker;
 
 import guess.domain.Language;
 import guess.domain.source.Speaker;
-import guess.util.LocalizationUtils;
+import guess.dto.company.CompanyDto;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,7 +26,7 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     }
 
     private final String photoFileName;
-    private final String company;
+    private final List<CompanyDto> companies;
     private final String twitter;
     private final String gitHub;
     private final boolean javaChampion;
@@ -34,12 +34,12 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     private final boolean mvpReconnect;
     private final boolean anyMvp;
 
-    public SpeakerBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, String photoFileName, String company, String twitter, String gitHub,
-                           SpeakerBriefDtoDegrees degrees) {
+    public SpeakerBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, String photoFileName, List<CompanyDto> companies,
+                           String twitter, String gitHub, SpeakerBriefDtoDegrees degrees) {
         super(speakerSuperBriefDto.getId(), speakerSuperBriefDto.getDisplayName());
 
         this.photoFileName = photoFileName;
-        this.company = company;
+        this.companies = companies;
         this.twitter = twitter;
         this.gitHub = gitHub;
         this.javaChampion = degrees.javaChampion;
@@ -52,8 +52,8 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
         return photoFileName;
     }
 
-    public String getCompany() {
-        return company;
+    public List<CompanyDto> getCompanies() {
+        return companies;
     }
 
     public String getTwitter() {
@@ -84,7 +84,7 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
         return new SpeakerBriefDto(
                 speakerSuperBriefDto,
                 speaker.getPhotoFileName(),
-                LocalizationUtils.getString(speaker.getCompany(), language),
+                CompanyDto.convertToDto(speaker.getCompanies(), language),
                 speaker.getTwitter(),
                 speaker.getGitHub(),
                 new SpeakerBriefDtoDegrees(

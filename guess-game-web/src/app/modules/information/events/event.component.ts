@@ -4,7 +4,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { EventDetails } from '../../../shared/models/event/event-details.model';
 import { Event } from '../../../shared/models/event/event.model';
 import { EventService } from '../../../shared/services/event.service';
-import { getEventDisplayName, getTalksWithSpeakersString } from '../../general/utility-functions';
+import {
+  getEventDisplayName,
+  getSpeakersWithCompaniesString,
+  getTalksWithSpeakersString
+} from '../../general/utility-functions';
 
 @Component({
   selector: 'app-event',
@@ -27,7 +31,7 @@ export class EventComponent implements OnInit {
   constructor(private eventService: EventService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
     this.speakersMultiSortMeta.push({field: 'displayName', order: 1});
-    this.speakersMultiSortMeta.push({field: 'company', order: 1});
+    this.speakersMultiSortMeta.push({field: 'companiesString', order: 1});
 
     this.talksMultiSortMeta.push({field: 'talkDay', order: 1});
     this.talksMultiSortMeta.push({field: 'talkTime', order: 1});
@@ -57,6 +61,10 @@ export class EventComponent implements OnInit {
     if (eventDetails?.event) {
       eventDetails.event.displayName = getEventDisplayName(eventDetails.event, this.translateService);
       eventDetails.event.displayPlace = this.getDisplayPlace(eventDetails.event);
+    }
+
+    if (eventDetails?.speakers) {
+      eventDetails.speakers = getSpeakersWithCompaniesString(eventDetails.speakers);
     }
 
     if (eventDetails?.talks) {

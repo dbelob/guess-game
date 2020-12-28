@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Event } from '../../shared/models/event/event.model';
 import { EventType } from '../../shared/models/event-type/event-type.model';
 import { Talk } from '../../shared/models/talk/talk.model';
+import { Speaker } from '../../shared/models/speaker/speaker.model';
 
 export function isStringEmpty(value: string): boolean {
   return (!value || (value.trim().length <= 0));
@@ -97,4 +98,14 @@ export function getTalksWithSpeakersString(talks: Talk[]): Talk[] {
   }
 
   return talks;
+}
+
+export function getSpeakersWithCompaniesString(speakers: Speaker[]): Speaker[] {
+  if (speakers) {
+    speakers.forEach(s => {
+      s.companiesString = s.companies.map(c => c.name).join(', ');
+    });
+  }
+
+  return speakers;
 }

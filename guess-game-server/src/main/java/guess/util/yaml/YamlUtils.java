@@ -88,13 +88,6 @@ public class YamlUtils {
                                                   CompanyList companyList, CompanySynonymsList companySynonymsList,
                                                   SpeakerList speakerList, TalkList talkList)
             throws SpeakerDuplicatedException {
-        // Find duplicates for speaker names and for speaker names with company name
-        if (findSpeakerDuplicates(speakerList.getSpeakers())) {
-            throw new SpeakerDuplicatedException();
-        }
-
-        companyList.setCompanies(createCompaniesFromSpeakersAndFillSpeaker(speakerList.getSpeakers(), companySynonymsList.getCompanySynonyms()));
-
         Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
         Map<Long, EventType> eventTypeMap = listToMap(eventTypeList.getEventTypes(), EventType::getId);
         Map<Long, Company> companyMap = listToMap(companyList.getCompanies(), Company::getId);
@@ -111,88 +104,19 @@ public class YamlUtils {
         linkSpeakersToCompanies(companyMap, speakerList.getSpeakers());
         linkSpeakersToTalks(speakerMap, talkList.getTalks());
 
+        // Find duplicates for speaker names and for speaker names with company name
+        if (findSpeakerDuplicates(speakerList.getSpeakers())) {
+            throw new SpeakerDuplicatedException();
+        }
+
         return new SourceInformation(
                 placeList.getPlaces(),
                 eventTypeList.getEventTypes(),
                 eventList.getEvents(),
                 companyList.getCompanies(),
+                companySynonymsList.getCompanySynonyms(),
                 speakerList.getSpeakers(),
                 talkList.getTalks());
-    }
-
-    static List<Company> createCompaniesFromSpeakersAndFillSpeaker(List<Speaker> speakers, List<CompanySynonyms> companySynonymsList) {
-        Comparator<Speaker> comparatorByCompanyItemSize = Comparator.comparing((Function<Speaker, Integer>) s -> s.getCompany().size()).reversed();
-        Comparator<Speaker> comparatorByEnglishName = Comparator.comparing(s -> LocalizationUtils.getString(s.getCompany(), Language.ENGLISH));
-
-        List<Company> companies = new ArrayList<>();
-        Map<String, Company> companyMap = new HashMap<>();
-        List<Speaker> filteredOrderedSpeakers = speakers.stream()
-                .filter(s -> ((s.getCompany() != null) && !s.getCompany().isEmpty()))
-                .sorted(comparatorByCompanyItemSize.thenComparing(comparatorByEnglishName))
-                .collect(Collectors.toList());
-
-        // Fill companies
-        for (Speaker speaker : filteredOrderedSpeakers) {
-            boolean isFound = false;
-
-            for (LocaleItem localItem : speaker.getCompany()) {
-                if (companyMap.containsKey(localItem.getText())) {
-                    isFound = true;
-                    break;
-                }
-            }
-
-            if (!isFound) {
-                Company company = new Company(-1, speaker.getCompany());
-
-                companies.add(company);
-
-                for (LocaleItem localItem : speaker.getCompany()) {
-                    companyMap.put(localItem.getText(), company);
-                }
-            }
-        }
-
-        bindSynonymToMainCompany(companySynonymsList, companies, companyMap);
-
-        AtomicLong id = new AtomicLong(0);
-
-        // Sort and fill id
-        companies.sort(Comparator.comparing(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN), String.CASE_INSENSITIVE_ORDER));
-        companies.forEach(c -> c.setId(id.getAndIncrement()));
-
-        fillCompaniesInSpeakers(speakers, companyMap);
-
-        return companies;
-    }
-
-    static void bindSynonymToMainCompany(List<CompanySynonyms> companySynonymsList, List<Company> companies, Map<String, Company> companyMap) {
-        for (CompanySynonyms companySynonyms : companySynonymsList) {
-            if (companyMap.containsKey(companySynonyms.getName())) {
-                Company company = companyMap.get(companySynonyms.getName());
-
-                for (String synonym : companySynonyms.getSynonyms()) {
-                    companies.removeIf(c -> c.getName().stream().anyMatch(li -> synonym.equals(li.getText())));
-                    companyMap.put(synonym, company);
-                }
-            }
-        }
-    }
-
-    static void fillCompaniesInSpeakers(List<Speaker> speakers, Map<String, Company> companyMap) {
-        for (Speaker speaker : speakers) {
-            if ((speaker.getCompany() == null) || speaker.getCompany().isEmpty()) {
-                continue;
-            }
-
-            LocaleItem localItem = speaker.getCompany().get(0);
-            Company company = companyMap.get(localItem.getText());
-
-            Objects.requireNonNull(company,
-                    () -> String.format("Company %s not found for speaker %s", localItem.getText(), speaker.toString()));
-
-            speaker.setCompanyIds(List.of(company.getId()));
-        }
     }
 
     /**
@@ -337,11 +261,7 @@ public class YamlUtils {
             speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
                     speakers,
                     s -> LocalizationUtils.getString(s.getName(), language),
-                    s -> {
-                        // Without company
-                        String company = LocalizationUtils.getString(s.getCompany(), language);
-                        return ((company == null) || company.isEmpty());
-                    }));
+                    s -> s.getCompanies().isEmpty()));
         }
 
         if (!speakerDuplicates.isEmpty()) {
@@ -352,7 +272,7 @@ public class YamlUtils {
         for (Language language : Language.values()) {
             speakerDuplicates.addAll(LocalizationUtils.getSpeakerDuplicates(
                     speakers,
-                    s -> LocalizationUtils.getSpeakerNameWithCompany(s, language),
+                    s -> LocalizationUtils.getSpeakerNameWithCompanies(s, language),
                     s -> true));
         }
 
@@ -404,8 +324,10 @@ public class YamlUtils {
                     new PropertyMatcher(Talk.class,
                             List.of("id", "name", "shortDescription", "longDescription", "talkDay", "trackTime", "track",
                                     "language", "presentationLinks", "videoLinks", "speakerIds")),
+                    new PropertyMatcher(Company.class,
+                            List.of("id", "name")),
                     new PropertyMatcher(Speaker.class,
-                            List.of("id", "photoFileName", "name", "company", "bio", "twitter", "gitHub", "javaChampion",
+                            List.of("id", "photoFileName", "name", "companyIds", "bio", "twitter", "gitHub", "javaChampion",
                                     "mvp", "mvpReconnect")),
                     new PropertyMatcher(LocaleItem.class,
                             List.of("language", "text"))
