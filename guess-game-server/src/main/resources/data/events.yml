@@ -1985,7 +1985,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #1"}
-      - {language: ru, text: "JUGNsk митап #1"}
+      - {language: ru, text: "Митап #1 JUGNsk"}
     startDate: "2018-05-24"
     endDate: "2018-05-24"
     placeId: 12
@@ -1993,7 +1993,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #2"}
-      - {language: ru, text: "JUGNsk митап #2"}
+      - {language: ru, text: "Митап #2 JUGNsk"}
     startDate: "2018-06-21"
     endDate: "2018-06-21"
     placeId: 12
@@ -2001,7 +2001,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #3"}
-      - {language: ru, text: "JUGNsk митап #3"}
+      - {language: ru, text: "Митап #3 JUGNsk"}
     startDate: "2018-08-23"
     endDate: "2018-08-23"
     placeId: 16
@@ -2009,7 +2009,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #4"}
-      - {language: ru, text: "JUGNsk митап #4"}
+      - {language: ru, text: "Митап #4 JUGNsk"}
     startDate: "2018-10-11"
     endDate: "2018-10-11"
     placeId: 12
@@ -2017,7 +2017,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #5"}
-      - {language: ru, text: "JUGNsk митап #5"}
+      - {language: ru, text: "Митап #5 JUGNsk"}
     startDate: "2018-12-15"
     endDate: "2018-12-15"
     placeId: 12
@@ -2025,7 +2025,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #6"}
-      - {language: ru, text: "JUGNsk митап #6"}
+      - {language: ru, text: "Митап #6 JUGNsk"}
     startDate: "2019-02-27"
     endDate: "2019-02-27"
     placeId: 12
@@ -2033,7 +2033,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #7"}
-      - {language: ru, text: "JUGNsk митап #7"}
+      - {language: ru, text: "Митап #7 JUGNsk"}
     startDate: "2019-03-29"
     endDate: "2019-03-29"
     placeId: 16
@@ -2041,7 +2041,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #8"}
-      - {language: ru, text: "JUGNsk митап #8"}
+      - {language: ru, text: "Митап #8 JUGNsk"}
     startDate: "2019-05-16"
     endDate: "2019-05-16"
     placeId: 12
@@ -2049,7 +2049,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #9"}
-      - {language: ru, text: "JUGNsk митап #9"}
+      - {language: ru, text: "Митап #9 JUGNsk"}
     startDate: "2019-06-13"
     endDate: "2019-06-13"
     placeId: 17
@@ -2057,7 +2057,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #10"}
-      - {language: ru, text: "JUGNsk митап #10"}
+      - {language: ru, text: "Митап #10 JUGNsk"}
     startDate: "2019-08-27"
     endDate: "2019-08-27"
     placeId: 12
@@ -2065,7 +2065,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #11"}
-      - {language: ru, text: "JUGNsk митап #11"}
+      - {language: ru, text: "Митап #11 JUGNsk"}
     startDate: "2019-10-29"
     endDate: "2019-10-29"
     placeId: 25
@@ -2073,7 +2073,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #12"}
-      - {language: ru, text: "JUGNsk митап #12"}
+      - {language: ru, text: "Митап #12 JUGNsk"}
     startDate: "2019-11-19"
     endDate: "2019-11-19"
     placeId: 12
@@ -2081,7 +2081,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #13"}
-      - {language: ru, text: "JUGNsk митап #13"}
+      - {language: ru, text: "Митап #13 JUGNsk"}
     startDate: "2020-02-28"
     endDate: "2020-02-28"
     placeId: 12
@@ -2089,7 +2089,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #14"}
-      - {language: ru, text: "JUGNsk митап #14"}
+      - {language: ru, text: "Митап #14 JUGNsk"}
     startDate: "2020-04-24"
     endDate: "2020-04-24"
     placeId: 24
@@ -2097,7 +2097,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #15"}
-      - {language: ru, text: "JUGNsk митап #15"}
+      - {language: ru, text: "Митап #15 JUGNsk"}
     startDate: "2020-07-17"
     endDate: "2020-07-17"
     placeId: 24
@@ -2105,7 +2105,7 @@ events:
   - eventTypeId: 15
     name:
       - {language: en, text: "JUGNsk Meetup #16"}
-      - {language: ru, text: "JUGNsk митап #16"}
+      - {language: ru, text: "Митап #16 JUGNsk"}
     startDate: "2020-09-17"
     endDate: "2020-09-17"
     placeId: 24
