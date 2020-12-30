@@ -2,7 +2,8 @@ events:
   # C++ Russia
   - eventTypeId: 0
     name:
-      - {language: en, text: "C++ Russia 2019"}
+      - {language: en, text: "C++ Russia 2019 Msc"}
+      - {language: ru, text: "C++ Russia 2019 Мск"}
     startDate: "2019-04-19"
     endDate: "2019-04-20"
     siteLink:
