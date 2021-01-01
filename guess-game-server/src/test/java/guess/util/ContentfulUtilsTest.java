@@ -34,6 +34,7 @@ import guess.domain.source.contentful.talk.response.ContentfulTalkResponse;
 import guess.domain.source.contentful.talk.response.ContentfulTalkResponseCommon;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
+import guess.domain.source.image.UrlDates;
 import mockit.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -659,9 +660,9 @@ class ContentfulUtilsTest {
             }
 
             @Mock
-            String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
-                                Set<String> assetErrorSet, String speakerNameEn) {
-                return null;
+            UrlDates extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                                  Set<String> assetErrorSet, String speakerNameEn) {
+                return new UrlDates(null, null, null);
             }
 
             @Mock
@@ -756,6 +757,7 @@ class ContentfulUtilsTest {
     @DisplayName("extractPhoto method tests")
     class ExtractPhotoTest {
         private static final String ASSET_URL = "https://valid.com";
+        private final ZonedDateTime NOW = ZonedDateTime.now();
 
         private Stream<Arguments> data() {
             ContentfulSys contentfulSys0 = new ContentfulSys();
@@ -767,11 +769,17 @@ class ContentfulUtilsTest {
             ContentfulSys contentfulSys2 = new ContentfulSys();
             contentfulSys2.setId("id2");
 
+            ContentfulSys contentfulSys3 = new ContentfulSys();
+            contentfulSys3.setId("id3");
+            contentfulSys3.setCreatedAt(NOW);
+            contentfulSys3.setUpdatedAt(NOW);
+
             ContentfulAssetFields contentfulAssetFields2 = new ContentfulAssetFields();
             contentfulAssetFields2.setFile(new ContentfulAssetFieldsFile());
 
             ContentfulAsset contentfulAsset2 = new ContentfulAsset();
             contentfulAsset2.setFields(contentfulAssetFields2);
+            contentfulAsset2.setSys(contentfulSys3);
 
             Map<String, ContentfulAsset> assetMap2 = Map.of("id2", contentfulAsset2);
 
@@ -787,18 +795,18 @@ class ContentfulUtilsTest {
             return Stream.of(
                     arguments(link0, Collections.emptyMap(), Set.of("id0"), "Name0", null, null),
                     arguments(link1, Collections.emptyMap(), Collections.emptySet(), "Name1", NullPointerException.class, null),
-                    arguments(link2, assetMap2, Collections.emptySet(), "Name2", null, ASSET_URL)
+                    arguments(link2, assetMap2, Collections.emptySet(), "Name2", null, new UrlDates(ASSET_URL, NOW, NOW))
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
         void extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet,
-                          String speakerNameEn, Class<? extends Throwable> expectedException, String expectedValue) {
+                          String speakerNameEn, Class<? extends Throwable> expectedException, UrlDates expectedValue) {
             new MockUp<ContentfulUtils>() {
                 @Mock
-                String extractPhoto(Invocation invocation, ContentfulLink link, Map<String, ContentfulAsset> assetMap,
-                                    Set<String> assetErrorSet, String speakerNameEn) {
+                UrlDates extractPhoto(Invocation invocation, ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                                      Set<String> assetErrorSet, String speakerNameEn) {
                     return invocation.proceed(link, assetMap, assetErrorSet, speakerNameEn);
                 }
 

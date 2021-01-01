@@ -24,6 +24,7 @@ import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
 import guess.domain.source.contentful.talk.response.*;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
+import guess.domain.source.image.UrlDates;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -466,9 +467,12 @@ public class ContentfulUtils {
      */
     static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
                                  Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
+        UrlDates urlDates = extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn());
+
         return new Speaker(
                 speakerId.getAndDecrement(),
-                extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn()),
+                urlDates.getUrl(),
+                urlDates.getUpdatedAt(),
                 extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
                 createCompanies(contentfulSpeaker, companyId, checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
@@ -514,10 +518,10 @@ public class ContentfulUtils {
      * @param assetMap      map id/asset
      * @param assetErrorSet set with error assets
      * @param speakerNameEn speaker name
-     * @return photo URL
+     * @return photo URL and dates
      */
-    static String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
-                               Set<String> assetErrorSet, String speakerNameEn) {
+    static UrlDates extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                                 Set<String> assetErrorSet, String speakerNameEn) {
         String assetId = link.getSys().getId();
         boolean isErrorAsset = assetErrorSet.contains(assetId);
 
@@ -527,9 +531,11 @@ public class ContentfulUtils {
         }
 
         ContentfulAsset asset = assetMap.get(assetId);
-        return extractAssetUrl(Objects.requireNonNull(asset,
+        String url = extractAssetUrl(Objects.requireNonNull(asset,
                 () -> String.format("Asset (photo) id %s not found for '%s' speaker", assetId, speakerNameEn))
                 .getFields().getFile().getUrl());
+
+        return new UrlDates(url, asset.getSys().getCreatedAt(), asset.getSys().getUpdatedAt());
     }
 
     /**
@@ -1104,6 +1110,7 @@ public class ContentfulUtils {
                         return new Speaker(
                                 id,
                                 "https://images.ctfassets.net/oxjq45e8ilak/4K2YaPEYekHIGiGPFRPwyf/4b45c269f40874ef46370f2ef9824dcc/Chin.jpg",
+                                null,
                                 extractLocaleItems(
                                         "Stephen Chin",
                                         null),
@@ -1133,6 +1140,7 @@ public class ContentfulUtils {
                         return new Speaker(
                                 id,
                                 "https://images.ctfassets.net/oxjq45e8ilak/3msdNYfaMAagzUjHssfbws/6f2e74bfc57d4b263643854df894b11b/Egorov.jpg",
+                                null,
                                 extractLocaleItems(
                                         "Sergey Egorov",
                                         "Сергей Егоров"),
@@ -1168,6 +1176,7 @@ public class ContentfulUtils {
                         return new Speaker(
                                 id,
                                 "https://images.contentful.com/oxjq45e8ilak/4PO4u392HuG4KkkcyOEoEQ/454ad2e9abc50d5790dd20f6d71080d4/arun-feb25-2012.png",
+                                null,
                                 extractLocaleItems(
                                         "Arun Gupta",
                                         null),
@@ -1197,6 +1206,7 @@ public class ContentfulUtils {
                         return new Speaker(
                                 id,
                                 "https://images.ctfassets.net/oxjq45e8ilak/24Bp61cBWjoYfrBtNvrabm/6f4cfb828f52f3e06d558559fac9c397/shaposhnik.jpg",
+                                null,
                                 extractLocaleItems(
                                         "Roman Shaposhnik",
                                         "Роман Шапошник"),
@@ -1226,6 +1236,7 @@ public class ContentfulUtils {
                         return new Speaker(
                                 id,
                                 "https://images.ctfassets.net/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG",
+                                null,
                                 extractLocaleItems(
                                         "Irina Shestak",
                                         null),
@@ -1251,6 +1262,7 @@ public class ContentfulUtils {
                         return new Speaker(
                                 id,
                                 "https://images.ctfassets.net/nn534z2fqr9f/5cXGxn3cYwwYQu0c6kWYKU/5438788ca0a8c4aa8c1b69a775fc9d7d/Kriger.jpg",
+                                null,
                                 extractLocaleItems(
                                         "Sergei Kriger",
                                         "Сергей Кригер"),
@@ -1276,6 +1288,7 @@ public class ContentfulUtils {
                         return new Speaker(
                                 id,
                                 "",
+                                null,
                                 new ArrayList<>(),
                                 new ArrayList<>(),
                                 new ArrayList<>(),

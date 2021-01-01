@@ -1,10 +1,13 @@
 package guess.domain.source.contentful;
 
+import java.time.ZonedDateTime;
 import java.util.Objects;
 
 public class ContentfulSys {
     private String id;
     private String type;
+    private ZonedDateTime createdAt;
+    private ZonedDateTime updatedAt;
 
     public String getId() {
         return id;
@@ -20,6 +23,22 @@ public class ContentfulSys {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public ZonedDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(ZonedDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public ZonedDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(ZonedDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
