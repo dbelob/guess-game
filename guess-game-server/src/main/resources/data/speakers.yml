@@ -33,6 +33,7 @@ speakers:
     gitHub: Jeka1978
   - id: 2
     photoFileName: 0002.jpg
+    photoUpdatedAt: 2019-06-27T08:12:19.765Z[UTC]
     name:
       - {language: en, text: "Andrey Breslav"}
       - {language: ru, text: "Андрей Бреслав"}
@@ -123,6 +124,7 @@ speakers:
     gitHub: andrershov
   - id: 7
     photoFileName: 0007.jpg
+    photoUpdatedAt: 2020-06-01T12:48:52.962Z[UTC]
     name:
       - {language: en, text: "Alexey Fyodorov"}
       - {language: ru, text: "Алексей Федоров"}
@@ -161,6 +163,7 @@ speakers:
     gitHub: asm0dey
   - id: 9
     photoFileName: 0009.jpg
+    photoUpdatedAt: 2019-10-26T12:30:54.007Z[UTC]
     name:
       - {language: en, text: "Victor Gamov"}
       - {language: ru, text: "Виктор Гамов"}
@@ -650,6 +653,7 @@ speakers:
     gitHub: mgramin
   - id: 38
     photoFileName: 0038.jpg
+    photoUpdatedAt: 2020-06-03T07:38:44.814Z[UTC]
     name:
       - {language: en, text: "Oleg Nenashev"}
       - {language: ru, text: "Олег Ненашев"}
@@ -946,6 +950,7 @@ speakers:
     gitHub: rfscholte
   - id: 58
     photoFileName: 0058.jpg
+    photoUpdatedAt: 2020-02-25T11:51:16.829Z[UTC]
     name:
       - {language: en, text: "Nikita Koval"}
       - {language: ru, text: "Никита Коваль"}
@@ -2950,6 +2955,7 @@ speakers:
             ы информации."}
   - id: 195
     photoFileName: 0195.jpg
+    photoUpdatedAt: 2020-05-28T11:19:35.500Z[UTC]
     name:
       - {language: en, text: "Svetlana Isakova"}
       - {language: ru, text: "Светлана Исакова"}
@@ -3646,6 +3652,7 @@ speakers:
     gitHub: obartunov
   - id: 260
     photoFileName: 0260.jpg
+    photoUpdatedAt: 2019-06-13T13:51:41.722Z[UTC]
     name:
       - {language: en, text: "Vitaly Friedman"}
       - {language: ru, text: "Виталий Фридман"}
@@ -5707,6 +5714,7 @@ speakers:
     twitter: zodiacon
   - id: 407
     photoFileName: 0407.jpg
+    photoUpdatedAt: 2020-05-26T11:23:48.405Z[UTC]
     name:
       - {language: en, text: "Dylan Beattie"}
     companyIds: [566]
@@ -14100,6 +14108,7 @@ speakers:
     twitter: midudev
   - id: 1039
     photoFileName: 1039.jpg
+    photoUpdatedAt: 2020-05-26T11:07:18.715Z[UTC]
     name:
       - {language: en, text: "Alexandra Kalinina"}
       - {language: ru, text: "Александра Калинина"}
@@ -16690,6 +16699,7 @@ speakers:
             \ his Ph.D. from the Department of Computer Science, Technion, Israel."
   - id: 1245
     photoFileName: 1245.jpg
+    photoUpdatedAt: 2020-05-26T11:54:19.586Z[UTC]
     name:
       - {language: en, text: "Gleb Bahmutov"}
       - {language: ru, text: "Глеб Бахмутов"}
@@ -16706,6 +16716,7 @@ speakers:
     gitHub: bahmutov
   - id: 1246
     photoFileName: 1246.jpg
+    photoUpdatedAt: 2018-07-17T15:58:35.335Z[UTC]
     name:
       - {language: en, text: "Ruslan Akhmetzyanov"}
       - {language: ru, text: "Руслан Ахметзянов"}
