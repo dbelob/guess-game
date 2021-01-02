@@ -526,8 +526,7 @@ public class ContentfulUtils {
         boolean isErrorAsset = assetErrorSet.contains(assetId);
 
         if (isErrorAsset) {
-            log.warn("Asset (photo) id {} not resolvable for '{}' speaker", assetId, speakerNameEn);
-            return null;
+            throw new IllegalArgumentException(String.format("Asset (photo) id %s not resolvable for '%s' speaker", assetId, speakerNameEn));
         }
 
         ContentfulAsset asset = assetMap.get(assetId);
@@ -1044,8 +1043,7 @@ public class ContentfulUtils {
         boolean isErrorAsset = entryErrorSet.contains(entryId);
 
         if (isErrorAsset) {
-            log.warn("Entry (city name) id {} not resolvable for '{}' event", entryId, eventName);
-            return null;
+            throw new IllegalArgumentException(String.format("Entry (city name) id %s not resolvable for '%s' event", entryId, eventName));
         }
 
         ContentfulCity city = cityMap.get(entryId);

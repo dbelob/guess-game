@@ -793,7 +793,7 @@ class ContentfulUtilsTest {
             link2.setSys(contentfulSys2);
 
             return Stream.of(
-                    arguments(link0, Collections.emptyMap(), Set.of("id0"), "Name0", null, null),
+                    arguments(link0, Collections.emptyMap(), Set.of("id0"), "Name0", IllegalArgumentException.class, null),
                     arguments(link1, Collections.emptyMap(), Collections.emptySet(), "Name1", NullPointerException.class, null),
                     arguments(link2, assetMap2, Collections.emptySet(), "Name2", null, new UrlDates(ASSET_URL, NOW, NOW))
             );
@@ -1819,7 +1819,7 @@ class ContentfulUtilsTest {
             Set<String> entryErrorSet = Set.of("id0");
 
             return Stream.of(
-                    arguments(contentfulLink0, cityMap, entryErrorSet, null, "eventName", null, null),
+                    arguments(contentfulLink0, cityMap, entryErrorSet, null, "eventName", IllegalArgumentException.class, null),
                     arguments(contentfulLink1, cityMap, entryErrorSet, "en", "eventName", null, "Name1"),
                     arguments(contentfulLink2, cityMap, entryErrorSet, null, "eventName", NullPointerException.class, null)
             );
