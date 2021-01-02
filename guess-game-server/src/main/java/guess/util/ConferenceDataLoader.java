@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
@@ -604,39 +605,58 @@ public class ConferenceDataLoader {
         List<UrlFilename> urlFilenamesToAppend = new ArrayList<>();
         List<UrlFilename> urlFilenamesToUpdate = new ArrayList<>();
 
-        for (Speaker s : speakers) {
-            Speaker resourceSpeaker = findResourceSpeaker(s, speakerLoadMaps);
+        for (Speaker speaker : speakers) {
+            Speaker resourceSpeaker = findResourceSpeaker(speaker, speakerLoadMaps);
 
             if (resourceSpeaker == null) {
                 // Speaker not exists
                 long id = lastSpeakerId.incrementAndGet();
-                String sourceUrl = s.getPhotoFileName();
+                String sourceUrl = speaker.getPhotoFileName();
                 String destinationFileName = String.format("%04d.jpg", id);
 
-                s.setId(id);
+                speaker.setId(id);
 
                 urlFilenamesToAppend.add(new UrlFilename(sourceUrl, destinationFileName));
-                s.setPhotoFileName(destinationFileName);
+                speaker.setPhotoFileName(destinationFileName);
 
-                speakersToAppend.add(s);
+                speakersToAppend.add(speaker);
             } else {
                 // Speaker exists
-                s.setId(resourceSpeaker.getId());
-                String sourceUrl = s.getPhotoFileName();
+                speaker.setId(resourceSpeaker.getId());
+                String sourceUrl = speaker.getPhotoFileName();
                 String destinationFileName = resourceSpeaker.getPhotoFileName();
-                s.setPhotoFileName(destinationFileName);
+                speaker.setPhotoFileName(destinationFileName);
 
-                fillSpeakerTwitter(s, resourceSpeaker);
-                fillSpeakerGitHub(s, resourceSpeaker);
-                fillSpeakerJavaChampion(s, resourceSpeaker);
-                fillSpeakerMvp(s, resourceSpeaker);
+                fillSpeakerTwitter(speaker, resourceSpeaker);
+                fillSpeakerGitHub(speaker, resourceSpeaker);
+                fillSpeakerJavaChampion(speaker, resourceSpeaker);
+                fillSpeakerMvp(speaker, resourceSpeaker);
 
-                if (ImageUtils.needUpdate(sourceUrl, String.format("guess-game-web/src/assets/images/speakers/%s", destinationFileName))) {
-                    urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
+                ZonedDateTime resourcePhotoUpdatedAt = resourceSpeaker.getPhotoUpdatedAt();
+                ZonedDateTime photoUpdatedAt = speaker.getPhotoUpdatedAt();
+
+                // Update speaker photo
+                if (photoUpdatedAt == null) {
+                    // New updated datetime is null
+                    if (ImageUtils.needUpdate(sourceUrl, String.format("guess-game-web/src/assets/images/speakers/%s", destinationFileName))) {
+                        urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
+                    }
+                } else {
+                    // New updated datetime is not null
+                    if (resourcePhotoUpdatedAt == null) {
+                        // Old updated datetime is null
+                        urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
+                    } else {
+                        // New updated datetime after old
+                        if (photoUpdatedAt.isAfter(resourcePhotoUpdatedAt)) {
+                            urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
+                        }
+                    }
                 }
 
-                if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
-                    speakersToUpdate.add(s);
+                // Update speaker
+                if (ContentfulUtils.needUpdate(resourceSpeaker, speaker)) {
+                    speakersToUpdate.add(speaker);
                 }
             }
         }

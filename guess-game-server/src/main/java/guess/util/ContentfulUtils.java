@@ -1382,6 +1382,7 @@ public class ContentfulUtils {
     public static boolean needUpdate(Speaker a, Speaker b) {
         return !((a.getId() == b.getId()) &&
                 equals(a.getPhotoFileName(), b.getPhotoFileName()) &&
+                equals(a.getPhotoUpdatedAt(), b.getPhotoUpdatedAt()) &&
                 equals(a.getName(), b.getName()) &&
                 equals(a.getCompanies(), b.getCompanies()) &&
                 equals(a.getBio(), b.getBio()) &&
