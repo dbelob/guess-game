@@ -152,8 +152,10 @@ public class LocalizationUtilsTest {
             return Stream.of(
                     arguments(new Speaker(
                                     0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     null,
                                     new ArrayList<>(),
                                     null,
@@ -169,8 +171,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, ""),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     null,
                                     new ArrayList<>(),
                                     null,
@@ -186,8 +190,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, ""),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     new ArrayList<>(),
                                     null,
@@ -203,8 +209,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, "Name"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     new ArrayList<>(),
                                     null,
@@ -220,8 +228,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Имя"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     EMPTY_COMPANY_LIST,
                                     null,
@@ -237,8 +247,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, "Name"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     EMPTY_COMPANY_LIST,
                                     null,
@@ -254,8 +266,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Имя"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -271,8 +285,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, "Name (Company0)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -288,8 +304,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Имя (Компания0)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -305,8 +323,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Имя (Company1)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     ENGLISH_NAME_LOCALE_ITEMS,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -322,8 +342,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Name (Компания0)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     ENGLISH_NAME_LOCALE_ITEMS,
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -339,8 +361,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Name (Company1)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     ENGLISH_NAME_LOCALE_ITEMS,
                                     SOME_COMPANY_LIST,
                                     null,
@@ -356,8 +380,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, "Name (Company0, Company1)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     ENGLISH_NAME_LOCALE_ITEMS,
                                     SOME_COMPANY_REVERSE_LIST,
                                     null,
@@ -407,8 +433,10 @@ public class LocalizationUtilsTest {
 
             return Stream.of(
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     null,
                                     new ArrayList<>(),
                                     null,
@@ -424,8 +452,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, ""),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     null,
                                     new ArrayList<>(),
                                     null,
@@ -441,8 +471,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, ""),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     new ArrayList<>(),
                                     null,
@@ -458,8 +490,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, "LastName FirstName"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     new ArrayList<>(),
                                     null,
@@ -475,8 +509,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Фамилия Имя"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     EMPTY_COMPANY_LIST,
                                     null,
@@ -492,8 +528,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, "LastName FirstName"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     EMPTY_COMPANY_LIST,
                                     null,
@@ -509,8 +547,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Фамилия Имя"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -526,8 +566,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, "LastName FirstName (Company0)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -543,8 +585,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Фамилия Имя (Компания0)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     FULL_NAME_LOCALE_ITEMS,
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -560,8 +604,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "Фамилия Имя (Company1)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     ENGLISH_NAME_LOCALE_ITEMS,
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -577,8 +623,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "LastName FirstName (Компания0)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     ENGLISH_NAME_LOCALE_ITEMS,
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
@@ -594,8 +642,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.RUSSIAN, "LastName FirstName (Company1)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     ENGLISH_NAME_LOCALE_ITEMS,
                                     SOME_COMPANY_LIST,
                                     null,
@@ -611,8 +661,10 @@ public class LocalizationUtilsTest {
                             ),
                             Language.ENGLISH, "LastName FirstName (Company0, Company1)"),
                     arguments(new Speaker(0L,
-                                    "0000.jpg",
-                                    null,
+                                    new Speaker.SpeakerPhoto(
+                                            "0000.jpg",
+                                            null
+                                    ),
                                     ENGLISH_NAME_LOCALE_ITEMS,
                                     SOME_COMPANY_REVERSE_LIST,
                                     null,
@@ -652,8 +704,10 @@ public class LocalizationUtilsTest {
 
             Speaker speaker0 = new Speaker(
                     0L,
-                    "0000.jpg",
-                    null,
+                    new Speaker.SpeakerPhoto(
+                            "0000.jpg",
+                            null
+                    ),
                     FULL_NAME_LOCALE_ITEMS,
                     List.of(company),
                     null,
@@ -698,8 +752,10 @@ public class LocalizationUtilsTest {
                     new LocaleItem(Language.RUSSIAN.getCode(), "Компания")));
 
             Speaker speaker0 = new Speaker(0L,
-                    "0000.jpg",
-                    null,
+                    new Speaker.SpeakerPhoto(
+                            "0000.jpg",
+                            null
+                    ),
                     FULL_NAME_LOCALE_ITEMS,
                     List.of(company0),
                     null,

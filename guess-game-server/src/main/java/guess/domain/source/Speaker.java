@@ -13,6 +13,16 @@ import java.util.stream.Collectors;
  * Speaker.
  */
 public class Speaker extends Identifier {
+    public static class SpeakerPhoto {
+        private final String photoFileName;
+        private final ZonedDateTime photoUpdatedAt;
+
+        public SpeakerPhoto(String photoFileName, ZonedDateTime photoUpdatedAt) {
+            this.photoFileName = photoFileName;
+            this.photoUpdatedAt = photoUpdatedAt;
+        }
+    }
+
     public static class SpeakerSocials {
         private final String twitter;
         private final String gitHub;
@@ -52,12 +62,12 @@ public class Speaker extends Identifier {
         this.companyIds = new ArrayList<>();
     }
 
-    public Speaker(long id, String photoFileName, ZonedDateTime photoUpdatedAt, List<LocaleItem> name, List<Company> companies,
+    public Speaker(long id, SpeakerPhoto photo, List<LocaleItem> name, List<Company> companies,
                    List<LocaleItem> bio, SpeakerSocials socials, SpeakerDegrees degrees) {
         super(id);
 
-        this.photoFileName = photoFileName;
-        this.photoUpdatedAt = photoUpdatedAt;
+        this.photoFileName = photo.photoFileName;
+        this.photoUpdatedAt = photo.photoUpdatedAt;
         this.name = name;
         this.bio = bio;
         this.twitter = socials.twitter;

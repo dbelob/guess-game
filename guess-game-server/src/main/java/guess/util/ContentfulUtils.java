@@ -471,8 +471,10 @@ public class ContentfulUtils {
 
         return new Speaker(
                 speakerId.getAndDecrement(),
-                urlDates.getUrl(),
-                urlDates.getUpdatedAt(),
+                new Speaker.SpeakerPhoto(
+                        urlDates.getUrl(),
+                        urlDates.getUpdatedAt()
+                ),
                 extractLocaleItems(contentfulSpeaker.getFields().getNameEn(), contentfulSpeaker.getFields().getName(), checkEnTextExistence),
                 createCompanies(contentfulSpeaker, companyId, checkEnTextExistence),
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
@@ -1107,8 +1109,10 @@ public class ContentfulUtils {
                     public Speaker createSpeaker(long id) {
                         return new Speaker(
                                 id,
-                                "https://images.ctfassets.net/oxjq45e8ilak/4K2YaPEYekHIGiGPFRPwyf/4b45c269f40874ef46370f2ef9824dcc/Chin.jpg",
-                                null,
+                                new Speaker.SpeakerPhoto(
+                                        "https://images.ctfassets.net/oxjq45e8ilak/4K2YaPEYekHIGiGPFRPwyf/4b45c269f40874ef46370f2ef9824dcc/Chin.jpg",
+                                        null
+                                ),
                                 extractLocaleItems(
                                         "Stephen Chin",
                                         null),
@@ -1137,8 +1141,10 @@ public class ContentfulUtils {
                     public Speaker createSpeaker(long id) {
                         return new Speaker(
                                 id,
-                                "https://images.ctfassets.net/oxjq45e8ilak/3msdNYfaMAagzUjHssfbws/6f2e74bfc57d4b263643854df894b11b/Egorov.jpg",
-                                null,
+                                new Speaker.SpeakerPhoto(
+                                        "https://images.ctfassets.net/oxjq45e8ilak/3msdNYfaMAagzUjHssfbws/6f2e74bfc57d4b263643854df894b11b/Egorov.jpg",
+                                        null
+                                ),
                                 extractLocaleItems(
                                         "Sergey Egorov",
                                         "Сергей Егоров"),
@@ -1173,8 +1179,10 @@ public class ContentfulUtils {
                     public Speaker createSpeaker(long id) {
                         return new Speaker(
                                 id,
-                                "https://images.contentful.com/oxjq45e8ilak/4PO4u392HuG4KkkcyOEoEQ/454ad2e9abc50d5790dd20f6d71080d4/arun-feb25-2012.png",
-                                null,
+                                new Speaker.SpeakerPhoto(
+                                        "https://images.contentful.com/oxjq45e8ilak/4PO4u392HuG4KkkcyOEoEQ/454ad2e9abc50d5790dd20f6d71080d4/arun-feb25-2012.png",
+                                        null
+                                ),
                                 extractLocaleItems(
                                         "Arun Gupta",
                                         null),
@@ -1203,8 +1211,10 @@ public class ContentfulUtils {
                     public Speaker createSpeaker(long id) {
                         return new Speaker(
                                 id,
-                                "https://images.ctfassets.net/oxjq45e8ilak/24Bp61cBWjoYfrBtNvrabm/6f4cfb828f52f3e06d558559fac9c397/shaposhnik.jpg",
-                                null,
+                                new Speaker.SpeakerPhoto(
+                                        "https://images.ctfassets.net/oxjq45e8ilak/24Bp61cBWjoYfrBtNvrabm/6f4cfb828f52f3e06d558559fac9c397/shaposhnik.jpg",
+                                        null
+                                ),
                                 extractLocaleItems(
                                         "Roman Shaposhnik",
                                         "Роман Шапошник"),
@@ -1233,8 +1243,10 @@ public class ContentfulUtils {
                     public Speaker createSpeaker(long id) {
                         return new Speaker(
                                 id,
-                                "https://images.ctfassets.net/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG",
-                                null,
+                                new Speaker.SpeakerPhoto(
+                                        "https://images.ctfassets.net/nn534z2fqr9f/32Ps6pruAEsOag6g88oSMa/c71710c584c7933020e4f96c2382427a/IMG_4618.JPG",
+                                        null
+                                ),
                                 extractLocaleItems(
                                         "Irina Shestak",
                                         null),
@@ -1259,8 +1271,10 @@ public class ContentfulUtils {
                     public Speaker createSpeaker(long id) {
                         return new Speaker(
                                 id,
-                                "https://images.ctfassets.net/nn534z2fqr9f/5cXGxn3cYwwYQu0c6kWYKU/5438788ca0a8c4aa8c1b69a775fc9d7d/Kriger.jpg",
-                                null,
+                                new Speaker.SpeakerPhoto(
+                                        "https://images.ctfassets.net/nn534z2fqr9f/5cXGxn3cYwwYQu0c6kWYKU/5438788ca0a8c4aa8c1b69a775fc9d7d/Kriger.jpg",
+                                        null
+                                ),
                                 extractLocaleItems(
                                         "Sergei Kriger",
                                         "Сергей Кригер"),
@@ -1285,8 +1299,10 @@ public class ContentfulUtils {
                     public Speaker createSpeaker(long id) {
                         return new Speaker(
                                 id,
-                                "",
-                                null,
+                                new Speaker.SpeakerPhoto(
+                                        "",
+                                        null
+                                ),
                                 new ArrayList<>(),
                                 new ArrayList<>(),
                                 new ArrayList<>(),
