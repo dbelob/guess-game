@@ -51,6 +51,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
@@ -2182,12 +2183,15 @@ class ContentfulUtilsTest {
     @DisplayName("needUpdate method tests (Speaker)")
     class NeedUpdateSpeakerTest {
         private Stream<Arguments> data() {
+            ZonedDateTime now = ZonedDateTime.now();
+
             Company company0 = new Company(0, List.of(new LocaleItem("en", "company0")));
-            Company company4 = new Company(4, List.of(new LocaleItem("en", "company4")));
+            Company company5 = new Company(4, List.of(new LocaleItem("en", "company4")));
 
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
             speaker0.setPhotoFileName("photoFileName0");
+            speaker0.setPhotoUpdatedAt(now);
             speaker0.setName(List.of(new LocaleItem("en", "name0")));
             speaker0.setCompanies(List.of(company0));
             speaker0.setBio(List.of(new LocaleItem("en", "bio0")));
@@ -2207,70 +2211,83 @@ class ContentfulUtilsTest {
             Speaker speaker3 = new Speaker();
             speaker3.setId(0);
             speaker3.setPhotoFileName("photoFileName0");
-            speaker3.setName(List.of(new LocaleItem("en", "name3")));
+            speaker3.setPhotoUpdatedAt(now.plus(1, ChronoUnit.DAYS));
 
             Speaker speaker4 = new Speaker();
             speaker4.setId(0);
             speaker4.setPhotoFileName("photoFileName0");
-            speaker4.setName(List.of(new LocaleItem("en", "name0")));
-            speaker4.setCompanies(List.of(company4));
+            speaker4.setPhotoUpdatedAt(now);
+            speaker4.setName(List.of(new LocaleItem("en", "name3")));
 
             Speaker speaker5 = new Speaker();
             speaker5.setId(0);
             speaker5.setPhotoFileName("photoFileName0");
+            speaker5.setPhotoUpdatedAt(now);
             speaker5.setName(List.of(new LocaleItem("en", "name0")));
-            speaker5.setCompanies(List.of(company0));
-            speaker5.setBio(List.of(new LocaleItem("en", "bio5")));
+            speaker5.setCompanies(List.of(company5));
 
             Speaker speaker6 = new Speaker();
             speaker6.setId(0);
             speaker6.setPhotoFileName("photoFileName0");
+            speaker6.setPhotoUpdatedAt(now);
             speaker6.setName(List.of(new LocaleItem("en", "name0")));
             speaker6.setCompanies(List.of(company0));
-            speaker6.setBio(List.of(new LocaleItem("en", "bio0")));
-            speaker6.setTwitter("twitter6");
+            speaker6.setBio(List.of(new LocaleItem("en", "bio5")));
 
             Speaker speaker7 = new Speaker();
             speaker7.setId(0);
             speaker7.setPhotoFileName("photoFileName0");
+            speaker7.setPhotoUpdatedAt(now);
             speaker7.setName(List.of(new LocaleItem("en", "name0")));
             speaker7.setCompanies(List.of(company0));
             speaker7.setBio(List.of(new LocaleItem("en", "bio0")));
-            speaker7.setTwitter("twitter0");
-            speaker7.setGitHub("gitHub7");
+            speaker7.setTwitter("twitter6");
 
             Speaker speaker8 = new Speaker();
             speaker8.setId(0);
             speaker8.setPhotoFileName("photoFileName0");
+            speaker8.setPhotoUpdatedAt(now);
             speaker8.setName(List.of(new LocaleItem("en", "name0")));
             speaker8.setCompanies(List.of(company0));
             speaker8.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker8.setTwitter("twitter0");
-            speaker8.setGitHub("gitHub0");
-            speaker8.setJavaChampion(false);
+            speaker8.setGitHub("gitHub7");
 
             Speaker speaker9 = new Speaker();
             speaker9.setId(0);
             speaker9.setPhotoFileName("photoFileName0");
+            speaker9.setPhotoUpdatedAt(now);
             speaker9.setName(List.of(new LocaleItem("en", "name0")));
             speaker9.setCompanies(List.of(company0));
             speaker9.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker9.setTwitter("twitter0");
             speaker9.setGitHub("gitHub0");
-            speaker9.setJavaChampion(true);
-            speaker9.setMvp(false);
+            speaker9.setJavaChampion(false);
 
             Speaker speaker10 = new Speaker();
             speaker10.setId(0);
             speaker10.setPhotoFileName("photoFileName0");
+            speaker10.setPhotoUpdatedAt(now);
             speaker10.setName(List.of(new LocaleItem("en", "name0")));
             speaker10.setCompanies(List.of(company0));
             speaker10.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker10.setTwitter("twitter0");
             speaker10.setGitHub("gitHub0");
             speaker10.setJavaChampion(true);
-            speaker10.setMvp(true);
-            speaker10.setMvpReconnect(false);
+            speaker10.setMvp(false);
+
+            Speaker speaker11 = new Speaker();
+            speaker11.setId(0);
+            speaker11.setPhotoFileName("photoFileName0");
+            speaker11.setPhotoUpdatedAt(now);
+            speaker11.setName(List.of(new LocaleItem("en", "name0")));
+            speaker11.setCompanies(List.of(company0));
+            speaker11.setBio(List.of(new LocaleItem("en", "bio0")));
+            speaker11.setTwitter("twitter0");
+            speaker11.setGitHub("gitHub0");
+            speaker11.setJavaChampion(true);
+            speaker11.setMvp(true);
+            speaker11.setMvpReconnect(false);
 
             return Stream.of(
                     arguments(speaker0, speaker0, false),
@@ -2283,7 +2300,8 @@ class ContentfulUtilsTest {
                     arguments(speaker0, speaker7, true),
                     arguments(speaker0, speaker8, true),
                     arguments(speaker0, speaker9, true),
-                    arguments(speaker0, speaker10, true)
+                    arguments(speaker0, speaker10, true),
+                    arguments(speaker0, speaker11, true)
             );
         }
 

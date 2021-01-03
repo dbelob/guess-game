@@ -26,6 +26,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
@@ -1253,6 +1255,40 @@ class ConferenceDataLoaderTest {
 
             assertEquals(mvpExpected, targetSpeaker.isMvp());
             assertEquals(mvpReconnectExpected, targetSpeaker.isMvpReconnect());
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillUpdatedAt method tests")
+    class FillUpdatedAtTest {
+        private Speaker createSpeaker(ZonedDateTime photoUpdatedAt) {
+            Speaker speaker = new Speaker();
+            speaker.setPhotoUpdatedAt(photoUpdatedAt);
+
+            return speaker;
+        }
+
+        private Stream<Arguments> data() {
+            final ZonedDateTime NOW = ZonedDateTime.now();
+            final ZonedDateTime YESTERDAY = NOW.minus(1, ChronoUnit.DAYS);
+
+            return Stream.of(
+                    arguments(createSpeaker(null), createSpeaker(null), null),
+                    arguments(createSpeaker(null), createSpeaker(NOW), null),
+                    arguments(createSpeaker(NOW), createSpeaker(null), NOW),
+                    arguments(createSpeaker(NOW), createSpeaker(NOW), NOW),
+                    arguments(createSpeaker(YESTERDAY), createSpeaker(NOW), NOW),
+                    arguments(createSpeaker(NOW), createSpeaker(YESTERDAY), NOW)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillUpdatedAt(Speaker targetSpeaker, Speaker resourceSpeaker, ZonedDateTime expected) {
+            ConferenceDataLoader.fillUpdatedAt(targetSpeaker, resourceSpeaker);
+
+            assertEquals(expected, targetSpeaker.getPhotoUpdatedAt());
         }
     }
 
