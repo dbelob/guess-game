@@ -338,6 +338,7 @@ speakers:
     javaChampion: true
   - id: 19
     photoFileName: 0019.jpg
+    photoUpdatedAt: 2020-02-10T12:17:47.095Z[UTC]
     name:
       - {language: en, text: "Ivan Ponomarev"}
       - {language: ru, text: "Иван Пономарёв"}
@@ -3779,6 +3780,7 @@ speakers:
     twitter: pavelmalyshev
   - id: 267
     photoFileName: 0267.jpg
+    photoUpdatedAt: 2020-06-19T11:08:24.183Z[UTC]
     name:
       - {language: en, text: "Michael Samarin"}
       - {language: ru, text: "Михаил Самарин"}
@@ -7884,10 +7886,9 @@ speakers:
     twitter: rhian_is
   - id: 567
     photoFileName: 0567.jpg
-    photoUpdatedAt: 2020-02-11T13:55:03.405Z[UTC]
+    photoUpdatedAt: 2020-02-21T10:00:56.518Z[UTC]
     name:
       - {language: en, text: "Andrey Lushnikov"}
-      - {language: ru, text: "Андрей Лушников"}
     companyIds: [328]
     bio:
       - {language: en, text: "Former Chrome Puppeteer TL. Currently in Microsoft Playwright team."}
@@ -9177,6 +9178,7 @@ speakers:
     twitter: inadiia
   - id: 658
     photoFileName: 0658.jpg
+    photoUpdatedAt: 2019-03-05T06:50:16.208Z[UTC]
     name:
       - {language: en, text: "Eduardo San Martin Morote"}
     companyIds: [205]
@@ -9197,6 +9199,7 @@ speakers:
     twitter: thewizardlucas
   - id: 660
     photoFileName: 0660.jpg
+    photoUpdatedAt: 2019-03-29T15:07:56.283Z[UTC]
     name:
       - {language: en, text: "Pavel Chertorogov"}
       - {language: ru, text: "Павел Черторогов"}
@@ -9294,6 +9297,7 @@ speakers:
     gitHub: vitallium
   - id: 666
     photoFileName: 0666.jpg
+    photoUpdatedAt: 2020-01-29T16:25:56.234Z[UTC]
     name:
       - {language: en, text: "Ujjwal Sharma"}
     companyIds: [252]
@@ -9344,6 +9348,7 @@ speakers:
     twitter: i_kabirov
   - id: 670
     photoFileName: 0670.jpg
+    photoUpdatedAt: 2019-02-11T14:44:35.898Z[UTC]
     name:
       - {language: en, text: "Artem Kobzar"}
       - {language: ru, text: "Артём Кобзарь"}
@@ -9587,6 +9592,7 @@ speakers:
     twitter: silveira_bells
   - id: 689
     photoFileName: 0689.jpg
+    photoUpdatedAt: 2018-10-15T14:48:03.205Z[UTC]
     name:
       - {language: en, text: "Alexander Korotaev"}
       - {language: ru, text: "Александр Коротаев"}
@@ -9710,6 +9716,7 @@ speakers:
     twitter: gritzko
   - id: 698
     photoFileName: 0698.jpg
+    photoUpdatedAt: 2020-02-26T12:47:41.275Z[UTC]
     name:
       - {language: en, text: "Viktor Vershansky"}
       - {language: ru, text: "Виктор Вершанский"}
@@ -9859,6 +9866,7 @@ speakers:
             сти профессиональных интересов: архитектура и инфраструктура приложений, менеджмент."}
   - id: 709
     photoFileName: 0709.jpg
+    photoUpdatedAt: 2020-02-17T12:34:36.530Z[UTC]
     name:
       - {language: en, text: "Dmitry Bezheckov"}
       - {language: ru, text: "Дмитрий Бежецков"}
@@ -10042,6 +10050,7 @@ speakers:
     gitHub: LeaVerou
   - id: 723
     photoFileName: 0723.jpg
+    photoUpdatedAt: 2018-02-21T10:02:01.939Z[UTC]
     name:
       - {language: en, text: "Andrey Melikhov"}
       - {language: ru, text: "Андрей Мелихов"}
@@ -10145,6 +10154,7 @@ speakers:
     twitter: emilbayes
   - id: 730
     photoFileName: 0730.jpg
+    photoUpdatedAt: 2020-06-01T10:47:56.768Z[UTC]
     name:
       - {language: en, text: "Minko Gechev"}
     companyIds: [217]
@@ -10157,6 +10167,7 @@ speakers:
     gitHub: mgechev
   - id: 731
     photoFileName: 0731.jpg
+    photoUpdatedAt: 2020-06-19T12:20:23.547Z[UTC]
     name:
       - {language: en, text: "Mihail Udalov"}
       - {language: ru, text: "Михаил Удалов"}
@@ -10182,6 +10193,7 @@ speakers:
     gitHub: life777
   - id: 733
     photoFileName: 0733.jpg
+    photoUpdatedAt: 2019-01-30T06:54:59.382Z[UTC]
     name:
       - {language: en, text: "Alexey Zolotykh"}
       - {language: ru, text: "Алексей Золотых"}
@@ -10642,6 +10654,7 @@ speakers:
             ых операторов."}
   - id: 768
     photoFileName: 0768.jpg
+    photoUpdatedAt: 2020-03-13T14:32:10.005Z[UTC]
     name:
       - {language: en, text: "Victor Rusakovich"}
       - {language: ru, text: "Виктор Русакович"}
@@ -14045,6 +14058,7 @@ speakers:
     twitter: eliraneliassy
   - id: 1033
     photoFileName: 1033.jpg
+    photoUpdatedAt: 2019-09-02T14:41:55.063Z[UTC]
     name:
       - {language: en, text: "Nikita Mostovoy"}
       - {language: ru, text: "Никита Мостовой"}
@@ -14633,6 +14647,7 @@ speakers:
     twitter: TC39
   - id: 1079
     photoFileName: 1079.jpg
+    photoUpdatedAt: 2019-07-30T07:03:03.458Z[UTC]
     name:
       - {language: en, text: "Rajat Kumar"}
     companyIds: [358]
@@ -14966,6 +14981,7 @@ speakers:
     twitter: gsaslis
   - id: 1104
     photoFileName: 1104.jpg
+    photoUpdatedAt: 2020-01-15T11:35:25.333Z[UTC]
     name:
       - {language: en, text: "Charlie Gerard"}
     companyIds: [360]
@@ -14977,6 +14993,7 @@ speakers:
     twitter: devdevcharlie
   - id: 1105
     photoFileName: 1105.jpg
+    photoUpdatedAt: 2019-10-28T10:20:09.477Z[UTC]
     name:
       - {language: en, text: "Damian Dulisz"}
     companyIds: [117]
@@ -14989,6 +15006,7 @@ speakers:
     twitter: DamianDulisz
   - id: 1106
     photoFileName: 1106.jpg
+    photoUpdatedAt: 2020-02-10T11:08:56.056Z[UTC]
     name:
       - {language: en, text: "Alexander Rudenko"}
       - {language: ru, text: "Александр Руденко"}
@@ -15002,6 +15020,7 @@ speakers:
             ожений высоконагруженных данными, Cyber Security, ML&AI."}
   - id: 1107
     photoFileName: 1107.jpg
+    photoUpdatedAt: 2020-02-17T10:38:03.431Z[UTC]
     name:
       - {language: en, text: "Maria Shakshina"}
       - {language: ru, text: "Мария Шакшина"}
@@ -15018,6 +15037,7 @@ speakers:
     twitter: Marflenx
   - id: 1108
     photoFileName: 1108.jpg
+    photoUpdatedAt: 2019-11-05T11:20:09.694Z[UTC]
     name:
       - {language: en, text: "David Nolen"}
     companyIds: [304]
@@ -15028,6 +15048,7 @@ speakers:
     twitter: swannodette
   - id: 1109
     photoFileName: 1109.jpg
+    photoUpdatedAt: 2020-01-24T18:37:58.727Z[UTC]
     name:
       - {language: en, text: "Sergey Melyukov"}
       - {language: ru, text: "Сергей Мелюков"}
@@ -15062,6 +15083,7 @@ speakers:
     twitter: fhinkel
   - id: 1112
     photoFileName: 1112.jpg
+    photoUpdatedAt: 2020-02-05T08:51:33.820Z[UTC]
     name:
       - {language: en, text: "Craig Spence"}
     companyIds: [500]
@@ -15072,6 +15094,7 @@ speakers:
     twitter: phenomnominal
   - id: 1113
     photoFileName: 1113.jpg
+    photoUpdatedAt: 2020-02-05T11:54:02.964Z[UTC]
     name:
       - {language: en, text: "Phil Hawksworth"}
     companyIds: [360]
@@ -15086,6 +15109,7 @@ speakers:
     twitter: philhawksworth
   - id: 1114
     photoFileName: 1114.jpg
+    photoUpdatedAt: 2020-01-15T13:28:35.320Z[UTC]
     name:
       - {language: en, text: "Aleksandr Bogachev"}
       - {language: ru, text: "Александр Богачёв"}
@@ -15110,6 +15134,7 @@ speakers:
     twitter: m4d_z
   - id: 1116
     photoFileName: 1116.jpg
+    photoUpdatedAt: 2020-02-21T08:21:09.672Z[UTC]
     name:
       - {language: en, text: "Jacek Broński-Jankowski"}
     companyIds: [197]
@@ -15121,6 +15146,7 @@ speakers:
     twitter: jacekbj
   - id: 1117
     photoFileName: 1117.jpg
+    photoUpdatedAt: 2019-12-06T08:50:46.469Z[UTC]
     name:
       - {language: en, text: "Ken Wheeler"}
     companyIds: [92]
@@ -15151,6 +15177,7 @@ speakers:
     twitter: AlexCulliere
   - id: 1120
     photoFileName: 1120.jpg
+    photoUpdatedAt: 2020-01-15T14:05:17.821Z[UTC]
     name:
       - {language: en, text: "Önder Ceylan"}
     companyIds: [312]
@@ -15187,6 +15214,7 @@ speakers:
     twitter: holtbt
   - id: 1123
     photoFileName: 1123.jpg
+    photoUpdatedAt: 2020-02-25T14:21:52.421Z[UTC]
     name:
       - {language: en, text: "Sergey Fetiskin"}
       - {language: ru, text: "Сергей Фетискин"}
@@ -15201,6 +15229,7 @@ speakers:
     twitter: fetis26
   - id: 1124
     photoFileName: 1124.jpg
+    photoUpdatedAt: 2020-02-20T11:13:12.248Z[UTC]
     name:
       - {language: en, text: "Eunjae Lee"}
     companyIds: [23]
@@ -15211,6 +15240,7 @@ speakers:
     twitter: eunjae_lee
   - id: 1125
     photoFileName: 1125.jpg
+    photoUpdatedAt: 2020-02-20T11:55:17.148Z[UTC]
     name:
       - {language: en, text: "Dario Kondratiuk"}
     companyIds: [347]
@@ -15511,6 +15541,7 @@ speakers:
             лает yet another service mesh и всякое другое. Мотоциклист, линуксоид, гофер."}
   - id: 1150
     photoFileName: 1150.jpg
+    photoUpdatedAt: 2020-02-28T12:04:04.538Z[UTC]
     name:
       - {language: en, text: "Aleksandra Sikora"}
     companyIds: [231]
@@ -15522,6 +15553,7 @@ speakers:
     twitter: aleksandrasays
   - id: 1151
     photoFileName: 1151.jpg
+    photoUpdatedAt: 2020-03-17T12:31:01.827Z[UTC]
     name:
       - {language: en, text: "Andrey Churakov"}
       - {language: ru, text: "Андрей Чураков"}
@@ -15533,6 +15565,7 @@ speakers:
             ой виджетов на досках. Большой опыт работы с текстами."}
   - id: 1152
     photoFileName: 1152.jpg
+    photoUpdatedAt: 2020-03-13T12:37:40.858Z[UTC]
     name:
       - {language: en, text: "Oleg Obidin"}
       - {language: ru, text: "Олег Обидин"}
@@ -16684,6 +16717,7 @@ speakers:
     twitter: rschu
   - id: 1240
     photoFileName: 1240.jpg
+    photoUpdatedAt: 2020-01-27T08:33:24.814Z[UTC]
     name:
       - {language: en, text: "Ruslan Baigunussov"}
       - {language: ru, text: "Руслан Байгунусов"}
@@ -16697,6 +16731,7 @@ speakers:
     twitter: oceandrama
   - id: 1241
     photoFileName: 1241.jpg
+    photoUpdatedAt: 2020-02-14T12:44:59.071Z[UTC]
     name:
       - {language: en, text: "Margarita Roi"}
     companyIds: [364]
@@ -16706,6 +16741,7 @@ speakers:
     twitter: riittagirl
   - id: 1242
     photoFileName: 1242.jpg
+    photoUpdatedAt: 2020-02-10T09:25:25.503Z[UTC]
     name:
       - {language: en, text: "Leonid Vinnichenko"}
       - {language: ru, text: "Леонид Винниченко"}
@@ -16718,6 +16754,7 @@ speakers:
     twitter: vinneyto
   - id: 1243
     photoFileName: 1243.jpg
+    photoUpdatedAt: 2020-02-25T09:59:08.035Z[UTC]
     name:
       - {language: en, text: "Ivan Panchenko"}
       - {language: ru, text: "Иван Панченко"}
@@ -17087,7 +17124,7 @@ speakers:
             \ рамках автомобильной индустрии."}
   - id: 1275
     photoFileName: 1275.jpg
-    photoUpdatedAt: 2020-06-13T16:12:45.293Z[UTC]
+    photoUpdatedAt: 2020-06-17T09:25:06.032Z[UTC]
     name:
       - {language: en, text: "Veronika Samohina"}
       - {language: ru, text: "Вероника Самохина"}
@@ -17097,6 +17134,7 @@ speakers:
             ревноваться и организовывать соревнования."}
   - id: 1276
     photoFileName: 1276.jpg
+    photoUpdatedAt: 2020-06-18T12:56:54.482Z[UTC]
     name:
       - {language: en, text: "Tatyana Leonteva"}
       - {language: ru, text: "Татьяна Леонтьева"}
@@ -17106,6 +17144,7 @@ speakers:
             андой делает новую веб-версию лучше."}
   - id: 1277
     photoFileName: 1277.jpg
+    photoUpdatedAt: 2020-06-19T09:53:43.455Z[UTC]
     name:
       - {language: en, text: "Galina Prokofeva"}
       - {language: ru, text: "Галина Прокофьева"}
@@ -17118,6 +17157,7 @@ speakers:
     twitter: seirina_of_js
   - id: 1278
     photoFileName: 1278.jpg
+    photoUpdatedAt: 2020-06-19T12:31:41.388Z[UTC]
     name:
       - {language: en, text: "Dmitry Kuznetsov"}
       - {language: ru, text: "Дмитрий Кузнецов"}
@@ -17127,6 +17167,7 @@ speakers:
             а."}
   - id: 1279
     photoFileName: 1279.jpg
+    photoUpdatedAt: 2020-06-19T10:55:47.832Z[UTC]
     name:
       - {language: en, text: "Ivan Korolenko"}
       - {language: ru, text: "Иван Короленко"}
@@ -17138,6 +17179,7 @@ speakers:
             , что попадается на глаза, от истории до искусственного интеллекта."
   - id: 1280
     photoFileName: 1280.jpg
+    photoUpdatedAt: 2020-06-19T12:40:51.749Z[UTC]
     name:
       - {language: en, text: "Ivan Glebov"}
       - {language: ru, text: "Иван Глебов"}
@@ -17146,6 +17188,7 @@ speakers:
       - {language: en, text: "Иван руководит развитием core-функциональности продукта Сбербанк ID."}
   - id: 1281
     photoFileName: 1281.jpg
+    photoUpdatedAt: 2020-06-19T15:57:15.521Z[UTC]
     name:
       - {language: en, text: "Maksim Terekhov"}
       - {language: ru, text: "Максим Терехов"}
@@ -17155,6 +17198,7 @@ speakers:
             ается делать продукт Сбербанк ID лучше."}
   - id: 1282
     photoFileName: 1282.jpg
+    photoUpdatedAt: 2020-06-19T15:14:04.992Z[UTC]
     name:
       - {language: en, text: "Dmitriy Valetin"}
       - {language: ru, text: "Дмитрий Валетин"}
@@ -17166,6 +17210,7 @@ speakers:
             \ его чистую архитектуру. Придерживается принципов KISS и SOLID."}
   - id: 1283
     photoFileName: 1283.jpg
+    photoUpdatedAt: 2020-06-19T15:16:50.885Z[UTC]
     name:
       - {language: en, text: "Yaroslava Suspicina"}
       - {language: ru, text: "Ярослава Суспицина"}
@@ -17176,6 +17221,7 @@ speakers:
             ографией и сноубордом."}
   - id: 1284
     photoFileName: 1284.jpg
+    photoUpdatedAt: 2020-06-17T09:22:09.156Z[UTC]
     name:
       - {language: en, text: "Kirill Onufrienko"}
       - {language: ru, text: "Кирилл Онуфриенко"}
@@ -17185,6 +17231,7 @@ speakers:
             зработкой и оптимизацией мобильных и веб приложений."}
   - id: 1285
     photoFileName: 1285.jpg
+    photoUpdatedAt: 2020-06-19T11:52:08.155Z[UTC]
     name:
       - {language: en, text: "Viktor Pasinok"}
       - {language: ru, text: "Виктор Пасынок"}
@@ -17195,6 +17242,7 @@ speakers:
             в Start Fellows в 2017 году."}
   - id: 1286
     photoFileName: 1286.jpg
+    photoUpdatedAt: 2020-06-17T14:45:21.244Z[UTC]
     name:
       - {language: en, text: "Maksim Sosnov"}
       - {language: ru, text: "Максим Соснов"}
@@ -17204,6 +17252,7 @@ speakers:
             ндные соглашения как eslint-правила, знает всё о webpack."}
   - id: 1287
     photoFileName: 1287.jpg
+    photoUpdatedAt: 2020-06-19T11:46:04.617Z[UTC]
     name:
       - {language: en, text: "Dmitriy Smirnov"}
       - {language: ru, text: "Дмитрий Смирнов"}
@@ -17230,6 +17279,7 @@ speakers:
             \ руководством профессора Петра Кузнецова."
   - id: 1289
     photoFileName: 1289.jpg
+    photoUpdatedAt: 2020-06-20T15:16:49.916Z[UTC]
     name:
       - {language: en, text: "Aleksandr Kanunnikov"}
       - {language: ru, text: "Александр Канунников"}
