@@ -1081,7 +1081,7 @@ companies:
       - {language: en, text: Netflix}
   - id: 359
     name:
-      - {language: en, text: "Netifi, Inc"}
+      - {language: en, text: Netifi}
   - id: 360
     name:
       - {language: en, text: Netlify}

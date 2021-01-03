@@ -567,19 +567,18 @@ speakers:
     twitter: gigabel
   - id: 33
     photoFileName: 0033.jpg
+    photoUpdatedAt: 2020-03-13T08:21:46.418Z[UTC]
     name:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
     companyIds: [359]
     bio:
-      - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
-            \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
-            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
-      - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
-            я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
-            \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
-            ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
-            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+      - {language: en, text: "Software engineer. Knows how to live with React both from the outside and inside. Java Champion.\
+            \ Co-author of the book on reactive programming in Spring. He mainly writes RSocket, helps Project Reactor and\
+            \ all related ecosystems. Talks much."}
+      - {language: ru, text: "Инженер ПО. Знает, как жить с реактивщиной как извне, так и внутри. Java Champion. Соавтор к\
+            ниги по реактивному программированию в Spring. В основном пишет RSocket, помогает Project Reactor и всем связа\
+            нным экосистемам. Много говорит."}
     twitter: OlehDokuka
     gitHub: OlegDokuka
     javaChampion: true
@@ -1202,8 +1201,10 @@ speakers:
     gitHub: victorrentea
   - id: 74
     photoFileName: 0074.jpg
+    photoUpdatedAt: 2019-07-30T08:02:32.434Z[UTC]
     name:
       - {language: en, text: "Sebastian Daschner"}
+      - {language: ru, text: "Себастиан Дашнер"}
     companyIds: [250]
     bio:
       - language: en
@@ -1213,9 +1214,9 @@ speakers:
             \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
             \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
             \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
-            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
-            — either by plane or motorbike."
+            \ computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>, his\
+            \ newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — \
+            either by plane or motorbike."
     twitter: DaschnerS
     gitHub: sdaschner
     javaChampion: true
@@ -1332,6 +1333,7 @@ speakers:
     twitter: chegar999
   - id: 82
     photoFileName: 0082.jpg
+    photoUpdatedAt: 2020-03-13T09:24:06.683Z[UTC]
     name:
       - {language: en, text: "Alexander Panchin"}
       - {language: ru, text: "Александр Панчин"}
@@ -3695,6 +3697,7 @@ speakers:
     gitHub: mishunov
   - id: 262
     photoFileName: 0262.jpg
+    photoUpdatedAt: 2020-05-20T07:26:05.657Z[UTC]
     name:
       - {language: en, text: "Ivan Yamshchikov"}
       - {language: ru, text: "Иван Ямщиков"}
@@ -3943,6 +3946,7 @@ speakers:
     twitter: comaqa
   - id: 280
     photoFileName: 0280.jpg
+    photoUpdatedAt: 2020-06-12T15:35:13.160Z[UTC]
     name:
       - {language: en, text: "Dmitriy Yakin"}
       - {language: ru, text: "Дмитрий Якин"}
@@ -4890,6 +4894,7 @@ speakers:
             омышленным программированием в областях, связанных с ГИС-ами и системами 3D-визуализации."}
   - id: 347
     photoFileName: 0347.jpg
+    photoUpdatedAt: 2020-06-04T09:09:46.944Z[UTC]
     name:
       - {language: en, text: "Kirill Tikhonov"}
       - {language: ru, text: "Кирилл Тихонов"}
@@ -6636,25 +6641,20 @@ speakers:
     twitter: dinagozil
   - id: 471
     photoFileName: 0471.jpg
-    photoUpdatedAt: 2019-06-14T12:19:57.453Z[UTC]
+    photoUpdatedAt: 2020-01-16T11:12:02.772Z[UTC]
     name:
       - {language: en, text: "Andrey Akinshin"}
       - {language: ru, text: "Андрей Акиньшин"}
     companyIds: [286]
     bio:
       - {language: en, text: "Andrey's favorite topics are performance and micro-optimizations, and he is the maintainer of\
-            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is a frequent\
-            \ speaker at various events for developers, and he is the program director of the DotNext conference. Andrey is\
-            \ also a PhD in computer science, a silver medalist of ACM ICPC. In his free time, he likes to study science (his\
-            \ primary research interests are mathematical biology and bifurcation theory). Previously, he worked as a postdoctoral\
-            \ research fellow in the Weizmann Institute of Science and as a research scientist in the Sobolev Institute of\
-            \ Mathematics SB RAS."}
+            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is also\
+            \ a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes to\
+            \ study science (his primary research interests are mathematical biology and bifurcation theory)."}
       - {language: ru, text: "Любимые темы Андрея — производительность и микрооптимизации, он также мейнтейнер проекта BenchmarkDotNet\
-            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — частый спикер на различны\
-            х мероприятиях для разработчиков и председатель программного комитета конференции DotNext. Он также к.ф.-м.н.,\
-            \ серебряный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — математ\
-            ическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и научным сотрудником в\
-            \ Институте математики СО РАН."}
+            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — к.ф.-м.н., Microsoft .NET\
+            \ MVP, серебряный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — ма\
+            тематическая биология и теория бифуркаций."}
     twitter: andrey_akinshin
     gitHub: AndreyAkinshin
     mvpReconnect: true
@@ -7518,6 +7518,7 @@ speakers:
     twitter: honorary_bot
   - id: 541
     photoFileName: 0541.jpg
+    photoUpdatedAt: 2019-02-12T12:58:54.595Z[UTC]
     name:
       - {language: en, text: "Vyacheslav Smirnov"}
       - {language: ru, text: "Вячеслав Смирнов"}
@@ -7646,6 +7647,7 @@ speakers:
     twitter: averonesis
   - id: 550
     photoFileName: 0550.jpg
+    photoUpdatedAt: 2018-12-04T13:12:20.552Z[UTC]
     name:
       - {language: en, text: "Anna Chernyshova"}
       - {language: ru, text: "Анна Чернышева"}
@@ -7698,6 +7700,7 @@ speakers:
             ь и писать код, так и вручную проверять функционал и охотиться за особо заковыристыми багами."}
   - id: 554
     photoFileName: 0554.jpg
+    photoUpdatedAt: 2019-10-22T13:38:04.660Z[UTC]
     name:
       - {language: en, text: "Artem Eroshenko"}
       - {language: ru, text: "Артем Ерошенко"}
@@ -7810,6 +7813,7 @@ speakers:
             \ и Fault Pass-тестами."}
   - id: 562
     photoFileName: 0562.jpg
+    photoUpdatedAt: 2019-10-11T07:54:18.418Z[UTC]
     name:
       - {language: en, text: "Anatoliy Korovin"}
       - {language: ru, text: "Анатолий Коровин"}
@@ -7880,6 +7884,7 @@ speakers:
     twitter: rhian_is
   - id: 567
     photoFileName: 0567.jpg
+    photoUpdatedAt: 2020-02-11T13:55:03.405Z[UTC]
     name:
       - {language: en, text: "Andrey Lushnikov"}
       - {language: ru, text: "Андрей Лушников"}
@@ -8428,6 +8433,7 @@ speakers:
             ния различных средств автоматизации тестирования. \n\nС июля 2017 года работает в компании Waves."
   - id: 607
     photoFileName: 0607.jpg
+    photoUpdatedAt: 2020-06-12T08:41:22.901Z[UTC]
     name:
       - {language: en, text: "Igor Balagurov"}
       - {language: ru, text: "Игорь Балагуров"}
@@ -10753,22 +10759,16 @@ speakers:
     twitter: ElizaCamber
   - id: 779
     photoFileName: 0779.jpg
+    photoUpdatedAt: 2020-06-14T11:56:09.511Z[UTC]
     name:
       - {language: en, text: "Eugene Matsyuk"}
       - {language: ru, text: "Евгений Мацюк"}
     companyIds: [635]
     bio:
-      - language: en
-        text: "Android developer since 2012.\nSoftware expert at Kaspersky Lab.\nAuthor of talks and articles, takes part\
-            \ in podcasts about architecture, tests, Dagger2, RxJava, Firebase, processes, and simply about life. Eugene organizes\
-            \ as well as participates in different activities: Kaspersky Android Night, Kaspersky Android Talks, Android Academy\
-            \ Moscow. He even has an architectural CookBook.\n\nHe makes legacy projects get up off their knees (same with\
-            \ himself at 5 AM)."
-      - language: ru
-        text: "Занимается Android-разработкой с 2012 года.\nSoftware expert в Лаборатории Касперского.\nАвтор докладов и с\
-            татей, участник подкастов про архитектуру, тесты, Dagger2, RxJava, Firebase, процессы и просто за жизнь. Орган\
-            изатор и соучастник различных движух (Kaspersky Android Night, Kaspersky Android Talks, Android Academy Moscow).\
-            \ Имеется даже архитектурный CookBook.\n\nПоднимает с колен легаси-проекты и себя в 5 утра."
+      - {language: en, text: "Поднимает с колен разработку и себя в 5 утра. Автор популярных статей и докладов об Android-р\
+            азработке, организатор разных митапов, воркшопов и академий. Автор архитектурного CookBook. Один из авторов фр\
+            еймворка Kaspresso, и один из организаторов AvokadoProject. Верит в светлое будущее с автотестами и обещает ра\
+            й на Земле вместе с ними."}
     twitter: e_matsyuk
   - id: 780
     photoFileName: 0780.jpg
@@ -12489,6 +12489,7 @@ speakers:
     companyIds: [496]
   - id: 911
     photoFileName: 0911.jpg
+    photoUpdatedAt: 2020-02-13T13:33:13.530Z[UTC]
     name:
       - {language: en, text: "Alexandra Svatikova"}
       - {language: ru, text: "Александра Сватикова"}
@@ -14323,6 +14324,7 @@ speakers:
             \ уважает Android, топит за нативные фреймворки."}
   - id: 1053
     photoFileName: 1053.jpg
+    photoUpdatedAt: 2019-10-03T10:37:47.914Z[UTC]
     name:
       - {language: en, text: "Sergey Mahetov"}
       - {language: ru, text: "Сергей Махетов"}
@@ -14339,6 +14341,7 @@ speakers:
             зык — Scala, инструменты Jmeter/Gatling."}
   - id: 1054
     photoFileName: 1054.jpg
+    photoUpdatedAt: 2020-02-07T12:46:41.312Z[UTC]
     name:
       - {language: en, text: "Alexey Tyurin"}
       - {language: ru, text: "Алексей Тюрин"}
@@ -14771,6 +14774,7 @@ speakers:
     twitter: Horusiath
   - id: 1090
     photoFileName: 1090.jpg
+    photoUpdatedAt: 2020-03-03T07:54:18.827Z[UTC]
     name:
       - {language: en, text: "Maria Palagina"}
       - {language: ru, text: "Мария Палагина"}
@@ -14782,6 +14786,7 @@ speakers:
             тве тестировщика, лида QA и QA-менеджера."}
   - id: 1091
     photoFileName: 1091.jpg
+    photoUpdatedAt: 2019-11-27T10:12:59.199Z[UTC]
     name:
       - {language: en, text: "Adam Tornhill"}
     companyIds: [180]
@@ -14792,6 +14797,7 @@ speakers:
     twitter: AdamTornhill
   - id: 1092
     photoFileName: 1092.jpg
+    photoUpdatedAt: 2020-02-10T08:41:33.701Z[UTC]
     name:
       - {language: en, text: "Viktor Orlovsky"}
       - {language: ru, text: "Виктор Орловский"}
@@ -14808,6 +14814,7 @@ speakers:
     gitHub: viclovsky
   - id: 1093
     photoFileName: 1093.jpg
+    photoUpdatedAt: 2020-02-03T12:01:21.771Z[UTC]
     name:
       - {language: en, text: "Ivan Krutov"}
       - {language: ru, text: "Иван Крутов"}
@@ -14821,6 +14828,7 @@ speakers:
             \ параллельно работающих браузеров."}
   - id: 1094
     photoFileName: 1094.jpg
+    photoUpdatedAt: 2020-02-17T12:13:13.763Z[UTC]
     name:
       - {language: en, text: "Andrey Serbin"}
       - {language: ru, text: "Андрей Сербин"}
@@ -14848,6 +14856,7 @@ speakers:
     twitter: alekseidremin
   - id: 1096
     photoFileName: 1096.jpg
+    photoUpdatedAt: 2020-02-07T12:29:54.912Z[UTC]
     name:
       - {language: en, text: "Elliotte Rusty Harold"}
     companyIds: [217]
@@ -14859,6 +14868,7 @@ speakers:
     twitter: elharo
   - id: 1097
     photoFileName: 1097.jpg
+    photoUpdatedAt: 2020-09-16T08:34:56.570Z[UTC]
     name:
       - {language: en, text: "Dmitry Makarenko"}
       - {language: ru, text: "Дмитрий Макаренко"}
@@ -14871,6 +14881,7 @@ speakers:
             \ занимается как ручным тестированием, так и автоматизацией тестов для Android и iOS приложений."}
   - id: 1098
     photoFileName: 1098.jpg
+    photoUpdatedAt: 2020-02-13T09:11:05.432Z[UTC]
     name:
       - {language: en, text: "Sven Ruppert"}
     companyIds: [287]
@@ -14908,6 +14919,7 @@ speakers:
             анием и анализом производительности игры."
   - id: 1101
     photoFileName: 1101.jpg
+    photoUpdatedAt: 2020-02-03T08:04:05.886Z[UTC]
     name:
       - {language: en, text: "Stanislav Vasenkov"}
       - {language: ru, text: "Станислав Васенков"}
@@ -14926,6 +14938,7 @@ speakers:
             \ по QA."
   - id: 1102
     photoFileName: 1102.jpg
+    photoUpdatedAt: 2020-01-17T11:26:01.237Z[UTC]
     name:
       - {language: en, text: "Olga Kuksa"}
       - {language: ru, text: "Ольга Кукса"}
@@ -14940,6 +14953,7 @@ speakers:
             \ Test в Modelus LLC."}
   - id: 1103
     photoFileName: 1103.jpg
+    photoUpdatedAt: 2020-02-14T08:34:15.809Z[UTC]
     name:
       - {language: en, text: "Yorgos Saslis"}
     companyIds: [438]
@@ -15483,6 +15497,7 @@ speakers:
             логии» (РИТ++) и Whale Rider."
   - id: 1149
     photoFileName: 1149.jpg
+    photoUpdatedAt: 2020-03-02T08:57:29.312Z[UTC]
     name:
       - {language: en, text: "Mikhail Shaverdo"}
       - {language: ru, text: "Михаил Шавердо"}
@@ -15530,6 +15545,7 @@ speakers:
     twitter: o_obidin
   - id: 1153
     photoFileName: 1153.jpg
+    photoUpdatedAt: 2020-03-23T10:16:16.339Z[UTC]
     name:
       - {language: en, text: "Tim Baverstock"}
     companyIds: [65]
@@ -16226,6 +16242,7 @@ speakers:
             \ in computer science from MIT. Jing received the NSF CAREER Award in 2016."}
   - id: 1207
     photoFileName: 1207.jpg
+    photoUpdatedAt: 2020-05-13T09:33:31.367Z[UTC]
     name:
       - {language: en, text: "Kevlin Henney"}
     companyIds: [124]
@@ -16233,12 +16250,12 @@ speakers:
       - language: en
         text: "Kevlin is an independent consultant, speaker, writer, and trainer. His development interests include programming\
             \ languages, software architecture, and programming practices, with a particular emphasis on unit testing and\
-            \ reasoning about practices at the team level.\n\nKevlin loves to help and inspire others, share ideas, and ask\
+            \ reasoning about practices at the team level.\nKevlin loves to help and inspire others, share ideas, and ask\
             \ questions. He has helped many teams with their code, culture, and practices, contributing code to companies\
-            \ and open source. He blogs on code and other things and has been a columnist for several magazines and sites\
+            \ and open source. He blogs on code and other things and has been a columnist for a number of magazines and sites\
             \ and has been on far too many committees (it has been said that \"a committee is a cul-de-sac down which ideas\
             \ are lured and then quietly strangled\"). He is co-author of two volumes in the Pattern-Oriented Software Architecture\
-            \ series, editor of 97 Things Every Programmer Should Know, and co-editor of 97 Things Every Java Programmer Should\
+            \ series, editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should\
             \ Know."
     twitter: kevlinhenney
   - id: 1208
@@ -16595,6 +16612,7 @@ speakers:
     twitter: gotheap
   - id: 1235
     photoFileName: 1235.jpg
+    photoUpdatedAt: 2020-05-21T09:16:27.429Z[UTC]
     name:
       - {language: en, text: "Alexander Volkov"}
       - {language: ru, text: "Александр Волков"}
@@ -16878,6 +16896,7 @@ speakers:
             \ местной кофейне."}
   - id: 1258
     photoFileName: 1258.jpg
+    photoUpdatedAt: 2020-06-12T08:51:48.785Z[UTC]
     name:
       - {language: en, text: "Dmitriy Sichev"}
       - {language: ru, text: "Дмитрий Сычев"}
@@ -16887,6 +16906,7 @@ speakers:
             мается разработкой универсального фреймворка для автоматизации, ранее занимался автоматизацией SCADA-системы."}
   - id: 1259
     photoFileName: 1259.jpg
+    photoUpdatedAt: 2020-06-11T11:10:16.546Z[UTC]
     name:
       - {language: en, text: "Yuliya Gaysina"}
       - {language: ru, text: "Юлия Гайсина"}
@@ -16898,6 +16918,7 @@ speakers:
             \ ПО."}
   - id: 1260
     photoFileName: 1260.jpg
+    photoUpdatedAt: 2020-06-12T09:03:55.378Z[UTC]
     name:
       - {language: en, text: "Roman Romanyuk"}
       - {language: ru, text: "Роман Романюк"}
@@ -16910,6 +16931,7 @@ speakers:
             рсе универа решил попробовать себя в роли тестировщика — зашло. Уже 5 лет в Wargaming."}
   - id: 1261
     photoFileName: 1261.jpg
+    photoUpdatedAt: 2020-06-08T08:36:10.518Z[UTC]
     name:
       - {language: en, text: "Sofia Selezneva"}
       - {language: ru, text: "Софья Селезнева"}
@@ -16920,6 +16942,7 @@ speakers:
       - {language: ru, text: "Занимается тестированием более трех лет. В ABBYY отвечает за тестирование продукта TimelinePI."}
   - id: 1262
     photoFileName: 1262.jpg
+    photoUpdatedAt: 2020-06-11T08:51:45.803Z[UTC]
     name:
       - {language: en, text: "Nikolay Konovalov"}
       - {language: ru, text: "Николай Коновалов"}
@@ -16929,6 +16952,7 @@ speakers:
             рмах iOS и Android. Разрабатывает утилиты для тестирования и пишет автотесты."}
   - id: 1263
     photoFileName: 1263.jpg
+    photoUpdatedAt: 2020-06-13T08:34:22.523Z[UTC]
     name:
       - {language: en, text: "Sergey Belesev"}
       - {language: ru, text: "Сергей Белесев"}
@@ -16939,6 +16963,7 @@ speakers:
             \ конвейер."}
   - id: 1264
     photoFileName: 1264.jpg
+    photoUpdatedAt: 2020-06-13T15:31:00.477Z[UTC]
     name:
       - {language: en, text: "Andrey Kuzmin"}
       - {language: ru, text: "Андрей Кузьмин"}
@@ -16949,6 +16974,7 @@ speakers:
             здании проекта интернатуры в компании."}
   - id: 1265
     photoFileName: 1265.jpg
+    photoUpdatedAt: 2020-06-13T15:33:23.903Z[UTC]
     name:
       - {language: en, text: "Alexey Stepanov"}
       - {language: ru, text: "Алексей Степанов"}
@@ -16959,6 +16985,7 @@ speakers:
             ми оптимизации и ускорения тестов за счет параллельного подхода к запуску сценариев."}
   - id: 1266
     photoFileName: 1266.jpg
+    photoUpdatedAt: 2020-06-13T15:25:12.294Z[UTC]
     name:
       - {language: en, text: "Oleg Voronov"}
       - {language: ru, text: "Олег Воронов"}
@@ -16969,6 +16996,7 @@ speakers:
             ных интересов входит системный анализ, разработка программного обеспечения и управление проектами."
   - id: 1267
     photoFileName: 1267.jpg
+    photoUpdatedAt: 2020-06-14T10:25:29.168Z[UTC]
     name:
       - {language: en, text: "Igor Shvakov"}
       - {language: ru, text: "Игорь Шваков"}
@@ -16981,6 +17009,7 @@ speakers:
             \ и автоматизации тестирования, занимается стримовыми разработками."
   - id: 1268
     photoFileName: 1268.jpg
+    photoUpdatedAt: 2020-06-13T15:13:38.631Z[UTC]
     name:
       - {language: en, text: "Stanislav Ivanov"}
       - {language: ru, text: "Станислав Иванов"}
@@ -17026,6 +17055,7 @@ speakers:
     twitter: brwngrldev
   - id: 1272
     photoFileName: 1272.jpg
+    photoUpdatedAt: 2020-06-14T13:52:51.787Z[UTC]
     name:
       - {language: en, text: "Roman Oderov"}
       - {language: ru, text: "Роман Одеров"}
@@ -17035,6 +17065,7 @@ speakers:
             отает над СХД PowerStore."}
   - id: 1273
     photoFileName: 1273.jpg
+    photoUpdatedAt: 2020-06-14T19:52:22.394Z[UTC]
     name:
       - {language: en, text: "Michael Saravaysky"}
       - {language: ru, text: "Михаил Саравайский"}
@@ -17044,6 +17075,7 @@ speakers:
             тся производительностью систем хранения данных. Возит в багажнике лонгборд."}
   - id: 1274
     photoFileName: 1274.jpg
+    photoUpdatedAt: 2020-06-14T08:07:23.273Z[UTC]
     name:
       - {language: en, text: "Kirill Vasilev"}
       - {language: ru, text: "Кирилл Васильев"}
@@ -17055,6 +17087,7 @@ speakers:
             \ рамках автомобильной индустрии."}
   - id: 1275
     photoFileName: 1275.jpg
+    photoUpdatedAt: 2020-06-13T16:12:45.293Z[UTC]
     name:
       - {language: en, text: "Veronika Samohina"}
       - {language: ru, text: "Вероника Самохина"}
