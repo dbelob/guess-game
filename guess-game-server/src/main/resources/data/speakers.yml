@@ -1571,7 +1571,7 @@ speakers:
     name:
       - {language: en, text: "Аlexey Kudryavtsev"}
       - {language: ru, text: "Алексей Кудрявцев"}
-    companyIds: [611]
+    companyIds: [286]
     bio:
       - language: en
         text: "iOS performance engineer at Avito. He likes when users get results faster and beautiful. \n\nAn active member\
@@ -7943,6 +7943,7 @@ speakers:
             атель и автор курсов, автор блога на Medium."}
   - id: 571
     photoFileName: 0571.jpg
+    photoUpdatedAt: 2019-02-22T09:27:03.941Z[UTC]
     name:
       - {language: en, text: "Denis Neklyudov"}
       - {language: ru, text: "Денис Неклюдов"}
@@ -10814,6 +10815,7 @@ speakers:
             омпаний."
   - id: 782
     photoFileName: 0782.jpg
+    photoUpdatedAt: 2020-02-04T13:25:55.080Z[UTC]
     name:
       - {language: en, text: "Stepan Goncharov"}
       - {language: ru, text: "Степан Гончаров"}
@@ -10828,6 +10830,7 @@ speakers:
     gitHub: stepango
   - id: 783
     photoFileName: 0783.jpg
+    photoUpdatedAt: 2020-04-16T11:07:00.887Z[UTC]
     name:
       - {language: en, text: "Konstantin Tskhovrebov"}
       - {language: ru, text: "Константин Цховребов"}
@@ -10883,6 +10886,7 @@ speakers:
     twitter: mauricegavin
   - id: 787
     photoFileName: 0787.jpg
+    photoUpdatedAt: 2019-03-12T14:16:07.619Z[UTC]
     name:
       - {language: en, text: "Anton Davydov"}
       - {language: ru, text: "Антон Давыдов"}
@@ -10976,6 +10980,7 @@ speakers:
             \ HashiСorp;\n- SRE management;\n- company transformation;\n- внедрение DevOps;\n- RnD."
   - id: 793
     photoFileName: 0793.jpg
+    photoUpdatedAt: 2020-05-14T10:14:19.928Z[UTC]
     name:
       - {language: en, text: "Pavel Strelchenko"}
       - {language: ru, text: "Павел Стрельченко"}
@@ -11490,6 +11495,7 @@ speakers:
     twitter: DalooG
   - id: 829
     photoFileName: 0829.jpg
+    photoUpdatedAt: 2020-04-09T09:25:38.058Z[UTC]
     name:
       - {language: en, text: "Kirill Popov"}
       - {language: ru, text: "Кирилл Попов"}
@@ -11647,6 +11653,7 @@ speakers:
     twitter: bwdude
   - id: 841
     photoFileName: 0841.jpg
+    photoUpdatedAt: 2019-02-22T10:02:57.798Z[UTC]
     name:
       - {language: en, text: "Nikolay Ashanin"}
       - {language: ru, text: "Николай Ашанин"}
@@ -11886,6 +11893,7 @@ speakers:
     twitter: eenriquelopez
   - id: 858
     photoFileName: 0858.jpg
+    photoUpdatedAt: 2020-06-08T09:18:09.779Z[UTC]
     name:
       - {language: en, text: "Eugene Saturov"}
       - {language: ru, text: "Евгений Сатуров"}
@@ -12305,6 +12313,7 @@ speakers:
     companyIds: []
   - id: 888
     photoFileName: 0888.jpg
+    photoUpdatedAt: 2019-12-04T13:15:11.854Z[UTC]
     name:
       - {language: en, text: "Matvey Malkov"}
       - {language: ru, text: "Матвей Мальков"}
@@ -15602,6 +15611,7 @@ speakers:
     twitter: shanselman
   - id: 1155
     photoFileName: 1155.jpg
+    photoUpdatedAt: 2020-03-23T09:37:32.151Z[UTC]
     name:
       - {language: en, text: "Aleksei Alekseev"}
       - {language: ru, text: "Алексей Алексеев"}
@@ -15614,6 +15624,7 @@ speakers:
         text: "Разрабатывает под iOS около 3 лет.\r\nВ данный момент участвует в создании голосового помощника «Маруся»."
   - id: 1156
     photoFileName: 1156.jpg
+    photoUpdatedAt: 2019-12-04T12:48:41.653Z[UTC]
     name:
       - {language: en, text: "Asya Sviridenko"}
       - {language: ru, text: "Ася Свириденко"}
@@ -15635,6 +15646,7 @@ speakers:
     twitter: asyakononova
   - id: 1157
     photoFileName: 1157.jpg
+    photoUpdatedAt: 2020-04-14T07:10:12.505Z[UTC]
     name:
       - {language: en, text: "Alexey Khaiminov"}
       - {language: ru, text: "Алексей Хайминов"}
@@ -15654,6 +15666,7 @@ speakers:
             нат Kotlin, DI и делегирования, однако, факультативно с удовольствием слушает истории успеха Flutter/Dart."
   - id: 1158
     photoFileName: 1158.jpg
+    photoUpdatedAt: 2020-04-07T11:40:05.670Z[UTC]
     name:
       - {language: en, text: "Aydar Mukhametzyanov"}
       - {language: ru, text: "Айдар Мухаметзянов"}
@@ -15683,6 +15696,7 @@ speakers:
             \ В свободное время выпекает самые вкусные в мире эклеры."}
   - id: 1160
     photoFileName: 1160.jpg
+    photoUpdatedAt: 2020-04-16T14:42:16.367Z[UTC]
     name:
       - {language: en, text: "Andrey Shikov"}
       - {language: ru, text: "Андрей Шиков"}
@@ -15693,6 +15707,7 @@ speakers:
     twitter: shikasd_
   - id: 1161
     photoFileName: 1161.jpg
+    photoUpdatedAt: 2020-04-08T13:19:34.940Z[UTC]
     name:
       - {language: en, text: "Roman Volkov"}
       - {language: ru, text: "Роман Волков"}
@@ -15717,6 +15732,7 @@ speakers:
     twitter: volkovre
   - id: 1162
     photoFileName: 1162.jpg
+    photoUpdatedAt: 2020-04-07T13:37:50.610Z[UTC]
     name:
       - {language: en, text: "Thomas Ezan"}
     companyIds: [319]
@@ -15726,6 +15742,7 @@ speakers:
     twitter: lethargicpanda
   - id: 1163
     photoFileName: 1163.jpg
+    photoUpdatedAt: 2020-04-16T13:38:03.883Z[UTC]
     name:
       - {language: en, text: "Murad Tataev"}
       - {language: ru, text: "Мурад Татаев"}
@@ -15741,6 +15758,7 @@ speakers:
             м приложений. Мурад ни в коем случае не хакер, однако есть фишечки, которыми он с удовольствием поделится."
   - id: 1164
     photoFileName: 1164.jpg
+    photoUpdatedAt: 2020-04-09T09:35:43.014Z[UTC]
     name:
       - {language: en, text: "Andrey Kulikov"}
       - {language: ru, text: "Андрей Куликов"}
@@ -15755,6 +15773,7 @@ speakers:
     twitter: and_kulikov
   - id: 1165
     photoFileName: 1165.jpg
+    photoUpdatedAt: 2020-04-17T07:15:15.400Z[UTC]
     name:
       - {language: en, text: "Anastasia Soboleva"}
       - {language: ru, text: "Анастасия Соболева"}
@@ -15789,6 +15808,7 @@ speakers:
             \ в последствии приобретённой компанией Oracle."
   - id: 1167
     photoFileName: 1167.jpg
+    photoUpdatedAt: 2020-05-06T14:07:42.127Z[UTC]
     name:
       - {language: en, text: "Maksim Leykin"}
       - {language: ru, text: "Максим Лейкин"}
@@ -15806,6 +15826,7 @@ speakers:
             ет лекции по языку программирования Java и разработке мобильных приложений на платформе Android."
   - id: 1168
     photoFileName: 1168.jpg
+    photoUpdatedAt: 2020-04-27T07:49:43.914Z[UTC]
     name:
       - {language: en, text: "Vladislav Fitz"}
       - {language: ru, text: "Владислав Фиц"}
@@ -15822,6 +15843,7 @@ speakers:
     twitter: VladislavFitc
   - id: 1169
     photoFileName: 1169.jpg
+    photoUpdatedAt: 2020-04-24T08:33:29.873Z[UTC]
     name:
       - {language: en, text: "Andrey Nemtsev"}
       - {language: ru, text: "Андрей Немцев"}
@@ -15834,6 +15856,7 @@ speakers:
             \ разработки для Android и iOS."
   - id: 1170
     photoFileName: 1170.jpg
+    photoUpdatedAt: 2020-04-29T09:34:43.800Z[UTC]
     name:
       - {language: en, text: "Olga Shkryaba"}
       - {language: ru, text: "Ольга Шкряба"}
@@ -15845,6 +15868,7 @@ speakers:
     twitter: OlgaShkryaba
   - id: 1171
     photoFileName: 1171.jpg
+    photoUpdatedAt: 2020-04-29T08:57:20.205Z[UTC]
     name:
       - {language: en, text: "Mikhail Zinov"}
       - {language: ru, text: "Михаил Зинов"}
@@ -15857,6 +15881,7 @@ speakers:
     twitter: zinovmikhail
   - id: 1172
     photoFileName: 1172.jpg
+    photoUpdatedAt: 2020-04-29T11:47:09.140Z[UTC]
     name:
       - {language: en, text: "Ruslan Gumennyi"}
       - {language: ru, text: "Руслан Гуменный"}
@@ -15871,6 +15896,7 @@ speakers:
     twitter: fanruten
   - id: 1173
     photoFileName: 1173.jpg
+    photoUpdatedAt: 2020-05-05T08:25:14.962Z[UTC]
     name:
       - {language: en, text: "Ruslan Kim"}
       - {language: ru, text: "Руслан Ким"}
@@ -16293,6 +16319,7 @@ speakers:
     twitter: kevlinhenney
   - id: 1208
     photoFileName: 1208.jpg
+    photoUpdatedAt: 2020-05-13T15:00:04.232Z[UTC]
     name:
       - {language: en, text: "Vladislav Usachev"}
       - {language: ru, text: "Владислав Усачёв"}
@@ -16305,6 +16332,7 @@ speakers:
     twitter: phoe3nixx
   - id: 1209
     photoFileName: 1209.jpg
+    photoUpdatedAt: 2020-05-12T12:06:28.869Z[UTC]
     name:
       - {language: en, text: "Ash Furrow"}
     companyIds: [52]
@@ -16316,6 +16344,7 @@ speakers:
     twitter: ashfurrow
   - id: 1210
     photoFileName: 1210.jpg
+    photoUpdatedAt: 2020-05-15T13:06:22.934Z[UTC]
     name:
       - {language: en, text: "Aleksey Sukhov"}
       - {language: ru, text: "Алексей Сухов"}
@@ -17056,6 +17085,7 @@ speakers:
             . 10 лет в QA."}
   - id: 1269
     photoFileName: 1269.jpg
+    photoUpdatedAt: 2020-06-11T16:19:50.289Z[UTC]
     name:
       - {language: en, text: "Ben Weiss"}
     companyIds: [217]
@@ -17067,6 +17097,7 @@ speakers:
     twitter: keyboardsurfer
   - id: 1270
     photoFileName: 1270.jpg
+    photoUpdatedAt: 2020-06-11T16:50:53.465Z[UTC]
     name:
       - {language: en, text: "Chet Haase"}
     companyIds: [217]
@@ -17077,6 +17108,7 @@ speakers:
     twitter: chethaase
   - id: 1271
     photoFileName: 1271.jpg
+    photoUpdatedAt: 2020-06-11T15:58:46.322Z[UTC]
     name:
       - {language: en, text: "Annyce Davis"}
     companyIds: [323]
@@ -17179,7 +17211,7 @@ speakers:
             , что попадается на глаза, от истории до искусственного интеллекта."
   - id: 1280
     photoFileName: 1280.jpg
-    photoUpdatedAt: 2020-06-19T12:40:51.749Z[UTC]
+    photoUpdatedAt: 2020-06-19T14:29:31.840Z[UTC]
     name:
       - {language: en, text: "Ivan Glebov"}
       - {language: ru, text: "Иван Глебов"}
@@ -17314,6 +17346,7 @@ speakers:
     twitter: petertretyakov
   - id: 1291
     photoFileName: 1291.jpg
+    photoUpdatedAt: 2020-06-19T14:48:58.900Z[UTC]
     name:
       - {language: en, text: "Maksim Turaev"}
       - {language: ru, text: "Максим Тураев"}
@@ -17323,6 +17356,7 @@ speakers:
             бербанк Онлайн."}
   - id: 1292
     photoFileName: 1292.jpg
+    photoUpdatedAt: 2020-06-21T08:49:59.731Z[UTC]
     name:
       - {language: en, text: "Aleksandr Finoshin"}
       - {language: ru, text: "Александр Финошин"}
@@ -17332,6 +17366,7 @@ speakers:
             боты время занимается футболом."}
   - id: 1293
     photoFileName: 1293.jpg
+    photoUpdatedAt: 2020-06-21T09:06:32.153Z[UTC]
     name:
       - {language: en, text: "Anton Kolichev"}
       - {language: ru, text: "Антон Колычев"}
@@ -17341,6 +17376,7 @@ speakers:
             \ для физических лиц клиентов ПСБ. С 2017 Антон руководит отделом мобильной разработки в ПСБ."}
   - id: 1294
     photoFileName: 1294.jpg
+    photoUpdatedAt: 2019-08-09T12:02:49.092Z[UTC]
     name:
       - {language: en, text: "Alexander Chernyy"}
       - {language: ru, text: "Александр Черный"}
@@ -17353,6 +17389,7 @@ speakers:
     twitter: alexchernyy
   - id: 1295
     photoFileName: 1295.jpg
+    photoUpdatedAt: 2020-06-19T14:37:10.114Z[UTC]
     name:
       - {language: en, text: "Aleksey Levanov"}
       - {language: ru, text: "Алексей Леванов"}
@@ -17364,6 +17401,7 @@ speakers:
             работки Сбербанка. Работает в Сбербанке с 2014 года."}
   - id: 1296
     photoFileName: 1296.jpg
+    photoUpdatedAt: 2020-03-13T11:36:08.513Z[UTC]
     name:
       - {language: en, text: "Petr Kozlov"}
       - {language: ru, text: "Петр Козлов"}
@@ -17378,6 +17416,7 @@ speakers:
     twitter: xd720p
   - id: 1297
     photoFileName: 1297.jpg
+    photoUpdatedAt: 2020-06-18T11:59:19.965Z[UTC]
     name:
       - {language: en, text: "Wesnie Marcelin"}
     companyIds: [253]
@@ -20286,3 +20325,22 @@ speakers:
             \ геоинформационную систему для лесников всей России. Случайно поработал на Министерство Обороны и с тех пор у\
             меет сохранять состояние покоя в любой ситуации. Как-то раз проходил мимо Больших Данных, с тех пор все и заве\
             ртелось. Последние 2,5 года делает мир авиаиндустрии лучше в рамках одной выделенной компании С7."}
+  - id: 1525
+    photoFileName: 0097.jpg
+    photoUpdatedAt: 2019-09-05T12:47:02.447Z[UTC]
+    name:
+      - {language: en, text: "Аlexey Kudryavtsev"}
+      - {language: ru, text: "Алексей Кудрявцев"}
+    companyIds: [611]
+    bio:
+      - language: en
+        text: "iOS performance engineer at Avito. He likes when users get results faster and beautiful. \n\nAn active member\
+            \ of Russian iOS community. Host of AppsCast podcast and cocoa_powder telegram channel. Mobius program committee\
+            \ member since 2018. Periodically make iOS development courses.\n\nAt the free time, he runs and plays on jembe."
+      - language: ru
+        text: "iOS performance engineer в Авито. Любит, чтобы пользователь получал нужный результат максимально быстро и к\
+            расиво.\n\nАктивный участник iOS-сообщества. Ведет подкаст AppsCast и телеграм-канал cocoa_powder. С 2018 года\
+            \ является членом ПК Mobius. Переодически проводит курсы по iOS-разработке.\n\nПомимо программирования занимае\
+            тся бегом, звукорежиссурой и поигрывает на джембе."
+    twitter: west0r
+    gitHub: west0r
