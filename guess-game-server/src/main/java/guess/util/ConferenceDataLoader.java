@@ -623,36 +623,21 @@ public class ConferenceDataLoader {
             } else {
                 // Speaker exists
                 speaker.setId(resourceSpeaker.getId());
-                String sourceUrl = speaker.getPhotoFileName();
-                String destinationFileName = resourceSpeaker.getPhotoFileName();
-                speaker.setPhotoFileName(destinationFileName);
+                String targetPhotoUrl = speaker.getPhotoFileName();
+                String resourcePhotoFileName = resourceSpeaker.getPhotoFileName();
+                speaker.setPhotoFileName(resourcePhotoFileName);
 
                 fillSpeakerTwitter(speaker, resourceSpeaker);
                 fillSpeakerGitHub(speaker, resourceSpeaker);
                 fillSpeakerJavaChampion(speaker, resourceSpeaker);
                 fillSpeakerMvp(speaker, resourceSpeaker);
 
-                ZonedDateTime resourcePhotoUpdatedAt = resourceSpeaker.getPhotoUpdatedAt();
-                ZonedDateTime photoUpdatedAt = speaker.getPhotoUpdatedAt();
-
                 // Update speaker photo
-                if (photoUpdatedAt == null) {
-                    // New updated datetime is null
-                    if (ImageUtils.needUpdate(sourceUrl, String.format("guess-game-web/src/assets/images/speakers/%s", destinationFileName))) {
-                        urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
-                    }
-                } else {
-                    // New updated datetime is not null
-                    if (resourcePhotoUpdatedAt == null) {
-                        // Old updated datetime is null
-                        urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
-                    } else {
-                        // New updated datetime after old
-                        if (photoUpdatedAt.isAfter(resourcePhotoUpdatedAt)) {
-                            urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
-                        }
-                    }
+                if (ContentfulUtils.needPhotoUpdate(speaker.getPhotoUpdatedAt(), resourceSpeaker.getPhotoUpdatedAt(), targetPhotoUrl, resourcePhotoFileName)) {
+                    urlFilenamesToUpdate.add(new UrlFilename(targetPhotoUrl, resourcePhotoFileName));
                 }
+
+                fillUpdatedAt(speaker, resourceSpeaker);
 
                 // Update speaker
                 if (ContentfulUtils.needUpdate(resourceSpeaker, speaker)) {
@@ -732,6 +717,21 @@ public class ConferenceDataLoader {
                     targetSpeaker.setMvpReconnect(false);
                 }
             }
+        }
+    }
+
+    /**
+     * Fills speaker updated datetime.
+     *
+     * @param targetSpeaker   target speaker
+     * @param resourceSpeaker resource speaker
+     */
+    static void fillUpdatedAt(Speaker targetSpeaker, Speaker resourceSpeaker) {
+        ZonedDateTime targetPhotoUpdatedAt = targetSpeaker.getPhotoUpdatedAt();
+        ZonedDateTime resourcePhotoUpdatedAt = resourceSpeaker.getPhotoUpdatedAt();
+
+        if ((targetPhotoUpdatedAt != null) && (resourcePhotoUpdatedAt != null) && (resourcePhotoUpdatedAt.isAfter(targetPhotoUpdatedAt))) {
+            targetSpeaker.setPhotoUpdatedAt(resourcePhotoUpdatedAt);
         }
     }
 

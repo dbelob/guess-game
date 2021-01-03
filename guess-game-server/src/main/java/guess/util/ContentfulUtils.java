@@ -33,6 +33,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.io.IOException;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
@@ -75,6 +76,8 @@ public class ContentfulUtils {
 
     static final String ENTRY_LINK_TYPE = "Entry";
     static final String ASSET_LINK_TYPE = "Asset";
+
+    static final String RESOURCE_PHOTO_FILE_NAME_PATH = "guess-game-web/src/assets/images/speakers/%s";
 
     public enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
@@ -1430,6 +1433,33 @@ public class ContentfulUtils {
                 equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
                 (a.getPlaceId() == b.getPlaceId()) &&
                 equals(a.getTalkIds(), b.getTalkIds()));
+    }
+
+    /**
+     * Indicates the need to update speaker photo.
+     *
+     * @param targetPhotoUpdatedAt   updated datetime of target speaker
+     * @param resourcePhotoUpdatedAt updated datetime of resource speaker
+     * @param targetPhotoUrl         photo URL of target speaker
+     * @param resourcePhotoFileName  photo filename of resource speaker
+     * @return {@code true} if need to update, {@code false} otherwise
+     * @throws IOException if read error occurs
+     */
+    public static boolean needPhotoUpdate(ZonedDateTime targetPhotoUpdatedAt, ZonedDateTime resourcePhotoUpdatedAt,
+                                          String targetPhotoUrl, String resourcePhotoFileName) throws IOException {
+        if (targetPhotoUpdatedAt == null) {
+            // New updated datetime is null
+            return ImageUtils.needUpdate(targetPhotoUrl, String.format(RESOURCE_PHOTO_FILE_NAME_PATH, resourcePhotoFileName));
+        } else {
+            // New updated datetime is not null
+            if (resourcePhotoUpdatedAt == null) {
+                // Old updated datetime is null
+                return true;
+            } else {
+                // New updated datetime after old
+                return targetPhotoUpdatedAt.isAfter(resourcePhotoUpdatedAt);
+            }
+        }
     }
 
     private static <T> boolean equals(T a, T b) {
