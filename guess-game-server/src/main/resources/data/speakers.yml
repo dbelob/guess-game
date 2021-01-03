@@ -1568,22 +1568,14 @@ speakers:
     twitter: andrei_kogun
   - id: 97
     photoFileName: 0097.jpg
+    photoUpdatedAt: 2016-09-13T13:24:39.237Z[UTC]
     name:
-      - {language: en, text: "Аlexey Kudryavtsev"}
+      - {language: en, text: "Alexey Kudravtsev"}
       - {language: ru, text: "Алексей Кудрявцев"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "iOS performance engineer at Avito. He likes when users get results faster and beautiful. \n\nAn active member\
-            \ of Russian iOS community. Host of AppsCast podcast and cocoa_powder telegram channel. Mobius program committee\
-            \ member since 2018. Periodically make iOS development courses.\n\nAt the free time, he runs and plays on jembe."
-      - language: ru
-        text: "iOS performance engineer в Авито. Любит, чтобы пользователь получал нужный результат максимально быстро и к\
-            расиво.\n\nАктивный участник iOS-сообщества. Ведет подкаст AppsCast и телеграм-канал cocoa_powder. С 2018 года\
-            \ является членом ПК Mobius. Переодически проводит курсы по iOS-разработке.\n\nПомимо программирования занимае\
-            тся бегом, звукорежиссурой и поигрывает на джембе."
-    twitter: west0r
-    gitHub: west0r
+      - {language: en, text: "Окончил математико-механический факультет СПбГУ. В JetBrains занимается программированием IntelliJ\
+            \ IDEA лет 10."}
   - id: 98
     photoFileName: 0098.jpg
     name:
