@@ -45,6 +45,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.LocalDate;
@@ -2530,6 +2531,48 @@ class ContentfulUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("needPhotoUpdate method tests")
+    class NeedPhotoUpdateTest {
+        private Stream<Arguments> data() {
+            final ZonedDateTime NOW = ZonedDateTime.now();
+            final ZonedDateTime YESTERDAY = NOW.minus(1, ChronoUnit.DAYS);
+            final String VALID_URL = "https://valid.com";
+            final String PHOTO_FILE_NAME = "0000.jpg";
+
+            return Stream.of(
+                    arguments(null, null, VALID_URL, PHOTO_FILE_NAME, true, true),
+                    arguments(null, NOW, VALID_URL, PHOTO_FILE_NAME, true, true),
+                    arguments(null, null, VALID_URL, PHOTO_FILE_NAME, false, false),
+                    arguments(null, NOW, VALID_URL, PHOTO_FILE_NAME, false, false),
+                    arguments(NOW, null, VALID_URL, PHOTO_FILE_NAME, true, true),
+                    arguments(NOW, null, VALID_URL, PHOTO_FILE_NAME, false, true),
+                    arguments(NOW, NOW, VALID_URL, PHOTO_FILE_NAME, true, false),
+                    arguments(NOW, NOW, VALID_URL, PHOTO_FILE_NAME, false, false),
+                    arguments(NOW, YESTERDAY, VALID_URL, PHOTO_FILE_NAME, true, true),
+                    arguments(NOW, YESTERDAY, VALID_URL, PHOTO_FILE_NAME, false, true),
+                    arguments(YESTERDAY, NOW, VALID_URL, PHOTO_FILE_NAME, true, false),
+                    arguments(YESTERDAY, NOW, VALID_URL, PHOTO_FILE_NAME, false, false)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void needPhotoUpdate(ZonedDateTime targetPhotoUpdatedAt, ZonedDateTime resourcePhotoUpdatedAt,
+                             String targetPhotoUrl, String resourcePhotoFileName, boolean needUpdate, boolean expected) throws IOException {
+            new MockUp<ImageUtils>() {
+                @Mock
+                boolean needUpdate(String targetPhotoUrl, String resourceFileName) throws IOException {
+                    return needUpdate;
+                }
+            };
+
+            assertEquals(expected, ContentfulUtils.needPhotoUpdate(targetPhotoUpdatedAt, resourcePhotoUpdatedAt,
+                    targetPhotoUrl, resourcePhotoFileName));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("equals method tests")
     class EqualsTest {
         private Stream<Arguments> data() {
@@ -2550,7 +2593,7 @@ class ContentfulUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void needUpdate(List<String> a, List<String> b, boolean expected) {
+        void equals(List<String> a, List<String> b, boolean expected) {
             assertEquals(expected, ContentfulUtils.equals(a, b));
         }
     }
