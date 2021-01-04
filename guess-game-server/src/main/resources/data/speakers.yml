@@ -5758,6 +5758,7 @@ speakers:
     mvp: true
   - id: 405
     photoFileName: 0405.jpg
+    photoUpdatedAt: 2018-09-18T09:50:16.414Z[UTC]
     name:
       - {language: en, text: "Christophe Nasarre-Soulier"}
     companyIds: [121]
@@ -5871,6 +5872,7 @@ speakers:
     twitter: sdrapkin
   - id: 413
     photoFileName: 0413.jpg
+    photoUpdatedAt: 2019-12-16T13:46:32.472Z[UTC]
     name:
       - {language: en, text: "Maxim Arshinov"}
       - {language: ru, text: "Максим Аршинов"}
@@ -6070,6 +6072,7 @@ speakers:
     twitter: akarpov89
   - id: 426
     photoFileName: 0426.jpg
+    photoUpdatedAt: 2019-04-17T09:12:23.677Z[UTC]
     name:
       - {language: en, text: "Andrey Dyatlov"}
       - {language: ru, text: "Андрей Дятлов"}
@@ -6137,6 +6140,7 @@ speakers:
     mvp: true
   - id: 431
     photoFileName: 0431.jpg
+    photoUpdatedAt: 2018-09-18T09:28:55.548Z[UTC]
     name:
       - {language: en, text: "Egor Bogatov"}
       - {language: ru, text: "Егор Богатов"}
@@ -6149,6 +6153,7 @@ speakers:
     twitter: EgorBo
   - id: 432
     photoFileName: 0432.jpg
+    photoUpdatedAt: 2018-10-05T12:51:23.684Z[UTC]
     name:
       - {language: en, text: "Vladimir Khorikov"}
       - {language: ru, text: "Владимир Хориков"}
@@ -6330,6 +6335,7 @@ speakers:
             раснодара, Екатеринбурга и Казани."
   - id: 445
     photoFileName: 0445.jpg
+    photoUpdatedAt: 2020-11-05T14:24:44.769Z[UTC]
     name:
       - {language: en, text: "Sergey Bykov"}
     companyIds: [517]
@@ -6467,6 +6473,7 @@ speakers:
             асштабируемых микросервисных приложений с минимальным временем простоя."}
   - id: 455
     photoFileName: 0455.jpg
+    photoUpdatedAt: 2020-09-25T11:44:40.794Z[UTC]
     name:
       - {language: en, text: "Maarten Balliauw"}
     companyIds: [286]
@@ -6942,6 +6949,7 @@ speakers:
     mvp: true
   - id: 484
     photoFileName: 0484.jpg
+    photoUpdatedAt: 2019-06-14T12:21:46.580Z[UTC]
     name:
       - {language: en, text: "Igor Labutin"}
       - {language: ru, text: "Игорь Лабутин"}
@@ -7020,6 +7028,7 @@ speakers:
     twitter: dbeylkhanov
   - id: 489
     photoFileName: 0489.jpg
+    photoUpdatedAt: 2020-11-19T08:57:00.187Z[UTC]
     name:
       - {language: en, text: "Mikhail Filippov"}
       - {language: ru, text: "Михаил Филиппов"}
@@ -7331,6 +7340,7 @@ speakers:
     companyIds: [665]
   - id: 517
     photoFileName: 0517.jpg
+    photoUpdatedAt: 2019-03-04T06:32:08.853Z[UTC]
     name:
       - {language: en, text: "Yulia Tsisyk"}
       - {language: ru, text: "Юлия Цисык"}
@@ -13905,6 +13915,7 @@ speakers:
             \ Extensions (в компании), а также стартапит в IoT и .NET Core."
   - id: 1012
     photoFileName: 1012.jpg
+    photoUpdatedAt: 2020-09-21T07:38:20.314Z[UTC]
     name:
       - {language: en, text: "Marco De Sanctis"}
     companyIds: [95]
@@ -20054,6 +20065,7 @@ speakers:
     twitter: rix0rrr
   - id: 1480
     photoFileName: 1480.jpg
+    photoUpdatedAt: 2020-09-28T09:26:04.526Z[UTC]
     name:
       - {language: en, text: "Miguel de Icaza"}
     companyIds: [328]
@@ -20065,6 +20077,7 @@ speakers:
     gitHub: migueldeicaza
   - id: 1481
     photoFileName: 1481.jpg
+    photoUpdatedAt: 2020-09-29T09:26:52.714Z[UTC]
     name:
       - {language: en, text: "Bjørn Einar Bjartnes"}
     companyIds: [369]
@@ -20075,6 +20088,7 @@ speakers:
     twitter: bjartnes
   - id: 1482
     photoFileName: 1482.jpg
+    photoUpdatedAt: 2020-11-30T07:41:44.470Z[UTC]
     name:
       - {language: en, text: "Pavel Kulbida"}
       - {language: ru, text: "Павел Кульбида"}
@@ -20087,6 +20101,7 @@ speakers:
             ганизатор OmsDotNet — сообщества .NET-разработчиков в Омске."}
   - id: 1483
     photoFileName: 1483.jpg
+    photoUpdatedAt: 2020-09-15T14:16:55.314Z[UTC]
     name:
       - {language: en, text: "Aaron Stannard"}
     companyIds: [398]
@@ -20096,6 +20111,7 @@ speakers:
     twitter: Aaronontheweb
   - id: 1484
     photoFileName: 1484.jpg
+    photoUpdatedAt: 2020-09-28T07:22:19.058Z[UTC]
     name:
       - {language: en, text: "Jared Parsons"}
     companyIds: [328]
@@ -20106,6 +20122,7 @@ speakers:
     gitHub: jaredpar
   - id: 1485
     photoFileName: 1485.jpg
+    photoUpdatedAt: 2020-10-16T12:20:10.215Z[UTC]
     name:
       - {language: en, text: "Artem Akulyakov"}
       - {language: ru, text: "Артём Акуляков"}
@@ -20119,6 +20136,7 @@ speakers:
             щами красноярское  ИТ-сообщество Dev2Dev."}
   - id: 1486
     photoFileName: 1486.jpg
+    photoUpdatedAt: 2020-09-25T14:50:37.717Z[UTC]
     name:
       - {language: en, text: "Maoni Stephens"}
     companyIds: [328]
@@ -20128,6 +20146,7 @@ speakers:
     twitter: maoni0
   - id: 1487
     photoFileName: 1487.jpg
+    photoUpdatedAt: 2020-09-29T12:19:33.191Z[UTC]
     name:
       - {language: en, text: "Rustam Salimzibarov"}
       - {language: ru, text: "Рустам Салимзибаров"}
@@ -20139,6 +20158,7 @@ speakers:
             ректора по разработкам, все это время разрабатывал на .NET."}
   - id: 1488
     photoFileName: 1488.jpg
+    photoUpdatedAt: 2020-09-29T12:30:46.212Z[UTC]
     name:
       - {language: en, text: "Aleksey Pozdeev"}
       - {language: ru, text: "Алексей Поздеев"}
@@ -20152,6 +20172,7 @@ speakers:
             остью поделится своим опытом с другими разработчиками."}
   - id: 1489
     photoFileName: 1489.jpg
+    photoUpdatedAt: 2020-09-25T15:10:06.254Z[UTC]
     name:
       - {language: en, text: "Bartosz Adamczewski"}
     companyIds: [469]
@@ -20163,6 +20184,7 @@ speakers:
     twitter: badamczewski01
   - id: 1490
     photoFileName: 1490.jpg
+    photoUpdatedAt: 2020-10-29T09:20:52.663Z[UTC]
     name:
       - {language: en, text: "Andrey Tsvettsikh"}
       - {language: ru, text: "Андрей Цветцих"}
@@ -20176,6 +20198,7 @@ speakers:
             р и паттернов проектирования на практике."}
   - id: 1491
     photoFileName: 1491.jpg
+    photoUpdatedAt: 2020-09-02T14:24:34.855Z[UTC]
     name:
       - {language: en, text: "Mads Torgersen"}
     companyIds: [328]
@@ -20184,6 +20207,7 @@ speakers:
     twitter: MadsTorgersen
   - id: 1492
     photoFileName: 1492.jpg
+    photoUpdatedAt: 2020-10-14T07:57:37.930Z[UTC]
     name:
       - {language: en, text: "Martin Ullrich"}
     companyIds: [528]
@@ -20198,6 +20222,7 @@ speakers:
     mvp: true
   - id: 1493
     photoFileName: 1493.jpg
+    photoUpdatedAt: 2020-11-11T10:00:46.891Z[UTC]
     name:
       - {language: en, text: "Aleksey Zimarev"}
       - {language: ru, text: "Алексей Зимарев"}
@@ -20218,6 +20243,7 @@ speakers:
     twitter: Zimareff
   - id: 1494
     photoFileName: 1494.jpg
+    photoUpdatedAt: 2020-10-08T12:58:23.678Z[UTC]
     name:
       - {language: en, text: "Rival Abdrakhmanov"}
       - {language: ru, text: "Риваль Абдрахманов"}
@@ -20230,6 +20256,7 @@ speakers:
     twitter: rafaelldi
   - id: 1495
     photoFileName: 1495.jpg
+    photoUpdatedAt: 2020-11-30T08:22:46.922Z[UTC]
     name:
       - {language: en, text: "Alexey Chirkin"}
       - {language: ru, text: "Алексей Чиркин"}
@@ -20244,6 +20271,7 @@ speakers:
             нователь SamDotNet Community."}
   - id: 1496
     photoFileName: 1496.jpg
+    photoUpdatedAt: 2020-11-30T08:40:58.458Z[UTC]
     name:
       - {language: en, text: "Sergey Buyanov"}
       - {language: ru, text: "Сергей Буянов"}
@@ -20262,6 +20290,7 @@ speakers:
     mvp: true
   - id: 1497
     photoFileName: 1497.jpg
+    photoUpdatedAt: 2020-12-01T18:30:23.820Z[UTC]
     name:
       - {language: en, text: "Maxim Sustretov"}
       - {language: ru, text: "Максим Сустретов"}
