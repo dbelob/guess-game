@@ -4142,6 +4142,7 @@ speakers:
     twitter: AlexeyZhukov8
   - id: 291
     photoFileName: 0291.jpg
+    photoUpdatedAt: 2018-02-19T11:07:40.204Z[UTC]
     name:
       - {language: en, text: "Artur Vasilov"}
       - {language: ru, text: "Артур Василов"}
@@ -4216,6 +4217,7 @@ speakers:
     gitHub: nevoroman
   - id: 296
     photoFileName: 0296.jpg
+    photoUpdatedAt: 2018-10-25T10:58:44.334Z[UTC]
     name:
       - {language: en, text: "Sergey Ryabov"}
       - {language: ru, text: "Сергей Рябов"}
@@ -7681,6 +7683,7 @@ speakers:
             а selenium2.ru, один из разработчиков инструмента Selenium WebDriver."
   - id: 548
     photoFileName: 0548.jpg
+    photoUpdatedAt: 2020-10-01T12:09:39.494Z[UTC]
     name:
       - {language: en, text: "Ekaterina Bateeva"}
       - {language: ru, text: "Екатерина Батеева"}
@@ -10843,10 +10846,17 @@ speakers:
       - {language: ru, text: "Евгений Мацюк"}
     companyIds: [635]
     bio:
-      - {language: en, text: "Поднимает с колен разработку и себя в 5 утра. Автор популярных статей и докладов об Android-р\
-            азработке, организатор разных митапов, воркшопов и академий. Автор архитектурного CookBook. Один из авторов фр\
-            еймворка Kaspresso, и один из организаторов AvokadoProject. Верит в светлое будущее с автотестами и обещает ра\
-            й на Земле вместе с ними."}
+      - language: en
+        text: "Android developer since 2012.\nSoftware expert at Kaspersky Lab.\nAuthor of talks and articles, takes part\
+            \ in podcasts about architecture, tests, Dagger2, RxJava, Firebase, processes, and simply about life. Eugene organizes\
+            \ as well as participates in different activities: Kaspersky Android Night, Kaspersky Android Talks, Android Academy\
+            \ Moscow. He even has an architectural CookBook.\n\nHe makes legacy projects get up off their knees (same with\
+            \ himself at 5 AM)."
+      - language: ru
+        text: "Занимается Android-разработкой с 2012 года.\nSoftware expert в Лаборатории Касперского.\nАвтор докладов и с\
+            татей, участник подкастов про архитектуру, тесты, Dagger2, RxJava, Firebase, процессы и просто за жизнь. Орган\
+            изатор и соучастник различных движух (Kaspersky Android Night, Kaspersky Android Talks, Android Academy Moscow).\
+            \ Имеется даже архитектурный CookBook.\n\nПоднимает с колен легаси-проекты и себя в 5 утра."
     twitter: e_matsyuk
   - id: 780
     photoFileName: 0780.jpg
@@ -10910,6 +10920,7 @@ speakers:
     twitter: terrakok
   - id: 784
     photoFileName: 0784.jpg
+    photoUpdatedAt: 2020-10-09T11:10:10.735Z[UTC]
     name:
       - {language: en, text: "Kirill Rozov"}
       - {language: ru, text: "Кирилл Розов"}
@@ -11513,6 +11524,7 @@ speakers:
     twitter: leonspok
   - id: 826
     photoFileName: 0826.jpg
+    photoUpdatedAt: 2018-11-02T10:16:04.428Z[UTC]
     name:
       - {language: en, text: "Ilya Bogin"}
       - {language: ru, text: "Илья Богин"}
@@ -11704,6 +11716,7 @@ speakers:
             \ Senior iOS-разработчиком в Samsung."}
   - id: 840
     photoFileName: 0840.jpg
+    photoUpdatedAt: 2020-11-04T08:08:49.262Z[UTC]
     name:
       - {language: en, text: "Anton Dudakov"}
       - {language: ru, text: "Антон Дудаков"}
@@ -11874,6 +11887,7 @@ speakers:
     gitHub: vani2
   - id: 852
     photoFileName: 0852.jpg
+    photoUpdatedAt: 2020-10-09T09:43:19.418Z[UTC]
     name:
       - {language: en, text: "Vladimir Ivanov"}
       - {language: ru, text: "Владимир Иванов"}
@@ -11959,7 +11973,7 @@ speakers:
     photoFileName: 0858.jpg
     photoUpdatedAt: 2020-10-12T09:38:27.774Z[UTC]
     name:
-      - {language: en, text: "Evgeny Saturov"}
+      - {language: en, text: "Eugene Saturov"}
       - {language: ru, text: "Евгений Сатуров"}
     companyIds: [506]
     bio:
@@ -12866,6 +12880,7 @@ speakers:
     twitter: anastasiak2512
   - id: 931
     photoFileName: 0931.jpg
+    photoUpdatedAt: 2019-10-03T14:59:59.995Z[UTC]
     name:
       - {language: en, text: "Aleksandr Denisov"}
       - {language: ru, text: "Александр Денисов"}
@@ -14677,6 +14692,7 @@ speakers:
     gitHub: ptiz
   - id: 1075
     photoFileName: 1075.jpg
+    photoUpdatedAt: 2020-10-26T15:08:40.722Z[UTC]
     name:
       - {language: en, text: "Sergey Boishtian"}
       - {language: ru, text: "Сергей Боиштян"}
@@ -18392,6 +18408,7 @@ speakers:
     twitter: ankryazh
   - id: 1361
     photoFileName: 1361.jpg
+    photoUpdatedAt: 2020-11-10T15:41:21.377Z[UTC]
     name:
       - {language: en, text: "Nikolay Nesterov"}
       - {language: ru, text: "Николай Нестеров"}
@@ -18404,6 +18421,7 @@ speakers:
             но. Иногда то, что не нужно."
   - id: 1362
     photoFileName: 1362.jpg
+    photoUpdatedAt: 2020-11-05T14:04:15.906Z[UTC]
     name:
       - {language: en, text: "Alexander Gazarov"}
       - {language: ru, text: "Александр Газаров"}
@@ -18417,6 +18435,7 @@ speakers:
             \ новых подходов для применения их на благо."}
   - id: 1364
     photoFileName: 1364.jpg
+    photoUpdatedAt: 2020-10-09T09:57:38.727Z[UTC]
     name:
       - {language: en, text: "Anna Zharkova"}
       - {language: ru, text: "Анна Жаркова"}
@@ -18436,6 +18455,7 @@ speakers:
     twitter: anioutkajarkova
   - id: 1365
     photoFileName: 1365.jpg
+    photoUpdatedAt: 2020-10-26T15:16:50.141Z[UTC]
     name:
       - {language: en, text: "Aleksandr Sychev"}
       - {language: ru, text: "Александр Сычев"}
@@ -18451,6 +18471,7 @@ speakers:
             олы разработки Сбера. Проходит обучение по программе MBA."}
   - id: 1366
     photoFileName: 1366.jpg
+    photoUpdatedAt: 2020-10-26T07:48:44.197Z[UTC]
     name:
       - {language: en, text: "Svetlana Krivosheeva"}
       - {language: ru, text: "Светлана Кривошеева"}
@@ -18465,6 +18486,7 @@ speakers:
     gitHub: sveta-k13
   - id: 1367
     photoFileName: 1367.jpg
+    photoUpdatedAt: 2020-10-06T08:22:56.526Z[UTC]
     name:
       - {language: en, text: "Anton Shilov"}
       - {language: ru, text: "Антон Шилов"}
@@ -18477,6 +18499,7 @@ speakers:
     twitter: antonshilov_
   - id: 1368
     photoFileName: 1368.jpg
+    photoUpdatedAt: 2020-11-05T14:18:35.534Z[UTC]
     name:
       - {language: en, text: "Roman Golofaev"}
       - {language: ru, text: "Роман Голофаев"}
@@ -18489,6 +18512,7 @@ speakers:
             \ Райффайзен."}
   - id: 1369
     photoFileName: 1369.jpg
+    photoUpdatedAt: 2020-11-05T14:06:35.057Z[UTC]
     name:
       - {language: en, text: "Alexandr Sosorev"}
       - {language: ru, text: "Александр  Сосорев"}
@@ -18502,6 +18526,7 @@ speakers:
             ды написал «плохой» legacy-код, но теперь точно знает, как это исправить."}
   - id: 1370
     photoFileName: 1370.jpg
+    photoUpdatedAt: 2020-10-12T09:18:09.478Z[UTC]
     name:
       - {language: en, text: "Pavel Borzikov"}
       - {language: ru, text: "Павел Борзиков"}
@@ -18513,6 +18538,7 @@ speakers:
             нке."}
   - id: 1371
     photoFileName: 1371.jpg
+    photoUpdatedAt: 2020-10-09T07:58:31.777Z[UTC]
     name:
       - {language: en, text: "Georgy Gigauri"}
       - {language: ru, text: "Георгий Гигаури"}
@@ -18524,6 +18550,7 @@ speakers:
             тельно user experience. Успел поработать в крупных медийных, инвестиционных компаниях и стартапах."}
   - id: 1372
     photoFileName: 1372.jpg
+    photoUpdatedAt: 2020-10-09T09:23:41.899Z[UTC]
     name:
       - {language: en, text: "Platon Malyugin"}
       - {language: ru, text: "Платон Малюгин"}
@@ -18542,6 +18569,7 @@ speakers:
     twitter: maluginp
   - id: 1373
     photoFileName: 1373.jpg
+    photoUpdatedAt: 2020-09-18T11:41:50.443Z[UTC]
     name:
       - {language: en, text: "Mikhail Zotyev"}
       - {language: ru, text: "Михаил Зотьев"}
@@ -18556,6 +18584,7 @@ speakers:
     twitter: MbIXJkee
   - id: 1374
     photoFileName: 1374.jpg
+    photoUpdatedAt: 2020-10-01T12:17:49.224Z[UTC]
     name:
       - {language: en, text: "Alexey Rasskazov"}
       - {language: ru, text: "Алексей Рассказов"}
@@ -18568,6 +18597,7 @@ speakers:
             ованию в Тинькофф."}
   - id: 1375
     photoFileName: 1375.jpg
+    photoUpdatedAt: 2020-09-25T13:08:28.071Z[UTC]
     name:
       - {language: en, text: "Mikhail Kurenkov"}
       - {language: ru, text: "Михаил Куренков"}
@@ -18580,6 +18610,7 @@ speakers:
     twitter: sPolispastom
   - id: 1376
     photoFileName: 1376.jpg
+    photoUpdatedAt: 2020-09-28T07:42:10.948Z[UTC]
     name:
       - {language: en, text: "Alexander Lavrinenko"}
       - {language: ru, text: "Александр Лавриненко"}
@@ -18598,6 +18629,7 @@ speakers:
     twitter: aleksmobiledev
   - id: 1377
     photoFileName: 1377.jpg
+    photoUpdatedAt: 2020-09-25T09:28:11.276Z[UTC]
     name:
       - {language: en, text: "Alexey Bykov"}
       - {language: ru, text: "Алексей Быков"}
@@ -18614,6 +18646,7 @@ speakers:
     twitter: nonewsss
   - id: 1378
     photoFileName: 1378.jpg
+    photoUpdatedAt: 2020-10-12T08:26:51.245Z[UTC]
     name:
       - {language: en, text: "Oleg Godovykh"}
       - {language: ru, text: "Олег Годовых"}
@@ -18628,6 +18661,7 @@ speakers:
     twitter: 0leGG
   - id: 1379
     photoFileName: 1379.jpg
+    photoUpdatedAt: 2020-10-05T09:37:43.965Z[UTC]
     name:
       - {language: en, text: "Vadim Belotitsky"}
       - {language: ru, text: "Вадим Белотицкий"}
@@ -18642,6 +18676,7 @@ speakers:
             ебя в iOS-разработке.\nСейчас iOS-тимлид в супераппе Яндекс Go."
   - id: 1380
     photoFileName: 1380.jpg
+    photoUpdatedAt: 2020-10-01T12:20:45.957Z[UTC]
     name:
       - {language: en, text: "Igor Vedeneev"}
       - {language: ru, text: "Игорь Веденеев"}
@@ -18655,6 +18690,7 @@ speakers:
     twitter: getmaxx8848
   - id: 1381
     photoFileName: 1381.jpg
+    photoUpdatedAt: 2020-10-02T09:58:25.545Z[UTC]
     name:
       - {language: en, text: "Sergey Mitrofanov"}
       - {language: ru, text: "Сергей Митрофанов"}
@@ -18675,6 +18711,7 @@ speakers:
             фингом и MTB."
   - id: 1382
     photoFileName: 1382.jpg
+    photoUpdatedAt: 2020-10-02T10:00:46.409Z[UTC]
     name:
       - {language: en, text: "Vladimir Shutov"}
       - {language: ru, text: "Владимир Шутов"}
@@ -18692,6 +18729,7 @@ speakers:
             ами Владимира много хардкорных проектов и каждый из них греет душу."
   - id: 1383
     photoFileName: 1383.jpg
+    photoUpdatedAt: 2020-10-09T09:10:58.754Z[UTC]
     name:
       - {language: en, text: "Svetoslav Karasev"}
       - {language: ru, text: "Светослав Карасев"}
