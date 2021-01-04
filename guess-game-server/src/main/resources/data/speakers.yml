@@ -5055,6 +5055,7 @@ speakers:
             \ C++, and teaching."
   - id: 357
     photoFileName: 0357.jpg
+    photoUpdatedAt: 2019-04-05T08:31:46.811Z[UTC]
     name:
       - {language: en, text: "Alexander Voronkov"}
       - {language: ru, text: "Александр Воронков"}
@@ -13677,6 +13678,7 @@ speakers:
             \ на платформу «Эльбрус»."
   - id: 997
     photoFileName: 0997.jpg
+    photoUpdatedAt: 2019-09-04T13:30:04.205Z[UTC]
     name:
       - {language: en, text: "Alexander Ganyukhin"}
       - {language: ru, text: "Александр Ганюхин"}
@@ -13690,6 +13692,7 @@ speakers:
             \ на C++, чтобы сделать жизнь коллег немножечко легче."}
   - id: 998
     photoFileName: 0998.jpg
+    photoUpdatedAt: 2020-09-14T11:34:38.734Z[UTC]
     name:
       - {language: en, text: "Ashot Vardanian"}
       - {language: ru, text: "Ашот Варданян"}
@@ -16407,7 +16410,7 @@ speakers:
             \ in computer science from MIT. Jing received the NSF CAREER Award in 2016."}
   - id: 1207
     photoFileName: 1207.jpg
-    photoUpdatedAt: 2020-05-13T09:33:31.367Z[UTC]
+    photoUpdatedAt: 2020-09-08T15:29:58.108Z[UTC]
     name:
       - {language: en, text: "Kevlin Henney"}
     companyIds: [124]
@@ -16415,12 +16418,12 @@ speakers:
       - language: en
         text: "Kevlin is an independent consultant, speaker, writer, and trainer. His development interests include programming\
             \ languages, software architecture, and programming practices, with a particular emphasis on unit testing and\
-            \ reasoning about practices at the team level.\nKevlin loves to help and inspire others, share ideas, and ask\
+            \ reasoning about practices at the team level.\n\nKevlin loves to help and inspire others, share ideas, and ask\
             \ questions. He has helped many teams with their code, culture, and practices, contributing code to companies\
-            \ and open source. He blogs on code and other things and has been a columnist for a number of magazines and sites\
+            \ and open source. He blogs on code and other things and has been a columnist for several magazines and sites\
             \ and has been on far too many committees (it has been said that \"a committee is a cul-de-sac down which ideas\
             \ are lured and then quietly strangled\"). He is co-author of two volumes in the Pattern-Oriented Software Architecture\
-            \ series, editor of 97 Things Every Programmer Should Know and co-editor of 97 Things Every Java Programmer Should\
+            \ series, editor of 97 Things Every Programmer Should Know, and co-editor of 97 Things Every Java Programmer Should\
             \ Know."
     twitter: kevlinhenney
   - id: 1208
@@ -16969,6 +16972,7 @@ speakers:
     gitHub: Avaddon-tfa
   - id: 1247
     photoFileName: 1247.jpg
+    photoUpdatedAt: 2019-04-17T09:03:07.704Z[UTC]
     name:
       - {language: en, text: "Pavel Filonov"}
       - {language: ru, text: "Павел Филонов"}
@@ -18676,6 +18680,7 @@ speakers:
             знейших приложений последние лет 5."}
   - id: 1385
     photoFileName: 1385.jpg
+    photoUpdatedAt: 2020-11-06T13:39:46.988Z[UTC]
     name:
       - {language: en, text: "Igor Vorobtsov"}
       - {language: ru, text: "Игорь Воробцов"}
@@ -18693,6 +18698,7 @@ speakers:
             \ и enterprise-приложений."}
   - id: 1386
     photoFileName: 1386.jpg
+    photoUpdatedAt: 2020-10-08T09:39:10.216Z[UTC]
     name:
       - {language: en, text: "Denis Yaroshevskiy"}
       - {language: ru, text: "Денис Ярошевский"}
@@ -18705,6 +18711,7 @@ speakers:
     twitter: dyaroshev
   - id: 1387
     photoFileName: 1387.jpg
+    photoUpdatedAt: 2020-10-06T08:56:32.268Z[UTC]
     name:
       - {language: en, text: "Mikhail Belyaev"}
       - {language: ru, text: "Михаил Беляев"}
@@ -18724,6 +18731,7 @@ speakers:
     twitter: belyaev_ms
   - id: 1388
     photoFileName: 1388.jpg
+    photoUpdatedAt: 2019-06-07T07:48:16.279Z[UTC]
     name:
       - {language: en, text: "Evgeny Zouev"}
       - {language: ru, text: "Евгений Зуев"}
@@ -18743,6 +18751,7 @@ speakers:
             \ семантика языков программирования, проектирование и разработка компиляторов ЯП."}
   - id: 1389
     photoFileName: 1389.jpg
+    photoUpdatedAt: 2020-11-09T14:32:30.001Z[UTC]
     name:
       - {language: en, text: "Patricia Aas"}
     companyIds: [541]
@@ -18758,6 +18767,7 @@ speakers:
     twitter: pati_gallardo
   - id: 1390
     photoFileName: 1390.jpg
+    photoUpdatedAt: 2020-10-22T12:55:26.107Z[UTC]
     name:
       - {language: en, text: "Filipp Gelman"}
     companyIds: [75]
@@ -18767,6 +18777,7 @@ speakers:
             \ and abusing language features for nefarious purposes."}
   - id: 1391
     photoFileName: 1391.jpg
+    photoUpdatedAt: 2020-06-01T12:24:49.943Z[UTC]
     name:
       - {language: en, text: "Program committee"}
       - {language: ru, text: "Программный комитет"}
@@ -18794,6 +18805,7 @@ speakers:
             \ 4G в компании Yota."
   - id: 1392
     photoFileName: 1392.jpg
+    photoUpdatedAt: 2020-09-22T11:29:17.438Z[UTC]
     name:
       - {language: en, text: "Konstantine Serebryaniy"}
       - {language: ru, text: "Константин Серебряный"}
@@ -18806,6 +18818,7 @@ speakers:
     twitter: kayseesee
   - id: 1393
     photoFileName: 1393.jpg
+    photoUpdatedAt: 2020-09-23T13:08:03.706Z[UTC]
     name:
       - {language: en, text: "Titus Winters"}
     companyIds: [217]
@@ -18819,6 +18832,7 @@ speakers:
     twitter: tituswinters
   - id: 1394
     photoFileName: 1394.jpg
+    photoUpdatedAt: 2020-07-02T14:03:47.014Z[UTC]
     name:
       - {language: en, text: "Ilya Shishkov"}
       - {language: ru, text: "Илья Шишков"}
@@ -18830,6 +18844,7 @@ speakers:
             работки на современном C++»."}
   - id: 1395
     photoFileName: 1395.jpg
+    photoUpdatedAt: 2020-09-29T10:25:17.519Z[UTC]
     name:
       - {language: en, text: "Sebastian Theophil"}
     companyIds: [524]
@@ -18839,6 +18854,7 @@ speakers:
             \ in 2002 and has recently been working on porting think-cell to the Mac."}
   - id: 1396
     photoFileName: 1396.jpg
+    photoUpdatedAt: 2020-10-20T13:48:00.099Z[UTC]
     name:
       - {language: en, text: "Andrey Aksenov"}
       - {language: ru, text: "Андрей Аксенов"}
@@ -18852,6 +18868,7 @@ speakers:
             азные движки, прямо проклятие какое-то."}
   - id: 1397
     photoFileName: 1397.jpg
+    photoUpdatedAt: 2020-10-09T11:56:08.402Z[UTC]
     name:
       - {language: en, text: "Conor Hoekstra"}
     companyIds: [370]
@@ -18861,6 +18878,7 @@ speakers:
     twitter: code_report
   - id: 1398
     photoFileName: 1398.jpg
+    photoUpdatedAt: 2020-09-03T10:19:17.763Z[UTC]
     name:
       - {language: en, text: "Matt Godbolt"}
     companyIds: [45]
