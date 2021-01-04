@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
@@ -604,39 +605,43 @@ public class ConferenceDataLoader {
         List<UrlFilename> urlFilenamesToAppend = new ArrayList<>();
         List<UrlFilename> urlFilenamesToUpdate = new ArrayList<>();
 
-        for (Speaker s : speakers) {
-            Speaker resourceSpeaker = findResourceSpeaker(s, speakerLoadMaps);
+        for (Speaker speaker : speakers) {
+            Speaker resourceSpeaker = findResourceSpeaker(speaker, speakerLoadMaps);
 
             if (resourceSpeaker == null) {
                 // Speaker not exists
                 long id = lastSpeakerId.incrementAndGet();
-                String sourceUrl = s.getPhotoFileName();
+                String sourceUrl = speaker.getPhotoFileName();
                 String destinationFileName = String.format("%04d.jpg", id);
 
-                s.setId(id);
+                speaker.setId(id);
 
                 urlFilenamesToAppend.add(new UrlFilename(sourceUrl, destinationFileName));
-                s.setPhotoFileName(destinationFileName);
+                speaker.setPhotoFileName(destinationFileName);
 
-                speakersToAppend.add(s);
+                speakersToAppend.add(speaker);
             } else {
                 // Speaker exists
-                s.setId(resourceSpeaker.getId());
-                String sourceUrl = s.getPhotoFileName();
-                String destinationFileName = resourceSpeaker.getPhotoFileName();
-                s.setPhotoFileName(destinationFileName);
+                speaker.setId(resourceSpeaker.getId());
+                String targetPhotoUrl = speaker.getPhotoFileName();
+                String resourcePhotoFileName = resourceSpeaker.getPhotoFileName();
+                speaker.setPhotoFileName(resourcePhotoFileName);
 
-                fillSpeakerTwitter(s, resourceSpeaker);
-                fillSpeakerGitHub(s, resourceSpeaker);
-                fillSpeakerJavaChampion(s, resourceSpeaker);
-                fillSpeakerMvp(s, resourceSpeaker);
+                fillSpeakerTwitter(speaker, resourceSpeaker);
+                fillSpeakerGitHub(speaker, resourceSpeaker);
+                fillSpeakerJavaChampion(speaker, resourceSpeaker);
+                fillSpeakerMvp(speaker, resourceSpeaker);
 
-                if (ImageUtils.needUpdate(sourceUrl, String.format("guess-game-web/src/assets/images/speakers/%s", destinationFileName))) {
-                    urlFilenamesToUpdate.add(new UrlFilename(sourceUrl, destinationFileName));
+                // Update speaker photo
+                if (ContentfulUtils.needPhotoUpdate(speaker.getPhotoUpdatedAt(), resourceSpeaker.getPhotoUpdatedAt(), targetPhotoUrl, resourcePhotoFileName)) {
+                    urlFilenamesToUpdate.add(new UrlFilename(targetPhotoUrl, resourcePhotoFileName));
                 }
 
-                if (ContentfulUtils.needUpdate(resourceSpeaker, s)) {
-                    speakersToUpdate.add(s);
+                fillUpdatedAt(speaker, resourceSpeaker);
+
+                // Update speaker
+                if (ContentfulUtils.needUpdate(resourceSpeaker, speaker)) {
+                    speakersToUpdate.add(speaker);
                 }
             }
         }
@@ -712,6 +717,21 @@ public class ConferenceDataLoader {
                     targetSpeaker.setMvpReconnect(false);
                 }
             }
+        }
+    }
+
+    /**
+     * Fills speaker updated datetime.
+     *
+     * @param targetSpeaker   target speaker
+     * @param resourceSpeaker resource speaker
+     */
+    static void fillUpdatedAt(Speaker targetSpeaker, Speaker resourceSpeaker) {
+        ZonedDateTime targetPhotoUpdatedAt = targetSpeaker.getPhotoUpdatedAt();
+        ZonedDateTime resourcePhotoUpdatedAt = resourceSpeaker.getPhotoUpdatedAt();
+
+        if ((targetPhotoUpdatedAt != null) && (resourcePhotoUpdatedAt != null) && (resourcePhotoUpdatedAt.isAfter(targetPhotoUpdatedAt))) {
+            targetSpeaker.setPhotoUpdatedAt(resourcePhotoUpdatedAt);
         }
     }
 
@@ -1558,7 +1578,17 @@ public class ConferenceDataLoader {
 //                        "The lifecycle of a service", "Безопасность и Kubernetes",
 //                        "Edge Computing: А trojan horse of DevOps tribe infiltrating the IoT industry")));
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Oleg Anastasyev", new Company(653, "OK.RU")), 124L)));
+//                new LoadSettings(
+//                        Map.of(new NameCompany("Oleg Anastasyev", new Company(653, "OK.RU")), 124L),
+//                        Set.of(
+//                                "Reasoning about data consistency in distributed systems (part 1)",
+//                                "Programming for persistent memory",
+//                                "Programming for persistent memory (part 1)",
+//                                "Theoretical and practical worlds of failure detectors",
+//                                "Cryptographic tools for distributed computing (part 1)",
+//                                "Algorand: A secure, scalable and decentralized blockchain"
+//                        ),
+//                        true));
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
 //                LoadSettings.invalidTalksSet(Set.of("Doctoral workshop", "Title will be announced soon")));
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn");

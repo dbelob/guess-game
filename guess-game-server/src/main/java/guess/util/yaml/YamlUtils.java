@@ -53,11 +53,11 @@ public class YamlUtils {
 
         Yaml placesYaml = new Yaml(new Constructor(PlaceList.class));
         Yaml eventTypesYaml = new Yaml(new Constructor(EventTypeList.class));
-        Yaml eventsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(EventList.class));
-        Yaml companiesYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(CompanyList.class));
-        Yaml companySynonymsYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(CompanySynonymsList.class));
-        Yaml speakersYaml = new Yaml(new Constructor(SpeakerList.class));
-        Yaml talksYaml = new Yaml(new LocalDateLocalTimeYamlConstructor(TalkList.class));
+        Yaml eventsYaml = new Yaml(new DateTimeYamlConstructor(EventList.class));
+        Yaml companiesYaml = new Yaml(new DateTimeYamlConstructor(CompanyList.class));
+        Yaml companySynonymsYaml = new Yaml(new DateTimeYamlConstructor(CompanySynonymsList.class));
+        Yaml speakersYaml = new Yaml(new DateTimeYamlConstructor(SpeakerList.class));
+        Yaml talksYaml = new Yaml(new DateTimeYamlConstructor(TalkList.class));
 
         // Read from YAML files
         PlaceList placeList = placesYaml.load(placesResource.getInputStream());
@@ -327,8 +327,8 @@ public class YamlUtils {
                     new PropertyMatcher(Company.class,
                             List.of("id", "name")),
                     new PropertyMatcher(Speaker.class,
-                            List.of("id", "photoFileName", "name", "companyIds", "bio", "twitter", "gitHub", "javaChampion",
-                                    "mvp", "mvpReconnect")),
+                            List.of("id", "photoFileName", "photoUpdatedAt", "name", "companyIds", "bio", "twitter",
+                                    "gitHub", "javaChampion", "mvp", "mvpReconnect")),
                     new PropertyMatcher(LocaleItem.class,
                             List.of("language", "text"))
             );

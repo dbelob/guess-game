@@ -34,6 +34,7 @@ import guess.domain.source.contentful.talk.response.ContentfulTalkResponse;
 import guess.domain.source.contentful.talk.response.ContentfulTalkResponseCommon;
 import guess.domain.source.extract.ExtractPair;
 import guess.domain.source.extract.ExtractSet;
+import guess.domain.source.image.UrlDates;
 import mockit.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -44,12 +45,14 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
@@ -659,9 +662,9 @@ class ContentfulUtilsTest {
             }
 
             @Mock
-            String extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
-                                Set<String> assetErrorSet, String speakerNameEn) {
-                return null;
+            UrlDates extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                                  Set<String> assetErrorSet, String speakerNameEn) {
+                return new UrlDates(null, null, null);
             }
 
             @Mock
@@ -756,6 +759,7 @@ class ContentfulUtilsTest {
     @DisplayName("extractPhoto method tests")
     class ExtractPhotoTest {
         private static final String ASSET_URL = "https://valid.com";
+        private final ZonedDateTime NOW = ZonedDateTime.now();
 
         private Stream<Arguments> data() {
             ContentfulSys contentfulSys0 = new ContentfulSys();
@@ -767,11 +771,17 @@ class ContentfulUtilsTest {
             ContentfulSys contentfulSys2 = new ContentfulSys();
             contentfulSys2.setId("id2");
 
+            ContentfulSys contentfulSys3 = new ContentfulSys();
+            contentfulSys3.setId("id3");
+            contentfulSys3.setCreatedAt(NOW);
+            contentfulSys3.setUpdatedAt(NOW);
+
             ContentfulAssetFields contentfulAssetFields2 = new ContentfulAssetFields();
             contentfulAssetFields2.setFile(new ContentfulAssetFieldsFile());
 
             ContentfulAsset contentfulAsset2 = new ContentfulAsset();
             contentfulAsset2.setFields(contentfulAssetFields2);
+            contentfulAsset2.setSys(contentfulSys3);
 
             Map<String, ContentfulAsset> assetMap2 = Map.of("id2", contentfulAsset2);
 
@@ -785,20 +795,20 @@ class ContentfulUtilsTest {
             link2.setSys(contentfulSys2);
 
             return Stream.of(
-                    arguments(link0, Collections.emptyMap(), Set.of("id0"), "Name0", null, null),
+                    arguments(link0, Collections.emptyMap(), Set.of("id0"), "Name0", null, new UrlDates(null, null, null)),
                     arguments(link1, Collections.emptyMap(), Collections.emptySet(), "Name1", NullPointerException.class, null),
-                    arguments(link2, assetMap2, Collections.emptySet(), "Name2", null, ASSET_URL)
+                    arguments(link2, assetMap2, Collections.emptySet(), "Name2", null, new UrlDates(ASSET_URL, NOW, NOW))
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
         void extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet,
-                          String speakerNameEn, Class<? extends Throwable> expectedException, String expectedValue) {
+                          String speakerNameEn, Class<? extends Throwable> expectedException, UrlDates expectedValue) {
             new MockUp<ContentfulUtils>() {
                 @Mock
-                String extractPhoto(Invocation invocation, ContentfulLink link, Map<String, ContentfulAsset> assetMap,
-                                    Set<String> assetErrorSet, String speakerNameEn) {
+                UrlDates extractPhoto(Invocation invocation, ContentfulLink link, Map<String, ContentfulAsset> assetMap,
+                                      Set<String> assetErrorSet, String speakerNameEn) {
                     return invocation.proceed(link, assetMap, assetErrorSet, speakerNameEn);
                 }
 
@@ -1811,7 +1821,7 @@ class ContentfulUtilsTest {
             Set<String> entryErrorSet = Set.of("id0");
 
             return Stream.of(
-                    arguments(contentfulLink0, cityMap, entryErrorSet, null, "eventName", null, null),
+                    arguments(contentfulLink0, cityMap, entryErrorSet, null, "eventName", IllegalArgumentException.class, null),
                     arguments(contentfulLink1, cityMap, entryErrorSet, "en", "eventName", null, "Name1"),
                     arguments(contentfulLink2, cityMap, entryErrorSet, null, "eventName", NullPointerException.class, null)
             );
@@ -2174,12 +2184,15 @@ class ContentfulUtilsTest {
     @DisplayName("needUpdate method tests (Speaker)")
     class NeedUpdateSpeakerTest {
         private Stream<Arguments> data() {
+            ZonedDateTime now = ZonedDateTime.now();
+
             Company company0 = new Company(0, List.of(new LocaleItem("en", "company0")));
-            Company company4 = new Company(4, List.of(new LocaleItem("en", "company4")));
+            Company company5 = new Company(4, List.of(new LocaleItem("en", "company4")));
 
             Speaker speaker0 = new Speaker();
             speaker0.setId(0);
             speaker0.setPhotoFileName("photoFileName0");
+            speaker0.setPhotoUpdatedAt(now);
             speaker0.setName(List.of(new LocaleItem("en", "name0")));
             speaker0.setCompanies(List.of(company0));
             speaker0.setBio(List.of(new LocaleItem("en", "bio0")));
@@ -2199,70 +2212,83 @@ class ContentfulUtilsTest {
             Speaker speaker3 = new Speaker();
             speaker3.setId(0);
             speaker3.setPhotoFileName("photoFileName0");
-            speaker3.setName(List.of(new LocaleItem("en", "name3")));
+            speaker3.setPhotoUpdatedAt(now.plus(1, ChronoUnit.DAYS));
 
             Speaker speaker4 = new Speaker();
             speaker4.setId(0);
             speaker4.setPhotoFileName("photoFileName0");
-            speaker4.setName(List.of(new LocaleItem("en", "name0")));
-            speaker4.setCompanies(List.of(company4));
+            speaker4.setPhotoUpdatedAt(now);
+            speaker4.setName(List.of(new LocaleItem("en", "name3")));
 
             Speaker speaker5 = new Speaker();
             speaker5.setId(0);
             speaker5.setPhotoFileName("photoFileName0");
+            speaker5.setPhotoUpdatedAt(now);
             speaker5.setName(List.of(new LocaleItem("en", "name0")));
-            speaker5.setCompanies(List.of(company0));
-            speaker5.setBio(List.of(new LocaleItem("en", "bio5")));
+            speaker5.setCompanies(List.of(company5));
 
             Speaker speaker6 = new Speaker();
             speaker6.setId(0);
             speaker6.setPhotoFileName("photoFileName0");
+            speaker6.setPhotoUpdatedAt(now);
             speaker6.setName(List.of(new LocaleItem("en", "name0")));
             speaker6.setCompanies(List.of(company0));
-            speaker6.setBio(List.of(new LocaleItem("en", "bio0")));
-            speaker6.setTwitter("twitter6");
+            speaker6.setBio(List.of(new LocaleItem("en", "bio5")));
 
             Speaker speaker7 = new Speaker();
             speaker7.setId(0);
             speaker7.setPhotoFileName("photoFileName0");
+            speaker7.setPhotoUpdatedAt(now);
             speaker7.setName(List.of(new LocaleItem("en", "name0")));
             speaker7.setCompanies(List.of(company0));
             speaker7.setBio(List.of(new LocaleItem("en", "bio0")));
-            speaker7.setTwitter("twitter0");
-            speaker7.setGitHub("gitHub7");
+            speaker7.setTwitter("twitter6");
 
             Speaker speaker8 = new Speaker();
             speaker8.setId(0);
             speaker8.setPhotoFileName("photoFileName0");
+            speaker8.setPhotoUpdatedAt(now);
             speaker8.setName(List.of(new LocaleItem("en", "name0")));
             speaker8.setCompanies(List.of(company0));
             speaker8.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker8.setTwitter("twitter0");
-            speaker8.setGitHub("gitHub0");
-            speaker8.setJavaChampion(false);
+            speaker8.setGitHub("gitHub7");
 
             Speaker speaker9 = new Speaker();
             speaker9.setId(0);
             speaker9.setPhotoFileName("photoFileName0");
+            speaker9.setPhotoUpdatedAt(now);
             speaker9.setName(List.of(new LocaleItem("en", "name0")));
             speaker9.setCompanies(List.of(company0));
             speaker9.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker9.setTwitter("twitter0");
             speaker9.setGitHub("gitHub0");
-            speaker9.setJavaChampion(true);
-            speaker9.setMvp(false);
+            speaker9.setJavaChampion(false);
 
             Speaker speaker10 = new Speaker();
             speaker10.setId(0);
             speaker10.setPhotoFileName("photoFileName0");
+            speaker10.setPhotoUpdatedAt(now);
             speaker10.setName(List.of(new LocaleItem("en", "name0")));
             speaker10.setCompanies(List.of(company0));
             speaker10.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker10.setTwitter("twitter0");
             speaker10.setGitHub("gitHub0");
             speaker10.setJavaChampion(true);
-            speaker10.setMvp(true);
-            speaker10.setMvpReconnect(false);
+            speaker10.setMvp(false);
+
+            Speaker speaker11 = new Speaker();
+            speaker11.setId(0);
+            speaker11.setPhotoFileName("photoFileName0");
+            speaker11.setPhotoUpdatedAt(now);
+            speaker11.setName(List.of(new LocaleItem("en", "name0")));
+            speaker11.setCompanies(List.of(company0));
+            speaker11.setBio(List.of(new LocaleItem("en", "bio0")));
+            speaker11.setTwitter("twitter0");
+            speaker11.setGitHub("gitHub0");
+            speaker11.setJavaChampion(true);
+            speaker11.setMvp(true);
+            speaker11.setMvpReconnect(false);
 
             return Stream.of(
                     arguments(speaker0, speaker0, false),
@@ -2275,7 +2301,8 @@ class ContentfulUtilsTest {
                     arguments(speaker0, speaker7, true),
                     arguments(speaker0, speaker8, true),
                     arguments(speaker0, speaker9, true),
-                    arguments(speaker0, speaker10, true)
+                    arguments(speaker0, speaker10, true),
+                    arguments(speaker0, speaker11, true)
             );
         }
 
@@ -2504,6 +2531,48 @@ class ContentfulUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("needPhotoUpdate method tests")
+    class NeedPhotoUpdateTest {
+        private Stream<Arguments> data() {
+            final ZonedDateTime NOW = ZonedDateTime.now();
+            final ZonedDateTime YESTERDAY = NOW.minus(1, ChronoUnit.DAYS);
+            final String VALID_URL = "https://valid.com";
+            final String PHOTO_FILE_NAME = "0000.jpg";
+
+            return Stream.of(
+                    arguments(null, null, VALID_URL, PHOTO_FILE_NAME, true, true),
+                    arguments(null, NOW, VALID_URL, PHOTO_FILE_NAME, true, true),
+                    arguments(null, null, VALID_URL, PHOTO_FILE_NAME, false, false),
+                    arguments(null, NOW, VALID_URL, PHOTO_FILE_NAME, false, false),
+                    arguments(NOW, null, VALID_URL, PHOTO_FILE_NAME, true, true),
+                    arguments(NOW, null, VALID_URL, PHOTO_FILE_NAME, false, true),
+                    arguments(NOW, NOW, VALID_URL, PHOTO_FILE_NAME, true, false),
+                    arguments(NOW, NOW, VALID_URL, PHOTO_FILE_NAME, false, false),
+                    arguments(NOW, YESTERDAY, VALID_URL, PHOTO_FILE_NAME, true, true),
+                    arguments(NOW, YESTERDAY, VALID_URL, PHOTO_FILE_NAME, false, true),
+                    arguments(YESTERDAY, NOW, VALID_URL, PHOTO_FILE_NAME, true, false),
+                    arguments(YESTERDAY, NOW, VALID_URL, PHOTO_FILE_NAME, false, false)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void needPhotoUpdate(ZonedDateTime targetPhotoUpdatedAt, ZonedDateTime resourcePhotoUpdatedAt,
+                             String targetPhotoUrl, String resourcePhotoFileName, boolean needUpdate, boolean expected) throws IOException {
+            new MockUp<ImageUtils>() {
+                @Mock
+                boolean needUpdate(String targetPhotoUrl, String resourceFileName) throws IOException {
+                    return needUpdate;
+                }
+            };
+
+            assertEquals(expected, ContentfulUtils.needPhotoUpdate(targetPhotoUpdatedAt, resourcePhotoUpdatedAt,
+                    targetPhotoUrl, resourcePhotoFileName));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("equals method tests")
     class EqualsTest {
         private Stream<Arguments> data() {
@@ -2524,7 +2593,7 @@ class ContentfulUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void needUpdate(List<String> a, List<String> b, boolean expected) {
+        void equals(List<String> a, List<String> b, boolean expected) {
             assertEquals(expected, ContentfulUtils.equals(a, b));
         }
     }

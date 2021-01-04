@@ -22,6 +22,6 @@ public enum ImageFormat {
                 .filter(imageFormat -> imageFormat.getFileExtensions().stream()
                         .anyMatch(fileExtension -> fileExtension.equalsIgnoreCase(extension)))
                 .findFirst()
-                .orElse(null);
+                .orElse(ImageFormat.JPG);
     }
 }

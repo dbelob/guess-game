@@ -57,16 +57,16 @@ public class ImageUtils {
     /**
      * Checks for need to update file.
      *
-     * @param sourceUrl           source URL
-     * @param destinationFileName destination file name
+     * @param targetPhotoUrl   source URL
+     * @param resourceFileName resource file name
      * @return {@code true} if need to update, {@code false} otherwise
      * @throws IOException if read error occurs
      */
-    public static boolean needUpdate(String sourceUrl, String destinationFileName) throws IOException {
-        BufferedImage fileImage = getImageByUrl(new File(destinationFileName).toURI().toURL());
+    public static boolean needUpdate(String targetPhotoUrl, String resourceFileName) throws IOException {
+        BufferedImage fileImage = getImageByUrl(new File(resourceFileName).toURI().toURL());
 
         if (fileImage.getWidth() < IMAGE_WIDTH) {
-            BufferedImage urlImage = getImageByUrlString(sourceUrl);
+            BufferedImage urlImage = getImageByUrlString(targetPhotoUrl);
 
             return (fileImage.getWidth() < urlImage.getWidth());
         } else {

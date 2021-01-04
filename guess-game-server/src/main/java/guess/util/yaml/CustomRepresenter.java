@@ -7,6 +7,7 @@ import org.yaml.snakeyaml.representer.Representer;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZonedDateTime;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,7 @@ public class CustomRepresenter extends Representer {
 
         this.representers.put(LocalDate.class, data -> CustomRepresenter.this.representData(data.toString()));
         this.representers.put(LocalTime.class, data -> CustomRepresenter.this.representData(data.toString()));
+        this.representers.put(ZonedDateTime.class, data -> CustomRepresenter.this.representData(data.toString()));
     }
 
     @Override

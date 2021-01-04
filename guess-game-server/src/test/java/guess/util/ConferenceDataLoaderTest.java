@@ -26,6 +26,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
@@ -966,7 +968,6 @@ class ConferenceDataLoaderTest {
         final String PHOTO_FILE_NAME0 = "0000.jpg";
         final String PHOTO_FILE_NAME1 = "0001.jpg";
         final String PHOTO_FILE_NAME2 = "http://valid.com/2.jpg";
-        final String DESTINATION_FILE_NAME0 = "guess-game-web/src/assets/images/speakers/0000.jpg";
 
         private Stream<Arguments> data() {
             Speaker speaker0 = new Speaker();
@@ -1039,14 +1040,13 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void getSpeakerLoadResult(List<Speaker> speakers, SpeakerLoadMaps speakerLoadMaps, AtomicLong lastSpeakerId,
                                   SpeakerLoadResult expected) throws IOException {
-            new MockUp<ImageUtils>() {
-                @Mock
-                boolean needUpdate(String sourceUrl, String destinationFileName) throws IOException {
-                    return DESTINATION_FILE_NAME0.equals(destinationFileName);
-                }
-            };
-
             new MockUp<ContentfulUtils>() {
+                @Mock
+                boolean needPhotoUpdate(ZonedDateTime targetPhotoUpdatedAt, ZonedDateTime resourcePhotoUpdatedAt,
+                                        String targetPhotoUrl, String resourcePhotoFileName) throws IOException {
+                    return PHOTO_FILE_NAME0.equals(resourcePhotoFileName);
+                }
+
                 @Mock
                 boolean needUpdate(Speaker a, Speaker b) {
                     return ((a.getId() == 0) && (b.getId() == 0));
@@ -1082,6 +1082,11 @@ class ConferenceDataLoaderTest {
 
                 @Mock
                 void fillSpeakerMvp(Speaker targetSpeaker, Speaker resourceSpeaker) {
+                    // Nothing
+                }
+
+                @Mock
+                void fillUpdatedAt(Speaker targetSpeaker, Speaker resourceSpeaker) {
                     // Nothing
                 }
             };
@@ -1253,6 +1258,40 @@ class ConferenceDataLoaderTest {
 
             assertEquals(mvpExpected, targetSpeaker.isMvp());
             assertEquals(mvpReconnectExpected, targetSpeaker.isMvpReconnect());
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillUpdatedAt method tests")
+    class FillUpdatedAtTest {
+        private Speaker createSpeaker(ZonedDateTime photoUpdatedAt) {
+            Speaker speaker = new Speaker();
+            speaker.setPhotoUpdatedAt(photoUpdatedAt);
+
+            return speaker;
+        }
+
+        private Stream<Arguments> data() {
+            final ZonedDateTime NOW = ZonedDateTime.now();
+            final ZonedDateTime YESTERDAY = NOW.minus(1, ChronoUnit.DAYS);
+
+            return Stream.of(
+                    arguments(createSpeaker(null), createSpeaker(null), null),
+                    arguments(createSpeaker(null), createSpeaker(NOW), null),
+                    arguments(createSpeaker(NOW), createSpeaker(null), NOW),
+                    arguments(createSpeaker(NOW), createSpeaker(NOW), NOW),
+                    arguments(createSpeaker(YESTERDAY), createSpeaker(NOW), NOW),
+                    arguments(createSpeaker(NOW), createSpeaker(YESTERDAY), NOW)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillUpdatedAt(Speaker targetSpeaker, Speaker resourceSpeaker, ZonedDateTime expected) {
+            ConferenceDataLoader.fillUpdatedAt(targetSpeaker, resourceSpeaker);
+
+            assertEquals(expected, targetSpeaker.getPhotoUpdatedAt());
         }
     }
 

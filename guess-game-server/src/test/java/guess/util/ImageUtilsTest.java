@@ -18,7 +18,6 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("ImageUtils class tests")
 class ImageUtilsTest {
@@ -115,7 +114,7 @@ class ImageUtilsTest {
         assertEquals(ImageFormat.JPG, ImageUtils.getImageFormatByUrlString("url/fileName"));
         assertEquals(ImageFormat.JPG, ImageUtils.getImageFormatByUrlString("url/fileName.jpg"));
         assertEquals(ImageFormat.PNG, ImageUtils.getImageFormatByUrlString("url/fileName.png"));
-        assertThrows(NullPointerException.class, () -> ImageUtils.getImageFormatByUrlString("fileName.exe"));
+        assertEquals(ImageFormat.JPG, ImageUtils.getImageFormatByUrlString("fileName.unknown"));
     }
 
     @Test

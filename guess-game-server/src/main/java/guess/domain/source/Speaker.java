@@ -4,6 +4,7 @@ import guess.domain.Identifier;
 import guess.domain.Language;
 import guess.util.LocalizationUtils;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,6 +13,16 @@ import java.util.stream.Collectors;
  * Speaker.
  */
 public class Speaker extends Identifier {
+    public static class SpeakerPhoto {
+        private final String photoFileName;
+        private final ZonedDateTime photoUpdatedAt;
+
+        public SpeakerPhoto(String photoFileName, ZonedDateTime photoUpdatedAt) {
+            this.photoFileName = photoFileName;
+            this.photoUpdatedAt = photoUpdatedAt;
+        }
+    }
+
     public static class SpeakerSocials {
         private final String twitter;
         private final String gitHub;
@@ -35,6 +46,7 @@ public class Speaker extends Identifier {
     }
 
     private String photoFileName;
+    private ZonedDateTime photoUpdatedAt;
     private List<LocaleItem> name;
     private List<LocaleItem> bio;
     private String twitter;
@@ -50,11 +62,12 @@ public class Speaker extends Identifier {
         this.companyIds = new ArrayList<>();
     }
 
-    public Speaker(long id, String photoFileName, List<LocaleItem> name, List<Company> companies,
+    public Speaker(long id, SpeakerPhoto photo, List<LocaleItem> name, List<Company> companies,
                    List<LocaleItem> bio, SpeakerSocials socials, SpeakerDegrees degrees) {
         super(id);
 
-        this.photoFileName = photoFileName;
+        this.photoFileName = photo.photoFileName;
+        this.photoUpdatedAt = photo.photoUpdatedAt;
         this.name = name;
         this.bio = bio;
         this.twitter = socials.twitter;
@@ -74,6 +87,14 @@ public class Speaker extends Identifier {
 
     public void setPhotoFileName(String photoFileName) {
         this.photoFileName = photoFileName;
+    }
+
+    public ZonedDateTime getPhotoUpdatedAt() {
+        return photoUpdatedAt;
+    }
+
+    public void setPhotoUpdatedAt(ZonedDateTime photoUpdatedAt) {
+        this.photoUpdatedAt = photoUpdatedAt;
     }
 
     public List<LocaleItem> getName() {
