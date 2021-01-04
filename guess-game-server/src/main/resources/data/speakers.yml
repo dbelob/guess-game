@@ -143,6 +143,7 @@ speakers:
     javaChampion: true
   - id: 8
     photoFileName: 0008.jpg
+    photoUpdatedAt: 2020-06-29T06:54:03.672Z[UTC]
     name:
       - {language: en, text: "Pasha Finkelstein"}
       - {language: ru, text: "Паша Финкельштейн"}
@@ -2295,6 +2296,7 @@ speakers:
     gitHub: vladimirdolzhenko
   - id: 143
     photoFileName: 0143.jpg
+    photoUpdatedAt: 2020-02-14T09:20:16.274Z[UTC]
     name:
       - {language: en, text: "Philipp Krenn"}
     companyIds: [175]
@@ -2513,6 +2515,7 @@ speakers:
     gitHub: vjovanov
   - id: 158
     photoFileName: 0158.jpg
+    photoUpdatedAt: 2016-09-13T10:52:44.450Z[UTC]
     name:
       - {language: en, text: "Vladimir Krasilschik"}
       - {language: ru, text: "Владимир Красильщик"}
@@ -3208,6 +3211,7 @@ speakers:
     gitHub: abashev
   - id: 218
     photoFileName: 0218.jpg
+    photoUpdatedAt: 2020-10-15T12:02:48.084Z[UTC]
     name:
       - {language: en, text: "Anton Chernousov"}
       - {language: ru, text: "Антон Черноусов"}
@@ -3795,9 +3799,9 @@ speakers:
     twitter: pavelmalyshev
   - id: 267
     photoFileName: 0267.jpg
-    photoUpdatedAt: 2020-06-19T11:08:24.183Z[UTC]
+    photoUpdatedAt: 2020-07-02T09:41:08.907Z[UTC]
     name:
-      - {language: en, text: "Michael Samarin"}
+      - {language: en, text: "Mikhail Samarin"}
       - {language: ru, text: "Михаил Самарин"}
     companyIds: [208]
     bio:
@@ -3805,11 +3809,14 @@ speakers:
             \ experience ranges from developing mobile apps, interactive media installations, video surveillance systems to\
             \ team and business management. He currently works as Business Director in Finnish company Futurice, two times\
             \ winner of the \"Best Place to Work in Europe\" contest."}
-      - {language: ru, text: "Михаил выступает на конференциях, программирует, руководит командой и имеет титул Microsoft\
-            \ MVP. Его многолетний практический опыт покрывает такие области, как разработка мобильных приложений, интерак\
-            тивные медиа-инсталляции, системы поддержки судебно-медицинских исследований и видеонаблюдения, управление ком\
-            андами и бизнесом. В настоящее время Михаил работает бизнес-директором в финской компании Futurice, дважды поб\
-            еждавшей в конкурсе Best Place To Work in Europe."}
+      - language: ru
+        text: "Михаил много лет работает в IT-сфере, программировал, преподавал в университетах России и Финляндии, выступ\
+            ает на конференциях и в шутку говорит, что защитил кандидатскую по нейросетям до того, как они стали «cool again»\
+            .\n20 лет работает в Финляндии, из которых последние 12 руководит командами и бизнесом в консалтинговой финско\
+            й компании Futurice, известной своей уникальной открытой культурой и полной внутренней финансовой и операционн\
+            ой прозрачностью. В настоящее время Михаил занимает должность VP, Global Head of Software Development. В своих\
+            \ выступлениях с удовольствием делится многолетним практическим опытом управления командами, построения открыт\
+            ой культуры и мотивацией сотрудников."
     twitter: MichaelSamarin
     mvp: true
   - id: 268
@@ -5059,6 +5066,7 @@ speakers:
             Ценитель и пропагандист кроссплатформенных решений, использует C++ более 20 лет."
   - id: 358
     photoFileName: 0358.jpg
+    photoUpdatedAt: 2020-04-29T14:29:36.893Z[UTC]
     name:
       - {language: en, text: "John Willis"}
     companyIds: [438]
@@ -5116,6 +5124,7 @@ speakers:
     twitter: lemonjet
   - id: 362
     photoFileName: 0362.jpg
+    photoUpdatedAt: 2020-01-17T12:48:56.198Z[UTC]
     name:
       - {language: en, text: "Anton Weiss"}
       - {language: ru, text: "Антон Вайс"}
@@ -5130,6 +5139,7 @@ speakers:
     twitter: antweiss
   - id: 363
     photoFileName: 0363.jpg
+    photoUpdatedAt: 2020-01-17T08:05:28.490Z[UTC]
     name:
       - {language: en, text: "Paul Stack"}
     companyIds: [423]
@@ -5181,6 +5191,7 @@ speakers:
     twitter: man_brain
   - id: 367
     photoFileName: 0367.jpg
+    photoUpdatedAt: 2018-07-31T08:09:13.440Z[UTC]
     name:
       - {language: en, text: "Leonid Igolnik"}
       - {language: ru, text: "Леонид Игольник"}
@@ -5266,6 +5277,7 @@ speakers:
             \ Go; любит K8s и Docker; в свободное время читает курс по веб-разработке."}
   - id: 372
     photoFileName: 0372.jpg
+    photoUpdatedAt: 2020-02-27T14:31:37.952Z[UTC]
     name:
       - {language: en, text: "Evgeny Dekhtyarev"}
       - {language: ru, text: "Евгений Дехтярёв"}
@@ -6928,6 +6940,7 @@ speakers:
     twitter: SitnikAdam
   - id: 486
     photoFileName: 0486.jpg
+    photoUpdatedAt: 2020-03-13T10:32:03.885Z[UTC]
     name:
       - {language: en, text: "Mete Atamel"}
     companyIds: [217]
@@ -9305,6 +9318,7 @@ speakers:
     gitHub: Marina-Miranovich
   - id: 665
     photoFileName: 0665.jpg
+    photoUpdatedAt: 2020-02-28T12:49:25.010Z[UTC]
     name:
       - {language: en, text: "Vitaly Slobodin"}
       - {language: ru, text: "Виталий Слободин"}
@@ -12946,6 +12960,7 @@ speakers:
     companyIds: []
   - id: 946
     photoFileName: 0946.jpg
+    photoUpdatedAt: 2019-08-16T06:55:42.814Z[UTC]
     name:
       - {language: en, text: "Nikolay Molchanov"}
       - {language: ru, text: "Николай Молчанов"}
@@ -13293,6 +13308,7 @@ speakers:
             и масштабируемости, производительности и надежности систем."}
   - id: 973
     photoFileName: 0973.jpg
+    photoUpdatedAt: 2019-08-21T08:15:24.436Z[UTC]
     name:
       - {language: en, text: "Fedor Chemashkin"}
       - {language: ru, text: "Федор Чемашкин"}
@@ -13362,6 +13378,7 @@ speakers:
             \ - вне офиса Сергей варит собственное пиво, играет в хоккей и любит экстремальный туризм."
   - id: 977
     photoFileName: 0977.jpg
+    photoUpdatedAt: 2020-02-21T12:01:32.371Z[UTC]
     name:
       - {language: en, text: "Alexander Lukyanchenko"}
       - {language: ru, text: "Александр Лукьянченко"}
@@ -13385,6 +13402,7 @@ speakers:
     twitter: igoritl
   - id: 979
     photoFileName: 0979.jpg
+    photoUpdatedAt: 2020-02-07T15:08:19.367Z[UTC]
     name:
       - {language: en, text: "Sergey Kurson"}
       - {language: ru, text: "Сергей Курсон"}
@@ -15987,6 +16005,7 @@ speakers:
             \ at Microsoft."}
   - id: 1177
     photoFileName: 1177.jpg
+    photoUpdatedAt: 2020-03-17T11:26:21.935Z[UTC]
     name:
       - {language: en, text: "Valarie Regas"}
     companyIds: [18]
@@ -15998,6 +16017,7 @@ speakers:
     twitter: ValarieRegas
   - id: 1178
     photoFileName: 1178.jpg
+    photoUpdatedAt: 2020-02-03T12:48:27.461Z[UTC]
     name:
       - {language: en, text: "Aleksandr Iziumov"}
       - {language: ru, text: "Александр Изюмов"}
@@ -16019,6 +16039,7 @@ speakers:
             огическими стеками (Java, C#/.Net, MS Azure, DB: NoSql, MS SQL, Oracle)."
   - id: 1179
     photoFileName: 1179.jpg
+    photoUpdatedAt: 2019-08-26T11:23:05.276Z[UTC]
     name:
       - {language: en, text: "Artem Semenov"}
       - {language: ru, text: "Артём Семёнов"}
@@ -16037,6 +16058,7 @@ speakers:
     twitter: artems5v
   - id: 1180
     photoFileName: 1180.jpg
+    photoUpdatedAt: 2020-02-21T12:44:01.992Z[UTC]
     name:
       - {language: en, text: "Alan Scherger"}
     companyIds: [240]
@@ -16076,6 +16098,7 @@ speakers:
             кс.Облако на позиции Senior System Software Engineer, где занимается сервисом для создания функций."
   - id: 1183
     photoFileName: 1183.jpg
+    photoUpdatedAt: 2020-02-21T13:05:55.779Z[UTC]
     name:
       - {language: en, text: "Konstantin Lepeshenkov"}
       - {language: ru, text: "Константин Лепешенков"}
@@ -16095,6 +16118,7 @@ speakers:
             ездах и перелетах, за игрой в теннис и получением шкиперских лицензий.\nЛичный блог (in English): https://scale-tone.github.io/"
   - id: 1184
     photoFileName: 1184.jpg
+    photoUpdatedAt: 2020-02-12T09:21:36.613Z[UTC]
     name:
       - {language: en, text: "Daniel Stenberg"}
     companyIds: [593]
@@ -16107,6 +16131,7 @@ speakers:
     twitter: bagder
   - id: 1185
     photoFileName: 1185.jpg
+    photoUpdatedAt: 2020-02-28T08:17:43.473Z[UTC]
     name:
       - {language: en, text: "Darko Meszaros"}
     companyIds: [34]
@@ -16122,6 +16147,7 @@ speakers:
     twitter: darkosubotica
   - id: 1186
     photoFileName: 1186.jpg
+    photoUpdatedAt: 2020-03-04T08:10:21.999Z[UTC]
     name:
       - {language: en, text: "Matvey Kukui"}
       - {language: ru, text: "Матвей Кукуй"}
@@ -16134,6 +16160,7 @@ speakers:
     twitter: Mkukkk
   - id: 1187
     photoFileName: 1187.jpg
+    photoUpdatedAt: 2020-02-27T15:15:30.948Z[UTC]
     name:
       - {language: en, text: "Kat Cosgrove"}
     companyIds: [287]
@@ -16159,6 +16186,7 @@ speakers:
             роцессов управления СПбГУ. В Яндексе с 2007 года."}
   - id: 1189
     photoFileName: 1189.jpg
+    photoUpdatedAt: 2020-02-25T08:57:23.066Z[UTC]
     name:
       - {language: en, text: "Alexander Prendota"}
       - {language: ru, text: "Александр Прендота"}
@@ -16172,6 +16200,7 @@ speakers:
             ивный образ жизни в OSS-сообществе."}
   - id: 1190
     photoFileName: 1190.jpg
+    photoUpdatedAt: 2020-02-28T08:13:32.077Z[UTC]
     name:
       - {language: en, text: "Adrian Reber"}
     companyIds: [438]
@@ -16200,6 +16229,7 @@ speakers:
     twitter: vfarcic
   - id: 1192
     photoFileName: 1192.jpg
+    photoUpdatedAt: 2020-02-19T13:10:52.275Z[UTC]
     name:
       - {language: en, text: "Ignat Korchagin"}
       - {language: ru, text: "Игнат Корчагин"}
@@ -16568,6 +16598,7 @@ speakers:
             \ программированием и typelevel-стеком. В настоящее время является старшим Big Data-разработчиком в Grid Dynamics."}
   - id: 1222
     photoFileName: 1222.jpg
+    photoUpdatedAt: 2020-05-08T16:34:51.205Z[UTC]
     name:
       - {language: en, text: "Nathaniel Schutta"}
     companyIds: [577]
@@ -17802,6 +17833,7 @@ speakers:
             ески занимается DevOps-практиками на своих проектах."}
   - id: 1326
     photoFileName: 1326.jpg
+    photoUpdatedAt: 2020-07-02T10:37:05.579Z[UTC]
     name:
       - {language: en, text: "Sergey Pechenko"}
       - {language: ru, text: "Сергей Печенко"}
@@ -17810,6 +17842,7 @@ speakers:
       - {language: en, text: "Инженер, программист, переводчик и издатель, практикует DevOps-подход уже 6 лет."}
   - id: 1327
     photoFileName: 1327.jpg
+    photoUpdatedAt: 2020-07-02T09:23:47.269Z[UTC]
     name:
       - {language: en, text: "Aleksey Baranov"}
       - {language: ru, text: "Алексей Баранов"}
@@ -17820,6 +17853,7 @@ speakers:
             евыми протоколами разного уровня и системами, обслуживающими высокие объемы трафика."}
   - id: 1328
     photoFileName: 1328.jpg
+    photoUpdatedAt: 2020-07-02T10:47:20.654Z[UTC]
     name:
       - {language: en, text: "Anton Rykov"}
       - {language: ru, text: "Антон Рыков"}
@@ -17830,6 +17864,7 @@ speakers:
             зработчиков."}
   - id: 1329
     photoFileName: 1329.jpg
+    photoUpdatedAt: 2020-07-02T09:18:39.658Z[UTC]
     name:
       - {language: en, text: "Edson Yanaga"}
     companyIds: [438]
@@ -17849,6 +17884,7 @@ speakers:
     javaChampion: true
   - id: 1330
     photoFileName: 1330.jpg
+    photoUpdatedAt: 2020-07-02T09:52:03.040Z[UTC]
     name:
       - {language: en, text: "Evgeniya Fedotova"}
       - {language: ru, text: "Евгения Федотова"}
@@ -17858,6 +17894,7 @@ speakers:
             ботчиков."}
   - id: 1331
     photoFileName: 1331.jpg
+    photoUpdatedAt: 2020-07-03T11:43:23.097Z[UTC]
     name:
       - {language: en, text: "Gleb Borisov"}
       - {language: ru, text: "Глеб Борисов"}
@@ -17868,6 +17905,7 @@ speakers:
             много программирования и администрирования больших кластеров."}
   - id: 1332
     photoFileName: 1332.jpg
+    photoUpdatedAt: 2020-07-03T11:50:53.076Z[UTC]
     name:
       - {language: en, text: "Aleksey Churbanov"}
       - {language: ru, text: "Алексей Чурбанов"}
@@ -17882,6 +17920,7 @@ speakers:
             ранчей в master стоит держать подальше от людей."
   - id: 1333
     photoFileName: 1333.jpg
+    photoUpdatedAt: 2020-07-02T09:48:12.267Z[UTC]
     name:
       - {language: en, text: "Vladimir Dzalbo"}
       - {language: ru, text: "Владимир Дзалбо"}
@@ -17895,6 +17934,7 @@ speakers:
             икла разработки ПО."}
   - id: 1334
     photoFileName: 1334.jpg
+    photoUpdatedAt: 2020-07-02T09:36:10.902Z[UTC]
     name:
       - {language: en, text: "Andrey Titov"}
       - {language: ru, text: "Андрей Титов"}
@@ -17914,6 +17954,7 @@ speakers:
             \ on both of these languages. In his free time, he juggles and makes candy."}
   - id: 1336
     photoFileName: 1336.jpg
+    photoUpdatedAt: 2020-07-05T15:14:01.861Z[UTC]
     name:
       - {language: en, text: "Konstantin Lisichnikov"}
       - {language: ru, text: "Константин Лисичников"}
@@ -17922,6 +17963,7 @@ speakers:
       - {language: en, text: TBD}
   - id: 1337
     photoFileName: 1337.jpg
+    photoUpdatedAt: 2020-07-05T15:17:31.234Z[UTC]
     name:
       - {language: en, text: "Aleksey Karpov"}
       - {language: ru, text: "Алексей Карпов"}
@@ -17931,6 +17973,7 @@ speakers:
             \ обнаружения новых видов вредоносного ПО."}
   - id: 1338
     photoFileName: 1338.jpg
+    photoUpdatedAt: 2020-06-01T10:07:06.100Z[UTC]
     name:
       - {language: en, text: "Члены ПК DevOops"}
     companyIds: []
