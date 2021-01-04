@@ -4695,6 +4695,7 @@ speakers:
     twitter: NicoJosuttis
   - id: 331
     photoFileName: 0331.jpg
+    photoUpdatedAt: 2020-04-28T12:51:17.639Z[UTC]
     name:
       - {language: en, text: "Alexey Milovidov"}
       - {language: ru, text: "Алексей Миловидов"}
@@ -4707,6 +4708,7 @@ speakers:
       - {language: ru, text: "Окончил МГУ им. Ломоносова. В Яндексе с 2008 года. Руководит группой разработки СУБД ClickHouse."}
   - id: 332
     photoFileName: 0332.jpg
+    photoUpdatedAt: 2019-06-25T07:49:27.592Z[UTC]
     name:
       - {language: en, text: "Antony Polukhin"}
       - {language: ru, text: "Антон Полухин"}
@@ -4725,6 +4727,7 @@ speakers:
             Изобретатель новой метапрограммной техники для рефлексии в C++14."
   - id: 333
     photoFileName: 0333.jpg
+    photoUpdatedAt: 2020-02-19T14:49:28.591Z[UTC]
     name:
       - {language: en, text: "Mikhail Matrosov"}
       - {language: ru, text: "Михаил Матросов"}
@@ -4782,6 +4785,7 @@ speakers:
     twitter: ivan_cukic
   - id: 337
     photoFileName: 0337.jpg
+    photoUpdatedAt: 2020-05-25T07:50:18.389Z[UTC]
     name:
       - {language: en, text: "Aleksandr Granin"}
       - {language: ru, text: "Александр Гранин"}
@@ -4869,6 +4873,7 @@ speakers:
     twitter: amalov
   - id: 344
     photoFileName: 0344.jpg
+    photoUpdatedAt: 2019-01-10T06:33:02.188Z[UTC]
     name:
       - {language: en, text: "Andrey Karpov"}
       - {language: ru, text: "Андрей Карпов"}
@@ -4960,6 +4965,7 @@ speakers:
             енда Такси. Большой любитель метапрограммирования и open source."}
   - id: 351
     photoFileName: 0351.jpg
+    photoUpdatedAt: 2020-01-22T13:48:22.084Z[UTC]
     name:
       - {language: en, text: "Pavel Novikov"}
       - {language: ru, text: "Павел Новиков"}
@@ -12690,6 +12696,7 @@ speakers:
     twitter: ppleskov
   - id: 923
     photoFileName: 0923.jpg
+    photoUpdatedAt: 2019-08-22T07:21:39.496Z[UTC]
     name:
       - {language: en, text: "Vadim Vinnik"}
       - {language: ru, text: "Вадим Винник"}
@@ -12796,6 +12803,7 @@ speakers:
     twitter: edeniska
   - id: 930
     photoFileName: 0930.jpg
+    photoUpdatedAt: 2019-04-17T08:58:57.021Z[UTC]
     name:
       - {language: en, text: "Anastasia Kazakova"}
       - {language: ru, text: "Анастасия Казакова"}
@@ -12914,6 +12922,7 @@ speakers:
     companyIds: []
   - id: 943
     photoFileName: 0943.jpg
+    photoUpdatedAt: 2019-12-25T14:00:20.666Z[UTC]
     name:
       - {language: en, text: "Alexey Tkachenko"}
       - {language: ru, text: "Алексей Ткаченко"}
@@ -13605,6 +13614,7 @@ speakers:
     twitter: geek_timofey
   - id: 996
     photoFileName: 0996.jpg
+    photoUpdatedAt: 2020-01-23T08:14:14.923Z[UTC]
     name:
       - {language: en, text: "Roman Rusyaev"}
       - {language: ru, text: "Роман Русяев"}
@@ -13670,6 +13680,7 @@ speakers:
             спользует шаблонное метапрограммирование даже в драйверах."}
   - id: 1000
     photoFileName: 1000.jpg
+    photoUpdatedAt: 2020-01-22T11:59:28.905Z[UTC]
     name:
       - {language: en, text: "Guy Davidson"}
     companyIds: [120]
@@ -15325,6 +15336,7 @@ speakers:
     twitter: antohabikineev
   - id: 1129
     photoFileName: 1129.jpg
+    photoUpdatedAt: 2020-02-14T07:56:38.629Z[UTC]
     name:
       - {language: en, text: "Alexey Veselovsky"}
       - {language: ru, text: "Алексей Веселовский"}
@@ -15344,6 +15356,7 @@ speakers:
     twitter: _valexey_
   - id: 1130
     photoFileName: 1130.jpg
+    photoUpdatedAt: 2019-12-25T14:11:52.364Z[UTC]
     name:
       - {language: en, text: "Danila Kutenin"}
     companyIds: [217]
@@ -15354,6 +15367,7 @@ speakers:
             \ improving the performance of main libraries."}
   - id: 1131
     photoFileName: 1131.jpg
+    photoUpdatedAt: 2020-02-20T10:46:56.125Z[UTC]
     name:
       - {language: en, text: "Anton Kvyatkovsky"}
       - {language: ru, text: "Антон Квятковский"}
@@ -15365,6 +15379,7 @@ speakers:
             итием С++ сообщества в СПб."}
   - id: 1132
     photoFileName: 1132.jpg
+    photoUpdatedAt: 2020-02-12T08:34:08.899Z[UTC]
     name:
       - {language: en, text: "Denis Kormalev"}
       - {language: ru, text: "Денис Кормалев"}
@@ -15380,6 +15395,7 @@ speakers:
             \ работает в Amazon Robotics."
   - id: 1133
     photoFileName: 1133.jpg
+    photoUpdatedAt: 2020-03-04T12:20:41.606Z[UTC]
     name:
       - {language: en, text: "Sergey Nepomnyachiy"}
     companyIds: [75]
@@ -15390,6 +15406,7 @@ speakers:
             \ and a different code on weekends for fun."
   - id: 1134
     photoFileName: 1134.jpg
+    photoUpdatedAt: 2020-02-21T08:48:48.562Z[UTC]
     name:
       - {language: en, text: "Evgeny Pats"}
     companyIds: [214]
@@ -15400,6 +15417,7 @@ speakers:
     twitter: fuzzitdev
   - id: 1135
     photoFileName: 1135.jpg
+    photoUpdatedAt: 2020-02-20T09:46:06.160Z[UTC]
     name:
       - {language: en, text: "Ivan Afanasyev"}
       - {language: ru, text: "Иван Афанасьев"}
@@ -15413,6 +15431,7 @@ speakers:
     twitter: ivafanas
   - id: 1136
     photoFileName: 1136.jpg
+    photoUpdatedAt: 2019-12-23T13:37:57.083Z[UTC]
     name:
       - {language: en, text: "Mateusz Pusz"}
     companyIds: [183]
@@ -15430,6 +15449,7 @@ speakers:
     twitter: mateusz_pusz
   - id: 1137
     photoFileName: 1137.jpg
+    photoUpdatedAt: 2020-05-26T08:16:24.817Z[UTC]
     name:
       - {language: en, text: "Mikhail Kashkarov"}
       - {language: ru, text: "Михаил Кашкаров"}
@@ -15441,6 +15461,7 @@ speakers:
             нга. Также работал в качестве разработчика тулчейна для операционных систем."}
   - id: 1138
     photoFileName: 1138.jpg
+    photoUpdatedAt: 2020-02-12T10:53:23.966Z[UTC]
     name:
       - {language: en, text: "Elena Stepanova"}
       - {language: ru, text: "Елена Степанова"}
@@ -15457,6 +15478,7 @@ speakers:
     twitter: st_1ena
   - id: 1139
     photoFileName: 1139.jpg
+    photoUpdatedAt: 2020-02-21T08:44:20.006Z[UTC]
     name:
       - {language: en, text: "JeanHeyd Meneide"}
     companyIds: [474]
@@ -15470,6 +15492,7 @@ speakers:
     twitter: thephantomderp
   - id: 1140
     photoFileName: 1140.jpg
+    photoUpdatedAt: 2020-02-20T07:37:29.032Z[UTC]
     name:
       - {language: en, text: "Ruslan Manaev"}
       - {language: ru, text: "Руслан Манаев"}
@@ -15483,6 +15506,7 @@ speakers:
             \ программирования."}
   - id: 1141
     photoFileName: 1141.jpg
+    photoUpdatedAt: 2019-12-25T12:41:48.930Z[UTC]
     name:
       - {language: en, text: "Jason McGuiness"}
     companyIds: [115]
@@ -15493,6 +15517,7 @@ speakers:
             \ and the ACCU to maintain his skill-set."}
   - id: 1142
     photoFileName: 1142.jpg
+    photoUpdatedAt: 2020-06-22T07:09:40.503Z[UTC]
     name:
       - {language: en, text: "John Lakos"}
     companyIds: [75]
@@ -15514,6 +15539,7 @@ speakers:
             ы."}
   - id: 1144
     photoFileName: 1144.jpg
+    photoUpdatedAt: 2020-02-20T08:53:14.885Z[UTC]
     name:
       - {language: en, text: "Yuriy Syrovetskiy"}
       - {language: ru, text: "Юрий Сыровецкий"}
@@ -15524,6 +15550,7 @@ speakers:
     twitter: cblp_su
   - id: 1145
     photoFileName: 1145.jpg
+    photoUpdatedAt: 2020-01-22T10:30:50.641Z[UTC]
     name:
       - {language: en, text: "Victor Zverovich"}
     companyIds: [194]
@@ -15934,6 +15961,7 @@ speakers:
     twitter: ikimruslan
   - id: 1174
     photoFileName: 1174.jpg
+    photoUpdatedAt: 2020-05-05T07:44:16.527Z[UTC]
     name:
       - {language: en, text: "Bjarne Stroustrup"}
     companyIds: [340]
@@ -15950,6 +15978,7 @@ speakers:
             \ in Computer Science from Cambridge University, where he is an honorary fellow of Churchill College."}
   - id: 1176
     photoFileName: 1176.jpg
+    photoUpdatedAt: 2020-05-04T08:08:03.705Z[UTC]
     name:
       - {language: en, text: "Herb Sutter"}
     companyIds: [328]
@@ -17624,6 +17653,7 @@ speakers:
             еделении направлений технологического развития и проектировании архитектур информационных систем."
   - id: 1313
     photoFileName: 1313.jpg
+    photoUpdatedAt: 2020-06-26T11:55:43.430Z[UTC]
     name:
       - {language: en, text: "Vyacheslav Borilin"}
       - {language: ru, text: "Вячеслав Борилин"}
@@ -17636,6 +17666,7 @@ speakers:
             \ в IETF, ITU, NIST, ISA."
   - id: 1314
     photoFileName: 1314.jpg
+    photoUpdatedAt: 2020-06-24T08:20:12.064Z[UTC]
     name:
       - {language: en, text: "Georgiy  Gribkov"}
       - {language: ru, text: "Георгий  Грибков"}
@@ -17658,6 +17689,7 @@ speakers:
             форматика». Работает C++ программистом 2 года, занимается задачами компьютерного зрения."}
   - id: 1316
     photoFileName: 1316.jpg
+    photoUpdatedAt: 2020-06-24T08:15:36.984Z[UTC]
     name:
       - {language: en, text: "Maksim Zvyagintsev"}
       - {language: ru, text: "Максим Звягинцев"}
@@ -17667,6 +17699,7 @@ speakers:
             дра и диагностических правил. Помимо программирования увлекается философией и музыкой."}
   - id: 1317
     photoFileName: 1317.jpg
+    photoUpdatedAt: 2020-06-24T08:10:14.016Z[UTC]
     name:
       - {language: en, text: "Evgeny Strokov"}
       - {language: ru, text: "Евгений Строков"}
@@ -17679,6 +17712,7 @@ speakers:
             форм. Особая страсть — компьютерные игры: стратегии, RPG, а также настольные RPG."}
   - id: 1318
     photoFileName: 1318.jpg
+    photoUpdatedAt: 2020-10-26T15:00:59.008Z[UTC]
     name:
       - {language: en, text: "Evgeny Erokhin"}
       - {language: ru, text: "Евгений Ерохин"}
@@ -17701,6 +17735,7 @@ speakers:
             ."
   - id: 1319
     photoFileName: 1319.jpg
+    photoUpdatedAt: 2020-06-25T09:52:48.294Z[UTC]
     name:
       - {language: en, text: "Sergey Kozlov"}
       - {language: ru, text: "Сергей Козлов"}
@@ -17713,6 +17748,7 @@ speakers:
             мьёй или мучать ардуинки."
   - id: 1320
     photoFileName: 1320.jpg
+    photoUpdatedAt: 2020-06-25T09:59:55.697Z[UTC]
     name:
       - {language: en, text: "Evgeny Alekseev"}
       - {language: ru, text: "Евгений Алексеев"}
@@ -17722,12 +17758,14 @@ speakers:
             сновном разрабатывал базовые компоненты для продуктов, естественно, на C++."}
   - id: 1321
     photoFileName: 1321.jpg
+    photoUpdatedAt: 2020-06-01T12:24:49.943Z[UTC]
     name:
       - {language: en, text: "C++ Russia team"}
     companyIds: []
     bio: []
   - id: 1322
     photoFileName: 1322.jpg
+    photoUpdatedAt: 2020-06-24T07:59:34.291Z[UTC]
     name:
       - {language: en, text: "Evgeny Zaharov"}
       - {language: ru, text: "Евгений Захаров"}
