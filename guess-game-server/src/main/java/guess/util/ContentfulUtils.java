@@ -531,7 +531,8 @@ public class ContentfulUtils {
         boolean isErrorAsset = assetErrorSet.contains(assetId);
 
         if (isErrorAsset) {
-            throw new IllegalArgumentException(String.format("Asset (photo) id %s not resolvable for '%s' speaker", assetId, speakerNameEn));
+            log.warn("Asset (photo) id {} not resolvable for '{}' speaker", assetId, speakerNameEn);
+            return new UrlDates(null, null, null);
         }
 
         ContentfulAsset asset = assetMap.get(assetId);

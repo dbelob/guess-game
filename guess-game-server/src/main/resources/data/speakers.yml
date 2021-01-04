@@ -16318,6 +16318,7 @@ speakers:
     twitter: vv_kruglov
   - id: 1201
     photoFileName: 1201.jpg
+    photoUpdatedAt: 2020-01-27T14:00:29.878Z[UTC]
     name:
       - {language: en, text: "Alexey Gotsman"}
     companyIds: [255]
@@ -16327,6 +16328,7 @@ speakers:
             \ got Ph.D. His research interests are at the intersection of software verification and distributed computing."}
   - id: 1202
     photoFileName: 1202.jpg
+    photoUpdatedAt: 2020-01-27T13:17:29.890Z[UTC]
     name:
       - {language: en, text: "Christian Cachin"}
     companyIds: [557]
@@ -16348,6 +16350,7 @@ speakers:
     twitter: cczurich
   - id: 1203
     photoFileName: 1203.jpg
+    photoUpdatedAt: 2020-01-27T13:49:39.201Z[UTC]
     name:
       - {language: en, text: "Prasad Jayanti"}
     companyIds: [128]
@@ -16359,6 +16362,7 @@ speakers:
             \ Jayanti is teaching Computer Science 1, \"Introduction to Programming and Computing.\""}
   - id: 1204
     photoFileName: 1204.jpg
+    photoUpdatedAt: 2020-01-27T13:11:19.611Z[UTC]
     name:
       - {language: en, text: "Idit Keidar"}
     companyIds: [515]
@@ -16368,6 +16372,7 @@ speakers:
             \ of Parallel and Distributed Computing and SIAM Journal on Computing."}
   - id: 1205
     photoFileName: 1205.jpg
+    photoUpdatedAt: 2020-01-27T13:31:48.546Z[UTC]
     name:
       - {language: en, text: "Rodrigo Miragaia Rodrigues"}
     companyIds: [275]
@@ -16378,6 +16383,7 @@ speakers:
             \ and a graduate student at MIT."
   - id: 1206
     photoFileName: 1206.jpg
+    photoUpdatedAt: 2020-03-02T08:01:23.028Z[UTC]
     name:
       - {language: en, text: "Jing Chen"}
     companyIds: [24]

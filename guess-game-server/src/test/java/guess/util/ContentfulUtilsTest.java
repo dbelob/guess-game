@@ -795,7 +795,7 @@ class ContentfulUtilsTest {
             link2.setSys(contentfulSys2);
 
             return Stream.of(
-                    arguments(link0, Collections.emptyMap(), Set.of("id0"), "Name0", IllegalArgumentException.class, null),
+                    arguments(link0, Collections.emptyMap(), Set.of("id0"), "Name0", null, new UrlDates(null, null, null)),
                     arguments(link1, Collections.emptyMap(), Collections.emptySet(), "Name1", NullPointerException.class, null),
                     arguments(link2, assetMap2, Collections.emptySet(), "Name2", null, new UrlDates(ASSET_URL, NOW, NOW))
             );
