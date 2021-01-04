@@ -2180,3 +2180,6 @@ companies:
     name:
       - {language: en, text: Yandex.Taxi}
       - {language: ru, text: Яндекс.Такси}
+  - id: 697
+    name:
+      - {language: en, text: "Russian Microsoft MVP Community"}

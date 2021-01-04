@@ -150,19 +150,13 @@ speakers:
       - {language: ru, text: "Паша Финкельштейн"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "Despite his education in psychology, for 14 years Pasha managed to work in a lot of IT areas — system administration,\
-            \ development, management, data engineering, in general, touched almost everything that exists in IT. More than\
-            \ 10 years ago he started practicing DevOps and never focused on just one thing.\nNow Pasha works at JetBrains\
-            \ on Big Data Tools – tools to make data engineer's life easier.\nVery sociable, loves, and understands people\
-            \ and is always happy to answer any questions."
-      - language: ru
-        text: "Несмотря на психологическое образование, за 14 лет Паша успел поработать в куче сфер в IT — системное админ\
-            истрирование, разработка, менеджмент разных уровней, дата инжиниринг, в общем, так или иначе, касался почти вс\
-            его, что в IT существует. Начал практиковать DevOps-практики больше 10 лет назад и никогда не концентрировался\
-            \ на чём-то одном.\n\nСейчас Паша работает в компании JetBrains над разработкой Big Data Tools — инструментами\
-            \ для того, чтобы делать жизнь дата инженеров проще.\n\nОчень общительный, любит и понимает людей, и всегда ра\
-            д ответить на любые вопросы."
+      - {language: en, text: "Pasha is a speaker and developer for the Big Data Tools team at JetBrains and the author of\
+            \ the Kotlin API for Apache Spark. In the past, he has worked in almost every IT position, from tech support to\
+            \ manager and data engineer. He loves talking to people about anything, but particularly he loves talking about\
+            \ IT. He's a Kotlin fan."}
+      - {language: ru, text: "Паша — серийный спикер и разработчик Big Data Tools в JetBrains. Автор Kotlin API for Apache\
+            \ Spark. В прошлом успел позаниматься почти всем в сфере IT: от поддержки и системного администрирования до ме\
+            неджмента и дата инжиниринга. Очень любит людей и разговаривать. Обо всём, особенно об IT. Фанат Котлина."}
     twitter: asm0di0
     gitHub: asm0dey
   - id: 9
@@ -1793,6 +1787,7 @@ speakers:
     gitHub: MarcusBiel
   - id: 110
     photoFileName: 0110.jpg
+    photoUpdatedAt: 2018-02-09T13:13:54.342Z[UTC]
     name:
       - {language: en, text: "Oleg Chirukhin"}
       - {language: ru, text: "Олег Чирухин"}
@@ -2549,16 +2544,13 @@ speakers:
       - {language: ru, text: "Виталий Худобахшов"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Was born in 1979 in St.Petersburg (Leningrad) and graduated from Physics Department of St.Petersburg\
-            \ State University. His experience with Java dates back from the version 1.1. For many years Vitaly was an assistant\
-            \ professor in St.Petersburg State University and taught computer science and mathematics courses. From 2015 is\
-            \ a senior analyst in Odnoklassniki, where he deals with various aspects of data mining and machine learning.\
-            \ Has been involved with functional programming for many years and outside of the main job and Java stack is also\
-            \ a Haskell programmer. For data mining purposes uses both Spark/Scala and R programming language."}
-      - {language: ru, text: "Закончил физический факультет СПбГУ, последние 16 лет преподает с некоторыми незначительными\
-            \ перерывами, сейчас на матмехе СПбГУ и в ВШЭ. В JetBrains занимается развитием Data Science-инструментов. Так\
-            же на полставки является ведущим аналитиком в социальной сети Одноклассники. Специалист по обработке больших д\
-            анных и поведенческому анализу. Был докладчиком на Joker и SmartData."}
+      - {language: en, text: "Vitaly graduated from the Faculty of Physics of St. Petersburg State University. He taught at\
+            \ various universities, including St. Petersburg State University, HSE, and ITMO, for more than 15 years before\
+            \ going to work at Odnoklassniki, where he worked on big data analysis. In 2017, he joined JetBrains to create\
+            \ tools that help data engineers in their daily work. He was a speaker on Joker and SmartData."}
+      - {language: ru, text: "Закончил физический факультет СПбГУ, более 15 лет преподавал в различных университетах, вклю\
+            чая СПбГУ, ВШЭ и ИТМО. Затем занимался анализом больших данных в Одноклассниках. А в 2017 году пришел в JetBrains,\
+            \ где начал создавать инструменты для дата-инженеров. Выступал на Joker и SmartData."}
     twitter: khudobakhshov
     gitHub: khud
   - id: 160
@@ -4305,13 +4297,12 @@ speakers:
             \ formal logical methods in 2007. Spent almost 9 years in outsourcing without losing contact with the university\
             \ and research community. Big data analysis at Odnoklassniki became for Dmitry an unique chance to combine theoretical\
             \ knowledge and scientific foundation with the development of real and popular products. And this chance he gladly\
-            \ took advantage of by coming there in 2011. Joined Sberbank team in 2019."}
+            \ took advantage of by coming there in 2011. Joined Sber team in 2019."}
       - {language: ru, text: "Закончил Санкт-Петербургский государственный университет в 2004 году, там же защитил кандида\
             тскую по формально-логическим методам в 2007. Почти 9 лет проработал в аутсорсинге, не теряя контакта с универ\
             ситетом и научной средой. Анализ больших данных в Одноклассниках стал для Дмитрия уникальным шансом совместить\
             \ теоретическую подготовку и научный фундамент с разработкой реальных, востребованных продуктов. И этим шансом\
-            \ он с радостью воспользовался, придя туда пять лет назад. С 2019-го года присоединился к дружной команде Сбер\
-            банка."}
+            \ он с радостью воспользовался, придя туда пять лет назад. С 2019 года присоединился к дружной команде Сбера."}
   - id: 302
     photoFileName: 0302.jpg
     name:
@@ -12783,23 +12774,20 @@ speakers:
             путствующих разделов математики. Любимые языки: C++ и Haskell."}
   - id: 924
     photoFileName: 0924.jpg
+    photoUpdatedAt: 2019-08-02T13:00:35.517Z[UTC]
     name:
-      - {language: en, text: "Aleksandr Ermakov"}
+      - {language: en, text: "Alexander Ermakov"}
       - {language: ru, text: "Александр Ермаков"}
-    companyIds: [48]
+    companyIds: [697]
     bio:
-      - language: en
-        text: "For over 15 years Aleksandr has been working on projects in the field of data processing and analysis. He worked\
-            \ for various international companies such as Pivotal, EMC, Dell. Participated in several international projects\
-            \ with Big Data and Online Analytics.\nMember and active participant of various non-commercial organizations Open\
-            \ Source Initiative (OSI), Linux Foundation, Apache Software Foundation.\nAn active participant in the Big Data\
-            \ movement and Hadoop ecosystem projects."
-      - language: ru
-        text: "Более 15 лет занимается проектами в области обработки и анализа данных. Работал в различных международных к\
-            омпаниях, таких как Pivotal, EMC, Dell. Участвовал в ряде международных проектов по созданию решений и архитек\
-            тур для «Больших Данных» и «Онлайн-аналитики».\nЧлен и активный участник различных некоммерческих организаций\
-            \ Open Source Initiative (OSI), Linux Foundation, Apache Software Foundation.\nАктивный участник движения Big\
-            \ Data и проектов Hadoop-экосистемы."
+      - {language: en, text: "Microsoft Regional Director in Russia, Microsoft MVP in Business Applications, inspiring speaker,\
+            \ Certified Auditor, Partner at Awara IT. Having graduated in two degrees — in Economics and Mathematics — Alexander\
+            \ got MBA in 2000. Alexander has over 25 years of experience working with IT, last 12 were tightly dedicated to\
+            \ Microsoft technologies in Business Solutions."}
+      - {language: ru, text: "Региональный директор Microsoft в России, Microsoft MVP в бизнес приложениях, вдохновляющий\
+            \ спикер, сертифицированный ревизор, партнер в Awara IT. Имеет два образования — экономическое и математическо\
+            е, — получил магистра делового администрирования в 2000 году. Александр имеет более 25 лет опыта работы в ИТ,\
+            \ последние 12 лет были тесно связаны с технологиями Microsoft в области бизнес-решений."}
   - id: 925
     photoFileName: 0925.jpg
     name:
@@ -14006,18 +13994,19 @@ speakers:
     twitter: rauchg
   - id: 1018
     photoFileName: 1018.jpg
-    photoUpdatedAt: 2020-10-12T07:41:59.296Z[UTC]
+    photoUpdatedAt: 2020-12-03T13:58:23.066Z[UTC]
     name:
       - {language: en, text: "Vitaliy Bragilevskiy"}
       - {language: ru, text: "Виталий Брагилевский"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Vitaly is a professor of functional programming, programming language theory and computation\
-            \ theory, a member of the Haskell programming language standardization committee and the Haskell GHC compiler\
-            \ development supervisory committee, the author of the book \"Haskell in Depth\" (Manning Publications)."}
-      - {language: ru, text: "Преподаватель функционального программирования, теории языков программирования и теории вычи\
-            слений, член комитета по стандартизации языка программирования Haskell и наблюдательного комитета по разработк\
-            е компилятора GHC языка Haskell, автор книги «Haskell in Depth» (Manning Publications)."}
+      - {language: en, text: "Vitaly is a professor of functional programming, programming language theory, and computation\
+            \ theory. He is a member of the Haskell programming language standardization committee and the Haskell GHC compiler\
+            \ development supervisory committee, as well as the author of the book \"Haskell in Depth\" (Manning Publications)."}
+      - {language: ru, text: "Виталий Брагилевский — преподаватель функционального программирования, теории языков програм\
+            мирования и теории вычислений, член комитета по стандартизации языка программирования Haskell и наблюдательног\
+            о комитета по разработке компилятора GHC для языка Haskell, автор книги «Haskell in Depth» (издательство «Manning\
+            \ Publications»)."}
     twitter: _bravit
   - id: 1019
     photoFileName: 1019.jpg
@@ -20340,6 +20329,7 @@ speakers:
             ов – SberAcceleration. До прихода в банк занимался стратегическим планированием в медийном агентстве."}
   - id: 1500
     photoFileName: 1500.jpg
+    photoUpdatedAt: 2020-10-29T11:03:57.397Z[UTC]
     name:
       - {language: en, text: "Aleksandr Sloutsky"}
       - {language: ru, text: "Александр Слуцкий"}
@@ -20356,6 +20346,7 @@ speakers:
             \ первой версией этой технологии в облаке Майкрософта — Azure."}
   - id: 1501
     photoFileName: 1501.jpg
+    photoUpdatedAt: 2020-12-03T10:00:09.819Z[UTC]
     name:
       - {language: en, text: "Gleb Lesnikov"}
       - {language: ru, text: "Глеб Лесников"}
@@ -20367,6 +20358,7 @@ speakers:
             \ архитектуру."}
   - id: 1502
     photoFileName: 1502.jpg
+    photoUpdatedAt: 2020-10-30T08:50:43.232Z[UTC]
     name:
       - {language: en, text: "Jeff Zhang"}
     companyIds: [26]
@@ -20379,6 +20371,7 @@ speakers:
     twitter: zjffdu
   - id: 1503
     photoFileName: 1503.jpg
+    photoUpdatedAt: 2020-11-05T11:14:46.487Z[UTC]
     name:
       - {language: en, text: "Bronislav Zhitnikov"}
       - {language: ru, text: "Бронислав Житников"}
@@ -20393,6 +20386,7 @@ speakers:
             \ NiFi в компании. Является администратором и активным участником сообщества пользователей NiFi в России (@nifiusers)."}
   - id: 1504
     photoFileName: 1504.jpg
+    photoUpdatedAt: 2020-12-03T07:49:21.875Z[UTC]
     name:
       - {language: en, text: "Evgeny Ermakov"}
       - {language: ru, text: "Евгений Ермаков"}
@@ -20407,6 +20401,7 @@ speakers:
     twitter: iJKos
   - id: 1505
     photoFileName: 1505.jpg
+    photoUpdatedAt: 2020-12-03T07:42:10.557Z[UTC]
     name:
       - {language: en, text: "Nikolay Grebenshchikov"}
       - {language: ru, text: "Николай Гребенщиков"}
@@ -20418,6 +20413,7 @@ speakers:
             .Такси. Специализируется на MPP СУБД Greenplum."}
   - id: 1506
     photoFileName: 1506.jpg
+    photoUpdatedAt: 2020-11-19T09:41:02.261Z[UTC]
     name:
       - {language: en, text: "Evgeny Rizhik"}
       - {language: ru, text: "Евгений Рыжик"}
@@ -20431,6 +20427,7 @@ speakers:
             \ основателей и ведущих разработчиков. Проект вырос в большой облачный сервис Azure Data Explorer (Kusto)."}
   - id: 1507
     photoFileName: 1507.jpg
+    photoUpdatedAt: 2020-12-04T07:53:15.703Z[UTC]
     name:
       - {language: en, text: "Moon soo Lee"}
     companyIds: [504]
@@ -20443,6 +20440,7 @@ speakers:
     gitHub: Leemoonsoo
   - id: 1508
     photoFileName: 1508.jpg
+    photoUpdatedAt: 2020-11-18T10:04:12.211Z[UTC]
     name:
       - {language: en, text: "Roman Korobeynikov"}
       - {language: ru, text: "Роман Коробейников"}
@@ -20456,6 +20454,7 @@ speakers:
             \ момент Роман Java-архитектор в компании VirtualHealth."}
   - id: 1509
     photoFileName: 1509.jpg
+    photoUpdatedAt: 2020-12-02T08:08:36.323Z[UTC]
     name:
       - {language: en, text: "Vladislav Shishkov"}
       - {language: ru, text: "Владислав Шишков"}
@@ -20478,6 +20477,7 @@ speakers:
     twitter: slash_cyberpunk
   - id: 1510
     photoFileName: 1510.jpg
+    photoUpdatedAt: 2020-11-06T08:03:59.656Z[UTC]
     name:
       - {language: en, text: "Andrey Kuznetsov"}
       - {language: ru, text: "Андрей Кузнецов"}
@@ -20489,6 +20489,7 @@ speakers:
             йчас занимается развитием рекомендательных систем в Одноклассниках."}
   - id: 1511
     photoFileName: 1511.jpg
+    photoUpdatedAt: 2020-11-24T12:47:51.840Z[UTC]
     name:
       - {language: en, text: "Stanislav Bogatyrev"}
       - {language: ru, text: "Станислав Богатырев"}
@@ -20502,6 +20503,7 @@ speakers:
             До этого более 15 лет занимался инфраструктурой и системами хранения данных в Samsung Research, Clodo.ru и DellEMC."
   - id: 1512
     photoFileName: 1512.jpg
+    photoUpdatedAt: 2020-11-09T10:14:11.383Z[UTC]
     name:
       - {language: en, text: "Olga Makarova"}
       - {language: ru, text: "Ольга Макарова"}
@@ -20511,6 +20513,7 @@ speakers:
       - {language: ru, text: "Продуктовый аналитик в ivi и Яндексе. Менеджер команды больших данных в ivi."}
   - id: 1513
     photoFileName: 1513.jpg
+    photoUpdatedAt: 2020-11-09T13:56:13.038Z[UTC]
     name:
       - {language: en, text: "Maria Nosareva"}
       - {language: ru, text: "Мария Носарева"}
@@ -20520,6 +20523,7 @@ speakers:
       - {language: ru, text: "Разработчик команды больших данных в ivi."}
   - id: 1514
     photoFileName: 1514.jpg
+    photoUpdatedAt: 2020-11-13T10:50:33.695Z[UTC]
     name:
       - {language: en, text: "Nikolay Markov"}
       - {language: ru, text: "Николай Марков"}
@@ -20541,6 +20545,7 @@ speakers:
     twitter: enchantner
   - id: 1515
     photoFileName: 1515.jpg
+    photoUpdatedAt: 2020-11-11T11:40:38.720Z[UTC]
     name:
       - {language: en, text: "Alexey Konyaev"}
       - {language: ru, text: "Алексей Коняев"}
@@ -20556,6 +20561,7 @@ speakers:
             \ обработки сложных событий Esper."}
   - id: 1516
     photoFileName: 1516.jpg
+    photoUpdatedAt: 2020-11-20T08:46:20.328Z[UTC]
     name:
       - {language: en, text: "Pavel Yakunin"}
       - {language: ru, text: "Павел Якунин"}
@@ -20573,6 +20579,7 @@ speakers:
             и четыре года и рад поделиться своим опытом."
   - id: 1517
     photoFileName: 1517.jpg
+    photoUpdatedAt: 2020-11-20T08:40:16.300Z[UTC]
     name:
       - {language: en, text: "Evgeny Legky"}
       - {language: ru, text: "Евгений Легкий"}
@@ -20593,6 +20600,7 @@ speakers:
             влялся разработчиком в JetBrains и LG."
   - id: 1518
     photoFileName: 1518.jpg
+    photoUpdatedAt: 2020-11-23T10:43:45.266Z[UTC]
     name:
       - {language: en, text: "Nikolay Averin"}
       - {language: ru, text: "Николай Аверин"}
@@ -20606,6 +20614,7 @@ speakers:
             \ отказоустойчивости баз данных. Наполовину бэкенд-инженер, наполовину DBA."}
   - id: 1519
     photoFileName: 1519.jpg
+    photoUpdatedAt: 2020-12-04T07:37:47.684Z[UTC]
     name:
       - {language: en, text: "Vladimir Verstov"}
       - {language: ru, text: "Владимир Верстов"}
@@ -20621,6 +20630,7 @@ speakers:
             шел путь от системного аналитика до Team & Tech Lead. Последние 4 года занимается инженерией данных в Яндекс.Go."}
   - id: 1520
     photoFileName: 1520.jpg
+    photoUpdatedAt: 2020-10-15T13:14:15.316Z[UTC]
     name:
       - {language: en, text: "Jacek Laskowski"}
     companyIds: []
@@ -20632,6 +20642,7 @@ speakers:
     twitter: jaceklaskowski
   - id: 1521
     photoFileName: 1521.jpg
+    photoUpdatedAt: 2020-12-03T08:25:30.948Z[UTC]
     name:
       - {language: en, text: "Neville Li"}
     companyIds: [500]
@@ -20644,6 +20655,7 @@ speakers:
     twitter: sinisa_lyh
   - id: 1522
     photoFileName: 1522.jpg
+    photoUpdatedAt: 2020-11-13T12:22:26.357Z[UTC]
     name:
       - {language: en, text: "Maksim Statsenko"}
       - {language: ru, text: "Максим Стаценко"}
@@ -20662,6 +20674,7 @@ speakers:
             иганты (Yandex, Mail.Ru). Большие данные — это его работа и хобби, готов говорить о них бесконечно."
   - id: 1523
     photoFileName: 1523.jpg
+    photoUpdatedAt: 2020-12-08T09:33:17.054Z[UTC]
     name:
       - {language: en, text: "Artur Hachuyan"}
       - {language: ru, text: "Артур Хачуян"}
@@ -20679,6 +20692,7 @@ speakers:
             урналисты — проводить расследования, госорганы — находить преступников."}
   - id: 1524
     photoFileName: 1524.jpg
+    photoUpdatedAt: 2020-12-03T08:32:19.765Z[UTC]
     name:
       - {language: en, text: "Andrey Zhukov"}
       - {language: ru, text: "Андрей Жуков"}
@@ -20713,3 +20727,23 @@ speakers:
             тся бегом, звукорежиссурой и поигрывает на джембе."
     twitter: west0r
     gitHub: west0r
+  - id: 1526
+    photoFileName: 1526.jpg
+    photoUpdatedAt: 2020-12-03T08:57:16.955Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Ermakov"}
+      - {language: ru, text: "Александр Ермаков"}
+    companyIds: [48]
+    bio:
+      - language: en
+        text: "For over 15 years Aleksandr has been working on projects in the field of data processing and analysis. He worked\
+            \ for various international companies such as Pivotal, EMC, Dell. Participated in several international projects\
+            \ with Big Data and Online Analytics.\nMember and active participant of various non-commercial organizations Open\
+            \ Source Initiative (OSI), Linux Foundation, Apache Software Foundation.\nAn active participant in the Big Data\
+            \ movement and Hadoop ecosystem projects."
+      - language: ru
+        text: "Более 15 лет занимается проектами в области обработки и анализа данных. Работал в различных международных к\
+            омпаниях, таких как Pivotal, EMC, Dell. Участвовал в ряде международных проектов по созданию решений и архитек\
+            тур для «Больших Данных» и «Онлайн-аналитики».\nЧлен и активный участник различных некоммерческих организаций\
+            \ Open Source Initiative (OSI), Linux Foundation, Apache Software Foundation.\nАктивный участник движения Big\
+            \ Data и проектов Hadoop-экосистемы."
