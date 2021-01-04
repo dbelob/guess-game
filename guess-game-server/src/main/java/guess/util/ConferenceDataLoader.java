@@ -1578,7 +1578,17 @@ public class ConferenceDataLoader {
 //                        "The lifecycle of a service", "Безопасность и Kubernetes",
 //                        "Edge Computing: А trojan horse of DevOps tribe infiltrating the IoT industry")));
 //        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2020, 7, 6), "2020-msk-hydra",
-//                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Oleg Anastasyev", new Company(653, "OK.RU")), 124L)));
+//                new LoadSettings(
+//                        Map.of(new NameCompany("Oleg Anastasyev", new Company(653, "OK.RU")), 124L),
+//                        Set.of(
+//                                "Reasoning about data consistency in distributed systems (part 1)",
+//                                "Programming for persistent memory",
+//                                "Programming for persistent memory (part 1)",
+//                                "Theoretical and practical worlds of failure detectors",
+//                                "Cryptographic tools for distributed computing (part 1)",
+//                                "Algorand: A secure, scalable and decentralized blockchain"
+//                        ),
+//                        true));
 //        loadTalksSpeakersEvent(Conference.SPTDC, LocalDate.of(2020, 7, 6), "2020-msk-sptdc",
 //                LoadSettings.invalidTalksSet(Set.of("Doctoral workshop", "Title will be announced soon")));
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2020, 10, 24), "2020techtrainautumn");

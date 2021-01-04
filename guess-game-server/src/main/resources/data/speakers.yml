@@ -2016,6 +2016,7 @@ speakers:
     gitHub: xpinjection
   - id: 124
     photoFileName: 0124.jpg
+    photoUpdatedAt: 2019-07-30T13:51:20.601Z[UTC]
     name:
       - {language: en, text: "Oleg Anastasiev"}
       - {language: ru, text: "Олег Анастасьев"}
@@ -3332,6 +3333,7 @@ speakers:
             обществах, включая W3C и OASIS."}
   - id: 233
     photoFileName: 0233.jpg
+    photoUpdatedAt: 2019-04-16T15:10:39.226Z[UTC]
     name:
       - {language: en, text: "Cliff Click"}
     companyIds: [118]
@@ -3384,6 +3386,7 @@ speakers:
             мался разработкой виртуальной машины CLDC HI (aka Monty VM)."}
   - id: 236
     photoFileName: 0236.jpg
+    photoUpdatedAt: 2020-02-07T15:04:44.537Z[UTC]
     name:
       - {language: en, text: "Maurice Herlihy"}
     companyIds: [81]
@@ -5497,6 +5500,7 @@ speakers:
             \ performance, and reliability of computer systems."}
   - id: 387
     photoFileName: 0387.jpg
+    photoUpdatedAt: 2020-01-27T13:53:55.819Z[UTC]
     name:
       - {language: en, text: "Michael Scott"}
     companyIds: [560]
@@ -5516,6 +5520,7 @@ speakers:
             \ classes."
   - id: 388
     photoFileName: 0388.jpg
+    photoUpdatedAt: 2020-02-26T13:15:19.461Z[UTC]
     name:
       - {language: en, text: "Martin Kleppmann"}
     companyIds: [558]
@@ -5528,6 +5533,7 @@ speakers:
     twitter: martinkl
   - id: 389
     photoFileName: 0389.jpg
+    photoUpdatedAt: 2020-02-17T11:35:25.864Z[UTC]
     name:
       - {language: en, text: "Heidi Howard"}
     companyIds: [558]
@@ -5579,6 +5585,7 @@ speakers:
             \ failure-resilient applications."}
   - id: 393
     photoFileName: 0393.jpg
+    photoUpdatedAt: 2020-04-13T11:21:19.398Z[UTC]
     name:
       - {language: en, text: "Alex Petrov"}
     companyIds: []
@@ -6602,6 +6609,7 @@ speakers:
     twitter: shchegrikovich
   - id: 465
     photoFileName: 0465.jpg
+    photoUpdatedAt: 2020-05-14T07:43:39.401Z[UTC]
     name:
       - {language: en, text: "Dmitry Ivanov"}
       - {language: ru, text: "Дмитрий Иванов"}
@@ -16613,6 +16621,7 @@ speakers:
     twitter: ntschutta
   - id: 1223
     photoFileName: 1223.jpg
+    photoUpdatedAt: 2020-04-17T12:20:31.891Z[UTC]
     name:
       - {language: en, text: "Anton Podkopaev"}
     companyIds: [344]
@@ -16623,6 +16632,7 @@ speakers:
     twitter: inf_anlun
   - id: 1224
     photoFileName: 1224.jpg
+    photoUpdatedAt: 2020-04-29T11:48:33.731Z[UTC]
     name:
       - {language: en, text: "Ed Huang"}
     companyIds: [400]
@@ -16630,6 +16640,7 @@ speakers:
       - {language: en, text: "Co-founder & CTO at PingCAP, a startup focus on distributed storage system and NewSQL database."}
   - id: 1225
     photoFileName: 1225.jpg
+    photoUpdatedAt: 2020-05-18T08:25:27.586Z[UTC]
     name:
       - {language: en, text: "Ruslan Nikolaev"}
     companyIds: [574]
@@ -16645,6 +16656,7 @@ speakers:
             \ students and works on different projects in systems and concurrency."
   - id: 1226
     photoFileName: 1226.jpg
+    photoUpdatedAt: 2020-02-13T13:46:22.359Z[UTC]
     name:
       - {language: en, text: "Cindy Sridharan"}
     companyIds: []
@@ -16655,6 +16667,7 @@ speakers:
     twitter: copyconstruct
   - id: 1227
     photoFileName: 1227.jpg
+    photoUpdatedAt: 2020-04-27T11:59:07.698Z[UTC]
     name:
       - {language: en, text: "Aishwarya Ganesan"}
     companyIds: [563]
@@ -16667,6 +16680,7 @@ speakers:
     twitter: AishwaryaGanlat
   - id: 1228
     photoFileName: 1228.jpg
+    photoUpdatedAt: 2020-04-27T08:53:41.611Z[UTC]
     name:
       - {language: en, text: "Anastasia Braginsky"}
     companyIds: [602]
@@ -16682,6 +16696,7 @@ speakers:
             \ and later a microcode developer in storage group at IBM Haifa Research Lab (HRL)."}
   - id: 1229
     photoFileName: 1229.jpg
+    photoUpdatedAt: 2020-04-28T11:39:18.303Z[UTC]
     name:
       - {language: en, text: "Alberto Sonnino"}
     companyIds: [195]
@@ -16694,6 +16709,7 @@ speakers:
     twitter: alberto_sonnino
   - id: 1230
     photoFileName: 1230.jpg
+    photoUpdatedAt: 2020-05-29T07:14:27.343Z[UTC]
     name:
       - {language: en, text: "Karthik Ranganathan"}
     companyIds: [604]
@@ -16706,6 +16722,7 @@ speakers:
     twitter: karthikr
   - id: 1231
     photoFileName: 1231.jpg
+    photoUpdatedAt: 2020-01-27T14:08:33.471Z[UTC]
     name:
       - {language: en, text: "Nir Shavit"}
     companyIds: [332]
@@ -16791,6 +16808,7 @@ speakers:
     twitter: spolsky
   - id: 1237
     photoFileName: 1237.jpg
+    photoUpdatedAt: 2020-05-28T14:20:53.221Z[UTC]
     name:
       - {language: en, text: "Maxim Babenko"}
     companyIds: [689]
@@ -16890,6 +16908,7 @@ speakers:
             \ компаний Стек, доцент МГУ."}
   - id: 1244
     photoFileName: 1244.jpg
+    photoUpdatedAt: 2020-05-29T07:11:49.986Z[UTC]
     name:
       - {language: en, text: "Alex Kogan"}
     companyIds: [384]
@@ -16946,6 +16965,7 @@ speakers:
     twitter: filonovpv
   - id: 1248
     photoFileName: 1248.jpg
+    photoUpdatedAt: 2019-05-06T06:49:55.631Z[UTC]
     name:
       - {language: en, text: "Dan Alistarh"}
     companyIds: [276]
@@ -17812,6 +17832,7 @@ speakers:
     bio: []
   - id: 1324
     photoFileName: 1324.jpg
+    photoUpdatedAt: 2020-06-16T12:34:03.001Z[UTC]
     name:
       - {language: en, text: "Rachid Guerraoui"}
     companyIds: [185]
@@ -17945,6 +17966,7 @@ speakers:
             \ IT, технологии и науку."}
   - id: 1335
     photoFileName: 1335.jpg
+    photoUpdatedAt: 2020-07-03T16:59:03.996Z[UTC]
     name:
       - {language: en, text: "Hillel Wayne"}
     companyIds: [588]
