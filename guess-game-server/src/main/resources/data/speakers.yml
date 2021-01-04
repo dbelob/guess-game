@@ -3696,18 +3696,17 @@ speakers:
       - {language: ru, text: "Виталий Фридман"}
     companyIds: [482]
     bio:
-      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn’t like to give in easily. Originally from\
+      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn't like to give in easily. Originally from\
             \ Minsk, Belarus, he studied computer science and mathematics in Germany where he has discovered his passion for\
             \ typography, writing and design. After working as a freelancing designer and developer for 6 years, he co-founded\
-            \ Smashing Magazine, one of the largest online magazines dedicated to Web design and development. Vitaly is writer,\
-            \ co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine in\
-            \ the lovely city of Germany, Freiburg."}
+            \ Smashing Magazine, one of the largest online magazines dedicated to web design and development. Vitaly is the\
+            \ writer, co-author and editor of both Smashing Books. He is now working as the creative lead of Smashing Magazine\
+            \ somewhere in Europe."}
       - {language: ru, text: "Виталий Фридман любит красивый контент и никогда просто так не сдаётся. Родом из Минска, Бел\
             арусь, Виталий изучал информатику и математику в Германии, где обнаружил интерес к типографии, письму и дизайн\
             у. Проработав в качестве фрилансера дизайнером и разработчиком в течение шести лет, он основал Smashing Magazine,\
             \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
-            \ Books. В настоящее время занимает позицию креативного лида Smashing Magazine, и обычно обитает где-то между\
-            \ Брюсселем, Нью-Йорком, Будапештом, Дюссельдорфом и Вильнюсом."}
+            \ Books. В настоящее время работает в Smashing Magazine где-то в Европе."}
     twitter: smashingmag
     gitHub: vitalyfriedman
   - id: 261
@@ -13491,6 +13490,7 @@ speakers:
     twitter: dmistol
   - id: 981
     photoFileName: 0981.jpg
+    photoUpdatedAt: 2019-05-30T11:45:32.042Z[UTC]
     name:
       - {language: en, text: "Erik Veld"}
     companyIds: [230]
@@ -16234,6 +16234,7 @@ speakers:
     twitter: Dixie3Flatline
   - id: 1188
     photoFileName: 1188.jpg
+    photoUpdatedAt: 2020-03-17T09:47:30.399Z[UTC]
     name:
       - {language: en, text: "Danila Dyugurov"}
       - {language: ru, text: "Данила Дюгуров"}
@@ -19603,6 +19604,7 @@ speakers:
     twitter: deni_deniskina
   - id: 1448
     photoFileName: 1448.jpg
+    photoUpdatedAt: 2020-10-06T09:57:34.860Z[UTC]
     name:
       - {language: en, text: "Vitaliy Dmitriev"}
       - {language: ru, text: "Виталий Дмитриев"}
@@ -19627,6 +19629,7 @@ speakers:
     twitter: vdvision
   - id: 1449
     photoFileName: 1449.jpg
+    photoUpdatedAt: 2020-11-09T10:31:30.940Z[UTC]
     name:
       - {language: en, text: "Viktor Erpylev"}
       - {language: ru, text: "Виктор Ерпылев"}
@@ -19638,6 +19641,7 @@ speakers:
             ьдии для обмена опытом между командами."}
   - id: 1450
     photoFileName: 1450.jpg
+    photoUpdatedAt: 2020-12-01T09:08:10.388Z[UTC]
     name:
       - {language: en, text: "Sergey Khrapov"}
       - {language: ru, text: "Сергей Храпов"}
@@ -19653,6 +19657,7 @@ speakers:
             \ DevOps на всем периметре автоматизированных систем."
   - id: 1451
     photoFileName: 1451.jpg
+    photoUpdatedAt: 2020-02-14T12:24:30.297Z[UTC]
     name:
       - {language: en, text: "Federico Fregosi"}
     companyIds: [111]
@@ -19666,9 +19671,9 @@ speakers:
             \ meetups.\nFederico holds an MSc in Software Engineering from City University London."
   - id: 1452
     photoFileName: 1452.jpg
+    photoUpdatedAt: 2020-08-20T12:51:32.328Z[UTC]
     name:
       - {language: en, text: "Victoria Almazova"}
-      - {language: ru, text: "Виктория Алмазова"}
     companyIds: [328]
     bio:
       - language: en
@@ -19678,15 +19683,10 @@ speakers:
             \ developers and architects in security tasks by helping with education will increase the security level without\
             \ increasing additional workload.\n\nDuring her free time, she deep dives into cloud security, development, identity,\
             \ and access management."
-      - language: ru
-        text: "Специалист по безопасности в Microsoft Норвегия с более чем 14 годами опыта в сфере безопасности. Тесно раб\
-            отает с программистами и архитекторами, чтобы встраивать безопасность с самых первых уровней разработки. Викто\
-            рия считает, что предоставление разработчикам и архитекторам возможности решать задачи безопасности через обуч\
-            ение, повысит уровень безопасности без увеличения рабочей нагрузки.\n\nВ свободное время глубоко погружается в\
-            \ облачную безопасность, разработку, управление идентификацией и доступом."
     twitter: texnokot
   - id: 1453
     photoFileName: 1453.jpg
+    photoUpdatedAt: 2020-09-02T09:57:52.676Z[UTC]
     name:
       - {language: en, text: "Patrick Debois"}
     companyIds: [484]
@@ -19696,6 +19696,7 @@ speakers:
     twitter: patrickdebois
   - id: 1454
     photoFileName: 1454.jpg
+    photoUpdatedAt: 2020-11-11T17:27:40.482Z[UTC]
     name:
       - {language: en, text: "Cobus Bernard"}
     companyIds: [34]
@@ -19707,6 +19708,7 @@ speakers:
             \ experience, he has worked on C."
   - id: 1455
     photoFileName: 1455.jpg
+    photoUpdatedAt: 2020-09-30T12:06:11.265Z[UTC]
     name:
       - {language: en, text: "Andrey Devyatkin"}
       - {language: ru, text: "Андрей Девяткин"}
@@ -19731,6 +19733,7 @@ speakers:
     twitter: andrey9kin
   - id: 1456
     photoFileName: 1456.jpg
+    photoUpdatedAt: 2020-10-21T07:28:20.940Z[UTC]
     name:
       - {language: en, text: "Anatoliy Soldatov"}
       - {language: ru, text: "Анатолий Солдатов"}
@@ -19740,6 +19743,7 @@ speakers:
       - {language: ru, text: "Занимается NoSQL БД и хранилищами в Авито."}
   - id: 1457
     photoFileName: 1457.jpg
+    photoUpdatedAt: 2020-09-29T08:38:07.421Z[UTC]
     name:
       - {language: en, text: "Sasha Rosenbaum"}
       - {language: ru, text: "Саша Розенбаум"}
@@ -19756,6 +19760,7 @@ speakers:
     twitter: DivineOps
   - id: 1458
     photoFileName: 1458.jpg
+    photoUpdatedAt: 2020-01-30T17:48:46.957Z[UTC]
     name:
       - {language: en, text: "Chris Kim"}
     companyIds: [432]
@@ -19769,6 +19774,7 @@ speakers:
     twitter: badcodeguy
   - id: 1459
     photoFileName: 1459.jpg
+    photoUpdatedAt: 2020-10-29T14:04:08.971Z[UTC]
     name:
       - {language: en, text: "Eamon Bauman"}
     companyIds: [432]
@@ -19779,6 +19785,7 @@ speakers:
     twitter: eamonb
   - id: 1460
     photoFileName: 1460.jpg
+    photoUpdatedAt: 2020-10-13T11:52:31.425Z[UTC]
     name:
       - {language: en, text: "Heidi Waterhouse"}
     companyIds: [303]
@@ -19791,6 +19798,7 @@ speakers:
     gitHub: wiredferret
   - id: 1461
     photoFileName: 1461.jpg
+    photoUpdatedAt: 2020-10-22T13:10:19.359Z[UTC]
     name:
       - {language: en, text: "Ana Margarita Medina"}
     companyIds: [222]
@@ -19803,6 +19811,7 @@ speakers:
     twitter: Ana_M_Medina
   - id: 1462
     photoFileName: 1462.jpg
+    photoUpdatedAt: 2020-08-20T12:41:48.255Z[UTC]
     name:
       - {language: en, text: "Roman Boiko"}
       - {language: ru, text: "Роман Бойко"}
@@ -19818,6 +19827,7 @@ speakers:
             \ разработке ПО."
   - id: 1463
     photoFileName: 1463.jpg
+    photoUpdatedAt: 2020-11-25T14:14:50.578Z[UTC]
     name:
       - {language: en, text: "Dmitry Shitov"}
       - {language: ru, text: "Дмитрий Шитов"}
@@ -19831,6 +19841,7 @@ speakers:
             \ решения для международных рынков."}
   - id: 1464
     photoFileName: 1464.jpg
+    photoUpdatedAt: 2020-11-05T12:37:32.667Z[UTC]
     name:
       - {language: en, text: "Mikhail Maryfich"}
       - {language: ru, text: "Михаил Марюфич"}
@@ -19847,6 +19858,7 @@ speakers:
     twitter: mikhailmar
   - id: 1465
     photoFileName: 1465.jpg
+    photoUpdatedAt: 2020-11-30T11:19:47.156Z[UTC]
     name:
       - {language: en, text: "Garri Dadayan"}
       - {language: ru, text: "Гарри Дадаян"}
@@ -19858,6 +19870,7 @@ speakers:
             , считает сферу идеальной фигурой и стремится к ней."}
   - id: 1466
     photoFileName: 1466.jpg
+    photoUpdatedAt: 2020-11-30T11:37:31.901Z[UTC]
     name:
       - {language: en, text: "Sofya Tsiguro"}
       - {language: ru, text: "Софья Цигуро"}
@@ -19871,6 +19884,7 @@ speakers:
             ой системы вычислений."}
   - id: 1467
     photoFileName: 1467.jpg
+    photoUpdatedAt: 2020-11-30T14:01:41.653Z[UTC]
     name:
       - {language: en, text: "Phil Laszkowicz"}
     companyIds: [208]
@@ -19881,6 +19895,7 @@ speakers:
             \ books on software development and machine learning."}
   - id: 1468
     photoFileName: 1468.jpg
+    photoUpdatedAt: 2020-11-05T07:34:37.101Z[UTC]
     name:
       - {language: en, text: "Nic Jackson"}
     companyIds: [230]
@@ -19891,6 +19906,7 @@ speakers:
             \ application development on YouTube."}
   - id: 1469
     photoFileName: 1469.jpg
+    photoUpdatedAt: 2020-10-07T09:22:50.631Z[UTC]
     name:
       - {language: en, text: "Artem Zhelezov"}
       - {language: ru, text: "Артем Железов"}
@@ -19908,6 +19924,7 @@ speakers:
             же самостоятельно."}
   - id: 1470
     photoFileName: 1470.jpg
+    photoUpdatedAt: 2020-11-12T10:12:42.907Z[UTC]
     name:
       - {language: en, text: "Mikhail Bizhan"}
       - {language: ru, text: "Михаил Бижан"}
@@ -19923,6 +19940,7 @@ speakers:
             \ трансформации Сбербанка."
   - id: 1471
     photoFileName: 1471.jpg
+    photoUpdatedAt: 2020-10-29T07:39:28.952Z[UTC]
     name:
       - {language: en, text: "Kris Buytaert"}
     companyIds: [269]
@@ -19938,6 +19956,7 @@ speakers:
     twitter: KrisBuytaert
   - id: 1472
     photoFileName: 1472.jpg
+    photoUpdatedAt: 2020-09-29T10:50:18.802Z[UTC]
     name:
       - {language: en, text: "Mark Smalley"}
     companyIds: [480]
@@ -19949,6 +19968,7 @@ speakers:
     twitter: marksmalley
   - id: 1473
     photoFileName: 1473.jpg
+    photoUpdatedAt: 2020-10-06T08:00:37.573Z[UTC]
     name:
       - {language: en, text: "Oleg Skrynnik"}
     companyIds: [94]
@@ -19961,6 +19981,7 @@ speakers:
             \ wrote the book DevOps — A Business Perspective, on which the EXIN DevOps Foundation exam is based."}
   - id: 1474
     photoFileName: 1474.jpg
+    photoUpdatedAt: 2020-10-14T09:12:01.332Z[UTC]
     name:
       - {language: en, text: "Juraci Paixão Kröhling"}
     companyIds: [438]
@@ -19982,6 +20003,7 @@ speakers:
     twitter: danrl_com
   - id: 1476
     photoFileName: 1476.jpg
+    photoUpdatedAt: 2020-10-27T13:35:12.969Z[UTC]
     name:
       - {language: en, text: "Charity Majors"}
     companyIds: [237]
@@ -19991,6 +20013,7 @@ speakers:
     twitter: mipsytipsy
   - id: 1477
     photoFileName: 1477.jpg
+    photoUpdatedAt: 2020-10-20T08:28:02.831Z[UTC]
     name:
       - {language: en, text: "Tim Hinrichs"}
     companyIds: [505]
@@ -20004,6 +20027,7 @@ speakers:
     gitHub: timothyhinrichs
   - id: 1478
     photoFileName: 1478.jpg
+    photoUpdatedAt: 2020-10-19T11:07:07.837Z[UTC]
     name:
       - {language: en, text: "Eric Beard"}
     companyIds: [34]
@@ -20019,6 +20043,7 @@ speakers:
     twitter: ericzbeard
   - id: 1479
     photoFileName: 1479.jpg
+    photoUpdatedAt: 2020-11-05T12:56:44.800Z[UTC]
     name:
       - {language: en, text: "Rico Huijbers"}
     companyIds: [34]
@@ -20253,6 +20278,7 @@ speakers:
     twitter: waynesayonara
   - id: 1498
     photoFileName: 1498.jpg
+    photoUpdatedAt: 2020-12-01T10:10:34.454Z[UTC]
     name:
       - {language: en, text: "Rashid Galiev"}
       - {language: ru, text: "Рашид Галиев"}
@@ -20270,6 +20296,7 @@ speakers:
             бербанка."}
   - id: 1499
     photoFileName: 1499.jpg
+    photoUpdatedAt: 2020-12-01T11:11:15.303Z[UTC]
     name:
       - {language: en, text: "Pavel Kuznetsov"}
       - {language: ru, text: "Павел Кузнецов"}
