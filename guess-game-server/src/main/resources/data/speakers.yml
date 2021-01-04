@@ -3685,23 +3685,24 @@ speakers:
     gitHub: obartunov
   - id: 260
     photoFileName: 0260.jpg
-    photoUpdatedAt: 2019-06-13T13:51:41.722Z[UTC]
+    photoUpdatedAt: 2020-10-12T15:40:15.213Z[UTC]
     name:
       - {language: en, text: "Vitaly Friedman"}
       - {language: ru, text: "Виталий Фридман"}
     companyIds: [482]
     bio:
-      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn't like to give in easily. Originally from\
+      - {language: en, text: "Vitaly Friedman loves beautiful content and doesn’t like to give in easily. Originally from\
             \ Minsk, Belarus, he studied computer science and mathematics in Germany where he has discovered his passion for\
             \ typography, writing and design. After working as a freelancing designer and developer for 6 years, he co-founded\
-            \ Smashing Magazine, one of the largest online magazines dedicated to web design and development. Vitaly is the\
-            \ writer, co-author and editor of both Smashing Books. He is now working as the creative lead of Smashing Magazine\
-            \ somewhere in Europe."}
+            \ Smashing Magazine, one of the largest online magazines dedicated to Web design and development. Vitaly is writer,\
+            \ co-author and editor of both Smashing Books. He is now working as the editor-in-chief of Smashing Magazine in\
+            \ the lovely city of Germany, Freiburg."}
       - {language: ru, text: "Виталий Фридман любит красивый контент и никогда просто так не сдаётся. Родом из Минска, Бел\
             арусь, Виталий изучал информатику и математику в Германии, где обнаружил интерес к типографии, письму и дизайн\
             у. Проработав в качестве фрилансера дизайнером и разработчиком в течение шести лет, он основал Smashing Magazine,\
             \ один из ведущих онлайн-журналов о дизайне и веб-разработке. Виталий — автор, соавтор и редактор всех Smashing\
-            \ Books. В настоящее время работает в Smashing Magazine где-то в Европе."}
+            \ Books. В настоящее время занимает позицию креативного лида Smashing Magazine, и обычно обитает где-то между\
+            \ Брюсселем, Нью-Йорком, Будапештом, Дюссельдорфом и Вильнюсом."}
     twitter: smashingmag
     gitHub: vitalyfriedman
   - id: 261
@@ -9185,6 +9186,7 @@ speakers:
     twitter: andrey_sitnik
   - id: 654
     photoFileName: 0654.jpg
+    photoUpdatedAt: 2019-03-06T12:42:51.324Z[UTC]
     name:
       - {language: en, text: "Martin Splitt"}
     companyIds: [217]
@@ -9286,6 +9288,7 @@ speakers:
     gitHub: nodkz
   - id: 661
     photoFileName: 0661.jpg
+    photoUpdatedAt: 2020-02-20T13:15:23.223Z[UTC]
     name:
       - {language: en, text: "Pavel Malyshev"}
       - {language: ru, text: "Павел Малышев"}
@@ -10037,6 +10040,7 @@ speakers:
     gitHub: mike1pol
   - id: 717
     photoFileName: 0717.jpg
+    photoUpdatedAt: 2020-10-16T07:41:27.933Z[UTC]
     name:
       - {language: en, text: "Dmitriy Karlovskiy"}
       - {language: ru, text: "Дмитрий Карловский"}
@@ -10297,6 +10301,7 @@ speakers:
     twitter: zhuravlik26
   - id: 735
     photoFileName: 0735.jpg
+    photoUpdatedAt: 2020-02-25T13:59:25.704Z[UTC]
     name:
       - {language: en, text: "Mikhail Bashurov"}
       - {language: ru, text: "Михаил Башуров"}
@@ -14029,6 +14034,7 @@ speakers:
             асти онлайн-образования."
   - id: 1021
     photoFileName: 1021.jpg
+    photoUpdatedAt: 2020-02-05T11:08:10.325Z[UTC]
     name:
       - {language: en, text: "Nicolò Ribaudo"}
     companyIds: [64]
@@ -14071,6 +14077,7 @@ speakers:
     twitter: msaboff
   - id: 1026
     photoFileName: 1026.jpg
+    photoUpdatedAt: 2019-11-01T14:31:00.998Z[UTC]
     name:
       - {language: en, text: "Ivan Popelyshev"}
       - {language: ru, text: "Иван Попелышев"}
@@ -14263,6 +14270,7 @@ speakers:
     gitHub: korel-san
   - id: 1040
     photoFileName: 1040.jpg
+    photoUpdatedAt: 2020-10-16T13:55:16.487Z[UTC]
     name:
       - {language: en, text: "Andrey Pechkurov"}
       - {language: ru, text: "Андрей Печкуров"}
@@ -19310,6 +19318,7 @@ speakers:
     twitter: concurnas
   - id: 1428
     photoFileName: 1428.jpg
+    photoUpdatedAt: 2020-11-02T09:40:42.820Z[UTC]
     name:
       - {language: en, text: "Semyon Levenson"}
     companyIds: [689]
@@ -19319,6 +19328,7 @@ speakers:
             \ Huntflow. Now he does Yandex.Zen."}
   - id: 1429
     photoFileName: 1429.jpg
+    photoUpdatedAt: 2020-09-28T07:31:31.508Z[UTC]
     name:
       - {language: en, text: "Yaroslav Losev"}
       - {language: ru, text: "Ярослав Лосев"}
@@ -19331,6 +19341,7 @@ speakers:
     twitter: losyear
   - id: 1430
     photoFileName: 1430.jpg
+    photoUpdatedAt: 2020-11-19T12:32:40.256Z[UTC]
     name:
       - {language: en, text: "Ilya Chertorylsky"}
       - {language: ru, text: "Илья  Черторыльский"}
@@ -19344,6 +19355,7 @@ speakers:
             й. И не выходит из нее до сих пор."}
   - id: 1431
     photoFileName: 1431.jpg
+    photoUpdatedAt: 2020-11-19T11:26:59.077Z[UTC]
     name:
       - {language: en, text: "Zhukova Elena"}
       - {language: ru, text: "Елена Жукова"}
@@ -19355,6 +19367,7 @@ speakers:
             я личность. Любит TypeScript, но и про ванильку не забывает."}
   - id: 1432
     photoFileName: 1432.jpg
+    photoUpdatedAt: 2020-09-28T13:47:55.797Z[UTC]
     name:
       - {language: en, text: "Daniel Ehrenberg"}
     companyIds: [252]
@@ -19366,6 +19379,7 @@ speakers:
     gitHub: littledan
   - id: 1433
     photoFileName: 1433.jpg
+    photoUpdatedAt: 2020-10-07T11:05:24.195Z[UTC]
     name:
       - {language: en, text: "Natalia Venditto"}
     companyIds: [355]
@@ -19388,6 +19402,7 @@ speakers:
     twitter: egsweeny
   - id: 1435
     photoFileName: 1435.jpg
+    photoUpdatedAt: 2020-11-23T14:11:58.625Z[UTC]
     name:
       - {language: en, text: "Ilya Lesik"}
       - {language: ru, text: "Илья Лесик"}
@@ -19398,6 +19413,7 @@ speakers:
     twitter: ilialesik
   - id: 1436
     photoFileName: 1436.jpg
+    photoUpdatedAt: 2020-11-19T12:37:33.715Z[UTC]
     name:
       - {language: en, text: "Georgi Kukushin"}
       - {language: ru, text: "Георгий Кукушин"}
@@ -19407,6 +19423,7 @@ speakers:
             мирования. Адепт Svelte."}
   - id: 1437
     photoFileName: 1437.jpg
+    photoUpdatedAt: 2020-09-28T11:34:03.237Z[UTC]
     name:
       - {language: en, text: "Leo Balter"}
     companyIds: [456]
@@ -19419,6 +19436,7 @@ speakers:
     gitHub: leobalter
   - id: 1438
     photoFileName: 1438.jpg
+    photoUpdatedAt: 2020-10-26T07:57:07.242Z[UTC]
     name:
       - {language: en, text: "Diana Suvorova"}
       - {language: ru, text: "Диана Суворова"}
@@ -19434,6 +19452,7 @@ speakers:
     twitter: DianaSuvorova
   - id: 1439
     photoFileName: 1439.jpg
+    photoUpdatedAt: 2020-10-07T12:42:57.023Z[UTC]
     name:
       - {language: en, text: "Michael Hladky"}
     companyIds: [236]
@@ -19445,6 +19464,7 @@ speakers:
     twitter: Michael_Hladky
   - id: 1440
     photoFileName: 1440.jpg
+    photoUpdatedAt: 2020-10-16T07:44:11.834Z[UTC]
     name:
       - {language: en, text: "Roman Pyatakov"}
       - {language: ru, text: "Роман Пятаков"}
@@ -19455,6 +19475,7 @@ speakers:
     twitter: romankipper
   - id: 1441
     photoFileName: 1441.jpg
+    photoUpdatedAt: 2020-10-07T12:03:13.136Z[UTC]
     name:
       - {language: en, text: "Dmitriy Kovalenko"}
       - {language: ru, text: "Дмитрий Коваленко"}
@@ -19471,6 +19492,7 @@ speakers:
     twitter: dmtrKovalenko
   - id: 1442
     photoFileName: 1442.jpg
+    photoUpdatedAt: 2020-10-08T13:05:23.016Z[UTC]
     name:
       - {language: en, text: "Gusztáv Szikszai"}
     companyIds: [151]
@@ -19480,6 +19502,7 @@ speakers:
     twitter: gdotdesign
   - id: 1443
     photoFileName: 1443.jpg
+    photoUpdatedAt: 2020-10-16T10:07:52.290Z[UTC]
     name:
       - {language: en, text: "Ivan Zatravkin"}
       - {language: ru, text: "Иван Затравкин"}
@@ -19495,6 +19518,7 @@ speakers:
             \ основной работой занимается разработкой онлайн игры в собственном стартапе."
   - id: 1444
     photoFileName: 1444.jpg
+    photoUpdatedAt: 2020-10-12T14:28:52.902Z[UTC]
     name:
       - {language: en, text: "Thomas Steiner"}
     companyIds: [217]
@@ -19506,6 +19530,7 @@ speakers:
     gitHub: tomayac
   - id: 1445
     photoFileName: 1445.jpg
+    photoUpdatedAt: 2020-10-14T10:03:12.888Z[UTC]
     name:
       - {language: en, text: "Dan Abramov"}
       - {language: ru, text: "Дэн Абрамов"}
@@ -19516,6 +19541,7 @@ speakers:
     twitter: dan_abramov
   - id: 1446
     photoFileName: 1446.jpg
+    photoUpdatedAt: 2020-11-03T13:55:23.918Z[UTC]
     name:
       - {language: en, text: "Yuriy Karadzhov"}
       - {language: ru, text: "Юрий Караджов"}
@@ -19533,6 +19559,7 @@ speakers:
             , в игровой индустрии и в менеджменте."
   - id: 1447
     photoFileName: 1447.jpg
+    photoUpdatedAt: 2019-03-15T07:37:23.234Z[UTC]
     name:
       - {language: en, text: "Tanya Denisyuk"}
       - {language: ru, text: "Таня Денисюк"}
