@@ -108,6 +108,7 @@ speakers:
     gitHub: dchuyko
   - id: 6
     photoFileName: 0006.jpg
+    photoUpdatedAt: 2020-10-12T07:39:13.622Z[UTC]
     name:
       - {language: en, text: "Andrey Ershov"}
       - {language: ru, text: "Андрей Ершов"}
@@ -804,7 +805,7 @@ speakers:
     gitHub: johnmcclean
   - id: 47
     photoFileName: 0047.jpg
-    photoUpdatedAt: 2018-08-23T10:47:03.465Z[UTC]
+    photoUpdatedAt: 2020-09-22T10:51:34.805Z[UTC]
     name:
       - {language: en, text: "Evgeny Mandrikov"}
       - {language: ru, text: "Евгений Мандриков"}
@@ -813,12 +814,12 @@ speakers:
       - {language: en, text: "Evgeny is a contributor to various open source projects and a speaker at international conferences\
             \ and JUGs. He is one of the lead developers of JaCoCo project, and also the project lead of the award-winning\
             \ EclEmma project at the Eclipse Foundation that integrates JaCoCo into Eclipse IDE. In his day job at SonarSource\
-            \ Evgeny develops SonarQube's static source code analysis for languages such as Java, C/C++, C#, JavaScript."}
-      - {language: ru, text: "Евгений участвует в различных проектах с открытым исходным кодом и выступает на международны\
-            х конференциях и JUG-ах. Он является одним из ведущих разработчиков JaCoCo, а также руководителем проекта EclEmma\
-            \ в Eclipse Foundation, интегрирующего JaCoCo в Eclipse IDE. В своей повседневной работе в SonarSource Евгений\
-            \ занимается разработкой статических анализаторов кода для таких языков, как Java, C/C++, C#, JavaScript."}
-    twitter: _Godin_
+            \ Evgeny develops SonarQube’s static source code analysis for languages such as Java, C/C++, C#, JavaScript."}
+      - {language: ru, text: "Евгений — участник проектов с открытым исходным кодом и спикер на международных и JUG'овских\
+            \ конференциях. Он является ведущим разработчиком в JaCoCo project и лидом в отмеченном наградами проекте — EclEmma,\
+            \ который интегрирует JaCoCo в Eclipse IDE. В SonarSource Евгений разрабатывает статический анализ исходного к\
+            ода для таких языков, как Java, C/C++, C#, JavaScript."}
+    twitter: _godin_
     gitHub: Godin
   - id: 48
     photoFileName: 0048.jpg
@@ -1288,6 +1289,7 @@ speakers:
     gitHub: berndruecker
   - id: 78
     photoFileName: 0078.jpg
+    photoUpdatedAt: 2020-02-03T08:40:56.616Z[UTC]
     name:
       - {language: en, text: "Yuri Artamonov"}
       - {language: ru, text: "Юрий Артамонов"}
@@ -3409,17 +3411,19 @@ speakers:
     photoFileName: 0237.jpg
     photoUpdatedAt: 2020-10-09T13:18:05.073Z[UTC]
     name:
-      - {language: en, text: "Andrei Solntsev"}
+      - {language: en, text: "Andrey Solntsev"}
       - {language: ru, text: "Андрей Солнцев"}
     companyIds: [100]
     bio:
-      - {language: en, text: "Software craftsman at Codeborne (Tallinn, Estonia). Aggressive fan of extreme programming, autotests,\
-            \ pair programming and clean code. Creator of Selenide — an open-source library for UI tests in Java. Organizer\
-            \ of devclub.eu. Frequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
-            \ Testing Days, TopConf, DevConFu, Devoxx."}
-      - {language: ru, text: "Андрей — разработчик в эстонской компании Codeborne. Автор фреймворка Selenide, организатор\
-            \ таллинского Devclub, частый докладчик на конференциях. Ярый приверженец экстремального программирования, авт\
-            оматических тестов, парного программирования и чистого кода."}
+      - language: en
+        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
+            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
+            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."
+      - language: ru
+        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
+            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
+            , парного программирования и чистого кода."
     twitter: asolntsev
     gitHub: asolntsev
   - id: 238
@@ -7590,6 +7594,7 @@ speakers:
             ционного банковского обслуживания для юридических лиц."}
   - id: 542
     photoFileName: 0542.jpg
+    photoUpdatedAt: 2019-03-01T14:02:50.394Z[UTC]
     name:
       - {language: en, text: "Jack Vanlightly"}
     companyIds: [497]
@@ -7858,6 +7863,7 @@ speakers:
             ов. Принимала участие в разработке BDD-фреймворка и построении инфраструктуры для автоматизации тестирования."}
   - id: 561
     photoFileName: 0561.jpg
+    photoUpdatedAt: 2020-10-09T08:28:31.176Z[UTC]
     name:
       - {language: en, text: "Viktor Koronevich"}
       - {language: ru, text: "Виктор Короневич"}
@@ -13963,18 +13969,18 @@ speakers:
     twitter: rauchg
   - id: 1018
     photoFileName: 1018.jpg
+    photoUpdatedAt: 2020-10-12T07:41:59.296Z[UTC]
     name:
       - {language: en, text: "Vitaliy Bragilevskiy"}
       - {language: ru, text: "Виталий Брагилевский"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Vitaly is a professor of functional programming, programming language theory, and computation\
-            \ theory. He is a member of the Haskell programming language standardization committee and the Haskell GHC compiler\
-            \ development supervisory committee, as well as the author of the book \"Haskell in Depth\" (Manning Publications)."}
-      - {language: ru, text: "Виталий Брагилевский — преподаватель функционального программирования, теории языков програм\
-            мирования и теории вычислений, член комитета по стандартизации языка программирования Haskell и наблюдательног\
-            о комитета по разработке компилятора GHC для языка Haskell, автор книги «Haskell in Depth» (издательство «Manning\
-            \ Publications»)."}
+      - {language: en, text: "Vitaly is a professor of functional programming, programming language theory and computation\
+            \ theory, a member of the Haskell programming language standardization committee and the Haskell GHC compiler\
+            \ development supervisory committee, the author of the book \"Haskell in Depth\" (Manning Publications)."}
+      - {language: ru, text: "Преподаватель функционального программирования, теории языков программирования и теории вычи\
+            слений, член комитета по стандартизации языка программирования Haskell и наблюдательного комитета по разработк\
+            е компилятора GHC языка Haskell, автор книги «Haskell in Depth» (Manning Publications)."}
     twitter: _bravit
   - id: 1019
     photoFileName: 1019.jpg
@@ -18024,6 +18030,7 @@ speakers:
     bio: []
   - id: 1339
     photoFileName: 1339.jpg
+    photoUpdatedAt: 2020-09-14T09:38:16.809Z[UTC]
     name:
       - {language: en, text: "Pavel Strunkin"}
       - {language: ru, text: "Павел Стрункин"}
@@ -18038,6 +18045,7 @@ speakers:
     twitter: VisualReTracker
   - id: 1340
     photoFileName: 1340.jpg
+    photoUpdatedAt: 2020-09-21T07:14:29.377Z[UTC]
     name:
       - {language: en, text: "Nikolay Golubyev"}
       - {language: ru, text: "Николай Голубев"}
@@ -18054,6 +18062,7 @@ speakers:
     twitter: mgolubyev
   - id: 1341
     photoFileName: 1341.jpg
+    photoUpdatedAt: 2020-09-17T13:14:19.119Z[UTC]
     name:
       - {language: en, text: "Anton Potsyus"}
       - {language: ru, text: "Антон Поцюс"}
@@ -18067,6 +18076,7 @@ speakers:
             овом бизнесе в качестве backend-разработчика."
   - id: 1342
     photoFileName: 1342.jpg
+    photoUpdatedAt: 2020-09-15T07:54:10.820Z[UTC]
     name:
       - {language: en, text: "Shweta Sharma"}
     companyIds: [60]
@@ -18083,6 +18093,7 @@ speakers:
     gitHub: shwetaneelsharma
   - id: 1343
     photoFileName: 1343.jpg
+    photoUpdatedAt: 2020-09-30T09:01:42.135Z[UTC]
     name:
       - {language: en, text: "Oleksandr Khotemskyi"}
       - {language: ru, text: "Александр Хотемской"}
@@ -18100,6 +18111,7 @@ speakers:
     gitHub: xotabu4
   - id: 1344
     photoFileName: 1344.jpg
+    photoUpdatedAt: 2020-09-15T10:48:22.074Z[UTC]
     name:
       - {language: en, text: "Evgeny Chentsov"}
       - {language: ru, text: "Евгений Ченцов"}
@@ -18119,6 +18131,7 @@ speakers:
             оды Онлайн» в Mail.Ru Group."
   - id: 1345
     photoFileName: 1345.jpg
+    photoUpdatedAt: 2020-10-01T08:59:13.149Z[UTC]
     name:
       - {language: en, text: "Evgeny Krutskikh"}
       - {language: ru, text: "Евгений Крутских"}
@@ -18138,6 +18151,7 @@ speakers:
             омент занимается новым, пока не анонсированным проектом."
   - id: 1346
     photoFileName: 1346.jpg
+    photoUpdatedAt: 2020-09-21T08:14:11.205Z[UTC]
     name:
       - {language: en, text: "Vyacheslav Lukashevich"}
       - {language: ru, text: "Вячеслав Лукашевич"}
@@ -18155,6 +18169,7 @@ speakers:
             \ Continuous Delivery.\nОдин из организаторов Riga Test Automation Club."
   - id: 1347
     photoFileName: 1347.jpg
+    photoUpdatedAt: 2020-10-08T08:54:59.352Z[UTC]
     name:
       - {language: en, text: "Maksim Rogozhnikov"}
       - {language: ru, text: "Максим Рогожников"}
@@ -18166,6 +18181,7 @@ speakers:
             \ за это время поработал над проектами в банковской сфере, телекоме, ретейле и госуслугах."}
   - id: 1348
     photoFileName: 1348.jpg
+    photoUpdatedAt: 2020-09-30T10:49:21.685Z[UTC]
     name:
       - {language: en, text: "Igor Goldshmidt"}
       - {language: ru, text: "Игорь Гольдшмидт"}
@@ -18191,6 +18207,7 @@ speakers:
     twitter: IgorGolds
   - id: 1349
     photoFileName: 1349.jpg
+    photoUpdatedAt: 2020-09-21T11:57:45.365Z[UTC]
     name:
       - {language: en, text: "James Whittaker"}
     companyIds: [133]
@@ -18208,6 +18225,7 @@ speakers:
     twitter: docjamesw
   - id: 1350
     photoFileName: 1350.jpg
+    photoUpdatedAt: 2020-10-06T13:18:19.335Z[UTC]
     name:
       - {language: en, text: "Sergey Chepkasov"}
       - {language: ru, text: "Сергей Чепкасов"}
@@ -18275,6 +18293,7 @@ speakers:
     twitter: sermp
   - id: 1354
     photoFileName: 1354.jpg
+    photoUpdatedAt: 2020-11-02T11:05:27.012Z[UTC]
     name:
       - {language: en, text: "Mikhail Rogov"}
       - {language: ru, text: "Михаил Рогов"}
@@ -18290,6 +18309,7 @@ speakers:
             \ группы продуктов PFM Сбербанка."
   - id: 1355
     photoFileName: 1355.jpg
+    photoUpdatedAt: 2020-11-02T10:51:38.966Z[UTC]
     name:
       - {language: en, text: "Ivan Kravtsov"}
       - {language: ru, text: "Иван Кравцов"}
@@ -18306,6 +18326,7 @@ speakers:
             лом."}
   - id: 1356
     photoFileName: 1356.jpg
+    photoUpdatedAt: 2020-10-28T07:23:07.894Z[UTC]
     name:
       - {language: en, text: "Anastasia Mladshova"}
       - {language: ru, text: "Анастасия Младшова"}
@@ -18319,6 +18340,7 @@ speakers:
             а — координирует QA и CI/CD банковской платформы."}
   - id: 1357
     photoFileName: 1357.jpg
+    photoUpdatedAt: 2020-11-02T13:56:44.951Z[UTC]
     name:
       - {language: en, text: "Sergey Razuvaev"}
       - {language: ru, text: "Сергей Разуваев"}
@@ -18330,6 +18352,7 @@ speakers:
             ия около 5 лет, пишет на Java и немного на JS. Более 12 лет в IT. Пришел в QA из разработки."}
   - id: 1358
     photoFileName: 1358.jpg
+    photoUpdatedAt: 2020-10-28T10:06:05.508Z[UTC]
     name:
       - {language: en, text: "Valeriy Bogdanov"}
       - {language: ru, text: "Валерий Богданов"}
@@ -18344,6 +18367,7 @@ speakers:
             работки: сложные алгоритмы/бэкенд.\nХобби: игра на гитаре фингерстайлом, космология."
   - id: 1359
     photoFileName: 1359.jpg
+    photoUpdatedAt: 2020-11-02T10:39:05.567Z[UTC]
     name:
       - {language: en, text: "Tatiana Belskaya"}
       - {language: ru, text: "Татьяна Бельская"}
@@ -18359,6 +18383,7 @@ speakers:
             разование и навыки управления процессами. Более 6 лет работает в направлении тестирования."
   - id: 1360
     photoFileName: 1360.jpg
+    photoUpdatedAt: 2020-08-24T15:08:36.585Z[UTC]
     name:
       - {language: en, text: "Anastasia Kryazheva"}
       - {language: ru, text: "Анастасия Кряжева"}
