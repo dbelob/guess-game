@@ -461,6 +461,7 @@ speakers:
     gitHub: vlsi
   - id: 26
     photoFileName: 0026.jpg
+    photoUpdatedAt: 2019-05-06T15:05:28.539Z[UTC]
     name:
       - {language: en, text: "Gleb Smirnov"}
       - {language: ru, text: "Глеб Смирнов"}
@@ -2536,18 +2537,22 @@ speakers:
     twitter: dyer_the
   - id: 159
     photoFileName: 0159.jpg
+    photoUpdatedAt: 2016-09-13T13:34:48.544Z[UTC]
     name:
       - {language: en, text: "Vitaly Khudobakhshov"}
       - {language: ru, text: "Виталий Худобахшов"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Vitaly graduated from the Faculty of Physics of St. Petersburg State University. He taught at\
-            \ various universities, including St. Petersburg State University, HSE, and ITMO, for more than 15 years before\
-            \ going to work at Odnoklassniki, where he worked on big data analysis. In 2017, he joined JetBrains to create\
-            \ tools that help data engineers in their daily work. He was a speaker on Joker and SmartData."}
-      - {language: ru, text: "Закончил физический факультет СПбГУ, более 15 лет преподавал в различных университетах, вклю\
-            чая СПбГУ, ВШЭ и ИТМО. Затем занимался анализом больших данных в Одноклассниках. А в 2017 году пришел в JetBrains,\
-            \ где начал создавать инструменты для дата-инженеров. Выступал на Joker и SmartData."}
+      - {language: en, text: "Was born in 1979 in St.Petersburg (Leningrad) and graduated from Physics Department of St.Petersburg\
+            \ State University. His experience with Java dates back from the version 1.1. For many years Vitaly was an assistant\
+            \ professor in St.Petersburg State University and taught computer science and mathematics courses. From 2015 is\
+            \ a senior analyst in Odnoklassniki, where he deals with various aspects of data mining and machine learning.\
+            \ Has been involved with functional programming for many years and outside of the main job and Java stack is also\
+            \ a Haskell programmer. For data mining purposes uses both Spark/Scala and R programming language."}
+      - {language: ru, text: "Закончил физический факультет СПбГУ, последние 16 лет преподает с некоторыми незначительными\
+            \ перерывами, сейчас на матмехе СПбГУ и в ВШЭ. В JetBrains занимается развитием Data Science-инструментов. Так\
+            же на полставки является ведущим аналитиком в социальной сети Одноклассники. Специалист по обработке больших д\
+            анных и поведенческому анализу. Был докладчиком на Joker и SmartData."}
     twitter: khudobakhshov
     gitHub: khud
   - id: 160
@@ -3402,20 +3407,19 @@ speakers:
     gitHub: mpherlihy
   - id: 237
     photoFileName: 0237.jpg
+    photoUpdatedAt: 2020-10-09T13:18:05.073Z[UTC]
     name:
-      - {language: en, text: "Andrey Solntsev"}
+      - {language: en, text: "Andrei Solntsev"}
       - {language: ru, text: "Андрей Солнцев"}
     companyIds: [100]
     bio:
-      - language: en
-        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
-            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
-            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
-            \ Testing Days, TopConf, DevConFu, Devoxx."
-      - language: ru
-        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
-            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
-            , парного программирования и чистого кода."
+      - {language: en, text: "Software craftsman at Codeborne (Tallinn, Estonia). Aggressive fan of extreme programming, autotests,\
+            \ pair programming and clean code. Creator of Selenide — an open-source library for UI tests in Java. Organizer\
+            \ of devclub.eu. Frequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."}
+      - {language: ru, text: "Андрей — разработчик в эстонской компании Codeborne. Автор фреймворка Selenide, организатор\
+            \ таллинского Devclub, частый докладчик на конференциях. Ярый приверженец экстремального программирования, авт\
+            оматических тестов, парного программирования и чистого кода."}
     twitter: asolntsev
     gitHub: asolntsev
   - id: 238
@@ -3754,6 +3758,7 @@ speakers:
             \ раздел Рекомендаций."
   - id: 264
     photoFileName: 0264.jpg
+    photoUpdatedAt: 2020-10-12T07:18:30.951Z[UTC]
     name:
       - {language: en, text: "Illya Klymov"}
       - {language: ru, text: "Илья Климов"}
@@ -5232,6 +5237,7 @@ speakers:
     twitter: antonbabenko
   - id: 369
     photoFileName: 0369.jpg
+    photoUpdatedAt: 2019-08-25T12:12:54.587Z[UTC]
     name:
       - {language: en, text: "Alexey Kirpichnikov"}
       - {language: ru, text: "Алексей Кирпичников"}
@@ -6686,20 +6692,25 @@ speakers:
     twitter: dinagozil
   - id: 471
     photoFileName: 0471.jpg
-    photoUpdatedAt: 2020-01-16T11:12:02.772Z[UTC]
+    photoUpdatedAt: 2020-10-09T11:46:49.029Z[UTC]
     name:
       - {language: en, text: "Andrey Akinshin"}
       - {language: ru, text: "Андрей Акиньшин"}
     companyIds: [286]
     bio:
       - {language: en, text: "Andrey's favorite topics are performance and micro-optimizations, and he is the maintainer of\
-            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is also\
-            \ a PhD in computer science, a Microsoft .NET MVP, a silver medalist of ACM ICPC. In his free time, he likes to\
-            \ study science (his primary research interests are mathematical biology and bifurcation theory)."}
+            \ BenchmarkDotNet (a powerful .NET library for benchmarking supported by the .NET Foundation). Andrey is a frequent\
+            \ speaker at various events for developers, and he is the program director of the DotNext conference. Andrey is\
+            \ also a PhD in computer science, a silver medalist of ACM ICPC. In his free time, he likes to study science (his\
+            \ primary research interests are mathematical biology and bifurcation theory). Previously, he worked as a postdoctoral\
+            \ research fellow in the Weizmann Institute of Science and as a research scientist in the Sobolev Institute of\
+            \ Mathematics SB RAS."}
       - {language: ru, text: "Любимые темы Андрея — производительность и микрооптимизации, он также мейнтейнер проекта BenchmarkDotNet\
-            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — к.ф.-м.н., Microsoft .NET\
-            \ MVP, серебряный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — ма\
-            тематическая биология и теория бифуркаций."}
+            \ (библиотека для написания .NET-бенчмарков, поддержанная .NET Foundation). Андрей — частый спикер на различны\
+            х мероприятиях для разработчиков и председатель программного комитета конференции DotNext. Он также к.ф.-м.н.,\
+            \ серебряный медалист ACM ICPC. В свободное время любит заниматься наукой, основные научные интересы — математ\
+            ическая биология и теория бифуркаций. Раньше он работал постдоком в Институте Вейцмана и научным сотрудником в\
+            \ Институте математики СО РАН."}
     twitter: andrey_akinshin
     gitHub: AndreyAkinshin
     mvpReconnect: true
@@ -7746,7 +7757,7 @@ speakers:
             ь и писать код, так и вручную проверять функционал и охотиться за особо заковыристыми багами."}
   - id: 554
     photoFileName: 0554.jpg
-    photoUpdatedAt: 2019-10-22T13:38:04.660Z[UTC]
+    photoUpdatedAt: 2020-10-09T13:22:56.315Z[UTC]
     name:
       - {language: en, text: "Artem Eroshenko"}
       - {language: ru, text: "Артем Ерошенко"}
@@ -11939,9 +11950,9 @@ speakers:
     twitter: eenriquelopez
   - id: 858
     photoFileName: 0858.jpg
-    photoUpdatedAt: 2020-06-08T09:18:09.779Z[UTC]
+    photoUpdatedAt: 2020-10-12T09:38:27.774Z[UTC]
     name:
-      - {language: en, text: "Eugene Saturov"}
+      - {language: en, text: "Evgeny Saturov"}
       - {language: ru, text: "Евгений Сатуров"}
     companyIds: [506]
     bio:
@@ -12774,6 +12785,7 @@ speakers:
     twitter: kevteev
   - id: 926
     photoFileName: 0926.jpg
+    photoUpdatedAt: 2019-06-03T07:22:46.003Z[UTC]
     name:
       - {language: en, text: "Evgeny Kot"}
       - {language: ru, text: "Евгений Кот"}
@@ -18234,6 +18246,7 @@ speakers:
     twitter: ManukhinaDarya
   - id: 1352
     photoFileName: 1352.jpg
+    photoUpdatedAt: 2020-09-24T09:17:33.520Z[UTC]
     name:
       - {language: en, text: "Ksenia Tomak"}
       - {language: ru, text: "Ксения Томак"}
@@ -18247,6 +18260,7 @@ speakers:
             жки баз данных, оптимизация обработки данных, моделирование данных."}
   - id: 1353
     photoFileName: 1353.jpg
+    photoUpdatedAt: 2019-04-17T08:57:02.379Z[UTC]
     name:
       - {language: en, text: "Sergey Platonov"}
       - {language: ru, text: "Сергей Платонов"}
