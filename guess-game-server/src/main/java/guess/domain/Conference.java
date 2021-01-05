@@ -16,5 +16,6 @@ public enum Conference {
     MOBIUS,
     SPTDC,
     SMART_DATA,
-    TECH_TRAIN
+    TECH_TRAIN,
+    SNOW_ONE
 }

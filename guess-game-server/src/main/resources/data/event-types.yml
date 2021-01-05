@@ -221,7 +221,7 @@ eventTypes:
       - {language: en, text: JBreak}
     shortDescription:
       - language: en
-        text: "The Java Conference in Siberia"
+        text: "Java Conference in Siberia"
       - language: ru
         text: "Java‑конференция в Сибири"
     longDescription:
@@ -458,5 +458,25 @@ eventTypes:
       - {language: en, text: "https://www.meetup.com/JUGNsk"}
     vkLink: https://vk.com/jugnsk
     twitterLink: https://twitter.com/jugnsk
-    youtubeLink: https://www.youtube.com/channel/UCTk5cqCKvU1B6qYU7X-0Qjg
+    youtubeLink: https://www.youtube.com/c/JUGNsk
     telegramLink: https://t.me/jugnsk
+  - id: 16
+    conference: SNOW_ONE
+    logoFileName: snowone.jpg
+    name:
+      - {language: en, text: "SnowOne"}
+    shortDescription:
+      - language: en
+        text: "Java conference from Siberia"
+      - language: ru
+        text: "Java-конференция из Сибири"
+    longDescription:
+      - language: en
+        text: "SnowOne — community-driven Java conference from JUGNsk in Novosibirsk — the capital of Siberia! The main event of the year from the Java community of Siberia."
+      - language: ru
+        text: "SnowOne — Java-конференция от JUGNsk в Новосибирске — столице Сибири! Главное мероприятие года от Java-сообщества Сибири."
+    siteLink:
+      - {language: en, text: "https://snowone.ru/en"}
+      - {language: ru, text: "https://snowone.ru/ru"}
+    twitterLink: https://twitter.com/snowone_conf
+    youtubeLink: https://www.youtube.com/c/JUGNsk
