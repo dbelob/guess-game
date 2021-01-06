@@ -20747,3 +20747,18 @@ speakers:
             тур для «Больших Данных» и «Онлайн-аналитики».\nЧлен и активный участник различных некоммерческих организаций\
             \ Open Source Initiative (OSI), Linux Foundation, Apache Software Foundation.\nАктивный участник движения Big\
             \ Data и проектов Hadoop-экосистемы."
+  - id: 1527
+    photoFileName: 1527.jpg
+    name:
+      - {language: en, text: "Konstantin Bulenkov"}
+      - {language: ru, text: "Константин Буленков"}
+    companyIds: [286]
+    bio:
+      - language: en
+        text: "Konstantin is a project manager at JetBrains. He is responsible for IntelliJ Platform UI/UX and backend.\
+            \ The author of Darcula Look-n-Feel."
+      - language: ru
+        text: "Константин – project-manager в JetBrains. Он занимается UI/UX и бэкендом платформы IntelliJ. Также известен\
+            \ как автор темы Darcula."
+    twitter: bulenkov
+    gitHub: bulenkov
