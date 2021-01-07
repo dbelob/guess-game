@@ -39,11 +39,14 @@ public class EventType extends Nameable {
     private List<Event> events = new ArrayList<>();
     private boolean inactive;
 
+    private long organizerId;
+    private Organizer organizer;
+
     public EventType() {
     }
 
     public EventType(Nameable nameable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
-                     boolean inactive) {
+                     boolean inactive, Organizer organizer) {
         super(nameable.getId(), nameable.getName(), nameable.getShortDescription(), nameable.getLongDescription());
 
         this.conference = conference;
@@ -56,6 +59,8 @@ public class EventType extends Nameable {
         this.logoFileName = logoFileName;
         this.events = events;
         this.inactive = inactive;
+        this.organizer = organizer;
+        this.organizerId = organizer.getId();
     }
 
     public Conference getConference() {
@@ -136,6 +141,22 @@ public class EventType extends Nameable {
 
     public void setInactive(boolean inactive) {
         this.inactive = inactive;
+    }
+
+    public long getOrganizerId() {
+        return organizerId;
+    }
+
+    public void setOrganizerId(long organizerId) {
+        this.organizerId = organizerId;
+    }
+
+    public Organizer getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(Organizer organizer) {
+        this.organizer = organizer;
     }
 
     public boolean isEventTypeConference() {

@@ -2,6 +2,7 @@ eventTypes:
   - id: 0
     conference: CPP_RUSSIA
     logoFileName: cpprussia.jpg
+    organizerId: 0
     name:
       - {language: en, text: "C++ Russia"}
     shortDescription:
@@ -34,6 +35,7 @@ eventTypes:
   - id: 1
     conference: DEV_OOPS
     logoFileName: devoops.jpg
+    organizerId: 0
     name:
       - {language: en, text: DevOops}
     shortDescription:
@@ -77,6 +79,7 @@ eventTypes:
   - id: 2
     conference: DOT_NEXT
     logoFileName: dotnext.jpg
+    organizerId: 0
     name:
       - {language: en, text: DotNext}
     shortDescription:
@@ -110,6 +113,7 @@ eventTypes:
   - id: 3
     conference: HEISENBUG
     logoFileName: heisenbug.jpg
+    organizerId: 0
     name:
       - {language: en, text: Heisenbug}
     shortDescription:
@@ -146,6 +150,7 @@ eventTypes:
   - id: 4
     conference: HOLY_JS
     logoFileName: holyjs.jpg
+    organizerId: 0
     name:
       - {language: en, text: HolyJS}
     shortDescription:
@@ -179,6 +184,7 @@ eventTypes:
   - id: 5
     conference: HYDRA
     logoFileName: hydra.jpg
+    organizerId: 0
     name:
       - {language: en, text: Hydra}
     shortDescription:
@@ -217,6 +223,7 @@ eventTypes:
   - id: 6
     conference: JBREAK
     logoFileName: jbreak.jpg
+    organizerId: 0
     name:
       - {language: en, text: JBreak}
     shortDescription:
@@ -245,6 +252,7 @@ eventTypes:
   - id: 8
     conference: JOKER
     logoFileName: jokerconf.jpg
+    organizerId: 0
     name:
       - {language: en, text: Joker}
     shortDescription:
@@ -281,6 +289,7 @@ eventTypes:
   - id: 7
     conference: JPOINT
     logoFileName: jpoint.jpg
+    organizerId: 0
     name:
       - {language: en, text: JPoint}
     shortDescription:
@@ -316,6 +325,7 @@ eventTypes:
   - id: 9
     conference: MOBIUS
     logoFileName: mobius.jpg
+    organizerId: 0
     name:
       - {language: en, text: Mobius}
     shortDescription:
@@ -346,6 +356,7 @@ eventTypes:
   - id: 11
     conference: SMART_DATA
     logoFileName: smartdata.jpg
+    organizerId: 0
     name:
       - {language: en, text: SmartData}
     shortDescription:
@@ -369,6 +380,7 @@ eventTypes:
   - id: 10
     conference: SPTDC
     logoFileName: sptdc.jpg
+    organizerId: 0
     name:
       - {language: en, text: SPTDC}
     shortDescription:
@@ -382,6 +394,7 @@ eventTypes:
   - id: 12
     conference: TECH_TRAIN
     logoFileName: techtrain.jpg
+    organizerId: 0
     name:
       - {language: en, text: TechTrain}
     shortDescription:
@@ -419,8 +432,9 @@ eventTypes:
     telegramLink: https://t.me/techtrainfest
   - id: 13
     logoFileName: jugmsk.jpg
+    organizerId: 1
     name:
-      - {language: en, text: "JUG.MSK"}
+      - {language: en, text: JUG.MSK}
     shortDescription:
       - language: en
         text: "Moscow community of Java developers"
@@ -433,8 +447,9 @@ eventTypes:
     youtubeLink: https://www.youtube.com/playlist?list=PLojTLDAO4jjIRjDPIQjc4iG7CfR6m8pfc
   - id: 14
     logoFileName: jugru.jpg
+    organizerId: 0
     name:
-      - {language: en, text: "JUG.ru"}
+      - {language: en, text: JUG.ru}
     shortDescription:
       - language: en
         text: "Russian community of Java developers"
@@ -447,8 +462,9 @@ eventTypes:
     youtubeLink: https://www.youtube.com/channel/UCYrGYT7BswsJGkmG7-IAF8g
   - id: 15
     logoFileName: jugnsk.jpg
+    organizerId: 2
     name:
-      - {language: en, text: "JUGNsk"}
+      - {language: en, text: JUGNsk}
     shortDescription:
       - language: en
         text: "Novosibirsk community of Java developers"
@@ -463,8 +479,9 @@ eventTypes:
   - id: 16
     conference: SNOW_ONE
     logoFileName: snowone.jpg
+    organizerId: 2
     name:
-      - {language: en, text: "SnowOne"}
+      - {language: en, text: SnowOne}
     shortDescription:
       - language: en
         text: "Java conference from Siberia"
