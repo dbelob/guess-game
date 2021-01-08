@@ -103,7 +103,7 @@ public class YamlUtils {
         setEventIds(eventList.getEvents());
 
         // Link entities
-//        linkEventTypesToOrganizers(organizerMap, eventTypeList.getEventTypes());  //TODO: add
+        linkEventTypesToOrganizers(organizerMap, eventTypeList.getEventTypes());
         linkEventsToEventTypes(eventTypeMap, eventList.getEvents());
         linkEventsToPlaces(placeMap, eventList.getEvents());
         linkTalksToEvents(talkMap, eventList.getEvents());
@@ -117,7 +117,7 @@ public class YamlUtils {
 
         return new SourceInformation(
                 placeList.getPlaces(),
-//                organizerList.getOrganizers(),    //TODO: add
+                organizerList.getOrganizers(),
                 eventTypeList.getEventTypes(),
                 eventList.getEvents(),
                 companyList.getCompanies(),
@@ -138,25 +138,18 @@ public class YamlUtils {
     }
 
     /**
-     * Links speakers to talks
+     * Links event types to organizers.
      *
-     * @param speakers speakers
-     * @param talks    talks
+     * @param organizers organizers
+     * @param eventTypes event types
      */
-    static void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks) {
-        for (Talk talk : talks) {
-            if (talk.getSpeakerIds().isEmpty()) {
-                throw new IllegalStateException(String.format("No speakers found for talk %s", talk.getName()));
-            }
-
-            // For any speakerId
-            for (Long speakerId : talk.getSpeakerIds()) {
-                // Find speaker by id
-                Speaker speaker = speakers.get(speakerId);
-                Objects.requireNonNull(speaker,
-                        () -> String.format("Speaker id %d not found for talk %s", speakerId, talk.toString()));
-                talk.getSpeakers().add(speaker);
-            }
+    static void linkEventTypesToOrganizers(Map<Long, Organizer> organizers, List<EventType> eventTypes) {
+        for (EventType eventType : eventTypes) {
+            // Find organizer by id
+            Organizer organizer = organizers.get(eventType.getOrganizerId());
+            Objects.requireNonNull(organizer,
+                    () -> String.format("Organizer id %d not found for event type %s", eventType.getOrganizerId(), organizer.toString()));
+            eventType.setOrganizer(organizer);
         }
     }
 
@@ -231,6 +224,29 @@ public class YamlUtils {
             }
 
             speaker.setCompanies(speakerCompanies);
+        }
+    }
+
+    /**
+     * Links speakers to talks
+     *
+     * @param speakers speakers
+     * @param talks    talks
+     */
+    static void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks) {
+        for (Talk talk : talks) {
+            if (talk.getSpeakerIds().isEmpty()) {
+                throw new IllegalStateException(String.format("No speakers found for talk %s", talk.getName()));
+            }
+
+            // For any speakerId
+            for (Long speakerId : talk.getSpeakerIds()) {
+                // Find speaker by id
+                Speaker speaker = speakers.get(speakerId);
+                Objects.requireNonNull(speaker,
+                        () -> String.format("Speaker id %d not found for talk %s", speakerId, talk.toString()));
+                talk.getSpeakers().add(speaker);
+            }
         }
     }
 

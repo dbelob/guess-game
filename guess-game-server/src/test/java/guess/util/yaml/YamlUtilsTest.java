@@ -25,7 +25,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class YamlUtilsTest {
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("getSourceInformation method tests (with exception)")
+    @DisplayName("getSourceInformation method tests")
     class GetSourceInformationTest {
         private Stream<Arguments> data() {
             Speaker speaker0 = new Speaker();
@@ -72,6 +72,7 @@ class YamlUtilsTest {
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
+                                    Collections.emptyList(),
                                     List.of(speaker0),
                                     Collections.emptyList()
                             )),
@@ -96,34 +97,30 @@ class YamlUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("linkSpeakersToTalks method tests (with exception)")
-    class LinkSpeakersToTalksExceptionTest {
+    @DisplayName("linkEventTypesToOrganizers method tests (with exception)")
+    class LinkEventTypesToOrganizersTest {
         private Stream<Arguments> data() {
-            Talk talk0 = new Talk();
-            talk0.setSpeakerIds(Collections.emptyList());
+            EventType eventType0 = new EventType();
+            eventType0.setOrganizerId(0);
 
-            Talk talk1 = new Talk();
-            talk1.setSpeakerIds(List.of(0L));
+            EventType eventType1 = new EventType();
+            eventType1.setOrganizerId(1);
 
-            Talk talk2 = new Talk();
-            talk2.setSpeakerIds(List.of(1L));
-
-            Speaker speaker0 = new Speaker();
-            speaker0.setId(0);
+            Organizer organizer0 = new Organizer();
+            organizer0.setId(0);
 
             return Stream.of(
-                    arguments(Collections.emptyMap(), List.of(talk0), IllegalStateException.class),
-                    arguments(Collections.emptyMap(), List.of(talk0, talk1), IllegalStateException.class),
-                    arguments(Map.of(0L, speaker0), List.of(talk1, talk0), IllegalStateException.class),
-                    arguments(Collections.emptyMap(), List.of(talk1, talk0), NullPointerException.class),
-                    arguments(Map.of(0L, speaker0), List.of(talk1, talk2, talk0), NullPointerException.class)
+                    arguments(Collections.emptyMap(), List.of(eventType0), NullPointerException.class),
+                    arguments(Map.of(0L, organizer0), List.of(eventType1), NullPointerException.class),
+                    arguments(Map.of(0L, organizer0), List.of(eventType0, eventType1), NullPointerException.class),
+                    arguments(Map.of(0L, organizer0), List.of(eventType1, eventType0), NullPointerException.class)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks, Class<? extends Exception> expected) {
-            assertThrows(expected, () -> YamlUtils.linkSpeakersToTalks(speakers, talks));
+        void linkEventTypesToOrganizers(Map<Long, Organizer> organizers, List<EventType> eventTypes, Class<? extends Exception> expected) {
+            assertThrows(expected, () -> YamlUtils.linkEventTypesToOrganizers(organizers, eventTypes));
         }
     }
 
@@ -245,6 +242,39 @@ class YamlUtilsTest {
         @MethodSource("data")
         void linkSpeakersToCompanies(Map<Long, Company> companies, List<Speaker> speakers, Class<? extends Exception> expected) {
             assertThrows(expected, () -> YamlUtils.linkSpeakersToCompanies(companies, speakers));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("linkSpeakersToTalks method tests (with exception)")
+    class LinkSpeakersToTalksExceptionTest {
+        private Stream<Arguments> data() {
+            Talk talk0 = new Talk();
+            talk0.setSpeakerIds(Collections.emptyList());
+
+            Talk talk1 = new Talk();
+            talk1.setSpeakerIds(List.of(0L));
+
+            Talk talk2 = new Talk();
+            talk2.setSpeakerIds(List.of(1L));
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+
+            return Stream.of(
+                    arguments(Collections.emptyMap(), List.of(talk0), IllegalStateException.class),
+                    arguments(Collections.emptyMap(), List.of(talk0, talk1), IllegalStateException.class),
+                    arguments(Map.of(0L, speaker0), List.of(talk1, talk0), IllegalStateException.class),
+                    arguments(Collections.emptyMap(), List.of(talk1, talk0), NullPointerException.class),
+                    arguments(Map.of(0L, speaker0), List.of(talk1, talk2, talk0), NullPointerException.class)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks, Class<? extends Exception> expected) {
+            assertThrows(expected, () -> YamlUtils.linkSpeakersToTalks(speakers, talks));
         }
     }
 
