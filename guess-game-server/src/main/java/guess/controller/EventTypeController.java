@@ -55,9 +55,10 @@ public class EventTypeController {
     List<EventType> getEventTypesAndSort(boolean isConferences, boolean isMeetups, Language language) {
         List<EventType> eventTypes = eventTypeService.getEventTypes(isConferences, isMeetups);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
+        Comparator<EventType> comparatorByOrganizerName = Comparator.comparing(et -> LocalizationUtils.getString(et.getOrganizer().getName(), language), String.CASE_INSENSITIVE_ORDER);
         Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);
 
-        eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByName));
+        eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByOrganizerName).thenComparing(comparatorByName));
 
         return eventTypes;
     }

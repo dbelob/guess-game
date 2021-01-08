@@ -35,21 +35,21 @@
     </div>
 
     <div *ngIf="isEventTypesListVisible()" class="m-2">
-      <p-table [value]="eventTypes" [resizableColumns]="true" [autoLayout]="true"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+      <p-table [value]="eventTypes" [resizableColumns]="true" [autoLayout]="true">
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>
             <th class="text-center" pResizableColumn>
               {{'eventTypes.table.kindColumn' | translate}}
             </th>
-            <th class="text-center" [pSortableColumn]="'displayName'" pResizableColumn>
-              {{'eventTypes.table.nameColumn' | translate}}
-              <p-sortIcon [field]="'displayName'"></p-sortIcon>
+            <th class="text-center" pResizableColumn>
+              {{'eventTypes.table.organizerNameColumn' | translate}}
             </th>
-            <th class="text-center" [pSortableColumn]="'shortDescription'" pResizableColumn>
+            <th class="text-center" pResizableColumn>
+              {{'eventTypes.table.nameColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
               {{'eventTypes.table.shortDescriptionColumn' | translate}}
-              <p-sortIcon [field]="'shortDescription'"></p-sortIcon>
             </th>
           </tr>
         </ng-template>
@@ -64,6 +64,7 @@
                 {{'common.eventTypeKind.meetup' | translate}}
               </span>
             </td>
+            <td>{{eventType.organizerName}}</td>
             <td>
               <a [routerLink]="['/information', 'event-type', eventType.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventType.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>

@@ -73,6 +73,7 @@
     "table": {
       "kindColumn": "Вид",
       "nameColumn": "Наименование",
+      "organizerNameColumn": "Организатор",
       "shortDescriptionColumn": "Описание"
     },
     "search": {

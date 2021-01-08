@@ -15,10 +15,8 @@ export class EventTypesSearchComponent implements OnInit {
   public isMeetups = true;
 
   public eventTypes: EventType[] = [];
-  public multiSortMeta: any[] = [];
 
   constructor(private eventTypeService: EventTypeService, public translateService: TranslateService) {
-    this.multiSortMeta.push({field: 'displayName', order: 1});
   }
 
   ngOnInit(): void {
