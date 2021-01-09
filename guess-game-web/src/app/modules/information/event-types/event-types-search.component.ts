@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
-import { getEventTypesWithOrderName } from '../../general/utility-functions';
+import { getEventTypesWithSortName } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-event-types-search',
@@ -19,7 +19,7 @@ export class EventTypesSearchComponent implements OnInit {
   public multiSortMeta: any[] = [];
 
   constructor(private eventTypeService: EventTypeService, public translateService: TranslateService) {
-    this.multiSortMeta.push({field: 'orderName', order: 1});
+    this.multiSortMeta.push({field: 'sortName', order: 1});
   }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class EventTypesSearchComponent implements OnInit {
   loadEventTypes(isConferences: boolean, isMeetups: boolean) {
     this.eventTypeService.getEventTypes(isConferences, isMeetups)
       .subscribe(data => {
-        this.eventTypes = getEventTypesWithOrderName(data);
+        this.eventTypes = getEventTypesWithSortName(data);
       });
   }
 

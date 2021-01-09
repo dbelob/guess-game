@@ -159,6 +159,7 @@
       "noEventTypesFoundText": "No event types found",
       "table": {
         "kindColumn": "Kind",
+        "organizerNameColumn": "Organizer",
         "nameColumn": "Name",
         "startDateColumn": "Start date",
         "ageColumn": "Age, years",

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { EventTypeStatistics } from '../../../shared/models/statistics/event-type-statistics.model';
 import { StatisticsService } from '../../../shared/services/statistics.service';
+import { getEventTypeStatisticsWithSortName } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-event-type-statistics',
@@ -28,7 +29,7 @@ export class EventTypeStatisticsComponent implements OnInit {
   loadEventTypeStatistics() {
     this.statisticsService.getEventTypeStatistics(this.isConferences, this.isMeetups)
       .subscribe(data => {
-          this.eventTypeStatistics = data;
+          this.eventTypeStatistics = getEventTypeStatisticsWithSortName(data);
         }
       );
   }

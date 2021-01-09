@@ -43,6 +43,9 @@
             <th class="text-center" pResizableColumn>
               {{'statistics.eventTypes.table.kindColumn' | translate}}
             </th>
+            <th class="text-center" pResizableColumn>
+              {{'statistics.eventTypes.table.organizerNameColumn' | translate}}
+            </th>
             <th class="text-center" [pSortableColumn]="'sortName'" pResizableColumn>
               {{'statistics.eventTypes.table.nameColumn' | translate}}
               <p-sortIcon [field]="'sortName'"></p-sortIcon>
@@ -91,6 +94,7 @@
                 {{'common.eventTypeKind.meetup' | translate}}
               </span>
             </td>
+            <td>{{eventTypeMetrics.organizerName}}</td>
             <td>
               <a [routerLink]="['/information', 'event-type', eventTypeMetrics.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
@@ -109,7 +113,7 @@
         </ng-template>
         <ng-template pTemplate="footer">
           <tr>
-            <td colspan="3">{{'common.table.totalsText' | translate}}</td>
+            <td colspan="4">{{'common.table.totalsText' | translate}}</td>
             <td class="text-center">{{eventTypeStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td class="text-center">{{eventTypeStatistics.totals?.age | number:'1.0-0':translateService.currentLang}}</td>
             <td class="text-center">{{eventTypeStatistics.totals?.duration | number:'1.0-0':translateService.currentLang}}</td>

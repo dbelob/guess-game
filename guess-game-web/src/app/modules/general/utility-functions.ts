@@ -4,6 +4,8 @@ import { Event } from '../../shared/models/event/event.model';
 import { EventType } from '../../shared/models/event-type/event-type.model';
 import { Talk } from '../../shared/models/talk/talk.model';
 import { Speaker } from '../../shared/models/speaker/speaker.model';
+import { EventTypeMetrics } from '../../shared/models/statistics/event-type-metrics.model';
+import { EventTypeStatistics } from '../../shared/models/statistics/event-type-statistics.model';
 
 export function isStringEmpty(value: string): boolean {
   return (!value || (value.trim().length <= 0));
@@ -80,16 +82,30 @@ export function getEventDisplayName(event: Event, translateService: TranslateSer
   return displayName;
 }
 
-export function getEventTypesWithOrderName(eventTypes: EventType[]): EventType[] {
+export function getEventTypesWithSortName(eventTypes: EventType[]): EventType[] {
   if (eventTypes) {
     for (let i = 0; i < eventTypes.length; i++) {
       const eventType: EventType = eventTypes[i];
 
-      eventType.orderName = (eventType.conference ? '0' : '1') + ' ' + eventType.organizerName + ' ' + eventType.name;
+      eventType.sortName = (eventType.conference ? '0' : '1') + eventType.organizerName + eventType.name;
     }
   }
 
   return eventTypes;
+}
+
+export function getEventTypeStatisticsWithSortName(eventTypeStatistics: EventTypeStatistics): EventTypeStatistics {
+  const eventTypeMetricsList: EventTypeMetrics[] = eventTypeStatistics.eventTypeMetricsList;
+
+  if (eventTypeMetricsList) {
+    for (let i = 0; i < eventTypeMetricsList.length; i++) {
+      const eventTypeMetrics: EventTypeMetrics = eventTypeMetricsList[i];
+
+      eventTypeMetrics.sortName = (eventTypeMetrics.conference ? '0' : '1') + eventTypeMetrics.organizerName + eventTypeMetrics.displayName;
+    }
+  }
+
+  return eventTypeStatistics;
 }
 
 export function getEventsWithDisplayName(events: Event[], translateService: TranslateService): Event[] {

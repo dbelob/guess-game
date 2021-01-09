@@ -159,6 +159,7 @@
       "noEventTypesFoundText": "Типы событий не найдены",
       "table": {
         "kindColumn": "Вид",
+        "organizerNameColumn": "Организатор",
         "nameColumn": "Наименование",
         "startDateColumn": "Начальная дата",
         "ageColumn": "Возраст, лет",

@@ -15,7 +15,7 @@ export class EventType {
     public displayName?: string,
     public inactive?: boolean,
     public organizerName?: string,
-    public orderName?: string
+    public sortName?: string
   ) {
   }
 }
