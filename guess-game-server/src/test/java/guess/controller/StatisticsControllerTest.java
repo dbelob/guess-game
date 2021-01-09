@@ -2,10 +2,7 @@ package guess.controller;
 
 import guess.domain.Conference;
 import guess.domain.Language;
-import guess.domain.source.Company;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.Speaker;
+import guess.domain.source.*;
 import guess.domain.statistics.*;
 import guess.service.LocaleService;
 import guess.service.StatisticsService;
@@ -49,14 +46,16 @@ class StatisticsControllerTest {
         boolean conferences = true;
         boolean meetups = false;
 
+        Organizer organizer0 = new Organizer(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        Organizer organizer1 = new Organizer(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+
         EventType eventType0 = new EventType();
         eventType0.setId(0);
+        eventType0.setOrganizer(organizer1);
 
         EventType eventType1 = new EventType();
         eventType1.setId(1);
-
-        EventType eventType2 = new EventType();
-        eventType2.setId(2);
+        eventType1.setOrganizer(organizer0);
 
         EventTypeMetrics eventTypeMetrics0 = new EventTypeMetrics(
                 eventType0,
@@ -90,8 +89,8 @@ class StatisticsControllerTest {
                 .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.eventTypeMetricsList", hasSize(2)))
-                .andExpect(jsonPath("$.eventTypeMetricsList[0].id", is(0)))
-                .andExpect(jsonPath("$.eventTypeMetricsList[1].id", is(1)))
+                .andExpect(jsonPath("$.eventTypeMetricsList[0].id", is(1)))
+                .andExpect(jsonPath("$.eventTypeMetricsList[1].id", is(0)))
                 .andExpect(jsonPath("$.totals.age", is(4)));
         Mockito.verify(statisticsService, VerificationModeFactory.times(1)).getEventTypeStatistics(conferences, meetups);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
