@@ -35,7 +35,8 @@
     </div>
 
     <div *ngIf="isEventTypesListVisible()" class="m-2">
-      <p-table [value]="eventTypes" [resizableColumns]="true" [autoLayout]="true">
+      <p-table [value]="eventTypes" [resizableColumns]="true" [autoLayout]="true"
+               sortMode="multiple" [multiSortMeta]="multiSortMeta">
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>
@@ -45,11 +46,13 @@
             <th class="text-center" pResizableColumn>
               {{'eventTypes.table.organizerNameColumn' | translate}}
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'orderName'" pResizableColumn>
               {{'eventTypes.table.nameColumn' | translate}}
+              <p-sortIcon [field]="'orderName'"></p-sortIcon>
             </th>
-            <th class="text-center" pResizableColumn>
+            <th class="text-center" [pSortableColumn]="'shortDescription'" pResizableColumn>
               {{'eventTypes.table.shortDescriptionColumn' | translate}}
+              <p-sortIcon [field]="'shortDescription'"></p-sortIcon>
             </th>
           </tr>
         </ng-template>

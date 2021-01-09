@@ -80,6 +80,18 @@ export function getEventDisplayName(event: Event, translateService: TranslateSer
   return displayName;
 }
 
+export function getEventTypesWithOrderName(eventTypes: EventType[]): EventType[] {
+  if (eventTypes) {
+    for (let i = 0; i < eventTypes.length; i++) {
+      const eventType: EventType = eventTypes[i];
+
+      eventType.orderName = (eventType.conference ? '0' : '1') + ' ' + eventType.organizerName + ' ' + eventType.name;
+    }
+  }
+
+  return eventTypes;
+}
+
 export function getEventsWithDisplayName(events: Event[], translateService: TranslateService): Event[] {
   if (events) {
     for (let i = 0; i < events.length; i++) {

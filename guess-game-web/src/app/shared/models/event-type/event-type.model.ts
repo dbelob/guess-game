@@ -14,7 +14,8 @@ export class EventType {
     public logoFileName?: string,
     public displayName?: string,
     public inactive?: boolean,
-    public organizerName?: string
+    public organizerName?: string,
+    public orderName?: string
   ) {
   }
 }
