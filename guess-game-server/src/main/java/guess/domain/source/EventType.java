@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Event type.
  */
-public class EventType extends Nameable {
+public class EventType extends Descriptionable {
     public static class EventTypeLinks {
         private final List<LocaleItem> siteLink;
         private final String vkLink;
@@ -45,9 +45,9 @@ public class EventType extends Nameable {
     public EventType() {
     }
 
-    public EventType(Nameable nameable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
+    public EventType(Descriptionable descriptionable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
                      boolean inactive, Organizer organizer) {
-        super(nameable.getId(), nameable.getName(), nameable.getShortDescription(), nameable.getLongDescription());
+        super(descriptionable.getId(), descriptionable.getName(), descriptionable.getShortDescription(), descriptionable.getLongDescription());
 
         this.conference = conference;
         this.siteLink = links.siteLink;

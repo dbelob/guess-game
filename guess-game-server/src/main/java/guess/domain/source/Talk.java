@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 /**
  * Talk.
  */
-public class Talk extends Nameable {
+public class Talk extends Descriptionable {
     public static class TalkLinks {
         private final List<String> presentationLinks;
         private final List<String> videoLinks;
@@ -32,9 +32,9 @@ public class Talk extends Nameable {
     public Talk() {
     }
 
-    public Talk(Nameable nameable, Long talkDay, LocalTime trackTime, Long track, String language, TalkLinks links,
+    public Talk(Descriptionable descriptionable, Long talkDay, LocalTime trackTime, Long track, String language, TalkLinks links,
                 List<Speaker> speakers) {
-        super(nameable.getId(), nameable.getName(), nameable.getShortDescription(), nameable.getLongDescription());
+        super(descriptionable.getId(), descriptionable.getName(), descriptionable.getShortDescription(), descriptionable.getLongDescription());
 
         this.talkDay = talkDay;
         this.trackTime = trackTime;

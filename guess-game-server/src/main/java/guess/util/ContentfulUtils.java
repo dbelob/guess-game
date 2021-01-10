@@ -231,7 +231,7 @@ public class ContentfulUtils {
         Map<String, String> telegramLink = et.getFields().getTelegramLink();
 
         return new EventType(
-                new Nameable(
+                new Descriptionable(
                         id.getAndDecrement(),
                         extractLocaleItems(
                                 extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
@@ -684,7 +684,7 @@ public class ContentfulUtils {
                 .collect(Collectors.toList());
 
         return new Talk(
-                new Nameable(
+                new Descriptionable(
                         talkId.getAndDecrement(),
                         extractLocaleItems(contentfulTalk.getFields().getNameEn(), contentfulTalk.getFields().getName()),
                         extractLocaleItems(contentfulTalk.getFields().getShortEn(), contentfulTalk.getFields().getShortRu()),

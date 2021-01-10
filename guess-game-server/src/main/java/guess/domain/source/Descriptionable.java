@@ -4,15 +4,15 @@ import guess.domain.Identifier;
 
 import java.util.List;
 
-public class Nameable extends Identifier {
+public class Descriptionable extends Identifier {
     private List<LocaleItem> name;
     private List<LocaleItem> shortDescription;
     private List<LocaleItem> longDescription;
 
-    public Nameable() {
+    public Descriptionable() {
     }
 
-    public Nameable(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription) {
+    public Descriptionable(long id, List<LocaleItem> name, List<LocaleItem> shortDescription, List<LocaleItem> longDescription) {
         super(id);
 
         this.name = name;
