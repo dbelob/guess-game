@@ -104,7 +104,7 @@ class YamlUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("linkEventTypesToOrganizers method tests (with exception)")
+    @DisplayName("linkEventTypesToOrganizers method tests")
     class LinkEventTypesToOrganizersTest {
         private Stream<Arguments> data() {
             EventType eventType0 = new EventType();
@@ -118,6 +118,7 @@ class YamlUtilsTest {
 
             return Stream.of(
                     arguments(Collections.emptyMap(), List.of(eventType0), NullPointerException.class),
+                    arguments(Map.of(0L, organizer0), List.of(eventType0), null),
                     arguments(Map.of(0L, organizer0), List.of(eventType1), NullPointerException.class),
                     arguments(Map.of(0L, organizer0), List.of(eventType0, eventType1), NullPointerException.class),
                     arguments(Map.of(0L, organizer0), List.of(eventType1, eventType0), NullPointerException.class)
@@ -127,13 +128,21 @@ class YamlUtilsTest {
         @ParameterizedTest
         @MethodSource("data")
         void linkEventTypesToOrganizers(Map<Long, Organizer> organizers, List<EventType> eventTypes, Class<? extends Exception> expected) {
-            assertThrows(expected, () -> YamlUtils.linkEventTypesToOrganizers(organizers, eventTypes));
+            if (expected == null) {
+                eventTypes.forEach(et -> assertNull(et.getOrganizer()));
+
+                assertDoesNotThrow(() -> YamlUtils.linkEventTypesToOrganizers(organizers, eventTypes));
+
+                eventTypes.forEach(et -> assertNotNull(et.getOrganizer()));
+            } else {
+                assertThrows(expected, () -> YamlUtils.linkEventTypesToOrganizers(organizers, eventTypes));
+            }
         }
     }
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("linkEventsToEventTypes method tests (with exception)")
+    @DisplayName("linkEventsToEventTypes method tests")
     class LinkEventsToEventTypesTest {
         private Stream<Arguments> data() {
             Event event0 = new Event();
@@ -147,6 +156,7 @@ class YamlUtilsTest {
 
             return Stream.of(
                     arguments(Collections.emptyMap(), List.of(event0), NullPointerException.class),
+                    arguments(Map.of(0L, eventType0), List.of(event0), null),
                     arguments(Map.of(0L, eventType0), List.of(event1), NullPointerException.class),
                     arguments(Map.of(0L, eventType0), List.of(event0, event1), NullPointerException.class),
                     arguments(Map.of(0L, eventType0), List.of(event1, event0), NullPointerException.class)
@@ -156,13 +166,23 @@ class YamlUtilsTest {
         @ParameterizedTest
         @MethodSource("data")
         void linkSpeakersToTalks(Map<Long, EventType> eventTypes, List<Event> events, Class<? extends Exception> expected) {
-            assertThrows(expected, () -> YamlUtils.linkEventsToEventTypes(eventTypes, events));
+            if (expected == null) {
+                eventTypes.forEach((id, et) -> assertTrue(et.getEvents().isEmpty()));
+                events.forEach(et -> assertNull(et.getEventType()));
+
+                assertDoesNotThrow(() -> YamlUtils.linkEventsToEventTypes(eventTypes, events));
+
+                eventTypes.forEach((id, et) -> assertFalse(et.getEvents().isEmpty()));
+                events.forEach(et -> assertNotNull(et.getEventType()));
+            } else {
+                assertThrows(expected, () -> YamlUtils.linkEventsToEventTypes(eventTypes, events));
+            }
         }
     }
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("linkEventsToPlaces method tests (with exception)")
+    @DisplayName("linkEventsToPlaces method tests")
     class LinkEventsToPlacesTest {
         private Stream<Arguments> data() {
             Event event0 = new Event();
@@ -176,6 +196,7 @@ class YamlUtilsTest {
 
             return Stream.of(
                     arguments(Collections.emptyMap(), List.of(event0), NullPointerException.class),
+                    arguments(Map.of(0L, place0), List.of(event0), null),
                     arguments(Map.of(0L, place0), List.of(event1), NullPointerException.class),
                     arguments(Map.of(0L, place0), List.of(event0, event1), NullPointerException.class),
                     arguments(Map.of(0L, place0), List.of(event1, event0), NullPointerException.class)
@@ -185,13 +206,21 @@ class YamlUtilsTest {
         @ParameterizedTest
         @MethodSource("data")
         void linkSpeakersToTalks(Map<Long, Place> places, List<Event> events, Class<? extends Exception> expected) {
-            assertThrows(expected, () -> YamlUtils.linkEventsToPlaces(places, events));
+            if (expected == null) {
+                events.forEach(et -> assertNull(et.getPlace()));
+
+                assertDoesNotThrow(() -> YamlUtils.linkEventsToPlaces(places, events));
+
+                events.forEach(et -> assertNotNull(et.getPlace()));
+            } else {
+                assertThrows(expected, () -> YamlUtils.linkEventsToPlaces(places, events));
+            }
         }
     }
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("linkTalksToEvents method tests (with exception)")
+    @DisplayName("linkTalksToEvents method tests")
     class LinkTalksToEventsTest {
         private Stream<Arguments> data() {
             Event event0 = new Event();
@@ -207,6 +236,7 @@ class YamlUtilsTest {
 
             return Stream.of(
                     arguments(Collections.emptyMap(), List.of(event0), NullPointerException.class),
+                    arguments(Map.of(0L, talk0), List.of(event0), null),
                     arguments(Map.of(0L, talk0), List.of(event1), NullPointerException.class),
                     arguments(Map.of(0L, talk0), List.of(event0, event1), NullPointerException.class),
                     arguments(Map.of(0L, talk0), List.of(event1, event0), NullPointerException.class)
@@ -216,13 +246,21 @@ class YamlUtilsTest {
         @ParameterizedTest
         @MethodSource("data")
         void linkSpeakersToTalks(Map<Long, Talk> talks, List<Event> events, Class<? extends Exception> expected) {
-            assertThrows(expected, () -> YamlUtils.linkTalksToEvents(talks, events));
+            if (expected == null) {
+                events.forEach(e -> assertTrue(e.getTalks().isEmpty()));
+
+                assertDoesNotThrow(() -> YamlUtils.linkTalksToEvents(talks, events));
+
+                events.forEach(e -> assertFalse(e.getTalks().isEmpty()));
+            } else {
+                assertThrows(expected, () -> YamlUtils.linkTalksToEvents(talks, events));
+            }
         }
     }
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("linkSpeakersToCompanies method tests (with exception)")
+    @DisplayName("linkSpeakersToCompanies method tests")
     class LinkSpeakersToCompaniesTest {
         private Stream<Arguments> data() {
             Speaker speaker0 = new Speaker();
@@ -238,6 +276,7 @@ class YamlUtilsTest {
 
             return Stream.of(
                     arguments(Collections.emptyMap(), List.of(speaker0), NullPointerException.class),
+                    arguments(Map.of(0L, company0), List.of(speaker0), null),
                     arguments(Map.of(0L, company0), List.of(speaker1), NullPointerException.class),
                     arguments(Map.of(0L, company0), List.of(speaker0, speaker1), NullPointerException.class),
                     arguments(Map.of(0L, company0), List.of(speaker1, speaker0), NullPointerException.class)
@@ -248,13 +287,21 @@ class YamlUtilsTest {
         @ParameterizedTest
         @MethodSource("data")
         void linkSpeakersToCompanies(Map<Long, Company> companies, List<Speaker> speakers, Class<? extends Exception> expected) {
-            assertThrows(expected, () -> YamlUtils.linkSpeakersToCompanies(companies, speakers));
+            if (expected == null) {
+                speakers.forEach(s -> assertTrue(s.getCompanies().isEmpty()));
+
+                assertDoesNotThrow(() -> YamlUtils.linkSpeakersToCompanies(companies, speakers));
+
+                speakers.forEach(s -> assertFalse(s.getCompanies().isEmpty()));
+            } else {
+                assertThrows(expected, () -> YamlUtils.linkSpeakersToCompanies(companies, speakers));
+            }
         }
     }
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("linkSpeakersToTalks method tests (with exception)")
+    @DisplayName("linkSpeakersToTalks method tests")
     class LinkSpeakersToTalksExceptionTest {
         private Stream<Arguments> data() {
             Talk talk0 = new Talk();
@@ -272,6 +319,7 @@ class YamlUtilsTest {
             return Stream.of(
                     arguments(Collections.emptyMap(), List.of(talk0), IllegalStateException.class),
                     arguments(Collections.emptyMap(), List.of(talk0, talk1), IllegalStateException.class),
+                    arguments(Map.of(0L, speaker0), List.of(talk1), null),
                     arguments(Map.of(0L, speaker0), List.of(talk1, talk0), IllegalStateException.class),
                     arguments(Collections.emptyMap(), List.of(talk1, talk0), NullPointerException.class),
                     arguments(Map.of(0L, speaker0), List.of(talk1, talk2, talk0), NullPointerException.class)
@@ -281,13 +329,21 @@ class YamlUtilsTest {
         @ParameterizedTest
         @MethodSource("data")
         void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks, Class<? extends Exception> expected) {
-            assertThrows(expected, () -> YamlUtils.linkSpeakersToTalks(speakers, talks));
+            if (expected == null) {
+                talks.forEach(t -> assertTrue(t.getSpeakers().isEmpty()));
+
+                assertDoesNotThrow(() -> YamlUtils.linkSpeakersToTalks(speakers, talks));
+
+                talks.forEach(t -> assertFalse(t.getSpeakers().isEmpty()));
+            } else {
+                assertThrows(expected, () -> YamlUtils.linkSpeakersToTalks(speakers, talks));
+            }
         }
     }
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("listToMap method tests (with exception)")
+    @DisplayName("listToMap method tests")
     class ListToMapTest {
         private Stream<Arguments> data() {
             Speaker speaker0 = new Speaker();
@@ -299,6 +355,7 @@ class YamlUtilsTest {
             Function<? super Speaker, ? extends Long> keyExtractor = (Function<Speaker, Long>) Speaker::getId;
 
             return Stream.of(
+                    arguments(List.of(speaker0), keyExtractor, null),
                     arguments(List.of(speaker0, speaker0), keyExtractor, IllegalStateException.class),
                     arguments(List.of(speaker0, speaker1, speaker1), keyExtractor, IllegalStateException.class),
                     arguments(List.of(speaker0, speaker1, speaker1, speaker0), keyExtractor, IllegalStateException.class)
@@ -308,7 +365,11 @@ class YamlUtilsTest {
         @ParameterizedTest
         @MethodSource("data")
         void listToMap(List<Speaker> speakers, Function<? super Speaker, ? extends Long> keyExtractor, Class<? extends Exception> expected) {
-            assertThrows(expected, () -> YamlUtils.listToMap(speakers, keyExtractor));
+            if (expected == null) {
+                assertDoesNotThrow(() -> YamlUtils.listToMap(speakers, keyExtractor));
+            } else {
+                assertThrows(expected, () -> YamlUtils.listToMap(speakers, keyExtractor));
+            }
         }
     }
 
