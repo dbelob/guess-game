@@ -161,7 +161,7 @@ public class YamlUtils {
             // Find organizer by id
             Organizer organizer = organizers.get(eventType.getOrganizerId());
             Objects.requireNonNull(organizer,
-                    () -> String.format("Organizer id %d not found for event type %s", eventType.getOrganizerId(), organizer.toString()));
+                    () -> String.format("Organizer id %d not found for event type %s", eventType.getOrganizerId(), eventType.toString()));
             eventType.setOrganizer(organizer);
         }
     }
