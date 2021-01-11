@@ -355,20 +355,21 @@ class YamlUtilsTest {
             Function<? super Speaker, ? extends Long> keyExtractor = (Function<Speaker, Long>) Speaker::getId;
 
             return Stream.of(
-                    arguments(List.of(speaker0), keyExtractor, null),
-                    arguments(List.of(speaker0, speaker0), keyExtractor, IllegalStateException.class),
-                    arguments(List.of(speaker0, speaker1, speaker1), keyExtractor, IllegalStateException.class),
-                    arguments(List.of(speaker0, speaker1, speaker1, speaker0), keyExtractor, IllegalStateException.class)
+                    arguments(List.of(speaker0), keyExtractor, null, Map.of(0L, speaker0)),
+                    arguments(List.of(speaker0, speaker0), keyExtractor, IllegalStateException.class, null),
+                    arguments(List.of(speaker0, speaker1, speaker1), keyExtractor, IllegalStateException.class, null),
+                    arguments(List.of(speaker0, speaker1, speaker1, speaker0), keyExtractor, IllegalStateException.class, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void listToMap(List<Speaker> speakers, Function<? super Speaker, ? extends Long> keyExtractor, Class<? extends Exception> expected) {
-            if (expected == null) {
-                assertDoesNotThrow(() -> YamlUtils.listToMap(speakers, keyExtractor));
+        void listToMap(List<Speaker> speakers, Function<? super Speaker, ? extends Long> keyExtractor,
+                       Class<? extends Exception> expectedException, Map<Long, Speaker> expectedValue) {
+            if (expectedException == null) {
+                assertEquals(expectedValue, YamlUtils.listToMap(speakers, keyExtractor));
             } else {
-                assertThrows(expected, () -> YamlUtils.listToMap(speakers, keyExtractor));
+                assertThrows(expectedException, () -> YamlUtils.listToMap(speakers, keyExtractor));
             }
         }
     }
