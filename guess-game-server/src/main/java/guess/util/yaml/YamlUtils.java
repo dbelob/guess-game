@@ -76,30 +76,33 @@ public class YamlUtils {
                 organizerList.getOrganizers(),
                 eventTypeList.getEventTypes(),
                 eventList.getEvents(),
-                companyList.getCompanies(),
-                companySynonymsList.getCompanySynonyms(),
-                speakerList.getSpeakers(),
+                new SourceInformation.SpeakerInformation(
+                        companyList.getCompanies(),
+                        companySynonymsList.getCompanySynonyms(),
+                        speakerList.getSpeakers()
+                ),
                 talkList.getTalks());
     }
 
     /**
      * Gets source information from resource lists.
      *
-     * @param places              places
-     * @param organizers          organizers
-     * @param eventTypes          event types
-     * @param events              events
-     * @param companies           companies
-     * @param companySynonymsList company synonyms
-     * @param speakers            speakers
-     * @param talks               talks
+     * @param places             places
+     * @param organizers         organizers
+     * @param eventTypes         event types
+     * @param events             events
+     * @param speakerInformation speaker information
+     * @param talks              talks
      * @return source information
      * @throws SpeakerDuplicatedException if speaker duplicated
      */
     static SourceInformation getSourceInformation(List<Place> places, List<Organizer> organizers, List<EventType> eventTypes,
-                                                  List<Event> events, List<Company> companies, List<CompanySynonyms> companySynonymsList,
-                                                  List<Speaker> speakers, List<Talk> talks)
-            throws SpeakerDuplicatedException {
+                                                  List<Event> events, SourceInformation.SpeakerInformation speakerInformation,
+                                                  List<Talk> talks) throws SpeakerDuplicatedException {
+        List<Company> companies = speakerInformation.getCompanies();
+        List<CompanySynonyms> companySynonymsList = speakerInformation.getCompanySynonyms();
+        List<Speaker> speakers = speakerInformation.getSpeakers();
+
         Map<Long, Place> placeMap = listToMap(places, Place::getId);
         Map<Long, Organizer> organizerMap = listToMap(organizers, Organizer::getId);
         Map<Long, EventType> eventTypeMap = listToMap(eventTypes, EventType::getId);

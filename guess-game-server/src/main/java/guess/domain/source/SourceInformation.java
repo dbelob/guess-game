@@ -17,6 +17,18 @@ public class SourceInformation {
             this.companySynonyms = companySynonyms;
             this.speakers = speakers;
         }
+
+        public List<Company> getCompanies() {
+            return companies;
+        }
+
+        public List<CompanySynonyms> getCompanySynonyms() {
+            return companySynonyms;
+        }
+
+        public List<Speaker> getSpeakers() {
+            return speakers;
+        }
     }
 
     private final List<Place> places;

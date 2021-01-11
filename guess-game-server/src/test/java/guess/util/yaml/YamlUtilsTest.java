@@ -80,9 +80,11 @@ class YamlUtilsTest {
                         organizers,
                         eventTypes,
                         events,
-                        companies,
-                        companySynonymsList,
-                        speakers,
+                        new SourceInformation.SpeakerInformation(
+                                companies,
+                                companySynonymsList,
+                                speakers
+                        ),
                         talks));
             } else {
                 assertThrows(expectedException, () -> YamlUtils.getSourceInformation(
@@ -90,9 +92,11 @@ class YamlUtilsTest {
                         organizers,
                         eventTypes,
                         events,
-                        companies,
-                        companySynonymsList,
-                        speakers,
+                        new SourceInformation.SpeakerInformation(
+                                companies,
+                                companySynonymsList,
+                                speakers
+                        ),
                         talks));
             }
         }
