@@ -1,7 +1,5 @@
 package guess.domain.source;
 
-import guess.domain.Identifier;
-
 import java.util.List;
 
 public class Descriptionable extends Nameable {

@@ -36,47 +36,34 @@ class YamlUtilsTest {
             speaker1.setId(1);
             speaker1.setName(List.of(new LocaleItem("en", "name0")));
 
-            PlaceList placeList = new PlaceList();
-            placeList.setPlaces(Collections.emptyList());
+            List<Place> places = Collections.emptyList();
+            List<Organizer> organizers = Collections.emptyList();
+            List<EventType> eventTypes = Collections.emptyList();
+            List<Event> events = Collections.emptyList();
+            List<Company> companies = Collections.emptyList();
+            List<CompanySynonyms> companySynonymsList = Collections.emptyList();
 
-            OrganizerList organizerList = new OrganizerList();
-            organizerList.setOrganizers(Collections.emptyList());
+            List<Speaker> speakers0 = List.of(speaker0);
+            List<Speaker> speakers1 = List.of(speaker0, speaker1);
 
-            EventTypeList eventTypeList = new EventTypeList();
-            eventTypeList.setEventTypes(Collections.emptyList());
-
-            EventList eventList = new EventList();
-            eventList.setEvents(Collections.emptyList());
-
-            CompanyList companyList = new CompanyList();
-            companyList.setCompanies(Collections.emptyList());
-
-            CompanySynonymsList companySynonymsList = new CompanySynonymsList();
-            companySynonymsList.setCompanySynonyms(Collections.emptyList());
-
-            SpeakerList speakerList0 = new SpeakerList();
-            speakerList0.setSpeakers(List.of(speaker0));
-
-            SpeakerList speakerList1 = new SpeakerList();
-            speakerList1.setSpeakers(List.of(speaker0, speaker1));
-
-            TalkList talkList = new TalkList();
-            talkList.setTalks(Collections.emptyList());
+            List<Talk> talks = Collections.emptyList();
 
             return Stream.of(
-                    arguments(placeList, organizerList, eventTypeList, eventList, companyList, companySynonymsList, speakerList0, talkList,
+                    arguments(places, organizers, eventTypes, events, companies, companySynonymsList, speakers0, talks,
                             null,
                             new SourceInformation(
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
                                     Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    List.of(speaker0),
+                                    new SourceInformation.SpeakerInformation(
+                                            Collections.emptyList(),
+                                            Collections.emptyList(),
+                                            List.of(speaker0)
+                                    ),
                                     Collections.emptyList()
                             )),
-                    arguments(placeList, organizerList, eventTypeList, eventList, companyList, companySynonymsList, speakerList1, talkList,
+                    arguments(places, organizers, eventTypes, events, companies, companySynonymsList, speakers1, talks,
                             SpeakerDuplicatedException.class,
                             null)
             );
@@ -84,13 +71,29 @@ class YamlUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void getSourceInformation(PlaceList placeList, OrganizerList organizerList, EventTypeList eventTypeList, EventList eventList,
-                                  CompanyList companyList, CompanySynonymsList companySynonymsList, SpeakerList speakerList,
-                                  TalkList talkList, Class<? extends Exception> expectedException, SourceInformation expectedResult) throws SpeakerDuplicatedException {
+        void getSourceInformation(List<Place> places, List<Organizer> organizers, List<EventType> eventTypes, List<Event> events,
+                                  List<Company> companies, List<CompanySynonyms> companySynonymsList, List<Speaker> speakers,
+                                  List<Talk> talks, Class<? extends Exception> expectedException, SourceInformation expectedResult) throws SpeakerDuplicatedException {
             if (expectedException == null) {
-                assertEquals(expectedResult, YamlUtils.getSourceInformation(placeList, organizerList, eventTypeList, eventList, companyList, companySynonymsList, speakerList, talkList));
+                assertEquals(expectedResult, YamlUtils.getSourceInformation(
+                        places,
+                        organizers,
+                        eventTypes,
+                        events,
+                        companies,
+                        companySynonymsList,
+                        speakers,
+                        talks));
             } else {
-                assertThrows(expectedException, () -> YamlUtils.getSourceInformation(placeList, organizerList, eventTypeList, eventList, companyList, companySynonymsList, speakerList, talkList));
+                assertThrows(expectedException, () -> YamlUtils.getSourceInformation(
+                        places,
+                        organizers,
+                        eventTypes,
+                        events,
+                        companies,
+                        companySynonymsList,
+                        speakers,
+                        talks));
             }
         }
     }

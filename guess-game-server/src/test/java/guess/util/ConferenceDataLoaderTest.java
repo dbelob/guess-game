@@ -43,7 +43,12 @@ class ConferenceDataLoaderTest {
             @Mock
             SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
                 return new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
+                        Collections.emptyList(),
+                        new SourceInformation.SpeakerInformation(
+                                Collections.emptyList(),
+                                Collections.emptyList(),
+                                Collections.emptyList()
+                        ),
                         Collections.emptyList()
                 );
             }
@@ -283,9 +288,11 @@ class ConferenceDataLoaderTest {
                                     List.of(organizer0),
                                     List.of(eventType0),
                                     Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    List.of(speaker0),
+                                    new SourceInformation.SpeakerInformation(
+                                            Collections.emptyList(),
+                                            Collections.emptyList(),
+                                            List.of(speaker0)
+                                    ),
                                     Collections.emptyList()),
                             event0,
                             List.of(talk0),
@@ -298,9 +305,11 @@ class ConferenceDataLoaderTest {
                                     List.of(organizer0),
                                     List.of(eventType0),
                                     Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    List.of(speaker0),
+                                    new SourceInformation.SpeakerInformation(
+                                            Collections.emptyList(),
+                                            Collections.emptyList(),
+                                            List.of(speaker0)
+                                    ),
                                     Collections.emptyList()),
                             event0,
                             List.of(talk0),

@@ -71,51 +71,7 @@ public class YamlUtils {
         SpeakerList speakerList = speakersYaml.load(speakersResource.getInputStream());
         TalkList talkList = talksYaml.load(talksResource.getInputStream());
 
-        return getSourceInformation(placeList, organizerList, eventTypeList, eventList, companyList, companySynonymsList, speakerList, talkList);
-    }
-
-    /**
-     * Gets source information from resource lists.
-     *
-     * @param placeList           places
-     * @param organizerList       organizers
-     * @param eventTypeList       event types
-     * @param eventList           events
-     * @param companyList         companies
-     * @param companySynonymsList company synonyms
-     * @param speakerList         speakers
-     * @param talkList            talks
-     * @return source information
-     * @throws SpeakerDuplicatedException if speaker duplicated
-     */
-    static SourceInformation getSourceInformation(PlaceList placeList, OrganizerList organizerList, EventTypeList eventTypeList,
-                                                  EventList eventList, CompanyList companyList, CompanySynonymsList companySynonymsList,
-                                                  SpeakerList speakerList, TalkList talkList)
-            throws SpeakerDuplicatedException {
-        Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
-        Map<Long, Organizer> organizerMap = listToMap(organizerList.getOrganizers(), Organizer::getId);
-        Map<Long, EventType> eventTypeMap = listToMap(eventTypeList.getEventTypes(), EventType::getId);
-        Map<Long, Company> companyMap = listToMap(companyList.getCompanies(), Company::getId);
-        Map<Long, Speaker> speakerMap = listToMap(speakerList.getSpeakers(), Speaker::getId);
-        Map<Long, Talk> talkMap = listToMap(talkList.getTalks(), Talk::getId);
-
-        // Set event identifiers
-        setEventIds(eventList.getEvents());
-
-        // Link entities
-        linkEventTypesToOrganizers(organizerMap, eventTypeList.getEventTypes());
-        linkEventsToEventTypes(eventTypeMap, eventList.getEvents());
-        linkEventsToPlaces(placeMap, eventList.getEvents());
-        linkTalksToEvents(talkMap, eventList.getEvents());
-        linkSpeakersToCompanies(companyMap, speakerList.getSpeakers());
-        linkSpeakersToTalks(speakerMap, talkList.getTalks());
-
-        // Find duplicates for speaker names and for speaker names with company name
-        if (findSpeakerDuplicates(speakerList.getSpeakers())) {
-            throw new SpeakerDuplicatedException();
-        }
-
-        return new SourceInformation(
+        return getSourceInformation(
                 placeList.getPlaces(),
                 organizerList.getOrganizers(),
                 eventTypeList.getEventTypes(),
@@ -124,6 +80,60 @@ public class YamlUtils {
                 companySynonymsList.getCompanySynonyms(),
                 speakerList.getSpeakers(),
                 talkList.getTalks());
+    }
+
+    /**
+     * Gets source information from resource lists.
+     *
+     * @param places              places
+     * @param organizers          organizers
+     * @param eventTypes          event types
+     * @param events              events
+     * @param companies           companies
+     * @param companySynonymsList company synonyms
+     * @param speakers            speakers
+     * @param talks               talks
+     * @return source information
+     * @throws SpeakerDuplicatedException if speaker duplicated
+     */
+    static SourceInformation getSourceInformation(List<Place> places, List<Organizer> organizers, List<EventType> eventTypes,
+                                                  List<Event> events, List<Company> companies, List<CompanySynonyms> companySynonymsList,
+                                                  List<Speaker> speakers, List<Talk> talks)
+            throws SpeakerDuplicatedException {
+        Map<Long, Place> placeMap = listToMap(places, Place::getId);
+        Map<Long, Organizer> organizerMap = listToMap(organizers, Organizer::getId);
+        Map<Long, EventType> eventTypeMap = listToMap(eventTypes, EventType::getId);
+        Map<Long, Company> companyMap = listToMap(companies, Company::getId);
+        Map<Long, Speaker> speakerMap = listToMap(speakers, Speaker::getId);
+        Map<Long, Talk> talkMap = listToMap(talks, Talk::getId);
+
+        // Set event identifiers
+        setEventIds(events);
+
+        // Link entities
+        linkEventTypesToOrganizers(organizerMap, eventTypes);
+        linkEventsToEventTypes(eventTypeMap, events);
+        linkEventsToPlaces(placeMap, events);
+        linkTalksToEvents(talkMap, events);
+        linkSpeakersToCompanies(companyMap, speakers);
+        linkSpeakersToTalks(speakerMap, talks);
+
+        // Find duplicates for speaker names and for speaker names with company name
+        if (findSpeakerDuplicates(speakers)) {
+            throw new SpeakerDuplicatedException();
+        }
+
+        return new SourceInformation(
+                places,
+                organizers,
+                eventTypes,
+                events,
+                new SourceInformation.SpeakerInformation(
+                        companies,
+                        companySynonymsList,
+                        speakers
+                ),
+                talks);
     }
 
     /**

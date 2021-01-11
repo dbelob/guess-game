@@ -7,6 +7,18 @@ import java.util.Objects;
  * Source information.
  */
 public class SourceInformation {
+    public static class SpeakerInformation {
+        private final List<Company> companies;
+        private final List<CompanySynonyms> companySynonyms;
+        private final List<Speaker> speakers;
+
+        public SpeakerInformation(List<Company> companies, List<CompanySynonyms> companySynonyms, List<Speaker> speakers) {
+            this.companies = companies;
+            this.companySynonyms = companySynonyms;
+            this.speakers = speakers;
+        }
+    }
+
     private final List<Place> places;
     private final List<Organizer> organizers;
     private final List<EventType> eventTypes;
@@ -17,15 +29,14 @@ public class SourceInformation {
     private final List<Talk> talks;
 
     public SourceInformation(List<Place> places, List<Organizer> organizers, List<EventType> eventTypes, List<Event> events,
-                             List<Company> companies, List<CompanySynonyms> companySynonyms, List<Speaker> speakers,
-                             List<Talk> talks) {
+                             SpeakerInformation speakerInformation, List<Talk> talks) {
         this.eventTypes = eventTypes;
         this.places = places;
         this.organizers = organizers;
         this.events = events;
-        this.companies = companies;
-        this.companySynonyms = companySynonyms;
-        this.speakers = speakers;
+        this.companies = speakerInformation.companies;
+        this.companySynonyms = speakerInformation.companySynonyms;
+        this.speakers = speakerInformation.speakers;
         this.talks = talks;
     }
 
