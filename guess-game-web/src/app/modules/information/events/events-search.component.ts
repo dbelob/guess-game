@@ -74,12 +74,12 @@ export class EventsSearchComponent implements OnInit {
     this.loadEvents(eventType, this.isConferences, this.isMeetups);
   }
 
-  onEventTypeKindChange(checked: boolean) {
+  onEventTypeKindChange() {
     this.loadEventTypes(this.isConferences, this.isMeetups);
   }
 
   onLanguageChange() {
-    this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
+    this.loadEventTypes(this.isConferences, this.isMeetups);
   }
 
   isNoEventsFoundVisible() {

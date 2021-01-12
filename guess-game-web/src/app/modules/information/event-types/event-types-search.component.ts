@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { SelectItem } from 'primeng/api';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
+import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { getEventTypesWithSortName } from '../../general/utility-functions';
 
@@ -15,6 +17,10 @@ export class EventTypesSearchComponent implements OnInit {
   public isConferences = true;
   public isMeetups = true;
 
+  public organizers: Organizer[] = [];
+  public selectedOrganizer: Organizer;
+  public organizerSelectItems: SelectItem[] = [];
+
   public eventTypes: EventType[] = [];
   public multiSortMeta: any[] = [];
 
@@ -23,22 +29,31 @@ export class EventTypesSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+    this.loadOrganizers(this.isConferences, this.isMeetups);
   }
 
-  loadEventTypes(isConferences: boolean, isMeetups: boolean) {
+  loadOrganizers(isConferences: boolean, isMeetups: boolean) {
+    // TODO: implement
+    this.loadEventTypes(this.selectedOrganizer, this.isConferences, this.isMeetups);
+  }
+
+  loadEventTypes(organizer: Organizer, isConferences: boolean, isMeetups: boolean) {
     this.eventTypeService.getEventTypes(isConferences, isMeetups)
       .subscribe(data => {
         this.eventTypes = getEventTypesWithSortName(data);
       });
   }
 
-  onEventTypeKindChange(checked: boolean) {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+  onOrganizerChange(organizer: Organizer) {
+    this.loadEventTypes(organizer, this.isConferences, this.isMeetups);
+  }
+
+  onEventTypeKindChange() {
+    this.loadEventTypes(this.selectedOrganizer, this.isConferences, this.isMeetups);
   }
 
   onLanguageChange() {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+    this.loadOrganizers(this.isConferences, this.isMeetups);
   }
 
   isNoEventTypesFoundVisible() {

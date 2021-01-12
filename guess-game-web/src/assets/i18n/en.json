@@ -15,8 +15,10 @@
       "meetupsLabel": "Meetups"
     },
     "list": {
+      "organizerLabel": "Organizer:",
       "eventTypeLabel": "Event type:",
       "eventLabel": "Event:",
+      "organizerPlaceholder": "All",
       "eventTypePlaceholder": "All",
       "eventPlaceholder": "All"
     },
