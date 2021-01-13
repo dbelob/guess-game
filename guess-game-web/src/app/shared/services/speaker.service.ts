@@ -17,7 +17,7 @@ export class SpeakerService {
 
   getSpeakersByFirstLetter(firstLetter: string): Observable<Speaker[]> {
     const params = new HttpParams()
-      .set('firstLetter', firstLetter.toString());
+      .set('firstLetter', firstLetter);
 
     return this.http.get<Speaker[]>(`${this.baseUrl}/first-letter-speakers`, {params: params})
       .pipe(
