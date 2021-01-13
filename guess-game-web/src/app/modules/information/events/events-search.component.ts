@@ -54,24 +54,24 @@ export class EventsSearchComponent implements OnInit {
                 this.selectedEventType = null;
               }
 
-              this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
+              this.loadEvents(this.isConferences, this.isMeetups, this.selectedEventType);
             });
         } else {
           this.selectedEventType = null;
-          this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
+          this.loadEvents(this.isConferences, this.isMeetups, this.selectedEventType);
         }
       });
   }
 
-  loadEvents(eventType: EventType, isConferences: boolean, isMeetups: boolean) {
-    this.eventService.getEvents(eventType, isConferences, isMeetups)
+  loadEvents(isConferences: boolean, isMeetups: boolean, eventType: EventType) {
+    this.eventService.getEvents(isConferences, isMeetups, eventType)
       .subscribe(data => {
         this.events = data;
       });
   }
 
   onEventTypeChange(eventType: EventType) {
-    this.loadEvents(eventType, this.isConferences, this.isMeetups);
+    this.loadEvents(this.isConferences, this.isMeetups, eventType);
   }
 
   onEventTypeKindChange() {

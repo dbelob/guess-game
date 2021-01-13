@@ -34,10 +34,10 @@ export class EventTypesSearchComponent implements OnInit {
 
   loadOrganizers(isConferences: boolean, isMeetups: boolean) {
     // TODO: implement
-    this.loadEventTypes(this.selectedOrganizer, this.isConferences, this.isMeetups);
+    this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
   }
 
-  loadEventTypes(organizer: Organizer, isConferences: boolean, isMeetups: boolean) {
+  loadEventTypes(isConferences: boolean, isMeetups: boolean, organizer: Organizer) {
     this.eventTypeService.getEventTypes(isConferences, isMeetups)
       .subscribe(data => {
         this.eventTypes = getEventTypesWithSortName(data);
@@ -45,11 +45,11 @@ export class EventTypesSearchComponent implements OnInit {
   }
 
   onOrganizerChange(organizer: Organizer) {
-    this.loadEventTypes(organizer, this.isConferences, this.isMeetups);
+    this.loadEventTypes(this.isConferences, this.isMeetups, organizer);
   }
 
   onEventTypeKindChange() {
-    this.loadEventTypes(this.selectedOrganizer, this.isConferences, this.isMeetups);
+    this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
   }
 
   onLanguageChange() {
