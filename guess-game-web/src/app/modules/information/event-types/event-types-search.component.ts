@@ -4,6 +4,7 @@ import { SelectItem } from 'primeng/api';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
 import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
+import { OrganizerService } from '../../../shared/services/organizer.service';
 import { getEventTypesWithSortName } from '../../general/utility-functions';
 
 @Component({
@@ -24,7 +25,8 @@ export class EventTypesSearchComponent implements OnInit {
   public eventTypes: EventType[] = [];
   public multiSortMeta: any[] = [];
 
-  constructor(private eventTypeService: EventTypeService, public translateService: TranslateService) {
+  constructor(private eventTypeService: EventTypeService, public organizerService: OrganizerService,
+              public translateService: TranslateService) {
     this.multiSortMeta.push({field: 'sortName', order: 1});
   }
 
@@ -33,8 +35,23 @@ export class EventTypesSearchComponent implements OnInit {
   }
 
   loadOrganizers(isConferences: boolean, isMeetups: boolean) {
-    // TODO: implement
-    this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
+    this.organizerService.getOrganizers()
+      .subscribe(organizerData => {
+        this.organizers = organizerData;
+        this.organizerSelectItems = this.organizers.map(o => {
+            return {label: o.name, value: o};
+          }
+        );
+
+        if (this.organizers.length > 0) {
+          // TODO: change
+          this.selectedOrganizer = null;
+          this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
+        } else {
+          this.selectedOrganizer = null;
+          this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
+        }
+      });
   }
 
   loadEventTypes(isConferences: boolean, isMeetups: boolean, organizer: Organizer) {
