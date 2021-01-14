@@ -23,4 +23,14 @@ export class OrganizerService {
         })
       );
   }
+
+  getDefaultOrganizer(): Observable<Organizer> {
+    return this.http.get<Organizer>(`${this.baseUrl}/default-organizer`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
 }

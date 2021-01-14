@@ -2,7 +2,7 @@ import { Company } from '../company/company.model';
 
 export class Speaker {
   constructor(
-    public id?: string,
+    public id?: number,
     public photoFileName?: string,
     public displayName?: string,
     public name?: string,

@@ -5,7 +5,7 @@ import { EventType } from '../../../shared/models/event-type/event-type.model';
 import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
-import { getEventTypesWithSortName } from '../../general/utility-functions';
+import { findOrganizerById, getEventTypesWithSortName } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-event-types-search',
@@ -44,9 +44,18 @@ export class EventTypesSearchComponent implements OnInit {
         );
 
         if (this.organizers.length > 0) {
-          // TODO: change
-          this.selectedOrganizer = null;
-          this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
+          this.organizerService.getDefaultOrganizer()
+            .subscribe(defaultOrganizer => {
+              const selectedOrganizer = (defaultOrganizer) ? findOrganizerById(defaultOrganizer.id, this.organizers) : null;
+
+              if (selectedOrganizer) {
+                this.selectedOrganizer = selectedOrganizer;
+              } else {
+                this.selectedOrganizer = null;
+              }
+
+              this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
+            });
         } else {
           this.selectedOrganizer = null;
           this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);

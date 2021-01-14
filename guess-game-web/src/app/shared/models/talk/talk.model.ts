@@ -3,7 +3,7 @@ import { Speaker } from '../speaker/speaker.model';
 
 export class Talk {
   constructor(
-    public id?: string,
+    public id?: number,
     public name?: string,
     public talkDate?: Date,
     public event?: Event,

@@ -6,9 +6,22 @@ import { Talk } from '../../shared/models/talk/talk.model';
 import { Speaker } from '../../shared/models/speaker/speaker.model';
 import { EventTypeMetrics } from '../../shared/models/statistics/event-type-metrics.model';
 import { EventTypeStatistics } from '../../shared/models/statistics/event-type-statistics.model';
+import { Organizer } from '../../shared/models/organizer/organizer.model';
 
 export function isStringEmpty(value: string): boolean {
   return (!value || (value.trim().length <= 0));
+}
+
+export function findOrganizerById(id: number, organizers: Organizer[]): Organizer {
+  for (let i = 0; i < organizers.length; i++) {
+    const organizer: Organizer = organizers[i];
+
+    if (id === organizer.id) {
+      return organizer;
+    }
+  }
+
+  return null;
 }
 
 export function findEventTypeById(id: number, eventTypes: EventType[]): EventType {

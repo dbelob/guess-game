@@ -41,4 +41,11 @@ public class OrganizerController {
 
         return organizerDtoList;
     }
+
+    @GetMapping("/default-organizer")
+    @ResponseBody
+    public OrganizerDto getDefaultOrganizer(HttpSession httpSession) {
+        //TODO: implement
+        return null;
+    }
 }
