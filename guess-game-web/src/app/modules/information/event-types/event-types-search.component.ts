@@ -64,7 +64,7 @@ export class EventTypesSearchComponent implements OnInit {
   }
 
   loadEventTypes(isConferences: boolean, isMeetups: boolean, organizer: Organizer) {
-    this.eventTypeService.getEventTypes(isConferences, isMeetups)
+    this.eventTypeService.getEventTypes(isConferences, isMeetups, organizer)
       .subscribe(data => {
         this.eventTypes = getEventTypesWithSortName(data);
       });

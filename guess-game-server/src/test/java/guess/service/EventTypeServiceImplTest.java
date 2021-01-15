@@ -70,14 +70,14 @@ class EventTypeServiceImplTest {
 
         Mockito.when(eventTypeDao.getEventTypes()).thenReturn(List.of(eventType0, eventType1));
 
-        eventTypeService.getEventTypes(true, false);
+        eventTypeService.getEventTypes(true, false, null);
         Mockito.verify(eventTypeDao, VerificationModeFactory.times(1)).getEventTypes();
         Mockito.verifyNoMoreInteractions(eventTypeDao);
 
-        assertEquals(Collections.emptyList(), eventTypeService.getEventTypes(false, false));
-        assertEquals(List.of(eventType0), eventTypeService.getEventTypes(true, false));
-        assertEquals(List.of(eventType1), eventTypeService.getEventTypes(false, true));
-        assertEquals(List.of(eventType0, eventType1), eventTypeService.getEventTypes(true, true));
+        assertEquals(Collections.emptyList(), eventTypeService.getEventTypes(false, false, null));
+        assertEquals(List.of(eventType0), eventTypeService.getEventTypes(true, false, null));
+        assertEquals(List.of(eventType1), eventTypeService.getEventTypes(false, true, null));
+        assertEquals(List.of(eventType0, eventType1), eventTypeService.getEventTypes(true, true, null));
 
         Mockito.reset(eventTypeDao);
     }
