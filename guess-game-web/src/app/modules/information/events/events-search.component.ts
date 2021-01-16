@@ -31,11 +31,11 @@ export class EventsSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+    this.loadEventTypes();
   }
 
-  loadEventTypes(isConferences: boolean, isMeetups: boolean) {
-    this.eventTypeService.getFilterEventTypes(isConferences, isMeetups)
+  loadEventTypes() {
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups)
       .subscribe(eventTypesData => {
         this.eventTypes = eventTypesData;
         this.eventTypeSelectItems = this.eventTypes.map(et => {
@@ -75,11 +75,28 @@ export class EventsSearchComponent implements OnInit {
   }
 
   onEventTypeKindChange() {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+    this.loadEventTypes();
   }
 
   onLanguageChange() {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+    const currentSelectedEventType = this.selectedEventType;
+
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups)
+      .subscribe(eventTypesData => {
+        this.eventTypes = eventTypesData;
+        this.eventTypeSelectItems = this.eventTypes.map(et => {
+            return {label: et.name, value: et};
+          }
+        );
+
+        if (this.eventTypes.length > 0) {
+          this.selectedEventType = (currentSelectedEventType) ? findEventTypeById(currentSelectedEventType.id, this.eventTypes) : null;
+        } else {
+          this.selectedEventType = null;
+        }
+
+        this.loadEvents(this.isConferences, this.isMeetups, this.selectedEventType);
+      });
   }
 
   isNoEventsFoundVisible() {

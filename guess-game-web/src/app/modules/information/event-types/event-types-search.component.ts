@@ -31,10 +31,10 @@ export class EventTypesSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadOrganizers(this.isConferences, this.isMeetups);
+    this.loadOrganizers();
   }
 
-  loadOrganizers(isConferences: boolean, isMeetups: boolean) {
+  loadOrganizers() {
     this.organizerService.getOrganizers()
       .subscribe(organizerData => {
         this.organizers = organizerData;
@@ -45,8 +45,8 @@ export class EventTypesSearchComponent implements OnInit {
 
         if (this.organizers.length > 0) {
           this.organizerService.getDefaultOrganizer()
-            .subscribe(defaultOrganizer => {
-              const selectedOrganizer = (defaultOrganizer) ? findOrganizerById(defaultOrganizer.id, this.organizers) : null;
+            .subscribe(defaultOrganizerData => {
+              const selectedOrganizer = (defaultOrganizerData) ? findOrganizerById(defaultOrganizerData.id, this.organizers) : null;
 
               if (selectedOrganizer) {
                 this.selectedOrganizer = selectedOrganizer;
@@ -79,7 +79,24 @@ export class EventTypesSearchComponent implements OnInit {
   }
 
   onLanguageChange() {
-    this.loadOrganizers(this.isConferences, this.isMeetups);
+    const currentSelectedOrganizer = this.selectedOrganizer;
+
+    this.organizerService.getOrganizers()
+      .subscribe(organizerData => {
+        this.organizers = organizerData;
+        this.organizerSelectItems = this.organizers.map(o => {
+            return {label: o.name, value: o};
+          }
+        );
+
+        if (this.organizers.length > 0) {
+          this.selectedOrganizer = (currentSelectedOrganizer) ? findOrganizerById(currentSelectedOrganizer.id, this.organizers) : null;
+        } else {
+          this.selectedOrganizer = null;
+        }
+
+        this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
+      });
   }
 
   isNoEventTypesFoundVisible() {
