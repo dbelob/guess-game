@@ -27,9 +27,10 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
     @Override
-    public EventTypeStatistics getEventTypeStatistics(boolean isConferences, boolean isMeetups) {
+    public EventTypeStatistics getEventTypeStatistics(boolean isConferences, boolean isMeetups, Long organizerId) {
         List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
-                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())))
+                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
+                        ((organizerId == null) || (et.getOrganizer().getId() == organizerId)))
                 .collect(Collectors.toList());
         List<EventTypeMetrics> eventTypeMetricsList = new ArrayList<>();
         LocalDate currentDate = LocalDate.now();

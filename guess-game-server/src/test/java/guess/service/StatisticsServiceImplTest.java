@@ -212,7 +212,7 @@ class StatisticsServiceImplTest {
                 new Metrics(1, 0, 0)
         );
 
-        EventTypeStatistics actual0 = statisticsService.getEventTypeStatistics(false, false);
+        EventTypeStatistics actual0 = statisticsService.getEventTypeStatistics(false, false, null);
         EventTypeStatistics expected0 = createEventTypeStatistics(
                 Collections.emptyList(),
                 new EventType(),
@@ -225,7 +225,7 @@ class StatisticsServiceImplTest {
         );
         assertEquals(expected0, actual0);
 
-        EventTypeStatistics actual1 = statisticsService.getEventTypeStatistics(false, true);
+        EventTypeStatistics actual1 = statisticsService.getEventTypeStatistics(false, true, null);
         EventTypeStatistics expected1 = createEventTypeStatistics(
                 List.of(eventTypeMetrics1),
                 new EventType(),
@@ -248,7 +248,7 @@ class StatisticsServiceImplTest {
                 2,
                 2, 1, 0
         );
-        assertEquals(expected2, statisticsService.getEventTypeStatistics(true, false));
+        assertEquals(expected2, statisticsService.getEventTypeStatistics(true, false, null));
 
         EventTypeStatistics expected3 = createEventTypeStatistics(
                 List.of(eventTypeMetrics0, eventTypeMetrics1, eventTypeMetrics2),
@@ -260,7 +260,7 @@ class StatisticsServiceImplTest {
                 3,
                 3, 1, 1
         );
-        assertEquals(expected3, statisticsService.getEventTypeStatistics(true, true));
+        assertEquals(expected3, statisticsService.getEventTypeStatistics(true, true, null));
     }
 
     private EventStatistics createEventStatistics(List<EventMetrics> eventMetricsList, Event event, LocalDate startDate,

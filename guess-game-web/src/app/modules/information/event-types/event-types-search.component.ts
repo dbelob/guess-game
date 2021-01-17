@@ -74,12 +74,12 @@ export class EventTypesSearchComponent implements OnInit {
       });
   }
 
-  onOrganizerChange(organizer: Organizer) {
-    this.loadEventTypes(this.isConferences, this.isMeetups, organizer);
-  }
-
   onEventTypeKindChange() {
     this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
+  }
+
+  onOrganizerChange(organizer: Organizer) {
+    this.loadEventTypes(this.isConferences, this.isMeetups, organizer);
   }
 
   onLanguageChange() {

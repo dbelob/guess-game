@@ -79,7 +79,7 @@ class StatisticsControllerTest {
                 List.of(eventTypeMetrics0, eventTypeMetrics1),
                 eventTypeMetricsTotals);
 
-        given(statisticsService.getEventTypeStatistics(conferences, meetups)).willReturn(eventTypeStatistics);
+        given(statisticsService.getEventTypeStatistics(conferences, meetups, null)).willReturn(eventTypeStatistics);
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/statistics/event-type-statistics")
@@ -92,7 +92,7 @@ class StatisticsControllerTest {
                 .andExpect(jsonPath("$.eventTypeMetricsList[0].id", is(1)))
                 .andExpect(jsonPath("$.eventTypeMetricsList[1].id", is(0)))
                 .andExpect(jsonPath("$.totals.age", is(4)));
-        Mockito.verify(statisticsService, VerificationModeFactory.times(1)).getEventTypeStatistics(conferences, meetups);
+        Mockito.verify(statisticsService, VerificationModeFactory.times(1)).getEventTypeStatistics(conferences, meetups, null);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
     }
 
