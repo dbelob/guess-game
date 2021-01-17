@@ -52,14 +52,25 @@ export class TalksSearchComponent implements OnInit {
     this.loadEventTypes();
   }
 
+  fillEventTypes(eventTypes: EventType[]) {
+    this.eventTypes = eventTypes;
+    this.eventTypeSelectItems = this.eventTypes.map(et => {
+        return {label: et.name, value: et};
+      }
+    );
+  }
+
+  fillEvents(events: Event[]) {
+    this.events = getEventsWithDisplayName(events, this.translateService);
+    this.eventSelectItems = this.events.map(e => {
+      return {label: e.displayName, value: e};
+    });
+  }
+
   loadEventTypes() {
     this.eventTypeService.getFilterEventTypes(true, true)
       .subscribe(eventTypesData => {
-        this.eventTypes = eventTypesData;
-        this.eventTypeSelectItems = this.eventTypes.map(et => {
-            return {label: et.name, value: et};
-          }
-        );
+        this.fillEventTypes(eventTypesData);
 
         if (this.eventTypes.length > 0) {
           this.eventService.getDefaultEvent()
@@ -92,10 +103,7 @@ export class TalksSearchComponent implements OnInit {
     if (eventType) {
       this.eventService.getEvents(true, true, eventType)
         .subscribe(data => {
-          this.events = getEventsWithDisplayName(data, this.translateService);
-          this.eventSelectItems = this.events.map(e => {
-            return {label: e.displayName, value: e};
-          });
+          this.fillEvents(data);
 
           if (this.events.length > 0) {
             const selectedEvent = (this.defaultEvent) ? findEventById(this.defaultEvent.id, this.events) : null;
@@ -135,11 +143,7 @@ export class TalksSearchComponent implements OnInit {
     // Load event types
     this.eventTypeService.getFilterEventTypes(true, true)
       .subscribe(eventTypesData => {
-        this.eventTypes = eventTypesData;
-        this.eventTypeSelectItems = this.eventTypes.map(et => {
-            return {label: et.name, value: et};
-          }
-        );
+        this.fillEventTypes(eventTypesData);
 
         if (this.eventTypes.length > 0) {
           this.selectedEventType = (currentSelectedEventType) ? findEventTypeById(currentSelectedEventType.id, this.eventTypes) : null;
@@ -151,10 +155,7 @@ export class TalksSearchComponent implements OnInit {
         if (this.selectedEventType) {
           this.eventService.getEvents(true, true, this.selectedEventType)
             .subscribe(data => {
-              this.events = getEventsWithDisplayName(data, this.translateService);
-              this.eventSelectItems = this.events.map(e => {
-                return {label: e.displayName, value: e};
-              });
+              this.fillEvents(data);
 
               if (this.events.length > 0) {
                 this.selectedEvent = (currentSelectedEvent) ? findEventById(currentSelectedEvent.id, this.events) : null;

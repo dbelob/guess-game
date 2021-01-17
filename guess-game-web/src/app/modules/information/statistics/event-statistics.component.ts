@@ -32,14 +32,18 @@ export class EventStatisticsComponent implements OnInit {
     this.loadConferences();
   }
 
+  fillConferences(conferences: EventType[]) {
+    this.conferences = conferences;
+    this.conferenceSelectItems = this.conferences.map(et => {
+        return {label: et.name, value: et};
+      }
+    );
+  }
+
   loadConferences() {
     this.statisticsService.getConferences()
       .subscribe(conferenceData => {
-        this.conferences = conferenceData;
-        this.conferenceSelectItems = this.conferences.map(et => {
-            return {label: et.name, value: et};
-          }
-        );
+        this.fillConferences(conferenceData);
 
         if (this.conferences.length > 0) {
           this.eventService.getDefaultEvent()
@@ -74,7 +78,20 @@ export class EventStatisticsComponent implements OnInit {
   }
 
   onLanguageChange() {
-    this.loadEventStatistics(this.selectedConference);
+    const currentSelectedConference = this.selectedConference;
+
+    this.statisticsService.getConferences()
+      .subscribe(conferenceData => {
+        this.fillConferences(conferenceData);
+
+        if (this.conferences.length > 0) {
+          this.selectedConference = (currentSelectedConference) ? findEventTypeById(currentSelectedConference.id, this.conferences) : null;
+        } else {
+          this.selectedConference = null;
+        }
+
+        this.loadEventStatistics(this.selectedConference);
+      });
   }
 
   isNoEventsFoundVisible() {

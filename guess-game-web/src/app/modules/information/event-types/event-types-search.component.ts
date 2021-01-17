@@ -34,14 +34,18 @@ export class EventTypesSearchComponent implements OnInit {
     this.loadOrganizers();
   }
 
+  fillOrganizers(organizers: Organizer[]) {
+    this.organizers = organizers;
+    this.organizerSelectItems = this.organizers.map(o => {
+        return {label: o.name, value: o};
+      }
+    );
+  }
+
   loadOrganizers() {
     this.organizerService.getOrganizers()
       .subscribe(organizerData => {
-        this.organizers = organizerData;
-        this.organizerSelectItems = this.organizers.map(o => {
-            return {label: o.name, value: o};
-          }
-        );
+        this.fillOrganizers(organizerData);
 
         if (this.organizers.length > 0) {
           this.organizerService.getDefaultOrganizer()
@@ -83,11 +87,7 @@ export class EventTypesSearchComponent implements OnInit {
 
     this.organizerService.getOrganizers()
       .subscribe(organizerData => {
-        this.organizers = organizerData;
-        this.organizerSelectItems = this.organizers.map(o => {
-            return {label: o.name, value: o};
-          }
-        );
+        this.fillOrganizers(organizerData);
 
         if (this.organizers.length > 0) {
           this.selectedOrganizer = (currentSelectedOrganizer) ? findOrganizerById(currentSelectedOrganizer.id, this.organizers) : null;

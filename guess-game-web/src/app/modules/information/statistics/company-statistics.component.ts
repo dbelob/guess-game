@@ -34,17 +34,21 @@ export class CompanyStatisticsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+    this.loadEventTypes();
   }
 
-  loadEventTypes(isConferences: boolean, isMeetups: boolean) {
-    this.eventTypeService.getFilterEventTypes(isConferences, isMeetups)
+  fillEventTypes(eventTypes: EventType[]) {
+    this.eventTypes = eventTypes;
+    this.eventTypeSelectItems = this.eventTypes.map(et => {
+        return {label: et.name, value: et};
+      }
+    );
+  }
+
+  loadEventTypes() {
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups)
       .subscribe(eventTypesData => {
-        this.eventTypes = eventTypesData;
-        this.eventTypeSelectItems = this.eventTypes.map(et => {
-            return {label: et.name, value: et};
-          }
-        );
+        this.fillEventTypes(eventTypesData);
 
         if (this.eventTypes.length > 0) {
           this.eventService.getDefaultEvent()
@@ -79,11 +83,24 @@ export class CompanyStatisticsComponent implements OnInit {
   }
 
   onEventTypeKindChange(checked: boolean) {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+    this.loadEventTypes();
   }
 
   onLanguageChange() {
-    this.loadCompanyStatistics(this.selectedEventType);
+    const currentSelectedEventType = this.selectedEventType;
+
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups)
+      .subscribe(eventTypesData => {
+        this.fillEventTypes(eventTypesData);
+
+        if (this.eventTypes.length > 0) {
+          this.selectedEventType = (currentSelectedEventType) ? findEventTypeById(currentSelectedEventType.id, this.eventTypes) : null;
+        } else {
+          this.selectedEventType = null;
+        }
+
+        this.loadCompanyStatistics(this.selectedEventType);
+      });
   }
 
   isNoCompaniesFoundVisible() {
