@@ -3,6 +3,7 @@ import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
 import { SpeakerStatistics } from '../../../shared/models/statistics/speaker-statistics.model';
+import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { StatisticsService } from '../../../shared/services/statistics.service';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
@@ -20,6 +21,10 @@ export class SpeakerStatisticsComponent implements OnInit {
 
   public isConferences = true;
   public isMeetups = true;
+
+  public organizers: Organizer[] = [];
+  public selectedOrganizer: Organizer;
+  public organizerSelectItems: SelectItem[] = [];
 
   public eventTypes: EventType[] = [];
   public selectedEventType: EventType;
@@ -86,6 +91,10 @@ export class SpeakerStatisticsComponent implements OnInit {
 
   onEventTypeKindChange(checked: boolean) {
     this.loadEventTypes();
+  }
+
+  onOrganizerChange(organizer: Organizer) {
+    // TODO: implement
   }
 
   onLanguageChange() {
