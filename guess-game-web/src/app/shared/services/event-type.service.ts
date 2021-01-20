@@ -33,10 +33,13 @@ export class EventTypeService {
       );
   }
 
-  getFilterEventTypes(isConferences: boolean, isMeetups: boolean): Observable<EventType[]> {
-    const params = new HttpParams()
+  getFilterEventTypes(isConferences: boolean, isMeetups: boolean, organizer: Organizer): Observable<EventType[]> {
+    let params = new HttpParams()
       .set('conferences', isConferences.toString())
       .set('meetups', isMeetups.toString());
+    if (organizer) {
+      params = params.set('organizerId', organizer.id.toString());
+    }
 
     return this.http.get<EventType[]>(`${this.baseUrl}/filter-event-types`, {params: params})
       .pipe(

@@ -172,9 +172,10 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
     @Override
-    public SpeakerStatistics getSpeakerStatistics(boolean isConferences, boolean isMeetups, Long eventTypeId) {
+    public SpeakerStatistics getSpeakerStatistics(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
         List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
                 .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
+                        ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
                         ((eventTypeId == null) || (et.getId() == eventTypeId)))
                 .collect(Collectors.toList());
         Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new LinkedHashMap<>();

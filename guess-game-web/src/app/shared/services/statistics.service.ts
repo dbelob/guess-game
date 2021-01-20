@@ -51,10 +51,13 @@ export class StatisticsService {
       );
   }
 
-  getSpeakerStatistics(conferences: boolean, meetups: boolean, eventType: EventType): Observable<SpeakerStatistics> {
+  getSpeakerStatistics(conferences: boolean, meetups: boolean, organizer: Organizer, eventType: EventType): Observable<SpeakerStatistics> {
     let params = new HttpParams()
       .set('conferences', conferences.toString())
       .set('meetups', meetups.toString());
+    if (organizer) {
+      params = params.set('organizerId', organizer.id.toString());
+    }
     if (eventType) {
       params = params.set('eventTypeId', eventType.id.toString());
     }

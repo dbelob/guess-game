@@ -45,9 +45,9 @@ public class EventTypeController {
     @GetMapping("/filter-event-types")
     @ResponseBody
     public List<EventTypeSuperBriefDto> getFilterEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
-                                                            HttpSession httpSession) {
+                                                            @RequestParam(required = false) Long organizerId, HttpSession httpSession) {
         Language language = localeService.getLanguage(httpSession);
-        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, null, language);
+        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, organizerId, language);
 
         return EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
     }

@@ -67,8 +67,9 @@ public class StatisticsController {
     @GetMapping("/speaker-statistics")
     @ResponseBody
     public SpeakerStatisticsDto getSpeakerStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
+                                                     @RequestParam(required = false) Long organizerId,
                                                      @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
-        SpeakerStatistics speakerStatistics = statisticsService.getSpeakerStatistics(conferences, meetups, eventTypeId);
+        SpeakerStatistics speakerStatistics = statisticsService.getSpeakerStatistics(conferences, meetups, organizerId, eventTypeId);
         Language language = localeService.getLanguage(httpSession);
         SpeakerStatisticsDto speakerStatisticsDto = SpeakerStatisticsDto.convertToDto(speakerStatistics, language);
         Comparator<SpeakerMetricsDto> comparatorByTalksQuantity = Comparator.comparing(SpeakerMetricsDto::getTalksQuantity).reversed();

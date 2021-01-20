@@ -43,7 +43,7 @@ export class EventsSearchComponent implements OnInit {
   }
 
   loadEventTypes() {
-    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups)
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, null)
       .subscribe(eventTypesData => {
         this.fillEventTypes(eventTypesData);
 
@@ -85,7 +85,7 @@ export class EventsSearchComponent implements OnInit {
   onLanguageChange() {
     const currentSelectedEventType = this.selectedEventType;
 
-    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups)
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, null)
       .subscribe(eventTypesData => {
         this.fillEventTypes(eventTypesData);
 

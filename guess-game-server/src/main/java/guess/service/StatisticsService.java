@@ -16,7 +16,7 @@ public interface StatisticsService {
 
     EventStatistics getEventStatistics(Long eventTypeId);
 
-    SpeakerStatistics getSpeakerStatistics(boolean isConferences, boolean isMeetups, Long eventTypeId);
+    SpeakerStatistics getSpeakerStatistics(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId);
 
     CompanyStatistics getCompanyStatistics(boolean isConferences, boolean isMeetups, Long eventTypeId);
 

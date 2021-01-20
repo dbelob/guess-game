@@ -43,7 +43,7 @@ export class SpeakerStatisticsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadEventTypes();
+    this.loadOrganizers();
   }
 
   fillOrganizers(organizers: Organizer[]) {
@@ -62,7 +62,7 @@ export class SpeakerStatisticsComponent implements OnInit {
     );
   }
 
-  loadEventTypes() {
+  loadOrganizers() {
     this.organizerService.getOrganizers()
       .subscribe(organizerData => {
         this.fillOrganizers(organizerData);
@@ -70,44 +70,53 @@ export class SpeakerStatisticsComponent implements OnInit {
         this.eventService.getDefaultEvent()
           .subscribe(defaultEventData => {
             const defaultOrganizerId = defaultEventData?.organizerId;
-            const selectedOrganizer = (defaultOrganizerId) ? findOrganizerById(defaultOrganizerId, this.organizers) : null;
-            this.selectedOrganizer = (selectedOrganizer) ? selectedOrganizer : null;
+            this.selectedOrganizer = Number.isInteger(defaultOrganizerId) ? findOrganizerById(defaultOrganizerId, this.organizers) : null;
 
-            this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups)
+            this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
               .subscribe(eventTypesData => {
                 this.fillEventTypes(eventTypesData);
 
                 if (this.eventTypes.length > 0) {
-                  const selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
-                  this.selectedEventType = (selectedEventType) ? selectedEventType : null;
+                  this.selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
                 } else {
                   this.selectedEventType = null;
                 }
 
-                this.loadSpeakerStatistics(this.selectedEventType);
+                this.loadSpeakerStatistics(this.selectedOrganizer, this.selectedEventType);
               });
           });
       });
   }
 
-  loadSpeakerStatistics(eventType: EventType) {
-    this.statisticsService.getSpeakerStatistics(this.isConferences, this.isMeetups, eventType)
+  loadEventTypes() {
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+      .subscribe(eventTypesData => {
+        this.fillEventTypes(eventTypesData);
+
+        this.selectedEventType = null;
+
+        this.loadSpeakerStatistics(this.selectedOrganizer, this.selectedEventType);
+      });
+  }
+
+  loadSpeakerStatistics(organizer: Organizer, eventType: EventType) {
+    this.statisticsService.getSpeakerStatistics(this.isConferences, this.isMeetups, organizer, eventType)
       .subscribe(data => {
           this.speakerStatistics = data;
         }
       );
   }
 
-  onEventTypeChange(eventType: EventType) {
-    this.loadSpeakerStatistics(eventType);
-  }
-
-  onEventTypeKindChange(checked: boolean) {
+  onEventTypeKindChange() {
     this.loadEventTypes();
   }
 
-  onOrganizerChange(organizer: Organizer) {
-    // TODO: implement
+  onOrganizerChange() {
+    this.loadEventTypes();
+  }
+
+  onEventTypeChange() {
+    this.loadSpeakerStatistics(this.selectedOrganizer, this.selectedEventType);
   }
 
   onLanguageChange() {
@@ -119,10 +128,9 @@ export class SpeakerStatisticsComponent implements OnInit {
         this.fillOrganizers(organizerData);
 
         const defaultOrganizerId = currentSelectedOrganizer?.id;
-        const selectedOrganizer = (defaultOrganizerId) ? findOrganizerById(defaultOrganizerId, this.organizers) : null;
-        this.selectedOrganizer = (selectedOrganizer) ? selectedOrganizer : null;
+        this.selectedOrganizer = Number.isInteger(defaultOrganizerId) ? findOrganizerById(defaultOrganizerId, this.organizers) : null;
 
-        this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups)
+        this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
           .subscribe(eventTypesData => {
             this.fillEventTypes(eventTypesData);
 
@@ -132,7 +140,7 @@ export class SpeakerStatisticsComponent implements OnInit {
               this.selectedEventType = null;
             }
 
-            this.loadSpeakerStatistics(this.selectedEventType);
+            this.loadSpeakerStatistics(this.selectedOrganizer, this.selectedEventType);
           });
       });
   }

@@ -68,7 +68,7 @@ export class TalksSearchComponent implements OnInit {
   }
 
   loadEventTypes() {
-    this.eventTypeService.getFilterEventTypes(true, true)
+    this.eventTypeService.getFilterEventTypes(true, true, null)
       .subscribe(eventTypesData => {
         this.fillEventTypes(eventTypesData);
 
@@ -141,7 +141,7 @@ export class TalksSearchComponent implements OnInit {
     const currentSelectedEvent = this.selectedEvent;
 
     // Load event types
-    this.eventTypeService.getFilterEventTypes(true, true)
+    this.eventTypeService.getFilterEventTypes(true, true, null)
       .subscribe(eventTypesData => {
         this.fillEventTypes(eventTypesData);
 

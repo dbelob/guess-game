@@ -149,6 +149,7 @@ class StatisticsControllerTest {
 
         boolean conferences = true;
         boolean meetups = false;
+        Long organizerId = null;
         Long eventTypeId = 0L;
 
         Speaker speaker0 = new Speaker();
@@ -171,7 +172,7 @@ class StatisticsControllerTest {
                 List.of(speakerMetrics0, speakerMetrics1),
                 speakerMetricsTotals);
 
-        given(statisticsService.getSpeakerStatistics(conferences, meetups, eventTypeId)).willReturn(speakerStatistics);
+        given(statisticsService.getSpeakerStatistics(conferences, meetups, organizerId, eventTypeId)).willReturn(speakerStatistics);
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
         mvc.perform(get("/api/statistics/speaker-statistics")
@@ -185,7 +186,7 @@ class StatisticsControllerTest {
                 .andExpect(jsonPath("$.speakerMetricsList[0].id", is(1)))
                 .andExpect(jsonPath("$.speakerMetricsList[1].id", is(0)))
                 .andExpect(jsonPath("$.totals.talksQuantity", is(82)));
-        Mockito.verify(statisticsService, VerificationModeFactory.times(1)).getSpeakerStatistics(conferences, meetups, eventTypeId);
+        Mockito.verify(statisticsService, VerificationModeFactory.times(1)).getSpeakerStatistics(conferences, meetups, organizerId, eventTypeId);
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
     }
 
