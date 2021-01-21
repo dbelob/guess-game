@@ -1,10 +1,7 @@
 package guess.controller;
 
 import guess.domain.Language;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.LocaleItem;
-import guess.domain.source.Talk;
+import guess.domain.source.*;
 import guess.service.EventService;
 import guess.service.EventTypeService;
 import guess.service.LocaleService;
@@ -51,17 +48,23 @@ class TalkControllerTest {
     void getTalks() throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 
+        Organizer organizer0 = new Organizer();
+        organizer0.setId(0);
+
         EventType eventType0 = new EventType();
         eventType0.setId(0);
+        eventType0.setOrganizer(organizer0);
 
         EventType eventType1 = new EventType();
         eventType1.setId(1);
 
         Event event0 = new Event();
         event0.setId(0);
+        event0.setEventType(eventType0);
 
         Event event1 = new Event();
         event1.setId(1);
+        event1.setEventType(eventType0);
 
         Talk talk0 = new Talk();
         talk0.setId(0);

@@ -147,6 +147,9 @@ class EventTypeControllerTest {
         eventType.setEvents(new ArrayList<>(List.of(event0, event1)));
         eventType.setOrganizer(organizer);
 
+        event0.setEventType(eventType);
+        event1.setEventType(eventType);
+
         given(eventTypeService.getEventTypeById(0)).willReturn(eventType);
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
