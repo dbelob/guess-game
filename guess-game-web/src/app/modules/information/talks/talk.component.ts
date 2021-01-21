@@ -60,8 +60,8 @@ export class TalkComponent implements OnInit {
       talkDetails.talk.videoLinks.forEach(v => {
           const videoId = getVideoId(v);
 
-          if (videoId && (videoId.service === 'youtube')) {
-            videoLinksVideoIds.push(videoId.id);
+          if (videoId && (videoId['service'] === 'youtube')) {
+            videoLinksVideoIds.push(videoId['id']);
           }
         }
       );
