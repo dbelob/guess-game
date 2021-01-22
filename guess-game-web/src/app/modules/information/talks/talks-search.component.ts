@@ -78,12 +78,7 @@ export class TalksSearchComponent implements OnInit {
               this.defaultEvent = defaultEventData;
 
               const selectedEventType = (this.defaultEvent) ? findEventTypeById(this.defaultEvent.eventTypeId, this.eventTypes) : null;
-
-              if (selectedEventType) {
-                this.selectedEventType = selectedEventType;
-              } else {
-                this.selectedEventType = this.eventTypes[0];
-              }
+              this.selectedEventType = (selectedEventType) ? selectedEventType : this.eventTypes[0];
 
               this.loadEvents(this.selectedEventType);
             });
@@ -107,12 +102,7 @@ export class TalksSearchComponent implements OnInit {
 
           if (this.events.length > 0) {
             const selectedEvent = (this.defaultEvent) ? findEventById(this.defaultEvent.id, this.events) : null;
-
-            if (selectedEvent) {
-              this.selectedEvent = selectedEvent;
-            } else {
-              this.selectedEvent = this.events[0];
-            }
+            this.selectedEvent = (selectedEvent) ? selectedEvent : this.events[0];
           } else {
             this.selectedEvent = null;
           }

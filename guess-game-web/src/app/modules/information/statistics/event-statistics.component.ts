@@ -49,12 +49,7 @@ export class EventStatisticsComponent implements OnInit {
           this.eventService.getDefaultEvent()
             .subscribe(defaultEventData => {
               const selectedConference = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.conferences) : null;
-
-              if (selectedConference) {
-                this.selectedConference = selectedConference;
-              } else {
-                this.selectedConference = null;
-              }
+              this.selectedConference = (selectedConference) ? selectedConference : null;
 
               this.loadEventStatistics(this.selectedConference);
             });

@@ -51,12 +51,7 @@ export class EventTypesSearchComponent implements OnInit {
           this.organizerService.getDefaultOrganizer()
             .subscribe(defaultOrganizerData => {
               const selectedOrganizer = (defaultOrganizerData) ? findOrganizerById(defaultOrganizerData.id, this.organizers) : null;
-
-              if (selectedOrganizer) {
-                this.selectedOrganizer = selectedOrganizer;
-              } else {
-                this.selectedOrganizer = null;
-              }
+              this.selectedOrganizer = (selectedOrganizer) ? selectedOrganizer : null;
 
               this.loadEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer);
             });

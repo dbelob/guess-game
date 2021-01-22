@@ -69,8 +69,7 @@ export class SpeakerStatisticsComponent implements OnInit {
 
         this.eventService.getDefaultEvent()
           .subscribe(defaultEventData => {
-            const defaultOrganizerId = defaultEventData?.organizerId;
-            this.selectedOrganizer = Number.isInteger(defaultOrganizerId) ? findOrganizerById(defaultOrganizerId, this.organizers) : null;
+            this.selectedOrganizer = (defaultEventData) ? findOrganizerById(defaultEventData.organizerId, this.organizers) : null;
 
             this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
               .subscribe(eventTypesData => {
@@ -127,8 +126,7 @@ export class SpeakerStatisticsComponent implements OnInit {
       .subscribe(organizerData => {
         this.fillOrganizers(organizerData);
 
-        const defaultOrganizerId = currentSelectedOrganizer?.id;
-        this.selectedOrganizer = Number.isInteger(defaultOrganizerId) ? findOrganizerById(defaultOrganizerId, this.organizers) : null;
+        this.selectedOrganizer = (currentSelectedOrganizer) ? findOrganizerById(currentSelectedOrganizer.id, this.organizers) : null;
 
         this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
           .subscribe(eventTypesData => {
