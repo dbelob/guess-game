@@ -7,7 +7,8 @@ import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { StatisticsService } from '../../../shared/services/statistics.service';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
-import { findEventTypeById } from '../../general/utility-functions';
+import { OrganizerService } from '../../../shared/services/organizer.service';
+import { findEventTypeById, findOrganizerById } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-company-statistics',
@@ -32,14 +33,23 @@ export class CompanyStatisticsComponent implements OnInit {
   public multiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
-              private eventService: EventService, public translateService: TranslateService) {
+              private eventService: EventService, public organizerService: OrganizerService,
+              public translateService: TranslateService) {
     this.multiSortMeta.push({field: 'talksQuantity', order: -1});
     this.multiSortMeta.push({field: 'eventsQuantity', order: -1});
     this.multiSortMeta.push({field: 'eventTypesQuantity', order: -1});
   }
 
   ngOnInit(): void {
-    this.loadEventTypes();
+    this.loadOrganizers();
+  }
+
+  fillOrganizers(organizers: Organizer[]) {
+    this.organizers = organizers;
+    this.organizerSelectItems = this.organizers.map(o => {
+        return {label: o.name, value: o};
+      }
+    );
   }
 
   fillEventTypes(eventTypes: EventType[]) {
@@ -50,65 +60,84 @@ export class CompanyStatisticsComponent implements OnInit {
     );
   }
 
-  loadEventTypes() {
-    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, null)
-      .subscribe(eventTypesData => {
-        this.fillEventTypes(eventTypesData);
+  loadOrganizers() {
+    this.organizerService.getOrganizers()
+      .subscribe(organizerData => {
+        this.fillOrganizers(organizerData);
 
-        if (this.eventTypes.length > 0) {
-          this.eventService.getDefaultEvent()
-            .subscribe(defaultEventData => {
-              const selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
+        this.eventService.getDefaultEvent()
+          .subscribe(defaultEventData => {
+            this.selectedOrganizer = (defaultEventData) ? findOrganizerById(defaultEventData.organizerId, this.organizers) : null;
 
-              if (selectedEventType) {
-                this.selectedEventType = selectedEventType;
-              } else {
-                this.selectedEventType = null;
-              }
+            this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+              .subscribe(eventTypesData => {
+                this.fillEventTypes(eventTypesData);
 
-              this.loadCompanyStatistics(this.selectedEventType);
-            });
-        } else {
-          this.selectedEventType = null;
-          this.loadCompanyStatistics(this.selectedEventType);
-        }
+                if (this.eventTypes.length > 0) {
+                  this.selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
+                } else {
+                  this.selectedEventType = null;
+                }
+
+                this.loadCompanyStatistics(this.selectedOrganizer, this.selectedEventType);
+              });
+          });
       });
   }
 
-  loadCompanyStatistics(eventType: EventType) {
-    this.statisticsService.getCompanyStatistics(this.isConferences, this.isMeetups, null, eventType)
+  loadEventTypes() {
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+      .subscribe(eventTypesData => {
+        this.fillEventTypes(eventTypesData);
+
+        this.selectedEventType = null;
+
+        this.loadCompanyStatistics(this.selectedOrganizer, this.selectedEventType);
+      });
+  }
+
+  loadCompanyStatistics(organizer: Organizer, eventType: EventType) {
+    this.statisticsService.getCompanyStatistics(this.isConferences, this.isMeetups, organizer, eventType)
       .subscribe(data => {
           this.companyStatistics = data;
         }
       );
   }
 
-  onEventTypeChange(eventType: EventType) {
-    this.loadCompanyStatistics(eventType);
-  }
-
-  onEventTypeKindChange(checked: boolean) {
+  onEventTypeKindChange() {
     this.loadEventTypes();
   }
 
-  onOrganizerChange(organizer: Organizer) {
-    // TODO: implement
+  onOrganizerChange() {
+    this.loadEventTypes();
+  }
+
+  onEventTypeChange() {
+    this.loadCompanyStatistics(this.selectedOrganizer, this.selectedEventType);
   }
 
   onLanguageChange() {
+    const currentSelectedOrganizer = this.selectedOrganizer;
     const currentSelectedEventType = this.selectedEventType;
 
-    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, null)
-      .subscribe(eventTypesData => {
-        this.fillEventTypes(eventTypesData);
+    this.organizerService.getOrganizers()
+      .subscribe(organizerData => {
+        this.fillOrganizers(organizerData);
 
-        if (this.eventTypes.length > 0) {
-          this.selectedEventType = (currentSelectedEventType) ? findEventTypeById(currentSelectedEventType.id, this.eventTypes) : null;
-        } else {
-          this.selectedEventType = null;
-        }
+        this.selectedOrganizer = (currentSelectedOrganizer) ? findOrganizerById(currentSelectedOrganizer.id, this.organizers) : null;
 
-        this.loadCompanyStatistics(this.selectedEventType);
+        this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+          .subscribe(eventTypesData => {
+            this.fillEventTypes(eventTypesData);
+
+            if (this.eventTypes.length > 0) {
+              this.selectedEventType = (currentSelectedEventType) ? findEventTypeById(currentSelectedEventType.id, this.eventTypes) : null;
+            } else {
+              this.selectedEventType = null;
+            }
+
+            this.loadCompanyStatistics(this.selectedOrganizer, this.selectedEventType);
+          });
       });
   }
 
