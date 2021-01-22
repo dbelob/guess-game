@@ -84,8 +84,9 @@ public class StatisticsController {
     @GetMapping("/company-statistics")
     @ResponseBody
     public CompanyStatisticsDto getCompanyStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
+                                                     @RequestParam(required = false) Long organizerId,
                                                      @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
-        CompanyStatistics companyStatistics = statisticsService.getCompanyStatistics(conferences, meetups, eventTypeId);
+        CompanyStatistics companyStatistics = statisticsService.getCompanyStatistics(conferences, meetups, organizerId, eventTypeId);
         Language language = localeService.getLanguage(httpSession);
         CompanyStatisticsDto companyStatisticsDto = CompanyStatisticsDto.convertToDto(companyStatistics, language);
         Comparator<CompanyMetricsDto> comparatorByTalksQuantity = Comparator.comparing(CompanyMetricsDto::getTalksQuantity).reversed();
