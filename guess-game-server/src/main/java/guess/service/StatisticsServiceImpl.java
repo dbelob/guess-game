@@ -171,13 +171,17 @@ public class StatisticsServiceImpl implements StatisticsService {
                         totalsMvpsQuantity));
     }
 
-    @Override
-    public SpeakerStatistics getSpeakerStatistics(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
-        List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
+    List<EventType> getStatisticsEventType(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
+        return eventTypeDao.getEventTypes().stream()
                 .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
                         ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
                         ((eventTypeId == null) || (et.getId() == eventTypeId)))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public SpeakerStatistics getSpeakerStatistics(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
+        List<EventType> eventTypes = getStatisticsEventType(isConferences, isMeetups, organizerId, eventTypeId);
         Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new LinkedHashMap<>();
         long totalsTalksQuantity = 0;
         long totalsEventsQuantity = 0;
@@ -238,11 +242,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
     @Override
     public CompanyStatistics getCompanyStatistics(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
-        List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
-                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
-                        ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
-                        ((eventTypeId == null) || (et.getId() == eventTypeId)))
-                .collect(Collectors.toList());
+        List<EventType> eventTypes = getStatisticsEventType(isConferences, isMeetups, organizerId, eventTypeId);
         Map<Company, CompanyMetricsInternal> companySpeakerMetricsMap = new LinkedHashMap<>();
 
         for (EventType eventType : eventTypes) {
