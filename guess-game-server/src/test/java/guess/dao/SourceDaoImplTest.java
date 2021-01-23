@@ -188,6 +188,11 @@ class SourceDaoImplTest {
     }
 
     @Test
+    void getOrganizers() {
+        assertEquals(List.of(organizer0, organizer1), sourceDao.getOrganizers());
+    }
+
+    @Test
     void getEventTypes() {
         assertEquals(List.of(eventType0, eventType1, eventType2), sourceDao.getEventTypes());
     }
