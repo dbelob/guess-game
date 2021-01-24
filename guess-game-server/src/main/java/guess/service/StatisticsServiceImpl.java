@@ -27,11 +27,17 @@ public class StatisticsServiceImpl implements StatisticsService {
     }
 
     @Override
-    public EventTypeStatistics getEventTypeStatistics(boolean isConferences, boolean isMeetups, Long organizerId) {
-        List<EventType> eventTypes = eventTypeDao.getEventTypes().stream()
+    public List<EventType> getStatisticsEventTypes(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
+        return eventTypeDao.getEventTypes().stream()
                 .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
-                        ((organizerId == null) || (et.getOrganizer().getId() == organizerId)))
+                        ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
+                        ((eventTypeId == null) || (et.getId() == eventTypeId)))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public EventTypeStatistics getEventTypeStatistics(boolean isConferences, boolean isMeetups, Long organizerId) {
+        List<EventType> eventTypes = getStatisticsEventTypes(isConferences, isMeetups, organizerId, null);
         List<EventTypeMetrics> eventTypeMetricsList = new ArrayList<>();
         LocalDate currentDate = LocalDate.now();
         LocalDate totalsStartDate = currentDate;
@@ -171,17 +177,9 @@ public class StatisticsServiceImpl implements StatisticsService {
                         totalsMvpsQuantity));
     }
 
-    List<EventType> getStatisticsEventType(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
-        return eventTypeDao.getEventTypes().stream()
-                .filter(et -> ((isConferences && et.isEventTypeConference()) || (isMeetups && !et.isEventTypeConference())) &&
-                        ((organizerId == null) || (et.getOrganizer().getId() == organizerId)) &&
-                        ((eventTypeId == null) || (et.getId() == eventTypeId)))
-                .collect(Collectors.toList());
-    }
-
     @Override
     public SpeakerStatistics getSpeakerStatistics(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
-        List<EventType> eventTypes = getStatisticsEventType(isConferences, isMeetups, organizerId, eventTypeId);
+        List<EventType> eventTypes = getStatisticsEventTypes(isConferences, isMeetups, organizerId, eventTypeId);
         Map<Speaker, SpeakerMetricsInternal> speakerSpeakerMetricsMap = new LinkedHashMap<>();
         long totalsTalksQuantity = 0;
         long totalsEventsQuantity = 0;
@@ -242,7 +240,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
     @Override
     public CompanyStatistics getCompanyStatistics(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId) {
-        List<EventType> eventTypes = getStatisticsEventType(isConferences, isMeetups, organizerId, eventTypeId);
+        List<EventType> eventTypes = getStatisticsEventTypes(isConferences, isMeetups, organizerId, eventTypeId);
         Map<Company, CompanyMetricsInternal> companySpeakerMetricsMap = new LinkedHashMap<>();
 
         for (EventType eventType : eventTypes) {

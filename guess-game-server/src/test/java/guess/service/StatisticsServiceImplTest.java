@@ -5,12 +5,13 @@ import guess.dao.EventTypeDao;
 import guess.domain.Conference;
 import guess.domain.source.*;
 import guess.domain.statistics.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
+import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -21,8 +22,10 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("StatisticsServiceImpl class tests")
 @ExtendWith(SpringExtension.class)
@@ -180,6 +183,81 @@ class StatisticsServiceImplTest {
                         new Metrics(talksQuantity, javaChampionsQuantity, mvpsQuantity)
                 )
         );
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getStatisticsEventTypes method with parameters tests")
+    class GetStatisticsEventTypesTest {
+        private Stream<Arguments> data() {
+            Organizer organizer0 = new Organizer();
+            organizer0.setId(0);
+
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
+            eventType0.setConference(Conference.JPOINT);
+            eventType0.setOrganizer(organizer0);
+
+            EventType eventType1 = new EventType();
+            eventType1.setId(1);
+            eventType1.setOrganizer(organizer0);
+
+            List<EventType> eventTypes = List.of(eventType0, eventType1);
+
+            return Stream.of(
+                    arguments(false, false, null, null, eventTypes, Collections.emptyList()),
+                    arguments(true, false, null, null, eventTypes, List.of(eventType0)),
+                    arguments(false, true, null, null, eventTypes, List.of(eventType1)),
+                    arguments(true, true, null, null, eventTypes, List.of(eventType0, eventType1)),
+                    arguments(false, false, 0L, null, eventTypes, Collections.emptyList()),
+                    arguments(true, false, 0L, null, eventTypes, List.of(eventType0)),
+                    arguments(false, true, 0L, null, eventTypes, List.of(eventType1)),
+                    arguments(true, true, 0L, null, eventTypes, List.of(eventType0, eventType1)),
+                    arguments(false, false, 1L, null, eventTypes, Collections.emptyList()),
+                    arguments(true, false, 1L, null, eventTypes, Collections.emptyList()),
+                    arguments(false, true, 1L, null, eventTypes, Collections.emptyList()),
+                    arguments(true, true, 1L, null, eventTypes, Collections.emptyList()),
+
+                    arguments(false, false, null, 0L, eventTypes, Collections.emptyList()),
+                    arguments(true, false, null, 0L, eventTypes, List.of(eventType0)),
+                    arguments(false, true, null, 0L, eventTypes, Collections.emptyList()),
+                    arguments(true, true, null, 0L, eventTypes, List.of(eventType0)),
+                    arguments(false, false, 0L, 0L, eventTypes, Collections.emptyList()),
+                    arguments(true, false, 0L, 0L, eventTypes, List.of(eventType0)),
+                    arguments(false, true, 0L, 0L, eventTypes, Collections.emptyList()),
+                    arguments(true, true, 0L, 0L, eventTypes, List.of(eventType0)),
+                    arguments(false, false, 1L, 0L, eventTypes, Collections.emptyList()),
+                    arguments(true, false, 1L, 0L, eventTypes, Collections.emptyList()),
+                    arguments(false, true, 1L, 0L, eventTypes, Collections.emptyList()),
+                    arguments(true, true, 1L, 0L, eventTypes, Collections.emptyList()),
+
+                    arguments(false, false, null, 2L, eventTypes, Collections.emptyList()),
+                    arguments(true, false, null, 2L, eventTypes, Collections.emptyList()),
+                    arguments(false, true, null, 2L, eventTypes, Collections.emptyList()),
+                    arguments(true, true, null, 2L, eventTypes, Collections.emptyList()),
+                    arguments(false, false, 0L, 2L, eventTypes, Collections.emptyList()),
+                    arguments(true, false, 0L, 2L, eventTypes, Collections.emptyList()),
+                    arguments(false, true, 0L, 2L, eventTypes, Collections.emptyList()),
+                    arguments(true, true, 0L, 2L, eventTypes, Collections.emptyList()),
+                    arguments(false, false, 1L, 2L, eventTypes, Collections.emptyList()),
+                    arguments(true, false, 1L, 2L, eventTypes, Collections.emptyList()),
+                    arguments(false, true, 1L, 2L, eventTypes, Collections.emptyList()),
+                    arguments(true, true, 1L, 2L, eventTypes, Collections.emptyList())
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getStatisticsEventTypes(boolean isConferences, boolean isMeetups, Long organizerId, Long eventTypeId,
+                                     List<EventType> eventTypes, List<EventType> expected) {
+            Mockito.when(eventTypeDao.getEventTypes()).thenReturn(eventTypes);
+
+            assertEquals(expected, statisticsService.getStatisticsEventTypes(isConferences, isMeetups, organizerId, eventTypeId));
+            Mockito.verify(eventTypeDao, VerificationModeFactory.times(1)).getEventTypes();
+            Mockito.verifyNoMoreInteractions(eventTypeDao);
+
+            Mockito.reset(eventTypeDao);
+        }
     }
 
     @Test
