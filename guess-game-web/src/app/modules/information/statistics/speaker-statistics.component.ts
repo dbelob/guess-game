@@ -3,10 +3,12 @@ import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
 import { SpeakerStatistics } from '../../../shared/models/statistics/speaker-statistics.model';
+import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { StatisticsService } from '../../../shared/services/statistics.service';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
-import { findEventTypeById } from '../../general/utility-functions';
+import { OrganizerService } from '../../../shared/services/organizer.service';
+import { findEventTypeById, findOrganizerById } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-speaker-statistics',
@@ -21,6 +23,10 @@ export class SpeakerStatisticsComponent implements OnInit {
   public isConferences = true;
   public isMeetups = true;
 
+  public organizers: Organizer[] = [];
+  public selectedOrganizer: Organizer;
+  public organizerSelectItems: SelectItem[] = [];
+
   public eventTypes: EventType[] = [];
   public selectedEventType: EventType;
   public eventTypeSelectItems: SelectItem[] = [];
@@ -29,63 +35,112 @@ export class SpeakerStatisticsComponent implements OnInit {
   public multiSortMeta: any[] = [];
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
-              private eventService: EventService, public translateService: TranslateService) {
+              private eventService: EventService, public organizerService: OrganizerService,
+              public translateService: TranslateService) {
     this.multiSortMeta.push({field: 'talksQuantity', order: -1});
     this.multiSortMeta.push({field: 'eventsQuantity', order: -1});
     this.multiSortMeta.push({field: 'eventTypesQuantity', order: -1});
   }
 
   ngOnInit(): void {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+    this.loadOrganizers();
   }
 
-  loadEventTypes(isConferences: boolean, isMeetups: boolean) {
-    this.eventTypeService.getFilterEventTypes(isConferences, isMeetups)
-      .subscribe(eventTypesData => {
-        this.eventTypes = eventTypesData;
-        this.eventTypeSelectItems = this.eventTypes.map(et => {
-            return {label: et.name, value: et};
-          }
-        );
+  fillOrganizers(organizers: Organizer[]) {
+    this.organizers = organizers;
+    this.organizerSelectItems = this.organizers.map(o => {
+        return {label: o.name, value: o};
+      }
+    );
+  }
 
-        if (this.eventTypes.length > 0) {
-          this.eventService.getDefaultEvent()
-            .subscribe(defaultEventData => {
-              const selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
+  fillEventTypes(eventTypes: EventType[]) {
+    this.eventTypes = eventTypes;
+    this.eventTypeSelectItems = this.eventTypes.map(et => {
+        return {label: et.name, value: et};
+      }
+    );
+  }
 
-              if (selectedEventType) {
-                this.selectedEventType = selectedEventType;
-              } else {
-                this.selectedEventType = null;
-              }
+  loadOrganizers() {
+    this.organizerService.getOrganizers()
+      .subscribe(organizerData => {
+        this.fillOrganizers(organizerData);
 
-              this.loadSpeakerStatistics(this.selectedEventType);
-            });
-        } else {
-          this.selectedEventType = null;
-          this.loadSpeakerStatistics(this.selectedEventType);
-        }
+        this.eventService.getDefaultEvent()
+          .subscribe(defaultEventData => {
+            this.selectedOrganizer = (defaultEventData) ? findOrganizerById(defaultEventData.organizerId, this.organizers) : null;
+
+            this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+              .subscribe(eventTypesData => {
+                this.fillEventTypes(eventTypesData);
+
+                if (this.eventTypes.length > 0) {
+                  this.selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
+                } else {
+                  this.selectedEventType = null;
+                }
+
+                this.loadSpeakerStatistics(this.selectedOrganizer, this.selectedEventType);
+              });
+          });
       });
   }
 
-  loadSpeakerStatistics(eventType: EventType) {
-    this.statisticsService.getSpeakerStatistics(this.isConferences, this.isMeetups, eventType)
+  loadEventTypes() {
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+      .subscribe(eventTypesData => {
+        this.fillEventTypes(eventTypesData);
+
+        this.selectedEventType = null;
+
+        this.loadSpeakerStatistics(this.selectedOrganizer, this.selectedEventType);
+      });
+  }
+
+  loadSpeakerStatistics(organizer: Organizer, eventType: EventType) {
+    this.statisticsService.getSpeakerStatistics(this.isConferences, this.isMeetups, organizer, eventType)
       .subscribe(data => {
           this.speakerStatistics = data;
         }
       );
   }
 
-  onEventTypeChange(eventType: EventType) {
-    this.loadSpeakerStatistics(eventType);
+  onEventTypeKindChange() {
+    this.loadEventTypes();
   }
 
-  onEventTypeKindChange(checked: boolean) {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+  onOrganizerChange() {
+    this.loadEventTypes();
+  }
+
+  onEventTypeChange() {
+    this.loadSpeakerStatistics(this.selectedOrganizer, this.selectedEventType);
   }
 
   onLanguageChange() {
-    this.loadSpeakerStatistics(this.selectedEventType);
+    const currentSelectedOrganizer = this.selectedOrganizer;
+    const currentSelectedEventType = this.selectedEventType;
+
+    this.organizerService.getOrganizers()
+      .subscribe(organizerData => {
+        this.fillOrganizers(organizerData);
+
+        this.selectedOrganizer = (currentSelectedOrganizer) ? findOrganizerById(currentSelectedOrganizer.id, this.organizers) : null;
+
+        this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+          .subscribe(eventTypesData => {
+            this.fillEventTypes(eventTypesData);
+
+            if (this.eventTypes.length > 0) {
+              this.selectedEventType = (currentSelectedEventType) ? findEventTypeById(currentSelectedEventType.id, this.eventTypes) : null;
+            } else {
+              this.selectedEventType = null;
+            }
+
+            this.loadSpeakerStatistics(this.selectedOrganizer, this.selectedEventType);
+          });
+      });
   }
 
   isNoSpeakersFoundVisible() {

@@ -20,12 +20,24 @@
         <div class="col-auto">
           <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
                       [(ngModel)]="isConferences" binary="true"
-                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+                      (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
         <div class="col-auto">
           <p-checkbox name="group1" value="meetups" label="{{'common.checkbox.meetupsLabel' | translate}}"
                       [(ngModel)]="isMeetups" binary="true"
-                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+                      (onChange)="onEventTypeKindChange()"></p-checkbox>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
+                      placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onOrganizerChange($event.value)" name="organizer">
+            <ng-template let-organizer pTemplate="item">
+              {{organizer.value.name}}
+            </ng-template>
+          </p-dropdown>
         </div>
       </div>
     </form>
@@ -43,9 +55,12 @@
             <th class="text-center" pResizableColumn>
               {{'eventTypes.table.kindColumn' | translate}}
             </th>
-            <th class="text-center" [pSortableColumn]="'displayName'" pResizableColumn>
+            <th class="text-center" pResizableColumn>
+              {{'eventTypes.table.organizerNameColumn' | translate}}
+            </th>
+            <th class="text-center" [pSortableColumn]="'sortName'" pResizableColumn>
               {{'eventTypes.table.nameColumn' | translate}}
-              <p-sortIcon [field]="'displayName'"></p-sortIcon>
+              <p-sortIcon [field]="'sortName'"></p-sortIcon>
             </th>
             <th class="text-center" [pSortableColumn]="'shortDescription'" pResizableColumn>
               {{'eventTypes.table.shortDescriptionColumn' | translate}}
@@ -64,6 +79,7 @@
                 {{'common.eventTypeKind.meetup' | translate}}
               </span>
             </td>
+            <td>{{eventType.organizerName}}</td>
             <td>
               <a [routerLink]="['/information', 'event-type', eventType.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventType.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>

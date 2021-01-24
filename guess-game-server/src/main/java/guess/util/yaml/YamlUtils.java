@@ -44,6 +44,7 @@ public class YamlUtils {
     public static SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DATA_DIRECTORY_NAME));
+        Resource organizersResource = resolver.getResource(String.format("classpath:%s/organizers.yml", DATA_DIRECTORY_NAME));
         Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DATA_DIRECTORY_NAME));
         Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DATA_DIRECTORY_NAME));
         Resource companiesResource = resolver.getResource(String.format("classpath:%s/companies.yml", DATA_DIRECTORY_NAME));
@@ -52,6 +53,7 @@ public class YamlUtils {
         Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DATA_DIRECTORY_NAME));
 
         Yaml placesYaml = new Yaml(new Constructor(PlaceList.class));
+        Yaml organizerYaml = new Yaml(new Constructor(OrganizerList.class));
         Yaml eventTypesYaml = new Yaml(new Constructor(EventTypeList.class));
         Yaml eventsYaml = new Yaml(new DateTimeYamlConstructor(EventList.class));
         Yaml companiesYaml = new Yaml(new DateTimeYamlConstructor(CompanyList.class));
@@ -61,6 +63,7 @@ public class YamlUtils {
 
         // Read from YAML files
         PlaceList placeList = placesYaml.load(placesResource.getInputStream());
+        OrganizerList organizerList = organizerYaml.load(organizersResource.getInputStream());
         EventTypeList eventTypeList = eventTypesYaml.load(eventTypesResource.getInputStream());
         EventList eventList = eventsYaml.load(eventsResource.getInputStream());
         CompanyList companyList = companiesYaml.load(companiesResource.getInputStream());
@@ -68,55 +71,72 @@ public class YamlUtils {
         SpeakerList speakerList = speakersYaml.load(speakersResource.getInputStream());
         TalkList talkList = talksYaml.load(talksResource.getInputStream());
 
-        return getSourceInformation(placeList, eventTypeList, eventList, companyList, companySynonymsList, speakerList, talkList);
+        return getSourceInformation(
+                placeList.getPlaces(),
+                organizerList.getOrganizers(),
+                eventTypeList.getEventTypes(),
+                eventList.getEvents(),
+                new SourceInformation.SpeakerInformation(
+                        companyList.getCompanies(),
+                        companySynonymsList.getCompanySynonyms(),
+                        speakerList.getSpeakers()
+                ),
+                talkList.getTalks());
     }
 
     /**
      * Gets source information from resource lists.
      *
-     * @param placeList           places
-     * @param eventTypeList       event types
-     * @param eventList           events
-     * @param companyList         companies
-     * @param companySynonymsList company synonyms
-     * @param speakerList         speakers
-     * @param talkList            talks
+     * @param places             places
+     * @param organizers         organizers
+     * @param eventTypes         event types
+     * @param events             events
+     * @param speakerInformation speaker information
+     * @param talks              talks
      * @return source information
      * @throws SpeakerDuplicatedException if speaker duplicated
      */
-    static SourceInformation getSourceInformation(PlaceList placeList, EventTypeList eventTypeList, EventList eventList,
-                                                  CompanyList companyList, CompanySynonymsList companySynonymsList,
-                                                  SpeakerList speakerList, TalkList talkList)
-            throws SpeakerDuplicatedException {
-        Map<Long, Place> placeMap = listToMap(placeList.getPlaces(), Place::getId);
-        Map<Long, EventType> eventTypeMap = listToMap(eventTypeList.getEventTypes(), EventType::getId);
-        Map<Long, Company> companyMap = listToMap(companyList.getCompanies(), Company::getId);
-        Map<Long, Speaker> speakerMap = listToMap(speakerList.getSpeakers(), Speaker::getId);
-        Map<Long, Talk> talkMap = listToMap(talkList.getTalks(), Talk::getId);
+    static SourceInformation getSourceInformation(List<Place> places, List<Organizer> organizers, List<EventType> eventTypes,
+                                                  List<Event> events, SourceInformation.SpeakerInformation speakerInformation,
+                                                  List<Talk> talks) throws SpeakerDuplicatedException {
+        List<Company> companies = speakerInformation.getCompanies();
+        List<CompanySynonyms> companySynonymsList = speakerInformation.getCompanySynonyms();
+        List<Speaker> speakers = speakerInformation.getSpeakers();
+
+        Map<Long, Place> placeMap = listToMap(places, Place::getId);
+        Map<Long, Organizer> organizerMap = listToMap(organizers, Organizer::getId);
+        Map<Long, EventType> eventTypeMap = listToMap(eventTypes, EventType::getId);
+        Map<Long, Company> companyMap = listToMap(companies, Company::getId);
+        Map<Long, Speaker> speakerMap = listToMap(speakers, Speaker::getId);
+        Map<Long, Talk> talkMap = listToMap(talks, Talk::getId);
 
         // Set event identifiers
-        setEventIds(eventList.getEvents());
+        setEventIds(events);
 
         // Link entities
-        linkEventsToEventTypes(eventTypeMap, eventList.getEvents());
-        linkEventsToPlaces(placeMap, eventList.getEvents());
-        linkTalksToEvents(talkMap, eventList.getEvents());
-        linkSpeakersToCompanies(companyMap, speakerList.getSpeakers());
-        linkSpeakersToTalks(speakerMap, talkList.getTalks());
+        linkEventTypesToOrganizers(organizerMap, eventTypes);
+        linkEventsToEventTypes(eventTypeMap, events);
+        linkEventsToPlaces(placeMap, events);
+        linkTalksToEvents(talkMap, events);
+        linkSpeakersToCompanies(companyMap, speakers);
+        linkSpeakersToTalks(speakerMap, talks);
 
         // Find duplicates for speaker names and for speaker names with company name
-        if (findSpeakerDuplicates(speakerList.getSpeakers())) {
+        if (findSpeakerDuplicates(speakers)) {
             throw new SpeakerDuplicatedException();
         }
 
         return new SourceInformation(
-                placeList.getPlaces(),
-                eventTypeList.getEventTypes(),
-                eventList.getEvents(),
-                companyList.getCompanies(),
-                companySynonymsList.getCompanySynonyms(),
-                speakerList.getSpeakers(),
-                talkList.getTalks());
+                places,
+                organizers,
+                eventTypes,
+                events,
+                new SourceInformation.SpeakerInformation(
+                        companies,
+                        companySynonymsList,
+                        speakers
+                ),
+                talks);
     }
 
     /**
@@ -131,25 +151,18 @@ public class YamlUtils {
     }
 
     /**
-     * Links speakers to talks
+     * Links event types to organizers.
      *
-     * @param speakers speakers
-     * @param talks    talks
+     * @param organizers organizers
+     * @param eventTypes event types
      */
-    static void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks) {
-        for (Talk talk : talks) {
-            if (talk.getSpeakerIds().isEmpty()) {
-                throw new IllegalStateException(String.format("No speakers found for talk %s", talk.getName()));
-            }
-
-            // For any speakerId
-            for (Long speakerId : talk.getSpeakerIds()) {
-                // Find speaker by id
-                Speaker speaker = speakers.get(speakerId);
-                Objects.requireNonNull(speaker,
-                        () -> String.format("Speaker id %d not found for talk %s", speakerId, talk.toString()));
-                talk.getSpeakers().add(speaker);
-            }
+    static void linkEventTypesToOrganizers(Map<Long, Organizer> organizers, List<EventType> eventTypes) {
+        for (EventType eventType : eventTypes) {
+            // Find organizer by id
+            Organizer organizer = organizers.get(eventType.getOrganizerId());
+            Objects.requireNonNull(organizer,
+                    () -> String.format("Organizer id %d not found for event type %s", eventType.getOrganizerId(), eventType.toString()));
+            eventType.setOrganizer(organizer);
         }
     }
 
@@ -224,6 +237,29 @@ public class YamlUtils {
             }
 
             speaker.setCompanies(speakerCompanies);
+        }
+    }
+
+    /**
+     * Links speakers to talks
+     *
+     * @param speakers speakers
+     * @param talks    talks
+     */
+    static void linkSpeakersToTalks(Map<Long, Speaker> speakers, List<Talk> talks) {
+        for (Talk talk : talks) {
+            if (talk.getSpeakerIds().isEmpty()) {
+                throw new IllegalStateException(String.format("No speakers found for talk %s", talk.getName()));
+            }
+
+            // For any speakerId
+            for (Long speakerId : talk.getSpeakerIds()) {
+                // Find speaker by id
+                Speaker speaker = speakers.get(speakerId);
+                Objects.requireNonNull(speaker,
+                        () -> String.format("Speaker id %d not found for talk %s", speakerId, talk.toString()));
+                talk.getSpeakers().add(speaker);
+            }
         }
     }
 

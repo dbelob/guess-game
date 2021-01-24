@@ -15,8 +15,10 @@
       "meetupsLabel": "Meetups"
     },
     "list": {
+      "organizerLabel": "Organizer:",
       "eventTypeLabel": "Event type:",
       "eventLabel": "Event:",
+      "organizerPlaceholder": "All",
       "eventTypePlaceholder": "All",
       "eventPlaceholder": "All"
     },
@@ -72,6 +74,7 @@
     "noEventTypesFoundText": "No event types found",
     "table": {
       "kindColumn": "Kind",
+      "organizerNameColumn": "Organizer",
       "nameColumn": "Name",
       "shortDescriptionColumn": "Description"
     },
@@ -158,6 +161,7 @@
       "noEventTypesFoundText": "No event types found",
       "table": {
         "kindColumn": "Kind",
+        "organizerNameColumn": "Organizer",
         "nameColumn": "Name",
         "startDateColumn": "Start date",
         "ageColumn": "Age, years",

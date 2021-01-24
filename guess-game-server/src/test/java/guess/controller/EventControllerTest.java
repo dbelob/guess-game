@@ -60,20 +60,30 @@ class EventControllerTest {
         boolean meetups = true;
         Long eventTypeId = 0L;
 
+        Organizer organizer0 = new Organizer();
+        organizer0.setId(0);
+
+        EventType eventType0 = new EventType();
+        eventType0.setId(0);
+        eventType0.setOrganizer(organizer0);
+
         Event event0 = new Event();
         event0.setId(0);
         event0.setStartDate(LocalDate.of(2020, 10, 30));
         event0.setEndDate(LocalDate.of(2020, 10, 30));
+        event0.setEventType(eventType0);
 
         Event event1 = new Event();
         event1.setId(1);
         event1.setStartDate(LocalDate.of(2020, 10, 29));
         event1.setEndDate(LocalDate.of(2020, 10, 29));
+        event1.setEventType(eventType0);
 
         Event event2 = new Event();
         event2.setId(2);
         event2.setStartDate(LocalDate.of(2020, 10, 31));
         event2.setEndDate(LocalDate.of(2020, 10, 31));
+        event2.setEventType(eventType0);
 
         given(eventService.getEvents(conferences, meetups, eventTypeId)).willReturn(new ArrayList<>(List.of(event0, event1, event2)));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
@@ -98,12 +108,20 @@ class EventControllerTest {
     @DisplayName("getDefaultEvent method tests")
     class GetDefaultEventTest {
         private Stream<Arguments> data() {
-            Event event = new Event();
-            event.setId(0);
+            Organizer organizer0 = new Organizer();
+            organizer0.setId(0);
+
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
+            eventType0.setOrganizer(organizer0);
+
+            Event event0 = new Event();
+            event0.setId(0);
+            event0.setEventType(eventType0);
 
             return Stream.of(
                     arguments(new Object[]{null}),
-                    arguments(event)
+                    arguments(event0)
             );
         }
 
@@ -160,17 +178,25 @@ class EventControllerTest {
         talk1.setTalkDay(1L);
         talk1.setSpeakers(List.of(speaker0, speaker2));
 
-        Event event = new Event();
-        event.setId(0);
-        event.setStartDate(LocalDate.of(2020, 10, 30));
-        event.setEndDate(LocalDate.of(2020, 10, 30));
-        event.setTalks(List.of(talk0, talk1));
+        Organizer organizer0 = new Organizer();
+        organizer0.setId(0);
 
-        given(eventService.getEventById(0)).willReturn(event);
+        EventType eventType0 = new EventType();
+        eventType0.setId(0);
+        eventType0.setOrganizer(organizer0);
+
+        Event event0 = new Event();
+        event0.setId(0);
+        event0.setStartDate(LocalDate.of(2020, 10, 30));
+        event0.setEndDate(LocalDate.of(2020, 10, 30));
+        event0.setTalks(List.of(talk0, talk1));
+        event0.setEventType(eventType0);
+
+        given(eventService.getEventById(0)).willReturn(event0);
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
-        given(eventService.getEventByTalk(talk0)).willReturn(event);
-        given(eventService.getEventByTalk(talk1)).willReturn(event);
-        given(eventTypeService.getEventTypeByEvent(event)).willReturn(eventType);
+        given(eventService.getEventByTalk(talk0)).willReturn(event0);
+        given(eventService.getEventByTalk(talk1)).willReturn(event0);
+        given(eventTypeService.getEventTypeByEvent(event0)).willReturn(eventType);
 
         mvc.perform(get("/api/event/event/0")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -188,6 +214,6 @@ class EventControllerTest {
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
         Mockito.verify(eventService, VerificationModeFactory.times(1)).getEventByTalk(talk0);
         Mockito.verify(eventService, VerificationModeFactory.times(1)).getEventByTalk(talk1);
-        Mockito.verify(eventTypeService, VerificationModeFactory.times(3)).getEventTypeByEvent(event);
+        Mockito.verify(eventTypeService, VerificationModeFactory.times(3)).getEventTypeByEvent(event0);
     }
 }

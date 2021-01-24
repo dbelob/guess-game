@@ -16,7 +16,7 @@ export class EventService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getEvents(eventType: EventType, isConferences: boolean, isMeetups: boolean): Observable<Event[]> {
+  getEvents(isConferences: boolean, isMeetups: boolean, eventType: EventType): Observable<Event[]> {
     let params = new HttpParams()
       .set('conferences', isConferences.toString())
       .set('meetups', isMeetups.toString());

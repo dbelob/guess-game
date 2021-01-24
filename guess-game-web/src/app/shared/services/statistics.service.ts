@@ -7,6 +7,7 @@ import { EventTypeStatistics } from '../models/statistics/event-type-statistics.
 import { EventStatistics } from '../models/statistics/event-statistics.model';
 import { SpeakerStatistics } from '../models/statistics/speaker-statistics.model';
 import { CompanyStatistics } from '../models/statistics/company-statistics.model';
+import { Organizer } from '../models/organizer/organizer.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -18,10 +19,13 @@ export class StatisticsService {
   constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
-  getEventTypeStatistics(conferences: boolean, meetups: boolean): Observable<EventTypeStatistics> {
-    const params = new HttpParams()
+  getEventTypeStatistics(conferences: boolean, meetups: boolean, organizer: Organizer): Observable<EventTypeStatistics> {
+    let params = new HttpParams()
       .set('conferences', conferences.toString())
       .set('meetups', meetups.toString());
+    if (organizer) {
+      params = params.set('organizerId', organizer.id.toString());
+    }
 
     return this.http.get<EventTypeStatistics>(`${this.baseUrl}/event-type-statistics`, {params: params})
       .pipe(
@@ -47,10 +51,13 @@ export class StatisticsService {
       );
   }
 
-  getSpeakerStatistics(conferences: boolean, meetups: boolean, eventType: EventType): Observable<SpeakerStatistics> {
+  getSpeakerStatistics(conferences: boolean, meetups: boolean, organizer: Organizer, eventType: EventType): Observable<SpeakerStatistics> {
     let params = new HttpParams()
       .set('conferences', conferences.toString())
       .set('meetups', meetups.toString());
+    if (organizer) {
+      params = params.set('organizerId', organizer.id.toString());
+    }
     if (eventType) {
       params = params.set('eventTypeId', eventType.id.toString());
     }
@@ -64,10 +71,13 @@ export class StatisticsService {
       );
   }
 
-  getCompanyStatistics(conferences: boolean, meetups: boolean, eventType: EventType): Observable<CompanyStatistics> {
+  getCompanyStatistics(conferences: boolean, meetups: boolean, organizer: Organizer, eventType: EventType): Observable<CompanyStatistics> {
     let params = new HttpParams()
       .set('conferences', conferences.toString())
       .set('meetups', meetups.toString());
+    if (organizer) {
+      params = params.set('organizerId', organizer.id.toString());
+    }
     if (eventType) {
       params = params.set('eventTypeId', eventType.id.toString());
     }

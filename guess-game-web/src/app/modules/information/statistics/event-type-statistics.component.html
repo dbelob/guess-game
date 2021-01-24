@@ -20,12 +20,24 @@
         <div class="col-auto">
           <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
                       [(ngModel)]="isConferences" binary="true"
-                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+                      (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
         <div class="col-auto">
           <p-checkbox name="group1" value="meetups" label="{{'common.checkbox.meetupsLabel' | translate}}"
                       [(ngModel)]="isMeetups" binary="true"
-                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+                      (onChange)="onEventTypeKindChange()"></p-checkbox>
+        </div>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
+                      placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onOrganizerChange($event.value)" name="organizer">
+            <ng-template let-organizer pTemplate="item">
+              {{organizer.value.name}}
+            </ng-template>
+          </p-dropdown>
         </div>
       </div>
     </form>
@@ -42,6 +54,9 @@
             <th class="text-center" pResizableColumn>#</th>
             <th class="text-center" pResizableColumn>
               {{'statistics.eventTypes.table.kindColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
+              {{'statistics.eventTypes.table.organizerNameColumn' | translate}}
             </th>
             <th class="text-center" [pSortableColumn]="'sortName'" pResizableColumn>
               {{'statistics.eventTypes.table.nameColumn' | translate}}
@@ -91,6 +106,7 @@
                 {{'common.eventTypeKind.meetup' | translate}}
               </span>
             </td>
+            <td>{{eventTypeMetrics.organizerName}}</td>
             <td>
               <a [routerLink]="['/information', 'event-type', eventTypeMetrics.id]" class="text-dark">
                 <img src="{{eventsImageDirectory}}/{{eventTypeMetrics.logoFileName}}" class="img-event-type-logo-table" alt="logo"/>
@@ -109,7 +125,7 @@
         </ng-template>
         <ng-template pTemplate="footer">
           <tr>
-            <td colspan="3">{{'common.table.totalsText' | translate}}</td>
+            <td colspan="4">{{'common.table.totalsText' | translate}}</td>
             <td class="text-center">{{eventTypeStatistics.totals?.startDate | date:"shortDate":undefined:translateService.currentLang}}</td>
             <td class="text-center">{{eventTypeStatistics.totals?.age | number:'1.0-0':translateService.currentLang}}</td>
             <td class="text-center">{{eventTypeStatistics.totals?.duration | number:'1.0-0':translateService.currentLang}}</td>

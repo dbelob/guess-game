@@ -78,6 +78,7 @@ public class ContentfulUtils {
     static final String ASSET_LINK_TYPE = "Asset";
 
     static final String RESOURCE_PHOTO_FILE_NAME_PATH = "guess-game-web/src/assets/images/speakers/%s";
+    static final long JUG_RU_GROUP_ORGANIZER_ID = 0L;
 
     public enum ConferenceSpaceInfo {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
@@ -230,7 +231,7 @@ public class ContentfulUtils {
         Map<String, String> telegramLink = et.getFields().getTelegramLink();
 
         return new EventType(
-                new Nameable(
+                new Descriptionable(
                         id.getAndDecrement(),
                         extractLocaleItems(
                                 extractString(et.getFields().getEventName().get(ENGLISH_LOCALE)),
@@ -253,7 +254,8 @@ public class ContentfulUtils {
                         (telegramLink != null) ? getFirstMapValue(telegramLink) : null
                 ),
                 Collections.emptyList(),
-                true);
+                true,
+                new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()));
     }
 
     /**
@@ -682,7 +684,7 @@ public class ContentfulUtils {
                 .collect(Collectors.toList());
 
         return new Talk(
-                new Nameable(
+                new Descriptionable(
                         talkId.getAndDecrement(),
                         extractLocaleItems(contentfulTalk.getFields().getNameEn(), contentfulTalk.getFields().getName()),
                         extractLocaleItems(contentfulTalk.getFields().getShortEn(), contentfulTalk.getFields().getShortRu()),

@@ -13,7 +13,9 @@ export class EventType {
     public telegramLink?: string,
     public logoFileName?: string,
     public displayName?: string,
-    public inactive?: boolean
+    public inactive?: boolean,
+    public organizerName?: string,
+    public sortName?: string
   ) {
   }
 }

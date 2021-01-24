@@ -1,0 +1,10 @@
+organizers:
+  - id: 0
+    name:
+      - {language: en, text: "JUG Ru Group"}
+  - id: 1
+    name:
+      - {language: en, text: JUG.MSK}
+  - id: 2
+    name:
+      - {language: en, text: JUGNsk}

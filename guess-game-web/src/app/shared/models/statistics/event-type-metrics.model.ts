@@ -2,7 +2,6 @@ export class EventTypeMetrics {
   constructor(
     public id?: number,
     public displayName?: string,
-    public sortName?: string,
     public conference?: boolean,
     public logoFileName?: string,
     public startDate?: Date,
@@ -12,7 +11,9 @@ export class EventTypeMetrics {
     public talksQuantity?: number,
     public speakersQuantity?: number,
     public javaChampionsQuantity?: number,
-    public mvpsQuantity?: number
+    public mvpsQuantity?: number,
+    public organizerName?: string,
+    public sortName?: string
   ) {
   }
 }

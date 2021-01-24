@@ -17,21 +17,21 @@ import java.util.stream.Collectors;
 public class EventTypeMetricsDto extends AbstractEventTypeMetrics {
     private final long id;
     private final String displayName;
-    private final String sortName;
     private final boolean conference;
     private final String logoFileName;
+    private final String organizerName;
 
-    public EventTypeMetricsDto(long id, String displayName, String sortName, boolean conference, String logoFileName,
-                               AbstractEventTypeMetrics eventTypeMetrics) {
+    public EventTypeMetricsDto(long id, String displayName, boolean conference, String logoFileName, AbstractEventTypeMetrics eventTypeMetrics,
+                               String organizerName) {
         super(eventTypeMetrics.getStartDate(), eventTypeMetrics.getAge(), eventTypeMetrics.getDuration(),
                 eventTypeMetrics.getEventsQuantity(), eventTypeMetrics.getSpeakersQuantity(),
                 new Metrics(eventTypeMetrics.getTalksQuantity(), eventTypeMetrics.getJavaChampionsQuantity(), eventTypeMetrics.getMvpsQuantity()));
 
         this.id = id;
         this.displayName = displayName;
-        this.sortName = sortName;
         this.conference = conference;
         this.logoFileName = logoFileName;
+        this.organizerName = organizerName;
     }
 
     public long getId() {
@@ -42,10 +42,6 @@ public class EventTypeMetricsDto extends AbstractEventTypeMetrics {
         return displayName;
     }
 
-    public String getSortName() {
-        return sortName;
-    }
-
     public boolean isConference() {
         return conference;
     }
@@ -54,19 +50,22 @@ public class EventTypeMetricsDto extends AbstractEventTypeMetrics {
         return logoFileName;
     }
 
+    public String getOrganizerName() {
+        return organizerName;
+    }
+
     public static EventTypeMetricsDto convertToDto(EventTypeMetrics eventTypeMetrics, Language language) {
         EventType eventType = eventTypeMetrics.getEventType();
         String displayName = LocalizationUtils.getString(eventType.getName(), language);
-        String resourceKey = (eventType.isEventTypeConference()) ? LocalizationUtils.CONFERENCES_EVENT_TYPE_TEXT : LocalizationUtils.MEETUPS_EVENT_TYPE_TEXT;
-        String sortName = String.format(LocalizationUtils.getResourceString(resourceKey, language), displayName);
+        String organizerName = (eventType.getOrganizer() != null) ? LocalizationUtils.getString(eventType.getOrganizer().getName(), language) : null;
 
         return new EventTypeMetricsDto(
                 eventType.getId(),
                 displayName,
-                sortName,
                 eventType.isEventTypeConference(),
                 eventType.getLogoFileName(),
-                eventTypeMetrics);
+                eventTypeMetrics,
+                organizerName);
     }
 
     public static List<EventTypeMetricsDto> convertToDto(List<EventTypeMetrics> eventTypeMetricsList, Language language) {
@@ -84,12 +83,12 @@ public class EventTypeMetricsDto extends AbstractEventTypeMetrics {
         return id == that.id &&
                 conference == that.conference &&
                 Objects.equals(displayName, that.displayName) &&
-                Objects.equals(sortName, that.sortName) &&
-                Objects.equals(logoFileName, that.logoFileName);
+                Objects.equals(logoFileName, that.logoFileName) &&
+                Objects.equals(organizerName, that.organizerName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, displayName, sortName, conference, logoFileName);
+        return Objects.hash(super.hashCode(), id, displayName, conference, logoFileName, organizerName);
     }
 }

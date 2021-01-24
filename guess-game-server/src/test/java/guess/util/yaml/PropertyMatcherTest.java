@@ -2,7 +2,7 @@ package guess.util.yaml;
 
 import guess.domain.Identifiable;
 import guess.domain.Identifier;
-import guess.domain.source.Nameable;
+import guess.domain.source.Descriptionable;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.TestInstance;
@@ -28,10 +28,10 @@ class PropertyMatcherTest {
             return Stream.of(
                     arguments(Identifiable.class, Collections.emptyList(), null),
                     arguments(Identifier.class, List.of("id"), null),
-                    arguments(Nameable.class, List.of("id"), null),
-                    arguments(Nameable.class, List.of("id", "name"), null),
-                    arguments(Nameable.class, List.of("invalid"), NoSuchFieldException.class),
-                    arguments(Nameable.class, List.of("id", "name", "invalid"), NoSuchFieldException.class)
+                    arguments(Descriptionable.class, List.of("id"), null),
+                    arguments(Descriptionable.class, List.of("id", "name"), null),
+                    arguments(Descriptionable.class, List.of("invalid"), NoSuchFieldException.class),
+                    arguments(Descriptionable.class, List.of("id", "name", "invalid"), NoSuchFieldException.class)
             );
         }
 
@@ -54,7 +54,7 @@ class PropertyMatcherTest {
             return Stream.of(
                     arguments(Identifiable.class, Collections.emptySet()),
                     arguments(Identifier.class, Set.of("id")),
-                    arguments(Nameable.class, Set.of("id", "name", "shortDescription", "longDescription"))
+                    arguments(Descriptionable.class, Set.of("id", "name", "shortDescription", "longDescription"))
             );
         }
 
@@ -100,7 +100,7 @@ class PropertyMatcherTest {
             return Stream.of(
                     arguments(Identifiable.class, Collections.emptyList(), Identifiable.class),
                     arguments(Identifier.class, Collections.emptyList(), Identifier.class),
-                    arguments(Nameable.class, List.of("id"), Nameable.class)
+                    arguments(Descriptionable.class, List.of("id"), Descriptionable.class)
             );
         }
 
@@ -118,7 +118,7 @@ class PropertyMatcherTest {
                 return Stream.of(
                         arguments(Identifiable.class, Collections.emptyList(), Collections.emptyList()),
                         arguments(Identifier.class, List.of("id"), List.of("id")),
-                        arguments(Nameable.class, List.of("id", "name"), List.of("id", "name"))
+                        arguments(Descriptionable.class, List.of("id", "name"), List.of("id", "name"))
                 );
             }
 

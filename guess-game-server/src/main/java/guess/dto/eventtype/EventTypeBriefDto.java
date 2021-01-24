@@ -12,24 +12,32 @@ import java.util.stream.Collectors;
  */
 public class EventTypeBriefDto extends EventTypeSuperBriefDto {
     private final String shortDescription;
+    private final String organizerName;
 
-    public EventTypeBriefDto(EventTypeSuperBriefDto eventTypeSuperBriefDto, String shortDescription) {
+    public EventTypeBriefDto(EventTypeSuperBriefDto eventTypeSuperBriefDto, String shortDescription, String organizerName) {
         super(eventTypeSuperBriefDto.getId(), eventTypeSuperBriefDto.isConference(), eventTypeSuperBriefDto.getName(),
                 eventTypeSuperBriefDto.getDisplayName(), eventTypeSuperBriefDto.getLogoFileName(), eventTypeSuperBriefDto.isInactive());
         this.shortDescription = shortDescription;
+        this.organizerName = organizerName;
     }
 
     public String getShortDescription() {
         return shortDescription;
     }
 
+    public String getOrganizerName() {
+        return organizerName;
+    }
+
     public static EventTypeBriefDto convertToBriefDto(EventTypeSuperBriefDto eventTypeSuperBriefDto, EventType eventType,
                                                       Language language) {
         String shortDescription = LocalizationUtils.getString(eventType.getShortDescription(), language);
+        String organizerName = LocalizationUtils.getString(eventType.getOrganizer().getName(), language);
 
         return new EventTypeBriefDto(
                 eventTypeSuperBriefDto,
-                shortDescription);
+                shortDescription,
+                organizerName);
     }
 
     public static EventTypeBriefDto convertToBriefDto(EventType eventType, Language language) {

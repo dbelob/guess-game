@@ -2,6 +2,7 @@ export class Event {
   constructor(
     public id?: number,
     public eventTypeId?: number,
+    public organizerId?: number,
     public name?: string,
     public startDate?: Date,
     public endDate?: Date,

@@ -10,7 +10,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 
 /**
  * Image utility methods.
@@ -91,10 +90,8 @@ public class ImageUtils {
 
         if (dotIndex > 0) {
             String extension = sourceUrlSuffix.substring(dotIndex + 1);
-            ImageFormat imageFormat = ImageFormat.getImageFormatByExtension(extension);
 
-            return Objects.requireNonNull(imageFormat,
-                    () -> String.format("Image format not found for '%s' extension", extension));
+            return ImageFormat.getImageFormatByExtension(extension);
         } else {
             return ImageFormat.JPG;
         }

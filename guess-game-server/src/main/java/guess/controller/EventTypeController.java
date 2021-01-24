@@ -35,9 +35,9 @@ public class EventTypeController {
     @GetMapping("/event-types")
     @ResponseBody
     public List<EventTypeBriefDto> getEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
-                                                 HttpSession httpSession) {
+                                                 @RequestParam(required = false) Long organizerId, HttpSession httpSession) {
         Language language = localeService.getLanguage(httpSession);
-        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, language);
+        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, organizerId, language);
 
         return EventTypeBriefDto.convertToBriefDto(eventTypes, language);
     }
@@ -45,19 +45,20 @@ public class EventTypeController {
     @GetMapping("/filter-event-types")
     @ResponseBody
     public List<EventTypeSuperBriefDto> getFilterEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
-                                                            HttpSession httpSession) {
+                                                            @RequestParam(required = false) Long organizerId, HttpSession httpSession) {
         Language language = localeService.getLanguage(httpSession);
-        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, language);
+        List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, organizerId, language);
 
         return EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
     }
 
-    List<EventType> getEventTypesAndSort(boolean isConferences, boolean isMeetups, Language language) {
-        List<EventType> eventTypes = eventTypeService.getEventTypes(isConferences, isMeetups);
+    List<EventType> getEventTypesAndSort(boolean isConferences, boolean isMeetups, Long organizerId, Language language) {
+        List<EventType> eventTypes = eventTypeService.getEventTypes(isConferences, isMeetups, organizerId);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
+        Comparator<EventType> comparatorByOrganizerName = Comparator.comparing(et -> LocalizationUtils.getString(et.getOrganizer().getName(), language), String.CASE_INSENSITIVE_ORDER);
         Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);
 
-        eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByName));
+        eventTypes.sort(comparatorByIsConference.thenComparing(comparatorByOrganizerName).thenComparing(comparatorByName));
 
         return eventTypes;
     }

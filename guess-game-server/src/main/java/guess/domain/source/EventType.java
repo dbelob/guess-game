@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Event type.
  */
-public class EventType extends Nameable {
+public class EventType extends Descriptionable {
     public static class EventTypeLinks {
         private final List<LocaleItem> siteLink;
         private final String vkLink;
@@ -39,12 +39,15 @@ public class EventType extends Nameable {
     private List<Event> events = new ArrayList<>();
     private boolean inactive;
 
+    private long organizerId;
+    private Organizer organizer;
+
     public EventType() {
     }
 
-    public EventType(Nameable nameable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
-                     boolean inactive) {
-        super(nameable.getId(), nameable.getName(), nameable.getShortDescription(), nameable.getLongDescription());
+    public EventType(Descriptionable descriptionable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
+                     boolean inactive, Organizer organizer) {
+        super(descriptionable.getId(), descriptionable.getName(), descriptionable.getShortDescription(), descriptionable.getLongDescription());
 
         this.conference = conference;
         this.siteLink = links.siteLink;
@@ -56,6 +59,8 @@ public class EventType extends Nameable {
         this.logoFileName = logoFileName;
         this.events = events;
         this.inactive = inactive;
+        this.organizer = organizer;
+        this.organizerId = organizer.getId();
     }
 
     public Conference getConference() {
@@ -136,6 +141,22 @@ public class EventType extends Nameable {
 
     public void setInactive(boolean inactive) {
         this.inactive = inactive;
+    }
+
+    public long getOrganizerId() {
+        return organizerId;
+    }
+
+    public void setOrganizerId(long organizerId) {
+        this.organizerId = organizerId;
+    }
+
+    public Organizer getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(Organizer organizer) {
+        this.organizer = organizer;
     }
 
     public boolean isEventTypeConference() {

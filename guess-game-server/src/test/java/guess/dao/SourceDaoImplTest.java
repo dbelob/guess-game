@@ -26,6 +26,9 @@ class SourceDaoImplTest {
     private static Place place1;
     private static Place place2;
 
+    private static Organizer organizer0;
+    private static Organizer organizer1;
+
     private static EventType eventType0;
     private static EventType eventType1;
     private static EventType eventType2;
@@ -64,15 +67,24 @@ class SourceDaoImplTest {
         place2 = new Place();
         place2.setId(2);
 
+        organizer0 = new Organizer();
+        organizer0.setId(0);
+
+        organizer1 = new Organizer();
+        organizer1.setId(1);
+
         eventType0 = new EventType();
         eventType0.setId(0);
         eventType0.setConference(Conference.JPOINT);
+        eventType0.setOrganizer(organizer0);
 
         eventType1 = new EventType();
         eventType1.setId(1);
+        eventType1.setOrganizer(organizer0);
 
         eventType2 = new EventType();
         eventType2.setId(2);
+        eventType2.setOrganizer(organizer1);
 
         company0 = new Company();
         company0.setId(0);
@@ -158,11 +170,14 @@ class SourceDaoImplTest {
 
         SourceInformation sourceInformation = new SourceInformation(
                 List.of(place0, place1, place2),
+                List.of(organizer0, organizer1),
                 List.of(eventType0, eventType1, eventType2),
                 List.of(event0, event1, event2),
-                List.of(company0, company1, company2),
-                Collections.emptyList(),
-                List.of(speaker0, speaker1, speaker2, speaker3),
+                new SourceInformation.SpeakerInformation(
+                        List.of(company0, company1, company2),
+                        Collections.emptyList(),
+                        List.of(speaker0, speaker1, speaker2, speaker3)
+                ),
                 List.of(talk0, talk1, talk2));
         sourceDao = new SourceDaoImpl(sourceInformation);
     }
@@ -170,6 +185,11 @@ class SourceDaoImplTest {
     @Test
     void getPlaces() {
         assertEquals(List.of(place0, place1, place2), sourceDao.getPlaces());
+    }
+
+    @Test
+    void getOrganizers() {
+        assertEquals(List.of(organizer0, organizer1), sourceDao.getOrganizers());
     }
 
     @Test

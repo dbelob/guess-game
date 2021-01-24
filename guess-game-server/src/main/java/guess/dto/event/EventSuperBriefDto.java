@@ -14,13 +14,15 @@ import java.util.stream.Collectors;
 public class EventSuperBriefDto {
     private final long id;
     private final long eventTypeId;
+    private final long organizerId;
     private final String name;
     private final LocalDate startDate;
     private final LocalDate endDate;
 
-    public EventSuperBriefDto(long id, long eventTypeId, String name, LocalDate startDate, LocalDate endDate) {
+    public EventSuperBriefDto(long id, long eventTypeId, long organizerId, String name, LocalDate startDate, LocalDate endDate) {
         this.id = id;
         this.eventTypeId = eventTypeId;
+        this.organizerId = organizerId;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -32,6 +34,10 @@ public class EventSuperBriefDto {
 
     public long getEventTypeId() {
         return eventTypeId;
+    }
+
+    public long getOrganizerId() {
+        return organizerId;
     }
 
     public String getName() {
@@ -49,7 +55,8 @@ public class EventSuperBriefDto {
     public static EventSuperBriefDto convertToSuperBriefDto(Event event, Language language) {
         return new EventSuperBriefDto(
                 event.getId(),
-                event.getEventTypeId(),
+                event.getEventType().getId(),
+                event.getEventType().getOrganizer().getId(),
                 LocalizationUtils.getString(event.getName(), language),
                 event.getStartDate(),
                 event.getEndDate());

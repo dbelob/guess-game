@@ -20,20 +20,30 @@
         <div class="col-auto">
           <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
                       [(ngModel)]="isConferences" binary="true"
-                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+                      (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
         <div class="col-auto">
           <p-checkbox name="group1" value="meetups" label="{{'common.checkbox.meetupsLabel' | translate}}"
                       [(ngModel)]="isMeetups" binary="true"
-                      (onChange)="onEventTypeKindChange($event.checked)"></p-checkbox>
+                      (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
       </div>
       <div class="form-group row justify-content-center">
+        <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
+                      placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onOrganizerChange()" name="organizer">
+            <ng-template let-organizer pTemplate="item">
+              {{organizer.value.name}}
+            </ng-template>
+          </p-dropdown>
+        </div>
         <label for="conference" class="col-auto text-right">{{'common.list.eventTypeLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onEventTypeChange($event.value)" name="conference">
+                      (onChange)="onEventTypeChange()" name="conference">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>

@@ -52,14 +52,25 @@ export class TalksSearchComponent implements OnInit {
     this.loadEventTypes();
   }
 
+  fillEventTypes(eventTypes: EventType[]) {
+    this.eventTypes = eventTypes;
+    this.eventTypeSelectItems = this.eventTypes.map(et => {
+        return {label: et.name, value: et};
+      }
+    );
+  }
+
+  fillEvents(events: Event[]) {
+    this.events = getEventsWithDisplayName(events, this.translateService);
+    this.eventSelectItems = this.events.map(e => {
+      return {label: e.displayName, value: e};
+    });
+  }
+
   loadEventTypes() {
-    this.eventTypeService.getFilterEventTypes(true, true)
+    this.eventTypeService.getFilterEventTypes(true, true, null)
       .subscribe(eventTypesData => {
-        this.eventTypes = eventTypesData;
-        this.eventTypeSelectItems = this.eventTypes.map(et => {
-            return {label: et.name, value: et};
-          }
-        );
+        this.fillEventTypes(eventTypesData);
 
         if (this.eventTypes.length > 0) {
           this.eventService.getDefaultEvent()
@@ -67,12 +78,7 @@ export class TalksSearchComponent implements OnInit {
               this.defaultEvent = defaultEventData;
 
               const selectedEventType = (this.defaultEvent) ? findEventTypeById(this.defaultEvent.eventTypeId, this.eventTypes) : null;
-
-              if (selectedEventType) {
-                this.selectedEventType = selectedEventType;
-              } else {
-                this.selectedEventType = this.eventTypes[0];
-              }
+              this.selectedEventType = (selectedEventType) ? selectedEventType : this.eventTypes[0];
 
               this.loadEvents(this.selectedEventType);
             });
@@ -90,21 +96,13 @@ export class TalksSearchComponent implements OnInit {
 
   loadEvents(eventType: EventType) {
     if (eventType) {
-      this.eventService.getEvents(eventType, true, true)
+      this.eventService.getEvents(true, true, eventType)
         .subscribe(data => {
-          this.events = getEventsWithDisplayName(data, this.translateService);
-          this.eventSelectItems = this.events.map(e => {
-            return {label: e.displayName, value: e};
-          });
+          this.fillEvents(data);
 
           if (this.events.length > 0) {
             const selectedEvent = (this.defaultEvent) ? findEventById(this.defaultEvent.id, this.events) : null;
-
-            if (selectedEvent) {
-              this.selectedEvent = selectedEvent;
-            } else {
-              this.selectedEvent = this.events[0];
-            }
+            this.selectedEvent = (selectedEvent) ? selectedEvent : this.events[0];
           } else {
             this.selectedEvent = null;
           }
@@ -133,13 +131,9 @@ export class TalksSearchComponent implements OnInit {
     const currentSelectedEvent = this.selectedEvent;
 
     // Load event types
-    this.eventTypeService.getFilterEventTypes(true, true)
+    this.eventTypeService.getFilterEventTypes(true, true, null)
       .subscribe(eventTypesData => {
-        this.eventTypes = eventTypesData;
-        this.eventTypeSelectItems = this.eventTypes.map(et => {
-            return {label: et.name, value: et};
-          }
-        );
+        this.fillEventTypes(eventTypesData);
 
         if (this.eventTypes.length > 0) {
           this.selectedEventType = (currentSelectedEventType) ? findEventTypeById(currentSelectedEventType.id, this.eventTypes) : null;
@@ -149,12 +143,9 @@ export class TalksSearchComponent implements OnInit {
 
         // Load events and search
         if (this.selectedEventType) {
-          this.eventService.getEvents(this.selectedEventType, true, true)
+          this.eventService.getEvents(true, true, this.selectedEventType)
             .subscribe(data => {
-              this.events = getEventsWithDisplayName(data, this.translateService);
-              this.eventSelectItems = this.events.map(e => {
-                return {label: e.displayName, value: e};
-              });
+              this.fillEvents(data);
 
               if (this.events.length > 0) {
                 this.selectedEvent = (currentSelectedEvent) ? findEventById(currentSelectedEvent.id, this.events) : null;

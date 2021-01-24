@@ -165,12 +165,17 @@ class SpeakerControllerTest {
     void getSpeaker() throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 
+        Organizer organizer = new Organizer();
+        organizer.setId(0);
+
         EventType eventType = new EventType();
         eventType.setId(0);
+        eventType.setOrganizer(organizer);
 
         Event event = new Event();
         event.setId(0);
         event.setStartDate(LocalDate.of(2020, 10, 30));
+        event.setEventType(eventType);
 
         Talk talk0 = new Talk();
         talk0.setId(0);

@@ -31,55 +31,67 @@ export class EventsSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+    this.loadEventTypes();
   }
 
-  loadEventTypes(isConferences: boolean, isMeetups: boolean) {
-    this.eventTypeService.getFilterEventTypes(isConferences, isMeetups)
+  fillEventTypes(eventTypes: EventType[]) {
+    this.eventTypes = eventTypes;
+    this.eventTypeSelectItems = this.eventTypes.map(et => {
+        return {label: et.name, value: et};
+      }
+    );
+  }
+
+  loadEventTypes() {
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, null)
       .subscribe(eventTypesData => {
-        this.eventTypes = eventTypesData;
-        this.eventTypeSelectItems = this.eventTypes.map(et => {
-            return {label: et.name, value: et};
-          }
-        );
+        this.fillEventTypes(eventTypesData);
 
         if (this.eventTypes.length > 0) {
           this.eventService.getDefaultEvent()
             .subscribe(defaultEventData => {
               const selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
+              this.selectedEventType = (selectedEventType) ? selectedEventType : null;
 
-              if (selectedEventType) {
-                this.selectedEventType = selectedEventType;
-              } else {
-                this.selectedEventType = null;
-              }
-
-              this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
+              this.loadEvents(this.isConferences, this.isMeetups, this.selectedEventType);
             });
         } else {
           this.selectedEventType = null;
-          this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
+          this.loadEvents(this.isConferences, this.isMeetups, this.selectedEventType);
         }
       });
   }
 
-  loadEvents(eventType: EventType, isConferences: boolean, isMeetups: boolean) {
-    this.eventService.getEvents(eventType, isConferences, isMeetups)
+  loadEvents(isConferences: boolean, isMeetups: boolean, eventType: EventType) {
+    this.eventService.getEvents(isConferences, isMeetups, eventType)
       .subscribe(data => {
         this.events = data;
       });
   }
 
   onEventTypeChange(eventType: EventType) {
-    this.loadEvents(eventType, this.isConferences, this.isMeetups);
+    this.loadEvents(this.isConferences, this.isMeetups, eventType);
   }
 
-  onEventTypeKindChange(checked: boolean) {
-    this.loadEventTypes(this.isConferences, this.isMeetups);
+  onEventTypeKindChange() {
+    this.loadEventTypes();
   }
 
   onLanguageChange() {
-    this.loadEvents(this.selectedEventType, this.isConferences, this.isMeetups);
+    const currentSelectedEventType = this.selectedEventType;
+
+    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, null)
+      .subscribe(eventTypesData => {
+        this.fillEventTypes(eventTypesData);
+
+        if (this.eventTypes.length > 0) {
+          this.selectedEventType = (currentSelectedEventType) ? findEventTypeById(currentSelectedEventType.id, this.eventTypes) : null;
+        } else {
+          this.selectedEventType = null;
+        }
+
+        this.loadEvents(this.isConferences, this.isMeetups, this.selectedEventType);
+      });
   }
 
   isNoEventsFoundVisible() {

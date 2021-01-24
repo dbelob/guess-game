@@ -43,7 +43,13 @@ class ConferenceDataLoaderTest {
             @Mock
             SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
                 return new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
-                        Collections.emptyList(), Collections.emptyList(), Collections.emptyList(), Collections.emptyList()
+                        Collections.emptyList(),
+                        new SourceInformation.SpeakerInformation(
+                                Collections.emptyList(),
+                                Collections.emptyList(),
+                                Collections.emptyList()
+                        ),
+                        Collections.emptyList()
                 );
             }
         };
@@ -252,6 +258,8 @@ class ConferenceDataLoaderTest {
 
             Place place0 = new Place();
 
+            Organizer organizer0 = new Organizer();
+
             Event event0 = new Event();
             event0.setId(0);
             event0.setStartDate(EVENT_DATE);
@@ -260,6 +268,7 @@ class ConferenceDataLoaderTest {
             EventType eventType0 = new EventType();
             eventType0.setId(0);
             eventType0.setConference(JPOINT_CONFERENCE);
+            eventType0.setOrganizer(organizer0);
             eventType0.setEvents(List.of(event0));
 
             Talk talk0 = new Talk();
@@ -276,11 +285,14 @@ class ConferenceDataLoaderTest {
                     arguments(JPOINT_CONFERENCE, EVENT_DATE, EVENT_CODE, LoadSettings.defaultSettings(),
                             new SourceInformation(
                                     List.of(place0),
+                                    List.of(organizer0),
                                     List.of(eventType0),
                                     Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    List.of(speaker0),
+                                    new SourceInformation.SpeakerInformation(
+                                            Collections.emptyList(),
+                                            Collections.emptyList(),
+                                            List.of(speaker0)
+                                    ),
                                     Collections.emptyList()),
                             event0,
                             List.of(talk0),
@@ -290,11 +302,14 @@ class ConferenceDataLoaderTest {
                     arguments(JPOINT_CONFERENCE, LocalDate.of(2020, 6, 30), EVENT_CODE, LoadSettings.defaultSettings(),
                             new SourceInformation(
                                     List.of(place0),
+                                    List.of(organizer0),
                                     List.of(eventType0),
                                     Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    List.of(speaker0),
+                                    new SourceInformation.SpeakerInformation(
+                                            Collections.emptyList(),
+                                            Collections.emptyList(),
+                                            List.of(speaker0)
+                                    ),
                                     Collections.emptyList()),
                             event0,
                             List.of(talk0),

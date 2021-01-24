@@ -31,6 +31,11 @@ public class SourceDaoImpl implements SourceDao {
     }
 
     @Override
+    public List<Organizer> getOrganizers() {
+        return sourceInformation.getOrganizers();
+    }
+
+    @Override
     public List<EventType> getEventTypes() {
         return sourceInformation.getEventTypes();
     }

@@ -15,8 +15,10 @@
       "meetupsLabel": "Митапы"
     },
     "list": {
+      "organizerLabel": "Организатор:",
       "eventTypeLabel": "Тип события:",
       "eventLabel": "Событие:",
+      "organizerPlaceholder": "Все",
       "eventTypePlaceholder": "Все",
       "eventPlaceholder": "Все"
     },
@@ -73,6 +75,7 @@
     "table": {
       "kindColumn": "Вид",
       "nameColumn": "Наименование",
+      "organizerNameColumn": "Организатор",
       "shortDescriptionColumn": "Описание"
     },
     "search": {
@@ -158,6 +161,7 @@
       "noEventTypesFoundText": "Типы событий не найдены",
       "table": {
         "kindColumn": "Вид",
+        "organizerNameColumn": "Организатор",
         "nameColumn": "Наименование",
         "startDateColumn": "Начальная дата",
         "ageColumn": "Возраст, лет",

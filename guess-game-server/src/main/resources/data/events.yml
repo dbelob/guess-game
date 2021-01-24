@@ -2239,3 +2239,15 @@ events:
     endDate: "2020-09-17"
     placeId: 24
     talkIds: [2572, 2573]
+  # SnowOne
+  - eventTypeId: 16
+    name:
+      - {language: en, text: "SnowOne 2020"}
+    startDate: "2020-02-29"
+    endDate: "2020-02-29"
+    siteLink:
+      - {language: en, text: "https://snowone.ru/2020/en"}
+      - {language: ru, text: "https://snowone.ru/2020"}
+    youtubeLink: https://www.youtube.com/playlist?list=PLecWId-JT7S6NvsX-8-_FSiwM2XsLoqH3
+    placeId: 24
+    talkIds: [2869, 2870, 2871, 2872, 2873, 2874, 2875, 2876, 2877, 2878, 2879, 2880, 2881]

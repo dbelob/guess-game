@@ -6,6 +6,7 @@ import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.LocaleItem;
+import guess.domain.source.Organizer;
 import guess.service.EventTypeService;
 import guess.service.LocaleService;
 import guess.service.QuestionService;
@@ -83,13 +84,22 @@ class QuestionControllerTest {
     void getEvents() throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 
+        Organizer organizer0 = new Organizer();
+        organizer0.setId(0);
+
+        EventType eventType0 = new EventType();
+        eventType0.setId(0);
+        eventType0.setOrganizer(organizer0);
+
         Event event0 = new Event();
         event0.setId(0);
         event0.setStartDate(LocalDate.of(2020, 10, 29));
+        event0.setEventType(eventType0);
 
         Event event1 = new Event();
         event1.setId(1);
         event1.setStartDate(LocalDate.of(2020, 10, 30));
+        event1.setEventType(eventType0);
 
         given(questionService.getEvents(List.of(0L, 1L))).willReturn(new ArrayList<>(List.of(event0, event1)));
         given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
