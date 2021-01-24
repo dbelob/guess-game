@@ -1,11 +1,20 @@
 package guess.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import guess.domain.Language;
+import guess.domain.source.Event;
+import guess.domain.source.EventType;
 import guess.domain.source.Organizer;
+import guess.service.EventService;
 import guess.service.LocaleService;
 import guess.service.OrganizerService;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +23,16 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.hasSize;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -30,8 +44,14 @@ class OrganizerControllerTest {
     @Autowired
     private MockMvc mvc;
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @MockBean
     private OrganizerService organizerService;
+
+    @MockBean
+    private EventService eventService;
 
     @MockBean
     private LocaleService localeService;
@@ -59,5 +79,63 @@ class OrganizerControllerTest {
                 .andExpect(jsonPath("$", hasSize(2)));
         Mockito.verify(organizerService, VerificationModeFactory.times(1)).getOrganizers();
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getDefaultOrganizer method tests")
+    class GetDefaultOrganizerTest {
+        private Stream<Arguments> data() {
+            Organizer organizer0 = new Organizer();
+            organizer0.setId(0);
+
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
+            eventType0.setOrganizer(organizer0);
+
+            Event event0 = new Event();
+            event0.setId(0);
+            event0.setEventType(eventType0);
+
+            return Stream.of(
+                    arguments((Event) null),
+                    arguments(event0)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getDefaultOrganizer(Event defaultEvent) throws Exception {
+            MockHttpSession httpSession = new MockHttpSession();
+
+            given(eventService.getDefaultEvent()).willReturn(defaultEvent);
+
+            if (defaultEvent != null) {
+                given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
+
+                MvcResult mvcResult = mvc.perform(get("/api/organizer/default-organizer")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .session(httpSession))
+                        .andExpect(status().isOk())
+                        .andReturn();
+                String body = mvcResult.getResponse().getContentAsString();
+
+                assertFalse(body.isBlank());
+
+                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent();
+                Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
+            } else {
+                MvcResult mvcResult = mvc.perform(get("/api/organizer/default-organizer")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .session(httpSession))
+                        .andExpect(status().isOk())
+                        .andReturn();
+                String body = mvcResult.getResponse().getContentAsString();
+
+                assertTrue(body.isBlank());
+
+                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent();
+            }
+        }
     }
 }
