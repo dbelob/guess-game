@@ -1,8 +1,10 @@
 package guess.controller;
 
 import guess.domain.Language;
+import guess.domain.source.Event;
 import guess.domain.source.Organizer;
 import guess.dto.organizer.OrganizerDto;
+import guess.service.EventService;
 import guess.service.LocaleService;
 import guess.service.OrganizerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +24,13 @@ import java.util.List;
 @RequestMapping("/api/organizer")
 public class OrganizerController {
     private final OrganizerService organizerService;
+    private final EventService eventService;
     private final LocaleService localeService;
 
     @Autowired
-    public OrganizerController(OrganizerService organizerService, LocaleService localeService) {
+    public OrganizerController(OrganizerService organizerService, EventService eventService, LocaleService localeService) {
         this.organizerService = organizerService;
+        this.eventService = eventService;
         this.localeService = localeService;
     }
 
@@ -45,7 +49,14 @@ public class OrganizerController {
     @GetMapping("/default-organizer")
     @ResponseBody
     public OrganizerDto getDefaultOrganizer(HttpSession httpSession) {
-        //TODO: implement
-        return null;
+        Event defaultEvent = eventService.getDefaultEvent();
+
+        if (defaultEvent != null) {
+            Language language = localeService.getLanguage(httpSession);
+
+            return OrganizerDto.convertToDto(defaultEvent.getEventType().getOrganizer(), language);
+        } else {
+            return null;
+        }
     }
 }
