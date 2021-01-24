@@ -41,6 +41,7 @@ class StatisticsServiceImplTest {
     private static final LocalDate EVENT_START_DATE2;
     private static final LocalDate EVENT_END_DATE2;
 
+    private static Organizer organizer0;
     private static EventType eventType0;
     private static EventType eventType1;
     private static EventType eventType2;
@@ -92,16 +93,22 @@ class StatisticsServiceImplTest {
 
     @BeforeAll
     static void init() {
+        organizer0 = new Organizer();
+        organizer0.setId(0);
+
         eventType0 = new EventType();
         eventType0.setId(0);
         eventType0.setConference(Conference.JPOINT);
+        eventType0.setOrganizer(organizer0);
 
         eventType1 = new EventType();
         eventType1.setId(1);
+        eventType1.setOrganizer(organizer0);
 
         eventType2 = new EventType();
         eventType2.setId(2);
         eventType2.setConference(Conference.JOKER);
+        eventType2.setOrganizer(organizer0);
 
         company0 = new Company();
         company0.setId(0);
@@ -190,18 +197,6 @@ class StatisticsServiceImplTest {
     @DisplayName("getStatisticsEventTypes method with parameters tests")
     class GetStatisticsEventTypesTest {
         private Stream<Arguments> data() {
-            Organizer organizer0 = new Organizer();
-            organizer0.setId(0);
-
-            EventType eventType0 = new EventType();
-            eventType0.setId(0);
-            eventType0.setConference(Conference.JPOINT);
-            eventType0.setOrganizer(organizer0);
-
-            EventType eventType1 = new EventType();
-            eventType1.setId(1);
-            eventType1.setOrganizer(organizer0);
-
             List<EventType> eventTypes = List.of(eventType0, eventType1);
 
             return Stream.of(
