@@ -8,13 +8,13 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Curl actuator
+      - name: Curl language
         id: ping
         run: |
-          echo "::set-output name=status::$(curl https://${{ secrets.DEPLOY_HOST }}/api/actuator/health)"
+          echo "::set-output name=status::$(curl https://${{ secrets.DEPLOY_HOST }}/api/locale/language)"
       - name: Health check
         run: |
-          if [[ ${{ steps.ping.outputs.status }} != *"UP"* ]]; then
+          if [[ ${{ steps.ping.outputs.status }} != *"ENGLISH"* ]]; then
             echo "Health check is failed"
             exit 1
           fi
@@ -27,6 +27,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             Health check of the
-            https://${{ secrets.DEPLOY_HOST }}/api/actuator/health
+            https://${{ secrets.DEPLOY_HOST }}/api/locale/language
             failed with the result:
             ${{ steps.ping.outputs.status }}
