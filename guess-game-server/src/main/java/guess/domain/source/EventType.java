@@ -38,6 +38,7 @@ public class EventType extends Descriptionable {
     private String logoFileName;
     private List<Event> events = new ArrayList<>();
     private boolean inactive;
+    private String timeZoneId;
 
     private long organizerId;
     private Organizer organizer;
@@ -46,7 +47,7 @@ public class EventType extends Descriptionable {
     }
 
     public EventType(Descriptionable descriptionable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
-                     boolean inactive, Organizer organizer) {
+                     boolean inactive, Organizer organizer, String timeZoneId) {
         super(descriptionable.getId(), descriptionable.getName(), descriptionable.getShortDescription(), descriptionable.getLongDescription());
 
         this.conference = conference;
@@ -61,6 +62,7 @@ public class EventType extends Descriptionable {
         this.inactive = inactive;
         this.organizer = organizer;
         this.organizerId = organizer.getId();
+        this.timeZoneId = timeZoneId;
     }
 
     public Conference getConference() {
@@ -157,6 +159,14 @@ public class EventType extends Descriptionable {
 
     public void setOrganizer(Organizer organizer) {
         this.organizer = organizer;
+    }
+
+    public String getTimeZoneId() {
+        return timeZoneId;
+    }
+
+    public void setTimeZoneId(String timeZoneId) {
+        this.timeZoneId = timeZoneId;
     }
 
     public boolean isEventTypeConference() {

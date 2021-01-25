@@ -255,7 +255,8 @@ public class ContentfulUtils {
                 ),
                 Collections.emptyList(),
                 true,
-                new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()));
+                new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()),
+                DateTimeUtils.EVENTS_ZONE_ID);
     }
 
     /**
