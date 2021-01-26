@@ -256,7 +256,7 @@ public class ContentfulUtils {
                 Collections.emptyList(),
                 true,
                 new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()),
-                DateTimeUtils.EVENTS_ZONE_ID);
+                DateTimeUtils.MOSCOW_TIME_ZONE);
     }
 
     /**
@@ -324,7 +324,7 @@ public class ContentfulUtils {
                 ZonedDateTime.of(
                         localDate,
                         LocalTime.of(0, 0, 0),
-                        ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID)).toInstant(),
+                        ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE)).toInstant(),
                 ZoneId.of("UTC"));
     }
 
@@ -383,7 +383,7 @@ public class ContentfulUtils {
     static LocalDate createEventLocalDate(String zonedDateTimeString) {
         return ZonedDateTime.ofInstant(
                 ZonedDateTime.parse(zonedDateTimeString).toInstant(),
-                ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID))
+                ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE))
                 .toLocalDate();
     }
 
