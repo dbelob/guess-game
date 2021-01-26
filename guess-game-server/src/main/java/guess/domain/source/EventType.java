@@ -2,6 +2,7 @@ package guess.domain.source;
 
 import guess.domain.Conference;
 
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,16 +39,18 @@ public class EventType extends Descriptionable {
     private String logoFileName;
     private List<Event> events = new ArrayList<>();
     private boolean inactive;
-    private String timeZoneId;
 
     private long organizerId;
     private Organizer organizer;
+
+    private String timeZone;
+    private ZoneId timeZoneId;
 
     public EventType() {
     }
 
     public EventType(Descriptionable descriptionable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
-                     boolean inactive, Organizer organizer, String timeZoneId) {
+                     boolean inactive, Organizer organizer, String timeZone) {
         super(descriptionable.getId(), descriptionable.getName(), descriptionable.getShortDescription(), descriptionable.getLongDescription());
 
         this.conference = conference;
@@ -62,7 +65,8 @@ public class EventType extends Descriptionable {
         this.inactive = inactive;
         this.organizer = organizer;
         this.organizerId = organizer.getId();
-        this.timeZoneId = timeZoneId;
+        this.timeZone = timeZone;
+        this.timeZoneId = ZoneId.of(timeZone);
     }
 
     public Conference getConference() {
@@ -161,11 +165,19 @@ public class EventType extends Descriptionable {
         this.organizer = organizer;
     }
 
-    public String getTimeZoneId() {
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    public ZoneId getTimeZoneId() {
         return timeZoneId;
     }
 
-    public void setTimeZoneId(String timeZoneId) {
+    public void setTimeZoneId(ZoneId timeZoneId) {
         this.timeZoneId = timeZoneId;
     }
 
