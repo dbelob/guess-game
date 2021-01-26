@@ -156,7 +156,11 @@ public class YamlUtils {
             eventType.setTimeZoneId(ZoneId.of(eventType.getTimeZone()));
         }
 
-        // ...
+        for (Event event : events) {
+            if (event.getTimeZone() != null) {
+                event.setTimeZoneId(ZoneId.of(event.getTimeZone()));
+            }
+        }
     }
 
     /**
@@ -377,7 +381,7 @@ public class YamlUtils {
                             List.of("id", "city", "venueAddress", "mapCoordinates")),
                     new PropertyMatcher(Event.class,
                             List.of("eventTypeId", "name", "startDate", "endDate", "siteLink", "youtubeLink", "placeId",
-                                    "talkIds")),
+                                    "timeZone", "talkIds")),
                     new PropertyMatcher(Talk.class,
                             List.of("id", "name", "shortDescription", "longDescription", "talkDay", "trackTime", "track",
                                     "language", "presentationLinks", "videoLinks", "speakerIds")),

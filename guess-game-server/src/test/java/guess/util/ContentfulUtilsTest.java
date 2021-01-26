@@ -540,6 +540,7 @@ class ContentfulUtilsTest {
                     ),
                     new Event.EventLinks(Collections.emptyList(), null),
                     new Place(),
+                    null,
                     Collections.emptyList());
 
             Event event1 = new Event(
@@ -554,6 +555,7 @@ class ContentfulUtilsTest {
                     ),
                     new Event.EventLinks(Collections.emptyList(), null),
                     new Place(),
+                    null,
                     Collections.emptyList());
 
             return Stream.of(
@@ -593,6 +595,7 @@ class ContentfulUtilsTest {
                                 ),
                                 new Event.EventLinks(Collections.emptyList(), null),
                                 new Place(),
+                                null,
                                 Collections.emptyList());
                     } else {
                         return null;
@@ -1874,6 +1877,7 @@ class ContentfulUtilsTest {
                                     List.of(
                                             new LocaleItem("en", "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo")),
                                     "60.1704769, 24.8279349"),
+                            "Europe/Helsinki",
                             Collections.emptyList()))
             );
         }

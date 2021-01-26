@@ -3,6 +3,7 @@ package guess.domain.source;
 import guess.domain.Identifier;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -44,6 +45,9 @@ public class Event extends Identifier {
     private long placeId;
     private Place place;
 
+    private String timeZone;
+    private ZoneId timeZoneId;
+
     private List<Long> talkIds;
     private List<Talk> talks = new ArrayList<>();
 
@@ -51,7 +55,7 @@ public class Event extends Identifier {
     }
 
     public Event(long id, EventType eventType, List<LocaleItem> name, EventDates dates, EventLinks links, Place place,
-                 List<Talk> talks) {
+                 String timeZone, List<Talk> talks) {
         super(id);
 
         this.eventType = eventType;
@@ -63,6 +67,9 @@ public class Event extends Identifier {
 
         this.place = place;
         this.placeId = place.getId();
+
+        this.timeZone = timeZone;
+        this.timeZoneId = (timeZone != null) ? ZoneId.of(timeZone) : null;
 
         this.talks = talks;
         this.talkIds = talks.stream()
@@ -140,6 +147,22 @@ public class Event extends Identifier {
 
     public void setPlace(Place place) {
         this.place = place;
+    }
+
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    public ZoneId getTimeZoneId() {
+        return timeZoneId;
+    }
+
+    public void setTimeZoneId(ZoneId timeZoneId) {
+        this.timeZoneId = timeZoneId;
     }
 
     public List<Long> getTalkIds() {

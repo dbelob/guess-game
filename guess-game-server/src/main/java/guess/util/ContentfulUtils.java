@@ -371,6 +371,7 @@ public class ContentfulUtils {
                                 extractLocaleValue(venueAddress, ENGLISH_LOCALE),
                                 extractLocaleValue(venueAddress, RUSSIAN_LOCALE)),
                         (addressLink != null) ? getFirstMapValue(addressLink) : null),
+                null,
                 Collections.emptyList());
     }
 
@@ -1095,6 +1096,7 @@ public class ContentfulUtils {
                                     "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo",
                                     null),
                             "60.1704769, 24.8279349"),
+                    "Europe/Helsinki",
                     Collections.emptyList());
         } else {
             return null;

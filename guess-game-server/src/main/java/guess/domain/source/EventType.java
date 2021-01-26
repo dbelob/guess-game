@@ -63,8 +63,10 @@ public class EventType extends Descriptionable {
         this.logoFileName = logoFileName;
         this.events = events;
         this.inactive = inactive;
+
         this.organizer = organizer;
         this.organizerId = organizer.getId();
+
         this.timeZone = timeZone;
         this.timeZoneId = ZoneId.of(timeZone);
     }

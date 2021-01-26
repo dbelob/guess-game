@@ -184,6 +184,7 @@ events:
       - {language: en, text: "https://dotnext-helsinki.com"}
     youtubeLink: https://www.youtube.com/playlist?list=PLtWrKx3nUGBcaA5j9UT6XMnoGM6a2iCE5
     placeId: 15
+    timeZone: Europe/Helsinki
     talkIds: [328, 329, 330, 331, 332, 333, 334]
   - eventTypeId: 2
     name:
