@@ -122,6 +122,8 @@ public class ConferenceDataLoader {
                         et.setShortDescription(resourceEventType.getShortDescription());
                         et.setLogoFileName(resourceEventType.getLogoFileName());
 
+                        fillEventTypeTimeZone(et, resourceEventType);
+
                         if (ContentfulUtils.needUpdate(resourceEventType, et)) {
                             // Event type need to update
                             eventTypesToUpdate.add(et);
@@ -134,6 +136,19 @@ public class ConferenceDataLoader {
                 Collections.emptyList(),
                 eventTypesToAppend,
                 eventTypesToUpdate);
+    }
+
+    /**
+     * Fill time zone of event type.
+     *
+     * @param targetEventType   target event type
+     * @param resourceEventType resource event type
+     */
+    static void fillEventTypeTimeZone(EventType targetEventType, EventType resourceEventType) {
+        if ((resourceEventType.getTimeZone() != null) && !resourceEventType.getTimeZone().isEmpty() &&
+                ((targetEventType.getTimeZone() == null) || targetEventType.getTimeZone().isEmpty())) {
+            targetEventType.setTimeZone(resourceEventType.getTimeZone());
+        }
     }
 
     /**
@@ -886,6 +901,8 @@ public class ConferenceDataLoader {
         if (resourceEvent == null) {
             eventToAppend = event;
         } else {
+            fillEventTimeZone(event, resourceEvent);
+
             if (ContentfulUtils.needUpdate(resourceEvent, event)) {
                 eventToUpdate = event;
             }
@@ -895,6 +912,19 @@ public class ConferenceDataLoader {
                 null,
                 eventToAppend,
                 eventToUpdate);
+    }
+
+    /**
+     * Fill time zone of event.
+     *
+     * @param targetEvent   target event
+     * @param resourceEvent resource event
+     */
+    static void fillEventTimeZone(Event targetEvent, Event resourceEvent) {
+        if ((resourceEvent.getTimeZone() != null) && !resourceEvent.getTimeZone().isEmpty() &&
+                ((targetEvent.getTimeZone() == null) || targetEvent.getTimeZone().isEmpty())) {
+            targetEvent.setTimeZone(resourceEvent.getTimeZone());
+        }
     }
 
     /**

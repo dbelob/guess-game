@@ -209,6 +209,7 @@ public class ContentfulUtils {
                 .queryParam(CONTENT_TYPE_PARAM_NAME, "eventsList")
                 .queryParam(SELECT_PARAM_NAME, "fields.eventName,fields.eventDescriptions,fields.siteLink,fields.vkLink,fields.twLink,fields.fbLink,fields.youtubeLink,fields.telegramLink")
                 .queryParam(ORDER_PARAM_NAME, "fields.eventName")
+                .queryParam("fields.showInMain", true)
                 .queryParam(LIMIT_PARAM_NAME, MAXIMUM_LIMIT);
         URI uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
@@ -256,7 +257,7 @@ public class ContentfulUtils {
                 Collections.emptyList(),
                 true,
                 new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()),
-                DateTimeUtils.MOSCOW_TIME_ZONE);
+                null);
     }
 
     /**
@@ -1364,7 +1365,9 @@ public class ContentfulUtils {
                 equals(a.getTwitterLink(), b.getTwitterLink()) &&
                 equals(a.getFacebookLink(), b.getFacebookLink()) &&
                 equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
-                equals(a.getTelegramLink(), b.getTelegramLink()));
+                equals(a.getTelegramLink(), b.getTelegramLink()) &&
+                equals(a.getOrganizer(), b.getOrganizer()) &&
+                equals(a.getTimeZone(), b.getTimeZone()));
     }
 
     /**
@@ -1438,7 +1441,8 @@ public class ContentfulUtils {
                 equals(a.getSiteLink(), b.getSiteLink()) &&
                 equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
                 (a.getPlaceId() == b.getPlaceId()) &&
-                equals(a.getTalkIds(), b.getTalkIds()));
+                equals(a.getTalkIds(), b.getTalkIds()) &&
+                equals(a.getTimeZone(), b.getTimeZone()));
     }
 
     /**

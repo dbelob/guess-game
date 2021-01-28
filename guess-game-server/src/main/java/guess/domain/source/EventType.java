@@ -68,7 +68,7 @@ public class EventType extends Descriptionable {
         this.organizerId = organizer.getId();
 
         this.timeZone = timeZone;
-        this.timeZoneId = ZoneId.of(timeZone);
+        this.timeZoneId = (timeZone != null) ? ZoneId.of(timeZone) : null;
     }
 
     public Conference getConference() {
