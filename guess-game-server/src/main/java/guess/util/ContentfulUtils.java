@@ -255,9 +255,9 @@ public class ContentfulUtils {
                         (telegramLink != null) ? getFirstMapValue(telegramLink) : null
                 ),
                 Collections.emptyList(),
-                true,
                 new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()),
-                null);
+                new EventType.EventTypeAttributes(false, null)
+        );
     }
 
     /**

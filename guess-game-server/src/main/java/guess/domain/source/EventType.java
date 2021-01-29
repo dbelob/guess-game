@@ -28,6 +28,16 @@ public class EventType extends Descriptionable {
         }
     }
 
+    public static class EventTypeAttributes {
+        private final boolean inactive;
+        private final String timeZone;
+
+        public EventTypeAttributes(boolean inactive, String timeZone) {
+            this.inactive = inactive;
+            this.timeZone = timeZone;
+        }
+    }
+
     private Conference conference;
 
     private List<LocaleItem> siteLink;
@@ -50,7 +60,7 @@ public class EventType extends Descriptionable {
     }
 
     public EventType(Descriptionable descriptionable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
-                     boolean inactive, Organizer organizer, String timeZone) {
+                     Organizer organizer, EventTypeAttributes attributes) {
         super(descriptionable.getId(), descriptionable.getName(), descriptionable.getShortDescription(), descriptionable.getLongDescription());
 
         this.conference = conference;
@@ -62,12 +72,12 @@ public class EventType extends Descriptionable {
         this.telegramLink = links.telegramLink;
         this.logoFileName = logoFileName;
         this.events = events;
-        this.inactive = inactive;
+        this.inactive = attributes.inactive;
 
         this.organizer = organizer;
         this.organizerId = organizer.getId();
 
-        this.timeZone = timeZone;
+        this.timeZone = attributes.timeZone;
         this.timeZoneId = (timeZone != null) ? ZoneId.of(timeZone) : null;
     }
 

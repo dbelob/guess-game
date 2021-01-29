@@ -51,8 +51,8 @@ public class Event extends Nameable {
     public Event() {
     }
 
-    public Event(Nameable nameable, EventType eventType, EventDates dates, EventLinks links, Place place,
-                 String timeZone, List<Talk> talks) {
+    public Event(Nameable nameable, EventType eventType, EventDates dates, EventLinks links, Place place, String timeZone,
+                 List<Talk> talks) {
         super(nameable.getId(), nameable.getName());
 
         this.eventType = eventType;
