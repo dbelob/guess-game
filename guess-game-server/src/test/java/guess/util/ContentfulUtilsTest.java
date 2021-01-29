@@ -2006,6 +2006,9 @@ class ContentfulUtilsTest {
     @DisplayName("needUpdate method tests (EventType)")
     class NeedUpdateEventTypeTest {
         private Stream<Arguments> data() {
+            Organizer organizer0 = new Organizer(0, Collections.emptyList());
+            Organizer organizer1 = new Organizer(1, Collections.emptyList());
+
             EventType eventType0 = new EventType();
             eventType0.setId(0);
             eventType0.setConference(Conference.JPOINT);
@@ -2019,6 +2022,8 @@ class ContentfulUtilsTest {
             eventType0.setFacebookLink("facebookLink0");
             eventType0.setYoutubeLink("youtubeLink0");
             eventType0.setTelegramLink("telegramLink0");
+            eventType0.setOrganizer(organizer0);
+            eventType0.setTimeZone("Europe/Moscow");
 
             EventType eventType1 = new EventType();
             eventType1.setId(1);
@@ -2122,6 +2127,36 @@ class ContentfulUtilsTest {
             eventType12.setYoutubeLink("youtubeLink0");
             eventType12.setTelegramLink("telegramLink12");
 
+            EventType eventType13 = new EventType();
+            eventType13.setId(0);
+            eventType13.setConference(Conference.JPOINT);
+            eventType13.setLogoFileName("logoFileName0");
+            eventType13.setName(List.of(new LocaleItem("en", "name0")));
+            eventType13.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            eventType13.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            eventType13.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
+            eventType13.setVkLink("vkLink0");
+            eventType13.setTwitterLink("twitterLink0");
+            eventType13.setFacebookLink("facebookLink0");
+            eventType13.setYoutubeLink("youtubeLink0");
+            eventType13.setTelegramLink("telegramLink0");
+            eventType13.setOrganizer(organizer1);
+
+            EventType eventType14 = new EventType();
+            eventType14.setId(0);
+            eventType14.setConference(Conference.JPOINT);
+            eventType14.setLogoFileName("logoFileName0");
+            eventType14.setName(List.of(new LocaleItem("en", "name0")));
+            eventType14.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            eventType14.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            eventType14.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
+            eventType14.setVkLink("vkLink0");
+            eventType14.setTwitterLink("twitterLink0");
+            eventType14.setFacebookLink("facebookLink0");
+            eventType14.setYoutubeLink("youtubeLink0");
+            eventType14.setTelegramLink("telegramLink0");
+            eventType14.setOrganizer(organizer0);
+
             return Stream.of(
                     arguments(eventType0, eventType0, false),
                     arguments(eventType0, eventType1, true),
@@ -2135,7 +2170,9 @@ class ContentfulUtilsTest {
                     arguments(eventType0, eventType9, true),
                     arguments(eventType0, eventType10, true),
                     arguments(eventType0, eventType11, true),
-                    arguments(eventType0, eventType12, true)
+                    arguments(eventType0, eventType12, true),
+                    arguments(eventType0, eventType13, true),
+                    arguments(eventType0, eventType14, true)
             );
         }
 
@@ -2468,6 +2505,7 @@ class ContentfulUtilsTest {
             event0.setYoutubeLink("youtubeLink0");
             event0.setPlaceId(0);
             event0.setTalkIds(List.of(0L));
+            event0.setTimeZone("Europe/Moscow");
 
             Event event1 = new Event();
             event1.setEventTypeId(1);
@@ -2521,6 +2559,16 @@ class ContentfulUtilsTest {
             event8.setPlaceId(0);
             event8.setTalkIds(List.of(8L));
 
+            Event event9 = new Event();
+            event9.setEventTypeId(0);
+            event9.setName(List.of(new LocaleItem("en", "name0")));
+            event9.setStartDate(LocalDate.of(2020, 8, 5));
+            event9.setEndDate(LocalDate.of(2020, 8, 6));
+            event9.setSiteLink(List.of(new LocaleItem("en", "siteLink0")));
+            event9.setYoutubeLink("youtubeLink0");
+            event9.setPlaceId(0);
+            event9.setTalkIds(List.of(0L));
+
             return Stream.of(
                     arguments(event0, event0, false),
                     arguments(event0, event1, true),
@@ -2530,7 +2578,8 @@ class ContentfulUtilsTest {
                     arguments(event0, event5, true),
                     arguments(event0, event6, true),
                     arguments(event0, event7, true),
-                    arguments(event0, event8, true)
+                    arguments(event0, event8, true),
+                    arguments(event0, event9, true)
             );
         }
 
