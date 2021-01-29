@@ -205,6 +205,48 @@ class ConferenceDataLoaderTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillEventTypeTimeZone method tests")
+    class FillEventTypeTimeZoneTest {
+        EventType createEventType(String timeZone) {
+            EventType eventType = new EventType();
+
+            if (timeZone != null) {
+                eventType.setTimeZone(timeZone);
+            }
+
+            return eventType;
+        }
+
+        private Stream<Arguments> data() {
+            final String TIME_ZONE0 = "Europe/Moscow";
+            final String TIME_ZONE1 = "Asia/Novosibirsk";
+
+            return Stream.of(
+                    arguments(createEventType(null), createEventType(null), null),
+                    arguments(createEventType(null), createEventType(""), null),
+                    arguments(createEventType(null), createEventType(TIME_ZONE0), TIME_ZONE0),
+
+                    arguments(createEventType(""), createEventType(null), ""),
+                    arguments(createEventType(""), createEventType(""), ""),
+                    arguments(createEventType(""), createEventType(TIME_ZONE0), TIME_ZONE0),
+
+                    arguments(createEventType(TIME_ZONE1), createEventType(null), TIME_ZONE1),
+                    arguments(createEventType(TIME_ZONE1), createEventType(""), TIME_ZONE1),
+                    arguments(createEventType(TIME_ZONE1), createEventType(TIME_ZONE0), TIME_ZONE1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillEventTypeTimeZone(EventType targetEventType, EventType resourceEventType, String expected) {
+            ConferenceDataLoader.fillEventTypeTimeZone(targetEventType, resourceEventType);
+
+            assertEquals(expected, targetEventType.getTimeZone());
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("saveEventTypes method tests")
     class SaveEventTypesTest {
         private Stream<Arguments> data() {
@@ -1584,6 +1626,48 @@ class ConferenceDataLoaderTest {
             };
 
             assertEquals(expected, ConferenceDataLoader.getEventLoadResult(event, resourceEvent));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("fillEventTimeZone method tests")
+    class FillEventTimeZoneTest {
+        Event createEvent(String timeZone) {
+            Event event = new Event();
+
+            if (timeZone != null) {
+                event.setTimeZone(timeZone);
+            }
+
+            return event;
+        }
+
+        private Stream<Arguments> data() {
+            final String TIME_ZONE0 = "Europe/Moscow";
+            final String TIME_ZONE1 = "Asia/Novosibirsk";
+
+            return Stream.of(
+                    arguments(createEvent(null), createEvent(null), null),
+                    arguments(createEvent(null), createEvent(""), null),
+                    arguments(createEvent(null), createEvent(TIME_ZONE0), TIME_ZONE0),
+
+                    arguments(createEvent(""), createEvent(null), ""),
+                    arguments(createEvent(""), createEvent(""), ""),
+                    arguments(createEvent(""), createEvent(TIME_ZONE0), TIME_ZONE0),
+
+                    arguments(createEvent(TIME_ZONE1), createEvent(null), TIME_ZONE1),
+                    arguments(createEvent(TIME_ZONE1), createEvent(""), TIME_ZONE1),
+                    arguments(createEvent(TIME_ZONE1), createEvent(TIME_ZONE0), TIME_ZONE1)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void fillEventTimeZone(Event targetEvent, Event resourceEvent, String expected) {
+            ConferenceDataLoader.fillEventTimeZone(targetEvent, resourceEvent);
+
+            assertEquals(expected, targetEvent.getTimeZone());
         }
     }
 
