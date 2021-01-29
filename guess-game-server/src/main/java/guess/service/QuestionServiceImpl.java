@@ -9,6 +9,7 @@ import guess.domain.Language;
 import guess.domain.question.Question;
 import guess.domain.source.Event;
 import guess.domain.source.LocaleItem;
+import guess.domain.source.Nameable;
 import guess.domain.source.Place;
 import guess.util.LocalizationUtils;
 import guess.util.QuestionUtils;
@@ -52,9 +53,11 @@ public class QuestionServiceImpl implements QuestionService {
 
                     return Collections.singletonList(
                             new Event(
-                                    -1L,
+                                    new Nameable(
+                                            -1L,
+                                            name
+                                    ),
                                     null,
-                                    name,
                                     new Event.EventDates(
                                             null,
                                             null

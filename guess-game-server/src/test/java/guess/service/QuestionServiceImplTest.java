@@ -7,6 +7,7 @@ import guess.domain.Conference;
 import guess.domain.GuessMode;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
+import guess.domain.source.Nameable;
 import guess.domain.source.Place;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -83,9 +84,11 @@ class QuestionServiceImplTest {
     void getEvents() {
         final List<Event> ALL_EVENTS_OPTION_EVENTS = Collections.singletonList(
                 new Event(
-                        -1L,
+                        new Nameable(
+                                -1L,
+                                Collections.emptyList()
+                        ),
                         null,
-                        Collections.emptyList(),
                         new Event.EventDates(
                                 null,
                                 null

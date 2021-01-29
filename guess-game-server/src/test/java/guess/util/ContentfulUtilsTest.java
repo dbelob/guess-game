@@ -529,11 +529,13 @@ class ContentfulUtilsTest {
     class GetEventTest {
         private Stream<Arguments> data() {
             Event event0 = new Event(
-                    -1L,
+                    new Nameable(
+                            -1L,
+                            List.of(
+                                    new LocaleItem(Language.ENGLISH.getCode(), "Event Name0"),
+                                    new LocaleItem(Language.RUSSIAN.getCode(), "Наименование события0"))
+                    ),
                     null,
-                    List.of(
-                            new LocaleItem(Language.ENGLISH.getCode(), "Event Name0"),
-                            new LocaleItem(Language.RUSSIAN.getCode(), "Наименование события0")),
                     new Event.EventDates(
                             LocalDate.of(2016, 12, 7),
                             LocalDate.of(2016, 12, 7)
@@ -544,11 +546,13 @@ class ContentfulUtilsTest {
                     Collections.emptyList());
 
             Event event1 = new Event(
-                    -1L,
+                    new Nameable(
+                            -1L,
+                            List.of(
+                                    new LocaleItem(Language.ENGLISH.getCode(), "Event Name1"),
+                                    new LocaleItem(Language.RUSSIAN.getCode(), "Наименование события1"))
+                    ),
                     null,
-                    List.of(
-                            new LocaleItem(Language.ENGLISH.getCode(), "Event Name1"),
-                            new LocaleItem(Language.RUSSIAN.getCode(), "Наименование события1")),
                     new Event.EventDates(
                             LocalDate.of(2017, 12, 7),
                             LocalDate.of(2017, 12, 7)
@@ -584,11 +588,13 @@ class ContentfulUtilsTest {
                 Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
                     if (Conference.DOT_NEXT.equals(conference) && LocalDate.of(2016, 12, 7).equals(startDate)) {
                         return new Event(
-                                -1L,
+                                new Nameable(
+                                        -1L,
+                                        List.of(
+                                                new LocaleItem("en", "Event Name0"),
+                                                new LocaleItem("ru", "Наименование события0"))
+                                ),
                                 null,
-                                List.of(
-                                        new LocaleItem("en", "Event Name0"),
-                                        new LocaleItem("ru", "Наименование события0")),
                                 new Event.EventDates(
                                         LocalDate.of(2016, 12, 7),
                                         LocalDate.of(2016, 12, 7)
@@ -1854,11 +1860,13 @@ class ContentfulUtilsTest {
                     arguments(Conference.JPOINT, LocalDate.of(2016, 12, 7), null),
                     arguments(Conference.DOT_NEXT, LocalDate.of(2016, 12, 8), null),
                     arguments(Conference.DOT_NEXT, LocalDate.of(2016, 12, 7), new Event(
-                            -1L,
+                            new Nameable(
+                                    -1L,
+                                    List.of(
+                                            new LocaleItem("en", "DotNext 2016 Helsinki"),
+                                            new LocaleItem("ru", "DotNext 2016 Хельсинки"))
+                            ),
                             null,
-                            List.of(
-                                    new LocaleItem("en", "DotNext 2016 Helsinki"),
-                                    new LocaleItem("ru", "DotNext 2016 Хельсинки")),
                             new Event.EventDates(
                                     LocalDate.of(2016, 12, 7),
                                     LocalDate.of(2016, 12, 7)

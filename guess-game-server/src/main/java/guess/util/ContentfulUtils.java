@@ -348,11 +348,13 @@ public class ContentfulUtils {
         Map<String, String> addressLink = e.getFields().getAddressLink();
 
         return new Event(
-                -1L,
+                new Nameable(
+                        -1L,
+                        extractLocaleItems(
+                                extractEventName(nameEn, ENGLISH_LOCALE),
+                                extractEventName(nameRu, RUSSIAN_LOCALE))
+                ),
                 null,
-                extractLocaleItems(
-                        extractEventName(nameEn, ENGLISH_LOCALE),
-                        extractEventName(nameRu, RUSSIAN_LOCALE)),
                 new Event.EventDates(
                         eventStartDate,
                         eventEndDate
@@ -1073,11 +1075,13 @@ public class ContentfulUtils {
     static Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
         if (Conference.DOT_NEXT.equals(conference) && LocalDate.of(2016, 12, 7).equals(startDate)) {
             return new Event(
-                    -1L,
+                    new Nameable(
+                            -1L,
+                            extractLocaleItems(
+                                    "DotNext 2016 Helsinki",
+                                    "DotNext 2016 Хельсинки")
+                    ),
                     null,
-                    extractLocaleItems(
-                            "DotNext 2016 Helsinki",
-                            "DotNext 2016 Хельсинки"),
                     new Event.EventDates(
                             LocalDate.of(2016, 12, 7),
                             LocalDate.of(2016, 12, 7)
