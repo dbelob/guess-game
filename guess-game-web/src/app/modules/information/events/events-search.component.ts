@@ -48,7 +48,7 @@ export class EventsSearchComponent implements OnInit {
         this.fillEventTypes(eventTypesData);
 
         if (this.eventTypes.length > 0) {
-          this.eventService.getDefaultEvent()
+          this.eventService.getDefaultConference()
             .subscribe(defaultEventData => {
               const selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
               this.selectedEventType = (selectedEventType) ? selectedEventType : null;

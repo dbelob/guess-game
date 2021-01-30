@@ -48,7 +48,7 @@ export class EventTypeStatisticsComponent implements OnInit {
         this.fillOrganizers(organizerData);
 
         if (this.organizers.length > 0) {
-          this.organizerService.getDefaultOrganizer()
+          this.organizerService.getDefaultEventOrganizer()
             .subscribe(defaultOrganizerData => {
               const selectedOrganizer = (defaultOrganizerData) ? findOrganizerById(defaultOrganizerData.id, this.organizers) : null;
               this.selectedOrganizer = (selectedOrganizer) ? selectedOrganizer : null;

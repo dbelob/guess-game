@@ -235,13 +235,13 @@ class EventServiceImplTest {
     }
 
     @Test
-    void getDefaultEvent() {
+    void getDefaultConference() {
         EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class);
 
-        Mockito.doCallRealMethod().when(eventService).getDefaultEvent();
+        Mockito.doCallRealMethod().when(eventService).getDefaultConference();
 
-        eventService.getDefaultEvent();
-        Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent();
+        eventService.getDefaultConference();
+        Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultConference();
         Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(Mockito.any(LocalDateTime.class));
         Mockito.verifyNoMoreInteractions(eventService);
     }

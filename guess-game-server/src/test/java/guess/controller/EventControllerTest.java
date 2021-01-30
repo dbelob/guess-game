@@ -105,8 +105,8 @@ class EventControllerTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("getDefaultEvent method tests")
-    class GetDefaultEventTest {
+    @DisplayName("getDefaultConference method tests")
+    class GetDefaultConferenceTest {
         private Stream<Arguments> data() {
             Organizer organizer0 = new Organizer();
             organizer0.setId(0);
@@ -127,17 +127,17 @@ class EventControllerTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void getDefaultEvent(Event defaultEvent) throws Exception {
+        void getDefaultConference(Event defaultEvent) throws Exception {
             MockHttpSession httpSession = new MockHttpSession();
 
-            given(eventService.getDefaultEvent()).willReturn(defaultEvent);
+            given(eventService.getDefaultConference()).willReturn(defaultEvent);
             given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
-            mvc.perform(get("/api/event/default-event")
+            mvc.perform(get("/api/event/default-conference")
                     .contentType(MediaType.APPLICATION_JSON)
                     .session(httpSession))
                     .andExpect(status().isOk());
-            Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent();
+            Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultConference();
             Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
             Mockito.reset(eventService, localeService);
         }

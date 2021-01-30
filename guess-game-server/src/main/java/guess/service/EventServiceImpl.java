@@ -46,7 +46,7 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public Event getDefaultEvent() {
+    public Event getDefaultConference() {
         return getDefaultEvent(LocalDateTime.now(ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE)));
     }
 

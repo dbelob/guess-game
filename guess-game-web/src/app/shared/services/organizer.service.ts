@@ -24,8 +24,8 @@ export class OrganizerService {
       );
   }
 
-  getDefaultOrganizer(): Observable<Organizer> {
-    return this.http.get<Organizer>(`${this.baseUrl}/default-organizer`)
+  getDefaultEventOrganizer(): Observable<Organizer> {
+    return this.http.get<Organizer>(`${this.baseUrl}/default-event-organizer`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

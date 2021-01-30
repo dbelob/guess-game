@@ -105,15 +105,15 @@ class OrganizerControllerTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void getDefaultOrganizer(Event defaultEvent) throws Exception {
+        void getDefaultEventOrganizer(Event defaultEvent) throws Exception {
             MockHttpSession httpSession = new MockHttpSession();
 
-            given(eventService.getDefaultEvent()).willReturn(defaultEvent);
+            given(eventService.getDefaultConference()).willReturn(defaultEvent);
 
             if (defaultEvent != null) {
                 given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
-                MvcResult mvcResult = mvc.perform(get("/api/organizer/default-organizer")
+                MvcResult mvcResult = mvc.perform(get("/api/organizer/default-event-organizer")
                         .contentType(MediaType.APPLICATION_JSON)
                         .session(httpSession))
                         .andExpect(status().isOk())
@@ -122,10 +122,10 @@ class OrganizerControllerTest {
 
                 assertFalse(body.isBlank());
 
-                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent();
+                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultConference();
                 Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
             } else {
-                MvcResult mvcResult = mvc.perform(get("/api/organizer/default-organizer")
+                MvcResult mvcResult = mvc.perform(get("/api/organizer/default-event-organizer")
                         .contentType(MediaType.APPLICATION_JSON)
                         .session(httpSession))
                         .andExpect(status().isOk())
@@ -134,7 +134,7 @@ class OrganizerControllerTest {
 
                 assertTrue(body.isBlank());
 
-                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent();
+                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultConference();
             }
         }
     }
