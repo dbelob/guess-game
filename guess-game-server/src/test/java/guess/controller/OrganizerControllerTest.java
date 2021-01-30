@@ -106,9 +106,12 @@ class OrganizerControllerTest {
         @ParameterizedTest
         @MethodSource("data")
         void getDefaultEventOrganizer(Event defaultEvent) throws Exception {
+            final boolean IS_CONFERENCES = Boolean.TRUE;
+            final boolean IS_MEETUPS = Boolean.TRUE;
+
             MockHttpSession httpSession = new MockHttpSession();
 
-            given(eventService.getDefaultConference()).willReturn(defaultEvent);
+            given(eventService.getDefaultEvent(IS_CONFERENCES, IS_MEETUPS)).willReturn(defaultEvent);
 
             if (defaultEvent != null) {
                 given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
@@ -122,7 +125,7 @@ class OrganizerControllerTest {
 
                 assertFalse(body.isBlank());
 
-                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultConference();
+                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
                 Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
             } else {
                 MvcResult mvcResult = mvc.perform(get("/api/organizer/default-event-organizer")
@@ -134,7 +137,7 @@ class OrganizerControllerTest {
 
                 assertTrue(body.isBlank());
 
-                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultConference();
+                Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
             }
         }
     }

@@ -46,11 +46,11 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public Event getDefaultConference() {
-        return getDefaultEvent(LocalDateTime.now(ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE)));
+    public Event getDefaultEvent(boolean isConferences, boolean isMeetups) {
+        return getDefaultEvent(isConferences, isMeetups, LocalDateTime.now(ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE)));
     }
 
-    Event getDefaultEvent(LocalDateTime dateTime) {
+    Event getDefaultEvent(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
         LocalDate date = dateTime.toLocalDate();
         LocalTime time = dateTime.toLocalTime();
 
@@ -59,7 +59,7 @@ public class EventServiceImpl implements EventService {
 
         // Select conferences only
         List<Event> conferencesFromDate = eventsFromDate.stream()
-                .filter(e -> e.getEventType().isEventTypeConference())
+                .filter(e -> ((isConferences && e.getEventType().isEventTypeConference()) || (isMeetups && !e.getEventType().isEventTypeConference())))
                 .collect(Collectors.toList());
         if (conferencesFromDate.isEmpty()) {
             // Conferences not exist

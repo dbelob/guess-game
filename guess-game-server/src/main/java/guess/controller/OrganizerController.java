@@ -49,7 +49,7 @@ public class OrganizerController {
     @GetMapping("/default-event-organizer")
     @ResponseBody
     public OrganizerDto getDefaultEventOrganizer(HttpSession httpSession) {
-        Event defaultEvent = eventService.getDefaultConference();
+        Event defaultEvent = eventService.getDefaultEvent(true, true);
 
         if (defaultEvent != null) {
             Language language = localeService.getLanguage(httpSession);

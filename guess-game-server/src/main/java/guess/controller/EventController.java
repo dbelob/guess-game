@@ -51,10 +51,19 @@ public class EventController {
         return EventBriefDto.convertToBriefDto(events, language);
     }
 
+    @GetMapping("/default-event")
+    @ResponseBody
+    public EventSuperBriefDto getDefaultEvent(HttpSession httpSession) {
+        Event defaultEvent = eventService.getDefaultEvent(true, true);
+        Language language = localeService.getLanguage(httpSession);
+
+        return (defaultEvent != null) ? EventSuperBriefDto.convertToSuperBriefDto(defaultEvent, language) : null;
+    }
+
     @GetMapping("/default-conference")
     @ResponseBody
     public EventSuperBriefDto getDefaultConference(HttpSession httpSession) {
-        Event defaultEvent = eventService.getDefaultConference();
+        Event defaultEvent = eventService.getDefaultEvent(true, false);
         Language language = localeService.getLanguage(httpSession);
 
         return (defaultEvent != null) ? EventSuperBriefDto.convertToSuperBriefDto(defaultEvent, language) : null;

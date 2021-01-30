@@ -235,14 +235,16 @@ class EventServiceImplTest {
     }
 
     @Test
-    void getDefaultConference() {
+    void getDefaultEvent() {
         EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class);
+        final boolean IS_CONFERENCES = Boolean.TRUE;
+        final boolean IS_MEETUPS = Boolean.FALSE;
 
-        Mockito.doCallRealMethod().when(eventService).getDefaultConference();
+        Mockito.doCallRealMethod().when(eventService).getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
 
-        eventService.getDefaultConference();
-        Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultConference();
-        Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(Mockito.any(LocalDateTime.class));
+        eventService.getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
+        Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
+        Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any(LocalDateTime.class));
         Mockito.verifyNoMoreInteractions(eventService);
     }
 
@@ -292,16 +294,19 @@ class EventServiceImplTest {
         @ParameterizedTest
         @MethodSource("data")
         void getDefaultEvent(LocalDateTime dateTime, List<Event> events, List<EventDateMinTrackTime> eventDateMinTrackTimeList, Event expected) {
+            final boolean IS_CONFERENCES = Boolean.TRUE;
+            final boolean IS_MEETUPS = Boolean.FALSE;
+
             EventDao eventDao = Mockito.mock(EventDao.class);
             EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
             EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class, Mockito.withSettings().useConstructor(eventDao, eventTypeDao));
 
             Mockito.when(eventDao.getEventsFromDate(Mockito.any())).thenReturn(events);
 
-            Mockito.doCallRealMethod().when(eventService).getDefaultEvent(Mockito.any());
+            Mockito.doCallRealMethod().when(eventService).getDefaultEvent(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any());
             Mockito.when(eventService.getConferenceDateMinTrackTimeList(Mockito.any())).thenReturn(eventDateMinTrackTimeList);
 
-            assertEquals(expected, eventService.getDefaultEvent(dateTime));
+            assertEquals(expected, eventService.getDefaultEvent(IS_CONFERENCES, IS_MEETUPS, dateTime));
         }
     }
 
