@@ -7,10 +7,7 @@ import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.Question;
-import guess.domain.source.Event;
-import guess.domain.source.LocaleItem;
-import guess.domain.source.Nameable;
-import guess.domain.source.Place;
+import guess.domain.source.*;
 import guess.util.LocalizationUtils;
 import guess.util.QuestionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,13 +48,20 @@ public class QuestionServiceImpl implements QuestionService {
                             Language.RUSSIAN.getCode(),
                             LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.RUSSIAN)));
 
+                    Organizer organizer = new Organizer();
+                    organizer.setId(-1L);
+
+                    EventType eventType = new EventType();
+                    eventType.setId(-1L);
+                    eventType.setOrganizer(organizer);
+
                     return Collections.singletonList(
                             new Event(
                                     new Nameable(
                                             -1L,
                                             name
                                     ),
-                                    null,
+                                    eventType,
                                     new Event.EventDates(
                                             null,
                                             null
