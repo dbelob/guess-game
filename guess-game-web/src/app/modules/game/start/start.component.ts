@@ -59,7 +59,7 @@ export class StartComponent implements OnInit, AfterViewChecked {
         );
 
         if (this.eventTypes.length > 0) {
-          this.eventService.getDefaultConference()
+          this.eventService.getDefaultEvent()
             .subscribe(defaultEventData => {
               this.defaultEvent = defaultEventData;
 

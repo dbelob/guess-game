@@ -65,7 +65,7 @@ export class CompanyStatisticsComponent implements OnInit {
       .subscribe(organizerData => {
         this.fillOrganizers(organizerData);
 
-        this.eventService.getDefaultConference()
+        this.eventService.getDefaultEvent()
           .subscribe(defaultEventData => {
             this.selectedOrganizer = (defaultEventData) ? findOrganizerById(defaultEventData.organizerId, this.organizers) : null;
 

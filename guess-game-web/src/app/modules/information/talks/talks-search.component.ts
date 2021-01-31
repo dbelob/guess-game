@@ -73,7 +73,7 @@ export class TalksSearchComponent implements OnInit {
         this.fillEventTypes(eventTypesData);
 
         if (this.eventTypes.length > 0) {
-          this.eventService.getDefaultConference()
+          this.eventService.getDefaultEvent()
             .subscribe(defaultEventData => {
               this.defaultEvent = defaultEventData;
 
