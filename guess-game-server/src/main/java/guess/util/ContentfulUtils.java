@@ -209,6 +209,7 @@ public class ContentfulUtils {
                 .queryParam(CONTENT_TYPE_PARAM_NAME, "eventsList")
                 .queryParam(SELECT_PARAM_NAME, "fields.eventName,fields.eventDescriptions,fields.siteLink,fields.vkLink,fields.twLink,fields.fbLink,fields.youtubeLink,fields.telegramLink")
                 .queryParam(ORDER_PARAM_NAME, "fields.eventName")
+                .queryParam("fields.showInMain", true)
                 .queryParam(LIMIT_PARAM_NAME, MAXIMUM_LIMIT);
         URI uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
@@ -254,8 +255,9 @@ public class ContentfulUtils {
                         (telegramLink != null) ? getFirstMapValue(telegramLink) : null
                 ),
                 Collections.emptyList(),
-                true,
-                new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()));
+                new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()),
+                new EventType.EventTypeAttributes(false, null)
+        );
     }
 
     /**
@@ -323,7 +325,7 @@ public class ContentfulUtils {
                 ZonedDateTime.of(
                         localDate,
                         LocalTime.of(0, 0, 0),
-                        ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID)).toInstant(),
+                        ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE)).toInstant(),
                 ZoneId.of("UTC"));
     }
 
@@ -346,11 +348,13 @@ public class ContentfulUtils {
         Map<String, String> addressLink = e.getFields().getAddressLink();
 
         return new Event(
-                -1L,
+                new Nameable(
+                        -1L,
+                        extractLocaleItems(
+                                extractEventName(nameEn, ENGLISH_LOCALE),
+                                extractEventName(nameRu, RUSSIAN_LOCALE))
+                ),
                 null,
-                extractLocaleItems(
-                        extractEventName(nameEn, ENGLISH_LOCALE),
-                        extractEventName(nameRu, RUSSIAN_LOCALE)),
                 new Event.EventDates(
                         eventStartDate,
                         eventEndDate
@@ -370,6 +374,7 @@ public class ContentfulUtils {
                                 extractLocaleValue(venueAddress, ENGLISH_LOCALE),
                                 extractLocaleValue(venueAddress, RUSSIAN_LOCALE)),
                         (addressLink != null) ? getFirstMapValue(addressLink) : null),
+                null,
                 Collections.emptyList());
     }
 
@@ -382,7 +387,7 @@ public class ContentfulUtils {
     static LocalDate createEventLocalDate(String zonedDateTimeString) {
         return ZonedDateTime.ofInstant(
                 ZonedDateTime.parse(zonedDateTimeString).toInstant(),
-                ZoneId.of(DateTimeUtils.EVENTS_ZONE_ID))
+                ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE))
                 .toLocalDate();
     }
 
@@ -1070,11 +1075,13 @@ public class ContentfulUtils {
     static Event fixNonexistentEventError(Conference conference, LocalDate startDate) {
         if (Conference.DOT_NEXT.equals(conference) && LocalDate.of(2016, 12, 7).equals(startDate)) {
             return new Event(
-                    -1L,
+                    new Nameable(
+                            -1L,
+                            extractLocaleItems(
+                                    "DotNext 2016 Helsinki",
+                                    "DotNext 2016 Хельсинки")
+                    ),
                     null,
-                    extractLocaleItems(
-                            "DotNext 2016 Helsinki",
-                            "DotNext 2016 Хельсинки"),
                     new Event.EventDates(
                             LocalDate.of(2016, 12, 7),
                             LocalDate.of(2016, 12, 7)
@@ -1094,6 +1101,7 @@ public class ContentfulUtils {
                                     "Microsoft Talo, Keilalahdentie 2-4, 02150 Espoo",
                                     null),
                             "60.1704769, 24.8279349"),
+                    "Europe/Helsinki",
                     Collections.emptyList());
         } else {
             return null;
@@ -1361,7 +1369,9 @@ public class ContentfulUtils {
                 equals(a.getTwitterLink(), b.getTwitterLink()) &&
                 equals(a.getFacebookLink(), b.getFacebookLink()) &&
                 equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
-                equals(a.getTelegramLink(), b.getTelegramLink()));
+                equals(a.getTelegramLink(), b.getTelegramLink()) &&
+                equals(a.getOrganizer(), b.getOrganizer()) &&
+                equals(a.getTimeZone(), b.getTimeZone()));
     }
 
     /**
@@ -1435,7 +1445,8 @@ public class ContentfulUtils {
                 equals(a.getSiteLink(), b.getSiteLink()) &&
                 equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
                 (a.getPlaceId() == b.getPlaceId()) &&
-                equals(a.getTalkIds(), b.getTalkIds()));
+                equals(a.getTalkIds(), b.getTalkIds()) &&
+                equals(a.getTimeZone(), b.getTimeZone()));
     }
 
     /**

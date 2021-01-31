@@ -13,7 +13,7 @@ public interface EventService {
 
     List<Event> getEvents(boolean isConferences, boolean isMeetups, Long eventTypeId);
 
-    Event getDefaultEvent();
+    Event getDefaultEvent(boolean isConferences, boolean isMeetups);
 
     Event getEventByTalk(Talk talk);
 }

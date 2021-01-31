@@ -127,17 +127,63 @@ class EventControllerTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void getDefaultEvent(Event defaultEvent) throws Exception {
+        void getDefaultConference(Event defaultEvent) throws Exception {
+            final boolean IS_CONFERENCES = Boolean.TRUE;
+            final boolean IS_MEETUPS = Boolean.TRUE;
+
             MockHttpSession httpSession = new MockHttpSession();
 
-            given(eventService.getDefaultEvent()).willReturn(defaultEvent);
+            given(eventService.getDefaultEvent(IS_CONFERENCES, IS_MEETUPS)).willReturn(defaultEvent);
             given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
 
             mvc.perform(get("/api/event/default-event")
                     .contentType(MediaType.APPLICATION_JSON)
                     .session(httpSession))
                     .andExpect(status().isOk());
-            Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent();
+            Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
+            Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
+            Mockito.reset(eventService, localeService);
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getDefaultConference method tests")
+    class GetDefaultConferenceTest {
+        private Stream<Arguments> data() {
+            Organizer organizer0 = new Organizer();
+            organizer0.setId(0);
+
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
+            eventType0.setOrganizer(organizer0);
+
+            Event event0 = new Event();
+            event0.setId(0);
+            event0.setEventType(eventType0);
+
+            return Stream.of(
+                    arguments(new Object[]{null}),
+                    arguments(event0)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getDefaultConference(Event defaultEvent) throws Exception {
+            final boolean IS_CONFERENCES = Boolean.TRUE;
+            final boolean IS_MEETUPS = Boolean.FALSE;
+
+            MockHttpSession httpSession = new MockHttpSession();
+
+            given(eventService.getDefaultEvent(IS_CONFERENCES, IS_MEETUPS)).willReturn(defaultEvent);
+            given(localeService.getLanguage(httpSession)).willReturn(Language.ENGLISH);
+
+            mvc.perform(get("/api/event/default-conference")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .session(httpSession))
+                    .andExpect(status().isOk());
+            Mockito.verify(eventService, VerificationModeFactory.times(1)).getDefaultEvent(IS_CONFERENCES, IS_MEETUPS);
             Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
             Mockito.reset(eventService, localeService);
         }

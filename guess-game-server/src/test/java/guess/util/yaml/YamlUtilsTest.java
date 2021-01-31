@@ -104,6 +104,63 @@ class YamlUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("checkAndFillTimeZones method tests")
+    class CheckAndFillTimeZonesTest {
+        EventType createEventType(long id) {
+            EventType eventType = new EventType();
+
+            eventType.setId(id);
+            if (id == 0) {
+                eventType.setTimeZone("Europe/Moscow");
+            }
+
+            return eventType;
+        }
+
+        Event createEvent(long id) {
+            Event event = new Event();
+
+            event.setId(id);
+            if (id == 0) {
+                event.setTimeZone("Europe/Moscow");
+            }
+
+            return event;
+        }
+
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(Collections.emptyList(), Collections.emptyList(), null),
+                    arguments(List.of(createEventType(0)), List.of(createEvent(0)), null),
+                    arguments(List.of(createEventType(0)), List.of(createEvent(1)), null),
+                    arguments(List.of(createEventType(0)), List.of(createEvent(0), createEvent(1)), null),
+                    arguments(List.of(createEventType(1)), List.of(createEvent(0)), NullPointerException.class),
+                    arguments(List.of(createEventType(1)), List.of(createEvent(1)), NullPointerException.class),
+                    arguments(List.of(createEventType(1)), List.of(createEvent(0), createEvent(1)), NullPointerException.class)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void checkAndFillTimeZones(List<EventType> eventTypes, List<Event> events, Class<? extends Exception> expected) {
+            if (expected == null) {
+                eventTypes.forEach(et -> assertNull(et.getTimeZoneId()));
+                events.forEach(e -> assertNull(e.getTimeZoneId()));
+
+                assertDoesNotThrow(() -> YamlUtils.checkAndFillTimeZones(eventTypes, events));
+
+                eventTypes.forEach(et -> assertNotNull(et.getTimeZoneId()));
+                events.forEach(e -> assertTrue(
+                        ((e.getTimeZone() == null) && (e.getTimeZoneId() == null)) ||
+                                ((e.getTimeZone() != null) && (e.getTimeZoneId() != null))));
+            } else {
+                assertThrows(expected, () -> YamlUtils.checkAndFillTimeZones(eventTypes, events));
+            }
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("linkEventTypesToOrganizers method tests")
     class LinkEventTypesToOrganizersTest {
         private Stream<Arguments> data() {

@@ -17,6 +17,7 @@ import org.yaml.snakeyaml.nodes.Tag;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
@@ -110,6 +111,8 @@ public class YamlUtils {
         Map<Long, Speaker> speakerMap = listToMap(speakers, Speaker::getId);
         Map<Long, Talk> talkMap = listToMap(talks, Talk::getId);
 
+        checkAndFillTimeZones(eventTypes, events);
+
         // Set event identifiers
         setEventIds(events);
 
@@ -137,6 +140,27 @@ public class YamlUtils {
                         speakers
                 ),
                 talks);
+    }
+
+    /**
+     * Checks and fills time zone
+     *
+     * @param eventTypes event types
+     * @param events     events
+     */
+    static void checkAndFillTimeZones(List<EventType> eventTypes, List<Event> events) {
+        for (EventType eventType : eventTypes) {
+            Objects.requireNonNull(eventType.getTimeZone(),
+                    () -> String.format("Empty time zone for event type with id %d", eventType.getId()));
+
+            eventType.setTimeZoneId(ZoneId.of(eventType.getTimeZone()));
+        }
+
+        for (Event event : events) {
+            if (event.getTimeZone() != null) {
+                event.setTimeZoneId(ZoneId.of(event.getTimeZone()));
+            }
+        }
     }
 
     /**
@@ -351,12 +375,13 @@ public class YamlUtils {
             List<PropertyMatcher> propertyMatchers = List.of(
                     new PropertyMatcher(EventType.class,
                             List.of("id", "conference", "logoFileName", "name", "shortDescription", "longDescription",
-                                    "siteLink", "vkLink", "twitterLink", "facebookLink", "youtubeLink", "telegramLink")),
+                                    "siteLink", "vkLink", "twitterLink", "facebookLink", "youtubeLink", "telegramLink",
+                                    "timeZone")),
                     new PropertyMatcher(Place.class,
                             List.of("id", "city", "venueAddress", "mapCoordinates")),
                     new PropertyMatcher(Event.class,
                             List.of("eventTypeId", "name", "startDate", "endDate", "siteLink", "youtubeLink", "placeId",
-                                    "talkIds")),
+                                    "timeZone", "talkIds")),
                     new PropertyMatcher(Talk.class,
                             List.of("id", "name", "shortDescription", "longDescription", "talkDay", "trackTime", "track",
                                     "language", "presentationLinks", "videoLinks", "speakerIds")),

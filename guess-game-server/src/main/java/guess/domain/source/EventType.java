@@ -2,6 +2,7 @@ package guess.domain.source;
 
 import guess.domain.Conference;
 
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,16 @@ public class EventType extends Descriptionable {
         }
     }
 
+    public static class EventTypeAttributes {
+        private final boolean inactive;
+        private final String timeZone;
+
+        public EventTypeAttributes(boolean inactive, String timeZone) {
+            this.inactive = inactive;
+            this.timeZone = timeZone;
+        }
+    }
+
     private Conference conference;
 
     private List<LocaleItem> siteLink;
@@ -42,11 +53,14 @@ public class EventType extends Descriptionable {
     private long organizerId;
     private Organizer organizer;
 
+    private String timeZone;
+    private ZoneId timeZoneId;
+
     public EventType() {
     }
 
     public EventType(Descriptionable descriptionable, Conference conference, String logoFileName, EventTypeLinks links, List<Event> events,
-                     boolean inactive, Organizer organizer) {
+                     Organizer organizer, EventTypeAttributes attributes) {
         super(descriptionable.getId(), descriptionable.getName(), descriptionable.getShortDescription(), descriptionable.getLongDescription());
 
         this.conference = conference;
@@ -58,9 +72,13 @@ public class EventType extends Descriptionable {
         this.telegramLink = links.telegramLink;
         this.logoFileName = logoFileName;
         this.events = events;
-        this.inactive = inactive;
+        this.inactive = attributes.inactive;
+
         this.organizer = organizer;
         this.organizerId = organizer.getId();
+
+        this.timeZone = attributes.timeZone;
+        this.timeZoneId = (timeZone != null) ? ZoneId.of(timeZone) : null;
     }
 
     public Conference getConference() {
@@ -157,6 +175,22 @@ public class EventType extends Descriptionable {
 
     public void setOrganizer(Organizer organizer) {
         this.organizer = organizer;
+    }
+
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    public ZoneId getTimeZoneId() {
+        return timeZoneId;
+    }
+
+    public void setTimeZoneId(ZoneId timeZoneId) {
+        this.timeZoneId = timeZoneId;
     }
 
     public boolean isEventTypeConference() {

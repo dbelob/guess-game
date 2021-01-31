@@ -1,8 +1,7 @@
 package guess.domain.source;
 
-import guess.domain.Identifier;
-
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,7 +10,7 @@ import java.util.stream.Collectors;
 /**
  * Event.
  */
-public class Event extends Identifier {
+public class Event extends Nameable {
     public static class EventDates {
         private final LocalDate startDate;
         private final LocalDate endDate;
@@ -35,7 +34,6 @@ public class Event extends Identifier {
     private long eventTypeId;
     private EventType eventType;
 
-    private List<LocaleItem> name;
     private LocalDate startDate;
     private LocalDate endDate;
     private List<LocaleItem> siteLink;
@@ -44,18 +42,20 @@ public class Event extends Identifier {
     private long placeId;
     private Place place;
 
+    private String timeZone;
+    private ZoneId timeZoneId;
+
     private List<Long> talkIds;
     private List<Talk> talks = new ArrayList<>();
 
     public Event() {
     }
 
-    public Event(long id, EventType eventType, List<LocaleItem> name, EventDates dates, EventLinks links, Place place,
+    public Event(Nameable nameable, EventType eventType, EventDates dates, EventLinks links, Place place, String timeZone,
                  List<Talk> talks) {
-        super(id);
+        super(nameable.getId(), nameable.getName());
 
         this.eventType = eventType;
-        this.name = name;
         this.startDate = dates.startDate;
         this.endDate = dates.endDate;
         this.siteLink = links.siteLink;
@@ -63,6 +63,9 @@ public class Event extends Identifier {
 
         this.place = place;
         this.placeId = place.getId();
+
+        this.timeZone = timeZone;
+        this.timeZoneId = (timeZone != null) ? ZoneId.of(timeZone) : null;
 
         this.talks = talks;
         this.talkIds = talks.stream()
@@ -84,14 +87,6 @@ public class Event extends Identifier {
 
     public void setEventType(EventType eventType) {
         this.eventType = eventType;
-    }
-
-    public List<LocaleItem> getName() {
-        return name;
-    }
-
-    public void setName(List<LocaleItem> name) {
-        this.name = name;
     }
 
     public LocalDate getStartDate() {
@@ -142,6 +137,22 @@ public class Event extends Identifier {
         this.place = place;
     }
 
+    public String getTimeZone() {
+        return timeZone;
+    }
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    public ZoneId getTimeZoneId() {
+        return timeZoneId;
+    }
+
+    public void setTimeZoneId(ZoneId timeZoneId) {
+        this.timeZoneId = timeZoneId;
+    }
+
     public List<Long> getTalkIds() {
         return talkIds;
     }
@@ -177,7 +188,7 @@ public class Event extends Identifier {
         return "Event{" +
                 "id=" + getId() +
                 ", eventType=" + eventType +
-                ", name=" + name +
+                ", name=" + getName() +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", place=" + place +

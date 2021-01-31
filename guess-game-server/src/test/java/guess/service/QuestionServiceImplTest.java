@@ -5,9 +5,7 @@ import guess.dao.EventTypeDao;
 import guess.dao.QuestionDao;
 import guess.domain.Conference;
 import guess.domain.GuessMode;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.Place;
+import guess.domain.source.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -81,11 +79,20 @@ class QuestionServiceImplTest {
 
     @Test
     void getEvents() {
+        Organizer organizer = new Organizer();
+        organizer.setId(-1L);
+
+        EventType eventType = new EventType();
+        eventType.setId(-1L);
+        eventType.setOrganizer(organizer);
+
         final List<Event> ALL_EVENTS_OPTION_EVENTS = Collections.singletonList(
                 new Event(
-                        -1L,
-                        null,
-                        Collections.emptyList(),
+                        new Nameable(
+                                -1L,
+                                Collections.emptyList()
+                        ),
+                        eventType,
                         new Event.EventDates(
                                 null,
                                 null
@@ -100,6 +107,7 @@ class QuestionServiceImplTest {
                                 null,
                                 null
                         ),
+                        null,
                         Collections.emptyList()
                 )
         );

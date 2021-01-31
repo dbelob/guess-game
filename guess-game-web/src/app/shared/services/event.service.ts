@@ -44,6 +44,16 @@ export class EventService {
       );
   }
 
+  getDefaultConference(): Observable<Event> {
+    return this.http.get<Event>(`${this.baseUrl}/default-conference`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
   getEvent(id: number): Observable<EventDetails> {
     return this.http.get<EventDetails>(`${this.baseUrl}/event/${id}`)
       .pipe(

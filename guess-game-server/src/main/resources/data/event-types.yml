@@ -32,6 +32,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/cppugrussia/
     youtubeLink: https://www.youtube.com/channel/UCJ9v015sPgEi0jJXe_zanjA
     telegramLink: https://t.me/cpprussia
+    timeZone: Europe/Moscow
   - id: 1
     conference: DEV_OOPS
     logoFileName: devoops.jpg
@@ -76,6 +77,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/devoopsconf
     youtubeLink: https://www.youtube.com/channel/UCjnQreLMbpKsfJwDnHGZLxg
     telegramLink: https://t.me/devOopsconf
+    timeZone: Europe/Moscow
   - id: 2
     conference: DOT_NEXT
     logoFileName: dotnext.jpg
@@ -110,6 +112,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/dotnextconf/
     youtubeLink: https://www.youtube.com/channel/UCNPwMPudMEw-gnAT4zh_UZg
     telegramLink: https://t.me/dotnextconf
+    timeZone: Europe/Moscow
   - id: 3
     conference: HEISENBUG
     logoFileName: heisenbug.jpg
@@ -147,6 +150,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/heisenbugconf/
     youtubeLink: https://www.youtube.com/channel/UCX6fjZa167tSy_4ryTLcOBw
     telegramLink: https://t.me/heisenbugconf
+    timeZone: Europe/Moscow
   - id: 4
     conference: HOLY_JS
     logoFileName: holyjs.jpg
@@ -181,6 +185,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/holyjs/
     youtubeLink: https://www.youtube.com/channel/UC2Jwo4Q0s-ucjGseHP8XUSQ
     telegramLink: https://t.me/holyjsconf
+    timeZone: Europe/Moscow
   - id: 5
     conference: HYDRA
     logoFileName: hydra.jpg
@@ -220,6 +225,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/hydraconf
     youtubeLink: https://www.youtube.com/channel/UCcwI0q9tsGZYZDvz5mLsXZA/featured
     telegramLink: https://t.me/hydraconf
+    timeZone: Europe/Moscow
   - id: 6
     conference: JBREAK
     logoFileName: jbreak.jpg
@@ -249,6 +255,7 @@ eventTypes:
     youtubeLink: https://www.youtube.com/channel/UCYrGYT7BswsJGkmG7-IAF8g
     telegramLink: https://telegram.me/jbreak
     inactive: true
+    timeZone: Europe/Moscow
   - id: 8
     conference: JOKER
     logoFileName: jokerconf.jpg
@@ -286,6 +293,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/jokerconf
     youtubeLink: https://www.youtube.com/user/JUGRuVideo
     telegramLink: https://t.me/jokerconf
+    timeZone: Europe/Moscow
   - id: 7
     conference: JPOINT
     logoFileName: jpoint.jpg
@@ -322,6 +330,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/jpointconf/
     youtubeLink: https://www.youtube.com/user/JUGRuVideo/
     telegramLink: https://telegram.me/jpointconf
+    timeZone: Europe/Moscow
   - id: 9
     conference: MOBIUS
     logoFileName: mobius.jpg
@@ -353,6 +362,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/mobiusconf/
     youtubeLink: https://www.youtube.com/c/MobiusConf
     telegramLink: https://t.me/mobiusconf
+    timeZone: Europe/Moscow
   - id: 11
     conference: SMART_DATA
     logoFileName: smartdata.jpg
@@ -377,6 +387,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/smartdataconf
     youtubeLink: https://www.youtube.com/channel/UCfCOJWNC_ipu34-LVvPUeCg
     telegramLink: https://t.me/smartdataconf
+    timeZone: Europe/Moscow
   - id: 10
     conference: SPTDC
     logoFileName: sptdc.jpg
@@ -391,6 +402,7 @@ eventTypes:
             \ systems given by renowned experts in the field."}
     siteLink:
       - {language: en, text: "https://sptdc.ru/"}
+    timeZone: Europe/Moscow
   - id: 12
     conference: TECH_TRAIN
     logoFileName: techtrain.jpg
@@ -430,6 +442,7 @@ eventTypes:
     facebookLink: https://www.facebook.com/techtrainfest/
     youtubeLink: https://www.youtube.com/channel/UCJoerW5eDOz5qu7I2CYi7xg
     telegramLink: https://t.me/techtrainfest
+    timeZone: Europe/Moscow
   - id: 13
     logoFileName: jugmsk.jpg
     organizerId: 1
@@ -445,6 +458,7 @@ eventTypes:
     vkLink: https://vk.com/jugmsk
     twitterLink: https://twitter.com/mskjug
     youtubeLink: https://www.youtube.com/playlist?list=PLojTLDAO4jjIRjDPIQjc4iG7CfR6m8pfc
+    timeZone: Europe/Moscow
   - id: 14
     logoFileName: jugru.jpg
     organizerId: 0
@@ -460,6 +474,7 @@ eventTypes:
     vkLink: https://vk.com/jugru
     twitterLink: https://twitter.com/jugru
     youtubeLink: https://www.youtube.com/channel/UCYrGYT7BswsJGkmG7-IAF8g
+    timeZone: Europe/Moscow
   - id: 15
     logoFileName: jugnsk.jpg
     organizerId: 2
@@ -476,6 +491,7 @@ eventTypes:
     twitterLink: https://twitter.com/jugnsk
     youtubeLink: https://www.youtube.com/c/JUGNsk
     telegramLink: https://t.me/jugnsk
+    timeZone: Asia/Novosibirsk
   - id: 16
     conference: SNOW_ONE
     logoFileName: snowone.jpg
@@ -497,3 +513,4 @@ eventTypes:
       - {language: ru, text: "https://snowone.ru/ru"}
     twitterLink: https://twitter.com/snowone_conf
     youtubeLink: https://www.youtube.com/c/JUGNsk
+    timeZone: Asia/Novosibirsk
