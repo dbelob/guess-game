@@ -6,7 +6,7 @@ import guess.util.yaml.YamlUtils;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -78,9 +78,27 @@ public class SourceDaoImpl implements SourceDao {
     }
 
     @Override
+    //TODO: delete
     public List<Event> getEventsFromDate(LocalDate date) {
         return sourceInformation.getEvents().stream()
                 .filter(e -> !date.isAfter(e.getEndDate()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Event> getEventsFromDateTime(LocalDateTime dateTime) {
+        return sourceInformation.getEvents().stream()
+                .filter(e -> {
+                    LocalDateTime eventUtcEndLocalDateTime = ZonedDateTime.ofInstant(
+                            ZonedDateTime.of(
+                                    e.getEndDate(),
+                                    LocalTime.of(0, 0, 0),
+                                    e.getFinalTimeZoneId()).toInstant(),
+                            ZoneId.of("UTC"))
+                            .toLocalDateTime();
+
+                    return !dateTime.isAfter(eventUtcEndLocalDateTime);
+                })
                 .collect(Collectors.toList());
     }
 

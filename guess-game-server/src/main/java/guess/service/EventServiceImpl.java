@@ -50,6 +50,39 @@ public class EventServiceImpl implements EventService {
         return getDefaultEvent(isConferences, isMeetups, LocalDateTime.now(ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE)));
     }
 
+    @Override
+    //TODO: rename
+    public Event getDefaultEvent2(boolean isConferences, boolean isMeetups) {
+        return getDefaultEvent2(isConferences, isMeetups, LocalDateTime.now(ZoneId.of("UTC")));
+    }
+
+    List<Event> getConferencesFromDate(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
+        // Find current and future events
+        List<Event> eventsFromDate = eventDao.getEventsFromDateTime(dateTime);
+
+        // Select conferences only
+        return eventsFromDate.stream()
+                .filter(e -> ((isConferences && e.getEventType().isEventTypeConference()) || (isMeetups && !e.getEventType().isEventTypeConference())))
+                .collect(Collectors.toList());
+    }
+
+    //TODO: rename
+    Event getDefaultEvent2(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
+        LocalDate date = dateTime.toLocalDate();
+        LocalTime time = dateTime.toLocalTime();
+
+        // Find current and future conferences
+        List<Event> conferencesFromDate = getConferencesFromDate(isConferences, isMeetups, dateTime);
+        if (conferencesFromDate.isEmpty()) {
+            // Conferences not exist
+            return null;
+        }
+
+        //TODO: implement
+
+        return null;
+    }
+
     Event getDefaultEvent(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
         LocalDate date = dateTime.toLocalDate();
         LocalTime time = dateTime.toLocalTime();

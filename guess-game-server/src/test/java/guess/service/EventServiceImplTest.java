@@ -316,7 +316,7 @@ class EventServiceImplTest {
             EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
             EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class, Mockito.withSettings().useConstructor(eventDao, eventTypeDao));
 
-            Mockito.when(eventDao.getEventsFromDate(Mockito.any())).thenReturn(events);
+            Mockito.when(eventDao.getEventsFromDate(Mockito.any(LocalDate.class))).thenReturn(events);
 
             Mockito.doCallRealMethod().when(eventService).getDefaultEvent(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any());
             Mockito.when(eventService.getConferenceDateMinTrackTimeList(Mockito.any())).thenReturn(eventDateMinTrackTimeList);
