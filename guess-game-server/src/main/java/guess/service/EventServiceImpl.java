@@ -2,7 +2,8 @@ package guess.service;
 
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
-import guess.domain.EventDateMinTrackTime;
+import guess.domain.auxiliary.EventDateMinTrackTime;
+import guess.domain.auxiliary.EventMinTrackTimeEndDayTime;
 import guess.domain.source.Event;
 import guess.domain.source.Talk;
 import guess.util.DateTimeUtils;
@@ -78,6 +79,15 @@ public class EventServiceImpl implements EventService {
             return null;
         }
 
+        // Find (event, date, minimal track time) items
+        List<EventDateMinTrackTime> eventDateMinTrackTimeList = getEventDateMinTrackTimeList(conferencesFromDate);
+        if (eventDateMinTrackTimeList.isEmpty()) {
+            return null;
+        }
+
+        //Transform to (event, minimal track time, end date time) items
+        List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeList = getEventMinTrackTimeEndDayTimeList(eventDateMinTrackTimeList);
+
         //TODO: implement
 
         return null;
@@ -100,7 +110,7 @@ public class EventServiceImpl implements EventService {
         }
 
         // Find (event, date, minimal track time) items
-        List<EventDateMinTrackTime> eventDateMinTrackTimeList = getConferenceDateMinTrackTimeList(conferencesFromDate);
+        List<EventDateMinTrackTime> eventDateMinTrackTimeList = getEventDateMinTrackTimeList(conferencesFromDate);
         if (eventDateMinTrackTimeList.isEmpty()) {
             return null;
         }
@@ -143,7 +153,7 @@ public class EventServiceImpl implements EventService {
      * @param events events
      * @return list of (event, date, minimal track time) items
      */
-    List<EventDateMinTrackTime> getConferenceDateMinTrackTimeList(List<Event> events) {
+    List<EventDateMinTrackTime> getEventDateMinTrackTimeList(List<Event> events) {
         List<EventDateMinTrackTime> result = new ArrayList<>();
         Map<Event, Map<Long, Optional<LocalTime>>> minTrackTimeInTalkDaysForConferences = new LinkedHashMap<>();
 
@@ -192,6 +202,17 @@ public class EventServiceImpl implements EventService {
         }
 
         return result;
+    }
+
+    /**
+     * Gets list of (event, minimal track time, end date time) items.
+     *
+     * @param eventDateMinTrackTimeList list of (event, date, minimal track time) items
+     * @return list of (event, minimal track time, end date time) items
+     */
+    List<EventMinTrackTimeEndDayTime> getEventMinTrackTimeEndDayTimeList(List<EventDateMinTrackTime> eventDateMinTrackTimeList) {
+        //TODO: implement
+        return Collections.emptyList();
     }
 
     @Override

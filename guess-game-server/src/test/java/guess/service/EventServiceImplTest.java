@@ -3,7 +3,7 @@ package guess.service;
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
 import guess.domain.Conference;
-import guess.domain.EventDateMinTrackTime;
+import guess.domain.auxiliary.EventDateMinTrackTime;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Talk;
@@ -319,7 +319,7 @@ class EventServiceImplTest {
             Mockito.when(eventDao.getEventsFromDate(Mockito.any(LocalDate.class))).thenReturn(events);
 
             Mockito.doCallRealMethod().when(eventService).getDefaultEvent(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any());
-            Mockito.when(eventService.getConferenceDateMinTrackTimeList(Mockito.any())).thenReturn(eventDateMinTrackTimeList);
+            Mockito.when(eventService.getEventDateMinTrackTimeList(Mockito.any())).thenReturn(eventDateMinTrackTimeList);
 
             assertEquals(expected, eventService.getDefaultEvent(isConferences, isMeetups, dateTime));
         }
@@ -327,8 +327,8 @@ class EventServiceImplTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("getConferenceDateMinTrackTimeList method tests")
-    class GetConferenceDateMinTrackTimeListTest {
+    @DisplayName("getEventDateMinTrackTimeList method tests")
+    class GetEventDateMinTrackTimeListTest {
         private Stream<Arguments> data() {
             EventDateMinTrackTime eventDateMinTrackTime0 = new EventDateMinTrackTime(
                     event0,
@@ -371,7 +371,7 @@ class EventServiceImplTest {
             EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
             EventServiceImpl eventService = new EventServiceImpl(eventDao, eventTypeDao);
 
-            assertEquals(expected, eventService.getConferenceDateMinTrackTimeList(events));
+            assertEquals(expected, eventService.getEventDateMinTrackTimeList(events));
         }
     }
 
