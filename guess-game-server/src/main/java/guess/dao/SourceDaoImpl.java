@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -89,15 +90,17 @@ public class SourceDaoImpl implements SourceDao {
     public List<Event> getEventsFromDateTime(LocalDateTime dateTime) {
         return sourceInformation.getEvents().stream()
                 .filter(e -> {
+                    ZonedDateTime zonedEndDateTime = ZonedDateTime.of(
+                            e.getEndDate(),
+                            LocalTime.of(0, 0, 0),
+                            e.getFinalTimeZoneId());
+                    ZonedDateTime zonedNextDayEndDateTime = zonedEndDateTime.plus(1, ChronoUnit.DAYS);
                     LocalDateTime eventUtcEndLocalDateTime = ZonedDateTime.ofInstant(
-                            ZonedDateTime.of(
-                                    e.getEndDate(),
-                                    LocalTime.of(0, 0, 0),
-                                    e.getFinalTimeZoneId()).toInstant(),
+                            zonedNextDayEndDateTime.toInstant(),
                             ZoneId.of("UTC"))
                             .toLocalDateTime();
 
-                    return !dateTime.isAfter(eventUtcEndLocalDateTime);
+                    return (eventUtcEndLocalDateTime.isAfter(dateTime) || eventUtcEndLocalDateTime.isEqual(dateTime));
                 })
                 .collect(Collectors.toList());
     }
