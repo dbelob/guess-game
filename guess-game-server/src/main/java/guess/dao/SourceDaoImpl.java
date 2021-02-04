@@ -95,9 +95,8 @@ public class SourceDaoImpl implements SourceDao {
                             LocalTime.of(0, 0, 0),
                             e.getFinalTimeZoneId());
                     ZonedDateTime zonedNextDayEndDateTime = zonedEndDateTime.plus(1, ChronoUnit.DAYS);
-                    LocalDateTime eventUtcEndLocalDateTime = ZonedDateTime.ofInstant(
-                            zonedNextDayEndDateTime.toInstant(),
-                            ZoneId.of("UTC"))
+                    LocalDateTime eventUtcEndLocalDateTime = zonedNextDayEndDateTime
+                            .withZoneSameInstant(ZoneId.of("UTC"))
                             .toLocalDateTime();
 
                     return dateTime.isBefore(eventUtcEndLocalDateTime);

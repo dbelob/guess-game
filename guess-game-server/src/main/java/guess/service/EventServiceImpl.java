@@ -10,10 +10,7 @@ import guess.util.DateTimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -211,8 +208,28 @@ public class EventServiceImpl implements EventService {
      * @return list of (event, minimal track time, end date time) items
      */
     List<EventMinTrackTimeEndDayTime> getEventMinTrackTimeEndDayTimeList(List<EventDateMinTrackTime> eventDateMinTrackTimeList) {
-        //TODO: implement
-        return Collections.emptyList();
+        return eventDateMinTrackTimeList.stream()
+                .map(edt -> {
+                    LocalDateTime minTrackDateTime = ZonedDateTime.of(
+                            edt.getDate(),
+                            edt.getMinTrackTime(),
+                            edt.getEvent().getFinalTimeZoneId())
+                            .withZoneSameInstant(ZoneId.of("UTC"))
+                            .toLocalDateTime();
+                    LocalDateTime endDayDateTime = ZonedDateTime.of(
+                            edt.getDate().plus(1, ChronoUnit.DAYS),
+                            LocalTime.of(0, 0, 0),
+                            edt.getEvent().getFinalTimeZoneId())
+                            .withZoneSameInstant(ZoneId.of("UTC"))
+                            .toLocalDateTime();
+
+                    return new EventMinTrackTimeEndDayTime(
+                            edt.getEvent(),
+                            minTrackDateTime,
+                            endDayDateTime
+                    );
+                })
+                .collect(Collectors.toList());
     }
 
     @Override

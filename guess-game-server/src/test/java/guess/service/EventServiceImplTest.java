@@ -4,6 +4,7 @@ import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
 import guess.domain.Conference;
 import guess.domain.auxiliary.EventDateMinTrackTime;
+import guess.domain.auxiliary.EventMinTrackTimeEndDayTime;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.Talk;
@@ -19,6 +20,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Collections;
 import java.util.List;
@@ -373,6 +375,61 @@ class EventServiceImplTest {
 
             assertEquals(expected, eventService.getEventDateMinTrackTimeList(events));
         }
+    }
+
+    @Test
+    void getEventMinTrackTimeEndDayTimeList() {
+        Event event0 = new Event();
+        event0.setId(0);
+        event0.setTimeZoneId(ZoneId.of("Europe/Moscow"));
+
+        Event event1 = new Event();
+        event1.setId(1);
+        event1.setTimeZoneId(ZoneId.of("Asia/Novosibirsk"));
+
+        EventDateMinTrackTime eventDateMinTrackTime0 = new EventDateMinTrackTime(
+                event0,
+                LocalDate.of(2021, 2, 4),
+                LocalTime.of(15, 0)
+        );
+
+        EventDateMinTrackTime eventDateMinTrackTime1 = new EventDateMinTrackTime(
+                event1,
+                LocalDate.of(2021, 2, 4),
+                LocalTime.of(15, 0)
+        );
+
+        EventDateMinTrackTime eventDateMinTrackTime2 = new EventDateMinTrackTime(
+                event0,
+                LocalDate.of(2021, 2, 4),
+                LocalTime.of(0, 0)
+        );
+
+        EventMinTrackTimeEndDayTime eventMinTrackTimeEndDayTime0 = new EventMinTrackTimeEndDayTime(
+                event0,
+                LocalDateTime.of(2021, 2, 4, 12, 0),
+                LocalDateTime.of(2021, 2, 4, 21, 0)
+        );
+
+        EventMinTrackTimeEndDayTime eventMinTrackTimeEndDayTime1 = new EventMinTrackTimeEndDayTime(
+                event1,
+                LocalDateTime.of(2021, 2, 4, 8, 0),
+                LocalDateTime.of(2021, 2, 4, 17, 0)
+        );
+
+        EventMinTrackTimeEndDayTime eventMinTrackTimeEndDayTime2 = new EventMinTrackTimeEndDayTime(
+                event0,
+                LocalDateTime.of(2021, 2, 3, 21, 0),
+                LocalDateTime.of(2021, 2, 4, 21, 0)
+        );
+
+        EventDao eventDao = Mockito.mock(EventDao.class);
+        EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+        EventServiceImpl eventService = new EventServiceImpl(eventDao, eventTypeDao);
+
+        assertEquals(
+                List.of(eventMinTrackTimeEndDayTime0, eventMinTrackTimeEndDayTime1, eventMinTrackTimeEndDayTime2),
+                eventService.getEventMinTrackTimeEndDayTimeList(List.of(eventDateMinTrackTime0, eventDateMinTrackTime1, eventDateMinTrackTime2)));
     }
 
     @Test

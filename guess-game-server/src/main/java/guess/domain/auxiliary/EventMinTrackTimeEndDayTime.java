@@ -2,7 +2,7 @@ package guess.domain.auxiliary;
 
 import guess.domain.source.Event;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
@@ -10,25 +10,25 @@ import java.util.Objects;
  */
 public class EventMinTrackTimeEndDayTime {
     private final Event event;
-    private final LocalTime minTrackTime;
-    private final LocalTime endDayTime;
+    private final LocalDateTime minTrackDateTime;
+    private final LocalDateTime endDayDateTime;
 
-    public EventMinTrackTimeEndDayTime(Event event, LocalTime minTrackTime, LocalTime endDayTime) {
+    public EventMinTrackTimeEndDayTime(Event event, LocalDateTime minTrackDateTime, LocalDateTime endDayDateTime) {
         this.event = event;
-        this.minTrackTime = minTrackTime;
-        this.endDayTime = endDayTime;
+        this.minTrackDateTime = minTrackDateTime;
+        this.endDayDateTime = endDayDateTime;
     }
 
     public Event getEvent() {
         return event;
     }
 
-    public LocalTime getMinTrackTime() {
-        return minTrackTime;
+    public LocalDateTime getMinTrackDateTime() {
+        return minTrackDateTime;
     }
 
-    public LocalTime getEndDayTime() {
-        return endDayTime;
+    public LocalDateTime getEndDayDateTime() {
+        return endDayDateTime;
     }
 
     @Override
@@ -36,20 +36,20 @@ public class EventMinTrackTimeEndDayTime {
         if (this == o) return true;
         if (!(o instanceof EventMinTrackTimeEndDayTime)) return false;
         EventMinTrackTimeEndDayTime that = (EventMinTrackTimeEndDayTime) o;
-        return Objects.equals(event, that.event) && Objects.equals(minTrackTime, that.minTrackTime) && Objects.equals(endDayTime, that.endDayTime);
+        return Objects.equals(event, that.event) && Objects.equals(minTrackDateTime, that.minTrackDateTime) && Objects.equals(endDayDateTime, that.endDayDateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(event, minTrackTime, endDayTime);
+        return Objects.hash(event, minTrackDateTime, endDayDateTime);
     }
 
     @Override
     public String toString() {
         return "EventMinTrackTimeEndDayTime{" +
                 "event=" + event +
-                ", minTrackTime=" + minTrackTime +
-                ", endDayTime=" + endDayTime +
+                ", minTrackDateTime=" + minTrackDateTime +
+                ", endDayDateTime=" + endDayDateTime +
                 '}';
     }
 }
