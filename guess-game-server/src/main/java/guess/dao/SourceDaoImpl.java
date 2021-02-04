@@ -100,7 +100,7 @@ public class SourceDaoImpl implements SourceDao {
                             ZoneId.of("UTC"))
                             .toLocalDateTime();
 
-                    return (eventUtcEndLocalDateTime.isAfter(dateTime) || eventUtcEndLocalDateTime.isEqual(dateTime));
+                    return dateTime.isBefore(eventUtcEndLocalDateTime);
                 })
                 .collect(Collectors.toList());
     }
