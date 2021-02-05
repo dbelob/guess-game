@@ -84,10 +84,40 @@ public class EventServiceImpl implements EventService {
 
         //Transform to (event, minimal track time, end date time) items
         List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeList = getEventMinTrackTimeEndDayTimeList(eventDateMinTrackTimeList);
+        if (eventMinTrackTimeEndDayTimeList.isEmpty()) {
+            return null;
+        }
 
-        //TODO: implement
+        // Find current and future event days, sort by minimal track date time and end day date time
+        List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeListFromDateOrdered = eventMinTrackTimeEndDayTimeList.stream()
+                .filter(edt -> dateTime.isBefore(edt.getEndDayDateTime()))
+                .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::getMinTrackDateTime).thenComparing(EventMinTrackTimeEndDayTime::getEndDayDateTime))
+                .collect(Collectors.toList());
+        if (eventMinTrackTimeEndDayTimeListFromDateOrdered.isEmpty()) {
+            return null;
+        }
 
-        return null;
+        // Find first date
+        LocalDateTime firstDateTime = eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).getMinTrackDateTime();
+
+        if (dateTime.isBefore(firstDateTime)) {
+            // No current day events, return nearest first event
+            return eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).getEvent();
+        } else {
+            // Current day events exist, find happened time, sort by reversed minimal track date time
+            List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeListOnCurrentDate = eventMinTrackTimeEndDayTimeListFromDateOrdered.stream()
+                    .filter(edt -> !dateTime.isBefore(edt.getMinTrackDateTime()) && dateTime.isBefore(edt.getEndDayDateTime()))
+                    .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::getMinTrackDateTime).reversed())
+                    .collect(Collectors.toList());
+
+            if (eventMinTrackTimeEndDayTimeListOnCurrentDate.isEmpty()) {
+                // No happened day events, return nearest first event
+                return eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).getEvent();
+            } else {
+                // Return nearest last event
+                return eventMinTrackTimeEndDayTimeListOnCurrentDate.get(0).getEvent();
+            }
+        }
     }
 
     Event getDefaultEvent(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
