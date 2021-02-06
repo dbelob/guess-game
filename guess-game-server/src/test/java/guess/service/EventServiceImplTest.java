@@ -252,6 +252,50 @@ class EventServiceImplTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getConferencesFromDate method tests")
+    class GetConferencesFromDateTest {
+        private Stream<Arguments> data() {
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
+            eventType0.setConference(Conference.JPOINT);
+
+            EventType eventType1 = new EventType();
+            eventType1.setId(1);
+
+            Event event0 = new Event();
+            event0.setId(0);
+            event0.setEventType(eventType0);
+
+            Event event1 = new Event();
+            event1.setId(1);
+            event1.setEventType(eventType1);
+
+            return Stream.of(
+                    arguments(false, false, null, List.of(event0, event1), Collections.emptyList()),
+                    arguments(false, true, null, List.of(event0, event1), List.of(event1)),
+                    arguments(true, false, null, List.of(event0, event1), List.of(event0)),
+                    arguments(true, true, null, List.of(event0, event1), List.of(event0, event1))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getConferencesFromDate(boolean isConferences, boolean isMeetups, LocalDateTime dateTime,
+                                    List<Event> eventsFromDate, List<Event> expected) {
+            EventDao eventDao = Mockito.mock(EventDao.class);
+            EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+            EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class, Mockito.withSettings().useConstructor(eventDao, eventTypeDao));
+
+            Mockito.when(eventDao.getEventsFromDateTime(Mockito.any())).thenReturn(eventsFromDate);
+
+            Mockito.doCallRealMethod().when(eventService).getConferencesFromDate(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any());
+
+            assertEquals(expected, eventService.getConferencesFromDate(isConferences, isMeetups, dateTime));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getDefaultEvent method tests")
     @Disabled
     class GetDefaultEventTest {
