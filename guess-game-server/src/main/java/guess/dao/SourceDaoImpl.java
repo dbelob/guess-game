@@ -6,7 +6,10 @@ import guess.util.yaml.YamlUtils;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
-import java.time.*;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -75,14 +78,6 @@ public class SourceDaoImpl implements SourceDao {
     public List<Event> getEventsByEventTypeId(long eventTypeId) {
         return sourceInformation.getEvents().stream()
                 .filter(e -> (e.getEventTypeId() == eventTypeId))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    //TODO: delete
-    public List<Event> getEventsFromDate(LocalDate date) {
-        return sourceInformation.getEvents().stream()
-                .filter(e -> !date.isAfter(e.getEndDate()))
                 .collect(Collectors.toList());
     }
 

@@ -253,6 +253,7 @@ class EventServiceImplTest {
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getDefaultEvent method tests")
+    @Disabled
     class GetDefaultEventTest {
         private Stream<Arguments> data() {
             LocalDateTime dateTime = LocalDateTime.of(2020, 10, 23, 9, 0);
@@ -318,7 +319,7 @@ class EventServiceImplTest {
             EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
             EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class, Mockito.withSettings().useConstructor(eventDao, eventTypeDao));
 
-            Mockito.when(eventDao.getEventsFromDate(Mockito.any(LocalDate.class))).thenReturn(events);
+            Mockito.when(eventDao.getEventsFromDateTime(Mockito.any(LocalDateTime.class))).thenReturn(events);
 
             Mockito.doCallRealMethod().when(eventService).getDefaultEvent(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any());
             Mockito.when(eventService.getEventDateMinTrackTimeList(Mockito.any())).thenReturn(eventDateMinTrackTimeList);

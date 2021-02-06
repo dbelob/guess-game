@@ -3,7 +3,6 @@ package guess.dao;
 import guess.domain.source.Event;
 import guess.domain.source.Talk;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -16,8 +15,6 @@ public interface EventDao {
     Event getEventById(long id);
 
     List<Event> getEventsByEventTypeId(long eventTypeId);
-
-    List<Event> getEventsFromDate(LocalDate date);
 
     List<Event> getEventsFromDateTime(LocalDateTime dateTime);
 

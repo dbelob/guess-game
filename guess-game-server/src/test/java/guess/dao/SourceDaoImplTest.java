@@ -241,14 +241,6 @@ class SourceDaoImplTest {
     }
 
     @Test
-    void getEventsFromDate() {
-        assertEquals(List.of(event0, event1, event2), sourceDao.getEventsFromDate(LocalDate.of(2020, 1, 1)));
-        assertEquals(List.of(event1, event2), sourceDao.getEventsFromDate(LocalDate.of(2020, 2, 2)));
-        assertEquals(List.of(event2), sourceDao.getEventsFromDate(LocalDate.of(2020, 3, 2)));
-        assertEquals(Collections.emptyList(), sourceDao.getEventsFromDate(LocalDate.of(2020, 4, 2)));
-    }
-
-    @Test
     void getEventsFromDateTime() {
         assertEquals(List.of(event0, event1, event2), sourceDao.getEventsFromDateTime(LocalDateTime.of(2020, 1, 1, 0, 0, 0)));
         assertEquals(List.of(event1, event2), sourceDao.getEventsFromDateTime(LocalDateTime.of(2020, 2, 2, 0, 0, 0)));

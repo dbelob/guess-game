@@ -15,7 +15,5 @@ public interface EventService {
 
     Event getDefaultEvent(boolean isConferences, boolean isMeetups);
 
-    Event getDefaultEvent2(boolean isConferences, boolean isMeetups);
-
     Event getEventByTalk(Talk talk);
 }
