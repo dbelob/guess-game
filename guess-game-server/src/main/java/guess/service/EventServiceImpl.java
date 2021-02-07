@@ -95,7 +95,7 @@ public class EventServiceImpl implements EventService {
         } else {
             // Current day events exist, find happened time, sort by reversed minimal track date time
             List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeListOnCurrentDate = eventMinTrackTimeEndDayTimeListFromDateOrdered.stream()
-                    .filter(edt -> !dateTime.isBefore(edt.getMinTrackDateTime()) && dateTime.isBefore(edt.getEndDayDateTime()))
+                    .filter(edt -> !dateTime.isBefore(edt.getMinTrackDateTime()))
                     .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::getMinTrackDateTime).reversed())
                     .collect(Collectors.toList());
 
