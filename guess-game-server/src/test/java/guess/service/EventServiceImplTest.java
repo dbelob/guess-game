@@ -252,8 +252,8 @@ class EventServiceImplTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("getConferencesFromDate method tests")
-    class GetConferencesFromDateTest {
+    @DisplayName("getEventsFromDateTime method tests")
+    class GetEventsFromDateTimeTest {
         private Stream<Arguments> data() {
             EventType eventType0 = new EventType();
             eventType0.setId(0);
@@ -280,93 +280,85 @@ class EventServiceImplTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void getConferencesFromDate(boolean isConferences, boolean isMeetups, LocalDateTime dateTime,
-                                    List<Event> eventsFromDate, List<Event> expected) {
+        void getEventsFromDateTime(boolean isConferences, boolean isMeetups, LocalDateTime dateTime,
+                                   List<Event> eventsFromDateTime, List<Event> expected) {
             EventDao eventDao = Mockito.mock(EventDao.class);
             EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
             EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class, Mockito.withSettings().useConstructor(eventDao, eventTypeDao));
 
-            Mockito.when(eventDao.getEventsFromDateTime(Mockito.any())).thenReturn(eventsFromDate);
+            Mockito.when(eventDao.getEventsFromDateTime(Mockito.any())).thenReturn(eventsFromDateTime);
 
-            Mockito.doCallRealMethod().when(eventService).getConferencesFromDate(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any());
+            Mockito.doCallRealMethod().when(eventService).getEventsFromDateTime(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any());
 
-            assertEquals(expected, eventService.getConferencesFromDate(isConferences, isMeetups, dateTime));
+            assertEquals(expected, eventService.getEventsFromDateTime(isConferences, isMeetups, dateTime));
         }
     }
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getDefaultEvent method tests")
-    @Disabled
     class GetDefaultEventTest {
         private Stream<Arguments> data() {
-            LocalDateTime dateTime = LocalDateTime.of(2020, 10, 23, 9, 0);
-            LocalDate date = dateTime.toLocalDate();
+            final boolean IS_CONFERENCES = Boolean.TRUE;
+            final boolean IS_MEETUPS = Boolean.TRUE;
+            final LocalDateTime DATE_TIME = LocalDateTime.of(2021, 2, 7, 10, 0);
+
+            Event event0 = new Event();
+            event0.setId(0);
+
+            Event event1 = new Event();
+            event1.setId(1);
 
             EventDateMinTrackTime eventDateMinTrackTime0 = new EventDateMinTrackTime(
                     event0,
-                    date.minus(1, ChronoUnit.DAYS),
-                    LocalTime.of(9, 0)
-            );
-
-            EventDateMinTrackTime eventDateMinTrackTime1 = new EventDateMinTrackTime(
-                    event0,
-                    date.plus(1, ChronoUnit.DAYS),
-                    LocalTime.of(9, 0)
-            );
-
-            EventDateMinTrackTime eventDateMinTrackTime2 = new EventDateMinTrackTime(
-                    event2,
-                    date,
-                    LocalTime.of(9, 0)
-            );
-
-            EventDateMinTrackTime eventDateMinTrackTime3 = new EventDateMinTrackTime(
-                    event0,
-                    date,
+                    LocalDate.of(2021, 2, 7),
                     LocalTime.of(10, 0)
             );
 
+            EventMinTrackTimeEndDayTime eventMinTrackTimeEndDayTime0 = new EventMinTrackTimeEndDayTime(
+                    event0,
+                    LocalDateTime.of(2021, 2, 7, 10, 0),
+                    LocalDateTime.of(2021, 2, 8, 0, 0)
+            );
+
+            EventMinTrackTimeEndDayTime eventMinTrackTimeEndDayTime1 = new EventMinTrackTimeEndDayTime(
+                    event1,
+                    LocalDateTime.of(2021, 2, 7, 12, 0),
+                    LocalDateTime.of(2021, 2, 8, 0, 0)
+            );
+
             return Stream.of(
-                    arguments(true, false, dateTime, Collections.emptyList(), null, null),
-                    arguments(true, false, dateTime, List.of(event1), null, null),
-                    arguments(true, false, dateTime, List.of(event0), Collections.emptyList(), null),
-                    arguments(true, false, dateTime, List.of(event0), List.of(eventDateMinTrackTime0), null),
-                    arguments(true, false, dateTime, List.of(event0), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1), event0),
-                    arguments(true, false, dateTime, List.of(event0), List.of(eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3), event2),
-                    arguments(true, false, dateTime, List.of(event0), List.of(eventDateMinTrackTime1, eventDateMinTrackTime3), event0),
-
-                    arguments(false, true, dateTime, Collections.emptyList(), null, null),
-                    arguments(false, true, dateTime, List.of(event0), null, null),
-                    arguments(false, true, dateTime, List.of(event1), Collections.emptyList(), null),
-                    arguments(false, true, dateTime, List.of(event1), List.of(eventDateMinTrackTime0), null),
-                    arguments(false, true, dateTime, List.of(event1), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1), event0),
-                    arguments(false, true, dateTime, List.of(event1), List.of(eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3), event2),
-                    arguments(false, true, dateTime, List.of(event1), List.of(eventDateMinTrackTime1, eventDateMinTrackTime3), event0),
-
-                    arguments(false, false, dateTime, Collections.emptyList(), null, null),
-
-                    arguments(false, true, dateTime, Collections.emptyList(), null, null),
-                    arguments(false, true, dateTime, List.of(event0, event1), Collections.emptyList(), null),
-                    arguments(false, true, dateTime, List.of(event0, event1), List.of(eventDateMinTrackTime0), null),
-                    arguments(false, true, dateTime, List.of(event0, event1), List.of(eventDateMinTrackTime0, eventDateMinTrackTime1), event0),
-                    arguments(false, true, dateTime, List.of(event0, event1), List.of(eventDateMinTrackTime1, eventDateMinTrackTime2, eventDateMinTrackTime3), event2),
-                    arguments(false, true, dateTime, List.of(event0, event1), List.of(eventDateMinTrackTime1, eventDateMinTrackTime3), event0)
+                    arguments(IS_CONFERENCES, IS_MEETUPS, DATE_TIME, Collections.emptyList(), null, null, null),
+                    arguments(IS_CONFERENCES, IS_MEETUPS, DATE_TIME, List.of(event0), Collections.emptyList(), null, null),
+                    arguments(IS_CONFERENCES, IS_MEETUPS, DATE_TIME, List.of(event0), List.of(eventDateMinTrackTime0), Collections.emptyList(), null),
+                    arguments(IS_CONFERENCES, IS_MEETUPS, DATE_TIME.plus(1, ChronoUnit.DAYS),
+                            List.of(event0), List.of(eventDateMinTrackTime0), List.of(eventMinTrackTimeEndDayTime0, eventMinTrackTimeEndDayTime1), null),
+                    arguments(IS_CONFERENCES, IS_MEETUPS, DATE_TIME.minus(1, ChronoUnit.DAYS),
+                            List.of(event0), List.of(eventDateMinTrackTime0), List.of(eventMinTrackTimeEndDayTime0, eventMinTrackTimeEndDayTime1), event0),
+                    arguments(IS_CONFERENCES, IS_MEETUPS, DATE_TIME,
+                            List.of(event0), List.of(eventDateMinTrackTime0), List.of(eventMinTrackTimeEndDayTime0, eventMinTrackTimeEndDayTime1), event0),
+                    arguments(IS_CONFERENCES, IS_MEETUPS, DATE_TIME.plus(1, ChronoUnit.HOURS),
+                            List.of(event0), List.of(eventDateMinTrackTime0), List.of(eventMinTrackTimeEndDayTime0, eventMinTrackTimeEndDayTime1), event0),
+                    arguments(IS_CONFERENCES, IS_MEETUPS, DATE_TIME.plus(2, ChronoUnit.HOURS),
+                            List.of(event0), List.of(eventDateMinTrackTime0), List.of(eventMinTrackTimeEndDayTime0, eventMinTrackTimeEndDayTime1), event1),
+                    arguments(IS_CONFERENCES, IS_MEETUPS, DATE_TIME.plus(3, ChronoUnit.HOURS),
+                            List.of(event0), List.of(eventDateMinTrackTime0), List.of(eventMinTrackTimeEndDayTime0, eventMinTrackTimeEndDayTime1), event1)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void getDefaultEvent(boolean isConferences, boolean isMeetups, LocalDateTime dateTime, List<Event> events,
-                             List<EventDateMinTrackTime> eventDateMinTrackTimeList, Event expected) {
+        void getDefaultEvent(boolean isConferences, boolean isMeetups, LocalDateTime dateTime, List<Event> eventsFromDateTime,
+                             List<EventDateMinTrackTime> eventDateMinTrackTimeList,
+                             List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeList, Event expected) {
             EventDao eventDao = Mockito.mock(EventDao.class);
             EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
             EventServiceImpl eventService = Mockito.mock(EventServiceImpl.class, Mockito.withSettings().useConstructor(eventDao, eventTypeDao));
 
-            Mockito.when(eventDao.getEventsFromDateTime(Mockito.any(LocalDateTime.class))).thenReturn(events);
-
             Mockito.doCallRealMethod().when(eventService).getDefaultEvent(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any());
+            Mockito.when(eventService.getEventsFromDateTime(Mockito.anyBoolean(), Mockito.anyBoolean(), Mockito.any())).thenReturn(eventsFromDateTime);
             Mockito.when(eventService.getEventDateMinTrackTimeList(Mockito.any())).thenReturn(eventDateMinTrackTimeList);
+            Mockito.when(eventService.getEventMinTrackTimeEndDayTimeList(Mockito.any())).thenReturn(eventMinTrackTimeEndDayTimeList);
 
             assertEquals(expected, eventService.getDefaultEvent(isConferences, isMeetups, dateTime));
         }

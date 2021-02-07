@@ -47,7 +47,7 @@ public class EventServiceImpl implements EventService {
         return getDefaultEvent(isConferences, isMeetups, LocalDateTime.now(ZoneId.of("UTC")));
     }
 
-    List<Event> getConferencesFromDate(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
+    List<Event> getEventsFromDateTime(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
         // Find current and future events
         List<Event> eventsFromDate = eventDao.getEventsFromDateTime(dateTime);
 
@@ -59,7 +59,7 @@ public class EventServiceImpl implements EventService {
 
     Event getDefaultEvent(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
         // Find current and future conferences
-        List<Event> conferencesFromDate = getConferencesFromDate(isConferences, isMeetups, dateTime);
+        List<Event> conferencesFromDate = getEventsFromDateTime(isConferences, isMeetups, dateTime);
         if (conferencesFromDate.isEmpty()) {
             // Conferences not exist
             return null;
@@ -99,13 +99,8 @@ public class EventServiceImpl implements EventService {
                     .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::getMinTrackDateTime).reversed())
                     .collect(Collectors.toList());
 
-            if (eventMinTrackTimeEndDayTimeListOnCurrentDate.isEmpty()) {
-                // No happened day events, return nearest first event
-                return eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).getEvent();
-            } else {
-                // Return nearest last event
-                return eventMinTrackTimeEndDayTimeListOnCurrentDate.get(0).getEvent();
-            }
+            // Return nearest last event
+            return eventMinTrackTimeEndDayTimeListOnCurrentDate.get(0).getEvent();
         }
     }
 
