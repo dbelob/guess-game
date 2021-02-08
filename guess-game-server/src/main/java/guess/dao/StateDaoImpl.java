@@ -2,7 +2,7 @@ package guess.dao;
 
 import guess.domain.question.QuestionAnswersSet;
 import guess.domain.StartParameters;
-import guess.domain.State;
+import guess.domain.GameState;
 import guess.util.HttpSessionUtils;
 import org.springframework.stereotype.Repository;
 
@@ -14,13 +14,13 @@ import javax.servlet.http.HttpSession;
 @Repository
 public class StateDaoImpl implements StateDao {
     @Override
-    public State getState(HttpSession httpSession) {
-        return HttpSessionUtils.getState(httpSession);
+    public GameState getGameState(HttpSession httpSession) {
+        return HttpSessionUtils.getGameState(httpSession);
     }
 
     @Override
-    public void setState(State state, HttpSession httpSession) {
-        HttpSessionUtils.setState(state, httpSession);
+    public void setGameState(GameState state, HttpSession httpSession) {
+        HttpSessionUtils.setGameState(state, httpSession);
     }
 
     @Override

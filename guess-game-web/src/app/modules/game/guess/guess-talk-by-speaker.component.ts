@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SpeakersTalks } from '../../../shared/models/guess/speakers-talks.model';
-import { State } from '../../../shared/models/state.model';
+import { GameState } from '../../../shared/models/game-state.model';
 import { StateService } from '../../../shared/services/state.service';
 import { AnswerService } from '../../../shared/services/answer.service';
 
@@ -50,7 +50,7 @@ export class GuessTalkBySpeakerComponent implements OnInit {
   }
 
   result() {
-    this.stateService.setState(State.ResultState)
+    this.stateService.setState(GameState.ResultState)
       .subscribe(data => {
           this.router.navigateByUrl('/game/result');
         }

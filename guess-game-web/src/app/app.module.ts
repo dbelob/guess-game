@@ -56,20 +56,20 @@ import { StateService } from './shared/services/state.service';
 import { SpeakerService } from './shared/services/speaker.service';
 import { StatisticsService } from './shared/services/statistics.service';
 import { TalkService } from './shared/services/talk.service';
-import { StateGuard } from './shared/guards/state.guard';
+import { GameStateGuard } from './shared/guards/game-state.guard';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'game/start', component: StartComponent, canActivate: [StateGuard]},
-  {path: 'game/guess/name-by-photo', component: GuessNameByPhotoComponent, canActivate: [StateGuard]},
-  {path: 'game/guess/photo-by-name', component: GuessPhotoByNameComponent, canActivate: [StateGuard]},
-  {path: 'game/guess/talk-by-speaker', component: GuessTalkBySpeakerComponent, canActivate: [StateGuard]},
-  {path: 'game/guess/speaker-by-talk', component: GuessSpeakerByTalkComponent, canActivate: [StateGuard]},
-  {path: 'game/guess/company-by-speaker', component: GuessCompanyBySpeakerComponent, canActivate: [StateGuard]},
-  {path: 'game/guess/speaker-by-company', component: GuessSpeakerByCompanyComponent, canActivate: [StateGuard]},
-  {path: 'game/guess/account-by-speaker', component: GuessAccountBySpeakerComponent, canActivate: [StateGuard]},
-  {path: 'game/guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [StateGuard]},
-  {path: 'game/result', component: ResultComponent, canActivate: [StateGuard]},
+  {path: 'game/start', component: StartComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/name-by-photo', component: GuessNameByPhotoComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/photo-by-name', component: GuessPhotoByNameComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/talk-by-speaker', component: GuessTalkBySpeakerComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/speaker-by-talk', component: GuessSpeakerByTalkComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/company-by-speaker', component: GuessCompanyBySpeakerComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/speaker-by-company', component: GuessSpeakerByCompanyComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/account-by-speaker', component: GuessAccountBySpeakerComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [GameStateGuard]},
+  {path: 'game/result', component: ResultComponent, canActivate: [GameStateGuard]},
   {path: 'game/cancel', component: CancelGameComponent},
   {path: 'information/event-type/:id', component: EventTypeComponent},
   {path: 'information/event-types/search', component: EventTypesSearchComponent},
@@ -138,12 +138,12 @@ registerLocaleData(localeRu, 'ru');
     AnswerService,
     EventService,
     EventTypeService,
+    GameStateGuard,
     QuestionService,
     StateService,
     SpeakerService,
     StatisticsService,
-    TalkService,
-    StateGuard
+    TalkService
   ],
   bootstrap: [AppComponent]
 })

@@ -4,10 +4,10 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { StateService } from '../services/state.service';
 import { MessageService } from '../../modules/message/message.service';
-import { State } from '../models/state.model';
+import { GameState } from '../models/game-state.model';
 
 @Injectable()
-export class StateGuard implements CanActivate {
+export class GameStateGuard implements CanActivate {
   constructor(public stateService: StateService, private messageService: MessageService, private router: Router) {
   }
 
@@ -20,41 +20,41 @@ export class StateGuard implements CanActivate {
             let expectedUrl: string;
 
             switch (state) {
-              case State.StartState: {
+              case GameState.StartState: {
                 expectedUrl = '/game/start';
                 break;
               }
-              case State.GuessNameByPhotoState: {
+              case GameState.GuessNameByPhotoState: {
                 expectedUrl = '/game/guess/name-by-photo';
                 break;
               }
-              case State.GuessPhotoByNameState: {
+              case GameState.GuessPhotoByNameState: {
                 expectedUrl = '/game/guess/photo-by-name';
                 break;
               }
-              case State.GuessTalkBySpeakerState: {
+              case GameState.GuessTalkBySpeakerState: {
                 expectedUrl = '/game/guess/talk-by-speaker';
                 break;
               }
-              case State.GuessSpeakerByTalkState: {
+              case GameState.GuessSpeakerByTalkState: {
                 expectedUrl = '/game/guess/speaker-by-talk';
                 break;
               }
-              case State.GuessCompanyBySpeakerState:
+              case GameState.GuessCompanyBySpeakerState:
                 expectedUrl = '/game/guess/company-by-speaker';
                 break;
-              case State.GuessSpeakerByCompanyState:
+              case GameState.GuessSpeakerByCompanyState:
                 expectedUrl = '/game/guess/speaker-by-company';
                 break;
-              case State.GuessAccountBySpeakerState: {
+              case GameState.GuessAccountBySpeakerState: {
                 expectedUrl = '/game/guess/account-by-speaker';
                 break;
               }
-              case State.GuessSpeakerByAccountState: {
+              case GameState.GuessSpeakerByAccountState: {
                 expectedUrl = '/game/guess/speaker-by-account';
                 break;
               }
-              case State.ResultState: {
+              case GameState.ResultState: {
                 expectedUrl = '/game/result';
                 break;
               }

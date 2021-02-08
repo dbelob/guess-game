@@ -4,7 +4,7 @@ import { catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { MessageService } from '../../modules/message/message.service';
 import { StartParameters } from '../models/start/start-parameters.model';
-import { State } from '../models/state.model';
+import { GameState } from '../models/game-state.model';
 import { PhotoNames } from '../models/guess/photo-names.model';
 import { NamePhotos } from '../models/guess/name-photos.model';
 import { SpeakersTalks } from '../models/guess/speakers-talks.model';
@@ -33,8 +33,8 @@ export class StateService {
       );
   }
 
-  getState(): Observable<State> {
-    return this.http.get<State>(`${this.baseUrl}/state`)
+  getState(): Observable<GameState> {
+    return this.http.get<GameState>(`${this.baseUrl}/state`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
@@ -43,7 +43,7 @@ export class StateService {
       );
   }
 
-  setState(state: State): Observable<string> {
+  setState(state: GameState): Observable<string> {
     return this.http.put<string>(`${this.baseUrl}/state`, state)
       .pipe(
         catchError((response: Response) => {

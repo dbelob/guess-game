@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SpeakerAccounts } from '../../../shared/models/guess/speaker-accounts.model';
 import { StateService } from '../../../shared/services/state.service';
-import { State } from '../../../shared/models/state.model';
+import { GameState } from '../../../shared/models/game-state.model';
 import { AnswerService } from '../../../shared/services/answer.service';
 
 @Component({
@@ -52,7 +52,7 @@ export class GuessAccountBySpeakerComponent implements OnInit {
   }
 
   result() {
-    this.stateService.setState(State.ResultState)
+    this.stateService.setState(GameState.ResultState)
       .subscribe(data => {
           this.router.navigateByUrl('/game/result');
         }

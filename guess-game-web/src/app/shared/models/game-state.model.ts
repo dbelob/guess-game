@@ -1,4 +1,4 @@
-export enum State {
+export enum GameState {
   StartState = 'START_STATE',
   GuessNameByPhotoState = 'GUESS_NAME_BY_PHOTO_STATE',
   GuessPhotoByNameState = 'GUESS_PHOTO_BY_NAME_STATE',

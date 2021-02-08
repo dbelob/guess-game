@@ -1,9 +1,9 @@
 package guess.dao;
 
+import guess.domain.GameState;
 import guess.domain.GuessMode;
 import guess.domain.Quadruple;
 import guess.domain.StartParameters;
-import guess.domain.State;
 import guess.domain.answer.SpeakerAnswer;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
@@ -27,15 +27,15 @@ class StateDaoImplTest {
     private final static StateDao stateDao = new StateDaoImpl();
 
     @Test
-    void getState(@Mocked HttpSessionUtils mock) {
+    void getGameState(@Mocked HttpSessionUtils mock) {
         HttpSession httpSession = new MockHttpSession();
 
-        stateDao.getState(httpSession);
+        stateDao.getGameState(httpSession);
 
         new Verifications() {{
             HttpSession capturedHttpSession;
 
-            HttpSessionUtils.getState(capturedHttpSession = withCapture());
+            HttpSessionUtils.getGameState(capturedHttpSession = withCapture());
             times = 1;
 
             assertEquals(httpSession, capturedHttpSession);
@@ -43,17 +43,17 @@ class StateDaoImplTest {
     }
 
     @Test
-    void setState(@Mocked HttpSessionUtils mock) {
-        State state = State.GUESS_NAME_BY_PHOTO_STATE;
+    void setGameState(@Mocked HttpSessionUtils mock) {
+        GameState state = GameState.GUESS_NAME_BY_PHOTO_STATE;
         HttpSession httpSession = new MockHttpSession();
 
-        stateDao.setState(state, httpSession);
+        stateDao.setGameState(state, httpSession);
 
         new Verifications() {{
-            State capturedState;
+            GameState capturedState;
             HttpSession capturedHttpSession;
 
-            HttpSessionUtils.setState(capturedState = withCapture(), capturedHttpSession = withCapture());
+            HttpSessionUtils.setGameState(capturedState = withCapture(), capturedHttpSession = withCapture());
             times = 1;
 
             assertEquals(state, capturedState);

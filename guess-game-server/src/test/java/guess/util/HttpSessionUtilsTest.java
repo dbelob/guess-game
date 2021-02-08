@@ -23,8 +23,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 @DisplayName("HttpSessionUtils class tests")
 class HttpSessionUtilsTest {
-    private static final State state0 = State.GUESS_NAME_BY_PHOTO_STATE;
-    private static final State state1 = State.RESULT_STATE;
+    private static final GameState state0 = GameState.GUESS_NAME_BY_PHOTO_STATE;
+    private static final GameState state1 = GameState.RESULT_STATE;
 
     private static final StartParameters startParameters0 = new StartParameters(
             List.of(0L),
@@ -99,28 +99,28 @@ class HttpSessionUtilsTest {
     }
 
     @Test
-    void getState() {
+    void getGameState() {
         HttpSession httpSession = new MockHttpSession();
 
-        assertEquals(State.START_STATE, HttpSessionUtils.getState(httpSession));
+        assertEquals(GameState.START_STATE, HttpSessionUtils.getGameState(httpSession));
 
         httpSession.setAttribute(HttpSessionUtils.STATE_ATTRIBUTE_NAME, state0);
-        assertEquals(state0, HttpSessionUtils.getState(httpSession));
+        assertEquals(state0, HttpSessionUtils.getGameState(httpSession));
 
         httpSession.setAttribute(HttpSessionUtils.STATE_ATTRIBUTE_NAME, state1);
-        assertEquals(state1, HttpSessionUtils.getState(httpSession));
+        assertEquals(state1, HttpSessionUtils.getGameState(httpSession));
     }
 
     @Test
-    void setState() {
+    void setGameState() {
         HttpSession httpSession = new MockHttpSession();
 
         assertNull(httpSession.getAttribute(HttpSessionUtils.STATE_ATTRIBUTE_NAME));
 
-        HttpSessionUtils.setState(state0, httpSession);
+        HttpSessionUtils.setGameState(state0, httpSession);
         assertEquals(state0, httpSession.getAttribute(HttpSessionUtils.STATE_ATTRIBUTE_NAME));
 
-        HttpSessionUtils.setState(state1, httpSession);
+        HttpSessionUtils.setGameState(state1, httpSession);
         assertEquals(state1, httpSession.getAttribute(HttpSessionUtils.STATE_ATTRIBUTE_NAME));
     }
 

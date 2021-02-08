@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { PhotoNames } from '../../../shared/models/guess/photo-names.model';
 import { StateService } from '../../../shared/services/state.service';
 import { AnswerService } from '../../../shared/services/answer.service';
-import { State } from '../../../shared/models/state.model';
+import { GameState } from '../../../shared/models/game-state.model';
 
 @Component({
   selector: 'app-guess-name',
@@ -52,7 +52,7 @@ export class GuessNameByPhotoComponent implements OnInit {
   }
 
   result() {
-    this.stateService.setState(State.ResultState)
+    this.stateService.setState(GameState.ResultState)
       .subscribe(data => {
           this.router.navigateByUrl('/game/result');
         }

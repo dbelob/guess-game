@@ -1,9 +1,9 @@
 package guess.domain;
 
 /**
- * Application state.
+ * Game state.
  */
-public enum State {
+public enum GameState {
     START_STATE,
     GUESS_NAME_BY_PHOTO_STATE,
     GUESS_PHOTO_BY_NAME_STATE,
