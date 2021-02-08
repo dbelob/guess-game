@@ -1,15 +1,17 @@
 <div class="container-home p-3">
-  <img src="{{imageDirectory}}/home.jpg" alt="logo" class="img-home-logo"/>
+  <div *ngIf="isLoading()">Loading...</div>
+  <img *ngIf="isDefaultEventNotFound()" src="{{imageDirectory}}/home.jpg" alt="logo" class="img-home-logo"/>
+  <div *ngIf="isDefaultEventFound()">Event found</div>
 
   <app-message></app-message>
 
   <div class="row">
-    <app-language-switcher class="col"></app-language-switcher>
+    <app-language-switcher class="col" [disabled]="isLoading()"></app-language-switcher>
   </div>
 
   <div class="text-center mt-2">
-    <button class="btn btn-primary btn-block btn-lg" routerLink="/information">{{'home.informationButtonText' | translate}}</button>
-    <button class="btn btn-primary btn-block btn-lg" routerLink="/game">{{'home.gameButtonText' | translate}}</button>
+    <button class="btn btn-primary btn-block btn-lg" [disabled]="isLoading()" routerLink="/information">{{'home.informationButtonText' | translate}}</button>
+    <button class="btn btn-primary btn-block btn-lg" [disabled]="isLoading()" routerLink="/game">{{'home.gameButtonText' | translate}}</button>
   </div>
 </div>
 
