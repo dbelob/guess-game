@@ -64,6 +64,28 @@ export function isEventHyphenVisible(event: Event): boolean {
   return (isEventStartDateVisible(event) && isEventEndDateVisible(event));
 }
 
+export function getEventDates(event: Event, translateService: TranslateService): string {
+  const isEventStartDateVisibleFlag = isEventStartDateVisible(event);
+  const isEventHyphenVisibleFlag = isEventHyphenVisible(event);
+  const isEventEndDateVisibleFlag = isEventEndDateVisible(event);
+
+  let result = '';
+
+  if (isEventStartDateVisibleFlag) {
+    result += formatDate(event.startDate, 'shortDate', translateService.currentLang, undefined);
+  }
+
+  if (isEventHyphenVisibleFlag) {
+    result += ' – ';
+  }
+
+  if (isEventEndDateVisibleFlag) {
+    result += formatDate(event.endDate, 'shortDate', translateService.currentLang, undefined);
+  }
+
+  return result;
+}
+
 export function getEventDisplayName(event: Event, translateService: TranslateService): string {
   const isEventDateParenthesesVisibleFlag = isEventDateParenthesesVisible(event);
   const isEventStartDateVisibleFlag = isEventStartDateVisible(event);
@@ -76,17 +98,7 @@ export function getEventDisplayName(event: Event, translateService: TranslateSer
     displayName += ' (';
   }
 
-  if (isEventStartDateVisibleFlag) {
-    displayName += formatDate(event.startDate, 'shortDate', translateService.currentLang, undefined);
-  }
-
-  if (isEventHyphenVisibleFlag) {
-    displayName += ' – ';
-  }
-
-  if (isEventEndDateVisibleFlag) {
-    displayName += formatDate(event.endDate, 'shortDate', translateService.currentLang, undefined);
-  }
+  displayName += getEventDates(event, translateService);
 
   if (isEventDateParenthesesVisibleFlag) {
     displayName += ')';
