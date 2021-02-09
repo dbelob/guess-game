@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.eventService.getDefaultEventHomeInfo()
       .subscribe(data => {
         this.event = data;
-        this.eventDates = getEventDates(this.event, this.translateService);
+        this.eventDates = (this.event) ? getEventDates(this.event, this.translateService) : null;
         this.homeState = (this.event) ? HomeState.DefaultStateFoundState : HomeState.DefaultStateNotFoundState;
       });
   }
