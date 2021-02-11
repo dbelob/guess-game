@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Language } from '../../shared/models/language.model';
 import { LocaleService } from '../../shared/services/locale.service';
 
@@ -7,7 +7,6 @@ import { LocaleService } from '../../shared/services/locale.service';
   templateUrl: './language-switcher.component.html'
 })
 export class LanguageSwitcherComponent implements OnInit {
-  @Input() public disabled = false;
   @Output() reload: EventEmitter<any> = new EventEmitter();
 
   public selectedLanguage: Language;

@@ -1,37 +1,40 @@
 <div class="container-home p-3">
+  <app-message></app-message>
+
   <div *ngIf="isLoading()" class="text-center">
     <i class="fa fa-spinner fa-spin"></i>
     <span class="ml-2">{{'home.loadingText' | translate}}</span>
   </div>
-  <img *ngIf="isDefaultEventNotFound()" src="{{imageDirectory}}/home.jpg" alt="logo" class="img-home-logo"/>
-  <div *ngIf="isDefaultEventFound()">
-    <div class="mb-2 text-center">
-      <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
-        <img *ngIf="event?.eventTypeLogoFileName" class="img-home-logo"
-             src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" alt="logo"/>
-      </a>
-    </div>
-    <div class="h4 text-center">
-      <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
-        {{event.name}}
-      </a>
-    </div>
-    <div class="text-center">
-      <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
-        {{eventDates}}
-      </a>
-    </div>
-  </div>
 
-  <app-message></app-message>
+  <div *ngIf="!isLoading()">
+    <img *ngIf="isDefaultEventNotFound()" src="{{imageDirectory}}/home.jpg" alt="logo" class="img-home-logo"/>
+    <div *ngIf="isDefaultEventFound()">
+      <div class="mb-2 text-center">
+        <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+          <img *ngIf="event?.eventTypeLogoFileName" class="img-home-logo"
+               src="{{eventsImageDirectory}}/{{event.eventTypeLogoFileName}}" alt="logo"/>
+        </a>
+      </div>
+      <div class="h4 text-center">
+        <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+          {{event.name}}
+        </a>
+      </div>
+      <div class="text-center">
+        <a [routerLink]="['/information', 'event', event.id]" class="text-dark">
+          {{eventDates}}
+        </a>
+      </div>
+    </div>
 
-  <div class="row">
-    <app-language-switcher (reload)="onLanguageChange()" class="col" [disabled]="isLoading()"></app-language-switcher>
-  </div>
+    <div class="row">
+      <app-language-switcher (reload)="onLanguageChange()" class="col"></app-language-switcher>
+    </div>
 
-  <div class="text-center mt-2">
-    <button class="btn btn-primary btn-block btn-lg" [disabled]="isLoading()" routerLink="/information">{{'home.informationButtonText' | translate}}</button>
-    <button class="btn btn-primary btn-block btn-lg" [disabled]="isLoading()" routerLink="/game">{{'home.gameButtonText' | translate}}</button>
+    <div class="text-center mt-2">
+      <button class="btn btn-primary btn-block btn-lg" routerLink="/information">{{'home.informationButtonText' | translate}}</button>
+      <button class="btn btn-primary btn-block btn-lg" routerLink="/game">{{'home.gameButtonText' | translate}}</button>
+    </div>
   </div>
 </div>
 
