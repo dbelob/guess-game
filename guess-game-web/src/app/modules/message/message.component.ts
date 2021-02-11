@@ -8,7 +8,7 @@ import { Message } from './message.model';
 })
 export class MessageComponent implements OnInit {
   public lastMessage: Message;
-  @Input() private autoHide = false;
+  @Input() private autoHide = true;
   @Input() private hidingTime = 10;
 
   constructor(private messageService: MessageService) {
