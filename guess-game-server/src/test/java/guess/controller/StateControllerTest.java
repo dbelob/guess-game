@@ -92,7 +92,7 @@ class StateControllerTest {
     void setState() throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 
-        State state = State.START_STATE;
+        GameState state = GameState.START_STATE;
 
         mvc.perform(put("/api/state/state")
                 .contentType(MediaType.APPLICATION_JSON)

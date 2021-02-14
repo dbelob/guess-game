@@ -117,21 +117,21 @@ class StateServiceImplTest {
     class GetStateByGuessModeTest {
         private Stream<Arguments> data() {
             return Stream.of(
-                    arguments(GuessMode.GUESS_NAME_BY_PHOTO_MODE, null, State.GUESS_NAME_BY_PHOTO_STATE),
-                    arguments(GuessMode.GUESS_PHOTO_BY_NAME_MODE, null, State.GUESS_PHOTO_BY_NAME_STATE),
-                    arguments(GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, State.GUESS_TALK_BY_SPEAKER_STATE),
-                    arguments(GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, State.GUESS_SPEAKER_BY_TALK_STATE),
-                    arguments(GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, State.GUESS_COMPANY_BY_SPEAKER_STATE),
-                    arguments(GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, State.GUESS_SPEAKER_BY_COMPANY_STATE),
-                    arguments(GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, State.GUESS_ACCOUNT_BY_SPEAKER_STATE),
-                    arguments(GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, State.GUESS_SPEAKER_BY_ACCOUNT_STATE),
+                    arguments(GuessMode.GUESS_NAME_BY_PHOTO_MODE, null, GameState.GUESS_NAME_BY_PHOTO_STATE),
+                    arguments(GuessMode.GUESS_PHOTO_BY_NAME_MODE, null, GameState.GUESS_PHOTO_BY_NAME_STATE),
+                    arguments(GuessMode.GUESS_TALK_BY_SPEAKER_MODE, null, GameState.GUESS_TALK_BY_SPEAKER_STATE),
+                    arguments(GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, GameState.GUESS_SPEAKER_BY_TALK_STATE),
+                    arguments(GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, GameState.GUESS_COMPANY_BY_SPEAKER_STATE),
+                    arguments(GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, GameState.GUESS_SPEAKER_BY_COMPANY_STATE),
+                    arguments(GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, GameState.GUESS_ACCOUNT_BY_SPEAKER_STATE),
+                    arguments(GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, GameState.GUESS_SPEAKER_BY_ACCOUNT_STATE),
                     arguments(null, IllegalArgumentException.class, null)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void getStateByGuessMode(GuessMode guessMode, Class<? extends Throwable> expectedException, State expectedValue) {
+        void getStateByGuessMode(GuessMode guessMode, Class<? extends Throwable> expectedException, GameState expectedValue) {
             StateServiceImpl stateService = Mockito.mock(StateServiceImpl.class);
 
             Mockito.when(stateService.getStateByGuessMode(Mockito.any())).thenCallRealMethod();
@@ -155,7 +155,7 @@ class StateServiceImplTest {
         HttpSession httpSession = new MockHttpSession();
 
         stateService.getState(httpSession);
-        Mockito.verify(stateDao, VerificationModeFactory.times(1)).getState(httpSession);
+        Mockito.verify(stateDao, VerificationModeFactory.times(1)).getGameState(httpSession);
         Mockito.verifyNoMoreInteractions(stateDao);
     }
 
@@ -169,8 +169,8 @@ class StateServiceImplTest {
         StateService stateService = new StateServiceImpl(stateDao, questionDao, answerDao, eventTypeDao, eventDao);
         HttpSession httpSession = new MockHttpSession();
 
-        stateService.setState(State.START_STATE, httpSession);
-        Mockito.verify(stateDao, VerificationModeFactory.times(1)).setState(State.START_STATE, httpSession);
+        stateService.setState(GameState.START_STATE, httpSession);
+        Mockito.verify(stateDao, VerificationModeFactory.times(1)).setGameState(GameState.START_STATE, httpSession);
         Mockito.verifyNoMoreInteractions(stateDao);
     }
 

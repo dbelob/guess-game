@@ -1,8 +1,8 @@
 package guess.util;
 
+import guess.domain.GameState;
 import guess.domain.Language;
 import guess.domain.StartParameters;
-import guess.domain.State;
 import guess.domain.answer.AnswerSet;
 import guess.domain.question.QuestionAnswersSet;
 
@@ -23,17 +23,17 @@ public class HttpSessionUtils {
     private HttpSessionUtils() {
     }
 
-    public static State getState(HttpSession httpSession) {
+    public static GameState getGameState(HttpSession httpSession) {
         Object stateObject = httpSession.getAttribute(STATE_ATTRIBUTE_NAME);
 
-        if (stateObject instanceof State) {
-            return (State) stateObject;
+        if (stateObject instanceof GameState) {
+            return (GameState) stateObject;
         } else {
-            return State.START_STATE;
+            return GameState.START_STATE;
         }
     }
 
-    public static void setState(State state, HttpSession httpSession) {
+    public static void setGameState(GameState state, HttpSession httpSession) {
         httpSession.setAttribute(STATE_ATTRIBUTE_NAME, state);
     }
 

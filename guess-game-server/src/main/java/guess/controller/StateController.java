@@ -1,7 +1,7 @@
 package guess.controller;
 
+import guess.domain.GameState;
 import guess.domain.Language;
-import guess.domain.State;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.QuestionAnswersSet;
 import guess.dto.guess.*;
@@ -43,14 +43,14 @@ public class StateController {
 
     @GetMapping("/state")
     @ResponseBody
-    public State getState(HttpSession httpSession) {
+    public GameState getState(HttpSession httpSession) {
         return stateService.getState(httpSession);
     }
 
     @PutMapping("/state")
     @ResponseStatus(HttpStatus.OK)
     public void setState(@RequestBody String state, HttpSession httpSession) {
-        stateService.setState(State.valueOf(state), httpSession);
+        stateService.setState(GameState.valueOf(state), httpSession);
     }
 
     <T> T getDto(HttpSession httpSession, DtoFunction<T> dtoFunction) {

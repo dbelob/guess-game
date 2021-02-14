@@ -2,17 +2,14 @@ package guess.service;
 
 import guess.dao.EventDao;
 import guess.dao.EventTypeDao;
-import guess.domain.EventDateMinTrackTime;
+import guess.domain.auxiliary.EventDateMinTrackTime;
+import guess.domain.auxiliary.EventMinTrackTimeEndDayTime;
 import guess.domain.source.Event;
 import guess.domain.source.Talk;
-import guess.util.DateTimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -47,60 +44,63 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Event getDefaultEvent(boolean isConferences, boolean isMeetups) {
-        return getDefaultEvent(isConferences, isMeetups, LocalDateTime.now(ZoneId.of(DateTimeUtils.MOSCOW_TIME_ZONE)));
+        return getDefaultEvent(isConferences, isMeetups, LocalDateTime.now(ZoneId.of("UTC")));
+    }
+
+    List<Event> getEventsFromDateTime(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
+        // Find current and future events
+        List<Event> eventsFromDate = eventDao.getEventsFromDateTime(dateTime);
+
+        // Select conferences only
+        return eventsFromDate.stream()
+                .filter(e -> ((isConferences && e.getEventType().isEventTypeConference()) || (isMeetups && !e.getEventType().isEventTypeConference())))
+                .collect(Collectors.toList());
     }
 
     Event getDefaultEvent(boolean isConferences, boolean isMeetups, LocalDateTime dateTime) {
-        LocalDate date = dateTime.toLocalDate();
-        LocalTime time = dateTime.toLocalTime();
-
-        // Find current and future events
-        List<Event> eventsFromDate = eventDao.getEventsFromDate(date);
-
-        // Select conferences only
-        List<Event> conferencesFromDate = eventsFromDate.stream()
-                .filter(e -> ((isConferences && e.getEventType().isEventTypeConference()) || (isMeetups && !e.getEventType().isEventTypeConference())))
-                .collect(Collectors.toList());
+        // Find current and future conferences
+        List<Event> conferencesFromDate = getEventsFromDateTime(isConferences, isMeetups, dateTime);
         if (conferencesFromDate.isEmpty()) {
             // Conferences not exist
             return null;
         }
 
         // Find (event, date, minimal track time) items
-        List<EventDateMinTrackTime> eventDateMinTrackTimeList = getConferenceDateMinTrackTimeList(conferencesFromDate);
+        List<EventDateMinTrackTime> eventDateMinTrackTimeList = getEventDateMinTrackTimeList(conferencesFromDate);
         if (eventDateMinTrackTimeList.isEmpty()) {
             return null;
         }
 
-        // Find current and future event days, sort by date and minimal track time
-        List<EventDateMinTrackTime> eventDateMinTrackTimeListFromDateOrdered = eventDateMinTrackTimeList.stream()
-                .filter(e -> !e.getDate().isBefore(date))
-                .sorted(Comparator.comparing(EventDateMinTrackTime::getDate).thenComparing(EventDateMinTrackTime::getMinTrackTime))
+        //Transform to (event, minimal track time, end date time) items
+        List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeList = getEventMinTrackTimeEndDayTimeList(eventDateMinTrackTimeList);
+        if (eventMinTrackTimeEndDayTimeList.isEmpty()) {
+            return null;
+        }
+
+        // Find current and future event days, sort by minimal track date time and end day date time
+        List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeListFromDateOrdered = eventMinTrackTimeEndDayTimeList.stream()
+                .filter(edt -> dateTime.isBefore(edt.getEndDayDateTime()))
+                .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::getMinTrackDateTime).thenComparing(EventMinTrackTimeEndDayTime::getEndDayDateTime))
                 .collect(Collectors.toList());
-        if (eventDateMinTrackTimeListFromDateOrdered.isEmpty()) {
+        if (eventMinTrackTimeEndDayTimeListFromDateOrdered.isEmpty()) {
             return null;
         }
 
         // Find first date
-        LocalDate firstDate = eventDateMinTrackTimeListFromDateOrdered.get(0).getDate();
+        LocalDateTime firstDateTime = eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).getMinTrackDateTime();
 
-        if (date.isBefore(firstDate)) {
+        if (dateTime.isBefore(firstDateTime)) {
             // No current day events, return nearest first event
-            return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
+            return eventMinTrackTimeEndDayTimeListFromDateOrdered.get(0).getEvent();
         } else {
-            // Current day events exist, find happened time, sort by reversed minimal track time
-            List<EventDateMinTrackTime> eventDateMinTrackTimeListOnCurrentDate = eventDateMinTrackTimeListFromDateOrdered.stream()
-                    .filter(e -> (e.getDate().equals(date) && !e.getMinTrackTime().isAfter(time)))
-                    .sorted(Comparator.comparing(EventDateMinTrackTime::getMinTrackTime).reversed())
+            // Current day events exist, find happened time, sort by reversed minimal track date time
+            List<EventMinTrackTimeEndDayTime> eventMinTrackTimeEndDayTimeListOnCurrentDate = eventMinTrackTimeEndDayTimeListFromDateOrdered.stream()
+                    .filter(edt -> !dateTime.isBefore(edt.getMinTrackDateTime()))
+                    .sorted(Comparator.comparing(EventMinTrackTimeEndDayTime::getMinTrackDateTime).reversed())
                     .collect(Collectors.toList());
 
-            if (eventDateMinTrackTimeListOnCurrentDate.isEmpty()) {
-                // No happened day events, return nearest first event
-                return eventDateMinTrackTimeListFromDateOrdered.get(0).getEvent();
-            } else {
-                // Return nearest last event
-                return eventDateMinTrackTimeListOnCurrentDate.get(0).getEvent();
-            }
+            // Return nearest last event
+            return eventMinTrackTimeEndDayTimeListOnCurrentDate.get(0).getEvent();
         }
     }
 
@@ -110,7 +110,7 @@ public class EventServiceImpl implements EventService {
      * @param events events
      * @return list of (event, date, minimal track time) items
      */
-    List<EventDateMinTrackTime> getConferenceDateMinTrackTimeList(List<Event> events) {
+    List<EventDateMinTrackTime> getEventDateMinTrackTimeList(List<Event> events) {
         List<EventDateMinTrackTime> result = new ArrayList<>();
         Map<Event, Map<Long, Optional<LocalTime>>> minTrackTimeInTalkDaysForConferences = new LinkedHashMap<>();
 
@@ -159,6 +159,37 @@ public class EventServiceImpl implements EventService {
         }
 
         return result;
+    }
+
+    /**
+     * Gets list of (event, minimal track time, end date time) items.
+     *
+     * @param eventDateMinTrackTimeList list of (event, date, minimal track time) items
+     * @return list of (event, minimal track time, end date time) items
+     */
+    List<EventMinTrackTimeEndDayTime> getEventMinTrackTimeEndDayTimeList(List<EventDateMinTrackTime> eventDateMinTrackTimeList) {
+        return eventDateMinTrackTimeList.stream()
+                .map(edt -> {
+                    LocalDateTime minTrackDateTime = ZonedDateTime.of(
+                            edt.getDate(),
+                            edt.getMinTrackTime(),
+                            edt.getEvent().getFinalTimeZoneId())
+                            .withZoneSameInstant(ZoneId.of("UTC"))
+                            .toLocalDateTime();
+                    LocalDateTime endDayDateTime = ZonedDateTime.of(
+                            edt.getDate().plus(1, ChronoUnit.DAYS),
+                            LocalTime.of(0, 0, 0),
+                            edt.getEvent().getFinalTimeZoneId())
+                            .withZoneSameInstant(ZoneId.of("UTC"))
+                            .toLocalDateTime();
+
+                    return new EventMinTrackTimeEndDayTime(
+                            edt.getEvent(),
+                            minTrackDateTime,
+                            endDayDateTime
+                    );
+                })
+                .collect(Collectors.toList());
     }
 
     @Override

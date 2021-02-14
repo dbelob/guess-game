@@ -7,9 +7,10 @@ import { LocaleService } from '../../shared/services/locale.service';
   templateUrl: './language-switcher.component.html'
 })
 export class LanguageSwitcherComponent implements OnInit {
+  @Output() reload: EventEmitter<any> = new EventEmitter();
+
   public selectedLanguage: Language;
   public language = Language;
-  @Output() reload: EventEmitter<any> = new EventEmitter();
 
   constructor(private localeService: LocaleService) {
   }

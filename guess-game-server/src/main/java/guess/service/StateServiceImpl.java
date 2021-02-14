@@ -46,43 +46,43 @@ public class StateServiceImpl implements StateService {
         stateDao.setQuestionAnswersSet(questionAnswersSet, httpSession);
 
         answerDao.clearAnswerSets(httpSession);
-        stateDao.setState(
+        stateDao.setGameState(
                 questionAnswersSet.getQuestionAnswersList().isEmpty() ?
-                        State.RESULT_STATE :
+                        GameState.RESULT_STATE :
                         getStateByGuessMode(startParameters.getGuessMode()),
                 httpSession);
     }
 
-    State getStateByGuessMode(GuessMode guessMode) {
+    GameState getStateByGuessMode(GuessMode guessMode) {
         if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode)) {
-            return State.GUESS_NAME_BY_PHOTO_STATE;
+            return GameState.GUESS_NAME_BY_PHOTO_STATE;
         } else if (GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode)) {
-            return State.GUESS_PHOTO_BY_NAME_STATE;
+            return GameState.GUESS_PHOTO_BY_NAME_STATE;
         } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
-            return State.GUESS_TALK_BY_SPEAKER_STATE;
+            return GameState.GUESS_TALK_BY_SPEAKER_STATE;
         } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
-            return State.GUESS_SPEAKER_BY_TALK_STATE;
+            return GameState.GUESS_SPEAKER_BY_TALK_STATE;
         } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
-            return State.GUESS_COMPANY_BY_SPEAKER_STATE;
+            return GameState.GUESS_COMPANY_BY_SPEAKER_STATE;
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
-            return State.GUESS_SPEAKER_BY_COMPANY_STATE;
+            return GameState.GUESS_SPEAKER_BY_COMPANY_STATE;
         } else if (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode)) {
-            return State.GUESS_ACCOUNT_BY_SPEAKER_STATE;
+            return GameState.GUESS_ACCOUNT_BY_SPEAKER_STATE;
         } else if (GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
-            return State.GUESS_SPEAKER_BY_ACCOUNT_STATE;
+            return GameState.GUESS_SPEAKER_BY_ACCOUNT_STATE;
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
     }
 
     @Override
-    public State getState(HttpSession httpSession) {
-        return stateDao.getState(httpSession);
+    public GameState getState(HttpSession httpSession) {
+        return stateDao.getGameState(httpSession);
     }
 
     @Override
-    public void setState(State state, HttpSession httpSession) {
-        stateDao.setState(state, httpSession);
+    public void setState(GameState state, HttpSession httpSession) {
+        stateDao.setGameState(state, httpSession);
     }
 
     @Override

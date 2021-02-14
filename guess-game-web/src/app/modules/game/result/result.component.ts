@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Result } from '../../../shared/models/result/result.model';
-import { State } from '../../../shared/models/state.model';
+import { GameState } from '../../../shared/models/game-state.model';
 import { GuessMode } from '../../../shared/models/guess-mode.model';
 import { AnswerService } from '../../../shared/services/answer.service';
 import { StateService } from '../../../shared/services/state.service';
@@ -36,7 +36,7 @@ export class ResultComponent implements OnInit {
   }
 
   menu() {
-    this.stateService.setState(State.StartState)
+    this.stateService.setState(GameState.StartState)
       .subscribe(data => {
           this.router.navigateByUrl('/home');
         }
@@ -44,7 +44,7 @@ export class ResultComponent implements OnInit {
   }
 
   restart() {
-    this.stateService.setState(State.StartState)
+    this.stateService.setState(GameState.StartState)
       .subscribe(data => {
           this.router.navigateByUrl('/game/start');
         }

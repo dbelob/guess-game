@@ -7,6 +7,7 @@ import guess.domain.source.Talk;
 import guess.dto.company.CompanyDto;
 import guess.dto.event.EventBriefDto;
 import guess.dto.event.EventDetailsDto;
+import guess.dto.event.EventHomeInfoDto;
 import guess.dto.event.EventSuperBriefDto;
 import guess.dto.speaker.SpeakerBriefDto;
 import guess.dto.talk.TalkBriefDto;
@@ -58,6 +59,15 @@ public class EventController {
         Language language = localeService.getLanguage(httpSession);
 
         return (defaultEvent != null) ? EventSuperBriefDto.convertToSuperBriefDto(defaultEvent, language) : null;
+    }
+
+    @GetMapping("/default-event-home-info")
+    @ResponseBody
+    public EventHomeInfoDto getDefaultEventHomeInfo(HttpSession httpSession) {
+        Event defaultEvent = eventService.getDefaultEvent(true, true);
+        Language language = localeService.getLanguage(httpSession);
+
+        return (defaultEvent != null) ? EventHomeInfoDto.convertToDto(defaultEvent, language) : null;
     }
 
     @GetMapping("/default-conference")

@@ -169,6 +169,10 @@ public class Event extends Nameable {
         this.talks = talks;
     }
 
+    public ZoneId getFinalTimeZoneId() {
+        return (timeZoneId != null) ? timeZoneId : eventType.getTimeZoneId();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

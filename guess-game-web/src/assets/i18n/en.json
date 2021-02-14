@@ -30,6 +30,7 @@
     }
   },
   "home": {
+    "loadingText": "Loading...",
     "informationButtonText": "Conferences and meetups information",
     "gameButtonText": "«Guess the Speaker» game"
   },

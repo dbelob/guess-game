@@ -5,7 +5,7 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getImgAltValue() {
-    return element(by.css('app-root img')).getAttribute('alt');
+  getElementAttributeValue(elementName: string, attributeName: string) {
+    return element(by.css(elementName)).getAttribute(attributeName);
   }
 }

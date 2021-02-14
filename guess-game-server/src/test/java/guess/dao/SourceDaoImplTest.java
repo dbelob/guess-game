@@ -14,6 +14,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -77,14 +79,17 @@ class SourceDaoImplTest {
         eventType0.setId(0);
         eventType0.setConference(Conference.JPOINT);
         eventType0.setOrganizer(organizer0);
+        eventType0.setTimeZoneId(ZoneId.of("Europe/Moscow"));
 
         eventType1 = new EventType();
         eventType1.setId(1);
         eventType1.setOrganizer(organizer0);
+        eventType1.setTimeZoneId(ZoneId.of("Europe/Moscow"));
 
         eventType2 = new EventType();
         eventType2.setId(2);
         eventType2.setOrganizer(organizer1);
+        eventType2.setTimeZoneId(ZoneId.of("Asia/Novosibirsk"));
 
         company0 = new Company();
         company0.setId(0);
@@ -142,6 +147,7 @@ class SourceDaoImplTest {
         event0.setEndDate(LocalDate.of(2020, 1, 2));
         event0.setTalkIds(List.of(0L));
         event0.setTalks(List.of(talk0));
+        event0.setTimeZoneId(ZoneId.of("Europe/Moscow"));
 
         event1 = new Event();
         event1.setId(1);
@@ -235,11 +241,14 @@ class SourceDaoImplTest {
     }
 
     @Test
-    void getEventsFromDate() {
-        assertEquals(List.of(event0, event1, event2), sourceDao.getEventsFromDate(LocalDate.of(2020, 1, 1)));
-        assertEquals(List.of(event1, event2), sourceDao.getEventsFromDate(LocalDate.of(2020, 2, 2)));
-        assertEquals(List.of(event2), sourceDao.getEventsFromDate(LocalDate.of(2020, 3, 2)));
-        assertEquals(Collections.emptyList(), sourceDao.getEventsFromDate(LocalDate.of(2020, 4, 2)));
+    void getEventsFromDateTime() {
+        assertEquals(List.of(event0, event1, event2), sourceDao.getEventsFromDateTime(LocalDateTime.of(2020, 1, 1, 0, 0, 0)));
+        assertEquals(List.of(event1, event2), sourceDao.getEventsFromDateTime(LocalDateTime.of(2020, 2, 2, 0, 0, 0)));
+        assertEquals(List.of(event2), sourceDao.getEventsFromDateTime(LocalDateTime.of(2020, 3, 2, 0, 0, 0)));
+        assertEquals(List.of(event2), sourceDao.getEventsFromDateTime(LocalDateTime.of(2020, 3, 2, 16, 59, 59)));
+        assertEquals(Collections.emptyList(), sourceDao.getEventsFromDateTime(LocalDateTime.of(2020, 3, 2, 17, 0, 0)));
+        assertEquals(Collections.emptyList(), sourceDao.getEventsFromDateTime(LocalDateTime.of(2020, 3, 2, 17, 0, 1)));
+        assertEquals(Collections.emptyList(), sourceDao.getEventsFromDateTime(LocalDateTime.of(2020, 4, 2, 0, 0, 0)));
     }
 
     @Test

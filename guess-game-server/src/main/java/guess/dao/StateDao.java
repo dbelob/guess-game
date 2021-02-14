@@ -1,8 +1,8 @@
 package guess.dao;
 
+import guess.domain.GameState;
 import guess.domain.question.QuestionAnswersSet;
 import guess.domain.StartParameters;
-import guess.domain.State;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,9 +10,9 @@ import javax.servlet.http.HttpSession;
  * State DAO.
  */
 public interface StateDao {
-    State getState(HttpSession httpSession);
+    GameState getGameState(HttpSession httpSession);
 
-    void setState(State state, HttpSession httpSession);
+    void setGameState(GameState state, HttpSession httpSession);
 
     StartParameters getStartParameters(HttpSession httpSession);
 

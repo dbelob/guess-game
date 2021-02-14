@@ -44,6 +44,16 @@ export class EventService {
       );
   }
 
+  getDefaultEventHomeInfo(): Observable<Event> {
+    return this.http.get<Event>(`${this.baseUrl}/default-event-home-info`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
   getDefaultConference(): Observable<Event> {
     return this.http.get<Event>(`${this.baseUrl}/default-conference`)
       .pipe(
