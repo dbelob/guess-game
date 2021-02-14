@@ -29,19 +29,21 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
     private final List<CompanyDto> companies;
     private final String twitter;
     private final String gitHub;
+    private final String habr;
     private final boolean javaChampion;
     private final boolean mvp;
     private final boolean mvpReconnect;
     private final boolean anyMvp;
 
     public SpeakerBriefDto(SpeakerSuperBriefDto speakerSuperBriefDto, String photoFileName, List<CompanyDto> companies,
-                           String twitter, String gitHub, SpeakerBriefDtoDegrees degrees) {
+                           String twitter, String gitHub, String habr, SpeakerBriefDtoDegrees degrees) {
         super(speakerSuperBriefDto.getId(), speakerSuperBriefDto.getDisplayName());
 
         this.photoFileName = photoFileName;
         this.companies = companies;
         this.twitter = twitter;
         this.gitHub = gitHub;
+        this.habr = habr;
         this.javaChampion = degrees.javaChampion;
         this.mvp = degrees.mvp;
         this.mvpReconnect = degrees.mvpReconnect;
@@ -62,6 +64,10 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
 
     public String getGitHub() {
         return gitHub;
+    }
+
+    public String getHabr() {
+        return habr;
     }
 
     public boolean isJavaChampion() {
@@ -87,6 +93,7 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
                 CompanyDto.convertToDto(speaker.getCompanies(), language),
                 speaker.getTwitter(),
                 speaker.getGitHub(),
+                speaker.getHabr(),
                 new SpeakerBriefDtoDegrees(
                         speaker.isJavaChampion(),
                         speaker.isMvp(),

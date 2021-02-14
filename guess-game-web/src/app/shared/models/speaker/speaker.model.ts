@@ -11,6 +11,7 @@ export class Speaker {
     public bio?: string,
     public twitter?: string,
     public gitHub?: string,
+    public habr?: string,
     public javaChampion?: boolean,
     public mvp?: boolean,
     public mvpReconnect?: boolean,

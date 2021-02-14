@@ -16,6 +16,7 @@ export class SpeakerComponent implements OnInit {
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
   public twitterUrlPrefix = 'https://twitter.com';
   public gitHubUrlPrefix = 'https://github.com';
+  public habrUrlPrefix = 'https://habr.com/ru/users';
 
   private id: number;
   public speakerDetails: SpeakerDetails = new SpeakerDetails();

@@ -54,6 +54,11 @@
             <i class="fa fa-github"></i>{{speakerDetails.speaker.gitHub}}
           </a>
         </div>
+        <div *ngIf="speakerDetails.speaker?.habr" class="col-auto">
+          <a href="{{habrUrlPrefix}}/{{speakerDetails.speaker.habr}}" class="text-info">
+            <i class="fa fa-h-square"></i>{{speakerDetails.speaker.habr}}
+          </a>
+        </div>
       </div>
     </div>
 

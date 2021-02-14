@@ -14,6 +14,7 @@ speakers:
             я и средствами разработки ПО."}
     twitter: antonarhipov
     gitHub: antonarhipov
+    habr: antonarhipov
     javaChampion: true
   - id: 1
     photoFileName: 0001.jpg
@@ -843,6 +844,7 @@ speakers:
             \ Хабре как lany, в Twitter — как @tagir_valeev."}
     twitter: tagir_valeev
     gitHub: amaembo
+    habr: lany
     javaChampion: true
   - id: 50
     photoFileName: 0050.jpg
