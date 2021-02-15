@@ -57,6 +57,9 @@
               {{'speakers.table.gitHubColumn' | translate}}
             </th>
             <th class="text-center" pResizableColumn>
+              {{'speakers.table.habrColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
               {{'speakers.table.javaChampionColumn' | translate}}
             </th>
             <th class="text-center" pResizableColumn>
@@ -86,6 +89,11 @@
             <td>
               <a *ngIf="speaker.gitHub" href="{{gitHubUrlPrefix}}/{{speaker.gitHub}}" class="text-dark">
                 <i class="fa fa-github"></i>{{speaker.gitHub}}
+              </a>
+            </td>
+            <td>
+              <a *ngIf="speaker.habr" href="{{habrUrlPrefix}}/{{speaker.habr}}" class="text-habr">
+                <i class="fa fa-h-square"></i>{{speaker.habr}}
               </a>
             </td>
             <td class="text-center">
