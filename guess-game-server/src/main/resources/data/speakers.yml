@@ -257,6 +257,7 @@ speakers:
             \ 2005 года и в данный момент в Oracle занимается производительностью OracleJDK/OpenJDK."
     twitter: kuksenk0
     gitHub: kuksenko
+    habr: Walrus
   - id: 14
     photoFileName: 0014.jpg
     name:
@@ -336,6 +337,7 @@ speakers:
             гории #JVM на Stack Overflow."}
     twitter: AndreiPangin
     gitHub: apangin
+    habr: apangin
     javaChampion: true
   - id: 19
     photoFileName: 0019.jpg
@@ -474,6 +476,7 @@ speakers:
             \ надёжности и производительности систем."}
     twitter: gvsmirnov
     gitHub: gvsmirnov
+    habr: gvsmirnov
   - id: 27
     photoFileName: 0027.jpg
     name:
@@ -573,6 +576,7 @@ speakers:
             торов OpenJDK, создавшую свой дистрибутив Liberica JDK. Александр отвечает за стратегическое руководство и реа\
             лизацию концепции BellSoft."}
     twitter: gigabel
+    habr: alexbel
   - id: 33
     photoFileName: 0033.jpg
     photoUpdatedAt: 2020-03-13T08:21:46.418Z[UTC]
@@ -1551,6 +1555,7 @@ speakers:
       - language: ru
         text: "Работает в небольшой компании «Леви9» Java-разработчиком.\nОсновное направление профессионального развития\
             \ — решение задач, связанных с производительностью."
+    habr: tsypanov
   - id: 95
     photoFileName: 0095.jpg
     name:
@@ -1584,6 +1589,8 @@ speakers:
             ботчика и архитектора. Преподает для студентов московских вузов курсы по основам разработки с применением Java-т\
             ехнологий. Основатель и организатор встреч московского сообщества Java-разработчиков [JUG.MSK](https://jug.msk.ru)."}
     twitter: andrei_kogun
+    gitHub: kogun
+    habr: AKogun47
   - id: 97
     photoFileName: 0097.jpg
     photoUpdatedAt: 2016-09-13T13:24:39.237Z[UTC]
@@ -3655,6 +3662,7 @@ speakers:
             нсультировал ряд компаний из Топ-20 российского рынка. Премии «Лучшая маркетинговая компания года» и «Лучший к\
             лиентский опыт»."}
     twitter: milfgard
+    habr: Milfgard
   - id: 259
     photoFileName: 0259.jpg
     name:
@@ -6655,6 +6663,7 @@ speakers:
             ктике."}
     twitter: epeshk
     gitHub: epeshk
+    habr: epeshk
   - id: 467
     photoFileName: 0467.jpg
     name:
@@ -11912,6 +11921,7 @@ speakers:
             \ Native, Certified Google Cloud Architect, ментор и спикер."}
     twitter: vvsevolodovich
     gitHub: vlivanov
+    habr: dzigoro
   - id: 853
     photoFileName: 0853.jpg
     name:
@@ -17011,6 +17021,7 @@ speakers:
       - {language: ru, text: "Программный директор JUG Ru Group."}
     twitter: ruslan_jug
     gitHub: Avaddon-tfa
+    habr: ARG89
   - id: 1247
     photoFileName: 1247.jpg
     photoUpdatedAt: 2019-04-17T09:03:07.704Z[UTC]
@@ -19243,6 +19254,7 @@ speakers:
       - {language: ru, text: "Всю жизнь пишет тексты про IT, делая вид, что в этом что-то понимает. Пробовал Kotlin на Android\
             \ до того, как это стало модным. Обладатель значка «Легенда» на Хабре (как будто это что-то значит). Всерьёз п\
             ользуется ChromeOS. Удалёнщик по убеждениям."}
+    habr: phillennium
   - id: 1418
     photoFileName: 1418.jpg
     photoUpdatedAt: 2020-11-23T08:08:14.343Z[UTC]
