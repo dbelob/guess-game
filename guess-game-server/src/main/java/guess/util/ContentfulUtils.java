@@ -1412,6 +1412,7 @@ public class ContentfulUtils {
                 equals(a.getBio(), b.getBio()) &&
                 equals(a.getTwitter(), b.getTwitter()) &&
                 equals(a.getGitHub(), b.getGitHub()) &&
+                equals(a.getHabr(), b.getHabr()) &&
                 (a.isJavaChampion() == b.isJavaChampion()) &&
                 (a.isMvp() == b.isMvp()) &&
                 (a.isMvpReconnect() == b.isMvpReconnect()));
