@@ -59,7 +59,12 @@ export class SpeakerComponent implements OnInit {
     this.loadSpeaker(this.id);
   }
 
-  isTalksListVisible() {
+  isSocialsVisible(): boolean {
+    return (!!this.speakerDetails.speaker?.javaChampion || !!this.speakerDetails.speaker?.anyMvp ||
+      !!this.speakerDetails.speaker?.twitter || !!this.speakerDetails.speaker?.gitHub || !!this.speakerDetails.speaker?.habr);
+  }
+
+  isTalksListVisible(): boolean {
     return ((this.speakerDetails.talks) && (this.speakerDetails.talks.length > 0));
   }
 }

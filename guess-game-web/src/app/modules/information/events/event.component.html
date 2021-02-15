@@ -93,6 +93,10 @@
               {{'speakers.table.gitHubColumn' | translate}}
               <p-sortIcon [field]="'gitHub'"></p-sortIcon>
             </th>
+            <th class="text-center" [pSortableColumn]="'habr'" pResizableColumn>
+              {{'speakers.table.habrColumn' | translate}}
+              <p-sortIcon [field]="'habr'"></p-sortIcon>
+            </th>
             <th class="text-center" [pSortableColumn]="'javaChampion'" pResizableColumn>
               {{'speakers.table.javaChampionColumn' | translate}}
               <p-sortIcon [field]="'javaChampion'"></p-sortIcon>
@@ -125,6 +129,11 @@
             <td>
               <a *ngIf="speaker.gitHub" href="{{gitHubUrlPrefix}}/{{speaker.gitHub}}" class="text-dark">
                 <i class="fa fa-github"></i>{{speaker.gitHub}}
+              </a>
+            </td>
+            <td>
+              <a *ngIf="speaker.habr" href="{{habrUrlPrefix}}/{{speaker.habr}}" class="text-habr">
+                <i class="fa fa-h-square"></i>{{speaker.habr}}
               </a>
             </td>
             <td class="text-center">
