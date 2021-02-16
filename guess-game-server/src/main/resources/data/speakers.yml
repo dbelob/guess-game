@@ -47,6 +47,7 @@ speakers:
             ивает Alter — сервис, который помогает клиентам находить профессиональных психологов/психотерапевтов."}
     twitter: abreslav
     gitHub: abreslav
+    habr: abreslav
   - id: 3
     photoFileName: 0003.jpg
     name:
@@ -82,6 +83,7 @@ speakers:
             \ без багов, но иногда подогревает свою самоуверенность тестами."}
     twitter: dj_begemot
     gitHub: cheremin
+    habr: cheremin
   - id: 5
     photoFileName: 0005.jpg
     photoUpdatedAt: 2019-03-01T15:12:16.619Z[UTC]
@@ -142,6 +144,7 @@ speakers:
             ом в Oracle (JCK, Java Platform Team) и деврелом в Одноклассниках."}
     twitter: 23derevo
     gitHub: 23derevo
+    habr: 23derevo
     javaChampion: true
   - id: 8
     photoFileName: 0008.jpg
@@ -160,6 +163,7 @@ speakers:
             неджмента и дата инжиниринга. Очень любит людей и разговаривать. Обо всём, особенно об IT. Фанат Котлина."}
     twitter: asm0di0
     gitHub: asm0dey
+    habr: asm0dey
   - id: 9
     photoFileName: 0009.jpg
     photoUpdatedAt: 2019-10-26T12:30:54.007Z[UTC]
@@ -188,6 +192,7 @@ speakers:
             \ в Telegram."
     twitter: gamussa
     gitHub: gAmUssA
+    habr: gAmUssA
   - id: 10
     photoFileName: 0010.jpg
     name:
@@ -225,6 +230,7 @@ speakers:
             омент занимается разработкой ядра платформы, вопросами модульности и отказоустойчивости приложений, а также ру\
             ководит созданием CUBA Studio — инструмента разработки на платформе."
     gitHub: knstvk
+    habr: krivopustov
   - id: 12
     photoFileName: 0012.jpg
     name:
@@ -277,6 +283,7 @@ speakers:
             \ года), обоих верификаторов Java-байткода, поддержки Spring Boot и многого другого."}
     twitter: pjBooms
     gitHub: pjBooms
+    habr: pjBooms
   - id: 15
     photoFileName: 0015.jpg
     name:
@@ -355,6 +362,7 @@ speakers:
             м времени. Периодически делится своим опытом на конференциях и митапах."}
     twitter: inponomarev
     gitHub: inponomarev
+    habr: IvanPonomarev
   - id: 20
     photoFileName: 0020.jpg
     name:
@@ -506,6 +514,7 @@ speakers:
             \ Методологию DevOps знает не понаслышке и имеет четырехлетний опыт её применения."}
     twitter: tolkv
     gitHub: lavcraft
+    habr: tolkkv
   - id: 29
     photoFileName: 0029.jpg
     photoUpdatedAt: 2020-05-12T11:19:15.402Z[UTC]
@@ -529,6 +538,7 @@ speakers:
             \ в НГУ курсы по C/C++."
     twitter: dbg_nsk
     gitHub: ugliansky
+    habr: dbg_nsk
   - id: 30
     photoFileName: 0030.jpg
     name:
@@ -546,6 +556,7 @@ speakers:
             \ «Kotlin in Action» («Kotlin в действии»)."}
     twitter: intelliyole
     gitHub: yole
+    habr: yole
   - id: 31
     photoFileName: 0031.jpg
     name:
@@ -563,6 +574,7 @@ speakers:
             е графы."}
     twitter: zaleslaw
     gitHub: zaleslaw
+    habr: zaleslaw
   - id: 32
     photoFileName: 0032.jpg
     photoUpdatedAt: 2020-06-26T14:01:05.594Z[UTC]
@@ -636,6 +648,7 @@ speakers:
             \ его доклады можно посмотреть здесь: jfrog.com/shownotes"
     twitter: jbaruch
     gitHub: jbaruch
+    habr: jbaruch
   - id: 36
     photoFileName: 0036.jpg
     name:
@@ -697,6 +710,7 @@ speakers:
             честве 50 и более человек. С конца 2014 года занял позицию директора по проектам в компании Haulmont."}
     twitter: alekseystukalov
     gitHub: aleksey-stukalov
+    habr: aleksey-stukalov
   - id: 40
     photoFileName: 0040.jpg
     name:
@@ -869,6 +883,7 @@ speakers:
             кже вся Spring-инфраструктура. Увлекается всяческими экспериментальными Java-проектами."
     twitter: bercut2000
     gitHub: dalexandrov
+    habr: advbg
     javaChampion: true
   - id: 51
     photoFileName: 0051.jpg
@@ -1308,6 +1323,7 @@ speakers:
             \ Testing плагина и мейнтейнер поддержки Gauge для IntelliJ IDEA."
     twitter: Yuriy_Artamonov
     gitHub: jreznot
+    habr: jreznot
   - id: 79
     photoFileName: 0079.jpg
     name:
@@ -1665,6 +1681,7 @@ speakers:
             енерацией spring boot приложений Иван пишет телеграм-блог <a href=\"https://t.me/from_junior_to_senior\" target=\"\
             _blank\">@from_junior_to_senior</a>."
     gitHub: ivan-osipov
+    habr: i_osipov
   - id: 102
     photoFileName: 0102.jpg
     name:
@@ -3386,6 +3403,7 @@ speakers:
             мпании Haulmont — делаю RnD и представляю компанию на разных мероприятиях."}
     twitter: belyaev_andrey
     gitHub: belyaev-andrey
+    habr: a_belyaev
   - id: 235
     photoFileName: 0235.jpg
     name:
@@ -8757,6 +8775,7 @@ speakers:
             ько)."}
     twitter: bsideup
     gitHub: bsideup
+    habr: bsideup
     javaChampion: true
   - id: 623
     photoFileName: 0623.jpg
@@ -12752,6 +12771,8 @@ speakers:
             дприниматель и частый участник многих конференций по интернет-технологиям. Один из создателей и постоянный вед\
             ущий подкаста Радио-Т."}
     twitter: bobuk
+    gitHub: bobuk
+    habr: bobuk
   - id: 922
     photoFileName: 0922.jpg
     name:
