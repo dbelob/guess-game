@@ -109,6 +109,7 @@ speakers:
             \ так и на встречах разработчиков в разных странах."
     twitter: dchuyko
     gitHub: dchuyko
+    habr: Teapot
   - id: 6
     photoFileName: 0006.jpg
     photoUpdatedAt: 2020-10-12T07:39:13.622Z[UTC]
@@ -1838,6 +1839,7 @@ speakers:
             \ так далее."}
     twitter: olegchir
     gitHub: olegchir
+    habr: olegchir
   - id: 111
     photoFileName: 0111.jpg
     name:
@@ -4935,6 +4937,7 @@ speakers:
             ичества статей, посвященных качеству кода и рассказывающих о различных паттернах ошибок, которые допускают про\
             граммисты C++. Популяризирует методологию статического и динамического анализа кода."}
     twitter: Code_Analysis
+    habr: Andrey2008
   - id: 345
     photoFileName: 0345.jpg
     name:
@@ -5915,6 +5918,7 @@ speakers:
             о время прошел путь от программиста в казанской веб-студии до руководителя отдела качества в финансовой индуст\
             рии. Работал в компаниях Казани, Москвы, Питера и Антверпена (Бельгия). \n\nСчитает, что технологии — это не «\
             вещь в себе», а инструменты для достижения целей. Каждая — со своей областью применения."
+    habr: marshinov
   - id: 414
     photoFileName: 0414.jpg
     name:
@@ -5941,6 +5945,7 @@ speakers:
             ик Microsoft Bug Bounty Programs, соорганизатор сообщества DotNet.ru, Microsoft MVP. Профессиональные интересы\
             : безопасность приложений, статический и динамический анализ кода, Information Flow Security."}
     twitter: yu5k3
+    habr: yu5k3
     mvp: true
   - id: 416
     photoFileName: 0416.jpg
@@ -6335,6 +6340,7 @@ speakers:
             \ good code and beautiful architecture. Looks towards functional programming."}
       - {language: ru, text: "Разработчик, архитектор, к.т.н. Предпочитает бэкенд в enterprise, но жизнь помотала. Любит к\
             расивую архитектуру и увлекательный код. С интересом поглядывает в сторону функционального программирования."}
+    habr: m_a_d
   - id: 444
     photoFileName: 0444.jpg
     name:
@@ -6754,6 +6760,7 @@ speakers:
             \ Институте математики СО РАН."}
     twitter: andrey_akinshin
     gitHub: AndreyAkinshin
+    habr: DreamWalker
     mvpReconnect: true
   - id: 472
     photoFileName: 0472.jpg
@@ -7134,6 +7141,7 @@ speakers:
             ропоезда. Работает с платформой .NET с 2003 года. Профессионально занимается разработкой ПО более 7 лет в осно\
             вном на платформе .NET. Основной интерес сосредоточен в desktop front-end разработке."}
     twitter: engineerspock
+    habr: EngineerSpock
   - id: 495
     photoFileName: 0495.jpg
     name:
@@ -7204,6 +7212,7 @@ speakers:
             риодически пишет статьи (в том числе о проверке проектов, например – исходного кода библиотек .NET Core) и выс\
             тупает на конференциях с докладами, где также проводит митапы."}
     twitter: CPP_Coder
+    habr: foto_shooter
   - id: 500
     photoFileName: 0500.jpg
     name:
@@ -7932,6 +7941,7 @@ speakers:
             \ href=\"http://antkorwin.com/\" target=\"_blank\">блог про Java-разработку</a>. В свободное время активно ком\
             митит в open source-проекты и выступает на Java-митапах."}
     twitter: antkorwin
+    habr: antkorwin
   - id: 563
     photoFileName: 0563.jpg
     name:
@@ -8714,6 +8724,8 @@ speakers:
             \ Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где занимался разр\
             аботкой на Go."
     twitter: brekelov
+    gitHub: volekerb
+    habr: vbrekelov
   - id: 619
     photoFileName: 0619.jpg
     name:
@@ -8729,6 +8741,7 @@ speakers:
             \ 2008 работал в Intel, где тоже занимался проектами, связанными с Java. После этого 6 лет провёл в Яндексе, г\
             де строил метрики качества поиска. С 2015 года сменил род деятельности и теперь готовит спикеров для выступлен\
             ия на технических конференциях, ведёт тренинги."}
+    habr: p0b0rchy
   - id: 620
     photoFileName: 0620.jpg
     name:
@@ -9862,6 +9875,7 @@ speakers:
             центрировался на фронтенде. Сейчас занимается разработкой peer-2-peer системы доставки видео в браузере, испол\
             ьзуя технологии Node.js, MSE, WebSocket, WebRTC и WebAssembly."}
     twitter: andrnag
+    habr: AndreyNagih
   - id: 701
     photoFileName: 0701.jpg
     name:
@@ -10316,6 +10330,7 @@ speakers:
             лид, спикер. До недавнего времени захватывал мир вместе с Infobip — глобальной коммуникационной платформой для\
             \ бизнеса. Сейчас работает в EPAM."}
     twitter: zolotyh
+    habr: zolotyh
   - id: 734
     photoFileName: 0734.jpg
     name:
@@ -11014,6 +11029,7 @@ speakers:
       - {language: ru, text: "Старший iOS-разработчик в компании EPAM, где помимо проектной работы занимается развитием пе\
             тербургского и глобального мобильного сообщества в компании."}
     twitter: dydus0x14
+    habr: dydus0x14
   - id: 788
     photoFileName: 0788.jpg
     name:
@@ -11202,6 +11218,7 @@ speakers:
       - {language: ru, text: "Старший Android-разработчик компании ВКонтакте. Занимается разработкой раздела сообщений. Пр\
             ограммирует под Android с 2011 года, ранее занимался фрилансом для PHP/Node.js. Любит задачи, где надо возитьс\
             я с многопоточностью, оптимизациями и нетривиальной логикой."}
+    habr: alexoro
   - id: 801
     photoFileName: 0801.jpg
     name:
@@ -12645,6 +12662,7 @@ speakers:
       - language: ru
         text: "Эксперт по информационной безопасности в Одноклассниках. \nПуть в IT начинала как Java-разработчик, но свер\
             нула не туда. Последние 8 лет занимается безопасностью веб- и мобильных приложений."
+    habr: alexandra_s
   - id: 912
     photoFileName: 0912.jpg
     name:
@@ -13461,6 +13479,7 @@ speakers:
             втор FAST.com — одного из самых популярных сервисов по оценке скорости интернет-соединения.\n\nСергей любит ре\
             шать новые масштабные задачи в атмосфере неопределенности и отсутствия полного контроля. И не только в работе\
             \ - вне офиса Сергей варит собственное пиво, играет в хоккей и любит экстремальный туризм."
+    habr: sfedov
   - id: 977
     photoFileName: 0977.jpg
     photoUpdatedAt: 2020-02-21T12:01:32.371Z[UTC]
@@ -14776,6 +14795,7 @@ speakers:
             \ Работал менеджером группы нагрузочного тестирования в компании NetCracker.\n\nНа данный момент Андрей — дире\
             ктор департамента производства в JUG Ru Group."
     twitter: it_improve
+    habr: real_ales
   - id: 1077
     photoFileName: 1077.jpg
     name:
@@ -17116,6 +17136,7 @@ speakers:
       - {language: en, text: "Сотрудник отдела разработки C#-анализатора PVS-Studio. Профессионально делает вид, что умеет\
             \ играть на гитаре, записывать видео и разговаривать с людьми. Всегда рад новым знакомствам и интересному обще\
             нию"}
+    habr: Firensis
   - id: 1253
     photoFileName: 1253.jpg
     photoUpdatedAt: 2020-06-13T14:10:34.520Z[UTC]
@@ -17158,6 +17179,7 @@ speakers:
       - {language: en, text: "Участвует в управлении внутренними проектами, координирует работу команд по методике Kanban,\
             \ помогает улучшать soft skills в компании. Ранее занимался C#, участвовал в разработке ядра C#-анализатора, с\
             оздавал диагностики и DevOps-утилиты. Автор статей о проверке open source-проектов."}
+    habr: n0mo
   - id: 1257
     photoFileName: 1257.jpg
     photoUpdatedAt: 2020-06-12T14:12:59.121Z[UTC]
@@ -17844,6 +17866,7 @@ speakers:
     bio:
       - {language: en, text: "C++ программист. Участвует в разработке статического анализатора PVS-Studio, а точнее, его я\
             дра и диагностических правил. Помимо программирования увлекается философией и музыкой."}
+    habr: MrDvorak
   - id: 1317
     photoFileName: 1317.jpg
     photoUpdatedAt: 2020-06-24T08:10:14.016Z[UTC]
@@ -18359,6 +18382,7 @@ speakers:
       - {language: en, text: "C++ developer, organizer of C++ Siberia."}
       - {language: ru, text: "C++ программист. Организатор C++ Siberia."}
     twitter: sermp
+    habr: sermp
   - id: 1354
     photoFileName: 1354.jpg
     photoUpdatedAt: 2020-11-02T11:05:27.012Z[UTC]
