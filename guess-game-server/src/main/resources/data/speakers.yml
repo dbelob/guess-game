@@ -4633,6 +4633,7 @@ speakers:
             ьтет Санкт-Петербургского Государственного Университета. Сейчас учится там же в аспирантуре. Занимается вопрос\
             ами, связанными с применением методов глубокого обучения для решения задач машинного зрения."}
     twitter: andrew_bo_29
+    habr: andrewbo29
   - id: 324
     photoFileName: 0324.jpg
     name:
@@ -7246,6 +7247,7 @@ speakers:
             у деятельности активно участвовал в переговорах с такими гигантами, как Microsoft, Unity, Epic Games, Amazon,\
             \ Google, Red Hat и др.\nВ промышленном программировании уже более 15 лет."
     twitter: kskrygan
+    habr: kskrygan
   - id: 502
     photoFileName: 0502.jpg
     name:
@@ -7333,12 +7335,14 @@ speakers:
       - {language: en, text: "Alexander Shvedov"}
       - {language: ru, text: "Александр Шведов"}
     companyIds: [286]
+    habr: ControlFlow
   - id: 511
     photoFileName: 0511.jpg
     name:
       - {language: en, text: "Roman Belov"}
       - {language: ru, text: "Роман Белов"}
     companyIds: [286]
+    habr: belovrv
   - id: 512
     photoFileName: 0512.jpg
     name:
@@ -8114,6 +8118,7 @@ speakers:
     bio:
       - {language: en, text: "Mail.Ru Group senior developer."}
       - {language: ru, text: "Ведущий программист проекта «Поиск» компании Mail.Ru Group."}
+    habr: pushtaev
   - id: 576
     photoFileName: 0576.jpg
     name:
@@ -9491,6 +9496,7 @@ speakers:
             \ He's an author of a JS library with 14 stars. Top 100 Europe Solo Hard Lane."}
       - {language: ru, text: "Ведущий лямбда-программист в Mail.Ru Cloud Solutions. До этого работал в Яндекс.Маркете. Авт\
             ор JS-библиотеки с четырнадцатью звездочками. Top 100 Europe Solo Hard Lane."}
+    habr: ngOo
   - id: 672
     photoFileName: 0672.jpg
     name:
@@ -12938,6 +12944,7 @@ speakers:
             \ .NET. Уже несколько лет занимается организацией встреч питерского сообщества C++ разработчиков (St. Petersburg\
             \ C++ User Group)."}
     twitter: anastasiak2512
+    habr: anastasiak2512
   - id: 931
     photoFileName: 0931.jpg
     photoUpdatedAt: 2019-10-03T14:59:59.995Z[UTC]
@@ -15701,6 +15708,7 @@ speakers:
       - {language: ru, text: "Руководитель маркетинга продуктов IntelliJ IDEA и 0xDBE в компании JetBrains. В 2006 году ок\
             ончил Саратовский государственный технический университет по специальности «Программирование вычислительной те\
             хники». Более восьми лет занимался разработкой ПО, в том числе для брокерской и биржевой деятельности."}
+    habr: andreycheptsov
   - id: 1147
     photoFileName: 1147.jpg
     name:
@@ -19917,6 +19925,7 @@ speakers:
             ю и дальнейшей поддержки системы. В профессиональной деятельности превыше всего ценит воспроизводимость резуль\
             татов и хорошие процессы разработки."}
     twitter: mikhailmar
+    habr: mikhail_mar
   - id: 1465
     photoFileName: 1465.jpg
     photoUpdatedAt: 2020-11-30T11:19:47.156Z[UTC]
@@ -20823,3 +20832,4 @@ speakers:
             \ как автор темы Darcula."
     twitter: bulenkov
     gitHub: bulenkov
+    habr: stalk
