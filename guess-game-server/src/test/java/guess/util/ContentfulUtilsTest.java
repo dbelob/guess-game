@@ -2313,7 +2313,7 @@ class ContentfulUtilsTest {
             speaker9.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker9.setTwitter("twitter0");
             speaker9.setGitHub("gitHub0");
-            speaker0.setHabr("habr9");
+            speaker9.setHabr("habr9");
 
             Speaker speaker10 = new Speaker();
             speaker10.setId(0);
