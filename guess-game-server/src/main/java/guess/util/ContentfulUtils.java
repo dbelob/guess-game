@@ -490,7 +490,8 @@ public class ContentfulUtils {
                 extractLocaleItems(contentfulSpeaker.getFields().getBioEn(), contentfulSpeaker.getFields().getBio(), checkEnTextExistence),
                 new Speaker.SpeakerSocials(
                         extractTwitter(contentfulSpeaker.getFields().getTwitter()),
-                        extractGitHub(contentfulSpeaker.getFields().getGitHub())
+                        extractGitHub(contentfulSpeaker.getFields().getGitHub()),
+                        null
                 ),
                 new Speaker.SpeakerDegrees(
                         extractBoolean(contentfulSpeaker.getFields().getJavaChampion()),
@@ -1140,7 +1141,8 @@ public class ContentfulUtils {
                                         null),
                                 new Speaker.SpeakerSocials(
                                         "steveonjava",
-                                        "steveonjava"
+                                        "steveonjava",
+                                        null
                                 ),
                                 new Speaker.SpeakerDegrees(
                                         true,
@@ -1178,6 +1180,7 @@ public class ContentfulUtils {
                                         "Сергей работает в компании Pivotal в команде Project Reactor. Он является активным участником open source-сообщества, членом Apache Software Foundation, одним из главных разработчиков проекта Testcontainers и контрибьютором в разного рода проектах (Apache Groovy, Testcontainers, Spring Boot, JBoss Modules и не только)."),
                                 new Speaker.SpeakerSocials(
                                         "bsideup",
+                                        "bsideup",
                                         "bsideup"
                                 ),
                                 new Speaker.SpeakerDegrees(
@@ -1210,7 +1213,8 @@ public class ContentfulUtils {
                                         null),
                                 new Speaker.SpeakerSocials(
                                         "arungupta",
-                                        "arun-gupta"
+                                        "arun-gupta",
+                                        null
                                 ),
                                 new Speaker.SpeakerDegrees(
                                         true,
@@ -1242,6 +1246,7 @@ public class ContentfulUtils {
                                         null),
                                 new Speaker.SpeakerSocials(
                                         "rhatr",
+                                        null,
                                         null
                                 ),
                                 new Speaker.SpeakerDegrees(
@@ -1270,7 +1275,8 @@ public class ContentfulUtils {
                                         null),
                                 new Speaker.SpeakerSocials(
                                         "_lrlna",
-                                        "lrlna"
+                                        "lrlna",
+                                        null
                                 ),
                                 new Speaker.SpeakerDegrees(
                                         false,
@@ -1298,6 +1304,7 @@ public class ContentfulUtils {
                                         "Заболел веб-разработкой еще в школе (Windows 95, IE6, табличная верстка). Окончил Хельсинкский университет по специальности Information Technology, в настоящее время работает в Мюнхене фронтенд-разработчиком."),
                                 new Speaker.SpeakerSocials(
                                         "_sergeikriger",
+                                        null,
                                         null
                                 ),
                                 new Speaker.SpeakerDegrees(
@@ -1321,6 +1328,7 @@ public class ContentfulUtils {
                                 new ArrayList<>(),
                                 new ArrayList<>(),
                                 new Speaker.SpeakerSocials(
+                                        null,
                                         null,
                                         null
                                 ),
@@ -1404,6 +1412,7 @@ public class ContentfulUtils {
                 equals(a.getBio(), b.getBio()) &&
                 equals(a.getTwitter(), b.getTwitter()) &&
                 equals(a.getGitHub(), b.getGitHub()) &&
+                equals(a.getHabr(), b.getHabr()) &&
                 (a.isJavaChampion() == b.isJavaChampion()) &&
                 (a.isMvp() == b.isMvp()) &&
                 (a.isMvpReconnect() == b.isMvpReconnect()));

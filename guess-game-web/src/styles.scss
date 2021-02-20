@@ -57,8 +57,11 @@
 }
 
 @media (min-width: 576px) {
-  .container-dialog, .container-information {
+  .container-dialog {
     max-width: 540px;
+  }
+  .container-information {
+    max-width: 546px;
   }
   .img-guess-logo {
     width: 48px;
@@ -79,8 +82,11 @@
 }
 
 @media (min-width: 768px) {
-  .container-dialog, .container-information {
+  .container-dialog {
     max-width: 720px;
+  }
+  .container-information {
+    max-width: 738px;
   }
   .img-guess-logo {
     width: 64px;
@@ -105,7 +111,7 @@
     max-width: 720px;
   }
   .container-information {
-    max-width: 960px;
+    max-width: 962px;
   }
   .img-guess-logo {
     width: 82px;
@@ -130,7 +136,7 @@
     max-width: 720px;
   }
   .container-information {
-    max-width: 1140px;
+    max-width: 1150px;
   }
   .img-guess-logo {
     width: 100px;
@@ -152,7 +158,7 @@
 
 @media (min-width: 1400px) {
   .container-information {
-    max-width: 1150px;
+    max-width: 1200px;
   }
 }
 
@@ -187,4 +193,14 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.btn-sm-condensed {
+  padding: .25rem .2rem .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem}
+
+.text-habr {
+  color: #548eaa;
 }

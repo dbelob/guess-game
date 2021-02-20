@@ -20,6 +20,8 @@ import java.time.LocalTime;
 import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 /**
@@ -642,8 +644,9 @@ public class ConferenceDataLoader {
                 String resourcePhotoFileName = resourceSpeaker.getPhotoFileName();
                 speaker.setPhotoFileName(resourcePhotoFileName);
 
-                fillSpeakerTwitter(speaker, resourceSpeaker);
-                fillSpeakerGitHub(speaker, resourceSpeaker);
+                fillSpeakerSocial(resourceSpeaker::getTwitter, speaker::getTwitter, speaker::setTwitter);
+                fillSpeakerSocial(resourceSpeaker::getGitHub, speaker::getGitHub, speaker::setGitHub);
+                fillSpeakerSocial(resourceSpeaker::getHabr, speaker::getHabr, speaker::setHabr);
                 fillSpeakerJavaChampion(speaker, resourceSpeaker);
                 fillSpeakerMvp(speaker, resourceSpeaker);
 
@@ -673,28 +676,16 @@ public class ConferenceDataLoader {
     }
 
     /**
-     * Fills speaker Twitter.
+     * Fills speaker social.
      *
-     * @param targetSpeaker   target speaker
-     * @param resourceSpeaker resource speaker
+     * @param resourceSupplier resource supplier
+     * @param targetSupplier   target supplier
+     * @param targetConsumer   target consumer
      */
-    static void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker) {
-        if ((resourceSpeaker.getTwitter() != null) && !resourceSpeaker.getTwitter().isEmpty() &&
-                ((targetSpeaker.getTwitter() == null) || targetSpeaker.getTwitter().isEmpty())) {
-            targetSpeaker.setTwitter(resourceSpeaker.getTwitter());
-        }
-    }
-
-    /**
-     * Fills speaker GitHub.
-     *
-     * @param targetSpeaker   target speaker
-     * @param resourceSpeaker resource speaker
-     */
-    static void fillSpeakerGitHub(Speaker targetSpeaker, Speaker resourceSpeaker) {
-        if ((resourceSpeaker.getGitHub() != null) && !resourceSpeaker.getGitHub().isEmpty() &&
-                ((targetSpeaker.getGitHub() == null) || targetSpeaker.getGitHub().isEmpty())) {
-            targetSpeaker.setGitHub(resourceSpeaker.getGitHub());
+    static void fillSpeakerSocial(Supplier<String> resourceSupplier, Supplier<String> targetSupplier, Consumer<String> targetConsumer) {
+        if ((resourceSupplier.get() != null) && !resourceSupplier.get().isEmpty() &&
+                ((targetSupplier.get() == null) || targetSupplier.get().isEmpty())) {
+            targetConsumer.accept(resourceSupplier.get());
         }
     }
 

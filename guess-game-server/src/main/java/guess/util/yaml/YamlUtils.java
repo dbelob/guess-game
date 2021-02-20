@@ -389,7 +389,7 @@ public class YamlUtils {
                             List.of("id", "name")),
                     new PropertyMatcher(Speaker.class,
                             List.of("id", "photoFileName", "photoUpdatedAt", "name", "companyIds", "bio", "twitter",
-                                    "gitHub", "javaChampion", "mvp", "mvpReconnect")),
+                                    "gitHub", "habr", "javaChampion", "mvp", "mvpReconnect")),
                     new PropertyMatcher(LocaleItem.class,
                             List.of("language", "text"))
             );

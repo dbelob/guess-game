@@ -30,6 +30,8 @@ import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -1154,8 +1156,8 @@ class ConferenceDataLoaderTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("fillSpeakerTwitter method tests")
-    class FillSpeakerTwitterTest {
+    @DisplayName("fillSpeakerSocial method tests")
+    class FillSpeakerSocialTest {
         private Speaker createSpeaker(String twitter) {
             Speaker speaker = new Speaker();
             speaker.setTwitter(twitter);
@@ -1167,64 +1169,80 @@ class ConferenceDataLoaderTest {
             final String RESOURCE_SPEAKER_TWITTER = "resourceSpeakerTwitter";
             final String TARGET_SPEAKER_TWITTER = "targetSpeakerTwitter";
 
+            Speaker targetSpeaker0 = createSpeaker(null);
+            Supplier<String> targetSupplier0 = targetSpeaker0::getTwitter;
+            Consumer<String> targetConsumer0 = targetSpeaker0::setTwitter;
+            Speaker resourceSpeaker0 = createSpeaker(null);
+            Supplier<String> resourceSupplier0 = resourceSpeaker0::getTwitter;
+
+            Speaker targetSpeaker1 = createSpeaker("");
+            Supplier<String> targetSupplier1 = targetSpeaker1::getTwitter;
+            Consumer<String> targetConsumer1 = targetSpeaker1::setTwitter;
+            Speaker resourceSpeaker1 = createSpeaker(null);
+            Supplier<String> resourceSupplier1 = resourceSpeaker1::getTwitter;
+
+            Speaker targetSpeaker2 = createSpeaker(TARGET_SPEAKER_TWITTER);
+            Supplier<String> targetSupplier2 = targetSpeaker2::getTwitter;
+            Consumer<String> targetConsumer2 = targetSpeaker2::setTwitter;
+            Speaker resourceSpeaker2 = createSpeaker(null);
+            Supplier<String> resourceSupplier2 = resourceSpeaker2::getTwitter;
+
+            Speaker targetSpeaker3 = createSpeaker(null);
+            Supplier<String> targetSupplier3 = targetSpeaker3::getTwitter;
+            Consumer<String> targetConsumer3 = targetSpeaker3::setTwitter;
+            Speaker resourceSpeaker3 = createSpeaker("");
+            Supplier<String> resourceSupplier3 = resourceSpeaker3::getTwitter;
+
+            Speaker targetSpeaker4 = createSpeaker("");
+            Supplier<String> targetSupplier4 = targetSpeaker4::getTwitter;
+            Consumer<String> targetConsumer4 = targetSpeaker4::setTwitter;
+            Speaker resourceSpeaker4 = createSpeaker("");
+            Supplier<String> resourceSupplier4 = resourceSpeaker4::getTwitter;
+
+            Speaker targetSpeaker5 = createSpeaker(TARGET_SPEAKER_TWITTER);
+            Supplier<String> targetSupplier5 = targetSpeaker5::getTwitter;
+            Consumer<String> targetConsumer5 = targetSpeaker5::setTwitter;
+            Speaker resourceSpeaker5 = createSpeaker("");
+            Supplier<String> resourceSupplier5 = resourceSpeaker5::getTwitter;
+
+            Speaker targetSpeaker6 = createSpeaker(null);
+            Supplier<String> targetSupplier6 = targetSpeaker6::getTwitter;
+            Consumer<String> targetConsumer6 = targetSpeaker6::setTwitter;
+            Speaker resourceSpeaker6 = createSpeaker(RESOURCE_SPEAKER_TWITTER);
+            Supplier<String> resourceSupplier6 = resourceSpeaker6::getTwitter;
+
+            Speaker targetSpeaker7 = createSpeaker("");
+            Supplier<String> targetSupplier7 = targetSpeaker7::getTwitter;
+            Consumer<String> targetConsumer7 = targetSpeaker7::setTwitter;
+            Speaker resourceSpeaker7 = createSpeaker(RESOURCE_SPEAKER_TWITTER);
+            Supplier<String> resourceSupplier7 = resourceSpeaker7::getTwitter;
+
+            Speaker targetSpeaker8 = createSpeaker(TARGET_SPEAKER_TWITTER);
+            Supplier<String> targetSupplier8 = targetSpeaker8::getTwitter;
+            Consumer<String> targetConsumer8 = targetSpeaker8::setTwitter;
+            Speaker resourceSpeaker8 = createSpeaker(RESOURCE_SPEAKER_TWITTER);
+            Supplier<String> resourceSupplier8 = resourceSpeaker8::getTwitter;
+
             return Stream.of(
-                    arguments(createSpeaker(null), createSpeaker(null), null),
-                    arguments(createSpeaker(""), createSpeaker(null), ""),
-                    arguments(createSpeaker(TARGET_SPEAKER_TWITTER), createSpeaker(null), TARGET_SPEAKER_TWITTER),
-                    arguments(createSpeaker(null), createSpeaker(""), null),
-                    arguments(createSpeaker(""), createSpeaker(""), ""),
-                    arguments(createSpeaker(TARGET_SPEAKER_TWITTER), createSpeaker(""), TARGET_SPEAKER_TWITTER),
-                    arguments(createSpeaker(null), createSpeaker(RESOURCE_SPEAKER_TWITTER), RESOURCE_SPEAKER_TWITTER),
-                    arguments(createSpeaker(""), createSpeaker(RESOURCE_SPEAKER_TWITTER), RESOURCE_SPEAKER_TWITTER),
-                    arguments(createSpeaker(TARGET_SPEAKER_TWITTER), createSpeaker(RESOURCE_SPEAKER_TWITTER), TARGET_SPEAKER_TWITTER)
+                    arguments(resourceSupplier0, targetSupplier0, targetConsumer0, null),
+                    arguments(resourceSupplier1, targetSupplier1, targetConsumer1, ""),
+                    arguments(resourceSupplier2, targetSupplier2, targetConsumer2, TARGET_SPEAKER_TWITTER),
+                    arguments(resourceSupplier3, targetSupplier3, targetConsumer3, null),
+                    arguments(resourceSupplier4, targetSupplier4, targetConsumer4, ""),
+                    arguments(resourceSupplier5, targetSupplier5, targetConsumer5, TARGET_SPEAKER_TWITTER),
+                    arguments(resourceSupplier6, targetSupplier6, targetConsumer6, RESOURCE_SPEAKER_TWITTER),
+                    arguments(resourceSupplier7, targetSupplier7, targetConsumer7, RESOURCE_SPEAKER_TWITTER),
+                    arguments(resourceSupplier8, targetSupplier8, targetConsumer8, TARGET_SPEAKER_TWITTER)
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker,
+        void fillSpeakerTwitter(Supplier<String> resourceSupplier, Supplier<String> targetSupplier, Consumer<String> targetConsumer,
                                 String expected) {
-            ConferenceDataLoader.fillSpeakerTwitter(targetSpeaker, resourceSpeaker);
+            ConferenceDataLoader.fillSpeakerSocial(resourceSupplier, targetSupplier, targetConsumer);
 
-            assertEquals(expected, targetSpeaker.getTwitter());
-        }
-    }
-
-    @Nested
-    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("fillSpeakerGitHub method tests")
-    class FillSpeakerGitHubTest {
-        private Speaker createSpeaker(String gitHub) {
-            Speaker speaker = new Speaker();
-            speaker.setGitHub(gitHub);
-
-            return speaker;
-        }
-
-        private Stream<Arguments> data() {
-            final String RESOURCE_SPEAKER_GIT_HUB = "resourceSpeakerGitHub";
-            final String TARGET_SPEAKER_GIT_HUB = "targetSpeakerGitHub";
-
-            return Stream.of(
-                    arguments(createSpeaker(null), createSpeaker(null), null),
-                    arguments(createSpeaker(""), createSpeaker(null), ""),
-                    arguments(createSpeaker(TARGET_SPEAKER_GIT_HUB), createSpeaker(null), TARGET_SPEAKER_GIT_HUB),
-                    arguments(createSpeaker(null), createSpeaker(""), null),
-                    arguments(createSpeaker(""), createSpeaker(""), ""),
-                    arguments(createSpeaker(TARGET_SPEAKER_GIT_HUB), createSpeaker(""), TARGET_SPEAKER_GIT_HUB),
-                    arguments(createSpeaker(null), createSpeaker(RESOURCE_SPEAKER_GIT_HUB), RESOURCE_SPEAKER_GIT_HUB),
-                    arguments(createSpeaker(""), createSpeaker(RESOURCE_SPEAKER_GIT_HUB), RESOURCE_SPEAKER_GIT_HUB),
-                    arguments(createSpeaker(TARGET_SPEAKER_GIT_HUB), createSpeaker(RESOURCE_SPEAKER_GIT_HUB), TARGET_SPEAKER_GIT_HUB)
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("data")
-        void fillSpeakerTwitter(Speaker targetSpeaker, Speaker resourceSpeaker,
-                                String expected) {
-            ConferenceDataLoader.fillSpeakerGitHub(targetSpeaker, resourceSpeaker);
-
-            assertEquals(expected, targetSpeaker.getGitHub());
+            assertEquals(expected, targetSupplier.get());
         }
     }
 

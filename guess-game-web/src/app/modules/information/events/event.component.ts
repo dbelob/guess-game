@@ -21,6 +21,7 @@ export class EventComponent implements OnInit {
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
   public twitterUrlPrefix = 'https://twitter.com';
   public gitHubUrlPrefix = 'https://github.com';
+  public habrUrlPrefix = 'https://habr.com/users';
   public googleMapsUrlPrefix = 'https://www.google.com/maps/place';
 
   private id: number;

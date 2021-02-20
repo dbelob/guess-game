@@ -17,6 +17,7 @@ export class TalkComponent implements OnInit {
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
   public twitterUrlPrefix = 'https://twitter.com';
   public gitHubUrlPrefix = 'https://github.com';
+  public habrUrlPrefix = 'https://habr.com/users';
 
   private id: number;
   public talkDetails: TalkDetails = new TalkDetails();

@@ -26,10 +26,12 @@ public class Speaker extends Identifier {
     public static class SpeakerSocials {
         private final String twitter;
         private final String gitHub;
+        private final String habr;
 
-        public SpeakerSocials(String twitter, String gitHub) {
+        public SpeakerSocials(String twitter, String gitHub, String habr) {
             this.twitter = twitter;
             this.gitHub = gitHub;
+            this.habr = habr;
         }
     }
 
@@ -51,6 +53,7 @@ public class Speaker extends Identifier {
     private List<LocaleItem> bio;
     private String twitter;
     private String gitHub;
+    private String habr;
     private boolean javaChampion;
     private boolean mvp;
     private boolean mvpReconnect;
@@ -72,6 +75,7 @@ public class Speaker extends Identifier {
         this.bio = bio;
         this.twitter = socials.twitter;
         this.gitHub = socials.gitHub;
+        this.habr = socials.habr;
         this.javaChampion = degrees.javaChampion;
         this.mvp = degrees.mvp;
         this.mvpReconnect = degrees.mvpReconnect;
@@ -127,6 +131,14 @@ public class Speaker extends Identifier {
 
     public void setGitHub(String gitHub) {
         this.gitHub = gitHub;
+    }
+
+    public String getHabr() {
+        return habr;
+    }
+
+    public void setHabr(String habr) {
+        this.habr = habr;
     }
 
     public boolean isJavaChampion() {

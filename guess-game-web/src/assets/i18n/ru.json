@@ -139,6 +139,7 @@
       "companyColumn": "Компания",
       "twitterColumn": "Twitter",
       "gitHubColumn": "GitHub",
+      "habrColumn": "Хабр",
       "javaChampionColumn": "Java Champion",
       "mvpColumn": "MVP"
     },

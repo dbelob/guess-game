@@ -16,7 +16,7 @@
 
   <div class="m-1">
     <div>
-      <button class="btn btn-link btn-sm font-weight-bold" *ngFor="let enLetter of enLetters"
+      <button class="btn btn-link btn-sm-condensed font-weight-bold" *ngFor="let enLetter of enLetters"
               (click)="changeLetter(enLetter)"
               [class.text-dark]="isCurrentLetter(enLetter)" [class.font-weight-bold]="isCurrentLetter(enLetter)"
               [disabled]="isCurrentLetter(enLetter)">
@@ -24,7 +24,7 @@
       </button>
     </div>
     <div *ngIf="isRuLettersVisible()">
-      <button class="btn btn-link btn-sm font-weight-bold" *ngFor="let ruLetter of ruLetters"
+      <button class="btn btn-link btn-sm-condensed font-weight-bold" *ngFor="let ruLetter of ruLetters"
               (click)="changeLetter(ruLetter)"
               [class.text-dark]="isCurrentLetter(ruLetter)" [class.font-weight-bold]="isCurrentLetter(ruLetter)"
               [disabled]="isCurrentLetter(ruLetter)">
@@ -57,6 +57,9 @@
               {{'speakers.table.gitHubColumn' | translate}}
             </th>
             <th class="text-center" pResizableColumn>
+              {{'speakers.table.habrColumn' | translate}}
+            </th>
+            <th class="text-center" pResizableColumn>
               {{'speakers.table.javaChampionColumn' | translate}}
             </th>
             <th class="text-center" pResizableColumn>
@@ -86,6 +89,11 @@
             <td>
               <a *ngIf="speaker.gitHub" href="{{gitHubUrlPrefix}}/{{speaker.gitHub}}" class="text-dark">
                 <i class="fa fa-github"></i>{{speaker.gitHub}}
+              </a>
+            </td>
+            <td>
+              <a *ngIf="speaker.habr" href="{{habrUrlPrefix}}/{{speaker.habr}}" class="text-habr">
+                <i class="fa fa-h-square"></i>{{speaker.habr}}
               </a>
             </td>
             <td class="text-center">

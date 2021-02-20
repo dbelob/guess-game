@@ -2247,6 +2247,7 @@ class ContentfulUtilsTest {
             speaker0.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker0.setTwitter("twitter0");
             speaker0.setGitHub("gitHub0");
+            speaker0.setHabr("habr0");
             speaker0.setJavaChampion(true);
             speaker0.setMvp(true);
             speaker0.setMvpReconnect(true);
@@ -2282,7 +2283,7 @@ class ContentfulUtilsTest {
             speaker6.setPhotoUpdatedAt(now);
             speaker6.setName(List.of(new LocaleItem("en", "name0")));
             speaker6.setCompanies(List.of(company0));
-            speaker6.setBio(List.of(new LocaleItem("en", "bio5")));
+            speaker6.setBio(List.of(new LocaleItem("en", "bio6")));
 
             Speaker speaker7 = new Speaker();
             speaker7.setId(0);
@@ -2291,7 +2292,7 @@ class ContentfulUtilsTest {
             speaker7.setName(List.of(new LocaleItem("en", "name0")));
             speaker7.setCompanies(List.of(company0));
             speaker7.setBio(List.of(new LocaleItem("en", "bio0")));
-            speaker7.setTwitter("twitter6");
+            speaker7.setTwitter("twitter7");
 
             Speaker speaker8 = new Speaker();
             speaker8.setId(0);
@@ -2301,7 +2302,7 @@ class ContentfulUtilsTest {
             speaker8.setCompanies(List.of(company0));
             speaker8.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker8.setTwitter("twitter0");
-            speaker8.setGitHub("gitHub7");
+            speaker8.setGitHub("gitHub8");
 
             Speaker speaker9 = new Speaker();
             speaker9.setId(0);
@@ -2312,7 +2313,7 @@ class ContentfulUtilsTest {
             speaker9.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker9.setTwitter("twitter0");
             speaker9.setGitHub("gitHub0");
-            speaker9.setJavaChampion(false);
+            speaker0.setHabr("habr9");
 
             Speaker speaker10 = new Speaker();
             speaker10.setId(0);
@@ -2323,8 +2324,8 @@ class ContentfulUtilsTest {
             speaker10.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker10.setTwitter("twitter0");
             speaker10.setGitHub("gitHub0");
-            speaker10.setJavaChampion(true);
-            speaker10.setMvp(false);
+            speaker10.setHabr("habr0");
+            speaker10.setJavaChampion(false);
 
             Speaker speaker11 = new Speaker();
             speaker11.setId(0);
@@ -2335,9 +2336,23 @@ class ContentfulUtilsTest {
             speaker11.setBio(List.of(new LocaleItem("en", "bio0")));
             speaker11.setTwitter("twitter0");
             speaker11.setGitHub("gitHub0");
+            speaker11.setHabr("habr0");
             speaker11.setJavaChampion(true);
-            speaker11.setMvp(true);
-            speaker11.setMvpReconnect(false);
+            speaker11.setMvp(false);
+
+            Speaker speaker12 = new Speaker();
+            speaker12.setId(0);
+            speaker12.setPhotoFileName("photoFileName0");
+            speaker12.setPhotoUpdatedAt(now);
+            speaker12.setName(List.of(new LocaleItem("en", "name0")));
+            speaker12.setCompanies(List.of(company0));
+            speaker12.setBio(List.of(new LocaleItem("en", "bio0")));
+            speaker12.setTwitter("twitter0");
+            speaker12.setGitHub("gitHub0");
+            speaker12.setHabr("habr0");
+            speaker12.setJavaChampion(true);
+            speaker12.setMvp(true);
+            speaker12.setMvpReconnect(false);
 
             return Stream.of(
                     arguments(speaker0, speaker0, false),
@@ -2351,7 +2366,8 @@ class ContentfulUtilsTest {
                     arguments(speaker0, speaker8, true),
                     arguments(speaker0, speaker9, true),
                     arguments(speaker0, speaker10, true),
-                    arguments(speaker0, speaker11, true)
+                    arguments(speaker0, speaker11, true),
+                    arguments(speaker0, speaker12, true)
             );
         }
 

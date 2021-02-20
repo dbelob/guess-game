@@ -161,6 +161,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -179,6 +180,7 @@ public class LocalizationUtilsTest {
                                     new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -199,6 +201,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -218,6 +221,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -236,6 +240,7 @@ public class LocalizationUtilsTest {
                                     EMPTY_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -256,6 +261,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -274,6 +280,7 @@ public class LocalizationUtilsTest {
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -294,6 +301,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -312,6 +320,7 @@ public class LocalizationUtilsTest {
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -332,6 +341,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -350,6 +360,7 @@ public class LocalizationUtilsTest {
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -370,6 +381,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -388,6 +400,7 @@ public class LocalizationUtilsTest {
                                     SOME_COMPANY_REVERSE_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -442,6 +455,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -460,6 +474,7 @@ public class LocalizationUtilsTest {
                                     new ArrayList<>(),
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -480,6 +495,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -499,6 +515,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -517,6 +534,7 @@ public class LocalizationUtilsTest {
                                     EMPTY_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -537,6 +555,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -555,6 +574,7 @@ public class LocalizationUtilsTest {
                                     FULL_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -575,6 +595,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -593,6 +614,7 @@ public class LocalizationUtilsTest {
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -613,6 +635,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -631,6 +654,7 @@ public class LocalizationUtilsTest {
                                     ENGLISH_LANGUAGE_COMPANY_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -651,6 +675,7 @@ public class LocalizationUtilsTest {
                                     null,
                                     new Speaker.SpeakerSocials(
                                             null,
+                                            null,
                                             null
                                     ),
                                     new Speaker.SpeakerDegrees(
@@ -669,6 +694,7 @@ public class LocalizationUtilsTest {
                                     SOME_COMPANY_REVERSE_LIST,
                                     null,
                                     new Speaker.SpeakerSocials(
+                                            null,
                                             null,
                                             null
                                     ),
@@ -712,6 +738,7 @@ public class LocalizationUtilsTest {
                     List.of(company),
                     null,
                     new Speaker.SpeakerSocials(
+                            null,
                             null,
                             null
                     ),
@@ -760,6 +787,7 @@ public class LocalizationUtilsTest {
                     List.of(company0),
                     null,
                     new Speaker.SpeakerSocials(
+                            null,
                             null,
                             null
                     ),

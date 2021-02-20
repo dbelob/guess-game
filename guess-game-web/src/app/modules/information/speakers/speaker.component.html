@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div *ngIf="speakerDetails.speaker?.javaChampion || speakerDetails.speaker?.anyMvp || speakerDetails.speaker?.twitter || speakerDetails.speaker?.gitHub"
+      <div *ngIf="isSocialsVisible()"
            class="row align-items-center mt-1">
         <div *ngIf="speakerDetails.speaker?.javaChampion" class="col-auto">
           <img src="{{degreesImageDirectory}}/java-champion.png" class="img-speaker-degree" alt="java-champion"/>
@@ -52,6 +52,11 @@
         <div *ngIf="speakerDetails.speaker?.gitHub" class="col-auto">
           <a href="{{gitHubUrlPrefix}}/{{speakerDetails.speaker.gitHub}}" class="text-dark">
             <i class="fa fa-github"></i>{{speakerDetails.speaker.gitHub}}
+          </a>
+        </div>
+        <div *ngIf="speakerDetails.speaker?.habr" class="col-auto">
+          <a href="{{habrUrlPrefix}}/{{speakerDetails.speaker.habr}}" class="text-habr">
+            <i class="fa fa-h-square"></i>{{speakerDetails.speaker.habr}}
           </a>
         </div>
       </div>
