@@ -18018,13 +18018,6 @@ speakers:
     bio:
       - {language: en, text: "Работает в ЛК десять с лишним лет. Начинал будучи еще стажером. Задачи бывали разные, но в о\
             сновном разрабатывал базовые компоненты для продуктов, естественно, на C++."}
-  - id: 1321
-    photoFileName: 1321.jpg
-    photoUpdatedAt: 2020-06-01T12:24:49.943Z[UTC]
-    name:
-      - {language: en, text: "C++ Russia team"}
-    companyIds: []
-    bio: []
   - id: 1322
     photoFileName: 1322.jpg
     photoUpdatedAt: 2020-06-24T07:59:34.291Z[UTC]
@@ -18035,12 +18028,6 @@ speakers:
     bio:
       - {language: en, text: "Опыт работы в игровой сфере — 7 лет, участвовал в качестве спикера в конференции CoreHard Autumn\
             \ 2019. В компании Wargaming занимается разработкой кросс-платформенного ММО-экшена World of Tanks Blitz."}
-  - id: 1323
-    photoFileName: 1323.jpg
-    name:
-      - {language: en, text: "Hydra team"}
-    companyIds: []
-    bio: []
   - id: 1324
     photoFileName: 1324.jpg
     photoUpdatedAt: 2020-06-16T12:34:03.001Z[UTC]
