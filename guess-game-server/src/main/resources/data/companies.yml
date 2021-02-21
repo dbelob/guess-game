@@ -2183,3 +2183,9 @@ companies:
   - id: 697
     name:
       - {language: en, text: "Russian Microsoft MVP Community"}
+  - id: 698
+    name:
+      - {language: en, text: Datadog}
+  - id: 699
+    name:
+      - {language: en, text: "Fontem Ventures"}

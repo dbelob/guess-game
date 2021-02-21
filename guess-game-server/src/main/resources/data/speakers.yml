@@ -877,15 +877,17 @@ speakers:
     companyIds: [383]
     bio:
       - language: en
-        text: "Principal Programmer / Architect at T-Systems, co-leader of the Bulgarian Java User Group. In addition to work,\
-            \ Dmitry performs with lectures at conferences. Organizer of jPrime.io Conference — largest Java-conference in\
-            \ Balkans. \n\nList of his main interests includes dynamic languages on JVM (Nashorn project) and Java EE, as\
-            \ well as all Spring Framework's infrastructure. He is into experimental Java projects."
+        text: "Dmitry is a Senior Principal developer at Oracle, Java Champion, Oracle Groundbreaker. He has more than a\
+        \ decade experience mainly in Java Enterprise in banking/telecom, but interested in dynamic languages on JVM and\
+        \ features like massive computations on GPUs. A true believer in open source and community driven initiatives.\n\n\
+        \ He is a co-lead of the Bulgarian Java User Group and co-organizer of jPrime Conf. Dmitry is a blogger and also a\
+        \ frequent speaker at local events as well as conferences like JavaOne/CodeOne, Devoxx/Voxxed and Joker/JPoint. "
       - language: ru
-        text: "Ведущий программист/архитектор в T-Systems, по совместительству со-лидер болгарской Java User Group. Помимо\
-            \ работы читает лекции на конференциях. Организатор конференции jPrime.io — крупнейшей Java-конференции на Бал\
-            канах.\r\n\r\nВ перечень основных интересов входят динамические языки на JVM (Nashorn project) и Java EE, а та\
-            кже вся Spring-инфраструктура. Увлекается всяческими экспериментальными Java-проектами."
+        text: "Senior Principle программист в Oracle, Со-лидер болгарской Java User Group, Java Champion, Oracle Groundbreaker.\
+        \ Помимо работы над Project Helidon, читает лекции на конференциях. Организатор конференции jPrime.io — крупнейшей\
+        \ Java-конференции на Балканах. В перечень основных интересов входят динамические языки на JVM, Java Enterprise,\
+        \ MicroProfile, а также вся Spring-инфраструктура. Увлекается всяческими экспериментальными Java-проектами, а также\
+        \ GPU-программированием."
     twitter: bercut2000
     gitHub: dalexandrov
     habr: advbg
@@ -2435,7 +2437,7 @@ speakers:
     photoFileName: 0150.jpg
     name:
       - {language: en, text: "Andres Almiray"}
-    companyIds: [86]
+    companyIds: [383]
     bio:
       - language: en
         text: "Andres is a Java/Groovy developer and Java Champion, with more than 16 years of experience in software design\
@@ -2527,13 +2529,15 @@ speakers:
     photoFileName: 0155.jpg
     name:
       - {language: en, text: "Jean-Philippe Bempel"}
-    companyIds: [553]
+    companyIds: [698]
     bio:
-      - {language: en, text: "Jean-Philippe works at Ullink as Performance Architect on trading applications requiring very\
-            \ low latency. From optimizing Java code to fine tuning of OS & hardware, the whole execution chain is analyzed\
-            \ by him to save microseconds on order processing."}
+      - {language: en, text: "Developer passionate by performance, runtimes (JVM, CLR) and Mechanical Sympathy supporter,\
+            \ Jean-Philippe has more than 8 years experience in low latency trading systems. After He brings his expertise\
+            \ on the JVM at Criteo in order to optimize resources on thousand node clusters, He is now at Datadog to evaluate\
+            \ & improve both profiler & tracer agent. He is also a contributor to OpenJDK for the JDK Mission Control project."}
     twitter: jpbempel
     gitHub: jpbempel
+    javaChampion: true
   - id: 156
     photoFileName: 0156.jpg
     name:
@@ -2556,6 +2560,7 @@ speakers:
             \ yet execute as fast as their hand tuned counterparts. To this end, he is working on better dynamic compilation\
             \ in multilingual environments. Vojin also developed a framework that allows effortless addition of domain-specific\
             \ optimizations to existing libraries in Scala."}
+    twitter: vojjov
     gitHub: vjovanov
   - id: 158
     photoFileName: 0158.jpg
@@ -20915,3 +20920,56 @@ speakers:
     twitter: bulenkov
     gitHub: bulenkov
     habr: stalk
+  - id: 1528
+    photoFileName: 1528.jpg
+    name:
+      - {language: en, text: "Evgeny Ruban"}
+      - {language: ru, text: "Евгений Рубан"}
+    companyIds: [63]
+    bio:
+      - language: en
+        text: "Evgeny - a software developer, 10+ years in compiler development. For 4 years he has been working at Azul\
+            \ Systems on a LLVM based JIT compiler. Before Azul he worked at Intel and Sun Microsystems."
+      - language: ru
+        text: "Евгений — программист, более 10 лет специализирующийся на разработке компиляторов. 4 года работает в Azul\
+            \ Systems над созданием JIT компилятора на базе LLVM, до этого работал в компаниях Intel и Sun Microsystems."
+  - id: 1529
+    photoFileName: 1529.jpg
+    name:
+      - {language: en, text: "Konstantin Volivach"}
+      - {language: ru, text: "Константин Воливач"}
+    companyIds: [669]
+    bio:
+      - language: en
+        text: "Konstantin Volivach is Teamlead at SKB Kontur, for some time worked at Eltex, periodically contributes to\
+            \ opensource. All commercial experience is made up of working on Kotlin. Wrote the kfixture library for generating\
+            \ test data in the company."
+      - language: ru
+        text: "Константин Воливач - Teamlead в СКБ Контур, какое-то время работал в Eltex, периодически вносит вклад в\
+            \ opensource. Весь коммерческий опыт составляет работа на Kotlin. Написал библиотеку kfixture для генерации\
+            \ тестовых данных в компании."
+    twitter: Kostya05983
+  - id: 1530
+    photoFileName: 1530.jpg
+    name:
+      - {language: en, text: "Mary Grygleski"}
+    companyIds: [250]
+    bio:
+      - language: en
+        text: "Mary is a Senior Developer Advocate and Software Engineer primarily in the Java, Open Source, and Cloud areas\
+            \ at IBM. She transitioned from Unix/C to Java around 2000 and has never looked back since then. She considers\
+            \ herself as a polyglot and loves to continue learning new and better ways to solve real-life problems. She is\
+            \ an active tech community builder outside of her day job, and currently the president of the Chicago Java Users\
+            \ Group (CJUG), as well as a co-organizer for several IBM-sponsored meetup groups in the Greater Chicago area."
+    twitter: mgrygles
+  - id: 1531
+    photoFileName: 1531.jpg
+    name:
+      - {language: en, text: "Fabio Tiriticco"}
+    companyIds: [699]
+    bio:
+      - language: en
+        text: "Fabio is a software engineer and community leader based in Amsterdam - he runs the 2000-member strong Reactive\
+            \ Amsterdam meetup and the annual Kubernetes Community Days conference. When not in front of a screen, he enjoys\
+            \ long distance bike rides and fingerpicking his guitar."
+    twitter: ticofab
