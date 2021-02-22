@@ -839,6 +839,7 @@ speakers:
             ода для таких языков, как Java, C/C++, C#, JavaScript."}
     twitter: _godin_
     gitHub: Godin
+    habr: godin
   - id: 48
     photoFileName: 0048.jpg
     name:
@@ -1242,8 +1243,9 @@ speakers:
             \ style, spiced with jokes, metaphors and easy-to-remember visual representations. Having delivered hundreds of\
             \ hours of training and coaching for major players in enterprise Java development, Victor got to introspect a\
             \ huge variety of enterprise projects. His quest is to make you think deeply, learn to introspect your design."
-    twitter: victorrentea
+    twitter: VictorRentea
     gitHub: victorrentea
+    javaChampion: true
   - id: 74
     photoFileName: 0074.jpg
     photoUpdatedAt: 2019-07-30T08:02:32.434Z[UTC]
@@ -2371,12 +2373,12 @@ speakers:
     name:
       - {language: en, text: "Victor Polischuk"}
       - {language: ru, text: "Виктор Полищук"}
-    companyIds: [263]
+    companyIds: [318]
     bio:
-      - {language: en, text: "Java technical leader at Infopulse Ukraine. Production experience counts about 15 years including\
-            \ vast amount of time dedicated to Java. Expert in Java and JavaScript. Smartass."}
-      - {language: ru, text: "Java технический лидер в Infopulse Ukraine. Разрабатывает за деньги более 15 лет, львиную до\
-            лю этого времени — на Java. Эксперт в Java и JavaScript. Много умничает."}
+      - {language: en, text: "Practicing Java technical leader. More than 15 years of experience in professional Java\
+            \ software development. Expert in Java and JavaScript development. Smart, talented and charismatic."}
+      - {language: ru, text: "Практикующий Java технический лидер. Более 15 лет занимается профессиональной разработкой\
+            \ ПО на Java. Эксперт в разработке на Java и JavaScript. Умен, талантлив и харизматичен."}
     twitter: alkovictor
     gitHub: victor-cr
   - id: 146
@@ -3355,6 +3357,10 @@ speakers:
       - {language: en, text: "Alexey Ignatenko"}
       - {language: ru, text: "Алексей Игнатенко"}
     companyIds: [63]
+    bio:
+      - {language: en, text: "2005-2016 Intel Novosibirsk branch, projects Harmony, Oracle Hotspot, x86 optimizations,\
+            \ performance, benchmarking, compilers\n2017-nowadays - Azul Systems - manager of Performance and Compiler\
+            \ Teams"}
   - id: 229
     photoFileName: 0229.jpg
     name:
@@ -3553,13 +3559,16 @@ speakers:
     name:
       - {language: en, text: "Oleg Pliss"}
       - {language: ru, text: "Олег Плисс"}
-    companyIds: [383]
+    companyIds: [700]
     bio:
+      - {language: en, text: "Expert on compilers and language virtual machines. In 2015-2017, he worked at Oracle Labs\
+            \ on the GraalVM project."}
       - {language: ru, text: "Выпускник матмеха СПбГУ и бывший преподаватель кафедры системного программирования там же. О\
             дин из лучших в мире специалистов по «языковым» виртуальным машинам, управлению памятью и истории языков прогр\
-            аммирования. Ныне — сотрудник калифорнийского офиса компании Oracle, после приобретения последней компании Sun\
-            \ Microsystems. Больше 10 лет работает над JIT-компилятором и сборщиком мусора в <a href=\"http://en.wikibooks.org/wiki/J2ME_Programming/JVMs_in_MIDP#CLDC_HotSpot_Implementation_Virtual_Machine\"\
-            \ target=\"_blank\">CLDC HI JVM</a>."}
+            аммирования. Ранее — сотрудник калифорнийского офиса компании Oracle, после приобретения последней компании Sun\
+            \ Microsystems. Больше 10 лет работал над JIT-компилятором и сборщиком мусора в <a href=\"http://en.wikibooks.org/wiki/J2ME_Programming/JVMs_in_MIDP#CLDC_HotSpot_Implementation_Virtual_Machine\"\
+            \ target=\"_blank\">CLDC HI JVM</a>.\n\nЭксперт по компиляторам и языковым виртуальным машинам. В 2015-2017\
+            \ работал в Oracle Labs над проектом GraalVM."}
   - id: 247
     photoFileName: 0247.jpg
     name:
@@ -19130,6 +19139,7 @@ speakers:
             \ и lean-подхода к разработке; фанат open source, автор и тот самый Алексей из еженедельного Hi-Tech подкаста\
             \ Radio-T."}
     twitter: alek_sys
+    gitHub: alek-sys
   - id: 1400
     photoFileName: 1400.jpg
     photoUpdatedAt: 2020-10-16T08:12:06.774Z[UTC]
@@ -20949,6 +20959,7 @@ speakers:
             \ opensource. Весь коммерческий опыт составляет работа на Kotlin. Написал библиотеку kfixture для генерации\
             \ тестовых данных в компании."
     twitter: Kostya05983
+    gitHub: kostya05983
   - id: 1530
     photoFileName: 1530.jpg
     name:
@@ -20962,6 +20973,7 @@ speakers:
             \ an active tech community builder outside of her day job, and currently the president of the Chicago Java Users\
             \ Group (CJUG), as well as a co-organizer for several IBM-sponsored meetup groups in the Greater Chicago area."
     twitter: mgrygles
+    gitHub: mgrygles
   - id: 1531
     photoFileName: 1531.jpg
     name:
@@ -20973,3 +20985,106 @@ speakers:
             \ Amsterdam meetup and the annual Kubernetes Community Days conference. When not in front of a screen, he enjoys\
             \ long distance bike rides and fingerpicking his guitar."
     twitter: ticofab
+    gitHub: ticofab
+  - id: 1532
+    photoFileName: 1532.jpg
+    name:
+      - {language: en, text: "Sergey Tselovalnikov"}
+      - {language: ru, text: "Сергей Целовальников"}
+    companyIds: [701]
+    bio:
+      - language: en
+        text: "Software engineer. A big fan of the JVM platform, distributed systems, and functional programming. Previously\
+            \ worked at Naumen, JetBrains. Sergey joined the infrastructure team at Canva in 2016 and helped Canva services\
+            \ scale to the state where they can reliably serve tens of millions of users."
+      - language: ru
+        text: "Опытный разработчик. Большой поклонник платформы JVM, распределенных систем и функционального программирования.\
+            \ Поработав в Naumen и JetBrains, Сергей в 2016 году присоединился к инфраструктурной команде Canva и помог\
+            \ отмасштабировать сервисы Canva до уровня, на котором они смогли надежно обрабатывать запросы десятков миллионов\
+            \ пользователей."
+    twitter: SerCeMan
+    gitHub: SerCeMan
+    habr: SerCe
+  - id: 1533
+    photoFileName: 1533.jpg
+    name:
+      - {language: en, text: "Yuri Badalyants"}
+      - {language: ru, text: "Юрий Бадальянц"}
+    companyIds: [3]
+    bio:
+      - language: en
+        text: "Yuri has 10 years of experience in the IT industry. Started as a full-stack web developer, last 5 years he\
+            \ is working with Scala. Now he is developing streaming backends at 2GIS. Open-source contributor, maintainer\
+            \ of the testcontainers-scala library. Speaker, mainly talking about scala and functional programming. From\
+            \ recent time — one of the hosts of the scala podcast scalalaz."
+      - language: ru
+        text: "Юрий уже 10 лет в индустрии, из которых 5 лет пишет на Scala. Начинал как full-stack web разработчик.\
+            \ Сейчас занимается стриминговыми бэкэндами в компании 2ГИС. Open-source контрибьютор, мейнтейнер библиотеки\
+            \ testcontainers-scala. Выступает с докладами, в основном по теме scala и функционального программирования.\
+            \ С недавнего времени один из ведущих scala подкаста scalalaz."
+    twitter: lmnet89
+    gitHub: LMnet
+    habr: LMnet
+  - id: 1534
+    photoFileName: 1534.jpg
+    name:
+      - {language: en, text: "Vladimir Buhtoyarov"}
+      - {language: ru, text: "Владимир Бухтояров"}
+    companyIds: [156]
+    bio:
+      - language: en
+        text: "12 years of commercial Java development experience, including 7 years at DINS.\n\
+            \ Current position is Java Lead Developer.\n\
+            \ Vladimir likes parallel algorithms, optimizations, and Grid Computing.\n\
+            \ Also, he contributes to OpenSource whenever possible."
+      - language: ru
+        text: "Опыт коммерческой разработки на Java 12 лет. Из них последние 7 лет в компании DINS.\n\
+            \ В настоящее время работает в должности Java Lead Developer.\n\
+            \ Любит заниматься параллельными алгоритмами, оптимизациями и Grid Computing.\n\
+            \ Вносит вклад в OpenSource по мере возможностей."
+    twitter: monitoring_king
+    gitHub: vladimir-bukhtoyarov
+  - id: 1535
+    photoFileName: 1535.jpg
+    name:
+      - {language: en, text: "Mala Gupta"}
+    companyIds: [286]
+    bio:
+      - language: en
+        text: "Mala Gupta works as a Developer Advocate with JetBrains. A Java Champion, she has authored multiple books\
+            \ with Manning, Packt, and O'Reilly Publications. She is an international speaker at industry conferences and\
+            \ has over 20 years of experience in the software industry. She has been actively supporting Java certifications\
+            \ as a path to career advancement.\n\nMala works closely with the developer communities. She co-leads Delhi's\
+            \ Java User Group. A strong supporter of Women in Technology, she also drives initiatives of the Women Who Code\
+            \ Delhi chapter to augment the participation of women in tech."
+    twitter: eMalaGupta
+    gitHub: malagupta
+    javaChampion: true
+  - id: 1536
+    photoFileName: 1536.jpg
+    name:
+      - {language: en, text: "Grace Jansen"}
+    companyIds: [250]
+    bio:
+      - language: en
+        text: "Grace is a Developer Advocate at IBM, working with Open Liberty and Reactive Technologies. She has been\
+            \ with IBM since graduating from Exeter University with a Degree in Biology. Grace enjoys bringing a varied\
+            \ perspective to her projects and using her knowledge of biological systems to simplify complex software\
+            \ patterns and architectures. As a developer advocate, Grace builds POC's, demos and sample applications, and\
+            \ writes guides and tutorials. She is a regular presenter at international technology conferences and has\
+            \ recently authored a book on reactive systems. Grace also has a keen passion for encouraging more women into\
+            \ STEM and especially Technology careers."
+    twitter: gracejansen27
+    gitHub: GraceJansen
+  - id: 1537
+    photoFileName: 1537.jpg
+    name:
+      - {language: en, text: "Elena Lepilkina"}
+      - {language: ru, text: "Елена Лепилкина"}
+    companyIds: [286]
+    bio:
+      - language: en
+        text: "Software developer at Kotlin/Native (JetBrains)"
+      - language: ru
+        text: "Software developer в Kotlin/Native (JetBrains)"
+    gitHub: LepilkinaElena

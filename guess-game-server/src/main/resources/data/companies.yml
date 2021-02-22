@@ -2189,3 +2189,10 @@ companies:
   - id: 699
     name:
       - {language: en, text: "Fontem Ventures"}
+  - id: 700
+    name:
+      - {language: en, text: "Virtual machinist"}
+      - {language: ru, text: "Виртуальный машинист"}
+  - id: 701
+    name:
+      - {language: en, text: Canva}
