@@ -13,6 +13,8 @@ updates:
       interval: "daily"
     ignore:
       - dependency-name: "@angular/*"
+      - dependency-name: "@angular-devkit/*"
+      - dependency-name: "typescript"
       - dependency-name: "primeng"
       - dependency-name: "primeicons"
   - package-ecosystem: "github-actions"
