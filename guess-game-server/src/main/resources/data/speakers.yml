@@ -19157,6 +19157,7 @@ speakers:
             \ has received recognition for his OSS contributions such as the JCP Outstanding Award, Member of the year and\
             \ innovative JSR, Duke’s Choice Award, and Java Champion Award, to name a few."
     twitter: otaviojava
+    gitHub: otaviojava
     javaChampion: true
   - id: 1401
     photoFileName: 1401.jpg
