@@ -18,11 +18,12 @@ export class HomeComponent implements OnInit {
   public eventDates: string;
   public homeState = HomeState.LoadingState;
 
-  constructor(private eventService: EventService, public translateService: TranslateService, localeService: LocaleService) {
+  constructor(private eventService: EventService, public translateService: TranslateService, private localeService: LocaleService) {
   }
 
   ngOnInit(): void {
-    this.loadDefaultEvent();
+    this.localeService.currentLanguage
+      .subscribe(() => this.loadDefaultEvent());
   }
 
   loadDefaultEvent() {
@@ -32,10 +33,6 @@ export class HomeComponent implements OnInit {
         this.eventDates = (this.event) ? getEventDates(this.event, this.translateService) : null;
         this.homeState = (this.event) ? HomeState.DefaultStateFoundState : HomeState.DefaultStateNotFoundState;
       });
-  }
-
-  onLanguageChange() {
-    this.loadDefaultEvent();
   }
 
   isLoading(): boolean {
