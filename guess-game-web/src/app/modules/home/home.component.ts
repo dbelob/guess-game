@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadDefaultEvent();
+
     this.localeService.currentLanguage
       .subscribe(() => this.loadDefaultEvent());
   }
