@@ -31,6 +31,16 @@ public class ConferenceDataLoader {
     private static final Logger log = LoggerFactory.getLogger(ConferenceDataLoader.class);
 
     /**
+     * Loads space tags.
+     *
+     * @param conferenceCodePrefix conference code prefix
+     */
+    static void loadSpaceTags(String conferenceCodePrefix) {
+        ContentfulUtils.getTags(conferenceCodePrefix)
+                .forEach((s, t) -> log.info("Space: {}, tags: {}", s, String.join(",", t)));
+    }
+
+    /**
      * Loads all conference event types.
      *
      * @throws IOException                if file creation error occurs
@@ -1498,6 +1508,10 @@ public class ConferenceDataLoader {
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         // Uncomment one of lines and run
 
+        // Load space tags
+//        loadSpaceTags("2020");
+//        loadSpaceTags("2021");
+
         // Load event types
 //        loadEventTypes();
 
@@ -1647,5 +1661,8 @@ public class ConferenceDataLoader {
 //                        Collections.emptyMap(),
 //                        Set.of("SmartData 2020 Virtual Afterparty"),
 //                        false));
+
+        // 2021
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2021, 4, 6), "2021spb");
     }
 }
