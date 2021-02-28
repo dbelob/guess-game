@@ -210,7 +210,7 @@
         <td>2019&nbsp;Msk<br>(2019msk)</td>
     </tr>
     <tr>
-        <th rowspan="2">2020</th>
+
         <td>2020&nbsp;Msk<br>(2020-msk-cpp)</td>
         <td>2020&nbsp;Msk<br>(2020-msk-devoops)</td>
         <td>2020&nbsp;Spb<br>(2020-spb)</td>
@@ -236,5 +236,24 @@
         <td>2020&nbsp;Msk<br>(2020msk)</td>
         <td>2020&nbsp;Msk<br>(2020msk)</td>
         <td>2020&nbsp;Autumn<br>(2020techtrainautumn)</td>
+    </tr>
+    <tr>
+        <th>2021</th>
+        <td></td>
+        <td></td>
+        <td>2021spb</td>
+        <td>2021spb</td>
+        <td>2021spb</td>
+        <td></td>
+        <td></td>
+        <td>2021jpoint</td>
+        <td></td>
+        <td>2021spb</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>2021</td>
+        <td>2021</td>
+        <td>2021</td>
     </tr>
 </table>

@@ -1664,5 +1664,9 @@ public class ConferenceDataLoader {
 
         // 2021
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2021, 4, 6), "2021spb");
+//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2021, 4, 13), "2021jpoint");
+//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 4, 13), "2021spb");
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 4, 20), "2021spb");
+//        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 4, 20), "2021spb");
     }
 }
