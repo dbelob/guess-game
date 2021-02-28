@@ -30,7 +30,6 @@ import guess.domain.source.contentful.talk.ContentfulTalk;
 import guess.domain.source.contentful.talk.ContentfulTalkIncludes;
 import guess.domain.source.contentful.talk.fields.ContentfulTalkFields;
 import guess.domain.source.contentful.talk.fields.ContentfulTalkFieldsCommon;
-import guess.domain.source.contentful.talk.fields.ContentfulTalkFieldsHeisenbug;
 import guess.domain.source.contentful.talk.response.ContentfulTalkResponse;
 import guess.domain.source.contentful.talk.response.ContentfulTalkResponseCommon;
 import guess.domain.source.extract.ExtractPair;
@@ -108,6 +107,8 @@ class ContentfulUtilsTest {
                 ContentfulUtils.ConferenceSpaceInfo.MOBIUS_SPACE_INFO, Collections.emptyList());
 
         assertEquals(expected, ContentfulUtils.getTags("2021"));
+        assertEquals(expected, ContentfulUtils.getTags(""));
+        assertEquals(expected, ContentfulUtils.getTags(null));
     }
 
     @Test
