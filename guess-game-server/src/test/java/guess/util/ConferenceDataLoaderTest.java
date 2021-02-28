@@ -40,6 +40,25 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 @DisplayName("ConferenceDataLoader class tests")
 class ConferenceDataLoaderTest {
     @Test
+    void loadSpaceTags() {
+        new MockUp<ContentfulUtils>() {
+            final String CODE1 = "code1";
+            final String CODE2 = "code2";
+            final String CODE3 = "code3";
+            final String CODE4 = "code4";
+
+            @Mock
+            Map<ContentfulUtils.ConferenceSpaceInfo, List<String>> getTags(String conferenceCodePrefix) {
+                return Map.of(
+                        ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO,
+                        List.of(CODE1, CODE2, CODE3, CODE4));
+            }
+        };
+
+        assertDoesNotThrow(() -> ConferenceDataLoader.loadSpaceTags(null));
+    }
+
+    @Test
     void loadEventTypes() {
         new MockUp<YamlUtils>() {
             @Mock
