@@ -30,6 +30,9 @@ public abstract class ContentfulTalkFields {
     private Boolean sdTrack;
     private Boolean demoStage;
 
+    private List<String> conference;
+    private List<String> conferences;
+
     public String getName() {
         return name;
     }
@@ -156,5 +159,21 @@ public abstract class ContentfulTalkFields {
 
     public void setDemoStage(Boolean demoStage) {
         this.demoStage = demoStage;
+    }
+
+    public List<String> getConference() {
+        return conference;
+    }
+
+    public void setConference(List<String> conference) {
+        this.conference = conference;
+    }
+
+    public List<String> getConferences() {
+        return conferences;
+    }
+
+    public void setConferences(List<String> conferences) {
+        this.conferences = conferences;
     }
 }

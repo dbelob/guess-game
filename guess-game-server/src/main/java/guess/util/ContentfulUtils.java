@@ -173,6 +173,43 @@ public class ContentfulUtils {
     private ContentfulUtils() {
     }
 
+    static Map<ConferenceSpaceInfo, List<String>> getTags(String conferenceCodePrefix) {
+        Map<ConferenceSpaceInfo, List<String>> spaceTagsMap = new LinkedHashMap<>();
+
+        for (ConferenceSpaceInfo conferenceSpaceInfo : ConferenceSpaceInfo.values()) {
+            // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select=fields.conferences&limit=1000&fields.conferences[match]={conferenceCode}
+            UriComponentsBuilder builder = UriComponentsBuilder
+                    .fromUriString(BASE_URL)
+                    .queryParam(ACCESS_TOKEN_PARAM_NAME, conferenceSpaceInfo.accessToken)
+                    .queryParam(CONTENT_TYPE_PARAM_NAME, "talks")
+                    .queryParam(SELECT_PARAM_NAME, conferenceSpaceInfo.conferenceFieldName)
+                    .queryParam(LIMIT_PARAM_NAME, MAXIMUM_LIMIT);
+
+            if ((conferenceCodePrefix != null) && !conferenceCodePrefix.isEmpty()) {
+                builder.queryParam(String.format("%s[match]", conferenceSpaceInfo.conferenceFieldName), conferenceCodePrefix);
+            }
+
+            URI uri = builder
+                    .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
+                    .encode()
+                    .toUri();
+            ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
+
+            List<String> tags = Objects.requireNonNull(response)
+                    .getItems().stream()
+                    .flatMap(t -> (t.getFields().getConference() != null) ?
+                            t.getFields().getConference().stream() :
+                            t.getFields().getConferences().stream())
+                    .distinct()
+                    .sorted()
+                    .collect(Collectors.toList());
+
+            spaceTagsMap.put(conferenceSpaceInfo, tags);
+        }
+
+        return spaceTagsMap;
+    }
+
     /**
      * Gets locale codes.
      *

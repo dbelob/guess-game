@@ -237,4 +237,23 @@
         <td>2020&nbsp;Msk<br>(2020msk)</td>
         <td>2020&nbsp;Autumn<br>(2020techtrainautumn)</td>
     </tr>
+    <tr>
+        <th>2021</th>
+        <td></td>
+        <td></td>
+        <td>2021spb</td>
+        <td>2021spb</td>
+        <td>2021spb</td>
+        <td></td>
+        <td></td>
+        <td>2021jpoint</td>
+        <td></td>
+        <td>2021spb</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>2021</td>
+        <td>2021</td>
+        <td>2021</td>
+    </tr>
 </table>

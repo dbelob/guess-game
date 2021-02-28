@@ -62,6 +62,55 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("ContentfulUtils class tests")
 class ContentfulUtilsTest {
+    private static ContentfulTalk<ContentfulTalkFieldsCommon> createContentfulTalk(String conference, String conferences) {
+        ContentfulTalkFieldsCommon contentfulTalkFields = new ContentfulTalkFieldsCommon();
+        if (conference != null) {
+            contentfulTalkFields.setConference(List.of(conference));
+        }
+        if (conferences != null) {
+            contentfulTalkFields.setConferences(List.of(conferences));
+        }
+
+        ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk = new ContentfulTalk<>();
+        contentfulTalk.setFields(contentfulTalkFields);
+
+        return contentfulTalk;
+    }
+
+    @Test
+    void getTags(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
+        final String CODE1 = "code1";
+        final String CODE2 = "code2";
+        final String CODE3 = "code3";
+        final String CODE4 = "code4";
+
+        new Expectations() {{
+            ContentfulTalkResponse<ContentfulTalkFieldsCommon> response = new ContentfulTalkResponseCommon();
+            response.setItems(List.of(
+                    createContentfulTalk(CODE2, null),
+                    createContentfulTalk(null, CODE1),
+                    createContentfulTalk(CODE4, null),
+                    createContentfulTalk(null, CODE3),
+                    createContentfulTalk(null, CODE2)
+            ));
+
+            restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulTalkResponseCommon.class);
+            result = response;
+        }};
+
+        Map<ContentfulUtils.ConferenceSpaceInfo, List<String>> expected = Map.of(
+                ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO,
+                List.of(CODE1, CODE2, CODE3, CODE4),
+                ContentfulUtils.ConferenceSpaceInfo.HOLY_JS_SPACE_INFO, Collections.emptyList(),
+                ContentfulUtils.ConferenceSpaceInfo.DOT_NEXT_SPACE_INFO, Collections.emptyList(),
+                ContentfulUtils.ConferenceSpaceInfo.HEISENBUG_SPACE_INFO, Collections.emptyList(),
+                ContentfulUtils.ConferenceSpaceInfo.MOBIUS_SPACE_INFO, Collections.emptyList());
+
+        assertEquals(expected, ContentfulUtils.getTags("2021"));
+        assertEquals(expected, ContentfulUtils.getTags(""));
+        assertEquals(expected, ContentfulUtils.getTags(null));
+    }
+
     @Test
     void getLocales(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
         new Expectations() {{
