@@ -210,7 +210,7 @@
         <td>2019&nbsp;Msk<br>(2019msk)</td>
     </tr>
     <tr>
-
+        <th rowspan="2">2020</th>
         <td>2020&nbsp;Msk<br>(2020-msk-cpp)</td>
         <td>2020&nbsp;Msk<br>(2020-msk-devoops)</td>
         <td>2020&nbsp;Spb<br>(2020-spb)</td>
