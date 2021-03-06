@@ -2122,7 +2122,7 @@ class ConferenceDataLoaderTest {
                 }
 
                 @Mock
-                void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
+                void savePlace(Place place, String filename) throws IOException, NoSuchFieldException {
                     // Nothing
                 }
             };
@@ -2164,7 +2164,7 @@ class ConferenceDataLoaderTest {
                     }
 
                     @Mock
-                    void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
+                    void saveEvent(Event event, String filename) throws IOException, NoSuchFieldException {
                         // Nothing
                     }
                 };
@@ -2175,13 +2175,13 @@ class ConferenceDataLoaderTest {
     }
 
     @Test
-    void logAndDumpEventTypes(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpEventTypes(List.of(new EventType()), "{}", "filename"));
+    void logAndSaveEventTypes(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveEventTypes(List.of(new EventType()), "{}", "filename"));
     }
 
     @Test
-    void logAndDumpCompanies(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpCompanies(List.of(new Company()), "{}", "filename"));
+    void logAndSaveCompanies(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveCompanies(List.of(new Company()), "{}", "filename"));
     }
 
     @Test
@@ -2190,23 +2190,23 @@ class ConferenceDataLoaderTest {
     }
 
     @Test
-    void logAndDumpSpeakers(@Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpSpeakers(List.of(new Speaker()), "{}", "filename"));
+    void logAndSaveSpeakers(@Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveSpeakers(List.of(new Speaker()), "{}", "filename"));
     }
 
     @Test
-    void logAndDumpTalks(@Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.logAndDumpTalks(List.of(new Talk()), "{}", "filename"));
+    void logAndSaveTalks(@Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveTalks(List.of(new Talk()), "{}", "filename"));
     }
 
     @Test
-    void dumpPlace(@Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.dumpPlace(new Place(), "filename"));
+    void savePlace(@Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.savePlace(new Place(), "filename"));
     }
 
     @Test
-    void dumpEvent(@Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.dumpEvent(new Event(), "filename"));
+    void saveEvent(@Mocked YamlUtils yamlUtilsMock) {
+        assertDoesNotThrow(() -> ConferenceDataLoader.saveEvent(new Event(), "filename"));
     }
 
     @Nested

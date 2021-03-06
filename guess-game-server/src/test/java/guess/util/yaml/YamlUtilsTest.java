@@ -472,12 +472,12 @@ class YamlUtilsTest {
 
     @BeforeEach
     void setUp() throws IOException {
-        YamlUtils.clearDumpDirectory();
+        YamlUtils.clearOutputDirectory();
     }
 
     @AfterEach
     void tearDown() throws IOException {
-        YamlUtils.clearDumpDirectory();
+        YamlUtils.clearOutputDirectory();
     }
 
     @Test
@@ -496,7 +496,7 @@ class YamlUtilsTest {
         assertTrue(Files.exists(directoryPath) && Files.isDirectory(directoryPath));
         assertTrue(Files.exists(filePath) && !Files.isDirectory(filePath));
 
-        YamlUtils.clearDumpDirectory();
+        YamlUtils.clearOutputDirectory();
 
         assertFalse(Files.exists(filePath));
         assertFalse(Files.exists(directoryPath));
@@ -506,21 +506,21 @@ class YamlUtilsTest {
 
         assertTrue(Files.exists(directoryPath) && !Files.isDirectory(directoryPath));
 
-        YamlUtils.clearDumpDirectory();
+        YamlUtils.clearOutputDirectory();
 
         assertFalse(Files.exists(directoryPath));
     }
 
     @Test
     @Order(2)
-    void dump() throws IOException, NoSuchFieldException {
+    void save() throws IOException, NoSuchFieldException {
         Path directoryPath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME);
         Path filePath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME + "/event-types.yml");
 
         assertFalse(Files.exists(filePath));
         assertFalse(Files.exists(directoryPath));
 
-        YamlUtils.dump(new EventTypeList(Collections.emptyList()), "event-types.yml");
+        YamlUtils.save(new EventTypeList(Collections.emptyList()), "event-types.yml");
 
         assertTrue(Files.exists(directoryPath) && Files.isDirectory(directoryPath));
         assertTrue(Files.exists(filePath) && !Files.isDirectory(filePath));

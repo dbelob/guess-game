@@ -349,19 +349,19 @@ public class YamlUtils {
      *
      * @throws IOException if file iteration occurs
      */
-    public static void clearDumpDirectory() throws IOException {
+    public static void clearOutputDirectory() throws IOException {
         FileUtils.deleteDirectory(OUTPUT_DIRECTORY_NAME);
     }
 
     /**
-     * Dumps items to file.
+     * Saves items to file.
      *
      * @param items    items
      * @param filename filename
      * @throws IOException          if deletion error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    public static <T> void dump(T items, String filename) throws IOException, NoSuchFieldException {
+    public static <T> void save(T items, String filename) throws IOException, NoSuchFieldException {
         File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
         FileUtils.checkAndCreateDirectory(file.getParentFile());
 

@@ -25,7 +25,7 @@ public class TagCloudExporter {
 
     static final String OUTPUT_DIRECTORY_NAME = "output";
 
-    static void exportTalks(Conference conference, LocalDate startDate) throws IOException, SpeakerDuplicatedException {
+    static void exportTalksAndConference(Conference conference, LocalDate startDate) throws IOException, SpeakerDuplicatedException {
         log.info("{} {}", conference, startDate);
 
         // Read event types, places, events, companies, speakers, talks from resource files
@@ -73,13 +73,13 @@ public class TagCloudExporter {
 
             conferenceSb.append(talkSb);
 
-            dump(talkSb.toString(), String.format("talk%04d.txt", talk.getId()));
+            save(talkSb.toString(), String.format("talk%04d.txt", talk.getId()));
         }
 
-        dump(conferenceSb.toString(), String.format("event%d.txt", resourceEvent.getId()));
+        save(conferenceSb.toString(), String.format("event%d.txt", resourceEvent.getId()));
     }
 
-    static void dump(String text, String filename) throws IOException {
+    static void save(String text, String filename) throws IOException {
         File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
         FileUtils.checkAndCreateDirectory(file.getParentFile());
 
@@ -91,6 +91,6 @@ public class TagCloudExporter {
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException {
-        exportTalks(Conference.JOKER, LocalDate.of(2020, 11, 25));
+//        exportTalksAndConference(Conference.JOKER, LocalDate.of(2020, 11, 25));
     }
 }
