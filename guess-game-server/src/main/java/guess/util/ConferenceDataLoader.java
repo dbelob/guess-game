@@ -30,6 +30,9 @@ import java.util.stream.Collectors;
 public class ConferenceDataLoader {
     private static final Logger log = LoggerFactory.getLogger(ConferenceDataLoader.class);
 
+    private ConferenceDataLoader() {
+    }
+
     /**
      * Loads space tags.
      *
@@ -177,15 +180,15 @@ public class ConferenceDataLoader {
         if (eventTypesToAppend.isEmpty() && eventTypesToUpdate.isEmpty()) {
             log.info("All event types are up-to-date");
         } else {
-            YamlUtils.clearDumpDirectory();
+            YamlUtils.clearOutputDirectory();
 
             if (!eventTypesToAppend.isEmpty()) {
-                logAndDumpEventTypes(eventTypesToAppend, "Event types (to append resource file): {}", "event-types-to-append.yml");
+                logAndSaveEventTypes(eventTypesToAppend, "Event types (to append resource file): {}", "event-types-to-append.yml");
             }
 
             if (!eventTypesToUpdate.isEmpty()) {
                 eventTypesToUpdate.sort(Comparator.comparing(EventType::getId));
-                logAndDumpEventTypes(eventTypesToUpdate, "Event types (to update resource file): {}", "event-types-to-update.yml");
+                logAndSaveEventTypes(eventTypesToUpdate, "Event types (to update resource file): {}", "event-types-to-update.yml");
             }
         }
     }
@@ -967,7 +970,7 @@ public class ConferenceDataLoader {
                 (placeToAppend == null) && (placeToUpdate == null)) {
             log.info("All companies, speakers, talks, place and event are up-to-date");
         } else {
-            YamlUtils.clearDumpDirectory();
+            YamlUtils.clearOutputDirectory();
 
             saveCompanies(companyLoadResult);
             saveImages(speakerLoadResult);
@@ -989,7 +992,7 @@ public class ConferenceDataLoader {
         List<Company> companiesToAppend = companyLoadResult.getItemToAppend();
 
         if (!companiesToAppend.isEmpty()) {
-            logAndDumpCompanies(companiesToAppend, "Companies (to append resource file): {}", "companies-to-append.yml");
+            logAndSaveCompanies(companiesToAppend, "Companies (to append resource file): {}", "companies-to-append.yml");
         }
     }
 
@@ -1024,12 +1027,12 @@ public class ConferenceDataLoader {
         List<Speaker> speakersToUpdate = speakerLoadResult.getSpeakers().getItemToUpdate();
 
         if (!speakersToAppend.isEmpty()) {
-            logAndDumpSpeakers(speakersToAppend, "Speakers (to append resource file): {}", "speakers-to-append.yml");
+            logAndSaveSpeakers(speakersToAppend, "Speakers (to append resource file): {}", "speakers-to-append.yml");
         }
 
         if (!speakersToUpdate.isEmpty()) {
             speakersToUpdate.sort(Comparator.comparing(Speaker::getId));
-            logAndDumpSpeakers(speakersToUpdate, "Speakers (to update resource file): {}", "speakers-to-update.yml");
+            logAndSaveSpeakers(speakersToUpdate, "Speakers (to update resource file): {}", "speakers-to-update.yml");
         }
     }
 
@@ -1047,16 +1050,16 @@ public class ConferenceDataLoader {
 
         if (!talksToDelete.isEmpty()) {
             talksToDelete.sort(Comparator.comparing(Talk::getId));
-            logAndDumpTalks(talksToDelete, "Talks (to delete in resource file): {}", "talks-to-delete.yml");
+            logAndSaveTalks(talksToDelete, "Talks (to delete in resource file): {}", "talks-to-delete.yml");
         }
 
         if (!talksToAppend.isEmpty()) {
-            logAndDumpTalks(talksToAppend, "Talks (to append resource file): {}", "talks-to-append.yml");
+            logAndSaveTalks(talksToAppend, "Talks (to append resource file): {}", "talks-to-append.yml");
         }
 
         if (!talksToUpdate.isEmpty()) {
             talksToUpdate.sort(Comparator.comparing(Talk::getId));
-            logAndDumpTalks(talksToUpdate, "Talks (to update resource file): {}", "talks-to-update.yml");
+            logAndSaveTalks(talksToUpdate, "Talks (to update resource file): {}", "talks-to-update.yml");
         }
     }
 
@@ -1072,11 +1075,11 @@ public class ConferenceDataLoader {
         Place placeToUpdate = placeLoadResult.getItemToUpdate();
 
         if (placeToAppend != null) {
-            dumpPlace(placeToAppend, "place-to-append.yml");
+            savePlace(placeToAppend, "place-to-append.yml");
         }
 
         if (placeToUpdate != null) {
-            dumpPlace(placeToUpdate, "place-to-update.yml");
+            savePlace(placeToUpdate, "place-to-update.yml");
         }
     }
 
@@ -1092,16 +1095,16 @@ public class ConferenceDataLoader {
         Event eventToUpdate = eventLoadResult.getItemToUpdate();
 
         if (eventToAppend != null) {
-            dumpEvent(eventToAppend, "event-to-append.yml");
+            saveEvent(eventToAppend, "event-to-append.yml");
         }
 
         if (eventToUpdate != null) {
-            dumpEvent(eventToUpdate, "event-to-update.yml");
+            saveEvent(eventToUpdate, "event-to-update.yml");
         }
     }
 
     /**
-     * Logs and dumps event types.
+     * Logs and saves event types.
      *
      * @param eventTypes event types
      * @param logMessage log message
@@ -1109,7 +1112,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    static void logAndDumpEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndSaveEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, eventTypes.size());
         eventTypes.forEach(
                 et -> log.debug("Event type: id: {}, conference: {}, nameEn: {}, nameRu: {}",
@@ -1120,11 +1123,11 @@ public class ConferenceDataLoader {
                 )
         );
 
-        YamlUtils.dump(new EventTypeList(eventTypes), filename);
+        YamlUtils.save(new EventTypeList(eventTypes), filename);
     }
 
     /**
-     * Logs and dumps companies.
+     * Logs and saves companies.
      *
      * @param companies  companies
      * @param logMessage log message
@@ -1132,7 +1135,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    static void logAndDumpCompanies(List<Company> companies, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndSaveCompanies(List<Company> companies, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, companies.size());
         companies.forEach(
                 c -> log.trace("Company: nameEn: '{}', name: '{}'",
@@ -1140,7 +1143,7 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
         );
 
-        YamlUtils.dump(new CompanyList(companies), filename);
+        YamlUtils.save(new CompanyList(companies), filename);
     }
 
     /**
@@ -1158,7 +1161,7 @@ public class ConferenceDataLoader {
     }
 
     /**
-     * Logs and dumps speakers.
+     * Logs and saves speakers.
      *
      * @param speakers   speakers
      * @param logMessage log message
@@ -1166,7 +1169,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    static void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndSaveSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, speakers.size());
         speakers.forEach(
                 s -> log.trace("Speaker: nameEn: '{}', name: '{}'",
@@ -1174,11 +1177,11 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(s.getName(), Language.RUSSIAN))
         );
 
-        YamlUtils.dump(new SpeakerList(speakers), filename);
+        YamlUtils.save(new SpeakerList(speakers), filename);
     }
 
     /**
-     * Logs and dumps talks.
+     * Logs and saves talks.
      *
      * @param talks      talks
      * @param logMessage log message
@@ -1186,7 +1189,7 @@ public class ConferenceDataLoader {
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    static void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
+    static void logAndSaveTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
         log.info(logMessage, talks.size());
         talks.forEach(
                 t -> log.trace("Talk: nameEn: '{}', name: '{}'",
@@ -1194,31 +1197,31 @@ public class ConferenceDataLoader {
                         LocalizationUtils.getString(t.getName(), Language.RUSSIAN))
         );
 
-        YamlUtils.dump(new TalkList(talks), filename);
+        YamlUtils.save(new TalkList(talks), filename);
     }
 
     /**
-     * Dumps place to file.
+     * Saves place to file.
      *
      * @param place    place
      * @param filename filename
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    static void dumpPlace(Place place, String filename) throws IOException, NoSuchFieldException {
-        YamlUtils.dump(new PlaceList(Collections.singletonList(place)), filename);
+    static void savePlace(Place place, String filename) throws IOException, NoSuchFieldException {
+        YamlUtils.save(new PlaceList(Collections.singletonList(place)), filename);
     }
 
     /**
-     * Dumps event to file.
+     * Saves event to file.
      *
      * @param event    event
      * @param filename filename
      * @throws IOException          if file creation error occurs
      * @throws NoSuchFieldException if field name is invalid
      */
-    static void dumpEvent(Event event, String filename) throws IOException, NoSuchFieldException {
-        YamlUtils.dump(new EventList(Collections.singletonList(event)), filename);
+    static void saveEvent(Event event, String filename) throws IOException, NoSuchFieldException {
+        YamlUtils.save(new EventList(Collections.singletonList(event)), filename);
     }
 
     /**
