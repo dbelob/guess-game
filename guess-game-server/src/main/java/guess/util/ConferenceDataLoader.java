@@ -30,6 +30,9 @@ import java.util.stream.Collectors;
 public class ConferenceDataLoader {
     private static final Logger log = LoggerFactory.getLogger(ConferenceDataLoader.class);
 
+    private ConferenceDataLoader() {
+    }
+
     /**
      * Loads space tags.
      *

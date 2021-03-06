@@ -25,6 +25,9 @@ public class TagCloudExporter {
 
     static final String OUTPUT_DIRECTORY_NAME = "output";
 
+    private TagCloudExporter() {
+    }
+
     static void exportTalksAndConference(Conference conference, LocalDate startDate) throws IOException, SpeakerDuplicatedException {
         log.info("{} {}", conference, startDate);
 

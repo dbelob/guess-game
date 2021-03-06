@@ -24,6 +24,7 @@ import static guess.util.TagCloudExporter.OUTPUT_DIRECTORY_NAME;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
+@DisplayName("TagCloudExporter class tests")
 class TagCloudExporterTest {
     @BeforeEach
     void setUp() throws IOException {
