@@ -46,6 +46,8 @@
     "speakerByCompanyLabel": "Спикера по компании",
     "accountsBySpeakerLabel": "Twitter, GitHub по спикеру",
     "speakerByAccountsLabel": "Спикера по Twitter, GitHub",
+    "tagCloudBySpeakerLabel": "Облако тегов по спикеру",
+    "speakerByTagCloudLabel": "Спикера по облаку тегов",
     "startButtonText": "Начать"
   },
   "result":{

@@ -46,6 +46,8 @@
     "speakerByCompanyLabel": "Speaker by company",
     "accountsBySpeakerLabel": "Twitter, GitHub by speaker",
     "speakerByAccountsLabel": "Speaker by Twitter, GitHub",
+    "tagCloudBySpeakerLabel": "Tag cloud by speaker",
+    "speakerByTagCloudLabel": "Speaker by tag cloud",
     "startButtonText": "Start"
   },
   "result":{

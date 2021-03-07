@@ -169,6 +169,13 @@ public class QuestionDaoImpl implements QuestionDao {
                     .forEach(speakerQuestions::addAll);
 
             return new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
+        } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
+            // Guess tag cloud by speaker or speaker by tag cloud
+            List<TagCloudBySpeakerQuestion> tagCloudBySpeakerQuestions = new ArrayList<>();
+
+            //TODO: implement
+
+            return Collections.emptyList();
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
