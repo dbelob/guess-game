@@ -144,7 +144,9 @@ class QuestionDaoImplTest {
                                         new SpeakerByCompanyQuestion(List.of(speaker0), company0)
                                 ),
                                 Collections.emptyList(),
-                                Collections.emptyList()
+                                List.of(
+                                        new TagCloudBySpeakerQuestion(Collections.emptyList(), speaker0)
+                                )
                         ),
                         new QuestionSet(
                                 event1,
@@ -157,7 +159,9 @@ class QuestionDaoImplTest {
                                 Collections.emptyList(),
                                 Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker1)),
-                                Collections.emptyList()
+                                List.of(
+                                        new TagCloudBySpeakerQuestion(Collections.emptyList(), speaker1)
+                                )
                         ),
                         new QuestionSet(
                                 event2,
@@ -242,7 +246,9 @@ class QuestionDaoImplTest {
                                 new SpeakerByCompanyQuestion(List.of(speaker0), company0)
                         ),
                         Collections.emptyList(),
-                        Collections.emptyList()
+                        List.of(
+                                new TagCloudBySpeakerQuestion(Collections.emptyList(), speaker0)
+                        )
                 )),
                 questionDao.getSubQuestionSets(
                         Collections.singletonList(0L),
@@ -276,7 +282,9 @@ class QuestionDaoImplTest {
                         Collections.emptyList(),
                         Collections.emptyList(),
                         List.of(new SpeakerQuestion(speaker1)),
-                        Collections.emptyList()
+                        List.of(
+                                new TagCloudBySpeakerQuestion(Collections.emptyList(), speaker1)
+                        )
                 )),
                 questionDao.getSubQuestionSets(
                         Collections.singletonList(1L),
@@ -295,7 +303,9 @@ class QuestionDaoImplTest {
                                 Collections.emptyList(),
                                 Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker1)),
-                                Collections.emptyList()
+                                List.of(
+                                        new TagCloudBySpeakerQuestion(Collections.emptyList(), speaker1)
+                                )
                         ),
                         new QuestionSet(
                                 event2,
