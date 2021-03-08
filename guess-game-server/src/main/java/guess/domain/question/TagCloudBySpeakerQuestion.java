@@ -1,24 +1,25 @@
 package guess.domain.question;
 
+import com.kennycason.kumo.WordFrequency;
 import guess.domain.QuestionAnswer;
 import guess.domain.source.Speaker;
 
-import java.awt.image.BufferedImage;
+import java.util.List;
 
 /**
  * Question about tag cloud by speaker.
  */
 public class TagCloudBySpeakerQuestion extends QuestionAnswer<Speaker> implements Question {
-    private final BufferedImage tagCloudImage;
+    private final List<WordFrequency> wordFrequencies;
 
-    protected TagCloudBySpeakerQuestion(BufferedImage tagCloudImage, Speaker speaker) {
+    public TagCloudBySpeakerQuestion(List<WordFrequency> wordFrequencies, Speaker speaker) {
         super(speaker);
 
-        this.tagCloudImage = tagCloudImage;
+        this.wordFrequencies = wordFrequencies;
     }
 
-    public BufferedImage getTagCloudImage() {
-        return tagCloudImage;
+    public List<WordFrequency> getWordFrequencies() {
+        return wordFrequencies;
     }
 
     public Speaker getSpeaker() {

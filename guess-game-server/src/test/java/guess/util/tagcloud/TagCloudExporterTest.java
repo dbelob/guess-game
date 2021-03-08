@@ -1,9 +1,11 @@
-package guess.util;
+package guess.util.tagcloud;
 
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.*;
+import guess.util.FileUtils;
+import guess.util.LocalizationUtils;
 import guess.util.yaml.YamlUtils;
 import mockit.Mock;
 import mockit.MockUp;
@@ -20,7 +22,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static guess.util.TagCloudExporter.OUTPUT_DIRECTORY_NAME;
+import static guess.util.tagcloud.TagCloudExporter.OUTPUT_DIRECTORY_NAME;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 

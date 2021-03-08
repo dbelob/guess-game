@@ -7,6 +7,7 @@ import guess.domain.source.Event;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 import guess.util.QuestionUtils;
+import guess.util.tagcloud.TagCloudUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -47,6 +48,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             Set<Speaker> speakerSet = new HashSet<>();
             Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
+            Map<Speaker, StringBuilder> speakerTalkTextMap = new HashMap<>();
 
             for (Talk talk : event.getTalks()) {
                 for (Speaker speaker : talk.getSpeakers()) {
@@ -67,6 +69,8 @@ public class QuestionDaoImpl implements QuestionDao {
                 talkQuestions.add(new TalkQuestion(
                         talk.getSpeakers(),
                         talk));
+
+                fillSpeakerTalkTextInformation(talk, speakerTalkTextMap);
             }
 
             List<CompanyBySpeakerQuestion> companyBySpeakerQuestions = speakerSet.stream()
@@ -77,13 +81,20 @@ public class QuestionDaoImpl implements QuestionDao {
                     .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
                     .collect(Collectors.toList());
 
+            List<TagCloudBySpeakerQuestion> tagCloudBySpeakerQuestions = speakerTalkTextMap.keySet().stream()
+                    .map(s -> new TagCloudBySpeakerQuestion(
+                            TagCloudUtils.getWordFrequenciesByText(speakerTalkTextMap.get(s).toString()),
+                            s))
+                    .collect(Collectors.toList());
+
             localQuestionSets.add(new QuestionSet(
                     event,
                     QuestionUtils.removeDuplicatesById(speakerQuestions),
                     QuestionUtils.removeDuplicatesById(talkQuestions),
                     companyBySpeakerQuestions,
                     speakerByCompanyQuestions,
-                    QuestionUtils.removeDuplicatesById(accountQuestions)));
+                    QuestionUtils.removeDuplicatesById(accountQuestions),
+                    tagCloudBySpeakerQuestions));
         }
 
         return localQuestionSets;
@@ -106,6 +117,21 @@ public class QuestionDaoImpl implements QuestionDao {
                 companySpeakersMap.computeIfAbsent(company, k -> new HashSet<>());
                 companySpeakersMap.get(company).add(speaker);
             }
+        }
+    }
+
+    /**
+     * Fills speaker text information from talk.
+     *
+     * @param talk               talk
+     * @param speakerTalkTextMap speaker, talk text map
+     */
+    static void fillSpeakerTalkTextInformation(Talk talk, Map<Speaker, StringBuilder> speakerTalkTextMap) {
+        if (talk.getSpeakers().size() == 1) {
+            Speaker speaker = talk.getSpeakers().get(0);
+
+            speakerTalkTextMap.computeIfAbsent(speaker, k -> new StringBuilder());
+            speakerTalkTextMap.get(speaker).append(TagCloudUtils.getTalkText(talk));
         }
     }
 

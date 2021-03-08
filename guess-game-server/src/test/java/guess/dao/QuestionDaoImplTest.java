@@ -143,6 +143,7 @@ class QuestionDaoImplTest {
                                 List.of(
                                         new SpeakerByCompanyQuestion(List.of(speaker0), company0)
                                 ),
+                                Collections.emptyList(),
                                 Collections.emptyList()
                         ),
                         new QuestionSet(
@@ -155,7 +156,8 @@ class QuestionDaoImplTest {
                                 ),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
-                                List.of(new SpeakerQuestion(speaker1))
+                                List.of(new SpeakerQuestion(speaker1)),
+                                Collections.emptyList()
                         ),
                         new QuestionSet(
                                 event2,
@@ -168,10 +170,12 @@ class QuestionDaoImplTest {
                                 ),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
-                                List.of(new SpeakerQuestion(speaker2))
+                                List.of(new SpeakerQuestion(speaker2)),
+                                Collections.emptyList()
                         ),
                         new QuestionSet(
                                 event3,
+                                Collections.emptyList(),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
@@ -237,6 +241,7 @@ class QuestionDaoImplTest {
                         List.of(
                                 new SpeakerByCompanyQuestion(List.of(speaker0), company0)
                         ),
+                        Collections.emptyList(),
                         Collections.emptyList()
                 )),
                 questionDao.getSubQuestionSets(
@@ -247,6 +252,7 @@ class QuestionDaoImplTest {
         assertEquals(
                 List.of(new QuestionSet(
                         event3,
+                        Collections.emptyList(),
                         Collections.emptyList(),
                         Collections.emptyList(),
                         Collections.emptyList(),
@@ -269,7 +275,8 @@ class QuestionDaoImplTest {
                         ),
                         Collections.emptyList(),
                         Collections.emptyList(),
-                        List.of(new SpeakerQuestion(speaker1))
+                        List.of(new SpeakerQuestion(speaker1)),
+                        Collections.emptyList()
                 )),
                 questionDao.getSubQuestionSets(
                         Collections.singletonList(1L),
@@ -287,7 +294,8 @@ class QuestionDaoImplTest {
                                 ),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
-                                List.of(new SpeakerQuestion(speaker1))
+                                List.of(new SpeakerQuestion(speaker1)),
+                                Collections.emptyList()
                         ),
                         new QuestionSet(
                                 event2,
@@ -300,7 +308,8 @@ class QuestionDaoImplTest {
                                 ),
                                 Collections.emptyList(),
                                 Collections.emptyList(),
-                                List.of(new SpeakerQuestion(speaker2))
+                                List.of(new SpeakerQuestion(speaker2)),
+                                Collections.emptyList()
                         )
                 ),
                 questionDao.getSubQuestionSets(
@@ -476,7 +485,9 @@ class QuestionDaoImplTest {
                 null,
                 null,
                 List.of(speakerByCompanyQuestion0, speakerByCompanyQuestion1, speakerByCompanyQuestion2),
-                null);
+                null,
+                null
+        );
         List<Question> expected = List.of(
                 new SpeakerByCompanyQuestion(List.of(speaker0, speaker1), company0),
                 new SpeakerByCompanyQuestion(List.of(speaker2), company1));

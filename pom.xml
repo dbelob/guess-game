@@ -26,6 +26,7 @@
         <war.plugin.version>3.3.1</war.plugin.version>
 
         <jmockit.version>1.49</jmockit.version>
+        <kumo.version>1.28</kumo.version>
         <logback.version>1.2.3</logback.version>
         <sl4j.version>1.7.30</sl4j.version>
         <snakeyaml.version>1.28</snakeyaml.version>

@@ -121,6 +121,13 @@
             <version>${springfox.swagger}</version>
         </dependency>
 
+        <!-- Tag cloud -->
+        <dependency>
+            <groupId>com.kennycason</groupId>
+            <artifactId>kumo-core</artifactId>
+            <version>${kumo.version}</version>
+        </dependency>
+
         <!-- Logging -->
         <dependency>
             <groupId>ch.qos.logback</groupId>

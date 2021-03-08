@@ -12,17 +12,20 @@ public class QuestionSet {
     private final List<CompanyBySpeakerQuestion> companyBySpeakerQuestions;
     private final List<SpeakerByCompanyQuestion> speakerByCompanyQuestions;
     private final List<SpeakerQuestion> accountQuestions;
+    private final List<TagCloudBySpeakerQuestion> tagCloudBySpeakerQuestions;
 
     public QuestionSet(Event event, List<SpeakerQuestion> speakerQuestions, List<TalkQuestion> talkQuestions,
                        List<CompanyBySpeakerQuestion> companyBySpeakerQuestions,
                        List<SpeakerByCompanyQuestion> speakerByCompanyQuestions,
-                       List<SpeakerQuestion> accountQuestions) {
+                       List<SpeakerQuestion> accountQuestions,
+                       List<TagCloudBySpeakerQuestion> tagCloudBySpeakerQuestions) {
         this.event = event;
         this.speakerQuestions = speakerQuestions;
         this.talkQuestions = talkQuestions;
         this.companyBySpeakerQuestions = companyBySpeakerQuestions;
         this.speakerByCompanyQuestions = speakerByCompanyQuestions;
         this.accountQuestions = accountQuestions;
+        this.tagCloudBySpeakerQuestions = tagCloudBySpeakerQuestions;
     }
 
     public Event getEvent() {
@@ -49,6 +52,10 @@ public class QuestionSet {
         return accountQuestions;
     }
 
+    public List<TagCloudBySpeakerQuestion> getTagCloudBySpeakerQuestions() {
+        return tagCloudBySpeakerQuestions;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,12 +66,13 @@ public class QuestionSet {
                 Objects.equals(talkQuestions, that.talkQuestions) &&
                 Objects.equals(companyBySpeakerQuestions, that.companyBySpeakerQuestions) &&
                 Objects.equals(speakerByCompanyQuestions, that.speakerByCompanyQuestions) &&
-                Objects.equals(accountQuestions, that.accountQuestions);
+                Objects.equals(accountQuestions, that.accountQuestions) &&
+                Objects.equals(tagCloudBySpeakerQuestions, that.tagCloudBySpeakerQuestions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(event, speakerQuestions, talkQuestions, accountQuestions);
+        return Objects.hash(event, speakerQuestions, talkQuestions, accountQuestions, tagCloudBySpeakerQuestions);
     }
 
     @Override
@@ -76,6 +84,7 @@ public class QuestionSet {
                 ", companyBySpeakerQuestions=" + companyBySpeakerQuestions +
                 ", speakerByCompanyQuestions=" + speakerByCompanyQuestions +
                 ", accountQuestions=" + accountQuestions +
+                ", tagCloudBySpeakerQuestions=" + tagCloudBySpeakerQuestions +
                 '}';
     }
 }

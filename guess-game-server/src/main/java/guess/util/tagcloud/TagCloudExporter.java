@@ -1,4 +1,4 @@
-package guess.util;
+package guess.util.tagcloud;
 
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
@@ -7,6 +7,8 @@ import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.domain.source.SourceInformation;
 import guess.domain.source.Talk;
+import guess.util.FileUtils;
+import guess.util.LocalizationUtils;
 import guess.util.yaml.YamlUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,25 +60,11 @@ public class TagCloudExporter {
         FileUtils.deleteDirectory(OUTPUT_DIRECTORY_NAME);
 
         for (Talk talk : resourceEvent.getTalks()) {
-            StringBuilder talkSb = new StringBuilder();
-            Language language = Language.getLanguageByCode(talk.getLanguage());
+            String talkText = TagCloudUtils.getTalkText(talk);
 
-            talkSb.append(LocalizationUtils.getString(talk.getName(), language));
-            talkSb.append("\n");
+            conferenceSb.append(talkText);
 
-            if (talk.getShortDescription() != null) {
-                talkSb.append(LocalizationUtils.getString(talk.getShortDescription(), language));
-                talkSb.append("\n");
-            }
-
-            if (talk.getLongDescription() != null) {
-                talkSb.append(LocalizationUtils.getString(talk.getLongDescription(), language));
-                talkSb.append("\n");
-            }
-
-            conferenceSb.append(talkSb);
-
-            save(talkSb.toString(), String.format("talk%04d.txt", talk.getId()));
+            save(talkText, String.format("talk%04d.txt", talk.getId()));
         }
 
         save(conferenceSb.toString(), String.format("event%d.txt", resourceEvent.getId()));
