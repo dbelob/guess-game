@@ -196,12 +196,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             return new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
-            // Guess tag cloud by speaker or speaker by tag cloud
-            List<TagCloudBySpeakerQuestion> tagCloudBySpeakerQuestions = new ArrayList<>();
-
-            //TODO: implement
-
-            return Collections.emptyList();
+            return getTagCloudBySpeakerQuestions(subQuestionSets);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
@@ -229,6 +224,35 @@ public class QuestionDaoImpl implements QuestionDao {
 
         return companySpeakersMap.keySet().stream()
                 .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets tag cloud by speakers questions.
+     *
+     * @param questionSets question sets
+     * @return tag cloud by speakers questions
+     */
+    static List<Question> getTagCloudBySpeakerQuestions(List<QuestionSet> questionSets) {
+        Map<Speaker, List<TagCloudBySpeakerQuestion>> speakerQuestionsMap = new HashMap<>();
+
+        for (QuestionSet questionSet : questionSets) {
+            for (TagCloudBySpeakerQuestion question : questionSet.getTagCloudBySpeakerQuestions()) {
+                Speaker speaker = question.getSpeaker();
+
+                speakerQuestionsMap.computeIfAbsent(speaker, k -> new ArrayList<>());
+                speakerQuestionsMap.get(speaker).add(question);
+            }
+        }
+
+        return speakerQuestionsMap.keySet().stream()
+                .map(s -> new TagCloudBySpeakerQuestion(
+                        TagCloudUtils.mergeWordFrequencies(
+                                speakerQuestionsMap.get(s).stream()
+                                        .map(TagCloudBySpeakerQuestion::getWordFrequencies)
+                                        .collect(Collectors.toList())
+                        ),
+                        s))
                 .collect(Collectors.toList());
     }
 }

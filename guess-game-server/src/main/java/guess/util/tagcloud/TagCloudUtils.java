@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Tag cloud utility methods.
@@ -20,6 +21,7 @@ public class TagCloudUtils {
     private static final Logger log = LoggerFactory.getLogger(TagCloudUtils.class);
 
     private static final String STOP_WORDS_FILENAME = "stop-words.txt";
+    private static final int DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN = 600;
 
     private TagCloudUtils() {
     }
@@ -58,12 +60,31 @@ public class TagCloudUtils {
      */
     public static List<WordFrequency> getWordFrequenciesByText(String text) {
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
-        frequencyAnalyzer.setWordFrequenciesToReturn(600);
+        frequencyAnalyzer.setWordFrequenciesToReturn(DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN);
         frequencyAnalyzer.setStopWords(loadStopWords());
 
         List<String> lines = Arrays.asList(text.split("\n"));
 
         return frequencyAnalyzer.load(lines);
+    }
+
+    /**
+     * Merges word frequencies.
+     *
+     * @param wordFrequenciesList word frequencies list
+     * @return word frequencies
+     */
+    public static List<WordFrequency> mergeWordFrequencies(List<List<WordFrequency>> wordFrequenciesList) {
+        return wordFrequenciesList.stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.groupingBy(
+                        WordFrequency::getWord,
+                        Collectors.summingInt(WordFrequency::getFrequency)
+                ))
+                .entrySet().stream()
+                .map(e -> new WordFrequency(e.getKey(), e.getValue()))
+                .sorted(Comparator.comparing(WordFrequency::getFrequency).reversed())
+                .collect(Collectors.toList());
     }
 
     /**
