@@ -29,12 +29,12 @@ public class TagCloudUtils {
     /**
      * Gets talk text.
      *
-     * @param talk talk
+     * @param talk     talk
+     * @param language language
      * @return talk text
      */
-    public static String getTalkText(Talk talk) {
+    public static String getTalkText(Talk talk, Language language) {
         StringBuilder sb = new StringBuilder();
-        Language language = Language.getLanguageByCode(talk.getLanguage());
 
         sb.append(LocalizationUtils.getString(talk.getName(), language));
         sb.append("\n");
@@ -50,6 +50,16 @@ public class TagCloudUtils {
         }
 
         return sb.toString();
+    }
+
+    /**
+     * Gets talk text.
+     *
+     * @param talk talk
+     * @return talk text
+     */
+    public static String getTalkText(Talk talk) {
+        return getTalkText(talk, Language.getLanguageByCode(talk.getLanguage()));
     }
 
     /**
@@ -69,6 +79,29 @@ public class TagCloudUtils {
     }
 
     /**
+     * Merges word frequencies map.
+     *
+     * @param languageWordFrequenciesMapList source list
+     * @return target map
+     */
+    public static Map<Language, List<WordFrequency>> mergeWordFrequenciesMaps(List<Map<Language, List<WordFrequency>>> languageWordFrequenciesMapList) {
+        Map<Language, List<List<WordFrequency>>> languageWordFrequenciesListMap = new HashMap<>();
+
+        for (Map<Language, List<WordFrequency>> languageWordFrequenciesMap : languageWordFrequenciesMapList) {
+            languageWordFrequenciesMap.forEach((key, value) -> {
+                languageWordFrequenciesListMap.computeIfAbsent(key, k -> new ArrayList<>());
+                languageWordFrequenciesListMap.get(key).add(value);
+            });
+        }
+
+        return languageWordFrequenciesListMap.entrySet().stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        e -> mergeWordFrequencies(e.getValue())
+                ));
+    }
+
+    /**
      * Merges word frequencies.
      *
      * @param wordFrequenciesList word frequencies list
@@ -84,6 +117,7 @@ public class TagCloudUtils {
                 .entrySet().stream()
                 .map(e -> new WordFrequency(e.getKey(), e.getValue()))
                 .sorted(Comparator.comparing(WordFrequency::getFrequency).reversed())
+                .limit(DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN)
                 .collect(Collectors.toList());
     }
 

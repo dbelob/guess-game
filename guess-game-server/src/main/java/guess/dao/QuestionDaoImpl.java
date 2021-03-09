@@ -1,6 +1,7 @@
 package guess.dao;
 
 import guess.domain.GuessMode;
+import guess.domain.Language;
 import guess.domain.question.*;
 import guess.domain.source.Company;
 import guess.domain.source.Event;
@@ -48,7 +49,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             Set<Speaker> speakerSet = new HashSet<>();
             Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
-            Map<Speaker, StringBuilder> speakerTalkTextMap = new HashMap<>();
+            Map<Speaker, Map<Language, StringBuilder>> speakerTalkTextMap = new HashMap<>();
 
             for (Talk talk : event.getTalks()) {
                 for (Speaker speaker : talk.getSpeakers()) {
@@ -83,7 +84,11 @@ public class QuestionDaoImpl implements QuestionDao {
 
             List<TagCloudBySpeakerQuestion> tagCloudBySpeakerQuestions = speakerTalkTextMap.keySet().stream()
                     .map(s -> new TagCloudBySpeakerQuestion(
-                            TagCloudUtils.getWordFrequenciesByText(speakerTalkTextMap.get(s).toString()),
+                            speakerTalkTextMap.get(s).entrySet().stream()
+                                    .collect(Collectors.toMap(
+                                            Map.Entry::getKey,
+                                            e -> TagCloudUtils.getWordFrequenciesByText(e.getValue().toString())
+                                    )),
                             s))
                     .collect(Collectors.toList());
 
@@ -126,12 +131,18 @@ public class QuestionDaoImpl implements QuestionDao {
      * @param talk               talk
      * @param speakerTalkTextMap speaker, talk text map
      */
-    static void fillSpeakerTalkTextInformation(Talk talk, Map<Speaker, StringBuilder> speakerTalkTextMap) {
+    static void fillSpeakerTalkTextInformation(Talk talk, Map<Speaker, Map<Language, StringBuilder>> speakerTalkTextMap) {
         if (talk.getSpeakers().size() == 1) {
             Speaker speaker = talk.getSpeakers().get(0);
 
-            speakerTalkTextMap.computeIfAbsent(speaker, k -> new StringBuilder());
-            speakerTalkTextMap.get(speaker).append(TagCloudUtils.getTalkText(talk));
+            speakerTalkTextMap.computeIfAbsent(speaker, k -> new HashMap<>());
+            speakerTalkTextMap.get(speaker).computeIfAbsent(Language.ENGLISH, k -> new StringBuilder());
+            speakerTalkTextMap.get(speaker).get(Language.ENGLISH).append(TagCloudUtils.getTalkText(talk, Language.ENGLISH));
+
+            if (Language.RUSSIAN.equals(Language.getLanguageByCode(talk.getLanguage()))) {
+                speakerTalkTextMap.get(speaker).computeIfAbsent(Language.RUSSIAN, k -> new StringBuilder());
+                speakerTalkTextMap.get(speaker).get(Language.RUSSIAN).append(TagCloudUtils.getTalkText(talk, Language.RUSSIAN));
+            }
         }
     }
 
@@ -247,9 +258,9 @@ public class QuestionDaoImpl implements QuestionDao {
 
         return speakerQuestionsMap.keySet().stream()
                 .map(s -> new TagCloudBySpeakerQuestion(
-                        TagCloudUtils.mergeWordFrequencies(
+                        TagCloudUtils.mergeWordFrequenciesMaps(
                                 speakerQuestionsMap.get(s).stream()
-                                        .map(TagCloudBySpeakerQuestion::getWordFrequencies)
+                                        .map(TagCloudBySpeakerQuestion::getLanguageWordFrequenciesMap)
                                         .collect(Collectors.toList())
                         ),
                         s))
