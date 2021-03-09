@@ -2,10 +2,7 @@ package guess.service;
 
 import guess.dao.*;
 import guess.domain.*;
-import guess.domain.answer.Answer;
-import guess.domain.answer.CompanyAnswer;
-import guess.domain.answer.SpeakerAnswer;
-import guess.domain.answer.TalkAnswer;
+import guess.domain.answer.*;
 import guess.domain.question.*;
 import guess.domain.source.*;
 import guess.util.LocalizationUtils;
@@ -187,6 +184,11 @@ public class StateServiceImpl implements StateService {
             return ((SpeakerByCompanyQuestion) question).getSpeakers().stream()
                     .map(SpeakerAnswer::new)
                     .collect(Collectors.toList());
+        } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
+            //TODO: change
+            return Collections.singletonList(new TagCloudAnswer());
+        } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
+            return Collections.singletonList(new SpeakerAnswer(((TagCloudBySpeakerQuestion) question).getSpeaker()));
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
