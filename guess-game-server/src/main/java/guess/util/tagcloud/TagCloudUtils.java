@@ -128,22 +128,13 @@ public class TagCloudUtils {
      */
     private static Set<String> loadStopWords() {
         try {
-            final List<String> lines = IOUtils.readLines(getInputStream(STOP_WORDS_FILENAME));
-            return new HashSet<>(lines);
+            final InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(STOP_WORDS_FILENAME);
+            final List<String> lines = IOUtils.readLines(Objects.requireNonNull(inputStream));
 
+            return new HashSet<>(lines);
         } catch (final IOException e) {
             log.error(e.getMessage(), e);
         }
         return Collections.emptySet();
-    }
-
-    /**
-     * Gets input stream by path.
-     *
-     * @param path path
-     * @return input stream
-     */
-    private static InputStream getInputStream(final String path) {
-        return Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
     }
 }
