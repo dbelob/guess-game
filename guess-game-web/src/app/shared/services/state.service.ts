@@ -13,6 +13,7 @@ import { SpeakerCompanies } from '../models/guess/speaker-companies.model';
 import { CompanySpeakers } from '../models/guess/company-speakers.model';
 import { SpeakerAccounts } from '../models/guess/speaker-accounts.model';
 import { AccountSpeakers } from '../models/guess/account-speakers.model';
+import { SpeakerTagClouds } from '../models/guess/speaker-tag-clouds.model';
 
 @Injectable({
   providedIn: 'root'
@@ -125,6 +126,16 @@ export class StateService {
 
   getAccountSpeakers(): Observable<AccountSpeakers> {
     return this.http.get<AccountSpeakers>(`${this.baseUrl}/account-speakers`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getSpeakerTagClouds(): Observable<SpeakerTagClouds> {
+    return this.http.get<SpeakerTagClouds>(`${this.baseUrl}/speaker-tag-clouds`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

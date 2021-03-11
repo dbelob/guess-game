@@ -190,10 +190,10 @@ public class StateServiceImpl implements StateService {
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
             return Collections.singletonList(new TagCloudAnswer(
-                    ((TagCloudBySpeakerQuestion) question).getSpeaker(),
-                    ((TagCloudBySpeakerQuestion) question).getLanguageWordFrequenciesMap()));
+                    ((TagCloudQuestion) question).getSpeaker(),
+                    ((TagCloudQuestion) question).getLanguageWordFrequenciesMap()));
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
-            return Collections.singletonList(new SpeakerAnswer(((TagCloudBySpeakerQuestion) question).getSpeaker()));
+            return Collections.singletonList(new SpeakerAnswer(((TagCloudQuestion) question).getSpeaker()));
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
@@ -258,12 +258,12 @@ public class StateServiceImpl implements StateService {
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
             return questions.stream()
                     .map(q -> new TagCloudAnswer(
-                            ((TagCloudBySpeakerQuestion) q).getSpeaker(),
-                            ((TagCloudBySpeakerQuestion) q).getLanguageWordFrequenciesMap()))
+                            ((TagCloudQuestion) q).getSpeaker(),
+                            ((TagCloudQuestion) q).getLanguageWordFrequenciesMap()))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             return questions.stream()
-                    .map(q -> new SpeakerAnswer(((TagCloudBySpeakerQuestion) q).getSpeaker()))
+                    .map(q -> new SpeakerAnswer(((TagCloudQuestion) q).getSpeaker()))
                     .collect(Collectors.toList());
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));

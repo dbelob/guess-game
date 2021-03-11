@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Question about tag cloud by speaker.
+ * Question about tag cloud.
  */
-public class TagCloudBySpeakerQuestion extends QuestionAnswer<Speaker> implements Question {
+public class TagCloudQuestion extends QuestionAnswer<Speaker> implements Question {
     private final Map<Language, List<WordFrequency>> languageWordFrequenciesMap;
 
-    public TagCloudBySpeakerQuestion(Map<Language, List<WordFrequency>> languageWordFrequenciesMap, Speaker speaker) {
+    public TagCloudQuestion(Map<Language, List<WordFrequency>> languageWordFrequenciesMap, Speaker speaker) {
         super(speaker);
 
         this.languageWordFrequenciesMap = languageWordFrequenciesMap;

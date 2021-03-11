@@ -33,6 +33,8 @@ import { GuessCompanyBySpeakerComponent } from './modules/game/guess/guess-compa
 import { GuessSpeakerByCompanyComponent } from './modules/game/guess/guess-speaker-by-company.component';
 import { GuessAccountBySpeakerComponent } from './modules/game/guess/guess-account-by-speaker.component';
 import { GuessSpeakerByAccountComponent } from './modules/game/guess/guess-speaker-by-account.component';
+import { GuessTagCloudBySpeakerComponent } from './modules/game/guess/guess-tag-cloud-by-speaker.component';
+import { GuessSpeakerByTagCloudComponent } from './modules/game/guess/guess-speaker-by-tag-cloud.component';
 import { CancelGameComponent } from './modules/game/guess/cancel-game.component';
 import { NotFoundComponent } from './modules/unknown/not-found.component';
 import { EventTypeComponent } from './modules/information/event-types/event-type.component';
@@ -69,6 +71,8 @@ const routes: Routes = [
   {path: 'game/guess/speaker-by-company', component: GuessSpeakerByCompanyComponent, canActivate: [GameStateGuard]},
   {path: 'game/guess/account-by-speaker', component: GuessAccountBySpeakerComponent, canActivate: [GameStateGuard]},
   {path: 'game/guess/speaker-by-account', component: GuessSpeakerByAccountComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/tag-cloud-by-speaker', component: GuessTagCloudBySpeakerComponent, canActivate: [GameStateGuard]},
+  {path: 'game/guess/speaker-by-tag-cloud', component: GuessSpeakerByTagCloudComponent, canActivate: [GameStateGuard]},
   {path: 'game/result', component: ResultComponent, canActivate: [GameStateGuard]},
   {path: 'game/cancel', component: CancelGameComponent},
   {path: 'information/event-type/:id', component: EventTypeComponent},

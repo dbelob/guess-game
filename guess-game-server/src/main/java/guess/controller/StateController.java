@@ -127,4 +127,10 @@ public class StateController {
     public AccountSpeakersDto getAccountSpeakers(HttpSession httpSession) {
         return getDto(httpSession, AccountSpeakersDto::convertToDto);
     }
+
+    @GetMapping("/speaker-tag-clouds")
+    @ResponseBody
+    public SpeakerTagCloudsDto getSpeakerTagClouds(HttpSession httpSession) {
+        return getDto(httpSession, SpeakerTagCloudsDto::convertToDto);
+    }
 }

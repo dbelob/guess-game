@@ -54,6 +54,14 @@ export class GameStateGuard implements CanActivate {
                 expectedUrl = '/game/guess/speaker-by-account';
                 break;
               }
+              case GameState.GuessTagCloudBySpeakerState: {
+                expectedUrl = '/game/guess/tag-cloud-by-speaker';
+                break;
+              }
+              case GameState.GuessSpeakerByTagCloudState: {
+                expectedUrl = '/game/guess/speaker-by-tag-cloud';
+                break;
+              }
               case GameState.ResultState: {
                 expectedUrl = '/game/result';
                 break;

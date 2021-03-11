@@ -145,7 +145,7 @@ class QuestionDaoImplTest {
                                 ),
                                 Collections.emptyList(),
                                 List.of(
-                                        new TagCloudBySpeakerQuestion(Collections.emptyMap(), speaker0)
+                                        new TagCloudQuestion(Collections.emptyMap(), speaker0)
                                 )
                         ),
                         new QuestionSet(
@@ -160,7 +160,7 @@ class QuestionDaoImplTest {
                                 Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker1)),
                                 List.of(
-                                        new TagCloudBySpeakerQuestion(Collections.emptyMap(), speaker1)
+                                        new TagCloudQuestion(Collections.emptyMap(), speaker1)
                                 )
                         ),
                         new QuestionSet(
@@ -247,7 +247,7 @@ class QuestionDaoImplTest {
                         ),
                         Collections.emptyList(),
                         List.of(
-                                new TagCloudBySpeakerQuestion(Collections.emptyMap(), speaker0)
+                                new TagCloudQuestion(Collections.emptyMap(), speaker0)
                         )
                 )),
                 questionDao.getSubQuestionSets(
@@ -283,7 +283,7 @@ class QuestionDaoImplTest {
                         Collections.emptyList(),
                         List.of(new SpeakerQuestion(speaker1)),
                         List.of(
-                                new TagCloudBySpeakerQuestion(Collections.emptyMap(), speaker1)
+                                new TagCloudQuestion(Collections.emptyMap(), speaker1)
                         )
                 )),
                 questionDao.getSubQuestionSets(
@@ -304,7 +304,7 @@ class QuestionDaoImplTest {
                                 Collections.emptyList(),
                                 List.of(new SpeakerQuestion(speaker1)),
                                 List.of(
-                                        new TagCloudBySpeakerQuestion(Collections.emptyMap(), speaker1)
+                                        new TagCloudQuestion(Collections.emptyMap(), speaker1)
                                 )
                         ),
                         new QuestionSet(

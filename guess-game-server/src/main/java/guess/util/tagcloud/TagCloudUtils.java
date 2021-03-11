@@ -30,8 +30,8 @@ public class TagCloudUtils {
 
     private static final String STOP_WORDS_FILENAME = "stop-words.txt";
     private static final int DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN = 10;
-    private static final int TALK_IMAGE_WIDTH = 100;
-    private static final int TALK_IMAGE_HEIGHT = 100;
+    private static final int TALK_IMAGE_WIDTH = 250;
+    private static final int TALK_IMAGE_HEIGHT = 250;
 
     private TagCloudUtils() {
     }

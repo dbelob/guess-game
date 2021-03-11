@@ -82,8 +82,8 @@ public class QuestionDaoImpl implements QuestionDao {
                     .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
                     .collect(Collectors.toList());
 
-            List<TagCloudBySpeakerQuestion> tagCloudBySpeakerQuestions = speakerTalkTextMap.keySet().stream()
-                    .map(s -> new TagCloudBySpeakerQuestion(
+            List<TagCloudQuestion> tagCloudQuestions = speakerTalkTextMap.keySet().stream()
+                    .map(s -> new TagCloudQuestion(
                             speakerTalkTextMap.get(s).entrySet().stream()
                                     .collect(Collectors.toMap(
                                             Map.Entry::getKey,
@@ -99,7 +99,7 @@ public class QuestionDaoImpl implements QuestionDao {
                     companyBySpeakerQuestions,
                     speakerByCompanyQuestions,
                     QuestionUtils.removeDuplicatesById(accountQuestions),
-                    tagCloudBySpeakerQuestions));
+                    tagCloudQuestions));
         }
 
         return localQuestionSets;
@@ -245,10 +245,10 @@ public class QuestionDaoImpl implements QuestionDao {
      * @return tag cloud by speakers questions
      */
     static List<Question> getTagCloudBySpeakerQuestions(List<QuestionSet> questionSets) {
-        Map<Speaker, List<TagCloudBySpeakerQuestion>> speakerQuestionsMap = new HashMap<>();
+        Map<Speaker, List<TagCloudQuestion>> speakerQuestionsMap = new HashMap<>();
 
         for (QuestionSet questionSet : questionSets) {
-            for (TagCloudBySpeakerQuestion question : questionSet.getTagCloudBySpeakerQuestions()) {
+            for (TagCloudQuestion question : questionSet.getTagCloudBySpeakerQuestions()) {
                 Speaker speaker = question.getSpeaker();
 
                 speakerQuestionsMap.computeIfAbsent(speaker, k -> new ArrayList<>());
@@ -257,10 +257,10 @@ public class QuestionDaoImpl implements QuestionDao {
         }
 
         return speakerQuestionsMap.keySet().stream()
-                .map(s -> new TagCloudBySpeakerQuestion(
+                .map(s -> new TagCloudQuestion(
                         TagCloudUtils.mergeWordFrequenciesMaps(
                                 speakerQuestionsMap.get(s).stream()
-                                        .map(TagCloudBySpeakerQuestion::getLanguageWordFrequenciesMap)
+                                        .map(TagCloudQuestion::getLanguageWordFrequenciesMap)
                                         .collect(Collectors.toList())
                         ),
                         s))

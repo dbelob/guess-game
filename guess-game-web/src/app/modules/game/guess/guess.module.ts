@@ -10,6 +10,8 @@ import { GuessCompanyBySpeakerComponent } from './guess-company-by-speaker.compo
 import { GuessSpeakerByCompanyComponent } from './guess-speaker-by-company.component';
 import { GuessAccountBySpeakerComponent } from './guess-account-by-speaker.component';
 import { GuessSpeakerByAccountComponent } from './guess-speaker-by-account.component';
+import { GuessTagCloudBySpeakerComponent } from './guess-tag-cloud-by-speaker.component';
+import { GuessSpeakerByTagCloudComponent } from './guess-speaker-by-tag-cloud.component';
 import { CancelGameComponent } from './cancel-game.component';
 import { GeneralModule } from '../../general/general.module';
 import { MessageModule } from '../../message/message.module';
@@ -24,7 +26,9 @@ import { MessageModule } from '../../message/message.module';
     GuessCompanyBySpeakerComponent,
     GuessSpeakerByCompanyComponent,
     GuessAccountBySpeakerComponent,
-    GuessSpeakerByAccountComponent
+    GuessSpeakerByAccountComponent,
+    GuessTagCloudBySpeakerComponent,
+    GuessSpeakerByTagCloudComponent
   ],
   imports: [
     CommonModule,
