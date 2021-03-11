@@ -67,6 +67,10 @@ public class StateServiceImpl implements StateService {
             return GameState.GUESS_ACCOUNT_BY_SPEAKER_STATE;
         } else if (GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
             return GameState.GUESS_SPEAKER_BY_ACCOUNT_STATE;
+        } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
+            return GameState.GUESS_TAG_CLOUD_BY_SPEAKER_STATE;
+        } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
+            return GameState.GUESS_SPEAKER_BY_TAG_CLOUD_STATE;
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
@@ -185,8 +189,9 @@ public class StateServiceImpl implements StateService {
                     .map(SpeakerAnswer::new)
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
-            //TODO: change
-            return Collections.singletonList(new TagCloudAnswer());
+            return Collections.singletonList(new TagCloudAnswer(
+                    ((TagCloudBySpeakerQuestion) question).getSpeaker(),
+                    ((TagCloudBySpeakerQuestion) question).getLanguageWordFrequenciesMap()));
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             return Collections.singletonList(new SpeakerAnswer(((TagCloudBySpeakerQuestion) question).getSpeaker()));
         } else {
@@ -249,6 +254,16 @@ public class StateServiceImpl implements StateService {
                     .distinct()
                     .filter(s -> (correctAnswerSpeakers.contains(s) || !s.getCompanies().contains(company)))
                     .map(SpeakerAnswer::new)
+                    .collect(Collectors.toList());
+        } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
+            return questions.stream()
+                    .map(q -> new TagCloudAnswer(
+                            ((TagCloudBySpeakerQuestion) q).getSpeaker(),
+                            ((TagCloudBySpeakerQuestion) q).getLanguageWordFrequenciesMap()))
+                    .collect(Collectors.toList());
+        } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
+            return questions.stream()
+                    .map(q -> new SpeakerAnswer(((TagCloudBySpeakerQuestion) q).getSpeaker()))
                     .collect(Collectors.toList());
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));

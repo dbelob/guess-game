@@ -1,7 +1,12 @@
 package guess.util.tagcloud;
 
+import com.kennycason.kumo.CollisionMode;
+import com.kennycason.kumo.WordCloud;
 import com.kennycason.kumo.WordFrequency;
+import com.kennycason.kumo.bg.RectangleBackground;
+import com.kennycason.kumo.font.scale.LinearFontScalar;
 import com.kennycason.kumo.nlp.FrequencyAnalyzer;
+import com.kennycason.kumo.palette.ColorPalette;
 import guess.domain.Language;
 import guess.domain.source.Talk;
 import guess.util.LocalizationUtils;
@@ -9,8 +14,11 @@ import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -21,7 +29,9 @@ public class TagCloudUtils {
     private static final Logger log = LoggerFactory.getLogger(TagCloudUtils.class);
 
     private static final String STOP_WORDS_FILENAME = "stop-words.txt";
-    private static final int DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN = 600;
+    private static final int DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN = 10;
+    private static final int TALK_IMAGE_WIDTH = 100;
+    private static final int TALK_IMAGE_HEIGHT = 100;
 
     private TagCloudUtils() {
     }
@@ -119,6 +129,26 @@ public class TagCloudUtils {
                 .sorted(Comparator.comparing(WordFrequency::getFrequency).reversed())
                 .limit(DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN)
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Creates image.
+     *
+     * @param wordFrequencies word frequencies
+     * @return image
+     */
+    public static BufferedImage createImage(List<WordFrequency> wordFrequencies) {
+        final Dimension dimension = new Dimension(TALK_IMAGE_WIDTH, TALK_IMAGE_HEIGHT);
+        final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.RECTANGLE);
+
+        wordCloud.setBackgroundColor(new Color(0x000000FF, true));
+        wordCloud.setPadding(0);
+        wordCloud.setBackground(new RectangleBackground(dimension));
+        wordCloud.setColorPalette(new ColorPalette(new Color(0x4055F1), new Color(0x408DF1), new Color(0x40AAF1), new Color(0x40C5F1), new Color(0x40D3F1), new Color(0x000000)));
+        wordCloud.setFontScalar(new LinearFontScalar(10, 60));
+        wordCloud.build(wordFrequencies);
+
+        return wordCloud.getBufferedImage();
     }
 
     /**
