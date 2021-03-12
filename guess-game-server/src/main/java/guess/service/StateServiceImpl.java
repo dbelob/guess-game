@@ -107,16 +107,19 @@ public class StateServiceImpl implements StateService {
                     0,
                     Math.min(startParameters.getQuantity(), shuffledQuestions.size()));
 
+            Map<Long, Answer> answerCache = createAnswerCache(shuffledQuestions, startParameters.getGuessMode());
+
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                List<Answer> correctAnswers = new ArrayList<>(getCorrectAnswers(question, startParameters.getGuessMode()));
+                List<Answer> correctAnswers = new ArrayList<>(getCorrectAnswers(question, startParameters.getGuessMode(), answerCache));
                 Collections.shuffle(correctAnswers);
 
                 // Correct answers size must be < QUESTION_ANSWERS_LIST_SIZE
                 correctAnswers = correctAnswers.subList(
                         0,
                         Math.min(QuestionAnswersSet.QUESTION_ANSWERS_LIST_SIZE - 1, correctAnswers.size()));
-                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = new ArrayList<>(getAllAvailableAnswers(shuffledQuestions, question, correctAnswers, startParameters.getGuessMode()));
+                List<Answer> shuffledAllAvailableAnswersWithoutCorrectAnswers = new ArrayList<>(getAllAvailableAnswers(
+                        shuffledQuestions, question, correctAnswers, startParameters.getGuessMode(), answerCache));
 
                 shuffledAllAvailableAnswersWithoutCorrectAnswers.removeAll(correctAnswers);
                 Collections.shuffle(shuffledAllAvailableAnswersWithoutCorrectAnswers);
@@ -168,7 +171,22 @@ public class StateServiceImpl implements StateService {
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    List<Answer> getCorrectAnswers(Question question, GuessMode guessMode) {
+    Map<Long, Answer> createAnswerCache(List<Question> questions, GuessMode guessMode) {
+        if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ||
+                GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
+            return questions.stream()
+                    .collect(Collectors.toMap(
+                            q -> ((TagCloudQuestion) q).getSpeaker().getId(),
+                            q -> new TagCloudAnswer(
+                                    ((TagCloudQuestion) q).getSpeaker(),
+                                    ((TagCloudQuestion) q).getLanguageWordFrequenciesMap())
+                    ));
+        } else {
+            return Collections.emptyMap();
+        }
+    }
+
+    List<Answer> getCorrectAnswers(Question question, GuessMode guessMode, Map<Long, Answer> answerCache) {
         if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ||
                 GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode) ||
                 GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ||
@@ -189,9 +207,15 @@ public class StateServiceImpl implements StateService {
                     .map(SpeakerAnswer::new)
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
-            return Collections.singletonList(new TagCloudAnswer(
-                    ((TagCloudQuestion) question).getSpeaker(),
-                    ((TagCloudQuestion) question).getLanguageWordFrequenciesMap()));
+            Speaker speaker = ((TagCloudQuestion) question).getSpeaker();
+            TagCloudAnswer tagCloudAnswer = (TagCloudAnswer) answerCache.getOrDefault(
+                    speaker.getId(),
+                    new TagCloudAnswer(
+                            speaker,
+                            ((TagCloudQuestion) question).getLanguageWordFrequenciesMap())
+            );
+
+            return Collections.singletonList(tagCloudAnswer);
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             return Collections.singletonList(new SpeakerAnswer(((TagCloudQuestion) question).getSpeaker()));
         } else {
@@ -199,7 +223,8 @@ public class StateServiceImpl implements StateService {
         }
     }
 
-    List<Answer> getAllAvailableAnswers(List<Question> questions, Question question, List<Answer> correctAnswers, GuessMode guessMode) {
+    List<Answer> getAllAvailableAnswers(List<Question> questions, Question question, List<Answer> correctAnswers,
+                                        GuessMode guessMode, Map<Long, Answer> answerCache) {
         if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ||
                 GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode) ||
                 GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ||
@@ -257,9 +282,16 @@ public class StateServiceImpl implements StateService {
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
             return questions.stream()
-                    .map(q -> new TagCloudAnswer(
-                            ((TagCloudQuestion) q).getSpeaker(),
-                            ((TagCloudQuestion) q).getLanguageWordFrequenciesMap()))
+                    .map(q -> {
+                        Speaker speaker = ((TagCloudQuestion) q).getSpeaker();
+
+                        return (TagCloudAnswer) answerCache.getOrDefault(
+                                speaker.getId(),
+                                new TagCloudAnswer(
+                                        speaker,
+                                        ((TagCloudQuestion) question).getLanguageWordFrequenciesMap())
+                        );
+                    })
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             return questions.stream()

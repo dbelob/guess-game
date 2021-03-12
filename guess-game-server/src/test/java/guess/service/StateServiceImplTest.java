@@ -289,8 +289,8 @@ class StateServiceImplTest {
             Mockito.when(eventDao.getEventById(Mockito.anyLong())).thenReturn(event);
 
             Mockito.doCallRealMethod().when(stateService).createQuestionAnswersSet(Mockito.any(StartParameters.class));
-            Mockito.when(stateService.getCorrectAnswers(Mockito.any(), Mockito.any())).thenReturn(correctAnswers);
-            Mockito.when(stateService.getAllAvailableAnswers(Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(allAvailableAnswers);
+            Mockito.when(stateService.getCorrectAnswers(Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(correctAnswers);
+            Mockito.when(stateService.getAllAvailableAnswers(Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any())).thenReturn(allAvailableAnswers);
 
             assertDoesNotThrow(() -> stateService.createQuestionAnswersSet(startParameters));
         }
@@ -341,12 +341,12 @@ class StateServiceImplTest {
         void getCorrectAnswers(Question question, GuessMode guessMode, Class<? extends Throwable> expectedException, List<Answer> expectedValue) {
             StateServiceImpl stateService = Mockito.mock(StateServiceImpl.class);
 
-            Mockito.when(stateService.getCorrectAnswers(Mockito.any(), Mockito.any())).thenCallRealMethod();
+            Mockito.when(stateService.getCorrectAnswers(Mockito.any(), Mockito.any(), Mockito.any())).thenCallRealMethod();
 
             if (expectedException == null) {
-                assertEquals(expectedValue, stateService.getCorrectAnswers(question, guessMode));
+                assertEquals(expectedValue, stateService.getCorrectAnswers(question, guessMode, Collections.emptyMap()));
             } else {
-                assertThrows(expectedException, () -> stateService.getCorrectAnswers(question, guessMode));
+                assertThrows(expectedException, () -> stateService.getCorrectAnswers(question, guessMode, Collections.emptyMap()));
             }
         }
     }
@@ -455,12 +455,12 @@ class StateServiceImplTest {
                                     Class<? extends Throwable> expectedException, List<Answer> expectedValue) {
             StateServiceImpl stateService = Mockito.mock(StateServiceImpl.class);
 
-            Mockito.when(stateService.getAllAvailableAnswers(Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any())).thenCallRealMethod();
+            Mockito.when(stateService.getAllAvailableAnswers(Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any())).thenCallRealMethod();
 
             if (expectedException == null) {
-                assertEquals(expectedValue, stateService.getAllAvailableAnswers(questions, question, correctAnswers, guessMode));
+                assertEquals(expectedValue, stateService.getAllAvailableAnswers(questions, question, correctAnswers, guessMode, Collections.emptyMap()));
             } else {
-                assertThrows(expectedException, () -> stateService.getAllAvailableAnswers(questions, question, correctAnswers, guessMode));
+                assertThrows(expectedException, () -> stateService.getAllAvailableAnswers(questions, question, correctAnswers, guessMode, Collections.emptyMap()));
             }
         }
     }
