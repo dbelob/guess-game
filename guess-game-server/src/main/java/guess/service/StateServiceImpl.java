@@ -208,9 +208,9 @@ public class StateServiceImpl implements StateService {
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
             Speaker speaker = ((TagCloudQuestion) question).getSpeaker();
-            TagCloudAnswer tagCloudAnswer = (TagCloudAnswer) answerCache.getOrDefault(
+            TagCloudAnswer tagCloudAnswer = (TagCloudAnswer) answerCache.computeIfAbsent(
                     speaker.getId(),
-                    new TagCloudAnswer(
+                    k -> new TagCloudAnswer(
                             speaker,
                             ((TagCloudQuestion) question).getLanguageWordFrequenciesMap())
             );
@@ -285,9 +285,9 @@ public class StateServiceImpl implements StateService {
                     .map(q -> {
                         Speaker speaker = ((TagCloudQuestion) q).getSpeaker();
 
-                        return (TagCloudAnswer) answerCache.getOrDefault(
+                        return (TagCloudAnswer) answerCache.computeIfAbsent(
                                 speaker.getId(),
-                                new TagCloudAnswer(
+                                k -> new TagCloudAnswer(
                                         speaker,
                                         ((TagCloudQuestion) question).getLanguageWordFrequenciesMap())
                         );
