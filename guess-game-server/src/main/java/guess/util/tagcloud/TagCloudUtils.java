@@ -152,6 +152,20 @@ public class TagCloudUtils {
     }
 
     /**
+     * Creates language, image map.
+     *
+     * @param languageWordFrequenciesMap language, word frequencies map
+     * @return language, image map
+     */
+    public static Map<Language, BufferedImage> createLanguageImageMap(Map<Language, List<WordFrequency>> languageWordFrequenciesMap) {
+        return languageWordFrequenciesMap.entrySet().stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        e -> TagCloudUtils.createImage(e.getValue())
+                ));
+    }
+
+    /**
      * Loads stop words.
      *
      * @return stop words

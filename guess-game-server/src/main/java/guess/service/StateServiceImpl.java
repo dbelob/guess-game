@@ -6,6 +6,7 @@ import guess.domain.answer.*;
 import guess.domain.question.*;
 import guess.domain.source.*;
 import guess.util.LocalizationUtils;
+import guess.util.tagcloud.TagCloudUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -107,10 +108,12 @@ public class StateServiceImpl implements StateService {
                     0,
                     Math.min(startParameters.getQuantity(), shuffledQuestions.size()));
 
-            Map<Long, Answer> answerCache = createAnswerCache(shuffledQuestions, startParameters.getGuessMode());
+            Map<Long, Answer> answerCache = new HashMap<>();
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
+                fillQuestion(question, startParameters.getGuessMode());
+
                 List<Answer> correctAnswers = new ArrayList<>(getCorrectAnswers(question, startParameters.getGuessMode(), answerCache));
                 Collections.shuffle(correctAnswers);
 
@@ -171,18 +174,11 @@ public class StateServiceImpl implements StateService {
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
     }
 
-    Map<Long, Answer> createAnswerCache(List<Question> questions, GuessMode guessMode) {
-        if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ||
-                GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
-            return questions.stream()
-                    .collect(Collectors.toMap(
-                            q -> ((TagCloudQuestion) q).getSpeaker().getId(),
-                            q -> new TagCloudAnswer(
-                                    ((TagCloudQuestion) q).getSpeaker(),
-                                    ((TagCloudQuestion) q).getLanguageWordFrequenciesMap())
-                    ));
-        } else {
-            return Collections.emptyMap();
+    void fillQuestion(Question question, GuessMode guessMode) {
+        if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
+            TagCloudQuestion tagCloudQuestion = (TagCloudQuestion) question;
+
+            tagCloudQuestion.setLanguageImageMap(TagCloudUtils.createLanguageImageMap(tagCloudQuestion.getLanguageWordFrequenciesMap()));
         }
     }
 
