@@ -468,6 +468,7 @@ speakers:
             м PostgreSQL JDBC-драйвере."}
     twitter: VladimirSitnikv
     gitHub: vlsi
+    habr: vladimirsitnikov
   - id: 26
     photoFileName: 0026.jpg
     photoUpdatedAt: 2019-05-06T15:05:28.539Z[UTC]
@@ -1167,6 +1168,7 @@ speakers:
             е и путешествует в отдалённые уголки мира."
     twitter: antonkeks
     gitHub: angryziber
+    habr: antonkeks
   - id: 69
     photoFileName: 0069.jpg
     name:
@@ -7275,24 +7277,26 @@ speakers:
             пстерских MVVM-фреймворков, и, конечно, своего собственного MVVM-велосипеда :)"}
   - id: 501
     photoFileName: 0501.jpg
+    photoUpdatedAt: 2020-10-14T08:00:57.646Z[UTC]
     name:
       - {language: en, text: "Kirill Skrygan"}
       - {language: ru, text: "Кирилл Скрыган"}
     companyIds: [286]
     bio:
       - language: en
-        text: "Leads Rider project, actively participates in the development and planning of IntelliJ IDEA, in the past one\
+        text: "Leads Code With and Rider projects, actively participates in the development and planning of IntelliJ IDEA, in the past one\
             \ of the main developers of ReSharper. Besides political interactions in the Tech market, Kirill is interested\
             \ in performance automation, trends in the world of tooling, psychology and philosophy of modern IT. In his field\
             \ actively participated in negotiations with such giants as Microsoft, Unity, Epic Games, Amazon, Google, Red\
             \ Hat, etc. \nIn industrial programming for over 15 years."
       - language: ru
-        text: "Руководит проектом Rider, активно участвует в разработке и планировании IntelliJ IDEA, в прошлом один из ос\
-            новных разработчиков ReSharper. Помимо политических взаимодействий на Tech-рынке, Кириллу интересны задачи авт\
-            оматизации производительности, прорывные тренды в мире тулинга, психология и философия современного IT. По род\
-            у деятельности активно участвовал в переговорах с такими гигантами, как Microsoft, Unity, Epic Games, Amazon,\
-            \ Google, Red Hat и др.\nВ промышленном программировании уже более 15 лет."
+        text: "Руководит проектами Code With Me и Rider, активно участвует в разработке IntelliJ IDEA, в пр\
+            ошлом один из основных разработчиков ReSharper. Кириллу интересны задачи распределенной разработки, автоматиза\
+            ции производительности, прорывные тренды в мире тулинга, психология и философия современного IT. По роду деяте\
+            льности активно участвовал в переговорах с такими гигантами, как Microsoft, Unity, Epic Games, Amazon, Google,\
+            \ Red Hat и др. В промышленном программировании уже более 15 лет."
     twitter: kskrygan
+    gitHub: kskrygan
     habr: kskrygan
   - id: 502
     photoFileName: 0502.jpg
@@ -7877,6 +7881,8 @@ speakers:
             ния, руководитель группы автоматизации тестирования. Артем имеет большой опыт работы с популярными инструмента\
             ми (Selenium, HtmlElements, Allure, Jenkins). Программирует в основном на Java, Groovy."}
     twitter: eroshenkoam
+    gitHub: eroshenkoam
+    habr: eroshenkoam
   - id: 555
     photoFileName: 0555.jpg
     name:
@@ -8770,15 +8776,15 @@ speakers:
     name:
       - {language: en, text: "Vsevolod Brekelov"}
       - {language: ru, text: "Всеволод Брекелов"}
-    companyIds: [291]
+    companyIds: [702]
     bio:
       - language: en
-        text: "Vsevolod has more than 10 years in IT industry.\nHe tried his hands at different roles and directions. He worked\
+        text: "Vsevolod has more than 11 years in IT industry.\nHe tried his hands at different roles and directions. He worked\
             \ with automated testing, fullstack development in different languages. Some time ago he lived in California and\
             \ worked under contract at Google. Managed to work with various clients from financial sector. Worked at NEO SPCC\
             \ startup where he was developing on Go."
       - language: ru
-        text: "Более 10 лет в ИТ.\nПопробовал себя в разных ролях и направлениях. Занимался автоматизированным тестировани\
+        text: "Более 11 лет в ИТ.\nПопробовал себя в разных ролях и направлениях. Занимался автоматизированным тестировани\
             ем, фулстэк разработкой на различных языках. Какое-то время жил в Калифорнии и работал по контракту в Google.\
             \ Успел поработать с различными клиентами из финансовой сферы. Работал в стартапе NEO SPCC, где занимался разр\
             аботкой на Go."
@@ -12027,16 +12033,16 @@ speakers:
     gitHub: vani2
   - id: 852
     photoFileName: 0852.jpg
-    photoUpdatedAt: 2020-10-09T09:43:19.418Z[UTC]
+    photoUpdatedAt: 2020-11-27T14:13:43.635Z[UTC]
     name:
       - {language: en, text: "Vladimir Ivanov"}
       - {language: ru, text: "Владимир Иванов"}
-    companyIds: [183]
+    companyIds: [674]
     bio:
-      - {language: en, text: "Vladimir Ivanov is a lead software engineer in EPAM and a Solution Architect. Accomplished Android\
-            \ developer, React Native expert, Certified Google Cloud Architect, mentor and speaker."}
-      - {language: ru, text: "Lead software engineer в EPAM, Solution Architect. Опытный Android-разработчик, эксперт по React\
-            \ Native, Certified Google Cloud Architect, ментор и спикер."}
+      - {language: en, text: "Accomplished Android developer, React Native expert, Certified Google Cloud Architect, mentor\
+            \ and speaker."}
+      - {language: ru, text: "Опытный Android-разработчик, эксперт по React Native, Certified Google Cloud Architect, мент\
+            ор и спикер."}
     twitter: vvsevolodovich
     gitHub: vlivanov
     habr: dzigoro
@@ -12954,7 +12960,7 @@ speakers:
     twitter: kevteev
   - id: 926
     photoFileName: 0926.jpg
-    photoUpdatedAt: 2019-06-03T07:22:46.003Z[UTC]
+    photoUpdatedAt: 2021-03-09T10:52:57.499Z[UTC]
     name:
       - {language: en, text: "Evgeny Kot"}
       - {language: ru, text: "Евгений Кот"}
@@ -12969,6 +12975,8 @@ speakers:
             \ момент трудится во Wrike в высоконагруженном SaaS-приложении с очень богатым клиентским кодом. Команда Wrike\
             \ пишет на Dart и Angular 2.0 и стремится быть up-to-date со всеми современными течениями в мире веб."}
     twitter: bunopus
+    gitHub: bunopus
+    habr: bunopus
   - id: 927
     photoFileName: 0927.jpg
     name:
@@ -13937,16 +13945,18 @@ speakers:
     twitter: bychuk_as
   - id: 1003
     photoFileName: 1003.jpg
+    photoUpdatedAt: 2021-03-03T11:29:19.532Z[UTC]
     name:
       - {language: en, text: "Scott Wlaschin"}
-    companyIds: [56]
+    companyIds: []
     bio:
       - language: en
         text: "Scott Wlaschin is a developer, architect and author. He is the author of the popular F# site <a href=\"https://fsharpforfunandprofit.com/\"\
-            \ target=\"_blank\">fsharpforfunandprofit.com</a> and the book \"Domain Modeling Made Functional\".\n\nKnown for\
-            \ his non-academic approach to functional programming, Scott is a popular speaker and has given talks at NDC,\
+            \ target=\"_blank\">fsharpforfunandprofit.com</a> and the book \"Domain Modeling Made Functional\".\r\n\r\nKnown\
+            \ for his non-academic approach to functional programming, Scott is a popular speaker and has given talks at NDC,\
             \ F# Exchange, DDD Europe, and other conferences around the world."
     twitter: ScottWlaschin
+    gitHub: swlaschin
   - id: 1004
     photoFileName: 1004.jpg
     name:
@@ -16720,18 +16730,14 @@ speakers:
     name:
       - {language: en, text: "Marharyta Nedzelska"}
       - {language: ru, text: "Маргарита Недзельская"}
-    companyIds: [592]
+    companyIds: [489]
     bio:
-      - {language: en, text: "Marharyta is a Software Engineer at Wix and Kyiv Kotlin user group leader. She has experience\
-            \ in different programming languages and paradigms, likes new challenges and enjoys programming! She's also working\
-            \ on making Kotlin one more programming language for JVM at Wix and try to spread the light of Kotlin to other\
-            \ developers. Marharyta is very passionate about knowledge sharing, so she's involved in conferences such as Kotlin\
-            \ NIght Kyiv, Devoxx UA and one of the organizers of Rockstar Night dev club."}
-      - {language: ru, text: "Разработчик в Wix и организатор Kotlin-комьюнити в Киеве. Имеет опыт работы с разными языкам\
-            и программирования и парадигмами, любит новые и интересные задачи, и получает удовольствие от своей работы. Та\
-            кже работает над тем, чтобы сделать Kotlin еще одним языком программирования для JVM в Wix, и старается распро\
-            странить знания о нем на других разработчиков. Маргарита ценит важность обмена знаниями, поэтому участвует в т\
-            аких конференциях, как KotLand Kyiv, Devoxx UA. Является одним из организаторов Rockstar Night dev club."}
+      - {language: en, text: "Margarita is a big Kotlin fan and Kotlin GDE. Knows both conference sides: speaking and organising.\
+            \ Organised a KUG in her native city Kyiv because she believes in Knowledge Sharing and Collective Intelligence.\
+            \ For her everyday job she's building Static Code Analysis tools for Java/Kotlin/Scala and other languages."}
+      - {language: ru, text: "Маргарита — большой фанат Котлина и Kotlin GDE. Знакома с двумя сторонами конференций: высту\
+            плением и организацией. Проводила KUG в родном Киеве, т.к. верит в обмен знаниями и коллективный разум. На осн\
+            овной работе создает инструменты статического анализа кода для Java/Kotlin/Scala и др. языков."}
     twitter: jMargaritaN
   - id: 1216
     photoFileName: 1216.jpg
