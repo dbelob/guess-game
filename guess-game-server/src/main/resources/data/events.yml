@@ -1055,6 +1055,16 @@ events:
     youtubeLink: https://live.jugru.org/events/techtrain
     placeId: 24
     talkIds: [2598, 2599, 2600, 2601, 2602, 2603, 2604, 2605, 2606]
+  - eventTypeId: 12
+    name:
+      - {language: en, text: "TechTrain 2021 Spring"}
+    startDate: "2021-03-27"
+    endDate: "2021-03-27"
+    siteLink:
+      - {language: ru, text: "https://techtrain.ru/"}
+    youtubeLink: https://live.jugru.org/events/techtrain
+    placeId: 24
+    talkIds: [2912, 2913, 2914, 2915, 2916, 2917]
   # JUG.MSK
   - eventTypeId: 13
     name:
