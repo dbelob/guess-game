@@ -2196,3 +2196,6 @@ companies:
   - id: 701
     name:
       - {language: en, text: Canva}
+  - id: 702
+    name:
+      - {language: en, text: Synthesized}
