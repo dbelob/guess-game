@@ -15,7 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -29,7 +29,7 @@ public class TagCloudUtils {
     private static final Logger log = LoggerFactory.getLogger(TagCloudUtils.class);
 
     private static final String STOP_WORDS_FILENAME = "stop-words.txt";
-    private static final int DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN = 10;
+    private static final int DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN = 15;
     private static final int TALK_IMAGE_WIDTH = 250;
     private static final int TALK_IMAGE_HEIGHT = 250;
 
@@ -137,18 +137,26 @@ public class TagCloudUtils {
      * @param wordFrequencies word frequencies
      * @return image
      */
-    public static BufferedImage createImage(List<WordFrequency> wordFrequencies) {
+    public static byte[] createImage(List<WordFrequency> wordFrequencies) throws IOException {
         final Dimension dimension = new Dimension(TALK_IMAGE_WIDTH, TALK_IMAGE_HEIGHT);
         final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.RECTANGLE);
 
-        wordCloud.setBackgroundColor(new Color(0x000000FF, true));
+        wordCloud.setBackgroundColor(new Color(0xFFFFFF, false));
         wordCloud.setPadding(0);
         wordCloud.setBackground(new RectangleBackground(dimension));
         wordCloud.setColorPalette(new ColorPalette(new Color(0x4055F1), new Color(0x408DF1), new Color(0x40AAF1), new Color(0x40C5F1), new Color(0x40D3F1), new Color(0x000000)));
-        wordCloud.setFontScalar(new LinearFontScalar(10, 60));
+        wordCloud.setFontScalar(new LinearFontScalar(5, 20));
         wordCloud.build(wordFrequencies);
 
-        return wordCloud.getBufferedImage();
+        byte[] result;
+
+        try (ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+            wordCloud.writeToStream("png", bos);
+
+            result = bos.toByteArray();
+        }
+
+        return result;
     }
 
     /**
@@ -157,12 +165,39 @@ public class TagCloudUtils {
      * @param languageWordFrequenciesMap language, word frequencies map
      * @return language, image map
      */
-    public static Map<Language, BufferedImage> createLanguageImageMap(Map<Language, List<WordFrequency>> languageWordFrequenciesMap) {
+    public static Map<Language, byte[]> createLanguageImageMap(Map<Language, List<WordFrequency>> languageWordFrequenciesMap) {
         return languageWordFrequenciesMap.entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
-                        e -> TagCloudUtils.createImage(e.getValue())
+                        e -> {
+                            try {
+                                return TagCloudUtils.createImage(e.getValue());
+                            } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
+                        }
                 ));
+    }
+
+    /**
+     * Gets image for language.
+     *
+     * @param languageImageMap language, image map
+     * @param language         language
+     * @return image
+     */
+    public static byte[] getImage(Map<Language, byte[]> languageImageMap, Language language) {
+        if (languageImageMap.containsKey(language)) {
+            return languageImageMap.get(language);
+        } else if (languageImageMap.containsKey(Language.ENGLISH)) {
+            return languageImageMap.get(Language.ENGLISH);
+        } else if (!languageImageMap.isEmpty()) {
+            Map.Entry<Language, byte[]> entry = languageImageMap.entrySet().iterator().next();
+
+            return entry.getValue();
+        } else {
+            return new byte[]{};
+        }
     }
 
     /**

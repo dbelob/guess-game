@@ -17,4 +17,21 @@
       <figcaption class="figure-caption text-center">{{speakerTagClouds.speaker?.name}}</figcaption>
     </figure>
   </div>
+  <div class="text-center">
+    <input type="image" alt="photo1" class="img-thumbnail m-1 img-guess-photo-by-name"
+           [class.btn-danger]="speakerTagClouds.invalid0" [disabled]="speakerTagClouds.invalid0"
+           (click)="answer(speakerTagClouds.id0)" src="{{imageSource0}}"/>
+    <input type="image" alt="photo2" class="img-thumbnail m-1 img-guess-photo-by-name"
+           [class.btn-danger]="speakerTagClouds.invalid1" [disabled]="speakerTagClouds.invalid1"
+           (click)="answer(speakerTagClouds.id1)" src="{{imageSource1}}"/>
+    <input type="image" alt="photo3" class="img-thumbnail m-1 img-guess-photo-by-name"
+           [class.btn-danger]="speakerTagClouds.invalid2" [disabled]="speakerTagClouds.invalid2"
+           (click)="answer(speakerTagClouds.id2)" src="{{imageSource2}}"/>
+    <input type="image" alt="photo4" class="img-thumbnail m-1 img-guess-photo-by-name"
+           [class.btn-danger]="speakerTagClouds.invalid3" [disabled]="speakerTagClouds.invalid3"
+           (click)="answer(speakerTagClouds.id3)" src="{{imageSource3}}"/>
+  </div>
+  <div class="text-right mt-1">
+    <button class="btn btn-link text-muted" (click)="cancel()"><small>{{'common.cancelLinkText' | translate}}</small></button>
+  </div>
 </div>

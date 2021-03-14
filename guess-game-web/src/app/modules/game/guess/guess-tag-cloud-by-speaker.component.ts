@@ -13,9 +13,14 @@ export class GuessTagCloudBySpeakerComponent implements OnInit {
   private imageDirectory = 'assets/images';
   private eventsImageDirectory = `${this.imageDirectory}/events`;
   public speakersImageDirectory = `${this.imageDirectory}/speakers`;
+  private imageSourcePrefix = 'data:image/jpeg;base64,';
   public speakerTagClouds: SpeakerTagClouds = new SpeakerTagClouds();
   public title: string;
   public logoImageSource: string;
+  public imageSource0: string;
+  public imageSource1: string;
+  public imageSource2: string;
+  public imageSource3: string;
 
   constructor(private stateService: StateService, private answerService: AnswerService, private router: Router) {
   }
@@ -31,6 +36,10 @@ export class GuessTagCloudBySpeakerComponent implements OnInit {
             this.speakerTagClouds = data;
             this.title =
               `${this.speakerTagClouds.questionSetName} (${this.speakerTagClouds.currentIndex + 1}/${this.speakerTagClouds.totalNumber})`;
+            this.imageSource0 = `${this.imageSourcePrefix}${this.speakerTagClouds.image0}`;
+            this.imageSource1 = `${this.imageSourcePrefix}${this.speakerTagClouds.image1}`;
+            this.imageSource2 = `${this.imageSourcePrefix}${this.speakerTagClouds.image2}`;
+            this.imageSource3 = `${this.imageSourcePrefix}${this.speakerTagClouds.image3}`;
 
             if (this.speakerTagClouds.logoFileName) {
               this.logoImageSource = `${this.eventsImageDirectory}/${this.speakerTagClouds.logoFileName}`;
@@ -38,6 +47,14 @@ export class GuessTagCloudBySpeakerComponent implements OnInit {
           } else {
             this.result();
           }
+        }
+      );
+  }
+
+  answer(id: number) {
+    this.answerService.setAnswer(this.speakerTagClouds.currentIndex, id)
+      .subscribe(data => {
+          this.loadQuestion();
         }
       );
   }

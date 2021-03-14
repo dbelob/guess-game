@@ -6,7 +6,6 @@ import guess.domain.QuestionAnswer;
 import guess.domain.source.Speaker;
 import guess.util.tagcloud.TagCloudUtils;
 
-import java.awt.image.BufferedImage;
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +14,7 @@ import java.util.Map;
  */
 public class TagCloudQuestion extends QuestionAnswer<Speaker> implements Question {
     private final Map<Language, List<WordFrequency>> languageWordFrequenciesMap;
-    private Map<Language, BufferedImage> languageImageMap;
+    private Map<Language, byte[]> languageImageMap;
 
     public TagCloudQuestion(Map<Language, List<WordFrequency>> languageWordFrequenciesMap, Speaker speaker) {
         super(speaker);
@@ -27,7 +26,7 @@ public class TagCloudQuestion extends QuestionAnswer<Speaker> implements Questio
         return languageWordFrequenciesMap;
     }
 
-    public Map<Language, BufferedImage> getLanguageImageMap() {
+    public Map<Language, byte[]> getLanguageImageMap() {
         if (languageImageMap == null) {
             languageImageMap = TagCloudUtils.createLanguageImageMap(languageWordFrequenciesMap);
         }
