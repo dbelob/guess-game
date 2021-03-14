@@ -4,6 +4,7 @@ import com.kennycason.kumo.WordFrequency;
 import guess.domain.Language;
 import guess.domain.QuestionAnswer;
 import guess.domain.source.Speaker;
+import guess.util.tagcloud.TagCloudUtils;
 
 import java.awt.image.BufferedImage;
 import java.util.List;
@@ -27,11 +28,11 @@ public class TagCloudQuestion extends QuestionAnswer<Speaker> implements Questio
     }
 
     public Map<Language, BufferedImage> getLanguageImageMap() {
-        return languageImageMap;
-    }
+        if (languageImageMap == null) {
+            languageImageMap = TagCloudUtils.createLanguageImageMap(languageWordFrequenciesMap);
+        }
 
-    public void setLanguageImageMap(Map<Language, BufferedImage> languageImageMap) {
-        this.languageImageMap = languageImageMap;
+        return languageImageMap;
     }
 
     public Speaker getSpeaker() {

@@ -6,7 +6,6 @@ import guess.domain.answer.*;
 import guess.domain.question.*;
 import guess.domain.source.*;
 import guess.util.LocalizationUtils;
-import guess.util.tagcloud.TagCloudUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -112,8 +111,6 @@ public class StateServiceImpl implements StateService {
 
             // Create question/answers list
             for (Question question : selectedShuffledQuestions) {
-                fillQuestion(question, startParameters.getGuessMode());
-
                 List<Answer> correctAnswers = new ArrayList<>(getCorrectAnswers(question, startParameters.getGuessMode(), answerCache));
                 Collections.shuffle(correctAnswers);
 
@@ -172,14 +169,6 @@ public class StateServiceImpl implements StateService {
         }
 
         return new QuestionAnswersSet(name, logoFileName, questionAnswersList);
-    }
-
-    void fillQuestion(Question question, GuessMode guessMode) {
-        if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
-            TagCloudQuestion tagCloudQuestion = (TagCloudQuestion) question;
-
-            tagCloudQuestion.setLanguageImageMap(TagCloudUtils.createLanguageImageMap(tagCloudQuestion.getLanguageWordFrequenciesMap()));
-        }
     }
 
     List<Answer> getCorrectAnswers(Question question, GuessMode guessMode, Map<Long, Answer> answerCache) {

@@ -11,12 +11,13 @@ import java.util.List;
 import java.util.Map;
 
 public class TagCloudAnswer extends QuestionAnswer<Speaker> implements Answer {
-    private final Map<Language, BufferedImage> languageImageMap;
+    private final Map<Language, List<WordFrequency>> languageWordFrequenciesMap;
+    private Map<Language, BufferedImage> languageImageMap;
 
     public TagCloudAnswer(Speaker speaker, Map<Language, List<WordFrequency>> languageWordFrequenciesMap) {
         super(speaker);
 
-        this.languageImageMap = TagCloudUtils.createLanguageImageMap(languageWordFrequenciesMap);
+        this.languageWordFrequenciesMap = languageWordFrequenciesMap;
     }
 
     public Speaker getSpeaker() {
@@ -24,6 +25,10 @@ public class TagCloudAnswer extends QuestionAnswer<Speaker> implements Answer {
     }
 
     public Map<Language, BufferedImage> getLanguageImageMap() {
+        if (languageImageMap == null) {
+            languageImageMap = TagCloudUtils.createLanguageImageMap(languageWordFrequenciesMap);
+        }
+
         return languageImageMap;
     }
 }
