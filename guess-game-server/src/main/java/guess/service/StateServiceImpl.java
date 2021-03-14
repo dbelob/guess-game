@@ -176,20 +176,36 @@ public class StateServiceImpl implements StateService {
                 GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode) ||
                 GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ||
                 GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
-            return Collections.singletonList(new SpeakerAnswer(((SpeakerQuestion) question).getSpeaker()));
+            Speaker speaker = ((SpeakerQuestion) question).getSpeaker();
+            SpeakerAnswer speakerAnswer = (SpeakerAnswer) answerCache.computeIfAbsent(
+                    speaker.getId(),
+                    k -> new SpeakerAnswer(speaker));
+
+            return Collections.singletonList(speakerAnswer);
         } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
-            return Collections.singletonList(new TalkAnswer(((TalkQuestion) question).getTalk()));
+            Talk talk = ((TalkQuestion) question).getTalk();
+            TalkAnswer talkAnswer = (TalkAnswer) answerCache.computeIfAbsent(
+                    talk.getId(),
+                    k -> new TalkAnswer(talk));
+
+            return Collections.singletonList(talkAnswer);
         } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             return ((TalkQuestion) question).getSpeakers().stream()
-                    .map(SpeakerAnswer::new)
+                    .map(s -> (SpeakerAnswer) answerCache.computeIfAbsent(
+                            s.getId(),
+                            k -> new SpeakerAnswer(s)))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
             return ((CompanyBySpeakerQuestion) question).getCompanies().stream()
-                    .map(CompanyAnswer::new)
+                    .map(c -> (CompanyAnswer) answerCache.computeIfAbsent(
+                            c.getId(),
+                            k -> new CompanyAnswer(c)))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
             return ((SpeakerByCompanyQuestion) question).getSpeakers().stream()
-                    .map(SpeakerAnswer::new)
+                    .map(s -> (SpeakerAnswer) answerCache.computeIfAbsent(
+                            s.getId(),
+                            k -> new SpeakerAnswer(s)))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
             Speaker speaker = ((TagCloudQuestion) question).getSpeaker();
@@ -202,7 +218,12 @@ public class StateServiceImpl implements StateService {
 
             return Collections.singletonList(tagCloudAnswer);
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
-            return Collections.singletonList(new SpeakerAnswer(((TagCloudQuestion) question).getSpeaker()));
+            Speaker speaker = ((TagCloudQuestion) question).getSpeaker();
+            SpeakerAnswer speakerAnswer = (SpeakerAnswer) answerCache.computeIfAbsent(
+                    speaker.getId(),
+                    k -> new SpeakerAnswer(speaker));
+
+            return Collections.singletonList(speakerAnswer);
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
         }
@@ -215,7 +236,14 @@ public class StateServiceImpl implements StateService {
                 GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ||
                 GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
             return questions.stream()
-                    .map(q -> new SpeakerAnswer(((SpeakerQuestion) q).getSpeaker()))
+                    .map(q -> {
+                                Speaker speaker = ((SpeakerQuestion) q).getSpeaker();
+
+                                return (SpeakerAnswer) answerCache.computeIfAbsent(
+                                        speaker.getId(),
+                                        k -> new SpeakerAnswer(speaker));
+                            }
+                    )
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
             List<Speaker> questionSpeakers = ((TalkQuestion) question).getSpeakers();
@@ -224,7 +252,9 @@ public class StateServiceImpl implements StateService {
             return questions.stream()
                     .map(q -> ((TalkQuestion) q).getTalk())
                     .filter(t -> (t.getId() == correctAnswerTalk.getId()) || !t.getSpeakers().containsAll(questionSpeakers))
-                    .map(TalkAnswer::new)
+                    .map(t -> (TalkAnswer) answerCache.computeIfAbsent(
+                            t.getId(),
+                            k -> new TalkAnswer(t)))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_TALK_MODE.equals(guessMode)) {
             Set<Speaker> questionSpeakers = new HashSet<>(((TalkQuestion) question).getSpeakers());
@@ -237,7 +267,9 @@ public class StateServiceImpl implements StateService {
                     .flatMap(Collection::stream)
                     .distinct()
                     .filter(s -> (correctAnswerSpeakers.contains(s) || !questionSpeakers.contains(s)))
-                    .map(SpeakerAnswer::new)
+                    .map(s -> (SpeakerAnswer) answerCache.computeIfAbsent(
+                            s.getId(),
+                            k -> new SpeakerAnswer(s)))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE.equals(guessMode)) {
             Set<Company> questionCompanies = new HashSet<>(((CompanyBySpeakerQuestion) question).getCompanies());
@@ -250,7 +282,9 @@ public class StateServiceImpl implements StateService {
                     .flatMap(Collection::stream)
                     .distinct()
                     .filter(c -> (correctAnswerCompanies.contains(c) || !questionCompanies.contains(c)))
-                    .map(CompanyAnswer::new)
+                    .map(c -> (CompanyAnswer) answerCache.computeIfAbsent(
+                            c.getId(),
+                            k -> new CompanyAnswer(c)))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
             Company company = ((SpeakerByCompanyQuestion) question).getCompany();
@@ -263,7 +297,9 @@ public class StateServiceImpl implements StateService {
                     .flatMap(Collection::stream)
                     .distinct()
                     .filter(s -> (correctAnswerSpeakers.contains(s) || !s.getCompanies().contains(company)))
-                    .map(SpeakerAnswer::new)
+                    .map(s -> (SpeakerAnswer) answerCache.computeIfAbsent(
+                            s.getId(),
+                            k -> new SpeakerAnswer(s)))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
             return questions.stream()
@@ -280,7 +316,13 @@ public class StateServiceImpl implements StateService {
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             return questions.stream()
-                    .map(q -> new SpeakerAnswer(((TagCloudQuestion) q).getSpeaker()))
+                    .map(q -> {
+                        Speaker speaker = ((TagCloudQuestion) q).getSpeaker();
+
+                        return (SpeakerAnswer) answerCache.computeIfAbsent(
+                                speaker.getId(),
+                                k -> new SpeakerAnswer(speaker));
+                    })
                     .collect(Collectors.toList());
         } else {
             throw new IllegalArgumentException(String.format(UNKNOWN_GUESS_MODE_TEXT, guessMode));
