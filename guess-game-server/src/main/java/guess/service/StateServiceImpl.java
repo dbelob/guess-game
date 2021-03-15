@@ -310,7 +310,7 @@ public class StateServiceImpl implements StateService {
                                 speaker.getId(),
                                 k -> new TagCloudAnswer(
                                         speaker,
-                                        ((TagCloudQuestion) question).getLanguageWordFrequenciesMap())
+                                        ((TagCloudQuestion) q).getLanguageWordFrequenciesMap())
                         );
                     })
                     .collect(Collectors.toList());
