@@ -29,9 +29,12 @@ public class TagCloudUtils {
     private static final Logger log = LoggerFactory.getLogger(TagCloudUtils.class);
 
     private static final String STOP_WORDS_FILENAME = "stop-words.txt";
-    private static final int DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN = 15;
+    private static final int DEFAULT_CREATION_TALK_WORD_FREQUENCIES_TO_RETURN = 300;
+    private static final int DEFAULT_MERGE_TALK_WORD_FREQUENCIES_TO_RETURN = 15;
     private static final int TALK_IMAGE_WIDTH = 250;
     private static final int TALK_IMAGE_HEIGHT = 250;
+    private static final int MIN_FONT = 5;
+    private static final int MAX_FONT = 40;
 
     private TagCloudUtils() {
     }
@@ -80,7 +83,7 @@ public class TagCloudUtils {
      */
     public static List<WordFrequency> getWordFrequenciesByText(String text) {
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
-        frequencyAnalyzer.setWordFrequenciesToReturn(DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN);
+        frequencyAnalyzer.setWordFrequenciesToReturn(DEFAULT_CREATION_TALK_WORD_FREQUENCIES_TO_RETURN);
         frequencyAnalyzer.setStopWords(loadStopWords());
 
         List<String> lines = Arrays.asList(text.split("\n"));
@@ -127,7 +130,7 @@ public class TagCloudUtils {
                 .entrySet().stream()
                 .map(e -> new WordFrequency(e.getKey(), e.getValue()))
                 .sorted(Comparator.comparing(WordFrequency::getFrequency).reversed())
-                .limit(DEFAULT_TALK_WORD_FREQUENCIES_TO_RETURN)
+                .limit(DEFAULT_MERGE_TALK_WORD_FREQUENCIES_TO_RETURN)
                 .collect(Collectors.toList());
     }
 
@@ -145,7 +148,7 @@ public class TagCloudUtils {
         wordCloud.setPadding(0);
         wordCloud.setBackground(new RectangleBackground(dimension));
         wordCloud.setColorPalette(new ColorPalette(new Color(0x4055F1), new Color(0x408DF1), new Color(0x40AAF1), new Color(0x40C5F1), new Color(0x40D3F1), new Color(0x000000)));
-        wordCloud.setFontScalar(new LinearFontScalar(5, 20));
+        wordCloud.setFontScalar(new LinearFontScalar(MIN_FONT, MAX_FONT));
         wordCloud.build(wordFrequencies);
 
         byte[] result;
