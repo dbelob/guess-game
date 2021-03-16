@@ -44,7 +44,6 @@ public class AccountErrorDetailsDto {
         return yourAnswers;
     }
 
-
     private static AccountErrorDetailsDto convertToDto(ErrorDetails errorDetails, GuessMode guessMode, Language language) {
         if (GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
             List<Speaker> speakers = errorDetails.getAvailableAnswers().stream()

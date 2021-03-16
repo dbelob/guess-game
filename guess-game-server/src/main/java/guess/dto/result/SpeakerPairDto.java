@@ -1,5 +1,8 @@
 package guess.dto.result;
 
+/**
+ * Speaker pair DTO.
+ */
 public class SpeakerPairDto {
     private final String name;
     private final String photoFileName;

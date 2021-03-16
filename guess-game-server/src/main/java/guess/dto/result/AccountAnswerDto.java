@@ -1,5 +1,8 @@
 package guess.dto.result;
 
+/**
+ * Account answer DTO.
+ */
 public class AccountAnswerDto {
     private final SpeakerPairDto speaker;
     private final String twitter;
