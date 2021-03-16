@@ -13,6 +13,7 @@ import { StateService } from '../../../shared/services/state.service';
 })
 export class ResultComponent implements OnInit {
   public speakersImageDirectory = 'assets/images/speakers';
+  public imageSourcePrefix = 'data:image/jpeg;base64,';
   public result = new Result();
   public isQuestionImage = true;
 
@@ -31,7 +32,8 @@ export class ResultComponent implements OnInit {
         this.isQuestionImage = (GuessMode.GuessNameByPhotoMode === this.result.guessMode) ||
           (GuessMode.GuessTalkBySpeakerMode === this.result.guessMode) ||
           (GuessMode.GuessCompanyBySpeakerMode === this.result.guessMode) ||
-          (GuessMode.GuessAccountBySpeakerMode === this.result.guessMode);
+          (GuessMode.GuessAccountBySpeakerMode === this.result.guessMode) ||
+          (GuessMode.GuessTagCloudBySpeakerMode === this.result.guessMode);
       });
   }
 
@@ -71,8 +73,13 @@ export class ResultComponent implements OnInit {
     return (this.result.accountErrorDetailsList && (this.result.accountErrorDetailsList.length > 0));
   }
 
+  isTagCloudErrorDetailsListVisible() {
+    return (this.result.tagCloudErrorDetailsList && (this.result.tagCloudErrorDetailsList.length > 0));
+  }
+
   isErrorDetailsListVisible() {
     return (this.isSpeakerErrorDetailsListVisible() || this.isTalkErrorDetailsListVisible() ||
-      this.isCompanyErrorDetailsListVisible() || this.isAccountErrorDetailsListVisible());
+      this.isCompanyErrorDetailsListVisible() || this.isAccountErrorDetailsListVisible() ||
+      this.isTagCloudErrorDetailsListVisible());
   }
 }

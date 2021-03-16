@@ -3,6 +3,7 @@ import { SpeakerErrorDetails } from './speaker-error-details.model';
 import { TalkErrorDetails } from './talk-error-details.model';
 import { CompanyErrorDetails } from './company-error-details.model';
 import { AccountErrorDetails } from './account-error-details.model';
+import { TagCloudErrorDetails } from './tag-cloud-error-details.model';
 
 export class Result {
   constructor(
@@ -16,7 +17,8 @@ export class Result {
     public speakerErrorDetailsList?: SpeakerErrorDetails[],
     public talkErrorDetailsList?: TalkErrorDetails[],
     public companyErrorDetailsList?: CompanyErrorDetails[],
-    public accountErrorDetailsList?: AccountErrorDetails[]
+    public accountErrorDetailsList?: AccountErrorDetails[],
+    public tagCloudErrorDetailsList?: TagCloudErrorDetails[]
   ) {
   }
 }

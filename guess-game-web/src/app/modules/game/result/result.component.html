@@ -236,6 +236,49 @@
         </td>
       </tr>
       </tbody>
+      <!-- Tag cloud error details -->
+      <tbody *ngIf="isTagCloudErrorDetailsListVisible()">
+      <tr *ngFor="let tagCloudErrorDetails of result.tagCloudErrorDetailsList; let i = index">
+        <td scope="row" class="text-center">{{i + 1}}</td>
+        <td>
+          <div *ngIf="isQuestionImage" class="text-center">
+            <figure class="figure">
+              <img src="{{speakersImageDirectory}}/{{tagCloudErrorDetails.speaker.photoFileName}}" alt="photo" class="figure-img img-thumbnail img-guess-result"/>
+              <figcaption class="figure-caption text-center">{{tagCloudErrorDetails.speaker.name}}</figcaption>
+            </figure>
+          </div>
+          <div *ngIf="!isQuestionImage" class="text-center">
+            <img src="{{imageSourcePrefix}}{{tagCloudErrorDetails.image}}" alt="cloud" class="img-thumbnail img-guess-result"/>
+          </div>
+        </td>
+        <td>
+          <div *ngIf="!isQuestionImage" class="text-center">
+            <figure class="figure">
+              <img src="{{speakersImageDirectory}}/{{tagCloudErrorDetails.speaker.photoFileName}}" alt="photo" class="figure-img img-thumbnail img-guess-result"/>
+              <figcaption class="figure-caption text-center">{{tagCloudErrorDetails.speaker.name}}</figcaption>
+            </figure>
+          </div>
+          <div *ngIf="isQuestionImage">
+            <img src="{{imageSourcePrefix}}{{tagCloudErrorDetails.image}}" alt="cloud" class="img-thumbnail img-guess-result"/>
+          </div>
+        </td>
+        <td>
+          <div *ngIf="!isQuestionImage" class="text-center">
+            <p *ngFor="let yourAnswer of tagCloudErrorDetails.yourAnswers">
+            <figure class="figure">
+              <img src="{{speakersImageDirectory}}/{{yourAnswer.speaker.photoFileName}}" alt="photo" class="figure-img img-thumbnail img-guess-result"/>
+              <figcaption class="figure-caption text-center">{{yourAnswer.speaker.name}}</figcaption>
+            </figure>
+            </p>
+          </div>
+          <div *ngIf="isQuestionImage">
+            <p *ngFor="let yourAnswer of tagCloudErrorDetails.yourAnswers">
+              <img src="{{imageSourcePrefix}}{{yourAnswer.image}}" alt="cloud" class="img-thumbnail img-guess-result"/>
+            </p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
     </table>
   </div>
 </div>
