@@ -14,6 +14,7 @@ import { CompanySpeakers } from '../models/guess/company-speakers.model';
 import { SpeakerAccounts } from '../models/guess/speaker-accounts.model';
 import { AccountSpeakers } from '../models/guess/account-speakers.model';
 import { SpeakerTagClouds } from '../models/guess/speaker-tag-clouds.model';
+import { TagCloudSpeakers } from '../models/guess/tag-cloud-speakers.model';
 
 @Injectable({
   providedIn: 'root'
@@ -136,6 +137,16 @@ export class StateService {
 
   getSpeakerTagClouds(): Observable<SpeakerTagClouds> {
     return this.http.get<SpeakerTagClouds>(`${this.baseUrl}/speaker-tag-clouds`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getTagCloudSpeakers(): Observable<TagCloudSpeakers> {
+    return this.http.get<TagCloudSpeakers>(`${this.baseUrl}/tag-cloud-speakers`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

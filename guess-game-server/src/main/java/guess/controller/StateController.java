@@ -133,4 +133,10 @@ public class StateController {
     public SpeakerTagCloudsDto getSpeakerTagClouds(HttpSession httpSession) {
         return getDto(httpSession, SpeakerTagCloudsDto::convertToDto);
     }
+
+    @GetMapping("/tag-cloud-speakers")
+    @ResponseBody
+    public TagCloudSpeakersDto getTagCloudSpeakers(HttpSession httpSession) {
+        return getDto(httpSession, TagCloudSpeakersDto::convertToDto);
+    }
 }
