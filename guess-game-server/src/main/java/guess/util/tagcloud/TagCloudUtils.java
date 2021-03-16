@@ -33,7 +33,7 @@ public class TagCloudUtils {
     private static final int DEFAULT_MERGE_TALK_WORD_FREQUENCIES_TO_RETURN = 20;
     private static final int TALK_IMAGE_WIDTH = 250;
     private static final int TALK_IMAGE_HEIGHT = 250;
-    private static final int MIN_FONT = 5;
+    private static final int MIN_FONT = 10;
     private static final int MAX_FONT = 40;
 
     private TagCloudUtils() {
