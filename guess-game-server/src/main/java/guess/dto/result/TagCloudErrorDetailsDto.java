@@ -12,6 +12,7 @@ import guess.util.tagcloud.TagCloudUtils;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -68,11 +69,15 @@ public class TagCloudErrorDetailsDto {
                                     null))
                     .collect(Collectors.toList());
 
+            Map<Language, byte[]> languageImageMap = GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) ?
+                    ((TagCloudAnswer) errorDetails.getCorrectAnswers().get(0)).getLanguageImageMap() :
+                    question.getLanguageImageMap();
+
             return new TagCloudErrorDetailsDto(
                     new SpeakerPairDto(
                             LocalizationUtils.getSpeakerName(question.getSpeaker(), language, speakerDuplicates),
                             question.getSpeaker().getPhotoFileName()),
-                    TagCloudUtils.getImage(question.getLanguageImageMap(), language),
+                    TagCloudUtils.getImage(languageImageMap, language),
                     yourAnswers);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
