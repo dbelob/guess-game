@@ -14,7 +14,9 @@ import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -144,6 +146,7 @@ public class TagCloudUtils {
         final Dimension dimension = new Dimension(TALK_IMAGE_WIDTH, TALK_IMAGE_HEIGHT);
         final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.RECTANGLE);
 
+        // Create tag cloud
         wordCloud.setBackgroundColor(new Color(0xFFFFFF, false));
         wordCloud.setPadding(0);
         wordCloud.setBackground(new RectangleBackground(dimension));
@@ -151,10 +154,15 @@ public class TagCloudUtils {
         wordCloud.setFontScalar(new LinearFontScalar(MIN_FONT, MAX_FONT));
         wordCloud.build(wordFrequencies);
 
-        byte[] result;
+        // Change image type from TYPE_INT_ARGB to TYPE_INT_RGB
+        BufferedImage oldImage = wordCloud.getBufferedImage();
+        BufferedImage newImage = new BufferedImage(oldImage.getWidth(), oldImage.getHeight(), BufferedImage.TYPE_INT_RGB);
+        newImage.createGraphics().drawImage(oldImage, 0, 0, Color.WHITE, null);
 
+        // Create image array
+        byte[] result;
         try (ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
-            wordCloud.writeToStream("png", bos);
+            ImageIO.write(newImage, "jpg", bos);
 
             result = bos.toByteArray();
         }
