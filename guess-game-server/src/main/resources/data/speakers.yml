@@ -1786,6 +1786,7 @@ speakers:
             \ и JVM, особенно в многопоточности и оптимизации производительности для современных архитектур."
     twitter: relizarov
     gitHub: elizarov
+    habr: elizarov
     javaChampion: true
   - id: 107
     photoFileName: 0107.jpg
@@ -3288,6 +3289,9 @@ speakers:
       - {language: en, text: "Evgeny Kozlov"}
       - {language: ru, text: "Евгений Козлов"}
     companyIds: [61]
+    twitter: ZhekaKozlov
+    gitHub: orionll
+    habr: orionll
   - id: 220
     photoFileName: 0220.jpg
     photoUpdatedAt: 2020-01-28T12:40:59.173Z[UTC]
