@@ -83,10 +83,13 @@ public class TagCloudUtils {
      * @param text text
      * @return word frequencies
      */
-    public static List<WordFrequency> getWordFrequenciesByText(String text) {
+    public static List<WordFrequency> getWordFrequenciesByText(String text, List<String> stopWords) {
+        Set<String> fullStopWords = loadStopWords();
+        fullStopWords.addAll(stopWords);
+
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
         frequencyAnalyzer.setWordFrequenciesToReturn(DEFAULT_CREATION_TALK_WORD_FREQUENCIES_TO_RETURN);
-        frequencyAnalyzer.setStopWords(loadStopWords());
+        frequencyAnalyzer.setStopWords(fullStopWords);
 
         List<String> lines = Arrays.asList(text.split("\n"));
 
