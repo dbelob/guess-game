@@ -3,10 +3,7 @@ package guess.util.tagcloud;
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
-import guess.domain.source.Event;
-import guess.domain.source.EventType;
-import guess.domain.source.SourceInformation;
-import guess.domain.source.Talk;
+import guess.domain.source.*;
 import guess.util.FileUtils;
 import guess.util.LocalizationUtils;
 import guess.util.yaml.YamlUtils;
@@ -17,7 +14,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Optional;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Tag cloud exporter.
@@ -56,6 +56,7 @@ public class TagCloudExporter {
                 resourceEvent.getStartDate(), resourceEvent.getEndDate());
 
         StringBuilder conferenceSb = new StringBuilder();
+        Set<String> talkStopWords = new TreeSet<>();
 
         FileUtils.deleteDirectory(OUTPUT_DIRECTORY_NAME);
 
@@ -63,11 +64,22 @@ public class TagCloudExporter {
             String talkText = TagCloudUtils.getTalkText(talk);
 
             conferenceSb.append(talkText);
-
             save(talkText, String.format("talk%04d.txt", talk.getId()));
+
+            // Talk stop words
+            if (talk.getSpeakers().size() == 1) {
+                Speaker speaker = talk.getSpeakers().get(0);
+
+                speaker.getName().stream()
+                        .map(LocaleItem::getText)
+                        .map(name -> name.toLowerCase().split(" "))
+                        .map(Arrays::asList)
+                        .forEach(talkStopWords::addAll);
+            }
         }
 
         save(conferenceSb.toString(), String.format("event%d.txt", resourceEvent.getId()));
+        save(String.join("\n", talkStopWords), "speaker-stop-words.txt");
     }
 
     static void save(String text, String filename) throws IOException {
