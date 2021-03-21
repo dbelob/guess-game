@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 public interface StateService {
     void setStartParameters(StartParameters startParameters, HttpSession httpSession);
 
+    void deleteStartParameters(HttpSession httpSession);
+
     GameState getState(HttpSession httpSession);
 
     void setState(GameState state, HttpSession httpSession);

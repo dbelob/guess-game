@@ -35,6 +35,16 @@ export class StateService {
       );
   }
 
+  deleteStartParameters(): Observable<string> {
+    return this.http.delete<string>(`${this.baseUrl}/parameters`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
   getState(): Observable<GameState> {
     return this.http.get<GameState>(`${this.baseUrl}/state`)
       .pipe(

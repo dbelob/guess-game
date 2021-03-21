@@ -41,6 +41,12 @@ public class StateController {
         stateService.setStartParameters(StartParametersDto.convertFromDto(startParameters), httpSession);
     }
 
+    @DeleteMapping("/parameters")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteStartParameters(HttpSession httpSession) {
+        stateService.deleteStartParameters(httpSession);
+    }
+
     @GetMapping("/state")
     @ResponseBody
     public GameState getState(HttpSession httpSession) {

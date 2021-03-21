@@ -50,6 +50,14 @@ public class StateServiceImpl implements StateService {
                 httpSession);
     }
 
+    @Override
+    public void deleteStartParameters(HttpSession httpSession) {
+        stateDao.clearStartParameters(httpSession);
+        stateDao.clearQuestionAnswersSet(httpSession);
+        answerDao.clearAnswerSets(httpSession);
+        stateDao.setGameState(GameState.START_STATE, httpSession);
+    }
+
     GameState getStateByGuessMode(GuessMode guessMode) {
         if (GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode)) {
             return GameState.GUESS_NAME_BY_PHOTO_STATE;

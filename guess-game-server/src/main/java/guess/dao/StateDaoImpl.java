@@ -1,8 +1,8 @@
 package guess.dao;
 
-import guess.domain.question.QuestionAnswersSet;
-import guess.domain.StartParameters;
 import guess.domain.GameState;
+import guess.domain.StartParameters;
+import guess.domain.question.QuestionAnswersSet;
 import guess.util.HttpSessionUtils;
 import org.springframework.stereotype.Repository;
 
@@ -34,6 +34,11 @@ public class StateDaoImpl implements StateDao {
     }
 
     @Override
+    public void clearStartParameters(HttpSession httpSession) {
+        HttpSessionUtils.clearStartParameters(httpSession);
+    }
+
+    @Override
     public QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession) {
         return HttpSessionUtils.getQuestionAnswersSet(httpSession);
     }
@@ -41,5 +46,10 @@ public class StateDaoImpl implements StateDao {
     @Override
     public void setQuestionAnswersSet(QuestionAnswersSet questionAnswersSet, HttpSession httpSession) {
         HttpSessionUtils.setQuestionAnswersSet(questionAnswersSet, httpSession);
+    }
+
+    @Override
+    public void clearQuestionAnswersSet(HttpSession httpSession) {
+        HttpSessionUtils.clearQuestionAnswersSet(httpSession);
     }
 }

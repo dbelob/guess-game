@@ -202,7 +202,7 @@ class HttpSessionUtilsTest {
         assertEquals(answerSets0, httpSession.getAttribute(HttpSessionUtils.ANSWER_SETS_ATTRIBUTE_NAME));
 
         HttpSessionUtils.clearAnswerSets(httpSession);
-        assertEquals(Collections.emptyList(), httpSession.getAttribute(HttpSessionUtils.ANSWER_SETS_ATTRIBUTE_NAME));
+        assertNull(httpSession.getAttribute(HttpSessionUtils.ANSWER_SETS_ATTRIBUTE_NAME));
     }
 
     @Test
