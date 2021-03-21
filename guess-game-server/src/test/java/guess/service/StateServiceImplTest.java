@@ -20,10 +20,7 @@ import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.mock.web.MockHttpSession;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -344,9 +341,9 @@ class StateServiceImplTest {
             Mockito.when(stateService.getCorrectAnswers(Mockito.any(), Mockito.any(), Mockito.any())).thenCallRealMethod();
 
             if (expectedException == null) {
-                assertEquals(expectedValue, stateService.getCorrectAnswers(question, guessMode, Collections.emptyMap()));
+                assertEquals(expectedValue, stateService.getCorrectAnswers(question, guessMode, new HashMap<>()));
             } else {
-                assertThrows(expectedException, () -> stateService.getCorrectAnswers(question, guessMode, Collections.emptyMap()));
+                assertThrows(expectedException, () -> stateService.getCorrectAnswers(question, guessMode, new HashMap<>()));
             }
         }
     }
@@ -458,9 +455,9 @@ class StateServiceImplTest {
             Mockito.when(stateService.getAllAvailableAnswers(Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any())).thenCallRealMethod();
 
             if (expectedException == null) {
-                assertEquals(expectedValue, stateService.getAllAvailableAnswers(questions, question, correctAnswers, guessMode, Collections.emptyMap()));
+                assertEquals(expectedValue, stateService.getAllAvailableAnswers(questions, question, correctAnswers, guessMode, new HashMap<>()));
             } else {
-                assertThrows(expectedException, () -> stateService.getAllAvailableAnswers(questions, question, correctAnswers, guessMode, Collections.emptyMap()));
+                assertThrows(expectedException, () -> stateService.getAllAvailableAnswers(questions, question, correctAnswers, guessMode, new HashMap<>()));
             }
         }
     }
