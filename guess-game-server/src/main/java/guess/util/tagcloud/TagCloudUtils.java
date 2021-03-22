@@ -7,6 +7,7 @@ import com.kennycason.kumo.bg.RectangleBackground;
 import com.kennycason.kumo.font.scale.LinearFontScalar;
 import com.kennycason.kumo.nlp.FrequencyAnalyzer;
 import com.kennycason.kumo.palette.ColorPalette;
+import guess.dao.exception.WrapperRuntimeException;
 import guess.domain.Language;
 import guess.domain.source.Talk;
 import guess.util.LocalizationUtils;
@@ -103,7 +104,7 @@ public class TagCloudUtils {
      * @return target map
      */
     public static Map<Language, List<WordFrequency>> mergeWordFrequenciesMaps(List<Map<Language, List<WordFrequency>>> languageWordFrequenciesMapList) {
-        Map<Language, List<List<WordFrequency>>> languageWordFrequenciesListMap = new HashMap<>();
+        Map<Language, List<List<WordFrequency>>> languageWordFrequenciesListMap = new EnumMap<>(Language.class);
 
         for (Map<Language, List<WordFrequency>> languageWordFrequenciesMap : languageWordFrequenciesMapList) {
             languageWordFrequenciesMap.forEach((key, value) -> {
@@ -187,7 +188,7 @@ public class TagCloudUtils {
                             try {
                                 return TagCloudUtils.createImage(e.getValue());
                             } catch (IOException ex) {
-                                throw new RuntimeException(ex);
+                                throw new WrapperRuntimeException(ex);
                             }
                         }
                 ));

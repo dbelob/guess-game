@@ -141,7 +141,7 @@ public class QuestionDaoImpl implements QuestionDao {
         if (talk.getSpeakers().size() == 1) {
             Speaker speaker = talk.getSpeakers().get(0);
 
-            speakerTalkTextMap.computeIfAbsent(speaker, k -> new HashMap<>());
+            speakerTalkTextMap.computeIfAbsent(speaker, k -> new EnumMap<>(Language.class));
             speakerTalkTextMap.get(speaker).computeIfAbsent(Language.ENGLISH, k -> new StringBuilder());
             speakerTalkTextMap.get(speaker).get(Language.ENGLISH).append(TagCloudUtils.getTalkText(talk, Language.ENGLISH));
 

@@ -19,15 +19,25 @@ public class TagCloudAnswer extends QuestionAnswer<Speaker> implements Answer {
         this.languageWordFrequenciesMap = languageWordFrequenciesMap;
     }
 
-    public Speaker getSpeaker() {
-        return getEntity();
-    }
-
     public Map<Language, byte[]> getLanguageImageMap() {
         if (languageImageMap == null) {
             languageImageMap = TagCloudUtils.createLanguageImageMap(languageWordFrequenciesMap);
         }
 
         return languageImageMap;
+    }
+
+    public Speaker getSpeaker() {
+        return getEntity();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
