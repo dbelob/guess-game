@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockHttpSession;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -151,6 +150,22 @@ class HttpSessionUtilsTest {
     }
 
     @Test
+    void clearStartParameters() {
+        HttpSession httpSession = new MockHttpSession();
+
+        assertNull(httpSession.getAttribute(HttpSessionUtils.START_PARAMETERS_ATTRIBUTE_NAME));
+
+        HttpSessionUtils.clearStartParameters(httpSession);
+        assertNull(httpSession.getAttribute(HttpSessionUtils.START_PARAMETERS_ATTRIBUTE_NAME));
+
+        httpSession.setAttribute(HttpSessionUtils.START_PARAMETERS_ATTRIBUTE_NAME, startParameters0);
+        assertEquals(startParameters0, httpSession.getAttribute(HttpSessionUtils.START_PARAMETERS_ATTRIBUTE_NAME));
+
+        HttpSessionUtils.clearStartParameters(httpSession);
+        assertNull(httpSession.getAttribute(HttpSessionUtils.START_PARAMETERS_ATTRIBUTE_NAME));
+    }
+
+    @Test
     void getQuestionAnswersSet() {
         HttpSession httpSession = new MockHttpSession();
 
@@ -161,6 +176,22 @@ class HttpSessionUtilsTest {
 
         httpSession.setAttribute(HttpSessionUtils.QUESTION_ANSWERS_SET_ATTRIBUTE_NAME, questionAnswersSet1);
         assertEquals(questionAnswersSet1, HttpSessionUtils.getQuestionAnswersSet(httpSession));
+    }
+
+    @Test
+    void clearQuestionAnswersSet() {
+        HttpSession httpSession = new MockHttpSession();
+
+        assertNull(httpSession.getAttribute(HttpSessionUtils.QUESTION_ANSWERS_SET_ATTRIBUTE_NAME));
+
+        HttpSessionUtils.clearQuestionAnswersSet(httpSession);
+        assertNull(httpSession.getAttribute(HttpSessionUtils.QUESTION_ANSWERS_SET_ATTRIBUTE_NAME));
+
+        httpSession.setAttribute(HttpSessionUtils.QUESTION_ANSWERS_SET_ATTRIBUTE_NAME, questionAnswersSet0);
+        assertEquals(questionAnswersSet0, httpSession.getAttribute(HttpSessionUtils.QUESTION_ANSWERS_SET_ATTRIBUTE_NAME));
+
+        HttpSessionUtils.clearQuestionAnswersSet(httpSession);
+        assertNull(httpSession.getAttribute(HttpSessionUtils.QUESTION_ANSWERS_SET_ATTRIBUTE_NAME));
     }
 
     @Test
@@ -198,7 +229,7 @@ class HttpSessionUtilsTest {
         HttpSessionUtils.clearAnswerSets(httpSession);
         assertNull(httpSession.getAttribute(HttpSessionUtils.ANSWER_SETS_ATTRIBUTE_NAME));
 
-        httpSession.setAttribute(HttpSessionUtils.ANSWER_SETS_ATTRIBUTE_NAME, new ArrayList<>(answerSets0));
+        httpSession.setAttribute(HttpSessionUtils.ANSWER_SETS_ATTRIBUTE_NAME, answerSets0);
         assertEquals(answerSets0, httpSession.getAttribute(HttpSessionUtils.ANSWER_SETS_ATTRIBUTE_NAME));
 
         HttpSessionUtils.clearAnswerSets(httpSession);
