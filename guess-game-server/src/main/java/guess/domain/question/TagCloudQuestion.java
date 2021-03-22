@@ -1,9 +1,9 @@
 package guess.domain.question;
 
-import com.kennycason.kumo.WordFrequency;
 import guess.domain.Language;
 import guess.domain.QuestionAnswer;
 import guess.domain.source.Speaker;
+import guess.domain.tagcloud.SerializedWordFrequency;
 import guess.util.tagcloud.TagCloudUtils;
 
 import java.util.List;
@@ -13,16 +13,16 @@ import java.util.Map;
  * Question about tag cloud.
  */
 public class TagCloudQuestion extends QuestionAnswer<Speaker> implements Question {
-    private final Map<Language, List<WordFrequency>> languageWordFrequenciesMap;
+    private final Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap;
     private Map<Language, byte[]> languageImageMap;
 
-    public TagCloudQuestion(Map<Language, List<WordFrequency>> languageWordFrequenciesMap, Speaker speaker) {
+    public TagCloudQuestion(Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap, Speaker speaker) {
         super(speaker);
 
         this.languageWordFrequenciesMap = languageWordFrequenciesMap;
     }
 
-    public Map<Language, List<WordFrequency>> getLanguageWordFrequenciesMap() {
+    public Map<Language, List<SerializedWordFrequency>> getLanguageWordFrequenciesMap() {
         return languageWordFrequenciesMap;
     }
 

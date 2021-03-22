@@ -10,6 +10,7 @@ import com.kennycason.kumo.palette.ColorPalette;
 import guess.dao.exception.WrapperRuntimeException;
 import guess.domain.Language;
 import guess.domain.source.Talk;
+import guess.domain.tagcloud.SerializedWordFrequency;
 import guess.util.LocalizationUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -84,7 +85,7 @@ public class TagCloudUtils {
      * @param text text
      * @return word frequencies
      */
-    public static List<WordFrequency> getWordFrequenciesByText(String text, List<String> stopWords) {
+    public static List<SerializedWordFrequency> getWordFrequenciesByText(String text, List<String> stopWords) {
         Set<String> fullStopWords = loadStopWords();
         fullStopWords.addAll(stopWords);
 
@@ -94,7 +95,9 @@ public class TagCloudUtils {
 
         List<String> lines = Arrays.asList(text.split("\n"));
 
-        return frequencyAnalyzer.load(lines);
+        return frequencyAnalyzer.load(lines).stream()
+                .map(wf -> new SerializedWordFrequency(wf.getWord(), wf.getFrequency(), wf.getFont()))
+                .collect(Collectors.toList());
     }
 
     /**
@@ -103,10 +106,10 @@ public class TagCloudUtils {
      * @param languageWordFrequenciesMapList source list
      * @return target map
      */
-    public static Map<Language, List<WordFrequency>> mergeWordFrequenciesMaps(List<Map<Language, List<WordFrequency>>> languageWordFrequenciesMapList) {
-        Map<Language, List<List<WordFrequency>>> languageWordFrequenciesListMap = new EnumMap<>(Language.class);
+    public static Map<Language, List<SerializedWordFrequency>> mergeWordFrequenciesMaps(List<Map<Language, List<SerializedWordFrequency>>> languageWordFrequenciesMapList) {
+        Map<Language, List<List<SerializedWordFrequency>>> languageWordFrequenciesListMap = new EnumMap<>(Language.class);
 
-        for (Map<Language, List<WordFrequency>> languageWordFrequenciesMap : languageWordFrequenciesMapList) {
+        for (Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap : languageWordFrequenciesMapList) {
             languageWordFrequenciesMap.forEach((key, value) -> {
                 languageWordFrequenciesListMap.computeIfAbsent(key, k -> new ArrayList<>());
                 languageWordFrequenciesListMap.get(key).add(value);
@@ -126,16 +129,16 @@ public class TagCloudUtils {
      * @param wordFrequenciesList word frequencies list
      * @return word frequencies
      */
-    public static List<WordFrequency> mergeWordFrequencies(List<List<WordFrequency>> wordFrequenciesList) {
+    public static List<SerializedWordFrequency> mergeWordFrequencies(List<List<SerializedWordFrequency>> wordFrequenciesList) {
         return wordFrequenciesList.stream()
                 .flatMap(Collection::stream)
                 .collect(Collectors.groupingBy(
-                        WordFrequency::getWord,
-                        Collectors.summingInt(WordFrequency::getFrequency)
+                        SerializedWordFrequency::getWord,
+                        Collectors.summingInt(SerializedWordFrequency::getFrequency)
                 ))
                 .entrySet().stream()
-                .map(e -> new WordFrequency(e.getKey(), e.getValue()))
-                .sorted(Comparator.comparing(WordFrequency::getFrequency).reversed())
+                .map(e -> new SerializedWordFrequency(e.getKey(), e.getValue()))
+                .sorted(Comparator.comparing(SerializedWordFrequency::getFrequency).reversed())
                 .limit(DEFAULT_MERGE_TALK_WORD_FREQUENCIES_TO_RETURN)
                 .collect(Collectors.toList());
     }
@@ -146,9 +149,12 @@ public class TagCloudUtils {
      * @param wordFrequencies word frequencies
      * @return image
      */
-    public static byte[] createImage(List<WordFrequency> wordFrequencies) throws IOException {
+    public static byte[] createImage(List<SerializedWordFrequency> wordFrequencies) throws IOException {
         final Dimension dimension = new Dimension(TALK_IMAGE_WIDTH, TALK_IMAGE_HEIGHT);
         final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.RECTANGLE);
+        final List<WordFrequency> castedWordFrequencies = wordFrequencies.stream()
+                .map(WordFrequency.class::cast)
+                .collect(Collectors.toList());
 
         // Create tag cloud
         wordCloud.setBackgroundColor(new Color(0xFFFFFF, false));
@@ -156,7 +162,7 @@ public class TagCloudUtils {
         wordCloud.setBackground(new RectangleBackground(dimension));
         wordCloud.setColorPalette(new ColorPalette(new Color(0x4055F1), new Color(0x408DF1), new Color(0x40AAF1), new Color(0x40C5F1), new Color(0x40D3F1), new Color(0x000000)));
         wordCloud.setFontScalar(new LinearFontScalar(MIN_FONT, MAX_FONT));
-        wordCloud.build(wordFrequencies);
+        wordCloud.build(castedWordFrequencies);
 
         // Change image type from TYPE_INT_ARGB to TYPE_INT_RGB
         BufferedImage oldImage = wordCloud.getBufferedImage();
@@ -180,7 +186,7 @@ public class TagCloudUtils {
      * @param languageWordFrequenciesMap language, word frequencies map
      * @return language, image map
      */
-    public static Map<Language, byte[]> createLanguageImageMap(Map<Language, List<WordFrequency>> languageWordFrequenciesMap) {
+    public static Map<Language, byte[]> createLanguageImageMap(Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap) {
         return languageWordFrequenciesMap.entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
