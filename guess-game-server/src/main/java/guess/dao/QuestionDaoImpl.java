@@ -85,6 +85,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             List<TagCloudQuestion> tagCloudQuestions = speakerTalkTextMap.keySet().stream()
                     .map(s -> new TagCloudQuestion(
+                            s,
                             speakerTalkTextMap.get(s).entrySet().stream()
                                     .collect(Collectors.toMap(
                                             Map.Entry::getKey,
@@ -94,8 +95,8 @@ public class QuestionDaoImpl implements QuestionDao {
 
                                                 return TagCloudUtils.getWordFrequenciesByText(e.getValue().toString(), Arrays.asList(words));
                                             }
-                                    )),
-                            s))
+                                    ))
+                    ))
                     .collect(Collectors.toList());
 
             localQuestionSets.add(new QuestionSet(
@@ -266,12 +267,13 @@ public class QuestionDaoImpl implements QuestionDao {
 
         return speakerQuestionsMap.keySet().stream()
                 .map(s -> new TagCloudQuestion(
+                        s,
                         TagCloudUtils.mergeWordFrequenciesMaps(
                                 speakerQuestionsMap.get(s).stream()
                                         .map(TagCloudQuestion::getLanguageWordFrequenciesMap)
                                         .collect(Collectors.toList())
-                        ),
-                        s))
+                        )
+                ))
                 .collect(Collectors.toList());
     }
 }
