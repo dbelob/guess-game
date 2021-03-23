@@ -2,10 +2,7 @@ package guess.service;
 
 import guess.dao.*;
 import guess.domain.*;
-import guess.domain.answer.Answer;
-import guess.domain.answer.CompanyAnswer;
-import guess.domain.answer.SpeakerAnswer;
-import guess.domain.answer.TalkAnswer;
+import guess.domain.answer.*;
 import guess.domain.question.*;
 import guess.domain.source.*;
 import org.junit.jupiter.api.DisplayName;
@@ -108,6 +105,26 @@ class StateServiceImplTest {
         }
     }
 
+    @Test
+    void deleteStartParameters() {
+        StateDao stateDao = Mockito.mock(StateDao.class);
+        QuestionDao questionDao = Mockito.mock(QuestionDao.class);
+        AnswerDao answerDao = Mockito.mock(AnswerDao.class);
+        EventTypeDao eventTypeDao = Mockito.mock(EventTypeDao.class);
+        EventDao eventDao = Mockito.mock(EventDao.class);
+        StateService stateService = new StateServiceImpl(stateDao, questionDao, answerDao, eventTypeDao, eventDao);
+        HttpSession httpSession = new MockHttpSession();
+
+        stateService.deleteStartParameters(httpSession);
+        Mockito.verify(stateDao, VerificationModeFactory.times(1)).clearStartParameters(httpSession);
+        Mockito.verify(stateDao, VerificationModeFactory.times(1)).clearQuestionAnswersSet(httpSession);
+        Mockito.verify(stateDao, VerificationModeFactory.times(1)).setGameState(GameState.START_STATE, httpSession);
+        Mockito.verifyNoMoreInteractions(stateDao);
+
+        Mockito.verify(answerDao, VerificationModeFactory.times(1)).clearAnswerSets(httpSession);
+        Mockito.verifyNoMoreInteractions(answerDao);
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getStateByGuessMode method tests")
@@ -122,6 +139,8 @@ class StateServiceImplTest {
                     arguments(GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, GameState.GUESS_SPEAKER_BY_COMPANY_STATE),
                     arguments(GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE, null, GameState.GUESS_ACCOUNT_BY_SPEAKER_STATE),
                     arguments(GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE, null, GameState.GUESS_SPEAKER_BY_ACCOUNT_STATE),
+                    arguments(GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE, null, GameState.GUESS_TAG_CLOUD_BY_SPEAKER_STATE),
+                    arguments(GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE, null, GameState.GUESS_SPEAKER_BY_TAG_CLOUD_STATE),
                     arguments(null, IllegalArgumentException.class, null)
             );
         }
@@ -317,6 +336,7 @@ class StateServiceImplTest {
             Question question1 = new TalkQuestion(List.of(speaker0, speaker1), talk0);
             Question question2 = new CompanyBySpeakerQuestion(List.of(company0, company1), speaker0);
             Question question3 = new SpeakerByCompanyQuestion(List.of(speaker0, speaker1), company0);
+            Question question4 = new TagCloudQuestion(speaker0, Collections.emptyMap());
 
             return Stream.of(
                     arguments(question0, GuessMode.GUESS_NAME_BY_PHOTO_MODE, null, List.of(new SpeakerAnswer(speaker0))),
@@ -327,6 +347,8 @@ class StateServiceImplTest {
                     arguments(question1, GuessMode.GUESS_SPEAKER_BY_TALK_MODE, null, List.of(new SpeakerAnswer((speaker0)), new SpeakerAnswer(speaker1))),
                     arguments(question2, GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, List.of(new CompanyAnswer(company0), new CompanyAnswer(company1))),
                     arguments(question3, GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, List.of(new SpeakerAnswer(speaker0), new SpeakerAnswer(speaker1))),
+                    arguments(question4, GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE, null, List.of(new TagCloudAnswer(speaker0, Collections.emptyMap()))),
+                    arguments(question4, GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE, null, List.of(new SpeakerAnswer(speaker0))),
                     arguments(null, null, IllegalArgumentException.class, null),
                     arguments(question0, null, IllegalArgumentException.class, null),
                     arguments(question1, null, IllegalArgumentException.class, null)
@@ -405,6 +427,8 @@ class StateServiceImplTest {
             Question question5 = new CompanyBySpeakerQuestion(List.of(company1), speaker1);
             Question question6 = new SpeakerByCompanyQuestion(List.of(speaker0, speaker2), company0);
             Question question7 = new SpeakerByCompanyQuestion(List.of(speaker1), company1);
+            Question question8 = new TagCloudQuestion(speaker0, Collections.emptyMap());
+            Question question9 = new TagCloudQuestion(speaker1, Collections.emptyMap());
 
             Answer answer0 = new TalkAnswer(talk0);
             Answer answer1 = new TalkAnswer(talk1);
@@ -437,6 +461,10 @@ class StateServiceImplTest {
                     arguments(List.of(question4), question5, List.of(answer5), GuessMode.GUESS_COMPANY_BY_SPEAKER_MODE, null, List.of(new CompanyAnswer(company0))),
 
                     arguments(List.of(question6, question7), question6, List.of(new SpeakerAnswer(speaker0)), GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE, null, List.of(new SpeakerAnswer(speaker0), new SpeakerAnswer(speaker1))),
+
+                    arguments(List.of(question8, question9), null, null, GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE, null, List.of(new TagCloudAnswer(speaker0, Collections.emptyMap()), new TagCloudAnswer(speaker1, Collections.emptyMap()))),
+
+                    arguments(List.of(question8, question9), null, null, GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE, null, List.of(new SpeakerAnswer(speaker0), new SpeakerAnswer(speaker1))),
 
                     arguments(null, null, null, null, IllegalArgumentException.class, null),
                     arguments(List.of(question0), null, null, null, IllegalArgumentException.class, null),
