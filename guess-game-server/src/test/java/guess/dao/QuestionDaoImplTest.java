@@ -5,6 +5,10 @@ import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.*;
 import guess.domain.source.*;
+import guess.domain.tagcloud.SerializedWordFrequency;
+import guess.util.tagcloud.TagCloudUtils;
+import mockit.Mock;
+import mockit.MockUp;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -396,6 +400,22 @@ class QuestionDaoImplTest {
                 )
         );
         assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE
+                )
+        );
+        assertEquals(
+                Collections.emptyList(),
+                questionDao.getQuestionByIds(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE
+                )
+        );
+        assertEquals(
                 List.of(
                         new SpeakerQuestion(speaker1),
                         new SpeakerQuestion(speaker2),
@@ -502,6 +522,38 @@ class QuestionDaoImplTest {
                 new SpeakerByCompanyQuestion(List.of(speaker0, speaker1), company0),
                 new SpeakerByCompanyQuestion(List.of(speaker2), company1));
         List<Question> actual = QuestionDaoImpl.getSpeakerByCompanyQuestions(List.of(questionSet));
+
+        assertTrue(expected.containsAll(actual) && actual.containsAll(expected));
+    }
+
+    @Test
+    void getTagCloudBySpeakerQuestions() {
+        TagCloudQuestion tagCloudQuestion0 = new TagCloudQuestion(speaker0, Collections.emptyMap());
+        TagCloudQuestion tagCloudQuestion1 = new TagCloudQuestion(speaker1, Collections.emptyMap());
+        TagCloudQuestion tagCloudQuestion2 = new TagCloudQuestion(speaker2, Collections.emptyMap());
+        QuestionSet questionSet = new QuestionSet(
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                List.of(tagCloudQuestion0, tagCloudQuestion1, tagCloudQuestion2)
+        );
+        List<Question> expected = List.of(
+                new TagCloudQuestion(speaker0, Collections.emptyMap()),
+                new TagCloudQuestion(speaker1, Collections.emptyMap()),
+                new TagCloudQuestion(speaker2, Collections.emptyMap()));
+
+        new MockUp<TagCloudUtils>() {
+            @Mock
+            Map<Language, List<SerializedWordFrequency>> mergeWordFrequenciesMaps(
+                    List<Map<Language, List<SerializedWordFrequency>>> languageWordFrequenciesMapList) {
+                return Collections.emptyMap();
+            }
+        };
+
+        List<Question> actual = QuestionDaoImpl.getTagCloudBySpeakerQuestions(List.of(questionSet));
 
         assertTrue(expected.containsAll(actual) && actual.containsAll(expected));
     }
