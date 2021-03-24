@@ -61,16 +61,26 @@ class TagCloudExporterTest {
             eventType0.setOrganizer(organizer0);
             eventType0.setEvents(List.of(event0));
 
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
+            speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Firstname Lastname")));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setId(1);
+            speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Firstname Lastname")));
+
             Talk talk0 = new Talk();
             talk0.setId(0);
             talk0.setLanguage(Language.ENGLISH.getCode());
             talk0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
             talk0.setShortDescription(List.of(new LocaleItem(Language.ENGLISH.getCode(), "ShortDescription0")));
+            talk0.setSpeakers(List.of(speaker0));
 
             Talk talk1 = new Talk();
             talk1.setId(1);
             talk1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
             talk1.setLongDescription(List.of(new LocaleItem(Language.ENGLISH.getCode(), "LongDescription1")));
+            talk1.setSpeakers(List.of(speaker0, speaker1));
 
             event0.setTalks(List.of(talk0, talk1));
 
@@ -104,6 +114,20 @@ class TagCloudExporterTest {
             new MockUp<LocalizationUtils>() {
                 @Mock
                 String getString(List<LocaleItem> localeItems, Language language) {
+                    return "";
+                }
+            };
+
+            new MockUp<FileUtils>() {
+                @Mock
+                void deleteDirectory(String directoryName) throws IOException {
+                    // Nothing
+                }
+            };
+
+            new MockUp<TagCloudUtils>() {
+                @Mock
+                String getTalkText(Talk talk) {
                     return "";
                 }
             };

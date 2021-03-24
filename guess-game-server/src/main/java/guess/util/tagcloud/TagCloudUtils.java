@@ -149,7 +149,7 @@ public class TagCloudUtils {
      * @param wordFrequencies word frequencies
      * @return image
      */
-    public static byte[] createImage(List<SerializedWordFrequency> wordFrequencies) throws IOException {
+    static byte[] createImage(List<SerializedWordFrequency> wordFrequencies) throws IOException {
         final Dimension dimension = new Dimension(TALK_IMAGE_WIDTH, TALK_IMAGE_HEIGHT);
         final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.RECTANGLE);
         final List<WordFrequency> castedWordFrequencies = wordFrequencies.stream()
@@ -226,7 +226,7 @@ public class TagCloudUtils {
      *
      * @return stop words
      */
-    private static Set<String> loadStopWords() {
+    static Set<String> loadStopWords() {
         try {
             final InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(STOP_WORDS_FILENAME);
             final List<String> lines = IOUtils.readLines(Objects.requireNonNull(inputStream));
