@@ -21,10 +21,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -95,6 +92,35 @@ class TagCloudUtilsTest {
         };
 
         assertDoesNotThrow(() -> TagCloudUtils.getTalkText(new Talk()));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("loadStopWords method tests")
+    class LoadStopWordsTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(true),
+                    arguments(false)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void loadStopWords(boolean withoutException) {
+            new MockUp<IOUtils>() {
+                @Mock
+                List<String> readLines(InputStream input) throws IOException {
+                    if (withoutException) {
+                        return Collections.emptyList();
+                    } else {
+                        throw new IOException("Exception");
+                    }
+                }
+            };
+
+            assertDoesNotThrow(TagCloudUtils::loadStopWords);
+        }
     }
 
     @Test
@@ -180,5 +206,31 @@ class TagCloudUtilsTest {
         void mergeWordFrequencies(List<List<SerializedWordFrequency>> wordFrequenciesList, List<SerializedWordFrequency> expected) {
             assertEquals(expected, TagCloudUtils.mergeWordFrequencies(wordFrequenciesList));
         }
+    }
+
+    @Test
+    void mergeWordFrequenciesMaps() {
+        new MockUp<TagCloudUtils>() {
+            @Mock
+            Map<Language, List<SerializedWordFrequency>> mergeWordFrequenciesMaps(
+                    Invocation invocation,
+                    List<Map<Language, List<SerializedWordFrequency>>> languageWordFrequenciesMapList) {
+                return invocation.proceed(languageWordFrequenciesMapList);
+            }
+
+            @Mock
+            List<SerializedWordFrequency> mergeWordFrequencies(List<List<SerializedWordFrequency>> wordFrequenciesList) {
+                return Collections.emptyList();
+            }
+        };
+
+        SerializedWordFrequency wordFrequency0 = new SerializedWordFrequency("first", 42);
+        SerializedWordFrequency wordFrequency1 = new SerializedWordFrequency("second", 41);
+        SerializedWordFrequency wordFrequency2 = new SerializedWordFrequency("third", 40);
+        Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap0 = Map.of(Language.ENGLISH, List.of(wordFrequency0, wordFrequency1));
+        Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap1 = Map.of(Language.ENGLISH, List.of(wordFrequency2));
+        List<Map<Language, List<SerializedWordFrequency>>> languageWordFrequenciesMapList = List.of(languageWordFrequenciesMap0, languageWordFrequenciesMap1);
+
+        assertDoesNotThrow(() -> TagCloudUtils.mergeWordFrequenciesMaps(languageWordFrequenciesMapList));
     }
 }

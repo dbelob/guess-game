@@ -93,6 +93,7 @@ public class TagCloudUtils {
         } catch (final IOException e) {
             log.error(e.getMessage(), e);
         }
+
         return Collections.emptySet();
     }
 
