@@ -1,12 +1,16 @@
 package guess.util.tagcloud;
 
+import com.kennycason.kumo.WordFrequency;
+import com.kennycason.kumo.nlp.FrequencyAnalyzer;
 import guess.domain.Language;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Talk;
+import guess.domain.tagcloud.SerializedWordFrequency;
 import guess.util.LocalizationUtils;
 import mockit.Invocation;
 import mockit.Mock;
 import mockit.MockUp;
+import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -15,7 +19,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -86,5 +95,90 @@ class TagCloudUtilsTest {
         };
 
         assertDoesNotThrow(() -> TagCloudUtils.getTalkText(new Talk()));
+    }
+
+    @Test
+    void loadStopWords() {
+        new MockUp<IOUtils>() {
+            @Mock
+            List<String> readLines(InputStream input) throws IOException {
+                return Collections.emptyList();
+            }
+        };
+
+        assertDoesNotThrow(TagCloudUtils::loadStopWords);
+    }
+
+    @Test
+    void getWordFrequenciesByText() {
+        new MockUp<TagCloudUtils>() {
+            @Mock
+            List<SerializedWordFrequency> getWordFrequenciesByText(Invocation invocation, String text, List<String> stopWords) {
+                return invocation.proceed(text, stopWords);
+            }
+
+            @Mock
+            Set<String> loadStopWords() {
+                return Collections.emptySet();
+            }
+        };
+
+        new MockUp<FrequencyAnalyzer>() {
+            @Mock
+            void setWordFrequenciesToReturn(final int wordFrequenciesToReturn) {
+                // Nothing
+            }
+
+            @Mock
+            void setStopWords(final Collection<String> stopWords) {
+                // Nothing
+            }
+
+            @Mock
+            List<WordFrequency> load(final List<String> texts) {
+                return List.of(
+                        new WordFrequency("first", 42),
+                        new WordFrequency("second", 41),
+                        new WordFrequency("third", 40));
+            }
+        };
+
+        assertDoesNotThrow(() -> TagCloudUtils.getWordFrequenciesByText("line0\nline1\nline2", Collections.emptyList()));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("mergeWordFrequencies method tests")
+    class MergeWordFrequenciesTest {
+        private Stream<Arguments> data() {
+            SerializedWordFrequency wordFrequency0 = new SerializedWordFrequency("first", 10);
+            SerializedWordFrequency wordFrequency1 = new SerializedWordFrequency("second", 5);
+            SerializedWordFrequency wordFrequency2 = new SerializedWordFrequency("third", 7);
+            SerializedWordFrequency wordFrequency3 = new SerializedWordFrequency("first", 14);
+            SerializedWordFrequency wordFrequency4 = new SerializedWordFrequency("second", 5);
+
+            return Stream.of(
+                    arguments(List.of(
+                            List.of(wordFrequency0, wordFrequency1)),
+                            List.of(wordFrequency0, wordFrequency1)),
+                    arguments(List.of(
+                            List.of(wordFrequency0, wordFrequency1),
+                            List.of(wordFrequency2)),
+                            List.of(wordFrequency0, wordFrequency2, wordFrequency1)),
+                    arguments(List.of(
+                            List.of(wordFrequency0, wordFrequency1),
+                            List.of(wordFrequency2, wordFrequency3, wordFrequency4)),
+                            List.of(
+                                    new SerializedWordFrequency("first", 24),
+                                    new SerializedWordFrequency("second", 10),
+                                    new SerializedWordFrequency("third", 7)))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void mergeWordFrequencies(List<List<SerializedWordFrequency>> wordFrequenciesList, List<SerializedWordFrequency> expected) {
+            assertEquals(expected, TagCloudUtils.mergeWordFrequencies(wordFrequenciesList));
+        }
     }
 }

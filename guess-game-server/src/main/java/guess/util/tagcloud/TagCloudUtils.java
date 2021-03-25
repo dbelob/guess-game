@@ -80,6 +80,23 @@ public class TagCloudUtils {
     }
 
     /**
+     * Loads stop words.
+     *
+     * @return stop words
+     */
+    static Set<String> loadStopWords() {
+        try {
+            final InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(STOP_WORDS_FILENAME);
+            final List<String> lines = IOUtils.readLines(Objects.requireNonNull(inputStream));
+
+            return new HashSet<>(lines);
+        } catch (final IOException e) {
+            log.error(e.getMessage(), e);
+        }
+        return Collections.emptySet();
+    }
+
+    /**
      * Gets word frequencies by text.
      *
      * @param text text
@@ -97,6 +114,26 @@ public class TagCloudUtils {
 
         return frequencyAnalyzer.load(lines).stream()
                 .map(wf -> new SerializedWordFrequency(wf.getWord(), wf.getFrequency(), wf.getFont()))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Merges word frequencies.
+     *
+     * @param wordFrequenciesList word frequencies list
+     * @return word frequencies
+     */
+    public static List<SerializedWordFrequency> mergeWordFrequencies(List<List<SerializedWordFrequency>> wordFrequenciesList) {
+        return wordFrequenciesList.stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.groupingBy(
+                        SerializedWordFrequency::getWord,
+                        Collectors.summingInt(SerializedWordFrequency::getFrequency)
+                ))
+                .entrySet().stream()
+                .map(e -> new SerializedWordFrequency(e.getKey(), e.getValue()))
+                .sorted(Comparator.comparing(SerializedWordFrequency::getFrequency).reversed())
+                .limit(DEFAULT_MERGE_TALK_WORD_FREQUENCIES_TO_RETURN)
                 .collect(Collectors.toList());
     }
 
@@ -121,26 +158,6 @@ public class TagCloudUtils {
                         Map.Entry::getKey,
                         e -> mergeWordFrequencies(e.getValue())
                 ));
-    }
-
-    /**
-     * Merges word frequencies.
-     *
-     * @param wordFrequenciesList word frequencies list
-     * @return word frequencies
-     */
-    public static List<SerializedWordFrequency> mergeWordFrequencies(List<List<SerializedWordFrequency>> wordFrequenciesList) {
-        return wordFrequenciesList.stream()
-                .flatMap(Collection::stream)
-                .collect(Collectors.groupingBy(
-                        SerializedWordFrequency::getWord,
-                        Collectors.summingInt(SerializedWordFrequency::getFrequency)
-                ))
-                .entrySet().stream()
-                .map(e -> new SerializedWordFrequency(e.getKey(), e.getValue()))
-                .sorted(Comparator.comparing(SerializedWordFrequency::getFrequency).reversed())
-                .limit(DEFAULT_MERGE_TALK_WORD_FREQUENCIES_TO_RETURN)
-                .collect(Collectors.toList());
     }
 
     /**
@@ -219,22 +236,5 @@ public class TagCloudUtils {
         } else {
             return new byte[]{};
         }
-    }
-
-    /**
-     * Loads stop words.
-     *
-     * @return stop words
-     */
-    static Set<String> loadStopWords() {
-        try {
-            final InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(STOP_WORDS_FILENAME);
-            final List<String> lines = IOUtils.readLines(Objects.requireNonNull(inputStream));
-
-            return new HashSet<>(lines);
-        } catch (final IOException e) {
-            log.error(e.getMessage(), e);
-        }
-        return Collections.emptySet();
     }
 }
