@@ -419,6 +419,18 @@ events:
     placeId: 24
     talkIds: [2595, 2575, 2615, 2616, 2618, 2619, 2620, 2579, 2609, 2610, 2607, 2581, 2617, 2583, 2621, 2622, 2608, 2588,
               2611, 2612, 2623, 2587, 2596, 2613, 2624, 2585, 2589, 2590, 2614, 2591, 2593, 2597, 2592, 2625, 2594]
+  - eventTypeId: 3
+    name:
+      - {language: en, text: "Heisenbug 2021 SPb"}
+      - {language: ru, text: "Heisenbug 2021 СПб"}
+    startDate: "2021-04-06"
+    endDate: "2021-04-09"
+    siteLink:
+      - {language: ru, text: "https://heisenbug-piter.ru/"}
+    youtubeLink: https://live.jugru.org/events/heisenbug/
+    placeId: 24
+    talkIds: [2921, 2922, 2923, 2924, 2925, 2926, 2927, 2928, 2929, 2930, 2931, 2932, 2933, 2934, 2935, 2936, 2937, 2938,
+              2939, 2940, 2941, 2942, 2943, 2944, 2945, 2946, 2947, 2948, 2949, 2950]
   # HolyJS
   - eventTypeId: 4
     name:
