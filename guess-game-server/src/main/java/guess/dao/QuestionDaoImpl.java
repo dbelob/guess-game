@@ -1,12 +1,15 @@
 package guess.dao;
 
 import guess.domain.GuessMode;
+import guess.domain.Language;
 import guess.domain.question.*;
 import guess.domain.source.Company;
 import guess.domain.source.Event;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
+import guess.util.LocalizationUtils;
 import guess.util.QuestionUtils;
+import guess.util.tagcloud.TagCloudUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -47,6 +50,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             Set<Speaker> speakerSet = new HashSet<>();
             Map<Company, Set<Speaker>> companySpeakersMap = new HashMap<>();
+            Map<Speaker, Map<Language, StringBuilder>> speakerTalkTextMap = new HashMap<>();
 
             for (Talk talk : event.getTalks()) {
                 for (Speaker speaker : talk.getSpeakers()) {
@@ -67,6 +71,8 @@ public class QuestionDaoImpl implements QuestionDao {
                 talkQuestions.add(new TalkQuestion(
                         talk.getSpeakers(),
                         talk));
+
+                fillSpeakerTalkTextInformation(talk, speakerTalkTextMap);
             }
 
             List<CompanyBySpeakerQuestion> companyBySpeakerQuestions = speakerSet.stream()
@@ -77,13 +83,30 @@ public class QuestionDaoImpl implements QuestionDao {
                     .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
                     .collect(Collectors.toList());
 
+            List<TagCloudQuestion> tagCloudQuestions = speakerTalkTextMap.keySet().stream()
+                    .map(s -> new TagCloudQuestion(
+                            s,
+                            speakerTalkTextMap.get(s).entrySet().stream()
+                                    .collect(Collectors.toMap(
+                                            Map.Entry::getKey,
+                                            e -> {
+                                                String name = LocalizationUtils.getString(s.getName(), e.getKey());
+                                                String[] words = name.toLowerCase().split(" ");
+
+                                                return TagCloudUtils.getWordFrequenciesByText(e.getValue().toString(), Arrays.asList(words));
+                                            }
+                                    ))
+                    ))
+                    .collect(Collectors.toList());
+
             localQuestionSets.add(new QuestionSet(
                     event,
                     QuestionUtils.removeDuplicatesById(speakerQuestions),
                     QuestionUtils.removeDuplicatesById(talkQuestions),
                     companyBySpeakerQuestions,
                     speakerByCompanyQuestions,
-                    QuestionUtils.removeDuplicatesById(accountQuestions)));
+                    QuestionUtils.removeDuplicatesById(accountQuestions),
+                    tagCloudQuestions));
         }
 
         return localQuestionSets;
@@ -105,6 +128,29 @@ public class QuestionDaoImpl implements QuestionDao {
             for (Company company : speaker.getCompanies()) {
                 companySpeakersMap.computeIfAbsent(company, k -> new HashSet<>());
                 companySpeakersMap.get(company).add(speaker);
+            }
+        }
+    }
+
+    /**
+     * Fills speaker text information from talk.
+     *
+     * @param talk               talk
+     * @param speakerTalkTextMap speaker, talk text map
+     */
+    static void fillSpeakerTalkTextInformation(Talk talk, Map<Speaker, Map<Language, StringBuilder>> speakerTalkTextMap) {
+        if (talk.getSpeakers().size() == 1) {
+            Speaker speaker = talk.getSpeakers().get(0);
+
+            speakerTalkTextMap.computeIfAbsent(speaker, k -> new EnumMap<>(Language.class));
+            speakerTalkTextMap.get(speaker).computeIfAbsent(Language.ENGLISH, k -> new StringBuilder());
+            speakerTalkTextMap.get(speaker).get(Language.ENGLISH).append(TagCloudUtils.getTalkText(talk, Language.ENGLISH));
+
+            Language talkLanguage = Language.getLanguageByCode(talk.getLanguage());
+
+            if ((talkLanguage != null) && !Language.ENGLISH.equals(talkLanguage)) {
+                speakerTalkTextMap.get(speaker).computeIfAbsent(talkLanguage, k -> new StringBuilder());
+                speakerTalkTextMap.get(speaker).get(talkLanguage).append(TagCloudUtils.getTalkText(talk, talkLanguage));
             }
         }
     }
@@ -169,6 +215,8 @@ public class QuestionDaoImpl implements QuestionDao {
                     .forEach(speakerQuestions::addAll);
 
             return new ArrayList<>(QuestionUtils.removeDuplicatesById(speakerQuestions));
+        } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode) || GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
+            return getTagCloudBySpeakerQuestions(subQuestionSets);
         } else {
             throw new IllegalArgumentException(String.format("Unknown guess mode: %s", guessMode));
         }
@@ -196,6 +244,36 @@ public class QuestionDaoImpl implements QuestionDao {
 
         return companySpeakersMap.keySet().stream()
                 .map(c -> new SpeakerByCompanyQuestion(List.copyOf(companySpeakersMap.get(c)), c))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Gets tag cloud by speakers questions.
+     *
+     * @param questionSets question sets
+     * @return tag cloud by speakers questions
+     */
+    static List<Question> getTagCloudBySpeakerQuestions(List<QuestionSet> questionSets) {
+        Map<Speaker, List<TagCloudQuestion>> speakerQuestionsMap = new HashMap<>();
+
+        for (QuestionSet questionSet : questionSets) {
+            for (TagCloudQuestion question : questionSet.getTagCloudBySpeakerQuestions()) {
+                Speaker speaker = question.getSpeaker();
+
+                speakerQuestionsMap.computeIfAbsent(speaker, k -> new ArrayList<>());
+                speakerQuestionsMap.get(speaker).add(question);
+            }
+        }
+
+        return speakerQuestionsMap.keySet().stream()
+                .map(s -> new TagCloudQuestion(
+                        s,
+                        TagCloudUtils.mergeWordFrequenciesMaps(
+                                speakerQuestionsMap.get(s).stream()
+                                        .map(TagCloudQuestion::getLanguageWordFrequenciesMap)
+                                        .collect(Collectors.toList())
+                        )
+                ))
                 .collect(Collectors.toList());
     }
 }

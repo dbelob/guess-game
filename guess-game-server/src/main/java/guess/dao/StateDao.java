@@ -18,7 +18,11 @@ public interface StateDao {
 
     void setStartParameters(StartParameters startParameters, HttpSession httpSession);
 
+    void clearStartParameters(HttpSession httpSession);
+
     QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession);
 
     void setQuestionAnswersSet(QuestionAnswersSet questionAnswersSet, HttpSession httpSession);
+
+    void clearQuestionAnswersSet(HttpSession httpSession);
 }

@@ -8,5 +8,7 @@ export enum GameState {
   GuessSpeakerByCompanyState = 'GUESS_SPEAKER_BY_COMPANY_STATE',
   GuessAccountBySpeakerState = 'GUESS_ACCOUNT_BY_SPEAKER_STATE',
   GuessSpeakerByAccountState = 'GUESS_SPEAKER_BY_ACCOUNT_STATE',
+  GuessTagCloudBySpeakerState = 'GUESS_TAG_CLOUD_BY_SPEAKER_STATE',
+  GuessSpeakerByTagCloudState = 'GUESS_SPEAKER_BY_TAG_CLOUD_STATE',
   ResultState = 'RESULT_STATE'
 }

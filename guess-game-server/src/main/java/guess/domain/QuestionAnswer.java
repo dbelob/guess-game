@@ -1,5 +1,10 @@
 package guess.domain;
 
+/**
+ * Question, answer.
+ *
+ * @param <T> type
+ */
 public abstract class QuestionAnswer<T extends Identifiable> extends Identifier {
     private final T entity;
 

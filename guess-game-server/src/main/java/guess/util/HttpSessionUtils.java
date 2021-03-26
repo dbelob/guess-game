@@ -51,6 +51,10 @@ public class HttpSessionUtils {
         httpSession.setAttribute(START_PARAMETERS_ATTRIBUTE_NAME, startParameters);
     }
 
+    public static void clearStartParameters(HttpSession httpSession) {
+        httpSession.removeAttribute(START_PARAMETERS_ATTRIBUTE_NAME);
+    }
+
     public static QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession) {
         Object questionAnswersSetObject = httpSession.getAttribute(QUESTION_ANSWERS_SET_ATTRIBUTE_NAME);
 
@@ -63,6 +67,10 @@ public class HttpSessionUtils {
 
     public static void setQuestionAnswersSet(QuestionAnswersSet questionAnswersSet, HttpSession httpSession) {
         httpSession.setAttribute(QUESTION_ANSWERS_SET_ATTRIBUTE_NAME, questionAnswersSet);
+    }
+
+    public static void clearQuestionAnswersSet(HttpSession httpSession) {
+        httpSession.removeAttribute(QUESTION_ANSWERS_SET_ATTRIBUTE_NAME);
     }
 
     @SuppressWarnings("unchecked")
@@ -80,11 +88,7 @@ public class HttpSessionUtils {
     }
 
     public static void clearAnswerSets(HttpSession httpSession) {
-        Object answerSetsObject = httpSession.getAttribute(ANSWER_SETS_ATTRIBUTE_NAME);
-
-        if (answerSetsObject instanceof List) {
-            ((List) answerSetsObject).clear();
-        }
+        httpSession.removeAttribute(ANSWER_SETS_ATTRIBUTE_NAME);
     }
 
     @SuppressWarnings("unchecked")

@@ -41,6 +41,12 @@ public class StateController {
         stateService.setStartParameters(StartParametersDto.convertFromDto(startParameters), httpSession);
     }
 
+    @DeleteMapping("/parameters")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteStartParameters(HttpSession httpSession) {
+        stateService.deleteStartParameters(httpSession);
+    }
+
     @GetMapping("/state")
     @ResponseBody
     public GameState getState(HttpSession httpSession) {
@@ -126,5 +132,17 @@ public class StateController {
     @ResponseBody
     public AccountSpeakersDto getAccountSpeakers(HttpSession httpSession) {
         return getDto(httpSession, AccountSpeakersDto::convertToDto);
+    }
+
+    @GetMapping("/speaker-tag-clouds")
+    @ResponseBody
+    public SpeakerTagCloudsDto getSpeakerTagClouds(HttpSession httpSession) {
+        return getDto(httpSession, SpeakerTagCloudsDto::convertToDto);
+    }
+
+    @GetMapping("/tag-cloud-speakers")
+    @ResponseBody
+    public TagCloudSpeakersDto getTagCloudSpeakers(HttpSession httpSession) {
+        return getDto(httpSession, TagCloudSpeakersDto::convertToDto);
     }
 }

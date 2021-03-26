@@ -78,6 +78,17 @@ class StateControllerTest {
     }
 
     @Test
+    void deleteStartParameters() throws Exception {
+        MockHttpSession httpSession = new MockHttpSession();
+
+        mvc.perform(delete("/api/state/parameters")
+                .contentType(MediaType.APPLICATION_JSON)
+                .session(httpSession))
+                .andExpect(status().isOk());
+        Mockito.verify(stateService, VerificationModeFactory.times(1)).deleteStartParameters(httpSession);
+    }
+
+    @Test
     void getState() throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 
@@ -197,7 +208,7 @@ class StateControllerTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"photo-names", "name-photos", "speaker-talks", "talk-speakers", "speaker-companies", "company-speakers",
-            "speaker-accounts", "account-speakers"})
+            "speaker-accounts", "account-speakers", "speaker-tag-clouds", "tag-cloud-speakers"})
     void getTest(String urlSuffix) throws Exception {
         MockHttpSession httpSession = new MockHttpSession();
 

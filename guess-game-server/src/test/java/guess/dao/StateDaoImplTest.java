@@ -101,6 +101,22 @@ class StateDaoImplTest {
     }
 
     @Test
+    void clearStartParameters(@Mocked HttpSessionUtils mock) {
+        HttpSession httpSession = new MockHttpSession();
+
+        stateDao.clearStartParameters(httpSession);
+
+        new Verifications() {{
+            HttpSession capturedHttpSession;
+
+            HttpSessionUtils.clearStartParameters(capturedHttpSession = withCapture());
+            times = 1;
+
+            assertEquals(httpSession, capturedHttpSession);
+        }};
+    }
+
+    @Test
     void getQuestionAnswersSet(@Mocked HttpSessionUtils mock) {
         HttpSession httpSession = new MockHttpSession();
 
@@ -156,6 +172,22 @@ class StateDaoImplTest {
             times = 1;
 
             assertEquals(questionAnswersSet, capturedQuestionAnswersSet);
+            assertEquals(httpSession, capturedHttpSession);
+        }};
+    }
+
+    @Test
+    void clearQuestionAnswersSet(@Mocked HttpSessionUtils mock) {
+        HttpSession httpSession = new MockHttpSession();
+
+        stateDao.clearQuestionAnswersSet(httpSession);
+
+        new Verifications() {{
+            HttpSession capturedHttpSession;
+
+            HttpSessionUtils.clearQuestionAnswersSet(capturedHttpSession = withCapture());
+            times = 1;
+
             assertEquals(httpSession, capturedHttpSession);
         }};
     }

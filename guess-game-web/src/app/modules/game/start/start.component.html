@@ -86,6 +86,18 @@
                            inputId="opt8"></p-radioButton>
           </div>
         </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 pt-1 pb-1">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessTagCloudBySpeakerMode}}" label="{{'start.tagCloudBySpeakerLabel' | translate}}"
+                           [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
+                           inputId="opt9"></p-radioButton>
+          </div>
+          <div class="col-sm-12 col-md-6 pt-1 pb-1">
+            <p-radioButton name="modeRadios" value="{{guessMode.GuessSpeakerByTagCloudMode}}" label="{{'start.speakerByTagCloudLabel' | translate}}"
+                           [(ngModel)]="selectedGuessMode" (ngModelChange)="onModeChange($event)"
+                           inputId="opt10"></p-radioButton>
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group row">

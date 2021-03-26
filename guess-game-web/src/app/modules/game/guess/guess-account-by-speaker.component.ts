@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SpeakerAccounts } from '../../../shared/models/guess/speaker-accounts.model';
-import { StateService } from '../../../shared/services/state.service';
 import { GameState } from '../../../shared/models/game-state.model';
+import { StateService } from '../../../shared/services/state.service';
 import { AnswerService } from '../../../shared/services/answer.service';
 
 @Component({
@@ -28,7 +28,6 @@ export class GuessAccountBySpeakerComponent implements OnInit {
     this.stateService.getSpeakerAccounts()
       .subscribe(data => {
           if (data) {
-            console.log('speakerAccounts: ' + JSON.stringify(data));
             this.speakerAccounts = data;
             this.title =
               `${this.speakerAccounts.questionSetName} (${this.speakerAccounts.currentIndex + 1}/${this.speakerAccounts.totalNumber})`;

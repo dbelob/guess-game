@@ -13,6 +13,8 @@ import { SpeakerCompanies } from '../models/guess/speaker-companies.model';
 import { CompanySpeakers } from '../models/guess/company-speakers.model';
 import { SpeakerAccounts } from '../models/guess/speaker-accounts.model';
 import { AccountSpeakers } from '../models/guess/account-speakers.model';
+import { SpeakerTagClouds } from '../models/guess/speaker-tag-clouds.model';
+import { TagCloudSpeakers } from '../models/guess/tag-cloud-speakers.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +27,16 @@ export class StateService {
 
   setStartParameters(startParameters: StartParameters): Observable<string> {
     return this.http.post<string>(`${this.baseUrl}/parameters`, startParameters)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  deleteStartParameters(): Observable<string> {
+    return this.http.delete<string>(`${this.baseUrl}/parameters`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);
@@ -125,6 +137,26 @@ export class StateService {
 
   getAccountSpeakers(): Observable<AccountSpeakers> {
     return this.http.get<AccountSpeakers>(`${this.baseUrl}/account-speakers`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getSpeakerTagClouds(): Observable<SpeakerTagClouds> {
+    return this.http.get<SpeakerTagClouds>(`${this.baseUrl}/speaker-tag-clouds`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getTagCloudSpeakers(): Observable<TagCloudSpeakers> {
+    return this.http.get<TagCloudSpeakers>(`${this.baseUrl}/tag-cloud-speakers`)
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

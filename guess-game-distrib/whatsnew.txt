@@ -1,5 +1,10 @@
 Guess Game
 
+Version 2.2.0 - March 26, 2021
+* Adding event organizers.
+* New event types.
+* New types of guessing in the game.
+
 Version 2.1.0 - January 4, 2021
 * Company statistics for conferences and meetups.
 * New types of guessing in the game.

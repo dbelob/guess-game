@@ -17,9 +17,11 @@ public class ResultDto extends Result {
     private final List<TalkErrorDetailsDto> talkErrorDetailsList;
     private final List<CompanyErrorDetailsDto> companyErrorDetailsList;
     private final List<AccountErrorDetailsDto> accountErrorDetailsList;
+    private final List<TagCloudErrorDetailsDto> tagCloudErrorDetailsList;
 
     private ResultDto(Result result, List<SpeakerErrorDetailsDto> errorDetailsList, List<TalkErrorDetailsDto> talkErrorDetailsList,
-                      List<CompanyErrorDetailsDto> companyErrorDetailsList, List<AccountErrorDetailsDto> accountErrorDetailsList) {
+                      List<CompanyErrorDetailsDto> companyErrorDetailsList, List<AccountErrorDetailsDto> accountErrorDetailsList,
+                      List<TagCloudErrorDetailsDto> tagCloudErrorDetailsList) {
         super(result.getCorrectAnswers(), result.getWrongAnswers(), result.getSkippedAnswers(),
                 result.getCorrectPercents(), result.getWrongPercents(), result.getSkippedPercents(),
                 result.getGuessMode());
@@ -28,6 +30,7 @@ public class ResultDto extends Result {
         this.talkErrorDetailsList = talkErrorDetailsList;
         this.companyErrorDetailsList = companyErrorDetailsList;
         this.accountErrorDetailsList = accountErrorDetailsList;
+        this.tagCloudErrorDetailsList = tagCloudErrorDetailsList;
     }
 
     public List<SpeakerErrorDetailsDto> getSpeakerErrorDetailsList() {
@@ -44,6 +47,10 @@ public class ResultDto extends Result {
 
     public List<AccountErrorDetailsDto> getAccountErrorDetailsList() {
         return accountErrorDetailsList;
+    }
+
+    public List<TagCloudErrorDetailsDto> getTagCloudErrorDetailsList() {
+        return tagCloudErrorDetailsList;
     }
 
     public static ResultDto convertToDto(Result result, List<ErrorDetails> errorDetailsList, Language language) {
@@ -75,13 +82,21 @@ public class ResultDto extends Result {
                                 result.getGuessMode(),
                                 language) :
                         Collections.emptyList();
+        List<TagCloudErrorDetailsDto> tagCloudErrorDetailsList =
+                (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(result.getGuessMode()) || GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(result.getGuessMode())) ?
+                        TagCloudErrorDetailsDto.convertToDto(
+                                errorDetailsList,
+                                result.getGuessMode(),
+                                language) :
+                        Collections.emptyList();
 
         return new ResultDto(
                 result,
                 speakerErrorDetailsList,
                 talkErrorDetailsList,
                 companyErrorDetailsList,
-                accountErrorDetailsList);
+                accountErrorDetailsList,
+                tagCloudErrorDetailsList);
     }
 
     @Override
@@ -93,12 +108,13 @@ public class ResultDto extends Result {
         return Objects.equals(speakerErrorDetailsList, resultDto.speakerErrorDetailsList) &&
                 Objects.equals(talkErrorDetailsList, resultDto.talkErrorDetailsList) &&
                 Objects.equals(companyErrorDetailsList, resultDto.companyErrorDetailsList) &&
-                Objects.equals(accountErrorDetailsList, resultDto.accountErrorDetailsList);
+                Objects.equals(accountErrorDetailsList, resultDto.accountErrorDetailsList) &&
+                Objects.equals(tagCloudErrorDetailsList, resultDto.tagCloudErrorDetailsList);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), speakerErrorDetailsList, talkErrorDetailsList, companyErrorDetailsList,
-                accountErrorDetailsList);
+                accountErrorDetailsList, tagCloudErrorDetailsList);
     }
 }

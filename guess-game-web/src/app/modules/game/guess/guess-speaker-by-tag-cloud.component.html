@@ -1,0 +1,49 @@
+<div class="container p-2">
+  <h3 class="bg-info p-1 text-white text-center rounded">{{title}}</h3>
+
+  <app-message></app-message>
+
+  <div class="row">
+    <div class="col">
+      <img *ngIf="logoImageSource" src="{{logoImageSource}}" alt="logo" class="img-guess-logo"/>
+    </div>
+    <app-language-switcher (reload)="loadQuestion()" class="col"></app-language-switcher>
+  </div>
+
+  <div class="text-center mb-4">
+    <img src="{{tagCloudImageSource}}" alt="cloud" class="img-thumbnail img-guess-speaker-by-tag-cloud"/>
+  </div>
+  <div class="text-center">
+    <figure class="figure m-1">
+      <input type="image" alt="photo1" class="img-thumbnail img-guess-speaker-by-tag-cloud"
+             [class.btn-danger]="tagCloudSpeakers.invalid0" [class.btn-success]="tagCloudSpeakers.valid0"
+             [disabled]="tagCloudSpeakers.invalid0 || tagCloudSpeakers.valid0"
+             (click)="answer(tagCloudSpeakers.id0)" src="{{speakerImageSource0}}"/>
+      <figcaption class="figure-caption text-center">{{tagCloudSpeakers.speakerName0}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="photo2" class="img-thumbnail img-guess-speaker-by-tag-cloud"
+             [class.btn-danger]="tagCloudSpeakers.invalid1" [class.btn-success]="tagCloudSpeakers.valid1"
+             [disabled]="tagCloudSpeakers.invalid1 || tagCloudSpeakers.valid1"
+             (click)="answer(tagCloudSpeakers.id1)" src="{{speakerImageSource1}}"/>
+      <figcaption class="figure-caption text-center">{{tagCloudSpeakers.speakerName1}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="photo3" class="img-thumbnail img-guess-speaker-by-tag-cloud"
+             [class.btn-danger]="tagCloudSpeakers.invalid2" [class.btn-success]="tagCloudSpeakers.valid2"
+             [disabled]="tagCloudSpeakers.invalid2 || tagCloudSpeakers.valid2"
+             (click)="answer(tagCloudSpeakers.id2)" src="{{speakerImageSource2}}"/>
+      <figcaption class="figure-caption text-center">{{tagCloudSpeakers.speakerName2}}</figcaption>
+    </figure>
+    <figure class="figure m-1">
+      <input type="image" alt="photo4" class="img-thumbnail img-guess-speaker-by-tag-cloud"
+             [class.btn-danger]="tagCloudSpeakers.invalid3" [class.btn-success]="tagCloudSpeakers.valid3"
+             [disabled]="tagCloudSpeakers.invalid3 || tagCloudSpeakers.valid3"
+             (click)="answer(tagCloudSpeakers.id3)" src="{{speakerImageSource3}}"/>
+      <figcaption class="figure-caption text-center">{{tagCloudSpeakers.speakerName3}}</figcaption>
+    </figure>
+  </div>
+  <div class="text-right mt-1">
+    <button class="btn btn-link text-muted" (click)="cancel()"><small>{{'common.cancelLinkText' | translate}}</small></button>
+  </div>
+</div>
