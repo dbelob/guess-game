@@ -88,7 +88,7 @@ speakers:
     habr: cheremin
   - id: 5
     photoFileName: 0005.jpg
-    photoUpdatedAt: 2019-03-01T15:12:16.619Z[UTC]
+    photoUpdatedAt: 2021-03-23T12:54:58.589Z[UTC]
     name:
       - {language: en, text: "Dmitry Chuyko"}
       - {language: ru, text: "Дмитрий Чуйко"}
@@ -142,9 +142,11 @@ speakers:
       - {language: en, text: "Producer @ JUG Ru Group, organizes the largest conferences for developers in Russia. In the\
             \ last 6 years Alexey's team arranged more than 50 conferences. Alexey has a very different background: from Software\
             \ Engineer @ Oracle (JCK, Java Platform Group) to DevRel @ Odnoklassiniki."}
-      - {language: ru, text: "Алексей Федоров — продюсер в JUG Ru Group, организатор крупнейших в России технологических к\
-            онференций для разработчиков. За 6 лет команда Алексея провела более 50 конференций. В прошлом работал инженер\
-            ом в Oracle (JCK, Java Platform Team) и деврелом в Одноклассниках."}
+      - language: ru
+        text: "Алексей Федоров — продюсер в JUG Ru Group, организатор крупнейших в России конференций для программистов и\
+            \ сочувствующих. В данный момент фокусируется на процессах и инструментах для проведения онлайн-мероприятий. \n\
+            За 8 лет Алексей с командой провели более 80 конференций и 150 митапов. В прошлом работал программистом в Oracle\
+            \ и деврелом в Одноклассниках."
     twitter: 23derevo
     gitHub: 23derevo
     habr: 23derevo
@@ -157,13 +159,19 @@ speakers:
       - {language: ru, text: "Паша Финкельштейн"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Pasha is a speaker and developer for the Big Data Tools team at JetBrains and the author of\
-            \ the Kotlin API for Apache Spark. In the past, he has worked in almost every IT position, from tech support to\
-            \ manager and data engineer. He loves talking to people about anything, but particularly he loves talking about\
-            \ IT. He's a Kotlin fan."}
-      - {language: ru, text: "Паша — серийный спикер и разработчик Big Data Tools в JetBrains. Автор Kotlin API for Apache\
-            \ Spark. В прошлом успел позаниматься почти всем в сфере IT: от поддержки и системного администрирования до ме\
-            неджмента и дата инжиниринга. Очень любит людей и разговаривать. Обо всём, особенно об IT. Фанат Котлина."}
+      - language: en
+        text: "Despite his education in psychology, for 14 years Pasha managed to work in a lot of IT areas — system administration,\
+            \ development, management, data engineering, in general, touched almost everything that exists in IT. More than\
+            \ 10 years ago he started practicing DevOps and never focused on just one thing.\nNow Pasha works at JetBrains\
+            \ on Big Data Tools – tools to make data engineer's life easier.\nVery sociable, loves, and understands people\
+            \ and is always happy to answer any questions."
+      - language: ru
+        text: "Несмотря на психологическое образование, за 14 лет Паша успел поработать в куче сфер в IT — системное админ\
+            истрирование, разработка, менеджмент разных уровней, дата инжиниринг, в общем, так или иначе, касался почти вс\
+            его, что в IT существует. Начал практиковать DevOps-практики больше 10 лет назад и никогда не концентрировался\
+            \ на чём-то одном.\n\nСейчас Паша работает в компании JetBrains над разработкой Big Data Tools — инструментами\
+            \ для того, чтобы делать жизнь дата инженеров проще.\n\nОчень общительный, любит и понимает людей, и всегда ра\
+            д ответить на любые вопросы."
     twitter: asm0di0
     gitHub: asm0dey
     habr: asm0dey
@@ -13931,7 +13939,7 @@ speakers:
     twitter: bychuk_as
   - id: 1003
     photoFileName: 1003.jpg
-    photoUpdatedAt: 2021-03-03T11:29:19.532Z[UTC]
+    photoUpdatedAt: 2021-03-23T12:27:12.742Z[UTC]
     name:
       - {language: en, text: "Scott Wlaschin"}
     companyIds: []
@@ -14149,6 +14157,7 @@ speakers:
             о комитета по разработке компилятора GHC для языка Haskell, автор книги «Haskell in Depth» (издательство «Manning\
             \ Publications»)."}
     twitter: _bravit
+    gitHub: bravit
   - id: 1019
     photoFileName: 1019.jpg
     name:
@@ -21082,3 +21091,15 @@ speakers:
       - language: ru
         text: "Software developer в Kotlin/Native (JetBrains)"
     gitHub: LepilkinaElena
+  - id: 1538
+    photoFileName: 1538.jpg
+    photoUpdatedAt: 2021-03-18T10:37:36.848Z[UTC]
+    name:
+      - {language: en, text: "Alexey Nikushin"}
+      - {language: ru, text: "Алексей Никушин"}
+    companyIds: [703]
+    bio:
+      - {language: ru, text: "Один из ведущих маркетинговых аналитиков в России, создатель конференции «Матемаркетинг» и к\
+            анала Интернет-аналитика. Поработав с Рамблером, РАЭКом и Мегалабс, с 2017 года Алексей пустился в свободное п\
+            лавание и сейчас все время посвящает развитию своих проектов."}
+    twitter: a_nikushin

@@ -2199,3 +2199,7 @@ companies:
   - id: 702
     name:
       - {language: en, text: Synthesized}
+  - id: 703
+    name:
+      - {language: en, text: Matemarketing}
+      - {language: ru, text: Матемаркетинг}
