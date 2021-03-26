@@ -332,4 +332,37 @@ class TagCloudUtilsTest {
             }
         }
     }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getImage method tests")
+    class GetImageTest {
+        private Stream<Arguments> data() {
+            final byte[] IMAGE0 = new byte[]{0x00, 0x01, 0x02};
+            final byte[] IMAGE1 = new byte[]{0x03, 0x04, 0x05};
+            final byte[] IMAGE2 = new byte[]{};
+            Map<Language, byte[]> languageImageMap0 = Map.of(
+                    Language.ENGLISH, IMAGE0,
+                    Language.RUSSIAN, IMAGE1);
+            Map<Language, byte[]> languageImageMap1 = Map.of(
+                    Language.ENGLISH, IMAGE0);
+            Map<Language, byte[]> languageImageMap2 = Map.of(
+                    Language.RUSSIAN, IMAGE1);
+            Map<Language, byte[]> languageImageMap3 = Collections.emptyMap();
+
+            return Stream.of(
+                    arguments(languageImageMap0, Language.ENGLISH, IMAGE0),
+                    arguments(languageImageMap0, Language.RUSSIAN, IMAGE1),
+                    arguments(languageImageMap1, Language.RUSSIAN, IMAGE0),
+                    arguments(languageImageMap2, Language.ENGLISH, IMAGE1),
+                    arguments(languageImageMap3, Language.ENGLISH, IMAGE2)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getImage(Map<Language, byte[]> languageImageMap, Language language, byte[] expected) {
+            assertTrue(Arrays.equals(expected, TagCloudUtils.getImage(languageImageMap, language)));
+        }
+    }
 }
