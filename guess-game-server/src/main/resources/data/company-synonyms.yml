@@ -94,6 +94,10 @@ companySynonyms:
     synonyms: [
         "Mail.ru"
     ]
+  - name: "Kaspersky Lab"
+    synonyms: [
+        Kaspersky
+    ]
   - name: Netflix
     synonyms: [
         "Netflix Inc."

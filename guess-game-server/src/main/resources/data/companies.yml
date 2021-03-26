@@ -2199,3 +2199,28 @@ companies:
   - id: 702
     name:
       - {language: en, text: Synthesized}
+  - id: 703
+    name:
+      - {language: en, text: Matemarketing}
+      - {language: ru, text: Матемаркетинг}
+  - id: 704
+    name:
+      - {language: en, text: "Test IT"}
+  - id: 705
+    name:
+      - {language: en, text: KEENTOOLS}
+  - id: 706
+    name:
+      - {language: en, text: "Flow Health"}
+  - id: 707
+    name:
+      - {language: en, text: "PrecisionLender, a Q2 Company"}
+  - id: 708
+    name:
+      - {language: en, text: "ETH Zurich"}
+  - id: 709
+    name:
+      - {language: en, text: TestinGil}
+  - id: 710
+    name:
+      - {language: en, text: Fleetcor}

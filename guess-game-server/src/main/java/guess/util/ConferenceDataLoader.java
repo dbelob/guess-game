@@ -1668,10 +1668,11 @@ public class ConferenceDataLoader {
         // 2021
 //        loadTalksSpeakersEvent(Conference.TECH_TRAIN, LocalDate.of(2021, 3, 27), "2021marchtt",
 //                LoadSettings.knownSpeakerIdsMap(Map.of(new NameCompany("Владимир Иванов", new Company(674, "Tinkoff")), 852L)));
-//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2021, 4, 6), "2021spb");
-//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2021, 4, 13), "2021jpoint");
+//        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2021, 4, 6), "2021spb",
+//                LoadSettings.ignoreDemoStage(false));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 4, 13), "2021spb");
-//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 4, 20), "2021spb");
+//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2021, 4, 13), "2021jpoint");
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 4, 20), "2021spb");
+//        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 4, 20), "2021spb");
     }
 }
