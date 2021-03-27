@@ -44,6 +44,32 @@ public class TagCloudUtils {
     }
 
     /**
+     * Checks talk text existence.
+     *
+     * @param talk     talk
+     * @param language language
+     * @return {@code true} if talk text exists, {@code false} otherwise
+     */
+    public static boolean isTalkTextExists(Talk talk, Language language) {
+        if (language == null) {
+            return false;
+        }
+
+        if (talk.getName().stream()
+                .anyMatch(li -> language.getCode().equals(li.getLanguage()))) {
+            return true;
+        }
+
+        if ((talk.getShortDescription() != null) && talk.getShortDescription().stream()
+                .anyMatch(li -> language.getCode().equals(li.getLanguage()))) {
+            return true;
+        }
+
+        return ((talk.getLongDescription() != null) && talk.getLongDescription().stream()
+                .anyMatch(li -> language.getCode().equals(li.getLanguage())));
+    }
+
+    /**
      * Gets talk text.
      *
      * @param talk     talk

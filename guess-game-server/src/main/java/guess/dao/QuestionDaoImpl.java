@@ -148,7 +148,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             Language talkLanguage = Language.getLanguageByCode(talk.getLanguage());
 
-            if ((talkLanguage != null) && !Language.ENGLISH.equals(talkLanguage)) {
+            if ((talkLanguage != null) && !Language.ENGLISH.equals(talkLanguage) && TagCloudUtils.isTalkTextExists(talk, talkLanguage)) {
                 speakerTalkTextMap.get(speaker).computeIfAbsent(talkLanguage, k -> new StringBuilder());
                 speakerTalkTextMap.get(speaker).get(talkLanguage).append(TagCloudUtils.getTalkText(talk, talkLanguage));
             }
