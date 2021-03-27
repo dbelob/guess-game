@@ -21156,6 +21156,8 @@ speakers:
             \ over 10 years — of which about 7 years in Java automation."}
       - {language: ru, text: "Работает в Мир Plat.Form (НСПК) QA Lead. Занимается тестированием ПО в общей сложности чуть\
             \ более 10 лет — из них около 7 лет автоматизацией на Java."}
+    gitHub: kochetkov-ma
+    habr: kochetkov-ma
   - id: 1542
     photoFileName: 1542.jpg
     photoUpdatedAt: 2021-03-23T12:46:29.181Z[UTC]
@@ -21200,6 +21202,7 @@ speakers:
             \ efficient and reliable backends based on interpreters and generators. He also works on formalisms and meta-tools\
             \ for language engineering."
     twitter: markusvoelter
+    gitHub: markusvoelter
   - id: 1545
     photoFileName: 1545.jpg
     photoUpdatedAt: 2021-03-24T15:31:37.633Z[UTC]
@@ -21237,6 +21240,7 @@ speakers:
             \ and BDD practices. Andy currently works full-time as the Lead Software Engineer in Test at PrecisionLender,\
             \ a Q2 company. Read his tech blog at AutomationPanda.com, and follow him on Twitter at @AutomationPanda."}
     twitter: AutomationPanda
+    gitHub: AndyLPK247
   - id: 1548
     photoFileName: 1548.jpg
     photoUpdatedAt: 2021-03-10T07:04:04.161Z[UTC]
@@ -21285,6 +21289,8 @@ speakers:
       - {language: ru, text: "Test automation enthusiast, подкастер, продвигает автоматизацию за счет популяризации знаний\
             \ о смежных технологиях. Вносит свой вклад в сообщество как активный спикер и член ПК. Основатель automation-remarks.com,\
             \ QAGuild Podcast и QAGuild коммьюнити."}
+    twitter: s_pirogov
+    gitHub: SergeyPirogov
   - id: 1551
     photoFileName: 1551.jpg
     photoUpdatedAt: 2021-02-24T08:01:44.906Z[UTC]
@@ -21298,6 +21304,7 @@ speakers:
             \ part of which he found over 450 bugs in widely-used systems such as SQLite, MySQL, PostgreSQL, MariaDB, and\
             \ CockroachDB."}
     twitter: RiggerManuel
+    gitHub: mrigger
   - id: 1552
     photoFileName: 1552.jpg
     photoUpdatedAt: 2021-02-24T08:03:01.401Z[UTC]
@@ -21308,6 +21315,7 @@ speakers:
       - {language: en, text: "Active ClickHouse contributor and project participant. Part of Yandex infrastructure for more\
             \ than 6 years."}
     twitter: qoega
+    gitHub: qoega
   - id: 1553
     photoFileName: 1553.jpg
     photoUpdatedAt: 2021-02-26T14:15:50.930Z[UTC]
