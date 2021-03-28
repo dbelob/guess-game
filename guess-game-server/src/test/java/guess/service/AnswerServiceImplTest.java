@@ -37,11 +37,16 @@ class AnswerServiceImplTest {
     class SetAnswerTest {
         private Stream<Arguments> data() {
             AnswerSet answerSet0 = new AnswerSet(
-                    new ArrayList<>(),
-                    new ArrayList<>(),
+                    new ArrayList<>(List.of(0L)),
+                    new ArrayList<>(List.of(1L, 0L)),
                     false
             );
             AnswerSet answerSet1 = new AnswerSet(
+                    new ArrayList<>(List.of(0L)),
+                    new ArrayList<>(List.of(1L)),
+                    false
+            );
+            AnswerSet answerSet2 = new AnswerSet(
                     new ArrayList<>(List.of(0L)),
                     new ArrayList<>(),
                     false
@@ -66,7 +71,10 @@ class AnswerServiceImplTest {
 
             return Stream.of(
                     arguments(0, 0, List.of(answerSet0), null),
-                    arguments(0, 0, List.of(answerSet1), null),
+                    arguments(0, 2, List.of(answerSet0), null),
+                    arguments(0, 1, List.of(answerSet1), null),
+                    arguments(0, 2, List.of(answerSet1), null),
+                    arguments(0, 0, List.of(answerSet2), null),
                     arguments(0, 0, Collections.emptyList(), null),
                     arguments(0, 0, Collections.emptyList(), questionAnswersSet0)
             );
