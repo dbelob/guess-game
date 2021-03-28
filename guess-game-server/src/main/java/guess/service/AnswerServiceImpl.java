@@ -42,10 +42,13 @@ public class AnswerServiceImpl implements AnswerService {
         if (questionIndex < answerSets.size()) {
             AnswerSet answerSet = answerSets.get(questionIndex);
 
-            answerSet.getYourAnswerIds().add(answerId);
+            if (!answerSet.getYourAnswerIds().containsAll(answerSet.getCorrectAnswerIds()) &&
+                    !answerSet.getYourAnswerIds().contains(answerId)) {
+                answerSet.getYourAnswerIds().add(answerId);
 
-            if (isSuccess(answerSet.getCorrectAnswerIds(), answerSet.getYourAnswerIds())) {
-                answerSet.setSuccess(true);
+                if (isSuccess(answerSet.getCorrectAnswerIds(), answerSet.getYourAnswerIds())) {
+                    answerSet.setSuccess(true);
+                }
             }
         } else {
             QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
