@@ -63,7 +63,11 @@ public class EventComparator implements Comparator<Event> {
                                 if (eventTrackTime2.isEmpty()) {
                                     return 1;
                                 } else {
-                                    return eventTrackTime1.get().isBefore(eventTrackTime2.get()) ? -1 : 1;
+                                    if (eventTrackTime1.get().equals(eventTrackTime2.get())) {
+                                        return 0;
+                                    } else {
+                                        return eventTrackTime1.get().isBefore(eventTrackTime2.get()) ? -1 : 1;
+                                    }
                                 }
                             }
                         } else {
