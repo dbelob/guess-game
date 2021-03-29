@@ -113,9 +113,6 @@ public class YamlUtils {
 
         checkAndFillTimeZones(eventTypes, events);
 
-        // Set event identifiers
-        setEventIds(events);
-
         // Link entities
         linkEventTypesToOrganizers(organizerMap, eventTypes);
         linkEventsToEventTypes(eventTypeMap, events);
@@ -123,6 +120,9 @@ public class YamlUtils {
         linkTalksToEvents(talkMap, events);
         linkSpeakersToCompanies(companyMap, speakers);
         linkSpeakersToTalks(speakerMap, talks);
+
+        // Set event identifiers
+        setEventIds(events);
 
         // Find duplicates for speaker names and for speaker names with company name
         if (findSpeakerDuplicates(speakers)) {
@@ -161,17 +161,6 @@ public class YamlUtils {
                 event.setTimeZoneId(ZoneId.of(event.getTimeZone()));
             }
         }
-    }
-
-    /**
-     * Sets identifiers for events.
-     *
-     * @param events events
-     */
-    private static void setEventIds(List<Event> events) {
-        AtomicLong id = new AtomicLong(0);
-
-        events.forEach(e -> e.setId(id.getAndIncrement()));
     }
 
     /**
@@ -285,6 +274,19 @@ public class YamlUtils {
                 talk.getSpeakers().add(speaker);
             }
         }
+    }
+
+    /**
+     * Sets identifiers for events.
+     *
+     * @param events events
+     */
+    private static void setEventIds(List<Event> events) {
+        AtomicLong id = new AtomicLong(0);
+
+        events.stream()
+                .sorted(new EventComparator())
+                .forEach(e -> e.setId(id.getAndIncrement()));
     }
 
     /**
