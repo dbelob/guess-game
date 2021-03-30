@@ -26,6 +26,7 @@ public class EventComparator implements Comparator<Event> {
             if (event2 == null) {
                 return 1;
             } else {
+                // Compare start date
                 return compareStartDate(event1, event2);
             }
         }
@@ -35,7 +36,6 @@ public class EventComparator implements Comparator<Event> {
         LocalDate eventStartDate1 = event1.getStartDate();
         LocalDate eventStartDate2 = event2.getStartDate();
 
-        // Compare start date
         if (eventStartDate1 == null) {
             if (eventStartDate2 == null) {
                 return 0;

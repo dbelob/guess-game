@@ -14,10 +14,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Tag cloud exporter.
@@ -28,6 +25,13 @@ public class TagCloudExporter {
     static final String OUTPUT_DIRECTORY_NAME = "output";
 
     private TagCloudExporter() {
+    }
+
+    static void exportAllEvents() throws IOException, SpeakerDuplicatedException {
+        // Read event types, places, events, companies, speakers, talks from resource files
+        SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
+
+        export(resourceSourceInformation.getTalks(), false, "allEvents.txt");
     }
 
     static void exportTalksAndConference(Conference conference, LocalDate startDate) throws IOException, SpeakerDuplicatedException {
@@ -55,16 +59,23 @@ public class TagCloudExporter {
                 LocalizationUtils.getString(resourceEvent.getName(), Language.RUSSIAN),
                 resourceEvent.getStartDate(), resourceEvent.getEndDate());
 
+        export(resourceEvent.getTalks(), true, String.format("event%d.txt", resourceEvent.getId()));
+    }
+
+    static void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) throws IOException {
         StringBuilder conferenceSb = new StringBuilder();
         Set<String> talkStopWords = new TreeSet<>();
 
         FileUtils.deleteDirectory(OUTPUT_DIRECTORY_NAME);
 
-        for (Talk talk : resourceEvent.getTalks()) {
+        for (Talk talk : talks) {
             String talkText = TagCloudUtils.getTalkText(talk);
 
             conferenceSb.append(talkText);
-            save(talkText, String.format("talk%04d.txt", talk.getId()));
+
+            if (isSaveTalkFiles) {
+                save(talkText, String.format("talk%04d.txt", talk.getId()));
+            }
 
             // Talk stop words
             if (talk.getSpeakers().size() == 1) {
@@ -78,7 +89,7 @@ public class TagCloudExporter {
             }
         }
 
-        save(conferenceSb.toString(), String.format("event%d.txt", resourceEvent.getId()));
+        save(conferenceSb.toString(), commonFileName);
         save(String.join("\n", talkStopWords), "speaker-stop-words.txt");
     }
 
@@ -94,6 +105,7 @@ public class TagCloudExporter {
     }
 
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException {
+//        exportAllEvents();
 //        exportTalksAndConference(Conference.JOKER, LocalDate.of(2020, 11, 25));
     }
 }
