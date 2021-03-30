@@ -28,6 +28,64 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("TagCloudExporter class tests")
 class TagCloudExporterTest {
+    private static final Conference JPOINT_CONFERENCE;
+    private static final LocalDate EVENT_DATE;
+
+    private static Place place0;
+
+    private static Organizer organizer0;
+
+    private static EventType eventType0;
+
+    private static Talk talk0;
+    private static Talk talk1;
+
+    static {
+        JPOINT_CONFERENCE = Conference.JPOINT;
+        EVENT_DATE = LocalDate.of(2020, 6, 29);
+    }
+
+    @BeforeAll
+    static void init() {
+        place0 = new Place();
+
+        organizer0 = new Organizer();
+
+        Event event0 = new Event();
+        event0.setId(0);
+        event0.setStartDate(EVENT_DATE);
+        event0.setPlace(place0);
+
+        eventType0 = new EventType();
+        eventType0.setId(0);
+        eventType0.setConference(JPOINT_CONFERENCE);
+        eventType0.setOrganizer(organizer0);
+        eventType0.setEvents(List.of(event0));
+
+        Speaker speaker0 = new Speaker();
+        speaker0.setId(0);
+        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Firstname Lastname")));
+
+        Speaker speaker1 = new Speaker();
+        speaker1.setId(1);
+        speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Firstname Lastname")));
+
+        talk0 = new Talk();
+        talk0.setId(0);
+        talk0.setLanguage(Language.ENGLISH.getCode());
+        talk0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+        talk0.setShortDescription(List.of(new LocaleItem(Language.ENGLISH.getCode(), "ShortDescription0")));
+        talk0.setSpeakers(List.of(speaker0));
+
+        talk1 = new Talk();
+        talk1.setId(1);
+        talk1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+        talk1.setLongDescription(List.of(new LocaleItem(Language.ENGLISH.getCode(), "LongDescription1")));
+        talk1.setSpeakers(List.of(speaker0, speaker1));
+
+        event0.setTalks(List.of(talk0, talk1));
+    }
+
     @BeforeEach
     void setUp() throws IOException {
         FileUtils.deleteDirectory(OUTPUT_DIRECTORY_NAME);
@@ -38,86 +96,91 @@ class TagCloudExporterTest {
         FileUtils.deleteDirectory(OUTPUT_DIRECTORY_NAME);
     }
 
+    @Test
+    void exportAllEvents() {
+        SourceInformation sourceInformation = new SourceInformation(
+                Collections.emptyList(),
+                Collections.emptyList(),
+                Collections.emptyList(),
+                Collections.emptyList(),
+                new SourceInformation.SpeakerInformation(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        Collections.emptyList()
+                ),
+                List.of(talk0, talk1));
+
+        new MockUp<YamlUtils>() {
+            @Mock
+            SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
+                return sourceInformation;
+            }
+        };
+
+        new MockUp<TagCloudExporter>() {
+            @Mock
+            void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) throws IOException {
+                // Nothing
+            }
+        };
+
+        assertDoesNotThrow(TagCloudExporter::exportAllEvents);
+    }
+
+    @Test
+    void exportTalksAndConference() {
+        SourceInformation sourceInformation = new SourceInformation(
+                List.of(place0),
+                List.of(organizer0),
+                List.of(eventType0),
+                Collections.emptyList(),
+                new SourceInformation.SpeakerInformation(
+                        Collections.emptyList(),
+                        Collections.emptyList(),
+                        Collections.emptyList()
+                ),
+                Collections.emptyList());
+
+        new MockUp<YamlUtils>() {
+            @Mock
+            SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
+                return sourceInformation;
+            }
+        };
+
+        new MockUp<LocalizationUtils>() {
+            @Mock
+            String getString(List<LocaleItem> localeItems, Language language) {
+                return "";
+            }
+        };
+
+        new MockUp<TagCloudExporter>() {
+            @Mock
+            void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) throws IOException {
+                // Nothing
+            }
+        };
+
+        assertDoesNotThrow(() -> TagCloudExporter.exportTalksAndConference(JPOINT_CONFERENCE, EVENT_DATE));
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("exportTalksAndConference method tests")
-    class ExportTalksAndConferenceTest {
+    @DisplayName("export method tests")
+    class ExportTest {
         private Stream<Arguments> data() {
-            final Conference JPOINT_CONFERENCE = Conference.JPOINT;
-            final LocalDate EVENT_DATE = LocalDate.of(2020, 6, 29);
-
-            Place place0 = new Place();
-
-            Organizer organizer0 = new Organizer();
-
-            Event event0 = new Event();
-            event0.setId(0);
-            event0.setStartDate(EVENT_DATE);
-            event0.setPlace(place0);
-
-            EventType eventType0 = new EventType();
-            eventType0.setId(0);
-            eventType0.setConference(JPOINT_CONFERENCE);
-            eventType0.setOrganizer(organizer0);
-            eventType0.setEvents(List.of(event0));
-
-            Speaker speaker0 = new Speaker();
-            speaker0.setId(0);
-            speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Firstname Lastname")));
-
-            Speaker speaker1 = new Speaker();
-            speaker1.setId(1);
-            speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Firstname Lastname")));
-
-            Talk talk0 = new Talk();
-            talk0.setId(0);
-            talk0.setLanguage(Language.ENGLISH.getCode());
-            talk0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
-            talk0.setShortDescription(List.of(new LocaleItem(Language.ENGLISH.getCode(), "ShortDescription0")));
-            talk0.setSpeakers(List.of(speaker0));
-
-            Talk talk1 = new Talk();
-            talk1.setId(1);
-            talk1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
-            talk1.setLongDescription(List.of(new LocaleItem(Language.ENGLISH.getCode(), "LongDescription1")));
-            talk1.setSpeakers(List.of(speaker0, speaker1));
-
-            event0.setTalks(List.of(talk0, talk1));
+            List<Talk> talks = List.of(talk0, talk1);
 
             return Stream.of(
-                    arguments(JPOINT_CONFERENCE, EVENT_DATE,
-                            new SourceInformation(
-                                    List.of(place0),
-                                    List.of(organizer0),
-                                    List.of(eventType0),
-                                    Collections.emptyList(),
-                                    new SourceInformation.SpeakerInformation(
-                                            Collections.emptyList(),
-                                            Collections.emptyList(),
-                                            Collections.emptyList()
-                                    ),
-                                    Collections.emptyList())
-                    )
+                    arguments(talks, true, "fileName.txt"),
+                    arguments(talks, false, "fileName.txt")
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void exportTalksAndConference(Conference conference, LocalDate startDate, SourceInformation sourceInformation) {
-            new MockUp<YamlUtils>() {
-                @Mock
-                SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
-                    return sourceInformation;
-                }
-            };
-
-            new MockUp<LocalizationUtils>() {
-                @Mock
-                String getString(List<LocaleItem> localeItems, Language language) {
-                    return "";
-                }
-            };
-
+        void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) {
             new MockUp<FileUtils>() {
                 @Mock
                 void deleteDirectory(String directoryName) throws IOException {
@@ -139,7 +202,7 @@ class TagCloudExporterTest {
                 }
             };
 
-            assertDoesNotThrow(() -> TagCloudExporter.exportTalksAndConference(conference, startDate));
+            assertDoesNotThrow(() -> TagCloudExporter.export(talks, isSaveTalkFiles, commonFileName));
         }
     }
 

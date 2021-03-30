@@ -39,6 +39,58 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class TagCloudUtilsTest {
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("isTalkTextExists method tests")
+    class IsTalkTextExistsTest {
+        private Stream<Arguments> data() {
+            Talk talk0 = new Talk();
+            talk0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+
+            Talk talk1 = new Talk();
+            talk1.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "Name1")));
+            talk1.setShortDescription(List.of(new LocaleItem(Language.ENGLISH.getCode(), "ShortDescription1")));
+
+            Talk talk2 = new Talk();
+            talk2.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "Name2")));
+            talk2.setLongDescription(List.of(new LocaleItem(Language.ENGLISH.getCode(), "LongDescription2")));
+
+            Talk talk3 = new Talk();
+            talk3.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "Name3")));
+            talk3.setShortDescription(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "ShortDescription3")));
+            talk3.setLongDescription(List.of(new LocaleItem(Language.ENGLISH.getCode(), "LongDescription3")));
+
+            Talk talk4 = new Talk();
+            talk4.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "Name4")));
+
+            Talk talk5 = new Talk();
+            talk5.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "Name5")));
+            talk5.setShortDescription(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "ShortDescription5")));
+
+            Talk talk6 = new Talk();
+            talk6.setName(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "Name6")));
+            talk6.setShortDescription(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "ShortDescription6")));
+            talk6.setLongDescription(List.of(new LocaleItem(Language.RUSSIAN.getCode(), "LongDescription6")));
+
+            return Stream.of(
+                    arguments(null, null, false),
+                    arguments(talk0, Language.ENGLISH, true),
+                    arguments(talk1, Language.ENGLISH, true),
+                    arguments(talk2, Language.ENGLISH, true),
+                    arguments(talk3, Language.ENGLISH, true),
+                    arguments(talk4, Language.ENGLISH, false),
+                    arguments(talk5, Language.ENGLISH, false),
+                    arguments(talk6, Language.ENGLISH, false)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void isTalkTextExists(Talk talk, Language language, boolean expected) {
+            assertEquals(expected, TagCloudUtils.isTalkTextExists(talk, language));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("getTalkText method tests")
     class GetTalkTextTest {
         private Stream<Arguments> data() {
