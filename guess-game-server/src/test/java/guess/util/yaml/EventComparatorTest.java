@@ -24,6 +24,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class EventComparatorTest {
+    private static int extractSign(int value) {
+        if (value < 0) {
+            return -1;
+        }
+
+        return (value == 0) ? 0 : 1;
+    }
+
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("compare method tests")
@@ -38,7 +46,7 @@ class EventComparatorTest {
                     arguments(null, null, COMPARE_START_DATE_RESULT, 0),
                     arguments(null, event0, COMPARE_START_DATE_RESULT, -1),
                     arguments(event0, null, COMPARE_START_DATE_RESULT, 1),
-                    arguments(event0, event1, COMPARE_START_DATE_RESULT, COMPARE_START_DATE_RESULT)
+                    arguments(event0, event1, COMPARE_START_DATE_RESULT, 1)
             );
         }
 
@@ -52,7 +60,9 @@ class EventComparatorTest {
                 }
             };
 
-            assertEquals(expected, new EventComparator().compare(event1, event2));
+            int actual = extractSign(new EventComparator().compare(event1, event2));
+
+            assertEquals(expected, actual);
         }
     }
 
@@ -63,8 +73,8 @@ class EventComparatorTest {
         private Stream<Arguments> data() {
             final int COMPARE_TRACK_TIME_RESULT = 42;
             LocalDate START_DATE0 = LocalDate.of(2021, 3, 29);
-            LocalDate START_DATE1 = LocalDate.of(2021, 3, 30);
-            LocalDate START_DATE2 = LocalDate.of(2021, 3, 28);
+            LocalDate START_DATE1 = LocalDate.of(2021, 3, 31);
+            LocalDate START_DATE2 = LocalDate.of(2021, 3, 27);
 
             Event event0 = new Event();
 
@@ -88,7 +98,7 @@ class EventComparatorTest {
                     arguments(event2, event1, COMPARE_TRACK_TIME_RESULT, 1),
                     arguments(event2, event3, COMPARE_TRACK_TIME_RESULT, -1),
                     arguments(event2, event4, COMPARE_TRACK_TIME_RESULT, 1),
-                    arguments(event2, event5, COMPARE_TRACK_TIME_RESULT, COMPARE_TRACK_TIME_RESULT)
+                    arguments(event2, event5, COMPARE_TRACK_TIME_RESULT, 1)
             );
         }
 
@@ -107,7 +117,9 @@ class EventComparatorTest {
                 }
             };
 
-            assertEquals(expected, EventComparator.compareStartDate(event1, event2));
+            int actual = extractSign(EventComparator.compareStartDate(event1, event2));
+
+            assertEquals(expected, actual);
         }
     }
 
@@ -193,7 +205,9 @@ class EventComparatorTest {
                 }
             };
 
-            assertEquals(expected, EventComparator.compareTrackTime(event1, event2));
+            int actual = extractSign(EventComparator.compareTrackTime(event1, event2));
+
+            assertEquals(expected, actual);
         }
     }
 }

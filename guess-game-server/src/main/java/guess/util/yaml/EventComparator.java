@@ -50,7 +50,7 @@ public class EventComparator implements Comparator<Event> {
                 if (eventStartDate1.isEqual(eventStartDate2)) {
                     return compareTrackTime(event1, event2);
                 } else {
-                    return eventStartDate1.isBefore(eventStartDate2) ? -1 : 1;
+                    return eventStartDate1.compareTo(eventStartDate2);
                 }
             }
         }
@@ -81,7 +81,7 @@ public class EventComparator implements Comparator<Event> {
                 if (eventTrackTime1.get().equals(eventTrackTime2.get())) {
                     return 0;
                 } else {
-                    return eventTrackTime1.get().isBefore(eventTrackTime2.get()) ? -1 : 1;
+                    return eventTrackTime1.get().compareTo(eventTrackTime2.get());
                 }
             }
         }
