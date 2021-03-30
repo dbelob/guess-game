@@ -10,6 +10,9 @@ import guess.util.yaml.YamlUtils;
 import mockit.Mock;
 import mockit.MockUp;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,9 +20,11 @@ import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static guess.util.tagcloud.TagCloudExporter.OUTPUT_DIRECTORY_NAME;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @DisplayName("TagCloudExporter class tests")
 class TagCloudExporterTest {
@@ -160,30 +165,45 @@ class TagCloudExporterTest {
         assertDoesNotThrow(() -> TagCloudExporter.exportTalksAndConference(JPOINT_CONFERENCE, EVENT_DATE));
     }
 
-    @Test
-    void export() {
-        new MockUp<FileUtils>() {
-            @Mock
-            void deleteDirectory(String directoryName) throws IOException {
-                // Nothing
-            }
-        };
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("export method tests")
+    class ExportTest {
+        private Stream<Arguments> data() {
+            List<Talk> talks = List.of(talk0, talk1);
 
-        new MockUp<TagCloudUtils>() {
-            @Mock
-            String getTalkText(Talk talk) {
-                return "";
-            }
-        };
+            return Stream.of(
+                    arguments(talks, true, "fileName.txt"),
+                    arguments(talks, false, "fileName.txt")
+            );
+        }
 
-        new MockUp<TagCloudExporter>() {
-            @Mock
-            void save(String text, String filename) throws IOException {
-                // Nothing
-            }
-        };
+        @ParameterizedTest
+        @MethodSource("data")
+        void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) {
+            new MockUp<FileUtils>() {
+                @Mock
+                void deleteDirectory(String directoryName) throws IOException {
+                    // Nothing
+                }
+            };
 
-        assertDoesNotThrow(() -> TagCloudExporter.export(List.of(talk0, talk1), true, "fileName.txt"));
+            new MockUp<TagCloudUtils>() {
+                @Mock
+                String getTalkText(Talk talk) {
+                    return "";
+                }
+            };
+
+            new MockUp<TagCloudExporter>() {
+                @Mock
+                void save(String text, String filename) throws IOException {
+                    // Nothing
+                }
+            };
+
+            assertDoesNotThrow(() -> TagCloudExporter.export(talks, isSaveTalkFiles, commonFileName));
+        }
     }
 
     @Test
