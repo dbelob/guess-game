@@ -6,6 +6,7 @@ import com.kennycason.kumo.WordFrequency;
 import com.kennycason.kumo.bg.RectangleBackground;
 import com.kennycason.kumo.font.scale.LinearFontScalar;
 import com.kennycason.kumo.nlp.FrequencyAnalyzer;
+import com.kennycason.kumo.nlp.normalize.CharacterStrippingNormalizer;
 import com.kennycason.kumo.palette.ColorPalette;
 import guess.dao.exception.WrapperRuntimeException;
 import guess.domain.Language;
@@ -24,6 +25,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -136,6 +138,12 @@ public class TagCloudUtils {
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
         frequencyAnalyzer.setWordFrequenciesToReturn(DEFAULT_CREATION_TALK_WORD_FREQUENCIES_TO_RETURN);
         frequencyAnalyzer.setStopWords(fullStopWords);
+        frequencyAnalyzer.addNormalizer(new CharacterStrippingNormalizer(
+                Pattern.compile("^[*]+|" +
+                        "[*]+$|" +
+                        "^[«`“”\\[{]{1}|" +
+                        "[»`“”…®\\]}]{1}$"),
+                ""));
 
         List<String> lines = Arrays.asList(text.split("\n"));
 
