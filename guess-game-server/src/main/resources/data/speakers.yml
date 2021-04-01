@@ -159,19 +159,13 @@ speakers:
       - {language: ru, text: "Паша Финкельштейн"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "Despite his education in psychology, for 14 years Pasha managed to work in a lot of IT areas — system administration,\
-            \ development, management, data engineering, in general, touched almost everything that exists in IT. More than\
-            \ 10 years ago he started practicing DevOps and never focused on just one thing.\nNow Pasha works at JetBrains\
-            \ on Big Data Tools – tools to make data engineer's life easier.\nVery sociable, loves, and understands people\
-            \ and is always happy to answer any questions."
-      - language: ru
-        text: "Несмотря на психологическое образование, за 14 лет Паша успел поработать в куче сфер в IT — системное админ\
-            истрирование, разработка, менеджмент разных уровней, дата инжиниринг, в общем, так или иначе, касался почти вс\
-            его, что в IT существует. Начал практиковать DevOps-практики больше 10 лет назад и никогда не концентрировался\
-            \ на чём-то одном.\n\nСейчас Паша работает в компании JetBrains над разработкой Big Data Tools — инструментами\
-            \ для того, чтобы делать жизнь дата инженеров проще.\n\nОчень общительный, любит и понимает людей, и всегда ра\
-            д ответить на любые вопросы."
+      - {language: en, text: "Pasha is a speaker and developer for the Big Data Tools team at JetBrains and the author of\
+            \ the Kotlin API for Apache Spark. In the past, he has worked in almost every IT position, from tech support to\
+            \ manager and data engineer. He loves talking to people about anything, but particularly he loves talking about\
+            \ IT. He's a Kotlin fan."}
+      - {language: ru, text: "Паша — серийный спикер и разработчик Big Data Tools в JetBrains. Автор Kotlin API for Apache\
+            \ Spark. В прошлом успел позаниматься почти всем в сфере IT: от поддержки и системного администрирования до ме\
+            неджмента и дата инжиниринга. Очень любит людей и разговаривать. Обо всём, особенно об IT. Фанат Котлина."}
     twitter: asm0di0
     gitHub: asm0dey
     habr: asm0dey
@@ -19400,7 +19394,7 @@ speakers:
             ного обучения. Сейчас Юрий возглавляет команду разработки фронт-офисных решений в НСПК."}
   - id: 1417
     photoFileName: 1417.jpg
-    photoUpdatedAt: 2020-11-20T15:09:13.788Z[UTC]
+    photoUpdatedAt: 2021-03-31T12:51:41.848Z[UTC]
     name:
       - {language: en, text: "Evgeny Trifonov"}
       - {language: ru, text: "Евгений Трифонов"}
@@ -21120,7 +21114,7 @@ speakers:
     name:
       - {language: en, text: "Aleksandr Pavlov"}
       - {language: ru, text: "Александр Павлов"}
-    companyIds: [704]
+    companyIds: [711]
     bio:
       - {language: en, text: "He started by working in technical support and manual testing. Grew up to the head of the automation\
             \ team. At first, it was C# and Java, but he decided to change the stack and switched to Python. Tested different\
@@ -21443,3 +21437,36 @@ speakers:
             имает позицию техлида.\nРаботает над развитием и улучшением автоматизации тестирования в компании.\n\nЛюбит де\
             литься результатами проектов на русских и зарубежных конференциях и митапах."
     twitter: varivoda_ivan
+  - id: 1561
+    photoFileName: 1561.jpg
+    photoUpdatedAt: 2021-03-30T11:42:55.183Z[UTC]
+    name:
+      - {language: en, text: "Lilia Valeiko"}
+      - {language: ru, text: "Лилия Валейко"}
+    companyIds: [141]
+    bio:
+      - language: en
+        text: "QA Automation Lead\nDeutsche Bank Technology Centre employee. \nShe has been working in test automation since\
+            \ 2014. Now Lilia develops automation systems from scratch with following implementation.\nLilia leads the team\
+            \ dedicated to test automation for launch and aggregation of internal business applications in a huge bank platform.\
+            \ \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
+      - language: ru
+        text: "QA Automation Lead\nСотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 года\
+            . Занимается разработкой систем автоматизации с нуля и их внедрением.\nСейчас Лилия руководит командой, занима\
+            ющейся автоматизацией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-приложе\
+            ний.\nЛилия ежегодно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA\
+            \ Days, TestCon)."
+  - id: 1562
+    photoFileName: 1562.jpg
+    photoUpdatedAt: 2021-03-30T12:02:28.270Z[UTC]
+    name:
+      - {language: en, text: "Sergey Budnik"}
+      - {language: ru, text: "Сергей Будник"}
+    companyIds: [141]
+    bio:
+      - language: en
+        text: "Full stack Developer\nDeutsche Bank Technology Centre employee. \nHe has been developing backend since 2011.\
+            \ Now he creates mobile application in Autobahn-platform for Deutsche Bank Group."
+      - language: ru
+        text: "Full stack Developer\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бекенд с 2011 года. Сейч\
+            ас участвует в создании мобильного приложения внутри Autobahn-платформы для группы Дойче Банк."

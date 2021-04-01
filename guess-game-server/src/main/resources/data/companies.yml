@@ -2224,3 +2224,7 @@ companies:
   - id: 710
     name:
       - {language: en, text: Fleetcor}
+  - id: 711
+    name:
+      - {language: en, text: "Zyfra Group"}
+      - {language: ru, text: "ГК Цифра"}
