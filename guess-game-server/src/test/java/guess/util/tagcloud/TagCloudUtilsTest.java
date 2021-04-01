@@ -5,6 +5,7 @@ import com.kennycason.kumo.WordFrequency;
 import com.kennycason.kumo.bg.Background;
 import com.kennycason.kumo.font.scale.FontScalar;
 import com.kennycason.kumo.nlp.FrequencyAnalyzer;
+import com.kennycason.kumo.nlp.normalize.Normalizer;
 import com.kennycason.kumo.palette.ColorPalette;
 import guess.dao.exception.WrapperRuntimeException;
 import guess.domain.Language;
@@ -210,6 +211,11 @@ class TagCloudUtilsTest {
 
             @Mock
             void setStopWords(final Collection<String> stopWords) {
+                // Nothing
+            }
+
+            @Mock
+            void addNormalizer(final Normalizer normalizer) {
                 // Nothing
             }
 
