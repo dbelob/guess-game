@@ -2256,3 +2256,23 @@ companies:
   - id: 719
     name:
       - {language: en, text: INOSTUDIO}
+  - id: 720
+    name:
+      - {language: en, text: RBC}
+      - {language: ru, text: РБК}
+  - id: 721
+    name:
+      - {language: en, text: "Doctor Evidence"}
+  - id: 722
+    name:
+      - {language: en, text: Vsegda.Da}
+      - {language: ru, text: Всегда.Да}
+  - id: 723
+    name:
+      - {language: en, text: "Eclipse Foundation"}
+  - id: 724
+    name:
+      - {language: en, text: "New Relic"}
+  - id: 725
+    name:
+      - {language: en, text: SoftwareGarden.dev}

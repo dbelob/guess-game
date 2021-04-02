@@ -24,10 +24,9 @@ speakers:
       - {language: ru, text: "Евгений Борисов"}
     companyIds: [183]
     bio:
-      - language: en
-        text: "Evgeny is developing on Java almost 20 years. Over the years he participated in a lot of enterprise projects,\
-            \ several\nyears he was a consiltant, opened his startup, lead thousands of trainings and dozens of talks, now\
-            \ he's the lead of the EPAM Israeli development department."
+      - {language: en, text: "Evgeny is developing on Java almost 20 years. Over the years he participated in a lot of enterprise\
+            \ projects, several years he was a consiltant, opened his startup, lead thousands of trainings and dozens of talks,\
+            \ now he's the lead of the EPAM Israeli development department."}
       - {language: ru, text: "Евгений пишет на Java почти 20 лет. За эти годы он принял участие в большом количестве энтер\
             прайз-проектов, несколько лет был свободным консультантом, открыл свой стартап, провёл сотни тренингов и десят\
             ки докладов, а сегодня возглавляет израильский отдел разработки в EPAM."}
@@ -178,15 +177,14 @@ speakers:
     companyIds: [108]
     bio:
       - language: en
-        text: "Viktor Gamov is a Developer Advocate at Confluent, the company that makes a streaming platform based on Apache\
-            \ Kafka.\n\nWorking in the field, Viktor Gamov developed comprehensive expertise in building enterprise application\
-            \ architectures using open source technologies. He enjoys helping different organizations design and develop low\
-            \ latency, scalable and highly available distributed systems.\n\nBack in his consultancy days, he co-authored\
-            \ O'Reilly's \"Enterprise Web Development\".\n\nHe is a professional conference speaker on distributed systems,\
-            \ Java, and JavaScript topics, and is regular on events including JavaOne, Devoxx, OSCON, QCon, and others (http://lanyrd.com/gamussa).\
-            \ He blogs at http://gamov.io and produces the podcasts Razbor Poletov (in Russian) and co-hosts DevRelRad.io.\n\
-            \nFollow Viktor on Twitter @gamussa, where he posts about gym life, food, open source, and, of course, Kafka and\
-            \ Confluent!"
+        text: "Viktor Gamov is a Developer Advocate at Confluent, the company that makes an event streaming platform based\
+            \ on Apache Kafka.\nBack in his consultancy days, Viktor developed comprehensive expertise in building enterprise\
+            \ application architectures using open source technologies.\_\nHe enjoys helping architects and developers to\
+            \ design and develop low latency, scalable and highly available distributed systems.\nHe is a professional conference\
+            \ speaker on distributed systems, streaming data, JVM and\_DevOps topics, and is regular on events including JavaOne,\
+            \ Devoxx, OSCON, QCon, and others.\_\nHe co-authored O'Reilly's \"Enterprise Web Development\".\nHe blogs at http://gamov.io\
+            \ and co-hosts DevRelRad.io.\nFollow Viktor on Twitter @gamussa, where he posts there about gym life, food, open\
+            \ source, and, of course, Kafka and Confluent!"
       - language: ru
         text: "Виктор Гамов — сооснователь и лидер любимого многими программистами правильного подкаста «Разбор Полётов».\
             \ По совместительству является Developer Advocate в компании Confluent, которая разрабатывает платформу на баз\
@@ -603,16 +601,12 @@ speakers:
     name:
       - {language: en, text: "Oleh Dokuka"}
       - {language: ru, text: "Олег Докука"}
-    companyIds: [359]
+    companyIds: [577]
     bio:
-      - {language: en, text: "Mainly Java Software Engineer / Consultant focused on distributed systems development adopting\
-            \ ReactiveManifesto and ReactiveProgramming techniques. Open source geek, the active contributor of ProjectReactor.\
-            \ Along with that, public speaker and author of the book [\"Reactive Programming in Spring 5.0\"](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
-      - {language: ru, text: "Инженер ПО, уже более 7 лет занимается разработкой ПО в различных областях. В последнее врем\
-            я активно разрабатывает корпоративное ПО и распределённые системы, в основном используя стек Spring. С самого\
-            \ начала разработки Spring 5 внимательно следит за развитием фреймворка и активно продвигает публике Reactive-р\
-            ешения, основанные на Spring 5 и Reactor 3. Кроме того, Олег — коммиттер Reactor 3, а также спикер таких конфе\
-            ренций, как JEEConf и JavaDay Ukraine. Автор книги [«Reactive Programming with Spring 5»](https://www.packtpub.com/application-development/reactive-programming-spring-50)."}
+      - {language: en, text: "Fan of Reactive. Works on RSocket and improves Project Reactor along the way. Co-author of the\
+            \ book \"Hands‑On Reactive Programming in Spring 5\".  Java Champion."}
+      - {language: ru, text: "Фанат и гик реактивных технологий. Работает над RSocket и Project Reactor. Автор книги «Hands‑\
+            On Reactive Programming in Spring 5». Java Champion."}
     twitter: OlehDokuka
     gitHub: OlegDokuka
     javaChampion: true
@@ -723,16 +717,19 @@ speakers:
     habr: aleksey-stukalov
   - id: 40
     photoFileName: 0040.jpg
+    photoUpdatedAt: 2019-06-25T07:10:20.119Z[UTC]
     name:
       - {language: en, text: "Venkat Subramaniam"}
     companyIds: [16]
     bio:
-      - {language: en, text: "Dr. Venkat Subramaniam, the founder of Agile Developer, Inc., has trained and mentored thousands\
-            \ of software developers in the US, Canada, Europe, and Asia. Venkat helps his clients effectively apply and succeed\
-            \ with agile practices on their software projects. He is a frequent invited speaker at international software\
-            \ conferences and user groups. He's the author of .NET Gotchas (O'Reilly), coauthor of the 2007 Jolt Productivity\
-            \ award-winning book Practices of an Agile Developer (Pragmatic Bookshelf), and author of Programming Groovy (Pragmatic\
-            \ Bookshelf)."}
+      - language: en
+        text: "Dr. Venkat Subramaniam is an award-winning author, founder of Agile Developer, Inc., creator of agilelearner.com,\
+            \ co-founder of the devdotnext software conference, and an instructional professor at the University of Houston.\n\
+            He has trained and mentored thousands of software developers in the US, Canada, Europe, and Asia, and is a regularly-invited\
+            \ speaker at several international conferences. Venkat helps his clients effectively apply and succeed with sustainable\
+            \ agile practices on their software projects.\n\nVenkat is a (co)author of multiple technical books, including\
+            \ the 2007 Jolt Productivity award winning book Practices of an Agile Developer. You can find a list of his books\
+            \ at agiledeveloper.com. You can reach him by email at venkats@agiledeveloper.com or on twitter at @venkat_s."
     twitter: venkat_s
     gitHub: venkat_s
     javaChampion: true
@@ -1080,11 +1077,12 @@ speakers:
       - {language: en, text: "Josh Long"}
     companyIds: [577]
     bio:
-      - {language: en, text: "Josh was the Spring Developer Advocate at Pivotal. He is a Java Champion, author of 5 books\
-            \ (including O'Reilly's \"Cloud Native Java: Designing Resilient Systems with Spring Boot, Spring Cloud, and Cloud\
-            \ Foundry\") and numerous best-selling video trainings (including \"Building Microservices with Spring Boot Livelessons\"\
-            \ with Spring Boot co-founder Phil Webb). He is also an open source contributor (Spring Boot, Spring Integration,\
-            \ Spring Cloud, Activiti, and Vaadin)."}
+      - {language: en, text: "Josh (@starbuxman) has been the first Spring Developer Advocate since 2010. Josh is a Java Champion,\
+            \ author of 6 books (including O'Reilly's \"Cloud Native Java: Designing Resilient Systems with Spring Boot, Spring\
+            \ Cloud, and Cloud Foundry\" and \"Reactive Spring\") and numerous best-selling video training (including \"Building\
+            \ Microservices with Spring Boot Livelessons\" with Spring Boot co-founder Phil Webb), and an open source contributor\
+            \ (Spring Boot, Spring Integration, Spring Cloud, Activiti and Vaadin, etc), a podcaster (\"A Bootiful Podcast\"\
+            ) and a YouTuber."}
     twitter: starbuxman
     gitHub: joshlong
     javaChampion: true
@@ -1129,10 +1127,12 @@ speakers:
       - {language: ru, text: "Олег Нижников"}
     companyIds: [674]
     bio:
-      - {language: en, text: "Scala developer, architect, zealot of functional programming. 11 years of backend development\
+      - {language: en, text: "Scala developer, architect, zealot of functional programming. 12 years of backend development\
             \ experience."}
-      - {language: ru, text: "Скалист, архитектор, фанат функционального программирования. 11 лет бэкенд-разработки."}
+      - {language: ru, text: "Скалист, архитектор, фанат функционального программирования. 12 лет бэкенд-разработки."}
     twitter: odomontois
+    gitHub: Odomontois
+    habr: Odomontois
   - id: 67
     photoFileName: 0067.jpg
     name:
@@ -1148,6 +1148,7 @@ speakers:
             \ мышления."}
   - id: 68
     photoFileName: 0068.jpg
+    photoUpdatedAt: 2019-03-01T12:25:55.597Z[UTC]
     name:
       - {language: en, text: "Anton Keks"}
       - {language: ru, text: "Антон Кекс"}
@@ -1175,19 +1176,19 @@ speakers:
     habr: antonkeks
   - id: 69
     photoFileName: 0069.jpg
+    photoUpdatedAt: 2019-02-20T09:51:53.731Z[UTC]
     name:
       - {language: en, text: "Simon Ritter"}
     companyIds: [63]
     bio:
       - language: en
         text: "Simon Ritter is the Deputy CTO of Azul Systems. He has been in the IT business since 1984 and holds a Bachelor\
-            \ of Science degree in Physics from Brunel University in the U.K. \n\nSimon joined Sun Microsystems in 1996 and\
+            \ of Science degree in Physics from Brunel University in the U.K.\n\nSimon joined Sun Microsystems in 1996 and\
             \ started working with Java technology from JDK 1.0; he has spent time working in both Java development and consultancy.\
             \ Having moved to Oracle as a part of the Sun acquisition, he managed the Java Evangelism team for the core Java\
             \ platform, Java for client applications and embedded Java. Now at Azul, he continues to help people understand\
             \ Java as well as Azul's JVM technologies and products. Simon has twice been awarded a Java Rockstar status at\
-            \ JavaOne and is a Java Champion. He currently represents Azul on the JCP Executive Committee and on the Java\
-            \ SE Expert Group (JSR 379 and JSR 383)."
+            \ JavaOne and is a Java Champion. He has represented Azul on the Java SE JSR Expert group since JDK 9."
     twitter: speakjava
     gitHub: speakjava
     javaChampion: true
@@ -1239,17 +1240,17 @@ speakers:
     gitHub: kohsuke
   - id: 73
     photoFileName: 0073.jpg
+    photoUpdatedAt: 2017-03-13T15:42:22.540Z[UTC]
     name:
       - {language: en, text: "Victor Rentea"}
     companyIds: [259]
     bio:
-      - language: en
-        text: "Sr. Architect, Developer and Technical Lead at IBM, for major client. Independent Trainer and Coach. Faculty\
-            \ Lecturer (\"Design Patterns\"). PhD(CS).\n\nA passionate Clean Coder with a very dynamic and interactive presentation\
-            \ style, spiced with jokes, metaphors and easy-to-remember visual representations. Having delivered hundreds of\
-            \ hours of training and coaching for major players in enterprise Java development, Victor got to introspect a\
-            \ huge variety of enterprise projects. His quest is to make you think deeply, learn to introspect your design."
-    twitter: VictorRentea
+      - {language: en, text: "Victor is a Java Champion and an Independent Trainer delivering intense webinars for dozens\
+            \ of companies worldwide. He loves Simple Design, Refactoring, and Unit Testing, about which he regularly talks\
+            \ at top conferences. Victor founded the Bucharest Software Craftsmanship Community that he engages monthly via\
+            \ live webinars and discussions. On [victorrentea.ro](http://victorrentea.ro/) you can find his blog, talks, training\
+            \ curriculum, live masterclasses, and social channels."}
+    twitter: victorrentea
     gitHub: victorrentea
     javaChampion: true
   - id: 74
@@ -1257,18 +1258,25 @@ speakers:
     photoUpdatedAt: 2019-07-30T08:02:32.434Z[UTC]
     name:
       - {language: en, text: "Sebastian Daschner"}
+      - {language: ru, text: "Себастьян Дашнер"}
     companyIds: [250]
     bio:
       - language: en
-        text: "Sebastian Daschner is a Lead Java Developer Advocate for IBM, author, and trainer and is enthusiastic about\
+        text: "Sebastian Daschner is a Lead Java Developer Advocate at IBM, author, and trainer and is enthusiastic about\
             \ programming and Java (EE). He is the author of the book \"Architecting Modern Java EE Applications\". Sebastian\
-            \ is participating in the JCP, helping to form the future standards of Java EE, serving in the JAX-RS, JSON-P\
-            \ and Config Expert Groups and collaborating on various open source projects. For his contributions in the Java\
-            \ community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion and JavaOne Rockstar.\n\
-            \nBesides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes\
-            \ computer science practices on his <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">blog</a>,\
-            \ his newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world \
-            — either by plane or motorbike."
+            \ is participating in open source standardization processes such as the JCP or the Eclipse Foundation, helping\
+            \ forming the future standards of Enterprise Java, and collaborating on various open source projects. For his\
+            \ contributions in the Java community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion\
+            \ and JavaOne Rockstar.\n\nBesides Java, Sebastian is also a heavy user of cloud native technologies and anything\
+            \ related to enterprise software. He evangelizes computer science practices on his <a href=\"https://blog.sebastian-daschner.com\"\
+            \ target=\"_blank\">blog</a>, his newsletter, and on Twitter via @DaschnerS. Sebastian kickstarted the JOnsen\
+            \ and jSpirit unconferences that connect Java developers throughout the globe. When not working with technology,\
+            \ he also loves coffee and to travel the world."
+      - language: ru
+        text: "Себастьян — Lead Java Developer Advocate в IBM, автор и преподаватель. Его самая знаменитая работа — «Architecting\
+            \ Modern Java EE Applications». \r\nУчастник JCP, помогает формировать будущие стандарты Java EE, работает в э\
+            кспертных группах JAX-RS, JSON-P и Config, участвует в опенсорсных проектах. Java Champion, Oracle Developer Champion\
+            \ и JavaOne Rockstar.\r\nОбожает путешествовать."
     twitter: DaschnerS
     gitHub: sdaschner
     javaChampion: true
@@ -2530,14 +2538,15 @@ speakers:
     gitHub: samaaron
   - id: 155
     photoFileName: 0155.jpg
+    photoUpdatedAt: 2021-03-05T08:51:06.887Z[UTC]
     name:
       - {language: en, text: "Jean-Philippe Bempel"}
     companyIds: [698]
     bio:
-      - {language: en, text: "Developer passionate by performance, runtimes (JVM, CLR) and Mechanical Sympathy supporter,\
-            \ Jean-Philippe has more than 8 years experience in low latency trading systems. After He brings his expertise\
-            \ on the JVM at Criteo in order to optimize resources on thousand node clusters, He is now at Datadog to evaluate\
-            \ & improve both profiler & tracer agent. He is also a contributor to OpenJDK for the JDK Mission Control project."}
+      - {language: en, text: "Developer and Java Champion passionate by performance, runtimes (JVM, CLR), and Mechanical Sympathy\
+            \ supporter, Jean-Philippe has more than 8 years of experience in low latency trading systems. After he brings\
+            \ his expertise on the JVM at Criteo to optimize resources on thousand node clusters. He is now at Datadog to\
+            \ evaluate & improve both profiler & tracer agent."}
     twitter: jpbempel
     gitHub: jpbempel
     javaChampion: true
@@ -3470,21 +3479,20 @@ speakers:
     photoFileName: 0237.jpg
     photoUpdatedAt: 2020-10-09T13:18:05.073Z[UTC]
     name:
-      - {language: en, text: "Andrey Solntsev"}
+      - {language: en, text: "Andrei Solntsev"}
       - {language: ru, text: "Андрей Солнцев"}
     companyIds: [100]
     bio:
-      - language: en
-        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
-            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
-            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
-            \ Testing Days, TopConf, DevConFu, Devoxx."
-      - language: ru
-        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
-            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
-            , парного программирования и чистого кода."
+      - {language: en, text: "Software craftsman at Codeborne (Tallinn, Estonia). Aggressive fan of extreme programming, autotests,\
+            \ pair programming and clean code. Creator of Selenide — an open-source library for UI tests in Java. Organizer\
+            \ of devclub.eu. Frequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."}
+      - {language: ru, text: "Андрей — разработчик в эстонской компании Codeborne. Автор фреймворка Selenide, организатор\
+            \ таллинского Devclub, частый докладчик на конференциях. Ярый приверженец экстремального программирования, авт\
+            оматических тестов, парного программирования и чистого кода."}
     twitter: asolntsev
     gitHub: asolntsev
+    habr: asolntsev
   - id: 238
     photoFileName: 0238.jpg
     name:
@@ -8028,16 +8036,18 @@ speakers:
     twitter: pkubowicz
   - id: 564
     photoFileName: 0564.jpg
+    photoUpdatedAt: 2021-03-04T13:57:25.005Z[UTC]
     name:
       - {language: en, text: "Shelley Lambert"}
-    companyIds: [250]
+    companyIds: [438]
     bio:
-      - {language: en, text: "Shelley Lambert is the Test Lead for IBM Runtime Technologies team. She and her team test open\
-            \ and freely available JDK implementations and have delivered the test strategy, test code base, and test frameworks\
-            \ into the Eclipse OMR, Eclipse OpenJ9 and AdoptOpenJDK projects. She is a committer at OpenJ9 and AdoptOpenJDK,\
-            \ where she also serves on the TSC and draws stories and lessons from her experiences in the open projects where\
-            \ she is most active."}
+      - {language: en, text: "Shelley Lambert serves on the TSC of AdoptOpenJDK (soon Eclipse Adoptium) and is a technical\
+            \ lead and committer at that open-source project, along with the Eclipse OpenJ9 project. Moving from developing\
+            \ network management software for the telco industry, she worked as a JVM developer and then Global Verification\
+            \ Lead for IBM. She initiated and now drives the AQA (Adopt Quality Assurance) program at AdoptOpenJDK as a Red\
+            \ Hatter."}
     twitter: ShelleyMLambert
+    gitHub: smlambert
   - id: 565
     photoFileName: 0565.jpg
     name:
@@ -13367,12 +13377,12 @@ speakers:
     companyIds: [357]
     bio:
       - language: en
-        text: "A system architect and Java developer from Netcracker company. During the last years participated in many different\
-            \ projects including network management, monitoring and billing. Works a lot with open source technologies like\
-            \ Apache Cassandra, Zookeeper, Kafka, Hazelcast, etc.\nProfessional interests: distributed systems, high performance\
-            \ and high availability."
+        text: "A system architect and Java developer from Netcracker company. During the last 10 years participated in many\
+            \ different projects including network management, monitoring, and billing. Works a lot with open source technologies\
+            \ like Apache Cassandra, Zookeeper, Kafka, Hazelcast, etc.\nProfessional interests: distributed systems, high\
+            \ performance, and high availability."
       - language: ru
-        text: "Системный архитектор и по-прежнему практикующий Java-разработчик в компании Netcracker. За последние 9 лет\
+        text: "Системный архитектор и по-прежнему практикующий Java-разработчик в компании Netcracker. За последние 10 лет\
             \ участвовал в различных проектах, начиная с задач управления сетью, мониторинга и заканчивая биллингом.\nАкти\
             вно работает с различными open source-технологиями, такими как Apache Cassandra, Zookeeper, Kafka, Hazelcast и\
             \ т.д.\nПрофессиональные интересы включают в себя вопросы построения распределенных систем, производительности\
@@ -19151,7 +19161,7 @@ speakers:
       - {language: en, text: "Software engineer from Spring Cloud Commercial team, Pivotal Labs alumni, a fan of Test-Driven\
             \ Development and lean software development approach, open source enthusiast, author, and co-host of a weekly\
             \ hi-tech podcast Radio-T."}
-      - {language: ru, text: "Разработчик в команде Spring Cloud Commerical, ранее Pivotal Labs, фанат Test-Driven Development\
+      - {language: ru, text: "Разработчик в команде Spring Cloud Commercial, ранее Pivotal Labs, фанат Test-Driven Development\
             \ и lean-подхода к разработке; фанат open source, автор и тот самый Алексей из еженедельного Hi-Tech подкаста\
             \ Radio-T."}
     twitter: alek_sys
@@ -21005,20 +21015,18 @@ speakers:
     gitHub: ticofab
   - id: 1532
     photoFileName: 1532.jpg
+    photoUpdatedAt: 2021-02-15T07:10:49.466Z[UTC]
     name:
       - {language: en, text: "Sergey Tselovalnikov"}
       - {language: ru, text: "Сергей Целовальников"}
     companyIds: [701]
     bio:
-      - language: en
-        text: "Software engineer. A big fan of the JVM platform, distributed systems, and functional programming. Previously\
-            \ worked at Naumen, JetBrains. Sergey joined the infrastructure team at Canva in 2016 and helped Canva services\
-            \ scale to the state where they can reliably serve tens of millions of users."
-      - language: ru
-        text: "Опытный разработчик. Большой поклонник платформы JVM, распределенных систем и функционального программирования.\
-            \ Поработав в Naumen и JetBrains, Сергей в 2016 году присоединился к инфраструктурной команде Canva и помог\
-            \ отмасштабировать сервисы Canva до уровня, на котором они смогли надежно обрабатывать запросы десятков миллионов\
-            \ пользователей."
+      - {language: en, text: "Software engineer. A big fan of the JVM platform, distributed systems, and functional programming.\
+            \ Previously worked at Naumen, JetBrains. Sergey joined the infrastructure team at Canva in 2016 and helped Canva\
+            \ services scale to the state where they can reliably serve tens of millions of users."}
+      - {language: ru, text: "Программист. Большой фанат платформы JVM, распределенных систем и функционального программир\
+            ования. Сергей работал в Naumen и JetBrains. С 2016 года он член инфраструктурной команды в Canva и помог им м\
+            асштабировать сервисы до состояния, в котором они могут надежно обслуживать десятки миллионов пользователей."}
     twitter: SerCeMan
     gitHub: SerCeMan
     habr: SerCe
@@ -21811,3 +21819,251 @@ speakers:
             \ DSL HTTP-клиента](https://github.com/rybalkinsd/kohttp) и [Redex](https://fbredex.com/), оптимизатора байтко\
             да для Android."}
     twitter: lightdelay
+  - id: 1585
+    photoFileName: 1585.jpg
+    photoUpdatedAt: 2021-02-19T08:57:37.241Z[UTC]
+    name:
+      - {language: en, text: "Christine Flood"}
+    companyIds: [438]
+    bio:
+      - {language: en, text: "Christine Flood has been working on programming languages and runtimes for over 20 years. She's\
+            \ worked for academia and industry from the labs to the trenches. She's been working on implementing Java since\
+            \ the late 1990's and she's excited to talk about what she's learned running Java inside of containers."}
+  - id: 1586
+    photoFileName: 1586.jpg
+    photoUpdatedAt: 2021-03-11T13:44:51.752Z[UTC]
+    name:
+      - {language: en, text: "Anna Abramova"}
+      - {language: ru, text: "Анна Абрамова"}
+    companyIds: [720]
+    bio:
+      - {language: en, text: "Shifted to mediatech from fintech. Graduted from CMC of MSU named after Lomonosov. Started career\
+            \ in IT as C++ programmer. Currently working as the head of software development department at RBC. Hands on Java,\
+            \ React, Python and AI."}
+      - {language: ru, text: "Пришла в медиатех из сурового финтеха. Закончила ВМиК МГУ. Начинала с C++. Сейчас работает р\
+            уководителем управления разработкой в РБК. Пишет на Java, React, Python, занимается ИИ."}
+  - id: 1587
+    photoFileName: 1587.jpg
+    photoUpdatedAt: 2021-02-26T07:21:06.763Z[UTC]
+    name:
+      - {language: en, text: "Paul Bakker"}
+    companyIds: [358]
+    bio:
+      - language: en
+        text: "Paul is a senior software engineer at Netflix, with a focus on developer experience. He has a long history\
+            \ in the Java community, is a Java Champion and author of \"Java 9 Modularity\" and \"Modular Cloud Apps with\
+            \ OSGi\", both published by O'Reilly.\nIn the past year, Paul has worked on the DGS Framework at Netflix which\
+            \ was open sourced in 2021."
+    twitter: pbakker
+    gitHub: paulbakker
+    javaChampion: true
+  - id: 1588
+    photoFileName: 1588.jpg
+    photoUpdatedAt: 2021-03-02T12:26:33.765Z[UTC]
+    name:
+      - {language: en, text: "Kelvin Nilsen"}
+    companyIds: [34]
+    bio:
+      - {language: en, text: "Kelvin Nilsen is a Senior Software Development Engineer on the Amazon Corretto team. He is best\
+            \ known as the inventor of the original real-time Java specification and architect of the Perc real-time virtual\
+            \ machine which has been deployed in thousands of automation applications, many of which honor P100 compliance\
+            \ with 100 microsecond end-to-end response time constraints."}
+    twitter: kdnilsen
+    gitHub: kdnilsen
+  - id: 1589
+    photoFileName: 1589.jpg
+    photoUpdatedAt: 2021-02-26T08:52:03.335Z[UTC]
+    name:
+      - {language: en, text: "Anna Kozlova"}
+      - {language: ru, text: "Анна Козлова"}
+    companyIds: [286]
+    bio:
+      - {language: en, text: "Anna has been working on IntelliJ IDEA for the past 16 years. She is engaged in support of refactorings\
+            \ and static code analysis but also spends a significant amount of time understanding the intricacies of type\
+            \ inference in Java."}
+      - {language: ru, text: "Анна работает над IntelliJ IDEA последние 16 лет. В основном она занимается поддержкой рефак\
+            торингов и статического анализа кода, но также проводит значительное количество времени, разбираясь в тонкостя\
+            х вывода типов в Java."}
+    gitHub: akozlova
+  - id: 1590
+    photoFileName: 1590.jpg
+    photoUpdatedAt: 2021-03-05T07:37:52.054Z[UTC]
+    name:
+      - {language: en, text: "Ron Pressler"}
+    companyIds: [383]
+    bio:
+      - {language: en, text: "Ron works in Oracle's Java Platform Group on OpenJDK, where he is Technical Lead of Project\
+            \ Loom."}
+    twitter: pressron
+    gitHub: pron
+  - id: 1591
+    photoFileName: 1591.jpg
+    photoUpdatedAt: 2021-03-11T14:01:38.921Z[UTC]
+    name:
+      - {language: en, text: "Michiel Borkent"}
+    companyIds: [721]
+    bio:
+      - language: en
+        text: "Michiel Borkent is a fan of functional programming, shell scripting and Clojure. He is the author of clj-kondo,\
+            \ a linter and static analyzer for Clojure. He is also the author of babashka: a fast starting native scripting\
+            \ environment for Clojure.\nHe can be found as @borkdude in various places on the web."
+    twitter: borkdude
+    gitHub: borkdude
+  - id: 1592
+    photoFileName: 1592.jpg
+    photoUpdatedAt: 2021-03-11T09:50:21.406Z[UTC]
+    name:
+      - {language: en, text: "Ilya Sazonov"}
+      - {language: ru, text: "Илья Сазонов"}
+    companyIds: [722]
+    bio:
+      - {language: en, text: "Software Developer. Ilya has been involved in the backend for most of his career, but he also\
+            \ managed to work on patent research and even dive into game development for a short time. He has a lot of interest\
+            \ in organizing aggressively developed projects with many participants involved. Currently works in fintech as\
+            \ a backend Tech Lead in Vsegda.Da."}
+      - {language: ru, text: "Разработчик. Большую часть своей карьеры занимается бэкендом, но успел также зацепить патент\
+            ные исследования и даже ненадолго занырнуть в геймдев. Интересуется вопросами организации кода в стремительно\
+            \ развивающихся проектах с большим количеством участников. В текущий момент работает в финтехе — руководит бэк\
+            енд-разработкой в сервисе рассрочек Всегда.Да."}
+  - id: 1593
+    photoFileName: 1593.jpg
+    photoUpdatedAt: 2021-03-11T09:57:38.820Z[UTC]
+    name:
+      - {language: en, text: "Fedor Sazonov"}
+      - {language: ru, text: "Федор Сазонов"}
+    companyIds: []
+    bio:
+      - language: en
+        text: "Java developer. During his career, worked both on a simple backend for web pages and high-performance servers\
+            \ for online multiplayer mobile shooters. Deeply imbued with this topic and now Fedor advises on the creation\
+            \ of game solutions.\n\nHe also worked in several startups, where took an active part in building processes for\
+            \ the development and delivery of a product to end-users."
+      - language: ru
+        text: "Java-разработчик. За свою карьеру работал как над простым бэкендом для веб-страниц, так и над высоконагруже\
+            нными серверами для онлайновых многопользовательских мобильных шутеров. Глубоко проникся этой темой и теперь к\
+            онсультирует по созданию игровых решений.\n\nРаботал в нескольких стартапах, где принимал активное участие в в\
+            ыстраивании процессов разработки и доставки продукта до конечных пользователей."
+  - id: 1594
+    photoFileName: 1594.jpg
+    photoUpdatedAt: 2021-02-26T08:57:52.647Z[UTC]
+    name:
+      - {language: en, text: "David Syer"}
+    companyIds: [577]
+    bio:
+      - {language: en, text: "Founder of Spring Cloud, Spring Boot, Spring Batch, and an active contributor to Spring Integration,\
+            \ Spring Framework, Spring AMQP, Spring Security. Experienced, delivery-focused architect and development manager.\
+            \ Has designed and built successful enterprise software solutions using Spring, and implemented them in major\
+            \ institutions worldwide."}
+    twitter: david_syer
+    gitHub: dsyer
+  - id: 1595
+    photoFileName: 1595.jpg
+    photoUpdatedAt: 2021-03-05T08:58:59.441Z[UTC]
+    name:
+      - {language: en, text: "Igor Braga"}
+    companyIds: [250]
+    bio:
+      - {language: en, text: "Software developer at IBM Canada in runtimes OpenJ9 team particularly focusing on Garbage Collection\
+            \ technology. Igor has also completed his masters in computer sciences from University of Waterloo with focus\
+            \ in Machine Learning. There are several topics that interests him, and among them are systems, compilers, programming\
+            \ languages, and machine learning. And a fan fact about Igor is that he's a former professional tennis player."}
+    twitter: igor_h_braga
+    gitHub: bragaigor
+  - id: 1596
+    photoFileName: 1596.jpg
+    photoUpdatedAt: 2021-03-11T07:30:08.938Z[UTC]
+    name:
+      - {language: en, text: "Jonathan Oommen"}
+    companyIds: [250]
+    bio:
+      - {language: en, text: "Jonathan has been a Java Virtual Machine and Java Garbage Collection software developer on the\
+            \ IBM Runtimes team for nearly 4 years. He is an active contributor primarily for the Eclipse OMR and Eclipse\
+            \ OpenJ9 projects. He has worked most specifically on garbage collection development with a focus on application\
+            \ throughput optimization."}
+  - id: 1597
+    photoFileName: 1597.jpg
+    photoUpdatedAt: 2021-03-26T13:03:21.007Z[UTC]
+    name:
+      - {language: en, text: "Kirill Danilov"}
+      - {language: ru, text: "Кирилл Данилов"}
+    companyIds: [643]
+    bio:
+      - {language: en, text: "In Java world since 2001. Managed to work on platforms from J2ME to J2EE. Now a developer in\
+            \ Mir Plat.Form, Fast Payment System project."}
+      - {language: ru, text: "В Java-мире с 2001 года. Успел поработать на платформах от J2ME до J2EE. Сейчас разработчик\
+            \ в Мир Plat.Form, а конкретно в Системе Быстрых Платежей."}
+  - id: 1598
+    photoFileName: 1598.jpg
+    photoUpdatedAt: 2021-02-12T08:13:55.349Z[UTC]
+    name:
+      - {language: en, text: "Ivar Grimstad"}
+    companyIds: [723]
+    bio:
+      - language: en
+        text: "Ivar Grimstad is the Jakarta EE Developer Advocate at Eclipse Foundation. He is a Java Champion and JUG Leader\
+            \ based in Sweden.\n\nIvar is the PMC Lead for Eclipse Enterprise for Java (EE4J) and is involved in the Jakarta\
+            \ EE Working Group. He is also one of the community representatives in the JCP Executive Committee as well as\
+            \ specification lead for JSR 371 (MVC 1.0).\n\nIvar is also involved in Eclipse MicroProfile, Apache NetBeans,\
+            \ and a frequent speaker at International developer conferences."
+    twitter: ivar_grimstad
+    gitHub: ivargrimstad
+    javaChampion: true
+  - id: 1599
+    photoFileName: 1599.jpg
+    photoUpdatedAt: 2021-02-25T07:30:11.459Z[UTC]
+    name:
+      - {language: en, text: "Tanja Obradović"}
+    companyIds: [723]
+    bio:
+      - {language: en, text: "Tanja Obradović is the Jakarta EE Program Manager at the Eclipse Foundation. Having been involved\
+            \ with Java and Java EE for quite some time, revitalizing Enterprise Java and making it ready for cloud native\
+            \ application development with Jakarta EE open source specifications is something that she is very much interested\
+            \ in."}
+    twitter: TanjaEclipse
+    gitHub: TanjaObradovic
+  - id: 1600
+    photoFileName: 1600.jpg
+    photoUpdatedAt: 2021-02-19T09:16:41.657Z[UTC]
+    name:
+      - {language: en, text: "Petr Gromov"}
+      - {language: ru, text: "Пётр Громов"}
+    companyIds: [286]
+    bio:
+      - {language: en, text: "Petr has been working at JetBrains for 17 years, most of them dealing with IntelliJ platform,\
+            \ supporting various languages and improving performance. GitHub — donnerpeter."}
+      - {language: ru, text: "17 лет работает в JetBrains, из них большую часть времени занимался платформой IntelliJ: в о\
+            сновном, поддержкой разных языков и улучшением производительности. Гитхаб — donnerpeter."}
+    twitter: donnerpeter
+    gitHub: donnerpeter
+  - id: 1601
+    photoFileName: 1601.jpg
+    photoUpdatedAt: 2021-03-17T11:18:29.429Z[UTC]
+    name:
+      - {language: en, text: "Ben Evans"}
+    companyIds: [724]
+    bio:
+      - language: en
+        text: "Ben Evans is an author, speaker, architect and educator. He is currently Principal Engineer and Lead Architect\
+            \ for Instrumentation at New Relic. Previously, he co-founded jClarity, an application performance startup (acquired\
+            \ by Microsoft) and before that was Chief Architect for Listed Derivatives at Deutsche Bank. Ben served for 6\
+            \ years on the Java Community Process Executive Committee, helping define standards for the Java ecosystem. He\
+            \ is a Java Champion, 3-time JavaOne Rockstar Speaker and the Java/JVM Track Lead at InfoQ.\n\nBen is author of\
+            \ \"The Well-Grounded Java Developer\", \"Java: The Legend\", \"Optimizing Java\" and the new editions of \"Java\
+            \ in a Nutshell\". He is a regular speaker and educator on topics such as the Java platform, systems architecture,\
+            \ security, performance and concurrency at conferences all over the world (pandemic permitting)."
+    twitter: kittylyst
+    gitHub: kittylyst
+    javaChampion: true
+  - id: 1602
+    photoFileName: 1602.jpg
+    photoUpdatedAt: 2021-02-15T12:27:39.498Z[UTC]
+    name:
+      - {language: en, text: "Piotr Przybyl"}
+    companyIds: [725]
+    bio:
+      - {language: en, text: "Notorious engineer at work and after hours, tracing meanders of the art of software engineering.\
+            \ Software Gardener, mostly working in web-oriented Java gardens. Programming usually in Java (since 1.3) and\
+            \ Scala. Fan of agility, seen mostly as choosing the right tools and approaches after asking the right questions.\
+            \ Lead developer, trainer, and conference speaker. In his talks, Piotr covers not only hardcore Java but also\
+            \ software architecture, computer security, and soft-skills."}
+    twitter: piotrprz
