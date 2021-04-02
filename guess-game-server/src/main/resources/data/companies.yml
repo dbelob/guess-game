@@ -2228,3 +2228,31 @@ companies:
     name:
       - {language: en, text: "Zyfra Group"}
       - {language: ru, text: "ГК Цифра"}
+  - id: 712
+    name:
+      - {language: en, text: Technokratos}
+      - {language: ru, text: Технократия}
+  - id: 713
+    name:
+      - {language: en, text: "Savage Software Group"}
+  - id: 714
+    name:
+      - {language: en, text: Distillery}
+  - id: 715
+    name:
+      - {language: en, text: DomClick}
+      - {language: ru, text: ДомКлик}
+  - id: 716
+    name:
+      - {language: en, text: "Vivid Money"}
+  - id: 717
+    name:
+      - {language: en, text: Auto.ru}
+      - {language: ru, text: Авто.ру}
+  - id: 718
+    name:
+      - {language: en, text: "Yandex GO"}
+      - {language: ru, text: "Яндекс GO"}
+  - id: 719
+    name:
+      - {language: en, text: INOSTUDIO}

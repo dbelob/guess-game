@@ -977,6 +977,18 @@ events:
     placeId: 24
     talkIds: [2627, 2628, 2629, 2630, 2631, 2632, 2633, 2634, 2635, 2636, 2637, 2638, 2639, 2640, 2641, 2642, 2643, 2644,
               2645, 2646, 2647, 2648, 2649, 2650, 2651, 2652, 2653, 2654, 2683, 2655, 2656, 2837, 2657]
+  - eventTypeId: 9
+    name:
+      - {language: en, text: "Mobius 2021 SPb"}
+      - {language: ru, text: "Mobius 2021 СПб"}
+    startDate: "2021-04-13"
+    endDate: "2021-04-16"
+    siteLink:
+      - {language: ru, text: "https://mobius-piter.ru/"}
+    youtubeLink: https://live.jugru.org/events/mobius/
+    placeId: 24
+    talkIds: [2956, 2957, 2958, 2959, 2960, 2961, 2962, 2963, 2964, 2965, 2966, 2967, 2968, 2969, 2970, 2971, 2972, 2973,
+              2974, 2975, 2976, 2977, 2978, 2979, 2980, 2981, 2982, 2983, 2984, 2985, 2986]
   # SPTDC
   - eventTypeId: 10
     name:
