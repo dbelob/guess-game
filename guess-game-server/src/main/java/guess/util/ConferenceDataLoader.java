@@ -543,19 +543,31 @@ public class ConferenceDataLoader {
     static LoadResult<List<Company>> getCompanyLoadResult(List<Company> companies, Map<String, Company> resourceCompanyMap,
                                                           AtomicLong lastCompanyId) {
         List<Company> companiesToAppend = new ArrayList<>();
+        Map<String, Company> companiesToAppendMap = new HashMap<>();
 
-        for (Company c : companies) {
-            if (!c.getName().isEmpty()) {
-                Company resourceCompany = findResourceCompany(c, resourceCompanyMap);
+        for (Company company : companies) {
+            if (!company.getName().isEmpty()) {
+                // Find in resource companies
+                Company resourceCompany = findResourceCompany(company, resourceCompanyMap);
 
+                // Company not exists in resource companies
                 if (resourceCompany == null) {
-                    // Company not exists
-                    c.setId(lastCompanyId.incrementAndGet());
+                    // Find in new companies
+                    resourceCompany = findResourceCompany(company, companiesToAppendMap);
 
-                    companiesToAppend.add(c);
+                    if (resourceCompany == null) {
+                        // Company not exists in new companies
+                        company.setId(lastCompanyId.incrementAndGet());
+
+                        companiesToAppend.add(company);
+                        company.getName().forEach(li -> companiesToAppendMap.put(li.getText().toLowerCase(), company));
+                    } else {
+                        // Company exists in new companies
+                        company.setId(resourceCompany.getId());
+                    }
                 } else {
-                    // Company exists
-                    c.setId(resourceCompany.getId());
+                    // Company exists in resource companies
+                    company.setId(resourceCompany.getId());
                 }
             }
         }
@@ -1671,7 +1683,8 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.HEISENBUG, LocalDate.of(2021, 4, 6), "2021spb",
 //                LoadSettings.ignoreDemoStage(false));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 4, 13), "2021spb");
-//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2021, 4, 13), "2021jpoint");
+//        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2021, 4, 13), "2021jpoint",
+//                LoadSettings.ignoreDemoStage(false));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 4, 20), "2021spb");
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 4, 20), "2021spb");
     }
