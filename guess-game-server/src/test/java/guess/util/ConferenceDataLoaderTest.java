@@ -946,16 +946,11 @@ class ConferenceDataLoaderTest {
 
                 @Mock
                 Company findResourceCompany(Company company, Map<String, Company> resourceCompanyMap) {
-                    Set<String> names = company.getName().stream()
-                            .map(LocaleItem::getText)
-                            .collect(Collectors.toSet());
-
-                    boolean result = resourceCompanyMap.values().stream()
-                            .flatMap(c -> c.getName().stream())
-                            .map(LocaleItem::getText)
-                            .anyMatch(names::contains);
-
-                    return result ? company : null;
+                    return company.getName().stream()
+                            .map(localItem -> resourceCompanyMap.get(localItem.getText().toLowerCase()))
+                            .filter(Objects::nonNull)
+                            .findFirst()
+                            .orElse(null);
                 }
             };
 
@@ -2236,13 +2231,15 @@ class ConferenceDataLoaderTest {
             final String COMPANY_NAME1 = "Company1";
 
             Company company0 = new Company(0, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME0)));
-            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME1)));
+            Company company1 = new Company(1, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME0)));
+            Company company2 = new Company(2, List.of(new LocaleItem(Language.ENGLISH.getCode(), COMPANY_NAME1)));
 
             Map<String, Company> resourceCompanyMap = Map.of(COMPANY_NAME0.toLowerCase(), company0);
 
             return Stream.of(
                     arguments(company0, resourceCompanyMap, company0),
-                    arguments(company1, resourceCompanyMap, null)
+                    arguments(company1, resourceCompanyMap, company0),
+                    arguments(company2, resourceCompanyMap, null)
             );
         }
 
