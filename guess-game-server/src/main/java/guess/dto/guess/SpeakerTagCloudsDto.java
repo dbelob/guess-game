@@ -53,7 +53,7 @@ public class SpeakerTagCloudsDto extends QuestionAnswersDto {
 
         return new SpeakerTagCloudsDto(
                 sourceDto,
-                answers.parallelMap(TagCloudAnswer::getId),
+                answers.map(TagCloudAnswer::getId),
                 new SpeakerPairDto(
                         LocalizationUtils.getString(questionSpeaker.getName(), language),
                         questionSpeaker.getPhotoFileName()),
