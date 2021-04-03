@@ -3,6 +3,7 @@ package guess.domain;
 import java.io.Serializable;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Quadruple<T extends Serializable> implements Serializable {
     private final T first;
@@ -33,12 +34,25 @@ public class Quadruple<T extends Serializable> implements Serializable {
         return fourth;
     }
 
-    public <V extends Serializable> Quadruple<V> map(Function<? super T, ? extends V> f) {
+    public <R extends Serializable> Quadruple<R> map(Function<? super T, ? extends R> f) {
         return new Quadruple<>(
                 f.apply(first),
                 f.apply(second),
                 f.apply(third),
                 f.apply(fourth)
+        );
+    }
+
+    public <R extends Serializable> Quadruple<R> parallelMap(Function<? super T, ? extends R> f) {
+        List<R> result = List.of(first, second, third, fourth).parallelStream()
+                .map(f)
+                .collect(Collectors.toList());
+
+        return new Quadruple<>(
+                result.get(0),
+                result.get(1),
+                result.get(2),
+                result.get(3)
         );
     }
 
