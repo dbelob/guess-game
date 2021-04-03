@@ -1244,15 +1244,11 @@ public class ConferenceDataLoader {
      * @return resource company
      */
     static Company findResourceCompany(Company company, Map<String, Company> resourceCompanyMap) {
-        for (LocaleItem localItem : company.getName()) {
-            Company resourceCompany = resourceCompanyMap.get(localItem.getText().toLowerCase());
-
-            if (resourceCompany != null) {
-                return resourceCompany;
-            }
-        }
-
-        return null;
+        return company.getName().stream()
+                .map(localItem -> resourceCompanyMap.get(localItem.getText().toLowerCase()))
+                .filter(Objects::nonNull)
+                .findFirst()
+                .orElse(null);
     }
 
     /**
