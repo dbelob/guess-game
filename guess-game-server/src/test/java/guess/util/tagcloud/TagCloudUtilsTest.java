@@ -10,6 +10,7 @@ import com.kennycason.kumo.palette.ColorPalette;
 import guess.dao.exception.WrapperRuntimeException;
 import guess.domain.Language;
 import guess.domain.source.LocaleItem;
+import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 import guess.domain.tagcloud.SerializedWordFrequency;
 import guess.util.LocalizationUtils;
@@ -152,6 +153,50 @@ class TagCloudUtilsTest {
         };
 
         assertDoesNotThrow(() -> TagCloudUtils.getTalkText(new Talk()));
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("getSpeakerStopWords method tests")
+    class GetSpeakerStopWordsTest {
+        private Stream<Arguments> data() {
+            final String FIRST_NAME0 = "First0";
+            final String LAST_NAME0 = "Last0";
+            final String FIRST_NAME1 = "First1";
+            final String LAST_NAME1 = "Last1";
+
+            Speaker speaker0 = new Speaker();
+            speaker0.setName(List.of(
+                    new LocaleItem(Language.ENGLISH.getCode(), String.format("%s %s", FIRST_NAME0, LAST_NAME0))
+            ));
+
+            Speaker speaker1 = new Speaker();
+            speaker1.setName(List.of(
+                    new LocaleItem(Language.ENGLISH.getCode(), String.format("%s %s", FIRST_NAME0, LAST_NAME0)),
+                    new LocaleItem(Language.RUSSIAN.getCode(), String.format("%s %s", FIRST_NAME1, LAST_NAME1))
+            ));
+
+            Speaker speaker2 = new Speaker();
+            speaker2.setName(List.of(
+                    new LocaleItem(Language.ENGLISH.getCode(), String.format("%s %s", FIRST_NAME0, LAST_NAME0)),
+                    new LocaleItem(Language.RUSSIAN.getCode(), "")
+            ));
+
+            return Stream.of(
+                    arguments(speaker0, List.of(FIRST_NAME0.toLowerCase(), LAST_NAME0.toLowerCase())),
+                    arguments(speaker1, List.of(FIRST_NAME0.toLowerCase(), LAST_NAME0.toLowerCase(),
+                            FIRST_NAME1.toLowerCase(), LAST_NAME1.toLowerCase())),
+                    arguments(speaker2, List.of(FIRST_NAME0.toLowerCase(), LAST_NAME0.toLowerCase()))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void getSpeakerStopWords(Speaker speaker, List<String> expected) {
+            List<String> actual = TagCloudUtils.getSpeakerStopWords(speaker);
+
+            assertTrue(expected.containsAll(actual) && actual.containsAll(expected));
+        }
     }
 
     @Nested

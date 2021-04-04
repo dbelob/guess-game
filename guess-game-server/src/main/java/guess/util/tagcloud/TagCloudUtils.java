@@ -10,6 +10,8 @@ import com.kennycason.kumo.nlp.normalize.CharacterStrippingNormalizer;
 import com.kennycason.kumo.palette.ColorPalette;
 import guess.dao.exception.WrapperRuntimeException;
 import guess.domain.Language;
+import guess.domain.source.LocaleItem;
+import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 import guess.domain.tagcloud.SerializedWordFrequency;
 import guess.util.LocalizationUtils;
@@ -105,6 +107,22 @@ public class TagCloudUtils {
      */
     public static String getTalkText(Talk talk) {
         return getTalkText(talk, Language.getLanguageByCode(talk.getLanguage()));
+    }
+
+    /**
+     * Gets speaker stop words.
+     *
+     * @param speaker speaker
+     * @return speaker stop words
+     */
+    public static List<String> getSpeakerStopWords(Speaker speaker) {
+        return speaker.getName().stream()
+                .map(LocaleItem::getText)
+                .map(name -> name.toLowerCase().split(" "))
+                .map(Arrays::asList)
+                .flatMap(Collection::stream)
+                .filter(s -> !s.isEmpty())
+                .collect(Collectors.toList());
     }
 
     /**
