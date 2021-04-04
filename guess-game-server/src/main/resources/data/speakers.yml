@@ -12807,7 +12807,7 @@ speakers:
     photoFileName: 0914.jpg
     name:
       - {language: en, text: "Evgeny Kudelevsky"}
-      - {language: ru, text: "﻿Евгений Куделевский"}
+      - {language: ru, text: "Евгений Куделевский"}
     companyIds: [286]
     bio:
       - {language: ru, text: "Работает разработчиком в компании JetBrains с 2008 года. Занимался разработкой Android-плаги\
@@ -12817,7 +12817,7 @@ speakers:
     photoFileName: 0915.jpg
     name:
       - {language: en, text: "Renat Nyazhemetdinov"}
-      - {language: ru, text: "﻿Ренат Няжеметдинов"}
+      - {language: ru, text: "Ренат Няжеметдинов"}
     companyIds: [457]
     bio:
       - {language: ru, text: "В прошлом разработчик приложений на C/C++, эксперт по встраиваемым системам и информационной\
@@ -12828,7 +12828,7 @@ speakers:
     photoFileName: 0916.jpg
     name:
       - {language: en, text: "Nikita Timofeev"}
-      - {language: ru, text: "﻿Никита Тимофеев"}
+      - {language: ru, text: "Никита Тимофеев"}
     companyIds: [321]
     bio:
       - {language: ru, text: "С 2012 года Технический директор студии разработки игр Mail.ru Group в Санкт-Петербурге. В и\
