@@ -49,20 +49,24 @@ class QuestionDaoImplTest {
 
         speaker0 = new Speaker();
         speaker0.setId(0);
+        speaker0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
         speaker0.setCompanies(List.of(company0));
 
         speaker1 = new Speaker();
         speaker1.setId(1);
+        speaker1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
         speaker1.setTwitter("twitter1");
         speaker1.setGitHub("");
 
         speaker2 = new Speaker();
         speaker2.setId(2);
+        speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name2")));
         speaker2.setTwitter("");
         speaker2.setGitHub("gitHub2");
 
         speaker3 = new Speaker();
         speaker3.setId(3);
+        speaker3.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name3")));
         speaker3.setTwitter("");
         speaker3.setGitHub("");
 

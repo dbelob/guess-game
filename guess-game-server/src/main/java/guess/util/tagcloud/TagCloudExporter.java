@@ -3,7 +3,10 @@ package guess.util.tagcloud;
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
-import guess.domain.source.*;
+import guess.domain.source.Event;
+import guess.domain.source.EventType;
+import guess.domain.source.SourceInformation;
+import guess.domain.source.Talk;
 import guess.util.FileUtils;
 import guess.util.LocalizationUtils;
 import guess.util.yaml.YamlUtils;
@@ -14,7 +17,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Tag cloud exporter.
@@ -78,15 +84,9 @@ public class TagCloudExporter {
             }
 
             // Talk stop words
-            if (talk.getSpeakers().size() == 1) {
-                Speaker speaker = talk.getSpeakers().get(0);
-
-                speaker.getName().stream()
-                        .map(LocaleItem::getText)
-                        .map(name -> name.toLowerCase().split(" "))
-                        .map(Arrays::asList)
-                        .forEach(talkStopWords::addAll);
-            }
+            talk.getSpeakers().stream()
+                    .map(TagCloudUtils::getSpeakerStopWords)
+                    .forEach(talkStopWords::addAll);
         }
 
         save(conferenceSb.toString(), commonFileName);
@@ -107,5 +107,6 @@ public class TagCloudExporter {
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException {
 //        exportAllEvents();
 //        exportTalksAndConference(Conference.JOKER, LocalDate.of(2020, 11, 25));
+//        exportTalksAndConference(Conference.JPOINT, LocalDate.of(2021, 4, 13));
     }
 }

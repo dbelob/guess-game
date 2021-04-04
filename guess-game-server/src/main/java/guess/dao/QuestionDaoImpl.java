@@ -7,7 +7,6 @@ import guess.domain.source.Company;
 import guess.domain.source.Event;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
-import guess.util.LocalizationUtils;
 import guess.util.QuestionUtils;
 import guess.util.tagcloud.TagCloudUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,12 +88,9 @@ public class QuestionDaoImpl implements QuestionDao {
                             speakerTalkTextMap.get(s).entrySet().stream()
                                     .collect(Collectors.toMap(
                                             Map.Entry::getKey,
-                                            e -> {
-                                                String name = LocalizationUtils.getString(s.getName(), e.getKey());
-                                                String[] words = name.toLowerCase().split(" ");
-
-                                                return TagCloudUtils.getWordFrequenciesByText(e.getValue().toString(), Arrays.asList(words));
-                                            }
+                                            e -> TagCloudUtils.getWordFrequenciesByText(
+                                                    e.getValue().toString(),
+                                                    TagCloudUtils.getSpeakerStopWords(s))
                                     ))
                     ))
                     .collect(Collectors.toList());
