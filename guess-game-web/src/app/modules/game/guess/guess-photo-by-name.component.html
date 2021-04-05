@@ -12,16 +12,16 @@
 
   <p class="h3 text-center mt-3 mb-4">{{namePhotos.name}}</p>
   <div class="text-center">
-    <input type="image" alt="photo1" class="img-thumbnail m-1 img-guess-photo-by-name"
+    <input type="image" alt="photo1" class="img-thumbnail m-1 img-guess-photo-by-name remove-focus"
            [class.btn-danger]="namePhotos.invalid0" [disabled]="namePhotos.invalid0"
            (click)="answer(namePhotos.id0)" src="{{imageSource0}}"/>
-    <input type="image" alt="photo2" class="img-thumbnail m-1 img-guess-photo-by-name"
+    <input type="image" alt="photo2" class="img-thumbnail m-1 img-guess-photo-by-name remove-focus"
            [class.btn-danger]="namePhotos.invalid1" [disabled]="namePhotos.invalid1"
            (click)="answer(namePhotos.id1)" src="{{imageSource1}}"/>
-    <input type="image" alt="photo3" class="img-thumbnail m-1 img-guess-photo-by-name"
+    <input type="image" alt="photo3" class="img-thumbnail m-1 img-guess-photo-by-name remove-focus"
            [class.btn-danger]="namePhotos.invalid2" [disabled]="namePhotos.invalid2"
            (click)="answer(namePhotos.id2)" src="{{imageSource2}}"/>
-    <input type="image" alt="photo4" class="img-thumbnail m-1 img-guess-photo-by-name"
+    <input type="image" alt="photo4" class="img-thumbnail m-1 img-guess-photo-by-name remove-focus"
            [class.btn-danger]="namePhotos.invalid3" [disabled]="namePhotos.invalid3"
            (click)="answer(namePhotos.id3)" src="{{imageSource3}}"/>
   </div>
