@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LanguageSwitcherComponent } from './language-switcher.component';
 import { FormsModule } from '@angular/forms';
+import { LanguageSwitcherComponent } from './language-switcher.component';
+import { FocusRemoverDirective } from './focus-remover.directive';
 
 @NgModule({
   declarations: [
+    FocusRemoverDirective,
     LanguageSwitcherComponent
   ],
   imports: [
@@ -12,6 +14,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   exports: [
+    FocusRemoverDirective,
     LanguageSwitcherComponent
   ]
 })
