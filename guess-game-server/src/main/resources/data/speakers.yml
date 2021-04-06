@@ -5691,7 +5691,8 @@ speakers:
     companyIds: []
     bio:
       - {language: en, text: "Alex is data infrastructure engineer, database and storage systems enthusiast, Apache Cassandra\
-            \ committer and PMC member, interested in storage, distributed systems and algorithms."}
+            \ committer and PMC member, interested in storage, distributed systems and algorithms. Currently writing the Database\
+            \ Internals books with O'Reilly."}
     twitter: ifesdjeen
   - id: 394
     photoFileName: 0394.jpg
