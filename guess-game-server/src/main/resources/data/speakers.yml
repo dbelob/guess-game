@@ -11133,27 +11133,28 @@ speakers:
     habr: dydus0x14
   - id: 788
     photoFileName: 0788.jpg
+    photoUpdatedAt: 2021-03-11T12:28:19.905Z[UTC]
     name:
       - {language: en, text: "Vyacheslav Tarasov"}
       - {language: ru, text: "Вячеслав Тарасов"}
-    companyIds: [193]
+    companyIds: [726]
     bio:
       - language: en
-        text: "CTO at Expload. For 6 years Vyacheslav has been giving lectures in operational systems at the university. He\
-            \ once used to be C++ and parallel computing fan. Previously he worked as a lead engineer/developer/tester in\
-            \ the Prisma project, adapting it for new (at that moment) NPU Kirin chips. He had to master Android for ML tasks\
-            \ and GPGPU, OpenGL, OpenCL, Vulcan parallel computing.\n\nFor the last 6 months Vyacheslav has been developing\
-            \ a streaming mobile app.\n\nIt doesn't really matter for him how complex the task is. He can properly coordinate\
+        text: "CTO at Arenum. For 6 years Vyacheslav has been reading lectures about operational systems at the university.\
+            \ He used to be C++ and parallel computing fan. Previously he worked as a lead engineer/developer/tester in the\
+            \ Prisma project, adapting it for new (at that moment) NPU Kirin chips. He had to master Android for ML tasks\
+            \ and GPGPU, OpenGL, OpenCL, Vulcan parallel computing.\r\n\r\nFor the last 6 months Vyacheslav has been developing\
+            \ a streaming mobile app.\r\n\r\nIt doesn't really matter for him how complex the task is. He can properly coordinate\
             \ and polish any project. He likes deadlines and sleepless nights. In emergency cases he can make wonders with\
             \ a couple of liters of orange juice."
       - language: ru
-        text: "CTO в Expload. Уже 6 лет преподает операционные системы в университете. Когда-то был поклонником С++ и пара\
-            ллельных вычислений. В прошлом работал ведущим инженером-программистом-тестировщиком в проекте Prisma. Участво\
-            вал в адаптации Prisma под новые на тот момент NPU-чипы Kirin. Пришлось разобраться с Android под задачи ML, п\
-            араллельные вычисления GPGPU, OpenGL, OpenCL, Vulcan.\n\nВ последние полгода трудится над созданием мобильного\
-            \ приложения для ведения стримов.\n\nСложность задачи не имеет значения. Способен любой проект правильно скоор\
-            динировать и довести до состояния конфетки. Любит дедлайны и бессонные ночи. В экстренных ситуациях за пару ли\
-            тров апельсинового сока может творить чудеса."
+        text: "CTO в Arenum. Уже 6 лет преподает операционные системы в университете. Когда-то был поклонником С++ и парал\
+            лельных вычислений. В прошлом работал ведущим инженером-программистом-тестировщиком в проекте Prisma. Участвов\
+            ал в адаптации Prisma под новые на тот момент NPU-чипы Kirin. Пришлось разобраться с Android под задачи ML, па\
+            раллельные вычисления GPGPU, OpenGL, OpenCL, Vulcan.\n\nПоследние полгода трудится над созданием мобильного пр\
+            иложения для ведения стримов.\n\nСложность задачи не имеет значения. Способен правильно скоординировать и дове\
+            сти до состояния конфетки любой проект. Любит дедлайны и бессонные ночи. В экстренных ситуациях за пару литров\
+            \ апельсинового сока может творить чудеса."
   - id: 789
     photoFileName: 0789.jpg
     name:
