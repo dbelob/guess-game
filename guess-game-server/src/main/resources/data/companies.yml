@@ -2276,3 +2276,6 @@ companies:
   - id: 725
     name:
       - {language: en, text: SoftwareGarden.dev}
+  - id: 726
+    name:
+      - {language: en, text: Arenum}
