@@ -2279,3 +2279,77 @@ companies:
   - id: 726
     name:
       - {language: en, text: Arenum}
+  - id: 727
+    name:
+      - {language: en, text: "OnTarget Group, Inc."}
+  - id: 728
+    name:
+      - {language: en, text: Accenture}
+  - id: 729
+    name:
+      - {language: en, text: Sportmaster}
+      - {language: ru, text: Спортмастер}
+  - id: 730
+    name:
+      - {language: en, text: Arrival}
+  - id: 731
+    name:
+      - {language: en, text: Lineate}
+  - id: 732
+    name:
+      - {language: en, text: Werkspot}
+  - id: 733
+    name:
+      - {language: en, text: "MetaCall OÜ"}
+  - id: 734
+    name:
+      - {language: en, text: ClauseMatch}
+  - id: 735
+    name:
+      - {language: en, text: resume.io}
+  - id: 736
+    name:
+      - {language: en, text: Deltatre}
+  - id: 737
+    name:
+      - {language: en, text: "OpenSoft Inc"}
+  - id: 738
+    name:
+      - {language: en, text: SpurIT}
+  - id: 739
+    name:
+      - {language: en, text: "ECOMMPAY IT"}
+  - id: 740
+    name:
+      - {language: en, text: UBS}
+  - id: 741
+    name:
+      - {language: en, text: "Involved NV"}
+  - id: 742
+    name:
+      - {language: en, text: "Hibernating Rhinos"}
+  - id: 743
+    name:
+      - {language: en, text: SoftPro}
+  - id: 744
+    name:
+      - {language: en, text: "Vevy Europe"}
+  - id: 745
+    name:
+      - {language: en, text: "Active Solution"}
+  - id: 746
+    name:
+      - {language: en, text: "Uno Platform"}
+  - id: 747
+    name:
+      - {language: en, text: "ServiceTitan, Inc."}
+  - id: 748
+    name:
+      - {language: en, text: Invent}
+  - id: 749
+    name:
+      - {language: en, text: Monopoly}
+      - {language: ru, text: "ГК Монополия"}
+  - id: 750
+    name:
+      - {language: en, text: "Orbital Express"}
