@@ -22070,3 +22070,52 @@ speakers:
             \ Lead developer, trainer, and conference speaker. In his talks, Piotr covers not only hardcore Java but also\
             \ software architecture, computer security, and soft-skills."}
     twitter: piotrprz
+  - id: 1603
+    photoFileName: 1603.jpg
+    photoUpdatedAt: 2021-04-06T08:56:17.039Z[UTC]
+    name:
+      - {language: en, text: "Evgeny Zavalov"}
+      - {language: ru, text: "Евгений Завалов"}
+    companyIds: []
+    bio:
+      - {language: en, text: "Lecturer at the E-sports Department. Founder of several e-sports centers. Held over 160 tournaments\
+            \ with a total number of participants over 200k. Included in the top 100 e-sports personalities in the Russian\
+            \ Federation."}
+      - {language: ru, text: "Преподаватель на кафедре киберспорта (Менеджмент киберспортивных событий в игровой индустрии\
+            \ и киберспорте). Основатель нескольких киберспортивных центров. Провёл более 160 турниров с суммарным количес\
+            твом участников более 200к. Входит в топ 100 личностей киберспорта в РФ."}
+  - id: 1604
+    photoFileName: 1604.jpg
+    photoUpdatedAt: 2021-04-07T07:59:35.215Z[UTC]
+    name:
+      - {language: en, text: "Eduard Gurinovich"}
+      - {language: ru, text: "Эдуард Гуринович"}
+    companyIds: []
+    bio:
+      - language: en
+        text: "Co-founder of CarPrice, which raised $60 million from key industry investors in Eastern Europe and Asia.\n\
+            Co-founder of CarMoney, the largest online car pawnshop in Russia.\nEduard is included in the Forbes 2019 30 under\
+            \ 30 list as a venture investor."
+      - language: ru
+        text: "Cо-основатель CarPrice, которая привлекла 60 миллионов долларов от ключевых отраслевых инвесторов в Восточн\
+            ой Европе и Азии. \nCо-основатель CarMoney — крупнейшего онлайн автоломбарда в России.\nЭдуард входит в список\
+            \ 30 under 30 по версии журнала Forbes 2019 как венчурный инвестор."
+  - id: 1605
+    photoFileName: 1605.jpg
+    photoUpdatedAt: 2021-03-12T08:02:48.965Z[UTC]
+    name:
+      - {language: en, text: "Yury Dubovoy"}
+      - {language: ru, text: "Юрий Дубовой"}
+    companyIds: []
+    bio:
+      - {language: en, text: "In mobile development since 2010. For several years he fought with C++ in game development,\
+            \ then switched to classic applied projects, where he developed marketplaces, instant messengers, publishing services,\
+            \ fintech solutions and much more. Now he makes a chess service, and also consults startups, helping them avoid\
+            \ numerous gotchas. His free time he spends with his family and dog, and at night in the carpentry shop, he develops\
+            \ a smart digital guitar."}
+      - {language: ru, text: "В мобильной разработке с 2010 года. Несколько лет боролся с С++ в геймдеве, затем переключил\
+            ся на классические прикладные проекты, где разрабатывал торговые площадки, мессенджеры, издательские сервисы,\
+            \ финтех-решения и многое другое. Сейчас пилит шахматный сервис, а также консультирует стартапы, помогая им из\
+            бежать многочисленных граблей, на которые наступил сам. Свободное время проводит с семьей и собакой, а по ноча\
+            м в столярной мастерской, где разрабатывает умную цифровую гитару."}
+    twitter: Yury_Dubovoy
