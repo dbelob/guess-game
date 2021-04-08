@@ -303,6 +303,18 @@ events:
     placeId: 24
     talkIds: [2798, 2799, 2800, 2801, 2802, 2831, 2803, 2804, 2805, 2832, 2807, 2808, 2809, 2810, 2811, 2812, 2813, 2814,
               2833, 2815, 2816, 2817, 2818, 2819, 2820, 2821, 2822, 2823, 2824, 2825, 2826, 2827, 2828, 2829, 2830, 2834]
+  - eventTypeId: 2
+    name:
+      - {language: en, text: "DotNext 2021 SPb"}
+      - {language: ru, text: "DotNext 2021 СПб"}
+    startDate: "2021-04-20"
+    endDate: "2021-04-23"
+    siteLink:
+      - {language: ru, text: "https://dotnext-piter.ru/"}
+    youtubeLink: https://live.jugru.org/events/dotnext/
+    placeId: 24
+    talkIds: [3062, 3063, 3064, 3065, 3066, 3067, 3068, 3069, 3070, 3071, 3072, 3073, 3074, 3075, 3076, 3077, 3078, 3079,
+              3080, 3081, 3082, 3083, 3084, 3085, 3086, 3087, 3088, 3089, 3090, 3091, 3092]
   # Heisenbug
   - eventTypeId: 3
     name:

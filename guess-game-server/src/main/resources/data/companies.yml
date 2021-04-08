@@ -2319,3 +2319,37 @@ companies:
   - id: 739
     name:
       - {language: en, text: "ECOMMPAY IT"}
+  - id: 740
+    name:
+      - {language: en, text: UBS}
+  - id: 741
+    name:
+      - {language: en, text: "Involved NV"}
+  - id: 742
+    name:
+      - {language: en, text: "Hibernating Rhinos"}
+  - id: 743
+    name:
+      - {language: en, text: SoftPro}
+  - id: 744
+    name:
+      - {language: en, text: "Vevy Europe"}
+  - id: 745
+    name:
+      - {language: en, text: "Active Solution"}
+  - id: 746
+    name:
+      - {language: en, text: "Uno Platform"}
+  - id: 747
+    name:
+      - {language: en, text: "ServiceTitan, Inc."}
+  - id: 748
+    name:
+      - {language: en, text: Invent}
+  - id: 749
+    name:
+      - {language: en, text: Monopoly}
+      - {language: ru, text: "ГК Монополия"}
+  - id: 750
+    name:
+      - {language: en, text: "Orbital Express"}

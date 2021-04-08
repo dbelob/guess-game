@@ -5862,15 +5862,17 @@ speakers:
     twitter: chnasarre
   - id: 406
     photoFileName: 0406.jpg
+    photoUpdatedAt: 2018-08-30T08:58:56.656Z[UTC]
     name:
       - {language: en, text: "Pavel Yosifovich"}
-    companyIds: [55]
+    companyIds: []
     bio:
       - {language: en, text: "Pavel Yosifovich is a developer, trainer author and speaker. He's the co-author of \"Windows\
             \ Internals 7th edition Part 1\" (2017), author of \"WPF 4.5 Cookbook\" (2012) and \"Windows Kernel Programming\"\
             \ (2019). Pavel is also a former MVP and a Pluralsight author. He can be reached at zodiacon@live.com or through\
             \ his <a href=\"http://blogs.microsoft.co.il/pavely\" target=\"_blank\">blog</a>."}
     twitter: zodiacon
+    gitHub: zodiacon
   - id: 407
     photoFileName: 0407.jpg
     photoUpdatedAt: 2020-05-26T11:23:48.405Z[UTC]
@@ -5909,15 +5911,15 @@ speakers:
     photoUpdatedAt: 2018-09-24T12:08:27.281Z[UTC]
     name:
       - {language: en, text: "Raffaele Rialdi"}
-    companyIds: [572]
+    companyIds: [744]
     bio:
-      - {language: en, text: "Raffaele Rialdi is a senior Software Architect working as a consultant, speaker, and trainer.\
-            \ Since 2003, he is a Microsoft MVP in the Developer Security category. His passion for the community brought\
-            \ him to be a member of the board of UGIdotNET, president of DotNetLiguria, and co-founder of the Italian C++\
-            \ user group. He is currently working as an architect and developer on the backend of an enterprise project with\
-            \ a specific focus on code generation and working on cross-platform mobile and IoT development in both C# and\
-            \ C++ languages."}
+      - {language: en, text: "Raffaele Rialdi is a senior Software Architect working as a consultant, speaker and trainer.\
+            \ Since 2003, he is a Microsoft MVP in the Developer category. He is collaborating with many communities in the\
+            \ .NET and C++ space, and is the president of DotNetLiguria. He is currently working as an architect and developer\
+            \ on the backend of an enterprise project with a specific focus on code generation and working on cross-platform\
+            \ mobile and IoT development in both C# and C++ languages."}
     twitter: raffaeler
+    gitHub: raffaeler
     mvp: true
   - id: 410
     photoFileName: 0410.jpg
@@ -5931,17 +5933,25 @@ speakers:
     twitter: matkoch87
   - id: 411
     photoFileName: 0411.jpg
+    photoUpdatedAt: 2019-03-14T08:21:27.594Z[UTC]
     name:
       - {language: en, text: "Edwin van Wijk"}
     companyIds: [261]
     bio:
       - language: en
         text: "Edwin has been working in IT since 1999 and is currently working as Principal Software Architect and Microsoft\
-            \ Community lead at Info Support in the Netherlands. He's a Microsoft MVP in the Developer Technologies category.\
-            \ \n\nHis primary areas of expertise are: building distributed systems, systems integration, (web-scale) software\
+            \ Community lead at Info Support in the Netherlands. He's a Microsoft MVP in the Developer Technologies category.\n\
+            \nHis primary areas of expertise are: building distributed systems, systems integration, (web-scale) software\
+            \ architecture and patterns, software craftsmanship, .NET (Core) development, Azure and DevOps. Edwin likes sharing\
+            \ his knowledge about these subjects by publishing videos and speaking on events."
+      - language: ru
+        text: "Edwin has been working in IT since 1999 and is currently working as Principal Software Architect and Microsoft\
+            \ Community lead at Info Support in the Netherlands. He's a Microsoft MVP in the Developer Technologies category.\r\
+            \n\r\nHis primary areas of expertise are: building distributed systems, systems integration, (web-scale) software\
             \ architecture and patterns, software craftsmanship, .NET (Core) development, Azure and DevOps. Edwin likes sharing\
             \ his knowledge about these subjects by publishing videos and speaking on events."
     twitter: evanwijk
+    gitHub: EdwinVW
     mvp: true
   - id: 412
     photoFileName: 0412.jpg
@@ -6031,14 +6041,16 @@ speakers:
     mvp: true
   - id: 417
     photoFileName: 0417.jpg
+    photoUpdatedAt: 2018-10-20T06:13:58.432Z[UTC]
     name:
       - {language: en, text: "Kevin Gosse"}
-    companyIds: [121]
+    companyIds: [698]
     bio:
       - {language: en, text: "Kevin Gosse has been using Microsoft .NET technologies for 15 years, across client, server,\
-            \ and mobile applications. He is currently employed at Criteo, where he works on scalability, debugging, and optimization\
-            \ issues."}
+            \ and mobile applications. He is currently employed at Datadog, where he works on scalability, debugging, and\
+            \ optimization issues."}
     twitter: kookiz
+    gitHub: kevingosse
   - id: 418
     photoFileName: 0418.jpg
     name:
@@ -6495,9 +6507,10 @@ speakers:
     twitter: ICooper
   - id: 450
     photoFileName: 0450.jpg
+    photoUpdatedAt: 2019-05-16T14:50:40.859Z[UTC]
     name:
       - {language: en, text: "Federico Lois"}
-    companyIds: [113]
+    companyIds: [742]
     bio:
       - {language: en, text: "Federico is a cofounder of Corvalius, a R&D company, and of Codealike, a Developer Analytics\
             \ company. He has been working on algorithmic performance for the last 10 years, both with CPU and specialized\
@@ -6505,6 +6518,7 @@ speakers:
             \ He enjoys reading in binary and tinkering with registers and caches. Among his technology interests are highly\
             \ distributed systems, massively parallel technology, low-level optimization and high-performance computer graphics."}
     twitter: federicolois
+    gitHub: redknightlois
   - id: 451
     photoFileName: 0451.jpg
     photoUpdatedAt: 2019-06-14T12:33:53.172Z[UTC]
@@ -6626,21 +6640,18 @@ speakers:
     mvp: true
   - id: 459
     photoFileName: 0459.jpg
+    photoUpdatedAt: 2018-04-12T12:33:47.400Z[UTC]
     name:
       - {language: en, text: "Vitaly Egorov"}
       - {language: ru, text: "Виталий Егоров"}
-    companyIds: [658]
+    companyIds: [750]
     bio:
-      - {language: en, text: "Public relations specialist at Dauria Aerospace, Russian private space company. Blogs under\
-            \ Zelenyikot nickname, popularizes astronautics in the internet. Founded \"Open space\" community, which now has\
-            \ over 1 million subscribers. In 2013 managed to find a lander of the Soviet unmanned space probe \"Mars-3\" on\
-            \ the Mars surface. Initiated the project of creation of a lunar microsatellite for shooting \"Apollo\" and \"\
-            Rovers\" landing places."}
-      - {language: ru, text: "Специалист по связям с общественностью российской частной космической компании Dauria Aerospace.\
-            \ Блогер Zelenyikot, популяризатор космонавтики в интернете, основатель сообществ «Открытый космос» в соцсетях\
-            \ суммарным количеством более 1 млн подписчиков. В 2013 году сумел обнаружить на поверхности Марса посадочный\
-            \ модуль советской автоматической межпланетной станции «Марс-3». Инициатор проекта создания лунного микроспутн\
-            ика для съемки мест посадок «Аполлонов» и «Луноходов»."}
+      - {language: en, text: "Space enthusiast, blogger Zelenyikot, founder of the Space Live community and co-founder of\
+            \ Orbital Express. The author of the book \"People on the Moon. The main answers\"."}
+      - {language: ru, text: "Популяризатор космонавтики, блогер Zelenyikot, основатель сообщества «Открытый космос» и соо\
+            снователь компании «Орбитальный Экспресс». Автор книги «Люди на Луне. Главные ответы»."}
+    twitter: Zelenyikoteyka
+    habr: Zelenyikot
   - id: 460
     photoFileName: 0460.jpg
     name:
@@ -6877,15 +6888,17 @@ speakers:
     twitter: kulakovt
   - id: 474
     photoFileName: 0474.jpg
+    photoUpdatedAt: 2021-03-12T09:02:19.618Z[UTC]
     name:
       - {language: en, text: "Roland Guijt"}
-    companyIds: [428]
+    companyIds: []
     bio:
       - {language: en, text: "Roland is a Microsoft MVP enjoying a constant curiosity around new techniques in software development.\
-            \ His focus is on all things .NET and browser technologies. As a long-time trainer, he led many courses on these\
-            \ topics and spoke about them at international conferences. He also travels around the globe to offer his self-developed\
-            \ workshops. The word that comes to mind when he thinks about software development is passion!"}
+            \ His focus is on all things .NET and browser technologies. As a long-time trainer, he leads many courses on these\
+            \ topics and speaks about them at international conferences. He is also a well-known Pluralsight author. The word\
+            \ that comes to mind when he thinks about software development is a passion!"}
     twitter: rolandguijt
+    gitHub: RolandGuijt
     mvp: true
   - id: 475
     photoFileName: 0475.jpg
@@ -7212,18 +7225,18 @@ speakers:
     habr: EngineerSpock
   - id: 495
     photoFileName: 0495.jpg
+    photoUpdatedAt: 2021-03-01T08:51:28.174Z[UTC]
     name:
       - {language: en, text: "Karlen Simonyan"}
       - {language: ru, text: "Карлен Симонян"}
-    companyIds: [318]
+    companyIds: [740]
     bio:
-      - {language: en, text: "Senior developer at Luxoft, involved in distributed applications engineering. Karlen blogs and\
-            \ posts articles on Habr about the .NET platform using nickname szKarlen. Author of atomics.net, beginning WebKit\
-            \ project committer and fork maintainer."}
-      - {language: ru, text: "Карлен — старший разработчик в компании Luxoft, занимается распределёнными приложениями. Пиш\
-            ет о платформе .NET в блоге и на Хабре под ником szKarlen. Автор atomics.net, начинающий WebKit-коммиттер и ме\
-            йнтейнер форка."}
+      - {language: en, text: "Karlen is a lead software engineer at IAM engineering in UBS, where he is building internal\
+            \ toolkits, APIs and frameworks around IAM tools. Author of atomics.net."}
+      - {language: ru, text: "Карлен является ведущим разработчиком в отделе IAM в компании UBS, где он занимается создани\
+            ем приложений, API и фреймворков для внутреннего пользования."}
     twitter: szKarlen
+    gitHub: szKarlen
     habr: szKarlen
   - id: 496
     photoFileName: 0496.jpg
@@ -7238,10 +7251,11 @@ speakers:
             \ a tinkerer with a passion for new technologies, new ideas, and coding in general, creating lots of different\
             \ pet projects along the way."}
       - language: ru
-        text: "Fullstack-разработчик с большим опытом работы над приложениями и распределенными системами. На данный работ\
-            ает в компании Gigya-SAP над масштабной распределенной системой.\n\nВ свободное время любит экспериментировать\
-            , исследовать новые идеи и технологии — чем сложнее задача, тем интереснее."
+        text: "Full-stack-разработчик с большим опытом работы над приложениями и распределенными системами. На данный рабо\
+            тает в компании Gigya-SAP над масштабной распределенной системой.\n\nВ свободное время любит экспериментироват\
+            ь, исследовать новые идеи и технологии — чем сложнее задача, тем интереснее."
     twitter: Myarichuk
+    gitHub: myarichuk
   - id: 497
     photoFileName: 0497.jpg
     name:
@@ -7255,7 +7269,7 @@ speakers:
     twitter: gfraiteur
   - id: 498
     photoFileName: 0498.jpg
-    photoUpdatedAt: 2020-01-16T09:27:25.204Z[UTC]
+    photoUpdatedAt: 2021-02-19T08:41:23.368Z[UTC]
     name:
       - {language: en, text: "Vagif Abilov"}
       - {language: ru, text: "Вагиф Абилов"}
@@ -7268,6 +7282,8 @@ speakers:
             \ десятилетий. В настоящее время он занимается разработками систем на F# и C#. Вагиф часто выступает на конфер\
             енциях, принимает участие в опенсорс-проектах и поддерживает Simple.OData.Client."}
     twitter: ooobject
+    gitHub: object
+    habr: VagifAbilov
   - id: 499
     photoFileName: 0499.jpg
     photoUpdatedAt: 2020-06-13T14:34:42.472Z[UTC]
@@ -7284,17 +7300,22 @@ speakers:
     habr: foto_shooter
   - id: 500
     photoFileName: 0500.jpg
+    photoUpdatedAt: 2016-11-14T15:09:55.553Z[UTC]
     name:
-      - {language: en, text: "Denis Tsvettsih"}
+      - {language: en, text: "Denis Tsvetsikh"}
       - {language: ru, text: "Денис Цветцих"}
-    companyIds: [378]
+    companyIds: [748]
     bio:
-      - {language: en, text: "Denis went the way from .NET developer to project Manager. Area of interest – the Enterprise\
-            \ Applications. He developed XAML application for all platforms using popular and hipster MVVM frameworks. And\
-            \ of course he invented his own MVVM framework :)"}
-      - {language: ru, text: "Прошёл путь от .NET-разработчика до руководителя проектов. Область интересов — кровавый Enterprise\
-            \ dj во всем его многообразии. Разрабатывал XAML-приложения для всех платформ с применением и популярных, и хи\
-            пстерских MVVM-фреймворков, и, конечно, своего собственного MVVM-велосипеда :)"}
+      - language: en
+        text: "Denis has more than 10 years of experience in the development of Enterprise applications using C# and .NET.\
+            \ Now his interests are a software architecture and design patterns. He thinks that the best metaphor for software\
+            \ architecture is not an onion, but an accordion. And that now in community too many discussions about RichModel\
+            \ and DDD and too little about DataAccess and Application.\nDenis is the author of courses about software architecture\
+            \ at Udemy."
+      - {language: ru, text: "Более 10 лет разрабатывает кровавый Enterprise на C# и .NET. Текущая область интересов — арх\
+            итектура и паттерны проектирования. Считает, что лучшая метафора для архитектуры ПО, это не луковица, а баян.\
+            \ И что разговоров о DDD и Rich-модели слишком много, в то время как DataAccess и Application уделяется малова\
+            то внимания."}
   - id: 501
     photoFileName: 0501.jpg
     photoUpdatedAt: 2020-10-14T08:00:57.646Z[UTC]
@@ -13978,8 +13999,8 @@ speakers:
     bio:
       - language: en
         text: "Scott Wlaschin is a developer, architect and author. He is the author of the popular F# site <a href=\"https://fsharpforfunandprofit.com/\"\
-            \ target=\"_blank\">fsharpforfunandprofit.com</a> and the book \"Domain Modeling Made Functional\".\r\n\r\nKnown\
-            \ for his non-academic approach to functional programming, Scott is a popular speaker and has given talks at NDC,\
+            \ target=\"_blank\">fsharpforfunandprofit.com</a> and the book \"Domain Modeling Made Functional\".\n\nKnown for\
+            \ his non-academic approach to functional programming, Scott is a popular speaker and has given talks at NDC,\
             \ F# Exchange, DDD Europe, and other conferences around the world."
     twitter: ScottWlaschin
     gitHub: swlaschin
@@ -14988,17 +15009,26 @@ speakers:
     photoUpdatedAt: 2020-02-03T12:19:48.412Z[UTC]
     name:
       - {language: en, text: "Johnny Hooyberghs"}
-    companyIds: [271]
+    companyIds: [741]
     bio:
       - {language: en, text: "Johnny Hooyberghs is a consultant for Involved since 2014 focusing on .NET architecture and\
             \ backend development. Prior to joining Involved, he has had experience developing software for Corilus since\
             \ 2008. He has been passionate about .NET ever since it was released and his areas of expertise are C#, .NET (Core),\
-            \ WCF, WinForms, WPF, ASP.NET (Core), Entity Framework (Core), Azure and ALM using the Microsoft Stack. Now and\
-            \ then he enjoys doing some web development using JavaScript. Since 2010, Johnny spends some of his free time\
-            \ teaching .NET and C# for the adult education institute CVO Antwerpen. When he's not working or teaching, he\
-            \ likes some casual gaming, scuba diving, learning to play the piano, traveling the world and visiting as many\
+            \ WCF, WinForms, WPF, ASP.NET (Core), Entity Framework (Core), Azure and ALM using the Microsoft Stack. Every\
+            \ now and then he enjoys doing some web development using JavaScript. Since 2010, Johnny spends some of his free\
+            \ time teaching .NET and C# for the adult education institute CVO Antwerpen. When he's not working or teaching,\
+            \ he likes some casual gaming, scuba diving, learning to play the piano, traveling the world and visiting as many\
             \ theme parks as possible."}
+      - {language: ru, text: "Johnny Hooyberghs is a Microsoft MVP and a software Development consultant for Involved since\
+            \ 2014 focusing on .NET architecture and backend development. Prior to joining Involved, he has had experience\
+            \ developing software since 2008. He has been passionate about .NET ever since it was released and his areas of\
+            \ expertise are C#, .NET (Core), WCF, WinForms, WPF, ASP.NET (Core), Entity Framework (Core), Azure and ALM using\
+            \ the Microsoft Stack. Every now and then he enjoys doing some web development using JavaScript. Since 2010, Johnny\
+            \ spends some of his free time teaching .NET and C# for the adult education institute CVO Antwerpen. When he's\
+            \ not working or teaching, he likes some casual gaming, scuba diving, learning to play the piano, travelling the\
+            \ world and visiting as many theme parks as possible."}
     twitter: djohnnieke
+    gitHub: Djohnnie
   - id: 1083
     photoFileName: 1083.jpg
     name:
@@ -15087,12 +15117,13 @@ speakers:
     photoUpdatedAt: 2020-02-06T14:58:17.349Z[UTC]
     name:
       - {language: en, text: "Bartosz Sypytkowski"}
-    companyIds: [158]
+    companyIds: []
     bio:
       - {language: en, text: "An Akka.NET (one of the core team members) and F# consultant. An advocate of OSS and remote\
-            \ work culture. Interested in distributed systems, functional programming, and deep understanding of the goals,\
-            \ means, and proposed solutions."}
+            \ work culture. Interested in distributed systems, functional programming and deep understanding of the goals,\
+            \ means and proposed solutions."}
     twitter: Horusiath
+    gitHub: Horusiath
   - id: 1090
     photoFileName: 1090.jpg
     photoUpdatedAt: 2020-03-03T07:54:18.827Z[UTC]
@@ -22507,3 +22538,210 @@ speakers:
             ваться на чем-то одном. В свободное время пишет игровой движок. Понял, что создавать свои игры интереснее, чем\
             \ играть в чужие."}
     gitHub: michailRemmele
+  - id: 1630
+    photoFileName: 1630.jpg
+    photoUpdatedAt: 2021-03-16T10:22:46.276Z[UTC]
+    name:
+      - {language: en, text: "Stephen Toub"}
+    companyIds: [328]
+    bio:
+      - {language: en, text: "Stephen is a Partner Software Engineer at Microsoft. He’s primarily focused on the libraries\
+            \ that comprise .NET and on improving performance of the entire .NET stack."}
+    twitter: stephentoub
+    gitHub: stephentoub
+  - id: 1631
+    photoFileName: 1631.jpg
+    photoUpdatedAt: 2021-03-12T10:05:39.022Z[UTC]
+    name:
+      - {language: en, text: "Pavel Tupitsyn"}
+      - {language: ru, text: "Павел Тупицын"}
+    companyIds: [224]
+    bio:
+      - language: en
+        text: "Pavel is a .NET developer since 2005, and has a wide range of experience in all areas — web, desktop, gaming.\
+            \ \r\n\r\nFor the last 6 years, he has been developing client network protocols and server-side .NET integrations\
+            \ in Apache Ignite."
+      - {language: ru, text: "Разрабатывает на .NET с 2005. Приходилось делать всё — от бэка, фронта, десктопа и игр до ме\
+            дицинского софта. Последние 6 лет занимается разработкой клиентских сетевых протоколов и .NET-интеграций в Apache\
+            \ Ignite, где является мэйнтейнером и членом PMC (project management committee)."}
+    gitHub: ptupitsyn
+    habr: kefirr
+  - id: 1632
+    photoFileName: 1632.jpg
+    photoUpdatedAt: 2021-03-03T09:44:24.860Z[UTC]
+    name:
+      - {language: en, text: "Oren Eini"}
+    companyIds: [742]
+    bio:
+      - language: en
+        text: "Oren Eini, pseudonym Ayende Rahien, is a frequent blogger at ayende.com has over 20 years of experience in\
+            \ the development world who strongly focuses on the Microsoft and .NET ecosystem. Oren has been recognized and\
+            \ awarded Microsoft's Most Valuable Professional from 2007-2020.\n\nHe's an internationally acclaimed presenter\
+            \ appearing at DevTeach, JAOO, QCon, Oredev, NDC, Yow! and Progressive.NET conferences, sharing his knowledge\
+            \ via conferences and written works such as \"DSLs in Boo: Domain Specific Languages in .NET\", published by Manning\
+            \ and the \"Inside RavenDB\" guide to all things RavenDB.\n\nHe remains dedicated and focused on architecture\
+            \ and best practices that promote quality software and zero-friction development."
+    twitter: ayende
+    gitHub: ayende
+  - id: 1633
+    photoFileName: 1633.jpg
+    photoUpdatedAt: 2021-03-22T08:22:45.970Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Kuznetsov"}
+      - {language: ru, text: "Михаил Кузнецов"}
+    companyIds: [743]
+    bio:
+      - {language: en, text: "Since 2004 he started writing in .NET. Likes to make high-performance scalable systems, create\
+            \ more value for less code."}
+      - {language: ru, text: "С 2004 года начал писать на .NET. Любит делать высоконагруженные масштабируемые системы, соз\
+            давать больше пользы за меньшее количество кода."}
+  - id: 1634
+    photoFileName: 1634.jpg
+    photoUpdatedAt: 2021-03-12T14:19:42.965Z[UTC]
+    name:
+      - {language: en, text: "Igor Shatalkin"}
+      - {language: ru, text: "Игорь Шаталкин"}
+    companyIds: [125]
+    bio:
+      - {language: en, text: "Igor has been interested in programming since school. At the age of 7, he tried to read a book\
+            \ about programming for Windows 95, but only understood the introduction from there. He has been working in IT\
+            \ for more than 15 years. Igor writes in C#, recently he became interested in frontend programming (TypeScript,\
+            \ React)."}
+      - {language: ru, text: "Увлекается программированием со школьной скамьи. В 7 лет пытался прочитать книгу о программи\
+            ровании под Windows 95, но понял оттуда лишь введение. Работает в IT больше 15 лет. Пишет на C#, в последнее в\
+            ремя увлекся программированием для фронта (TypeScript, React)."}
+    gitHub: ishatalkin
+    habr: IgorShatalkin
+  - id: 1635
+    photoFileName: 1635.jpg
+    photoUpdatedAt: 2021-03-16T07:46:44.557Z[UTC]
+    name:
+      - {language: en, text: "Georgy Minashin"}
+      - {language: ru, text: "Георгий Минашин"}
+    companyIds: [125]
+    bio:
+      - {language: en, text: "Georgy Minashin is a certified .NET software developer also experienced in such adjacent areas\
+            \ as JS/TS client-side applications and relational databases. He was graduated cum laude from Bauman MSTU and\
+            \ earned an MCS degree. Nowadays Georgy is working in CUSTIS. As a lead developer, he is involved in projects\
+            \ focused on logistics and accounting."}
+      - {language: ru, text: "Георгий — сертифицированный .NET-разработчик, имеет опыт работы в таких смежных областях, ка\
+            к клиентские приложения JS/TS и реляционные базы данных. С отличием закончил МГТУ им. Н. Э. Баумана, магистр п\
+            о специальности «Информатика и вычислительная техника». Сейчас работает в CUSTIS в качестве ведущего разработч\
+            ика на проектах, связанных с логистикой и учетом."}
+    gitHub: hoborg91
+    habr: hoborg91
+  - id: 1636
+    photoFileName: 1636.jpg
+    photoUpdatedAt: 2021-03-12T11:43:21.556Z[UTC]
+    name:
+      - {language: en, text: "Sander Molenkamp"}
+    companyIds: [261]
+    bio:
+      - {language: en, text: "Sander Molenkamp is principal cloud architect and Microsoft Azure MVP with over 20 years of\
+            \ professional experience. He works for Info Support  designing and developing customer solutions using cloud\
+            \ native architectures. Sander is passionate about community and is co-organizer of the Dutch Azure Meetup and\
+            \ a host on the dotnetFlix podcast."}
+    twitter: amolenk
+    gitHub: amolenk
+    mvp: true
+  - id: 1637
+    photoFileName: 1637.jpg
+    photoUpdatedAt: 2021-04-02T07:55:58.498Z[UTC]
+    name:
+      - {language: en, text: "Chris Klug"}
+    companyIds: [745]
+    bio:
+      - {language: en, text: "Chris Klug is a developer-badass-as-a-service that either creates or solves problems depending\
+            \ on who you ask. He loves creating and building things. Whether it be a new application, a new kitchen or a new\
+            \ RC helicopter, you will see him building things all the time. Most of the time, that means writing code and\
+            \ solving problems for clients at a company called Active Solution in Stockholm though. Except for the many days\
+            \ he spends talking about doing things he is passionate about at conferences and usergroups, and for the days\
+            \ he goes mountain biking, IPSC shooting or kiteboarding."}
+    twitter: zerokoll
+    gitHub: ChrisKlug
+  - id: 1638
+    photoFileName: 1638.jpg
+    photoUpdatedAt: 2021-03-12T09:27:32.669Z[UTC]
+    name:
+      - {language: en, text: "Jérôme Laban"}
+    companyIds: [746]
+    bio:
+      - language: en
+        text: "Being a .NET enthusiast since the early days, Jérôme is dedicated to getting the most out of it and other surrounding\
+            \ technologies.\nHis main objective is to build powerful and innovative .NET software solutions.\nSpecialties:\
+            \ Software Architecture and Development, .NET 2.0/3.0/3.5, WPF, WCF, SQL Server 2005, Oracle 9i/10g, Windows and\
+            \ Unix Network Administration, Bluetooth, DirectX, OpenGL."
+    twitter: jlaban
+    gitHub: jeromelaban
+    mvp: true
+  - id: 1639
+    photoFileName: 1639.jpg
+    photoUpdatedAt: 2021-03-26T07:32:42.258Z[UTC]
+    name:
+      - {language: en, text: "Christos Matskas"}
+    companyIds: [328]
+    bio:
+      - {language: en, text: "Christos Matskas is a software developer, dad, blogger, husband, speaker, and all around geek.\
+            \ He currently works as a Developer Advocate for Microsoft Identity helping developers and teams leverage the\
+            \ power of the identity and cloud. Before joining Microsoft, he was a successful entrepreneur collaborating with\
+            \ companies such as MarkIT, Lockheed Martin and Barclays. He's been building software for over 16 years and he's\
+            \ a passionate Open Source advocate. He contributes regularly to numerous OSS projects and works closely with\
+            \ the developer community to make the space bigger and better."}
+    twitter: ChristosMatskas
+    gitHub: cmatskas
+  - id: 1640
+    photoFileName: 1640.jpg
+    photoUpdatedAt: 2021-03-16T10:44:38.499Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Yakunin"}
+      - {language: ru, text: "Александр Якунин"}
+    companyIds: [747]
+    bio:
+      - language: en
+        text: "Aleksandr is the creator of Fusion — an open source library for .NET and Blazor. He is also the CTO of ServiceTitan,\
+            \ Inc., a company developing the #1 Field Service Platform, which is currently ranked #11 in Forbes Cloud 100.\r\
+            \nPreviously Aleksandr co-authored quora/asynq — a library for asynchronous programming in Python and created\
+            \ one of the first commercial ORM products for .NET — DataObjects.NET."
+      - language: ru
+        text: "Создатель Fusion — опенсорсной библиотеки для .NET и Blazor. CTO ServiceTitan, Inc., компании, разрабатываю\
+            щей сервисную платформу №1, которая входит в топ Forbes Cloud 100 под номером 11.\nРаньше Александр работал на\
+            д библиотекой quora/asynq для асинхронного программирования на Python и создал первый коммерческий ORM-продукт\
+            \ для .NET — DataObjects.NET."
+    twitter: alexyakunin
+    gitHub: alexyakunin
+    habr: alexyakunin
+  - id: 1641
+    photoFileName: 1641.jpg
+    photoUpdatedAt: 2021-03-12T14:11:23.096Z[UTC]
+    name:
+      - {language: en, text: "Philipp Bocharov"}
+      - {language: ru, text: "Филипп Бочаров"}
+    companyIds: [648]
+    bio:
+      - language: en
+        text: "IT Project manager at MTS. He is developing a technological platform that implements the observability of the\
+            \ Company's ecosystem. Promotes and popularizes ideas of observability among product teams.\nCertified Product\
+            \ Owner with over 10 years of experience in development."
+      - language: ru
+        text: "Руководитель проектов по разработке в МТС. Занимается развитием технологической платформы, обеспечивающей н\
+            аблюдаемость экосистемы Компании. Продвигает и популяризирует идеи наблюдаемости среди продуктовых команд. \nС\
+            ертифицированный владелец продукта с опытом в разработке более 10 лет."
+    habr: bocharovf
+  - id: 1642
+    photoFileName: 1642.jpg
+    photoUpdatedAt: 2021-03-01T11:30:29.724Z[UTC]
+    name:
+      - {language: en, text: "Stanislav Flusov"}
+      - {language: ru, text: "Станислав Флусов"}
+    companyIds: [749]
+    bio:
+      - language: en
+        text: ".NET developer interested in performance and memory usage in applications. Stanislav began his career with\
+            \ writing software for modeling X-Ray spectra in complex geometry and then software related to audio processing\
+            \ in real time, where unsafe code was presented.\nFor the last 6 years, he has been developing and designing enterprise\
+            \ applications, where Db-Layer dominates in terms of performance."
+      - language: ru
+        text: "Разработчик .NET, интересующийся темой производительности и использования памяти в приложениях.\nНачинал св\
+            ой путь с написания ПО для моделирования X-Ray спектров в сложной геометрии и далее ПО, связанное с обработкой\
+            \ аудио в реальном времени, где был в обилии представлен unsafe код.\nПоследние 6 лет разрабатывает и проектир\
+            ует enterprise-приложения, где в плане перфоманса доминирует Db-Layer."
