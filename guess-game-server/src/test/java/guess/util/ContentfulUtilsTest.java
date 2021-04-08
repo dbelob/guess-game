@@ -943,6 +943,7 @@ class ContentfulUtilsTest {
                     arguments("http://github.com/inponomarev", null, "inponomarev"),
                     arguments("https://niquola.github.io/blog/", null, "niquola"),
                     arguments("http://niquola.github.io/blog/", null, "niquola"),
+                    arguments("https://github.com/Drill4J/realworld-java-and-js-coverage", null, "Drill4J"),
                     arguments("%", IllegalArgumentException.class, null),
                     arguments("%42", IllegalArgumentException.class, null),
                     arguments("%dougqh", IllegalArgumentException.class, null),

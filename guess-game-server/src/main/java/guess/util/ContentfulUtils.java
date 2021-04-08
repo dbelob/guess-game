@@ -612,6 +612,7 @@ public class ContentfulUtils {
         return extractProperty(value, new ExtractSet(
                 List.of(
                         new ExtractPair("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)(/)?[\\s]*$", 4),
+                        new ExtractPair("^[\\s]*((http(s)?://)?github.com/)?([a-zA-Z0-9\\-]+)/.+$", 4),
                         new ExtractPair("^[\\s]*(http(s)?://)?([a-zA-Z0-9\\-]+).github.io/blog(/)?[\\s]*$", 3)),
                 "Invalid GitHub username: %s (change regular expressions and rerun)"));
     }
