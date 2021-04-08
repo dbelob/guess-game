@@ -21166,10 +21166,10 @@ speakers:
       - {language: ru, text: "Максим Кочетков"}
     companyIds: [643]
     bio:
-      - {language: en, text: "Works in the Mir Plat.Form (NSPK) QA Lead. He has been testing software for a total of a little\
-            \ over 10 years — of which about 7 years in Java automation."}
-      - {language: ru, text: "Работает в Мир Plat.Form (НСПК) QA Lead. Занимается тестированием ПО в общей сложности чуть\
-            \ более 10 лет — из них около 7 лет автоматизацией на Java."}
+      - {language: en, text: "Works in the Mir Plat.Form QA Lead. He has been testing software for a total of a little over\
+            \ 10 years — of which about 7 years in Java automation."}
+      - {language: ru, text: "Работает в Мир Plat.Form QA Lead. Занимается тестированием ПО в общей сложности чуть более 10\
+            \ лет — из них около 7 лет автоматизацией на Java."}
     gitHub: kochetkov-ma
     habr: kochetkov-ma
   - id: 1542
@@ -21233,11 +21233,11 @@ speakers:
     name:
       - {language: en, text: "Dmitry Bormotov"}
       - {language: ru, text: "Дмитрий Бормотов"}
-    companyIds: [706]
+    companyIds: [727]
     bio:
-      - {language: en, text: "Automation QA with experience in various programming languages and frameworks. Tried full-stack\
+      - {language: en, text: "Senior QA Engineer with experience in various programming languages and frameworks. Tried full-stack\
             \ development (React.js on the frontend side, TypeScript/Python on the backend side)."}
-      - {language: ru, text: "Automation QA с опытом автоматизации на различных языках и фреймворках. Пробовал full-stack-р\
+      - {language: ru, text: "Senior QA Engineer с опытом автоматизации на различных языках и фреймворках. Пробовал full-stack-р\
             азработку (React.js на фронте, TypeScript/Python на бэке)."}
     twitter: wolftheburglar
   - id: 1547
@@ -21466,15 +21466,15 @@ speakers:
     companyIds: [141]
     bio:
       - language: en
-        text: "QA Automation Lead\nDeutsche Bank Technology Centre employee. \nShe has been working in test automation since\
+        text: "QA Automation Lead.\nDeutsche Bank Technology Centre employee. \nShe has been working in test automation since\
             \ 2014. Now Lilia develops automation systems from scratch with following implementation.\nLilia leads the team\
             \ dedicated to test automation for launch and aggregation of internal business applications in a huge bank platform.\
             \ \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
       - language: ru
-        text: "QA Automation Lead\nСотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 года\
-            . Занимается разработкой систем автоматизации с нуля и их внедрением.\nСейчас Лилия руководит командой, занима\
-            ющейся автоматизацией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-приложе\
-            ний.\nЛилия ежегодно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA\
+        text: "QA Automation Lead.\nСотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 год\
+            а. Занимается разработкой систем автоматизации с нуля и их внедрением.\nСейчас Лилия руководит командой, заним\
+            ающейся автоматизацией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-прилож\
+            ений.\nЛилия ежегодно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA\
             \ Days, TestCon)."
   - id: 1562
     photoFileName: 1562.jpg
@@ -21485,11 +21485,11 @@ speakers:
     companyIds: [141]
     bio:
       - language: en
-        text: "Full stack Developer\nDeutsche Bank Technology Centre employee. \nHe has been developing backend since 2011.\
+        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHe has been developing backend since 2011.\
             \ Now he creates mobile application in Autobahn-platform for Deutsche Bank Group."
       - language: ru
-        text: "Full stack Developer\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бекенд с 2011 года. Сейч\
-            ас участвует в создании мобильного приложения внутри Autobahn-платформы для группы Дойче Банк."
+        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бекенд с 2011 года. Сей\
+            час участвует в создании мобильного приложения внутри Autobahn-платформы для группы Дойче Банк."
   - id: 1563
     photoFileName: 1563.jpg
     photoUpdatedAt: 2021-04-01T07:40:07.764Z[UTC]
