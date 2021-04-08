@@ -583,16 +583,20 @@ speakers:
     habr: zaleslaw
   - id: 32
     photoFileName: 0032.jpg
-    photoUpdatedAt: 2020-06-26T14:01:05.594Z[UTC]
+    photoUpdatedAt: 2021-04-07T09:25:29.112Z[UTC]
     name:
-      - {language: en, text: "Aleksandr Belokrilov"}
+      - {language: en, text: "Aleksandr Belokrylov"}
       - {language: ru, text: "Александр Белокрылов"}
     companyIds: [68]
     bio:
-      - {language: en, text: "До создания своей компании, Александр более 13 лет работал в Sun Microsystems и Oracle, и вн\
-            ёс значительный вклад в развитие и внедрение Java. Сегодня он возглавляет компанию, входящую в ТОП-5 контрибью\
-            торов OpenJDK, создавшую свой дистрибутив Liberica JDK. Александр отвечает за стратегическое руководство и реа\
-            лизацию концепции BellSoft."}
+      - {language: en, text: "Aleksandr leads BellSoft, which develops and maintains the Liberica JDK, an advanced Java runtime\
+            \ environment, and several other professional products for efficiently solving business problems in server, cloud,\
+            \ and IoT applications of open Java technologies. Under his leadership, the BellSoft team, with over 15 years\
+            \ of Java development experience, has become one of the world leaders in the OpenJDK community."}
+      - {language: ru, text: "Александр возглавляет компанию BellSoft, которая разрабатывает и поддерживает Liberica JDK,\
+            \ прогрессивную среду исполнения Java, и ряд других профессиональных продуктов для эффективного решения задач\
+            \ бизнеса в серверном, облачном и IoT-применениях открытых технологий Java. Под его руководством команда BellSoft,\
+            \ имеющая более чем 15-летний опыт разработки Java, стала одним из мировых лидеров сообщества OpenJDK."}
     twitter: gigabel
     habr: alexbel
   - id: 33
@@ -17804,13 +17808,15 @@ speakers:
     twitter: Semper_Viventem
   - id: 1299
     photoFileName: 1299.jpg
-    photoUpdatedAt: 2020-06-24T09:02:18.028Z[UTC]
+    photoUpdatedAt: 2021-04-05T12:46:33.387Z[UTC]
     name:
-      - {language: en, text: "Dmitriy Vdovin"}
+      - {language: en, text: "Dmitry Vdovin"}
       - {language: ru, text: "Дмитрий Вдовин"}
     companyIds: [662]
     bio:
-      - {language: en, text: Backend-разработчик.}
+      - {language: en, text: "Software developer. Dmitry is sure that well-coordinated work is better than individual goals."}
+      - {language: ru, text: "Software developer. Занимается продуктовой разработкой и уверен, что слаженная работа в кома\
+            нде важнее индивидуального результата."}
     habr: vdovin_ds
   - id: 1300
     photoFileName: 1300.jpg
@@ -21459,36 +21465,35 @@ speakers:
     twitter: varivoda_ivan
   - id: 1561
     photoFileName: 1561.jpg
-    photoUpdatedAt: 2021-03-30T11:42:55.183Z[UTC]
+    photoUpdatedAt: 2021-04-06T07:23:48.119Z[UTC]
     name:
-      - {language: en, text: "Lilia Valeiko"}
+      - {language: en, text: "Lilia Valeyko"}
       - {language: ru, text: "Лилия Валейко"}
     companyIds: [141]
     bio:
       - language: en
         text: "QA Automation Lead.\nDeutsche Bank Technology Centre employee. \nShe has been working in test automation since\
-            \ 2014. Now Lilia develops automation systems from scratch with following implementation.\nLilia leads the team\
-            \ dedicated to test automation for launch and aggregation of internal business applications in a huge bank platform.\
-            \ \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
+            \ 2014. Now Lilia develops automation systems from scratch with the following implementation.\nLilia leads the\
+            \ team dedicated to testing automation for the launch and aggregation of internal business applications in a huge\
+            \ bank platform. \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
       - language: ru
-        text: "QA Automation Lead.\nСотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 год\
-            а. Занимается разработкой систем автоматизации с нуля и их внедрением.\nСейчас Лилия руководит командой, заним\
-            ающейся автоматизацией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-прилож\
-            ений.\nЛилия ежегодно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA\
-            \ Days, TestCon)."
+        text: "Сотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 года. Занимается разрабо\
+            ткой систем автоматизации с нуля и их внедрением.\r\nСейчас Лилия руководит командой, занимающейся автоматизац\
+            ией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-приложений.\r\nЛилия ежег\
+            одно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA Days, TestCon)."
   - id: 1562
     photoFileName: 1562.jpg
-    photoUpdatedAt: 2021-03-30T12:02:28.270Z[UTC]
+    photoUpdatedAt: 2021-04-05T13:12:54.144Z[UTC]
     name:
       - {language: en, text: "Sergey Budnik"}
       - {language: ru, text: "Сергей Будник"}
     companyIds: [141]
     bio:
       - language: en
-        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHe has been developing backend since 2011.\
-            \ Now he creates mobile application in Autobahn-platform for Deutsche Bank Group."
+        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHas been developing backend since 2011.\
+            \ Now he creates a mobile application in Autobahn-platform for Deutsche Bank Group."
       - language: ru
-        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бекенд с 2011 года. Сей\
+        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бэкенд с 2011 года. Сей\
             час участвует в создании мобильного приложения внутри Autobahn-платформы для группы Дойче Банк."
   - id: 1563
     photoFileName: 1563.jpg
@@ -22119,3 +22124,71 @@ speakers:
             бежать многочисленных граблей, на которые наступил сам. Свободное время проводит с семьей и собакой, а по ноча\
             м в столярной мастерской, где разрабатывает умную цифровую гитару."}
     twitter: Yury_Dubovoy
+  - id: 1606
+    photoFileName: 1606.jpg
+    photoUpdatedAt: 2021-04-02T15:08:37.300Z[UTC]
+    name:
+      - {language: en, text: "Alexander Kolesnikov"}
+      - {language: ru, text: "Александр Колесников"}
+    companyIds: [729]
+    bio:
+      - {language: en, text: "Alexander Kolesnikov has led the development team Sportmaster website. Loves clean code with\
+            \ a focus on functional programming and adheres to the TDD approach. Alexander began his programming career with\
+            \ C#, then became interested in Java, and then wrote in Scala for a couple of years. Now Alexander is implementing\
+            \ Kotlin in a large enterprise project."}
+      - {language: ru, text: "Александр Колесников руководит командой разработки сайта Спортмастер. Любит чистый код с укл\
+            оном в функциональное программирование и исповедует TDD-подход. Александр начинал свой путь в программировании\
+            \ с C#, затем увлёкся Java, а потом пару лет писал на Scala. Сейчас Александр внедряет Kotlin в большом enterprise-п\
+            роекте."}
+  - id: 1607
+    photoFileName: 1607.jpg
+    photoUpdatedAt: 2021-04-05T13:28:24.721Z[UTC]
+    name:
+      - {language: en, text: "Aleksey Babenko"}
+      - {language: ru, text: "Алексей Бабенко"}
+    companyIds: [643]
+    bio:
+      - {language: en, text: "Deputy Head of the Center for Software Solutions at Mir Plat.Form. Knows everything about digital\
+            \ security. Speaker at security conferences."}
+      - {language: ru, text: "Заместитель руководителя центра программных решений в Мир Plat.Form. Знает всё про компьютер\
+            ную безопасность. Спикер конференций по безопасности."}
+  - id: 1608
+    photoFileName: 1608.jpg
+    photoUpdatedAt: 2021-04-07T09:57:55.485Z[UTC]
+    name:
+      - {language: en, text: "Anatoly Tarakanov"}
+      - {language: ru, text: "Анатолий Тараканов"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Develops reactive high-performance services in the ecosystem of the Salyut family of voice assistants.\
+            \ Experienced in writing a complex microservice architecture (100+ services) in the context of Big Data. Likes\
+            \ to challenge himself by plunging into a new framework or programming language in the process of developing a\
+            \ business solution."}
+      - {language: ru, text: "Разрабатывает реактивные высоконагруженные сервисы в экосистеме семейства голосовых ассистен\
+            тов Салют. Имеет опыт написания сложной микросервисной архитектуры (100+ сервисов) в контексте Big Data. Любит\
+            \ устраивать себе челлендж, погружаясь с места в карьер в новый фреймворк или язык программирования в процессе\
+            \ разработки бизнес-решения."}
+  - id: 1609
+    photoFileName: 1609.jpg
+    photoUpdatedAt: 2021-04-07T10:11:40.596Z[UTC]
+    name:
+      - {language: en, text: "Anton Kotov"}
+      - {language: ru, text: "Антон Котов"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Anton has been writing in Java for the last 8 years, before that he worked at Deutsche Bank\
+            \ and Yandex, now at Sberbank he is developing platform backend services for the SmartMarket application catalog.\
+            \ Likes to look for weak spots in the code, fix memory leaks and solve other performance problems."}
+      - {language: ru, text: "Антон пишет на Java последние 8 лет, до этого работал в Deutsche Bank и Яндексе, сейчас в Сб\
+            ере разрабатывает платформенные бэкенд-сервисы для каталога приложений SmartMarket. Любит искать слабые места\
+            \ в коде, устранять утечки памяти и решать другие проблемы производительности."}
+  - id: 1610
+    photoFileName: 1610.jpg
+    photoUpdatedAt: 2021-04-05T13:41:07.663Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Zolotov"}
+      - {language: ru, text: "Александр Золотов"}
+    companyIds: [728]
+    bio:
+      - {language: en, text: "12 years in development. Certified Spring Professional, TOGAF 9 Certified."}
+      - {language: ru, text: "В разработке 12 лет. Certified Spring Professional, TOGAF 9 Certified."}

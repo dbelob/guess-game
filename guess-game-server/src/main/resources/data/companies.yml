@@ -2282,3 +2282,10 @@ companies:
   - id: 727
     name:
       - {language: en, text: "OnTarget Group, Inc."}
+  - id: 728
+    name:
+      - {language: en, text: Accenture}
+  - id: 729
+    name:
+      - {language: en, text: Sportmaster}
+      - {language: ru, text: Спортмастер}
