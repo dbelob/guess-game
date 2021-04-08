@@ -2289,3 +2289,33 @@ companies:
     name:
       - {language: en, text: Sportmaster}
       - {language: ru, text: Спортмастер}
+  - id: 730
+    name:
+      - {language: en, text: Arrival}
+  - id: 731
+    name:
+      - {language: en, text: Lineate}
+  - id: 732
+    name:
+      - {language: en, text: Werkspot}
+  - id: 733
+    name:
+      - {language: en, text: "MetaCall OÜ"}
+  - id: 734
+    name:
+      - {language: en, text: ClauseMatch}
+  - id: 735
+    name:
+      - {language: en, text: resume.io}
+  - id: 736
+    name:
+      - {language: en, text: Deltatre}
+  - id: 737
+    name:
+      - {language: en, text: "OpenSoft Inc"}
+  - id: 738
+    name:
+      - {language: en, text: SpurIT}
+  - id: 739
+    name:
+      - {language: en, text: "ECOMMPAY IT"}

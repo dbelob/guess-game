@@ -563,6 +563,18 @@ events:
     placeId: 24
     talkIds: [2723, 2724, 2725, 2726, 2727, 2728, 2729, 2730, 2731, 2732, 2733, 2734, 2735, 2736, 2737, 2757, 2738, 2739,
               2740, 2741, 2742, 2743, 2744, 2745, 2758, 2746, 2747, 2748, 2749, 2750, 2751, 2752, 2753]
+  - eventTypeId: 4
+    name:
+      - {language: en, text: "HolyJS 2021 SPb"}
+      - {language: ru, text: "HolyJS 2021 СПб"}
+    startDate: "2021-04-20"
+    endDate: "2021-04-23"
+    siteLink:
+      - {language: ru, text: "https://holyjs-piter.ru/"}
+    youtubeLink: https://live.jugru.org/events/holyjs/
+    placeId: 24
+    talkIds: [3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3045, 3061, 3046, 3047,
+              3048, 3049, 3050, 3051, 3052, 3053, 3054, 3055, 3056, 3057, 3058, 3059, 3060]
   # Hydra
   - eventTypeId: 5
     name:
