@@ -1028,15 +1028,16 @@ speakers:
     gitHub: ashutakGG
   - id: 60
     photoFileName: 0060.jpg
+    photoUpdatedAt: 2021-04-12T12:43:11.245Z[UTC]
     name:
       - {language: en, text: "Vadim Tsesko"}
       - {language: ru, text: "Вадим Цесько"}
     companyIds: [653]
     bio:
-      - {language: en, text: "Currently lead developer at Odnoklassniki Platform. Joined IT/CS field in 2004 with hydroacoustic\
-            \ systems and research projects on static code analysis. Had been developing highload distributed services at\
-            \ Yandex.Verticals for more than 5 years. Occasionally gives lectures on parallel computing and distributed data\
-            \ storages."}
+      - {language: en, text: "Currently, lead developer at Odnoklassniki Platform. Joined IT/CS field in 2004 with hydroacoustic\
+            \ systems and research projects on static code analysis. Had been developing high-performance distributed services\
+            \ at Yandex. Verticals for more than 5 years. Occasionally gives lectures on parallel computing and distributed\
+            \ data storage."}
       - {language: ru, text: "Ведущий разработчик в Платформе Одноклассников. Начал свой путь в IT/CS в 2004 с создания си\
             стем гидроакустики и исследовательских проектов по статическому анализу кода. Затем больше 5 лет разрабатывал\
             \ высоконагруженные распределённые сервисы в Яндекс.Вертикалях. Эпизодически читает лекции по параллельным выч\
@@ -2070,22 +2071,22 @@ speakers:
     gitHub: xpinjection
   - id: 124
     photoFileName: 0124.jpg
-    photoUpdatedAt: 2019-07-30T13:51:20.601Z[UTC]
+    photoUpdatedAt: 2021-04-12T12:59:30.915Z[UTC]
     name:
-      - {language: en, text: "Oleg Anastasiev"}
+      - {language: en, text: "Oleg Anastasyev"}
       - {language: ru, text: "Олег Анастасьев"}
     companyIds: [653]
     bio:
       - {language: en, text: "Oleg Anastasyev started his career in computer programming in 1995. He developed banking, telecom,\
-            \ public transportation software as well as software for the government of Latvia. Oleg is a principal engineer\
-            \ at Odnoklassniki. His primary responsibilities are development of architectures and solutions for highly loaded\
-            \ as well as big data services, solving performance and availability problems. His last successful projects include\
-            \ NewSQL ACID compliant distributed fault-tolerant database and private cloud system to help manage the whole\
-            \ fleet of Odnoklassniki machines."}
+            \ public transportation software as well as software for the government of Latvia. Oleg is a Principal Engineer\
+            \ at <a href=\"https://ok.ru/\" target=\"_blank\">Odnoklassniki</a>. His primary responsibilities as a Platform\
+            \ Team member are development of architectures and solutions for highly loaded as well as big data services, solving\
+            \ performance and availability problems. His last successful projects include NewSQL ACID compliant distributed\
+            \ fault-tolerant database and private cloud system to help manage the whole fleet of Odnoklassniki machines."}
       - {language: ru, text: "Начал карьеру программиста в далеком 1995 году. Разрабатывал ПО в банковской сфере, телекоме\
-            , транспорте. Работает главным инженером в Одноклассниках. В его обязанности входит разработка архитектур и ре\
-            шений для высоконагруженных систем, больших хранилищ данных, решение проблем производительности и надежности п\
-            ортала."}
+            , транспорте. Главный инженер в Одноклассниках. В его обязанности входит разработка архитектур и решений для в\
+            ысоконагруженных систем, больших хранилищ данных, решение проблем производительности и надежности портала. Так\
+            же занимается обучением разработчиков внутри компании."}
     twitter: m0nstermind
     gitHub: m0nstermind
     habr: m0nstermind
@@ -3487,13 +3488,15 @@ speakers:
       - {language: ru, text: "Андрей Солнцев"}
     companyIds: [100]
     bio:
-      - {language: en, text: "Software craftsman at Codeborne (Tallinn, Estonia). Aggressive fan of extreme programming, autotests,\
-            \ pair programming and clean code. Creator of Selenide — an open-source library for UI tests in Java. Organizer\
-            \ of devclub.eu. Frequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
-            \ Testing Days, TopConf, DevConFu, Devoxx."}
-      - {language: ru, text: "Андрей — разработчик в эстонской компании Codeborne. Автор фреймворка Selenide, организатор\
-            \ таллинского Devclub, частый докладчик на конференциях. Ярый приверженец экстремального программирования, авт\
-            оматических тестов, парного программирования и чистого кода."}
+      - language: en
+        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
+            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
+            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."
+      - language: ru
+        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
+            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
+            , парного программирования и чистого кода."
     twitter: asolntsev
     gitHub: asolntsev
     habr: asolntsev
@@ -21427,6 +21430,7 @@ speakers:
             \ \"Everyday Spring Testing\", blogs and posts videos, co-organizer of the Agile Practitioners conference and\
             \ in his spare time, he shoots zombies, for fun."
     twitter: gil_zilberfeld
+    gitHub: gilzilberfeld
   - id: 1556
     photoFileName: 1556.jpg
     photoUpdatedAt: 2021-03-11T10:16:37.073Z[UTC]
@@ -21509,20 +21513,21 @@ speakers:
     photoFileName: 1561.jpg
     photoUpdatedAt: 2021-04-06T07:23:48.119Z[UTC]
     name:
-      - {language: en, text: "Lilia Valeyko"}
+      - {language: en, text: "Lilia Valeiko"}
       - {language: ru, text: "Лилия Валейко"}
     companyIds: [141]
     bio:
       - language: en
         text: "QA Automation Lead.\nDeutsche Bank Technology Centre employee. \nShe has been working in test automation since\
-            \ 2014. Now Lilia develops automation systems from scratch with the following implementation.\nLilia leads the\
-            \ team dedicated to testing automation for the launch and aggregation of internal business applications in a huge\
-            \ bank platform. \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
+            \ 2014. Now Lilia develops automation systems from scratch with following implementation.\nLilia leads the team\
+            \ dedicated to test automation for launch and aggregation of internal business applications in a huge bank platform.\
+            \ \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
       - language: ru
-        text: "Сотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 года. Занимается разрабо\
-            ткой систем автоматизации с нуля и их внедрением.\r\nСейчас Лилия руководит командой, занимающейся автоматизац\
-            ией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-приложений.\r\nЛилия ежег\
-            одно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA Days, TestCon)."
+        text: "QA Automation Lead.\nСотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 год\
+            а. Занимается разработкой систем автоматизации с нуля и их внедрением.\nСейчас Лилия руководит командой, заним\
+            ающейся автоматизацией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-прилож\
+            ений.\nЛилия ежегодно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA\
+            \ Days, TestCon)."
   - id: 1562
     photoFileName: 1562.jpg
     photoUpdatedAt: 2021-04-05T13:12:54.144Z[UTC]
@@ -21532,10 +21537,10 @@ speakers:
     companyIds: [141]
     bio:
       - language: en
-        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHas been developing backend since 2011.\
-            \ Now he creates a mobile application in Autobahn-platform for Deutsche Bank Group."
+        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHe has been developing backend since 2011.\
+            \ Now he creates mobile application in Autobahn-platform for Deutsche Bank Group."
       - language: ru
-        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бэкенд с 2011 года. Сей\
+        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бекенд с 2011 года. Сей\
             час участвует в создании мобильного приложения внутри Autobahn-платформы для группы Дойче Банк."
   - id: 1563
     photoFileName: 1563.jpg
@@ -22745,3 +22750,33 @@ speakers:
             ой путь с написания ПО для моделирования X-Ray спектров в сложной геометрии и далее ПО, связанное с обработкой\
             \ аудио в реальном времени, где был в обилии представлен unsafe код.\nПоследние 6 лет разрабатывает и проектир\
             ует enterprise-приложения, где в плане перфоманса доминирует Db-Layer."
+  - id: 1643
+    photoFileName: 1643.jpg
+    photoUpdatedAt: 2021-03-29T10:41:56.174Z[UTC]
+    name:
+      - {language: en, text: "Tatiana Eliseeva"}
+      - {language: ru, text: "Татьяна Елисеева"}
+    companyIds: [668]
+    bio:
+      - {language: en, text: "Tatiana started her career at test automation. Then she tried herself as a .NET application\
+            \ developer and became so excited about it that she didn't even notice how she attained the position of the Director\
+            \ of the Department. Currently she runs various software development projects on different technologies."}
+      - {language: ru, text: "Начинала карьеру в роли тестировщика, занималась автоматизацией тестирования, далее попробов\
+            ала себя в качестве .NET-разработчика и так увлеклась, что и не заметила, как доросла до директора департамент\
+            а. Сейчас руководит несколькими проектами на стыках разнообразных технологий."}
+    twitter: belkaeliseeva
+  - id: 1644
+    photoFileName: 1644.jpg
+    photoUpdatedAt: 2021-04-12T13:06:17.717Z[UTC]
+    name:
+      - {language: en, text: "Dmitry Samsonov"}
+      - {language: ru, text: "Дмитрий Самсонов"}
+    companyIds: [653]
+    bio:
+      - {language: en, text: "Leading system administrator at Odnoklassniki. Participates in the development of the CFEngine\
+            \ configuration system and the one-cloud private cloud. Designs and implements the one-monitor in-house monitoring\
+            \ system. Likes to investigate problems in the work of linux and tune them."}
+      - language: ru
+        text: "Ведущий системный администратор в компании Одноклассники.\nРаботая в компании Одноклассники, участвует в ра\
+            звитии системы конфигурации CFEngine и приватного облака one-cloud. Проектирует и внедряет in-house систему мо\
+            ниторинга one-monitor. Увлекается расследованием проблем в работе linux и занимается его тюнингом."
