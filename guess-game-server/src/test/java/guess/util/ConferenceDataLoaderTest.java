@@ -631,7 +631,23 @@ class ConferenceDataLoaderTest {
 
             Talk talk4 = new Talk();
             talk4.setId(4);
-            talk4.setName(List.of(new LocaleItem("en", "name4")));
+            talk4.setName(List.of(new LocaleItem("ru", "Открытие")));
+
+            Talk talk5 = new Talk();
+            talk5.setId(5);
+            talk5.setName(List.of(new LocaleItem("ru", "Закрытие")));
+
+            Talk talk6 = new Talk();
+            talk6.setId(6);
+            talk6.setName(List.of(new LocaleItem("ru", "Открытие конференции")));
+
+            Talk talk7 = new Talk();
+            talk7.setId(7);
+            talk7.setName(List.of(new LocaleItem("ru", "Закрытие конференции")));
+
+            Talk talk8 = new Talk();
+            talk8.setId(8);
+            talk8.setName(List.of(new LocaleItem("en", "name8")));
 
             return Stream.of(
                     arguments(Collections.emptyList(), Collections.emptyList()),
@@ -639,14 +655,18 @@ class ConferenceDataLoaderTest {
                     arguments(List.of(talk1), Collections.emptyList()),
                     arguments(List.of(talk2), Collections.emptyList()),
                     arguments(List.of(talk3), Collections.emptyList()),
+                    arguments(List.of(talk4), Collections.emptyList()),
+                    arguments(List.of(talk5), Collections.emptyList()),
+                    arguments(List.of(talk6), Collections.emptyList()),
+                    arguments(List.of(talk7), Collections.emptyList()),
                     arguments(List.of(talk0, talk1), Collections.emptyList()),
                     arguments(List.of(talk0, talk1, talk2), Collections.emptyList()),
                     arguments(List.of(talk0, talk1, talk2, talk3), Collections.emptyList()),
-                    arguments(List.of(talk4), List.of(talk4)),
-                    arguments(List.of(talk0, talk4), List.of(talk4)),
-                    arguments(List.of(talk0, talk1, talk4), List.of(talk4)),
-                    arguments(List.of(talk0, talk1, talk2, talk4), List.of(talk4)),
-                    arguments(List.of(talk0, talk1, talk2, talk3, talk4), List.of(talk4))
+                    arguments(List.of(talk8), List.of(talk8)),
+                    arguments(List.of(talk0, talk8), List.of(talk8)),
+                    arguments(List.of(talk0, talk1, talk8), List.of(talk8)),
+                    arguments(List.of(talk0, talk1, talk2, talk8), List.of(talk8)),
+                    arguments(List.of(talk0, talk1, talk2, talk3, talk8), List.of(talk8))
             );
         }
 

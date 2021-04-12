@@ -402,14 +402,14 @@ public class ConferenceDataLoader {
      */
     static List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
         Set<String> deletedTalks = Set.of("Conference opening", "Conference closing", "School opening", "School closing",
-                "Открытие", "Закрытие");
+                "Открытие", "Закрытие", "Открытие конференции", "Закрытие конференции");
 
         return talks.stream()
                 .filter(t -> {
                     String enName = LocalizationUtils.getString(t.getName(), Language.ENGLISH).trim();
                     String ruName = LocalizationUtils.getString(t.getName(), Language.RUSSIAN).trim();
 
-                    if (deletedTalks.contains(enName)) {
+                    if (deletedTalks.contains(enName) || deletedTalks.contains(ruName)) {
                         log.warn("Conference opening or closing talk is deleted, name: '{}', '{}', talkDay: {}, trackTime: {}, track: {}, language: {}",
                                 enName, ruName, t.getTalkDay(), t.getTrackTime(), t.getTrack(), t.getLanguage());
 
@@ -1681,7 +1681,9 @@ public class ConferenceDataLoader {
 //                        Collections.emptyMap(),
 //                        Set.of("Выпьем за фидбэк", "Heisenbug 2021 Virtual Afterparty"),
 //                        false));
-//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 4, 13), "2021spb");
+//        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 4, 13), "2021spb",
+//                LoadSettings.invalidTalksSet(
+//                        Set.of("Mobius 2021 Virtual Party")));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2021, 4, 13), "2021jpoint",
 //                LoadSettings.ignoreDemoStage(false));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 4, 20), "2021spb",
