@@ -22780,3 +22780,107 @@ speakers:
         text: "Ведущий системный администратор в компании Одноклассники.\nРаботая в компании Одноклассники, участвует в ра\
             звитии системы конфигурации CFEngine и приватного облака one-cloud. Проектирует и внедряет in-house систему мо\
             ниторинга one-monitor. Увлекается расследованием проблем в работе linux и занимается его тюнингом."
+  - id: 1645
+    photoFileName: 1645.jpg
+    photoUpdatedAt: 2021-04-08T08:42:26.621Z[UTC]
+    name:
+      - {language: en, text: "Daniel Sergeev"}
+      - {language: ru, text: "Даниэл Сергеев"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "5 years in Android development. Of these, 4 years have been developing classified in the Auto.Ru\
+            \ team, including making the Backend Driven UI. Now he works at Sber, where he rewrites a third-party React Native\
+            \ application in Kotlin."}
+      - {language: ru, text: "5 лет опыта Андроид-разработки. Из них 4 года разрабатывал классифайд в команде Auto.Ru, в т\
+            ом числе делал Backend Driven UI. Сейчас работает в Сбере, где переписывает стороннее React Native-приложение\
+            \ на Kotlin."}
+    gitHub: densvr
+  - id: 1646
+    photoFileName: 1646.jpg
+    photoUpdatedAt: 2021-04-05T14:09:07.488Z[UTC]
+    name:
+      - {language: en, text: "Maria Vodolazkaya"}
+      - {language: ru, text: "Мария Водолазкая"}
+    companyIds: [633]
+    bio:
+      - {language: en, text: "Maria has 7 years of experience in iOS development. She has managed to experience many projects,\
+            \ from a weather alarm clock to the EDM mobile client. In her spare time, she is writing a Ph.D. thesis on hyperparameter\
+            \ optimization in ML, teaches math logic, and leads a sports programming class at MPEI."}
+      - {language: ru, text: "Занимается iOS-разработкой более 7 лет. За это время успела пощупать 1000 и 1 проект: от буд\
+            ильника с погодой до мобильного клиента системы электронного документооборота. Сейчас развивается в роли тимли\
+            да. В свободное от работы время пишет кандидатскую по гиперпараметрической оптимизации в машинном обучении, пр\
+            еподает матлогику и ведет кружок спортивного программирования в МЭИ."}
+    gitHub: vodolazkayamv
+    habr: scanavie
+  - id: 1647
+    photoFileName: 1647.jpg
+    photoUpdatedAt: 2021-04-07T10:29:55.120Z[UTC]
+    name:
+      - {language: en, text: "Igor Ahmarov"}
+      - {language: ru, text: "Игорь Ахмаров"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Igor has been working at Sber since 2018 in the social and salary solutions division, where\
+            \ he develops and supports the SberBank Online product. He takes an active part in the life of the community,\
+            \ promotes Kotlin, conducts interviews, and speaks within the company."}
+      - {language: ru, text: "Игорь работает в Сбере с 2018 года в дивизионе «социальные и зарплатные решения», где занима\
+            ется разработкой и поддержкой продукта СберБанк Онлайн. Он принимает активное участие в жизни сообщества, зани\
+            мается продвижением Kotlin, проводит собеседования и выступает с докладами внутри компании."}
+  - id: 1648
+    photoFileName: 1648.jpg
+    photoUpdatedAt: 2021-04-08T09:32:57.625Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Haritonchik"}
+      - {language: ru, text: "Михаил Харитончик"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Member of the SberBank Online platform team."}
+      - {language: ru, text: "Член платформенной команды СберБанк Онлайн."}
+  - id: 1649
+    photoFileName: 1649.jpg
+    photoUpdatedAt: 2021-04-05T14:34:36.555Z[UTC]
+    name:
+      - {language: en, text: "Valentin Chernov"}
+      - {language: ru, text: "Валентин Чернов"}
+    companyIds: [641]
+    bio:
+      - {language: en, text: "Extensive experience in the development and testing of mobile applications. Participated in\
+            \ the creation of more than a dozen applications, including those using cross-platform technologies (Xamarin).\
+            \ Valentin has been programming on Swift, Objective-C. He also works with CI/CD (gitlab), Jira, Apple developer\
+            \ console, Apple foundation. Valentin is engaged in the design of complex architectural solutions using Visual\
+            \ Paradigm."}
+      - {language: ru, text: "Большой опыт в разработке и тестировании мобильных приложений. Участвовал в создании дюжины\
+            \ приложений, в том числе и с применением кроссплатформенных технологий (Xamarin). Программирует на Swift, Objective-C.\
+            \ Работает с CI/CD (gitlab), Jira, Apple developer console, Apple foundation. Занимается проектированием сложн\
+            ых архитектурных решений с использованием Visual Paradigm."}
+    gitHub: mrbesford
+  - id: 1650
+    photoFileName: 1650.jpg
+    photoUpdatedAt: 2021-04-05T15:29:34.132Z[UTC]
+    name:
+      - {language: en, text: "Alexey Novikov"}
+      - {language: ru, text: "Алексей Новиков"}
+    companyIds: [390]
+    bio:
+      - {language: en, text: "More than 7 years in iOS development including 5 years in big e-commerce companies such as Lazada\
+            \ and Ozon."}
+      - {language: ru, text: "В iOS-разработке более 7 лет. Из них 5 лет в крупных e-commerce-проектах Lazada и Ozon."}
+  - id: 1651
+    photoFileName: 1651.jpg
+    photoUpdatedAt: 2021-04-09T09:42:59.545Z[UTC]
+    name:
+      - {language: en, text: "Valeria Andrianova"}
+      - {language: ru, text: "Валерия Андрианова"}
+    companyIds: [286]
+    bio:
+      - language: en
+        text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in team products,\
+            \ workflow organization, and project management methodologies.\nValeria is responsible for Space, a new integrated\
+            \ environment for teams. She also speaks at conferences, meetups, and user meetings, writes about team products\
+            \ and collaboration.\nAccording to Valeria, soft skills are no less important than technical knowledge."
+      - language: ru
+        text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируется на командных\
+            \ продуктах, организации рабочих процессов и методологиях управления проектами.\nВалерия отвечает за маркетинг\
+            \ Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, митапах и встреч\
+            ах пользователей, пишет о командных продуктах и совместной работе.\nПо мнению Валерии, личные качества и навык\
+            и межличностного общения в работе не менее важны, чем технические знания."
