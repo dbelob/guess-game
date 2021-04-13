@@ -355,8 +355,8 @@ eventTypes:
             оводители проектов.\n\nГлавные темы докладов Mobius:\n- Large-scale architecture;\n- Performance;\n- Security;\n\
             - ML in Mobile;\n- Functional and reactive programming;\n- Kotlin, Swift, Flutter."
     siteLink:
-      - {language: en, text: "https://mobiusconf.ru/en/"}
-      - {language: ru, text: "https://mobiusconf.ru/"}
+      - {language: en, text: "https://mobiusconf.com/en/"}
+      - {language: ru, text: "https://mobiusconf.com"}
     vkLink: https://vk.com/mobiusconf
     twitterLink: https://twitter.com/MobiusConf
     facebookLink: https://www.facebook.com/mobiusconf/
