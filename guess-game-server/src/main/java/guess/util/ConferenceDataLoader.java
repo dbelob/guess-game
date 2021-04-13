@@ -1685,7 +1685,10 @@ public class ConferenceDataLoader {
 //                LoadSettings.invalidTalksSet(
 //                        Set.of("Mobius 2021 Virtual Party")));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2021, 4, 13), "2021jpoint",
-//                LoadSettings.ignoreDemoStage(false));
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("JPoint 2021 Virtual Party", "Итоги конференции JPoint 2021"),
+//                        false));
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 4, 20), "2021spb",
 //                LoadSettings.ignoreDemoStage(false));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 4, 20), "2021spb",
