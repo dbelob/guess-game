@@ -878,23 +878,22 @@ speakers:
     javaChampion: true
   - id: 50
     photoFileName: 0050.jpg
+    photoUpdatedAt: 2018-09-21T09:27:32.474Z[UTC]
     name:
       - {language: en, text: "Dmitry Aleksandrov"}
       - {language: ru, text: "Дмитрий Александров"}
     companyIds: [383]
     bio:
       - language: en
-        text: "Dmitry is a Senior Principal developer at Oracle, Java Champion, Oracle Groundbreaker. He has more than a\
-        \ decade experience mainly in Java Enterprise in banking/telecom, but interested in dynamic languages on JVM and\
-        \ features like massive computations on GPUs. A true believer in open source and community driven initiatives.\n\n\
-        \ He is a co-lead of the Bulgarian Java User Group and co-organizer of jPrime Conf. Dmitry is a blogger and also a\
-        \ frequent speaker at local events as well as conferences like JavaOne/CodeOne, Devoxx/Voxxed and Joker/JPoint. "
-      - language: ru
-        text: "Senior Principle программист в Oracle, Со-лидер болгарской Java User Group, Java Champion, Oracle Groundbreaker.\
-        \ Помимо работы над Project Helidon, читает лекции на конференциях. Организатор конференции jPrime.io — крупнейшей\
-        \ Java-конференции на Балканах. В перечень основных интересов входят динамические языки на JVM, Java Enterprise,\
-        \ MicroProfile, а также вся Spring-инфраструктура. Увлекается всяческими экспериментальными Java-проектами, а также\
-        \ GPU-программированием."
+        text: "Co-leader of the Bulgarian Java User Group. In addition to work, Dmitry performs talks at conferences. Organizer\
+            \ of jPrime.io Conference — largest Java conference in Balkans. \n\nList of his main interests includes dynamic\
+            \ languages on JVM (Nashorn project) and Java EE, as well as all Spring Framework's infrastructure. He is into\
+            \ experimental Java projects."
+      - {language: ru, text: "Со-лидер болгарской Java User Group, Java Champion, Oracle Groundbreaker. Помимо работы над\
+            \ Project Helidon, читает лекции на конференциях. Организатор конференции jPrime.io — крупнейшей Java-конферен\
+            ции на Балканах. В перечень основных интересов входят динамические языки на JVM, Java Enterprise, MicroProfile,\
+            \ а также вся Spring-инфраструктура. Увлекается всяческими экспериментальными Java-проектами, а также GPU-прог\
+            раммированием."}
     twitter: bercut2000
     gitHub: dalexandrov
     habr: advbg
@@ -1264,24 +1263,27 @@ speakers:
     name:
       - {language: en, text: "Sebastian Daschner"}
       - {language: ru, text: "Себастьян Дашнер"}
-    companyIds: [250]
+    companyIds: []
     bio:
-      - language: en
-        text: "Sebastian Daschner is a Lead Java Developer Advocate at IBM, author, and trainer and is enthusiastic about\
-            \ programming and Java (EE). He is the author of the book \"Architecting Modern Java EE Applications\". Sebastian\
+      - {language: en, text: "Sebastian Daschner is a self-employed Java consultant, author and trainer and is enthusiastic\
+            \ about programming and Java. He is the author of the book \"Architecting Modern Java EE Applications\". Sebastian\
             \ is participating in open source standardization processes such as the JCP or the Eclipse Foundation, helping\
             \ forming the future standards of Enterprise Java, and collaborating on various open source projects. For his\
-            \ contributions in the Java community and ecosystem, he was recognized as a Java Champion, Oracle Developer Champion\
-            \ and JavaOne Rockstar.\n\nBesides Java, Sebastian is also a heavy user of cloud native technologies and anything\
-            \ related to enterprise software. He evangelizes computer science practices on his <a href=\"https://blog.sebastian-daschner.com\"\
-            \ target=\"_blank\">blog</a>, his newsletter, and on Twitter via @DaschnerS. Sebastian kickstarted the JOnsen\
-            \ and jSpirit unconferences that connect Java developers throughout the globe. When not working with technology,\
-            \ he also loves coffee and to travel the world."
+            \ contributions in the Java community and ecosystem he was recognized as a Java Champion, Oracle Developer Champion,\
+            \ and JavaOne Rockstar. Besides Java, Sebastian is a heavy user of cloud native technologies and anything related\
+            \ to enterprise software. Sebastian [evangelizes](https://blog.sebastian-daschner.com) computer science practices,\
+            \ in his newsletter, podcast, and videos, and on Twitter via @DaschnerS. Sebastian kickstarted the JOnsen and\
+            \ jSpirit unconferences that connect Java developers throughout the globe. When not working with technology, he\
+            \ also loves coffee and to travel the world."}
       - language: ru
-        text: "Себастьян — Lead Java Developer Advocate в IBM, автор и преподаватель. Его самая знаменитая работа — «Architecting\
-            \ Modern Java EE Applications». \r\nУчастник JCP, помогает формировать будущие стандарты Java EE, работает в э\
-            кспертных группах JAX-RS, JSON-P и Config, участвует в опенсорсных проектах. Java Champion, Oracle Developer Champion\
-            \ и JavaOne Rockstar.\r\nОбожает путешествовать."
+        text: "Себастьян — самозанятый Java-консультант, автор, тренер, любит программирование и Java. Написал книгу «Architecting\
+            \ Modern Java EE Applications». \nПринимает участие в организациях и процессах open source, например в JCP и Eclipse\
+            \ Foundation. Там он помогает формировать будущее стандартов Java Enterprise и работает над разными open source-п\
+            роектами. \nЗа свой вклад в сообщество и экосистему Java был признан Java Champion, Oracle Developer Champion\
+            \ и JavaOne RockStar. \nПомимо Java, Себастьян активно использует Cloud Native-технологии и всё связанное с enterprise-с\
+            офтом. \nСебастьян несёт в массы лучшие практики компьютерных технологий в своём [блоге](https://blog.sebastian-daschner.com/),\
+            \ в рассылке, подкасте и в твиттере (@DaschnerS). \nСебастьян запустил не-конференции JOnsen и jSpirit, объеди\
+            нившие разработчиков со всего земного шара. Любит кофе и путешествия."
     twitter: DaschnerS
     gitHub: sdaschner
     javaChampion: true
@@ -3488,15 +3490,13 @@ speakers:
       - {language: ru, text: "Андрей Солнцев"}
     companyIds: [100]
     bio:
-      - language: en
-        text: "Software craftsman at Codeborne (Tallinn, Estonia). \nAggressive fan of extreme programming, autotests, pair\
-            \ programming and clean code. \nCreator of Selenide — an open-source library for UI tests in Java. \nOrganizer\
-            \ of devclub.eu. \nFrequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
-            \ Testing Days, TopConf, DevConFu, Devoxx."
-      - language: ru
-        text: "Андрей — разработчик в эстонской компании Codeborne. \nАвтор фреймворка Selenide, организатор таллинского Devclub,\
-            \ частый докладчик на конференциях. \nЯрый приверженец экстремального программирования, автоматических тестов\
-            , парного программирования и чистого кода."
+      - {language: en, text: "Software craftsman at Codeborne (Tallinn, Estonia). Aggressive fan of extreme programming, autotests,\
+            \ pair programming and clean code. Creator of Selenide — an open-source library for UI tests in Java. Organizer\
+            \ of devclub.eu. Frequent speaker at conferences: DevClub, Agile Saturday, XP Days Kiev, SeleniumCamp, Nordic\
+            \ Testing Days, TopConf, DevConFu, Devoxx."}
+      - {language: ru, text: "Андрей — разработчик в эстонской компании Codeborne. Автор фреймворка Selenide, организатор\
+            \ таллинского Devclub, частый докладчик на конференциях. Ярый приверженец экстремального программирования, авт\
+            оматических тестов, парного программирования и чистого кода."}
     twitter: asolntsev
     gitHub: asolntsev
     habr: asolntsev
@@ -21513,21 +21513,20 @@ speakers:
     photoFileName: 1561.jpg
     photoUpdatedAt: 2021-04-06T07:23:48.119Z[UTC]
     name:
-      - {language: en, text: "Lilia Valeiko"}
+      - {language: en, text: "Lilia Valeyko"}
       - {language: ru, text: "Лилия Валейко"}
     companyIds: [141]
     bio:
       - language: en
         text: "QA Automation Lead.\nDeutsche Bank Technology Centre employee. \nShe has been working in test automation since\
-            \ 2014. Now Lilia develops automation systems from scratch with following implementation.\nLilia leads the team\
-            \ dedicated to test automation for launch and aggregation of internal business applications in a huge bank platform.\
-            \ \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
+            \ 2014. Now Lilia develops automation systems from scratch with the following implementation.\nLilia leads the\
+            \ team dedicated to testing automation for the launch and aggregation of internal business applications in a huge\
+            \ bank platform. \nAnnually Lilia shares her experience at testing conferences (CEE - SECR, SQA Days, TestCon)."
       - language: ru
-        text: "QA Automation Lead.\nСотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 год\
-            а. Занимается разработкой систем автоматизации с нуля и их внедрением.\nСейчас Лилия руководит командой, заним\
-            ающейся автоматизацией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-прилож\
-            ений.\nЛилия ежегодно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA\
-            \ Days, TestCon)."
+        text: "Сотрудник Технологического Центра Дойче Банка. В автоматизации тестирования с 2014 года. Занимается разрабо\
+            ткой систем автоматизации с нуля и их внедрением.\r\nСейчас Лилия руководит командой, занимающейся автоматизац\
+            ией тестирования в крупной платформе банка для агрегации и запуска внутренних бизнес-приложений.\r\nЛилия ежег\
+            одно делится своим опытом на конференциях в секциях, посвященных тестированию (CEE - SECR, SQA Days, TestCon)."
   - id: 1562
     photoFileName: 1562.jpg
     photoUpdatedAt: 2021-04-05T13:12:54.144Z[UTC]
@@ -21537,10 +21536,10 @@ speakers:
     companyIds: [141]
     bio:
       - language: en
-        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHe has been developing backend since 2011.\
-            \ Now he creates mobile application in Autobahn-platform for Deutsche Bank Group."
+        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHas been developing backend since 2011.\
+            \ Now he creates a mobile application in Autobahn-platform for Deutsche Bank Group."
       - language: ru
-        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бекенд с 2011 года. Сей\
+        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бэкенд с 2011 года. Сей\
             час участвует в создании мобильного приложения внутри Autobahn-платформы для группы Дойче Банк."
   - id: 1563
     photoFileName: 1563.jpg
@@ -21876,14 +21875,15 @@ speakers:
     twitter: lightdelay
   - id: 1585
     photoFileName: 1585.jpg
-    photoUpdatedAt: 2021-02-19T08:57:37.241Z[UTC]
+    photoUpdatedAt: 2021-04-09T08:23:45.344Z[UTC]
     name:
       - {language: en, text: "Christine Flood"}
     companyIds: [438]
     bio:
-      - {language: en, text: "Christine Flood has been working on programming languages and runtimes for over 20 years. She's\
-            \ worked for academia and industry from the labs to the trenches. She's been working on implementing Java since\
-            \ the late 1990's and she's excited to talk about what she's learned running Java inside of containers."}
+      - {language: en, text: "Christine H. Flood has been working on programming languages for most of her career from Lisp\
+            \ to Id to Java to Fortress and back to Java again. She wants to improve the user experience either by improving\
+            \ GC efficiency, increasing parallelism, or just providing greater utility."}
+    twitter: chf_the_grouch
   - id: 1586
     photoFileName: 1586.jpg
     photoUpdatedAt: 2021-03-11T13:44:51.752Z[UTC]
@@ -22197,8 +22197,8 @@ speakers:
     bio:
       - {language: en, text: "Deputy Head of the Center for Software Solutions at Mir Plat.Form. Knows everything about digital\
             \ security. Speaker at security conferences."}
-      - {language: ru, text: "Заместитель руководителя центра программных решений в Мир Plat.Form. Знает всё про компьютер\
-            ную безопасность. Спикер конференций по безопасности."}
+      - {language: ru, text: "Заместитель руководителя центра программных решений в Мир Plat.Form. Лидер команды тестирова\
+            ния безопасности приложений. Имеет 12 летний опыт в области защиты информационных систем."}
   - id: 1608
     photoFileName: 1608.jpg
     photoUpdatedAt: 2021-04-07T09:57:55.485Z[UTC]
@@ -22884,3 +22884,29 @@ speakers:
             \ Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, митапах и встреч\
             ах пользователей, пишет о командных продуктах и совместной работе.\nПо мнению Валерии, личные качества и навык\
             и межличностного общения в работе не менее важны, чем технические знания."
+  - id: 1652
+    photoFileName: 1652.jpg
+    photoUpdatedAt: 2021-04-09T08:01:51.163Z[UTC]
+    name:
+      - {language: en, text: "Vitaly Kutsenko"}
+      - {language: ru, text: "Виталий Куценко"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Leads the development of IT projects at Sberbank. Mainly interested in the development of enterprise\
+            \ applications of various sizes. He is actively involved in training programmers at Sberbank and Otus."}
+      - {language: ru, text: "Руководит разработкой ИТ-проектов в Сбере. В основном интересуется разработкой прикладных эн\
+            терпрайз-приложений разных размеров. Активно занимается подготовкой программистов в Сбере и Отусе."}
+  - id: 1653
+    photoFileName: 1653.jpg
+    photoUpdatedAt: 2021-04-12T07:22:14.896Z[UTC]
+    name:
+      - {language: en, text: "Aleksandar Seovic"}
+    companyIds: [383]
+    bio:
+      - language: en
+        text: "Aleks Seović is an architect at Oracle where he works on Oracle Coherence — a leading in-memory data grid product\
+            \ — and contributes to the Helidon microservices framework.\nMost recently, Aleks led the design and implementation\
+            \ of the gRPC framework, CDI, and Eclipse MicroProfile support in Oracle Coherence. He currently leads the implementation\
+            \ of Oracle Coherence native clients, GraphQL support, and Helidon, Micronaut, and Spring integration."
+    twitter: aseovic
+    gitHub: aseovic
