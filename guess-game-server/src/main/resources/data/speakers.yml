@@ -7321,9 +7321,9 @@ speakers:
             то внимания."}
   - id: 501
     photoFileName: 0501.jpg
-    photoUpdatedAt: 2020-10-14T08:00:57.646Z[UTC]
+    photoUpdatedAt: 2021-04-13T18:05:51.392Z[UTC]
     name:
-      - {language: en, text: "Kirill Skrygan"}
+      - {language: en, text: "Kirill Skrigan"}
       - {language: ru, text: "Кирилл Скрыган"}
     companyIds: [286]
     bio:
@@ -22865,23 +22865,21 @@ speakers:
       - {language: ru, text: "В iOS-разработке более 7 лет. Из них 5 лет в крупных e-commerce-проектах Lazada и Ozon."}
   - id: 1651
     photoFileName: 1651.jpg
-    photoUpdatedAt: 2021-04-09T09:42:59.545Z[UTC]
+    photoUpdatedAt: 2021-04-13T18:10:15.203Z[UTC]
     name:
       - {language: en, text: "Valeria Andrianova"}
       - {language: ru, text: "Валерия Андрианова"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in team products,\
-            \ workflow organization, and project management methodologies.\nValeria is responsible for Space, a new integrated\
-            \ environment for teams. She also speaks at conferences, meetups, and user meetings, writes about team products\
-            \ and collaboration.\nAccording to Valeria, soft skills are no less important than technical knowledge."
-      - language: ru
-        text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируется на командных\
-            \ продуктах, организации рабочих процессов и методологиях управления проектами.\nВалерия отвечает за маркетинг\
-            \ Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, митапах и встреч\
-            ах пользователей, пишет о командных продуктах и совместной работе.\nПо мнению Валерии, личные качества и навык\
-            и межличностного общения в работе не менее важны, чем технические знания."
+      - {language: en, text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in\
+            \ team products, workflow organization, and project management methodologies. Valeria is responsible for Space,\
+            \ a new integrated environment for teams. She also speaks at conferences, meetups, and user meetings, writes about\
+            \ team products and collaboration. According to Valeria, soft skills are no less important than technical knowledge."}
+      - {language: ru, text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируетс\
+            я на командных продуктах, организации рабочих процессов и методологиях управления проектами. Валерия отвечает\
+            \ за маркетинг Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, мит\
+            апах и встречах пользователей, пишет о командных продуктах и совместной работе. По мнению Валерии, личные каче\
+            ства и навыки межличностного общения в работе не менее важны, чем технические знания."}
   - id: 1652
     photoFileName: 1652.jpg
     photoUpdatedAt: 2021-04-09T08:01:51.163Z[UTC]
@@ -22918,3 +22916,15 @@ speakers:
     bio:
       - {language: en, text: "Marketing Director, BellSoft"}
       - {language: ru, text: "Директор по маркетингу в BellSoft."}
+  - id: 1655
+    photoFileName: 1655.jpg
+    photoUpdatedAt: 2021-04-13T17:40:33.902Z[UTC]
+    name:
+      - {language: en, text: "Olga Bolotova"}
+      - {language: ru, text: "Ольга Болотова"}
+    companyIds: [613]
+    bio:
+      - {language: en, text: "JavaScript developer in Alfa Bank, a mentor with 4 years experience, master's degree in computer\
+            \ science. Loves to go to conferences and looks forward to the day when everybody is back offline."}
+      - {language: ru, text: "JavaScript-разработчик в Альфа-Банке, наставник с 4-летним опытом, имеет степень магистра в\
+            \ компьютерных науках. Обожает ходить на конференции и с нетерпением ждет, когда все снова вернутся в офлайн."}
