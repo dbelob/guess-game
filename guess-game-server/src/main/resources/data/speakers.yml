@@ -7327,18 +7327,16 @@ speakers:
       - {language: ru, text: "Кирилл Скрыган"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "Leads Code With and Rider projects, actively participates in the development and planning of IntelliJ IDEA, in the past one\
-            \ of the main developers of ReSharper. Besides political interactions in the Tech market, Kirill is interested\
-            \ in performance automation, trends in the world of tooling, psychology and philosophy of modern IT. In his field\
-            \ actively participated in negotiations with such giants as Microsoft, Unity, Epic Games, Amazon, Google, Red\
-            \ Hat, etc. \nIn industrial programming for over 15 years."
-      - language: ru
-        text: "Руководит проектами Code With Me и Rider, активно участвует в разработке IntelliJ IDEA, в пр\
+      - {language: en, text: "Leads the Code With Me and Rider projects, actively participates in the development of IntelliJ\
+            \ IDEA and was one of the main developers of ReSharper in the past. Kirill is interested in the tasks of distributed\
+            \ development, productivity automation, breakthrough trends in the world of tooling, psychology, and the philosophy\
+            \ of modern IT. Actively participated in negotiations with such giants as Microsoft, Unity, Epic Games, Amazon,\
+            \ Google, Red Hat, etc. He has been in industrial programming for over 15 years."}
+      - {language: ru, text: "Руководит проектами Code With Me и Rider, активно участвует в разработке IntelliJ IDEA, в пр\
             ошлом один из основных разработчиков ReSharper. Кириллу интересны задачи распределенной разработки, автоматиза\
             ции производительности, прорывные тренды в мире тулинга, психология и философия современного IT. По роду деяте\
             льности активно участвовал в переговорах с такими гигантами, как Microsoft, Unity, Epic Games, Amazon, Google,\
-            \ Red Hat и др. В промышленном программировании уже более 15 лет."
+            \ Red Hat и др. В промышленном программировании уже более 15 лет."}
     twitter: kskrygan
     gitHub: kskrygan
     habr: kskrygan
@@ -22113,7 +22111,7 @@ speakers:
     photoFileName: 1602.jpg
     photoUpdatedAt: 2021-02-15T12:27:39.498Z[UTC]
     name:
-      - {language: en, text: "Piotr Przybyl"}
+      - {language: en, text: "Piotr Przybył"}
     companyIds: [725]
     bio:
       - {language: en, text: "Notorious engineer at work and after hours, tracing meanders of the art of software engineering.\
@@ -22910,3 +22908,13 @@ speakers:
             \ of Oracle Coherence native clients, GraphQL support, and Helidon, Micronaut, and Spring integration."
     twitter: aseovic
     gitHub: aseovic
+  - id: 1654
+    photoFileName: 1654.jpg
+    photoUpdatedAt: 2021-04-14T19:14:58.135Z[UTC]
+    name:
+      - {language: en, text: "Alice Drozhzhinova"}
+      - {language: ru, text: "Алиса Дрожжинова"}
+    companyIds: [68]
+    bio:
+      - {language: en, text: "Marketing Director, BellSoft"}
+      - {language: ru, text: "Директор по маркетингу в BellSoft."}
