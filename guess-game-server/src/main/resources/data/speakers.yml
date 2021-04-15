@@ -7482,8 +7482,12 @@ speakers:
       - {language: ru, text: "Юлия Цисык"}
     companyIds: [125]
     bio:
-      - {language: en, text: "Moscow .NET community leader."}
-      - {language: ru, text: "Лидер московского сообщества .NET-разработчиков MskDotNet."}
+      - {language: en, text: "Yulia is a senior developer in CUSTIS with nearly ten years of experience in C#. She likes to\
+            \ solve non-standard problems and communicate with intelligent persons. Yulia is also a member of the DotNext\
+            \ program committee and the leader of MskDotNet, the Moscow .NET community."}
+      - {language: ru, text: "Юлия — ведущий разработчик в CUSTIS. Пишет на C# около 10 лет, любит решать нестандартные за\
+            дачи и общаться с умными людьми. А еще она член программного комитета DotNext и лидер MskDotNet — московского\
+            \ сообщества .NET-разработчиков."}
     twitter: YuliaFast
     gitHub: YuliaFast
   - id: 518
@@ -22929,3 +22933,15 @@ speakers:
             \ science. Loves to go to conferences and looks forward to the day when everybody is back offline."}
       - {language: ru, text: "JavaScript-разработчик в Альфа-Банке, наставник с 4-летним опытом, имеет степень магистра в\
             \ компьютерных науках. Обожает ходить на конференции и с нетерпением ждет, когда все снова вернутся в офлайн."}
+  - id: 1656
+    photoFileName: 1656.jpg
+    photoUpdatedAt: 2021-04-13T17:44:15.555Z[UTC]
+    name:
+      - {language: en, text: "Nikita Prudnikov"}
+      - {language: ru, text: "Никита Прудников"}
+    companyIds: [751]
+    bio:
+      - {language: en, text: "Nikita has been helping Mindbox to grow since 2011, for the last two years — as a CTO. Responsible\
+            \ for the scalability and reliability of the system, serving more than 600 thousand customers a day."}
+      - {language: ru, text: "С 2011 года помогает Mindbox расти, последние два года — в роли CTO. Отвечает за масштабиров\
+            ание и надежность системы, обслуживающей более 600 тысяч покупателей в день."}
