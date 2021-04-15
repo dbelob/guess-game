@@ -7321,24 +7321,22 @@ speakers:
             то внимания."}
   - id: 501
     photoFileName: 0501.jpg
-    photoUpdatedAt: 2020-10-14T08:00:57.646Z[UTC]
+    photoUpdatedAt: 2021-04-13T18:05:51.392Z[UTC]
     name:
-      - {language: en, text: "Kirill Skrygan"}
+      - {language: en, text: "Kirill Skrigan"}
       - {language: ru, text: "Кирилл Скрыган"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "Leads Code With and Rider projects, actively participates in the development and planning of IntelliJ IDEA, in the past one\
-            \ of the main developers of ReSharper. Besides political interactions in the Tech market, Kirill is interested\
-            \ in performance automation, trends in the world of tooling, psychology and philosophy of modern IT. In his field\
-            \ actively participated in negotiations with such giants as Microsoft, Unity, Epic Games, Amazon, Google, Red\
-            \ Hat, etc. \nIn industrial programming for over 15 years."
-      - language: ru
-        text: "Руководит проектами Code With Me и Rider, активно участвует в разработке IntelliJ IDEA, в пр\
+      - {language: en, text: "Leads the Code With Me and Rider projects, actively participates in the development of IntelliJ\
+            \ IDEA and was one of the main developers of ReSharper in the past. Kirill is interested in the tasks of distributed\
+            \ development, productivity automation, breakthrough trends in the world of tooling, psychology, and the philosophy\
+            \ of modern IT. Actively participated in negotiations with such giants as Microsoft, Unity, Epic Games, Amazon,\
+            \ Google, Red Hat, etc. He has been in industrial programming for over 15 years."}
+      - {language: ru, text: "Руководит проектами Code With Me и Rider, активно участвует в разработке IntelliJ IDEA, в пр\
             ошлом один из основных разработчиков ReSharper. Кириллу интересны задачи распределенной разработки, автоматиза\
             ции производительности, прорывные тренды в мире тулинга, психология и философия современного IT. По роду деяте\
             льности активно участвовал в переговорах с такими гигантами, как Microsoft, Unity, Epic Games, Amazon, Google,\
-            \ Red Hat и др. В промышленном программировании уже более 15 лет."
+            \ Red Hat и др. В промышленном программировании уже более 15 лет."}
     twitter: kskrygan
     gitHub: kskrygan
     habr: kskrygan
@@ -7478,15 +7476,20 @@ speakers:
     companyIds: [665]
   - id: 517
     photoFileName: 0517.jpg
-    photoUpdatedAt: 2019-03-04T06:32:08.853Z[UTC]
+    photoUpdatedAt: 2021-04-13T17:48:30.117Z[UTC]
     name:
       - {language: en, text: "Yulia Tsisyk"}
       - {language: ru, text: "Юлия Цисык"}
     companyIds: [125]
     bio:
-      - {language: en, text: "Moscow .NET community leader."}
-      - {language: ru, text: "Лидер московского сообщества .NET-разработчиков MskDotNet."}
+      - {language: en, text: "Yulia is a senior developer in CUSTIS with nearly ten years of experience in C#. She likes to\
+            \ solve non-standard problems and communicate with intelligent persons. Yulia is also a member of the DotNext\
+            \ program committee and the leader of MskDotNet, the Moscow .NET community."}
+      - {language: ru, text: "Юлия — ведущий разработчик в CUSTIS. Пишет на C# около 10 лет, любит решать нестандартные за\
+            дачи и общаться с умными людьми. А еще она член программного комитета DotNext и лидер MskDotNet — московского\
+            \ сообщества .NET-разработчиков."}
     twitter: YuliaFast
+    gitHub: YuliaFast
   - id: 518
     photoFileName: 0518.jpg
     name:
@@ -22113,7 +22116,7 @@ speakers:
     photoFileName: 1602.jpg
     photoUpdatedAt: 2021-02-15T12:27:39.498Z[UTC]
     name:
-      - {language: en, text: "Piotr Przybyl"}
+      - {language: en, text: "Piotr Przybył"}
     companyIds: [725]
     bio:
       - {language: en, text: "Notorious engineer at work and after hours, tracing meanders of the art of software engineering.\
@@ -22867,23 +22870,21 @@ speakers:
       - {language: ru, text: "В iOS-разработке более 7 лет. Из них 5 лет в крупных e-commerce-проектах Lazada и Ozon."}
   - id: 1651
     photoFileName: 1651.jpg
-    photoUpdatedAt: 2021-04-09T09:42:59.545Z[UTC]
+    photoUpdatedAt: 2021-04-13T18:10:15.203Z[UTC]
     name:
       - {language: en, text: "Valeria Andrianova"}
       - {language: ru, text: "Валерия Андрианова"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in team products,\
-            \ workflow organization, and project management methodologies.\nValeria is responsible for Space, a new integrated\
-            \ environment for teams. She also speaks at conferences, meetups, and user meetings, writes about team products\
-            \ and collaboration.\nAccording to Valeria, soft skills are no less important than technical knowledge."
-      - language: ru
-        text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируется на командных\
-            \ продуктах, организации рабочих процессов и методологиях управления проектами.\nВалерия отвечает за маркетинг\
-            \ Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, митапах и встреч\
-            ах пользователей, пишет о командных продуктах и совместной работе.\nПо мнению Валерии, личные качества и навык\
-            и межличностного общения в работе не менее важны, чем технические знания."
+      - {language: en, text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in\
+            \ team products, workflow organization, and project management methodologies. Valeria is responsible for Space,\
+            \ a new integrated environment for teams. She also speaks at conferences, meetups, and user meetings, writes about\
+            \ team products and collaboration. According to Valeria, soft skills are no less important than technical knowledge."}
+      - {language: ru, text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируетс\
+            я на командных продуктах, организации рабочих процессов и методологиях управления проектами. Валерия отвечает\
+            \ за маркетинг Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, мит\
+            апах и встречах пользователей, пишет о командных продуктах и совместной работе. По мнению Валерии, личные каче\
+            ства и навыки межличностного общения в работе не менее важны, чем технические знания."}
   - id: 1652
     photoFileName: 1652.jpg
     photoUpdatedAt: 2021-04-09T08:01:51.163Z[UTC]
@@ -22910,3 +22911,37 @@ speakers:
             \ of Oracle Coherence native clients, GraphQL support, and Helidon, Micronaut, and Spring integration."
     twitter: aseovic
     gitHub: aseovic
+  - id: 1654
+    photoFileName: 1654.jpg
+    photoUpdatedAt: 2021-04-14T19:14:58.135Z[UTC]
+    name:
+      - {language: en, text: "Alice Drozhzhinova"}
+      - {language: ru, text: "Алиса Дрожжинова"}
+    companyIds: [68]
+    bio:
+      - {language: en, text: "Marketing Director, BellSoft"}
+      - {language: ru, text: "Директор по маркетингу в BellSoft."}
+  - id: 1655
+    photoFileName: 1655.jpg
+    photoUpdatedAt: 2021-04-13T17:40:33.902Z[UTC]
+    name:
+      - {language: en, text: "Olga Bolotova"}
+      - {language: ru, text: "Ольга Болотова"}
+    companyIds: [613]
+    bio:
+      - {language: en, text: "JavaScript developer in Alfa Bank, a mentor with 4 years experience, master's degree in computer\
+            \ science. Loves to go to conferences and looks forward to the day when everybody is back offline."}
+      - {language: ru, text: "JavaScript-разработчик в Альфа-Банке, наставник с 4-летним опытом, имеет степень магистра в\
+            \ компьютерных науках. Обожает ходить на конференции и с нетерпением ждет, когда все снова вернутся в офлайн."}
+  - id: 1656
+    photoFileName: 1656.jpg
+    photoUpdatedAt: 2021-04-13T17:44:15.555Z[UTC]
+    name:
+      - {language: en, text: "Nikita Prudnikov"}
+      - {language: ru, text: "Никита Прудников"}
+    companyIds: [751]
+    bio:
+      - {language: en, text: "Nikita has been helping Mindbox to grow since 2011, for the last two years — as a CTO. Responsible\
+            \ for the scalability and reliability of the system, serving more than 600 thousand customers a day."}
+      - {language: ru, text: "С 2011 года помогает Mindbox расти, последние два года — в роли CTO. Отвечает за масштабиров\
+            ание и надежность системы, обслуживающей более 600 тысяч покупателей в день."}

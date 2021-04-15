@@ -2353,3 +2353,6 @@ companies:
   - id: 750
     name:
       - {language: en, text: "Orbital Express"}
+  - id: 751
+    name:
+      - {language: en, text: Mindbox}

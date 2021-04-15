@@ -1665,7 +1665,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 12, 2), "2020msk",
 //                new LoadSettings(
 //                        Collections.emptyMap(),
-//                        Set.of("DotNext 2020 Virtual Afterparty"),
+//                        Set.of("DotNext 2020 Virtual Afterparty", "Что? Где? Когда? с DotNetRu"),
 //                        false));
 //        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2020, 12, 9), "2020spbsmartdata",
 //                new LoadSettings(
@@ -1683,7 +1683,7 @@ public class ConferenceDataLoader {
 //                        false));
 //        loadTalksSpeakersEvent(Conference.MOBIUS, LocalDate.of(2021, 4, 13), "2021spb",
 //                LoadSettings.invalidTalksSet(
-//                        Set.of("Mobius 2021 Virtual Party")));
+//                        Set.of("Mobius 2021 Virtual Party 19:00")));
 //        loadTalksSpeakersEvent(Conference.JPOINT, LocalDate.of(2021, 4, 13), "2021jpoint",
 //                new LoadSettings(
 //                        Collections.emptyMap(),
@@ -1692,6 +1692,9 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.HOLY_JS, LocalDate.of(2021, 4, 20), "2021spb",
 //                LoadSettings.ignoreDemoStage(false));
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 4, 20), "2021spb",
-//                LoadSettings.ignoreDemoStage(false));
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("Игра со знатоками в формате интеллектуального казино"),
+//                        false));
     }
 }
