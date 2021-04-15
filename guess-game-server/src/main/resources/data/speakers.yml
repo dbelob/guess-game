@@ -7476,7 +7476,7 @@ speakers:
     companyIds: [665]
   - id: 517
     photoFileName: 0517.jpg
-    photoUpdatedAt: 2019-03-04T06:32:08.853Z[UTC]
+    photoUpdatedAt: 2021-04-13T17:48:30.117Z[UTC]
     name:
       - {language: en, text: "Yulia Tsisyk"}
       - {language: ru, text: "Юлия Цисык"}
@@ -7485,6 +7485,7 @@ speakers:
       - {language: en, text: "Moscow .NET community leader."}
       - {language: ru, text: "Лидер московского сообщества .NET-разработчиков MskDotNet."}
     twitter: YuliaFast
+    gitHub: YuliaFast
   - id: 518
     photoFileName: 0518.jpg
     name:

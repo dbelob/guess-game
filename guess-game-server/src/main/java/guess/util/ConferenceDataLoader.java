@@ -1665,7 +1665,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2020, 12, 2), "2020msk",
 //                new LoadSettings(
 //                        Collections.emptyMap(),
-//                        Set.of("DotNext 2020 Virtual Afterparty"),
+//                        Set.of("DotNext 2020 Virtual Afterparty", "Что? Где? Когда? с DotNetRu"),
 //                        false));
 //        loadTalksSpeakersEvent(Conference.SMART_DATA, LocalDate.of(2020, 12, 9), "2020spbsmartdata",
 //                new LoadSettings(
