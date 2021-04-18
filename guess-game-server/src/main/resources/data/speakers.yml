@@ -14005,8 +14005,8 @@ speakers:
     bio:
       - language: en
         text: "Scott Wlaschin is a developer, architect and author. He is the author of the popular F# site <a href=\"https://fsharpforfunandprofit.com/\"\
-            \ target=\"_blank\">fsharpforfunandprofit.com</a> and the book \"Domain Modeling Made Functional\".\n\nKnown for\
-            \ his non-academic approach to functional programming, Scott is a popular speaker and has given talks at NDC,\
+            \ target=\"_blank\">fsharpforfunandprofit.com</a> and the book \"Domain Modeling Made Functional\".\r\n\r\nKnown\
+            \ for his non-academic approach to functional programming, Scott is a popular speaker and has given talks at NDC,\
             \ F# Exchange, DDD Europe, and other conferences around the world."
     twitter: ScottWlaschin
     gitHub: swlaschin
