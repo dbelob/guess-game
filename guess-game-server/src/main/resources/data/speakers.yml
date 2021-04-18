@@ -22428,27 +22428,24 @@ speakers:
     name:
       - {language: en, text: "Vladimir Minkin"}
       - {language: ru, text: "Владимир Минкин"}
-    companyIds: [736]
+    companyIds: [753]
     bio:
       - language: en
         text: "A Software Engineer and enthusiast, capable to create products from idea to production. Vladimir's programming\
             \ experience began from the last school years when he finished Computer Science classes. Then he went to the University\
-            \ and dive deep into the science of how semiconductors grow. \r\nAnd from 2011 Vladimir has been working as a\
-            \ software engineer including his master's degree project, where he used programming skills to create complex\
-            \ computation and analysis tools. \r\nHe also worked in games, social and event industries. Was part of an incredible\
-            \ team of Interactive Lab in Moscow, helped friends from IvanRast in Saint-Petersburg to create digital experiences,\
-            \ CMS for a museum, and interactive presentations. In 2016 Vladimir had invited one of the gaming companies in\
-            \ Prague and later joined one of the best IT sports companies DELTATRE as a Senior Software Engineer."
+            \ and dive deep into the science of how semiconductors grow. \nAnd from 2011 Vladimir has been working as a software\
+            \ engineer including his master's degree project, where he used programming skills to create complex computation\
+            \ and analysis tools. \nHe also worked in games, social and event industries. Was part of an incredible team of\
+            \ Interactive Lab in Moscow, helped friends from IvanRast in Saint-Petersburg to create digital experiences, CMS\
+            \ for a museum, and interactive presentations."
       - language: ru
         text: "Инженер-программист, создающий продукты полного цикла: от идеи до производства. Владимир начал свой путь в\
             \ программировании с последних классов школы, когда он закончил курсы компьютерных наук. В университете он угл\
             убился в науку и в работу полупроводников. \nС 2011 Владимир работает инженером ПО, завершает магистерский про\
             ект, в котором создаются сложные инструменты вычислений и анализа.\nРаботал в игровых, социальных и ивент инду\
             стриях. Был частью команды в Interactive Lab в Москве, помогал друзьям в IvanRast в Санкт-Петербурге создавать\
-            \ цифровой опыт, CMS для музеев и интерактивные презентации. В 2016 Владимира пригласили в геймдев-компанию в\
-            \ Праге, а в дальнейшем он присоединился к лучшей IT спортивной компании DELTATRE в качестве Senior Software Engineer.\
-            \ Помогает компании Oncoshot Pte Ltd Singapore в разработке продукта по поиску подходящих исследований и метод\
-            ов лечения рака."
+            \ цифровой опыт, CMS для музеев и интерактивные презентации. Помогает компании Oncoshot Pte Ltd Singapore в ра\
+            зработке продукта по поиску подходящих исследований и методов лечения рака."
     twitter: vladimircores
     gitHub: vladimircores
     habr: dqvsra
@@ -22876,17 +22873,15 @@ speakers:
       - {language: ru, text: "Валерия Андрианова"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in team products,\
-            \ workflow organization, and project management methodologies.\nValeria is responsible for Space, a new integrated\
-            \ environment for teams. She also speaks at conferences, meetups, and user meetings, writes about team products\
-            \ and collaboration.\nAccording to Valeria, soft skills are no less important than technical knowledge."
-      - language: ru
-        text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируется на командных\
-            \ продуктах, организации рабочих процессов и методологиях управления проектами.\nВалерия отвечает за маркетинг\
-            \ Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, митапах и встреч\
-            ах пользователей, пишет о командных продуктах и совместной работе.\nПо мнению Валерии, личные качества и навык\
-            и межличностного общения в работе не менее важны, чем технические знания."
+      - {language: en, text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in\
+            \ team products, workflow organization, and project management methodologies. Valeria is responsible for Space,\
+            \ a new integrated environment for teams. She also speaks at conferences, meetups, and user meetings, writes about\
+            \ team products and collaboration. According to Valeria, soft skills are no less important than technical knowledge."}
+      - {language: ru, text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируетс\
+            я на командных продуктах, организации рабочих процессов и методологиях управления проектами. Валерия отвечает\
+            \ за маркетинг Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, мит\
+            апах и встречах пользователей, пишет о командных продуктах и совместной работе. По мнению Валерии, личные каче\
+            ства и навыки межличностного общения в работе не менее важны, чем технические знания."}
   - id: 1652
     photoFileName: 1652.jpg
     photoUpdatedAt: 2021-04-09T08:01:51.163Z[UTC]
@@ -22977,3 +22972,54 @@ speakers:
             ВТБ 1\_апреля 2019\_года и\_стал отвечать за\_все направление мобильного банкинга. Результат не\_заставил себя\
             \ ждать\_— Павел стал одним из\_двигателей создания нового ВТБ Онлайн. Несет ответственность за развитие Мобил\
             ьного банка: его качество, новые решения, стабильность, сроки выхода обновлений и внешний вид."
+  - id: 1659
+    photoFileName: 1659.jpg
+    photoUpdatedAt: 2021-04-15T07:51:28.299Z[UTC]
+    name:
+      - {language: en, text: "Maksim Kuznetsov"}
+      - {language: ru, text: "Максим Кузнецов"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Sberbank Online web developer."}
+      - {language: ru, text: "Web-разработчик СберБанк Онлайн."}
+  - id: 1660
+    photoFileName: 1660.jpg
+    photoUpdatedAt: 2021-04-16T08:43:01.588Z[UTC]
+    name:
+      - {language: en, text: "Evgeny Polosuhin"}
+      - {language: ru, text: "Евгений Полосухин"}
+    companyIds: [752]
+    bio:
+      - {language: en, text: "Evgeny is a frontend developer at Selectel. 11 years of experience in web development, has been\
+            \ writing in Vue.js for the last 3 years. From time to time designs interfaces and writes in Python."}
+      - {language: ru, text: "Фронтенд-разработчик в Selectel. В вебе с 2010 года, последние 3 года пишет на Vue.js. Иногд\
+            а проектирует интерфейсы, иногда пишет на Python."}
+  - id: 1661
+    photoFileName: 1661.jpg
+    photoUpdatedAt: 2021-04-15T07:44:18.952Z[UTC]
+    name:
+      - {language: en, text: "Anton Vinogradov"}
+      - {language: ru, text: "Антон Виноградов"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Developer with over 10 years of experience in harsh enterprise and international startups. Built\
+            \ the frontend of Alfa-Bank. Yandex.Search frontend architect. Supervised the development of Yandex.Video, Yandex.Station\
+            \ and Smart Home with Alice. Now he is in charge of frontend development at SberDevices."}
+      - {language: ru, text: "Разработчик с опытом более 10 лет в суровом энтерпрайзе и международных стартапах. Построил\
+            \ фронтенд Альфа-Банка. Архитектор фронтенда Яндекс.Поиска. Руководил разработкой Яндекс.Видео, Яндекс.Станции\
+            \ и Умного дома с Алисой на борту. Сейчас руководит разработкой фронтенда в SberDevices."}
+    gitHub: awinogradov
+    habr: tony_vi
+  - id: 1662
+    photoFileName: 1662.jpg
+    photoUpdatedAt: 2021-04-16T16:57:59.412Z[UTC]
+    name:
+      - {language: en, text: "Bogdan Timofeev"}
+      - {language: ru, text: "Богдан Тимофеев"}
+    companyIds: [141]
+    bio:
+      - {language: en, text: "Backend (and a little bit frontend) developer from Saint-Petersburg. Graduated from Saint Petersburg\
+            \ State University. Now he's developing Java and Kotlin microservices with UI in Deutsche Bank Technology Centre."}
+      - {language: ru, text: "Бэкенд (и немного фронтенд) разработчик из Санкт-Петербурга. Закончил Математико-Механически\
+            й факультет СПбГУ, разрабатывает микросервисы на Java и Kotlin, а также UI для них в Технологическом Центре До\
+            йче Банка."}
