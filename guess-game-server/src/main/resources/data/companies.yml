@@ -2356,3 +2356,12 @@ companies:
   - id: 751
     name:
       - {language: en, text: Mindbox}
+  - id: 752
+    name:
+      - {language: en, text: Selectel}
+  - id: 753
+    name:
+      - {language: en, text: Oncoshot}
+  - id: 754
+    name:
+      - {language: en, text: Karuna}
