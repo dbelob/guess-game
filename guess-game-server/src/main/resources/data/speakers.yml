@@ -132,7 +132,7 @@ speakers:
     gitHub: andrershov
   - id: 7
     photoFileName: 0007.jpg
-    photoUpdatedAt: 2020-06-01T12:48:52.962Z[UTC]
+    photoUpdatedAt: 2021-04-15T18:15:19.395Z[UTC]
     name:
       - {language: en, text: "Alexey Fyodorov"}
       - {language: ru, text: "Алексей Федоров"}
@@ -22876,15 +22876,17 @@ speakers:
       - {language: ru, text: "Валерия Андрианова"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in\
-            \ team products, workflow organization, and project management methodologies. Valeria is responsible for Space,\
-            \ a new integrated environment for teams. She also speaks at conferences, meetups, and user meetings, writes about\
-            \ team products and collaboration. According to Valeria, soft skills are no less important than technical knowledge."}
-      - {language: ru, text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируетс\
-            я на командных продуктах, организации рабочих процессов и методологиях управления проектами. Валерия отвечает\
-            \ за маркетинг Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, мит\
-            апах и встречах пользователей, пишет о командных продуктах и совместной работе. По мнению Валерии, личные каче\
-            ства и навыки межличностного общения в работе не менее важны, чем технические знания."}
+      - language: en
+        text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in team products,\
+            \ workflow organization, and project management methodologies.\nValeria is responsible for Space, a new integrated\
+            \ environment for teams. She also speaks at conferences, meetups, and user meetings, writes about team products\
+            \ and collaboration.\nAccording to Valeria, soft skills are no less important than technical knowledge."
+      - language: ru
+        text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируется на командных\
+            \ продуктах, организации рабочих процессов и методологиях управления проектами.\nВалерия отвечает за маркетинг\
+            \ Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, митапах и встреч\
+            ах пользователей, пишет о командных продуктах и совместной работе.\nПо мнению Валерии, личные качества и навык\
+            и межличностного общения в работе не менее важны, чем технические знания."
   - id: 1652
     photoFileName: 1652.jpg
     photoUpdatedAt: 2021-04-09T08:01:51.163Z[UTC]
@@ -22945,3 +22947,33 @@ speakers:
             \ for the scalability and reliability of the system, serving more than 600 thousand customers a day."}
       - {language: ru, text: "С 2011 года помогает Mindbox расти, последние два года — в роли CTO. Отвечает за масштабиров\
             ание и надежность системы, обслуживающей более 600 тысяч покупателей в день."}
+  - id: 1657
+    photoFileName: 1657.jpg
+    photoUpdatedAt: 2021-04-15T18:07:48.872Z[UTC]
+    name:
+      - {language: en, text: "Aleksandr Bilchuk"}
+      - {language: ru, text: "Александр Бильчук"}
+    companyIds: [665]
+    bio:
+      - {language: en, text: "Biography will be added soon."}
+      - {language: ru, text: "Технический лидер кластера «Social Solutions» дивизиона «Social & Salary Solutions» в СберБа\
+            нк Онлайн. Полюбил мобильную разработку со времен Windows Mobile и J2ME, однако начал свой профессиональный пу\
+            ть в ИТ в 2007-ом году в роли Java Backend разработчика, а в 2012-м перешел в Android-разработку. С тех пор пр\
+            ошел путь от мобильного разработчика до Head of Mobile и CTO и успел принять участие в разработке различных мо\
+            бильных приложений как в крупных международных корпорациях, так и в стартапах."}
+    twitter: sandrfx
+    gitHub: sandrfx
+  - id: 1658
+    photoFileName: 1658.jpg
+    photoUpdatedAt: 2021-04-15T18:09:58.154Z[UTC]
+    name:
+      - {language: en, text: "Pavel Naumov"}
+      - {language: ru, text: "Павел Наумов"}
+    companyIds: [621]
+    bio:
+      - {language: en, text: "Biography will be added soon."}
+      - language: ru
+        text: "Павел 11 лет в IT, из них 8 в банковском секторе. \nСегодня он лидер стрима «Мобильный банкинг». Пришел в\_\
+            ВТБ 1\_апреля 2019\_года и\_стал отвечать за\_все направление мобильного банкинга. Результат не\_заставил себя\
+            \ ждать\_— Павел стал одним из\_двигателей создания нового ВТБ Онлайн. Несет ответственность за развитие Мобил\
+            ьного банка: его качество, новые решения, стабильность, сроки выхода обновлений и внешний вид."
