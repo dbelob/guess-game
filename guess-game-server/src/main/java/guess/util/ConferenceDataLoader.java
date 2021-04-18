@@ -1694,7 +1694,7 @@ public class ConferenceDataLoader {
 //        loadTalksSpeakersEvent(Conference.DOT_NEXT, LocalDate.of(2021, 4, 20), "2021spb",
 //                new LoadSettings(
 //                        Collections.emptyMap(),
-//                        Set.of("Игра со знатоками в формате интеллектуального казино"),
+//                        Set.of("Игра со знатоками в формате интеллектуального казино", "Перерыв трансляции", "DotNext 2021 Virtual Afterparty"),
 //                        false));
     }
 }

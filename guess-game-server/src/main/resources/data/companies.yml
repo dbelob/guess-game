@@ -2362,3 +2362,6 @@ companies:
   - id: 753
     name:
       - {language: en, text: Oncoshot}
+  - id: 754
+    name:
+      - {language: en, text: Karuna}

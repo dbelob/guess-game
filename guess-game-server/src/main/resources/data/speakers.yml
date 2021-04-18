@@ -6413,15 +6413,20 @@ speakers:
     habr: KAW
   - id: 443
     photoFileName: 0443.jpg
+    photoUpdatedAt: 2019-12-03T11:26:23.577Z[UTC]
     name:
       - {language: en, text: "Alexey Merson"}
       - {language: ru, text: "Алексей Мерсон"}
-    companyIds: [268]
+    companyIds: [754]
     bio:
-      - {language: en, text: "Software developer, Architect, PhD. Prefers a backend development, but isn't limited to. Likes\
-            \ good code and beautiful architecture. Looks towards functional programming."}
-      - {language: ru, text: "Разработчик, архитектор, к.т.н. Предпочитает бэкенд в enterprise, но жизнь помотала. Любит к\
-            расивую архитектуру и увлекательный код. С интересом поглядывает в сторону функционального программирования."}
+      - {language: en, text: "Software developer, Architect, PhD. Implements Domain Driven Design and likes to share experience\
+            \ on that. Prefers a backend development, but isn't limited to. Likes good code and beautiful architecture. Looks\
+            \ towards functional programming."}
+      - {language: ru, text: "Разработчик, архитектор, к.т.н. Применяет Domain Driven Design и с удовольствием об этом рас\
+            сказывает. Предпочитает бэкенд в enterprise, но жизнь помотала. Любит красивую архитектуру и увлекательный код\
+            . С интересом поглядывает в сторону функционального программирования."}
+    twitter: AlexeyMerson
+    gitHub: a-merson
     habr: m_a_d
   - id: 444
     photoFileName: 0444.jpg
@@ -6515,11 +6520,12 @@ speakers:
       - {language: en, text: "Federico Lois"}
     companyIds: [742]
     bio:
-      - {language: en, text: "Federico is a cofounder of Corvalius, a R&D company, and of Codealike, a Developer Analytics\
-            \ company. He has been working on algorithmic performance for the last 10 years, both with CPU and specialized\
-            \ hardware like GPUs. His experience ranges from banking software performance tuning to database engine optimization.\
-            \ He enjoys reading in binary and tinkering with registers and caches. Among his technology interests are highly\
-            \ distributed systems, massively parallel technology, low-level optimization and high-performance computer graphics."}
+      - {language: en, text: "Federico is the former cofounder of Corvalius, a R&D company and currently at Hibernating Rhinos\
+            \ engineering the next-gen RavenDB indexing technology. He has been working on algorithmic performance for the\
+            \ last 15 years, both with CPU and specialized hardware like GPUs. His experience ranges from banking software\
+            \ performance tuning to database engine optimization. He enjoys reading in binary and tinkering with registers\
+            \ and caches. Among his technology interests are highly distributed systems, massively parallel technology, low-level\
+            \ optimization and high-performance computer graphics."}
     twitter: federicolois
     gitHub: redknightlois
   - id: 451
@@ -14005,8 +14011,8 @@ speakers:
     bio:
       - language: en
         text: "Scott Wlaschin is a developer, architect and author. He is the author of the popular F# site <a href=\"https://fsharpforfunandprofit.com/\"\
-            \ target=\"_blank\">fsharpforfunandprofit.com</a> and the book \"Domain Modeling Made Functional\".\r\n\r\nKnown\
-            \ for his non-academic approach to functional programming, Scott is a popular speaker and has given talks at NDC,\
+            \ target=\"_blank\">fsharpforfunandprofit.com</a> and the book \"Domain Modeling Made Functional\".\n\nKnown for\
+            \ his non-academic approach to functional programming, Scott is a popular speaker and has given talks at NDC,\
             \ F# Exchange, DDD Europe, and other conferences around the world."
     twitter: ScottWlaschin
     gitHub: swlaschin
