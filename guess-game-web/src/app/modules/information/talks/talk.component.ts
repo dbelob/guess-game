@@ -34,17 +34,22 @@ export class TalkComponent implements OnInit {
       if (!isNaN(idNumber)) {
         this.id = idNumber;
         this.loadTalk(this.id);
+
+        this.translateService.onLangChange
+          .subscribe(() => this.loadTalk(this.id));
       }
     });
   }
 
   loadTalk(id: number) {
-    this.talkService.getTalk(id)
-      .subscribe(data => {
-        this.talkDetails = this.getTalkDetailsWithFilledAttributes(data);
+    if (this.translateService.currentLang) {
+      this.talkService.getTalk(id)
+        .subscribe(data => {
+          this.talkDetails = this.getTalkDetailsWithFilledAttributes(data);
 
-        this.addYouTubePlayer();
-      });
+          this.addYouTubePlayer();
+        });
+    }
   }
 
   getTalkDetailsWithFilledAttributes(talkDetails: TalkDetails): TalkDetails {
@@ -85,10 +90,6 @@ export class TalkComponent implements OnInit {
 
     tag.src = 'https://www.youtube.com/iframe_api';
     document.body.appendChild(tag);
-  }
-
-  onLanguageChange() {
-    this.loadTalk(this.id);
   }
 
   isPresentationLinksListVisible() {
