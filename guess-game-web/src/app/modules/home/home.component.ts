@@ -24,17 +24,19 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loadDefaultEvent();
 
-    this.localeService.currentLanguage
+    this.translateService.onLangChange
       .subscribe(() => this.loadDefaultEvent());
   }
 
   loadDefaultEvent() {
-    this.eventService.getDefaultEventHomeInfo()
-      .subscribe(data => {
-        this.event = data;
-        this.eventDates = (this.event) ? getEventDates(this.event, this.translateService) : null;
-        this.homeState = (this.event) ? HomeState.DefaultStateFoundState : HomeState.DefaultStateNotFoundState;
-      });
+    if (this.translateService.currentLang) {
+      this.eventService.getDefaultEventHomeInfo()
+        .subscribe(data => {
+          this.event = data;
+          this.eventDates = (this.event) ? getEventDates(this.event, this.translateService) : null;
+          this.homeState = (this.event) ? HomeState.DefaultStateFoundState : HomeState.DefaultStateNotFoundState;
+        });
+    }
   }
 
   isLoading(): boolean {
