@@ -9802,10 +9802,11 @@ speakers:
     twitter: rdvornov
   - id: 686
     photoFileName: 0686.jpg
+    photoUpdatedAt: 2018-11-20T06:31:26.444Z[UTC]
     name:
       - {language: en, text: "Egor Malkevich"}
       - {language: ru, text: "Егор Малькевич"}
-    companyIds: []
+    companyIds: [755]
     bio:
       - language: en
         text: "A self-taught specialist from Minsk. It's a long story how Egor went down to the IT. His roadmap wasn't row.\n\
@@ -9819,6 +9820,7 @@ speakers:
             нте, адаптированных под продукт и задачи компании. Активно участвует в минском IT-сообществе, а также в хакато\
             нах и митапах. Участвовал в стартапах, развивал свою компанию. Любит общаться и помогать людям."
     twitter: wegorelax
+    gitHub: wegorich
   - id: 687
     photoFileName: 0687.jpg
     name:
@@ -22879,17 +22881,15 @@ speakers:
       - {language: ru, text: "Валерия Андрианова"}
     companyIds: [286]
     bio:
-      - language: en
-        text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in team products,\
-            \ workflow organization, and project management methodologies.\nValeria is responsible for Space, a new integrated\
-            \ environment for teams. She also speaks at conferences, meetups, and user meetings, writes about team products\
-            \ and collaboration.\nAccording to Valeria, soft skills are no less important than technical knowledge."
-      - language: ru
-        text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируется на командных\
-            \ продуктах, организации рабочих процессов и методологиях управления проектами.\nВалерия отвечает за маркетинг\
-            \ Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, митапах и встреч\
-            ах пользователей, пишет о командных продуктах и совместной работе.\nПо мнению Валерии, личные качества и навык\
-            и межличностного общения в работе не менее важны, чем технические знания."
+      - {language: en, text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in\
+            \ team products, workflow organization, and project management methodologies. Valeria is responsible for Space,\
+            \ a new integrated environment for teams. She also speaks at conferences, meetups, and user meetings, writes about\
+            \ team products and collaboration. According to Valeria, soft skills are no less important than technical knowledge."}
+      - {language: ru, text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируетс\
+            я на командных продуктах, организации рабочих процессов и методологиях управления проектами. Валерия отвечает\
+            \ за маркетинг Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, мит\
+            апах и встречах пользователей, пишет о командных продуктах и совместной работе. По мнению Валерии, личные каче\
+            ства и навыки межличностного общения в работе не менее важны, чем технические знания."}
   - id: 1652
     photoFileName: 1652.jpg
     photoUpdatedAt: 2021-04-09T08:01:51.163Z[UTC]
@@ -23008,7 +23008,7 @@ speakers:
     name:
       - {language: en, text: "Anton Vinogradov"}
       - {language: ru, text: "Антон Виноградов"}
-    companyIds: [665]
+    companyIds: [465]
     bio:
       - {language: en, text: "Developer with over 10 years of experience in harsh enterprise and international startups. Built\
             \ the frontend of Alfa-Bank. Yandex.Search frontend architect. Supervised the development of Yandex.Video, Yandex.Station\
