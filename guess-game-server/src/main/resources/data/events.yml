@@ -585,8 +585,8 @@ events:
       - {language: ru, text: "https://holyjs-piter.ru/"}
     youtubeLink: https://live.jugru.org/events/holyjs/
     placeId: 24
-    talkIds: [3031, 3032, 3033, 3034, 3115, 3116, 3035, 3036, 3037, 3038, 3106, 3039, 3040, 3041, 3042, 3117, 3118, 3043,
-              3044, 3045, 3061, 3046, 3060, 3048, 3049, 3107, 3119, 3050, 3051, 3052, 3053, 3054, 3055, 3056, 3057, 3108, 3109,
+    talkIds: [3031, 3032, 3033, 3034, 3115, 3116, 3035, 3036, 3037, 3038, 3106, 3039, 3040, 3122, 3042, 3118, 3043, 3117,
+              3044, 3045, 3061, 3046, 3060, 3048, 3049, 3107, 3119, 3050, 3123, 3052, 3053, 3054, 3055, 3056, 3057, 3108, 3109,
               3058, 3059, 3047]
   # Hydra
   - eventTypeId: 5
@@ -610,6 +610,16 @@ events:
     placeId: 24
     talkIds: [2445, 2266, 2282, 2407, 2277, 2362, 2271, 2444, 2321, 2536, 2564, 2447, 2319, 2275, 2269, 2537, 2278,
               2535, 2364, 2409, 2274, 2281, 2410, 2366]
+  - eventTypeId: 5
+    name:
+      - {language: en, text: "Hydra 2021"}
+    startDate: "2021-06-15"
+    endDate: "2021-06-18"
+    siteLink:
+      - {language: en, text: "https://hydraconf.com/"}
+    youtubeLink: https://live.jugru.org/events/hydra/
+    placeId: 24
+    talkIds: [3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131]
   # JBreak
   - eventTypeId: 6
     name:
@@ -756,7 +766,7 @@ events:
     endDate: "2021-04-17"
     siteLink:
       - {language: ru, text: "https://jpoint.ru/"}
-    youtubeLink: https://live.jugru.org/events/jpoint/
+    youtubeLink: https://live.jugru.org/events/jpoint/?p=sch100087
     placeId: 24
     talkIds: [2987, 2988, 2989, 2990, 3101, 3023, 2991, 2992, 2993, 3102, 3103, 2995, 2996, 2997, 2998, 3024, 3025, 2999,
               3000, 3001, 3002, 3026, 3003, 3004, 3005, 3006, 3027, 3028, 3007, 3008, 3009, 3018, 3010, 3011, 3012, 3013, 3104,
@@ -1022,7 +1032,7 @@ events:
     endDate: "2021-04-16"
     siteLink:
       - {language: ru, text: "https://mobius-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/mobius/
+    youtubeLink: https://live.jugru.org/events/mobius/?p=sch100086
     placeId: 24
     talkIds: [2956, 2957, 2958, 2959, 3094, 3095, 2960, 2961, 2962, 2963, 3097, 2964, 2965, 2966, 2967, 3096, 3098, 2968,
               2969, 2970, 2971, 2972, 2973, 2974, 2975, 3099, 3100, 2976, 2977, 2978, 2986, 2980, 2981, 2982, 2983, 3114, 2984,

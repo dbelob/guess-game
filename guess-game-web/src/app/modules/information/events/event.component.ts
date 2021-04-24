@@ -29,8 +29,7 @@ export class EventComponent implements OnInit {
   public speakersMultiSortMeta: any[] = [];
   public talksMultiSortMeta: any[] = [];
 
-  constructor(private eventService: EventService, public translateService: TranslateService,
-              private activatedRoute: ActivatedRoute) {
+  constructor(private eventService: EventService, public translateService: TranslateService, private activatedRoute: ActivatedRoute) {
     this.speakersMultiSortMeta.push({field: 'displayName', order: 1});
     this.speakersMultiSortMeta.push({field: 'companiesString', order: 1});
 
@@ -47,15 +46,20 @@ export class EventComponent implements OnInit {
       if (!isNaN(idNumber)) {
         this.id = idNumber;
         this.loadEvent(this.id);
+
+        this.translateService.onLangChange
+          .subscribe(() => this.loadEvent(this.id));
       }
     });
   }
 
   loadEvent(id: number) {
-    this.eventService.getEvent(id)
-      .subscribe(data => {
-        this.eventDetails = this.getEventDetailsWithFilledAttributes(data);
-      });
+    if (this.translateService.currentLang) {
+      this.eventService.getEvent(id)
+        .subscribe(data => {
+          this.eventDetails = this.getEventDetailsWithFilledAttributes(data);
+        });
+    }
   }
 
   getEventDetailsWithFilledAttributes(eventDetails: EventDetails): EventDetails {
@@ -73,10 +77,6 @@ export class EventComponent implements OnInit {
     }
 
     return eventDetails;
-  }
-
-  onLanguageChange() {
-    this.loadEvent(this.id);
   }
 
   isDisplayPlaceVisible() {

@@ -1696,5 +1696,6 @@ public class ConferenceDataLoader {
 //                        Collections.emptyMap(),
 //                        Set.of("Игра со знатоками в формате интеллектуального казино", "Перерыв трансляции", "DotNext 2021 Virtual Afterparty"),
 //                        false));
+//        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2021, 6, 15), "2021hydra");
     }
 }
