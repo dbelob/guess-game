@@ -7759,7 +7759,7 @@ speakers:
             ционного банковского обслуживания для юридических лиц."}
   - id: 542
     photoFileName: 0542.jpg
-    photoUpdatedAt: 2019-03-01T14:02:50.394Z[UTC]
+    photoUpdatedAt: 2021-04-02T07:43:14.521Z[UTC]
     name:
       - {language: en, text: "Jack Vanlightly"}
     companyIds: [497]
@@ -7768,6 +7768,7 @@ speakers:
             \ and distributed system testing. He has worked as a member of the RabbitMQ core team at VMware and is now a principal\
             \ software engineer at Splunk working on the Apache Pulsar/BookKeeper messaging stack."}
     twitter: vanlightly
+    gitHub: Vanlightly
   - id: 543
     photoFileName: 0543.jpg
     name:
@@ -14645,6 +14646,7 @@ speakers:
             ми."
   - id: 1051
     photoFileName: 1051.jpg
+    photoUpdatedAt: 2021-04-01T11:58:36.004Z[UTC]
     name:
       - {language: en, text: "Maria Sokolova"}
       - {language: ru, text: "Мария Соколова"}
@@ -14655,6 +14657,7 @@ speakers:
       - {language: ru, text: "Работает в JetBrains над библиотеками для Kotlin. Учится на первом курсе магистратуры кафедр\
             ы Компьютерных Технологий университета ИТМО."}
     twitter: mvicsokolova
+    gitHub: mvicsokolova
   - id: 1052
     photoFileName: 1052.jpg
     name:
@@ -17122,6 +17125,7 @@ speakers:
     habr: maxim_babenko
   - id: 1238
     photoFileName: 1238.jpg
+    photoUpdatedAt: 2020-05-28T14:18:20.243Z[UTC]
     name:
       - {language: en, text: "Lena Hall"}
     companyIds: [328]
@@ -17134,6 +17138,7 @@ speakers:
             \ She’s co-organizes a conference called ML4ALL, and is often an invited member of program committees for conferences\
             \ like Kafka Summit, Lambda World, and others. Lena holds a Master’s degree in computer science."}
     twitter: lenadroid
+    gitHub: lenadroid
   - id: 1239
     photoFileName: 1239.jpg
     photoUpdatedAt: 2019-12-20T08:51:48.368Z[UTC]
@@ -23031,3 +23036,41 @@ speakers:
       - {language: ru, text: "Бэкенд (и немного фронтенд) разработчик из Санкт-Петербурга. Закончил Математико-Механически\
             й факультет СПбГУ, разрабатывает микросервисы на Java и Kotlin, а также UI для них в Технологическом Центре До\
             йче Банка."}
+  - id: 1663
+    photoFileName: 1663.jpg
+    photoUpdatedAt: 2021-04-15T20:11:21.601Z[UTC]
+    name:
+      - {language: en, text: "Markus Kuppe"}
+    companyIds: [328]
+    bio:
+      - {language: en, text: "Markus Kuppe is a Principal Research Software Development Engineer at Microsoft Research in\
+            \ Redmond, WA. As an engineer, his focus is on making spec-driven development (with TLA+) more popular among fellow\
+            \ engineers."}
+    twitter: lemmster
+    gitHub: lemmy
+  - id: 1664
+    photoFileName: 1664.jpg
+    photoUpdatedAt: 2021-04-15T20:24:17.702Z[UTC]
+    name:
+      - {language: en, text: "Alvaro Videla"}
+    companyIds: [328]
+    bio:
+      - language: en
+        text: "A former RabbitMQ core-dev, before moving to Europe he used to work in Shanghai where he helped building one\
+            \ of Germany biggest dating websites.\n\nHe co-authored the book \"RabbitMQ in Action\" for Manning Publishing.\n\
+            \nApart from code related activities he likes traveling with his wife, listening/playing music, and reading books."
+    twitter: old_sound
+    gitHub: videlalvaro
+  - id: 1665
+    photoFileName: 1665.jpg
+    photoUpdatedAt: 2021-04-15T20:21:02.892Z[UTC]
+    name:
+      - {language: en, text: "Andy Pavlo"}
+    companyIds: [756]
+    bio:
+      - {language: en, text: "Associate Professor of Databaseology in the Computer Science Department at Carnegie Mellon University.\
+            \ His research interest is in database management systems, specifically main memory systems, self-driving/autonomous\
+            \ architectures, transaction processing systems, and large-scale data analytics. At CMU, Andy is a member of the\
+            \ Database Group and the Parallel Data Laboratory. He's the co-founder and CEO of OtterTune."}
+    twitter: andy_pavlo
+    gitHub: apavlo

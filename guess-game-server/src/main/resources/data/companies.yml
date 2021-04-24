@@ -2368,3 +2368,6 @@ companies:
   - id: 755
     name:
       - {language: en, text: SolidBridge}
+  - id: 756
+    name:
+      - {language: en, text: "Carnegie Mellon University"}

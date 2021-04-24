@@ -610,6 +610,16 @@ events:
     placeId: 24
     talkIds: [2445, 2266, 2282, 2407, 2277, 2362, 2271, 2444, 2321, 2536, 2564, 2447, 2319, 2275, 2269, 2537, 2278,
               2535, 2364, 2409, 2274, 2281, 2410, 2366]
+  - eventTypeId: 5
+    name:
+      - {language: en, text: "Hydra 2021"}
+    startDate: "2021-06-15"
+    endDate: "2021-06-18"
+    siteLink:
+      - {language: en, text: "https://hydraconf.com/"}
+    youtubeLink: https://live.jugru.org/events/hydra/
+    placeId: 24
+    talkIds: [3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131]
   # JBreak
   - eventTypeId: 6
     name:
