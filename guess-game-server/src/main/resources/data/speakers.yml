@@ -22879,15 +22879,17 @@ speakers:
       - {language: ru, text: "Валерия Андрианова"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in\
-            \ team products, workflow organization, and project management methodologies. Valeria is responsible for Space,\
-            \ a new integrated environment for teams. She also speaks at conferences, meetups, and user meetings, writes about\
-            \ team products and collaboration. According to Valeria, soft skills are no less important than technical knowledge."}
-      - {language: ru, text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируетс\
-            я на командных продуктах, организации рабочих процессов и методологиях управления проектами. Валерия отвечает\
-            \ за маркетинг Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, мит\
-            апах и встречах пользователей, пишет о командных продуктах и совместной работе. По мнению Валерии, личные каче\
-            ства и навыки межличностного общения в работе не менее важны, чем технические знания."}
+      - language: en
+        text: "Valeria has over 10 years of experience in product marketing at JetBrains. She specializes in team products,\
+            \ workflow organization, and project management methodologies.\nValeria is responsible for Space, a new integrated\
+            \ environment for teams. She also speaks at conferences, meetups, and user meetings, writes about team products\
+            \ and collaboration.\nAccording to Valeria, soft skills are no less important than technical knowledge."
+      - language: ru
+        text: "Валерия уже более 10 лет занимается продуктовым маркетингом в JetBrains. Она специализируется на командных\
+            \ продуктах, организации рабочих процессов и методологиях управления проектами.\nВалерия отвечает за маркетинг\
+            \ Space — новой интегрированной среды для работы команд. Также она выступает на конференциях, митапах и встреч\
+            ах пользователей, пишет о командных продуктах и совместной работе.\nПо мнению Валерии, личные качества и навык\
+            и межличностного общения в работе не менее важны, чем технические знания."
   - id: 1652
     photoFileName: 1652.jpg
     photoUpdatedAt: 2021-04-09T08:01:51.163Z[UTC]
