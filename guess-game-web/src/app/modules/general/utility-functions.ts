@@ -88,9 +88,6 @@ export function getEventDates(event: Event, translateService: TranslateService):
 
 export function getEventDisplayName(event: Event, translateService: TranslateService): string {
   const isEventDateParenthesesVisibleFlag = isEventDateParenthesesVisible(event);
-  const isEventStartDateVisibleFlag = isEventStartDateVisible(event);
-  const isEventHyphenVisibleFlag = isEventHyphenVisible(event);
-  const isEventEndDateVisibleFlag = isEventEndDateVisible(event);
 
   let displayName = event.name;
 
