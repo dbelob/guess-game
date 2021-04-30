@@ -53,7 +53,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             for (Talk talk : event.getTalks()) {
                 for (Speaker speaker : talk.getSpeakers()) {
-                    SpeakerQuestion speakerQuestion = new SpeakerQuestion(speaker);
+                    var speakerQuestion = new SpeakerQuestion(speaker);
                     speakerQuestions.add(speakerQuestion);
 
                     String twitter = speaker.getTwitter();
@@ -136,13 +136,13 @@ public class QuestionDaoImpl implements QuestionDao {
      */
     static void fillSpeakerTalkTextInformation(Talk talk, Map<Speaker, Map<Language, StringBuilder>> speakerTalkTextMap) {
         if (talk.getSpeakers().size() == 1) {
-            Speaker speaker = talk.getSpeakers().get(0);
+            var speaker = talk.getSpeakers().get(0);
 
             speakerTalkTextMap.computeIfAbsent(speaker, k -> new EnumMap<>(Language.class));
             speakerTalkTextMap.get(speaker).computeIfAbsent(Language.ENGLISH, k -> new StringBuilder());
             speakerTalkTextMap.get(speaker).get(Language.ENGLISH).append(TagCloudUtils.getTalkText(talk, Language.ENGLISH));
 
-            Language talkLanguage = Language.getLanguageByCode(talk.getLanguage());
+            var talkLanguage = Language.getLanguageByCode(talk.getLanguage());
 
             if ((talkLanguage != null) && !Language.ENGLISH.equals(talkLanguage) && TagCloudUtils.isTalkTextExists(talk, talkLanguage)) {
                 speakerTalkTextMap.get(speaker).computeIfAbsent(talkLanguage, k -> new StringBuilder());
@@ -254,7 +254,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
         for (QuestionSet questionSet : questionSets) {
             for (TagCloudQuestion question : questionSet.getTagCloudBySpeakerQuestions()) {
-                Speaker speaker = question.getSpeaker();
+                var speaker = question.getSpeaker();
 
                 speakerQuestionsMap.computeIfAbsent(speaker, k -> new ArrayList<>());
                 speakerQuestionsMap.get(speaker).add(question);

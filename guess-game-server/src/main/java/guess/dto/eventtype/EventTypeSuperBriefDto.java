@@ -53,9 +53,9 @@ public class EventTypeSuperBriefDto {
     }
 
     public static EventTypeSuperBriefDto convertToSuperBriefDto(EventType eventType, Language language) {
-        String name = LocalizationUtils.getString(eventType.getName(), language);
+        var name = LocalizationUtils.getString(eventType.getName(), language);
         String resourceKey = (eventType.isEventTypeConference()) ? LocalizationUtils.CONFERENCES_EVENT_TYPE_TEXT : LocalizationUtils.MEETUPS_EVENT_TYPE_TEXT;
-        String displayName = String.format(LocalizationUtils.getResourceString(resourceKey, language), name);
+        var displayName = String.format(LocalizationUtils.getResourceString(resourceKey, language), name);
 
         return new EventTypeSuperBriefDto(
                 eventType.getId(),

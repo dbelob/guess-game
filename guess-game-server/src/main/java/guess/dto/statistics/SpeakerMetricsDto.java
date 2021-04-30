@@ -73,7 +73,7 @@ public class SpeakerMetricsDto extends AbstractSpeakerCompanyMetrics {
     }
 
     public static SpeakerMetricsDto convertToDto(SpeakerMetrics speakerMetrics, Language language, Set<Speaker> speakerDuplicates) {
-        Speaker speaker = speakerMetrics.getSpeaker();
+        var speaker = speakerMetrics.getSpeaker();
         String name = LocalizationUtils.getSpeakerNameWithLastNameFirst(speaker, language, speakerDuplicates);
 
         return new SpeakerMetricsDto(

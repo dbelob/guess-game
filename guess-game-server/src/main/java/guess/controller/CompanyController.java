@@ -1,6 +1,5 @@
 package guess.controller;
 
-import guess.domain.Language;
 import guess.domain.source.Company;
 import guess.service.CompanyService;
 import guess.service.LocaleService;
@@ -34,7 +33,7 @@ public class CompanyController {
     @GetMapping("/first-letters-company-names")
     @ResponseBody
     public List<String> getCompanyNamesByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
         List<Company> companies = companyService.getCompaniesByFirstLetters(firstLetters, language);
 
         return companies.stream()

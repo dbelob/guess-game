@@ -38,7 +38,7 @@ public class QuestionServiceImpl implements QuestionService {
         return EventTypeDao.getItemsByEventTypeIds(eventTypeIds,
                 eventDao::getEventsByEventTypeId,
                 v -> {
-                    final String ALL_EVENTS_OPTION_TEXT = "allEventsOptionText";
+                    final var ALL_EVENTS_OPTION_TEXT = "allEventsOptionText";
 
                     List<LocaleItem> name = new ArrayList<>();
                     name.add(new LocaleItem(
@@ -48,10 +48,10 @@ public class QuestionServiceImpl implements QuestionService {
                             Language.RUSSIAN.getCode(),
                             LocalizationUtils.getResourceString(ALL_EVENTS_OPTION_TEXT, Language.RUSSIAN)));
 
-                    Organizer organizer = new Organizer();
+                    var organizer = new Organizer();
                     organizer.setId(-1L);
 
-                    EventType eventType = new EventType();
+                    var eventType = new EventType();
                     eventType.setId(-1L);
                     eventType.setOrganizer(organizer);
 

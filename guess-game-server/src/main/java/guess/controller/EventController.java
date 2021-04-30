@@ -1,6 +1,5 @@
 package guess.controller;
 
-import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
@@ -45,7 +44,7 @@ public class EventController {
     public List<EventBriefDto> getEvents(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                          @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
         List<Event> events = eventService.getEvents(conferences, meetups, eventTypeId);
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate).reversed());
 
@@ -55,8 +54,8 @@ public class EventController {
     @GetMapping("/default-event")
     @ResponseBody
     public EventSuperBriefDto getDefaultEvent(HttpSession httpSession) {
-        Event defaultEvent = eventService.getDefaultEvent(true, true);
-        Language language = localeService.getLanguage(httpSession);
+        var defaultEvent = eventService.getDefaultEvent(true, true);
+        var language = localeService.getLanguage(httpSession);
 
         return (defaultEvent != null) ? EventSuperBriefDto.convertToSuperBriefDto(defaultEvent, language) : null;
     }
@@ -64,8 +63,8 @@ public class EventController {
     @GetMapping("/default-event-home-info")
     @ResponseBody
     public EventHomeInfoDto getDefaultEventHomeInfo(HttpSession httpSession) {
-        Event defaultEvent = eventService.getDefaultEvent(true, true);
-        Language language = localeService.getLanguage(httpSession);
+        var defaultEvent = eventService.getDefaultEvent(true, true);
+        var language = localeService.getLanguage(httpSession);
 
         return (defaultEvent != null) ? EventHomeInfoDto.convertToDto(defaultEvent, language) : null;
     }
@@ -73,8 +72,8 @@ public class EventController {
     @GetMapping("/default-conference")
     @ResponseBody
     public EventSuperBriefDto getDefaultConference(HttpSession httpSession) {
-        Event defaultEvent = eventService.getDefaultEvent(true, false);
-        Language language = localeService.getLanguage(httpSession);
+        var defaultEvent = eventService.getDefaultEvent(true, false);
+        var language = localeService.getLanguage(httpSession);
 
         return (defaultEvent != null) ? EventSuperBriefDto.convertToSuperBriefDto(defaultEvent, language) : null;
     }
@@ -82,14 +81,14 @@ public class EventController {
     @GetMapping("/event/{id}")
     @ResponseBody
     public EventDetailsDto getEvent(@PathVariable long id, HttpSession httpSession) {
-        Event event = eventService.getEventById(id);
-        Language language = localeService.getLanguage(httpSession);
+        var event = eventService.getEventById(id);
+        var language = localeService.getLanguage(httpSession);
         List<Talk> talks = event.getTalks();
         List<Speaker> speakers = talks.stream()
                 .flatMap(t -> t.getSpeakers().stream())
                 .distinct()
                 .collect(Collectors.toList());
-        EventDetailsDto eventDetailsDto = EventDetailsDto.convertToDto(event, speakers, talks, eventService::getEventByTalk,
+        var eventDetailsDto = EventDetailsDto.convertToDto(event, speakers, talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
 
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);

@@ -32,7 +32,7 @@ public interface EventTypeDao {
                     return Collections.emptyList();
                 }
 
-                EventType eventType = eventTypeDao.getEventTypeById(eventTypeId);
+                var eventType = eventTypeDao.getEventTypeById(eventTypeId);
 
                 if (eventType.isEventTypeConference()) {
                     return eventTypeConferenceFunction.apply(eventTypeId);

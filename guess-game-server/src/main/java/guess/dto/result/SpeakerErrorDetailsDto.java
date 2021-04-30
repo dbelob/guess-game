@@ -49,7 +49,7 @@ public class SpeakerErrorDetailsDto {
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 
-            Speaker questionSpeaker = ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker();
+            var questionSpeaker = ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker();
 
             List<String> yourAnswers = errorDetails.getYourAnswers().stream()
                     .map(q -> GuessMode.GUESS_NAME_BY_PHOTO_MODE.equals(guessMode) ?

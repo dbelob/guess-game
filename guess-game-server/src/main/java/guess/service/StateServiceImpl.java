@@ -4,7 +4,10 @@ import guess.dao.*;
 import guess.domain.*;
 import guess.domain.answer.*;
 import guess.domain.question.*;
-import guess.domain.source.*;
+import guess.domain.source.Company;
+import guess.domain.source.Event;
+import guess.domain.source.LocaleItem;
+import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +42,7 @@ public class StateServiceImpl implements StateService {
     public void setStartParameters(StartParameters startParameters, HttpSession httpSession) {
         stateDao.setStartParameters(startParameters, httpSession);
 
-        QuestionAnswersSet questionAnswersSet = createQuestionAnswersSet(startParameters);
+        var questionAnswersSet = createQuestionAnswersSet(startParameters);
         stateDao.setQuestionAnswersSet(questionAnswersSet, httpSession);
 
         answerDao.clearAnswerSets(httpSession);
@@ -151,7 +154,7 @@ public class StateServiceImpl implements StateService {
 
         // Set name and logo filename
         if (startParameters.getEventTypeIds().size() == 1) {
-            EventType eventType = eventTypeDao.getEventTypeById(startParameters.getEventTypeIds().get(0));
+            var eventType = eventTypeDao.getEventTypeById(startParameters.getEventTypeIds().get(0));
             Event event;
 
             if (eventType.isEventTypeConference() &&
@@ -164,7 +167,7 @@ public class StateServiceImpl implements StateService {
 
             logoFileName = eventType.getLogoFileName();
         } else {
-            final String SELECTED_EVENT_TYPES = "selectedEventTypes";
+            final var SELECTED_EVENT_TYPES = "selectedEventTypes";
 
             name = Arrays.asList(
                     new LocaleItem(Language.ENGLISH.getCode(), String.format(
@@ -184,15 +187,15 @@ public class StateServiceImpl implements StateService {
                 GuessMode.GUESS_PHOTO_BY_NAME_MODE.equals(guessMode) ||
                 GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ||
                 GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
-            Speaker speaker = ((SpeakerQuestion) question).getSpeaker();
-            SpeakerAnswer speakerAnswer = (SpeakerAnswer) answerCache.computeIfAbsent(
+            var speaker = ((SpeakerQuestion) question).getSpeaker();
+            var speakerAnswer = (SpeakerAnswer) answerCache.computeIfAbsent(
                     speaker.getId(),
                     k -> new SpeakerAnswer(speaker));
 
             return Collections.singletonList(speakerAnswer);
         } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
-            Talk talk = ((TalkQuestion) question).getTalk();
-            TalkAnswer talkAnswer = (TalkAnswer) answerCache.computeIfAbsent(
+            var talk = ((TalkQuestion) question).getTalk();
+            var talkAnswer = (TalkAnswer) answerCache.computeIfAbsent(
                     talk.getId(),
                     k -> new TalkAnswer(talk));
 
@@ -216,8 +219,8 @@ public class StateServiceImpl implements StateService {
                             k -> new SpeakerAnswer(s)))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
-            Speaker speaker = ((TagCloudQuestion) question).getSpeaker();
-            TagCloudAnswer tagCloudAnswer = (TagCloudAnswer) answerCache.computeIfAbsent(
+            var speaker = ((TagCloudQuestion) question).getSpeaker();
+            var tagCloudAnswer = (TagCloudAnswer) answerCache.computeIfAbsent(
                     speaker.getId(),
                     k -> new TagCloudAnswer(
                             speaker,
@@ -226,8 +229,8 @@ public class StateServiceImpl implements StateService {
 
             return Collections.singletonList(tagCloudAnswer);
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
-            Speaker speaker = ((TagCloudQuestion) question).getSpeaker();
-            SpeakerAnswer speakerAnswer = (SpeakerAnswer) answerCache.computeIfAbsent(
+            var speaker = ((TagCloudQuestion) question).getSpeaker();
+            var speakerAnswer = (SpeakerAnswer) answerCache.computeIfAbsent(
                     speaker.getId(),
                     k -> new SpeakerAnswer(speaker));
 
@@ -245,7 +248,7 @@ public class StateServiceImpl implements StateService {
                 GuessMode.GUESS_SPEAKER_BY_ACCOUNT_MODE.equals(guessMode)) {
             return questions.stream()
                     .map(q -> {
-                                Speaker speaker = ((SpeakerQuestion) q).getSpeaker();
+                                var speaker = ((SpeakerQuestion) q).getSpeaker();
 
                                 return (SpeakerAnswer) answerCache.computeIfAbsent(
                                         speaker.getId(),
@@ -255,7 +258,7 @@ public class StateServiceImpl implements StateService {
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_TALK_BY_SPEAKER_MODE.equals(guessMode)) {
             List<Speaker> questionSpeakers = ((TalkQuestion) question).getSpeakers();
-            Talk correctAnswerTalk = ((TalkAnswer) correctAnswers.get(0)).getTalk();
+            var correctAnswerTalk = ((TalkAnswer) correctAnswers.get(0)).getTalk();
 
             return questions.stream()
                     .map(q -> ((TalkQuestion) q).getTalk())
@@ -295,7 +298,7 @@ public class StateServiceImpl implements StateService {
                             k -> new CompanyAnswer(c)))
                     .collect(Collectors.toList());
         } else if (GuessMode.GUESS_SPEAKER_BY_COMPANY_MODE.equals(guessMode)) {
-            Company company = ((SpeakerByCompanyQuestion) question).getCompany();
+            var company = ((SpeakerByCompanyQuestion) question).getCompany();
             Set<Speaker> correctAnswerSpeakers = correctAnswers.stream()
                     .map(a -> ((SpeakerAnswer) a).getSpeaker())
                     .collect(Collectors.toSet());
@@ -312,7 +315,7 @@ public class StateServiceImpl implements StateService {
         } else if (GuessMode.GUESS_TAG_CLOUD_BY_SPEAKER_MODE.equals(guessMode)) {
             return questions.stream()
                     .map(q -> {
-                        Speaker speaker = ((TagCloudQuestion) q).getSpeaker();
+                        var speaker = ((TagCloudQuestion) q).getSpeaker();
 
                         return (TagCloudAnswer) answerCache.computeIfAbsent(
                                 speaker.getId(),
@@ -325,7 +328,7 @@ public class StateServiceImpl implements StateService {
         } else if (GuessMode.GUESS_SPEAKER_BY_TAG_CLOUD_MODE.equals(guessMode)) {
             return questions.stream()
                     .map(q -> {
-                        Speaker speaker = ((TagCloudQuestion) q).getSpeaker();
+                        var speaker = ((TagCloudQuestion) q).getSpeaker();
 
                         return (SpeakerAnswer) answerCache.computeIfAbsent(
                                 speaker.getId(),

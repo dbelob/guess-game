@@ -177,7 +177,7 @@ public class Event extends Nameable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Event event = (Event) o;
+        var event = (Event) o;
         return Objects.equals(eventType, event.eventType) &&
                 Objects.equals(startDate, event.startDate);
     }

@@ -48,7 +48,7 @@ public class AccountSpeakersDto extends EntitySpeakersDto {
                 speakers.map(
                         s -> LocalizationUtils.getSpeakerName(s, language, speakerDuplicates)
                 );
-        Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
+        var questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
 
         return new AccountSpeakersDto(
                 sourceDto,

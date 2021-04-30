@@ -42,7 +42,7 @@ public class SpeakerController {
     @GetMapping("/first-letter-speakers")
     @ResponseBody
     public List<SpeakerBriefDto> getSpeakersByFirstLetter(@RequestParam String firstLetter, HttpSession httpSession) {
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetter(firstLetter, language);
 
         return convertToBriefDtoAndSort(speakers, language);
@@ -54,7 +54,7 @@ public class SpeakerController {
                                              @RequestParam(required = false) String twitter, @RequestParam(required = false) String gitHub,
                                              @RequestParam boolean javaChampion, @RequestParam boolean mvp,
                                              HttpSession httpSession) {
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakers(name, company, twitter, gitHub, javaChampion, mvp);
 
         return convertToBriefDtoAndSort(speakers, language);
@@ -77,10 +77,10 @@ public class SpeakerController {
     @GetMapping("/speaker/{id}")
     @ResponseBody
     public SpeakerDetailsDto getSpeaker(@PathVariable long id, HttpSession httpSession) {
-        Speaker speaker = speakerService.getSpeakerById(id);
+        var speaker = speakerService.getSpeakerById(id);
         List<Talk> talks = talkService.getTalksBySpeaker(speaker);
-        Language language = localeService.getLanguage(httpSession);
-        SpeakerDetailsDto speakerDetailsDto = SpeakerDetailsDto.convertToDto(speaker, talks, eventService::getEventByTalk,
+        var language = localeService.getLanguage(httpSession);
+        var speakerDetailsDto = SpeakerDetailsDto.convertToDto(speaker, talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
 
         speakerDetailsDto.getTalks().sort(Comparator.comparing(TalkBriefDto::getTalkDate).reversed());

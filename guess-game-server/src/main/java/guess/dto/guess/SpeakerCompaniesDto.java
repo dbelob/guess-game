@@ -6,7 +6,6 @@ import guess.domain.answer.CompanyAnswer;
 import guess.domain.question.CompanyBySpeakerQuestion;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.source.Company;
-import guess.domain.source.Speaker;
 import guess.dto.result.SpeakerPairDto;
 import guess.util.LocalizationUtils;
 
@@ -51,7 +50,7 @@ public class SpeakerCompaniesDto extends QuestionAnswersDto {
                 questionAnswers.getAvailableAnswers().map(
                         a -> ((CompanyAnswer) a).getCompany()
                 );
-        Speaker questionSpeaker = ((CompanyBySpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
+        var questionSpeaker = ((CompanyBySpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
 
         return new SpeakerCompaniesDto(
                 sourceDto,

@@ -60,7 +60,7 @@ public class Result {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Result)) return false;
-        Result result = (Result) o;
+        var result = (Result) o;
         return correctAnswers == result.correctAnswers &&
                 wrongAnswers == result.wrongAnswers &&
                 skippedAnswers == result.skippedAnswers &&

@@ -193,7 +193,7 @@ public class Speaker extends Identifier {
         List<LocaleItem> result = new ArrayList<>();
 
         for (LocaleItem localeItem : name) {
-            Language language = Language.getLanguageByCode(localeItem.getLanguage());
+            var language = Language.getLanguageByCode(localeItem.getLanguage());
 
             if (language != null) {
                 String localeName = LocalizationUtils.getString(name, language).trim();

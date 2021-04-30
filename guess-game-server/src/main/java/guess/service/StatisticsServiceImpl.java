@@ -39,7 +39,7 @@ public class StatisticsServiceImpl implements StatisticsService {
     public EventTypeStatistics getEventTypeStatistics(boolean isConferences, boolean isMeetups, Long organizerId) {
         List<EventType> eventTypes = getStatisticsEventTypes(isConferences, isMeetups, organizerId, null);
         List<EventTypeMetrics> eventTypeMetricsList = new ArrayList<>();
-        LocalDate currentDate = LocalDate.now();
+        var currentDate = LocalDate.now();
         LocalDate totalsStartDate = currentDate;
         long totalsDuration = 0;
         long totalsEventsQuantity = 0;
@@ -119,7 +119,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                                 ((eventTypeId == null) || (e.getEventType().getId() == eventTypeId))))
                 .collect(Collectors.toList());
         List<EventMetrics> eventMetricsList = new ArrayList<>();
-        LocalDate totalsStartDate = LocalDate.now();
+        var totalsStartDate = LocalDate.now();
         long totalsDuration = 0;
         long totalsTalksQuantity = 0;
         Set<Speaker> totalsSpeakers = new HashSet<>();
@@ -206,8 +206,8 @@ public class StatisticsServiceImpl implements StatisticsService {
         List<SpeakerMetrics> speakerMetricsList = new ArrayList<>();
 
         for (Map.Entry<Speaker, SpeakerMetricsInternal> entry : speakerSpeakerMetricsMap.entrySet()) {
-            Speaker speaker = entry.getKey();
-            SpeakerMetricsInternal speakerMetricsInternal = entry.getValue();
+            var speaker = entry.getKey();
+            var speakerMetricsInternal = entry.getValue();
 
             speakerMetricsList.add(new SpeakerMetrics(
                     speaker,
@@ -268,8 +268,8 @@ public class StatisticsServiceImpl implements StatisticsService {
         Set<EventType> eventTypeMap = new HashSet<>();
 
         for (Map.Entry<Company, CompanyMetricsInternal> entry : companySpeakerMetricsMap.entrySet()) {
-            Company company = entry.getKey();
-            CompanyMetricsInternal companyMetricsInternal = entry.getValue();
+            var company = entry.getKey();
+            var companyMetricsInternal = entry.getValue();
             long javaChampionsQuantity = companyMetricsInternal.getSpeakers().stream()
                     .filter(Speaker::isJavaChampion)
                     .count();

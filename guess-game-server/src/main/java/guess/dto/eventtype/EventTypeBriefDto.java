@@ -31,8 +31,8 @@ public class EventTypeBriefDto extends EventTypeSuperBriefDto {
 
     public static EventTypeBriefDto convertToBriefDto(EventTypeSuperBriefDto eventTypeSuperBriefDto, EventType eventType,
                                                       Language language) {
-        String shortDescription = LocalizationUtils.getString(eventType.getShortDescription(), language);
-        String organizerName = LocalizationUtils.getString(eventType.getOrganizer().getName(), language);
+        var shortDescription = LocalizationUtils.getString(eventType.getShortDescription(), language);
+        var organizerName = LocalizationUtils.getString(eventType.getOrganizer().getName(), language);
 
         return new EventTypeBriefDto(
                 eventTypeSuperBriefDto,

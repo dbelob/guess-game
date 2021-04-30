@@ -38,7 +38,7 @@ public class SpeakerDto extends SpeakerBriefDto {
     }
 
     public static SpeakerDto convertToDto(Speaker speaker, Language language) {
-        SpeakerSuperBriefDto speakerSuperBriefDto = convertToSuperBriefDto(speaker, language);
+        var speakerSuperBriefDto = convertToSuperBriefDto(speaker, language);
 
         return new SpeakerDto(
                 speakerSuperBriefDto,

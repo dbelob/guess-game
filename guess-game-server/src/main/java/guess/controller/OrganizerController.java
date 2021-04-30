@@ -1,7 +1,5 @@
 package guess.controller;
 
-import guess.domain.Language;
-import guess.domain.source.Event;
 import guess.domain.source.Organizer;
 import guess.dto.organizer.OrganizerDto;
 import guess.service.EventService;
@@ -37,7 +35,7 @@ public class OrganizerController {
     @GetMapping("/organizers")
     @ResponseBody
     public List<OrganizerDto> getOrganizers(HttpSession httpSession) {
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
         List<Organizer> organizers = organizerService.getOrganizers();
         List<OrganizerDto> organizerDtoList = OrganizerDto.convertToDto(organizers, language);
 
@@ -49,10 +47,10 @@ public class OrganizerController {
     @GetMapping("/default-event-organizer")
     @ResponseBody
     public OrganizerDto getDefaultEventOrganizer(HttpSession httpSession) {
-        Event defaultEvent = eventService.getDefaultEvent(true, true);
+        var defaultEvent = eventService.getDefaultEvent(true, true);
 
         if (defaultEvent != null) {
-            Language language = localeService.getLanguage(httpSession);
+            var language = localeService.getLanguage(httpSession);
 
             return OrganizerDto.convertToDto(defaultEvent.getEventType().getOrganizer(), language);
         } else {

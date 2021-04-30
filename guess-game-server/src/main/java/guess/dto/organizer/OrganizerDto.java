@@ -28,7 +28,7 @@ public class OrganizerDto {
     }
 
     public static OrganizerDto convertToDto(Organizer organizer, Language language) {
-        String name = LocalizationUtils.getString(organizer.getName(), language);
+        var name = LocalizationUtils.getString(organizer.getName(), language);
 
         return new OrganizerDto(
                 organizer.getId(),

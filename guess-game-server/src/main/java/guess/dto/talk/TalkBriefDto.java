@@ -88,8 +88,8 @@ public class TalkBriefDto {
 
     public static TalkBriefDto convertToBriefDto(Talk talk, Function<Talk, Event> talkEventFunction,
                                                  Function<Event, EventType> eventEventTypeFunction, Language language) {
-        Event event = talkEventFunction.apply(talk);
-        EventType eventType = eventEventTypeFunction.apply(event);
+        var event = talkEventFunction.apply(talk);
+        var eventType = eventEventTypeFunction.apply(event);
 
         LocalDate eventStartDate = (event != null) ? event.getStartDate() : null;
         Long talkDay = talk.getTalkDay();
@@ -102,7 +102,7 @@ public class TalkBriefDto {
             talkDate = null;
         }
 
-        LocalDate safeLocalDate = Optional.ofNullable(talkDate).orElse(LocalDate.now());
+        var safeLocalDate = Optional.ofNullable(talkDate).orElse(LocalDate.now());
         LocalDateTime talkTime = (talk.getTrackTime() != null) ? LocalDateTime.of(safeLocalDate, talk.getTrackTime()) : null;
 
         EventSuperBriefDto eventSuperBriefDto = (event != null) ? EventSuperBriefDto.convertToSuperBriefDto(event, language) : null;

@@ -1,11 +1,6 @@
 package guess.controller;
 
-import guess.domain.Language;
 import guess.domain.source.EventType;
-import guess.domain.statistics.CompanyStatistics;
-import guess.domain.statistics.EventStatistics;
-import guess.domain.statistics.EventTypeStatistics;
-import guess.domain.statistics.SpeakerStatistics;
 import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
 import guess.service.LocaleService;
@@ -40,9 +35,9 @@ public class StatisticsController {
     @ResponseBody
     public EventTypeStatisticsDto getEventTypeStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                          @RequestParam(required = false) Long organizerId, HttpSession httpSession) {
-        EventTypeStatistics eventTypeStatistics = statisticsService.getEventTypeStatistics(conferences, meetups, organizerId);
-        Language language = localeService.getLanguage(httpSession);
-        EventTypeStatisticsDto eventTypeStatisticsDto = EventTypeStatisticsDto.convertToDto(eventTypeStatistics, language);
+        var eventTypeStatistics = statisticsService.getEventTypeStatistics(conferences, meetups, organizerId);
+        var language = localeService.getLanguage(httpSession);
+        var eventTypeStatisticsDto = EventTypeStatisticsDto.convertToDto(eventTypeStatistics, language);
         Comparator<EventTypeMetricsDto> comparatorByIsConference = Comparator.comparing(EventTypeMetricsDto::isConference).reversed();
         Comparator<EventTypeMetricsDto> comparatorByOrganizerName = Comparator.comparing(EventTypeMetricsDto::getOrganizerName, String.CASE_INSENSITIVE_ORDER);
         Comparator<EventTypeMetricsDto> comparatorByName = Comparator.comparing(EventTypeMetricsDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
@@ -55,9 +50,9 @@ public class StatisticsController {
     @GetMapping("/event-statistics")
     @ResponseBody
     public EventStatisticsDto getEventStatistics(@RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
-        EventStatistics eventStatistics = statisticsService.getEventStatistics(eventTypeId);
-        Language language = localeService.getLanguage(httpSession);
-        EventStatisticsDto eventStatisticsDto = EventStatisticsDto.convertToDto(eventStatistics, language);
+        var eventStatistics = statisticsService.getEventStatistics(eventTypeId);
+        var language = localeService.getLanguage(httpSession);
+        var eventStatisticsDto = EventStatisticsDto.convertToDto(eventStatistics, language);
 
         eventStatisticsDto.getEventMetricsList().sort(Comparator.comparing(EventMetricsDto::getName, String.CASE_INSENSITIVE_ORDER));
 
@@ -69,9 +64,9 @@ public class StatisticsController {
     public SpeakerStatisticsDto getSpeakerStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                      @RequestParam(required = false) Long organizerId,
                                                      @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
-        SpeakerStatistics speakerStatistics = statisticsService.getSpeakerStatistics(conferences, meetups, organizerId, eventTypeId);
-        Language language = localeService.getLanguage(httpSession);
-        SpeakerStatisticsDto speakerStatisticsDto = SpeakerStatisticsDto.convertToDto(speakerStatistics, language);
+        var speakerStatistics = statisticsService.getSpeakerStatistics(conferences, meetups, organizerId, eventTypeId);
+        var language = localeService.getLanguage(httpSession);
+        var speakerStatisticsDto = SpeakerStatisticsDto.convertToDto(speakerStatistics, language);
         Comparator<SpeakerMetricsDto> comparatorByTalksQuantity = Comparator.comparing(SpeakerMetricsDto::getTalksQuantity).reversed();
         Comparator<SpeakerMetricsDto> comparatorByEventsQuantity = Comparator.comparing(SpeakerMetricsDto::getEventsQuantity).reversed();
         Comparator<SpeakerMetricsDto> comparatorByEventTypesQuantity = Comparator.comparing(SpeakerMetricsDto::getEventTypesQuantity).reversed();
@@ -86,9 +81,9 @@ public class StatisticsController {
     public CompanyStatisticsDto getCompanyStatistics(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                      @RequestParam(required = false) Long organizerId,
                                                      @RequestParam(required = false) Long eventTypeId, HttpSession httpSession) {
-        CompanyStatistics companyStatistics = statisticsService.getCompanyStatistics(conferences, meetups, organizerId, eventTypeId);
-        Language language = localeService.getLanguage(httpSession);
-        CompanyStatisticsDto companyStatisticsDto = CompanyStatisticsDto.convertToDto(companyStatistics, language);
+        var companyStatistics = statisticsService.getCompanyStatistics(conferences, meetups, organizerId, eventTypeId);
+        var language = localeService.getLanguage(httpSession);
+        var companyStatisticsDto = CompanyStatisticsDto.convertToDto(companyStatistics, language);
         Comparator<CompanyMetricsDto> comparatorByTalksQuantity = Comparator.comparing(CompanyMetricsDto::getTalksQuantity).reversed();
         Comparator<CompanyMetricsDto> comparatorByEventsQuantity = Comparator.comparing(CompanyMetricsDto::getEventsQuantity).reversed();
         Comparator<CompanyMetricsDto> comparatorByEventTypesQuantity = Comparator.comparing(CompanyMetricsDto::getEventTypesQuantity).reversed();
@@ -102,7 +97,7 @@ public class StatisticsController {
     @ResponseBody
     public List<EventTypeSuperBriefDto> getConferences(HttpSession httpSession) {
         List<EventType> eventTypes = statisticsService.getConferences();
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
         List<EventTypeSuperBriefDto> eventTypeSuperBriefDtoList = EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
 
         eventTypeSuperBriefDtoList.sort(Comparator.comparing(EventTypeSuperBriefDto::getName, String.CASE_INSENSITIVE_ORDER));

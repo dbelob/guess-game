@@ -104,7 +104,7 @@ public class ResultDto extends Result {
         if (this == o) return true;
         if (!(o instanceof ResultDto)) return false;
         if (!super.equals(o)) return false;
-        ResultDto resultDto = (ResultDto) o;
+        var resultDto = (ResultDto) o;
         return Objects.equals(speakerErrorDetailsList, resultDto.speakerErrorDetailsList) &&
                 Objects.equals(talkErrorDetailsList, resultDto.talkErrorDetailsList) &&
                 Objects.equals(companyErrorDetailsList, resultDto.companyErrorDetailsList) &&
