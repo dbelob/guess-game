@@ -5,7 +5,6 @@ import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
-import guess.domain.source.SourceInformation;
 import guess.domain.source.Talk;
 import guess.util.FileUtils;
 import guess.util.LocalizationUtils;
@@ -35,7 +34,7 @@ public class TagCloudExporter {
 
     static void exportAllEvents() throws IOException, SpeakerDuplicatedException {
         // Read event types, places, events, companies, speakers, talks from resource files
-        SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
+        var resourceSourceInformation = YamlUtils.readSourceInformation();
 
         export(resourceSourceInformation.getTalks(), false, "allEvents.txt");
     }
@@ -44,11 +43,11 @@ public class TagCloudExporter {
         log.info("{} {}", conference, startDate);
 
         // Read event types, places, events, companies, speakers, talks from resource files
-        SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
+        var resourceSourceInformation = YamlUtils.readSourceInformation();
         Optional<EventType> resourceOptionalEventType = resourceSourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference().equals(conference))
                 .findFirst();
-        EventType resourceEventType = resourceOptionalEventType
+        var resourceEventType = resourceOptionalEventType
                 .orElseThrow(() -> new IllegalStateException(String.format("No event type found for conference %s (in resource files)", conference)));
         log.info("Event type (in resource files): nameEn: {}, nameRu: {}",
                 LocalizationUtils.getString(resourceEventType.getName(), Language.ENGLISH),
@@ -58,7 +57,7 @@ public class TagCloudExporter {
                 .flatMap(et -> et.getEvents().stream()
                         .filter(e -> e.getStartDate().equals(startDate))
                         .findFirst());
-        Event resourceEvent = resourceOptionalEvent
+        var resourceEvent = resourceOptionalEvent
                 .orElseThrow(() -> new IllegalStateException(String.format("No event found for start date %s (in resource files)", startDate)));
         log.info("Event (in resource files): nameEn: {}, nameRu: {}, startDate: {}, endDate: {}",
                 LocalizationUtils.getString(resourceEvent.getName(), Language.ENGLISH),
@@ -69,7 +68,7 @@ public class TagCloudExporter {
     }
 
     static void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) throws IOException {
-        StringBuilder conferenceSb = new StringBuilder();
+        var conferenceSb = new StringBuilder();
         Set<String> talkStopWords = new TreeSet<>();
 
         FileUtils.deleteDirectory(OUTPUT_DIRECTORY_NAME);
@@ -94,10 +93,10 @@ public class TagCloudExporter {
     }
 
     static void save(String text, String filename) throws IOException {
-        File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
+        var file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
         FileUtils.checkAndCreateDirectory(file.getParentFile());
 
-        try (FileWriter fileWriter = new FileWriter(file)) {
+        try (var fileWriter = new FileWriter(file)) {
             fileWriter.write(text);
         }
 

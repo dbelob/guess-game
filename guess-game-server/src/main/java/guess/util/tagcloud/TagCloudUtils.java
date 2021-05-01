@@ -24,7 +24,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -81,7 +80,7 @@ public class TagCloudUtils {
      * @return talk text
      */
     public static String getTalkText(Talk talk, Language language) {
-        StringBuilder sb = new StringBuilder();
+        var sb = new StringBuilder();
 
         sb.append(LocalizationUtils.getString(talk.getName(), language));
         sb.append("\n");
@@ -132,7 +131,7 @@ public class TagCloudUtils {
      */
     static Set<String> loadStopWords() {
         try {
-            final InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(STOP_WORDS_FILENAME);
+            final var inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(STOP_WORDS_FILENAME);
             final List<String> lines = IOUtils.readLines(Objects.requireNonNull(inputStream));
 
             return new HashSet<>(lines);
@@ -153,7 +152,7 @@ public class TagCloudUtils {
         Set<String> fullStopWords = loadStopWords();
         fullStopWords.addAll(stopWords);
 
-        final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
+        final var frequencyAnalyzer = new FrequencyAnalyzer();
         frequencyAnalyzer.setWordFrequenciesToReturn(DEFAULT_CREATION_TALK_WORD_FREQUENCIES_TO_RETURN);
         frequencyAnalyzer.setStopWords(fullStopWords);
         frequencyAnalyzer.addNormalizer(new CharacterStrippingNormalizer(
@@ -220,8 +219,8 @@ public class TagCloudUtils {
      * @return image
      */
     static byte[] createImage(List<SerializedWordFrequency> wordFrequencies) throws IOException {
-        final Dimension dimension = new Dimension(TALK_IMAGE_WIDTH, TALK_IMAGE_HEIGHT);
-        final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.RECTANGLE);
+        final var dimension = new Dimension(TALK_IMAGE_WIDTH, TALK_IMAGE_HEIGHT);
+        final var wordCloud = new WordCloud(dimension, CollisionMode.RECTANGLE);
         final List<WordFrequency> castedWordFrequencies = wordFrequencies.stream()
                 .map(WordFrequency.class::cast)
                 .collect(Collectors.toList());
@@ -235,13 +234,13 @@ public class TagCloudUtils {
         wordCloud.build(castedWordFrequencies);
 
         // Change image type from TYPE_INT_ARGB to TYPE_INT_RGB
-        BufferedImage oldImage = wordCloud.getBufferedImage();
-        BufferedImage newImage = new BufferedImage(oldImage.getWidth(), oldImage.getHeight(), BufferedImage.TYPE_INT_RGB);
+        var oldImage = wordCloud.getBufferedImage();
+        var newImage = new BufferedImage(oldImage.getWidth(), oldImage.getHeight(), BufferedImage.TYPE_INT_RGB);
         newImage.createGraphics().drawImage(oldImage, 0, 0, Color.WHITE, null);
 
         // Create image array
         byte[] result;
-        try (ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+        try (var bos = new ByteArrayOutputStream()) {
             ImageIO.write(newImage, "jpg", bos);
 
             result = bos.toByteArray();

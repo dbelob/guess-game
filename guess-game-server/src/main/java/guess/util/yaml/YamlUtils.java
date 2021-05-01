@@ -7,7 +7,6 @@ import guess.util.FileUtils;
 import guess.util.LocalizationUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
@@ -43,34 +42,34 @@ public class YamlUtils {
      * @throws SpeakerDuplicatedException if speaker duplicated
      */
     public static SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
-        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DATA_DIRECTORY_NAME));
-        Resource organizersResource = resolver.getResource(String.format("classpath:%s/organizers.yml", DATA_DIRECTORY_NAME));
-        Resource eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DATA_DIRECTORY_NAME));
-        Resource eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DATA_DIRECTORY_NAME));
-        Resource companiesResource = resolver.getResource(String.format("classpath:%s/companies.yml", DATA_DIRECTORY_NAME));
-        Resource companySynonymsResource = resolver.getResource(String.format("classpath:%s/company-synonyms.yml", DATA_DIRECTORY_NAME));
-        Resource speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", DATA_DIRECTORY_NAME));
-        Resource talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DATA_DIRECTORY_NAME));
+        var resolver = new PathMatchingResourcePatternResolver();
+        var placesResource = resolver.getResource(String.format("classpath:%s/places.yml", DATA_DIRECTORY_NAME));
+        var organizersResource = resolver.getResource(String.format("classpath:%s/organizers.yml", DATA_DIRECTORY_NAME));
+        var eventTypesResource = resolver.getResource(String.format("classpath:%s/event-types.yml", DATA_DIRECTORY_NAME));
+        var eventsResource = resolver.getResource(String.format("classpath:%s/events.yml", DATA_DIRECTORY_NAME));
+        var companiesResource = resolver.getResource(String.format("classpath:%s/companies.yml", DATA_DIRECTORY_NAME));
+        var companySynonymsResource = resolver.getResource(String.format("classpath:%s/company-synonyms.yml", DATA_DIRECTORY_NAME));
+        var speakersResource = resolver.getResource(String.format("classpath:%s/speakers.yml", DATA_DIRECTORY_NAME));
+        var talksResource = resolver.getResource(String.format("classpath:%s/talks.yml", DATA_DIRECTORY_NAME));
 
-        Yaml placesYaml = new Yaml(new Constructor(PlaceList.class));
-        Yaml organizerYaml = new Yaml(new Constructor(OrganizerList.class));
-        Yaml eventTypesYaml = new Yaml(new Constructor(EventTypeList.class));
-        Yaml eventsYaml = new Yaml(new DateTimeYamlConstructor(EventList.class));
-        Yaml companiesYaml = new Yaml(new DateTimeYamlConstructor(CompanyList.class));
-        Yaml companySynonymsYaml = new Yaml(new DateTimeYamlConstructor(CompanySynonymsList.class));
-        Yaml speakersYaml = new Yaml(new DateTimeYamlConstructor(SpeakerList.class));
-        Yaml talksYaml = new Yaml(new DateTimeYamlConstructor(TalkList.class));
+        var placesYaml = new Yaml(new Constructor(PlaceList.class));
+        var organizerYaml = new Yaml(new Constructor(OrganizerList.class));
+        var eventTypesYaml = new Yaml(new Constructor(EventTypeList.class));
+        var eventsYaml = new Yaml(new DateTimeYamlConstructor(EventList.class));
+        var companiesYaml = new Yaml(new DateTimeYamlConstructor(CompanyList.class));
+        var companySynonymsYaml = new Yaml(new DateTimeYamlConstructor(CompanySynonymsList.class));
+        var speakersYaml = new Yaml(new DateTimeYamlConstructor(SpeakerList.class));
+        var talksYaml = new Yaml(new DateTimeYamlConstructor(TalkList.class));
 
         // Read from YAML files
-        PlaceList placeList = placesYaml.load(placesResource.getInputStream());
-        OrganizerList organizerList = organizerYaml.load(organizersResource.getInputStream());
-        EventTypeList eventTypeList = eventTypesYaml.load(eventTypesResource.getInputStream());
-        EventList eventList = eventsYaml.load(eventsResource.getInputStream());
-        CompanyList companyList = companiesYaml.load(companiesResource.getInputStream());
-        CompanySynonymsList companySynonymsList = companySynonymsYaml.load(companySynonymsResource.getInputStream());
-        SpeakerList speakerList = speakersYaml.load(speakersResource.getInputStream());
-        TalkList talkList = talksYaml.load(talksResource.getInputStream());
+        var placeList = (PlaceList) placesYaml.load(placesResource.getInputStream());
+        var organizerList = (OrganizerList) organizerYaml.load(organizersResource.getInputStream());
+        var eventTypeList = (EventTypeList) eventTypesYaml.load(eventTypesResource.getInputStream());
+        var eventList = (EventList) eventsYaml.load(eventsResource.getInputStream());
+        var companyList = (CompanyList) companiesYaml.load(companiesResource.getInputStream());
+        var companySynonymsList = (CompanySynonymsList) companySynonymsYaml.load(companySynonymsResource.getInputStream());
+        var speakerList = (SpeakerList) speakersYaml.load(speakersResource.getInputStream());
+        var talkList = (TalkList) talksYaml.load(talksResource.getInputStream());
 
         return getSourceInformation(
                 placeList.getPlaces(),
@@ -172,9 +171,9 @@ public class YamlUtils {
     static void linkEventTypesToOrganizers(Map<Long, Organizer> organizers, List<EventType> eventTypes) {
         for (EventType eventType : eventTypes) {
             // Find organizer by id
-            Organizer organizer = organizers.get(eventType.getOrganizerId());
+            var organizer = organizers.get(eventType.getOrganizerId());
             Objects.requireNonNull(organizer,
-                    () -> String.format("Organizer id %d not found for event type %s", eventType.getOrganizerId(), eventType.toString()));
+                    () -> String.format("Organizer id %d not found for event type %s", eventType.getOrganizerId(), eventType));
             eventType.setOrganizer(organizer);
         }
     }
@@ -188,9 +187,9 @@ public class YamlUtils {
     static void linkEventsToEventTypes(Map<Long, EventType> eventTypes, List<Event> events) {
         for (Event event : events) {
             // Find event type by id
-            EventType eventType = eventTypes.get(event.getEventTypeId());
+            var eventType = eventTypes.get(event.getEventTypeId());
             Objects.requireNonNull(eventType,
-                    () -> String.format("EventType id %d not found for event %s", event.getEventTypeId(), event.toString()));
+                    () -> String.format("EventType id %d not found for event %s", event.getEventTypeId(), event));
             eventType.getEvents().add(event);
             event.setEventType(eventType);
         }
@@ -205,9 +204,9 @@ public class YamlUtils {
     static void linkEventsToPlaces(Map<Long, Place> places, List<Event> events) {
         for (Event event : events) {
             // Find place by id
-            Place place = places.get(event.getPlaceId());
+            var place = places.get(event.getPlaceId());
             Objects.requireNonNull(place,
-                    () -> String.format("Place id %d not found for event %s", event.getPlaceId(), event.toString()));
+                    () -> String.format("Place id %d not found for event %s", event.getPlaceId(), event));
             event.setPlace(place);
         }
     }
@@ -223,9 +222,9 @@ public class YamlUtils {
             // For any talkId
             for (Long talkId : event.getTalkIds()) {
                 // Find talk by id
-                Talk talk = talks.get(talkId);
+                var talk = talks.get(talkId);
                 Objects.requireNonNull(talk,
-                        () -> String.format("Talk id %d not found for event %s", talkId, event.toString()));
+                        () -> String.format("Talk id %d not found for event %s", talkId, event));
                 event.getTalks().add(talk);
             }
         }
@@ -243,9 +242,9 @@ public class YamlUtils {
 
             // Find companies by id
             for (Long companyId : speaker.getCompanyIds()) {
-                Company company = companies.get(companyId);
+                var company = companies.get(companyId);
                 Objects.requireNonNull(company,
-                        () -> String.format("Company id %d not found for speaker %s", companyId, speaker.toString()));
+                        () -> String.format("Company id %d not found for speaker %s", companyId, speaker));
                 speakerCompanies.add(company);
             }
 
@@ -268,9 +267,9 @@ public class YamlUtils {
             // For any speakerId
             for (Long speakerId : talk.getSpeakerIds()) {
                 // Find speaker by id
-                Speaker speaker = speakers.get(speakerId);
+                var speaker = speakers.get(speakerId);
                 Objects.requireNonNull(speaker,
-                        () -> String.format("Speaker id %d not found for talk %s", speakerId, talk.toString()));
+                        () -> String.format("Speaker id %d not found for talk %s", speakerId, talk));
                 talk.getSpeakers().add(speaker);
             }
         }
@@ -282,7 +281,7 @@ public class YamlUtils {
      * @param events events
      */
     private static void setEventIds(List<Event> events) {
-        AtomicLong id = new AtomicLong(0);
+        var id = new AtomicLong(0);
 
         events.stream()
                 .sorted(new EventComparator())
@@ -364,11 +363,11 @@ public class YamlUtils {
      * @throws NoSuchFieldException if field name is invalid
      */
     public static <T> void save(T items, String filename) throws IOException, NoSuchFieldException {
-        File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
+        var file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, filename));
         FileUtils.checkAndCreateDirectory(file.getParentFile());
 
-        try (FileWriter writer = new FileWriter(file)) {
-            DumperOptions options = new DumperOptions();
+        try (var writer = new FileWriter(file)) {
+            var options = new DumperOptions();
             options.setDefaultScalarStyle(DumperOptions.ScalarStyle.PLAIN);
             options.setIndent(4);
             options.setIndicatorIndent(2);
@@ -395,10 +394,10 @@ public class YamlUtils {
                     new PropertyMatcher(LocaleItem.class,
                             List.of("language", "text"))
             );
-            CustomRepresenter representer = new CustomRepresenter(propertyMatchers);
+            var representer = new CustomRepresenter(propertyMatchers);
             representer.addClassTag(items.getClass(), Tag.MAP);
 
-            CustomYaml eventTypesYaml = new CustomYaml(
+            var eventTypesYaml = new CustomYaml(
                     new Constructor(items.getClass()),
                     representer,
                     options);

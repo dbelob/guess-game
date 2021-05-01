@@ -5,7 +5,6 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.BaseConstructor;
 import org.yaml.snakeyaml.emitter.CustomEmitter;
 import org.yaml.snakeyaml.error.YAMLException;
-import org.yaml.snakeyaml.nodes.Node;
 import org.yaml.snakeyaml.nodes.Tag;
 import org.yaml.snakeyaml.representer.Representer;
 import org.yaml.snakeyaml.serializer.Serializer;
@@ -46,12 +45,12 @@ public class CustomYaml extends Yaml {
     }
 
     private void customDumpAll(Iterator<?> data, Writer output, Tag rootTag) {
-        Serializer serializer = new Serializer(new CustomEmitter(output, dumperOptions), resolver,
+        var serializer = new Serializer(new CustomEmitter(output, dumperOptions), resolver,
                 dumperOptions, rootTag);
         try {
             serializer.open();
             while (data.hasNext()) {
-                Node node = representer.represent(data.next());
+                var node = representer.represent(data.next());
                 serializer.serialize(node);
             }
             serializer.close();

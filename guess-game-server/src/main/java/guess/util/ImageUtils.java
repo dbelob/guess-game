@@ -47,8 +47,8 @@ public class ImageUtils {
      * @throws IOException if read error occurs
      */
     static BufferedImage getImageByUrlString(String urlString) throws IOException {
-        String urlSpec = String.format("%s?w=%d", urlString, IMAGE_WIDTH);
-        URL url = new URL(urlSpec);
+        var urlSpec = String.format("%s?w=%d", urlString, IMAGE_WIDTH);
+        var url = new URL(urlSpec);
 
         return getImageByUrl(url);
     }
@@ -89,7 +89,7 @@ public class ImageUtils {
         int dotIndex = sourceUrlSuffix.lastIndexOf(".");
 
         if (dotIndex > 0) {
-            String extension = sourceUrlSuffix.substring(dotIndex + 1);
+            var extension = sourceUrlSuffix.substring(dotIndex + 1);
 
             return ImageFormat.getImageFormatByExtension(extension);
         } else {
@@ -104,7 +104,7 @@ public class ImageUtils {
      * @return JPG image
      */
     static BufferedImage convertPngToJpg(BufferedImage image) {
-        BufferedImage newImage = new BufferedImage(
+        var newImage = new BufferedImage(
                 image.getWidth(),
                 image.getHeight(),
                 BufferedImage.TYPE_INT_RGB);
@@ -121,11 +121,11 @@ public class ImageUtils {
      * @throws IOException if file creation error occurs
      */
     public static void create(String sourceUrl, String destinationFileName) throws IOException {
-        File file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, destinationFileName));
+        var file = new File(String.format("%s/%s", OUTPUT_DIRECTORY_NAME, destinationFileName));
         FileUtils.checkAndCreateDirectory(file.getParentFile());
 
         BufferedImage image = getImageByUrlString(sourceUrl);
-        ImageFormat imageFormat = getImageFormatByUrlString(sourceUrl);
+        var imageFormat = getImageFormatByUrlString(sourceUrl);
 
         if (!ImageFormat.JPG.equals(imageFormat)) {
             if (ImageFormat.PNG.equals(imageFormat)) {

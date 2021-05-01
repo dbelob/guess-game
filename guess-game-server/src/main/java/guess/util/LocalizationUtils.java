@@ -83,7 +83,7 @@ public class LocalizationUtils {
      * @return locale string
      */
     public static String getResourceString(String key, Language language) {
-        ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(language.getCode()));
+        var bundle = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(language.getCode()));
 
         return bundle.getString(key);
     }
@@ -110,7 +110,7 @@ public class LocalizationUtils {
      * @return speaker name with company name
      */
     public static String getSpeakerNameWithCompanies(Speaker speaker, Language language) {
-        String name = LocalizationUtils.getString(speaker.getName(), language);
+        var name = LocalizationUtils.getString(speaker.getName(), language);
         String companies = getSpeakerCompanies(speaker, language);
 
         return (!companies.isEmpty()) ?
@@ -126,7 +126,7 @@ public class LocalizationUtils {
      * @return speaker name with company name
      */
     public static String getSpeakerNameWithLastNameFirstWithCompanies(Speaker speaker, Language language) {
-        String name = LocalizationUtils.getString(speaker.getNameWithLastNameFirst(), language);
+        var name = LocalizationUtils.getString(speaker.getNameWithLastNameFirst(), language);
         String company = getSpeakerCompanies(speaker, language);
 
         return (!company.isEmpty()) ?

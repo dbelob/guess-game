@@ -42,7 +42,7 @@ public class QuestionUtils {
         }
 
         // Add 100, 200, 300 etc.
-        for (int i = 1; i <= (count / 100); i++) {
+        for (var i = 1; i <= (count / 100); i++) {
             result.add(i * 100);
         }
 
