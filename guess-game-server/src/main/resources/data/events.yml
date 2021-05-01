@@ -311,7 +311,7 @@ events:
     endDate: "2021-04-23"
     siteLink:
       - {language: ru, text: "https://dotnext-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/dotnext/
+    youtubeLink: https://live.jugru.org/events/dotnext/?p=sch100088
     placeId: 24
     talkIds: [3062, 3063, 3064, 3065, 3110, 3112, 3066, 3067, 3068, 3069, 3070, 3071, 3072, 3073, 3120, 3074, 3075, 3076,
               3077, 3078, 3079, 3080, 3081, 3111, 3082, 3083, 3113, 3085, 3086, 3087, 3088, 3121, 3089, 3090, 3091, 3092]
@@ -583,7 +583,7 @@ events:
     endDate: "2021-04-23"
     siteLink:
       - {language: ru, text: "https://holyjs-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/holyjs/
+    youtubeLink: https://live.jugru.org/events/holyjs/?p=sch100089
     placeId: 24
     talkIds: [3031, 3032, 3033, 3034, 3115, 3116, 3035, 3036, 3037, 3038, 3106, 3039, 3040, 3122, 3042, 3118, 3043, 3117,
               3044, 3045, 3061, 3046, 3060, 3048, 3049, 3107, 3119, 3050, 3123, 3052, 3053, 3054, 3055, 3056, 3057, 3108, 3109,
