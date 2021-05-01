@@ -1,8 +1,6 @@
 package guess.controller;
 
-import guess.domain.Language;
 import guess.domain.answer.ErrorDetails;
-import guess.domain.answer.Result;
 import guess.dto.result.ResultDto;
 import guess.service.AnswerService;
 import guess.service.LocaleService;
@@ -38,9 +36,9 @@ public class AnswerController {
     @GetMapping("/result")
     @ResponseBody
     public ResultDto getResult(HttpSession httpSession) {
-        Result result = answerService.getResult(httpSession);
+        var result = answerService.getResult(httpSession);
         List<ErrorDetails> errorDetailsList = answerService.getErrorDetailsList(httpSession);
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
 
         return ResultDto.convertToDto(result, errorDetailsList, language);
     }

@@ -70,8 +70,8 @@ public class EventTypeDto extends EventTypeBriefDto {
     }
 
     public static EventTypeDto convertToDto(EventType eventType, Language language) {
-        EventTypeSuperBriefDto eventTypeSuperBriefDto = convertToSuperBriefDto(eventType, language);
-        String description = LocalizationUtils.getString(eventType.getLongDescription(), language);
+        var eventTypeSuperBriefDto = convertToSuperBriefDto(eventType, language);
+        var description = LocalizationUtils.getString(eventType.getLongDescription(), language);
 
         if ((description == null) || description.isEmpty()) {
             description = LocalizationUtils.getString(eventType.getShortDescription(), language);

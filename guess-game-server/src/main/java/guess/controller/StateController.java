@@ -1,9 +1,6 @@
 package guess.controller;
 
 import guess.domain.GameState;
-import guess.domain.Language;
-import guess.domain.question.QuestionAnswers;
-import guess.domain.question.QuestionAnswersSet;
 import guess.dto.guess.*;
 import guess.dto.start.StartParametersDto;
 import guess.service.AnswerService;
@@ -61,14 +58,14 @@ public class StateController {
 
     <T> T getDto(HttpSession httpSession, DtoFunction<T> dtoFunction) {
         int currentQuestionIndex = answerService.getCurrentQuestionIndex(httpSession);
-        QuestionAnswersSet questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
+        var questionAnswersSet = stateService.getQuestionAnswersSet(httpSession);
         List<Long> correctAnswerIds = answerService.getCorrectAnswerIds(currentQuestionIndex, httpSession);
         List<Long> yourAnswerIds = answerService.getYourAnswerIds(currentQuestionIndex, httpSession);
 
         if ((questionAnswersSet != null) && (currentQuestionIndex < questionAnswersSet.getQuestionAnswersList().size())) {
-            QuestionAnswers questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
-            Language language = localeService.getLanguage(httpSession);
-            QuestionAnswersSourceDto sourceDto = new QuestionAnswersSourceDto(
+            var questionAnswers = questionAnswersSet.getQuestionAnswersList().get(currentQuestionIndex);
+            var language = localeService.getLanguage(httpSession);
+            var sourceDto = new QuestionAnswersSourceDto(
                     LocalizationUtils.getString(questionAnswersSet.getName(), language),
                     currentQuestionIndex,
                     questionAnswersSet.getQuestionAnswersList().size(),

@@ -33,7 +33,7 @@ public class UrlDates {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof UrlDates)) return false;
-        UrlDates urlDates = (UrlDates) o;
+        var urlDates = (UrlDates) o;
         return Objects.equals(url, urlDates.url) && Objects.equals(createdAt, urlDates.createdAt) && Objects.equals(updatedAt, urlDates.updatedAt);
     }
 

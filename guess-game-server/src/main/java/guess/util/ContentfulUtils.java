@@ -34,7 +34,6 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
-import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -43,7 +42,6 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -189,7 +187,7 @@ public class ContentfulUtils {
                 builder.queryParam(String.format("%s[match]", conferenceSpaceInfo.conferenceFieldName), conferenceCodePrefix);
             }
 
-            URI uri = builder
+            var uri = builder
                     .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                     .encode()
                     .toUri();
@@ -220,7 +218,7 @@ public class ContentfulUtils {
         UriComponentsBuilder builder = UriComponentsBuilder
                 .fromUriString(BASE_URL)
                 .queryParam(ACCESS_TOKEN_PARAM_NAME, MAIN_ACCESS_TOKEN);
-        URI uri = builder
+        var uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, "locales")
                 .encode()
                 .toUri();
@@ -248,12 +246,12 @@ public class ContentfulUtils {
                 .queryParam(ORDER_PARAM_NAME, "fields.eventName")
                 .queryParam("fields.showInMain", true)
                 .queryParam(LIMIT_PARAM_NAME, MAXIMUM_LIMIT);
-        URI uri = builder
+        var uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
         ContentfulEventTypeResponse response = restTemplate.getForObject(uri, ContentfulEventTypeResponse.class);
-        AtomicLong id = new AtomicLong(-1);
+        var id = new AtomicLong(-1);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
@@ -338,7 +336,7 @@ public class ContentfulUtils {
             builder.queryParam("fields.eventStart[lt]", DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(createUtcZonedDateTime(startDate.plusDays(1))));
         }
 
-        URI uri = builder
+        var uri = builder
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
@@ -373,7 +371,7 @@ public class ContentfulUtils {
             nameEn = nameRu;
         }
 
-        LocalDate eventStartDate = createEventLocalDate(getFirstMapValue(e.getFields().getEventStart()));
+        var eventStartDate = createEventLocalDate(getFirstMapValue(e.getFields().getEventStart()));
         LocalDate eventEndDate = (e.getFields().getEventEnd() != null) ?
                 createEventLocalDate(getFirstMapValue(e.getFields().getEventEnd())) :
                 eventStartDate;
@@ -436,7 +434,7 @@ public class ContentfulUtils {
      * @return event
      */
     public static Event getEvent(Conference conference, LocalDate startDate) {
-        Event fixedEvent = fixNonexistentEventError(conference, startDate);
+        var fixedEvent = fixNonexistentEventError(conference, startDate);
         if (fixedEvent != null) {
             return fixedEvent;
         }
@@ -466,7 +464,7 @@ public class ContentfulUtils {
      */
     static List<Speaker> getSpeakers(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=people&select={fields}&{speakerFieldName}=true&limit=1000&fields.conferences={conferenceCode}
-        StringBuilder selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.photo,fields.twitter,fields.gitHub");
+        var selectingFields = new StringBuilder("sys.id,fields.name,fields.nameEn,fields.company,fields.companyEn,fields.bio,fields.bioEn,fields.photo,fields.twitter,fields.gitHub");
         String additionalFieldNames = conferenceSpaceInfo.speakerAdditionalFieldNames;
 
         if (additionalFieldNames != null) {
@@ -485,13 +483,13 @@ public class ContentfulUtils {
             builder.queryParam(conferenceSpaceInfo.conferenceFieldName, conferenceCode);
         }
 
-        URI uri = builder
+        var uri = builder
                 .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
         ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
-        AtomicLong speakerId = new AtomicLong(-1);
-        AtomicLong companyId = new AtomicLong(-1);
+        var speakerId = new AtomicLong(-1);
+        var companyId = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
 
@@ -514,7 +512,7 @@ public class ContentfulUtils {
      */
     static Speaker createSpeaker(ContentfulSpeaker contentfulSpeaker, Map<String, ContentfulAsset> assetMap,
                                  Set<String> assetErrorSet, AtomicLong speakerId, AtomicLong companyId, boolean checkEnTextExistence) {
-        UrlDates urlDates = extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn());
+        var urlDates = extractPhoto(contentfulSpeaker.getFields().getPhoto(), assetMap, assetErrorSet, contentfulSpeaker.getFields().getNameEn());
 
         return new Speaker(
                 speakerId.getAndDecrement(),
@@ -625,7 +623,7 @@ public class ContentfulUtils {
      * @return speaker map
      */
     public static List<Speaker> getSpeakers(Conference conference, String conferenceCode) {
-        ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
+        var conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
 
         return getSpeakers(conferenceSpaceInfo, conferenceCode);
     }
@@ -640,7 +638,7 @@ public class ContentfulUtils {
      */
     static List<Talk> getTalks(ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode, boolean ignoreDemoStage) {
         // https://cdn.contentful.com/spaces/{spaceId}/entries?access_token={accessToken}&content_type=talks&select={fields}&order={fields}&limit=1000&fields.conferences={conferenceCode}
-        StringBuilder selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.talkDay,fields.trackTime,fields.track,fields.language,fields.video,fields.sdTrack,fields.demoStage");
+        var selectingFields = new StringBuilder("fields.name,fields.nameEn,fields.short,fields.shortEn,fields.long,fields.longEn,fields.speakers,fields.talkDay,fields.trackTime,fields.track,fields.language,fields.video,fields.sdTrack,fields.demoStage");
         String additionalFieldNames = conferenceSpaceInfo.talkAdditionalFieldNames;
 
         Objects.requireNonNull(additionalFieldNames);
@@ -658,12 +656,12 @@ public class ContentfulUtils {
             builder.queryParam(conferenceSpaceInfo.conferenceFieldName, conferenceCode);
         }
 
-        URI uri = builder
+        var uri = builder
                 .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
         ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
-        AtomicLong talkId = new AtomicLong(-1);
+        var talkId = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getErrorSet(response, ENTRY_LINK_TYPE);
         Set<String> assetErrorSet = getErrorSet(response, ASSET_LINK_TYPE);
@@ -721,7 +719,7 @@ public class ContentfulUtils {
                 })
                 .map(s -> {
                     String speakerId = s.getSys().getId();
-                    Speaker speaker = speakerMap.get(speakerId);
+                    var speaker = speakerMap.get(speakerId);
                     return Objects.requireNonNull(speaker,
                             () -> String.format("Speaker id %s not found for '%s' talk", speakerId, contentfulTalk.getFields().getNameEn()));
                 })
@@ -756,7 +754,7 @@ public class ContentfulUtils {
      * @return talks
      */
     public static List<Talk> getTalks(Conference conference, String conferenceCode, boolean ignoreDemoStage) {
-        ConferenceSpaceInfo conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
+        var conferenceSpaceInfo = CONFERENCE_SPACE_INFO_MAP.get(conference);
 
         return getTalks(conferenceSpaceInfo, conferenceCode, ignoreDemoStage);
     }
@@ -771,8 +769,8 @@ public class ContentfulUtils {
      */
     static Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
                                               Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
-        AtomicLong speakerId = new AtomicLong(-1);
-        AtomicLong companyId = new AtomicLong(-1);
+        var speakerId = new AtomicLong(-1);
+        var companyId = new AtomicLong(-1);
 
         return (response.getIncludes() == null) ?
                 Collections.emptyMap() :
@@ -876,8 +874,8 @@ public class ContentfulUtils {
         }
 
         for (ExtractPair extractPair : extractSet.getPairs()) {
-            Pattern pattern = Pattern.compile(extractPair.getPatternRegex());
-            Matcher matcher = pattern.matcher(value);
+            var pattern = Pattern.compile(extractPair.getPatternRegex());
+            var matcher = pattern.matcher(value);
             if (matcher.matches()) {
                 return matcher.group(extractPair.getGroupIndex());
             }

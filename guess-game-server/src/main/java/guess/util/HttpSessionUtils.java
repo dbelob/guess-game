@@ -24,7 +24,7 @@ public class HttpSessionUtils {
     }
 
     public static GameState getGameState(HttpSession httpSession) {
-        Object stateObject = httpSession.getAttribute(STATE_ATTRIBUTE_NAME);
+        var stateObject = httpSession.getAttribute(STATE_ATTRIBUTE_NAME);
 
         if (stateObject instanceof GameState) {
             return (GameState) stateObject;
@@ -38,7 +38,7 @@ public class HttpSessionUtils {
     }
 
     public static StartParameters getStartParameters(HttpSession httpSession) {
-        Object startParametersObject = httpSession.getAttribute(START_PARAMETERS_ATTRIBUTE_NAME);
+        var startParametersObject = httpSession.getAttribute(START_PARAMETERS_ATTRIBUTE_NAME);
 
         if (startParametersObject instanceof StartParameters) {
             return (StartParameters) startParametersObject;
@@ -56,7 +56,7 @@ public class HttpSessionUtils {
     }
 
     public static QuestionAnswersSet getQuestionAnswersSet(HttpSession httpSession) {
-        Object questionAnswersSetObject = httpSession.getAttribute(QUESTION_ANSWERS_SET_ATTRIBUTE_NAME);
+        var questionAnswersSetObject = httpSession.getAttribute(QUESTION_ANSWERS_SET_ATTRIBUTE_NAME);
 
         if (questionAnswersSetObject instanceof QuestionAnswersSet) {
             return (QuestionAnswersSet) questionAnswersSetObject;
@@ -75,7 +75,7 @@ public class HttpSessionUtils {
 
     @SuppressWarnings("unchecked")
     public static List<AnswerSet> getAnswerSets(HttpSession httpSession) {
-        Object answerSetsObject = httpSession.getAttribute(ANSWER_SETS_ATTRIBUTE_NAME);
+        var answerSetsObject = httpSession.getAttribute(ANSWER_SETS_ATTRIBUTE_NAME);
 
         if (answerSetsObject instanceof List) {
             return (List<AnswerSet>) answerSetsObject;
@@ -93,7 +93,7 @@ public class HttpSessionUtils {
 
     @SuppressWarnings("unchecked")
     public static void addAnswerSet(AnswerSet answerSet, HttpSession httpSession) {
-        Object answerSetsObject = httpSession.getAttribute(ANSWER_SETS_ATTRIBUTE_NAME);
+        var answerSetsObject = httpSession.getAttribute(ANSWER_SETS_ATTRIBUTE_NAME);
 
         if (answerSetsObject instanceof List) {
             List<AnswerSet> answerSets = (List<AnswerSet>) answerSetsObject;
@@ -108,7 +108,7 @@ public class HttpSessionUtils {
     }
 
     public static Language getLanguage(HttpSession httpSession) {
-        Object languageObject = httpSession.getAttribute(LANGUAGE_ATTRIBUTE_NAME);
+        var languageObject = httpSession.getAttribute(LANGUAGE_ATTRIBUTE_NAME);
 
         if (languageObject instanceof Language) {
             return (Language) languageObject;

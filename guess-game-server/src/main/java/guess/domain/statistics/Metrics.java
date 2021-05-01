@@ -32,7 +32,7 @@ public class Metrics {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Metrics metrics = (Metrics) o;
+        var metrics = (Metrics) o;
         return talksQuantity == metrics.talksQuantity &&
                 javaChampionsQuantity == metrics.javaChampionsQuantity &&
                 mvpsQuantity == metrics.mvpsQuantity;

@@ -135,7 +135,7 @@ public class EventServiceImpl implements EventService {
 
         // Transform to (event, day, minTrackTime) list
         for (Map.Entry<Event, Map<Long, Optional<LocalTime>>> entry : minTrackTimeInTalkDaysForConferences.entrySet()) {
-            Event event = entry.getKey();
+            var event = entry.getKey();
 
             if ((event.getStartDate() != null) && (event.getEndDate() != null) && (!event.getStartDate().isAfter(event.getEndDate()))) {
                 long days = ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1;
@@ -151,7 +151,7 @@ public class EventServiceImpl implements EventService {
                         localTimeOptional = Optional.empty();
                     }
 
-                    LocalTime minTrackTime = localTimeOptional.orElse(LocalTime.of(0, 0));
+                    var minTrackTime = localTimeOptional.orElse(LocalTime.of(0, 0));
 
                     result.add(new EventDateMinTrackTime(event, date, minTrackTime));
                 }
@@ -170,13 +170,13 @@ public class EventServiceImpl implements EventService {
     List<EventMinTrackTimeEndDayTime> getEventMinTrackTimeEndDayTimeList(List<EventDateMinTrackTime> eventDateMinTrackTimeList) {
         return eventDateMinTrackTimeList.stream()
                 .map(edt -> {
-                    LocalDateTime minTrackDateTime = ZonedDateTime.of(
+                    var minTrackDateTime = ZonedDateTime.of(
                             edt.getDate(),
                             edt.getMinTrackTime(),
                             edt.getEvent().getFinalTimeZoneId())
                             .withZoneSameInstant(ZoneId.of("UTC"))
                             .toLocalDateTime();
-                    LocalDateTime endDayDateTime = ZonedDateTime.of(
+                    var endDayDateTime = ZonedDateTime.of(
                             edt.getDate().plus(1, ChronoUnit.DAYS),
                             LocalTime.of(0, 0, 0),
                             edt.getEvent().getFinalTimeZoneId())

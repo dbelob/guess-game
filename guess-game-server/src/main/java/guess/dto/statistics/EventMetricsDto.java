@@ -1,7 +1,6 @@
 package guess.dto.statistics;
 
 import guess.domain.Language;
-import guess.domain.source.Event;
 import guess.domain.statistics.AbstractEventMetrics;
 import guess.domain.statistics.EventMetrics;
 import guess.util.LocalizationUtils;
@@ -40,7 +39,7 @@ public class EventMetricsDto extends AbstractEventMetrics {
     }
 
     public static EventMetricsDto convertToDto(EventMetrics eventMetrics, Language language) {
-        Event event = eventMetrics.getEvent();
+        var event = eventMetrics.getEvent();
 
         return new EventMetricsDto(
                 event.getId(),

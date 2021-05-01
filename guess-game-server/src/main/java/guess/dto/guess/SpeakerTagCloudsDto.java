@@ -5,7 +5,6 @@ import guess.domain.Quadruple;
 import guess.domain.answer.TagCloudAnswer;
 import guess.domain.question.QuestionAnswers;
 import guess.domain.question.TagCloudQuestion;
-import guess.domain.source.Speaker;
 import guess.dto.result.SpeakerPairDto;
 import guess.util.LocalizationUtils;
 import guess.util.tagcloud.TagCloudUtils;
@@ -49,7 +48,7 @@ public class SpeakerTagCloudsDto extends QuestionAnswersDto {
                                                    Language language) {
         Quadruple<TagCloudAnswer> answers =
                 questionAnswers.getAvailableAnswers().map(TagCloudAnswer.class::cast);
-        Speaker questionSpeaker = ((TagCloudQuestion) questionAnswers.getQuestion()).getSpeaker();
+        var questionSpeaker = ((TagCloudQuestion) questionAnswers.getQuestion()).getSpeaker();
 
         return new SpeakerTagCloudsDto(
                 sourceDto,

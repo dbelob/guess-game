@@ -21,7 +21,7 @@ public class FileUtils {
      * @throws IOException if file iteration occurs
      */
     public static void deleteDirectory(String directoryName) throws IOException {
-        Path directoryPath = Path.of(directoryName);
+        var directoryPath = Path.of(directoryName);
 
         if (Files.exists(directoryPath)) {
             try (Stream<Path> pathStream = Files.walk(directoryPath)) {

@@ -33,7 +33,7 @@ public class SpeakerServiceImpl implements SpeakerService {
     public List<Speaker> getSpeakersByFirstLetter(String firstLetter, Language language) {
         return speakerDao.getSpeakers().stream()
                 .filter(s -> {
-                    String name = LocalizationUtils.getString(s.getNameWithLastNameFirst(), language);
+                    var name = LocalizationUtils.getString(s.getNameWithLastNameFirst(), language);
                     String nameFirstLetter;
 
                     if (name != null) {

@@ -2,7 +2,6 @@ package guess.controller;
 
 import guess.dao.exception.QuestionSetNotExistsException;
 import guess.domain.GuessMode;
-import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
 import guess.dto.event.EventSuperBriefDto;
@@ -43,7 +42,7 @@ public class QuestionController {
     @ResponseBody
     public List<EventTypeSuperBriefDto> getEventTypes(HttpSession httpSession) {
         List<EventType> eventTypes = eventTypeService.getEventTypes();
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
         Comparator<EventType> comparatorByIsConference = Comparator.comparing(EventType::isEventTypeConference).reversed();
         Comparator<EventType> comparatorByInactive = Comparator.comparing(EventType::isInactive);
         Comparator<EventType> comparatorByName = Comparator.comparing(et -> LocalizationUtils.getString(et.getName(), language), String.CASE_INSENSITIVE_ORDER);
@@ -57,7 +56,7 @@ public class QuestionController {
     @ResponseBody
     public List<EventSuperBriefDto> getEvents(@RequestParam List<Long> eventTypeIds, HttpSession httpSession) {
         List<Event> events = questionService.getEvents(eventTypeIds);
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
 
         events.sort(Comparator.comparing(Event::getStartDate).reversed());
 

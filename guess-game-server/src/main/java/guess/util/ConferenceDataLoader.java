@@ -54,7 +54,7 @@ public class ConferenceDataLoader {
      */
     static void loadEventTypes() throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         // Read event types from resource files
-        SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
+        var resourceSourceInformation = YamlUtils.readSourceInformation();
         List<EventType> resourceEventTypes = getConferences(resourceSourceInformation.getEventTypes());
         log.info("Event types (in resource files): {}", resourceEventTypes.size());
 
@@ -64,7 +64,7 @@ public class ConferenceDataLoader {
 
         // Find event types
         Map<Conference, EventType> resourceEventTypeMap = getResourceEventTypeMap(resourceEventTypes);
-        AtomicLong lastEventTypeId = new AtomicLong(getLastId(resourceSourceInformation.getEventTypes()));
+        var lastEventTypeId = new AtomicLong(getLastId(resourceSourceInformation.getEventTypes()));
         LoadResult<List<EventType>> loadResult = getEventTypeLoadResult(contentfulEventTypes, resourceEventTypeMap, lastEventTypeId);
 
         // Save files
@@ -124,7 +124,7 @@ public class ConferenceDataLoader {
 
         eventTypes.forEach(
                 et -> {
-                    EventType resourceEventType = eventTypeMap.get(et.getConference());
+                    var resourceEventType = eventTypeMap.get(et.getConference());
 
                     if (resourceEventType == null) {
                         // Event type not exists
@@ -209,17 +209,17 @@ public class ConferenceDataLoader {
         log.info("{} {} {}", conference, startDate, conferenceCode);
 
         // Read event types, places, events, companies, speakers, talks from resource files
-        SourceInformation resourceSourceInformation = YamlUtils.readSourceInformation();
+        var resourceSourceInformation = YamlUtils.readSourceInformation();
         Optional<EventType> resourceOptionalEventType = resourceSourceInformation.getEventTypes().stream()
                 .filter(et -> et.getConference().equals(conference))
                 .findFirst();
-        EventType resourceEventType = resourceOptionalEventType
+        var resourceEventType = resourceOptionalEventType
                 .orElseThrow(() -> new IllegalStateException(String.format("No event type found for conference %s (in resource files)", conference)));
         log.info("Event type (in resource files): nameEn: {}, nameRu: {}",
                 LocalizationUtils.getString(resourceEventType.getName(), Language.ENGLISH),
                 LocalizationUtils.getString(resourceEventType.getName(), Language.RUSSIAN));
 
-        Event resourceEvent = resourceOptionalEventType
+        var resourceEvent = resourceOptionalEventType
                 .flatMap(et -> et.getEvents().stream()
                         .filter(e -> e.getStartDate().equals(startDate))
                         .findFirst())
@@ -234,7 +234,7 @@ public class ConferenceDataLoader {
         }
 
         // Read event from Contentful
-        Event contentfulEvent = ContentfulUtils.getEvent(conference, startDate);
+        var contentfulEvent = ContentfulUtils.getEvent(conference, startDate);
         log.info("Event (in Contentful): nameEn: {}, nameRu: {}, startDate: {}, endDate: {}",
                 LocalizationUtils.getString(contentfulEvent.getName(), Language.ENGLISH),
                 LocalizationUtils.getString(contentfulEvent.getName(), Language.RUSSIAN),
@@ -280,7 +280,7 @@ public class ConferenceDataLoader {
         Map<String, Company> resourceCompanyMap = getResourceLowerNameCompanyMap(resourceSourceInformation.getCompanies());
         addLowerSynonymsToCompanyMap(resourceSourceInformation.getCompanySynonyms(), resourceCompanyMap);
 
-        AtomicLong lastCompanyId = new AtomicLong(getLastId(resourceSourceInformation.getCompanies()));
+        var lastCompanyId = new AtomicLong(getLastId(resourceSourceInformation.getCompanies()));
         LoadResult<List<Company>> companyLoadResult = getCompanyLoadResult(
                 contentfulCompanies,
                 resourceCompanyMap,
@@ -296,8 +296,8 @@ public class ConferenceDataLoader {
                 ));
         Map<NameCompany, Speaker> resourceNameCompanySpeakers = getResourceNameCompanySpeakerMap(resourceSourceInformation.getSpeakers());
         Map<String, Set<Speaker>> resourceNameSpeakers = getResourceNameSpeakersMap(resourceSourceInformation.getSpeakers());
-        AtomicLong lastSpeakerId = new AtomicLong(getLastId(resourceSourceInformation.getSpeakers()));
-        SpeakerLoadResult speakerLoadResult = getSpeakerLoadResult(
+        var lastSpeakerId = new AtomicLong(getLastId(resourceSourceInformation.getSpeakers()));
+        var speakerLoadResult = getSpeakerLoadResult(
                 contentfulSpeakers,
                 new SpeakerLoadMaps(
                         loadSettings.getKnownSpeakerIdsMap(),
@@ -309,7 +309,7 @@ public class ConferenceDataLoader {
         // Find talks
         fillSpeakerIds(contentfulTalks);
 
-        AtomicLong lastTalksId = new AtomicLong(getLastId(resourceSourceInformation.getTalks()));
+        var lastTalksId = new AtomicLong(getLastId(resourceSourceInformation.getTalks()));
         LoadResult<List<Talk>> talkLoadResult = getTalkLoadResult(
                 contentfulTalks,
                 resourceEvent,
@@ -331,10 +331,10 @@ public class ConferenceDataLoader {
                                 LocalizationUtils.getString(p.getVenueAddress(), Language.ENGLISH).trim()),
                         p -> p
                 ));
-        Place contentfulPlace = contentfulEvent.getPlace();
+        var contentfulPlace = contentfulEvent.getPlace();
         contentfulPlace.setVenueAddress(fixVenueAddress(contentfulPlace));
-        Place resourcePlace = findResourcePlace(contentfulPlace, resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces);
-        AtomicLong lastPlaceId = new AtomicLong(getLastId(resourceSourceInformation.getPlaces()));
+        var resourcePlace = findResourcePlace(contentfulPlace, resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces);
+        var lastPlaceId = new AtomicLong(getLastId(resourceSourceInformation.getPlaces()));
         LoadResult<Place> placeLoadResult = getPlaceLoadResult(contentfulPlace, resourcePlace, lastPlaceId);
 
         contentfulEvent.setPlaceId(contentfulPlace.getId());
@@ -431,8 +431,8 @@ public class ConferenceDataLoader {
         Map<String, Talk> ruNameMap = new HashMap<>();
 
         for (Talk talk : talks) {
-            String ruName = LocalizationUtils.getString(talk.getName(), Language.RUSSIAN);
-            Talk existingTalk = ruNameMap.get(ruName);
+            var ruName = LocalizationUtils.getString(talk.getName(), Language.RUSSIAN);
+            var existingTalk = ruNameMap.get(ruName);
 
             if (existingTalk == null) {
                 ruNameMap.put(ruName, talk);
@@ -513,7 +513,7 @@ public class ConferenceDataLoader {
     static void addLowerSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap) {
         for (CompanySynonyms companySynonyms : companySynonymsList) {
             String lowerName = companySynonyms.getName().toLowerCase();
-            Company company = companyMap.get(lowerName);
+            var company = companyMap.get(lowerName);
 
             Objects.requireNonNull(company,
                     () -> String.format("Resource company with lower name '%s' not found (change name '%s' of synonyms in company-synonyms.yml file and rerun loading)",
@@ -548,7 +548,7 @@ public class ConferenceDataLoader {
         for (Company company : companies) {
             if (!company.getName().isEmpty()) {
                 // Find in resource companies
-                Company resourceCompany = findResourceCompany(company, resourceCompanyMap);
+                var resourceCompany = findResourceCompany(company, resourceCompanyMap);
 
                 // Company not exists in resource companies
                 if (resourceCompany == null) {
@@ -648,13 +648,13 @@ public class ConferenceDataLoader {
         List<UrlFilename> urlFilenamesToUpdate = new ArrayList<>();
 
         for (Speaker speaker : speakers) {
-            Speaker resourceSpeaker = findResourceSpeaker(speaker, speakerLoadMaps);
+            var resourceSpeaker = findResourceSpeaker(speaker, speakerLoadMaps);
 
             if (resourceSpeaker == null) {
                 // Speaker not exists
                 long id = lastSpeakerId.incrementAndGet();
                 String sourceUrl = speaker.getPhotoFileName();
-                String destinationFileName = String.format("%04d.jpg", id);
+                var destinationFileName = String.format("%04d.jpg", id);
 
                 speaker.setId(id);
 
@@ -817,7 +817,7 @@ public class ConferenceDataLoader {
                     ));
             talks.forEach(
                     t -> {
-                        Talk resourceTalk = findResourceTalk(t, resourceRuNameTalks, resourceEnNameTalks);
+                        var resourceTalk = findResourceTalk(t, resourceRuNameTalks, resourceEnNameTalks);
 
                         if (resourceTalk == null) {
                             // Talk not exists
@@ -968,11 +968,11 @@ public class ConferenceDataLoader {
         List<Talk> talksToAppend = talkLoadResult.getItemToAppend();
         List<Talk> talksToUpdate = talkLoadResult.getItemToUpdate();
 
-        Place placeToAppend = placeLoadResult.getItemToAppend();
-        Place placeToUpdate = placeLoadResult.getItemToUpdate();
+        var placeToAppend = placeLoadResult.getItemToAppend();
+        var placeToUpdate = placeLoadResult.getItemToUpdate();
 
-        Event eventToAppend = eventLoadResult.getItemToAppend();
-        Event eventToUpdate = eventLoadResult.getItemToUpdate();
+        var eventToAppend = eventLoadResult.getItemToAppend();
+        var eventToUpdate = eventLoadResult.getItemToUpdate();
 
         if (companiesToAppend.isEmpty() &&
                 urlFilenamesToAppend.isEmpty() && urlFilenamesToUpdate.isEmpty() &&
@@ -1083,8 +1083,8 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     static void savePlaces(LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
-        Place placeToAppend = placeLoadResult.getItemToAppend();
-        Place placeToUpdate = placeLoadResult.getItemToUpdate();
+        var placeToAppend = placeLoadResult.getItemToAppend();
+        var placeToUpdate = placeLoadResult.getItemToUpdate();
 
         if (placeToAppend != null) {
             savePlace(placeToAppend, "place-to-append.yml");
@@ -1103,8 +1103,8 @@ public class ConferenceDataLoader {
      * @throws NoSuchFieldException if field name is invalid
      */
     static void saveEvents(LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
-        Event eventToAppend = eventLoadResult.getItemToAppend();
-        Event eventToUpdate = eventLoadResult.getItemToUpdate();
+        var eventToAppend = eventLoadResult.getItemToAppend();
+        var eventToUpdate = eventLoadResult.getItemToUpdate();
 
         if (eventToAppend != null) {
             saveEvent(eventToAppend, "event-to-append.yml");
@@ -1278,10 +1278,10 @@ public class ConferenceDataLoader {
         }
 
         if (resourceSpeakerId != null) {
-            Speaker resourceSpeaker = speakerLoadMaps.getResourceSpeakerIdsMap().get(resourceSpeakerId);
+            var resourceSpeaker = speakerLoadMaps.getResourceSpeakerIdsMap().get(resourceSpeakerId);
 
             Long finalResourceSpeakerId = resourceSpeakerId;
-            Company finalSpeakerCompany = speakerCompany;
+            var finalSpeakerCompany = speakerCompany;
 
             return Objects.requireNonNull(resourceSpeaker,
                     () -> String.format("Resource speaker id %d not found (change id of known speaker '%s' and company '%s' in method parameters and rerun loading)",
@@ -1291,7 +1291,7 @@ public class ConferenceDataLoader {
         }
 
         // Find in resource speakers by (name, company) pair
-        Speaker resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceNameCompanySpeakers());
+        var resourceSpeaker = findResourceSpeakerByNameCompany(speaker, speakerLoadMaps.getResourceNameCompanySpeakers());
         if (resourceSpeaker != null) {
             return resourceSpeaker;
         }
@@ -1304,7 +1304,7 @@ public class ConferenceDataLoader {
                                  Map<String, Set<Talk>> resourceRuNameTalks,
                                  Map<String, Set<Talk>> resourceEnNameTalks) {
         // Find in resource talks by Russian name
-        Talk resourceTalk = findResourceTalkByName(talk, resourceRuNameTalks, Language.RUSSIAN);
+        var resourceTalk = findResourceTalkByName(talk, resourceRuNameTalks, Language.RUSSIAN);
         if (resourceTalk != null) {
             return resourceTalk;
         }
@@ -1367,7 +1367,7 @@ public class ConferenceDataLoader {
 
                 return null;
             } else {
-                Speaker resourceSpeaker = resourceSpeakers.iterator().next();
+                var resourceSpeaker = resourceSpeakers.iterator().next();
                 String resourceSpeakerCompanies = resourceSpeaker.getCompanies().stream()
                         .map(c -> LocalizationUtils.getString(c.getName(), Language.RUSSIAN))
                         .collect(Collectors.joining(", "));
@@ -1394,7 +1394,7 @@ public class ConferenceDataLoader {
      * @return resource talk
      */
     static Talk findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language) {
-        String talkName = LocalizationUtils.getString(talk.getName(), language);
+        var talkName = LocalizationUtils.getString(talk.getName(), language);
         Set<Talk> resourceTalks = resourceNameTalks.get(talkName);
 
         if (resourceTalks != null) {
@@ -1441,7 +1441,7 @@ public class ConferenceDataLoader {
                                    Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
                                    Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
         // Find in resource places by Russian (city, venue address) pair
-        Place resourcePlace = findResourcePlaceByCityVenueAddress(place, resourceRuCityVenueAddressPlaces, Language.RUSSIAN);
+        var resourcePlace = findResourcePlaceByCityVenueAddress(place, resourceRuCityVenueAddressPlaces, Language.RUSSIAN);
         if (resourcePlace != null) {
             return resourcePlace;
         }
@@ -1457,8 +1457,8 @@ public class ConferenceDataLoader {
      * @return fixed place
      */
     static List<LocaleItem> fixVenueAddress(Place place) {
-        final String ONLINE_ENGLISH = "Online";
-        final String ONLINE_RUSSIAN = "Онлайн";
+        final var ONLINE_ENGLISH = "Online";
+        final var ONLINE_RUSSIAN = "Онлайн";
 
         List<FixingVenueAddress> enFixingVenueAddresses = List.of(
                 new FixingVenueAddress(

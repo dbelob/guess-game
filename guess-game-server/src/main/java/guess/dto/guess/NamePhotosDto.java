@@ -46,7 +46,7 @@ public class NamePhotosDto extends QuestionAnswersDto {
 
     public static NamePhotosDto convertToDto(QuestionAnswersSourceDto sourceDto, QuestionAnswers questionAnswers,
                                              Language language) {
-        Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
+        var questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
         Quadruple<Speaker> answerSpeakers =
                 questionAnswers.getAvailableAnswers().map(
                         a -> ((SpeakerAnswer) a).getSpeaker()

@@ -2,7 +2,6 @@ package guess.dto.event;
 
 import guess.domain.Language;
 import guess.domain.source.Event;
-import guess.domain.source.Place;
 import guess.util.LocalizationUtils;
 
 import java.time.temporal.ChronoUnit;
@@ -46,7 +45,7 @@ public class EventBriefDto extends EventSuperBriefDto {
 
     public static EventBriefDto convertToBriefDto(EventSuperBriefDto eventSuperBriefDto, Event event, Language language) {
         long duration = (ChronoUnit.DAYS.between(event.getStartDate(), event.getEndDate()) + 1);
-        Place place = event.getPlace();
+        var place = event.getPlace();
         String placeCity = (place != null) ? LocalizationUtils.getString(place.getCity(), language) : null;
         String placeVenueAddress = (place != null) ? LocalizationUtils.getString(place.getVenueAddress(), language) : null;
         String logoFileName = (event.getEventType() != null) ? event.getEventType().getLogoFileName() : null;

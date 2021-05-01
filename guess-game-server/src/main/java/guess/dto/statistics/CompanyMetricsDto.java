@@ -1,7 +1,6 @@
 package guess.dto.statistics;
 
 import guess.domain.Language;
-import guess.domain.source.Company;
 import guess.domain.statistics.AbstractSpeakerCompanyMetrics;
 import guess.domain.statistics.CompanyMetrics;
 import guess.util.LocalizationUtils;
@@ -40,8 +39,8 @@ public class CompanyMetricsDto extends AbstractSpeakerCompanyMetrics {
     }
 
     public static CompanyMetricsDto convertToDto(CompanyMetrics companyMetrics, Language language) {
-        Company company = companyMetrics.getCompany();
-        String name = LocalizationUtils.getString(company.getName(), language);
+        var company = companyMetrics.getCompany();
+        var name = LocalizationUtils.getString(company.getName(), language);
 
         return new CompanyMetricsDto(
                 company.getId(),

@@ -52,7 +52,7 @@ public class TalkDto extends TalkBriefDto {
 
     public static TalkDto convertToDto(Talk talk, Function<Talk, Event> talkEventFunction,
                                        Function<Event, EventType> eventEventTypeFunction, Language language) {
-        String description = LocalizationUtils.getString(talk.getLongDescription(), language);
+        var description = LocalizationUtils.getString(talk.getLongDescription(), language);
 
         if ((description == null) || description.isEmpty()) {
             description = LocalizationUtils.getString(talk.getShortDescription(), language);

@@ -68,7 +68,7 @@ public class SpeakerAccountsDto extends QuestionAnswersDto {
                 questionAnswers.getAvailableAnswers().map(
                         a -> ((SpeakerAnswer) a).getSpeaker()
                 );
-        Speaker questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
+        var questionSpeaker = ((SpeakerQuestion) questionAnswers.getQuestion()).getSpeaker();
 
         return new SpeakerAccountsDto(
                 sourceDto,

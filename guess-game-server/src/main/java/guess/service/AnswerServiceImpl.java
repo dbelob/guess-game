@@ -4,13 +4,11 @@ import guess.dao.AnswerDao;
 import guess.dao.StateDao;
 import guess.domain.GuessMode;
 import guess.domain.Identifiable;
-import guess.domain.StartParameters;
 import guess.domain.answer.Answer;
 import guess.domain.answer.AnswerSet;
 import guess.domain.answer.ErrorDetails;
 import guess.domain.answer.Result;
 import guess.domain.question.QuestionAnswers;
-import guess.domain.question.QuestionAnswersSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +38,7 @@ public class AnswerServiceImpl implements AnswerService {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
 
         if (questionIndex < answerSets.size()) {
-            AnswerSet answerSet = answerSets.get(questionIndex);
+            var answerSet = answerSets.get(questionIndex);
 
             if (!answerSet.getYourAnswerIds().containsAll(answerSet.getCorrectAnswerIds()) &&
                     !answerSet.getYourAnswerIds().contains(answerId)) {
@@ -51,18 +49,18 @@ public class AnswerServiceImpl implements AnswerService {
                 }
             }
         } else {
-            QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
+            var questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
 
             if (questionAnswersSet != null) {
                 List<QuestionAnswers> questionAnswersList = questionAnswersSet.getQuestionAnswersList();
-                QuestionAnswers questionAnswers = questionAnswersList.get(questionIndex);
+                var questionAnswers = questionAnswersList.get(questionIndex);
                 List<Long> correctAnswerIds = questionAnswers.getCorrectAnswers().stream()
                         .map(Identifiable::getId)
                         .collect(Collectors.toList());
                 List<Long> yourAnswerIds = new ArrayList<>(Collections.singletonList(answerId));
                 boolean isSuccess = isSuccess(correctAnswerIds, yourAnswerIds);
 
-                AnswerSet answerSet = new AnswerSet(
+                var answerSet = new AnswerSet(
                         correctAnswerIds,
                         yourAnswerIds,
                         isSuccess);
@@ -83,7 +81,7 @@ public class AnswerServiceImpl implements AnswerService {
         if (answerSets.isEmpty()) {
             return 0;
         } else {
-            AnswerSet lastAnswerSet = answerSets.get(answerSets.size() - 1);
+            var lastAnswerSet = answerSets.get(answerSets.size() - 1);
 
             if (lastAnswerSet.isSuccess() || lastAnswerSet.getYourAnswerIds().containsAll(lastAnswerSet.getCorrectAnswerIds())) {
                 // Next question
@@ -120,7 +118,7 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public Result getResult(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
-        StartParameters startParameters = stateDao.getStartParameters(httpSession);
+        var startParameters = stateDao.getStartParameters(httpSession);
         GuessMode guessMode = (startParameters != null) ? startParameters.getGuessMode() : GuessMode.GUESS_NAME_BY_PHOTO_MODE;
 
         long correctAnswers = answerSets.stream()
@@ -129,7 +127,7 @@ public class AnswerServiceImpl implements AnswerService {
         long wrongAnswers = answerSets.stream()
                 .filter(a -> !a.isSuccess())
                 .count();
-        QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
+        var questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
         long totalQuestions = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList().size() : 0;
         long skippedAnswers = totalQuestions - (correctAnswers + wrongAnswers);
         float correctPercents = (totalQuestions != 0) ? (float) correctAnswers / totalQuestions : 0;
@@ -144,12 +142,12 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public List<ErrorDetails> getErrorDetailsList(HttpSession httpSession) {
         List<AnswerSet> answerSets = answerDao.getAnswerSets(httpSession);
-        QuestionAnswersSet questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
+        var questionAnswersSet = stateDao.getQuestionAnswersSet(httpSession);
         List<QuestionAnswers> questionAnswersList = (questionAnswersSet != null) ? questionAnswersSet.getQuestionAnswersList() : Collections.emptyList();
         List<ErrorDetails> errorDetailsList = new ArrayList<>();
 
-        for (int i = 0; i < answerSets.size(); i++) {
-            AnswerSet answerSet = answerSets.get(i);
+        for (var i = 0; i < answerSets.size(); i++) {
+            var answerSet = answerSets.get(i);
 
             if (!answerSet.isSuccess()) {
                 List<Long> yourAnswersIds = new ArrayList<>(answerSet.getYourAnswerIds());

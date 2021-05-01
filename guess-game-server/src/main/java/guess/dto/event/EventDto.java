@@ -3,7 +3,6 @@ package guess.dto.event;
 import guess.domain.Language;
 import guess.domain.source.Event;
 import guess.domain.source.EventType;
-import guess.domain.source.Place;
 import guess.util.LocalizationUtils;
 
 import java.util.List;
@@ -81,13 +80,13 @@ public class EventDto extends EventBriefDto {
     }
 
     public static EventDto convertToDto(Event event, Function<Event, EventType> eventEventTypeFunction, Language language) {
-        EventSuperBriefDto eventSuperBriefDto = convertToSuperBriefDto(event, language);
-        Place place = event.getPlace();
+        var eventSuperBriefDto = convertToSuperBriefDto(event, language);
+        var place = event.getPlace();
         String mapCoordinates = (place != null) ? place.getMapCoordinates() : null;
-        String eventSiteLink = LocalizationUtils.getString(event.getSiteLink(), language);
+        var eventSiteLink = LocalizationUtils.getString(event.getSiteLink(), language);
         String eventYoutubeLink = event.getYoutubeLink();
 
-        EventType eventType = eventEventTypeFunction.apply(event);
+        var eventType = eventEventTypeFunction.apply(event);
         String eventTypeSiteLink = (eventType != null) ? LocalizationUtils.getString(eventType.getSiteLink(), language) : null;
         String eventTypeYoutubeLink = (eventType != null) ? eventType.getYoutubeLink() : null;
         String eventTypeVkLink = (eventType != null) ? eventType.getVkLink() : null;

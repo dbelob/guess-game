@@ -36,7 +36,7 @@ public class EventTypeController {
     @ResponseBody
     public List<EventTypeBriefDto> getEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                  @RequestParam(required = false) Long organizerId, HttpSession httpSession) {
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
         List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, organizerId, language);
 
         return EventTypeBriefDto.convertToBriefDto(eventTypes, language);
@@ -46,7 +46,7 @@ public class EventTypeController {
     @ResponseBody
     public List<EventTypeSuperBriefDto> getFilterEventTypes(@RequestParam boolean conferences, @RequestParam boolean meetups,
                                                             @RequestParam(required = false) Long organizerId, HttpSession httpSession) {
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
         List<EventType> eventTypes = getEventTypesAndSort(conferences, meetups, organizerId, language);
 
         return EventTypeSuperBriefDto.convertToSuperBriefDto(eventTypes, language);
@@ -66,9 +66,9 @@ public class EventTypeController {
     @GetMapping("/event-type/{id}")
     @ResponseBody
     public EventTypeDetailsDto getEventType(@PathVariable long id, HttpSession httpSession) {
-        EventType eventType = eventTypeService.getEventTypeById(id);
-        Language language = localeService.getLanguage(httpSession);
-        EventTypeDetailsDto eventTypeDetailsDto = EventTypeDetailsDto.convertToDto(eventType, eventType.getEvents(), language);
+        var eventType = eventTypeService.getEventTypeById(id);
+        var language = localeService.getLanguage(httpSession);
+        var eventTypeDetailsDto = EventTypeDetailsDto.convertToDto(eventType, eventType.getEvents(), language);
 
         eventTypeDetailsDto.getEvents().sort(Comparator.comparing(EventBriefDto::getStartDate).reversed());
 

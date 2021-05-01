@@ -1,6 +1,5 @@
 package guess.controller;
 
-import guess.domain.Language;
 import guess.domain.source.Talk;
 import guess.dto.talk.TalkBriefDto;
 import guess.dto.talk.TalkDetailsDto;
@@ -43,7 +42,7 @@ public class TalkController {
                                        @RequestParam(required = false) String speakerName,
                                        HttpSession httpSession) {
         List<Talk> talks = talkService.getTalks(eventTypeId, eventId, talkName, speakerName);
-        Language language = localeService.getLanguage(httpSession);
+        var language = localeService.getLanguage(httpSession);
         List<TalkBriefDto> talkBriefDtoList = TalkBriefDto.convertToBriefDto(talks, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);
 
@@ -58,8 +57,8 @@ public class TalkController {
     @GetMapping("/talk/{id}")
     @ResponseBody
     public TalkDetailsDto getTalk(@PathVariable long id, HttpSession httpSession) {
-        Talk talk = talkService.getTalkById(id);
-        Language language = localeService.getLanguage(httpSession);
+        var talk = talkService.getTalkById(id);
+        var language = localeService.getLanguage(httpSession);
 
         return TalkDetailsDto.convertToDto(talk, eventService::getEventByTalk,
                 eventTypeService::getEventTypeByEvent, language);

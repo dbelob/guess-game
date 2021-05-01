@@ -55,7 +55,7 @@ public class AccountErrorDetailsDto {
                     s -> LocalizationUtils.getString(s.getName(), language),
                     s -> true);
 
-            Speaker questionSpeaker = ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker();
+            var questionSpeaker = ((SpeakerQuestion) errorDetails.getQuestion()).getSpeaker();
 
             List<AccountAnswerDto> yourAnswers = errorDetails.getYourAnswers().stream()
                     .map(a -> GuessMode.GUESS_ACCOUNT_BY_SPEAKER_MODE.equals(guessMode) ?
