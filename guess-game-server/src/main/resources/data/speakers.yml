@@ -735,7 +735,7 @@ speakers:
             \ the 2007 Jolt Productivity award winning book Practices of an Agile Developer. You can find a list of his books\
             \ at agiledeveloper.com. You can reach him by email at venkats@agiledeveloper.com or on twitter at @venkat_s."
     twitter: venkat_s
-    gitHub: venkat_s
+    gitHub: venkats
     javaChampion: true
   - id: 41
     photoFileName: 0041.jpg
@@ -22014,6 +22014,7 @@ speakers:
             нными серверами для онлайновых многопользовательских мобильных шутеров. Глубоко проникся этой темой и теперь к\
             онсультирует по созданию игровых решений.\n\nРаботал в нескольких стартапах, где принимал активное участие в в\
             ыстраивании процессов разработки и доставки продукта до конечных пользователей."
+    gitHub: revenant20
   - id: 1594
     photoFileName: 1594.jpg
     photoUpdatedAt: 2021-02-26T08:57:52.647Z[UTC]
