@@ -11,184 +11,136 @@ import guess.domain.question.SpeakerQuestion;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Speaker;
 import guess.util.HttpSessionUtils;
-import mockit.Mocked;
-import mockit.Verifications;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 import org.springframework.mock.web.MockHttpSession;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("StateDaoImpl class tests")
 class StateDaoImplTest {
     private final static StateDao stateDao = new StateDaoImpl();
 
     @Test
-    void getGameState(@Mocked HttpSessionUtils mock) {
-        HttpSession httpSession = new MockHttpSession();
+    void getGameState() {
+        try (MockedStatic<HttpSessionUtils> mockedStatic = Mockito.mockStatic(HttpSessionUtils.class)) {
+            HttpSession httpSession = new MockHttpSession();
 
-        stateDao.getGameState(httpSession);
+            stateDao.getGameState(httpSession);
 
-        new Verifications() {{
-            HttpSession capturedHttpSession;
-
-            HttpSessionUtils.getGameState(capturedHttpSession = withCapture());
-            times = 1;
-
-            assertEquals(httpSession, capturedHttpSession);
-        }};
+            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.getGameState(httpSession));
+        }
     }
 
     @Test
-    void setGameState(@Mocked HttpSessionUtils mock) {
-        GameState state = GameState.GUESS_NAME_BY_PHOTO_STATE;
-        HttpSession httpSession = new MockHttpSession();
+    void setGameState() {
+        try (MockedStatic<HttpSessionUtils> mockedStatic = Mockito.mockStatic(HttpSessionUtils.class)) {
+            GameState state = GameState.GUESS_NAME_BY_PHOTO_STATE;
+            HttpSession httpSession = new MockHttpSession();
 
-        stateDao.setGameState(state, httpSession);
+            stateDao.setGameState(state, httpSession);
 
-        new Verifications() {{
-            GameState capturedState;
-            HttpSession capturedHttpSession;
-
-            HttpSessionUtils.setGameState(capturedState = withCapture(), capturedHttpSession = withCapture());
-            times = 1;
-
-            assertEquals(state, capturedState);
-            assertEquals(httpSession, capturedHttpSession);
-        }};
+            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.setGameState(state, httpSession));
+        }
     }
 
     @Test
-    void getStartParameters(@Mocked HttpSessionUtils mock) {
-        HttpSession httpSession = new MockHttpSession();
+    void getStartParameters() {
+        try (MockedStatic<HttpSessionUtils> mockedStatic = Mockito.mockStatic(HttpSessionUtils.class)) {
+            HttpSession httpSession = new MockHttpSession();
 
-        stateDao.getStartParameters(httpSession);
+            stateDao.getStartParameters(httpSession);
 
-        new Verifications() {{
-            HttpSession capturedHttpSession;
-
-            HttpSessionUtils.getStartParameters(capturedHttpSession = withCapture());
-            times = 1;
-
-            assertEquals(httpSession, capturedHttpSession);
-        }};
+            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.getStartParameters(httpSession));
+        }
     }
 
     @Test
-    void setStartParameters(@Mocked HttpSessionUtils mock) {
-        StartParameters startParameters = new StartParameters(
-                List.of(0L),
-                List.of(0L, 1L),
-                GuessMode.GUESS_NAME_BY_PHOTO_MODE,
-                42);
-        HttpSession httpSession = new MockHttpSession();
+    void setStartParameters() {
+        try (MockedStatic<HttpSessionUtils> mockedStatic = Mockito.mockStatic(HttpSessionUtils.class)) {
+            StartParameters startParameters = new StartParameters(
+                    List.of(0L),
+                    List.of(0L, 1L),
+                    GuessMode.GUESS_NAME_BY_PHOTO_MODE,
+                    42);
+            HttpSession httpSession = new MockHttpSession();
 
-        stateDao.setStartParameters(startParameters, httpSession);
+            stateDao.setStartParameters(startParameters, httpSession);
 
-        new Verifications() {{
-            StartParameters capturedStartParameters;
-            HttpSession capturedHttpSession;
-
-            HttpSessionUtils.setStartParameters(capturedStartParameters = withCapture(), capturedHttpSession = withCapture());
-            times = 1;
-
-            assertEquals(startParameters, capturedStartParameters);
-            assertEquals(httpSession, capturedHttpSession);
-        }};
+            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.setStartParameters(startParameters, httpSession));
+        }
     }
 
     @Test
-    void clearStartParameters(@Mocked HttpSessionUtils mock) {
-        HttpSession httpSession = new MockHttpSession();
+    void clearStartParameters() {
+        try (MockedStatic<HttpSessionUtils> mockedStatic = Mockito.mockStatic(HttpSessionUtils.class)) {
+            HttpSession httpSession = new MockHttpSession();
 
-        stateDao.clearStartParameters(httpSession);
+            stateDao.clearStartParameters(httpSession);
 
-        new Verifications() {{
-            HttpSession capturedHttpSession;
-
-            HttpSessionUtils.clearStartParameters(capturedHttpSession = withCapture());
-            times = 1;
-
-            assertEquals(httpSession, capturedHttpSession);
-        }};
+            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.clearStartParameters(httpSession));
+        }
     }
 
     @Test
-    void getQuestionAnswersSet(@Mocked HttpSessionUtils mock) {
-        HttpSession httpSession = new MockHttpSession();
+    void getQuestionAnswersSet() {
+        try (MockedStatic<HttpSessionUtils> mockedStatic = Mockito.mockStatic(HttpSessionUtils.class)) {
+            HttpSession httpSession = new MockHttpSession();
 
-        stateDao.getQuestionAnswersSet(httpSession);
+            stateDao.getQuestionAnswersSet(httpSession);
 
-        new Verifications() {{
-            HttpSession capturedHttpSession;
-
-            HttpSessionUtils.getQuestionAnswersSet(capturedHttpSession = withCapture());
-            times = 1;
-
-            assertEquals(httpSession, capturedHttpSession);
-        }};
+            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.getQuestionAnswersSet(httpSession));
+        }
     }
 
     @Test
-    void setQuestionAnswersSet(@Mocked HttpSessionUtils mock) {
-        Speaker speaker0 = new Speaker();
-        speaker0.setId(0);
+    void setQuestionAnswersSet() {
+        try (MockedStatic<HttpSessionUtils> mockedStatic = Mockito.mockStatic(HttpSessionUtils.class)) {
+            Speaker speaker0 = new Speaker();
+            speaker0.setId(0);
 
-        Speaker speaker1 = new Speaker();
-        speaker0.setId(1);
+            Speaker speaker1 = new Speaker();
+            speaker0.setId(1);
 
-        Speaker speaker2 = new Speaker();
-        speaker0.setId(2);
+            Speaker speaker2 = new Speaker();
+            speaker0.setId(2);
 
-        Speaker speaker3 = new Speaker();
-        speaker0.setId(3);
+            Speaker speaker3 = new Speaker();
+            speaker0.setId(3);
 
-        SpeakerAnswer speakerAnswer0 = new SpeakerAnswer(speaker0);
-        SpeakerAnswer speakerAnswer1 = new SpeakerAnswer(speaker1);
-        SpeakerAnswer speakerAnswer2 = new SpeakerAnswer(speaker2);
-        SpeakerAnswer speakerAnswer3 = new SpeakerAnswer(speaker3);
+            SpeakerAnswer speakerAnswer0 = new SpeakerAnswer(speaker0);
+            SpeakerAnswer speakerAnswer1 = new SpeakerAnswer(speaker1);
+            SpeakerAnswer speakerAnswer2 = new SpeakerAnswer(speaker2);
+            SpeakerAnswer speakerAnswer3 = new SpeakerAnswer(speaker3);
 
-        QuestionAnswersSet questionAnswersSet = new QuestionAnswersSet(
-                List.of(new LocaleItem("en", "Name0")),
-                "logoFileName0",
-                List.of(new QuestionAnswers(
-                        new SpeakerQuestion(speaker0),
-                        List.of(speakerAnswer0),
-                        new Quadruple<>(speakerAnswer0, speakerAnswer1, speakerAnswer2, speakerAnswer3)
-                ))
-        );
-        HttpSession httpSession = new MockHttpSession();
+            QuestionAnswersSet questionAnswersSet = new QuestionAnswersSet(
+                    List.of(new LocaleItem("en", "Name0")),
+                    "logoFileName0",
+                    List.of(new QuestionAnswers(
+                            new SpeakerQuestion(speaker0),
+                            List.of(speakerAnswer0),
+                            new Quadruple<>(speakerAnswer0, speakerAnswer1, speakerAnswer2, speakerAnswer3)
+                    ))
+            );
+            HttpSession httpSession = new MockHttpSession();
 
-        stateDao.setQuestionAnswersSet(questionAnswersSet, httpSession);
+            stateDao.setQuestionAnswersSet(questionAnswersSet, httpSession);
 
-        new Verifications() {{
-            QuestionAnswersSet capturedQuestionAnswersSet;
-            HttpSession capturedHttpSession;
-
-            HttpSessionUtils.setQuestionAnswersSet(capturedQuestionAnswersSet = withCapture(), capturedHttpSession = withCapture());
-            times = 1;
-
-            assertEquals(questionAnswersSet, capturedQuestionAnswersSet);
-            assertEquals(httpSession, capturedHttpSession);
-        }};
+            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.setQuestionAnswersSet(questionAnswersSet, httpSession));
+        }
     }
 
     @Test
-    void clearQuestionAnswersSet(@Mocked HttpSessionUtils mock) {
-        HttpSession httpSession = new MockHttpSession();
+    void clearQuestionAnswersSet() {
+        try (MockedStatic<HttpSessionUtils> mockedStatic = Mockito.mockStatic(HttpSessionUtils.class)) {
+            HttpSession httpSession = new MockHttpSession();
 
-        stateDao.clearQuestionAnswersSet(httpSession);
+            stateDao.clearQuestionAnswersSet(httpSession);
 
-        new Verifications() {{
-            HttpSession capturedHttpSession;
-
-            HttpSessionUtils.clearQuestionAnswersSet(capturedHttpSession = withCapture());
-            times = 1;
-
-            assertEquals(httpSession, capturedHttpSession);
-        }};
+            mockedStatic.verify(Mockito.times(1), () -> HttpSessionUtils.clearQuestionAnswersSet(httpSession));
+        }
     }
 }
