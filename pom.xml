@@ -31,6 +31,7 @@
         <jmockit.version>1.49</jmockit.version>
         <kumo.version>1.28</kumo.version>
         <logback.version>1.2.3</logback.version>
+        <mockito.version>3.9.0</mockito.version>
         <sl4j.version>1.7.30</sl4j.version>
         <snakeyaml.version>1.28</snakeyaml.version>
         <spring-boot.version>2.4.5</spring-boot.version>
@@ -200,6 +201,12 @@
             </dependency>
 
             <!-- Tests -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>org.jmockit</groupId>
                 <artifactId>jmockit</artifactId>
