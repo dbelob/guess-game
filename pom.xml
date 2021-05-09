@@ -74,6 +74,10 @@
                             <directory>output</directory>
                             <followSymlinks>false</followSymlinks>
                         </fileset>
+                        <fileset>
+                            <directory>.allure</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
                     </filesets>
                 </configuration>
             </plugin>
@@ -163,7 +167,7 @@
                 <artifactId>allure-maven</artifactId>
                 <version>${allure.plugin.version}</version>
                 <configuration>
-                    <allureDownloadUrl>https://repo1.maven.org/maven2/io/qameta/allure/allure-commandline/%s/allure-commandline-%s.zip</allureDownloadUrl>
+                    <allureDownloadUrl>https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/%s/allure-commandline-%s.zip</allureDownloadUrl>
                     <reportVersion>${allure-junit5.version}</reportVersion>
                 </configuration>
             </plugin>
