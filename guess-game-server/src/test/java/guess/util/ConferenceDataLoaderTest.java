@@ -1,8 +1,6 @@
 package guess.util;
 
-import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
-import guess.domain.Identifier;
 import guess.domain.Language;
 import guess.domain.source.*;
 import guess.domain.source.image.UrlFilename;
@@ -22,6 +20,9 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.mockito.stubbing.Answer;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -32,7 +33,6 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -42,81 +42,50 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class ConferenceDataLoaderTest {
     @Test
     void loadSpaceTags() {
-        new MockUp<ContentfulUtils>() {
+        try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
             final String CODE1 = "code1";
             final String CODE2 = "code2";
             final String CODE3 = "code3";
             final String CODE4 = "code4";
 
-            @Mock
-            Map<ContentfulUtils.ConferenceSpaceInfo, List<String>> getTags(String conferenceCodePrefix) {
-                return Map.of(
-                        ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO,
-                        List.of(CODE1, CODE2, CODE3, CODE4));
-            }
-        };
-
-        assertDoesNotThrow(() -> ConferenceDataLoader.loadSpaceTags(null));
+            mockedStatic.when(() -> ContentfulUtils.getTags(Mockito.anyString()))
+                    .thenReturn(Map.of(
+                            ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO,
+                            List.of(CODE1, CODE2, CODE3, CODE4)));
+            assertDoesNotThrow(() -> ConferenceDataLoader.loadSpaceTags(null));
+        }
     }
 
     @Test
     void loadEventTypes() {
-        new MockUp<YamlUtils>() {
-            @Mock
-            SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
-                return new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
-                        Collections.emptyList(),
-                        new SourceInformation.SpeakerInformation(
-                                Collections.emptyList(),
-                                Collections.emptyList(),
-                                Collections.emptyList()
-                        ),
-                        Collections.emptyList()
-                );
-            }
-        };
+        try (MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class);
+             MockedStatic<ContentfulUtils> contentfulUtilsMockedStatic = Mockito.mockStatic(ContentfulUtils.class);
+             MockedStatic<ConferenceDataLoader> conferenceDataLoaderMockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+            yamlUtilsMockedStatic.when(YamlUtils::readSourceInformation)
+                    .thenReturn(new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
+                            Collections.emptyList(),
+                            new SourceInformation.SpeakerInformation(
+                                    Collections.emptyList(),
+                                    Collections.emptyList(),
+                                    Collections.emptyList()
+                            ),
+                            Collections.emptyList()
+                    ));
+            contentfulUtilsMockedStatic.when(ContentfulUtils::getEventTypes)
+                    .thenReturn(Collections.emptyList());
+            conferenceDataLoaderMockedStatic.when(ConferenceDataLoader::loadEventTypes)
+                    .thenCallRealMethod();
+            conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getConferences(Mockito.anyList()))
+                    .thenReturn(Collections.emptyList());
+            conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getResourceEventTypeMap(Mockito.anyList()))
+                    .thenReturn(Collections.emptyMap());
+            conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getLastId(Mockito.anyList()))
+                    .thenReturn(42L);
+            conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getEventTypeLoadResult(Mockito.anyList(), Mockito.anyMap(), Mockito.any()))
+                    .thenReturn(new LoadResult<>(Collections.emptyList(), Collections.emptyList(), Collections.emptyList()));
 
-        new MockUp<ContentfulUtils>() {
-            @Mock
-            List<EventType> getEventTypes() {
-                return Collections.emptyList();
-            }
-        };
-
-        new MockUp<ConferenceDataLoader>() {
-            @Mock
-            void loadEventTypes(Invocation invocation) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-                invocation.proceed();
-            }
-
-            @Mock
-            List<EventType> getConferences(List<EventType> eventTypes) {
-                return Collections.emptyList();
-            }
-
-            @Mock
-            Map<Conference, EventType> getResourceEventTypeMap(List<EventType> eventTypes) {
-                return Collections.emptyMap();
-            }
-
-            @Mock
-            <T extends Identifier> long getLastId(List<T> entities) {
-                return 42;
-            }
-
-            @Mock
-            LoadResult<List<EventType>> getEventTypeLoadResult(List<EventType> eventTypes, Map<Conference,
-                    EventType> eventTypeMap, AtomicLong lastEventTypeId) {
-                return new LoadResult<>(Collections.emptyList(), Collections.emptyList(), Collections.emptyList());
-            }
-
-            @Mock
-            void saveEventTypes(LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
-                // Nothing
-            }
-        };
-
-        assertDoesNotThrow(ConferenceDataLoader::loadEventTypes);
+            assertDoesNotThrow(ConferenceDataLoader::loadEventTypes);
+        }
     }
 
     @Test
@@ -189,40 +158,46 @@ class ConferenceDataLoaderTest {
 
     @Test
     void getEventTypeLoadResult() {
-        new MockUp<ContentfulUtils>() {
-            @Mock
-            boolean needUpdate(EventType a, EventType b) {
-                return (Conference.JPOINT.equals(a.getConference()) && Conference.JPOINT.equals(b.getConference()));
-            }
-        };
+        try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+            mockedStatic.when(() -> ContentfulUtils.needUpdate(Mockito.any(EventType.class), Mockito.any(EventType.class)))
+                    .thenAnswer(
+                            (Answer<Boolean>) invocation -> {
+                                Object[] args = invocation.getArguments();
+                                EventType a = (EventType) args[0];
+                                EventType b = (EventType) args[1];
 
-        EventType eventType0 = new EventType();
-        eventType0.setId(0);
+                                return (Conference.JPOINT.equals(a.getConference()) && Conference.JPOINT.equals(b.getConference()));
+                            }
+                    );
 
-        EventType eventType1 = new EventType();
-        eventType1.setId(1);
-        eventType1.setConference(Conference.JOKER);
+            EventType eventType0 = new EventType();
+            eventType0.setId(0);
 
-        EventType eventType2 = new EventType();
-        eventType2.setId(2);
-        eventType2.setConference(Conference.JPOINT);
+            EventType eventType1 = new EventType();
+            eventType1.setId(1);
+            eventType1.setConference(Conference.JOKER);
 
-        EventType eventType3 = new EventType();
-        eventType3.setId(3);
-        eventType3.setConference(Conference.DOT_NEXT);
+            EventType eventType2 = new EventType();
+            eventType2.setId(2);
+            eventType2.setConference(Conference.JPOINT);
 
-        Map<Conference, EventType> eventTypeMap = new HashMap<>(Map.of(Conference.JPOINT, eventType2,
-                Conference.DOT_NEXT, eventType3));
+            EventType eventType3 = new EventType();
+            eventType3.setId(3);
+            eventType3.setConference(Conference.DOT_NEXT);
 
-        LoadResult<List<EventType>> expected = new LoadResult<>(
-                Collections.emptyList(),
-                List.of(eventType0, eventType1),
-                List.of(eventType2));
+            Map<Conference, EventType> eventTypeMap = new HashMap<>(Map.of(Conference.JPOINT, eventType2,
+                    Conference.DOT_NEXT, eventType3));
 
-        assertEquals(expected, ConferenceDataLoader.getEventTypeLoadResult(
-                List.of(eventType0, eventType1, eventType2, eventType3),
-                eventTypeMap,
-                new AtomicLong(-1)));
+            LoadResult<List<EventType>> expected = new LoadResult<>(
+                    Collections.emptyList(),
+                    List.of(eventType0, eventType1),
+                    List.of(eventType2));
+
+            assertEquals(expected, ConferenceDataLoader.getEventTypeLoadResult(
+                    List.of(eventType0, eventType1, eventType2, eventType3),
+                    eventTypeMap,
+                    new AtomicLong(-1)));
+        }
     }
 
     @Nested
@@ -295,19 +270,11 @@ class ConferenceDataLoaderTest {
         @ParameterizedTest
         @MethodSource("data")
         void saveEventTypes(LoadResult<List<EventType>> loadResult, @Mocked YamlUtils yamlUtilsMock) {
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                void saveEventTypes(Invocation invocation, LoadResult<List<EventType>> loadResult) throws IOException, NoSuchFieldException {
-                    invocation.proceed(loadResult);
-                }
-
-                @Mock
-                void logAndDumpEventTypes(List<EventType> eventTypes, String logMessage, String filename) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-            };
-
-            assertDoesNotThrow(() -> ConferenceDataLoader.saveEventTypes(loadResult));
+            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                mockedStatic.when(() -> ConferenceDataLoader.saveEventTypes(Mockito.any()))
+                        .thenCallRealMethod();
+                assertDoesNotThrow(() -> ConferenceDataLoader.saveEventTypes(loadResult));
+            }
         }
     }
 
@@ -385,194 +352,125 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
                                     LoadSettings loadSettings, SourceInformation sourceInformation, Event contentfulEvent,
                                     List<Talk> contentfulTalks, List<Speaker> talkSpeakers, List<Company> speakerCompanies,
                                     Map<String, Company> resourceLowerNameCompanyMap) {
-            new MockUp<YamlUtils>() {
-                @Mock
-                SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
-                    return sourceInformation;
-                }
-            };
+            try (MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class);
+                 MockedStatic<LocalizationUtils> localizationUtilsMockedStatic = Mockito.mockStatic(LocalizationUtils.class);
+                 MockedStatic<ContentfulUtils> contentfulUtilsMockedStatic = Mockito.mockStatic(ContentfulUtils.class);
+                 MockedStatic<ConferenceDataLoader> conferenceDataLoaderMockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                yamlUtilsMockedStatic.when(YamlUtils::readSourceInformation)
+                        .thenReturn(sourceInformation);
+                localizationUtilsMockedStatic.when(() -> LocalizationUtils.getString(Mockito.nullable(List.class), Mockito.any(Language.class)))
+                        .thenReturn("");
+                contentfulUtilsMockedStatic.when(() -> ContentfulUtils.getEvent(Mockito.any(Conference.class), Mockito.any(LocalDate.class)))
+                        .thenReturn(contentfulEvent);
+                contentfulUtilsMockedStatic.when(() -> ContentfulUtils.getTalks(Mockito.any(Conference.class), Mockito.anyString(), Mockito.anyBoolean()))
+                        .thenReturn(contentfulTalks);
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.loadTalksSpeakersEvent(
+                        Mockito.any(Conference.class), Mockito.any(LocalDate.class), Mockito.anyString(), Mockito.any(LoadSettings.class)))
+                        .thenCallRealMethod();
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.deleteInvalidTalks(Mockito.anyList(), Mockito.anySet()))
+                        .thenAnswer(
+                                (Answer<List<Talk>>) invocation -> {
+                                    Object[] args = invocation.getArguments();
 
-            new MockUp<LocalizationUtils>() {
-                @Mock
-                String getString(List<LocaleItem> localeItems, Language language) {
-                    return "";
-                }
-            };
+                                    return (List<Talk>) args[0];
+                                }
+                        );
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.deleteOpeningAndClosingTalks(Mockito.anyList()))
+                        .thenAnswer(
+                                (Answer<List<Talk>>) invocation -> {
+                                    Object[] args = invocation.getArguments();
 
-            new MockUp<ContentfulUtils>() {
-                @Mock
-                Event getEvent(Conference conference, LocalDate startDate) {
-                    return contentfulEvent;
-                }
+                                    return (List<Talk>) args[0];
+                                }
+                        );
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.deleteTalkDuplicates(Mockito.anyList()))
+                        .thenAnswer(
+                                (Answer<List<Talk>>) invocation -> {
+                                    Object[] args = invocation.getArguments();
 
-                @Mock
-                List<Talk> getTalks(Conference conference, String conferenceCode) {
-                    return contentfulTalks;
-                }
-            };
+                                    return (List<Talk>) args[0];
+                                }
+                        );
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getTalkSpeakers(Mockito.anyList()))
+                        .thenReturn(talkSpeakers);
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getSpeakerCompanies(Mockito.anyList()))
+                        .thenReturn(speakerCompanies);
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getResourceLowerNameCompanyMap(Mockito.anyList()))
+                        .thenReturn(resourceLowerNameCompanyMap);
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getLastId(Mockito.anyList()))
+                        .thenReturn(42L);
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getCompanyLoadResult(
+                        Mockito.anyList(), Mockito.anyMap(), Mockito.any()))
+                        .thenReturn(new LoadResult<>(
+                                Collections.emptyList(),
+                                Collections.emptyList(),
+                                Collections.emptyList()));
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getResourceNameCompanySpeakerMap(Mockito.anyList()))
+                        .thenReturn(Collections.emptyMap());
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getResourceNameSpeakersMap(Mockito.anyList()))
+                        .thenReturn(Collections.emptyMap());
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getSpeakerLoadResult(
+                        Mockito.anyList(), Mockito.any(SpeakerLoadMaps.class), Mockito.any()))
+                        .thenReturn(new SpeakerLoadResult(
+                                new LoadResult<>(
+                                        Collections.emptyList(),
+                                        Collections.emptyList(),
+                                        Collections.emptyList()),
+                                new LoadResult<>(
+                                        Collections.emptyList(),
+                                        Collections.emptyList(),
+                                        Collections.emptyList())));
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getTalkLoadResult(
+                        Mockito.anyList(), Mockito.any(Event.class), Mockito.anyList(), Mockito.any()))
+                        .thenReturn(new LoadResult<>(
+                                Collections.emptyList(),
+                                Collections.emptyList(),
+                                Collections.emptyList()));
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.fixVenueAddress(Mockito.any(Place.class)))
+                        .thenReturn(Collections.emptyList());
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.findResourcePlace(
+                        Mockito.any(Place.class), Mockito.anyMap(), Mockito.anyMap()))
+                        .thenAnswer(
+                                (Answer<Place>) invocation -> {
+                                    Object[] args = invocation.getArguments();
 
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                void loadTalksSpeakersEvent(Invocation invocation, Conference conference, LocalDate startDate, String conferenceCode,
-                                            LoadSettings loadSettings) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-                    invocation.proceed(conference, startDate, conferenceCode, loadSettings);
-                }
+                                    return (Place) args[0];
+                                }
+                        );
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getPlaceLoadResult(
+                        Mockito.any(Place.class), Mockito.any(Place.class), Mockito.any()))
+                        .thenReturn(new LoadResult<>(
+                                null,
+                                null,
+                                null));
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.getEventLoadResult(Mockito.any(Event.class), Mockito.any(Event.class)))
+                        .thenReturn(new LoadResult<>(
+                                null,
+                                null,
+                                null));
 
-                @Mock
-                List<Talk> deleteInvalidTalks(List<Talk> talks, Set<String> invalidTalksSet) {
-                    return talks;
-                }
-
-                @Mock
-                List<Talk> deleteOpeningAndClosingTalks(List<Talk> talks) {
-                    return talks;
-                }
-
-                @Mock
-                List<Talk> deleteTalkDuplicates(List<Talk> talks) {
-                    return talks;
-                }
-
-                @Mock
-                List<Speaker> getTalkSpeakers(List<Talk> talks) {
-                    return talkSpeakers;
-                }
-
-                @Mock
-                List<Company> getSpeakerCompanies(List<Speaker> speakers) {
-                    return speakerCompanies;
-                }
-
-                @Mock
-                Map<String, Company> getResourceLowerNameCompanyMap(List<Company> companies) {
-                    return resourceLowerNameCompanyMap;
-                }
-
-                @Mock
-                void addLowerSynonymsToCompanyMap(List<CompanySynonyms> companySynonymsList, Map<String, Company> companyMap) {
-                    // Nothing
-                }
-
-                @Mock
-                <T extends Identifier> long getLastId(List<T> entities) {
-                    return 42;
-                }
-
-                @Mock
-                LoadResult<List<Company>> getCompanyLoadResult(List<Company> companies, Map<String, Company> resourceCompanyMap,
-                                                               AtomicLong lastCompanyId) {
-                    return new LoadResult<>(
-                            Collections.emptyList(),
-                            Collections.emptyList(),
-                            Collections.emptyList());
-                }
-
-                @Mock
-                void fillCompanyIds(List<Speaker> speakers) {
-                    // Nothing
-                }
-
-                @Mock
-                Map<NameCompany, Speaker> getResourceNameCompanySpeakerMap(List<Speaker> speakers) {
-                    return Collections.emptyMap();
-                }
-
-                @Mock
-                Map<String, Set<Speaker>> getResourceNameSpeakersMap(List<Speaker> speakers) {
-                    return Collections.emptyMap();
-                }
-
-                @Mock
-                SpeakerLoadResult getSpeakerLoadResult(List<Speaker> speakers,
-                                                       SpeakerLoadMaps speakerLoadMaps,
-                                                       AtomicLong lastSpeakerId) throws IOException {
-                    return new SpeakerLoadResult(
-                            new LoadResult<>(
-                                    Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    Collections.emptyList()),
-                            new LoadResult<>(
-                                    Collections.emptyList(),
-                                    Collections.emptyList(),
-                                    Collections.emptyList()));
-                }
-
-                @Mock
-                void fillSpeakerIds(List<Talk> talks) {
-                    // Nothing
-                }
-
-                @Mock
-                LoadResult<List<Talk>> getTalkLoadResult(List<Talk> talks, Event resourceEvent, List<Event> resourceEvents,
-                                                         AtomicLong lasTalksId) {
-                    return new LoadResult<>(
-                            Collections.emptyList(),
-                            Collections.emptyList(),
-                            Collections.emptyList());
-                }
-
-                @Mock
-                List<LocaleItem> fixVenueAddress(Place place) {
-                    return Collections.emptyList();
-                }
-
-                @Mock
-                Place findResourcePlace(Place place,
-                                        Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
-                                        Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
-                    return place;
-                }
-
-                @Mock
-                LoadResult<Place> getPlaceLoadResult(Place place, Place resourcePlace, AtomicLong lastPlaceId) {
-                    return new LoadResult<>(
-                            null,
-                            null,
-                            null);
-                }
-
-                @Mock
-                LoadResult<Event> getEventLoadResult(Event event, Event resourceEvent) {
-                    return new LoadResult<>(
-                            null,
-                            null,
-                            null);
-                }
-
-                @Mock
-                void saveFiles(SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
-                               LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-            };
-
-            assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(conference, startDate, conferenceCode, loadSettings));
+                assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(conference, startDate, conferenceCode, loadSettings));
+            }
         }
     }
 
     @Test
     void loadTalksSpeakersEventWithoutInvalidTalksSetAndKnownSpeakerIdsMap() {
-        new MockUp<ConferenceDataLoader>() {
-            @Mock
-            void loadTalksSpeakersEvent(Conference conference, LocalDate startDate, String conferenceCode,
-                                        LoadSettings loadSettings) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-                // Nothing
-            }
+        try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+            mockedStatic.when(() -> ConferenceDataLoader.loadTalksSpeakersEvent(
+                    Mockito.any(Conference.class), Mockito.any(LocalDate.class), Mockito.anyString()))
+                    .thenCallRealMethod();
 
-            @Mock
-            void loadTalksSpeakersEvent(Invocation invocation, Conference conference, LocalDate startDate, String conferenceCode) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
-                invocation.proceed(conference, startDate, conferenceCode);
-            }
-        };
-
-        assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(
-                Conference.JPOINT,
-                LocalDate.of(2020, 6, 29),
-                "2020-jpoint"));
+            assertDoesNotThrow(() -> ConferenceDataLoader.loadTalksSpeakersEvent(
+                    Conference.JPOINT,
+                    LocalDate.of(2020, 6, 29),
+                    "2020-jpoint"));
+        }
     }
 
     @Nested

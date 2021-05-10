@@ -5,14 +5,12 @@ import guess.domain.GuessMode;
 import guess.domain.Language;
 import guess.domain.question.*;
 import guess.domain.source.*;
-import guess.domain.tagcloud.SerializedWordFrequency;
 import guess.util.tagcloud.TagCloudUtils;
-import mockit.Mock;
-import mockit.MockUp;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
 import java.util.*;
@@ -532,33 +530,30 @@ class QuestionDaoImplTest {
 
     @Test
     void getTagCloudBySpeakerQuestions() {
-        TagCloudQuestion tagCloudQuestion0 = new TagCloudQuestion(speaker0, Collections.emptyMap());
-        TagCloudQuestion tagCloudQuestion1 = new TagCloudQuestion(speaker1, Collections.emptyMap());
-        TagCloudQuestion tagCloudQuestion2 = new TagCloudQuestion(speaker2, Collections.emptyMap());
-        QuestionSet questionSet = new QuestionSet(
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                List.of(tagCloudQuestion0, tagCloudQuestion1, tagCloudQuestion2)
-        );
-        List<Question> expected = List.of(
-                new TagCloudQuestion(speaker0, Collections.emptyMap()),
-                new TagCloudQuestion(speaker1, Collections.emptyMap()),
-                new TagCloudQuestion(speaker2, Collections.emptyMap()));
+        try (MockedStatic<TagCloudUtils> mockedStatic = Mockito.mockStatic(TagCloudUtils.class)) {
+            mockedStatic.when(() -> TagCloudUtils.mergeWordFrequenciesMaps(Mockito.anyList()))
+                    .thenReturn(Collections.emptyMap());
 
-        new MockUp<TagCloudUtils>() {
-            @Mock
-            Map<Language, List<SerializedWordFrequency>> mergeWordFrequenciesMaps(
-                    List<Map<Language, List<SerializedWordFrequency>>> languageWordFrequenciesMapList) {
-                return Collections.emptyMap();
-            }
-        };
+            TagCloudQuestion tagCloudQuestion0 = new TagCloudQuestion(speaker0, Collections.emptyMap());
+            TagCloudQuestion tagCloudQuestion1 = new TagCloudQuestion(speaker1, Collections.emptyMap());
+            TagCloudQuestion tagCloudQuestion2 = new TagCloudQuestion(speaker2, Collections.emptyMap());
+            QuestionSet questionSet = new QuestionSet(
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    List.of(tagCloudQuestion0, tagCloudQuestion1, tagCloudQuestion2)
+            );
+            List<Question> expected = List.of(
+                    new TagCloudQuestion(speaker0, Collections.emptyMap()),
+                    new TagCloudQuestion(speaker1, Collections.emptyMap()),
+                    new TagCloudQuestion(speaker2, Collections.emptyMap()));
 
-        List<Question> actual = QuestionDaoImpl.getTagCloudBySpeakerQuestions(List.of(questionSet));
+            List<Question> actual = QuestionDaoImpl.getTagCloudBySpeakerQuestions(List.of(questionSet));
 
-        assertTrue(expected.containsAll(actual) && actual.containsAll(expected));
+            assertTrue(expected.containsAll(actual) && actual.containsAll(expected));
+        }
     }
 }
