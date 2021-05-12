@@ -13,7 +13,7 @@ jobs:
           sudo apt-get --only-upgrade install google-chrome-stable
           google-chrome --version
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
@@ -28,6 +28,6 @@ jobs:
       - name: Build with Maven
         run: mvn -B clean package
       - name: Test coverage
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v1.5.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
