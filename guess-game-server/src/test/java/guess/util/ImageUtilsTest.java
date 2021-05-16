@@ -62,6 +62,27 @@ class ImageUtilsTest {
         final URL validUrlWithParameters = new URL(String.format("%s?w=%d", VALID_HTTP_URL_STRING, ImageUtils.IMAGE_WIDTH));
         BufferedImage expected = createImage(1, 1);
 
+//        try (MockedStatic<ImageUtils> mockedStatic = Mockito.mockStatic(ImageUtils.class)) {
+//            mockedStatic.when(() -> ImageUtils.getImageByUrlString(Mockito.anyString()))
+//                    .thenCallRealMethod();
+//            mockedStatic.when(() -> ImageUtils.getImageByUrl(Mockito.mock(URL.class)))
+//                    .thenAnswer(
+//                            (Answer<BufferedImage>) invocation -> {
+//                                Object[] args = invocation.getArguments();
+//                                URL url = (URL) args[0];
+//
+//                                if (url.equals(validUrlWithParameters)) {
+//                                    return expected;
+//                                } else {
+//                                    throw new IOException();
+//                                }
+//                            }
+//                    );
+//
+//            assertEquals(expected, ImageUtils.getImageByUrlString(VALID_HTTP_URL_STRING));
+//            assertThrows(IOException.class, () -> ImageUtils.getImageByUrlString("https://invalid.com"));
+//        }
+
         new MockUp<ImageUtils>() {
             @Mock
             BufferedImage getImageByUrl(URL url) throws IOException {
