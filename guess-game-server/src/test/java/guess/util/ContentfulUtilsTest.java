@@ -43,6 +43,8 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
@@ -131,28 +133,25 @@ class ContentfulUtilsTest {
     }
 
     @Test
-    void getEventTypes(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
-        new Expectations() {{
+    void getEventTypes() {
+        try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+            mockedStatic.when(ContentfulUtils::getEventTypes)
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> ContentfulUtils.createEventType(Mockito.any(ContentfulEventType.class), Mockito.any(AtomicLong.class)))
+                    .thenReturn(new EventType());
+
             ContentfulEventTypeResponse response = new ContentfulEventTypeResponse();
             response.setItems(List.of(new ContentfulEventType(), new ContentfulEventType()));
 
-            restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulEventTypeResponse.class);
-            result = response;
-        }};
+            RestTemplate restTemplateMock = Mockito.mock(RestTemplate.class);
+            Mockito.when(restTemplateMock.getForObject(Mockito.any(URI.class), Mockito.any()))
+                    .thenReturn(response);
 
-        new MockUp<ContentfulUtils>() {
-            @Mock
-            List<EventType> getEventTypes(Invocation invocation) {
-                return invocation.proceed();
-            }
+            mockedStatic.when(ContentfulUtils::getRestTemplate)
+                    .thenReturn(restTemplateMock);
 
-            @Mock
-            EventType createEventType(ContentfulEventType contentfulEventType, AtomicLong id) {
-                return new EventType();
-            }
-        };
-
-        assertEquals(2, ContentfulUtils.getEventTypes().size());
+            assertEquals(2, ContentfulUtils.getEventTypes().size());
+        }
     }
 
     @Nested
@@ -307,41 +306,35 @@ class ContentfulUtilsTest {
     }
 
     @Test
-    void getEvents(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
-        new Expectations() {{
+    @SuppressWarnings("unchecked")
+    void getEvents() {
+        try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+            mockedStatic.when(() -> ContentfulUtils.getEvents(Mockito.nullable(String.class), Mockito.nullable(LocalDate.class)))
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> ContentfulUtils.createEvent(Mockito.any(ContentfulEvent.class), Mockito.anyMap(), Mockito.anySet()))
+                    .thenReturn(new Event());
+            mockedStatic.when(() -> ContentfulUtils.createUtcZonedDateTime(Mockito.any(LocalDate.class)))
+                    .thenReturn(ZonedDateTime.now());
+            mockedStatic.when(() -> ContentfulUtils.getCityMap(Mockito.any(ContentfulEventResponse.class)))
+                    .thenReturn(Collections.emptyMap());
+            mockedStatic.when(() -> ContentfulUtils.getErrorSet(Mockito.any(ContentfulResponse.class), Mockito.anyString()))
+                    .thenReturn(Collections.emptySet());
+
             ContentfulEventResponse response = new ContentfulEventResponse();
             response.setItems(List.of(new ContentfulEvent(), new ContentfulEvent()));
 
-            restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulEventResponse.class);
-            result = response;
-        }};
+            RestTemplate restTemplateMock = Mockito.mock(RestTemplate.class);
+            Mockito.when(restTemplateMock.getForObject(Mockito.any(URI.class), Mockito.any()))
+                    .thenReturn(response);
 
-        new MockUp<ContentfulUtils>() {
-            @Mock
-            List<Event> getEvents(Invocation invocation, String eventName, LocalDate startDate) {
-                return invocation.proceed(eventName, startDate);
-            }
+            mockedStatic.when(ContentfulUtils::getRestTemplate)
+                    .thenReturn(restTemplateMock);
 
-            @Mock
-            Event createEvent(ContentfulEvent e, Map<String, ContentfulCity> cityMap, Set<String> entryErrorSet) {
-                return new Event();
-            }
-
-            @Mock
-            Map<String, ContentfulCity> getCityMap(ContentfulEventResponse response) {
-                return Collections.emptyMap();
-            }
-
-            @Mock
-            Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
-                return Collections.emptySet();
-            }
-        };
-
-        assertEquals(2, ContentfulUtils.getEvents("JPoint", LocalDate.of(2020, 6, 29)).size());
-        assertEquals(2, ContentfulUtils.getEvents(null, LocalDate.of(2020, 6, 29)).size());
-        assertEquals(2, ContentfulUtils.getEvents("", LocalDate.of(2020, 6, 29)).size());
-        assertEquals(2, ContentfulUtils.getEvents("JPoint", null).size());
+            assertEquals(2, ContentfulUtils.getEvents("JPoint", LocalDate.of(2020, 6, 29)).size());
+            assertEquals(2, ContentfulUtils.getEvents(null, LocalDate.of(2020, 6, 29)).size());
+            assertEquals(2, ContentfulUtils.getEvents("", LocalDate.of(2020, 6, 29)).size());
+            assertEquals(2, ContentfulUtils.getEvents("JPoint", null).size());
+        }
     }
 
     @Nested
