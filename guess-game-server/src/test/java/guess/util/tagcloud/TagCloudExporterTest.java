@@ -1,5 +1,6 @@
 package guess.util.tagcloud;
 
+import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.Conference;
 import guess.domain.Language;
 import guess.domain.source.*;
@@ -109,8 +110,10 @@ class TagCloudExporterTest {
                 ),
                 List.of(talk0, talk1));
 
-        try (MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class);
-             MockedStatic<TagCloudExporter> tagCloudExporterMockedStatic = Mockito.mockStatic(TagCloudExporter.class)) {
+        try (MockedStatic<TagCloudExporter> tagCloudExporterMockedStatic = Mockito.mockStatic(TagCloudExporter.class);
+             MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class)) {
+            tagCloudExporterMockedStatic.when(TagCloudExporter::exportAllEvents)
+                    .thenCallRealMethod();
             yamlUtilsMockedStatic.when(YamlUtils::readSourceInformation)
                     .thenReturn(sourceInformation);
 
@@ -119,7 +122,7 @@ class TagCloudExporterTest {
     }
 
     @Test
-    void exportTalksAndConference() {
+    void exportTalksAndConference() throws SpeakerDuplicatedException, IOException {
         SourceInformation sourceInformation = new SourceInformation(
                 List.of(place0),
                 List.of(organizer0),
@@ -132,9 +135,11 @@ class TagCloudExporterTest {
                 ),
                 Collections.emptyList());
 
-        try (MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class);
-             MockedStatic<LocalizationUtils> localizationUtilsMockedStatic = Mockito.mockStatic(LocalizationUtils.class);
-             MockedStatic<TagCloudExporter> tagCloudExporterMockedStatic = Mockito.mockStatic(TagCloudExporter.class)) {
+        try (MockedStatic<TagCloudExporter> tagCloudExporterMockedStatic = Mockito.mockStatic(TagCloudExporter.class);
+             MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class);
+             MockedStatic<LocalizationUtils> localizationUtilsMockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+            tagCloudExporterMockedStatic.when(() -> TagCloudExporter.exportTalksAndConference(Mockito.any(Conference.class), Mockito.any(LocalDate.class)))
+                    .thenCallRealMethod();
             yamlUtilsMockedStatic.when(YamlUtils::readSourceInformation)
                     .thenReturn(sourceInformation);
             localizationUtilsMockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
@@ -160,9 +165,11 @@ class TagCloudExporterTest {
         @ParameterizedTest
         @MethodSource("data")
         void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) {
-            try (MockedStatic<FileUtils> fileUtilsMockedStatic = Mockito.mockStatic(FileUtils.class);
-                 MockedStatic<TagCloudUtils> tagCloudUtilsMockedStatic = Mockito.mockStatic(TagCloudUtils.class);
-                 MockedStatic<TagCloudExporter> tagCloudExporterMockedStatic = Mockito.mockStatic(TagCloudExporter.class)) {
+            try (MockedStatic<TagCloudExporter> tagCloudExporterMockedStatic = Mockito.mockStatic(TagCloudExporter.class);
+                 MockedStatic<FileUtils> fileUtilsMockedStatic = Mockito.mockStatic(FileUtils.class);
+                 MockedStatic<TagCloudUtils> tagCloudUtilsMockedStatic = Mockito.mockStatic(TagCloudUtils.class)) {
+                tagCloudExporterMockedStatic.when(() -> TagCloudExporter.export(Mockito.anyList(), Mockito.anyBoolean(), Mockito.anyString()))
+                        .thenCallRealMethod();
                 tagCloudUtilsMockedStatic.when(() -> TagCloudUtils.getTalkText(Mockito.any(Talk.class)))
                         .thenReturn("");
 
