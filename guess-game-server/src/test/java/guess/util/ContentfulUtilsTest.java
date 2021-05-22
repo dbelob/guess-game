@@ -827,23 +827,17 @@ class ContentfulUtilsTest {
         @MethodSource("data")
         void extractPhoto(ContentfulLink link, Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet,
                           String speakerNameEn, Class<? extends Throwable> expectedException, UrlDates expectedValue) {
-            new MockUp<ContentfulUtils>() {
-                @Mock
-                UrlDates extractPhoto(Invocation invocation, ContentfulLink link, Map<String, ContentfulAsset> assetMap,
-                                      Set<String> assetErrorSet, String speakerNameEn) {
-                    return invocation.proceed(link, assetMap, assetErrorSet, speakerNameEn);
-                }
+            try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+                mockedStatic.when(() -> ContentfulUtils.extractPhoto(Mockito.any(ContentfulLink.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anyString()))
+                        .thenCallRealMethod();
+                mockedStatic.when(() -> ContentfulUtils.extractAssetUrl(Mockito.nullable(String.class)))
+                        .thenReturn(ASSET_URL);
 
-                @Mock
-                String extractAssetUrl(String value) {
-                    return ASSET_URL;
+                if (expectedException == null) {
+                    assertEquals(expectedValue, ContentfulUtils.extractPhoto(link, assetMap, assetErrorSet, speakerNameEn));
+                } else {
+                    assertThrows(expectedException, () -> ContentfulUtils.extractPhoto(link, assetMap, assetErrorSet, speakerNameEn));
                 }
-            };
-
-            if (expectedException == null) {
-                assertEquals(expectedValue, ContentfulUtils.extractPhoto(link, assetMap, assetErrorSet, speakerNameEn));
-            } else {
-                assertThrows(expectedException, () -> ContentfulUtils.extractPhoto(link, assetMap, assetErrorSet, speakerNameEn));
             }
         }
     }
@@ -929,19 +923,14 @@ class ContentfulUtilsTest {
 
     @Test
     void getSpeakersByConference() {
-        new MockUp<ContentfulUtils>() {
-            @Mock
-            List<Speaker> getSpeakers(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo, String conferenceCode) {
-                return Collections.emptyList();
-            }
+        try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+            mockedStatic.when(() -> ContentfulUtils.getSpeakers(Mockito.any(Conference.class), Mockito.anyString()))
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> ContentfulUtils.getSpeakers(Mockito.any(ContentfulUtils.ConferenceSpaceInfo.class), Mockito.anyString()))
+                    .thenReturn(Collections.emptyList());
 
-            @Mock
-            List<Speaker> getSpeakers(Invocation invocation, Conference conference, String conferenceCode) {
-                return invocation.proceed(conference, conferenceCode);
-            }
-        };
-
-        assertDoesNotThrow(() -> ContentfulUtils.getSpeakers(Conference.JPOINT, "code"));
+            assertDoesNotThrow(() -> ContentfulUtils.getSpeakers(Conference.JPOINT, "code"));
+        }
     }
 
     private static ContentfulTalk<ContentfulTalkFieldsCommon> createContentfulTalk(Long talkDay, LocalTime trackTime,
@@ -960,8 +949,23 @@ class ContentfulUtilsTest {
     }
 
     @Test
-    void getTalks(@Mocked RestTemplate restTemplateMock) throws URISyntaxException {
-        new Expectations() {{
+    @SuppressWarnings("unchecked")
+    void getTalks() {
+        try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+            mockedStatic.when(() -> ContentfulUtils.getTalks(Mockito.any(ContentfulUtils.ConferenceSpaceInfo.class), Mockito.nullable(String.class), Mockito.anyBoolean()))
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> ContentfulUtils.createTalk(
+                    Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
+                    .thenReturn(new Talk());
+            mockedStatic.when(() -> ContentfulUtils.getSpeakerMap(Mockito.any(ContentfulTalkResponse.class), Mockito.anyMap(), Mockito.anySet()))
+                    .thenReturn(Collections.emptyMap());
+            mockedStatic.when(() -> ContentfulUtils.getAssetMap(Mockito.any(ContentfulResponse.class)))
+                    .thenReturn(Collections.emptyMap());
+            mockedStatic.when(() -> ContentfulUtils.getErrorSet(Mockito.any(ContentfulResponse.class), Mockito.anyString()))
+                    .thenReturn(Collections.emptySet());
+            mockedStatic.when(() -> ContentfulUtils.isValidTalk(Mockito.any(ContentfulTalk.class), Mockito.anyBoolean()))
+                    .thenCallRealMethod();
+
             final Long TALK_DAY = 1L;
             final LocalTime TRACK_TIME = LocalTime.now();
             final Long TRACK = 1L;
@@ -979,52 +983,21 @@ class ContentfulUtilsTest {
                     createContentfulTalk(TALK_DAY, TRACK_TIME, TRACK, Boolean.FALSE, Boolean.FALSE)
             ));
 
-            restTemplateMock.getForObject(withAny(new URI("https://valid.com")), ContentfulTalkResponseCommon.class);
-            result = response;
-        }};
+            RestTemplate restTemplateMock = Mockito.mock(RestTemplate.class);
+            Mockito.when(restTemplateMock.getForObject(Mockito.any(URI.class), Mockito.any()))
+                    .thenReturn(response);
 
-        new MockUp<ContentfulUtils>() {
-            @Mock
-            List<Talk> getTalks(Invocation invocation, ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo,
-                                String conferenceCode, boolean ignoreDemoStage) {
-                return invocation.proceed(conferenceSpaceInfo, conferenceCode, ignoreDemoStage);
-            }
+            mockedStatic.when(ContentfulUtils::getRestTemplate)
+                    .thenReturn(restTemplateMock);
 
-            @Mock
-            Talk createTalk(ContentfulTalk<? extends ContentfulTalkFields> contentfulTalk, Map<String, ContentfulAsset> assetMap,
-                            Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong id) {
-                return new Talk();
-            }
+            assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code", true).size());
+            assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null, true).size());
+            assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "", true).size());
 
-            @Mock
-            Map<String, Speaker> getSpeakerMap(ContentfulTalkResponse<? extends ContentfulTalkFields> response,
-                                               Map<String, ContentfulAsset> assetMap, Set<String> assetErrorSet) {
-                return Collections.emptyMap();
-            }
-
-            @Mock
-            Map<String, ContentfulAsset> getAssetMap(ContentfulResponse<?, ? extends ContentfulIncludes> response) {
-                return Collections.emptyMap();
-            }
-
-            @Mock
-            Set<String> getErrorSet(ContentfulResponse<?, ? extends ContentfulIncludes> response, String linkType) {
-                return Collections.emptySet();
-            }
-
-            @Mock
-            void fixEntryNotResolvableError(ContentfulUtils.ConferenceSpaceInfo conferenceSpaceInfo,
-                                            Set<String> entryErrorSet, Map<String, Speaker> speakerMap) {
-            }
-        };
-
-        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code", true).size());
-        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null, true).size());
-        assertEquals(4, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "", true).size());
-
-        assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code", false).size());
-        assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null, false).size());
-        assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "", false).size());
+            assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "code", false).size());
+            assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, null, false).size());
+            assertEquals(9, ContentfulUtils.getTalks(ContentfulUtils.ConferenceSpaceInfo.COMMON_SPACE_INFO, "", false).size());
+        }
     }
 
     @Nested
@@ -1074,89 +1047,72 @@ class ContentfulUtilsTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     void createTalk() {
-        new MockUp<ContentfulUtils>() {
-            @Mock
-            Talk createTalk(Invocation invocation, ContentfulTalk<? extends ContentfulTalkFields> contentfulTalk, Map<String, ContentfulAsset> assetMap,
-                            Set<String> entryErrorSet, Set<String> assetErrorSet, Map<String, Speaker> speakerMap, AtomicLong id) {
-                return invocation.proceed(contentfulTalk, assetMap, entryErrorSet, assetErrorSet, speakerMap, id);
-            }
+        try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+            mockedStatic.when(() -> ContentfulUtils.createTalk(
+                    Mockito.any(ContentfulTalk.class), Mockito.anyMap(), Mockito.anySet(), Mockito.anySet(), Mockito.anyMap(), Mockito.any(AtomicLong.class)))
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> ContentfulUtils.extractLocaleItems(Mockito.anyString(), Mockito.anyString(), Mockito.anyBoolean()))
+                    .thenReturn(Collections.emptyList());
+            mockedStatic.when(() -> ContentfulUtils.extractLanguage(Mockito.anyBoolean()))
+                    .thenReturn(null);
+            mockedStatic.when(() -> ContentfulUtils.extractPresentationLinks(Mockito.anyList(), Mockito.anyMap(), Mockito.anySet(), Mockito.anyString()))
+                    .thenReturn(Collections.emptyList());
+            mockedStatic.when(() -> ContentfulUtils.combineContentfulLinks(Mockito.anyList(), Mockito.any(ContentfulLink.class)))
+                    .thenReturn(Collections.emptyList());
+            mockedStatic.when(() -> ContentfulUtils.extractVideoLinks(Mockito.anyString()))
+                    .thenReturn(Collections.emptyList());
 
-            @Mock
-            List<LocaleItem> extractLocaleItems(String enText, String ruText, boolean checkEnTextExistence) {
-                return Collections.emptyList();
-            }
+            ContentfulSys contentfulSys0 = new ContentfulSys();
+            contentfulSys0.setId("id0");
 
-            @Mock
-            String extractLanguage(Boolean language) {
-                return null;
-            }
+            ContentfulSys contentfulSys1 = new ContentfulSys();
+            contentfulSys1.setId("id1");
 
-            @Mock
-            List<String> extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
-                                                  Set<String> assetErrorSet, String talkNameEn) {
-                return Collections.emptyList();
-            }
+            ContentfulSys contentfulSys2 = new ContentfulSys();
+            contentfulSys2.setId("id2");
 
-            @Mock
-            List<ContentfulLink> combineContentfulLinks(List<ContentfulLink> presentations, ContentfulLink presentation) {
-                return Collections.emptyList();
-            }
+            ContentfulLink contentfulLink0 = new ContentfulLink();
+            contentfulLink0.setSys(contentfulSys0);
 
-            @Mock
-            List<String> extractVideoLinks(String videoLink) {
-                return Collections.emptyList();
-            }
-        };
+            ContentfulLink contentfulLink1 = new ContentfulLink();
+            contentfulLink1.setSys(contentfulSys1);
 
-        ContentfulSys contentfulSys0 = new ContentfulSys();
-        contentfulSys0.setId("id0");
+            ContentfulLink contentfulLink2 = new ContentfulLink();
+            contentfulLink2.setSys(contentfulSys2);
 
-        ContentfulSys contentfulSys1 = new ContentfulSys();
-        contentfulSys1.setId("id1");
+            ContentfulTalkFieldsCommon contentfulTalkFieldsCommon0 = new ContentfulTalkFieldsCommon();
+            contentfulTalkFieldsCommon0.setSpeakers(List.of(contentfulLink0));
 
-        ContentfulSys contentfulSys2 = new ContentfulSys();
-        contentfulSys2.setId("id2");
+            ContentfulTalkFieldsCommon contentfulTalkFieldsCommon1 = new ContentfulTalkFieldsCommon();
+            contentfulTalkFieldsCommon1.setSpeakers(List.of(contentfulLink1));
 
-        ContentfulLink contentfulLink0 = new ContentfulLink();
-        contentfulLink0.setSys(contentfulSys0);
+            ContentfulTalkFieldsCommon contentfulTalkFieldsCommon2 = new ContentfulTalkFieldsCommon();
+            contentfulTalkFieldsCommon2.setSpeakers(List.of(contentfulLink2));
 
-        ContentfulLink contentfulLink1 = new ContentfulLink();
-        contentfulLink1.setSys(contentfulSys1);
+            ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk0 = new ContentfulTalk<>();
+            contentfulTalk0.setFields(contentfulTalkFieldsCommon0);
 
-        ContentfulLink contentfulLink2 = new ContentfulLink();
-        contentfulLink2.setSys(contentfulSys2);
+            ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk1 = new ContentfulTalk<>();
+            contentfulTalk1.setFields(contentfulTalkFieldsCommon1);
 
-        ContentfulTalkFieldsCommon contentfulTalkFieldsCommon0 = new ContentfulTalkFieldsCommon();
-        contentfulTalkFieldsCommon0.setSpeakers(List.of(contentfulLink0));
+            ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk2 = new ContentfulTalk<>();
+            contentfulTalk2.setFields(contentfulTalkFieldsCommon2);
 
-        ContentfulTalkFieldsCommon contentfulTalkFieldsCommon1 = new ContentfulTalkFieldsCommon();
-        contentfulTalkFieldsCommon1.setSpeakers(List.of(contentfulLink1));
+            Map<String, ContentfulAsset> assetMap = Collections.emptyMap();
+            Set<String> entryErrorSet = Set.of("id0");
+            Set<String> assetErrorSet = Collections.emptySet();
+            Map<String, Speaker> speakerMap = Map.of("id2", new Speaker());
 
-        ContentfulTalkFieldsCommon contentfulTalkFieldsCommon2 = new ContentfulTalkFieldsCommon();
-        contentfulTalkFieldsCommon2.setSpeakers(List.of(contentfulLink2));
+            AtomicLong id0 = new AtomicLong(42);
+            AtomicLong id1 = new AtomicLong(43);
+            AtomicLong id2 = new AtomicLong(44);
 
-        ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk0 = new ContentfulTalk<>();
-        contentfulTalk0.setFields(contentfulTalkFieldsCommon0);
-
-        ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk1 = new ContentfulTalk<>();
-        contentfulTalk1.setFields(contentfulTalkFieldsCommon1);
-
-        ContentfulTalk<ContentfulTalkFieldsCommon> contentfulTalk2 = new ContentfulTalk<>();
-        contentfulTalk2.setFields(contentfulTalkFieldsCommon2);
-
-        Map<String, ContentfulAsset> assetMap = Collections.emptyMap();
-        Set<String> entryErrorSet = Set.of("id0");
-        Set<String> assetErrorSet = Collections.emptySet();
-        Map<String, Speaker> speakerMap = Map.of("id2", new Speaker());
-
-        AtomicLong id0 = new AtomicLong(42);
-        AtomicLong id1 = new AtomicLong(43);
-        AtomicLong id2 = new AtomicLong(44);
-
-        assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.createTalk(contentfulTalk0, assetMap, entryErrorSet, assetErrorSet, speakerMap, id0));
-        assertThrows(NullPointerException.class, () -> ContentfulUtils.createTalk(contentfulTalk1, assetMap, entryErrorSet, assetErrorSet, speakerMap, id1));
-        assertEquals(44, ContentfulUtils.createTalk(contentfulTalk2, assetMap, entryErrorSet, assetErrorSet, speakerMap, id2).getId());
+            assertThrows(IllegalArgumentException.class, () -> ContentfulUtils.createTalk(contentfulTalk0, assetMap, entryErrorSet, assetErrorSet, speakerMap, id0));
+            assertThrows(NullPointerException.class, () -> ContentfulUtils.createTalk(contentfulTalk1, assetMap, entryErrorSet, assetErrorSet, speakerMap, id1));
+            assertEquals(44, ContentfulUtils.createTalk(contentfulTalk2, assetMap, entryErrorSet, assetErrorSet, speakerMap, id2).getId());
+        }
     }
 
     @Test
