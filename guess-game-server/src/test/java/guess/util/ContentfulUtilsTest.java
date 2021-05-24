@@ -80,6 +80,11 @@ class ContentfulUtilsTest {
     }
 
     @Test
+    void getRestTemplate() {
+        assertNotNull(ContentfulUtils.getRestTemplate());
+    }
+
+    @Test
     void getTags() {
         final String CODE1 = "code1";
         final String CODE2 = "code2";

@@ -9,10 +9,6 @@ import guess.domain.source.load.LoadSettings;
 import guess.domain.source.load.SpeakerLoadMaps;
 import guess.domain.source.load.SpeakerLoadResult;
 import guess.util.yaml.YamlUtils;
-import mockit.Invocation;
-import mockit.Mock;
-import mockit.MockUp;
-import mockit.Mocked;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -269,9 +265,10 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void saveEventTypes(LoadResult<List<EventType>> loadResult, @Mocked YamlUtils yamlUtilsMock) {
-            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
-                mockedStatic.when(() -> ConferenceDataLoader.saveEventTypes(Mockito.any()))
+        void saveEventTypes(LoadResult<List<EventType>> loadResult) {
+            try (MockedStatic<ConferenceDataLoader> conferenceDataLoaderMockedStatic = Mockito.mockStatic(ConferenceDataLoader.class);
+                 MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class)) {
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.saveEventTypes(Mockito.any()))
                         .thenCallRealMethod();
 
                 assertDoesNotThrow(() -> ConferenceDataLoader.saveEventTypes(loadResult));
@@ -1527,14 +1524,20 @@ class ConferenceDataLoaderTest {
         @ParameterizedTest
         @MethodSource("data")
         void getPlaceLoadResult(Place place, Place resourcePlace, AtomicLong lastPlaceId, LoadResult<Place> expected) {
-            new MockUp<ContentfulUtils>() {
-                @Mock
-                boolean needUpdate(Place a, Place b) {
-                    return ((a.getId() == 0) && (b.getId() == 0));
-                }
-            };
+            try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+                mockedStatic.when(() -> ContentfulUtils.needUpdate(Mockito.any(Place.class), Mockito.any(Place.class)))
+                        .thenAnswer(
+                                (Answer<Boolean>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    Place a = (Place) args[0];
+                                    Place b = (Place) args[1];
 
-            assertEquals(expected, ConferenceDataLoader.getPlaceLoadResult(place, resourcePlace, lastPlaceId));
+                                    return ((a.getId() == 0) && (b.getId() == 0));
+                                }
+                        );
+
+                assertEquals(expected, ConferenceDataLoader.getPlaceLoadResult(place, resourcePlace, lastPlaceId));
+            }
         }
     }
 
@@ -1574,14 +1577,20 @@ class ConferenceDataLoaderTest {
         @ParameterizedTest
         @MethodSource("data")
         void getEventLoadResult(Event event, Event resourceEvent, LoadResult<Event> expected) {
-            new MockUp<ContentfulUtils>() {
-                @Mock
-                boolean needUpdate(Event a, Event b) {
-                    return ((a.getId() == 0) && (b.getId() == 0));
-                }
-            };
+            try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
+                mockedStatic.when(() -> ContentfulUtils.needUpdate(Mockito.any(Event.class), Mockito.any(Event.class)))
+                        .thenAnswer(
+                                (Answer<Boolean>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    Event a = (Event) args[0];
+                                    Event b = (Event) args[1];
 
-            assertEquals(expected, ConferenceDataLoader.getEventLoadResult(event, resourceEvent));
+                                    return ((a.getId() == 0) && (b.getId() == 0));
+                                }
+                        );
+
+                assertEquals(expected, ConferenceDataLoader.getEventLoadResult(event, resourceEvent));
+            }
         }
     }
 
@@ -1768,47 +1777,16 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void saveFiles(LoadResult<List<Company>> companyLoadResult, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
                        LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) {
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                void saveFiles(Invocation invocation, SpeakerLoadResult speakerLoadResult, LoadResult<List<Talk>> talkLoadResult,
-                               LoadResult<Place> placeLoadResult, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
-                    invocation.proceed(speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult);
-                }
+            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                mockedStatic.when(() -> ConferenceDataLoader.saveFiles(
+                        Mockito.any(LoadResult.class), Mockito.any(SpeakerLoadResult.class), Mockito.any(LoadResult.class), Mockito.any(LoadResult.class), Mockito.any(LoadResult.class)))
+                        .thenCallRealMethod();
 
-                @Mock
-                void saveCompanies(LoadResult<List<Company>> companyLoadResult) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-
-                @Mock
-                void saveImages(SpeakerLoadResult speakerLoadResult) throws IOException {
-                    // Nothing
-                }
-
-                @Mock
-                void saveSpeakers(SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-
-                @Mock
-                void saveTalks(LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-
-                @Mock
-                void savePlaces(LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-
-                @Mock
-                void saveEvents(LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-            };
-
-            assertDoesNotThrow(() -> ConferenceDataLoader.saveFiles(companyLoadResult, speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+                assertDoesNotThrow(() -> ConferenceDataLoader.saveFiles(companyLoadResult, speakerLoadResult, talkLoadResult, placeLoadResult, eventLoadResult));
+            }
         }
     }
 
@@ -1840,20 +1818,14 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void saveSpeakers(LoadResult<List<Company>> companyLoadResult) {
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                void saveCompanies(Invocation invocation, LoadResult<List<Company>> companyLoadResult) throws IOException, NoSuchFieldException {
-                    invocation.proceed(companyLoadResult);
-                }
+            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                mockedStatic.when(() -> ConferenceDataLoader.saveCompanies(Mockito.any(LoadResult.class)))
+                        .thenCallRealMethod();
 
-                @Mock
-                void logAndDumpCompanies(List<Company> companies, String logMessage, String filename) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-            };
-
-            assertDoesNotThrow(() -> ConferenceDataLoader.saveCompanies(companyLoadResult));
+                assertDoesNotThrow(() -> ConferenceDataLoader.saveCompanies(companyLoadResult));
+            }
         }
     }
 
@@ -1894,19 +1866,12 @@ class ConferenceDataLoaderTest {
         @ParameterizedTest
         @MethodSource("data")
         void saveImages(SpeakerLoadResult speakerLoadResult) {
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                void saveImages(Invocation invocation, SpeakerLoadResult speakerLoadResult) throws IOException {
-                    invocation.proceed(speakerLoadResult);
-                }
+            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                mockedStatic.when(() -> ConferenceDataLoader.saveImages(Mockito.any(SpeakerLoadResult.class)))
+                        .thenCallRealMethod();
 
-                @Mock
-                void logAndCreateSpeakerImages(List<UrlFilename> urlFilenames, String logMessage) throws IOException {
-                    // Nothing
-                }
-            };
-
-            assertDoesNotThrow(() -> ConferenceDataLoader.saveImages(speakerLoadResult));
+                assertDoesNotThrow(() -> ConferenceDataLoader.saveImages(speakerLoadResult));
+            }
         }
     }
 
@@ -1947,19 +1912,12 @@ class ConferenceDataLoaderTest {
         @ParameterizedTest
         @MethodSource("data")
         void saveSpeakers(SpeakerLoadResult speakerLoadResult) {
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                void saveSpeakers(Invocation invocation, SpeakerLoadResult speakerLoadResult) throws IOException, NoSuchFieldException {
-                    invocation.proceed(speakerLoadResult);
-                }
+            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                mockedStatic.when(() -> ConferenceDataLoader.saveSpeakers(Mockito.any(SpeakerLoadResult.class)))
+                        .thenCallRealMethod();
 
-                @Mock
-                void logAndDumpSpeakers(List<Speaker> speakers, String logMessage, String filename) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-            };
-
-            assertDoesNotThrow(() -> ConferenceDataLoader.saveSpeakers(speakerLoadResult));
+                assertDoesNotThrow(() -> ConferenceDataLoader.saveSpeakers(speakerLoadResult));
+            }
         }
     }
 
@@ -1990,20 +1948,14 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void saveTalks(LoadResult<List<Talk>> talkLoadResult) {
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                void saveTalks(Invocation invocation, LoadResult<List<Talk>> talkLoadResult) throws IOException, NoSuchFieldException {
-                    invocation.proceed(talkLoadResult);
-                }
+            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                mockedStatic.when(() -> ConferenceDataLoader.saveTalks(Mockito.any(LoadResult.class)))
+                        .thenCallRealMethod();
 
-                @Mock
-                void logAndDumpTalks(List<Talk> talks, String logMessage, String filename) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-            };
-
-            assertDoesNotThrow(() -> ConferenceDataLoader.saveTalks(talkLoadResult));
+                assertDoesNotThrow(() -> ConferenceDataLoader.saveTalks(talkLoadResult));
+            }
         }
     }
 
@@ -2033,20 +1985,14 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void savePlaces(LoadResult<Place> placeLoadResult) {
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                void savePlaces(Invocation invocation, LoadResult<Place> placeLoadResult) throws IOException, NoSuchFieldException {
-                    invocation.proceed(placeLoadResult);
-                }
+            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                mockedStatic.when(() -> ConferenceDataLoader.savePlaces(Mockito.any(LoadResult.class)))
+                        .thenCallRealMethod();
 
-                @Mock
-                void savePlace(Place place, String filename) throws IOException, NoSuchFieldException {
-                    // Nothing
-                }
-            };
-
-            assertDoesNotThrow(() -> ConferenceDataLoader.savePlaces(placeLoadResult));
+                assertDoesNotThrow(() -> ConferenceDataLoader.savePlaces(placeLoadResult));
+            }
         }
 
         @Nested
@@ -2075,57 +2021,85 @@ class ConferenceDataLoaderTest {
 
             @ParameterizedTest
             @MethodSource("data")
+            @SuppressWarnings("unchecked")
             void saveEvents(LoadResult<Event> eventLoadResult) {
-                new MockUp<ConferenceDataLoader>() {
-                    @Mock
-                    void saveEvents(Invocation invocation, LoadResult<Event> eventLoadResult) throws IOException, NoSuchFieldException {
-                        invocation.proceed(eventLoadResult);
-                    }
+                try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                    mockedStatic.when(() -> ConferenceDataLoader.saveEvents(Mockito.any(LoadResult.class)))
+                            .thenCallRealMethod();
 
-                    @Mock
-                    void saveEvent(Event event, String filename) throws IOException, NoSuchFieldException {
-                        // Nothing
-                    }
-                };
-
-                assertDoesNotThrow(() -> ConferenceDataLoader.saveEvents(eventLoadResult));
+                    assertDoesNotThrow(() -> ConferenceDataLoader.saveEvents(eventLoadResult));
+                }
             }
         }
     }
 
     @Test
-    void logAndSaveEventTypes(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveEventTypes(List.of(new EventType()), "{}", "filename"));
+    void logAndSaveEventTypes() {
+        try (MockedStatic<LocalizationUtils> localizationUtilsMockedStatic = Mockito.mockStatic(LocalizationUtils.class);
+             MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class)
+        ) {
+            localizationUtilsMockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                    .thenReturn("");
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveEventTypes(List.of(new EventType()), "{}", "filename"));
+        }
     }
 
     @Test
-    void logAndSaveCompanies(@Mocked LocalizationUtils localizationUtilsMock, @Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveCompanies(List.of(new Company()), "{}", "filename"));
+    void logAndSaveCompanies() {
+        try (MockedStatic<LocalizationUtils> localizationUtilsMockedStatic = Mockito.mockStatic(LocalizationUtils.class);
+             MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class)
+        ) {
+            localizationUtilsMockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                    .thenReturn("");
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveCompanies(List.of(new Company()), "{}", "filename"));
+        }
     }
 
     @Test
-    void logAndCreateSpeakerImages(@Mocked ImageUtils imageUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.logAndCreateSpeakerImages(List.of(new UrlFilename("url", "filename")), "{}"));
+    void logAndCreateSpeakerImages() {
+        try (MockedStatic<ImageUtils> mockedStatic = Mockito.mockStatic(ImageUtils.class)) {
+            assertDoesNotThrow(() -> ConferenceDataLoader.logAndCreateSpeakerImages(List.of(new UrlFilename("url", "filename")), "{}"));
+        }
     }
 
     @Test
-    void logAndSaveSpeakers(@Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveSpeakers(List.of(new Speaker()), "{}", "filename"));
+    void logAndSaveSpeakers() {
+        try (MockedStatic<LocalizationUtils> localizationUtilsMockedStatic = Mockito.mockStatic(LocalizationUtils.class);
+             MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class)
+        ) {
+            localizationUtilsMockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                    .thenReturn("");
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveSpeakers(List.of(new Speaker()), "{}", "filename"));
+        }
     }
 
     @Test
-    void logAndSaveTalks(@Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveTalks(List.of(new Talk()), "{}", "filename"));
+    void logAndSaveTalks() {
+        try (MockedStatic<LocalizationUtils> localizationUtilsMockedStatic = Mockito.mockStatic(LocalizationUtils.class);
+             MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class)
+        ) {
+            localizationUtilsMockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                    .thenReturn("");
+
+            assertDoesNotThrow(() -> ConferenceDataLoader.logAndSaveTalks(List.of(new Talk()), "{}", "filename"));
+        }
     }
 
     @Test
-    void savePlace(@Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.savePlace(new Place(), "filename"));
+    void savePlace() {
+        try (MockedStatic<YamlUtils> mockedStatic = Mockito.mockStatic(YamlUtils.class)) {
+            assertDoesNotThrow(() -> ConferenceDataLoader.savePlace(new Place(), "filename"));
+        }
     }
 
     @Test
-    void saveEvent(@Mocked YamlUtils yamlUtilsMock) {
-        assertDoesNotThrow(() -> ConferenceDataLoader.saveEvent(new Event(), "filename"));
+    void saveEvent() {
+        try (MockedStatic<YamlUtils> mockedStatic = Mockito.mockStatic(YamlUtils.class)) {
+            assertDoesNotThrow(() -> ConferenceDataLoader.saveEvent(new Event(), "filename"));
+        }
     }
 
     @Nested
@@ -2240,35 +2214,45 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void findResourceSpeaker(Speaker speaker, SpeakerLoadMaps speakerLoadMaps, Class<? extends Throwable> expectedException) {
-            new MockUp<LocalizationUtils>() {
-                @Mock
-                String getString(List<LocaleItem> localeItems, Language language) {
-                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
-                }
-            };
+            try (MockedStatic<ConferenceDataLoader> conferenceDataLoaderMockedStatic = Mockito.mockStatic(ConferenceDataLoader.class);
+                 MockedStatic<LocalizationUtils> localizationUtilsMockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.findResourceSpeaker(Mockito.any(Speaker.class), Mockito.any(SpeakerLoadMaps.class)))
+                        .thenCallRealMethod();
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.findResourceSpeakerByNameCompany(Mockito.any(Speaker.class), Mockito.anyMap()))
+                        .thenAnswer(
+                                (Answer<Speaker>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    Speaker localSpeaker = (Speaker) args[0];
 
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                Speaker findResourceSpeaker(Invocation invocation, Speaker speaker, SpeakerLoadMaps speakerLoadMaps) {
-                    return invocation.proceed(speaker, speakerLoadMaps);
-                }
+                                    return ((localSpeaker.getId() == 2) || (localSpeaker.getId() == 3)) ? localSpeaker : null;
+                                }
+                        );
+                conferenceDataLoaderMockedStatic.when(() -> ConferenceDataLoader.findResourceSpeakerByName(Mockito.any(Speaker.class), Mockito.anyMap()))
+                        .thenAnswer(
+                                (Answer<Speaker>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    Speaker localSpeaker = (Speaker) args[0];
 
-                @Mock
-                Speaker findResourceSpeakerByNameCompany(Speaker speaker, Map<NameCompany, Speaker> resourceNameCompanySpeakers) {
-                    return ((speaker.getId() == 2) || (speaker.getId() == 3)) ? speaker : null;
-                }
+                                    return ((localSpeaker.getId() == 4) || (localSpeaker.getId() == 5)) ? localSpeaker : null;
+                                }
+                        );
+                localizationUtilsMockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                        .thenAnswer(
+                                (Answer<String>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    List<LocaleItem> localeItems = (List<LocaleItem>) args[0];
 
-                @Mock
-                Speaker findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers) {
-                    return ((speaker.getId() == 4) || (speaker.getId() == 5)) ? speaker : null;
-                }
-            };
+                                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
+                                }
+                        );
 
-            if (expectedException == null) {
-                assertDoesNotThrow(() -> ConferenceDataLoader.findResourceSpeaker(speaker, speakerLoadMaps));
-            } else {
-                assertThrows(expectedException, () -> ConferenceDataLoader.findResourceSpeaker(speaker, speakerLoadMaps));
+                if (expectedException == null) {
+                    assertDoesNotThrow(() -> ConferenceDataLoader.findResourceSpeaker(speaker, speakerLoadMaps));
+                } else {
+                    assertThrows(expectedException, () -> ConferenceDataLoader.findResourceSpeaker(speaker, speakerLoadMaps));
+                }
             }
         }
     }
@@ -2294,21 +2278,21 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void findResourceTalk(Talk talk, Map<String, Set<Talk>> resourceRuNameTalks, Map<String, Set<Talk>> resourceEnNameTalks,
                               Talk expected) {
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                Talk findResourceTalk(Invocation invocation, Talk talk,
-                                      Map<String, Set<Talk>> resourceRuNameTalks,
-                                      Map<String, Set<Talk>> resourceEnNameTalks) {
-                    return invocation.proceed(talk, resourceRuNameTalks, resourceEnNameTalks);
-                }
+            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                mockedStatic.when(() -> ConferenceDataLoader.findResourceTalk(Mockito.any(Talk.class), Mockito.anyMap(), Mockito.anyMap()))
+                        .thenCallRealMethod();
+                mockedStatic.when(() -> ConferenceDataLoader.findResourceTalkByName(Mockito.any(Talk.class), Mockito.anyMap(), Mockito.any(Language.class)))
+                        .thenAnswer(
+                                (Answer<Talk>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    Talk localTalk = (Talk) args[0];
 
-                @Mock
-                Talk findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language) {
-                    return (talk.getId() == 0) ? talk : null;
-                }
-            };
+                                    return (localTalk.getId() == 0) ? localTalk : null;
+                                }
+                        );
 
-            assertEquals(expected, ConferenceDataLoader.findResourceTalk(talk, resourceRuNameTalks, resourceEnNameTalks));
+                assertEquals(expected, ConferenceDataLoader.findResourceTalk(talk, resourceRuNameTalks, resourceEnNameTalks));
+            }
         }
     }
 
@@ -2393,19 +2377,25 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void findResourceSpeakerByName(Speaker speaker, Map<String, Set<Speaker>> resourceNameSpeakers,
                                        Speaker expected, Class<? extends Throwable> expectedException) {
-            new MockUp<LocalizationUtils>() {
-                @Mock
-                String getString(List<LocaleItem> localeItems, Language language) {
-                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
-                }
-            };
+            try (MockedStatic<LocalizationUtils> mockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+                mockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                        .thenAnswer(
+                                (Answer<String>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    List<LocaleItem> localeItems = (List<LocaleItem>) args[0];
 
-            if (expectedException == null) {
-                assertEquals(expected, ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers));
-            } else {
-                assertThrows(expectedException, () -> ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers));
+                                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
+                                }
+                        );
+
+                if (expectedException == null) {
+                    assertEquals(expected, ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers));
+                } else {
+                    assertThrows(expectedException, () -> ConferenceDataLoader.findResourceSpeakerByName(speaker, resourceNameSpeakers));
+                }
             }
         }
     }
@@ -2451,19 +2441,25 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void findResourceTalkByName(Talk talk, Map<String, Set<Talk>> resourceNameTalks, Language language,
                                     Talk expected, Class<? extends Throwable> expectedException) {
-            new MockUp<LocalizationUtils>() {
-                @Mock
-                String getString(List<LocaleItem> localeItems, Language language) {
-                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
-                }
-            };
+            try (MockedStatic<LocalizationUtils> mockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+                mockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                        .thenAnswer(
+                                (Answer<String>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    List<LocaleItem> localeItems = (List<LocaleItem>) args[0];
 
-            if (expectedException == null) {
-                assertEquals(expected, ConferenceDataLoader.findResourceTalkByName(talk, resourceNameTalks, language));
-            } else {
-                assertThrows(expectedException, () -> ConferenceDataLoader.findResourceTalkByName(talk, resourceNameTalks, language));
+                                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
+                                }
+                        );
+
+                if (expectedException == null) {
+                    assertEquals(expected, ConferenceDataLoader.findResourceTalkByName(talk, resourceNameTalks, language));
+                } else {
+                    assertThrows(expectedException, () -> ConferenceDataLoader.findResourceTalkByName(talk, resourceNameTalks, language));
+                }
             }
         }
     }
@@ -2499,16 +2495,22 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void findResourcePlaceByCityVenueAddress(Place place, Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces,
                                                  Language language, Place expected) {
-            new MockUp<LocalizationUtils>() {
-                @Mock
-                String getString(List<LocaleItem> localeItems, Language language) {
-                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
-                }
-            };
+            try (MockedStatic<LocalizationUtils> mockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+                mockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                        .thenAnswer(
+                                (Answer<String>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    List<LocaleItem> localeItems = (List<LocaleItem>) args[0];
 
-            assertEquals(expected, ConferenceDataLoader.findResourcePlaceByCityVenueAddress(place, resourceCityVenueAddressPlaces, language));
+                                    return ((localeItems != null) && !localeItems.isEmpty()) ? localeItems.get(0).getText() : null;
+                                }
+                        );
+
+                assertEquals(expected, ConferenceDataLoader.findResourcePlaceByCityVenueAddress(place, resourceCityVenueAddressPlaces, language));
+            }
         }
     }
 
@@ -2538,44 +2540,38 @@ class ConferenceDataLoaderTest {
         @MethodSource("data")
         void findResourcePlace(Place place, Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
                                Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces, Place expected) {
-            new MockUp<ConferenceDataLoader>() {
-                @Mock
-                Place findResourcePlace(Invocation invocation, Place place,
-                                        Map<CityVenueAddress, Place> resourceRuCityVenueAddressPlaces,
-                                        Map<CityVenueAddress, Place> resourceEnCityVenueAddressPlaces) {
-                    return invocation.proceed(place, resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces);
-                }
+            try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+                mockedStatic.when(() -> ConferenceDataLoader.findResourcePlace(Mockito.any(Place.class), Mockito.anyMap(), Mockito.anyMap()))
+                        .thenCallRealMethod();
+                mockedStatic.when(() -> ConferenceDataLoader.findResourcePlaceByCityVenueAddress(Mockito.any(Place.class), Mockito.anyMap(), Mockito.any(Language.class)))
+                        .thenAnswer(
+                                (Answer<Place>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    Place localPlace = (Place) args[0];
 
-                @Mock
-                Place findResourcePlaceByCityVenueAddress(Place place, Map<CityVenueAddress, Place> resourceCityVenueAddressPlaces,
-                                                          Language language) {
-                    if (place != null) {
-                        return (place.getId() == 0) ? place : null;
-                    } else {
-                        return null;
-                    }
-                }
-            };
+                                    if (localPlace != null) {
+                                        return (localPlace.getId() == 0) ? localPlace : null;
+                                    } else {
+                                        return null;
+                                    }
+                                }
+                        );
 
-            assertEquals(expected, ConferenceDataLoader.findResourcePlace(place, resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces));
+                assertEquals(expected, ConferenceDataLoader.findResourcePlace(place, resourceRuCityVenueAddressPlaces, resourceEnCityVenueAddressPlaces));
+            }
         }
     }
 
     @Test
     void fixVenueAddress() {
-        new MockUp<ConferenceDataLoader>() {
-            @Mock
-            List<LocaleItem> fixVenueAddress(Invocation invocation, Place place) {
-                return invocation.proceed(place);
-            }
+        try (MockedStatic<ConferenceDataLoader> mockedStatic = Mockito.mockStatic(ConferenceDataLoader.class)) {
+            mockedStatic.when(() -> ConferenceDataLoader.fixVenueAddress(Mockito.any(Place.class)))
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> ConferenceDataLoader.getFixedVenueAddress(Mockito.anyString(), Mockito.anyString(), Mockito.anyList()))
+                    .thenReturn("");
 
-            @Mock
-            String getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses) {
-                return "";
-            }
-        };
-
-        assertDoesNotThrow(() -> ConferenceDataLoader.fixVenueAddress(new Place()));
+            assertDoesNotThrow(() -> ConferenceDataLoader.fixVenueAddress(new Place()));
+        }
     }
 
     @Nested
