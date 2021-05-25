@@ -1538,11 +1538,12 @@ class ContentfulUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void extractPresentationLinks(List<ContentfulLink> links, Map<String, ContentfulAsset> assetMap,
                                       Set<String> assetErrorSet, String talkNameEn, Class<? extends Throwable> expectedException,
                                       List<String> expectedValue) {
             try (MockedStatic<ContentfulUtils> mockedStatic = Mockito.mockStatic(ContentfulUtils.class)) {
-                mockedStatic.when(() -> ContentfulUtils.extractPresentationLinks(Mockito.anyList(), Mockito.anyMap(), Mockito.anySet(), Mockito.anyString()))
+                mockedStatic.when(() -> ContentfulUtils.extractPresentationLinks(Mockito.nullable(List.class), Mockito.nullable(Map.class), Mockito.nullable(Set.class), Mockito.nullable(String.class)))
                         .thenCallRealMethod();
                 mockedStatic.when(() -> ContentfulUtils.extractAssetUrl(Mockito.nullable(String.class)))
                         .thenReturn(ASSET_URL);
