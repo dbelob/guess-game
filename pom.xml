@@ -28,7 +28,6 @@
 
         <allure-junit5.version>2.13.9</allure-junit5.version>
         <aspectj.version>1.9.6</aspectj.version>
-        <jmockit.version>1.49</jmockit.version>
         <kumo.version>1.28</kumo.version>
         <logback.version>1.2.3</logback.version>
         <mockito.version>3.9.0</mockito.version>
@@ -144,8 +143,6 @@
                 <version>${surefire.plugin.version}</version>
                 <configuration>
                     <argLine>
-                        @{argLine}
-                        -javaagent:"${settings.localRepository}"/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <reportFormat>plain</reportFormat>
@@ -209,12 +206,6 @@
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-inline</artifactId>
                 <version>${mockito.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jmockit</groupId>
-                <artifactId>jmockit</artifactId>
-                <version>${jmockit.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
