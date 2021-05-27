@@ -1,12 +1,5 @@
 package guess.util.tagcloud;
 
-import com.kennycason.kumo.WordCloud;
-import com.kennycason.kumo.WordFrequency;
-import com.kennycason.kumo.bg.Background;
-import com.kennycason.kumo.font.scale.FontScalar;
-import com.kennycason.kumo.nlp.FrequencyAnalyzer;
-import com.kennycason.kumo.nlp.normalize.Normalizer;
-import com.kennycason.kumo.palette.ColorPalette;
 import guess.dao.exception.WrapperRuntimeException;
 import guess.domain.Language;
 import guess.domain.source.LocaleItem;
@@ -14,9 +7,6 @@ import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 import guess.domain.tagcloud.SerializedWordFrequency;
 import guess.util.LocalizationUtils;
-import mockit.Invocation;
-import mockit.Mock;
-import mockit.MockUp;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -25,12 +15,12 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.mockito.stubbing.Answer;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -122,37 +112,38 @@ class TagCloudUtilsTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void getTalkText(Talk talk, Language language, String expected) {
-            new MockUp<LocalizationUtils>() {
-                @Mock
-                String getString(List<LocaleItem> localeItems, Language language) {
-                    if ((localeItems != null) && !localeItems.isEmpty()) {
-                        return localeItems.get(0).getText();
-                    } else {
-                        return "";
-                    }
-                }
-            };
+            try (MockedStatic<LocalizationUtils> mockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+                mockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.nullable(Language.class)))
+                        .thenAnswer(
+                                (Answer<String>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    List<LocaleItem> localeItems = (List<LocaleItem>) args[0];
 
-            assertEquals(expected, TagCloudUtils.getTalkText(talk, language));
+                                    if ((localeItems != null) && !localeItems.isEmpty()) {
+                                        return localeItems.get(0).getText();
+                                    } else {
+                                        return "";
+                                    }
+                                }
+                        );
+
+                assertEquals(expected, TagCloudUtils.getTalkText(talk, language));
+            }
         }
     }
 
     @Test
     void getTalkText() {
-        new MockUp<TagCloudUtils>() {
-            @Mock
-            List<String> getTalkText(Invocation invocation, Talk talk) {
-                return invocation.proceed(talk);
-            }
+        try (MockedStatic<TagCloudUtils> mockedStatic = Mockito.mockStatic(TagCloudUtils.class)) {
+            mockedStatic.when(() -> TagCloudUtils.getTalkText(Mockito.any(Talk.class)))
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> TagCloudUtils.getTalkText(Mockito.any(Talk.class), Mockito.any(Language.class)))
+                    .thenReturn("");
 
-            @Mock
-            String getTalkText(Talk talk, Language language) {
-                return "";
-            }
-        };
-
-        assertDoesNotThrow(() -> TagCloudUtils.getTalkText(new Talk()));
+            assertDoesNotThrow(() -> TagCloudUtils.getTalkText(new Talk()));
+        }
     }
 
     @Nested
@@ -213,67 +204,39 @@ class TagCloudUtilsTest {
         @ParameterizedTest
         @MethodSource("data")
         void loadStopWords(boolean withoutException, List<String> lines) {
-            new MockUp<IOUtils>() {
-                @Mock
-                List<String> readLines(InputStream input) throws IOException {
-                    if (withoutException) {
-                        return lines;
-                    } else {
-                        throw new IOException("Exception");
-                    }
+            try (MockedStatic<IOUtils> mockedStatic = Mockito.mockStatic(IOUtils.class)) {
+                mockedStatic.when(() -> IOUtils.readLines(Mockito.any(InputStream.class)))
+                        .thenAnswer(
+                                (Answer<List<String>>) invocation -> {
+                                    if (withoutException) {
+                                        return lines;
+                                    } else {
+                                        throw new IOException("Exception");
+                                    }
+                                }
+                        );
+
+                Set<String> actual = TagCloudUtils.loadStopWords();
+
+                if (withoutException) {
+                    assertFalse(actual.isEmpty());
+                } else {
+                    assertTrue(actual.isEmpty());
                 }
-            };
-
-            Set<String> actual = TagCloudUtils.loadStopWords();
-
-            if (withoutException) {
-                assertFalse(actual.isEmpty());
-            } else {
-                assertTrue(actual.isEmpty());
             }
         }
     }
 
     @Test
     void getWordFrequenciesByText() {
-        new MockUp<TagCloudUtils>() {
-            @Mock
-            List<SerializedWordFrequency> getWordFrequenciesByText(Invocation invocation, String text, List<String> stopWords) {
-                return invocation.proceed(text, stopWords);
-            }
+        try (MockedStatic<TagCloudUtils> mockedStatic = Mockito.mockStatic(TagCloudUtils.class)) {
+            mockedStatic.when(() -> TagCloudUtils.getWordFrequenciesByText(Mockito.anyString(), Mockito.anyList()))
+                    .thenCallRealMethod();
+            mockedStatic.when(TagCloudUtils::loadStopWords)
+                    .thenReturn(Collections.emptySet());
 
-            @Mock
-            Set<String> loadStopWords() {
-                return Collections.emptySet();
-            }
-        };
-
-        new MockUp<FrequencyAnalyzer>() {
-            @Mock
-            void setWordFrequenciesToReturn(final int wordFrequenciesToReturn) {
-                // Nothing
-            }
-
-            @Mock
-            void setStopWords(final Collection<String> stopWords) {
-                // Nothing
-            }
-
-            @Mock
-            void addNormalizer(final Normalizer normalizer) {
-                // Nothing
-            }
-
-            @Mock
-            List<WordFrequency> load(final List<String> texts) {
-                return List.of(
-                        new WordFrequency("first", 42),
-                        new WordFrequency("second", 41),
-                        new WordFrequency("third", 40));
-            }
-        };
-
-        assertDoesNotThrow(() -> TagCloudUtils.getWordFrequenciesByText("line0\nline1\nline2", Collections.emptyList()));
+            assertDoesNotThrow(() -> TagCloudUtils.getWordFrequenciesByText("line0\nline1\nline2", Collections.emptyList()));
+        }
     }
 
     @Nested
@@ -314,69 +277,25 @@ class TagCloudUtilsTest {
 
     @Test
     void mergeWordFrequenciesMaps() {
-        new MockUp<TagCloudUtils>() {
-            @Mock
-            Map<Language, List<SerializedWordFrequency>> mergeWordFrequenciesMaps(
-                    Invocation invocation,
-                    List<Map<Language, List<SerializedWordFrequency>>> languageWordFrequenciesMapList) {
-                return invocation.proceed(languageWordFrequenciesMapList);
-            }
+        try (MockedStatic<TagCloudUtils> mockedStatic = Mockito.mockStatic(TagCloudUtils.class)) {
+            mockedStatic.when(() -> TagCloudUtils.mergeWordFrequenciesMaps(Mockito.anyList()))
+                    .thenCallRealMethod();
+            mockedStatic.when(() -> TagCloudUtils.mergeWordFrequencies(Mockito.anyList()))
+                    .thenReturn(Collections.emptyList());
 
-            @Mock
-            List<SerializedWordFrequency> mergeWordFrequencies(List<List<SerializedWordFrequency>> wordFrequenciesList) {
-                return Collections.emptyList();
-            }
-        };
+            SerializedWordFrequency wordFrequency0 = new SerializedWordFrequency("first", 42);
+            SerializedWordFrequency wordFrequency1 = new SerializedWordFrequency("second", 41);
+            SerializedWordFrequency wordFrequency2 = new SerializedWordFrequency("third", 40);
+            Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap0 = Map.of(Language.ENGLISH, List.of(wordFrequency0, wordFrequency1));
+            Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap1 = Map.of(Language.ENGLISH, List.of(wordFrequency2));
+            List<Map<Language, List<SerializedWordFrequency>>> languageWordFrequenciesMapList = List.of(languageWordFrequenciesMap0, languageWordFrequenciesMap1);
 
-        SerializedWordFrequency wordFrequency0 = new SerializedWordFrequency("first", 42);
-        SerializedWordFrequency wordFrequency1 = new SerializedWordFrequency("second", 41);
-        SerializedWordFrequency wordFrequency2 = new SerializedWordFrequency("third", 40);
-        Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap0 = Map.of(Language.ENGLISH, List.of(wordFrequency0, wordFrequency1));
-        Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap1 = Map.of(Language.ENGLISH, List.of(wordFrequency2));
-        List<Map<Language, List<SerializedWordFrequency>>> languageWordFrequenciesMapList = List.of(languageWordFrequenciesMap0, languageWordFrequenciesMap1);
-
-        assertDoesNotThrow(() -> TagCloudUtils.mergeWordFrequenciesMaps(languageWordFrequenciesMapList));
+            assertDoesNotThrow(() -> TagCloudUtils.mergeWordFrequenciesMaps(languageWordFrequenciesMapList));
+        }
     }
 
     @Test
     void createImage() {
-        new MockUp<WordCloud>() {
-            @Mock
-            void setBackgroundColor(final Color backgroundColor) {
-                // Nothing
-            }
-
-            @Mock
-            void setPadding(final int padding) {
-                // Nothing
-            }
-
-            @Mock
-            void setBackground(final Background background) {
-                // Nothing
-            }
-
-            @Mock
-            void setColorPalette(final ColorPalette colorPalette) {
-                // Nothing
-            }
-
-            @Mock
-            void setFontScalar(final FontScalar fontScalar) {
-                // Nothing
-            }
-
-            @Mock
-            void build(final List<WordFrequency> wordFrequencies) {
-                // Nothing
-            }
-
-            @Mock
-            BufferedImage getBufferedImage() {
-                return new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
-            }
-        };
-
         SerializedWordFrequency wordFrequency0 = new SerializedWordFrequency("first", 42);
         SerializedWordFrequency wordFrequency1 = new SerializedWordFrequency("second", 41);
         SerializedWordFrequency wordFrequency2 = new SerializedWordFrequency("third", 40);
@@ -410,28 +329,25 @@ class TagCloudUtilsTest {
         @ParameterizedTest
         @MethodSource("data")
         void createLanguageImageMap(Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap, boolean withoutException) {
-            new MockUp<TagCloudUtils>() {
-                @Mock
-                Map<Language, byte[]> createLanguageImageMap(
-                        Invocation invocation,
-                        Map<Language, List<SerializedWordFrequency>> languageWordFrequenciesMap) {
-                    return invocation.proceed(languageWordFrequenciesMap);
-                }
+            try (MockedStatic<TagCloudUtils> mockedStatic = Mockito.mockStatic(TagCloudUtils.class)) {
+                mockedStatic.when(() -> TagCloudUtils.createLanguageImageMap(Mockito.anyMap()))
+                        .thenCallRealMethod();
+                mockedStatic.when(() -> TagCloudUtils.createImage(Mockito.anyList()))
+                        .thenAnswer(
+                                (Answer<byte[]>) invocation -> {
+                                    if (withoutException) {
+                                        return new byte[]{};
+                                    } else {
+                                        throw new IOException("Exception");
+                                    }
+                                }
+                        );
 
-                @Mock
-                byte[] createImage(List<SerializedWordFrequency> wordFrequencies) throws IOException {
-                    if (withoutException) {
-                        return new byte[]{};
-                    } else {
-                        throw new IOException("Exception");
-                    }
+                if (withoutException) {
+                    assertDoesNotThrow(() -> TagCloudUtils.createLanguageImageMap(languageWordFrequenciesMap));
+                } else {
+                    assertThrows(WrapperRuntimeException.class, () -> TagCloudUtils.createLanguageImageMap(languageWordFrequenciesMap));
                 }
-            };
-
-            if (withoutException) {
-                assertDoesNotThrow(() -> TagCloudUtils.createLanguageImageMap(languageWordFrequenciesMap));
-            } else {
-                assertThrows(WrapperRuntimeException.class, () -> TagCloudUtils.createLanguageImageMap(languageWordFrequenciesMap));
             }
         }
     }

@@ -2371,3 +2371,15 @@ companies:
   - id: 756
     name:
       - {language: en, text: "Carnegie Mellon University"}
+  - id: 757
+    name:
+      - {language: en, text: DianemoDB}
+  - id: 758
+    name:
+      - {language: en, text: "Sii Poland"}
+  - id: 759
+    name:
+      - {language: en, text: "Cockroach Labs"}
+  - id: 760
+    name:
+      - {language: en, text: Vectorized}

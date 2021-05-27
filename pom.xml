@@ -14,23 +14,26 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.javaVersion>11</project.build.javaVersion>
 
+        <allure.plugin.version>2.10.0</allure.plugin.version>
         <assembly.plugin.version>3.3.0</assembly.plugin.version>
         <clean.plugin.version>3.1.0</clean.plugin.version>
         <compiler.plugin.version>3.8.1</compiler.plugin.version>
         <frontend.plugin.version>1.12.0</frontend.plugin.version>
-        <jacoco.plugin.version>0.8.3</jacoco.plugin.version>
+        <jacoco.plugin.version>0.8.7</jacoco.plugin.version>
         <release.plugin.version>2.5.3</release.plugin.version>
         <resources.plugin.version>3.2.0</resources.plugin.version>
         <sonar.plugin.version>3.9.0.2155</sonar.plugin.version>
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <war.plugin.version>3.3.1</war.plugin.version>
 
-        <jmockit.version>1.49</jmockit.version>
+        <allure-junit5.version>2.13.9</allure-junit5.version>
+        <aspectj.version>1.9.6</aspectj.version>
         <kumo.version>1.28</kumo.version>
         <logback.version>1.2.3</logback.version>
+        <mockito.version>3.9.0</mockito.version>
         <sl4j.version>1.7.30</sl4j.version>
         <snakeyaml.version>1.28</snakeyaml.version>
-        <spring.boot.version>2.5.0</spring.boot.version>
+        <spring-boot.version>2.5.0</spring-boot.version>
         <springfox.swagger>3.0.0</springfox.swagger>
 
         <ng.build.arguments>-- --prod=true</ng.build.arguments>
@@ -68,6 +71,10 @@
                         </fileset>
                         <fileset>
                             <directory>output</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>.allure</directory>
                             <followSymlinks>false</followSymlinks>
                         </fileset>
                     </filesets>
@@ -137,13 +144,29 @@
                 <configuration>
                     <argLine>
                         @{argLine}
-                        -javaagent:"${settings.localRepository}"/org/jmockit/jmockit/${jmockit.version}/jmockit-${jmockit.version}.jar
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <reportFormat>plain</reportFormat>
                     <includes>
                         <include>**/*Test*.java</include>
                         <include>**/*IT*.java</include>
                     </includes>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure.plugin.version}</version>
+                <configuration>
+                    <allureDownloadUrl>https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/%s/allure-commandline-%s.zip</allureDownloadUrl>
+                    <reportVersion>${allure-junit5.version}</reportVersion>
                 </configuration>
             </plugin>
 
@@ -181,9 +204,9 @@
 
             <!-- Tests -->
             <dependency>
-                <groupId>org.jmockit</groupId>
-                <artifactId>jmockit</artifactId>
-                <version>${jmockit.version}</version>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>

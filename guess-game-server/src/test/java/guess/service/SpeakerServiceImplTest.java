@@ -6,17 +6,15 @@ import guess.domain.source.Company;
 import guess.domain.source.LocaleItem;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
-import mockit.Expectations;
-import mockit.Mock;
-import mockit.MockUp;
-import mockit.Mocked;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
+import org.mockito.stubbing.Answer;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.Collections;
@@ -92,23 +90,24 @@ class SpeakerServiceImplTest {
         @ParameterizedTest
         @MethodSource("data")
         void getSpeakersByFirstLetter(String firstLetter, Language language, List<Speaker> speakers,
-                                      String localizationString, List<Speaker> expected,
-                                      @Mocked SpeakerDao speakerDaoMock) {
-            new MockUp<LocalizationUtils>() {
-                @Mock
-                String getString(List<LocaleItem> localeItems, Language language) {
-                    return Language.ENGLISH.equals(language) ? localizationString : null;
-                }
-            };
+                                      String localizationString, List<Speaker> expected) {
+            try (MockedStatic<LocalizationUtils> mockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+                mockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                        .thenAnswer(
+                                (Answer<String>) invocation -> {
+                                    Object[] args = invocation.getArguments();
 
-            new Expectations() {{
-                speakerDaoMock.getSpeakers();
-                result = speakers;
-            }};
+                                    return Language.ENGLISH.equals(args[1]) ? localizationString : null;
+                                }
+                        );
 
-            SpeakerService speakerService = new SpeakerServiceImpl(speakerDaoMock);
+                SpeakerDao speakerDaoMock = Mockito.mock(SpeakerDao.class);
+                Mockito.when(speakerDaoMock.getSpeakers()).thenReturn(speakers);
 
-            assertEquals(expected, speakerService.getSpeakersByFirstLetter(firstLetter, language));
+                SpeakerService speakerService = new SpeakerServiceImpl(speakerDaoMock);
+
+                assertEquals(expected, speakerService.getSpeakersByFirstLetter(firstLetter, language));
+            }
         }
     }
 

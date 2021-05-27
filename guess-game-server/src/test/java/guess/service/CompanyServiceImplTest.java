@@ -3,12 +3,7 @@ package guess.service;
 import guess.dao.CompanyDao;
 import guess.domain.Language;
 import guess.domain.source.Company;
-import guess.domain.source.LocaleItem;
 import guess.util.LocalizationUtils;
-import mockit.Expectations;
-import mockit.Mock;
-import mockit.MockUp;
-import mockit.Mocked;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -17,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,23 +84,18 @@ class CompanyServiceImplTest {
         @ParameterizedTest
         @MethodSource("data")
         void getCompaniesByFirstLetters(String firstLetters, Language language, List<Company> companies,
-                                        String localizationString, List<Company> expected,
-                                        @Mocked CompanyDao companyDaoMock) {
-            new MockUp<LocalizationUtils>() {
-                @Mock
-                String getString(List<LocaleItem> localeItems, Language language) {
-                    return localizationString;
-                }
-            };
+                                        String localizationString, List<Company> expected) {
+            try (MockedStatic<LocalizationUtils> mockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+                mockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                        .thenReturn(localizationString);
 
-            new Expectations() {{
-                companyDaoMock.getCompanies();
-                result = companies;
-            }};
+                CompanyDao companyDaoMock = Mockito.mock(CompanyDao.class);
+                Mockito.when(companyDaoMock.getCompanies()).thenReturn(companies);
 
-            CompanyService companyService = new CompanyServiceImpl(companyDaoMock);
+                CompanyService companyService = new CompanyServiceImpl(companyDaoMock);
 
-            assertEquals(expected, companyService.getCompaniesByFirstLetters(firstLetters, language));
+                assertEquals(expected, companyService.getCompaniesByFirstLetters(firstLetters, language));
+            }
         }
     }
 }

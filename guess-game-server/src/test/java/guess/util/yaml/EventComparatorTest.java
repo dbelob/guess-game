@@ -2,9 +2,6 @@ package guess.util.yaml;
 
 import guess.domain.source.Event;
 import guess.domain.source.Talk;
-import mockit.Invocation;
-import mockit.Mock;
-import mockit.MockUp;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -12,6 +9,9 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.mockito.stubbing.Answer;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -53,16 +53,14 @@ class EventComparatorTest {
         @ParameterizedTest
         @MethodSource("data")
         void compare(Event event1, Event event2, int compareStartDateResult, int expected) {
-            new MockUp<EventComparator>() {
-                @Mock
-                int compareStartDate(Event event1, Event event2) {
-                    return compareStartDateResult;
-                }
-            };
+            try (MockedStatic<EventComparator> mockedStatic = Mockito.mockStatic(EventComparator.class)) {
+                mockedStatic.when(() -> EventComparator.compareStartDate(event1, event2))
+                        .thenReturn(compareStartDateResult);
 
-            int actual = extractSign(new EventComparator().compare(event1, event2));
+                int actual = extractSign(new EventComparator().compare(event1, event2));
 
-            assertEquals(expected, actual);
+                assertEquals(expected, actual);
+            }
         }
     }
 
@@ -105,21 +103,14 @@ class EventComparatorTest {
         @ParameterizedTest
         @MethodSource("data")
         void compareStartDate(Event event1, Event event2, int compareTrackTimeResult, int expected) {
-            new MockUp<EventComparator>() {
-                @Mock
-                int compareStartDate(Invocation invocation, Event event1, Event event2) {
-                    return invocation.proceed(event1, event2);
-                }
+            try (MockedStatic<EventComparator> mockedStatic = Mockito.mockStatic(EventComparator.class, Mockito.CALLS_REAL_METHODS)) {
+                mockedStatic.when(() -> EventComparator.compareTrackTime(event1, event2))
+                        .thenReturn(compareTrackTimeResult);
 
-                @Mock
-                int compareTrackTime(Event event1, Event event2) {
-                    return compareTrackTimeResult;
-                }
-            };
+                int actual = extractSign(EventComparator.compareStartDate(event1, event2));
 
-            int actual = extractSign(EventComparator.compareStartDate(event1, event2));
-
-            assertEquals(expected, actual);
+                assertEquals(expected, actual);
+            }
         }
     }
 
@@ -192,22 +183,23 @@ class EventComparatorTest {
 
         @ParameterizedTest
         @MethodSource("data")
+        @SuppressWarnings("unchecked")
         void compareTrackTime(Event event1, Event event2, int expected) {
-            new MockUp<EventComparator>() {
-                @Mock
-                int compareTrackTime(Invocation invocation, Event event1, Event event2) {
-                    return invocation.proceed(event1, event2);
-                }
+            try (MockedStatic<EventComparator> mockedStatic = Mockito.mockStatic(EventComparator.class, Mockito.CALLS_REAL_METHODS)) {
+                mockedStatic.when(() -> EventComparator.getFirstTrackTime(Mockito.any()))
+                        .thenAnswer(
+                                (Answer<Optional<LocalTime>>) invocation -> {
+                                    Object[] args = invocation.getArguments();
+                                    List<Talk> talks = (List<Talk>) args[0];
 
-                @Mock
-                Optional<LocalTime> getFirstTrackTime(List<Talk> talks) {
-                    return talks.isEmpty() ? Optional.empty() : Optional.of(talks.get(0).getTrackTime());
-                }
-            };
+                                    return talks.isEmpty() ? Optional.empty() : Optional.of(talks.get(0).getTrackTime());
+                                }
+                        );
 
-            int actual = extractSign(EventComparator.compareTrackTime(event1, event2));
+                int actual = extractSign(EventComparator.compareTrackTime(event1, event2));
 
-            assertEquals(expected, actual);
+                assertEquals(expected, actual);
+            }
         }
     }
 }

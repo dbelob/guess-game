@@ -7,12 +7,12 @@ import guess.domain.source.*;
 import guess.util.FileUtils;
 import guess.util.LocalizationUtils;
 import guess.util.yaml.YamlUtils;
-import mockit.Mock;
-import mockit.MockUp;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -110,25 +110,19 @@ class TagCloudExporterTest {
                 ),
                 List.of(talk0, talk1));
 
-        new MockUp<YamlUtils>() {
-            @Mock
-            SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
-                return sourceInformation;
-            }
-        };
+        try (MockedStatic<TagCloudExporter> tagCloudExporterMockedStatic = Mockito.mockStatic(TagCloudExporter.class);
+             MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class)) {
+            tagCloudExporterMockedStatic.when(TagCloudExporter::exportAllEvents)
+                    .thenCallRealMethod();
+            yamlUtilsMockedStatic.when(YamlUtils::readSourceInformation)
+                    .thenReturn(sourceInformation);
 
-        new MockUp<TagCloudExporter>() {
-            @Mock
-            void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) throws IOException {
-                // Nothing
-            }
-        };
-
-        assertDoesNotThrow(TagCloudExporter::exportAllEvents);
+            assertDoesNotThrow(TagCloudExporter::exportAllEvents);
+        }
     }
 
     @Test
-    void exportTalksAndConference() {
+    void exportTalksAndConference() throws SpeakerDuplicatedException, IOException {
         SourceInformation sourceInformation = new SourceInformation(
                 List.of(place0),
                 List.of(organizer0),
@@ -141,28 +135,18 @@ class TagCloudExporterTest {
                 ),
                 Collections.emptyList());
 
-        new MockUp<YamlUtils>() {
-            @Mock
-            SourceInformation readSourceInformation() throws SpeakerDuplicatedException, IOException {
-                return sourceInformation;
-            }
-        };
+        try (MockedStatic<TagCloudExporter> tagCloudExporterMockedStatic = Mockito.mockStatic(TagCloudExporter.class);
+             MockedStatic<YamlUtils> yamlUtilsMockedStatic = Mockito.mockStatic(YamlUtils.class);
+             MockedStatic<LocalizationUtils> localizationUtilsMockedStatic = Mockito.mockStatic(LocalizationUtils.class)) {
+            tagCloudExporterMockedStatic.when(() -> TagCloudExporter.exportTalksAndConference(Mockito.any(Conference.class), Mockito.any(LocalDate.class)))
+                    .thenCallRealMethod();
+            yamlUtilsMockedStatic.when(YamlUtils::readSourceInformation)
+                    .thenReturn(sourceInformation);
+            localizationUtilsMockedStatic.when(() -> LocalizationUtils.getString(Mockito.anyList(), Mockito.any(Language.class)))
+                    .thenReturn("");
 
-        new MockUp<LocalizationUtils>() {
-            @Mock
-            String getString(List<LocaleItem> localeItems, Language language) {
-                return "";
-            }
-        };
-
-        new MockUp<TagCloudExporter>() {
-            @Mock
-            void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) throws IOException {
-                // Nothing
-            }
-        };
-
-        assertDoesNotThrow(() -> TagCloudExporter.exportTalksAndConference(JPOINT_CONFERENCE, EVENT_DATE));
+            assertDoesNotThrow(() -> TagCloudExporter.exportTalksAndConference(JPOINT_CONFERENCE, EVENT_DATE));
+        }
     }
 
     @Nested
@@ -181,28 +165,16 @@ class TagCloudExporterTest {
         @ParameterizedTest
         @MethodSource("data")
         void export(List<Talk> talks, boolean isSaveTalkFiles, String commonFileName) {
-            new MockUp<FileUtils>() {
-                @Mock
-                void deleteDirectory(String directoryName) throws IOException {
-                    // Nothing
-                }
-            };
+            try (MockedStatic<TagCloudExporter> tagCloudExporterMockedStatic = Mockito.mockStatic(TagCloudExporter.class);
+                 MockedStatic<FileUtils> fileUtilsMockedStatic = Mockito.mockStatic(FileUtils.class);
+                 MockedStatic<TagCloudUtils> tagCloudUtilsMockedStatic = Mockito.mockStatic(TagCloudUtils.class)) {
+                tagCloudExporterMockedStatic.when(() -> TagCloudExporter.export(Mockito.anyList(), Mockito.anyBoolean(), Mockito.anyString()))
+                        .thenCallRealMethod();
+                tagCloudUtilsMockedStatic.when(() -> TagCloudUtils.getTalkText(Mockito.any(Talk.class)))
+                        .thenReturn("");
 
-            new MockUp<TagCloudUtils>() {
-                @Mock
-                String getTalkText(Talk talk) {
-                    return "";
-                }
-            };
-
-            new MockUp<TagCloudExporter>() {
-                @Mock
-                void save(String text, String filename) throws IOException {
-                    // Nothing
-                }
-            };
-
-            assertDoesNotThrow(() -> TagCloudExporter.export(talks, isSaveTalkFiles, commonFileName));
+                assertDoesNotThrow(() -> TagCloudExporter.export(talks, isSaveTalkFiles, commonFileName));
+            }
         }
     }
 

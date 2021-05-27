@@ -171,6 +171,10 @@ public class ContentfulUtils {
     private ContentfulUtils() {
     }
 
+    static RestTemplate getRestTemplate() {
+        return restTemplate;
+    }
+
     static Map<ConferenceSpaceInfo, List<String>> getTags(String conferenceCodePrefix) {
         Map<ConferenceSpaceInfo, List<String>> spaceTagsMap = new LinkedHashMap<>();
 
@@ -191,7 +195,7 @@ public class ContentfulUtils {
                     .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                     .encode()
                     .toUri();
-            ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
+            ContentfulTalkResponse<? extends ContentfulTalkFields> response = getRestTemplate().getForObject(uri, conferenceSpaceInfo.talkResponseClass);
 
             List<String> tags = Objects.requireNonNull(response)
                     .getItems().stream()
@@ -222,7 +226,7 @@ public class ContentfulUtils {
                 .buildAndExpand(MAIN_SPACE_ID, "locales")
                 .encode()
                 .toUri();
-        ContentfulLocaleResponse response = restTemplate.getForObject(uri, ContentfulLocaleResponse.class);
+        ContentfulLocaleResponse response = getRestTemplate().getForObject(uri, ContentfulLocaleResponse.class);
 
         return Objects.requireNonNull(response)
                 .getItems().stream()
@@ -250,7 +254,7 @@ public class ContentfulUtils {
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulEventTypeResponse response = restTemplate.getForObject(uri, ContentfulEventTypeResponse.class);
+        ContentfulEventTypeResponse response = getRestTemplate().getForObject(uri, ContentfulEventTypeResponse.class);
         var id = new AtomicLong(-1);
 
         return Objects.requireNonNull(response)
@@ -340,7 +344,7 @@ public class ContentfulUtils {
                 .buildAndExpand(MAIN_SPACE_ID, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulEventResponse response = restTemplate.getForObject(uri, ContentfulEventResponse.class);
+        ContentfulEventResponse response = getRestTemplate().getForObject(uri, ContentfulEventResponse.class);
         Map<String, ContentfulCity> cityMap = getCityMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getErrorSet(response, ENTRY_LINK_TYPE);
 
@@ -487,7 +491,7 @@ public class ContentfulUtils {
                 .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulSpeakerResponse response = restTemplate.getForObject(uri, ContentfulSpeakerResponse.class);
+        ContentfulSpeakerResponse response = getRestTemplate().getForObject(uri, ContentfulSpeakerResponse.class);
         var speakerId = new AtomicLong(-1);
         var companyId = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
@@ -660,7 +664,7 @@ public class ContentfulUtils {
                 .buildAndExpand(conferenceSpaceInfo.spaceId, ENTRIES_VARIABLE_VALUE)
                 .encode()
                 .toUri();
-        ContentfulTalkResponse<? extends ContentfulTalkFields> response = restTemplate.getForObject(uri, conferenceSpaceInfo.talkResponseClass);
+        ContentfulTalkResponse<? extends ContentfulTalkFields> response = getRestTemplate().getForObject(uri, conferenceSpaceInfo.talkResponseClass);
         var talkId = new AtomicLong(-1);
         Map<String, ContentfulAsset> assetMap = getAssetMap(Objects.requireNonNull(response));
         Set<String> entryErrorSet = getErrorSet(response, ENTRY_LINK_TYPE);

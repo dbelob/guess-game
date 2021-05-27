@@ -433,7 +433,7 @@ speakers:
     javaChampion: true
   - id: 24
     photoFileName: 0024.jpg
-    photoUpdatedAt: 2016-09-13T10:40:16.374Z[UTC]
+    photoUpdatedAt: 2021-05-17T12:30:38.812Z[UTC]
     name:
       - {language: en, text: "Aleksey Shipilev"}
       - {language: ru, text: "Алексей Шипилёв"}
@@ -1599,6 +1599,7 @@ speakers:
       - language: ru
         text: "Работает в небольшой компании «Леви9» Java-разработчиком.\nОсновное направление профессионального развития\
             \ — решение задач, связанных с производительностью."
+    gitHub: stsypanov
     habr: tsypanov
   - id: 95
     photoFileName: 0095.jpg
@@ -8717,6 +8718,7 @@ speakers:
         text: "В IT около 10 лет. Начинал в аналитике, управлял проектами, в настоящее время менторит, пишет и автоматизир\
             ует на Java.\n\nLead QA в high-performance-ядре AdTech компании PropellerAds.\n\nВерит в то, что «простые» тес\
             ты могут быть написаны для сколь угодно сложных систем."
+    gitHub: dtuchs
   - id: 610
     photoFileName: 0610.jpg
     name:
@@ -14652,8 +14654,8 @@ speakers:
       - {language: ru, text: "Мария Соколова"}
     companyIds: [286]
     bio:
-      - {language: en, text: "Software developer in Kotlin Libraries team at JetBrains and also in the first year of getting\
-            \ a master’s degree in computer sciences at ITMO University."}
+      - {language: en, text: "Software developer in the Kotlin Libraries Team. Also, part of the Concurrent Computing Lab\
+            \ at JetBrains working on verification of concurrent data structures and algorithms."}
       - {language: ru, text: "Работает в JetBrains над библиотеками для Kotlin. Учится на первом курсе магистратуры кафедр\
             ы Компьютерных Технологий университета ИТМО."}
     twitter: mvicsokolova
@@ -23075,3 +23077,95 @@ speakers:
             \ Database Group and the Parallel Data Laboratory. He's the co-founder and CEO of OtterTune."}
     twitter: andy_pavlo
     gitHub: apavlo
+  - id: 1666
+    photoFileName: 1666.jpg
+    photoUpdatedAt: 2019-08-02T14:25:59.435Z[UTC]
+    name:
+      - {language: en, text: "Andrey Fomichev"}
+    companyIds: [689]
+    bio:
+      - {language: en, text: "Biography will be added soon."}
+  - id: 1667
+    photoFileName: 1667.jpg
+    photoUpdatedAt: 2021-05-11T07:58:39.078Z[UTC]
+    name:
+      - {language: en, text: "Naama Ben-David"}
+    companyIds: [577]
+    bio:
+      - {language: en, text: "Naama Ben-David is a postdoctoral researcher at VMware. She completed her Ph.D. at Carnegie\
+            \ Mellon University, where her dissertation received an honorable mention for the CMU SCS Dissertation Award.\
+            \ Her primary research interests are in the intersection of theory and practice in distributed computing. More\
+            \ specifically, Naama strives to theoretically explain phenomena seen in modern machines and to use obtained insights\
+            \ to design and analyze practical algorithms for concurrent settings. Naama is the recipient of an NSERC postgraduate\
+            \ scholarship and a Microsoft Research Ph.D. Fellowship."}
+  - id: 1668
+    photoFileName: 1668.jpg
+    photoUpdatedAt: 2019-08-02T14:25:59.435Z[UTC]
+    name:
+      - {language: en, text: "Adam Morrison"}
+    companyIds: [516]
+    bio:
+      - {language: en, text: "Biography will be added soon."}
+  - id: 1669
+    photoFileName: 1669.jpg
+    photoUpdatedAt: 2021-05-11T07:50:51.572Z[UTC]
+    name:
+      - {language: en, text: "Andras Gerlits"}
+    companyIds: [757]
+    bio:
+      - {language: en, text: "Andras is the founder and CTO of dianemo DB. Previously he worked as a freelance consultant\
+            \ in both London and Budapest. He specialises in enterprise software, with a focus on distributed systems."}
+    twitter: AndrasGerlits
+  - id: 1670
+    photoFileName: 1670.jpg
+    photoUpdatedAt: 2021-05-24T06:55:22.572Z[UTC]
+    name:
+      - {language: en, text: "Mike Kowalski"}
+    companyIds: [758]
+    bio:
+      - {language: en, text: "Software engineer believing in craftsmanship and the power of fresh espresso. At work, he enjoys\
+            \ facing the challenges of distributed systems, especially in JVM-oriented environments. Technical blogger (mikemybytes.com)\
+            \ & consultant, working daily as a Software Architect."}
+    twitter: mikemybytes
+  - id: 1671
+    photoFileName: 1671.jpg
+    photoUpdatedAt: 2021-05-19T07:39:39.313Z[UTC]
+    name:
+      - {language: en, text: "Nathan VanBenschoten"}
+    companyIds: [759]
+    bio:
+      - {language: en, text: "Nathan VanBenschoten joined Cockroach Labs five years ago as a Software Engineer focusing on\
+            \ the performance of CockroachDB's transaction, replication, and persistence layers. Before Cockroach Labs, he\
+            \ was a member of the Google-Wide Profiling team, working on Google's continuous profiling infrastructure."}
+    twitter: natevanben
+  - id: 1672
+    photoFileName: 1672.jpg
+    photoUpdatedAt: 2021-05-25T07:51:10.116Z[UTC]
+    name:
+      - {language: en, text: "Alex Gallego"}
+    companyIds: [760]
+    bio:
+      - language: en
+        text: "Founder and CEO at VectorizedIO.\nAlex Gallego is the founder and CEO of Vectorized, where he & the team hack\
+            \ on Redpanda, a modern streaming platform for mission-critical workloads. Before Vectorized, he was a principal\
+            \ engineer at Akamai, as well as co-founder and CTO of Concord.io, a high-performance stream processing engine\
+            \ built in C++ and acquired by Akamai in 2016."
+  - id: 1673
+    photoFileName: 1673.jpg
+    photoUpdatedAt: 2021-05-25T07:57:55.606Z[UTC]
+    name:
+      - {language: en, text: "Irfan Sharif"}
+    companyIds: [759]
+    bio:
+      - {language: en, text: "Biography will be added soon."}
+  - id: 1674
+    photoFileName: 1674.jpg
+    photoUpdatedAt: 2021-05-26T07:38:15.254Z[UTC]
+    name:
+      - {language: en, text: "Lalith Suresh"}
+    companyIds: [577]
+    bio:
+      - {language: en, text: "Lalith Suresh is a researcher at VMware Research in Palo Alto. He is currently leading efforts\
+            \ to simplify the design, development, and testing of large-scale cluster managers. He has also worked on areas\
+            \ like failure detection, programmable networking, big data, and remote memory. He received his doctorate from\
+            \ TU-Berlin in 2016."}
