@@ -51,10 +51,15 @@ class PropertyMatcherTest {
     @DisplayName("getClassFieldNames method tests")
     class GetClassFieldNamesTest {
         private Stream<Arguments> data() {
+            class Sample {
+                private long id;
+            }
+
             return Stream.of(
                     arguments(Identifiable.class, Collections.emptySet()),
                     arguments(Identifier.class, Set.of("id")),
-                    arguments(Descriptionable.class, Set.of("id", "name", "shortDescription", "longDescription"))
+                    arguments(Descriptionable.class, Set.of("id", "name", "shortDescription", "longDescription")),
+                    arguments(Sample.class, Set.of("id"))
             );
         }
 

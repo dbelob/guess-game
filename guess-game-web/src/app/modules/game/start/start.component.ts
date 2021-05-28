@@ -9,7 +9,7 @@ import { Event } from '../../../shared/models/event/event.model';
 import { EventService } from '../../../shared/services/event.service';
 import { QuestionService } from '../../../shared/services/question.service';
 import { StateService } from '../../../shared/services/state.service';
-import { findEventById, findEventTypeById, getEventsWithDisplayName } from '../../general/utility-functions';
+import { findEventById, findEventTypeById, getEventsWithFullDisplayName } from '../../general/utility-functions';
 
 @Component({
   selector: 'app-start',
@@ -47,6 +47,9 @@ export class StartComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     this.loadEventTypes();
+
+    this.translateService.onLangChange
+      .subscribe(() => this.loadEventTypes());
   }
 
   loadEventTypes() {
@@ -101,24 +104,26 @@ export class StartComponent implements OnInit, AfterViewChecked {
   }
 
   loadEvents(eventTypes: EventType[]) {
-    this.questionService.getEvents(eventTypes.map(et => et.id))
-      .subscribe(data => {
-        this.events = getEventsWithDisplayName(data, this.translateService);
+    if (this.translateService.currentLang) {
+      this.questionService.getEvents(eventTypes.map(et => et.id))
+        .subscribe(data => {
+          this.events = getEventsWithFullDisplayName(data, this.translateService);
 
-        if (this.events.length > 0) {
-          const selectedEvent = (this.defaultEvent) ? findEventById(this.defaultEvent.id, this.events) : null;
+          if (this.events.length > 0) {
+            const selectedEvent = (this.defaultEvent) ? findEventById(this.defaultEvent.id, this.events) : null;
 
-          if (selectedEvent) {
-            this.selectedEvents = [selectedEvent];
+            if (selectedEvent) {
+              this.selectedEvents = [selectedEvent];
+            } else {
+              this.selectedEvents = [this.events[0]];
+            }
           } else {
-            this.selectedEvents = [this.events[0]];
+            this.selectedEvents = [];
           }
-        } else {
-          this.selectedEvents = [];
-        }
 
-        this.loadQuantities(this.selectedEventTypes, this.selectedEvents, this.selectedGuessMode);
-      });
+          this.loadQuantities(this.selectedEventTypes, this.selectedEvents, this.selectedGuessMode);
+        });
+    }
   }
 
   onEventChange(events: Event[]) {
@@ -144,10 +149,6 @@ export class StartComponent implements OnInit, AfterViewChecked {
           this.selectedQuantity = 0;
         }
       });
-  }
-
-  onLanguageChange() {
-    this.loadEventTypes();
   }
 
   start() {
