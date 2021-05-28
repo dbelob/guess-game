@@ -23106,6 +23106,7 @@ speakers:
     companyIds: [516]
     bio:
       - {language: en, text: "Biography will be added soon."}
+    gitHub: adam-morrison
   - id: 1669
     photoFileName: 1669.jpg
     photoUpdatedAt: 2021-05-11T07:50:51.572Z[UTC]
@@ -23127,6 +23128,7 @@ speakers:
             \ facing the challenges of distributed systems, especially in JVM-oriented environments. Technical blogger (mikemybytes.com)\
             \ & consultant, working daily as a Software Architect."}
     twitter: mikemybytes
+    gitHub: mikemybytes
   - id: 1671
     photoFileName: 1671.jpg
     photoUpdatedAt: 2021-05-19T07:39:39.313Z[UTC]
@@ -23138,6 +23140,7 @@ speakers:
             \ the performance of CockroachDB's transaction, replication, and persistence layers. Before Cockroach Labs, he\
             \ was a member of the Google-Wide Profiling team, working on Google's continuous profiling infrastructure."}
     twitter: natevanben
+    gitHub: nvanbenschoten
   - id: 1672
     photoFileName: 1672.jpg
     photoUpdatedAt: 2021-05-25T07:51:10.116Z[UTC]
@@ -23150,6 +23153,8 @@ speakers:
             \ on Redpanda, a modern streaming platform for mission-critical workloads. Before Vectorized, he was a principal\
             \ engineer at Akamai, as well as co-founder and CTO of Concord.io, a high-performance stream processing engine\
             \ built in C++ and acquired by Akamai in 2016."
+    twitter: emaxerrno
+    gitHub: senior7515
   - id: 1673
     photoFileName: 1673.jpg
     photoUpdatedAt: 2021-05-25T07:57:55.606Z[UTC]
@@ -23158,6 +23163,8 @@ speakers:
     companyIds: [759]
     bio:
       - {language: en, text: "Biography will be added soon."}
+    twitter: irfansharifm
+    gitHub: irfansharif
   - id: 1674
     photoFileName: 1674.jpg
     photoUpdatedAt: 2021-05-26T07:38:15.254Z[UTC]
@@ -23169,3 +23176,4 @@ speakers:
             \ to simplify the design, development, and testing of large-scale cluster managers. He has also worked on areas\
             \ like failure detection, programmable networking, big data, and remote memory. He received his doctorate from\
             \ TU-Berlin in 2016."}
+    gitHub: lalithsuresh
