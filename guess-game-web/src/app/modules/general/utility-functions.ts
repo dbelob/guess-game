@@ -130,7 +130,17 @@ export function getEventTypeStatisticsWithSortName(eventTypeStatistics: EventTyp
   return eventTypeStatistics;
 }
 
-export function getEventsWithDisplayName(events: Event[], translateService: TranslateService): Event[] {
+export function getEventsWithBriefDisplayName(events: Event[]): Event[] {
+  if (events) {
+    for (let i = 0; i < events.length; i++) {
+      events[i].displayName = events[i].name;
+    }
+  }
+
+  return events;
+}
+
+export function getEventsWithFullDisplayName(events: Event[], translateService: TranslateService): Event[] {
   if (events) {
     for (let i = 0; i < events.length; i++) {
       events[i].displayName = getEventDisplayName(events[i], translateService);

@@ -10,7 +10,8 @@ import { TalkService } from '../../../shared/services/talk.service';
 import {
   findEventById,
   findEventTypeById,
-  getEventsWithDisplayName,
+  getEventsWithBriefDisplayName,
+  getEventsWithFullDisplayName,
   getTalksWithSpeakersString,
   isStringEmpty
 } from '../../general/utility-functions';
@@ -61,7 +62,9 @@ export class TalksSearchComponent implements OnInit {
   }
 
   fillEvents(events: Event[]) {
-    this.events = getEventsWithDisplayName(events, this.translateService);
+    this.events = (this.translateService.currentLang) ?
+      getEventsWithFullDisplayName(events, this.translateService) :
+      getEventsWithBriefDisplayName(events);
     this.eventSelectItems = this.events.map(e => {
       return {label: e.displayName, value: e};
     });
