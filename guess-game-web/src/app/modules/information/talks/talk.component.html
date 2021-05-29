@@ -34,10 +34,15 @@
         <markdown [data]='talkDetails.talk.description'></markdown>
       </div>
 
-      <div *ngIf="isPresentationLinksListVisible()" class="row mt-3">
+      <div *ngIf="isLinksListsVisible()" class="row mt-3">
         <span *ngFor="let presentationLink of talkDetails.talk.presentationLinks; let i = index" class="col-auto">
           <a href="{{presentationLink}}" class="text-dark">
             <i class="fa fa-file-pdf-o"></i> {{'talk.presentationLinkText' | translate}}<span *ngIf="talkDetails.talk.presentationLinks.length > 1"> {{i + 1}}</span>
+          </a>
+        </span>
+        <span *ngFor="let materialsLink of talkDetails.talk.materialsLinks; let i = index" class="col-auto">
+          <a href="{{materialsLink}}" class="text-dark">
+            <i class="fa fa-external-link"></i> {{'talk.materialsLinkText' | translate}}<span *ngIf="talkDetails.talk.materialsLinks.length > 1"> {{i + 1}}</span>
           </a>
         </span>
       </div>

@@ -96,6 +96,14 @@ export class TalkComponent implements OnInit {
     return ((this.talkDetails.talk?.presentationLinks) && (this.talkDetails.talk.presentationLinks.length > 0));
   }
 
+  isMaterialsLinksListVisible() {
+    return ((this.talkDetails.talk?.materialsLinks) && (this.talkDetails.talk.materialsLinks.length > 0));
+  }
+
+  isLinksListsVisible() {
+    return this.isPresentationLinksListVisible() || this.isMaterialsLinksListVisible();
+  }
+
   isVideoLinksVideoIdsListVisible() {
     return ((this.talkDetails.talk?.videoLinksVideoIds) && (this.talkDetails.talk.videoLinksVideoIds.length > 0));
   }

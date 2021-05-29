@@ -11,10 +11,12 @@ import java.util.stream.Collectors;
 public class Talk extends Descriptionable {
     public static class TalkLinks {
         private final List<String> presentationLinks;
+        private final List<String> materialsLinks;
         private final List<String> videoLinks;
 
-        public TalkLinks(List<String> presentationLinks, List<String> videoLinks) {
+        public TalkLinks(List<String> presentationLinks, List<String> materialsLinks, List<String> videoLinks) {
             this.presentationLinks = presentationLinks;
+            this.materialsLinks = materialsLinks;
             this.videoLinks = videoLinks;
         }
     }
@@ -24,6 +26,7 @@ public class Talk extends Descriptionable {
     private Long track;
     private String language;
     private List<String> presentationLinks;
+    private List<String> materialsLinks;
     private List<String> videoLinks;
 
     private List<Long> speakerIds;
@@ -41,6 +44,7 @@ public class Talk extends Descriptionable {
         this.track = track;
         this.language = language;
         this.presentationLinks = links.presentationLinks;
+        this.materialsLinks = links.materialsLinks;
         this.videoLinks = links.videoLinks;
         this.speakers = speakers;
         this.speakerIds = speakers.stream()
@@ -86,6 +90,14 @@ public class Talk extends Descriptionable {
 
     public void setPresentationLinks(List<String> presentationLinks) {
         this.presentationLinks = presentationLinks;
+    }
+
+    public List<String> getMaterialsLinks() {
+        return materialsLinks;
+    }
+
+    public void setMaterialsLinks(List<String> materialsLinks) {
+        this.materialsLinks = materialsLinks;
     }
 
     public List<String> getVideoLinks() {

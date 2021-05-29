@@ -108,7 +108,8 @@
     "title": "Talk",
     "dayLabel": "Day",
     "trackLabel": "Track",
-    "presentationLinkText": "Presentation"
+    "presentationLinkText": "Presentation",
+    "materialsLinkText": "Materials"
   },
   "talks": {
     "title": "Talks",

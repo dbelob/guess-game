@@ -108,7 +108,8 @@
     "title": "Доклад",
     "dayLabel": "День",
     "trackLabel": "Трек",
-    "presentationLinkText": "Презентация"
+    "presentationLinkText": "Презентация",
+    "materialsLinkText": "Материалы"
   },
   "talks": {
     "title": "Доклады",

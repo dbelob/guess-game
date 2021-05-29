@@ -744,6 +744,7 @@ public class ContentfulUtils {
                         extractPresentationLinks(
                                 combineContentfulLinks(contentfulTalk.getFields().getPresentations(), contentfulTalk.getFields().getPresentation()),
                                 assetMap, assetErrorSet, contentfulTalk.getFields().getNameEn()),
+                        Collections.emptyList(),    //TODO: change
                         extractVideoLinks(contentfulTalk.getFields().getVideo())
                 ),
                 speakers);
@@ -1475,6 +1476,7 @@ public class ContentfulUtils {
                 equals(a.getTrack(), b.getTrack()) &&
                 equals(a.getLanguage(), b.getLanguage()) &&
                 equals(a.getPresentationLinks(), b.getPresentationLinks()) &&
+                equals(a.getMaterialsLinks(), b.getMaterialsLinks()) &&
                 equals(a.getVideoLinks(), b.getVideoLinks()) &&
                 equals(a.getSpeakerIds(), b.getSpeakerIds()));
     }
