@@ -752,8 +752,8 @@ events:
     startDate: "2020-06-29"
     endDate: "2020-07-03"
     siteLink:
-      - {language: en, text: "https://jpoint.ru/en/"}
-      - {language: ru, text: "https://jpoint.ru/"}
+      - {language: en, text: "https://2020.jpoint.ru/en/"}
+      - {language: ru, text: "https://2020.jpoint.ru/"}
     youtubeLink: https://live.jugru.org/online/100063r10004435
     placeId: 24
     talkIds: [2440, 2232, 2243, 2258, 2503, 2504, 2505, 2542, 2441, 2231, 2235, 2236, 2442, 2255, 2240, 2241, 2508, 2509,
@@ -765,6 +765,7 @@ events:
     startDate: "2021-04-13"
     endDate: "2021-04-17"
     siteLink:
+      - {language: en, text: "https://jpoint.ru/en/"}
       - {language: ru, text: "https://jpoint.ru/"}
     youtubeLink: https://live.jugru.org/events/jpoint/?p=sch100087
     placeId: 24
