@@ -1476,7 +1476,7 @@ public class ContentfulUtils {
                 equals(a.getTrack(), b.getTrack()) &&
                 equals(a.getLanguage(), b.getLanguage()) &&
                 equals(a.getPresentationLinks(), b.getPresentationLinks()) &&
-                equals(a.getMaterialsLinks(), b.getMaterialsLinks()) &&
+                equals(a.getMaterialLinks(), b.getMaterialLinks()) &&
                 equals(a.getVideoLinks(), b.getVideoLinks()) &&
                 equals(a.getSpeakerIds(), b.getSpeakerIds()));
     }

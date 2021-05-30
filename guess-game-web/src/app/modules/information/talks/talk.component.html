@@ -40,9 +40,9 @@
             <i class="fa fa-file-pdf-o"></i> {{'talk.presentationLinkText' | translate}}<span *ngIf="talkDetails.talk.presentationLinks.length > 1"> {{i + 1}}</span>
           </a>
         </span>
-        <span *ngFor="let materialsLink of talkDetails.talk.materialsLinks; let i = index" class="col-auto">
-          <a href="{{materialsLink}}" class="text-dark">
-            <i class="fa fa-external-link"></i> {{'talk.materialsLinkText' | translate}}<span *ngIf="talkDetails.talk.materialsLinks.length > 1"> {{i + 1}}</span>
+        <span *ngFor="let materialLink of talkDetails.talk.materialLinks; let i = index" class="col-auto">
+          <a href="{{materialLink}}" class="text-dark">
+            <i class="fa fa-external-link"></i> {{'talk.materialLinkText' | translate}}<span *ngIf="talkDetails.talk.materialLinks.length > 1"> {{i + 1}}</span>
           </a>
         </span>
       </div>

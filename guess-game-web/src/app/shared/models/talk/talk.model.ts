@@ -16,7 +16,7 @@ export class Talk {
     public track?: number,
     public language?: string,
     public presentationLinks?: string[],
-    public materialsLinks?: string[],
+    public materialLinks?: string[],
     public videoLinks?: string[],
     public videoLinksVideoIds?: string[]
   ) {

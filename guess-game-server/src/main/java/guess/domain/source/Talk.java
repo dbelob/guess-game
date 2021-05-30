@@ -11,12 +11,12 @@ import java.util.stream.Collectors;
 public class Talk extends Descriptionable {
     public static class TalkLinks {
         private final List<String> presentationLinks;
-        private final List<String> materialsLinks;
+        private final List<String> materialLinks;
         private final List<String> videoLinks;
 
-        public TalkLinks(List<String> presentationLinks, List<String> materialsLinks, List<String> videoLinks) {
+        public TalkLinks(List<String> presentationLinks, List<String> materialLinks, List<String> videoLinks) {
             this.presentationLinks = presentationLinks;
-            this.materialsLinks = materialsLinks;
+            this.materialLinks = materialLinks;
             this.videoLinks = videoLinks;
         }
     }
@@ -26,7 +26,7 @@ public class Talk extends Descriptionable {
     private Long track;
     private String language;
     private List<String> presentationLinks;
-    private List<String> materialsLinks;
+    private List<String> materialLinks;
     private List<String> videoLinks;
 
     private List<Long> speakerIds;
@@ -44,7 +44,7 @@ public class Talk extends Descriptionable {
         this.track = track;
         this.language = language;
         this.presentationLinks = links.presentationLinks;
-        this.materialsLinks = links.materialsLinks;
+        this.materialLinks = links.materialLinks;
         this.videoLinks = links.videoLinks;
         this.speakers = speakers;
         this.speakerIds = speakers.stream()
@@ -92,12 +92,12 @@ public class Talk extends Descriptionable {
         this.presentationLinks = presentationLinks;
     }
 
-    public List<String> getMaterialsLinks() {
-        return materialsLinks;
+    public List<String> getMaterialLinks() {
+        return materialLinks;
     }
 
-    public void setMaterialsLinks(List<String> materialsLinks) {
-        this.materialsLinks = materialsLinks;
+    public void setMaterialLinks(List<String> materialLinks) {
+        this.materialLinks = materialLinks;
     }
 
     public List<String> getVideoLinks() {
