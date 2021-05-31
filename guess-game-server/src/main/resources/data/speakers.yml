@@ -23083,7 +23083,7 @@ speakers:
     gitHub: apavlo
   - id: 1666
     photoFileName: 1666.jpg
-    photoUpdatedAt: 2019-08-02T14:25:59.435Z[UTC]
+    photoUpdatedAt: 2021-05-31T10:40:27.345Z[UTC]
     name:
       - {language: en, text: "Andrey Fomichev"}
     companyIds: [689]
@@ -23109,7 +23109,11 @@ speakers:
       - {language: en, text: "Adam Morrison"}
     companyIds: [516]
     bio:
-      - {language: en, text: "Biography will be added soon."}
+      - {language: en, text: "Adam Morrison is an assistant professor at the Blavatnik School of Computer Science, Tel Aviv\
+            \ University, Israel. His research is on the performance and security of shared-memory multiprocessors, from microarchitecture\
+            \ through operating systems to concurrent algorithms. His work has been awarded the inaugural Intel Hardware Security\
+            \ Academic Award (2021), best paper awards at MICRO'19, ASPLOS'20, and ASPLOS'21, as well as IEEE Micro Top Picks\
+            \ (2019) and Top Picks Honorable Mention (2018)."}
     gitHub: adam-morrison
   - id: 1669
     photoFileName: 1669.jpg
@@ -23166,7 +23170,10 @@ speakers:
       - {language: en, text: "Irfan Sharif"}
     companyIds: [759]
     bio:
-      - {language: en, text: "Biography will be added soon."}
+      - language: en
+        text: "Irfan Sharif is a Member of Technical Staff at Cockroach Labs, working on\nCockroachDB's distributed transactional\
+            \ key-value layer. He was a founding member of their engineering office in Canada. Before Cockroach Labs, he worked\
+            \ on search relevance at Amazon and machine learning infrastructure at LinkedIn."
     twitter: irfansharifm
     gitHub: irfansharif
   - id: 1674
