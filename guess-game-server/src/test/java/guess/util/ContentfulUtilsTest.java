@@ -1559,6 +1559,24 @@ class ContentfulUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractMaterialLinks method tests")
+    class ExtractMaterialLinksTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("https://valid.com", List.of("https://valid.com"))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractMaterialLinks(String material, List<String> expected) {
+            assertEquals(expected, ContentfulUtils.extractMaterialLinks(material));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("extractVideoLinks method tests")
     class ExtractVideoLinksTest {
         private Stream<Arguments> data() {
