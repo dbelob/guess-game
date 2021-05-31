@@ -21556,10 +21556,10 @@ speakers:
     companyIds: [141]
     bio:
       - language: en
-        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHas been developing backend since 2011.\
-            \ Now he creates a mobile application in Autobahn-platform for Deutsche Bank Group."
+        text: "Full-stack Developer.\nDeutsche Bank Technology Centre employee. \nHe has been developing backend since 2011.\
+            \ Now he creates mobile application in Autobahn-platform for Deutsche Bank Group."
       - language: ru
-        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бэкенд с 2011 года. Сей\
+        text: "Full-stack Developer.\nСотрудник Технологического Центра Дойче Банка. Разрабатывает бекенд с 2011 года. Сей\
             час участвует в создании мобильного приложения внутри Autobahn-платформы для группы Дойче Банк."
   - id: 1563
     photoFileName: 1563.jpg
