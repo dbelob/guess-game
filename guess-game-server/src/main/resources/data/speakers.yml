@@ -14277,6 +14277,7 @@ speakers:
     companyIds: []
   - id: 1023
     photoFileName: 1023.jpg
+    photoUpdatedAt: 2019-08-28T09:07:30.878Z[UTC]
     name:
       - {language: en, text: "Ivan Akulov"}
     companyIds: [397]
@@ -19684,6 +19685,7 @@ speakers:
     gitHub: anfibiacreativa
   - id: 1434
     photoFileName: 1434.jpg
+    photoUpdatedAt: 2020-10-14T10:23:36.270Z[UTC]
     name:
       - {language: en, text: "Elizabeth Sweeny"}
     companyIds: [217]
