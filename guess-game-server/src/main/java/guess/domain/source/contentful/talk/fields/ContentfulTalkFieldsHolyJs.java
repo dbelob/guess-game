@@ -9,4 +9,10 @@ public class ContentfulTalkFieldsHolyJs extends ContentfulTalkFields {
     public void setPresentation(ContentfulLink presentation) {
         super.setPresentation(presentation);
     }
+
+    @Override
+    @JsonSetter("presentationLink")
+    public void setMaterial(String material) {
+        super.setMaterial(material);
+    }
 }

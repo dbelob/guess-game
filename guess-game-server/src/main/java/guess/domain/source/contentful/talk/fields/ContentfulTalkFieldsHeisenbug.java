@@ -9,4 +9,10 @@ public class ContentfulTalkFieldsHeisenbug extends ContentfulTalkFields {
     public void setPresentation(ContentfulLink presentation) {
         super.setPresentation(presentation);
     }
+
+    @Override
+    @JsonSetter("talksPresentationLink")
+    public void setMaterial(String material) {
+        super.setMaterial(material);
+    }
 }

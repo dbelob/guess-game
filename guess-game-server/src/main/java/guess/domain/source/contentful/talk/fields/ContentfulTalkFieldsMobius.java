@@ -11,4 +11,10 @@ public class ContentfulTalkFieldsMobius extends ContentfulTalkFields {
     public void setPresentations(List<ContentfulLink> presentations) {
         super.setPresentations(presentations);
     }
+
+    @Override
+    @JsonSetter("presentationLink")
+    public void setMaterial(String material) {
+        super.setMaterial(material);
+    }
 }

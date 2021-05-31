@@ -20,6 +20,7 @@ public abstract class ContentfulTalkFields {
 
     private List<ContentfulLink> presentations;
     private ContentfulLink presentation;
+    private String material;
 
     private List<ContentfulLink> speakers;
     private Long talkDay;
@@ -95,6 +96,14 @@ public abstract class ContentfulTalkFields {
 
     public void setPresentation(ContentfulLink presentation) {
         this.presentation = presentation;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
     }
 
     public List<ContentfulLink> getSpeakers() {

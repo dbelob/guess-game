@@ -11,4 +11,10 @@ public class ContentfulTalkFieldsCommon extends ContentfulTalkFields {
     public void setPresentations(List<ContentfulLink> presentations) {
         super.setPresentations(presentations);
     }
+
+    @Override
+    @JsonSetter("talksPresentationLink")
+    public void setMaterial(String material) {
+        super.setMaterial(material);
+    }
 }
