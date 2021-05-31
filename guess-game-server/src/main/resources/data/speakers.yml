@@ -937,7 +937,7 @@ speakers:
         text: "Работает в Райффайзенбанке с 2016 года над высокочастотным торговым приложением. В основном занимается уско\
             рением существующего и написанием нового low-latency кода на Java. \nДо этого работал в Intel инженером по про\
             изводительности компиляторов для языков C/C++/FORTRAN."
-    gitHub: rainm
+    gitHub: RainM
     habr: RainM
   - id: 54
     photoFileName: 0054.jpg
@@ -3341,12 +3341,14 @@ speakers:
       - {language: en, text: "Dmitry Rygalov"}
       - {language: ru, text: "Дмитрий Рыгалов"}
     companyIds: [538]
+    gitHub: mityi
   - id: 223
     photoFileName: 0223.jpg
     name:
       - {language: en, text: "Pavel Dimitrjuk"}
       - {language: ru, text: "Павел Димитрюк"}
     companyIds: [618]
+    gitHub: PDimitryuk
   - id: 224
     photoFileName: 0224.jpg
     name:
@@ -3360,12 +3362,14 @@ speakers:
       - {language: en, text: "Alexey Zotov"}
       - {language: ru, text: "Алексей Зотов"}
     companyIds: [538]
+    gitHub: Lex4hex
   - id: 226
     photoFileName: 0226.jpg
     name:
       - {language: en, text: "Dmitry Maksimenko"}
       - {language: ru, text: "Дмитрий Максименко"}
     companyIds: [686]
+    gitHub: DSabaddon
   - id: 227
     photoFileName: 0227.jpg
     name:
@@ -16564,12 +16568,14 @@ speakers:
       - {language: en, text: "Boris Bochkarev"}
       - {language: ru, text: "Борис Бочкарев"}
     companyIds: [667]
+    gitHub: BorisBochkaryov
   - id: 1195
     photoFileName: 1195.jpg
     name:
       - {language: en, text: "Alexander Kolesnikov"}
       - {language: ru, text: "Александр Колесников"}
     companyIds: [596]
+    gitHub: alekkol
   - id: 1196
     photoFileName: 1196.jpg
     name:
