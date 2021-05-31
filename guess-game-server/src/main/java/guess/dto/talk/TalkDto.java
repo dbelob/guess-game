@@ -17,10 +17,11 @@ public class TalkDto extends TalkBriefDto {
     private final String description;
     private final String language;
     private final List<String> presentationLinks;
+    private final List<String> materialLinks;
     private final List<String> videoLinks;
 
     public TalkDto(TalkBriefDto talkBriefDto, String description, String language, List<String> presentationLinks,
-                   List<String> videoLinks) {
+                   List<String> materialLinks, List<String> videoLinks) {
         super(talkBriefDto.getId(), talkBriefDto.getName(), talkBriefDto.getTalkDate(), talkBriefDto.getTalkDay(),
                 talkBriefDto.getTalkTime(), talkBriefDto.getTrack(),
                 new TalkBriefDtoDetails(
@@ -31,6 +32,7 @@ public class TalkDto extends TalkBriefDto {
         this.description = description;
         this.language = language;
         this.presentationLinks = presentationLinks;
+        this.materialLinks = materialLinks;
         this.videoLinks = videoLinks;
     }
 
@@ -44,6 +46,10 @@ public class TalkDto extends TalkBriefDto {
 
     public List<String> getPresentationLinks() {
         return presentationLinks;
+    }
+
+    public List<String> getMaterialLinks() {
+        return materialLinks;
     }
 
     public List<String> getVideoLinks() {
@@ -63,6 +69,7 @@ public class TalkDto extends TalkBriefDto {
                 description,
                 talk.getLanguage(),
                 talk.getPresentationLinks(),
+                talk.getMaterialLinks(),
                 talk.getVideoLinks());
     }
 

@@ -82,23 +82,23 @@ public class ContentfulUtils {
         // Joker, JPoint, JBreak, TechTrain, C++ Russia, Hydra, SPTDC, DevOops, SmartData
         COMMON_SPACE_INFO("oxjq45e8ilak", "fdc0ca21c8c39ac5a33e1e20880cae6836ae837af73c2cfc822650483ee388fe",
                 FIELDS_SPEAKER_FIELD_NAME, FIELDS_CONFERENCES_FIELD_NAME, "fields.javaChampion",
-                "fields.talksPresentation", ContentfulTalkResponseCommon.class),                        // fields.talksPresentation is list
+                "fields.talksPresentation,fields.talksPresentationLink", ContentfulTalkResponseCommon.class),                        // fields.talksPresentation is list, fields.talksPresentationLink is single value
         // HolyJS
         HOLY_JS_SPACE_INFO("nn534z2fqr9f", "1ca5b5d059930cd6681083617578e5a61187d1a71cbd75d4e0059cca3dc85f8c",
                 "fields.speakers", "fields.conference", null,
-                "fields.presentation", ContentfulTalkResponseHolyJs.class),                             // fields.presentation is single value
+                "fields.presentation,fields.presentationLink", ContentfulTalkResponseHolyJs.class),                             // fields.presentation is single value, fields.presentationLink is single value
         // DotNext
         DOT_NEXT_SPACE_INFO("9n3x4rtjlya6", "14e1427f8fbee9e5a089cd634fc60189c7aff2814b496fb0ad957b867a59503b",
                 FIELDS_SPEAKER_FIELD_NAME, "fields.conference", "fields.mvp,fields.mvpReconnect",
-                "fields.talksPresentation,fields.presentation", ContentfulTalkResponseDotNext.class),   // fields.talksPresentation is list, fields.presentation is single value
+                "fields.talksPresentation,fields.presentation,fields.talksPresentationLink", ContentfulTalkResponseDotNext.class),   // fields.talksPresentation is list, fields.presentation is single value, fields.talksPresentationLink is single value
         // Heisenbug
         HEISENBUG_SPACE_INFO("ut4a3ciohj8i", "e7edd5951d844b80ef41166e30cb9645e4f89d11c8ac9eecdadb2a38c061b980",
                 FIELDS_SPEAKER_FIELD_NAME, FIELDS_CONFERENCES_FIELD_NAME, null,
-                "fields.talksPresentation", ContentfulTalkResponseHeisenbug.class),                     // talksPresentation is single value
+                "fields.talksPresentation,fields.talksPresentationLink", ContentfulTalkResponseHeisenbug.class),                     // talksPresentation is single value, fields.talksPresentationLink is single value
         // Mobius
         MOBIUS_SPACE_INFO("2grufn031spf", "d0c680ed11f68287348b6b8481d3313fde8c2d23cc8ce24a2b0ae254dd779e6d",
                 FIELDS_SPEAKER_FIELD_NAME, FIELDS_CONFERENCES_FIELD_NAME, null,
-                "fields.talkPresentation", ContentfulTalkResponseMobius.class);                         // talkPresentation is list
+                "fields.talkPresentation,fields.presentationLink", ContentfulTalkResponseMobius.class);                         // talkPresentation is list, fields.presentationLink is single value
 
         private final String spaceId;
         private final String accessToken;
@@ -744,6 +744,7 @@ public class ContentfulUtils {
                         extractPresentationLinks(
                                 combineContentfulLinks(contentfulTalk.getFields().getPresentations(), contentfulTalk.getFields().getPresentation()),
                                 assetMap, assetErrorSet, contentfulTalk.getFields().getNameEn()),
+                        extractMaterialLinks(contentfulTalk.getFields().getMaterial()),
                         extractVideoLinks(contentfulTalk.getFields().getVideo())
                 ),
                 speakers);
@@ -958,6 +959,16 @@ public class ContentfulUtils {
                             .getFields().getFile().getUrl());
                 })
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Extracts material links.
+     *
+     * @param material material link
+     * @return material links
+     */
+    static List<String> extractMaterialLinks(String material) {
+        return (material != null) ? Collections.singletonList(material) : null;
     }
 
     /**
@@ -1475,6 +1486,7 @@ public class ContentfulUtils {
                 equals(a.getTrack(), b.getTrack()) &&
                 equals(a.getLanguage(), b.getLanguage()) &&
                 equals(a.getPresentationLinks(), b.getPresentationLinks()) &&
+                equals(a.getMaterialLinks(), b.getMaterialLinks()) &&
                 equals(a.getVideoLinks(), b.getVideoLinks()) &&
                 equals(a.getSpeakerIds(), b.getSpeakerIds()));
     }

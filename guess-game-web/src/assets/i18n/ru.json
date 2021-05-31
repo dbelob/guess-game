@@ -107,8 +107,9 @@
   "talk": {
     "title": "Доклад",
     "dayLabel": "День",
-    "trackLabel": "Зал",
-    "presentationLinkText": "Презентация"
+    "trackLabel": "Трек",
+    "presentationLinkText": "Презентация",
+    "materialLinkText": "Материал"
   },
   "talks": {
     "title": "Доклады",
@@ -119,7 +120,7 @@
       "talkDateColumn": "Дата доклада",
       "talkDayColumn": "День",
       "talkTimeColumn": "Время",
-      "trackColumn": "Зал",
+      "trackColumn": "Трек",
       "nameColumn": "Наименование",
       "speakersColumn": "Спикеры"
     },

@@ -1559,6 +1559,24 @@ class ContentfulUtilsTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    @DisplayName("extractMaterialLinks method tests")
+    class ExtractMaterialLinksTest {
+        private Stream<Arguments> data() {
+            return Stream.of(
+                    arguments(null, null),
+                    arguments("https://valid.com", List.of("https://valid.com"))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("data")
+        void extractMaterialLinks(String material, List<String> expected) {
+            assertEquals(expected, ContentfulUtils.extractMaterialLinks(material));
+        }
+    }
+
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
     @DisplayName("extractVideoLinks method tests")
     class ExtractVideoLinksTest {
         private Stream<Arguments> data() {
@@ -2364,6 +2382,7 @@ class ContentfulUtilsTest {
             talk0.setTrack(1L);
             talk0.setLanguage("en");
             talk0.setPresentationLinks(List.of("presentationLink0"));
+            talk0.setMaterialLinks(List.of("materialLink0"));
             talk0.setVideoLinks(List.of("videoLink0"));
             talk0.setSpeakerIds(List.of(0L));
 
@@ -2440,7 +2459,7 @@ class ContentfulUtilsTest {
             talk10.setTrack(1L);
             talk10.setLanguage("en");
             talk10.setPresentationLinks(List.of("presentationLink0"));
-            talk10.setVideoLinks(List.of("videoLink10"));
+            talk10.setMaterialLinks(List.of("materialLink10"));
 
             Talk talk11 = new Talk();
             talk11.setId(0);
@@ -2452,8 +2471,22 @@ class ContentfulUtilsTest {
             talk11.setTrack(1L);
             talk11.setLanguage("en");
             talk11.setPresentationLinks(List.of("presentationLink0"));
-            talk11.setVideoLinks(List.of("videoLink0"));
-            talk11.setSpeakerIds(List.of(1L));
+            talk11.setMaterialLinks(List.of("materialLink0"));
+            talk11.setVideoLinks(List.of("videoLink11"));
+
+            Talk talk12 = new Talk();
+            talk12.setId(0);
+            talk12.setName(List.of(new LocaleItem("en", "name0")));
+            talk12.setShortDescription(List.of(new LocaleItem("en", "shortDescription0")));
+            talk12.setLongDescription(List.of(new LocaleItem("en", "longDescription0")));
+            talk12.setTalkDay(1L);
+            talk12.setTrackTime(LocalTime.of(10, 0));
+            talk12.setTrack(1L);
+            talk12.setLanguage("en");
+            talk12.setPresentationLinks(List.of("presentationLink0"));
+            talk12.setMaterialLinks(List.of("materialLink0"));
+            talk12.setVideoLinks(List.of("videoLink0"));
+            talk12.setSpeakerIds(List.of(1L));
 
             return Stream.of(
                     arguments(talk0, talk0, false),
@@ -2467,7 +2500,8 @@ class ContentfulUtilsTest {
                     arguments(talk0, talk8, true),
                     arguments(talk0, talk9, true),
                     arguments(talk0, talk10, true),
-                    arguments(talk0, talk11, true)
+                    arguments(talk0, talk11, true),
+                    arguments(talk0, talk12, true)
             );
         }
 

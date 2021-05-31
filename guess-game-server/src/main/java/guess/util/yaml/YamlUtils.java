@@ -385,7 +385,7 @@ public class YamlUtils {
                                     "timeZone", "talkIds")),
                     new PropertyMatcher(Talk.class,
                             List.of("id", "name", "shortDescription", "longDescription", "talkDay", "trackTime", "track",
-                                    "language", "presentationLinks", "videoLinks", "speakerIds")),
+                                    "language", "presentationLinks", "materialLinks", "videoLinks", "speakerIds")),
                     new PropertyMatcher(Company.class,
                             List.of("id", "name")),
                     new PropertyMatcher(Speaker.class,
