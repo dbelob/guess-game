@@ -19346,14 +19346,16 @@ speakers:
     name:
       - {language: en, text: "Ivan Zemlyansky"}
       - {language: ru, text: "Иван Землянский"}
-    companyIds: [318]
+    companyIds: [762]
     bio:
       - {language: en, text: "Ivan has over 8 years of experience working with Java and started as a C++ developer. For the\
-            \ last 5 years he has been working with in the field of financial markets, previously worked for Otkritie Broker\
-            \ where he was involved in the development of a risk assessment system."}
-      - {language: ru, text: "Иван имеет более чем 8-летний опыт работы с Java, начинал как C++ разработчик. Последние 5 л\
-            ет он работает в сфере финансовых рынков, ранее работал в «Открытие Брокер», где занимался разработкой системы\
-            \ оценки рисков. Сейчас Иван возглавляет инфраструктурную команду в одном из самых крупных хедж-фондов США."}
+            \ last 6 years he has been working with in the field of financial markets, previously worked for Otkritie Broker\
+            \ where he was involved in the development of a risk assessment system. Later he led the infrastructure team at\
+            \ one of the largest hedge funds in the US. Now Ivan is trying himself in a new area of Real-time bidding."}
+      - {language: ru, text: "Иван имеет более чем 8-летний опыт работы с Java, начинал как C++ разработчик. Последние 6 л\
+            ет он работал в сфере финансовых рынков, ранее работал в «Открытие Брокер», где занимался разработкой системы\
+            \ оценки рисков, а позже возглавлял инфраструктурную команду в одном из самых крупных хедж-фондов США. Сейчас\
+            \ Иван пробует себя в новой для себя области Real-time bidding'a."}
   - id: 1407
     photoFileName: 1407.jpg
     photoUpdatedAt: 2020-11-23T11:37:54.207Z[UTC]
