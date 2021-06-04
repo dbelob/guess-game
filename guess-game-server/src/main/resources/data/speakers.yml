@@ -10333,24 +10333,18 @@ speakers:
     gitHub: LeaVerou
   - id: 723
     photoFileName: 0723.jpg
-    photoUpdatedAt: 2018-02-21T10:02:01.939Z[UTC]
+    photoUpdatedAt: 2021-04-12T09:35:03.673Z[UTC]
     name:
       - {language: en, text: "Andrey Melikhov"}
       - {language: ru, text: "Андрей Мелихов"}
-    companyIds: [692]
+    companyIds: [730]
     bio:
-      - language: en
-        text: "Before becoming a frontend developer, Andrey was engaged in the development of geophysical equipment. He was\
-            \ writing assembly code for the microcontrollers and was solving the problem of data transfer by kilometer noisy\
-            \ cable. \nThen he got a bit bored in the frontend, but recently discovered a lot of poorly researched (at least\
-            \ in Runet) low-level areas associated with the issues of generating machine code from JavaScript.\nHe continues\
-            \ to dig deeper and shares the results with the community."
-      - language: ru
-        text: "Прежде чем стать фронтендером, Андрей несколько лет отдал разработке геофизического оборудования. Писал код\
-            \ для микроконтроллеров на ассемблере и решал задачи передачи данных по километровому шумному кабелю. Во фронт\
-            енде немного заскучал, но недавно обнаружил целый пласт слабо исследованных (по крайней мере, в рунете) низкоу\
-            ровневых областей, связанных с вопросами генерации машинного кода из JavaScript.\nПродолжает копать вглубь и д\
-            елиться с сообществом."
+      - {language: en, text: "Mythical full-stack, host of the Devshakhta channel on Youtube, co-host of the Web Standards\
+            \ podcast. Good architecture evangelist, an expert on Node.js and other JavaScript runtimes. Apologist for DevOps\
+            \ practices. For all the good and against all the bad. Likes to work for an idea. Idea is also good."}
+      - {language: ru, text: "Мифический фуллстек, ведущий канала «Девшахта» на Youtube, соведущий подкаста «Веб-стандарты\
+            ». Евангелист хорошей архитектуры, знаток Node.js и других JavaScript-рантаймов. Апологет DevOps-практик. За в\
+            сё хорошее и против всего плохого. Любитель работать за идею. Idea — тоже хорошо, даже отлично."}
     twitter: amel_true
     gitHub: amel-true
     habr: amel-true
