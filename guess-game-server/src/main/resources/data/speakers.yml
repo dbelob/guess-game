@@ -8683,15 +8683,24 @@ speakers:
             ния различных средств автоматизации тестирования. \n\nС июля 2017 года работает в компании Waves."
   - id: 607
     photoFileName: 0607.jpg
-    photoUpdatedAt: 2020-06-12T08:41:22.901Z[UTC]
+    photoUpdatedAt: 2021-02-24T07:48:36.109Z[UTC]
     name:
       - {language: en, text: "Igor Balagurov"}
       - {language: ru, text: "Игорь Балагуров"}
     companyIds: [620]
     bio:
-      - {language: en, text: "Игорь работает во ВКонтакте, в команде инфраструктуры. Занимается автоматизаций тестирования\
-            \ и не только. Предпочитает писать тесты на Python, борется с рутиной, ищет заковыристые баги и готов поделить\
-            ся опытом написания API автотестов для VK Pay, где чуть больше чем за год появилось 2000 тестов."}
+      - language: en
+        text: "Igor works at VKontakte as a Head of the Testing team which helps to ensure the quality of payment services\
+            \ and internal development: UI / API autotests with a pinch of security checks, load testing, and automation of\
+            \ the entire routine (API fuzzing, linters, autoformatters, code coverage, etc.).\n\nPrefers Python for automation,\
+            \ and head for everything that is not automated.\nBefore VKontakte, he worked in several product companies and\
+            \ startups, where he was engaged in autotests of mobile phones, web, API, and services with Machine Learning."
+      - language: ru
+        text: "Игорь работает во ВКонтакте в роли руководителя команды тестирования, которая помогает обеспечивать качеств\
+            о платёжных сервисов и внутренней разработки: UI\\API-автотесты со щепоткой security проверок, нагрузочное тес\
+            тирование и автоматизация всей рутины (фаззинг API, линтеры, автоформаттеры, покрытие кода и т.д.).\n\nПредпоч\
+            итает для автоматизации Python, а для всего, что не автоматизировано — голову.\nДо ВКонтакте работал в несколь\
+            ких продуктовых компаниях и стартапах, где занимался автотестами мобилок, веба, API и сервисов с Machine Learning."
   - id: 608
     photoFileName: 0608.jpg
     name:
@@ -10324,24 +10333,18 @@ speakers:
     gitHub: LeaVerou
   - id: 723
     photoFileName: 0723.jpg
-    photoUpdatedAt: 2018-02-21T10:02:01.939Z[UTC]
+    photoUpdatedAt: 2021-04-12T09:35:03.673Z[UTC]
     name:
       - {language: en, text: "Andrey Melikhov"}
       - {language: ru, text: "Андрей Мелихов"}
-    companyIds: [692]
+    companyIds: [730]
     bio:
-      - language: en
-        text: "Before becoming a frontend developer, Andrey was engaged in the development of geophysical equipment. He was\
-            \ writing assembly code for the microcontrollers and was solving the problem of data transfer by kilometer noisy\
-            \ cable. \nThen he got a bit bored in the frontend, but recently discovered a lot of poorly researched (at least\
-            \ in Runet) low-level areas associated with the issues of generating machine code from JavaScript.\nHe continues\
-            \ to dig deeper and shares the results with the community."
-      - language: ru
-        text: "Прежде чем стать фронтендером, Андрей несколько лет отдал разработке геофизического оборудования. Писал код\
-            \ для микроконтроллеров на ассемблере и решал задачи передачи данных по километровому шумному кабелю. Во фронт\
-            енде немного заскучал, но недавно обнаружил целый пласт слабо исследованных (по крайней мере, в рунете) низкоу\
-            ровневых областей, связанных с вопросами генерации машинного кода из JavaScript.\nПродолжает копать вглубь и д\
-            елиться с сообществом."
+      - {language: en, text: "Mythical full-stack, host of the Devshakhta channel on Youtube, co-host of the Web Standards\
+            \ podcast. Good architecture evangelist, an expert on Node.js and other JavaScript runtimes. Apologist for DevOps\
+            \ practices. For all the good and against all the bad. Likes to work for an idea. Idea is also good."}
+      - {language: ru, text: "Мифический фуллстек, ведущий канала «Девшахта» на Youtube, соведущий подкаста «Веб-стандарты\
+            ». Евангелист хорошей архитектуры, знаток Node.js и других JavaScript-рантаймов. Апологет DevOps-практик. За в\
+            сё хорошее и против всего плохого. Любитель работать за идею. Idea — тоже хорошо, даже отлично."}
     twitter: amel_true
     gitHub: amel-true
     habr: amel-true
@@ -11138,12 +11141,12 @@ speakers:
     name:
       - {language: en, text: "Kirill Rozov"}
       - {language: ru, text: "Кирилл Розов"}
-    companyIds: [443]
+    companyIds: [761]
     bio:
-      - {language: en, text: "Mobile lead at Replika.ai. Author of \"Android Broadcast\" Telegram channel and YouTube channel.\
-            \ Likes to share knowledge and make the life of developers simpler."}
-      - {language: ru, text: "Mobile Lead в Replika.ai. Автор Telegram-канала «Android Broadcast» и одноименного YouTube-к\
-            анала. Любит делиться знаниями и делать жизнь других разработчиков проще."}
+      - {language: en, text: "Author of [Android Broadcast](https://androidbroadcast.dev/). Likes to share knowledge and make\
+            \ the life of developers simpler. Big fan of Kotlin and Coroutine."}
+      - {language: ru, text: "Создатель и автор проекта [Android Broadcast](https://androidbroadcast.dev/). Распространяет\
+            \ лучшие практики среди Android-разработчиков фуллтайм и всё это бесплатно. Большой фанат Kotlin и Coroutine."}
     twitter: kirill_rozov
   - id: 785
     photoFileName: 0785.jpg
@@ -18894,14 +18897,14 @@ speakers:
     bio:
       - language: en
         text: "Alexander went from his own startups and \"help a friend\" projects to large corporations. Now he's building\
-            \ an iOS mobile application at ManyChat. Helps businesses communicate with clients.\r\n\r\nLoves Swift, but sometimes\
-            \ cheats on it with Kotlin. Adores product metrics and features. Thinks that good code is minimalistic and solves\
-            \ user pain. Supporter of the OOP approach."
+            \ an iOS mobile application at ManyChat. Helps businesses communicate with clients.\n\nLoves Swift, but sometimes\
+            \ cheats on it with Kotlin. Adores product metrics and features. Good code is minimalistic and solves user pain.\
+            \ Supporter of the OOP approach."
       - language: ru
         text: "Прошел путь от собственных стартапов и проектов «помоги другу» до крупных корпораций. Сейчас строит мобильн\
-            ое приложение iOS в компании ManyChat. Помогает бизнесам вести осмысленные коммуникации с клиентами.\r\n\r\nОб\
-            ожает Swift, но иногда изменяет ему с Kotlin (когда Андроид горит). Тащится по продуктовым метрикам и фичам. С\
-            читает, что хороший код минималистичен и решает боль пользователей. Сторонник ООП-подхода."
+            ое приложение iOS в компании ManyChat. Помогает бизнесам вести осмысленные коммуникации с клиентами.\n\nОбожае\
+            т Swift, но иногда изменяет ему с Kotlin (когда Андроид горит). Тащится по продуктовым метрикам и фичам. Хорош\
+            ий код минималистичен и решает боль пользователей. Сторонник ООП-подхода."
     twitter: aleksmobiledev
   - id: 1377
     photoFileName: 1377.jpg
@@ -19343,14 +19346,16 @@ speakers:
     name:
       - {language: en, text: "Ivan Zemlyansky"}
       - {language: ru, text: "Иван Землянский"}
-    companyIds: [318]
+    companyIds: [762]
     bio:
       - {language: en, text: "Ivan has over 8 years of experience working with Java and started as a C++ developer. For the\
-            \ last 5 years he has been working with in the field of financial markets, previously worked for Otkritie Broker\
-            \ where he was involved in the development of a risk assessment system."}
-      - {language: ru, text: "Иван имеет более чем 8-летний опыт работы с Java, начинал как C++ разработчик. Последние 5 л\
-            ет он работает в сфере финансовых рынков, ранее работал в «Открытие Брокер», где занимался разработкой системы\
-            \ оценки рисков. Сейчас Иван возглавляет инфраструктурную команду в одном из самых крупных хедж-фондов США."}
+            \ last 6 years he has been working with in the field of financial markets, previously worked for Otkritie Broker\
+            \ where he was involved in the development of a risk assessment system. Later he led the infrastructure team at\
+            \ one of the largest hedge funds in the US. Now Ivan is trying himself in a new area of Real-time bidding."}
+      - {language: ru, text: "Иван имеет более чем 8-летний опыт работы с Java, начинал как C++ разработчик. Последние 6 л\
+            ет он работал в сфере финансовых рынков, ранее работал в «Открытие Брокер», где занимался разработкой системы\
+            \ оценки рисков, а позже возглавлял инфраструктурную команду в одном из самых крупных хедж-фондов США. Сейчас\
+            \ Иван пробует себя в новой для себя области Real-time bidding'a."}
   - id: 1407
     photoFileName: 1407.jpg
     photoUpdatedAt: 2020-11-23T11:37:54.207Z[UTC]
@@ -23056,9 +23061,8 @@ speakers:
       - {language: en, text: "Markus Kuppe"}
     companyIds: [328]
     bio:
-      - {language: en, text: "Markus Kuppe is a Principal Research Software Development Engineer at Microsoft Research in\
-            \ Redmond, WA. As an engineer, his focus is on making spec-driven development (with TLA+) more popular among fellow\
-            \ engineers."}
+      - {language: en, text: "Markus Kuppe is an engineer at Microsoft Research. His focus is making spec-driven development\
+            \ (with TLA+) more popular among fellow engineers."}
     twitter: lemmster
     gitHub: lemmy
   - id: 1664
@@ -23094,7 +23098,10 @@ speakers:
       - {language: en, text: "Andrey Fomichev"}
     companyIds: [689]
     bio:
-      - {language: en, text: "Biography will be added soon."}
+      - {language: en, text: "Andrey Fomichev is the Head of the Data Storage and Processing Department at Yandex. He works\
+            \ at Yandex starting from 2008, was engaged in the development of Web Search Crawler, Yandex Infrastructure, and\
+            \ Yandex Cloud. Topics of interest include databases and distributed systems. Andrey holds a Ph.D. degree in computer\
+            \ science from Moscow State University."}
   - id: 1667
     photoFileName: 1667.jpg
     photoUpdatedAt: 2021-05-11T07:58:39.078Z[UTC]
@@ -23157,7 +23164,7 @@ speakers:
     gitHub: nvanbenschoten
   - id: 1672
     photoFileName: 1672.jpg
-    photoUpdatedAt: 2021-05-25T07:51:10.116Z[UTC]
+    photoUpdatedAt: 2021-06-02T07:22:38.446Z[UTC]
     name:
       - {language: en, text: "Alex Gallego"}
     companyIds: [760]

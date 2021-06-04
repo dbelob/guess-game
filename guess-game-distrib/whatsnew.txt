@@ -1,5 +1,9 @@
 Guess Game
 
+Version 2.3.0 - June 4, 2021
+* New attributes of speakers and talks.
+* New types of guessing in the game.
+
 Version 2.2.0 - March 26, 2021
 * Adding event organizers.
 * New event types.
