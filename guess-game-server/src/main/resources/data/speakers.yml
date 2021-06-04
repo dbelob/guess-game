@@ -8683,15 +8683,24 @@ speakers:
             ния различных средств автоматизации тестирования. \n\nС июля 2017 года работает в компании Waves."
   - id: 607
     photoFileName: 0607.jpg
-    photoUpdatedAt: 2020-06-12T08:41:22.901Z[UTC]
+    photoUpdatedAt: 2021-02-24T07:48:36.109Z[UTC]
     name:
       - {language: en, text: "Igor Balagurov"}
       - {language: ru, text: "Игорь Балагуров"}
     companyIds: [620]
     bio:
-      - {language: en, text: "Игорь работает во ВКонтакте, в команде инфраструктуры. Занимается автоматизаций тестирования\
-            \ и не только. Предпочитает писать тесты на Python, борется с рутиной, ищет заковыристые баги и готов поделить\
-            ся опытом написания API автотестов для VK Pay, где чуть больше чем за год появилось 2000 тестов."}
+      - language: en
+        text: "Igor works at VKontakte as a Head of the Testing team which helps to ensure the quality of payment services\
+            \ and internal development: UI / API autotests with a pinch of security checks, load testing, and automation of\
+            \ the entire routine (API fuzzing, linters, autoformatters, code coverage, etc.).\n\nPrefers Python for automation,\
+            \ and head for everything that is not automated.\nBefore VKontakte, he worked in several product companies and\
+            \ startups, where he was engaged in autotests of mobile phones, web, API, and services with Machine Learning."
+      - language: ru
+        text: "Игорь работает во ВКонтакте в роли руководителя команды тестирования, которая помогает обеспечивать качеств\
+            о платёжных сервисов и внутренней разработки: UI\\API-автотесты со щепоткой security проверок, нагрузочное тес\
+            тирование и автоматизация всей рутины (фаззинг API, линтеры, автоформаттеры, покрытие кода и т.д.).\n\nПредпоч\
+            итает для автоматизации Python, а для всего, что не автоматизировано — голову.\nДо ВКонтакте работал в несколь\
+            ких продуктовых компаниях и стартапах, где занимался автотестами мобилок, веба, API и сервисов с Machine Learning."
   - id: 608
     photoFileName: 0608.jpg
     name:
