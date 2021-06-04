@@ -11141,12 +11141,12 @@ speakers:
     name:
       - {language: en, text: "Kirill Rozov"}
       - {language: ru, text: "Кирилл Розов"}
-    companyIds: [443]
+    companyIds: [761]
     bio:
-      - {language: en, text: "Mobile lead at Replika.ai. Author of \"Android Broadcast\" Telegram channel and YouTube channel.\
-            \ Likes to share knowledge and make the life of developers simpler."}
-      - {language: ru, text: "Mobile Lead в Replika.ai. Автор Telegram-канала «Android Broadcast» и одноименного YouTube-к\
-            анала. Любит делиться знаниями и делать жизнь других разработчиков проще."}
+      - {language: en, text: "Author of [Android Broadcast](https://androidbroadcast.dev/). Likes to share knowledge and make\
+            \ the life of developers simpler. Big fan of Kotlin and Coroutine."}
+      - {language: ru, text: "Создатель и автор проекта [Android Broadcast](https://androidbroadcast.dev/). Распространяет\
+            \ лучшие практики среди Android-разработчиков фуллтайм и всё это бесплатно. Большой фанат Kotlin и Coroutine."}
     twitter: kirill_rozov
   - id: 785
     photoFileName: 0785.jpg
@@ -18897,14 +18897,14 @@ speakers:
     bio:
       - language: en
         text: "Alexander went from his own startups and \"help a friend\" projects to large corporations. Now he's building\
-            \ an iOS mobile application at ManyChat. Helps businesses communicate with clients.\r\n\r\nLoves Swift, but sometimes\
-            \ cheats on it with Kotlin. Adores product metrics and features. Thinks that good code is minimalistic and solves\
-            \ user pain. Supporter of the OOP approach."
+            \ an iOS mobile application at ManyChat. Helps businesses communicate with clients.\n\nLoves Swift, but sometimes\
+            \ cheats on it with Kotlin. Adores product metrics and features. Good code is minimalistic and solves user pain.\
+            \ Supporter of the OOP approach."
       - language: ru
         text: "Прошел путь от собственных стартапов и проектов «помоги другу» до крупных корпораций. Сейчас строит мобильн\
-            ое приложение iOS в компании ManyChat. Помогает бизнесам вести осмысленные коммуникации с клиентами.\r\n\r\nОб\
-            ожает Swift, но иногда изменяет ему с Kotlin (когда Андроид горит). Тащится по продуктовым метрикам и фичам. С\
-            читает, что хороший код минималистичен и решает боль пользователей. Сторонник ООП-подхода."
+            ое приложение iOS в компании ManyChat. Помогает бизнесам вести осмысленные коммуникации с клиентами.\n\nОбожае\
+            т Swift, но иногда изменяет ему с Kotlin (когда Андроид горит). Тащится по продуктовым метрикам и фичам. Хорош\
+            ий код минималистичен и решает боль пользователей. Сторонник ООП-подхода."
     twitter: aleksmobiledev
   - id: 1377
     photoFileName: 1377.jpg
