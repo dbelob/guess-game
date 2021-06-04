@@ -619,8 +619,7 @@ events:
       - {language: en, text: "https://hydraconf.com/"}
     youtubeLink: https://live.jugru.org/events/hydra/
     placeId: 24
-    talkIds: [3124, 3125, 3132, 3141, 3142, 3133, 3129, 3134, 3143, 3127, 3135, 3144, 3130, 3136, 3145, 3146, 3137, 3147,
-              3138, 3148, 3140, 3131]
+    talkIds: [3124, 3125, 3132, 3141, 3133, 3129, 3134, 3143, 3127, 3135, 3130, 3136, 3137, 3138, 3148, 3140, 3131]
   # JBreak
   - eventTypeId: 6
     name:

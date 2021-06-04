@@ -23061,9 +23061,8 @@ speakers:
       - {language: en, text: "Markus Kuppe"}
     companyIds: [328]
     bio:
-      - {language: en, text: "Markus Kuppe is a Principal Research Software Development Engineer at Microsoft Research in\
-            \ Redmond, WA. As an engineer, his focus is on making spec-driven development (with TLA+) more popular among fellow\
-            \ engineers."}
+      - {language: en, text: "Markus Kuppe is an engineer at Microsoft Research. His focus is making spec-driven development\
+            \ (with TLA+) more popular among fellow engineers."}
     twitter: lemmster
     gitHub: lemmy
   - id: 1664
@@ -23099,7 +23098,10 @@ speakers:
       - {language: en, text: "Andrey Fomichev"}
     companyIds: [689]
     bio:
-      - {language: en, text: "Biography will be added soon."}
+      - {language: en, text: "Andrey Fomichev is the Head of the Data Storage and Processing Department at Yandex. He works\
+            \ at Yandex starting from 2008, was engaged in the development of Web Search Crawler, Yandex Infrastructure, and\
+            \ Yandex Cloud. Topics of interest include databases and distributed systems. Andrey holds a Ph.D. degree in computer\
+            \ science from Moscow State University."}
   - id: 1667
     photoFileName: 1667.jpg
     photoUpdatedAt: 2021-05-11T07:58:39.078Z[UTC]
@@ -23162,7 +23164,7 @@ speakers:
     gitHub: nvanbenschoten
   - id: 1672
     photoFileName: 1672.jpg
-    photoUpdatedAt: 2021-05-25T07:51:10.116Z[UTC]
+    photoUpdatedAt: 2021-06-02T07:22:38.446Z[UTC]
     name:
       - {language: en, text: "Alex Gallego"}
     companyIds: [760]
