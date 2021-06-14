@@ -1696,6 +1696,13 @@ public class ConferenceDataLoader {
 //                        Collections.emptyMap(),
 //                        Set.of("Игра со знатоками в формате интеллектуального казино", "Перерыв трансляции", "DotNext 2021 Virtual Afterparty"),
 //                        false));
-//        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2021, 6, 15), "2021hydra");
+//        loadTalksSpeakersEvent(Conference.HYDRA, LocalDate.of(2021, 6, 15), "2021hydra",
+//                new LoadSettings(
+//                        Collections.emptyMap(),
+//                        Set.of("Day 1 closing", "Day 2 opening", "Break", "Day 2 closing", "Day 3 opening",
+//                                "Day 3 closing", "Day 4 opening"),
+//                        false
+//                )
+//        );
     }
 }
