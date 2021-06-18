@@ -2690,6 +2690,7 @@ speakers:
             е 8й год. Поэтому большинство примеров будут показываться в живую и на самом себе. А также, Максим умеет объяс\
             нять сложные вещи простыми словами. Не будет слайдов с кучей печатного текста — только карандашные человечки."
     twitter: cartmendum
+    habr: Cartmendum
   - id: 165
     photoFileName: 0165.jpg
     name:
@@ -7850,6 +7851,9 @@ speakers:
             роводит тренинги для тестировщиков, участвует в организации профессиональных конференций, обеспечивает поддерж\
             ание и развитие крупнейшего русскоязычного сайта о тестировании Software-Testing.Ru. \n\nАвтор и редактор сайт\
             а selenium2.ru, один из разработчиков инструмента Selenium WebDriver."
+    twitter: barancev
+    gitHub: barancev
+    habr: barancev
   - id: 548
     photoFileName: 0548.jpg
     photoUpdatedAt: 2020-10-01T12:09:39.494Z[UTC]
@@ -16795,6 +16799,7 @@ speakers:
             \ he works with frontend. Before JetBrains, he worked at 1C on a web client for the platform at the same time."}
       - {language: ru, text: "Закончил МЭИ по специальности прикладная математика. В JetBrains в основном занимается задач\
             ами frontend. До JetBrains работал в том числе в компании 1С над веб-клиентом для одноименной платформы."}
+    gitHub: Skolotsky
   - id: 1214
     photoFileName: 1214.jpg
     photoUpdatedAt: 2020-05-14T12:35:58.399Z[UTC]
@@ -19847,6 +19852,7 @@ speakers:
       - {language: en, text: "Dan works on React."}
       - {language: ru, text: "Дэн работает над React."}
     twitter: dan_abramov
+    gitHub: gaearon
   - id: 1446
     photoFileName: 1446.jpg
     photoUpdatedAt: 2020-11-03T13:55:23.918Z[UTC]
