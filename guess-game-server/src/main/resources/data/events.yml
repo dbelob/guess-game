@@ -2332,6 +2332,14 @@ events:
     endDate: "2021-01-28"
     placeId: 24
     talkIds: [2882, 2883]
+  - eventTypeId: 15
+    name:
+      - {language: en, text: "JUGNsk Meetup #18"}
+      - {language: ru, text: "Митап #18 JUGNsk"}
+    startDate: "2021-06-02"
+    endDate: "2021-06-02"
+    placeId: 12
+    talkIds: [3155, 3156]
   # SnowOne
   - eventTypeId: 16
     name:

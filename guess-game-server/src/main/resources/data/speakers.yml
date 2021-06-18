@@ -19326,6 +19326,8 @@ speakers:
       - {language: ru, text: "Закончил кафедру КТ в ИТМО. Успел немного поработать в Яндексе. Последние три года работает\
             \ в JetBrains над поддержкой инструментов профилирования в IntelliJ IDEA."}
     twitter: Kirill_Tim_
+    gitHub: KirillTim
+    habr: KirillTim
   - id: 1405
     photoFileName: 1405.jpg
     photoUpdatedAt: 2020-10-30T09:05:52.172Z[UTC]
@@ -23212,6 +23214,7 @@ speakers:
     photoUpdatedAt: 2021-06-14T18:56:16.600Z[UTC]
     name:
       - {language: en, text: "Andrey Gura"}
+      - {language: ru, text: "Андрей Гура"}
     companyIds: [224]
     bio:
       - language: en
@@ -23241,3 +23244,17 @@ speakers:
             \ and modernization."
     twitter: vkulichenko
     gitHub: vkulichenko
+  - id: 1677
+    photoFileName: 1677.jpg
+    photoUpdatedAt: 2021-06-02T00:00:00.000Z[UTC]
+    name:
+      - {language: en, text: "Mikhail Papin"}
+      - {language: ru, text: "Михаил Папин"}
+    companyIds: [686]
+  - id: 1678
+    photoFileName: 1678.jpg
+    photoUpdatedAt: 2021-06-02T00:00:00.000Z[UTC]
+    name:
+      - {language: en, text: "Ruslan Zainutdinov"}
+      - {language: ru, text: "Руслан Зайнутдинов"}
+    companyIds: [686]
