@@ -23201,3 +23201,37 @@ speakers:
             \ like failure detection, programmable networking, big data, and remote memory. He received his doctorate from\
             \ TU-Berlin in 2016."}
     gitHub: lalithsuresh
+  - id: 1675
+    photoFileName: 1675.jpg
+    photoUpdatedAt: 2021-06-14T18:56:16.600Z[UTC]
+    name:
+      - {language: en, text: "Andrey Gura"}
+    companyIds: [224]
+    bio:
+      - language: en
+        text: "Andrey Gura is one of the engineers who have been working on the Apache Ignite project since the early days\
+            \ and has hands-on experience both with product development and helping customers to adopt Apache Ignite and GridGain\
+            \ according to their needs.\nBeing a member of the architecture group at GridGain, Andrey works in close contact\
+            \ with all development teams and drives technical decisions related to foundational aspects of the Apache Ignite\
+            \ project, such as protocols, storage, performance, and usability."
+    twitter: a_gura
+    gitHub: agura
+    habr: A_Gura
+  - id: 1676
+    photoFileName: 1676.jpg
+    photoUpdatedAt: 2021-06-14T19:00:33.778Z[UTC]
+    name:
+      - {language: en, text: "Valentin Kulichenko"}
+    companyIds: [224]
+    bio:
+      - language: en
+        text: "Valentin Kulichenko is one of the original committers and PMC members of the Apache Ignite project — a distributed\
+            \ in-memory computing platform that enables scalability and high performance for thousands of applications all\
+            \ over the world. Valentin contributes to various aspects of the development, including code, documentation, and\
+            \ architectural discussions.\nDuring the last 10+ years at GridGain, Valentin has been acting as one of the lead\
+            \ architects of the GridGain platform, which is based on Apache Ignite. He also helped multiple customers of GridGain\
+            \ to adapt the platform to their needs. Currently, as a Director of Product Management, Valentin leads the effort\
+            \ to transition to a new generation of GridGain products, with the main focus on improved usability, faster adoption,\
+            \ and modernization."
+    twitter: vkulichenko
+    gitHub: vkulichenko

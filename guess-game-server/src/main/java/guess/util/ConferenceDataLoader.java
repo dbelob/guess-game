@@ -1700,7 +1700,7 @@ public class ConferenceDataLoader {
 //                new LoadSettings(
 //                        Collections.emptyMap(),
 //                        Set.of("Day 1 closing", "Day 2 opening", "Break", "Day 2 closing", "Day 3 opening",
-//                                "Day 3 closing", "Day 4 opening"),
+//                                "Day 3 closing", "Day 4 opening", "Hydra 2021 Virtual Afterparty"),
 //                        false
 //                )
 //        );
