@@ -16,6 +16,7 @@ updates:
       - dependency-name: "primeicons"
       - dependency-name: "ngx-markdown"
       - dependency-name: "@fortawesome/angular-fontawesome"
+      - dependency-name: "bootstrap"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
