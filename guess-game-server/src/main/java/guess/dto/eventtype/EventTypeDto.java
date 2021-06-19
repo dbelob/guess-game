@@ -18,15 +18,17 @@ public class EventTypeDto extends EventTypeBriefDto {
         private final String facebookLink;
         private final String youtubeLink;
         private final String telegramLink;
+        private final String speakerdeckLink;
 
         public EventTypeDtoLinks(String siteLink, String vkLink, String twitterLink, String facebookLink, String youtubeLink,
-                                 String telegramLink) {
+                                 String telegramLink, String speakerdeckLink) {
             this.siteLink = siteLink;
             this.vkLink = vkLink;
             this.twitterLink = twitterLink;
             this.facebookLink = facebookLink;
             this.youtubeLink = youtubeLink;
             this.telegramLink = telegramLink;
+            this.speakerdeckLink = speakerdeckLink;
         }
     }
 
@@ -69,6 +71,10 @@ public class EventTypeDto extends EventTypeBriefDto {
         return links.telegramLink;
     }
 
+    public String getSpeakerdeckLink() {
+        return links.speakerdeckLink;
+    }
+
     public static EventTypeDto convertToDto(EventType eventType, Language language) {
         var eventTypeSuperBriefDto = convertToSuperBriefDto(eventType, language);
         var description = LocalizationUtils.getString(eventType.getLongDescription(), language);
@@ -87,7 +93,8 @@ public class EventTypeDto extends EventTypeBriefDto {
                         eventType.getTwitterLink(),
                         eventType.getFacebookLink(),
                         eventType.getYoutubeLink(),
-                        eventType.getTelegramLink()
+                        eventType.getTelegramLink(),
+                        eventType.getSpeakerdeckLink()
                 ));
     }
 

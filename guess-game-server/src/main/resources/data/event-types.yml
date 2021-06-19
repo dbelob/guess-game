@@ -458,6 +458,7 @@ eventTypes:
     vkLink: https://vk.com/jugmsk
     twitterLink: https://twitter.com/mskjug
     youtubeLink: https://www.youtube.com/playlist?list=PLojTLDAO4jjIRjDPIQjc4iG7CfR6m8pfc
+    speakerdeckLink: https://speakerdeck.com/jugmsk
     timeZone: Europe/Moscow
   - id: 14
     logoFileName: jugru.jpg
@@ -491,6 +492,7 @@ eventTypes:
     twitterLink: https://twitter.com/jugnsk
     youtubeLink: https://www.youtube.com/c/JUGNsk
     telegramLink: https://t.me/jugnsk
+    speakerdeckLink: https://speakerdeck.com/jugnsk
     timeZone: Asia/Novosibirsk
   - id: 16
     conference: SNOW_ONE

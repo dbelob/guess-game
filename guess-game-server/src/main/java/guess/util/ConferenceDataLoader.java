@@ -137,6 +137,7 @@ public class ConferenceDataLoader {
                         et.setShortDescription(resourceEventType.getShortDescription());
                         et.setLogoFileName(resourceEventType.getLogoFileName());
 
+                        fillStringAttributeValue(resourceEventType::getSpeakerdeckLink, et::getSpeakerdeckLink, et::setSpeakerdeckLink);
                         fillEventTypeTimeZone(et, resourceEventType);
 
                         if (ContentfulUtils.needUpdate(resourceEventType, et)) {
@@ -669,9 +670,9 @@ public class ConferenceDataLoader {
                 String resourcePhotoFileName = resourceSpeaker.getPhotoFileName();
                 speaker.setPhotoFileName(resourcePhotoFileName);
 
-                fillSpeakerSocial(resourceSpeaker::getTwitter, speaker::getTwitter, speaker::setTwitter);
-                fillSpeakerSocial(resourceSpeaker::getGitHub, speaker::getGitHub, speaker::setGitHub);
-                fillSpeakerSocial(resourceSpeaker::getHabr, speaker::getHabr, speaker::setHabr);
+                fillStringAttributeValue(resourceSpeaker::getTwitter, speaker::getTwitter, speaker::setTwitter);
+                fillStringAttributeValue(resourceSpeaker::getGitHub, speaker::getGitHub, speaker::setGitHub);
+                fillStringAttributeValue(resourceSpeaker::getHabr, speaker::getHabr, speaker::setHabr);
                 fillSpeakerJavaChampion(speaker, resourceSpeaker);
                 fillSpeakerMvp(speaker, resourceSpeaker);
 
@@ -701,13 +702,13 @@ public class ConferenceDataLoader {
     }
 
     /**
-     * Fills speaker social.
+     * Fills string attribute value.
      *
      * @param resourceSupplier resource supplier
      * @param targetSupplier   target supplier
      * @param targetConsumer   target consumer
      */
-    static void fillSpeakerSocial(Supplier<String> resourceSupplier, Supplier<String> targetSupplier, Consumer<String> targetConsumer) {
+    static void fillStringAttributeValue(Supplier<String> resourceSupplier, Supplier<String> targetSupplier, Consumer<String> targetConsumer) {
         if ((resourceSupplier.get() != null) && !resourceSupplier.get().isEmpty() &&
                 ((targetSupplier.get() == null) || targetSupplier.get().isEmpty())) {
             targetConsumer.accept(resourceSupplier.get());

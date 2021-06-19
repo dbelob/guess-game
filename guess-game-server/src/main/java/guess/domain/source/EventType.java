@@ -17,14 +17,17 @@ public class EventType extends Descriptionable {
         private final String facebookLink;
         private final String youtubeLink;
         private final String telegramLink;
+        private final String speakerdeckLink;
 
-        public EventTypeLinks(List<LocaleItem> siteLink, String vkLink, String twitterLink, String facebookLink, String youtubeLink, String telegramLink) {
+        public EventTypeLinks(List<LocaleItem> siteLink, String vkLink, String twitterLink, String facebookLink, String youtubeLink,
+                              String telegramLink, String speakerdeckLink) {
             this.siteLink = siteLink;
             this.vkLink = vkLink;
             this.twitterLink = twitterLink;
             this.facebookLink = facebookLink;
             this.youtubeLink = youtubeLink;
             this.telegramLink = telegramLink;
+            this.speakerdeckLink = speakerdeckLink;
         }
     }
 
@@ -46,6 +49,7 @@ public class EventType extends Descriptionable {
     private String facebookLink;
     private String youtubeLink;
     private String telegramLink;
+    private String speakerdeckLink;
     private String logoFileName;
     private List<Event> events = new ArrayList<>();
     private boolean inactive;
@@ -70,6 +74,7 @@ public class EventType extends Descriptionable {
         this.facebookLink = links.facebookLink;
         this.youtubeLink = links.youtubeLink;
         this.telegramLink = links.telegramLink;
+        this.speakerdeckLink = links.speakerdeckLink;
         this.logoFileName = logoFileName;
         this.events = events;
         this.inactive = attributes.inactive;
@@ -135,6 +140,14 @@ public class EventType extends Descriptionable {
 
     public void setTelegramLink(String telegramLink) {
         this.telegramLink = telegramLink;
+    }
+
+    public String getSpeakerdeckLink() {
+        return speakerdeckLink;
+    }
+
+    public void setSpeakerdeckLink(String speakerdeckLink) {
+        this.speakerdeckLink = speakerdeckLink;
     }
 
     public String getLogoFileName() {
