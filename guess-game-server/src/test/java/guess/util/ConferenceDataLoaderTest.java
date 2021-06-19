@@ -1093,8 +1093,8 @@ class ConferenceDataLoaderTest {
 
     @Nested
     @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-    @DisplayName("fillSpeakerSocial method tests")
-    class FillSpeakerSocialTest {
+    @DisplayName("fillStringAttributeValue method tests")
+    class FillStringAttributeValueTest {
         private Speaker createSpeaker(String twitter) {
             Speaker speaker = new Speaker();
             speaker.setTwitter(twitter);
@@ -1175,9 +1175,9 @@ class ConferenceDataLoaderTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void fillSpeakerTwitter(Supplier<String> resourceSupplier, Supplier<String> targetSupplier, Consumer<String> targetConsumer,
+        void fillStringAttributeValue(Supplier<String> resourceSupplier, Supplier<String> targetSupplier, Consumer<String> targetConsumer,
                                 String expected) {
-            ConferenceDataLoader.fillSpeakerSocial(resourceSupplier, targetSupplier, targetConsumer);
+            ConferenceDataLoader.fillStringAttributeValue(resourceSupplier, targetSupplier, targetConsumer);
 
             assertEquals(expected, targetSupplier.get());
         }

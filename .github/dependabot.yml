@@ -15,6 +15,7 @@ updates:
       - dependency-name: "primeng"
       - dependency-name: "primeicons"
       - dependency-name: "ngx-markdown"
+      - dependency-name: "@fortawesome/angular-fontawesome"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

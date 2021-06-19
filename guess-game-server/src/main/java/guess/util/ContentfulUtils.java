@@ -291,7 +291,8 @@ public class ContentfulUtils {
                         (twLink != null) ? getFirstMapValue(twLink) : null,
                         (fbLink != null) ? getFirstMapValue(fbLink) : null,
                         (youtubeLink != null) ? getFirstMapValue(youtubeLink) : null,
-                        (telegramLink != null) ? getFirstMapValue(telegramLink) : null
+                        (telegramLink != null) ? getFirstMapValue(telegramLink) : null,
+                        null
                 ),
                 Collections.emptyList(),
                 new Organizer(JUG_RU_GROUP_ORGANIZER_ID, Collections.emptyList()),
@@ -1429,6 +1430,7 @@ public class ContentfulUtils {
                 equals(a.getFacebookLink(), b.getFacebookLink()) &&
                 equals(a.getYoutubeLink(), b.getYoutubeLink()) &&
                 equals(a.getTelegramLink(), b.getTelegramLink()) &&
+                equals(a.getSpeakerdeckLink(), b.getSpeakerdeckLink()) &&
                 equals(a.getOrganizer(), b.getOrganizer()) &&
                 equals(a.getTimeZone(), b.getTimeZone()));
     }

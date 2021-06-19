@@ -9,6 +9,7 @@ import {
   getSpeakersWithCompaniesString,
   getTalksWithSpeakersString
 } from '../../general/utility-functions';
+import { faSpeakerDeck } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-event',
@@ -28,6 +29,8 @@ export class EventComponent implements OnInit {
   public eventDetails: EventDetails = new EventDetails();
   public speakersMultiSortMeta: any[] = [];
   public talksMultiSortMeta: any[] = [];
+
+  public faSpeakerDeck = faSpeakerDeck;
 
   constructor(private eventService: EventService, public translateService: TranslateService, private activatedRoute: ActivatedRoute) {
     this.speakersMultiSortMeta.push({field: 'displayName', order: 1});
@@ -81,6 +84,12 @@ export class EventComponent implements OnInit {
 
   isDisplayPlaceVisible() {
     return ((this.eventDetails.event?.displayPlace) && (this.eventDetails.event.displayPlace.length > 0));
+  }
+
+  isEventLinksVisible() {
+    return this.eventDetails.event?.siteLink || this.eventDetails.event?.facebookLink || this.eventDetails.event?.vkLink ||
+      this.eventDetails.event?.twitterLink || this.eventDetails.event?.youtubeLink || this.eventDetails.event?.telegramLink ||
+      this.eventDetails.event?.speakerdeckLink;
   }
 
   isSpeakersListVisible() {

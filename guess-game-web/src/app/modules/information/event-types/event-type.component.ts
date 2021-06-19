@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { EventTypeDetails } from '../../../shared/models/event-type/event-type-details.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
+import { faSpeakerDeck } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-event-type',
@@ -15,6 +16,8 @@ export class EventTypeComponent implements OnInit {
   private id: number;
   public eventTypeDetails: EventTypeDetails = new EventTypeDetails();
   public multiSortMeta: any[] = [];
+
+  public faSpeakerDeck = faSpeakerDeck;
 
   constructor(private eventTypeService: EventTypeService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
@@ -43,6 +46,13 @@ export class EventTypeComponent implements OnInit {
 
   onLanguageChange() {
     this.loadEventType(this.id);
+  }
+
+  isEventTypeLinksVisible() {
+    return this.eventTypeDetails.eventType?.siteLink || this.eventTypeDetails.eventType?.facebookLink ||
+      this.eventTypeDetails.eventType?.vkLink || this.eventTypeDetails.eventType?.twitterLink ||
+      this.eventTypeDetails.eventType?.youtubeLink || this.eventTypeDetails.eventType?.telegramLink ||
+      this.eventTypeDetails.eventType?.speakerdeckLink;
   }
 
   isEventsListVisible() {

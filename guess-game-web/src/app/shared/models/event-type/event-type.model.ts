@@ -11,6 +11,7 @@ export class EventType {
     public facebookLink?: string,
     public youtubeLink?: string,
     public telegramLink?: string,
+    public speakerdeckLink?: string,
     public logoFileName?: string,
     public displayName?: string,
     public inactive?: boolean,

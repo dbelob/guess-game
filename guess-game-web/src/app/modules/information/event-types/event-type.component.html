@@ -20,7 +20,7 @@
            src="{{eventsImageDirectory}}/{{eventTypeDetails.eventType.logoFileName}}" alt="logo"/>
       <span class="h3 ml-2 align-middle">{{eventTypeDetails.eventType?.name}}</span>
 
-      <div *ngIf="eventTypeDetails.eventType?.siteLink || eventTypeDetails.eventType?.facebookLink || eventTypeDetails.eventType?.vkLink || eventTypeDetails.eventType?.twitterLink || eventTypeDetails.eventType?.youtubeLink || eventTypeDetails.eventType?.telegramLink" class="row mt-2">
+      <div *ngIf="isEventTypeLinksVisible()" class="row mt-2">
         <div *ngIf="eventTypeDetails.eventType?.siteLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.siteLink}}" class="text-dark">
             <i class="fa fa-globe"></i><span> {{'common.siteLinkText' | translate}}</span>
@@ -49,6 +49,11 @@
         <div *ngIf="eventTypeDetails.eventType?.telegramLink" class="col-auto">
           <a href="{{eventTypeDetails.eventType.telegramLink}}" class="text-dark">
             <i class="fa fa-telegram"></i><span> Telegram</span>
+          </a>
+        </div>
+        <div *ngIf="eventTypeDetails.eventType?.speakerdeckLink" class="col-auto">
+          <a href="{{eventTypeDetails.eventType.speakerdeckLink}}" class="text-dark">
+            <fa-icon [icon]="faSpeakerDeck"></fa-icon><span> SpeakerDeck</span>
           </a>
         </div>
       </div>
