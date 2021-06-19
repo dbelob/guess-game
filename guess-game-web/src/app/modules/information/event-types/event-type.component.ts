@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { EventTypeDetails } from '../../../shared/models/event-type/event-type-details.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
+import { faSpeakerDeck } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-event-type',
@@ -15,6 +16,8 @@ export class EventTypeComponent implements OnInit {
   private id: number;
   public eventTypeDetails: EventTypeDetails = new EventTypeDetails();
   public multiSortMeta: any[] = [];
+
+  public faSpeakerDeck = faSpeakerDeck;
 
   constructor(private eventTypeService: EventTypeService, public translateService: TranslateService,
               private activatedRoute: ActivatedRoute) {
