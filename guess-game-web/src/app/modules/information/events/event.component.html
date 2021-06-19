@@ -29,7 +29,7 @@
         <span *ngIf="!eventDetails.event?.mapCoordinates">{{eventDetails.event.displayPlace}}</span>
       </div>
 
-      <div *ngIf="eventDetails.event?.siteLink || eventDetails.event?.facebookLink || eventDetails.event?.vkLink || eventDetails.event?.twitterLink || eventDetails.event?.youtubeLink || eventDetails.event?.telegramLink" class="row mt-2">
+      <div *ngIf="isEventLinksVisible()" class="row mt-2">
         <div *ngIf="eventDetails.event?.siteLink" class="col-auto">
           <a href="{{eventDetails.event.siteLink}}" class="text-dark">
             <i class="fa fa-globe"></i><span> {{'common.siteLinkText' | translate}}</span>
@@ -58,6 +58,11 @@
         <div *ngIf="eventDetails.event?.telegramLink" class="col-auto">
           <a href="{{eventDetails.event.telegramLink}}" class="text-dark">
             <i class="fa fa-telegram"></i><span> Telegram</span>
+          </a>
+        </div>
+        <div *ngIf="eventDetails.event?.speakerdeckLink" class="col-auto">
+          <a href="{{eventDetails.event.speakerdeckLink}}" class="text-dark">
+            <i class="fa fa-file-pdf-o"></i><span> SpeakerDeck</span>
           </a>
         </div>
       </div>

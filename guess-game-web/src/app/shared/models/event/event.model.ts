@@ -19,6 +19,7 @@ export class Event {
     public twitterLink?: string,
     public facebookLink?: string,
     public telegramLink?: string,
+    public speakerdeckLink?: string,
     public description?: string
   ) {
   }

@@ -83,6 +83,12 @@ export class EventComponent implements OnInit {
     return ((this.eventDetails.event?.displayPlace) && (this.eventDetails.event.displayPlace.length > 0));
   }
 
+  isEventLinksVisible() {
+    return this.eventDetails.event?.siteLink || this.eventDetails.event?.facebookLink || this.eventDetails.event?.vkLink ||
+      this.eventDetails.event?.twitterLink || this.eventDetails.event?.youtubeLink || this.eventDetails.event?.telegramLink ||
+      this.eventDetails.event?.speakerdeckLink;
+  }
+
   isSpeakersListVisible() {
     return ((this.eventDetails.speakers) && (this.eventDetails.speakers.length > 0));
   }
