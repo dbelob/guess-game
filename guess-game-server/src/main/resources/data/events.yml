@@ -768,7 +768,7 @@ events:
     siteLink:
       - {language: en, text: "https://jpoint.ru/en/"}
       - {language: ru, text: "https://jpoint.ru/"}
-    youtubeLink: https://live.jugru.org/events/jpoint/?p=sch100087
+    youtubeLink: https://live.jugru.org/?p=sch100087
     placeId: 24
     talkIds: [2987, 2988, 2989, 2990, 3101, 3023, 2991, 2992, 2993, 3102, 3103, 2995, 2996, 2997, 2998, 3024, 3025, 2999,
               3000, 3001, 3002, 3026, 3003, 3004, 3005, 3006, 3027, 3028, 3007, 3008, 3009, 3018, 3010, 3011, 3012, 3013, 3104,
