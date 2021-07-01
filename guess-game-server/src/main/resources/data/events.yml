@@ -582,10 +582,11 @@ events:
     startDate: "2021-04-20"
     endDate: "2021-04-23"
     siteLink:
+      - {language: en, text: "https://holyjs-piter.ru/en/"}
       - {language: ru, text: "https://holyjs-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/holyjs/?p=sch100089
+    youtubeLink: https://live.jugru.org/?p=sch100089
     placeId: 24
-    talkIds: [3031, 3032, 3033, 3034, 3115, 3116, 3035, 3036, 3037, 3038, 3106, 3039, 3040, 3122, 3042, 3118, 3043, 3117,
+    talkIds: [3031, 3032, 3033, 3034, 3115, 3116, 3035, 3036, 3037, 3038, 3106, 3039, 3040, 3122, 3042, 3118, 3117, 3043,
               3044, 3045, 3061, 3046, 3060, 3048, 3049, 3107, 3119, 3050, 3123, 3052, 3053, 3054, 3055, 3056, 3057, 3108, 3109,
               3058, 3059, 3047]
   # Hydra
