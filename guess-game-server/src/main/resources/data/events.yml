@@ -310,8 +310,9 @@ events:
     startDate: "2021-04-20"
     endDate: "2021-04-23"
     siteLink:
+      - {language: en, text: "https://dotnext-piter.ru/en/"}
       - {language: ru, text: "https://dotnext-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/dotnext/?p=sch100088
+    youtubeLink: https://live.jugru.org/?p=sch100088
     placeId: 24
     talkIds: [3062, 3063, 3064, 3065, 3110, 3112, 3066, 3067, 3068, 3069, 3070, 3071, 3072, 3073, 3120, 3074, 3075, 3076,
               3077, 3078, 3079, 3080, 3081, 3111, 3082, 3083, 3113, 3085, 3086, 3087, 3088, 3121, 3089, 3090, 3091, 3092]
@@ -582,10 +583,11 @@ events:
     startDate: "2021-04-20"
     endDate: "2021-04-23"
     siteLink:
+      - {language: en, text: "https://holyjs-piter.ru/en/"}
       - {language: ru, text: "https://holyjs-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/holyjs/?p=sch100089
+    youtubeLink: https://live.jugru.org/?p=sch100089
     placeId: 24
-    talkIds: [3031, 3032, 3033, 3034, 3115, 3116, 3035, 3036, 3037, 3038, 3106, 3039, 3040, 3122, 3042, 3118, 3043, 3117,
+    talkIds: [3031, 3032, 3033, 3034, 3115, 3116, 3035, 3036, 3037, 3038, 3106, 3039, 3040, 3122, 3042, 3118, 3117, 3043,
               3044, 3045, 3061, 3046, 3060, 3048, 3049, 3107, 3119, 3050, 3123, 3052, 3053, 3054, 3055, 3056, 3057, 3108, 3109,
               3058, 3059, 3047]
   # Hydra
@@ -617,7 +619,7 @@ events:
     endDate: "2021-06-18"
     siteLink:
       - {language: en, text: "https://hydraconf.com/"}
-    youtubeLink: https://live.jugru.org/events/hydra/
+    youtubeLink: https://live.jugru.org/events/hydra/?p=sch100096
     placeId: 24
     talkIds: [3124, 3125, 3132, 3154, 3141, 3149, 3133, 3129, 3134, 3143, 3127, 3135, 3150, 3130, 3136, 3151, 3152, 3137,
               3153, 3138, 3148, 3140, 3131]
@@ -768,7 +770,7 @@ events:
     siteLink:
       - {language: en, text: "https://jpoint.ru/en/"}
       - {language: ru, text: "https://jpoint.ru/"}
-    youtubeLink: https://live.jugru.org/events/jpoint/?p=sch100087
+    youtubeLink: https://live.jugru.org/?p=sch100087
     placeId: 24
     talkIds: [2987, 2988, 2989, 2990, 3101, 3023, 2991, 2992, 2993, 3102, 3103, 2995, 2996, 2997, 2998, 3024, 3025, 2999,
               3000, 3001, 3002, 3026, 3003, 3004, 3005, 3006, 3027, 3028, 3007, 3008, 3009, 3018, 3010, 3011, 3012, 3013, 3104,
@@ -1033,8 +1035,9 @@ events:
     startDate: "2021-04-13"
     endDate: "2021-04-16"
     siteLink:
+      - {language: en, text: "https://mobius-piter.ru/en/"}
       - {language: ru, text: "https://mobius-piter.ru/"}
-    youtubeLink: https://live.jugru.org/events/mobius/?p=sch100086
+    youtubeLink: https://live.jugru.org/?p=sch100086
     placeId: 24
     talkIds: [2956, 2957, 2958, 2959, 3094, 3095, 2960, 2961, 2962, 2963, 3097, 2964, 2965, 2966, 2967, 3096, 3098, 2968,
               2969, 2970, 2971, 2972, 2973, 2974, 2975, 3099, 3100, 2976, 2977, 2978, 2986, 2980, 2981, 2982, 2983, 3114, 2984,

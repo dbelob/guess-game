@@ -18902,14 +18902,14 @@ speakers:
     bio:
       - language: en
         text: "Alexander went from his own startups and \"help a friend\" projects to large corporations. Now he's building\
-            \ an iOS mobile application at ManyChat. Helps businesses communicate with clients.\n\nLoves Swift, but sometimes\
-            \ cheats on it with Kotlin. Adores product metrics and features. Good code is minimalistic and solves user pain.\
-            \ Supporter of the OOP approach."
+            \ an iOS mobile application at ManyChat. Helps businesses communicate with clients.\r\n\r\nLoves Swift, but sometimes\
+            \ cheats on it with Kotlin. Adores product metrics and features. Thinks that good code is minimalistic and solves\
+            \ user pain. Supporter of the OOP approach."
       - language: ru
         text: "Прошел путь от собственных стартапов и проектов «помоги другу» до крупных корпораций. Сейчас строит мобильн\
-            ое приложение iOS в компании ManyChat. Помогает бизнесам вести осмысленные коммуникации с клиентами.\n\nОбожае\
-            т Swift, но иногда изменяет ему с Kotlin (когда Андроид горит). Тащится по продуктовым метрикам и фичам. Хорош\
-            ий код минималистичен и решает боль пользователей. Сторонник ООП-подхода."
+            ое приложение iOS в компании ManyChat. Помогает бизнесам вести осмысленные коммуникации с клиентами.\r\n\r\nОб\
+            ожает Swift, но иногда изменяет ему с Kotlin (когда Андроид горит). Тащится по продуктовым метрикам и фичам. С\
+            читает, что хороший код минималистичен и решает боль пользователей. Сторонник ООП-подхода."
     twitter: aleksmobiledev
   - id: 1377
     photoFileName: 1377.jpg
