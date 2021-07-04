@@ -178,6 +178,10 @@
   width: 100%;
 }
 
+.organizer-dropdown.p-dropdown, .event-type-dropdown.p-dropdown {
+  min-width: 175px;
+}
+
 .ui-paginator {
   .ui-dropdown {
     float: left;

@@ -33,7 +33,7 @@
         <div class="col-auto">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onOrganizerChange($event.value)" name="organizer">
+                      (onChange)="onOrganizerChange($event.value)" name="organizer" styleClass="organizer-dropdown">
             <ng-template let-organizer pTemplate="item">
               {{organizer.value.name}}
             </ng-template>

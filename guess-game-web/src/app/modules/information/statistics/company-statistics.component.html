@@ -33,7 +33,7 @@
         <div class="col-auto">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onOrganizerChange()" name="organizer">
+                      (onChange)="onOrganizerChange()" name="organizer" styleClass="organizer-dropdown">
             <ng-template let-organizer pTemplate="item">
               {{organizer.value.name}}
             </ng-template>
@@ -43,7 +43,7 @@
         <div class="col-auto">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onEventTypeChange()" name="conference">
+                      (onChange)="onEventTypeChange()" name="conference" styleClass="event-type-dropdown">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>
