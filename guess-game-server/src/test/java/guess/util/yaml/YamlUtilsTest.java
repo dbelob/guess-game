@@ -2,15 +2,17 @@ package guess.util.yaml;
 
 import guess.dao.exception.SpeakerDuplicatedException;
 import guess.domain.source.*;
+import guess.util.FileUtils;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.mockito.internal.verification.VerificationModeFactory;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -481,48 +483,16 @@ class YamlUtilsTest {
     }
 
     @Test
-    @Order(1)
-    void clearDumpDirectory() throws IOException {
-        Path directoryPath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME);
-        Path filePath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME + "/file.ext");
+    void clearOutputDirectory() throws IOException {
+        try (MockedStatic<FileUtils> mockedStatic = Mockito.mockStatic(FileUtils.class)) {
+            YamlUtils.clearOutputDirectory();
 
-        // Delete directory
-        assertFalse(Files.exists(filePath));
-        assertFalse(Files.exists(directoryPath));
-
-        Files.createDirectory(directoryPath);
-        Files.createFile(filePath);
-
-        assertTrue(Files.exists(directoryPath) && Files.isDirectory(directoryPath));
-        assertTrue(Files.exists(filePath) && !Files.isDirectory(filePath));
-
-        YamlUtils.clearOutputDirectory();
-
-        assertFalse(Files.exists(filePath));
-        assertFalse(Files.exists(directoryPath));
-
-        // Delete file
-        Files.createFile(directoryPath);
-
-        assertTrue(Files.exists(directoryPath) && !Files.isDirectory(directoryPath));
-
-        YamlUtils.clearOutputDirectory();
-
-        assertFalse(Files.exists(directoryPath));
+            mockedStatic.verify(() -> FileUtils.deleteDirectory(YamlUtils.OUTPUT_DIRECTORY_NAME), VerificationModeFactory.times(1));
+        }
     }
 
     @Test
-    @Order(2)
-    void save() throws IOException, NoSuchFieldException {
-        Path directoryPath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME);
-        Path filePath = Path.of(YamlUtils.OUTPUT_DIRECTORY_NAME + "/event-types.yml");
-
-        assertFalse(Files.exists(filePath));
-        assertFalse(Files.exists(directoryPath));
-
-        YamlUtils.save(new EventTypeList(Collections.emptyList()), "event-types.yml");
-
-        assertTrue(Files.exists(directoryPath) && Files.isDirectory(directoryPath));
-        assertTrue(Files.exists(filePath) && !Files.isDirectory(filePath));
+    void save() {
+        assertDoesNotThrow(() -> YamlUtils.save(new EventTypeList(Collections.emptyList()), "event-types.yml"));
     }
 }
