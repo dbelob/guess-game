@@ -193,12 +193,17 @@
   }
 }
 
-.ui-table .ui-table-thead > tr > th {
+.p-datatable-resizable .p-resizable-column {
+  position: static;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.ui-table .ui-table-tbody > tr > td {
+.p-datatable .p-datatable-tbody > tr > td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
