@@ -23,11 +23,9 @@ export class EventTypesSearchComponent implements OnInit {
   public organizerSelectItems: SelectItem[] = [];
 
   public eventTypes: EventType[] = [];
-  public multiSortMeta: any[] = [];
 
   constructor(private eventTypeService: EventTypeService, public organizerService: OrganizerService,
               public translateService: TranslateService) {
-    this.multiSortMeta.push({field: 'sortName', order: 1});
   }
 
   ngOnInit(): void {
