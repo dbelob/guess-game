@@ -182,31 +182,31 @@
   min-width: 175px;
 }
 
-.ui-paginator {
-  .ui-dropdown {
-    float: left;
-    line-height: normal;
+.p-paginator {
+  .p-dropdown {
+    float: left !important;
+    //line-height: normal;
   }
 
-  .ui-paginator-current {
-    float: right;
+  .p-paginator-current {
+    float: right !important;
   }
 }
 
 .p-datatable-resizable .p-resizable-column {
-  position: static;
+  position: static !important;
 }
 
 .p-datatable .p-datatable-thead > tr > th {
-  white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .p-datatable .p-datatable-tbody > tr > td {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .btn-sm-condensed {
