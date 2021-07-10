@@ -16,7 +16,7 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center">
+      <div class="form-group row justify-content-center align-items-center">
         <label for="eventType" class="col-sm-2">{{'common.list.eventTypeLabel' | translate}}</label>
         <div class="col-sm-4">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="eventType"
@@ -42,7 +42,7 @@
           </p-dropdown>
         </div>
       </div>
-      <div class="form-group row justify-content-center">
+      <div class="form-group row justify-content-center align-items-center">
         <label for="talkName" class="col-sm-2">{{'talks.search.nameLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="talkName" pInputText class="form-control" [(ngModel)]="talkName" name="talkName" (ngModelChange)="onFilterChange($event)"/>
