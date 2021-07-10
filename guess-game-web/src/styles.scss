@@ -209,6 +209,10 @@
   text-overflow: ellipsis !important;
 }
 
+.p-checkbox-label, .p-radiobutton-label {
+  margin-bottom: 0;
+}
+
 .btn-sm-condensed {
   padding: .25rem .2rem .25rem .5rem;
   font-size: .875rem;
