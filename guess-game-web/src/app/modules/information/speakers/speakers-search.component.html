@@ -16,7 +16,7 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center">
+      <div class="form-group row justify-content-center align-items-center">
         <label for="name" class="col-sm-2">{{'speakers.search.nameLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="name" pInputText class="form-control" [(ngModel)]="name" name="name" (ngModelChange)="onFilterChange($event)"/>
@@ -27,7 +27,7 @@
                           name="company" styleClass="search-autocomplete"></p-autoComplete>
         </div>
       </div>
-      <div class="form-group row justify-content-center">
+      <div class="form-group row justify-content-center align-items-center">
         <label for="twitter" class="col-sm-2">{{'speakers.search.twitterLabel' | translate}}</label>
         <div class="col-sm-4">
           <input type="text" id="twitter" pInputText class="form-control" [(ngModel)]="twitter" name="twitter" (ngModelChange)="onFilterChange($event)"/>
@@ -68,7 +68,7 @@
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped">
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>

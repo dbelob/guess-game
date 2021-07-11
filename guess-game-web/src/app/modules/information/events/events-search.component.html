@@ -28,12 +28,12 @@
                       (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
       </div>
-      <div class="form-group row justify-content-center">
+      <div class="form-group row justify-content-center align-items-center">
         <label for="conference" class="col-auto text-right">{{'common.list.eventTypeLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="eventTypeSelectItems" [(ngModel)]="selectedEventType" id="conference"
                       placeholder="{{'common.list.eventTypePlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onEventTypeChange($event.value)" name="conference">
+                      (onChange)="onEventTypeChange($event.value)" name="conference" styleClass="event-type-dropdown">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>
@@ -52,7 +52,7 @@
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped">
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>

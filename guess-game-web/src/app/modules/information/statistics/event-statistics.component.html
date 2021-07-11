@@ -16,12 +16,12 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
-      <div class="form-group row justify-content-center">
+      <div class="form-group row justify-content-center align-items-center">
         <label for="conference" class="col-auto text-right">{{'statistics.events.conferenceLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="conferenceSelectItems" [(ngModel)]="selectedConference" id="conference"
                       placeholder="{{'statistics.events.conferencePlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onConferenceChange($event.value)" name="conference">
+                      (onChange)="onConferenceChange($event.value)" name="conference" styleClass="event-type-dropdown">
             <ng-template let-eventType pTemplate="item">
               <img src="{{eventsImageDirectory}}/{{eventType.value.logoFileName}}" class="img-event-type-logo-list" alt="logo"/>
               <span class="ml-2">{{eventType.value.name}}</span>
@@ -40,7 +40,7 @@
                [rows]="15" [rowsPerPageOptions]="[5,10,15,25,50]" [paginator]="true"
                [showCurrentPageReport]="true" [alwaysShowPaginator]="false"
                currentPageReportTemplate="{{'common.table.paginator.currentPageReportTemplate' | translate}}"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+               sortMode="multiple" [multiSortMeta]="multiSortMeta" styleClass="p-datatable-striped">
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>

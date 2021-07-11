@@ -28,12 +28,12 @@
                       (onChange)="onEventTypeKindChange()"></p-checkbox>
         </div>
       </div>
-      <div class="form-group row justify-content-center">
+      <div class="form-group row justify-content-center align-items-center">
         <label for="organizer" class="col-auto text-right">{{'common.list.organizerLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="organizerSelectItems" [(ngModel)]="selectedOrganizer" id="organizer"
                       placeholder="{{'common.list.organizerPlaceholder' | translate}}" [showClear]="true"
-                      (onChange)="onOrganizerChange($event.value)" name="organizer">
+                      (onChange)="onOrganizerChange($event.value)" name="organizer" styleClass="organizer-dropdown">
             <ng-template let-organizer pTemplate="item">
               {{organizer.value.name}}
             </ng-template>
@@ -47,8 +47,8 @@
     </div>
 
     <div *ngIf="isEventTypesListVisible()" class="m-2">
-      <p-table [value]="eventTypes" [resizableColumns]="true" [autoLayout]="true"
-               sortMode="multiple" [multiSortMeta]="multiSortMeta">
+      <p-table [value]="eventTypes" [resizableColumns]="true" [autoLayout]="true" sortField="sortName"
+               styleClass="p-datatable-striped">
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th class="text-center" pResizableColumn>#</th>
