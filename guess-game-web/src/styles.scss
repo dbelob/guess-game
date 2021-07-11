@@ -184,12 +184,34 @@
 
 .p-paginator {
   .p-dropdown {
-    float: left !important;
-    //line-height: normal;
+    order: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .p-paginator-first {
+    margin-left: auto !important;
+    order: 1 !important;
+  }
+
+  .p-paginator-prev {
+    order: 2 !important;
+  }
+
+  .p-paginator-pages {
+    order: 3 !important;
+  }
+
+  .p-paginator-next {
+    order: 4 !important;
+  }
+
+  .p-paginator-last {
+    order: 5 !important;
   }
 
   .p-paginator-current {
-    float: right !important;
+    margin-left: auto !important;
+    order: 6 !important;
   }
 }
 
