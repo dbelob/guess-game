@@ -9,13 +9,6 @@ updates:
     schedule:
       interval: "daily"
     ignore:
-      - dependency-name: "@angular/*"
-      - dependency-name: "@angular-devkit/*"
-      - dependency-name: "typescript"
-      - dependency-name: "primeng"
-      - dependency-name: "primeicons"
-      - dependency-name: "ngx-markdown"
-      - dependency-name: "@fortawesome/angular-fontawesome"
       - dependency-name: "bootstrap"
   - package-ecosystem: "github-actions"
     directory: "/"
