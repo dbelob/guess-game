@@ -1517,6 +1517,36 @@ public class ConferenceDataLoader {
         return venueAddress;
     }
 
+    static void checkVideoLinks() throws SpeakerDuplicatedException, IOException {
+        // Read event types, places, events, companies, speakers, talks from resource files
+        var resourceSourceInformation = YamlUtils.readSourceInformation();
+        List<Event> events = resourceSourceInformation.getEvents().stream()
+                .filter(e -> e.getEventType().isEventTypeConference())
+                .sorted(Comparator.comparing(Event::getStartDate))
+                .collect(Collectors.toList());
+
+        events.forEach(event -> {
+            int all = event.getTalks().size();
+            int withVideoLinks = (int) event.getTalks().stream()
+                    .filter(t -> (t.getVideoLinks() != null) && !t.getVideoLinks().isEmpty())
+                    .count();
+            double percents = (all == 0) ? 0 : (double) withVideoLinks / all * 100;
+            String message = String.format("%-30s %2d/%2d (%6.2f%%)",
+                    LocalizationUtils.getString(event.getName(), Language.ENGLISH),
+                    withVideoLinks,
+                    all,
+                    percents);
+
+            if (percents >= 75) {
+                log.info(message);
+            } else if (percents >= 50) {
+                log.warn(message);
+            } else {
+                log.error(message);
+            }
+        });
+    }
+
     public static void main(String[] args) throws IOException, SpeakerDuplicatedException, NoSuchFieldException {
         // Uncomment one of lines and run
 
@@ -1526,6 +1556,9 @@ public class ConferenceDataLoader {
 
         // Load event types
 //        loadEventTypes();
+
+        // Check video links
+//        checkVideoLinks();
 
         // Load talks, speaker and event
         // 2016

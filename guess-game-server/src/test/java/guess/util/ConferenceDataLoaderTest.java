@@ -1176,7 +1176,7 @@ class ConferenceDataLoaderTest {
         @ParameterizedTest
         @MethodSource("data")
         void fillStringAttributeValue(Supplier<String> resourceSupplier, Supplier<String> targetSupplier, Consumer<String> targetConsumer,
-                                String expected) {
+                                      String expected) {
             ConferenceDataLoader.fillStringAttributeValue(resourceSupplier, targetSupplier, targetConsumer);
 
             assertEquals(expected, targetSupplier.get());
@@ -2609,6 +2609,75 @@ class ConferenceDataLoaderTest {
         void getFixedVenueAddress(String city, String venueAddress, List<FixingVenueAddress> fixingVenueAddresses,
                                   String expected) {
             assertEquals(expected, ConferenceDataLoader.getFixedVenueAddress(city, venueAddress, fixingVenueAddresses));
+        }
+    }
+
+    @Test
+    void checkVideoLinks() {
+        try (MockedStatic<YamlUtils> mockedStatic = Mockito.mockStatic(YamlUtils.class)) {
+            LocalDate now = LocalDate.now();
+            LocalDate yesterday = now.minusDays(1);
+            LocalDate tomorrow = now.plusDays(1);
+
+            EventType eventType0 = new EventType();
+
+            EventType eventType1 = new EventType();
+            eventType1.setConference(Conference.JOKER);
+
+            Event event0 = new Event();
+            event0.setEventType(eventType0);
+            event0.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
+
+            Event event1 = new Event();
+            event1.setEventType(eventType1);
+            event1.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name1")));
+            event1.setStartDate(now);
+
+            Event event2 = new Event();
+            event2.setEventType(eventType1);
+            event2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name2")));
+            event2.setStartDate(tomorrow);
+
+            Event event3 = new Event();
+            event3.setEventType(eventType1);
+            event3.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name3")));
+            event3.setStartDate(yesterday);
+
+            Event event4 = new Event();
+            event4.setEventType(eventType1);
+            event4.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name4")));
+            event4.setStartDate(yesterday);
+
+            Event event5 = new Event();
+            event5.setEventType(eventType1);
+            event5.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name5")));
+            event5.setStartDate(yesterday);
+
+            Talk talk0 = new Talk();
+
+            Talk talk1 = new Talk();
+            talk1.setVideoLinks(Collections.emptyList());
+
+            Talk talk2 = new Talk();
+            talk2.setVideoLinks(List.of("Link0"));
+
+            event2.setTalks(List.of(talk0));
+            event3.setTalks(List.of(talk1));
+            event4.setTalks(List.of(talk2));
+            event5.setTalks(List.of(talk1, talk2));
+
+            mockedStatic.when(YamlUtils::readSourceInformation)
+                    .thenReturn(new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
+                            List.of(event0, event1, event2, event3, event4, event5),
+                            new SourceInformation.SpeakerInformation(
+                                    Collections.emptyList(),
+                                    Collections.emptyList(),
+                                    Collections.emptyList()
+                            ),
+                            Collections.emptyList()
+                    ));
+
+            assertDoesNotThrow(ConferenceDataLoader::checkVideoLinks);
         }
     }
 
