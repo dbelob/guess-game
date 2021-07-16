@@ -1560,7 +1560,7 @@ public class ConferenceDataLoader {
 //        loadEventTypes();
 
         // Check video links
-        checkVideoLinks();
+//        checkVideoLinks();
 
         // Load talks, speaker and event
         // 2016
