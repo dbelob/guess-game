@@ -1537,12 +1537,14 @@ public class ConferenceDataLoader {
                     all,
                     percents);
 
-            if (percents >= 75) {
-                log.info(message);
-            } else if (percents >= 50) {
-                log.warn(message);
-            } else {
-                log.error(message);
+            if (all != withVideoLinks) {
+                if (percents >= 75) {
+                    log.info(message);
+                } else if (percents >= 50) {
+                    log.warn(message);
+                } else {
+                    log.error(message);
+                }
             }
         });
     }

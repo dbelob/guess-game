@@ -2653,6 +2653,11 @@ class ConferenceDataLoaderTest {
             event5.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name5")));
             event5.setStartDate(yesterday);
 
+            Event event6 = new Event();
+            event6.setEventType(eventType1);
+            event6.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name6")));
+            event6.setStartDate(yesterday);
+
             Talk talk0 = new Talk();
 
             Talk talk1 = new Talk();
@@ -2661,14 +2666,21 @@ class ConferenceDataLoaderTest {
             Talk talk2 = new Talk();
             talk2.setVideoLinks(List.of("Link0"));
 
+            Talk talk3 = new Talk();
+            talk3.setVideoLinks(List.of("Link0"));
+
+            Talk talk4 = new Talk();
+            talk4.setVideoLinks(List.of("Link0"));
+
             event2.setTalks(List.of(talk0));
             event3.setTalks(List.of(talk1));
             event4.setTalks(List.of(talk2));
             event5.setTalks(List.of(talk1, talk2));
+            event6.setTalks(List.of(talk1, talk2, talk3, talk4));
 
             mockedStatic.when(YamlUtils::readSourceInformation)
                     .thenReturn(new SourceInformation(Collections.emptyList(), Collections.emptyList(), Collections.emptyList(),
-                            List.of(event0, event1, event2, event3, event4, event5),
+                            List.of(event0, event1, event2, event3, event4, event5, event6),
                             new SourceInformation.SpeakerInformation(
                                     Collections.emptyList(),
                                     Collections.emptyList(),
