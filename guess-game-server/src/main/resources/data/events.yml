@@ -1081,9 +1081,9 @@ events:
     startDate: "2020-12-09"
     endDate: "2020-12-12"
     siteLink:
-      - {language: en, text: "https://smartdataconf.ru/en/"}
-      - {language: ru, text: "https://smartdataconf.ru/"}
-    youtubeLink: https://live.jugru.org/events/smartdata
+      - {language: en, text: "https://2020.smartdataconf.ru/en/"}
+      - {language: ru, text: "https://2020.smartdataconf.ru/"}
+    youtubeLink: https://live.jugru.org/?p=sch100083
     placeId: 24
     talkIds: [2839, 2840, 2841, 2842, 2843, 2844, 2845, 2846, 2847, 2848, 2849, 2850, 2851, 2852, 2853, 2854, 2855, 2856,
               2868, 2858, 2859, 2860, 2861, 2862, 2863, 2864, 2865, 2866, 2867]
