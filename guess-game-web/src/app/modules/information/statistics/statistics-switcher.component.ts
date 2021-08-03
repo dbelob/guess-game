@@ -28,4 +28,8 @@ export class StatisticsSwitcherComponent implements OnInit {
   isCompanies(): boolean {
     return ('companies' === this.type);
   }
+
+  isOlap(): boolean {
+    return ('olap' === this.type);
+  }
 }

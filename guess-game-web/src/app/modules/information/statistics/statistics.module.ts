@@ -14,6 +14,7 @@ import { EventTypeStatisticsComponent } from './event-type-statistics.component'
 import { EventStatisticsComponent } from './event-statistics.component';
 import { SpeakerStatisticsComponent } from './speaker-statistics.component';
 import { CompanyStatisticsComponent } from './company-statistics.component';
+import { OlapStatisticsComponent } from "./olap-statistics.component";
 import { StatisticsSwitcherComponent } from './statistics-switcher.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { StatisticsSwitcherComponent } from './statistics-switcher.component';
     EventStatisticsComponent,
     SpeakerStatisticsComponent,
     CompanyStatisticsComponent,
+    OlapStatisticsComponent,
     StatisticsSwitcherComponent
   ],
   imports: [

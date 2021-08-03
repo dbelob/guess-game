@@ -15,4 +15,8 @@
           [class.text-dark]="isCompanies()" [class.font-weight-bold]="isCompanies()" [disabled]="isCompanies()">
     {{'statistics.companies.title' | translate}}
   </button>
+  <button class="btn btn-link" routerLink="/information/statistics/olap"
+          [class.text-dark]="isOlap()" [class.font-weight-bold]="isOlap()" [disabled]="isOlap()">
+    OLAP
+  </button>
 </div>

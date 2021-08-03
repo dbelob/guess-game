@@ -59,6 +59,7 @@ import { SpeakerService } from './shared/services/speaker.service';
 import { StatisticsService } from './shared/services/statistics.service';
 import { TalkService } from './shared/services/talk.service';
 import { GameStateGuard } from './shared/guards/game-state.guard';
+import { OlapStatisticsComponent } from "./modules/information/statistics/olap-statistics.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -88,6 +89,7 @@ const routes: Routes = [
   {path: 'information/statistics/events', component: EventStatisticsComponent},
   {path: 'information/statistics/speakers', component: SpeakerStatisticsComponent},
   {path: 'information/statistics/companies', component: CompanyStatisticsComponent},
+  {path: 'information/statistics/olap', component: OlapStatisticsComponent},
   {path: 'information/event-types', redirectTo: 'information/event-types/search'},
   {path: 'information/events', redirectTo: 'information/events/search'},
   {path: 'information/talks', redirectTo: 'information/talks/search'},
@@ -111,7 +113,7 @@ registerLocaleData(localeRu, 'ru');
     AppComponent
   ],
   imports: [
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy'}),
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
