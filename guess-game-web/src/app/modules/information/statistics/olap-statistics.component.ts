@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
+import { Cube } from '../../../shared/models/statistics/cube.model';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
+import { Measure } from '../../../shared/models/statistics/measure.model';
 import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
@@ -15,6 +17,14 @@ import { findEventTypeById, findOrganizerById } from '../../general/utility-func
 export class OlapStatisticsComponent implements OnInit {
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
+
+  public cubes: Cube[] = [];
+  public selectedCube: Cube;
+  public cubeSelectItems: SelectItem[] = [];
+
+  public measures: Measure[] = [];
+  public selectedMeasure: Measure;
+  public measureSelectItems: SelectItem[] = [];
 
   public isConferences = true;
   public isMeetups = true;
@@ -130,5 +140,13 @@ export class OlapStatisticsComponent implements OnInit {
             this.loadOlapStatistics(this.selectedOrganizer, this.selectedEventType);
           });
       });
+  }
+
+  onCubeChange() {
+    // TODO: implement
+  }
+
+  onMeasureChange() {
+    // TODO: implement
   }
 }

@@ -16,6 +16,28 @@
 
   <div class="m-1">
     <form role="form" class="m-2">
+      <div class="form-group row justify-content-center align-items-center">
+        <label for="cube" class="col-auto text-right">{{'statistics.olap.cubeLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-dropdown [options]="cubeSelectItems" [(ngModel)]="selectedCube" id="cube"
+                      placeholder="{{'statistics.olap.cubePlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onCubeChange()" name="cube" styleClass="cube-dropdown">
+            <ng-template let-cube pTemplate="item">
+              {{cube.value.name}}
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <label for="measure" class="col-auto text-right">{{'statistics.olap.measureLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-dropdown [options]="measureSelectItems" [(ngModel)]="selectedMeasure" id="measure"
+                      placeholder="{{'statistics.olap.measurePlaceholder' | translate}}" [showClear]="true"
+                      (onChange)="onMeasureChange()" name="measure" styleClass="measure-dropdown">
+            <ng-template let-measure pTemplate="item">
+              {{measure.value.name}}
+            </ng-template>
+          </p-dropdown>
+        </div>
+      </div>
       <div class="form-group row justify-content-center">
         <div class="col-auto">
           <p-checkbox name="group1" value="conferences" label="{{'common.checkbox.conferencesLabel' | translate}}"
@@ -52,5 +74,13 @@
         </div>
       </div>
     </form>
+
+    <div class="alert text-center m-2">
+      Charts
+    </div>
+
+    <div class="alert text-center m-2">
+      Table
+    </div>
   </div>
 </div>
