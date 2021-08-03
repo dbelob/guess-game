@@ -217,6 +217,12 @@
         "javaChampionsColumn": "Java Champions",
         "mvpsColumn": "MVPs"
       }
+    },
+    "olap" : {
+      "cubeLabel": "Cube:",
+      "cubePlaceholder": "All",
+      "measureLabel": "Measure:",
+      "measurePlaceholder": "All"
     }
   },
   "notFound": {
