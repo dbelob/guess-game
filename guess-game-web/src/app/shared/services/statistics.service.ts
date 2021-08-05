@@ -8,6 +8,8 @@ import { EventStatistics } from '../models/statistics/event-statistics.model';
 import { SpeakerStatistics } from '../models/statistics/speaker-statistics.model';
 import { CompanyStatistics } from '../models/statistics/company-statistics.model';
 import { Organizer } from '../models/organizer/organizer.model';
+import { Cube } from '../models/statistics/olap/cube.model';
+import { Measure } from '../models/statistics/olap/measure.model';
 import { MessageService } from '../../modules/message/message.service';
 
 @Injectable({
@@ -93,6 +95,29 @@ export class StatisticsService {
 
   getConferences(): Observable<EventType[]> {
     return this.http.get<EventType[]>(`${this.baseUrl}/conferences`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getCubes(): Observable<Cube[]> {
+    return this.http.get<Cube[]>(`${this.baseUrl}/cubes`)
+      .pipe(
+        catchError((response: Response) => {
+          this.messageService.reportMessage(response);
+          throw response;
+        })
+      );
+  }
+
+  getMeasures(cube: Cube): Observable<Measure[]> {
+    const params = new HttpParams()
+      .set('cube', (cube) ? cube.toString() : null);
+
+    return this.http.get<Measure[]>(`${this.baseUrl}/measures`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

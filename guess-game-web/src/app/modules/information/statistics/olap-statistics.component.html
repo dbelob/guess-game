@@ -20,20 +20,26 @@
         <label for="cube" class="col-auto text-right">{{'statistics.olap.cubeLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="cubeSelectItems" [(ngModel)]="selectedCube" id="cube"
-                      placeholder="{{'statistics.olap.cubePlaceholder' | translate}}" [showClear]="true"
+                      placeholder="{{'statistics.olap.cubePlaceholder' | translate}}"
                       (onChange)="onCubeChange()" name="cube" styleClass="cube-dropdown">
+            <ng-template let-cube pTemplate="selectedItem">
+              {{ cube.label | translate }}
+            </ng-template>
             <ng-template let-cube pTemplate="item">
-              {{cube.value.name}}
+              {{ cube.label | translate }}
             </ng-template>
           </p-dropdown>
         </div>
         <label for="measure" class="col-auto text-right">{{'statistics.olap.measureLabel' | translate}}</label>
         <div class="col-auto">
           <p-dropdown [options]="measureSelectItems" [(ngModel)]="selectedMeasure" id="measure"
-                      placeholder="{{'statistics.olap.measurePlaceholder' | translate}}" [showClear]="true"
+                      placeholder="{{'statistics.olap.measurePlaceholder' | translate}}"
                       (onChange)="onMeasureChange()" name="measure" styleClass="measure-dropdown">
+            <ng-template let-measure pTemplate="selectedItem">
+              {{ measure.label | translate }}
+            </ng-template>
             <ng-template let-measure pTemplate="item">
-              {{measure.value.name}}
+              {{ measure.label | translate }}
             </ng-template>
           </p-dropdown>
         </div>

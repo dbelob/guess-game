@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -116,8 +117,12 @@ public class StatisticsController {
     @GetMapping("/measures")
     @ResponseBody
     public List<Measure> getMeasures(@RequestParam String cube) {
-        Cube cubeEnum = Cube.valueOf(cube);
+        if ((cube == null) || cube.isEmpty()) {
+            return Collections.emptyList();
+        } else {
+            Cube cubeEnum = Cube.valueOf(cube);
 
-        return cubeEnum.getMeasures();
+            return cubeEnum.getMeasures();
+        }
     }
 }

@@ -8,6 +8,7 @@ import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
+import { StatisticsService } from '../../../shared/services/statistics.service';
 import { findEventTypeById, findOrganizerById } from '../../general/utility-functions';
 
 @Component({
@@ -15,6 +16,18 @@ import { findEventTypeById, findOrganizerById } from '../../general/utility-func
   templateUrl: './olap-statistics.component.html'
 })
 export class OlapStatisticsComponent implements OnInit {
+  private readonly EVENT_TYPES_CUBE_KEY = 'cube.eventTypes';
+  private readonly SPEAKERS_CUBE_KEY = 'cube.speakers';
+  private readonly COMPANIES_CUBE_KEY = 'cube.companies';
+
+  private readonly DURATION_MEASURE_KEY = 'measure.duration';
+  private readonly EVENT_TYPES_QUANTITY_MEASURE_KEY = 'measure.eventTypesQuantity';
+  private readonly EVENTS_QUANTITY_MEASURE_KEY = 'measure.eventsQuantity';
+  private readonly TALKS_QUANTITY_MEASURE_KEY = 'measure.talksQuantity';
+  private readonly SPEAKERS_QUANTITY_MEASURE_KEY = 'measure.speakersQuantity';
+  private readonly JAVA_CHAMPIONS_QUANTITY_MEASURE_KEY = 'measure.javaChampionsQuantity';
+  private readonly MVPS_QUANTITY_MEASURE_KEY = 'measure.mvpsQuantity';
+
   private imageDirectory = 'assets/images';
   public eventsImageDirectory = `${this.imageDirectory}/events`;
 
@@ -37,12 +50,80 @@ export class OlapStatisticsComponent implements OnInit {
   public selectedEventType: EventType;
   public eventTypeSelectItems: SelectItem[] = [];
 
-  constructor(private eventTypeService: EventTypeService, private eventService: EventService,
-              public organizerService: OrganizerService, public translateService: TranslateService) {
+  constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
+              private eventService: EventService, public organizerService: OrganizerService,
+              public translateService: TranslateService) {
   }
 
   ngOnInit(): void {
+    this.loadCubes();
     this.loadOrganizers();
+  }
+
+  getCubeMessageKeyByCube(cube: Cube): string {
+    switch (cube) {
+      case Cube.EventTypes: {
+        return this.EVENT_TYPES_CUBE_KEY;
+      }
+      case Cube.Speakers: {
+        return this.SPEAKERS_CUBE_KEY;
+      }
+      case Cube.Companies: {
+        return this.COMPANIES_CUBE_KEY;
+      }
+      default: {
+        return null;
+      }
+    }
+  }
+
+  getMeasureMessageKeyByCube(measure: Measure): string {
+    switch (measure) {
+      case Measure.Duration: {
+        return this.DURATION_MEASURE_KEY;
+      }
+      case Measure.EventTypesQuantity: {
+        return this.EVENT_TYPES_QUANTITY_MEASURE_KEY;
+      }
+      case Measure.EventsQuantity: {
+        return this.EVENTS_QUANTITY_MEASURE_KEY;
+      }
+      case Measure.TalksQuantity: {
+        return this.TALKS_QUANTITY_MEASURE_KEY;
+      }
+      case Measure.SpeakersQuantity: {
+        return this.SPEAKERS_QUANTITY_MEASURE_KEY;
+      }
+      case Measure.JavaChampionsQuantity: {
+        return this.JAVA_CHAMPIONS_QUANTITY_MEASURE_KEY;
+      }
+      case Measure.MvpsQuantity: {
+        return this.MVPS_QUANTITY_MEASURE_KEY;
+      }
+      default: {
+        return null;
+      }
+    }
+  }
+
+  fillCubes(cubes: Cube[]) {
+    this.cubes = cubes;
+    this.cubeSelectItems = this.cubes.map(c => {
+        const messageKey = this.getCubeMessageKeyByCube(c);
+
+        return {label: messageKey, value: c};
+      }
+    );
+  }
+
+  fillMeasures(measures: Measure[]) {
+    this.measures = measures;
+    this.measureSelectItems = this.measures.map(m => {
+        const messageKey = this.getMeasureMessageKeyByCube(m);
+
+        return {label: messageKey, value: m};
+      }
+    );
   }
 
   fillOrganizers(organizers: Organizer[]) {
@@ -59,6 +140,24 @@ export class OlapStatisticsComponent implements OnInit {
         return {label: et.name, value: et};
       }
     );
+  }
+
+  loadCubes() {
+    this.statisticsService.getCubes()
+      .subscribe(cubeData => {
+        this.fillCubes(cubeData);
+        this.selectedCube = (cubeData && (cubeData.length > 0)) ? cubeData[0] : null;
+
+        this.statisticsService.getMeasures(this.selectedCube)
+          .subscribe(measureData => {
+            this.fillMeasures(measureData);
+            this.selectedMeasure = (measureData && (measureData.length > 0)) ? measureData[0] : null;
+
+            // TODO: implement
+          });
+
+        // TODO: implement
+      });
   }
 
   loadOrganizers() {
