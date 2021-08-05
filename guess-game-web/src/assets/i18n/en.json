@@ -1,4 +1,18 @@
 {
+  "cube": {
+    "eventTypes": "Event types",
+    "speakers": "Speakers",
+    "companies": "Companies"
+  },
+  "measure": {
+    "duration": "Duration, days",
+    "eventTypesQuantity": "Event types quantity",
+    "eventsQuantity": "Events quantity",
+    "talksQuantity": "Talks quantity",
+    "speakersQuantity": "Speakers quantity",
+    "javaChampionsQuantity": "Java Champions quantity",
+    "mvpsQuantity": "MVPs quantity"
+  },
   "common": {
     "menuLinkText": "Menu",
     "cancelLinkText": "Cancel",

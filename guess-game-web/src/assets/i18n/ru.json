@@ -1,4 +1,18 @@
 {
+  "cube": {
+    "eventTypes": "Типы событий",
+    "speakers": "Спикеры",
+    "companies": "Компании"
+  },
+  "measure": {
+    "duration": "Длительность, дней",
+    "eventTypesQuantity": "Количество типов событий",
+    "eventsQuantity": "Количество событий",
+    "talksQuantity": "Количество докладов",
+    "speakersQuantity": "Количество спикеров",
+    "javaChampionsQuantity": "Количество Java Champions",
+    "mvpsQuantity": "Количество MVPs"
+  },
   "common": {
     "menuLinkText": "Меню",
     "cancelLinkText": "Прервать",
