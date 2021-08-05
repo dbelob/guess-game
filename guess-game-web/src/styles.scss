@@ -178,8 +178,12 @@
   width: 100%;
 }
 
-.organizer-dropdown.p-dropdown, .event-type-dropdown.p-dropdown, .cube-dropdown.p-dropdown, .measure-dropdown.p-dropdown {
+.organizer-dropdown.p-dropdown, .event-type-dropdown.p-dropdown, .cube-dropdown.p-dropdown {
   min-width: 175px;
+}
+
+.measure-dropdown.p-dropdown {
+  min-width: 275px;
 }
 
 .p-paginator {
