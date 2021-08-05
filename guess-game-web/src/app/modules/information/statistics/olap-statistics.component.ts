@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
-import { Cube } from '../../../shared/models/statistics/cube.model';
+import { Cube } from '../../../shared/models/statistics/olap/cube.model';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
-import { Measure } from '../../../shared/models/statistics/measure.model';
+import { Measure } from '../../../shared/models/statistics/olap/measure.model';
 import { Organizer } from '../../../shared/models/organizer/organizer.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';

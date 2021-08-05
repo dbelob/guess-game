@@ -1,6 +1,8 @@
 package guess.controller;
 
 import guess.domain.source.EventType;
+import guess.domain.statistics.olap.Cube;
+import guess.domain.statistics.olap.Measure;
 import guess.dto.eventtype.EventTypeSuperBriefDto;
 import guess.dto.statistics.*;
 import guess.service.LocaleService;
@@ -103,5 +105,19 @@ public class StatisticsController {
         eventTypeSuperBriefDtoList.sort(Comparator.comparing(EventTypeSuperBriefDto::getName, String.CASE_INSENSITIVE_ORDER));
 
         return eventTypeSuperBriefDtoList;
+    }
+
+    @GetMapping("/cubes")
+    @ResponseBody
+    public List<Cube> getCubes() {
+        return List.of(Cube.values());
+    }
+
+    @GetMapping("/measures")
+    @ResponseBody
+    public List<Measure> getMeasures(@RequestParam String cube) {
+        Cube cubeEnum = Cube.valueOf(cube);
+
+        return cubeEnum.getMeasures();
     }
 }
