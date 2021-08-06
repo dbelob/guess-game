@@ -57,7 +57,6 @@ export class OlapStatisticsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCubes();
-    this.loadOrganizers();
   }
 
   getCubeMessageKeyByCube(cube: Cube): string {
@@ -153,33 +152,27 @@ export class OlapStatisticsComponent implements OnInit {
             this.fillMeasures(measureData);
             this.selectedMeasure = (measureData && (measureData.length > 0)) ? measureData[0] : null;
 
-            // TODO: implement
-          });
+            this.organizerService.getOrganizers()
+              .subscribe(organizerData => {
+                this.fillOrganizers(organizerData);
 
-        // TODO: implement
-      });
-  }
+                this.eventService.getDefaultEvent()
+                  .subscribe(defaultEventData => {
+                    this.selectedOrganizer = (defaultEventData) ? findOrganizerById(defaultEventData.organizerId, this.organizers) : null;
 
-  loadOrganizers() {
-    this.organizerService.getOrganizers()
-      .subscribe(organizerData => {
-        this.fillOrganizers(organizerData);
+                    this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
+                      .subscribe(eventTypesData => {
+                        this.fillEventTypes(eventTypesData);
 
-        this.eventService.getDefaultEvent()
-          .subscribe(defaultEventData => {
-            this.selectedOrganizer = (defaultEventData) ? findOrganizerById(defaultEventData.organizerId, this.organizers) : null;
+                        if (this.eventTypes.length > 0) {
+                          this.selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
+                        } else {
+                          this.selectedEventType = null;
+                        }
 
-            this.eventTypeService.getFilterEventTypes(this.isConferences, this.isMeetups, this.selectedOrganizer)
-              .subscribe(eventTypesData => {
-                this.fillEventTypes(eventTypesData);
-
-                if (this.eventTypes.length > 0) {
-                  this.selectedEventType = (defaultEventData) ? findEventTypeById(defaultEventData.eventTypeId, this.eventTypes) : null;
-                } else {
-                  this.selectedEventType = null;
-                }
-
-                this.loadOlapStatistics(this.selectedOrganizer, this.selectedEventType);
+                        this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType);
+                      });
+                  });
               });
           });
       });
@@ -192,13 +185,17 @@ export class OlapStatisticsComponent implements OnInit {
 
         this.selectedEventType = null;
 
-        this.loadOlapStatistics(this.selectedOrganizer, this.selectedEventType);
+        this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType);
       });
   }
 
-  loadOlapStatistics(organizer: Organizer, eventType: EventType) {
+  loadOlapStatistics(cube: Cube, measure: Measure, organizer: Organizer, eventType: EventType) {
     // TODO: implement
-    console.log('Load OLAP statistics; organizer id: ' +
+    console.log('Load OLAP statistics; cube: ' +
+      cube +
+      ', measure: ' +
+      measure +
+      ', organizer id: ' +
       ((organizer) ? organizer.id : null) +
       ', eventType id: ' +
       ((eventType) ? eventType.id : null));
@@ -213,7 +210,7 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   onEventTypeChange() {
-    this.loadOlapStatistics(this.selectedOrganizer, this.selectedEventType);
+    this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType);
   }
 
   onLanguageChange() {
@@ -236,16 +233,22 @@ export class OlapStatisticsComponent implements OnInit {
               this.selectedEventType = null;
             }
 
-            this.loadOlapStatistics(this.selectedOrganizer, this.selectedEventType);
+            this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType);
           });
       });
   }
 
   onCubeChange() {
-    // TODO: implement
+    this.statisticsService.getMeasures(this.selectedCube)
+      .subscribe(measureData => {
+        this.fillMeasures(measureData);
+        this.selectedMeasure = (measureData && (measureData.length > 0)) ? measureData[0] : null;
+
+        this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType);
+      });
   }
 
   onMeasureChange() {
-    // TODO: implement
+    this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType);
   }
 }
