@@ -32,6 +32,8 @@
       "organizerLabel": "Организатор:",
       "eventTypeLabel": "Тип события:",
       "eventLabel": "Событие:",
+      "speakerLabel": "Спикер:",
+      "companyLabel": "Компания:",
       "organizerPlaceholder": "Все",
       "eventTypePlaceholder": "Все",
       "eventPlaceholder": "Все"
@@ -140,8 +142,7 @@
     },
     "search": {
       "title": "Поиск",
-      "nameLabel": "Наименование:",
-      "speakerLabel": "Спикер:"
+      "nameLabel": "Наименование:"
     }
   },
   "speaker": {
@@ -166,7 +167,6 @@
     "search": {
       "title": "Поиск",
       "nameLabel": "Имя:",
-      "companyLabel": "Компания:",
       "twitterLabel": "Twitter:",
       "gitHubLabel": "GitHub:",
       "javaChampionLabel": "Java Champion",

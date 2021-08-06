@@ -32,6 +32,8 @@
       "organizerLabel": "Organizer:",
       "eventTypeLabel": "Event type:",
       "eventLabel": "Event:",
+      "speakerLabel": "Speaker:",
+      "companyLabel": "Company:",
       "organizerPlaceholder": "All",
       "eventTypePlaceholder": "All",
       "eventPlaceholder": "All"
@@ -140,8 +142,7 @@
     },
     "search": {
       "title": "Search",
-      "nameLabel": "Name:",
-      "speakerLabel": "Speaker:"
+      "nameLabel": "Name:"
     }
   },
   "speaker": {
@@ -166,7 +167,6 @@
     "search": {
       "title": "Search",
       "nameLabel": "Name:",
-      "companyLabel": "Company:",
       "twitterLabel": "Twitter:",
       "gitHubLabel": "GitHub:",
       "javaChampionLabel": "Java Champion",
