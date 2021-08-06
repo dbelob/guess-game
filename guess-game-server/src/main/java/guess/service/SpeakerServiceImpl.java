@@ -50,6 +50,15 @@ public class SpeakerServiceImpl implements SpeakerService {
     }
 
     @Override
+    public List<Speaker> getSpeakersByFirstLetters(String firstLetters, Language language) {
+        String lowerCaseFirstLetters = (firstLetters != null) ? firstLetters.toLowerCase() : "";
+
+        return speakerDao.getSpeakers().stream()
+                .filter(c -> LocalizationUtils.getString(c.getName(), language).toLowerCase().indexOf(lowerCaseFirstLetters) == 0)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public List<Speaker> getSpeakers(String name, String company, String twitter, String gitHub, boolean isJavaChampion, boolean isMvp) {
         String trimmedLowerCasedName = SearchUtils.trimAndLowerCase(name);
         String trimmedLowerCasedCompany = SearchUtils.trimAndLowerCase(company);

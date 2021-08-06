@@ -8,6 +8,7 @@ import guess.dto.speaker.SpeakerBriefDto;
 import guess.dto.speaker.SpeakerDetailsDto;
 import guess.dto.talk.TalkBriefDto;
 import guess.service.*;
+import guess.util.LocalizationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -46,6 +47,18 @@ public class SpeakerController {
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetter(firstLetter, language);
 
         return convertToBriefDtoAndSort(speakers, language);
+    }
+
+    @GetMapping("/first-letter-speaker-names")
+    @ResponseBody
+    public List<String> getSpeakerNamesByFirstLetter(@RequestParam String firstLetters, HttpSession httpSession) {
+        var language = localeService.getLanguage(httpSession);
+        List<Speaker> speakers = speakerService.getSpeakersByFirstLetters(firstLetters, language);
+
+        return speakers.stream()
+                .map(c -> LocalizationUtils.getString(c.getName(), language))
+                .sorted(String.CASE_INSENSITIVE_ORDER)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/speakers")

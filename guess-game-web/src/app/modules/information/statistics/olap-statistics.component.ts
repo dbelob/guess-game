@@ -10,6 +10,8 @@ import { EventService } from '../../../shared/services/event.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
 import { StatisticsService } from '../../../shared/services/statistics.service';
 import { findEventTypeById, findOrganizerById } from '../../general/utility-functions';
+import { SpeakerService } from '../../../shared/services/speaker.service';
+import { CompanyService } from '../../../shared/services/company.service';
 
 @Component({
   selector: 'app-olap-statistics',
@@ -50,9 +52,16 @@ export class OlapStatisticsComponent implements OnInit {
   public selectedEventType: EventType;
   public eventTypeSelectItems: SelectItem[] = [];
 
+  public speaker: string;
+  public speakerSuggestions: string[];
+
+  public company: string;
+  public companySuggestions: string[];
+
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
-              private eventService: EventService, public organizerService: OrganizerService,
-              public translateService: TranslateService) {
+              private eventService: EventService, private organizerService: OrganizerService,
+              public translateService: TranslateService, private speakerService: SpeakerService,
+              private companyService: CompanyService) {
   }
 
   ngOnInit(): void {
@@ -239,6 +248,9 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   onCubeChange() {
+    this.speaker = null;
+    this.company = null;
+
     this.statisticsService.getMeasures(this.selectedCube)
       .subscribe(measureData => {
         this.fillMeasures(measureData);
@@ -250,5 +262,29 @@ export class OlapStatisticsComponent implements OnInit {
 
   onMeasureChange() {
     this.loadOlapStatistics(this.selectedCube, this.selectedMeasure, this.selectedOrganizer, this.selectedEventType);
+  }
+
+  isSpeakersVisible(): boolean {
+    return (Cube.Speakers === this.selectedCube);
+  }
+
+  isCompaniesVisible(): boolean {
+    return (Cube.Companies == this.selectedCube);
+  }
+
+  speakerSearch(event) {
+    this.speakerService.getSpeakerNamesByFirstLetters(event.query)
+      .subscribe(data => {
+          this.speakerSuggestions = data;
+        }
+      );
+  }
+
+  companySearch(event) {
+    this.companyService.getCompanyNamesByFirstLetters(event.query)
+      .subscribe(data => {
+          this.companySuggestions = data;
+        }
+      );
   }
 }

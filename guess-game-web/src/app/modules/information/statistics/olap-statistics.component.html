@@ -78,6 +78,16 @@
             </ng-template>
           </p-dropdown>
         </div>
+        <label for="speaker" class="col-auto text-right" *ngIf="isSpeakersVisible()">{{'common.list.speakerLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-autoComplete id="speaker" [(ngModel)]="speaker" [suggestions]="speakerSuggestions" (completeMethod)="speakerSearch($event)"
+                          name="speaker" styleClass="search-autocomplete" *ngIf="isSpeakersVisible()"></p-autoComplete>
+        </div>
+        <label for="company" class="col-auto text-right" *ngIf="isCompaniesVisible()">{{'common.list.companyLabel' | translate}}</label>
+        <div class="col-auto">
+          <p-autoComplete id="company" [(ngModel)]="company" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
+                          name="company" styleClass="search-autocomplete" *ngIf="isCompaniesVisible()"></p-autoComplete>
+        </div>
       </div>
     </form>
 

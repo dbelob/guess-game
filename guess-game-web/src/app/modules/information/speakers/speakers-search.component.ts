@@ -31,7 +31,7 @@ export class SpeakersSearchComponent implements OnInit {
 
   public companySuggestions: string[];
 
-  constructor(public speakerService: SpeakerService, public translateService: TranslateService, public companyService: CompanyService) {
+  constructor(private speakerService: SpeakerService, public translateService: TranslateService, private companyService: CompanyService) {
     this.multiSortMeta.push({field: 'displayName', order: 1});
     this.multiSortMeta.push({field: 'companiesString', order: 1});
   }

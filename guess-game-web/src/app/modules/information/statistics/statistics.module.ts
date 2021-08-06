@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
 import { RouterModule } from '@angular/router';
@@ -27,6 +28,7 @@ import { StatisticsSwitcherComponent } from './statistics-switcher.component';
     StatisticsSwitcherComponent
   ],
   imports: [
+    AutoCompleteModule,
     CommonModule,
     FormsModule,
     CheckboxModule,
