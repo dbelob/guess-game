@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -50,20 +51,26 @@ public class SpeakerController {
         return convertToBriefDtoAndSort(speakers, language);
     }
 
-    @GetMapping("/first-letter-speaker-names")
+    @GetMapping("/first-letters-speakers")
     @ResponseBody
-    public List<String> getSpeakerNamesByFirstLetter(@RequestParam String firstLetters, HttpSession httpSession) {
+    public List<SpeakerBriefDto> getSpeakersByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetters(firstLetters, language);
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
+        List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language, speakerDuplicates);
 
-        return speakers.stream()
-                .map(s -> LocalizationUtils.getSpeakerNameWithLastNameFirst(s, language, speakerDuplicates))
-                .sorted(String.CASE_INSENSITIVE_ORDER)
-                .collect(Collectors.toList());
+        Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
+        Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(
+                s -> s.getCompanies().stream()
+                        .map(CompanyDto::getName)
+                        .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
+
+        speakerBriefDtoList.sort(comparatorByName.thenComparing(comparatorByCompany));
+
+        return speakerBriefDtoList;
     }
 
     @GetMapping("/speakers")
@@ -79,7 +86,7 @@ public class SpeakerController {
     }
 
     List<SpeakerBriefDto> convertToBriefDtoAndSort(List<Speaker> speakers, Language language) {
-        List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language);
+        List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language, Collections.emptySet());
 
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
         Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(

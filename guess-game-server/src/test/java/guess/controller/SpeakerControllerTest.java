@@ -22,6 +22,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -144,9 +145,10 @@ class SpeakerControllerTest {
             speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
             speaker2.setCompanies(List.of(company1));
 
-            SpeakerBriefDto speakerBriefDto0 = SpeakerBriefDto.convertToBriefDto(speaker0, LANGUAGE);
-            SpeakerBriefDto speakerBriefDto1 = SpeakerBriefDto.convertToBriefDto(speaker1, LANGUAGE);
-            SpeakerBriefDto speakerBriefDto2 = SpeakerBriefDto.convertToBriefDto(speaker2, LANGUAGE);
+            //TODO: fix (delete Collections.emptySet())
+            SpeakerBriefDto speakerBriefDto0 = SpeakerBriefDto.convertToBriefDto(speaker0, LANGUAGE, Collections.emptySet());
+            SpeakerBriefDto speakerBriefDto1 = SpeakerBriefDto.convertToBriefDto(speaker1, LANGUAGE, Collections.emptySet());
+            SpeakerBriefDto speakerBriefDto2 = SpeakerBriefDto.convertToBriefDto(speaker2, LANGUAGE, Collections.emptySet());
 
             return Stream.of(
                     arguments(new ArrayList<>(List.of(speaker1, speaker0)), LANGUAGE, List.of(speakerBriefDto0, speakerBriefDto1)),

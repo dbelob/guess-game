@@ -28,11 +28,11 @@ export class SpeakerService {
       );
   }
 
-  getSpeakerNamesByFirstLetters(firstLetters: string): Observable<string[]> {
+  getSpeakersByFirstLetters(firstLetters: string): Observable<Speaker[]> {
     const params = new HttpParams()
       .set('firstLetters', firstLetters);
 
-    return this.http.get<string[]>(`${this.baseUrl}/first-letter-speaker-names`, {params: params})
+    return this.http.get<Speaker[]>(`${this.baseUrl}/first-letters-speakers`, {params: params})
       .pipe(
         catchError((response: Response) => {
           this.messageService.reportMessage(response);

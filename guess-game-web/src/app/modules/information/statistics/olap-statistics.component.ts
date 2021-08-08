@@ -5,6 +5,7 @@ import { Cube } from '../../../shared/models/statistics/olap/cube.model';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
 import { Measure } from '../../../shared/models/statistics/olap/measure.model';
 import { Organizer } from '../../../shared/models/organizer/organizer.model';
+import { Speaker } from '../../../shared/models/speaker/speaker.model';
 import { EventTypeService } from '../../../shared/services/event-type.service';
 import { EventService } from '../../../shared/services/event.service';
 import { OrganizerService } from '../../../shared/services/organizer.service';
@@ -52,8 +53,8 @@ export class OlapStatisticsComponent implements OnInit {
   public selectedEventType: EventType;
   public eventTypeSelectItems: SelectItem[] = [];
 
-  public speaker: string;
-  public speakerSuggestions: string[];
+  public speaker: Speaker;
+  public speakerSuggestions: Speaker[];
 
   public company: string;
   public companySuggestions: string[];
@@ -273,11 +274,16 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   speakerSearch(event) {
-    this.speakerService.getSpeakerNamesByFirstLetters(event.query)
+    this.speakerService.getSpeakersByFirstLetters(event.query)
       .subscribe(data => {
           this.speakerSuggestions = data;
         }
       );
+  }
+
+  selectSpeaker(event) {
+    // TODO: implement
+    console.log('speaker: ' + ((event) ? JSON.stringify(event) : null) + ', speakerString: ' + JSON.stringify(this.speaker));
   }
 
   companySearch(event) {
