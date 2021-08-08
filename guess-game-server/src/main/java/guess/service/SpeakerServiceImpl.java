@@ -54,7 +54,7 @@ public class SpeakerServiceImpl implements SpeakerService {
         String lowerCaseFirstLetters = (firstLetters != null) ? firstLetters.toLowerCase() : "";
 
         return speakerDao.getSpeakers().stream()
-                .filter(c -> LocalizationUtils.getString(c.getName(), language).toLowerCase().indexOf(lowerCaseFirstLetters) == 0)
+                .filter(s -> LocalizationUtils.getString(s.getNameWithLastNameFirst(), language).toLowerCase().indexOf(lowerCaseFirstLetters) == 0)
                 .collect(Collectors.toList());
     }
 

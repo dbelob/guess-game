@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -54,9 +55,13 @@ public class SpeakerController {
     public List<String> getSpeakerNamesByFirstLetter(@RequestParam String firstLetters, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetters(firstLetters, language);
+        Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
+                speakers,
+                s -> LocalizationUtils.getString(s.getName(), language),
+                s -> true);
 
         return speakers.stream()
-                .map(c -> LocalizationUtils.getString(c.getName(), language))
+                .map(s -> LocalizationUtils.getSpeakerNameWithLastNameFirst(s, language, speakerDuplicates))
                 .sorted(String.CASE_INSENSITIVE_ORDER)
                 .collect(Collectors.toList());
     }
