@@ -73,7 +73,7 @@ public class SpeakerServiceImpl implements SpeakerService {
             return Collections.emptyList();
         } else {
             return speakerDao.getSpeakers().stream()
-                    .filter(s -> ((!isNameSet || SearchUtils.isSubstringFound(trimmedLowerCasedName, s.getName())) &&
+                    .filter(s -> ((!isNameSet || SearchUtils.isSubstringFound(trimmedLowerCasedName, s.getName()) || SearchUtils.isSubstringFound(trimmedLowerCasedName, s.getNameWithLastNameFirst())) &&
                             (!isCompanySet || isSpeakerCompanyFound(s, trimmedLowerCasedCompany)) &&
                             (!isTwitterSet || SearchUtils.isSubstringFound(trimmedLowerCasedTwitter, s.getTwitter())) &&
                             (!isGitHubSet || SearchUtils.isSubstringFound(trimmedLowerCasedGitHub, s.getGitHub())) &&
