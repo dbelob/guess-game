@@ -4,6 +4,7 @@ import guess.domain.Language;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -35,10 +36,18 @@ public class SpeakerSuperBriefDto {
                 LocalizationUtils.getSpeakerNameWithLastNameFirst(speaker, language, speakerDuplicates));
     }
 
+    public static SpeakerSuperBriefDto convertToSuperBriefDto(Speaker speaker, Language language) {
+        return convertToSuperBriefDto(speaker, language, Collections.emptySet());
+    }
+
     public static List<SpeakerSuperBriefDto> convertToSuperBriefDto(List<Speaker> speakers, Language language, Set<Speaker> speakerDuplicates) {
         return speakers.stream()
                 .map(s -> convertToSuperBriefDto(s, language, speakerDuplicates))
                 .collect(Collectors.toList());
+    }
+
+    public static List<SpeakerSuperBriefDto> convertToSuperBriefDto(List<Speaker> speakers, Language language) {
+        return convertToSuperBriefDto(speakers, language, Collections.emptySet());
     }
 
     @Override

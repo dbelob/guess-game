@@ -1,11 +1,11 @@
 package guess.controller;
 
-import guess.domain.Language;
 import guess.domain.source.Speaker;
 import guess.domain.source.Talk;
 import guess.dto.company.CompanyDto;
 import guess.dto.speaker.SpeakerBriefDto;
 import guess.dto.speaker.SpeakerDetailsDto;
+import guess.dto.speaker.SpeakerSuperBriefDto;
 import guess.dto.talk.TalkBriefDto;
 import guess.service.*;
 import guess.util.LocalizationUtils;
@@ -14,10 +14,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -48,29 +48,25 @@ public class SpeakerController {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetter(firstLetter, language);
 
-        return convertToBriefDtoAndSort(speakers, language);
+        return convertToBriefDtoAndSort(speakers, s -> SpeakerBriefDto.convertToBriefDto(s, language));
     }
 
     @GetMapping("/first-letters-speakers")
     @ResponseBody
-    public List<SpeakerBriefDto> getSpeakersByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
+    public List<SpeakerSuperBriefDto> getSpeakersByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakersByFirstLetters(firstLetters, language);
         Set<Speaker> speakerDuplicates = LocalizationUtils.getSpeakerDuplicates(
                 speakers,
                 s -> LocalizationUtils.getString(s.getName(), language),
                 s -> true);
-        List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language, speakerDuplicates);
+        List<SpeakerBriefDto> speakerBriefDtoList = convertToBriefDtoAndSort(
+                speakers,
+                s -> SpeakerBriefDto.convertToBriefDto(s, language, speakerDuplicates));
 
-        Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
-        Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(
-                s -> s.getCompanies().stream()
-                        .map(CompanyDto::getName)
-                        .collect(Collectors.joining(", ")), String.CASE_INSENSITIVE_ORDER);
-
-        speakerBriefDtoList.sort(comparatorByName.thenComparing(comparatorByCompany));
-
-        return speakerBriefDtoList;
+        return speakerBriefDtoList.stream()
+                .map(s -> new SpeakerSuperBriefDto(s.getId(), s.getDisplayName()))
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/speakers")
@@ -82,11 +78,11 @@ public class SpeakerController {
         var language = localeService.getLanguage(httpSession);
         List<Speaker> speakers = speakerService.getSpeakers(name, company, twitter, gitHub, javaChampion, mvp);
 
-        return convertToBriefDtoAndSort(speakers, language);
+        return convertToBriefDtoAndSort(speakers, s -> SpeakerBriefDto.convertToBriefDto(s, language));
     }
 
-    List<SpeakerBriefDto> convertToBriefDtoAndSort(List<Speaker> speakers, Language language) {
-        List<SpeakerBriefDto> speakerBriefDtoList = SpeakerBriefDto.convertToBriefDto(speakers, language, Collections.emptySet());
+    List<SpeakerBriefDto> convertToBriefDtoAndSort(List<Speaker> speakers, Function<List<Speaker>, List<SpeakerBriefDto>> speakerFunction) {
+        List<SpeakerBriefDto> speakerBriefDtoList = speakerFunction.apply(speakers);
 
         Comparator<SpeakerBriefDto> comparatorByName = Comparator.comparing(SpeakerBriefDto::getDisplayName, String.CASE_INSENSITIVE_ORDER);
         Comparator<SpeakerBriefDto> comparatorByCompany = Comparator.comparing(

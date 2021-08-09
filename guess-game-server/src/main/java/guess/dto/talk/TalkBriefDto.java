@@ -10,7 +10,6 @@ import guess.util.LocalizationUtils;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -108,7 +107,7 @@ public class TalkBriefDto {
 
         EventSuperBriefDto eventSuperBriefDto = (event != null) ? EventSuperBriefDto.convertToSuperBriefDto(event, language) : null;
         String eventTypeLogoFileName = (eventType != null) ? eventType.getLogoFileName() : null;
-        List<SpeakerSuperBriefDto> speakers = SpeakerSuperBriefDto.convertToSuperBriefDto(talk.getSpeakers(), language, Collections.emptySet());
+        List<SpeakerSuperBriefDto> speakers = SpeakerSuperBriefDto.convertToSuperBriefDto(talk.getSpeakers(), language);
 
         return new TalkBriefDto(
                 talk.getId(),

@@ -6,7 +6,6 @@ import guess.domain.source.EventType;
 import guess.domain.source.Talk;
 import guess.dto.speaker.SpeakerBriefDto;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 
@@ -34,6 +33,6 @@ public class TalkDetailsDto {
                                               Function<Event, EventType> eventEventTypeFunction, Language language) {
         return new TalkDetailsDto(
                 TalkDto.convertToDto(talk, talkEventFunction, eventEventTypeFunction, language),
-                SpeakerBriefDto.convertToBriefDto(talk.getSpeakers(), language, Collections.emptySet()));
+                SpeakerBriefDto.convertToBriefDto(talk.getSpeakers(), language));
     }
 }

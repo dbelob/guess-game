@@ -4,6 +4,7 @@ import guess.domain.Language;
 import guess.domain.source.Speaker;
 import guess.dto.company.CompanyDto;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -107,10 +108,18 @@ public class SpeakerBriefDto extends SpeakerSuperBriefDto {
         return convertToBriefDto(convertToSuperBriefDto(speaker, language, speakerDuplicates), speaker, language);
     }
 
+    public static SpeakerBriefDto convertToBriefDto(Speaker speaker, Language language) {
+        return convertToBriefDto(speaker, language, Collections.emptySet());
+    }
+
     public static List<SpeakerBriefDto> convertToBriefDto(List<Speaker> speakers, Language language, Set<Speaker> speakerDuplicates) {
         return speakers.stream()
                 .map(s -> convertToBriefDto(s, language, speakerDuplicates))
                 .collect(Collectors.toList());
+    }
+
+    public static List<SpeakerBriefDto> convertToBriefDto(List<Speaker> speakers, Language language) {
+        return convertToBriefDto(speakers, language, Collections.emptySet());
     }
 
     @Override

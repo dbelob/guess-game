@@ -22,8 +22,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -76,9 +76,9 @@ class SpeakerControllerTest {
         given(speakerService.getSpeakersByFirstLetter(FIRST_LETTER, LANGUAGE)).willReturn(new ArrayList<>(List.of(speaker0, speaker1)));
 
         mvc.perform(get("/api/speaker/first-letter-speakers")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("firstLetter", FIRST_LETTER)
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("firstLetter", FIRST_LETTER)
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)));
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
@@ -106,14 +106,14 @@ class SpeakerControllerTest {
         given(speakerService.getSpeakers(NAME, COMPANY, TWITTER, GITHUB, JAVA_CHAMPION, MVP)).willReturn(new ArrayList<>(List.of(speaker0, speaker1)));
 
         mvc.perform(get("/api/speaker/speakers")
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("name", NAME)
-                .param("company", COMPANY)
-                .param("twitter", TWITTER)
-                .param("gitHub", GITHUB)
-                .param("javaChampion", Boolean.toString(JAVA_CHAMPION))
-                .param("mvp", Boolean.toString(MVP))
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .param("name", NAME)
+                        .param("company", COMPANY)
+                        .param("twitter", TWITTER)
+                        .param("gitHub", GITHUB)
+                        .param("javaChampion", Boolean.toString(JAVA_CHAMPION))
+                        .param("mvp", Boolean.toString(MVP))
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)));
         Mockito.verify(localeService, VerificationModeFactory.times(1)).getLanguage(httpSession);
@@ -145,21 +145,23 @@ class SpeakerControllerTest {
             speaker2.setName(List.of(new LocaleItem(Language.ENGLISH.getCode(), "Name0")));
             speaker2.setCompanies(List.of(company1));
 
-            //TODO: fix (delete Collections.emptySet())
-            SpeakerBriefDto speakerBriefDto0 = SpeakerBriefDto.convertToBriefDto(speaker0, LANGUAGE, Collections.emptySet());
-            SpeakerBriefDto speakerBriefDto1 = SpeakerBriefDto.convertToBriefDto(speaker1, LANGUAGE, Collections.emptySet());
-            SpeakerBriefDto speakerBriefDto2 = SpeakerBriefDto.convertToBriefDto(speaker2, LANGUAGE, Collections.emptySet());
+            Function<List<Speaker>, List<SpeakerBriefDto>> speakerFunction = s -> SpeakerBriefDto.convertToBriefDto(s, LANGUAGE);
+
+            SpeakerBriefDto speakerBriefDto0 = SpeakerBriefDto.convertToBriefDto(speaker0, LANGUAGE);
+            SpeakerBriefDto speakerBriefDto1 = SpeakerBriefDto.convertToBriefDto(speaker1, LANGUAGE);
+            SpeakerBriefDto speakerBriefDto2 = SpeakerBriefDto.convertToBriefDto(speaker2, LANGUAGE);
 
             return Stream.of(
-                    arguments(new ArrayList<>(List.of(speaker1, speaker0)), LANGUAGE, List.of(speakerBriefDto0, speakerBriefDto1)),
-                    arguments(new ArrayList<>(List.of(speaker2, speaker0)), LANGUAGE, List.of(speakerBriefDto0, speakerBriefDto2))
+                    arguments(new ArrayList<>(List.of(speaker1, speaker0)), speakerFunction, List.of(speakerBriefDto0, speakerBriefDto1)),
+                    arguments(new ArrayList<>(List.of(speaker2, speaker0)), speakerFunction, List.of(speakerBriefDto0, speakerBriefDto2))
             );
         }
 
         @ParameterizedTest
         @MethodSource("data")
-        void convertToBriefDtoAndSort(List<Speaker> speakers, Language language, List<SpeakerBriefDto> expected) {
-            assertEquals(expected, speakerController.convertToBriefDtoAndSort(speakers, language));
+        void convertToBriefDtoAndSort(List<Speaker> speakers, Function<List<Speaker>, List<SpeakerBriefDto>> speakerFunction,
+                                      List<SpeakerBriefDto> expected) {
+            assertEquals(expected, speakerController.convertToBriefDtoAndSort(speakers, speakerFunction));
         }
     }
 
@@ -198,8 +200,8 @@ class SpeakerControllerTest {
         given(eventTypeService.getEventTypeByEvent(event)).willReturn(eventType);
 
         mvc.perform(get("/api/speaker/speaker/0")
-                .contentType(MediaType.APPLICATION_JSON)
-                .session(httpSession))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .session(httpSession))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.speaker.id", is(0)))
                 .andExpect(jsonPath("$.talks", hasSize(2)))

@@ -4,7 +4,6 @@ import guess.domain.Language;
 import guess.domain.source.Speaker;
 import guess.util.LocalizationUtils;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,7 +38,7 @@ public class SpeakerDto extends SpeakerBriefDto {
     }
 
     public static SpeakerDto convertToDto(Speaker speaker, Language language) {
-        var speakerSuperBriefDto = convertToSuperBriefDto(speaker, language, Collections.emptySet());
+        var speakerSuperBriefDto = convertToSuperBriefDto(speaker, language);
 
         return new SpeakerDto(
                 speakerSuperBriefDto,
