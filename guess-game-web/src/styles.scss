@@ -174,8 +174,12 @@
 }
 
 .start-listbox.p-listbox, .start-dropdown.p-dropdown, .search-dropdown.p-dropdown, .search-autocomplete.p-autocomplete,
-.search-autocomplete .p-autocomplete-input {
+.search-autocomplete .p-inputtext, .olap-autocomplete .p-inputtext {
   width: 100%;
+}
+
+.olap-autocomplete.p-autocomplete {
+  min-width: 600px;
 }
 
 .organizer-dropdown.p-dropdown, .event-type-dropdown.p-dropdown, .cube-dropdown.p-dropdown {
