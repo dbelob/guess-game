@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
+import { Company } from '../../../shared/models/company/company.model';
 import { Cube } from '../../../shared/models/statistics/olap/cube.model';
 import { EventType } from '../../../shared/models/event-type/event-type.model';
 import { Measure } from '../../../shared/models/statistics/olap/measure.model';
@@ -53,11 +54,11 @@ export class OlapStatisticsComponent implements OnInit {
   public selectedEventType: EventType;
   public eventTypeSelectItems: SelectItem[] = [];
 
-  public speaker: Speaker;
+  public speaker: any;
   public speakerSuggestions: Speaker[];
 
-  public company: string;
-  public companySuggestions: string[];
+  public company: any;
+  public companySuggestions: Company[];
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
               private eventService: EventService, private organizerService: OrganizerService,
@@ -287,10 +288,15 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   companySearch(event) {
-    this.companyService.getCompanyNamesByFirstLetters(event.query)
+    this.companyService.getCompaniesByFirstLetters(event.query)
       .subscribe(data => {
           this.companySuggestions = data;
         }
       );
+  }
+
+  selectCompany(event) {
+    // TODO: implement
+    console.log('company: ' + ((event) ? JSON.stringify(event) : null) + ', companyString: ' + JSON.stringify(this.company));
   }
 }

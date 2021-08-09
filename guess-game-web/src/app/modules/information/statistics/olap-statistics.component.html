@@ -87,7 +87,8 @@
         <label for="company" class="col-auto text-right" *ngIf="isCompaniesVisible()">{{'common.list.companyLabel' | translate}}</label>
         <div class="col-auto">
           <p-autoComplete id="company" [(ngModel)]="company" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
-                          name="company" styleClass="search-autocomplete" *ngIf="isCompaniesVisible()"></p-autoComplete>
+                          (onSelect)="selectCompany($event)" field="name" name="company"
+                          styleClass="search-autocomplete" *ngIf="isCompaniesVisible()"></p-autoComplete>
         </div>
       </div>
     </form>

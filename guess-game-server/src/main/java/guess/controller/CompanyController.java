@@ -1,6 +1,7 @@
 package guess.controller;
 
 import guess.domain.source.Company;
+import guess.dto.company.CompanyDto;
 import guess.service.CompanyService;
 import guess.service.LocaleService;
 import guess.util.LocalizationUtils;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,6 +30,17 @@ public class CompanyController {
     public CompanyController(CompanyService companyService, LocaleService localeService) {
         this.companyService = companyService;
         this.localeService = localeService;
+    }
+
+    @GetMapping("/first-letters-companies")
+    @ResponseBody
+    public List<CompanyDto> getCompaniesByFirstLetters(@RequestParam String firstLetters, HttpSession httpSession) {
+        var language = localeService.getLanguage(httpSession);
+        List<Company> companies = companyService.getCompaniesByFirstLetters(firstLetters, language);
+
+        return CompanyDto.convertToDto(companies, language).stream()
+                .sorted(Comparator.comparing(CompanyDto::getName, String.CASE_INSENSITIVE_ORDER))
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/first-letters-company-names")
