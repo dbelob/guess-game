@@ -236,7 +236,9 @@
       "cubeLabel": "Куб:",
       "cubePlaceholder": "Все",
       "measureLabel": "Показатель:",
-      "measurePlaceholder": "Все"
+      "measurePlaceholder": "Все",
+      "speakersLabel": "Спикеры:",
+      "companiesLabel": "Компании:"
     }
   },
   "notFound": {

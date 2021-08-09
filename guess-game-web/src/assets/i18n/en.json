@@ -236,7 +236,9 @@
       "cubeLabel": "Cube:",
       "cubePlaceholder": "All",
       "measureLabel": "Measure:",
-      "measurePlaceholder": "All"
+      "measurePlaceholder": "All",
+      "speakersLabel": "Speakers:",
+      "companiesLabel": "Companies:"
     }
   },
   "notFound": {
