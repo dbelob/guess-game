@@ -78,17 +78,21 @@
             </ng-template>
           </p-dropdown>
         </div>
-        <label for="speaker" class="col-auto text-right" *ngIf="isSpeakersVisible()">{{'common.list.speakerLabel' | translate}}</label>
+      </div>
+      <div *ngIf="isSpeakersVisible()" class="form-group row justify-content-center align-items-center">
+        <label for="speaker" class="col-auto text-right">{{'statistics.olap.speakersLabel' | translate}}</label>
         <div class="col-auto">
-          <p-autoComplete id="speaker" [(ngModel)]="speaker" [suggestions]="speakerSuggestions" (completeMethod)="speakerSearch($event)"
-                          (onSelect)="selectSpeaker($event)" field="displayName" name="speaker"
-                          styleClass="search-autocomplete" *ngIf="isSpeakersVisible()"></p-autoComplete>
+          <p-autoComplete id="speaker" [(ngModel)]="selectedSpeakers" [suggestions]="speakerSuggestions" (completeMethod)="speakerSearch($event)"
+                          (onSelect)="selectSpeaker($event)" field="displayName" name="speaker" [multiple]="true"
+                          styleClass="olap-autocomplete"></p-autoComplete>
         </div>
-        <label for="company" class="col-auto text-right" *ngIf="isCompaniesVisible()">{{'common.list.companyLabel' | translate}}</label>
+      </div>
+      <div *ngIf="isCompaniesVisible()" class="form-group row justify-content-center align-items-center">
+        <label for="company" class="col-auto text-right">{{'statistics.olap.companiesLabel' | translate}}</label>
         <div class="col-auto">
-          <p-autoComplete id="company" [(ngModel)]="company" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
-                          (onSelect)="selectCompany($event)" field="name" name="company"
-                          styleClass="search-autocomplete" *ngIf="isCompaniesVisible()"></p-autoComplete>
+          <p-autoComplete id="company" [(ngModel)]="selectedCompanies" [suggestions]="companySuggestions" (completeMethod)="companySearch($event)"
+                          (onSelect)="selectCompany($event)" field="name" name="company" [multiple]="true"
+                          styleClass="olap-autocomplete"></p-autoComplete>
         </div>
       </div>
     </form>

@@ -54,10 +54,10 @@ export class OlapStatisticsComponent implements OnInit {
   public selectedEventType: EventType;
   public eventTypeSelectItems: SelectItem[] = [];
 
-  public speaker: any;
+  public selectedSpeakers: Speaker[];
   public speakerSuggestions: Speaker[];
 
-  public company: any;
+  public selectedCompanies: Company[];
   public companySuggestions: Company[];
 
   constructor(private statisticsService: StatisticsService, private eventTypeService: EventTypeService,
@@ -250,8 +250,8 @@ export class OlapStatisticsComponent implements OnInit {
   }
 
   onCubeChange() {
-    this.speaker = null;
-    this.company = null;
+    this.selectedSpeakers = [];
+    this.selectedCompanies = [];
 
     this.statisticsService.getMeasures(this.selectedCube)
       .subscribe(measureData => {
@@ -278,25 +278,27 @@ export class OlapStatisticsComponent implements OnInit {
     this.speakerService.getSpeakersByFirstLetters(event.query)
       .subscribe(data => {
           this.speakerSuggestions = data;
+          console.log('selectedSpeakers: ' + JSON.stringify(this.selectedSpeakers));
         }
       );
   }
 
   selectSpeaker(event) {
     // TODO: implement
-    console.log('speaker: ' + ((event) ? JSON.stringify(event) : null) + ', speakerString: ' + JSON.stringify(this.speaker));
+    console.log('speaker: ' + ((event) ? JSON.stringify(event) : null) + ', selectedSpeakers: ' + JSON.stringify(this.selectedSpeakers));
   }
 
   companySearch(event) {
     this.companyService.getCompaniesByFirstLetters(event.query)
       .subscribe(data => {
           this.companySuggestions = data;
+          console.log('selectedCompanies: ' + JSON.stringify(this.selectedCompanies));
         }
       );
   }
 
   selectCompany(event) {
     // TODO: implement
-    console.log('company: ' + ((event) ? JSON.stringify(event) : null) + ', companyString: ' + JSON.stringify(this.company));
+    console.log('company: ' + ((event) ? JSON.stringify(event) : null) + ', selectedCompanies: ' + JSON.stringify(this.selectedCompanies));
   }
 }
